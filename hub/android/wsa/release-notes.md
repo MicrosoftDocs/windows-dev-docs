@@ -13,7 +13,104 @@ ms.date: 04/27/2022
 
 These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
+## Build 2209.40000.26.0
+
+October 20, 2022
+
+- Improvements to the Camera HAL
+- Improvements to clipboard stability
+- Improvements to multi-threaded (>8 core) performance
+- Improved security for graphic streaming
+- Reliability improvements for package launches
+- Security updates for ANGLE and GSK
+- Annotated telemetry with package installation sources
+- Window with legal information has been fixed
+- Security updates to the Linux kernel
+- Enhancements to platform stability
+- Updated to Chromium WebView 105
+
+## Build 2208.40000.4.0
+
+September 15, 2022
+
+- Reliability fixes for App Not Responding (ANR) errors
+- Improvements to input compatibility shims
+- Improvements to scrolling (smoothness) in apps
+- Usability Improvements to the Windows Subsystem for Android Settings app
+- Startup performance improvements
+- Fixed crashes when copying and pasting extremely large content
+- UX improvements for the game controls dialog
+- Improvements to networking
+- General graphics improvements
+- Improvements for gamepad when using multiple apps
+- Improved performance of uninstalling apps
+- Fixed video playback issue for apps
+- Updated to Chromium WebView 104
+- Linux kernel security updates
+
+## Build 2207.40000.8.0
+
+August 31, 2022
+
+- New compatibility shim to allow apps to maintain aspect ratio but still support resize
+- Accessibility improvements to the Windows Subsystem for Android Settings app
+- New compatibility shims in the Windows Subsystem for Android Settings app
+- Fixed problems with restarting apps
+- Apps that update toast notifications instead of using progress toasts have better behavior
+- Game controls user education dialog for apps with compatibility shims enabled
+- Improvements with handling VPN
+- Scrollbar fix for Windows Subsystem for Android Settings compatibility page
+- User crash data and system app crash data is now being reported
+- “No internet available” toast notification is now suppressed
+- Custom Android toasts now render correctly
+- Amazon Appstore 60.09 update
+- Android security update
+- Improved reliability
+
+## Build 2206.40000.15.0
+
+August 2, 2022
+
+- New suite of shims available to toggle in the Windows Subsystem for Android Settings app which enables better experiences in several apps
+- Compatibility for games with joysticks (mapped to WASD)
+- Compatibility for gamepad in games
+- Compatibility for aiming in games with arrow keys
+- Compatibility for sliding in games with arrow keys
+- Scrolling improvements
+- Networking improvements
+- Android minimum window size defaulted to 220dp
+- Improved dialog when unsupported VPN is detected
+- New toggle to view/save diagnostic data in the Windows Subsystem for Android Settings app
+- Security updates
+- General reliability fixes, including improvements to diagnostic sizes
+- Graphics improvements
+
+## Build 2205.40000.14.0
+
+July 6, 2022
+
+- Enabled Advanced Networking functionality, including app access to local network devices for ARM
+- VM IP address removed from Settings app. With Advanced Networking, now the IP address of the VM is the same as the host/computer IP
+- Fixes for non-resizable app content on maximize or resizing
+- Fixes for scrolling with mouse and trackpad in apps
+- Android May Kernel patches
+- Android windows marked secure can no longer be screenshotted
+- Improve web browser launching
+- Enable doze and app standby while charging for improved power saving
+- ADB debug prompts redirected to Windows for improved security
+- Updated to Chromium WebView 101
+- Fixes for graphics including app flickering and graphics corruption
+- Fixes for video playback
+- AV1 Codec support
+- Enabled IPv6 and VPN Connectivity
+- Increased the performance and reliability connecting to virtual WIFI in the container
+- Video playback apps can now prevent the screen from turning off in Windows
+
+Known Issues:
+- Some VPNs may not work with Advanced Networking. If you use a VPN and find Android apps do not have network connectivity, please disable Advanced Networking in the Windows Subsystem for Android Settings app
+
 ## Build 2204.40000.19.0
+
 May 20, 2022
 
 - Windows Subsystem for Android updated to Android 12.1
@@ -41,6 +138,7 @@ Known Issues:
 
 
 ## Build 2203.40000.3.0
+
 March 22, 2022.
 
 - H.264 Video Hardware Decoding
@@ -56,6 +154,7 @@ Known Issues:
 
 
 ## Public Preview Build 1.8.32837.0
+
 February 15, 2022. Windows Subsystem for Android is available for **public preview**.
 
 - General improvements to performance and reliability

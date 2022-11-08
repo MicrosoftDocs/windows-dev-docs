@@ -18,7 +18,7 @@ For more information about installing and configuring Visual Studio to get acces
 
 ## WinUI templates
 
-The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](/windows/apps/winui/) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
+The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](../winui/index.md) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
 
 WinUI 3 is available as part of [the Windows App SDK](../windows-app-sdk/index.md). It includes a VSIX package for Visual Studio 2019 (and later) that provides project and item templates that help you get started building apps with a WinUI-based interface.
 
@@ -96,7 +96,7 @@ The recommended technology is [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/). Thi
 
 ### Project templates for C++ desktop apps
 
-To access the C++ project templates for classic desktop apps when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **Desktop**.
+To access the C++ project templates for desktop apps when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **Desktop**.
 
 ![Native C++ app project templates](images/desktop-app-projects-cpp.png)
 

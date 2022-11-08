@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 This article lists the mappings that C#/WinRT makes between Windows Runtime (WinRT) types and .NET types in desktop apps that target .NET 6 (or later). In these apps, Visual Studio IntelliSense shows the .NET type instead of the Windows Runtime type. For example, if a Windows Runtime method takes a parameter of type **IVector&lt;string&gt;**, then IntelliSense shows a parameter of type **IList&lt;string&gt;**. Similarly, in a WinRT component authored using C#/WinRT, you use the .NET type in member signatures. When you use C#/WinRT to generate a Windows Runtime component, the .NET type is translated into the corresponding WinRT type.
 
-The C#/WinRT custom type mappings are categorized by types in the Windows SDK or in [WinUI 3](/windows/apps/winui) (WinUI 3 is part of the [Windows App SDK](/windows/apps/windows-app-sdk)). The WinRT types for Windows SDK mappings live under the **Windows.\*** namespaces, and the WinRT types for WinUI 3 mappings live under the **Microsoft.UI.Xaml.\*** namespaces. There are two reasons for custom type mappings that C#/WinRT makes for WinRT types:
+The C#/WinRT custom type mappings are categorized by types in the Windows SDK or in [WinUI 3](../../../winui/index.md) (WinUI 3 is part of the [Windows App SDK](../../../windows-app-sdk/index.md)). The WinRT types for Windows SDK mappings live under the **Windows.\*** namespaces, and the WinRT types for WinUI 3 mappings live under the **Microsoft.UI.Xaml.\*** namespaces. There are two reasons for custom type mappings that C#/WinRT makes for WinRT types:
 
 - **WinRT types that map to .NET types with a different name and/or namespace.** These custom mappings are for mapping WinRT types to existing .NET equivalent types. There are also cases where the mapping is to a different type (e.g., a value type maps to a class type).
 
@@ -99,4 +99,4 @@ The C#/WinRT custom type mappings are categorized by types in the Windows SDK or
 | KeyTime | Microsoft.UI.Xaml.Media.Animation | 
 | RepeatBehavior | Microsoft.UI.Xaml.Media.Animation | 
 | RepeatBehaviorType | Microsoft.UI.Xaml.Media.Animation | 
-| Matrix3D |(Microsoft.UI.Xaml.Media.Media3D | 
+| Matrix3D |(Microsoft.UI.Xaml.Media.Media3D |

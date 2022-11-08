@@ -35,7 +35,7 @@ Begin by creating a new project in Visual Studio. Select the **Class Library** p
     </PropertyGroup>
     ```
 
-    To access Windows Runtime types, you need to set a specific Windows SDK version in the TFM. For more details on the supported version, see [.NET 6 and later: Use the TFM option](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-6-use-the-target-framework-moniker-option).
+    To access Windows Runtime types, you need to set a specific Windows SDK version in the TFM. For more details on the supported version, see [.NET 6 and later: Use the TFM option](../../../desktop/modernize/desktop-to-uwp-enhance.md).
 
 2. Install the [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/) NuGet package in your project.
 
@@ -138,7 +138,7 @@ C#/WinRT authored Windows Runtime components can be consumed from any Windows Ru
     </assembly>
     ```
 
-    The application manifest file is required for apps that are not MSIX-packaged. For MSIX-packaged apps, the app consumer needs to register the activatable classes in their `Package.appxmanifest` package manifest file, as explained in [Walkthrough: Create a C# component with WinUI 3 controls and consume from a C++ Windows App SDK application](./create-winrt-component-winui-cswinrt.md).
+    The application manifest file is required for apps that are not packaged. For packaged apps, the app consumer needs to register the activatable classes in their `Package.appxmanifest` package manifest file, as explained in [Walkthrough: Create a C# component with WinUI 3 controls and consume from a C++ Windows App SDK application](./create-winrt-component-winui-cswinrt.md).
 
     b. Modify the project to include the manifest file in the output when deploying the project. Click the **CppConsoleApp.exe.manifest** file in **Solution Explorer** and set the **Content** property to **True**. Here is an example of what this looks like.
 

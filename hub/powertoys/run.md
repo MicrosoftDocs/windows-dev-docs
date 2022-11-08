@@ -86,7 +86,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | Time and date| `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
 | Time zones | `&` | `& Newfoundland` shows the current time in the time zone of Newfoundland. |
 | Unit converter | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
-| URI-handler | `//` | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to Microsoft Docs.<br />`mailto:` and `ms-settings:` links are supported. |
+| URI-handler | `//` | `//` to launch your default browser.<br />`// learn.microsoft.com` to have your default browser go to Microsoft Learn.<br />`mailto:` and `ms-settings:` links are supported. |
 | Visual Studio Code | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
 | Web search | `??` | `??` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. |
 | Windows settings | `$` | `$ Add/Remove Programs` to launch the Windows settings page for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |

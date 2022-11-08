@@ -110,7 +110,7 @@ Please view the guidance for [Adjust layout and fonts, and support RTL](/uwp/des
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The InfoBar for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The InfoBar for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >

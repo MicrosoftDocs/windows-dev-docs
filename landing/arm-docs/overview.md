@@ -1,7 +1,7 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 05/23/2022
+ms.date: 11/02/2022
 ms.topic: article
 ms.prod: windows
 ms.technology: arm
@@ -21,9 +21,6 @@ Windows 10 enables existing unmodified x86 apps to run on Arm devices. Windows 1
 
 For the best performance, responsiveness, and battery life, users will want and need Arm-native Windows apps, which means that developers will need to build or port Arm-native Windows apps.
 
-...
-> [!VIDEO https://www.youtube.com/embed/yICVNta8jMU]
-
 ### Arm developer tools
 
 Microsoft is working to deliver an Arm-native developer toolset that includes Arm-native Visual Studio 2022, VSCode, VC++ toolchain, classic .NET Framework, modern .NET, and Java. Microsoft is also working with several 3rd parties and open-source communities to port common tools, runtimes, frameworks and libraries to natively target Windows on Arm. See the [announcement from Build 2022](https://blogs.windows.com/windowsdeveloper/2022/05/24/create-next-generation-experiences-at-scale-with-windows/) about this comprehensive suite of tools, services, and devices that enable developers to build and port apps that natively target Arm just as easily as when targeting x64.
@@ -36,16 +33,9 @@ Most developers also rely on build and test automation via Continual Integration
 
 ### Arm developer devices
 
-Developers need Arm devices upon which to build and test Arm-native Windows apps. Several Arm-powered devices are already available, including [Surface Pro X](https://www.microsoft.com/surface/prox) and devices from our OEM partners, including the [Lenovo ThinkPad X13S](https://www.lenovo.com/us/en/p/coming-soon/thinkpad-x13s-13-inch-wos/len101t0019). These portable devices, whether a laptop form-factor device or convertible-tablet, offer great performance, battery life, and run the growing array of Arm-native developer tools.
+Developers need Arm devices upon which to build and test Arm-native Windows apps. Several Arm-powered devices are already available from Microsoft partners. These portable devices, whether a laptop form-factor device or convertible-tablet, offer great performance, battery life, and run the growing array of Arm-native developer tools.
 
-:::row:::
-    :::column span="":::
-       ![Project Volterra Arm device.](./images/project-volterra-device2.png)
-    :::column-end:::
-    :::column span="2":::
-        Microsoft is also working on "Project Volterra" - an exciting new Arm-powered device built by Windows Developers, for Windows developers. Since "Project Volterra" is built on Qualcomm's Snapdragon Compute Platform and sports a powerful Neural Processing Unit (NPU), this will be a great device for AI researchers and developers looking to integrate AI into their apps and experiences. More details about "Project Volterra" will be announced later this year.
-    :::column-end:::
-:::row-end:::
+[Windows Dev Kit 2023](./dev-kit/index.md) (code name “Project Volterra”) is the latest Arm device built to support Windows developers, AI researchers, and developers looking to integrate AI into their apps and experiences.
 
 ## Arm64EC - Build apps for Windows 11 on Arm
 
@@ -87,7 +77,7 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 :::row-end:::
 
 > [!NOTE]
-> We use the term *Arm* as a shorthand for PCs that run the desktop version of Windows on Arm64 (also commonly called *AArch64*) processors.  We use the term *Arm32* here as a shorthand for the 32-bit Arm architecture (commonly called *Arm* in other documentation). PCs powered by Arm provide great application compatibility and allow you to run your existing unmodified x86 win32 applications. Arm apps run natively without any emulation, while x86 amnd x64 apps run under emulation on Arm devices.
+> We use the term *Arm* as a shorthand for PCs that run the desktop version of Windows on Arm64 (also commonly called *AArch64*) processors.  We use the term *Arm32* here as a shorthand for the 32-bit Arm architecture (commonly called *Arm* in other documentation). PCs powered by Arm provide great application compatibility and allow you to run your existing unmodified x86 win32 applications. Arm apps run natively without any emulation, while x86 and x64 apps run under emulation on Arm devices.
 
 ## Additional tips for developing Windows apps that run on Arm devices
 

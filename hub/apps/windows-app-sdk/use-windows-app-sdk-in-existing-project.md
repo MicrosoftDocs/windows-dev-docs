@@ -27,7 +27,7 @@ If you have an existing desktop project in which you want to use the Windows App
 1. Open an existing project in Visual Studio.
 
     > [!NOTE]
-    > If you have a C# desktop project, make sure the **TargetFramework** element in the project file is assigned to a Windows 10-specific moniker, such as **net6.0-windows10.0.19041.0**, so that it can call Windows Runtime APIs. For more information, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). Additionally, you must be targeting **18362** or higher as there is a [known issue blocking apps that target **17763**](https://github.com/microsoft/WindowsAppSDK/issues/921).
+    > If you have a C# desktop project, make sure the **TargetFramework** element in the project file is assigned to a Windows 10-specific moniker, such as **net6.0-windows10.0.19041.0**, so that it can call Windows Runtime APIs. For more information, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). Additionally, you must be targeting **18362** or later as there is a [known issue blocking apps that target **17763**](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 2. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
@@ -48,7 +48,7 @@ If you have an existing desktop project in which you want to use the Windows App
     > [!NOTE]
     > The Windows App SDK NuGet package contains other sub-packages (including **Microsoft.WindowsAppSDK.Foundation**, **Microsoft.WindowsAppSDK.WinUI**, and more) that contain the implementations for specific components in the Windows App SDK. You cannot install these sub-packages individually to reference only certain components in your project. You must install the main Windows App SDK NuGet package, which includes all of the components.
 
-6. **For unpackaged apps only**: Before your unpackaged app can use Windows App SDK APIs and components, your app must call first load the Windows App SDK runtime to reference the Windows App SDK framework package. For more information, see [Load the Windows App SDK runtime](use-windows-app-sdk-run-time.md) and [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+6. **For unpackaged apps only**: Before your unpackaged app can use Windows App SDK APIs and components, your app must call first load the Windows App SDK runtime to reference the Windows App SDK framework package. For more information, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md) and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
 7. Your app can now use Windows App SDK APIs and components that are available in the release channel you installed. For the list of available features, see [release channels](release-channels.md).
 
@@ -56,7 +56,7 @@ If you have an existing desktop project in which you want to use the Windows App
 
 If your existing project is a C++ project, and you want to call Windows Runtime APIs in the Windows App SDK, then you'll need to add support for C++/WinRT. See [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). Look for info there about the **Microsoft.Windows.CppWinRT NuGet** package. Without that package, your project won't be able to find the namespace header files for Windows Runtime APIs in the Windows App SDK.
 
-If you encounter a "Class not registered" error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](/windows/apps/desktop/modernize/framework-packages/framework-packages-overview).
+If you encounter a "Class not registered" error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md).
 
 ## Related topics
 

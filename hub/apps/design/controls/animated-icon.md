@@ -56,7 +56,7 @@ Defining a color property in your Lottie animation named "Foreground" lets you t
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The AnimatedIcon for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The AnimatedIcon for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >
@@ -181,7 +181,7 @@ The exact algorithm used to map AnimatedIcon State changes to marker playback po
 - Check if "[NewState]" parses to a float. If it does, animated from the current position to the parsed float.
 - Hard cut to playback position 0.0.
 
-The following example shows the marker format in a Lottie JSON file. See the [AnimatedIcon](/windows/apps/design/controls/animated-icon) guidance for more detail.
+The following example shows the marker format in a Lottie JSON file. See the AnimatedIcon guidance for more detail.
 
 ```json
 "markers":[{"tm":0,"cm":"NormalToPointerOver_Start","dr":0},{"tm":9,"cm":"NormalToPointerOver_End","dr":0},

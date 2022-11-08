@@ -39,7 +39,7 @@ Windows App SDK (WinUI 3) apps, on the other hand, are multi-instanced by defaul
 
 If you want your Windows App SDK (WinUI 3) app to be single-instanced like your UWP app is, then you can override the default behavior described above. You'll use [**AppInstance.FindOrRegisterForKey**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.findorregisterforkey) and [**AppInstance.IsCurrent**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.iscurrent) to determine whether the current instance is the main instance. If it isn't, then you'll call [**AppInstance.RedirectActivationToAsync**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync) to redirect activation to the already-running main instance, and then exit from the current instance (without creating nor activating its main window).
 
-For more info, see [App instancing with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing).
+For more info, see [App instancing with the app lifecycle API](../../applifecycle/applifecycle-instancing.md).
 
 > [!IMPORTANT]
 > The code shown below works as expected provided that you target the *x64* architecture. That applies to both C# and C++/WinRT.
@@ -212,5 +212,5 @@ See the [File type association](#file-type-association) section above for more d
 
 ## Related topics
 
-* [App instancing with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing)
+* [App instancing with the app lifecycle API](../../applifecycle/applifecycle-instancing.md)
 * [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation)

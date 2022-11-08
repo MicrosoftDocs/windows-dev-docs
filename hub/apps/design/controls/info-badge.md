@@ -1,8 +1,8 @@
 ---
-description: An InfoBadge is a small circle that represents a notification or alert within an app.
-title: InfoBadge
+description: An info badge is a small circle that represents a notification or alert within an app.
+title: Info badge
 template: detail.hbs
-ms.date: 09/10/2021
+ms.date: 09/22/2022
 ms.topic: article
 keywords: windows 10, winui, uwp
 pm-contact: gabilka
@@ -10,41 +10,22 @@ design-contact: shurd
 dev-contact: stpete
 ms.custom: 20H2
 ms.localizationpriority: medium
+no-loc: [info badge, navigation view, content dialog, info bar]
 ---
 
-# InfoBadge
+# Info badge
 
-Badging is a non-intrusive and intuitive way to display notifications or bring focus to an area within an app - whether that be for notifications, indicating new content, or showing an alert. An [InfoBadge](/uwp/api/microsoft.ui.xaml.controls.infobadge) is a small piece of UI that can be added into an app and customized to display a number, icon, or a simple dot.
+Badging is a non-intrusive and intuitive way to display notifications or bring focus to an area within an app - whether that be for notifications, indicating new content, or showing an alert. An info badge is a small piece of UI that can be added into an app and customized to display a number, icon, or a simple dot.
 
-InfoBadge is built into [NavigationView](navigationview.md), but can also be placed as a standalone element in the XAML tree, allowing you to place InfoBadge into any control or piece of UI of your choosing. When you use an InfoBadge somewhere other than NavigationView, you are responsible for programmatically determining when to show and dismiss the InfoBadge, and where to place the InfoBadge.
+The info badge is built into the XAML [navigation view](navigationview.md), but can also be placed as a standalone element in the XAML tree, allowing you to place an info badge into any control or piece of UI of your choosing. When you use an info badge somewhere other than navigation view, you are responsible for programmatically determining when to show and dismiss the info badge, and where to place the info badge.
 
 :::image type="content" source="images/infobadge/infobadge-example-1.png" alt-text="Example of an InfoBadge in NavigationView":::
 
-**Get the Windows UI Library**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      The **InfoBadge** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-   :::column-end:::
-:::row-end:::
-
-> **Windows UI Library APIs:** [InfoBadge class](/uwp/api/microsoft.ui.xaml.controls.infobadge)
-
-> [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
->
->In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
-
 ## Is this the right control?
 
-An [InfoBadge](/uwp/api/microsoft.ui.xaml.controls.infobadge) should be used when you want to bring the user's focus to a certain area of your app in an unintrusive way. When an InfoBadge appears, it is meant to bring focus to an area and then let the user get back into their flow, giving them the choice of whether or not to look into the details of why the InfoBadge appeared. InfoBadges should only represent messages that are dismissible and non-permanent – an InfoBadge should have specific rules as to when it can appear, disappear, and change.
+An info badge should be used when you want to bring the user's focus to a certain area of your app in an unintrusive way. When an info badge appears, it is meant to bring focus to an area and then let the user get back into their flow, giving them the choice of whether or not to look into the details of why the info badge appeared. Info badges should only represent messages that are dismissible and non-permanent – an info badge should have specific rules as to when it can appear, disappear, and change.
 
-Examples of appropriate InfoBadge usage:
+Examples of appropriate info badge usage:
 
 - To indicate new messages have arrived.
 - To indicate new articles are available to read.
@@ -53,89 +34,185 @@ Examples of appropriate InfoBadge usage:
 
 ### When should a different control be used?
 
-An [InfoBadge](/uwp/api/microsoft.ui.xaml.controls.infobadge) should not be used to display critical errors or convey highly important messages that need immediate action. InfoBadges should not be used in cases where they need to be interacted with immediately to continue using the app.
+An info badge should not be used to display critical errors or convey highly important messages that need immediate action. Info badges should not be used in cases where they need to be interacted with immediately to continue using the app.
 
-Examples of inappropriate InfoBadge usage:
+Examples of inappropriate info badge usage:
 
-- To indicate an urgent matter on a page within the app that needs to be addressed before continuing to use the app. For this scenario, use a [ContentDialog](dialogs-and-flyouts/dialogs.md).
-- Appearing in an app with no way for the user to dismiss the InfoBadge. For a persistent alert like this, use the [InfoBar control](infobar.md).
-- Using the InfoBadge as a permanent way of bringing the user's focus to an area, without a way for the user to dismiss the InfoBadge.
-- Using an InfoBadge as a regular icon or image in your app. Instead, use an appropriate [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource) or [Image](images-imagebrushes.md).
+- To indicate an urgent matter on a page within the app that needs to be addressed before continuing to use the app. For this scenario, use a [content dialog](dialogs-and-flyouts/dialogs.md).
+- Appearing in an app with no way for the user to dismiss the info badge. For a persistent alert like this, use an [info bar](infobar.md).
+- Using the info badge as a permanent way of bringing the user's focus to an area, without a way for the user to dismiss the info badge.
+- Using an info badge as a regular icon or image in your app. Instead, use an appropriate [image](images-imagebrushes.md) or icon (see [IconElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement) and [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource)).
 
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/InfoBadge">open the app and see the InfoBadge in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+## Types of info badges
 
-## Types of InfoBadges
-
-There are three styles of [InfoBadge](/uwp/api/microsoft.ui.xaml.controls.infobadge) that you can choose from - _dot_, _icon_, and _numeric_, as shown in order below.
+There are three styles of info badge that you can choose from - _dot_, _icon_, and _numeric_, as shown in order below.
 
 :::image type="content" source="images/infobadge/infobadge-types.png" alt-text="Dot, icon, and numeric InfoBadges":::
 
-### Dot InfoBadge
+### Dot info badge
 
-The dot InfoBadge is a simple ellipse with a diameter of 4px. It has no border, and is not meant to hold text or anything else inside of it.
+The dot info badge is a simple ellipse with a diameter of 4px. It has no border, and is not meant to hold text or anything else inside of it.
 
-You should use the dot InfoBadge for general scenarios in which you want to guide the user's focus towards the InfoBadge – for example, to indicate new content or updates are available.
+You should use the dot info badge for general scenarios in which you want to guide the user's focus towards the info badge – for example, to indicate new content or updates are available.
 
-### Icon InfoBadge
+### Icon info badge
 
-The icon InfoBadge is an ellipse with a diameter of 16px that holds an icon inside of it. InfoBadge has an [IconSource](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.iconsource) property that provides flexibility for the types of supported icons.
+The icon info badge is an ellipse with a diameter of 16px that holds an icon inside of it. The info badge has an [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.iconsource) property that provides flexibility for the types of supported icons.
 
-You should use the icon InfoBadge to send a quick message along with getting the user's attention – for example, to alert the user that something non-blocking has gone wrong, an extra important update is available, or that something specific in the app is currently enabled (such as a countdown timer going).
+You should use the icon info badge to send a quick message along with getting the user's attention – for example, to alert the user that something non-blocking has gone wrong, an extra important update is available, or that something specific in the app is currently enabled (such as a countdown timer going).
 
-If you'd like to use a [BitmapIconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapiconsource) for the `IconSource` of your InfoBadge, you are responsible for ensuring that the bitmap fits inside of the InfoBadge (either by changing the size of the icon, or changing the size of the InfoBadge).
+If you'd like to use a [BitmapIconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapiconsource) for the `IconSource` of your info badge, you are responsible for ensuring that the bitmap fits inside of the info badge (either by changing the size of the icon, or changing the size of the info badge).
 
-### Numeric InfoBadge
+### Numeric info badge
 
-The numeric InfoBadge is the same shape and size as the icon InfoBadge, but it  holds a number inside of it, determined by the [Value](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.value) property. Numbers must be whole integers and must be greater than or equal to zero. The width of the InfoBadge will automatically expand as the number being displayed grows to multiple digits, with a smooth animation.
+The numeric info badge is the same shape and size as the icon info badge, but it  holds a number inside of it, determined by the [Value](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.value) property. Numbers must be whole integers and must be greater than or equal to zero. The width of the info badge will automatically expand as the number being displayed grows to multiple digits, with a smooth animation.
 
-You should use the numeric InfoBadge to show that there are a specific number of items that need attention – for example, new emails or messages.
+You should use the numeric info badge to show that there are a specific number of items that need attention – for example, new emails or messages.
 
-### Create an InfoBadge
+## Preset info badge styles
 
-The kind of InfoBadge you create is determined by which properties you set.
+To help support the most common scenarios in which info badges are used, the control includes built-in preset info badge styles. While you can customize your info badge to use any color/icon/number combination that you want, these built-in presets are a quick option to make sure that your info badge is compliant with accessibility guidelines and is proportional in terms of icon and number sizing.
 
-#### Dot
+The following style presets are available for info badges:
+
+#### Attention
+
+- `AttentionDotInfoBadgeStyle`
+- `AttentionIconInfoBadgeStyle`
+- `AttentionValueInfoBadgeStyle`
+
+:::image type="content" source="images/infobadge/attention-badges.png" alt-text="Attention InfoBadge styles":::
+
+#### Informational
+
+- `InformationalDotInfoBadgeStyle`
+- `InformationalIconInfoBadgeStyle`
+- `InformationalValueInfoBadgeStyle`
+
+:::image type="content" source="images/infobadge/informational-badges.png" alt-text="Informational InfoBadge styles":::
+
+#### Success
+
+- `SuccessDotInfoBadgeStyle`
+- `SuccessIconInfoBadgeStyle`
+- `SuccessValueInfoBadgeStyle`
+
+:::image type="content" source="images/infobadge/success-badges.png" alt-text="Success InfoBadge styles":::
+
+#### Caution
+
+- `CautionDotInfoBadgeStyle`
+- `CautionIconInfoBadgeStyle`
+- `CautionValueInfoBadgeStyle`
+
+:::image type="content" source="images/infobadge/caution-badges.png" alt-text="Caution InfoBadge styles":::
+
+#### Critical
+
+- `CriticalDotInfoBadgeStyle`
+- `CriticalIconInfoBadgeStyle`
+- `CriticalValueInfoBadgeStyle`
+
+:::image type="content" source="images/infobadge/critical-badges.png" alt-text="Critical InfoBadge styles":::
+
+If a style is set on an info badge and a conflicting property is also set, the property will overwrite the conflicting part of the style, but non-conflicting style elements will stay applied.
+
+For example, if you apply the `CriticalIconInfoBadgeStyle` to an info badge, but also set `InfoBadge.Value = "1"`, you would end up with an info badge that has the "Critical" background color but displays the number 1 inside of it, rather than displaying the preset icon.
+
+This example creates an info badge that takes on the color and icon of the _Attention Icon_ preset style.
+
+```xaml
+<InfoBadge Style="{ThemeResource AttentionIconInfoBadgeStyle}"/>
+```
+
+:::image type="content" source="images/infobadge/attention-icon-style.png" alt-text="Blue InfoBadge with an asterisk symbol":::
+
+## Accessibility
+
+The info badge control does not have any screen reader functionality or user interface automation (UIA) built-in to it on its own, as the control is not focusable and cannot be interacted with.
+
+If you're using an info badge inside of a navigation view, the navigation view provides built-in screen reader and assistive technology support. When you're tabbing through a navigation view and you land on a navigation view item with an info badge on it, the screen reader will announce that there is an info badge on this item. If the info badge in question is numeric, the screen reader will announce the info badge's value as well.
+
+If you are using an info badge outside of a navigation view, we recommend the following to ensure your app is fully accessible:
+
+- The parent element of the info badge should be focusable and accessible by tab.
+- The parent element announces the info badge to screen readers.
+- The app sends a UIA notification when the info badge appears for the first time.
+- The app sends a UIA notification when an info badge disappears from the UI.
+- The app sends a UIA notification when a significant change has occurred with an existing info badge.
+  - The definition of "significant change" is up to you as the individual developer. Examples of this can include: an info badge switching between different types, an info badge changing color to represent its status, or an info badge's value exceeding a certain significant number.
+
+To control what the parent element announces to screen readers, you can use attached properties of the [AutomationProperties](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties) class. For an info badge, it's recommended that you set either the `AutomationProperties.FullDescription` or `AutomationProperties.ItemStatus` attached properties on the parent element.
+
+To send UIA notifications upon the info badge's appearance or dismissal, you can use the [AutomationPeer.RaiseAutomationEvent](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer.raiseautomationevent) method.
+
+The info badge comes at a default size that meets accessibility requirements. You can customize many aspects of the info badge including its height/width/color, etc., but it's important that the default info badge adheres to our accessibility guidelines for size and color.
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The InfoBadge for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI 2 Apis:** [InfoBadge class](/windows/winui/api/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.value)
+> - [Open the WinUI 2 Gallery app and see InfoBadge in action](winui2gallery:/item/InfoBadge). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:InfoBadge/>
+```
+
+## Create an InfoBadge
+
+> [!IMPORTANT]
+> Some information relates to prerelease product that may be substantially modified before it’s released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
+
+> [!div class="checklist"]
+>
+> - **Important APIs:** [InfoBadge class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.value)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the InfoBadge in action](winui3gallery:/item/InfoBadge).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+You can create an [InfoBadge](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) in XAML or in code. The kind of InfoBadge you create is determined by which properties you set.
+
+### Dot
 
 To create a dot InfoBadge, use a default InfoBadge control with no properties set.
 
 ```xaml
-<muxc:InfoBadge />
+<InfoBadge />
 ```
 
 :::image type="content" source="images/infobadge/dot-infobadge.png" alt-text="Dot InfoBadge":::
 
-#### Icon
+### Icon
 
-To create an icon InfoBadge, set the [IconSource](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.iconsource) property.
+To create an icon InfoBadge, set the [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.iconsource) property.
 
 ```xaml
-<muxc:InfoBadge x:Name="SyncStatusInfoBadge">
-    <muxc:InfoBadge.IconSource>
-        <muxc:SymbolIconSource Symbol="Sync"/>
-    </muxc:InfoBadge.IconSource>
-</muxc:InfoBadge>
+<InfoBadge x:Name="SyncStatusInfoBadge">
+    <InfoBadge.IconSource>
+        <SymbolIconSource Symbol="Sync"/>
+    </InfoBadge.IconSource>
+</InfoBadge>
 ```
 
 :::image type="content" source="images/infobadge/icon-infobadge.png" alt-text="Icon InfoBadge":::
 
-#### Numeric
+### Numeric
 
-To create a numeric InfoBadge, set the [Value](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.value) property.
+To create a numeric InfoBadge, set the [Value](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.value) property.
 
 ```xaml
-<muxc:InfoBadge x:Name="EmailInfoBadge" Value="{x:Bind numUnreadMail}"/>
+<InfoBadge x:Name="EmailInfoBadge" Value="{x:Bind numUnreadMail}"/>
 ```
 
 :::image type="content" source="images/infobadge/numeric-infobadge.png" alt-text="Numeric InfoBadge":::
@@ -144,54 +221,6 @@ In most scenarios, you'll bind the `Value` property of the InfoBadge to a changi
 
 > [!NOTE]
 > If both the `Icon` and `Value` properties are set, the `Value` property takes precedence and the InfoBadge appears as a numeric InfoBadge.
-
-## Preset InfoBadge styles
-
-To help support the most common scenarios in which InfoBadges are used, WinUI provides built-in preset InfoBadge styles. While you can customize your InfoBadge to use any color/icon/number combination that you want, these built-in presets are a quick option to make sure that your InfoBadge is compliant with accessibility guidelines and is proportional in terms of icon and number sizing.
-
-The following style presets are available for InfoBadge:
-
-- `AttentionDotInfoBadgeStyle`
-- `AttentionIconInfoBadgeStyle`
-- `AttentionValueInfoBadgeStyle`
-
-:::image type="content" source="images/infobadge/attention-badges.png" alt-text="Attention InfoBadge styles":::
-
-- `InformationalDotInfoBadgeStyle`
-- `InformationalIconInfoBadgeStyle`
-- `InformationalValueInfoBadgeStyle`
-
-:::image type="content" source="images/infobadge/informational-badges.png" alt-text="Informational InfoBadge styles":::
-
-- `SuccessDotInfoBadgeStyle`
-- `SuccessIconInfoBadgeStyle`
-- `SuccessValueInfoBadgeStyle`
-
-:::image type="content" source="images/infobadge/success-badges.png" alt-text="Success InfoBadge styles":::
-
-- `CautionDotInfoBadgeStyle`
-- `CautionIconInfoBadgeStyle`
-- `CautionValueInfoBadgeStyle`
-
-:::image type="content" source="images/infobadge/caution-badges.png" alt-text="Caution InfoBadge styles":::
-
-- `CriticalDotInfoBadgeStyle`
-- `CriticalIconInfoBadgeStyle`
-- `CriticalValueInfoBadgeStyle`
-
-:::image type="content" source="images/infobadge/critical-badges.png" alt-text="Critical InfoBadge styles":::
-
-If a style is set on an InfoBadge and a conflicting property is also set, the property will overwrite the conflicting part of the style, but non-conflicting style elements will stay applied.
-
-For example, if you apply the `CriticalIconInfoBadgeStyle` to an InfoBadge, but also set `InfoBadge.Value = "1"`, you would end up with an InfoBadge that has the "Critical" background color but displays the number 1 inside of it, rather than displaying the preset icon.
-
-This example creates an InfoBadge that takes on the color and icon of the _Attention Icon_ preset style.
-
-```xaml
-<muxc:InfoBadge Style="{ThemeResource AttentionIconInfoBadgeStyle}"/>
-```
-
-:::image type="content" source="images/infobadge/attention-icon-style.png" alt-text="Blue InfoBadge with an asterisk symbol":::
 
 ## Using an InfoBadge in NavigationView
 
@@ -216,34 +245,35 @@ We recommend that you not use different types of InfoBadges in one NavigationVie
 This example simulates how an email app could use an InfoBadge in a NavigationView to display the number of new emails in the inbox, and increment the number shown in the InfoBadge when a new message is received.
 
 ```xaml
-<muxc:NavigationView SelectionChanged="NavigationView_SelectionChanged">
-    <muxc:NavigationView.MenuItems>
-        <muxc:NavigationViewItem Content="Home" Icon="Home"/>
-        <muxc:NavigationViewItem Content="Account" Icon="Contact"/>
-        <muxc:NavigationViewItem x:Name="InboxPage" Content="Inbox" Icon="Mail">
-            <muxc:NavigationViewItem.InfoBadge>
-                <muxc:InfoBadge x:Name="bg1"
+<NavigationView SelectionChanged="NavigationView_SelectionChanged">
+    <NavigationView.MenuItems>
+        <NavigationViewItem Content="Home" Icon="Home"/>
+        <NavigationViewItem Content="Account" Icon="Contact"/>
+        <NavigationViewItem x:Name="InboxPage" Content="Inbox" Icon="Mail">
+            <NavigationViewItem.InfoBadge>
+                <InfoBadge x:Name="bg1"
                                 Value="{x:Bind mailBox.NewMailCount, Mode=OneWay}"
                                 Visibility="{x:Bind mailBox.HasNewMail, Mode=OneWay}"/>
-            </muxc:NavigationViewItem.InfoBadge>
-        </muxc:NavigationViewItem>
-    </muxc:NavigationView.MenuItems>
+            </NavigationViewItem.InfoBadge>
+        </NavigationViewItem>
+    </NavigationView.MenuItems>
     <Frame x:Name="contentFrame" />
-</muxc:NavigationView>
+</NavigationView>
 ```
 
 ```csharp
-public sealed partial class MainPage : Page
+public sealed partial class MainWindow : Window
 {
-    public MainPage()
-    {
-        this.InitializeComponent();
-    }
-
     MailBox mailBox = new MailBox();
 
-    private void NavigationView_SelectionChanged(muxc.NavigationView sender, 
-                               muxc.NavigationViewSelectionChangedEventArgs args)
+    public MainWindow()
+    {
+        this.InitializeComponent();
+
+    }
+
+    private void NavigationView_SelectionChanged(NavigationView sender,
+                               NavigationViewSelectionChangedEventArgs args)
     {
         if (args.SelectedItem == InboxPage)
         {
@@ -258,14 +288,14 @@ public sealed partial class MainPage : Page
 
 public class MailBox : DependencyObject
 {
-    System.Timers.Timer timer = new System.Timers.Timer();
+    DispatcherQueueTimer timer;
 
     // Dependency Properties for binding.
     public int NewMailCount
-        {
-            get { return (int)GetValue(NewMailCountProperty); }
-            set { SetValue(NewMailCountProperty, value); }
-        }
+    {
+        get { return (int)GetValue(NewMailCountProperty); }
+        set { SetValue(NewMailCountProperty, value); }
+    }
     public static readonly DependencyProperty NewMailCountProperty =
         DependencyProperty.Register("NewMailCount", typeof(int), typeof(MailBox), new PropertyMetadata(0));
 
@@ -279,13 +309,13 @@ public class MailBox : DependencyObject
 
     public MailBox()
     {
-        timer.Interval = 1500;
-        timer.Elapsed += async (s, e) =>
-            await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-            {
-                NewMailCount++;
-                if (HasNewMail == false) { HasNewMail = true; }
-            });
+        timer = this.DispatcherQueue.CreateTimer();
+        timer.Interval = new TimeSpan(15000000);
+        timer.Tick += (s, e) =>
+        {
+            NewMailCount++;
+            if (HasNewMail == false) { HasNewMail = true; }
+        };
         timer.Start();
     }
 
@@ -334,15 +364,15 @@ Here's a Button that has an InfoBadge placed in its upper right hand corner, wit
         HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
     <Grid>
         <SymbolIcon Symbol="Sync"/>
-        <muxc:InfoBadge x:Name="buttonInfoBadge"
+        <InfoBadge x:Name="buttonInfoBadge"
                         Background="#C42B1C"
                         HorizontalAlignment="Right" 
                         VerticalAlignment="Top"
                         Width="16" Height="16">
-            <muxc:InfoBadge.IconSource>
-                <muxc:FontIconSource Glyph="&#xEA6A;"/>
-            </muxc:InfoBadge.IconSource>
-        </muxc:InfoBadge>
+            <InfoBadge.IconSource>
+                <FontIconSource Glyph="&#xEA6A;"/>
+            </InfoBadge.IconSource>
+        </InfoBadge>
     </Grid>
 </Button>
 ```
@@ -372,27 +402,6 @@ If neither `InfoBadge.Value` nor `InfoBadge.IconSource` are set, the InfoBadge d
 You can also change the InfoBadge's type while it is being shown. To change the type of InfoBadge, be sure that the current type's corresponding property (`Value` or `IconSource`) is set to its default value (`-1` or `null`), and set the new type's property equal to an appropriate value. To change the type of InfoBadge from numeric or icon to a dot type InfoBadge, make sure that `InfoBadge.Value` is set to `-1` and `InfoBadge.IconSource` is set to `null`.
 
 Depending on how you've positioned your InfoBadge, be aware that this may cause items to shift as the size and shape of the InfoBadge may change.
-
-## Accessibility
-
-The InfoBadge control does not have any screenreader functionality or UI automation built in to it on its own, as the control is not focusable and cannot be interacted with.
-
-If you're using an InfoBadge inside of a NavigationView, the NavigationView provides built-in screenreader and assistive technology support. When you're tabbing through a NavigationView and you land on a NavigationViewItem with an InfoBadge on it, the screenreader will announce that there is an InfoBadge on this item. If the InfoBadge in question is numeric, the screenreader will announce the InfoBadge's value as well.
-
-If you are using InfoBadge outside of a NavigationView, we recommend the following to ensure your app is fully accessible:
-
-- The parent element of the InfoBadge should be focusable and accessible by tab.
-- The parent element announces the InfoBadge to screenreaders.
-- The app sends a UIA notification when the InfoBadge appears for the first time.
-- The app sends a UIA notification when an InfoBadge disappears from the UI.
-- The app sends a UIA notification when a significant change has occurred with an existing InfoBadge.
-  - The definition of "significant change" is up to you as the individual developer. Examples of this can include: an InfoBadge switching between different types, an InfoBadge changing color to represent its status, or an InfoBadge's value exceeding a certain significant number.
-
-To control what the parent element announces to screenreaders, you can use attached properties of the [AutomationProperties](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties) class. For InfoBadge, it's recommended that you set either the `AutomationProperties.FullDescription` or `AutomationProperties.ItemStatus` attached properties on the parent element.
-
-To send UIA notifications upon the InfoBadge's appearance or dismissal, you can use the [AutomationPeer.RaiseAutomationEvent](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer.raiseautomationevent) method.
-
-The InfoBadge comes at a default size that meets accessibility requirements. Developers can customize many aspects of the InfoBadge including its height/width/color, etc. but it's important that the default InfoBadge adheres to our accessibility guidelines for size and color.
 
 ## Related articles
 

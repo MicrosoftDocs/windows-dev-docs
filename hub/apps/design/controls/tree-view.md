@@ -43,7 +43,7 @@ The **TreeView** APIs support the following features:
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The TreeView for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+The TreeView for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
 
 > [!div class="checklist"]
 >
@@ -51,7 +51,7 @@ The TreeView for UWP apps is included as part of the Windows UI Library 2. For m
 > - **WinUI 2 Apis:** [TreeView class](/windows/winui/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource)
 > - [Open the WinUI 2 Gallery app and see the TreeView in action](winui2gallery:/item/TreeView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles, templates, and features for all controls.
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 

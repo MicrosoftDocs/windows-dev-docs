@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Distribute your packaged desktop app
 
-If you decide to [package your desktop app in an MSIX package](/windows/msix/desktop/desktop-to-uwp-root), you can publish your packaged application to the Microsoft Store or sideload it onto one or more devices.
+If you decide to package your desktop app in an MSIX package (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)), you can publish your packaged application to the Microsoft Store or sideload it on to one or more devices.
 
 > [!NOTE]
 > Do you have a plan for how you might transition users to your packaged application? Before you distribute your app, see the [Transition users to your packaged app](#transition-users) section of this guide to get some ideas.

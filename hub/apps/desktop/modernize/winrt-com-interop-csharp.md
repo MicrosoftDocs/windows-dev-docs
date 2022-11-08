@@ -14,15 +14,15 @@ This topic lists the available C# interop classes, and shows how to use them. Th
 
 ## Configure a .NET desktop project to use the C# interop classes
 
-The C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)) are available in .NET either as part of the [Windows App SDK](/windows/apps/windows-app-sdk/), or else by using a particular [Target Framework Moniker](desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option), as we'll see.
+The C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)) are available in .NET either as part of the [Windows App SDK](../../windows-app-sdk/index.md), or else by using a particular [Target Framework Moniker](desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option), as we'll see.
 
 ### In a WinUI 3 C# desktop project
 
-When you create a new WinUI 3 project in Visual Studio (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)), your project is already configured, and you can start using all of the C# interop classes right away.
+When you create a new WinUI 3 project in Visual Studio (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)), your project is already configured, and you can start using all of the C# interop classes right away.
 
 ### In other C# desktop project types (WPF or WinForms)
 
-For other .NET desktop project types&mdash;such as [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) or [Windows Forms (WinForms)](/dotnet/desktop/winforms/)&mdash;you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the [Windows App SDK](/windows/apps/windows-app-sdk/). For the second set, you'll need to configure a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later, like this:
+For other .NET desktop project types&mdash;such as [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) or [Windows Forms (WinForms)](/dotnet/desktop/winforms/)&mdash;you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the [Windows App SDK](../../windows-app-sdk/index.md). For the second set, you'll need to configure a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later, like this:
 
 1. Open the project file for your C# .NET desktop project.
 
@@ -45,16 +45,16 @@ Here are the available C# interop classes, mapped from their underlying interop 
 
 ### Available as part of the Windows App SDK
 
-The [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class implements the C# interop methods in the table below. For a code example, see [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview#code-example).
+The [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md) class implements the C# interop methods in the table below. For a code example, see [Manage app windows](../../windows-app-sdk/windowing/windowing-overview.md#code-example).
 
 |Interop function|C# interop method|
 |-|-|
-|[**GetDisplayIdFromMonitor**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getdisplayidfrommonitor)|(**Microsoft.UI**) DisplayId [**Win32Interop.GetDisplayIdFromMonitor**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor)(IntPtr hmonitor)|
-|[**GetIconFromIconId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonfromiconid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetIconFromIconId**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid)(IconId iconId)|
-|[**GetIconIdFromIcon**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon)|(**Microsoft.UI**) IconId [**Win32Interop.GetIconIdFromIcon**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon)(IntPtr hicon)|
-|[**GetMonitorFromDisplayId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getmonitorfromdisplayid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetMonitorFromDisplayId**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid)(DisplayId displayId)|
-|[**GetWindowFromWindowId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetWindowFromWindowId**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid)(WindowId windowId)|
-|[**GetWindowIdFromWindow**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow)|(**Microsoft.UI**) WindowId [**Win32Interop.GetWindowIdFromWindow**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow)(IntPtr hwnd)|
+|[**GetDisplayIdFromMonitor**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getdisplayidfrommonitor)|(**Microsoft.UI**) DisplayId [**Win32Interop.GetDisplayIdFromMonitor**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.md)(IntPtr hmonitor)|
+|[**GetIconFromIconId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonfromiconid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetIconFromIconId**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.md)(IconId iconId)|
+|[**GetIconIdFromIcon**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon)|(**Microsoft.UI**) IconId [**Win32Interop.GetIconIdFromIcon**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.md)(IntPtr hicon)|
+|[**GetMonitorFromDisplayId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getmonitorfromdisplayid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetMonitorFromDisplayId**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.md)(DisplayId displayId)|
+|[**GetWindowFromWindowId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetWindowFromWindowId**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md)(WindowId windowId)|
+|[**GetWindowIdFromWindow**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow)|(**Microsoft.UI**) WindowId [**Win32Interop.GetWindowIdFromWindow**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md)(IntPtr hwnd)|
 
 ### Available via Target Framework Moniker
 
@@ -75,11 +75,11 @@ The [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/
 |[**IUIViewSettingsInterop**](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop)|(**Windows.UI.ViewManagement**) **UIViewSettingsInterop**|
 |[**IUserConsentVerifierInterop**](/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop)|(**Windows.Security.Credentials.UI**) **UserConsentVerifierInterop**|
 |[**IWebAuthenticationCoreManagerInterop**](/windows/win32/api/webauthenticationcoremanagerinterop/nn-webauthenticationcoremanagerinterop-iwebauthenticationcoremanagerinterop)|(**Windows.Security.Authentication.Web.Core**) **WebAuthenticationCoreManagerInterop**|
-|[**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative)|WinUI 3 only<br/><br/>(**WinRT.Interop**) **WindowNative**<br/><br/>For alternatives for WPF and WinForms, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).|
+|[**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative)|WinUI 3 only<br/><br/>(**WinRT.Interop**) **WindowNative**<br/><br/>For alternatives for WPF and WinForms, see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md).|
 
 ## Code example
 
-This code example demonstrates how to use two of the C# interop classes in a WinUI 3 application (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker in a desktop app, it's necessary to initialize it with the handle (HWND) of the owner window.
+This code example demonstrates how to use two of the C# interop classes in a WinUI 3 application (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker in a desktop app, it's necessary to initialize it with the handle (HWND) of the owner window.
 
 1. You can obtain a window handle (HWND) by using the [**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) WinRT COM interop interface. And (looking in the table in the previous section) that interface is represented by the **WinRT.Interop.WindowNative** C# interop class. Here, the `this` object is a reference to a [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object from the main window code-behind file.
 2. To initialize a piece of UI with an owner window, you use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) WinRT COM interop interface. And that interface is represented by the **WinRT.Interop.InitializeWithWindow** C# interop class.
@@ -102,7 +102,7 @@ private async void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Also see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
+Also see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../develop/ui-input/display-ui-objects.md).
 
 ## Background
 
@@ -120,7 +120,7 @@ There are currently no known issues for the C# interop classes. To provide feedb
 
 ## Related topics
 
-* [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
-* [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
-* [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
-* [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects)
+* [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)
+* [Manage app windows](../../windows-app-sdk/windowing/windowing-overview.md)
+* [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md)
+* [Display WinRT UI objects that depend on CoreWindow](../../develop/ui-input/display-ui-objects.md)

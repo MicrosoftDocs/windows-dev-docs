@@ -89,6 +89,10 @@ items:
         href: ../powertoys/fancyzones.md
       - name: File Explorer add-ons
         href: ../powertoys/file-explorer.md
+      - name: File Locksmith
+        href: ../powertoys/file-locksmith.md
+      - name: Hosts File Editor
+        href: ../powertoys/hosts-file-editor.md
       - name: Image Resizer
         href: ../powertoys/image-resizer.md
       - name: Keyboard Manager

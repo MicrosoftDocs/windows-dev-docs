@@ -1,15 +1,15 @@
 ---
 title: Package your app using single-project MSIX
-description: This article provides instructions for how to generate a MSIX desktop app via a single project in Visual Studio.
+description: This article provides instructions for how to generate an MSIX desktop app via a single project in Visual Studio.
 ms.topic: article
-ms.date: 10/05/2021
+ms.date: 11/02/2022
 keywords: windows, win32, desktop development, Windows App SDK, msix, packaging project, single project, single project msix, winui 3
 ms.localizationpriority: medium
 ---
 
 # Package your app using single-project MSIX
 
-Single-project MSIX is a feature that enables you to build MSIX-packaged desktop apps with the Windows App SDK without using a separate packaging project. This feature is currently available as a standalone Visual Studio extension that you can use for these scenarios:
+Single-project MSIX is a feature that enables you to build packaged desktop apps with the Windows App SDK without using a separate packaging project. This feature is currently available as a standalone Visual Studio extension that you can use for these scenarios:
 
 - Create new desktop projects using the **Blank App, Packaged (WinUI 3 in Desktop)** templates in the Windows App SDK. These projects are configured to build your app into an MSIX package without the use of a separate packaging project.
 - Modify existing desktop WinUI 3 projects created using the Windows App SDK so that the separate packaging project is no longer needed.
@@ -22,7 +22,7 @@ This section introduces some important details about the single-project MSIX fea
 
 ### Benefits
 
-Before the introduction of the single-project MSIX feature, you needed two projects in your solution to build an MSIX-packaged desktop app: your app project and a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). The single-project MSIX feature enables you to develop and build your app using just your app project. This provides a cleaner project structure and more straightforward development experience. For example, you no longer need to select the separate packaging project as your startup project.
+Before the introduction of the single-project MSIX feature, you needed two projects in your solution to build a packaged desktop app: your app project and a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). The single-project MSIX feature enables you to develop and build your app using just your app project. This provides a cleaner project structure and more straightforward development experience. For example, you no longer need to select the separate packaging project as your startup project.
 
 ### Supported project types
 
@@ -34,13 +34,15 @@ Single-project MSIX supports only a single executable in the generated MSIX pack
 
 ## Install the single-project MSIX packaging tools
 
-The single-project MSIX packaging tools, which include project templates that you can use to create new MSIX-packaged WinUI 3 apps, are included with the Windows App SDK extension for Visual Studio. For installation instructions for the SDK, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
+The single-project MSIX packaging tools include project templates that you can use to create new packaged WinUI 3 apps. These tools are included with the Windows App SDK extension for Visual Studio. For installation instructions for the SDK, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
-**Windows App SDK 0.8 and C# version of 1.0 Preview 3:** The single-project MSIX packaging tools are *not* included with the Windows App SDK extension for Visual Studio for Windows App SDK 0.8, or for C# projects with up to and including Preview 3 of the Windows App SDK 1.0. So if you're using those versions, then you'll need to explicitly install the single-project MSIX packaging tools by using the links below.
+**Windows App SDK 0.8 and C# version of 1.0 Preview 3:** The single-project MSIX packaging tools are *not* included with the Windows App SDK extension for Visual Studio for Windows App SDK 0.8, or for C# projects with up to and including Preview 3 of the Windows App SDK 1.0. So if you're using those versions, then you *might* need to explicitly install the single-project MSIX packaging tools. See the info below.
+
+  - **Visual Studio 2022 version 17.1 and later:** The Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension is built into Visual Studio 2022 version 17.1 and later.
+
+  - **Visual Studio 2022 prior to version 17.1:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17).
 
   - **Visual Studio 2019:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2019 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools). The extension requires Visual Studio 2019 version 16.10.x or later.
-
-  - **Visual Studio 2022:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17).
 
 ## Create a new project
 
@@ -67,7 +69,6 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 1. In **Solution Explorer**, double-click the project node for your application to open the **.csproj** file in the XML editor. Add the following XML to the main **\<PropertyGroup\>** element.
 
     ```xml
-    <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
     <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
     ```
 
@@ -80,7 +81,6 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
         <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
         ...
         <UseWinUI>true</UseWinUI>
-        <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
         <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
       </PropertyGroup>
     ```
@@ -135,9 +135,8 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 
 3. Make the following changes to the XML in the **.vcxproj** file:
 
-    1. Add `<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>` to the main `<PropertyGroup>` element.
-    2. Change the value of `<AppxPackage>` to `true`.
-    3. Change the value of the `<AppContainerApplication>` element to `true`.
+    1. Change the value of `<AppxPackage>` to `true`.
+    2. Change the value of the `<AppContainerApplication>` element to `true`.
 
     When you're done, the contents of the **.vcxproj** file should look similar to this.
 
@@ -154,7 +153,6 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
         <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
         <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
         <UseWinUI>true</UseWinUI>
-        <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
       </PropertyGroup>
     ```
 

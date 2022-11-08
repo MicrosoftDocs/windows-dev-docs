@@ -1,6 +1,6 @@
 ---
 description: Learn how to send a local toast notification from C# apps and handle the user clicking the toast.
-title: Send a local toast notification from C# apps
+title: Send a local toast notification from a C# app
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from C# apps
 template: detail.hbs
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows 10, uwp, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough, c#, csharp, win32, desktop
 ms.localizationpriority: medium
 ---
-# Send a local toast notification from C# apps
+
+# Send a local toast notification from a C# app
 
 [!INCLUDE [intro](includes/send-toast-intro.md)]
 
 > [!IMPORTANT]
 > If you're writing a C++ app, please see the [C++ UWP](send-local-toast-cpp-uwp.md) or [C++ WRL](send-local-toast-desktop-cpp-wrl.md) documentation.
-
 
 ## Step 1: Install NuGet package
 
@@ -24,7 +24,6 @@ ms.localizationpriority: medium
 [!INCLUDE [nuget package .NET warnings](includes/nuget-package-dotnet-warnings.md)]
 
 Our code sample will use this package. This package allows you to create toast notifications without using XML, and also allows desktop apps to send toasts.
-
 
 ## Step 2: Send a toast
 
@@ -42,13 +41,11 @@ new ToastContentBuilder()
 
 Try running this code and you should see the notification appear!
 
-
 ## Step 3: Handling activation
 
 After showing a notification, you likely need to handle the user clicking the notification (whether that means bringing up specific content after the user clicks it, opening your app in general, or performing an action when the user clicks the notification).
 
-The steps for handling activation differ for UWP, Desktop (MSIX), and Desktop (unpackaged) apps.
-
+The steps for handling activation differ for UWP, and for packaged and unpackaged desktop apps.
 
 #### [UWP](#tab/uwp)
 
@@ -124,9 +121,7 @@ Then, **in your app's startup code** (App.xaml.cs OnStartup for WPF), subscribe 
 
 [!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-code.md)]
 
-
 [!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-sequence.md)]
-
 
 #### [Desktop (unpackaged)](#tab/desktop)
 
@@ -137,7 +132,6 @@ Then, **in your app's startup code** (App.xaml.cs OnStartup for WPF), subscribe 
 [!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-code.md)]
 
 ---
-
 
 ## Step 4: Handling uninstallation
 
@@ -157,7 +151,6 @@ The uninstall method will clean up any scheduled and current notifications, remo
 
 ---
 
-
 ## Adding images
 
 You can add rich content to notifications. We'll add an inline image and a profile (app logo override) image.
@@ -165,7 +158,7 @@ You can add rich content to notifications. We'll add an inline image and a profi
 [!INCLUDE [images note](includes/images-note.md)]
 
 > [!IMPORTANT]
-> Http images are only supported in UWP/MSIX/sparse apps that have the internet capability in their manifest. desktop non-MSIX/sparse apps do not support http images; you must download the image to your local app data and reference it locally.
+> Http images are supported only in packaged apps that have the internet capability in their manifest. Unpackaged apps don't support http images; you must download the image to your local app data, and reference it locally.
 
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
 
@@ -182,8 +175,6 @@ new ToastContentBuilder()
     
     .Show();
 ```
-
-
 
 ## Adding buttons and inputs
 
@@ -225,8 +216,6 @@ The activation of foreground buttons are handled in the same way as the main toa
 
 Note that arguments added to the top-level toast (like conversation ID) will also be returned when the buttons are clicked, as long as buttons use the AddArgument API as seen above (if you custom assign arguments on a button, the top-level arguments won't be included).
 
-
-
 ## Handling background activation
 
 #### [UWP](#tab/uwp)
@@ -235,7 +224,7 @@ When you specify background activation on your toast (or on a button inside the 
 
 For more information on background tasks, please see [Support your app with background tasks](/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
-If you are targeting build 14393 or higher, you can use in-process background tasks, which greatly simplify things. Note that in-process background tasks will fail to run on older versions of Windows. We'll use an in-process background task in this code sample.
+If you are targeting build 14393 or later, you can use in-process background tasks, which greatly simplify things. Note that in-process background tasks will fail to run on older versions of Windows. We'll use an in-process background task in this code sample.
 
 ```csharp
 const string taskName = "ToastBackgroundTask";
@@ -259,7 +248,6 @@ builder.SetTrigger(new ToastNotificationActionTrigger());
 // And register the task
 BackgroundTaskRegistration registration = builder.Register();
 ```
-
 
 Then in your App.xaml.cs, override the OnBackgroundActivated method. You can then retrieve the pre-defined arguments and user input, similar to the foreground activation.
 
@@ -294,7 +282,6 @@ For desktop applications, background activations are handled the same as foregro
 
 ---
 
-
 ## Set an expiration time
 
 In Windows 10, all toast notifications go in Action Center after they are dismissed or ignored by the user, so users can look at your notification after the popup is gone.
@@ -313,7 +300,6 @@ new ToastContentBuilder()
         toast.ExpirationTime = DateTime.Now.AddDays(2);
     });
 ```
-
 
 ## Provide a primary key for your toast
 
@@ -334,8 +320,6 @@ new ToastContentBuilder()
     });
 ```
 
-
-
 ## Clear your notifications
 
 Apps are responsible for removing and clearing their own notifications. When your app is launched, we do NOT automatically clear your notifications.
@@ -354,8 +338,6 @@ To learn about clearing all notifications or removing specific notifications, se
 ```csharp
 ToastNotificationManagerCompat.History.Clear();
 ```
-
-
 
 ## Resources
 

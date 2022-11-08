@@ -15,7 +15,7 @@ Chaseable tile notifications let you determine which tile notifications your app
 For example, a news app could use this feature to determine which news story the its Live Tile was displaying when the user launched it; it could that ensure that the story is prominently displayed so that the user can find it. 
 
 > [!IMPORTANT]
-> **Requires Anniversary Update**: To use chaseable tile notifications with C#, C++, or VB-based UWP apps, you must target SDK 14393 and be running build 14393 or higher. For JavaScript-based UWP apps, you must target SDK 17134 and be running build 17134 or higher. 
+> **Requires Anniversary Update**: To use chaseable tile notifications with C#, C++, or VB-based UWP apps, you must target SDK 14393 and be running build 14393 or later. For JavaScript-based UWP apps, you must target SDK 17134 and be running build 17134 or later. 
 
 
 > **Important APIs**: [LaunchActivatedEventArgs.TileActivatedInfo property](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
@@ -136,10 +136,10 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ### Accessing OnLaunched from desktop applications
 
-Desktop apps (like WPF, etc) using the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), can use chaseable tiles too! The only difference is accessing the OnLaunched arguments. Note that you first must [package your app with the Desktop Bridge](/windows/msix/desktop/source-code-overview).
+Desktop apps (like WPF, etc) using the [Desktop Bridge](/windows/msix/desktop/source-code-overview), can use chaseable tiles too! The only difference is accessing the OnLaunched arguments. Note that you first must [package your app with the Desktop Bridge](/windows/msix/desktop/source-code-overview).
 
 > [!IMPORTANT]
-> **Requires October 2018 Update**: To use the `AppInstance.GetActivatedEventArgs()` API, you must target SDK 17763 and be running build 17763 or higher.
+> **Requires October 2018 Update**: To use the `AppInstance.GetActivatedEventArgs()` API, you must target SDK 17763 and be running build 17763 or later.
 
 For desktop applications, to access the launch arguments, do the following...
 
@@ -150,7 +150,7 @@ static void Main()
     Application.EnableVisualStyles();
     Application.SetCompatibleTextRenderingDefault(false);
 
-    // API only available on build 17763 or higher
+    // API only available on build 17763 or later
     var args = AppInstance.GetActivatedEventArgs();
     switch (args.Kind)
     {

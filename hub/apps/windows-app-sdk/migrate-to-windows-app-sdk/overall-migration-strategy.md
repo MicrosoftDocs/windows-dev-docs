@@ -22,12 +22,12 @@ Most [Windows Runtime (WinRT)](/uwp/api/) APIs can be used by Windows App SDK ap
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
 * APIs that require package identity. These APIs are supported only in desktop apps that are packaged using MSIX.
 
-For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in the [Windows UI Library (WinUI)](/windows/apps/winui/), or via WinRT COM interfaces that are available in the Windows App SDK.
+For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in the [Windows UI Library (WinUI)](../../winui/index.md), or via WinRT COM interfaces that are available in the Windows App SDK.
 
 For example, we'll see certain UI scenarios where you'll need to track your main window object, and use various **HWND**-based APIs and interoperation patterns, such as [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
 > [!NOTE]
-> Also see [Windows Runtime APIs not supported in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-supported-api). Windows App SDK apps are *one* kind of desktop app. Other kinds of desktop app include .NET desktop apps, and C/C++ Win32 desktop apps. The audience of that topic is developers wishing to migrate to anything in the union of those different kinds of desktop app, including (but not limited to) Windows App SDK apps.
+> Also see [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md). Windows App SDK apps are *one* kind of desktop app. Other kinds of desktop app include .NET desktop apps, and C/C++ Win32 desktop apps. The audience of that topic is developers wishing to migrate to anything in the union of those different kinds of desktop app, including (but not limited to) Windows App SDK apps.
 
 We'd love to hear your feeback about this migration guide, and about your own migration experience. Use the **Feedback** section right at the foot of this page like this:
 * For questions and feedback about the Windows App SDK, or just to start a discussion, use the **This product** button. You can also start a discussion on the [Discussions tab](https://github.com/microsoft/WindowsAppSDK/discussions) of the **WindowsAppSDK** GitHub repo. Using those channels, you could also tell us what problem you're trying to solve, how you've tried to solve it so far, and what would be the ideal solution for your app.
@@ -35,13 +35,13 @@ We'd love to hear your feeback about this migration guide, and about your own mi
 
 ## Why migrate to the Windows App SDK?
 
-The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI 3)](/windows/apps/winui/#windows-ui-3-library), which is developed and designed to delight your users.
+The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI 3)](../../winui/index.md), which is developed and designed to delight your users.
 
 In addition, the Windows App SDK is backward compatible; it supports apps down to Windows 10, version 1809 (10.0; Build 17763)&mdash;also known as the Windows 10 October 2018 Update.
 
 The value proposition of moving the Windows App SDK is manifold. Here are some considerations:
 
-* Latest user interface (UI) platform and controls such as [Windows UI Library (WinUI)](/windows/apps/winui/) 3 and [WebView2](/microsoft-edge/webview2/).
+* Latest user interface (UI) platform and controls such as [Windows UI Library (WinUI)](../../winui/index.md) 3 and [WebView2](/microsoft-edge/webview2/).
 * A single API surface across desktop app platforms.
 * More frequent release cadence that releases separately from Windows.
 * A consistent experience across Windows versions.
@@ -49,7 +49,7 @@ The value proposition of moving the Windows App SDK is manifold. Here are some c
 * Backward-compatible down to Windows 10, version 1809.
 * Improved runtime environment. See [MSIX container](/windows/msix/msix-container).
 
-For more info, see [Windows App SDK](/windows/apps/windows-app-sdk/).
+For more info, see [Windows App SDK](../index.md).
 
 ## Overview of the migration process
 
@@ -58,11 +58,11 @@ For more info, see [Windows App SDK](/windows/apps/windows-app-sdk/).
 
 ## Install the Windows App SDK VSIX
 
-Download the Windows App SDK Visual Studio extension (VSIX) installer from [Stable release channel for the Windows App SDK](/windows/apps/windows-app-sdk/stable-channel), and run to install it.
+Download the Windows App SDK Visual Studio extension (VSIX) installer from [Stable release channel for the Windows App SDK](../stable-channel.md), and run to install it.
 
 ## Create a new project
 
-In Visual Studio, [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app). For example, use the **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
+In Visual Studio, [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
 
 You'll see two projects in **Solution Explorer**&mdash;one is qualified as **(Desktop)**, and the other as **(Package)**.
 
@@ -112,8 +112,8 @@ For example, in the case study [A Windows App SDK migration of the UWP PhotoLab 
 ## Related topics
 
 * [Windows Runtime (WinRT)](/uwp/api/) APIs
-* [Windows UI Library (WinUI)](/windows/apps/winui/)
-* [Stable release channel for the Windows App SDK](/windows/apps/windows-app-sdk/stable-channel)
+* [Windows UI Library (WinUI)](../../winui/index.md)
+* [Stable release channel for the Windows App SDK](../stable-channel.md)
 * [PhotoLab case study](case-study-1.md)
 * [Photo Editor case study](case-study-2.md)
-* [Windows Runtime APIs not supported in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-supported-api)
+* [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md)

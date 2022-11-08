@@ -12,16 +12,16 @@ ms.localizationpriority: medium
 # Tutorial: Create a simple photo viewer with WinUI 3 (C#)
 
 > [!NOTE]
-> For info about the benefits of WinUI 3, as well as other app type options, see [Overview of app development options](/windows/apps/get-started/).
+> For info about the benefits of WinUI 3, as well as other app type options, see [Overview of app development options](./index.md).
 
 In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding; and we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 
 ## Install tools for the Windows App SDK
 
-To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment). You could then optionally follow along with [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app).
+To set up your development computer, see [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md). You could then optionally follow along with [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
 > [!IMPORTANT]
-> You'll find release notes topics along with the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this tutorial and/or running the app we'll build.
+> You'll find release notes topics along with the [Windows App SDK release channels](../windows-app-sdk/release-channels.md) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this tutorial and/or running the app we'll build.
 
 ## Create a new project
 
@@ -41,7 +41,7 @@ Back in Visual Studio you'll see that a new **Samples** folder is now a child of
 
 ## Add a GridView control
 
-Our app needs to display rows and columns of photos. In other words, a grid of images. For a UI like that, the main controls to use are [List view and grid view](/windows/apps/design/controls/listview-and-gridview).
+Our app needs to display rows and columns of photos. In other words, a grid of images. For a UI like that, the main controls to use are [List view and grid view](../design/controls/listview-and-gridview.md).
 
 1. Open `MainWindow.xaml`. Currently, there's a **Window** element, and within that a **StackPanel** layout panel. Inside the **StackPanel** is a **Button** control, which is hooked up to an event handler method.
 
@@ -64,7 +64,7 @@ Our app needs to display rows and columns of photos. In other words, a grid of i
 
 You *can* build and run now, but the window will be empty at this stage. For the **GridView** control to show anything, we need to give it a collection of objects to show. We'll make a start on that next.
 
-For background info about some of the types we've just mentioned, see [Layout panels](/windows/apps/design/layout/layout-panels) and [Controls for Windows apps](/windows/apps/design/controls/).
+For background info about some of the types we've just mentioned, see [Layout panels](../design/layout/layout-panels.md) and [Controls for Windows apps](../design/controls/index.md).
 
 ## The ImageFileInfo model
 
@@ -277,7 +277,7 @@ To begin with, let's use a sketch-like placeholder data template. That will serv
 
     To the layout root, we've added a simple [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) resource, and given it a key of `ImageGridView_ItemTemplate`. And we've used that same key to set the [**ItemTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) of the **GridView**. Items controls such as **GridView** have an **ItemTemplate** property (just like they have the **ItemsSource** property that we saw earlier). An item template is a data template; and it's used for displaying each item in the collection.
 
-    For more info, see [Item containers and templates](/windows/apps/design/controls/item-containers-templates).
+    For more info, see [Item containers and templates](../design/controls/item-containers-templates.md).
 
 1. Now we can take a few edit passes over the data template&mdash;adding to, and editing, the elements inside it to make it more interesting and useful. We'll give the root **Grid** a height and a width of 300, and a margin of 8. Then we'll add two row definitions, and set the height of the second row definition to **Auto**.
 
@@ -294,7 +294,7 @@ To begin with, let's use a sketch-like placeholder data template. That will serv
     </DataTemplate>
     ```
 
-    For more info, see [Alignment, margin, padding](/windows/apps/design/layout/alignment-margin-padding).
+    For more info, see [Alignment, margin, padding](../design/layout/alignment-margin-padding.md).
 
 1. We want the data template to display each photo's image, name, file type, dimensions, and rating. So we'll be adding, respectively, an [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control, some [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock) controls, and a [**RatingControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.ratingcontrol) control. We'll lay out the text inside [**StackPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel) layout panels. The **Image** will, initially, display the project's sketch-like Microsoft Store logo as a placeholder.
 
@@ -400,11 +400,11 @@ You might be wondering whether it's best to center the **GridView** itself, or t
     </GridView>
     ```
 
-    Also see [Alignment, margin, padding](/windows/apps/design/layout/alignment-margin-padding).
+    Also see [Alignment, margin, padding](../design/layout/alignment-margin-padding.md).
 
-Build and run now, and experiment with adjusting the width of the window. You can see that there's an equal amount of empty space on either side of the **GridView**'s red background. So we have achieved the goal of centering the images. But it's now clearer than before that the scroll bar belongs to the **GridView**, and not to the window. So we need to change the **GridView** back to filling the window. We've demonstrated that instead of centering the **GridView** in the window, we need to center the images in the **GridView**.
+Build and run now, and experiment with adjusting the width of the window. You can see that there's an equal amount of empty space on either side of the **GridView**'s red background. So we have achieved the goal of centering the images. But it's now clearer than before that the scroll bar belongs to the **GridView**, and not to the window. So we need to change the **GridView** back to filling the window. We've demonstrated that (instead of centering the **GridView** in the window) we need to center the images in the **GridView**.
 
-1. So let's first remove the **HorizontalAlignment** setting from the previous step.
+3. So now delete the **HorizontalAlignment** attribute that you added in the previous step.
 
 ## Edit the items panel template
 
@@ -434,7 +434,7 @@ Items controls lay out their item containers inside what's known as an *items pa
 
 When you build and run this time, and experiment with adjusting the width of the window, there's an equal amount of the **GridView**'s red background on either side of the images. And because the **GridView** fills the window, the scroll bar aligns nicely with the edge of the window, where users might expect it to be.
 
-1. Now that we're done experiment with layout, remove `Background="Red"` from the **GridView**.
+3. Now that we're done experiment with layout, remove `Background="Red"` from the **GridView**.
 
 ## Replace the placeholder image with a photo
 

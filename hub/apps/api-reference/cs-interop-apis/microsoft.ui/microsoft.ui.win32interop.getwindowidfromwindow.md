@@ -44,5 +44,5 @@ The identifier that corresponds to the specified *hwnd*, if the provided *hwnd* 
 ## See also
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
-* [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
-* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Manage app windows](../../../windows-app-sdk/windowing/windowing-overview.md)
+* [Call interop APIs from a .NET app](../../../desktop/modernize/winrt-com-interop-csharp.md)

@@ -23,8 +23,8 @@ Push notifications can be broken down into these four separate stages.
 | Stage | UWP | Windows App SDK|
 |--------|-----|----------------|
 | Identity | Partner Center (MSA) | Azure App Registration (AAD) |
-| Channel request | Synchronous| Asynchronous<br/>Azure App Registration Id<br/>Azure Tenant Id<br/>Retry logic built in (up to 5 retries)  |
-| Activation | In-process, PushTrigger\*, COM activation\*  | In-process, COM activation |
+| Channel request | Asynchronous| Asynchronous<br/>Azure App Registration Id<br/>Retry logic built in (up to 5 retries)  |
+| Activation | In-process, PushTrigger\*, COM activation\*  | In-process, COM activation, ShellExecute |
 | Sending push notifications | Uses login.live.com endpoint to receive an access token | Uses the `https://login.microsoftonline.com/{tenantID}/oauth2/token` endpoint for token request |
 
 \* Supported for Windows 10, version 2004 (10.0; Build 19041), and later.
@@ -34,7 +34,7 @@ Push notifications can be broken down into these four separate stages.
 In the Windows App SDK, the push notifications feature uses identity from Azure App Registration (AAD), which removes the requirement of having a Package Family Name (PFN) from Partner Center in order to use push notifications.
 
 * For a **UWP app**, you sign up and register the application in [Windows Store Partner Center](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification#create-an-app-in-windows-store).
-* For a **Windows App SDK app**, you create an Azure account, and create an [Azure App Registration (AAD)](/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart#configure-your-apps-identity-in-azure-active-directory-aad).
+* For a **Windows App SDK app**, you create an Azure account, and create an [Azure App Registration (AAD)](../../notifications/push-notifications/push-quickstart.md#configure-your-apps-identity-in-azure-active-directory-aad).
 
 ### Channel requests
 
@@ -44,7 +44,7 @@ A Windows App SDK app can check the status of a channel request.
 
 ### Activation
 
-See the Windows App SDK registration and activation steps at [Configure your app to receive push notifications](/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart#configure-your-app-to-receive-push-notifications). 
+See the Windows App SDK registration and activation steps at [Configure your app to receive push notifications](../../notifications/push-notifications/push-quickstart.md#configure-your-app-to-receive-push-notifications). 
 
 ## Sending push notifications
 

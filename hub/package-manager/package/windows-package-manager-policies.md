@@ -284,6 +284,6 @@ User Generated Content (UGC) is content that users contribute to an app or Produ
 
 ### See also
 
-- [Change history for Windows Package Manager policies](windows-package-manager-policies-change-history.md)
+- [Change history for Windows Package Manager policies](/windows/package-manager/package/windows-package-manager-policies)
 - [Windows Package Manager Code of Conduct](https://github.com/microsoft/winget-pkgs/blob/master/CODE_OF_CONDUCT.md)
 - [Windows Package Manager Contributing requirements](https://github.com/microsoft/winget-pkgs/blob/master/README.md)

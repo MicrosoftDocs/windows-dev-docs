@@ -2,7 +2,7 @@
 title: Install tools for the Windows App SDK
 description: Configure your development computer by installing the appropriate tools to develop apps for Windows by using the Windows App SDK.
 ms.topic: how-to
-ms.date: 06/10/2022
+ms.date: 11/03/2022
 keywords: windows win32, windows app development, Windows App SDK, stable
 ms.author: stwhi
 author: stevewhims
@@ -13,10 +13,62 @@ ms.custom:
 
 # Install tools for the Windows App SDK
 
-Configure your development computer by installing the appropriate tools to develop apps for Windows with the [Windows App SDK](/windows/apps/windows-app-sdk/).
+Configure your development computer by installing the appropriate tools to develop apps for Windows with the [Windows App SDK](./index.md).
 
 > [!NOTE]
-> This article is for the stable release channel of the Windows App SDK. See [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels). For other channels, see [Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install).
+> This article is for the stable release channel of the Windows App SDK. See [Windows App SDK release channels](./release-channels.md). For other channels, see [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md).
+
+## Install tools with winget
+
+To install the required tools and workloads using the command line, enter one of the following commands in the console. This is supported only with Visual Studio 2022 and later. If you already have Visual Studio 2022 or later installed, then the command will open Visual Studio Installer with any missing workloads selected. You can then select **Modify** in the Visual Studio Installer to install the required workloads.
+
+### For C# developers
+
+#### [Visual Studio Community](#tab/cs-vs-community)
+
+```console
+winget install "Visual Studio Community 2022"  --override "--add Microsoft.VisualStudio.Workload.ManagedDesktop Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs" -s msstore
+```
+
+#### [Visual Studio Enterprise](#tab/cs-vs-enterprise)
+
+```console
+winget install "Visual Studio Enterprise 2022"  --override "--add Microsoft.VisualStudio.Workload.ManagedDesktop Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs"
+```
+
+#### [Visual Studio Professional](#tab/cs-vs-professional)
+
+```console
+winget install "Visual Studio Professional 2022"  --override "--add Microsoft.VisualStudio.Workload.ManagedDesktop Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs"
+```
+
+---
+
+### For C++ developers
+
+#### [Visual Studio Community](#tab/cpp-vs-community)
+
+```console
+winget install "Visual Studio Community 2022"  --override "--add Microsoft.VisualStudio.Workload.NativeDesktop  Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cpp"  -s msstore
+```
+
+#### [Visual Studio Enterprise](#tab/cpp-vs-enterprise)
+
+```console
+winget install "Visual Studio Enterprise 2022"  --override "--add Microsoft.VisualStudio.Workload.NativeDesktop  Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cpp"  
+```
+
+#### [Visual Studio Professional](#tab/cpp-vs-professional)
+
+```console
+winget install "Visual Studio Professional 2022"  --override "--add  Microsoft.VisualStudio.Workload.NativeDesktop  Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cpp" 
+```
+
+---
+
+## Install tools manually
+
+To install the required tools and workloads manually, read the following sections.
 
 ## Install Visual Studio
 
@@ -120,9 +172,9 @@ Also see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in
 
 ## Related topics
 
-* [Windows App SDK](/windows/apps/windows-app-sdk/)
-* [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels)
-* [Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install)
+* [Windows App SDK](./index.md)
+* [Windows App SDK release channels](./release-channels.md)
+* [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md)
 * [System requirements for Windows app development](system-requirements.md)
 * [Downloads for the Windows App SDK](downloads.md)
 * [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)

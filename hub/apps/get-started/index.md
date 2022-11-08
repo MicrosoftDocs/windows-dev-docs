@@ -2,16 +2,24 @@
 description: Learn how to get started building new apps for Windows desktop and modernizing existing apps.
 title: Overview of app development options
 ms.topic: article
-ms.date: 06/07/2022
+ms.date: 10/13/2022
 keywords: windows win32, desktop development
 ms.localizationpriority: medium
 ---
 
 # Overview of app development options
 
-This article contains all the information you need to get started building apps for the Windows desktop environment.
+This article contains the information you need to get started building apps for the Windows desktop environment.
 
-When you want to create a new app for Windows 11 or Windows 10, the first decision you make is what type of app to build. The Windows and .NET development tools in Visual Studio provide several different types of apps you can build, each with their own Visual Studio project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set APIs for using Windows features.
+![Developer at desk](./images/developer-at-desk.jpg)
+
+Windows gives you huge flexibility when it comes to building apps. From [C++](/windows/uwp/cpp-and-winrt-apis/) and [.NET](/dotnet/) to more up-and-coming tools such as [open source tools on WSL](/windows/wsl/) and [Rust](../../dev-environment/rust/index.yml), there are many different languages and platforms to choose from. It can be quite overwhelming to know where to start.
+
+[Visual Studio](/visualstudio) is the development environment used by most Windows developers and it provides many types of app starting points, each with their own project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set APIs for using Windows features.
+
+If your new app is going to run only on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to run on multiple platforms, we recommend looking at .NET MAUI or React Native for Windows.
+
+
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWQwHD]
 
@@ -49,7 +57,7 @@ For more information about .NET MAUI, see the following links:
 - [.NET MAUI documentation](/dotnet/maui/)
 - [.NET MAUI on GitHub](https://github.com/dotnet/maui)
 - [.NET MAUI Product Roadmap](https://github.com/dotnet/maui/wiki/Roadmap)
-- [Build Windows apps with .NET MAUI](/windows/apps/windows-dotnet-maui/)
+- [Build Windows apps with .NET MAUI](../windows-dotnet-maui/index.md)
 - [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources/)
 - [Video Series - .NET MAUI for Beginners](/shows/dotnet-maui-for-beginners/)
 - [Build 2022: Build native apps for any device with .NET and Visual Studio](https://www.youtube.com/watch?v=IbwgHJPoE-M)

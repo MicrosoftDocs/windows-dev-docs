@@ -1,5 +1,5 @@
 ## Rename Notification
-This repo has recently been renamed from "windows-uwp-pr" to "windows-dev-docs-pr" in order to better represent the content source files contained.
+This repo has recently been renamed from "windows-uwp" to "windows-dev-docs" in order to better represent the content source files contained.
 
 If you have a copy of the repo on your local machine, you will need to update the associated URL following these steps:
 

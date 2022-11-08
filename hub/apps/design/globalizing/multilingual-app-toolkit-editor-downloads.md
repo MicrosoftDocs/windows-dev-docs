@@ -9,9 +9,9 @@ ms.date: 10/18/2021
 
 # Multilingual App Toolkit 4.0 Editor
 
-Use the standalone [**Multilingual App Toolkit 4.0 Editor**](use-mat.md) with Visual Studio to streamline your localization workflow during app development.
+Use the standalone [**Multilingual App Toolkit 4.0 Editor**](use-mat.md) to help you localize your apps with localization file management, translation support, and editing tools.
 
-Each of the following downloads contain an .msi installer for the Multilingual App Toolkit 4.0 Editor (also known as the Multilingual Editor).
+Each of the following downloads contain an .msi installer for the Multilingual App Toolkit 4.0 Editor (also known as the Multilingual Editor). The installer is available in 11 langauges, please select the link for your preferred language.
 
 - To start the installation immediately, click **Run**.
 - To save the download to your computer for installation at a later time, click **Save**.
@@ -65,18 +65,16 @@ Each of the following downloads contain an .msi installer for the Multilingual A
 :::row-end:::
 
 > [!Important]
-> If using Visual Studio 2017 or later, you should also download and install the [Multilingual App Toolkit 4.0 Extension](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308).
+> If using Visual Studio, you should also download and install [Multilingual App Toolkit 4.0 Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308) or [Multilingual App Toolkit 4.0 Visual Studio 2022+](https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022).
 
 ## Overview
 
-The Multilingual App Toolkit helps create simpler translation workflows by focusing on the following areas:
+The Multilingual Editor helps create simpler translation workflows by focusing on the following areas:
 
-- Integration with Visual Studio IDE. Add and manage translation files within a project solution using standard Visual Studio menus and dialogs.
-- Pseudo language integration. Test localized apps 'in-house' by identifying localization issues during development. These issues can include hard-coded, concatenated, or truncated strings, and visual issues that arise when working with different languages. Pseudo translations are stored in the localization industry standard XLIFF file format, and you can edit them just like any other language translation. This gives you granular control over pseudo translation testing.
-- Microsoft Language Portal integration. Get terminology and UI translations from actual Microsoft products through the Microsoft Terminology Service API (requires an active Internet connection).
-- Machine Translator integration. Get suggestions via integrated Microsoft Translator services (requires an active Internet connection). Integration with Microsoft Translator services gives you instant visualization and testing across multiple languages without the assistance of a human translator.
-- Translation file export and import roundtrip. Send and receive resources with individuals or a translator service via XLIFF files.
-- Dedicated localization editor. Use to easily edit translated strings. Get translations and suggestions quickly via the integrated Microsoft Language Portal and the Microsoft Translator services (requires an active Internet connection). You can also quickly edit data stored in XLIFF files by adjusting pseudo and actual translations.
+- Use to easily edit translated strings.
+- Get translations and suggestions quickly via the integrated Microsoft Language Portal and the Microsoft Translator services (requires an active Internet connection).
+- Narrow down on the desired translation units by filtering on text and states.
+- You can also quickly edit data stored in XLIFF files by adjusting pseudo and actual translations.
 
 ## Installation requirements
 
@@ -88,4 +86,5 @@ The Multilingual App Toolkit helps create simpler translation workflows by focus
 
 ## Additional info
 
-You must have an active Internet connection to use the Microsoft Language Portal and Microsoft Translator services.
+- You must have an active Internet connection to use the Microsoft Language Portal and Microsoft Translator services.
+- Microsoft Translator requires a subscription key for the Microsoft Translator Text API.

@@ -11,19 +11,19 @@ ms.localizationpriority: medium
 
 # Tutorial: Build and deploy an unpackaged app using Preview and Experimental channels of the Windows App SDK 
 
-**Using the Windows App SDK Stable version**: You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property when you [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also follow a tutorial ([Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) in which you configure a non-MSIX packaged app to load the Windows App SDK runtime, and call Windows App SDK APIs.
+**Using the Windows App SDK Stable version**: You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property when you [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also follow a tutorial ([Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) in which you configure a packaged with external location or unpackaged app to load the Windows App SDK runtime, and call Windows App SDK APIs.
 
-This article provides a step-by-step tutorial for configuring a non-MSIX packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates this scenario using a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK.
+This article provides a step-by-step tutorial for configuring a packaged with external location or unpackaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates this scenario using a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK.
 
 Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
 
 > [!NOTE]
->  The dynamic depednencies and bootstrapper APIs fail when called by an elevated process. As a result, Visual Studio should not be launched elevated. See [issue](https://github.com/microsoft/WindowsAppSDK/issues/567) for more details. 
+>  The dynamic dependencies and bootstrapper APIs fail when called by an elevated process. As a result, Visual Studio should not be launched elevated. See [issue](https://github.com/microsoft/WindowsAppSDK/issues/567) for more details. 
 
 ## Prerequisites
 
 1. [Install tools for the Windows App SDK](set-up-your-development-environment.md).
-2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
+2. Ensure that all dependencies for the app are installed (see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md#prerequisites)). The simplest solution is to run the Windows App SDK runtime installer. 
 
 ## Instructions
 
@@ -47,7 +47,7 @@ Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3
         - To install 1.0 Preview 3 or 1.0 Experimental, search for **Microsoft.WindowsAppSDK**.
         - To install 0.8 Preview, search for **Microsoft.ProjectReunion**.
 
-3. For unpackaged apps, you will need to call the Bootstrapper API to [Use the Windows App SDK runtime](use-windows-app-sdk-run-time.md). This enables you to use Windows App SDK APIs at runtime.
+3. For unpackaged apps, you will need to call the Bootstrapper API to [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md). This enables you to use Windows App SDK APIs at runtime.
 
     1. Add the following include files to the top of your **DynamicDependenciesTest.cpp** file. The [mddbootstrap.h](/windows/windows-app-sdk/api/win32/mddbootstrap) header is available via the Windows App SDK NuGet package.
 
@@ -153,7 +153,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
     1. In **Solution Explorer**, right-click the **Dependencies** node and choose **Manage Nuget Packages**.
     2. In the **NuGet Package Manager** window, select the **Include prerelease** check box near the top of the window, select the **Browse** tab, and install the **Microsoft.WindowsAppSDK** package.
 
-5. For unpackaged apps, you will need to call the Bootstrapper API to [Use the Windows App SDK runtime](use-windows-app-sdk-run-time.md). This enables you to use Windows App SDK APIs at runtime.
+5. For unpackaged apps, you will need to call the Bootstrapper API to [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md). This enables you to use Windows App SDK APIs at runtime.
 
     Open the **Program.cs** code file and replace the default code with the following code.
 
@@ -239,7 +239,7 @@ Follow these instructions to configure a C# project that uses the [1.0 Experimen
         - To install 1.0 Experimental, search for **Microsoft.WindowsAppSDK**.
         - To install 0.8 Preview, search for **Microsoft.ProjectReunion**.
 
-5. You are now ready to use the [bootstrapper API](use-windows-app-sdk-run-time.md) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.
+5. You are now ready to use the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md)) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.
 
     1. Add a new code file named **MddBootstrap.cs** to your project and add the following code to it. The [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions shown in this code example are available via the Windows App SDK NuGet package.
 
@@ -380,5 +380,5 @@ Follow these instructions to configure a C# project that uses the [1.0 Experimen
 
 ## Related topics
 
-- [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Runtime architecture](deployment-architecture.md)

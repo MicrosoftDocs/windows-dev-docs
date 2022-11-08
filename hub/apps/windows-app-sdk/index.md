@@ -35,7 +35,7 @@ The following table highlights the development features that are provided by the
 
 | Feature | Description |
 |--|--|
-| [WinUI 3](/windows/apps/winui/) | The premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns. |
+| [WinUI 3](../winui/index.md) | The premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns. |
 | [Render text with DWriteCore](dwritecore.md) | Render text using a device-independent text layout system, high quality sub-pixel Microsoft ClearType text rendering, hardware-accelerated text, multi-format text, wide language support, and much more. |
 | [Manage resources with MRT Core](mrtcore/mrtcore-overview.md) | Manage app resources such as strings and images in multiple languages, scales, and contrast variants independently of your app's logic. |
 | [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md) | Control whether multiple instances of your app's process can run at the same time. |
@@ -76,7 +76,7 @@ Windows App SDK APIs will work on Windows 11 and downlevel to Windows 10, versio
 
 ### Faster release cadence
 
-New Windows APIs and features have typically been tied to OS releases that happen on a once or twice a year release cadence. The Windows App SDK will ship updates on a faster cadence, enabling you to get earlier and more rapid access to innovations in the Windows development platform as soon as they are created.
+New Windows APIs and features are usually shipped within major Windows OS updates that release about once a year (often less frequently). Windows App SDK ships new releases about once every six months. This release cadence ensures that you continuously have access to the latest innovations in the Windows development platform.
 
 ## Developer roadmap
 
