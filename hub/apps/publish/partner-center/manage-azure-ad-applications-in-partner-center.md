@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Manage Azure AD applications in your Partner Center account
 
-You can allow applications or services that are part of your organization's Azure AD to access your Partner Center account. These Azure AD application user accounts can be used to call the REST APIs provided by the [Microsoft Store services](../../../../uwp/monetize/using-windows-store-services.md).
+You can allow applications or services that are part of your organization's Azure AD to access your Partner Center account. These Azure AD application user accounts can be used to call the REST APIs provided by the [Microsoft Store services](/windows/uwp/monetize/using-windows-store-services).
 
 
 ## Add Azure AD applications from your organization's directory
