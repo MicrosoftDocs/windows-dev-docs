@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Manage Azure AD applications in your Partner Center account
 
-You can allow applications or services that are part of your organization's Azure AD to access your Partner Center account. These Azure AD application user accounts can be used to call the REST APIs provided by the [Microsoft Store services](../../../../uwp/monetize/using-windows-store-services.md).
+You can allow applications or services that are part of your organization's Azure AD to access your Partner Center account. These Azure AD application user accounts can be used to call the REST APIs provided by the [Microsoft Store services](/windows/uwp/monetize/using-windows-store-services).
 
 
 ## Add Azure AD applications from your organization's directory
@@ -41,7 +41,7 @@ If you want to grant Partner Center access to a brand new Azure AD application a
 After you add or create an Azure AD application, you can return to the **Users** section and select the application name to review settings for the application, including the Tenant ID, Client ID, Reply URL, and App ID URI.
 
 > [!NOTE]
-> If you intend to use the REST APIs provided by the [Microsoft Store services](../../../../uwp/monetize/using-windows-store-services.md), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.   
+> If you intend to use the REST APIs provided by the [Microsoft Store services](/windows/uwp/monetize/using-windows-store-services), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.   
 
 <span id="manage-keys" />
 
