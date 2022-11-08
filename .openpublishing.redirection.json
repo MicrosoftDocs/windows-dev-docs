@@ -7429,6 +7429,11 @@
       "source_path": "uwp/publish/xbox-analytics-report.md",
       "redirect_url": "/windows/apps/publish/xbox-analytics-report",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/partner-center/associate-azure-ad-with-partner-center.md",
+      "redirect_url": "/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account",
+      "redirect_document_id": false
     }
   ]
 }
