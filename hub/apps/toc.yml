@@ -433,8 +433,9 @@ items:
       - name: Overview
         href: publish/index.md
       - name: Opening a developer account
-        href: publish/partner-center/overview-of-developer-account.md
         items:
+          - name: Overview of developer account
+            href: publish/partner-center/overview-of-developer-account.md
           - name: Open a developer account in Partner Center
             href: publish/partner-center/open-a-developer-account.md
           - name: Account types, locations, and fees
