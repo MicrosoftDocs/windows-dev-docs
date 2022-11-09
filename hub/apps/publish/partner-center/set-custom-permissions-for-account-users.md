@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Set roles or custom permissions for account users
 
-When you [add users to your Partner Center account](add-users-groups-and-azure-ad-applications.md), you'll need to specify what access they have within the account. You can do this by assigning them [standard roles](#roles) which applies to the entire account, or you can [customize their permissions](#custom) to provide the appropriate level of access. Some of the custom permissions apply to the entire account, and some can be limited to one or more specific products (or granted to all products, if you prefer).
+When you [add users to your Partner Center account](overview-users-groups-azure-ad-applications.md), you'll need to specify what access they have within the account. You can do this by assigning them [standard roles](#roles) which applies to the entire account, or you can [customize their permissions](#custom) to provide the appropriate level of access. Some of the custom permissions apply to the entire account, and some can be limited to one or more specific products (or granted to all products, if you prefer).
 
 > [!NOTE]
 > The same roles and permissions can be applied regardless of whether you are adding a user, a group, or an Azure AD application.
