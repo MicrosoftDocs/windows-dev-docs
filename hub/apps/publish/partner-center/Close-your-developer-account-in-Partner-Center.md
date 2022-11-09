@@ -1,6 +1,6 @@
 ---
 title: Close your developer account in Partner Center
-description: Here's an overview of how to register for a Windows developer account for Microsoft Store and other Microsoft programs in Partner Center.
+description: Here's an overview of how to close your developer account in Partner Center for Microsoft Store and other Microsoft programs in Partner Center.
 ms.date: 11/3/2022
 ms.topic: article
 ms.localizationpriority: medium
