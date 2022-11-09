@@ -9,9 +9,11 @@ ms.localizationpriority: medium
 
 # Tutorial: Create a .NET MAUI app with C# Markup and the Community Toolkit
 
-Build a .NET MAUI app with a user interface created without XAML by using C# Markup from the [.NET MAUI Community Toolkit](/dotnet/communitytoolkit/maui/).
+Build a **.NET MAUI** app with a user interface created without XAML by using **C# Markup** from the [.NET MAUI Community Toolkit](/dotnet/communitytoolkit/maui/).
 
 ## Introduction
+
+The **.NET MAUI Community Toolkit** is a set of extensions, behaviors, animations, and other helpers. One of the features, [C# Markup](/dotnet/communitytoolkit/maui/markup/markup), provides the ability to create a user interface entirely in C# code. In this tutorial, you'll learn how to create a .NET MAUI app for Windows that uses C# Markup to create the user interface.
 
 ## Setting up the environment
 
