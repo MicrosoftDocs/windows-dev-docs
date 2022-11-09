@@ -36,6 +36,10 @@ Sales are scheduled as part of the submission for an app or add-on. If you want 
 
    > [!NOTE]
    > Market selections that you make in the Sale pricing section will not affect the markets in which the app is offered; these selections only determine whether a sale price is offered, and in which markets. If you set sale pricing for a market in which your app is not available, this won't cause the app to become available in that market.
+
+
+   > [!IMPORTANT]
+   > Sale Pricing in France: Due to consumer laws, the Base price that shows in France must be the lowest price that you have charged in the last 30 days.
 4. Choose one of the following options to specify the type of discount:
    - **Price**: Use this option to select a lower price tier at which your app will be offered. You can change the currency drop-down to select the price in whichever currency you prefer. (The price will be converted to the corresponding tier for each currency. For more info, see [Pricing](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix).)
    - **Percentage**: Use this option to select the percentage for a discount that will be applied to your app. The same discount percentage is used for all currencies.
