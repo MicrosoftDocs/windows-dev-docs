@@ -520,7 +520,7 @@ China
 
 ### 11.11 Age Ratings
 
-You must obtain an age rating for your product when you submit it in Partner Center. You are responsible for accurately completing the International Age Rate Coalition (IARC) rating questionnaire during submission to obtain the appropriate rating.
+You must obtain an age rating for your product when you submit it in Partner Center. You are responsible for accurately completing the International Age Rate Coalition (IARC) rating [questionnaire](https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/age-ratings?pivots=store-installer-msi-exe) during submission to obtain the appropriate rating.
 
 **11.11.3**
 
