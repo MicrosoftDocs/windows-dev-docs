@@ -181,8 +181,44 @@ The new code in the `MainPage` constructor is leveraging C# Markup to define the
 </Grid.ColumnDefinitions>
 ```
 
+The rest of the code to create the grid adds two `Children`, a `Label` and an `Entry`. The `Text`, `Row`, and `Column` properties are set on the `Label` element, and the `Entry` is created with the following properties:
+
+| Property | Value | Description |
+|--------|--------|--------|
+| `Row` | `Row.TextEntry` | Defines the row number. |
+| `Column` | `Column.Input` | Defines the column number. |
+| `FontSize` | `15` | Sets the font size. |
+| `Placeholder` | `"Enter name"` | Sets the placeholder text to display when the element is empty. |
+| `TextColor` | `Colors.Black` | Sets the text color. |
+| `Height` | `44` | Sets the height of the element. |
+| `Margin` | `6, 6` | Defines the margin around the element. |
+| `Bind` | `Entry.TextProperty, nameof(ViewModel.Name), BindingMode.TwoWay` | Binds the `Text` property of the element to the `Name` property of the view model using two-way data binding. |
+
+The equivalent XAML to define these child elements would be:
+
+```xaml
+<Label Text="Customer name:"
+       Grid.Row="0" Grid.Column="0" />
+<Entry Grid.Row="1" Grid.Column="0"
+       FontSize="15"
+       Placeholder="Enter name"
+       HeightRequest="44"
+       Margin="6, 6"
+       Text="{Binding Path=ViewModel.Name, Mode=TwoWay}" />
+```
+
+You may have noticed that the `TextColor` property is not set in the markup above. Setting the `TextColor` of a control requires setting a custom style. For more information about using styles in .NET MAUI, see [Style apps using XAML](/dotnet/maui/user-interface/styles/xaml). This is one example where setting properties in C# Markup can be more streamlined than the equivalent XAML. However, using styles in adds ease of reuse and inheritance.
+
+You're now ready to run the app. Press **F5** to build and run the project. The app should look like the following screenshot:
+
+![Run your .NET MAUI C# Markup app.](images/maui-markup-run-the-app.png)
+
+You've now created your first C# Markup app on Windows with .NET MAUI. To learn more about what you can do with C# Markup, see [C# Markup documentation](/dotnet/communitytoolkit/maui/markup/markup).
+
 ## Related topics
 
 [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources)
 
 [.NET MAUI Community Toolkit documentation](/dotnet/communitytoolkit/maui/)
+
+[C# Markup documentation](/dotnet/communitytoolkit/maui/markup/markup)
