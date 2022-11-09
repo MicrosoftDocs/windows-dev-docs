@@ -32,7 +32,7 @@ If you need to set up a new Azure AD to link with your Partner Center account, f
 
 1.  Click **Create** to confirm the new domain and account info. By default, the *User name* / *Password* used to create your Azure tenant becomes the *Global Administrator*.
 
-1.  Sign in with your new Azure AD global administrator username and password to begin [adding and managing additional account users](add-users-groups-and-azure-ad-applications.md).
+1.  Sign in with your new Azure AD global administrator username and password to begin [adding and managing additional account users](overview-users-groups-azure-ad-applications.md).
 
     :::image type="content" source="../images/partner-center-signin-azure-ad-credentials.png" alt-text="Sign in to Microsoft Partner Center with the Azure AD credentials for your tenant":::
     
