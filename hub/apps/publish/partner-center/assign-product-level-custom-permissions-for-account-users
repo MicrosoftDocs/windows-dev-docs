@@ -7,7 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, user roles, user permission, custom roles, user access, customize permissions, standard roles
 ms.localizationpriority: high
 ---
-# Product-level permissions
+# Product level custom permissions
 
 The permissions in this section can be granted to all products in the account, or can be customized to allow the permission only for one or more specific products. 
 
