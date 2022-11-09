@@ -131,6 +131,8 @@ private enum Row { TextEntry }
 private enum Column { Description, Input }
 ```
 
+The `ViewModel` property will create an instance of the `MainViewModel` class to be used when data binding the UI. The `Row` and `Column` enums will be used to define the layout of the UI with C# Markup. It's a simple UI with a single row and two columns which we'll be defining in the next step.
+
 Because the UI elements are going to be defined in the C# code, the `InitializeComponent()` method will not be needed. Remove the call and replace it with the following code to create the UI:
 
 ```csharp
@@ -165,6 +167,18 @@ public MainPage()
         }
     };
 }
+```
+
+The new code in the `MainPage` constructor is leveraging C# Markup to define the UI. A `Grid` is set as the `Content` of the page. Our new grid defines a row with a height of 36 pixels and two columns with their widths defined using **Star** values, rather than absolute pixel values. The `Input` column will always be twice the width of the `Description` column. The equivalent XAML for these definitions would be:
+
+```xaml
+<Grid.RowDefinitions>
+    <RowDefinition Height="36" />
+</Grid.RowDefinitions>
+<Grid.ColumnDefinitions>
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="2*" />
+</Grid.ColumnDefinitions>
 ```
 
 ## Related topics
