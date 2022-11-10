@@ -13,6 +13,17 @@ ms.localizationpriority: medium
 
 This page provides download links to the various releases of the [Windows App SDK](index.md). To get started quickly, download the latest Visual Studio extensions (VSIX) and installer below:
 
+**Latest Stable 1.2**
+
+> [!div class="button" style="text-align: left;" width="150px;"] 
+> [Download 1.2 Visual Studio 2022 Extension (C#)](https://aka.ms/windowsappsdk/1.2/latest/WindowsAppSDK.Cs.Extension.Dev17.Standalone.vsix) 
+
+> [!div class="button" style="text-align: left;" width="150px;"] 
+> [Download 1.2 Visual Studio 2022 Extension (C++)](https://aka.ms/windowsappsdk/1.2/latest/WindowsAppSDK.Cpp.Extension.Dev17.Standalone.vsix)
+
+> [!div class="button" style="text-align: left;" width="150px;"] 
+> [Download 1.2 Installer (x64)](https://aka.ms/windowsappsdk/1.2/latest/windowsappruntimeinstall-x64.exe) 
+
 **Latest Stable 1.1**
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
@@ -24,24 +35,13 @@ This page provides download links to the various releases of the [Windows App SD
 > [!div class="button" style="text-align: left;" width="150px;"] 
 > [Download 1.1 Installer (x64)](https://aka.ms/windowsappsdk/1.1/latest/windowsappruntimeinstall-x64.exe) 
 
-**Latest Stable 1.0**
-
-> [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download 1.0 Visual Studio 2022 Extension (C#)](https://aka.ms/windowsappsdk/1.0/1.0.4/vsix-2022-cs) 
-
-> [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download 1.0 Visual Studio 2022 Extension (C++)](https://aka.ms/windowsappsdk/1.0/1.0.4/vsix-2022-cpp)
-
-> [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download 1.0 Installer (x64)](https://aka.ms/windowsappsdk/1.0/latest/windowsappruntimeinstall-1.0-x64.exe) 
-
 For all Windows App SDK downloads, refer to the tables and links below. Depending on your development scenario, you may require the following:
 
 **SDK downloads**
 
 | Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | 
 |:------------- |:-------------|
-| Visual Studio extension | The Windows App SDK Visual Studio extension (VSIX) provides project and item templates to get started. You can choose from three versions of the extension: stable, preview, and experimental. See [Set up your development environment](./set-up-your-development-environment.md) for more details on how to install the extension. |
+| Visual Studio extension | The Windows App SDK Visual Studio extension (VSIX) provides project and item templates to get started. You can choose from three versions of the extension: stable, preview, and experimental. See [Set up your development environment](/windows/apps/windows-app-sdk/set-up-your-development-environment) for more details on how to install the extension. |
 | NuGet package | The [**Microsoft.WindowsAppSDK** NuGet package](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/) provides access to APIs provided by the Windows App SDK. The NuGet package is included with the Visual Studio extension project templates. If you have an existing project in which you want to use the Windows App SDK, you can install the latest version of the Windows App SDK NuGet package in your project directly from Visual Studio. For setup instructions, see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).  |
 
 **Runtime downloads**
@@ -61,10 +61,11 @@ To learn more, see the [Windows App SDK release channels](release-channels.md) a
 
 |   | Version | SDK downloads | Runtime&nbsp;downloads |
 |---|---|---|---|
+| **✅** | [1.2.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](stable-channel.md) <br> 11/10/2022 <br> [Release&nbsp;notes](stable-channel.md)&nbsp; | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/WindowsAppSDK.Cs.Extension.Dev17.Standalone.vsix)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/WindowsAppSDK.Cpp.Extension.Dev17.Standalone.vsix) | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/windowsappruntimeinstall-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/windowsappruntimeinstall-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/Microsoft.WindowsAppRuntime.Redist.1.2.zip) |
 | **❇️** | [1.2&nbsp;Preview2](preview-channel.md#version-12-preview-2-120-preview2)<br>10/04/2022<br>[Release&nbsp;notes&nbsp;](preview-channel.md#version-12-preview-2-120-preview2) | No new Visual Studio extensions. | [Installer&nbsp;(x64 Preview2)](https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86 Preview2)](https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64 Preview2)](https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/windowsappruntimeinstall-arm64.exe)<br>[Redistributable (Preview2)](https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/Microsoft.WindowsAppRuntime.Redist.1.2.zip) |
-| **🔄️** | [1.2.0&nbsp;Experimental2](./experimental-channel.md#version-12-experimental-120-experimental2)<br>09/21/2022<br>[Release&nbsp;notes&nbsp;](experimental-channel.md#version-12-experimental-120-experimental2) | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/WindowsAppSDK.Cs.Extension.Dev17.Experimental.Standalone.vsix)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/WindowsAppSDK.Cpp.Extension.Dev17.Experimental.Standalone.vsix) <br/> [C#&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/WindowsAppSDK.Cs.Extension.Dev16.Experimental.vsix)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/WindowsAppSDK.Cpp.Extension.Dev16.Experimental.vsix) | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/windowsappruntimeinstall-arm64.exe)<br>[Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/Microsoft.WindowsAppRuntime.Redist.1.2.220909.2-experimental2.zip) |
+| **🔄️** | [1.2.0&nbsp;Experimental2](/windows/apps/windows-app-sdk/experimental-channel#version-12-experimental-120-experimental2)<br>09/21/2022<br>[Release&nbsp;notes&nbsp;](experimental-channel.md#version-12-experimental-120-experimental2) | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/WindowsAppSDK.Cs.Extension.Dev17.Experimental.Standalone.vsix)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/WindowsAppSDK.Cpp.Extension.Dev17.Experimental.Standalone.vsix) <br/> [C#&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/WindowsAppSDK.Cs.Extension.Dev16.Experimental.vsix)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/WindowsAppSDK.Cpp.Extension.Dev16.Experimental.vsix) | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/windowsappruntimeinstall-arm64.exe)<br>[Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.220909.2-experimental2/Microsoft.WindowsAppRuntime.Redist.1.2.220909.2-experimental2.zip) |
 | **❇️** | [1.2&nbsp;Preview1](preview-channel.md#version-12-preview-1-120-preview1)<br>09/06/2022<br>[Release&nbsp;notes&nbsp;](preview-channel.md#version-12-preview-1-120-preview1) | No new Visual Studio extensions. | [Installer&nbsp;(x64 Preview1)](https://aka.ms/windowsappsdk/1.2/1.2.220902.1-preview1/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86 Preview1)](https://aka.ms/windowsappsdk/1.2/1.2.220902.1-preview1/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64 Preview1)](https://aka.ms/windowsappsdk/1.2/1.2.220902.1-preview1/windowsappruntimeinstall-arm64.exe)<br>[Redistributable (Preview1)](https://aka.ms/windowsappsdk/1.2/1.2.220902.1-preview1/Microsoft.WindowsAppRuntime.Redist.1.2.220902.1-preview1.zip) |
-| **🔄️** | [1.2.0&nbsp;Experimental1](./experimental-channel.md#version-12-experimental-120-experimental1)<br>08/15/2022<br>[Release&nbsp;notes&nbsp;](experimental-channel.md#version-12-experimental-120-experimental1) | No new Visual Studio extensions. | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-arm64.exe)<br>[Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/Microsoft.WindowsAppRuntime.Redist.1.2.220727.1-experimental1.zip) |
+| **🔄️** | [1.2.0&nbsp;Experimental1](/windows/apps/windows-app-sdk/experimental-channel#version-12-experimental-120-experimental1)<br>08/15/2022<br>[Release&nbsp;notes&nbsp;](experimental-channel.md#version-12-experimental-120-experimental1) | No new Visual Studio extensions. | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-arm64.exe)<br>[Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/Microsoft.WindowsAppRuntime.Redist.1.2.220727.1-experimental1.zip) |
 
 #### Windows App SDK 1.1
 

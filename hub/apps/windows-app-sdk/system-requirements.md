@@ -40,6 +40,7 @@ The [Windows App SDK](./index.md) is a set of developer tools that represent the
 The Windows App SDK has the following minimum system requirements:
 
 - Windows 10, version 1809 (build 17763) or later.
+- Visual Studio 2022, version 17.0 or later, with the [required workloads and components](/windows/apps/windows-app-sdk/set-up-your-development-environment#required-workloads-and-components).
 - Visual Studio 2019, version 16.9 or later, with the [required workloads and components](./set-up-your-development-environment.md#required-workloads-and-components).
 - Windows SDK, version 2004 (build 19041) or later (included with Visual Studio 2019 and 2022 by default).
 - If you plan to build .NET apps, you'll also need .NET 6 or later (see [Download .NET](https://dotnet.microsoft.com/en-us/download)).

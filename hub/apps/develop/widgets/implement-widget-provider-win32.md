@@ -13,7 +13,8 @@ ms.localizationpriority: medium
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 > [!IMPORTANT]
-> The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 2.
+> The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
+
 
 This article walks you through creating a simple widget provider that implements the [IWidgetProvider](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider) interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget  that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
 
@@ -27,7 +28,7 @@ This sample code in this article is adapted from the [Windows App SDK Sample](ht
 
 - Latest Dev Channel Windows 11 build from the Windows Insider Program (WIP). For more information on WIP self-hosting see [Deeper look at flighting](/windows-insider/flighting).
 - Widgets board version 521.20060.1205.0. This will come with the latest Dev Channel WIP build and can be checked by opening the widgets board, navigating to the widget picker, and looking at the version number located at the bottom right corner of the picker.
-- Your device must have developer mode enabled. For more information see [Enable your device for development](../../get-started/enable-your-device-for-development.md).
+- Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 - Visual Studio 2017 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
 ## Create a new win32 console app
@@ -337,7 +338,7 @@ void WidgetProvider::OnActionInvoked(winrt::WidgetActionInvokedArgs actionInvoke
 ```
 
 
-For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.io/explorer/Action.Execute.html). For guidance about designing interaction for widgets, see [Widget interaction design guidance](../../design/widgets/widgets-interaction-design.md)
+For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.io/explorer/Action.Execute.html). For guidance about designing interaction for widgets, see [Widget interaction design guidance](/windows/apps/design/widgets/widgets-interaction-design)
 
 
 ## OnWidgetContextChanged
