@@ -74,13 +74,13 @@ Use the **mDP port** as your main display for setting up this device. The UEFI o
 
 A fully Arm-native suite of developer tools are available for installing on Windows 11, including:
 
-- **[Visual Studio 2022 17.4 Preview 2 for Arm64](/visualstudio/install/visual-studio-on-arm-devices)**
+- **[Visual Studio 2022 17.4 for Arm64](/visualstudio/install/visual-studio-on-arm-devices)**
 
-    This is the first native Arm64 version of Visual Studio available with workloads enabled for desktop development with C++ (for MSBuild-based projects), .NET desktop development, and web development. Additionally our latest preview includes support for Windows SDK and Win App SDK components (Win UI).
+    This is the first native Arm64 version of Visual Studio available with workloads enabled for desktop development with C++ (for MSBuild-based projects), .NET desktop development, web development, game development, and Node.js development and also includes support for Windows SDK and Win App SDK components (Win UI).
 
-- **[.NET 7 Preview Arm64 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)**
+- **[.NET 7 Arm64 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)**
 
-    Native support for Arm64 is [available in .NET 6](/dotnet/core/install/windows?tabs=net60#arm-based-windows-pcs), along with the [.NET Framework 4.8.1 runtime](https://devblogs.microsoft.com/dotnet/announcing-dotnet-framework-481/) and SDK, but that support has been extended in .NET 7. Read more about [Arm64 performance improvements in .NET 7](https://devblogs.microsoft.com/dotnet/arm64-performance-improvements-in-dotnet-7/).
+    Native support for Arm64 is [available starting with .NET 6](/dotnet/core/install/windows?tabs=net60#arm-based-windows-pcs), along with the [.NET Framework 4.8.1 runtime](https://devblogs.microsoft.com/dotnet/announcing-dotnet-framework-481/) and SDK, and that support has been extended in .NET 7. Read more about [Arm64 performance improvements in .NET 7](https://devblogs.microsoft.com/dotnet/arm64-performance-improvements-in-dotnet-7/).
 
 - **[Visual Studio Code for Arm](https://code.visualstudio.com/download)**
 
