@@ -22,6 +22,9 @@ Configure your development computer by installing the appropriate tools to devel
 
 Use these links to install Visual Studio 2022 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community Edition, Visual Studio Professional, or Visual Studio Enterprise. Before you begin, see [System requirements for Windows app development](system-requirements.md).
 
+> [!IMPORTANT]
+> Visual Studio 2019 only supports Windows App SDK 1.1 and earlier. Visual Studio 2022 is recommended for developing apps with all versions of the Windows App SDK.
+
 > [!div class="button"]
 > [Download Visual Studio 2022](/visualstudio/releases/2022/release-notes)
 
@@ -86,6 +89,9 @@ Download the extension directly, and install it:
 > [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-2022-cpp)
 
 ### [Visual Studio 2019](#tab/vs-2019)
+
+> [!IMPORTANT]
+> Visual Studio 2019 only supports Windows App SDK 1.1 and earlier. Visual Studio 2022 is recommended for developing apps with all versions of the Windows App SDK.
 
 The templates are available by installing a Visual Studio extension (VSIX).
 

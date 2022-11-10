@@ -22,11 +22,10 @@ Visual Studio is a comprehensive *Integrated Development Envrionment (IDE)* that
 For the minimum system requirements, see:
 
 - [Visual Studio 2022 system requirements](/visualstudio/releases/2022/system-requirements#visual-studio-2022-system-requirements)
-- [Visual Studio 2019 system requirements](/visualstudio/releases/2019/system-requirements#visual-studio-2019-system-requirements)
 
 ## Windows SDK
 
-The Windows SDK provides access to all of the APIs and development features exposed by the Windows OS. The Windows SDK is required for building Windows apps as well as other types of components (such as services and drivers). The latest Windows SDK is installed with *Visual Studio 2019* and *Visual Studio 2022* by default.
+The Windows SDK provides access to all of the APIs and development features exposed by the Windows OS. The Windows SDK is required for building Windows apps as well as other types of components (such as services and drivers). The latest Windows SDK is installed with *Visual Studio 2022* by default.
 
 For the minimum system requirements, see [Windows SDK system requirements](/windows/downloads/windows-sdk/#sysreq).
 
@@ -40,7 +39,8 @@ The [Windows App SDK](/windows/apps/windows-app-sdk/) is a set of developer tool
 The Windows App SDK has the following minimum system requirements:
 
 - Windows 10, version 1809 (build 17763) or later.
-- Visual Studio 2019, version 16.9 or later, with the [required workloads and components](/windows/apps/windows-app-sdk/set-up-your-development-environment#required-workloads-and-components).
+- Visual Studio 2022, version 17.0 or later, with the [required workloads and components](/windows/apps/windows-app-sdk/set-up-your-development-environment#required-workloads-and-components).
+  - Visual Studio 2019, version 16.9 or later only supports WinAppSDK 1.1 and earlier
 - Windows SDK, version 2004 (build 19041) or later (included with Visual Studio 2019 and 2022 by default).
 - If you plan to build .NET apps, you'll also need .NET 6 or later (see [Download .NET](https://dotnet.microsoft.com/en-us/download)).
 
