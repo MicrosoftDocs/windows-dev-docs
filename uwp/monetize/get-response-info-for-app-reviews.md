@@ -18,7 +18,7 @@ To use this method, you need to first do the following:
 
 * If you have not done so already, complete all the [prerequisites](respond-to-reviews-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Get the ID of the review you want to check to determine whether you can respond to it. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).
+* Get the ID of the review you want to check to determine whether you can respond to it. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](/windows/apps/publish/download-analytic-reports) of the [Reviews report](/windows/apps/publish/reviews-report).
 
 ## Request
 
@@ -41,8 +41,8 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   | Description                                     |  Required  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | string | The Store ID of the app that contains the review for which you want to determine whether you can respond to. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) in Partner Center. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
-| reviewId | string | The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md). <br/>If you omit this parameter, the response body for this method will indicate whether you have permissions to respond to any reviews for the specified app. |  No  |
+| applicationId | string | The Store ID of the app that contains the review for which you want to determine whether you can respond to. The Store ID is available on the [App identity page](/windows/apps/publish/view-app-identity-details) in Partner Center. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
+| reviewId | string | The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](/windows/apps/publish/download-analytic-reports) of the [Reviews report](/windows/apps/publish/reviews-report). <br/>If you omit this parameter, the response body for this method will indicate whether you have permissions to respond to any reviews for the specified app. |  No  |
 
 
 ### Request example
@@ -62,7 +62,7 @@ Authorization: Bearer <your access token>
 | Value      | Type   | Description    |  
 |------------|--------|-----------------------|
 | CanRespond      | Boolean  | The value **true** indicates that you can respond to the specified review, or that you have permissions to respond to any review for the specified app. Otherwise, this value is **false**.       |
-| DefaultSupportEmail  | string |  Your app's [support email address](../publish/enter-app-properties.md#support-contact-info) as specified in your app's Store listing. If you did not specify a support email address, this field is empty.    |
+| DefaultSupportEmail  | string |  Your app's [support email address](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msix#support-contact-info) as specified in your app's Store listing. If you did not specify a support email address, this field is empty.    |
 
  
 ### Response example
@@ -79,6 +79,6 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Submit responses to reviews using the Microsoft Store analytics API](submit-responses-to-app-reviews.md)
-* [Respond to customer reviews using Partner Center](../publish/respond-to-customer-reviews.md)
+* [Respond to customer reviews using Partner Center](/windows/apps/publish/respond-to-customer-reviews)
 * [Respond to reviews using Microsoft Store services](respond-to-reviews-using-windows-store-services.md)
 * [Get app reviews](get-app-reviews.md)

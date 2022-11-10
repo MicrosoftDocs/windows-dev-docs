@@ -20,7 +20,7 @@ To use this method, you need to first do the following:
 
 * If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Make sure the app already has at least one submission with the [age ratings](../publish/age-ratings.md) information completed.
+* Make sure the app already has at least one submission with the [age ratings](/windows/apps/publish/publish-your-app/age-ratings?pivots=store-installer-msix) information completed.
 
 ## Request
 
@@ -40,7 +40,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app for which you want to create a submission. For more information about the Store ID, see [View app identity details](../publish/view-app-identity-details.md).  |
+| applicationId | string | Required. The Store ID of the app for which you want to create a submission. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).  |
 
 ### Request body
 

@@ -142,7 +142,7 @@ Introduced [security.accesscontrol.h](/windows/windows-app-sdk/api/win32/securit
 
 ## Version 1.1
 
-The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.5. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.5. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](./release-channels.md#features-available-by-release-channel)).
 
 ### Version 1.1.5
 
@@ -218,7 +218,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. This r
 
 **New features:**
 - Mica and Background Acrylic are now available for WinUI 3 applications.
-  - For more information about these materials, check out [Materials in Windows 11](/windows/apps/design/signature-experiences/materials). Check out our sample code for applying Mica in C++ applications at [Using a SystemBackdropController with WinUI 3 XAML](system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the [WinUI 3 Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+  - For more information about these materials, check out [Materials in Windows 11](../design/signature-experiences/materials.md). Check out our sample code for applying Mica in C++ applications at [Using a SystemBackdropController with WinUI 3 XAML](system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the [WinUI 3 Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 - First introduced in 1.0.1, we have stabilized and enabled the creation of **multiple windows on the same thread** in WinUI 3 applications. See [issue 5918](https://github.com/microsoft/microsoft-ui-xaml/issues/5918) for more information.
 
 **Fixed bugs:**
@@ -235,9 +235,9 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. This r
 #### Deployment
 **New features:**
 - Packaged apps can now force deploy the Windows App SDK runtime packages using the [**DeploymentManager.Initialize(DeploymentInitializeOptions) API**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize#microsoft-windows-applicationmodel-windowsappruntime-deploymentmanager-initialize(microsoft-windows-applicationmodel-windowsappruntime-deploymentinitializeoptions)) or using the --force option with the Windows App Runtime installer.
-- There are additional functional extension categories, UnlockedDEHs, available for packaged apps. Check out the [1.1 Preview 3 release notes](preview-channel.md#msix-packaging) for more details. These require the Windows App SDK framework package to be installed. See [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) to install the runtime.
-- Self-contained deployment is supported. Check out the [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview) for the differences between framework-dependent and self-contained deployment, and how to get started.
-- The Bootstrapper API required for apps that don't deploy with MSIX include new options for improved usability and troubleshooting. Please view our documentation for C# apps, [Bootstrapper C# APIs](/windows/apps/api-reference/cs-bootstrapper-apis/?branch=release-appsdk-1.1-stable) and for C++ apps, [mddbootstrapheader.h header](/windows/windows-app-sdk/api/win32/mddbootstrap). For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md).
+- There are additional functional extension categories, UnlockedDEHs, available for packaged apps. Check out the [1.1 Preview 3 release notes](preview-channel.md#msix-packaging) for more details. These require the Windows App SDK framework package to be installed. See [Downloads for the Windows App SDK](./downloads.md) to install the runtime.
+- Self-contained deployment is supported. Check out the [Windows App SDK deployment overview](../package-and-deploy/deploy-overview.md) for the differences between framework-dependent and self-contained deployment, and how to get started.
+- The Bootstrapper API required for apps that don't deploy with MSIX include new options for improved usability and troubleshooting. Please view our documentation for C# apps, [Bootstrapper C# APIs](../api-reference/cs-bootstrapper-apis/index.md?branch=release-appsdk-1.1-stable) and for C++ apps, [mddbootstrapheader.h header](/windows/windows-app-sdk/api/win32/mddbootstrap). For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md).
 
 **Known limitations:**
 - Running the Windows App Runtime installer (WindowsAppRuntimeInstall.exe) requires sideloading to be enabled. See [issue 2469](https://github.com/microsoft/WindowsAppSDK/issues/2469) on GitHub for more information.
@@ -277,16 +277,16 @@ MRT Core is a streamlined version of the modern Windows [Resource Management Sys
 **Known limitations:**
 - In .NET projects, resource files copy-pasted into the project folder aren't indexed on F5 if the app was already built. As a workaround, rebuild the app. See [issue 1503](https://github.com/microsoft/WindowsAppSDK/issues/1503) on GitHub for more info. 
 
-For more information, see [Manage resources with MRT Core](/windows/apps/windows-app-sdk/mrtcore/mrtcore-overview).
+For more information, see [Manage resources with MRT Core](./mrtcore/mrtcore-overview.md).
 
 #### Notifications
 Developers of packaged (including packaged with external location) and unpackaged apps can now send Windows notifications.
 
 **New features:**
 - Support for app notifications for packaged and unpackaged apps.
-  - Developers can send app notifications, also known as toast notifications, locally or from their own cloud service. See [App notifications overview](/windows/apps/windows-app-sdk/notifications/app-notifications/index).
+  - Developers can send app notifications, also known as toast notifications, locally or from their own cloud service. See [App notifications overview](./notifications/app-notifications/index.md).
 - Support for push notifications for packaged and unpackaged apps.
-  - Developers can send raw notifications and app notifications from their own cloud service. See [Push notifications overview](/windows/apps/windows-app-sdk/notifications/push-notifications/index).
+  - Developers can send raw notifications and app notifications from their own cloud service. See [Push notifications overview](./notifications/push-notifications/index.md).
 
 **Known limitations:**
 - Sending notifications from an elevated app is not supported. `PushNotificationManager::IsSupported()` will not perform a check for elevated mode.
@@ -299,7 +299,7 @@ For easier programming access to functionality that's implemented in USER32.dll 
 - Apps can show, minimize, or restore a window while specifying whether the window should be activated or not at the time the call is made.
 - Apps can now determine specific dimensions for their window's client area size in Win32 coordinates without needing to calculate the non-client area sizing to get a specific client area size.  
 - Additional WinRT APIs are available to support z-order management of windows based off of [SetWindowPos’s hWndInsertAfter](/windows/win32/api/winuser/nf-winuser-setwindowpos) functionality.
-- Apps drawing custom title bars with [`AppWindowTitleBar.ExtendsContentIntoTitleBar`](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) can set a `PreferredTitleBarHeight` option. You now have a choice between a standard height title bar, or a tall title bar that provides more room for interactive content. See [Title bar](/windows/apps/design/basics/titlebar-design) in the Fluent design guidelines for advice about when to use a tall title bar.
+- Apps drawing custom title bars with [`AppWindowTitleBar.ExtendsContentIntoTitleBar`](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) can set a `PreferredTitleBarHeight` option. You now have a choice between a standard height title bar, or a tall title bar that provides more room for interactive content. See [Title bar](../design/basics/titlebar-design.md) in the Fluent design guidelines for advice about when to use a tall title bar.
 
 **Fixed issues:**
 - When full screen presenter is invoked the first time, the window now fits on the entire screen correctly. See [issue 1853](https://github.com/microsoft/WindowsAppSDK/issues/1853) on GitHub for more info.
@@ -336,7 +336,7 @@ For easier programming access to functionality that's implemented in USER32.dll 
     ```
 
 #### C#/WinRT
-C# Windows Runtime Components, including WinUI custom controls, are now supported. This enables component authors to distribute C#-authored runtime components to any WinRT compatible language (e.g., C++/WinRT). See [Walkthrough—Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK](/windows/apps/develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt) and the [sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/CustomControls) to get started.
+C# Windows Runtime Components, including WinUI custom controls, are now supported. This enables component authors to distribute C#-authored runtime components to any WinRT compatible language (e.g., C++/WinRT). See [Walkthrough—Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK](../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md) and the [sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/CustomControls) to get started.
 
 #### Other limitations and known issues
 
@@ -346,7 +346,7 @@ C# Windows Runtime Components, including WinUI custom controls, are now supporte
 
 ## Version 1.0
 
-The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.4. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.4. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](./release-channels.md#features-available-by-release-channel)).
 
 ### Version 1.0.4
 
@@ -471,7 +471,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 For more info, or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 
 #### Windowing
 
@@ -801,7 +801,7 @@ To see WinUI 3 controls and features in action, you can clone and build the WinU
 
 To get started developing with WinUI, check out the following articles:
 - [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
-- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Build a C# .NET app with WinUI 3 and Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [WinUI 3 API Reference](/windows/winui/api)
 
@@ -838,7 +838,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 - Apps currently using WinUI 3 and the Windows App SDK 0.8 cannot use class libraries that use Project Reunion 0.5. Update the class libraries to use the Windows App SDK 0.8.
 
-- .NET apps must target build 18362 or higher: Your TFM must be set to net6.0-windows10.0.18362 or higher, and your packaging project's must be set to 18362 or higher. For more info, see [GitHub issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921).
+- .NET apps must target build 18362 or later: Your TFM must be set to net6.0-windows10.0.18362 or later, and your packaging project's must be set to 18362 or later. For more info, see [GitHub issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 - You may encounter a crash when switching frequently between light and dark mode.
 
@@ -882,7 +882,7 @@ This release supports all [stable channel features](release-channels.md#features
 This release has the following limitations and known issues:
 
 - **Desktop apps (C# or C++ desktop)**: This release is supported for use only in desktop apps (C++ or C#) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the [experimental release channel](experimental-channel.md).
-- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net6.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
+- **.NET apps must target build 18362 or later**: Your TFM must be set to `net6.0-windows10.0.18362` or later, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or later. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 [!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 

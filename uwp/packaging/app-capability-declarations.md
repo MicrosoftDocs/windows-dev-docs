@@ -92,7 +92,7 @@ Device capabilities allow your app to access peripheral and internal devices. De
 
 ## Restricted capabilities
 
-If your app declares any restricted capabilities, then you must provide info during the [app submission process](../publish/app-submissions.md) in order to be approved to publish your app to the Microsoft Store. You provide this info on the [Submission options](../publish/manage-submission-options.md#restricted-capabilities) page of your submission, explaining how your app uses each restricted capability that it declares.
+If your app declares any restricted capabilities, then you must provide info during the [app submission process](/windows/apps/publish/app-submissions) in order to be approved to publish your app to the Microsoft Store. You provide this info on the [Submission options](/windows/apps/publish/manage-submission-options.md#restricted-capabilities) page of your submission, explaining how your app uses each restricted capability that it declares.
 
 > [!IMPORTANT]
 > Restricted capabilities are intended for very specific scenarios. The use of these capabilities is highly restricted and subject to additional Store onboarding policy and review. Note that you can sideload apps that declare restricted capabilities without needing to receive any approval. Approval is only required when submitting these apps to the Store.
@@ -119,9 +119,9 @@ To declare a restricted capability, modify your [app package manifest](/uwp/sche
 
 ### Restricted capability approval process
 
-Previously, we required you to contact support to get approval to use a capability. We now allow you to provide this info in [Partner Center](https://partner.microsoft.com/dashboard) as part of the [submission process](../publish/app-submissions.md).
+Previously, we required you to contact support to get approval to use a capability. We now allow you to provide this info in [Partner Center](https://partner.microsoft.com/dashboard) as part of the [submission process](/windows/apps/publish/app-submissions).
 
-When you upload packages for your submission, we will detect whether any restricted capabilities are declared. If we do so, you will be required to provide details about how your product uses each capability on the [Submission options](../publish/manage-submission-options.md#restricted-capabilities) page. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability. Note that this may add some additional time for your submission to complete the certification process.
+When you upload packages for your submission, we will detect whether any restricted capabilities are declared. If we do so, you will be required to provide details about how your product uses each capability on the [Submission options](/windows/apps/publish/manage-submission-options.md#restricted-capabilities) page. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability. Note that this may add some additional time for your submission to complete the certification process.
 
 During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities).
 
@@ -259,18 +259,22 @@ To declare a custom capability, modify your [app package manifest](/uwp/schemas/
 | Capability scenario | Capability usage |
 |---------------------|------------------|
 | **App URI handler** | An app can register itself as a handler for a given URI, such that when the user opens a link to the specified URI, the app is launched instead of opening the browser. That requires registration on the local machine, and verification by the target web server. The **Microsoft.delegatedWebFeatures_8wekyb3d8bbwe** custom capability enables an app to host a Progressive Web App (PWA), and to verify that PWA as an app URI handler without referring to the target website for confirmation. |
+| **Cellular SAR configuration** | The **Microsoft.cellularSARConfiguration_8wekyb3d8bbwe** custom capability enables an app to perform configuration of a device's specific absorption rate (SAR) properties. See the [MobileBroadbandSarManager](/uwp/api/windows.networking.networkoperators.mobilebroadbandsarmanager) class. |
 | **CoreApplication activation** | An app that declares the **Microsoft.coreAppActivation_8wekyb3d8bbwe** custom capability is CoreApplication-based, but requires to run with full-trust, similar to a Desktop Bridge app. |
 | **Custom install actions** | Enables the app to use custom install/uninstall actions. An app can use custom actions if it has the **customInstallActions** [restricted capability](#restricted-capabilities) AND (it is an MSIXVC Xbox Game Pass app, OR it has the **Microsoft.classicAppInstaller_8wekyb3d8bbwe** custom capability). |
+| **ESim management** | The **Microsoft.eSIMManagement_8wekyb3d8bbwe** custom capability enables an app to perform configuration of a device's embedded SIM (eSIM). See the [ESim](/uwp/api/windows.networking.networkoperators.esim) class. |
 | **Legacy install behaviors** | The **Microsoft.classicAppCompat_8wekyb3d8bbwe** custom capability protects the case where an app declares a legacy install feature; for example, writing custom COM ProgIds in the Windows Registry. |
 | **Machine-wide install** | Protects the case where an app declares a legacy install feature that's configured for machine-wide/HKLM registration, which requires-elevation. Specifically required for anything in the app's manifest where the app declares `Scope="machine"`.<br/><br/>For example, an MSIX-based app using the **desktop7:ApprovedShellExtension** element needs to set scope to machine, and therefore needs to declare the **Microsoft.classicAppCompatElevated_8wekyb3d8bbwe** custom capability. For more info about that scenario, see [**desktop7:ApprovedShellExtension**](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop7-approvedshellextension). |
+| **On-Demand Network** | The **Microsoft.onDemandHotspotControl_8wekyb3d8bbwe** custom capability (the On-Demand Network capability) will be made available only to app developers building end-to-end Wi-Fi hotspot scenarios between a tethering-capable hardware device and a Windows PC. See the [WiFiOnDemandHotspotNetwork](/uwp/api/windows.devices.wifi.wifiondemandhotspotnetwork) class. |
 | **Registering an approved shell extension** | See the **Machine-wide install** capability scenario. |
 | **S-mode** | An app that declares the **Microsoft.requiresNonSMode_8wekyb3d8bbwe** custom capability will be prevented from running on a Windows device in S-mode. |
 | **Startup apps** | An app can be set up to start automatically at user login. Normally, the user can enable/disable that behavior for each app. The **Microsoft.nonUserConfigurableStartupTasks_8wekyb3d8bbwe** custom capability configures an app such that the user can't enable/disable its startup behavior. |
 | **Windows core 1** | An app that declares the **Microsoft.deployFullTrustOnHost_8wekyb3d8bbwe** custom capability is fully-trusted to use native Win32 APIs on a Windows core device. |
 | **Windows core 2** | A Desktop Bridge app that declares the **Microsoft.notSupportedInCoreV1_8wekyb3d8bbwe** custom capability will be prevented from running on a Windows core device. |
+| **Windows Hello companion device framework** | The functionality related to the **Microsoft.secondaryAuthenticationFactorForLogon_8wekyb3d8bbwe** custom capability is deprecated as of Windows 10, version 2004 (10.0; Build 19041), and we no longer grant this capability to developer accounts. An app that declares this capability can be registered with the companion device framework to enable *Windows unlock* with the app's associated companion device. For more info, see [Windows Unlock with Windows Hello companion (IoT) devices](/windows/uwp/security/companion-device-unlock). |
 
 ## Related topics
 
-* [Submission options](../publish/manage-submission-options.md)
+* [Submission options](/windows/apps/publish/manage-submission-options)
 * [How to specify capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest)
 * [How to specify device capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)

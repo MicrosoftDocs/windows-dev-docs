@@ -107,12 +107,12 @@ After you test your app with the simulated license server, and before you submit
 
 Be sure to explain how your app will behave during and after the free trial period so your customers won't be surprised by your app's behavior.
 
-For more info about describing your app, see [Create app descriptions](../publish/create-app-store-listings.md).
+For more info about describing your app, see [Create app descriptions](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix).
 
 ## Related topics
 
 * [Store sample (demonstrates trials and in-app purchases)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [Set app pricing and availability](../publish/set-app-pricing-and-availability.md)
+* [Set app pricing and availability](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix)
 * [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp)
 * [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator)
  

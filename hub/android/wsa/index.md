@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 07/13/2022
+ms.date: 11/02/2022
 ---
 
 # Windows Subsystem for Android™️
@@ -35,7 +35,7 @@ Want to learn more about Windows Subsystem for Android roadmap, discuss develope
 
 ## Preview Program
 
-The Windows Subsystem for Android™️ Preview Program allows users to receive early-preview builds of the Windows Subsystem for Android™ and Amazon Appstore on Windows. For more details, visit the [Preview Program page](/windows/android/wsa/preview-program).
+The Windows Subsystem for Android™️ Preview Program allows users to receive early-preview builds of the Windows Subsystem for Android™ and Amazon Appstore on Windows. For more details, visit the [Preview Program page](./preview-program.md).
 
 ## Set up your development environment
 
@@ -184,7 +184,7 @@ To debug an APK using adb:
 
 1. Follow the steps to connect to the Windows Subsystem for Android VM above.
 
-2. Install the APK using the adb install command: `adb install app-debug .apk`
+2. Install the APK using the adb install command: `adb install app-debug.apk`
 
     Expected Output:
 
@@ -220,8 +220,8 @@ The properties for the Windows Subsystem for Android VM are listed below. Hardco
 | Property | Value |
 | --- | --- |
 | Build.MANUFACTURER | Microsoft Corporation |
-| Build.MODEL | Subsystem for Android |
-| Build.VERSION.SDK_INT | 30 |
+| Build.MODEL | Subsystem for Android(TM) |
+| Build.VERSION.SDK_INT | 32 |
 | Build.BOARD | windows |
 
 ## Security

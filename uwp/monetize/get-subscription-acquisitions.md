@@ -256,7 +256,7 @@ Authorization: Bearer <your access token>
 
 ## Related topics
 
-* [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
+* [Add-on acquisitions report](/windows/apps/publish/add-on-acquisitions-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 
  

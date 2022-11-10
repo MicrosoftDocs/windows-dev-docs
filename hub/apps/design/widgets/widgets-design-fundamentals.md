@@ -108,4 +108,3 @@ If your widget includes showing user profiles (for example, a social media feed 
 ![An image of a calendar widget showing a calendar appointment. The mouse cursor is hovering over the appointment subject line, which is truncated, and a tool-tip shows the full subject line.](./images/widgets-tool-tips.png)
 
 Tool tips can be used when title text gets truncated in the widget. For best practices, text should fit neatly within the widget space and not need truncation however, that may not always happen depending on scenarios like language localization, system text scaling, or when quoting something (i.e. article title, name of a song). This does not apply to body text on a widget.
-

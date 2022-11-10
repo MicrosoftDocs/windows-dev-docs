@@ -42,7 +42,7 @@ Having set the `WindowsAppSDKSelfContained` property to `true` in your project f
 > [!NOTE]
 > C++ apps need to use the [hybrid CRT](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md#what-is-the-hybrid-crt) as well to be fully self-contained. Importing [HybridCRT.props](https://github.com/microsoft/WindowsAppSDK/blob/main/HybridCRT.props) from [Directory.Build.props](/visualstudio/msbuild/customize-your-build#directorybuildprops-and-directorybuildtargets) is the recommended way to configure it for all projects in a solution (see an example in [Directory.Build.props](https://github.com/microsoft/WindowsAppSDK-Samples/blob/43404afcc4e72294b3e2706d2eff12418dbb815a/Samples/SelfContainedDeployment/cpp-winui-unpackaged/Directory.Build.props#L3)). A packaged app must also set `<UseCrtSDKReferenceStaticWarning>false</UseCrtSDKReferenceStaticWarning>` in their project file. See the [Self-contained deployment](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SelfContainedDeployment/) sample app for how to use the hybrid CRT.
 
-If your app is packaged (for more info, see [Deployment overview](/windows/apps/package-and-deploy/)), then the Windows App SDK dependencies will be included as content inside the MSIX package. Deploying the app still requires registering the MSIX package like any other packaged app.
+If your app is packaged (for more info, see [Deployment overview](../index.md)), then the Windows App SDK dependencies will be included as content inside the MSIX package. Deploying the app still requires registering the MSIX package like any other packaged app.
 
 If your app is packaged with external location or unpackaged, then the Windows App SDK dependencies are copied next to the `.exe` in your build output. You can xcopy-deploy the resulting files, or include them in a custom installer.
 
@@ -50,7 +50,7 @@ If your app is packaged with external location or unpackaged, then the Windows A
 
 A small set of APIs in the Windows App SDK rely on additional MSIX packages that represent critical operating system (OS) functionality.
 
-* As of the Windows App SDK 1.1, push notifications depends on additional MSIX packages (see [Deployment architecture for the Windows App SDK](/windows/apps/windows-app-sdk/deployment-architecture)).
+* As of the Windows App SDK 1.1, push notifications depends on additional MSIX packages (see [Deployment architecture for the Windows App SDK](../../windows-app-sdk/deployment-architecture.md)).
 
 Consider these options when you're considering using those APIs in a self-contained app:
 
@@ -66,5 +66,5 @@ Consider these options when you're considering using those APIs in a self-contai
 
 * [Windows App SDK deployment overview](../deploy-overview.md)
 * [Windows App SDK self-contained deployment samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SelfContainedDeployment)
-* [Deployment overview](/windows/apps/package-and-deploy/)
-* [Deployment architecture for the Windows App SDK](/windows/apps/windows-app-sdk/deployment-architecture)
+* [Deployment overview](../index.md)
+* [Deployment architecture for the Windows App SDK](../../windows-app-sdk/deployment-architecture.md)

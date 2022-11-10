@@ -456,7 +456,7 @@ The Microsoft DirectX Graphics Infrastructure (DXGI) provides interoperability a
 
 #### C++
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) is a high-performance, low overhead language that provides the powerful combination of speed, compatibility, and platform access. C++/WinRT makes it easy to use all of the great gaming features in Windows, including DirectX and Xbox Live. You can also reuse existing C++ code and libraries. C++/WinRT creates fast, native code that doesn't incur the overhead of garbage collection, so your game can have great performance and low power consumption, which leads to longer battery life. Use C++/WinRT with DirectX or XAML, or create a game that uses a combination of both.
+[C++/WinRT](../cpp-and-winrt-apis/index.md) is a high-performance, low overhead language that provides the powerful combination of speed, compatibility, and platform access. C++/WinRT makes it easy to use all of the great gaming features in Windows, including DirectX and Xbox Live. You can also reuse existing C++ code and libraries. C++/WinRT creates fast, native code that doesn't incur the overhead of garbage collection, so your game can have great performance and low power consumption, which leads to longer battery life. Use C++/WinRT with DirectX or XAML, or create a game that uses a combination of both.
 
 #### C#
 
@@ -625,7 +625,7 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
 
 #### Havok
 
-Havok's modular suite of tools and technologies help game creators reach new levels of interactivity and immersion. Havok enables highly realistic physics, interactive simulations, and stunning cinematics. Version 2015.1 and higher officially supports UWP in Visual Studio 2015 on x86, 64-bit, and Arm.
+Havok's modular suite of tools and technologies help game creators reach new levels of interactivity and immersion. Havok enables highly realistic physics, interactive simulations, and stunning cinematics. Version 2015.1 or later officially supports UWP in Visual Studio 2015 on x86, 64-bit, and Arm.
 
 <table>
     <colgroup>
@@ -1427,7 +1427,7 @@ After you've finished development and shipped your game, it's not *game over*. Y
     </tr>
     <tr>
         <td>Learn how your customers are engaging with the Xbox features in your game</td>
-        <td><a href="../publish/xbox-analytics-report.md">Xbox analytics report</a></td>
+        <td><a href="/windows/apps/publish/xbox-analytics-report.md">Xbox analytics report</a></td>
     </tr>
     <tr>
         <td>Responding to customer reviews</td>

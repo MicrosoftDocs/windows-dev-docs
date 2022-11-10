@@ -106,11 +106,11 @@ We've revitalized our Get started content with new learning tracks. These new to
 
 ### Advertising performance report
 
-The [Advertising performance report](../publish/advertising-performance-report.md) in Partner Center now provides viewability metrics. We also added the [Optimize the viewability of your ad units](../monetize/optimize-ad-unit-viewability.md) article to provide recommendations for optimizing the viewability of your ads.
+The [Advertising performance report](/windows/apps/publish/advertising-performance-report) in Partner Center now provides viewability metrics. We also added the [Optimize the viewability of your ad units](../monetize/optimize-ad-unit-viewability.md) article to provide recommendations for optimizing the viewability of your ads.
 
 ### Targeted push notifications
 
-The [Notifications](../publish/send-push-notifications-to-your-apps-customers.md) page in Partner Center now provides additional analytics data for all your notifications in graph and world map views.
+The [Notifications](/windows/apps/publish/send-push-notifications-to-your-apps-customers) page in Partner Center now provides additional analytics data for all your notifications in graph and world map views.
 
 ## Videos
 

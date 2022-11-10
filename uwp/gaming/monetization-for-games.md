@@ -21,7 +21,7 @@ You can promote and monetize a UWP game in one or more of these ways:
 
 ## Worldwide distribution channel
 
-The Microsoft Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Define market selection](../publish/define-market-selection.md).
+The Microsoft Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Define market selection](/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix).
 
 ## Set a price for your game
 
@@ -33,16 +33,16 @@ Here are some important concepts regarding the pricing of your game in the Store
 
 The base price of the game is what determines whether your game is categorized as _paid_ or _free_. You can use [Partner Center](https://partner.microsoft.com/dashboard) to configure the base price based on country and region.
 The process of determining the price may include your [tax responsibilities when selling to different countries](/partner-center/tax-details-marketplace)
-and [cost considerations for specific markets](../publish/define-market-selection.md). You can also [set custom prices for specific markets](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets).
+and [cost considerations for specific markets](/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix). You can also [set custom prices for specific markets](/windows/apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix#override-base-price-for-specific-markets).
 
 ### Sale price
 
 One way to promote your game is to reduce its price for a limited time. It's also possible to set the sale price to __Free__ to allow your game to be downloaded without payment.
-You can schedule sale campaigns in advance by setting both the starting date and ending date of the sale. For more info, see [Put apps and add-ons on sale](../publish/put-apps-and-add-ons-on-sale.md).
+You can schedule sale campaigns in advance by setting both the starting date and ending date of the sale. For more info, see [Put apps and add-ons on sale](/windows/apps/publish/put-apps-and-add-ons-on-sale).
 
 ## In-game purchases
 
-In-game purchases are products bought within a game. They're also generically known as _in-app purchases_. In the Microsoft Store, these products are called _add-ons_. [Add-ons are published](../publish/add-on-submissions.md) through Partner Center. You'll also need to enable the add-ons in your game's code.
+In-game purchases are products bought within a game. They're also generically known as _in-app purchases_. In the Microsoft Store, these products are called _add-ons_. [Add-ons are published](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on) through Partner Center. You'll also need to enable the add-ons in your game's code.
 
 ### Types of add-ons
 
@@ -88,7 +88,7 @@ To create a package that can be uploaded to the Store:
 2. Within Visual Studio, go to __Project__ > __Store__ > __Create App Packages ...__
 3. For the __Do you want to build packages to upload to the Microsoft Store?__ option, select __Yes__.
 4. Sign in to your [Partner Center](https://partner.microsoft.com/dashboard) developer account. Or [register](https://developer.microsoft.com/store/register) for a developer account if you don't have one.
-5. Select an app to create the upload package for. If you have not yet created an app submission, provide a new app name to create a new submission. For more info, see [Create your app by reserving a name](../publish/create-your-app-by-reserving-a-name.md).
+5. Select an app to create the upload package for. If you have not yet created an app submission, provide a new app name to create a new submission. For more info, see [Create your app by reserving a name](/windows/apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msix).
 6. After the package has been created successfully, click __Launch Windows App Certification Kit__ to start the testing process.
 7. Fix any errors to create a game package.
 
@@ -98,16 +98,16 @@ To create a package that can be uploaded to the Store:
 2. From the __Dashboard overview__ or __All apps__ page, click the app you want to work with. If you have not yet created an app submission, click on __Create a new app__ and reserve a name.
 3. On the __App Overview__ page, click __Start your submission__.
 4. Configure this new submission. On the submission page:
-    * Click __Pricing and availability__. In the __Visibility__ section, choose '__Hide this app and prevent acquisition...__' to ensure only your development team has access to the game. For more details, go to [Distribution and visibility](../publish/set-app-pricing-and-availability.md).
+    * Click __Pricing and availability__. In the __Visibility__ section, choose '__Hide this app and prevent acquisition...__' to ensure only your development team has access to the game. For more details, go to [Distribution and visibility](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix).
     * Click __Properties__. In the __Category and subcategory__ section, choose __Games__ and then a suitable subcategory for your game.
     * Click __Age ratings__. Fill out the questionnaire accurately.
     * Click __Packages__. Upload the game package created in the earlier step.
 5. Follow any other submission prompts in the dashboard to allow you to successfully publish this game which remains hidden to the public.
 6. Click __Submit to the Store__.
 
-For more info, go to [App submissions](../publish/app-submissions.md).
+For more info, go to [App submissions](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix).
 
-After your game is submitted to the Store, it enters the [app certification process](../publish/the-app-certification-process.md). This process can take up to 16 hours before the game is listed.
+After your game is submitted to the Store, it enters the [app certification process](/windows/apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msix). This process can take up to 16 hours before the game is listed.
 
 #### Associate your game solution with the Store
 
@@ -121,18 +121,18 @@ If you have associated the solution to a published game that is live and listed 
 
 #### Create an add-on in the Store
 
-As you create add-ons, make sure you're associating them with the right game submission. For details about how to configure all the various info associated with an add-on, see [Add-on submissions](../publish/add-on-submissions.md).
+As you create add-ons, make sure you're associating them with the right game submission. For details about how to configure all the various info associated with an add-on, see [Add-on submissions](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on).
 
 1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in.
 2. From the __Dashboard overview__ or __All apps__ page, click the app you want to create the add-on for.
 3. On the __App Overview__ page, in the __Add-ons__ section, select __Create a new add-on__.
 4. Select the product type for the add-on: __developer-managed consumable__, __store-managed consumable__, or __durable__.
-5. Enter a unique product ID which will be used as a string variable when integrating this add-on into your game code. This ID will not be seen by consumers. For more info, see [Set your app product type and product ID](../publish/set-your-add-on-product-id.md).
+5. Enter a unique product ID which will be used as a string variable when integrating this add-on into your game code. This ID will not be seen by consumers. For more info, see [Set your app product type and product ID](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on).
 
 Other configurations for add-ons include:
-* [Properties](../publish/enter-add-on-properties.md)
-* [Pricing and availability](../publish/set-add-on-pricing-and-availability.md)
-* [Store listing](../publish/create-add-on-store-listings.md)
+* [Properties](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on)
+* [Pricing and availability](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on)
+* [Store listing](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on)
 
 If your game has many add-ons, you can create them programmatically by using the __Microsoft Store submission API__. For more info, see [Create and manage submissions using Microsoft Store services](../monetize/create-and-manage-submissions-using-windows-store-services.md).
 
@@ -151,11 +151,11 @@ Several types of ads can be displayed by using the Microsoft Advertising SDK:
 
 ### Which ads are displayed?
 
-By default, your app will show ads from Microsoft's network for paid ads. To maximize your ad revenue, you can enable ad mediation for your ad unit to display ads from additional paid ad networks. For more info about current offerings, see our [ad mediation](../publish/in-app-ads.md#mediation) guidance.
+By default, your app will show ads from Microsoft's network for paid ads. To maximize your ad revenue, you can enable ad mediation for your ad unit to display ads from additional paid ad networks. For more info about current offerings, see our [ad mediation](/windows/apps/publish/in-app-ads.md#mediation) guidance.
 
 ### Which markets allow ads to be displayed?
 
-For the full list of countries and regions that support ads, see [Supported markets for ad networks](../publish/in-app-ads.md#network-markets).
+For the full list of countries and regions that support ads, see [Supported markets for ad networks](/windows/apps/publish/in-app-ads.md#network-markets).
 
 ### APIs for displaying ads
 
@@ -222,8 +222,8 @@ Choose from several types of campaigns that can help increase your gamer base.
 ## Related links
 
 * [Getting paid](/partner-center/marketplace-get-paid)
-* [Account types, locations, and fees](../publish/account-types-locations-and-fees.md)
-* [Analytics](../publish/analytics.md)
+* [Account types, locations, and fees](/windows/apps/publish/partner-center/account-types-locations-and-fees)
+* [Analytics](/windows/apps/publish/analytics)
 * [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal)
 * [Implement a trial version of your app](../monetize/implement-a-trial-version-of-your-app.md)
 * [Run app experiments with A/B testing](../monetize/run-app-experiments-with-a-b-testing.md)

@@ -22,7 +22,7 @@ Banner ads are static display ads that utilize a rectangular portion of a page i
 |  Topic    | Description |               
 |----------|-------|
 | [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)     | Add a banner ad in your XAML/.NET app.        |
-| [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)     | Add a banner ad in your HTML5/JavaScript app.        |
+| [AdControl in HTML 5 and JavaScript](adcontrol-in-html-5-and-javascript.md)     | Add a banner ad in your HTML5/JavaScript app.        |
 | [Supported banner ad sizes](supported-ad-sizes-for-banner-ads.md)    |  Review the supported sizes for banner ads in UWP apps.        |
 
 

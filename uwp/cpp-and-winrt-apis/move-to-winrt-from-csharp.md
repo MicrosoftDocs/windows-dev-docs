@@ -396,7 +396,7 @@ For more info, and code examples, see [Consuming objects from markup](./binding-
 
 ### Making a data source available to XAML markup
 
-In C++/WinRT version 2.0.190530.8 and higher, [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) creates an observable vector that supports both **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** and **IObservableVector\<IInspectable\>**. For an example, see [Porting the **Scenarios** property](./clipboard-to-winrt-from-csharp.md#scenarios).
+In C++/WinRT version 2.0.190530.8 or later, [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) creates an observable vector that supports both **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** and **IObservableVector\<IInspectable\>**. For an example, see [Porting the **Scenarios** property](./clipboard-to-winrt-from-csharp.md#scenarios).
 
 You can author your **Midl file (.idl)** like this (also see [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl)).
 

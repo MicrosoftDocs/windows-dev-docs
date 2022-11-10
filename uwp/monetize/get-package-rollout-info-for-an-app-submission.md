@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Get rollout info for an app submission
 
 
-Use this method in the Microsoft Store submission API to get [package rollout](../publish/gradual-package-rollout.md) info for a package flight submission. For more information about the process of process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).
+Use this method in the Microsoft Store submission API to get [package rollout](/windows/apps/publish/gradual-package-rollout) info for a package flight submission. For more information about the process of process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the submission with the package rollout info you want to get. For more information about the Store ID, see [View app identity details](../publish/view-app-identity-details.md).  |
+| applicationId | string | Required. The Store ID of the app that contains the submission with the package rollout info you want to get. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).  |
 | submissionId | string | Required. The ID of the submission with the package rollout info you want to get. This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 
 
@@ -93,6 +93,6 @@ If the request cannot be successfully completed, the response will contain one o
 
 ## Related topics
 
-* [Gradual package rollout](../publish/gradual-package-rollout.md)
+* [Gradual package rollout](/windows/apps/publish/gradual-package-rollout)
 * [Manage app submissions using the Microsoft Store submission API](manage-app-submissions.md)
 * [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)

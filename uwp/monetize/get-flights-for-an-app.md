@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Get package flights for an app
 
-Use this method in the Microsoft Store submission API to list the package flights for an app that is registered to your Partner Center account. For more information about package flights, see [Package flights](../publish/package-flights.md).
+Use this method in the Microsoft Store submission API to list the package flights for an app that is registered to your Partner Center account. For more information about package flights, see [Package flights](/windows/apps/publish/package-flights).
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ This method has the following syntax. See the following sections for usage examp
 
 |  Name  |  Type  |  Description  |  Required  |
 |------|------|------|------|
-|  applicationId  |  string  |  The Store ID of the app for which you want to retrieve the package flights. For more information about the Store ID, see [View app identity details](../publish/view-app-identity-details.md).  |  Yes  |
+|  applicationId  |  string  |  The Store ID of the app for which you want to retrieve the package flights. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).  |  Yes  |
 |  top  |  int  |  The number of items to return in the request (that is, the number of package flights to return). If your account has more package flights than the value you specify in the query, the response body includes a relative URI path that you can append to the method URI to request the next page of data.  |  No  |
 |  skip  |  int  |  The number of items to bypass in the query before returning the remaining items. Use this parameter to page through data sets. For example, top=10 and skip=0 retrieves items 1 through 10, top=10 and skip=10 retrieves items 11 through 20, and so on.  |  No  |
 

@@ -32,7 +32,7 @@ A UWP app is:
 - Available from the Microsoft Store on all devices (or only those that you specify) that run on Windows 10 or Windows 11. The Microsoft Store provides multiple ways to make money on your app.
 - Able to be installed and uninstalled without risk to the machine or incurring "machine rot".
 - Engaging: use live tiles, push notifications, and user activities that interact with Windows Timeline and Cortana's Pick Up Where I Left Off, to engage users.
-- Programmable in C#, C++, Visual Basic, and Javascript. For UI, use WinUI, XAML, HTML, or DirectX.
+- Programmable in C#, C++, Visual Basic, and JavaScript. For UI, use WinUI, XAML, HTML, or DirectX.
 
 Let's look at these in more detail.
 
@@ -44,7 +44,7 @@ UWP apps declare in their manifest the device capabilities they need such as acc
 
 Windows 10 introduced the Universal Windows Platform (UWP), which provides a common app platform on every device that runs Windows. The UWP core APIs are the same on all Windows devices. If your app only uses the core APIs, it will run on any Windows device no matter whether you are targeting a desktop PC, Xbox, Mixed-reality headset, and so on.
 
-A UWP app written in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows devices.
+A UWP app written in [C++/WinRT](../cpp-and-winrt-apis/index.md) has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows devices.
 
 ### Extension SDKs expose the unique capabilities of specific device types
 
@@ -134,9 +134,9 @@ In addition to interaction on different devices, [plan your app](./plan-your-app
 
 ### Submit your app to the Store
 
-[Partner Center](https://partner.microsoft.com/dashboard) lets you manage and submit all of your apps for Windows devices in one place. See [Publish Windows apps and games](../publish/index.md) to learn how to submit your apps for publication in the Microsoft Store.
+[Partner Center](https://partner.microsoft.com/dashboard) lets you manage and submit all of your apps for Windows devices in one place. See [Publish Windows apps and games](/windows/apps/publish/index) to learn how to submit your apps for publication in the Microsoft Store.
 
-New features simplify processes while giving you more control. You'll also find detailed [analytic reports](../publish/analytics.md) combined [payout details](/partner-center/payout-statement), ways to [promote your app and engage with your customers](../publish/attract-customers-and-promote-your-apps.md), and much more.
+New features simplify processes while giving you more control. You'll also find detailed [analytic reports](/windows/apps/publish/analytics) combined [payout details](/partner-center/payout-statement), ways to [promote your app and engage with your customers](/windows/apps/publish/attract-customers-and-promote-your-apps), and much more.
 
 For more introductory material, see [An Introduction to Building Windows Apps for Windows 10 Devices](/archive/msdn-magazine/2015/may/windows-10-an-introduction-to-building-windows-apps-for-windows-10-devices)
 

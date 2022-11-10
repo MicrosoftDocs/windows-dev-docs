@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Use this method in the Microsoft Store analytics API to get aggregate ad performance data for your applications during a given date range and other optional filters. This method returns the data in JSON format.
 
-This method returns the same data that is provided by the [Advertising performance report](../publish/advertising-performance-report.md) in Partner Center.
+This method returns the same data that is provided by the [Advertising performance report](/windows/apps/publish/advertising-performance-report) in Partner Center.
 
 ## Prerequisites
 
@@ -167,5 +167,5 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Advertising performance report](../publish/advertising-performance-report.md)
+* [Advertising performance report](/windows/apps/publish/advertising-performance-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)

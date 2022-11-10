@@ -26,7 +26,7 @@ The Xbox Live Creators Program is now live, allowing you to easily build and pub
 
 ### XAML basics tutorials
 
-We've written four [XAML basics tutorials](/windows/uwp/xaml-platform/xaml-overview) to accompany the new [PhotoLab sample](https://github.com/Microsoft/Windows-appsample-photo-lab), covering four core aspects of XAML programming: user interfaces, data binding, custom styles, and adaptive layouts. Each tutorial track starts with a partially-complete version of the PhotoLab Sample, and builds one missing component of the final app step-by-step. 
+We've written four [XAML basics tutorials](../xaml-platform/xaml-overview.md) to accompany the new [PhotoLab sample](https://github.com/Microsoft/Windows-appsample-photo-lab), covering four core aspects of XAML programming: user interfaces, data binding, custom styles, and adaptive layouts. Each tutorial track starts with a partially-complete version of the PhotoLab Sample, and builds one missing component of the final app step-by-step. 
 
 ![Screenshot of PhotoLab sample showing photo gallery page](images/PhotoLab-gallery-page.png)  
 

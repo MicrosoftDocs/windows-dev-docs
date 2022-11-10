@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 09/06/2022
+ms.date: 11/02/2022
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
@@ -77,6 +77,28 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [File Explorer](file-explorer.md) add-ons enable Preview pane rendering in File Explorer to display SVG icons (.svg), Markdown (.md) and PDF file previews. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+    :::column-end:::
+:::row-end:::
+
+### File Locksmith
+
+:::row:::
+    :::column:::
+        [![File Locksmith screenshot.](../images/powertoys-file-locksmith.png)](file-locksmith.md)
+    :::column-end:::
+    :::column span="2":::
+        [File Locksmith](file-locksmith.md) is a Windows shell extension for checking which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **What's using this file?** from the menu.
+    :::column-end:::
+:::row-end:::
+
+### Hosts file editor
+
+:::row:::
+    :::column:::
+        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+    :::column-end:::
+    :::column span="2":::
+        [Hosts file editor](hosts-file-editor.md) is a convenient way to edit the 'Hosts' file that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks. 
     :::column-end:::
 :::row-end:::
 

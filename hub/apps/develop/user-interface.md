@@ -80,7 +80,7 @@ The table below shows a brief summary of a few main capabilities between these U
 | Languages supported   | C#/.NET 6 and later, C++/WinRT      | C#/.NET Native, C++/WinRT, C++/CX, VB    | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB |
 | Devices supported   | PCs (incl. laptops and tablets), support for all Windows 10 devices coming soon | All Windows 10 devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more) | Desktop PCs and laptops    | Desktop PCs and laptops    |
 | Inputs supported    | All Windows 10 inputs supported      | All Windows 10 inputs supported   | Mouse and keyboard    | Mouse and keyboard    |
-| Windows OS version supported | Windows 10 version 1809 and higher  | Windows 10 version 1703 and higher    | Windows XP and higher     | Windows XP and higher   |
+| Windows OS version supported | Windows 10 version 1809 or later  | Windows 10 version 1703 or later    | Windows XP or later     | Windows XP or later   |
 | WebView support   | Chromium-based WebView2         | Non-chromium WebView       | WebView2 support coming soon   | WebView2 support coming soon     |
 | Open Source   | Coming soon       | Yes     | Yes (.NET 6 and later only)      | Yes (.NET 6 and later only)   |
 
@@ -126,7 +126,7 @@ WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals
 
 #### Key app scenarios enabled by WinUI 2
 
-- UWP apps that are looking to work downlevel to all versions of Windows 10
+- UWP apps that are looking to work downlevel to all versions of Windows 10 and Windows 11
 - Graphic-heavy apps or games that want to take advantage of DirectX and Win2D 
 - UWP apps that need to run on a variety of modern devices, with a range of modern inputs
 - Apps that seek to provide experiences that "fit right in" on the Windows OS and with other first party Windows apps

@@ -29,24 +29,24 @@ Subscription add-ons for UWP apps support the following features:
 
 To enable the purchase of subscription add-ons in your app, follow these steps.
 
-1. [Create an add-on submission](../publish/add-on-submissions.md) for your subscription in Partner Center and publish the submission. As you follow the add-on submission process, pay close attention to the following properties:
+1. [Create an add-on submission](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on) for your subscription in Partner Center and publish the submission. As you follow the add-on submission process, pay close attention to the following properties:
 
-    * [Product type](../publish/set-your-add-on-product-id.md#product-type): Make sure you select **Subscription**.
+    * [Product type](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on#product-type): Make sure you select **Subscription**.
 
-    * [Subscription period](../publish/enter-add-on-properties.md#subscription-period): Choose the recurring billing period for your subscription. You cannot change the subscription period after you publish your add-on.
+    * [Subscription period](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on#subscription-period): Choose the recurring billing period for your subscription. You cannot change the subscription period after you publish your add-on.
 
         Each subscription add-on supports a single subscription period and trial period. You must create a different subscription add-on for each type of subscription you want to offer in your app. For example, if you wanted to offer a monthly subscription with no trial, a monthly subscription with a one-month trial, an annual subscription with no trial, and an annual subscription with a one-month trial, you would need to create four subscription add-ons.
 
-    * [Trial period](../publish/enter-add-on-properties.md#free-trial): Consider choosing a 1 week or 1 month trial period for your subscription to enable users to try your subscription content before they buy it. You cannot change or remove the trial period after you publish your subscription add-on.
+    * [Trial period](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on#free-trial): Consider choosing a 1 week or 1 month trial period for your subscription to enable users to try your subscription content before they buy it. You cannot change or remove the trial period after you publish your subscription add-on.
 
         To acquire a free trial of your subscription, a user must purchase your subscription through the standard in-app purchase process, including a valid form of payment. They are not charged any money during the trial period. At the end of the trial period, the subscription automatically converts to the full subscription and the user's payment instrument will be charged for the first period of the paid subscription. If the user chooses to cancel their subscription during the trial period, the subscription remains active until the end of the trial period. Some trial periods are not available for all subscription periods.
 
         > [!NOTE]
         > Each customer can acquire a free trial for a subscription add-on only one time. After a customer acquires a free trial for a subscription, the Store prevents the same customer from ever acquiring the same free trial subscription again.
 
-    * [Visibility](../publish/set-add-on-pricing-and-availability.md#visibility): If you are creating a test add-on that you will only use to test the in-app purchase experience for your subscription, we recommend that you select one of the **Hidden in the Store** options. Otherwise, you can select the best visibility option for your scenario.
+    * [Visibility](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on#visibility): If you are creating a test add-on that you will only use to test the in-app purchase experience for your subscription, we recommend that you select one of the **Hidden in the Store** options. Otherwise, you can select the best visibility option for your scenario.
 
-    * [Pricing](../publish/set-add-on-pricing-and-availability.md?#pricing): Choose the price of your subscription in this section. You cannot raise the price of the subscription after you publish the add-on. However, you can lower the price later.
+    * [Pricing](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on#pricing): Choose the price of your subscription in this section. You cannot raise the price of the subscription after you publish the add-on. However, you can lower the price later.
         > [!IMPORTANT]
         > By default, when you create any add-on the price is initially set to **Free**. Because you cannot raise the price of a subscription add-on after you complete the add-on submission, be sure to choose the price of your subscription here.
 
@@ -54,7 +54,7 @@ To enable the purchase of subscription add-ons in your app, follow these steps.
 
 3. Test the in-app purchase implementation of your subscription in your app. You'll need to download your app once from the Store to your development device to use its license for testing. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing) for in-app purchases.  
 
-4. Create and publish an app submission that includes your updated app package, including your tested code. For more information, see [App submissions](../publish/app-submissions.md).
+4. Create and publish an app submission that includes your updated app package, including your tested code. For more information, see [App submissions](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix).
 
 <span id="code-examples"/>
 
@@ -64,8 +64,8 @@ The code examples in this section demonstrate how to use the APIs in the [**Wind
 
 These examples have the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have [created an app submission](../publish/app-submissions.md) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
-* You have [created a subscription add-on for the app](../publish/add-on-submissions.md) in Partner Center.
+* You have [created an app submission](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
+* You have [created a subscription add-on for the app](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on) in Partner Center.
 
 The code in these examples assumes:
 * The code file has **using** statements for the **Windows.Services.Store** and **System.Threading.Tasks** namespaces.
@@ -122,8 +122,8 @@ The following scenarios are not currently supported for subscription add-ons.
 * Selling subscriptions to customers directly via the Store is not supported at this time. Subscriptions are available for in-app purchases of digital products only.
 * Customers cannot switch subscription periods using the [https://account.microsoft.com/services](https://account.microsoft.com/services) page for their Microsoft account. To switch to a different subscription period, customers must cancel their current subscription and then purchase a subscription with a different subscription period from your app.
 * Tier switching is currently not supported for subscription add-ons (for example, switching a customer from a basic subscription to a premium subscription with more features).
-* [Sales](../publish/put-apps-and-add-ons-on-sale.md) and [promotional codes](../publish/generate-promotional-codes.md) are currently not supported for subscription add-ons.
-* Renewing existing subscriptions after setting the visibility of your subscription add-on to **Stop acquisition**. See [Set add-on pricing and availability](../publish/set-add-on-pricing-and-availability.md) for more details.
+* [Sales](/windows/apps/publish/put-apps-and-add-ons-on-sale) and [promotional codes](/windows/apps/publish/generate-promotional-codes) are currently not supported for subscription add-ons.
+* Renewing existing subscriptions after setting the visibility of your subscription add-on to **Stop acquisition**. See [Set add-on pricing and availability](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on) for more details.
 
 ## Related topics
 

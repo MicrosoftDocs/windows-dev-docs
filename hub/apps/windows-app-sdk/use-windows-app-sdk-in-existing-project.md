@@ -27,7 +27,7 @@ If you have an existing desktop project in which you want to use the Windows App
 1. Open an existing project in Visual Studio.
 
     > [!NOTE]
-    > If you have a C# desktop project, make sure the **TargetFramework** element in the project file is assigned to a Windows 10-specific moniker, such as **net6.0-windows10.0.19041.0**, so that it can call Windows Runtime APIs. For more information, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). Additionally, you must be targeting **18362** or higher as there is a [known issue blocking apps that target **17763**](https://github.com/microsoft/WindowsAppSDK/issues/921).
+    > If you have a C# desktop project, make sure the **TargetFramework** element in the project file is assigned to a Windows 10-specific moniker, such as **net6.0-windows10.0.19041.0**, so that it can call Windows Runtime APIs. For more information, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). Additionally, you must be targeting **18362** or later as there is a [known issue blocking apps that target **17763**](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 2. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
@@ -56,7 +56,7 @@ If you have an existing desktop project in which you want to use the Windows App
 
 If your existing project is a C++ project, and you want to call Windows Runtime APIs in the Windows App SDK, then you'll need to add support for C++/WinRT. See [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). Look for info there about the **Microsoft.Windows.CppWinRT NuGet** package. Without that package, your project won't be able to find the namespace header files for Windows Runtime APIs in the Windows App SDK.
 
-If you encounter a "Class not registered" error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](/windows/apps/desktop/modernize/framework-packages/framework-packages-overview).
+If you encounter a "Class not registered" error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md).
 
 ## Related topics
 

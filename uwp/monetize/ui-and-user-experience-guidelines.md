@@ -116,7 +116,7 @@ We recommend that you follow these best practices when you implement interstitia
 
 * Be mindful of the user’s data plan. For example, either don’t show, or warn user, before serving an interstitial video ad on a mobile device that is near/over its data limit. There are APIs in the [ConnectionProfile](/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) class which can help.
 
-* Continuously improve your app after the initial submission. Look at the [ad reports](../publish/advertising-performance-report.md) and make design changes to improve fill and interstitial video completion rates.
+* Continuously improve your app after the initial submission. Look at the [ad reports](/windows/apps/publish/advertising-performance-report) and make design changes to improve fill and interstitial video completion rates.
 
 ### Practices to avoid
 

@@ -31,9 +31,9 @@ RAM
 
 Operating system
 
--   Windows 8 or higher (Windows 10 strongly recommended)
+-   Windows 8 or later (Windows 10 strongly recommended)
 -   64-bit
--   Pro edition or higher
+-   Pro edition or later
 
 To check the BIOS requirements, see [How to enable Hyper-V for the emulator for Windows Phone 8](/previous-versions/windows/apps/jj863509(v=vs.105)).
 

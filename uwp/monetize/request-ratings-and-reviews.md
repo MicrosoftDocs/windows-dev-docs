@@ -143,11 +143,11 @@ For more information, see [Launch the Microsoft Store app](../launch-resume/laun
 ## Analyze your ratings and reviews data
 
 To analyze the ratings and reviews data from your customers, you have several options:
-* You can use the [Reviews](../publish/reviews-report.md) report in Partner Center to see the ratings and reviews from your customers. You can also download this report to view it offline.
+* You can use the [Reviews](/windows/apps/publish/reviews-report) report in Partner Center to see the ratings and reviews from your customers. You can also download this report to view it offline.
 * You can use the [Get app ratings](get-app-ratings.md) and [Get app reviews](get-app-reviews.md) methods in the Store analytics API to programmatically retrieve the ratings and reviews from your customers in JSON format.
 
 ## Related topics
 
 * [Send requests to the Store](send-requests-to-the-store.md)
 * [Launch the Microsoft Store app](../launch-resume/launch-store-app.md)
-* [Reviews report](../publish/reviews-report.md)
+* [Reviews report](/windows/apps/publish/reviews-report)

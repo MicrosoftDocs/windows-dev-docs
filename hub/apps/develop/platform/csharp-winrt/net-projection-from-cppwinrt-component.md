@@ -122,7 +122,7 @@ Before you can invoke the `cswinrt.exe` tool to generate the projection assembly
 
 1. In **Solution Explorer**, double-click the **SimpleMathProjection** node to open the project file in the editor.
 
-2. Update the `TargetFramework` element to target a specific Windows SDK version. This adds assembly dependencies that are necessary for the interop and projection support. This sample targets the Windows 10 SDK version **net6.0-windows10.0.19041.0** (also known as Windows 10, version 2004). Set the `Platform` element to **AnyCPU** so that the resulting projection assembly can be referenced from any app architecture. To allow referencing applications to support earlier Windows 10 SDK versions, you can also set the `TargetPlatformMinimumVersion` property.
+2. Update the `TargetFramework` element to target a specific Windows SDK version. This adds assembly dependencies that are necessary for the interop and projection support. This sample targets the Windows SDK version **net6.0-windows10.0.19041.0** (also known as Windows 10, version 2004). Set the `Platform` element to **AnyCPU** so that the resulting projection assembly can be referenced from any app architecture. To allow referencing applications to support earlier Windows SDK versions, you can also set the `TargetPlatformMinimumVersion` property.
 
     ```xml
     <PropertyGroup>

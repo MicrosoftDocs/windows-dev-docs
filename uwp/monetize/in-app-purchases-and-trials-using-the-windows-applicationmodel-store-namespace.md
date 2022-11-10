@@ -382,7 +382,7 @@ This element describes the app's license. **App** is a required child of the [Li
 |  **AppId**  |    Yes   |  1   |   The GUID that identifies the app in the Store. This can be any GUID for testing.        |
 |  **LinkUri**  |    Yes  |  1   |    The URI of the listing page in the store. This can be any valid URI for testing.         |
 |  **CurrentMarket**  |    Yes  |  1   |    The customer's country/region.         |
-|  **AgeRating**  |    Yes  |  1   |     An integer that represents the minimum age rating of the app. This is the same value you would specify in Partner Center when you submit the app. The values used by the Store are: 3, 7, 12, and 16. For more info on these ratings, see [Age ratings](../publish/age-ratings.md).        |
+|  **AgeRating**  |    Yes  |  1   |     An integer that represents the minimum age rating of the app. This is the same value you would specify in Partner Center when you submit the app. The values used by the Store are: 3, 7, 12, and 16. For more info on these ratings, see [Age ratings](/windows/apps/publish/publish-your-app/age-ratings?pivots=store-installer-msix).        |
 |  [MarketData](#marketdata-child-of-app)  |    Yes  |  1 or more      |    Contains info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element.       |
 
 <span id="marketdata-child-of-app"/>
@@ -436,9 +436,9 @@ This element provides info about the add-on for a given country/region. For each
 |  **CurrencySymbol**  |    Yes  |  1   |     The currency symbol used in this country/region.        |
 |  **CurrencyCode**  |    No  |  0 or 1      |      The currency code used in this country/region.         |  
 |  **Description**  |    No  |   0 or 1   |      The description of the add-on for this country/region.       |
-|  **Tag**  |    No  |   0 or 1   |      The [custom developer data](../publish/enter-add-on-properties.md#custom-developer-data) (also called tag) for the add-on.       |
-|  **Keywords**  |    No  |   0 or 1   |      Contains up to 10 **Keyword** elements that contain the [keywords](../publish/enter-add-on-properties.md#keywords) for the add-on.       |
-|  **ImageUri**  |    No  |   0 or 1   |      The [URI for the image](../publish/create-add-on-store-listings.md#icon) in the add-on's listing.           |
+|  **Tag**  |    No  |   0 or 1   |      The [custom developer data](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on#custom-developer-data) (also called tag) for the add-on.       |
+|  **Keywords**  |    No  |   0 or 1   |      Contains up to 10 **Keyword** elements that contain the [keywords](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on#keywords) for the add-on.       |
+|  **ImageUri**  |    No  |   0 or 1   |      The [URI for the image](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on#icon) in the add-on's listing.           |
 
 **MarketData** has the following attributes.
 

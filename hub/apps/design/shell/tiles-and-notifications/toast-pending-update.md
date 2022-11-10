@@ -15,7 +15,7 @@ You can use **PendingUpdate** to create multi-step interactions in your toast no
 ![Toast with pending update](images/toast-pendingupdate.gif)
 
 > [!IMPORTANT]
-> **Requires Desktop Fall Creators Update and 2.0.0 of Notifications library**: You must be running Desktop build 16299 or higher to see pending update work. You must use version 2.0.0 or higher of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to assign **PendingUpdate** on your buttons. **PendingUpdate** is only supported on Desktop and will be ignored on other devices.
+> **Requires Desktop Fall Creators Update and 2.0.0 of Notifications library**: You must be running Desktop build 16299 or later to see pending update work. You must use version 2.0.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to assign **PendingUpdate** on your buttons. **PendingUpdate** is only supported on Desktop and will be ignored on other devices.
 
 
 ## Prerequisites

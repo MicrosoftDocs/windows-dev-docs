@@ -36,7 +36,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [RichTextBlock class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph class](/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typography class](/uwp/api/Windows.UI.Xaml.Documents.Typography)
 > - [Open the WinUI 2 Gallery app and see the RichTextBox in action](winui2gallery:/item/RichTextBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Create a rich text block
 

@@ -24,7 +24,7 @@ The following steps describe the end-to-end process:
 
 Before you start writing code to call the Microsoft Store analytics API, make sure that you have completed the following prerequisites.
 
-* You (or your organization) must have an Azure AD directory and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](../publish/associate-azure-ad-with-partner-center.md#create-a-new-azure-ad-tenant-to-associate-with-your-partner-center-account) for no additional charge.
+* You (or your organization) must have an Azure AD directory and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](/windows/apps/publish/partner-center/associate-azure-ad-with-partner-center#create-a-new-azure-ad-tenant-to-associate-with-your-partner-center-account) for no additional charge.
 
 * You must associate an Azure AD application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Microsoft Store analytics API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
     > [!NOTE]
@@ -32,13 +32,13 @@ Before you start writing code to call the Microsoft Store analytics API, make su
 
 To associate an Azure AD application with your Partner Center account and retrieve the required values:
 
-1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-partner-center.md).
+1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](/windows/apps/publish/partner-center/associate-azure-ad-with-partner-center).
 
-2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to access analytics data for your Partner Center account. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
+2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to access analytics data for your Partner Center account. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
 
 3.  Return to the **Users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
 
-4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).
+4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications#manage-keys).
 
 <span id="obtain-an-azure-ad-access-token" />
 
@@ -104,7 +104,7 @@ The following additional methods are available for use by developer accounts wit
 
 | Scenario       | Methods      |
 |---------------|--------------------|
-| General analytics |  <ul><li>[Get Xbox Live analytics data](../publish/xbox-analytics-report.md)</li></ul> |
+| General analytics |  <ul><li>[Get Xbox Live analytics data](/windows/apps/publish/xbox-analytics-report)</li></ul> |
 
 ### Methods for hardware and drivers
 

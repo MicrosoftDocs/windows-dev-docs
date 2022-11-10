@@ -719,16 +719,3 @@ In **Solution Explorer**, right-click your **ExampleWidgetProviderPackage** and 
 ## Testing your widget provider
 
 In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the widgets board. To see the widgets you will need to open the widgets board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
-
-
-
-
-
-
-
-
-
-
-
-
-

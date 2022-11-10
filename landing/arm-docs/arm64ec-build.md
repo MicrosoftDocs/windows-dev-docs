@@ -23,6 +23,9 @@ In the Visual Studio Installer, you can add the Arm64EC tools by searching under
 
   ![Visual Studio Installer Arm64EC checkbox screenshot](./images/arm64ec-vs-installer.png)
 
+> [!IMPORTANT]
+> As of Visual Studio 2022 version 17.4, the Arm64EC tools are included when installing the Arm64 tools (**MSVC v143 - VS 2022 C++ ARM64 build tools**). You no longer need to select a separate option for Arm64EC tools.
+
 Once you have installed the prerequisites and tools, you can target Arm64EC in your MSBuild and CMake projects.
 
 ## MSBuild Projects

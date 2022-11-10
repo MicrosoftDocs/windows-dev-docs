@@ -11,15 +11,15 @@ ms.localizationpriority: medium
 
 # Retrieve a window handle (HWND)
 
-This topic shows you how, in a desktop app, to retrieve the window handle for a window. The scope covers [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/), [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/), and [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps; code examples are presented in C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
+This topic shows you how, in a desktop app, to retrieve the window handle for a window. The scope covers [Windows UI Library (WinUI) 3](../../winui/winui3/index.md), [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/), and [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps; code examples are presented in C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
 The development and UI frameworks listed above are (behind the scenes) built on the [Win32 API](/windows/win32/). In Win32, a [window](/windows/win32/winmsg/about-windows) object is identified by a value known as a [window handle](/windows/win32/winmsg/about-windows#window-handle). And the type of a window handle is an **[HWND](/windows/win32/winprog/windows-data-types)** (although it surfaces in C# as an [**IntPtr**](/dotnet/api/system.intptr)). In any case, you'll hear the term **HWND** used as a shorthand for *window handle*.
 
-There are several reasons to retrieve the **HWND** for a window in your WinUI 3, WPF, or WinForms desktop app. One example is to use the **HWND** to interoperate with certain Windows Runtime (WinRT) objects that depend on a **CoreWindow** to display a user-interface (UI). For more info, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
+There are several reasons to retrieve the **HWND** for a window in your WinUI 3, WPF, or WinForms desktop app. One example is to use the **HWND** to interoperate with certain Windows Runtime (WinRT) objects that depend on a **CoreWindow** to display a user-interface (UI). For more info, see [Display WinRT UI objects that depend on CoreWindow](./display-ui-objects.md).
 
 ## WinUI 3 with C#
 
-The C# code below shows how to retrieve the window handle (HWND) for a WinUI 3 [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. This example calls the **GetWindowHandle** method on the **WinRT.Interop.WindowNative** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+The C# code below shows how to retrieve the window handle (HWND) for a WinUI 3 [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. This example calls the **GetWindowHandle** method on the **WinRT.Interop.WindowNative** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
 
 ```csharp
 // MainWindow.xaml.cs
@@ -77,9 +77,9 @@ private void button1_Click(object sender, EventArgs e)
 
 ## Related topics
 
-* [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects)
-* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
-* [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/)
+* [Display WinRT UI objects that depend on CoreWindow](./display-ui-objects.md)
+* [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
+* [Windows UI Library (WinUI) 3](../../winui/winui3/index.md)
 * [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
 * [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
 * [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)

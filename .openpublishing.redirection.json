@@ -7219,6 +7219,216 @@
       "source_path": "hub/apps/develop/widgets/widget-service-providers.md",
       "redirect_url": "/windows/apps/develop/widgets/widget-providers",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "landing/arm-docs/dev-kit.md",
+      "redirect_url": "/windows/arm/dev-kit/index",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "uwp/publish/msiexe/store-submission-api.md",
+      "redirect_url": "/windows/apps/publish/store-submission-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/msiexe/update-your-app.md",
+      "redirect_url": "/windows/apps/publish/update-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/acquisitions-report.md",
+      "redirect_url": "/windows/apps/publish/acquisitions-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/add-on-acquisitions-report.md",
+      "redirect_url": "/windows/apps/publish/add-on-acquisitions-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/advertising-performance-report.md",
+      "redirect_url": "/windows/apps/publish/advertising-performance-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/analytics.md",
+      "redirect_url": "/windows/apps/publish/analytics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/msiexe/analyze-app-performance.md",
+      "redirect_url": "/windows/apps/publish/analyze-msi-exe/analyze-app-performance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/msiexe/ratings-reviews-performance.md",
+      "redirect_url": "/windows/apps/publish/analyze-msi-exe/ratings-reviews-performance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/app-management-and-services.md",
+      "redirect_url": "/windows/apps/publish/app-management-and-services",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/app-marketing-guidelines.md",
+      "redirect_url": "/windows/apps/publish/app-marketing-guidelines",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/attract-customers-and-promote-your-apps.md",
+      "redirect_url": "/windows/apps/publish/attract-customers-and-promote-your-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/beta-testing-and-targeted-distribution.md",
+      "redirect_url": "/windows/apps/publish/beta-testing-and-targeted-distribution",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/create-a-custom-app-promotion-campaign.md",
+      "redirect_url": "/windows/apps/publish/create-a-custom-app-promotion-campaign",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/create-customer-groups.md",
+      "redirect_url": "/windows/apps/publish/create-customer-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/create-customer-segments.md",
+      "redirect_url": "/windows/apps/publish/create-customer-segments",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/create-known-user-groups.md",
+      "redirect_url": "/windows/apps/publish/create-known-user-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/distribute-lob-apps-to-enterprises.md",
+      "redirect_url": "/windows/apps/publish/distribute-lob-apps-to-enterprises",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/download-analytic-reports.md",
+      "redirect_url": "/windows/apps/publish/download-analytic-reports",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/engage-with-your-customers.md",
+      "redirect_url": "/windows/apps/publish/engage-with-your-customers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/feedback-report.md",
+      "redirect_url": "/windows/apps/publish/feedback-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/generate-preinstall-packages-for-oems.md",
+      "redirect_url": "/windows/apps/publish/generate-preinstall-packages-for-oems",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/generate-promotional-codes.md",
+      "redirect_url": "/windows/apps/publish/generate-promotional-codes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/gradual-package-rollout.md",
+      "redirect_url": "/windows/apps/publish/gradual-package-rollout",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/health-report.md",
+      "redirect_url": "/windows/apps/publish/health-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/in-app-ads.md",
+      "redirect_url": "/windows/apps/publish/in-app-ads",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/insights-report.md",
+      "redirect_url": "/windows/apps/publish/insights-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/link-to-your-app.md",
+      "redirect_url": "/windows/apps/publish/link-to-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/make-your-app-easier-to-promote.md",
+      "redirect_url": "/windows/apps/publish/make-your-app-easier-to-promote",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/organizational-licensing.md",
+      "redirect_url": "/windows/apps/publish/organizational-licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/package-flights.md",
+      "redirect_url": "/windows/apps/publish/package-flights",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/put-apps-and-add-ons-on-sale.md",
+      "redirect_url": "/windows/apps/publish/put-apps-and-add-ons-on-sale",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/ratings-and-reviews.md",
+      "redirect_url": "/windows/apps/publish/ratings-and-reviews",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/ratings-report.md",
+      "redirect_url": "/windows/apps/publish/ratings-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/respond-to-customer-feedback.md",
+      "redirect_url": "/windows/apps/publish/respond-to-customer-feedback",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/respond-to-customer-reviews.md",
+      "redirect_url": "/windows/apps/publish/respond-to-customer-reviews",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/reviews-report.md",
+      "redirect_url": "/windows/apps/publish/reviews-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/send-push-notifications-to-your-apps-customers.md",
+      "redirect_url": "/windows/apps/publish/send-push-notifications-to-your-apps-customers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/usage-report.md",
+      "redirect_url": "/windows/apps/publish/usage-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/use-targeted-offers-to-maximize-engagement-and-conversions.md",
+      "redirect_url": "/windows/apps/publish/use-targeted-offers-to-maximize-engagement-and-conversions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/view-app-identity-details.md",
+      "redirect_url": "/windows/apps/publish/view-app-identity-details",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/xbox-analytics-report.md",
+      "redirect_url": "/windows/apps/publish/xbox-analytics-report",
+      "redirect_document_id": false
     }
   ]
 }

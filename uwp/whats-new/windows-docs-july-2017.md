@@ -64,13 +64,13 @@ The following new features are now available:
 
 * The [Microsoft Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) now provides a method you can use to [download the CAB file for an error in your app](../monetize/download-the-cab-file-for-an-error-in-your-app.md).
 
-* [Targeted offers](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) let you target specific segments of your customers with attractive, personalized content to increase engagement, retention, and monetization.
+* [Targeted offers](/windows/apps/publish/use-targeted-offers-to-maximize-engagement-and-conversions) let you target specific segments of your customers with attractive, personalized content to increase engagement, retention, and monetization.
 
-* Your app's Store listing can now include [video trailers](../publish/app-screenshots-and-images.md#trailers).
+* Your app's Store listing can now include [video trailers](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#trailers).
 
-* New pricing and availability options let you [schedule price changes](../publish/set-and-schedule-app-pricing.md) and [set precise release dates](..//publish/configure-precise-release-scheduling.md).
+* New pricing and availability options let you [schedule price changes](/windows/apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix) and [set precise release dates](/windows/apps/publish/publish-your-app/release-schedule?pivots=store-installer-msix).
 
-* You can [import and export Store listings](../publish/import-and-export-store-listings.md) to make updates faster, especially if you have listings in many languages.
+* You can [import and export Store listings](/windows/apps/publish/publish-your-app/import-and-export-store-listings?pivots=store-installer-msix) to make updates faster, especially if you have listings in many languages.
 
 ### My People
 

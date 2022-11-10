@@ -26,7 +26,7 @@ In this how-to, we'll create everything in one solution for simplicity.
     2. In the **Create a new project** dialog box, select **Blank App (Universal Windows) C#**. This will be the app that makes the app service available to other UWP apps.
     3. Click **Next**, and then name the project **AppServiceProvider**, choose a location for it, and then click **Create**.
 
-2. When asked to select a **Target** and **Minimum version** for the project, select at least **10.0.14393**. If you want to use the new **SupportsMultipleInstances** attribute, you must be using Visual Studio 2017 or Visual Studio 2019, and target **10.0.15063** (**Windows 10 Creators Update**) or higher.
+2. When asked to select a **Target** and **Minimum version** for the project, select at least **10.0.14393**. If you want to use the new **SupportsMultipleInstances** attribute, you must be using Visual Studio 2017 or Visual Studio 2019, and target **10.0.15063** (**Windows 10 Creators Update**) or later.
 
 <span id="appxmanifest"/>
 
@@ -40,7 +40,7 @@ In the **AppServiceProvider** project, open the **Package.appxmanifest** file in
 
 Add the following `AppService` extension inside the `<Application>` element. This example advertises the `com.microsoft.inventory` service and is what identifies this app as an app service provider. The actual service will be implemented as a background task. The app service project exposes the service to other apps. We recommend using a reverse domain name style for the service name.
 
-Note that the `xmlns:uap4` namespace prefix and the `uap4:SupportsMultipleInstances` attribute are only valid if you are targeting Windows SDK version 10.0.15063 or higher. You can safely remove them if you are targeting older SDK versions.
+Note that the `xmlns:uap4` namespace prefix and the `uap4:SupportsMultipleInstances` attribute are only valid if you are targeting Windows SDK version 10.0.15063 or later. You can safely remove them if you are targeting older SDK versions.
 
 > [!NOTE]
 > For an app service sample app in **C++/WinRT** as well as C#, see [App service sample app](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
@@ -70,7 +70,7 @@ The `Category` attribute identifies this application as an app service provider.
 
 The `EntryPoint` attribute identifies the namespace qualified class that implements the service, which we'll implement next.
 
-The `SupportsMultipleInstances` attribute indicates that each time the app service is called that it should run in a new process. This is not required but is available to you if you need that functionality and are targeting the 10.0.15063 SDK (**Windows 10 Creators Update**) or higher. It also should be prefaced by the `uap4` namespace.
+The `SupportsMultipleInstances` attribute indicates that each time the app service is called that it should run in a new process. This is not required but is available to you if you need that functionality and are targeting the 10.0.15063 SDK (**Windows 10 Creators Update**) or later. It also should be prefaced by the `uap4` namespace.
 
 ## Create the app service
 

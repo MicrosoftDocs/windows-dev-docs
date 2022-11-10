@@ -34,7 +34,7 @@ The lifetime of an **AppWindow** object and an **HWND** is the same&mdash;the **
 
 ## The AppWindowPresenter class, and subclasses
 
-Each [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) has an [**AppWindowPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter) (presenter) applied to it. If you're a UWP developer who's worked with [**Windows.UI.WindowManagement.AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow), then this will be familiar; even if it's not a 1:1 mapping of functionality and behavior. Also see See [Windowing functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing).
+Each [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) has an [**AppWindowPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter) (presenter) applied to it. If you're a UWP developer who's worked with [**Windows.UI.WindowManagement.AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow), then this will be familiar; even if it's not a 1:1 mapping of functionality and behavior. Also see See [Windowing functionality migration](../migrate-to-windows-app-sdk/guides/windowing.md).
 
 As a new concept to the Win32 application model, a presenter is akin to (but not the same as) a combination of window state and styles. Some presenters also have UI/UX behaviors defined in them that aren't inspectable from classic window state and style properties (such as an auto-hiding titlebar). 
 
@@ -60,7 +60,7 @@ These [**AppWindowPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.w
 
 The [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class is available for *any* top-level **HWND** in your app. That means that when you're working with a desktop UI framework (including WinUI 3), you can continue to use that framework's entry point for creating a window, and attaching its content. And once you've created a window with that UI framework, you can use the windowing interop functions (see below) provided in the Windows App SDK to access the corresponding **AppWindow** and its methods, properties, and events.
 
-**C#**. .NET wrappers for the windowing interop functions are implemented as methods of the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class. Also see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+**C#**. .NET wrappers for the windowing interop functions are implemented as methods of the [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md) class. Also see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
 
 **C++**. The interop functions are defined in the [winrt/Microsoft.ui.interop.h](/windows/windows-app-sdk/api/win32/winrt-microsoft.ui.interop/) header file.
 
@@ -80,7 +80,7 @@ Some of the benefits of using **AppWindow** (even when working with a UI framewo
 
 This code example demonstrates how to retrieve an [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from a WinUI 3 window. To use the example, create a new **Blank App, Packaged (WinUI 3 in Desktop)** project, and paste the code in.
 
-**C#**. The code example uses the **WinRT.Interop.WindowNative** and the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) classes (see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)). Also see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).
+**C#**. The code example uses the **WinRT.Interop.WindowNative** and the [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md) classes (see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)). Also see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md).
 
 For additional details on how to work with **AppWindow**, see the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
@@ -147,11 +147,11 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 - The Windows App SDK doesn't currently provide methods for attaching UI framework content to an **AppWindow**. You're
   limited to using the **HWND** interop access methods demonstrated in the [Code example](#code-example) section.
 - TitleBar customization is currently only supported on Windows 11 or later versions. See [Title bar
-  customization](/windows/apps/develop/title-bar?tabs=wasdk) for details.
+  customization](../../develop/title-bar.md?tabs=wasdk) for details.
 
 ## Related topics
 
-* [Windowing functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing)
-* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
-* [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
+* [Windowing functionality migration](../migrate-to-windows-app-sdk/guides/windowing.md)
+* [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
+* [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md)
 * [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing)

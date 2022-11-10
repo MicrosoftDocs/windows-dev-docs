@@ -17,7 +17,7 @@ By default, the timestamp on toast notifications (visible within Action Center) 
 You can optionally override the timestamp with your own custom date and time, so that the timestamp represents the time the message/information/content was actually created, rather than the time that the notification was sent. This also ensures that your notifications appear in the correct order within Action Center (which are sorted by time). We recommend that most apps specify a custom timestamp.
 
 > [!IMPORTANT]
-> **Requires Creators Update and 1.4.0 of Notifications library**: You must be running build 15063 or higher to see custom timestamps. You must use version 1.4.0 or higher of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to assign the timestamp on your toast's content.
+> **Requires Creators Update and 1.4.0 of Notifications library**: You must be running build 15063 or later to see custom timestamps. You must use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to assign the timestamp on your toast's content.
 
 To use a custom timestamp, simply assign the **DisplayTimestamp** property on your **ToastContent**.
 

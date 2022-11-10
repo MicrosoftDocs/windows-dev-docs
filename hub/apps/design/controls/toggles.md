@@ -57,7 +57,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [ToggleSwitch class](/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn property](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled event](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 > - [Open the WinUI 2 Gallery app and see the Slider in action](winui2gallery:/item/Slider). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls.
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
 
 ## Create a toggle switch
 

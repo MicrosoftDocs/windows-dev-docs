@@ -25,7 +25,7 @@ The ad mediation service integrates with a variety of ad networks across the dif
 
 ## Manage complexity of ad network relationships  
 
-The ad mediation service integrates with a wide variety of ad networks so that you don't need to do this work. After you use the Microsoft Advertising SDK to display ads in your app, you can modify your ad mediation settings [in Partner Center](../publish/in-app-ads.md#mediation-settings) to display ads from multiple ad networks. You benefit from getting ads from new ad networks without having to make any changes to your code.
+The ad mediation service integrates with a wide variety of ad networks so that you don't need to do this work. After you use the Microsoft Advertising SDK to display ads in your app, you can modify your ad mediation settings [in Partner Center](/windows/apps/publish/in-app-ads.md#mediation-settings) to display ads from multiple ad networks. You benefit from getting ads from new ad networks without having to make any changes to your code.
 
 We manage the end-to-end relationship with the ad networks on your behalf. Everything from ad network integration to serving ads, reporting and payouts are taken care of by us with no additional effort from you.
 
@@ -44,7 +44,7 @@ The ad mediation service works to generate the highest yield for developers. To 
 
 New ad networks are automatically included and evaluated for performance through a learning budget. Within a short period of time, they find their place in the waterfall. This makes the ad networks more competitive and helps the developer make the most of monetizing through apps.
 
-We highly recommend using our [recommended mediation settings](../publish/in-app-ads.md#mediation-settings) to maximize revenue made from ads in your apps. This allows for our algorithms to enable the best yield for your app. However, you also have the freedom to choose your own mediation settings in Partner Center to have more control over the ad networks that serve ads and the order in which they do.
+We highly recommend using our [recommended mediation settings](/windows/apps/publish/in-app-ads.md#mediation-settings) to maximize revenue made from ads in your apps. This allows for our algorithms to enable the best yield for your app. However, you also have the freedom to choose your own mediation settings in Partner Center to have more control over the ad networks that serve ads and the order in which they do.
 
 ## Rich data and signals
 
@@ -53,5 +53,5 @@ The ad mediation service works with various ad networks to improve user targetin
 ## Related topics
 
 * [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
-* [Mediation settings](../publish/in-app-ads.md#mediation-settings)
-* [Advertising performance report](../publish/advertising-performance-report.md)
+* [Mediation settings](/windows/apps/publish/in-app-ads.md#mediation-settings)
+* [Advertising performance report](/windows/apps/publish/advertising-performance-report)

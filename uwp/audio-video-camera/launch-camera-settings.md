@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Launch the camera settings page
 
-Windows defines a set of URIs that allow apps to launch the Windows Settings app and display a particular settings page. This article explains how to launch the Windows Settings app directly to the camera settings page and, optionally, navigate directly to the settings for a particular camera on the device. For more information, see [Launch the Windows Settings app](/windows/uwp/launch-resume/launch-settings-app).
+Windows defines a set of URIs that allow apps to launch the Windows Settings app and display a particular settings page. This article explains how to launch the Windows Settings app directly to the camera settings page and, optionally, navigate directly to the settings for a particular camera on the device. For more information, see [Launch the Windows Settings app](../launch-resume/launch-settings-app.md).
 
 ## The camera settings URL
 
@@ -37,4 +37,4 @@ private async void LaunchSettingsPage_Click(object sender, RoutedEventArgs e)
 
 ## Related topics
 
-* [Launch the Windows Settings app](/windows/uwp/launch-resume/launch-settings-app)
+* [Launch the Windows Settings app](../launch-resume/launch-settings-app.md)

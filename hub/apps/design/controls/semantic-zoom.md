@@ -64,7 +64,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [SemanticZoom class](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 > - [Open the WinUI 2 Gallery app and see the SemanticZoom in action](winui2gallery:/item/SemanticZoom). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls.
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
 
 ## Create a semantic zoom
 

@@ -42,7 +42,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app for which you want to update a package flight submission. For more information about the Store ID, see [View app identity details](../publish/view-app-identity-details.md).  |
+| applicationId | string | Required. The Store ID of the app for which you want to update a package flight submission. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).  |
 | flightId | string | Required. The ID of the package flight for which you want to update a submission. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md). For a flight that was created in Partner Center, this ID is also available in the URL for the flight page in Partner Center.  |
 | submissionId | string | Required. The ID of the submission to update. This ID is available in the response data for requests to [create a package flight submission](create-a-flight-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 
@@ -57,7 +57,7 @@ The request body has the following parameters.
 | packageDeliveryOptions    | object  | Contains gradual package rollout and mandatory update settings for the submission. For more information, see [Package delivery options object](manage-flight-submissions.md#package-delivery-options-object).  |
 | targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
-| notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](../publish/notes-for-certification.md). |
+| notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](/windows/apps/publish/publish-your-app/notes-for-certification?pivots=store-installer-msix). |
 
 
 ### Request example

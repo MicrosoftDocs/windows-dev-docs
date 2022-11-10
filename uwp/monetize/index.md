@@ -24,7 +24,7 @@ For details about the fees charged by the Microsoft Store and how you get paid f
 
 You can charge a price for your app up front. We support a comprehensive range of price tiers, including the option to set per-market prices. You can even schedule a sale to reduce the price of your app for a limited period of time.
 
-[Set app pricing](../publish/set-app-pricing-and-availability.md)
+[Set app pricing](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix)
     :::column-end:::
 :::row-end:::
 
@@ -92,7 +92,7 @@ Maximize ad revenue in your apps by using the microsoft ad mediation service to 
 
 Detailed analytics reports let you see how your ads in apps are performing, giving you the information you need to maximize your ad revenue. We also provide a RESTful API you can you use to get this data programmatically.
 
-[Review performance](../publish/advertising-performance-report.md)
+[Review performance](/windows/apps/publish/advertising-performance-report)
     :::column-end:::
 :::row-end:::
 
@@ -107,9 +107,9 @@ Looking for other ways to increase your monetization? Consider these options.
 | [Microsoft Affiliate Program](https://www.microsoftaffiliates.com/) | Earn commissions by linking to Microsoft products from your app, blog, web page or other communications. You can link to apps, games, music, movies, hardware, accessories, and other goods sold in the Microsoft Store.
 | [A/B experimentation](./run-app-experiments-with-a-b-testing.md) | Run A/B tests in your apps to measure the effectiveness of feature changes on some customers before you enable the changes for everyone.
 | [Engage customers with the Microsoft Store Services SDK](microsoft-store-services-sdk.md) | The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you engage with your customers. These features include targeted notifications, A/B tests, and launching Feedback Hub from your app.
-| [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md) | Add code to your UWP apps to direct your Windows 10 and Windows 11 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](../publish/feedback-report.md) in Partner Center. This feature requires the Microsoft Store Services SDK. 
-| [Configure your app to receive Partner Center push notifications](configure-your-app-to-receive-dev-center-notifications.md) | Register a notification channel for your UWP app so it can receive [Partner Center push notifications](../publish/send-push-notifications-to-your-apps-customers.md), and track the rate of app launches that resulted from the push notifications. This feature requires the Microsoft Store Services SDK.
-| [Log custom events for Partner Center](log-custom-events-for-dev-center.md) | Log custom events from your UWP app and review the events in the [Usage report](../publish/usage-report.md) in Partner Center. This feature requires the Microsoft Store Services SDK.
+| [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md) | Add code to your UWP apps to direct your Windows 10 and Windows 11 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](/windows/apps/publish/feedback-report) in Partner Center. This feature requires the Microsoft Store Services SDK. 
+| [Configure your app to receive Partner Center push notifications](configure-your-app-to-receive-dev-center-notifications.md) | Register a notification channel for your UWP app so it can receive [Partner Center push notifications](/windows/apps/publish/send-push-notifications-to-your-apps-customers), and track the rate of app launches that resulted from the push notifications. This feature requires the Microsoft Store Services SDK.
+| [Log custom events for Partner Center](log-custom-events-for-dev-center.md) | Log custom events from your UWP app and review the events in the [Usage report](/windows/apps/publish/usage-report) in Partner Center. This feature requires the Microsoft Store Services SDK.
 | [Request ratings and reviews](request-ratings-and-reviews.md) | Encourage your customers to rate or review your app by programmatically showing a rating and review UI.
 | [Microsoft Store services](using-windows-store-services.md) | Learn how to use RESTful APIs to automate submissions to the Store, access analytics data for your apps, and automate other tasks related to the Store.
 | [Add retail demo (RDX) features to your app](retail-demo-experience.md) | Include a retail demo mode in your Windows app so customers who try out PCs and devices on the sales floor can jump right in.
@@ -121,10 +121,10 @@ Looking for other ways to increase your monetization? Consider these options.
 Keep tabs on how your app is performing in the Store by using these reports.
 
 - [Payout summary](/partner-center/payout-statement)
-- [Acquisitions report](../publish/acquisitions-report.md)
-- [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
-- [Advertising performance report](../publish/advertising-performance-report.md)
+- [Acquisitions report](/windows/apps/publish/acquisitions-report)
+- [Add-on acquisitions report](/windows/apps/publish/add-on-acquisitions-report)
+- [Advertising performance report](/windows/apps/publish/advertising-performance-report)
 - [Get analytics data using our REST API](access-analytics-data-using-windows-store-services.md)
-- [Create customer segments](../publish/create-customer-segments.md)
-- [Feedback report](../publish/feedback-report.md)
-- [Usage report](../publish/usage-report.md)
+- [Create customer segments](/windows/apps/publish/create-customer-segments)
+- [Feedback report](/windows/apps/publish/feedback-report)
+- [Usage report](/windows/apps/publish/usage-report)

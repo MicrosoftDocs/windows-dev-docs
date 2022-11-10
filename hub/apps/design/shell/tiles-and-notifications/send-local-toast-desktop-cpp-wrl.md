@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Send a local toast notification from a WRL C++ desktop app
 
-Packaged and unpackaged desktop apps can send interactive toast notifications just like Universal Windows platform (UWP) apps can. That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)); packaged apps with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)); and unpackaged apps (see [Create a new project for an unpackaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)).
+Packaged and unpackaged desktop apps can send interactive toast notifications just like Universal Windows platform (UWP) apps can. That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](../../../winui/winui3/create-your-first-winui3-app.md#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)); packaged apps with external location (see [Grant package identity by packaging with external location](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md)); and unpackaged apps (see [Create a new project for an unpackaged WinUI 3 desktop app](../../../winui/winui3/create-your-first-winui3-app.md#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)).
 
 However, for an unpackaged desktop app, there are a few special steps. That's due to the different activation schemes, and the lack of package identity at runtime.
 
@@ -31,7 +31,7 @@ In the top **Configuration** menu, select **All Configurations** so that the fol
 
 Under **Linker -> Input**, add `runtimeobject.lib` to the **Additional Dependencies**.
 
-Then under **General**, make sure that the **Windows SDK Version** is set to something 10.0 or higher (not Windows 8.1).
+Then under **General**, make sure that the **Windows SDK Version** is set to version 10.0 or later.
 
 ## Step 2: Copy compat library code
 
@@ -85,7 +85,7 @@ Then, you must register with the notification platform. There are different step
 
 ### Packaged
 
-If your app is packaged (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) or packaged with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)), or if you support both, then in your **Package.appxmanifest** add:
+If your app is packaged (see [Create a new project for a packaged WinUI 3 desktop app](../../../winui/winui3/create-your-first-winui3-app.md#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) or packaged with external location (see [Grant package identity by packaging with external location](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md)), or if you support both, then in your **Package.appxmanifest** add:
 
 1. Declaration for **xmlns:com**
 2. Declaration for **xmlns:desktop**
@@ -129,7 +129,7 @@ If your app is packaged (see [Create a new project for a packaged WinUI 3 deskto
 
 ### Unpackaged
 
-If your app is unpackaged (see [Create a new project for an unpackaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)), or if you support both, then you have to declare your Application User Model ID (AUMID) and toast activator CLSID (the GUID from step #4) on your app's shortcut in Start.
+If your app is unpackaged (see [Create a new project for an unpackaged WinUI 3 desktop app](../../../winui/winui3/create-your-first-winui3-app.md#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)), or if you support both, then you have to declare your Application User Model ID (AUMID) and toast activator CLSID (the GUID from step #4) on your app's shortcut in Start.
 
 Pick a unique AUMID that will identify your app. This is typically in the form of [CompanyName].[AppName]. But you want to ensure that it's unique across all apps (so feel free to add some digits at the end).
 
@@ -418,7 +418,7 @@ if (IsWindows10OrGreater())
 
 ## Known issues
 
-**FIXED: App doesn't become focused after clicking toast**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server. Therefore, your app would simply flash when you tried to move it to the foreground. There was no workaround for this issue. We fixed this in builds 16299 and higher.
+**FIXED: App doesn't become focused after clicking toast**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server. Therefore, your app would simply flash when you tried to move it to the foreground. There was no workaround for this issue. We fixed this in builds 16299 or later.
 
 ## Resources
 

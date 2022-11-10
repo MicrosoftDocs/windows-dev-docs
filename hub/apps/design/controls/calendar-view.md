@@ -40,7 +40,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [CalendarView class](/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [SelectedDatesChanged event](/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged)
 > - [Open the WinUI 2 Gallery app and see the CalendarView in action](winui2gallery:/item/CalendarView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Create a calendar view
 

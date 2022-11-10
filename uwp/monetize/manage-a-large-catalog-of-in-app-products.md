@@ -16,7 +16,7 @@ If your app offers a large in-app product catalog, you can optionally follow the
 
 To enable this capability, you will create a handful of product entries for specific price tiers, with each one able to represent hundreds of products within a catalog. Use the [RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) method overload that specifies an app-defined offer associated with an in-app product listed in the Store. In addition to specifying an offer and product association during the call, your app should also pass a [ProductPurchaseDisplayProperties](/uwp/api/Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties) object that contains the large catalog offer details. If these details are not provided, the details for the listed product will be used instead.
 
-The Store will only use the *offerId* from the purchase request in the resulting [PurchaseResults](/uwp/api/Windows.ApplicationModel.Store.PurchaseResults). This process does not directly modify the information originally provided when [listing the in-app product in the Store](../publish/add-on-submissions.md).
+The Store will only use the *offerId* from the purchase request in the resulting [PurchaseResults](/uwp/api/Windows.ApplicationModel.Store.PurchaseResults). This process does not directly modify the information originally provided when [listing the in-app product in the Store](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on).
 
 ## Prerequisites
 

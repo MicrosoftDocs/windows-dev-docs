@@ -13,11 +13,11 @@ This article contains the information you need to get started building apps for 
 
 ![Developer at desk](./images/developer-at-desk.jpg)
 
-Windows gives you huge flexibility when it comes to building apps. From [C++](/windows/uwp/cpp-and-winrt-apis/) and [.NET](/dotnet/) to more up-and-coming tools such as [open source tools on WSL](/windows/wsl/) and [Rust](/windows/dev-environment/rust/), there are many different languages and platforms to choose from. It can be quite overwhelming to know where to start.
+Windows gives you huge flexibility when it comes to building apps. From [C++](/windows/uwp/cpp-and-winrt-apis/) and [.NET](/dotnet/) to more up-and-coming tools such as [open source tools on WSL](/windows/wsl/) and [Rust](../../dev-environment/rust/index.yml), there are many different languages and platforms to choose from. It can be quite overwhelming to know where to start.
 
 [Visual Studio](/visualstudio) is the development environment used by most Windows developers and it provides many types of app starting points, each with their own project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set APIs for using Windows features.
 
-If your new app is going to run only on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](/windows/apps/winui/winui3/). If you need your app to run on multiple platforms, we recommend looking at .NET MAUI or React Native for Windows.
+If your new app is going to run only on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to run on multiple platforms, we recommend looking at .NET MAUI or React Native for Windows.
 
 
 
@@ -57,7 +57,7 @@ For more information about .NET MAUI, see the following links:
 - [.NET MAUI documentation](/dotnet/maui/)
 - [.NET MAUI on GitHub](https://github.com/dotnet/maui)
 - [.NET MAUI Product Roadmap](https://github.com/dotnet/maui/wiki/Roadmap)
-- [Build Windows apps with .NET MAUI](/windows/apps/windows-dotnet-maui/)
+- [Build Windows apps with .NET MAUI](../windows-dotnet-maui/index.md)
 - [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources/)
 - [Video Series - .NET MAUI for Beginners](/shows/dotnet-maui-for-beginners/)
 - [Build 2022: Build native apps for any device with .NET and Visual Studio](https://www.youtube.com/watch?v=IbwgHJPoE-M)

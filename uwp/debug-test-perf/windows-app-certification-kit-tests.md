@@ -104,7 +104,7 @@ Apps must have a correctly formatted app manifest.
 
 ### Test details
 
-Examines the app manifest to verify the contents are correct as described in the [App package requirements](../publish/app-package-requirements.md).
+Examines the app manifest to verify the contents are correct as described in the [App package requirements](/windows/apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix).
 
 -   **File extensions and protocols**
 
@@ -122,7 +122,7 @@ Examines the app manifest to verify the contents are correct as described in the
 
 ### Corrective action
 
-Review the app's manifest against the requirements described in the [App package requirements](../publish/app-package-requirements.md).
+Review the app's manifest against the requirements described in the [App package requirements](/windows/apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix).
 
 ## Windows Security features test
 

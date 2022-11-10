@@ -63,7 +63,7 @@ Some common solutions include providing information in alternative formats (such
 
 Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibility can reduce the cost of maintaining your app.
 
-[Accessibility in Windows](/windows/apps/develop/accessibility)
+[Accessibility in Windows](../develop/accessibility.md)
 
 ## 4. Use the latest common controls
 
@@ -72,7 +72,7 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 ![An image of common UI controls](images/great-apps/controls.png)
 
 ### Desktop apps (Win32)
-- Use [WinUI 3](/windows/apps/winui/winui3) in [Windows App SDK](/windows/apps/windows-app-sdk/) 1.1 or greater to create a Win32 application that can leverage the modern common controls. 
+- Use [WinUI 3](../winui/winui3/index.md) in [Windows App SDK](../windows-app-sdk/index.md) 1.1 or greater to create a Win32 application that can leverage the modern common controls. 
 - To evaluate the controls, check out the [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*main branch*).
 - Win32 controls that use [UXTheme](/windows/win32/api/uxtheme/) will automatically get a "repaint" of the Light theme for select rejuvenated control visuals. Be sure to test for any issues. For those surfaces that do not get updated automatically, manually update the visuals so that they look coherent with the rest of the update, if possible.
 
@@ -147,7 +147,7 @@ For Windows 11, we improved the behavior of the context menu in File Explorer in
 If your app defines a context menu extension, the following requirements must be met for the extension to appear in the new Windows 11 context menu. Otherwise, your app's context menu extension will appear in the older context menu available via the **Show more options** item.
 
 * Your context menu extension must be implemented by using the [**IExplorerCommand**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) interface. Context menu extensions that implement [**IContextMenu**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-icontextmenu) will appear in the older context menu instead.
-* Your app must be a *packaged app* so that it has package identity at runtime. See [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps) for some options for packaging your app.
+* Your app must be a *packaged app* so that it has package identity at runtime. See [Features that require package identity](../desktop/modernize/modernize-packaged-apps.md) for some options for packaging your app.
 
 #### Share dialog
 
@@ -155,7 +155,7 @@ For Windows 11, we improved the behavior of the Share dialog in several ways.
 
 - Discoverability settings for nearby sharing are now at the top of the dialog and more settings are available at the bottom.
 - All apps can now participate in the Share dialog as targets, including unpackaged desktop apps and PWAs that are installed through Microsoft Edge.
-  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
+  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps.md)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
   - A PWA can participate in the Share dialog if it implements the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
 
 ![An image of the Share dialog in Windows 11](images/great-apps/share-target.png)

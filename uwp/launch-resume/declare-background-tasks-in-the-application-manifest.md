@@ -203,7 +203,7 @@ Here is example XML that declares a background task that runs in a BackgroundTas
 
 ### Run in a new process each time a trigger fires with the SupportsMultipleInstances attribute
 
-This example declares a background task that runs in a new process that gets its own resource limits (memory and CPU) every time a new trigger is fired. Note the use of `SupportsMultipleInstances` which enables this behavior. In order to use this attribute you must target SDK version '10.0.15063' (Windows 10 Creators Update) or higher.
+This example declares a background task that runs in a new process that gets its own resource limits (memory and CPU) every time a new trigger is fired. Note the use of `SupportsMultipleInstances` which enables this behavior. In order to use this attribute you must target SDK version '10.0.15063' (Windows 10 Creators Update) or later.
 
 ```xml
 <Package

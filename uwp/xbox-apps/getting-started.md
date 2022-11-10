@@ -59,7 +59,7 @@ For more detailed information, see [Set up your UWP on Xbox development environm
 
     You can find your Xbox One IP address by starting Dev Home on your console (the big tile on the right side of Home) and looking at the top left corner. For more information about Dev Home, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).  
 
-2.	**For C++ and HTML/Javascript projects**: You follow a path similar to C# projects, but in the project properties go to the **Debugging** tab, select **Remote Machine** in the Debugger to open the drop-down list, type the IP address or hostname of the console into the **Machine Name** field, and select **Universal (Unencrypted Protocol)** in the **Authentication Type** field.
+2.	**For C++ and HTML/JavaScript projects**: You follow a path similar to C# projects, but in the project properties go to the **Debugging** tab, select **Remote Machine** in the Debugger to open the drop-down list, type the IP address or hostname of the console into the **Machine Name** field, and select **Universal (Unencrypted Protocol)** in the **Authentication Type** field.
 
 3. Select **x64** from the dropdown to the left of the green play button in the top menu bar.
    

@@ -20,6 +20,7 @@ If defined, disables these rarely-used features (in order to reduce compile time
 
 * The ability to implement exclusive interfaces outside the component.
 * **std::hash** specializations for interface and runtime class smart pointers.
+* Support for directly outputting an hstring or IStringable to a C++ stream, since version 2.0.221101.3.
 
 You're allowed to combine files with different settings for **WINRT_LEAN_AND_MEAN**.
 

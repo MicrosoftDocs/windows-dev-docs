@@ -22,7 +22,7 @@ We recommend installing PowerToys via GitHub or Microsoft Store, but alternative
 - Our installer will install the following runtimes:
   - [.NET 6.0.8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/6.0#runtime-desktop-6.0.8) or a newer 6.0.x runtime
   - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (this will always install the latest version available)
-  - [Microsoft Visual C++ Redistributable](/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022) installer (this will install one of the latest versions available)
+  - [Microsoft Visual C++ Redistributable](/cpp/windows/latest-supported-vc-redist#visual-studio-2015-2017-2019-and-2022) installer (this will install one of the latest versions available)
 
 To ensure that your machine meets these requirements, check your Windows version and build number by pressing <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 
@@ -47,7 +47,7 @@ Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys)
 To install PowerToys using the [Windows Package Manager](../package-manager/winget/index.md), it is as simple as running the following command from the command line / PowerShell:
 
 ```powershell
-	winget install Microsoft.PowerToys --source winget
+winget install Microsoft.PowerToys --source winget
 ```
 
 ## Installer args
@@ -85,7 +85,7 @@ In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will
 
 ### Clean-up scripts
 
-In case there were problems with uninstalling a version, There is a cleanup script:
+In case there are problems with uninstalling a version, there are cleanup scripts available:
 
 - https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool
 - https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script
@@ -96,7 +96,7 @@ These community-driven alternative install methods are not officially supported 
 
 ### Install with Chocolatey
 
-To install PowerToys using [Chocolatey](https://chocolatey.org/), run the following command from your command line / PowerShell:
+To install [PowerToys](https://community.chocolatey.org/packages/powertoys) using [Chocolatey](https://chocolatey.org/), run the following command from your command line / PowerShell:
 
 ```powershell
 	choco install powertoys
@@ -108,7 +108,7 @@ To upgrade PowerToys, run:
 	choco upgrade powertoys
 ```
 
-If you have issues when installing/upgrading, visit the [PowerToys package on Chocolatey.org](https://chocolatey.org/packages/powertoys) and follow the [Chocolatey triage process](https://chocolatey.org/docs/package-triage-process).
+If you have issues when installing/upgrading, create an issue at the [maintainers GitHub repository](https://github.com/mkevenaar/chocolatey-packages/issues) or follow the [Chocolatey triage process](https://docs.chocolatey.org/en-us/community-repository/users/package-triage-process).
 
 ### Install with Scoop
 

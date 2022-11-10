@@ -182,7 +182,7 @@ Your app must not collect, store or transmit highly sensitive personal informati
 
 The capabilities you declare must legitimately relate to the functions of your app, and the use of those declarations must comply with our app capability declarations. You must not circumvent operating system checks for capability usage.
 
-For more information about app capability declarations, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations).
+For more information about app capability declarations, see [App capability declarations](../../packaging/app-capability-declarations.md).
 
 ### 10.7 Localization
 

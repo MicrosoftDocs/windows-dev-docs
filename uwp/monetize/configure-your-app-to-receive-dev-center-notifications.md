@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Configure your app for targeted push notifications
 
-You can use the **Push notifications** page in Partner Center to directly engage with customers by sending targeted push notifications to the devices on which your Universal Windows Platform (UWP) app is installed. For example, you can use targeted push notifications to encourage your customers to take an action, such as rating your app or trying a new feature. You can send several different types of push notifications, including toast notifications, tile notifications, and raw XML notifications. You can also track the rate of app launches that resulted from your push notifications. For more information about this feature, see [Send push notifications to your app's customers](../publish/send-push-notifications-to-your-apps-customers.md).
+You can use the **Push notifications** page in Partner Center to directly engage with customers by sending targeted push notifications to the devices on which your Universal Windows Platform (UWP) app is installed. For example, you can use targeted push notifications to encourage your customers to take an action, such as rating your app or trying a new feature. You can send several different types of push notifications, including toast notifications, tile notifications, and raw XML notifications. You can also track the rate of app launches that resulted from your push notifications. For more information about this feature, see [Send push notifications to your app's customers](/windows/apps/publish/send-push-notifications-to-your-apps-customers).
 
 Before you can send targeted push notifications to your customers from Partner Center, you must use a method of the [StoreServicesEngagementManager](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) class in the Microsoft Store Services SDK to register your app to receive notifications. You can use additional methods of this class to notify Partner Center that your app was launched in response to a targeted push notification (if you want to track the rate of app launches that resulted from your notifications) and to stop receiving notifications.
 
@@ -57,13 +57,13 @@ If the customer who started your app gives their device to someone else to use w
 
 ### How your app responds when the user launches your app
 
-After your app is registered to receive notifications and you [send a push notification to your app's customers from Partner Center](../publish/send-push-notifications-to-your-apps-customers.md), one of the following entry points in your app will be called when the user launches your app in response to your push notification. If you have some code that you want to run when the user launches your app, you can add the code to one of these entry points in your app.
+After your app is registered to receive notifications and you [send a push notification to your app's customers from Partner Center](/windows/apps/publish/send-push-notifications-to-your-apps-customers), one of the following entry points in your app will be called when the user launches your app in response to your push notification. If you have some code that you want to run when the user launches your app, you can add the code to one of these entry points in your app.
 
   * If the push notification has a foreground activation type, override the [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated) method of the **App** class in your project and add your code to this method.
 
   * If the push notification has a background activation type, add your code to the [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method for your [background task](../launch-resume/support-your-app-with-background-tasks.md).
 
-For example, you might want to reward the users of your app that have purchased any paid add-ons in your app by granting them a free add-on. In this case, you can send a push notification to a [customer segment](../publish/create-customer-segments.md) that targets these users. Then, you can add code to grant them a free [in-app purchase](in-app-purchases-and-trials.md) in one of the entry points listed above.
+For example, you might want to reward the users of your app that have purchased any paid add-ons in your app by granting them a free add-on. In this case, you can send a push notification to a [customer segment](/windows/apps/publish/create-customer-segments) that targets these users. Then, you can add code to grant them a free [in-app purchase](in-app-purchases-and-trials.md) in one of the entry points listed above.
 
 ## Notify Partner Center of your app launch
 
@@ -93,7 +93,7 @@ Note that this method invalidates the channel that is being used for notificatio
 
 ## Related topics
 
-* [Send push notifications to your app's customers](../publish/send-push-notifications-to-your-apps-customers.md)
+* [Send push notifications to your app's customers](/windows/apps/publish/send-push-notifications-to-your-apps-customers)
 * [Windows Push Notification Services (WNS) overview](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 * [How to request, create, and save a notification channel](/previous-versions/windows/apps/hh868221(v=win.10))
 * [Microsoft Store Services SDK](./microsoft-store-services-sdk.md)

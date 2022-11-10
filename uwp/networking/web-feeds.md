@@ -44,7 +44,7 @@ For more detailed information on network isolation and networking capabilities, 
 
 ## How to access a web feed
 
-This section shows how to retrieve and display a web feed using classes in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace in your UWP app written in C# or Javascript.
+This section shows how to retrieve and display a web feed using classes in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace in your UWP app written in C# or JavaScript.
 
 **Prerequisites**
 
@@ -93,7 +93,7 @@ Assuming the desired feed content was returned, the example code iterates throug
 
 You must write code to handle exceptions when you call most asynchronous network methods. Your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
 
-The [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) method throws an exception if a connection could not be established with the HTTP server or the [**Uri**](/uwp/api/windows.foundation.uri) object does not point to a valid AtomPub or RSS feed. The Javascript sample code uses an **onError** function to catch any exceptions and print out more detailed information on the exception if an error occurs.
+The [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) method throws an exception if a connection could not be established with the HTTP server or the [**Uri**](/uwp/api/windows.foundation.uri) object does not point to a valid AtomPub or RSS feed. The JavaScript sample code uses an **onError** function to catch any exceptions and print out more detailed information on the exception if an error occurs.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

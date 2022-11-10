@@ -96,7 +96,7 @@ This resource has the following values.
 |------------|--------|--------------|
 | applications      | array  | An array that contains one [application resource](#application-object) that represents the app that this add-on is associated with. Only one item is supported in this array.  |
 | id | string  | The Store ID of the add-on. This value is supplied by the Store. An example Store ID is 9NBLGGH4TNMP.  |
-| productId | string  | The product ID of the add-on. This is the ID that was provided by the developer when the add-on was created. For more information, see [Set your product type and product ID](../publish/set-your-add-on-product-id.md). |
+| productId | string  | The product ID of the add-on. This is the ID that was provided by the developer when the add-on was created. For more information, see [Set your product type and product ID](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on). |
 | productType | string  | The product type of the add-on. The following values are supported: **Durable** and **Consumable**.  |
 | lastPublishedInAppProductSubmission       | object | A [submission resource](#submission-object) that provides information about the last published submission for the add-on.         |
 | pendingInAppProductSubmission        | object  |  A [submission resource](#submission-object) that provides information about the current pending submission for the add-on.  |
@@ -125,7 +125,7 @@ This resource has the following values.
 
 | Value | Type | Description |
 |-------|------|-------------|
-| value | object | An object that contains the following values: <ul><li>*id*. The Store ID of the app. For more information about the Store ID, see [View app identity details](../publish/view-app-identity-details.md).</li><li>*resourceLocation*. A relative path that you can append to the base `https://manage.devcenter.microsoft.com/v1.0/my/` request URI to retrieve the complete data for the app.</li></ul> |
+| value | object | An object that contains the following values: <ul><li>*id*. The Store ID of the app. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).</li><li>*resourceLocation*. A relative path that you can append to the base `https://manage.devcenter.microsoft.com/v1.0/my/` request URI to retrieve the complete data for the app.</li></ul> |
 | totalCount | int | The number of app objects in the *applications* array of the response body. |
 
 <span id="submission-object" />

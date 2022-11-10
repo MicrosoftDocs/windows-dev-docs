@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Manage targeted offers using Store services
 
-If you create a *targeted offer* in the **Engage > Targeted offers** page for your app in Partner Center, use the *Microsoft Store targeted offers API* in your app's code to retrieve info that helps you implement the in-app experience for the targeted offer. For more information about targeted offers and how to create them in the dashboard, see [Use targeted offers to maximize engagement and conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
+If you create a *targeted offer* in the **Engage > Targeted offers** page for your app in Partner Center, use the *Microsoft Store targeted offers API* in your app's code to retrieve info that helps you implement the in-app experience for the targeted offer. For more information about targeted offers and how to create them in the dashboard, see [Use targeted offers to maximize engagement and conversions](/windows/apps/publish/use-targeted-offers-to-maximize-engagement-and-conversions).
 
 The targeted offers API is a simple REST API that you can use to get the targeted offers that are available for the current user, based on whether or not the user is part of the customer segment for the targeted offer. To use this API in your app's code, follow these steps:
 
@@ -59,5 +59,5 @@ This example requires the [Json.NET](https://www.newtonsoft.com/json) library fr
 
 ## Related topics
 
-* [Use targeted offers to maximize engagement and conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
+* [Use targeted offers to maximize engagement and conversions](/windows/apps/publish/use-targeted-offers-to-maximize-engagement-and-conversions)
 * [Get targeted offers](get-targeted-offers.md)

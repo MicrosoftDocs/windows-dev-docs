@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Mica material
 
-_Mica_ is an opaque, dynamic material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization. Mica is available for UWP apps that use WinUI 2 and apps that use Windows App SDK 1.1 or higher, while running on Windows 11 version 22000 or later.
+_Mica_ is an opaque, dynamic material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization. Mica is available for UWP apps that use WinUI 2 and apps that use Windows App SDK 1.1 or later, while running on Windows 11 version 22000 or later.
 
 ![hero image](images/materials/mica-header.png)
 
@@ -28,7 +28,7 @@ Mica in dark theme</br>
     :::column-end:::
 :::row-end:::
 
-_Mica Alt_ is a variant of Mica, with stronger tinting of the user's desktop background color. You can apply Mica Alt to your app's backdrop to provide a deeper visual hierarchy than Mica, especially when creating an app with a tabbed title bar. Mica Alt is available for apps that use Windows App SDK 1.1 or higher, while running on Windows 11 version 22000 or later.
+_Mica Alt_ is a variant of Mica, with stronger tinting of the user's desktop background color. You can apply Mica Alt to your app's backdrop to provide a deeper visual hierarchy than Mica, especially when creating an app with a tabbed title bar. Mica Alt is available for apps that use Windows App SDK 1.1 or later, while running on Windows 11 version 22000 or later.
 
 These images show the difference between Mica and Mica Alt in a title bar with tabs. The first image uses Mica and the second image uses Mica Alt.
 
@@ -120,7 +120,7 @@ To give your app's window a seamless look, Mica Alt should be visible in the tit
 
 ## How to use Mica
 
-You can use Mica in UWP apps that use WinUI 2, or in apps that use Windows App SDK 1.1 or higher. You can use Mica Alt in apps that use Windows App SDK 1.1 or higher.
+You can use Mica in UWP apps that use WinUI 2, or in apps that use Windows App SDK 1.1 or later. You can use Mica Alt in apps that use Windows App SDK 1.1 or later.
 
 ### Use Mica with the Windows App SDK
 
@@ -370,7 +370,7 @@ To follow the card pattern using a NavigationView you will need to remove the de
 
 The previous three app layout XAML pages use this code-behind to create a custom title bar adaptive to app state and visibility.
 
-For more information see [Title bar customization](/windows/apps/develop/title-bar).
+For more information see [Title bar customization](../../develop/title-bar.md).
 
 ```csharp
 public MainPage()

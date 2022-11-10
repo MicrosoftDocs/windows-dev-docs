@@ -18,7 +18,7 @@ The following steps describe the end-to-end process:
 3.  [Call the Microsoft Store reviews API](#call-the-windows-store-reviews-api).
 
 > [!NOTE]
-> In addition to using the Microsoft Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](../publish/respond-to-customer-reviews.md).
+> In addition to using the Microsoft Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](/windows/apps/publish/respond-to-customer-reviews).
 
 <span id="prerequisites" />
 
@@ -26,7 +26,7 @@ The following steps describe the end-to-end process:
 
 Before you start writing code to call the Microsoft Store reviews API, make sure that you have completed the following prerequisites.
 
-* You (or your organization) must have an Azure AD directory and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](../publish/associate-azure-ad-with-partner-center.md#create-a-new-azure-ad-tenant-to-associate-with-your-partner-center-account) for no additional charge.
+* You (or your organization) must have an Azure AD directory and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](/windows/apps/publish/partner-center/associate-azure-ad-with-partner-center#create-a-new-azure-ad-tenant-to-associate-with-your-partner-center-account) for no additional charge.
 
 * You must associate an Azure AD application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Microsoft Store reviews API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
     > [!NOTE]
@@ -34,13 +34,13 @@ Before you start writing code to call the Microsoft Store reviews API, make sure
 
 To associate an Azure AD application with your Partner Center account and retrieve the required values:
 
-1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-partner-center.md).
+1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](/windows/apps/publish/partner-center/associate-azure-ad-with-partner-center).
 
-2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to respond to reviews. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
+2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to respond to reviews. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
 
 3.  Return to the **Users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
 
-4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).
+4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications#manage-keys).
 
 <span id="obtain-an-azure-ad-access-token" />
 
@@ -73,7 +73,7 @@ After you have an Azure AD access token, you are ready to call the Microsoft Sto
 
 The Microsoft Store reviews API contains several methods you can use to determine whether you are allowed to respond to a given review and to submit responses to one or more reviews. Follow this process to use this API:
 
-1. Get the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).
+1. Get the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](/windows/apps/publish/download-analytic-reports) of the [Reviews report](/windows/apps/publish/reviews-report\).
 2. Call the [get response info for app reviews](get-response-info-for-app-reviews.md) method to determine whether you are allowed to respond to the reviews. When a customer submits a review, they can choose not to receive responses to their review. You cannot respond to reviews submitted by customers who have chosen not to receive review responses.
 3. Call the [submit responses to app reviews](submit-responses-to-app-reviews.md) method to programmatically respond to the reviews.
 
