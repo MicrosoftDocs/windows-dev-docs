@@ -457,7 +457,7 @@ items:
                   href: publish/partner-center/remove-azure-ad-tenant-associations.md
          - name: Manage users, groups, and Azure AD applications
            items:
-                - name: Overview - Users, groups, and Azure AD applications
+                - name: Overview of Users, groups, and Azure AD applications
                   href: publish/partner-center/overview-users-groups-azure-ad-applications.md
                 - name: Manage users in Partner Center account
                   href: publish/partner-center/manage-users-in-partner-center.md
