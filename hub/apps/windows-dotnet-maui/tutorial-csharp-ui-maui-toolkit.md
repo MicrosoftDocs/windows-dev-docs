@@ -98,7 +98,7 @@ If you have completed the [Build your first .NET MAUI app for Windows](walkthrou
 
 ## Build a UI with C# Markup
 
-When building a UI with C# Markup, the first step is to update the CreateMauiApp() method in MauiProgram.cs. Replace the contents of the method with the following code:
+When building a UI with C# Markup, the first step is to update the `CreateMauiApp()` method in **MauiProgram.cs**. Replace the contents of the method with the following code:
 
 ```csharp
 public static MauiApp CreateMauiApp()
