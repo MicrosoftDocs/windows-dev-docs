@@ -2,7 +2,7 @@
 title: Tutorial--Create a .NET MAUI app with C# Markup and the Community Toolkit
 description: Build a .NET MAUI app with a user interface created without XAML by using C# Markup from the .NET MAUI Community Toolkit.
 ms.topic: article
-ms.date: 11/02/2022
+ms.date: 11/11/2022
 keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium
 ---
@@ -42,7 +42,7 @@ Now that you have verified that the .NET MAUI app on Windows is working as expec
 
 ## Add C# Markup from the .NET MAUI Community Toolkit
 
-Now that you have your .NET MAUI app running on Windows, let's add a couple of NuGet packages to the project to integrate with the **MVVM Toolkit** and **C# Markup** from the **.NET MAUI Community Toolkit**.
+Now that you have your .NET MAUI app running on Windows, let's add a couple of NuGet packages to the project to integrate with the [MVVM Toolkit](/windows/communitytoolkit/mvvm/introduction) and **C# Markup** from the **.NET MAUI Community Toolkit**.
 
 Right-click the project in **Solution Explorer** and select **Manage NuGet Packages...** from the context menu.
 
