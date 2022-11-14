@@ -1,5 +1,5 @@
 ---
-title: Set roles or custom permissions for account users
+title: Overview of roles and custom permissions for account users
 description: Learn how to set standard roles or custom permissions when adding users to your Partner Center account.
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.date: 10/31/2018
