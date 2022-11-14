@@ -479,9 +479,8 @@ items:
                   href: publish/partner-center/assign-account-level-custom-permissions-to-account-users.md
                 - name: Assign product level custom permissions to account users
                   href: publish/partner-center/assign-product-level-custom-permissions-to-account-users.md
-           href: publish/partner-center/set-custom-permissions-for-account-users.md
-         - name: Troubleshoot App Creation in Partner Center
-           href: publish/partner-center/troubleshoot-app-creation.md
+                - name: Troubleshoot App Creation in Partner Center
+                  href: publish/partner-center/troubleshoot-app-creation.md
       - name: Manage app name reservations
         href: publish/partner-center/manage-app-name-reservations.md
       - name: Partner Center workspaces
