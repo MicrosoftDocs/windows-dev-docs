@@ -11,7 +11,7 @@ ms.localizationpriority: high
 
 By default, a set of standard roles is presented for you to choose from when you add a user, group, or Azure AD application to your Partner Center account. Each role has a specific set of permissions in order to perform certain functions within the account.
 
-Unless you opt to define [custom permissions](set-custom-permissions-for-account-users.md) by selecting **Customize permissions**, each user, group, or Azure AD application that you add to an account must be assigned at least one of the following standard roles.
+Unless you opt to define [custom permissions](overview-of-custom-permissions-for-account-users.md) by selecting **Customize permissions**, each user, group, or Azure AD application that you add to an account must be assigned at least one of the following standard roles.
 
 > [!NOTE]
 > The **owner** of the account is the person who first created it with a Microsoft account (and not any user(s) added through Azure AD). This account owner is the only person with complete access to the account, including the ability to delete apps, create and edit all account users, and change all financial and account settings.
