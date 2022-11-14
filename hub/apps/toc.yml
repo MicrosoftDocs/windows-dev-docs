@@ -468,6 +468,17 @@ items:
                 - name: Manage Azure AD applications in Partner Center account
                   href: publish/partner-center/manage-azure-ad-applications-in-partner-center.md
          - name: Set roles and custom permissions
+           items:
+                - name: Overview of roles and custom permissions for account users
+                  href: publish/partner-center/overview-of-roles-and-custom-permissions-for-account-users.md
+                - name: Assign roles to account users
+                  href: publish/partner-center/assign-roles-to-account-users.md
+                - name: Assign custom permissions to account users
+                  href: publish/partner-center/overview-of-custom-permissions-for-account-users.md
+                - name: Assign account level custom permissions to account users
+                  href: publish/partner-center/assign-account-level-custom-permissions-to-account-users.md
+                - name: Assign product level custom permissions to account users
+                  href: publish/partner-center/assign-product-level-custom-permissions-to-account-users.md
            href: publish/partner-center/set-custom-permissions-for-account-users.md
          - name: Troubleshoot App Creation in Partner Center
            href: publish/partner-center/troubleshoot-app-creation.md
