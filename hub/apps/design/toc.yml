@@ -645,16 +645,20 @@
           href: globalizing/loc-international-fonts.md
         - name: Design your app for bidirectional text
           href: globalizing/design-for-bidi-text.md
-        - name: Use the Multilingual App Toolkit 4.0
-          href: globalizing/use-mat.md
-        - name: Multilingual App Toolkit 4.0 Editor
-          href: globalizing/multilingual-app-toolkit-editor-downloads.md
-        - name: Multilingual App Toolkit 4.0 FAQ & troubleshooting
-          href: globalizing/mat-faq-troubleshooting.yml
         - name: Use UTF-8 code pages in Windows apps
           href: globalizing/use-utf8-code-page.md
         - name: Prepare your application for the Japanese era change
           href: globalizing/japanese-era-change.md
+        - name: Multilingual App Toolkit
+          items:
+          - name: Announcements
+            href: globalizing/mat-announcements.md
+          - name: Use the Multilingual App Toolkit 4.0
+            href: globalizing/use-mat.md
+          - name: Multilingual App Toolkit 4.0 Editor
+            href: globalizing/multilingual-app-toolkit-editor-downloads.md
+          - name: Multilingual App Toolkit 4.0 FAQ & troubleshooting
+            href: globalizing/mat-faq-troubleshooting.yml
     - name: In-app help
       items:
         - name: Guidelines for app help

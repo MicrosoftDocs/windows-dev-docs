@@ -2,16 +2,14 @@
 title: Multilingual App Toolkit Editor - Windows app development
 description: Download the Multilingual App Toolkit Editor to help you localize your apps with localization file management, translation support, and editing tools.
 ms.topic: article
-author: karl-bridge-microsoft
-ms.author: kbridge
 ms.date: 10/18/2021
 ---
 
-# Multilingual App Toolkit 4.0 Editor
+# Multilingual App Toolkit Editor
 
-Use the standalone [**Multilingual App Toolkit 4.0 Editor**](use-mat.md) to help you localize your apps with localization file management, translation support, and editing tools.
+Use the standalone [**Multilingual App Toolkit Editor**](use-mat.md) to help you localize your apps with localization file management, translation support, and editing tools.
 
-Each of the following downloads contain an .msi installer for the Multilingual App Toolkit 4.0 Editor (also known as the Multilingual Editor). The installer is available in 11 langauges, please select the link for your preferred language.
+Each of the following downloads contain an .msi installer for the Multilingual App Toolkit Editor (also known as the Multilingual Editor). The installer is available in 11 langauges, please select the link for your preferred language.
 
 - To start the installation immediately, click **Run**.
 - To save the download to your computer for installation at a later time, click **Save**.
@@ -65,7 +63,7 @@ Each of the following downloads contain an .msi installer for the Multilingual A
 :::row-end:::
 
 > [!Important]
-> If using Visual Studio, you should also download and install [Multilingual App Toolkit 4.0 Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308) or [Multilingual App Toolkit 4.0 Visual Studio 2022+](https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022).
+> If using Visual Studio, you should also download and install [Multilingual App Toolkit Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308) or [Multilingual App Toolkit Visual Studio 2022+](https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022).
 
 ## Overview
 
