@@ -125,7 +125,7 @@ The following sections describe different categories of ms-settings URIs used to
 |Settings page| URI |
 |-------------|-----|
 | Apps & Features | ms-settings:appsfeatures |
-| App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app)|
+| App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app) <br><br> To access this page with a URI, use the `ms-settings:appsfeatures-app` URI and pass an optional parameter of the _package family name_ of the app. |
 | Apps for websites | ms-settings:appsforwebsites |
 | Default apps | ms-settings:defaultapps |
 | Manage optional features | ms-settings:optionalfeatures |
@@ -284,7 +284,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Advertising ID | ms-settings:privacy-advertisingid (**Deprecated in Windows 10, version 1809 and later**) |
 | App diagnostics | ms-settings:privacy-appdiagnostics |
 | Automatic file downloads | ms-settings:privacy-automaticfiledownloads |
-| Background Apps | ms-settings:privacy-backgroundapps |
+| Background Apps | ms-settings:privacy-backgroundapps (**Deprecated in Windows 11, 21H2 and later**) <br><br> **Note:** In Windows 11, the background app permissions are accessed individually. To view the permissions, go to **Apps->Installed apps** and then select **"..."** on a modern app and choose **Advanced options**. The advanced page is present for modern apps, and the **Background apps permissions** section will be present unless a group policy has been set or the user’s global toggle value (the deprecated setting from Windows 10) is set. To access this page with a URI, use the `ms-settings:appsfeatures-app` URI and pass an optional parameter of the _package family name_ of the app. |
 | Background Spatial Perception | ms-settings:privacy-backgroundspatialperception |
 | Calendar | ms-settings:privacy-calendar |
 | Call history | ms-settings:privacy-callhistory |
