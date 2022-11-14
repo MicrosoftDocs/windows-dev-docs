@@ -441,8 +441,6 @@ Note that any adaptive content must be contained within an [**AdaptiveGroup**](.
 
 Here's an example where columns and some advanced adaptive text elements are used. Since the text elements are within an **AdaptiveGroup**, they support all the rich adaptive styling properties.
 
-
-
 ![A screenshot of a toast notification showing groups of text elements aligned to the left and right of the visual area of the toast.](images/toast-content-columns.png)
 
 ### [Windows App SDK](#tab/appsdk)
@@ -451,7 +449,7 @@ Here's an example where columns and some advanced adaptive text elements are use
 // The Microsoft.Windows.AppNotifications.Builder syntax does not currently support adaptive text elements.
 ```
 
-### [Builder syntax](#tab/builder-syntax)
+### [Builder syntax](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -1417,7 +1415,7 @@ if (AppNotificationBuilder.IsUrgentScenarioSupported())
 }
 ```
 
-[Community Tookit](#tab/toolkit)
+#### [Community Tookit](#tab/toolkit)
 
 ```csharp
 // The builder syntax does not support important notifications yet.
