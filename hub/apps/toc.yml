@@ -465,7 +465,7 @@ items:
                   href: publish/partner-center/manage-groups-in-partner-center.md
                 - name: Manage Azure AD applications in Partner Center account
                   href: publish/partner-center/manage-azure-ad-applications-in-partner-center.md
-         - name: Set roles and custom permissions
+         - name: Manage roles and custom permissions for account users
            items:
                 - name: Overview of roles and custom permissions for account users
                   href: publish/partner-center/overview-of-roles-and-custom-permissions-for-account-users.md
