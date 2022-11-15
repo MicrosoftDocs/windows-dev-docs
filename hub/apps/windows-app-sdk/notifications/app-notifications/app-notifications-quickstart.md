@@ -291,7 +291,7 @@ You **MUST** complete **Step 3: Register to handle an app notification** before 
 
 Now you will display a simple app notification with an `appLogoOverride` image and a button. 
 
-Construct your app notification using an XML string and then call `Show`. For more information on how to construct your app notification using XML, please refer to the **XML** examples at [Toast content](../../../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) and the [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root). 
+Construct your app notification using the **AppNotificationBuilder** class and then call `Show`. For more information on how to construct your app notification using XML, please refer to the examples at [Toast content](../../../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) and the [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root). 
 
 > [!NOTE]
 > If your app is packaged (including packaged with external location), then your app's icon in the notification's upper left corner is sourced from the `package.manifest`. If your app is unpackaged, then the icon is sourced by first looking into the shortcut, then looking at the resource file in the app process. If all attempts fail, then the Windows default app icon is used. The supported icon file types are `.jpg`, `.png`, `.bmp`, and `.ico`.
@@ -482,26 +482,17 @@ class ToastWithAvatar
     public static bool SendToast()
     {
 
-        var xmlPayload = new string(
-            "<toast>"
-                "<visual>"
-                    "<binding template = \"ToastGeneric\">"
-                        "<image placement = \"appLogoOverride\" hint-crop=\"circle\" src = \"" + App.GetFullPathToAsset("Square150x150Logo.png") + "\"/>"
-                        "<text>Example expiring notification</text>"
-                        "<text>This is an example message using XML</text>"
-                    "</binding>"
-                "</visual>"
-            "</toast>" );
+        var appNotification = new AppNotificationBuilder()
+            .SetAppLogoOverride(new System.Uri("ms-appx:///images/logo.png"), AppNotificationImageCrop.Circle)
+            .AddText("Example expiring notification")
+            .AddText("This is an example message")
+            .BuildNotification();
 
-        var toast = new AppNotification(xmlPayload);
-        toast.Expiration(DateTime.Now.AddDays(1));
-        AppNotificationManager.Default.Show(toast);
-        if (toast.Id == 0)
-        {
-            return false;
-        }
 
-        return true;
+        appNotification.Expiration = DateTime.Now.AddDays(1);
+        AppNotificationManager.Default.Show(appNotification);
+
+        return appNotification.Id != 0; // return true (indicating success) if the toast was sent (if it has an Id)
     }
 }
 ```
@@ -518,26 +509,17 @@ class ToastWithAvatar
     public static bool SendToast()
     {
 
-        var xmlPayload = new string(
-            "<toast>"
-                "<visual>"
-                    "<binding template = \"ToastGeneric\">"
-                        "<image placement = \"appLogoOverride\" hint-crop=\"circle\" src = \"" + App.GetFullPathToAsset("Square150x150Logo.png") + "\"/>"
-                        "<text>Example ExpiresOnReboot notification</text>"
-                        "<text>This is an example message using XML</text>"
-                    "</binding>"
-                "</visual>"
-            "</toast>" );
+        var appNotification = new AppNotificationBuilder()
+            .SetAppLogoOverride(new System.Uri("ms-appx:///images/logo.png"), AppNotificationImageCrop.Circle)
+            .AddText("Example ExpiresOnReboot notification")
+            .AddText("This is an example message")
+            .BuildNotification();
 
-        var toast = new AppNotification(xmlPayload);
-        toast.ExpiresOnReboot(true);
-        AppNotificationManager.Default.Show(toast);
-        if (toast.Id == 0)
-        {
-            return false;
-        }
 
-        return true;
+            appNotification.ExpiresOnReboot = true;
+            AppNotificationManager.Default.Show(appNotification);
+
+            return appNotification.Id != 0; // return true (indicating success) if the toast was sent (if it has an Id)
     }
 }
 ```
@@ -549,26 +531,16 @@ class ToastWithAvatar
 bool SendToast()
 {
 
-    winrt::hstring xmlPayload{
-        L"<toast>\
-            <visual>\
-                <binding template = \"ToastGeneric\">\
-                    <image placement = \"appLogoOverride\" hint-crop=\"circle\" src = \"" + winrt::App::GetFullPathToAsset(L"Square150x150Logo.png") + L"\"/>\
-                    <text>Example ExpiresOnReboot notification</text>\
-                    <text>This is an example message using XML</text>\
-                </binding>\
-            </visual>\
-        </toast>" };
+    auto appNotification{ AppNotificationBuilder()
+                .SetAppLogoOverride(winrt::Windows::Foundation::Uri(L"ms-appx:///images/logo.png"), AppNotificationImageCrop::Circle)
+                .AddText(L"Example ExpiresOnReboot notification")
+                .AddText(L"This is an example message")
+                .BuildNotification() };
 
-    auto toast{ winrt::AppNotification(xmlPayload) };
-    toast.ExpiresOnReboot(true);
-    winrt::AppNotificationManager::Default().Show(toast);
-    if (toast.Id() == 0)
-    {
-        return false;
-    }
+    appNotification.ExpiresOnReboot();
+    AppNotificationManager::Default().Show(appNotification);
 
-    return true;
+    return appNotification.Id() != 0; // return true (indicating success) if the toast was sent (if it has an Id)
 }
 ```
 
