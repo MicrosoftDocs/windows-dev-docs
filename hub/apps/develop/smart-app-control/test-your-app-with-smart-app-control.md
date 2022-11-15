@@ -7,7 +7,7 @@ ms.date: 09/20/2022
 
 # Test your app's signature with Smart App Control
 
-Before distributing your signed app to users, test your app's signature against Smart App Control. You can test Smart App Control using audit policies, which will create log entries without actually blocking your app from executing, or test directly against Smart App Control's enforcement mode directly.
+Before distributing your signed app to users, you should test your app's signature against Smart App Control. Because Smart App Control evaluates  binaries as they're loaded, be sure to test all code paths and features of your app. This includes installing and uninstalling your app, testing all of your app's features, and testing any integrations with other apps that might load your binaries. You can test Smart App Control using audit policies, which will create log entries without actually blocking your app from executing, or test directly against Smart App Control's enforcement mode directly.
 
 ## Configure Smart App Control for Testing
 
@@ -52,7 +52,7 @@ Configuring Smart App Control using the Windows registry allows you to force any
     > | 2     | Evaluation       |
 
     ```ps
-    reg load HKLM\foo c:\windows\system32\config\system
+    reg load HKLM\sac c:\windows\system32\config\system
     reg add hklm\foo\controlset001\control\ci\policy /v VerifiedAndReputablePolicyState /t REG_DWORD /d {VALUE} /f 
     reg add hklm\foo\controlset001\control\ci\protected /v VerifiedAndReputablePolicyStateMinValueSeen /t REG_DWORD /d {VALUE} /f
     reg unload hklm\foo
@@ -89,13 +89,7 @@ Note that this policy only works with Smart App Control in evaluation mode. It�
 
 When this policy is applied, the output for citool.exe -lp will show VerifiedAndReputableDesktopEvaluationAudit as the policy name.
 
-### Smart App Control audit policy without ISG (SmartAppControlAuditNoISG.bin)
-
-This policy checks binaries and scripts against Smart App Control in evaluation mode, without checking the Intelligent Security Graph. This means that only apps that are properly signed by a trusted certificate will be allowed without audit events. This is useful for developers wanting to verify that their application is signed correctly, especially if publishing through the Windows Store, where a signature from a cert obtained from a trusted Certificate Authority is required.
-
-This policy can be applied even when Smart App Control is set to Off. When this policy is applied, the output for citool.exe -lp will show VerifiedAndReputableDesktopEvaluationAuditNoISG as the policy name.
-
-### Apply an audit policy
+#### Apply the Smart App Control audit policy
 
 [Ensure SAC is in evaluation mode](#configure-smart-app-control-for-testing).
 
@@ -112,14 +106,17 @@ Take ownership of the evaluation mode policy file C:\WINDOWS\System32\CodeIntegr
 1. Reopen the file properties Security tab and click "Edit  
 1. Under Administrators, choose all the checkboxes and click OK, and confirm again in the popup dialog  
 
-Now that you have ownership of the policy file, rename the audit policy file you want to apply to {1283AC0F-FFF1-49AE-ADA1-8A933130CAD6}.cip, and replace the original policy file with it.
+Now that you have ownership of the policy file, rename it to `{1283AC0F-FFF1-49AE-ADA1-8A933130CAD6}.cip.old`.  Rename the audit policy file you want to apply to `{1283AC0F-FFF1-49AE-ADA1-8A933130CAD6}.cip`, and copy it to the policy directory.
 
-Run `citool.exe -r` from an admin command prompt to refresh the policy  
+Run `citool.exe -r` from an admin command prompt to refresh the policy .
 
-### Enabling Smart App Control Audit policy without ISG  
+### Smart App Control audit policy without ISG (SmartAppControlAuditNoISG.bin)
 
-> [!NOTE]
-> Why is this different from applying the other policy?
+This policy checks binaries and scripts against Smart App Control in evaluation mode, without checking the Intelligent Security Graph. This means that only apps that are properly signed by a trusted certificate will be allowed without audit events. This is useful for developers wanting to verify that their application is signed correctly, especially if publishing through the Windows Store, where a signature from a cert obtained from a trusted Certificate Authority is required.
+
+This policy can be applied even when Smart App Control is set to Off. When this policy is applied, the output for citool.exe -lp will show VerifiedAndReputableDesktopEvaluationAuditNoISG as the policy name.
+
+#### Apply the Smart App Control Audit policy without ISG  
 
 This policy is for testing applications in evaluation mode against the signing requirement of Smart App Control exclusively, and will not allow any app binaries based on cloud intelligence from the Intelligent Security Graph. 
 
@@ -134,3 +131,5 @@ Run "citool.exe -r" from admin command line to refresh the policy 
 ### Checking Event Logs  
 
 Smart App Control logs any executable that was (or would have been) blocked into the Code Integrity Event Logs.  You can find those logs by opening the Event Viewer, and then browsing to **Application and Services Logs** > **Microsoft** > **Windows** > **CodeIntegrity** > **Operational**.  
+
+Smart App Control logs evaluation mode events with event ID 3076, and enforcement mode events with event ID 3077.

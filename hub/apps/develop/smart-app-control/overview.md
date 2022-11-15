@@ -15,11 +15,11 @@ Malware, Potentially Unwanted Apps (PUA), and unknown, unsigned code are  blocke
 
 Smart App Controlis designed to protect a device for its entire lifetime. As such, it can only be enabled on a clean install of a version of Windows that contains the Smart App Control feature. Additionally, Smart App Control is only enabled in certain regions. We hope to roll out additional regions soon.
 
- - Windows 10 or Windows 11, version 22572 or higher. 
- - A clean Windows install
+- Windows 11, version 22572 or higher.
+- A clean Windows install
    > [!NOTE]
    > [Resetting your device](/windows-hardware/service/desktop/resetting-the-pc) counts as a clean Windows install.
- - North America or Europe
+- North America or Europe
 
 ## Smart App Control stages
 
@@ -41,9 +41,9 @@ Go to **Settings** > **Windows Security** > **App and Browser Control**. If Smar
 
 Go to **Settings** > **Windows Security** > **App and Browser Control**. 
 
- - If **On** is selected, Smart App Control is running in enforcement mode. 
- - If **Evaluation** is selected, Smart App Control is running in evaluation mode.
- - If **Off** is selected, Smart App Control is not running on this device.
+- If **On** is selected, Smart App Control is running in enforcement mode. 
+- If **Evaluation** is selected, Smart App Control is running in evaluation mode.
+- If **Off** is selected, Smart App Control is not running on this device.
 
 ### Will I be notified when Smart App Control enters enforcement mode?
 
