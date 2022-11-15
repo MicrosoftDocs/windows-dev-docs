@@ -18,7 +18,7 @@ Go to **Settings** > **Privacy & Security** > **Windows Security** > **App and B
 > [!NOTE]
 > Configuring Smart App Control to **Off** or **On** (enforcement) is a one-way operation. This means you cannot change modes using Windows Settings unless the current setting is **Evaluation**. For testing purposes, you can force Smart App Control into another setting [using the registry](#configure-smart-app-control-using-the-registry).
 
-If Smart App Control is in Evaluation mode, Smart App Control will evaluate your app's signature, but will not block your app if its signature is invalid. In this mode, you can use [Audit Policies](#audit-policies) to view Smart App Control's output, including errors encountered while checking your app's signature.
+If Smart App Control is in Evaluation mode, Smart App Control will evaluate your app's signature, but will not block your app if its signature is invalid. In this mode, you can use [Audit Policies](#configure-smart-app-controls-audit-policy) to view Smart App Control's output, including errors encountered while checking your app's signature.
 
 Select **On** to put Smart App Control in enforcement mode. In this mode, Smart App Control will prevent your app from running if its signature is invalid.
 
