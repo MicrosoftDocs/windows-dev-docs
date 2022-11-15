@@ -307,33 +307,20 @@ class ToastWithAvatar
 
     public static bool SendToast()
     {
-        // The ScenarioIdToken uniquely identify a scenario and is used to route the response received when the user clicks on a toast to the correct scenario.
-        var ScenarioIdToken = Common.MakeScenarioIdToken(ScenarioId);
+        var appNotification = new AppNotificationBuilder()
+            .AddArgument("action", "ToastClick")
+            .AddArgument(Common.scenarioTag, ScenarioId.ToString())
+            .SetAppLogoOverride(new System.Uri("file://" + App.GetFullPathToAsset("Square150x150Logo.png")), AppNotificationImageCrop.Circle)
+            .AddText(ScenarioName)
+            .AddText("This is an example message using XML")
+            .AddButton(new AppNotificationButton("Open App")
+                .AddArgument("action", "OpenApp")
+                .AddArgument(Common.scenarioTag, ScenarioId.ToString()))
+            .BuildNotification();
 
-        var xmlPayload = new string(
-            "<toast>"
-                "<visual>"
-                    "<binding template = \"ToastGeneric\">"
-                        "<image placement = \"appLogoOverride\" hint-crop=\"circle\" src = \"" + App.GetFullPathToAsset("Square150x150Logo.png") + "\"/>"
-                        "<text>" + ScenarioName + "</text>"
-                        "<text>This is an example message using XML</text>"
-                    "</binding>"
-                "</visual>"
-                "<actions>"
-                    "<action "
-                        "content = \"Open App\" "
-                        "arguments = \"action=OpenApp&amp;" + ScenarioIdToken + "\"/>"
-                "</actions>"
-            "</toast>" );
+        AppNotificationManager.Default.Show(appNotification);
 
-        var toast = new AppNotification(xmlPayload);
-        AppNotificationManager.Default.Show(toast);
-        if (toast.Id == 0)
-        {
-            return false;
-        }
-
-        return true;
+        return appNotification.Id != 0; // return true (indicating success) if the toast was sent (if it has an Id)
     }
 
     public static void NotificationReceived(AppNotificationActivatedEventArgs notificationActivatedEventArgs)
@@ -352,33 +339,20 @@ class ToastWithAvatar
 
 bool ToastWithAvatar::SendToast()
 {
-    // The ScenarioIdToken uniquely identify a scenario and is used to route the response received when the user clicks on a toast to the correct scenario.
-    auto ScenarioIdToken{ Common::MakeScenarioIdToken(ToastWithAvatar::ScenarioId) };
+    auto appNotification{ winrt::AppNotificationBuilder()
+        .AddArgument(L"action", L"ToastClick")
+        .AddArgument(Common::scenarioTag, std::to_wstring(ToastWithAvatar::ScenarioId))
+        .SetAppLogoOverride(winrt::Windows::Foundation::Uri(L"file://" + winrt::App::GetFullPathToAsset(L"Square150x150Logo.png")), winrt::AppNotificationImageCrop::Circle)
+        .AddText(ScenarioName)
+        .AddText(L"This is an example message using XML")
+        .AddButton(winrt::AppNotificationButton(L"Open App")
+            .AddArgument(L"action", L"OpenApp")
+            .AddArgument(Common::scenarioTag, std::to_wstring(ToastWithAvatar::ScenarioId)))
+        .BuildNotification() };
 
-    winrt::hstring xmlPayload{
-        L"<toast>\
-            <visual>\
-                <binding template = \"ToastGeneric\">\
-                    <image placement = \"appLogoOverride\" hint-crop=\"circle\" src = \"" + winrt::App::GetFullPathToAsset(L"Square150x150Logo.png") + L"\"/>\
-                    <text>" + ScenarioName + L"</text>\
-                    <text>This is an example message using XML</text>\
-                </binding>\
-            </visual>\
-            <actions>\
-                <action\
-                    content = \"Open App\"\
-                    arguments = \"action=OpenApp&amp;" + ScenarioIdToken + L"\"/>\
-            </actions>\
-        </toast>" };
+    winrt::AppNotificationManager::Default().Show(appNotification);
 
-    auto toast{ winrt::AppNotification(xmlPayload) };
-    winrt::AppNotificationManager::Default().Show(toast);
-    if (toast.Id() == 0)
-    {
-        return false;
-    }
-
-    return true;
+    return appNotification.Id() != 0; // return true (indicating success) if the toast was sent (if it has an Id)
 }
 
 void ToastWithAvatar::NotificationReceived(winrt::Microsoft::Windows::AppNotifications::AppNotificationActivatedEventArgs const& notificationActivatedEventArgs)
