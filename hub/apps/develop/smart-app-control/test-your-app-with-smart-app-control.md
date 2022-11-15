@@ -79,7 +79,7 @@ For the purposes of evaluating applications against Smart App Control, a develop
 > [!NOTE]
 > Audit policies only apply when Smart App Control is running in Evaluation mode. In Enforcement mode, Smart App Control will log events by default.
 
-A zip file containing two sample policies below can be downloaded [here](aka.ms/sacauditpolicies).
+A zip file containing two sample policies below can be downloaded [here](https://aka.ms/sacauditpolicies).
 
 ### Smart App Control audit policy (SmartAppControlAudit.bin)
 
