@@ -175,7 +175,7 @@ The currently available utilities include:
         [![Screen Ruler screenshot.](../images/pt-screen-ruler.png)](screen-ruler.md)
     :::column-end:::
     :::column span="2":::
-        [Screen Ruler](screen-ruler.md) allows you to quickly measure pixels on your screen based with image edge detection. Just press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> to activate. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
+        [Screen Ruler](screen-ruler.md) allows you to quickly measure pixels on your screen based with image edge detection. Just press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
     :::column-end:::
 :::row-end:::
 
@@ -197,7 +197,7 @@ The currently available utilities include:
         [![Text Extractor screenshot.](../images/pt-image-to-text.png)](text-extractor.md)
     :::column-end:::
     :::column span="2":::
-        [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
+        [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. Just press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> to activate. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
     :::column-end:::
 :::row-end:::
 
