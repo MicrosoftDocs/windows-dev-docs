@@ -531,14 +531,14 @@ class ToastWithAvatar
 bool SendToast()
 {
 
-    auto appNotification{ AppNotificationBuilder()
-                .SetAppLogoOverride(winrt::Windows::Foundation::Uri(L"ms-appx:///images/logo.png"), AppNotificationImageCrop::Circle)
+    auto appNotification{ winrt::AppNotificationBuilder()
+                .SetAppLogoOverride(winrt::Windows::Foundation::Uri(L"ms-appx:///images/logo.png"), winrt::AppNotificationImageCrop::Circle)
                 .AddText(L"Example ExpiresOnReboot notification")
                 .AddText(L"This is an example message")
                 .BuildNotification() };
 
     appNotification.ExpiresOnReboot();
-    AppNotificationManager::Default().Show(appNotification);
+    winrt::AppNotificationManager::Default().Show(appNotification);
 
     return appNotification.Id() != 0; // return true (indicating success) if the toast was sent (if it has an Id)
 }
@@ -561,21 +561,15 @@ const winrt::hstring c_group = L"downloads";
 // Send first Notification Progress Update
 void SendUpdatableNotificationWithProgress()
 {
-    winrt::hstring payload =
-        LR"(<toast launch="action = viewDownload &amp; downloadId = 9438108">
-        <visual>
-            <binding template = "ToastGeneric">
-                <text>Downloading this week's new music...</text>
-                <progress
-                    title = "{progressTitle}"
-                    value = "{progressValue}"
-                    valueStringOverride = "{progressValueString}"
-                    status = "{progressStatus}" />
-            </binding>
-        </visual>
-    </toast>)";
+    auto notification{ winrt::AppNotificationBuilder()
+            .AddText(L"Downloading this week's new music...")
+            .AddProgressBar(winrt::AppNotificationProgressBar()
+                .BindTitle()
+                .BindValue()
+                .BindValueStringOverride()
+                .BindStatus())
+            .BuildNotification() }
 
-    winrt::AppNotification notification(payload);
     notification.Tag(c_tag);
     notification.Group(c_group);
 
