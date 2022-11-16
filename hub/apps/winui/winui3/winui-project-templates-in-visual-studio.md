@@ -27,11 +27,11 @@ The features of this project template vary between [versions of the Windows App 
 - **Version 1.0 Preview 2:** Starting with this release, this project template generates an application project with the package manifest and other support needed to build the app into an [MSIX package](/windows/msix/overview) without the use of a separate packaging project. To use this project template, you must also install the [single-project MSIX packaging tools extension for Visual Studio](../../windows-app-sdk/single-project-msix.md).
 
     > [!NOTE]
-    > In version 1.0 Preview 2 and later releases, this project template only supports a single executable in the generated MSIX package. If you need to combine multiple executables into a single MSIX package, you must use the **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template or add a Windows Application Packaging Project to your solution.
+    > In version 1.0 Preview 2 and later releases, this project template only supports a single executable in the generated MSIX package. If you need to combine multiple executables into a single MSIX package, then you'll need to use the **Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)** project template, or add a Windows Application Packaging Project to your solution.
 
 - **Version 1.0 Preview 1 and earlier:** In these releases, this project template generates a solution with a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). You can optionally install the [single-project MSIX packaging tools extension for Visual Studio](../../windows-app-sdk/single-project-msix.md) and combine the packaging project settings into your application project so you no longer need to maintain a separate packaging project.
 
-### Blank App, Packaged with WAP (WinUI 3 in Desktop)
+### Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)
 
 This project template is available in [version 1.0 Preview 1 and later releases](../../windows-app-sdk/downloads.md). It creates a desktop .NET (C#) or native Win32 (C++) app with a WinUI 3-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI 3 library that you can use to start building your UI. For more info about using this project template, see [Create your first WinUI 3 project](create-your-first-winui3-app.md).
 
