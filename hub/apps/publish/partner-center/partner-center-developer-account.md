@@ -1,19 +1,17 @@
 ---
-ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
-title: Opening a developer account
+title: Developer accounts in Partner Center
 description: Here's an overview of how to register for a Windows developer account for Microsoft Store and other Microsoft programs in Partner Center.
 ms.date: 3/30/2020
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Opening a developer account
 
-This article describes how to register for a Windows developer account in [Partner Center](https://developer.microsoft.com/en-us/microsoft-store/register/). You can register as a developer account in Partner Center by associating an existing Microsoft Account or by creating a mew Microsoft account.
+# Developer accounts in Partner Center
+
+To publish your app in the Microsoft Store, you'll need to register as a Windows app developer in [Partner Center](https://developer.microsoft.com/microsoft-store/register/). You can register with an existing Microsoft Account or by creating a new Microsoft account.
 
 > [!NOTE]
 > When you sign up for a developer account, we'll use the email address you provide in your contact info to send messages related to your account. At times, these may include information about our programs. If you choose to [opt out](https://account.microsoft.com/account/Account?ru=https%3A%2F%2Faccount.microsoft.com%2Fprofile%2Fcontact-info&destrt=profile-landing) of these informational emails, be aware that we'll still send you transactional messages (for example, to let you know that a payment is on the way). These transactional emails are a necessary part of your account, and unless you close your account, you'll continue to receive them.
-
 
 ## Additional guidelines for company accounts
 
@@ -22,14 +20,13 @@ This article describes how to register for a Windows developer account in [Partn
 
 If you want to let multiple people access the company account by signing in with the Microsoft account that opened it (instead of as individual users added to the account), see the following guidelines:
 
--   Email ownership verifies that the primary contact (primary email) address is valid. The primary contact email address must be a work account that is monitored and can send/receive email. Partners should **not** use: (1) a personal email address not associated with the company domain, or (2) a tenant user sign-in not associated to email (for example, jsmith@testcompany.onmicrosoft.com).
--   Limit access to this Microsoft account to the least number of users possible.
--   Set up a corporate email distribution list that includes everyone who needs to access the developer account. Add this email address to the [security info associated with the Microsoft account](https://account.microsoft.com/security). This approach allows all the employees on the list to receive security codes that are sent to this alias. If setting up a distribution list isn't feasible, you can add an individual's email address to your security info. But, the owner of that email address will be the only person who can access and share the security code when prompted (such as when new security info is added to the account or when the account is accessed from a new device).
--   Add a company phone number to the Microsoft account's security info. Try to use a number that doesn't require an extension and that's accessible to key team members.
--   Encourage developers to use [trusted devices](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) to sign in to your company's developer account. All key team members should have access to these trusted devices. This arrangement reduces the need for security codes to be sent when team members access the account. There's a limit to the number of codes that can be generated per account per week.
--   If you need to allow access to the account from a non-trusted PC, limit that access to a maximum of five developers. Ideally, these developers should access the account from machines that share the same geographical and network location.
--   Frequently review your company’s security info at https://account.microsoft.com/security to make sure it's all current.
-
+- Email ownership verifies that the primary contact (primary email) address is valid. The primary contact email address must be a work account that is monitored and can send/receive email. Partners should **not** use: (1) a personal email address not associated with the company domain, or (2) a tenant user sign-in not associated to email (for example, jsmith@testcompany.onmicrosoft.com).
+- Limit access to this Microsoft account to the least number of users possible.
+- Set up a corporate email distribution list that includes everyone who needs to access the developer account. Add this email address to the [security info associated with the Microsoft account](https://account.microsoft.com/security). This approach allows all the employees on the list to receive security codes that are sent to this alias. If setting up a distribution list isn't feasible, you can add an individual's email address to your security info. But, the owner of that email address will be the only person who can access and share the security code when prompted (such as when new security info is added to the account or when the account is accessed from a new device).
+- Add a company phone number to the Microsoft account's security info. Try to use a number that doesn't require an extension and that's accessible to key team members.
+- Encourage developers to use [trusted devices](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) to sign in to your company's developer account. All key team members should have access to these trusted devices. This arrangement reduces the need for security codes to be sent when team members access the account. There's a limit to the number of codes that can be generated per account per week.
+- If you need to allow access to the account from a non-trusted PC, limit that access to a maximum of five developers. Ideally, these developers should access the account from machines that share the same geographical and network location.
+- Frequently review your company’s security info at https://account.microsoft.com/security to make sure it's all current.
 
 ## Microsoft account security
 

@@ -1,12 +1,12 @@
 ---
-description: Overview of users, groups, and Azure AD applications.
-title: Overview - Users, groups, and Azure AD applications
+description: Users, groups, and applications in Azure Active Directory
+title: Overview of several types of entities in Azure AD
 ms.date: 09/09/2022
 ms.topic: article
-keywords: windows 10, uwp, azure ad application, aad, user, group, multiple users, multi-user
 ms.localizationpriority: medium
 ---
-# Overview of Users, groups, and Azure AD applications
+
+# Users, groups, and applications in Azure Active Directory
 
 The **Users** section of [Partner Center](https://partner.microsoft.com/dashboard) (under **Account settings**) lets you use Azure Active Directory to add users to your Partner Center account. Each user is assigned a role (or set of custom permissions) that defines their access to the account. You can also add [groups of users](manage-groups-in-partner-center.md) and [Azure AD applications](manage-azure-ad-applications-in-partner-center.md) to grant them access to your Partner Center account.
 

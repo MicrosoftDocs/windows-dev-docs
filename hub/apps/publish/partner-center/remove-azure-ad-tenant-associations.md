@@ -3,9 +3,9 @@ description: Remove Azure AD tenant associations
 title: Remove Azure AD tenant associations
 ms.date: 11/07/2022
 ms.topic: article
-keywords: windows 10, uwp, azure ad, azure tenant, aad tenant, azure ad tenant, tenant management, tenants
 ms.localizationpriority: medium
 ---
+
 # Remove Azure AD tenant associations from your Partner Center Account
 
 After you have associated an Azure AD tenant with your Partner Center account, you can remove existing tenants from the **Tenants** page.

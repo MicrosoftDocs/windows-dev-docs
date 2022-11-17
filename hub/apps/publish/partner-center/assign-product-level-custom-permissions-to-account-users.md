@@ -1,20 +1,19 @@
 ---
 title: Assign product level custom permissions to account users
 description: Learn how to assign custom permissions at product level when adding users to your Partner Center account.
-ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, windows 11, uwp, user roles, user permission, custom roles, user access, customize permissions, standard roles
 ms.localizationpriority: high
 ---
+
 # Assign product level custom permissions to account users
 
-The permissions in this section can be granted to all products in the account, or can be customized to allow the permission only for one or more specific products. 
+The permissions in this section can be granted to all products in the account, or can be customized to allow the permission only for one or more specific products.
 
 Product-level permissions are grouped into four categories: **Analytics**, **Monetization**, **Publishing**, and **Xbox Live**. You can expand each of these categories to view the individual permissions in each category. You also have the option to enable **All permissions** for one or more specific products.
 
-To grant a permission for every product in the account, make your selections for that permission (by toggling the box to indicate **Read only** or **Read/write**) in the row marked **All products**. 
- 
+To grant a permission for every product in the account, make your selections for that permission (by toggling the box to indicate **Read only** or **Read/write**) in the row marked **All products**.
+
 > [!TIP]
 > Selections made for **All products** will apply to every product currently in the account, as well as any future products created in the account. To prevent permissions from applying to future products, select all of the products individually rather than choosing **All products**.
 
@@ -22,9 +21,9 @@ Below the **All products** row, you’ll see each product in the account listed 
 
 Each add-on is listed in a separate row underneath its parent product, along with an **All add-ons** row. Selections made for **All add-ons** will apply to all current add-ons for that product, as well as any future add-ons created for that product.
 
-Note that some permissions cannot be set for add-ons. This is either because they don’t apply to add-ons (for example, the **Customer feedback** permission) or because the permission granted at the parent product level applies to all add-ons for that product (for example, **Promotional codes**). Note, however, that any permission that is available for add-ons must be set separately; add-ons do not inherit selections made for the parent product. For example, if you wish to allow a user to make pricing and availability selections for an add-on, you would need to enable the **Pricing and availability** permission for the add-on (or for **All add-ons**), whether or not you have granted the **Pricing and availability** permission for the parent product. 
+Note that some permissions cannot be set for add-ons. This is either because they don’t apply to add-ons (for example, the **Customer feedback** permission) or because the permission granted at the parent product level applies to all add-ons for that product (for example, **Promotional codes**). Note, however, that any permission that is available for add-ons must be set separately; add-ons do not inherit selections made for the parent product. For example, if you wish to allow a user to make pricing and availability selections for an add-on, you would need to enable the **Pricing and availability** permission for the add-on (or for **All add-ons**), whether or not you have granted the **Pricing and availability** permission for the parent product.
 
-### Analytics
+## Analytics
 
 <table>
     <thead>
@@ -45,7 +44,7 @@ Note that some permissions cannot be set for add-ons. This is either because the
     </tbody>
     </table>
 
-### Monetization
+## Monetization
 
 <table>
     <thead>
@@ -66,7 +65,7 @@ Note that some permissions cannot be set for add-ons. This is either because the
     </tbody>
     </table>
 
-### Publishing 
+## Publishing 
 
 <table>
     <thead>
@@ -94,7 +93,7 @@ Note that some permissions cannot be set for add-ons. This is either because the
     </tbody>
     </table>
 
-### Xbox Live \*
+## Xbox Live \*
 
 <table>
     <thead>

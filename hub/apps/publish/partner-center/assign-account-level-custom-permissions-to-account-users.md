@@ -1,12 +1,11 @@
 ---
 title: Assign account level custom permissions to account users
 description: Learn how to assign custom permissions at account level when adding users to your Partner Center account.
-ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.date: 11/09/2022
 ms.topic: article
-keywords: windows 10, windows 11, uwp, user roles, user permission, custom roles, user access, customize permissions, standard roles
 ms.localizationpriority: high
 ---
+
 # Assign account level custom permissions to account users
 
 The permissions in this section cannot be limited to specific products. Granting access to one of these permissions allows the user to have that permission for the entire account.

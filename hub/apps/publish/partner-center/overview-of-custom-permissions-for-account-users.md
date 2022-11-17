@@ -1,12 +1,11 @@
 ---
 title: Overview of custom permissions for account users
 description: Learn how to assign custom permissions when adding users to your Partner Center account.
-ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.date: 11/09/2022
 ms.topic: article
-keywords: windows 10, windows 11, uwp, desktop bridge, msix, win32, msi, exe, pwa, user roles, user permission, custom roles, user access, customize permissions
 ms.localizationpriority: medium
 ---
+
 # Overview of custom permissions for account users
 
 To assign custom permissions rather than standard roles, click **Customize permissions** in the **Roles** section when adding or editing the user account.

@@ -1,12 +1,11 @@
 ---
 title: Overview of roles and permissions for account users
 description: Learn how to set standard roles or custom permissions when adding users to your Partner Center account.
-ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, user roles, user permission, custom roles, user access, customize permissions, standard roles
 ms.localizationpriority: medium
 ---
+
 # Overview of roles and permissions for account users
 
 When you [add users to your Partner Center account](overview-users-groups-azure-ad-applications.md), you'll need to specify what access they have within the account. You can do this by assigning them [standard roles](assign-roles-to-account-users.md) which applies to the entire account, or you can [customize their permissions](overview-of-custom-permissions-for-account-users.md) to provide the appropriate level of access. Some of the custom permissions apply to the entire account, and some can be limited to one or more specific products (or granted to all products, if you prefer).
