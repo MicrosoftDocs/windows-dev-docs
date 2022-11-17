@@ -1036,15 +1036,19 @@ var builder = new ToastContentBuilder()
 
 Using a selection menu and two buttons, we can create a reminder notification that utilizes the system snooze and dismiss actions. Make sure to set the scenario to "Reminder" for the notification to behave like a reminder.
 
-<img alt="reminder notification" src="images/adaptivetoasts-xmlsample07.jpg" width="364"/>
 ![A screenshot of an app notification with lines of text describing the time and location of a meeting. A selection box has "15 minutes" selected and there are buttons labeled Snooze and Dismiss.](images/toast-content-snooze-dismiss.png)
 
 We link the Snooze button to the selection menu input using the **SelectionBoxId** property on the toast button.
 
+The **Microsoft.Windows.AppNotifications.Builder** syntax does not currently support system activation. But this scenario is supported for Windows App SDK apps, and you can build notifications for this scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
+
 ### [Windows App SDK](#tab/appsdk)
 
-The Microsoft.Windows.AppNotifications.Builder syntax does not currently support system activation. But this scenario is supported for Windows App SDK apps, and you can build notifications for this scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
-
+```csharp
+// The Microsoft.Windows.AppNotifications.Builder syntax does not currently support system activation. 
+// But this scenario is supported for Windows App SDK apps, and you can build notifications for this 
+// scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
+```
 
 ### [Community Tookit](#tab/toolkit)
 
