@@ -32,6 +32,12 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.2
 
+### Version 1.2.1 (1.2.221116.1)
+
+This is a servicing release of the Windows App SDK that includes a critical bug fix for the 1.2 release.
+
+Fixed issue that caused a crash on startup in C++ WinUI 3 apps when adding a WebView2 or TextBox control. For more information see GitHub issues [#7911](https://github.com/microsoft/microsoft-ui-xaml/issues/7911) & [#3117](https://github.com/microsoft/WindowsAppSDK/issues/3117).
+
 ### Version 1.2 Stable
 
 The following sections describe new and updated features, limitations, and known issues for 1.2 Stable.
