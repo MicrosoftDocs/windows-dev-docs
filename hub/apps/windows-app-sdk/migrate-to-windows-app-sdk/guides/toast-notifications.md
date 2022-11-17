@@ -27,7 +27,7 @@ The only difference when migrating app notification code from UWP to WinUI 3 is 
 Category | UWP | WinUI 3
 --|--|--
 Foreground activation entry point | `OnActivated` method inside `App.xaml.cs` is called | `OnLaunched` method inside `App.xaml.cs` is called.
-Background activation entry point | Handled separately as a background task | `OnLaunched` method inside `App.xaml.cs` is called. 
+Background activation entry point | Handled separately as a background task | Same as foreground activation. `OnLaunched` method inside `App.xaml.cs` is called. Use [GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to determine if the app should fully launch or just handle task and quit. 
 Window activation | Your window is automatically brought to foreground when foreground activation occurs | You must bring your window to the foreground if desired
 
 ### [Windows Community Toolkit](#tab/toolkit) 
