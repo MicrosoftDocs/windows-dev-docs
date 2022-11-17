@@ -13,7 +13,7 @@ Malware, Potentially Unwanted Apps (PUA), and unknown, unsigned code are  blocke
 
 ## Smart App Control requirements
 
-Smart App Controlis designed to protect a device for its entire lifetime. As such, it can only be enabled on a clean install of a version of Windows that contains the Smart App Control feature. Additionally, Smart App Control is only enabled in certain regions. We hope to roll out additional regions soon.
+Smart App Control is designed to protect a device for its entire lifetime. As such, it can only be enabled on a clean install of a version of Windows that contains the Smart App Control feature. Additionally, Smart App Control is only enabled in certain regions. We hope to roll out additional regions soon.
 
 - Windows 11, version 22572 or higher.
 - A clean Windows install
