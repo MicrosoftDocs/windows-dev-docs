@@ -2,7 +2,7 @@
 description: Learn how to get started building new apps for Windows desktop and modernizing existing apps.
 title: Overview of app development options
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 11/17/2022
 keywords: windows win32, desktop development
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ This article contains the information you need to get started building apps for 
 
 Windows gives you huge flexibility when it comes to building apps. From [C++](/windows/uwp/cpp-and-winrt-apis/) and [.NET](/dotnet/) to more up-and-coming tools such as [open source tools on WSL](/windows/wsl/) and [Rust](../../dev-environment/rust/index.yml), there are many different languages and platforms to choose from. It can be quite overwhelming to know where to start.
 
-[Visual Studio](/visualstudio) is the development environment used by most Windows developers and it provides many types of app starting points, each with their own project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set APIs for using Windows features.
+[Visual Studio](/visualstudio) is the development environment used by most Windows developers and it provides many types of app starting points, each with their own project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set of APIs for using Windows features.
 
 If your new app is going to run only on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to run on multiple platforms, we recommend looking at .NET MAUI or React Native for Windows.
 
