@@ -77,6 +77,8 @@ items:
             href: ../powertoys/install.md
           - name: Run in admin mode
             href: ../powertoys/administrator.md
+          - name: Group Policy
+            href: ../powertoys/grouppolicy.md
           - name: Report a Bug
             href: ../powertoys/reportBug.md
       - name: Always on Top
