@@ -528,7 +528,12 @@ Buttons make your toast interactive, letting the user take quick actions on your
 
 To learn more about implementing buttons end-to-end, see [Send local toast](send-local-toast.md).
 
-Buttons can activate an app in the foreground, with an argument that can be used to navigate to a specific page/context. Buttons can also activate another app via protocol launch. Currently UWP apps support system actions, such as snoozing or dismissing the notification, but this is currently unsupported for Windows App SDK.
+Buttons can activate an app in the following ways:
+
+- The app is activated in the foreground, with an argument that can be used to navigate to a specific page/context. B
+- Another app is activated via protocol launch. 
+- Background activation is supported explicitly for UWP apps. For Windows App SDK apps, the app is always launched in the foreground. The app can call [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to detect if the activation was launched by a notification and determine from the passed arguments whether to fully launch the foreground app or just handle the notification and exit. 
+- System actions, such as snoozing or dismissing the notification, are supported both for UWP apps and for Windows App SDK. The **AppNotificationBuilder** APIs don't support this scenario but Windows App SDK apps can implement this scenario using the **Microsoft.Windows.AppNotifications.Builder** APIs or raw XML.
 
 > [!NOTE]
 > You can only have up to 5 buttons (including context menu items which we discuss later).
@@ -1038,7 +1043,7 @@ We link the Snooze button to the selection menu input using the **SelectionBoxId
 
 ### [Windows App SDK](#tab/appsdk)
 
-The Microsoft.Windows.AppNotifications.Builder syntax does not currently support system activation. But this scenario is supported for Windows App SDK apps, and you can build notifications for this scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs.
+The Microsoft.Windows.AppNotifications.Builder syntax does not currently support system activation. But this scenario is supported for Windows App SDK apps, and you can build notifications for this scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
 
 
 ### [Community Tookit](#tab/toolkit)
