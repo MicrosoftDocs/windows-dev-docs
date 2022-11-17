@@ -61,8 +61,7 @@ var builder = new ToastContentBuilder()
 
     .AddButton(new ToastButton()
         .SetContent("Archive")
-        .AddArgument("action", "archive")
-        .SetBackgroundActivation())
+        .AddArgument("action", "archive"))
 
     .AddAudio(new Uri("ms-appx:///Audio/NotificationSound.mp3"));
 ```
@@ -529,12 +528,7 @@ Buttons make your toast interactive, letting the user take quick actions on your
 
 To learn more about implementing buttons end-to-end, see [Send local toast](send-local-toast.md).
 
-Buttons can perform the following different actions...
-
-- Activating the app in the foreground, with an argument that can be used to navigate to a specific page/context.
-- Activating the app's background task, for a quick-reply or similar scenario.
-- Activating another app via protocol launch.
-- Performing a system action, such as snoozing or dismissing the notification.
+Buttons can activate an app in the foreground, with an argument that can be used to navigate to a specific page/context. Buttons can also activate another app via protocol launch. Currently UWP apps support system actions, such as snoozing or dismissing the notification, but this is currently unsupported for Windows App SDK.
 
 > [!NOTE]
 > You can only have up to 5 buttons (including context menu items which we discuss later).
@@ -566,8 +560,7 @@ var builder = new ToastContentBuilder()
 
     .AddButton(new ToastButton()
         .SetContent("Remind me later")
-        .AddArgument("action", "remindLater")
-        .SetBackgroundActivation());
+        .AddArgument("action", "remindLater"));
 ```
 
 ### [XML](#tab/xml)
@@ -627,13 +620,11 @@ var builder = new ToastContentBuilder()
     .AddButton(new ToastButton()
         .SetContent("Snooze")
         .AddArgument("action", "snooze")
-        .SetImageUri(new Uri("ms-appx:///Images/Snooze.png"))
-        .SetBackgroundActivation())
+        .SetImageUri(new Uri("ms-appx:///Images/Snooze.png")))
     .AddButton(new ToastButton()
         .SetContent("Dismiss")
         .AddArgument("action", "dismiss")
-        .SetImageUri(new Uri("ms-appx:///Images/Dismiss.png"))
-        .SetBackgroundActivation());
+        .SetImageUri(new Uri("ms-appx:///Images/Dismiss.png")));
 ```
 
 #### [XML](#tab/xml)
@@ -773,13 +764,6 @@ var builder = new AppNotificationBuilder()
 
 ---
 
-### Buttons with pending update activation
-
-**New in Fall Creators Update**: On background activation buttons, you can use an after activation behavior of **PendingUpdate** to create multi-step interactions in your app notifications. When the user clicks your button, your background task is activated, and the notification gets placed in a "pending update" state, where it stays on screen till your background task replaces the notification with a new notification.
-
-To learn how to implement this, see [Toast pending update](toast-pending-update.md).
-
-![Toast with pending update](images/toast-pendingupdate.gif)
 
 
 ## Context menu actions
@@ -861,23 +845,24 @@ To enable a quick reply text box (for example, in a messaging app) add a text in
 ### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-// The Microsoft.Windows.AppNotifications.Builder syntax does not currently support quick reply text boxes.
+var builder = new AppNotificationBuilder()
+    .AddTextBox("textBox", "Type a reply", "Reply")
+    .AddButton(AppNotificationButton("Send")
+        .AddArguments("action", "Send")
+        .SetInputId("textBox"))
+    .BuildNotification();
 ```
 
 ### [Community Tookit](#tab/toolkit)
 
 ```csharp
-new ToastContentBuilder()
-    ...
-    
+var builder = new ToastContentBuilder()
     .AddInputTextBox("tbReply", "Type a reply")
-
-    .AddButton(new ToastButton()
+        .AddButton(new ToastButton()
         .SetContent("Reply")
         .SetTextBoxId("tbReply") // To place button next to text box, reference text box's id
         .SetImageUri(new Uri("Assets/Reply.png", UriKind.Relative))
-        .AddArgument("action", "reply")
-        .SetBackgroundActivation());
+        .AddArgument("action", "reply"));
 ```
 
 ### [XML](#tab/xml)
@@ -896,7 +881,6 @@ new ToastContentBuilder()
     <action
       content="Send"
       arguments="action=reply&amp;convId=9318"
-      activationType="background"
       hint-inputId="textBox"
       imageUri="Assets/Reply.png"/>
   </actions>
@@ -929,8 +913,7 @@ new ToastContentBuilder()
 
     .AddButton(new ToastButton()
         .SetContent("Reply")
-        .AddArgument("action", "reply")
-        .SetBackgroundActivation())
+        .AddArgument("action", "reply"))
 
     .AddButton(new ToastButton()
         .SetContent("Video call")
@@ -952,8 +935,7 @@ new ToastContentBuilder()
     <input id="textBox" type="text" placeHolderContent="Type a reply"/>
     <action
       content="Reply"
-      arguments="action=reply&amp;threadId=9218"
-      activationType="background"/>
+      arguments="action=reply&amp;threadId=9218"/>
     <action
       content="Video call"
       arguments="action=videocall&amp;threadId=9218"
@@ -1056,9 +1038,8 @@ We link the Snooze button to the selection menu input using the **SelectionBoxId
 
 ### [Windows App SDK](#tab/appsdk)
 
-```csharp
-// The Microsoft.Windows.AppNotifications.Builder syntax does not currently support system activation.
-```
+The Microsoft.Windows.AppNotifications.Builder syntax does not currently support system activation. But this scenario is supported for Windows App SDK apps, and you can build notifications for this scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs.
+
 
 ### [Community Tookit](#tab/toolkit)
 
