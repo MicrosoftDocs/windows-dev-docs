@@ -7,7 +7,7 @@ keywords: windows win32, desktop development
 ms.localizationpriority: medium
 ---
 
-# Overview of app development options
+# Get started with Windows: Selecting a development technology
 
 This article contains the information you need to get started building apps for the Windows desktop environment.
 
@@ -17,7 +17,7 @@ Windows gives you huge flexibility when it comes to building apps. From [C++](/w
 
 [Visual Studio](/visualstudio) is the development environment used by most Windows developers and it provides many types of app starting points, each with their own project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set of APIs for using Windows features.
 
-If your new app is going to run only on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to run on multiple platforms, we recommend looking at .NET MAUI or React Native for Windows.
+If your new app is going to run only on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to run on multiple platforms, we recommend looking at .NET MAUI or React Native for Windows. There are plenty of other options too (if you love tools like Python, [here's a list](/windows/dev-environment/)) but here are some recommendations to get started.
 
 
 
