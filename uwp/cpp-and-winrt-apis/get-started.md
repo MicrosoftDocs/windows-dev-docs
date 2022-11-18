@@ -61,7 +61,7 @@ Let's take the short code example above piece by piece, and explain what's going
 #include <winrt/Windows.Web.Syndication.h>
 ```
 
-With the default project settings, the included headers come from the Windows SDK, inside the folder`%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. Visual Studio includes that path in its *IncludePath* macro. But there's no strict dependency on the Windows SDK, because your project (via the `cppwinrt.exe` tool) generates those same headers into your project's *$(GeneratedFilesDir)* folder. They'll be loaded from that folder if they can't be found elsewhere, or if you change your project settings.
+With the default project settings, the included headers come from the Windows SDK, inside the folder `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. Visual Studio includes that path in its *IncludePath* macro. But there's no strict dependency on the Windows SDK, because your project (via the `cppwinrt.exe` tool) generates those same headers into your project's *$(GeneratedFilesDir)* folder. They'll be loaded from that folder if they can't be found elsewhere, or if you change your project settings.
 
 The headers contain Windows APIs projected into C++/WinRT. In other words, for each Windows type, C++/WinRT defines a C++-friendly equivalent (called the *projected type*). A projected type has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace. Putting these includes in your precompiled header reduces incremental build times.
 
