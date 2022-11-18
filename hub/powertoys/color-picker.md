@@ -72,3 +72,4 @@ Color Picker has following settings:
 
 - Color picker can't be displayed on top of the start menu or action center (you can still pick a color).
 - If the currently focused application was started with an administrator elevation (Run as administrator), the Color Picker activation shortcut will not work, unless PowerToys was also started with an administrator elevation.
+- Currently Wide Color Gamut (WCG) and High Dynamic Range (HDR) color formats are not supported.
