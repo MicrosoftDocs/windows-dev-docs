@@ -2,7 +2,7 @@
 title: Use the Windows App SDK runtime for apps packaged with external location or unpackaged
 description: If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore.
 ms.topic: article
-ms.date: 04/26/2022
+ms.date: 11/16/2022
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
@@ -48,9 +48,11 @@ If you want your app to have explicit control, then you can directly call the bo
 > [!NOTE]
 > In addition to the automatic initialization and the bootstrapper API, the Windows App SDK also provides an implementation of the *dynamic dependency API*. This API enables your unpackaged apps to take a dependency on *any* framework package (not just the Windows App SDK framework package), and it is used internally by the bootstrapper API. For more information about the dynamic dependency API, see [Reference framework packages at run time](../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md).
 
-### Opting out of automatic module initialization
+### Opting out of (or into) automatic module initialization
 
 The project property `<WindowsAppSdkBootstrapInitialize>false</WindowsAppSdkBootstrapInitialize>` disables the automatic module initialization described above (the bootstrapper API isn't called). That allows your app to take responsibility and directly call the bootstrapper API.
+
+As of version 1.2 Stable of the Windows App SDK, automatic module initialization applies only to projects that produce an executable (that is, the **OutputType** project property is set to *Exe* or *WinExe*). This is to prevent adding auto-initializers into class library DLLs and other non-executables by default. If you *do* need an auto-initializer in a non-executable (for example, a test DLL loaded by a host process executable that doesn't initialize the bootstrapper), then you can explicitly enable an auto-initializer in your project with `<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>`.
 
 ## Using the bootstrapper API
 

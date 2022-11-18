@@ -406,6 +406,8 @@ items:
         items:
           - name: Windows App SDK deployment overview
             href: package-and-deploy/deploy-overview.md
+          - name: Project properties
+            href: package-and-deploy/project-properties.md
           - name: Deployment guide for framework-dependent apps
             items:
               - name: "Deployment architecture and overview"

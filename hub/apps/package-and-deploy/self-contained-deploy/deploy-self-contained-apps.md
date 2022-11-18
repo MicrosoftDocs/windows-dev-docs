@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for self-contained apps
 description: A Windows App SDK project is framework-dependent by default. To switch to self-contained deployment, follow the steps in this article (the terms *framework-dependent* and *self-contained* are described in [Windows App SDK deployment overview](../deploy-overview.md)).
 ms.topic: article
-ms.date: 03/22/2022
+ms.date: 11/16/2022
 ms.localizationpriority: medium
 ---
 
@@ -15,7 +15,7 @@ A Windows App SDK project is framework-dependent by default. To switch to self-c
 
 ![Screenshot showing the WindowsAppSDKSelfContained property set in a project file.](../../images/winappsdk-self-contained.png)
 * For packaged projects, in the app project file, at the end of the file before the closing `</Project>`, add the `Target` shown below.
-    
+
 ```
   <Target Name="_RemoveFrameworkReferences" BeforeTargets="_ConvertItems;_CalculateInputsForGenerateCurrentProjectAppxManifest">
     <ItemGroup>
@@ -23,6 +23,7 @@ A Windows App SDK project is framework-dependent by default. To switch to self-c
     </ItemGroup>
   </Target>
 ```
+
 > [!NOTE]
 > This is a workaround for a bug in Windows App SDK 1.1 and will not be necessary with Windows App SDK 1.2. It is only required for packaged projects.
 * Save and close the project file.
@@ -61,6 +62,12 @@ Consider these options when you're considering using those APIs in a self-contai
     * Doing so allows you to depend on the API in all scenarios. But requiring MSIX package deployment of dependencies as part of your app deployment can compromise the simplicity of self-contained deployment.
 3. Don't use the API.
     * Consider alternative APIs that would provide similar functionality without additional deployment requirements.
+
+## Opting out of (or into) automatic UndockedRegFreeWinRT support
+
+The project property **WindowsAppSdkUndockedRegFreeWinRTInitialize** was introduced in version 1.2 Stable of the Windows App SDK. If that property is set to *true* then it ensures that the Windows App SDK's implementation of undocked registration-free Windows Runtime (*UndockedRegFreeWinRT*) is enabled automatically at app startup. That support is needed by unpackaged self-contained apps.
+
+**WindowsAppSdkUndockedRegFreeWinRTInitialize** defaults to *true* if **WindowsAppSDKSelfContained** is *true* and **WindowsPackageType** is *None* and (as of version 1.2 Stable of the Windows App SDK) **OutputType** project property is set to *Exe* or *WinExe* (that is, the project produces an executable). That last condition is to prevent adding automatic UndockedRegFreeWinRT support into class library DLLs and other non-executables by default. If you *do* need automatic UndockedRegFreeWinRT support in a non-executable (for example, a test DLL loaded by a host process executable that doesn't initialize UndockedRegFreeWinRT), then you can explicitly enable it in your project with `<WindowsAppSdkUndockedRegFreeWinRTInitialize>true</WindowsAppSdkUndockedRegFreeWinRTInitialize>`.
 
 ## Related topics
 
