@@ -40,7 +40,7 @@ The Widgets Board was first introduced in Windows 11 and was limited to displayi
 
 For more information about Widgets, check out [Widgets Overview](../design/widgets/index.md).
 
-To get started developing Widgets for your app, check out the [Widget service providers](../develop/widgets/widget-service-providers.md) development docs and [Widgets design fundamentals](../design/widgets/widgets-design-fundamentals.md) for prerequisites, guidance and best practices.
+To get started developing Widgets for your app, check out the [Widget service providers](/windows/apps/develop/widgets/widget-providers) development docs and [Widgets design fundamentals](../design/widgets/widgets-design-fundamentals.md) for prerequisites, guidance and best practices.
 
 Prerequisites for this release include:
 

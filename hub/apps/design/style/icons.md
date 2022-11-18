@@ -35,7 +35,7 @@ Outside your app, Windows uses an icon to represent your app in the start menu a
     :::column-end:::
 :::row-end:::
 
-This article describes icons within your app. To learn about icons outside your app (app icons), see the [app and tile icons article](/windows/apps/design/style/iconography/overview).
+This article describes icons within your app. To learn about icons outside your app (app icons), see the [app and tile icons article](./iconography/overview.md).
 
 ## When to use icons
 
