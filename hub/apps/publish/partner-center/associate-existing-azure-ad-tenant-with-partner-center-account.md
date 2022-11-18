@@ -16,13 +16,13 @@ If your organization already uses Azure AD, follow these steps to link your Part
 
 1. From [Partner Center](https://partner.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
 
-    :::image type="content" source="../images/partner-center-gear-menu-account-settings.png" alt-text="Screenshot showing *Account settings* option from the the *Gear* menu of Microsoft Partner Center.":::
+    :::image type="content" source="../images/partner-center-gear-menu-account-settings.png" alt-text="Screenshot showing Account settings option from the the Gear menu of Microsoft Partner Center.":::
 
-    :::image type="content" source="../images/partner-center-account-settings-tenants.png" alt-text="Screenshot showing *Tenants* option from *Account settings* menu in Partner Center.":::
+    :::image type="content" source="../images/partner-center-account-settings-tenants.png" alt-text="Screenshot showing Tenants option from Account settings menu in Partner Center.":::
 
 2. Select **Associate Azure AD with your Partner Center account**.
 
-    :::image type="content" source="../images/partner-center-connect-azure-ad.png" alt-text="Screenshot showing option to *Associate Azure AD with your Partner Center account*.":::
+    :::image type="content" source="../images/partner-center-connect-azure-ad.png" alt-text="Screenshot showing option to Associate Azure AD with your Partner Center account.":::
 
 3. A the Microsoft Partner Center sign in page, enter the Azure AD credentials for the tenant that you want to associate.
 
