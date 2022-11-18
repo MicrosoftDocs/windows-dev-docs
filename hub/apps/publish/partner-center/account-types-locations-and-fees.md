@@ -1,12 +1,11 @@
 ---
-ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
 ---
+
 # Account types, locations, and fees
 
 The Windows program in [Partner Center](https://partner.microsoft.com/dashboard) offers both individual and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft programs.

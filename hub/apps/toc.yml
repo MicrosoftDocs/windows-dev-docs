@@ -435,25 +435,54 @@ items:
       - name: Overview
         href: publish/index.md
       - name: Opening a developer account
-        href: publish/partner-center/opening-a-developer-account.md
         items:
+          - name: Developer accounts in Partner Center
+            href: publish/partner-center/partner-center-developer-account.md
+          - name: Open a developer account in Partner Center
+            href: publish/partner-center/open-a-developer-account.md
           - name: Account types, locations, and fees
             href: publish/partner-center/account-types-locations-and-fees.md
           - name: Manage account settings and profile info
             href: /partner-center/partner-center-account-setup
+          - name: Close your developer account in Partner Center
+            href: publish/partner-center/close-your-developer-account-in-partner-center.md
           - name: Trademark and copyright protection
             href: publish/partner-center/trademark-and-copyright-protection.md
       - name: Manage account users
         href: publish/partner-center/manage-account-users.md
-        items: 
-          - name: Associate Azure AD with your Partner Center account
-            href: publish/partner-center/associate-azure-ad-with-partner-center.md
-          - name: Add users, groups, and Azure AD applications
-            href: publish/partner-center/add-users-groups-and-azure-ad-applications.md
-          - name: Set roles and custom permissions
-            href: publish/partner-center/set-custom-permissions-for-account-users.md
-          - name: Troubleshoot App Creation in Partner Center
-            href: publish/partner-center/troubleshoot-app-creation.md
+        items:
+         - name: Manage Azure AD with your Partner Center account
+           items:
+                - name: Associate an existing Azure AD in Partner Center
+                  href: publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account.md
+                - name: Create a new Azure AD in Partner Center
+                  href: publish/partner-center/create-new-azure-ad-tenant.md
+                - name: Remove Azure AD tenant from Partner Center
+                  href: publish/partner-center/remove-azure-ad-tenant-associations.md
+         - name: Manage users, groups, and Azure AD applications
+           items:
+                - name: Users, groups, and applications in Azure Active Directory
+                  href: publish/partner-center/overview-users-groups-azure-ad-applications.md
+                - name: Manage users in Partner Center account
+                  href: publish/partner-center/manage-users-in-partner-center.md
+                - name: Manage groups in Partner Center account
+                  href: publish/partner-center/manage-groups-in-partner-center.md
+                - name: Manage Azure AD applications in Partner Center account
+                  href: publish/partner-center/manage-azure-ad-applications-in-partner-center.md
+         - name: Manage roles and permissions for account users
+           items:
+                - name: Overview of roles and permissions for account users
+                  href: publish/partner-center/overview-of-roles-and-permissions-for-account-users.md
+                - name: Assign roles to account users
+                  href: publish/partner-center/assign-roles-to-account-users.md
+                - name: Overview of custom permissions to account users
+                  href: publish/partner-center/overview-of-custom-permissions-for-account-users.md
+                - name: Assign account level custom permissions to account users
+                  href: publish/partner-center/assign-account-level-custom-permissions-to-account-users.md
+                - name: Assign product level custom permissions to account users
+                  href: publish/partner-center/assign-product-level-custom-permissions-to-account-users.md
+                - name: Troubleshoot App Creation in Partner Center
+                  href: publish/partner-center/troubleshoot-app-creation.md
       - name: Manage app name reservations
         href: publish/partner-center/manage-app-name-reservations.md
       - name: Partner Center workspaces

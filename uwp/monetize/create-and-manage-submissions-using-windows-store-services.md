@@ -35,7 +35,7 @@ The following steps describe the end-to-end process of using the Microsoft Store
 
 Before you start writing code to call the Microsoft Store submission API, make sure that you have completed the following prerequisites.
 
-* You (or your organization) must have an Azure AD directory and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](/windows/apps/publish/partner-center/associate-azure-ad-with-partner-center#create-a-new-azure-ad-tenant-to-associate-with-your-partner-center-account) for no additional charge.
+* You (or your organization) must have an Azure AD directory and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](/windows/apps/publish/partner-center/create-new-azure-ad-tenant.md) for no additional charge.
 
 * You must [associate an Azure AD application with your Partner Center account](#associate-an-azure-ad-application-with-your-windows-partner-center-account) and obtain your tenant ID, client ID and key. You need these values to obtain an Azure AD access token, which you will use in calls to the Microsoft Store submission API.
 
@@ -62,11 +62,11 @@ Before you can use the Microsoft Store submission API, you must associate an Azu
 
 1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](/windows/apps/publish/partner-center/associate-azure-ad-with-partner-center).
 
-2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).  
+2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center) that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).  
 
 3.  Return to the **Users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
 
-4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications#manage-keys).
+4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#manage-keys).
 
 <span id="obtain-an-azure-ad-access-token" />
 
