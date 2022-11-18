@@ -2,7 +2,7 @@
 title: Package your app using single-project MSIX
 description: This article provides instructions for how to generate an MSIX desktop app via a single project in Visual Studio.
 ms.topic: article
-ms.date: 11/15/2022
+ms.date: 11/17/2022
 keywords: windows, win32, desktop development, Windows App SDK, msix, packaging project, single project, single project msix, winui 3
 ms.localizationpriority: medium
 ---
@@ -71,6 +71,7 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 1. In **Solution Explorer**, double-click the project node for your application to open the **.csproj** file in the XML editor. Add the following XML to the main **\<PropertyGroup\>** element.
 
     ```xml
+    <EnableMsixTooling>true</EnableMsixTooling>
     <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
     ```
 
@@ -83,6 +84,7 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
         <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
         ...
         <UseWinUI>true</UseWinUI>
+        <EnableMsixTooling>true</EnableMsixTooling>
         <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
       </PropertyGroup>
     ```
@@ -97,7 +99,7 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 
     2. Select **Text File**, name the new file **launchSettings.json**, and click **Add**. Make sure the new file is in the **Properties** folder of your application project.
 
-    3. Copy the following settings to the new file. You're free to change the values as needed for your scenario. The **MyApp** value can be any string; it doesn't need to match the name of your application.
+    3. Copy the following settings into the new file. You're free to change the values as needed for your scenario. The **MyApp** value can be any string; it doesn't need to match the name of your application.
 
         ```json
         {
@@ -137,8 +139,9 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 
 3. Make the following changes to the XML in the **.vcxproj** file:
 
-    1. Change the value of `<AppxPackage>` to `true`.
-    2. Change the value of the `<AppContainerApplication>` element to `true`.
+    1. Add `<EnableMsixTooling>true</EnableMsixTooling>` to the main `<PropertyGroup>` element.
+    2. Change the value of `<AppxPackage>` to `true`.
+    3. Change the value of the `<AppContainerApplication>` element to `true`.
 
     When you're done, the contents of the **.vcxproj** file should look similar to this.
 
@@ -155,6 +158,7 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
         <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
         <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
         <UseWinUI>true</UseWinUI>
+        <EnableMsixTooling>true</EnableMsixTooling>
       </PropertyGroup>
     ```
 
@@ -171,7 +175,8 @@ Next, move several important files to the application project. There are differe
 #### [C#](#tab/csharp)
 
 1. In **File Explorer**, move the **Package.appxmanifest** file and the **Images** folder from your packaging project to your application project. Place this file and folder in the top level of the application project's folder hierarchy.
-2. Remove the packaging project from your solution.
+1. In Visual Studio, in **Solution Explorer**, multi-select all of the images inside the **Images** folder. In the **Properties** window, set **Build Action** to *Content*.
+1. Remove the packaging project from your solution.
 
 [![Illustration of moving files to main app](images/single-project-move-to-one.png) ](images/single-project-move-to-one.png#lightbox)
 
