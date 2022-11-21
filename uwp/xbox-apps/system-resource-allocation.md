@@ -38,7 +38,7 @@ Exceeding these limitations will cause memory allocation failures. For more info
     * Games: DirectX 12 with Hardware Feature Level 11.0; DirectX 11 with Hardware Feature Level 10.1.
 
 * DirectX support (Xbox Series X|S)
-    * Apps: DirectX 11 Hardware Feature Level 11.0
+    * Apps: DirectX 11 and DirectX 12 with Hardware Feature Level 11.0
     * Games: DirectX 11 and DirectX 12 with Hardware Feature Level 11.0
 
 * All apps and games must target the x64 architecture in order to be developed or submitted to the store for Xbox.  
