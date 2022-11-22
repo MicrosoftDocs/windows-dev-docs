@@ -28,6 +28,11 @@ Currently you can implement a widget provider using a packaged Win32 desktop app
 
 For API reference documentation for implementing widget providers, see the [Microsoft.Windows.Widgets.Providers](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers) namespace.
 
+## Additional resources
+- [Report an issue via email](mailto:widgetssupport@microsoft.com)
+- [Open an issue in the Windows App SDK github repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose)
+
+
 ## Related articles
 
 * [Windows widgets](../../design/widgets/index.md)
