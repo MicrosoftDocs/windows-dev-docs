@@ -30,7 +30,7 @@ For API reference documentation for implementing widget providers, see the [Micr
 
 ## Additional resources
 - [Report an issue via email](mailto:widgetssupport@microsoft.com)
-- [Open an issue in the Windows App SDK github repo](https://github.com/microsoft/WindowsAppSDK/issues)
+- [Open an issue in the Windows App SDK github repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose)
 
 
 ## Related articles
