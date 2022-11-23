@@ -12,6 +12,9 @@ ms.custom: 19H1
 
 # Host a custom WinRT XAML control in a C++ desktop (Win32) app
 
+> [!IMPORTANT]
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+
 This article demonstrates how to use the [WinRT XAML hosting API](using-the-xaml-hosting-api.md) to host a custom WinRT XAML control in a new C++ desktop app. If you have an existing C++ desktop app project, you can adapt these steps and code examples for your project.
 
 To host a custom WinRT XAML control, you'll create the following projects and components as part of this walkthrough:

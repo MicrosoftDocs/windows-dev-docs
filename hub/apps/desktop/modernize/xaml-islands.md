@@ -12,6 +12,9 @@ ms.custom: 19H1
 
 # Host WinRT XAML controls in desktop apps (XAML Islands)
 
+> [!IMPORTANT]
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+
 Starting in Windows 10, version 1903, you can host WinRT XAML controls in non-UWP desktop applications using a feature called *XAML Islands*. This feature enables you to enhance the look, feel, and functionality of your existing WPF, Windows Forms, and C++ desktop (Win32) applications with the latest Windows UI features that are only available via WinRT XAML controls. This means that you can use UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) in your existing WPF, Windows Forms, and C++ desktop applications.
 
 You can host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including:

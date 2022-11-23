@@ -11,6 +11,9 @@ ms.localizationpriority: medium
 
 # Use XAML Islands to host a UWP XAML control in a C# WPF app
 
+> [!IMPORTANT]
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+
 This topic shows how to build a C# Windows Presentation Foundation (WPF) app (targeting .NET Core 3.1) that uses [XAML Islands](xaml-islands.md) to host a Universal Windows Platform (UWP) XAML control (that is, a first-party control provided by the Windows SDK). We show how to do that in two ways:
 
 * We show how to host UWP [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) controls by using [wrapped controls](./xaml-islands.md#wrapped-controls) (available in the Windows Community Toolkit). Wrapped controls wrap the interface and functionality of a small set of useful UWP XAML controls. You can add a wrapped control directly to the design surface of your WPF or Windows Forms project, and then use it in the designer like any other WPF or Windows Forms control.
