@@ -1,9 +1,8 @@
 ---
 title: Submit your manifest to the repository
 description: After you create a package manifest that describes your application, you're ready to submit your manifest to the Windows Package Manager repository.
-ms.date: 10/25/2021
+ms.date: 11/28/2022
 ms.topic: article
-ms.localizationpriority: medium
 ---
 
 # Submit your manifest to the repository

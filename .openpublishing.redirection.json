@@ -7464,6 +7464,36 @@
       "source_path": "hub/package-manager/package/binary-validation-errors.md",
       "redirect_url": "/windows/package-manager/package/repository#binary-validation-error",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/tutorials.md",
+      "redirect_url": "/windows/dev-environment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/dev-stories.md",
+      "redirect_url": "/windows/dev-environment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/tips.md",
+      "redirect_url": "/windows/dev-environment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/resources.md",
+      "redirect_url": "/windows/python/web-frameworks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/powertoys/reportbug.md",
+      "redirect_url": "https://github.com/microsoft/PowerToys/issues/new/choose",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/xamarin-forms.md",
+      "redirect_url": "/dotnet/maui/what-is-maui",
+      "redirect_document_id": false
     }
   ]
 }

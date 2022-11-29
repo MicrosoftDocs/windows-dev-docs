@@ -1,14 +1,13 @@
 ---
 title: Submit packages to Windows Package Manager
-description: You can use Windows Package Manager as a distribution channel for software packages containing your applications.
-ms.date: 04/29/2020
+description: Winget can be used to install your software package. This guide outlines the submission process to publish packages to the Windows Package Manager repository as a distribution channel.
+ms.date: 11/28/2022
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # Submit packages to Windows Package Manager
 
-This section provides guidance about submitting packages to Windows Package Manager.
+This section provides guidance about submission process for contributing packages to Windows Package Manager (packages that can be installed with winget).
 
 ## Independent Software Vendor (ISV) or Publisher
 
@@ -18,6 +17,8 @@ To submit software packages to Windows Package Manager, follow these steps:
 
 1. [Create a package manifest that provides information about your application](manifest.md). Manifests are YAML files that follow the Windows Package Manager schema.
 2. [Submit your manifest to the Windows Package Manager repository](repository.md). This is an open source repository on GitHub that contains a collection of manifests that the **winget** tool can access.
+
+Ensure your submission adheres to the [Windows Package Manager repository policies](./windows-package-manager-policies.md).
 
 ## Community member
 

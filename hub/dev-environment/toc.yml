@@ -63,8 +63,6 @@ items:
             href: ../package-manager/package/repository.md#submission-troubleshooting
           - name: Repository policies
             href: ../package-manager/package/windows-package-manager-policies.md
-          - name: Repository policies change history
-            href: ../package-manager/package/windows-package-manager-policies.md
   - name: PowerToys
     items:
       - name: Overview
@@ -78,7 +76,7 @@ items:
           - name: Group Policy
             href: ../powertoys/grouppolicy.md
           - name: Report a Bug
-            href: ../powertoys/reportBug.md
+            href: https://github.com/microsoft/PowerToys/issues/new/choose
       - name: Always on Top
         href: ../powertoys/always-on-top.md
       - name: PowerToys Awake
