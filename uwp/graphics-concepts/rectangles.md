@@ -16,7 +16,7 @@ Throughout Direct3D and Windows programming, objects on the screen are referred 
 ## <span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>Bounding rectangles
 
 
-Most applications use the [**RECT**](/previous-versions/dd162897(v=vs.85)) structure (or a typedef'd alias for it) to carry information about a bounding rectangle to use when blitting to the screen or when performing hit detection. In C++, the **RECT** structure has the following definition.
+Most applications use the [**RECT**](/windows/win32/api/windef/ns-windef-rect) structure (or a typedef'd alias for it) to carry information about a bounding rectangle to use when blitting to the screen or when performing hit detection. In C++, the **RECT** structure has the following definition.
 
 ```cpp
 typedef struct tagRECT { 
