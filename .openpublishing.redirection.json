@@ -7445,9 +7445,24 @@
       "redirect_url": "/windows/apps/publish/partner-center/partner-center-developer-account",
       "redirect_document_id": false
     },
-       {
+    {
       "source_path": "hub/apps/publish/partner-center/set-custom-permissions-for-account-users.md",
       "redirect_url": "/windows/apps/publish/partner-center/overview-of-roles-and-permissions-for-account-users",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/package-manager/package/winget-validation.md",
+      "redirect_url": "/windows/package-manager/package/repository#validation-process",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/package-manager/package/winget-validation-troubleshooter.md",
+      "redirect_url": "/windows/package-manager/package/repository#submission-troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/package-manager/package/binary-validation-errors.md",
+      "redirect_url": "/windows/package-manager/package/repository#binary-validation-error",
       "redirect_document_id": false
     }
   ]

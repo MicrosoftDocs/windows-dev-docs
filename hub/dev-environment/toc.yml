@@ -58,11 +58,9 @@ items:
           - name: Submit your manifest to the repository
             href: ../package-manager/package/repository.md
           - name: Validation process
-            href: ../package-manager/package/winget-validation.md
+            href: ../package-manager/package/repository.md#validation-process
           - name: Troubleshooting submissions
-            href: ../package-manager/package/winget-validation-troubleshooter.md
-          - name: Binary validation errors
-            href: ../package-manager/package/binary-validation-errors.md
+            href: ../package-manager/package/repository.md#submission-troubleshooting
           - name: Repository policies
             href: ../package-manager/package/windows-package-manager-policies.md
           - name: Repository policies change history
