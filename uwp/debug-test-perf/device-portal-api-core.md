@@ -869,7 +869,7 @@ You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
 | :------          | :------ |
-| packageFullname   | (**required**) The full name of the package for the sideloaded app. |
+| packageFullName   | (**required**) The full name of the package for the sideloaded app. |
 
 **Request headers**
 
@@ -922,7 +922,7 @@ You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
 | :---          | :--- |
-| packageFullname   | (**required**) The full name of the package for the sideloaded app. |
+| packageFullName   | (**required**) The full name of the package for the sideloaded app. |
 | fileName   | (**required**) The name of the dump file that should be deleted. |
 
 **Request headers**
@@ -971,7 +971,7 @@ You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
 | :---          | :--- |
-| packageFullname   | (**required**) The full name of the package for the sideloaded app. |
+| packageFullName   | (**required**) The full name of the package for the sideloaded app. |
 
 **Request headers**
 
@@ -1019,7 +1019,7 @@ You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
 | :------          | :------ |
-| packageFullname   | (**required**) The full name of the package for the sideloaded app. |
+| packageFullName   | (**required**) The full name of the package for the sideloaded app. |
 | fileName   | (**required**) The name of the dump file that you want to download. |
 
 **Request headers**
@@ -1070,7 +1070,7 @@ You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
 | :---          | :--- |
-| packageFullname   | (**required**) The full name of the package for the sideloaded app. |
+| packageFullName   | (**required**) The full name of the package for the sideloaded app. |
 
 **Request headers**
 
