@@ -130,7 +130,7 @@ If you make an asynchronous call within your handler, control returns immediatel
 
 A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's _Complete_ method is called, or the deadline passes-_whichever comes first_.
 
-If you need more time to save your state, investigate ways to save your state in stages before your app enters the background state so that there is less to save in your **OnSuspending** and **EnteredBackground** event handlers. Or you may request an [ExtendedExecutionSession](/archive/msdn-magazine/2015/windows-10-special-issue/app-lifecycle-keep-apps-alive-with-background-tasks-and-extended-execution) to get more time. There is no guarantee that the request will be granted, however, so it is best to find ways to minimize the amount of time you need to save your state.
+If you need more time to save your state, investigate ways to save your state in stages before your app enters the background state so that there is less to save in your **OnSuspending** event handler. Or you may request an [ExtendedExecutionSession](/archive/msdn-magazine/2015/windows-10-special-issue/app-lifecycle-keep-apps-alive-with-background-tasks-and-extended-execution) to get more time. There is no guarantee that the request will be granted, however, so it is best to find ways to minimize the amount of time you need to save your state.
 
 ## App suspend
 
