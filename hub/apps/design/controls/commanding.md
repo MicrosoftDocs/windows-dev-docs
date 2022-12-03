@@ -79,7 +79,7 @@ To bind a control to a shared command resource, you can implement the ICommand i
 
 ## Command experiences using the StandardUICommand class
 
-Derived from [XamlUiCommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) (derived from [Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#), the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.
+Derived from [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) (derived from [Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#), the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.
 
 A [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) provides a quick and consistent way to define common commands such as `Save` or `Delete`. All you have to do is provide the execute and canExecute functions.
 
@@ -362,7 +362,7 @@ private void ListViewSwipeContainer_PointerExited(
 
 ## Command experiences using the XamlUICommand class
 
-If you need to create a command that isn't defined by the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class, or you'd like more control over the command appearance, the [XamlUiCommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) class derives from the [ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) interface, adding various UI properties (such as an icon, label, description, and keyboard shortcuts), methods, and events to quickly define the UI and behavior of a custom command.
+If you need to create a command that isn't defined by the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class, or you'd like more control over the command appearance, the [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) class derives from the [ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) interface, adding various UI properties (such as an icon, label, description, and keyboard shortcuts), methods, and events to quickly define the UI and behavior of a custom command.
 
 [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) lets you specify UI through the control binding, such as an icon, label, description, and keyboard shortcuts (both an access key and a keyboard accelerator), without setting the individual properties.
 
@@ -385,7 +385,7 @@ Many platform controls use the XamlUICommand properties under the covers, just l
 
 **Xaml:**
 
-The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) of five items. The custom [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) Delete is bound to a [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), a [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), an [AppBarButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), and [ContextFlyout menu](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout).
+The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) of five items. The custom [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) CustomXamlUICommand is bound to a [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), a [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), an [AppBarButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), and [ContextFlyout menu](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout).
 
 ``` xaml
 <Page
