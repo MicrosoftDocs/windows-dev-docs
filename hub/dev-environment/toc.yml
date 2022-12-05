@@ -218,7 +218,9 @@ items:
         - name: Rust for Windows
           href: ./rust/rust-for-windows.md
         - name: RSS reader tutorial (Rust for Windows)
-          href: ./rust/rss-reader-rust-for-windows.md    
+          href: ./rust/rss-reader-rust-for-windows.md
+        - name: Rust in Visual Studio Code
+          href: https://code.visualstudio.com/docs/languages/rust
   - name: VS Code
     href: https://code.visualstudio.com/docs
   - name: Visual Studio
