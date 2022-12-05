@@ -219,11 +219,11 @@ items:
           href: ./rust/rust-for-windows.md
         - name: RSS reader tutorial (Rust for Windows)
           href: ./rust/rss-reader-rust-for-windows.md    
-        - name: VS Code
-          href: https://code.visualstudio.com/docs
-        - name: Visual Studio
-          href: /visualstudio/windows/
-        - name: Azure
-          href: /azure/?product=featured
-        - name: .NET
-          href: /dotnet/
+  - name: VS Code
+    href: https://code.visualstudio.com/docs
+  - name: Visual Studio
+    href: /visualstudio/windows/
+  - name: Azure
+    href: /azure/?product=featured
+  - name: .NET
+    href: /dotnet/
