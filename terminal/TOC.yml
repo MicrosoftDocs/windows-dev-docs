@@ -58,8 +58,6 @@
       items:
         - name: Custom Terminal guide
           href: custom-terminal-gallery/custom-schemes.md
-        - name: Powerline in PowerShell
-          href: custom-terminal-gallery/powerline-in-powershell.md
         - name: Raspberry Ubuntu
           href: custom-terminal-gallery/raspberry-ubuntu.md
         - name: Frosted Glass Theme
