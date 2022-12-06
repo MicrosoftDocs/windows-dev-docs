@@ -464,15 +464,13 @@ This sets the background color of a selection within the profile. This will over
 
 ### Adjust indistinguishable colors
 
-When set to true, this will (when necessary) adjust the foreground color to make it more visible, based on the background color.
+This setting adjusts the foreground color to make it more visible, based on the background color. When set to `always`, the colors will always be adjusted. When set to `indexed`, the colors will only be adjusted if those colors are part of the color scheme. When set to `never`, the colors will never be adjusted.
 
 **Property name:** `adjustIndistinguishableColors`
 
 **Necessity:** Optional
 
-**Accepts:** `true`, `false`
-
-**Default value:** `true`
+**Accepts:** `always`, `indexed`, `never`
 
 ### Cursor color
 
