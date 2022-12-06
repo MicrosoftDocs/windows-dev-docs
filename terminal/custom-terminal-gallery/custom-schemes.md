@@ -87,12 +87,6 @@ After:
 
 [Details](frosted-glass-theme.md)
 
-## Powerline
-
-![Windows Terminal Powerline PowerShell](./../images/powerline-powershell.png)
-
-[Details](powerline-in-powershell.md)
-
 ## Raspberry Ubuntu
 
 ![Windows Terminal Raspberry Ubuntu](./../images/raspberry-ubuntu.png)
