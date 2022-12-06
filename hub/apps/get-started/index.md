@@ -13,12 +13,11 @@ This article contains the information you need to get started building apps for 
 
 ![Developer at desk](./images/developer-at-desk.jpg)
 
-Windows gives you huge flexibility when it comes to building apps. From [C++](/windows/uwp/cpp-and-winrt-apis/) and [.NET](/dotnet/) to more up-and-coming tools such as [open source tools on WSL](/windows/wsl/) and [Rust](../../dev-environment/rust/index.yml), there are many different languages and platforms to choose from. It can be quite overwhelming to know where to start.
+Windows offers a wide range of options for building apps, including [C++](/windows/uwp/cpp-and-winrt-apis/), [.NET](/dotnet/), and other emerging technologies such as [open source tools on WSL](/windows/wsl/) and [Rust](../../dev-environment/rust/index.yml). With so many choices, it can be difficult to know where to begin.
 
-[Visual Studio](/visualstudio) is the development environment used by most Windows developers and it provides many types of app starting points, each with their own project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set of APIs for using Windows features.
+[Visual Studio](/visualstudio) is the go-to development environment for most Windows developers, providing various starting points for different types of apps, each with their own strengths and project types. Every app type includes an app model that defines the app's lifecycle, a default UI framework, and access to a comprehensive set of APIs for using Windows features.
 
-If your new app is going to run only on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to run on multiple platforms, we recommend looking at .NET MAUI or React Native for Windows. There are plenty of other options too (if you love tools like Python, [here's a list](/windows/dev-environment/)) but here are some recommendations to get started.
-
+If your app will only run on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to be cross-platform, consider [.NET MAUI](/dotnet/maui/what-is-maui?view=net-maui-7.0) or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows). There are many other options available as well ([here's a list of options](/windows/dev-environment/) for fans of Python), but the above are some good starting points.
 
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWQwHD]
