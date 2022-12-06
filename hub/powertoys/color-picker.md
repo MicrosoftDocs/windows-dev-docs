@@ -48,15 +48,15 @@ The copied color will be stored in your clipboard in the format that is configur
 
 The editor lets you see the history of picked colors (up to 20) and copy their representation in any predefined string format. You can configure which color formats are visible in the editor and in what order that they appear. This configuration can be found in PowerToys Settings.
 
-The editor also allows you to fine-tune any picked color or get a new similar color. Editor suggests two lighter and two darker shades of the currently selected color. Clicking on any of those alternative color shades will add the selection to the history of picked colors. It will appear at the top of the colors history list.
+The editor also allows you to fine-tune any picked color or get a new similar color. Editor suggests two lighter and two darker shades of the currently selected color. Selecting any of those alternative color shades will add the selection to the history of picked colors. It will appear at the top of the colors history list.
 
-The color in the middle represents your currently selected color from the colors history. By clicking on it, the fine-tuning configuration control will appear, where you can change HSV or RGB values of the current color. Pressing <kbd>Select</kbd> will add newly configured color into the colors history.
+The color in the middle represents your currently selected color from the colors history. By clicking on it, the fine-tuning configuration control will appear, where you can change HSV or RGB values of the current color. Using the <kbd>Select</kbd> button will add the newly configured color into the colors history.
 
 ![ColorPicker Editor window.](../images/pt-colorpicker-editor.gif)
 
-To remove any color from the colors history, right click a color and select **Remove**.
+To remove any color from the colors history, right-click a color and select **Remove**.
 
-To export the colors history, right click a color and select **Export**. The exported values can be grouped by the colors or by the formats.
+To export the colors history, right-click a color and select **Export**. The exported values can be grouped by colors or formats.
 
 ## Settings
 
@@ -70,19 +70,20 @@ Color Picker has following settings:
 
 ![ColorPicker Settings screenshot.](../images/pt-colorpicker-settings.gif)
 
-To reorder the colors press the **...** buttom on the right and select **Move up** or **Move down**.
+To reorder the colors, select the **...** buttom on the right and select **Move up** or **Move down**.
 
-To disable a color format toggle the switch on the right. Disabled color formats are not deleted but also not shown in the Color Picker Editor window.
+To disable a color format, toggle the switch on the right. Disabled color formats are not deleted but also not shown in the Color Picker Editor window.
 
-To delete a color format, press the button with the bin icon.
+To delete a color format, select the button with the bin icon.
 
-To edit a color format, press the button with the pencil icon. In the appearing window the name and the format can be modified. 
+To edit a color format, select the button with the pencil icon. In the appearing window the name and the format can be modified. 
 
-To add a new color format press the **Add custom color format** button. 
+To add a new color format, select **Add custom color format**. 
 
 ### Managing Color Formats
 
-The color formats can be deleted or edited, modified. New color formats can be added to the list too. The syntax of the color formats is described in the color format editor window. 
+Color formats can be deleted or edited and new color formats can be added to the list. The syntax of the color formats is described in the color format editor window. 
+
 The following table contains the parameters, which can be used for defining a color format and their meaning: 
 
 | Parameter | Meaning             |
@@ -127,12 +128,12 @@ The red, green, blue and alpha values can be formatted to the following formats:
 | f			| float with leading zero    |
 | F			| float without leading zero |
 
-For example %ReX means the red value in hex uppercase two digits format.
+For example `%ReX` means the red value in hex uppercase two digits format.
 
-The color format may contain also any words or characters as the user likes to have it. For example the default color format, which shows up on color format creation is _'new Color (R = %Re, G = %Gr, B = %Bl)'_, what may be useful for programmers.
+The color format may contain any words or characters that you prefer. For example, the default color format, which shows up on color format creation is: `_'new Color (R = %Re, G = %Gr, B = %Bl)'_`.
 
 ## Limitations
 
-- Color picker can't be displayed on top of the start menu or action center (you can still pick a color).
-- If the currently focused application was started with an administrator elevation (Run as administrator), the Color Picker activation shortcut will not work, unless PowerToys was also started with an administrator elevation.
+- Color picker can't be displayed on top of the Start menu or Action Center (you can still pick a color).
+- If the currently-focused application was started with an administrator elevation (Run as administrator), the Color Picker activation shortcut will not work, unless PowerToys was also started with an administrator elevation.
 - Currently Wide Color Gamut (WCG) and High Dynamic Range (HDR) color formats are not supported.
