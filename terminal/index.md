@@ -27,7 +27,7 @@ Any application that has a command line interface can be run inside Windows Term
 
 ## Customized schemes and configurations
 
-You can configure your Windows Terminal to have a variety of color schemes and settings. To learn how to make your own color scheme, visit the [Color schemes page](./customize-settings/color-schemes.md). You can also find custom Terminal configurations in the [Custom terminal gallery](./custom-terminal-gallery/powerline-in-powershell.md).
+You can configure your Windows Terminal to have a variety of color schemes and settings. To learn how to customize your prompt with cool themes, see [Tutorial: Set up a custom prompt for PowerShell or WSL with Oh My Posh](./tutorials/custom-prompt-setup.md) To learn how to make your own color scheme, visit the [Color schemes page](./customize-settings/color-schemes.md).
 
 ## Custom actions
 

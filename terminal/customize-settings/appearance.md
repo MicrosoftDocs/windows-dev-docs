@@ -25,9 +25,7 @@ This sets an override for the application's preferred language.
 
 ## Theme
 
-:::row:::
-:::column span="":::
-This sets the theme of the application. `"system"` will use the same theme as Windows.
+This sets the theme (dark theme or light theme) of the application. `"system"` will use the same theme as Windows.
 
 **Property name:** `theme`
 
@@ -36,14 +34,6 @@ This sets the theme of the application. `"system"` will use the same theme as Wi
 **Accepts:** `"system"`, `"dark"`, `"light"`, name of custom [theme](./themes.md)
 
 **Default value:** `"system"`
-
-:::column-end:::
-:::column span="":::
-![Windows Terminal dark theme](./../images/requested-themes.gif)
-_Configuration: [Powerline in PowerShell](./../custom-terminal-gallery/powerline-in-powershell.md)_
-
-:::column-end:::
-:::row-end:::
 
 <br />
 
