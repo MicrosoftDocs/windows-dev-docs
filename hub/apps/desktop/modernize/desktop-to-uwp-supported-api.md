@@ -383,6 +383,7 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Services.Store.StoreSendRequestResult**](/uwp/api/Windows.Services.Store.StoreSendRequestResult)
 * [**Windows.Services.Store.StoreSku**](/uwp/api/Windows.Services.Store.StoreSku)
 * [**Windows.Services.Store.StoreVideo**](/uwp/api/Windows.Services.Store.StoreVideo)
+* [**Windows.Storage.AccessCache.StorageApplicationPermissions**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions)
 * [**Windows.Storage.ApplicationData**](/uwp/api/windows.storage.applicationdata)
 * [**Windows.Storage.ApplicationDataSetVersionHandler**](/uwp/api/windows.storage.applicationdatasetversionhandler)
 * [**Windows.Storage.CachedFileManager**](/uwp/api/Windows.Storage.CachedFileManager)
