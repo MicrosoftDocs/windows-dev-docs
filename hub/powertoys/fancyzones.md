@@ -88,7 +88,7 @@ When first launched, the zones editor presents a list of layouts that can be adj
 
 If multiple displays are in use, the editor will detect the available monitors and display them for you to choose between. The chosen monitor will then be the target of the selected layout.
 
-![FancyZones Picker Multiple Monitors.](../images/pt-fancyzones-multimon.png) //TODO
+![FancyZones Picker Multiple Monitors.](../images/pt-fancyzones-multimon.png)
 
 ### Space around zones
 
