@@ -31,6 +31,19 @@ To try the latest Windows Package Manager features, install the latest preview b
 
 * Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases). Installing this package will give you the WinGet client, but it will not enable automatic updates from the Microsoft Store.
 
+### Install winget on Windows Sandbox
+
+Windows Sandbox does not install the Microsoft Store app, so you'll have to download the latest packages from the winget releases page on GitHub.
+To install winget on Windows Sandbox, follow these steps:
+```powershell
+$ProgressPreference='Silent'
+Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/download/v1.3.2691/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile .\MicrosoftDesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
+Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
+Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+```
+
+
 ## Administrator considerations
 
 Installer behavior can be different depending on whether you are running **winget** with administrator privileges.
