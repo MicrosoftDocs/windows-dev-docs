@@ -173,7 +173,7 @@ We did say that Rust for Windows lets you call any Windows API (past, present, a
     ]
         ```
 
-3. Now open the project's `src/main.rs` file, add the `use` declarations with the new namespaces. And finally add code to call the [**MessageBoxA**](/windows/win32/api/winuser/nf-winuser-messageboxa) and [**ShellMessageBoxW**](/windows/win32/api/shellapi/nf-shellapi-shellmessageboxw) functions.
+3. Now open the project's `src/main.rs` file, add the `use` declarations with the new namespaces. And finally add code to call the [**MessageBoxA**](/windows/win32/api/winuser/nf-winuser-messageboxa) and [**MessageBoxW**](/windows/win32/api/winuser/nf-winuser-messageboxw) functions. The Windows API docs are mainly written with C/C++ in mind so it's useful to compare the API docs to the docs for the Rust projections in the *windows* crate: [**MessageBoxA** (Rust)](https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/UI/WindowsAndMessaging/fn.MessageBoxA.html) and [**MessageBoxW** (Rust)](https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/UI/WindowsAndMessaging/fn.MessageBoxW.html).
 
     ```rust
     // src\main.rs
