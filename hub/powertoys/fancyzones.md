@@ -106,11 +106,11 @@ The zones editor supports creating custom layouts. Select the <kbd>+ Create new 
 
 There are two ways to create custom zone layouts: **Grid** layout and **Canvas** layout.
 
-The **Grid** model starts with a three column grid and allows zones to be created by splitting and merging zones, resizing the gutter between zones as desired. This is a relative layout and will resize with different screen sizes. You can edit layout using mouse or using keyboard.
+The **Grid** model starts with a three column grid and allows zones to be created by splitting and merging zones, resizing the gutter between zones as desired. This is a relative layout and will resize with different screen sizes. You can edit the layout using mouse or using keyboard.
 
 **Mouse**
 - To divide a zone: click your mouse. To rotate the divider: hold down the <kbd>Shift</kbd> key.
-- To move a divider: click on the thumb and drag or select the thumb by focusing layout.
+- To move a divider: click on the thumb and drag or select the thumb by focusing the layout.
 - To merge/delete zones: select a zone and hold the left mouse button and drag the mouse until multiple zones are selected, release the button and a popup menu will show up. Click "Merge" and they will become one big zone. This is how a zone would be deleted, by merging it into another zone.
 
 **Keyboard**
@@ -150,7 +150,7 @@ In the demo below, we start with a default template applied to the screen and tw
 | Allow zones to span across monitors (all monitors must have the same DPI scaling) | Allows to treat all connected monitors as one large screen. To work correctly, it requires all monitors to have the same DPI scaling factor. (There might be unexpected effects when using monitors in different orientations) |
 | When multiple zones overlap [...] | Choose how to deal with overlapping zones. |
 | Zone appearance [...] | Select colors for the layouts. You can choose system or custom colors |
-| Show zone number | Should number of the zone be visible when layout is shown |
+| Show zone number | Should the number of the zone be visible when layout is shown |
 | Opacity (%) | The percentage of opacity of active and inactive zones. (default: 50%) |
 | Highlight color | The color of a zone when it is the active drop target during the dragging of a window. |
 | Inactive color | The color of zones when they are not an active drop during the dragging of a window. |
@@ -162,13 +162,13 @@ In the demo below, we start with a default template applied to the screen and tw
 | Move newly created windows to the current active monitor [experimental] | When this option is checked, and **Move newly created windows to the last known zone** is unchecked or the application doesn't have a last known zone, it keeps the application on the current active monitor. |
 | Restore the original size of windows when unsnapping | Unsnapping a window will restore its size as before it was snapped. |
 | Make dragged window transparent | When the zones are activated, the window being dragged is made transparent to improve the zones visibility. |
-| Allow popup windows snapping | Popup windows coudn't be snapped by default. However, this could be the reason why some windows doesn't trigger FancyZones when dragging. This setting affects all popup windows including notifications. |
-| Allow child windows snapping | Child windows coudn't be snapped by default. However, this could be the reason why some windows doesn't trigger FancyZones when dragging. |
+| Allow popup windows snapping | Popup windows coudn't be snapped by default. However, this could be the reason why some windows don't trigger FancyZones when dragging. This setting affects all popup windows including notifications. |
+| Allow child windows snapping | Child windows coudn't be snapped by default. However, this could be the reason why some windows don't trigger FancyZones when dragging. |
 | Disable round corners when window is snapped | Only for Windows 11. |
 | Switch between windows in the current zone | Allows cycling activation between windows in the same zone. | 
 | Next window | To change the default hotkey, click on the textbox and then press the desired key combination on your keyboard. |
 | Previous window | To change the default hotkey, click on the textbox and then press the desired key combination on your keyboard. |
-| Override Windows Snap hotkeys (Win + arrow) to move between zones | When this option is checked and FancyZones is running, it overrides Windows Snap keys: <kbd>⊞ Win</kbd>+<kbd>left</kbd>, <kbd>⊞ Win</kbd>+<kbd>right</kbd>, <kbd>⊞ Win</kbd>+<kbd>up</kbd>, and <kbd>⊞ Win</kbd>+<kbd>down</kbd>. |
+| Override Windows Snap hotkeys (Win + arrow) to move between zones | When this option is checked and FancyZones is running, it overrides the Windows Snap keys: <kbd>⊞ Win</kbd>+<kbd>left</kbd>, <kbd>⊞ Win</kbd>+<kbd>right</kbd>, <kbd>⊞ Win</kbd>+<kbd>up</kbd>, and <kbd>⊞ Win</kbd>+<kbd>down</kbd>. |
 | Move windows based on [...] | How the next zone will be chosen. **Zone index** allows to use <kbd>⊞ Win</kbd>+<kbd>left</kbd> and <kbd>⊞ Win</kbd>+<kbd>right</kbd> to snap a window based on its index. <kbd>⊞ Win</kbd>+<kbd>up</kbd>, <kbd>⊞ Win</kbd>+<kbd>down</kbd> are not overridden. <br/>**Relative position** overwrites all <kbd>⊞ Win</kbd>+<kbd>left</kbd>, <kbd>⊞ Win</kbd>+<kbd>right</kbd>,<kbd>⊞ Win</kbd>+<kbd>up</kbd>, and <kbd>⊞ Win</kbd>+<kbd>down</kbd> and chooses zone to snap relatively to the zone layout |
 | Move windows between zones across all monitors | Unchecked: snapping with <kbd>⊞ Win</kbd>+<kbd>arrow</kbd> cycles the window through the zones on the current monitor.<br/>Checked: it cycles the window through all the zones on all monitors. |
 | Enable quick layout switch | Enables hotkeys to quickly changes layouts - see individual layout settings. |
