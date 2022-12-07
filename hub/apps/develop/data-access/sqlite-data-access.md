@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Use a SQLite database in a Windows app
 
-You can use SQLite to store and retrieve data in a lightweight database on the user's device. This guide shows you how.
+You can use SQLite to store and retrieve data in a lightweight database on the user's device. This guide shows you how to do it in your Windows App SDK apps.
 
 ## Some benefits of using SQLite for local storage
 
