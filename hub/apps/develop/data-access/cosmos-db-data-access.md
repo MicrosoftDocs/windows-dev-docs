@@ -48,7 +48,7 @@ public async Task CosmosSample(string endpoint, string authKey)
         location = state
     };
     var createResponse = await container.CreateItemAsync(customer);
-    Console.WriteLine($"[Status code: {createResponse.StatusCode}]\t{id}");
+    Console.WriteLine($"[Status code: {createResponse.StatusCode}]\t{customerId}");
 
     // READ DATA
     string sql = "SELECT * FROM customers c WHERE c.id = @id";
@@ -57,7 +57,7 @@ public async Task CosmosSample(string endpoint, string authKey)
     ).WithParameter("@id", customerId);
     using var feed = container.GetItemQueryIterator<dynamic>(queryDefinition: query);
     var queryResponse = await feed.ReadNextAsync();
-    Console.WriteLine($"[Status code: {queryResponse.StatusCode}]\t{id}");
+    Console.WriteLine($"[Status code: {queryResponse.StatusCode}]\t{customerId}");
 }
 ```
 
