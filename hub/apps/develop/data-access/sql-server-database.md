@@ -236,7 +236,7 @@ See [Use a SQLite database in a Windows app](sqlite-data-access.md).
 
 ### Share code between different apps across multiple platforms
 
-See [Share code between desktop and UWP](../porting/desktop-to-uwp-migrate.md).
+See [Share code between desktop and UWP](/windows/uwp/porting/desktop-to-uwp-migrate).
 
 ### Add master detail pages with Azure SQL back ends
 
