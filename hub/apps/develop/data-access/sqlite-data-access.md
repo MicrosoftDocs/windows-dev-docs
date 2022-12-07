@@ -87,7 +87,6 @@ Open the `DataAccess` class in your project and make that class static.
 ```csharp
 public static class DataAccess
 {
-
 }
 ```
 
@@ -105,9 +104,11 @@ Add a method to the `DataAccess` class that initializes the SQLite database.
 ```csharp
 public async static void InitializeDatabase()
 { 
-     await ApplicationData.Current.LocalFolder.CreateFileAsync("sqliteSample.db", CreationCollisionOption.OpenIfExists);
-     string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
-     using (var db = new SqliteConnection($"Filename={dbpath}"))
+    await ApplicationData.Current.LocalFolder
+            .CreateFileAsync("sqliteSample.db", CreationCollisionOption.OpenIfExists);
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                 "sqliteSample.db");
+    using (var db = new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
@@ -147,7 +148,8 @@ Add a method to the `DataAccess` class that inserts data into the SQLite databas
 ```csharp
 public static void AddData(string inputText)
 {
-    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                 "sqliteSample.db");
     using (var db = new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
@@ -173,12 +175,11 @@ Add a method that gets rows of data from a SQLite database.
 public static List<string> GetData()
 {
     var entries = new List<string>();
-
-    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                 "sqliteSample.db");
     using (var db = new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
-
         var selectCommand = new SqliteCommand
             ("SELECT Text_Entry from MyTable", db);
 

@@ -29,6 +29,10 @@ The following sample code gets a container from a Cosmos DB instance in Azure, t
 > For a complete example, including information about required Cosmos DB setup and configuration, see [Develop a .NET console application with Azure Cosmos DB for NoSQL](/azure/cosmos-db/nosql/tutorial-dotnet-console-app).
 
 ```csharp
+using Microsoft.Azure.Cosmos;
+
+...
+
 public async Task CosmosSample(string endpoint, string authKey)
 {
     // CONNECT
