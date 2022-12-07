@@ -33,8 +33,8 @@ To try the latest Windows Package Manager features, install the latest preview b
 
 ### Install winget on Windows Sandbox
 
-Windows Sandbox does not install the Microsoft Store app, so you'll have to download the latest packages from the winget releases page on GitHub.
-To install winget on Windows Sandbox, follow these steps:
+[Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) does not include the Microsoft Store app, so you will have to download the latest winget package from the winget releases page on GitHub.
+To install winget on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:
 ```powershell
 $ProgressPreference='Silent'
 Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/download/v1.3.2691/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile .\MicrosoftDesktopAppInstaller_8wekyb3d8bbwe.msixbundle
