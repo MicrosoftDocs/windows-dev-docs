@@ -22,7 +22,7 @@ Open the **Package Manager Console** (View -> Other Windows -> Package Manager C
 The following sample code gets a collection from a remote MongoDB client, then adds a new document to that collection. Then it uses MongoDB APIs to retrieve the new size of the collection as well as the inserted document, and prints them out.
 
 ``` csharp
-var client = new MongoClient("mongodb://10.xxx.xx.xxx:xxx");
+var client = new MongoClient("mongodb://10.xxx.xx.xxx:27017");
 IMongoDatabase database = client.GetDatabase("foo");
 IMongoCollection<BsonDocument> collection = database.GetCollection<BsonDocument>("bar");
 var document = new BsonDocument
@@ -39,7 +39,7 @@ IFindFluent<BsonDocument, BsonDocument> document1 = collection.Find(document);
 Console.WriteLine(document1.ToString());
 ```
 
-Note that the IP address and database name will need to be customized. In a production application, connection information such as server address and database name should be stored in app configuration rather than hard-coded (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)).
+Note that the IP address and database name will need to be customized. The port, 27017, is the default MongoDB port number. In a production application, connection information such as server address and database name should be stored in app configuration rather than hard-coded (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)).
 
 ## See also
 
