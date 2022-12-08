@@ -25,7 +25,7 @@ You can read more about SQLite [here](https://sqlite.org/about.html).
 
 ## Choose an abstraction layer
 
-We recommend that you use either the Entity Framework Core or the open-source [SQLite library](https://github.com/aspnet/Microsoft.Data.Sqlite/) built by Microsoft.
+We recommend that you use either [Entity Framework Core](/ef/core/) or the open-source [SQLite library](https://github.com/aspnet/Microsoft.Data.Sqlite/) built by Microsoft.
 
 ### Entity Framework Core
 
@@ -41,7 +41,7 @@ The rest of this guide helps you to use this library.
 
 ## Set up your solution to use the Microsoft.Data.SQlite library
 
-We'll start with a basic Windows App SDK project, and then install the appropriate Nuget packages.
+We'll start with a basic Windows App SDK project, and then install the SQLite NuGet package.
 
 All supported versions of Windows support SQLite, so your app does not have to package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
 
@@ -90,7 +90,7 @@ public static class DataAccess
 }
 ```
 
-Add the following using statements to the top of this file.
+Add the following `using` statements to the top of this file.
 
 ```csharp
 using Microsoft.Data.Sqlite;
@@ -128,9 +128,9 @@ public async static void InitializeDatabase()
 
 This code creates the SQLite database and stores it in the application's local data store.
 
-In this example, we name the database `sqlliteSample.db` but you can use whatever name you want as long as you use that name in all [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection) objects that you instantiate.
+In this example, we name the database `sqlliteSample.db` but you can use whatever name you want as long as you use that name in all [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection) objects that you instantiate. In a production application, connection information such as the database filename should be stored in app configuration rather than hard-coded (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)).
 
-In the constructor of the **App.xaml.cs** file of your project, call the `InitializeDatabase` method of the `DataAccess` class.
+In the constructor of the **App.xaml.cs** file of your project, call the `InitializeDatabase` method of the `DataAccess` class. This will ensure that the database is created or opened each time the app starts.
 
 ```csharp
 public App()
@@ -169,7 +169,7 @@ public static void AddData(string inputText)
 
 ### Retrieve data from the SQLite database
 
-Add a method that gets rows of data from a SQLite database.
+Add a method that gets all rows of data from a table in our SQLite database.
 
 ```csharp
 public static List<string> GetData()
@@ -208,9 +208,9 @@ In the **MainWindow.xaml** file of the project, add the following XAML.
 ``` xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <StackPanel>
-        <TextBox Name="Input_Box"></TextBox>
+        <TextBox x:Name="Input_Box"/>
         <Button Click="AddData">Add</Button>
-        <ListView Name="Output">
+        <ListView x:Name="Output">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}"/>

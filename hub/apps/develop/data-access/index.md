@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Data access in Windows apps
 
-You can store data on the user's device by using a SQLite database. You can also connect your app directly to a SQL Server, Cosmos DB, or MySQL database without having to use an external service layer.
+You can store data on the user's device by using a SQLite database. You can also connect your app directly to a SQL Server, Cosmos DB, MySQL, or MongoDB database without having to use an external service layer.
 
 | Topic | Description|
 |-------|------------|
@@ -18,9 +18,12 @@ You can store data on the user's device by using a SQLite database. You can also
 | [Use a SQL server database in a Windows app](sql-server-database.md) | Shows you how to connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace. No service layer required. |
 | [Use a Cosmos DB database in a Windows app](cosmos-db-data-access.md) | Shows you how to work with a Cosmos DB database and and test the connection programmatically. Cosmos DB is a cloud-based document database. |
 | [Use a MySQL database in a Windows app](mysql-database.md) | Shows you how to connect to a MySQL database and interact with the database in a Windows App SDK application. MySQL is an open source, cross-platform relational database. |
+| [Use a MongoDB database in a Windows app](mongodb-database.md) | Shows you how to work with a MongoDB database and and test the connection programmatically. MongoDB is a cross-platform document database. |
 
 ## Related topics
 
 - [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 
 - [UWP data access](/windows/uwp/data-access/)
+
+- [.NET data documentation](/ef/dotnet-data/)

@@ -360,6 +360,8 @@ items:
                 href: develop/data-access/cosmos-db-data-access.md
               - name: Use MySQL in a Windows app
                 href: develop/data-access/mysql-database.md
+              - name: Use MongoDB in a Windows App
+                href: develop/data-access/mongodb-database.md
           - name: Data and files overview
             href: develop/data-and-files.md
           - name: Manage resources with MRT Core
