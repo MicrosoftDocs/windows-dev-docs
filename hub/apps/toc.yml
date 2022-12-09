@@ -348,7 +348,21 @@ items:
             href: windows-app-sdk/dwritecore.md
       - name: Data and files
         items: 
-          - name: Overview
+          - name: Data access
+            items: 
+              - name: Overview
+                href: develop/data-access/index.md
+              - name: Use a SQLite database on Windows
+                href: develop/data-access/sqlite-data-access.md
+              - name: Use SQL Server in a Windows app
+                href: develop/data-access/sql-server-database.md
+              - name: Use Cosmos DB in a Windows app
+                href: develop/data-access/cosmos-db-data-access.md
+              - name: Use MySQL in a Windows app
+                href: develop/data-access/mysql-database.md
+              - name: Use MongoDB in a Windows App
+                href: develop/data-access/mongodb-database.md
+          - name: Data and files overview
             href: develop/data-and-files.md
           - name: Manage resources with MRT Core
             href: windows-app-sdk/mrtcore/mrtcore-overview.md
