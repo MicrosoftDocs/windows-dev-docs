@@ -7494,6 +7494,76 @@
       "source_path": "hub/android/xamarin-forms.md",
       "redirect_url": "/dotnet/maui/what-is-maui",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/publish/store-app-quality.md",
+      "redirect_url": "/windows/apps/publish/store-app-quality",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-developer-code-of-conduct.md",
+      "redirect_url": "/windows/apps/publish/store-developer-code-of-conduct",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policies-and-code-of-conduct.md",
+      "redirect_url": "/windows/apps/publish/store-policies-and-code-of-conduct",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policies-change-history.md",
+      "redirect_url": "/windows/apps/publish/store-policies-change-history",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policies.md",
+      "redirect_url": "/windows/apps/publish/store-policies",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policy-archive/store-policy-7-11.md",
+      "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-11",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policy-archive/store-policy-7-12.md",
+      "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-12",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policy-archive/store-policy-7-13.md",
+      "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-13",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policy-archive/store-policy-7-14.md",
+      "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-14.md",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policy-archive/store-policy-7-15.md",
+      "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-15",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policy-archive/store-policy-7-16.md",
+      "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-16",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policy-archive/store-policy-7-6.md",
+      "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-6",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/store-policy-archive/store-policy-7-7.md",
+      "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-7",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path": "uwp/publish/index.md",
+      "redirect_url": "/windows/apps/publish/",
+      "redirect_document_id": false
     }
   ]
 }
