@@ -654,6 +654,23 @@ items:
                 href: publish/advertising-performance-report.md
               - name: Download analytics reports
                 href: publish/download-analytic-reports.md
+      - name: Store Policies and Code of Conduct
+        href: publish/store-policies-and-code-of-conduct.md
+        items:
+          - name: Microsoft Store Policies
+            href: publish/store-policies.md
+          - name: Store Policies change history
+            href: publish/store-policies-change-history.md
+          - name: App Quality
+            href: publish/store-app-quality.md
+          - name: Developer Code of Conduct
+            href: publish/store-developer-code-of-conduct.md
+          - name: Microsoft Store Product Ranking, Placement and Marketing Disclosure Statement
+            href: https://aka.ms/disclosurepolicypdf
+          - name: Microsoft Store complaint and appeal statistics for FY2022
+            href: publish/store-policies.md#microsoft-store-complaint-and-appeal-statistics-for-fy2022
+          - name: Microsoft Edge Add-ons store developer policies
+            href: /microsoft-edge/extensions-chromium/store-policies/developer-policies
   - name: API reference
     href: api-reference/index.md
     items:
