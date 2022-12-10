@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code, rust for windows
 ms.localizationpriority: medium
-ms.date: 05/03/2021
+ms.date: 12/09/2022
 ---
 
 # RSS reader tutorial (Rust for Windows with VS Code)
@@ -32,7 +32,9 @@ Now let's try out Rust for Windows by writing a simple console app that download
     code .
     ```
 
-4. Let's implement the main *rss_reader* project. First, open the `Cargo.toml` file at the root of the project, and add a dependency on the *windows* crate. The *windows* crate is huge. To keep build times fast, we'll select just the `Foundation_Collections` and `Web_Syndication` features that we need for this code.
+4. Let's implement the main *rss_reader* project. First, open the `Cargo.toml` file at the root of the project. A `Cargo.toml` file is a text file that describes a Rust project, including any dependencies it has.
+
+    Add a dependency on the *windows* crate, as shown in the listing below. The *windows* crate is large. To keep build times fast, we'll select just the `Foundation_Collections` and `Web_Syndication` features that we need for this code.
 
     ```toml
     # Cargo.toml
@@ -46,7 +48,7 @@ Now let's try out Rust for Windows by writing a simple console app that download
     ]
     ```
 
-5. Then, open the *rss_reader* project's `src/main.rs` source code file. There you'll find the Cargo default "hello world" code. Add this **use** statement to the beginning of `main.rs`:
+5. Then, open the *rss_reader* project's `src/main.rs` source code file. There you'll find the Cargo default "Hello, world!" code. Add the following **use** statement to the beginning of `main.rs`:
 
     ```rust
     // src\main.rs
@@ -76,19 +78,19 @@ Now let's try out Rust for Windows by writing a simple console app that download
     }
     ```
 
-    Notice that the return type of the **main** function is a **windows::Result**, from **windows::core::**. This will make things easier, as it's common to deal with errors from operating system (OS) APIs. **windows::Result** helps us with error propagation, and concise error handling.
+    Notice that the return type of the **main** function is a **Result**, from **windows::core::**. That will make things easier, as it's common to deal with errors from operating system (OS) APIs. **windows::core::Result** helps us with error propagation, and concise error handling.
 
     You can see the question-mark operator at the end of the line of code. To save on typing, we do that to use Rust's error-propagation and short-circuiting logic. That means we don't have to do a bunch of manual error handling for this simple example. For more info about this feature of Rust, see [The ? operator for easier error handling](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html).
 
-    Also notice the **h!** macro from the *windows* crate. We use it to construct an **HSTRING** reference from a Rust string literal. The WinRT API uses **HSTRING** extensively for string values.
+    Also notice the **h!** macro from the *windows* crate. We use that to construct an **HSTRING** reference from a Rust string literal. The WinRT API uses **HSTRING** extensively for string values.
 
-7. To download this RSS feed, we'll create a new **SyndicationClient**.
+7. To download the RSS feed, we'll create a new **SyndicationClient**.
 
     ```rust
     // src\main.rs
     ...
 
-    fn main() -> windows::Result<()> {
+    fn main() -> windows::core::Result<()> {
         let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
         let client = SyndicationClient::new()?;
 
@@ -104,7 +106,7 @@ Now let's try out Rust for Windows by writing a simple console app that download
     // src\main.rs
     ...
 
-    fn main() -> windows::Result<()> {
+    fn main() -> windows::core::Result<()> {
         let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
         let client = SyndicationClient::new()?;
         let feed = client.RetrieveFeedAsync(uri)?.get()?;
@@ -121,8 +123,8 @@ Now let's try out Rust for Windows by writing a simple console app that download
     // src\main.rs
     ...
 
-    fn main() -> windows::Result<()> {
-        let uri = Uri::CreateUri("https://blogs.windows.com/feed")?;
+    fn main() -> windows::core::Result<()> {
+        let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
         let client = SyndicationClient::new()?;
         let feed = client.RetrieveFeedAsync(&uri)?.get()?;
 
@@ -134,7 +136,9 @@ Now let's try out Rust for Windows by writing a simple console app that download
     }
     ```
 
-10. Now let's confirm that we can build and run by clicking **Run** > **Run Without Debugging** (or pressing **Ctrl+F5**). There are also **Debug** and **Run** commands embedded inside the text editor. Alternatively, from a command prompt in the `rss_reader` folder, type `cargo run` which will build and then run the program.
+10. Now let's confirm that we can build and run by clicking **Run** > **Run Without Debugging** (or pressing **Ctrl+F5**). If you see any unexpected messages, then make sure you've successfully completed the [Hello, world! tutorial (Rust with VS Code)](/windows/dev-environment/rust/setup#hello-world-tutorial-rust-with-vs-code).
+
+    There are also **Debug** and **Run** commands embedded inside the text editor. Alternatively, from a command prompt in the `rss_reader` folder, type `cargo run`, which will build and then run the program.
 
     ![The Debug and Run commands embedded in the text editor](../../images/rust-rss-reader-2.png)
 
@@ -148,7 +152,7 @@ That's as simple as it is to program Rust for Windows. Under the hood, however, 
 
 We did say that Rust for Windows lets you call any Windows API (past, present, and future). So in this section we'll show a couple of Windows message boxes.
 
-1. Just like we did for the RSS project, `cd` to the folder with your Rust projects at the command prompt.
+1. Just like we did for the RSS project, at the command prompt `cd` to the folder with your Rust projects.
 
 2. Create a new project named *message_box*, and open it in VS Code:
 
@@ -173,7 +177,7 @@ We did say that Rust for Windows lets you call any Windows API (past, present, a
     ]
     ```
 
-3. Now open the project's `src/main.rs` file, add the `use` declarations with the new namespaces. And finally add code to call the [**MessageBoxA**](/windows/win32/api/winuser/nf-winuser-messageboxa) and [**MessageBoxW**](/windows/win32/api/winuser/nf-winuser-messageboxw) functions. The Windows API docs are mainly written with C/C++ in mind so it's useful to compare the API docs to the docs for the Rust projections in the *windows* crate: [**MessageBoxA** (Rust)](https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/UI/WindowsAndMessaging/fn.MessageBoxA.html) and [**MessageBoxW** (Rust)](https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/UI/WindowsAndMessaging/fn.MessageBoxW.html).
+3. Now open the project's `src/main.rs` file, and add the `use` declarations with the new namespaces (as shown below). And finally add code to call the [**MessageBoxA**](/windows/win32/api/winuser/nf-winuser-messageboxa) and [**MessageBoxW**](/windows/win32/api/winuser/nf-winuser-messageboxw) functions. The Windows API docs are mainly written with C/C++ in mind, so it's useful to compare the API docs to the docs for the Rust projections in the *windows* crate: [**MessageBoxA** (Rust)](https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/UI/WindowsAndMessaging/fn.MessageBoxA.html) and [**MessageBoxW** (Rust)](https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/UI/WindowsAndMessaging/fn.MessageBoxW.html).
 
     ```rust
     // src\main.rs
@@ -190,7 +194,7 @@ We did say that Rust for Windows lets you call any Windows API (past, present, a
     }
     ```
 
-    As you can see, we must use these Win32 APIs in an `unsafe` block (see [Unsafe blocks](https://doc.rust-lang.org/reference/unsafe-blocks.html)). Also note the **s!** and **w!** macros that create **LPCSTR** and **LPCWSTR** arguments from Rust UTF-8 string literals, much like we created an **HSTRING** with the **h!** macro in the RSS exercise. Rust is natively Unicode with UTF-8 strings, so using the wide Unicode (...W) Windows APIs is preferred over the ANSI (...A) APIs. This can be important if you use non-English text in your code.
+    As you can see, we must use these Win32 APIs in an `unsafe` block (see [Unsafe blocks](https://doc.rust-lang.org/reference/unsafe-blocks.html)). Also note the **s!** and **w!** macros, which create **LPCSTR** and **LPCWSTR** arguments from Rust UTF-8 string literals; much like we created an **HSTRING** with the **h!** macro for *rss_reader*. Rust is natively Unicode with UTF-8 strings, so using the wide Unicode (W-suffix) Windows APIs is preferred over the ANSI (A-suffix) APIs. This can be important if you use non-English text in your code.
 
 This time when you build and run, Rust displays two Windows message boxes.
 
