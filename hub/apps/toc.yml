@@ -370,6 +370,10 @@ items:
                 href: develop/data-binding/data-binding-overview.md
               - name: Data binding in depth
                 href: develop/data-binding/data-binding-in-depth.md
+              - name: Bind to hierarchical data and create a master/details view
+                href: develop/data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md
+              - name: Data binding and MVVM
+                href: develop/data-binding/data-binding-and-mvvm.md
           - name: Data and files overview
             href: develop/data-and-files.md
           - name: Manage resources with MRT Core
