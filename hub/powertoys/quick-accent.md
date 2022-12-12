@@ -14,7 +14,7 @@ This utility is turned off by default. In order to use the Quick Accent utility,
 
 ## How to activate
 
-Activate by holding the key for the character you want to add an accent to, then press the Activation Key (Space key or Left / Right arrow keys). If you continue to hold, an overlay to select the accented character between multiple characters will appear.
+Activate by holding the key for the character you want to add an accent to, then (while held down) press the Activation Key (Space key or Left / Right arrow keys). If you continue to hold, an overlay to select the accented character between multiple characters will appear.
 
 For example: If you want "à", press and hold <kbd>A</kbd> and press <kbd>Space</kbd>.
 
