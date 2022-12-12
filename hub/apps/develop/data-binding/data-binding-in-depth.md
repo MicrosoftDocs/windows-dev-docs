@@ -15,7 +15,7 @@ dev_langs:
 
 ## Important APIs
 
-- [**{x:Bind} markup extension**](../xaml-platform/x-bind-markup-extension.md)
+- [**{x:Bind} markup extension**](/windows/uwp/xaml-platform/x-bind-markup-extension)
 - [**Binding class**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding)
 - [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext)
 - [**INotifyPropertyChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged)
