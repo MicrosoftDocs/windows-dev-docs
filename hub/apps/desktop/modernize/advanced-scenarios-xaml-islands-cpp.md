@@ -12,6 +12,9 @@ ms.custom: 19H1
 
 # Advanced scenarios for XAML Islands in C++ desktop (Win32) apps
 
+> [!IMPORTANT]
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+
 The [host a standard UWP control](host-standard-control-with-xaml-islands-cpp.md) and [host a custom UWP control](host-custom-control-with-xaml-islands-cpp.md) articles provide instructions and examples for hosting XAML Islands in a C++ desktop (Win32) app. However, the code examples in these articles do not handle many advanced scenarios that desktop applications may need to handle to provide a smooth user experience. This article provides guidance for some of these scenarios and pointers to related code samples.
 
 ## Keyboard input

@@ -39,7 +39,7 @@ PerfView is available as a standalone download in the [PerfView GitHub Releases]
 Windows Performance Toolkit additionally offers two extensibility points that can serve advanced performance analysis scenarios.
 
 - The [Microsoft Performance Toolkit SDK](https://github.com/microsoft/microsoft-performance-toolkit-sdk) handles the processing of trace data and enables developers to build their own plugins to be viewed inside the Windows Performance Analyzer.
-- [.NET TraceProcessing](/windows/apps/trace-processing/) allows the authoring of custom tools that can process trace information into resulting tables and is especially useful for automated analysis of bulk trace data.
+- [.NET TraceProcessing](../trace-processing/index.yml) allows the authoring of custom tools that can process trace information into resulting tables and is especially useful for automated analysis of bulk trace data.
 
 PerfView is similarly based on the .NET [TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent/) library for programmatically consuming performance traces. TraceEvent can be used independently of PerfView to perform custom analysis of performance trace data.
 
@@ -72,7 +72,7 @@ The tool to choose depends on the performance scenario that you are attempting t
 |[**Code language support considerations**](#code-language-support-considerations)|||
 |Support for C/C++|✔️|✔️|✔️|
 |Support for .NET|✔️|✔️|✔️|
-|Support for Javascript|🆗|🆗|🆗|
+|Support for JavaScript|🆗|🆗|🆗|
 |[**Scenario considerations**](#scenario-considerations)|||
 |Event Tracing for Windows|🆗|✔️|✔️|
 |Composition|❌|✔️|❌|

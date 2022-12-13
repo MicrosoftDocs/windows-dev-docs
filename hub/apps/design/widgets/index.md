@@ -11,6 +11,11 @@ ms.localizationpriority: medium
 
 # Widgets overview
 
+> [!NOTE]
+> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+> [!IMPORTANT]
+> The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see [Windows 11 Insider Preview](https://insider.windows.com/en-us/preview-windows).
+
 Windows Widgets are small UI containers that display text and graphics, associated with an app installed on the device. Installed widgets are displayed in a grid in the Widgets Board: a flyout plane that overlays the Windows desktop when the user clicks Widgets icon on the taskbar, uses the Windows+W shortcut, or swipes from the left edge of the screen. Widgets help people stay on top of what's important to them by aggregating personalized content and quick actions from the apps they use. They are quickly consumable and actionable. Widgets are not meant to replace apps and websites, but rather provide frictionless access to most-needed information or often-used functionalities that people can read/trigger right away. When designing your widget, consider the kind of value it will bring to your consumers. 
 
 :::image type="content" source="images/widgets-hero-image.png" alt-text="Screenshot of the Widgets Board. The board is a rounded rectangle with the time displayed at the top, followed by a search bar. The rest of the board is a grid of rounded rectangles each representing a widget. The individual widgets show top news stories, current weather, current traffic, etc.":::
@@ -67,7 +72,7 @@ Content should dynamically refresh based on available context. It is up to date 
 1. Your app can support multiple individual widgets. Determine the number of separate widgets you want to support so that each widget focuses on a specific purpose.
 1. Determine the content you want to include for each widget. A single widget can support three different sizes; small, medium, and large. For each widget, think about what content would bring the most value to users and your business needs. For each size from small to large, the purpose of the widget should remain the same, but the amount of information displayed should expand with larger sizes. We recommend that widget providers implement all widget sizes to give users flexibility when customizing the widget layout. 
 1. Think about the user interactions your widget will support. Users can click on the widget title or any click targets that you’ve defined on the widget. These interactions can activate deep-link shortcuts into your app or web site that take users directly to what they're interested in, so that they don’t have to navigate from the root of your app. Consider the different navigational models offered.  
-1. Apps must implement a widget provider that implements the back-end functionality to send your widget's layout and data to the widgets board to be displayed. Currently you can implement a widget provider using a packaged Win32 desktop app. Support for Progressive Web Apps (PWA) is planned for future releases. For more information, see [Widget service providers](../../develop/widgets/widget-service-providers.md).
+1. Apps must implement a widget provider that implements the back-end functionality to send your widget's layout and data to the widgets board to be displayed. Currently you can implement a widget provider using a packaged Win32 desktop app. Support for Progressive Web Apps (PWA) is planned for future releases. For more information, see [Widget service providers](../../develop/widgets/widget-providers.md).
 
 
 

@@ -160,11 +160,8 @@ Check out our [guide to transitioning between between a Mac and Windows](./mac-t
 - [Terminal and shell tools](./mac-to-windows.md#command-line-shells-and-terminals)
 - [Apps and utilities](./mac-to-windows.md#apps-and-utilities)
 
-![Office image](../images/flashy-office3.png)
+## Game development documentation
 
-## Additional resources
-
-- [Tips for improving your workflow](./tips.md)
-- [Stories from developers who have switched from Mac to Windows](./dev-stories.md)
-- [Popular tutorials, courses, and code samples](./tutorials.md)
 - [Microsoft's Game Dev documentation](/gaming/)
+
+![Office image](../images/flashy-office3.png)

@@ -28,7 +28,7 @@ Apps are single-instanced if there can be only one main process running at a tim
 
 UWP apps are single-instanced by default. but have the ability to become multi-instanced by deciding at launch-time whether to create an additional instance or activate an existing instance instead.
 
-The Windows 10 Mail app is a good example of a single instanced app. When you launch Mail for the first time, a new window will be created. If you attempt to launch Mail again, the existing Mail window will be activated instead.
+The Windows Mail app is a good example of a single instanced app. When you launch Mail for the first time, a new window will be created. If you attempt to launch Mail again, the existing Mail window will be activated instead.
 
 ## Multi-instanced apps
 

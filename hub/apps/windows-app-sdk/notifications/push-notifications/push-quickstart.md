@@ -93,7 +93,8 @@ using namespace winrt::Microsoft::Windows::PushNotifications;
 
 ### Step 2: Add your COM activator to your app's manifest
 
-If your app is unpackaged (that is, it lacks package identity at runtime), then skip to **Step 3: Register for and respond to push notifications on app startup**.
+> [!IMPORTANT]
+> If your app is unpackaged (that is, it lacks package identity at runtime), then skip to **Step 3: Register for and respond to push notifications on app startup**.
 
 If your app is packaged (including packaged with external location):
 Open your **Package.appxmanifest**. Add the following inside the `<Application>` element. Replace the `Id`, `Executable`, and `DisplayName` values with those specific to your app.
@@ -113,7 +114,7 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
         <!--Register COM activator-->    
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-              <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----WindowsAppSDKPushServer:">
+              <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----WindowsAppRuntimePushServer:">
                 <com:Class Id="[Your app's Azure AppId]" DisplayName="Windows App SDK Push" />
             </com:ExeServer>
           </com:ComServer>

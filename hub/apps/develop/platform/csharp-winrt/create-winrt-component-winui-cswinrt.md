@@ -20,7 +20,7 @@ This walkthrough requires the following tools and components:
 
 - [Visual Studio 2022](/visualstudio/releases/2022/release-notes)
 - [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
-- [Windows App SDK VSIX](/windows/apps/windows-app-sdk/downloads) (1.1 Stable)
+- [Windows App SDK VSIX](../../../windows-app-sdk/downloads.md) (1.1 Stable)
 
 ## Author your C#/WinRT component using the Windows App SDK
 

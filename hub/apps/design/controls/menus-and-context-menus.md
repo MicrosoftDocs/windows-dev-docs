@@ -57,7 +57,7 @@ When the user invokes a command element (such as a button) whose primary role is
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The CommandBarFlyout and MenuBar controls for UWP apps are included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls) namespaces.
+The CommandBarFlyout and MenuBar controls for UWP apps are included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls) namespaces.
 
 > [!div class="checklist"]
 >
@@ -65,7 +65,7 @@ The CommandBarFlyout and MenuBar controls for UWP apps are included as part of t
 > - **WinUI 2 Apis:** [CommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout), [MenuBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubar), [TextCommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textcommandbarflyout)
 > - Open the WinUI 2 Gallery app and see the [MenuBar](winui2gallery:/item/MenuBar) or [CommandBarFlyout](winui2gallery:/item/CommandBarFlyout) in action. [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 

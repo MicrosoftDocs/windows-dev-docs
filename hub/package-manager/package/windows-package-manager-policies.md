@@ -1,9 +1,8 @@
 ---
 title: Windows Package Manager repository policies
 description: Provides the Windows Package Manager repository policies.
-ms.date: 05/25/2021
+ms.date: 11/28/2022
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # Windows Package Manager repository policies
@@ -284,6 +283,5 @@ User Generated Content (UGC) is content that users contribute to an app or Produ
 
 ### See also
 
-- [Change history for Windows Package Manager policies](windows-package-manager-policies-change-history.md)
 - [Windows Package Manager Code of Conduct](https://github.com/microsoft/winget-pkgs/blob/master/CODE_OF_CONDUCT.md)
-- [Windows Package Manager Contributing requirements](https://github.com/microsoft/winget-pkgs/blob/master/README.md)
+- [Windows Package Manager Contributing requirements](https://github.com/microsoft/winget-pkgs/blob/master/README.md#contributing)

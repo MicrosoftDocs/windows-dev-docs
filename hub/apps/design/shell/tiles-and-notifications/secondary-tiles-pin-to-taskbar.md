@@ -18,7 +18,7 @@ Just like pinning secondary tiles to Start, you can pin secondary tiles to the t
 > [!IMPORTANT]
 > **Limited Access API**: This API is a limited access feature. To use this API, please contact [taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com?Subject=Limited%20Access%20permission%20to%20use%20secondary%20tiles%20on%20taskbar).
 
-> **Requires October 2018 Update**: You must target SDK 17763 and be running build 17763 or higher to pin to taskbar.
+> **Requires October 2018 Update**: You must target SDK 17763 and be running build 17763 or later to pin to taskbar.
 
 
 ## Guidance

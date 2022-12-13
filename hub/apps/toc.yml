@@ -62,6 +62,10 @@ items:
               href: desktop/visual-studio-templates.md
             - name: "WinUI 3 templates in Visual Studio"
               href: winui/winui3/winui-project-templates-in-visual-studio.md
+  - name: How tos
+    items: 
+      - name: Build a Hello World app with C# & WinUI 3
+        href: how-tos/hello-world-winui3.md     
   - name: Design
     href: design/toc.yml
   - name: Develop
@@ -216,7 +220,7 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-2.md
                 - name: "Add a UWP CalendarView control using XAML Islands"
                   href: desktop/modernize/modernize-wpf-tutorial-3.md
-                - name: "Add Windows 10 user activities and notifications"
+                - name: "Add Windows user activities and notifications"
                   href: desktop/modernize/modernize-wpf-tutorial-4.md
                 - name: "Package and deploy with MSIX"
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
@@ -300,6 +304,8 @@ items:
             href: windows-dotnet-maui/walkthrough-first-app.md
           - name: "Integrate a .NET MAUI app with the Graph SDK"
             href: windows-dotnet-maui/tutorial-graph-api.md
+          - name: "Create a .NET MAUI app with C# Markup"
+            href: windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit.md
       - name: App lifecycle and system services 
         items: 
           - name: Overview
@@ -342,7 +348,21 @@ items:
             href: windows-app-sdk/dwritecore.md
       - name: Data and files
         items: 
-          - name: Overview
+          - name: Data access
+            items: 
+              - name: Overview
+                href: develop/data-access/index.md
+              - name: Use a SQLite database on Windows
+                href: develop/data-access/sqlite-data-access.md
+              - name: Use SQL Server in a Windows app
+                href: develop/data-access/sql-server-database.md
+              - name: Use Cosmos DB in a Windows app
+                href: develop/data-access/cosmos-db-data-access.md
+              - name: Use MySQL in a Windows app
+                href: develop/data-access/mysql-database.md
+              - name: Use MongoDB in a Windows App
+                href: develop/data-access/mongodb-database.md
+          - name: Data and files overview
             href: develop/data-and-files.md
           - name: Manage resources with MRT Core
             href: windows-app-sdk/mrtcore/mrtcore-overview.md
@@ -360,10 +380,10 @@ items:
         href: develop/speech.md
       - name: Windows AI and machine learning
         href: /windows/ai/
-      - name: Windows widget service providers
+      - name: Windows widget providers
         items:
         - name: Overview
-          href: develop/widgets/widget-service-providers.md
+          href: develop/widgets/widget-providers.md
         - name: Implement a widget provider in a win32 app
           href: develop/widgets/implement-widget-provider-win32.md
         - name: Widget provider package manifest XML format
@@ -400,6 +420,8 @@ items:
         items:
           - name: Windows App SDK deployment overview
             href: package-and-deploy/deploy-overview.md
+          - name: Project properties
+            href: package-and-deploy/project-properties.md
           - name: Deployment guide for framework-dependent apps
             items:
               - name: "Deployment architecture and overview"
@@ -422,6 +444,233 @@ items:
             href: package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
           - name: Set up CI for your WinUI 3 app
             href: package-and-deploy/ci-for-winui3.md
+  - name: Publish
+    items:
+      - name: Overview
+        href: publish/index.md
+      - name: Opening a developer account
+        items:
+          - name: Developer accounts in Partner Center
+            href: publish/partner-center/partner-center-developer-account.md
+          - name: Open a developer account in Partner Center
+            href: publish/partner-center/open-a-developer-account.md
+          - name: Account types, locations, and fees
+            href: publish/partner-center/account-types-locations-and-fees.md
+          - name: Manage account settings and profile info
+            href: /partner-center/partner-center-account-setup
+          - name: Close your developer account in Partner Center
+            href: publish/partner-center/close-your-developer-account-in-partner-center.md
+          - name: Trademark and copyright protection
+            href: publish/partner-center/trademark-and-copyright-protection.md
+      - name: Manage account users
+        href: publish/partner-center/manage-account-users.md
+        items:
+         - name: Manage Azure AD with your Partner Center account
+           items:
+                - name: Associate an existing Azure AD in Partner Center
+                  href: publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account.md
+                - name: Create a new Azure AD in Partner Center
+                  href: publish/partner-center/create-new-azure-ad-tenant.md
+                - name: Remove Azure AD tenant from Partner Center
+                  href: publish/partner-center/remove-azure-ad-tenant-associations.md
+         - name: Manage users, groups, and Azure AD applications
+           items:
+                - name: Users, groups, and applications in Azure Active Directory
+                  href: publish/partner-center/overview-users-groups-azure-ad-applications.md
+                - name: Manage users in Partner Center account
+                  href: publish/partner-center/manage-users-in-partner-center.md
+                - name: Manage groups in Partner Center account
+                  href: publish/partner-center/manage-groups-in-partner-center.md
+                - name: Manage Azure AD applications in Partner Center account
+                  href: publish/partner-center/manage-azure-ad-applications-in-partner-center.md
+         - name: Manage roles and permissions for account users
+           items:
+                - name: Overview of roles and permissions for account users
+                  href: publish/partner-center/overview-of-roles-and-permissions-for-account-users.md
+                - name: Assign roles to account users
+                  href: publish/partner-center/assign-roles-to-account-users.md
+                - name: Overview of custom permissions to account users
+                  href: publish/partner-center/overview-of-custom-permissions-for-account-users.md
+                - name: Assign account level custom permissions to account users
+                  href: publish/partner-center/assign-account-level-custom-permissions-to-account-users.md
+                - name: Assign product level custom permissions to account users
+                  href: publish/partner-center/assign-product-level-custom-permissions-to-account-users.md
+                - name: Troubleshoot App Creation in Partner Center
+                  href: publish/partner-center/troubleshoot-app-creation.md
+      - name: Manage app name reservations
+        href: publish/partner-center/manage-app-name-reservations.md
+      - name: Partner Center workspaces
+        href: publish/partner-center/partner-center-workspaces.md
+      - name: Publish your app to the Microsoft Store
+        items:
+          - name: Publish your app to the Microsoft Store
+            href: publish/publish-your-app/overview.md
+          - name: Create your app by reserving a name
+            href: publish/publish-your-app/reserve-your-apps-name.md
+          - name: App submissions
+            href: publish/publish-your-app/create-app-submission.md
+          - name: Set app pricing and availability
+            href: publish/publish-your-app/price-and-availability.md
+            items:
+              - name: Define market selection
+                href: publish/publish-your-app/market-selection.md
+              - name: Choose visibility options
+                href: publish/publish-your-app/visibility-options.md
+              - name: Configure precise release scheduling
+                href: publish/publish-your-app/release-schedule.md
+              - name: Set and schedule app pricing
+                href: publish/publish-your-app/schedule-pricing-changes.md
+          - name: Enter app properties
+            href: publish/publish-your-app/enter-app-properties.md
+            items:
+              - name: Category and subcategory table
+                href: publish/publish-your-app/categories-and-subcategories.md
+              - name: Support info
+                href: publish/publish-your-app/support-info.md
+              - name: Product declarations
+                href: publish/publish-your-app/product-declarations.md
+              - name: System requirements
+                href: publish/publish-your-app/system-requirements.md
+          - name: Age ratings
+            href: publish/publish-your-app/age-ratings.md
+          - name: Upload app packages
+            href: publish/publish-your-app/upload-app-packages.md
+            items:
+              - name: Device family availability
+                href: publish/publish-your-app/device-families.md
+              - name: App package requirements
+                href: publish/publish-your-app/app-package-requirements.md
+              - name: Package version numbering
+                href: publish/publish-your-app/package-version-numbering.md
+              - name: Supported languages
+                href: publish/publish-your-app/supported-languages.md
+              - name: Guidance for app package management
+                href: publish/publish-your-app/app-package-management.md
+          - name: Create app Store listings
+            href: publish/publish-your-app/create-app-store-listing.md
+            items:
+              - name: Add and edit Store listing info
+                href: publish/publish-your-app/add-and-edit-store-listing-info.md
+              - name: Add additional information
+                href: publish/publish-your-app/add-additional-information.md
+              - name: Write a great app description
+                href: publish/publish-your-app/write-great-app-description.md
+              - name: App screenshots, images, and trailers
+                href: publish/publish-your-app/screenshots-and-images.md
+              - name: Import and export Store listings
+                href: publish/publish-your-app/import-and-export-store-listings.md
+              - name: Create platform-specific Store listings
+                href: publish/publish-your-app/create-platform-specific-store-listings.md
+          - name: Manage submission options
+            href: publish/publish-your-app/manage-submission-options.md
+            items:
+              - name: Notes for certification
+                href: publish/publish-your-app/notes-for-certification.md
+          - name: The app certification process
+            href: publish/publish-your-app/app-certification-process.md
+            items:
+              - name: Resolve submission errors
+                href: publish/publish-your-app/resolve-submission-errors.md
+              - name: Avoid common certification failures
+                href: publish/publish-your-app/avoid-common-certification-failures.md
+      - name: Additional features for MSI and EXE apps
+        items:
+          - name: Publish update for your EXE or MSI app on the Store
+            href: publish//update-your-app.md
+          - name: Microsoft Store Submission API for MSI or EXE app 
+            href: publish/store-submission-api.md
+          - name: Ratings, Reviews, and Responses
+            href: publish/analyze-msi-exe/ratings-reviews-performance.md
+          - name: Analyze your app's performance
+            href: publish/analyze-msi-exe/analyze-app-performance.md
+      - name: Additional features for MSIX apps
+        items:
+          - name: In-app ads
+            href: publish/in-app-ads.md
+          - name: App management and services
+            href: publish/app-management-and-services.md
+            items:
+              - name: View app identity details
+                href: publish/view-app-identity-details.md
+              - name: Generate preinstall packages for OEMs
+                href: publish/generate-preinstall-packages-for-oems.md
+          - name: Attract and promote
+            href: publish/attract-customers-and-promote-your-apps.md
+            items:
+              - name: Generate promotional codes
+                href: publish/generate-promotional-codes.md
+              - name: Create a custom app promotion campaign
+                href: publish/create-a-custom-app-promotion-campaign.md
+              - name: Put apps and add-ons on sale
+                href: publish/put-apps-and-add-ons-on-sale.md
+              - name: App marketing guidelines
+                href: publish/app-marketing-guidelines.md
+              - name: Link to your app
+                href: publish/link-to-your-app.md
+              - name: Make your app easier to promote
+                href: publish/make-your-app-easier-to-promote.md
+          - name: Engage with your customers
+            href: publish/engage-with-your-customers.md
+            items:
+              - name: Create customer groups
+                href: publish/create-customer-groups.md
+                items:
+                  - name: Create customer segments
+                    href: publish/create-customer-segments.md
+                  - name: Create known user groups
+                    href: publish/create-known-user-groups.md
+              - name: Respond to customer reviews
+                href: publish/respond-to-customer-reviews.md
+              - name: Respond to customer feedback
+                href: publish/respond-to-customer-feedback.md
+              - name: Send notifications to your app's customers
+                href: publish/send-push-notifications-to-your-apps-customers.md
+              - name: Use targeted offers
+                href: publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
+          - name: Analyze app performance
+            href: publish/analytics.md
+            items:
+              - name: Acquisitions report
+                href: publish/acquisitions-report.md
+              - name: Add-on acquisitions report
+                href: publish/add-on-acquisitions-report.md
+              - name: Usage report
+                href: publish/usage-report.md
+              - name: Health report
+                href: publish/health-report.md
+              - name: Ratings and reviews in the Microsoft Store
+                href: publish/ratings-and-reviews.md
+              - name: Ratings report
+                href: publish/ratings-report.md
+              - name: Reviews report
+                href: publish/reviews-report.md
+              - name: Feedback report
+                href: publish/feedback-report.md
+              - name: Xbox analytics report
+                href: publish/xbox-analytics-report.md
+              - name: Insights report
+                href: publish/insights-report.md
+              - name: Advertising performance report
+                href: publish/advertising-performance-report.md
+              - name: Download analytics reports
+                href: publish/download-analytic-reports.md
+      - name: Store Policies and Code of Conduct
+        href: publish/store-policies-and-code-of-conduct.md
+        items:
+          - name: Microsoft Store Policies
+            href: publish/store-policies.md
+          - name: Store Policies change history
+            href: publish/store-policies-change-history.md
+          - name: App Quality
+            href: publish/store-app-quality.md
+          - name: Developer Code of Conduct
+            href: publish/store-developer-code-of-conduct.md
+          - name: Microsoft Store Product Ranking, Placement and Marketing Disclosure Statement
+            href: https://aka.ms/disclosurepolicypdf
+          - name: Microsoft Store complaint and appeal statistics for FY2022
+            href: publish/store-policies.md#microsoft-store-complaint-and-appeal-statistics-for-fy2022
+          - name: Microsoft Edge Add-ons store developer policies
+            href: /microsoft-edge/extensions-chromium/store-policies/developer-policies
   - name: API reference
     href: api-reference/index.md
     items:

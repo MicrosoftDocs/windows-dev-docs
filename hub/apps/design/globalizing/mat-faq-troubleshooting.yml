@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  description: This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0.
+  description: This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT).
   title: Multilingual App Toolkit FAQ & troubleshooting
   template: detail.hbs
   ms.date: 11/13/2017
@@ -8,11 +8,11 @@ metadata:
   keywords: windows 10, uwp, globalization, localizability, localization
   ms.localizationpriority: medium
     
-title: Multilingual App Toolkit 4.0 FAQ & troubleshooting
+title: Multilingual App Toolkit FAQ & troubleshooting
 summary: |
-  This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0.
+  This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT).
   
-  Also see [Use the Multilingual App Toolkit 4.0](use-mat.md).
+  Also see [Use the Multilingual App Toolkit](use-mat.md).
   
   **Note** The toolkit supports both .resw (XAML) and .resjson (JavaScript) files. But in this topic we'll refer only to .resw files. A .resw file is known as a Resources File. It contains strings, either in the default language or translated into another language. The folder that contains a .resw file is typically named for the value of a language tag.
   
@@ -81,12 +81,12 @@ sections:
           - The .xlf files are updated to reflect any added or removed string, or added or removed Resources Files.
           - The Resources Files are updated to reflected any translated strings in the .xlf files.
           
-          This is explained in detail in [Use the Multilingual App Toolkit 4.0](use-mat.md).
+          This is explained in detail in [Use the Multilingual App Toolkit](use-mat.md).
           
       - question: |
           When I build my project, the .xlf files remain empty
         answer: |
-          Before you can use the MAT effectively, your app needs to be localizable. This is explained in detail in [Use the Multilingual App Toolkit 4.0](use-mat.md).
+          Before you can use the MAT effectively, your app needs to be localizable. This is explained in detail in [Use the Multilingual App Toolkit](use-mat.md).
           
       - question: |
           What is Microsoft Translator?
@@ -100,17 +100,17 @@ sections:
       - question: |
           What is pseudo language, and what are pseudo resource trackers?
         answer: |
-          Pseudo language is an artificial modification of the software product intended to simulate real language localization. You can find more details about pseudo language and pseudo resource trackers in [Use the Multilingual App Toolkit 4.0](use-mat.md).
+          Pseudo language is an artificial modification of the software product intended to simulate real language localization. You can find more details about pseudo language and pseudo resource trackers in [Use the Multilingual App Toolkit](use-mat.md).
           
       - question: |
           How do I set my language preference to pseudo language, so that I can test my pseudo-loc'd strings?
         answer: |
-          This is explained in [Use the Multilingual App Toolkit 4.0](use-mat.md).
+          This is explained in [Use the Multilingual App Toolkit](use-mat.md).
           
       - question: |
           What kind of localizability issues can I find using pseudo language?
         answer: |
-          This is explained in [Use the Multilingual App Toolkit 4.0](use-mat.md).
+          This is explained in [Use the Multilingual App Toolkit](use-mat.md).
           
       - question: |
           I'm not seeing any translations when I launch my app, or my app is only partially translated
@@ -159,14 +159,14 @@ sections:
       - question: |
           What if my translator doesn't have Windows 10, Windows 11 and/or Visual Studio and/or the Multilingual App Toolkit installed?
         answer: |
-          When you select **Output: Mail recipient** in the Export string resources dialog, the email includes a link to download and install the Multilingual App Toolkit (MAT) 4.0. Your translator can still install the MAT 4.0 standalone Multilingual Editor tool even without Windows 10, Windows 11 nor Visual Studio.
+          When you select **Output: Mail recipient** in the Export string resources dialog, the email includes a link to download and install the Multilingual App Toolkit (MAT). Your translator can still install the MAT standalone Multilingual Editor tool even without Windows 10, Windows 11 nor Visual Studio.
           
-          For more details, see [Use the Multilingual App Toolkit 4.0](use-mat.md).
+          For more details, see [Use the Multilingual App Toolkit](use-mat.md).
           
       - question: |
           What happened to the `MarkupRules.xml` and `ResourcesLocks.xml` files?
         answer: |
-          The Multilingual App Toolkit 4.0 doesn't use proprietary resource locking files. Instead, the XLIFF 1.2 tag `<mrk>` is added directly to the .xlf file to identify strings that are not modified during Machine Translation. This enables the XLIFF file to be self-contained, and allows for per-file based resource locking.
+          The Multilingual App Toolkit doesn't use proprietary resource locking files. Instead, the XLIFF 1.2 tag `<mrk>` is added directly to the .xlf file to identify strings that are not modified during Machine Translation. This enables the XLIFF file to be self-contained, and allows for per-file based resource locking.
           
           These extra support files are no longer needed and you can safely delete them if you have them.
           
@@ -219,6 +219,6 @@ additionalContent: |
 
   ## Related topics
   
-  * [Use the Multilingual App Toolkit 4.0](use-mat.md)
+  * [Use the Multilingual App Toolkit](use-mat.md)
   * [Microsoft Translator](https://www.microsofttranslator.com/)
   * [MakePri.exe command-line options](/windows/uwp/app-resources/makepri-exe-command-options)

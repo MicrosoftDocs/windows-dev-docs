@@ -17,7 +17,7 @@ The following constants are for use with the Bootstrapper C# APIs.
 
 Namespace: **Microsoft.WindowsAppSDK**
 
-Assembly: Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+Assembly: Microsoft.WindowsAppRuntime.Release.Net.dll
 
 ## Microsoft.WindowsAppSDK.Release class
 

@@ -11,6 +11,11 @@ ms.localizationpriority: medium
 
 # Widget design fundamentals
 
+> [!NOTE]
+> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+> [!IMPORTANT]
+> The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
+
 This article provides detailed guidance for designing the UI for a Windows widget.
 
 
@@ -61,7 +66,7 @@ Each widget has a 16px margin around it and a 48px [Attribution area](widgets-st
 
 ![Two widget examples side by side. The left image shows guide lines dividing the widget into three columns, illustrating 4 pixel gutters between the columns. The right image shows guide lines dividing the widget into three rows, illustrating 4 pixel gutters between the rows.](./images/widgets-gutters.png)
 
-For widgets that use containers, the gutter between each element is 4px. And the containers should touch the edges of the margins. Your content should also use spacing and sizing values of [Multiples of Four Px](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#multiples-of-four) to achieve a clean, pixel perfect design across different screen resolutions.
+For widgets that use containers, the gutter between each element is 4px, and the containers should touch the edges of the margins. Your content should also use spacing and sizing values of [Multiples of Four Px](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#multiples-of-four) to achieve a clean, pixel perfect design across different screen resolutions.
  
 You should also consult the guidance for spacing and gutters in [Content design basics for Windows apps](/windows/apps/design/basics/content-basics ) when designing your content.
 
@@ -103,4 +108,3 @@ If your widget includes showing user profiles (for example, a social media feed 
 ![An image of a calendar widget showing a calendar appointment. The mouse cursor is hovering over the appointment subject line, which is truncated, and a tool-tip shows the full subject line.](./images/widgets-tool-tips.png)
 
 Tool tips can be used when title text gets truncated in the widget. For best practices, text should fit neatly within the widget space and not need truncation however, that may not always happen depending on scenarios like language localization, system text scaling, or when quoting something (i.e. article title, name of a song). This does not apply to body text on a widget.
-

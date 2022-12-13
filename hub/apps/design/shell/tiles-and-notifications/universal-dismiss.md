@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 Universal Dismiss, powered by Action Center in the Cloud, means that when you dismiss a notification from one device, the same notification on your other devices is also dismissed.
 
 > [!IMPORTANT]
-> **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or higher to use Universal Dismiss.
+> **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or later to use Universal Dismiss.
 
 The common example of this scenario is calendar reminders... you have a calendar app on both of your devices... you get a reminder on your phone and desktop... you click dismiss on your desktop... thanks to Universal Dismiss, the reminder on your phone is also dismissed! **Enabling Universal Dismiss only requires one line of code!**
 

@@ -35,7 +35,7 @@ Outside your app, Windows uses an icon to represent your app in the start menu a
     :::column-end:::
 :::row-end:::
 
-This article describes icons within your app. To learn about icons outside your app (app icons), see the [app and tile icons article](./app-icons-and-logos.md).
+This article describes icons within your app. To learn about icons outside your app (app icons), see the [app and tile icons article](./iconography/overview.md).
 
 ## When to use icons
 
@@ -217,5 +217,5 @@ To learn more about command bars, see the [command bar article](../controls/comm
 
 ## Related articles
 
-- [App icons and logos](app-icons-and-logos.md)
+- [App icons and logos](https://learn.microsoft.com/windows/apps/design/style/iconography/overview)
 - [AnimatedIcon](../controls/animated-icon.md)

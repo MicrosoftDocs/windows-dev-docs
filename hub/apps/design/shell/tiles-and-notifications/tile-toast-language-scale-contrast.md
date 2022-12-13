@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Tile and toast notification support for language, scale, and high contrast
 
-Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast) and [App icons and logos](../../style/app-icons-and-logos.md).
+Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast) and [App icons and logos](../../style/iconography/overview.md).
 
 For more info about the value proposition of localizing your app, see [Globalization and localization](../../globalizing/globalizing-portal.md).
 
@@ -80,7 +80,7 @@ For a reference table of all the possible qualifier values that you can use in y
 
 * [Screen sizes and break points for responsive design](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 * [Tailor your resources for language, scale, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
-* [Guidelines for tile and icon assets](../../style/app-icons-and-logos.md).
+* [Guidelines for tile and icon assets](../../style/iconography/overview.md).
 * [Globalization and localization](../../globalizing/globalizing-portal.md)
 * [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest)
 * [Reference an image or other asset from XAML markup and code](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)

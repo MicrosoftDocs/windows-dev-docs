@@ -5,6 +5,12 @@ items:
   items:
   - name: Overview
     href: ./overview.md
+  - name: Windows Dev Kit 2023
+    items:
+    - name: Overview & Set up
+      href: ./dev-kit/index.md
+    - name: Update History
+      href: ./dev-kit/history.md
   - name: Arm64EC for Windows 11 apps
     items:
       - name: Arm64EC Overview

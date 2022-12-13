@@ -13,7 +13,7 @@ ms.localizationpriority: low
 
 As a C# desktop application developer, in .NET you can make use of C# types that wrap and represent the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/).
 
-These types are available in .NET as part of the [Windows App SDK](/windows/apps/windows-app-sdk/).
+These types are available in .NET as part of the [Windows App SDK](../../windows-app-sdk/index.md).
 
 ## Topics in this section
 

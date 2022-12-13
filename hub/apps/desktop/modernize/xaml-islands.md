@@ -12,6 +12,9 @@ ms.custom: 19H1
 
 # Host WinRT XAML controls in desktop apps (XAML Islands)
 
+> [!IMPORTANT]
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+
 Starting in Windows 10, version 1903, you can host WinRT XAML controls in non-UWP desktop applications using a feature called *XAML Islands*. This feature enables you to enhance the look, feel, and functionality of your existing WPF, Windows Forms, and C++ desktop (Win32) applications with the latest Windows UI features that are only available via WinRT XAML controls. This means that you can use UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) in your existing WPF, Windows Forms, and C++ desktop applications.
 
 You can host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including:
@@ -124,7 +127,7 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 ### Supported only with workarounds
 
-:heavy_check_mark: Hosting controls from the [WinUI 2 Library](../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package, or if you use the [Dynamic Dependencies API](/windows/apps/desktop/modernize/framework-packages/framework-packages-overview). Support for hosting controls from the [WinUI 3.0 Library](../../winui/winui3/index.md) is coming in a later release.
+:heavy_check_mark: Hosting controls from the [WinUI 2 Library](../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package, or if you use the [Dynamic Dependencies API](./framework-packages/framework-packages-overview.md). Support for hosting controls from the [WinUI 3.0 Library](../../winui/winui3/index.md) is coming in a later release.
 
 :heavy_check_mark: To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) classes. Instead, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. For more information, see [this section](#window-host-context-for-xaml-islands).
 

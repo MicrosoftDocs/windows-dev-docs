@@ -38,7 +38,7 @@ C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) AP
 An app development feature that allows you to update your application's code and observe your changes while your application runs, eliminating the need to stop, rebuild, and re-run your apps while developing. See [Write and debug running code with Hot Reload](/visualstudio/debugger/hot-reload).
 
 #### Hybrid CRT linkage
-A C/C++ runtime library linkage technique that simplifies deployment. Also referred to simply as *Hybrid CRT*. See [Hybrid C/C++ runtime library linkage (hybrid CRT linkage)](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw#hybrid-cc-runtime-library-linkage-hybrid-crt-linkage).
+A C/C++ runtime library linkage technique that simplifies deployment. Also referred to simply as *Hybrid CRT*. See [Hybrid C/C++ runtime library linkage (hybrid CRT linkage)](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md).
 
 #### Managed apps
 "Managed" refers to the "managed runtime" of .NET, which provides managed services such as garbage collection and security assurances. If you're building an app with .NET, you're building a managed app.
@@ -56,10 +56,10 @@ Traditionally, "native" refers to applications built without using the .NET runt
 .NET Multi-platform App UI. A cross-platform framework for creating native mobile and desktop apps with C# and XAML. An evolution of `Xamarin.Forms` extended from mobile to desktop scenarios, with UI controls rebuilt from the ground up for performance and extensibility. [What is .NET MAUI?](/dotnet/maui/what-is-maui).
 
 #### Packaged app
-For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](/windows/apps/package-and-deploy/). That topic also explains the advantages and disadvantages of each option.
+For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](../package-and-deploy/index.md). That topic also explains the advantages and disadvantages of each option.
 
 #### Packaged app with external location
-For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](/windows/apps/package-and-deploy/). That topic also explains the advantages and disadvantages of each option.
+For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](../package-and-deploy/index.md). That topic also explains the advantages and disadvantages of each option.
 
 #### Project Reunion
 The codename for the Windows App SDK. No longer in use.
@@ -74,7 +74,7 @@ An application development platform and application model that uses Windows Runt
 Apps that aren't managed by the .NET runtime. If you're handling your own memory management, you're building an unmanaged app. 
 
 #### Unpackaged app
-For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](/windows/apps/package-and-deploy/). That topic also explains the advantages and disadvantages of each option.
+For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](../package-and-deploy/index.md). That topic also explains the advantages and disadvantages of each option.
 
 #### Visual Studio extension (VSIX)
 Lets you create, package, and deploy Visual Studio extensions. [Get started with the VSIX Project template](/visualstudio/extensibility/getting-started-with-the-vsix-project-template).
@@ -86,7 +86,7 @@ A control that allows app developers to embed web content (HTML/CSS/JS) in their
 Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of WinAppSDK and WinUI 3.
 
 #### Windows App SDK
-A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP / WinUI 2 for desktop application development (see [the Windows App SDK Roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md)). It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. See [Overview of app development options](/windows/apps/get-started).
+A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP / WinUI 2 for desktop application development (see [the Windows App SDK Roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md)). It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. See [Overview of app development options](./index.md).
 
 #### Windows Forms
 Also known as WinForms. A UI framework for building Windows desktop applications. It is a .NET wrapper over Windows user interface libraries, such as User32 and GDI+. It’s a battle-tested way to create desktop applications using a visual designer within Visual Studio. See [Desktop Guide (Windows Forms .NET)](/dotnet/desktop/winforms/overview/).
@@ -98,17 +98,17 @@ A UI framework for building Windows desktop applications. WPF applications are b
 The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. The Windows SDK is not the same as the [Windows App SDK](#windows-app-sdk).
 
 #### WinUI
-The Windows UI Library (WinUI) is the modern native user interface (UX) framework for both Windows desktop and UWP applications. [Windows UI Library (WinUI)](/windows/apps/winui/). 
+The Windows UI Library (WinUI) is the modern native user interface (UX) framework for both Windows desktop and UWP applications. [Windows UI Library (WinUI)](../winui/index.md). 
 
 #### WinUI 2
-Windows UI Library (WinUI) 2 is tightly integrated with Windows 10 and later SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [Windows UI Library (WinUI) 2](/windows/apps/winui/winui2/).
+Windows UI Library (WinUI) 2 is tightly integrated with Windows SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [Windows UI Library (WinUI) 2](../winui/winui2/index.md).
 
 #### WinUI 3
-The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. See [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/).
+The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. See [Windows UI Library (WinUI) 3](../winui/winui3/index.md).
 
 #### XAML Islands
-XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](/windows/apps/desktop/modernize/xaml-islands).
+XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands.md).
 
 ## Related topics
   - [Windows developer FAQ](windows-developer-faq.yml)
-  - [Overview of app development options](/windows/apps/get-started#app-types)
+  - [Overview of app development options](./index.md)

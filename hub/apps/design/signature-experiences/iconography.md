@@ -22,7 +22,7 @@ Windows 11 uses three different type of icons: application icons, system icons, 
 
 Application icons represent your app in the Windows Shell. They are primarily used to launch your application, but also represent your app wherever it appears in the Windows shell.
 
-App icons should represent your app's core functionality through a metaphor. See [App Icons](../style/app-icons-and-logos.md) for more information about designing and constructing your app's icon.
+App icons should represent your app's core functionality through a metaphor. See [App Icons](../style/iconography/overview.md) for more information about designing and constructing your app's icon.
 
 ## System icons
 

@@ -11,9 +11,12 @@ ms.localizationpriority: medium
 
 # Use XAML Islands to host a UWP XAML control in a C# WPF app
 
+> [!IMPORTANT]
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+
 This topic shows how to build a C# Windows Presentation Foundation (WPF) app (targeting .NET Core 3.1) that uses [XAML Islands](xaml-islands.md) to host a Universal Windows Platform (UWP) XAML control (that is, a first-party control provided by the Windows SDK). We show how to do that in two ways:
 
-* We show how to host UWP [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) controls by using [wrapped controls](/windows/apps/desktop/modernize/xaml-islands#wrapped-controls) (available in the Windows Community Toolkit). Wrapped controls wrap the interface and functionality of a small set of useful UWP XAML controls. You can add a wrapped control directly to the design surface of your WPF or Windows Forms project, and then use it in the designer like any other WPF or Windows Forms control.
+* We show how to host UWP [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) controls by using [wrapped controls](./xaml-islands.md#wrapped-controls) (available in the Windows Community Toolkit). Wrapped controls wrap the interface and functionality of a small set of useful UWP XAML controls. You can add a wrapped control directly to the design surface of your WPF or Windows Forms project, and then use it in the designer like any other WPF or Windows Forms control.
 
 * We also show how to host a UWP [**CalendarView**](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) control by using the [**WindowsXamlHost**](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control (available in the Windows Community Toolkit). Because only a small set of UWP XAML controls are available as wrapped controls, you can use **WindowsXamlHost** to host any UWP XAML control.
 
@@ -307,7 +310,7 @@ The following instructions show you how to package all the components in the sol
 
 ## Related topics
 
-* [Host WinRT XAML controls in desktop apps (XAML Islands)](/windows/apps/desktop/modernize/xaml-islands)
+* [Host WinRT XAML controls in desktop apps (XAML Islands)](./xaml-islands.md)
 * [InkCanvas class (UWP)](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)
 * [InkToolbar class (UWP)](/uwp/api/windows.ui.xaml.controls.inktoolbar)
 * [CalendarView class (UWP)](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)

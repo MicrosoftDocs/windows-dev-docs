@@ -183,6 +183,8 @@ Read more about writing games with pygame at [pygame.org](http://www.pygame.org)
 
 We recommend the following resources to support you in continuing to learn about Python development on Windows.
 
+- [Microsoft Dev Blogs: Python](https://devblogs.microsoft.com/python/): Read the latest updates about all things Python at Microsoft.
+
 ### Online courses for learning Python
 
 - [Introduction to Python](/training/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.

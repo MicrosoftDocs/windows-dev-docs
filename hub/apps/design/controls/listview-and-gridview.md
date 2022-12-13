@@ -60,7 +60,7 @@ APIs for these controls exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows
 > - **UWP APIs:** [ListView class](/uwp/api/windows.ui.xaml.controls.listview), [GridView class](/uwp/api/windows.ui.xaml.controls.gridview), [ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [Items property](/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
 > - Open the WinUI 2 Gallery app and see the [ListView](winui2gallery:/item/ListView) or the [GridView](winui2gallery:/item/GridView) in action. [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls.
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
 
 ## Create a list view or a grid view
 

@@ -84,8 +84,6 @@ Go behind the scenes with developer blogs, written by our performance experts to
 
 * Performance problems in your compile-debug-test loop? Report them in the [Windows Dev Performance repo](https://github.com/microsoft/Windows-Dev-Performance) on GitHub.
 
-* Looking to tune Windows for your development workflows? Consult this article [for tuning tips](/windows/dev-environment/tips).
-
 ### Performance and Sustainability
 
 Performance engineering intersects directly with the sustainable software movement. Most electrical grids burn fossil fuels to generate electricity. As your application runs on a PC, it consumes incremental power that may be small for a single user but adds up as your user base grows.

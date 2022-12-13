@@ -39,6 +39,7 @@ The following Awake states can be selected:
 
 While PowerToys Awake can keep the computer awake indefinitely or temporarily, in its default state the displays connected to the machine will turn off, even though the computer won't go to sleep. If you need the displays to be available, use the **Keep screen on** switch, which will ensure that all monitors remain on.
 
+This feature only works if Awake is running in one of the two `Keep awake` state.
 
 ## System tray
 
@@ -59,3 +60,8 @@ PowerToys Awake can also be executed as a standalone application, directly from 
 | `--pid`           | Attaches the execution of Awake to a Process ID (PID). When the process with a given PID terminates, Awake terminates as well. |
 
 In absence of command-line arguments, PowerToys Awake will keep the computer awake indefinitely.
+
+When setting the value for the `--time-limit` parameter, both of these formats will be accepted:
+
+- PowerToys.Awake.exe --time-limit 36000
+- PowerToys.Awake.exe --time-limit=36000

@@ -13,7 +13,8 @@ ms.localizationpriority: medium
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 > [!IMPORTANT]
-> The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 2.
+> The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
+
 
 This article walks you through creating a simple widget provider that implements the [IWidgetProvider](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider) interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget  that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
 
@@ -26,7 +27,7 @@ This sample code in this article is adapted from the [Windows App SDK Sample](ht
 ## Prerequisites
 
 - Latest Dev Channel Windows 11 build from the Windows Insider Program (WIP). For more information on WIP self-hosting see [Deeper look at flighting](/windows-insider/flighting).
-- Widgets board version 521.20060.1205.0. This will come with the latest Dev Channel WIP build and can be checked by opening the widgets board, navigating to the widget picker, and looking at the version number located at the bottom right corner of the picker.
+- Widgets board version 521.20060.1205.0 or greater. This will come with the latest Dev Channel WIP build and can be checked by opening the widgets board, navigating to the widget picker, and looking at the version number located at the bottom right corner of the picker.
 - Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 - Visual Studio 2017 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
@@ -34,9 +35,9 @@ This sample code in this article is adapted from the [Windows App SDK Sample](ht
 
 In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C++" and the platform filter to Windows, then select the Windows Console Application (C++/WinRT) project template. Name the new project "ExampleWidgetProvider". When prompted, set the target Windows version for the app to version 1809 or later.
 
-## Add a reference to the Windows widgets NuGet package
+## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
 
-This sample uses the latest preview Windows App SDK NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the Include prerelease check box near the top of the window, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". In the version drop-down select **1.2.220930.4-preview2** then click **Install**.
+This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the Include prerelease check box near the top of the window, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
 
 This sample also uses the Windows Implementation Library NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.Windows.ImplementationLibrary". Select the latest version in the **Version** drop-down and then click **Install**.
 
@@ -380,9 +381,9 @@ void WidgetProvider::Activate(winrt::Microsoft::Windows::Widgets::Providers::Wid
         UpdateWidget(localWidgetInfo);
     }
 }
+
 void WidgetProvider::Deactivate(winrt::hstring widgetId)
 {
-
     if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
     {
         auto& localWidgetInfo = iter->second;
@@ -394,7 +395,7 @@ void WidgetProvider::Deactivate(winrt::hstring widgetId)
 
 ## Update a widget
 
-Define the **UpdateWidget** helper method to update an enabled widget. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated. Call [WidgetManager::GetDefault](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getdefault) to get an instance of the [WidgetManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager) class and then call [UpdateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.updatewidget) to send the updated widget data to the widget host.
+Define the **UpdateWidget** helper method to update an enabled widget. In this example, we check the name of the widget in the **CompactWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated. Call [WidgetManager::GetDefault](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getdefault) to get an instance of the [WidgetManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager) class and then call [UpdateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.updatewidget) to send the updated widget data to the widget host.
 
 ```cpp
 // WidgetProvider.cpp
@@ -569,9 +570,9 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 ```xml
 <!--ExampleWidgetProviderPackage.wapproj-->
 <ItemGroup>
-	  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.220930.4-preview2">
-		  <IncludeAssets>build</IncludeAssets>
-	  </PackageReference>  
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221116.1">
+        <IncludeAssets>build</IncludeAssets>
+    </PackageReference>  
 </ItemGroup>
 ```
 
@@ -718,16 +719,3 @@ In **Solution Explorer**, right-click your **ExampleWidgetProviderPackage** and 
 ## Testing your widget provider
 
 In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the widgets board. To see the widgets you will need to open the widgets board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
-
-
-
-
-
-
-
-
-
-
-
-
-

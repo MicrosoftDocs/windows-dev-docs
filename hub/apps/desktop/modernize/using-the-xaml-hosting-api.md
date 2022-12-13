@@ -12,6 +12,9 @@ ms.custom: 19H1
 
 # Using the WinRT XAML hosting API in a C++ desktop (Win32) app
 
+> [!IMPORTANT]
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+
 Starting in Windows 10, version 1903, non-UWP desktop apps (including C++ desktop (Win32), WPF, and Windows Forms apps) can use the *WinRT XAML hosting API* to host WinRT XAML controls in any UI element that is associated with a window handle (HWND). This API enables non-UWP desktop apps to use the latest Windows UI features that are only available via WinRT XAML controls. For example, non-UWP desktop apps can use this API to host WinRT XAML controls that use the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) and support [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions).
 
 The WinRT XAML hosting API provides the foundation for a broader set of controls that we are providing to enable developers to bring Fluent UI to non-UWP desktop apps. This feature is called *XAML Islands*. For an overview of this feature, see [Host WinRT XAML controls in desktop apps (XAML Islands)](xaml-islands.md).

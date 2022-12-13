@@ -218,5 +218,4 @@ To run the app, press **F5** or click Debug > Start Debugging. Depending on how 
 
 ## Related links
 
-- [Test on an Android device or emulator](emulator.md).
-- [Create an Android sample app using Xamarin.Forms](xamarin-forms.md)
+- [Test on an Android device or emulator](emulator.md)

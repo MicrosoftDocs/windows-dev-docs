@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 09/06/2022
+ms.date: 11/02/2022
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
@@ -80,6 +80,28 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### File Locksmith
+
+:::row:::
+    :::column:::
+        [![File Locksmith screenshot.](../images/powertoys-file-locksmith.png)](file-locksmith.md)
+    :::column-end:::
+    :::column span="2":::
+        [File Locksmith](file-locksmith.md) is a Windows shell extension for checking which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **What's using this file?** from the menu.
+    :::column-end:::
+:::row-end:::
+
+### Hosts file editor
+
+:::row:::
+    :::column:::
+        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+    :::column-end:::
+    :::column span="2":::
+        [Hosts file editor](hosts-file-editor.md) is a convenient way to edit the 'Hosts' file that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks. 
+    :::column-end:::
+:::row-end:::
+
 ### Image Resizer
 
 :::row:::
@@ -142,7 +164,7 @@ The currently available utilities include:
         [![PowerToys Run screenshot.](../images/pt-run.png)](run.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Run](run.md) can help you search and launch your app instantly - just press the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well.
+        [PowerToys Run](run.md) can help you search and launch your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well.
     :::column-end:::
 :::row-end:::
 
@@ -153,7 +175,7 @@ The currently available utilities include:
         [![Screen Ruler screenshot.](../images/pt-screen-ruler.png)](screen-ruler.md)
     :::column-end:::
     :::column span="2":::
-        [Screen Ruler](screen-ruler.md) allows you to quickly measure pixels on your screen based with image edge detection. Just press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> to activate. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
+        [Screen Ruler](screen-ruler.md) allows you to quickly measure pixels on your screen based with image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
     :::column-end:::
 :::row-end:::
 
@@ -175,7 +197,7 @@ The currently available utilities include:
         [![Text Extractor screenshot.](../images/pt-image-to-text.png)](text-extractor.md)
     :::column-end:::
     :::column span="2":::
-        [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
+        [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
     :::column-end:::
 :::row-end:::
 
@@ -204,7 +226,7 @@ In this video, Clint Rutkas (PM for PowerToys) walks through how to install and 
 
 ## Known issues
 
-Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. View instructions in the [Report a Bug](reportbug.md) section of these docs.
+Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. If you don't find the issue you are experiencing, you can [Report a Bug](https://github.com/microsoft/PowerToys/issues/new/choose) on the PowerToys product repo.
 
 ## Contribute to PowerToys (Open Source)
 

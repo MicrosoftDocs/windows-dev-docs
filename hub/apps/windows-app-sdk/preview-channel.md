@@ -27,7 +27,7 @@ This is the latest release of the preview channel for version 1.2.
 
 In an existing Windows App SDK 1.1 Stable app, you can update your Nuget package to 1.2.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
-For the updated runtime and MSIX, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads).
+For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
 > [!Important]
 > Visual Studio 2019 and .NET 5 is no longer supported for building C# apps (see [Windows App SDK 1.2 moving to C# WinRT 2.0](https://github.com/microsoft/WindowsAppSDK/discussions/2879)). You will need Visual Studio 2022 and one of the following .NET SDK versions: 6.0.401 (or later), 6.0.304, 6.0.109.
@@ -38,9 +38,9 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](/windo
 
 The Widgets Board was first introduced in Windows 11 and was limited to displaying first party Widgets. Widgets are small UI containers that display text and graphics on the Widgets Board, and are associated with an app installed on the device. With Windows App SDK, as third party developers you can now create Widgets for your packaged Win32 apps and test them locally on the Windows 11 Widgets Board.
 
-For more information about Widgets, check out [Widgets Overview](/windows/apps/design/widgets/).
+For more information about Widgets, check out [Widgets Overview](../design/widgets/index.md).
 
-To get started developing Widgets for your app, check out the [Widget service providers](/windows/apps/develop/widgets/widget-service-providers) development docs and [Widgets design fundamentals](/windows/apps/design/widgets/widgets-design-fundamentals) for prerequisites, guidance and best practices.
+To get started developing Widgets for your app, check out the [Widget service providers](/windows/apps/develop/widgets/widget-providers) development docs and [Widgets design fundamentals](../design/widgets/widgets-design-fundamentals.md) for prerequisites, guidance and best practices.
 
 Prerequisites for this release include:
 
@@ -81,13 +81,13 @@ Win32 apps can now support High Dynamic Range (HDR) through the DisplayInformati
 
 In an existing Windows App SDK 1.1 Stable app, you can update your Nuget package to 1.2.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
-For the updated runtime and MSIX, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads).
+For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
 ### WinUI 3
 
-WinUI 3 apps can play audio and video with the [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) and [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) media playback controls. For more info on how and when to use media controls, see [Media players](/windows/apps/design/controls/media-playback).
+WinUI 3 apps can play audio and video with the [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) and [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) media playback controls. For more info on how and when to use media controls, see [Media players](../design/controls/media-playback.md).
 
-WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI 2.7](/windows/apps/winui/winui2/release-notes/winui-2.7) and [WinUI 2.8](/windows/apps/winui/winui2/release-notes/winui-2.8).
+WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI 2.7](../winui/winui2/release-notes/winui-2.7.md) and [WinUI 2.8](../winui/winui2/release-notes/winui-2.8.md).
 
 #### Known issue
 
@@ -99,11 +99,11 @@ WinUI 3 has been updated with the latest controls, styles, and behaviors from Wi
 
 For usage information, see the [AppNotificationBuilder spec](https://github.com/microsoft/WindowsAppSDK/blob/release/1.2-preview1/specs/AppNotifications/AppNotificationContentSpec/AppNotificationBuilder-spec.md) on GitHub.
 
-Also see [Quickstart: App notifications in the Windows App SDK](/windows/apps/windows-app-sdk/notifications/app-notifications/app-notifications-quickstart) for an example of how to create a desktop Windows application that sends and receives local app notifications.
+Also see [Quickstart: App notifications in the Windows App SDK](./notifications/app-notifications/app-notifications-quickstart.md) for an example of how to create a desktop Windows application that sends and receives local app notifications.
 
 #### Breaking change
 
-For push notifications, when making a channel request call, apps will need to use the Azure Object ID instead of the Azure App ID. See [Quickstart: Push notification in the Windows App SDK](/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart) for details on finding your Azure Object ID.
+For push notifications, when making a channel request call, apps will need to use the Azure Object ID instead of the Azure App ID. See [Quickstart: Push notification in the Windows App SDK](./notifications/push-notifications/push-quickstart.md) for details on finding your Azure Object ID.
 
 #### Fixed issue
 
@@ -137,7 +137,7 @@ Introduced [security.accesscontrol.h](/windows/windows-app-sdk/api/win32/securit
 
 This is the latest release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
 
-In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview3 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the updated runtime and MSIX.
+In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview3 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](./downloads.md) for the updated runtime and MSIX.
 
 > [!NOTE]
 > For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
@@ -147,7 +147,7 @@ In addition to all of the [Preview 2](#version-11-preview-2-110-preview2) featur
 ### WinUI 3
 Mica and Background Acrylic are now available for WinUI 3 applications.
 
-For more information about these materials, check out [Materials in Windows 11](/windows/apps/design/signature-experiences/materials). Check out our sample code for applying Mica in C++ applications at [Using a SystemBackdropController with WinUI 3 XAML](system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3/XamlControlsGallery/ControlPagesSampleCode/SystemBackdrops) as part of the WinUI Controls Gallery.
+For more information about these materials, check out [Materials in Windows 11](../design/signature-experiences/materials.md). Check out our sample code for applying Mica in C++ applications at [Using a SystemBackdropController with WinUI 3 XAML](system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the WinUI Controls Gallery.
 
 ### Notifications
 
@@ -170,12 +170,12 @@ We've enhanced MSIX adding new and extending existing functionality via the exte
 - windows.folder
 - windows.shortcut
 
-These require the Windows App SDK framework package to be installed. See [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) to install the runtime.
+These require the Windows App SDK framework package to be installed. See [Downloads for the Windows App SDK](./downloads.md) to install the runtime.
 
 ### Environment manager
 API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.
 
-Clarification from 1.1 Preview 1: Automatic removal of any environment variable changes when an app that used environment manager is uninstalled is only available for packaged apps. Additionally, reverting environment variable changes requires installation of the Windows App SDK framework package, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the runtime.
+Clarification from 1.1 Preview 1: Automatic removal of any environment variable changes when an app that used environment manager is uninstalled is only available for packaged apps. Additionally, reverting environment variable changes requires installation of the Windows App SDK framework package, see [Downloads for the Windows App SDK](./downloads.md) for the runtime.
 
 ### Other known limitations
 Regressions from 1.1 Preview 2:
@@ -192,7 +192,7 @@ Both regressions will be restored in the next stable release.
 ## Version 1.1 Preview 2 (1.1.0-preview2)
 This is the second release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
 
-In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the updated runtime and MSIX.
+In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](./downloads.md) for the updated runtime and MSIX.
 
 > [!NOTE]
 > For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
@@ -228,7 +228,7 @@ For easier programming access to functionality that's implemented in `USER32.dll
 - Apps can show, minimize, or restore a window and specify whether the window should be activated or not at the time the call is made.
 - Apps can now set a window's client area size in Win32 coordinates.
 - We've added APIs to support z-order management of windows.
-- Apps drawing custom titlebars with [**AppWindowTitleBar.ExtendsContentIntoTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) can set a *PreferredTitleBarHeight* option. You have a choice of a *standard height* titlebar, or a *tall* titlebar that provides more room for interactive content. See [Title bar](/windows/apps/design/basics/titlebar-design) in the Fluent design guidelines for advice about when to use a tall titlebar.
+- Apps drawing custom titlebars with [**AppWindowTitleBar.ExtendsContentIntoTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) can set a *PreferredTitleBarHeight* option. You have a choice of a *standard height* titlebar, or a *tall* titlebar that provides more room for interactive content. See [Title bar](../design/basics/titlebar-design.md) in the Fluent design guidelines for advice about when to use a tall titlebar.
 
 **Known limitations:**
 - Tall titlebar support is available only on Windows 11. We are working to bring this downlevel along with other custom titlebar APIs.
@@ -248,7 +248,7 @@ C# applications have several performance improvements. For more details, see the
 ## Version 1.1 Preview 1 (1.1.0-preview1)
 This is the first release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
 
-In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the updated runtime and MSIX.
+In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](./downloads.md) for the updated runtime and MSIX.
 
 The following sections describe new and updated features, limitations, and known issues for this release.
 
@@ -297,7 +297,7 @@ Developers of packaged (including packaged with external location) and unpackage
 **Limitations:**
 - Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an **IsSupported** API to check for push notifications support.
 - Apps that are unpackaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are unpackaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
-- Windows App SDK runtime must be installed to support push notifications, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the installer.
+- Windows App SDK runtime must be installed to support push notifications, see [Downloads for the Windows App SDK](./downloads.md) for the installer.
 - A WinUI 3 app that's not running can't be background-activated via a notification. But we're working on supporting that in a future release.
 
 ### Environment manager
@@ -356,7 +356,7 @@ We now support deploying WinUI 3 apps without MSIX packaging. See [Create your f
 For more info, or to get started developing with WinUI 3, see:
 
 - [Windows UI Library (WinUI) 3](../winui/index.md)
-- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 
 ### Other limitations and known issues
 
@@ -489,7 +489,7 @@ The following sections describe new and updated features, limitations, and known
 For more info or to get started developing with WinUI 3, see:
 
 - [Windows UI Library (WinUI) 3](../winui/index.md)
-- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 
 ### Windowing
 
@@ -499,7 +499,7 @@ This release introduces updates to the [AppWindow](/windows/windows-app-sdk/api/
 
 - The **AppWindowConfiguration** class has been removed. The properties of this class is now available on the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) itself, or on the **Presenter** classes.
 - Most `bool` return values for the WinRT API methods in this space has been removed and are now `void` since these methods would always succeed.
-- The C# ImportDll calls are no longer needed for [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) and [GetWindowFromWindowId](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid). Use the .NET wrapper methods available in the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class instead.
+- The C# ImportDll calls are no longer needed for [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) and [GetWindowFromWindowId](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid). Use the .NET wrapper methods available in the [**Microsoft.UI.Win32Interop**](../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md) class instead.
 
 **Important limitations**:
 
@@ -628,7 +628,7 @@ This release of WinUI 3 is focused on building towards 1.0 Stable with bug fixes
 For more info or to get started developing with WinUI 3, see:
 
 - [Windows UI Library (WinUI) 3](../winui/index.md)
-- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 
 ### Windowing
 
@@ -691,7 +691,7 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 
 - **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
 
-- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net6.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/ProjectReunion/issues/921).
+- **.NET apps must target build 18362 or later**: Your TFM must be set to `net6.0-windows10.0.18362` or later, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or later. For more info, see the [known issue on GitHub](https://github.com/microsoft/ProjectReunion/issues/921).
 
 - **C# projects using 1.0 Preview 1 must use the following .NET SDK**: .NET 6 SDK or later (see [Download .NET](https://dotnet.microsoft.com/download) and [.NET 5 will reach End of Support on May 10, 2022](https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)).
 

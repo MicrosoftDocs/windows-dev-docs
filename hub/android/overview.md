@@ -19,8 +19,8 @@ You can also learn about using Windows Subsystem for Android™️ to update and
 There are multiple paths for developing an Android device app using the Windows operating system. These paths fall into three main types: **[Native Android development](#native-android)**, **[Cross-platform development](#cross-platform)**, and **[Android game development](#game-development)**. This overview will help you decide which development path to follow for developing an Android app and then provide [next steps](#next-steps) to help you get started using Windows to develop with:
 
 - [Native Android](native-android.md)
+- [.NET MAUI](/dotnet/maui/what-is-maui)
 - [Xamarin.Android](xamarin-android.md)
-- [Xamarin.Forms](xamarin-forms.md)
 - [React Native](../dev-environment/javascript/react-native-for-android.md)
 - [PWA with Cordova or Ionic](pwa.md)
 - [C/C++ for game development](native-android.md#use-c-or-c-for-android-game-development)
@@ -53,14 +53,6 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 - Only logic code is shared across platforms, not UI code.
 - Great for more complex apps with a device-specific user interface.
 
-[Xamarin Forms (Xamarin.Forms)](xamarin-forms.md)
-
-- UI code: XAML and .NET (with Visual Studio)
-- Logic code: C#
-- Shares around 60–90% of the logic and UI code across Android, iOS, and Windows device apps. 
-- Uses common user controls like Button, Label, Entry, ListView, StackLayout, Calendar, TabbedPage, etc. Create a Button and Xamarin Forms will figure out how to call the native button for each platform using the Binding Library to call Java or Swift code from C#.
-- Great for simple apps, like internal or Line Of Business (LOB) apps, prototypes or MVPs. Any app that can look somewhat standard or generic, utilizing a simple user interface.
-
 [React Native](../dev-environment/javascript/react-native-for-android.md)
 
 - UI code: JavaScript
@@ -89,7 +81,6 @@ Another common path for developing games for Android is to use a game engine. Th
 - [Get started with native Android development on Windows](native-android.md)
 - [Get started with Windows Subsystem for Android](./wsa/index.md)
 - [Get started developing for Android using Xamarin.Android](xamarin-android.md)
-- [Get started developing for Android using Xamarin.Forms](xamarin-forms.md)
 - [Get started developing for Android using React Native](../dev-environment/javascript/react-native-for-android.md)
 - [Get started developing a PWA for Android](pwa.md)
 - [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
