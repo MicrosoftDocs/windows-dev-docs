@@ -2,7 +2,7 @@
 title: Tutorial--Create a simple photo viewer with WinUI 3 (C#)
 description: In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding; and we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 ms.topic: article
-ms.date: 04/05/2022
+ms.date: 12/13/2022
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#
 ms.author: stwhi
 author: stevewhims
@@ -15,6 +15,9 @@ ms.localizationpriority: medium
 > For info about the benefits of WinUI 3, as well as other app type options, see [Overview of app development options](./index.md).
 
 In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding; and we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
+
+> [!TIP]
+> The source code in this topic is C#. If you're a C++ developer, then see the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) documentation. Relevant topics there include [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property), [XAML items controls; bind to a C++/WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection), and [Photo Editor C++/WinRT sample application](/windows/uwp/cpp-and-winrt-apis/photo-editor-sample). Those topics show how to use C++/WinRT to implement equivalent techniques to the ones shown here. For converting C# code to C++/WinRT, see [Move to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp).
 
 ## Install tools for the Windows App SDK
 
