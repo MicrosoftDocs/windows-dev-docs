@@ -38,6 +38,7 @@
       "recommendations": true,
       "breadcrumb_path": "/windows/arm/breadcrumb/toc.json",
       "extendBreadcrumb": true,
+      "uhfHeaderId": "MSDocsHeader-Windows",
       "_op_documentIdPathDepotMapping": {
         "./": {
           "depot_name": "MSDN.arm",
