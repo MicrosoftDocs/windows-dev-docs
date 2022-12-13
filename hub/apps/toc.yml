@@ -370,6 +370,8 @@ items:
                 href: develop/data-binding/data-binding-overview.md
               - name: Data binding in depth
                 href: develop/data-binding/data-binding-in-depth.md
+              - name: Functions in x:Bind
+                href: develop/data-binding/function-bindings.md
               - name: Bind to hierarchical data and create a master/details view
                 href: develop/data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md
               - name: Data binding and MVVM
