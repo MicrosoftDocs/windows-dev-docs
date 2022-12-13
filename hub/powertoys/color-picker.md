@@ -70,7 +70,7 @@ Color Picker has following settings:
 
 ![ColorPicker Settings screenshot.](../images/pt-colorpicker-settings.gif)
 
-To reorder the colors press the **...** buttom on the right and select **Move up** or **Move down**.
+To reorder the colors press the **...** button on the right and select **Move up** or **Move down**.
 
 To disable a color format toggle the switch on the right. Disabled color formats are not deleted but also not shown in the Color Picker Editor window.
 
