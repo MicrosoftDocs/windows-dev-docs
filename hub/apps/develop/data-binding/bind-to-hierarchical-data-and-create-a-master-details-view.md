@@ -183,7 +183,7 @@ Finally, replace the contents of the **MainWindow.xaml** file with the following
                     <DataTemplate>
                         <StackPanel Margin="5">
                             <TextBlock Text="{Binding Name}" 
-                                FontSize="15" FontWeight="Bold"/>
+                                       FontSize="15" FontWeight="Bold"/>
                             <StackPanel Orientation="Horizontal" Margin="10,10">
                                 <TextBlock Text="Wins:" Margin="0,0,5,0"/>
                                 <TextBlock Text="{Binding Wins}"/>
