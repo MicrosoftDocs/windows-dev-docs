@@ -506,7 +506,9 @@ items:
           - name: Publish your app to the Microsoft Store
             href: publish/publish-your-app/overview.md
           - name: Create your app by reserving a name
-            href: publish/publish-your-app/reserve-your-apps-name.md
+            href: publish/publish-your-app/reserve-your-apps-name.
+          - name: Publish update to your app
+            href: publish/publish-your-app/publish-update-to-your-app-on-store.md
           - name: App submissions
             href: publish/publish-your-app/create-app-submission.md
           - name: Set app pricing and availability
@@ -575,8 +577,6 @@ items:
                 href: publish/publish-your-app/avoid-common-certification-failures.md
       - name: Additional features for MSI and EXE apps
         items:
-          - name: Publish update for your EXE or MSI app on the Store
-            href: publish//update-your-app.md
           - name: Microsoft Store Submission API for MSI or EXE app 
             href: publish/store-submission-api.md
           - name: Ratings, Reviews, and Responses
