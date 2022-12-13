@@ -104,7 +104,7 @@ namespace MasterDetailsBinding
 
 ## Create the view
 
-Next, expose the binding source class from the class that represents your page of markup. We do that by adding a property of type **LeagueList** to **MainWindow**.
+Next, expose the binding source class from the class that represents your page of markup. We do that by adding a property of type `LeagueList` to **MainWindow**.
 
 ```cs
 namespace MasterDetailsBinding
