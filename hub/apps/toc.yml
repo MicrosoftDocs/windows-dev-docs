@@ -506,7 +506,7 @@ items:
           - name: Publish your app to the Microsoft Store
             href: publish/publish-your-app/overview.md
           - name: Create your app by reserving a name
-            href: publish/publish-your-app/reserve-your-apps-name.
+            href: publish/publish-your-app/reserve-your-apps-name.md
           - name: Publish update to your app
             href: publish/publish-your-app/publish-update-to-your-app-on-store.md
           - name: App submissions
