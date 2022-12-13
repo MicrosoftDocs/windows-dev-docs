@@ -4,7 +4,7 @@ title: Data binding and MVVM
 description: Data binding is at the core of the Model-View-ViewModel (MVVM) UI architectural design pattern, and enables loose coupling between UI and non-UI code.
 ms.date: 12/13/2022
 ms.topic: article
-keywords: windows 10, windows 11, windows app sdk, winui, windows ui
+keywords: windows 10, windows 11, windows app sdk, winui, windows ui, mvvm
 ms.localizationpriority: medium
 ---
 
