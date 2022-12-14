@@ -17,7 +17,7 @@ The following table provides an overview of the different release channels. For 
 
 |         | Channel                                                 | Description                                                                                                                                                                | Release cadence                                                                    | Supported? | Latest release                                                                                      |
 |---------|---------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------------------------------------------|
-| **✅**   | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                                   | Yes        | [1.2.221116.1](stable-channel.md#version-121-122211161) (11/17/2022)                                                 |
+| **✅**   | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                                   | Yes        | [1.2.2 (1.2.221209.1)](stable-channel.md#version-122-122212091) (12/14/2022)                                                 |
 | **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least two previews per stable version                                           | No         | [1.2.0-preview2](preview-channel.md#version-12-preview-2-120-preview2) (10/4/2022)                 |
 | **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.2.0-experimental2](experimental-channel.md#version-12-experimental-120-experimental2) (09/21/2022) |
 
@@ -50,7 +50,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level | End of servicing |
 |-------------------------|-----------------------|----------------------|--------------------|---------------|----------------  |
-| 1.2                     | 11/10/2022            | 1.2.221116.1         | N/A                | Current       | 11/10/2023       |
+| 1.2                     | 11/10/2022            | 1.2.221209.1         | N/A                | Current       | 11/10/2023       |
 | 1.1                     | 05/24/2022            | 1.1.5                | 09/14/2022         | Maintenance   | 05/24/2023       |
 | 1.0                     | 11/16/2021            | 1.0.4                | 06/14/2022         | Maintenance   | 11/16/2022       |
 | 0.8                     | 6/24/2021             | 0.8.12               | 08/03/2022         | Maintenance   | 6/24/2022        |
@@ -114,4 +114,3 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 - [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
-

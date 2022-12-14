@@ -32,6 +32,18 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.2
 
+### Version 1.2.2 (1.2.221209.1)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.
+
+- Fixed issue that caused the Store and side-load packages (e.g. from installer, NuGet, and bootstrapper) to fail to install if the other is already installed. For more information, see GitHub issue [#3168](https://github.com/microsoft/WindowsAppSDK/issues/3168).
+- Fixed issue causing missing elasticity effects and animation curves when scrolling with a touchpad. For more information, see GitHub issue [#7874](https://github.com/microsoft/microsoft-ui-xaml/issues/7874).
+- Fixed issue in ListView causing memory leaks.
+- Fixed issue causing the Button template to not respect the Foreground property after mouse hover. For more information, see GitHub issue [#7208](https://github.com/microsoft/microsoft-ui-xaml/issues/7208).
+- Fixed issue causing an unneeded exception when there is no MediaPlaybackItem in a MediaElement.
+- Fixed issue causing a white frame to appear in MediaPlayerElement on content transitions.
+- Fixed additional issues causing App.UnhandledException to not catch exceptions from other threads. For more information, see GitHub issues [#1259](https://github.com/microsoft/CsWinRT/issues/1259) and [#5221](https://github.com/microsoft/microsoft-ui-xaml/issues/5221).
+
 ### Version 1.2.1 (1.2.221116.1)
 
 This is a servicing release of the Windows App SDK that includes a critical bug fix for the 1.2 release.
