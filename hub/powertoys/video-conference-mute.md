@@ -4,7 +4,7 @@ description: A utility that allows to quickly mute the microphone (audio) and tu
 ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute]
+no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute, Shift]
 ---
 
 # Video Conference Mute

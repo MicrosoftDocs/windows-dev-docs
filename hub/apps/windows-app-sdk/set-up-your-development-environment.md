@@ -2,7 +2,7 @@
 title: Install tools for the Windows App SDK
 description: Configure your development computer by installing the appropriate tools to develop apps for Windows by using the Windows App SDK.
 ms.topic: how-to
-ms.date: 06/10/2022
+ms.date: 12/12/2022
 keywords: windows win32, windows app development, Windows App SDK, stable
 ms.author: stwhi
 author: stevewhims
@@ -13,7 +13,7 @@ ms.custom:
 
 # Install tools for the Windows App SDK
 
-Configure your development computer by installing the appropriate tools to develop apps for Windows with the [Windows App SDK](./index.md).
+Configure your development computer by installing the appropriate tools to develop apps for Windows with the [Windows App SDK](./index.md) and [WinUI](/windows/apps/winui/).
 
 > [!NOTE]
 > This article is for the stable release channel of the Windows App SDK. See [Windows App SDK release channels](./release-channels.md). For other channels, see [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md).
@@ -90,6 +90,8 @@ While installing, select the following workloads and components:
 
 #### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1-a)
 
+From within the Visual Studio Installer app:
+
 * On the **Workloads** tab of the installation dialog box, select as appropriate:
  
   * For C# app development using the Windows App SDK, select **.NET Desktop Development**.
@@ -102,6 +104,8 @@ While installing, select the following workloads and components:
 * On the **Individual components** tab of the installation dialog box, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 
 #### [Other Visual Studio versions](#tab/vs-other)
+
+From within the Visual Studio Installer app:
 
 * On the **Workloads** tab of the installation dialog box, select as appropriate:
 
@@ -116,13 +120,15 @@ While installing, select the following workloads and components:
 
 ## Visual Studio project and item templates
 
-The [Windows App SDK](index.md) includes Visual Studio project and item templates for creating and developing WinUI 3 apps.
+The [Windows App SDK](index.md) includes Visual Studio project and item templates for creating and developing apps that use the WinUI 3 library to implement the user interface.
 
 ### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1-b)
 
 If you followed the instructions in [Required workloads and components](#required-workloads-and-components) above, then the templates are already installed.
 
-Install [Template Studio for WinUI (C#)](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs) to accelerate the creation of new .NET WinUI apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.
+Select **C#** or **C++** as the language, **Windows** as the platform, and **WinUI** as the Project type to create a new Windows App SDK project.
+
+Optionally, install [Template Studio for WinUI (C#)](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs) to accelerate the creation of new .NET WinUI apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.
 
 ### [Visual Studio 2022 version 17.0](#tab/vs-2022-17-0)
 
