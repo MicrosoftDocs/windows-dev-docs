@@ -2,7 +2,7 @@
 title: Create your first WinUI 3 (Windows App SDK) project
 description: In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
 ms.topic: article
-ms.date: 06/10/2022
+ms.date: 12/13/2022
 keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, app sdk, Windows App SDK, WinUI 3
 ms.author: stwhi
 author: stevewhims
@@ -154,7 +154,9 @@ That method is named **myButton_Click**, and you can find the implementation of 
 
 ## Next steps
 
-To continue your development journey with the Windows App SDK, see [Develop Windows desktop apps](/windows/apps/develop/).
+This topic showed how to create a Visual Studio project for a packaged or an unpackaged app. For an example of adding functionality to such an app, see [Tutorial: Create a simple photo viewer with WinUI 3](/windows/apps/get-started/simple-photo-viewer-winui3). That topic walks through the process of building a simple app to display photos.
+
+Then, to continue your development journey with the Windows App SDK, see [Develop Windows desktop apps](/windows/apps/develop/).
 
 ## Related topics
 
