@@ -67,22 +67,6 @@ By pressing the **menu** button on your controller, you can access the main menu
 <a id="ID4EUE"></a>
 
    
-
-## Snap Mode UX  
-   
-  
-Several existing and upcoming tools in Dev Home, such as Networking and Multiplayer, are designed to be used snapped to the side while you are running your title, so that you can have easy access to tools while you are testing.   
-   
-  
-To access Snap mode, highlight the title of the appropriate tool, press the **view** button on your controller, and select **snap** from the context menu:  
- ![Screenshot of the DEV HOME page showing the Snap option highlighted.](images/dev_home_4.png)   
-  
-Dev Home will snap right. You can switch context by double tapping the Nexus button as usual.  
- ![Screenshot showing the DEV HOME page snapped to the right showing that you have access to you tools while you're testing.](images/dev_home_5.png)  
-<a id="ID4EKF"></a>
-
-   
-
 ## Customizing Dev Home  
    
   
