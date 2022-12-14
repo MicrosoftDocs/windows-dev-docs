@@ -3,4 +3,4 @@ You can make changes to a published app at any time. To submit updates, go to th
 Go to the required sections like [Pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md), [Properties](../../../apps/publish/publish-your-app/enter-app-properties.md), [Age ratings](../../../apps/publish/publish-your-app/age-ratings.md), [Packages](../../../apps/publish/publish-your-app/upload-app-packages.md), [Store listing](../../../apps/publish/publish-your-app/create-app-store-listing.md) and [Submission options](../../../apps/publish/publish-your-app/manage-submission-options.md) to make the changes you'd like and save them. Then click  **Submit** on Overview page.
 
 > [!NOTE]
-> To understand how update is done through the Store, visit [Download and install package updates from the Store](/windows/uwp/packaging/self-install-package-updates#mandatory-package-updates). 
+> To understand how the Store distributes an update, visit [Download and install package updates from the Store](/windows/uwp/packaging/self-install-package-updates#mandatory-package-updates). 
