@@ -18,6 +18,7 @@ Data binding is a way for your app's UI to display data, and optionally to stay 
 | [Data binding in depth](data-binding-in-depth.md) | This topic describes data binding features in detail. |
 | [Bind hierarchical data and create a master/details view](bind-to-hierarchical-data-and-create-a-master-details-view.md) | You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances that are bound together in a chain. |
 | [Data binding and MVVM](data-binding-and-mvvm.md) | This topic describes the Model-View-ViewModel (MVVM) UI architectural design pattern. Data binding is at the core of MVVM, and enables loose coupling between UI and non-UI code. |
+| [Functions in x:Bind](function-bindings.md) | In Windows App SDK apps, `{x:Bind}` supports using a function as the leaf step of the binding path. In this topic, learn how properties are bound to functions to do conversions, date formatting, text formatting, text concatenations, etc. |
 
 ## See also
 
