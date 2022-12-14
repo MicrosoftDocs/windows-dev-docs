@@ -2,7 +2,7 @@ We recommend you to submit updates for your EXE or MSI apps through the Store. T
 
 You can make changes to a published app at any time. To submit updates, go to the application's page in Partner Center and click  **Update** on the right-hand side for your app submission that’s live on the Store. This will create a new submission for the application, using the info from your previous submission as a starting point. 
 
-Go to the required sections like [Pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md), [Properties](../../../apps/publish/publish-your-app/enter-app-properties.md), [Age ratings](../../../apps/publish/publish-your-app/age-ratings.md), [Packages](../../../apps/publish/publish-your-app/upload-app-packages.md), [Store listing](../../../apps/publish/publish-your-app/create-app-store-listing.md) to make the changes you'd like and save them. Then click  **Publish** on Manage Store listing page.
+Go to the required sections like [Pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md), [Properties](../../../apps/publish/publish-your-app/enter-app-properties.md), [Age ratings](../../../apps/publish/publish-your-app/age-ratings.md), [Packages](../../../apps/publish/publish-your-app/upload-app-packages.md) and [Store listing](../../../apps/publish/publish-your-app/create-app-store-listing.md) to make the changes you'd like and save them. Then click  **Publish** on Manage Store listing page.
 
 > [!NOTE]
 > ### Update package details
