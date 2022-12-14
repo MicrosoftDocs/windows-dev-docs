@@ -94,7 +94,7 @@ For the purposes of evaluating applications against Smart App Control, a develop
 A zip file containing two sample policies below can be downloaded [here](https://aka.ms/sacauditpolicies).
 
 > [!NOTE]
-> You can also create your own policies. See [Windows Defender Application Control (WDAC) example base policies](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/example-wdac-base-policies) and [Create WDAC policy for lightly managed devices](/windows/security/threat-protection/windows-defender-application-control/create-wdac-policy-for-lightly-managed-devices#create-a-custom-base-policy-using-an-example-wdac-base-policy) for more information.
+> You can also create your own policies. See [Windows Defender Application Control (WDAC) example base policies](/windows/security/threat-protection/windows-defender-application-control/example-wdac-base-policies) and [Create WDAC policy for lightly managed devices](/windows/security/threat-protection/windows-defender-application-control/create-wdac-policy-for-lightly-managed-devices#create-a-custom-base-policy-using-an-example-wdac-base-policy) for more information.
 
 ### Smart App Control audit policy (SmartAppControlAudit.bin)
 
@@ -150,4 +150,4 @@ Run `citool.exe -r` from admin command line to refresh the policy 
 
 Smart App Control logs any executable that was (or would have been) blocked into the Code Integrity Event Logs.  You can find those logs by opening the Event Viewer, and then browsing to **Application and Services Logs** > **Microsoft** > **Windows** > **CodeIntegrity** > **Operational**.  
 
-Smart App Control logs evaluation mode events with event ID 3076, and enforcement mode events with event ID 3077. For more information about Smart App Control and Microsoft Defender event logging, please see [Review event logs and error codes to troubleshoot issues with Microsoft Defender Antivirus](/microsoft-365/security/defender-endpoint/troubleshoot-microsoft-defender-antivirus?view=o365-worldwide).
+Smart App Control logs evaluation mode events with event ID 3076, and enforcement mode events with event ID 3077. For more information about Smart App Control and Microsoft Defender event logging, please see [Review event logs and error codes to troubleshoot issues with Microsoft Defender Antivirus](/microsoft-365/security/defender-endpoint/troubleshoot-microsoft-defender-antivirus).
