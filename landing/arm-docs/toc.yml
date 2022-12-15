@@ -41,6 +41,8 @@ items:
         href: https://dotnet.microsoft.com/download/dotnet/7.0
   - name: How x86 emulation works on Arm
     href: ./apps-on-arm-x86-emulation.md
+  - name: Change Arm32 to Arm64
+    href: ./arm32-to-arm64.md
   - name: Build Arm64 drivers with the WDK
     href: /windows-hardware/drivers/develop/building-arm64-drivers/
   - name: Debug on Arm64
