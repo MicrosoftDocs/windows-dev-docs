@@ -4,7 +4,7 @@ title: Bind hierarchical data and create a master/details view
 description: You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to CollectionViewSource instances that are bound together in a chain.
 ms.date: 12/13/2022
 ms.topic: article
-keywords: windows 10, windows 11, winui, windows app sdk, windows ui
+keywords: windows 10, windows 11, winui, windows app sdk, windows ui, xBind
 ms.localizationpriority: medium
 ---
 
