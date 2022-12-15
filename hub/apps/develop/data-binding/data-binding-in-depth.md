@@ -13,6 +13,8 @@ dev_langs:
 
 # Data binding in depth
 
+In this article, we will describe the Windows App SDK data binding features for the APIs that reside in the [**Microsoft.UI.Xaml.Data** namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data).
+
 ## Important APIs
 
 - [**{x:Bind} markup extension**](/windows/uwp/xaml-platform/x-bind-markup-extension)
@@ -24,8 +26,6 @@ dev_langs:
 
 > [!NOTE]
 > This topic describes data binding features in detail. For a short, practical introduction, see [Data binding overview](data-binding-overview.md).
-
-This topic is about data binding for the APIs that reside in the [**Microsoft.UI.Xaml.Data** namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data).
 
 Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data. Data binding allows you to separate the concern of data from the concern of UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.
 
