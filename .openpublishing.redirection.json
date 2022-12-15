@@ -7564,6 +7564,11 @@
       "source_path": "uwp/publish/index.md",
       "redirect_url": "/windows/apps/publish/",
       "redirect_document_id": false
+    },    
+    {
+      "source_path": "hub/apps/publish/update-your-app.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/publish-update-to-your-app-on-store?pivots=store-installer-msi-exe",
+      "redirect_document_id": false
     }
   ]
 }
