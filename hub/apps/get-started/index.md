@@ -17,7 +17,7 @@ Windows offers a wide range of options for building apps, including [C++](/windo
 
 [Visual Studio](/visualstudio) is the go-to development environment for most Windows developers, providing various starting points for different types of apps, each with their own strengths and project types. Every app type includes an app model that defines the app's lifecycle, a default UI framework, and access to a comprehensive set of APIs for using Windows features.
 
-If your app will only run on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to be cross-platform, consider [.NET MAUI](/dotnet/maui/what-is-maui?view=net-maui-7.0) or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows). There are many other options available as well ([here's a list of options](/windows/dev-environment/) for fans of Python), but the above are some good starting points.
+If your app will only run on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to be cross-platform, consider [.NET MAUI](/dotnet/maui/what-is-maui), a [Progressive Web App (PWA)](/microsoft-edge/progressive-web-apps-chromium/), or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows). There are many other options available as well ([here's a list of options](/windows/dev-environment/) for fans of Python), but the above are some good starting points.
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWQwHD]
 
