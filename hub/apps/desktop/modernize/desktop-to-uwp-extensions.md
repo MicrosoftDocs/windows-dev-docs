@@ -419,6 +419,9 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
 
 If your application requires communication through a port, you can add your application to the list of firewall exceptions.
 
+> [!NOTE]
+> To use the "windows.firewallRules" extension category (see below), your package needs the **Full Trust Permission Level** restricted capability. See [Restricted capability list](/windows/uwp/packaging/app-capability-declarations#restricted-capability-list).
+
 #### XML namespace
 
 `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`

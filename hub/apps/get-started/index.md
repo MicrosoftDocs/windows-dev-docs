@@ -17,8 +17,7 @@ Windows offers a wide range of options for building apps, including [C++](/windo
 
 [Visual Studio](/visualstudio) is the go-to development environment for most Windows developers, providing various starting points for different types of apps, each with their own strengths and project types. Every app type includes an app model that defines the app's lifecycle, a default UI framework, and access to a comprehensive set of APIs for using Windows features.
 
-If your app will only run on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to be cross-platform, consider [.NET MAUI](/dotnet/maui/what-is-maui?view=net-maui-7.0) or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows). There are many other options available as well ([here's a list of options](/windows/dev-environment/) for fans of Python), but the above are some good starting points.
-
+If your app will only run on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to be cross-platform, consider [.NET MAUI](/dotnet/maui/what-is-maui), a [Progressive Web App (PWA)](/microsoft-edge/progressive-web-apps-chromium/), or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows). There are many other options available as well ([here's a list of options](/windows/dev-environment/) for fans of Python), but the above are some good starting points.
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWQwHD]
 
@@ -35,7 +34,7 @@ If you have already installed the required developer tools, you are ready to [Cr
 
 ## Cross-platform options
 
-WinUI also serves as the basis for cross-platform technologies that provide great native Windows experiences using a variety of coding languages. These frameworks harness the power of WinUI on Windows, while also enabling execution on other operating systems.
+WinUI also serves as the basis for cross-platform technologies that provide great native Windows experiences using a variety of coding languages. .NET MAUI and React Native for Windows harness the power of WinUI on Windows, while also enabling execution on other operating systems. Another cross-platform option, Progressive Web Apps (PWAs), are websites that function like installed, native apps on Windows and other supported platforms, while functioning like regular websites on browsers.
 
 ### [.NET MAUI](#tab/net-maui)
 
@@ -60,6 +59,30 @@ For more information about .NET MAUI, see the following links:
 - [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources/)
 - [Video Series - .NET MAUI for Beginners](/shows/dotnet-maui-for-beginners/)
 - [Build 2022: Build native apps for any device with .NET and Visual Studio](https://www.youtube.com/watch?v=IbwgHJPoE-M)
+
+### [Progressive Web Apps (PWAs)](#tab/pwa)
+
+[Progressive Web Apps (PWAs)](/microsoft-edge/progressive-web-apps-chromium/) provide access to open web technologies to provide cross-platform interoperability. PWAs provide your users with an app-like experience that's customized for their devices. PWAs are websites that are [progressively enhanced](https://alistapart.com/article/understandingprogressiveenhancement) to function like installed, native apps on supporting platforms (including Windows), while functioning like regular websites on other browsers.
+
+When installed on Windows, PWAs are just like other apps. For example:
+
+- A PWA can be added to the Start menu.
+- A PWA can be pinned to the Taskbar.
+- PWAs can handle files.
+- PWAs can run when the user signs in.
+- PWAs can be submitted to the Microsoft Store where millions of Windows users can discover and easily install them alongside other Windows apps.
+
+> [!div class="button"]
+> [Get started with PWAs](/microsoft-edge/progressive-web-apps-chromium/how-to/)
+
+For more information about building PWAs, see the following links:
+
+- [Overview of PWAs](/microsoft-edge/progressive-web-apps-chromium/)
+- [Publish a PWA to the Microsoft Store](/microsoft-edge/progressive-web-apps-chromium/how-to/microsoft-store)
+- [Re-engage users with badges, notifications, and push messages](/microsoft-edge/progressive-web-apps-chromium/how-to/notifications-badges)
+- [Build PWA-driven widgets](/microsoft-edge/progressive-web-apps-chromium/how-to/widgets)
+- [Progressive Web App demos](/microsoft-edge/progressive-web-apps-chromium/demo-pwas)
+- [PWABuilder - Helping developers build and publish PWAs](https://www.pwabuilder.com/)
 
 ### [React Native for Windows](#tab/rnw)
 
