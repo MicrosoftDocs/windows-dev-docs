@@ -60,6 +60,30 @@ For more information about .NET MAUI, see the following links:
 - [Video Series - .NET MAUI for Beginners](/shows/dotnet-maui-for-beginners/)
 - [Build 2022: Build native apps for any device with .NET and Visual Studio](https://www.youtube.com/watch?v=IbwgHJPoE-M)
 
+### [Progressive Web Apps (PWAs)](#tab/pwa)
+
+[Progressive Web Apps (PWAs)](/microsoft-edge/progressive-web-apps-chromium/) provide access to open web technologies to provide cross-platform interoperability. PWAs provide your users with an app-like experience that's customized for their devices. PWAs are websites that are [progressively enhanced](https://alistapart.com/article/understandingprogressiveenhancement) to function like installed, native apps on supporting platforms (including Windows), while functioning like regular websites on other browsers.
+
+When installed on Windows, PWAs are just like other apps. For example:
+
+- A PWA can be added to the Start menu.
+- A PWA can be pinned to the Taskbar.
+- PWAs can handle files.
+- PWAs can run when the user signs in.
+- PWAs can be submitted to the Microsoft Store where millions of Windows users can discover and easily install them alongside other Windows apps.
+
+> [!div class="button"]
+> [Get started with PWAs](/microsoft-edge/progressive-web-apps-chromium/how-to/)
+
+For more information about building PWAs, see the following links:
+
+- [Overview of PWAs](/microsoft-edge/progressive-web-apps-chromium/)
+- [Publish a PWA to the Microsoft Store](/microsoft-edge/progressive-web-apps-chromium/how-to/microsoft-store)
+- [Re-engage users with badges, notifications, and push messages](/microsoft-edge/progressive-web-apps-chromium/how-to/notifications-badges)
+- [Build PWA-driven widgets](/microsoft-edge/progressive-web-apps-chromium/how-to/widgets)
+- [Progressive Web App demos](/microsoft-edge/progressive-web-apps-chromium/demo-pwas)
+- [PWABuilder - Helping developers build and publish PWAs](https://www.pwabuilder.com/)
+
 ### [React Native for Windows](#tab/rnw)
 
 [React Native](https://reactnative.dev) is a development platform which allows building cross-platform apps.
@@ -87,30 +111,6 @@ For more information about React Native for Windows, see the following links:
 - [API reference](https://microsoft.github.io/react-native-windows/docs/Native-API-Reference)
 - [Community modules directory](https://reactnative.directory)
 - [More resources](https://microsoft.github.io/react-native-windows/resources)
-
-### [Progressive Web Apps (PWAs)](#tab/pwa)
-
-[Progressive Web Apps (PWAs)](/microsoft-edge/progressive-web-apps-chromium/) provide access to open web technologies to provide cross-platform interoperability. PWAs provide your users with an app-like experience that's customized for their devices. PWAs are websites that are [progressively enhanced](https://alistapart.com/article/understandingprogressiveenhancement) to function like installed, native apps on supporting platforms (including Windows), while functioning like regular websites on other browsers.
-
-When installed on Windows, PWAs are just like other apps. For example:
-
-- A PWA can be added to the Start menu.
-- A PWA can be pinned to the Taskbar.
-- PWAs can handle files.
-- PWAs can run when the user signs in.
-- PWAs can be submitted to the Microsoft Store where millions of Windows users can discover and easily install them alongside other Windows apps.
-
-> [!div class="button"]
-> [Get started with PWAs](/microsoft-edge/progressive-web-apps-chromium/how-to/)
-
-For more information about building PWAs, see the following links:
-
-- [Overview of PWAs](/microsoft-edge/progressive-web-apps-chromium/)
-- [Publish a PWA to the Microsoft Store](/microsoft-edge/progressive-web-apps-chromium/how-to/microsoft-store)
-- [Re-engage users with badges, notifications, and push messages](/microsoft-edge/progressive-web-apps-chromium/how-to/notifications-badges)
-- [Build PWA-driven widgets](/microsoft-edge/progressive-web-apps-chromium/how-to/widgets)
-- [Progressive Web App demos](/microsoft-edge/progressive-web-apps-chromium/demo-pwas)
-- [PWABuilder - Helping developers build and publish PWAs](https://www.pwabuilder.com/)
 
 ---
 
