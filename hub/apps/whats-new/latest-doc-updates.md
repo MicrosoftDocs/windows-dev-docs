@@ -2,7 +2,7 @@
 description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows API and developer documentation
 ms.topic: article
-ms.date: 11/13/2022
+ms.date: 12/16/2022
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -10,7 +10,7 @@ author: QuinnRadich
 
 # Latest updates to the Windows developer docs
 
-The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of November 13th, 2022.
+The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of December 16th, 2022.
 
 Note: For information regarding Windows 11, please see [What's cool for developers](https://developer.microsoft.com/windows/windows-for-developers/) and the [Windows Developer Center](https://developer.microsoft.com/windows/).
 
@@ -31,20 +31,12 @@ Highlights this month include:
 * [Tutorial — Create a .NET MAUI app using the Microsoft Graph SDK](/windows/apps/windows-dotnet-maui/tutorial-graph-api)
 
 
-## New content
-
-* [Windows Widgets (for Insiders)](/windows/apps/design/widgets)
-* [Windows on Arm](/windows/arm/overview)
-* [The Windows Dev Kit 2023](/windows/arm/dev-kit)
-
 ## Updated content
 
-* [Windows Application Development Best Practices](../get-started/best-practices.md)
-* [Accessibility testing](../design/accessibility/accessibility-testing.md)
+* [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment)
+* [Get started with Windows: Selecting a development technology](/windows/apps/get-started/)
 * [Windows on Arm](/windows/arm/overview)
-* [FileOpenPicker Class](/uwp/api/windows.storage.pickers.fileopenpicker?view=winrt-22621)
-* [User Security Attributes](/windows/win32/ad/security-properties)
-* [Getting started with Visual Studio for Windows 10 app development](/training/modules/get-started-with-visual-studio-for-windows10-app-dev/)
+* [Data access with Windows](/windows/apps/develop/data-access/)
 
 ## Developer tool updates
 
@@ -52,7 +44,7 @@ Highlights this month include:
 * [Windows Subsystem for Android updates](/windows/android/wsa/)
 * [Windows Package Manager updates](/windows/package-manager/)
 * [PowerToys](/windows/powertoys/install)
-* [Keyboard scan codes updated](/windows/win32/inputdev/about-keyboard-input).
+
 
 <hr>
 
@@ -63,113 +55,57 @@ The following list of topics have seen significant updates in the past month, as
 ## Win32 Conceptual
 
 <ul>
-<li><a href="/windows/desktop/DevNotes/vbagetexprsrv">VBAGetExprSrv</a></li>
+<li><a href="/windows/desktop/Controls/em-posfromchar">EM_POSFROMCHAR message (Winuser.h)</a></li>
+<li><a href="/windows/desktop/Controls/em-setrect">EM_SETRECT message (Winuser.h)</a></li>
+<li><a href="/windows/desktop/Controls/property-typedefs">Property Identifiers (Windows Controls)</a></li>
+<li><a href="/windows/desktop/DirectShow/directshow-base-classes">DirectShow base classes</a></li>
+<li><a href="/windows/desktop/DirectShow/directshow-samples">DirectShow sample apps</a></li>
 <li><a href="/windows/desktop/SecCNG/cng-algorithm-pseudo-handles">CNG Algorithm Pseudo-handles</a></li>
-<li><a href="/windows/desktop/SecCNG/cng-helper-functions">CNG Helper Functions</a></li>
-<li><a href="/windows/desktop/SecCNG/processprng">ProcessPrng function</a></li>
-<li><a href="/windows/desktop/SecCNG/systemprng">SystemPrng function</a></li>
-<li><a href="/windows/desktop/WinHttp/collect-traces">Collect WinHTTP traces</a></li>
-<li><a href="/windows/desktop/com/ole-com-object-viewer">OLE/COM Object Viewer</a></li>
-<li><a href="/windows/desktop/direct3d12/callshader-function">CallShader function</a></li>
-<li><a href="/windows/desktop/direct3d12/direct3d-12-enumerations">Core enumerations</a></li>
-<li><a href="/windows/desktop/direct3d12/direct3d-12-interfaces">Core interfaces (Direct3D 12 Graphics)</a></li>
-<li><a href="/windows/desktop/direct3d12/direct3d-12-structures">Core structures (Direct3D 12 Graphics)</a></li>
-<li><a href="/windows/desktop/direct3darticles/high-dynamic-range">Use DirectX with Advanced Color on high/standard dynamic range displays</a></li>
-<li><a href="/windows/desktop/directx-sdk--august-2009-">Where is the DirectX SDK?</a></li>
-<li><a href="/windows/desktop/gdiplus/-gdiplus-font-flat">Font Functions</a></li>
-<li><a href="/windows/desktop/gdiplus/-gdiplus-fontfamily-flat">FontFamilyFunctions</a></li>
-<li><a href="/windows/desktop/gdiplus/-gdiplus-graphics-flat">Graphics Functions</a></li>
-<li><a href="/windows/desktop/gdiplus/-gdiplus-pen-flat">Pen Functions (GDI+)</a></li>
-<li><a href="/windows/desktop/menurc/using-icons">Using Icons</a></li>
-<li><a href="/windows/desktop/uxguide/text-ui">User Interface Text</a></li>
+<li><a href="/windows/desktop/SecCrypto/signer-digest-sign-info">SIGNER_SPC_CHAIN_INFO structure</a></li>
+<li><a href="/windows/desktop/SecCrypto/signersignex3">SignerSignEx3 function</a></li>
+<li><a href="/windows/desktop/WinHttp/option-flags">Option flags (Winhttp.h)</a></li>
+<li><a href="/windows/desktop/direct3d11/bc7-format">BC7 Format</a></li>
+<li><a href="/windows/desktop/direct3d12/shared-heaps">Shared heaps</a></li>
+<li><a href="/windows/desktop/direct3d9/d3dxloadsurfacefromfile">D3DXLoadSurfaceFromFile function (D3dx9tex.h)</a></li>
+<li><a href="/windows/desktop/direct3d9/d3dxloadsurfacefrommemory">D3DXLoadSurfaceFromMemory function (D3dx9tex.h)</a></li>
+<li><a href="/windows/desktop/direct3d9/queries">Queries (Direct3D 9)</a></li>
+<li><a href="/windows/desktop/gdi/bitmap-header-types">Bitmap Header Types</a></li>
+<li><a href="/windows/desktop/gdi/bitmap-storage">Bitmap Storage</a></li>
+<li><a href="/windows/desktop/gdi/rectangle-structures">Rectangle Structures</a></li>
+<li><a href="/windows/desktop/inputdev/using-keyboard-input">Using Keyboard Input</a></li>
+<li><a href="/windows/desktop/properties/property-bag-functions">Property Bag Functions</a></li>
+<li><a href="/windows/desktop/shell/reg-shell-exts">Registering Shell Extension Handlers</a></li>
 </ul>
 
-## Windows UWP Conceptual
 
+
+## UWP reference
 <ul>
-<li><a href="/windows/uwp/apps-for-education/index">Develop apps for education.</a></li>
-<li><a href="/windows/uwp/monetize/interstitial-ads">Interstitial ads</a></li>
-<li><a href="/windows/uwp/porting/desktop-to-uwp-migrate">Share code between a desktop application and a UWP app</a></li>
-<li><a href="/windows/uwp/porting/index">Porting apps to Windows 10</a></li>
-<li><a href="/windows/uwp/porting/w8x-to-uwp-root">Move from Windows Runtime 8.x to UWP'</a></li>
-<li><a href="/windows/uwp/publish/app-submissions">App submissions</a></li>
-<li><a href="/windows/uwp/publish/ratings-and-reviews">Ratings and reviews in the Microsoft Store</a></li>
-<li><a href="/windows/uwp/security/index">Security</a></li>
-<li><a href="/windows/uwp/security/microsoft-passport">Windows Hello</a></li>
+<li><a href="/uwp/api/windows.storage.streams.ibuffer">Windows.Storage.Streams.IBuffer</a></li>
+<li><a href="/uwp/api/windows.web.http.httpcookie.name">Windows.Web.Http.HttpCookie.Name</a></li>
+<li><a href="/uwp/api/windows.web.http.httpcookie.value">Windows.Web.Http.HttpCookie.Value</a></li>
 </ul>
-
 
 
 ## Win32 API reference
 
 <ul>
-<li><a href="/windows/win32/api/_bltooth/index">Bluetooth devices reference </a></li>
-<li><a href="/windows/win32/api/_processthreadsapi/index">Processes and threads </a></li>
-<li><a href="/windows/win32/api/d3d12/ne-d3d12-d3d12_blend">D3D12_BLEND (d3d12.h) </a></li>
-<li><a href="/windows/win32/api/processthreadsapi/index">Processthreadsapi.h header </a></li>
-</ul>
-
-## Windows App SDK reference
-
-<ul>
-<li><a href="/uwp/api/windows.data.text.alternatewordform">Windows.Data.Text.AlternateWordForm</a></li>
-<li><a href="/uwp/api/windows.devices.sms.cellularclass">Windows.Devices.Sms.CellularClass</a></li>
-<li><a href="/uwp/api/windows.devices.sms.deletesmsmessageoperation">Windows.Devices.Sms.DeleteSmsMessageOperation</a></li>
-<li><a href="/uwp/api/windows.devices.sms.deletesmsmessagesoperation">Windows.Devices.Sms.DeleteSmsMessagesOperation</a></li>
-<li><a href="/uwp/api/windows.devices.sms.getsmsdeviceoperation">Windows.Devices.Sms.GetSmsDeviceOperation</a></li>
-<li><a href="/uwp/api/windows.devices.sms.getsmsmessageoperation">Windows.Devices.Sms.GetSmsMessageOperation</a></li>
-<li><a href="/uwp/api/windows.devices.sms.getsmsmessagesoperation">Windows.Devices.Sms.GetSmsMessagesOperation</a></li>
-<li><a href="/uwp/api/windows.devices.sms.ismsbinarymessage">Windows.Devices.Sms.ISmsBinaryMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.ismsdevice">Windows.Devices.Sms.ISmsDevice</a></li>
-<li><a href="/uwp/api/windows.devices.sms.ismsmessage">Windows.Devices.Sms.ISmsMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.ismsmessagebase">Windows.Devices.Sms.ISmsMessageBase</a></li>
-<li><a href="/uwp/api/windows.devices.sms.ismstextmessage">Windows.Devices.Sms.ISmsTextMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.sendsmsmessageoperation">Windows.Devices.Sms.SendSmsMessageOperation</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsappmessage">Windows.Devices.Sms.SmsAppMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsbinarymessage">Windows.Devices.Sms.SmsBinaryMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsbroadcastmessage">Windows.Devices.Sms.SmsBroadcastMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsbroadcasttype">Windows.Devices.Sms.SmsBroadcastType</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsdataformat">Windows.Devices.Sms.SmsDataFormat</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsdevice">Windows.Devices.Sms.SmsDevice</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsdevice">Windows.Devices.Sms.SmsDevice2</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsdevicemessagestore">Windows.Devices.Sms.SmsDeviceMessageStore</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsdevicestatus">Windows.Devices.Sms.SmsDeviceStatus</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsencodedlength">Windows.Devices.Sms.SmsEncodedLength</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsencoding">Windows.Devices.Sms.SmsEncoding</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsfilteractiontype">Windows.Devices.Sms.SmsFilterActionType</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsfilterrule">Windows.Devices.Sms.SmsFilterRule</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsfilterrules">Windows.Devices.Sms.SmsFilterRules</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsmessageclass">Windows.Devices.Sms.SmsMessageClass</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsmessagefilter">Windows.Devices.Sms.SmsMessageFilter</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsmessagereceivedeventargs">Windows.Devices.Sms.SmsMessageReceivedEventArgs</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsmessageregistration">Windows.Devices.Sms.SmsMessageRegistration</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsmessagetype">Windows.Devices.Sms.SmsMessageType</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsreceivedeventdetails">Windows.Devices.Sms.SmsReceivedEventDetails</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smssendmessageresult">Windows.Devices.Sms.SmsSendMessageResult</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsstatusmessage">Windows.Devices.Sms.SmsStatusMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smstextmessage">Windows.Devices.Sms.SmsTextMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smstextmessage">Windows.Devices.Sms.SmsTextMessage2</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smsvoicemailmessage">Windows.Devices.Sms.SmsVoicemailMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.smswapmessage">Windows.Devices.Sms.SmsWapMessage</a></li>
-<li><a href="/uwp/api/windows.devices.sms.windows.devices.sms">N:Windows.Devices.Sms</a></li>
-<li><a href="/uwp/api/windows.devices.wifi.wifiondemandhotspotnetwork">Windows.Devices.WiFi.WiFiOnDemandHotspotNetwork</a></li>
-<li><a href="/uwp/api/windows.foundation.iclosable.close">Windows.Foundation.IClosable.Close</a></li>
-<li><a href="/uwp/api/windows.foundation.imemorybufferreference">Windows.Foundation.IMemoryBufferReference</a></li>
-<li><a href="/uwp/api/windows.management.policies.namedpolicy">Windows.Management.Policies.NamedPolicy</a></li>
-<li><a href="/uwp/api/windows.networking.networkoperators.dataclasses">Windows.Networking.NetworkOperators.DataClasses</a></li>
-<li><a href="/uwp/api/windows.networking.networkoperators.ussdmessage">Windows.Networking.NetworkOperators.UssdMessage</a></li>
-<li><a href="/uwp/api/windows.networking.networkoperators.ussdreply">Windows.Networking.NetworkOperators.UssdReply</a></li>
-<li><a href="/uwp/api/windows.networking.networkoperators.ussdsession">Windows.Networking.NetworkOperators.UssdSession</a></li>
-<li><a href="/uwp/api/windows.networking.sockets.messagewebsocket">Windows.Networking.Sockets.MessageWebSocket</a></li>
-<li><a href="/uwp/api/windows.networking.sockets.socketmessagetype">Windows.Networking.Sockets.SocketMessageType</a></li>
-<li><a href="/uwp/api/windows.networking.sockets.streamwebsocket">Windows.Networking.Sockets.StreamWebSocket</a></li>
-<li><a href="/uwp/api/windows.networking.sockets.websocketerror">Windows.Networking.Sockets.WebSocketError</a></li>
-<li><a href="/uwp/api/windows.storage.pickers.filesavepicker">Windows.Storage.Pickers.FileSavePicker</a></li>
-<li><a href="/uwp/api/windows.system.appurihandlerregistration">Windows.System.AppUriHandlerRegistration</a></li>
-<li><a href="/uwp/api/windows.system.virtualkeymodifiers">Windows.System.VirtualKeyModifiers</a></li>
-<li><a href="/uwp/api/windows.ui.input.gesturerecognizer">Windows.UI.Input.GestureRecognizer</a></li>
-<li><a href="/uwp/api/windows.ui.xaml.controls.gridview">Windows.UI.Xaml.Controls.GridView</a></li>
-<li><a href="/uwp/api/windows.ui.xaml.controls.gridviewitem">Windows.UI.Xaml.Controls.GridViewItem</a></li>
-<li><a href="/uwp/api/windows.ui.xaml.controls.listview">Windows.UI.Xaml.Controls.ListView</a></li>
-<li><a href="/uwp/api/windows.ui.xaml.controls.listviewitem">Windows.UI.Xaml.Controls.ListViewItem</a></li>
+<li><a href="/windows/win32/api/tdh/ne-tdh-_tdh_in_type">TDH_IN_TYPE (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/ne-tdh-_tdh_out_type">TDH_OUT_TYPE (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/ne-tdh-payload_operator">PAYLOAD_OPERATOR (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-emi_map_format">EMI_MAP_FORMAT (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-emi_map_input">EMI_MAP_INPUT (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-emi_map_name">EMI_MAP_NAME (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-emi_map_output">EMI_MAP_OUTPUT (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-pfi_field_name">PFI_FIELD_NAME (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-tei_channel_name">TEI_CHANNEL_NAME (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-tei_level_name">TEI_LEVEL_NAME (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-tei_map_name">TEI_MAP_NAME (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-tei_opcode_name">TEI_OPCODE_NAME (tdh.h) </a></li>
+<li><a href="/windows/win32/api/tdh/nf-tdh-tei_task_name">TEI_TASK_NAME (tdh.h) </a></li>
+<li><a href="/windows/win32/api/wingdi/nf-wingdi-getdibits">GetDIBits function (wingdi.h) </a></li>
+<li><a href="/windows/win32/api/wingdi/nf-wingdi-getpath">GetPath function (wingdi.h) </a></li>
+<li><a href="/windows/win32/api/wingdi/ns-wingdi-bitmapinfo">BITMAPINFO (wingdi.h) </a></li>
+<li><a href="/windows/win32/api/wingdi/ns-wingdi-dibsection">DIBSECTION (wingdi.h) </a></li>
+<li><a href="/windows/win32/api/winsock2/nf-winsock2-accept">accept function (winsock2.h) </a></li>
 </ul>
