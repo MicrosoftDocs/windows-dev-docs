@@ -39,6 +39,7 @@ You can create a selection by using the `selectAll` or `markMode` actions. The `
 | <kbd>Pgdn</kbd> | Move down by a page (viewport) |
 | <kbd>Ctrl</kbd> + <kbd>Home</kbd> | Move to the beginning of the buffer |
 | <kbd>Ctrl</kbd> + <kbd>End</kbd> | Move to the end of the buffer |
+| <kbd>Enter</kbd> | Copy the active selection |
 
 When in mark mode, you can use <kbd>Tab</kbd> or <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to the next or previous hyperlink in the buffer. Windows Terminal can automatically detect hyperlinks if [`experimental.detectUrls`](/windows/terminal/customize-settings/interaction#automatically-detect-urls-and-make-them-clickable) is enabled.
 
