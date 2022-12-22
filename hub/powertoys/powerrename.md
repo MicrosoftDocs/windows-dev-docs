@@ -1,7 +1,7 @@
 ---
 title: PowerToys PowerRename utility for Windows
 description: A windows shell extension for bulk renaming of files
-ms.date: 04/27/2022
+ms.date: 12/22/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, regex]
@@ -25,7 +25,7 @@ In this demo, all instances of the file name "foo" are replaced with "foobar". S
 
 ## PowerRename window
 
-After selecting files in Windows File Explorer, right-clicking and selecting **PowerRename** (which will appear only when enabled in PowerToys), the PowerRename window will appear. The number of items you've selected will be displayed, along with search and replace values, a list of options, and a preview window displaying results of the search and replace values you've entered.
+After selecting files in Windows File Explorer, right-clicking and selecting **PowerRename** (which will appear only if enabled in PowerToys), the PowerRename window will appear. The number of items you've selected will be displayed, along with search and replace values, a list of options, and a preview window displaying results of the search and replace values you've entered.
 
 ![PowerRename Menu screenshot.](../images/powerrename-menu.png)
 
@@ -37,7 +37,7 @@ Enter text or a [regular expression](https://wikipedia.org/wiki/Regular_expressi
 
 Enter text to replace the _Search for_ value entered previously. You can view the original file name and renamed file name in the _Preview_ window.
 
-### Use Regular Expressions
+### Use regular expressions
 
 If checked, the Search value will be interpreted as a [regular expression](https://wikipedia.org/wiki/Regular_expression) (regex). The Replace value can also contain regex variables (see [examples below](#regular-expressions)). If not checked, the Search value will be interpreted as plain text to be replaced with the text in the Replace field.
 
@@ -54,40 +54,40 @@ For example, given the file name: `powertoys-powerrename.txt`:
 
 The value of the renamed file would result in:
 
-- Match all occurrences (unchecked): `supertoys-powerrename.txt`
-- Match all occurrences (checked): `supertoys-superrename.txt`
+- Match all occurrences unchecked: `supertoys-powerrename.txt`
+- Match all occurrences checked: `supertoys-superrename.txt`
 
-### Case Sensitive
+### Case sensitive
 
-If checked, the text specified in the Search field will only match text in the items if the text is the same case. Case matching will be insensitive (not recognizing a difference between upper and lowercase letters) by default.
+If checked, the text specified in the _Search_ field will only match text in the items if the text is the same case. Case matching will be insensitive (not recognizing a difference between upper and lowercase letters) by default.
 
 ### Apply to: Filename only
 
-Only the file name (not the file extension) is modified by the operation. For example: `txt.txt` → `NewName.txt`
+Only the file name (not the file extension) is modified by the operation. For example: `txt.txt` → `NewName.txt`.
 
 ### Apply to: Extension only
 
-Only the file extension is modified by the operation. For example: `txt.txt` → `txt.NewExtension`
+Only the file extension is modified by the operation. For example: `txt.txt` → `txt.NewExtension`.
 
-### Include Files
+### Include files
 
 Deselecting causes files to not be included in the operation.
 
-### Include Folders
+### Include folders
 
 Deselecting causes folders to not be included in the operation.
 
-### Include Subfolders
+### Include subfolders
 
 Deselecting causes files within folders to not be included in the operation. By default, all subfolder items are included.
 
-### Text Formatting
+### Text formatting
 
 Select between four options to either convert items to be all lowercase, all uppercase, title case (first character of name is capitalized), or capitalize each word.
 
-### Enumerate Items
+### Enumerate items
 
-Appends a numeric suffix to file names that were modified in the operation. For example: `foo.jpg` -> `foo (1).jpg`
+Appends a numeric suffix to file names that were modified in the operation. For example: `foo.jpg` → `foo (1).jpg`
 
 ## Replace using file creation date and time
 
@@ -131,7 +131,7 @@ The value of the renamed file would result in:
 - `Nov-02-20-powertoys.png`
 - `Nov-03-20-powertoys-menu.png`
 
-## Regular Expressions
+## Regular expressions
 
 For most use cases, a simple search and replace is sufficient. There may be occasions, however, in which complicated renaming tasks require more control. [Regular Expressions](https://wikipedia.org/wiki/Regular_expression) can help.
 
@@ -167,7 +167,7 @@ _When using the variables, the "Match all occurrences" option must be enabled._
 | `(.*).png`                                              | `foo_$1.png` | Prepends "foo\_" to the existing file name for PNG files                             |
 | `(.*).png`                                              | `$1_foo.png` | Appends "\_foo" to the existing file name for PNG files                              |
 | `(.*)`                                                  | `$1.txt`     | Appends ".txt" extension to existing file                                            |
-| `(^\w+\.$)¦(^\w+$)`                                     | `$2.txt`     | Appends ".txt" extension to existing file name only if it does not have an extension |
+| `(^\w+\.$)\|(^\w+$)`                                    | `$2.txt`     | Appends ".txt" extension to existing file name only if it does not have an extension |
 | `(\d\d)-(\d\d)-(\d\d\d\d)` or `(\d{2})-(\d{2})-(\d{4})` | `$3-$2-$1`   | Move numbers in the filename: "29-03-2020" becomes "2020-03-29"                      |
 | `^(.{n})(.*)` or `(.*)(.{n})$`                          | `$1foo$2`    | Insert "foo" _n_ characters from the beginning or the end, respectively              |
 | `^.{n}` or `.{n}$`                                      | nothing      | Trim _n_ characters from the beginning or the end, respectively                      |
@@ -180,15 +180,15 @@ There are great examples/cheatsheets available online to help you:
 
 [ECMAScript Regular Expressions Tutorial](https://o7planning.org/en/12219/ecmascript-regular-expressions-tutorial)
 
-## File List Filters
+## File list filters
 
 Filters can be used in PowerRename to narrow the results of the rename. Use the _Preview_ window to check expected results. Click the column headers to switch between filters.
 
 - **Original**, the first column in the _Preview_ window switches between:
-  - Checked: The file is selected to be renamed.
-  - Unchecked: The file is not selected to be renamed (even though it fits the value entered in the search criteria).
+  - Checked: The file is selected to be renamed
+  - Unchecked: The file is not selected to be renamed (even though it fits the value entered in the search criteria)
 
-- **Renamed**, the second column in the _Preview_ window can be toggled.
+- **Renamed**, the second column in the _Preview_ window can be toggled:
   - The default preview will show all selected files, with only files matching the _Search for_ criteria displaying the updated rename value.
   - Selecting the _Renamed_ header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
@@ -196,7 +196,7 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
 
 ## Settings
 
-Additional options can be configured from the PowerRename tab in the Settings menu as described below:
+Additional options can be configured from the PowerRename tab in the Settings, as described below:
 
 | Setting | Description |
 | :--- | :--- |
