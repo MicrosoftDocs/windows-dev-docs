@@ -26,7 +26,7 @@ Icons can appear within apps and outside them:
     :::column:::
         **Icons inside the app**
 
-        ![Screenshot of icons in a music app](images/icons/inside-icons.png)
+        ![Screenshot of icons in a music app.](images/icons/inside-icons.png)
 Inside your app, you use icons to represent an action, such as copying text or going to the settings page.
     :::column-end:::
 	:::column:::
@@ -220,5 +220,5 @@ To learn more about command bars, see the [Command bar](../controls/command-bar.
 
 ## Related articles
 
-- [App icons and logos](https://learn.microsoft.com/windows/apps/design/style/iconography/overview)
+- [App icons and logos](./iconography/overview.md)
 - [AnimatedIcon](../controls/animated-icon.md)
