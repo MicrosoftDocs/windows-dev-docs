@@ -108,7 +108,7 @@ Scalable Vector Graphics (SVG) resources are ideal for icons, because they alway
     :::column-end:::
 :::row-end:::
 
-### Geometry objects
+### Geometry object
 :::row:::
     :::column:::
 Like SVG files, geometries are a vector-based resource, so they always look sharp. However, creating a geometry is complicated because you have to individually specify each point and curve. It's a good choice only if you need to modify the icon while your app is running (to animate it, for example). For instructions, see [Move and draw commands for geometries](/windows/uwp/xaml-platform/move-draw-commands-syntax). 
