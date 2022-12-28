@@ -39,7 +39,7 @@ Outside your app, Windows uses an icon to represent the app on the Start menu an
 
 This article describes icons within your app. To learn about icons outside your app (app icons), see the [Iconography in Windows](./iconography/overview.md) article.
 
-## When to use icons
+## Know when to use icons
 
 Icons can save space, but when should you use them? 
 
@@ -73,11 +73,11 @@ Don't use an icon if its meaning isn't clear, or if making it clear requires a c
     :::column-end:::
 :::row-end:::
 
-## Using the right type of icon
+## Use the right type of icon
 
 There are many ways to create an icon. You can use a symbol font like Segoe MDL2 Assets. You can create your own vector-based image. You can even use a bitmap image, although we don't recommend it. Here's a summary of the ways that you can add an icon to your app. 
 
-### Use a predefined icon
+### Predefined icon
 
 :::row:::
     :::column:::
@@ -88,7 +88,7 @@ Microsoft provides more than 1,000 icons in the form of the Segoe MDL2 Assets fo
     :::column-end:::
 :::row-end:::
 
-### Use a font
+### Font
 :::row:::
     :::column:::
 You don't have to use the Segoe MDL2 Assets font. You can use any font that the user has installed on their system, such as Wingdings or Webdings.
@@ -98,7 +98,7 @@ You don't have to use the Segoe MDL2 Assets font. You can use any font that the 
     :::column-end:::
 :::row-end:::
 
-### Use an SVG file
+### SVG file
 :::row:::
     :::column:::
 Scalable Vector Graphics (SVG) resources are ideal for icons, because they always look sharp at any size or resolution. Most drawing applications can export to SVG. For instructions, see [SVGImageSource](/uwp/api/windows.ui.xaml.media.imaging.svgimagesource).
@@ -108,7 +108,7 @@ Scalable Vector Graphics (SVG) resources are ideal for icons, because they alway
     :::column-end:::
 :::row-end:::
 
-### Use geometry objects
+### Geometry objects
 :::row:::
     :::column:::
 Like SVG files, geometries are a vector-based resource, so they always look sharp. However, creating a geometry is complicated because you have to individually specify each point and curve. It's a good choice only if you need to modify the icon while your app is running (to animate it, for example). For instructions, see [Move and draw commands for geometries](/windows/uwp/xaml-platform/move-draw-commands-syntax). 
@@ -118,7 +118,7 @@ Like SVG files, geometries are a vector-based resource, so they always look shar
     :::column-end:::
 :::row-end:::
 
-### Use a bitmap image
+### Bitmap image
 :::row:::
     :::column:::
 You can use a bitmap image (such as PNG, GIF, or JPEG), although we don't recommend it.
@@ -131,13 +131,13 @@ Bitmap images are created at a specific size, so they have to be scaled up or do
     :::column-end:::
 :::row-end:::
 
-## Make the icon do something
+## Make an icon do something
 
 After you have an icon, the next step is to make it do something by associating it with a command or a navigation action. The best way is to add the icon to a button or a command bar.
 
 ![Screenshot that shows a command bar with Share, Edit, and Delete icons, along with an ellipsis for an overflow menu.](images/icons/app-bar-desktop.svg)
 
-You can also animate an icon to draw attention to a UI component, such as the next button in a tutorial, or simply reflect the action that's associated with the icon in an entertaining and interesting way. For more information, see [AnimatedIcon](../controls/animated-icon.md).
+You can also animate an icon to draw attention to a UI component, such as the next button in a tutorial, or to reflect the action that's associated with the icon in an entertaining and interesting way. For more information, see [AnimatedIcon](../controls/animated-icon.md).
 
 ## Create an icon button
 
@@ -162,7 +162,7 @@ Set the button's font family to `Segoe MDL2 Assets` and its content property to 
 :::row:::
     :::column span="2":::
         <b>Step 2</b><br>
-You can use one of the icon element objects: [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon),
+Use one of the icon element objects: [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon),
 [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon), 
 [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon), 
 [ImageIcon](/windows/winui/api/microsoft.ui.xaml.controls.imageicon?view=winui-3.0&preserve-view=true), or
@@ -186,7 +186,7 @@ You can use one of the icon element objects: [BitmapIcon](/uwp/api/windows.ui.xa
 
 :::row:::
     :::column span:::
-When you have a series of commands that go together, such as cut/copy/paste or a set of drawing commands for a photo-editing program, put them together on a [command bar](../controls/command-bar.md). A command bar takes one or more app bar buttons or app bar toggle buttons, each of which represents an action. Each button has an [Icon](/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) property that you use to control which icon it displays. There's a variety of ways to specify the icon. 
+When you have a series of commands that go together, such as cut/copy/paste or a set of drawing commands for a photo-editing program, put them together on a [command bar](../controls/command-bar.md). A command bar takes one or more app bar buttons or app bar toggle buttons, each of which represents an action. Each button has an [Icon](/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) property that you use to control which icon it displays. There are a variety of ways to specify the icon. 
     :::column-end:::
 	:::column:::
         ![Example of a command bar with icons.](images/icons/create-icon-command-bar.svg)

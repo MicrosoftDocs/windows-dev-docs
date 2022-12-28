@@ -42,7 +42,7 @@ Glyphs in Segoe Fluent Icons follow three aesthetic principles:
 
 ![A properly sized printer icon.](images/iconography_IconSizing.svg)
 
-Segoe Fluent Icons font metrics were developed to match how designers and developers are accustomed to working with SVG and bitmap icons.
+Font metrics for Segoe Fluent Icons match how designers and developers are accustomed to working with SVG and bitmap icons.
 
 Each font glyph is designed so that the footprint of the icon area is a square em. An icon with a 16-epx font size is the equivalent of a 16x16-epx icon, to make sizing and positioning more predictable.
 
@@ -75,7 +75,7 @@ You can visually construct system icon glyphs by combining a base icon with a mo
 
 ### Layering
 
-Icon layering is a technique that you use to overlap two different glyphs. We recommend using icon layering to create a different state of the same icon (for example, an active or selected state).
+Icon layering is a technique that you use to overlap two glyphs. We recommend using icon layering to create a different state of the same icon (for example, an active or selected state).
 
 ![A black and white folder icon plus a beige folder icon with no outlines equals a beige folder icon with a black outline.](images/iconography_IconLayering.svg)
 
