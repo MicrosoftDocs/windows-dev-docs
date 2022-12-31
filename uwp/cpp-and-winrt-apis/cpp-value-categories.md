@@ -19,7 +19,7 @@ This topic introduces and describes the various categories of values (and refere
 
 You'll doubtless have heard of *lvalues* and *rvalues*. But you might not think of them in the terms that this topic presents.
 
-Every expression in C++ yields a value that belongs to one of the five categories listed above. There are aspects of the C++ language&mdash;its facilies and rules&mdash;that demand a proper understanding of these value categories, as well as references to them. These aspects include taking the address of a value, copying a value, moving a value, and forwarding a value on to another function. This topic doesn't go into all of those aspects in depth, but it provides foundational information for a solid understanding of them.
+Every expression in C++ yields a value that belongs to one of the five categories listed above. There are aspects of the C++ language&mdash;its facilities and rules&mdash;that demand a proper understanding of these value categories, as well as references to them. These aspects include taking the address of a value, copying a value, moving a value, and forwarding a value on to another function. This topic doesn't go into all of those aspects in depth, but it provides foundational information for a solid understanding of them.
 
 The info in this topic is framed in terms of Stroustrup's analysis of value categories by the two independent properties of identity and movability [Stroustrup, 2013].
 
