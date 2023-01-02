@@ -67,7 +67,7 @@ For a more complete listing of available Bluetooth services, see the [GATT Servi
 
 ## Custom Bluetooth LE services
 
-Custom Bluetooth LE services use the following protocol identifier: {bb7bb05e-5972-42b5-94fc76eaa7084d49}
+Custom Bluetooth LE services use the following protocol identifier: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
 
 Custom profiles are defined with their own defined GUIDs. This custom GUID should be used for **System.Devices.AepService.ServiceClassId**.
 
