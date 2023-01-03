@@ -323,7 +323,7 @@ In this code, we save the image that is being shared by the user into a apps loc
 
 ### Add desktop extensions to the UWP project
 
-Add the **Windows Desktop Extensions for the UWP** extension to the UWP app project.
+Add the **Windows Desktop Extensions for the UWP** extension to the UWP app project. You'll see more than one version of the extension (for example, 10.0.18362.0 and 10.0.19041.0). For info about how to choose a version, see [Extension SDKs, and how to reference them](/uwp/extension-sdks/device-families-overview#extension-sdks-and-how-to-reference-them).
 
 ![desktop extension](images/desktop-to-uwp/desktop-extensions.png)
 
