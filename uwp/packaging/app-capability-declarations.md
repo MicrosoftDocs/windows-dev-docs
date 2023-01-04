@@ -1,5 +1,4 @@
 ---
-ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: App capability declarations
 description: Capabilities must be declared in your Windows app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
 ms.date: 12/16/2022
@@ -7,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
+ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 ---
 
 # App capability declarations
@@ -87,9 +87,6 @@ Device capabilities allow your app to access peripheral and internal devices. De
 | **User Data Tasks** | The **userDataTasks" device capability provides access to APIs in the [Windows.ApplicationModel.UserDataTasks](/uwp/api/windows.applicationmodel.userdatatasks) namespace, which provide access to the task items that are stored in Windows by Exchange ActiveSync (EAS) connections and other provider apps. |
 | **User Notification Listener** | The **userNotificationListener" device capability provides access to APIs in the [Windows.UI.Notifications.Management](/uwp/api/windows.ui.notifications.management) namespace, which enable management of user notifications. |
 
-
-<span id="special-and-restricted-capabilities" />
-
 ## Restricted capabilities
 
 If your app declares any restricted capabilities, then you must provide info during the [app submission process](/windows/apps/publish/app-submissions) in order to be approved to publish your app to the Microsoft Store. You provide this info on the [Submission options](/windows/apps/publish/manage-submission-options.md#restricted-capabilities) page of your submission, explaining how your app uses each restricted capability that it declares.
@@ -131,8 +128,6 @@ If we don't approve your use of the capability, your submission will fail certif
 > If your submission uses a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live), you must request approval in advance rather than providing info on the **Submission options** page. To do so, visit the [Windows Developer support page](https://developer.microsoft.com/windows/support). Select Developer support topic **Dashboard issue**, Issue Type **App submissions**, and Subcategory **Other**. Then describe how you are using the capability and why it is necessary for your product. If you do not provide all the information necessary, your request will be denied. You may also be asked to provide more information. Note that this process typically takes 5 business days or longer, so please submit your request well in advance.
 >
 > You may also use this method of requesting approval (rather than providing this info during your submission), whether or not you're using a development sandbox, if you prefer to confirm that you are approved to use a restricted capability before you start your submission.
-
-<span id="restricted-and-special-use-capability-list" />
 
 ### Restricted capability list
 
