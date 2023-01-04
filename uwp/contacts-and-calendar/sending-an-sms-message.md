@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This topic shows you how to launch the compose SMS dialog to allow the user to send an SMS message. You can pre-populate the fields of the SMS with data before showing the dialog. The message will not be sent until the user taps the send button.
 
-To call this code, declare the **chat**, **smsSend**, and **chatSystem** capabilities in your package manifest. These are [restricted capabilities](../packaging/app-capability-declarations.md#restricted-capabilities) but you can use them in your app. You need approval only if you intend to publish your app to the Store. See [Account types, locations, and fees](/windows/apps/publish/partner-center/account-types-locations-and-fees).
+To call this code, declare the **chat**, **smsSend**, and **chatSystem** capabilities in your package manifest. These are [restricted capabilities](../packaging/app-capability-declarations.md#special-and-restricted-capabilities) but you can use them in your app. You need approval only if you intend to publish your app to the Store. See [Account types, locations, and fees](/windows/apps/publish/partner-center/account-types-locations-and-fees).
 
 ## Launch the compose SMS dialog
 

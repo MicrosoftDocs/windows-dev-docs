@@ -87,6 +87,8 @@ Device capabilities allow your app to access peripheral and internal devices. De
 | **User Data Tasks** | The **userDataTasks" device capability provides access to APIs in the [Windows.ApplicationModel.UserDataTasks](/uwp/api/windows.applicationmodel.userdatatasks) namespace, which provide access to the task items that are stored in Windows by Exchange ActiveSync (EAS) connections and other provider apps. |
 | **User Notification Listener** | The **userNotificationListener" device capability provides access to APIs in the [Windows.UI.Notifications.Management](/uwp/api/windows.ui.notifications.management) namespace, which enable management of user notifications. |
 
+<span id="special-and-restricted-capabilities"></span>
+
 ## Restricted capabilities
 
 If your app declares any restricted capabilities, then you must provide info during the [app submission process](/windows/apps/publish/app-submissions) in order to be approved to publish your app to the Microsoft Store. You provide this info on the [Submission options](/windows/apps/publish/manage-submission-options.md#restricted-capabilities) page of your submission, explaining how your app uses each restricted capability that it declares.
