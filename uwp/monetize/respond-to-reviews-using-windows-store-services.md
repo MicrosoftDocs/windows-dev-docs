@@ -20,7 +20,7 @@ The following steps describe the end-to-end process:
 > [!NOTE]
 > In addition to using the Microsoft Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](/windows/apps/publish/respond-to-customer-reviews).
 
-<span id="prerequisites" />
+<span id="prerequisites"></span>
 
 ## Step 1: Complete prerequisites for using the Microsoft Store reviews API
 
@@ -42,7 +42,7 @@ To associate an Azure AD application with your Partner Center account and retrie
 
 4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#manage-keys).
 
-<span id="obtain-an-azure-ad-access-token" />
+<span id="obtain-an-azure-ad-access-token"></span>
 
 ## Step 2: Obtain an Azure AD access token
 
@@ -65,7 +65,7 @@ For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_sec
 
 After your access token expires, you can refresh it by following the instructions [here](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens).
 
-<span id="call-the-windows-store-reviews-api" />
+<span id="call-the-windows-store-reviews-api"></span>
 
 ## Step 3: Call the Microsoft Store reviews API
 

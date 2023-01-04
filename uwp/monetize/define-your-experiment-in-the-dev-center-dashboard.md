@@ -13,8 +13,8 @@ After you [create a project and define remote variables in Partner Center](creat
 
 For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
 
-<span id="get-an-api-key" />
-<span id="create-an-experiment" />
+<span id="get-an-api-key"></span>
+<span id="create-an-experiment"></span>
 
 ## Create your experiment
 
@@ -38,7 +38,7 @@ For a walkthrough that demonstrates the end-to-end process of creating and runni
 > [!NOTE]
 > Partner Center reports only the first conversion event for each user view in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.
 
-<span id="define-the-variations-and-settings-for-the-experiment" />
+<span id="define-the-variations-and-settings-for-the-experiment"></span>
 
 ### Define the remote variables and variations for your experiment
 
@@ -52,7 +52,7 @@ Next, define the remote [variables](run-app-experiments-with-a-b-testing.md#term
 
 4. Edit the variable values for each unique variation in the experiment (that is, the variations other than the control variation).
 
-<span id="save-and-activate-your-experiment" />
+<span id="save-and-activate-your-experiment"></span>
 
 ### Save and activate your experiment
 
@@ -63,7 +63,7 @@ If you are satisfied with the parameters of your experiment and you are ready to
 > [!IMPORTANT]
 > A project can only contain one active experiment at a time. After you activate an experiment, you can no longer modify the experiment parameters unless you selected the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
 
-<span id="test_experiments"/>
+<span id="test_experiments"></span>
 
 ## Create an experiment for internal testing
 

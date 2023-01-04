@@ -68,7 +68,7 @@ First, you'll need to indicate which type of add-on you are offering. This selec
 > [!NOTE]
 > You won't be able to change the product type after you save this page to create the add-on. If you choose the wrong product type, you can always delete your in-progress add-on submission and start over by creating a new add-on.
 
-<span id="durable" />
+<span id="durable"></span>
 
 #### Durable
 

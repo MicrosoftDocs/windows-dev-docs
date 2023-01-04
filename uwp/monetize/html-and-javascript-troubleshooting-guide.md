@@ -26,7 +26,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 ## HTML
 
-<span id="html-notappearing"/>
+<span id="html-notappearing"></span>
 
 ### AdControl not appearing
 
@@ -135,7 +135,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 12. Live values for [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) and [AdUnitId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
-<span id="html-blackboxblinksdisappears"/>
+<span id="html-blackboxblinksdisappears"></span>
 
 ### Black box blinks and disappears
 
@@ -162,7 +162,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 3.  The **AdControl** is behaving normally. By default, the **AdControl** will collapse when it cannot display an ad. If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.
 
-<span id="html-adsnotrefreshing"/>
+<span id="html-adsnotrefreshing"></span>
 
 ### Ads not refreshing
 
@@ -212,11 +212,11 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
 
-<span id="js"/>
+<span id="js"></span>
 
 ## JavaScript
 
-<span id="js-adcontrolnotappearing"/>
+<span id="js-adcontrolnotappearing"></span>
 
 ### AdControl not appearing
 
@@ -282,7 +282,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 6.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
-<span id="js-blackboxblinksdisappears"/>
+<span id="js-blackboxblinksdisappears"></span>
 
 ### Black box blinks and disappears
 
@@ -331,7 +331,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
 
-<span id="js-adsnotrefreshing"/>
+<span id="js-adsnotrefreshing"></span>
 
 ### Ads not refreshing
 

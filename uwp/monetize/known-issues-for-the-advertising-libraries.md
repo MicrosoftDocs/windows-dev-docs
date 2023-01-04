@@ -58,7 +58,7 @@ Test ads can be shown, even when you are expecting live ads. This can happen in 
 When a live ad unit is serving test ads, the ad unit’s status shows **Active and serving test ads** in Partner Center. This does not currently apply to phone apps.
 
 
-<span id="reference_errors"/>
+<span id="reference_errors"></span>
 
 ## Reference errors caused by targeting Any CPU in your project
 
@@ -80,7 +80,7 @@ When you create your app packages for store submission (as shown in the followin
 
 JavaScript/HTML apps must not place elements into the reserved MAX-10 range of z-order. The sole exception is an interrupt overlay, such as an inbound call notification for a Skype app.
 
-<span id="bkmk-ui"/>
+<span id="bkmk-ui"></span>
 
 ## Do not use borders
 

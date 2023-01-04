@@ -18,7 +18,7 @@ The following steps describe the end-to-end process of using the Microsoft Store
 3.  Before you call a method in the Microsoft Store submission API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
 4.  [Call the Microsoft Store submission API](#call-the-windows-store-submission-api).
 
-<span id="not_supported" />
+<span id="not_supported"></span>
 
 > [!IMPORTANT]
 > If you use this API to create a submission for an app, package flight, or add-on, be sure to make further changes to the submission only by using the API, rather than in Partner Center. If you use Partner Center to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
@@ -29,7 +29,7 @@ The following steps describe the end-to-end process of using the Microsoft Store
 > [!NOTE]
 > This API cannot be used with apps or add-ons that use mandatory app updates and Store-managed consumable add-ons. If you use the Microsoft Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use Partner Center to manage the submissions for the app or add-on.
 
-<span id="prerequisites" />
+<span id="prerequisites"></span>
 
 ## Step 1: Complete prerequisites for using the Microsoft Store submission API
 
@@ -51,7 +51,7 @@ Before you start writing code to call the Microsoft Store submission API, make s
 
   * If you are creating or updating an add-on submission and you need to include an icon, [prepare the icon](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on).
 
-<span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
+<span id="associate-an-azure-ad-application-with-your-windows-partner-center-account"></span>
 
 ### How to associate an Azure AD application with your Partner Center account
 
@@ -68,7 +68,7 @@ Before you can use the Microsoft Store submission API, you must associate an Azu
 
 4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#manage-keys).
 
-<span id="obtain-an-azure-ad-access-token" />
+<span id="obtain-an-azure-ad-access-token"></span>
 
 ## Step 2: Obtain an Azure AD access token
 
@@ -108,7 +108,7 @@ After you have an Azure AD access token, you can call methods in the Microsoft S
 | Add-ons | Get, create, or delete add-ons for your apps, and then get, create, or delete submissions for the add-ons. For more information about these methods, see the following articles: <ul><li>[Manage add-ons](manage-add-ons.md)</li><li>[Manage add-on submissions](manage-add-on-submissions.md)</li></ul> |
 | Package flights | Get, create, or delete package flights for your apps, and then get, create, or delete submissions for the package flights. For more information about these methods, see the following articles: <ul><li>[Manage package flights](manage-flights.md)</li><li>[Manage package flight submissions](manage-flight-submissions.md)</li></ul> |
 
-<span id="code-samples"/>
+<span id="code-samples"></span>
 
 ## Code examples
 

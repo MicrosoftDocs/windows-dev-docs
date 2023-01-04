@@ -127,7 +127,7 @@ These methods return a JSON response body with a [Targeting profile](#targeting-
 }
 ```
 
-<span id="targeting-profile"/>
+<span id="targeting-profile"></span>
 
 ## Targeting profile object
 
@@ -146,7 +146,7 @@ The request and response bodies for these methods contain the following fields. 
 |  supplyType   |  array   |  One or more integers that identify the type of inventory where the campaign's ads will be shown. For a complete list of integers, see [Supply type values](#supplytype-values) in this article.      |   No    |  null   |     No    |
 
 
-<span id="age-values"/>
+<span id="age-values"></span>
 
 ### Age values
 
@@ -183,7 +183,7 @@ The following example shows the response body for this method.
 }
 ```
 
-<span id="gender-values"/>
+<span id="gender-values"></span>
 
 ### Gender values
 
@@ -215,7 +215,7 @@ The following example shows the response body for this method.
 ```
 
 
-<span id="osversion-values"/>
+<span id="osversion-values"></span>
 
 ### OS version values
 
@@ -264,7 +264,7 @@ The following example shows the response body for this method.
 ```
 
 
-<span id="devicetype-values"/>
+<span id="devicetype-values"></span>
 
 ### Device type values
 
@@ -296,7 +296,7 @@ The following example shows the response body for this method.
 ```
 
 
-<span id="supplytype-values"/>
+<span id="supplytype-values"></span>
 
 ### Supply type values
 
@@ -327,7 +327,7 @@ The following example shows the response body for this method.
 }
 ```
 
-<span id="country-code-values"/>
+<span id="country-code-values"></span>
 
 ### Country code values
 

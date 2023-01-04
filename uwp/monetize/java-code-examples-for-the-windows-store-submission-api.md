@@ -34,7 +34,7 @@ The following example shows the imports statements used by all of the code examp
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/MainExample.java" range="1-64":::
 
-<span id="token" />
+<span id="token"></span>
 
 ## Obtain an Azure AD access token
 
@@ -42,7 +42,7 @@ The following example demonstrates how to [obtain an Azure AD access token](crea
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="65-95":::
 
-<span id="create-add-on" />
+<span id="create-add-on"></span>
 
 ## Create an add-on
 
@@ -50,7 +50,7 @@ The following example demonstrates how to [create](create-an-add-on.md) and then
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="310-345":::
 
-<span id="create-package-flight" />
+<span id="create-package-flight"></span>
 
 ## Create a package flight
 
@@ -58,7 +58,7 @@ The following example demonstrates how to [create](create-a-flight.md) and then 
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="185-221":::
 
-<span id="create-app-submission" />
+<span id="create-app-submission"></span>
 
 ## Create an app submission
 
@@ -73,7 +73,7 @@ The following example shows how to use several methods in the Microsoft Store su
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="97-183":::
 
-<span id="create-add-on-submission" />
+<span id="create-add-on-submission"></span>
 
 ## Create an add-on submission
 
@@ -88,7 +88,7 @@ The following example shows how to use several methods in the Microsoft Store su
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="347-431":::
 
-<span id="create-flight-submission" />
+<span id="create-flight-submission"></span>
 
 ## Create a package flight submission
 
@@ -103,7 +103,7 @@ The following example shows how to use several methods in the Microsoft Store su
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="223-308":::
 
-<span id="utilities" />
+<span id="utilities"></span>
 
 ## Utility methods to upload submission files and handle request responses
 
@@ -114,7 +114,7 @@ The following utility methods demonstrate these tasks:
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="433-490":::
 
-<span id="code-listing" />
+<span id="code-listing"></span>
 
 ## Complete code listing
 

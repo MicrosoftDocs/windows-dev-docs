@@ -22,7 +22,7 @@ Use the **Monetize** &gt; **In-app ads** page in [Partner Center](https://partne
 
 For more information about how to integrate these SDKs with your apps to display ads, see [Display ads in your app with the Microsoft Advertising SDK](/windows/uwp/monetize/display-ads-in-your-app).
 
-<span id="create-ad-unit" />
+<span id="create-ad-unit"></span>
 
 ## Create ad units
 
@@ -49,7 +49,7 @@ To create an ad unit for a [banner ad](/windows/uwp/monetize/banner-ads), [inter
 
 After you create the new ad unit, it appears in the table of available ad units in the **Monetize** &gt; **In-app ads** page.
 
-<span id="available-ad-units" />
+<span id="available-ad-units"></span>
 
 ## Review and edit ad units
 
@@ -69,7 +69,7 @@ To edit the [mediation settings](#mediation) for a UWP ad unit or the [COPPA com
 > [!NOTE]
 > If an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from Partner Center. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](https://developer.microsoft.com/windows/support).
 
-<span id="mediation" />
+<span id="mediation"></span>
 
 ## Mediation settings
 
@@ -99,7 +99,7 @@ To configure ad mediation settings for a UWP ad unit in your app:
 7. For each market where you want to override the default mediation configuration, select the market in the **Target** drop-down, and update the ad network selections and ranking.
 8. Click **Create ad unit** (if you are creating a new ad unit) or **Save** (if you are editing an existing ad unit).
 
-<span id="paid-networks" />
+<span id="paid-networks"></span>
 
 ### Supported paid ad networks
 
@@ -121,7 +121,7 @@ The following table lists the paid networks we currently support for each ad typ
 | Undertone | Select this option to serve ads from [Undertone](https://www.undertone.com/). | Banner interstitial |
 
 
-<span id="other-networks" />
+<span id="other-networks"></span>
 
 ### Other ad networks
 
@@ -133,7 +133,7 @@ The following table lists the other networks we currently support for each ad ty
 | Microsoft House ads | If you [create a promotional ad campaign for one of your apps](/windows/uwp/monetize/index) and configure this campaign as a [house ad campaign](/windows/uwp/monetize/index), select this options to show ads from this campaign. | Banner, Banner interstitial  |
 
 
-<span id="network-markets" />
+<span id="network-markets"></span>
 
 ### Supported markets for ad networks
 
@@ -146,7 +146,7 @@ The available ad networks serve ads in all [supported markets](/windows/apps/pub
 | smartclip | Austria, Belgium, Denmark, Finland, Germany, Italy, Netherlands, Norway, Sweden, Switzerland  |
 | Undertone | United States |
 
-<span id="coppa" />
+<span id="coppa"></span>
 
 ## COPPA compliance
 

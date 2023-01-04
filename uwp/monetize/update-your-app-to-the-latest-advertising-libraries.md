@@ -41,7 +41,7 @@ If you have an existing app (already in the Store or still under development) th
 > [!NOTE]
 > If you no longer have the .appx package for your app but you do still have a development computer with the version of Visual Studio and the advertising SDK that was used to build your app, you can regenerate the .appx package in Visual Studio.
 
-<span id="part-1" />
+<span id="part-1"></span>
 
 ## Part 1: Determine whether you need to update your UWP app
 
@@ -54,7 +54,7 @@ Follow the instructions in the following sections to determine if you need to up
   * If you do not see a Microsoft.Advertising.dll file, your UWP app already uses the latest available advertising SDK and you do not need to make any changes to your project.
 
 
-<span id="part-2" />
+<span id="part-2"></span>
 
 ## Part 2: Install the latest SDK
 

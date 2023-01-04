@@ -70,7 +70,7 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | The total number of rows in the data result for the query.       |
 
 
-<span id="subscription-acquisition-values" />
+<span id="subscription-acquisition-values"></span>
 
 ### Subscription acquisition values
 

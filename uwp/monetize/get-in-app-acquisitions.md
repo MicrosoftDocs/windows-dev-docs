@@ -101,7 +101,7 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | The total number of rows in the data result for the query.    |
 
 
-<span id="add-on-acquisition-values" />
+<span id="add-on-acquisition-values"></span>
 
 ### Add-on acquisition values
 

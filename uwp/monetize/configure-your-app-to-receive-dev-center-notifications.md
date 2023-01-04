@@ -47,7 +47,7 @@ To register your app to receive targeted push notifications from Partner Center:
 > [!NOTE]
 > When you call the **RegisterNotificationChannelAsync** method, a file named MicrosoftStoreEngagementSDKId.txt is created in the local app data store for your app (the folder returned by the [ApplicationData.LocalFolder](/uwp/api/Windows.Storage.ApplicationData.LocalFolder) property). This file contains an ID that is used by the targeted push notifications infrastructure. Make sure that your app does not modify or delete this file. Otherwise, your users may receive multiple instances of notifications, or the notifications may not behave properly in other ways.
 
-<span id="notification-customers" />
+<span id="notification-customers"></span>
 
 ### How targeted push notifications are routed to customers
 
@@ -81,7 +81,7 @@ The way you call this method depends on the activation type of the push notifica
 
   :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="Run":::
 
-<span id="unregister" />
+<span id="unregister"></span>
 
 ## Unregister for push notifications
 

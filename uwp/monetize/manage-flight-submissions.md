@@ -13,7 +13,7 @@ The Microsoft Store submission API provides methods you can use to manage packag
 > [!IMPORTANT]
 > If you use the Microsoft Store submission API to create a submission for a package flight, be sure to make further changes to the submission only by using the API, rather than Partner Center. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
-<span id="methods-for-package-flight-submissions" />
+<span id="methods-for-package-flight-submissions"></span>
 
 ## Methods for managing package flight submissions
 
@@ -201,7 +201,7 @@ After a gradual package rollout is enabled for a package flight submission, you 
 
 The Microsoft Store submission API methods for managing package flight submissions use the following JSON data resources.
 
-<span id="flight-submission-object" />
+<span id="flight-submission-object"></span>
 
 ### Flight submission resource
 
@@ -261,7 +261,7 @@ This resource has the following values.
 | targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
 | notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](/windows/apps/publish/publish-your-app/notes-for-certification?pivots=store-installer-msix). |
 
-<span id="status-details-object" />
+<span id="status-details-object"></span>
 
 ### Status details resource
 
@@ -273,7 +273,7 @@ This resource contains additional details about the status of a submission. This
 |  warnings               |   object      | An array of [status detail resources](#status-detail-object) that contain warning details for the submission.     |
 |  certificationReports               |     object    |   An array of [certification report resources](#certification-report-object) that provide access to the certification report data for the submission. You can examine these reports for more information if the certification fails.    |  
 
-<span id="status-detail-object" />
+<span id="status-detail-object"></span>
 
 ### Status detail resource
 
@@ -284,7 +284,7 @@ This resource contains additional information about any related errors or warnin
 |  code               |    string     |   A [submission status code](#submission-status-code) that describes the type of error or warning. |  
 |  details               |     string    |  A message with more details about the issue.     |
 
-<span id="certification-report-object" />
+<span id="certification-report-object"></span>
 
 ### Certification report resource
 
@@ -295,7 +295,7 @@ This resource provides access to the certification report data for a submission.
 |     date            |    string     |  The date and time the report was generated, in ISO 8601 format.    |
 |     reportUrl            |    string     |  The URL at which you can access the report.    |
 
-<span id="flight-package-object" />
+<span id="flight-package-object"></span>
 
 ### Flight package resource
 
@@ -335,7 +335,7 @@ This resource has the following values.
 | minimumDirectXVersion | string | The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul> |
 | minimumSystemRam      | string | The minimum RAM that is required by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>Memory2GB</li></ul> |
 
-<span id="package-delivery-options-object" />
+<span id="package-delivery-options-object"></span>
 
 ### Package delivery options resource
 
@@ -364,7 +364,7 @@ This resource has the following values.
 | isMandatoryUpdate            | boolean | Indicates whether you want to treat the packages in this submission as mandatory for self-installing app updates. For more information about mandatory packages for self-installing app updates, see [Download and install package updates for your app](../packaging/self-install-package-updates.md).    |  
 | mandatoryUpdateEffectiveDate | date    | The date and time when the packages in this submission become mandatory, in ISO 8601 format and UTC time zone. |
 
-<span id="package-rollout-object" />
+<span id="package-rollout-object"></span>
 
 ### Package rollout resource
 
@@ -386,7 +386,7 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 
 These methods use the following enums.
 
-<span id="submission-status-code" />
+<span id="submission-status-code"></span>
 
 ### Submission status code
 

@@ -17,7 +17,7 @@ To display ads in your UWP apps for Windows 10 and Windows 11, install the [Micr
 > [!NOTE]
 > If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK version 10.0.14393 (Anniversary Update) or later, you must also install the [WinJS](https://github.com/winjs/winjs) library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK version 10.0.14393 (Anniversary Update) this library must be installed separately.
 
-<span id="install-msi" />
+<span id="install-msi"></span>
 
 ## Install via MSI
 
@@ -40,7 +40,7 @@ To install the Microsoft Advertising SDK via the MSI installer:
 
   Otherwise, if you are using the Microsoft Advertising SDK for the first time in your project, you are now ready to [add a reference to the Microsoft Advertising SDK](#reference).
 
-<span id="install-nuget" />
+<span id="install-nuget"></span>
 
 ## Install via NuGet
 
@@ -71,7 +71,7 @@ To install the Microsoft Advertising SDK in a specific UWP project via NuGet:
 
   Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add a reference to the Microsoft Advertising SDK](#reference).
 
-<span id="reference" />
+<span id="reference"></span>
 
 ## Add a reference to the Microsoft Advertising SDK
 
@@ -94,7 +94,7 @@ For walkthroughs that show how to get started using the advertising APIs, see th
 * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
 * [AdControl in HTML 5 and JavaScript](adcontrol-in-html-5-and-javascript.md)
 
-<span id="framework" />
+<span id="framework"></span>
 
 ## Understanding framework packages in the Microsoft Advertising SDK
 

@@ -22,7 +22,7 @@ You can alternatively create and manage ad campaigns using Partner Center, and a
 > [!NOTE]
 > Any developer with a Partner Center account can use the Microsoft Store promotions API to manage ad campaigns for their apps. Media agencies can also request access to this API to run ad campaigns on behalf of their advertisers. If you are a media agency who wants to know more about this API or request access to it, send your request to storepromotionsapi@microsoft.com.
 
-<span id="prerequisites" />
+<span id="prerequisites"></span>
 
 ## Step 1: Complete prerequisites for using the Microsoft Store promotions API
 
@@ -46,7 +46,7 @@ To associate an Azure AD application with your Partner Center account and retrie
 
 4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#manage-keys).
 
-<span id="obtain-an-azure-ad-access-token" />
+<span id="obtain-an-azure-ad-access-token"></span>
 
 ## Step 2: Obtain an Azure AD access token
 
@@ -69,7 +69,7 @@ For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_sec
 
 After your access token expires, you can refresh it by following the instructions [here](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens).
 
-<span id="call-the-windows-store-promotions-api" />
+<span id="call-the-windows-store-promotions-api"></span>
 
 ## Step 3: Call the Microsoft Store promotions API
 

@@ -34,7 +34,7 @@ For an example of a JSON-formatted string returned by [StoreProduct.ExtendedJson
 
 :::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json" range="1-729":::
 
-<span id="product-example" />
+<span id="product-example"></span>
 
 ### Example
 
@@ -50,7 +50,7 @@ For an example of a JSON-formatted string returned by [StoreAppLicense.ExtendedJ
 
 :::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json" range="1-80":::
 
-<span id="license-example" />
+<span id="license-example"></span>
 
 ### Example
 

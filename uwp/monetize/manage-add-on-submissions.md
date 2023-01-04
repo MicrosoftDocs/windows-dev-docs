@@ -14,7 +14,7 @@ The Microsoft Store submission API provides methods you can use to manage add-on
 > [!IMPORTANT]
 > If you use the Microsoft Store submission API to create a submission for an add-on, be sure to make further changes to the submission only by using the API, rather than making changes in Partner Center. If you use Partner Center to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
-<span id="methods-for-add-on-submissions" />
+<span id="methods-for-add-on-submissions"></span>
 
 ## Methods for managing add-on submissions
 
@@ -151,7 +151,7 @@ For more information, see our [StoreBroker page on GitHub](https://github.com/Mi
 
 The Microsoft Store submission API methods for managing add-on submissions use the following JSON data resources.
 
-<span id="add-on-submission-object" />
+<span id="add-on-submission-object"></span>
 
 ### Add-on submission resource
 
@@ -239,7 +239,7 @@ This resource has the following values.
 | fileUploadUrl           | string  | The shared access signature (SAS) URI for uploading any packages for the submission. If you are adding new packages for the submission, upload the ZIP archive that contains the packages to this URI. For more information, see [Create an add-on submission](#create-an-add-on-submission).  |
 | friendlyName  | string  |  The friendly name of the submission, as shown in Partner Center. This value is generated for you when you create the submission.  |
 
-<span id="listing-object" />
+<span id="listing-object"></span>
 
 ### Listing resource
 
@@ -251,7 +251,7 @@ This resource contains [listing info for an add-on](/windows/apps/publish/publis
 |  icon               |   object      |An [icon resource](#icon-object) that contains data for the icon for the add-on listing.    |
 |  title               |     string    |   The title for the add-on listing.   |  
 
-<span id="icon-object" />
+<span id="icon-object"></span>
 
 ### Icon resource
 
@@ -262,7 +262,7 @@ This resource contains icon data for an add-on listing. This resource has the fo
 |  fileName               |    string     |   The name of the icon file in the ZIP archive that you uploaded for the submission. The icon must be a .png file that measures exactly 300 x 300 pixels.   |     
 |  fileStatus               |   string      |  The status of the icon file. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
-<span id="pricing-object" />
+<span id="pricing-object"></span>
 
 ### Pricing resource
 
@@ -276,7 +276,7 @@ This resource contains pricing info for the add-on. This resource has the follow
 |  isAdvancedPricingModel               |   boolean      |  If **true**, your developer account has access to the expanded set of price tiers from .99 USD to 1999.99 USD. If **false**, your developer account has access to the original set of price tiers from .99 USD to 999.99 USD. For more information about the different tiers, see [price tiers](#price-tiers).<br/><br/>**Note**&nbsp;&nbsp;This field is read-only.   |
 
 
-<span id="sale-object" />
+<span id="sale-object"></span>
 
 ### Sale resource
 
@@ -297,7 +297,7 @@ This resource has the following values.
 |  endDate               |   string      |  The end date for the sale in ISO 8601 format.      |     
 |  marketSpecificPricings               |   object      |   A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your add-on in specific markets](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on). Any items in this dictionary override the base price specified by the *basePriceId* value for the specified market.    |
 
-<span id="status-details-object" />
+<span id="status-details-object"></span>
 
 ### Status details resource
 
@@ -309,7 +309,7 @@ This resource contains additional details about the status of a submission. This
 |  warnings               |   object      | An array of [status detail resources](#status-detail-object) that contain warning details for the submission.     |
 |  certificationReports               |     object    |   An array of [certification report resources](#certification-report-object) that provide access to the certification report data for the submission. You can examine these reports for more information if the certification fails.    |  
 
-<span id="status-detail-object" />
+<span id="status-detail-object"></span>
 
 ### Status detail resource
 
@@ -320,7 +320,7 @@ This resource contains additional information about any related errors or warnin
 |  code               |    string     |   A [submission status code](#submission-status-code) that describes the type of error or warning.   |     
 |  details               |     string    |  A message with more details about the issue.     |
 
-<span id="certification-report-object" />
+<span id="certification-report-object"></span>
 
 ### Certification report resource
 
@@ -335,7 +335,7 @@ This resource provides access to the certification report data for a submission.
 
 These methods use the following enums.
 
-<span id="price-tiers" />
+<span id="price-tiers"></span>
 
 ### Price tiers
 
@@ -348,7 +348,7 @@ The following values represent available price tiers in the [pricing resource](#
 |  Free              |   The add-on is free.    |    
 |  Tier*xxxx*               |   A string that specifies the price tier for the add-on, in the format **Tier<em>xxxx</em>**. Currently, the following ranges of price tiers are supported:<br/><br/><ul><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **true**, the available price tier values for your account are **Tier1012** - **Tier1424**.</li><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **false**, the available price tier values for your account are **Tier2** - **Tier96**.</li></ul>To see the complete table of price tiers that are available for your developer account, including the market-specific prices that are associated with each tier, go to the **Pricing and availability** page for any of your app submissions in Partner Center and click the **view table** link in the **Markets and custom prices** section (for some developer accounts, this link is in the **Pricing** section).     |
 
-<span id="submission-status-code" />
+<span id="submission-status-code"></span>
 
 ### Submission status code
 

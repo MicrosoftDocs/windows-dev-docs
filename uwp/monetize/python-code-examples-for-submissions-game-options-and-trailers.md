@@ -16,7 +16,7 @@ This article provides Python code examples that demonstrate how to use the [Micr
 * Upload the ZIP file containing the packages, listing images, and trailer files for the app submission.
 * Commit the app submission.
 
-<span id="create-app-submission" />
+<span id="create-app-submission"></span>
 
 ## Create an app submission
 
@@ -28,7 +28,7 @@ This code calls other example classes and functions to use the Microsoft Store s
 > [!div class="tabbedCodeSnippets"]
 :::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/python/CreateAndSubmitAppSubmissionExample.py" range="1-74":::
 
-<span id="token" />
+<span id="token"></span>
 
 ## Obtain an Azure AD access token and invoke the submission API
 
@@ -40,7 +40,7 @@ The following example defines the following classes:
 > [!div class="tabbedCodeSnippets"]
 :::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/python/devcenterclient.py" range="1-126":::
 
-<span id="token" />
+<span id="token"></span>
 
 ## Get app submission listing data
 

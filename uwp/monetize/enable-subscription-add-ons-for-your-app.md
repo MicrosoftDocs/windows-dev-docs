@@ -56,7 +56,7 @@ To enable the purchase of subscription add-ons in your app, follow these steps.
 
 4. Create and publish an app submission that includes your updated app package, including your tested code. For more information, see [App submissions](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix).
 
-<span id="code-examples"/>
+<span id="code-examples"></span>
 
 ## Code examples
 
@@ -93,7 +93,7 @@ This code example demonstrates how to get info for all the subscription add-ons 
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs" id="GetSubscriptions":::
 
-<span id="manage-subscriptions" />
+<span id="manage-subscriptions"></span>
 
 ## Manage subscriptions from your services
 

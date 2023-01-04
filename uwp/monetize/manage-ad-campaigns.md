@@ -50,7 +50,7 @@ These methods have the following URIs.
 | Tracking ID   | GUID   | Optional. An ID that tracks the call flow.                                  |
 
 
-<span id="parameters"/> 
+<span id="parameters"></span> 
 
 ### Parameters
 
@@ -133,7 +133,7 @@ These methods return a JSON response body with one or more [Campaign](#campaign)
 ```
 
 
-<span id="campaign"/>
+<span id="campaign"></span>
 
 ## Campaign object
 

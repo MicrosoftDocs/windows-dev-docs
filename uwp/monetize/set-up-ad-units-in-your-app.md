@@ -24,7 +24,7 @@ For more information about assigning the application ID and ad unit ID values in
 * [Interstitial ads](../monetize/interstitial-ads.md)
 * [Native ads](../monetize/native-ads.md)
 
-<span id="test-ad-units" />
+<span id="test-ad-units"></span>
 
 ## Test ad units
 
@@ -43,7 +43,7 @@ While you are developing your app, use the test application ID and ad unit ID va
 * Ad unit ID: ```test```
 * Application ID:  ```d25517cb-12d4-4699-8bdc-52040c712cab```
 
-<span id="live-ad-units" />
+<span id="live-ad-units"></span>
 
 ## Live ad units
 
@@ -63,7 +63,7 @@ To get a live ad unit from Partner Center and use it in your app:
     * [Interstitial ads](../monetize/interstitial-ads.md)
     * [Native ads](../monetize/native-ads.md)
 
-<span id="manage" />
+<span id="manage"></span>
 
 ## Manage ad units for multiple ad controls in your app
 

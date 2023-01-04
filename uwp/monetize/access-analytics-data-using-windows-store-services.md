@@ -18,7 +18,7 @@ The following steps describe the end-to-end process:
 2.  Before you call a method in the Microsoft Store analytics API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store analytics API before the token expires. After the token expires, you can generate a new token.
 3.  [Call the Microsoft Store analytics API](#call-the-windows-store-analytics-api).
 
-<span id="prerequisites" />
+<span id="prerequisites"></span>
 
 ## Step 1: Complete prerequisites for using the Microsoft Store analytics API
 
@@ -40,7 +40,7 @@ To associate an Azure AD application with your Partner Center account and retrie
 
 4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#manage-keys).
 
-<span id="obtain-an-azure-ad-access-token" />
+<span id="obtain-an-azure-ad-access-token"></span>
 
 ## Step 2: Obtain an Azure AD access token
 
@@ -63,7 +63,7 @@ For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_sec
 
 After your access token expires, you can refresh it by following the instructions [here](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens).
 
-<span id="call-the-windows-store-analytics-api" />
+<span id="call-the-windows-store-analytics-api"></span>
 
 ## Step 3: Call the Microsoft Store analytics API
 

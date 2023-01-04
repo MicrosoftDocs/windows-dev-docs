@@ -106,7 +106,7 @@ If you use this code and do not see ads, you can try inserting an attribute of *
 > [!NOTE]
 > The *applicationId* and *adUnitId* values shown in this example are [test mode values](set-up-ad-units-in-your-app.md#test-ad-units). You must [replace these values with live values](set-up-ad-units-in-your-app.md#live-ad-units) from Partner Center before submitting your app for submission.
 
-<span id="release" />
+<span id="release"></span>
 
 ## Release your app with live ads
 
@@ -124,7 +124,7 @@ If you use this code and do not see ads, you can try inserting an attribute of *
 
 5.  Review your [advertising performance reports](/windows/apps/publish/advertising-performance-report) in Partner Center.             
 
-<span id="manage" />
+<span id="manage"></span>
 
 ## Manage ad units for multiple ad controls in your app
 

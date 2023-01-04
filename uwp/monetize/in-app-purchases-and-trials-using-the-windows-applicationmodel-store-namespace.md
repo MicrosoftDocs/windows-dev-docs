@@ -34,7 +34,7 @@ For more information about common tasks you can perform using **CurrentApp** and
 | [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md)      |   If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog.    |
 | [Use receipts to verify product purchases](use-receipts-to-verify-product-purchases.md)      |   Each Microsoft Store transaction that results in a successful product purchase can optionally return a transaction receipt that provides information about the listed product and monetary cost to the customer. Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made in-app product purchases from the Microsoft Store. |
 
-<span id="proxy" />
+<span id="proxy"></span>
 
 ## Using the WindowsStoreProxy.xml file with CurrentAppSimulator
 
@@ -48,7 +48,7 @@ Although you can modify the values in this file, we recommend that you create yo
 > Be aware that **CurrentAppSimulator** is not fully initialized until **ReloadSimulatorAsync** completes. And, since **ReloadSimulatorAsync** is an asynchronous method, care should be taken to avoid the race condition of querying **CurrentAppSimulator** on one thread while it is being initialized on another. One technique is to use a flag to indicate that initialization is complete. An app that is installed from the Microsoft Store must use **CurrentApp** instead of **CurrentAppSimulator**, and in that case **ReloadSimulatorAsync** is not called and therefore the race condition just mentioned does not apply. For this reason, design your code so that it will work in both cases, both asynchronously and synchronously.
 
 
-<span id="proxy-examples" />
+<span id="proxy-examples"></span>
 
 ### Examples
 
@@ -136,7 +136,7 @@ The next example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes
 ```
 
 
-<span id="proxy-schema" />
+<span id="proxy-schema"></span>
 
 ### Schema
 
@@ -341,7 +341,7 @@ Once you've done this, edits you make to WindowsStoreProxy.xml will be subject t
 ```
 
 
-<span id="proxy-descriptions" />
+<span id="proxy-descriptions"></span>
 
 ### Element and attribute descriptions
 
@@ -356,7 +356,7 @@ The root element of this file is the **CurrentApp** element, which represents th
 |  [ConsumableInformation](#consumableinformation)  |      No      |   0 or 1   |   Describes the consumable add-ons that are available for this app.      |
 |  [Simulation](#simulation)  |     No       |      0 or 1      |   Describes how calls to various [CurrentAppSimulator](/uwp/api/windows.applicationmodel.store.currentappsimulator) methods will work in the app during testing.    |
 
-<span id="listinginformation" />
+<span id="listinginformation"></span>
 
 #### ListingInformation element
 
@@ -369,7 +369,7 @@ This element contains data from the app's listing. **ListingInformation** is a r
 |  [App](#app-child-of-listinginformation)  |    Yes   |  1   |    Provides data about the app.         |
 |  [Product](#product-child-of-listinginformation)  |    No  |  0 or more   |      Describes an add-on for the app.     |
 
-<span id="app-child-of-listinginformation"/>
+<span id="app-child-of-listinginformation"></span>
 
 #### App element (child of ListingInformation)
 
@@ -385,7 +385,7 @@ This element describes the app's license. **App** is a required child of the [Li
 |  **AgeRating**  |    Yes  |  1   |     An integer that represents the minimum age rating of the app. This is the same value you would specify in Partner Center when you submit the app. The values used by the Store are: 3, 7, 12, and 16. For more info on these ratings, see [Age ratings](/windows/apps/publish/publish-your-app/age-ratings?pivots=store-installer-msix).        |
 |  [MarketData](#marketdata-child-of-app)  |    Yes  |  1 or more      |    Contains info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element.       |
 
-<span id="marketdata-child-of-app"/>
+<span id="marketdata-child-of-app"></span>
 
 #### MarketData element (child of App)
 
@@ -407,7 +407,7 @@ This element provides info about the app for a given country/region. For each co
 |-------------|------------|----------------|
 |  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |
 
-<span id="product-child-of-listinginformation"/>
+<span id="product-child-of-listinginformation"></span>
 
 #### Product element (child of ListingInformation)
 
@@ -421,7 +421,7 @@ This element describes an add-on for the app. **Product** is an optional child o
 |  **LicenseDuration**  |    No        |    Indicates the number of days for which the license will be valid after the item has been purchased. The expiration date of the new license created by a product purchase is the purchase date plus the license duration. This attribute is used only if the **ProductType** attribute is **Durable**; this attribute is ignored for consumable add-ons.           |
 |  **ProductType**  |    No        |    Contains a value to identify the persistence of the in-app product. The supported values are **Durable** (the default) and **Consumable**. For durable types, additional information is described by a [Product](#product-child-of-licenseinformation) element under [LicenseInformation](#licenseinformation); for consumable types, additional information is described by a [Product](#product-child-of-consumableinformation) element under [ConsumableInformation](#consumableinformation).           |
 
-<span id="marketdata-child-of-product"/>
+<span id="marketdata-child-of-product"></span>
 
 #### MarketData element (child of Product)
 
@@ -446,7 +446,7 @@ This element provides info about the add-on for a given country/region. For each
 |-------------|------------|----------------|
 |  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |
 
-<span id="licenseinformation"/>
+<span id="licenseinformation"></span>
 
 #### LicenseInformation element
 
@@ -468,7 +468,7 @@ The following table shows how to simulate some common conditions by combining va
 |  Expired trial  |    false  |  true   |      &lt;a datetime in the past&gt; This element must be present because **IsTrial** is true. You can visit a website showing the current Coordinated Universal Time (UTC) to know when "the past" is in UTC.         |
 |  Invalid  |    false  | false       |     &lt;any value or omitted&gt;          |
 
-<span id="app-child-of-licenseinformation"/>
+<span id="app-child-of-licenseinformation"></span>
 
 #### App element (child of LicenseInformation)
 
@@ -482,7 +482,7 @@ This element describes the app's license. **App** is a required child of the [Li
 |  **IsTrial**  |    Yes  |  1   |      Describes the current trial state of this app. The value **true** indicates the app is being used during the trial period; **false** indicates the app is not in a trial, either because the app has been purchased or the trial period has expired.         |
 |  **ExpirationDate**  |    No  |  0 or 1       |     The date the trial period for this app expires, in Coordinated Universal Time (UTC). The date must be expressed as: yyyy-mm-ddThh:mm:ss.ssZ. For example, 05:00 on January 19, 2015 would be specified as 2015-01-19T05:00:00.00Z. This element is required when **IsTrial** is **true**. Otherwise, it is not required.          |
 
-<span id="product-child-of-licenseinformation"/>
+<span id="product-child-of-licenseinformation"></span>
 
 #### Product element (child of LicenseInformation)
 
@@ -502,7 +502,7 @@ This element describes the license status of a durable add-on in the app. **Prod
 |  **ProductId**  |    Yes        |   Contains the string used by the app to identify the add-on.            |
 |  **OfferId**  |     No       |   Contains the string used by the app to identify the category in which the add-on belongs. This provides support for large item catalogs, as described in [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md).           |
 
-<span id="simulation"/>
+<span id="simulation"></span>
 
 #### Simulation element
 
@@ -514,7 +514,7 @@ This element describes how calls to various [CurrentAppSimulator](/uwp/api/windo
 |-------------|------------|----------------|
 |  **SimulationMode**  |    No        |      Values can be **Interactive** or **Automatic**. When this attribute is set to **Automatic**, the methods will automatically return the specified HRESULT error codes. This can be used when running automated test cases.       |
 
-<span id="defaultresponse"/>
+<span id="defaultresponse"></span>
 
 #### DefaultResponse element
 
@@ -527,13 +527,13 @@ This element describes the default error code returned by a **CurrentAppSimulato
 |  **MethodName**  |    Yes        |   Assign this attribute to one of the enum values shown for the **StoreMethodName** type in the [schema](#schema). Each of these enum values represents a **CurrentAppSimulator** method for which you want to simulate an error code return value in your app during testing. For example, the value **RequestAppPurchaseAsync_GetResult** indicates you want to simulate the error code return value of the [RequestAppPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) method.            |
 |  **HResult**  |     Yes       |   Assign this attribute to one of the enum values shown for the **ResponseCodes** type in the [schema](#schema). Each of these enum values represents the error code you want to return for the method that is assigned to the **MethodName** attribute for this **DefaultResponse** element.           |
 
-<span id="consumableinformation"/>
+<span id="consumableinformation"></span>
 
 #### ConsumableInformation element
 
 This element describes the consumable add-ons available for this app. **ConsumableInformation** is an optional child of the **CurrentApp** element, and it can contain zero or more [Product](#product-child-of-consumableinformation) elements.
 
-<span id="product-child-of-consumableinformation"/>
+<span id="product-child-of-consumableinformation"></span>
 
 #### Product element (child of ConsumableInformation)
 

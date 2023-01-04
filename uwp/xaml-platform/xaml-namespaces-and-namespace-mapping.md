@@ -70,7 +70,7 @@ The folowing is a list of code namespaces that are currently mapped to the defau
 * Windows.UI.Xaml.Threading
 * Windows.UI.Text
 
-<span id="other-XAML-namespaces"/>
+<span id="other-XAML-namespaces"></span>
 
 ## Other XAML namespaces
 

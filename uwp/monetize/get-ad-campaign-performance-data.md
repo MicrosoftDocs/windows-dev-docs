@@ -81,7 +81,7 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | The total number of rows in the data result for the query.                                |
 
 
-<span id="campaign-performance-object" />
+<span id="campaign-performance-object"></span>
 
 
 ### Campaign performance object

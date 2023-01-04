@@ -35,7 +35,7 @@ In this section you'll find details about the info presented in each of the foll
 > [!NOTE]
 > You may not see data in all of these reports, depending on your app's specific features and implementation.
 
-<span id="outside"/>
+<span id="outside"></span>
 
 ## Access analytics data outside of Partner Center
 

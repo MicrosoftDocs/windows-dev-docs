@@ -16,7 +16,7 @@ This article provides Java code examples that demonstrate how to use the [Micros
 * Upload the ZIP file containing the packages, listing images, and trailer files for the app submission.
 * Commit the app submission.
 
-<span id="create-app-submission" />
+<span id="create-app-submission"></span>
 
 ## Create an app submission
 
@@ -28,7 +28,7 @@ The `CreateAndSubmitSubmissionExample` class implements a `main` program that ca
 > [!div class="tabbedCodeSnippets"]
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java" range="1-313":::
 
-<span id="token" />
+<span id="token"></span>
 
 ## Obtain an Azure AD access token
 
@@ -38,7 +38,7 @@ The `DevCenterAccessTokenClient` class defines a helper method that uses the you
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterAccessTokenClient.java" range="1-69":::
 
 
-<span id="utilities" />
+<span id="utilities"></span>
 
 ## Helper methods to invoke the submission API and upload submission files
 

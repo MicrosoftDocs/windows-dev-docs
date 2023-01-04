@@ -150,7 +150,7 @@ The **ms-settings:** URI scheme lets you launch directly into a particular page 
 |-------------|---------|
 | ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | Opens the Settings app to the Offline Maps page with a confirmation dialog displayed to download maps for the region containing the specified latitude-longitude point. |
 
-<span id="bingmaps-param-reference"/>
+<span id="bingmaps-param-reference"></span>
 
 ## bingmaps: parameter reference
 
@@ -368,7 +368,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 </table>
 
   
-<span id="ms-drive-to-param-reference"/>
+<span id="ms-drive-to-param-reference"></span>
 
 ## ms-drive-to: parameter reference
 
@@ -386,7 +386,7 @@ The URI to launch a request for turn-by-turn driving directions does not need to
 | **destination.name** | Name of the destination | Example: destination.name=Redmond, WA | The name of the destination. You do not have to encode the **destination.name** value. |
 
  
-<span id="ms-walk-to-param-reference"/>
+<span id="ms-walk-to-param-reference"></span>
 
 ## ms-walk-to: parameter reference
 

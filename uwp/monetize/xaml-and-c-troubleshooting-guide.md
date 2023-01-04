@@ -24,11 +24,11 @@ This topic contains solutions to common development issues with the Microsoft ad
   * [Black box blinks and disappears](#csharp-blackboxblinksdisappears)
   * [Ads not refreshing](#csharp-adsnotrefreshing)
 
-<span id="xaml"/>
+<span id="xaml"></span>
 
 ## XAML
 
-<span id="xaml-notappearing"/>
+<span id="xaml-notappearing"></span>
 
 ### AdControl not appearing
 
@@ -78,7 +78,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 8.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
-<span id="xaml-blackboxblinksdisappears"/>
+<span id="xaml-blackboxblinksdisappears"></span>
 
 ### Black box blinks and disappears
 
@@ -114,7 +114,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
     By default, the **AdControl** will collapse when it cannot display an ad. If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.
 
-<span id="xaml-adsnotrefreshing"/>
+<span id="xaml-adsnotrefreshing"></span>
 
 ### Ads not refreshing
 
@@ -155,11 +155,11 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
 
-<span id="csharp"/>
+<span id="csharp"></span>
 
 ## C\# #
 
-<span id="csharp-adcontrolnotappearing"/>
+<span id="csharp-adcontrolnotappearing"></span>
 
 ### AdControl not appearing
 
@@ -215,7 +215,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 9. Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
-<span id="csharp-blackboxblinksdisappears"/>
+<span id="csharp-blackboxblinksdisappears"></span>
 
 ### Black box blinks and disappears
 
@@ -239,7 +239,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 3.  **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
 
-<span id="csharp-adsnotrefreshing"/>
+<span id="csharp-adsnotrefreshing"></span>
 
 ### Ads not refreshing
 

@@ -18,7 +18,7 @@ The Microsoft Store submission API provides methods you can use to manage submis
 > You cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](/windows/apps/publish/organizational-licensing) or to publish submissions for [LOB apps](/windows/apps/publish/distribute-lob-apps-to-enterprises) directly to enterprises. For both of these scenarios, you must use Partner Center to publish the submission.
 
 
-<span id="methods-for-app-submissions" />
+<span id="methods-for-app-submissions"></span>
 
 ## Methods for managing app submissions
 
@@ -209,7 +209,7 @@ For more information, see our [StoreBroker page on GitHub](https://github.com/Mi
 ## Data resources
 The Microsoft Store submission API methods for managing app submissions use the following JSON data resources.
 
-<span id="app-submission-object" />
+<span id="app-submission-object"></span>
 
 ### App submission resource
 
@@ -358,7 +358,7 @@ This resource has the following values.
 | trailers           |  array |   An array that contains up to 15 [trailer resources](#trailer-object) that represent video trailers for the app listing.<br/><br/>   |  
 
 
-<span id="pricing-object" />
+<span id="pricing-object"></span>
 
 ### Pricing resource
 
@@ -373,7 +373,7 @@ This resource contains pricing info for the app. This resource has the following
 |  isAdvancedPricingModel               |   boolean      |  If **true**, your developer account has access to the expanded set of price tiers from .99 USD to 1999.99 USD. If **false**, your developer account has access to the original set of price tiers from .99 USD to 999.99 USD. For more information about the different tiers, see [price tiers](#price-tiers).<br/><br/>**Note**&nbsp;&nbsp;This field is read-only.   |
 
 
-<span id="sale-object" />
+<span id="sale-object"></span>
 
 ### Sale resource
 
@@ -395,7 +395,7 @@ This resource has the following values.
 |  marketSpecificPricings               |   object      |   A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your app in specific markets](/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix). Any items in this dictionary override the base price specified by the *basePriceId* value for the specified market.    |
 
 
-<span id="listing-object" />
+<span id="listing-object"></span>
 
 ### Listing resource
 
@@ -406,7 +406,7 @@ This resource contains listing info for an app. This resource has the following 
 |  baseListing               |   object      |  The [base listing](#base-listing-object) info for the app, which defines the default listing info for all platforms.   |     
 |  platformOverrides               | object |   A dictionary of key and value pairs, where each key is string that identifies a platform for which to override the listing info, and each value is a [base listing](#base-listing-object) resource (containing only the values from description to title) that specifies the listing info to override for the specified platform. The keys can have the following values: <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |
 
-<span id="base-listing-object" />
+<span id="base-listing-object"></span>
 
 ### Base listing resource
 
@@ -433,7 +433,7 @@ This resource contains base listing info for an app. This resource has the follo
 |  voiceTitle               |     string    |   An alternate name for your product that, if provided, may be used in the audio experience on Xbox One when using Kinect or a headset.    |  
 |  devStudio               |     string    |   Specify this value if you want to include a **Developed by** field in the listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a *devStudio* value.)    |  
 
-<span id="image-object" />
+<span id="image-object"></span>
 
 ### Image resource
 
@@ -448,7 +448,7 @@ This resource contains image and icon data for an app listing. For more informat
 |  imageType  |  string  | Indicates the type of the image. The following strings are currently supported. <p/>[Screenshot images](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#screenshots): <ul><li>Screenshot (use this value for the desktop screenshot)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Store logos](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (use this value for the 1:1 300 x 300 pixels logo)</li></ul><p/>[Promotional images](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox images](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Optional promotional images](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
 
 
-<span id="gaming-options-object" />
+<span id="gaming-options-object"></span>
 
 ### Gaming options resource
 
@@ -498,7 +498,7 @@ This resource has the following values.
 > [!NOTE]
 > The *gamingOptions* resource was added in May 2017, after the Microsoft Store submission API was first released to developers. If you created a submission for an app via the submission API before this resource was introduced and this submission is still in progress, this resource will be null for submissions for the app until you successfully commit the submission or you delete it. If the *gamingOptions* resource is not available for submissions for an app, the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) returned by the [get an app](get-an-app.md) method is false.
 
-<span id="status-details-object" />
+<span id="status-details-object"></span>
 
 ### Status details resource
 
@@ -511,7 +511,7 @@ This resource contains additional details about the status of a submission. This
 |  certificationReports               |     object    |   An array of [certification report resources](#certification-report-resource) that provide access to the certification report data for the submission. You can examine these reports for more information if the certification fails.   |  
 
 
-<span id="status-detail-object" />
+<span id="status-detail-object"></span>
 
 ### Status detail resource
 
@@ -523,7 +523,7 @@ This resource contains additional information about any related errors or warnin
 |  details               |     string    |  A message with more details about the issue.     |
 
 
-<span id="application-package-object" />
+<span id="application-package-object"></span>
 
 ### Application package resource
 
@@ -588,7 +588,7 @@ This resource provides access to the certification report data for a submission.
 |     reportUrl            |    string     |  The URL at which you can access the report.    |
 
 
-<span id="package-delivery-options-object" />
+<span id="package-delivery-options-object"></span>
 
 ### Package delivery options resource
 
@@ -617,7 +617,7 @@ This resource has the following values.
 | isMandatoryUpdate    | boolean    |  Indicates whether you want to treat the packages in this submission as mandatory for self-installing app updates. For more information about mandatory packages for self-installing app updates, see [Download and install package updates for your app](../packaging/self-install-package-updates.md).    |  
 | mandatoryUpdateEffectiveDate    |  date   |  The date and time when the packages in this submission become mandatory, in ISO 8601 format and UTC time zone.   |        
 
-<span id="package-rollout-object" />
+<span id="package-rollout-object"></span>
 
 ### Package rollout resource
 
@@ -633,7 +633,7 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 > [!NOTE]
 > The *packageRolloutStatus* and *fallbackSubmissionId* values are assigned by Partner Center, and are not intended to be set by the developer. If you include these values in a request body, these values will be ignored.
 
-<span id="trailer-object" />
+<span id="trailer-object"></span>
 
 ### Trailers resource
 
@@ -677,7 +677,7 @@ This resource has the following values.
 > [!NOTE]
 > The *trailers* resource was added in May 2017, after the Microsoft Store submission API was first released to developers. If you created a submission for an app via the submission API before this resource was introduced and this submission is still in progress, this resource will be null for submissions for the app until you successfully commit the submission or you delete it. If the *trailers* resource is not available for submissions for an app, the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) returned by the [get an app](get-an-app.md) method is false.
 
-<span id="trailer-assets-object" />
+<span id="trailer-assets-object"></span>
 
 ### Trailer assets resource
 
@@ -689,7 +689,7 @@ This resource contains additional locale-specific assets for a trailer that is d
 | imageList    | array    |   An array that contains one [image](#image-for-trailer-object) resource that provides the thumbnail image for the trailer. You can only include one [image](#image-for-trailer-object) resource in this array.  |   
 
 
-<span id="image-for-trailer-object" />
+<span id="image-for-trailer-object"></span>
 
 ### Image resource (for a trailer)
 
@@ -707,7 +707,7 @@ This resource describes the thumbnail image for a trailer. This resource has the
 
 These methods use the following enums.
 
-<span id="price-tiers" />
+<span id="price-tiers"></span>
 
 ### Price tiers
 
@@ -721,7 +721,7 @@ The following values represent available price tiers in the [pricing resource](#
 |  Tier*xxx*               |   A string that specifies the price tier for the app, in the format **Tier<em>xxxx</em>**. Currently, the following ranges of price tiers are supported:<br/><br/><ul><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **true**, the available price tier values for your account are **Tier1012** - **Tier1424**.</li><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **false**, the available price tier values for your account are **Tier2** - **Tier96**.</li></ul>To see the complete table of price tiers that are available for your developer account, including the market-specific prices that are associated with each tier, go to the **Pricing and availability** page for any of your app submissions in Partner Center and click the **view table** link in the **Markets and custom prices** section (for some developer accounts, this link is in the **Pricing** section).    |
 
 
-<span id="enterprise-licensing" />
+<span id="enterprise-licensing"></span>
 
 ### Enterprise licensing values
 
@@ -738,7 +738,7 @@ The following values represent the organizational licensing behavior for the app
 | OnlineAndOffline | Make your app available to enterprises with Store-managed (online) volume licensing, and make your app available to enterprises via disconnected (offline) licensing. |
 
 
-<span id="submission-status-code" />
+<span id="submission-status-code"></span>
 
 ### Submission status code
 

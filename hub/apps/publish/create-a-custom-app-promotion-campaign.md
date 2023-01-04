@@ -35,7 +35,7 @@ To track the success of each of these promotion channels, the developer creates 
 
 As her Facebook and Twitter followers click the URLs, Microsoft tracks each click and associates it with the corresponding custom campaign. Subsequent qualifying acquisitions of the game and any add-on purchases are associated with the custom campaign and reported as conversions.
 
-<span id="conversions" />
+<span id="conversions"></span>
 
 ## Understanding how acquisitions qualify as conversions
 
@@ -84,7 +84,7 @@ To create a Microsoft Store page URL for your app with a custom campaign ID:
 
     * For a protocol format URL, append **`&cid=*my custom campaign ID*`**. For example, if Skype introduces a campaign ID with the value **custom\_campaign**, the new protocol URL including the campaign ID would be: `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`.
 
-<span id="programmatically" />
+<span id="programmatically"></span>
 
 ## Programmatically retrieve the custom campaign ID for an app
 

@@ -101,7 +101,7 @@ These methods return a JSON response body with a [Creative](#creative) object th
 ```
 
 
-<span id="creative"/>
+<span id="creative"></span>
 
 ## Creative object
 
@@ -120,7 +120,7 @@ The request and response bodies for these methods contain the following fields. 
 |  storeProductId   |  string   |   The [Store ID](in-app-purchases-and-trials.md#store-ids) for the app that this ad campaign is associated with. An example Store ID for a product is 9nblggh42cfd.    |   No    |    |  No     |
 
 
-<span id="image-attributes"/>
+<span id="image-attributes"></span>
 
 ## ImageAttributes object
 

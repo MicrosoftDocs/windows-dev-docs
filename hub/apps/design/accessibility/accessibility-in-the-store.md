@@ -39,7 +39,7 @@ You should declare your app as accessible if you built and tested it for accessi
 
 See the [Accessibility checklist](accessibility-checklist.md) for a review of these procedures and links to resources that will help you accomplish them.
 
-<span id="related_topics"/>
+<span id="related_topics"></span>
 
 ## Related topics    
 * [Accessibility](accessibility.md)

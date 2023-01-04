@@ -69,7 +69,7 @@ For custom controls and other scenarios beyond those covered by the available wr
 
 For walkthroughs that demonstrate how to use the **WindowsXamlHost** control, see [Use XAML Islands to host a UWP XAML control in a C# WPF app](host-standard-control-with-xaml-islands.md) and [Host a custom WinRT XAML control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
 
-<span id="requirements" />
+<span id="requirements"></span>
 
 ### Configure your project to use the XAML Island .NET controls
 

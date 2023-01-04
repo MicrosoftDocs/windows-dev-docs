@@ -41,7 +41,7 @@ This end-to-end process involves two software components that perform different 
 * **Your service**. This is an application that runs securely in the context of your business environment, and it can be implemented using any development platform you choose. Your service is responsible for creating the Azure AD access tokens needed for the scenario and for calling the REST URIs for the Microsoft Store collection API and purchase API.
 * **Your client Windows app**. This is the app for which you want to access and manage customer entitlement information (including add-ons for the app). This app is responsible for creating the Microsoft Store ID keys you need to call the Microsoft Store collection API and purchase API from your service.
 
-<span id="step-1"/>
+<span id="step-1"></span>
 
 ## Step 1: Configure an application in Azure AD
 
@@ -55,7 +55,7 @@ Before you can use the Microsoft Store collection API or purchase API, you must 
 3.  You are taken to the application's main registration page. On this page, copy the **Application ID** value for use later.
 4.  Create a key that you will need later (this is all called a *client secret*). In the left pane, click **Settings** and then **Keys**. On this page, complete the steps to [create a key](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copy this key for later use.
 
-<span id="step-2"/>
+<span id="step-2"></span>
 
 ## Step 2: Associate your Azure AD application ID with your client app in Partner Center
 
@@ -67,7 +67,7 @@ Before you can use the Microsoft Store collection API or purchase API to configu
 1.  Sign in to [Partner Center](https://partner.microsoft.com/dashboard) and select your app.
 2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD application ID into one of the available **Client ID** fields.
 
-<span id="step-3"/>
+<span id="step-3"></span>
 
 ## Step 3: Create Azure AD access tokens
 
@@ -76,7 +76,7 @@ Before you can retrieve a Microsoft Store ID key or call the Microsoft Store col
 > [!IMPORTANT]
 > Create Azure AD access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
 
-<span id="access-tokens" />
+<span id="access-tokens"></span>
 
 ### Understanding the different tokens and audience URIs
 
@@ -115,7 +115,7 @@ For each token, specify the following parameter data:
 
 After your access token expires, you can refresh it by following the instructions [here](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](/azure/active-directory/develop/id-tokens).
 
-<span id="step-4"/>
+<span id="step-4"></span>
 
 ## Step 4: Create a Microsoft Store ID key
 

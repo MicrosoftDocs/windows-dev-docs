@@ -25,7 +25,7 @@ These examples have the following requirements:
 * Add a reference to the System.Web assembly in your project.
 * Install the [Newtonsoft.Json](https://www.newtonsoft.com/json) NuGet package from Newtonsoft to your project.
 
-<span id="create-app-submission" />
+<span id="create-app-submission"></span>
 
 ## Create an app submission
 
@@ -37,7 +37,7 @@ The ```CreateAndSubmitSubmissionExample``` class defines a public ```Execute``` 
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/cs/CreateAndSubmitSubmissionExample.cs" id="CreateAndSubmitSubmissionExample":::
 
-<span id="token" />
+<span id="token"></span>
 
 ## Obtain an Azure AD access token
 
@@ -46,7 +46,7 @@ The ```DevCenterAccessTokenClient``` class defines a helper method that uses the
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterAccessTokenClient.cs" id="DevCenterAccessTokenClient":::
 
-<span id="utilities" />
+<span id="utilities"></span>
 
 ## Helper methods to invoke the submission API and upload submission files
 

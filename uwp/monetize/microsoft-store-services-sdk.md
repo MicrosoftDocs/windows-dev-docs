@@ -27,7 +27,7 @@ The Microsoft Store Services SDK currently supports the following scenarios for 
 |  [Configure your UWP app to receive Partner Center push notifications](configure-your-app-to-receive-dev-center-notifications.md)    |  Use the [StoreServicesEngagementManager](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) class in your UWP app to register your app to receive targeted push notifications that you send to your customers using Partner Center.  |
 |   [Log custom events in your UWP app for the Usage report in Partner Center](log-custom-events-for-dev-center.md)   |  Use the [StoreServicesCustomEventLogger](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) class in your UWP app to log custom events that are associated with your app in Partner Center. Then, review the total occurrences for your custom events in the **Custom events** section of the [Usage report](/windows/apps/publish/usage-report) in Partner Center.  |
 
-<span id="prerequisites" />
+<span id="prerequisites"></span>
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ The Microsoft Store Services SDK requires:
 * Visual Studio 2015 or a later version.
 * Visual Studio Tools for Universal Windows Apps installed with your version of Visual Studio.
 
-<span id="install" />
+<span id="install"></span>
 
 ## Install the SDK
 
@@ -47,7 +47,7 @@ There are two options for installing the Microsoft Store Services SDK on your de
 
 Microsoft periodically releases new versions of the Microsoft Store Services SDK with performance improvements and new features. If you have existing projects that use the SDK and you want to use the latest version, download and install the latest version of the SDK on your development computer.
 
-<span id="install-msi" />
+<span id="install-msi"></span>
 
 ### Install via MSI
 
@@ -70,7 +70,7 @@ To install the Microsoft Store Services SDK via the MSI installer:
 
   Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add the assembly reference to your project](#references).
 
-<span id="install-nuget" />
+<span id="install-nuget"></span>
 
 ### Install via NuGet
 
@@ -101,7 +101,7 @@ To install the Microsoft Store Services SDK libraries via NuGet:
 
   Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add the assembly reference to your project](#references).
 
-<span id="references" />
+<span id="references"></span>
 
 ## Add the assembly reference to your project
 
@@ -120,7 +120,7 @@ After you install the Microsoft Store Services SDK via the MSI installer or NuGe
 > [!NOTE]
 > If you installed the SDK libraries via NuGet, your project will contain a **Microsoft.Services.Store.Engagement** reference. The **Microsoft.Services.Store.Engagement** reference represents the NuGet package (rather than the libraries in it), and you can ignore it.
 
-<span id="framework" />
+<span id="framework"></span>
 
 ## Understanding framework packages in the SDK
 

@@ -62,7 +62,7 @@ The default control templates for [**ListViewItem**](/uwp/api/windows.ui.xaml.co
 
 There are about 25 properties with self-describing names similar to [**SelectionCheckMarkVisualEnabled**](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) and [**SelectedBackground**](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground). Should the presenter types prove not to be customizable enough for your use case, you can edit a copy of the `ListViewItemExpanded` or `GridViewItemExpanded` control template instead. These can be found in `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml`. Be aware that using these templates means trading some performance for the increase in customization.
 
-<span id="update-items-incrementally"/>
+<span id="update-items-incrementally"></span>
 
 ## Update ListView and GridView items progressively
 

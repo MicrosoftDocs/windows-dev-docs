@@ -35,7 +35,7 @@ The following example implements a command line program that calls the other exa
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/Program.cs" id="Main":::
 
-<span id="clientconfiguration" />
+<span id="clientconfiguration"></span>
 
 ## ClientConfiguration helper class
 
@@ -44,7 +44,7 @@ The sample app uses the ```ClientConfiguration``` helper class to pass Azure Act
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/ClientConfiguration.cs" id="ClientConfiguration":::
 
-<span id="create-app-submission" />
+<span id="create-app-submission"></span>
 
 ## Create an app submission
 
@@ -60,7 +60,7 @@ The following example implements a class that uses several methods in the Micros
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs" id="AppSubmissionUpdateSample":::
 
-<span id="create-add-on-submission" />
+<span id="create-add-on-submission"></span>
 
 ## Create an add-on submission
 
@@ -75,7 +75,7 @@ The following example implements a class that uses several methods in the Micros
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs" id="InAppProductSubmissionCreateSample":::
 
-<span id="update-add-on-submission" />
+<span id="update-add-on-submission"></span>
 
 ## Update an add-on submission
 
@@ -90,7 +90,7 @@ The following example implements a class that uses several methods in the Micros
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs" id="InAppProductSubmissionUpdateSample":::
 
-<span id="create-flight-submission" />
+<span id="create-flight-submission"></span>
 
 ## Create a package flight submission
 
@@ -106,7 +106,7 @@ The following example implements a class that uses several methods in the Micros
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs" id="FlightSubmissionUpdateSample":::
 
-<span id="ingestionclient" />
+<span id="ingestionclient"></span>
 
 ## IngestionClient helper class
 

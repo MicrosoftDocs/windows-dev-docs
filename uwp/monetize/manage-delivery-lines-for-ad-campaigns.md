@@ -123,7 +123,7 @@ These methods return a JSON response body with a [Delivery line](#line) object t
 ```
 
 
-<span id="line"/>
+<span id="line"></span>
 
 ## Delivery line object
 

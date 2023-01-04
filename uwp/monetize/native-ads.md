@@ -98,7 +98,7 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
 10.  Compile and run the app to see it with a test ad.
 
-<span id="release" />
+<span id="release"></span>
 
 ## Release your app with live ads
 

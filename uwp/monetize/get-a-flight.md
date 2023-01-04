@@ -90,7 +90,7 @@ The following example demonstrates the JSON response body for a successful call 
 | rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](/windows/apps/publish/package-flights).  |
 
 
-<span id="submission_object" />
+<span id="submission_object"></span>
 
 ### Submission object
 

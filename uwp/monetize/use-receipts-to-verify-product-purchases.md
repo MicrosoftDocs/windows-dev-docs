@@ -88,7 +88,7 @@ Here's an example of that validation process. This code runs in a .NET Framework
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/ReceiptVerificationSample/cs/Program.cs" id="ReceiptVerificationSample":::
 
-<span id="receipt-descriptions" />
+<span id="receipt-descriptions"></span>
 
 ## Element and attribute descriptions for a receipt
 
@@ -113,7 +113,7 @@ The root element of this file is the **Receipt** element, which contains informa
 |  **ReceiptDate**  |    Date the receipt was signed and downloaded.           |  
 |  **ReceiptDeviceId**  |   Identifies the device used to request this receipt.         |
 
-<span id="appreceipt" />
+<span id="appreceipt"></span>
 
 ### AppReceipt element
 
@@ -128,7 +128,7 @@ This element contains purchase information for the current app.
 |  **LicenseType**  |    **Full**, if the user purchased the full version of the app. **Trial**, if the user downloaded a trial version of the app.           |  
 |  **PurchaseDate**  |    Date when the app was acquired.          |
 
-<span id="productreceipt" />
+<span id="productreceipt"></span>
 
 ### ProductReceipt element
 

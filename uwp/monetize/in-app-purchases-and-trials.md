@@ -18,7 +18,7 @@ The Windows SDK provides APIs you can use to implement the following features to
 
 This article provides an overview of how in-app purchases and trials work in UWP apps.
 
-<span id="choose-namespace" />
+<span id="choose-namespace"></span>
 
 ## Choose which namespace to use
 
@@ -31,7 +31,7 @@ There are two different namespaces you can use to add in-app purchases and trial
 > [!IMPORTANT]
 > The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features, and we recommend that you use the **Windows.Services.Store** namespace instead if possible for your app. The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](/windows/msix/desktop/source-code-overview) or in apps or games that use a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live).
 
-<span id="concepts" />
+<span id="concepts"></span>
 
 ## Basic concepts
 
@@ -55,7 +55,7 @@ UWP apps can offer the following types of add-ons.
 > [!NOTE]
 > Other types of add-ons, such as durable add-ons with packages (also known as downloadable content or DLC) are only available to a restricted set of developers, and are not covered in this documentation.
 
-<span id="api_intro" />
+<span id="api_intro"></span>
 
 ## In-app purchases and trials using the Windows.Services.Store namespace
 
@@ -73,7 +73,7 @@ This section provides an overview of important tasks and concepts for the [Windo
 * [Products, SKUs, and availabilities](#products-skus)
 * [Store IDs](#store-ids)
 
-<span id="video" />
+<span id="video"></span>
 
 ### Video
 
@@ -81,7 +81,7 @@ Watch the following video for an overview of how to implement in-app purchases i
 <br/>
 <br/>
 
-<span id="get-started-storecontext" />
+<span id="get-started-storecontext"></span>
 
 ### Get started with the StoreContext class
 
@@ -114,7 +114,7 @@ After you have a [StoreContext](/uwp/api/windows.services.store.storecontext) ob
 
 For a sample app that demonstrates how to use **StoreContext** and other types in the **Windows.Services.Store** namespace, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
-<span id="implement-iap" />
+<span id="implement-iap"></span>
 
 ### Implement in-app purchases
 
@@ -132,7 +132,7 @@ To offer an in-app purchase to customers in your app using the **Windows.Service
 
 4. Test your implementation by following the [testing guidance](#testing) in this article.
 
-<span id="implement-trial" />
+<span id="implement-trial"></span>
 
 ### Implement trial functionality
 
@@ -146,7 +146,7 @@ To exclude or limit features in a trial version of your app using the **Windows.
 
 4. Test your implementation by following the [testing guidance](#testing) in this article.
 
-<span id="testing" />
+<span id="testing"></span>
 
 ### Test your in-app purchase or trial implementation
 
@@ -174,7 +174,7 @@ If your app uses the **Windows.ApplicationModel.Store** namespace, you can use t
 > [!NOTE]
 > The **Windows.Services.Store** namespace does not provide a class that you can use to simulate license info during testing. If you use the **Windows.Services.Store** namespace to implement in-app purchases or trials, you must publish your app to the Store and download the app to your development device to use its license for testing as described above.
 
-<span id="receipts" />
+<span id="receipts"></span>
 
 ### Receipts for in-app purchases
 
@@ -182,7 +182,7 @@ The **Windows.Services.Store** namespace does not provide an API you can use to 
 
 If you implement in-app purchases using the **Windows.Services.Store** namespace and you want to validate whether a given customer has purchased an app or add-on, you can use the [query for products method](query-for-products.md) in the [Microsoft Store collection REST API](view-and-grant-products-from-a-service.md). The return data for this method confirms whether the specified customer has an entitlement for a given product, and provides data for the transaction in which the user acquired the product. The Microsoft Store collection API uses Azure AD authentication to retrieve this information.
 
-<span id="desktop" />
+<span id="desktop"></span>
 
 ### Using the StoreContext class with the Desktop Bridge
 
@@ -243,7 +243,7 @@ If your application is written with an earlier version of .NET or in C++, follow
     initWindow.Initialize(System.Diagnostics.Process.GetCurrentProcess().MainWindowHandle);
     ```
 
-<span id="products-skus" />
+<span id="products-skus"></span>
 
 ### Products, SKUs, and availabilities
 
@@ -255,7 +255,7 @@ Every product in the Store has at least one *SKU*, and each SKU has at least one
 | SKU |  A *SKU* is a specific version of a product with its own description, price, and other unique product details. Each app or add-on has a default SKU. The only time most developers will ever have multiple SKUs for an app is if they publish a full version of their app and a trial version (in the Store catalog, each of these versions is a different SKU of the same app). </p></p> Some publishers have the ability to define their own SKUs. For example, a large game publisher might release a game with one SKU that shows green blood in markets that don't allow red blood and a different SKU that shows red blood in all other markets. Alternatively, a publisher who sells digital video content might publish two SKUs for a video, one SKU for the high-definition version and a different SKU for the standard-definition version. </p></p> Each SKU in the Store has a corresponding [StoreSku](/uwp/api/windows.services.store.storesku) object. Every [StoreProduct](/uwp/api/windows.services.store.storeproduct) has a [Skus](/uwp/api/windows.services.store.storeproduct.skus) property you can use to access the SKUs for the product. |
 | Availability  |  An *availability* is a specific version of a SKU with its own unique pricing info. Each SKU has a default availability. Some publishers have the ability to define their own availabilities to introduce different price options for a given SKU. </p></p> Each availability in the Store has a corresponding [StoreAvailability](/uwp/api/windows.services.store.storeavailability) object. Every [StoreSku](/uwp/api/windows.services.store.storesku) has an [Availabilities](/uwp/api/windows.services.store.storesku.availabilities) property you can use to access the availabilities for the SKU. For most developers, each SKU has a single default availability.  |
 
-<span id="store_ids" />
+<span id="store_ids"></span>
 
 ### Store IDs
 
@@ -274,7 +274,7 @@ For products with SKUs and availabilities, the SKUs and availabilities also have
 | SKU |  The Store ID for a SKU has the format ```<product Store ID>/xxxx```, where ```xxxx``` is a 4-character alpha-numeric string that identifies a SKU for the product. For example, ```9NBLGGH4R315/000N```. This ID is returned by the [StoreId](/uwp/api/windows.services.store.storesku.storeid) property of a  [StoreSku](/uwp/api/windows.services.store.storesku) object, and it is sometimes called the *SKU Store ID*. |
 | Availability  |  The Store ID for an availability has the format ```<product Store ID>/xxxx/yyyyyyyyyyyy```, where ```xxxx``` is a 4-character alpha-numeric string that identifies a SKU for the product and ```yyyyyyyyyyyy``` is a 12-character alpha-numeric string that identifies an availability for the SKU. For example, ```9NBLGGH4R315/000N/4KW6QZD2VN6X```. This ID is returned by the [StoreId](/uwp/api/windows.services.store.storeavailability.storeid) property of a  [StoreAvailability](/uwp/api/windows.services.store.storeavailability) object, and it is sometimes called the *availability Store ID*.  |
 
-<span id="product-ids" />
+<span id="product-ids"></span>
 
 ## How to use product IDs for add-ons in your code
 

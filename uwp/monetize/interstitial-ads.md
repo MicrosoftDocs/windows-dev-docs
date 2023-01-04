@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 This walkthrough shows how to include interstitial ads in Universal Windows Platform (UWP) apps and games for Windows 10 and Windows 11. For complete sample projects that demonstrate how to add interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
-<span id="whatareinterstitialads10"/>
+<span id="whatareinterstitialads10"></span>
 
 ## What are interstitial ads?
 
@@ -41,7 +41,7 @@ To show interstitial ads in your app, follow the instructions for project type:
 * [HTML/JavaScript](#interstitialadshtml10)
 * [C++ (DirectX Interop)](#interstitialadsdirectx10)
 
-<span id="interstitialadsxaml10"/>
+<span id="interstitialadsxaml10"></span>
 
 ### XAML/.NET
 
@@ -94,7 +94,7 @@ This section provides C# examples, but Visual Basic and C++ are also supported f
 
 8.  Build and test your app to confirm it is showing test ads.
 
-<span id="interstitialadshtml10"/>
+<span id="interstitialadshtml10"></span>
 
 ### HTML/JavaScript
 
@@ -149,7 +149,7 @@ The following instructions assume you have created a Universal Windows project f
 
 9.  Build and test your app to confirm it is showing test ads.
 
-<span id="interstitialadsdirectx10"/>
+<span id="interstitialadsdirectx10"></span>
 
 ### C++ (DirectX Interop)
 
@@ -202,7 +202,7 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
 
 9. Build and test your app to confirm it is showing test ads.
 
-<span id="release" />
+<span id="release"></span>
 
 ## Release your app with live ads
 
@@ -220,7 +220,7 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
 
 6.  Review your [advertising performance reports](/windows/apps/publish/advertising-performance-report) in Partner Center.
 
-<span id="manage" />
+<span id="manage"></span>
 
 ## Manage ad units for multiple interstitial ad controls in your app
 

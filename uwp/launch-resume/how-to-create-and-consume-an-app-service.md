@@ -28,7 +28,7 @@ In this how-to, we'll create everything in one solution for simplicity.
 
 2. When asked to select a **Target** and **Minimum version** for the project, select at least **10.0.14393**. If you want to use the new **SupportsMultipleInstances** attribute, you must be using Visual Studio 2017 or Visual Studio 2019, and target **10.0.15063** (**Windows 10 Creators Update**) or later.
 
-<span id="appxmanifest"/>
+<span id="appxmanifest"></span>
 
 ## Add an app service extension to Package.appxmanifest
 

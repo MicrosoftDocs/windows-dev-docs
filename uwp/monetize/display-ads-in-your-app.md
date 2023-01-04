@@ -83,7 +83,7 @@ For instructions and code examples, see [this article](native-ads.md).
 
 ![An image depicting a native advertisement that can be displayed on various devices.](images/native-ad.png)
 
-<span id="ad-mediation"/>
+<span id="ad-mediation"></span>
 
 ## Step 3: Create an ad unit and configure mediation
 
@@ -99,7 +99,7 @@ After you finish developing your app with ads, you can [submit your updated app]
 
 After your app is published and available in the Store, you can review your [advertising performance reports](/windows/apps/publish/advertising-performance-report) in Partner Center and continue to make changes to your mediation settings to optimize the performance of your ads. Your advertising revenue is included in your [payout summary](/partner-center/payout-statement).
 
-<span id="additional-help" />
+<span id="additional-help"></span>
 
 ## Additional help
 

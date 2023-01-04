@@ -77,7 +77,7 @@ Authorization: Bearer <your access token>
 | TotalCount | integer | The total number of rows in the data result for the query.        |
 
 
-<span id="error-detail-values"/>
+<span id="error-detail-values"></span>
 
 ### Error detail values
 

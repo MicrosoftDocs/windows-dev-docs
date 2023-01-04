@@ -39,7 +39,7 @@ Package flights can be used with apps targeting any OS version, but your testers
 For more info, see [Package flights](package-flights.md).
 
 
-<span id="hide" />
+<span id="hide"></span>
 
 ## Hiding the app in the Store and using promotional codes
 

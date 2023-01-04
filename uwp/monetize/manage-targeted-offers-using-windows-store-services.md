@@ -19,7 +19,7 @@ The targeted offers API is a simple REST API that you can use to get the targete
 
 For a complete code example that demonstrates all of these steps, see the [code example](#code-example) at the end of this article. The following sections provide more details about each step.
 
-<span id="obtain-a-microsoft-account-token" />
+<span id="obtain-a-microsoft-account-token"></span>
 
 ## Get a Microsoft Account token for the current user
 
@@ -31,7 +31,7 @@ To get the MSA token, use the [WebAuthenticationCoreManager](/uwp/api/windows.se
 
 For more information about getting MSA tokens, see [Web account manager](../security/web-account-manager.md).
 
-<span id="get-targeted-offers" />
+<span id="get-targeted-offers"></span>
 
 ## Get the targeted offers for the current user
 
@@ -43,7 +43,7 @@ The following example demonstrates how to get the targeted offers for the curren
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs" id="GetTargetedOffers":::
 
-<span id="code-example" />
+<span id="code-example"></span>
 
 ## Complete code example
 

@@ -61,7 +61,7 @@ When you implement a control pattern, you should also consult the UI Automation 
 > [!NOTE]
 > Windows Phone Store apps do not support all the UI Automation control patterns listed here. **Annotation**, **Dock**, **Drag**, **DropTarget**, **ObjectModel** are some of the unsupported patterns.
 
-<span id="related_topics"/>
+<span id="related_topics"></span>
 
 ## Related topics  
 * [Custom automation peers](custom-automation-peers.md)

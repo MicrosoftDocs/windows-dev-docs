@@ -62,7 +62,7 @@ Once **Line-of-business (LOB) distribution** is selected, the usual **Visibility
 
 You must select at least one enterprise in order to publish an app as line-of-business.
 
-<span id="organizational" />
+<span id="organizational"></span>
 
 #### Organizational licensing
 

@@ -28,7 +28,7 @@ If you have not done so already, complete all the [prerequisites](create-and-man
 
 The Microsoft Store submission API methods for getting app data use the following JSON data resources.
 
-<span id="application_object" />
+<span id="application_object"></span>
 
 ### Application resource
 
@@ -68,7 +68,7 @@ This resource has the following values.
 | pendingApplicationSubmission        | object  |  A [submission resource](#submission_object) that provides information about the current pending submission for the app.   |   
 | hasAdvancedListingPermission        | boolean  |  Indicates whether you can configure the [gamingOptions](manage-app-submissions.md#gaming-options-object) or [trailers](manage-app-submissions.md#trailer-object) for submissions for the app. This value is true for submissions created after May 2017. |
 
-<span id="add-on-object" />
+<span id="add-on-object"></span>
 
 ### Add-on resource
 
@@ -87,7 +87,7 @@ This resource has the following values.
 | inAppProductId            | string  | The Store ID of the add-on. This value is supplied by the Store. An example Store ID is 9NBLGGH4TNMP.   |
 
 
-<span id="flight-object" />
+<span id="flight-object"></span>
 
 ### Flight resource
 
@@ -124,7 +124,7 @@ This resource has the following values.
 | rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](/windows/apps/publish/package-flights).  |
 
 
-<span id="submission_object" />
+<span id="submission_object"></span>
 
 ### Submission resource
 

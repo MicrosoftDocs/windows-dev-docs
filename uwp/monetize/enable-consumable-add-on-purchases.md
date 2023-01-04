@@ -54,7 +54,7 @@ For a complete sample application, see the [Store sample](https://github.com/Mic
 > [!NOTE]
 > If you have a desktop application that uses the [Desktop Bridge](/windows/msix/desktop/source-code-overview), you may need to add additional code not shown in these examples to configure the [StoreContext](/uwp/api/windows.services.store.storecontext) object. For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](in-app-purchases-and-trials.md#desktop).
 
-<span id="report_fulfilled" />
+<span id="report_fulfilled"></span>
 
 ## Report a consumable add-on as fulfilled
 
@@ -71,7 +71,7 @@ This example demonstrates how to report a Store-managed consumable as fulfilled.
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs" id="ConsumeAddOn":::
 
-<span id="get_balance" />
+<span id="get_balance"></span>
 
 ## Get the remaining balance for a Store-managed consumable
 

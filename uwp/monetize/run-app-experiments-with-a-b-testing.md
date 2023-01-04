@@ -40,7 +40,7 @@ For the most useful results, we recommend that you follow these recommendations 
 * Consider running experiments with only two variations with a randomized 50/50 split distribution for variation assignments.
 * Run experiments for at least 2 – 4 weeks to gather sufficient data that is statistically significant and actionable.
 
-<span id="terms" />
+<span id="terms"></span>
 
 ## Related terms
 

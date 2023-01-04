@@ -114,7 +114,7 @@ This walkthrough shows how to use the [AdControl](/uwp/api/microsoft.advertising
 
 6.  Compile and run the app to see it with an ad.
 
-<span id="release" />
+<span id="release"></span>
 
 ## Release your app with live ads
 
@@ -132,7 +132,7 @@ This walkthrough shows how to use the [AdControl](/uwp/api/microsoft.advertising
 
 6.  Review your [advertising performance reports](/windows/apps/publish/advertising-performance-report) in Partner Center.
 
-<span id="manage" />
+<span id="manage"></span>
 
 ## Manage ad units for multiple ad controls in your app
 
