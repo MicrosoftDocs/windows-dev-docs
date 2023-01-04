@@ -79,8 +79,8 @@ Dev Home has been designed to be customizable and personal. You can configure th
 ### Resizing and Reordering Tools  
    
   
-To change the size or position of a tool, use the context menu button (view button on your controller) while the title has focus. From the context menu select **Move** or **Resize**.   
- ![Screenshot of the DEV HOME page snapped to the right showing the Move option highlighted.](images/dev_home_6.png)  
+To change the size or position of a tool, use the context menu button (view button on your controller) while the title has focus. From the context menu select **Move** or **Resize**.
+ ![Screenshot of the DEV HOME page showing the Move option highlighted.](https://user-images.githubusercontent.com/1520739/210461485-393fce51-d495-409c-b5b1-95c014c81c6d.png)
 <a id="ID4EEG"></a>
 
    
