@@ -18,9 +18,6 @@ This topic is relevant for UWP apps that do not have an ARM64 target. Older UWP 
 
 To check the current Solution Platform for your app to see if ARM64 is present, open your app project code in Visual Studio and in the "Solution Platforms" drop-down menu on the Standard toolbar, select **Configuration Manager...** (also available in the Build menu) where you will be able to view the list of Solution Platforms and confirm whether ARM64 is present.
 
-> [!NOTE]
-> Windows devices running on an Arm processor *(for example, Snapdragon processors from Qualcomm)* will no longer support 32-bit Arm versions of Universal Windows Platform (UWP) apps. *(See [Windows 11 Feature deprecations and removals](https://www.microsoft.com/windows/windows-11-specifications#table3)).* Any UWP applications running on an AArch32 (Arm32) architecture should be updated to AArch64 (Arm64) following the guidance on this page. This change only impacts UWP apps that presently target AArch32 (Arm32). We recommend making the update to target AArch64 (Arm64) so that your application will be supported on all Windows on Arm devices as soon as possible in order to ensure your customers can continue to enjoy the best possible experience.
-
 ## Add an Arm64 configuration to your project
 
 To add an ARM64 solution platform to your existing app project code:
