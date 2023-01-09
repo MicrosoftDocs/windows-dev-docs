@@ -519,8 +519,6 @@ items:
                   href: publish/partner-center/assign-product-level-custom-permissions-to-account-users.md
                 - name: Troubleshoot App Creation in Partner Center
                   href: publish/partner-center/troubleshoot-app-creation.md
-      - name: Manage app name reservations
-        href: publish/partner-center/manage-app-name-reservations.md
       - name: Partner Center workspaces
         href: publish/partner-center/partner-center-workspaces.md
       - name: Publish your app to the Microsoft Store
@@ -590,6 +588,8 @@ items:
             items:
               - name: Notes for certification
                 href: publish/publish-your-app/notes-for-certification.md
+          - name: Manage app name reservations
+            href: publish/partner-center/manage-app-name-reservations.md
           - name: The app certification process
             href: publish/publish-your-app/app-certification-process.md
             items:
