@@ -21,9 +21,9 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <p>Find out what you need to create a submission and get your app certified.</p>
         <br>
         <a href="publish-your-app/overview.md">An overview of the app submission process</a><br/>
-        <a href="/windows/uwp/publish/store-policies">Microsoft Store Policies</a><br/>
+        <a href="store-policies.md">Microsoft Store Policies</a><br/>
         <a href="/legal/windows/agreements/app-developer-agreement">App Developer Agreement</a><br/>
-        <a href="/windows/uwp/publish/distribute-lob-apps-to-enterprises">LOB distribution</a><br/>
+        <a href="distribute-lob-apps-to-enterprises.md">LOB distribution</a><br/>
     :::column-end:::
     :::column:::
         <img src="/media/illustrations/bcs-partner-advanced-management- billing-7.svg" alt="Pricing illustration" />
