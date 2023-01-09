@@ -37,7 +37,7 @@ Note that your app must have at least one reserved name.
 
 If your app is already in the Store and you want to rename it, you can do so by reserving a new name for it (by following the steps described above) and then creating a new submission for the app.
 
-To update a Store listing so that it uses the new name, go to the [Store listing page](/windows/uwp/publish/create-app-store-listings) for that language and select the name from the **Product name** dropdown. Be sure to review your description and other parts of the listing for any mentions of the name and make updates if needed.
+To update a Store listing so that it uses the new name, go to the [Store listing page](../publish-your-app/create-app-store-listings.md) for that language and select the name from the **Product name** dropdown. Be sure to review your description and other parts of the listing for any mentions of the name and make updates if needed.
 
 > [!NOTE]
 > If your app has packages and/or Store listings in multiple languages, you'll need to update the packages and/or Store listings for every language in which the name needs to be updated.

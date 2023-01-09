@@ -62,7 +62,7 @@ After you create ad units for one or more apps in your account, these ad units a
   > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
 
   > [!NOTE]
-  > You can use multiple banner, interstitial, and native ad controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](/windows/uwp/publish/in-app-ads#mediation) and get discrete [reporting data](/windows/uwp/publish/advertising-performance-report) for each control. This also enables our services to better optimize the ads we serve to your app.
+  > You can use multiple banner, interstitial, and native ad controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](#mediation) and get discrete [reporting data](advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
 
 To edit the [mediation settings](#mediation) for a UWP ad unit or the [COPPA compliance](#coppa) for the app in which the ad unit is used, click the ad unit name.
 

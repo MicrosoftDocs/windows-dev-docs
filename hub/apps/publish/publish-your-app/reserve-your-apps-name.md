@@ -27,7 +27,7 @@ Follow the following steps to reserve your app's name:
 :::zone-end
 
 :::zone pivot="store-installer-msi-exe"
-2. MSI or EXE app publishing experience is only available in the new Workspace interface and you can click the “Workspaces” button on the top right of the page to toggle to the new interface. For more information, see [Partner Center Workspaces](/windows/uwp/publish/partner-center-workspaces)
+2. MSI or EXE app publishing experience is only available in the new Workspace interface and you can click the “Workspaces” button on the top right of the page to toggle to the new interface. For more information, see [Partner Center Workspaces](../partner-center/partner-center-workspaces.md)
 3. Navigate to the [Partner Center apps and games page](https://partner.microsoft.com/dashboard/apps-and-games/overview).
 4. Click **New product**.
 5. Choose your app's type.
