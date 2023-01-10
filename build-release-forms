@@ -1,0 +1,9 @@
+<bin-debug>
+<bin-release>
+<[obj>
+<[bin>
+
+bin-debug/
+bin-release/
+obj/bin-debug
+bn/bin-release
