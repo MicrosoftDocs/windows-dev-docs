@@ -1,90 +1,30 @@
-log/
-xhtml/
-packages/
-obj/
-_site/
-Tools/NuGet/
-_site/
-.optemp/
-.vscode
-.DS_Store
-
-.openpublishing.build.mdproj
-.openpublishing.buildcore.ps1
-packages.config
-*.tmp
-
-# User-specific files
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# User-specific files (MonoDevelop/Xamarin Studio)
-*.userprefs
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-
-# Visual Studio 2015 cache/options directory
-.vs/
-
-# DNX
-project.lock.json
-project.fragment.lock.json
-artifacts/
-
-*_i.c
-*_p.c
-*_i.h
-*.ilk
-*.meta
-*.obj
-*.pch
-*.pdb
-*.pgc
-*.pgd
-*.rsp
-*.sbr
-*.tlb
-*.tli
-*.tlh
-*.tmp
-*.tmp_proj
-*.log
-*.vspscc
-*.vssscc
-.builds
-*.pidb
-*.svclog
-*.scc
-
-# Visual C++ cache files
-ipch/
-*.aps
-*.ncb
-*.opendb
-*.opensdf
-*.sdf
-*.cachefile
-*.VC.db
-*.VC.VC.opendb
-
-# Visual Studio profiler
-*.psess
-*.vsp
-*.vspx
-*.sap
-.markdownlint.json
-
-# Stop ReadMe file from syncing to maintain separate public and private Readme notes
 README.md
+#<Build and Release Folders>
+#<bin-debug>
+#<bin-release>
+#<[obj>
+#<[bin>
+<2
+#<Other files and folders>
+#<settings>
+<2
+#<Executables>
+#<Project files i.e. project .actionScriptProperties and .flexProperties>
+#<should NOT be excluded as they contain compiler settings and other important>
+#<information for EclipseFlash>
+<2
+# Build and Release Folders
+bin-debug/
+bin-release/
+[¹1¹]obj/bin-debug
+[²2²]bn/bin-release
+<2
+# Other files and folders
+#<.settings/
+<2
+# Executables
+[¹1¹]
+[¹1¹]obj/bin-debug
+[²2²]
+[²2²]bn/bin-release
+main
