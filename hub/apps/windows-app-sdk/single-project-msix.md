@@ -2,14 +2,16 @@
 title: Package your app using single-project MSIX
 description: This article provides instructions for how to generate an MSIX desktop app via a single project in Visual Studio.
 ms.topic: article
-ms.date: 11/17/2022
+ms.date: 01/10/2023
 keywords: windows, win32, desktop development, Windows App SDK, msix, packaging project, single project, single project msix, winui 3
 ms.localizationpriority: medium
 ---
 
 # Package your app using single-project MSIX
 
-Single-project MSIX is a feature that enables you to build a packaged WinUI 3 desktop app&mdash;using the Windows App SDK&mdash;without needing a separate packaging project. This feature is available as a Visual Studio extension that you can use for these scenarios:
+Single-project MSIX is a feature that lets you build a packaged WinUI 3 desktop app without the need for a separate packaging project. A WinUI 3 app is one that uses the [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) framework for its user interface (UI); and it uses the Windows App SDK. To package a desktop app that's *not* a WinUI 3 app, see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
+
+The single-project MSIX feature is available as a Visual Studio extension that you can use for these scenarios:
 
 - Create a *new* WinUI 3 desktop app using the **Blank App, Packaged (WinUI 3 in Desktop)** Visual Studio project template that comes with the Windows App SDK. That project is configured to build your app into an MSIX package without needing a separate packaging project.
 - Modify an *existing* WinUI 3 desktop app that uses a separate packaging project. The modification involves removing the separate packaging project, as shown in the illustration below.
@@ -22,7 +24,7 @@ This section introduces some important details about the single-project MSIX fea
 
 ### Benefits
 
-Before the introduction of the single-project MSIX feature, if you wanted to build a packaged WinUI 3 desktop app, then you needed two projects in your solution&mdash;your app project, and a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). The single-project MSIX feature enables you to develop and build your app using only an app project. That provides a cleaner project structure and a more straightforward development experience. For example, you no longer need to select the separate packaging project as your startup project.
+Before the introduction of the single-project MSIX feature, if you wanted to build a packaged WinUI 3 desktop app, then you needed two projects in your solution&mdash;your app project, plus an additional **Windows Application Packaging Project** (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). The single-project MSIX feature enables you to develop and build your app using only a project for your app. That provides a cleaner project structure and a more straightforward development experience. For example, you no longer need to select the separate packaging project as your startup project.
 
 ### Supported project types
 
@@ -56,7 +58,7 @@ Follow the steps in this section to modify an existing WinUI 3-based app that us
 
 ### Step 1: Create or open an existing packaging project
 
-If you already have a solution for a WinUI 3 desktop app (see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)) that includes a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), then open that solution in Visual Studio now.
+If you already have a solution for a WinUI 3 desktop app (see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)) that includes a **Windows Application Packaging Project** (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)), then open that solution in Visual Studio now.
 
 If not, then create a new WinUI 3 desktop app in Visual Studio by using the **Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)** template. Your solution will look similiar to the screenshot below.
 
@@ -207,7 +209,7 @@ Use the [Package & Publish command in Visual Studio](/windows/msix/package/packa
 
 ## Automate building and packaging your single-project MSIX app
 
-You can use `msbuild` to build and package your single-project MSIX app, thereby allowing you to automate the workflow. The technique for a single-project solution, and the command-line, is only slightly different from what you might already be doing if you have a two-project solution (one that has a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)).
+You can use `msbuild` to build and package your single-project MSIX app, thereby allowing you to automate the workflow. The technique for a single-project solution, and the command-line, is only slightly different from what you might already be doing if you have a two-project solution&mdash;one that has a **Windows Application Packaging Project** (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)).
 
 The important build command option for a single-project solution is `/p:GenerateAppxPackageOnBuild=true`. Without that option, the project will build, but you won't get an MSIX package. Include that option, and that will cause the MSIX package to be generated.
 
