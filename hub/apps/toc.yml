@@ -225,7 +225,7 @@ items:
                 - name: "Package and deploy with MSIX"
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: Package identity overview
-              href: /desktop/modernize/package-identity-overview.md
+              href: desktop/modernize/package-identity-overview.md
             - name: Grant package identity by packaging with external location
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
       - name: Optimize performance & fundamentals
