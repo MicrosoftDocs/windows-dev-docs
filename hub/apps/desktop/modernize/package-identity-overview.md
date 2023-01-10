@@ -10,7 +10,7 @@ ms.custom: RS5
 
 # Package identity overview
 
-**Package identity** is a unique identifier across Windows. Just as your DNA uniquely identifies you, package identity uniquely identifies a package. No two packages with different bits have the same identity.
+**Package identity** is a unique identifier across Windows and the Microsoft Store. Just as your DNA uniquely identifies you, package identity uniquely identifies a package. No two packages with different bits have the same identity.
 
 ## What is package identity?
 
