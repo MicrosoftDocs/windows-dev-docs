@@ -1,6 +1,6 @@
 ---
 description: An overview of Windows package identity and how it uniquely identifies a package.
-title: Package identity overview
+title: An overview of Package Identity in Windows apps
 ms.date: 01/10/2023
 ms.topic: article
 keywords: windows 10, windows 11, desktop, package, identity, MSIX, Win32
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-# Package identity overview
+# An overview of Package Identity in Windows apps
 
 **Package identity** is a unique identifier across Windows and the Microsoft Store. Just as your DNA uniquely identifies you, package identity uniquely identifies a package. No two packages with different bits have the same identity.
 
