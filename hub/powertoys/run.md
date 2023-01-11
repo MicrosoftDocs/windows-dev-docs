@@ -227,10 +227,10 @@ The Time and date plugin provides the current time and date or a custom one in d
 
 Examples:
 
-- `time` or `) time` to show the time.
-- `) 3/27/2022` to show all available formats for a date value.
-- `) calendar week::3/27/2022` to show the calendar week for a date value.
-- `) unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
+- `time` or `( time` to show the time.
+- `( 3/27/2022` to show all available formats for a date value.
+- `( calendar week::3/27/2022` to show the calendar week for a date value.
+- `( unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
 ### Unit converter plugin
 
