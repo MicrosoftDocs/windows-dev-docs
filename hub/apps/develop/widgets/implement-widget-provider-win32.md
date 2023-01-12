@@ -1,6 +1,6 @@
 ---
-title: Implement a widget provider in a win32 app
-description: This article walks you through the process of creating a widget provider that provides widget content and responds to widget actions. 
+title: Implement a widget provider in a win32 app (C++/WinRT)
+description: This article walks you through the process of creating widget provider, implemented in C++/WinRT that provides widget content and responds to widget actions. 
 ms.topic: article
 ms.date: 07/06/2022
 ms.author: drewbat
@@ -8,7 +8,7 @@ author: drewbatgit
 ms.localizationpriority: medium
 ---
 
-# Implement a widget provider in a win32 app
+# Implement a widget provider in a win32 app (C++/WinRT)
 
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
@@ -22,7 +22,7 @@ This article walks you through creating a simple widget provider that implements
 
 :::image type="content" source="images/counting-widget-screenshot.png" alt-text="A screenshot of a simple counting widget. The widget shows a string containing the numeric value to be incremented and a button labeled Increment, as well as some diagnostic text illustrating that the template for the small size widget is being displayed.":::
 
-This sample code in this article is adapted from the [Windows App SDK Sample](https://github.com/microsoft/WindowsAppSDK-Samples).
+This sample code in this article is adapted from the [Windows App SDK Sample](https://github.com/microsoft/WindowsAppSDK-Samples). To implement a widget provider using C#, see [Implement a widget provider in a win32 app (C#)](implement-widget-provider-cs.md).
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ This sample code in this article is adapted from the [Windows App SDK Sample](ht
 - Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 - Visual Studio 2017 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
-## Create a new win32 console app
+## Create a new C++/WinRT win32 console app
 
 In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C++" and the platform filter to Windows, then select the Windows Console Application (C++/WinRT) project template. Name the new project "ExampleWidgetProvider". When prompted, set the target Windows version for the app to version 1809 or later.
 
@@ -718,4 +718,4 @@ In **Solution Explorer**, right-click your **ExampleWidgetProviderPackage** and 
 
 ## Testing your widget provider
 
-In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the widgets board. To see the widgets you will need to open the widgets board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
