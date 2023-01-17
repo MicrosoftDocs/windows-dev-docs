@@ -32,7 +32,7 @@ If you don't use Visual Studio to create your package, you must [create your pac
 
 Be sure to review the [App package manifest](/uwp/schemas/appxpackage/appx-package-manifest) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
 
-Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](../../../publish/view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
+Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](../../../apps/publish/view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
 
 > [!NOTE]
 > Values in the manifest are case-sensitive. Spaces and other punctuation must also match. Enter the values carefully and review them to ensure that they are correct.

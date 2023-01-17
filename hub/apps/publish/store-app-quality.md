@@ -37,7 +37,7 @@ Make your **title** memorable and informative. A quality title can draw attentio
 
 - Be original and distinctive. For example, a title that’s a variation on the spelling of another app can cause confusion and a unique title can help your app stand out.
 - Choose a title that is informative. For example, “My First App” or “Client App” are too generic.
-- Take a look at the article [Choosing your app's name](publish-your-app/reserve-your-apps-name.md?pivots=store-installer-msix#choosing-your-apps-name) for more helpful title ideas.
+- Take a look at the article [Choosing your app's name](publish-your-app/reserve-your-apps-name.md?pivots=store-installer-msix) for more helpful title ideas.
 
 The **description** lets you describe your app’s main features. Keep it clear, crisp, and compelling.
 

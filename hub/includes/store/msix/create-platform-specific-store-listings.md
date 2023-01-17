@@ -7,7 +7,7 @@ Customers on Windows 10 (including Xbox) will always see the default [Store list
 Platform-specific Store listings can be useful if you want to mention features that appear only in one OS version, or want to provide screenshots that are specific to a particular OS (independent of device type).
 
 > [!NOTE]
-> Creating a platform-specific Store listing in one language does not create a platform-specific Store listing in other languages that your app supports. You'll need to create the platform-specific Store listing separately for each language. Also note that you cannot [import and export Store listing data](../../../apps/publish/import-and-export-store-listings.md) for platform-specific listings.
+> Creating a platform-specific Store listing in one language does not create a platform-specific Store listing in other languages that your app supports. You'll need to create the platform-specific Store listing separately for each language. Also note that you cannot [import and export Store listing data](../../../apps/publish/publish-your-app/import-and-export-store-listings.md) for platform-specific listings.
 ## Creating a platform-specific Store listing
 
 Near the top of your **Store listing** page, if your previously-published app includes packages that support earlier OS versions ((Windows 8.x or earlier and/or Windows Phone 8.x or earlier), you can select **create a platform-specific app Store listing**. After selecting this option, you'll be prompted to choose from the targeted OS versions that your submission supports. Once you've already created platform-specific Store listings for all of the earlier OS versions your app targets, you won't be able to make another selection.
