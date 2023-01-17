@@ -173,7 +173,3 @@
                       - name: Xbox Live
                         tocHref: /windows/uwp/xbox-live/
                         topicHref: "/windows/uwp/xbox-live/index"                        
-                - name: Publish
-                  tocHref: /windows/uwp/publish/
-                  topicHref: "/windows/uwp/publish/index" 
-                                      

@@ -130,7 +130,7 @@ When providing your trailers, be sure to follow these requirements:
 
 > [!WARNING]
 > The exception to the requirement to include age ratings in your trailers applies **only** to trailers in the **Microsoft Store** that are shown **on the product page**. Any trailer posted outside of Partner Center, that is not intended for display exclusively on the Microsoft Store's product page **must** display embedded rating information, where required, in accordance with the appropriate rating authority’s guidelines.  
-Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](/uwp/publish/store-policies).
+Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](../../../apps/publish/store-policies.md).
 
 There are additional requirements depending on the type of file.
 
@@ -199,7 +199,7 @@ Here are some tips to keep in mind when designing this image:
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](/uwp/publish/make-your-app-easier-to-promote) for more information.
+While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](../../../apps/publish/make-your-app-easier-to-promote.md) for more information.
 
 ### Xbox images
 
