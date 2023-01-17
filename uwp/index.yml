@@ -86,7 +86,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: Publish your app to the Microsoft Store
-            url: publish/index.md
+            url: /windows/apps/publish/
           - text: Package and deploy your app with MSIX
             url: /windows/msix
       - linkListType: concept
