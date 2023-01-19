@@ -1,5 +1,5 @@
 ---
-description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10 or Windows 11.
+description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of customers who have your package installed on Windows 10 or Windows 11 (including Xbox).
 title: Gradual package rollout
 ms.date: 10/31/2018
 ms.topic: article
@@ -9,27 +9,28 @@ ms.localizationpriority: medium
 ---
 # Gradual package rollout
 
-When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10 or Windows 11 (including Xbox). This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission. 
+When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of customers who have your package installed on Windows 10 or Windows 11 (including Xbox). This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission. 
 
 > [!IMPORTANT]
 > Your rollout selections apply to all of your packages, but will only apply to your customers running OS versions that support package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later, and Xbox), including any customers who get the app via [Store-managed (online) licensing](organizational-licensing.md) via [Microsoft Store for Business](https://businessstore.microsoft.com/store) or [Microsoft Store for Education](https://educationstore.microsoft.com/store). When using gradual package rollout, customers on earlier OS versions will not get packages from the latest submission until you finalize the package rollout as described below.
 
-Note that all of your customers will see the Store listing details that you entered with your latest submission. The rollout settings only apply to the packages that customers receive, both for new acquisitions and for updates to existing customers.
+Note that all of your customers will see the Store listing details that you entered with your latest submission. The rollout settings only apply to the packages that customers install, for updates to existing customers.
 
 > [!TIP]
-> Package rollout distributes packages to a random selection of customers in the percentages that you specify. To distribute specific packages to selected customers that you specify, you can use package flights. You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
+> Package rollout distributes packages to a random selection of customers who have your package installed
+in the percentages that you specify. To distribute specific packages to selected customers that you specify, you can use package flights. You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
 
 
 ## Setting the rollout percentage
 
-You can select to roll out your update on the **Packages** page of an updated submission. To do so, check the box that says **Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)**. Then enter the percentage of customers who should get the update when the submission is first published. For example, you might enter 5 if you want to start by rolling the update out to only a small percentage of your app’s customers.
+You can select to roll out your update on the **Packages** page of an updated submission. To do so, check the box that says **Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)**. Then enter the percentage of customers who should get the update when the submission is first published. For example, you might enter 5 if you want to start by rolling the update out to only a small percentage of your app’s existing customers who have already installed this app.
 
-Click **Update** to save your selections. After your app completes the certification process, the packages will be distributed to customers according to the percentage that you specified, both for new acquisitions and for updates to existing customers.
+Click **Update** to save your selections. After your app completes the certification process, the packages will be distributed to existing customers according to the percentage that you specified for updates.
 
 
 ## Adjusting the rollout after the submission is published
 
-To adjust the rollout after the submission has been published, go to your app’s Overview page. You can drag the selector to change the percentage of customers getting the packages from your newest submission. Click **Update** to save your selections. The packages will then start to be distributed to customers according to the percentage that you specified, both for new acquisitions and for updates to existing customers.
+To adjust the rollout after the submission has been published, go to your app’s Overview page. You can drag the selector to change the percentage of customers getting the packages from your newest submission. Click **Update** to save your selections. The packages will then start to be distributed to existing customers who have your package installed according to the percentage that you specified for updates.
 
 
 ## Completing the rollout
