@@ -63,10 +63,10 @@ To use the Microsoft Store version of Oh My Posh, which will automatically updat
 winget install XP8K0HKJFRXGCK
 ```
 
-Enter `oh-my-posh --version` to confirm the version number of your Oh My Posh installation. To ensure you have the latest updates, you can use the following command: `winget upgrade oh-my-posh`.
+Enter `oh-my-posh version` to confirm the version number of your Oh My Posh installation. To ensure you have the latest updates, you can use the following command: `winget upgrade oh-my-posh`.
 
 > [!NOTE]
-> If you want to install the newest version of Oh My Posh in PowerShell, you may want to first remove the OMP module's cached files and uninstall the old module. There are instructions on how to do this in the [Oh My Posh docs](https://ohmyposh.dev/docs/migrating#migration-steps). 
+> If you want to install the newest version of Oh My Posh in PowerShell, you may want to first remove the OMP module's cached files and uninstall the old module. There are instructions on how to do this in the [Oh My Posh docs](https://ohmyposh.dev/docs/migrating#migration-steps).
 > If you are more familiar with the [Scoop](https://scoop.sh/) installer or a manual installation method that allows automation, these can also be used for installing on Windows, just follow the instructions in the [Oh My Posh docs](https://ohmyposh.dev/docs/installation/windows).
 
 ### Choose and apply a PowerShell prompt theme
@@ -91,7 +91,7 @@ Now, each new PowerShell instance will start by importing Oh My Posh and setting
 > This is not your Windows Terminal profile. Your PowerShell profile is a script that runs every time PowerShell starts. [Learn more about PowerShell profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
 > [!TIP]
-> Oh My Posh can be configured to restore the current working directory by enabling `osc99` in the General Settings. See the [Oh My Posh docs](https://ohmyposh.dev/docs/configuration/overview#general-settings).  
+> Oh My Posh can be configured to restore the current working directory by enabling `osc99` in the General Settings. See the [Oh My Posh docs](https://ohmyposh.dev/docs/configuration/overview#general-settings).
 
 ## Customize your WSL prompt with Oh My Posh
 
@@ -115,7 +115,7 @@ The Oh My Posh themes will be found in the oh-my-posh directory as JSON files. Y
 To use a theme, copy it from the `themes` folder to your `$Home` folder, then add this line to the bottom of the `.profile` file found in your `$Home` folder:
 
 ```bash
-eval "$(oh-my-posh --init --shell bash --config ~/jandedobbeleer.omp.json)"
+eval "$(oh-my-posh init bash --config ~/jandedobbeleer.omp.json)"
 ```
 
 You can replace `jandedobbeleer.omp.json` with the name of whichever theme you prefer to use as long as it's copied to your `$Home` folder.
