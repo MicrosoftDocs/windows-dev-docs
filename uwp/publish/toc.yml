@@ -223,16 +223,16 @@
   href: /windows/apps/publish/store-policies-and-code-of-conduct.md
   items:
     - name: Microsoft Store Policies
-      href: store-policies.md
+      href: /windows/apps/publish/store-policies
     - name: Store Policies change history
-      href: store-policies-change-history.md
+      href: /windows/apps/publish/store-policies-change-history
     - name: App Quality
-      href: store-app-quality.md
+      href: /windows/apps/publish/store-app-quality
     - name: Developer Code of Conduct
-      href: store-developer-code-of-conduct.md
+      href: /windows/apps/publish/store-developer-code-of-conduct
     - name: Microsoft Store Product Ranking, Placement and Marketing Disclosure Statement
       href: https://aka.ms/disclosurepolicypdf
     - name: Microsoft Store complaint and appeal statistics for FY2022
-      href: store-policies.md#microsoft-store-complaint-and-appeal-statistics-for-fy2022
+      href: /windows/apps/publish/store-policies#microsoft-store-complaint-and-appeal-statistics-for-fy2022
     - name: Microsoft Edge Add-ons store developer policies
       href: /microsoft-edge/extensions-chromium/store-policies/developer-policies
