@@ -132,7 +132,7 @@ Use [PackageIdFromFullName](/windows/win32/api/appmodel/nf-appmodel-packageidfro
 
 It's rare to need to create a `PublisherId` from `Publisher`, but it can be done with the use of available APIs:
 
-```cpp
+``` cpp
 #include <appmodel.h>
 
 HRESULT PublisherIdFromPublisher(
@@ -156,7 +156,7 @@ HRESULT PublisherIdFromPublisher(
 
 The following is a classic Windows C implementation of the same operation:
 
-```c
+``` c
 #include <appmodel.h>
 
 #define NAME_FOR_PUBLISHER_TO_PUBLISHERID L"xyz"
@@ -208,7 +208,7 @@ void Encrypt(...)
 
 Or you can make a neutral package with multiple variants:
 
-```YAML
+``` YAML
 \
     bin\
         encrypt-x86.dll
