@@ -30,5 +30,7 @@ In order to provide a consistent user experience, widget screenshots for the wid
 
 If your app doesn't provide at least a light-themed, medium-sized screenshot, then a default widget placeholder image as the preview for your widget instead. Note that the screenshot element of the widget manifest is required. If you don't provide any screenshot image, your widget will not be displayed in the picker.
 
+The following is an example of a widget screenshot image. 
+
 :::image type="content" source="images/widgets-example-screenshot.png" alt-text="An example of a widget screenshot image.":::
 
