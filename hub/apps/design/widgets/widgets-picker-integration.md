@@ -28,8 +28,6 @@ In order to provide a consistent user experience, widget screenshots for the wid
 * The image should have transparent, rounded corners.
 * If your widget supports right-to-left (RTL) languages, you should provide a separate image for those languages that uses an RTL design.
 
-If your app doesn't provide light-themed, medium-sized screenshot, then the asset provided in the **Screenshot** element that is not associated with the light or dark themes will be used. This element is required by the widget manifest format. For more information, see [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
-
 The following is an example of a widget screenshot image. 
 
 :::image type="content" source="images/widgets-example-screenshot.png" alt-text="An example of a widget screenshot image.":::
