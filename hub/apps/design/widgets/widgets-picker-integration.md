@@ -15,7 +15,7 @@ In the current release, the only Widgets host is the Widgets Board built into Wi
 
 ## Widget screenshot image
 
-Each widget must provide a screenshot image that is displayed as a preview in the widget picker when the widget has focus. The screenshot is specified by the widget provider in the package manifest for the app. For more technical information on how to specify an image file to use for the widget screenshot, see [Implement a widget provider in a win32 app](../../develop/widgets/implement-widget-provider-win32.md) and [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
+Each widget must provide a screenshot image that is displayed as a preview in the widget picker when the widget has focus. The screenshot is specified by the widget provider in the package manifest for the app. For technical information on how to specify an image file to use for the widget screenshot, see [Implement a widget provider in a win32 app](../../develop/widgets/implement-widget-provider-win32.md) and [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
 
 :::image type="content" source="images/widgets-picker-screenshot.png" alt-text="Screenshot of the Widgets Board. The widget picker is active and a widget screenshot image is being displayed.":::
 
@@ -28,7 +28,7 @@ In order to provide a consistent user experience, widget screenshots for the wid
 * The image should have transparent, rounded corners.
 * If your widget supports right-to-left (RTL) languages, you should provide a separate image for those languages that uses an RTL design.
 
-If your app doesn't provide at least a light-themed, medium-sized screenshot, then a default widget placeholder image as the preview for your widget instead. Note that the screenshot element of the widget manifest is required. If you don't provide any screenshot image, your widget will not be displayed in the picker.
+If your app doesn't provide light-themed, medium-sized screenshot, then the asset provided in the **Screenshot** element that is not associated with the light or dark themes will be used. This element is required by the widget manifest format. For more information, see [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
 
 The following is an example of a widget screenshot image. 
 
