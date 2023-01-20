@@ -167,7 +167,7 @@ Required. Specifies one or more screenshots of the widget.
 
 ## Screenshot
 
-Required. Specifies a screenshot for a widget. This screenshot is shown in the Widgets host in the **Add Widgets dialog** when the user is selecting widgets to add to the Widgets host.
+Required. Specifies a screenshot for a widget. This screenshot is shown in the Widgets host in the **Add Widgets dialog** when the user is selecting widgets to add to the Widgets host. For information about the design requirements for screenshot images, see [Integrate with the widget picker](../../design/widgets/widgets-picker-integration.md).
 
 > [!NOTE]
 > The widget screenshots are not displayed on the widgets board's add widgets dialog in the current preview release..
