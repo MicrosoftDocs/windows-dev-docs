@@ -15,8 +15,8 @@ These additional features are currently only available to MSIX apps.
 
 | Topic                                                                                         | Description |
 |-----------------------------------------------------------------------------------------------|-------------|
-| [Organizational licensing options](/uwp/publish/organizational-licensing)                     | Choose whether and how your app is offered for volume purchases through Microsoft Store for Business and Microsoft Store for Education. |
-| [Package flights](/uwp/publish/package-flights)                                               | You can use package flights to distribute specific packages to a limited group of testers. |
-| [Gradual package rollout](/uwp/publish/gradual-package-rollout)                               | Publish your app to a small percentage of your users to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. |
-| [Beta testing and targeted distribution](/uwp/publish/beta-testing-and-targeted-distribution) | No matter how carefully you test your app, there’s nothing like the real-world test of having other people use it. |
-| [Distribute LOB apps to enterprises](/uwp/publish/distribute-lob-apps-to-enterprises)         | Distribute your line of business app to your organization’s users without making it broadly available to the public. |
+| [Organizational licensing options](../../../apps/publish/organizational-licensing.md)                     | Choose whether and how your app is offered for volume purchases through Microsoft Store for Business and Microsoft Store for Education. |
+| [Package flights](../../../apps/publish/package-flights.md)                                               | You can use package flights to distribute specific packages to a limited group of testers. |
+| [Gradual package rollout](../../../apps/publish/gradual-package-rollout.md)                               | Publish your app to a small percentage of your users to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. |
+| [Beta testing and targeted distribution](../../../apps/publish/beta-testing-and-targeted-distribution.md) | No matter how carefully you test your app, there’s nothing like the real-world test of having other people use it. |
+| [Distribute LOB apps to enterprises](../../../apps/publish/distribute-lob-apps-to-enterprises.md)         | Distribute your line of business app to your organization’s users without making it broadly available to the public. |
