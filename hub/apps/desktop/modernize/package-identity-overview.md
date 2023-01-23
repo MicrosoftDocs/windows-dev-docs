@@ -76,10 +76,10 @@ A **Package Full Name** is an opaque string derived from all 5 part of a package
 
 For example, one package full name for the Windows Photos app is "Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe", where "Microsoft.Windows.Photos" is the name, "2020.20090.1002.0" is the version number, "x64" is the target processor architecture, the resource ID is empty (no content between the last two underscores), and "8wekyb3d8bbwe" is the publisher ID for Microsoft.
 
-The **Package Full Name** uniquely identifies an MSIX package or bundle. It is an error to have two packages or bundles with different contents but with the same Package Full Name.
+The **Package Full Name** uniquely identifies an **MSIX** package or bundle. It is an error to have two packages or bundles with different contents but with the same Package Full Name.
 
 > [!NOTE]
-> MSIX is the new name for the previous term APPX.
+> **MSIX** is the new name for the previous term **APPX**. For more information, see [What is MSIX?](/windows/msix/overview)
 
 ### Package Family Name
 
