@@ -30,5 +30,7 @@ In order to provide a consistent user experience, widget screenshots for the wid
 
 The following is an example of a widget screenshot image. 
 
-:::image type="content" source="images/widgets-example-screenshot.png" alt-text="An example of a widget screenshot image.":::
+![An example of a widget screenshot image.](./images/widgets-example-screenshot.png)
+
+
 
