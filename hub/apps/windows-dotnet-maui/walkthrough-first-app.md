@@ -29,9 +29,6 @@ If you haven't already set up your environment for .NET MAUI development, please
 
 ![.NET MAUI App template.](images/hello-maui-app-template.png)
 
-> [!NOTE]
-> The .NET MAUI templates might not appear in Visual Studio if you also have .NET 7 Preview installed. For more information, see [.NET MAUI templates do not appear in Visual Studio](https://github.com/dotnet/maui/wiki/Known-Issues#net-maui-templates-do-not-appear-in-visual-studio).
-
 3. In the **Configure your new project** window, give your project a name, choose a location for it, and click the **Next** button:
 
 ![Name the new project.](images/hello-maui-name-project.png)
@@ -51,6 +48,10 @@ If you haven't already set up your environment for .NET MAUI development, please
 ![Run a MAUI app for the first time.](images/hello-maui-first-run-app.png)
 
 You just ran your first .NET MAUI app on Windows. In the next section, you'll learn how to add data binding and messaging features from the **MVVM Toolkit** to your app.
+
+## Troubleshooting
+
+If your app fails to compile, review [Troubleshooting known issues](/dotnet/maui/troubleshooting), which may have a solution to your problem.
 
 ## Adding the MVVM Toolkit
 
