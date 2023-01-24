@@ -138,7 +138,7 @@ Here are a few highlights of what the Win32 API and C++ offers to enable you to 
 
 You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Modernize your desktop apps](../desktop/modernize/index.md).
 
-### [MFC](https://learn.microsoft.com/en-us/cpp/mfc/mfc-desktop-applications?view=msvc-170)
+### [MFC](#tab/mfc)
 MFC is a well-established platform for developing native Windows C++ applications. It offers development access to the Windows OS platform without breaking the C++ programming class paradigm while preserving C++'s performance and abstract programming advantages. Sophisticated UI is developed by customizing native MFC classes, but any functionality these classes offer can always be supplemented by calls to other underlying OS functionality. For example, although MFC currently only supports IPv4, IPv6 functionality is obtainable by using Windows' [IP Helper](https://learn.microsoft.com/en-us/windows-hardware/drivers/network/ip-helper) functions and primitives. Also, any modern C++ standard features may be used, including implemented features from the latest working ISO C++ draft. The same C++ source can be compiled into either x86, x64 or arm64 binary code. There is a large set of well-vetted code samples in addition to a huge established and deployed code base. But most essentially, MFC offers app developers de facto freedom from having to worry about future disruptive layers of software indirection.
 
 ### [WPF](#tab/wpf)
