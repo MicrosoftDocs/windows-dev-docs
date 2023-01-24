@@ -17,7 +17,7 @@ In the current release, the only Widgets host is the Widgets Board built into Wi
 
 Each widget must provide a screenshot image that is displayed as a preview in the widget picker when the widget has focus. The screenshot is specified by the widget provider in the package manifest for the app. For technical information on how to specify an image file to use for the widget screenshot, see [Implement a widget provider in a win32 app](../../develop/widgets/implement-widget-provider-win32.md) and [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
 
-:::image type="content" source="images/widgets-picker-screenshot.png" alt-text="Screenshot of the Widgets Board. The widget picker is active and a widget screenshot image is being displayed.":::
+![Screenshot of the Widgets Board. The widget picker is active and a widget screenshot image is being displayed.](images/widgets-picker-screenshot.png)
 
 ## Screenshot image requirements 
 
