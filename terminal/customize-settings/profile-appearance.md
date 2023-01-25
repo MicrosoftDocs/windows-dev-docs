@@ -28,13 +28,29 @@ The settings listed below affect the visual settings of each profile separately.
 
 This is the name of the color scheme used in the profile. Color schemes are defined in the `schemes` object. More detailed information can be found on the [Color schemes page](./color-schemes.md).
 
+In addition to a single color scheme name, this property can accept a pair of color scheme names as follows:
+
+```json
+"colorScheme":
+{
+    "light": "One Half Light",
+    "dark": "One Half Dark",
+},
+```
+
+When specified in this manner, the Terminal will automatically switch between the two given color schemes depending on the theme of the application. The Terminal will follow the [`theme.applicationTheme`](./themes.md#application-theme) property of the Terminal's selected theme. If that `applicationTheme` is set to `system`, then this will instead use the color scheme matching the OS theme.
+
 **Property name:** `colorScheme`
 
 **Necessity:** Optional
 
-**Accepts:** Name of color scheme as a string
+**Accepts:** Name of color scheme as a string, or an object with a `light` and `dark` property
 
 **Default value:** `"Campbell"`
+
+
+> [!IMPORTANT]
+> Specifying a pair of `light` and `dark` color schemes is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Font
 
@@ -357,6 +373,9 @@ When `useAcrylic` is set to `true`, the window will use the acrylic material to 
 
 > [!IMPORTANT]
 > Unblurred opacity (`"useAcrylic": false`) only works on Windows 11.
+
+> [!IMPORTANT]
+> When Mica is enabled in the [theme settings](./themes.md#mica), Mica will appear underneath the Terminal contents when the `opacity` of the Terminal is set to a value <100.
 
 ### Enable acrylic
 

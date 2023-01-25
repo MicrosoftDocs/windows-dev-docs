@@ -64,3 +64,40 @@ Below are some examples of [Themes](./../customize-settings/themes.md).
 
 (Color scheme is based on [Fun Forrest](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/windowsterminal/FunForrest.json))
 
+## Chonk
+
+![Windows Terminal Chonk Theme](./../images/Chonk-Theme.png)
+
+For best results, this theme is combined with the global settings `"alwaysShowTabs": true` and `"showTabsInTitlebar": false`, and a profile `opacity` of `0`. You may also want to disable the "Show accent color on title bars and windows borders" setting in the Windows settings app (under "Personalization > Colors")
+
+```json
+    "profiles": {
+        "defaults": {
+            "opacity": 0
+        }
+    },
+    "alwaysShowTabs": true,
+    "showTabsInTitlebar": false,
+    "theme": "chonk",
+    "themes": [
+        {
+            "name": "chonk",
+            "tab":
+            {
+                "background": "#00000000",
+                "unfocusedBackground": "#00000000",
+                "showCloseButton": "hover"
+            },
+            "tabRow":
+            {
+                "background": "#00000000",
+                "unfocusedBackground": "#00000000",
+            },
+            "window":
+            {
+                "applicationTheme": "dark",
+                "useMica": true
+            }
+        }
+    ]
+```
