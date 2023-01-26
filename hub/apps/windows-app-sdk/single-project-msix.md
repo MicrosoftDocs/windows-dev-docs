@@ -143,7 +143,6 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 
     1. Add `<EnableMsixTooling>true</EnableMsixTooling>` to the main `<PropertyGroup>` element.
     2. Change the value of `<AppxPackage>` to `true`.
-    3. Change the value of the `<AppContainerApplication>` element to `true`.
 
     When you're done, the contents of the **.vcxproj** file should look similar to this.
 
@@ -153,7 +152,7 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
       <PropertyGroup Label="Globals">
         ...
         <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
-        <AppContainerApplication>true</AppContainerApplication>
+        <AppContainerApplication>false</AppContainerApplication>
         <AppxPackage>true</AppxPackage>
         <ApplicationType>Windows Store</ApplicationType>
         <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
