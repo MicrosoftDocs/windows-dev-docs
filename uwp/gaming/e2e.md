@@ -1202,11 +1202,11 @@ An add-on (in-app product) is a supplementary item that players can purchase in-
     </tr>
     <tr>
         <td>Add-on details and submission</td>
-        <td><a href="/windows/uwp/publish/iap-submissions">Add-on submissions</a></td>
+        <td><a href="/windows/apps/publish/iap-submissions">Add-on submissions</a></td>
     </tr>
     <tr>
         <td>Monitor add-on sales and demographics for your game</td>
-        <td><a href="/windows/uwp/publish/iap-acquisitions-report">Add-on acquisitions report</a></td>
+        <td><a href="/windows/apps/publish/iap-acquisitions-report">Add-on acquisitions report</a></td>
     </tr>
 </table>
 
@@ -1323,7 +1323,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Use Azure Active Directory (AAD) to add users to your Partner Center account</td>
-        <td><a href="/windows/uwp/publish/manage-account-users">Manage account users</a></td>
+        <td><a href="/windows/apps/publish/manage-account-users">Manage account users</a></td>
     </tr>
     <tr>
         <td>Rating your game (blog post)</td>
@@ -1368,7 +1368,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Uploading and versioning your game</td>
-        <td><a href="/windows/uwp/publish/upload-app-packages">Upload app packages</a></td>
+        <td><a href="/windows/apps/publish/upload-app-packages">Upload app packages</a></td>
     </tr>
 </table>
 
@@ -1391,7 +1391,7 @@ Don't let certification issues delay your game's release. Here are policies and 
     </tr>
     <tr>
         <td>How to avoid some common app certification issues</td>
-        <td><a href="/windows/uwp/publish/avoid-common-certification-failures">Avoid common certification failures</a></td>
+        <td><a href="/windows/apps/publish/avoid-common-certification-failures">Avoid common certification failures</a></td>
     </tr>
 </table>
 
@@ -1423,7 +1423,7 @@ After you've finished development and shipped your game, it's not *game over*. Y
     </colgroup>
     <tr>
         <td>Partner Center analytics</td>
-        <td><a href="/windows/uwp/publish/analytics">Analyze app performance</a></td>
+        <td><a href="/windows/apps/publish/analytics">Analyze app performance</a></td>
     </tr>
     <tr>
         <td>Learn how your customers are engaging with the Xbox features in your game</td>
@@ -1431,7 +1431,7 @@ After you've finished development and shipped your game, it's not *game over*. Y
     </tr>
     <tr>
         <td>Responding to customer reviews</td>
-        <td><a href="/windows/uwp/publish/respond-to-customer-reviews">Respond to customer reviews</a></td>
+        <td><a href="/windows/apps/publish/respond-to-customer-reviews">Respond to customer reviews</a></td>
     </tr>
     <tr>
         <td>Ways to promote your game</td>
@@ -1494,11 +1494,11 @@ To update your published game, you submit a new app package with a higher versio
     </colgroup>
     <tr>
         <td>Updating and versioning your game</td>
-        <td><a href="/windows/uwp/publish/package-version-numbering">Package version numbering</a></td>
+        <td><a href="/windows/apps/publish/package-version-numbering">Package version numbering</a></td>
     </tr>
     <tr>
         <td>Game package management guidance</td>
-        <td><a href="/windows/uwp/publish/package-version-numbering">Guidance for app package management</a></td>
+        <td><a href="/windows/apps/publish/package-version-numbering">Guidance for app package management</a></td>
     </tr>
 </table>
 

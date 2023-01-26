@@ -79,9 +79,9 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
     :::column:::
         <img src="/media/illustrations/bcs-user-management-add-customer-1.svg" alt="Account icon" />
         <h3>Managing account users</h3>
-        <a href="partner-center/associate-azure-ad-with-partner-center.md">Set up Azure AD</a><br/>
-        <a href="partner-center/add-users-groups-and-azure-ad-applications.md">Add account users</a><br/>
-        <a href="partner-center/set-custom-permissions-for-account-users.md">Roles and permissions</a><br/>
+        <a href="/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account">Set up Azure AD</a><br/>
+        <a href="/windows/apps/publish/partner-center/overview-users-groups-azure-ad-applications">Add account users</a><br/>
+        <a href="/windows/apps/publish/partner-center/overview-of-roles-and-permissions-for-account-users">Roles and permissions</a><br/>
     :::column-end:::
     :::column:::
         <img src="/media/illustrations/sql-get-started-download.svg" alt="Shopping cart icon" />

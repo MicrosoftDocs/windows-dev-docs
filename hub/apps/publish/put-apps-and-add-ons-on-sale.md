@@ -14,7 +14,7 @@ You can promote your app or add-on in the Microsoft Store by putting it on sale 
 > [!NOTE]
 > Sale pricing is not supported for subscription add-ons.
 
-When you use the **Sale pricing** section of the **Pricing and availability** page of a submission to temporarily lower the price of your app or add-on, customers viewing your Store listing will see strikethrough pricing indicating that the price has been reduced (as opposed to a [scheduled price change](/windows/apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix#schedule-price-changes), which can lower or raise the price without displaying it as a change in the Store). 
+When you use the **Sale pricing** section of the **Pricing and availability** page of a submission to temporarily lower the price of your app or add-on, customers viewing your Store listing will see strikethrough pricing indicating that the price has been reduced (as opposed to a [scheduled price change](publish-your-app/schedule-pricing-changes.md?pivots=store-installer-msix#schedule-price-changes), which can lower or raise the price without displaying it as a change in the Store). 
 
 During the time period that your product is on sale, customers will be able to purchase it at the lower price during the time period that you have selected. If you lower the price to **Free**, they can download it without paying at all during the sale period.
 
@@ -41,7 +41,7 @@ Sales are scheduled as part of the submission for an app or add-on. If you want 
    > [!IMPORTANT]
    > Sale Pricing in France: Due to consumer laws, the Base price that shows in France must be the lowest price that you have charged in the last 30 days.
 4. Choose one of the following options to specify the type of discount:
-   - **Price**: Use this option to select a lower price tier at which your app will be offered. You can change the currency drop-down to select the price in whichever currency you prefer. (The price will be converted to the corresponding tier for each currency. For more info, see [Pricing](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix).)
+   - **Price**: Use this option to select a lower price tier at which your app will be offered. You can change the currency drop-down to select the price in whichever currency you prefer. (The price will be converted to the corresponding tier for each currency. For more info, see [Pricing](publish-your-app/price-and-availability.md?pivots=store-installer-msix).)
    - **Percentage**: Use this option to select the percentage for a discount that will be applied to your app. The same discount percentage is used for all currencies.
 5. In the **Offered to** row, choose from one of the available options, including:
    - **Everyone**: The sale will be offered to all customers.

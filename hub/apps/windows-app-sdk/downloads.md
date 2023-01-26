@@ -24,16 +24,6 @@ This page provides download links to the various releases of the [Windows App SD
 > [!div class="button" style="text-align: left;" width="150px;"] 
 > [Download 1.2 Installer (x64)](https://aka.ms/windowsappsdk/1.2/latest/windowsappruntimeinstall-x64.exe) 
 
-**Latest Stable 1.1**
-
-> [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download 1.1 Visual Studio 2022 Extension (C#)](https://aka.ms/windowsappsdk/1.1/latest/WindowsAppSDK.Cs.Extension.Dev17.Standalone.vsix) 
-
-> [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download 1.1 Visual Studio 2022 Extension (C++)](https://aka.ms/windowsappsdk/1.1/latest/WindowsAppSDK.Cpp.Extension.Dev17.Standalone.vsix)
-
-> [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download 1.1 Installer (x64)](https://aka.ms/windowsappsdk/1.1/latest/windowsappruntimeinstall-x64.exe) 
 
 For all Windows App SDK downloads, refer to the tables and links below. Depending on your development scenario, you may require the following:
 
@@ -61,6 +51,7 @@ To learn more, see the [Windows App SDK release channels](release-channels.md) a
 
 |   | Version | SDK downloads | Runtime&nbsp;downloads |
 |---|---|---|---|
+| **✅** | [1.2.3 (1.2.230118.102)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](stable-channel.md#version-123-12230118102) <br> 01/25/2023 <br> [Release&nbsp;notes](stable-channel.md)&nbsp; | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.230118.102/WindowsAppSDK.Cs.Extension.Dev17.Standalone.vsix)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.230118.102/WindowsAppSDK.Cpp.Extension.Dev17.Standalone.vsix) | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.230118.102/windowsappruntimeinstall-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.230118.102/windowsappruntimeinstall-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.230118.102/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.230118.102/Microsoft.WindowsAppRuntime.Redist.1.2.zip) |
 | **✅** | [1.2.2 (1.2.221209.1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](stable-channel.md#version-122-122212091) <br> 12/14/2022 <br> [Release&nbsp;notes](stable-channel.md)&nbsp; | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.221209.1/WindowsAppSDK.Cs.Extension.Dev17.Standalone.vsix)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.221209.1/WindowsAppSDK.Cpp.Extension.Dev17.Standalone.vsix) | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.221209.1/windowsappruntimeinstall-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.221209.1/windowsappruntimeinstall-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.221209.1/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.221209.1/Microsoft.WindowsAppRuntime.Redist.1.2.zip) |
 | **✅** | [1.2.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](stable-channel.md#version-12-stable) <br> 11/10/2022 <br> [Release&nbsp;notes](stable-channel.md)&nbsp; | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/WindowsAppSDK.Cs.Extension.Dev17.Standalone.vsix)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/WindowsAppSDK.Cpp.Extension.Dev17.Standalone.vsix) | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/windowsappruntimeinstall-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/windowsappruntimeinstall-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.221109.1/Microsoft.WindowsAppRuntime.Redist.1.2.zip) |
 | **❇️** | [1.2&nbsp;Preview2](preview-channel.md#version-12-preview-2-120-preview2)<br>10/04/2022<br>[Release&nbsp;notes&nbsp;](preview-channel.md#version-12-preview-2-120-preview2) | No new Visual Studio extensions. | [Installer&nbsp;(x64 Preview2)](https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86 Preview2)](https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64 Preview2)](https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/windowsappruntimeinstall-arm64.exe)<br>[Redistributable (Preview2)](https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/Microsoft.WindowsAppRuntime.Redist.1.2.zip) |
