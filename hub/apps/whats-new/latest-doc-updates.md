@@ -34,7 +34,7 @@ Highlights this month include:
 ## Updated content
 
 * [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment)
-* [Get started with Windows: Selecting a development technology](/windows/apps/get-started/)
+* [Writing apps for Windows: Selecting a development technology](/windows/apps/get-started/)
 * [Windows on Arm](/windows/arm/overview)
 * [Data access with Windows](/windows/apps/develop/data-access/)
 

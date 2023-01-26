@@ -32,6 +32,14 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.2
 
+### Version 1.2.3 (1.2.230118.102)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.
+
+- Fixed issue causing WinUI 3 apps to crash when multiple windows are closed.
+- Fixed issue causing a crash on app close when two or more references to the ThreadPoolTimer interface are called. For more information, see GitHub issues [#7260](https://github.com/microsoft/microsoft-ui-xaml/issues/7260) and [#7239](https://github.com/microsoft/microsoft-ui-xaml/issues/7239).
+- Fixed issue causing all Single-project MSIX apps to run as full trust. For more information, see GitHub issue [#7766](https://github.com/microsoft/microsoft-ui-xaml/issues/7766).
+
 ### Version 1.2.2 (1.2.221209.1)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.

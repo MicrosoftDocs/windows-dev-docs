@@ -12,7 +12,7 @@ During this phase, several tests are conducted:
 - **Technical compliance tests:** Technical compliance is tested by the Windows App Certification Kit. (You should always make sure to [test your app with the Windows App Certification Kit](/uwp/debug-test-perf/windows-app-certification-kit) before you submit it to the Store.)
 - **Content compliance:** The amount of time this takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the [Notes for certification](../../../apps/publish/publish-your-app/notes-for-certification.md) page.
 
-After the certification process is complete, you'll get a certification report telling you whether or not your app passed certification. If it didn't pass, the report will indicate which test failed or which [policy](/uwp/publish/store-policies) was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
+After the certification process is complete, you'll get a certification report telling you whether or not your app passed certification. If it didn't pass, the report will indicate which test failed or which [policy](../../../apps/publish/store-policies.md) was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
 
 ## Release
 
@@ -36,4 +36,4 @@ While your app is in the publishing phase, the **Show details** link in the Stat
 After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Microsoft Store for customers to download (unless you have chosen another [Discoverability](../../../apps/publish/publish-your-app/visibility-options.md#discoverability) option).
 
 > [!NOTE]
-> We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the [Microsoft Store Policies](/uwp/publish/store-policies). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
+> We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the [Microsoft Store Policies](../../../apps/publish/store-policies.md). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
