@@ -2,7 +2,7 @@
 description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows API and developer documentation
 ms.topic: article
-ms.date: 12/16/2022
+ms.date: 1/26/2023
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -10,7 +10,7 @@ author: QuinnRadich
 
 # Latest updates to the Windows developer docs
 
-The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of December 16th, 2022.
+The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of January 26th, 2022.
 
 Note: For information regarding Windows 11, please see [What's cool for developers](https://developer.microsoft.com/windows/windows-for-developers/) and the [Windows Developer Center](https://developer.microsoft.com/windows/).
 
@@ -22,21 +22,33 @@ Highlights this month include:
 
 ## Windows App SDK / WinUI
 
-* [WinUI 2, 3 content reorganized](/windows/apps/winui/)
-* [Windows App SDK – version 1.2 Preview 2](/windows/apps/windows-app-sdk/preview-channel)
+* [Data binding content migrated from UWP to WinAppSDK](/windows/apps/develop/data-binding/) 
+* [Data Access WinAppSDK content migrated from UWP](/windows/apps/develop/data-access/) 
+* [Using Custom Annotations](/windows/win32/winauto/uiauto-using-custom-annotations)
+* [DirectML 1.10 documentation refresh](/windows/ai/directml/dml-version-history)
+* New Fileapi.h reference APIs added: [DISK_SPACE_INFORMATION](/windows/win32/api/fileapi/ns-fileapi-disk_space_information), [GetDiskSpaceInformationA](/windows/win32/api/fileapi/nf-fileapi-getdiskspaceinformationa), and [GetDiskSpaceInformationW](/windows/win32/api/fileapi/nf-fileapi-getdiskspaceinformationw), [CREATEFILE2_EXTENDED_PARAMETERS](/windows/win32/api/fileapi/ns-fileapi-createfile2_extended_parameters)
 
-## Code sample updates
+## Code samples, tutorials and Learn Module updates
 
-* [Build your first .NET MAUI app for Windows](/windows/apps/windows-dotnet-maui/walkthrough-first-app)
-* [Tutorial — Create a .NET MAUI app using the Microsoft Graph SDK](/windows/apps/windows-dotnet-maui/tutorial-graph-api)
-
+* If you're interested in using Linux on your Windows machine, there is a new training module: [Get started with Windows Subsystem for Linux (WSL)](/training/modules/wsl/wsl-introduction/).
+* Updated the [.NET MAUI for Windows tutorial](/windows/apps/windows-dotnet-maui/walkthrough-first-app).
+* Updated the [RSS reader tutorial (Rust for Windows with VS Code)](/windows/dev-environment/rust/rss-reader-rust-for-windows).
 
 ## Updated content
 
-* [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment)
-* [Writing apps for Windows: Selecting a development technology](/windows/apps/get-started/)
-* [Windows on Arm](/windows/arm/overview)
-* [Data access with Windows](/windows/apps/develop/data-access/)
+
+* PWA tab added to Cross-platform options in [Windows Dev Overview page](/windows/apps/get-started/?tabs=net-maui%2Ccpp-win32).
+* Updated the "Start building apps" section of the [Build Desktop Apps page](/windows/apps/desktop/).
+* Updated our [.NET MAUI for Windows overview](/windows/apps/windows-dotnet-maui/) with some new, relevant blog post links.
+* In [Initialize the Windows App SDK](/windows/apps/package-and-deploy/deploy-overview), documented the need to call [DeploymentManager.Initialize](/windows/windows-app-sdk/api/winrt/Microsoft.Windows.ApplicationModel.WindowsAppRuntime.DeploymentManager.Initialize?view=windows-app-sdk-1.2)
+ during app startup.
+* Improved [Windows App SDK deployment guide for framework-dependent packaged apps](/windows/apps/windows-app-sdk/deploy-packaged-apps).
+* Updated the [PyTorch with DirectML](/windows/ai/directml/gpu-pytorch-windows) docs.
+* Updated [Create an unsigned MSIX package for testing](/windows/msix/package/unsigned-package) to explain why admin privilege is needed to install an unsigned package.
+* Quality and correctness improvements to [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix?tabs=csharp), [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), and [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time).
+* Updated the topics [App capability declarations](/windows/uwp/packaging/app-capability-declarations), [Create firewall exception for your app](/windows/apps/desktop/modernize/desktop-to-uwp-extensions), [Application (Windows 10)](/uwp/schemas/appxpackage/uapmanifestschema/element-application), [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes), and [Generating MSIX package components](/windows/msix/desktop/desktop-to-uwp-manual-conversion).
+* Improved [ISpecialSystemProperties](/windows/win32/immact/immact/nn-immact-ispecialsystemproperties) and [ISpecialSystemProperties::SetLUARunLevel](/windows/win32/immact/immact/nf-immact-ispecialsystemproperties-setluarunlevel).
+
 
 ## Developer tool updates
 
@@ -56,56 +68,69 @@ The following list of topics have seen significant updates in the past month, as
 
 <ul>
 <li><a href="/windows/desktop/Controls/em-posfromchar">EM_POSFROMCHAR message (Winuser.h)</a></li>
-<li><a href="/windows/desktop/Controls/em-setrect">EM_SETRECT message (Winuser.h)</a></li>
-<li><a href="/windows/desktop/Controls/property-typedefs">Property Identifiers (Windows Controls)</a></li>
-<li><a href="/windows/desktop/DirectShow/directshow-base-classes">DirectShow base classes</a></li>
-<li><a href="/windows/desktop/DirectShow/directshow-samples">DirectShow sample apps</a></li>
-<li><a href="/windows/desktop/SecCNG/cng-algorithm-pseudo-handles">CNG Algorithm Pseudo-handles</a></li>
-<li><a href="/windows/desktop/SecCrypto/signer-digest-sign-info">SIGNER_SPC_CHAIN_INFO structure</a></li>
-<li><a href="/windows/desktop/SecCrypto/signersignex3">SignerSignEx3 function</a></li>
-<li><a href="/windows/desktop/WinHttp/option-flags">Option flags (Winhttp.h)</a></li>
-<li><a href="/windows/desktop/direct3d11/bc7-format">BC7 Format</a></li>
-<li><a href="/windows/desktop/direct3d12/shared-heaps">Shared heaps</a></li>
-<li><a href="/windows/desktop/direct3d9/d3dxloadsurfacefromfile">D3DXLoadSurfaceFromFile function (D3dx9tex.h)</a></li>
-<li><a href="/windows/desktop/direct3d9/d3dxloadsurfacefrommemory">D3DXLoadSurfaceFromMemory function (D3dx9tex.h)</a></li>
-<li><a href="/windows/desktop/direct3d9/queries">Queries (Direct3D 9)</a></li>
-<li><a href="/windows/desktop/gdi/bitmap-header-types">Bitmap Header Types</a></li>
-<li><a href="/windows/desktop/gdi/bitmap-storage">Bitmap Storage</a></li>
-<li><a href="/windows/desktop/gdi/rectangle-structures">Rectangle Structures</a></li>
-<li><a href="/windows/desktop/inputdev/using-keyboard-input">Using Keyboard Input</a></li>
-<li><a href="/windows/desktop/properties/property-bag-functions">Property Bag Functions</a></li>
-<li><a href="/windows/desktop/shell/reg-shell-exts">Registering Shell Extension Handlers</a></li>
+<li><a href="/windows/desktop/inputdev/about-keyboard-input">Keyboard Input Overview</a></li>
+<li><a href="/windows/desktop/menurc/resdir">RESDIR structure</a></li>
 </ul>
 
 
 
 ## UWP reference
 <ul>
-<li><a href="/uwp/api/windows.storage.streams.ibuffer">Windows.Storage.Streams.IBuffer</a></li>
-<li><a href="/uwp/api/windows.web.http.httpcookie.name">Windows.Web.Http.HttpCookie.Name</a></li>
-<li><a href="/uwp/api/windows.web.http.httpcookie.value">Windows.Web.Http.HttpCookie.Value</a></li>
-</ul>
-
-
-## Win32 API reference
-
-<ul>
-<li><a href="/windows/win32/api/tdh/ne-tdh-_tdh_in_type">TDH_IN_TYPE (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/ne-tdh-_tdh_out_type">TDH_OUT_TYPE (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/ne-tdh-payload_operator">PAYLOAD_OPERATOR (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-emi_map_format">EMI_MAP_FORMAT (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-emi_map_input">EMI_MAP_INPUT (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-emi_map_name">EMI_MAP_NAME (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-emi_map_output">EMI_MAP_OUTPUT (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-pfi_field_name">PFI_FIELD_NAME (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-tei_channel_name">TEI_CHANNEL_NAME (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-tei_level_name">TEI_LEVEL_NAME (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-tei_map_name">TEI_MAP_NAME (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-tei_opcode_name">TEI_OPCODE_NAME (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tdh/nf-tdh-tei_task_name">TEI_TASK_NAME (tdh.h) </a></li>
-<li><a href="/windows/win32/api/wingdi/nf-wingdi-getdibits">GetDIBits function (wingdi.h) </a></li>
-<li><a href="/windows/win32/api/wingdi/nf-wingdi-getpath">GetPath function (wingdi.h) </a></li>
-<li><a href="/windows/win32/api/wingdi/ns-wingdi-bitmapinfo">BITMAPINFO (wingdi.h) </a></li>
-<li><a href="/windows/win32/api/wingdi/ns-wingdi-dibsection">DIBSECTION (wingdi.h) </a></li>
-<li><a href="/windows/win32/api/winsock2/nf-winsock2-accept">accept function (winsock2.h) </a></li>
+<li><a href="/uwp/api/windows.media.protection.protectioncapabilities">Windows.Media.Protection.ProtectionCapabilities</a></li>
+<li><a href="/uwp/api/windows.networking.networkoperators.dataclasses">Windows.Networking.NetworkOperators.DataClasses</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.appbar">Windows.UI.Xaml.Controls.AppBar</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.appbarbutton">Windows.UI.Xaml.Controls.AppBarButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.appbarseparator">Windows.UI.Xaml.Controls.AppBarSeparator</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.appbartogglebutton">Windows.UI.Xaml.Controls.AppBarToggleButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.autosuggestbox">Windows.UI.Xaml.Controls.AutoSuggestBox</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.button">Windows.UI.Xaml.Controls.Button</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.calendardatepicker">Windows.UI.Xaml.Controls.CalendarDatePicker</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.calendarview">Windows.UI.Xaml.Controls.CalendarView</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.checkbox">Windows.UI.Xaml.Controls.CheckBox</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.colorpicker">Windows.UI.Xaml.Controls.ColorPicker</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.combobox">Windows.UI.Xaml.Controls.ComboBox</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.comboboxitem">Windows.UI.Xaml.Controls.ComboBoxItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.commandbar">Windows.UI.Xaml.Controls.CommandBar</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.commandbarflyout">Windows.UI.Xaml.Controls.CommandBarFlyout</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.contentdialog">Windows.UI.Xaml.Controls.ContentDialog</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.datepicker">Windows.UI.Xaml.Controls.DatePicker</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.dropdownbutton">Windows.UI.Xaml.Controls.DropDownButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.flipview">Windows.UI.Xaml.Controls.FlipView</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.flipviewitem">Windows.UI.Xaml.Controls.FlipViewItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.gridviewheaderitem">Windows.UI.Xaml.Controls.GridViewHeaderItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.gridviewitem">Windows.UI.Xaml.Controls.GridViewItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.hub">Windows.UI.Xaml.Controls.Hub</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.hubsection">Windows.UI.Xaml.Controls.HubSection</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.hyperlinkbutton">Windows.UI.Xaml.Controls.HyperlinkButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.listviewheaderitem">Windows.UI.Xaml.Controls.ListViewHeaderItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.listviewitem">Windows.UI.Xaml.Controls.ListViewItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.mediatransportcontrols">Windows.UI.Xaml.Controls.MediaTransportControls</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.menubar">Windows.UI.Xaml.Controls.MenuBar</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.menuflyout">Windows.UI.Xaml.Controls.MenuFlyout</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.menuflyoutitem">Windows.UI.Xaml.Controls.MenuFlyoutItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.menuflyoutpresenter">Windows.UI.Xaml.Controls.MenuFlyoutPresenter</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem">Windows.UI.Xaml.Controls.MenuFlyoutSubItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.navigationview">Windows.UI.Xaml.Controls.NavigationView</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.passwordbox">Windows.UI.Xaml.Controls.PasswordBox</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.personpicture">Windows.UI.Xaml.Controls.PersonPicture</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.pivot">Windows.UI.Xaml.Controls.Pivot</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.pivotitem">Windows.UI.Xaml.Controls.PivotItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.progressbar">Windows.UI.Xaml.Controls.ProgressBar</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.progressring">Windows.UI.Xaml.Controls.ProgressRing</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.radiobutton">Windows.UI.Xaml.Controls.RadioButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.ratingcontrol">Windows.UI.Xaml.Controls.RatingControl</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.refreshcontainer">Windows.UI.Xaml.Controls.RefreshContainer</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.refreshvisualizer">Windows.UI.Xaml.Controls.RefreshVisualizer</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.richeditbox">Windows.UI.Xaml.Controls.RichEditBox</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">Windows.UI.Xaml.Controls.ScrollViewer</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.slider">Windows.UI.Xaml.Controls.Slider</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.splitbutton">Windows.UI.Xaml.Controls.SplitButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.swipecontrol">Windows.UI.Xaml.Controls.SwipeControl</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.textbox">Windows.UI.Xaml.Controls.TextBox</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.timepicker">Windows.UI.Xaml.Controls.TimePicker</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem">Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.togglesplitbutton">Windows.UI.Xaml.Controls.ToggleSplitButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.toggleswitch">Windows.UI.Xaml.Controls.ToggleSwitch</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.tooltip">Windows.UI.Xaml.Controls.ToolTip</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.treeview">Windows.UI.Xaml.Controls.TreeView</a></li>
 </ul>
