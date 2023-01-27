@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Use this method in the Microsoft Store analytics API to get an aggregate summary of promotional ad campaign performance data for your applications during a given date range and other optional filters. This method returns the data in JSON format.
 
-This method returns the same data that is provided by the [Ad campaign report](/windows/uwp/publish/ad-campaign-report) in Partner Center. For more information about ad campaigns, see [Create an ad campaign for your app](./index.md).
+This method returns the same data that is provided by the [Ad campaign report](/windows/apps/publish/ad-campaign-report) in Partner Center. For more information about ad campaigns, see [Create an ad campaign for your app](./index.md).
 
 To create, update, or retrieve details for ad campaigns, you can use the [Manage ad campaigns](manage-ad-campaigns.md) methods in the [Microsoft Store promotions API](run-ad-campaigns-using-windows-store-services.md).
 
