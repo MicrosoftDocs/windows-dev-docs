@@ -15,7 +15,7 @@ This article provides an overview of managing the lifecycle of **Windows App SDK
 
 ## App lifecycle overview
 
-The application lifecycle of a Windows App SDK app is not that same as a UWP app. The lifecycle of Windows App SDK apps is similar to other .NET and Win32 desktop apps. Windows App SDK apps, like UWP apps, are started and stopped. They are either running or not running. They are not suspended and resumed like UWP apps. You can subscribe to events to react when windows in your app are activated and deactivated.
+The application lifecycle of a Windows App SDK app is not that same as a UWP app. The lifecycle of Windows App SDK apps is similar to other .NET and Win32 desktop apps. Windows App SDK apps, like UWP apps, are started and stopped. They are either running or not running. However, unlike UWP apps, they are cannot be suspended and resumed. At the window level, your app can subscribe to events to react when windows are activated and deactivated.
 
 ## Microsoft.UI.Xaml.Application lifecycle
 
