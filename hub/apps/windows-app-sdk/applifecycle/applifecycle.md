@@ -25,6 +25,16 @@ If you are migrating a UWP app to Windows App SDK, you can use the [Application 
 
 ## Microsoft.UI.Xaml.Window lifecycle
 
+The [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object in Windows App SDK has some lifecycle events as well, `Window.Activated` and `Window.Closed`.
+
+### Window.Activated
+
+The [Activated](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.activated) event is raised when the window has been activated or deactivated by the system. Apps can determine what the status of the Window activation is by checking the [WindowActivationState](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.windowactivatedeventargs.windowactivationstate) property of the [WindowActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.windowactivatedeventargs) parameter. This event will fire any time the window is activated or deactivated, including when the window is minimized or maximized.
+
+### Window.Closed
+
+The [Closed](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.closed) event is raised when the window closes. If this is the last window to be closed, usually the app's MainWindow, the application will be terminated. Because there is no `Suspending` event raised by the `Application` object in Windows App SDK, you should use your main window's `Closed` event to save application state and clean up any managed resources.
+
 ## See also
 
 [App lifecycle and system services](/windows/apps/develop/app-lifecycle-and-system-services)
