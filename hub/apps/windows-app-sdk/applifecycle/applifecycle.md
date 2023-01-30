@@ -11,6 +11,10 @@ ms.localizationpriority: medium
 
 This article provides an overview of managing the lifecycle of **Windows App SDK** desktop apps.
 
+## App lifecycle overview
+
+The application lifecycle of a Windows App SDK app is not that same as a UWP app. The lifecycle of Windows App SDK apps is similar to other .NET and Win32 desktop apps. Windows App SDK apps, like UWP apps, are started and stopped. They are either running or not running. They are not suspended and resumed like UWP apps. You can subscribe to events to react when windows in your app are activated and deactivated.
+
 ## Microsoft.UI.Xaml.Application lifecycle
 
 The [Application](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application) object is the main entry point for a Windows App SDK app. It's similar to the UWP [Application](/uwp/api/windows.ui.xaml.application) class, but with some important differences. The `Application` object is created by the Windows App SDK framework and is accessible from the `Microsoft.UI.Xaml.Application.Current` property.
