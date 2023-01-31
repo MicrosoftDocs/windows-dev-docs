@@ -312,6 +312,8 @@ items:
             href: develop/app-lifecycle-and-system-services.md
           - name: Manage app lifecycle
             items:
+              - name: App lifecycle
+                href: windows-app-sdk/applifecycle/applifecycle.md
               - name: App instancing
                 href: windows-app-sdk/applifecycle/applifecycle-instancing.md
               - name: Rich activation
