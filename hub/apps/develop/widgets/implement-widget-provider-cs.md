@@ -1,5 +1,5 @@
 ---
-title: Implement a widget provider in a win32 app (C#)
+title: Implement a widget provider in a C# Windows App
 description: This article walks you through the process of creating a widget provider, implemented in C#, that provides widget content and responds to widget actions. 
 ms.topic: article
 ms.date: 07/06/2022
@@ -8,7 +8,7 @@ author: drewbatgit
 ms.localizationpriority: medium
 ---
 
-# Implement a widget provider in a win32 app (C#)
+# Implement a widget provider in a C# Windows App
 
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
@@ -22,7 +22,7 @@ This article walks you through creating a simple widget provider that implements
 
 :::image type="content" source="images/counting-widget-screenshot.png" alt-text="A screenshot of a simple counting widget. The widget shows a string containing the numeric value to be incremented and a button labeled Increment, as well as some diagnostic text illustrating that the template for the small size widget is being displayed.":::
 
-This sample code in this article is adapted from the [Windows App SDK Sample](https://github.com/microsoft/WindowsAppSDK-Samples). To implement a widget provider using C++/WinRT, see [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md).
+This sample code in this article is adapted from the [Windows App SDK Widgets Sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Widgets). To implement a widget provider using C++/WinRT, see [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md).
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ This sample code in this article is adapted from the [Windows App SDK Sample](ht
 - Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 - Visual Studio 2017 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
-## Create a new C# win32 console app
+## Create a new C# console app
 
 In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleWidgetProvider". When prompted, set the target .NET version to 6.0. 
 
@@ -39,11 +39,11 @@ When the project loads, in **Solution Explorer** right-click the project name an
 
 ## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
 
-This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the Include prerelease check box near the top of the window, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
+This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
 
 ## Add a WidgetProvider class to handle widget operations
 
-In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **OK**. In the generated WidgetProvider.cs file, update the class definition to indicate that it implements the **IWidgetProvider** interface.
+In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **Add**. In the generated WidgetProvider.cs file, update the class definition to indicate that it implements the **IWidgetProvider** interface.
 
 ```csharp
 // WidgetProvider.cs
@@ -424,7 +424,7 @@ public WidgetProvider()
 
 In order for the widget host to communicate with our widget provider, we must call [CoRegisterClassObject](/windows/win32/api/combaseapi/nf-combaseapi-coregisterclassobject). This function requires us to create an implementation of the [IClassFactory](/windows/win32/api/unknwn/nn-unknwn-iclassfactory) that will create a class object for our **WidgetProvider** class.  We will implement our class factory in a self-contained helper class. 
 
-In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "FactoryHelper" and click **OK**.
+In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "FactoryHelper" and click **Add**.
 
 Replace the contents of the FactoryHelper.cs file with the following code. This code defines the **IClassFactory** interface and implements it's two methods, [CreateInstance](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-createinstance) and [LockServer](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-lockserver). This code is typical boilerplate for implementing a class factory and is not specific to the functionality of a widget provider except that we indicate that the class object being created implements the **IWidgetProvider** interface. 
 
@@ -560,6 +560,9 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 </ItemGroup>
 ```
 
+> [!NOTE]
+> Make sure the **Version** specified in the **PackageReference** element matches the latest stable version you referenced in the previous step.
+
 If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appxmanifest file for the ExampleWidgetProviderPackage project.
 
 ```xml
@@ -607,7 +610,7 @@ The first extension we need to add is the [ComServer](/uwp/schemas/appxpackage/u
     <com:Extension Category="windows.comServer">
         <com:ComServer>
             <com:ExeServer Executable="ExampleWidgetProvider\ExampleWidgetProvider.exe" DisplayName="ExampleWidgetProvider">
-                <com:Class Id="80F4CB41-5758-4493-9180-4FB8D480E3F5" DisplayName="ExampleWidgetProvider" />
+                <com:Class Id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" DisplayName="ExampleWidgetProvider" />
             </com:ExeServer>
         </com:ComServer>
     </com:Extension>
@@ -629,7 +632,7 @@ Next, add the extension that registers the app as a widget provider. Paste the [
                     </ProviderIcons>
                     <Activation>
                         <!-- Apps exports COM interface which implements IWidgetProvider -->
-                        <CreateInstance ClassId="80F4CB41-5758-4493-9180-4FB8D480E3F5" />
+                        <CreateInstance ClassId="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
                     </Activation>
 
                     <TrustedPackageFamilyNames>
@@ -702,4 +705,4 @@ In **Solution Explorer**, right-click your **ExampleWidgetProviderPackage** and 
 
 ## Testing your widget provider
 
-In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
