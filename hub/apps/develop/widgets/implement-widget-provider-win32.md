@@ -252,7 +252,7 @@ const std::string countWidgetTemplate = R"(
 
 ## Implement the IWidgetProvider methods
 
-In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations which will be shown later in this article. Before diving into the interface methods, add the following lines to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace and allow access to the map we declared in the previous step.
+In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations will be shown later in this article. Before diving into the interface methods, add the following lines to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace and allow access to the map we declared in the previous step.
 
 > [!NOTE]
 > Objects passed into the callback methods of the **IWidgetProvider** interface are only guaranteed to be valid within the callback. You should not store references to these objects because their behavior outside of the context of the callback is undefined.
@@ -269,7 +269,7 @@ std::unordered_map<winrt::hstring, CompactWidgetInfo> WidgetProvider::RunningWid
 
 ## CreateWidget
 
-The widget host calls [CreateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.createwidget) when the user has enabled one of your app's widgets in the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
+The widget host calls [CreateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.createwidget) when the user has pinned one of your app's widgets in the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
 
 ```cpp
 // WidgetProvider.cpp
