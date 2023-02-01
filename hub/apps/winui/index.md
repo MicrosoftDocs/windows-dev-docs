@@ -15,23 +15,23 @@ keywords: windows 10, windows 11, Windows App SDK, Windows app development platf
     :::column-end:::
     :::column span="2":::
 
+> [!Important]
+> At this time, there are two generations of the Windows UI Library (WinUI) under active development: [WinUI 2 for UWP](winui2/index.md) and [WinUI 3 in the Windows App SDK](winui3/index.md). While both can be used in production-ready apps on Windows 10 and later, each have different development targets and release schedules.
+>
+> See [Comparison of WinUI 3 and WinUI 2](#comparison-of-winui-3-and-winui-2).
+
+    :::column-end:::
+:::row-end:::
+
 The Windows UI Library (WinUI) is a native user experience (UX) framework for both Windows desktop and UWP applications.
 
 By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
 
 With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and JavaScript (using [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
 
-    :::column-end:::
-:::row-end:::
-
-> [!Important]
-> At this time, there are two generations of the Windows UI Library (WinUI) under active development: [WinUI 2 for UWP](winui2/index.md) and [WinUI 3 in the Windows App SDK](winui3/index.md). While both can be used in production-ready apps on Windows 10 and later, each have different development targets and release schedules.
->
-> See [Comparison of WinUI 3 and WinUI 2](#comparison-of-winui-3-and-winui-2).
-
 ## WinUI resources
 
-**GitHub**: WinUI is an open-source project hosted on GitHub. Use the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml) to file feature requests or bugs, interact with the WinUI team, and view the team's plans for WinUI 3 and beyond on their [roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+**GitHub**: The WinUI libraries are hosted on GitHub (in the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml)) where you can file feature requests or bugs, interact with the WinUI team, and view the WinUI [roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
 
 **Website**: The [WinUI website](https://aka.ms/winui) has product comparisons, explains the various advantages of WinUI, and provides ways to stay engaged with the product and the product team.
 

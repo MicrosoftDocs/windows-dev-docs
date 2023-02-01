@@ -2,7 +2,7 @@ The **Schedule** section on the [Pricing and availability](../../../apps/publish
 
 > [!NOTE]
 > Although this topic refers to apps, release scheduling for add-on submissions uses the same process.
-You can additionally opt to set a date when the product should no longer be available in the Store. Note that this means that the product can no longer be found in the Store via searching or browsing, but any customer with a direct link can see the product's Store listing. They can only download it if they already own the product or if they have a [promotional code](/windows/uwp/publish/generate-promotional-codes) and are using a Windows 10 or Windows 11 device.
+You can additionally opt to set a date when the product should no longer be available in the Store. Note that this means that the product can no longer be found in the Store via searching or browsing, but any customer with a direct link can see the product's Store listing. They can only download it if they already own the product or if they have a [promotional code](../../../apps/publish/generate-promotional-codes.md) and are using a Windows 10 or Windows 11 device.
 
 By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](../../../apps/publish/publish-your-app/visibility-options.md#discoverability) section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
 
