@@ -26,7 +26,7 @@ The following screenshot illustrates the placement of the screenshot image withi
 In order to provide a consistent user experience, widget screenshots for the widget picker must follow the following guidelines.
  
 
-* The screenshot should contain the medium size version of your widget.
+* The screenshot should display the medium size version of your widget.
 * The image should be 300 pixels wide and 304 pixels tall.
 * The image should have transparent, rounded corners.
 
