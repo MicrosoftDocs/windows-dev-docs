@@ -37,8 +37,8 @@ You can also schedule price changes to indicate the date and time at which the a
 > [!TIP]
 > For subscription add-ons, you can't raise the price after you publish the add-on, either by selecting a higher base price in a later submission or by scheduling a price change that increases the price. You can select a lower price using either of these methods, but once the price is lowered you won't be able to raise it higher than that new price. Because of this, it's especially important to be sure you select the appropriate price tier for subscription add-ons.
 
-For more info, see [Set and schedule app pricing](/uwp/publish/set-and-schedule-app-pricing).
+For more info, see [Set and schedule app pricing](../../../apps/publish/publish-your-app/schedule-pricing-changes.md).
 
 ## Sale pricing
 
-If you want to offer your add-on at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](/uwp/publish/put-apps-and-add-ons-on-sale).
+If you want to offer your add-on at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](../../../apps/publish/put-apps-and-add-ons-on-sale.md).

@@ -312,6 +312,8 @@ items:
             href: develop/app-lifecycle-and-system-services.md
           - name: Manage app lifecycle
             items:
+              - name: App lifecycle
+                href: windows-app-sdk/applifecycle/applifecycle.md
               - name: App instancing
                 href: windows-app-sdk/applifecycle/applifecycle-instancing.md
               - name: Rich activation
@@ -398,7 +400,9 @@ items:
         items:
         - name: Overview
           href: develop/widgets/widget-providers.md
-        - name: Implement a widget provider in a win32 app
+        - name: Implement a widget provider in a win32 app (C#)
+          href: develop/widgets/implement-widget-provider-cs.md
+        - name: Implement a widget provider in a win32 app (C++/WinRT)
           href: develop/widgets/implement-widget-provider-win32.md
         - name: Widget provider package manifest XML format
           href: develop/widgets/widget-provider-manifest.md
