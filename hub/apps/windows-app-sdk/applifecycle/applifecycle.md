@@ -15,7 +15,7 @@ This article provides an overview of managing the lifecycle of **Windows App SDK
 
 ## App lifecycle overview
 
-The application lifecycle of a Windows App SDK app is not that same as a UWP app. The lifecycle of Windows App SDK apps is similar to other .NET and Win32 desktop apps. Windows App SDK apps, like UWP apps, are started and stopped. They are either running or not running. However, unlike UWP apps, they are cannot be suspended and resumed. At the window level, your app can subscribe to events to react when windows are activated and deactivated.
+The application lifecycle of a Windows App SDK app is not that same as a UWP app. The lifecycle of Windows App SDK apps is similar to other .NET and Win32 desktop apps. Windows App SDK apps, like UWP apps, are started and stopped. They are either running or not running. However, unlike UWP apps, they cannot be suspended and resumed. At the window level, your app can subscribe to events to react when windows are activated and deactivated.
 
 ## Microsoft.UI.Xaml.Application lifecycle
 
@@ -25,7 +25,7 @@ The `Application` class in Windows App SDK has only one lifecycle method, [OnLau
 
 In contrast, the UWP `Application` class has several activation-related lifecycle methods, including [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched), [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated), and [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated). The `OnActivated` and `OnBackgroundActivated` methods are called when the app is activated. The `OnActivated` method is called when the app is activated by the user, and the `OnBackgroundActivated` method is called when the app is activated by the system.
 
-UWP's `Application` class also several lifecycle events: [Suspending](/uwp/api/windows.ui.xaml.application.suspending), [Resuming](/uwp/api/windows.ui.xaml.application.resuming), [EnteredBackground](/uwp/api/windows.ui.xaml.application.enteredbackground), and [LeavingBackground](/uwp/api/windows.ui.xaml.application.leavingbackground). The `Suspending` event is raised when the app is suspended, and the `Resuming` event is raised when the app is resumed. The `EnteredBackground` event is raised when the app enters the background, and the `LeavingBackground` event is raised when the app leaves the background. For a full explanation of UWP lifecycle events, see [Windows 10 UWP app lifecycle](/windows/uwp/launch-resume/app-lifecycle).
+UWP's `Application` class also has several lifecycle events: [Suspending](/uwp/api/windows.ui.xaml.application.suspending), [Resuming](/uwp/api/windows.ui.xaml.application.resuming), [EnteredBackground](/uwp/api/windows.ui.xaml.application.enteredbackground), and [LeavingBackground](/uwp/api/windows.ui.xaml.application.leavingbackground). The `Suspending` event is raised when the app is suspended, and the `Resuming` event is raised when the app is resumed. The `EnteredBackground` event is raised when the app enters the background, and the `LeavingBackground` event is raised when the app leaves the background. For a full explanation of UWP lifecycle events, see [Windows 10 UWP app lifecycle](/windows/uwp/launch-resume/app-lifecycle).
 
 If you are migrating a UWP app to Windows App SDK, you can use the [Application lifecycle functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle) guide to understand the differences between the UWP and Windows App SDK app lifecycles.
 
