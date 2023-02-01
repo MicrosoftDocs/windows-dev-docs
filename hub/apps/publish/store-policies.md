@@ -81,7 +81,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 
 - Your product title or name must be unique and must not contain marketing or descriptive text, including extraneous use of keywords.
 
-- Your product description must clearly cite the ownder of any trademark or product that is not owned by you.  
+- Your product description must clearly cite the owner of any trademark or product that is not owned by you.  
 
 - The value proposition of your product must be clear during the first run experience.
 
