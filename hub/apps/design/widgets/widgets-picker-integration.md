@@ -35,7 +35,7 @@ The widget provider manifest includes three different **Screenshot** elements th
 You may provide widget screenshots for multiple locales. The locale for each screenshot is specified with the path to the asset relative to your app package.
 
 * Create a directory in your packaging project for the image assets. For example: "Assets".
-* The language-neutral or fallback assets can be placed directly in this folder. For example: "Assets/Logo.png"
+* The language-neutral or fallback assets can be placed directly in this folder. For example: "Assets/Screenshot.png"
 * Language-specific assets can be placed in subdirectories named after the locale to which they apply. For example: 
   * "English (United States)" assets should be placed in a subdirectory named "en-us": "Assets/en-us/Screenshot.png"
   * "French (France)" assets should be placed in a subdirectory named "fr-fr": "Assets/fr-fr/Screenshot.png"
