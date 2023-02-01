@@ -32,7 +32,7 @@ In order to provide a consistent user experience, widget screenshots for the wid
 
 The widget provider manifest includes three different **Screenshot** elements that you can set. The top-level screenshot is required and will be used as the default by the widget picker. The **LightMode** and **DarkMode** sections of the manifest are optional and allow you to specify separate screenshots for your widget in light and dark modes. If you supply one or both of these optional screenshots, the widget picker will use the one that matches the device's current theme. If you do not supply an image specifically for the current theme, the widget picker will use the default, top-level screenshot instead.
 
-You may provide widget screenshots for multiple locales, including locales that use right-to-left (RTL) languages. The locale for each screenshot is specified with the path to the asset relative to your app package.
+You may provide widget screenshots for multiple locales. The locale for each screenshot is specified with the path to the asset relative to your app package.
 
 * Create a directory in your packaging project for the image assets. For example: "Assets".
 * The language-neutral or fallback assets can be placed directly in this folder. For example: "Assets/Logo.png"
