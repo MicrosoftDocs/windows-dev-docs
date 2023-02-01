@@ -1,6 +1,6 @@
 ---
-title: Implement a widget provider in a win32 app (C++/WinRT)
-description: This article walks you through the process of creating widget provider, implemented in C++/WinRT that provides widget content and responds to widget actions. 
+title: Implement a widget provider in a C# Windows App
+description: This article walks you through the process of creating a widget provider, implemented in C#, that provides widget content and responds to widget actions. 
 ms.topic: article
 ms.date: 07/06/2022
 ms.author: drewbat
@@ -8,7 +8,7 @@ author: drewbatgit
 ms.localizationpriority: medium
 ---
 
-# Implement a widget provider in a win32 app (C++/WinRT)
+# Implement a widget provider in a C# Windows App
 
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
@@ -22,7 +22,7 @@ This article walks you through creating a simple widget provider that implements
 
 :::image type="content" source="images/counting-widget-screenshot.png" alt-text="A screenshot of a simple counting widget. The widget shows a string containing the numeric value to be incremented and a button labeled Increment, as well as some diagnostic text illustrating that the template for the small size widget is being displayed.":::
 
-This sample code in this article is adapted from the [Windows App SDK Widgets Sample]( https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Widgets). To implement a widget provider using C#, see [Implement a widget provider in a win32 app (C#)](implement-widget-provider-cs.md).
+This sample code in this article is adapted from the [Windows App SDK Widgets Sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Widgets). To implement a widget provider using C++/WinRT, see [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md).
 
 ## Prerequisites
 
@@ -31,255 +31,203 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 - Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 - Visual Studio 2017 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
-## Create a new C++/WinRT win32 console app
+## Create a new C# console app
 
-In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C++" and the platform filter to Windows, then select the Windows Console Application (C++/WinRT) project template. Name the new project "ExampleWidgetProvider". When prompted, set the target Windows version for the app to version 1809 or later.
+In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleWidgetProvider". When prompted, set the target .NET version to 6.0. 
+
+When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version 10.0.19041.0 or later.
 
 ## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
 
-This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
-
-This sample also uses the Windows Implementation Library NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.Windows.ImplementationLibrary". Select the latest version in the **Version** drop-down and then click **Install**.
-
-In the precompiled header file, pch.h, add the following include directives.
-
-```cpp
-//pch.h 
-#pragma once
-#include <wil/cppwinrt.h>
-#include <wil/resource.h>
-...
-#include <winrt/Microsoft.Windows.Widgets.Providers.h>
-```
-
-> [!NOTE]
-> You must include the wil/cppwinrt.h header first, before any WinRT headers.
+This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
 
 ## Add a WidgetProvider class to handle widget operations
 
-In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **Add**.
+In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **Add**. In the generated WidgetProvider.cs file, update the class definition to indicate that it implements the **IWidgetProvider** interface.
 
-
-
-## Declare a class that implements the IWidgetProvider interface
-
-The **IWidgetProvider** interface defines methods that the widget host will invoke to initiate operations with the widget provider. Replace the empty class definition in the WidgetProvider.h file with the following code. This code declares a structure that implements the **IWidgetProvider** interface and declares prototypes for the interface methods. 
-
-```cpp
-// WidgetProvider.h
-struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>
-{
-    WidgetProvider();
-
-    /* IWidgetProvider required functions that need to be implemented */
-    void CreateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext WidgetContext);
-    void DeleteWidget(winrt::hstring const& widgetId, winrt::hstring const& customState);
-    void OnActionInvoked(winrt::Microsoft::Windows::Widgets::Providers::WidgetActionInvokedArgs actionInvokedArgs);
-    void OnWidgetContextChanged(winrt::Microsoft::Windows::Widgets::Providers::WidgetContextChangedArgs contextChangedArgs);
-    void Activate(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext);
-    void Deactivate(winrt::hstring widgetId);
-    /* IWidgetProvider required functions that need to be implemented */
-
-    
-};
-```
-
-Also, add a private method, **UpdateWidget**, which is a helper method that will send updates from our provider to the widget host.
-
-```cpp
-// WidgetProvider.h
-private: 
-
-void UpdateWidget(CompactWidgetInfo const& localWidgetInfo);
+```csharp
+// WidgetProvider.cs
+internal class WidgetProvider : IWidgetProvider
 ```
 
 ## Prepare to track enabled widgets
 
-A widget provider can support a single widget or multiple widgets. Whenever the widget host initiates an operation with the widget provider, it passes an ID to identify the widget associated with the operation. Each widget also has an associated name and a state value that can be used to store custom data. For this example, we'll declare a simple helper structure to store the ID, name, and data for each pinned widget. Widgets also can be in an active state, which is discussed in the [Activate and Deactivate](#activate-and-deactivate) section below, and we will track this state for each widget with a boolean value. Add the following definition to the WidgetProvider.h file, above the **WidgetProvider** struct declaration.
+A widget provider can support a single widget or multiple widgets. Whenever the widget host initiates an operation with the widget provider, it passes an ID to identify the widget associated with the operation. Each widget also has an associated name and a state value that can be used to store custom data. For this example, we'll declare a simple helper structure to store the ID, name, and data for each pinned widget. Widgets also can be in an active state, which is discussed in the [Activate and Deactivate](#activate-and-deactivate) section below, and we will track this state for each widget with a boolean value. Add the following definition to the WidgetProvider.cs file, inside the **ExampleWidgetProvider** namespace, but outside of the **WidgetProvider** class definition.
 
-```cpp
-// WidgetProvider.h
-struct CompactWidgetInfo
+```csharp
+// WidgetProvider.cs
+
+public class CompactWidgetInfo
 {
-    winrt::hstring widgetId;
-    winrt::hstring widgetName;
-    int customState = 0;
-    bool isActive = false;
-};
+    public string widgetId { get; set; }
+    public string widgetName { get; set; }
+    public int customState = 0;
+    public bool isActive = false;
+
+}
 ```
 
-Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for the map that will maintain the list of enabled widgets, using the widget ID as the key for each entry. 
+Inside the **WidgetProvider** class definition in WidgetProvider.cs, add a member for the map that will maintain the list of enabled widgets, using the widget ID as the key for each entry.
 
-```cpp
-// WidgetProvider.h
-struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>
-{
-...
-    private:
-        ...
-        static std::unordered_map<winrt::hstring, CompactWidgetInfo> RunningWidgets;
+```csharp
+// WidgetProvider.cs
 
-        
+// Class member of WidgetProvider
+public static Dictionary<string, CompactWidgetInfo> RunningWidgets = new Dictionary<string, CompactWidgetInfo>(); 
 ```
 
 ## Declare widget template JSON strings
 
-This example will declare some static strings to define the JSON templates for each widget. For convenience, these templates are stored in the local variables declared outside of the **WidgetProvider** class definition. If you need a general storage for the templates - they can be included as part of the application package: [Accessing Package Files](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web). For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Card Designer](../../design/widgets/widgets-create-a-template.md).
+This example will declare some static strings to define the JSON templates for each widget. For convenience, these templates are stored in the member variables of the **WidgetProvider** class. If you need a general storage for the templates - they can be included as part of the application package: [Accessing Package Files](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web). For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Card Designer](../../design/widgets/widgets-create-a-template.md).
 
-```cpp
-// WidgetProvider.h
-const std::string weatherWidgetTemplate = R"(
+```csharp
+// WidgetProvider.cs
+
+// Class members of WidgetProvider
+const string weatherWidgetTemplate = @"
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.0",
-    "speak": "<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>",
-    "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg",
-    "body": [
+    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
+    ""type"": ""AdaptiveCard"",
+    ""version"": ""1.0"",
+    ""speak"": ""<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>"",
+    ""backgroundImage"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg"",
+    ""body"": [
         {
-            "type": "TextBlock",
-            "text": "Redmond, WA",
-            "size": "large",
-            "isSubtle": true,
-            "wrap": true
+            ""type"": ""TextBlock"",
+            ""text"": ""Redmond, WA"",
+            ""size"": ""large"",
+            ""isSubtle"": true,
+            ""wrap"": true
         },
         {
-            "type": "TextBlock",
-            "text": "Mon, Nov 4, 2019 6:21 PM",
-            "spacing": "none",
-            "wrap": true
+            ""type"": ""TextBlock"",
+            ""text"": ""Mon, Nov 4, 2019 6:21 PM"",
+            ""spacing"": ""none"",
+            ""wrap"": true
         },
         {
-            "type": "ColumnSet",
-            "columns": [
+            ""type"": ""ColumnSet"",
+            ""columns"": [
                 {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
+                    ""type"": ""Column"",
+                    ""width"": ""auto"",
+                    ""items"": [
                         {
-                            "type": "Image",
-                            "url": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png",
-                            "size": "small",
-                            "altText": "Mostly cloudy weather"
+                            ""type"": ""Image"",
+                            ""url"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png"",
+                            ""size"": ""small"",
+                            ""altText"": ""Mostly cloudy weather""
                         }
                     ]
                 },
                 {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
+                    ""type"": ""Column"",
+                    ""width"": ""auto"",
+                    ""items"": [
                         {
-                            "type": "TextBlock",
-                            "text": "46",
-                            "size": "extraLarge",
-                            "spacing": "none",
-                            "wrap": true
+                            ""type"": ""TextBlock"",
+                            ""text"": ""46"",
+                            ""size"": ""extraLarge"",
+                            ""spacing"": ""none"",
+                            ""wrap"": true
                         }
                     ]
                 },
                 {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
+                    ""type"": ""Column"",
+                    ""width"": ""stretch"",
+                    ""items"": [
                         {
-                            "type": "TextBlock",
-                            "text": "°F",
-                            "weight": "bolder",
-                            "spacing": "small",
-                            "wrap": true
+                            ""type"": ""TextBlock"",
+                            ""text"": ""°F"",
+                            ""weight"": ""bolder"",
+                            ""spacing"": ""small"",
+                            ""wrap"": true
                         }
                     ]
                 },
                 {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
+                    ""type"": ""Column"",
+                    ""width"": ""stretch"",
+                    ""items"": [
                         {
-                            "type": "TextBlock",
-                            "text": "Hi 50",
-                            "horizontalAlignment": "left",
-                            "wrap": true
+                            ""type"": ""TextBlock"",
+                            ""text"": ""Hi 50"",
+                            ""horizontalAlignment"": ""left"",
+                            ""wrap"": true
                         },
                         {
-                            "type": "TextBlock",
-                            "text": "Lo 41",
-                            "horizontalAlignment": "left",
-                            "spacing": "none",
-                            "wrap": true
+                            ""type"": ""TextBlock"",
+                            ""text"": ""Lo 41"",
+                            ""horizontalAlignment"": ""left"",
+                            ""spacing"": ""none"",
+                            ""wrap"": true
                         }
                     ]
                 }
             ]
         }
     ]
-})";
+}";
 
-const std::string countWidgetTemplate = R"(
+const string countWidgetTemplate = @"
 {                                                                     
-    "type": "AdaptiveCard",                                         
-    "body": [                                                         
+    ""type"": ""AdaptiveCard"",                                         
+    ""body"": [                                                         
         {                                                               
-            "type": "TextBlock",                                    
-            "text": "You have clicked the button ${count} times"    
+            ""type"": ""TextBlock"",                                    
+            ""text"": ""You have clicked the button ${count} times""    
         },
         {
-             "text":"Rendering Only if Medium",
-             "type":"TextBlock",
-             "$when":"${$host.widgetSize==\"medium\"}"
+                ""text"":""Rendering Only if Small"",
+                ""type"":""TextBlock"",
+                ""$when"":""${$host.widgetSize==\""small\""}""
         },
         {
-             "text":"Rendering Only if Small",
-             "type":"TextBlock",
-             "$when":"${$host.widgetSize==\"small\"}"
+                ""text"":""Rendering Only if Medium"",
+                ""type"":""TextBlock"",
+                ""$when"":""${$host.widgetSize==\""medium\""}""
         },
         {
-         "text":"Rendering Only if Large",
-         "type":"TextBlock",
-         "$when":"${$host.widgetSize==\"large\"}"
+            ""text"":""Rendering Only if Large"",
+            ""type"":""TextBlock"",
+            ""$when"":""${$host.widgetSize==\""large\""}""
         }                                                                    
     ],                                                                  
-    "actions": [                                                      
+    ""actions"": [                                                      
         {                                                               
-            "type": "Action.Execute",                               
-            "title": "Increment",                                   
-            "verb": "inc"                                           
+            ""type"": ""Action.Execute"",                               
+            ""title"": ""Increment"",                                   
+            ""verb"": ""inc""                                           
         }                                                               
     ],                                                                  
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "version": "1.5"                                                
-})";
+    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
+    ""version"": ""1.5""                                                
+}";
 ```
 
 ## Implement the IWidgetProvider methods
 
-In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations will be shown later in this article. Before diving into the interface methods, add the following lines to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace and allow access to the map we declared in the previous step.
+In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations will be shown later in this article. 
 
 > [!NOTE]
 > Objects passed into the callback methods of the **IWidgetProvider** interface are only guaranteed to be valid within the callback. You should not store references to these objects because their behavior outside of the context of the callback is undefined.
-
-```cpp
-// WidgetProvider.cpp
-namespace winrt
-{
-    using namespace Microsoft::Windows::Widgets::Providers;
-}
-
-std::unordered_map<winrt::hstring, CompactWidgetInfo> WidgetProvider::RunningWidgets{};
-```
 
 ## CreateWidget
 
 The widget host calls [CreateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.createwidget) when the user has pinned one of your app's widgets in the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
 
-```cpp
-// WidgetProvider.cpp
-void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
+```csharp
+// WidgetProvider.cs
+
+public void CreateWidget(WidgetContext widgetContext)
 {
-    auto widgetId = widgetContext.Id();
-    auto widgetName = widgetContext.DefinitionId();
-    CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
+    var widgetId = widgetContext.Id; // To save RPC calls
+    var widgetName = widgetContext.DefinitionId;
+    CompactWidgetInfo runningWidgetInfo = new CompactWidgetInfo() { widgetId = widgetId, widgetName = widgetName };
     RunningWidgets[widgetId] = runningWidgetInfo;
-    
+
+
     // Update the widget
     UpdateWidget(runningWidgetInfo);
 }
@@ -289,11 +237,12 @@ void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
 
 The widget host calls [DeleteWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.deletewidget) when the user has unpinned one of your app's widgets from the widget host. When this occurs, we will remove the associated widget from our list of enabled widgets so that we don't send any further updates for that widget.
 
-```cpp
-// WidgetProvider.cpp
-void WidgetProvider::DeleteWidget(winrt::hstring const& widgetId, winrt::hstring const& customState)
+```csharp
+// WidgetProvider.cs
+
+public void DeleteWidget(string widgetId, string customState)
 {
-    RunningWidgets.erase(widgetId);
+    RunningWidgets.Remove(widgetId);
 }
 ```
 
@@ -315,25 +264,26 @@ The widget host calls [OnActionInvoked](/windows/windows-app-sdk/api/winrt/micro
 
 In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the [WidgetActionInvokedArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetactioninvokedargs) passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the [WidgetContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetcontext) object and then the **WidgetId** to get the ID for the widget that is being updated. Find the entry in our enabled widgets map with the specified ID and then update the custom state value that is used to store the number of increments. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
 
-```cpp
-// WidgetProvider.cpp
-void WidgetProvider::OnActionInvoked(winrt::WidgetActionInvokedArgs actionInvokedArgs)
+```csharp
+// WidgetProvider.cs
+
+public void OnActionInvoked(WidgetActionInvokedArgs actionInvokedArgs)
 {
-    auto verb = actionInvokedArgs.Verb();
-    if (verb == L"inc")
-    {
-        auto widgetId = actionInvokedArgs.WidgetContext().Id();
-        // If you need to use some data that was passed in after
-        // Action was invoked, you can get it from the args:
-        auto data = actionInvokedArgs.Data();
-        if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+    var verb = actionInvokedArgs.Verb;
+        if (verb == "inc")
         {
-            auto& localWidgetInfo = iter->second;
-            // Increment the count
-            localWidgetInfo.customState++;
-            UpdateWidget(localWidgetInfo);
+            var widgetId = actionInvokedArgs.WidgetContext.Id;
+            // If you need to use some data that was passed in after
+            // Action was invoked, you can get it from the args:
+            var data = actionInvokedArgs.Data;
+            if (RunningWidgets.ContainsKey(widgetId))
+            {
+                var localWidgetInfo = RunningWidgets[widgetId];
+                // Increment the count
+                localWidgetInfo.customState++;
+                UpdateWidget(localWidgetInfo);
+            }
         }
-    }
 }
 ```
 
@@ -345,17 +295,17 @@ For information about the **Action.Execute** syntax for Adaptive Cards, see [Act
 
 In the current release, [OnWidgetContextChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.onwidgetcontextchanged) is only called when the user changes the size of a pinned widget. You can choose to return a different JSON template/data to the widget host depending on what size is requested. You can also design the template JSON to support all the available sizes using conditional rendering based on the value of **host.widgetSize**. If you don't need to send a new template or data to account for the size change, you can use the **OnWidgetContextChanged** for telemetry purposes.
 
-```cpp
-// WidgetProvider.cpp
-void WidgetProvider::OnWidgetContextChanged(winrt::WidgetContextChangedArgs contextChangedArgs)
-{
-    auto widgetContext = contextChangedArgs.WidgetContext();
-    auto widgetId = widgetContext.Id();
-    auto widgetSize = widgetContext.Size();
-    if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
-    {
-        auto localWidgetInfo = iter->second;
+```csharp
+// WidgetProvider.cs
 
+public void OnWidgetContextChanged(WidgetContextChangedArgs contextChangedArgs)
+{
+    var widgetContext = contextChangedArgs.WidgetContext;
+    var widgetId = widgetContext.Id;
+    var widgetSize = widgetContext.Size;
+    if (RunningWidgets.ContainsKey(widgetId))
+    {
+        var localWidgetInfo = RunningWidgets[widgetId];
         UpdateWidget(localWidgetInfo);
     }
 }
@@ -368,25 +318,26 @@ The [Activate](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.prov
 
 **Activate** and **Deactivate** are called on a per-widget basis. This example tracks the active status of each widget in the **CompactWidgetInfo** helper struct. In the **Activate** method, we call the **UpdateWidget** helper method to update our widget. Note that the time window between **Activate** and **Deactivate** may be small, so it's recommended that you try to make your widget update code path as quick as possible.
 
-```cpp
-void WidgetProvider::Activate(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext)
-{
-    auto widgetId = widgetContext.Id();
+```csharp
+// WidgetProvider.cs
 
-    if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+public void Activate(WidgetContext widgetContext)
+{
+    var widgetId = widgetContext.Id;
+
+    if (RunningWidgets.ContainsKey(widgetId))
     {
-        auto& localWidgetInfo = iter->second;
+        var localWidgetInfo = RunningWidgets[widgetId];
         localWidgetInfo.isActive = true;
 
         UpdateWidget(localWidgetInfo);
     }
 }
-
-void WidgetProvider::Deactivate(winrt::hstring widgetId)
+public void Deactivate(string widgetId)
 {
-    if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+    if (RunningWidgets.ContainsKey(widgetId))
     {
-        auto& localWidgetInfo = iter->second;
+        var localWidgetInfo = RunningWidgets[widgetId];
         localWidgetInfo.isActive = false;
     }
 }
@@ -397,66 +348,69 @@ void WidgetProvider::Deactivate(winrt::hstring widgetId)
 
 Define the **UpdateWidget** helper method to update an enabled widget. In this example, we check the name of the widget in the **CompactWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated. Call [WidgetManager::GetDefault](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getdefault) to get an instance of the [WidgetManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager) class and then call [UpdateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.updatewidget) to send the updated widget data to the widget host.
 
-```cpp
-// WidgetProvider.cpp
-void WidgetProvider::UpdateWidget(CompactWidgetInfo const& localWidgetInfo)
+```csharp
+// WidgetProvider.cs
+
+void UpdateWidget(CompactWidgetInfo localWidgetInfo)
 {
-    winrt::WidgetUpdateRequestOptions updateOptions{ localWidgetInfo.widgetId };
+    WidgetUpdateRequestOptions updateOptions = new WidgetUpdateRequestOptions(localWidgetInfo.widgetId);
 
-    winrt::hstring templateJson;
-    if (localWidgetInfo.widgetName == L"Weather_Widget")
+    string templateJson = null;
+    if (localWidgetInfo.widgetName == "Weather_Widget")
     {
-        templateJson = winrt::to_hstring(weatherWidgetTemplate);
+        templateJson = weatherWidgetTemplate.ToString();
     }
-    else if (localWidgetInfo.widgetName == L"Counting_Widget")
+    else if (localWidgetInfo.widgetName == "Counting_Widget")
     {
-        templateJson = winrt::to_hstring(countWidgetTemplate);
-    }
-
-    winrt::hstring dataJson;
-    if (localWidgetInfo.widgetName == L"Weather_Widget")
-    {
-        dataJson = L"{}";
-    }
-    else if (localWidgetInfo.widgetName == L"Counting_Widget")
-    {
-        dataJson = L"{ \"count\": " + winrt::to_hstring(localWidgetInfo.customState) + L" }";
+        templateJson = countWidgetTemplate.ToString();
     }
 
-    updateOptions.Template(templateJson);
-    updateOptions.Data(dataJson);
+    string dataJson = null;
+    if (localWidgetInfo.widgetName == "Weather_Widget")
+    {
+        dataJson = "{}";
+    }
+    else if (localWidgetInfo.widgetName == "Counting_Widget")
+    {
+        dataJson = "{ \"count\": " + localWidgetInfo.customState.ToString() + " }";
+    }
+
+    updateOptions.Template = templateJson;
+    updateOptions.Data = dataJson;
     // You can store some custom state in the widget service that you will be able to query at any time.
-    updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
-    winrt::WidgetManager::GetDefault().UpdateWidget(updateOptions);
+    updateOptions.CustomState= localWidgetInfo.customState.ToString();
+    WidgetManager.GetDefault().UpdateWidget(updateOptions);
 }
 ```
 
 ## Initialize the list of enabled widgets on startup
 
-When our widget provider is first initialized, it's a good idea to ask **WidgetManager** if there are any running widgets that our provider is currently serving. It will help to recover the app to the previous state in case of the computer restart or the provider crash. Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. Then call [GetWidgetInfos](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getwidgetinfos), which returns an array of [WidgetInfo](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetinfo) objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the constructor for the **WidgetProvider** class.
+When our widget provider is first initialized, it's a good idea to ask **WidgetManager** if there are any running widgets that our provider is currently serving. It will help to recover the app to the previous state in case of the computer restart or the provider crash. Call **WidgetManager.GetDefault** to get the default widget manager instance for the app. Then call [GetWidgetInfos](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getwidgetinfos), which returns an array of [WidgetInfo](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetinfo) objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the class definition for the **WidgetProvider** class.
 
-```cpp
-// WidgetProvider.cpp
-WidgetProvider::WidgetProvider()
+```csharp
+// WidgetProvider.cs
+
+public WidgetProvider()
 {
-    auto runningWidgets = winrt::WidgetManager::GetDefault().GetWidgetInfos();
-    for (auto widgetInfo : runningWidgets )
+    var runningWidgets = WidgetManager.GetDefault().GetWidgetInfos();
+
+    foreach (var widgetInfo in runningWidgets)
     {
-        auto widgetContext = widgetInfo.WidgetContext();
-        auto widgetId = widgetContext.Id();
-        auto widgetName = widgetContext.DefinitionId();
-        auto customState = widgetInfo.CustomState();
-        if (RunningWidgets.find(widgetId) == RunningWidgets.end())
+        var widgetContext = widgetInfo.WidgetContext;
+        var widgetId = widgetContext.Id;
+        var widgetName = widgetContext.DefinitionId;
+        var customState = widgetInfo.CustomState;
+        if (!RunningWidgets.ContainsKey(widgetId))
         {
-            CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
+            CompactWidgetInfo runningWidgetInfo = new CompactWidgetInfo() { widgetId = widgetName, widgetName = widgetId };
             try
             {
                 // If we had any save state (in this case we might have some state saved for Counting widget)
                 // convert string to required type if needed.
-                int count = std::stoi(winrt::to_string(customState));
+                int count = Convert.ToInt32(customState.ToString());
                 runningWidgetInfo.customState = count;
             }
-            catch (...)
+            catch
             {
 
             }
@@ -466,90 +420,120 @@ WidgetProvider::WidgetProvider()
 }
 ```
 
-## Register a class factory that will instantiate WidgetProvider on request
+## Implement a class factory that will instantiate WidgetProvider on request
 
-Add the header that defines the **WidgetProvider** class to the includes at the top of your app's `main.cpp` file. We will also be including **mutex** here.
+In order for the widget host to communicate with our widget provider, we must call [CoRegisterClassObject](/windows/win32/api/combaseapi/nf-combaseapi-coregisterclassobject). This function requires us to create an implementation of the [IClassFactory](/windows/win32/api/unknwn/nn-unknwn-iclassfactory) that will create a class object for our **WidgetProvider** class.  We will implement our class factory in a self-contained helper class. 
 
-```cpp
-// main.cpp
-...
-#include "WidgetProvider.h"
-#include <mutex>
-```
+In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "FactoryHelper" and click **Add**.
 
-Next, you will need to create a [CLSID](/windows/win32/com/com-class-objects-and-clsids) that will be used to identify your widget provider for COM activation. Generate a GUID in Visual Studio by going to **Tools->Create GUID**. Select the option "static const GUID =" and click **Copy** and then paste that into `main.cpp`. Update the GUID definition with the following C++/WinRT syntax, setting the GUID variable name widget_provider_clsid. Leave the commented version of the GUID because you will need this format later, when packaging your app.
+Replace the contents of the FactoryHelper.cs file with the following code. This code defines the **IClassFactory** interface and implements it's two methods, [CreateInstance](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-createinstance) and [LockServer](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-lockserver). This code is typical boilerplate for implementing a class factory and is not specific to the functionality of a widget provider except that we indicate that the class object being created implements the **IWidgetProvider** interface. 
 
-```cpp
-// main.cpp
-...
-// {80F4CB41-5758-4493-9180-4FB8D480E3F5}
-static constexpr GUID widget_provider_clsid
+```csharp
+// FactoryHelper.cs
+
+using Microsoft.Windows.Widgets.Providers;
+using System.Runtime.InteropServices;
+using WinRT;
+
+namespace COM
 {
-    0x80f4cb41, 0x5758, 0x4493, { 0x91, 0x80, 0x4f, 0xb8, 0xd4, 0x80, 0xe3, 0xf5 }
-};
-```
-
-Add the following class factory definition to `main.cpp`. This is boilerplate code that is not specific to widget provider implementations.
-
-```cpp
-// main.cpp
-template <typename T>
-struct SingletonClassFactory : winrt::implements<SingletonClassFactory<T>, IClassFactory>
-{
-    STDMETHODIMP CreateInstance(
-        ::IUnknown* outer,
-        GUID const& iid,
-        void** result) noexcept final
+    static class Guids
     {
-        *result = nullptr;
+        public const string IClassFactory = "00000001-0000-0000-C000-000000000046";
+        public const string IUnknown = "00000000-0000-0000-C000-000000000046";
+    }
 
-        std::unique_lock lock(mutex);
+    /// 
+    /// IClassFactory declaration
+    /// 
+    [ComImport, ComVisible(false), InterfaceType(ComInterfaceType.InterfaceIsIUnknown), Guid(COM.Guids.IClassFactory)]
+    internal interface IClassFactory
+    {
+        [PreserveSig]
+        int CreateInstance(IntPtr pUnkOuter, ref Guid riid, out IntPtr ppvObject);
+        [PreserveSig]
+        int LockServer(bool fLock);
+    }
 
-        if (outer)
+    [ComVisible(true)]
+    class WidgetProviderFactory<T> : IClassFactory
+    where T : IWidgetProvider, new()
+    {
+        public int CreateInstance(IntPtr pUnkOuter, ref Guid riid, out IntPtr ppvObject)
         {
-            return CLASS_E_NOAGGREGATION;
+            ppvObject = IntPtr.Zero;
+
+            if (pUnkOuter != IntPtr.Zero)
+            {
+                Marshal.ThrowExceptionForHR(CLASS_E_NOAGGREGATION);
+            }
+
+            if (riid == typeof(T).GUID || riid == Guid.Parse(COM.Guids.IUnknown))
+            {
+                // Create the instance of the .NET object
+                ppvObject = MarshalInspectable<IWidgetProvider>.FromManaged(new T());
+            }
+            else
+            {
+                // The object that ppvObject points to does not support the
+                // interface identified by riid.
+                Marshal.ThrowExceptionForHR(E_NOINTERFACE);
+            }
+
+            return 0;
         }
 
-        if (!instance)
+        int IClassFactory.LockServer(bool fLock)
         {
-            instance = winrt::make<WidgetProvider>();
+            return 0;
         }
 
-        return instance.as(iid, result);
+        private const int CLASS_E_NOAGGREGATION = -2147221232;
+        private const int E_NOINTERFACE = -2147467262;
+
     }
-
-    STDMETHODIMP LockServer(BOOL) noexcept final
-    {
-        return S_OK;
-    }
-
-private:
-    T instance{ nullptr };
-    std::mutex mutex;
-};
-
-int main()
-{
-    winrt::init_apartment();
-    wil::unique_com_class_object_cookie widgetProviderFactory;
-    auto factory = winrt::make<SingletonClassFactory<winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>>();
-
-    winrt::check_hresult(CoRegisterClassObject(
-        widget_provider_clsid,
-        factory.get(),
-        CLSCTX_LOCAL_SERVER,
-        REGCLS_MULTIPLEUSE,
-        widgetProviderFactory.put()));
-
-    MSG msg;
-    while (GetMessage(&msg, nullptr, 0, 0))
-    {
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
-    }
-
-    return 0;
 }
+
+```
+
+## Create a GUID representing the CLSID for your widget provider
+
+Next, you need to create a GUID representing the [CLSID](/windows/win32/com/com-class-objects-and-clsids) that will be used to identify your widget provider for COM activation. The same value will also be used when packaging your app. Generate a GUID in Visual Studio by going to **Tools->Create GUID**. Select the registry format option and click **Copy** and then paste that into a text file so that you can copy it later.
+
+## Register the widget provider class object with OLE
+
+In the Program.cs file for our executable, we will call **CoRegisterClassObject** to register our widget provider with OLE, so that the widget host can interact with it. Replace the contents of Program.cs with the following code. This code imports the **CoRegisterClassObject** function and calls it, passing in the **WidgetProviderFactory** interface we defined in a previous step. Be sure to update the **CLSID_Factory** variable declaration to use the GUID you generated in the previous step.
+
+```csharp
+// Program.cs
+
+using System.Runtime.InteropServices;
+using ComTypes = System.Runtime.InteropServices.ComTypes;
+using Microsoft.Windows.Widgets;
+using ExampleWidgetProvider;
+using COM;
+using System;
+
+[DllImport("ole32.dll")]
+
+static extern int CoRegisterClassObject(
+            [MarshalAs(UnmanagedType.LPStruct)] Guid rclsid,
+            [MarshalAs(UnmanagedType.IUnknown)] object pUnk,
+            uint dwClsContext,
+            uint flags,
+            out uint lpdwRegister);
+
+[DllImport("ole32.dll")] static extern int CoRevokeClassObject(uint dwRegister);
+
+Console.WriteLine("Registering Widget Provider");
+uint cookie;
+
+Guid CLSID_Factory = Guid.Parse("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX");
+CoRegisterClassObject(CLSID_Factory, new WidgetProviderFactory<WidgetProvider>(), 0x4, 0x1, out cookie);
+Console.WriteLine("Registered successfully. Press ENTER to exit.");
+Console.ReadLine();
+
+CoRevokeClassObject(cookie);
 ```
 
 
@@ -721,4 +705,4 @@ In **Solution Explorer**, right-click your **ExampleWidgetProviderPackage** and 
 
 ## Testing your widget provider
 
-Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.

@@ -611,7 +611,7 @@ namespace MediaPlayer_Win10
             }
         }
 
-        private async void mediaPlayer_VideoFrameAvailable_Subtitle(MediaPlayer sender, object args)
+        private async void mediaPlayer_VideoFrameAvailable_Subtitle(MediaPlayer sender, objeoloct args)
         {
             CanvasDevice canvasDevice = CanvasDevice.GetSharedDevice();
 
