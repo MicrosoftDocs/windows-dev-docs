@@ -29,6 +29,10 @@ Currently you can implement a widget provider using a packaged Win32 desktop app
 
 For API reference documentation for implementing widget providers, see the [Microsoft.Windows.Widgets.Providers](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers) namespace.
 
+For a walkthrough of the basics of creating a widget and implementing a widget provider, watch the video "How to create Widgets for Windows 11".
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PUhYfRepxvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Additional resources
 - [Report an issue via email](mailto:widgetssupport@microsoft.com)
 - [Open an issue in the Windows App SDK github repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose)

@@ -167,7 +167,7 @@ Required. Specifies one or more screenshots of the widget.
 
 ## Screenshot
 
-Required. Specifies a screenshot for a widget. This screenshot is shown in the Widgets host in the **Add Widgets dialog** when the user is selecting widgets to add to the Widgets host. For information about the design requirements for screenshot images, see [Integrate with the widget picker](../../design/widgets/widgets-picker-integration.md).
+Required. Specifies a screenshot for a widget. This screenshot is shown in the Widgets host in the **Add Widgets dialog** when the user is selecting widgets to add to the widgets host. If you provide a screenshot for the optional **DarkMode** or **LightMode** elements listed below, then the widgets host will use the screenshot that matches the current device theme. If you don't provide a screenshot for the the current device theme, the image provided in this **Screenshot** element will be used. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see [Integrate with the widget picker](../../design/widgets/widgets-picker-integration.md).
 
 > [!NOTE]
 > The widget screenshots are not displayed on the widgets board's add widgets dialog in the current preview release..
@@ -179,11 +179,11 @@ Required. Specifies a screenshot for a widget. This screenshot is shown in the W
 
 ## DarkMode
 
-Optional. Specifies theme resources for when dark mode is active on the device.
+Optional. Specifies theme resources for when dark mode is active on the device. If you specify one or more screenshot images in the optional **DarkMode** element, the widgets host will select these screenshots when the device is in dark mode. If you don't provide a dark mode image, the widgets host will use the required, top-level **Screenshot** element described above. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see [Integrate with the widget picker](../../design/widgets/widgets-picker-integration.md).
 
 ## LightMode
 
-Optional. Specifies theme resources for when light mode is active on the device.
+Optional. Specifies theme resources for when light mode is active on the device. If you provide one or more screenshot images in the optional **LightMode** element, the widgets host will select these screenshots when the device is in light mode. If you don't provide a light mode image, the widgets host will use the required, top-level **Screenshot** element described above. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see [Integrate with the widget picker](../../design/widgets/widgets-picker-integration.md).
 
 ## Example
 
