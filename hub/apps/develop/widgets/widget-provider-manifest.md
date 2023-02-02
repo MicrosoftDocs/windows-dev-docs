@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
 
-In order to be displayed in the Widgets host, apps that support Windows widgets must register their widget provider with the system. For Win32 apps, only packaged apps are currently supported and widget providers specify their registration information in the app package manifest file. This article documents the XML format for widget registration. See the [Example](#example) section for a code listing of an example package manifest for a Win32 widget provider.
+In order to be displayed in the widgets host, apps that support Windows widgets must register their widget provider with the system. For Win32 apps, only packaged apps are currently supported and widget providers specify their registration information in the app package manifest file. This article documents the XML format for widget registration. See the [Example](#example) section for a code listing of an example package manifest for a Win32 widget provider.
 
 ## App extension
 
@@ -125,7 +125,7 @@ Represents the registration for a single widget.
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
 | **Id**| string | Yes | An ID that identifies the widget. Widget provider implementations use this string to determine or specify which of the app's widgets is being referenced for each operation. This string must be unique for all widgets defined within the app manifest file.  | N/A |
-| **DisplayName** | string | Yes | The name of the widget that is displayed on the Widgets host. | N/A |
+| **DisplayName** | string | Yes | The name of the widget that is displayed on the widgets host. | N/A |
 | **Description** | string | Yes | Short description of the widget. | N/A |
 | **AllowMultiple** | boolean | No | Set to false if only one instance of this widget is supported. This attribute is optional and the default value is true. | true |
 
@@ -167,7 +167,7 @@ Required. Specifies one or more screenshots of the widget.
 
 ## Screenshot
 
-Required. Specifies a screenshot for a widget. This screenshot is shown in the Widgets host in the **Add Widgets dialog** when the user is selecting widgets to add to the Widgets host.
+Required. Specifies a screenshot for a widget. This screenshot is shown in the widgets host in the **Add Widgets dialog** when the user is selecting widgets to add to the widgets host. If you provide a screenshot for the optional **DarkMode** or **LightMode** elements listed below, then the widgets host will use the screenshot that matches the current device theme. If you don't provide a screenshot for the the current device theme, the image provided in this **Screenshot** element will be used. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see [Integrate with the widget picker](../../design/widgets/widgets-picker-integration.md).
 
 > [!NOTE]
 > The widget screenshots are not displayed on the widgets board's add widgets dialog in the current preview release..
@@ -179,11 +179,11 @@ Required. Specifies a screenshot for a widget. This screenshot is shown in the W
 
 ## DarkMode
 
-Optional. Specifies theme resources for when dark mode is active on the device.
+Optional. Specifies theme resources for when dark mode is active on the device. If you specify one or more screenshot images in the optional **DarkMode** element, the widgets host will select these screenshots when the device is in dark mode. If you don't provide a dark mode image, the widgets host will use the required, top-level **Screenshot** element described above. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see [Integrate with the widget picker](../../design/widgets/widgets-picker-integration.md).
 
 ## LightMode
 
-Optional. Specifies theme resources for when light mode is active on the device.
+Optional. Specifies theme resources for when light mode is active on the device. If you provide one or more screenshot images in the optional **LightMode** element, the widgets host will select these screenshots when the device is in light mode. If you don't provide a light mode image, the widgets host will use the required, top-level **Screenshot** element described above. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see [Integrate with the widget picker](../../design/widgets/widgets-picker-integration.md).
 
 ## Example
 
