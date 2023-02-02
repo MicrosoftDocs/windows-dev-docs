@@ -12,18 +12,16 @@ The **winget** command line tool enables users to discover, install, upgrade, re
 
 ## Install winget
 
-Windows Package Manager **winget** command-line tool is available on Windows 11 and modern versions of Windows 10 as the **App Installer**.
+Windows Package Manager **winget** command-line tool is available on Windows 11 and modern versions of Windows 10 as a part of the **App Installer**.
 
 You can [get App Installer from the Microsoft Store](https://www.microsoft.com/p/app-installer/9nblggh4nns1#activetab=pivot:overviewtab). If it's already installed, make sure it is updated with the latest version.
 
-App Installer includes the production version of the winget tool.
-
 > [!NOTE]
-> The **winget** command line tool is only supported on Windows 10 1709 (build 16299) or later at this time.
+> The **winget** command line tool is only supported on Windows 10 1709 (build 16299) or later at this time. The winget tool will not be available until you have logged into Windows as a user for the first time, triggering Microsoft Store to register Windows Package Manager as part of an asynchronous process. If you have recently logged in as a user for the first time and find that winget is not yet available, you can open PowerShell and enter the following command to request this winget registration: `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`.
 
 ### Install winget preview version [Developers Only]
 
-To try the latest Windows Package Manager features, install the latest preview build of the **winget** command line tool in one of the following ways:
+Windows App Installer includes the production version of the winget tool. To try the latest Windows Package Manager features, you can install the latest preview build of the **winget** command line tool in one of the following ways:
 
 * Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Dev Channel](https://insider.windows.com/understand-flighting).
 
