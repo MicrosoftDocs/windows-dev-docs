@@ -13,7 +13,7 @@ There are two ways in which you can deploy the Windows App SDK.
 * **Framework-dependent**. Your app depends on the Windows App SDK runtime and/or Framework package being present on the target machine. Framework-dependent deployment is the default deployment mode of the Windows App SDK for its efficient use of machine resources and serviceability.
 * **Self-contained**. Your app carries the Windows App SDK dependencies with it. Self-contained deployment is a deployment option that's new for Windows App SDK 1.1 Preview 1.
 
-The [Deployment overview](/windows/apps/package-and-deploy/) explains the terms *packaged app*, *packaged app with external location*, and *unpackaged app".
+The [Deployment overview](./index.md) explains the terms *packaged app*, *packaged app with external location*, and *unpackaged app".
 
 | | Deploy framework-dependent | Deploy self-contained |
 | - | - | - |
@@ -52,15 +52,15 @@ The way that you should initialize the Windows App SDK depends on whether, and h
 
 |How your app deploys|How to initialize|
 |-|-|
-|Framework-dependent|See [Call the Deployment API](/windows/apps/windows-app-sdk/deploy-packaged-apps#call-the-deployment-api).|
+|Framework-dependent|See [Call the Deployment API](../windows-app-sdk/deploy-packaged-apps.md#call-the-deployment-api).|
 |Self-contained|No initialization necessary.|
 
 ### Unpackaged apps, and apps packaged with external location
 
 |How your app deploys|How to initialize|
 |-|-|
-|Framework-dependent|See [Use the bootstrapper API in an app packaged with external location or unpackaged](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).|
-|Self-contained|See [Opting out of (or into) automatic UndockedRegFreeWinRT support](/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps#opting-out-of-or-into-automatic-undockedregfreewinrt-support).|
+|Framework-dependent|See [Use the bootstrapper API in an app packaged with external location or unpackaged](../windows-app-sdk/tutorial-unpackaged-deployment.md).|
+|Self-contained|See [Opting out of (or into) automatic UndockedRegFreeWinRT support](./self-contained-deploy/deploy-self-contained-apps.md#opting-out-of-or-into-automatic-undockedregfreewinrt-support).|
 
 ## Related topics
 

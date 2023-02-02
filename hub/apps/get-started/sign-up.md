@@ -14,8 +14,8 @@ ms.localizationpriority: medium
 
 ## Opening your developer account
 
-We offer [individual and company accounts](/windows/uwp/publish/account-types-locations-and-fees) in locations around the world. Check out the [overview of the sign-up process](/windows/uwp/publish/opening-a-developer-account) to see how it works.
+We offer [individual and company accounts](../publish/partner-center/account-types-locations-and-fees.md) in locations around the world. Check out the [overview of the sign-up process](../publish/partner-center/open-a-developer-account.md) to see how it works.
 
 ## Have a name for your app?
 
-As soon as you open your developer account, you can [create your app by reserving a name](/windows/uwp/publish/create-your-app-by-reserving-a-name).
+As soon as you open your developer account, you can [create your app by reserving a name](../publish/publish-your-app/reserve-your-apps-name.md).

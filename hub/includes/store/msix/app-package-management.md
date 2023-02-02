@@ -11,7 +11,7 @@ Generally speaking, later OS versions can run packages that target previous OS v
 
 ## Removing an app from the Store
 
-At times, you may want to stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the **App overview** page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](/windows/uwp/publish/generate-promotional-codes) and are using a Windows 10 or Windows 11 device).
+At times, you may want to stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the **App overview** page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](../../../apps/publish/generate-promotional-codes.md) and are using a Windows 10 or Windows 11 device).
 
 > [!IMPORTANT]
 > This option will override any [visibility](../../../apps/publish/publish-your-app/visibility-options.md#discoverability) settings that you have selected in your submissions.
