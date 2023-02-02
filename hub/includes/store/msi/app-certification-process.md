@@ -80,7 +80,7 @@ The amount of time this test takes varies depending on how complex your app is, 
 When the certification process is complete, if it did not pass, you'll receive an email that includes a report that indicates which test failed or which policy was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
 
 >[!IMPORTANT] 
-> Your app's content should comply with the Microsoft Store [Content Policies](/windows/uwp/publish/store-policies#content-policies), and it will be tested in accordance with the policies. We highly recommend that you understand these policies prior to submitting your app.
+> Your app's content should comply with the Microsoft Store [Content Policies](../../../apps/publish/store-policies.md#content-policies), and it will be tested in accordance with the policies. We highly recommend that you understand these policies prior to submitting your app.
 
 ## Publishing
 

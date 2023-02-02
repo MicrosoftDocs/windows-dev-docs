@@ -5,7 +5,7 @@ Many of the fields in a **Store listing** are optional, but we suggest providing
 > [!TIP]
 > You can optionally [import and export Store listings](../../../apps/publish/publish-your-app/import-and-export-store-listings.md) if you'd prefer to enter your listing info offline in a .csv file, rather than providing info and uploading files directly in Partner Center. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once.
 
-If your previously-published app supports Windows 8.x and/or Windows Phone 8.x or earlier, you can [create platform-specific Store listings](/uwp/publish/create-platform-specific-store-listings) to show to those customers.
+If your previously-published app supports Windows 8.x and/or Windows Phone 8.x or earlier, you can [create platform-specific Store listings](../../../apps/publish/publish-your-app/create-platform-specific-store-listings.md) to show to those customers.
 
 ## Store listing languages
 
