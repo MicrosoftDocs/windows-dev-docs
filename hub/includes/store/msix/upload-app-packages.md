@@ -12,7 +12,7 @@ To upload packages, drag them into the upload field or click to browse your file
 > [!IMPORTANT]
 > For Windows 10, we recommend uploading the .msixupload or .appxupload file here rather than .msix, .appx, .msixbundle, or .appxbundle.  For more info about packaging UWP apps for the Store, see [Packaging a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
-If you have created any [package flights](/uwp/publish/package-flights) for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.
+If you have created any [package flights](../../../apps/publish/package-flights.md) for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.
 
 If we detect errors with a package while validating it, we'll display a message to let you know what's wrong. You'll need to remove the package, fix the issue, and then try uploading it again. You may also see warnings to let you know about issues that may cause problems but won't block you from continuing with your submission.
 
@@ -38,7 +38,7 @@ When we detect that you have redundant packages, we'll provide an option to remo
 
 If your submission is an update to a previously published app, you'll see a checkbox that says **Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)**. This allows you to choose a percentage of customers who will get the packages from the submission so that you can monitor feedback and analytic data  to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission.
 
-For more info, see [Gradual package rollout](/uwp/publish/gradual-package-rollout).
+For more info, see [Gradual package rollout](../../../apps/publish/gradual-package-rollout.md).
 
 ## Mandatory update
 

@@ -53,7 +53,7 @@ When you install a preview release version (see [Preview channel release notes](
 
 ## Call the Deployment API
 
-Also see [Initialize the Windows App SDK](/windows/apps/package-and-deploy/deploy-overview#initialize-the-windows-app-sdk).
+Also see [Initialize the Windows App SDK](../package-and-deploy/deploy-overview.md#initialize-the-windows-app-sdk).
 
 The Deployment API is provided by the Windows App SDK framework package, and is available in the [Microsoft.Windows.ApplicationModel.WindowsAppRuntime](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime) namespace. The Windows application model doesn't support declaring a dependency on the Main and Singleton packages. The Deployment API is therefore required for these reasons:
 

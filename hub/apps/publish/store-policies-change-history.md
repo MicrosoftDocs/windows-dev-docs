@@ -29,7 +29,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 
 <tr class="odd">
 <td>July 18, 2022</td>
-<td><a href="/windows/apps/publish/store-policies">7.16.1</a></td>
+<td><a href="store-policies.md">7.16.1</a></td>
 <td>
 <p>Update to 10.8.7 to remove language related to open-source or other free software.</p>
 <p>Update to 11.2 adding a link to Microsoft’s online infringement reporting form.</p>
@@ -38,7 +38,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 
 <tr class="even">
 <td>June 16, 2022</td>
-<td><a href="/windows/apps/publish/store-policy-archive/store-policy-7-16">7.16</a></td>
+<td><a href="store-policy-archive/store-policy-7-16.md">7.16</a></td>
 <td>
 <p>Update to 10.1.1 requirements for product search terms.</p>
 
@@ -63,7 +63,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 
 <tr class="odd">
 <td>September 28, 2021</td>
-<td><a href="/windows/apps/publish/store-policy-archive/store-policy-7-15">7.15</a></td>
+<td><a href="store-policy-archive/store-policy-7-15.md">7.15</a></td>
 <td>
 <p>Update to 10.1.3 requirements for product search terms.</p>
 <p>Update to 10.1.5, removing prohibition on products whose primary functionality is to enable acquisition of digital goods from outside the Store.</p>
@@ -76,7 +76,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 <tr class="even">
 <td>July 30, 2021</td>
-<td><a href="/windows/apps/publish/store-policy-archive/store-policy-7-14">7.14</a></td>
+<td><a href="store-policy-archive/store-policy-7-14.md">7.14</a></td>
 <td>
 <p><b>Note</b>: The below updates were added to version 7.14 of the Store Policies on July 30, 2021. </p>
 <p>Update to 10.2.4, updated to require exception for dependency on non-Microsoft drivers or NT services.  </p>
@@ -85,7 +85,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 <tr class="odd">
 <td>June 28, 2021</td>
-<td><a href="/windows/apps/publish/store-policy-archive/store-policy-7-14">7.14</a></td>
+<td><a href="store-policy-archive/store-policy-7-14.md">7.14</a></td>
 <td>
 <p>Update to 10.1.5 to allow specific additional products, adds-ons or extensions to be available from within your product.</p>
 <p>Update to 10.2, incorporating product safety testing and other product safety requirements previously included in policy 11.3.</p>
@@ -108,7 +108,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 <tr class="even">
 <td>April 15, 2021</td>
-<td><a href="/windows/apps/publish/store-policy-archive/store-policy-7-13">7.13</a></td>
+<td><a href="store-policy-archive/store-policy-7-13.md">7.13</a></td>
 <td><p>Update to policy 10.1 to include examples of metadata, which is inclusive of product category, and provide guidance on products that are considered games. </p>
 <p>Update to policy 10.8.6 with specific policies that apply to PC Gaming subscription products.</p>
 <p>Update to policy 10.13 to remove XBL requirements for Creators products; also removes any XBL specific policies from Store policies as XBL requirements can be found at https://aka.ms/xboxlivepolicy.</p>
@@ -116,7 +116,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 <tr class="odd">
 <td>October 1, 2019</td>
-<td><a href="/windows/apps/publish/store-policy-archive/store-policy-7-12">7.12</a></td>
+<td><a href="store-policy-archive/store-policy-7-12.md">7.12</a></td>
 <td><p>Added new policy 10.2.6 banning apps that mine cryptocurrency on device.</p>
 <p>Updated 10.8.4 to add odds disclosure requirement for products offering “loot boxes’ or other randomized virtual items.</p>
 <p>Updated 10.8.7 to add requirements regarding pricing regulations.</p>
@@ -128,7 +128,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 <tr class="even">
 <td>March 5, 2019</td>
-<td><a href="/windows/apps/publish/store-policy-archive/store-policy-7-11">7.11</a></td>
+<td><a href="store-policy-archive/store-policy-7-11.md">7.11</a></td>
 <td><p>Updated 10.1.1 to add ownership requirements for publishing web apps.</p>
 <p>Added 10.1.5 to republish software promotion and distribution requirements.</p>
 <p>Updated 10.8.3 to apply only where apps require financial account information.</p>

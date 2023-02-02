@@ -63,7 +63,6 @@
                 "networking/*.md": "UWP applications",
                 "packaging/*.md": "UWP applications",
                 "porting/*.md": "UWP applications",
-                "publish/*.md": "Microsoft Store",
                 "security/*.md": "UWP applications",
                 "threading-async/*.md": "UWP applications",
                 "updates-and-versions/*.md": "UWP applications",
@@ -99,7 +98,6 @@
                 "networking/*.md": "communication",
                 "packaging/*.md": "deployment",
                 "porting/*.md": "porting-apps",
-                "publish/*.md": "publish",
                 "security/*.md": "platform",
                 "threading-async/*.md": "processes-and-threading",
                 "updates-and-versions/*.md": "deployment",
@@ -136,7 +134,6 @@
                 "networking/*.md": "stwhi",
                 "packaging/*.md": "drewbat",
                 "porting/*.md": "hickeys",
-                "publish/*.md": "hickeys",
                 "security/*.md": "aashcraft",
                 "threading-async/*.md": "drewbat",
                 "updates-and-versions/*.md": "hickeys",
@@ -173,7 +170,6 @@
                 "networking/*.md": "stevewhims",
                 "packaging/*.md": "drewbatgit",
                 "porting/*.md": "hickeys",
-                "publish/*.md": "hickeys",
                 "security/*.md": "alvinashcraft",
                 "threading-async/*.md": "drewbatgit",
                 "updates-and-versions/*.md": "hickeys",
@@ -184,9 +180,6 @@
             },
             "ms.topic": {
                 "dotnet-native/*.md": "reference"
-            },
-            "feedback_system": {
-                "publish/index.md": "None"
             }
         },
         "externalReference": [ ],
