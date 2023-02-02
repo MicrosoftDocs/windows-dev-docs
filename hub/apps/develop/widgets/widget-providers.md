@@ -31,7 +31,7 @@ For API reference documentation for implementing widget providers, see the [Micr
 
 For a walkthrough of the basics of creating a widget and implementing a widget provider, watch the video "How to create Widgets for Windows 11".
 
-[!VIDEO https://learn-video.azurefd.net/vod/player?show=tabs-vs-spaces&ep=create-widgets-for-windows-11]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=tabs-vs-spaces&ep=create-widgets-for-windows-11]
 
 ## Additional resources
 - [Report an issue via email](mailto:widgetssupport@microsoft.com)
