@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 08/21/2022
+ms.date: 12/31/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -123,7 +123,7 @@ The Windows System Commands plugin provides a set of system level actions that c
 | `Lock` | Locks the computer | |
 | `Sleep` | Puts the computer to sleep | |
 | `Hibernate` | Hibernates the computer | |
-| `Empty Recycle Bin` | Empties the recycle bin | |
+| `Recycle Bin` | **Result:** Opens the recycle bin<br />**Context menu:** Empties the Recycle Bin | The query `Empty Recycle Bin` shows the result too. |
 | `UEFI Firmware Settings` | Reboots the computer into UEFI Firmware Settings | Only available on systems with UEFI firmware. Requires administrative permissions. |
 | `IP address` * | Shows the ip addresses from the network connections of your computer. | The search query has to start with the word `IP` or the word `address`. |
 | `MAC address` * | Shows the mac addresses from the network adapters in your computer. | The search query has to start with the word `MAC` or the word `address`. |
