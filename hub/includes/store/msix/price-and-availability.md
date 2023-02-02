@@ -64,13 +64,13 @@ To set dates for when your trial should be offered to customers on Windows 10 or
 
 If you want to offer your app at a reduced price for a limited period of time, you can create and schedule a sale.
 
-For more info, see [Put apps and add-ons on sale](/uwp/publish/put-apps-and-add-ons-on-sale).
+For more info, see [Put apps and add-ons on sale](../../../apps/publish/put-apps-and-add-ons-on-sale.md).
 
 ## Organizational licensing
 
 By default, your app may be offered to organizations to purchase in volume. You can indicate whether and how your app can be offered in this section.
 
-For more info, see [Organizational licensing options](/uwp/publish/organizational-licensing).
+For more info, see [Organizational licensing options](../../../apps/publish/organizational-licensing.md).
 
 ## Publish date
 

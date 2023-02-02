@@ -31,7 +31,7 @@ Another error that you might see after submitting your app is **error 1300**. Th
 
 If you see an error that says **The name found in the package is not one of your reserved app names. Please reserve the app name and/or update your package with the correct app name for this language**, it may be because you’ve entered an incorrect name in your package. This error can also occur if you are using an app name that you haven’t reserved in Partner Center. You can usually resolve this error by following these steps:
 
-- Go to the [App identity](/uwp/publish/view-app-identity-details) page for your app (under **App management**) to confirm whether your app has an assigned Identity. If it doesn’t, you’ll see an option to create one. You’ll need to reserve a name for your app in order to create the Identity. Make sure this is the name you’ve used in your package.
+- Go to the [App identity](../../../apps/publish/view-app-identity-details.md) page for your app (under **App management**) to confirm whether your app has an assigned Identity. If it doesn’t, you’ll see an option to create one. You’ll need to reserve a name for your app in order to create the Identity. Make sure this is the name you’ve used in your package.
 - If your app already has an identity, you might still need to reserve the name that you want to use in your package. Under **App management**, click [Manage app name reservations](../../../apps/publish/partner-center/manage-app-name-reservations.md). Enter the name you’d like to use, and click **Reserve app name**.
 
 > [!IMPORTANT]

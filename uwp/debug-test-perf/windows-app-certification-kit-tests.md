@@ -428,7 +428,7 @@ Use the following table as guidance.
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters.</p>
 </td><td>
-<p>Refer to the <a href="/windows/uwp/publish/app-package-requirements">App package requirements</a>.</p>
+<p>Refer to the <a href="/windows/apps/publish/app-package-requirements">App package requirements</a>.</p>
 <p>In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length.</p>
 </td></tr>
 <tr><td>
@@ -441,7 +441,7 @@ Use the following table as guidance.
 <tr><td>
 <p>The string must be non-empty (greater than zero in length)</p>
 </td><td>
-<p>For more info, see <a href="/windows/uwp/publish/app-package-requirements">App package requirements</a>.</p>
+<p>For more info, see <a href="/windows/apps/publish/app-package-requirements">App package requirements</a>.</p>
 </td></tr>
 <tr><td>
 <p>There is no default resource specified in the "resources.pri" file.</p>

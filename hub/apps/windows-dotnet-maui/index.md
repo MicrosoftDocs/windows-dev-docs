@@ -42,6 +42,11 @@ Explore the [WinUI docs](../winui/winui3/index.md) to learn about the features o
 
 This [one-day live stream](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWePZU3W162NJ9vcXqgpMVc) from August 2022 featured speakers from Microsoft and the .NET MAUI developer community. Learn how to build apps and hear from the team building .NET MAUI.
 
+### .NET MAUI blog posts
+
+- [5 .NET MAUI Features for Building Great Desktop Apps](https://devblogs.microsoft.com/dotnet/5-dotnet-maui-desktop-features/)
+- [Build Your Own Podcast App with .NET 7, Blazor, and .NET MAUI](https://devblogs.microsoft.com/dotnet/build-your-own-podcast-app-with-dotnet-blazor-and-dotnet-maui/)
+
 ### GitHub
 
 .NET MAUI is open source and hosted on GitHub. Use the [.NET MAUI repository](https://github.com/dotnet/maui) to file feature requests or bugs, interact with the development team, and explore the [wiki](https://github.com/dotnet/maui/wiki).
