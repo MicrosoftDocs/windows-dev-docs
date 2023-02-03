@@ -379,7 +379,7 @@ In the case of Patch Module Update API – only fields which are to be updated n
 | dependsOnDriversOrNT     | Boolean          | *Required*  |
 | accessibilitySupport     | Boolean          | *Required*  |
 | penAndInkSupport         | Boolean          | *Required*  |
-| listings                 | Array of objects | Listings module data for each language |
+| listings                 | Object           | Object to listing module data for a single language |
 | language                 | String           | *Required* See list of languages below |
 | description              | String           | *Required* Character limit = 10000 |
 | whatsNew                 | String           | Character limit = 1500 |
@@ -1380,7 +1380,7 @@ To have the ability to update listing assets, and in turn, to be able to add/rem
 | message                 | String           | The description of the error
 | target                  | String           | The entity from which the error originated
 | responseData            | Object           |             |
-| listingAssets           | Array of objects | Listing asset details for each language
+| listingAssets           | Object           | Object containing details of StoreLogos and Screenshots to be uploaded |
 | language                | String           |             |
 | storeLogos              | Array of objects |             |
 | screenshots             | Array of objects |             |
