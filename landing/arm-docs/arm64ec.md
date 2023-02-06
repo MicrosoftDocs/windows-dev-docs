@@ -33,7 +33,7 @@ An x64 or Arm64EC process can load and call into both x64 and Arm64EC binaries, 
 ✔ = Supported,
 ❌ = Not supported
 
-Similarly, at build time, Arm64EC binaries can link in both x64 and Arm64EC libs, while Arm64 processes can only link in Arm64 libs. 
+Similarly, at build time, Arm64EC binaries can link in both x64 and Arm64EC libs, while Arm64 binaries can only link in Arm64 libs. 
 
 |PE architecture |x64 lib |Arm64EC lib |Arm64 lib |
 |---|---|---|---|
@@ -51,7 +51,7 @@ Arm64EC enables to you to **incrementally** transition the code in your existing
 
 ![Example graph showing incremental update effects on Arm performance using Arm64EC](./images/arm64ec-incremental-update.png)
 
-The image above shows a simplified example of a fully-emulated x86 workload taking some amount of time that is then incrementally improved using Arm64EC:
+The image above shows a simplified example of a fully-emulated x64 workload taking some amount of time that is then incrementally improved using Arm64EC:
 
 1. Starting as a fully emulated x64 workload
 2. After recompiling the most CPU-intensive parts as Arm64EC

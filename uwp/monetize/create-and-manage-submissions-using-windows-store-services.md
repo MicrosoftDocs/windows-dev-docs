@@ -89,7 +89,7 @@ grant_type=client_credentials
 
 For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Partner Center in the previous section. For the *resource* parameter, you must specify ```https://manage.devcenter.microsoft.com```.
 
-After your access token expires, you can refresh it by following the instructions [here](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens).
+After your access token expires, you can fetch a new one by making the same HTTP call again.
 
 For examples that demonstrate how to obtain an access token by using C#, Java, or Python code, see the Microsoft Store submission API [code examples](#code-examples).
 
