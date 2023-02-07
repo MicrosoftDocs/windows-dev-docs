@@ -2,6 +2,9 @@ The Store listings section of the app submission process is where you provide th
 
 Many of the fields in a Store listing are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the Store listings step to be considered complete is a text description and at least one screenshot.
 
+> [!TIP]
+> If you prefer to manage your store listing offline, you can [import a .csv file](../../../apps/publish/publish-your-app/import-and-export-store-listings.md) that contains your app's details. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once.
+
 :::image type="content" source="images/msiexe-store-listings-overview.png" lightbox="images/msiexe-store-listings-overview.png" alt-text="A screenshot of the overview of Store listings section in Partner Center.":::
 
 ## Manage Store listing languages
