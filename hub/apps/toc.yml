@@ -620,6 +620,16 @@ items:
                 href: publish/view-app-identity-details.md
               - name: Generate preinstall packages for OEMs
                 href: publish/generate-preinstall-packages-for-oems.md
+              - name: Organizational Licensing options
+                href: publish/organizational-licensing.md
+              - name: Package Flights
+                href: publish/package-flights.md
+              - name: Gradual Package Rollout
+                href: publish/gradual-package-rollout.md
+              - name: Beta testing and targeted distribution
+                href: publish/beta-testing-and-targeted-distribution.md
+              - name: Distribute LOB apps to enterprises
+                href: publish/distribute-lob-apps-to-enterprises.md
           - name: Attract and promote
             href: publish/attract-customers-and-promote-your-apps.md
             items:
