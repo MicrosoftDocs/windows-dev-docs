@@ -132,6 +132,12 @@ The following should also be considered when updating an Android app to run on a
 
 Learn more about how to optimize for window resizing scenarios on desktop devices by following the [Window Management guide in the Android docs](https://developer.android.com/topic/arc/window-management).
 
+## Application Lifecycle Events
+
+Developing Android applications for a multi-window environment also has an impact on the lifecycle events that you choose to utilize in your application. While overriding the onPause event may achieve the results you’d like on a phone or tablet, it’s typically the wrong event to use if you’re changing your app’s UX.
+
+See the [Android documentation](https://developer.android.com/guide/components/activities/activity-lifecycle) for a description of the lifecycle events. More often than not, you’ll want to use the onStop event and not the onPause or onUserLeaveHint events. In fact, many multi-window Android implementations do not deliver the onUserLeaveHint notification, and thus any business critical logic that might be in that event handler will not be called on these platforms, including WSA.
+
 ## Test and debug
 
 To test and debug your app on a Windows 11 device using the Windows Subsystem for Android the following set up steps are required.
