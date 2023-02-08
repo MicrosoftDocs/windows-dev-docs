@@ -135,6 +135,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Paste as Plain Text Test
+
+:::row:::
+    :::column:::
+        [![Paste as Plain Text screenshot.](../images/pt-paste-as-plain-text.png)](paste-as-plain-text.md)
+    :::column-end:::
+    :::column span="2":::
+        [Paste as Plain Text](paste-as-plain-text.md) allows you to paste text from your clipboard, excluding text-formatting, with a quick key shortcut (<kbd>Ctrl</kbd>+<kbd>⊞ Win</kbd>+<kbd>V</kbd>).
+    :::column-end:::
+:::row-end:::
+
 ### PowerRename
 
 :::row:::
