@@ -47,8 +47,8 @@ public MainWindow()
 }
 ```
 
-### AppWindow.Window
-Replacing several lines of boilerplate code, you're now able to use Window APIs directly from an **AppWindow** through `AppWindow.Window`. See the [AppWindow.Window API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/appwindow-spec.md) on GitHub for additional background and usage information.
+### Window.AppWindow
+Replacing several lines of boilerplate code, you're now able to use AppWindow APIs directly from an **Window** through `Window.AppWindow`. See the [Window.AppWindow API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/appwindow-spec.md) on GitHub for additional background and usage information.
 
 ### New features from across WinAppSDK
 - `ApplicationModel.DynamicDependency`: `PackageDependency.PackageGraphRevisionId` that replaces the deprecated MddGetGenerationId.
