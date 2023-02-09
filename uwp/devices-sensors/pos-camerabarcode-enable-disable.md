@@ -40,11 +40,10 @@ Windows Registry Editor Version 5.00
 > [!Warning]
 > Serious problems might occur if you modify the registry incorrectly.  For added protection, back up the registry before you modify it.  Then, you can restore the registry if a problem occurs.  For more information about how to back up and restore the registry, click the following article number to view the article in the Microsoft Knowledge Base: <br/><br/> [322756](https://support.microsoft.com/help/322756/how-to-back-up-and-restore-the-registry-in-windows) How to back up and restore the registry in Windows.
 
-> [!NOTE]
-> The software decoder built into Windows 10 is provided courtesy of  [**Digimarc Corporation**](https://www.digimarc.com/).
+## Credits
+The software decoder built into Windows 10/11 is provided by [*Digimarc Corporation*](https://www.digimarc.com/).
 
 ## See also
 
-### Samples
-
-- [Barcode scanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
+- [Sample application](https://aka.ms/justscanit)
+- [Sample code](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

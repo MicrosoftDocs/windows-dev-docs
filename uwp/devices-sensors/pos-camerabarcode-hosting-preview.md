@@ -55,6 +55,5 @@ try
 
 ## See also
 
-### Samples
-
-- [Barcode scanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
+- [Sample application](https://aka.ms/justscanit)
+- [Sample code](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
