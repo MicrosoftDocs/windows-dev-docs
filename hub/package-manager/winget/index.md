@@ -1,7 +1,7 @@
 ---
 title: Use the winget tool to install and manage applications
 description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
-ms.date: 04/27/2022
+ms.date: 02/10/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -33,15 +33,17 @@ Windows App Installer includes the production version of the winget tool. To try
 
 [Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains "sandboxed" and runs separately from the host machine. Windows Sandbox does not include winget, nor the Microsoft Store app, so you will need to download the latest winget package from the winget releases page on GitHub.
 
-To install winget on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:
+To install the stable release of winget on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:
 
 ```powershell
 $ProgressPreference='Silent'
-Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/download/v1.3.2691/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile .\MicrosoftDesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/download/v1.3.2691/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
 Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
 Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
 Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
 ```
+
+If you would like a preview or different version of the Package Manager, go to https://github.com/microsoft/winget-cli/releases. Copy the URL of the version you would prefer and update the above Uri.
 
 For more information on Windows Sandbox, including how to install a sandbox and what to expect from it's usage, see the [Windows Sandbox docs](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview).
 
