@@ -60,7 +60,7 @@ The following values are prohibited from being used as package strings:
 | Cannot end with | "." |
 | Cannot contain | ".xn--" |
 
-A **package string** must be compared using a case-insensitive string comparison APIs (e.g. _wcsicmp).
+A **package string** must be compared using an ordinal case-insensitive string comparison APIs (e.g. _wcsicmp).
 
 Package Identity’s `name` and `resourceid` fields are package strings.
 
@@ -109,7 +109,7 @@ where Publisher Id has some very specific properties:
 - MinLength = MaxLength = 13 chars [fixed-size]
 - Allowed Characters (as regex) = a-hj-km-np-tv-z0-9
   - Base-32, Crockford Variant, i.e. alphanumeric (A-Z0-9) except no I (eye), L (ell), O (oh) or U (you)
-- Case-insensitive for comparisons --- ABCDEFABCDEFG == abcdefabcdefg
+- Ordinal case-insensitive for comparisons --- ABCDEFABCDEFG == abcdefabcdefg
 
 So you’ll never see % : \ / " ? or other characters in a Publisher Id.
 
@@ -121,8 +121,10 @@ Publisher Id is often referred to as PublisherId.
 
 Publisher Id exists because Publisher needs to match your cert’s X.509 name/signer, thus:
 
-- It can be very big (length <= 8192 chars) – difficult to use in file system, registry, URLs, etc.
-- It can include restricted characters (backslash etc.)
+- It can be very big (length <= 8192 chars)
+- It can include characters that are awkward or restricted (backslash, etc.)
+
+These issues can make some X.509 strings awkward or impossible to use in the filesystem, registry, URLs, and other contexts.
 
 #### How do I create a PublisherId?
 
@@ -137,9 +139,9 @@ It's rare to need to create a `PublisherId` from `Publisher`, but it can be done
 
 HRESULT PublisherIdFromPublisher(
     _In_ PCWSTR publisher,
-    _Out_writes_(PACKAGE_PUBLISHERID_MAX_LENGTH) PWSTR publisherId)
+    _Out_writes_(PACKAGE_PUBLISHERID_MAX_LENGTH + 1) PWSTR publisherId)
 {
-    const PCWSTR name{ L"xyz" };
+    PCWSTR name{ L"xyz" };
     const size_t nameLength{ ARRAYSIZE(L"xyz") - 1 };
     const size_t offsetToPublisherId{ name + 1 }; // xyz_...publisherid...
     PACKAGE_ID id{};
@@ -159,33 +161,27 @@ The following is a classic Windows C implementation of the same operation:
 ``` c
 #include <appmodel.h>
 
-#define NAME_FOR_PUBLISHER_TO_PUBLISHERID L"xyz"
-#define NAME_FOR_PUBLISHER_TO_PUBLISHERID_LENGTH (ARRAYSIZE(NAME_FOR_PUBLISHER_TO_PUBLISHERID) - 1)
-_Check_return_ _Success_(return == ERROR_SUCCESS) LONG PublisherIdFromPublisher(
+HRESULT PublisherIdFromPublisher(
     _In_ PCWSTR publisher,
-    _Out_writes_(PACKAGE_PUBLISHERID_MAX_LENGTH) PWSTR publisherId)
+    _Out_writes_(PACKAGE_PUBLISHERID_MAX_LENGTH + 1) PWSTR publisherId)
 {
-    PACKAGE_ID id;
-    ZeroMemory(&id, sizeof(id));
-    C_ASSERT(NAME_FOR_PUBLISHER_TO_PUBLISHERID_LENGTH == PACKAGE_NAME_MIN_LENGTH);
-    id.name = NAME_FOR_PUBLISHER_TO_PUBLISHERID;
-    id.publisher = publisher;
+    const WCHAR c_name[]{ L"xyz" };
+    const UINT32 c_nameLength{ ARRAYSIZE(c_nameForPublisherToPublisherId) - 1 };
 
-    WCHAR familyName[PACKAGE_PUBLISHERID_MAX_LENGTH + 1];
-    UINT32 n = ARRAYSIZE(familyName);
-    LONG rc = PackageFamilyNameFromId(&id, &n, familyName);
-    if (rc != ERROR_SUCCESS)
-        return rc;
-    CopyMemory(publisherId,
-        familyName + NAME_FOR_PUBLISHER_TO_PUBLISHERID_LENGTH + 1,
-        (n - NAME_FOR_PUBLISHER_TO_PUBLISHERID_LENGTH - 1) * sizeof(*publisherId));
-    return ERROR_SUCCESS;
+    PACKAGE_ID id{};
+    id.name = c_name;
+    id.publisher = publisher;
+    WCHAR familyName[PACKAGE_PUBLISHERID_MAX_LENGTH + 1]{};
+    UINT32 n{ ARRAYSIZE(familyName) };
+    RETURN_IF_WIN32_ERROR(PackageFamilyNameFromId(&id, &n, familyName));
+    RETURN_IF_FAILED(StringCchCopyW(publisherId, PACKAGE_PUBLISHERID_MAX_LENGTH + 1,  familyName + c_nameLength + 1);
+    return S_OK;
 }
 ```
 
 This creates the PublisherId by converting a Package Id to a Package Family Name with the resulting format `xyz_<publisherid>`. This recipe is stable and reliable.
 
-This only requires you compile with appmodel.h from the SDK and link with kernel32.lib (or api-ms-win-appmodel-runtime-l1.lib if using APIsets).
+This only requires you compile with appmodel.h from the SDK and link with kernel32.lib (or kernelbase.lib, onecore.lib, or api-ms-win-appmodel-runtime-l1.lib if using APIsets).
 
 ### Understanding processor architecture in package identity
 
@@ -198,11 +194,15 @@ void Encrypt(...)
 {
     HANDLE h{};
     if (GetCpu() == arm64)
+    {
         h = LoadLibrary(GetCurrentPackagePath() + "\bin\encrypt-arm64.dll")
         p = GetProcAddress(h, "Encrypt")
         return (*p)(...)
+    }
     else
+    {
         // ...call other implementation...
+    }
 }
 ```
 
@@ -219,7 +219,7 @@ Or you can make a neutral package with multiple variants:
 
 Developers can then `LoadLibrary("bin\encrypt-" + cpu + ".dll")` to get the appropriate binary for their process at runtime.
 
-Typically, neutral packages have no per-architecture content, but they can. There are limits to what one can do (e.g. you could make a Notepad package containing notepad.exe compiled for x86 + x64 + arm + arm64 but **appxmanifest.xml** can only declare `<Application Executable=...>` pointing to one of them). Given that there are bundles that let you install only the needed bits, this is a very uncommon thing to do. It's not illegal, just advanced.
+Typically, neutral packages have no per-architecture content, but they can. There are limits to what one can do (e.g. you could make a Notepad package containing notepad.exe compiled for x86 + x64 + arm + arm64 but **appxmanifest.xml** can only declare `<Application Executable=...>` pointing to one of them). Given that there are bundles that let you install only the needed bits, this is a very uncommon thing to do. It's not illegal, just advanced and exotic.
 
 Also, `Architecture=x86` (or x64|arm|arm64) doesn't mean the package only contains executable code for the specified architecture. It's just the overwhelmingly common case.
 
