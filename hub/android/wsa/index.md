@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 11/02/2022
+ms.date: 02/13/2023
 ---
 
 # Windows Subsystem for Android™️
@@ -131,6 +131,12 @@ The following should also be considered when updating an Android app to run on a
 - Screen Orientation
 
 Learn more about how to optimize for window resizing scenarios on desktop devices by following the [Window Management guide in the Android docs](https://developer.android.com/topic/arc/window-management).
+
+## Application Lifecycle Events
+
+Developing Android applications for a multi-window environment has an impact on the lifecycle events that you choose to utilize in your application. While overriding the `onPause` event may achieve the results you’d like on a phone or tablet, it’s typically the wrong event to use if you’re changing your app’s UX.
+
+See the [Android documentation](https://developer.android.com/guide/components/activities/activity-lifecycle) for a description of the lifecycle events. More often than not, you’ll want to use the `onStop` event and not the `onPause` or `onUserLeaveHint` events. In fact, many multi-window Android implementations do not deliver the `onUserLeaveHint` notification, and thus any business critical logic that might be in that event handler will not be called on these platforms, including Windows Subsystem for Android.
 
 ## Test and debug
 
