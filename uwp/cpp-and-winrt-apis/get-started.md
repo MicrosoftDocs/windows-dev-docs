@@ -49,6 +49,12 @@ int main()
     for (const SyndicationItem syndicationItem : syndicationFeed.Items())
     {
         winrt::hstring titleAsHstring = syndicationItem.Title().Text();
+        
+        // A workaround to remove the trademark symbol from the title string, because it causes issues in this case.
+        std::wstring titleAsStdWstring{ titleAsHstring.c_str() };
+        titleAsStdWstring.erase(remove(titleAsStdWstring.begin(), titleAsStdWstring.end(), L'™'), titleAsStdWstring.end());
+        titleAsHstring = titleAsStdWstring;
+
         std::wcout << titleAsHstring.c_str() << std::endl;
     }
 }
@@ -105,6 +111,9 @@ for (const SyndicationItem syndicationItem : syndicationFeed.Items()) { ... }
 
 ```cppwinrt
 winrt::hstring titleAsHstring = syndicationItem.Title().Text();
+
+// Omitted: there's a little bit of extra work here to remove the trademark symbol from the title text.
+
 std::wcout << titleAsHstring.c_str() << std::endl;
 ```
 
