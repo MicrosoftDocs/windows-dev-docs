@@ -1,9 +1,8 @@
 ---
 title: Windows Package Manager
 description: Windows Package Manager is a comprehensive package manager solution that consists of a command line tool and set of services for installing applications on Windows.
-ms.date: 05/03/2020
+ms.date: 02/17/2023
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # Windows Package Manager
@@ -15,6 +14,16 @@ Windows Package Manager is a comprehensive [package manager solution](#understan
 Developers use the **winget** command line tool to discover, install, upgrade, remove and configure a curated set of applications. After it is installed, developers can access **winget** via the Windows Terminal, PowerShell, or the Command Prompt.
 
 For more information, see [Use the winget tool to install and manage applications](winget/index.md).
+
+For a video demo of winget, see [Intro to Windows Package Manager](/shows/open-at-microsoft/intro-to-windows-package-manager).
+
+For the latest announcements and version updates, see the [Windows Command Line Blog](https://devblogs.microsoft.com/commandline/), including:
+
+- [Windows Package Manager 1.4](https://devblogs.microsoft.com/commandline/windows-package-manager-1-4/)
+- [Windows Package Manager 1.3](https://devblogs.microsoft.com/commandline/windows-package-manager-1-3/)
+- [Windows Package Manager 1.2](https://devblogs.microsoft.com/commandline/windows-package-manager-1-2/)
+- [Windows Package Manager 1.1](https://devblogs.microsoft.com/commandline/windows-package-manager-1-1/)
+- [Windows Package Manager 1.0](https://devblogs.microsoft.com/commandline/windows-package-manager-1-0/)
 
 ## Windows Package Manager for ISVs
 
