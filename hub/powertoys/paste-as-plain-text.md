@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, PowerToys Paste as Plain Text, Paste as Plain Text, Win]
 ---
 
-# Paste as PLain Text
+# Paste as Plain Text
 
 Allows you to paste text from your clipboard, excluding text-formatting, with a quick key shortcut.
 
