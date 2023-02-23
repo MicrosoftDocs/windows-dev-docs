@@ -6,12 +6,48 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 04/27/2022
+ms.date: 02/10/2023
 ---
 
 # Release Notes for Windows Subsystem for Android™️
 
 These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
+
+## Build 2301.40000.4.0
+
+February 9, 2023
+
+- Improved audio input latency and reliability
+- Improvements to camera experience (camera metadata now exposed to camera apps)
+- Improvements to framerate performance: certain benchmarks have improved by 10%-20% on ARM and 40%-50% on x64
+- Fixed zooming out in apps using touchpad or mouse
+- Improvements to platform reliability
+- Using latest Chromium WebView to version 108
+- Synchronizing global microphone and camera privacy toggles between Windows and Android apps
+- Android 13 security updates
+
+## Build 2211.40000.11.0
+
+January 10, 2023
+
+- Windows Subsystem for Android updated to Android 13
+- Improvements in boot performance
+- Improvements to mouse click input
+- Improvements in clipboard stability
+- Improvements to application resizing
+- Reliability improvements to media files opening in Windows
+- Jumplist entries for applications supporting app shortcuts
+
+## Build 2210.40000.7.0
+
+November 17, 2022
+
+- Enhancement of audio recording quality
+- Enhancement of OAuth scenarios
+- Support for MPEG2 decoding
+- Improvements to the camera experience when the device is not equipped with a camera
+- Improvements in input reliability
+- Chromium update to 106
 
 ## Build 2209.40000.26.0
 

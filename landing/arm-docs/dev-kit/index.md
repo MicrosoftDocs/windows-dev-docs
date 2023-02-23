@@ -57,12 +57,25 @@ The dev kit includes a 90W power supply. Attach the power supply to the back on 
 - Fan control is supported and controlled by firmware. The Fan will come on as needed to manage thermal load.
 - There is no battery on the device, hence the system will only run on AC. There is no DC mode to test against.
 
-### Set up display
+### Set up display - How to connect monitors
 
-Use the **mDP port** as your main display for setting up this device. The UEFI output defaults to mDP port.
+For the best experience, we recommend you use the **mDP port** as your main display for setting up this device.  Until the device is booted into Windows, all display output defaults to the monitor connected to the mDP port.
 
-- If the display is connected to USB-C only, you won't see the UEFI startup screen output when you turn on the device. It takes  ~25 seconds for the display to light up after power button is pressed.
-- If connecting an HDMI monitor to the mDP port, an active mini-DP to HDMI adapter is required.
+Scenarios that will require you to use the mDP port include:
+
+- Seeing the startup logo when turning on the device.
+- Booting into the UEFI to change firmware settings.
+- Installing the recovery image for the device, downloaded from the [Recovery Image page](https://support.microsoft.com/surface-recovery-image).
+- BitLocker processes (such as a recovery key prompt or a pre-boot PIN).
+- Any Windows OS boot (startup) activity that requires seeing something on the screen before Windows loads, like a Windows startup error or a bug-check boot loop.
+- Windows Automatic Recovery.
+- Booting into Windows Recovery Environment (WinRE) or Windows PE (WinPE) using a USB boot disk.
+- Taking ownership of firmware using SEMM.
+
+Requirements and notes for using Windows Developer Kit device display ports:
+
+- If the only display connected to the device is USB-C, if you don’t use the mDP port (as noted above), you won't see a startup screen output when you turn on the device until Windows is booted. The Windows boot process should take ~25 seconds.
+- If connecting an HDMI or a DVI monitor to the mDP port, an active **mini-DP to HDMI** or active **mini-DP to DVI adapter** is required. *If the connection is not working, you may be using a passive adapter or a cable with a passive adapter built in. Cables should be 2m/6ft or less.
 - When connecting an external keyboard or mouse, use the USB-A ports, not USB-C. Using USB-C to connect a keyboard or mouse will only work intermittently.
 
 |Ports | Transmission Mode | Max Data Speed | Supported Displays (max resolution) | Comments |
@@ -167,5 +180,13 @@ For hardware or warranty support with your Windows on Arm developer kit, open a 
 - **Does this device support assistive technology?**
 
     Windows 11 provides [built-in accessibility features](https://www.microsoft.com/Accessibility/windows) that help you do more on your device, in addition to assistive technology apps in the Microsoft Store, such as the [OneStep Reader](https://apps.microsoft.com/store/detail/onestep-reader/9NBLGGH6HQKK?hl=en-us&gl=us) or the [Read &Write](https://microsoftedge.microsoft.com/addons/detail/readwrite-for-microsoft-/bjglhpoliipklkfjcahfefdlfpifcinb) extension for Microsoft Edge. NVDA also offers a Windows 11 Arm-based screen reader (see the [NV Access download site](https://www.nvaccess.org/download/)). Check the [Microsoft Store](https://apps.microsoft.com/store/apps) or contact your assistive software vendor to see if your preferred apps are available for a Windows 11 Arm-based PC.
+
+- **Where can I download a recovery image to reset Windows Developer Kit 2023 to the factory condition?**
+
+    The [Recovery Image page](https://support.microsoft.com/surface-recovery-image) offers an image specifically for "Windows Dev Kit 2023". You will need to enter the device Serial Number.
+
+- **Are custom OS images supported?**
+
+    No, currently custom operating system images are not supported on Microsoft Arm devices. Only the Windows OS image provided on the device when purchased is supported. This image can be reinstalled if necessary using the downloadable recovery image on the [Recovery Image page](https://support.microsoft.com/surface-recovery-image).
 
 To learn more, see **[FAQs for Windows Arm-based PCs](https://support.microsoft.com/en-us/windows/windows-arm-based-pcs-faq-477f51df-2e3b-f68f-31b0-06f5e4f8ebb5)**.
