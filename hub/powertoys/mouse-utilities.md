@@ -63,7 +63,7 @@ From the settings menu, the following options can be configured:
 
 ![Screenshot of Mouse jump.](../images/pt-mouse-jump.gif)
 
-Mouse Jump allows moving the mouse pointer long distances.
+Mouse Jump allows moving the mouse pointer long distances on a single screen or across multiple screens.
 
 | Setting | Description |
 | :--- | :--- |
