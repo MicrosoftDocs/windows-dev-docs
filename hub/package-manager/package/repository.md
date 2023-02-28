@@ -1,7 +1,7 @@
 ---
 title: Submit your manifest to the repository
 description: After you create a package manifest that describes your application, you're ready to submit your manifest to the Windows Package Manager repository.
-ms.date: 11/28/2022
+ms.date: 02/02/2023
 ms.topic: article
 ---
 
@@ -34,26 +34,40 @@ winget validate \<path-to-the-manifests>
 
 If your validation fails, use the errors to locate the line number and make a correction. After your manifest is validated, you can submit it to the repository.
 
-### Step 2: Clone the repository
+### Step 2: Test your manifest with Windows Sandbox
 
-Next, create a fork of the repository and clone it.
+The Windows Package Manager repository includes a script that will install the Windows Package Manager in a Sandbox for testing manifest submissions.
+To run the powershell script, navigate to your winget-pkgs repo.
+From PowerShell, enter the following command: 
 
-1. Go to [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) in your browser and click **Fork**.
-    ![picture of fork](./images/fork.png)
+```powershell
+powershell .\Tools\SandboxTest.ps1 manifests\m\Microsoft\VisualStudioCode\1.56.0
+```
 
-2. From a command line environment such as the Windows Command Prompt or PowerShell, use the following command to clone your fork.
+You may need to update this script with the correct path to your manifest file: `.\Tools\SandboxTest.ps1 <path to manifest or manifest folder>`
 
-    ```CMD
+See the [full sandbox test script in the winget-pkgs repo](https://github.com/microsoft/winget-pkgs/blob/master/Tools/SandboxTest.ps1).
+
+### Step 3: Clone the repository
+
+To create a fork of the Windows Package Manager Community repository and clone the repo to your local machine:
+
+1. Go to [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) in your browser and select **Fork**.
+    ![screenshot of fork button on GitHub](./images/fork.png)
+
+2. From Windows Command Prompt or PowerShell, use the following command to clone your fork.
+
+    ```powershell
     git clone <your-fork-name>
     ```
 
-3. If you are making multiple submissions, make a branch instead of a fork. We currently allow only one manifest file per submission.
+3. If you are entering multiple submissions, create   a branch instead of a fork. We currently allow only one manifest file per submission.
 
-    ```CMD
+    ```powershell
     git checkout -b <branch-name>
     ```
 
-### Step 3: Add your manifest to the local repository
+### Step 4: Add your manifest to the local repository
 
 You must add your manifest files to the repository in the following folder structure:
 
@@ -67,27 +81,27 @@ You must add your manifest files to the repository in the following folder struc
 
 The `PackageIdentifier` and the `PackageVersion` values in the manifest must match the publisher, application names and version in the manifest folder path. For more information, see [Create your package manifest](manifest.md#tips-and-best-practices).
 
-### Step 4: Submit your manifest to the remote repository
+### Step 5: Submit your manifest to the remote repository
 
 You're now ready to push your new manifest to the remote repository.
 
 1. Use the `commit` command to add files and commit the change and provide information on the submission.
 
-    ```CMD
+    ```powershell
     git commit -m "Submitting ContosoApp version 1.0.0" --all
     ```
 
 2. Use the `push` command to push the changes to the remote repository.
 
-    ```CMD
+    ```powershell
     git push
     ```
 
-### Step 5: Create a pull request
+### Step 6: Create a pull request
 
 After you push your changes, return to [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) and create a pull request to merge your fork or branch to the main branch.
 
-![picture of pull request tab](./images/pull-request.png)
+![screenshot of pull request tab](./images/pull-request.png)
 
 ## Submission process
 
@@ -101,7 +115,7 @@ If there is ever an error during the process, you will be notified and our label
 
 ## Validation process
 
-When you [create a pull request](#step-5-create-a-pull-request) to submit your manifest to the Windows Package Manager repository, this will start an automation process that validates the manifest and processes your pull request. GitHub labels are used to share progress and allow you to communicate with us.
+When you [create a pull request](#step-6-create-a-pull-request) to submit your manifest to the Windows Package Manager repository, this will start an automation process that validates the manifest and processes your pull request. GitHub labels are used to share progress and allow you to communicate with us.
 
 ### Submission expectations
 

@@ -4,9 +4,12 @@ title: "Runtime Directives (rd.xml) Configuration File Reference"
 ms.date: "03/30/2017"
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
 ---
-# Runtime Directives (rd.xml) Configuration File Reference
 
-A runtime directives (.rd.xml) file is an XML configuration file that specifies whether designated program elements are available for reflection. Here's an example of a runtime directives file:
+# Runtime directives (rd.xml) configuration file reference
+
+A runtime directives (.rd.xml) file is an XML configuration file that specifies whether designated program elements are available for reflection. For info about how and where to add a runtime directives to your project, and how to have it recognized, see [MissingMetadataException troubleshooter](https://dotnet.github.io/native/troubleshooter/method.html#).
+
+Here's an example of a runtime directives file:
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
