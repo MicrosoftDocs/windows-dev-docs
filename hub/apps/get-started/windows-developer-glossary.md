@@ -2,11 +2,13 @@
 title: Windows developer glossary
 description:  A glossary of terms related to Windows application development.
 ms.topic: article
-ms.date: 1/23/2022
+ms.date: 2/20/2023
 ms.author: mikben
 author: MatchaMatch
 ms.localizationpriority: medium
 ms.collection: windows11
+audience: new-desktop-app-developers
+content-type: glossary
 ---
 
 # Windows developer glossary
