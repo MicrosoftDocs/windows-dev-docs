@@ -13,6 +13,7 @@ Mouse utilities is a collection of features that enhance mouse and cursor functi
 
 - [Find my mouse](#find-my-mouse)
 - [Mouse highlighter](#mouse-highlighter)
+- [Mouse jump](#mouse-jump)
 - [Mouse pointer crosshairs](#mouse-pointer-crosshairs)
 
 ## Find my mouse
@@ -57,6 +58,16 @@ From the settings menu, the following options can be configured:
 | Radius | The radius of the highlighter - Measured in pixels. |
 | Fade delay | How long it takes before a highlight starts to disappear - Measured in milliseconds. |
 | Fade duration | Duration of the disappear animation - Measured in milliseconds. |
+
+## Mouse jump
+
+![Screenshot of Mouse jump.](../images/pt-mouse-jump.gif)
+
+Mouse Jump allows moving the mouse pointer long distances.
+
+| Setting | Description |
+| :--- | :--- |
+| Activation shortcut | The customizable keyboard command to activate Mouse Jump. |
 
 ## Mouse pointer Crosshairs
 
