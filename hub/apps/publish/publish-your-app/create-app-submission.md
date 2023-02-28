@@ -71,5 +71,5 @@ To add or remove:
 
 > [!NOTE]
 > - The owner of your developer account is always notified and can’t be removed from the audience list.
-> - The audience list is product specific and applied to all submissions of the product.
+> - The audience list is product specific and applied to all submissions of the product. To modify the notification recipients for a different product, follow the steps above for each product.
 > - Add-on inherits parent product’s audience list and can’t be managed separately.
