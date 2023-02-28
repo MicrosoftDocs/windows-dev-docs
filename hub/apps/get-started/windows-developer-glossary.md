@@ -8,7 +8,7 @@ author: MatchaMatch
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
-content-type: faq
+content-type: glossary
 ---
 
 # Windows developer glossary
