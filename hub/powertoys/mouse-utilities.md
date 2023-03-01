@@ -1,10 +1,10 @@
 ---
 title: PowerToys Mouse utilities for Windows
-description: A collection of utilities to expand the range of usage for the mouse and cursor
-ms.date: 04/27/2022
+description: A collection of utilities to expand the range of usage for the mouse and cursor.
+ms.date: 03/01/2023
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows]
+no-loc: [PowerToys, Windows, Mouse, jump]
 ---
 
 # Mouse utilities
@@ -13,6 +13,7 @@ Mouse utilities is a collection of features that enhance mouse and cursor functi
 
 - [Find my mouse](#find-my-mouse)
 - [Mouse highlighter](#mouse-highlighter)
+- [Mouse jump](#mouse-jump)
 - [Mouse pointer crosshairs](#mouse-pointer-crosshairs)
 
 ## Find my mouse
@@ -57,6 +58,16 @@ From the settings menu, the following options can be configured:
 | Radius | The radius of the highlighter - Measured in pixels. |
 | Fade delay | How long it takes before a highlight starts to disappear - Measured in milliseconds. |
 | Fade duration | Duration of the disappear animation - Measured in milliseconds. |
+
+## Mouse jump
+
+![Screenshot of Mouse jump.](../images/pt-mouse-jump.gif)
+
+Mouse jump allows moving the mouse pointer long distances on a single screen or across multiple screens.
+
+| Setting | Description |
+| :--- | :--- |
+| Activation shortcut | The customizable keyboard command to activate the ability to mouse jump. |
 
 ## Mouse pointer Crosshairs
 

@@ -11,7 +11,6 @@ no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 
 We recommend installing PowerToys via GitHub or Microsoft Store, but alternative install methods are also listed if you prefer using a package manager.
 
-
 ## Requirements
 
 - Supported Operating Systems:
@@ -20,9 +19,7 @@ We recommend installing PowerToys via GitHub or Microsoft Store, but alternative
 - System architecture
   - x64 and Arm64 architecture are currently supported.
 - Our installer will install the following runtimes:
-  - [.NET 6.0.8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/6.0#runtime-desktop-6.0.8) or a newer 6.0.x runtime
   - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (this will always install the latest version available)
-  - [Microsoft Visual C++ Redistributable](/cpp/windows/latest-supported-vc-redist#visual-studio-2015-2017-2019-and-2022) installer (this will install one of the latest versions available)
 
 To ensure that your machine meets these requirements, check your Windows version and build number by pressing <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 
