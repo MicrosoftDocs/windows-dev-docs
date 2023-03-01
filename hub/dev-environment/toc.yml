@@ -97,6 +97,8 @@ items:
         href: ../powertoys/keyboard-manager.md
       - name: Mouse Utilities
         href: ../powertoys/mouse-utilities.md
+      - name: Paste as Plain Text
+        href: ../powertoys/paste-as-plain-text.md
       - name: PowerRename
         href: ../powertoys/powerrename.md
       - name: Quick Accent
