@@ -603,6 +603,51 @@ items:
                 href: publish/publish-your-app/resolve-submission-errors.md
               - name: Avoid common certification failures
                 href: publish/publish-your-app/avoid-common-certification-failures.md
+          - name: Microsoft Store Developer CLI (preview)
+            href: publish/msstore-dev-cli/overview.md
+            items:
+              - name: Install
+                href: publish/msstore-dev-cli/install.md
+              - name: CI/CD Environments
+                href: publish/msstore-dev-cli/ci-cd-environments.md
+              - name: Info Command
+                href: publish/msstore-dev-cli/info-command.md
+              - name: Reconfigure Command
+                href: publish/msstore-dev-cli/reconfigure-command.md
+              - name: Settings Command
+                href: publish/msstore-dev-cli/settings-command.md
+              - name: Apps Command
+                href: publish/msstore-dev-cli/apps-command.md
+                items:
+                - name: Apps List Command
+                  href: publish/msstore-dev-cli/apps-list-command.md
+                - name: Apps Get Command
+                  href: publish/msstore-dev-cli/apps-get-command.md
+              - name: Submission Command
+                href: publish/msstore-dev-cli/submission-command.md
+                items:
+                - name: Submission Status Command
+                  href: publish/msstore-dev-cli/submission-status-command.md
+                - name: Submission Get Command
+                  href: publish/msstore-dev-cli/submission-get-command.md
+                - name: Submission GetListingAssets Command
+                  href: publish/msstore-dev-cli/submission-getListingAssets-command.md
+                - name: Submission UpdateMetadata Command
+                  href: publish/msstore-dev-cli/submission-updateMetadata-command.md
+                - name: Submission Update Command
+                  href: publish/msstore-dev-cli/submission-update-command.md
+                - name: Submission Poll Command
+                  href: publish/msstore-dev-cli/submission-poll-command.md
+                - name: Submission Publish Command
+                  href: publish/msstore-dev-cli/submission-publish-command.md
+                - name: Submission Delete Command
+                  href: publish/msstore-dev-cli/submission-delete-command.md
+              - name: Init Command
+                href: publish/msstore-dev-cli/init-command.md
+              - name: Package Command
+                href: publish/msstore-dev-cli/package-command.md
+              - name: Publish Command
+                href: publish/msstore-dev-cli/publish-command.md
       - name: Additional features for MSI and EXE apps
         items:
           - name: Microsoft Store Submission API for MSI or EXE app 
