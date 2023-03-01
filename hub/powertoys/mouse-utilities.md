@@ -1,10 +1,10 @@
 ---
 title: PowerToys Mouse utilities for Windows
-description: A collection of utilities to expand the range of usage for the mouse and cursor
-ms.date: 04/27/2022
+description: A collection of utilities to expand the range of usage for the mouse and cursor.
+ms.date: 03/01/2023
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows]
+no-loc: [PowerToys, Windows, Mouse, jump]
 ---
 
 # Mouse utilities
@@ -63,11 +63,11 @@ From the settings menu, the following options can be configured:
 
 ![Screenshot of Mouse jump.](../images/pt-mouse-jump.gif)
 
-Mouse Jump allows moving the mouse pointer long distances on a single screen or across multiple screens.
+Mouse jump allows moving the mouse pointer long distances on a single screen or across multiple screens.
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to activate Mouse Jump. |
+| Activation shortcut | The customizable keyboard command to activate the ability to mouse jump. |
 
 ## Mouse pointer Crosshairs
 
