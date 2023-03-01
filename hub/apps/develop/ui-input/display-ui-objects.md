@@ -2,7 +2,7 @@
 title: Display WinRT UI objects that depend on CoreWindow
 description: You can use certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects in your desktop app by adding a little bit of interoperation code.
 ms.topic: article
-ms.date: 03/04/2022
+ms.date: 02/28/2023
 keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, Windows UI Library, WinUI, interop, IInitializeWithWindow, IInitializeWithWindow::Initialize, WinRT.Interop.InitializeWithWindow, IDataTransferManagerInterop, IUserConsentVerifierInterop
 ms.author: stwhi
 author: stevewhims
@@ -38,7 +38,7 @@ These classes implement [**IInitializeWithWindow**](/windows/win32/api/shobjidl_
 * [**Windows.Storage.Pickers.FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker)
 * [**Windows.Storage.Pickers.FileSavePicker**](/uwp/api/windows.storage.pickers.filesavepicker)
 * [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker)
-* [**Windows.System.FolderLauncherOptions**](/uwp/api/windows.system.folderlauncheroptions)
+* [**Windows.System.FolderLauncherOptions**](/uwp/api/windows.system.folderlauncheroptions)&mdash;Windows 10, version 1903 (10.0; Build 18362) and later
 * [**Windows.System.LauncherOptions**](/uwp/api/windows.system.launcheroptions)
 * [**Windows.UI.Core.CoreWindowDialog**](/uwp/api/windows.ui.core.corewindowdialog)
 * [**Windows.UI.Core.CoreWindowFlyout**](/uwp/api/windows.ui.core.corewindowflyout)
