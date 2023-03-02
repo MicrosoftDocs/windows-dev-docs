@@ -55,7 +55,13 @@ Login to your Azure account and create a new [**AAD App Registration**](https://
     > ![Screenshot showing the Managed application in local directory option on the Essentials page](images/push-notification-essentials-ui.png)
     
     > ![Screenshot showing the Object ID field](images/push-notification-object-id-field.png)
-
+    
+    > [!NOTE] 
+    > A **service principal** is required to get an Object ID, if there is not one associated with your app, follow the steps in one of the following articles to create one in the Azure portal or using the command line:
+    >
+    > [Use the portal to create an Azure AD application and service principal that can access resources](/azure/active-directory/develop/howto-create-service-principal-portal)
+    >
+    > [Use Azure PowerShell to create a service principal with a certificate](/azure/active-directory/develop/howto-authenticate-service-principal-powershell)
     
 
 ### Step 3: Create a secret for your app registration

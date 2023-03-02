@@ -161,7 +161,7 @@ If the Product declares the use of capabilities, then the capabilities the Produ
 
 ### 1.7 Localization
 
-You should localize your Product for all languages that it supports. The experience provided by a product must be reasonably similar in all languages that it supports.
+You should localize your Product for all languages that it supports. The text of your product’s description should be localized in each language that you declare. If your product is localized such that some features are not available in a localized version, you should clearly state or display the limits of localization in the product description. The experience provided by a product must be reasonably similar in all languages that it supports.  
 
 ### 1.8 Financial Transactions
 

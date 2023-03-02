@@ -21,13 +21,13 @@ The following steps describe the end-to-end process of using the Microsoft Store
 
 Before you start writing code to call the Microsoft Store submission API for MSI or EXE app, make sure that you have completed the following prerequisites.
 
-- You (or your organization) must have an Azure AD directory and you must have Global administrator permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#create-a-new-azure-ad-tenant-to-associate-with-your-partner-center-account) for no additional charge.
+- You (or your organization) must have an Azure AD directory and you must have Global administrator permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](partner-center/manage-azure-ad-applications-in-partner-center.md) for no additional charge.
 - You must associate an Azure AD application with your Partner Center account and obtain your tenant ID, client ID and key. You need these values to obtain an Azure AD access token, which you will use in calls to the Microsoft Store submission API.
 - Prepare your app for use with the Microsoft Store submission API:
-  - If your app does not yet exist in Partner Center, you must [create your app by reserving its name](/windows/apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msi-exe) in Partner Center. You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it.
-  - Before you can create a submission for a given app using this API, you must first [create one submission for the app](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msi-exe)] in Partner Center, including answering the [age ratings](/windows/apps/publish/publish-your-app/age-ratings?pivots=store-installer-msi-exe) questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API.
-  - If you are creating or updating an app submission and you need to include new package, [prepare the package details](/windows/apps/publish/publish-your-app/upload-app-packages?pivots=store-installer-msi-exe).
-  - If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msi-exe).
+  - If your app does not yet exist in Partner Center, you must [create your app by reserving its name](publish-your-app/reserve-your-apps-name.md?pivots=store-installer-msi-exe) in Partner Center. You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it.
+  - Before you can create a submission for a given app using this API, you must first [create one submission for the app](publish-your-app/create-app-submission.md?pivots=store-installer-msi-exe)] in Partner Center, including answering the [age ratings](publish-your-app/age-ratings.md?pivots=store-installer-msi-exe) questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API.
+  - If you are creating or updating an app submission and you need to include new package, [prepare the package details](publish-your-app/upload-app-packages.md?pivots=store-installer-msi-exe).
+  - If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](publish-your-app/create-app-store-listing.md?pivots=store-installer-msi-exe).
 
 ### How to associate an Azure AD application with your Partner Center account
 
@@ -36,8 +36,8 @@ Before you can use the Microsoft Store submission API for MSI or EXE app, you mu
 > [!NOTE]
 > You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
 
-1. In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](/windows/apps/publish/partner-center/associate-azure-ad-with-partner-center).
-2. Next, from the Users page in the Account settings section of Partner Center, [add the Azure AD application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center) that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the Manager role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
+1. In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](partner-center/associate-azure-ad-with-partner-center.md).
+2. Next, from the Users page in the Account settings section of Partner Center, [add the Azure AD application](partner-center/manage-azure-ad-applications-in-partner-center.md) that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the Manager role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](partner-center/manage-azure-ad-applications-in-partner-center.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
 3. Return to the Users page, click the name of your Azure AD application to go to the application settings, and copy down the Tenant ID and Client ID values.
 4. To add a new key or Client secret, see the following instructions or refer instructions to [register app through Azure Portal](/azure/active-directory/develop/quickstart-register-app):
 
@@ -379,7 +379,7 @@ In the case of Patch Module Update API – only fields which are to be updated n
 | dependsOnDriversOrNT     | Boolean          | *Required*  |
 | accessibilitySupport     | Boolean          | *Required*  |
 | penAndInkSupport         | Boolean          | *Required*  |
-| listings                 | Array of objects | Listings module data for each language |
+| listings                 | Object           | Object to listing module data for a single language |
 | language                 | String           | *Required* See list of languages below |
 | description              | String           | *Required* Character limit = 10000 |
 | whatsNew                 | String           | Character limit = 1500 |
@@ -1380,7 +1380,7 @@ To have the ability to update listing assets, and in turn, to be able to add/rem
 | message                 | String           | The description of the error
 | target                  | String           | The entity from which the error originated
 | responseData            | Object           |             |
-| listingAssets           | Array of objects | Listing asset details for each language
+| listingAssets           | Object           | Object containing details of StoreLogos and Screenshots to be uploaded |
 | language                | String           |             |
 | storeLogos              | Array of objects |             |
 | screenshots             | Array of objects |             |

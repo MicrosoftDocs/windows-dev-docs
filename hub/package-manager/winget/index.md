@@ -1,7 +1,7 @@
 ---
 title: Use the winget tool to install and manage applications
 description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
-ms.date: 04/27/2022
+ms.date: 02/10/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -12,18 +12,16 @@ The **winget** command line tool enables users to discover, install, upgrade, re
 
 ## Install winget
 
-Windows Package Manager **winget** command-line tool is bundled with Windows 11 and modern versions of Windows 10 by default as the **App Installer**.
+Windows Package Manager **winget** command-line tool is available on Windows 11 and modern versions of Windows 10 as a part of the **App Installer**.
 
-If you are running an earlier version of Windows and the App Installer is not installed, you can [get App Installer from the Microsoft Store](https://www.microsoft.com/p/app-installer/9nblggh4nns1#activetab=pivot:overviewtab). If it's already installed, make sure it is updated with the latest version.
-
-App Installer includes the production version of the winget tool.
+You can [get App Installer from the Microsoft Store](https://www.microsoft.com/p/app-installer/9nblggh4nns1#activetab=pivot:overviewtab). If it's already installed, make sure it is updated with the latest version.
 
 > [!NOTE]
-> The **winget** command line tool is only supported on Windows 10 1709 (build 16299) or later at this time.
+> The **winget** command line tool is only supported on Windows 10 1709 (build 16299) or later at this time. The winget tool will not be available until you have logged into Windows as a user for the first time, triggering Microsoft Store to register Windows Package Manager as part of an asynchronous process. If you have recently logged in as a user for the first time and find that winget is not yet available, you can open PowerShell and enter the following command to request this winget registration: `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`.
 
 ### Install winget preview version [Developers Only]
 
-To try the latest Windows Package Manager features, install the latest preview build of the **winget** command line tool in one of the following ways:
+Windows App Installer includes the production version of the winget tool. To try the latest Windows Package Manager features, you can install the latest preview build of the **winget** command line tool in one of the following ways:
 
 * Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Dev Channel](https://insider.windows.com/understand-flighting).
 
@@ -35,7 +33,7 @@ To try the latest Windows Package Manager features, install the latest preview b
 
 [Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains "sandboxed" and runs separately from the host machine. Windows Sandbox does not include winget, nor the Microsoft Store app, so you will need to download the latest winget package from the winget releases page on GitHub.
 
-To install winget on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:
+To install the stable release of winget on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:
 
 ```powershell
 $ProgressPreference='SilentlyContinue'
@@ -47,6 +45,8 @@ Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
 Add-AppxPackage .\Microsoft.UI.Xaml.2.7.3\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.7.appx
 Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
 ```
+
+If you would like a preview or different version of the Package Manager, go to https://github.com/microsoft/winget-cli/releases. Copy the URL of the version you would prefer and update the above Uri.
 
 For more information on Windows Sandbox, including how to install a sandbox and what to expect from it's usage, see the [Windows Sandbox docs](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview).
 

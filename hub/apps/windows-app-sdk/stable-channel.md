@@ -32,6 +32,22 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.2
 
+### Version 1.2.4 (1.2.230217.4)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.
+- Fixed issue causing self-contained apps to not be able to set UAC Settings. For more information, see GitHub issue [#3376](https://github.com/microsoft/WindowsAppSDK/issues/3376).
+- Fixed issue causing push notifications to return an inaccurate Expiration time with `PushNotificationChannel::ExpirationTime`. For more information, see GitHub issue [#3300](https://github.com/microsoft/WindowsAppSDK/issues/3330).
+- Fixed issue causing negative numbers to be considered "invalid" when passing a double as a parameter into an x:Bind function.
+- Several fixes to update the WinUI VSIX. These updates included simplifying the project template dipAwareness in app.manifest, removing the UWP templates, updating localized resource files, adding the phone id to unblock store submission, and removing the copyright notice and license. For more info see GitHub issues [#5659](https://github.com/microsoft/microsoft-ui-xaml/issues/5659), [#3205](https://github.com/microsoft/WindowsAppSDK/issues/3205), [#3323](https://github.com/microsoft/WindowsAppSDK/issues/3323), [#3322](https://github.com/microsoft/WindowsAppSDK/issues/3322), [#3143](https://github.com/microsoft/WindowsAppSDK/issues/3143).
+
+### Version 1.2.3 (1.2.230118.102)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.
+
+- Fixed issue causing WinUI 3 apps to crash when multiple windows are closed.
+- Fixed issue causing a crash on app close when two or more references to the ThreadPoolTimer interface are called. For more information, see GitHub issues [#7260](https://github.com/microsoft/microsoft-ui-xaml/issues/7260) and [#7239](https://github.com/microsoft/microsoft-ui-xaml/issues/7239).
+- Fixed issue causing all Single-project MSIX apps to run as full trust. For more information, see GitHub issue [#7766](https://github.com/microsoft/microsoft-ui-xaml/issues/7766).
+
 ### Version 1.2.2 (1.2.221209.1)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.

@@ -110,7 +110,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) or the [Mi
 
 Here are some additional actions you may wish to consider, based on the ratings and reviews you're seeing.
 
--   If you notice many reviews that suggest a new or changed feature, or complain about a problem, consider releasing a new version that addresses the specific feedback. (Be sure to update your app's [description](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix) to indicate that the issue has been fixed.)
+-   If you notice many reviews that suggest a new or changed feature, or complain about a problem, consider releasing a new version that addresses the specific feedback. (Be sure to update your app's [description](publish-your-app/create-app-store-listing.md?pivots=store-installer-msix) to indicate that the issue has been fixed.)
 -   If the average rating is high, but your number of downloads is low, you might want to look for ways to [expose your app to more people](attract-customers-and-promote-your-apps.md), since it's been well-received by those who have tried it out.
 
 

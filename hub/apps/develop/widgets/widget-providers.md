@@ -24,9 +24,14 @@ For an overview of the Windows widgets experience and design guidance for creati
 
 Currently you can implement a widget provider using a packaged Win32 desktop app.  Support for Progressive Web App (PWA) is planned for future releases. For more information see:
 
-* [Implement a widget provider (Win32 apps)](implement-widget-provider-win32.md)
+* [Implement a widget provider in a win32 app (C#)](implement-widget-provider-cs.md)
+* [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md)
 
 For API reference documentation for implementing widget providers, see the [Microsoft.Windows.Widgets.Providers](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers) namespace.
+
+For a walkthrough of the basics of creating a widget and implementing a widget provider, watch the *Tabs vs Spaces* episode "Create Widgets for Windows 11".
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=tabs-vs-spaces&ep=create-widgets-for-windows-11]
 
 ## Additional resources
 - [Report an issue via email](mailto:widgetssupport@microsoft.com)

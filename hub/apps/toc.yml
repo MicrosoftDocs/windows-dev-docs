@@ -224,6 +224,8 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-4.md
                 - name: "Package and deploy with MSIX"
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
+            - name: Package identity overview
+              href: desktop/modernize/package-identity-overview.md
             - name: Grant package identity by packaging with external location
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
       - name: Optimize performance & fundamentals
@@ -312,6 +314,8 @@ items:
             href: develop/app-lifecycle-and-system-services.md
           - name: Manage app lifecycle
             items:
+              - name: App lifecycle
+                href: windows-app-sdk/applifecycle/applifecycle.md
               - name: App instancing
                 href: windows-app-sdk/applifecycle/applifecycle-instancing.md
               - name: Rich activation
@@ -398,7 +402,9 @@ items:
         items:
         - name: Overview
           href: develop/widgets/widget-providers.md
-        - name: Implement a widget provider in a win32 app
+        - name: Implement a widget provider in a win32 app (C#)
+          href: develop/widgets/implement-widget-provider-cs.md
+        - name: Implement a widget provider in a win32 app (C++/WinRT)
           href: develop/widgets/implement-widget-provider-win32.md
         - name: Widget provider package manifest XML format
           href: develop/widgets/widget-provider-manifest.md
@@ -597,6 +603,51 @@ items:
                 href: publish/publish-your-app/resolve-submission-errors.md
               - name: Avoid common certification failures
                 href: publish/publish-your-app/avoid-common-certification-failures.md
+          - name: Microsoft Store Developer CLI (preview)
+            href: publish/msstore-dev-cli/overview.md
+            items:
+              - name: Install
+                href: publish/msstore-dev-cli/install.md
+              - name: CI/CD Environments
+                href: publish/msstore-dev-cli/ci-cd-environments.md
+              - name: Info Command
+                href: publish/msstore-dev-cli/info-command.md
+              - name: Reconfigure Command
+                href: publish/msstore-dev-cli/reconfigure-command.md
+              - name: Settings Command
+                href: publish/msstore-dev-cli/settings-command.md
+              - name: Apps Command
+                href: publish/msstore-dev-cli/apps-command.md
+                items:
+                - name: Apps List Command
+                  href: publish/msstore-dev-cli/apps-list-command.md
+                - name: Apps Get Command
+                  href: publish/msstore-dev-cli/apps-get-command.md
+              - name: Submission Command
+                href: publish/msstore-dev-cli/submission-command.md
+                items:
+                - name: Submission Status Command
+                  href: publish/msstore-dev-cli/submission-status-command.md
+                - name: Submission Get Command
+                  href: publish/msstore-dev-cli/submission-get-command.md
+                - name: Submission GetListingAssets Command
+                  href: publish/msstore-dev-cli/submission-getListingAssets-command.md
+                - name: Submission UpdateMetadata Command
+                  href: publish/msstore-dev-cli/submission-updateMetadata-command.md
+                - name: Submission Update Command
+                  href: publish/msstore-dev-cli/submission-update-command.md
+                - name: Submission Poll Command
+                  href: publish/msstore-dev-cli/submission-poll-command.md
+                - name: Submission Publish Command
+                  href: publish/msstore-dev-cli/submission-publish-command.md
+                - name: Submission Delete Command
+                  href: publish/msstore-dev-cli/submission-delete-command.md
+              - name: Init Command
+                href: publish/msstore-dev-cli/init-command.md
+              - name: Package Command
+                href: publish/msstore-dev-cli/package-command.md
+              - name: Publish Command
+                href: publish/msstore-dev-cli/publish-command.md
       - name: Additional features for MSI and EXE apps
         items:
           - name: Microsoft Store Submission API for MSI or EXE app 
@@ -616,6 +667,16 @@ items:
                 href: publish/view-app-identity-details.md
               - name: Generate preinstall packages for OEMs
                 href: publish/generate-preinstall-packages-for-oems.md
+              - name: Organizational Licensing options
+                href: publish/organizational-licensing.md
+              - name: Package Flights
+                href: publish/package-flights.md
+              - name: Gradual Package Rollout
+                href: publish/gradual-package-rollout.md
+              - name: Beta testing and targeted distribution
+                href: publish/beta-testing-and-targeted-distribution.md
+              - name: Distribute LOB apps to enterprises
+                href: publish/distribute-lob-apps-to-enterprises.md
           - name: Attract and promote
             href: publish/attract-customers-and-promote-your-apps.md
             items:
@@ -730,23 +791,11 @@ items:
                         href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md
                       - name: "InitializeNoThrow function"
                         href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializenothrow.md
-          - name: "Bootstrapper C# APIs"
-            href: api-reference/cs-bootstrapper-apis/index.md
-            items: 
-              - name: "Constants for use with the Bootstrapper C# APIs"
-                href: api-reference/cs-bootstrapper-apis/cs-bootstrapper-apis-constants.md
-              - name: "Microsoft.Windows.ApplicationModel.DynamicDependency namespace"
-                href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
-                items: 
-                  - name: "Bootstrap class"
-                    href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
-                  - name: "PackageVersion struct"
-                    href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
           - name: WinUI API reference
             items: 
               - name: COM interop APIs for WinUI
                 href: /windows/windows-app-sdk/api/win32/_winuicominterop/
-              - name: "Interop C# APIs for WinUI"
+              - name: "C# Interop APIs for WinUI"
                 href: api-reference/cs-interop-apis/index.md
                 items: 
                   - name: "Microsoft.UI namespace"
@@ -769,6 +818,18 @@ items:
                                 href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md
                               - name: "Win32Interop.GetWindowIdFromWindow"
                                 href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md
+          - name: "Bootstrapper C# APIs"
+            href: api-reference/cs-bootstrapper-apis/index.md
+            items: 
+              - name: "Constants for use with the Bootstrapper C# APIs"
+                href: api-reference/cs-bootstrapper-apis/cs-bootstrapper-apis-constants.md
+              - name: "Microsoft.Windows.ApplicationModel.DynamicDependency namespace"
+                href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
+                items: 
+                  - name: "Bootstrap class"
+                    href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                  - name: "PackageVersion struct"
+                    href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
       - name: .NET API reference
         href: /dotnet/api/
       - name: Schema specifications for Windows apps

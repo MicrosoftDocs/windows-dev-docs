@@ -31,7 +31,7 @@ Click **Schedule a price change** to see the price change options. Choose the pr
 You can click **Schedule a price change** again to schedule as many subsequent changes as you’d like.
 
 > [!NOTE]
-> Scheduled price changes work differently from [Sale pricing](/uwp/publish/put-apps-and-add-ons-on-sale). When you put an app on sale, the price shows with a strikethrough in the Store, and customers will be able to purchase the app at the sale price during the time period that you have selected. After the sale period is up, the sale price will no longer apply and the app will be available at its base price (or a different price that you have specified for that market, if applicable).
+> Scheduled price changes work differently from [Sale pricing](../../../apps/publish/put-apps-and-add-ons-on-sale.md). When you put an app on sale, the price shows with a strikethrough in the Store, and customers will be able to purchase the app at the sale price during the time period that you have selected. After the sale period is up, the sale price will no longer apply and the app will be available at its base price (or a different price that you have specified for that market, if applicable).
 >
 > With a scheduled price change, you can adjust the price to be either higher or lower. The change will take place on the date you specify, but it won’t be displayed as a sale in the Store, or have any special formatting applied; the app will just have a new price.
 

@@ -32,3 +32,13 @@ groups:
       title: PWA
     - id: store-installer-add-on
       title: App add-on
+- id: msstoredevcli-installer-packaging
+  title: Microsoft Store Developer CLI Installation OS
+  prompt: "Choose the type of OS you want to install the Microsoft Store Developer CLI:"
+  pivots:
+    - id: msstoredevcli-installer-windows
+      title: Windows 10+
+    - id: msstoredevcli-installer-macos
+      title: macOS
+    - id: msstoredevcli-installer-linux
+      title: Linux
