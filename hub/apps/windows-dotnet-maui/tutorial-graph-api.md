@@ -2,7 +2,7 @@
 title: Tutorial--Create a .NET MAUI app integrating with the Microsoft Graph SDK
 description: Get hands-on with .NET MAUI by building a cross-platform app on Windows that leverages the Microsoft Graph SDK to display user data.
 ms.topic: article
-ms.date: 08/15/2022
+ms.date: 02/22/2023
 keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium
 ---
@@ -156,7 +156,7 @@ public async Task<User> GetMyDetailsAsync()
 {
     try
     {
-        return await _client.Me.Request().GetAsync();
+        return await _client.Me.GetAsync();
     }
     catch (Exception ex)
     {
@@ -171,6 +171,7 @@ Two `using` statements will be needed to compile the new code added to `GraphSer
 ``` csharp
 using Azure.Identity;
 using Microsoft.Graph;
+using Microsoft.Graph.Models;
 ```
 
 In **MainPage.xaml**, add an `x:Name` to the **Hello, World!** label:
@@ -257,7 +258,7 @@ In MainPage.xaml.cs, set the values of the new properties in the `GetUserInfoBtn
 private async Task LoadUserInformation()
 {
     var service = new GraphService();
-    Microsoft.Graph.User user = await service.GetMyDetailsAsync();
+    Microsoft.Graph.Models.User user = await service.GetMyDetailsAsync();
     helloMessage = $"Hello, {user.DisplayName}";
 
     UserName = user.DisplayName;
