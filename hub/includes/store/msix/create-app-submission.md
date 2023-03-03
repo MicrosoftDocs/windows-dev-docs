@@ -67,3 +67,4 @@ You'll need all the required info for at least one of the languages that your ap
 | **Publishing hold options** | Not required |       |
 | **Notes for certification** | Not required |       |
 | **Restricted capabilities** | Not required | **Required** if your product declares any restricted capabilities |
+| **Submission notification audience** | Not required |       |
