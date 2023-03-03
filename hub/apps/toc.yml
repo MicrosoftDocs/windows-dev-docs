@@ -164,7 +164,7 @@ items:
                     href: desktop/modernize/framework-packages/index.md
                   - name: MSIX framework packages and dynamic dependencies
                     href: desktop/modernize/framework-packages/framework-packages-overview.md
-                  - name: Reference framework packages at run time
+                  - name: Reference MSIX packages at run time
                     href: desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
             - name: Host WinRT XAML controls (XAML Islands)
               items:

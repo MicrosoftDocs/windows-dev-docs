@@ -18,7 +18,7 @@ For an overview of the dynamic dependencies feature and guidance about using it 
 |---------|-------------|
 |  [MSIX framework packages and dynamic dependencies](framework-packages-overview.md) | Introduces important concepts related to MSIX framework packages and describes the purpose of dynamic dependencies feature. This article includes details about the package graph for framework package references and the servicing model for framework packages. |
 |  [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../../windows-app-sdk/use-windows-app-sdk-run-time.md) | Describes how to use dynamically take a dependency on the Windows App SDK framework package in an unpackaged app at run time. This scenario enables unpackaged apps to use Windows App SDK features.   |
-|  [Reference framework packages at run time](use-the-dynamic-dependency-api.md) | Describes how to use the *dynamic dependency API* to dynamically take a dependency on different framework packages (other than the Windows App SDK framework package) in an unpackaged app at run time. |
+|  [Use the dynamic dependency API to reference MSIX packages at run time](use-the-dynamic-dependency-api.md) | Describes how to use the *dynamic dependency API* to dynamically take a dependency on different framework packages (other than the Windows App SDK framework package) in an unpackaged app at run time. |
 
 ## How packaged desktop apps run on Windows
 
