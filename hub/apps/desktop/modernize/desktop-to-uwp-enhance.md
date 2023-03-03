@@ -53,7 +53,7 @@ This option is supported only in projects that use .NET 6 (or later) and target 
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
     ```
     
-    In later versions of .NET, you can replace the value with the relevant version, for example **net6.0-windows10.0.19041.0**.
+    In later versions of .NET, you can replace the value with the relevant version, for example **net7.0-windows10.0.19041.0**.
 
 3. Save your changes and close the project file.
 
