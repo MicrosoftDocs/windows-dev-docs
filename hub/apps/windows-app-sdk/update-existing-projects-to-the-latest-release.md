@@ -1,30 +1,36 @@
 --- 
+title: Update existing projects to a different release of the Windows App SDK
 description: This article provides instructions for updating a project created with an earlier preview or release version of the Windows App SDK or WinUI 3 to the latest version.
-title: Update existing projects to the latest release of the Windows App SDK
 ms.topic: article
-ms.date: 8/10/2021
+ms.date: 03/03/2023
 keywords: windows win32, desktop development, Windows App SDK, Project Reunion
 ms.localizationpriority: medium
 ---
 
-# Update existing projects to the latest release of the Windows App SDK
+# Update existing projects to a different release of the Windows App SDK
 
-If you created a project with an earlier version of the Windows App SDK (previously called Project Reunion) or WinUI 3, you can update the project to use a more recent release. To learn more about what's currently available in each release channel, see [Windows App SDK release channels](release-channels.md).
+If you created a project with an earlier version of the Windows App SDK (previously called Project Reunion) or WinUI 3, then you can update the project to use a more recent release. To learn more about what's currently available in each release channel, see [Windows App SDK release channels](release-channels.md).
 
 > [!NOTE]
-> These instructions may have issues due to the uniqueness of each app's individual scenario. Please carefully follow them and if you find issues, [file a bug on our GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
+> These instructions might have issues due to the uniqueness of each app's individual scenario. Please carefully follow them, and if you find an issue then please file a bug against the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose) GitHub repo.
+
+## Update between versions released after 1.0 Stable
+
+If your project isn't referencing the version of the Windows App SDK NuGet package that you need, then you can use the **NuGet Package Manager** in Visual Studio to update your project's NuGet package references. For example, if you create a new project by using a stable release of the Windows App SDK VSIX, then your project will reference a stable release of the Windows App SDK. But you can easily reconfigure that project to reference, say, an experimental release of the Windows App SDK. Or reconfigure it to reference the latest stable release.
+
+For steps, see the instructions in [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
 
 ## Update from 0.8 Stable to 1.0 Stable
 
-If you created a project using version 0.8 Stable (for example, version 0.8.4), you can follow these instructions to update your project to the 1.0 Stable release.
+If you created a project using version 0.8 Stable (for example, version 0.8.4), then you can follow these instructions to update your project to the 1.0 Stable release.
 
 **Prerequisite:** Download and install the latest release of the Windows App SDK. For more information, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 ### Instructions
 
-1. In the `.wapproj` file, if your **TargetPlatformMinVersion** is older than `10.0.17763.0`, change it to `10.0.17763.0`.
+1. In the `.wapproj` file, if your **TargetPlatformMinVersion** is older than `10.0.17763.0`, then change it to `10.0.17763.0`.
 
-2. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**. This process consists of uninstalling existing Project Reunion package references from  `.csproj`/`.vcxproj` and `.wapproj` files, and then installing the `WindowsAppSDK` package references to those files.
+2. In Visual Studio, go to **Tools** > **Nuget Package Manager** > **Package Manager Console**. This process consists of uninstalling existing Project Reunion package references from  `.csproj`/`.vcxproj` and `.wapproj` files, and then installing the `WindowsAppSDK` package references to those files.
 
 3. Enter the following commands to uninstall existing `ProjectReunion` packages from your `.csproj`/`.vcxproj`
 
@@ -69,7 +75,7 @@ First, do the following:
 
 Next, make these changes to your project:
 
-1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
+1. In Visual Studio, go to **Tools** > **Nuget Package Manager** > **Package Manager Console**.
 
 2. Enter the following commands for 1.0 Preview 3:
 
@@ -158,13 +164,12 @@ Next, make these changes to your project:
         ```
 5. If your solution fails to build, clean the build output, restart Visual Studio, and try re-running the app. 
 
-
 ## Update from 0.8 Preview to 0.8 Stable or between stable 0.8 versions
 
 If you created a project using version 0.8 Preview, you can follow these instructions to update your project to a stable version of 0.8. These instructions also apply if you've created a project with an older stable version of 0.8 (for example, 0.8.0) and want to update your project to a newer stable version (for example, 0.8.2).
 
 > [!NOTE]
-> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
+> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** > **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
@@ -174,7 +179,7 @@ First, do the following:
 
 Next, make these changes to your project:
 
-1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
+1. In Visual Studio, go to **Tools** > **Nuget Package Manager** > **Package Manager Console**.
 
 2. Enter the following commands:
 
@@ -240,7 +245,7 @@ Next, make these changes to your project:
 If you created a project using version 0.5 stable, you can follow these instructions to update your project to version 0.8 stable.
 
 > [!NOTE]
-> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
+> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** > **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
@@ -250,7 +255,7 @@ First, do the following:
 
 Next, make these changes to your project:
 
-1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
+1. In Visual Studio, go to **Tools** > **Nuget Package Manager** > **Package Manager Console**.
 
 2. Enter the following commands:
 
@@ -309,7 +314,7 @@ Next, make these changes to your project:
 If you created a project using version 0.5 preview, you can follow these instructions to update your project to use version 0.8 preview.
 
 > [!NOTE]
-> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
+> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** > **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
@@ -328,7 +333,7 @@ First, do the following:
 
 Next, make these changes to your project:
 
-1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
+1. In Visual Studio, go to **Tools** > **Nuget Package Manager** > **Package Manager Console**.
 
 2. Enter the following commands:
 
@@ -430,7 +435,7 @@ First, do the following:
 
 Next, make these changes to your project:
 
-1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
+1. In Visual Studio, go to **Tools** > **Nuget Package Manager** > **Package Manager Console**.
 2. Enter the following commands:
 
     ```Console
@@ -505,7 +510,7 @@ First, do the following:
 
 Next, make these changes to your project:
 
-1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
+1. In Visual Studio, go to **Tools** > **Nuget Package Manager** > **Package Manager Console**.
 2. Enter the following commands:
 
     ```Console
