@@ -93,7 +93,7 @@ You can optionally filter the results by gender and/or age group, as well as by 
 
 The **Markets** chart shows the total number of acquisitions or installs over the selected period of time for each market in which your app is available. You can choose whether to display data for **Acquisitions** or **Installs**.
 
-You can view this data in a visual **Map** form, or toggle the setting to view it in **Table** form. Table form will show five markets at a time, sorted either alphabetically or by highest/lowest number of acquisitions or installs. You can also download the data to view info for all markets together.
+You can view this data in **Table** form. Table form will show five markets at a time, sorted either alphabetically or by highest/lowest number of acquisitions or installs. You can also download the data to view info for all markets together.
 
 
 ## Customer demographic

@@ -45,7 +45,7 @@ When the **30D** time period is selected, you may see circle markers. These repr
 
 The **Failure hits by market** chart shows the total number of crashes and events over the selected period of time by market.
 
-You can view this data in a visual **Map** form, or toggle the setting to view it in **Table** form. Table form will show five markets at a time, sorted either alphabetically or by highest/lowest number of user sessions. You can also download the data to view info for all markets together.
+You can view this data in a **Table** form. Table form will show five markets at a time, sorted either alphabetically or by highest/lowest number of user sessions. You can also download the data to view info for all markets together.
 
 
 ## Package version
