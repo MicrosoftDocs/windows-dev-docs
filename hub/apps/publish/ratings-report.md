@@ -53,7 +53,7 @@ Rather than calculating the average of all ratings left during the past 12 month
 
 ## Rating by market
 
-The **Rating by market** chart shows a breakdown of the average ratings in each market over the time period selected. By default, we show this data in a visual **Map** form, but you can also toggle the control in the upper right corner to view it as a **Table**.
+The **Rating by market** chart shows a breakdown of the average ratings in each market over the time period selected. By default, we show this data in a **Table**.
 
 The **Table** view shows five markets at a time, sorted either alphabetically or by highest/lowest average rating. You can also download this chart's data to view info for all markets together.
 

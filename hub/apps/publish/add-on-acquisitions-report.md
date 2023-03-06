@@ -54,7 +54,7 @@ The **Customer demographic** chart shows demographic info about the people who a
 
 The **Markets** chart shows the total number of add-on acquisitions over the selected period of time for each market in which your app is available. 
 
-You can view this data in a visual **Map** form, or toggle the setting to view it in **Table** form. Table form will show five markets at a time, sorted either alphabetically or by highest/lowest number of acquisitions or installs. You can also download the data to view info for all markets together.
+You can view this data in a **Table** form. Table form will show five markets at a time, sorted either alphabetically or by highest/lowest number of acquisitions or installs. You can also download the data to view info for all markets together.
 
 
 ## Add-on page views and conversions by campaign ID
