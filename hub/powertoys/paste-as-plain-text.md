@@ -21,7 +21,7 @@ To start using Paste as Plain Text, enable it in the PowerToys Settings (Paste a
 
 ### Activate
 
-Once enabled, execute the paste as plain text action with the activation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>V</kbd>).
+Once enabled, execute the paste as plain text action with the activation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd>).
 
 ## Settings
 
@@ -30,3 +30,6 @@ From the Settings menu, the following options can be configured:
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to execute this action. |
+
+> [!NOTE]
+> It's possible to set <kbd>Ctrl</kbd>+<kbd>V</kbd> as the activation shortcut. This is not recommended, as overriding this shortcut may have unintended consequences.
