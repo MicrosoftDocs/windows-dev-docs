@@ -69,4 +69,4 @@ For a sample that demonstrates how to use the MRT Core API, see the [MRT Core sa
 - [UWP Resource Management System](/windows/uwp/app-resources/resource-management-system)
 - [Localize strings in your UI and app package manifest](localize-strings.md)
 - [Load images and assets tailored for scale, theme, high contrast, and others](images-tailored-for-scale-theme-contrast.md)
-- [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-your-resources-lang-scale-contrast.md)
+- [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md)
