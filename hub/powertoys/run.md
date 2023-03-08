@@ -166,6 +166,9 @@ If the program plugin's option "Include in global result" is not selected, inclu
 > Please be aware of the different decimal and thousand delimiters in different locals.
 > If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
+> [!TIP]
+> The Calculator plugin can handle some human multiplication expressions like `2(3+4)` and `(1+2)(3+4)` by inserting the `*` operator where appropriate.
+
 The Calculator plugin supports the following operations:
 
 | Operation | Operator Syntax | Description |
