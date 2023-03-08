@@ -706,6 +706,11 @@ Make sure you have selected the architecture that matches your development machi
 
 ## Publishing your widget
 
-After you have developed and tested your widget you are ready to publish your app on the Microsoft Store so that users can install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
+After you have developed and tested your widget you must publish your app on the Microsoft Store in order for users to install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
 
-After your app has been published on the Microsoft Store, you can request for your app to be included in the widgets Store Collection that helps users to discover apps that feature Windows Widgets. To submit your request, see [Submit your Widget information for addition to the Store Collection](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbRzIsoQuXjKhIoGxHt2iT41RUNjJJM09JSlFBOFJTTDJQT1dOODBEWlNYQy4u&wdLOR=c3CBC769A-D2E1-4558-8FAF-09B14B60351D).
+### The widgets Store Collection
+
+After your app has been published on the Microsoft Store, you can request for your app to be included in the widgets Store Collection that helps users discover apps that feature Windows Widgets. To submit your request, see [Submit your Widget information for addition to the Store Collection](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbRzIsoQuXjKhIoGxHt2iT41RUNjJJM09JSlFBOFJTTDJQT1dOODBEWlNYQy4u&wdLOR=c3CBC769A-D2E1-4558-8FAF-09B14B60351D).
+
+:::image type="content" source="images/widgets-store-collection.png" alt-text="Screenshot of the Microsoft Store showing the widgets collection that allows users to discover apps that feature Windows Widgets.":::
+

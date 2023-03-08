@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Widget providers
 
-Windows widgets are small UI containers that display text and graphics from an app or web service. The Adaptive Cards format used by Windows widgets enables dynamic binding of the data that populates the widget UI. To update your widget, your app or service will implement a widget service provider that responds to requests from the Widgets host and returns JSON strings specifying both the visual template and the associated data for your widget.
+Windows widgets are small UI containers that display text and graphics from an Windows app or Progressive Web App (PWA). The Adaptive Cards format used by Windows widgets enables dynamic binding of the data that populates the widget UI. To update your widget, your app or service will implement a widget service provider that responds to requests from the Widgets host and returns JSON strings specifying both the visual template and the associated data for your widget.
 
 For an overview of the Windows widgets experience and design guidance for creating your own widgets, see [Windows widgets](../../design/widgets/index.md).
 
