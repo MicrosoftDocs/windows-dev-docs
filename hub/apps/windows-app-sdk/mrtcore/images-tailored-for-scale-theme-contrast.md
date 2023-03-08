@@ -14,7 +14,12 @@ Your app can load image resource files (or other asset files) tailored for [disp
 
 An image resource is contained in an image resource file. You can also think of the image as an asset, and the file that contains it as an asset file; and you can find these kinds of resource files in your project's \Assets folder. For background on how to use qualifiers in the names of your image resource files, see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
-Some common qualifiers for images are [scale](tailor-resources-lang-scale-contrast.md#scale), [theme](tailor-resources-lang-scale-contrast.md#theme), [contrast](tailor-resources-lang-scale-contrast.md#contrast), and [targetsize](tailor-resources-lang-scale-contrast.md#targetsize).
+Some common qualifiers for images are:
+
+- [scale](tailor-resources-lang-scale-contrast.md#scale)
+- [theme](tailor-resources-lang-scale-contrast.md#theme)
+- [contrast](tailor-resources-lang-scale-contrast.md#contrast)
+- [targetsize](tailor-resources-lang-scale-contrast.md#targetsize)
 
 ## Qualify an image resource for scale, theme, and contrast
 
@@ -25,14 +30,14 @@ The default value for the `scale` qualifier is `scale-100`. So, these two varian
 \Assets\Images\logo.scale-100.png
 ```
 
-You can use qualifiers in folder names instead of file names. That would be a better strategy if you have several asset files per qualifier. For purposes of illustration, these two variants are equivalent to the two above.
+You can use qualifiers in folder names instead of file names. This is a better strategy when you have several asset files per qualifier. For purposes of illustration, these two variants are equivalent to the two above.
 
 ```console
 \Assets\Images\logo.png
 \Assets\Images\scale-100\logo.png
 ```
 
-Next is an example of how you can provide variants of an image resource&mdash;named `/Assets/Images/logo.png`&mdash;for different settings of display scale, theme, and high contrast. This example uses folder naming.
+The next example shows how you can provide variants of an image resource&mdash;named `/Assets/Images/logo.png`&mdash;for different settings of display scale, theme, and high contrast. This example uses folder naming.
 
 ```console
 \Assets\Images\contrast-standard\theme-dark
@@ -54,7 +59,7 @@ The name&mdash;or identifier&mdash;of an image resource is its path and file nam
 <Image x:Name="myXAMLImageElement" Source="ms-appx:///Assets/Images/logo.png"/>
 ```
 
-Notice that you use the `ms-appx` URI scheme because you're referring to a file that comes from your app's package. See [URI schemes](/windows/uwp/app-resources/uri-schemes) in the UWP documentation. And here’s how you refer to the same image resource in imperative code.
+Notice that you use the `ms-appx` URI scheme because you're referring to a file that comes from your app's package. See [URI schemes](/windows/uwp/app-resources/uri-schemes) in the UWP documentation. This is how you refer to the same image resource in imperative code.
 
 ```csharp
 this.myXAMLImageElement.Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/logo.png"));
@@ -94,7 +99,7 @@ Also see [Tile and toast support for language, scale, and high contrast](/window
 
 ## Qualify an image resource for targetsize
 
-You can use the `scale` and `targetsize` qualifiers on different variants of the same image resource; but you can't use them both on a single variant of a resource. Also, you need to define at least one variant without a `TargetSize` qualifier. That variant must either define a value for `scale`, or let it default to `scale-100`. So, these two variants of the `/Assets/Square44x44Logo.png` resource are valid.
+You can use the `scale` and `targetsize` qualifiers on different variants of the same image resource; but you can't use them both on a single variant of a resource. Also, you need to define at least one variant without a `targetsize` qualifier. That variant must either define a value for `scale`, or let it default to `scale-100`. So, these two variants of the `/Assets/Square44x44Logo.png` resource are valid.
 
 ```console
 \Assets\Square44x44Logo.scale-200.png
@@ -134,7 +139,7 @@ The default [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windo
 
 But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching image to load. For example, you might want to control exactly when and which high contrast images are loaded.
 
-You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap) image lookups.
+You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap) image lookups with [GetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.getvalue) or [TryGetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.trygetvalue).
 
 ```csharp
 var resourceManager = new Microsoft.Windows.ApplicationModel.Resources.ResourceManager();
