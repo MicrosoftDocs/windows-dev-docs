@@ -3,13 +3,13 @@ description: Overview of MRT Core components, and how they work to load applicat
 title: Manage resources MRT Core (Windows App SDK)
 ms.topic: article
 ms.date: 06/21/2021
-keywords: MRT, MRTCore, pri, makepri, resources, resource loading
+keywords: MRT, MRTCore, pri, makepri, resources, resource loading, windows 10, windows 11, windows app sdk
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
 ---
 
-# Manage resources with MRT Core 
+# Manage resources with MRT Core
 
 MRT Core is a streamlined version of the modern Windows [Resource Management System](/windows/uwp/app-resources/resource-management-system) that is distributed as part of [the Windows App SDK](../index.md).
 
@@ -63,3 +63,10 @@ Resource candidates are chosen based on a particular [ResourceContext](/windows/
 ## Sample
 
 For a sample that demonstrates how to use the MRT Core API, see the [MRT Core sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/ResourceManagement).
+
+## See also
+
+- [UWP Resource Management System](/windows/uwp/app-resources/resource-management-system)
+- [Localize strings in your UI and app package manifest](localize-strings.md)
+- [Load images and assets tailored for scale, theme, high contrast, and others](images-tailored-for-scale-theme-contrast.md)
+- [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-your-resources-lang-scale-contrast.md)

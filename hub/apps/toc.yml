@@ -351,7 +351,17 @@ items:
           - name: Render text with DWriteCore
             href: windows-app-sdk/dwritecore.md
       - name: Data and files
-        items: 
+        items:
+          - name: App resources
+            items:
+              - name: Manage resources with MRT Core
+                href: windows-app-sdk/mrtcore/mrtcore-overview.md
+              - name: Tailor your resources for language, scale, contrast, others
+                href: windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md
+              - name: Localize strings in your UI and app package manifest
+                href: windows-app-sdk/mrtcore/localize-strings.md
+              - name: Load images, assets tailored for scale, theme, contrast, others
+                href: windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast.md
           - name: Data access
             items: 
               - name: Overview
@@ -382,8 +392,6 @@ items:
                 href: develop/data-binding/data-binding-and-mvvm.md
           - name: Data and files overview
             href: develop/data-and-files.md
-          - name: Manage resources with MRT Core
-            href: windows-app-sdk/mrtcore/mrtcore-overview.md
       - name: Communication
         href: develop/communication.md
       - name: Accessibility
