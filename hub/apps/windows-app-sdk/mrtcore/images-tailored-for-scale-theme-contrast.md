@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Load images and assets tailored for scale, theme, high contrast, and others
 
-Your app can load image resource files (or other asset files) tailored for [display scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design), theme, high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an **Image**. They can also appear in your app package manifest source file (the `Package.appxmanifest` file)&mdash;for example, as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer&mdash;or on your tiles and toasts. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for display scale, theme, high contrast, language, and other contexts.
+Your app can load image resource files (or other asset files) tailored for [display scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design), theme, high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image). They can also appear in your app package manifest source file (the `Package.appxmanifest` file)&mdash;for example, as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer&mdash;or on your tiles and toasts. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for display scale, theme, high contrast, language, and other contexts.
 
 An image resource is contained in an image resource file. You can also think of the image as an asset, and the file that contains it as an asset file; and you can find these kinds of resource files in your project's \Assets folder. For background on how to use qualifiers in the names of your image resource files, see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
@@ -134,7 +134,7 @@ The default [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windo
 
 But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching image to load. For example, you might want to control exactly when and which high contrast images are loaded.
 
-You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your **ResourceMap** image lookups.
+You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap) image lookups.
 
 ```csharp
 var resourceManager = new Microsoft.Windows.ApplicationModel.Resources.ResourceManager();
@@ -161,14 +161,15 @@ By default, the [ResourceManager](/windows/windows-app-sdk/api/winrt/microsoft.w
 
 ## Important APIs
 
-* [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext)
+- [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext)
+- [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap)
 
 ## See also
 
-* [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
-* [Localize strings in your UI and app package manifest](localize-strings.md)
-* [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data)
-* [Tile and toast support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast)
-* [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [Mirroring images](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl#mirroring-images)
-* [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal)
+- [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
+- [Localize strings in your UI and app package manifest](localize-strings.md)
+- [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data)
+- [Tile and toast support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast)
+- [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
+- [Mirroring images](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl#mirroring-images)
+- [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal)
