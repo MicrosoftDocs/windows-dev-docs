@@ -10,12 +10,6 @@ ms.localizationpriority: medium
 
 # Implement a widget provider in a win32 app (C++/WinRT)
 
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-> [!IMPORTANT]
-> The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
-
-
 This article walks you through creating a simple widget provider that implements the [IWidgetProvider](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider) interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget  that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
 
 :::image type="content" source="images/weather-widget-screenshot.png" alt-text="A screenshot of a simple weather widget. The widget shows some weather-related graphics an data as well as some diagnostic text illustrating that the template for the medium size widget is being displayed.":::
@@ -724,3 +718,14 @@ For information about the design requirements for screenshot images and the nami
 ## Testing your widget provider
 
 Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+
+
+## Publishing your widget
+
+After you have developed and tested your widget you must publish your app on the Microsoft Store in order for users to install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
+
+### The widgets Store Collection
+
+After your app has been published on the Microsoft Store, you can request for your app to be included in the widgets Store Collection that helps users discover apps that feature Windows Widgets. To submit your request, see [Submit your Widget information for addition to the Store Collection](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbRzIsoQuXjKhIoGxHt2iT41RUNjJJM09JSlFBOFJTTDJQT1dOODBEWlNYQy4u&wdLOR=c3CBC769A-D2E1-4558-8FAF-09B14B60351D).
+
+:::image type="content" source="images/widgets-store-collection.png" alt-text="Screenshot of the Microsoft Store showing the widgets collection that allows users to discover apps that feature Windows Widgets.":::
