@@ -277,6 +277,12 @@ Windows Terminal displays icons for each profile which the terminal generates fo
 
 Icons should be sized to 32x32px in an appropriate raster image format (e.g. .PNG, .GIF, or .ICO) to avoid having to scale your icons during runtime (causing a noticeable delay and loss of quality).
 
+If no icon is specified for a command line you've installed, Windows Terminal will default to this glyph from the [Segoe Fluent](/windows/apps/design/style/segoe-fluent-icons-font) font:
+
+Glyph	| Unicode point | Description
+--|--|--
+![Segoe Fluent command line icon](../images/segoe-commandline-icon.png) | e756 | CommandPrompt
+
 ### Background image stretch mode
 
 :::row:::
