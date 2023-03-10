@@ -44,6 +44,7 @@ You can build an Arm64X pure forwarder from the Arm64 developer command prompt f
     cl /c /Foempty_arm64.obj empty.cpp
     cl /c /arm64EC /Foempty_x64.obj empty.cpp
     ```
+   > If the error message "cl : Command line warning D9002 : ignoring unknown option '-arm64EC'" appears, the incorrect compiler is being used. To resolve that please switch to [the ARM64 Developer Command Prompt](https://devblogs.microsoft.com/cppblog/arm64ec-support-in-visual-studio/#developer-command-prompt).
 
 2. Create `DEF` files for both x64 and Arm64. These files enumerate all of the API exports of the DLL and points the loader to the name of the DLL that can fulfill those API calls.
 
@@ -73,7 +74,7 @@ You can build an Arm64X pure forwarder from the Arm64 developer command prompt f
 4. Link the empty `OBJ` and import `LIB` files using the flag `/MACHINE:ARM64X` to produce the Arm6X pure forwarder DLL:
 
     ```cpp
-    link /dll /noentry /machine:arm64x /defArm64Native:foo_arm64.def /def:foo_x64.def empty.obj empty_x64.obj /out:foo.dll foo_arm64.lib foo_x64.lib
+    link /dll /noentry /machine:arm64x /defArm64Native:foo_arm64.def /def:foo_x64.def empty_arm64.obj empty_x64.obj /out:foo.dll foo_arm64.lib foo_x64.lib
     ```
 
 The resulting `foo.dll` can be loaded into either an Arm64 or an x64/Arm64EC process. When an Arm64 process loads `foo.dll`, the operating system will immediately load `foo_arm64.dll` in its place and any API calls will be handled by `foo_arm64.dll`.
