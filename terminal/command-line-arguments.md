@@ -530,3 +530,11 @@ wt --% new-tab cmd ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.exe
 In both of these examples, the newly created Windows Terminal window will create the window by correctly parsing all the provided command-line arguments.
 
 However, these methods are _not_ recommended currently, as PowerShell will wait for the newly-created terminal window to be closed before returning control to PowerShell. By default, PowerShell will always wait for Windows Store applications (like Windows Terminal) to close before returning to the prompt. Note that this is different than the behavior of Command Prompt, which will return to the prompt immediately.
+
+## Add Windows Terminal executable to your PATH
+
+To add the Windows Terminal executable file (wt.exe) to your PATH, enable its "app execution alias" in the **Manage app execution aliases** page of Windows Settings. The Windows Terminal alias is turned on by default, but may be worth confirming if you're having issues accessing it.
+
+If you are still having trouble accessing app execution aliases, you might need to check whether your PATH contains: `%LOCALAPPDATA%\Microsoft\WindowsApps`. Do not attempt to make changes to `C:\Program Files\WindowsApps`.
+
+![Windows Settings for App Execution Aliases](./images/settings-app-execution-aliases.png)
