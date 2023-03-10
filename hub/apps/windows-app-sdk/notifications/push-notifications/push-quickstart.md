@@ -423,7 +423,7 @@ Create an HTTP POST request that contains your access token and the content of t
 POST /?token=AwYAAAB%2fQAhYEiAESPobjHzQcwGCTjHu%2f%2fP3CCNDcyfyvgbK5xD3kztniW%2bjba1b3aSSun58SA326GMxuzZooJYwtpgzL9AusPDES2alyQ8CHvW94cO5VuxxLDVzrSzdO1ZVgm%2bNSB9BAzOASvHqkMHQhsDy HTTP/1.1
 Host: dm3p.notify.windows.com
 Content-Type: text/xml
-X-WNS-Type: toast
+X-WNS-Type: wns/toast
 Authorization: Bearer [your access token]
 Content-Length: 180
 
@@ -436,7 +436,7 @@ client.Timeout = -1;
 
 var request = new RestRequest(Method.POST);
 request.AddHeader("Content-Type", "text/xml");
-request.AddHeader("X-WNS-Type", "toast");
+request.AddHeader("X-WNS-Type", "wns/toast");
 request.AddHeader("Authorization", "Bearer <AccessToken>");
 request.AddParameter("text/xml", "<toast><visual><binding template=\"ToastGeneric\"><text>Example cloud toast notification</text><text>This is an example cloud notification using XML</text></binding></visual></toast>",  ParameterType.RequestBody);
 Console.WriteLine(response.Content);
