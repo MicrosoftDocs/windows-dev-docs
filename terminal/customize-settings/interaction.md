@@ -3,7 +3,7 @@ title: Windows Terminal Interaction Settings
 description: Learn how to customize interaction settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/24/2022
+ms.date: 03/10/2023
 ms.topic: how-to
 ---
 
@@ -202,6 +202,21 @@ The tab switcher will open on the initial press of the actions for `nextTab` and
 
 <br />
 
+___
+
+## Automatically hide on focus loss
+
+When enabled, this allows the Terminal window to automatically be hidden as soon as the window loses focus.
+
+**Property name:** `autoHideWindow`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+<br />
 ___
 
 ## Automatically focus pane on mouse hover
