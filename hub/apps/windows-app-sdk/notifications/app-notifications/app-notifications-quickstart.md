@@ -49,7 +49,8 @@ If your app is unpackaged (that is, it lacks package identity at runtime), then 
 
 If your app is packaged (including packaged with external location):
 
-1. Open your **Package.appxmanifest**. 
+1. Open your **Package.appxmanifest**.
+1. Add `xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"` and `xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"` namespaces to `<Package>`
 1. Add `<desktop:Extension>` for `windows.toastNotificationActivation` to declare your COM activator **[CLSID](/uwp/schemas/appxpackage/uapmanifestschema/element-com-exeserver-class)**. You can obtain a CLSID by navigating to **Create GUID** under **Tools** in Visual Studio.
 1. Add `<com:Extension>` for the COM activator using the same CLSID.
     1. Specify your .exe file in the `Executable` attribute. The .exe file must be the same process calling `Register()` when registering your app for notifications, which is described more in **Step 3**. In the example below, we use `Executable="SampleApp\SampleApp.exe"`.
@@ -64,6 +65,8 @@ If your app is packaged (including packaged with external location):
 <!--package.appxmanifest-->
 
 <Package
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   ...
   <Applications>
     <Application>
