@@ -53,7 +53,7 @@ You'll need all the required info for at least one of the languages that your ap
 | **Store logos**                  | Not required | **Required** for some OS versions. |
 | **Trailers**                     | Not required |       |
 | **Windows 10 or Windows 11 and Xbox image (16:9 Super hero art)** | Not required |       |
-| **Xbox images**                  | Mot required | **Required** for proper display if you publish to Xbox |
+| **Xbox images**                  | Not required | **Required** for proper display if you publish to Xbox |
 | **Supplemental fields**          | Not required |       |
 | **Search terms**                 | Not required |       |
 | **Copyright and trademark info** | Not required |       |
