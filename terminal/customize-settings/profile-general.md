@@ -3,7 +3,7 @@ title: Windows Terminal General Profile Settings
 description: Learn how to customize the general profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/24/2022
+ms.date: 03/10/2023
 ms.topic: how-to
 ---
 
@@ -63,6 +63,8 @@ This is the directory the shell starts in when it is loaded.
 **Accepts:** Folder location as a string
 
 **Default value:** `"%USERPROFILE%"`
+
+**NOTE:** When starting directory is not defined, the default value will be set to `"%USERPROFILE%"` (the path relative to your user settings, for example this may be `C:\Users\<your username>`). However, if the starting directory is explicitely set to `null`, then you will get different results depending on where you launch Terminal.
 
 **Example:** Start the PowerShell profile in the *GitHubRepos* folder of your *Documents* directory by finding the powershell.exe profile and adding `"startingDirectory": "%USERPROFILE%/Documents/GitHubRepos",`
 
