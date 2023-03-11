@@ -3,7 +3,7 @@ metadata:
   title: Windows Terminal FAQ
   description: Frequently asked questions about Windows Terminal, such as how to start terminal in administrator mode, how to save a terminal session, and more.
   ms.topic: faq
-  ms.date: 02/03/2022
+  ms.date: 03/10/2023
   ms.author: mattwoj
   author: mattwojo
   manager: jken
@@ -107,10 +107,42 @@ sections:
         answer: |
           No. For more technical details, refer to [this spec](https://github.com/microsoft/terminal/blob/main/doc/specs/%235000%20-%20Process%20Model%202.0/%231032%20-%20Elevation%20Quality%20of%20Life%20Improvements.md#background) and [this doc](https://github.com/microsoft/terminal/blob/main/doc/Niksa.md#elevation).
 
-      # - question: Is there a way to sync your terminal settings across devices?
-      #   answer: |
-      #     TBD
+      - question: Why is the Windows Terminal default appearance theme set to Dark, when my Windows operating system settings are set to Light?
+        answer: |
+          The system theme in Windows 11 defaults to the Light theme appearance unless changed by the user. Windows Terminal appearance color scheme, however, is Dark by default. Many users won't change the appearance themes and will just see the default themes. The goal of aligning Windows Terminal appearance with the colors of the Windows operating system (OS) titlebar leaves these options: 1) Do nothing (This is the Terminal default before v1.16). In the default setup, the result is a visually unappealing contrast between black terminal content with a light titlebar. 2) Default the color scheme of the terminal to match the OS theme and leave the app theme set to "system". In the default setup, this will result in the terminal appearing as black text on a white background. 3) Change the default theme of Windows Terminal to Dark, regardless of OS theme. In the default setup, this will result in the terminal appearing as white text on a black background, with a dark titlebar. Option 3 presented the optimum balance of the least surprise to users on the default settings, with the most aesthetically pleasing results. Windows Terminal v1.16 also introduced new toggles for customizing the appearance of the window, including: Customizing the title bar color, the tab color (including auto-matching the background), and enabling different colors for focused or unfocused windows. Windows Terminal 1.17 introduces additional flexibility with the ability to sync the Terminal theme to the OS theme and sync the color scheme to the OS theme. The Terminal is already 99% white text on a black background, these changes just line the title bar up with that.
 
-      # - question: Can we expect a status bar on the bottom of Windows Terminal? 
-      #   answer: |
-      #     TBD
+      - question: How do I change Windows Terminal theme back to "system"?
+        answer: |
+          Add `"theme": "system"` to your `settings.json`, or you can change the Theme on the "Appearance" page of the Windows Terminal Settings.
+
+      - question: Why is the tab still black after I set Windows Terminal to Light theme?
+        answer: |
+          This is a side effect of the Theme changes introduced in v1.16. The default themes in v1.16 and later will always use the Terminal background color as the default color for each tab. By default on a black terminal window, you will get a black tab. With a blue color scheme (like Campbell PowerShell), you'll get a blue tab. This is to give the Terminal a "seamless" feel. In Light mode, that creates a case where a black tab will appear on a white tab row. However, with v1.16 and later, you can customize the theme of the terminal. For example:
+          
+          ```json
+          "theme": "White Tabs",
+          "themes":
+          [
+              {
+                  "name": "White Tabs",
+                  "tab":
+                  {
+                      "background": "#ffffffff",
+                  },
+                  "window":
+                  {
+                      "applicationTheme": "light"
+                  }
+              },
+          ]
+          ```
+
+          Alternatively, if you're using an OS Light theme and want to set the terminal color scheme to a white background, v1.17 enables setting different color schemes based on the theme of the window. For example, to change the background color based on the `window.applicationTheme` of Windows Terminal, you can do this:
+
+          ```json
+          "colorScheme":
+          {
+              "light": "One Half Light",
+              "dark": "One Half Dark",
+          },
+          ```
