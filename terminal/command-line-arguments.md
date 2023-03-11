@@ -3,7 +3,7 @@ title: Windows Terminal command line arguments
 description: Learn how to create command line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/24/2022
+ms.date: 03/10/2023
 ms.topic: how-to
 ---
 
@@ -41,7 +41,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--focus`, `-f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
 | `--window`, `-w` `<window-id>` | Launches the terminal in a specific window. |
 
-### `New-tab` command
+### New tab command
 
 | Command | Parameter | Description | Values |
 | ------- | ---------- | ----------- | ------ |
@@ -54,7 +54,7 @@ Below is the full list of supported commands and options for the `wt` command li
 > [!TIP]
 > If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/profile-advanced.md#suppress-title-changes) option by setting it to `true`.
 
-### `Split-pane` command
+### Split-pane command
 
 | Command | Parameter | Description | Values |
 | ------- | ---------- | ----------- | ------ |
@@ -67,13 +67,13 @@ Below is the full list of supported commands and options for the `wt` command li
 | `split-pane`, `sp` | `commandline` | Creates a new split window pane based on the assigned command line. | Executable with optional commands  |
 | `split-pane`, `sp` | `--duplicate, -D` | Creates a new split window pane that is a duplicate of the current pane. | N/A. No additional values to assign. |
 
-### `Focus-tab` command
+### Focus-tab command
 
 | Command | Parameter | Description | Values |
 | ------- | ---------- | ----------- | ------ |
 | `focus-tab`, `ft` |  `--target, -t tab-index` | Focuses on a specific tab according to it's tab index number. | Tab index as an integer |
 
-### `Move-focus` command
+### Move-focus command
 
 | Command | Parameter | Description | Values |
 | ------- | ---------- | ----------- | ------ |
