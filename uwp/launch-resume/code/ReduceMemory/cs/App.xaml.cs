@@ -178,7 +178,7 @@ namespace BackgroundAudio_RS1
         /// <remarks>
         /// When the app enters the background, receives a memory limit changing
         /// event, or receives a memory usage increased event, it can
-        /// can optionally unload cached data or even its view content in
+        /// optionally unload cached data or even its view content in
         /// order to reduce memory usage and the chance of being suspended.
         ///
         /// This must be called from multiple event handlers because an application may already
