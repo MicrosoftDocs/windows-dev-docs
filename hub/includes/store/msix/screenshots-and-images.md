@@ -160,7 +160,7 @@ There are additional requirements depending on the type of file.
         - 2 consecutive B frames
         - Closed GOP. GOP of half the frame rate
         - CABAC
-        - 50 MB/s
+        - 50 Mbps
         - Color Space: 4.2.0
     :::column-end:::
     :::column:::
@@ -168,7 +168,7 @@ There are additional requirements depending on the type of file.
         **Codec**: AAC-LC<br>
         - **Channels**: Stereo or surround sound<br>
         - **Sample rate**: 48 KHz<br>
-        - **Audio Bitrate**: 384 KB/s for Stereo, 512 KB/s for surround sound
+        - **Audio Bitrate**: 384 Kbps for Stereo, 512 Kbps for surround sound
     :::column-end:::
 :::row-end:::
 
