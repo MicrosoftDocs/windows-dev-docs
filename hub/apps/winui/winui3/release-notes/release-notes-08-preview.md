@@ -157,16 +157,9 @@ The following features and capabilities were introduced in past WinUI 3 preview 
 - Multi-window support in desktop apps
 - Input validation
 
-For more information on both the benefits of WinUI 3 and the WinUI roadmap, see the [Windows UI Library Roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) on GitHub.
-
-
 ### Provide feedback and suggestions
 
 We welcome your feedback in the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
-
-### What's coming next?
-
-For more information on when specific features are planned, see the [feature roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md#winui-30-feature-roadmap) on GitHub.
 
 ## Limitations and known issues
 

@@ -25,7 +25,7 @@ Often referred to as “app model”. The combination of deployment, isolation, 
 Describes the way in which your app is packaged before being deployed and installed by users. An app can be packaged, unpackaged, or packaged with external location (see the [Windows developer FAQ](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location)).
 
 #### Bootstrapper
-A redistributable component providing an API to find and load the Windows App SDK framework package for the calling process. In a packaged with external location or unpackaged app, you can opt to load the Windows App SDK framework package explicitly by calling Bootstrapper APIs such as [**MddBootstrapInitialize**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize). Also see [Reference the Windows App SDK framework package at run time](/windows/apps/windows-app-sdk/reference-framework-package-run-time).
+A redistributable component providing an API to find and load the Windows App SDK framework package for the calling process. In a packaged with external location or unpackaged app, you can opt to load the Windows App SDK framework package explicitly by calling Bootstrapper APIs such as [**MddBootstrapInitialize**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize). Also see [Reference the Windows App SDK framework package at run time](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time).
 
 #### C++/WinRT
 C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to modern Windows APIs. [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
@@ -88,7 +88,7 @@ A control that allows app developers to embed web content (HTML/CSS/JS) in their
 Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of WinAppSDK and WinUI 3.
 
 #### Windows App SDK
-A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP / WinUI 2 for desktop application development (see [the Windows App SDK Roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md)). It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. See [Overview of app development options](./index.md).
+A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP / WinUI 2 for desktop application development. It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. See [Overview of app development options](./index.md).
 
 #### Windows Forms
 Also known as WinForms. A UI framework for building Windows desktop applications. It is a .NET wrapper over Windows user interface libraries, such as User32 and GDI+. It’s a battle-tested way to create desktop applications using a visual designer within Visual Studio. See [Desktop Guide (Windows Forms .NET)](/dotnet/desktop/winforms/overview/).

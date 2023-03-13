@@ -23,7 +23,7 @@ The following table provides an overview of the different release channels. For 
 
 ## Features available by release channel
 
-The following table shows which features are currently available in each release channel. To learn more about what's coming next, [see our roadmap](https://aka.ms/winappsdkportal).
+The following table shows which features are currently available in each release channel.
 
 | Feature | ✅&nbsp;&nbsp;[Stable](stable-channel.md) | ❇️&nbsp;&nbsp;[Preview](preview-channel.md) |🔄️&nbsp;&nbsp;[Experimental](experimental-channel.md) |
 |-|-|-|-|

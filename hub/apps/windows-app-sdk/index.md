@@ -78,10 +78,6 @@ Windows App SDK APIs will work on Windows 11 and downlevel to Windows 10, versio
 
 New Windows APIs and features are usually shipped within major Windows OS updates that release about once a year (often less frequently). Windows App SDK ships new releases about once every six months. This release cadence ensures that you continuously have access to the latest innovations in the Windows development platform.
 
-## Developer roadmap
-
-For the latest Windows App SDK plans, see our [roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md).
-
 ## Give feedback and contribute
 
 We are building the Windows App SDK as an open source project. We have a lot more information on our [Github page](https://github.com/microsoft/WindowsAppSDK) about how we're building the Windows App SDK, and how you can be a part of the development process. Check out our [contributor guide](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/contributor-guide.md) to ask questions, start discussions, or make feature proposals. We want to make sure that the Windows App SDK brings the biggest benefits to developers like you.

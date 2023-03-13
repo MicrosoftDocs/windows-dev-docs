@@ -31,7 +31,7 @@ With support for both desktop and UWP apps, you can build with WinUI from the gr
 
 ## WinUI resources
 
-**GitHub**: The WinUI libraries are hosted on GitHub (in the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml)) where you can file feature requests or bugs, interact with the WinUI team, and view the WinUI [roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+**GitHub**: The WinUI libraries are hosted on GitHub (in the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml)) where you can file feature requests or bugs, and interact with the WinUI team.
 
 **Website**: The [WinUI website](https://aka.ms/winui) has product comparisons, explains the various advantages of WinUI, and provides ways to stay engaged with the product and the product team.
 

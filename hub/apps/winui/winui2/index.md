@@ -55,11 +55,9 @@ API reference docs are located at [Windows UI Library APIs](/windows/winui/api/)
 
 For instructions on installing and using the WinUI 2 library, see [Getting started with the Windows UI Library](getting-started.md).
 
-## Developer roadmap
+## Developer engagement
 
 WinUI is hosted in the [Windows UI Library repo](https://aka.ms/winui) on GitHub where we welcome bug reports, feature requests, and community code contributions.
-
-We are continuing to develop and evolve WinUI to support more developer scenarios. For the latest details about our plans for WinUI, see our [roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) on the Windows UI Library repo.
 
 ## NuGet package list
 
