@@ -41,8 +41,9 @@ If you haven't done so already, install the latest version of the [.NET 7 Runtim
 You can download the macOS *.tar.gz* for your specific architecture (x64 or Arm64) from the [Microsoft Store Developer CLI releases page](https://aka.ms/msstoredevcli/releases). Once downloaded, extract the archive and put it in your PATH, however you want to do that, for example:
 
 ```console
-tar -xvf MSStoreCLI-osx.12-x64.tar.gz
-cp MSStoreCLI-osx.12-x64/msstore /usr/local/bin
+mkdir MSStoreCLI
+tar -xvf MSStoreCLI-osx.12-x64.tar.gz -C ./MSStoreCLI
+sudo cp -R MSStoreCLI/. /usr/local/bin
 ```
 
 Alternatively, you can use *brew*:
@@ -63,8 +64,9 @@ If you haven't done so already, install the latest version of the [.NET 7 Runtim
 You can download the Linux *.tar.gz* for your specific architecture (x64 or Arm64) from the [Microsoft Store Developer CLI releases page](https://aka.ms/msstoredevcli/releases). Once downloaded, extract the archive and put it in your PATH, however you want to do that, for example:
 
 ```console
-tar -xvf MSStoreCLI-linux-x64.tar.gz
-cp MSStoreCLI-linux-x64/msstore /usr/local/bin
+mkdir MSStoreCLI
+tar -xvf MSStoreCLI-linux-x64.tar.gz -C ./MSStoreCLI
+sudo cp -R MSStoreCLI/. /usr/local/bin
 ```
 
 Alternatively, you can use *brew*:
