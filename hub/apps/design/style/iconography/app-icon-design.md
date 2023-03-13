@@ -156,6 +156,6 @@ This shadow is used when you have two objects that overlap each other but are no
 
 :::image type="content" source="images/perspective.png" alt-text="A diagram showing several icons displayed at 3/4 view..":::
 
-The icons on the left are fairly simple; perspective is not recommended, but my be appropriate here. The icon on the right is too complex for perspective, so using it for this icon is not recommended.
+The icons on the left are fairly simple; perspective is not recommended, but may be appropriate here. The icon on the right is too complex for perspective, so using it for this icon is not recommended.
 
 Icons should be drawn with a straight-on perspective to present the metaphor in a simple easy to understand way. Exceptions are cases where the metaphor doesn’t read well without viewing another side of it. For example a cylinder viewed straight on is a rectangle so the top could be added to show that it has volume. The other exception is when an app is related to 3d where it makes sense to show dimension. In both cases the previous guidelines about flat objects still applies. Layers should always be flat and perpendicular to the viewing angle.
