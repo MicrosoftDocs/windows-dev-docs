@@ -58,7 +58,7 @@ Compact sizing enables dense, information-rich groups of controls and can help w
 
 **Compact sizing is designed primarily to accommodate pointer input.**
 
-### Examples ofcompact sizing
+### Examples of compact sizing
 
 Compact sizing is implemented through a special resource dictionary that can be specified in your application at either the page level or on a specific layout. The resource dictionary is available in the [WinUI](/uwp/toolkits/winui/) Nuget package.
 
