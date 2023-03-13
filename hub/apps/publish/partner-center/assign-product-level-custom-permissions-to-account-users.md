@@ -115,6 +115,7 @@ Note that some permissions cannot be set for add-ons. This is either because the
     <tr><td align="left">    <b>App Channels</b>&nbsp;*</td><td>    N/A  </td><td>    Can publish promotional video channels to the Xbox console for viewing through OneGuide.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Service Configuration</b>&nbsp;*</td><td>    Can view the Xbox Live Service configuration page of a product.  </td><td>    Can view and edit the Xbox Live Service configuration page of a product.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Tools Access</b>&nbsp;*</td><td>    Can run Xbox Live tools on a product to only view data.  </td><td>    Can run Xbox Live tools on a product to view and edit data.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
+    <tr><td align="left">    <b>Proprietary access</b>&nbsp;*</td><td>Can view support inquires.</td><td>Can view and edit support inquires.</td><td>    N/A    </td><td>    N/A                      </td></tr>
 </tbody>
 </table>
 
