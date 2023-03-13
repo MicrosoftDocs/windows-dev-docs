@@ -28,7 +28,7 @@ This table describes the different size classes and breakpoints.
 |------------|---------------|----------------------|-------------|--------------|
 | Small      | up to 640px   | 20" to 65" | TVs | 320x569, 360x640, 480x854 |
 | Medium     | 641 - 1007px  | 7" to 12"            | Tablets     | 960x540 |
-| Large      | 1008ps and up | 13" and up           | PCs, Laptops, Surface Hub | 1024x640, 1366x768, 1920x1080 |
+| Large      | 1008px and up | 13" and up           | PCs, Laptops, Surface Hub | 1024x640, 1366x768, 1920x1080 |
 
 ## Why are TVs considered "small"?
 
