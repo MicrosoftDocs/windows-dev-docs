@@ -16,7 +16,7 @@ keywords: windows 10, windows 11, Windows App SDK, Windows app development platf
     :::column span="2":::
 
 > [!Important]
-> At this time, there are two generations of the Windows UI Library (WinUI) under active development: [WinUI 2 for UWP](winui2/index.md) and [WinUI 3 in the Windows App SDK](winui3/index.md). While both can be used in production-ready apps on Windows 10 and later, each have different development targets and release schedules.
+> At this time, there are two generations of the Windows UI Library (WinUI): [WinUI 2 for UWP](winui2/index.md) and [WinUI 3 in the Windows App SDK](winui3/index.md). While both can be used in production-ready apps on Windows 10 and later, each have different development targets.
 >
 > See [Comparison of WinUI 3 and WinUI 2](#comparison-of-winui-3-and-winui-2).
 
