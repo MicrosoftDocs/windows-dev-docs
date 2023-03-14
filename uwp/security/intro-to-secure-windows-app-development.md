@@ -458,14 +458,14 @@ When the data arrives on the device, the Windows app model provides more control
 
 ### 6.2 Code samples
 
-- [Credential locker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
-- [Credential picker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
+- [Credential locker](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/PasswordVault)
+- [Credential picker](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/CredentialPicker)
 - [Device lockdown with Azure login](https://github.com/microsoft/Windows-universal-samples/tree/main/archived/DeviceLockdownAzureLogin)
-- [Enterprise data protection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
-- [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
-- [Smart cards](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
-- [Web account management](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
-- [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
+- [Enterprise data protection](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/EnterpriseDataProtection)
+- [KeyCredentialManager](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/KeyCredentialManager)
+- [Smart cards](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/SmartCard)
+- [Web account management](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/WebAccountManagement)
+- [WebAuthenticationBroker](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/WebAuthenticationBroker)
 
 ### 6.3 API reference
 
