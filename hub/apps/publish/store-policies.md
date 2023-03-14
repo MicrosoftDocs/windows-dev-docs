@@ -143,7 +143,7 @@ Your product must not attempt to fundamentally change or extend its described fu
 
 **10.2.3**
 
-Your product must not contain or enable malware as defined by the Microsoft criteria for [Unwanted and Malicious Software](/windows/security/threat-protection/intelligence/criteria). Further, your product must not offer to install secondary software that is not developed you and does not enhance the functionality of your product.
+Your product must not contain or enable malware as defined by the Microsoft criteria for [Unwanted and Malicious Software](/windows/security/threat-protection/intelligence/criteria). Further, your product must not offer to install secondary software that is not developed by you and does not enhance the functionality of your product.
 
 **10.2.4**
 
