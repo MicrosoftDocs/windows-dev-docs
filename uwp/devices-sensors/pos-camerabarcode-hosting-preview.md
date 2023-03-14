@@ -1,30 +1,45 @@
 ---
-title: Hosting Preview for Camera Barcode Scanner
-description: Learn how to host a camera barcode scanner preview in your application
-ms.date: 05/02/2018
+title: Host a camera barcode scanner preview in a UWP application
+description: Host a camera barcode scanner preview in a UWP application on Windows 10 Version 1803 or later.
+author: twarwick
+ms.author: twarwick
+ms.date: 03/10/2023
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-# Hosting a camera barcode scanner preview in your application
-## Step 1: Setup your camera preview
-The first step in adding a preview to your application for camera barcode scanner can be accomplished by following the instructions in the [Display the camera preview](../audio-video-camera/simple-camera-preview-access.md) topic.  Once you have completed this step, return to this topic for camera barcode scanner specific modifications.
 
-## Step 2: Update capability declarations
-To prevent your users from receiving the consent prompt for microphone you can exclude this from the capabilities listed in your app manifest.
+# Host a camera barcode scanner preview in a UWP application
+
+**Requires Windows 10 Version 1803 or later.**
+
+This topic describes how to host a camera barcode scanner preview in a UWP application.
+
+## Step 1: Setup your camera preview
+
+See [Display the camera preview](../audio-video-camera/simple-camera-preview-access.md) for instructions on how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. When complete, return to this topic for camera barcode scanner specific modifications.
+
+## Step 2: Edit the capability declarations in your app manifest
+
+Edit the capability declarations in the app manifest to prevent users from receiving the microphone consent prompt.
 
 1. In Microsoft Visual Studio, in **Solution Explorer**, open the designer for the application manifest by double-clicking the **package.appxmanifest** item.
 2. Select the **Capabilities** tab.
-3. Uncheck the box for **Microphone**
+3. Uncheck the box for **Microphone**.
 
- ## Step 3: Add additional using directive for media capture
+## Step 3: Add a `using` directive to support media capture
 
 ```Csharp
 using Windows.Media.Capture;
 ```
 
-## Step 4: Set up your MediaCapture initialization settings
-The following example initializes the [**MediaCaptureInitializationSettings**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings). 
+## Step 4: Set up your media capture initialization settings
+
+The following snippet shows how to initialize a [**MediaCaptureInitializationSettings**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings) object with the following settings:
+
+- [BarcodeScanner.VideoDeviceId](/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid)
+- [StreamingCaptureMode.Video](/uwp/api/windows.media.capture.streamingcapturemode)
+- [PhotoCaptureSource.VideoPreview](/uwp/api/windows.media.capture.photocapturesource)
 
 ```Csharp
  private void InitCaptureSettings()
@@ -35,13 +50,14 @@ The following example initializes the [**MediaCaptureInitializationSettings**](/
     _captureInitSettings.PhotoCaptureSource = PhotoCaptureSource.VideoPreview;
 }
 ```
-## Step 5: Associate your MediaCapture object with the camera barcode scanner
-Replace the existing mediaCapture.InitializeAsync() in *StartPreviewAsync()* with the following:
+
+## Step 5: Associate the MediaCapture object with a camera barcode scanner
+
+Replace the existing [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync) method of the [**MediaCapture**](/uwp/api/windows.media.capture.mediacapture) object in `StartPreviewAsync()` (see [Step 1: Setup your camera preview](#step-1-setup-your-camera-preview)) with the following:
 
 ```Csharp
 try
     {
-
         mediaCapture = new MediaCapture();
         await mediaCapture.InitializeAsync(InitCaptureSettings());
 
@@ -51,10 +67,9 @@ try
 ```
 
 > [!TIP]
-> See [Display the camera preview](../audio-video-camera/simple-camera-preview-access.md#add-capability-declarations-to-the-app-manifest) for more advanced topics on hosting a camera preview in your application.
+> See [Display the camera preview](../audio-video-camera/simple-camera-preview-access.md#add-capability-declarations-to-the-app-manifest) for more advanced topics on hosting a camera preview in your UWP application.
 
 ## See also
 
-### Samples
-
-- [Barcode scanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
+- [JustScanIt - Windows Store app](https://aka.ms/justscanit)
+- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

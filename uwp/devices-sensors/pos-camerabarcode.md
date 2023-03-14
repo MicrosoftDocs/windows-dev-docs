@@ -1,29 +1,34 @@
 ---
-title: Camera Barcode Scanner
-description: This article lists the camera barcode scanner features that are available for UWP apps and links to the how-to articles that show how to use them.
-ms.date: 05/02/2018
+title: Camera barcode scanner
+description: Explains what a camera barcode scanner is and provides links to various topics that describe its features.
+author: twarwick
+ms.author: twarwick
+ms.date: 03/08/2023
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-# Camera barcode scanner
-A camera barcode scanner is created dynamically as Windows pairs the camera(s) attached to your computer with a software decoder.  Each camera - decoder pair is a fully functional barcode scanner.   
 
-## In this section
-|Topic |Description |
-|------|------------|
-| [System Requirements](pos-camerabarcode-system-requirements.md)  | List of Windows editions that support camera barcode scanner as well as camera requirements to successfully read barcodes. |
-| [Getting Started](pos-camerabarcode-get-started.md)              | Step by step introduction to camera barcode scanner |
-| [Hosting Preview](pos-camerabarcode-hosting-preview.md)          | Learn how to host the preview for camera barcode scanner in your application |
-| [Enable or Disable](pos-camerabarcode-enable-disable.md)         | Learn how to enable or disable the default software decoder that ships with Windows 10 |
-| [Supported Symbologies](pos-camerabarcode-symbologies.md) | This topic provides sample barcodes for each of the symbologies supported by the software barcode decoder that ships with Windows 10, including: UPC/EAN, Code 39, Code 128, Interleaved 2 of 5, Databar Omnidirectional, Databar Stacked, QR Code and GS1DWCode. |
-| 
+# Camera barcode scanner
+
+**Requires Windows 10 Version 1803 or later.**
+
+A camera barcode scanner consists of a standard lens camera with auto-focus capabilities (attached to a computer) combined with a software decoder, which Windows dynamically pairs to create a fully functional [barcode scanner](pos-barcodescanner.md) for Universal Windows Platform (UWP) apps.
 
 > [!NOTE]
-> The software decoder built into Windows 10 is provided courtesy of  [*Digimarc Corporation*](https://www.digimarc.com/)
+> The software decoder built into Windows 10/11 is provided by [*Digimarc Corporation*](https://www.digimarc.com/).
+
+## In this section
+
+|Topic |Description |
+|------|------------|
+| [System Requirements](pos-camerabarcode-system-requirements.md)  | List of Windows editions that support camera barcode scanner, including the camera requirements to successfully read barcodes. |
+| [Getting Started](pos-camerabarcode-get-started.md)              | Learn the basics for using camera barcode scanner |
+| [Hosting Preview](pos-camerabarcode-hosting-preview.md)          | Learn how to host a camera barcode scanner preview in your application |
+| [Enable or Disable](pos-camerabarcode-enable-disable.md)         | Learn how to enable or disable the default software decoder |
+| [Supported Symbologies](pos-camerabarcode-symbologies.md) | Sample barcodes for each of the symbologies supported by the software barcode decoder that ships with Windows 10 Version 1803 or later (such as UPC/EAN, Code 39, Code 128, Interleaved 2 of 5, Databar Omnidirectional, Databar Stacked, QR Code, and GS1DWCode). |
 
 ## See also
 
-### Samples
-
-- [Barcode scanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
+- [JustScanIt - Windows Store app](https://aka.ms/justscanit)
+- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
