@@ -4,7 +4,7 @@ description: This introductory article helps app architects and developers bette
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, security
+keywords: windows 10, windows 11, uwp, security
 ms.localizationpriority: medium
 ---
 
@@ -458,14 +458,14 @@ When the data arrives on the device, the Windows app model provides more control
 
 ### 6.2 Code samples
 
-- [Credential locker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
-- [Credential picker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
-- [Device lockdown with Azure login](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
-- [Enterprise data protection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
-- [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
-- [Smart cards](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
-- [Web account management](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
-- [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
+- [Credential locker](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/PasswordVault)
+- [Credential picker](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/CredentialPicker)
+- [Device lockdown with Azure login](https://github.com/microsoft/Windows-universal-samples/tree/main/archived/DeviceLockdownAzureLogin)
+- [Enterprise data protection](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/EnterpriseDataProtection)
+- [KeyCredentialManager](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/KeyCredentialManager)
+- [Smart cards](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/SmartCard)
+- [Web account management](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/WebAccountManagement)
+- [WebAuthenticationBroker](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/WebAuthenticationBroker)
 
 ### 6.3 API reference
 
