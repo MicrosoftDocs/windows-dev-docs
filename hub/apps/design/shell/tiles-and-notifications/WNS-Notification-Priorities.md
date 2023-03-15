@@ -53,7 +53,7 @@ More specific recommended behaviors for each priority are listed below. This is 
 | Device State    | PRIORITY: High    |    PRIORITY: Medium        | PRIORITY: Low    |    PRIORITY: Very Low    |
 |-------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|----------------------------------------------------|--------------------------|
 |    Screen On OR plugged in    |    Deliver    |    Deliver    |    Deliver    |    Deliver    |
-|    Screen Off AND on battery    |    Deliver    |    If user exempted: deliver        Else: batch     |    If user exempted: deliver        Else: cache *    |    Cache    |
+|    Screen Off AND on battery    |    Deliver    |    If user exempted: deliver        Else: cache     |    If user exempted: deliver        Else: cache *    |    Cache    |
 |    Battery Saver enabled    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    Cache     |
 |    On battery + battery saver enabled + screen off    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    Cache    |
 
