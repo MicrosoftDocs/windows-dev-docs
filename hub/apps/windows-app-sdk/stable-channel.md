@@ -32,6 +32,13 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.2
 
+### Version 1.2.5 (1.2.230313.1)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.
+- Fixed issue causing apps to crash during Composition shutdown.
+- Fixed issue causing apps to continue running animations even when the screen is off.
+- Fixed issue causing mouse and touch input to fail in WebView2 when mouse and keyboard input occurred simultaneously. For more information, see GitHub issue [#3266](https://github.com/microsoft/WindowsAppSDK/issues/3266).
+
 ### Version 1.2.4 (1.2.230217.4)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.
