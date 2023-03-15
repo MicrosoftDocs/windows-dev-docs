@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Develop UWP apps
 
-How-to articles and code for creating UWP apps for Windows .
+How-to articles and code for creating UWP apps for Windows.
 
 :::row:::
     :::column:::

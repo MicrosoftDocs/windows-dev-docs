@@ -2,7 +2,7 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: article
-ms.date: 08/11/2022
+ms.date: 03/14/2023
 ms.author: jken
 author: grantmestrength
 ms.localizationpriority: medium
@@ -178,7 +178,7 @@ For best performance, you should enable your apps to take full advantage of the 
 
 ### Push notifications
 
-[Push notifications](/windows/apps/windows-app-sdk/notifications/push/index) allow you send information from your cloud service to your app in a performance-optimized way. Push notifications include raw notifications, badge notifications, and toast notifications sent from your cloud service.
+[Push notifications](/azure/notification-hubs/notification-hubs-push-notification-overview) allow you send information from your cloud service to your app in a performance-optimized way. Push notifications include raw notifications, badge notifications, and toast notifications sent from your cloud service.
 - Use push notifications to wake up the app/client rather than always keeping it running to optimize performance on the user's device. <!--todo: point to appsdk/winui3 guidance when available -->
 - Notification channels are not meant to be used to send advertisements.  
 - Respect `retry-after` headers – this protects our service and ensures notification delivery success.
