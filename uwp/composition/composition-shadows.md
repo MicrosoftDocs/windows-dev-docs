@@ -107,7 +107,7 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 If you want to add a shadow to more complex framework elements, there are a couple ways to interop with shadows between XAML and Composition:
 
-1. Use the [DropShadowPanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) available in the Windows Community Toolkit. See the [DropShadowPanel documentation](/windows/uwpcommunitytoolkit/controls/DropShadowPanel) for details on how to use it.
+1. Use the `DropShadowPanel` available in the Windows Community Toolkit. See the [DropShadowPanel documentation](/windows/uwpcommunitytoolkit/controls/DropShadowPanel) for details on how to use it.
 1. Create a Visual to use as the shadow host & tie it to the XAML handout Visual.
 1. Use the Composition Sample Gallery’s [SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) custom CompositionShadow control. See the example here for usage.
 
@@ -126,4 +126,4 @@ Animating Blur Radius | High
 ## Additional Resources
 
 - [Composition DropShadow API](/uwp/api/Windows.UI.Composition.DropShadow)
-- [WindowsUIDevLabs GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)
+- [WindowsCompositionSamples GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)

@@ -182,4 +182,4 @@ For a full demonstration of the **WebView2Window class** and its integration wit
 
 ## Related articles
 
-[BackdropMaterial class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.backdropmaterial), [Materials](../../design/signature-experiences/materials.md), [Layering and Elevation](../../design/signature-experiences/layering.md), [Windows App SDK Mica samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica)
+[Materials](../../design/signature-experiences/materials.md), [Layering and Elevation](../../design/signature-experiences/layering.md), [Windows App SDK Mica samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica)

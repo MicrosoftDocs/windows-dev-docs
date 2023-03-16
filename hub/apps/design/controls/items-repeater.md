@@ -162,7 +162,7 @@ This example assumes a **DataTemplateSelector** has been defined that decides be
 When defining a **DataTemplateSelector** to use with **ItemsRepeater** you only need to implement an override for the [**SelectTemplateCore(Object)**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) method. For more info and examples, see [**DataTemplateSelector**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector).
 
 > [!NOTE]
-> An alternative to **DataTemplate**s to manage how elements are created in more advanced scenarios is to implement your own [**Windows.UI.Xaml.Controls.IElementFactory**](/windows/winui/api/microsoft.ui.xaml.controls.ielementfactory) to use as the **ItemTemplate**.  It will be responsible for generating content when requested.
+> An alternative to **DataTemplate**s to manage how elements are created in more advanced scenarios is to implement your own [**IElementFactory**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ielementfactory) to use as the **ItemTemplate**.  It will be responsible for generating content when requested.
 
 ## Configure the data source
 
@@ -170,19 +170,19 @@ Use the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contr
 
 This list shows available interfaces and when to consider using each one.
 
-- [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/windows/winui/api/microsoft.foundation.collections.iiterable_t_)
+- [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/uwp/api/windows.foundation.collections.iiterable-1)
 
   - Can be used for small, static data sets.
 
     At a minimum, the data source must implement the IEnumerable / IIterable interface. If this is all that's supported then the control will iterate through everything once to create a copy that it can use to access items via an index value.
 
-- [IReadonlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/windows/winui/api/microsoft.foundation.collections.ivectorview_t_)
+- [IReadonlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/uwp/api/windows.foundation.collections.ivectorview-1)
 
   - Can be used for static, read-only data sets.
 
     Enables the control to access items by index and avoids the redundant internal copy.
 
-- [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/windows/winui/api/microsoft.foundation.collections.ivector_t_)
+- [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/uwp/api/windows.foundation.collections.ivector-1)
 
   - Can be used for static data sets.
 
@@ -197,7 +197,7 @@ This list shows available interfaces and when to consider using each one.
 
     Enables the control to observe and react to changes in the data source and reflect those changes in the UI.
 
-- [IObservableVector](/windows/winui/api/microsoft.foundation.collections.iobservablevector_t_)
+- [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector-1)
 
   - Supports change notification
 

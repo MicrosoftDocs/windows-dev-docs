@@ -185,7 +185,7 @@ The tree view uses the **HasChildren** and **HasUnrealizedChildren** properties 
 
 You can store the data item that a tree view node represents in its [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.content) property.
 
-In the previous examples, the content was a simple string value. Here, a tree view node represents the user's **Pictures** folder, so the pictures library [StorageFolder](/windows/windows-app-sdk/api/winrt/microsoft.storage.storagefolder) is assigned to the node's **Content** property.
+In the previous examples, the content was a simple string value. Here, a tree view node represents the user's **Pictures** folder, so the pictures library [StorageFolder](/uwp/api/windows.storage.storagefolder) is assigned to the node's **Content** property.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -301,7 +301,7 @@ The type of object passed to the [SelectTemplateCore](/windows/windows-app-sdk/a
 - If **ItemsSource** is set, the object will be of whatever type the data item is. In the previous example, the object was an `ExplorerItem`, so it could be used after a simple cast to `ExplorerItem`: `var explorerItem = (ExplorerItem)item;`.
 - If **ItemsSource** is not set and you manage the tree view nodes yourself, the object passed to **SelectTemplateCore** is a **TreeViewNode**. In this case, you can get the data item from the [TreeViewNode.Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.content) property.
 
-Here's a data template selector from the [Pictures and Music library tree view](#pictures-and-music-library-tree-view) example shown later. The **SelectTemplateCore** method receives a **TreeViewNode**, which might have either a [StorageFolder](/windows/windows-app-sdk/api/winrt/microsoft.storage.storagefolder) or a [StorageFile](/windows/windows-app-sdk/api/winrt/microsoft.storage.storagefile) as its content. Based on the content, you can return a default template, or a specific template for the music folder, the picture folder, music files, or picture files.
+Here's a data template selector from the [Pictures and Music library tree view](#pictures-and-music-library-tree-view) example shown later. The **SelectTemplateCore** method receives a **TreeViewNode**, which might have either a [StorageFolder](/uwp/api/windows.storage.storagefolder) or a [StorageFile](/uwp/api/windows.storage.storagefile) as its content. Based on the content, you can return a default template, or a specific template for the music folder, the picture folder, music files, or picture files.
 
 ```csharp
 protected override DataTemplate SelectTemplateCore(object item)
@@ -417,7 +417,7 @@ A user can invoke an action (treating the item like a button) instead of selecti
 
 The **ItemInvoked** event args give you access to the invoked item. The [InvokedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) property has the node that was invoked. You can cast it to a **TreeViewNode** and get the data item from the **TreeViewNode.Content** property.
 
-Here's an example of an **ItemInvoked** event handler. The data item is an [IStorageItem](/windows/windows-app-sdk/api/winrt/microsoft.storage.istorageitem), and this example just displays some info about the file and tree. Also, if the node is a folder node, it expands or collapses the node at the same time. Otherwise, the node expands or collapses only when the chevron is clicked.
+Here's an example of an **ItemInvoked** event handler. The data item is an [IStorageItem](/uwp/api/windows.storage.istorageitem), and this example just displays some info about the file and tree. Also, if the node is a folder node, it expands or collapses the node at the same time. Otherwise, the node expands or collapses only when the chevron is clicked.
 
 ```csharp
 private void SampleTreeView_ItemInvoked(muxc.TreeView sender, muxc.TreeViewItemInvokedEventArgs args)
@@ -796,7 +796,7 @@ namespace TreeViewTest
 
 This example shows how to create a tree view that shows the contents and structure of the user's **Pictures** and **Music** libraries. The number of items can't be known ahead of time, so each node is filled when it's expanded, and emptied when it's collapsed.
 
-A custom item template is used to display the data items, which are of type [IStorageItem](/windows/windows-app-sdk/api/winrt/microsoft.storage.istorageitem).
+A custom item template is used to display the data items, which are of type [IStorageItem](/uwp/api/windows.storage.istorageitem).
 
 > [!IMPORTANT]
 > The code in this example requires the **picturesLibrary** and **musicLibrary** capabilities. For more info about file access, see [File access permissions](/windows/uwp/files/file-access-permissions), [Enumerate and query files and folders](/windows/uwp/files/quickstart-listing-files-and-folders), and [Files and folders in the Music, Pictures, and Videos libraries](/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries).

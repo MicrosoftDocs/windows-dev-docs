@@ -194,7 +194,7 @@ Both of these options will produce the same list view, as shown in the following
 ![Screenshot displaying a simple list view with the ItemsSource property set.](images/listview-basic-code-example-final.png)
 
 > [!IMPORTANT]
-> Without a defined data template, custom class objects will appear in the list view with their string value only if they have a defined [ToString()](/windows/winui/api/microsoft.foundation.istringable.tostring) method.
+> Without a defined data template, custom class objects will appear in the list view with their string value only if they have a defined [ToString](/uwp/api/windows.foundation.istringable.tostring) method.
 
 The next section goes into greater detail about how to visually represent simple and custom class items properly in a ListView or GridView template.
 
@@ -281,7 +281,7 @@ Here's how the data items are displayed when you apply a ListView data template 
 
 Data templates are the primary way you define the look of your ListView. They can also significantly affect performance if your list holds a large number of items.
 
-You can define your data template inline within the ListView or GridView definition, as shown in the preceding code, or separately in a Resources section. If you define it outside the ListView or GridView definition, you must give the data template an [x:Key](/windows/uwp/xaml-platform/x-key-attribute.md) attribute and assign it to the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the ListView or GridView by using that key.
+You can define your data template inline within the ListView or GridView definition, as shown in the preceding code, or separately in a Resources section. If you define it outside the ListView or GridView definition, you must give the data template an [x:Key](/windows/uwp/xaml-platform/x-key-attribute) attribute and assign it to the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the ListView or GridView by using that key.
 
 For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see [Item containers and templates](item-containers-templates.md).
 

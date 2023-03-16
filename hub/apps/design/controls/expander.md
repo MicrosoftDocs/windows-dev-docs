@@ -71,7 +71,7 @@ You can align content by setting the [HorizontalContentAlignment](/windows/windo
 
 ### Control the size of an Expander
 
-By default, the [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header) and [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.content) areas automatically size to fit their contents. It's important to use the correct techniques to control the size of the `Expander` to avoid undesirable appearance or behavior.
+By default, the [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header) and [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content) areas automatically size to fit their contents. It's important to use the correct techniques to control the size of the `Expander` to avoid undesirable appearance or behavior.
 
 #### Width
 

@@ -1,7 +1,7 @@
 ---
 title: Composition Tailoring
 description: Use the Composition APIs to tailor your UI, optimize for performance, and accommodate user settings and device characteristics.
-ms.date: 07/16/2018
+ms.date: 03/16/2023
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -106,7 +106,7 @@ The API can be added to existing code in a few easy steps.
     }
     ```
 
-Full example code can be found on the [Windows UI Github repo](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 15063/CompCapabilities).
+Full example code can be found on the [Windows UI Github repo](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
 
 ## Fast vs. slow effects
 
