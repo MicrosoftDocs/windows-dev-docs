@@ -1,7 +1,7 @@
 The **Pricing** section of the [Pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency.
 
 > [!NOTE]
-> Although this topic refers to apps, price selection for add-on submissions uses the same process. Note that for [subscription add-ons](/uwp/monetize/enable-subscription-add-ons-for-your-app), the base price that you select can't ever be increased (whether by changing the base price or by scheduling a price change), although it may be decreased.
+> Although this topic refers to apps, price selection for add-on submissions uses the same process. Note that for [subscription add-ons](/windows/uwp/monetize/enable-subscription-add-ons-for-your-app), the base price that you select can't ever be increased (whether by changing the base price or by scheduling a price change), although it may be decreased.
 
 ## Base price
 
@@ -13,7 +13,7 @@ You can set the **Base price** to **Free**, or you can choose an available price
 > These price tiers also apply to add-ons.
 Each  price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. You can select your base price in any currency, and we’ll automatically use the corresponding value for different markets. Note that at times we may adjust the corresponding value in a certain market to account for changes in currency conversion rates.
 
-In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](/uwp/monetize/manage-app-submissions#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
+In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](/windows/uwp/monetize/manage-app-submissions#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
 
 Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](/partner-center/tax-details-marketplace). You should also review the [price considerations for specific markets](../../../apps/publish/publish-your-app/market-selection.md#price-considerations-for-specific-markets).
 

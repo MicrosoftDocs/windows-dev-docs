@@ -53,7 +53,7 @@ One Store listing required. We recommend providing Store listings for every lang
 When you've finished entering this info, click **Submit to the Store**. In most cases, the certification process takes about an hour. After that, your add-on will be published to the Store and ready for customers to purchase.
 
 > [!NOTE]
-> The add-on must also be implemented in your app's code. For more info, see [In-app purchases and trials](/uwp/monetize/in-app-purchases-and-trials).
+> The add-on must also be implemented in your app's code. For more info, see [In-app purchases and trials](/windows/uwp/monetize/in-app-purchases-and-trials).
 
 ## Updating an add-on after publication
 

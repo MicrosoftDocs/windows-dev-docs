@@ -90,7 +90,7 @@ After you have an Azure AD access token, you can call methods in the Microsoft S
 
 ## Base URL
 
-The base URL for the Microsoft Store Submission API for EXE or MSI app is: https://api.store.microsoft.com
+The base URL for the Microsoft Store Submission API for EXE or MSI app is: `https://api.store.microsoft.com`
 
 ## API Contracts
 
@@ -1782,7 +1782,7 @@ namespace Win32SubmissionApiCSharpSample
 
         /// <summary>
         /// Service root endpoint.
-        /// Example: https://api.store.microsoft.com
+        /// Example: "https://api.store.microsoft.com"
         /// </summary>
         public string ServiceUrl { get; set; }
 

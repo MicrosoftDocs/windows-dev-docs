@@ -13,7 +13,7 @@ Use this method in the Microsoft Store analytics API to get aggregate conversion
 * A *conversion* means that a customer (signed in with a Microsoft account) has newly obtained a license to your app (whether you charged money or you've offered it for free).
 * The *channel* is the method in which a customer arrived at your app's listing page (for example, via the Store or a [custom app promotion campaign](/windows/apps/publish/create-a-custom-app-promotion-campaign)).
 
-This information is also available in the [Acquisitions report](/windows/apps/publish/acquisitions-report.md#app-page-views-and-conversions-by-channel) in Partner Center.
+This information is also available in the [Acquisitions report](/windows/apps/publish/acquisitions-report#app-page-views-and-conversions-by-channel) in Partner Center.
 
 ## Prerequisites
 

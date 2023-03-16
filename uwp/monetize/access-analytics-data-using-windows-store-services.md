@@ -100,7 +100,8 @@ The following analytics methods are available for use by developer accounts that
 
 ### Methods for Xbox Live services
 
-The following additional methods are available for use by developer accounts with games that use [Xbox Live services](/gaming/xbox-live/developer-program-overview.md). The Microsoft Store Analytics API for Xbox is no longer available.
+The following additional methods are available for use by developer accounts with games that use [Xbox Live services](/gaming/gdk/_content/gc/live/get-started/live-getstarted-nav). The Microsoft Store Analytics API for Xbox is no longer available.
+gaming/xbox-live/get-started/join-dev-program/join-dev-program_nav
 
 | Scenario       | Methods      |
 |---------------|--------------------|

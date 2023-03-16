@@ -97,7 +97,7 @@ To create a submission for a package flight, follow this process.
       > [!NOTE]
       > If you are adding new packages for the submission, make sure you update the submission data to refer to the name and relative path of these files in the ZIP archive.
 
-1. If you are adding new packages for the submission, upload the ZIP archive to [Azure Blob Storage](/azure/storage/storage-introduction#blob-storage) using the SAS URI that was provided in the response body of the POST method you called earlier. There are different Azure libraries you can use to do this on a variety of platforms, including:
+1. If you are adding new packages for the submission, upload the ZIP archive to [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) using the SAS URI that was provided in the response body of the POST method you called earlier. There are different Azure libraries you can use to do this on a variety of platforms, including:
 
     * [Azure Storage Client Library for .NET](/azure/storage/storage-dotnet-how-to-use-blobs)
     * [Azure Storage SDK for Java](/azure/storage/storage-java-how-to-use-blob-storage)

@@ -30,10 +30,10 @@ For more info, see [Notes for certification](../../../apps/publish/publish-your-
 
 ## Restricted capabilities
 
-If we detect that your packages declare any [restricted capabilities](/uwp/packaging/app-capability-declarations#restricted-capabilities), you’ll need to provide info in this section in order to receive approval. For each capability, tell us why your app needs to declare the capability and how it is used. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability.
+If we detect that your packages declare any [restricted capabilities](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities), you’ll need to provide info in this section in order to receive approval. For each capability, tell us why your app needs to declare the capability and how it is used. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability.
 
 During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities).
 
 If we don’t approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
 
-Note that there are some restricted capabilities which will very rarely be approved. For more info about each restricted capability, see [App capability declarations](/uwp/packaging/app-capability-declarations#restricted-capabilities).
+Note that there are some restricted capabilities which will very rarely be approved. For more info about each restricted capability, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).

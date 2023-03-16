@@ -118,7 +118,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 * The HoloLens defines the color black as the absence of light. It's simply not rendered, allowing the "real world" so show through. Your application should not use black if this is would cause confusion. In a Mixed Reality headset, black is black.
 
-* The HoloLens does not support color themes in apps, and defaults to blue to ensure the best experience for users. For more advice about selecting colors, you should consult [this topic](https://developer.microsoft.com/windows/mixed-reality/color,_light_and_materials) which discusses the use of color and material in Mixed Reality designs.
+* The HoloLens does not support color themes in apps, and defaults to blue to ensure the best experience for users. For more advice about selecting colors, you should consult [this topic](https://developer.microsoft.com/windows/mixed-reality/color_light_and_materials) which discusses the use of color and material in Mixed Reality designs.
 
 
 ## Other points to consider

@@ -44,4 +44,4 @@ For more info, see [Gradual package rollout](../../../apps/publish/gradual-packa
 
 If your submission is an update to a previously published app, you'll see a checkbox that says **Make this update mandatory**. This allows you to set the date and time for a mandatory update, assuming you have used the Windows.Services.Store APIs to allow your app to programmatically check for package updates and download and install the updated packages. Your app must target Windows 10, version 1607 or later in order to use this option.
 
-For more info, see [Download and install package updates for your app](/uwp/packaging/self-install-package-updates).
+For more info, see [Download and install package updates for your app](/windows/uwp/packaging/self-install-package-updates).

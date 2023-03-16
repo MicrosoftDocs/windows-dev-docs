@@ -40,7 +40,7 @@ Your manifest must include some specific info about your account and your app. Y
 App bundles (.msixbundle or .appxbundle) use a different manifest. Review the [Bundle manifest](/uwp/schemas/bundlemanifestschema/bundle-manifest) documentation for the details and requirements for app bundle manifests. Note that in a .msixbundle or .appxbundle, the manifest of each included package must use the same elements and attributes, except for the **ProcessorArchitecture** attribute of the [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element.
 
 > [!TIP]
-> Be sure to run the [Windows App Certification Kit](/uwp/debug-test-perf/windows-app-certification-kit) before you submit your packages. This can you help determine if your manifest has any problems that might cause certification or submission failures.
+> Be sure to run the [Windows App Certification Kit](/windows/uwp/debug-test-perf/windows-app-certification-kit) before you submit your packages. This can you help determine if your manifest has any problems that might cause certification or submission failures.
 
 ## Package format requirements
 

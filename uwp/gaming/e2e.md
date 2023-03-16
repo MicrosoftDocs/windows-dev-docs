@@ -1499,7 +1499,7 @@ To update your published game, you submit a new app package with a higher versio
 Xbox Live is a premier gaming network that connects millions of gamers across the world. Developers gain access to Xbox Live features that can organically grow their game's audience, including Xbox Live presence, Leaderboards, Cloud Saves, Game Hubs, Clubs, Party Chat, Game DVR, and more.
 
 > [!NOTE]
-> If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Choosing an Xbox Live developer program](/gaming/xbox-live/developer-program-overview).
+> If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Choosing an Xbox Live developer program](/gaming/gdk/_content/gc/live/get-started/live-getstarted-nav).
 
 <table>
     <colgroup>

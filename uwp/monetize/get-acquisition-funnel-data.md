@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Get app acquisition funnel data
 
-Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](/windows/apps/publish/acquisitions-report.md#acquisition-funnel) in Partner Center.
+Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](/windows/apps/publish/acquisitions-report#acquisition-funnel) in Partner Center.
 
 ## Prerequisites
 
@@ -89,7 +89,7 @@ Objects in the *Value* array contain the following values.
 
 | Value               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| MetricType                | string | One of the following strings that specifies the [type of funnel data](/windows/apps/publish/acquisitions-report.md#acquisition-funnel) that is included in this object:<ul><li><strong>PageView</strong></li><li><strong>Acquisition</strong></li><li><strong>Install</strong></li><li><strong>Usage</strong></li></ul> |
+| MetricType                | string | One of the following strings that specifies the [type of funnel data](/windows/apps/publish/acquisitions-report#acquisition-funnel) that is included in this object:<ul><li><strong>PageView</strong></li><li><strong>Acquisition</strong></li><li><strong>Install</strong></li><li><strong>Usage</strong></li></ul> |
 | UserCount       | string | The number of users who performed the funnel step specified by the *MetricType* value.             |
 
 

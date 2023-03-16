@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 This walkthrough shows how to use the [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) class to display banner ads in a Universal Windows Platform (UWP) JavaScript/HTML app for Windows 10 and Windows 11.
 
-For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
+For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub](https://github.com/microsoft/Windows-universal-samples/tree/b1cb20f191d3fd99ce89df50c5b7d1a6e2382c01/archived/Advertising).
 
 ## Prerequisites
 
@@ -136,6 +136,6 @@ You can use multiple **AdControl** objects in a single app (for example, each pa
 ## Related topics
 
 * [Guidelines for banner ads](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
-* [Advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Advertising samples on GitHub](https://github.com/microsoft/Windows-universal-samples/tree/b1cb20f191d3fd99ce89df50c5b7d1a6e2382c01/archived/Advertising)
 * [Set up ad units for your app](set-up-ad-units-in-your-app.md)
 * [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md)

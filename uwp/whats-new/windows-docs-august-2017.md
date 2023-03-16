@@ -63,7 +63,7 @@ See the [Xbox Live developer guide](/gaming/xbox-live/index) to learn how to use
 
 With the [Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators), any UWP game developer can develop and publish an Xbox Live-enabled game on both the PC and Xbox One.
 
-See the [Xbox Live developer program overview](/gaming/xbox-live/developer-program-overview) for information about the programs and features available to Xbox Live developers.
+See the [Xbox Live developer program overview](/gaming/gdk/_content/gc/live/get-started/live-getstarted-nav) for information about the programs and features available to Xbox Live developers.
 
 ## Videos
 

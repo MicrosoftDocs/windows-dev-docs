@@ -89,7 +89,7 @@ Keep these considerations in mind when working with the [**MapIcon**](/uwp/api/W
 
 ## Add a 3D pushpin
 
-You can add three-dimensional objects to a map. Use the [MapModel3D](/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) class to import a 3D object from a [3D Manufacturing Format (3MF)](https://3mf.io/specification/) file.
+You can add three-dimensional objects to a map. Use the [MapModel3D](/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) class to import a 3D object from a [3D Manufacturing Format (3MF)](https://3mf.io/3mf-specification/) file.
 
 This image uses 3D coffee cups to mark the locations of coffee shops in a neighborhood.
 
