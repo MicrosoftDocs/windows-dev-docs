@@ -2,7 +2,7 @@
 description: Get detailed analytics for your Windows apps, in Partner Center or via other methods.
 title: Analyze app performance
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, analytics, reports, dashboard, apps, data, metrics
 ms.localizationpriority: medium

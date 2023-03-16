@@ -1,7 +1,7 @@
 ---
 title: Overview of roles and permissions for account users
 description: Learn how to set standard roles or custom permissions when adding users to your Partner Center account.
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---

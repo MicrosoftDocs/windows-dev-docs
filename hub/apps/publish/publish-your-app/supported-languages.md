@@ -1,7 +1,7 @@
 ---
 title: Supported languages
 description: View a table of the languages and corresponding language codes that are supported for submitting apps to the Microsoft Store.
-ms.date: 03/07/2019
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

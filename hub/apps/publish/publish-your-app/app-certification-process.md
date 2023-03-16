@@ -1,7 +1,7 @@
 ---
 description: When you finish creating your app's submission and click Submit to the Store, the submission enters the certification step.
 title: The app certification process
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

@@ -1,7 +1,7 @@
 ---
 description: If you encounter errors after submitting your app to the Store, you must resolve them in order to continue the certification process.
 title: Resolve submission errors
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

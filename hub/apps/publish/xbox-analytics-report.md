@@ -1,7 +1,7 @@
 ---
 description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox analytics report
-ms.date: 03/21/2019
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, xbox analytics, xbox live analytics, xbox statistics
 ms.localizationpriority: medium

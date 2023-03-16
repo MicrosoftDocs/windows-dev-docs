@@ -2,7 +2,7 @@
 title: Publish your app in the Microsoft Store
 description: How to publish your app in the Microsoft Store
 ms.topic: conceptual
-ms.date: 08/16/2022
+ms.date: 10/30/2022
 zone_pivot_groups: store-installer-packaging
 ---
 

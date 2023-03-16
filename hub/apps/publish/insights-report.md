@@ -1,7 +1,7 @@
 ---
 description: The Insights report in Partner Center highlights significant changes about your apps.
 title: Insights report
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, insight, trend, anomalies, anomaly, data changes
 ms.localizationpriority: medium

@@ -1,7 +1,7 @@
 ---
 description: Learn how to sign up and use Partner Center to publish your Windows apps and games to the Microsoft Store.
 title: Publish Windows apps
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, publishing, publish, selling, sell, distribute, distributing, store, dashboard
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe

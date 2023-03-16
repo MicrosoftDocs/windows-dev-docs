@@ -1,7 +1,7 @@
 ---
 description: Add users to your Partner Center account and assign them roles with specific permissions.
 title: Manage account users
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 title: App Quality
 description: It’s important to customers and developers alike that apps in the Store are enjoyable, entertaining and worthwhile. To help developers hit that mark, we're providing this overview of some of the key aspects of app quality.
-ms.date: 07/25/2017
+ms.date: 10/30/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high

@@ -1,7 +1,7 @@
 ---
 description: Viewing detailed analytics for your MSI or EXE apps in Partner Center.
 title: Analyze app performance for your MSI or EXE apps
-ms.date: 06/14/2022
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, msi, exe, unpackaged, unpackaged app, desktop app, traditional desktop app, win32
 ms.localizationpriority: medium

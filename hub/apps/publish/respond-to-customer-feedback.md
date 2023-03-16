@@ -1,7 +1,7 @@
 ---
 title: Respond to customer feedback
 description: You can respond directly to feedback that your customers leave in Feedback Hub.
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9

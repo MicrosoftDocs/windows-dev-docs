@@ -1,7 +1,7 @@
 ---
 description: Learn how to create known user groups to use for package flighting and more.
 title: Create known user groups
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, targeted group, customers, flight group, user groups, known users
 ms.localizationpriority: medium

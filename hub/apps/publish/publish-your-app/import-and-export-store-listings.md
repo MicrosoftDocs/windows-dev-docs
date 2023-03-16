@@ -1,7 +1,7 @@
 ---
 description: Import and export store listings so you can reuse them later
 title: Import and export store listings
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

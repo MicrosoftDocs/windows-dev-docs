@@ -2,7 +2,7 @@
 description: The Health report in Partner Center lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
 title: Health report
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, health, crashes, unresponsive events, app health, health data, stack trace, cab file, failure, failures, pdb, symbols
 ms.localizationpriority: medium
