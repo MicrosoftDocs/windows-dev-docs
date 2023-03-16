@@ -55,9 +55,7 @@ Use the following directives to only compile code when running as a UWP app:
 ```
 
 > [!NOTE]
-> `NETFX_CORE` is only meant to check if you're compiling C# code against the .NET scripting backend. If you're using a different scripting backend, such as IL2CPP, use [`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) instead.
-
-For the full list of platform-dependent compilation directives, see [Platform dependent compilation](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html).
+> `NETFX_CORE` is only meant to check whether you're compiling C# code against the .NET scripting backend. If you're using a different scripting backend, such as IL2CPP, then use **ENABLE_WINMD_SUPPORT** instead.
 
 ## Common issues and workarounds
 
@@ -141,4 +139,3 @@ In the case of **System.Net.Mail**, use the [Windows.ApplicationModel.Email](/uw
 
 * [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-missingtypes.html)
 * [.NET for UWP apps overview](/previous-versions/windows/apps/br230302(v=vs.140))
-* [Unity UWP porting guides](https://unity3d.com/partners/microsoft/porting-guides)

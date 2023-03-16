@@ -225,23 +225,18 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
     
 ## Software as a Service for game backend
 
-[Playfab](https://playfab.com/) currently powers more than 1,200 live games with 80 million monthly active players. It is a complete backend platform that includes full stack LiveOps with real-time control. 
+[Azure PlayFab](https://playfab.com) currently powers more than 1,200 live games with 80 million monthly active players. It's a complete backend platform that includes full stack LiveOps with real-time control. 
 
-You can integrate this solution into your mobile, PC, or console games using SDKs. There are SDKs available for all popular game engines and platforms, including Android, iOS, Unreal, Unity,  and Windows. To get started, see [Documentation](https://api.playfab.com/).
+You can integrate this solution into your mobile, PC, or console games using SDKs. There are SDKs available for all popular game engines and platforms, including Android, iOS, Unreal, Unity, and Windows.
 
 It offers game services like authentication, player data management, multiplayer, and real-time analytics to help your game grow its user base. Harness the power of real-time data pipeline and LiveOps to engage your users with customized in-game items, events, and promotions. You also have the ability to conduct A/B testing, generate reports, send push notifications, and more. 
 
-We are constantly innovating and adding new features. For more information, see [Features](https://playfab.com/features/) and for pricing, see [Simple pricing that scales with you](https://playfab.com/pricing/).
+We're constantly innovating and adding new features. For more information, see [Azure PlayFab](https://playfab.com); and for pricing, see [Pricing](https://playfab.com/pricing).
 
 ## Related links
 
 * [Windows game development guide](./e2e.md)
 * [Azure for gaming](https://azure.microsoft.com/solutions/gaming/)
-* [Playfab](https://playfab.com/)
+* [Azure PlayFab](https://playfab.com)
 * [Microsoft for Startups](https://startups.microsoft.com)
 * [ID@Xbox](https://www.xbox.com/Developers/id)
-
-
- 
-
- 

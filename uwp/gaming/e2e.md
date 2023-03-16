@@ -63,8 +63,8 @@ Throughout this guide, you'll find deep links to relevant documentation&mdash;or
         <td><a href="https://azure.microsoft.com/solutions/gaming/">Build and scale your games using Azure</a></td>
     </tr>
     <tr>
-        <td>PlayFab</td>
-        <td><a href="https://api.playfab.com/">Complete backend solution for live games</a></td>
+        <td>Azure PlayFab</td>
+        <td><a href="https://playfab.com">Complete backend solution for live games</a></td>
     </tr>
     <tr>
         <td>UWP on Xbox One</td>
@@ -519,9 +519,9 @@ Direct3D 11.3 is a low level graphics API that uses the familiar Direct3D progra
 
 Depending on the needs of your game, using bridges, game engines, or middleware can save development and testing time and resources. Here are some overview and resources for bridges, game engines, and middleware.
 
-#### PlayFab
+#### Azure PlayFab
 
-Now part of the Microsoft family, PlayFab is a complete back-end platform for live games and a powerful way for independent studios to get started. Boost revenue, engagement, and retention—while cutting costs—with game services, real-time analytics, and LiveOps.
+Now part of the Microsoft family, Azure PlayFab is a complete back-end platform for live games and a powerful way for independent studios to get started. Boost revenue, engagement, and retention—while cutting costs—with game services, real-time analytics, and LiveOps.
 
 <table>
     <colgroup>
@@ -534,7 +534,7 @@ Now part of the Microsoft family, PlayFab is a complete back-end platform for li
     </tr>
     <tr>
         <td>Getting started</td>
-        <td><a href="https://api.playfab.com/docs/general-getting-started">General getting started guide</a></td>
+        <td><a href="/gaming/playfab/what-is-playfab">What is PlayFab?</a></td>
     </tr>
     <tr>
         <td>Video tutorial series</td>
@@ -542,11 +542,7 @@ Now part of the Microsoft family, PlayFab is a complete back-end platform for li
     </tr>
     <tr>
         <td>Recipes</td>
-        <td><a href="https://api.playfab.com/docs/tutorials/recipes-index">Popular game mechanics and design pattern samples</a></td>
-    </tr>
-    <tr>
-        <td>Platforms</td>
-        <td><a href="https://api.playfab.com/platforms">Specific documentation for various platforms and game engines</a></td>
+        <td><a href="/gaming/playfab/resources/playfab-recipes">Recipes</a></td>
     </tr>
     <tr>
         <td>GitHub repo</td>
@@ -554,7 +550,7 @@ Now part of the Microsoft family, PlayFab is a complete back-end platform for li
     </tr>
     <tr>
         <td>API documentation</td>
-        <td><a href="https://api.playfab.com/documentation/">Access PlayFab service directly via REST-like Web APIs</a></td>
+        <td><a href="/gaming/playfab/api-references/">REST API overview</a></td>
     </tr>
     <tr>
         <td>Forums</td>
@@ -587,7 +583,7 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     </tr>
     <tr>
         <td>Add LiveOps using PlayFab</td>
-        <td><a href="https://api.playfab.com/docs/getting-started/unity-getting-started">Getting started - Make your first PlayFab API call from your Unity game</a></td>
+        <td><a href="/gaming/playfab/sdks/unity3d/quickstart">Quickstart: PlayFab Client library for C# in Unity</a></td>
     </tr>
     <tr>
         <td>How to add interactivity to your game using Mixer Interactive</td>
@@ -600,10 +596,6 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     <tr>
         <td>Mixer SDK for Unity reference documentation</td>
         <td>API reference for Mixer Unity plugin</td>
-    </tr>
-    <tr>
-        <td>Publish your Unity game to Microsoft Store</td>
-        <td><a href="https://unity3d.com/partners/microsoft/porting-guides">Porting guide</a></td>
     </tr>
     <tr>
         <td>Troubleshooting missing assembly references related to .NET APIs</td>
@@ -684,7 +676,7 @@ Cocos2d-x is a cross-platform open source game development engine and tools suit
     </tr>
     <tr>
         <td>Add LiveOps using PlayFab</td>
-        <td><a href="https://api.playfab.com/docs/getting-started/cocos2d-x-getting-started-guide">Getting started - Make your first PlayFab API call from your Cocos2d game</a></td>
+        <td><a href="/gaming/playfab/sdks/cocos2d-x/quickstart">Cocos2D-x quickstart</a></td>
     </tr>
 </table>
 
@@ -753,7 +745,7 @@ If you have an existing game, there are many resources and guides available to h
     </tr>
     <tr>
         <td>Porting an Xbox game to a Universal Windows Platform app</td>
-        <td><a href="https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Porting from Xbox One to Windows 10 UWP</a></td>
+        <td><a href="/windows/uwp/xbox-apps/">UWP on Xbox One</a></td>
     </tr>
     <tr>
         <td>Porting from DirectX 9 to DirectX 11</td>
@@ -1202,11 +1194,11 @@ An add-on (in-app product) is a supplementary item that players can purchase in-
     </tr>
     <tr>
         <td>Add-on details and submission</td>
-        <td><a href="/windows/apps/publish/iap-submissions">Add-on submissions</a></td>
+        <td><a href="/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on">Add-on submissions</a></td>
     </tr>
     <tr>
         <td>Monitor add-on sales and demographics for your game</td>
-        <td><a href="/windows/apps/publish/iap-acquisitions-report">Add-on acquisitions report</a></td>
+        <td><a href="/windows/apps/publish/add-on-acquisitions-report">Add-on acquisitions report</a></td>
     </tr>
 </table>
 
@@ -1323,7 +1315,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Use Azure Active Directory (AAD) to add users to your Partner Center account</td>
-        <td><a href="/windows/apps/publish/manage-account-users">Manage account users</a></td>
+        <td><a href="/windows/apps/publish/create-customer-groups">Create customer groups</a></td>
     </tr>
     <tr>
         <td>Rating your game (blog post)</td>
@@ -1368,7 +1360,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Uploading and versioning your game</td>
-        <td><a href="/windows/apps/publish/upload-app-packages">Upload app packages</a></td>
+        <td><a href="/windows/apps/publish/publish-your-app/upload-app-packages">Upload app packages</a></td>
     </tr>
 </table>
 
@@ -1391,7 +1383,7 @@ Don't let certification issues delay your game's release. Here are policies and 
     </tr>
     <tr>
         <td>How to avoid some common app certification issues</td>
-        <td><a href="/windows/apps/publish/avoid-common-certification-failures">Avoid common certification failures</a></td>
+        <td><a href="/windows/apps/publish/publish-your-app/avoid-common-certification-failures">Avoid common certification failures</a></td>
     </tr>
 </table>
 
@@ -1427,7 +1419,7 @@ After you've finished development and shipped your game, it's not *game over*. Y
     </tr>
     <tr>
         <td>Learn how your customers are engaging with the Xbox features in your game</td>
-        <td><a href="/windows/apps/publish/xbox-analytics-report.md">Xbox analytics report</a></td>
+        <td><a href="/windows/apps/publish/xbox-analytics-report">Xbox analytics report</a></td>
     </tr>
     <tr>
         <td>Responding to customer reviews</td>
@@ -1494,11 +1486,11 @@ To update your published game, you submit a new app package with a higher versio
     </colgroup>
     <tr>
         <td>Updating and versioning your game</td>
-        <td><a href="/windows/apps/publish/package-version-numbering">Package version numbering</a></td>
+        <td><a href="/windows/apps/publish/publish-your-app/package-version-numbering">Package version numbering</a></td>
     </tr>
     <tr>
         <td>Game package management guidance</td>
-        <td><a href="/windows/apps/publish/package-version-numbering">Guidance for app package management</a></td>
+        <td><a href="/windows/apps/publish/publish-your-app/app-package-management">Guidance for app package management</a></td>
     </tr>
 </table>
 

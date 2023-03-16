@@ -151,11 +151,11 @@ Several types of ads can be displayed by using the Microsoft Advertising SDK:
 
 ### Which ads are displayed?
 
-By default, your app will show ads from Microsoft's network for paid ads. To maximize your ad revenue, you can enable ad mediation for your ad unit to display ads from additional paid ad networks. For more info about current offerings, see our [ad mediation](/windows/apps/publish/in-app-ads.md#mediation) guidance.
+By default, your app will show ads from Microsoft's network for paid ads. To maximize your ad revenue, you can enable ad mediation for your ad unit to display ads from additional paid ad networks. For more info about current offerings, see our [Mediation settings](/windows/apps/publish/in-app-ads#mediation-settings) guidance.
 
 ### Which markets allow ads to be displayed?
 
-For the full list of countries and regions that support ads, see [Supported markets for ad networks](/windows/apps/publish/in-app-ads.md#network-markets).
+For the full list of countries and regions that support ads, see [Supported markets for ad networks](/windows/apps/publish/in-app-ads#supported-markets-for-ad-networks).
 
 ### APIs for displaying ads
 
