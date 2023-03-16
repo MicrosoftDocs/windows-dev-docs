@@ -1,7 +1,7 @@
 ---
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---

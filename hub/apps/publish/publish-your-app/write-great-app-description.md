@@ -1,7 +1,7 @@
 ---
 description: A great description can make your app stand out in the Microsoft Store and help encourage customers to download it.
 title: Write a great app description
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

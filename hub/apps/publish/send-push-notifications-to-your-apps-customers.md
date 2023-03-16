@@ -1,7 +1,7 @@
 ---
 description: Learn how to send notifications from Partner Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, targeted notifications, push notifications, toast, tile
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73

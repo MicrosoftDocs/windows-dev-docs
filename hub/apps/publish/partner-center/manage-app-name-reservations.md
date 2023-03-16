@@ -1,7 +1,7 @@
 ---
 description: View the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete reserved names that you don't need anymore.
 title: Manage app name reservations
-ms.date: 05/16/2022
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---

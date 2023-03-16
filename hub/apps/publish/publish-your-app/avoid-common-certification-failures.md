@@ -1,7 +1,7 @@
 ---
 description: Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
 title: Avoid common certification failures
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

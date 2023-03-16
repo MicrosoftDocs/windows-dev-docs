@@ -2,7 +2,7 @@
 title: Create an app submission for your app
 description: Create an app submission to tell the Microsoft Store about your app
 ms.topic: article
-ms.date: 08/16/2022
+ms.date: 10/30/2022
 zone_pivot_groups: store-installer-packaging
 ---
 

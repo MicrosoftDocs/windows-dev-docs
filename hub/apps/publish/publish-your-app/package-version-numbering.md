@@ -1,7 +1,7 @@
 ---
 description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 title: Package version numbering
-ms.date: 09/24/2020
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

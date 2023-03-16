@@ -1,7 +1,7 @@
 ---
 description: As you submit your app, you have the option to use the Notes for certification page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
 title: Notes for certification
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

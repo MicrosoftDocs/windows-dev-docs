@@ -1,7 +1,7 @@
 ---
 title: Developer Code of Conduct
 description: As a developer of applications for the Microsoft Store, you are bound by the terms of the App Developer Agreement and any other licenses or contracts between you and Microsoft.
-ms.date: 09/28/2021
+ms.date: 10/30/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high

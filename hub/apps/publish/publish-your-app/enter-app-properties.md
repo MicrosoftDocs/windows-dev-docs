@@ -1,7 +1,7 @@
 ---
 description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
 title: Enter app properties
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

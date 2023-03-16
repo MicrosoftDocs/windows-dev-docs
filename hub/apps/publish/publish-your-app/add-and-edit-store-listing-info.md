@@ -1,7 +1,7 @@
 ---
 description: This section will guide you in adding or editing all the store listing information.
 title: Add and edit Store listing info
-ms.date: 03/13/2019
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

@@ -1,7 +1,7 @@
 ---
 description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: Guidance for app package management
-ms.date: 09/24/2020
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

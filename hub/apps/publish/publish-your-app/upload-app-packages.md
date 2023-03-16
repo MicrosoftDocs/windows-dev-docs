@@ -1,7 +1,7 @@
 ---
 description: The Packages page is where you upload the installers and files for the app that you're submitting.
 title: Upload app packages
-ms.date: 02/26/2021
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging
