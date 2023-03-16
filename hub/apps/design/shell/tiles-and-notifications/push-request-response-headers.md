@@ -133,7 +133,7 @@ X-WNS-Type: wns/toast | wns/badge | wns/tile | wns/raw
 
 ### X-WNS-Cache-Policy
 
-When the notification target device is offline, WNS will cache one badge, one tile notification and one toast notification for each channel URI. By default, raw notifications are not cached, but if raw notification caching is enabled, one raw notification is cached. Items are not held in the cache indefinitely and will be dropped after a reasonable period of time. Otherwise, the cached content is delivered when the device next comes online.
+When the notification target device is offline, WNS will cache one badge, one tile, and one toast notification for each channel URI. By default, raw notifications are not cached, but if raw notification caching is enabled, one raw notification is cached. Items are not held in the cache indefinitely and will be dropped after a reasonable period of time. Otherwise, the cached content is delivered when the device next comes online.
 
 ```json
 X-WNS-Cache-Policy: cache | no-cache
