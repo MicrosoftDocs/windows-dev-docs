@@ -58,8 +58,8 @@ When two or more windows are snapped in the same zone, you can cycle between the
 | <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>\`</kbd> | Launches the editor (this shortcut can be changed in the Settings window) |
 | <kbd>⊞ Win</kbd>+<kbd>left/right</kbd> | Move focused window between zones (only if **Override Windows Snap hotkeys** setting is turned on and **Zone index** is chosen) in that case only the <kbd>⊞ Win</kbd>+<kbd>←</kbd> and <kbd>⊞ Win</kbd>+<kbd>→</kbd> are overridden, while the <kbd>⊞ Win</kbd>+<kbd>↑</kbd> and <kbd>⊞ Win</kbd>+<kbd>↓</kbd> keep working as usual) |
 | <kbd>⊞ Win</kbd>+<kbd>left/right/up/down</kbd> | Move focused window between zones (only if **Override Windows Snap hotkeys** setting is turned on and **Relative position** is chosen) in that case all the <kbd>⊞ Win</kbd>+<kbd>←</kbd>, <kbd>⊞ Win</kbd>+<kbd>→</kbd>, <kbd>⊞ Win</kbd>+<kbd>↑</kbd> and <kbd>⊞ Win</kbd>+<kbd>↓</kbd> are overridden) |
-| <kbd>Win</kbd>+<kbd>PgUp/PgDn</kbd> | Cycle between snapped to the same zone windows |
-| <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[number]</kbd> | Quickly apply custom layout (you need to assign number to the custom layout in the editor) | 
+| <kbd>⊞ Win</kbd>+<kbd>PgUp/PgDn</kbd> | Cycle between snapped to the same zone windows |
+| <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[number]</kbd> | Quickly apply custom layout (you need to assign number to the custom layout in the editor) | 
 
 FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>arrow</kbd> to quickly move a window to an adjacent monitor.
 
