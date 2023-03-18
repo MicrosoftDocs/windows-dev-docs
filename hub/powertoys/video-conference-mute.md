@@ -17,6 +17,7 @@ The default shortcuts to use Video Conference Mute are:
 
 - <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> to toggle both audio and video at the same time
 - <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> to toggle microphone
+- <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> to push to talk
 - <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> to toggle camera
 
 When using the microphone and/or camera toggle shortcut keys, you will see a small toolbar letting you know whether your microphone and camera are set to on, off, or not in use. You can set the position of this toolbar in the Video Conference Mute tab of PowerToys settings.
