@@ -127,7 +127,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: MSIX Package
-        path: ${{ env.Solution_Name }}\\Packages
+        path: ${{ github.workspace }}\\Packages
 
 ```
 
@@ -219,7 +219,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Upload app
-        path: ${{ env.Solution_Name }}\\bin
+        path: ${{ github.workspace }}\\bin
 ```
 
 ## Step 2: Commit the workflow and watch it run!
