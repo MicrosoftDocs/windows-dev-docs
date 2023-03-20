@@ -83,7 +83,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
 
 :::row:::
     :::column:::
-       [![WSL icon](../images/windows-linux-dev-env.png)](/windows/wsl/)<br>
+       [![WSL icon](../images/wsl-icon.png)](/windows/wsl/)<br>
         **[Windows Subsystem for Linux](/windows/wsl/)**<br>
         Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).<br>
         [Install WSL](/windows/wsl/install-win10)
