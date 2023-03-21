@@ -2,7 +2,7 @@
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app using the ms-settings URI scheme.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 07/11/2022
+ms.date: 03/21/2023
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -20,7 +20,7 @@ dev_langs:
 - [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
 - [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
-Learn how to launch the Windows Settings app. This topic describes the **ms-settings:** URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+Learn how to launch the Windows Settings app. This topic describes the `ms-settings:` URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 
 Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more info, see [Guidelines for privacy-aware apps](../security/index.md).
 
@@ -127,7 +127,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Apps & Features | ms-settings:appsfeatures |
 | App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app) <br><br> To access this page with a URI, use the `ms-settings:appsfeatures-app` URI and pass an optional parameter of the _package family name_ of the app. |
 | Apps for websites | ms-settings:appsforwebsites |
-| Default apps | ms-settings:defaultapps |
+| Default apps | ms-settings:defaultapps (**Behavior introduced in Windows 11, build xx and later**) Append the query string parameter in the following formats using the Uri-escaped name of an app to directly launch the default settings page for that app:<br/>- `registeredAppMachine=<Uri-escaped per machine installed name of app>`<br/>- `registeredAppUser=<Uri-escaped per user installed name of app>`<br/>- `registeredAUMID=<Uri-escaped Application User Model ID>`<br/><br/>For more information, see [Launch the Default Apps settings page](launch-default-apps-settings.md). |
 | Manage optional features | ms-settings:optionalfeatures |
 | Offline Maps | ms-settings:maps<br/>ms-settings:maps-downloadmaps (Download maps) |
 | Startup apps | ms-settings:startupapps |
@@ -414,3 +414,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Repair token | ms-settings:workplace-repairtoken |
 | Provisioning | ms-settings:provisioning (only available on mobile and if the enterprise has deployed a provisioning package) |
 | Windows Anywhere | ms-settings:windowsanywhere (device must be Windows Anywhere-capable) |
+
+## See also
+
+[Launch the default app for a URI](launch-default-app.md)
