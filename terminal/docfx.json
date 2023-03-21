@@ -51,7 +51,8 @@
       "ms.technology": "windows-terminal",
       "searchScope": ["terminal"],
       "ms.author": "cinnamon",
-      "author": "cinnamon-msft"
+      "author": "cinnamon-msft",
+      "adobe-target": true
     },
     "fileMetadata": {},
     "template": [],
