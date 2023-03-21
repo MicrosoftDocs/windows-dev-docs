@@ -23,7 +23,7 @@ Windows defines a set of URIs that allow apps to launch the Windows Settings app
 
 There are three query string parameters. The query string parameter to be used depends on how the application was installed.
 
-| Query string parameter | Value to pass | When to use |
+| Query string parameter | Value to pass | Use when... |
 |--------|--------|--------|
 | registeredAppUser | Named value from `HKCU\Software\RegisteredApplications` | The app was installed per user, and the registration for the app was written to `HKCU\Software\RegisteredApplications`. |
 | registeredAppMachine | Named value from `HKLM\Software\RegisteredApplications` | The app was installed per machine, and the registration for the app was written to `HKLM\Software\RegisteredApplications`. |
