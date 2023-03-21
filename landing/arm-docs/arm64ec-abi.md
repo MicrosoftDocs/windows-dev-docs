@@ -45,7 +45,7 @@ This structure must be used to represent the CPU context while executing x64 cod
 
 It also implies that any Arm64 registers which cannot be fitted into the x64 `CONTEXT` must not be used, as their values can be lost anytime an operation using `CONTEXT` occurs (and some can be asynchronous and unexpected, such as the Garbage Collection operation of a Managed Language Runtime, or an APC).
 
-The mapping rules between Arm64EC and x64 registers are represented by the `Arm64EC_NT_CONTEXT` structure in the Windows headers, present in the SDK. This structure is essentially a union of the `CONTEXT` structure, exactly as it is defined for x64, but with an extra Arm64 register overlay.
+The mapping rules between Arm64EC and x64 registers are represented by the `ARM64EC_NT_CONTEXT` structure in the Windows headers, present in the SDK. This structure is essentially a union of the `CONTEXT` structure, exactly as it is defined for x64, but with an extra Arm64 register overlay.
 
 For example, `RCX` maps to `X0`, `RDX` to `X1`, `RSP` to `SP`, `RIP` to `PC`, etc. We can also see how the registers `x13`, `x14`, `x23`, `x24`, `x28`, `v16`-`v31` have no representation and, thus, cannot be used in Arm64EC.
 
