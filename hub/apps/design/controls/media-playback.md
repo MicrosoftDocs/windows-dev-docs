@@ -106,7 +106,7 @@ To play files on the network or files embedded with the app, set the [Source](/w
 > [!TIP]
 > To open files from the internet, you need to declare the **Internet (Client)** capability in your app's manifest (Package.appxmanifest). For more info about declaring capabilities, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations).
 
-This code attempts to set the [Source](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source) property of the [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) defined in XAML to the path of a file entered into a [TextBox](/windows/windows-app-sdk/api/winrt/windows.ui.xaml.controls.textbox).
+This code attempts to set the [Source](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source) property of the [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) defined in XAML to the path of a file entered into a [TextBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox).
 
 ```xaml
 <TextBox x:Name="txtFilePath" Width="400"

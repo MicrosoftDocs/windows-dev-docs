@@ -2,7 +2,7 @@
 description: Partner Center gives you several options to let testers try out your app before you offer it to the public.
 title: Beta testing and targeted distribution
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, beta test, limited distribution, beta, betas, testing, testers
 ms.localizationpriority: medium

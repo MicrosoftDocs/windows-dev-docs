@@ -1,7 +1,7 @@
 ---
 description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of customers who have your package installed on Windows 10 or Windows 11 (including Xbox).
 title: Gradual package rollout
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634

@@ -2,7 +2,7 @@
 title: Define market selection
 description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
 ms.topic: article
-ms.date: 08/16/2022
+ms.date: 10/30/2022
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging
 ---

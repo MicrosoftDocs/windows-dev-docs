@@ -66,7 +66,7 @@ Here is an example that assigns an event handler named **errorLogger** to the **
 
 The error handling function is declarative and must be enclosed in the [markSupportedForProcessing](/previous-versions/windows/apps/hh967819(v=win.10)) function.
 
-The error handler catches the JavaScript error object when an error occurs. The error object provides two arguments to the error handler. For more information, see [Special Error Properties from Asynchronous Windows Runtime Methods](/scripting/jswinrt/special-error-properties-from-asynchronous-windows-runtime-methods).
+The error handler catches the JavaScript error object when an error occurs. The error object provides two arguments to the error handler.
 
 Here is an example of an error handling function named **errorLogger** that handles the **onErrorOccurred** event.
 

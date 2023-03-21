@@ -2,7 +2,7 @@
 description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of Partner Center to manage your use of ads.
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.date: 09/24/2020
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

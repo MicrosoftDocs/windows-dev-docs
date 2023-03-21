@@ -28,5 +28,5 @@ Banner ads are static display ads that utilize a rectangular portion of a page i
 
 ## Related topics
 
-* [Advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Advertising samples on GitHub](https://github.com/microsoft/Windows-universal-samples/tree/b1cb20f191d3fd99ce89df50c5b7d1a6e2382c01/archived/Advertising)
 * [Set up ad units for your app](set-up-ad-units-in-your-app.md)

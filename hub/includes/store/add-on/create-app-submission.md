@@ -42,7 +42,7 @@ One Store listing required. We recommend providing Store listings for every lang
 When you've finished entering this info, click **Submit to the Store**. In most cases, the certification process takes about an hour. After that, your add-on will be published to the Store and ready for customers to purchase.
 
 > [!NOTE]
-> The add-on must also be implemented in your app's code. For more info, see [In-app purchases and trials](/uwp/monetize/in-app-purchases-and-trials).
+> The add-on must also be implemented in your app's code. For more info, see [In-app purchases and trials](/windows/uwp/monetize/in-app-purchases-and-trials).
 
 ## Updating an add-on after publication
 
@@ -78,7 +78,7 @@ The default **Product lifetime** for a durable add-on is **Forever**, which mean
 
 #### Consumable
 
-If the add-on can be purchased, used (consumed), and then purchased again, you'll want to select one of the **consumable** product types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info, see [Enable consumable add-on purchases](/uwp/monetize/enable-consumable-add-on-purchases).
+If the add-on can be purchased, used (consumed), and then purchased again, you'll want to select one of the **consumable** product types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info, see [Enable consumable add-on purchases](/windows/uwp/monetize/enable-consumable-add-on-purchases).
 
 There are two types of consumable add-ons:
 - **Developer-managed consumable**: Balance and fulfillment must be managed within your app. Supported on all OS versions.
@@ -90,13 +90,13 @@ If your want to charge customers on a recurring basis for your add-on, choose **
 
 After a subscription add-on is initially acquired by a customer, they will continue to be charged at recurring intervals in order to keep using the add-on. The customer can cancel the subscription at any time to avoid further charges. You'll need to specify the subscription period, and whether or not to offer a free trial, in the **Properties** step of your submission.
 
-Subscription add-ons are only supported for customers running Windows 10, version 1607 or later. The parent app must be compiled using Windows 10 SDK version 14393 or later and it must use the in-app purchase API in the **Windows.Services.Store** namespace instead of the **Windows.ApplicationModel.Store** namespace. For more info, see [Enable subscription add-ons for your app](/uwp/monetize/enable-subscription-add-ons-for-your-app).
+Subscription add-ons are only supported for customers running Windows 10, version 1607 or later. The parent app must be compiled using Windows 10 SDK version 14393 or later and it must use the in-app purchase API in the **Windows.Services.Store** namespace instead of the **Windows.ApplicationModel.Store** namespace. For more info, see [Enable subscription add-ons for your app](/windows/uwp/monetize/enable-subscription-add-ons-for-your-app).
 
 You must submit the parent product before you can publish subscription add-ons to the Store (though you can create the submission in Partner Center and begin working on it at any time).
 
 ### Product ID
 
-Regardless of the product type you choose, you will need to enter a unique product ID for your add-on. This name will be used to identify your add-on in Partner Center, and you can use this identifier to [refer to the add-on in your code](/uwp/monetize/in-app-purchases-and-trials#how-to-use-product-ids-for-add-ons-in-your-code).
+Regardless of the product type you choose, you will need to enter a unique product ID for your add-on. This name will be used to identify your add-on in Partner Center, and you can use this identifier to [refer to the add-on in your code](/windows/uwp/monetize/in-app-purchases-and-trials#how-to-use-product-ids-for-add-ons-in-your-code).
 
 Here are a few things to keep in mind when choosing a product ID:
 

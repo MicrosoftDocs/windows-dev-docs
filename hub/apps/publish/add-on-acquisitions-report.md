@@ -2,7 +2,7 @@
 description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: Add-on acquisitions report
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, add-on sales, add-on acquisitions, iap sales, in-app products, iaps, add-ons
 ms.localizationpriority: medium

@@ -1,7 +1,7 @@
 ---
 description: The Ratings report in Partner Center lets you see how customers rated your app in the Store.
 title: Ratings report
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, rating, rate, star, stars, rated
 ms.localizationpriority: medium

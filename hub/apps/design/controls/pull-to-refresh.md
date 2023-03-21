@@ -73,7 +73,7 @@ Visually, the icon is 100% in both size and opacity. In this state, the icon con
 
 When the user releases the visualiser past the threshold, it's in the **Refreshing** state.
 
-When this state is entered, the **RefreshRequested** event is raised. This is the signal to start the app's content refresh. The event args ([RefreshRequestedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshrequestedeventargs)) contain a [Deferral](/windows/winui/api/microsoft.foundation.deferral) object, which you should take a handle to in the event handler. Then, you should mark the deferral as completed when your code to perform the refresh has completed.
+When this state is entered, the **RefreshRequested** event is raised. This is the signal to start the app's content refresh. The event args ([RefreshRequestedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshrequestedeventargs)) contain a [Deferral](/uwp/api/windows.foundation.deferral) object, which you should take a handle to in the event handler. Then, you should mark the deferral as completed when your code to perform the refresh has completed.
 
 When the refresh is complete, the visualizer returns to the **Idle** state.
 

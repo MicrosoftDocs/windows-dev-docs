@@ -1,7 +1,7 @@
 ---
 title: Overview of roles and permissions for account users
 description: Learn how to set standard roles or custom permissions when adding users to your Partner Center account.
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -23,4 +23,4 @@ When determining what role or permissions to apply, keep in mind:
 - A user with a certain role (or set of custom permissions) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
 
 > [!TIP]
-> This topic is specific to the Windows apps developer program in [Partner Center](https://partner.microsoft.com/dashboard). For info about user roles in the Hardware Developer Program, see [Managing User Roles](/windows-hardware/drivers/dashboard/managing-user-roles). For info about user roles in the Windows Desktop Application Program, see [Windows Desktop Application Program](/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users).
+> This topic is specific to the Windows apps developer program in [Partner Center](https://partner.microsoft.com/dashboard). For info about user roles in the Hardware Developer Program, see [Managing User Roles](/windows-hardware/drivers/dashboard/hardware-dashboard-users-manage). For info about user roles in the Windows Desktop Application Program, see [Windows Desktop Application Program](/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users).

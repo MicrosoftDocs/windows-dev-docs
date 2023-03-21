@@ -1,7 +1,7 @@
 ---
 title: Assign product level custom permissions to account users
 description: Learn how to assign custom permissions at product level when adding users to your Partner Center account.
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: high
 ---

@@ -1,7 +1,7 @@
 ---
 description: Target specific segments of your customers with personalized content to increase engagement, retention, and monetization.
 title: Use targeted offers to maximize engagement and conversions
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, targeted offers, offers, notifications
 ms.localizationpriority: medium

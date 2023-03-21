@@ -1,7 +1,7 @@
 ---
 description: Use the Microsoft Store Submission API to automate your store submissions
 title: Microsoft Store submission API for MSI or EXE app
-ms.date: 05/17/2022
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, msi, exe, unpackaged, unpackaged app, desktop app, traditional desktop app, price, available, discoverable, free trial, trials, trial, apps, release date
 ms.localizationpriority: medium
@@ -90,7 +90,7 @@ After you have an Azure AD access token, you can call methods in the Microsoft S
 
 ## Base URL
 
-The base URL for the Microsoft Store Submission API for EXE or MSI app is: https://api.store.microsoft.com
+The base URL for the Microsoft Store Submission API for EXE or MSI app is: `https://api.store.microsoft.com`
 
 ## API Contracts
 
@@ -1782,7 +1782,7 @@ namespace Win32SubmissionApiCSharpSample
 
         /// <summary>
         /// Service root endpoint.
-        /// Example: https://api.store.microsoft.com
+        /// Example: "https://api.store.microsoft.com"
         /// </summary>
         public string ServiceUrl { get; set; }
 

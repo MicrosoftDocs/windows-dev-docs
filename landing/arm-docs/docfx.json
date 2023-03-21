@@ -38,6 +38,9 @@
       "recommendations": true,
       "breadcrumb_path": "/windows/arm/breadcrumb/toc.json",
       "extendBreadcrumb": true,
+      "feedback_system": "GitHub",
+      "feedback_github_repo": "MicrosoftDocs/windows-dev-docs",
+      "feedback_product_url": "https://support.microsoft.com/en-us/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332",
       "uhfHeaderId": "MSDocsHeader-Windows",
       "_op_documentIdPathDepotMapping": {
         "./": {

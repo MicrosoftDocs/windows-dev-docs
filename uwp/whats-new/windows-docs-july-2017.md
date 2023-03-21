@@ -66,7 +66,7 @@ The following new features are now available:
 
 * [Targeted offers](/windows/apps/publish/use-targeted-offers-to-maximize-engagement-and-conversions) let you target specific segments of your customers with attractive, personalized content to increase engagement, retention, and monetization.
 
-* Your app's Store listing can now include [video trailers](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#trailers).
+* Your app's Store listing can now include [video trailers](/windows/apps/publish/publish-your-app/screenshots-and-images?pivots=store-installer-msix#trailers).
 
 * New pricing and availability options let you [schedule price changes](/windows/apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix) and [set precise release dates](/windows/apps/publish/publish-your-app/release-schedule?pivots=store-installer-msix).
 

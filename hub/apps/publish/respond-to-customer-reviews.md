@@ -2,7 +2,7 @@
 description: You can respond directly to reviews of your app to let customers know you’re listening to their feedback.
 title: Respond to customer reviews
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, responding, responses, review
 ms.localizationpriority: medium

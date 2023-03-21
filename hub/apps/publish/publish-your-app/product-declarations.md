@@ -1,7 +1,7 @@
 ---
 description: Product declarations help make sure your app is displayed appropriately in the Microsoft Store and offered to the right set of customers.
 title: Product declarations
-ms.date: 10/31/2018
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging

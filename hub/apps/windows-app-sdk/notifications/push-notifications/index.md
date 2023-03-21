@@ -46,5 +46,5 @@ See [Quickstart: Push notifications in the Windows App SDK](push-quickstart.md) 
 - [Windows Push Notification Service (WNS)](https://aka.ms/wns)
 - [Quickstart: Push notifications in the Windows App SDK](push-quickstart.md)
 - [Troubleshooting Windows App SDK](troubleshooting.md)
-- [Notifications UX Guidance](/hub/apps/design/shell/tiles-and-notifications/toast-ux-guidance.md)
+- [Notifications UX Guidance](../../../design/shell/tiles-and-notifications/toast-ux-guidance.md)
 

@@ -8,7 +8,7 @@ If a compilation error is displayed, make sure that you are able to build your a
 
 ## Desktop application
 
-If you plan to submit a package that contains both Win32 and UWP binaries, make sure that you create that package by using the Windows Packaging Project that is available in Visual Studio 2017 Update 4 and later versions. If you create the package by using a UWP project template, you might not be able to submit that package to the Store or sideload it onto other PCs. Even if the package publishes successfully, it might behave in unexpected ways on the user's PC. For more info, see [Package an app by using Visual Studio (Desktop Bridge)](/msix/desktop/desktop-to-uwp-packaging-dot-net).
+If you plan to submit a package that contains both Win32 and UWP binaries, make sure that you create that package by using the Windows Packaging Project that is available in Visual Studio 2017 Update 4 and later versions. If you create the package by using a UWP project template, you might not be able to submit that package to the Store or sideload it onto other PCs. Even if the package publishes successfully, it might behave in unexpected ways on the user's PC. For more info, see [Package an app by using Visual Studio (Desktop Bridge)](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 ## Windows Phone 8.x and earlier
 

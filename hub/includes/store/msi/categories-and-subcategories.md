@@ -4,7 +4,7 @@ You must choose the category that best describes your app. You can optionally ch
 
 :::image type="content" source="images/msiexe-set-app-category-subcategory.png" lightbox="images/msiexe-set-app-category-subcategory.png" alt-text="A screenshot of the Properties section where you can provide category and sub-category for your app.":::
 
-If you choose **Games** for your category, you are required to select at least one subcategory (called *genre* for games). You can choose as many genres as are appropriate for your game. Note that in order to publish a game to customers on Xbox, you must enable the [Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) or go through the [concept approval](/uwp/gaming/concept-approval) process).
+If you choose **Games** for your category, you are required to select at least one subcategory (called *genre* for games). You can choose as many genres as are appropriate for your game. Note that in order to publish a game to customers on Xbox, you must enable the [Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) or go through the [concept approval](/windows/uwp/gaming/concept-approval) process).
 
 > [!IMPORTANT]
 > If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission; it must be continue to be published in the **Games** category (although you can change the genre selections in a new submission). Likewise, you can't choose the **Games** category when updating an app that you previously published in a different category.

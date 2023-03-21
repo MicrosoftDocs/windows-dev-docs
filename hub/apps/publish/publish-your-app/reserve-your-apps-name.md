@@ -2,7 +2,7 @@
 description: Reserve your app's name in the Microsoft Store
 title: Reserve your app's name
 ms.topic: article
-ms.date: 08/16/2022
+ms.date: 10/30/2022
 zone_pivot_groups: store-installer-packaging
 ---
 

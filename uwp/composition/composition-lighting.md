@@ -1,7 +1,7 @@
 ---
 title: Composition Lighting
 description: The Composition Lighting APIs can be used to add dynamic 3D lighting to your application.
-ms.date: 07/16/2018
+ms.date: 03/16/2023
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -57,7 +57,7 @@ By adding animation to the offset of the point light, a shimmering effect is eas
 _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock.ActualHeight / 2, (float)TextBlock.FontSize);
 ```
 
-See the complete [Text Shimmer](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 14393/TextShimmer) sample at the WindowUIDevLabs Sample Galley to learn more.
+See the complete [Text Shimmer](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2014393/TextShimmer) sample on GitHub to learn more.
 
 ## Restrictions
 
@@ -161,4 +161,4 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 - [CompositionCapabilities API](/uwp/api/windows.ui.composition.compositioncapabilities)
 - [Mathematics of Lighting](../graphics-concepts/mathematics-of-lighting.md)
 - [SceneLightingEffect](/uwp/api/windows.ui.composition.effects.scenelightingeffect)
-- [WindowsUIDevLabs GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)
+- [WindowsCompositionSamples GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)

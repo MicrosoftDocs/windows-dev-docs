@@ -2002,7 +2002,7 @@
     },
     {
       "source_path": "uwp/xbox-live/developer-program-overview.md",
-      "redirect_url": "/gaming/xbox-live/get-started/join-dev-program/join-dev-program_nav",
+      "redirect_url": "/gaming/gdk/_content/gc/live/get-started/live-getstarted-nav",
       "redirect_document_id": false
     },
     {
@@ -6972,7 +6972,7 @@
     },
     {
       "source_path": "uwp/publish/app-screenshots-and-images.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/screenshots-and-images?pivots=store-installer-msix",
       "redirect_document_id": false
     },
     {

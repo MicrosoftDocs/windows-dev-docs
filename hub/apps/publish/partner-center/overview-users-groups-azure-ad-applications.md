@@ -1,7 +1,7 @@
 ---
 description: Users, groups, and applications in Azure Active Directory
 title: Overview of several types of entities in Azure AD
-ms.date: 09/09/2022
+ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---

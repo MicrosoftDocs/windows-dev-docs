@@ -1,7 +1,7 @@
 ---
 description: Manage your app's performance in the store through ratings, reviews, and responses
 title: Ratings, reviews, and responses
-ms.date: 05/16/2022
+ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, uwp, price, available, discoverable, free trial, trials, trial, apps, release date
 ms.localizationpriority: medium

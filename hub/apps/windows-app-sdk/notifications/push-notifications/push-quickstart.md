@@ -344,7 +344,7 @@ Use Visual Studio to build and install your app. Right click on the solution fil
 
 ## Send a push notification to your app
 
-At this point, all configuration is complete and the WNS server can send push notifications to client apps. In the following steps, refer to the [Push notification server request and response headers](/hub/apps/design/shell/tiles-and-notifications/push-request-response-headers.md) for more detail.
+At this point, all configuration is complete and the WNS server can send push notifications to client apps. In the following steps, refer to the [Push notification server request and response headers](../../../design/shell/tiles-and-notifications/push-request-response-headers.md) for more detail.
 
 ### Step 1: Request an access token
 
@@ -450,5 +450,5 @@ Console.WriteLine(response.Content);
 - [Push notifications sample code on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/)
 - [Microsoft.Windows.PushNotifications API details](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md#api-details)
 - [Push notifications spec on GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md)
-- [Toast content](/hub/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
+- [Toast content](../../../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 - [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root)

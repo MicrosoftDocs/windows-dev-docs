@@ -1,7 +1,7 @@
 ---
 title: Store Policies and Code of Conduct
 description: This section includes the Store Policies and App Quality criteria that apply to Microsoft Store apps and content, and the Code of Conduct that developers should follow.
-ms.date: 02/25/2020
+ms.date: 10/30/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
