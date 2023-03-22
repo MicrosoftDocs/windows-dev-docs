@@ -23,11 +23,11 @@ ms-settings:defaultapps launches the Windows Settings app and navigates to the
 
 There are three query string parameters. The query string parameter to be used depends on how the application was installed.
 
-| Query string parameter | Value to pass | Use when... |
+| Query string parameter | Value to pass |
 |--------|--------|--------|
-| registeredAppUser | Named value from HKEY_CURRENT_USER\Software\RegisteredApplications | The app was installed per user, and the registration for the app was written to HKEY_CURRENT_USER\Software\RegisteredApplications. |
-| registeredAppMachine | Named value from HKEY_LOCAL_MACHINE\Software\RegisteredApplications | The app was installed per machine, and the registration for the app was written to HKEY_LOCAL_MACHINE\Software\RegisteredApplications. |
-| registeredAUMID | Application User Model ID | The app was registered with Package Manager using a manifest declaring that the app handles File Types ([uap:FileTypeAssociation](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)) or URI schemes ([uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)). |
+| registeredAppUser | Named value from HKEY_CURRENT_USER\Software\RegisteredApplications<br/><br/>Use when the app was installed per user, and the registration for the app was written to HKEY_CURRENT_USER\Software\RegisteredApplications. |
+| registeredAppMachine | Named value from HKEY_LOCAL_MACHINE\Software\RegisteredApplications<br/><br/>Use when the app was installed per machine, and the registration for the app was written to HKEY_LOCAL_MACHINE\Software\RegisteredApplications. |
+| registeredAUMID | Application User Model ID <br/><br/>Use when the app was registered with Package Manager using a manifest declaring that the app handles File Types ([uap:FileTypeAssociation](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)) or URI schemes ([uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)). |
 
 >[!NOTE]
 >The registeredAUMID query string parameter may not work for a given app until the app receives an update. An app update causes the app to re-deploy, which will write the AUMID to HKEY_CURRENT_USER\Software\RegisteredApplications\PackagedApps.
