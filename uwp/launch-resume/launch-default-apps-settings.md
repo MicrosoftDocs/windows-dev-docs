@@ -19,7 +19,7 @@ Windows defines a set of URIs that allow apps to launch the Windows Settings app
 
 ## The Default Apps settings URL
 
-ms-settings:defaultapps launches the Windows Settings app and navigates to the Default Apps settings page. Starting with build xx, you can append an additional query string parameter, in escaped URI format, to launch directly to the settings page for a specific application.
+ms-settings:defaultapps launches the Windows Settings app and navigates to the Default Apps settings page. Starting with build xx, you can append an additional query string parameter in escaped URI format to launch directly to the settings page for a specific application.
 
 There are three query string parameters. The query string parameter to be used depends on how the application was installed.
 
