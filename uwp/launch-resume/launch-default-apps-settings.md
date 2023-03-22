@@ -13,26 +13,26 @@ dev_langs:
 
 # Launch the Default Apps settings page
 
-Learn how to launch the Windows Settings app to display the Default Apps settings page from your app using the `ms-settings` URI scheme.
+Learn how to launch the Windows Settings app to display the Default Apps settings page from your app using the ms-settings URI scheme.
 
 Windows defines a set of URIs that allow apps to launch the Windows Settings app and display a particular settings page. This article explains how to launch the Windows Settings app directly to the Default Apps settings page and, optionally, navigate directly to the settings for a specified default application. For more information, see [Launch the Windows Settings app](launch-settings-app.md).
 
 ## The Default Apps settings URL
 
-`ms-settings:defaultapps` launches the Windows Settings app and navigates to the Default Apps settings page. Starting with build xx, you can append an additional query string parameter, in escaped URI format, to launch directly to the settings page for a specific application.
+ms-settings:defaultapps launches the Windows Settings app and navigates to the Default Apps settings page. Starting with build xx, you can append an additional query string parameter, in escaped URI format, to launch directly to the settings page for a specific application.
 
 There are three query string parameters. The query string parameter to be used depends on how the application was installed.
 
 | Query string parameter | Value to pass | Use when... |
 |--------|--------|--------|
-| registeredAppUser | Named value from `HKCU\Software\RegisteredApplications` | The app was installed per user, and the registration for the app was written to `HKCU\Software\RegisteredApplications`. |
-| registeredAppMachine | Named value from `HKLM\Software\RegisteredApplications` | The app was installed per machine, and the registration for the app was written to `HKLM\Software\RegisteredApplications`. |
+| registeredAppUser | Named value from HKEY_CURRENT_USER\Software\RegisteredApplications | The app was installed per user, and the registration for the app was written to HKEY_CURRENT_USER\Software\RegisteredApplications. |
+| registeredAppMachine | Named value from HKEY_LOCAL_MACHINE\Software\RegisteredApplications | The app was installed per machine, and the registration for the app was written to HKEY_LOCAL_MACHINE\Software\RegisteredApplications. |
 | registeredAUMID | Application User Model ID | The app was registered with Package Manager using a manifest declaring that the app handles File Types ([uap:FileTypeAssociation](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)) or URI schemes ([uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)). |
 
 >[!NOTE]
->The registeredAUMID query string parameter may not work for a given app until the app receives an update. An app update causes the app to re-deploy, which will write the AUMID to `HKCU\Software\RegisteredApplications\PackagedApps`.
+>The registeredAUMID query string parameter may not work for a given app until the app receives an update. An app update causes the app to re-deploy, which will write the AUMID to HKEY_CURRENT_USER\Software\RegisteredApplications\PackagedApps.
 
-In the following example, `LaunchUriAsync` is called to launch the Windows Settings app. The `ms-settings:defaultapps` Uri specifies that the Default Apps settings page should be shown. Next, the app that should be launched is determined. As an example, “Microsoft Edge” was registered by the app in `HKLM\Software\RegisteredApplications`. Since it is a per machine installed app, `registeredAppMachine` is the query string parameter that should be used. The optional query string parameter `registeredAppMachine` is set to the registered name, escaped with a call to `Url.EscapeDataString`, to specify that the page for **Microsoft Edge** should be shown.
+In the following example, `LaunchUriAsync` is called to launch the Windows Settings app. The ms-settings:defaultapps Uri specifies that the Default Apps settings page should be shown. Next, the app that should be launched is determined. As an example, “Microsoft Edge” was registered by the app in HKEY_LOCAL_MACHINE\Software\RegisteredApplications. Since it is a per machine installed app, `registeredAppMachine` is the query string parameter that should be used. The optional query string parameter `registeredAppMachine` is set to the registered name, escaped with a call to `Url.EscapeDataString`, to specify that the page for **Microsoft Edge** should be shown.
 
 ```csharp
 private async void LaunchSettingsPage_Click(object sender, RoutedEventArgs e)
