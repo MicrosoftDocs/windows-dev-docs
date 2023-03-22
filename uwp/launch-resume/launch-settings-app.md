@@ -75,7 +75,6 @@ The following sections describe different categories of ms-settings URIs used to
 - [Extras](#extras)
 - [Family Group](#family-group)
 - [Gaming](#gaming)
-- [Home page](#home-page)
 - [Mixed reality](#mixed-reality)
 - [Network and internet](#network-and-internet)
 - [Personalization](#personalization)
