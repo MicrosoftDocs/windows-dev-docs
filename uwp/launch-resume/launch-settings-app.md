@@ -128,6 +128,7 @@ The following sections describe different categories of ms-settings URIs used to
 | App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app) <br><br> To access this page with a URI, use the ms-settings:appsfeatures-app URI and pass an optional parameter of the _package family name_ of the app. |
 | Apps for websites | ms-settings:appsforwebsites |
 | Default apps | ms-settings:defaultapps (**Behavior introduced in Windows 11, build xx and later**) Append the query string parameter in the following formats using the Uri-escaped name of an app to directly launch the default settings page for that app:<br/><br/>- registeredAppMachine=\<Uri-escaped per machine installed name of app\><br/>- registeredAppUser=\<Uri-escaped per user installed name of app\><br/>- registeredAUMID=\<Uri-escaped Application User Model ID\><br/><br/>For more information, see [Launch the Default Apps settings page](launch-default-apps-settings.md). |
+| Default browser settings | ms-settings:defaultbrowsersettings (**Deprecated in Windows 11**) |
 | Manage optional features | ms-settings:optionalfeatures |
 | Offline Maps | ms-settings:maps<br/>ms-settings:maps-downloadmaps (Download maps) |
 | Startup apps | ms-settings:startupapps |
@@ -213,12 +214,6 @@ The following sections describe different categories of ms-settings URIs used to
 | Game Mode | ms-settings:gaming-gamemode |
 | Playing a game full screen | ms-settings:quietmomentsgame |
 | TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
-
-### Home page
-
-|Settings page| URI |
-|-------------|-----|
-| Default browser settings | ms-settings:defaultbrowsersettings |
 
 ### Mixed reality
 
