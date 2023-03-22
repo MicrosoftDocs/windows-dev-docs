@@ -42,6 +42,7 @@ You can download the macOS *.tar.gz* for your specific architecture (x64 or Arm6
 
 ```console
 mkdir MSStoreCLI
+curl https://github.com/microsoft/msstore-cli/releases/latest/download/MSStoreCLI-osx.12-x64.tar.gz -o MSStoreCLI-osx.12-x64.tar.gz
 tar -xvf MSStoreCLI-osx.12-x64.tar.gz -C ./MSStoreCLI
 sudo cp -R MSStoreCLI/. /usr/local/bin
 ```
@@ -65,6 +66,7 @@ You can download the Linux *.tar.gz* for your specific architecture (x64 or Arm6
 
 ```console
 mkdir MSStoreCLI
+wget https://github.com/microsoft/msstore-cli/releases/latest/download/MSStoreCLI-linux-x64.tar.gz
 tar -xvf MSStoreCLI-linux-x64.tar.gz -C ./MSStoreCLI
 sudo cp -R MSStoreCLI/. /usr/local/bin
 ```
