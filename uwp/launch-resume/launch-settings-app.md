@@ -125,7 +125,7 @@ The following sections describe different categories of ms-settings URIs used to
 |Settings page| URI |
 |-------------|-----|
 | Apps & Features | ms-settings:appsfeatures |
-| App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app) <br><br> To access this page with a URI, use the `ms-settings:appsfeatures-app` URI and pass an optional parameter of the _package family name_ of the app. |
+| App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app) <br><br> To access this page with a URI, use the ms-settings:appsfeatures-app URI and pass an optional parameter of the _package family name_ of the app. |
 | Apps for websites | ms-settings:appsforwebsites |
 | Default apps | ms-settings:defaultapps (**Behavior introduced in Windows 11, build xx and later**) Append the query string parameter in the following formats using the Uri-escaped name of an app to directly launch the default settings page for that app:<br/><br/>- registeredAppMachine=\<Uri-escaped per machine installed name of app\><br/>- registeredAppUser=\<Uri-escaped per user installed name of app\><br/>- registeredAUMID=\<Uri-escaped Application User Model ID\><br/><br/>For more information, see [Launch the Default Apps settings page](launch-default-apps-settings.md). |
 | Manage optional features | ms-settings:optionalfeatures |
