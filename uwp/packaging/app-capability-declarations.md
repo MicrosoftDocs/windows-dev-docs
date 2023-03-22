@@ -91,7 +91,7 @@ Device capabilities allow your app to access peripheral and internal devices. De
 
 ## Restricted capabilities
 
-If your app declares any restricted capabilities, then you must provide info during the [app submission process](/windows/apps/publish/app-submissions) in order to be approved to publish your app to the Microsoft Store. You provide this info on the [Submission options](/windows/apps/publish/manage-submission-options.md#restricted-capabilities) page of your submission, explaining how your app uses each restricted capability that it declares.
+If your app declares any restricted capabilities, then you must provide info during the [app submission process](/windows/apps/publish/publish-your-app/create-app-submission) in order to be approved to publish your app to the Microsoft Store. You provide this info on the [Submission options](/windows/apps/publish/publish-your-app/manage-submission-options) page of your submission, explaining how your app uses each restricted capability that it declares.
 
 > [!IMPORTANT]
 > Restricted capabilities are intended for very specific scenarios. The use of these capabilities is highly restricted and subject to additional Store onboarding policy and review. Note that you can sideload apps that declare restricted capabilities without needing to receive any approval. Approval is only required when submitting these apps to the Store.
@@ -118,9 +118,9 @@ To declare a restricted capability, modify your [app package manifest](/uwp/sche
 
 ### Restricted capability approval process
 
-Previously, we required you to contact support to get approval to use a capability. We now allow you to provide this info in [Partner Center](https://partner.microsoft.com/dashboard) as part of the [submission process](/windows/apps/publish/app-submissions).
+Previously, we required you to contact support to get approval to use a capability. We now allow you to provide this info in [Partner Center](https://partner.microsoft.com/dashboard) as part of the [submission process](/windows/apps/publish/publish-your-app/create-app-submission).
 
-When you upload packages for your submission, we will detect whether any restricted capabilities are declared. If we do so, you will be required to provide details about how your product uses each capability on the [Submission options](/windows/apps/publish/manage-submission-options.md#restricted-capabilities) page. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability. Note that this may add some additional time for your submission to complete the certification process.
+When you upload packages for your submission, we will detect whether any restricted capabilities are declared. If we do so, you will be required to provide details about how your product uses each capability on the [Submission options](/windows/apps/publish/publish-your-app/manage-submission-options#restricted-capabilities) page. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability. Note that this may add some additional time for your submission to complete the certification process.
 
 During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities).
 
@@ -272,6 +272,6 @@ To declare a custom capability, modify your [app package manifest](/uwp/schemas/
 
 ## Related topics
 
-* [Submission options](/windows/apps/publish/manage-submission-options)
+* [Submission options](/windows/apps/publish/publish-your-app/manage-submission-options)
 * [How to specify capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest)
 * [How to specify device capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)

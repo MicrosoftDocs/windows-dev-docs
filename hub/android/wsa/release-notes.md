@@ -6,12 +6,22 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 02/10/2023
+ms.date: 03/15/2023
 ---
 
 # Release Notes for Windows Subsystem for Android™️
 
 These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
+
+## Build 2302.4000
+
+March 15, 2023
+
+- Stability improvements to graphics card selection
+- Updates to the Windows Subsystem for Android Settings app to include performance options for graphics cards
+- Docking and undocking with external monitors issues fixed with the subsystem
+- Fixes to apps with audio buffer issues
+- Android 13 security updates
 
 ## Build 2301.40000.4.0
 
