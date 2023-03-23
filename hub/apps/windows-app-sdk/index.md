@@ -11,21 +11,22 @@ ms.localizationpriority: medium
 
 The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and downlevel to Windows 10, version 1809.
 
+&nbsp;
 
 > [!VIDEO ff5c6036-2911-4ea8-80da-89befb39267b]
 
-The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, the Windows App SDK complements these existing tools and app types with a common set of APIs that developers can rely on across these platforms. For more details, see [Benefits of the Windows App SDK](#benefits-of-the-windows-app-sdk-for-windows-developers).
+The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, the Windows App SDK complements those existing tools and app types with a common set of APIs that developers can rely on across these platforms. For more details, see [Benefits of the Windows App SDK](#benefits-of-the-windows-app-sdk-for-windows-developers).
 
 [!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
 ## Get started with the Windows App SDK
 
-The Windows App SDK provides extensions for Visual Studio 2019 and Visual Studio 2022. These extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
+The Windows App SDK provides extensions for Visual Studio 2022 and Visual Studio 2019. Those extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
 
-> [!div class="button"]
-> [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
+> [!IMPORTANT]
+> To learn about configuring Visual Studio for creating new Windows App SDK projects, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment); in particular the section that lists the [Required workloads and components](/windows/apps/windows-app-sdk/set-up-your-development-environment#required-workloads-and-components) for Visual Studio.
 
-If you have already installed the required developer tools, you're ready to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
+If you've already installed the required developer tools, then you're ready to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
 For guidance on specific Windows App SDK versions, see [Release channels](release-channels.md) and [Downloads](downloads.md).
 
