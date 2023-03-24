@@ -72,13 +72,13 @@ To create an Uno Platform app:
     While the **Blank** template could be used for simplicity, we normally recommend using the **Default** template for production-ready code. The **Default** template already includes a series of [features](https://platform.uno/docs/articles/external/uno.extensions/doc/ExtensionsOverview.html#learn-about-unoextensions-features) and good practices which will jumpstart your application development.
 
 3. You can optionally choose to customize your app based on the sections on the left side:
-    - **Framework** allows to choose which `TargetFramework` your app will use. [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) is a commonly appropriate choice.
-    - **Platforms** provides a list of platforms your application will support. You can choose to support all platforms, or a subset of them
+    - **Framework** allows you to choose which `TargetFramework` your app will use. [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) is a commonly appropriate choice.
+    - **Platforms** provides a list of platforms your application will support. You can choose to support all platforms or a subset of them
     - **Presentation** gives a choice about using MVVM (e.g. [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/)) or Uno Platform's MVUX and Feeds
     - **Projects** gives the ability to add a Server project for APIs and hosting for the WebAssembly project
     - **Testing** provides Unit Testing and [UI Testing projects](https://github.com/unoplatform/Uno.UITest)
     - **Features** provides support for WebAssembly PWA and optional VS Code support files
-    - **Extensions** allows to choose for additional [Uno.Extensions](https://github.com/unoplatform/uno.extensions) to kickstart your app faster (described above)
+    - **Extensions** allows you to choose for additional [Uno.Extensions](https://github.com/unoplatform/uno.extensions) to kickstart your app faster (described above)
     - **Application** sets the App ID for relevant platforms, used when publishing on various app stores.
     - **Theme** gives the ability to change between Fluent and Material themes
 
@@ -93,7 +93,7 @@ To create an Uno Platform app:
 
 Now that you've generated the functional starting point of your multi-platform WinUI application, you can copy markup into it from the Hello World WinUI 3 project outlined in the [previous](/hub/apps/how-tos/hello-world-winui3.md) tutorial.
 
-1. Make sure Visual Studio has your WinUI 3 project open, then copy the child XAML elements from `MainWindow.xaml` in the WinUI 3 project to the your `MainPage.xaml` file in the Uno Platform project. The `MainPage` view markup should look like this:
+1. Make sure Visual Studio has your WinUI 3 project open, then copy the child XAML elements from `MainWindow.xaml` in the WinUI 3 project to your `MainPage.xaml` file in the Uno Platform project. The `MainPage` view markup should look like this:
 
 ```xml
 <Page x:Class="HelloWorld.MainPage"
