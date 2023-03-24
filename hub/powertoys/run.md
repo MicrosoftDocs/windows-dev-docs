@@ -41,7 +41,7 @@ The following general options are available on the PowerToys Run settings page.
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | Define the keyboard shortcut to show/hide PowerToys Run |
-| Use centralized keyboard hook | Try this setting if there are issues with the keyboard shortcut; But PowerToys Run might not get focus when triggered from an elevated window. |
+| Use centralized keyboard hook | Try this setting if there are issues with the keyboard shortcut; But PowerToys Run might not get focus when triggered from an elevated window |
 | Ignore shortcuts in full-screen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
 | Delay search | Add a delay to wait for more input before executing a search |
 | Search delay (ms) | How many milliseconds to wait before executing the search |
