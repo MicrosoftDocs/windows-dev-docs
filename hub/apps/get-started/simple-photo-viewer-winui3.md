@@ -28,7 +28,7 @@ To set up your development computer, see [Install tools for the Windows App SDK]
 
 ### Install Visual Studio
 
-Use these links to install Visual Studio 2022. You can choose between the free Visual Studio Community Edition, Visual Studio Professional, or Visual Studio Enterprise. Before you begin, see [System requirements for Windows app development](system-requirements.md).
+Use these links to install Visual Studio 2022. You can choose between the free Visual Studio Community Edition, Visual Studio Professional, or Visual Studio Enterprise. Before you begin, see [System requirements for Windows app development](../windows-app-sdk/system-requirements.md).
 
 > [!div class="button"]
 > [Download Visual Studio 2022](/visualstudio/releases/2022/release-notes)
