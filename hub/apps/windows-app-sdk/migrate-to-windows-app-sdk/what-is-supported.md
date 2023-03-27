@@ -1,42 +1,42 @@
 ---
-title: What is supported when migrating from UWP to WinUI 3
-description: Learn what features are currently available in WinUI 3 Desktop to evaluate whether you should attempt migrating your UWP app today.
+title: What's supported when migrating from UWP to WinUI 3
+description: WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
 ms.topic: article
-ms.date: 10/01/2021
+ms.date: 03/27/2023
 keywords: Windows, App, SDK, port, porting, migrate, migration, support
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# What is supported when migrating from UWP to WinUI 3
+# What's supported when migrating from UWP to WinUI 3
 
-WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, there are some features that still aren't supported. This article provides information on which features are supported before you attempt migration.
+WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
 
 | UWP feature | WinUI 3 status |
 | - | - |
+| [Background acrylic](guides/winui3.md#acrylicbrushbackgroundsource-property) | ✅ Available via [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller) |
 | Common UI controls | ✅ Supported |
-| MSIX | ✅ Supported |
-| [Toast notifications](guides/toast-notifications.md) | ✅ Supported |
-| Live Tiles (on Windows 10) | ✅ Supported |
 | Distributing via Store | ✅ Supported |
+| Live Tiles (on Windows 10) | ✅ Supported |
+| [MediaElement](/uwp/api/windows.ui.xaml.controls.mediaelement) and [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) | ✅ Use [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement), which was introduced in 1.2 |
 | MSAL library | ✅ Supported |
-| [Visual Studio App Center](https://appcenter.ms/) | ✅ Supported |
+| MSIX | ✅ Supported |
 | [Single-instancing](guides/applifecycle.md#single-instanced-apps) | ✅ Supported |
+| [Toast notifications](guides/toast-notifications.md) | ✅ Supported |
+| [Visual Studio App Center](https://appcenter.ms/) | ✅ Supported |
 | [Background tasks](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task) | ✅ Supported for C++ <br> ⚠️ Partially supported for C# (OOP background tasks supported)|
-| [CameraCaptureUI](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/49-support-cameracaptureui) | ❌ Not supported in 1.0 |
-| CoreTextServicesManager | ⚠️ Supported only on Windows 11 |
-| [InkCanvas](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/31-inking-controls) | ❌ Not supported in 1.0 |
-| [MapControl](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/27-map-control) | ❌ Not supported in 1.0 |
-| [MediaElement](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/30-media-controls) | ❌ Not supported in 1.0 |
-| [PrintManager](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/50-support-printmanager-api) | ❌ Not supported in 1.0 |
-| WebAuthenticationBroker | ❌ Not supported in 1.0 |
-| [Background acrylic](guides/winui3.md#acrylicbrushbackgroundsource-property) | ❌ Not supported in 1.0 |
-| [Single-app kiosk](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/62-support-single-app-kiosk) | ❌ Not supported in 1.0 |
-| [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) API | ❌ Not supported in 1.0 |
-| Full containerization of your app | ❌ Not supported in 1.0 |
 | Best launch speed and performance | ⚠️ Slight disadvantage, see [performance considerations](#performance-considerations) |
+| CoreTextServicesManager | ⚠️ Supported only on Windows 11 |
+| [PrintManager](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/50-support-printmanager-api) | ⚠️ Supported on Windows 11 (not yet available on Windows 10) |
+| [CameraCaptureUI](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/49-support-cameracaptureui) | ❌ Not supported in 1.3 |
+| Full containerization of your app | ❌ Not supported in 1.3 |
+| [InkCanvas](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/31-inking-controls) | ❌ Not supported in 1.3 |
+| [MapControl](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/27-map-control) | ❌ Not supported in 1.3 |
+| [Single-app kiosk](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/62-support-single-app-kiosk) | ❌ Not supported in 1.3 |
+| [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) API | ❌ Not supported in 1.3 |
+| WebAuthenticationBroker | ❌ Not supported in 1.3 |
 
 ## Performance considerations
 
-Today in version 1.0 of Windows App SDK, launch speeds, RAM usage, and installation size of WinUI 3 apps are larger/slower than seen in UWP. We are actively working to improve this. We will have more information to share in the future.
+Today in version 1.3 of the Windows App SDK, launch speeds, RAM usage, and installation size of WinUI 3 apps are larger/slower than seen in UWP. We're actively working to improve this.
