@@ -47,13 +47,13 @@ Once you've [created](/hub/apps/how-tos/hello-world-winui3.md) a starter Hello W
 
 ## Install the Uno Platform solution templates
 
-1. Launch Visual Studio 2022, then click `Continue without code`. Click `Extensions` -> `Manage Extensions` from the Menu Bar.
+Launch Visual Studio 2022, then click `Continue without code`. Click `Extensions` -> `Manage Extensions` from the Menu Bar.
 
-    :::image type="content" source="images/hello-world/manage-extensions.png" alt-text="Visual Studio Menu bar item that reads manage extensions":::
+:::image type="content" source="images/hello-world/manage-extensions.png" alt-text="Visual Studio Menu bar item that reads manage extensions":::
 
-2. In the Extension Manager expand the **Online** node and search for `Uno`, install the `Uno Platform` extension or download it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022), then restart Visual Studio.
+In the Extension Manager expand the **Online** node and search for `Uno`, install the `Uno Platform` extension or download it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022), then restart Visual Studio.
 
-    :::image type="content" source="images/hello-world/uno-extensions.PNG" alt-text="Manage Extensions window in Visual Studio with Uno Platform extension as a search result":::
+:::image type="content" source="images/hello-world/uno-extensions.PNG" alt-text="Manage Extensions window in Visual Studio with Uno Platform extension as a search result":::
 
 ## Create an application
 
@@ -61,39 +61,40 @@ Now that we are ready to create a multi-platform application, the approach we'll
 
 Soon enough, you will be able to reap the benefits of this approach, as you can target more platforms with a familiar XAML flavor and the codebase you already have.
 
-To create an Uno Platform app:
+Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
-1. Create a new C# solution using the **Uno Platform App** type from Visual Studio's **Start Page**. You may need to choose a different name for your solution.
+:::image type="content" source="images/hello-world/create-project.png" alt-text="Create a new project":::
 
-2. Choose a base template to take your Hello World application multi-platform
+Search for Uno and select the Uno Platform App project template:
 
-    :::image type="content" source="images/hello-world/vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
+:::image type="content" source="images/hello-world/vsix.png" alt-text="Blank, packaged WinUI 3 C# desktop app":::
 
-    While the **Blank** template could be used for simplicity, we normally recommend using the **Default** template for production-ready code. The **Default** template already includes a series of [features](https://platform.uno/docs/articles/external/uno.extensions/doc/ExtensionsOverview.html#learn-about-unoextensions-features) and good practices which will jumpstart your application development.
+Specify a project name, solution name, and directory. In this example, our Hello World MultiPlatform project belongs to a Hello World MultiPlatform solution, which will live in C:\Projects:
 
-3. You can optionally choose to customize your app based on the sections on the left side:
-    - **Framework** allows you to choose which `TargetFramework` your app will use. [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) is a commonly appropriate choice.
-    - **Platforms** provides a list of platforms your application will support. You can choose to support all platforms or a subset of them
-    - **Presentation** gives a choice about using MVVM (e.g. [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/)) or Uno Platform's MVUX and Feeds
-    - **Projects** gives the ability to add a Server project for APIs and hosting for the WebAssembly project
-    - **Testing** provides Unit Testing and [UI Testing projects](https://github.com/unoplatform/Uno.UITest)
-    - **Features** provides support for WebAssembly PWA and optional VS Code support files
-    - **Extensions** allows you to choose for additional [Uno.Extensions](https://github.com/unoplatform/uno.extensions) to kickstart your app faster (described above)
-    - **Application** sets the App ID for relevant platforms, used when publishing on various app stores.
-    - **Theme** gives the ability to change between Fluent and Material themes
+:::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
 
-4. Click the **Create** button
+Create a new C# solution using the **Uno Platform App** type from Visual Studio's **Start Page**. You may need to choose a different name for your solution.
 
-5. Wait for the projects to be created, and their dependencies to be restored
+Now you'll choose a base template to take your Hello World application multi-platform. The Uno Platform App template comes with two preset options that allow you to quickly get started with either a Blank solution, or the Default configuration which includes references to the Uno.Material and Uno.Toolkit libraries, Uno.Extensions is used for dependency injection, configuration, navigation and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real world applications. 
 
-6. A banner at the top of the editor may ask to reload projects, click **Reload projects**:
-    :::image type="content" source="images/hello-world/vs2022-project-reload.png" alt-text="Visual Studio banner offering to reload your projects to complete changes":::
+To keep things simple, select the **Blank** preset.
+
+:::image type="content" source="images/hello-world/vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
+
+Click the **Create** button. Wait for the projects to be created and their dependencies to be restored.
+
+A banner at the top of the editor may ask to reload projects, click **Reload projects**:
+:::image type="content" source="images/hello-world/vs2022-project-reload.png" alt-text="Visual Studio banner offering to reload your projects to complete changes":::
 
 ## Building your app
 
 Now that you've generated the functional starting point of your multi-platform WinUI application, you can copy markup into it from the Hello World WinUI 3 project outlined in the [previous](/hub/apps/how-tos/hello-world-winui3.md) tutorial.
 
-1. Make sure Visual Studio has your WinUI 3 project open, then copy the child XAML elements from `MainWindow.xaml` in the WinUI 3 project to your `MainPage.xaml` file in the Uno Platform project. The `MainPage` view markup should look like this:
+You should see the following default file structure in your Solution Explorer:
+
+:::image type="content" source="images/hello-world/uno-file-structure.png" alt-text="Default file structure":::
+
+Make sure Visual Studio has your WinUI 3 project open, then copy the child XAML elements from `MainWindow.xaml` in the WinUI 3 project to your `MainPage.xaml` file in the Uno Platform project. The `MainPage` view XAML should look like this:
 
 ```xml
 <Page x:Class="HelloWorld.MainPage"
@@ -116,25 +117,21 @@ Now that you've generated the functional starting point of your multi-platform W
 </Page>
 ```
 
-
-
-2. To run the **WebAssembly** (Wasm) head:
-    - Right-click on the `MyApp.Wasm` project, select **Set as startup project**
-    - Press the `MyApp.Wasm` button to deploy the app
-3. To run the ASP.NET Hosted **WebAssembly** (Server) head:
-    - Right-click on the `MyApp.Server` project, select **Set as startup project**
-    - Press the `MyApp.Server` button to deploy the app
-4. To debug for **iOS**:
-    - Right-click on the `MyApp.Mobile` project, select **Set as startup project**
-    - In the "Debug toolbar" drop-down, select framework `net7.0-ios`:
+* To run the **WebAssembly** (Wasm) head:
+    - Right-click on the `HelloWorld.Wasm` project, select **Set as startup project**
+    - Press the `HelloWorld.Wasm` button to deploy the app
+    - If desired, you can use the `HelloWorld.Server` project as an alternative
+* To debug for **iOS**:
+    - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
+    - In the "Debug toolbar" drop-down, select an active iOS device (or the simulator if paired with a Mac):
 
       :::image type="content" source="images/hello-world/net7-ios-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
 
     - Select an active device
-5. To debug the **Android** platform:
-    - Right-click on the `MyApp.Mobile` project, select **Set as startup project**
-    - In the **Debug toolbar** drop-down, select framework `net7.0-android`
-    - Select an active device in the "Device" sub-menu
+* To debug the **Android** platform:
+    - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
+    - In the **Debug toolbar** drop-down, select either an active Android device or the emulator
+        - Select an active device in the "Device" sub-menu
 
 Now you're ready to start building your multi-platform application!
 
