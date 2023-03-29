@@ -7,8 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, app certification
 ms.localizationpriority: medium
 ---
-# Windows App Certification Kit tests
 
+# Windows App Certification Kit tests
 
 The [Windows App Certification Kit](windows-app-certification-kit.md) contains a number of tests that help ensure your app is ready to be published to the Microsoft Store. The tests are listed below with their criteria, details, and suggested actions in the case of failure.
 
@@ -38,9 +38,9 @@ Make sure you are running the test on a computer with large enough screen.
 
 If your app fails to launch and your test platform satisfies the prerequisites of [**ActivateApplication**](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication), you can troubleshoot the problem by reviewing the activation event log. To find these entries in the event log:
 
-1.  Open eventvwr.exe and navigate to the Application and Services Log\\Microsoft\\Windows\\Immersive-Shell folder.
-2.  Filter the view to show Event Ids: 5900-6000.
-3.  Review the log entries for info that might explain why the app didn't launch.
+1. Open eventvwr.exe and navigate to the Application and Services Log\\Microsoft\\Windows\\Immersive-Shell folder.
+2. Filter the view to show Event Ids: 5900-6000.
+3. Review the log entries for info that might explain why the app didn't launch.
 
 Troubleshoot the file with the problem, identify and fix the problem. Rebuild and re-test the app. You can also check if a dump file was generated in the Windows App Certification Kit log folder that can be used to debug your app.
 
@@ -428,7 +428,7 @@ Use the following table as guidance.
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters.</p>
 </td><td>
-<p>Refer to the <a href="/windows/apps/publish/app-package-requirements">App package requirements</a>.</p>
+<p>Refer to the <a href="/windows/apps/publish/publish-your-app/app-package-requirements">App package requirements</a>.</p>
 <p>In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length.</p>
 </td></tr>
 <tr><td>
@@ -441,7 +441,7 @@ Use the following table as guidance.
 <tr><td>
 <p>The string must be non-empty (greater than zero in length)</p>
 </td><td>
-<p>For more info, see <a href="/windows/apps/publish/app-package-requirements">App package requirements</a>.</p>
+<p>For more info, see <a href="/windows/apps/publish/publish-your-app/app-package-requirements">App package requirements</a>.</p>
 </td></tr>
 <tr><td>
 <p>There is no default resource specified in the "resources.pri" file.</p>
