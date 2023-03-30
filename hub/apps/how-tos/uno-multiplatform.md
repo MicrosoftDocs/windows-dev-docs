@@ -70,7 +70,7 @@ Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
 Search for Uno and select the Uno Platform App project template:
 
-:::image type="content" source="images/hello-world/uno-new-project.png" alt-text="Blank, packaged WinUI 3 C# desktop app":::
+:::image type="content" source="images/hello-world/uno-new-project.png" alt-text="Uno platform app":::
 
 Specify a project name, solution name, and directory. In this example, our Hello World MultiPlatform project belongs to a Hello World MultiPlatform solution, which will live in C:\Projects:
 
