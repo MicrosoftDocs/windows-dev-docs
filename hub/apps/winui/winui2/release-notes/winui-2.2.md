@@ -175,4 +175,4 @@ April 2019
 
 * [RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
 
-* [ScrollViewer](/uwp/api/microsoft.ui.xaml.controls.scrollviewer)
+* [ScrollView](/uwp/api/microsoft.ui.xaml.controls.scrollview)
