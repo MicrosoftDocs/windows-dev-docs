@@ -56,7 +56,7 @@ Launch Visual Studio 2022, then click `Continue without code`. Click `Extensions
 
 In the Extension Manager expand the **Online** node and search for `Uno`, install the `Uno Platform` extension or download it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022), then restart Visual Studio.
 
-:::image type="content" source="images/hello-world/uno-extensions.PNG" alt-text="Manage Extensions window in Visual Studio with Uno Platform extension as a search result":::
+:::image type="content" source="images/hello-world/uno-extensions.png" alt-text="Manage Extensions window in Visual Studio with Uno Platform extension as a search result":::
 
 ## Create an application
 
@@ -66,7 +66,7 @@ Soon enough, you will be able to reap the benefits of this approach, as you can 
 
 Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
-:::image type="content" source="images/hello-world/create-project.png" alt-text="Create a new project":::
+:::image type="content" source="images/hello-world/uno-create-project.png" alt-text="Create a new project":::
 
 Search for Uno and select the Uno Platform App project template:
 
