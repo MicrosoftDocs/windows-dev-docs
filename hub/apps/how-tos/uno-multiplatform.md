@@ -54,7 +54,7 @@ Launch Visual Studio 2022, then click `Continue without code`. Click `Extensions
 
 :::image type="content" source="images/hello-world/manage-extensions.png" alt-text="Visual Studio Menu bar item that reads manage extensions":::
 
-In the Extension Manager expand the **Online** node and search for `Uno`, install the `Uno Platform` extension or download it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022), then restart Visual Studio.
+In the Extension Manager expand the **Online** node and search for `Uno`, install the `Uno Platform` extension, or download it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022), then restart Visual Studio.
 
 :::image type="content" source="images/hello-world/uno-extensions.png" alt-text="Manage Extensions window in Visual Studio with Uno Platform extension as a search result":::
 
@@ -78,7 +78,7 @@ Specify a project name, solution name, and directory. In this example, our Hello
 
 Create a new C# solution using the **Uno Platform App** type from Visual Studio's **Start Page**. To avoid conflicting with the code from the previous tutorial, we'll give this solution a different name, "Hello World Uno".
 
-Now you'll choose a base template to take your Hello World application multi-platform. The Uno Platform App template comes with two preset options that allow you to quickly get started with either a Blank solution, or the Default configuration which includes references to the Uno.Material and Uno.Toolkit libraries, Uno.Extensions is used for dependency injection, configuration, navigation and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real world applications. 
+Now you'll choose a base template to take your Hello World application multi-platform. The Uno Platform App template comes with two preset options that allow you to quickly get started with either a Blank solution or the Default configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications. 
 
 :::image type="content" source="images/hello-world/vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
 
@@ -138,7 +138,7 @@ You can now build and run your app on any of the supported platforms. To do so, 
     - In the debug toolbar drop-down, select either an active Android device or the emulator
         - Select an active device in the "Device" sub-menu
 * To debug on Linux with Skia GTK:
-    - Right-click on the `HelloWorld.Skia.Gtk` project, select **Set as startup project**
+    - Right-click on the `HelloWorld.Skia.Gtk` project, and select **Set as startup project**
     - Press the `HelloWorld.Skia.Gtk` button to deploy the app
 
 
