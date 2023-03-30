@@ -43,7 +43,7 @@ Once you've [created](/hub/apps/how-tos/hello-world-winui3.md) a starter Hello W
 
     `uno-check`
 
-4. Follow the instructions indicated by the tool.
+4. Follow the instructions indicated by the tool. Because it needs to modify your system, you may be prompted for elevated permissions.
 
 ## Install the Uno Platform solution templates
 
@@ -67,21 +67,19 @@ Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
 Search for Uno and select the Uno Platform App project template:
 
-:::image type="content" source="images/hello-world/vsix.png" alt-text="Blank, packaged WinUI 3 C# desktop app":::
+:::image type="content" source="images/hello-world/uno-new-project.png" alt-text="Blank, packaged WinUI 3 C# desktop app":::
 
 Specify a project name, solution name, and directory. In this example, our Hello World MultiPlatform project belongs to a Hello World MultiPlatform solution, which will live in C:\Projects:
 
 :::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
 
-Create a new C# solution using the **Uno Platform App** type from Visual Studio's **Start Page**. You may need to choose a different name for your solution.
+Create a new C# solution using the **Uno Platform App** type from Visual Studio's **Start Page**. To avoid conflicting with the code from the previous tutorial, we'll give this solution a different name, "Hello World Uno".
 
 Now you'll choose a base template to take your Hello World application multi-platform. The Uno Platform App template comes with two preset options that allow you to quickly get started with either a Blank solution, or the Default configuration which includes references to the Uno.Material and Uno.Toolkit libraries, Uno.Extensions is used for dependency injection, configuration, navigation and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real world applications. 
 
-To keep things simple, select the **Blank** preset.
-
 :::image type="content" source="images/hello-world/vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
 
-Click the **Create** button. Wait for the projects to be created and their dependencies to be restored.
+To keep things simple, select the **Blank** preset. Then, click the **Create** button. Wait for the projects to be created and their dependencies to be restored.
 
 A banner at the top of the editor may ask to reload projects, click **Reload projects**:
 :::image type="content" source="images/hello-world/vs2022-project-reload.png" alt-text="Visual Studio banner offering to reload your projects to complete changes":::
@@ -117,21 +115,29 @@ Make sure Visual Studio has your WinUI 3 project open, then copy the child XAML 
 </Page>
 ```
 
+Launch the HelloWorld.Windows target. Observe that this WinUI app is identical to the previous tutorial.
+
+You can now build and run your app on any of the supported platforms. To do so, you can use the debug toolbar drop-down to select a target platform to deploy:
+
 * To run the **WebAssembly** (Wasm) head:
     - Right-click on the `HelloWorld.Wasm` project, select **Set as startup project**
     - Press the `HelloWorld.Wasm` button to deploy the app
     - If desired, you can use the `HelloWorld.Server` project as an alternative
 * To debug for **iOS**:
     - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
-    - In the "Debug toolbar" drop-down, select an active iOS device (or the simulator if paired with a Mac):
+    - In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.
 
       :::image type="content" source="images/hello-world/net7-ios-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
 
     - Select an active device
 * To debug the **Android** platform:
     - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
-    - In the **Debug toolbar** drop-down, select either an active Android device or the emulator
+    - In the debug toolbar drop-down, select either an active Android device or the emulator
         - Select an active device in the "Device" sub-menu
+* To debug on Linux with Skia GTK:
+    - Right-click on the `HelloWorld.Skia.Gtk` project, select **Set as startup project**
+    - Press the `HelloWorld.Skia.Gtk` button to deploy the app
+
 
 Now you're ready to start building your multi-platform application!
 
