@@ -16,7 +16,7 @@ content-type: how-to
 
 Once you've [created](/hub/apps/how-tos/hello-world-winui3.md) a starter Hello World WinUI 3 app, you might be wondering how to reach more users with a single codebase. This how-to will use Uno Platform to expand the reach of your existing application enabling reuse of the business logic and UI layer across native mobile, web, and desktop.
 
-:::image type="content" source="images/hello-world/uno-hello-world-web.png" alt-text="The 'Hello world' app running in the browser.":::
+:::image type="content" source="images/hello-world/uno-hello-world.png" alt-text="The 'Hello world' app running in the browser.":::
 
 ## Prerequisites
 
