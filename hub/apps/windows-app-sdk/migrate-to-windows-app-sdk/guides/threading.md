@@ -1,9 +1,9 @@
 ---
 title: Threading functionality migration
-description: This topic shows how to migrate the threading code in your Universal Windows Platform (UWP) application to the Windows App SDK.
+description: This topic describes how to migrate the threading code in a Universal Windows Platform (UWP) application to the Windows App SDK.
 ms.topic: article
-ms.date: 09/20/2021
-keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
+ms.date: 03/29/2023
+keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing, reentrancy
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
@@ -14,11 +14,13 @@ dev_langs:
 
 # Threading functionality migration
 
-This topic shows how to migrate the threading code in your Universal Windows Platform (UWP) application to the Windows App SDK.
+This topic describes how to migrate the threading code in a Universal Windows Platform (UWP) application to the Windows App SDK.
 
 ## Summary of API and/or feature differences
 
-UWP's threading model is *ASTA*, which blocks reentrancy to avoid certain categories of reentrancy bugs and deadlocks. The Windows App SDK's threading model is *STA*, and it doesn't have the same assurances around preventing reentrancy issues.
+UWP's threading model is a variation of the single-threaded apartment (STA) model called Application STA (ASTA), which blocks reentrancy and helps avoid various reentrancy bugs and deadlocks. An ASTA thread is also known as a UI thread.
+
+The Windows App SDK uses a standard STA threading model, which doesn't provide the same reentrancy safeguards.
 
 The **CoreDispatcher** type migrates to **DispatcherQueue**. And the **CoreDispatcher.RunAsync** method migrates to **DispatcherQueue.TryEnqueue**.
 
@@ -26,9 +28,9 @@ The **CoreDispatcher** type migrates to **DispatcherQueue**. And the **CoreDispa
 
 ## ASTA to STA threading model
 
-UWP's threading model is application single-threaded apartment (ASTA) (see the blog post [What is so special about the Application STA?](https://devblogs.microsoft.com/oldnewthing/20210224-00/?p=104901)). The ASTA threading model blocks reentrancy to avoid certain categories of reentrancy bugs and deadlocks. An ASTA thread is also known as a UI thread.
+For more detail on the ASTA threading model, see the blog post [What is so special about the Application STA?](https://devblogs.microsoft.com/oldnewthing/20210224-00/?p=104901).
 
-The Windows App SDK's threading model is [single-threaded apartment (STA)](/windows/win32/com/single-threaded-apartments), and the STA model doesn't have the same assurances around preventing reentrancy issues. So if the code in your UWP app assumes the non re-entrant behavior of the ASTA threading model, then your code might not behave as expected.
+As the Windows App SDK's STA threading model doesn't have the same assurances around preventing reentrancy issues, if your UWP app assumes the non re-entrant behavior of the ASTA threading model, then your code might not behave as expected.
 
 One thing to watch out for is reentrancy into XAML controls (see the example in [A Windows App SDK migration of the UWP Photo Editor sample app (C++/WinRT)](../case-study-2.md)). And for some crashes, such as access violations, the direct crash callstack is usually the right stack to use. But if it's a *stowed exception* crash&mdash;which has exception code: 0xc000027b&mdash;then more work is required to get the right callstack.
 

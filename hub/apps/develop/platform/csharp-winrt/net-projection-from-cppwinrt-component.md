@@ -1,7 +1,7 @@
 ---
 title: Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET apps
 description: In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET applications.
-ms.date: 11/19/2021
+ms.date: 03/23/2023
 ms.topic: article
 keywords: windows 10, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
@@ -278,7 +278,7 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
 5. Save and close the files you just edited, and build and run the console app. You should see the output below.
 
     ![Console NET5 output](images/console-output.png)
-    
+
 ## Known issues
 
 - When building the projection project, you might see an error like: *Error MSB3271 There was a mismatch between the processor architecture of the project being built "MSIL" and the processor architecture, "x86", of the implementation file "..\SimpleMathComponent.dll" for "..\SimpleMathComponent.winmd". This mismatch may cause runtime failures. Please consider changing the targeted processor architecture of your project through the Configuration Manager so as to align the processor architectures between your project and implementation file, or choose a winmd file with an implementation file that has a processor architecture which matches the targeted processor architecture of your project.*
@@ -289,6 +289,12 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
         <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
     </PropertyGroup>
     ```
+
+## Further considerations
+
+The C# projection (or interop) assembly that we showed how to create in this topic is quite simple&mdash;it doesn't have dependencies on other components. But to generate a C# projection for a C++/WinRT component that has references to Windows App SDK types, in the projection project you'd need to add a reference to the Windows App SDK NuGet package. If any such references are missing, then you'll see errors such as "Type \<T\> could not be found".
+
+Another thing that we do in this topic is to distribute the projection as as a NuGet package. That *is* currently necessary.
 
 ## Resources
 

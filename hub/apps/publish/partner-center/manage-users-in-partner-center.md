@@ -49,7 +49,7 @@ If you are signed in with a Manager account which also has [global administrator
 ## Invite outside users
 
 > [!IMPORTANT]
-> You must be signed in with a global administrator account in your Azure AD tenant in order to invite outside users.
+> You must be signed in with a global administrator account in your Azure AD tenant with an Owner or Manager role in order to invite outside users.
 
 1. From the **Users** page (under **Account settings**), select **Add users**, then choose **Invite users by email**.
 1. Enter one or more email addresses (up to ten), separated by commas or semicolons.

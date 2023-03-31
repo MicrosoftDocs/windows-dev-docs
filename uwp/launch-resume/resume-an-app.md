@@ -67,7 +67,7 @@ MainPage::MainPage()
 
 The system suspends your app a few seconds after the user switches to another app or to the desktop. The system resumes your app when the user switches back to it. When the system resumes your app, the content of your variables and data structures are the same as they were before the system suspended the app. The system restores the app where it left off. To the user, it appears as if the app has been running in the background.
 
-When your app handles the [**Resuming**](/uwp/api/windows.ui.xaml.application.resuming) event, your app may be been suspended for hours or days. It should refresh any content that might have become stale while the app was suspended, such as news feeds or the user's location.
+When your app handles the [**Resuming**](/uwp/api/windows.ui.xaml.application.resuming) event, your app may have been suspended for hours or days. It should refresh any content that might have become stale while the app was suspended, such as news feeds or the user's location.
 
 This is also a good time to restore any exclusive resources that you released when your app was suspended such as file handles, cameras, I/O devices, external devices, and network resources.
 
