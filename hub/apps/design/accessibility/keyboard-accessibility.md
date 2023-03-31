@@ -9,6 +9,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Keyboard accessibility  
 
 
@@ -261,6 +262,14 @@ A Windows Phone device typically doesn't have a dedicated, hardware keyboard. Ho
 Keyboard shortcuts aren't typically relevant for Windows Phone apps, because a SIP won't include Control or Alt keys.
 
 <span id="related_topics"></span>
+
+## Examples
+
+> [!TIP]
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see keyboard accessibility support in action](winui3gallery://item/AccessibilityKeyboard).
+
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ## Related topics
 

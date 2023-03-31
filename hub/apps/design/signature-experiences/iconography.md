@@ -82,3 +82,11 @@ Icon layering is a technique that you use to overlap two glyphs. We recommend us
 ### Localization
 
 Understand the cultural connotations of symbols. Although iconography doesn't require localization in most cases, certain icons might be acceptable in one culture but not in another. Validate your iconography choices with the context in which you'll use them.
+
+## Examples
+
+> [!TIP]
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see Iconography principles in action](winui3gallery:/item/Icons).
+
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
