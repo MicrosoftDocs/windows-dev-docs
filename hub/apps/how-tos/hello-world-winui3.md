@@ -21,14 +21,13 @@ In this how-to, we'll use Visual Studio 2022 and WinUI 3 / Windows App SDK to bu
 
 :::image type="content" source="images/hello-world/end-result.png" alt-text="The 'Hello world' app we're building.":::
 
-This how-to is targeted at **beginners** and makes no assumptions about your familiarity with Windows desktop development. 
+This how-to is targeted at **beginners** and makes no assumptions about your familiarity with Windows desktop development.
 
 <!--todo: The source code for the app we're building in this how-to is available [on Github](https://github.com/microsoft/WindowsAppSDK-Samples).-->
 
 ## Prerequisites
 
- - [Visual Studio 2022 and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
-
+- [Visual Studio 2022 and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 
 ## Create a new project using the WinUI 3 C# project template
 
@@ -102,7 +101,6 @@ Starting from the top and working our way down:
 | `MainWindow.xaml.cs`     | This code-behind file contains the business logic concerns associated with your app's main window.                                                                                                                                      |
 | `Package.appxmanifest`   | This [package manifest file](/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) lets you configure publisher information, logos, processor architectures, and other details that determine how your app appears in the Windows Store.                                                                                                               |
 
-
 ## Display "Hello world!"
 
 To display "Hello world!" instead of the "Click me" button, navigate to `MainWindow.xaml`. You should see a `StackPanel` control's XAML markup:
@@ -152,7 +150,7 @@ If you restart your app, you should see a red `Hello world!`:
 
 Add `this.Title = "Hello world!";` to your `MainWindow.xaml.cs` code-behind file:
 
-```csharp 
+```csharp
 public MainWindow()
 {
     this.InitializeComponent();
@@ -166,7 +164,6 @@ If you restart your app, you should now see `Hello world!` in both the body and 
 
 Congratulations! You've built your first Windows App SDK / WinUI 3 app.
 
-
 ## Recap
 
 Here's what you accomplished in this how-to:
@@ -178,7 +175,6 @@ Here's what you accomplished in this how-to:
  5. You modified both the presentation layer (XAML markup) and business logic (code-behind) to support a new **`TextBlock` control** within a **`StackPanel`**.
  6. You reviewed **reference docs** to better understand the **`StackPanel` control's properties**.
  7. You updated your main window's **title bar**.
-
 
 ## Full code files
 
@@ -290,7 +286,6 @@ namespace Hello_World
 }
 ```
 
-
 ## FAQ
 
 **Q: What does "packaged" mean?**
@@ -299,17 +294,17 @@ Windows apps can be delivered to end-users using a variety of application packag
 
 **Q: Can I use VS Code to build WinUI 3 apps?**
 
-Although technically possible, we strongly recommend using Visual Studio 2019 / 2022 to build desktop apps with WinUI 3 / Windows App SDK. See [the Windows developer FAQ](../get-started/windows-developer-faq.yml#do-i-need-to-use-visual-studio-to-build-winui-3-apps) for more information. 
+Although technically possible, we strongly recommend using Visual Studio 2019 / 2022 to build desktop apps with WinUI 3 / Windows App SDK. See [the Windows developer FAQ](../get-started/windows-developer-faq.yml#do-i-need-to-use-visual-studio-to-build-winui-3-apps) for more information.
 
 **Q: Can I use C++ to build WinUI 3 apps?**
 
 Yes! If you'd like to see this how-to updated with C++ guidance, [request an update on Github](https://github.com/MicrosoftDocs/windows-dev-docs/issues/new?title=Update%20request%3A%20How%20to%20build%20a%20hello%20world%20app&body=%28How%20can%20we%20help%3F%29&assignee=matchamatch) and we'll make it happen.
 
-
 ## Related
 
- - [Sample applications for Windows development](../get-started/samples.md)
- - [Windows developer FAQ](../get-started/windows-developer-faq.yml)
- - [Windows developer glossary](../get-started/windows-developer-glossary.md)
- - [Windows development best practices](../get-started/best-practices.md)
+- [Sample applications for Windows development](../get-started/samples.md)
+- [Windows developer FAQ](../get-started/windows-developer-faq.yml)
+- [Windows developer glossary](../get-started/windows-developer-glossary.md)
+- [Windows development best practices](../get-started/best-practices.md)
+- [How to target multiple platforms with your WinUI 3 app](uno-multiplatform.md)
 <!-- - [How to build a form with bidirectional data binding](todo) -->
