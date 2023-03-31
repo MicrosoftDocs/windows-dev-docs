@@ -51,7 +51,14 @@ The exact features of the title bar and the options available to customize it de
 Windowing functionality in the [Windows App SDK](./index.md) is through the [Microsoft.UI.Windowing.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, which is based on the Win32 HWND model. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows, including customization of the title bar. You can modify the default title bar that Windows provides so that it blends with the rest of your UI, or extend your app canvas into the title bar area and provide your own title bar content.
 
 > [!IMPORTANT]
-> Title bar customization APIs are currently supported on Windows 11 only. We recommend that you check [AppWindowTitleBar.IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs to ensure your app doesn't crash on other versions of Windows.
+> Support for title bar customization APIs varies across different versions of Windows and different versions of Windows App SDK. This table describes the details.
+>
+> | Customization option | Windows 10 | Windows 11 |
+> | - | - | - |
+> | Simple customization | Partially, since Windows App SDK 1.2 (Color customization is not supported) | Yes, all versions of Windows App SDK |
+> | Full customization | Yes, since Windows App SDK 1.2 | Yes, all versions of Windows App SDK |
+>
+> We recommend that you check [AppWindowTitleBar.IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs to ensure your app doesn't crash on other versions of Windows.
 
 For XAML apps that use WinUI 3, XAML Window APIs provide a simpler way to customize the title bar that also works on Windows 10. These APIs can be used in conjunction with the Windows App SDK APIs (see the WinUI 3 tab).
 
@@ -68,13 +75,13 @@ You can use AppWindow APIs with any UI framework that the Windows App SDK suppor
 
 Windowing functionality in [WinUI 3](./index.md) is through the [Microsoft.UI.Xaml.Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class, which is based on the Win32 HWND model. The Window class includes APIs that let you replace the standard title bar with your own custom content.
 
-WinUI 3 is also part of the Windows App SDK, so both the Window class and the AppWindow class are available to customize the title bar. You can pass the window handle of the XAML Window to the AppWindow object and use the AppWindow functionality in conjunction with the Window APIs (see the Windows App SDK tab). However, title bar customization with AppWindow is supported only on Windows 11.
+WinUI 3 is also part of the Windows App SDK, so both the Window class and the AppWindow class are available to customize the title bar. You can pass the window handle of the XAML Window to the AppWindow object and use the AppWindow functionality in conjunction with the Window APIs (see the Windows App SDK tab).
 
-This table describes the differences between Window and AppWindow. Use WinUI 3 Window titlebar customization APIs if you are creating a WinUI 3 desktop app that needs to run on OS versions prior to Windows 11.
+This table describes the differences between Window and AppWindow.
 
 | Feature | Window class | AppWindow class |
 | - | - | - |
-| Windows 10 support | Yes | No |
+| Windows 10 support | Yes | Partially, since Windows App SDK 1.2 (see the Windows App SDK tab). |
 | Simple customization | Title | Title, Colors, Icon and System menu |
 | Replace system title bar | Window.ExtendsContentIntoTitleBar | AppWindowTitleBar.ExtendsContentIntoTitleBar |
 | Set title bar content | Define your title bar in a XAML UIElement, then call SetTitleBar(UIElement). | Write custom code to calculate and set drag rectangles, including when the window size changes. |
@@ -119,7 +126,7 @@ If you want only to customize the title bar colors or icon, you can set properti
 
 ### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
+> (Partially supported on Windows 10 since Windows App SDK 1.2 and fully supported on Windows 11. See [Platform options](#platform-options) for more info.)
 
 These examples show how to get an instance of [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) and set its properties.
 
@@ -158,7 +165,8 @@ This example shows how to get an instance of [AppWindowTitleBar](/windows/window
 private bool SetTitleBarColors()
 {
     // Check to see if customization is supported.
-    // Currently only supported on Windows 11.
+    // The method returns true on Windows 10 since Windows App SDK 1.2, and on all versions of
+    // Windows App SDK on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
         if (m_AppWindow is null)
@@ -168,6 +176,8 @@ private bool SetTitleBarColors()
         var titleBar = m_AppWindow.TitleBar;
 
         // Set active window colors
+        // Note: No effect when app is running on Windows 10 since color customization is not
+        // supported.
         titleBar.ForegroundColor = Colors.White;
         titleBar.BackgroundColor = Colors.Green;
         titleBar.ButtonForegroundColor = Colors.White;
@@ -178,6 +188,8 @@ private bool SetTitleBarColors()
         titleBar.ButtonPressedBackgroundColor = Colors.LightGreen;
 
         // Set inactive window colors
+        // Note: No effect when app is running on Windows 10 since color customization is not
+        // supported.
         titleBar.InactiveForegroundColor = Colors.Gainsboro;
         titleBar.InactiveBackgroundColor = Colors.SeaGreen;
         titleBar.ButtonInactiveForegroundColor = Colors.Gainsboro;
@@ -311,7 +323,7 @@ To hide the default title bar and extend your content into the title bar area, s
 
 ### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
+> (Supported on Windows 10 since Windows App SDK 1.2 and fully supported on Windows 11. See [Platform options](#platform-options) for more info.)
 
 This example shows how to get the [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) and set the [ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property to `true`.
 
@@ -331,7 +343,8 @@ public MainWindow()
 
     m_AppWindow = GetAppWindowForCurrentWindow();
     // Check to see if customization is supported.
-    // Currently only supported on Windows 11.
+    // The method returns true on Windows 10 since Windows App SDK 1.2, and on all versions of
+    // Windows App SDK on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
         var titleBar = m_AppWindow.TitleBar;
@@ -340,9 +353,8 @@ public MainWindow()
     }
     else
     {
-        // Title bar customization using these APIs is currently
-        // supported only on Windows 11. In other cases, hide
-        // the custom title bar element.
+        // In the case that title bar customization is not supported, hide the custom title bar
+        // element.
         AppTitleBar.Visibility = Visibility.Collapsed;
     }
 }
@@ -405,7 +417,7 @@ To learn more about acceptable title bar content and recommended UI patterns, se
 
 ### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
+> (Supported on Windows 10 since Windows App SDK 1.2 and fully supported on Windows 11. See [Platform options](#platform-options) for more info.)
 
 When you extend your content into the title bar area, the system by default retains the entire title bar area except for the caption buttons as the drag region. If you don't place interactive content in your title bar, you can leave this default drag region as-is. If you place interactive content in your title bar, you need to specify the drag regions, which we cover in the next section.
 
@@ -540,7 +552,7 @@ You can place interactive controls, like buttons, menus, or a search box, in the
 
 ### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
+> (Supported on Windows 10 since Windows App SDK 1.2 and fully supported on Windows 11. See [Platform options](#platform-options) for more info.)
 
 If you add interactive content in the title bar area, you should define explicit drag regions around that content so that users can interact with it. After you set a custom drag region, the default drag region is removed and the system does not reserve any mandatory drag region. You are responsible for ensuring that there is enough space in your title bar for your users to move your window.
 
@@ -598,7 +610,8 @@ public MainWindow()
     m_AppWindow = GetAppWindowForCurrentWindow();
 
     // Check to see if customization is supported.
-    // Currently only supported on Windows 11.
+    // The method returns true on Windows 10 since Windows App SDK 1.2, and on all versions of
+    // Windows App SDK on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
         var titleBar = m_AppWindow.TitleBar;
@@ -608,9 +621,8 @@ public MainWindow()
     }
     else
     {
-        // Title bar customization using these APIs is currently
-        // supported only on Windows 11. In other cases, hide
-        // the custom title bar element.
+        // In the case that title bar customization is not supported, hide the custom title bar
+        // element.
         AppTitleBar.Visibility = Visibility.Collapsed;
 
         // Show alternative UI for any functionality in
@@ -622,7 +634,8 @@ public MainWindow()
 private void AppTitleBar_Loaded(object sender, RoutedEventArgs e)
 {
     // Check to see if customization is supported.
-    // Currently only supported on Windows 11.
+    // The method returns true on Windows 10 since Windows App SDK 1.2, and on all versions of
+    // Windows App SDK on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
         SetDragRegionForCustomTitleBar(m_AppWindow);
@@ -632,7 +645,8 @@ private void AppTitleBar_Loaded(object sender, RoutedEventArgs e)
 private void AppTitleBar_SizeChanged(object sender, SizeChangedEventArgs e)
 {
     // Check to see if customization is supported.
-    // Currently only supported on Windows 11.
+    // The method returns true on Windows 10 since Windows App SDK 1.2, and on all versions of
+    // Windows App SDK on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported()
         && m_AppWindow.TitleBar.ExtendsContentIntoTitleBar)
     {
@@ -680,7 +694,8 @@ private double GetScaleAdjustment()
 private void SetDragRegionForCustomTitleBar(AppWindow appWindow)
 {
     // Check to see if customization is supported.
-    // Currently only supported on Windows 11.
+    // The method returns true on Windows 10 since Windows App SDK 1.2, and on all versions of
+    // Windows App SDK on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported()
         && appWindow.TitleBar.ExtendsContentIntoTitleBar)
     {
@@ -784,7 +799,7 @@ Here, the [AutoSuggestBox](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) ele
 
 #### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
+> (Supported on Windows 10 since Windows App SDK 1.2 and fully supported on Windows 11. See [Platform options](#platform-options) for more info.)
 
 The system reserves the upper-left or upper-right corner of the app window for the system caption buttons (minimize, maximize/restore, close). The system retains control of the caption button area to guarantee that minimum functionality is provided for dragging, minimizing, maximizing, and closing the window. The system draws the Close button in the upper-right for left-to-right languages and the upper-left for right-to-left languages.
 
@@ -891,7 +906,7 @@ When you extend your app content into the title bar area, you can make the backg
 
 ### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
+> (Supported on Windows 10 since Windows App SDK 1.2 and fully supported on Windows 11. See [Platform options](#platform-options) for more info.)
 
 These title bar properties can be transparent:
 
@@ -1027,7 +1042,7 @@ private void CoreWindow_Activated(CoreWindow sender, WindowActivatedEventArgs ar
 
 ### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
+> (Supported on Windows 10 since Windows App SDK 1.2 and fully supported on Windows 11. See [Platform options](#platform-options) for more info.)
 
 To reset or switch to the system title bar while your app is running, you can call [AppWindowTitleBar.ResetToDefault](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.resettodefault).
 
@@ -1051,7 +1066,7 @@ If you add support for _full screen_ or _compact overlay_ modes to your app, you
 
 ### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
+> (Supported on Windows 10 since Windows App SDK 1.2 and fully supported on Windows 11. See [Platform options](#platform-options) for more info.)
 
 When your app runs in _full screen_ mode, the system hides the title bar and caption control buttons. You can handle the [AppWindow.Changed](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed) event and check the event args [DidPresenterChange](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didpresenterchange) property to determine if you should show, hide, or change the title bar in response to a new window presentation.
 
@@ -1069,7 +1084,8 @@ public MainWindow()
 private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
 {
     // Check to see if customization is supported.
-    // Currently only supported on Windows 11.
+    // The method returns true on Windows 10 since Windows App SDK 1.2, and on all versions of
+    // Windows App SDK on Windows 11.
     if (args.DidPresenterChange
         && AppWindowTitleBar.IsCustomizationSupported())
     {
@@ -1163,7 +1179,7 @@ This examples shows all the code described in the Full customization section.
 
 ### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
+> (Supported on Windows 10 since Windows App SDK 1.2 and fully supported on Windows 11. See [Platform options](#platform-options) for more info.)
 
 ```xaml
 <Window
@@ -1255,7 +1271,8 @@ namespace WASDK_ExtendedTitleBar
             m_AppWindow.Changed += AppWindow_Changed;
 
             // Check to see if customization is supported.
-            // Currently only supported on Windows 11.
+            // The method returns true on Windows 10 since Windows App SDK 1.2, and on all versions
+            // of Windows App SDK on Windows 11.
             if (AppWindowTitleBar.IsCustomizationSupported())
             {
                 var titleBar = m_AppWindow.TitleBar;
@@ -1265,9 +1282,8 @@ namespace WASDK_ExtendedTitleBar
             }
             else
             {
-                // Title bar customization using these APIs is currently
-                // supported only on Windows 11. In other cases, hide
-                // the custom title bar element.
+                // In the case that title bar customization is not supported, hide the custom title
+                // bar element.
                 AppTitleBar.Visibility = Visibility.Collapsed;
 
                 // Show alternative UI for any functionality in
