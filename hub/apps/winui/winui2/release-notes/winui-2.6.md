@@ -122,7 +122,7 @@ A new versioning system has also been introduced that lets you revert to the pre
 
 ## SplitButton styles for CommandBar
 
-A new `SplitButtonCommandBarStyle` provides the ability to apply the look and feel of an [AppBarButton](/windows/winui/api/microsoft.ui.xaml.controls.appbarbutton) to a [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton) control. This style is automatically applied to a SplitButton when it's placed inside of an [AppBarElementContainer](/windows/winui/api/microsoft.ui.xaml.controls.appbarelementcontainer) class (allows an element that doesn't implement [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) to be displayed in a command bar), and then placed inside of a [CommandBar](/uwp/api/windows.ui.xaml.controls.commandbar) control.
+A new `SplitButtonCommandBarStyle` provides the ability to apply the look and feel of an [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) to a [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton) control.
 
 ## Samples
 

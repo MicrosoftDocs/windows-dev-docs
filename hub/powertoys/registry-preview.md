@@ -1,21 +1,41 @@
 ---
-title: PowerToys Registry Preview utility for Windows
-description: A quick little utility to visualize and edit complex Windows Registry files.
-ms.date: 3/22/2023
+title: PowerToys Registry Preview for Windows
+description: Registry Preview is a utility to visualize and edit Windows Registry files.
+ms.date: 03/30/2023
 ms.topic: article
+ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Registry Preview, Win]
 ---
 
-# Registry Preview utility
+# Registry Preview
 
-Registry Preview is Windows application that opens an existing REG file to create a visual preview of how this data will look, if it were imported into the Registry.
+PowerToys **Registry Preview** enables you to easily visualize and edit complex Windows Registry files. It also allows you to write the registry changes to Windows Registry.
 
-![Registry Preview screenshot](https://user-images.githubusercontent.com/18704482/227104250-c5101f74-32af-45ac-869a-579298e869b3.png)
 
-## How to use Registry Preview
+![Registry Preview screenshot.](../images/pt-registrypreview.png)
 
-Once installed and enabled in PowerToys Settings, a right-click on any .REG file in File Explorer will now show a Preview option on the popup context menu. Selecting Preview will open the file in Registry Preview, showing this file's contents as plain text, Keys in a hierarchical tree, and Values in a grid-based format.  
+## Getting started
 
-With any .REG file open, by editing the displayed text file, the graphical representation of the data will update and reflect editing  in real time; changes made within the application can be saved to the existing or even to a new file.  .REG files opened in Registry Preview can also merged into the Registry by a single press of a toolbar.
+### Enable
 
-The application can also be launched from the PowerToys launcher or settings page, opening to an "empty" environment and offering the ability to open an existing .REG file directly from with in the Registry Preview window.
+To start using Registry Preview, enable it in the PowerToys Settings (Registry Preview section).
+
+### How to activate
+
+Select one or more .reg files in Windows File Explorer. Right-click on the selected file(s), choose **Show more options** from the menu to expand your list of menu options, then select **Preview** to open Registry Preview. **Registry Preview** can also be launched from PowerToys Settings' Registry Preview section.
+
+**Note:** Currently, there is a 10MB file limit for opening Windows Registry files with **Registry Preview**. If file contains invalid content, **Registry Preview** will show appropriate message. 
+
+## How to use
+
+After opening Windows Registry file, file content is shown on the left side of the **Registry Preview** and this content can be updated at any time.
+
+Visual tree representation of the registry keys listed in the file is shown in top-right area of the **Registry Preview** window. Visual tree will be automatically updated on file content change inside the app. By clicking on specific registri key in visual tree, registry values will be shown in bottom-right are of the app.
+
+Pressing `Edit file...` button will open loaded file in `Notepad`.
+
+If loaded file is being edited outside the application, file content can be reloaded by clicking `Reload from file` button.
+
+Registry changes listed in the loaded file can be written to Windows Registry by pressing `Write to Registry` button. Windows Registry Editor will be opened and will ask for confirmation before writing changes. UAC prompt will appear to open Windows Registry Editor.
+
+

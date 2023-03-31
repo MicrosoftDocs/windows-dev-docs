@@ -1,7 +1,7 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 11/02/2022
+ms.date: 03/28/2023
 ms.topic: article
 ms.prod: windows
 ms.technology: arm
@@ -93,6 +93,10 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 - When a user installs your app on an Arm device from the Microsoft Store, Windows 11 will automatically select the optimal version of your app that is available. If you submit x86, Arm32, and Arm64 versions of your app to the Microsoft Store, the operating system will automatically install the Arm64 version of your app. If you only submit x86 and Arm32 versions of your app, the operating system will install the Arm32 version. If you only submit the x86 version of your app, the operating system will install that version and run it under emulation.
 - When given the choice of app architecture, choose the 32-bit x86 version to run the app's 32-bit version on a Windows on Arm PC. If an app's x64 Win32 version doesn't work, most apps will have an x86 version available.
 - For more information about architectures, see [App package architectures](/windows/msix/package/device-architecture).
+
+## App Assure Support for migrating to Arm64
+
+For help when building or updating applications to support Arm64-based devices, developers can utilize App Assure (part of FastTrack) - an application compatibility program that helps to unblock application issues by providing technical support. Visit [aka.ms/AppAssure](https://aka.ms/AppAssure).
 
 ## Additional resources
 
