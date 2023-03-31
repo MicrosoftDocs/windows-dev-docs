@@ -58,6 +58,8 @@ Windowing functionality in the [Windows App SDK](./index.md) is through the [Mic
 > | Simple customization | Partially, since Windows App SDK 1.2 (Color customization is not supported) | Yes, all versions of Windows App SDK |
 > | Full customization | Yes, since Windows App SDK 1.2 | Yes, all versions of Windows App SDK |
 >
+> For information on which APIs are supported on Windows 10 since Windows App SDK 1.2, refer to the [Windows App SDK Release Notes](/windows/apps/windows-app-sdk/stable-channel#version-12-stable) page under "Windowing" section for details.
+>
 > We recommend that you check [AppWindowTitleBar.IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs to ensure your app doesn't crash on other versions of Windows.
 
 For XAML apps that use WinUI 3, XAML Window APIs provide a simpler way to customize the title bar that also works on Windows 10. These APIs can be used in conjunction with the Windows App SDK APIs (see the WinUI 3 tab).
