@@ -28,7 +28,7 @@ Select one or more .reg files in Windows File Explorer. Right-click on the selec
 
 ## How to use
 
-After opening Windows Registry file, file content is shown on the left side of the **Registry Preview**. By default, file content is read-only. This can be changed by unchecking `Read only` checkbox bellow the file content. When `Read only` checkbox is unchecked, file content can be changed manually.
+After opening Windows Registry file, file content is shown on the left side of the **Registry Preview** and this content can be updated at any time.
 
 Visual tree representation of the registry keys listed in the file is shown in top-right area of the **Registry Preview** window. Visual tree will be automatically updated on file content change inside the app. By clicking on specific registri key in visual tree, registry values will be shown in bottom-right are of the app.
 
