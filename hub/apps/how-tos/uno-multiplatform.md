@@ -2,7 +2,7 @@
 title: How to target multiple platforms with your WinUI 3 app
 description: Reach more users with a single WinUI 3 / .NET codebase using Uno Platform.
 ms.topic: article
-ms.date: 3/14/2023
+ms.date: 3/31/2023
 keywords: uno platform, winui
 ms.author: aashcraft
 author: alvinashcraft
@@ -14,7 +14,7 @@ content-type: how-to
 
 # How to target multiple platforms with your WinUI 3 app
 
-Once you've [created](/windows/apps/how-tos/hello-world-winui3) a starter Hello World WinUI 3 app, you might be wondering how to reach more users with a single codebase. This how-to will use [Uno Platform](https://platform.uno/) to expand the reach of your existing application enabling reuse of the business logic and UI layer across native mobile, web, and desktop.
+Once you've [created](hello-world-winui3.md) a starter Hello World WinUI 3 app, you might be wondering how to reach more users with a single codebase. This how-to will use [Uno Platform](https://platform.uno/) to expand the reach of your existing application enabling reuse of the business logic and UI layer across native mobile, web, and desktop.
 
 :::image type="content" source="images/hello-world/uno-hello-world.png" alt-text="The 'Hello world' app running in the browser.":::
 
@@ -89,7 +89,7 @@ A banner at the top of the editor may ask to reload projects, click **Reload pro
 
 ## Building your app
 
-Now that you've generated the functional starting point of your multi-platform WinUI application, you can copy markup into it from the Hello World WinUI 3 project outlined in the [previous](/windows/apps/how-tos/hello-world-winui3) tutorial.
+Now that you've generated the functional starting point of your multi-platform WinUI application, you can copy markup into it from the Hello World WinUI 3 project outlined in the [previous](hello-world-winui3.md) tutorial.
 
 You should see the following default file structure in your Solution Explorer:
 
