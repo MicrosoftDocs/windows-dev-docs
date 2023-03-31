@@ -50,7 +50,7 @@ Once you've [created](/hub/apps/how-tos/hello-world-winui3.md) a starter Hello W
 
 ## Install the Uno Platform solution templates
 
-Launch Visual Studio 2022, then click `Continue without code`. Click `Extensions` -> `Manage Extensions` from the Menu Bar.
+Launch Visual Studio, then click `Continue without code`. Click `Extensions` -> `Manage Extensions` from the Menu Bar.
 
 :::image type="content" source="images/hello-world/manage-extensions.png" alt-text="Visual Studio Menu bar item that reads manage extensions":::
 
