@@ -65,7 +65,9 @@ items:
   - name: How tos
     items: 
       - name: Build a Hello World app with C# & WinUI 3
-        href: how-tos/hello-world-winui3.md     
+        href: how-tos/hello-world-winui3.md
+      - name: Target multiple platforms with WinUI 3
+        href: how-tos/uno-multiplatform.md
   - name: Design
     href: design/toc.yml
   - name: Develop
