@@ -35,13 +35,27 @@ Below is the full list of supported commands and options for the `wt` command li
 
 | Option | Description |
 | ------ | ----------- |
-| `--help`, `-h`, `-?`, `/?` | Displays the help message. |
-| `--maximized`, `-M` | Launches the terminal maximized. |
-| `--fullscreen`, `-F` | Launches the terminal as full screen. |
-| `--focus`, `-f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
-| `--window`, `-w` `<window-id>` | Launches the terminal in a specific window. |
+| `--help, -h, -?, /?` | Displays the help message. |
+| `--maximized, -M` | Launches the terminal maximized. |
+| `--fullscreen, -F` | Launches the terminal as full screen. |
+| `--focus, -f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
+| `--pos x,y` | Launches the at the given position. `x` or `y` can be omitted, to use the default value from the settings. |
+| `--window, -w window-id` | Runs the given command in a specific window. |
+
+The `--window` parameter can be used to send commands to existing terminal windows.
+
+`window-id` may either be the integer ID of a window, or the name of a window. It also accepts the following reserved values:
+* `new` or `-1`: Always run this command in a new window
+* `last` or `0`: Always run this command in the most recently used window
+
+If no window exists with the given `window-id`, then a new window will be
+created with that id/name.
+
+For example, running `wt -w _quake` will open a new ["quake window"](./tips-and-tricks.md#quake-mode). Running that command again will open a new tab in the existing quake window.
 
 ### New tab command
+
+Used to create a new tab. See also the [`newTab` action](./customize-settings/actions.md#new-tab).
 
 | Command | Parameter | Description | Values |
 | ------- | ---------- | ----------- | ------ |
@@ -50,11 +64,16 @@ Below is the full list of supported commands and options for the `wt` command li
 | `new-tab`, `nt` | `commandline` | Creates a new tab based on the command line assigned. | Executable with optional commands |
 | `new-tab`, `nt` | `--title` | Creates a new tab with the title assigned. | Text to use as the tab title |
 | `new-tab`, `nt` | `--tabColor` | Creates a new tab with the tab color assigned. | Hex color as #RGB or #RRGGBB |
+| `new-tab`, `nt` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `true` |  |
+| `new-tab`, `nt` | `--useApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `false` |  |
+| `new-tab`, `nt` | `--colorScheme scheme-name` | Override the profile's `colorScheme` setting, and set it to the scheme from the settings with the name `scheme-name` | The name of a color scheme in the settings |
 
 > [!TIP]
 > If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/profile-advanced.md#suppress-title-changes) option by setting it to `true`.
 
 ### Split-pane command
+
+Used to create a new split pane. See also the [`splitPane` action](./customize-settings/actions.md#split-a-pane).
 
 | Command | Parameter | Description | Values |
 | ------- | ---------- | ----------- | ------ |
@@ -66,8 +85,13 @@ Below is the full list of supported commands and options for the `wt` command li
 | `split-pane`, `sp` | `--size, -s size`| Creates a new split window pane with the assigned size. | Float that specifies the portion of the parent pane to use represented by a decimal. For example, `.4` to represent 40% of the parent pane. |
 | `split-pane`, `sp` | `commandline` | Creates a new split window pane based on the assigned command line. | Executable with optional commands  |
 | `split-pane`, `sp` | `--duplicate, -D` | Creates a new split window pane that is a duplicate of the current pane. | N/A. No additional values to assign. |
+| `split-pane`, `sp` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `true` |  |
+| `split-pane`, `sp` | `--useApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `false` |  |
+| `split-pane`, `sp` | `--colorScheme scheme-name` | Override the profile's `colorScheme` setting, and set it to the scheme from the settings with the name `scheme-name` | The name of a color scheme in the settings |
 
 ### Focus-tab command
+
+Used to focus a specific tab within the window. See also the [`switchToTab` action](./customize-settings/actions.md#open-a-specific-tab).
 
 | Command | Parameter | Description | Values |
 | ------- | ---------- | ----------- | ------ |
@@ -75,12 +99,39 @@ Below is the full list of supported commands and options for the `wt` command li
 
 ### Move-focus command
 
+Used to move focus within the window. See also the [`moveFocus` action](./customize-settings/actions.md#move-pane-focus).
+
 | Command | Parameter | Description | Values |
 | ------- | ---------- | ----------- | ------ |
-| `move-focus`, `mf` | `direction` |  Move focus between panes in the given direction. | `up`, `down`, `left`, or `right` values accepted. |
+| `move-focus`, `mf` | `<direction>` |  Move focus between panes. | See below for accepted `direction` values |
 
-> [!NOTE]
-> When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
+Accepted `direction` values
+* `up`, `down`, `left`, or `right` move focus in the given direction.
+* `first` moves focus to the first leaf pane in the tree.
+* `previous` moves the focus to the most recently used pane before the current pane.
+* `nextInOrder`, `previousInOrder` moves the focus to the next or previous pane in order of creation.
+
+### Move-pane command
+
+Used to move a pane within the window. See also the [`movePane` action](./customize-settings/actions.md#move-pane).
+
+| Command | Parameter | Description | Values |
+| ------- | ---------- | ----------- | ------ |
+| `move-pane`, `mp` | `--tab,-t <index>` |  Move the active pane to the given tab in the window | The zero-indexed index of the tab to move the pane to. |
+
+### Swap-pane command
+
+Used to swap the position of two panes within the window. See also the [`swapPane` action](./customize-settings/actions.md#swap-panes).
+
+| Command | Parameter | Description | Values |
+| ------- | ---------- | ----------- | ------ |
+| `swap-pane` | `<direction>` |  Swap the pane with the pane in the given direction | See below for accepted `direction` values |
+
+Accepted `direction` values (these are the same values as the `move-focus` sub command)
+* `up`, `down`, `left`, or `right`: Swap the active pane with the one in the given direction.
+* `first`: Swap the active pane with the first leaf pane in the tree.
+* `previous`: Swap the active pane with the most recently used pane before the current pane.
+* `nextInOrder`, `previousInOrder`: Swap the active pane with the next or previous pane in order of creation.
 
 ## Command line argument examples
 
