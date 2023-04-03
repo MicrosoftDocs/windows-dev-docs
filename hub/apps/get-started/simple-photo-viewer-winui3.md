@@ -851,7 +851,7 @@ Now it's time to move our sketch to a higher level of fidelity; and that means r
         using namespace Microsoft::UI::Xaml::Controls;
     }
     ...
-    void MainWindow::ImageGridView_ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
+    void MainWindow::ImageGridView_ContainerContentChanging(ListViewBase const& sender, ContainerContentChangingEventArgs const& args)
     {
         if (args.InRecycleQueue())
         {
@@ -866,7 +866,7 @@ Now it's time to move our sketch to a higher level of fidelity; and that means r
         }
     }
 
-    fire_and_forget MainWindow::ShowImage(ListViewBase sender, ContainerContentChangingEventArgs args)
+    fire_and_forget MainWindow::ShowImage(ListViewBase const& sender, ContainerContentChangingEventArgs const& args)
     {
         if (args.Phase() == 1)
         {
