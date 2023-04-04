@@ -48,7 +48,7 @@ Throughout this guide, you'll find deep links to relevant documentation&mdash;or
     </tr>
     <tr>
         <td>Universal Windows Platform app development</td>
-        <td><a href="https://developer.microsoft.com/windows/apps">How-to guides for Windows 10 apps</a></td>
+        <td><a href="/windows/uwp/">Universal Windows Platform documentation</a></td>
     </tr>
     <tr>
         <td>How-to guides for UWP games</td>
@@ -94,7 +94,7 @@ Throughout this guide, you'll find deep links to relevant documentation&mdash;or
 
 ### Partner Center
 
-[Registering a developer account in Partner Center](https://developer.microsoft.com/store/register) is the first step towards publishing your Windows game. A developer account lets you reserve your game's name, and submit free or paid games to the Microsoft Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world.
+[Registering as a developer in Partner Center](https://developer.microsoft.com/microsoft-store/register/) is the first step towards publishing your Windows game. A developer account lets you reserve your game's name, and submit free or paid games to the Microsoft Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world.
 
 Microsoft also offers several developer programs to help you develop and publish Windows games. We recommend seeing whether any are right for you before registering for a Partner Center account. For more info, go to [Developer programs](#developer-programs)
 
@@ -1226,8 +1226,8 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
         <td><a href="/previous-versions/windows/desktop/gamemode/game-mode-portal">Game Mode</a></td>
     </tr>
     <tr>
-        <td>Get Windows Performance Toolkit (WPT) from Windows 10 SDK</td>
-        <td><a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">Windows 10 SDK</a></td>
+        <td>Get the Windows Performance Toolkit (WPT)</td>
+        <td><a href="/windows-hardware/test/wpt/">Windows Performance Toolkit</a></td>
     </tr>
     <tr>
         <td>Get Windows Performance Toolkit (WPT) from Windows ADK</td>
@@ -1427,7 +1427,7 @@ After you've finished development and shipped your game, it's not *game over*. Y
     </tr>
     <tr>
         <td>Ways to promote your game</td>
-        <td><a href="https://developer.microsoft.com/store/promote-your-apps">Attract customers and promote your apps</a></td>
+        <td><a href="/windows/apps/publish/attract-customers-and-promote-your-apps">Attract customers and promote your apps</a></td>
     </tr>
 </table>
 
