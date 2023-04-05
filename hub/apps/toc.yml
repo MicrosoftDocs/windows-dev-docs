@@ -86,8 +86,10 @@ items:
             href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
           - name: "Release channels"
             href: windows-app-sdk/release-channels.md
-          - name: "Downloads"
+          - name: "Latest downloads"
             href: windows-app-sdk/downloads.md
+          - name: "Older downloads"
+            href: windows-app-sdk/older-downloads.md
           - name: "Preview and experimental guidance"
             items:
               - name: "Install tools for preview and experimental channels of the Windows App SDK"
