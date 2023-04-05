@@ -2,7 +2,7 @@
 title: Tutorial--Create a simple photo viewer with WinUI 3
 description: In this topic we walk through the process of building a simple WinUI 3 app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 ms.topic: article
-ms.date: 03/31/2023
+ms.date: 04/05/2023
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
 ms.author: stwhi
 author: stevewhims
@@ -34,7 +34,7 @@ In Visual Studio, create your choice of a new C# or C++ project from the **Blank
 
 The app that we'll be building carries image files around with it in the form of asset files; and those are the photos that it displays. In this section you'll add those assets to your project. But first you'll need to obtain a copy of the files.
 
-1. So clone (or download as a `.zip`) the Windows App SDK samples repo (see [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples)). Having done that, you'll find the asset files that we'll be using in the folder `\WindowsAppSDK-Samples\Samples\PhotoEditor\cs-winui\Assets\Samples`. If you want to see them in the repo online, then you can visit [WindowsAppSDK-Samples/Samples/PhotoEditor/cs-winui/Assets/Samples/](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/PhotoEditor/cs-winui/Assets/Samples).
+1. So clone (or download as a `.zip`) the Windows App SDK samples repo (see [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples)). Having done that, you'll find the asset files that we'll be using in the folder `\WindowsAppSDK-Samples\Samples\PhotoEditor\cs-winui\Assets\Samples` (use this folder for both a C# and a C++/WinRT project). If you want to see those files in the repo online, then you can visit [WindowsAppSDK-Samples/Samples/PhotoEditor/cs-winui/Assets/Samples/](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/PhotoEditor/cs-winui/Assets/Samples).
 
 2. In **File Explorer**, select that **Samples** folder, and copy it to the clipboard.
 
@@ -728,7 +728,7 @@ You might be wondering whether it's best to center the **GridView** itself, or t
     </GridView>
     ```
 
-1. And now we'll set its [**HorizontalAlignment**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.horizontalalignment) property to *Center*.
+2. And now we'll set its [**HorizontalAlignment**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.horizontalalignment) property to *Center*.
 
     ```xaml
     <GridView x:Name="ImageGridView"
@@ -741,7 +741,7 @@ You might be wondering whether it's best to center the **GridView** itself, or t
 
 Build and run now, and experiment with adjusting the width of the window. You can see that there's an equal amount of empty space on either side of the **GridView**'s red background. So we have achieved the goal of centering the images. But it's now clearer than before that the scroll bar belongs to the **GridView**, and not to the window. So we need to change the **GridView** back to filling the window. We've demonstrated that (instead of centering the **GridView** in the window) we need to center the images in the **GridView**.
 
-1. So now delete the **HorizontalAlignment** attribute that you added in the previous step.
+3. So now delete the **HorizontalAlignment** attribute that you added in the previous step.
 
 ## Step 10: Edit the items panel template
 
@@ -760,7 +760,7 @@ Items controls lay out their item containers inside what's known as an *items pa
         </Grid.Resources>
     ```
 
-1. Next, we use the `ImageGridView_ItemsPanelTemplate` key to set the [**ItemsPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemspanel) of the **GridView**.
+2. Next, we use the `ImageGridView_ItemsPanelTemplate` key to set the [**ItemsPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemspanel) of the **GridView**.
 
     ```xaml
     <GridView x:Name="ImageGridView"
@@ -771,7 +771,7 @@ Items controls lay out their item containers inside what's known as an *items pa
 
 When you build and run this time, and experiment with adjusting the width of the window, there's an equal amount of the **GridView**'s red background on either side of the images. And because the **GridView** fills the window, the scroll bar aligns nicely with the edge of the window, where users might expect it to be.
 
-1. Now that we're done experiment with layout, remove `Background="Red"` from the **GridView**.
+3. Now that we're done experiment with layout, remove `Background="Red"` from the **GridView**.
 
 ## Step 11: Replace the placeholder image with a photo
 
@@ -938,7 +938,10 @@ If you build and run the app now, instead of placeholders you'll see real photos
 
 ![The finished app.](images/finished-app.png)
 
-### Step 13: Bind the GridView to the Images collection
+### Step 13: Bind the GridView to the Images collection (C# only)
+
+> [!IMPORTANT]
+> Perform this last step only if you created a C# project.
 
 > [!TIP]
 > You'll find that there are some things (usually related to dynamically-generated UI) that you can't do in XAML markup. But in general if you *can* do something in markup, then that's preferable. It gives a slightly cleaner separation between the *view* that the XAML markup represents and the *model* (or *view model*) that the imperative code represents. And that tends to improve workflow in tooling and between team members.
