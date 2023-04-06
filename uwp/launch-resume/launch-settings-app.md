@@ -353,7 +353,6 @@ The following sections describe different categories of ms-settings URIs used to
 | Focus assist | ms-settings:quiethours |
 | Graphics Settings | ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options) |
 | Graphics Default Settings | ms-settings:display-advancedgraphics-default |
-| Human Presence | ms-settings:presence |
 | Multitasking | ms-settings:multitasking </br>ms-settings:multitasking-sgupdate|
 | Night light settings | ms-settings:nightlight |
 | Projecting to this PC | ms-settings:project |
@@ -364,6 +363,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Remote Desktop | ms-settings:remotedesktop |
 | Phone | ms-settings:phone (**Deprecated in Windows 10, version 1809 and later**) |
 | Power & sleep | ms-settings:powersleep |
+| Presence Sensing | ms-settings:presence |
 | Sound | ms-settings:sound |
 | Sound devices | ms-settings:sound-devices |
 | Storage | ms-settings:storagesense |
