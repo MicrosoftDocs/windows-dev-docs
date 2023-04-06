@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Registry Preview, Win]
 
 # Registry Preview
 
-PowerToys **Registry Preview** enables you to easily visualize and edit complex Windows Registry files. It also allows you to write the registry changes to Windows Registry.
+PowerToys **Registry Preview** simplifies the process of visualizing and editing complex Windows Registry files. It also allows you to write registry changes to the Windows Registry.
 
 
 ![Registry Preview screenshot.](../images/pt-registrypreview.png)
@@ -24,18 +24,18 @@ To start using Registry Preview, enable it in the PowerToys Settings (Registry P
 
 Select one or more .reg files in Windows File Explorer. Right-click on the selected file(s), choose **Show more options** from the menu to expand your list of menu options, then select **Preview** to open Registry Preview. **Registry Preview** can also be launched from PowerToys Settings' Registry Preview section.
 
-**Note:** Currently, there is a 10MB file limit for opening Windows Registry files with **Registry Preview**. If file contains invalid content, **Registry Preview** will show appropriate message. 
+**Note:** Currently, there is a 10MB file limit for opening Windows Registry files with **Registry Preview**. If a file contains invalid content, **Registry Preview** will show the appropriate message. 
 
 ## How to use
 
-After opening Windows Registry file, file content is shown on the left side of the **Registry Preview** and this content can be updated at any time.
+After opening a Windows Registry file, the file content is shown on the left side of the **Registry Preview**. This content can be updated at any time.
 
-Visual tree representation of the registry keys listed in the file is shown in top-right area of the **Registry Preview** window. Visual tree will be automatically updated on file content change inside the app. By clicking on specific registri key in visual tree, registry values will be shown in bottom-right are of the app.
+**Visual tree**: In top-right area of the **Registry Preview** window, you will find a visual tree representation of the registry keys listed in the file. This visual tree will be automatically updated on each file content change inside the app.
 
-Pressing `Edit file...` button will open loaded file in `Notepad`.
+**Registry key values**: Select a specific registry key in the visual tree for the values of that registry key to display in the bottom-right area of the **Registry Preview** window.
 
-If loaded file is being edited outside the application, file content can be reloaded by clicking `Reload from file` button.
+**Edit file...**: Select `Edit file...` to open the file in the `Notepad` app.
 
-Registry changes listed in the loaded file can be written to Windows Registry by pressing `Write to Registry` button. Windows Registry Editor will be opened and will ask for confirmation before writing changes. UAC prompt will appear to open Windows Registry Editor.
+**Reload from file**: Select `Reload from file` to reload file content if the loaded file is being edited outside of the **Registry Preview**.
 
-
+**Write to Registry**: Select `Write to Registry` to save any changes listed in the loaded file to the Windows Registry. The Windows Registry Editor will open and ask for confirmation before writing changes. The User Account Control (UAC) prompt, a Windows security feature designed to mitigate the impact of malware, will appear and need approval to open Windows Registry Editor.
