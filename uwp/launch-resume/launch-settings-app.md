@@ -349,9 +349,11 @@ The following sections describe different categories of ms-settings URIs used to
 | Duplicating my display | ms-settings:quietmomentspresentation |
 | During these hours | ms-settings:quietmomentsscheduled |
 | Encryption | ms-settings:deviceencryption |
+| Energy recommendatations | ms-settings:energyrecommendations |
 | Focus assist | ms-settings:quiethours |
 | Graphics Settings | ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options) |
 | Graphics Default Settings | ms-settings:display-advancedgraphics-default |
+| Human Presence | ms-settings:presence |
 | Multitasking | ms-settings:multitasking </br>ms-settings:multitasking-sgupdate|
 | Night light settings | ms-settings:nightlight |
 | Projecting to this PC | ms-settings:project |
