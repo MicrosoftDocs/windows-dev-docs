@@ -168,6 +168,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Registry Preview
+
+:::row:::
+    :::column:::
+        [![Registry Preview screenshot.](../images/pt-registrypreview.png)](registry-preview.md)
+    :::column-end:::
+    :::column span="2":::
+        [Registry Preview](registry-preview.md) is a utility to visualize and edit Windows Registry files.
+    :::column-end:::
+:::row-end:::
+
 ### PowerToys Run
 
 :::row:::
