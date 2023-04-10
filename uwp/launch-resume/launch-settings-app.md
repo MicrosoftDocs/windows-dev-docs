@@ -338,7 +338,7 @@ The following sections describe different categories of ms-settings URIs used to
 |-------------|-----|
 | About | ms-settings:about |
 | Advanced display settings | ms-settings:display-advanced (only available on devices that support advanced display options) |
-| App volume and device preferences | ms-settings:apps-volume (**Added in Windows 10, version 1903**)|
+| App volume and device preferences | ms-settings:apps-volume (**Added in Windows 10, version 1903**) |
 | Battery Saver | ms-settings:batterysaver (only available on devices that have a battery, such as a tablet) |
 | Battery Saver settings | ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet) |
 | Battery use | ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet) |
@@ -353,7 +353,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Focus assist | ms-settings:quiethours |
 | Graphics Settings | ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options) |
 | Graphics Default Settings | ms-settings:display-advancedgraphics-default |
-| Multitasking | ms-settings:multitasking </br>ms-settings:multitasking-sgupdate|
+| Multitasking | ms-settings:multitasking </br>ms-settings:multitasking-sgupdate |
 | Night light settings | ms-settings:nightlight |
 | Projecting to this PC | ms-settings:project |
 | Shared experiences | ms-settings:crossdevice |
@@ -363,7 +363,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Remote Desktop | ms-settings:remotedesktop |
 | Phone | ms-settings:phone (**Deprecated in Windows 10, version 1809 and later**) |
 | Power & sleep | ms-settings:powersleep |
-| Presence Sensing | ms-settings:presence |
+| Presence sensing | ms-settings:presence (**Added in May Moment update for Windows 11, Version 22H2, Build 22624**) |
 | Sound | ms-settings:sound |
 | Sound devices | ms-settings:sound-devices |
 | Storage | ms-settings:storagesense |
