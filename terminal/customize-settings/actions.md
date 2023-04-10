@@ -1,8 +1,8 @@
 ---
 title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
+author: nguyen-dows
+ms.author: chrnguyen
 ms.date: 03/31/2023
 ms.topic: how-to
 ---
@@ -856,26 +856,6 @@ You can mark a pane as read-only, which will prevent input from going into the t
 
 ```json
 { "command": "toggleReadOnlyMode" }
-```
-
-You can enable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
-
-**Command name:** `enableReadOnlyMode`
-
-**Default bindings:**
-
-```json
-{ "command": "enableReadOnlyMode" }
-```
-
-You can disable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
-
-**Command name:** `disableReadOnlyMode`
-
-**Default bindings:**
-
-```json
-{ "command": "disableReadOnlyMode" }
 ```
 
 ### Split a pane
