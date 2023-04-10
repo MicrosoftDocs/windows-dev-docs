@@ -263,6 +263,6 @@ Here are some external sites that provide additional information about game acce
 
 ### Related links
 * [Inclusive Design](https://www.microsoft.com/design/inclusive/)
-* [Microsoft Accessibility Developer Hub](https://developer.microsoft.com/windows/accessible-apps)
+* [Accessibility in Windows 11 and Windows 10](/windows/apps/develop/accessibility)
 * [Developing accessible UWP apps](/windows/apps/design/accessibility/accessibility)
 * [Engineering Software For Accessibility eBook](https://www.microsoft.com/download/details.aspx?id=19262)

@@ -9,15 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Accessibility overview
 
 This article is an overview of the concepts and technologies related to accessibility scenarios for Windows apps.
-
-
-
-<span id="Accessibility_and_your_app"></span>
-<span id="accessibility_and_your_app"></span>
-<span id="ACCESSIBILITY_AND_YOUR_APP"></span>
 
 ## Accessibility and your app
 
@@ -31,17 +26,9 @@ Controls for XAML provide built-in keyboard support and support for assistive te
 
 In addition, data binding, style, and template features make it easy to implement support for dynamic changes to display settings and text for alternative UIs.
 
-<span id="UI_Automation"></span>
-<span id="ui_automation"></span>
-<span id="UI_AUTOMATION"></span>
-
 ## UI Automation
 
 Accessibility support comes primarily from the integrated support for the Microsoft UI Automation framework. That support is provided through base classes and the built-in behavior of the class implementation for control types, and an interface representation of the UI Automation provider API. Each control class uses the UI Automation concepts of automation peers and automation patterns that report the control's role and content to UI Automation clients. The app is treated as a top-level window by UI Automation, and through the UI Automation framework all the accessibility-relevant content within that app window is available to a UI Automation client. For more info about UI Automation, see [UI Automation Overview](/windows/desktop/WinAuto/uiauto-uiautomationoverview).
-
-<span id="Assistive_technology"></span>
-<span id="assistive_technology"></span>
-<span id="ASSISTIVE_TECHNOLOGY"></span>
 
 ## Assistive technology
 
@@ -59,10 +46,6 @@ Apps that have good keyboard and screen reader support usually work well with va
 
 Some of the options that you can use for testing basic accessibility scenarios with assistive technologies are listed in [Accessibility testing](accessibility-testing.md).
 
-<span id="Screen_reader_support_and_basic_accessibility_information"></span>
-<span id="screen_reader_support_and_basic_accessibility_information"></span>
-<span id="SCREEN_READER_SUPPORT_AND_BASIC_ACCESSIBILITY_INFORMATION"></span>
-
 ## Screen reader support and basic accessibility information
 
 Screen readers provide access to the text in an app by rendering it in some other format, such as spoken language or Braille output. The exact behavior of a screen reader depends on the software and on the user's configuration of it.
@@ -73,27 +56,15 @@ The most important information that a screen reader or any other assistive techn
 
 There are several other automation properties available (including the keyboard properties described in the next section). However, not all screen readers support all automation properties. In general, you should set all appropriate automation properties and test to provide the widest possible support for screen readers.
 
-<span id="Keyboard_support"></span>
-<span id="keyboard_support"></span>
-<span id="KEYBOARD_SUPPORT"></span>
-
 ## Keyboard support
 
 To provide good keyboard support, you must ensure that every part of your application can be used with a keyboard. If your app uses mostly the standard controls and doesn't use any custom controls, you are most of the way there already. The basic XAML control model provides built-in keyboard support including tab navigation, text input, and control-specific support. The elements that serve as layout containers (such as panels) use the layout order to establish a default tab order. That order is often the correct tab order to use for an accessible representation of the UI. If you use [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) and [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) controls to display data, they provide built-in arrow-key navigation. Or if you use a [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) control, it already handles the Spacebar or Enter keys for button activation.
 
 For more info about all the aspects of keyboard support, including tab order and key-based activation or navigation, see [Keyboard accessibility](keyboard-accessibility.md).
 
-<span id="Media_and_captioning"></span>
-<span id="media_and_captioning"></span>
-<span id="MEDIA_AND_CAPTIONING"></span>
-
 ## Media and captioning
 
 You typically display audiovisual media through a [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) object. You can use **MediaElement** APIs to control the media playback. For accessibility purposes, provide controls that enable users to play, pause, and stop the media as needed. Sometimes, media includes additional components that are intended for accessibility, such as captioning or alternative audio tracks that include narrative descriptions.
-
-<span id="Accessible_text"></span>
-<span id="accessible_text"></span>
-<span id="ACCESSIBLE_TEXT"></span>
 
 ## Accessible text
 
@@ -103,17 +74,9 @@ Three main aspects of text are relevant to accessibility:
 * Many users have sight limitations that make it difficult for them to read text unless it has adequate contrast against the background. How this impacts the user is not intuitive for app designers who do not have that sight limitation. For example, for color-blind users, poor color choices in the design can prevent some users from being able to read the text. Accessibility recommendations that were originally made for web content define standards for contrast that can avoid these problems in apps as well. For more info, see [Accessible text requirements](accessible-text-requirements.md).
 * Many users have difficulty reading text that is simply too small. You can prevent this issue by making the text in your app's UI reasonably large in the first place. However, that's challenging for apps that display large quantities of text, or text interspersed with other visual elements. In such cases, make sure that the app correctly interacts with the system features that can scale up the display, so that any text in apps scales up along with it. (Some users change dpi values as an accessibility option. That option is available from **Make things on the screen larger** in **Ease of Access**, which redirects to a **Control Panel** UI for **Appearance and Personalization** / **Display**.)
 
-<span id="Supporting_high-contrast_themes"></span>
-<span id="supporting_high-contrast_themes"></span>
-<span id="SUPPORTING_HIGH-CONTRAST_THEMES"></span>
-
 ## Supporting high-contrast themes
 
 UI controls use a visual representation that is defined as part of a XAML resource dictionary of themes. One or more of these themes is specifically used when the system is set for high contrast. When the user switches to high contrast, by looking up the appropriate theme from a resource dictionary dynamically, all your UI controls will use an appropriate high-contrast theme too. Just make sure that you haven't disabled the themes by specifying an explicit style or using another styling technique that prevents the high-contrast themes from loading and overriding your style changes. For more info, see [High-contrast themes](high-contrast-themes.md).
-
-<span id="Design_for_alternative_UI"></span>
-<span id="design_for_alternative_ui"></span>
-<span id="DESIGN_FOR_ALTERNATIVE_UI"></span>
 
 ## Design for alternative UI
 
@@ -169,10 +132,6 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-<span id="Verification_and_publishing"></span>
-<span id="verification_and_publishing"></span>
-<span id="VERIFICATION_AND_PUBLISHING"></span>
-
 ## Verification and publishing
 
 For more info about accessibility declarations and publishing your app, see [Accessibility in the Store](accessibility-in-the-store.md).
@@ -180,23 +139,27 @@ For more info about accessibility declarations and publishing your app, see [Acc
 > [!NOTE]
 > Declaring the app as accessible is only relevant to the Microsoft Store.
 
-<span id="Assistive_technology_support_in_custom_controls"></span>
-<span id="assistive_technology_support_in_custom_controls"></span>
-<span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_CUSTOM_CONTROLS"></span>
-
 ## Assistive technology support in custom controls
 
 When you create a custom control, we recommend that you also implement or extend one or more [**AutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) subclasses to provide accessibility support. In some cases, so long as you use the same peer class as was used by the base control class, the automation support for your derived class is adequate at a basic level. However, you should test this, and implementing a peer is still recommended as a best practice so that the peer can correctly report the class name of your new control class. Implementing a custom automation peer has a few steps involved. For more info, see [Custom automation peers](custom-automation-peers.md).
-
-<span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"></span>
-<span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"></span>
-<span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"></span>
 
 ## Assistive technology support in apps that support XAML / Microsoft DirectX interop
 
 Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) or [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) is not accessible by default. The [XAML SwapChainPanel DirectX interop sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample) shows how to create UI Automation peers for the hosted DirectX content. This technique makes the hosted content accessible through UI Automation.
 
+## Examples
+
+> [!TIP]
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the following Accessibility principles in action:
+> - [Screen reader support](winui3gallery://item/AccessibilityScreenReader)
+> - [Keyboard support](winui3gallery://item/AccessibilityKeyboard)
+> - [Color contrast](winui3gallery://item/AccessibilityColorContrast)
+
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+
 ## Related topics
+
 
 * [**Windows.UI.Xaml.Automation**](/uwp/api/Windows.UI.Xaml.Automation)
 * [Design for accessibility]()

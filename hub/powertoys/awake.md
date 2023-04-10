@@ -59,6 +59,9 @@ PowerToys Awake can also be executed as a standalone application, directly from 
 | `--time-limit`    | Duration, in seconds, during which Awake keeps the computer awake. Can be used in combination with `--display-on`. |
 | `--pid`           | Attaches the execution of Awake to a Process ID (PID). When the process with a given PID terminates, Awake terminates as well. |
 
+> [!NOTE]
+> The `settings.json` configuration file is located at `%HomePath%\AppData\Local\Microsoft\PowerToys\Awake\`. "Keep awake temporarily" options can be adjusted by modifying the `"tray_times"` value, an array consisting of name and duration (in seconds) to stay awake. For example: `"tray_times":{"8 hours":28800}`.
+
 In absence of command-line arguments, PowerToys Awake will keep the computer awake indefinitely.
 
 When setting the value for the `--time-limit` parameter, both of these formats will be accepted:

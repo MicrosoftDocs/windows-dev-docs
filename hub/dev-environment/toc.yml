@@ -103,6 +103,8 @@ items:
         href: ../powertoys/powerrename.md
       - name: Quick Accent
         href: ../powertoys/quick-accent.md
+      - name: Registry Preview
+        href: ../powertoys/registry-preview.md
       - name: PowerToys Run
         href: ../powertoys/run.md
       - name: Shortcut Guide
