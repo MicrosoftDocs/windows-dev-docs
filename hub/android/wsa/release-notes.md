@@ -13,6 +13,16 @@ ms.date: 03/15/2023
 
 These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
+## Build 2303.40000.3.0
+
+April 11, 2023
+
+- Picture-in-picture mode now supported
+- A new "Partially running" system setting added to WSA Settings app, which runs the subsystem with minimal resources but apps launch quicker than "As needed" mode
+- Linux kernel updated to 5.15.78
+- Improvements to platform reliability
+- Android 13 security updates
+
 ## Build 2302.4000
 
 March 15, 2023
