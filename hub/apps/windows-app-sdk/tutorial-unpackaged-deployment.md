@@ -205,6 +205,10 @@ Follow these instructions to configure a C++ WinUI 3 project that's either packa
 
 ---
 
+## If your project is WPF
+
+For a Windows Presentation Foundation (WPF) app, also add `<RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>` to your project file.
+
 ## Related topics
 
 * [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
