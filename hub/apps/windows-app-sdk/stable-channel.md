@@ -60,7 +60,7 @@ Replacing several lines of boilerplate code, you're now able to use AppWindow AP
 ### New features from across WinAppSDK
 - `ApplicationModel.DynamicDependency`: `PackageDependency.PackageGraphRevisionId` that replaces the deprecated MddGetGenerationId.
 - Environment Manager: [`EnvironmentManager.AreChangesTracked`](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.environmentmanager.arechangestracked) to inform you whether changes to the environment manager are able to be tracked in your application.
-- MRT Core: A new event, `Application.ResourceManagerInitializing` allows your app to provide its own implementation of the `IResourceManager` interface, and gives you access to the ResourceManager that WinUI uses to resolve resource URIs. See the [IResourceManager API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/user/evelynwu/custom-iresourcemanager-spec/specs/custom-iresourcemanager-spec.md) on GitHub for more information.
+- A new event, DebugSettings.XamlResourceReferenceFailed is now raised when a referenced Static/ThemeResource lookup can't be resolved. This event gives access to a trace that details where the framework searched for that key in order to better enable you to debug Static & ThemeResource lookup failures. For more information, see the [Tracing XAML resource reference lookup failures](https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/xaml-resource-references-tracing-spec.md) API spec on GitHub.
 
 ### Other updates
 - See our [WinAppSDK 1.3 milestone](https://github.com/microsoft/WindowsAppSDK/milestone/14?closed=1) on the [WinAppSDK GitHub](https://github.com/microsoft/WindowsAppSDK) for additional issues addressed in this release.
