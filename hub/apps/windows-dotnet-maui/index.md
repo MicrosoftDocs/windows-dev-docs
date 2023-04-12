@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 ## Why use .NET MAUI on Windows?
 
-Building apps for Windows with .NET MAUI provides the following benefits:
+Building apps for Windows with .NET MAUI provides several benefits:
 
 - **Native on Windows**: .NET MAUI creates a [WinUI](../winui/winui3/index.md) app when targeting Windows. This means that your .NET MAUI app will provide the same user experience on Windows as your Windows App SDK applications.
 - **User interface in code**: The [.NET MAUI Community Toolkit](/dotnet/communitytoolkit/maui/) includes [C# Markup](/dotnet/communitytoolkit/maui/markup/markup), a set of fluent helper methods for building user interfaces in C# code. This enables a separation of concerns between the UI and the business logic of your app, just as with XAML. C# Markup is available on all platforms supported by .NET MAUI.
