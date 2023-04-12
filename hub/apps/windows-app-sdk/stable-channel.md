@@ -15,6 +15,7 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 The following releases of the stable channel are currently available:
 
+- [Version 1.3](#version-13)
 - [Version 1.2](#version-12)
 - [Version 1.1](#version-11)
 - [Version 1.0](#version-10)
@@ -29,6 +30,51 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions). 
+
+## Version 1.3
+
+### Version 1.3 Stable
+
+The following sections describe new and updated features and known issues for 1.3 Stable.
+
+In an existing Windows App SDK 1.2 Stable app, you can update your Nuget package to 1.3.230320000 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+
+For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
+
+### XAML Backdrop APIs
+With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI 3 app.
+See the [System Backdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.systembackdrop) and [Mica Backdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop) API docs for more information about the Xaml Backdrop properties.
+
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    this.SystemBackdrop = new MicaBackdrop();
+}
+```
+
+### Window.AppWindow
+Replacing several lines of boilerplate code, you're now able to use AppWindow APIs directly from an **Window** through [`Window.AppWindow`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow).
+
+### New features from across WinAppSDK
+- `ApplicationModel.DynamicDependency`: `PackageDependency.PackageGraphRevisionId` that replaces the deprecated MddGetGenerationId.
+- Environment Manager: [`EnvironmentManager.AreChangesTracked`](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.environmentmanager.arechangestracked) to inform you whether changes to the environment manager are able to be tracked in your application.
+- MRT Core: A new event, `Application.ResourceManagerInitializing` allows your app to provide its own implementation of the `IResourceManager` interface, and gives you access to the ResourceManager that WinUI uses to resolve resource URIs. See the [IResourceManager API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/user/evelynwu/custom-iresourcemanager-spec/specs/custom-iresourcemanager-spec.md) on GitHub for more information.
+
+### Other updates
+- See our [WinAppSDK 1.3 milestone](https://github.com/microsoft/WindowsAppSDK/milestone/14?closed=1) on the [WinAppSDK GitHub](https://github.com/microsoft/WindowsAppSDK) for additional issues addressed in this release.
+- See our [WinUI 3 in WinAppSDK 1.3 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/18?closed=1) on the [microsoft-ui-xaml GitHub](https://github.com/microsoft/microsoft-ui-xaml) for additional issues addressed in this release.
+- With the latest experimental VSIX, you're now able to convert your app between unpackaged and packaged through the Visual Studio menu instead of in your project file.
+
+### Known issue
+Due to a recent change to the xaml compiler, an existing project that upgrades to 1.3 may experience a build error like the following within Visual Studio:
+
+```console
+> C:\Users\user\\.nuget\packages\microsoft.windowsappsdk\\**1.3.230331000**\buildTransitive\Microsoft.UI.Xaml.Markup.Compiler.interop.targets(537,17): error MSB4064: The "PrecompiledHeaderFile" parameter is not supported by the "CompileXaml" task loaded from assembly: Microsoft.UI.Xaml.Markup.Compiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=de31ebe4ad15742b from the path: C:\Users\user\\.nuget\packages\microsoft.windowsappsdk\\**1.2.230118.102**\tools\net472\Microsoft.UI.Xaml.Markup.Compiler.dll. Verify that the parameter exists on the task, the <UsingTask> points to the correct assembly, and it is a settable public instance property.
+```
+
+This is caused by Visual Studio using a cached xaml compiler task dll from 1.2, but driving it with incompatible MSBuild logic from 1.3, as seen in the error text above.  The workaround is to shut down Visual Studio, restart it, and reload the solution.
 
 ## Version 1.2
 
