@@ -19,7 +19,7 @@ This page provides download links to the *latest* releases of the [Windows App S
 For all the latest Windows App SDK downloads, refer to the tables and links below. To learn more, see [Windows App SDK release channels](release-channels.md) and the release notes provided below for each version.
 
 ## Stable release
-### Windows App SDK 1.2.5
+### Windows App SDK 1.3
 
 | Version | Runtime downloads |
 |---|---|
