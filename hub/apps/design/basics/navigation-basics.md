@@ -17,7 +17,7 @@ ms.custom: RS5
 
 If you think of an app as a collection of pages, *navigation* describes the act of moving between pages and within a page. It's the starting point of the user experience, and it's how users find the content and features they're interested in. It's very important, and it can be difficult to get right.
 
-We have a huge number of choices to make for navigation. We could:
+You have a huge number of choices to make for navigation. You could:
 
 :::row:::
     :::column:::
@@ -139,7 +139,7 @@ We recommend a hierarchical structure when:
     :::column span="2":::
         ### Combining structures
 
-You don't have to choose one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
+You don't have to choose one structure or the other; many well-designed apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
 
 If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
 
@@ -150,14 +150,14 @@ If your navigation structure has multiple levels, we recommend that peer-to-peer
 
 ## Use the right controls
 
-Once you've decided on a page structure, you need to decide how users navigate through those pages. UWP provides a variety of navigation controls to help ensure a consistent, reliable navigation experience in your app.
+Once you've decided on a page structure, you need to decide how users navigate through those pages. XAML provides a variety of navigation controls to help ensure a consistent, reliable navigation experience in your app.
 
 :::row:::
     :::column:::
         ![Frame image](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**Frame**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame)
 
 With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
     :::column-end:::
@@ -237,7 +237,7 @@ Displays a vertical list of links to top-level pages. Use when:
         [**List/details**](../controls/list-details.md)
 
 Displays a list of items. Selecting an item displays its corresponding page in the details section. Use when:
-        
+
 - You expect users to switch between child items frequently.
 - You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.
 
@@ -258,4 +258,4 @@ Embedded navigation elements can appear in a page's content. Unlike other naviga
 
 ## Next: Add navigation code to your app
 
-The next article, [Implement basic navigation](navigate-between-two-pages.md), shows the code required to use a Frame control to enable basic navigation between two pages in your app.
+The next article, [Implement basic navigation](navigate-between-two-pages.md), shows the code required to use a `Frame` control to enable basic navigation between two pages in your app.
