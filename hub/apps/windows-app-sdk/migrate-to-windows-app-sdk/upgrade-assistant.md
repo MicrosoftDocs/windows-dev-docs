@@ -44,7 +44,7 @@ As it runs, the tool also aims to provide migration guidance in the form of warn
 
 This release of the .NET Upgrade Assistant is currently in preview, and is receiving frequent updates. The tool currently supports only the C# programming language; not C++. And in most cases with this release, your project will require additional effort from you to complete the migration.
 
-The tool aims to migrate your project and code so that it compiles. But some features require you to investigate and fix them (via **Task List** TODOs). For more information about what to consider before migrating, see [What is supported when migrating from UWP to WinUI 3](./what-is-supported.md).
+The tool aims to migrate your project and code so that it compiles. But some features require you to investigate and fix them (via **Task List** TODOs). For more information about what to consider before migrating, see [What's supported when migrating from UWP to WinUI 3](./what-is-supported.md).
 
 Because of the following limitations of the current release of the .NET Upgrade Assistant, you might choose to wait for a future release before migrating your app:
 

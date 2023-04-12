@@ -23,7 +23,7 @@ Here are some common issues to keep in mind when troubleshooting Arm32 and Arm64
 
 ### Using Windows 10 Mobile-only APIs on Arm-based processors
 
-Arm apps may run into problems when using mobile-only APIs (for example, **HardwareButtons**). To mitigate this, you can dynamically detect whether your app is running on Windows 10 Mobile before calling these APIs. Follow the guidance in the blog post, [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Arm apps may run into problems when using mobile-only APIs (for example, **HardwareButtons**). To mitigate this, you can dynamically detect whether your app is running on Windows 10 Mobile before calling these APIs. For more info, see [Dynamically detecting features with API contracts](/windows/uwp/debug-test-perf/version-adaptive-apps#api-contracts).
 
 ### Including dependencies not supported by UWP apps
 

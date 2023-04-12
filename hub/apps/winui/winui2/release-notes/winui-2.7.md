@@ -60,4 +60,3 @@ Use the Orientation property of the ColorPicker control to specify whether the e
 ## Other updates
 
 - See our [Notable Changes](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/v2.7.0) list for many of the GitHub issues addressed in this release.
-- Check out the [Figma design toolkit](https://aka.ms/winui/2.7-figma-toolkit) for the WinUI 2.7 control and layout templates.

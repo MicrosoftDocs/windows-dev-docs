@@ -79,15 +79,15 @@ To create add-ons while your game is still in development:
 
 #### Create a package
 
-For any game to be published, it must meet the minimum Windows App Certification requirements. You can use the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md), which is part of the Windows 10 SDK,
-to run tests on the game to help ensure that it's ready for publishing to the Store. If you have not already downloaded the Windows 10 SDK that includes the Windows App Certification Kit, go to [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
+For any game to be published, it must meet the minimum Windows App Certification requirements. You can use the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md), which is part of the Windows SDK,
+to run tests on the game to help ensure that it's ready for publishing to the Store. If you haven't already downloaded the Windows SDK that includes the Windows App Certification Kit, then go to [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/).
 
 To create a package that can be uploaded to the Store:
 
 1. Open your game solution in Visual Studio.
 2. Within Visual Studio, go to __Project__ > __Store__ > __Create App Packages ...__
 3. For the __Do you want to build packages to upload to the Microsoft Store?__ option, select __Yes__.
-4. Sign in to your [Partner Center](https://partner.microsoft.com/dashboard) developer account. Or [register](https://developer.microsoft.com/store/register) for a developer account if you don't have one.
+4. Sign in to your [Partner Center](https://partner.microsoft.com/dashboard) developer account. Or [register as a developer in Partner Center](https://developer.microsoft.com/microsoft-store/register/).
 5. Select an app to create the upload package for. If you have not yet created an app submission, provide a new app name to create a new submission. For more info, see [Create your app by reserving a name](/windows/apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msix).
 6. After the package has been created successfully, click __Launch Windows App Certification Kit__ to start the testing process.
 7. Fix any errors to create a game package.

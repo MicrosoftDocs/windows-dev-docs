@@ -55,7 +55,7 @@ Windows 11 uses the following values for various types of text in the UI.
 | ![Example of title large text](images/typography_title_large.svg)| Display semibold | 40/52 epx        |
 | ![Example of display text](images/typography_display.svg)| Display semibold | 68/92 epx        |
 
-### Typography best practices in Windows 11
+## Typography best practices in Windows 11
 
 Windows 11 uses Segoe UI Variable with the following attributes based on the context in which the text is being displayed.
 
@@ -66,3 +66,11 @@ Windows 11 uses Segoe UI Variable with the following attributes based on the con
 | **Minimum values** | 14px Semibold, 12px Regular | Text smaller than these sizes and weights are illegible in some languages |
 | **Casing**         | Sentence case               | Use sentence casing for all UI text, including titles |
 | **Truncation**     | Ellipses and clipping       | Use ellipses in most cases; clipping is only used in rare cases |
+
+## Examples
+
+> [!TIP]
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see Typography principles in action](winui3gallery:/item/Typography).
+
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)

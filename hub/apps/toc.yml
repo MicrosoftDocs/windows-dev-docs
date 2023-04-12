@@ -36,7 +36,7 @@ items:
           href: windows-app-sdk/set-up-your-development-environment.md
         - name: "Create your first WinUI 3 project"
           href: winui/winui3/create-your-first-winui3-app.md
-        - name: "Tutorial: Create a simple photo viewer with WinUI 3 (C#)"
+        - name: "Tutorial: Create a simple photo viewer with WinUI 3"
           href: get-started/simple-photo-viewer-winui3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
@@ -65,7 +65,9 @@ items:
   - name: How tos
     items: 
       - name: Build a Hello World app with C# & WinUI 3
-        href: how-tos/hello-world-winui3.md     
+        href: how-tos/hello-world-winui3.md
+      - name: Target multiple platforms with WinUI 3
+        href: how-tos/uno-multiplatform.md
   - name: Design
     href: design/toc.yml
   - name: Develop
@@ -84,8 +86,10 @@ items:
             href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
           - name: "Release channels"
             href: windows-app-sdk/release-channels.md
-          - name: "Downloads"
+          - name: "Latest downloads"
             href: windows-app-sdk/downloads.md
+          - name: "Older downloads"
+            href: windows-app-sdk/older-downloads.md
           - name: "Preview and experimental guidance"
             items:
               - name: "Install tools for preview and experimental channels of the Windows App SDK"

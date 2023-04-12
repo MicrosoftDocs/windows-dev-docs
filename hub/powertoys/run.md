@@ -41,7 +41,7 @@ The following general options are available on the PowerToys Run settings page.
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | Define the keyboard shortcut to show/hide PowerToys Run |
-| Use centralized keyboard hook | Try this setting if there are issues with the keyboard shortcut |
+| Use centralized keyboard hook | Try this setting if there are issues with the shortcut (PowerToys Run might not get focus when triggered from an elevated window) |
 | Ignore shortcuts in full-screen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
 | Delay search | Add a delay to wait for more input before executing a search |
 | Search delay (ms) | How many milliseconds to wait before executing the search |
@@ -165,6 +165,9 @@ If the program plugin's option "Include in global result" is not selected, inclu
 > [!IMPORTANT]
 > Please be aware of the different decimal and thousand delimiters in different locals.
 > If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
+
+> [!TIP]
+> The Calculator plugin can handle some implied multiplication expressions like `2(3+4)` and `(1+2)(3+4)` by inserting the multiplication operator where appropriate.
 
 The Calculator plugin supports the following operations:
 
