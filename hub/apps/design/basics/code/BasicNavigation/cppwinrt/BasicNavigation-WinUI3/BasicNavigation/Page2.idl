@@ -1,0 +1,12 @@
+// Copyright (c) Microsoft Corporation and Contributors.
+// Licensed under the MIT License.
+
+namespace BasicNavigation
+{
+    [default_interface]
+    runtimeclass Page2 : Microsoft.UI.Xaml.Controls.Page
+    {
+        Page2();
+        Int32 MyProperty;
+    }
+}

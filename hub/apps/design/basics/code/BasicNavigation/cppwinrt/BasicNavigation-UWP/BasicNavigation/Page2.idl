@@ -1,0 +1,9 @@
+namespace BasicNavigation
+{
+    [default_interface]
+    runtimeclass Page2 : Windows.UI.Xaml.Controls.Page
+    {
+        Page2();
+        Int32 MyProperty;
+    }
+}
