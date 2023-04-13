@@ -70,7 +70,7 @@ When setting the value for the `--time-limit` parameter, both of these formats w
 - PowerToys.Awake.exe --time-limit 36000
 - PowerToys.Awake.exe --time-limit=36000
 
-When setting the value for the `--expire-at` parameter, these formats will be accepted based on DateTime.Parse (`https://learn.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=net-7.0#examples`)
+When setting the value for the `--expire-at` parameter, these formats will be accepted based on [DateTime.Parse](https://learn.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=net-7.0#examples)
 
 - PowerToys.Awake.exe --expire-at=17:00:00 will expire at 5PM of the current day
 - PowerToys.Awake.exe --expire-at="4/13/2023 17:00:00" will expire at 5PM on April 13 2023
