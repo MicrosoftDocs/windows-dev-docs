@@ -741,11 +741,28 @@ For information about the design requirements for screenshot images and the nami
 
 Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
 
+## Debugging your widget provider
+
+After you have pinned your widgets, the Widget Platform will start your widget provider application in order to receive and send relevant information about the widget. To debug the running widget you can either attach a debugger to the running widget provider application or you can set up Visual Studio to automatically start debugging the widget provider process once it's started.
+
+In order to attach to the running process:
+
+1. In Visual Studio click **Debug -> Attach to process**.
+1. Filter the processes and find your desired widget provider application.
+1. Attach the debugger.
+
+In order to automatically attach the debugger to the process when it's initially started:
+
+1. In Visual Studio click **Debug -> Other Debug Targets -> Debug Installed App Package**.
+1. Filter the packages and find your desired widget provider package.
+1. Select it and check the box that says Do not launch, but debug my code when it starts.
+1. Click **Attach**.
+
 ## Convert your console app to a Windows app
 
 To convert the console app created in this walkthrough to a Windows app, right-click the **ExampleWidgetProvider** project in **Solution Explorer** and select **Properties**. Under Application->General change the **Output type** from "Console Application" to "Windows Application".
 
-:::image type="content" source="images/convert-to-windows-app.png" alt-text="A screenshot showing the widget provider project properties with the output type set to Windows Application":::
+:::image type="content" source="images/convert-to-windows-app-cs.png" alt-text="A screenshot showing the C# widget provider project properties with the output type set to Windows Application":::
 
 ## Publishing your widget
 
