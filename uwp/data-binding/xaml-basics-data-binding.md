@@ -1,8 +1,8 @@
 ---
 title: Create data bindings
 description: Learn how to create data bindings using XAML and C# to form a direct link between your UI and data by following this tutorial.
-keywords: XAML, UWP, Getting Started
-ms.date: 08/20/2020
+keywords: XAML, UWP, Getting Started, windows 10, windows 11
+ms.date: 04/14/2023
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -18,14 +18,14 @@ The PhotoLab sample app has two pages. The _main page_ displays a photo gallery 
 
 ![Screenshot of the Photo lab main page.](images/mainpage.png)
 
-The *details page* displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+The _details page_ displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
 
 ![Screenshot of the Photo lab detail page.](images/detailpage.png)
 
 ## Prerequisites
 
-+ Visual Studio 2019: [Download Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (The Community edition is free.)
-+ Windows 10 SDK (10.0.17763.0 or later):  [Download the latest Windows SDK (free)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
++ Visual Studio 2019 or later: [Download Visual Studio](https://visualstudio.microsoft.com/downloads/) (The Community edition is free.)
++ Windows SDK (10.0.17763.0 or later):  [Download the latest Windows SDK (free)](https://developer.microsoft.com/windows/downloads/windows-sdk/)
 + Windows 10, Version 1809 or later
 
 ## Part 0: Get the starter code from GitHub
@@ -142,8 +142,8 @@ Run the app to see how it looks so far. No more placeholders! We're off to a goo
 
 ![Running app with real images and text instead of placeholders](images/gallery-with-populated-templates.png)
 
-> [!Note]
-> If you want to experiment further, try adding a new TextBlock to the data template, and use the x:Bind IntelliSense trick to find a property to display.
+>[!NOTE]
+>If you want to experiment further, try adding a new TextBlock to the data template, and use the x:Bind IntelliSense trick to find a property to display.
 
 ## Part 2: Use binding to connect the gallery UI to the images
 
@@ -198,7 +198,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-The `Images` property value never changes, but because the property is of type `ObservableCollection<T>`, the *contents* of the collection can change, and the binding will automatically notice the changes and update the UI.
+The `Images` property value never changes, but because the property is of type `ObservableCollection<T>`, the _contents_ of the collection can change, and the binding will automatically notice the changes and update the UI.
 
 To test this, we're going to temporarily add a button that deletes the currently-selected image. This button isn't in the final version because selecting an image will take you to a detail page. However, the behavior of `ObservableCollection<T>` is still important in the final PhotoLab sample because the XAML is initialized in the page constructor (through the `InitializeComponent` method call), but the `Images` collection is populated later in the `GetItemsAsync` method.
 
@@ -227,8 +227,8 @@ To test this, we're going to temporarily add a button that deletes the currently
 
 Now run the app and use the button to delete a few images. As you can see, the UI is updated automatically, thanks to data binding and the `ObservableCollection<T>` type.
 
-> [!Note]
-> This code only deletes the `ImageFileInfo` instance from the `Images` collection in the running app. It does not delete the image file from the computer.
+>[!NOTE]
+>This code only deletes the `ImageFileInfo` instance from the `Images` collection in the running app. It does not delete the image file from the computer.
 
 ## Part 3: Set up the zoom slider
 
@@ -263,9 +263,9 @@ Did you notice that these are `Binding` expressions, and not `x:Bind` expression
 `Binding` expressions don't recognize the `x:DataType` value, but these `Binding` expressions have `ElementName` values that work almost the same way. These tell the binding engine that **Binding Value** is a binding to the `Value` property of the specified element on the page (that is, the element with that `x:Name` value). If you want to bind to a property in code-behind, it would look something like ```{Binding MyCodeBehindProperty, ElementName=page}``` where `page` refers to the `x:Name` value set in the `Page` element in XAML.
 
 > [!NOTE]
-> By default, `Binding` expressions are one-*way*, meaning that they will automatically update the UI when the bound property value changes.
+> By default, `Binding` expressions are one-_way_, meaning that they will automatically update the UI when the bound property value changes.
 >
-> In contrast, the default for `x:Bind` is one-*time*, meaning that any changes to the bound property are ignored. This is the default because it's the most high-performance option, and most bindings are to static, read-only data.
+> In contrast, the default for `x:Bind` is one-_time_, meaning that any changes to the bound property are ignored. This is the default because it's the most high-performance option, and most bindings are to static, read-only data.
 >
 > The lesson here is that if you use `x:Bind` with properties that can change their values, be sure to add `Mode=OneWay` or `Mode=TwoWay`. You'll see examples of this in the next section.
 
@@ -280,7 +280,7 @@ Run the app and use the slider to change the image-template dimensions. As you c
 
 In this part, you'll add a custom `ItemSize` property to code-behind and create one-way bindings from the image template to the new property. The `ItemSize` value will be updated by the zoom slider and other factors such as the **Fit to screen** toggle and the window size, making for a more refined experience.
 
-Unlike built-in control properties, your custom properties do not automatically update the UI, even with one-way and two-way bindings. They work fine with one-*time* bindings, but if you want your property changes to actually show up in your UI, you need to do some work.
+Unlike built-in control properties, your custom properties do not automatically update the UI, even with one-way and two-way bindings. They work fine with one-_time_ bindings, but if you want your property changes to actually show up in your UI, you need to do some work.
 
 ### Create the ItemSize property so that it updates the UI
 
