@@ -166,7 +166,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Printers & scanners | ms-settings:printers |
 | Touch | ms-settings:devices-touch |
 | Touchpad | ms-settings:devices-touchpad (only available if touchpad hardware is present) |
-| Text Suggestions | ms-settings:devicestyping-hwkbtextsuggestions)
+| Text Suggestions | ms-settings:devicestyping-hwkbtextsuggestions |
 | Typing | ms-settings:typing |
 | USB | ms-settings:usb |
 | Wheel | ms-settings:wheel (only available if Dial is paired) |
