@@ -169,6 +169,25 @@ In order to use the backdrop material in your app, the following items are requi
 
 ## Example: Use Mica in a Windows AppSDK/WinUI 3 app
 
+### Simple Example [XAML Backdrop APIs]
+
+With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI 3 app. See the [System Backdrop](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.systembackdrop) and [Mica Backdrop](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop) API docs for more information about the Xaml Backdrop properties.
+
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    this.SystemBackdrop = new MicaBackdrop();
+}
+```
+
+> [!TIP]
+>You can use **Window.SystemBackdrop** in apps that use Windows App SDK 1.3 or later.
+
+
+### Full Example
+
 This example shows how to set up the Mica backdrop material in a XAML app.
 
 > [!TIP]
