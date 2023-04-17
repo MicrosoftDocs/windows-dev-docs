@@ -37,7 +37,7 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 The following sections describe new and updated features and known issues for 1.3 Stable.
 
-In an existing Windows App SDK 1.2 Stable app, you can update your Nuget package to 1.3.230320000 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+In an existing Windows App SDK 1.2 Stable app, you can update your Nuget package to 1.3.230331000 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
