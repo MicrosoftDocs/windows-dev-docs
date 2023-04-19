@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 
 # Build Windows apps with .NET MAUI
 
-.NET Multi-platform App UI (.NET MAUI) is a cross-platform framework for creating native mobile and desktop apps with C# and _optionally_ XAML. Using [.NET MAUI](/dotnet/maui/), you can develop apps that can run on Windows, Android, iOS, macOS, and Samsung Tizen from a single shared code-base. If you build a Windows app with .NET MAUI, it will use [WinUI 3](../winui/winui3/index.md) as its native platform, and therefore run on Windows 11 and Windows 10 version 1809 or later.
+.NET Multi-platform App UI (.NET MAUI) is a cross-platform framework for creating native mobile and desktop apps with C# and _optionally_ XAML. Using [.NET MAUI](/dotnet/maui/), you can develop apps that can run on Windows, Android, iOS, macOS, and Samsung Tizen from a single shared code-base. If you build a Windows app with .NET MAUI, it will use [WinUI 3](../winui/winui3/index.md) as its native platform, and therefore run on Windows 10 version 1809 or later and Windows 11.
 
 ## Why use .NET MAUI on Windows?
 
-Building apps for Windows with .NET MAUI provides the following benefits:
+Building apps for Windows with .NET MAUI provides several benefits:
 
 - **Native on Windows**: .NET MAUI creates a [WinUI](../winui/winui3/index.md) app when targeting Windows. This means that your .NET MAUI app will provide the same user experience on Windows as your Windows App SDK applications.
 - **User interface in code**: The [.NET MAUI Community Toolkit](/dotnet/communitytoolkit/maui/) includes [C# Markup](/dotnet/communitytoolkit/maui/markup/markup), a set of fluent helper methods for building user interfaces in C# code. This enables a separation of concerns between the UI and the business logic of your app, just as with XAML. C# Markup is available on all platforms supported by .NET MAUI.
