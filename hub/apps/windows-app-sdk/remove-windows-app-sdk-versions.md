@@ -23,7 +23,7 @@ The Windows App SDK runtime includes the Framework, Main, Singleton, and Dynamic
 First, run the `get-appxpackage` command to list all versions of the Windows App SDK runtime packages that are installed on your computer (including the framework, main, singleton, and DDLM packages). The list includes details about each runtime package, including the **PackageFullName** value. For an example of the output of this command, see [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md).
 
 ```Powershell
-# For 1.0 Stable and Preview releases 
+# For 1.0 and 1.0 Preview releases 
 get-appxpackage *appruntime*
 
 # For 1.0 Experimental

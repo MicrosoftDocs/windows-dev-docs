@@ -33,11 +33,11 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.3
 
-### Version 1.3 Stable
+### Version 1.3
 
-The following sections describe new and updated features and known issues for 1.3 Stable.
+The following sections describe new and updated features and known issues for version 1.3.
 
-In an existing Windows App SDK 1.2 Stable app, you can update your Nuget package to 1.3.230331000 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+In an existing Windows App SDK 1.2 app, you can update your Nuget package to 1.3.230331000 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
@@ -119,9 +119,9 @@ This is a servicing release of the Windows App SDK that includes a critical bug 
 
 Fixed issue that caused a crash on startup in C++ WinUI 3 apps when adding a WebView2 or TextBox control. For more information see GitHub issues [#7911](https://github.com/microsoft/microsoft-ui-xaml/issues/7911) & [#3117](https://github.com/microsoft/WindowsAppSDK/issues/3117).
 
-### Version 1.2 Stable
+### Version 1.2
 
-The following sections describe new and updated features, limitations, and known issues for 1.2 Stable.
+The following sections describe new and updated features, limitations, and known issues for 1.2.
 
 > [!NOTE]
 > Visual Studio 2019 and .NET 5 is no longer supported for building C# apps (see [Windows App SDK 1.2 moving to C# WinRT 2.0](https://github.com/microsoft/WindowsAppSDK/discussions/2879)). You will need Visual Studio 2022 and one of the following .NET SDK versions: 6.0.401 (or later), 6.0.304, 6.0.109. When released, WinAppSDK 1.2 will support .NET 7 as well.
@@ -285,9 +285,9 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 - Fixed issue where Bootstrapper APIs like `ApiInformation.IsPropertyPresent` and `ApiInformation.IsMethodPresent` would cause unhandled exceptions in apps that aren't packaged. For more information see [issue 2382](https://github.com/microsoft/WindowsAppSDK/issues/2382) on GitHub.
 - Fixed issue causing app freeze when maximizing application with pen input.
 
-### Version 1.1 Stable
+### Version 1.1
 
-The following sections describe new and updated features, limitations, and known issues for 1.1 Stable.
+The following sections describe new and updated features, limitations, and known issues for 1.1.
 
 > [!NOTE]
 > For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
@@ -358,7 +358,7 @@ If Environment Variable Manager is used from a packaged application, all environ
 MRT Core is a streamlined version of the modern Windows [Resource Management System](/windows/uwp/app-resources/resource-management-system) that is distributed as part of the Windows App SDK.
 
 **Fixed issues:**  
-- An issue causing resources not to be indexed by default when a resource file is added using the VS UI is fixed in .NET SDK 6.0.300. If using an older .NET SDK version, please continue to use the workaround documented in 1.0 Stable's release notes. See [issue 1786](https://github.com/microsoft/WindowsAppSDK/issues/1786) on GitHub for additional information.
+- An issue causing resources not to be indexed by default when a resource file is added using the VS UI is fixed in .NET SDK 6.0.300. If using an older .NET SDK version, please continue to use the workaround documented in 1.0's release notes. See [issue 1786](https://github.com/microsoft/WindowsAppSDK/issues/1786) on GitHub for additional information.
 - An issue causing the resource URI to not be built correctly in unpackaged C++ WinUI 3 apps was fixed in Visual Studio 2022 17.2. If using an older Visual Studio version, please update Visual Studio to 17.2 to receive this fix.
 
 **Known limitations:**
@@ -494,9 +494,9 @@ If your title bar used margins so that the default caption buttons were interact
 #### New features
 We have stabilized and enabled the creation of **multiple windows on the same thread** in WinUI 3 applications. See [issue 5918](https://github.com/microsoft/microsoft-ui-xaml/issues/5918) for more information.
 
-### Version 1.0 Stable
+### Version 1.0
 
-The following sections describe new and updated features, limitations, and known issues for 1.0 Stable.
+The following sections describe new and updated features, limitations, and known issues for 1.0.
 
 #### WinUI 3
 

@@ -25,7 +25,7 @@ The preview channel provides a preview of the next upcoming stable release. Ther
 
 This is the latest release of the preview channel for version 1.3. This release includes previews for new features across WinAppSDK and several performance, security, accessibility and reliability bug fixes.
 
-In an existing Windows App SDK 1.2 Stable app, you can update your Nuget package to 1.3.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+In an existing Windows App SDK 1.2 (from the stable channel) app, you can update your Nuget package to 1.3.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
@@ -62,7 +62,7 @@ Replacing several lines of boilerplate code, you're now able to use AppWindow AP
 
 This is the latest release of the preview channel for version 1.2.
 
-In an existing Windows App SDK 1.1 Stable app, you can update your Nuget package to 1.2.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+In an existing Windows App SDK 1.1 (from the stable channel) app, you can update your Nuget package to 1.2.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
@@ -116,7 +116,7 @@ Win32 apps can now support High Dynamic Range (HDR) through the DisplayInformati
 
 ## Version 1.2 Preview 1 (1.2.0-preview1)
 
-In an existing Windows App SDK 1.1 Stable app, you can update your Nuget package to 1.2.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+In an existing Windows App SDK 1.1 (from the stable channel) app, you can update your Nuget package to 1.2.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
@@ -174,7 +174,7 @@ Introduced [security.accesscontrol.h](/windows/windows-app-sdk/api/win32/securit
 
 This is the latest release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
 
-In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview3 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](./downloads.md) for the updated runtime and MSIX.
+In an existing app using Windows App SDK 1.0, you can update your Nuget package to 1.1.0-preview3 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](./downloads.md) for the updated runtime and MSIX.
 
 > [!NOTE]
 > For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
@@ -229,7 +229,7 @@ Both regressions will be restored in the next stable release.
 ## Version 1.1 Preview 2 (1.1.0-preview2)
 This is the second release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
 
-In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](./downloads.md) for the updated runtime and MSIX.
+In an existing app using Windows App SDK 1.0, you can update your Nuget package to 1.1.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](./downloads.md) for the updated runtime and MSIX.
 
 > [!NOTE]
 > For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
@@ -285,7 +285,7 @@ C# applications have several performance improvements. For more details, see the
 ## Version 1.1 Preview 1 (1.1.0-preview1)
 This is the first release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
 
-In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](./downloads.md) for the updated runtime and MSIX.
+In an existing app using Windows App SDK 1.0, you can update your Nuget package to 1.1.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](./downloads.md) for the updated runtime and MSIX.
 
 The following sections describe new and updated features, limitations, and known issues for this release.
 
@@ -631,7 +631,7 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
   - **C++ template for Visual Studio 2022 version 17.0 releases up to Preview 4.** You will encounter the following error the first time you try to run your project: "There were deployment errors". To resolve this issue, run or deploy your project a second time. This issue will be fixed in Visual Studio 2022 version 17.0 Preview 5.
 
-- **Push notifications API (Microsoft.Windows.PushNotifications namespace) incorrectly included in the 1.0 Preview 2 release.** This is still an experimental feature, and to you use it you must install the 1.0 Experimental release instead. This feature will be removed from the upcoming 1.0 Stable release.
+- **Push notifications API (Microsoft.Windows.PushNotifications namespace) incorrectly included in the 1.0 Preview 2 release.** This is still an experimental feature, and to you use it you must install the 1.0 Experimental release instead. This feature will be removed from the upcoming 1.0 release.
 
 - **App lifecycle API (Microsoft.Windows.AppLifecycle namespace) incorrectly includes the Experimental attribute in the 1.0 Preview 2 release.** The Experimental attribute will be removed from this API in the next release.
 
@@ -657,7 +657,7 @@ The following sections describe new and updated features, limitations, and known
 
 ### WinUI 3
 
-This release of WinUI 3 is focused on building towards 1.0 Stable with bug fixes.
+This release of WinUI 3 is focused on building towards 1.0 with bug fixes.
 
 - **New features**: No new features in Preview 1.
 - **Fixed issues**: For the full list of issues addressed in this release, see [our GitHub repo](https://aka.ms/winui3/1.0-preview-release-notes).

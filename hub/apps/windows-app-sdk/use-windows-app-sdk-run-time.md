@@ -52,7 +52,7 @@ If you want your app to have explicit control, then you can directly call the bo
 
 The project property `<WindowsAppSdkBootstrapInitialize>false</WindowsAppSdkBootstrapInitialize>` disables the automatic module initialization described above (the bootstrapper API isn't called). That allows your app to take responsibility and directly call the bootstrapper API.
 
-As of version 1.2 Stable of the Windows App SDK, automatic module initialization applies only to projects that produce an executable (that is, the **OutputType** project property is set to *Exe* or *WinExe*). This is to prevent adding auto-initializers into class library DLLs and other non-executables by default. If you *do* need an auto-initializer in a non-executable (for example, a test DLL loaded by a host process executable that doesn't initialize the bootstrapper), then you can explicitly enable an auto-initializer in your project with `<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>`.
+As of version 1.2 of the Windows App SDK (from the stable channel), automatic module initialization applies only to projects that produce an executable (that is, the **OutputType** project property is set to *Exe* or *WinExe*). This is to prevent adding auto-initializers into class library DLLs and other non-executables by default. If you *do* need an auto-initializer in a non-executable (for example, a test DLL loaded by a host process executable that doesn't initialize the bootstrapper), then you can explicitly enable an auto-initializer in your project with `<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>`.
 
 ## Using the bootstrapper API
 

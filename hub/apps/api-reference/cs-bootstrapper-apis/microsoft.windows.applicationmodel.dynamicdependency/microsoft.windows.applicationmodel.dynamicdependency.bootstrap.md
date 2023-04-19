@@ -89,7 +89,7 @@ The minimum version of the Windows App SDK framework package to use. Defaults to
 
 | Product | Introduced in |
 |-|-|
-|**Windows App SDK**|Windows App SDK 1.0 Stable|
+|**Windows App SDK**|Windows App SDK 1.0|
 
 ## See also
 

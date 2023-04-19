@@ -14,15 +14,15 @@ If you created a project with an earlier version of the Windows App SDK (previou
 > [!NOTE]
 > These instructions might have issues due to the uniqueness of each app's individual scenario. Please carefully follow them, and if you find an issue then please file a bug against the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose) GitHub repo.
 
-## Update between versions released after 1.0 Stable
+## Update between versions released after 1.0
 
 If your project isn't referencing the version of the Windows App SDK NuGet package that you need, then you can use the **NuGet Package Manager** in Visual Studio to update your project's NuGet package references. For example, if you create a new project by using a stable release of the Windows App SDK VSIX, then your project will reference a stable release of the Windows App SDK. But you can easily reconfigure that project to reference, say, an experimental release of the Windows App SDK. Or reconfigure it to reference the latest stable release.
 
 For steps, see the instructions in [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
 
-## Update from 0.8 Stable to 1.0 Stable
+## Update from 0.8 to 1.0
 
-If you created a project using version 0.8 Stable (for example, version 0.8.4), then you can follow these instructions to update your project to the 1.0 Stable release.
+If you created a project using version 0.8 (for example, version 0.8.4), then you can follow these instructions to update your project to the 1.0 release.
 
 **Prerequisite:** Download and install the latest release of the Windows App SDK. For more information, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
@@ -60,12 +60,12 @@ If you created a project using version 0.8 Stable (for example, version 0.8.4), 
     install-package Microsoft.WindowsAppSDK -Version 1.0.0 
     ```   
     
-## Update from 0.8 Stable or Preview to 1.0 Experimental or Preview 3
+## Update from 0.8 or 0.8 Preview to 1.0 Experimental or Preview 3
 
 > [!IMPORTANT]
 > Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
 
-If you created a project using version 0.8 Preview or any version of 0.8 Stable (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Preview 3 or Experimental release.
+If you created a project using version 0.8 Preview or any version of 0.8 (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Preview 3 or Experimental release.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
@@ -164,7 +164,7 @@ Next, make these changes to your project:
         ```
 5. If your solution fails to build, clean the build output, restart Visual Studio, and try re-running the app. 
 
-## Update from 0.8 Preview to 0.8 Stable or between stable 0.8 versions
+## Update from 0.8 Preview to 0.8 or between stable 0.8 versions
 
 If you created a project using version 0.8 Preview, you can follow these instructions to update your project to a stable version of 0.8. These instructions also apply if you've created a project with an older stable version of 0.8 (for example, 0.8.0) and want to update your project to a newer stable version (for example, 0.8.2).
 
@@ -240,7 +240,7 @@ Next, make these changes to your project:
         ```
 5. If your solution fails to build, clean the build output, restart Visual Studio, and try re-running the app. 
 
-## Update from 0.5 Stable to 0.8 Stable
+## Update from 0.5 to 0.8
 
 If you created a project using version 0.5 stable, you can follow these instructions to update your project to version 0.8 stable.
 
@@ -414,7 +414,7 @@ Next, make these changes to your project:
 
 5. If your solution fails to build, clean the build output, restart Visual Studio, and try re-running the app. 
 
-## Update from 0.5 Preview to  0.5 Stable
+## Update from 0.5 Preview to 0.5
 
 If you created a project using version 0.5 preview, you can follow these instructions to update your project to stable version 0.5.7.
 
@@ -489,9 +489,9 @@ Next, make these changes to your project:
         </ItemGroup>
         ```
 
-## Update from WinUI 3 Preview 4 to 0.5 Stable
+## Update from WinUI 3 Preview 4 to 0.5
 
-If you created a desktop app using WinUI 3 Preview 4, you can follow these instructions to update your project to Project Reunion 0.5 Stable. 
+If you created a desktop app using WinUI 3 Preview 4, you can follow these instructions to update your project to Project Reunion 0.5.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
