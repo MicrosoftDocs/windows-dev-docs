@@ -1,7 +1,7 @@
 ---
 title: PowerToys Text Extractor utility for Windows
 description: Text Extractor is a convenient way to copy text from anywhere on your screen.
-ms.date: 10/13/2022
+ms.date: 04/19/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Text Extractor, Win]
 ---
@@ -36,6 +36,7 @@ From the Settings menu, the following options can be configured:
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn on or off this module. |
+| Preferred language | The language used for OCR. |
 
 ## Supported languages
 

@@ -1,7 +1,7 @@
 ---
 title: PowerToys Mouse utilities for Windows
 description: A collection of utilities to expand the range of usage for the mouse and cursor.
-ms.date: 03/01/2023
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Mouse, jump]
@@ -37,9 +37,9 @@ From the settings menu, the following options can be configured:
 | Spotlight radius | The radius of the circle that centers on the cursor. (default: 100px) |
 | Spotlight initial zoom | The spotlight animation's zoom factor. Higher values result in more pronounced zoom animation as the spotlight closes in on the cursor position. |
 | Animation duration | Time for the spotlight animation. (default: 500ms) |
+| Excluded apps | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
 
-
-## Mouse highlighter
+## Mouse Highlighter
 
 Display visual indicators when the left or right mouse buttons are clicked. By default, mouse highlighting can be turned on and off with the <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> shortcut.
 

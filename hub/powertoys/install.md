@@ -1,7 +1,7 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: quickstart
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -61,17 +61,17 @@ Here are the common commands you may want:
 | -layout  |              | create a local image of the bootstrapper |
 | -log     | -l           | log to a specific file |
 
-### Extracting the MSI from the bundle:
+### Extracting the MSI from the bundle
 
 Make sure you have Wix toolset installed. https://wixtoolset.org/releases/
 
 This PowerShell example assumes the default install location for Wix toolset 3.11.2 and the PowerToys installer downloaded to the desktop.
 
 ```powershell
-	cd $Env:WIX\"bin"
+cd $Env:WIX\"bin"
 
-	# dark.exe -x OUTPUT_FOLDER INSTALLER_PATH
-	.\dark.exe -x ${Env:\USERPROFILE}"\Desktop\extractedPath" ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.53.0-x64.exe"
+# dark.exe -x OUTPUT_FOLDER INSTALLER_PATH
+.\dark.exe -x ${Env:\USERPROFILE}"\Desktop\extractedPath" ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.53.0-x64.exe"
 ```
 
 ### Fixes for uninstalling 0.51 and earlier builds issues
@@ -96,13 +96,13 @@ These community-driven alternative install methods are not officially supported 
 To install [PowerToys](https://community.chocolatey.org/packages/powertoys) using [Chocolatey](https://chocolatey.org/), run the following command from your command line / PowerShell:
 
 ```powershell
-	choco install powertoys
+choco install powertoys
 ```
 
 To upgrade PowerToys, run:
 
 ```powershell
-	choco upgrade powertoys
+choco upgrade powertoys
 ```
 
 If you have issues when installing/upgrading, create an issue at the [maintainers GitHub repository](https://github.com/mkevenaar/chocolatey-packages/issues) or follow the [Chocolatey triage process](https://docs.chocolatey.org/en-us/community-repository/users/package-triage-process).
@@ -112,18 +112,17 @@ If you have issues when installing/upgrading, create an issue at the [maintainer
 To install PowerToys using [Scoop](https://scoop.sh/), run the following command from the command line / PowerShell:
 
 ```powershell
-	scoop bucket add extras
-	scoop install powertoys
+scoop bucket add extras
+scoop install powertoys
 ```
 
 To update PowerToys, run the following command from the command line / PowerShell:
 
 ```powershell
-	scoop update powertoys
+scoop update powertoys
 ```
 
 If you have issues when installing/updating, file an issue in the [Scoop repo on GitHub](https://github.com/lukesampson/scoop/issues).
-
 
 ## Post Install
 

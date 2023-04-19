@@ -1,13 +1,16 @@
 ---
 title: PowerToys Video Conference Mute utility for Windows
 description: A utility that allows to quickly mute the microphone (audio) and turn off the camera (video) while on a conference call with a single keystroke, regardless of what application has focus.
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute, Shift]
 ---
 
 # Video Conference Mute
+
+> [!NOTE]
+> VCM is moving into legacy mode. Please find more about what this means [in our dedicated discussion issue](https://github.com/microsoft/PowerToys/issues/21473).
 
 Quickly mute your microphone (audio) and turn off your camera (video) with a single keystroke while on a conference call, regardless of what application has focus on your computer.
 
@@ -45,7 +48,6 @@ The Video Conference Mute page in Settings provides the following options:
 | Hide toolbar when both camera and microphone are unmuted | A checkbox is available to toggle this option. |
 
 ![Video Conference Mute options in PowerToys settings.](../images/pt-video-conference-mute-settings.png)
-
 
 ## How this works under the hood
 

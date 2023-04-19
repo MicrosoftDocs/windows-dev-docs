@@ -1,7 +1,7 @@
 ---
 title: PowerToys Color Picker utility for Windows
 description: A system-wide color picking utility for Windows that enables you to pick colors from the screen and automatically copies the default value to your clipboard.
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, ColorPicker, Color, Picker]

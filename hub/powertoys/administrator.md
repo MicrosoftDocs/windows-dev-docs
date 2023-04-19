@@ -1,7 +1,7 @@
 ---
 title: PowerToys administrator mode for Windows
 description: For PowerToys to work with an app running in elevated admin mode, PowerToys must be running in administrator mode as well.
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]

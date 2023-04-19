@@ -1,7 +1,7 @@
 ---
 title: PowerToys Hosts File Editor utility for Windows
 description: Hosts File Editor is a convenient way to edit hosts file.
-ms.date: 10/31/2022
+ms.date: 04/19/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Hosts File Editor, Win]
 ---
@@ -46,6 +46,7 @@ From the Settings menu, the following options can be configured:
 | Launch as administrator | Launch as administrator to be able edit the hosts file. If disabled, then editor is run in read-only mode. Hosts File Editor is started as administrator by default. |
 | Show a warning at startup | Warns that editing hosts can change DNS names resolution. Warning is enabled by default. |
 | Additional lines position | If `Bottom` is selected, then file header is moved after hosts settings to the bottom. Default value is `Top`. |
+| Consider loopback addresses as duplicates | If on loopback addresses (like 127.0.0.1 and ::1) are considered as duplicates. |
 
 ## Troubleshooting
 
