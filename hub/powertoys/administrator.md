@@ -11,7 +11,6 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
 
 If you're running any application as an administrator (also referred to as elevated permissions), PowerToys may not work correctly when the elevated applications are in focus or trying to interact with a PowerToys feature like FancyZones. This can be addressed by also running PowerToys as an administrator.
 
-
 ## Options
 
 There are two options for PowerToys to support applications running as administrator (with elevated permissions):
@@ -19,10 +18,9 @@ There are two options for PowerToys to support applications running as administr
 1. **Recommended**: PowerToys will display a prompt when an elevated process is detected. Open PowerToys Settings. Inside the General page, select <kbd>Restart as administrator</kbd>.
 2. Enable **Always run as administrator** in the PowerToys Settings.
 
-
 ## Support for admin mode with PowerToys
 
-PowerToys only needs elevated administrator permission when interacting with other applications that are running in administrator mode. If those applications are in focus, PowerToys may not function unless it is elevated as well.
+PowerToys needs elevated administrator permission when editing protected system settings or when interacting with other applications that are running in administrator mode. If those applications are in focus, PowerToys may not function unless it is elevated as well.
 
 These are the two scenarios PowerToys will not work in:
 
@@ -33,9 +31,14 @@ These are the two scenarios PowerToys will not work in:
 
 Admin mode permissions may be required in the following scenarios:
 
+- Always On Top
+  - Pin windows that are elevated
+- File Locksmith
+  - End elevated processes
 - FancyZones
   - Snapping an elevated window (e.g. Task Manager) into a Fancy Zone
   - Moving the elevated window to a different zone
+- Hosts file editor
 - Shortcut guide
   - Display shortcut
 - Keyboard remapper
@@ -43,8 +46,10 @@ Admin mode permissions may be required in the following scenarios:
   - Global level shortcuts remapping
   - App-targeted shortcuts remapping
 - PowerToys Run
-  - Display shortcut
-
+  - Use shortcut
+- Registry Preview
+  - Write keys to the registry
+- Video Conference Mute
 
 ## Run as administrator: elevated processes explained
 
