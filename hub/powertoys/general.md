@@ -1,8 +1,9 @@
 ---
 title: General settings of PowerToys
+author: aaron-junker
 ms.date: 04/19/2023
 ms.topic: article
-no-loc: [PowerToys, Windows, Win]
+no-loc: [PowerToys, Windows, Insider]
 ---
 
 # General settings of PowerToys
