@@ -69,6 +69,8 @@ items:
         items:
           - name: About PowerToys
             href: ../powertoys/index.md
+          - name: General settings
+            href: ../powertoys/general.md
           - name: Install PowerToys
             href: ../powertoys/install.md
           - name: Run in admin mode
