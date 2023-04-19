@@ -24,6 +24,7 @@ From the Settings menu, the following options can be configured:
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn on or off always on top for that window. |
 | Do not activate when Game Mode is on | Prevents the feature from being activated when actively playing a game on the system. |
+| Color mode | Choose either "Windows default" or "Costum color" for the highlight border. |
 | Color | The custom color of the highlight border. |
 | Border thickness (px) | The thickness of the highlight border. Measured in pixels. |
 | Play a sound | Toggle playing of a short alert chirp. Activating and deactivating use different sounds. |
