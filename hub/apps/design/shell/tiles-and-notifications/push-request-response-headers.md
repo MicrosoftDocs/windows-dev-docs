@@ -315,6 +315,7 @@ Each HTTP message contains one of these response codes. WNS recommends that deve
 | 405 Method Not Allowed       | Invalid method (GET, CREATE); only POST (Windows or Windows Phone) or DELETE (Windows Phone only) is allowed. | Log the details of your request. Switch to using HTTP POST. |
 | 406 Not Acceptable           | The cloud service exceeded its throttle limit. | Please send your request after the Retry-After header value in the response |
 | 410 Gone                     | The channel expired. | Log the details of your request. Do not send further notifications to this channel. Have your app request a new channel URI. |
+| 410 Domain Blocked                     | The specified domain has been blocked by WNS. | Log the details of your request. Do not send further notifications to this channel. Have your app request a new channel URI. |
 | 413 Request Entity Too Large | The notification payload exceeds the 5000 byte size limit. | Log the details of your request. Inspect the payload to ensure it is within the size limitations. |
 | 500 Internal Server Error    | An internal failure caused notification delivery to fail. | Log the details of your request. Report this issue through the developer forums. |
 | 503 Service Unavailable      | The server is currently unavailable. | Log the details of your request. Report this issue through the developer forums. If the Retry-After header is observed then please send your request after the Retry-After header value in the response. |
