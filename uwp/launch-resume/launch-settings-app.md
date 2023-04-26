@@ -2,7 +2,7 @@
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app using the ms-settings URI scheme.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 07/11/2022
+ms.date: 03/21/2023
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -20,7 +20,7 @@ dev_langs:
 - [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
 - [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
-Learn how to launch the Windows Settings app. This topic describes the **ms-settings:** URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+Learn how to launch the Windows Settings app. This topic describes the `ms-settings:` URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 
 Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more info, see [Guidelines for privacy-aware apps](../security/index.md).
 
@@ -75,7 +75,6 @@ The following sections describe different categories of ms-settings URIs used to
 - [Extras](#extras)
 - [Family Group](#family-group)
 - [Gaming](#gaming)
-- [Home page](#home-page)
 - [Mixed reality](#mixed-reality)
 - [Network and internet](#network-and-internet)
 - [Personalization](#personalization)
@@ -125,9 +124,10 @@ The following sections describe different categories of ms-settings URIs used to
 |Settings page| URI |
 |-------------|-----|
 | Apps & Features | ms-settings:appsfeatures |
-| App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app) <br><br> To access this page with a URI, use the `ms-settings:appsfeatures-app` URI and pass an optional parameter of the _package family name_ of the app. |
+| App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app) <br><br> To access this page with a URI, use the ms-settings:appsfeatures-app URI and pass an optional parameter of the _package family name_ of the app. |
 | Apps for websites | ms-settings:appsforwebsites |
-| Default apps | ms-settings:defaultapps |
+| Default apps | ms-settings:defaultapps (**Behavior introduced in Windows 11, version 21H2 (with 2023-04 Cumulative Update) or 22H2 (with 2023-04 Cumulative Update), or later.**)<br/>Append the query string parameter in the following formats using the Uri-escaped name of an app to directly launch the default settings page for that app:<br/><br/>- registeredAppMachine=\<Uri-escaped per machine installed name of app\><br/>- registeredAppUser=\<Uri-escaped per user installed name of app\><br/>- registeredAUMID=\<Uri-escaped Application User Model ID\><br/><br/>For more information, see [Launch the Default Apps settings page](launch-default-apps-settings.md). |
+| Default browser settings | ms-settings:defaultbrowsersettings (**Deprecated in Windows 11**) |
 | Manage optional features | ms-settings:optionalfeatures |
 | Offline Maps | ms-settings:maps<br/>ms-settings:maps-downloadmaps (Download maps) |
 | Startup apps | ms-settings:startupapps |
@@ -166,7 +166,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Printers & scanners | ms-settings:printers |
 | Touch | ms-settings:devices-touch |
 | Touchpad | ms-settings:devices-touchpad (only available if touchpad hardware is present) |
-| Text Suggestions | ms-settings:devicestyping-hwkbtextsuggestions)
+| Text Suggestions | ms-settings:devicestyping-hwkbtextsuggestions |
 | Typing | ms-settings:typing |
 | USB | ms-settings:usb |
 | Wheel | ms-settings:wheel (only available if Dial is paired) |
@@ -213,12 +213,6 @@ The following sections describe different categories of ms-settings URIs used to
 | Game Mode | ms-settings:gaming-gamemode |
 | Playing a game full screen | ms-settings:quietmomentsgame |
 | TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
-
-### Home page
-
-|Settings page| URI |
-|-------------|-----|
-| Default browser settings | ms-settings:defaultbrowsersettings |
 
 ### Mixed reality
 
@@ -416,3 +410,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Repair token | ms-settings:workplace-repairtoken |
 | Provisioning | ms-settings:provisioning (only available on mobile and if the enterprise has deployed a provisioning package) |
 | Windows Anywhere | ms-settings:windowsanywhere (device must be Windows Anywhere-capable) |
+
+## See also
+
+[Launch the default app for a URI](launch-default-app.md)

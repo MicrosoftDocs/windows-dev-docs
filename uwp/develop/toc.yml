@@ -1365,6 +1365,8 @@
               href: ../launch-resume/launch-ringtone-picker.md
             - name: Launch the Windows Settings app
               href: ../launch-resume/launch-settings-app.md
+            - name: Launch the Default Apps settings page
+              href: ../launch-resume/launch-default-apps-settings.md
             - name: Launch the Microsoft Store app
               href: ../launch-resume/launch-store-app.md
             - name: Launch the Windows Maps app
