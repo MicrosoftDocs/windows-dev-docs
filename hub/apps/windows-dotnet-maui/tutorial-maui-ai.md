@@ -208,7 +208,7 @@ It's time to add the code to our code-behind file that will use the ChatGptNet l
 
 1. Run the app, enter a location, and test the recommendation buttons. You should see a response from the API in the `Label` control at the bottom of the UI:
 
-    ![Windows .NET MAUI app with the UI for providing recommendations.](images/maui-chatgpt-ui-with-results.png)
+    ![Windows .NET MAUI app with the UI for providing recommendations and results from ChatGPT.](images/maui-chatgpt-ui-with-results.png)
 
 That's it! You've successfully created a Windows .NET MAUI app that uses the OpenAI ChatGPT API to provide recommendations for restaurants, hotels, and attractions. Try changing the prompts to see if you can improve the results. You can also try changing the `ChatGptModels` enum value in the `AddChatGpt` method in **MauiProgram.cs** to see if you get better results from a different model.
 
