@@ -5,7 +5,7 @@ If you have a copy of the repo on your local machine, you will need to update th
 
 1. `cd` to your local Git directory for the repo and find the remote name with the command: `git remote -v`
 
-You will receive a response like this:
+You will receive a response like the following example:
 `origin  https://github.com/MicrosoftDocs/windows-uwp.git (fetch)`
 `origin  https://github.com/MicrosoftDocs/windows-uwp.git (push)`
 
@@ -29,5 +29,5 @@ Microsoft's general trademark guidelines can be found at https://go.microsoft.co
 
 Privacy information can be found at https://privacy.microsoft.com/en-us/
 
-Microsoft and any contributors reserve all other's rights, whether under their respective copyrights, patents,
+Microsoft and any contributors reserve all others rights, whether under their respective copyrights, patents,
 or trademarks, whether by implication, estoppel, or otherwise.
