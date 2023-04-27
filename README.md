@@ -14,12 +14,12 @@ You will receive a response like this:
 
 *Alternatively, you can just delete your local copy of the repo and reclone it if you don't have any active work on the repo that you are concerned with losing.
 
-Following the rename of this repo, the content team will also be working to rename and restructure the source file directories within the repo to more closely align with the structure of our live documentation. We are aiming to have this work complete by September 16, 2022.
+Following the rename of this repo, the content team will also be working on renaming and restructuring the source file directories within the repo to align more closely with the structure of our live documentation. We are aiming to have this work complete by September 16, 2022.
 
 ## Legal Notices
 Microsoft and any contributors grant you a license to the Microsoft documentation and other content
 in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
-see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the
+see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT). See the
 [LICENSE-CODE](LICENSE-CODE) file.
 
 Microsoft, Windows, Microsoft Azure, and/or other Microsoft products and services referenced in the documentation
