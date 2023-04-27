@@ -199,6 +199,13 @@ It's time to add the code to our code-behind file that will use the ChatGptNet l
 
     This code first checks to make sure the user has entered a location in the `Entry` control. If not, it displays an alert and returns. If the user has entered a location, it calls the `AskAsync` method on the ChatGptNet library to make a call to the OpenAI ChatGPT API. The `AskAsync` method takes two parameters: a `Guid` that identifies the user's session and a string containing the question to ask the API. The `AskAsync` method returns a `ChatGptResponse` object that contains the response from the API. We'll use the `GetMessage` method on the `ChatGptResponse` object to get the response text and display it in the `Label` control at the bottom of the UI.
 
+1. Add the following `using` statements to the top of the **MainPage.xaml.cs** file:
+
+    ```csharp
+    using ChatGptNet;
+    using ChatGptNet.Models;
+    ```
+
 1. Run the app, enter a location, and test the recommendation buttons. You should see a response from the API in the `Label` control at the bottom of the UI:
 
     ![Windows .NET MAUI app with the UI for providing recommendations.](images/maui-chatgpt-ui-with-results.png)

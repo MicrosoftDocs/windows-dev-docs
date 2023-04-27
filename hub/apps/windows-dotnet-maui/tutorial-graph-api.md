@@ -11,9 +11,19 @@ ms.localizationpriority: medium
 
 Get hands-on with .NET MAUI by building a cross-platform app on Windows that leverages the [Microsoft Graph SDK](/graph/sdks/sdks-overview) to display user data.
 
-## Introduction
+In this tutorial, you learn how to:
 
-In this tutorial, you'll learn how to create a .NET MAUI app for Windows in Visual Studio 2022 (17.3 or later) that loads some user data from [Microsoft Graph](/graph/). We will [authenticate](/graph/authenticationmethods-get-started) a Microsoft account with [Azure Identity](/graph/azuread-identity-access-management-concept-overview). The identity information, in the form of an MSAL token, will be used to authorize the Graph SDK call and get the display name for the authenticated user.
+> [!div class="checklist"]
+> * Set up your environment for .NET MAUI development and create a .NET MAUI project
+> * Register your client app in Azure
+> * Integrate with [Azure Identity](/graph/azuread-identity-access-management-concept-overview) and the Microsoft Graph SDK
+> * Update the user interface to display user information from [Microsoft Graph](/graph/)
+
+## Prerequisites
+
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
+* The .NET MAUI [installation requirements](/dotnet/maui/get-started/installation).
+* If you are new to .NET MAUI on Windows, you should start with the [Build your first .NET MAUI app for Windows](/windows/apps/windows-dotnet-maui/walkthrough-first-app) tutorial.
 
 ## Setting up the environment
 
@@ -325,7 +335,13 @@ Run the app again and click the **Load User Info** button. You should see your u
 
 To learn how to install and get started with the Microsoft Graph SDK in your .NET MAUI apps, see [Install the Microsoft Graph .NET SDK](/graph/sdks/sdk-installation#install-the-microsoft-graph-net-sdk).
 
-## Related topics
+## Next steps
+
+Advance to the next article to learn how to...
+> [!div class="nextstepaction"]
+> [Create a recommendation app with .NET MAUI and ChatGPT](tutorial-maui-ai.md)
+
+## See also
 
 [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources)
 
