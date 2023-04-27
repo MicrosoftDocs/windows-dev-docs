@@ -1,5 +1,5 @@
 ---
-description: View a list of links to articles about developing Universal Windows Platform (UWP) apps for Windows including an overview, samples, and API reference.
+description: View a list of links to articles about developing Universal Windows Platform (UWP) apps for Windows, including an overview, samples, and API reference.
 title: Develop UWP apps
 keywords: uwp app development threading async platform overview portal develop developers
 ms.date: 03/29/2018
