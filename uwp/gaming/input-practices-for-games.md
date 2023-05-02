@@ -167,7 +167,7 @@ User identity is also the way that an input device is associated with its corres
 
 For these reasons, player input should be tracked and correlated with the [User](/uwp/api/windows.gaming.input.igamecontroller.User) property of the device class (inherited from the [IGameController](/uwp/api/windows.gaming.input.igamecontroller) interface).
 
-The [UserGamepadPairingUWP](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/) sample demonstrates how you can keep track of users and the devices they're using.
+The [UserGamepadPairingUWP](https://github.com/microsoft/Xbox-ATG-Samples/tree/main/UWPSamples/System/UserGamepadPairingUWP) sample app on GitHub demonstrates how you can keep track of users and the devices they're using.
 
 ## Detecting button transitions
 
@@ -314,4 +314,4 @@ If your code performs some action (like drawing UI) based on the percentage of b
 * [Windows.System.User class](/uwp/api/windows.system.user)
 * [Windows.Gaming.Input.IGameController interface](/uwp/api/windows.gaming.input.igamecontroller)
 * [Windows.Gaming.Input.GamepadButtons enum](/uwp/api/windows.gaming.input.gamepadbuttons)
-* [UserGamepadPairingUWP sample](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/)
+* [UserGamepadPairingUWP sample app](https://github.com/microsoft/Xbox-ATG-Samples/tree/main/UWPSamples/System/UserGamepadPairingUWP)

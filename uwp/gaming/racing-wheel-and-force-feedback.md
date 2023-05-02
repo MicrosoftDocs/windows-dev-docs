@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, games, racing wheel, force feedback
 ms.localizationpriority: medium
 ---
+
 # Racing wheel and force feedback
 
 This page describes the basics of programming for Xbox One racing wheels using [Windows.Gaming.Input.RacingWheel][racingwheel] and related APIs for the Universal Windows Platform (UWP).
@@ -268,7 +269,7 @@ if (racingwheel->HasPatternShifter)
 
 ## Run the InputInterfacing sample
 
-The [InputInterfacingUWP sample _(github)_](/samples/microsoft/xbox-atg-samples/inputinterfacinguwp/) demonstrates how to use racing wheels and different kinds of input devices in tandem, as well as how these input devices behave as UI navigation controllers.
+The [InputInterfacingUWP](https://github.com/microsoft/Xbox-ATG-Samples/tree/main/UWPSamples/System/InputInterfacingUWP) sample app on GitHub demonstrates how to use racing wheels and different kinds of input devices in tandem; as well as how these input devices behave as UI navigation controllers.
 
 ## Force feedback overview
 
