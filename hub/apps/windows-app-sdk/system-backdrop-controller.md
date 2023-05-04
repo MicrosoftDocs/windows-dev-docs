@@ -214,7 +214,7 @@ public sealed partial class MainWindow : Window
             m_configurationSource.IsInputActive = true;
             SetConfigurationSourceTheme();
 
-            m_backdropController = new Microsoft.UI.Composition.SystemBackdrops.MicaController()
+            m_backdropController = new Microsoft.UI.Composition.SystemBackdrops.MicaController();
 
             // Enable the system backdrop.
             // Note: Be sure to have "using WinRT;" to support the Window.As<...>() call.
