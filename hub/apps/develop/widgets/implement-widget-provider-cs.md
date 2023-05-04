@@ -32,6 +32,8 @@ In Visual Studio, create a new project. In the **Create a new project** dialog, 
 
 When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version 10.0.19041.0 or later.
 
+Note that this walkthrough uses a console app that displays the console window when the widget is activated to enable easy debugging. When you are ready to publish your widget provider app, you can convert the console application to a Windows application by following the steps in [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
+
 ## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
 
 This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
@@ -238,6 +240,23 @@ The widget host calls [DeleteWidget](/windows/windows-app-sdk/api/winrt/microsof
 public void DeleteWidget(string widgetId, string customState)
 {
     RunningWidgets.Remove(widgetId);
+
+    if(RunningWidgets.Count == 0)
+    {
+        emptyWidgetListEvent.Set();
+    }
+}
+```
+
+For this example, in addition to removing the widget with the specified from the list of enabled widgets, we also check to see if the list is now empty, and if so, we set an event that will be used later to allow the app to exit when there are no enabled widgets. Inside your class definition, add the declaration of the [ManualResetEvent](dotnet/api/system.threading.manualresetevent) and a public accessor function.
+
+```csharp
+// WidgetProvider.cs
+static ManualResetEvent emptyWidgetListEvent = new ManualResetEvent(false);
+
+public static ManualResetEvent GetEmptyWidgetListEvent()
+{
+    return emptyWidgetListEvent;
 }
 ```
 
@@ -509,6 +528,9 @@ using ExampleWidgetProvider;
 using COM;
 using System;
 
+[DllImport("kernel32.dll")]
+static extern IntPtr GetConsoleWindow();
+
 [DllImport("ole32.dll")]
 
 static extern int CoRegisterClassObject(
@@ -528,9 +550,24 @@ CoRegisterClassObject(CLSID_Factory, new WidgetProviderFactory<WidgetProvider>()
 Console.WriteLine("Registered successfully. Press ENTER to exit.");
 Console.ReadLine();
 
-CoRevokeClassObject(cookie);
+if (GetConsoleWindow() != IntPtr.Zero)
+{
+    Console.WriteLine("Registered successfully. Press ENTER to exit.");
+    Console.ReadLine();
+}
+else
+{
+    // Wait until the manager has disposed of the last widget provider.
+    using (var emptyWidgetListEvent = WidgetProvider.GetEmptyWidgetListEvent())
+    {
+        emptyWidgetListEvent.WaitOne();
+    }
+
+    CoRevokeClassObject(cookie);
+}
 ```
 
+Note that this code example imports the [GetConsoleWindow](/windows/console/getconsolewindow) function to determine if the app is running as a console application, the default behavior for this walkthrough. If function returns a valid pointer, we write debug information to the console. Otherwise, the app is running as a Windows app. In that case, we wait for the event that we set in [DeleteWidget](#deletewidget) method when the list of enabled widgets is empty, and the we exit the app. For information on converting the example console app to a Windows app, see [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
 
 ## Package your widget provider app
 
@@ -703,6 +740,29 @@ For information about the design requirements for screenshot images and the nami
 ## Testing your widget provider
 
 Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+
+## Debugging your widget provider
+
+After you have pinned your widgets, the Widget Platform will start your widget provider application in order to receive and send relevant information about the widget. To debug the running widget you can either attach a debugger to the running widget provider application or you can set up Visual Studio to automatically start debugging the widget provider process once it's started.
+
+In order to attach to the running process:
+
+1. In Visual Studio click **Debug -> Attach to process**.
+1. Filter the processes and find your desired widget provider application.
+1. Attach the debugger.
+
+In order to automatically attach the debugger to the process when it's initially started:
+
+1. In Visual Studio click **Debug -> Other Debug Targets -> Debug Installed App Package**.
+1. Filter the packages and find your desired widget provider package.
+1. Select it and check the box that says Do not launch, but debug my code when it starts.
+1. Click **Attach**.
+
+## Convert your console app to a Windows app
+
+To convert the console app created in this walkthrough to a Windows app, right-click the **ExampleWidgetProvider** project in **Solution Explorer** and select **Properties**. Under Application->General change the **Output type** from "Console Application" to "Windows Application".
+
+:::image type="content" source="images/convert-to-windows-app-cs.png" alt-text="A screenshot showing the C# widget provider project properties with the output type set to Windows Application":::
 
 ## Publishing your widget
 

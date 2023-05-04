@@ -49,6 +49,49 @@ In the precompiled header file, pch.h, add the following include directives.
 > [!NOTE]
 > You must include the wil/cppwinrt.h header first, before any WinRT headers.
 
+In order to handle shutting down the widget provider app correctly, we need to a custom implementation of **winrt::get_module_lock**. We pre-declare the **SignalLocalServerShutdown** method which will be defined in our main.cpp file and will set an event that signals the app to exit. Add the following code to your pch.h file, just below the `#pragma once` directive, before the other includes.
+
+```cpp
+//pch.h
+#include <stdint.h>
+#include <combaseapi.h>
+
+// In .exe local servers the class object must not contribute to the module ref count, and use
+// winrt::no_module_lock, the other objects must and this is the hook into the C++ WinRT ref counting system
+// that enables this.
+void SignalLocalServerShutdown();
+
+namespace winrt
+{
+    inline auto get_module_lock() noexcept
+    {
+        struct service_lock
+        {
+            uint32_t operator++() noexcept
+            {
+                return ::CoAddRefServerProcess();
+            }
+
+            uint32_t operator--() noexcept
+            {
+                const auto ref = ::CoReleaseServerProcess();
+
+                if (ref == 0)
+                {
+                    SignalLocalServerShutdown();
+                }
+                return ref;
+            }
+        };
+
+        return service_lock{};
+    }
+}
+
+
+#define WINRT_CUSTOM_MODULE_LOCK
+```
+
 ## Add a WidgetProvider class to handle widget operations
 
 In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **Add**.
@@ -471,6 +514,17 @@ Add the header that defines the **WidgetProvider** class to the includes at the 
 #include <mutex>
 ```
 
+Declare the event that will trigger our app to exit and the **SignalLocalServerShutdown** function that will set the event. Paste the following code in main.cpp. 
+
+```cpp
+wil::unique_event g_shudownEvent(wil::EventOptions::None);
+
+void SignalLocalServerShutdown()
+{
+    g_shudownEvent.SetEvent();
+}
+```
+
 Next, you will need to create a [CLSID](/windows/win32/com/com-class-objects-and-clsids) that will be used to identify your widget provider for COM activation. Generate a GUID in Visual Studio by going to **Tools->Create GUID**. Select the option "static const GUID =" and click **Copy** and then paste that into `main.cpp`. Update the GUID definition with the following C++/WinRT syntax, setting the GUID variable name widget_provider_clsid. Leave the commented version of the GUID because you will need this format later, when packaging your app.
 
 ```cpp
@@ -483,7 +537,7 @@ static constexpr GUID widget_provider_clsid
 };
 ```
 
-Add the following class factory definition to `main.cpp`. This is boilerplate code that is not specific to widget provider implementations.
+Add the following class factory definition to `main.cpp`. This is mostly boilerplate code that is not specific to widget provider implementations. Note that **CoWaitForMultipleObjects** waits for our shutdown event to be triggered before the app exits.
 
 ```cpp
 // main.cpp
@@ -535,12 +589,11 @@ int main()
         REGCLS_MULTIPLEUSE,
         widgetProviderFactory.put()));
 
-    MSG msg;
-    while (GetMessage(&msg, nullptr, 0, 0))
-    {
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
-    }
+    DWORD index{};
+    HANDLE events[] = { g_shudownEvent.get() };
+    winrt::check_hresult(CoWaitForMultipleObjects(CWMO_DISPATCH_CALLS | CWMO_DISPATCH_WINDOW_MESSAGES,
+        INFINITE,
+        static_cast<ULONG>(std::size(events)), events, &index));
 
     return 0;
 }
@@ -719,6 +772,30 @@ For information about the design requirements for screenshot images and the nami
 
 Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
 
+## Debugging your widget provider
+
+After you have pinned your widgets, the Widget Platform will start your widget provider application in order to receive and send relevant information about the widget. To debug the running widget you can either attach a debugger to the running widget provider application or you can set up Visual Studio to automatically start debugging the widget provider process once it's started.
+
+In order to attach to the running process:
+
+1. In Visual Studio click **Debug -> Attach to process**.
+1. Filter the processes and find your desired widget provider application.
+1. Attach the debugger.
+
+In order to automatically attach the debugger to the process when it's initially started:
+
+1. In Visual Studio click **Debug -> Other Debug Targets -> Debug Installed App Package**.
+1. Filter the packages and find your desired widget provider package.
+1. Select it and check the box that says Do not launch, but debug my code when it starts.
+1. Click **Attach**.
+
+## Convert your console app to a Windows app
+
+To convert the console app created in this walkthrough to a Windows app:
+1. Right-click on the ExampleWidgetProvider project in **Solution Explorer** and select **Properties**. Navigate to **Linker -> System** and change **SubSystem** from "Console" to "Windows". This can also be done by adding &lt;SubSystem&gt;Windows&lt;/SubSystem&gt; to the &lt;Link&gt;..&lt;/Link&gt; section of the .vcxproj.
+1. In main.cpp, change `int main()` to `int WINAPI wWinMain(_In_ HINSTANCE /*hInstance*/, _In_opt_ HINSTANCE /*hPrevInstance*/, _In_ PWSTR pCmdLine, _In_ int /*nCmdShow*/)`.
+
+:::image type="content" source="images/convert-to-windows-app-cpp.png" alt-text="A screenshot showing the C++ widget provider project properties with the output type set to Windows Application":::
 
 ## Publishing your widget
 
