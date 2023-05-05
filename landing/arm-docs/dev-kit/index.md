@@ -105,9 +105,9 @@ Bringing together local compute on the CPU, GPU, and NPU and cloud compute with 
 
     Unlock the NPU power to accelerate AI/ML workloads using ONNX Runtime with frameworks like PyTorch or TensorFlow - get started with these instructions and tutorials.
 
-- **[Qualcomm Neural Processing SDK for AI](https://developer.qualcomm.com/qualcomm-robotics-rb5-kit/software-reference-manual/machine-learning/snpe)**
+- **[Qualcomm developer network: Windows on Snapdragon](https://developer.qualcomm.com/hardware/windows-on-snapdragon)**
 
-    Formerly known as the Snapdragon Neural Processing Engine (SNPE), this software accelerated, inference-only runtime engine supports the execution of deep neural networks. Build apps that unlock the power of integrated NPU hardware to accelerate AI/ML workloads without compromising app performance.
+    Learn more about the Snapdragon compute platform that powers Windows on Snapdragon® devices with native AArch64 (64-bit Arm) app support. You will also find a link to download the **Qualcomm Neural Processing SDK for Windows**. The Qualcomm® Neural Processing SDK is engineered to help developers save time and effort in optimizing performance of trained neural networks on devices with Qualcomm® AI products.
 
 - **[SNPE Execution Provider for ONNX Runtime](https://onnxruntime.ai/docs/execution-providers/SNPE-ExecutionProvider.html)**
 
