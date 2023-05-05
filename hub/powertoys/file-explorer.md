@@ -46,7 +46,7 @@ You can expand the **STL** section to change the background color.
 
 Preview Pane is an existing feature in the Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, and G-code. In addition to those, PowerToys also adds support for source code files (for more than 150 file extensions).
 
-### Settings fot Source code files previewer
+### Settings for Source code files previewer
 
 You can expand the **Source code files (Monaco)** section to change certain settings.
 
