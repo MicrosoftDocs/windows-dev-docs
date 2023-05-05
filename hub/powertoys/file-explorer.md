@@ -48,7 +48,7 @@ Preview Pane is an existing feature in the Windows File Explorer which allows yo
 
 ### Settings for Source code files previewer
 
-You can expand the **Source code files (Monaco)** section to change certain settings.
+You can expand the **Source code files (Monaco)** section to change the following settings.
 
 | Setting | Description |
 | :-- | :-- |
