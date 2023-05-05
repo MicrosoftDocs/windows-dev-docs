@@ -21,13 +21,13 @@ You can [get App Installer from the Microsoft Store](https://www.microsoft.com/p
 
 ### Install winget preview version [Developers Only]
 
-Windows App Installer includes the production version of the winget tool. To try the latest Windows Package Manager features, you can install the latest preview build of the **winget** command line tool in one of the following ways:
+WinGet is included in the Windows App Installer. To try the latest Windows Package Manager features, you can install a preview build one of the following ways:
 
-* Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Dev Channel](https://insider.windows.com/understand-flighting).
+- Download the latest [winget preview version](https://aka.ms/getwingetpreview). Read the [Release notes for winget preview](https://github.com/microsoft/winget-cli/releases) to learn about any new features. Installing this package will give you the preview version of the WinGet client, but it will not enable automatic updates of new preview versions from the Microsoft Store.
 
-* Use a Microsoft Account (MSA) to sign up for the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram).
+- Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Dev Channel](https://insider.windows.com/understand-flighting). The Windows Insider Dev Channel includes automatic updates of new preview versions from the Microsoft Store.
 
-* Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases). Installing this package will give you the WinGet client, but it will not enable automatic updates from the Microsoft Store.
+- Use a Microsoft Account (MSA) to sign up for the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram). Once your Microsoft Account (MSA) has been added (a few days after you receive e-mail notification) you will receive automatic updates of new preview versions from the Microsoft Store.
 
 ### Install winget on Windows Sandbox
 
@@ -109,6 +109,7 @@ The **winget** tool supports the following options.
 The **winget** tool supports the following types of installers:
 
 * EXE (with **Silent** and **SilentWithProgress** flags)
+* ZIP
 * INNO
 * NULLSOFT
 * MSI

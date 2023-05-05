@@ -82,7 +82,7 @@ Constant | Value | Description |
 | constexpr uint64_t UInt64 | \[release-dependent\] | The version of the Windows App SDK runtime, as a uint64l for example, 0x03E801BE03240000. |
 
 ## Requirements
-**Minimum supported SDK:** Windows App SDK version 1.1 Stable
+**Minimum supported SDK:** Windows App SDK version 1.1
 
 **Namespace:** Microsoft::WindowsAppSDK
 

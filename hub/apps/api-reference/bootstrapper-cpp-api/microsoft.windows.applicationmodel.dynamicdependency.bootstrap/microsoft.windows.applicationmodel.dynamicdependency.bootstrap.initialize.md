@@ -68,7 +68,7 @@ int main()
 ```
 
 ## Requirements
-**Minimum supported SDK:** Windows App SDK version 1.1 Stable
+**Minimum supported SDK:** Windows App SDK version 1.1
 
 **Namespace:** Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap
 

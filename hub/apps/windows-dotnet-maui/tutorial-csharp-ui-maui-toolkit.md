@@ -1,7 +1,7 @@
 ---
 title: Tutorial--Create a .NET MAUI app with C# Markup and the Community Toolkit
 description: Build a .NET MAUI app with a user interface created without XAML by using C# Markup from the .NET MAUI Community Toolkit.
-ms.topic: article
+ms.topic: tutorial
 ms.date: 11/11/2022
 keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium

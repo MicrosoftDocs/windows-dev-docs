@@ -59,7 +59,7 @@ PowerToys Awake can also be executed as a standalone application, directly from 
 | `--pid`           | Attaches the execution of Awake to a Process ID (PID). When the process with a given PID terminates, Awake terminates as well. |
 
 > [!NOTE]
-> The `settings.json` configuration file is located at `%HomePath%\AppData\Local\Microsoft\PowerToys\Awake\`. "Keep awake temporarily" options can be adjusted by modifying the `"tray_times"` value, an array consisting of name and duration (in seconds) to stay awake. For example: `"tray_times":{"8 hours":28800}`.
+> The `settings.json` configuration file is located at `%HomePath%\AppData\Local\Microsoft\PowerToys\Awake\`. "Keep awake temporarily" options can be adjusted by modifying the `"customTrayTimes"` value, an array consisting of name and duration (in seconds) to stay awake. For example: `"customTrayTimes":{"8 hours":28800}`.
 
 In absence of command-line arguments, PowerToys Awake will keep the computer awake indefinitely.
 

@@ -19,7 +19,7 @@ class PackageVersion : public PACKAGE_VERSION;
 ```
 
 ## Requirements
-**Minimum supported SDK:** Windows App SDK version 1.1 Stable
+**Minimum supported SDK:** Windows App SDK version 1.1
 
 **Namespace:** Microsoft::Windows::ApplicationModel
 

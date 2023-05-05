@@ -127,7 +127,7 @@ The `major.minor.build.revision` sequence encoded as a (little-endian) **UInt64*
 
 | Product | Introduced in |
 |-|-|
-|**Windows App SDK**|Windows App SDK 1.0 Stable|
+|**Windows App SDK**|Windows App SDK 1.0|
 
 ## See also
 

@@ -71,7 +71,7 @@ The bootstrapper is a library that must be included with your packaged with exte
 
 To accomplish these tasks, the nuget package leverages module initializers to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you can call the bootstrapper API directly in your app's startup code (see [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) so that it can properly initialize the system for the unpackaged app. Your app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
 
-The bootstrapper library in the Windows App SDK 1.0 Stable release includes:
+The bootstrapper library in the Windows App SDK 1.0 release includes:
 
 - **Microsoft.WindowsAppRuntime.Bootstrap.dll** (C++ and C#) 
 - **Microsoft.WindowsAppRuntime.Bootstrap.Net.dll** (C# wrapper)

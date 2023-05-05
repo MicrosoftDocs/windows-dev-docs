@@ -1,6 +1,6 @@
 ---
 title: Breaking changes in the Windows App SDK
-description: If you're migrating an app to Windows App SDK 1.0 from 0.8 Stable, the breaking changes listed here might affect you. Changes are grouped by technology area, such as input and MRT Core.
+description: If you're migrating an app to Windows App SDK 1.0 from 0.8, the breaking changes listed here might affect you. Changes are grouped by technology area, such as input and MRT Core.
 ms.topic: article
 ms.date: 11/17/2021
 keywords: windows, windows app development, Windows App SDK 
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Breaking changes in Windows App SDK 1.0
 
-If you're migrating an app to Windows App SDK 1.0 from 0.8 Stable, the breaking changes listed here might affect you. Changes are grouped by technology area, such as input and MRT Core.
+If you're migrating an app to Windows App SDK 1.0 from 0.8, the breaking changes listed here might affect you. Changes are grouped by technology area, such as input and MRT Core.
 
 ## Input
 

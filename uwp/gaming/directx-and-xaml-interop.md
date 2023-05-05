@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 
 # DirectX and XAML interop
 
+> [!NOTE]
+> This topic applies to Universal Windows Platform (UWP) games and apps, and to types in the **Windows.UI.Xaml.Xxx** namespaces (not **Microsoft.UI.Xaml.Xxx**).
+
 You can use Extensible Application Markup Language (XAML) together with Microsoft DirectX together in your Universal Windows Platform (UWP) game or app. The combination of XAML and DirectX lets you build flexible user interface frameworks that interoperate with your DirectX-rendered content; which is particularly useful for graphics-intensive apps. This topic explains the structure of a UWP app that uses DirectX, and identifies the important types to use when building your UWP app to work with DirectX.
 
 If your app mainly focuses on 2D rendering, then you might want to use the [Win2D](https://github.com/microsoft/win2d) Windows Runtime library. That library is maintained by Microsoft, and is built on top of the core [Direct2D](/windows/win32/direct2d/direct2d-portal) technology. Win2D greatly simplifies the usage pattern to implement 2D graphics, and includes helpful abstractions for some of the techniques described in this document. See the project page for more details. This document covers guidance for app developers who choose *not* to use Win2D.
