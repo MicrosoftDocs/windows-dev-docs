@@ -38,7 +38,7 @@ Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerTo
 
 To enable preview support, set the extension to **On**.
 
-### Settings fot Stereolithography (.stl) files
+### Settings for Stereolithography (.stl) files
 
 You can expand the **STL** section to change the background color.
 
