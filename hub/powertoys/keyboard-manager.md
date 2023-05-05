@@ -1,7 +1,7 @@
 ---
 title: PowerToys Keyboard Manager utility for Windows
 description: A utility that enables you to redefine keys on the keyboard
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
