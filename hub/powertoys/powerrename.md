@@ -1,7 +1,7 @@
 ---
 title: PowerToys PowerRename utility for Windows
 description: A windows shell extension for bulk renaming of files
-ms.date: 12/22/2022
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, regex]
@@ -201,6 +201,7 @@ Additional options can be configured from the PowerRename tab in the Settings, a
 | Setting | Description |
 | :--- | :--- |
 | Show PowerRename in | Defines whether PowerRename appears as one of the default options or only in the extended context menu |
+| Hide icon in context menu | Hides the PowerRename icon in the context menu |
 | Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename |
 | Maximum number of items | The largest number search and replace suggestions to display |
 | Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used |

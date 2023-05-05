@@ -1,12 +1,14 @@
 ---
 title: PowerToys Screen ruler utility for Windows
 description: Screen ruler allows you to quickly measure pixels on your screen based on image edge detection.
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Screen ruler, Win]
 ---
 
 # Screen ruler utility
+
+![Screen ruler utility](../images/pt-screen-ruler.png)
 
 Screen ruler allows you to quickly measure pixels on your screen based on image edge detection. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
 

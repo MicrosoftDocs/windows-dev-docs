@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 11/02/2022
+ms.date: 04/19/2023
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
@@ -76,7 +76,7 @@ The currently available utilities include:
         [![File Explorer screenshot.](../images/pt-file-explorer.png)](file-explorer.md)
     :::column-end:::
     :::column span="2":::
-        [File Explorer](file-explorer.md) add-ons enable Preview pane rendering in File Explorer to display SVG icons (.svg), Markdown (.md) and PDF file previews. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+        [File Explorer](file-explorer.md) add-ons enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
     :::column-end:::
 :::row-end:::
 
@@ -186,7 +186,7 @@ The currently available utilities include:
         [![PowerToys Run screenshot.](../images/pt-run.png)](run.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Run](run.md) can help you search and launch your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well.
+        [PowerToys Run](run.md) can help you search and launch your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins.
     :::column-end:::
 :::row-end:::
 
@@ -276,4 +276,3 @@ PowerToys is a rapid-incubation, open source team aimed at providing power users
 
 - [New specs for possible PowerToys](https://github.com/microsoft/PowerToys/wiki/Specs)
 - [Backlog priority list](https://github.com/microsoft/PowerToys/wiki/Roadmap#backlog-priority-list-in-order)
-- [Version 1.0 Strategy spec](https://github.com/microsoft/PowerToys/wiki/Version-1.0-Strategy), February 2020

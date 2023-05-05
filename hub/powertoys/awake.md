@@ -17,7 +17,6 @@ PowerToys Awake can be used directly from PowerToys Settings or as a standalone 
 > [!NOTE]
 > PowerToys Awake does not modify any of the Windows power plan settings, and does not depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine.
 
-
 ## Settings
 
 In the PowerToys Settings view, start PowerToys Awake by using the **Enable Awake** toggle. Once enabled, the application will manage the awakeness state of the computer.
@@ -30,7 +29,8 @@ The following Awake states can be selected:
 | :-- | :-- |
 | Keep using the selected power plan | The computer awakeness state is unaffected. The application is waiting for user input. |
 | Keep awake indefinitely | The computer stays awake indefinitely, until you explicitly put the machine to sleep or exits/disables the application. |
-| Keep awake temporarily | Keep machine awake for a pre-defined limited time. Once the time elapses, the computer resumes its previous awakeness state. |
+| Keep awake for a time interval | Keep machine awake for a defined limited time. After the defined time Awake returns to the previous state. |
+| Keep awake until expiration. | Keep machine awake until a defined time. |
 
 > [!NOTE]
 > Changing the hours or minutes while the computer is kept awake temporarily will reset the timer.
@@ -39,14 +39,13 @@ The following Awake states can be selected:
 
 While PowerToys Awake can keep the computer awake indefinitely or temporarily, in its default state the displays connected to the machine will turn off, even though the computer won't go to sleep. If you need the displays to be available, use the **Keep screen on** switch, which will ensure that all monitors remain on.
 
-This feature only works if Awake is running in one of the two `Keep awake` state.
+This feature only works if Awake is running in one of the three `Keep awake` state.
 
 ## System tray
 
 To manage the execution of the tool from the system tray, right-click on the PowerToys Awake icon.
 
 ![Awake settings managed from the system tray on Windows.](../images/pt-awake-tray.gif)
-
 
 ## Command Line Interface (CLI)
 

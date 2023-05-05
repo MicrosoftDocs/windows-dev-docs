@@ -1,7 +1,7 @@
 ---
 title: PowerToys FancyZones utility for Windows
 description: A window manager utility for arranging and snapping windows into efficient layouts
-ms.date: 08/02/2022
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
@@ -15,7 +15,7 @@ FancyZones is a window manager utility for arranging and snapping windows into e
 
 First, drag the window. By default, you will also need to press and hold the <kbd>Shift</kbd> key (This setting can be disabled via Settings). You'll see the zones appear. As you move your mouse, hovering over a zone will highlight that zone. 
 
-You can also trigger zone selection mode by clicking non-primary mouse button if the "Use non-primary mouse button to toggle zone activation" setting enabled. 
+You can also trigger zone selection mode by clicking non-primary mouse button if the "Use non-primary mouse button to toggle zone activation" setting enabled.
 
 If both "Hold Shift key to activate zones while dragging" and "Use non-primary mouse button to toggle zone activation" are disabled, zones will appear right after you start dragging the window.
 
@@ -69,7 +69,7 @@ If you have applications that are elevated (such as Windows Terminal or Task Man
 
 ## Getting started with the editor
 
-FancyZones includes an editor to give you more control over your window layouts that can be accessed in the PowerToys Settings dashboard. 
+FancyZones includes an editor to give you more control over your window layouts that can be accessed in the PowerToys Settings dashboard.
 
 ### Launch zones editor
 
@@ -108,18 +108,22 @@ There are two ways to create custom zone layouts: **Grid** layout and **Canvas**
 
 The **Grid** model starts with a three column grid and allows zones to be created by splitting and merging zones, resizing the gutter between zones as desired. This is a relative layout and will resize with different screen sizes. You can edit the layout using mouse or using keyboard.
 
-**Mouse**
+#### Mouse
+
 - To divide a zone: click your mouse. To rotate the divider: hold down the <kbd>Shift</kbd> key.
 - To move a divider: click on the thumb and drag or select the thumb by focusing the layout.
 - To merge/delete zones: select a zone and hold the left mouse button and drag the mouse until multiple zones are selected, release the button and a popup menu will show up. Click "Merge" and they will become one big zone. This is how a zone would be deleted, by merging it into another zone.
 
-**Keyboard**
+#### Keyboard
+
 - First, focus the layout by pressing <kbd>Control</kbd>+<kbd>Tab</kbd>. Now you can edit it. All zones and resizers can be focused by pressing <kbd>Tab</kbd> button. 
 - To divide a zone: focus the zone you want to divide and press <kbd>S</kbd> or <kbd>Shift</kbd>+<kbd>S</kbd> to divide it.
 - To move a divider: focus the divider and press <kbd>[arrows]</kbd> to move it.
 - To merge/delete zones: focus the divider between zones and press <kbd>Delete</kbd>. All zones adjascent to deleted divider will be merged into one zone.
 
 ![FancyZones Table Editor Mode.](../images/pt-fancyzones-grideditor.png)
+
+#### Canvas
 
 The **Canvas** model starts with one zone and supports adding zones that can be dragged and resized similar to windows. Zones in the canvas model may be overlapping.
 
@@ -128,6 +132,9 @@ Canvas layout also has keyboard support for zone editing. Use the <kbd>arrow</kb
 ![FancyZones Window Editor Mode.](../images/pt-fancyzones-canvaseditor.png)
 
 ### Quickly changing between custom layouts
+
+> [!WARNING]
+> You have to have "Enable quick layout switch" enabled in the settings to use this feature.
 
 A custom layout can be configured to have a user-defined hotkey to quickly apply it to the desired desktop. The hotkey can be set by opening the custom layout's edit menu. Once set, the custom layout can be applied by pressing the <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[number]</kbd> binding. The layout can also be applied by pressing the hotkey when dragging a window.
 
@@ -142,7 +149,7 @@ In the demo below, we start with a default template applied to the screen and tw
 
 | Setting | Description |
 | :-- | :-- |
-| Configure the zone editor hotkey | To change the default hotkey, click on the textbox and then press the desired key combination on your keyboard. |
+| Activation shortcut | To change the default hotkey, click on the textbox and then press the desired key combination on your keyboard. |
 | Launch editor on the display [...] | Select where the Editor will show. |
 | Hold Shift key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the <kbd>Shift</kbd> key during a drag enables snapping. |
 | Use a non-primary mouse button to toggle zone activation | Clicking a non-primary mouse button toggles the zones activation |
