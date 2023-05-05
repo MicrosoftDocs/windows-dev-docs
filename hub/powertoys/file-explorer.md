@@ -31,9 +31,7 @@ File Explorer add-ons currently include:
 
 > [!NOTE]
 > A reboot might be required after enabling the thumbnail previewer for the settings to take effect.
-> [!WARNING]
 > Thumbnails might not appear on paths managed by cloud storage solutions like OneDrive, since these solutions may get their thumbnails from the cloud instead of generating them locally.
-
 Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerToys adds multiple extensions: SVG, PDF, G-code and STL.
 
 To enable preview support, set the extension to **On**.
