@@ -3,9 +3,9 @@ title: Camera barcode scanner system requirements
 description: Lists the requirements for using camera barcode scanner from a UWP app.
 author: twarwick
 ms.author: twarwick
-ms.date: 03/09/2023
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
 
@@ -31,4 +31,4 @@ ms.localizationpriority: medium
 ## See also
 
 - [JustScanIt - Windows Store app](https://aka.ms/justscanit)
-- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
+- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)

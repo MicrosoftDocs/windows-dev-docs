@@ -1,11 +1,12 @@
 ﻿---
 title: Point of Service basics
-description: This article contains information about getting started with the PointOfService Windows Runtime APIs.
-ms.date: 12/3/2019
+description: This section contains links to topics for getting started with the PointOfService Windows Runtime APIs.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
+
 # Point of Service basics
 
 This section contains topics that are common across all Point of Service device categories.
@@ -13,10 +14,11 @@ This section contains topics that are common across all Point of Service device 
 |Topic |Description |
 |------|------------|
 | [Capability declaration](pos-basics-capability.md)      | Learn how to add the **pointOfService** capability to your application manifest.  This capability is required for use of Windows.Devices.PointOfService namespace.  |
-| [Enumerating devices](pos-basics-enumerating.md)        | Learn how to define a device selector that is used to query devices available to the system and use this selector to enumerate Point of Service devices.  |
-| [Creating a device object](pos-basics-deviceobject.md)  | Learn how to create a PointOfService device object that will give you access to read-only properties of the peripheral and claim the peripheral for exclusive use. |
-| [Claim and enable ](pos-basics-claim.md)  | Learn how to reserve a PointOfService peripheral for exclusive use and enable for I/O operations.  |
-| [Sharing peripherals with others](pos-basics-sharing.md) | Learn how to share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals rather than dedicated peripherals attached to each computer.
+| [Enumerating devices](pos-basics-enumerating.md)        | [Define a device selector](./build-a-device-selector.md) for querying devices available to the system and use this selector to enumerate Point of Service devices.
+ |
+| [PointOfService device objects](pos-basics-deviceobject.md)  | Learn how to create a [PointOfService device object](pos-basics-deviceobject.md) that will give you access to read-only properties of the peripheral and claim the peripheral for exclusive use in a Universal Windows Platform (UWP) application. |
+| [PointofService device claim and enable model](pos-basics-claim.md)  | Use the Point of Service device claim and enable APIs to claim devices and enable them for I/O operations.  |
+| [Sharing peripherals with others](pos-basics-sharing.md) | Share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals rather than dedicated peripherals attached to each computer.
 | [PointOfService end-to-end](pos-get-started.md)  | This is an end to end example of how to interact with PointOfService peripherals utilizing the examples above. |
 |
 
@@ -32,10 +34,9 @@ This section contains topics that are common across all Point of Service device 
 | [Version adaptive applications](../debug-test-perf/version-adaptive-apps.md) | Lean how to design your app so that it runs on multiple versions of Windows 10.|
 |
 
-
 ## Sample code
-+ [Barcode scanner sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [Cash drawer sample]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
-+ [Line display sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
-+ [Magnetic stripe reader sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
-+ [POSPrinter sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
++ [Barcode scanner sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)
++ [Cash drawer sample]( https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CashDrawer)
++ [Line display sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LineDisplay)
++ [Magnetic stripe reader sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/MagneticStripeReader)
++ [POSPrinter sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/PosPrinter)

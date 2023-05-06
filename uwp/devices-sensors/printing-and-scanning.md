@@ -1,14 +1,14 @@
 ---
-ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
+
 title: Printing and scanning
 description: This section describes how to print and scan from your Universal Windows app.
-ms.date: 02/08/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, printing, 3dprinting, 3d printing
+
 ms.localizationpriority: medium
 ---
-# Printing and scanning
 
+# Printing and scanning
 
 This section describes how to print and scan from your Universal Windows app.
 
@@ -22,5 +22,4 @@ This section describes how to print and scan from your Universal Windows app.
 ## Related topics
 
 * //Build 2015 video: Developing apps that print in Windows 10
-* [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)
- 
+* [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)

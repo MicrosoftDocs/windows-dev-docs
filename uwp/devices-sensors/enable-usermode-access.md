@@ -1,16 +1,16 @@
 ---
 title: Enable user mode access to GPIO, I2C, and SPI
-description: This tutorial describes how to enable user mode access to GPIO, I2C, SPI, and UART on Windows 10.
-ms.date: 02/08/2017
+description: This tutorial describes how to enable user mode access to GPIO, I2C, SPI, and UART on Windows 10 and later.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
-ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
+
+
 ms.localizationpriority: medium
 ---
 
 # Enable user mode access to GPIO, I2C, and SPI
 
-Windows 10 contains new APIs for direct access from user mode of general-purpose input/output (GPIO), Inter-Integrated Circuit (I2C), Serial Peripheral Interface (SPI), and universal asynchronous receiver-transmitter (UART). Development boards such as Raspberry Pi 2 expose a subset of these connections, which enable you to extend a base compute module with custom circuitry to address a particular application. These low level buses are usually shared with other critical onboard functions, with only a subset of GPIO pins and buses exposed on headers. To preserve system stability, it is necessary to specify which pins and buses are safe for modification by user mode applications.
+In Windows 10 and later, APIs are provided with direct access from user mode to general-purpose input/output (GPIO), Inter-Integrated Circuit (I2C), Serial Peripheral Interface (SPI), and universal asynchronous receiver-transmitter (UART). Development boards such as Raspberry Pi 2 expose a subset of these connections, which enable you to extend a base compute module with custom circuitry to address a particular application. These low level buses are usually shared with other critical onboard functions, with only a subset of GPIO pins and buses exposed on headers. To preserve system stability, it is necessary to specify which pins and buses are safe for modification by user mode applications.
 
 This document describes how to specify this configuration in Advanced Configuration and Power Interface (ACPI), and provides tools to validate that the configuration was specified correctly.
 
@@ -798,10 +798,10 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 Use the following samples to validate that devices work from UWP.
 
-- [IoT-GPIO](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-GPIO)
-- [IoT-I2C](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-I2C)
-- [IoT-SPI](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-SPI)
-- [CustomSerialDeviceAccess](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomSerialDeviceAccess)
+- [IoT-GPIO](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/IoT-GPIO)
+- [IoT-I2C](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/IoT-I2C)
+- [IoT-SPI](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/IoT-SPI)
+- [CustomSerialDeviceAccess](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CustomSerialDeviceAccess)
 
 ### Run the HLK Tests
 

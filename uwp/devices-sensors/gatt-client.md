@@ -1,22 +1,17 @@
 ---
 title: Bluetooth GATT Client
-description: This article provides an overview of Bluetooth Generic Attribute Profile (GATT) Client for Universal Windows Platform (UWP) apps, along with sample code for common use cases.
-ms.date: 06/26/2020
+description: This article demonstrates how to use the Bluetooth Generic Attribute (GATT) Client APIs for Universal Windows Platform (UWP) apps.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Bluetooth GATT Client
 
-This article demonstrates usage of the Bluetooth Generic Attribute (GATT) Client APIs for Universal Windows Platform (UWP) apps, along with sample code for common GATT client tasks:
+This article demonstrates how to use the Bluetooth Generic Attribute (GATT) Client APIs for Universal Windows Platform (UWP) apps.
 
-- Query for nearby devices
-- Connect to device
-- Enumerate the supported services and characteristics of the device
-- Read and write to a characteristic
-- Subscribe for notifications when characteristic value changes
-
-> [!Important]
+> [!IMPORTANT]
 > You must declare the "bluetooth" capability in *Package.appxmanifest*.
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
@@ -48,14 +43,14 @@ For convenience the Bluetooth SIG maintains a [list of public profiles](https://
 
 ## Examples
 
-For a complete sample, see [Bluetooth Low Energy sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BluetoothLE).
+For a complete sample, see [Bluetooth Low Energy sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BluetoothLE).
 
 ### Query for nearby devices
 
 There are two main methods to query for nearby devices:
 
-- DeviceWatcher in Windows.Devices.Enumeration
-- AdvertisementWatcher in Windows.Devices.Bluetooth.Advertisement
+- [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) in [Windows.Devices.Enumeration](/uwp/api/windows.devices.enumeration)
+- [BluetoothLEAdvertisementWatcher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher) in [Windows.Devices.Bluetooth.Advertisement](/uwp/api/windows.devices.bluetooth.advertisement)
 
 The 2nd method is discussed at length in the [Advertisement](ble-beacon.md) documentation so it won't be discussed much here but the basic idea is to find the Bluetooth address of nearby devices that satisfy the particular [Advertisement Filter](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter). Once you have the address, you can call [BluetoothLEDevice.FromBluetoothAddressAsync](/uwp/api/windows.devices.bluetooth.bluetoothledevice.frombluetoothaddressasync) to get a reference to the device.
 
@@ -85,7 +80,7 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 deviceWatcher.Start();
 ```
 
-Once you've started the DeviceWatcher, you will receive [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) for each device that satisfies the query in the handler for the [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
+Once you've started the DeviceWatcher, you will receive [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) for each device that satisfies the query in the handler for the [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on Github](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/DeviceEnumerationAndPairing).
 
 ### Connecting to the device
 
@@ -142,7 +137,7 @@ if (result.Status == GattCommunicationStatus.Success)
 }
 ```
 
-The OS returns a ReadOnly list of GattCharacteristic objects that you can then perform operations on.
+The OS returns a ReadOnly list of [GattCharacteristic](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristic) objects that you can then perform operations on.
 
 ### Perform Read/Write operations on a characteristic
 
@@ -194,13 +189,14 @@ if (result == GattCommunicationStatus.Success)
 }
 ```
 
-> **Tip**: [DataReader](/uwp/api/windows.storage.streams.datareader) and [DataWriter](/uwp/api/windows.storage.streams.datawriter) are indispensible when working with the raw buffers you get from many of the Bluetooth APIs.
+> [!TIP]
+> [DataReader](/uwp/api/windows.storage.streams.datareader) and [DataWriter](/uwp/api/windows.storage.streams.datawriter) are indispensible when working with the raw buffers you get from many of the Bluetooth APIs.
 
 ### Subscribing for notifications
 
 Make sure the characteristic supports either Indicate or Notify (check the characteristic properties to make sure).
 
-> **Aside**: Indicate is considered more reliable because each value changed event is coupled with an acknowledgement from the client device. Notify is more prevalent because most GATT transactions would rather conserve power rather than be extremely reliable. In any case, all of that is handled at the controller layer so the app does not get involved. We'll collectively refer to them as simply "notifications" but now you know.
+Indicate is considered more reliable because each value changed event is coupled with an acknowledgement from the client device. Notify is more prevalent because most GATT transactions would rather conserve power rather than be extremely reliable. In any case, all of that is handled at the controller layer so the app does not get involved. We'll collectively refer to them as simply "notifications".
 
 There are two things to take care of before getting notifications:
 

@@ -1,18 +1,20 @@
 ---
-ms.assetid: 67a46812-881c-404b-9f3b-c6786f39e72b
+
 title: Customize the print workflow
-description: Create custom print workflow experiences to meet the needs of your organization.
-ms.date: 07/03/2020
+description: Create custom print workflow experiences through the use of a print workflow app.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, printing
+
 ms.localizationpriority: medium
 ---
 
 # Customize the print workflow
 
+Create custom print workflow experiences through the use of a print workflow app.
+
 ## Overview
 
-Developers can customize the printing workflow experience through the use of a print workflow app. Print workflow apps are UWP apps that expand on the functionality of [Microsoft Store devices apps (WSDAs)](/windows-hardware/drivers/devapps/), so it will be helpful to have some familiarity with WSDAs before going further.
+Print workflow apps are UWP apps that expand on the functionality of [Microsoft Store devices apps (WSDAs)](/windows-hardware/drivers/devapps/), so it will be helpful to have some familiarity with WSDAs before going further.
 
 Just as in the case of WSDAs, when the user of a source application elects to print something and navigates through the print dialog, the system checks whether a workflow app is associated with that printer. If it is, the print workflow app launches (primarily as a background task; more on this below). A workflow app is able to alter both the print ticket (the XML document that configures the printer device settings for the current print task) and the actual XPS content to be printed. It can optionally expose this functionality to the user by launching a UI midway through the process. After doing its work, it passes the print content and print ticket on to the driver.
 

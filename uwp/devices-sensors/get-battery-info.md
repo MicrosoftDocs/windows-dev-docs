@@ -1,24 +1,27 @@
 ---
-ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
+
 title: Get battery information
-description: Learn how to get detailed battery information using APIs in the Windows.Devices.Power namespace.
-ms.date: 02/08/2017
+description: Learn how to get a battery report that includes detailed battery information (such as the charge, capacity, and status of a battery or aggregate of batteries), and handle state changes to any items in the report.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Get battery information
 
+This topic describes how to get a *battery report* that includes detailed battery information (such as the charge, capacity, and status of a battery or aggregate of batteries), and handle state changes to any items in the report.
 
-** Important APIs **
+ ([**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport))
 
--   [**Windows.Devices.Power**](/uwp/api/Windows.Devices.Power)
--   [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)
+Code examples are from the basic battery app that's listed at the end of this topic.
 
-Learn how to get detailed battery information using APIs in the [**Windows.Devices.Power**](/uwp/api/Windows.Devices.Power) namespace. A *battery report* ([**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport)) describes the charge, capacity, and status of a battery or aggregate of batteries. This topic demonstrates how your app can get battery reports and be notified of changes. Code examples are from the basic battery app that's listed at the end of this topic.
+**Important APIs**
+
+- [**Windows.Devices.Power**](/uwp/api/Windows.Devices.Power)
+- [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)
 
 ## Get aggregate battery report
-
 
 Some devices have more than one battery and it's not always obvious how each battery contributes to the overall energy capacity of the device. This is where the [**AggregateBattery**](/uwp/api/windows.devices.power.battery.aggregatebattery) class comes in. The *aggregate battery* represents all battery controllers connected to the device and can provide a single overall [**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport) object.
 
@@ -130,6 +133,9 @@ Test out these APIs by building the following basic battery app in Microsoft Vis
 
 Next, open the file **MainPage.xaml** and copy the following XML into this file (replacing its original contents).
 
+> [!NOTE]
+> If your app isn't named **App1**, you'll need to replace the first part of the class name in the following snippet with the namespace of your app. For example, if you created a project named **BasicBatteryApp**, replace `x:Class="App1.MainPage"` with `x:Class="BasicBatteryApp.MainPage"` and `xmlns:local="using:App1"` with `xmlns:local="using:BasicBatteryApp"`.
+
 ```xml
 <Page
     x:Class="App1.MainPage"
@@ -156,9 +162,10 @@ Next, open the file **MainPage.xaml** and copy the following XML into this file 
 </Page>
 ```
 
-If your app isn't named **App1**, you'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **BasicBatteryApp**, you'd replace `x:Class="App1.MainPage"` with `x:Class="BasicBatteryApp.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:BasicBatteryApp"`.
-
 Next, open your project's **MainPage.xaml.cs** file and replace the existing code with the following.
+
+> [!NOTE]
+> If your app isn't named **App1**, you'll need to rename the namespace in the following example with the name you gave your project. For example, if you created a project named **BasicBatteryApp**, you'd replace namespace `App1` with namespace `BasicBatteryApp`.
 
 ```csharp
 using System;
@@ -326,10 +333,5 @@ namespace App1
 }
 ```
 
-If your app isn't named **App1**, you'll need to rename the namespace in the previous example with the name you gave your project. For example, if you created a project named **BasicBatteryApp**, you'd replace namespace `App1` with namespace `BasicBatteryApp`.
-
-Finally, to run this basic battery app: on the **Debug** menu, click **Start Debugging** to test the solution.
-
-**Tip**  To receive numeric values from the [**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport) object, debug your app on the **Local Machine** or an external **Device** (such as a Windows Phone). When debugging on a device emulator, the **BatteryReport** object returns **null** to the capacity and rate properties.
-
- 
+> [!TIP]
+> To receive numeric values from the [**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport) object, debug your app on the **Local Machine** or an external **Device**. When debugging on a device emulator, the **BatteryReport** object returns **null** to the capacity and rate properties.

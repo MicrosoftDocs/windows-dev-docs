@@ -3,11 +3,12 @@ title: Camera barcode scanner symbologies
 description: Provides sample barcodes for each of the symbologies supported by the software barcode decoder that ships with Windows 10 Version 1803 or later.
 author: twarwick
 ms.author: twarwick
-ms.date: 03/09/2023
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
+
 # Camera barcode scanner symbologies
 
 **Requires Windows 10 Version 1803 or later.**
@@ -53,4 +54,4 @@ Additional symbologies might be supported by dedicated barcode scanner devices t
 ## See also
 
 - [JustScanIt - Windows Store app](https://aka.ms/justscanit)
-- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
+- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)

@@ -3,9 +3,9 @@ title: Get started with camera barcode scanner
 description: Set up a basic camera barcode scanner in a UWP application.
 author: twarwick
 ms.author: twarwick
-ms.date: 03/10/2023
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
 
@@ -16,7 +16,7 @@ This topic describes how to set up a basic camera barcode scanner in a UWP appli
 > [!NOTE]
 > The software decoder built into Windows 10/11 is provided by [*Digimarc Corporation*](https://www.digimarc.com/).
 
-The following code snippets are for demonstration purposes only. For a complete working sample, see the [Barcode scanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner).
+The following code snippets are for demonstration purposes only. For a complete working sample, see the [Barcode scanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner).
 
 ## Step 1: Add capability declarations to your app manifest
 
@@ -182,4 +182,4 @@ Set the desired value of [**IsDisabledOnDataReceived**](/uwp/api/windows.devices
 ## See also
 
 - [JustScanIt - Windows Store app](https://aka.ms/justscanit)
-- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
+- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)

@@ -1,14 +1,24 @@
 ---
 title: PointOfService device sharing 
 description: Learn how to share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals.
-ms.date: 06/14/2018
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
+
 # PointOfService device sharing
 
-Learn how to share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals rather than dedicated peripherals attached to each computer.
+This topic shows how to share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals rather than dedicated peripherals attached to each computer.
+
+**Important APIs**
+
+- [BarcodeScanner.Dispose](/uwp/api/windows.devices.pointofservice.barcodescanner.dispose)
+- [CashDrawer.Dispose](/uwp/api/windows.devices.pointofservice.cashdrawer.dispose)
+- [LineDisplay.Dispose](/uwp/api/windows.devices.pointofservice.linedisplay.dispose)
+- [MagneticStripeReader.Dispose](/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
+- [PosPrinter.Dispose](/uwp/api/windows.devices.pointofservice.posprinter.dispose)
+
 
 ## Device sharing
 
@@ -32,10 +42,9 @@ using(PosPrinter printer = await PosPrinter.FromIdAsync("Device ID"))
 }
 ```
 
-
 Disposing of a PosPrinter by calling Dispose() explicitly
 
-```Csharp 
+```csharp
 using Windows.Devices.PointOfService;
 
 PosPrinter printer = await PosPrinter.FromIdAsync("Device ID");
@@ -45,14 +54,5 @@ if (printer != null)
     printer.Dispose();
 }
 ```
-
-## API methods used 
-
-+ [BarcodeScanner.Dispose](/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
-+ [CashDrawer.Dispose](/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
-+ [LineDisplay.Dispose](/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
-+ [MagneticStripeReader.Dispose](/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
-+ [PosPrinter.Dispose](/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
-
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

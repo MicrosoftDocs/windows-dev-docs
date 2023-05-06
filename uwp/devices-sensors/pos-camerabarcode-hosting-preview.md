@@ -3,9 +3,9 @@ title: Host a camera barcode scanner preview in a UWP application
 description: Host a camera barcode scanner preview in a UWP application on Windows 10 Version 1803 or later.
 author: twarwick
 ms.author: twarwick
-ms.date: 03/10/2023
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
 
@@ -72,4 +72,4 @@ try
 ## See also
 
 - [JustScanIt - Windows Store app](https://aka.ms/justscanit)
-- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
+- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)

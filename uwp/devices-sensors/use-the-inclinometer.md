@@ -1,43 +1,40 @@
 ---
-ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
+
 title: Use the inclinometer
 description: Learn how to create a basic app that uses the inclinometer input device to determine pitch, roll, and yaw.
-ms.date: 06/06/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Use the inclinometer
-
-
-**Important APIs**
-
--   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
--   [**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer)
-
-**Sample**
-
--   For a more complete implementation, see the [inclinometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
 
 Learn how to use the inclinometer to determine pitch, roll, and yaw.
 
-Some 3-D games require an inclinometer as an input device. One common example is the flight simulator, which maps the three axes of the inclinometer (X, Y, and Z) to the elevator, aileron, and rudder inputs of the aircraft.
+**Important APIs**
 
- ## Prerequisites
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer)
+
+## Prerequisites
 
 You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
 The device or emulator that you're using must support a inclinometer.
 
- ## Create a simple inclinometer app
+## Create a simple inclinometer app
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple inclinometer application from scratch. The following subsection explains the app you have just created.
+Some 3-D games require an inclinometer as an input device. One common example is the flight simulator, which maps the three axes of the inclinometer (X, Y, and Z) to the elevator, aileron, and rudder inputs of the aircraft.
 
-###  Instructions
+> [!NOTE]
+> For a more complete implementation, see the [inclinometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Inclinometer).
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+### Instructions
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+
+- Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -104,7 +101,7 @@ This section is divided into two subsections. The first subsection will take you
 
 You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **InclinometerCS**, you'd replace `namespace App1` with `namespace InclinometerCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -130,11 +127,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **InclinometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="InclinometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:InclinometerCS"`.
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+- Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
 Once the app is running, you can change the inclinometer values by moving the device or using the emulator tools.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
 ###  Explanation
 

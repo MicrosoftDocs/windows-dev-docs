@@ -1,15 +1,20 @@
 ﻿---
 title: Working with barcode scanner symbologies
-description: Use the UWP barcode scanner APIs to process barcode symbologies without manually configuring the scanner.
-ms.date: 08/29/2018
+description: This topic explains how to use the Universal Windows Platform (UWP) barcode scanner APIs to process barcode symbologies without manually configuring the scanner.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
-# Working with symbologies
-A [barcode symbology](/uwp/api/windows.devices.pointofservice.barcodesymbologies) is the mapping of data to a specific barcode format. Some common symbologies include UPC, Code 128, QR Code, and so on.  The Universal Windows Platform barcode scanner APIs allow an application to control how the scanner processes these symbologies without manually configuring the scanner. 
 
-## Determine which symbologies are supported 
+# Working with barcode scanner symbologies
+
+This topic explains how to use the Universal Windows Platform (UWP) barcode scanner APIs to process barcode symbologies without manually configuring the scanner.
+
+A [barcode symbology](/uwp/api/windows.devices.pointofservice.barcodesymbologies) is the mapping of data to a specific barcode format. Some common symbologies include UPC, Code 128, QR Code, and so on.
+
+## Determine which symbologies are supported
+
 Since your application may be used with different barcode scanner models from multiple manufacturers, you may want to query the scanner to determine the list of symbologies that it supports.  This can be useful if your application requires a specific symbology that may not be supported by all scanners or you need to enable symbologies that have been either manually or programmatically disabled on the scanner.
 
 Once you have a [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcodescanner) object by using [BarcodeScanner.FromIdAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync), call [GetSupportedSymbologiesAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getsupportedsymbologiesasync#Windows_Devices_PointOfService_BarcodeScanner_GetSupportedSymbologiesAsync) to obtain a list of symbologies supported by the device.
@@ -30,6 +35,7 @@ private void DisplaySupportedSymbologies(BarcodeScanner barcodeScanner, TextBloc
 ```
 
 ## Determine if a specific symbology is supported
+
 To determine if the scanner supports a specific symbology you can call [IsSymbologySupportedAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.issymbologysupportedasync#Windows_Devices_PointOfService_BarcodeScanner_IsSymbologySupportedAsync_System_UInt32_).
 
 The following example checks if the barcode scanner supports the **Code32** symbology:
@@ -39,6 +45,7 @@ bool symbologySupported = await barcodeScanner.IsSymbologySupportedAsync(Barcode
 ```
 
 ## Change which symbologies are recognized
+
 In some cases, you may want to use a subset of symbologies that the barcode scanner supports.  This is particularly useful to block symbologies that you do not intend to use in your application. For example, to ensure a user scans the right barcode, you could constrain scanning to UPC or EAN when acquiring item SKUs and constrain scanning to Code 128 when acquiring serial numbers.
 
 Once you know the symbologies that your scanner supports, you can set the symbologies that you want it to recognize.  This can be done after you have established a 
@@ -55,6 +62,7 @@ private async void SetSymbologies(ClaimedBarcodeScanner claimedBarcodeScanner)
 ```
 
 ## Barcode symbology attributes
+
 Different barcode symbologies can have different attributes, such as supporting multiple decode lengths, transmitting the check digit to the host as part of the raw data, and check digit validation. With the [BarcodeSymbologyAttributes](/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes) class, you can get and set these attributes for a given [ClaimedBarcodeScanner](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) and barcode symbology.
 
 You can get the attributes of a given symbology with [GetSymbologyAttributesAsync](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.getsymbologyattributesasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_GetSymbologyAttributesAsync_System_UInt32_). The following code snippet gets the attributes of the Upca symbology for a **ClaimedBarcodeScanner**.
@@ -72,13 +80,14 @@ bool success = await claimedBarcodeScanner.SetSymbologyAttributesAsync(
 ```
 
 ### Restrict scan data by data length
+
 Some symbologies are variable length such as Code 39 or Code 128.  Barcodes of these symbologies can be located near each other containing different data often of specific length. Setting the specific length of the data you require can prevent invalid scans.
 
 Before setting the decode length, check whether the barcode symbology supports multiple lengths with [IsDecodeLengthSupported](/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.isdecodelengthsupported#Windows_Devices_PointOfService_BarcodeSymbologyAttributes_IsDecodeLengthSupported). Once you know that it's supported, you can set the [DecodeLengthKind](/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelengthkind#Windows_Devices_PointOfService_BarcodeSymbologyAttributes_DecodeLengthKind), which is of type [BarcodeSymbologyDecodeLengthKind](/uwp/api/windows.devices.pointofservice.barcodesymbologydecodelengthkind). This property can be any of the following values:
 
-* **AnyLength**: Decode lengths of any number.
-* **Discrete**: Decode lengths of either [DecodeLength1](/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength1) or [DecodeLength2](/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength2) single-byte characters.
-* **Range**: Decode lengths between **DecodeLength1** and **DecodeLength2** single-byte characters. The order of **DecodeLength1** and **DecodeLength2** do not matter (either can be higher or lower than the other).
+- **AnyLength**: Decode lengths of any number.
+- **Discrete**: Decode lengths of either [DecodeLength1](/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength1) or [DecodeLength2](/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength2) single-byte characters.
+- **Range**: Decode lengths between **DecodeLength1** and **DecodeLength2** single-byte characters. The order of **DecodeLength1** and **DecodeLength2** do not matter (either can be higher or lower than the other).
 
 Finally, you can set the values of **DecodeLength1** and **DecodeLength2** to control the length of the data you require.
 
@@ -155,9 +164,9 @@ private async Task<bool> SetCheckDigitValidation(ClaimedBarcodeScanner scanner, 
 
 ## See also
 
-* [Barcode scanner](pos-barcodescanner.md)
-* [BarcodeSymbologies Class](/uwp/api/windows.devices.pointofservice.barcodesymbologies)
-* [BarcodeScanner Class](/uwp/api/windows.devices.pointofservice.barcodescanner)
-* [ClaimedBarcodeScanner Class](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)
-* [BarcodeSymbologyAttributes Class](/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes)
-* [BarcodeSymbologyDecodeLengthKind Enum](/uwp/api/windows.devices.pointofservice.barcodesymbologydecodelengthkind)
+- [Barcode scanner](pos-barcodescanner.md)
+- [BarcodeSymbologies Class](/uwp/api/windows.devices.pointofservice.barcodesymbologies)
+- [BarcodeScanner Class](/uwp/api/windows.devices.pointofservice.barcodescanner)
+- [ClaimedBarcodeScanner Class](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)
+- [BarcodeSymbologyAttributes Class](/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes)
+- [BarcodeSymbologyDecodeLengthKind Enum](/uwp/api/windows.devices.pointofservice.barcodesymbologydecodelengthkind)

@@ -1,23 +1,22 @@
 ---
-ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
+
 title: Device information properties
 description: Each device has associated DeviceInformation properties that you can use when you need specific information or when you are building a device selector.
-ms.date: 02/08/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Device information properties
 
-
+Each device has associated [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) properties that you can use when you need specific information or when you are building a device selector. An Advanced Query Syntax (AQS) filter can be used to specify these properties and limit the enumerated devices with the specified traits. You can also use these properties to indicate what information you want returned for each device. That enables you to specify the device information that is returned to your application.
 
 **Important APIs**
 
 - [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration)
 
-Each device has associated [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) properties that you can use when you need specific information or when you are building a device selector. These properties can be specified an AQS filter to limit the devices that you are enumerating over in order to find the devices with the specified traits. You can also use these properties to indicate what information you want returned for each device. That enables you to specify the device information that is returned to your application.
-
-For more information about using [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) properties in your device selector, see [Build a device selector](build-a-device-selector.md). This topic goes into how to request information properties and also lists some common properties and their purpose.
+For more information about using [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) properties in your device selector, see [Build a device selector](build-a-device-selector.md). This topic shows how to request information properties and describes some common properties.
 
 A [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) object is composed of an identity ([**DeviceInformation.Id**](/uwp/api/windows.devices.enumeration.deviceinformation.id)), a kind ([**DeviceInformation.Kind**](/uwp/api/windows.devices.enumeration.deviceinformation.kind)), and a property bag ([**DeviceInformation.Properties**](/uwp/api/windows.devices.enumeration.deviceinformation.properties)). All of the other properties of a **DeviceInformation** object are derived from the **Properties** property bag. For example, [**Name**](/uwp/api/windows.devices.enumeration.deviceinformation.name) is derived from **System.ItemNameDisplay**. This means that the property bag always contains the information necessary to determine the other properties.
 
@@ -27,7 +26,7 @@ A [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation
 
 When you are requesting properties, you are not limited to the common properties with user-friendly names. You can specify the underlying GUID and property ID (PID) to request any property that is available, even custom properties that are supplied by an individual device or driver. The format for specifying a custom property is "`{GUID} PID`". For example: "`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`". 
 
-> [!Note]
+> [!NOTE]
 > You can find the list of property GUIDs in the device property key header file of the device driver.
 
 Some properties are common across all [**DeviceInformationKind**](/uwp/api/windows.devices.enumeration.deviceinformationkind) objects, but most are unique to a specific kind. The following sections list some common properties sorted by the individual **DeviceInformationKind**. For more information about how the different kinds relate to one another, see **DeviceInformationKind**.

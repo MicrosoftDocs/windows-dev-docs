@@ -1,40 +1,29 @@
 ---
-ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
+
 title: Pair devices
-description: Some devices need to be paired before they can be used. The Windows.Devices.Enumeration namespace supports three different ways to pair devices.
-ms.date: 04/19/2019
+description: This topic describes how to pair devices using the Windows.Devices.Enumeration namespace.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
+
 # Pair devices
 
-
+This topic describes how to pair devices using the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) namespace.
 
 **Important APIs**
 
 - [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration)
 
-Some devices need to be paired before they can be used. The [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) namespace supports three different ways to pair devices.
-
--   Automatic pairing
--   Basic pairing
--   Custom pairing
-
-**Tip**  Some devices do not need to be paired in order to be used. This is covered under the section on automatic pairing.
-
- 
-
 ## Automatic pairing
-
 
 Sometimes you want to use a device in your application, but do not care whether or not the device is paired. You simply want to be able to use the functionality associated with a device. For example, if your app wants to simply capture an image from a webcam, you are not necessarily interested in the device itself, just the image capture. If there are device APIs available for the device you are interested in, this scenario would fall under automatic pairing.
 
 In this case, you simply use the APIs associated with the device, making the calls as necessary and trusting the system to handle any pairing that might be necessary. Some devices do not need to be paired in order for you to use their functionality. If the device does need to be paired, then the device APIs will handle the pairing action behind the scenes so you do not need to integrate that functionality into your app. Your app will have no knowledge about whether or not a given device is paired or needs to be, but you will still be able to access the device and use its functionality.
 
 ## Basic pairing
-
 
 Basic pairing is when your application uses the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs in order to attempt to pair the device. In this scenario, you are letting Windows attempt the pairing process and handle it. If any user interaction is necessary, it will be handled by Windows. You would use basic pairing if you need to pair with a device and there is not a relevant device API that will attempt automatic pairing. You just want to be able to use the device and need to pair with it first.
 
@@ -43,7 +32,6 @@ In order to attempt basic pairing, you first need to obtain the [**DeviceInforma
 If you are using basic pairing, you also have access to additional information about the pairing status of the device. For example you know the pairing status ([**IsPaired**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.IsPaired)) and whether the device can pair ([**CanPair**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.CanPair)). Both of these are properties of the [**DeviceInformationPairing**](/uwp/api/windows.devices.enumeration.deviceinformation.pairing) object. If you are using automatic pairing, you might not have access to this information unless you obtain the relevant [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) objects.
 
 ## Custom pairing
-
 
 Custom pairing enables your app to participate in the pairing process. This allows your app to specify the [**DevicePairingKinds**](/uwp/api/Windows.Devices.Enumeration.DevicePairingKinds) that are supported for the pairing process. You will also be responsible for creating your own user interface to interact with the user as needed. Use custom pairing when you want your app to have a little more influence over how the pairing process proceeds or to display your own pairing user interface.
 
@@ -57,16 +45,10 @@ Starting with Windows 10, version 1903, a new **DevicePairingKinds** is supporte
 
 ## Unpairing
 
-
 Unpairing a device is only relevant in the basic or custom pairing scenarios described above. If you are using automatic pairing, your app remains oblivious to the pairing status of the device and there is no need to unpair it. If you do choose to unpair a device, the process is identical whether you implement basic or custom pairing. This is because there is no need to provide additional information or interact in the unpairing process.
 
 The first step to unpairing a device is obtaining the [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) object for the device that you want to unpair. Then you need to retrieve the [**DeviceInformation.Pairing**](/uwp/api/windows.devices.enumeration.deviceinformation.pairing) property and call [**DeviceInformationPairing.UnpairAsync**](/uwp/api/windows.devices.enumeration.deviceinformationpairing.unpairasync). Just like with pairing, you will want to **await** the result. The result of the unpairing action will be returned, and as long as no errors are returned, the device will be unpaired.
 
 ## Sample
 
-
-To download a sample showing how to use the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs, click [here](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
-
- 
-
- 
+For a working sample, see the [Device enumeration and pairing sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/DeviceEnumerationAndPairing) on GitHub.

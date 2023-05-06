@@ -1,15 +1,19 @@
 ---
 title: PointOfService device capability
-description: The PointOfService capability is required for use of Windows.Devices.PointOfService namespace
-ms.date: 05/02/2018
+description: The PointOfService device capability is required to use APIs in the Windows.Devices.PointOfService namespace.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
-# PointOfService device capability
-You request access to the PointOfService APIs by declaring the capability in your application package manifest]  You can declare most capabilities by using the Manifest Designer, in Microsoft Visual Studio, or you can add them manually.  
 
-> [!Important]
+# PointOfService device capability
+
+The PointOfService device capability is required to use APIs in the [Windows.Devices.PointOfService](/uwp/api/windows.devices.pointofservice) namespace.
+
+You request access to the PointOfService APIs by declaring the capability in your application package manifest. Most capabilities can be declared through the Manifest Designer in Microsoft Visual Studio, or you can add them manually.
+
+> [!IMPORTANT]
 > You will receive the error **System.UnauthorizedAccessException** when you attempt to use an API in the Windows.Devices.PointOfService namespace if you do not declare the **pointOfService** capability in your application manifest. 
 
 ## Declare capability using Manifest Designer

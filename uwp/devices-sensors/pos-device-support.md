@@ -1,14 +1,18 @@
 ---
 title: Point of Service Hardware Support
-description: This article contains information about hardware support for each of the Point of Service device classes
-ms.date: 06/13/2018
+description: This article contains information about hardware support for each of the Point of Service device classes.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
-# Supported Point of Service Peripherals
+
+# Supported Point of Service peripherals
+
+This topic describes the hardware support for each of the Point of Service device classes.
 
 ## Barcode Scanner
+
 | Connectivity | Support |
 | -------------|-------------|
 | USB          | <p>Windows contains an in-box class driver for USB connected barcode scanners which is based on the HID POS Scanner Usage Table (8c) specification defined by [USB.org](https://www.usb.org/hid). See the table below for a list of known compatible devices.  Consult the manual for your barcode scanner or contact the manufacturer to determine how to configure your scanner in **USB.HID.POS Scanner** mode. </p><p>Windows also supports implementation of vendor specific drivers to support additional barcode scanners that do not support the USB.HID.POS Scanner standard. Please check with your barcode scanner manufacturer for vendor specific driver availability.</p><p>Barcode scanner manufacturers please consult the [Barcode Scanner Driver Design Guide](/windows-hardware/drivers/ddi/_pos/index) for information on creating a custom barcode scanner driver</p> |

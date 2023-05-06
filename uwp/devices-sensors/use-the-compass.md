@@ -1,27 +1,21 @@
 ---
-ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
+
 title: Use the compass
 description: Learn how to use the Universal Windows Platform (UWP) Compass API to determine the current heading in a navigation app.
-ms.date: 06/06/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Use the compass
-
-
-**Important APIs**
-
--   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
--   [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass)
-
-**Sample**
-
--   For a more complete implementation, see the [compass sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass).
 
 Learn how to use the compass to determine the current heading.
 
-An app can retrieve the current heading with respect to magnetic, or true, north. Navigation apps use the compass to determine the direction a device is facing and then orient the map accordingly.
+**Important APIs**
+
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass)
 
 ## Prerequisites
 
@@ -31,13 +25,16 @@ The device or emulator that you're using must support a compass.
 
 ## Create a simple compass app
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple compass application from scratch. The following subsection explains the app you have just created.
+An app can retrieve the current heading with respect to magnetic, or true, north. Navigation apps use the compass to determine the direction a device is facing and then orient the map accordingly.
+
+> [!NOTE]
+> For a more complete implementation, see the [compass sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Compass).
 
 ### Instructions
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+- Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -104,7 +101,7 @@ This section is divided into two subsections. The first subsection will take you
 
 You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **CompassCS**, you'd replace `namespace App1` with `namespace CompassCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
     <Page
@@ -128,11 +125,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **CompassCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="CompassCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:CompassCS"`.
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+- Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
 Once the app is running, you can change the compass values by moving the device or using the emulator tools.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
 ### Explanation
 

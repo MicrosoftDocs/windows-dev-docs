@@ -1,27 +1,21 @@
 ---
-ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
+
 title: Use the accelerometer
 description: Learn how to create a basic app that relies on a single sensor, the accelerometer, to respond to user movements.
-ms.date: 06/06/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Use the accelerometer
-
-
-**Important APIs**
-
--   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
--   [**Accelerometer**](/uwp/api/Windows.Devices.Sensors.Accelerometer)
-
-**Sample**
-
--   For a more complete implementation, see the [accelerometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
 
 Learn how to use the accelerometer to respond to user movement.
 
-A simple game app relies on a single sensor, the accelerometer, as an input device. These apps typically use only one or two axes for input; but they may also use the shake event as another input source.
+**Important APIs**
+
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**Accelerometer**](/uwp/api/Windows.Devices.Sensors.Accelerometer)
 
 ## Prerequisites
 
@@ -31,13 +25,16 @@ The device or emulator that you're using must support an accelerometer.
 
 ## Create a simple accelerometer app
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple accelerometer application from scratch. The following subsection explains the app you have just created.
+A simple game app relies on a single sensor, the accelerometer, as an input device. These apps typically use only one or two axes for input; but they may also use the shake event as another input source.
+
+> [!NOTE]
+> For a more complete implementation, see the [accelerometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Accelerometer).
 
 ### Instructions
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+- Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -104,7 +101,7 @@ This section is divided into two subsections. The first subsection will take you
 
 You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **AccelerometerCS**, you'd replace `namespace App1` with `namespace AccelerometerCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -130,11 +127,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **AccelerometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="AccelerometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:AccelerometerCS"`.
 
--   Press F5 or select **Debug** &gt; **Start Debugging** to build, deploy, and run the app.
+- Press F5 or select **Debug** &gt; **Start Debugging** to build, deploy, and run the app.
 
 Once the app is running, you can change the accelerometer values by moving the device or using the emulator tools.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** &gt; **Stop Debugging** to stop the app.
+- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** &gt; **Stop Debugging** to stop the app.
 
 ### Explanation
 

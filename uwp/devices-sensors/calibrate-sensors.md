@@ -1,21 +1,21 @@
 ---
-ms.assetid: ECE848C2-33DE-46B0-BAE7-647DB62779BB
+
 title: Calibrate sensors
-description: Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors.
-ms.date: 03/22/2018
+description: The MagnetometerAccuracy enumeration can help determine when a device is in need of calibration.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Calibrate sensors
 
+Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can require calibration due to environmental factors. The [**MagnetometerAccuracy**](/uwp/api/Windows.Devices.Sensors.MagnetometerAccuracy) enumeration can help determine when a device is in need of calibration.
 
 **Important APIs**
 
--   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
--   [**Windows.Devices.Sensors.Custom**](/uwp/api/Windows.Devices.Sensors.Custom)
-
-Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors. The [**MagnetometerAccuracy**](/uwp/api/Windows.Devices.Sensors.MagnetometerAccuracy) enumeration can help determine a course of action when your device is in need of calibration.
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**Windows.Devices.Sensors.Custom**](/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## When to calibrate the magnetometer
 

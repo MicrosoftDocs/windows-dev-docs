@@ -1,27 +1,32 @@
 ---
-ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
+
 title: Use the orientation sensor
 description: Learn how to use the orientation sensors to determine the device orientation.
-ms.date: 06/06/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Use the orientation sensor
 
+Learn how to use the orientation sensors to determine the device orientation.
 
 **Important APIs**
 
--   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
--   [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor)
--   [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor)
+- [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
 
-**Samples**
+## Prerequisites
 
--   [Orientation sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
--   [Simple orientation sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-Learn how to use the orientation sensors to determine the device orientation.
+The device or emulator that you're using must support a orientation sensor.
+
+## Create an OrientationSensor app
+
+An orientation sensor is one of the several types of environmental sensors that allow apps to respond to changes in the device orientation.
 
 There are two different types of orientation sensor APIs included in the [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors) namespace: [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) and [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation). While both of these sensors are orientation sensors, that term is overloaded and they are used for very different purposes. However, since both are orientation sensors, they are both covered in this article.
 
@@ -36,21 +41,17 @@ The [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation) 
 | Portrait Down   | Rotated180DegreesCounterclockwise |
 | Landscape Right | Rotated270DegreesCounterclockwise |
 
-## Prerequisites
+> [!NOTE]
+> For a more complete implementation, see:
+>
+> - [Orientation sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/OrientationSensor)
+> - [Simple orientation sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/SimpleOrientationSensor)
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+### Instructions
 
-The device or emulator that you're using must support a orientation sensor.
+- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
-## Create an OrientationSensor app
-
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create an orientation application from scratch. The following subsection explains the app you have just created.
-
-###  Instructions
-
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
-
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+- Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -125,7 +126,7 @@ This section is divided into two subsections. The first subsection will take you
 
 You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **OrientationSensorCS**, you'd replace `namespace App1` with `namespace OrientationSensorCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -171,11 +172,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **OrientationSensorCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="OrientationSensorCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:OrientationSensorCS"`.
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+- Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
 Once the app is running, you can change the orientation by moving the device or using the emulator tools.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
 ###  Explanation
 
@@ -210,9 +211,9 @@ This section is divided into two subsections. The first subsection will take you
 
 ### Instructions
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+- Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -295,7 +296,7 @@ This section is divided into two subsections. The first subsection will take you
 
 You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **SimpleOrientationCS**, you'd replace `namespace App1` with `namespace SimpleOrientationCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
     <Page
@@ -317,11 +318,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **SimpleOrientationCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="SimpleOrientationCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:SimpleOrientationCS"`.
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+- Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
 Once the app is running, you can change the orientation by moving the device or using the emulator tools.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
 ### Explanation
 

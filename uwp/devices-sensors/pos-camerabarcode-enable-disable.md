@@ -1,17 +1,21 @@
 ---
-title: Camera Barcode Scanner Configuration
+title: Enable or disable the software decoder for the Camera Barcode Scanner
 description: Learn how to set a system registry key in Windows 10 to enable or disable the software decoder for the Camera Barcode Scanner.
 author: twarwick
 ms.author: twarwick
-ms.date: 02/09/2023
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
 
-# Enable or disable the software decoder that ships with Windows
+# Enable or disable the software decoder for the camera barcode scanner
 
-In Windows 10 Version 1803 or later, the software decoder is installed and enabled by default.  You can disable this software decoder if you do not want to use camera barcode scanner or if you have acquired a 3rd party decoder that works with the [**BarcodeScanner**](/uwp/api/windows.devices.pointofservice.barcodescanner) APIs.
+This topic explains how to enable or disable the software decoder for the camera barcode scanner.
+
+The software decoder can be disabled if you do not want to use camera barcode scanner or if you have acquired a 3rd party decoder that works with the [**BarcodeScanner**](/uwp/api/windows.devices.pointofservice.barcodescanner) APIs.
+
+**In Windows 10 Version 1803 or later, the software decoder is installed and enabled by default.**  
 
 > [!NOTE]
 > The software decoder built into Windows 10/11 is provided by [*Digimarc Corporation*](https://www.digimarc.com/).
@@ -48,4 +52,4 @@ Windows Registry Editor Version 5.00
 ## See also
 
 - [JustScanIt - Windows Store app](https://aka.ms/justscanit)
-- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
+- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)

@@ -1,28 +1,37 @@
 ---
 title: Enumerating PointOfService devices
 description: Learn four methods for using a device selector to query and enumerate the PointOfService devices available to your system.
-ms.date: 10/08/2018
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
+
 # Enumerating Point of Service devices
-In this section you will learn how to [define a device selector](./build-a-device-selector.md) that is used to query devices available to the system and use this selector to enumerate Point of Service devices using one of the following methods:
+
+This topic demonstrates how to [define a device selector](./build-a-device-selector.md) that is used to query devices available to the system and use this selector to enumerate Point of Service devices using one of the following methods:
 
 **Method 1:** [Use a device picker](#method-1-use-a-device-picker)
-<br/>
+
 Display a device picker UI and have the user choose a connected device. This method handles updating the list when devices are attached and removed, and is simpler and safer than other methods.
 
-**Method 2:** [Get first available device](#method-2-get-first-available-device)<br />Use [GetDefaultAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync) to access the first available device in a specific Point of Service device class.
+**Method 2:** [Get first available device](#method-2-get-first-available-device)
 
-**Method 3:** [Snapshot of devices](#method-3-snapshot-of-devices)<br />Enumerate a snapshot of Point of Service devices that are present on the system at a given point in time. This is useful when you want to build your own UI or need to enumerate devices without displaying a UI to the user. [FindAllAsync](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) will hold back results until the entire enumeration is completed.
+Use [GetDefaultAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync) to access the first available device in a specific Point of Service device class.
 
-**Method 4:** [Enumerate and watch](#method-4-enumerate-and-watch)<br />[DeviceWatcher](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) is a more powerful and flexible enumeration model that allows you to enumerate devices that are currently present, and also receive notifications when devices are added or removed from the system.  This is useful when you want to maintain a current list of devices in the background for displaying in your UI rather than waiting for a snapshot to occur.
+**Method 3:** [Snapshot of devices](#method-3-snapshot-of-devices)
+
+Enumerate a snapshot of Point of Service devices that are present on the system at a given point in time. This is useful when you want to build your own UI or need to enumerate devices without displaying a UI to the user. [FindAllAsync](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) will hold back results until the entire enumeration is completed.
+
+**Method 4:** [Enumerate and watch](#method-4-enumerate-and-watch)
+
+[DeviceWatcher](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) is a more powerful and flexible enumeration model that allows you to enumerate devices that are currently present, and also receive notifications when devices are added or removed from the system.  This is useful when you want to maintain a current list of devices in the background for displaying in your UI rather than waiting for a snapshot to occur.
 
 ## Define a device selector
-A device selector will enable you to limit the devices you are searching through when enumerating devices.  This will allow you to only get relevant results and reduce the time it takes to enumerate the desired devices.
 
-You can use the **GetDeviceSelector** method for the type of device that you're looking for to get the device selector for that type. For example, using [PosPrinter.GetDeviceSelector](/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector) will provide you with a selector to enumerate all [PosPrinters](/uwp/api/windows.devices.pointofservice.posprinter) attached to the system, including USB, network and Bluetooth POS printers.
+A device selector enables you to limit the devices you are searching through when enumerating devices.  This lets you get only relevant results and reduce the time it takes to enumerate the desired devices.
+
+You can use the **GetDeviceSelector** method for the type of device that you're looking for and get the device selector for that type. For example, using [PosPrinter.GetDeviceSelector](/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector) will provide you with a selector to enumerate all [PosPrinters](/uwp/api/windows.devices.pointofservice.posprinter) attached to the system, including USB, network and Bluetooth POS printers.
 
 ```Csharp
 using Windows.Devices.PointOfService;

@@ -1,33 +1,34 @@
 ---
-ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
+
 title: Print from your app
 description: Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages.
-ms.date: 01/29/2018
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, printing
+
 ms.localizationpriority: medium
 ---
+
 # Print from your app
 
+This topic describes how print from a Universal Windows app.
 
+For more advanced features, see [Customize the print preview UI](customize-the-print-preview-ui.md).
 
 **Important APIs**
 
--   [**Windows.Graphics.Printing**](/uwp/api/Windows.Graphics.Printing)
--   [**Windows.UI.Xaml.Printing**](/uwp/api/Windows.UI.Xaml.Printing)
--   [**PrintDocument**](/uwp/api/Windows.UI.Xaml.Printing.PrintDocument)
-
-Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. For more advanced changes to the print preview UI, see [Customize the print preview UI](customize-the-print-preview-ui.md).
+- [**Windows.Graphics.Printing**](/uwp/api/Windows.Graphics.Printing)
+- [**Windows.UI.Xaml.Printing**](/uwp/api/Windows.UI.Xaml.Printing)
+- [**PrintDocument**](/uwp/api/Windows.UI.Xaml.Printing.PrintDocument)
 
 > [!TIP]
-> Most of the examples in this topic are based on the [Universal Windows Platform (UWP) print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing), which is part of the [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) repo on GitHub.
+> Most of the examples in this topic are based on the [Universal Windows Platform (UWP) print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing), which is part of the [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) repo on GitHub.
 
 ## Register for printing
 
 The first step to add printing to your app is to register for the Print contract. Your app must do this on every screen from which you want your user to be able to print. Only the screen that is displayed to the user can be registered for printing. If one screen of your app has registered for printing, it must unregister for printing when it exits. If it is replaced by another screen, the next screen must register for a new Print contract when it opens.
 
 > [!TIP]
-> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing).
+> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing).
 
 First, declare the [**PrintManager**](/uwp/api/Windows.Graphics.Printing.PrintManager) and [**PrintDocument**](/uwp/api/Windows.UI.Xaml.Printing.PrintDocument). The **PrintManager** type is in the [**Windows.Graphics.Printing**](/uwp/api/Windows.Graphics.Printing) namespace along with types to support other Windows printing functionality. The **PrintDocument** type is in the [**Windows.UI.Xaml.Printing**](/uwp/api/Windows.UI.Xaml.Printing) namespace along with other types that support preparing XAML content for printing. You can make it easier to write your printing code by adding the following **using** or **Imports** statements to your page.
 
@@ -38,7 +39,7 @@ using Windows.UI.Xaml.Controls;
 
 The [**PrintDocument**](/uwp/api/Windows.UI.Xaml.Printing.PrintDocument) class is used to handle much of the interaction between the app and the [**PrintManager**](/uwp/api/Windows.Graphics.Printing.PrintManager), but it exposes several callbacks of its own. During registration, create instances of **PrintManager** and **PrintDocument** and register handlers for their printing events.
 
-In the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing), registration is performed by the `RegisterForPrinting` method.
+In the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing), registration is performed by the `RegisterForPrinting` method.
 
 ```csharp
 public virtual void RegisterForPrinting()
@@ -187,7 +188,7 @@ After the print task is created, the [**PrintManager**](/uwp/api/Windows.Graphic
 > [!IMPORTANT]
 > If the user changes print settings, the paginate event handler will be called again to allow you to reflow the content. For the best user experience, we recommend checking the settings before you reflow the content and avoid reinitializing the paginated content when it's not necessary.
 
-In the [**Paginate**](/uwp/api/windows.ui.xaml.printing.printdocument.paginate) event handler (the `CreatePrintPreviewPages` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)), create the pages to show in the print preview UI and to send to the printer. The code you use to prepare your app's content for printing is specific to your app and the content you print. Refer to the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) source code to see how it formats its content for printing.
+In the [**Paginate**](/uwp/api/windows.ui.xaml.printing.printdocument.paginate) event handler (the `CreatePrintPreviewPages` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)), create the pages to show in the print preview UI and to send to the printer. The code you use to prepare your app's content for printing is specific to your app and the content you print. Refer to the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing) source code to see how it formats its content for printing.
 
 ```csharp
 protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs e)
@@ -232,7 +233,7 @@ protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs 
 
 When a particular page is to be shown in the print preview window, the [**PrintManager**](/uwp/api/Windows.Graphics.Printing.PrintManager) raises the [**GetPreviewPage**](/uwp/api/windows.ui.xaml.printing.printdocument.getpreviewpage) event. This corresponds with the **MakePage** method of the **IPrintPreviewPageCollection** interface. The event handler you created during registration will be called at this time.
 
-In the [**GetPreviewPage**](/uwp/api/windows.ui.xaml.printing.printdocument.getpreviewpage) event handler (the `GetPrintPreviewPage` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)), set the appropriate page on the print document.
+In the [**GetPreviewPage**](/uwp/api/windows.ui.xaml.printing.printdocument.getpreviewpage) event handler (the `GetPrintPreviewPage` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)), set the appropriate page on the print document.
 
 ```csharp
 protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArgs e)
@@ -244,7 +245,7 @@ protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArg
 
 Finally, once the user clicks the print button, the [**PrintManager**](/uwp/api/Windows.Graphics.Printing.PrintManager) requests the final collection of pages to send to the printer by calling the **MakeDocument** method of the **IDocumentPageSource** interface. In XAML, this raises the [**AddPages**](/uwp/api/windows.ui.xaml.printing.printdocument.addpages) event. The event handler you created during registration will be called at this time.
 
-In the [**AddPages**](/uwp/api/windows.ui.xaml.printing.printdocument.addpages) event handler (the `AddPrintPages` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)), add pages from the page collection to the [**PrintDocument**](/uwp/api/Windows.UI.Xaml.Printing.PrintDocument) object to be sent to the printer. If a user specifies particular pages or a range of pages to print, you use that information here to add only the pages that will actually be sent to the printer.
+In the [**AddPages**](/uwp/api/windows.ui.xaml.printing.printdocument.addpages) event handler (the `AddPrintPages` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)), add pages from the page collection to the [**PrintDocument**](/uwp/api/Windows.UI.Xaml.Printing.PrintDocument) object to be sent to the printer. If a user specifies particular pages or a range of pages to print, you use that information here to add only the pages that will actually be sent to the printer.
 
 ```csharp
 protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
@@ -324,7 +325,7 @@ The [**CreateTextOption**](/uwp/api/windows.graphics.printing.optiondetails.prin
 
 The **OptionChanged** event handler does two things. First, it shows and hides the text edit field for the page range depending on the page range option that the user selected. Second, it tests the text entered into the page range text box to make sure that it represents a valid page range for the document.
 
-This example shows how print option change events are handled in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing).
+This example shows how print option change events are handled in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing).
 
 ```csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -401,11 +402,11 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ```
 
 > [!TIP]
-> See the `GetPagesInRange` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) for details on how to parse the page range the user enters in the Range text box.
+> See the `GetPagesInRange` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing) for details on how to parse the page range the user enters in the Range text box.
 
 ## Preview selected pages
 
-How you format your app's content for printing depends on the nature of your app and its content. A print helper class in used in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) to format the content for printing.
+How you format your app's content for printing depends on the nature of your app and its content. A print helper class in used in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing) to format the content for printing.
 
 When printing a subset of pages, there are several ways to show the content in the print preview. Regardless of the method you chose to show the page range in the print preview, the printed output must contain only the selected pages.
 
@@ -417,4 +418,4 @@ When printing a subset of pages, there are several ways to show the content in t
 
 * [Design guidelines for printing](./printing-and-scanning.md)
 * //Build 2015 video: Developing apps that print in Windows 10
-* [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)
+* [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)

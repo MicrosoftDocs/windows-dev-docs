@@ -1,10 +1,10 @@
 ---
-ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
+
 title: Sensor orientation
 description: Sensor data from the Accelerometer, Gyrometer, Compass, Inclinometer, and OrientationSensor classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it.
-ms.date: 07/03/2020
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
 
@@ -26,7 +26,6 @@ In order to understand the reference axes for sensors, you need to distinguish d
 > :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="Z-axis for laptop":::
 
 In the following diagrams, both the device and display orientation are in [Landscape](/uwp/api/Windows.Graphics.Display.DisplayOrientations) (the sensor axes shown are specific to landscape orientation).
-
 
 This diagram shows both the display and device orientation in [Landscape](/uwp/api/Windows.Graphics.Display.DisplayOrientations).
 

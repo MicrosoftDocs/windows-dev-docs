@@ -1,12 +1,13 @@
 ---
 title: Barcode Scanner
-description: This article lists the barcode scanner features that are available for UWP apps and links to the how-to articles that show how to use them.
-ms.date: 08/29/2018
+description: This article lists the barcode scanner features that are available for UWP apps and links to the topics that show how to use them.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Barcode scanner
 
 This section provides guidance for creating Universal Windows Platform (UWP) apps that use a barcode scanner.

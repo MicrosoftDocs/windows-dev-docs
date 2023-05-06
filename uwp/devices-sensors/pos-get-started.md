@@ -1,11 +1,12 @@
 ﻿---
 title: Getting started with Point of Service
 description: This article contains information about getting started with the point of service Windows Runtime APIs.
-ms.date: 05/02/2018
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
+
 # Getting started with Point of Service
 
 Point of service, point of sale, or Point of Service devices are computer peripherals used to facilitate retail transactions. Examples of Point of Service devices include electronic cash registers, barcode scanners, magnetic stripe readers, and receipt printers.
@@ -17,11 +18,13 @@ Here you’ll learn the basics of interfacing with Point of Service devices by u
 Before a Point of Service device can be used by an app, it must be paired with the PC where the app is running. There are several ways to connect to Point of Service devices, either programmatically or through the Settings app.
 
 ### Connecting to devices by using the Settings app
+
 When you plug a Point of Service device like a barcode scanner into a PC, it shows up just like any other device. You can find it in the **Devices > Bluetooth & other devices** section of the Settings app. There you can pair with a Point of Service device by selecting **Add Bluetooth or other device**.
 
 Some Point of Service devices may not appear in the Settings app until they are programmatically enumerated by using the Point of Service APIs.
 
 ### Getting a single Point of Service device with GetDefaultAsync
+
 In a simple use case, you may have just one Point of Service peripheral connected to the PC where the app is running and want to set it up as quickly as possible. To do that, retrieve the “default” device with the **GetDefaultAsync** method as shown here.
 
 ```Csharp
@@ -32,7 +35,7 @@ BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 
 If the default device is found, the device object retrieved is ready to be claimed. “Claiming” a device gives an application exclusive access to it, preventing conflicting commands from multiple processes.
 
-> [!NOTE] 
+> [!NOTE]
 > If more than one Point of Service device is connected to the PC, **GetDefaultAsync** returns the first device it finds. For this reason, use **FindAllAsync** unless you’re sure that only one Point of Service device is visible to the application.
 
 ### Enumerating a collection of devices with FindAllAsync
@@ -57,7 +60,8 @@ foreach (DeviceInformation devInfo in deviceCollection)
 ```
 
 ### Scoping the device selection
-When connecting to a device, you may want to limit your search to a subset of Point of Service peripherals that your app has access to. Using the **GetDeviceSelector** method, you can scope the selection to retrieve devices connected only by a certain method (Bluetooth, USB, etc.). You can create a selector that searches for devices over **Bluetooth**, **IP**, **Local**, or **All connection types**. This can be useful, as wireless device discovery takes a long time compared to local (wired) discovery. You can ensure a deterministic wait time for local device connection by limiting **FindAllAsync** to **Local** connection types. For example, this code retrieves all barcode scanners accessible via a local connection. 
+
+When connecting to a device, you may want to limit your search to a subset of Point of Service peripherals that your app has access to. Using the **GetDeviceSelector** method, you can scope the selection to retrieve devices connected only by a certain method (Bluetooth, USB, etc.). You can create a selector that searches for devices over **Bluetooth**, **IP**, **Local**, or **All connection types**. This can be useful, as wireless device discovery takes a long time compared to local (wired) discovery. You can ensure a deterministic wait time for local device connection by limiting **FindAllAsync** to **Local** connection types. For example, this code retrieves all barcode scanners accessible via a local connection.
 
 ```Csharp
 string selector = BarcodeScanner.GetDeviceSelector(PosConnectionTypes.Local);
@@ -91,6 +95,7 @@ void DeviceWatcher_Updated(DeviceWatcher sender, DeviceInformationUpdate args)
 ```
 
 ## Checking the capabilities of a Point of Service device
+
 Even within a device class, such as barcode scanners, the attributes of each device may vary considerably between models. If your app requires a specific device attribute, you may need to inspect each connected device object to determine whether the attribute is supported. For example, perhaps your business requires that labels be created using a specific barcode printing pattern. Here’s how you could check to see whether a connected barcode scanner supports a symbology. 
 
 > [!NOTE]
@@ -107,11 +112,12 @@ try
 }
 catch (Exception ex)
 {
-    Debug.WriteLine("FromIdAsync() - " + ex.Message);
+    Debug.WriteLine("FromIdAsync() - " - ex.Message);
 }
 ```
 
 ### Using the Device.Capabilities class
+
 The **Device.Capabilities** class is an attribute of all Point of Service device classes and can be used to get general information about each device. For example, this example determines whether a device supports statistics reporting and, if it does, retrieves statistics for any types supported.
 
 ```Csharp
@@ -127,11 +133,12 @@ try
 }
 catch (Exception ex)
 {
-    Debug.WriteLine("EX: RetrieveStatisticsAsync() - " + ex.Message);
+    Debug.WriteLine("EX: RetrieveStatisticsAsync() - " - ex.Message);
 }
 ```
 
 ## Claiming a Point of Service device
+
 Before you can use a Point of Service device for active input or output, you must claim it, granting the application exclusive access to many of its functions. This code shows how to claim a barcode scanner device, after you’ve found the device by using one of the methods described earlier.
 
 ```Csharp
@@ -141,7 +148,7 @@ try
 }
 catch (Exception ex)
 {
-    Debug.WriteLine("EX: ClaimScannerAsync() - " + ex.Message);
+    Debug.WriteLine("EX: ClaimScannerAsync() - " - ex.Message);
 }
 ```
 
@@ -174,7 +181,7 @@ try
 }
 catch (Exception ex)
 {
-    Debug.WriteLine("EX: ClaimScannerAsync() - " + ex.Message);
+    Debug.WriteLine("EX: ClaimScannerAsync() - " - ex.Message);
 }
 
 
@@ -202,8 +209,9 @@ if (claimedBarcodeScanner != null)
 > Both the claimed and unclaimed Point of Service device classes implement the [IClosable interface](/uwp/api/windows.foundation.iclosable). If a device is connected to an app via network or Bluetooth, both the claimed and unclaimed objects must be disposed of before another app can connect.
 
 ## See also
-+ [Barcode scanner sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [Cash drawer sample]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
-+ [Line display sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
-+ [Magnetic stripe reader sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
-+ [POSPrinter sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
+
+- [Barcode scanner sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)
+- [Cash drawer sample]( https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CashDrawer)
+- [Line display sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LineDisplay)
+- [Magnetic stripe reader sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/MagneticStripeReader)
+- [POSPrinter sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/PosPrinter)

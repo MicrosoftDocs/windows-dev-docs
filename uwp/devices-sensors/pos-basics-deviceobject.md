@@ -1,12 +1,15 @@
 ---
 title: PointOfService device objects
 description: Learn how to create a PointOfService device object and learn about the device object lifecycle in the Universal Windows Platform (UWP) application model.
-ms.date: 06/19/2018
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos
+
 ms.localizationpriority: medium
 ---
+
 # PointOfService device objects
+
+Learn how to create a [PointOfService device object](pos-basics-deviceobject.md) that will give you access to read-only properties of the peripheral and claim the peripheral for exclusive use in a Universal Windows Platform (UWP) application.
 
 ## Creating a device object
 
@@ -41,6 +44,7 @@ You can detect when an object is closed for any reason with a \<DeviceObject\>.C
 
 > [!TIP]
 > Please refer to the following topics for more information about Windows 10 Universal Windows Platform (UWP) application lifecycle:
+>
 > - [Windows 10 Universal Windows Platform (UWP) app lifecycle](../launch-resume/app-lifecycle.md)
 > - [Handle app suspension](../launch-resume/suspend-an-app.md)
 > - [Handle app resume](../launch-resume/resume-an-app.md)

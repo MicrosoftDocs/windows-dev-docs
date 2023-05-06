@@ -1,29 +1,27 @@
 ---
-ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
+
 title: Enable device capabilities
-description: This tutorial describes how to declare device capabilities in Microsoft Visual Studio. This enables your app to use cameras, microphones, location sensors, and other devices.
-ms.date: 02/08/2017
+description: This topic explains how to declare device capabilities in Microsoft Visual Studio to use cameras, microphones, location sensors, and other devices for a UWP app.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
-# Enable device capabilities
 
+# Enable device capabilities for a Universal Windows Platform app
 
-
-This tutorial describes how to declare device capabilities in Microsoft Visual Studio. This enables your app to use cameras, microphones, location sensors, and other devices.
+This topic explains how to declare device capabilities in Microsoft Visual Studio to use cameras, microphones, location sensors, and other devices for a Universal Windows Platform (UWP) app.
 
 ## Specify the device capabilities your app will use
 
+Windows apps require you to specify in the app package manifest when you use certain types of devices. In Visual Studio, you can declare most capabilities by using [Manifest Designer](/visualstudio/extensibility/vsix-manifest-designer) or you can add them manually as described in [How to specify device capabilities in a package manifest (manually)](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest). This tutorial assumes you're using Manifest Designer.
 
-Windows apps require you to specify in the app package manifest when you use certain types of devices. In Visual Studio, you can declare most capabilities by using [Manifest Designer](/previous-versions/br230259(v=vs.140)) or you can add them manually as described in [How to specify device capabilities in a package manifest (manually)](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest). This tutorial assumes you're using Manifest Designer.
+> [!NOTE]
+> Some types of devices, such as printers, scanners, and sensors, don't need to be declared in the app package manifest.
 
-**Note**  
-Some types of devices, such as printers, scanners, and sensors, don't need to be declared in the app package manifest.
-
--   In Visual Studio Solution Explorer, double-click the package manifest file, **Package.appxmanifest**.
--   Open the **Capabilities** tab.
--   Select the device capabilities that your app uses. If you don't see the capability you're looking for in Manifest Designer, add it manually. For more info, see [How to specify device capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest).
+- In Visual Studio Solution Explorer, double-click the package manifest file, **Package.appxmanifest**.
+- Open the **Capabilities** tab.
+- Select the device capabilities that your app uses. If you don't see the capability you're looking for in Manifest Designer, add it manually. For more info, see [How to specify device capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest).
 
 | Device Capability | Manifest Designer | Description |
 |-------------------|-------------------|-------------|    

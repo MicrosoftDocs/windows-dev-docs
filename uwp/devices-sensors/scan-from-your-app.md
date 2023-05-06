@@ -1,14 +1,16 @@
 ---
-ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
+
 title: Scan from your app
 description: Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
-ms.date: 02/08/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Scan from your app
 
+This topic describes how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
 
 **Important APIs**
 
@@ -16,13 +18,12 @@ ms.localizationpriority: medium
 -   [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)
 -   [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass)
 
-Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
-
-**Important**  The [**Windows.Devices.Scanners**](/uwp/api/Windows.Devices.Scanners) APIs are part of the desktop [device family](../get-started/universal-application-platform-guide.md). Apps can use these APIs only on the desktop version of Windows 10.
+> [!IMPORTANT]
+> The [**Windows.Devices.Scanners**](/uwp/api/Windows.Devices.Scanners) APIs are part of the desktop [device family](../get-started/universal-application-platform-guide.md). Apps can use these APIs only on the desktop version of Windows 10.
 
 To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) object and getting the [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass) type. Only scanners that are installed locally with WIA drivers are listed and available to your app.
 
-After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](/windows-hardware/drivers/image/auto-configured-scanning).
+After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration and must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](/windows-hardware/drivers/image/auto-configured-scanning).
 
 ## Enumerate available scanners
 

@@ -1771,11 +1771,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "uwp/devices-sensors/pos-advanced-connectivity.md",
-      "redirect_url": "/windows/uwp/devices-sensors/point-of-service",
-      "redirect_document_id": true
-    },
-    {
       "source_path": "uwp/porting/hwa-to-uwp-root.md",
       "redirect_url": "/microsoft-edge/progressive-web-apps",
       "redirect_document_id": false
@@ -1928,6 +1923,26 @@
     {
       "source_path": "uwp/composition/lighting.md",
       "redirect_url": "/windows/uwp/composition/xaml-lighting",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "uwp/devices-sensors/nfc.md",
+      "redirect_url": "/windows/uwp/devices-sensors/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/host-card-emulation.md",
+      "redirect_url": "/windows/uwp/devices-sensors/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/generate-3mf.md",
+      "redirect_url": "/windows/uwp/devices-sensors/3d-generate-3mf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-advanced-connectivity.md",
+      "redirect_url": "/windows/uwp/devices-sensors/point-of-service",
       "redirect_document_id": true
     },
     {

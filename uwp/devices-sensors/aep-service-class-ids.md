@@ -1,10 +1,10 @@
 ---
-ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
+
 title: AEP service class IDs
 description: Association Endpoint (AEP) services provide a programming contract for services that a device supports over a given protocol. Several of these services have established identifiers that should be used when referencing them.
-ms.date: 02/08/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
 
@@ -12,11 +12,11 @@ ms.localizationpriority: medium
 
 Association Endpoint (AEP) services provide a programming contract for services that a device supports over a given protocol. Several of these services have established identifiers that should be used when referencing them. These contracts are identified with the **System.Devices.AepService.ServiceClassId** property. This topic lists several well-known AEP service class IDs. The AEP service class ID is also applicable to protocols with custom class IDs.
 
-An app developer should use advanced query syntax (AQS) filters based on the class IDs to limit their queries to the AEP services they plan to use. This will both limit the query results to the relevant services and will significantly increase the performance, battery life, and quality of service for the device. For example, an application can use these service class IDs to use a device as a Miracast sync or DLNA digital media renderer (DMR). For more information about how devices and services interact with each other, see [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
+An app developer should use Advanced Query Syntax (AQS) filters based on the class IDs to limit their queries to the AEP services they plan to use. This will both limit the query results to the relevant services and will significantly increase the performance, battery life, and quality of service for the device. For example, an application can use these service class IDs to use a device as a Miracast sync or DLNA digital media renderer (DMR). For more information about how devices and services interact with each other, see [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
 
-> **Important APIs**
->
-> - [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration)
+**Important APIs**
+
+- [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration)
 
 ## Bluetooth and Bluetooth LE services
 

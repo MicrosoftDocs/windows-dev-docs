@@ -1,27 +1,23 @@
 ---
-ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
+
 title: Use the gyrometer
 description: Learn how to use the Gyrometer API to integrate gyrometer input in your app that detects changes in user movement like angular velocity and rotational motion.
-ms.date: 06/06/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Use the gyrometer
-
-
-**Important APIs**
-
--   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
--   [**Gyrometer**](/uwp/api/Windows.Devices.Sensors.Gyrometer)
-
-**Sample**
-
-- For a more complete implementation, see the [gyrometer sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/Gyrometer).
 
 Learn how to use the gyrometer to detect changes in user movement.
 
-Gyrometers compliment accelerometers as game controllers. The accelerometer can measure linear motion while the gyrometer measures angular velocity or rotational motion.
+**Important APIs**
+
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**Gyrometer**](/uwp/api/Windows.Devices.Sensors.Gyrometer)
+
+
 
 ## Prerequisites
 
@@ -31,13 +27,16 @@ The device or emulator that you're using must support a gyrometer.
 
 ## Create a simple gyrometer app
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple gyrometer application from scratch. The following subsection explains the app you have just created.
+Gyrometers compliment accelerometers as game controllers. The accelerometer can measure linear motion while the gyrometer measures angular velocity or rotational motion.
 
-###  Instructions
+> [!NOTE]
+> For a more complete implementation, see the [gyrometer sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/Gyrometer).
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+### Instructions
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+
+- Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -104,7 +103,7 @@ This section is divided into two subsections. The first subsection will take you
 
 You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **GyrometerCS**, you'd replace `namespace App1` with `namespace GyrometerCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -130,11 +129,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **GyrometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="GyrometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:GyrometerCS"`.
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+- Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
 Once the app is running, you can change the gyrometer values by moving the device or using the emulator tools.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
 ###  Explanation
 

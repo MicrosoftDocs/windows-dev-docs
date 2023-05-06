@@ -1148,7 +1148,7 @@
           href: ../maps-and-location/guidelines-for-geofencing.md
         - name: Map style sheet reference
           href: ../maps-and-location/elements-of-map-style-sheet.md
-- name: Peripherals, sensors, and power
+- name: Devices, sensors, and power
   href: ../devices-sensors/index.md
   items:
     - name: Enable device capabilities
@@ -1176,13 +1176,13 @@
           items:
             - name: Capability declaration
               href: ../devices-sensors/pos-basics-capability.md
-            - name: Enumerating devices
+            - name: Enumerating PointofService devices
               href: ../devices-sensors/pos-basics-enumerating.md
-            - name: Creating a device object
+            - name: PointOfService device objects
               href: ../devices-sensors/pos-basics-deviceobject.md
-            - name: Claiming and enable
+            - name: PointofService device claim and enable model
               href: ../devices-sensors/pos-basics-claim.md
-            - name: Sharing peripherals with others
+            - name: PointOfService device sharing
               href: ../devices-sensors/pos-basics-sharing.md
             - name: Getting started
               href: ../devices-sensors/pos-get-started.md
@@ -1191,7 +1191,7 @@
         - name: Barcode scanner
           href: ../devices-sensors/pos-barcodescanner.md
           items:
-            - name: Configure a barcode scanner
+            - name: Support specific applications
               href: ../devices-sensors/pos-barcodescanner-configure.md
             - name: Use a software trigger
               href: ../devices-sensors/pos-barcodescanner-software-trigger.md
@@ -1274,12 +1274,7 @@
         - name: 3D printing from your app
           href: ../devices-sensors/3d-print-from-app.md
         - name: Generate a 3MF package
-          href: ../devices-sensors/generate-3mf.md
-    - name: NFC
-      href: ../devices-sensors/nfc.md
-      items:
-        - name: Create an NFC Smart Card app
-          href: ../devices-sensors/host-card-emulation.md
+          href: ../devices-sensors/3d-generate-3mf.md
     - name: Get battery information
       href: ../devices-sensors/get-battery-info.md
 - name: Porting apps

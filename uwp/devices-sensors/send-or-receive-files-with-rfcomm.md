@@ -1,10 +1,10 @@
 ---
-ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
+
 title: Bluetooth RFCOMM
 description: This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
-ms.date: 06/26/2020
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -14,14 +14,14 @@ dev_langs:
 
 # Bluetooth RFCOMM
 
+This topic provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
+
 **Important APIs**
 
 - [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth)
 - [**Windows.Devices.Bluetooth.Rfcomm**](/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
-This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
-
-> [!Important]
+> [!IMPORTANT]
 > You must declare the "bluetooth" capability in *Package.appxmanifest*.
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
@@ -34,13 +34,13 @@ The RFCOMM APIs use the concept of service identifiers. Although a service ident
 
 Apps can perform multi-step device operations in a background task so that they can run to completion even if the app is moved to the background and suspended. This allows for reliable device servicing such as changes to persistent settings or firmware, and content synchronization, without requiring the user to sit and watch a progress bar. Use the [**DeviceServicingTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) for device servicing and the [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) for content synchronization. Note that these background tasks constrain the amount of time the app can run in the background, and are not intended to allow indefinite operation or infinite synchronization.
 
-For a complete code sample that details RFCOMM operation, see the [**Bluetooth Rfcomm Chat Sample**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) on Github.  
+For a complete code sample that details RFCOMM operation, see the [**Bluetooth Rfcomm Chat Sample**](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BluetoothRfcommChat) on Github.  
 
 ## Send a file as a client
 
 When sending a file, the most basic scenario is to connect to a paired device based on a desired service. This involves the following steps:
 
-- Use the **RfcommDeviceService.GetDeviceSelector\*** functions to help generate an AQS query that can be used to enumerated paired device instances of the desired service.
+- Use the **RfcommDeviceService.GetDeviceSelector\*** functions to help generate an Advanced Query Syntax (AQS) query that can be used to enumerated paired device instances of the desired service.
 - Pick an enumerated device, create an [**RfcommDeviceService**](/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService), and read the SDP attributes as needed (using [**established data helpers**](/uwp/api/Windows.Storage.Streams.DataReader) to parse the attribute's data).
 - Create a socket and use the [**RfcommDeviceService.ConnectionHostName**](/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) and [**RfcommDeviceService.ConnectionServiceName**](/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) properties to [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) to the remote device service with the appropriate parameters.
 - Follow established data stream patterns to read chunks of data from the file and send it on the socket's [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.outputstream) to the device.

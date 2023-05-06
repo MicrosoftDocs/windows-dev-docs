@@ -1,16 +1,19 @@
 ---
 title: Obtain and understand magnetic stripe data
 description: Learn how to obtain and interpret the data from a magnetic stripe reader using Universal Windows Platform (UWP) Point of Service (POS) APIs.
-ms.date: 10/04/2018
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp, point of service, pos, magnetic stripe reader
+
 ms.localizationpriority: medium
 ---
+
 # Obtain and understand magnetic stripe data
 
-Once you've set up your magnetic stripe reader in your application using the steps outlined in [Getting started with Point of Service](pos-basics.md), you're ready to start getting data from it.
+This topic describes how to obtain and interpret the data from a magnetic stripe reader using Universal Windows Platform (UWP) Point of Service (POS) APIs.
 
 ## Subscribe to *DataReceived events
+
+Once you've set up your magnetic stripe reader in your application using the steps outlined in [Getting started with Point of Service](pos-basics.md), you're ready to start getting data from it.
 
 Whenever the reader recognizes a swiped card, it will raise one of three events:
 

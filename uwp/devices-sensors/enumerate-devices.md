@@ -1,18 +1,20 @@
 ---
-ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
+
 title: Enumerate devices
-description: The enumeration namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols.
-ms.date: 02/08/2017
+description: The Windows.Devices.Enumeration APIs let you find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Enumerate devices
 
+The [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs let you find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols.
 
 ## Samples
 
-The simplest way to enumerate all available devices is to take a snapshot with the [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) command (explained further in a section below).
+The easiest way to enumerate all available devices is to take a snapshot with the [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) command (explained further in a section below).
 
 ```CSharp
 async void enumerateSnapshot(){
@@ -20,36 +22,36 @@ async void enumerateSnapshot(){
 }
 ```
 
-To download a sample showing the more advanced usages of the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs, click [here](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
+See the [Device enumeration and pairing sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/DeviceEnumerationAndPairing) for a more advanced example of the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs.
 
 ## Enumeration APIs
 
-The enumeration namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. The APIs that you use to enumerate through the possible devices are the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) namespace. Some reasons for using these APIs include the following.
+The [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. Some of the features supported by these APIs include:
 
--   Finding a device to connect to with your application.
--   Getting information about devices connected to or discoverable by the system.
--   Have an app receive notifications when devices are added, connect, disconnect, change online status, or change other properties.
--   Have an app receive background triggers when devices connect, disconnect, change online status, or change other properties.
+- Finding a device to connect to with your application.
+- Getting information about devices connected to or discoverable by the system.
+- Have an app receive notifications when devices are added, connect, disconnect, change online status, or change other properties.
+- Have an app receive background triggers when devices connect, disconnect, change online status, or change other properties.
 
 These APIs can enumerate devices over any of the following protocols and buses, provided the individual device and the system running the app support that technology. This is not an exhaustive list, and other protocols may be supported by a specific device.
 
--   Physically connected buses. This includes PCI and USB. For example, anything that you can see in the **Device Manager**.
--   [UPnP](/windows/desktop/UPnP/universal-plug-and-play-start-page)
--   Digital Living Network Alliance (DLNA)
--   [**Discovery and Launch (DIAL)**](/uwp/api/Windows.Media.DialProtocol)
--   [**DNS Service Discovery (DNS-SD)**](/uwp/api/Windows.Networking.ServiceDiscovery.Dnssd)
--   [Web Services on Devices (WSD)](/windows/desktop/WsdApi/wsd-portal)
--   [Bluetooth](/windows/desktop/Bluetooth/bluetooth-start-page)
--   [**Wi-Fi Direct**](/uwp/api/Windows.Devices.WiFiDirect)
--   WiGig
--   [**Point of Service**](/uwp/api/Windows.Devices.PointOfService)
+- Physically connected buses. This includes PCI and USB. For example, anything that you can see in the **Device Manager**.
+- [UPnP](/windows/desktop/UPnP/universal-plug-and-play-start-page)
+- Digital Living Network Alliance (DLNA)
+- [**Discovery and Launch (DIAL)**](/uwp/api/Windows.Media.DialProtocol)
+- [**DNS Service Discovery (DNS-SD)**](/uwp/api/Windows.Networking.ServiceDiscovery.Dnssd)
+- [Web Services on Devices (WSD)](/windows/desktop/WsdApi/wsd-portal)
+- [Bluetooth](/windows/desktop/Bluetooth/bluetooth-start-page)
+- [**Wi-Fi Direct**](/uwp/api/Windows.Devices.WiFiDirect)
+- WiGig
+- [**Point of Service**](/uwp/api/Windows.Devices.PointOfService)
 
 In many cases, you will not need to worry about using the enumeration APIs. This is because many APIs that use devices will automatically select the appropriate default device or provide a more streamlined enumeration API. For example, [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) will automatically use the default audio renderer device. As long as your app can use the default device, there is no need to use the enumeration APIs in your application. The enumeration APIs provide a general and flexible way for you to discover and connect to available devices. This topic provides information about enumerating devices and describes the four common ways to enumerate devices.
 
--   Using the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) UI
--   Enumerating a snapshot of devices currently discoverable by the system
--   Enumerating devices currently discoverable and watch for changes
--   Enumerating devices currently discoverable and watch for changes in a background task
+- Using the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) UI
+- Enumerating a snapshot of devices currently discoverable by the system
+- Enumerating devices currently discoverable and watch for changes
+- Enumerating devices currently discoverable and watch for changes in a background task
 
 ## DeviceInformation objects
 
@@ -64,15 +66,15 @@ Working with the enumeration APIs, you will frequently need to use [**DeviceInfo
 
  
 
-## DevicePicker UI
+## DevicePicker user interface
 
 
-The [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) is a control provided by Windows that creates a small UI that enables the user to select a device from a list. You can customize the **DevicePicker** window in a few ways.
+The [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) is a control provided by Windows that creates a small UI that enables the user to select a device from a list. It can be customized in a few ways, such as:
 
--   You can control the devices that are displayed in the UI by adding a [**SupportedDeviceSelectors**](/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors), a [**SupportedDeviceClasses**](/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses), or both to the [**DevicePicker.Filter**](/uwp/api/windows.devices.enumeration.devicepicker.filter). In most cases, you only need to add one selector or class, but if you do need more than one you can add multiple. If you do add multiple selectors or classes, they are conjoined using an OR logic function.
--   You can specify the properties you want to retrieve for the devices. You can do this by adding properties to [**DevicePicker.RequestedProperties**](/uwp/api/windows.devices.enumeration.devicepicker.requestedproperties).
--   You can alter the appearance of the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) using [**Appearance**](/uwp/api/windows.devices.enumeration.devicepicker.appearance).
--   You can specify the size and location of the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) when it is displayed.
+- Control devices that are displayed in the UI by adding a [**SupportedDeviceSelectors**](/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors), a [**SupportedDeviceClasses**](/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses), or both to the [**DevicePicker.Filter**](/uwp/api/windows.devices.enumeration.devicepicker.filter). In most cases, you only need to add one selector or class, but if you do need more than one you can add multiple. If you do add multiple selectors or classes, they are conjoined using an OR logic function.
+- Specify the properties you want to retrieve for the devices. You can do this by adding properties to [**DevicePicker.RequestedProperties**](/uwp/api/windows.devices.enumeration.devicepicker.requestedproperties).
+- Alter the appearance of the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) using [**Appearance**](/uwp/api/windows.devices.enumeration.devicepicker.appearance).
+- Specify the size and location of the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) when it is displayed.
 
 While the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) is displayed, the contents of the UI will be automatically updated if devices are added, removed, or updated.
 
@@ -87,9 +89,7 @@ Casting media content and DIAL also each provide their own pickers if you want t
 
 In some scenarios, the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) will not be suitable for your needs and you need something more flexible. Perhaps you want to build your own UI or need to enumerate devices without displaying a UI to the user. In these situations, you could enumerate a snapshot of devices. This involves looking through the devices that are currently connected to or paired with the system. However, you need to be aware that this method only looks at a snapshot of devices that are available, so you will not be able to find devices that connect after you enumerate through the list. You also will not be notified if a device is updated or removed. Another potential downside to be aware of is that this method will hold back any results until the entire enumeration is completed. For this reason, you should not use this method when you are interested in **AssociationEndpoint**, **AssociationEndpointContainer**, or **AssociationEndpointService** objects since they are found over a network or wireless protocol. This can take up to 30 seconds to complete. In that scenario, you should use a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) object to enumerate through the possible devices.
 
-To enumerate through a snapshot of devices, use the [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) method. This method waits until the entire enumeration process is complete and returns all the results as one [**DeviceInformationCollection**](/uwp/api/windows.devices.enumeration.deviceinformationcollection) object. This method is also overloaded to provide you with several options for filtering your results and limiting them to the devices that you are interested in. You can do this by providing a [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass) or passing in a device selector. The device selector is an AQS string that specifies the devices you want to enumerate. For more information, see [Build a device selector](build-a-device-selector.md).
-
-An example of a device enumeration snapshot is provided below:
+To enumerate through a snapshot of devices, use the [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) method. This method waits until the entire enumeration process is complete and returns all the results as one [**DeviceInformationCollection**](/uwp/api/windows.devices.enumeration.deviceinformationcollection) object. This method is also overloaded to provide you with several options for filtering your results and limiting them to the devices that you are interested in. You can do this by providing a [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass) or passing in a device selector. The device selector is an Advanced Query Syntax (AQS) string that specifies the devices you want to enumerate. For more information, see [Build a device selector](build-a-device-selector.md).
 
 
 
@@ -102,9 +102,9 @@ In addition to limiting the results, you can also specify the properties that yo
 
 A more powerful and flexible method of enumerating devices is creating a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher). This option provides the most flexibility when you are enumerating devices. It allows you to enumerate devices that are currently present, and also receive notifications when devices that match your device selector are added, removed, or properties change. When you create a **DeviceWatcher**, you provide a device selector. For more information about device selectors, see [Build a device selector](build-a-device-selector.md). After creating the watcher, you will receive the following notifications for any device that matches your provided criteria.
 
--   Add notification when a new device is added.
--   Update notification when a property you are interested in is changed.
--   Remove notification when a device is no longer available or no longer matches your filter.
+- Add notification when a new device is added.
+- Update notification when a property you are interested in is changed.
+- Remove notification when a device is no longer available or no longer matches your filter.
 
 In most cases where you are using a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher), you are maintaining a list of devices and adding to it, removing items from it, or updating items as your watcher receives updates from the devices that you are watching. When you receive an update notification, the updated information will be available as a [**DeviceInformationUpdate**](/uwp/api/windows.devices.enumeration.deviceinformationupdate) object. In order to update your list of devices, first find the appropriate [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) that changed. Then call the [**Update**](/uwp/api/windows.devices.enumeration.deviceinformation.update) method for that object, providing the **DeviceInformationUpdate** object. This is a convenience function that will automatically update your **DeviceInformation** object.
 

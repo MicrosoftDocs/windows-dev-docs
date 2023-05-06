@@ -1,36 +1,38 @@
 ---
-title: Bluetooth Advertisements
-description: This section contains articles on how to integrate Bluetooth Low Energy (LE) Advertisements into Universal Windows Platform (UWP) apps through the user of AdvertisementWatcher and AdvertisementPublisher APIs.
-ms.date: 06/26/2020
+title: Bluetooth LE Advertisements
+description: This topic provides an overview of Bluetooth Low Energy (LE) Advertisement beacons for Universal Windows Platform (UWP) apps.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
-ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
+
+
 ms.localizationpriority: medium
 ---
+
 # Bluetooth LE Advertisements
 
+This topic provides an overview of Bluetooth Low Energy (LE) Advertisement beacons for Universal Windows Platform (UWP) apps.  
 
-**Important APIs**
-
--   [**Windows.Devices.Bluetooth.Advertisement**](/uwp/api/windows.devices.bluetooth.advertisement)
-
-This article provides an overview of Bluetooth Low Energy (LE) Advertisement beacons for Universal Windows Platform (UWP) apps.  
-
-> [!Important]
-> You must declare the "bluetooth" capability in *Package.appxmanifest*.
+> [!IMPORTANT]
+> You must declare the "bluetooth" capability in *Package.appxmanifest* to use this feature.
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
-## Overview
+**Important APIs**
 
-There are two main functions that a developer can perform using the LE Advertisement APIs:
+- [**Windows.Devices.Bluetooth.Advertisement**](/uwp/api/windows.devices.bluetooth.advertisement)
 
--   [Advertisement Watcher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher): listen for nearby beacons and filter them out based on payload or proximity.  
--   [Advertisement Publisher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher): define a payload for Windows to advertise on a developers behalf.  
+## Supported features
 
-Full sample code is found in the [Bluetooth Advertisement Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothAdvertisement) on Github
+There are two main features supported by the LE Advertisement APIs:
 
-## Basic Setup
+- [Advertisement Watcher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher): listen for nearby beacons and filter them out based on payload or proximity.  
+- [Advertisement Publisher](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher): define a payload for Windows to advertise on a developers behalf.  
+
+## Example
+
+For a fully functional example of Bluetooth LE Advertisements, see the [Bluetooth Advertisement Sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BluetoothAdvertisement) on Github.
+
+### Basic Setup
 
 To use basic Bluetooth LE functionality in a Universal Windows Platform app, you must check the Bluetooth capability in the Package.appxmanifest.
 
@@ -38,15 +40,14 @@ To use basic Bluetooth LE functionality in a Universal Windows Platform app, you
 2. Go to the Capabilities tab
 3. Find Bluetooth in the list on the left and check the box next to it.
 
-## Publishing Advertisements
+### Publishing Advertisements
 
 Bluetooth LE Advertisements allow your device to constantly beacon out a specific payload, called an advertisement. This advertisement can be seen by any nearby Bluetooth LE capable device, if they are set up to listen for this specific advertisment.
 
-> **Note**: For user privacy, the lifespan of your advertisement is tied to that of your app. You can create a BluetoothLEAdvertisementPublisher and call Start in a background task for advertisement in the background. For more information about background tasks, see [Launching, resuming, and background tasks](../launch-resume/index.md).
+> [!NOTE]
+> For user privacy, the lifespan of your advertisement is tied to that of your app. You can create a BluetoothLEAdvertisementPublisher and call Start in a background task for advertisement in the background. For more information about background tasks, see [Launching, resuming, and background tasks](../launch-resume/index.md).
 
-### Basic Publishing
-
-There are many different ways to add data to an Advertisement. This example shows a common way to create a company-specific advertisement. 
+There are many different ways to add data to an Advertisement. This example shows a common way to create a company-specific advertisement.
 
 First, create the advertisement publisher that controls whether or not the device is beaconing out a specific advertisement.
 
@@ -54,7 +55,7 @@ First, create the advertisement publisher that controls whether or not the devic
 BluetoothLEAdvertisementPublisher publisher = new BluetoothLEAdvertisementPublisher();
 ```
 
-Second, create a custom data section. This example uses an unassigned **CompanyId** value *0xFFFE* and adds the text *Hello World* to the advertisement. 
+Second, create a custom data section. This example uses an unassigned **CompanyId** value *0xFFFE* and adds the text *Hello World* to the advertisement.
 
 ```csharp
 // Add custom data to the advertisement
@@ -78,9 +79,7 @@ Now that the publisher has been created and setup, you can call **Start** to beg
 publisher.Start();
 ```
 
-## Watching for Advertisements
-
-### Basic Watching
+### Watching for Advertisements
 
 The following code demonstrates how to create a Bluetooth LE Advertisement watcher, set a callback, and start watching for all LE advertisements.
 
@@ -104,7 +103,7 @@ To receive scan response advertisements as well, set the following after creatin
 watcher.ScanningMode = BluetoothLEScanningMode.Active;
 ```
 
-### Watching for a Specific Advertisement Pattern
+#### Watching for a Specific Advertisement Pattern
 
 Sometimes you want to listen for a specific advertisement. In this case, listen for an advertisement containing a payload with a made up company (identified as 0xFFFE) and containing the string *Hello World* in the advertisement. This can be paired with the Basic Publishing example to have one Windows machine advertising and another watching. Be sure to set this advertisement filter before you start the watcher!
 
@@ -121,7 +120,7 @@ manufacturerData.Data = writer.DetachBuffer();
 watcher.AdvertisementFilter.Advertisement.ManufacturerData.Add(manufacturerData);
 ```
 
-### Watching for a Nearby Advertisement
+#### Watching for a Nearby Advertisement
 
 Sometimes you only want to trigger your watcher when the device advertising has come in range. You can define your own range, just note that values will be clipped to between 0 and -128. 
 
@@ -141,15 +140,15 @@ watcher.SignalStrengthFilter.OutOfRangeThresholdInDBm = -75;
 watcher.SignalStrengthFilter.OutOfRangeTimeout = TimeSpan.FromMilliseconds(2000);
 ```
 
-### Gauging Distance
+#### Gauging Distance
 
 When your Bluetooth LE Watcher's callback is triggered, the eventArgs include an RSSI value telling you the received signal strength (how strong the Bluetooth signal is).
 
 ```csharp
 private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
 {
-	// The received signal strength indicator (RSSI)
-	Int16 rssi = eventArgs.RawSignalStrengthInDBm;
+   // The received signal strength indicator (RSSI)
+   Int16 rssi = eventArgs.RawSignalStrengthInDBm;
 }
 ```
 

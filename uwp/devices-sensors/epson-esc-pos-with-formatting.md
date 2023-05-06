@@ -1,25 +1,25 @@
 ---
-ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
+
 title: Epson ESC/POS with formatting
 description: Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer.
-ms.date: 02/08/2017
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ---
+
 # Epson ESC/POS with formatting
-
-
-**Important APIs**
-
--   [**PointofService Printer**](/uwp/api/Windows.Devices.PointOfService)
--   [**Windows.Devices.PointOfService**](/uwp/api/Windows.Devices.PointOfService)
 
 Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer.
 
+**Important APIs**
+
+- [**PointofService Printer**](/uwp/api/Windows.Devices.PointOfService)
+- [**Windows.Devices.PointOfService**](/uwp/api/Windows.Devices.PointOfService)
+
 ## ESC/POS usage
 
-Windows Point of Service provides use of a variety of printers, including several Epson TM series printers (for a full list of supported printers, see the [PointofService Printer](/uwp/api/Windows.Devices.PointOfService) page). Windows supports printing through the ESC/POS printer control language, which provides efficient and functional commands for communicating with your printer.
+Windows Point of Service supports a variety of printers, including several Epson TM series printers (for a full list of supported printers, see the [PointofService Printer](/uwp/api/Windows.Devices.PointOfService) page). Windows supports printing through the ESC/POS printer control language, which provides efficient and functional commands for communicating with your printer.
 
 ESC/POS is a command system created by Epson used across a wide range of POS printer systems, aimed at avoiding incompatible command sets by providing universal applicability. Most modern printers support ESC/POS.
 

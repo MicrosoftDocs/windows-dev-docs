@@ -1,22 +1,21 @@
 ---
-ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
+
 title: Enumerate devices over a network
-description: In addition to discovering locally connected devices, you can use the Windows.Devices.Enumeration APIs to enumerate devices over wireless and networked protocols.
-ms.date: 04/19/2019
+description: Use the Windows.Devices.Enumeration APIs to enumerate devices over wireless and networked protocols.
+ms.date: 05/04/2023
 ms.topic: article
-keywords: windows 10, uwp
+
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
+
 # Enumerate devices over a network
 
-
+Use the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs to enumerate devices over wireless and networked protocols.
 
 **Important APIs**
 
 - [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration)
-
-In addition to discovering locally connected devices, you can use the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs to enumerate devices over wireless and networked protocols.
 
 ## Enumerating devices over networked or wireless protocols
 
@@ -43,9 +42,7 @@ When you build your own selector, it is strongly recommended that you limit your
 | Bluetooth LE                                 | **{bb7bb05e-5972-42b5-94fc-76eaa7084d49}** |
 | Network Camera                               | **{b8238652-b500-41eb-b4f3-4234f7f5ae99}** |
 
- 
-
-## AQS examples
+## Advanced Query Syntax (AQS) examples
 
 Each AEP kind has a property you can use to constrain your enumeration to a specific protocol. Keep in mind you can use the OR operator in an AQS filter to combine multiple protocols. Here are some examples of AQS filter strings that show how to query for AEP devices.
 
@@ -73,7 +70,3 @@ This AQS queries **AssociationEndpointContainer** objects when the [**DeviceInfo
 ``` syntax
 System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
-
- 
-
- 
