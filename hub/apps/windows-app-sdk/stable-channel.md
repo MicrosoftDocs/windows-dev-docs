@@ -33,6 +33,15 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.3
 
+### Version 1.3.1 (1.3.230502000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.3 release.
+- Fixed issue causing apps to crash when setting the SystemBackdrop if the Content was null. For more information, see GitHub issue [#8416](https://github.com/microsoft/microsoft-ui-xaml/issues/8416).
+- Fixed issue causing apps to crash when setting the Window Title in XAML, a new capability added in 1.3.0. For more information, see GitHub issue [#3689](https://github.com/microsoft/microsoft-ui-xaml/issues/3689).
+- Fixed issue where a window incorrectly took focus when its content changed.
+- Fixed an issue with creating C++ projects with the WinAppSDK 1.3 project templates.
+- Updated templates on Visual Studio Marketplace
+
 ### Version 1.3
 
 The following sections describe new and updated features and known issues for version 1.3.
