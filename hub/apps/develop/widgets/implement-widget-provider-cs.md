@@ -21,8 +21,6 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 
 ## Prerequisites
 
-- Latest Dev Channel Windows 11 build from the Windows Insider Program (WIP). For more information on WIP self-hosting see [Deeper look at flighting](/windows-insider/flighting).
-- Widgets board version 521.20060.1205.0 or greater. This will come with the latest Dev Channel WIP build and can be checked by opening the widgets board, navigating to the widget picker, and looking at the version number located at the bottom right corner of the picker.
 - Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 - Visual Studio 2017 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
