@@ -25,7 +25,7 @@ Searching in Visual Studio package manager you should see a list similar to this
 
 ## Update NuGet Packages
 
-We regularly update the Windows UI Library with new controls, services, APIs, and more importantly, bug fixes. To make sure you are on the latest version, open your project in Visual Studio, choose the **Tools** menu, select **NuGet Package Manager** -> **Manage NuGet Packages for Solution...** and select the *Updates* tab. Select the package you want to update and click Instal to update to the latest version.
+We regularly update the Windows UI Library with new controls, services, APIs, and more importantly, bug fixes. To make sure you are on the latest version, open your project in Visual Studio, choose the **Tools** menu, select **NuGet Package Manager** -> **Manage NuGet Packages for Solution...** and select the *Updates* tab. Select the package you want to update and click Install to update to the latest version.
 
 ## Getting Started
 
