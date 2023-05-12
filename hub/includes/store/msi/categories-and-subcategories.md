@@ -36,5 +36,5 @@ To change the category or secondary category of an app that's already in the Sto
 | Social                  | (None)                              | Apps which help user interact and connect with other people by means of text, photos, videos, voice | text/voice messaging, video communication, dating, photo/video sharing, social media platforms |
 | Sports                  | (None)                              | Apps which provide information on upcoming sport events, live scores, statistics etc. | live scores, statistics, ticket booking, reports, news |
 | Travel                  | City guides<br>Hotels               | Apps which help user in planning their travel, stay and exploration at a particular location | vacation planning, flight booking, taxi/cab booking, hotel booking, city guides |
-| Utilities + tools       | Backup + manage<br>File managers    | vacation planning, flight booking, taxi/cab booking, hotel booking, city guides | file manager, calculators, barcode scanner, measurement, remote controls, file backup, cloud storage, file conversion, PDF editor |
+| Utilities + tools       | Backup + manage<br>File managers    | Apps which assist user in solving problems or completing specific tasks | file manager, calculators, barcode scanner, measurement, remote controls, file backup, cloud storage, file conversion, PDF editor |
 

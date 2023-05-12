@@ -42,7 +42,7 @@ To change the category or subcategory of an app that's already in the Store (exc
 | Social                  | (None)                              | Apps which help user interact and connect with other people by means of text, photos, videos, voice | text/voice messaging, video communication, dating, photo/video sharing, social media platforms |
 | Sports                  | (None)                              | Apps which provide information on upcoming sport events, live scores, statistics etc. | live scores, statistics, ticket booking, reports, news |
 | Travel                  | City guides<br>Hotels               | Apps which help user in planning their travel, stay and exploration at a particular location | vacation planning, flight booking, taxi/cab booking, hotel booking, city guides |
-| Utilities + tools       | Backup + manage<br>File managers    | vacation planning, flight booking, taxi/cab booking, hotel booking, city guides | file manager, calculators, barcode scanner, measurement, remote controls, file backup, cloud storage, file conversion, PDF editor |
+| Utilities + tools       | Backup + manage<br>File managers    | Apps which assist user in solving problems or completing specific tasks | file manager, calculators, barcode scanner, measurement, remote controls, file backup, cloud storage, file conversion, PDF editor |
 
 
 > [!NOTE]
@@ -53,7 +53,7 @@ To change the category or subcategory of an app that's already in the Store (exc
 
 | Genre                                          | Description                                                             |
 |------------------------------------------------|-------------------------------------------------------------------------|
-| Action + adventure                             | Games with story-driven plot and combat gameplay mechanics. |
+| Action + adventure                             | Games with story-driven plot and combat gameplay mechanics  |
 | Card + board                                   | Games which are played with standardized rules involving cards or boards as the primary items  |
 | Casino                                         | Games which allow players to play gambling games online |
 | Classics                                       | Games based on the famous old classic games like brick blocks, fruit snake etc. |
