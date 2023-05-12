@@ -2,6 +2,8 @@ Listing your app in the right primary category, subcategory and an optional seco
 
 You must choose the categories that best describe your app. You can optionally choose a subcategory, if available and choose an optional secondary category. If you're not sure which category to use, or you can't find one that seems to be an exact fit, choose the one that you think customers are most likely to look at when trying to find apps like yours.
 
+:::image type="content" source="images/msix-set-app-category-subcategory.png" lightbox="images/msix-set-app-category-subcategory.png" alt-text="A screenshot of the Properties section where you can provide category and sub-category for your app.":::
+
 If you choose **Games** for your category, you are required to select at least one subcategory (called *genre* for games). You can choose up to 3 genres as appropriate for your game. Note that in order to publish a game to customers on Xbox, you must enable the [Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) or go through the [concept approval](/windows/uwp/gaming/concept-approval) process.
 
 > [!IMPORTANT]
