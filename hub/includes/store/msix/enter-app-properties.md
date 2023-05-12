@@ -2,7 +2,7 @@ The **Properties** page of the [app submission process](../../../apps/publish/pu
 
 ## Category and subcategory
 
-You must indicate the category (and subcategory/genre, if applicable) which the Store should use to categorize your app. Specifying a category is required in order to submit your app.
+You must indicate the category (and subcategory/genre, if applicable) which the Store should use to categorize your app. Specifying a category is required in order to submit your app. You can optionally choose a secondary category for your app. Secondary category has the same list of categories as the Primary category.
 
 For more info, see [Category and subcategory table](../../../apps/publish/publish-your-app/categories-and-subcategories.md).
 

@@ -5,7 +5,9 @@ App properties describe important details about your app including requirements,
 
 Categories and subcategories help users discover your app, and they help users understand what your app does.
 
-Choose the category that best describes your app. If that category includes subcategories, select the one that best describes your app. If none of the available subcategories seem to fit, you can leave subcategory blank, or choose a subcategory you think customers who would want your app would be most likely to browse.
+Choose the categories that best describe your app. If the primary category includes subcategories, select the one that best describes your app. If none of the available subcategories seem to fit, you can leave subcategory blank, or choose a subcategory you think customers who would want your app would be most likely to browse. You can optionally choose a secondary category for your app. Secondary category has the same list of categories as the Primary category.
+
+For more info, see [Category and subcategory table](../../../apps/publish/publish-your-app/categories-and-subcategories.md).
 
 ## Support info section
 
