@@ -72,4 +72,3 @@ To change the category or subcategory of an app that's already in the Store (exc
 | Tools                                          | Apps which allow users to interact with the game without launching the actual game software |
 | Word                                           | Games related to guessing words based on puzzles/riddles |
 
-s
