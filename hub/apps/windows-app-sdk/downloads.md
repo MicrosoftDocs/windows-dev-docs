@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 This page provides download links to the *latest* releases of the [Windows App SDK](index.md) in the three release channels (stable, preview, and experimental). To get started quickly, download the latest x64 installer below. Or, for older releases, see [Older downloads for the Windows App SDK](./older-downloads.md).
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download the latest x64 stable installer (1.3.0)](https://aka.ms/windowsappsdk/1.3/latest/windowsappruntimeinstall-x64.exe)
+> [Download the latest x64 stable installer (1.3.1)](https://aka.ms/windowsappsdk/1.3/latest/windowsappruntimeinstall-x64.exe)
 
 For all the latest Windows App SDK downloads, refer to the tables and links below. To learn more, see [Windows App SDK release channels](release-channels.md) and the release notes provided below for each version.
 
