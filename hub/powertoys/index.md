@@ -146,6 +146,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Peek
+
+:::row:::
+    :::column:::
+        [![Peek screenshot.](../images/powertoys-peek.png)](peek.md)
+    :::column-end:::
+    :::column span="2":::
+        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Just select the file and click a shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
+    :::column-end:::
+:::row-end:::
+
 ### PowerRename
 
 :::row:::
