@@ -943,7 +943,7 @@ This inserts the content that was copied onto the clipboard.
 { "command": "paste", "keys": "shift+insert" }
 ```
 
-### Expand selection to word ([Preview](https://aka.ms/terminal-preview))
+### Expand selection to word
 
 If a selection exists, this expands the selection to fully encompass any words partially selected.
 
@@ -967,7 +967,7 @@ This selects all of the content in the text buffer.
 { "command": "selectAll", "keys": "ctrl+shift+a" }
 ```
 
-### Mark mode ([Preview](https://aka.ms/terminal-preview))
+### Mark mode
 
 This toggles mark mode. Mark mode is a mode where you can use the keyboard to create a selection at the cursor's position in the terminal.
 
@@ -979,10 +979,7 @@ This toggles mark mode. Mark mode is a mode where you can use the keyboard to cr
 { "command": "markMode", "keys": "ctrl+shift+m" },
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Switch selection marker ([Preview](https://aka.ms/terminal-preview))
+### Switch selection marker 
 
 When modifying a selection using the keyboard, you are moving one end of the selection around. You can use this action to switch to the other selection marker.
 
@@ -994,10 +991,7 @@ When modifying a selection using the keyboard, you are moving one end of the sel
 { "command": "switchSelectionEndpoint" },
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Toggle block selection ([Preview](https://aka.ms/terminal-preview))
+### Toggle block selection
 
 Makes the exisiting selection a block selection, meaning that the selected area is a rectangle, as opposed to wrapping to the beginning and end of each line.
 
@@ -1008,10 +1002,6 @@ Makes the exisiting selection a block selection, meaning that the selected area 
 ```json
 { "command": "toggleBlockSelection" },
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 <br />
 
 ___
@@ -1215,7 +1205,7 @@ Changes the active color scheme.
 { "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "keys": "" }
 ```
 
-### Experimental add scroll mark ([Preview](https://aka.ms/terminal-preview))
+### Experimental add scroll mark
 
 Adds a scroll mark to the text buffer. If there's a selection, the mark is placed at the selection, otherwise it's placed at the cursor row. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1233,10 +1223,7 @@ Adds a scroll mark to the text buffer. If there's a selection, the mark is place
 { "command": { "action": "addMark", "color": "#ff00ff" } }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Experimental scroll to mark ([Preview](https://aka.ms/terminal-preview))
+### Experimental scroll to mark 
 
 Scrolls to the scroll mark in the given direction. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1254,10 +1241,7 @@ Scrolls to the scroll mark in the given direction. This is an experimental featu
 { "command": { "action": "scrollToMark", "direction": "previous" } }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Experimental clear mark ([Preview](https://aka.ms/terminal-preview))
+### Experimental clear mark 
 
 Clears scroll mark at the current position, either at a selection if there is one or at the cursor position. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1269,10 +1253,7 @@ Clears scroll mark at the current position, either at a selection if there is on
 { "command": { "action": "clearMark" } }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Experimental clear all marks ([Preview](https://aka.ms/terminal-preview))
+### Experimental clear all marks 
 
 Clears all scroll marks in the text buffer. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1283,10 +1264,6 @@ Clears all scroll marks in the text buffer. This is an experimental feature, and
 ```json
 { "command": { "action": "clearAllMarks" } }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 <br />
 
 ___
