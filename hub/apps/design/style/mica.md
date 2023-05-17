@@ -124,7 +124,34 @@ You can use Mica in UWP apps that use WinUI 2, or in apps that use Windows App S
 
 ### Use Mica with the Windows App SDK
 
-To use backdrop materials in a XAML app that uses the Windows App SDK and WinUI 3, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../windows-app-sdk/system-backdrop-controller.md).
+To use Mica in a XAML app that uses the Windows App SDK and WinUI 3, set the [Window.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop) property to [MicaBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop).
+
+These examples show how to do this in XAML and in code.
+
+### Mica
+
+```xaml
+<Window
+    ... >
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt"/>
+    </Window.SystemBackdrop>
+
+</Window>
+```
+
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    SystemBackdrop = new MicaBackdrop() 
+                        { Kind = MicaKind.BaseAlt };
+}
+```
+
+For more info about using the Composition `MicaController` APIs, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../windows-app-sdk/system-backdrop-controller.md).
 
 To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/apply-mica-win32.md).
 
@@ -142,7 +169,7 @@ You can apply Mica in a UWP app with the [BackdropMaterial](/uwp/api/microsoft.u
 
 The following examples show how to implement the standard layering patterns shown previously. Each of these examples use and require the same title bar code-behind, shown in the last example.
 
-### Example: Standard pattern in Left NavigationView
+#### Example: Standard pattern in Left NavigationView
 
 By default, NavigationView in Left mode includes the content layer in its content area. This example extends Mica into the title bar area and creates a custom title bar.
 
@@ -208,7 +235,7 @@ By default, NavigationView in Left mode includes the content layer in its conten
 </Page>
 ```
 
-### Example: Standard pattern in Top NavigationView
+#### Example: Standard pattern in Top NavigationView
 
 By default, NavigationView in Top mode includes the content layer in its content area. This example extends Mica into the title bar area and creates a custom title bar.
 
@@ -270,7 +297,7 @@ By default, NavigationView in Top mode includes the content layer in its content
 </Page>
 ```
 
-### Example: Card pattern in Left NavigationView
+#### Example: Card pattern in Left NavigationView
 
 To follow the card pattern using a NavigationView you will need to remove the default content layer by overriding the background and border theme resources. Then, you can create the cards in the content area of the control. This example creates several cards, extends Mica into the title bar area, and creates a custom title bar. For more information on card UI, see [Layering and Elevation](../signature-experiences/layering.md) guidance.
 
@@ -366,7 +393,7 @@ To follow the card pattern using a NavigationView you will need to remove the de
 </Page>
 ```
 
-### Title bar code-behind
+#### Title bar code-behind
 
 The previous three app layout XAML pages use this code-behind to create a custom title bar adaptive to app state and visibility.
 

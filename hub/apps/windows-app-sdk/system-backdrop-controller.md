@@ -1,6 +1,6 @@
 ---
 title: Using a SystemBackdropController with WinUI 3 XAML 
-description: Sample code for applying Mica in a C++/WinRT application.
+description: Sample code for applying Mica in a WinUI 3 application.
 ms.topic: article
 ms.date: 09/01/2022
 keywords: windows, windows app development, Windows App SDK, Mica
@@ -31,14 +31,70 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [MicaController class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller), [DesktopAcrylicController class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller), [SystemBackdropConfiguration class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration)
+> - **Important APIs**: [Window.SystemBackdrop property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop), [MicaBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop), [DesktopAcrylicBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop), [SystemBackdropConfiguration class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the System Backdrops in action](winui3gallery://item/SystemBackdrops).
 
 [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
 
-To use a backdrop material in your app, you use one of the controllers that implements the [ISystemBackdropController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.isystembackdropcontroller) interface ([MicaController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller) or [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller)). These classes manage both the rendering of the system backdrop material as well as the handling of system policy for the material.
+To apply Mica or Acrylic material to your app, you set the [Window.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop) property to a XAML [SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.systembackdrop) (typically, one of the built-in backdrops, [MicaBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop) or [DesktopAcrylicBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop)).
+
+These examples show how to do this in XAML and in code.
+
+### Mica
+
+```xaml
+<Window
+    ... >
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt"/>
+    </Window.SystemBackdrop>
+
+</Window>
+```
+
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    SystemBackdrop = new MicaBackdrop() 
+                        { Kind = MicaKind.BaseAlt };
+}
+```
+
+### Acrylic
+
+```xaml
+<Window
+    ... >
+
+    <Window.SystemBackdrop>
+        <DesktopAcrylicBackdrop/>
+    </Window.SystemBackdrop>
+
+</Window>
+```
+
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    SystemBackdrop = new DesktopAcrylicBackdrop();
+}
+```
+
+## How to use a system backdrop controller
+
+> [!NOTE]
+> Starting with Windows App SDK 1.3, you can apply material by setting the `Window.SystemBackdrop` property to a XAML `SystemBackdrop` as described in the previous section. This is the recommended way to apply a material.
+>
+> The remainder of this article shows how to use the Composition [MicaController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller) and [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller) APIs.
+
+To use a backdrop material in your app, you can use one of the controllers that implements the [ISystemBackdropController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.isystembackdropcontroller) interface ([MicaController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller) or [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller)). These classes manage both the rendering of the system backdrop material as well as the handling of system policy for the material.
 
 To use Mica as your backdrop material, create a [MicaController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller) object. To use Acrylic, create a [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller) object. The set up and supporting code is the same for each type of system backdrop material.
 
