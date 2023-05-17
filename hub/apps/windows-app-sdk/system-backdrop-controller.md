@@ -178,6 +178,37 @@ This example shows how to set up the Mica backdrop material in a XAML app.
 >
 > **C++/WinRT**: [Windows App SDK Mica sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32).
 
+## For WindowsAppSDK version 1.3.x and above
+With properties built in to the XAML Window, Mica and MicaAlt backdrops are now easier to use in your WinUI 3 app.
+See the [System Backdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.systembackdrop) and [Mica Backdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop) API docs for more information about the Xaml Backdrop properties.
+
+To Apply Mica BackDrop,
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    this.SystemBackdrop = new MicaBackdrop()
+    {
+        Kind = MicaKind.Base
+    };
+}
+```
+
+To Apply MicaAlt BackDrop,
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    this.SystemBackdrop = new MicaBackdrop()
+    {
+        Kind = MicaKind.BaseAlt
+    };
+}
+```
+
+## For WindowsAppSDK version 1.2.x or below
 ```csharp
 using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Xaml;
