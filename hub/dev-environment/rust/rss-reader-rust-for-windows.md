@@ -72,7 +72,7 @@ Now let's try out Rust for Windows by writing a simple console app that download
     ...
 
     fn main() -> Result<()> {
-        let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
+        let uri = Uri::CreateUri(h!("https://blog.rust-lang.org/feed.xml"))?;
 
         Ok(())
     }
@@ -91,7 +91,7 @@ Now let's try out Rust for Windows by writing a simple console app that download
     ...
 
     fn main() -> windows::core::Result<()> {
-        let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
+        let uri = Uri::CreateUri(h!("https://blog.rust-lang.org/feed.xml"))?;
         let client = SyndicationClient::new()?;
 
         Ok(())
@@ -107,7 +107,7 @@ Now let's try out Rust for Windows by writing a simple console app that download
     ...
 
     fn main() -> windows::core::Result<()> {
-        let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
+        let uri = Uri::CreateUri(h!("https://blog.rust-lang.org/feed.xml"))?;
         let client = SyndicationClient::new()?;
         let feed = client.RetrieveFeedAsync(&uri)?.get()?;
 
@@ -124,7 +124,7 @@ Now let's try out Rust for Windows by writing a simple console app that download
     ...
 
     fn main() -> windows::core::Result<()> {
-        let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
+        let uri = Uri::CreateUri(h!("https://blog.rust-lang.org/feed.xml"))?;
         let client = SyndicationClient::new()?;
         let feed = client.RetrieveFeedAsync(&uri)?.get()?;
 
