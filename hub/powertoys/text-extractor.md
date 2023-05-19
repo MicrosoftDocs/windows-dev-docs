@@ -46,9 +46,6 @@ The list can be obtained via PowerShell by running the following commands:
 
 ```powershell
 [Windows.Media.Ocr.OcrEngine, Windows.Foundation, ContentType = WindowsRuntime]
-```
-
-```powershell
 [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
 ```
 
@@ -87,9 +84,6 @@ The following commands install the OCR pack for "en-US":
 
 ```powershell
 $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
-```
-
-```powershell
 $Capability | Add-WindowsCapability -Online
 ```
 
@@ -99,9 +93,6 @@ The following commands remove the OCR pack for "en-US":
 
 ```powershell
 $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
-```
-
-```powershell
 $Capability | Remove-WindowsCapability -Online
 ```
 
