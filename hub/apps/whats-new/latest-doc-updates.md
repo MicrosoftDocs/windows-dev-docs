@@ -56,7 +56,7 @@ Highlights this month include:
  
 * Added Launch the [Default Apps Setting](/windows/uwp/launch-resume/launch-default-apps-settings) page.
 
-* Updated topics for (APIs in the Cloud Files cfapi.h header)[/windows/win32/api/cfapi/nf-cfapi-cfupdateplaceholder].
+* Updated topics for [APIs in the Cloud Files cfapi.h header](/windows/win32/api/cfapi/nf-cfapi-cfupdateplaceholder).
 
 
 ## Developer tool updates
