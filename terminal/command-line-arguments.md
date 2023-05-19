@@ -1,9 +1,9 @@
 ---
 title: Windows Terminal command line arguments
 description: Learn how to create command line arguments for Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
-ms.date: 03/10/2023
+author: nguyen-dows
+ms.author: chrnguyen
+ms.date: 05/19/2023
 ms.topic: how-to
 ---
 
@@ -41,6 +41,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--focus, -f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
 | `--pos x,y` | Launches the at the given position. `x` or `y` can be omitted, to use the default value from the settings. |
 | `--window, -w window-id` | Runs the given command in a specific window. |
+
 
 The `--window` parameter can be used to send commands to existing terminal windows.
 
@@ -92,6 +93,7 @@ Used to create a new split pane. See also the [`splitPane` action](./customize-s
 ### Focus-tab command
 
 Used to focus a specific tab within the window. See also the [`switchToTab` action](./customize-settings/actions.md#open-a-specific-tab).
+
 
 | Command | Parameter | Description | Values |
 | ------- | ---------- | ----------- | ------ |
