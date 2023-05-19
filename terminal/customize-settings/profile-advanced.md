@@ -1,9 +1,9 @@
 ---
 title: Windows Terminal Advanced Profile Settings
 description: Learn how to customize the advanced profile settings within Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
-ms.date: 07/06/2022
+author: nguyen-dows
+ms.author: chrnguyen
+ms.date: 04/13/2022
 ms.topic: how-to
 ---
 
@@ -88,7 +88,7 @@ ___
 
 ## History size
 
-This sets the number of lines above the ones displayed in the window you can scroll back to.
+This sets the number of lines above the ones displayed in the window you can scroll back to. The maximum history size is `32767`.
 
 **Property name:** `historySize`
 

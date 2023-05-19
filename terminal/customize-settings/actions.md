@@ -1,9 +1,9 @@
 ---
 title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
-ms.date: 07/06/2022
+author: nguyen-dows
+ms.author: chrnguyen
+ms.date: 03/31/2023
 ms.topic: how-to
 ---
 
@@ -678,6 +678,43 @@ ___
 
 ## Pane management commands
 
+### Split a pane
+
+This halves the size of the active pane and opens another. Without any arguments, this will open the default profile in the new pane. If an action is not specified, the default profile's equivalent setting will be used.
+
+**Command name:** `splitPane`
+
+**Default bindings:**
+
+```json
+// In settings.json
+{ "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
+
+// In defaults.json
+{ "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
+{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" },
+{ "command": { "action": "splitPane", "split": "up" } },
+{ "command": { "action": "splitPane", "split": "right" } },
+{ "command": { "action": "splitPane", "split": "down" } },
+{ "command": { "action": "splitPane", "split": "left" } }
+```
+
+#### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `split` | Required | `"vertical"`, `"horizontal"`, `"auto"`, `"up"`, `"right"`, `"down"`, `"left"` | How the pane will split. `"auto"` will split in the direction that provides the most surface area. |
+| `commandline` | Optional | Executable file name as a string | Executable run within the pane. |
+| `startingDirectory` | Optional | Folder location as a string | Directory in which the pane will open. |
+| `elevate` | Optional | `true`, `false`, `null` | Overrides the [`elevate`](./profile-general.md#automatically-run-as-administrator) property of the profile. When omitted, this action will behave according to the profile's `elevate` setting. When set to `true` or `false`, this action will behave as though the profile was set with `"elevate": true` or `"elevate": false` (respectively). |
+| `tabTitle` | Optional | String | Title of the tab when the new pane is focused. |
+| `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
+| `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
+| `colorScheme` | Optional | The name of a color scheme as a string | The scheme to use instead of the profile's set `colorScheme` |
+| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. |
+| `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
+| `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
+
 ### Close pane
 
 This closes the active pane. If there aren't any split panes, this will close the current tab. If there is only one tab open, this will close the window.
@@ -710,7 +747,62 @@ This changes focus to a different pane depending on the direction. Setting the `
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"`, `"previous"` | Direction in which the focus will move. |
+| `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"`, `"previous"`, `"previousInOrder"`, `"nextInOrder"`, `"first"`, `"parent"`, `"child"` | Direction in which the focus will move. |
+
+Accepted `direction` values
+* `up`, `down`, `left`, or `right` move focus in the given direction.
+* `first` moves focus to the first leaf pane in the tree.
+* `previous` moves the focus to the most recently used pane before the current pane.
+* `nextInOrder`, `previousInOrder` moves the focus to the next or previous pane in order of creation.
+* `parent` moves the focus to select the parent pane of the current pane. This enables the user to select multiple panes at once
+* `child` moves the focus to the first child pane of this pane.
+
+### Move pane
+
+Move the currently active pane to a different tab in the window.
+
+**Command name:** `movePane`
+
+**Default bindings:** _(none)_
+
+#### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `index` | Required | number | The zero-indexed index of the tab to move to |
+
+### Swap panes
+
+Swap the position of two panes in a tab. This operates on the active pane, and a target pane, as designated by the `direction` parameter.
+
+**Command name:** `moveFocus`
+
+**Default bindings:**
+
+```json
+{ "command": { "action": "swapPane", "direction": "down" } },
+{ "command": { "action": "swapPane", "direction": "left" } },
+{ "command": { "action": "swapPane", "direction": "right" } },
+{ "command": { "action": "swapPane", "direction": "up" } },
+{ "command": { "action": "swapPane", "direction": "previous"} },
+{ "command": { "action": "swapPane", "direction": "previousInOrder"} },
+{ "command": { "action": "swapPane", "direction": "nextInOrder"} },
+{ "command": { "action": "swapPane", "direction": "first" } },
+```
+
+#### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"`, `"previous"`, `"previousInOrder"`, `"nextInOrder"`, `"first"`, `"parent"`, `"child"` | Direction in which the focus will move. |
+
+Accepted `direction` values (these are the same values as the `moveFocus` command)
+* `up`, `down`, `left`, or `right`: Swap the active pane with the one in the given direction.
+* `first`: Swap the active pane with the first leaf pane in the tree.
+* `previous`: Swap the active pane with the most recently used pane before the current pane.
+* `nextInOrder`, `previousInOrder`: Swap the active pane with the next or previous pane in order of creation.
+* `parent`: Does nothing.
+* `child`: Does nothing.
 
 ### Zoom a pane
 
@@ -851,7 +943,7 @@ This inserts the content that was copied onto the clipboard.
 { "command": "paste", "keys": "shift+insert" }
 ```
 
-### Expand selection to word ([Preview](https://aka.ms/terminal-preview))
+### Expand selection to word
 
 If a selection exists, this expands the selection to fully encompass any words partially selected.
 
@@ -875,7 +967,7 @@ This selects all of the content in the text buffer.
 { "command": "selectAll", "keys": "ctrl+shift+a" }
 ```
 
-### Mark mode ([Preview](https://aka.ms/terminal-preview))
+### Mark mode
 
 This toggles mark mode. Mark mode is a mode where you can use the keyboard to create a selection at the cursor's position in the terminal.
 
@@ -887,10 +979,7 @@ This toggles mark mode. Mark mode is a mode where you can use the keyboard to cr
 { "command": "markMode", "keys": "ctrl+shift+m" },
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Switch selection marker ([Preview](https://aka.ms/terminal-preview))
+### Switch selection marker 
 
 When modifying a selection using the keyboard, you are moving one end of the selection around. You can use this action to switch to the other selection marker.
 
@@ -902,10 +991,7 @@ When modifying a selection using the keyboard, you are moving one end of the sel
 { "command": "switchSelectionEndpoint" },
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Toggle block selection ([Preview](https://aka.ms/terminal-preview))
+### Toggle block selection
 
 Makes the exisiting selection a block selection, meaning that the selected area is a rectangle, as opposed to wrapping to the beginning and end of each line.
 
@@ -916,10 +1002,6 @@ Makes the exisiting selection a block selection, meaning that the selected area 
 ```json
 { "command": "toggleBlockSelection" },
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 <br />
 
 ___
@@ -1123,7 +1205,7 @@ Changes the active color scheme.
 { "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "keys": "" }
 ```
 
-### Experimental add scroll mark ([Preview](https://aka.ms/terminal-preview))
+### Experimental add scroll mark
 
 Adds a scroll mark to the text buffer. If there's a selection, the mark is placed at the selection, otherwise it's placed at the cursor row. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1141,10 +1223,7 @@ Adds a scroll mark to the text buffer. If there's a selection, the mark is place
 { "command": { "action": "addMark", "color": "#ff00ff" } }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Experimental scroll to mark ([Preview](https://aka.ms/terminal-preview))
+### Experimental scroll to mark 
 
 Scrolls to the scroll mark in the given direction. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1162,10 +1241,7 @@ Scrolls to the scroll mark in the given direction. This is an experimental featu
 { "command": { "action": "scrollToMark", "direction": "previous" } }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Experimental clear mark ([Preview](https://aka.ms/terminal-preview))
+### Experimental clear mark 
 
 Clears scroll mark at the current position, either at a selection if there is one or at the cursor position. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1177,10 +1253,7 @@ Clears scroll mark at the current position, either at a selection if there is on
 { "command": { "action": "clearMark" } }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Experimental clear all marks ([Preview](https://aka.ms/terminal-preview))
+### Experimental clear all marks 
 
 Clears all scroll marks in the text buffer. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1191,10 +1264,6 @@ Clears all scroll marks in the text buffer. This is an experimental feature, and
 ```json
 { "command": { "action": "clearAllMarks" } }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 <br />
 
 ___
