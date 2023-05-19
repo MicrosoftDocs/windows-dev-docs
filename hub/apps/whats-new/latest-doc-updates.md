@@ -27,36 +27,36 @@ Highlights this month include:
 
 ## Code samples, tutorials and Learn Module updates
 
-* A new tutorial to create a [.NET MAUI app for Windows that generates recommendations from the OpenAI ChatGPT API](https://learn.microsoft.com/windows/apps/windows-dotnet-maui/tutorial-maui-ai)
+* A new tutorial to create a [.NET MAUI app for Windows that generates recommendations from the OpenAI ChatGPT API](/windows/apps/windows-dotnet-maui/tutorial-maui-ai).
 
 * Updated the [Customer Orders Database](https://github.com/microsoft/Windows-appsample-customers-orders-database) and [Lunch Scheduler](https://github.com/microsoft/Windows-appsample-lunch-scheduler) sample apps to degrade gracefully when not in their "demo" modes.
 
 
 ## Updated content
 
-* (Updated the MSIX features and supported platforms topic)[https://learn.microsoft.com/windows/msix/supported-platforms]
+* Updated the [MSIX features and supported platforms](/windows/msix/supported-platforms) topic.
 
-* Brought the [WLAN profile schema documentation](https://learn.microsoft.com/windows/win32/nativewifi/wlan-profileschema-schema) up to date based on the latest XSD files.
+* Brought the [WLAN profile schema documentation](/windows/win32/nativewifi/wlan-profileschema-schema) up to date based on the latest XSD files.
 
-* Updated the TargetDeviceFamily topic to describe [Deployment ReIndexing](https://learn.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
+* Updated the TargetDeviceFamily topic to describe [Deployment ReIndexing](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
 
-* Updated [WebView2](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/overview-features-apis?tabs=dotnetcsharp) topics.
+* Updated [WebView2](/microsoft-edge/webview2/concepts/overview-features-apis?tabs=dotnetcsharp) topics.
 
-* Updated [Basic Navigation](https://learn.microsoft.com/en-us/windows/apps/design/basics/navigate-between-two-pages).
+* Updated [Basic Navigation](/windows/apps/design/basics/navigate-between-two-pages).
 
-* Updated [NavigationView](https://learn.microsoft.com/en-us/windows/apps/design/controls/navigationview)
+* Updated [NavigationView](/windows/apps/design/controls/navigationview)
 
-* Updated the [Windows Widgets](https://learn.microsoft.com/en-us/windows/apps/design/widgets/) topics.
+* Updated the [Windows Widgets](/windows/apps/design/widgets/) topics.
 
-* Updated the [AudioEffectsPackConfiguration] topics - https://learn.microsoft.com/en-us/uwp/api/windows.media.audio.audioeffectspackconfiguration
+* Updated the [AudioEffectsPackConfiguration](/uwp/api/windows.media.audio.audioeffectspackconfiguration) topics.
 
-* Updated [Send a local toast notification from a C# app](https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/send-local-toast?tabs=uwp)
+* Updated [Send a local toast notification from a C# app](/windows/apps/design/shell/tiles-and-notifications/send-local-toast?tabs=uwp)
 
-* Updated [Launch the Windows Settings](https://learn.microsoft.com/windows/uwp/launch-resume/launch-settings-app) app page to add new Default Apps setting.
+* Updated [Launch the Windows Settings](/windows/uwp/launch-resume/launch-settings-app) app page to add new Default Apps setting.
  
-* Added Launch the [Default Apps Setting](https://learn.microsoft.com/windows/uwp/launch-resume/launch-default-apps-settings) page.
+* Added Launch the [Default Apps Setting](/windows/uwp/launch-resume/launch-default-apps-settings) page.
 
-* Updated topics for (APIs in the Cloud Files (cfapi.h) header)[https://learn.microsoft.com/en-us/windows/win32/api/cfapi/nf-cfapi-cfupdateplaceholder].
+* Updated topics for (APIs in the Cloud Files cfapi.h header)[/windows/win32/api/cfapi/nf-cfapi-cfupdateplaceholder].
 
 
 ## Developer tool updates
