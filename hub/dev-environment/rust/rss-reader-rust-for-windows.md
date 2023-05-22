@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code, rust for windows
 ms.localizationpriority: medium
-ms.date: 12/09/2022
+ms.date: 05/22/2023
 ---
 
 # RSS reader tutorial (Rust for Windows with VS Code)
@@ -72,7 +72,7 @@ Now let's try out Rust for Windows by writing a simple console app that download
     ...
 
     fn main() -> Result<()> {
-        let uri = Uri::CreateUri(h!("https://blog.rust-lang.org/feed.xml"))?;
+        let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
 
         Ok(())
     }
@@ -91,7 +91,7 @@ Now let's try out Rust for Windows by writing a simple console app that download
     ...
 
     fn main() -> windows::core::Result<()> {
-        let uri = Uri::CreateUri(h!("https://blog.rust-lang.org/feed.xml"))?;
+        let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
         let client = SyndicationClient::new()?;
 
         Ok(())
@@ -107,7 +107,7 @@ Now let's try out Rust for Windows by writing a simple console app that download
     ...
 
     fn main() -> windows::core::Result<()> {
-        let uri = Uri::CreateUri(h!("https://blog.rust-lang.org/feed.xml"))?;
+        let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
         let client = SyndicationClient::new()?;
         let feed = client.RetrieveFeedAsync(&uri)?.get()?;
 
@@ -117,15 +117,21 @@ Now let's try out Rust for Windows by writing a simple console app that download
 
     Because [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) is an asynchronous API, we use the blocking **get** function to keep the example simple. Alternatively, we could use the `await` operator within an `async` function to cooperatively wait for the results. A more complex app with a graphical user interface will frequently use `async`.
 
-9. Now we can iterate over the resulting items, and let's print out just the titles.
+9. Now we can iterate over the resulting items, and let's print out just the titles. You'll also see a few extra lines of code below to set a user-agent header, since some RSS feeds require that.
 
     ```rust
     // src\main.rs
     ...
 
     fn main() -> windows::core::Result<()> {
-        let uri = Uri::CreateUri(h!("https://blog.rust-lang.org/feed.xml"))?;
+        let uri = Uri::CreateUri(h!("https://blogs.windows.com/feed"))?;
         let client = SyndicationClient::new()?;
+
+        client.SetRequestHeader(
+            h!("User-Agent"),
+            h!("Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)"),
+        )?;
+
         let feed = client.RetrieveFeedAsync(&uri)?.get()?;
 
         for item in feed.Items()? {
