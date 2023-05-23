@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 
 Dev Drive builds on [ReFS](/windows-server/storage/refs/refs-overview) technology to employ targeted file system optimizations and provide more control over storage volume settings and security, including trust designation, antivirus configuration, and administrative control over what filters are attached.
 
-See the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive) for some average improvement measurements across common dev operations.
+<!-- See the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive) for some average improvement measurements across common dev operations. -->
 
 > [!IMPORTANT]
 > Dev Drive is currently only available via public preview (see [prerequisities](#prerequisites)). Some information relating to this prerelease product may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
@@ -310,8 +310,8 @@ No. If you have the space, you can create as many Dev Drives as you would like. 
 
 Once you have a Dev Drive created, Visual Studio will automatically recognize it when you're creating a new project and pick that filepath by default. To optimize performance when using Visual Studio, we recommend moving any project code, [package caches](#storing-package-cache-on-dev-drive), and `Copy on write` MS Build tasks to the Dev Drive that may have previously been saved elsewhere. (See [How to change the build output directory](/visualstudio/ide/how-to-change-the-build-output-directory) in the Visual Studio docs.) We also recommend that you consider redirecting `%TEMP%` and `%TMP%` envvars to Dev Drive. Many programs use these, so beware of potential side effects. We also recommend using [performance mode for Microsoft Defender](#what-is-microsoft-defender-performance-mode) for asychronous performance gains using Dev Drive. Turning Microsoft Defender completely off may result in the most maximum performance gains, but this may increase security risks and is a setting controlled by the system admin.
 
-For more information, see the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive).
-
+<!-- For more information, see the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive).
+ -->
 ### Does Dev Drive work with WSL project files?
 
 You can access Dev Drive project files, which run on the Windows file system, from a Linux distribution running via WSL. However, WSL runs in a VHD and for the best performance files should be stored on the Linux file system. WSL is out of the scope of Windows file system so you should not expect to see any performance improvement when accessing project files in Dev Drive from a Linux distribution running via WSL.
