@@ -135,7 +135,18 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-### Paste as Plain Text 
+### Mouse without Borders
+
+:::row:::
+    :::column:::
+        [![Mouse without Borders screenshot.](../images/powertoys-mouse-without-borders-after-connect-2.png)](mouse-without-borders.md)
+    :::column-end:::
+    :::column span="2":::
+        [Mouse without Borders](mouse-without-borders.md) enables you to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
+    :::column-end:::
+:::row-end:::
+
+### Paste as Plain Text
 
 :::row:::
     :::column:::
@@ -143,6 +154,17 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [Paste as Plain Text](paste-as-plain-text.md) allows you to paste text from your clipboard, excluding text-formatting, with a quick key shortcut (<kbd>Ctrl</kbd>+<kbd>⊞ Win</kbd>+<kbd>V</kbd>).
+    :::column-end:::
+:::row-end:::
+
+### Peek
+
+:::row:::
+    :::column:::
+        [![Peek screenshot.](../images/powertoys-peek.png)](peek.md)
+    :::column-end:::
+    :::column span="2":::
+        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Just select the file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
     :::column-end:::
 :::row-end:::
 

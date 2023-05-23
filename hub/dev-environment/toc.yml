@@ -3,10 +3,16 @@ items:
   href: ./index.md
 - name: Developer tools
   items:
-  - name: Windows Subsystem for Linux
-    href: /windows/wsl/
-  - name: Windows Terminal
-    href: /windows/terminal/
+  - name: Dev Home
+    items:
+      - name: Overview
+        href: ../dev-home/index.md
+      - name: Machine configuration
+        href: ../dev-home/setup.md
+      - name: Dev Home extensions
+        href: ../dev-home/extensions.md
+  - name: Dev Drive
+    href: ../dev-drive/index.md
   - name: Windows Package Manager
     items:
       - name: Overview
@@ -15,8 +21,8 @@ items:
         items:
           - name: Overview
             href: ../package-manager/winget/index.md
-          - name: Debugging and troubleshooting
-            href: ../package-manager/winget/troubleshooting.md
+          - name: configure command
+            href: ../package-manager/winget/configure.md
           - name: export command
             href: ../package-manager/winget/export.md
           - name: features command
@@ -49,6 +55,16 @@ items:
             href: ../package-manager/winget/upgrade.md
           - name: validate command
             href: ../package-manager/winget/validate.md
+          - name: Debugging and troubleshooting
+            href: ../package-manager/winget/troubleshooting.md
+      - name: WinGet Configuration
+        items:
+          - name: Overview
+            href: ../package-manager/configuration/index.md
+          - name: Author a configuration
+            href: ../package-manager/configuration/create.md
+          - name: Check a configuration
+            href: ../package-manager/configuration/check.md
       - name: Submit packages
         items:
           - name: Overview
@@ -99,8 +115,12 @@ items:
         href: ../powertoys/keyboard-manager.md
       - name: Mouse Utilities
         href: ../powertoys/mouse-utilities.md
+      - name: Mouse without Borders
+        href: ../powertoys/mouse-without-borders.md
       - name: Paste as Plain Text
         href: ../powertoys/paste-as-plain-text.md
+      - name: Peek
+        href: ../powertoys/peek.md
       - name: PowerRename
         href: ../powertoys/powerrename.md
       - name: Quick Accent
@@ -117,6 +137,10 @@ items:
         href: ../powertoys/text-extractor.md
       - name: Video Conference Mute
         href: ../powertoys/video-conference-mute.md
+  - name: Windows Subsystem for Linux
+    href: /windows/wsl/
+  - name: Windows Terminal
+    href: /windows/terminal/
   - name: Mac to Windows guide
     href: mac-to-windows.md
   - name: Keyboard shortcuts

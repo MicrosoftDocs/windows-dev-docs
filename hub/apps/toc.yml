@@ -454,6 +454,8 @@ items:
             href: develop/smart-app-control/code-signing-for-smart-app-control.md
           - name: Test your app's signature with Smart App Control
             href: develop/smart-app-control/test-your-app-with-smart-app-control.md
+  - name: Windows app restore
+    href: develop/windows-app-restore.md
   - name: Deploy
     items:
       - name: Deployment overview
@@ -604,15 +606,23 @@ items:
               - name: Create platform-specific Store listings
                 href: publish/publish-your-app/create-platform-specific-store-listings.md
           - name: Manage submission options
-            href: publish/publish-your-app/manage-submission-options.md
             items:
+              - name: Manage submission options
+                href: publish/publish-your-app/manage-submission-options.md
+              - name: App submission controls
+                href: publish/publish-your-app/app-submission-control.md
               - name: Notes for certification
                 href: publish/publish-your-app/notes-for-certification.md
           - name: Manage app name reservations
             href: publish/partner-center/manage-app-name-reservations.md
           - name: The app certification process
-            href: publish/publish-your-app/app-certification-process.md
             items:
+              - name: The app certification process
+                href: publish/publish-your-app/app-certification-process.md
+              - name: Package validation
+                href: publish/publish-your-app/package-validation-pre-check.md
+              - name: Manual package validation
+                href: publish/publish-your-app/manual-package-validation.md
               - name: Resolve submission errors
                 href: publish/publish-your-app/resolve-submission-errors.md
               - name: Avoid common certification failures

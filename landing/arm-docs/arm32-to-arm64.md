@@ -58,8 +58,6 @@ If you can’t build due to a dependency, whether internal, from a 3rd party, or
 
 - The last choice would be to remove and/or replace the dependency on your app project.
 
-## Need assistance? Leverage our App Assure service
+### Need assistance? Leverage our App Assure service
 
-The App Assure service was launched to fulfill Microsoft’s promise of application compatibility: your Windows apps will work on Arm. If you encounter an application compatibility issue or technical blocker while porting your Arm32 apps to Arm64, App Assure engineers can help. The program has succeeded in helping many key ISVs port their applications and drivers to Arm64.
-
-[Learn more about App Assure compatibility assistance](https://www.microsoft.com/fasttrack/microsoft-365/app-assure). To register and connect with App Assure, visit [aka.ms/AppAssureRequest](https://aka.ms/appassurerequest) or send an email to [achelp@microsoft.com](mailto:achelp@microsoft.com) to submit your request for app compatibility support for Arm32 to Arm64 migration.
+[Learn more about App Assure compatibility assistance](https://www.microsoft.com/fasttrack/microsoft-365/app-assure) to help with porting your Windows app or driver to Arm64. To register and connect with App Assure, visit [aka.ms/AppAssureRequest](https://aka.ms/AppAssureRequest) or send an email to [achelp@microsoft.com](mailto:achelp@microsoft.com) to submit your request for Windows on Arm compatibility support.

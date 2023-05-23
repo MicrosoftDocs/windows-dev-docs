@@ -5,6 +5,8 @@ items:
   items:
   - name: Overview
     href: ./overview.md
+  - name: Add Arm support to your app
+    href: ./add-arm-support.md
   - name: Windows Dev Kit 2023
     items:
     - name: Overview & Set up
