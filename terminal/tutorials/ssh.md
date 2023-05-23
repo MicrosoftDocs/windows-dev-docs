@@ -10,7 +10,7 @@ ms.topic: tutorial
 
 # Tutorial: SSH in Windows Terminal
 
-Windows has a built-in SSH client that you can use in Windows Terminal. In this tutorial, you'll learn how to set up a profile in Windows Terminal that uses SSH.
+Windows has a built-in SSH client that you can use in Windows Terminal. In this tutorial, you'll learn how to set up a profile in Windows Terminal that uses SSH. Note that this feature is in preview.
 
 ## Access Windows SSH Client
 
@@ -19,6 +19,9 @@ The latest builds of Windows 10 and Windows 11 include a built-in SSH server and
 By default, the OpenSSH client will be located in the directory: `C:\Windows\System32\OpenSSH`. You can also check that it is installed in Windows Settings > Apps > Optional features, then search for "OpenSSH" in your installed features.
 
 ![OpenSSH feature in Windows Settings](../images/ssh-optonialfeatures.png)
+
+> [!NOTE]
+> Windows Terminal version 1.XX+ can dynamically generate profiles to connect to the SSH hosts within your [OpenSSH config file](https://man.openbsd.org/ssh_config).
 
 ## Create a profile
 

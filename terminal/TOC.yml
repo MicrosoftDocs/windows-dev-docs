@@ -4,6 +4,8 @@
       href: index.md
     - name: Install
       href: install.md
+    - name: Distribution Types
+      href: distributions.md
     - name: Customize settings
       items:
         - name: Startup
