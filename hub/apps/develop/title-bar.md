@@ -250,8 +250,13 @@ public MainWindow()
 }
 ```
 
-> [!CAUTION]
-> `Title` shows in the XAML IntelliSense for `Window`, but setting it in XAML causes an error. Set this property in code instead.
+```xaml
+<Window
+    ...
+    Title="App title">
+    ...
+</Window>
+```
 
 > [!NOTE]
 > To add color to the default title bar or to change the window icon that comes with a WinUI 3 window, you will need to use the Windows App SDK AppWindow APIs or opt to fully customize your titlebar.
