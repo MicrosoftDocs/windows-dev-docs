@@ -125,9 +125,15 @@ These tools should be stored on your main C:\ drive.
 
 A package cache is the global folder location used by applications to store files for installed software. These source files are needed when you want to update, uninstall, or repair the installed software. Visual Studio is one such application that stores a large portion of its data in the Package Cache.
 
-- **NuGet cache**: The NuGet cache is used by dotnet, MSBuild, and Visual Studio. Create a NuGet root directory in your dev drive, e.g. `D:\packages\nuget`, then set a global environment variable `NUGET_PACKAGES` to that path, e.g. `setx /M NUGET_PACKAGES D:\packages\nuget`. If you have installed Visual Studio on your machine, move the contents of `%USERPROFILE%\.nuget\packages` to this directory. Learn more in the [NuGet docs: Managing the global packages, cache, and temp folders](/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
-
 - **Npm cache (NodeJS)**: Create an npm cache directory in your Dev Drive, e.g. `D:\packages\npm`, then set a global environment variable `npm_config_cache` to that path, e.g. `setx /M npm_config_cache D:\packages\npm`. If you have already installed NodeJS on your machine, move the contents of `%AppData%\npm-cache` to this directory. Learn more in the npm docs: [npm-cache](https://docs.npmjs.com/cli/v6/commands/npm-cache) and [npm config: cache](https://docs.npmjs.com/cli/v9/using-npm/config#cache).
+
+- **NuGet global-packages folder**: The NuGet global-packages folder is used by dotnet, MSBuild, and Visual Studio. Create a user specific NuGet directory in your CopyOnWrite (CoW) filesystem. For example: `D:\<username>\.nuget\packages`. Use one of the following ways to change the global-packages folder from the default location to your newly created folder (to manage the globally installed packages):
+
+  - Set a global environment variable `NUGET_PACKAGES` to that path. For example: `setx /M NUGET_PACKAGES D:\<username>\.nuget\packages`.
+  - Set `globalPackagesFolder`, when using `PackageReference`, or `repositoryPath`, when using `packages.config`, to that path in configuration settings.
+  - Set the `RestorePackagesPath` MSBuild property (MSBuild only) to that path.
+
+    To verify the global-packages folder, run the dotnet nuget locals command: `dotnet nuget locals global-packages --list`. The retore will install and download packages into the new path. The default NuGet global-packages folder can be deleted. Learn more in the [NuGet docs: Managing the global packages, cache, and temp folders](/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
 
 - **vcpkg cache**: Create a vcpkg cache directory in your Dev Drive, e.g. `D:\packages\vcpkg`, then set a global environment variable `VCPKG_DEFAULT_BINARY_CACHE` to that path, e.g. `setx /M VCPKG_DEFAULT_BINARY_CACHE D:\packages\vcpkg`. If you have already installed packages, move the contents of `%LOCALAPPDATA%\vcpkg\archives` or `%APPDATA%\vcpkg\archives` to this directory. Learn more in the vcpkg docs: [vcpkg Binary Caching](/vcpkg/users/binarycaching).
 

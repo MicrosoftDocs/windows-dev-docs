@@ -133,7 +133,7 @@ Common issues that may interfere with or block you from adding an Arm64 version 
 - [A dependency not compiled for ARM64 is blocking you from a successful build.](#a-dependency-not-compiled-for-arm64-is-blocking-you-from-a-successful-build)
 - [Code is written for a specific architecture other than Arm64.](#code-is-written-for-a-specific-architecture-other-than-arm64)
 - [Your app relies on a kernel driver.](#your-app-relies-on-a-kernel-driver)
-- [You're stuck and need assistance.](#need-assistance-leverage-our-app-assure-service)
+<!-- - [You're stuck and need assistance.](#need-assistance-leverage-our-app-assure-service) -->
 
 ### A dependency not compiled for ARM64 is blocking you from a successful build
 
@@ -161,7 +161,7 @@ If you can’t build due to a dependency, whether internal, from a 3rd party, or
 
 Additionally, [drivers on Windows](/windows-hardware/drivers/gettingstarted/) are required to be built as Arm64 and can not be emulated.  For apps that rely on software drivers that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
-### When to rebuild as Arm64EC
+<!-- ### When to rebuild as Arm64EC
 
 When is [Arm64EC](arm64ec.md) a good fit for updating your app?
 
@@ -181,7 +181,7 @@ When is [Arm64EC](arm64ec.md) a good fit for updating your app?
 
 ### Need assistance? Leverage our App Assure service
 
-[Learn more about App Assure compatibility assistance](https://www.microsoft.com/fasttrack/microsoft-365/app-assure) to help with porting your Windows app or driver to Arm64. To register and connect with App Assure, visit [aka.ms/AppAssureRequest](https://aka.ms/AppAssureRequest) or send an email to [achelp@microsoft.com](mailto:achelp@microsoft.com) to submit your request for Windows on Arm compatibility support.
+[Learn more about App Assure compatibility assistance](https://www.microsoft.com/fasttrack/microsoft-365/app-assure) to help with porting your Windows app or driver to Arm64. To register and connect with App Assure, visit [aka.ms/AppAssureRequest](https://aka.ms/AppAssureRequest) or send an email to [achelp@microsoft.com](mailto:achelp@microsoft.com) to submit your request for Windows on Arm compatibility support. -->
 
 ## Toolchain for Windows on Arm
 
