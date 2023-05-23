@@ -224,6 +224,32 @@ You can toggle read-only mode on a pane with the `toggleReadOnlyMode` command.
 { "command": "toggleReadOnlyMode" }
 ```
 
+You can enable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
+
+**Command name:** `enableReadOnlyMode`
+
+**Default bindings:**
+
+```json
+{ "command": "enableReadOnlyMode" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+You can disable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
+
+**Command name:** `disableReadOnlyMode`
+
+**Default bindings:**
+
+```json
+{ "command": "disableReadOnlyMode" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ## Customizing panes using key bindings
 
 You can customize what opens inside a new pane depending on your custom key bindings.

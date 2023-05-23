@@ -858,6 +858,30 @@ You can mark a pane as read-only, which will prevent input from going into the t
 { "command": "toggleReadOnlyMode" }
 ```
 
+You can enable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
+
+**Command name:** `enableReadOnlyMode`
+
+**Default bindings:**
+
+```json
+{ "command": "enableReadOnlyMode" }
+```
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+You can disable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
+
+**Command name:** `disableReadOnlyMode`
+
+**Default bindings:**
+
+```json
+{ "command": "disableReadOnlyMode" }
+```
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Split a pane
 
 This halves the size of the active pane and opens another. Without any arguments, this will open the default profile in the new pane. If an action is not specified, the default profile's equivalent setting will be used.
