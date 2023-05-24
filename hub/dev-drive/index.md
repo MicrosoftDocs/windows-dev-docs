@@ -97,7 +97,7 @@ There is typically a tradeoff between performance and security. Using a Dev Driv
 
 - Real-time protection
 - [Antivirus performance mode](#what-is-microsoft-defender-performance-mode)
-- No antivirus filter attached to Dev Drive
+- Control over filters attached to Dev Drive
 
 Microsoft generally recommends applying the performance mode option when using a Dev Drive.
 
