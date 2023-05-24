@@ -13,6 +13,78 @@ ms.date: 02/24/2022
 
 Windows invites you to code as you are. Use whatever coding language or framework you prefer - whether developing with tools on Windows or with Linux tools on the Windows Subsystem for Linux, this guide will help you get set up and install what you need to start coding, debugging, and accessing services to put your work into production.
 
+## Developer tools
+
+:::row:::
+    :::column:::
+       [![Dev Home icon](../images/dev-home-icon.png)](/windows/dev-home)<br>
+        **[Dev Home](/windows/dev-home/)**<br>
+        Monitor your work in the centralized dashboard, GitHub and System performance widgets. Get setup and onboard new projects with the Machine configuration tool.<br>
+        [Install Dev Home](https://aka.ms/devhome)
+    :::column-end:::
+    :::column:::
+       [![Dev Drive icon](../images/dev-drive-icon.png)](/windows/dev-drive)<br>
+        **[Dev Drive](/windows/dev-drive/)**<br>
+        Improve performance by storing project files on a Dev Drive and keep files secure with trust designation, antivirus configuration, and attached filters.
+        <br>
+        [Create a Dev Drive](/windows/dev-drive#how-to-set-up-a-dev-drive)
+    :::column-end:::
+    :::column:::
+       [![Windows Package Manager icon](../images/winget.png)](../package-manager/configuration/index.md)<br>
+        **[WinGet Configuration](../package-manager/configuration/index.md)**<br>
+        Consolidate manual machine setup and project onboarding to a single command that is reliable and repeatable.<br>
+        [Author a configuration file](../package-manager/configuration/create.md)
+    :::column-end:::
+    :::column:::
+       [![WSL icon](../images/wsl-icon.png)](/windows/wsl/)<br>
+        **[Windows Subsystem for Linux](/windows/wsl/)**<br>
+        Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).<br>
+        [Install WSL](/windows/wsl/install)
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+       [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
+        **[Windows Terminal](/windows/terminal/)**<br>
+        Customize your terminal environment to work with multiple command line shells.
+        <br>
+        [Install Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)
+    :::column-end:::
+    :::column:::
+       [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
+        **[Windows Package Manager](../package-manager/index.md)**<br>
+        Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
+        [Install Windows Package Manager](../package-manager/winget/index.md#install-winget)
+    :::column-end:::
+    :::column:::
+       [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
+        **[Microsoft PowerToys](../powertoys/index.md)**<br>
+        Tune and streamline your Windows experience for greater productivity with this set of power user utilities.<br>
+        [Install PowerToys](../powertoys/install.md)
+    :::column-end:::
+    :::column:::
+       [![WSA icon](../images/wsa-icon.png)](/windows/android/wsa/)<br>
+        **[Windows Subsystem for Android](/windows/android/wsa/)**<br>
+        Windows Subsystem for Android™️ enables your Windows 11 device to run Android applications that are available in the Amazon Appstore.<br>
+        [Learn more](/windows/android/wsa/)
+    :::column-end:::
+:::row-end:::
+
+<br>
+
+> [!VIDEO 54e6c532-a86c-4a39-81ab-40e28ce2ba96]
+
+## Windows Copilot
+
+The first PC platform to provide centralized AI assistance and designed to help people easily take action and get things done is coming soon! See the [Blog announcement](https://blogs.windows.com/windowsdeveloper/2023/05/23/bringing-the-power-of-ai-to-windows-11-unlocking-a-new-era-of-productivity-for-customers-and-developers-with-windows-copilot-and-dev-home/).
+
+[Sign up to receive updates](https://aka.ms/PluginsForWindows)
+
+<br>
+
+> [!VIDEO 72ad293b-b7aa-4a78-9111-46eb0e072d7b]
+
 ## Development paths
 
 :::row:::
@@ -33,7 +105,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
     :::column-end:::
     :::column:::
        [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
-        **[Get started with Windows Desktop](../apps/index.yml)**<br>
+        **[Get started building Windows apps](../apps/index.yml)**<br>
         Get started building desktop apps for Windows using the Windows App SDK, UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.
     :::column-end:::
 :::row-end:::
@@ -79,35 +151,8 @@ Windows invites you to code as you are. Use whatever coding language or framewor
     :::column-end:::
 :::row-end:::
 
-## Tools and platforms
+## More for developers
 
-:::row:::
-    :::column:::
-       [![WSL icon](../images/wsl-icon.png)](/windows/wsl/)<br>
-        **[Windows Subsystem for Linux](/windows/wsl/)**<br>
-        Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).<br>
-        [Install WSL](/windows/wsl/install-win10)
-    :::column-end:::
-    :::column:::
-       [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
-        **[Windows Terminal](/windows/terminal/)**<br>
-        Customize your terminal environment to work with multiple command line shells.
-        <br>
-        [Install Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)
-    :::column-end:::
-    :::column:::
-       [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
-        **[Windows Package Manager](../package-manager/index.md)**<br>
-        Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
-        [Install Windows Package Manager](../package-manager/winget/index.md#install-winget)
-    :::column-end:::
-    :::column:::
-       [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
-        **[Microsoft PowerToys](../powertoys/index.md)**<br>
-        Tune and streamline your Windows experience for greater productivity with this set of power user utilities.<br>
-        [Install PowerToys](../powertoys/install.md)
-    :::column-end:::
-:::row-end:::
 :::row:::
     :::column:::
        [![VS Code icon](../images/Vscode.png)](https://code.visualstudio.com/docs)<br>
