@@ -356,6 +356,13 @@ items:
             href: windows-app-sdk/composition.md
           - name: Render text with DWriteCore
             href: windows-app-sdk/dwritecore.md
+          - name: Win2D
+            items:
+              - name: "Overview of Win2D"
+                href: develop/win2d/index.md
+              - name: "Hello Win2D World"
+                href: develop/win2d/hellowin2dworld.md
+
       - name: Data and files
         items:
           - name: App resources
