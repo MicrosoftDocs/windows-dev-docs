@@ -1,7 +1,7 @@
 ---
 description: Learn how to build a hosted app that inherits the executable, entry point and runtime attributes of a host app.
 title: Create hosted apps
-ms.date: 04/23/2020
+ms.date: 05/26/2023
 ms.topic: article
 keywords: windows 10, desktop, package, identity, MSIX, Win32
 ms.localizationpriority: medium
@@ -56,7 +56,7 @@ A *hosted app* declares a package dependency on a *host*. The hosted app leverag
 Hosted app packages can be signed or unsigned:
 
 * Signed packages may contain executable files. This is useful in scenarios that have a binary extension mechanism, which enables the host to load a DLL or registered component in the hosted app package.
-* Unsigned packages can only contain non-executable files. This is useful in scenarios where the host only needs to load images, assets and content or script files. Unsigned packages must include a special `OID` value in their [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element or they won’t be allowed to register. This prevents unsigned packages from conflicting with or spoofing the identity of a signed package.
+* In most scenarios, the unsigned package will contain executable content. But an unsigned package that contains only *non-executable* files is useful in scenarios where the host needs to load only images, assets, and content or script files. Unsigned packages must include a special `OID` value in their [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element or they won't be allowed to register. This prevents unsigned packages from conflicting with or spoofing the identity of a signed package.
 
 To define a hosted app, declare the following items in the package manifest:
 
@@ -165,3 +165,7 @@ The sample requires version 10.0.19041.0 or later of Windows 10 and the Windows 
     > You can run `pyscriptengine` on the command line because the host in the sample declares an [**AppExecutionAlias**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias).
 
 6. Open the **Start** menu and click **NumberGuesser** to run the hosted app.
+
+## Related topics
+
+* [Create an unsigned MSIX package](/windows/msix/package/unsigned-package)
