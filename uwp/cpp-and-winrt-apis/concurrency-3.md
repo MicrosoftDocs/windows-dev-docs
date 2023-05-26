@@ -1,13 +1,16 @@
 ---
 description: Shows how you can author and consume your own completion source class.
 title: A completion source sample
-ms.date: 07/09/2021
+ms.date: 05/22/2023
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony, TaskCompletionSource
 ms.localizationpriority: medium
 ---
 
 # A completion source sample
+
+> [!NOTE]
+> As an alternative to the sample code in this topic, there's the source code for a production-ready version of a task completion source implementation in the [cpp-async](https://github.com/Microsoft/cpp-async) GitHub repo.
 
 This topic demonstrates how you can author and consume your own completion source class, similar to .NET's [**TaskCompletionSource**](/dotnet/api/system.threading.tasks.taskcompletionsource-1).
 
