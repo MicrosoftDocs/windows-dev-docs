@@ -50,7 +50,7 @@ You will be given three options:
 When choosing the **Create new VHD** option to set up a Dev Drive, you will then need to determine the following:
 
 - **Virtual hard disk name**: Give a name to your VHD (Dev Drive).
-- **Location**: Assign a directory path where the Dev Drive VHD will be located on your machine.
+- **Location**: Assign a directory path where the Dev Drive VHD will be located on your machine. Default is `%userprofile%\DevDrives`. Recommended to store in a per-user directory path to avoid any unintentional sharing.
 - **Virtual hard disk size**: Assign the amount of disk space that will be allocated for the volume to use, minimum size is 50GB.
 - **Virtual hard disk format**:
   - **VHD**: Supports virtual disks up to 2040GB in size.
