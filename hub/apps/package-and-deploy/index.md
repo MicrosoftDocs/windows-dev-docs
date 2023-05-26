@@ -2,7 +2,7 @@
 title: Deployment overview
 description: The topics in this section introduce options and guidance around deploying different types of Windows apps. Your first decision will be whether or not to package your app.
 ms.topic: article
-ms.date: 12/16/2022
+ms.date: 05/11/2023
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,7 @@ Your first decision will be whether or not to package your app.
 * **Packaged app**. Packaged apps are the only kind that have *package identity* at runtime. Package identity is needed for certain Windows features, such as custom context menu extensions (see [Features that require package identity](../desktop/modernize/modernize-packaged-apps.md)). A packaged app is packaged by using MSIX technology (see [What is MSIX?](/windows/msix/overview)).
   * Commonly, a packaged app's process runs inside a lightweight app container; and is isolated using file system and registry virtualization.
   * **Packaged app with external location**. But you can opt out of those restrictions and still be a packaged app (still benefit from package identity). You do that by building and registering a *package with external location* with your app. A packaged app with external location uses MSIX to package, but it's not installed by using MSIX (instead, it's a "bring-your-own-installer" model). It's essentially a hybrid option between a packaged and an unpackaged app. See [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps.md).
-* **Unpackaged app**. Another way to opt out of the restrictions described above is to create an unpackaged app, and not use MSIX at all. But be aware that an unpackaged app *doesn't* have package identity at runtime; so it misses out on certain Windows features.
+* **Unpackaged app**. Another way to opt out of the restrictions described above is to create an unpackaged app, and not use MSIX at all. But be aware that an unpackaged app *doesn't* have package identity at runtime; so it misses out on certain Windows features (see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)).
 
 Each type of app can be published to the Microsoft Store, and installed that way or via Windows App Installer.
 

@@ -20,12 +20,12 @@ This article shows how to configure an app that's not installed by using MSIX (t
 
 This topic demonstrates explicitly calling the bootstrapper API from a basic Console app project; but the steps apply to any unpackaged desktop app that uses the Windows App SDK.
 
-Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the *Framework* package dependency that your app takes when it uses the Windows App SDK, and the additional components required to work in a packaged with external location or unpackaged app.
+Before completing this tutorial, we recommend that you review [Runtime architecture](./deployment-architecture.md) to learn more about the *Framework* package dependency that your app takes when it uses the Windows App SDK, and the additional components required to work in a packaged with external location or unpackaged app.
 
 ## Prerequisites
 
-1. [Install tools for the Windows App SDK](set-up-your-development-environment.md#install-visual-studio).
-1. Ensure that all dependencies for packaged with external location and unpackaged apps are installed (see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md#prerequisites)). An easy way to do that is to run the Windows App SDK runtime installer. 
+1. [Install tools for the Windows App SDK](./set-up-your-development-environment.md#install-visual-studio).
+1. Ensure that all dependencies for packaged with external location and unpackaged apps are installed (see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](./deploy-unpackaged-apps.md#prerequisites)). An easy way to do that is to run the Windows App SDK runtime installer. 
 
 ## Instructions
 
@@ -91,7 +91,7 @@ Follow these instructions to configure a C# WinUI 3 project that's either packag
     }
     ```
 
-    At its root, the bootstrapper API is a native C/C++ API that enables you to use the Windows App SDK APIs in your app. But in a .NET app that uses the Windows App SDK 1.0 or later, you can use the [.NET wrapper for the bootstrapper API](use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api). That wrapper provides an easier way of calling the bootstrapper API in a .NET app than calling the native C/C++ functions directly. The previous code example calls the static [**Initialize**](../api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md#initialize-methods) and **Shutdown** methods of the **Bootstrap** class in the .NET wrapper for the bootstrapper API.
+    At its root, the bootstrapper API is a native C/C++ API that enables you to use the Windows App SDK APIs in your app. But in a .NET app that uses the Windows App SDK 1.0 or later, you can use the [.NET wrapper for the bootstrapper API](./use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api). That wrapper provides an easier way of calling the bootstrapper API in a .NET app than calling the native C/C++ functions directly. The previous code example calls the static [**Initialize**](../api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md#initialize-methods) and **Shutdown** methods of the **Bootstrap** class in the .NET wrapper for the bootstrapper API.
 
 1. To demonstrate that the Windows App SDK runtime components were loaded properly, add some code that uses the [ResourceManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager) class in the Windows App SDK to load a string resource.
 
@@ -131,7 +131,7 @@ Follow these instructions to configure a C++ WinUI 3 project that's either packa
     1. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**. 
     1. In the **NuGet Package Manager** window, select the **Browse** tab, and search for **Microsoft.WindowsAppSDK**.
 
-1. You're now ready to use the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md)) to initialize the Windows App SDK runtime in your app. This enables you to use the Windows App SDK APIs in the app.
+1. You're now ready to use the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](./use-windows-app-sdk-run-time.md)) to initialize the Windows App SDK runtime in your app. This enables you to use the Windows App SDK APIs in the app.
 
     1. Add the following include files to the top of your **DynamicDependenciesTest.cpp** file. The [mddbootstrap.h](/windows/windows-app-sdk/api/win32/mddbootstrap) header is available via the Windows App SDK NuGet package.
 
@@ -207,9 +207,9 @@ Follow these instructions to configure a C++ WinUI 3 project that's either packa
 
 ## If your project is WPF
 
-For a Windows Presentation Foundation (WPF) app, also add `<RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>` to your project file.
+For a Windows Presentation Foundation (WPF) app, see [Use the Windows App SDK in a WPF app](./wpf-plus-winappsdk.md).
 
 ## Related topics
 
-* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
-* [Runtime architecture](deployment-architecture.md)
+* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](./deploy-unpackaged-apps.md)
+* [Runtime architecture](./deployment-architecture.md)
