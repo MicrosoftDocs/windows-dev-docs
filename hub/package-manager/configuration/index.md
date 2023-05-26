@@ -49,7 +49,7 @@ In order to use a WinGet Configuration file with the [`winget configure` command
 
 ```json
 "experimentalFeatures": {
-       "WinGet configuration": true
+       "configuration": true
    }
 ```
 
