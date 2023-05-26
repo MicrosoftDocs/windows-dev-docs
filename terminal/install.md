@@ -21,8 +21,8 @@ To try the latest preview features, you may also want to [install Windows Termin
 
 ## Set your default terminal application
 
-> [!IMPORTANT]
-> This feature is only available in [Windows 11](https://www.microsoft.com/windows/).
+> [!NOTE]
+> This feature is available in all versions of Windows 11 and versions of Windows 10 22H2 after the installation of the May 23, 2023 update, [KB5026435](https://support.microsoft.com/en-us/topic/may-23-2023-kb5026435-os-build-19045-3031-preview-2751b693-5544-4110-bc0c-feb8dd7336b3).
 
 To open any command line application with Windows Terminal, set it as your default terminal application.
 
