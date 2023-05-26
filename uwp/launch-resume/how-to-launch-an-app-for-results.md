@@ -6,6 +6,9 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - cppwinrt
 ---
 # Launch an app for results
 
@@ -59,7 +62,7 @@ If this method does not already exist in the launched app, create it within the 
 
 In an app that lets you pick your friends in a social network, this function could be where you open the people-picker page. In this next example, a page named **LaunchedForResultsPage** is displayed when the app is activated for results. Ensure that the **using** statement is included at the top of the file.
 
-```cs
+```csharp
 using Windows.ApplicationModel.Activation;
 ...
 protected override void OnActivated(IActivatedEventArgs args)
@@ -82,13 +85,46 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
+```cppwinrt
+using namespace winrt::Windows::ApplicationModel::Activation;
+...
+protected override void OnActivated(IActivatedEventArgs args)
+{
+    // Window management
+    Frame rootFrame{ nullptr };
+    auto content = Window::Current().Content();
+    if (content)
+    {
+        rootFrame = content.try_as<Frame>();
+    }
+    
+    if (rootFrame == null)
+    {
+        rootFrame = Frame();
+        Window::Current().Content(rootFrame);
+    }
+
+    // Code specific to launch for results
+    auto protocolForResultsEventArgs{ args.as<ProtocolForResultsActivatedEventArgs>() };
+    // Open the page that we created to handle activation for results.
+    rootFrame.Navigate(xaml_typename<LaunchedForResultsPage>(), protocolForResultsArgs);
+
+    // Ensure the current window is active.
+    Window::Current().Activate();
+}
+```
+
 Because the protocol extension in the Package.appxmanifest file specifies **ReturnResults** as **always**, the code just shown can cast `args` directly to [**ProtocolForResultsActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.ProtocolForResultsActivatedEventArgs) with confidence that only **ProtocolForResultsActivatedEventArgs** will be sent to **OnActivated** for this app. If your app can be activated in ways other than launching for results, you can check whether [**IActivatedEventArgs.Kind**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) property returns [**ActivationKind.ProtocolForResults**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) to tell whether the app was launched for results.
 
 ## Step 3: Add a ProtocolForResultsOperation field to the app you launch for results
 
 
-```cs
+```csharp
 private Windows.System.ProtocolForResultsOperation _operation = null;
+```
+
+```cppwinrt
+Windows::System::ProtocolForResultsOperation _operation = nullptr;
 ```
 
 You'll use the [**ProtocolForResultsOperation**](/uwp/api/windows.applicationmodel.activation.protocolforresultsactivatedeventargs.protocolforresultsoperation) field to signal when the launched app is ready to return the result to the calling app. In this example, the field is added to the **LaunchedForResultsPage** class because you'll complete the launch-for-results operation from that page and will need access to it.
@@ -98,15 +134,19 @@ You'll use the [**ProtocolForResultsOperation**](/uwp/api/windows.applicationmod
 
 Override the [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) method on the page that you'll display when your app is launched for results. If this method does not already exist, create it within the class for the page defined in &lt;pagename&gt;.xaml.cs. Ensure that the following **using** statement is included at the top of the file:
 
-```cs
+```csharp
 using Windows.ApplicationModel.Activation
+```
+
+```cppwinrt
+using namespace winrt::Windows::ApplicationModel::Activation;
 ```
 
 The [**NavigationEventArgs**](/uwp/api/Windows.UI.Xaml.Navigation.NavigationEventArgs) object in the [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) method contains the data passed from the calling app. The data may not exceed 100KB and is stored in a [**ValueSet**](/uwp/api/Windows.Foundation.Collections.ValueSet) object.
 
 In this example code, the launched app expects the data sent from the calling app to be in a [**ValueSet**](/uwp/api/Windows.Foundation.Collections.ValueSet) under a key named **TestData**, because that's what the example's calling app is coded to send.
 
-```cs
+```csharp
 using Windows.ApplicationModel.Activation;
 ...
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -124,14 +164,38 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
+```cppwinrt
+using namespace winrt::Windows::ApplicationModel::Activation;
+...
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    auto protocolForResultsArgs = e.Parameter().try_as<ProtocolForResultsActivatedEventArgs>();
+    // Set the ProtocolForResultsOperation field.
+    _operation = protocolForResultsArgs.ProtocolForResultsOperation();
+
+    if (protocolForResultsArgs.Data().HasKey("TestData"))
+    {
+        string dataFromCaller{ unbox_value<hstring>(protocolForResultsArgs.Data().Lookup("TestData")) };
+    }
+}
+...
+Windows::System::ProtocolForResultsOperation _operation = nullptr;
+```
+
 ## Step 5: Write code to return data to the calling app
 
 
 In the launched app, use [**ProtocolForResultsOperation**](/uwp/api/windows.applicationmodel.activation.protocolforresultsactivatedeventargs.protocolforresultsoperation) to return data to the calling app. In this example code, a [**ValueSet**](/uwp/api/Windows.Foundation.Collections.ValueSet) object is created that contains the value to return to the calling app. The **ProtocolForResultsOperation** field is then used to send the value to the calling app.
 
-```cs
+```csharp
     ValueSet result = new ValueSet();
     result["ReturnedData"] = "The returned result";
+    _operation.ReportCompleted(result);
+```
+
+```cppwinrt
+    ValueSet result;
+    result.Insert("ReturnedData", "The returned result");
     _operation.ReportCompleted(result);
 ```
 
@@ -140,7 +204,7 @@ In the launched app, use [**ProtocolForResultsOperation**](/uwp/api/windows.appl
 
 Launch the app from within an async method in your calling app as shown in this example code. Note the **using** statements, which are necessary for the code to compile:
 
-```cs
+```csharp
 using System.Threading.Tasks;
 using Windows.System;
 ...
