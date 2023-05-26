@@ -231,7 +231,7 @@ HRESULT DwmSetWindowAttribute(
 );
 ```
 
-After passing `hWnd` (the handle to the window you want to change) as your first parameter, you need to pass in `DWMA_USE_IMMERSIVE_DARK_MODE` as the `dwAttribute` parameter. This is a constant in the DWM API that lets the Windows frame be drawn in Dark mode colors when the Dark mode system setting is enabled. If you switch to Light mode, you will have to change `DWMA_USE_IMMERSIVE_DARK_MODE` from 20 to 0 for the title bar to be drawn in light mode colors.
+After passing `hWnd` (the handle to the window you want to change) as your first parameter, you need to pass in `DWMWA_USE_IMMERSIVE_DARK_MODE` as the `dwAttribute` parameter. This is a constant in the DWM API that lets the Windows frame be drawn in Dark mode colors when the Dark mode system setting is enabled. If you switch to Light mode, you will have to change `DWMWA_USE_IMMERSIVE_DARK_MODE` from 20 to 0 for the title bar to be drawn in light mode colors.
 
 The `pvAttribute` parameter points to a value of type `BOOL` (which is why you made the `BOOL` value earlier). You need `pvAttribute` to be `TRUE` to honor Dark mode for the window. If `pvAttribute` is `FALSE`, the window will use Light Mode.
 
