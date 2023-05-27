@@ -1,6 +1,6 @@
 ---
 title: Tutorial--Make a simple photo viewer that targets multiple platforms
-description: Learn how to reach users on other platforms like Web, iOS, and Android with minimal changes to the C#/WinUI 3 simple photo viewer built in the previous tutorial. We'll use Uno Platform to create a new multi-platform app, which we can move code from the existing desktop project to.
+description: Learn how to reach users on other platforms like Web, iOS, Android, and Linux with minimal changes to the C#/WinUI 3 simple photo viewer built in the previous tutorial. We'll use Uno Platform to create a new multi-platform app, which we can move code from the existing desktop project to.
 ms.topic: article
 ms.date: 05/21/2023
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, uno platform, uno
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Make a simple photo viewer that targets multiple platforms
 
-After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial will use [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we'll be able to run a pixel-perfect copy of the app ported to platforms like Web, iOS, Android, and macOS.
+After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial will use [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we'll be able to run a pixel-perfect copy of the app ported to platforms like Web, iOS, Android, macOS, and Linux.
 
 [Insert picture here]
 
@@ -535,12 +535,14 @@ You can now build and run your app on any of the supported platforms. To do so, 
 
       :::image type="content" source="../how-tos/images/hello-world/net7-ios-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
 
-    - Select an active device
+* To debug for **Mac Catalyst**: 
+    - Right-click on the `SimplePhotosUno.Mobile` project, select **Set as startup project**
+    - In the debug toolbar drop-down, select a remote macOS device. You'll need to be paired with one for this to work.
 * To debug the **Android** platform:
     - Right-click on the `SimplePhotosUno.Mobile` project, select **Set as startup project**
     - In the debug toolbar drop-down, select either an active Android device or the emulator
         - Select an active device in the "Device" sub-menu
-* To debug on Linux with Skia GTK:
+* To debug on **Linux** with **Skia GTK**:
     - Right-click on the `SimplePhotosUno.Skia.Gtk` project, and select **Set as startup project**
     - Press the `SimplePhotosUno.Skia.Gtk` button to deploy the app
 
