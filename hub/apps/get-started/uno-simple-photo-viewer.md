@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Make a simple photo viewer that targets multiple platforms
 
-After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial will use [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we'll be able to run a pixel-perfect copy of the app ported to platforms like Web, iOS, Android, macOS, and Linux.
+After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial will use [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we'll be able to run a pixel-perfect copy of the app ported to platforms like the Web, iOS, Android, macOS, and Linux.
 
 [Insert picture here]
 
@@ -96,16 +96,16 @@ To do so, go back to the **SimplePhotos** project from the previous tutorial. In
 
 ```xml
 <Window x:Class="SimplePhotos.MainWindow"
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:local="using:SimplePhotos"
-	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d">
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:SimplePhotos"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d">
 
     <Grid>
         <Grid.Resources>
-            <DataTemplate x:Key="ImageGridView_ItemTemplate"
+            <DataTemplate x:Key="ImageGridView_ItemTemplate" 
                           x:DataType="local:ImageFileInfo">
                 <Grid Height="300"
                       Width="300"
@@ -178,58 +178,61 @@ Copy the contents of the `Window` element and paste them into the `Page` element
     <Grid>
         <Grid.Resources>
             <DataTemplate x:Key="ImageGridView_ItemTemplate"
-                        x:DataType="local:ImageFileInfo">
+                          x:DataType="local:ImageFileInfo">
                 <Grid Height="300"
-                    Width="300"
-                    Margin="8">
+                      Width="300"
+                      Margin="8">
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
                     <Image x:Name="ItemImage"
-                        Source="Assets/StoreLogo.png"
-                        Stretch="Uniform" />
+                           Source="Assets/StoreLogo.png"
+                           Stretch="Uniform" />
 
                     <StackPanel Orientation="Vertical"
                                 Grid.Row="1">
                         <TextBlock Text="{x:Bind ImageTitle}"
-                                HorizontalAlignment="Center"
-                                Style="{StaticResource SubtitleTextBlockStyle}" />
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource SubtitleTextBlockStyle}" />
                         <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center">
                             <TextBlock Text="{x:Bind ImageFileType}"
-                                    HorizontalAlignment="Center"
-                                    Style="{StaticResource CaptionTextBlockStyle}" />
+                                       HorizontalAlignment="Center"
+                                       Style="{StaticResource CaptionTextBlockStyle}" />
                             <TextBlock Text="{x:Bind ImageDimensions}"
-                                    HorizontalAlignment="Center"
-                                    Style="{StaticResource CaptionTextBlockStyle}"
-                                    Margin="8,0,0,0" />
+                                       HorizontalAlignment="Center"
+                                       Style="{StaticResource CaptionTextBlockStyle}"
+                                       Margin="8,0,0,0" />
                         </StackPanel>
 
-                        <RatingControl Value="{x:Bind ImageRating}" IsReadOnly="True"/>
+                        <RatingControl Value="{x:Bind ImageRating}" 
+                                       IsReadOnly="True"/>
                     </StackPanel>
                 </Grid>
             </DataTemplate>
 
             <Style x:Key="ImageGridView_ItemContainerStyle"
-                TargetType="GridViewItem">
-                <Setter Property="Background" Value="Gray"/>
-                <Setter Property="Margin" Value="8"/>
+                   TargetType="GridViewItem">
+                <Setter Property="Background" 
+                        Value="Gray"/>
+                <Setter Property="Margin" 
+                        Value="8"/>
             </Style>
 
             <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
                     <ItemsWrapGrid Orientation="Horizontal"
-                                HorizontalAlignment="Center"/>
+                                   HorizontalAlignment="Center"/>
                 </ItemsPanelTemplate>
         </Grid.Resources>
 
         <GridView x:Name="ImageGridView"
-                ItemsSource="{x:Bind Images}"
-                ItemTemplate="{StaticResource ImageGridView_ItemTemplate}"
-                ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
-                ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"
-                ContainerContentChanging="ImageGridView_ContainerContentChanging">
+                  ItemsSource="{x:Bind Images}"
+                  ItemTemplate="{StaticResource ImageGridView_ItemTemplate}"
+                  ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
+                  ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"
+                  ContainerContentChanging="ImageGridView_ContainerContentChanging">
         </GridView>
     </Grid>
 </Page>
@@ -492,28 +495,29 @@ Finally, modify the `ImageGridView_ItemTemplate` resource to use the `ImageUri` 
 
 ```xml
 <DataTemplate x:Key="ImageGridView_ItemTemplate"
-        x:DataType="local:ImageFileInfo">
+              x:DataType="local:ImageFileInfo">
     <Grid Height="300"
-        Width="300"
-        Margin="8">
+          Width="300"
+          Margin="8">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Image x:Name="ItemImage"
-            Source="{x:Bind ImageUri}"
-            Stretch="Uniform" />
+               Source="{x:Bind ImageUri}"
+               Stretch="Uniform" />
 
         <StackPanel Orientation="Vertical"
                     Grid.Row="1">
             <TextBlock Text="{x:Bind ImageTitle}"
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource SubtitleTextBlockStyle}" />
+                       HorizontalAlignment="Center"
+                       Style="{StaticResource SubtitleTextBlockStyle}" />
             <TextBlock Text="{x:Bind ImageFileType}"
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource CaptionTextBlockStyle}" />
-            <RatingControl Value="{x:Bind ImageRating}" IsReadOnly="True"/>
+                       HorizontalAlignment="Center"
+                       Style="{StaticResource CaptionTextBlockStyle}" />
+            <RatingControl Value="{x:Bind ImageRating}" 
+                           IsReadOnly="True"/>
         </StackPanel>
     </Grid>
 </DataTemplate>
