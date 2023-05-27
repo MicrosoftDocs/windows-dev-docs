@@ -129,25 +129,29 @@ namespace token_broker
         }
 
 
-        private async void SignOutButton_Click(object sender, RoutedEventArgs e)
-        {
-            var msaProvider = await WebAuthenticationCoreManager.FindAccountProviderAsync(
-                "https://login.microsoft.com", "consumers");
-            var request = new WebTokenRequest(msaProvider, "consumers");
-            var result = await WebAuthenticationCoreManager.GetTokenSilentlyAsync(request);
-            if (result.ResponseStatus == WebTokenRequestStatus.UserInteractionRequired)
-            {
-                // Unable to get a token silently - you'll need to show the UI
-            }
-            else if (result.ResponseStatus == WebTokenRequestStatus.Success)
-            {
-                // Success, use your token
-            }
+      private async void SignOutButton_Click(object sender, RoutedEventArgs e)
+     {
+    // Get the stored provider ID and user ID
+    string providerId = ApplicationData.Current.RoamingSettings.Values["CurrentUserProviderId"]?.ToString();
+    string accountId = ApplicationData.Current.RoamingSettings.Values["CurrentUserId"]?.ToString();
 
-            string id = ""; // ID obtained from calling https://apis.live.net/v5.0/me?access_token=" + token
+      if (providerId != null && accountId != null)
+      {
+        // Find the account provider and account based on the stored IDs
+        WebAccountProvider provider = await WebAuthenticationCoreManager.FindAccountProviderAsync(providerId);
+        WebAccount account = await WebAuthenticationCoreManager.FindAccountAsync(provider, accountId);
 
-            var webAccount = await WebAuthenticationCoreManager.FindAccountAsync(msaProvider, id);
+        // Remove the stored account information
+        ApplicationData.Current.RoamingSettings.Values["CurrentUserProviderId"] = null;
+        ApplicationData.Current.RoamingSettings.Values["CurrentUserId"] = null;
 
-        }
+        // Perform any additional sign-out steps, such as revoking the access token
+
+        // Show a sign-out success message or update the UI
+
+        // Clear any user-specific data or reset the app state as needed
+      }
+    }
+
     }
 }
