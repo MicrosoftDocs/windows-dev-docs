@@ -96,7 +96,7 @@ To do so, go back to the **SimplePhotos** project from the previous tutorial. In
 
 ```xml
 <Window x:Class="SimplePhotos.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:local="using:SimplePhotos"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -106,59 +106,59 @@ To do so, go back to the **SimplePhotos** project from the previous tutorial. In
     <Grid>
         <Grid.Resources>
             <DataTemplate x:Key="ImageGridView_ItemTemplate"
-                        x:DataType="local:ImageFileInfo">
+                          x:DataType="local:ImageFileInfo">
                 <Grid Height="300"
-                    Width="300"
-                    Margin="8">
+                      Width="300"
+                      Margin="8">
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
                     <Image x:Name="ItemImage"
-                        Source="Assets/StoreLogo.png"
-                        Stretch="Uniform" />
+                           Source="Assets/StoreLogo.png"
+                           Stretch="Uniform" />
 
                     <StackPanel Orientation="Vertical"
                                 Grid.Row="1">
                         <TextBlock Text="{x:Bind ImageTitle}"
-                                HorizontalAlignment="Center"
-                                Style="{StaticResource SubtitleTextBlockStyle}" />
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource SubtitleTextBlockStyle}" />
                         <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center">
                             <TextBlock Text="{x:Bind ImageFileType}"
-                                    HorizontalAlignment="Center"
-                                    Style="{StaticResource CaptionTextBlockStyle}" />
+                                       HorizontalAlignment="Center"
+                                       Style="{StaticResource CaptionTextBlockStyle}" />
                             <TextBlock Text="{x:Bind ImageDimensions}"
-                                    HorizontalAlignment="Center"
-                                    Style="{StaticResource CaptionTextBlockStyle}"
-                                    Margin="8,0,0,0" />
+                                       HorizontalAlignment="Center"
+                                       Style="{StaticResource CaptionTextBlockStyle}"
+                                       Margin="8,0,0,0" />
                         </StackPanel>
 
-                        <RatingControl Value="{x:Bind ImageRating}" IsReadOnly="True"/>
+                        <RatingControl Value="{x:Bind ImageRating}" 
+                                       IsReadOnly="True"/>
                     </StackPanel>
                 </Grid>
             </DataTemplate>
 
             <Style x:Key="ImageGridView_ItemContainerStyle"
-                TargetType="GridViewItem">
+                   TargetType="GridViewItem">
                 <Setter Property="Background" Value="Gray"/>
                 <Setter Property="Margin" Value="8"/>
             </Style>
 
             <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
                     <ItemsWrapGrid Orientation="Horizontal"
-                                HorizontalAlignment="Center"/>
+                                   HorizontalAlignment="Center"/>
                 </ItemsPanelTemplate>
         </Grid.Resources>
 
         <GridView x:Name="ImageGridView"
-                ItemsSource="{x:Bind Images}"
-                ItemTemplate="{StaticResource ImageGridView_ItemTemplate}"
-                ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
-                ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"
-                ContainerContentChanging="ImageGridView_ContainerContentChanging">
-        </GridView>
+                  ItemsSource="{x:Bind Images}"
+                  ItemTemplate="{StaticResource ImageGridView_ItemTemplate}"
+                  ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
+                  ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"
+                  ContainerContentChanging="ImageGridView_ContainerContentChanging" />
     </Grid>
 </Window>
 ```
@@ -418,7 +418,7 @@ In the `SimplePhotosUno` project, create a new folder named `Assets` and copy th
 
 ### Making the code multi-platform capable
 
-In the desktop project from the previous tutorial, `MainPage.xaml.cs` file contains a `GetItemsAsync` method that enumerates items from a `StorageFolder` representing the installed package location. Because that location is not available on certain platforms such as WebAssembly, we will need to make changes to this method to make it compatible with all platforms. We will accordingly make some changes to the `ImageFileInfo` class to ensure compatibility.
+In the desktop project from the previous tutorial, the `MainPage.xaml.cs` file contains a `GetItemsAsync` method that enumerates items from a `StorageFolder` representing the installed package location. Because that location is not available on certain platforms such as WebAssembly, we will need to make changes to this method to make it compatible with all platforms. We will accordingly make some changes to the `ImageFileInfo` class to ensure compatibility.
 
 First, we will make changes to the `GetItemsAsync` method. Replace the `GetItemsAsync` method in the `MainPage.xaml.cs` file with the following code:
 
@@ -482,13 +482,13 @@ In `MainPage.xaml`, replace the GridView element with the following code:
 
 ```xml
 <GridView x:Name="ImageGridView"
-        ItemsSource="{x:Bind Images, Mode=OneWay}"
-        ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
-        ItemTemplate="{StaticResource ImageGridView_ItemTemplate}"
-        ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"/>
+          ItemsSource="{x:Bind Images, Mode=OneWay}"
+          ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
+          ItemTemplate="{StaticResource ImageGridView_ItemTemplate}"
+          ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"/>
 ```
 
-Finally, modify the `ImageGridView_ItemTemplate` resource to use the `ImageUri` property of the `ImageFileInfo` class. We also removed elements which use the `ImageDimensions` property:
+Finally, modify the `ImageGridView_ItemTemplate` resource to use the `ImageUri` property of the `ImageFileInfo` class. We also removed elements that use the `ImageDimensions` property:
 
 ```xml
 <DataTemplate x:Key="ImageGridView_ItemTemplate"
