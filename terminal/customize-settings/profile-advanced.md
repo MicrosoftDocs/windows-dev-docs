@@ -197,6 +197,27 @@ Enables use of the experimental text rendering engine for the profile. This is a
 
 ___
 
+## Right click context menu ([Preview](https://aka.ms/terminal-preview))
+
+When enabled, right-click will open a context menu with options to copy, paste, and more. When disabled, right-click will paste the contents of the clipboard into the terminal.
+With [shell integration enabled](../tutorials/shell-integration.md), right-click will also allow you to select the current command or output.
+This is an experimental feature, and its continued existence is not guaranteed.
+
+**Property name:** `experimental.rightClickContextMenu`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+<br />
+
+___
+
 ## VT passthrough mode
 
 When set to true, directs the PTY for this connection to use pass-through mode instead of the original Conhost PTY simulation engine. This is an experimental feature, and its continued existence is not guaranteed.

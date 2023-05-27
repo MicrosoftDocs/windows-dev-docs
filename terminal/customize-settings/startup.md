@@ -68,7 +68,7 @@ ___
 
 When set to `"defaultProfile"`, Windows Terminal will start a new session by opening a single tab with your default profile.
 
-When set to `"persistedWindowLayout"`, this enables Windows Terminal to save the layout of open windows on close and restore all saved windows on starting a new session. Windows Terminal will save the layout of all open windows automatically to assist with restoration from crashes and will also save the layout when using the `quit` action. Additionally, closing the last open window by clicking the `X` button or using the `closeWindow` command will save the layout of that last window. 
+When set to `"persistedWindowLayout"`, this enables Windows Terminal to save the layout of open windows on close and restore all saved windows on starting a new session. Windows Terminal will save the layout of all open windows automatically to assist with restoration from crashes and will also save the layout when using the `quit` action. Additionally, closing the last open window by clicking the `X` button or using the `closeWindow` command will save the layout of that last window.
 
 Note: Currently, Windows Terminal will save the following information:
 
@@ -223,3 +223,19 @@ This sets the list of actions to execute on startup, allowing the terminal to la
 **Accepts:** String representing a list of commands to run
 
 **Default value:** `""`
+
+<br />
+
+___
+
+## Continue running in the background ([Preview](https://aka.ms/terminal-preview))
+
+When set to `true`, this enables the terminal to continue running in the background after the last window is closed. This allows [`globalSummon`](./actions.md#global-summon) and [quake mode](../tips-and-tricks.md#quake-mode) to work even when no windows are open. This setting is only available in [Preview](https://aka.ms/terminal-preview) builds of the Terminal.
+
+**Property name:** `compatibility.allowHeadless`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
