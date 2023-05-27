@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 06/15/2022
+ms.date: 05/27/2023
 ms.topic: article
 keywords: windows 10, uwp, title bar
 doc-status: Draft
