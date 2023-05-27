@@ -2,8 +2,16 @@ import http.client
 import json
 import requests
 
-class DevCenterAccessTokenClient(object):
+class FailedToGetSubmissionException(Exception):
+    """Custom exception for failed submission retrieval."""
+
+    def __init__(self, message="Failed to get submission."):
+        self.message = message
+        super().__init__(self.message)
+
+class DevCenterAccessTokenClient:
     """A client for acquiring access tokens from AAD to use with the Dev Center Client."""
+
     def __init__(self, tenant_id, client_id, client_secret):
         self.tenant_id = tenant_id
         self.client_id = client_id
@@ -23,8 +31,9 @@ class DevCenterAccessTokenClient(object):
         token_conn.close()
         return token_json["access_token"]
 
-class DevCenterClient(object):
+class DevCenterClient:
     """A client for the Dev Center API."""
+
     def __init__(self, base_uri, access_token):
         self.base_uri = base_uri
         self.request_headers = {
@@ -35,46 +44,42 @@ class DevCenterClient(object):
 
     def get_application(self, application_id):
         """Returns the application as defined in Dev Center."""
-        path = "/v1.0/my/applications/{0}".format(application_id)
+        path = f"/v1.0/my/applications/{application_id}"
         return self._get(path)
 
     def cancel_in_progress_submission(self, application_id, submission_id):
         """Cancels the in-progress submission."""
-        path = "/v1.0/my/applications/{0}/submissions/{1}".format(application_id, submission_id)
+        path = f"/v1.0/my/applications/{application_id}/submissions/{submission_id}"
         return self._delete(path)
 
     def create_submission(self, application_id):
         """Creates a new submission in Dev Center. This is identical to clicking
         the Create Submission button in Dev Center."""
-        path = "/v1.0/my/applications/{0}/submissions".format(application_id)
+        path = f"/v1.0/my/applications/{application_id}/submissions"
         return self._post(path)
 
     def update_submission(self, application_id, submission_id, submission):
         """Updates the submission in Dev Center using the JSON provided."""
-        path = "/v1.0/my/applications/{0}/submissions/{1}"
-        path = path.format(application_id, submission_id)
+        path = f"/v1.0/my/applications/{application_id}/submissions/{submission_id}"
         return self._put(path, submission)
-    
+
     def get_submission(self, application_id, submission_id):
         """Gets the submission in Dev Center."""
-        path = "/v1.0/my/applications/{0}/submissions/{1}"
-        path = path.format(application_id, submission_id)
+        path = f"/v1.0/my/applications/{application_id}/submissions/{submission_id}"
         return self._get(path)
 
     def commit_submission(self, application_id, submission_id):
         """Commits the submission to Dev Center. Once committed, Dev Center will
         begin processing the submission and verify package integrity and send
         it for certification."""
-        path = "/v1.0/my/applications/{0}/submissions/{1}/commit"
-        path = path.format(application_id, submission_id)
+        path = f"/v1.0/my/applications/{application_id}/submissions/{submission_id}/commit"
         return self._post(path)
 
     def get_submission_status(self, application_id, submission_id):
         """Returns the current state of the submission in Dev Center,
         such as is the submission in certification, committed, publishing,
         etc."""
-        path = "/v1.0/my/applications/{0}/submissions/{1}/status"
-        path = path.format(application_id, submission_id)
+        path = f"/v1.0/my/applications/{application_id}/submissions/{submission_id}/status"
         response_ok, response_obj = self._get(path)
         if "status" in response_obj:
             return (response_ok, response_obj["status"])
@@ -85,7 +90,7 @@ class DevCenterClient(object):
         """Uploads a ZIP file for the Submission API for the submission object."""
         is_ok, submission = self.get_submission(application_id, submission_id)
         if not is_ok:
-            raise "Failed to get submission."
+            raise FailedToGetSubmissionException()
 
         zip_file = open(zip_file_path, 'rb')
         upload_uri = submission["fileUploadUrl"].replace("+", "%2B")
@@ -107,7 +112,7 @@ class DevCenterClient(object):
 
     def _invoke(self, method, path, obj=None):
         body = ""
-        if not obj is None:
+        if obj is not None:
             body = json.dumps(obj)
         conn = http.client.HTTPSConnection(self.base_uri)
         conn.request(method, path, body, self.request_headers)
@@ -115,12 +120,13 @@ class DevCenterClient(object):
         response_body = response.read().decode()
         response_body_length = int(response.headers["Content-Length"])
         response_obj = None
-        if not response_body is None and response_body_length != 0:
+        if response_body is not None and response_body_length != 0:
             response_obj = json.loads(response_body)
         response_ok = self._response_ok(response)
         conn.close()
         return (response_ok, response_obj)
 
-    def _response_ok(self, response):
+    @staticmethod
+    def _response_ok(response):
         status_code = int(response.status)
-        return status_code >= 200 and status_code <= 299
+        return 200 <= status_code <= 299
