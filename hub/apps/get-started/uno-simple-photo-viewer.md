@@ -222,9 +222,9 @@ Copy the contents of the `Window` element and paste them into the `Page` element
             </Style>
 
             <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
-                    <ItemsWrapGrid Orientation="Horizontal"
-                                   HorizontalAlignment="Center"/>
-                </ItemsPanelTemplate>
+                <ItemsWrapGrid Orientation="Horizontal"
+                               HorizontalAlignment="Center"/>
+            </ItemsPanelTemplate>
         </Grid.Resources>
 
         <GridView x:Name="ImageGridView"
@@ -426,7 +426,7 @@ In the desktop project from the previous tutorial, the `MainPage.xaml.cs` file c
 First, we will make changes to the `GetItemsAsync` method. Replace the `GetItemsAsync` method in the `MainPage.xaml.cs` file with the following code:
 
 ```csharp
-private async Task GetItemsAsync()
+private async void GetItems()
 {
     foreach (int i in Enumerable.Range(1, 20))
     {
@@ -438,7 +438,17 @@ private async Task GetItemsAsync()
 }
 ```
 
-This method now counts up to 20 and formulates a URI for each image file. The URI is then used to get the image file from the `Samples` folder. Because we're going to display an image from its URI rather than a `BitmapImage`, we can remove the other methods such as `ImageGridView_ContainerContentChanging` and `ShowImageAsync` from `MainPage.xaml.cs`. 
+Also, make sure the constructor reflects the change:
+
+```csharp
+public MainPage()
+{
+    this.InitializeComponent();
+    GetItems();
+}
+```
+
+The method now counts up to 20 and formulates a URI for each image file. The URI is then used to get the image file from the `Samples` folder. Because we're going to display an image from its URI rather than a `BitmapImage`, we can remove the other methods such as `ImageGridView_ContainerContentChanging` and `ShowImageAsync` from `MainPage.xaml.cs`. 
 
 `ImageFileInfo` will need to be modified to accommodate this change. Replace this class file with the following code:
 
@@ -466,6 +476,8 @@ public class ImageFileInfo : INotifyPropertyChanged
 
     public Uri ImageUri { get; }
 
+    public string ImageSource => ImageUri.ToString();
+
     public string ImageName { get; }
 
     public string ImageFileType { get; }
@@ -487,11 +499,10 @@ In `MainPage.xaml`, replace the GridView element with the following code:
 <GridView x:Name="ImageGridView"
           ItemsSource="{x:Bind Images, Mode=OneWay}"
           ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
-          ItemTemplate="{StaticResource ImageGridView_ItemTemplate}"
-          ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"/>
+          ItemTemplate="{StaticResource ImageGridView_ItemTemplate}" />
 ```
 
-Finally, modify the `ImageGridView_ItemTemplate` resource to use the `ImageUri` property of the `ImageFileInfo` class. We also removed elements that use the `ImageDimensions` property:
+Modify the `ImageGridView_ItemTemplate` resource to use the `ImageSource` property of the `ImageFileInfo` class. We also removed elements that use the `ImageDimensions` property:
 
 ```xml
 <DataTemplate x:Key="ImageGridView_ItemTemplate"
@@ -505,22 +516,77 @@ Finally, modify the `ImageGridView_ItemTemplate` resource to use the `ImageUri` 
         </Grid.RowDefinitions>
 
         <Image x:Name="ItemImage"
-               Source="{x:Bind ImageUri}"
+               Source="{x:Bind ImageSource}"
                Stretch="Uniform" />
 
         <StackPanel Orientation="Vertical"
                     Grid.Row="1">
-            <TextBlock Text="{x:Bind ImageTitle}"
+            <TextBlock Text="{x:Bind ImageName}"
                        HorizontalAlignment="Center"
                        Style="{StaticResource SubtitleTextBlockStyle}" />
             <TextBlock Text="{x:Bind ImageFileType}"
                        HorizontalAlignment="Center"
                        Style="{StaticResource CaptionTextBlockStyle}" />
-            <RatingControl Value="{x:Bind ImageRating}" 
-                           IsReadOnly="True"/>
         </StackPanel>
     </Grid>
 </DataTemplate>
+```
+
+Finally, **remove** the entire `ItemsPanelTemplate` resource from the `Grid.Resources` section. The `MainPage.xaml` file should now look like this:
+
+```xml
+<Page
+    x:Class="SimplePhotosUno.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplePhotosUno"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="ImageGridView_ItemTemplate"
+                          x:DataType="local:ImageFileInfo">
+                <Grid Height="300"
+                      Width="300"
+                      Margin="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Image x:Name="ItemImage"
+                           Source="{x:Bind ImageSource}"
+                           Stretch="Uniform" />
+
+                    <StackPanel Orientation="Vertical"
+                                Grid.Row="1">
+                        <TextBlock Text="{x:Bind ImageName}"
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource SubtitleTextBlockStyle}" />
+                        <TextBlock Text="{x:Bind ImageFileType}"
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource CaptionTextBlockStyle}" />
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+
+            <Style x:Key="ImageGridView_ItemContainerStyle"
+                   TargetType="GridViewItem">
+                <Setter Property="Background" 
+                        Value="Gray"/>
+                <Setter Property="Margin" 
+                        Value="8"/>
+            </Style>
+        </Grid.Resources>
+
+        <GridView x:Name="ImageGridView"
+                  ItemsSource="{x:Bind Images, Mode=OneWay}"
+                  ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
+                  ItemTemplate="{StaticResource ImageGridView_ItemTemplate}" />
+    </Grid>
+</Page>
 ```
 
 ### Running the app
