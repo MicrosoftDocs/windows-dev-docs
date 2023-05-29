@@ -69,13 +69,13 @@ Search for Uno and select the Uno Platform App project template:
 
 :::image type="content" source="../images/uno/uno-new-project.png" alt-text="Uno platform app":::
 
-Specify a project name, solution name, and directory. In this example, our SimplePhotos multi-platform project belongs to a SimplePhotos multi-platform solution, which will live in C:\Projects:
+Create a new C# solution using the **Uno Platform App** type from Visual Studio's **Start Page**. To avoid conflicting with the code from the previous tutorial, we'll give this solution a different name, "UnoSimplePhotos". Specify the project name, solution name, and directory. In this example, our `UnoSimplePhotos` multi-platform project belongs to a `UnoSimplePhotos` solution, which will live in C:\Projects:
 
 :::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
 
-Create a new C# solution using the **Uno Platform App** type from Visual Studio's **Start Page**. To avoid conflicting with the code from the previous tutorial, we'll give this solution a different name, "SimplePhotosUno".
+Now you'll choose a base template to take your Simple Photo gallery application multi-platform. 
 
-Now you'll choose a base template to take your Hello World application multi-platform. The Uno Platform App template comes with two preset options that allow you to quickly get started with either a **Blank** solution or the **Default** configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications. 
+The Uno Platform App template comes with two preset options that allow you to quickly get started with either a **Blank** solution or the **Default** configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications. 
 
 :::image type="content" source="../images/uno/uno-vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
 
@@ -163,14 +163,14 @@ To do so, go back to the **SimplePhotos** project from the previous tutorial. In
 </Window>
 ```
 
-Copy the contents of the `Window` element and paste them into the `Page` element of the `MainPage.xaml` file in the **SimplePhotosUno** Uno Platform project. The `MainPage` view XAML should look like this:
+Copy the contents of the `Window` element and paste them into the `Page` element of the `MainPage.xaml` file in the **UnoSimplePhotos** Uno Platform project. The `MainPage` view XAML should look like this:
 
 ```xml
 <Page
-    x:Class="SimplePhotosUno.MainPage"
+    x:Class="UnoSimplePhotos.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:SimplePhotosUno"
+    xmlns:local="using:UnoSimplePhotos"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -246,7 +246,7 @@ using System.Collections.ObjectModel;
 using Windows.Storage;
 using Windows.Storage.Search;
 
-namespace SimplePhotosUno;
+namespace UnoSimplePhotos;
 
 public sealed partial class MainPage : Page
 {
@@ -325,7 +325,7 @@ using Windows.Storage;
 using Windows.Storage.FileProperties;
 using Windows.Storage.Streams;
 
-namespace SimplePhotosUno;
+namespace UnoSimplePhotos;
 
 public class ImageFileInfo : INotifyPropertyChanged
 {
@@ -415,7 +415,7 @@ This class will serve as a model to represent the image files in the `GridView`.
 
 ### Add image assets to the project
 
-In the `SimplePhotosUno` project, create a new folder named `Assets` and copy the JPEG image files to a `Samples` subfolder. The `Assets` folder structure should now look like this:
+In the `UnoSimplePhotos` project, create a new folder named `Assets` and copy the JPG image files to a `Samples` subfolder. The `Assets` folder structure should now look like this:
 
 [Insert image here]
 
@@ -457,7 +457,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Windows.Storage;
 
-namespace SimplePhotosUno;
+namespace UnoSimplePhotos;
 
 public class ImageFileInfo : INotifyPropertyChanged
 {
@@ -536,10 +536,10 @@ Finally, **remove** the entire `ItemsPanelTemplate` resource from the `Grid.Reso
 
 ```xml
 <Page
-    x:Class="SimplePhotosUno.MainPage"
+    x:Class="UnoSimplePhotos.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:SimplePhotosUno"
+    xmlns:local="using:UnoSimplePhotos"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -591,30 +591,30 @@ Finally, **remove** the entire `ItemsPanelTemplate` resource from the `Grid.Reso
 
 ### Running the app
 
-Launch the `SimplePhotosUno.Windows` target. Observe that this WinUI app is very similar to the previous tutorial.
+Launch the `UnoSimplePhotos.Windows` target. Observe that this WinUI app is very similar to the previous tutorial.
 
 You can now build and run your app on any of the supported platforms. To do so, you can use the debug toolbar drop-down to select a target platform to deploy:
 
 * To run the **WebAssembly** (Wasm) head:
-    - Right-click on the `SimplePhotosUno.Wasm` project, select **Set as startup project**
-    - Press the `SimplePhotosUno.Wasm` button to deploy the app
-    - If desired, you can use the `SimplePhotosUno.Server` project as an alternative
+    - Right-click on the `UnoSimplePhotos.Wasm` project, select **Set as startup project**
+    - Press the `UnoSimplePhotos.Wasm` button to deploy the app
+    - If desired, you can add and use the `UnoSimplePhotos.Server` project as an alternative
 * To debug for **iOS**:
-    - Right-click on the `SimplePhotosUno.Mobile` project, select **Set as startup project**
+    - Right-click on the `UnoSimplePhotos.Mobile` project, select **Set as startup project**
     - In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.
 
       :::image type="content" source="../how-tos/images/hello-world/net7-ios-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
 
 * To debug for **Mac Catalyst**: 
-    - Right-click on the `SimplePhotosUno.Mobile` project, select **Set as startup project**
+    - Right-click on the `UnoSimplePhotos.Mobile` project, select **Set as startup project**
     - In the debug toolbar drop-down, select a remote macOS device. You'll need to be paired with one for this to work.
 * To debug the **Android** platform:
-    - Right-click on the `SimplePhotosUno.Mobile` project, select **Set as startup project**
+    - Right-click on the `UnoSimplePhotos.Mobile` project, select **Set as startup project**
     - In the debug toolbar drop-down, select either an active Android device or the emulator
         - Select an active device in the "Device" sub-menu
 * To debug on **Linux** with **Skia GTK**:
-    - Right-click on the `SimplePhotosUno.Skia.Gtk` project, and select **Set as startup project**
-    - Press the `SimplePhotosUno.Skia.Gtk` button to deploy the app
+    - Right-click on the `UnoSimplePhotos.Skia.Gtk` project, and select **Set as startup project**
+    - Press the `UnoSimplePhotos.Skia.Gtk` button to deploy the app
 
 ## See also
 
