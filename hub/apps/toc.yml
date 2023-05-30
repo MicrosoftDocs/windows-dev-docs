@@ -82,6 +82,8 @@ items:
             href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
           - name: "Use the Windows App SDK in a WPF app"
             href: windows-app-sdk/wpf-plus-winappsdk.md
+          - name: "Use the Windows App SDK in a WinForms app"
+            href: windows-app-sdk/winforms-plus-winappsdk.md
           - name: "Package your app using single-project MSIX"
             href: windows-app-sdk/single-project-msix.md
           - name: "Update existing projects to the latest release"
