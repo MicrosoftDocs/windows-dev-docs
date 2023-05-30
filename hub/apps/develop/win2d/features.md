@@ -40,7 +40,7 @@ Win2D includes an extensive set of features to support lots of different scenari
 - Filters ([convolve](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_ConvolveMatrixEffect.htm), [edge detection](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_EdgeDetectionEffect.htm), [emboss](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_EmbossEffect.htm), [sharpen](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_SharpenEffect.htm))
 - [Lighting](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_SpotSpecularEffect.htm)
 - [Custom pixel shaders](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_PixelShaderEffect.htm)
-- [Fully custom effects](./customeffects.md)
+- [Fully custom effects](./custom-effects.md)
 - [And many more](https://microsoft.github.io/Win2D/WinUI2/html/N_Microsoft_Graphics_Canvas_Effects.htm)...
 
 ## Text
