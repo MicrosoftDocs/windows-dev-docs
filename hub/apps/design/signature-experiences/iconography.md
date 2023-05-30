@@ -50,9 +50,9 @@ Each font glyph is designed so that the footprint of the icon area is a square e
 
 You can visually construct system icon glyphs by combining a base icon with a modifier icon.
 
-*Base icons* are the main element of a visual metaphor. Base elements should occupy the entire icon footprint.
+_Base icons_ are the main element of a visual metaphor. Base elements should occupy the entire icon footprint.
 
-*Modifier icons* modify the meaning of the base icon. Modifier elements should be placed in one of the bottom quadrants of the icon footprint.
+_Modifier icons_ modify the meaning of the base icon. Modifier elements should be placed in one of the bottom quadrants of the icon footprint.
 
 :::row:::
     :::column:::
@@ -60,7 +60,7 @@ You can visually construct system icon glyphs by combining a base icon with a mo
     :::column-end:::
     :::column span="3":::
         **Base icon only**<br>
-        On its own, the paper sheet icon communicates the concept of a *file*.
+        On its own, the paper sheet icon communicates the concept of a _file_.
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -69,7 +69,7 @@ You can visually construct system icon glyphs by combining a base icon with a mo
     :::column-end:::
     :::column span="3":::
         **Base icon + modifier icon**<br>
-        Adding an up arrow to the file icon changes the meaning of the icon to represent an *uploaded file*.
+        Adding an up arrow to the file icon changes the meaning of the icon to represent an _uploaded file_.
     :::column-end:::
 :::row-end:::
 
@@ -88,5 +88,4 @@ Understand the cultural connotations of symbols. Although iconography doesn't re
 > [!TIP]
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see Iconography principles in action](winui3gallery:/item/Icons).
-
 > The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
