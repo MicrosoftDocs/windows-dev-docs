@@ -62,7 +62,7 @@ You can also use the static resource `SymbolThemeFontFamily` to access **Segoe F
 ```
 
 > [!NOTE]
-For optimal appearance, use these specific sizes: 16, 20, 24, 32, 40, 48, and 64. Deviating from these font sizes could lead to less crisp or blurry outcomes.
+> For optimal appearance, use these specific sizes: 16, 20, 24, 32, 40, 48, and 64. Deviating from these font sizes could lead to less crisp or blurry outcomes.
 
 ## How do I get this font?
 
