@@ -1,5 +1,4 @@
 import time
-
 from devcenterclient import DevCenterClient, DevCenterAccessTokenClient
 import submissiondatasamples as samples
 
@@ -18,12 +17,16 @@ application_id = ""
 
 # Get the application object, and cancel any in progress submissions.
 is_ok, app = dev_center.get_application(application_id)
-assert is_ok
-
-if "pendingApplicationSubmission" in app:
-    in_progress_submission_id = app["pendingApplicationSubmission"]["id"]
-    is_ok = dev_center.cancel_in_progress_submission(application_id, in_progress_submission_id)
-    assert is_ok
+if is_ok:
+    if "pendingApplicationSubmission" in app:
+        in_progress_submission_id = app["pendingApplicationSubmission"]["id"]
+        is_ok = dev_center.cancel_in_progress_submission(application_id, in_progress_submission_id)
+        if not is_ok:
+            print("Failed to cancel the in-progress submission.")
+            # Perform error handling or exit the script
+else:
+    print("Failed to retrieve the application object.")
+    # Perform error handling or exit the script
 
 # Create a new submission, based on the last published submission.
 is_ok, submission = dev_center.create_submission(application_id)
