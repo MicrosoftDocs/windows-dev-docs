@@ -51,9 +51,21 @@ namespace PaymentsApiSample
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Load state from previously suspended application
-                }
+               {
+                  // Check if there is previously saved state and restore it
+                 if (ApplicationData.Current.LocalSettings.Values.ContainsKey("AppState"))
+               {
+            // Retrieve the saved state
+            string appState = (string)ApplicationData.Current.LocalSettings.Values["AppState"];
+
+            // Restore the application state based on the saved data
+            // Example: Deserialize the state and update your app accordingly
+            // ...
+
+            // Clear the saved state as it has been restored
+            ApplicationData.Current.LocalSettings.Values.Remove("AppState");
+           }
+           }
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
@@ -92,8 +104,14 @@ namespace PaymentsApiSample
         /// <param name="e">Details about the suspend request.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
-            var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
+             var deferral = e.SuspendingOperation.GetDeferral();
+
+           // Save the application state
+           // Example: Serialize the necessary data into a string and store it in local settings
+
+           // Store the serialized state in local settings
+             ApplicationData.Current.LocalSettings.Values["AppState"] = serializedAppState;
+
             deferral.Complete();
         }
     }
