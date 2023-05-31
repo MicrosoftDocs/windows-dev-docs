@@ -9,7 +9,7 @@ ms.topic: overview
 
 Dev Home supports both default and custom-built extensions. Learn more about the Dev Home GitHub extension, how to customize Git widgets and notifications in the Dev Home dashboard, and how to build your own Dev Home extension.
 
-The GitHub extension is currently the only extension included with Dev Home by default, however new extensions in active development.
+The GitHub extension is currently the only extension included with Dev Home by default, however new extensions are in active development.
 
 ## Dev Home GitHub extension
 
