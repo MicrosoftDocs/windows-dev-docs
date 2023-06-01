@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Create a developer account
 
-[Register now](/microsoft-store/register/) for a developer account so you can publish your apps to the Microsoft Store and participate in other Microsoft programs.
+[Register now](/microsoft.com/microsoft-365/dev-program) for a developer account so you can publish your apps to the Microsoft Store and participate in other Microsoft programs.
 
 ## Opening your developer account
 
