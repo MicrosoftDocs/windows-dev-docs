@@ -136,7 +136,7 @@ Any arguments passed on the command line will effectively override the matching 
 
 #### scope
 
-The `scope` behavior affects the choice between installing a package for the current user or for the entire machine. The matching parameter is `--scope`, and uses the same values (`user` or `machine`).
+The `scope` behavior affects the choice between installing a package for the current user or for the entire machine. The matching parameter is `--scope`, and uses the same values (`user` or `machine`). See  [known issues relating to package installation scope](./troubleshooting.md#scope-for-specific-user-vs-machine-wide).
 
 ```json
 "installBehavior": {
