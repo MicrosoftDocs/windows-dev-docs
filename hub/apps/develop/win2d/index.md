@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 
 # Win2D
 
-> [!NOTE]
-> Win2D on WinUI 3 is a work in progress. Some features are not supported, and some of the documentation still points to older WinUI2 concepts and classes. For information on using Win2D with UWP apps, see the [Win2D UWP Documentation](https://microsoft.github.io/Win2D/WinUI2/html/Introduction.htm) on GitHub.
-
-Win2D is an easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration. It is available to C#, C++ and VB developers writing apps for UWP and WinAppSDK. It utilizes the power of Direct2D, and integrates seamlessly with XAML (on both UWP and WinUI 3).
+Win2D is an easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration. It is available to C#, C++ and VB developers writing apps for UWP and WinAppSDK. It utilizes the power of Direct2D, and integrates seamlessly with XAML (on both UWP and WinAppSDK, including WinUI 3).
 
 It's ideal for creating simple games, displays such as charts, and other simple 2D graphics.
+
+> [!NOTE]
+> Win2D on WinAppSDK (including WinUI 3) is a work in progress, and some features are not supported. The documentation refers to both the UWP and WinAppSDK versions, which mostly share the same API surface and functionality. Whenever there's any relevant differences between the two, it will be called out in the docs. When not specified, you can assume that the topics being discussed apply to both frameworks in the same way.
 
 ## Get Started
 
@@ -32,16 +32,8 @@ Add the Win2D NuGet package to your UWP or WinAppSDK app:
 * Accept the license agreement.
 * Click **Close**.
 
-Next, visit [Hello Win2D World](hellowin2dworld.md) or the [Quick start](https://microsoft.github.io/Win2D/WinUI3/html/QuickStart.htm) to learn about creating a simple app.
+Next, visit [Hello Win2D World](hellowin2dworld.md) or the [quick start](./quick-start.md) to learn about creating a simple app. You can also consult the [features list](./features.md) to discover all the things Win2D can do. To learn more about advanced topics, you can refer to the collection of articles included in this docs section as well.
 
 ## Reference
 
 The [Win2D APIs](https://microsoft.github.io/Win2D/WinUI3/html/APIReference.htm).
-
-## Articles
-
-A list of useful [Win2D topics](https://microsoft.github.io/Win2D/WinUI3/html/Articles.htm).
-
-## See Also
-
-Win2D [on GitHub](https://github.com/microsoft/Win2D)

@@ -94,4 +94,4 @@ Press **F5** to launch and run the project.
 
 ## See Also
 
-* Win2D [Quick start](https://microsoft.github.io/Win2D/WinUI3/html/QuickStart.htm)
+* Win2D [Quick start](./quick-start.md)

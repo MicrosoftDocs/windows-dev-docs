@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 [`CanvasControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm), [`CanvasVirtualControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm) and [`CanvasAnimatedControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm) are XAML controls - they extend `UserControl` and can exist alongside other controls in an app's XAML tree. They are good choice for many WinRT apps that use XAML and produce graphical content using Win2D. While these controls are versatile, they do impose policies pertaining to layout, resource re-creation, and device lost. Apps may want to implement their own XAML controls, or not use XAML at all.
 
-Win2D is built to support this. This document describes how to use Win2D to draw graphics without use of CanvasControl, CanvasVirtualControl or CanvasAnimatedControl.
+Win2D is built to support this. This document describes how to use Win2D to draw graphics without use of `CanvasControl`, `CanvasVirtualControl` or `CanvasAnimatedControl`.
 
 ## Layering
 
