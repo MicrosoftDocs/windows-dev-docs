@@ -21,7 +21,7 @@ Dev Drive builds on [ReFS](/windows-server/storage/refs/refs-overview) technolog
 
 ## How to set up a Dev Drive
 
-To set up a new Dev Drive, open Windows **Settings** and navigate to **System** > **Storage** > **Advanced Store Settings** > **Disks & volumes**. Select **Create dev drive**. **Before setting up a Dev Drive, ensure that the prerequisites are met.* You can also set up a Dev Drive using **[Dev Home's Machine configuration](../dev-home/setup.md#clone-a-github-repo-and-store-it-on-a-dev-drive)**.
+To set up a new Dev Drive, open Windows **Settings** and navigate to **System** > **Storage** > **Advanced Storage Settings** > **Disks & volumes**. Select **Create dev drive**. **Before setting up a Dev Drive, ensure that the prerequisites are met.* You can also set up a Dev Drive using **[Dev Home's Machine configuration](../dev-home/setup.md#clone-a-github-repo-and-store-it-on-a-dev-drive)**.
 
 ![Screenshot of System > Storage > Disks & volumes](../images/dev-drive-create.png)
 
