@@ -341,7 +341,7 @@ And this part is done! This shader will generate our custom noise texture whenev
 ### Creating a custom effect
 
 For our easy to use, packaged effect, we can use the `CanvasEffect` type from ComputeSharp. This type provides a straightforward way to setup all the necessary logic to create an effect graph and update it via public properties that users of the effect can interact with. There are two main methods we'll need to implement:
-- `BuildEffectGraph`: this method is responsible for building the effect graph and returning the output `ICanvasImage` that we want to draw (ie. the `ICanvasImage` object representing the output node of the effect graph being constructed). It also needs to store any effects that can be updated at a later time into fields of the effect class, so they can be accessed when needed.
+- `BuildEffectGraph`: this method is responsible for building the effect graph that we want to draw. That is, it needs to create all effects we need, and register the output node for the graph. For effects that can be updated at a later time, the registration is done with an associated `EffectNode<T>` value, which acts as lookup key to retrieve the effects from the graph when needed.
 - `ConfigureEffectGraph`: this method refreshes the effect graph by applying the settings that the user has configured. This method is automatically invoked when needed, right before drawing the effect, and only if at least one effect property has been modified since the last time the effect was used.
 
 Our custom effect can be defined as follows:
@@ -353,8 +353,9 @@ using Microsoft.Graphics.Canvas.Effects;
 
 public sealed class FrostedGlassEffect : CanvasEffect
 {
-    private GaussianBlurEffect? _blurEffect;
-    private PixelShaderEffect<NoiseShader>? _noiseEffect;
+    private static readonly EffectNode<GaussianBlurEffect> BlurNode = new();
+    private static readonly EffectNode<PixelShaderEffect<NoiseShader>> NoiseNode = new();
+
     private ICanvasImage? _source;
     private double _blurAmount;
     private double _noiseAmount;
@@ -378,7 +379,7 @@ public sealed class FrostedGlassEffect : CanvasEffect
     }
 
     /// <inheritdoc/>
-    protected override ICanvasImage BuildEffectGraph()
+    protected override void BuildEffectGraph(EffectGraph effectGraph)
     {
         // Create the effect graph as follows:
         //
@@ -402,25 +403,27 @@ public sealed class FrostedGlassEffect : CanvasEffect
         blendEffect.Background = gaussianBlurEffect;
         blendEffect.Foreground = premultiplyEffect;
 
-        // Save the effects that have mutable properties
-        _blurEffect = gaussianBlurEffect;
-        _noiseEffect = noiseEffect;
-
-        // Return the output node from the graph
-        return blendEffect;
+        // Register all effects. For those that need to be referenced later (ie. the ones with
+        // properties that can change), we use a node as a key, so we can perform lookup on
+        // them later. For others, we register them anonymously. This allows the effect
+        // to autommatically and correctly handle disposal for all effects in the graph.
+        effectGraph.RegisterNode(BlurNode, gaussianBlurEffect);
+        effectGraph.RegisterNode(NoiseNode, noiseEffect);
+        effectGraph.RegisterNode(premultiplyEffect);
+        effectGraph.RegisterOutputNode(blendEffect);
     }
 
     /// <inheritdoc/>
-    protected override void ConfigureEffectGraph()
+    protected override void ConfigureEffectGraph(EffectGraph effectGraph)
     {
         // Set the effect source
-        _blurEffect!.Source = Source;
+        effectGraph.GetNode(BlurNode).Source = Source;
 
         // Configure the blur amount
-        _blurEffect!.BlurAmount = (float)BlurAmount;
+        effectGraph.GetNode(BlurNode).BlurAmount = (float)BlurAmount;
 
         // Set the constant buffer of the shader
-        _noiseEffect!.ConstantBuffer = new NoiseShader((float)NoiseAmount);
+        effectGraph.GetNode(NoiseNode).ConstantBuffer = new NoiseShader((float)NoiseAmount);
     }
 }
 ```
