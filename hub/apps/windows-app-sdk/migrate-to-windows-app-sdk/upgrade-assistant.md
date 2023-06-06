@@ -2,7 +2,7 @@
 title: Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
 description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [Windows UI Library (WinUI) 3](../../winui/index.md) app that uses the Windows App SDK.
 ms.topic: article
-ms.date: 06/05/2023
+ms.date: 06/06/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
 ms.author: stwhi
 author: stevewhims
@@ -76,18 +76,17 @@ Let's take the .NET Upgrade Assistant for a test-drive.
 
 As source material, we'll be migrating the UWP [PhotoLab sample](https://github.com/microsoft/Windows-appsample-photo-lab.git) application. PhotoLab is a sample app for viewing and editing image files. It demonstrates XAML layout, data binding, and UI customization features.
 
-Begin by cloning or downloading the PhotoLab sample source code from the link above.
-
-Be aware that after we've used the tool to automate the migration of the app, additional manual effort will be needed to complete the migration.
-
 > [!NOTE]
 > You can see a case study of the PhotoLab sample being fully manually migrated in [A Windows App SDK migration of the UWP PhotoLab sample app](./case-study-1.md).
 
-===
+1. Begin by cloning or downloading the PhotoLab sample source code from the link above.
+
+> [!TIP]
+> Be aware that after we've used the tool to automate the migration of the app, additional manual effort will be needed to complete the migration.
 
 1. Open the PhotoLab solution in Visual Studio.
 
-1. Having installed the .NET Upgrade Assistant extension (see [Install the .NET Upgrade Assistant](#install-the-net-upgrade-assistant) above), right-click on the project in **Solution Explorer**, and click **Upgrade**.
+1. Having installed the .NET Upgrade Assistant extension (see [Install the .NET Upgrade Assistant](#install-the-net-upgrade-assistant) earlier in this topic), right-click on the project in **Solution Explorer**, and click **Upgrade**.
 
 1. Choose the **In-place project upgrade** option.
 
