@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 05/23/2023
+ms.date: 06/02/2023
 ---
 
 # Set up a Dev Drive on Windows 11 (Public Preview)
@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 
 Dev Drive builds on [ReFS](/windows-server/storage/refs/refs-overview) technology to employ targeted file system optimizations and provide more control over storage volume settings and security, including trust designation, antivirus configuration, and administrative control over what filters are attached.
 
-<!-- See the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive) for some average improvement measurements across common dev operations. -->
+See the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive) for some average improvement measurements across common dev operations.
 
 > [!IMPORTANT]
 > Dev Drive is currently only available via public preview (see [prerequisities](#prerequisites)). Some information relating to this prerelease product may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
@@ -50,7 +50,7 @@ You will be given three options:
 When choosing the **Create new VHD** option to set up a Dev Drive, you will then need to determine the following:
 
 - **Virtual hard disk name**: Give a name to your VHD (Dev Drive).
-- **Location**: Assign a directory path where the Dev Drive VHD will be located on your machine. Default is `%userprofile%\DevDrives`. Recommended to store in a per-user directory path to avoid any unintentional sharing.
+- **Location**: Assign a directory path where the Dev Drive VHD will be located on your machine. The default location is `C:\`, unless creating a Dev Drive using [Dev Home](../dev-home/index.md), in which case the default location is `%userprofile%\DevDrives`. We recommend using a per-user directory path location to store your Dev Drive to avoid any unintentional sharing.
 - **Virtual hard disk size**: Assign the amount of disk space that will be allocated for the volume to use, minimum size is 50GB.
 - **Virtual hard disk format**:
   - **VHD**: Supports virtual disks up to 2040GB in size.
@@ -93,13 +93,7 @@ A [Storage Volume](/windows-hardware/drivers/ifs/storage-device-stacks--storage-
 
 The **Dev Drive** utilizes ReFS enabling you to initialize a storage volume specifically for development workloads, providing faster performance, and customizable settings that are optimized for development scenarios. ReFS contains several file system specific optimizations to improve the performance of key developer scenarios.
 
-There is typically a tradeoff between performance and security. Using a Dev Drive places control over this balance in the hands of Developers and Enterprises. Administrators can now choose between these options:
-
-- Real-time protection
-- [Antivirus performance mode](#what-is-microsoft-defender-performance-mode)
-- Control over filters attached to Dev Drive
-
-Microsoft generally recommends applying the performance mode option when using a Dev Drive.
+Learn more about [how Dev Drive handles security](#understanding-security-risks-and-trust-in-relation-to-dev-drive).
 
 ## What should I put on my Dev Drive?
 
@@ -145,11 +139,16 @@ A package cache is the global folder location used by applications to store file
 
 ## Understanding security risks and trust in relation to Dev Drive
 
-Security and trust are important considerations when working with project files. [Windows Security](https://support.microsoft.com/windows/stay-protected-with-windows-security-2ae0363d-0ada-c064-8b56-6a39afb6a963) continually scans for malware (malicious software), viruses, and security threats using Microsoft Defender. With Dev Drive, you are offered more control over this security, with the ability to:
+Security and trust are important considerations when working with project files. Typically, there is a tradeoff between performance and security. Using a Dev Drive places control over this balance in the hands of developers and security administrators, with a responsibility for choosing which filters are attached and the settings for Microsoft Defender Antivirus scans.
 
-- [designate trust](#what-is-a-trusted-dev-drive),
-- utilize the [performance mode](#what-is-microsoft-defender-performance-mode) for antivirus scanning with Microsoft Defender, and
-- [configure additional security filters](#how-do-i-configure-additional-security-filters-on-dev-drive).
+Antivirus filters, including both Microsoft Defender and 3rd-party antivirus filters, are attached to a Dev Drive by default. Microsoft Defender Antivirus defaults to the new ["performance mode"](#what-is-microsoft-defender-performance-mode) setting on Dev Drives, taking speed and performance into account, while providing a secure alternative to folder exclusions. For an increased level of protection, Microsoft Defender also offers ["Real-time protection mode"](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode#performance-mode-compared-to-real-time-protection).
+
+Any product or features requiring additional filters will not work unless the [filter is added to Dev Drive](#how-do-i-configure-additional-filters-on-dev-drive).
+
+> [!WARNING]
+> Dev Drives can be run with no antivirus filters attached. Exercise extreme caution! Removing antivirus filters is a security risk and means that your storage drive will not be covered by the standard security scans. You are responsible for evaluating the risks associated with detaching antivirus filters and should only do so when confident that your files stored on the Dev Drive will not be exposed to malicious attacks.
+
+Microsoft recommends using the default [performance mode](#what-is-microsoft-defender-performance-mode) setting when using a *trusted* Dev Drive.
 
 ### What is a “trusted” Dev Drive?
 
@@ -161,7 +160,7 @@ A Dev Drive marked as *trusted* is a signal for Microsoft Defender to run in [pe
 
 Due to the security considerations of having filters detached, transporting a dev drive between machines will result in the volume being treated as an ordinary volume without special filter attach policies. The volume needs to be marked as *trusted* when it is attached to a new machine. See [How do I designate a Dev Drive as trusted?](#how-do-i-designate-a-dev-drive-as-trusted).
 
-An *untrusted* Dev Drive will not have the same privileges as a *trusted* Dev Drive. Security will run in real-time protection mode when a Dev Drive is *untrusted*. Exercise caution if designating trust to a Dev Drive outside of the time that it is first created.
+An *untrusted* Dev Drive will not have the same privileges as a *trusted* Dev Drive. Security will run in [real-time protection mode](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode#performance-mode-compared-to-real-time-protection) when a Dev Drive is *untrusted*. Exercise caution if designating trust to a Dev Drive outside of the time that it is first created.
 
 ### How do I designate a Dev Drive as trusted?
 
@@ -190,17 +189,38 @@ To learn more about performance mode and how it compares with real-time protecti
 
 For performance mode to be enabled, the Dev Drive must be designated as *trusted* and Microsoft Defender Real-time protection must be set to "On".
 
-### How do I configure additional security filters on Dev Drive?
+### How do I configure additional filters on Dev Drive?
 
-By default, [Filter Manager](/windows-hardware/drivers/ifs/filter-manager-concepts) will turn OFF all filters on a Dev Drive, with the exception of antivirus filters. An antivirus filter is a filter that's attached in the `FSFilter Anti-Virus` altitude range (i.e., 320000-329999). `FSFilter Anti-Virus` includes filters that detect and disinfect viruses during file I/O. If you are working in a business or enterprise environment, your company's group policy may be configured for select filters to attach on Dev Drives, this will override the default OFF setting.
+By default, [Filter Manager](/windows-hardware/drivers/ifs/filter-manager-concepts) will turn OFF all filters on a Dev Drive, with the exception of antivirus filters. An antivirus filter is a filter that's attached in the `FSFilter Anti-Virus` altitude range (i.e., 320000-329999). `FSFilter Anti-Virus` includes filters that detect and disinfect viruses during file I/O.
 
-A system administrator can attach additional filters to a specific Dev Drive or all Dev Drives using an **allow list**.
+The default policy can be configured not to attach antivirus filters to Dev Drive using `fsutil`. **CAUTION**: This policy applies to ALL Dev Drives on the system.
 
-A system admin may want to add a security filter called "Foo", we will refer to it as `FooFlt`, and may only want that filter enabled on the Dev Drive mounted as `D:`. They do not need this filter on another Dev Drive mounted as `E:`. The admin can make changes to an allow list of filters on the Dev Drive using [fsutil.exe](/windows-server/administration/windows-commands/fsutil), a system-supplied command line utility.
+```powershell
+fsutil devdrv enable /disallowAv
+```
 
-Only filters specifically set as **Allowed** can attach to a Dev Drive.
+The command, `fsutil devdrv enable [/allowAv|/disallowAv]`, includes the following two options:
 
-#### Allow list security filter examples
+- `disallowAv`: Specifies that your Dev Drive(s) do not have any attached filters (not even antivirus). Filters can be added back using `fsutil devdrv setfiltersallowed <Filter-1>` command. (Replacing `<Filter-1>` with the name of your desired filter.)
+
+- `allowAv`: Specifies that Dev Drives are to be protected by the default antivirus filter.
+
+For help, enter the command: `fsutil devdrv enable /?`. If neither `/allowAv` nor `/disallowAv` is specified, the antivirus policy for your Dev Drive is not configured and the system default is to have Dev Drives protected by antivirus filter.
+
+> [!WARNING]
+> Exercise extreme caution when detaching filters. Detaching antivirus filters is a security risk and means that your storage will not be covered by the standard Microsoft Defender real-time protection or performance mode scans. You are responsible for evaluating the risks associated with detaching antivirus filters and should only do so when confident that your files will not be exposed to malicious attacks.
+
+To learn more about filters, see [About file system filter drivers](/windows-hardware/drivers/ifs/about-file-system-filter-drivers), [Installing a filter driver](/windows-hardware/drivers/ifs/installing-a-minifilter-driver), [Filter Manager Concepts](/windows-hardware/drivers/ifs/filter-manager-concepts), [Load order groups and altitudes for minifilter drivers](/windows-hardware/drivers/ifs/load-order-groups-and-altitudes-for-minifilter-drivers).
+
+### Allowing select filters to attach on Dev Drive
+
+If you are working in a Business or Enterprise environment, your company's group policy may be configured for select filters to attach on Dev Drives, in addition to the above policy. A system administrator may also choose to attach additional filters to a specific Dev Drive or all Dev Drives using an **allow list**.
+
+A system admin may want to add a filter called "Foo", we will refer to it as `FooFlt`. They may only want that filter enabled on the Dev Drive mounted as `D:`. They do not need this filter on another Dev Drive mounted as `E:`. The admin can make changes to an allow list of filters on the Dev Drive using [fsutil.exe](/windows-server/administration/windows-commands/fsutil), a system-supplied command line utility.
+
+Filters specifically set as **Allowed** can attach to a Dev Drive in addition to antivirus filter policy discussed above.
+
+## Allow list filter examples
 
 The following examples demonstrate an administrator's ability to set filters allowed on all Dev Drives on a machine, using an allow list.
 
@@ -230,34 +250,7 @@ fsutil devdrv setfiltersallowed Filter-03
 
 See `fsutil devdrv /?` for other related commands.
 
-<!-- Not yet supported in Public Preview:
-To add the example filters `FooFlt` and `BarFlt` to an allow list for the mounted `D:` drive, use the command:
-
-```powershell
-fsutil devdrv setfiltersallowed /volume D: "FooFlt, BarFlt"
-```
-
-To add the example filter `OmniFlt` to an allow list for all Dev Drives on a given machine, use the command:
-
-```powershell
-fsutil devdrv setfiltersallowed OmniFlt
-```
-
-To display the filter attach policy for the mounted `D:` drive, use the command:
-
-```powershell
-fsutil devdrv query D:
-```
-
-The result will display the following:
-
-- This is a trusted Dev Drive (or "untrusted" if that is the case).
-- Filters allowed on any Dev Drive: `OmniFlt`
-- Filters allowed on this Dev Drive: `FooFlt`, `BarFlt`
-- Filters currently attached to this Dev Drive: `WdFilter`, `OmniFlt`, `FooFlt`, `BarFlt` 
--->
-
-#### Filters for common scenarios
+### Filters for common scenarios
 
 The following filters may be used with Dev Drive:
 
@@ -316,8 +309,8 @@ No. If you have the space, you can create as many Dev Drives as you would like. 
 
 Once you have a Dev Drive created, Visual Studio will automatically recognize it when you're creating a new project and pick that filepath by default. To optimize performance when using Visual Studio, we recommend moving any project code, [package caches](#storing-package-cache-on-dev-drive), and `Copy on write` MS Build tasks to the Dev Drive that may have previously been saved elsewhere. (See [How to change the build output directory](/visualstudio/ide/how-to-change-the-build-output-directory) in the Visual Studio docs.) We also recommend that you consider redirecting `%TEMP%` and `%TMP%` envvars to Dev Drive. Many programs use these, so beware of potential side effects. We also recommend using [performance mode for Microsoft Defender](#what-is-microsoft-defender-performance-mode) for asychronous performance gains using Dev Drive. Turning Microsoft Defender completely off may result in the most maximum performance gains, but this may increase security risks and is a setting controlled by the system admin.
 
-<!-- For more information, see the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive).
- -->
+For more information, see the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive).
+ 
 ### Does Dev Drive work with WSL project files?
 
 You can access Dev Drive project files, which run on the Windows file system, from a Linux distribution running via WSL. However, WSL runs in a VHD and for the best performance files should be stored on the Linux file system. WSL is out of the scope of Windows file system so you should not expect to see any performance improvement when accessing project files in Dev Drive from a Linux distribution running via WSL.
