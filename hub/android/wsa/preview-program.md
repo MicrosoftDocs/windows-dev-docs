@@ -29,7 +29,7 @@ Windows Subsystem for Android™️ is available on Windows 11.
 
 - Your device must meet specific requirements. [Install mobile apps and the Amazon Appstore: Device requirements](https://support.microsoft.com/windows/install-mobile-apps-and-the-amazon-appstore-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 - You must have the [Amazon Appstore installed](https://support.microsoft.com/windows/install-mobile-apps-and-the-amazon-appstore-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c) on your Windows 11 device to participate in the preview. An Amazon account is also required to download mobile apps from the Amazon Appstore.
-- Windows Subsystem for Android™️ is currently only available in the US.
+- Windows Subsystem for Android™️ is currently available in [select countries and regions](https://support.microsoft.com/windows/countries-and-regions-that-support-amazon-appstore-on-windows-d8dd17c7-5994-4187-9527-ddb076f9493e).
 
 ## Sign Up
 

@@ -13,6 +13,15 @@ ms.date: 03/15/2023
 
 These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
+## Build 2304.40000.3.0
+
+June 1, 2023
+- Package verification for apps on WSA: Android apps are scanned using anti-virus software installed on Windows prior to app installation.
+- Ability for users to configure how much memory to assign to Android
+- Android apps will be launched when a user opens the supported app link from any app (Android AppLink support)
+- Linux kernel updated to 5.15.94
+- Improvements to platform reliability and performance
+
 ## Build 2303.40000.3.0
 
 April 11, 2023
