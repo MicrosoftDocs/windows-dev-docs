@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Make a simple photo viewer that targets multiple platforms
 
-After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial will use [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we'll be able to run a pixel-perfect copy of the app ported to platforms like the Web, iOS, Android, macOS, and Linux.
+After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial will use [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we'll be able to run a pixel-perfect copy of the app ported to platforms like the web, mobile, and desktop.
 
 [Insert picture here]
 
@@ -84,15 +84,29 @@ To keep things simple, select the **Blank** preset. Then, click the **Create** b
 A banner at the top of the editor may ask to reload projects, click **Reload projects**:
 :::image type="content" source="../images/vs2022-project-reload.png" alt-text="Visual Studio banner offering to reload your projects to complete changes":::
 
-## Preparing your app
-
 You should see the following default file structure in your **Solution Explorer**:
 
 :::image type="content" source="images/hello-world/uno-file-structure.png" alt-text="Default file structure":::
 
-Now that you've generated the functional starting point of your multi-platform WinUI application, you can copy code into it from the desktop project. Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy over the same code you created in the [previous tutorial](/hub/apps/get-started/simple-photo-viewer-winui3.md). 
+### Add image assets to the project
 
-To do so, go back to the **SimplePhotos** project from the previous tutorial. In the **Solution Explorer**, find the file named `MainWindow.xaml` and open it. Observe that the contents of the view are defined within a `Window` element rather than a `Page`. This is because the desktop project is a WinUI 3 application, which can use `Window` elements to define the contents of the view.
+Your app will need some images to display. You can use the same images from the previous tutorial.
+
+In the `UnoSimplePhotos` project, create a new folder named `Assets` and copy the JPG image files to a `Samples` subfolder. The `Assets` folder structure should now look like this:
+
+[Insert image here]
+
+For more information on creating the `Assets` folder and adding images to it, see the Uno Platform documentation about [Assets and image display](https://platform.uno/docs/articles/features/working-with-assets.html).
+
+## Preparing your app
+
+Now that you've generated the functional starting point of your multi-platform WinUI application, you can copy code into it from the desktop project. 
+
+### Copy the view
+
+Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy over the same code you created in the [previous tutorial](/hub/apps/get-started/simple-photo-viewer-winui3.md). 
+
+Return to the **SimplePhotos** project from the previous tutorial. In the **Solution Explorer**, find the file named `MainWindow.xaml` and open it. Observe that the contents of the view are defined within a `Window` element rather than a `Page`. This is because the desktop project is a WinUI 3 application, which can use `Window` elements to define the contents of the view:
 
 ```xml
 <Window x:Class="SimplePhotos.MainWindow"
@@ -163,7 +177,7 @@ To do so, go back to the **SimplePhotos** project from the previous tutorial. In
 </Window>
 ```
 
-Copy the contents of the `Window` element and paste them into the `Page` element of the `MainPage.xaml` file in the **UnoSimplePhotos** Uno Platform project. The `MainPage` view XAML should look like this:
+Uno Platform's multi-platform implmentation of the controls found in the `Window` element, such as `GridView`, `Image`, and `RatingControl`, ensure that the view itself will work on all supported platforms with only a trivial amount of effort. Copy the contents of this `Window` and paste them into the `Page` element of the `MainPage.xaml` file in the **UnoSimplePhotos** Uno Platform project. The `MainPage` view XAML should look like this:
 
 ```xml
 <Page
@@ -238,7 +252,25 @@ Copy the contents of the `Window` element and paste them into the `Page` element
 </Page>
 ```
 
-Recall that the desktop application also had a `MainWindow.xaml.cs` file that contained the code-behind for the view. In the Uno Platform project, the code-behind for the `MainPage` view is contained in the `MainPage.xaml.cs` file. Copy the methods and `Images` member from the `MainWindow.xaml.cs` file and paste them into the `MainPage.xaml.cs` file. The `MainPage.xaml.cs` file should look like this:
+Recall that the desktop solution also had a `MainWindow.xaml.cs` file that contained code-behind which corresponds to the view. In the Uno Platform project, the code-behind for the `MainPage` view we've copied into is contained in the `MainPage.xaml.cs` file. 
+
+To bring this codebehind multiplatform, we should first move the following into the `MainPage.xaml.cs` file:
+    
+- `Images` property: Provides the `GridView` with an observable collection of image files
+
+- Contents of constructor: Calls `GetItemsAsync()` to populate the `Images` collection with items representing image files
+
+- Remove the manual modification of the `ImageGridView` control's `ItemsSource` property
+
+- `ImageGridView_ContainerContentChanging` method: Used as part of a [strategy](https://learn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview#update-listview-and-gridview-items-progressively) to progressively load `GridView` items as they are scrolled into view
+
+- `ShowImage` method: Loads the image files into the `GridView`
+
+- `GetItemsAsync` method: Gets the image asset files from the `Samples` folder
+
+- `LoadImageInfoAsync` method: Constructs a `ImageFileInfo` object from a created `StorageFile`
+
+After moving everything over, `MainPage.xaml.cs` should now look like this:
 
 ```csharp
 using Microsoft.UI.Xaml.Controls;
@@ -300,8 +332,6 @@ public sealed partial class MainPage : Page
         {
             Images.Add(await LoadImageInfoAsync(file));
         }
-
-        ImageGridView.ItemsSource = Images;
     }
 
     public async static Task<ImageFileInfo> LoadImageInfoAsync(StorageFile file)
@@ -315,7 +345,31 @@ public sealed partial class MainPage : Page
 }
 ```
 
-The `MainPage.xaml.cs` file now contains methods from the desktop projects which we can modify in subsequent steps for multi-platform compatibility. We now need to copy the `ImageFileInfo` class from the desktop project and paste it into the `MainPage.xaml.cs` file. The `MainPage.xaml.cs` file should now look like this:
+> [!NOTE]
+> The files in your Uno app project should use `UnoSimplePhotos` as the namespace.
+
+So far, the files for the main view we're working with contain all the capabilities of the desktop solution. After we copy over the `ImageFileInfo.cs` model file, we will learn how to modify the desktop-oriented blocks of code for multi-platform compatibility. 
+
+Copy `ImageFileInfo` from the desktop project and paste it into the `ImageFileInfo.cs` file. Make the following changes: 
+
+- Rename the namespace to be `UnoSimplePhotos` instead of `SimplePhotos`:
+    ```csharp
+    // Found towards the top of the file
+    namespace UnoSimplePhotos;
+    ```
+- Change the parameter type of the `OnPropertyChanged` method to be nullable:
+    ```csharp
+    // string -> string?
+    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    ...
+    ```
+- Make the `PropertyChangedEventHandler` nullable:
+    ```csharp
+    // PropertyChangedEventHandler -> PropertyChangedEventHandler?
+    public event PropertyChangedEventHandler? PropertyChanged;
+    ```
+
+Put together, the file should look like this:
 
 ```csharp
 using Microsoft.UI.Xaml.Media.Imaging;
@@ -324,6 +378,7 @@ using System.Runtime.CompilerServices;
 using Windows.Storage;
 using Windows.Storage.FileProperties;
 using Windows.Storage.Streams;
+using ThumbnailMode = Windows.Storage.FileProperties.ThumbnailMode;
 
 namespace UnoSimplePhotos;
 
@@ -404,83 +459,349 @@ public class ImageFileInfo : INotifyPropertyChanged
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
 
-    protected void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
+    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 ```
 
-This class will serve as a model to represent the image files in the `GridView`. In the next sections, we will make a set of changes to these copied files to make them compatible in a multi-platform context.
+This class will serve as a model to represent the image files in the `GridView`. Although it should technically possible to run the app at this point, it may not render the images correctly or display their properties. In the next sections, we will make a set of changes to these copied files to make them compatible in a multi-platform context.
 
-### Add image assets to the project
-
-In the `UnoSimplePhotos` project, create a new folder named `Assets` and copy the JPG image files to a `Samples` subfolder. The `Assets` folder structure should now look like this:
-
-[Insert image here]
-
-### Making the code multi-platform capable
+### Using preprocessor directives
 
 In the desktop project from the previous tutorial, the `MainPage.xaml.cs` file contains a `GetItemsAsync` method that enumerates items from a `StorageFolder` representing the installed package location. Because that location is not available on certain platforms such as WebAssembly, we will need to make changes to this method to make it compatible with all platforms. We will accordingly make some changes to the `ImageFileInfo` class to ensure compatibility.
 
 First, we will make changes to the `GetItemsAsync` method. Replace the `GetItemsAsync` method in the `MainPage.xaml.cs` file with the following code:
 
 ```csharp
-private async void GetItems()
+private async Task GetItemsAsync()
 {
-    foreach (int i in Enumerable.Range(1, 20))
-    {
-        var uri = new Uri($"ms-appx:///SimplePhotos/Assets/Samples/{i}.jpg");
+#if WINDOWS
+    StorageFolder appInstalledFolder = Package.Current.InstalledLocation;
+    StorageFolder picturesFolder = await appInstalledFolder.GetFolderAsync("UnoSimplePhotos\\Assets\\Samples");
 
-        var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
-        Images.Add(new(file, file.Name, file.DisplayType, uri));
+    var result = picturesFolder.CreateFileQueryWithOptions(new QueryOptions());
+
+    IReadOnlyList<StorageFile> imageFiles = await result.GetFilesAsync();
+#else
+    var imageFileNames = Enumerable.Range(1, 20).Select(i => new Uri($"ms-appx:///UnoSimplePhotos/Assets/Samples/{i}.jpg"));
+    var imageFiles = new List<StorageFile>();
+
+    foreach (var file in imageFileNames)
+    {
+        imageFiles.Add(await StorageFile.GetFileFromApplicationUriAsync(file));
+    }
+#endif
+    foreach (StorageFile file in imageFiles)
+    {
+        Images.Add(await LoadImageInfoAsync(file));
     }
 }
 ```
 
-Also, make sure the constructor reflects the change:
+This method now uses a **preprocessor directive** to determine which code to execute based on the platform. On Windows, the method will get the `StorageFolder` representing the installed package location and get the `Samples` folder from it. On other platforms, the method will count up to 20 getting the image files from the `Samples` folder using a `Uri` to represent the image file.
+
+Next, we will need to adjust the `LoadImageInfoAsync` method to accommodate the changes we made to the `GetItemsAsync` method. Replace the `LoadImageInfoAsync` method in the `MainPage.xaml.cs` file with the following code:
 
 ```csharp
-public MainPage()
+public async static Task<ImageFileInfo> LoadImageInfoAsync(StorageFile file)
 {
-    this.InitializeComponent();
-    GetItems();
+#if WINDOWS
+    var properties = await file.Properties.GetImagePropertiesAsync();
+    ImageFileInfo info = new(properties,
+                                file, file.DisplayName, $"{file.FileType} file");
+#else
+    ImageFileInfo info = new(file, file.DisplayName, $"{file.FileType} file");
+#endif
+    return info;
 }
 ```
 
-The method now counts up to 20 and formulates a URI for each image file. The URI is then used to get the image file from the `Samples` folder. Because we're going to display an image from its URI rather than a `BitmapImage`, we can remove the other methods such as `ImageGridView_ContainerContentChanging` and `ShowImageAsync` from `MainPage.xaml.cs`. 
+Similar to the `GetItemsAsync` method, this method now uses a preprocessor directive to determine which code to execute based on the platform. On Windows, the method will get the `ImageProperties` from the `StorageFile` and use it to create an `ImageFileInfo` object. On other platforms, the method will construct an `ImageFileInfo` object without the `ImageProperties` parameter. Later on, modifications will be made to the `ImageFileInfo` class to accommodate this change.
 
-`ImageFileInfo` will need to be modified to accommodate this change. Replace this class file with the following code:
+Controls like `GridView` allow for **progressive loading** of updated item container content as they are scrolled into the viewport. This is done by using the `ContainerContentChanging` event. In the desktop project from the previous tutorial, the `ImageGridView_ContainerContentChanging` method uses this event to load the image files into the `GridView`. Because certain aspects of this event are not supported on all platforms, we will need to make changes to this method to make it compatible with them.
+
+[insert image here]
+
+For instance, the `ContainerContentChangingEventArgs.Phase` property is currently unsupported on platforms other than Windows. We will need to make changes to the `ImageGridView_ContainerContentChanging` method to accommodate this change. Replace the `ImageGridView_ContainerContentChanging` method in the `MainPage.xaml.cs` file with the following code:
 
 ```csharp
+private void ImageGridView_ContainerContentChanging(
+ListViewBase sender,
+ContainerContentChangingEventArgs args)
+{
+
+    if (args.InRecycleQueue)
+    {
+        var templateRoot = args.ItemContainer.ContentTemplateRoot as Grid;
+        var image = templateRoot?.FindName("ItemImage") as Image;
+        if (image is not null)
+        {
+            image.Source = null;
+        }
+    }
+
+#if WINDOWS
+        if (args.Phase == 0)
+        {
+            args.RegisterUpdateCallback(ShowImage);
+            args.Handled = true;
+        }
+#else
+    ShowImage(sender, args);
+#endif
+}
+```
+
+The specialized callback is now only registered using `ContainerContentChangingEventArgs.RegisterUpdateCallback()` if the platform is Windows. Otherwise, the `ShowImage` method is called directly. We will also need to make changes to the `ShowImage` method to work alongside the changes made to the `ImageGridView_ContainerContentChanging` method. Replace the `ShowImage` method in the `MainPage.xaml.cs` file with the following code:
+
+```csharp
+private async void ShowImage(ListViewBase sender, ContainerContentChangingEventArgs args)
+{
+    if (
+#if WINDOWS
+            args.Phase == 1
+#else
+        true
+#endif
+        )
+    {
+
+        // It's phase 1, so show this item's image.
+        var templateRoot = args.ItemContainer.ContentTemplateRoot as Grid;
+        var image = templateRoot?.FindName("ItemImage") as Image;
+        var item = args.Item as ImageFileInfo;
+#if WINDOWS
+        if (image is not null && item is not null)
+        {
+            image.Source = await item.GetImageThumbnailAsync();
+        }
+#else
+        if (item is not null)
+        {
+            await item.GetImageSourceAsync();
+        }
+#endif
+    }
+}
+```
+
+Again, preprocessor directives ensure that the `ContainerContentChangingEventArgs.Phase` property is only used where it is supported. We make use of the previously unused `GetImageSourceAsync()` method to load the image files into the `GridView` on platforms other than Windows. At this point, we will accommodate the changes made above by editing to the `ImageFileInfo` class. 
+
+### Creating a separate code path for other platforms
+
+Update `ImageFileInfo.cs` to include a new property called `ImageSource` that will be used to load the image file.
+
+```csharp
+public BitmapImage? ImageSource { get; private set; }
+```
+
+Because platforms like the Web do not support advanced image file properties that are readily available on Windows, we should add a constructor overload which does not require an `ImageProperties` typed parameter. Add a new overload under the existing one using the following code:
+
+```csharp
+public ImageFileInfo(StorageFile imageFile,
+    string name,
+    string type)
+{
+    ImageName = name;
+    ImageFileType = type;
+    ImageFile = imageFile;
+}
+```
+
+This constructor overload will be used to construct an `ImageFileInfo` object on platforms other than Windows. Since we did this, it makes sense to make the `ImageProperties` property nullable. Update the `ImageProperties` property to be nullable using the following code:
+
+```csharp
+public ImageProperties? ImageProperties { get; }
+```
+
+Update the `GetImageSourceAsync` method to use the `ImageSource` property instead of only returning a `BitmapImage` object. Replace the `GetImageSourceAsync` method in the `ImageFileInfo.cs` file with the following code:
+
+```csharp
+public async Task<BitmapImage> GetImageSourceAsync()
+{
+    using IRandomAccessStream fileStream = await ImageFile.OpenReadAsync();
+
+    // Create a bitmap to be the image source.
+    BitmapImage bitmapImage = new();
+    bitmapImage.SetSource(fileStream);
+
+    ImageSource = bitmapImage;
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageSource)));
+
+    return bitmapImage;
+}
+```
+
+To prevent getting the value of `ImageProperties` when its null, we will need to make the following changes:
+
+- Modify the `ImageDimensions` property to use the null conditional operator:
+
+    ```csharp
+    public string ImageDimensions => $"{ImageProperties?.Width} x {ImageProperties?.Height}";
+    ```
+- Change the `ImageTitle` property to use the null conditional operator:
+
+    ```csharp
+    public string ImageTitle
+    {
+        get => string.IsNullOrEmpty(ImageProperties?.Title) ? ImageName : ImageProperties?.Title;
+        set
+        {
+            if (ImageProperties is not null)
+            {
+                if (ImageProperties.Title != value)
+                {
+                    ImageProperties.Title = value;
+                    _ = ImageProperties.SavePropertiesAsync();
+                    OnPropertyChanged();
+                }
+            }
+        }
+    }
+    ```
+- Change `ImageRating` to not rely on `ImageProperties` by generating a random star rating for demonstration purposes:
+
+    ```csharp
+    public int ImageRating
+    {
+        get => (int)((ImageProperties?.Rating == null || ImageProperties.Rating == 0) ? (uint)Random.Shared.Next(1, 5) : ImageProperties.Rating);
+        set
+        {
+            if (ImageProperties is not null)
+            {
+                if (ImageProperties.Rating != value)
+                {
+                    ImageProperties.Rating = (uint)value;
+                    _ = ImageProperties.SavePropertiesAsync();
+                    OnPropertyChanged();
+                }
+            }
+        }
+    }
+    ```
+- Update the constructor that generates a random integer to no longer do this:
+
+    ```csharp
+    public ImageFileInfo(ImageProperties properties,
+        StorageFile imageFile,
+        string name,
+        string type)
+    {
+        ImageProperties = properties;
+        ImageName = name;
+        ImageFileType = type;
+        ImageFile = imageFile;
+    }
+    ```
+
+With these edits, the `ImageFileInfo` class should contain the following code which has a newly-separated code path for platforms other than Windows:
+
+```csharp
+using Microsoft.UI.Xaml.Media.Imaging;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Windows.Storage;
+using Windows.Storage.FileProperties;
+using Windows.Storage.Streams;
+using ThumbnailMode = Windows.Storage.FileProperties.ThumbnailMode;
 
 namespace UnoSimplePhotos;
 
 public class ImageFileInfo : INotifyPropertyChanged
 {
+    public BitmapImage? ImageSource { get; private set; }
+
+    public ImageFileInfo(ImageProperties properties,
+        StorageFile imageFile,
+        string name,
+        string type)
+    {
+        ImageProperties = properties;
+        ImageName = name;
+        ImageFileType = type;
+        ImageFile = imageFile;
+    }
+
     public ImageFileInfo(StorageFile imageFile,
         string name,
-        string type,
-        Uri uri)
+        string type)
     {
         ImageName = name;
         ImageFileType = type;
         ImageFile = imageFile;
-        ImageUri = uri;
     }
 
     public StorageFile ImageFile { get; }
 
-    public Uri ImageUri { get; }
+    public ImageProperties? ImageProperties { get; }
 
-    public string ImageSource => ImageUri.ToString();
+    public async Task<BitmapImage> GetImageSourceAsync()
+    {
+        using IRandomAccessStream fileStream = await ImageFile.OpenReadAsync();
+
+        // Create a bitmap to be the image source.
+        BitmapImage bitmapImage = new();
+        bitmapImage.SetSource(fileStream);
+
+        ImageSource = bitmapImage;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageSource)));
+
+        return bitmapImage;
+    }
+
+    public async Task<BitmapImage> GetImageThumbnailAsync()
+    {
+        StorageItemThumbnail thumbnail =
+            await ImageFile.GetThumbnailAsync(ThumbnailMode.PicturesView);
+        // Create a bitmap to be the image source.
+        var bitmapImage = new BitmapImage();
+        bitmapImage.SetSource(thumbnail);
+        thumbnail.Dispose();
+
+        return bitmapImage;
+    }
 
     public string ImageName { get; }
 
     public string ImageFileType { get; }
+
+    public string ImageDimensions => $"{ImageProperties?.Width} x {ImageProperties?.Height}";
+
+    public string ImageTitle
+    {
+        get => string.IsNullOrEmpty(ImageProperties?.Title) ? ImageName : ImageProperties.Title;
+        set
+        {
+            if (ImageProperties is not null)
+            {
+                if (ImageProperties.Title != value)
+                {
+                    ImageProperties.Title = value;
+                    _ = ImageProperties.SavePropertiesAsync();
+                    OnPropertyChanged();
+                }
+            }
+        }
+    }
+
+    public int ImageRating
+    {
+        get => (int)((ImageProperties?.Rating == null || ImageProperties.Rating == 0) ? (uint)Random.Shared.Next(1, 5) : ImageProperties.Rating);
+        set
+        {
+            if (ImageProperties is not null)
+            {
+                if (ImageProperties.Rating != value)
+                {
+                    ImageProperties.Rating = (uint)value;
+                    _ = ImageProperties.SavePropertiesAsync();
+                    OnPropertyChanged();
+                }
+            }
+        }
+    }
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -489,62 +810,46 @@ public class ImageFileInfo : INotifyPropertyChanged
 }
 ```
 
-The `ImageFileInfo` class now contains a `Uri` property that will be used to load the image file. Both of the methods pertaining to getting an image source or thumbnail manually are now unneeded and can be removed. We have also omitted the `ImageDimensions` property because the `ImageProperties` type is not supported on all platforms. This `ImageFileInfo` class will be used to represent the image files in the `GridView`. We will now make changes to the `MainPage.xaml` file to accommodate these changes.
+This `ImageFileInfo` class will be used to represent the image files in the `GridView`. Finally, we will make changes to the `MainPage.xaml` file to accommodate these changes.
 
-### Displaying images in GridView
+### Using platform-specific XAML markup
 
-In `MainPage.xaml`, replace the GridView element with the following code:
+There are a couple of items in our view markup which should be evaluated on Windows only. Add a new namespace on the `Page` element of the `MainPage.xaml` file like this:
 
 ```xml
-<GridView x:Name="ImageGridView"
-          ItemsSource="{x:Bind Images, Mode=OneWay}"
-          ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
-          ItemTemplate="{StaticResource ImageGridView_ItemTemplate}" />
+...
+xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 ```
 
-Modify the `ImageGridView_ItemTemplate` resource to use the `ImageSource` property of the `ImageFileInfo` class. We also removed elements that use the `ImageDimensions` property:
+Now, in `MainPage.xaml`, replace the `ItemsPanel` property setter on the GridView element with the following code:
 
 ```xml
-<DataTemplate x:Key="ImageGridView_ItemTemplate"
-              x:DataType="local:ImageFileInfo">
-    <Grid Height="300"
-          Width="300"
-          Margin="8">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <Image x:Name="ItemImage"
-               Source="{x:Bind ImageSource}"
-               Stretch="Uniform" />
-
-        <StackPanel Orientation="Vertical"
-                    Grid.Row="1">
-            <TextBlock Text="{x:Bind ImageName}"
-                       HorizontalAlignment="Center"
-                       Style="{StaticResource SubtitleTextBlockStyle}" />
-            <TextBlock Text="{x:Bind ImageFileType}"
-                       HorizontalAlignment="Center"
-                       Style="{StaticResource CaptionTextBlockStyle}" />
-        </StackPanel>
-    </Grid>
-</DataTemplate>
+win:ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"
 ```
 
-Finally, **remove** the entire `ItemsPanelTemplate` resource from the `Grid.Resources` section. The `MainPage.xaml` file should now look like this:
+Prepending the property name with `win:` ensures that the property is only set on Windows. Do this again within the `ImageGridView_ItemTemplate` resource. We want to only load elements that use the `ImageDimensions` property on Windows. Replace the `TextBlock` element that uses the `ImageDimensions` property with the following code:
 
 ```xml
-<Page
-    x:Class="UnoSimplePhotos.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UnoSimplePhotos"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+<win:TextBlock Text="{x:Bind ImageDimensions}"
+               HorizontalAlignment="Center"
+               Style="{StaticResource CaptionTextBlockStyle}"
+               Margin="8,0,0,0" />
+```
 
-    <Grid>
+The `MainPage.xaml` file should now look like this:
+
+```xml
+<Page x:Class="UnoSimplePhotos.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:UnoSimplePhotos"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+	<Grid>
         <Grid.Resources>
             <DataTemplate x:Key="ImageGridView_ItemTemplate"
                           x:DataType="local:ImageFileInfo">
@@ -561,28 +866,45 @@ Finally, **remove** the entire `ItemsPanelTemplate` resource from the `Grid.Reso
                            Stretch="Uniform" />
 
                     <StackPanel Orientation="Vertical"
-                                Grid.Row="1">
-                        <TextBlock Text="{x:Bind ImageName}"
-                                   HorizontalAlignment="Center"
-                                   Style="{StaticResource SubtitleTextBlockStyle}" />
-                        <TextBlock Text="{x:Bind ImageFileType}"
-                                   HorizontalAlignment="Center"
-                                   Style="{StaticResource CaptionTextBlockStyle}" />
-                    </StackPanel>
+								Grid.Row="1">
+						<TextBlock Text="{x:Bind ImageTitle}"
+								   HorizontalAlignment="Center"
+								   Style="{StaticResource SubtitleTextBlockStyle}" />
+						<StackPanel Orientation="Horizontal"
+									HorizontalAlignment="Center">
+							<TextBlock Text="{x:Bind ImageFileType}"
+									   HorizontalAlignment="Center"
+									   Style="{StaticResource CaptionTextBlockStyle}" />
+							<win:TextBlock Text="{x:Bind ImageDimensions}"
+                                           HorizontalAlignment="Center"
+                                           Style="{StaticResource CaptionTextBlockStyle}"
+                                           Margin="8,0,0,0" />
+						</StackPanel>
+
+						<RatingControl Value="{x:Bind ImageRating}"
+									   IsReadOnly="True" />
+					</StackPanel>
                 </Grid>
             </DataTemplate>
-
+            
             <Style x:Key="ImageGridView_ItemContainerStyle"
                    TargetType="GridViewItem">
-                <Setter Property="Background" 
-                        Value="Gray"/>
+                <Setter Property="Background"
+                        Value="Gray" />
                 <Setter Property="Margin" 
                         Value="8"/>
             </Style>
+
+            <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
+                <ItemsWrapGrid Orientation="Horizontal"
+                               HorizontalAlignment="Center"/>
+            </ItemsPanelTemplate>
         </Grid.Resources>
 
         <GridView x:Name="ImageGridView"
                   ItemsSource="{x:Bind Images, Mode=OneWay}"
+                  win:ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"
+                  ContainerContentChanging="ImageGridView_ContainerContentChanging"
                   ItemContainerStyle="{StaticResource ImageGridView_ItemContainerStyle}"
                   ItemTemplate="{StaticResource ImageGridView_ItemTemplate}" />
     </Grid>
@@ -619,4 +941,5 @@ You can now build and run your app on any of the supported platforms. To do so, 
 ## See also
 
 - [Uno Platform documentation](https://platform.uno/docs/articles/intro.html)
+- [Update ListView and GridView items progressively](https://learn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview#update-listview-and-gridview-items-progressively)
 - [Simple photo viewer tutorial](../get-started/simple-photo-viewer-winui3.md)
