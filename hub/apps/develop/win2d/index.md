@@ -24,7 +24,7 @@ Win2D is available as a NuGet package, or as source code [on GitHub](https://git
 
 Add the Win2D NuGet package to your UWP or WinAppSDK app:
 
-* From within Visual Studio, go to **Tools**, **NuGet Package Manager**, **Manage NuGet Packages for Solution..**
+* From within Visual Studio, go to **Tools**, **NuGet Package Manager**, **Manage NuGet Packages for Solution**.
 * Type **Win2D** into the **Search Online** box, and hit **Enter**.
   * On UWP, select the [**Win2D.uwp**](https://www.nuget.org/packages/Win2D.uwp/) package.
   * On WinAppSDK, select the [**Microsoft.Graphics.Win2D**](https://www.nuget.org/packages/Microsoft.Graphics.Win2D/) package.
