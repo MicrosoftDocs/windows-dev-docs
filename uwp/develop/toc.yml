@@ -1168,6 +1168,8 @@
           href: ../devices-sensors/aep-service-class-ids.md
     - name: Pair devices
       href: ../devices-sensors/pair-devices.md
+    - name: Dynamic lighting
+      href: ../devices-sensors/lighting-dynamic-lamparray.md
     - name: Point of Service
       href: ../devices-sensors/point-of-service.md
       items:
