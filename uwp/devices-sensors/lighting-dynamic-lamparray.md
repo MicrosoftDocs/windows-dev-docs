@@ -139,4 +139,8 @@ The following terms and concepts are used to describe various ambient lighting s
 
 ## Examples
 
+[AutoRGB Sample](https://github.com/microsoft/Dynamic-Lighting-AutoRGB)
+
+Demonstrates how to extract a single, representative color from a desktop screen and use it to illuminate LED lamps on a connected RGB device.
+
 ## See also
