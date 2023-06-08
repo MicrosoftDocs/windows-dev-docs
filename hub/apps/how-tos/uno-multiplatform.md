@@ -23,11 +23,11 @@ Once you've [created](hello-world-winui3.md) a starter Hello World WinUI 3 app, 
 - [Visual Studio 2022 17.4 or later](https://visualstudio.microsoft.com/#vs-section)
 - [Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 - ASP.NET and web development workload (for WebAssembly development)
-:::image type="content" source="images/hello-world/vs-install-web.png" alt-text="Web development workload in VS":::
+:::image type="content" source="../images/uno/uno-vs-install-web.png" alt-text="Web development workload in VS":::
 - .NET Multi-platform App UI development installed (for iOS, Android, Mac Catalyst development).
-:::image type="content" source="images/hello-world/vs-install-dotnet-mobile.png" alt-text="dotnet mobile workload in VS":::
+:::image type="content" source="../images/uno/uno-vs-install-dotnet-mobile.png" alt-text="dotnet mobile workload in VS":::
 - .NET desktop development installed (for Gtk, Wpf, and Linux Framebuffer development)
-:::image type="content" source="images/hello-world/vs-install-dotnet.png" alt-text=".net desktop workload in VS":::
+:::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text=".net desktop workload in VS":::
 
 ## Finalize your environment
 
@@ -52,11 +52,11 @@ Once you've [created](hello-world-winui3.md) a starter Hello World WinUI 3 app, 
 
 Launch Visual Studio, then click `Continue without code`. Click `Extensions` -> `Manage Extensions` from the Menu Bar.
 
-:::image type="content" source="images/hello-world/manage-extensions.png" alt-text="Visual Studio Menu bar item that reads manage extensions":::
+:::image type="content" source="../images/uno/uno-manage-extensions.png" alt-text="Visual Studio Menu bar item that reads manage extensions":::
 
 In the Extension Manager expand the **Online** node and search for `Uno`, install the `Uno Platform` extension, or download it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022), then restart Visual Studio.
 
-:::image type="content" source="images/hello-world/uno-extensions.png" alt-text="Manage Extensions window in Visual Studio with Uno Platform extension as a search result":::
+:::image type="content" source="../images/uno/uno-extensions.png" alt-text="Manage Extensions window in Visual Studio with Uno Platform extension as a search result":::
 
 ## Create an application
 
@@ -66,11 +66,11 @@ Soon enough, you will be able to reap the benefits of this approach, as you can 
 
 Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
-:::image type="content" source="images/hello-world/uno-create-project.png" alt-text="Create a new project":::
+:::image type="content" source="../images/uno/uno-create-project.png" alt-text="Create a new project":::
 
 Search for Uno and select the Uno Platform App project template:
 
-:::image type="content" source="images/hello-world/uno-new-project.png" alt-text="Uno platform app":::
+:::image type="content" source="../images/uno/uno-new-project.png" alt-text="Uno platform app":::
 
 Specify a project name, solution name, and directory. In this example, our Hello World MultiPlatform project belongs to a Hello World MultiPlatform solution, which will live in C:\Projects:
 
@@ -80,12 +80,12 @@ Create a new C# solution using the **Uno Platform App** type from Visual Studio'
 
 Now you'll choose a base template to take your Hello World application multi-platform. The Uno Platform App template comes with two preset options that allow you to quickly get started with either a Blank solution or the Default configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications. 
 
-:::image type="content" source="images/hello-world/vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
+:::image type="content" source="../images/uno/uno-vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
 
 To keep things simple, select the **Blank** preset. Then, click the **Create** button. Wait for the projects to be created and their dependencies to be restored.
 
 A banner at the top of the editor may ask to reload projects, click **Reload projects**:
-:::image type="content" source="images/hello-world/vs2022-project-reload.png" alt-text="Visual Studio banner offering to reload your projects to complete changes":::
+:::image type="content" source="../images/uno/uno-project-reload.png" alt-text="Visual Studio banner offering to reload your projects to complete changes":::
 
 ## Building your app
 
@@ -130,14 +130,16 @@ You can now build and run your app on any of the supported platforms. To do so, 
     - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
     - In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.
 
-      :::image type="content" source="images/hello-world/net7-ios-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
+      :::image type="content" source="../images/uno/uno-mobile-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
 
-    - Select an active device
+* To debug for **Mac Catalyst**: 
+    - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
+    - In the debug toolbar drop-down, select a remote macOS device. You'll need to be paired with one for this to work.
 * To debug the **Android** platform:
     - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
     - In the debug toolbar drop-down, select either an active Android device or the emulator
         - Select an active device in the "Device" sub-menu
-* To debug on Linux with Skia GTK:
+* To debug on **Linux** with **Skia GTK**:
     - Right-click on the `HelloWorld.Skia.Gtk` project, and select **Set as startup project**
     - Press the `HelloWorld.Skia.Gtk` button to deploy the app
 
