@@ -43,6 +43,8 @@
         "apps/**/*.md": "reunion",
         "apps/trace-processing/**/*.md": "traceprocessor",
         "dev-environment/**/*.md": "dev-environment",
+        "dev-home/*.md": "dev-environment",
+        "dev-drive/*.md": "dev-environment",
         "package-manager/**/*.md": "dev-environment",
         "powertoys/**/*.md": "dev-environment",
         "python/**/*.md": "dev-environment",
@@ -91,6 +93,8 @@
         "apps/windows-app-sdk/windowing/**/*.md": "windowing",
         "apps/winui/**/*.md": "winui-conceptual", 
         "dev-environment/**/*.md": "dev-environment",
+        "dev-home/*.md": "windows-devhome",
+        "dev-drive/*.md": "windows-devhome",
         "dev-environment/docker/**/*.md": "windows-nodejs",
         "dev-environment/javascript/**/*.md": "windows-javascript",
         "dev-environment/rust/**/*.md": "windows-rust",
@@ -157,6 +161,8 @@
         "apps/windows-dotnet-maui/**/*.md": "alvinashcraft",
         "apps/winui/**/*.md": "Karl-Bridge-Microsoft",
         "dev-environment/**/*.md": "mattwojo",
+        "dev-home/*.md": "mattwojo",
+        "dev-drive/*.md": "mattwojo",
         "dev-environment/docker/**/*.md": "mattwojo",
         "dev-environment/javascript/**/*.md": "mattwojo",
         "dev-environment/rust/**/*.md": "stevewhims",
@@ -207,6 +213,8 @@
         "apps/windows-dotnet-maui/**/*.md": "aashcraft",
         "apps/winui/**/*.md": "kbridge",
         "dev-environment/**/*.md": "mattwoj",
+        "dev-home/*.md": "mattwoj",
+        "dev-drive/*.md": "mattwoj",
         "dev-environment/docker/**/*.md": "mattwoj",
         "dev-environment/javascript/**/*.md": "mattwoj",
         "dev-environment/rust/**/*.md": "stwhi",
@@ -214,10 +222,6 @@
         "powertoys/**/*.md": "mattwoj",
         "python/**/*.md": "mattwoj",
         "web/**/*.md": "mattwoj"
-      },
-      "ms.reviewer":
-      {
-        "powertoys/*.md": "dedavis"
       },
       "titleSuffix":
       {
