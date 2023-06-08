@@ -29,24 +29,7 @@ Once you've [created](hello-world-winui3.md) a starter Hello World WinUI 3 app, 
 - .NET desktop development installed (for Gtk, Wpf, and Linux Framebuffer development)
 :::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text=".net desktop workload in VS":::
 
-## Finalize your environment
-
-1. Open a command-line prompt, Windows Terminal if you have it installed, or else Command Prompt or Windows Powershell from the Start Menu.
-
-2. Install the `uno-check` tool:
-    - Use the following command:
-
-        `dotnet tool install -g uno.check`
-
-    - To update the tool, if you already have an existing one:
-
-        `dotnet tool update -g uno.check`
-
-3. Run the tool with the following command:
-
-    `uno-check`
-
-4. Follow the instructions indicated by the tool. Because it needs to modify your system, you may be prompted for elevated permissions.
+[!INCLUDE [uno-setup.md](../get-started/uno-setup.md)]
 
 ## Install the Uno Platform solution templates
 
