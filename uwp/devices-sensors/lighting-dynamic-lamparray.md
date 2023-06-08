@@ -106,21 +106,6 @@ The following terms and concepts are used to describe various ambient lighting s
 
   Defined in the HID spec as a mode where the hardware falls back to default behavior as defined by its firmware. For example, a device might have a preprogrammed visual effect that is the default when the OS is not actively controlling the device or if the user has opted out of OS involvement for the device. The device must respond to the HID command to return from Autonomous mode to ensure smooth interaction with user expectations.
 
-- AmbientLightingServer
-  
-  A server component responsible for tracking user preferences, tracking the set of currently running ambient applications, and tracking the set of connected lighting devices. The server is responsible for taking these inputs and notifying clients (ambient effect applications) and the system of the user's policy decisions.
-
-- AmbientLightingClient
-
-  Used by ambient applications to connect to the AmbientLightingServer, and to receive notifications of device availability based on policy decisions managed by the AmbientLightingServer and user preference. Ambient applications consume the AmbientLightingClient to receive device availability notifications.
-
-- AmbientLightingManager
-  A peer system component to the AmbientLightingServer responsible for communication with the actual hardware. The AmbientLightingServer communicates the policy decisions and the Manager component implements them.
-
-- AmbientLightingHost
-
-  A special Windows internal effects provider.
-
 - Ambient Apps
 
   [**Windows.Devices.Lights**](/uwp/api/windows.devices.lights) API consumers that also have package identity and support the required app extension. Ambient apps receive notifications from the AmbientLightingClient. The events inform the app of devices they have access to. In this way, an app could show UI enumerating the connected lighting devices, and grey out the devices that are currently inaccessible due to user policy settings. Ambient Apps utilize the [**Windows.Devices.Lights**](/uwp/api/windows.devices.lights) APIs to drive effects across available devices.
