@@ -27,8 +27,6 @@ After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a st
 - .NET desktop development installed (for Gtk, Wpf, and Linux Framebuffer development)
 :::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text="dotnet desktop workload in VS":::
 
-
-
 [!INCLUDE [uno-setup.md](./uno-setup.md)]
 
 ## Install the Uno Platform solution templates
@@ -59,9 +57,9 @@ Create a new C# solution using the **Uno Platform App** type from Visual Studio'
 
 :::image type="content" source="images/uno/uno-configure-project.png" alt-text="Specify project details":::
 
-Now you'll choose a base template to take your Simple Photo gallery application multi-platform. 
+Now you'll choose a base template to take your Simple Photo gallery application multi-platform.
 
-The Uno Platform App template comes with two preset options that allow you to quickly get started with either a **Blank** solution or the **Default** configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications. 
+The Uno Platform App template comes with two preset options that allow you to quickly get started with either a **Blank** solution or the **Default** configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications.
 
 :::image type="content" source="../images/uno/uno-vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
 
@@ -86,11 +84,11 @@ For more information on creating the `Assets` folder and adding images to it, se
 
 ## Preparing your app
 
-Now that you've generated the functional starting point of your multi-platform WinUI application, you can copy code into it from the desktop project. 
+Now that you've generated the functional starting point of your multi-platform WinUI application, you can copy code into it from the desktop project.
 
 ### Copy the view
 
-Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy over the same code you created in the [previous tutorial](/hub/apps/get-started/simple-photo-viewer-winui3.md). 
+Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy over the same code you created in the [previous tutorial](/hub/apps/get-started/simple-photo-viewer-winui3.md).
 
 Return to the **SimplePhotos** project from the previous tutorial. In the **Solution Explorer**, find the file named `MainWindow.xaml` and open it. Observe that the contents of the view are defined within a `Window` element rather than a `Page`. This is because the desktop project is a WinUI 3 application, which can use `Window` elements to define the contents of the view:
 
@@ -143,8 +141,10 @@ Return to the **SimplePhotos** project from the previous tutorial. In the **Solu
 
             <Style x:Key="ImageGridView_ItemContainerStyle"
                    TargetType="GridViewItem">
-                <Setter Property="Background" Value="Gray"/>
-                <Setter Property="Margin" Value="8"/>
+                <Setter Property="Background" 
+                        Value="Gray"/>
+                <Setter Property="Margin" 
+                        Value="8"/>
             </Style>
 
             <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
@@ -237,10 +237,10 @@ Uno Platform's multi-platform implementation of the controls found in the `Windo
 </Page>
 ```
 
-Recall that the desktop solution also had a `MainWindow.xaml.cs` file that contained code-behind which corresponds to the view. In the Uno Platform project, the code-behind for the `MainPage` view we've copied into is contained in the `MainPage.xaml.cs` file. 
+Recall that the desktop solution also had a `MainWindow.xaml.cs` file that contained code-behind which corresponds to the view. In the Uno Platform project, the code-behind for the `MainPage` view we've copied into is contained in the `MainPage.xaml.cs` file.
 
 To bring this code-behind multi-platform, we should first move the following into the `MainPage.xaml.cs` file:
-    
+
 - `Images` property: Provides the `GridView` with an observable collection of image files
 
 - Contents of the constructor: Calls `GetItemsAsync()` to populate the `Images` collection with items representing image files
@@ -270,9 +270,9 @@ public sealed partial class MainPage : Page
     public ObservableCollection<ImageFileInfo> Images { get; } 
     = new ObservableCollection<ImageFileInfo>();
 
-	public MainPage()
-	{
-		this.InitializeComponent();
+    public MainPage()
+    {
+        this.InitializeComponent();
         GetItemsAsync();
     }
 
@@ -333,22 +333,27 @@ public sealed partial class MainPage : Page
 > [!NOTE]
 > The files in your Uno app project should use `UnoSimplePhotos` as the namespace.
 
-So far, the files for the main view we're working with contain all the capabilities of the desktop solution. After we copy over the `ImageFileInfo.cs` model file, we will learn how to modify the desktop-oriented blocks of code for multi-platform compatibility. 
+So far, the files for the main view we're working with contain all the capabilities of the desktop solution. After we copy over the `ImageFileInfo.cs` model file, we will learn how to modify the desktop-oriented blocks of code for multi-platform compatibility.
 
-Copy `ImageFileInfo` from the desktop project and paste it into the `ImageFileInfo.cs` file. Make the following changes: 
+Copy `ImageFileInfo` from the desktop project and paste it into the `ImageFileInfo.cs` file. Make the following changes:
 
 - Rename the namespace to be `UnoSimplePhotos` instead of `SimplePhotos`:
+
     ```csharp
     // Found towards the top of the file
     namespace UnoSimplePhotos;
     ```
+
 - Change the parameter type of the `OnPropertyChanged` method to be nullable:
+
     ```csharp
     // string -> string?
     protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
     ...
     ```
+
 - Make the `PropertyChangedEventHandler` nullable:
+
     ```csharp
     // PropertyChangedEventHandler -> PropertyChangedEventHandler?
     public event PropertyChangedEventHandler? PropertyChanged;
@@ -572,7 +577,7 @@ private async void ShowImage(ListViewBase sender, ContainerContentChangingEventA
 }
 ```
 
-Again, preprocessor directives ensure that the `ContainerContentChangingEventArgs.Phase` property is only used where it is supported. We make use of the previously unused `GetImageSourceAsync()` method to load the image files into the `GridView` on platforms other than Windows. At this point, we will accommodate the changes made above by editing the `ImageFileInfo` class. 
+Again, preprocessor directives ensure that the `ContainerContentChangingEventArgs.Phase` property is only used where it is supported. We make use of the previously unused `GetImageSourceAsync()` method to load the image files into the `GridView` on platforms other than Windows. At this point, we will accommodate the changes made above by editing the `ImageFileInfo` class.
 
 ### Creating a separate code path for other platforms
 
@@ -626,6 +631,7 @@ To prevent getting the value of `ImageProperties` when it's null, we will need t
     ```csharp
     public string ImageDimensions => $"{ImageProperties?.Width} x {ImageProperties?.Height}";
     ```
+
 - Change the `ImageTitle` property to use the null conditional operator:
 
     ```csharp
@@ -646,6 +652,7 @@ To prevent getting the value of `ImageProperties` when it's null, we will need t
         }
     }
     ```
+
 - Change `ImageRating` to not rely on `ImageProperties` by generating a random star rating for demonstration purposes:
 
     ```csharp
@@ -666,6 +673,7 @@ To prevent getting the value of `ImageProperties` when it's null, we will need t
         }
     }
     ```
+
 - Update the constructor that generates a random integer to no longer do this:
 
     ```csharp
@@ -834,7 +842,7 @@ The `MainPage.xaml` file should now look like this:
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-	<Grid>
+    <Grid>
         <Grid.Resources>
             <DataTemplate x:Key="ImageGridView_ItemTemplate"
                           x:DataType="local:ImageFileInfo">
@@ -851,24 +859,24 @@ The `MainPage.xaml` file should now look like this:
                            Stretch="Uniform" />
 
                     <StackPanel Orientation="Vertical"
-				Grid.Row="1">
-						<TextBlock Text="{x:Bind ImageTitle}"
-								   HorizontalAlignment="Center"
-								   Style="{StaticResource SubtitleTextBlockStyle}" />
-						<StackPanel Orientation="Horizontal"
-									HorizontalAlignment="Center">
-							<TextBlock Text="{x:Bind ImageFileType}"
-									   HorizontalAlignment="Center"
-									   Style="{StaticResource CaptionTextBlockStyle}" />
-							<win:TextBlock Text="{x:Bind ImageDimensions}"
+                                Grid.Row="1">
+                        <TextBlock Text="{x:Bind ImageTitle}"
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource SubtitleTextBlockStyle}" />
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <TextBlock Text="{x:Bind ImageFileType}"
+                                       HorizontalAlignment="Center"
+                                       Style="{StaticResource CaptionTextBlockStyle}" />
+                            <win:TextBlock Text="{x:Bind ImageDimensions}"
                                            HorizontalAlignment="Center"
                                            Style="{StaticResource CaptionTextBlockStyle}"
                                            Margin="8,0,0,0" />
-						</StackPanel>
+                        </StackPanel>
 
-						<RatingControl Value="{x:Bind ImageRating}"
-									   IsReadOnly="True" />
-					</StackPanel>
+                        <RatingControl Value="{x:Bind ImageRating}"
+                                       IsReadOnly="True" />
+                    </StackPanel>
                 </Grid>
             </DataTemplate>
             
@@ -902,26 +910,26 @@ Launch the `UnoSimplePhotos.Windows` target. Observe that this WinUI app is very
 
 You can now build and run your app on any of the supported platforms. To do so, you can use the debug toolbar drop-down to select a target platform to deploy:
 
-* To run the **WebAssembly** (Wasm) head:
-    - Right-click on the `UnoSimplePhotos.Wasm` project, select **Set as startup project**
-    - Press the `UnoSimplePhotos.Wasm` button to deploy the app
-    - If desired, you can add and use the `UnoSimplePhotos.Server` project as an alternative
-* To debug for **iOS**:
-    - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
-    - In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.
+- To run the **WebAssembly** (Wasm) head:
+  - Right-click on the `UnoSimplePhotos.Wasm` project, select **Set as startup project**
+  - Press the `UnoSimplePhotos.Wasm` button to deploy the app
+  - If desired, you can add and use the `UnoSimplePhotos.Server` project as an alternative
+- To debug for **iOS**:
+  - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
+  - In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.
 
       :::image type="content" source="../images/uno/uno-mobile-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
 
-* To debug for **Mac Catalyst**: 
-    - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
-    - In the debug toolbar drop-down, select a remote macOS device. You'll need to be paired with one for this to work.
-* To debug the **Android** platform:
-    - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
-    - In the debug toolbar drop-down, select either an active Android device or the emulator
-        - Select an active device in the "Device" sub-menu
-* To debug on **Linux** with **Skia GTK**:
-    - Right-click on the `UnoSimplePhotos.Skia.Gtk` project, and select **Set as startup project**
-    - Press the `UnoSimplePhotos.Skia.Gtk` button to deploy the app
+- To debug for **Mac Catalyst**:
+  - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
+  - In the debug toolbar drop-down, select a remote macOS device. You'll need to be paired with one for this to work.
+- To debug the **Android** platform:
+  - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
+  - In the debug toolbar drop-down, select either an active Android device or the emulator
+    - Select an active device in the "Device" sub-menu
+- To debug on **Linux** with **Skia GTK**:
+  - Right-click on the `UnoSimplePhotos.Skia.Gtk` project, and select **Set as startup project**
+  - Press the `UnoSimplePhotos.Skia.Gtk` button to deploy the app
 
 ## See also
 
