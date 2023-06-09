@@ -1,6 +1,6 @@
 ---
 title: Tutorial--Build a simple photo viewer that targets multiple platforms
-description: Learn how to reach users on other platforms like Web, iOS, Android, and Linux with minimal changes to the C#/WinUI 3 simple photo viewer built in the previous tutorial. We'll use Uno Platform to create a new multi-platform app, which we can move code from the existing desktop project to.
+description: Learn how to reach users across native mobile, web, and desktop with minimal changes to the C#/WinUI 3 simple photo viewer built in the previous tutorial. We'll use Uno Platform to create a new multi-platform app, which we can move code from the existing desktop project to.
 ms.topic: article
 ms.date: 05/21/2023
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, uno platform, uno
@@ -11,10 +11,10 @@ ms.localizationpriority: medium
 
 # Tutorial: Build a simple photo viewer that targets multiple platforms
 
-After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial will use [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we'll be able to run a pixel-perfect copy of the app ported to platforms like the web, mobile, and desktop.
+After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial will use [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we'll be able to run a pixel-perfect copy of the app ported to these platforms.
 
-:::image type="content" source="images/uno/screenshot1.png" alt-text="Screenshot of UnoSimplePhoto app targeting Web and WinUI desktop":::
-:::image type="content" source="images/uno/screenshot4.png" alt-text="Screenshot of UnoSimplePhoto app targeting Mobile":::
+:::image type="content" source="images/uno/screenshot1.png" alt-text="Screenshot of UnoSimplePhoto app targeting web and WinUI desktop":::
+:::image type="content" source="images/uno/screenshot4.png" alt-text="Screenshot of UnoSimplePhoto app targeting mobile":::
 
 ## Prerequisites
 
@@ -582,7 +582,7 @@ Update `ImageFileInfo.cs` to include a new property called `ImageSource` that wi
 public BitmapImage? ImageSource { get; private set; }
 ```
 
-Because platforms like the Web do not support advanced image file properties that are readily available on Windows, we should add a constructor overload that does not require an `ImageProperties` typed parameter. Add a new overload under the existing one using the following code:
+Because platforms like the web do not support advanced image file properties that are readily available on Windows, we should add a constructor overload that does not require an `ImageProperties` typed parameter. Add a new overload under the existing one using the following code:
 
 ```csharp
 public ImageFileInfo(StorageFile imageFile,
