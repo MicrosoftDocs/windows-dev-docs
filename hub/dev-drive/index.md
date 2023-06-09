@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 06/02/2023
+ms.date: 06/09/2023
 ---
 
 # Set up a Dev Drive on Windows 11 (Public Preview)
@@ -31,6 +31,9 @@ To set up a new Dev Drive, open Windows **Settings** and navigate to **System** 
 - Recommend 16gb memory (minimum of 8gb)
 - Minimum 50gb free disk space
 - Dev Drives are available on all Windows SKU versions.
+
+> [!NOTE]
+> When updating your Windows release to a new Insider’s Build, you may need an additional reboot before the Dev Drive preview feature becomes available.
 
 > [!WARNING]
 > Dev Drive is intended only for [key developer scenarios](#what-should-i-put-on-my-dev-drive) and any custom settings will still be covered by [Group Policy](/windows/client-management/manage-settings-app-with-group-policy) settings in Business or Enterprise work environments.
