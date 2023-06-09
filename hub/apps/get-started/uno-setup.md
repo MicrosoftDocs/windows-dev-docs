@@ -13,12 +13,12 @@ ms.localizationpriority: medium
 
 1. Open a command-line prompt, Windows Terminal if you have it installed, or else Command Prompt or Windows Powershell from the Start Menu.
 
-2. Install the `uno-check` tool:
+2. Install or update the `uno-check` tool:
     - Use the following command:
 
         `dotnet tool install -g uno.check`
 
-    - To update the tool, if you already have an existing one:
+    - To update the tool, if you already have previously installed an older version:
 
         `dotnet tool update -g uno.check`
 

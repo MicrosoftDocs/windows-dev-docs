@@ -163,17 +163,16 @@ Return to the **SimplePhotos** project from the previous tutorial. In the **Solu
 </Window>
 ```
 
-Uno Platform's multi-platform implmentation of the controls found in the `Window` element, such as `GridView`, `Image`, and `RatingControl`, ensure that the view itself will work on all supported platforms with only a trivial amount of effort. Copy the contents of this `Window` and paste them into the `Page` element of the `MainPage.xaml` file in the **UnoSimplePhotos** Uno Platform project. The `MainPage` view XAML should look like this:
+Uno Platform's multi-platform implementation of the controls found in the `Window` element, such as `GridView`, `Image`, and `RatingControl`, ensure that the view itself will work on all supported platforms with only a trivial amount of effort. Copy the contents of this `Window` and paste them into the `Page` element of the `MainPage.xaml` file in the **UnoSimplePhotos** Uno Platform project. The `MainPage` view XAML should look like this:
 
 ```xml
-<Page
-    x:Class="UnoSimplePhotos.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UnoSimplePhotos"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+<Page x:Class="UnoSimplePhotos.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:UnoSimplePhotos"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
 
     <Grid>
         <Grid.Resources>
@@ -240,11 +239,11 @@ Uno Platform's multi-platform implmentation of the controls found in the `Window
 
 Recall that the desktop solution also had a `MainWindow.xaml.cs` file that contained code-behind which corresponds to the view. In the Uno Platform project, the code-behind for the `MainPage` view we've copied into is contained in the `MainPage.xaml.cs` file. 
 
-To bring this codebehind multiplatform, we should first move the following into the `MainPage.xaml.cs` file:
+To bring this code-behind multi-platform, we should first move the following into the `MainPage.xaml.cs` file:
     
 - `Images` property: Provides the `GridView` with an observable collection of image files
 
-- Contents of constructor: Calls `GetItemsAsync()` to populate the `Images` collection with items representing image files
+- Contents of the constructor: Calls `GetItemsAsync()` to populate the `Images` collection with items representing image files
 
 - Remove the manual modification of the `ImageGridView` control's `ItemsSource` property
 
@@ -254,7 +253,7 @@ To bring this codebehind multiplatform, we should first move the following into 
 
 - `GetItemsAsync` method: Gets the image asset files from the `Samples` folder
 
-- `LoadImageInfoAsync` method: Constructs a `ImageFileInfo` object from a created `StorageFile`
+- `LoadImageInfoAsync` method: Constructs an `ImageFileInfo` object from a created `StorageFile`
 
 After moving everything over, `MainPage.xaml.cs` should now look like this:
 
@@ -573,7 +572,7 @@ private async void ShowImage(ListViewBase sender, ContainerContentChangingEventA
 }
 ```
 
-Again, preprocessor directives ensure that the `ContainerContentChangingEventArgs.Phase` property is only used where it is supported. We make use of the previously unused `GetImageSourceAsync()` method to load the image files into the `GridView` on platforms other than Windows. At this point, we will accommodate the changes made above by editing to the `ImageFileInfo` class. 
+Again, preprocessor directives ensure that the `ContainerContentChangingEventArgs.Phase` property is only used where it is supported. We make use of the previously unused `GetImageSourceAsync()` method to load the image files into the `GridView` on platforms other than Windows. At this point, we will accommodate the changes made above by editing the `ImageFileInfo` class. 
 
 ### Creating a separate code path for other platforms
 
@@ -583,7 +582,7 @@ Update `ImageFileInfo.cs` to include a new property called `ImageSource` that wi
 public BitmapImage? ImageSource { get; private set; }
 ```
 
-Because platforms like the Web do not support advanced image file properties that are readily available on Windows, we should add a constructor overload which does not require an `ImageProperties` typed parameter. Add a new overload under the existing one using the following code:
+Because platforms like the Web do not support advanced image file properties that are readily available on Windows, we should add a constructor overload that does not require an `ImageProperties` typed parameter. Add a new overload under the existing one using the following code:
 
 ```csharp
 public ImageFileInfo(StorageFile imageFile,
@@ -620,7 +619,7 @@ public async Task<BitmapImage> GetImageSourceAsync()
 }
 ```
 
-To prevent getting the value of `ImageProperties` when its null, we will need to make the following changes:
+To prevent getting the value of `ImageProperties` when it's null, we will need to make the following changes:
 
 - Modify the `ImageDimensions` property to use the null conditional operator:
 
@@ -852,7 +851,7 @@ The `MainPage.xaml` file should now look like this:
                            Stretch="Uniform" />
 
                     <StackPanel Orientation="Vertical"
-								Grid.Row="1">
+				Grid.Row="1">
 						<TextBlock Text="{x:Bind ImageTitle}"
 								   HorizontalAlignment="Center"
 								   Style="{StaticResource SubtitleTextBlockStyle}" />
@@ -908,16 +907,16 @@ You can now build and run your app on any of the supported platforms. To do so, 
     - Press the `UnoSimplePhotos.Wasm` button to deploy the app
     - If desired, you can add and use the `UnoSimplePhotos.Server` project as an alternative
 * To debug for **iOS**:
-    - Right-click on the `UnoSimplePhotos.Mobile` project, select **Set as startup project**
+    - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
     - In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.
 
       :::image type="content" source="../images/uno/uno-mobile-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
 
 * To debug for **Mac Catalyst**: 
-    - Right-click on the `UnoSimplePhotos.Mobile` project, select **Set as startup project**
+    - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
     - In the debug toolbar drop-down, select a remote macOS device. You'll need to be paired with one for this to work.
 * To debug the **Android** platform:
-    - Right-click on the `UnoSimplePhotos.Mobile` project, select **Set as startup project**
+    - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
     - In the debug toolbar drop-down, select either an active Android device or the emulator
         - Select an active device in the "Device" sub-menu
 * To debug on **Linux** with **Skia GTK**:
