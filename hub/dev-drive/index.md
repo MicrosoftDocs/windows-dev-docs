@@ -113,7 +113,7 @@ Dev Drive is **not** intended to store developer tools, such as:
 - .NET SDK
 - Windows SDK, etc.
 
-These tools should be stored on your main C:\ drive.
+These tools should be installed on your main C:\ drive.
 
 > [!NOTE]
 > IT Admins will want to create per-user Access Control List (ACL) folders for multi-user devices as a best practice to avoid EOP attacks.
