@@ -38,7 +38,7 @@ items:
           href: winui/winui3/create-your-first-winui3-app.md
         - name: "Tutorial: Create a simple photo viewer with WinUI 3"
           href: get-started/simple-photo-viewer-winui3.md
-        - name: "Tutorial: Build a simple photo viewer that targets multiple platforms"
+        - name: "Tutorial: Create a simple multi-platform photo viewer"
           href: get-started/uno-simple-photo-viewer.md
         - name: Sample apps for Windows
           href: get-started/samples.md
