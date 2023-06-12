@@ -1,19 +1,20 @@
 ---
 title: PowerToys Mouse utilities for Windows
-description: A collection of utilities to expand the range of usage for the mouse and cursor
-ms.date: 04/27/2022
+description: A collection of utilities to expand the range of usage for the mouse and cursor.
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows]
+no-loc: [PowerToys, Windows, Mouse, jump]
 ---
 
 # Mouse utilities
 
 Mouse utilities is a collection of features that enhance mouse and cursor functionality on Windows. Currently, the collection consists of:
 
-- [Find My Mouse](find-my-mouse)
-- Mouse Highlighter
-- Mouse Pointer Crosshairs
+- [Find my mouse](#find-my-mouse)
+- [Mouse highlighter](#mouse-highlighter)
+- [Mouse jump](#mouse-jump)
+- [Mouse pointer crosshairs](#mouse-pointer-crosshairs)
 
 ## Find my mouse
 
@@ -36,15 +37,15 @@ From the settings menu, the following options can be configured:
 | Spotlight radius | The radius of the circle that centers on the cursor. (default: 100px) |
 | Spotlight initial zoom | The spotlight animation's zoom factor. Higher values result in more pronounced zoom animation as the spotlight closes in on the cursor position. |
 | Animation duration | Time for the spotlight animation. (default: 500ms) |
+| Excluded apps | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
 
-
-## Mouse highlighter
+## Mouse Highlighter
 
 Display visual indicators when the left or right mouse buttons are clicked. By default, mouse highlighting can be turned on and off with the <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> shortcut.
 
 ### Settings
 
-![Screenshot of Mouse Highlighter.](../images/pt-mouse-highlighter.gif)
+![Screenshot of Mouse highlighter.](../images/pt-mouse-highlighter.gif)
 
 From the settings menu, the following options can be configured:
 
@@ -57,6 +58,16 @@ From the settings menu, the following options can be configured:
 | Radius | The radius of the highlighter - Measured in pixels. |
 | Fade delay | How long it takes before a highlight starts to disappear - Measured in milliseconds. |
 | Fade duration | Duration of the disappear animation - Measured in milliseconds. |
+
+## Mouse jump
+
+![Screenshot of Mouse jump.](../images/pt-mouse-jump.gif)
+
+Mouse jump allows moving the mouse pointer long distances on a single screen or across multiple screens.
+
+| Setting | Description |
+| :--- | :--- |
+| Activation shortcut | The customizable keyboard command to activate the ability to mouse jump. |
 
 ## Mouse pointer Crosshairs
 
@@ -71,5 +82,5 @@ Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 | Opacity | (default: 75%) |
 | Center radius | (default: 20px) |
 | Crosshairs thickness | (default: 5px) |
-| Border color | |
-| Border size | in pixels |
+| Border color | The color for the crosshair borders. |
+| Border size | Size of the border, in pixels. |

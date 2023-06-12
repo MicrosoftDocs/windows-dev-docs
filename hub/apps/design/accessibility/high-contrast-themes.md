@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 Contrast themes use a small palette of colors (with a contrast ratio of at least 7:1) to help make elements in the UI easier to see, reduce eye strain, improve text readability, and accommodate user preferences.
 
 > [!NOTE]
-> Don’t confuse contrast themes with light and dark themes, which support a much larger color palette and don't necessarily increase contrast or make things easier to see. For more on light and dark themes, see [Color](../style/color.md).
+> Don't confuse contrast themes with light and dark themes, which support a much larger color palette and don't necessarily increase contrast or make things easier to see. For more on light and dark themes, see [Color](../style/color.md).
 
 To see how your app behaves with contrast themes, enable and customize them through the *Settings > Accessibility > Contrast themes* page.
 
@@ -158,11 +158,11 @@ Here are some recommendations for customizing the contrast theme colors in your 
 - **Do not** use `SystemColorHotlightColor` and corresponding brush as both are reserved for hyperlinks.
 
 > [!TIP]
-> It's often helpful to look at the XAML Controls Gallery app to see how common controls use the **SystemColor** brushes.
+> It's often helpful to look at the WinUI Gallery app to see how common controls use the **SystemColor** brushes. If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:) or [**WinUI 2 Gallery**](winui2gallery:).
 >
-> - If you have it installed, [launch the **XAML Controls Gallery**](xamlcontrolsgallery:/).
-> - [Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
-> - [Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery)
+> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+>
+> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
 
 ### Hard-coded colors
 
@@ -246,6 +246,14 @@ The following code snippet (from an App.xaml file) shows an example [**ThemeDict
     </StackPanel>
 </DataTemplate>
 ```
+
+## Examples
+
+> [!TIP]
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see color contrast accessibility support in action](winui3gallery://item/AccessibilityColorContrast).
+
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ## Related topics
 

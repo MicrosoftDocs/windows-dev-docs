@@ -18,12 +18,12 @@ While functionality and behavior has not changed and remains consistent across t
 
 ## Examples
 
-### XAML Controls Gallery
+### WinUI 2 Gallery
 
-If you have the **XAML Controls Gallery** app installed, click here to [open the app and see compact sizing in action](xamlcontrolsgallery:/item/Compact Sizing).
+If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see compact sizing in action](winui2gallery:/item/Compact Sizing).
 
-- [Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
-- [Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery)
+- [Get the WinUI 2 Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
+- [Get the source code (GitHub)](https://github.com/Microsoft/WinUI-Gallery)
 
 ## Fluent Standard sizing
 
@@ -58,7 +58,7 @@ Compact sizing enables dense, information-rich groups of controls and can help w
 
 **Compact sizing is designed primarily to accommodate pointer input.**
 
-### Examples ofcompact sizing
+### Examples of compact sizing
 
 Compact sizing is implemented through a special resource dictionary that can be specified in your application at either the page level or on a specific layout. The resource dictionary is available in the [WinUI](/uwp/toolkits/winui/) Nuget package.
 
@@ -84,7 +84,7 @@ The following examples show how the `Compact` style can be applied for the page 
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

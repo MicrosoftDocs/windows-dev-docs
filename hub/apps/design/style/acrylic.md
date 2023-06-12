@@ -2,7 +2,7 @@
 description: Learn to use acrylic, a type of brush that creates a translucent texture to add depth and help establish a visual hierarchy.
 title: Acrylic material
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 03/30/2023
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -32,27 +32,29 @@ Acrylic in dark theme
 
 ## Acrylic and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design overview](/windows/apps/fluent-design-system).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design overview](../index.md).
 
 ## Examples
 
 :::row:::
-    :::column span:::
+    :::column:::
 ![Some image](images/xaml-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
-**XAML Controls Gallery**<br>
-If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
+**WinUI 2 Gallery**<br>
+If you have the WinUI 2 Gallery app installed, click <a href="winui2gallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
 
-<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
+<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a><br>
+<a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
 ## Acrylic blend types
+
 Acrylic's most noticeable characteristic is its transparency. There are two acrylic blend types that change what’s visible through the material:
- - **Background acrylic** reveals the desktop wallpaper and other windows that are behind the currently active app, adding depth between application windows while celebrating the user’s personalization preferences.
- - **In-app acrylic** adds a sense of depth within the app frame, providing both focus and hierarchy.
+
+- **Background acrylic** reveals the desktop wallpaper and other windows that are behind the currently active app, adding depth between application windows while celebrating the user’s personalization preferences.
+- **In-app acrylic** adds a sense of depth within the app frame, providing both focus and hierarchy.
 
  ![Background acrylic](images/background-acrylic-dark-theme.png)
 
@@ -77,30 +79,34 @@ For vertical panes or surfaces that help section off content of your app, we rec
 
 For apps with context menus, flyouts, non-modal popups, or light-dismiss panes, it is recommended to use background acrylic, especially if these surfaces draw outside the frame of the main app window.
 
-![Mail app pattern using an informational flyout](images/mail-transient-context-menu.png)
+![The desktop background showing through an open context menu using background acrylic](images/acrylic-transient-context-menu.png)
 
 Many XAML controls draw acrylic by default. [MenuFlyout](../controls/menus.md), [AutoSuggestBox](../controls/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox), and similar controls with light-dismiss popups all use acrylic while open.
 
-> [!Note]
+> [!NOTE]
 > Rendering acrylic surfaces is GPU-intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when a device enters Battery Saver mode. Users can disable acrylic effects for all apps by turning off _Transparency effects_ in Settings > Personalization > Colors.
 
 ## Usability and adaptability
+
 Acrylic automatically adapts its appearance for a wide variety of devices and contexts.
 
 In High Contrast mode, users continue to see the familiar background color of their choosing in place of acrylic. In addition, both background acrylic and in-app acrylic appear as a solid color:
- - When the user turns off _Transparency effects_ in Settings > Personalization > Colors.
- - When Battery Saver mode is activated.
- - When the app runs on low-end hardware.
+
+- When the user turns off _Transparency effects_ in Settings > Personalization > Colors.
+- When Battery Saver mode is activated.
+- When the app runs on low-end hardware.
 
 In addition, only background acrylic will replace its translucency and texture with a solid color:
- - When an app window on desktop deactivates.
- - When the app is running on Xbox, HoloLens, or in tablet mode.
+
+- When an app window on desktop deactivates.
+- When the app is running on Xbox, HoloLens, or in tablet mode.
 
 ### Legibility considerations
 
 It’s important to ensure that any text your app presents to users meets contrast ratios (see [Accessible text requirements](../accessibility/accessible-text-requirements.md)). We’ve optimized the acrylic resources such that text meets contrast ratios on top of acrylic. We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at the default 14px font size. Try to avoid placing [hyperlinks](../controls/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level, keep the impact on legibility in mind.
 
 ## Acrylic theme resources
+
 You can easily apply acrylic to your app’s surfaces using the XAML [AcrylicBrush](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) or predefined AcrylicBrush theme resources. First, you’ll need to decide whether to use in-app or background acrylic. Be sure to review common app patterns described earlier in this article for recommendations.
 
 We’ve created a collection of brush theme resources for both background and in-app acrylic types that respect the app’s theme and fall back to solid colors as needed. For WinUI 2, these theme resources are located in the [AcrylicBrush themeresources file, in the microsoft-ui-xaml GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/blob/6aed8d97fdecfe9b19d70c36bd1dacd9c6add7c1/dev/Materials/Acrylic/AcrylicBrush_19h1_themeresources.xaml#L11). Resources that include *Background* in their names represent background acrylic, while *InApp* refers to in-app acrylic.
@@ -112,12 +118,14 @@ To paint a specific surface, apply one of the WinUI 2 theme resources to element
 ```
 
 ## Custom acrylic brush
+
 You may choose to add a color tint to your app’s acrylic to show branding or provide visual balance with other elements on the page. To show color rather than greyscale, you’ll need to define your own acrylic brushes using the following properties.
- - **TintColor**: the color/tint overlay layer.
- - **TintOpacity**: the opacity of the tint layer.
- - **TintLuminosityOpacity**: controls the amount of saturation that is allowed through the acrylic surface from the background.
- - **BackgroundSource**: the flag to specify whether you want background or in-app acrylic.
- - **FallbackColor**: the solid color that replaces acrylic in Battery Saver. For background acrylic, fallback color also replaces acrylic when your app isn’t in the active desktop window or when the app is running on phone and Xbox.
+
+- **TintColor**: the color/tint overlay layer.
+- **TintOpacity**: the opacity of the tint layer.
+- **TintLuminosityOpacity**: controls the amount of saturation that is allowed through the acrylic surface from the background.
+- **BackgroundSource**: the flag to specify whether you want background or in-app acrylic.
+- **FallbackColor**: the solid color that replaces acrylic in Battery Saver. For background acrylic, fallback color also replaces acrylic when your app isn’t in the active desktop window or when the app is running on phone and Xbox.
 
 ![Light theme acrylic swatches](images/custom-acrylic-swatches-light-theme.png)
 
@@ -127,7 +135,7 @@ You may choose to add a color tint to your app’s acrylic to show branding or p
 
 To add an acrylic brush, define the three resources for dark, light and high contrast themes. Note that in high contrast, we recommend using a SolidColorBrush with the same x:Key as the dark/light AcrylicBrush.
 
-> [!Note]
+> [!NOTE]
 > If you don't specify a TintLuminosityOpacity value, the system will automatically adjust its value based on your TintColor and TintOpacity.
 
 ```xaml
@@ -237,9 +245,10 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](/windows/apps/develop/title-bar).
+In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](../../develop/title-bar.md).
 
 ## Do's and don'ts
+
 * Do use acrylic on transient surfaces.
 * Do extend acrylic to at least one edge of your app to provide a seamless experience by subtly blending with the app’s surroundings.
 * Don't put desktop acrylic on large background surfaces of your app.
@@ -255,8 +264,8 @@ We fine-tuned acrylic’s key components to arrive at its unique appearance and 
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
-[Fluent Design overview](/windows/apps/fluent-design-system)
+[Fluent Design overview](../index.md)

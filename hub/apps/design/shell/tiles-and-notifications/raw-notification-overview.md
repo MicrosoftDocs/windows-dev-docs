@@ -45,7 +45,7 @@ Sending a raw notification is similar to sending a tile, toast, or badge push no
 
 -   The HTTP Content-Type header must be set to "application/octet-stream".
 -   The HTTP [X-WNS-Type](/previous-versions/windows/apps/hh465435(v=win.10)) header must be set to "wns/raw".
--   The notification body can contain any string payload smaller than 5 KB in size.
+-   The notification body can contain any string payload smaller than 5 KB in size, but must not be an empty string.
 
 Raw notifications are intended to be used as short messages that trigger your app to take an action, such as to directly contact the service to sync a larger amount of data or to make a local state modification based on the notification content. Note that WNS push notifications cannot be guaranteed to be delivered, so your app and cloud service must account for the possibility that the raw notification might not reach the client, such as when the client is offline.
 

@@ -1,5 +1,5 @@
 ---
-description: View a list of links to articles about developing Universal Windows Platform (UWP) apps for Windows including an overview, samples, and API reference.
+description: View a list of links to articles about developing Universal Windows Platform (UWP) apps for Windows, including an overview, samples, and API reference.
 title: Develop UWP apps
 keywords: uwp app development threading async platform overview portal develop developers
 ms.date: 03/29/2018
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Develop UWP apps
 
-How-to articles and code for creating UWP apps for Windows .
+How-to articles and code for creating UWP apps for Windows.
 
 :::row:::
     :::column:::
@@ -186,8 +186,6 @@ How-to articles and code for creating UWP apps for Windows .
         <a href="/windows/uwp/porting/w8x-to-uwp-root">Windows Runtime 8.x to UWP</a><br/>
         <a href="/windows/uwp/porting/desktop-to-uwp-root">Desktop Bridge</a><br/>
         <a href="/windows/uwp/porting/desktop-to-uwp-migrate">Share code between desktop and UWP</a><br/>
-        <a href="/windows/uwp/porting/android-ios-uwp-map">Concept mapping for Android and iOS developers</a><br/>
-        <a href="/windows/uwp/porting/ios-to-uwp-root">Move from iOS to UWP</a><br/>
         <a href="/microsoft-edge/progressive-web-apps">Convert your web app to a PWA</a><br/>
         <a href="/windows/uwp/porting/apps-on-arm">Windows on ARM</a><br/>
     :::column-end:::

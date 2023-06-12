@@ -7,10 +7,6 @@ label: Date picker
 template: detail.hbs
 ms.date: 06/24/2021
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: kisai
-design-contact: ksulliv
-dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -19,22 +15,6 @@ ms.localizationpriority: medium
 The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
 
 ![Example of date picker](images/date-picker-closed.png)
-
-**Get the Windows UI Library**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
-:::row-end:::
-
-> **Platform APIs:** [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [SelectedDate property](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate)
 
 ## Is this the right control?
 
@@ -46,25 +26,33 @@ For more info about choosing the right date control, see the [Date and time cont
 
 ## Examples
 
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/DatePicker">open the app and see the DatePicker in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
 The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
 
 ![Example of the date picker expanding](images/controls-datepicker-expand.gif)
 
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [SelectedDate property](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate)
+> - [Open the WinUI 2 Gallery app and see the DatePicker in action](winui2gallery:/item/DatePicker). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+
 ## Create a date picker
+
+> [!div class="checklist"]
+>
+> - **Important APIs:** [DatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.DatePicker), [SelectedDate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddate)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the DatePicker in action](winui3gallery:/item/DatePicker).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows how to create a simple date picker with a header.
 
@@ -83,7 +71,7 @@ The resulting date picker looks like this:
 
 ### Formatting the date picker
 
-By default, the date picker shows the day, month, and year. If your scenario for the date picker doesn't require all the fields, you can hide the ones you don't need. To hide a field, set its corresponding *field*Visible property to `false`: [DayVisible](/uwp/api/windows.ui.xaml.controls.datepicker.dayvisible), [MonthVisible](/uwp/api/windows.ui.xaml.controls.datepicker.monthvisible), or [YearVisible](/uwp/api/windows.ui.xaml.controls.datepicker.yearvisible).
+By default, the date picker shows the day, month, and year. If your scenario for the date picker doesn't require all the fields, you can hide the ones you don't need. To hide a field, set its corresponding *field*Visible property to `false`: [DayVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.dayvisible), [MonthVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.monthvisible), or [YearVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.yearvisible).
 
 Here, only the year is needed, so the day and month fields are hidden.
 
@@ -94,7 +82,7 @@ Here, only the year is needed, so the day and month fields are hidden.
 
 :::image type="content" source="images/date-time/date-picker-year-only.png" alt-text="A date picker with the day and month fields hidden.":::
 
-The string content of each `ComboBox` in the `DatePicker` is created by a [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting.datetimeformatter). You inform the `DateTimeFormatter` how to format the date value by providing a string that is either a *format template* or a *format pattern*. For more info, see the [DayFormat](/uwp/api/windows.ui.xaml.controls.datepicker.dayformat), [MonthFormat](/uwp/api/windows.ui.xaml.controls.datepicker.monthformat), and [YearFormat](/uwp/api/windows.ui.xaml.controls.datepicker.yearformat) properties.
+The string content of each `ComboBox` in the `DatePicker` is created by a [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting.datetimeformatter). You inform the `DateTimeFormatter` how to format the date value by providing a string that is either a *format template* or a *format pattern*. For more info, see the [DayFormat](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.dayformat), [MonthFormat](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.monthformat), and [YearFormat](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.yearformat) properties.
 
 Here, a *format pattern* is used to show the month as an integer and abbreviation. You can add literal strings to the format pattern, such as the parentheses around the month abbreviation: `({month.abbreviated})`.
 
@@ -106,13 +94,13 @@ Here, a *format pattern* is used to show the month as an integer and abbreviatio
 
 ### Date values
 
-The date picker control has both [Date](/uwp/api/windows.ui.xaml.controls.datepicker.date)/[DateChanged](/uwp/api/windows.ui.xaml.controls.datepicker.datechanged) and [SelectedDate](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate)/[SelectedDateChanged](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddatechanged) APIs. The difference between these is that `Date` is not nullable, while `SelectedDate` is nullable.
+The date picker control has both [Date](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.date)/[DateChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.datechanged) and [SelectedDate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddate)/[SelectedDateChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddatechanged) APIs. The difference between these is that `Date` is not nullable, while `SelectedDate` is nullable.
 
 The value of `SelectedDate` is used to populate the date picker and is `null` by default. If `SelectedDate` is `null`, the `Date` property is set to 12/31/1600; otherwise, the `Date` value is synchronized with the `SelectedDate` value. When `SelectedDate` is `null`, the picker is 'unset' and shows the field names instead of a date.
 
 :::image type="content" source="images/date-time/date-picker-no-selected-date.png" alt-text="A date picker with no date selected.":::
 
-You can set the [MinYear](/uwp/api/windows.ui.xaml.controls.datepicker.minyear) and [MaxYear](/uwp/api/windows.ui.xaml.controls.datepicker.maxyear) properties to restrict the date values in the picker. By default, `MinYear` is set to 100 years prior to the current date and `MaxYear` is set to 100 years past the current date.
+You can set the [MinYear](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.minyear) and [MaxYear](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.maxyear) properties to restrict the date values in the picker. By default, `MinYear` is set to 100 years prior to the current date and `MaxYear` is set to 100 years past the current date.
 
 If you set only `MinYear` or `MaxYear`, you need to ensure that a valid date range is created by the date you set and the default value of the other date; otherwise, no date will be available to select in the picker. For example, setting only `yearDatePicker.MaxYear = new DateTimeOffset(new DateTime(900, 1, 1));` creates an invalid date range with the default value of `MinYear`.
 
@@ -154,7 +142,7 @@ public MainPage()
 
 ### Using the date values
 
-To use the date value in your app, you typically use a data binding to the [SelectedDate](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate) property, or handle the [SelectedDateChanged](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddatechanged) event.
+To use the date value in your app, you typically use a data binding to the [SelectedDate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddate) property, or handle the [SelectedDateChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddatechanged) event.
 
 > For an example of using a `DatePicker` and `TimePicker` together to update a single `DateTime` value, see [Calendar, date, and time controls - Use a date picker and time picker together](./date-and-time.md#use-a-date-picker-and-time-picker-together).
 
@@ -203,7 +191,7 @@ public sealed partial class MainPage : Page
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

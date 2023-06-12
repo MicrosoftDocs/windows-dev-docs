@@ -102,6 +102,7 @@ In addition, the custom request headers listed here can be used in the notificat
 
 - Content-Length and Content-Type are the only standard HTTP headers that are included in the notification delivered to the client, regardless of whether other standard headers were included in the request.
 - All other standard HTTP headers are either ignored or return an error if the functionality is not supported.
+- Starting in February 2023,  WNS will cache only one tile notification when the device is offline. 
 
 ### Authorization
 
@@ -132,9 +133,7 @@ X-WNS-Type: wns/toast | wns/badge | wns/tile | wns/raw
 
 ### X-WNS-Cache-Policy
 
-When the notification target device is offline, WNS will cache one badge and one tile notification per app. If notification cycling is enabled for the app, WNS will cache up to five tile notifications. By default, raw notifications are not cached, but if raw notification caching is enabled, one raw notification is cached. Items are not held in the cache indefinitely and will be dropped after a reasonable period of time. Otherwise, the cached content is delivered when the device next comes online.
-
-This header is optional and should be used only in cases where the cloud service wants to override the default caching behavior.
+When the notification target device is offline, WNS will cache one badge, one tile, and one toast notification for each channel URI. By default, raw notifications are not cached, but if raw notification caching is enabled, one raw notification is cached. Items are not held in the cache indefinitely and will be dropped after a reasonable period of time. Otherwise, the cached content is delivered when the device next comes online.
 
 ```json
 X-WNS-Cache-Policy: cache | no-cache
@@ -316,6 +315,7 @@ Each HTTP message contains one of these response codes. WNS recommends that deve
 | 405 Method Not Allowed       | Invalid method (GET, CREATE); only POST (Windows or Windows Phone) or DELETE (Windows Phone only) is allowed. | Log the details of your request. Switch to using HTTP POST. |
 | 406 Not Acceptable           | The cloud service exceeded its throttle limit. | Please send your request after the Retry-After header value in the response |
 | 410 Gone                     | The channel expired. | Log the details of your request. Do not send further notifications to this channel. Have your app request a new channel URI. |
+| 410 Domain Blocked                     | The sending domain has been blocked by WNS. | Do not send further notifications to this channel. The sending domain has been blocked by WNS for abusing push notifications. |
 | 413 Request Entity Too Large | The notification payload exceeds the 5000 byte size limit. | Log the details of your request. Inspect the payload to ensure it is within the size limitations. |
 | 500 Internal Server Error    | An internal failure caused notification delivery to fail. | Log the details of your request. Report this issue through the developer forums. |
 | 503 Service Unavailable      | The server is currently unavailable. | Log the details of your request. Report this issue through the developer forums. If the Retry-After header is observed then please send your request after the Retry-After header value in the response. |

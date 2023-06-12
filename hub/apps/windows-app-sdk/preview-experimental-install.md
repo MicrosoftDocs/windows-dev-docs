@@ -1,6 +1,6 @@
 ---
 title: Install tools for preview and experimental versions of the Windows App SDK
-description: Configure your development computer by installing the appropriate tools to develop apps for Windows by using the preview and experimental channels of the [Windows App SDK](/windows/apps/windows-app-sdk/).
+description: Configure your development computer by installing the appropriate tools to develop apps for Windows by using the preview and experimental channels of the [Windows App SDK](./index.md).
 ms.topic: article
 ms.date: 02/15/2022
 keywords: windows win32, windows app development, Windows App SDK, preview, experimental
@@ -11,10 +11,10 @@ ms.localizationpriority: medium
 
 # Install tools for preview and experimental channels of the Windows App SDK
 
-Configure your development computer by installing the appropriate tools to develop apps for Windows with the preview and experimental channels of the [Windows App SDK](/windows/apps/windows-app-sdk/).
+Configure your development computer by installing the appropriate tools to develop apps for Windows with the preview and experimental channels of the [Windows App SDK](./index.md).
 
 > [!NOTE]
-> This topic is for the preview and experimental release channels of the Windows App SDK&mdash;see [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels). For the stable channel, there's also [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
+> This topic is for the preview and experimental release channels of the Windows App SDK&mdash;see [Windows App SDK release channels](./release-channels.md). For the stable channel, there's also [Install tools for the Windows App SDK](./set-up-your-development-environment.md).
 
 ## Install Visual Studio
 
@@ -30,11 +30,11 @@ Use these links to install Visual Studio 2022 (recommended) or Visual Studio 201
 
 While installing Visual Studio, select these workloads and components.
 
-* On the **Workloads** tab of the installation dialog, select:
-  * **Universal Windows Platform development**
+* On the **Workloads** tab of the installation dialog, select as appropriate:
+  * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
     * Then in the **Installation details** pane of the installation dialog for that workload, make sure either **C++ (v143) Universal Windows Platform tools** (for Visual Studio 2022) or **C++ (v142) Universal Windows Platform tools** (for Visual Studio 2019) is selected.
-  * **.NET Desktop Development** for C# app development
-  * **Desktop development with C++** for C++ app development
+  * For C# app development, select **.NET Desktop Development**
+  * For C++ app development, select **Desktop development with C++**
 
 * On the **Individual components** tab of the installation dialog, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 
@@ -86,7 +86,7 @@ The templates are available by installing a Visual Studio extension (VSIX).
 The extensions from the preview channel are available only from the download locations provided above. These extensions are not available via Visual Studio Marketplace or the **Manage Extensions** dialog box in Visual Studio.
 
 > [!NOTE]
-> If you install the C# version of the Windows App SDK 1.0 Preview 2 extension for Visual Studio 2019, and you want to use the Single-project MSIX Packaging Tools project template (see [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)), then you must also install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) separately. The **Blank App, Packaged (WinUI 3 in Desktop)** project template has a known issue that results in a build error unless you also install the single-project packaging tools extension. This issue doesn't affect other versions of the Windows App SDK 1.0 Preview 2 extension.
+> If you install the C# version of the Windows App SDK 1.0 Preview 2 extension for Visual Studio 2019, and you want to use the Single-project MSIX Packaging Tools project template (see [Package your app using single-project MSIX](./single-project-msix.md)), then you must also install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) separately. The **Blank App, Packaged (WinUI 3 in Desktop)** project template has a known issue that results in a build error unless you also install the single-project packaging tools extension. This issue doesn't affect other versions of the Windows App SDK 1.0 Preview 2 extension.
 
 ## Experimental release
 
@@ -110,12 +110,12 @@ Also see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in
 
 ## Related topics
 
-* [Windows App SDK](/windows/apps/windows-app-sdk/)
-* [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels)
-* [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment)
+* [Windows App SDK](./index.md)
+* [Windows App SDK release channels](./release-channels.md)
+* [Install tools for the Windows App SDK](./set-up-your-development-environment.md)
 * [System requirements for Windows app development](system-requirements.md)
 * [Preview release channel](preview-channel.md)
 * [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions)
-* [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)
+* [Package your app using single-project MSIX](./single-project-msix.md)
 * [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools)
 * [Experimental release channel](experimental-channel.md)

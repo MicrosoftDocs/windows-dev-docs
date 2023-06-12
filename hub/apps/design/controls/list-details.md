@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 The list/details pattern has a list pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the list is selected, the details pane is updated. This pattern is frequently used for email and address books.
 
-> **Important APIs**: [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](/uwp/api/windows.ui.xaml.controls.splitview)
+> **Important APIs**: [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [SplitView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview)
 
 ![Example of list-details pattern](images/list-detail-pattern.png)
 
@@ -82,14 +82,13 @@ To implement a list/details pattern for any screen size, create a responsive UI 
 ![adaptive list detail layout](images/patterns_listdetail.png)
 
 ### Create an adaptive list/details pattern
-To create an adaptive layout, define different [**VisualStates**](/uwp/api/windows.ui.xaml.visualstate) for your UI, and declare breakpoints for the different states with [**AdaptiveTriggers**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
+To create an adaptive layout, define different [**VisualStates**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstate) for your UI, and declare breakpoints for the different states with [**AdaptiveTriggers**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.AdaptiveTrigger).
 
 ## Get the sample code
 
 The following samples implement the list/details pattern with adaptive layouts and demonstrate data binding to static, database, and online resources: 
 - [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
 - [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Windows Template Studio Master/Detail sample](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
 
@@ -100,5 +99,5 @@ The following samples implement the list/details pattern with adaptive layouts a
 
 - [Lists](lists.md)
 - [App and command bars](command-bar.md)
-- [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [SplitView class](/uwp/api/windows.ui.xaml.controls.splitview)
+- [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView)
+- [SplitView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview)

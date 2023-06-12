@@ -1,10 +1,10 @@
 ---
-description: Learn to use Mica, an opaque, dynamic material that incorporates theme and desktop wallpaper to delight users and create visual hierarchy. 
+description: Learn to use Mica and Mica Alt, opaque, dynamic materials that incorporate theme and desktop wallpaper to delight users and create visual hierarchy. 
 title: Mica material
 template: detail.hbs
-ms.date: 06/30/2021
+ms.date: 09/01/2022
 ms.topic: article
-keywords: windows 11, uwp
+keywords: windows 11
 pm-contact: gabilka
 design-contact: shurd
 dev-contact: jevansa, adibpa
@@ -13,11 +13,9 @@ ms.localizationpriority: medium
 
 # Mica material
 
-Mica is an opaque, dynamic material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization.
+_Mica_ is an opaque, dynamic material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization. Mica is available for UWP apps that use WinUI 2 and apps that use Windows App SDK 1.1 or later, while running on Windows 11 version 22000 or later.
 
 ![hero image](images/materials/mica-header.png)
-
-> **Important APIs**: [BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial)
 
 :::row:::
     :::column:::
@@ -30,49 +28,32 @@ Mica in dark theme</br>
     :::column-end:::
 :::row-end:::
 
-## Examples
+_Mica Alt_ is a variant of Mica, with stronger tinting of the user's desktop background color. You can apply Mica Alt to your app's backdrop to provide a deeper visual hierarchy than Mica, especially when creating an app with a tabbed title bar. Mica Alt is available for apps that use Windows App SDK 1.1 or later, while running on Windows 11 version 22000 or later.
 
-:::row:::
-    :::column span:::
-    ![XAML Controls Gallery](images/xaml-controls-gallery-app-icon.png)
-    :::column-end:::
-    :::column span="2":::
-**XAML Controls Gallery**<br>
-If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Mica">here</a> to open the app and see Mica in action as the backdrop material.
+These images show the difference between Mica and Mica Alt in a title bar with tabs. The first image uses Mica and the second image uses Mica Alt.
 
-    <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-    <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
-    :::column-end:::
-:::row-end:::
+:::image type="content" source="images/mica-tabs.png" alt-text="Screenshot of Mica in a title bar with tabs.":::
 
-## When to use Mica
+:::image type="content" source="images/mica-alt-tabs.png" alt-text="Screenshot of Mica Alt in a title bar with tabs.":::
 
-Mica is a material that appears on the backdrop of your application — behind all other content. It is an opaque material that incorporates the user's theme and desktop wallpaper to create its highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
+## When to use Mica or Mica Alt
 
-We recommend you use and apply Mica as the base layer of your app, prioritizing application and visibility in the title bar area. For more specific layering guidance see [Layering and Elevation](../signature-experiences/layering.md) and [App layering with Mica](#app-layering-with-mica).
+Mica and Mica Alt are materials that appear on the backdrop of your application — behind all other content. Each material is opaque and incorporates the user's theme and desktop wallpaper to create its highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
+
+We recommend that you apply Mica or Mica Alt as the base layer of your app, and prioritize visibility in the title bar area. For more specific layering guidance see [Layering and Elevation](../signature-experiences/layering.md) and [App layering with Mica](#app-layering-with-mica).
 
 ## Usability and adaptability
 
-Mica automatically adapts its appearance for a wide variety of devices and contexts. Mica is designed for performance as it only captures the background wallpaper once to create its visualization.
+The Mica materials automatically adapt their appearance for a wide variety of devices and contexts. They are designed for performance as they capture the background wallpaper only once to create their visualizations.
 
-In High Contrast mode, users continue to see the familiar background color of their choosing in place of Mica. In addition, Mica will appear as a solid fallback color (SolidBackgroundFillColorBase):
+In High Contrast mode, users continue to see the familiar background color of their choosing in place of Mica or Mica Alt. In addition, the Mica materials will appear as a solid fallback color (SolidBackgroundFillColorBase for Mica, SolidBackgroundFillColorBaseAlt for Mica Alt) when:
 
-* When the user turns off transparency in Settings > Personalization > Color.
-* When Battery Saver mode is activated.
-* When the app runs on low-end hardware.
-* When an app window on desktop deactivates.
-* When the Windows app is running on Xbox or HoloLens.
-* When the Windows version is below 22000.
-
-## How to use Mica
-
-Mica can be applied with the BackdropMaterial class. We recommend that you set the BackdropMaterial attached property on a XAML element that is the root of your XAML content, as it will apply to the entire content region (such as a Window). If your app has a Frame that navigates multiple pages, you should set this property on the Frame. Otherwise, you should set this property on the Page of your app.
-
-```xaml
-<Page muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
-    <TextBlock>Hello world</TextBlock>
-</Page>
-```
+* The user turns off transparency in Settings > Personalization > Color.
+* Battery Saver mode is activated.
+* The app runs on low-end hardware.
+* An app window on desktop deactivates.
+* The Windows app is running on Xbox or HoloLens.
+* The Windows version is below 22000.
 
 ## App layering with Mica
 
@@ -87,12 +68,14 @@ Card pattern content layer<br/>
     :::column-end:::
 :::row-end:::
 
-Mica is ideal as a foundation layer in your app's hierarchy due to its inactive and active states and subtle personalization. To follow the two-layer [Layering and Elevation](../signature-experiences/layering.md) system we encourage you to apply Mica as the base layer of your app and add an additional content layer that sits on top of the base layer. The content layer should pick up the material behind it, Mica, using the LayerFillColorDefaultBrush, a low-opacity solid color, as its background. Our recommended content layer patterns are:
+Mica is ideal as a foundation layer in your app's hierarchy due to its inactive and active states and subtle personalization. To follow the two-layer [Layering and Elevation](../signature-experiences/layering.md) system, we encourage you to apply Mica as the base layer of your app and add an additional content layer that sits on top of the base layer. The content layer should pick up the material behind it, Mica, using the LayerFillColorDefaultBrush, a low-opacity solid color, as its background. Our recommended content layer patterns are:
 
 * Standard pattern: A contiguous background for large areas that need a distinct hierarchial differentiation from the base layer. The LayerFillColorDefaultBrush should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).
 * Card pattern: Segmented cards for apps that are designed with multiple sectioned and discontinuous UI components. For the definition of the card UI using the LayerFillColorDefaultBrush, see [Layering and Elevation](../signature-experiences/layering.md) guidance.
 
-To give your app's window a seamless look, Mica should be visible in the title bar if you choose to apply the material to your app. You can show Mica in the title bar by extending your app into the non-client area and creating a transparent custom title bar. The below examples showcase common implementations of the layering strategy with [NavigationView](../controls/navigationview.md) where Mica is visible in the title bar area. Each of these examples use and require the same [title bar code-behind](#title-bar-code-behind):
+To give your app's window a seamless look, Mica should be visible in the title bar if you choose to apply the material to your app. You can show Mica in the title bar by extending your app into the non-client area and creating a transparent custom title bar. For more info, see [Title bar](../basics/titlebar-design.md).
+
+The following examples showcase common implementations of the layering strategy with [NavigationView](../controls/navigationview.md) where Mica is visible in the title bar area.
 
 * Standard pattern in Left NavigationView.
 * Standard pattern in Top NavigationView.
@@ -103,6 +86,92 @@ To give your app's window a seamless look, Mica should be visible in the title b
 By default, NavigationView in Left mode includes the content layer in its content area. This example extends Mica into the title bar area and creates a custom title bar.
 
 ![Nav View in standard pattern with custom title bar in Left mode](images/materials/mica-light-theme.png)
+
+### Standard pattern in Top NavigationView
+
+By default, NavigationView in Top mode includes the content layer in its content area. This example extends Mica into the title bar area and creates a custom title bar.
+
+![NavigationView in standard pattern with custom title bar in Top mode](images/materials/mica-top.png)
+
+### Card pattern in Left NavigationView
+
+To follow the card pattern using a NavigationView you will need to remove the default content layer by overriding the background and border theme resources. Then, you can create the cards in the content area of the control. This example creates several cards, extends Mica into the title bar area, and creates a custom title bar. For more information on card UI, see [Layering and Elevation](../signature-experiences/layering.md) guidance.
+
+![NavigationView in standard pattern with custom title bar in Left mode](images/materials/mica-left-card.png)
+
+## App layering with Mica Alt
+
+Mica Alt is an alternative to Mica as a foundation layer in your app's hierarchy with the same features like inactive and active states and subtle personalization. We encourage you to apply Mica Alt as the base layer of your app when requiring contrast between title bar elements and the commanding areas of your app (e.g. navigation, menus).
+
+A common scenario for using Mica Alt is when you are creating an application with a tabbed title bar. To follow the [Layering and Elevation](../signature-experiences/layering.md) guidance we encourage you to apply Mica Alt as the base layer of your app, add a commanding layer that sits on top of the base layer, and finally add an additional content layer that sits on top of the commanding layer. The commanding layer should pick up the material behind it, Mica Alt, using the LayerOnMicaAltFillColorDefaultBrush, a low-opacity solid color, as its background. The content layer should pick up the layers below it, using the LayerFillColorDefaultBrush, another low-opacity solid color. The layer system is as follows:
+
+* Mica Alt
+* Commanding layer: Requires distinct hierarchical differentiation from the base layer. The LayerOnMicaAltFillColorDefaultBrush should be applied to the commanding areas of your WinUI app surfaces (e.g. MenuBar, navigation structure, etc.)
+* Content layer: A contiguous background for large areas that need a distinct hierarchial differentiation from the commanding layer. The LayerFillColorDefaultBrush should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).
+
+To give your app's window a seamless look, Mica Alt should be visible in the title bar if you choose to apply the material to your app. You can show Mica Alt in the title bar by extending your app into the non-client area and creating a transparent custom title bar.
+
+## Recommendations
+
+* **Do** apply backdrop material to the back-most layer (replacing the `ApplicationPageBackgroundThemeBrush` if present).
+* **Do** set all background layers that you want to see Mica in to *transparent* so the Mica shows through.  
+* **Don't** apply backdrop material more than once in an application.
+* **Don't** apply backdrop material to a UI element. The backdrop material will not appear on the element itself. It will only appear if all layers between the UI element and the window are set to transparent.
+
+## How to use Mica
+
+You can use Mica in UWP apps that use WinUI 2, or in apps that use Windows App SDK 1.1 or later. You can use Mica Alt in apps that use Windows App SDK 1.1 or later.
+
+### Use Mica with the Windows App SDK
+
+To use Mica in a XAML app that uses the Windows App SDK and WinUI 3, set the [Window.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop) property to [MicaBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop).
+
+These examples show how to do this in XAML and in code.
+
+### Mica
+
+```xaml
+<Window
+    ... >
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt"/>
+    </Window.SystemBackdrop>
+
+</Window>
+```
+
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    SystemBackdrop = new MicaBackdrop() 
+                        { Kind = MicaKind.BaseAlt };
+}
+```
+
+For more info about using the Composition `MicaController` APIs, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../windows-app-sdk/system-backdrop-controller.md).
+
+To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/apply-mica-win32.md).
+
+### Use Mica with WinUI 2 for UWP
+
+> **Important APIs**: [BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial)
+
+You can apply Mica in a UWP app with the [BackdropMaterial](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial) class. We recommend that you set the BackdropMaterial attached property on a XAML element that is the root of your XAML content, as it will apply to the entire content region (such as a Window). If your app has a Frame that navigates multiple pages, you should set this property on the Frame. Otherwise, you should set this property on the Page of your app.
+
+```xaml
+<Page muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
+    <TextBlock>Hello world</TextBlock>
+</Page>
+```
+
+The following examples show how to implement the standard layering patterns shown previously. Each of these examples use and require the same title bar code-behind, shown in the last example.
+
+#### Example: Standard pattern in Left NavigationView
+
+By default, NavigationView in Left mode includes the content layer in its content area. This example extends Mica into the title bar area and creates a custom title bar.
 
 ```xaml
 <Page
@@ -166,11 +235,9 @@ By default, NavigationView in Left mode includes the content layer in its conten
 </Page>
 ```
 
-### Standard pattern in Top NavigationView
+#### Example: Standard pattern in Top NavigationView
 
 By default, NavigationView in Top mode includes the content layer in its content area. This example extends Mica into the title bar area and creates a custom title bar.
-
-![NavigationView in standard pattern with custom title bar in Top mode](images/materials/mica-top.png)
 
 ```xaml
 <Page
@@ -230,9 +297,7 @@ By default, NavigationView in Top mode includes the content layer in its content
 </Page>
 ```
 
-### Card pattern in Left NavigationView
-
-![NavigationView in standard pattern with custom title bar in Left mode](images/materials/mica-left-card.png)
+#### Example: Card pattern in Left NavigationView
 
 To follow the card pattern using a NavigationView you will need to remove the default content layer by overriding the background and border theme resources. Then, you can create the cards in the content area of the control. This example creates several cards, extends Mica into the title bar area, and creates a custom title bar. For more information on card UI, see [Layering and Elevation](../signature-experiences/layering.md) guidance.
 
@@ -328,11 +393,11 @@ To follow the card pattern using a NavigationView you will need to remove the de
 </Page>
 ```
 
-### Title bar code-behind
+#### Title bar code-behind
 
-The previous three app layout XAML pages use the below code-behind to create a custom title bar adaptive to app state and visibility.
+The previous three app layout XAML pages use this code-behind to create a custom title bar adaptive to app state and visibility.
 
-For more information see [Title bar customization](/windows/apps/develop/title-bar).
+For more information see [Title bar customization](../../develop/title-bar.md).
 
 ```csharp
 public MainPage()
@@ -437,17 +502,11 @@ private void NavigationViewControl_DisplayModeChanged(Microsoft.UI.Xaml.Controls
 }
 ```
 
-## Do's and don'ts
-
-* **Do** apply BackdropMaterial to the back-most layer replacing the ApplicationPageBackgroundThemeBrush.
-* **Do** set all background layers that you want to see Mica in to *transparent* so the Mica shows through.  
-* **Don't** apply BackdropMaterial more than once in an application.
-* **Don't** apply BackdropMaterial to a UI element. The backdrop material will not appear on the element itself. It will only appear if all layers between the UI element and the window are set to transparent.
-
-## Get the sample code
-
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
-
 ## Related articles
 
-[BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial), [NavigationView](../controls/navigationview.md), [Materials](../signature-experiences/materials.md), [Layering and Elevation](../signature-experiences/layering.md)
+- [Materials](../signature-experiences/materials.md)
+- [Layering and Elevation](../signature-experiences/layering.md)
+- [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../windows-app-sdk/system-backdrop-controller.md)
+- [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/apply-mica-win32.md)
+- [BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial)
+- [NavigationView](../controls/navigationview.md)

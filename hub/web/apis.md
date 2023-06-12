@@ -11,7 +11,7 @@ ms.date: 01/06/2021
 
 # APIs for web development
 
-This list covers a broad spectrum of APIs from across Microsoft that may interest web developers. Find more web-development-focused tools and services, on the [Web development on Windows overview page](/overview.md).
+This list covers a broad spectrum of APIs from across Microsoft that may interest web developers. Find more web-development-focused tools and services, on the [Web development on Windows overview page](./index.md).
 
 - **[Academic Knowledge API](https://azure.microsoft.com/services/cognitive-services/academic-knowledge/)**<br>
 Tap into the wealth of academic content in the Microsoft Academic Graph using the Academic Knowledge API.
@@ -34,7 +34,7 @@ Bing Ads is a pay-per-click (PPC) advertising platform used to display ads based
 - **[Bing Knowledge Widget](https://www.bing.com/widget/knowledge)**<br>
 Enhances your web site with the power of the Bing knowledge repository and provides your users relevant information about the entities detected within the context of your page.
 
-- **[Bing Maps REST Services API](/bingmaps/rest-services/index.md)**<br>
+- **[Bing Maps REST Services API](/bingmaps/rest-services/)**<br>
 Services for performing tasks such as geocoding, reverse-geocoding, routing and static imagery.
 
 - **[Bing Maps Web Control](https://www.bing.com/api/maps/sdkrelease/mapcontrol/isdk#overview)**<br>
@@ -52,7 +52,7 @@ Build intelligent and supported algorithms into apps, websites, and bots to see,
 - **[Computer Vision API](/azure/cognitive-services/computer-vision/)**<br>
 Provides developers with access to advanced algorithms for processing images and returning information.
 
-- **[Content Moderator APIs](/azure/cognitive-services/content-moderator/overview.md)**<br>
+- **[Content Moderator APIs](/azure/cognitive-services/content-moderator/)**<br>
 AI-powered content moderation service which scans text, image, and videos and applies content flags automatically, as well as a Review tool, an online moderator environment for a team of human reviewers.
 
 - **[Face detection API](/azure/cognitive-services/face/)**<br>
@@ -106,5 +106,5 @@ Azure Media Player Video Indexer enables you to extract insights from your video
 - **[VS Code API](https://code.visualstudio.com/api/references/vscode-api)**<br>
 A set of JavaScript APIs that you can invoke in your Visual Studio Code extension. The [Extension API](https://code.visualstudio.com/api) enables customizing and enhancing the extensions built-in to VS Code.
 
-- **[Yammer REST API](https://developer.yammer.com/docs/getting-started)**<br>
+- **[Yammer REST API](/rest/api/yammer/rest-api-rate-limits)**<br>
 Build communities and collaboration in your organization with Yammer. The platform consists of a set of open APIs and tools that enable you to bring Yammer’s social services to your application.

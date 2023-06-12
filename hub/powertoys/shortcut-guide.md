@@ -1,7 +1,7 @@
 ---
 title: PowerToys Shortcut Guide utility for Windows
 description: A utility to display common keyboard shortcuts that use the Windows ⊞ key
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer]
@@ -10,7 +10,6 @@ no-loc: [PowerToys, Windows, File Explorer]
 # Windows key shortcut guide
 
 This guide uses PowerToys to display common keyboard shortcuts that use the Windows key.
-
 
 ## Getting started
 
@@ -31,7 +30,6 @@ Tapping the Windows key will display the Windows Start menu.
 > [!IMPORTANT]
 > The PowerToys app must be running and Shortcut Guide must be enabled in the PowerToys settings for this feature to be used.
 
-
 ## Settings
 
 These configurations can be edited from the PowerToys Settings:
@@ -40,9 +38,9 @@ These configurations can be edited from the PowerToys Settings:
 | :--- | :--- |
 | Activation method | Choose your own shortcut or use the <kbd>⊞ Win</kbd> key |
 | Activation shortcut | The custom shortcut used to launch the shortcut guide |
-| Press duration | Time (in milliseconds) to hold down the <kbd>⊞ Win</kbd> key in order to open Shortcut Guide |
+| Press duration | Time (in milliseconds) to hold down the <kbd>⊞ Win</kbd> key in order to open global Windows shortcuts or taskbar icon shortcuts |
 | App theme | Light, dark or Windows theme |
 | Opacity of background | Opacity of the Shortcut Guide overlay |
-| Exclude apps | Ignores Shortcut Guide when these apps are in focus |
+| Excluded apps | Ignores Shortcut Guide when these apps are in focus. Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
 
 ![Shortcut Guide settings.](../images/pt-shortcut-guide-settings.png)

@@ -1,7 +1,7 @@
 ---
 title: PowerToys Keyboard Manager utility for Windows
 description: A utility that enables you to redefine keys on the keyboard
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
@@ -13,7 +13,7 @@ The PowerToys Keyboard Manager enables you to redefine keys on your keyboard.
 
 For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>B</kbd> on your keyboard. When you press the <kbd>A</kbd> key, a `B` will be inserted.
 
-![PowerToys Keyboard Manger remap keys screenshot.](../images/powertoys-keyboard-remap.png)
+![PowerToys Keyboard Manager remap keys screenshot.](../images/powertoys-keyboard-remap.png)
 
 You can exchange shortcut key combinations. For example: The shortcut key <kbd>Ctrl</kbd>+<kbd>C</kbd> will copy text in many applications. With PowerToys Keyboard Manager utility, you can swap that shortcut for <kbd>⊞ Win</kbd>+<kbd>C</kbd>. Now, <kbd>⊞ Win</kbd>+<kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
 
@@ -151,7 +151,7 @@ For example, if the key is remapped from `A` to `B`, then a key no longer exists
 
 ### I remapped the wrong keys, how can I stop it quickly?
 
-For key remapping to work, PowerToys must be running in the background and Keyboard Manager must be enabled. To stop remapped keys, close PowerToys or disable Keyboard Manger in the PowerToys settings.
+For key remapping to work, PowerToys must be running in the background and Keyboard Manager must be enabled. To stop remapped keys, close PowerToys or disable Keyboard Manager in the PowerToys settings.
 
 ### Can I use Keyboard Manager at my log-in screen?
 
@@ -167,7 +167,7 @@ Currently Mac and Linux profiles are not included.
 
 ### Will this work on video games?
 
-It depends on how the game accesses your keys. Certain keyboard APIs do not work with Keyboard Manager.
+We suggest that you avoid using Keyboard Manager when playing games as it may affect the game's performance. It will also depend on how the game accesses your keys. Certain keyboard APIs do not work with Keyboard Manager.
 
 ### Will remapping work if I change my input language?
 
@@ -189,11 +189,12 @@ Keyboard Manager lists mappings for all known physical keyboard buttons. Some of
 If you have tried to remap a key or shortcut and are having trouble, it could be one of the following issues:
 
 - **Run As Admin:** Remapping will not work on an app or window if that window is running in administrator (elevated) mode and PowerToys is not running as administrator. Try [running PowerToys as an administrator](administrator.md).
-- **Not Intercepting Keys:** Keyboard Manger intercepts keyboard hooks to remap your keys. Some apps that also do this can interfere with Keyboard Manager. To fix this, go to the settings, disable and enable Keyboard Manager.
+- **Not Intercepting Keys:** Keyboard Manager intercepts keyboard hooks to remap your keys. Some apps that also do this can interfere with Keyboard Manager. To fix this, go to the settings, disable and enable Keyboard Manager.
 
 
 ## Known Issues
 
+- Keyboard Manager should not be used when playing video games.  Keyboard Manager interception of keypresses currently will impact the FPS.
 - [Remapping keys like Win, Ctrl, Alt or Shift may break gestures and some special buttons](https://github.com/microsoft/PowerToys/issues/3703)
 - AltGr and Ctrl+Alt gives issues, since AltGr behaves as (L)Ctrl + (R)Alt and remapping one of these keys can break the function.
 

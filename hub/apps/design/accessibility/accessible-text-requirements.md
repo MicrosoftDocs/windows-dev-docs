@@ -16,8 +16,8 @@ ms.localizationpriority: medium
 
 This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a Universal Windows Platform (UWP) app can have, and best practices for text in graphics.
 
-<span id="contrast_rations"/>
-<span id="CONTRAST_RATIONS"/>
+<span id="contrast_rations"></span>
+<span id="CONTRAST_RATIONS"></span>
 
 ## Contrast ratios  
 Although users always have the option to switch to a high-contrast mode, your app design for text should regard that option as a last resort. A much better practice is to make sure that your app text meets certain established guidelines for the level of contrast between text and its background. Evaluation of the level of contrast is based on deterministic techniques that do not consider color hue. For example, if you have red text on a green background, that text might not be readable to someone with a color blindness impairment. Checking and correcting the contrast ratio can prevent these types of accessibility issues.
@@ -33,9 +33,9 @@ Use color contrast tools to verify that the visible text contrast ratio is accep
 > [!NOTE]
 > Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a UWP app. You may need to enter foreground and background color values manually in the tool, or make screen captures of app UI and then run the contrast ratio tool over the screen capture image.
 
-<span id="Text_element_roles"/>
-<span id="text_element_roles"/>
-<span id="TEXT_ELEMENT_ROLES"/>
+<span id="Text_element_roles"></span>
+<span id="text_element_roles"></span>
+<span id="TEXT_ELEMENT_ROLES"></span>
 
 ## Text element roles  
 A UWP app can use these default elements (commonly called *text elements* or *textedit controls*):
@@ -49,9 +49,9 @@ When a control reports that is has a role of [**Edit**](/uwp/api/Windows.UI.Xaml
 
 In the text models for XAML, there are two elements that are primarily used for static text, [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) and [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock). Neither of these are a [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control) subclass, and as such neither of them are keyboard-focusable or can appear in the tab order. But that does not mean that assistive technologies can't or won't read them. Screen readers are typically designed to support multiple modes of reading the content in an app, including a dedicated reading mode or navigation patterns that go beyond focus and the tab order, like a "virtual cursor". So don't put your static text into focusable containers just so that tab order gets the user there. Assistive technology users expect that anything in the tab order is interactive, and if they encounter static text there, that is more confusing than helpful. You should test this out yourself with Narrator to get a sense of the user experience with your app when using a screen reader to examine your app's static text.
 
-<span id="Auto-suggest_accessibility"/>
-<span id="auto-suggest_accessibility"/>
-<span id="AUTO-SUGGEST_ACCESSIBILITY"/>
+<span id="Auto-suggest_accessibility"></span>
+<span id="auto-suggest_accessibility"></span>
+<span id="AUTO-SUGGEST_ACCESSIBILITY"></span>
 
 ## Auto-suggest accessibility  
 When a user types into an entry field and a list of potential suggestions appears, this type of scenario is called auto-suggest. This is common in the **To:** line of a mail field, the Cortana search box in Windows, the URL entry field in Microsoft Edge, the location entry field in the Weather app, and so on. If you are using a XAML [**AutosuggestBox**](/uwp/api/windows.ui.xaml.controls.autosuggestbox) or the HTML intrinsic controls, then this experience is already hooked up for you by default. To make this experience accessible the entry field and the list must be associated. This is explained in the [Implementing auto-suggest](#implementing_auto-suggest) section.
@@ -67,9 +67,9 @@ Narrator has been updated to make this type of experience accessible with a spec
 ![Suggestion list](images/autosuggest-list.png)<br/>
 _Example of a suggestion list_
 
-<span id="Implementing_auto-suggest"/>
-<span id="implementing_auto-suggest"/>
-<span id="IMPLEMENTING_AUTO-SUGGEST"/>
+<span id="Implementing_auto-suggest"></span>
+<span id="implementing_auto-suggest"></span>
+<span id="IMPLEMENTING_AUTO-SUGGEST"></span>
 
 ### Implementing auto-suggest  
 To make this experience accessible the entry field and the list must be associated in the UIA tree. This association is done with the [UIA_ControllerForPropertyId](/windows/win32/winauto/uiauto-automation-element-propids) property in desktop apps or the [ControlledPeers](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) property in UWP apps.
@@ -104,17 +104,17 @@ If you are using the intrinsic controls in HTML, then the UIA implementation has
 
  If you are creating your own controls, you must set up your own ARIA controls, which are explained in the W3C standards.
 
-<span id="Text_in_graphics"/>
-<span id="text_in_graphics"/>
-<span id="TEXT_IN_GRAPHICS"/>
+<span id="Text_in_graphics"></span>
+<span id="text_in_graphics"></span>
+<span id="TEXT_IN_GRAPHICS"></span>
 
 ## Text in graphics
 
 Whenever possible, avoid including text in a graphic. For example, any text that you include in the image source file that is displayed in the app as an [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) element is not automatically accessible or readable by assistive technologies. If you must use text in graphics, make sure that the [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) value that you provide as the equivalent of "alt text" includes that text or a summary of the text's meaning. Similar considerations apply if you are creating text characters from vectors as part of a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path), or by using [**Glyphs**](/uwp/api/Windows.UI.Xaml.Documents.Glyphs).
 
-<span id="Text_font_size"/>
-<span id="text_font_size"/>
-<span id="TEXT_FONT_SIZE"/>
+<span id="Text_font_size"></span>
+<span id="text_font_size"></span>
+<span id="TEXT_FONT_SIZE"></span>
 
 ## Text font size and scale
 
@@ -173,7 +173,13 @@ These types have an **IsTextScaleFactorEnabled** property:
 * [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 * [**TextElement**](/uwp/api/Windows.UI.Xaml.Documents.TextElement) and derived classes
 
-<span id="related_topics"/>
+## Examples
+
+> [!TIP]
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see text accessibility support in action](winui3gallery://item/AccessibilityScreenReader).
+
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ## Related topics  
 

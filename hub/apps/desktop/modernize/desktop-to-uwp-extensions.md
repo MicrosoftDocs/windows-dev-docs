@@ -10,14 +10,14 @@ ms.localizationpriority: medium
 
 # Integrate your desktop app with Windows using packaging extensions
 
-If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 and later releases by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions).
+If your desktop app is packaged (has package identity at runtime), then you can use extensions to integrate your app with Windows by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions). Also see [Features that require package identity](./modernize-packaged-apps.md).
 
-For example, use an extension to create a firewall exception, make your app the default application for a file type, or point start tiles to your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
+For example, use an extension to create a firewall exception; make your app the default application for a file type; or point Start tiles to your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
 
-This article describes these extensions and the tasks that you can perform by using them.
+This topic describes those extensions and the tasks that you can perform by using them.
 
 > [!NOTE]
-> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
+> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](../../winui/winui3/create-your-first-winui3-app.md#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) and packaged apps with external location (see [Grant package identity by packaging with external location](./grant-identity-to-nonpackaged-apps.md)). Also see [Features that require package identity](./modernize-packaged-apps.md).
 
 ## Transition users to your app
 
@@ -34,7 +34,7 @@ Help users transition to your packaged app.
 
 ### Redirect your existing desktop app to your packaged app
 
-When users start your existing unpackaged desktop app, you can configure your MSIX-packaged app to be opened instead. 
+When users start your existing unpackaged desktop app, you can configure your packaged app to be opened instead. 
 
 > [!NOTE]
 > This feature is supported in Windows Insider Preview Build 21313 and later versions.
@@ -85,8 +85,8 @@ In your package manifest, add an [AppExecutionAlias](/uwp/schemas/appxpackage/ua
 
 Users can turn off the redirection and launch your unpackaged app executable via these options:
 
-* They can uninstall the MSIX-packaged version of your app.
-* The user can disable the **AppExecutionAlias** entry for your MSIX-packaged app in the **App execution aliases** page in **Settings**.
+* They can uninstall the packaged version of your app.
+* The user can disable the **AppExecutionAlias** entry for your packaged app in the **App execution aliases** page in **Settings**.
 
 #### XML namespaces
 
@@ -418,6 +418,9 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
 ### Create firewall exception for your app
 
 If your application requires communication through a port, you can add your application to the list of firewall exceptions.
+
+> [!NOTE]
+> To use the "windows.firewallRules" extension category (see below), your package needs the **Full Trust Permission Level** restricted capability. See [Restricted capability list](/windows/uwp/packaging/app-capability-declarations#restricted-capability-list).
 
 #### XML namespace
 
@@ -940,13 +943,14 @@ To register your context menu handler, follow these instructions.
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
   IgnorableNamespaces="desktop4">
   <Applications>
     <Application>
       <Extensions>
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler"">
+            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler">
               <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
             </com:SurrogateServer>
           </com:ComServer>

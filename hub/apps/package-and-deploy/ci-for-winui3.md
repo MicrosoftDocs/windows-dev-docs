@@ -52,6 +52,9 @@ Copy/paste the following into your workflow file, and then update...
 1. **Solution_Name** to the name of your solution
 2. **dotnet-version** to either 5.0 or 6.0 depending on your project
 
+> [!NOTE]
+> For the step uploading the artifact (the last step below), if the build output doesn't land in a folder that contains your solution, then replace `env.Solution_Name` with `github.workspace` (the GitHub actions Workspace folder).
+
 ```yml
 # This workflow will build, sign, and package a WinUI 3 MSIX desktop application
 # built on .NET.
@@ -157,6 +160,9 @@ Copy/paste the following into your workflow file, and then update...
 
 1. **Solution_Name** to the name of your solution
 2. **dotnet-version** to either 5.0 or 6.0 depending on your project
+
+> [!NOTE]
+> For the step uploading the artifact (the last step below), if the build output doesn't land in a folder that contains your solution, then replace `env.Solution_Name` with `github.workspace` (the GitHub actions Workspace folder).
 
 ```yml
 # This workflow will build and publish a WinUI 3 unpackaged desktop application

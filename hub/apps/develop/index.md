@@ -21,14 +21,15 @@ The following table highlights the development features that are provided by the
 
 | Feature | Description |
 |--|--|
-| [WinUI 3](/windows/apps/winui/) | The premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns. |
+| [WinUI 3](../winui/index.md) | The premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns. |
 | [Render text with DWriteCore](../windows-app-sdk/dwritecore.md) | Render text using a device-independent text layout system, high quality sub-pixel Microsoft ClearType text rendering, hardware-accelerated text, multi-format text, wide language support, and much more. |
 | [Manage resources with MRT Core](../windows-app-sdk/mrtcore/mrtcore-overview.md) | Manage app resources such as strings and images in multiple languages, scales, and contrast variants independently of your app's logic. |
 | [App lifecycle: App instancing](../windows-app-sdk/applifecycle/applifecycle-instancing.md) | Control whether multiple instances of your app's process can run at the same time. |
 | [App lifecycle: Rich activation](../windows-app-sdk/applifecycle/applifecycle-rich-activation.md) | Process information about different kinds activations for your app. |
 | [App lifecycle: Power management](../windows-app-sdk/applifecycle/applifecycle-power.md) | Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage. |
 | [Manage app windows](../windows-app-sdk/windowing/windowing-overview.md) | Create and manage the windows associated with your app. |
-| [Push notifications](../windows-app-sdk/notifications/push/index.md) | Send rich notifications to your app using Azure App Registration identities. |
+| [Push notifications](../windows-app-sdk/notifications/push-notifications/index.md) | Send raw notifications and app notifications to your app from the cloud using Azure App Registration identities. |
+| [App notifications](../windows-app-sdk/notifications/app-notifications/index.md) | Deliver messages to your user with app notifications. |
 | [Deployment](../windows-app-sdk/deployment-architecture.md) | Deploy the Windows App SDK runtime with your unpackaged and packaged app |
 
 ## Windows app development features organized by scenario

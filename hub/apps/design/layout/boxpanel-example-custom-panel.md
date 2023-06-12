@@ -95,11 +95,11 @@ protected override Size MeasureOverride(Size availableSize)
     if (aspectratio > 1)
     {
         rowcount = maxrc;
-        colcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        colcount = (maxrc > 2 && Children.Count <= maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
     } 
     else 
     {
-        rowcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        rowcount = (maxrc > 2 && Children.Count <= maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
         colcount = maxrc;
     }
 
@@ -135,9 +135,8 @@ However, the panel itself can't return a [**Size**](/uwp/api/Windows.Foundation.
 // That can happen to height if the panel is close to the root of main app window.
 // In this case, base the height of a cell on the max height from desired size
 // and base the height of the panel on that number times the #rows.
-
 Size LimitUnboundedSize(Size input)
-
+{
     if (Double.IsInfinity(input.Height))
     {
         input.Height = maxcellheight * colcount;
@@ -152,7 +151,7 @@ Size LimitUnboundedSize(Size input)
 ```CSharp
 protected override Size ArrangeOverride(Size finalSize)
 {
-     int count = 1
+     int count = 1;
      double x, y;
      foreach (UIElement child in Children)
      {
@@ -183,27 +182,42 @@ It's typical that the input *finalSize* and the [**Size**](/uwp/api/Windows.Foun
 You could compile and use this panel just as it is now. However, we'll add one more refinement. In the code just shown, the logic puts the extra row or column on the side that's longest in aspect ratio. But for greater control over the shapes of cells, it might be desirable to choose a 4x3 set of cells instead of 3x4 even if the panel's own aspect ratio is "portrait." So we'll add an optional dependency property that the panel consumer can set to control that behavior. Here's the dependency property definition, which is very basic:
 
 ```CSharp
-public static readonly DependencyProperty UseOppositeRCRatioProperty =
-   DependencyProperty.Register("UseOppositeRCRatio", typeof(bool), typeof(BoxPanel), null);
-
-public bool UseSquareCells
+// Property
+public Orientation Orientation
 {
-    get { return (bool)GetValue(UseOppositeRCRatioProperty); }
-    set { SetValue(UseOppositeRCRatioProperty, value); }
+    get { return (Orientation)GetValue(OrientationProperty); }
+    set { SetValue(OrientationProperty, value); }
+}
+
+// Dependency Property Registration
+public static readonly DependencyProperty OrientationProperty =
+        DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(BoxPanel), new PropertyMetadata(null, OnOrientationChanged));
+
+// Changed callback so we invalidate our layout when the property changes.
+private static void OnOrientationChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
+{
+    if (dependencyObject is BoxPanel panel)
+    {
+        panel.InvalidateMeasure();
+    }
 }
 ```
 
-And here's how using `UseOppositeRCRatio` impacts the measure logic. Really all it's doing is changing how `rowcount` and `colcount` are derived from `maxrc` and the true aspect ratio, and there are corresponding size differences for each cell because of that. When `UseOppositeRCRatio` is **true**, it inverts the value of the true aspect ratio before using it for row and column counts.
+And below is how using `Orientation` impacts the measure logic in `MeasureOverride`. Really all it's doing is changing how `rowcount` and `colcount` are derived from `maxrc` and the true aspect ratio, and there are corresponding size differences for each cell because of that. When `Orientation` is **Vertical** (default), it inverts the value of the true aspect ratio before using it for row and column counts for our "portrait" rectangle layout.
 
 ```CSharp
-if (UseSquareCells) { aspectratio = 1 / aspectratio;}
+// Get an aspect ratio from availableSize, decides whether to trim row or column.
+aspectratio = availableSize.Width / availableSize.Height;
+
+// Transpose aspect ratio based on Orientation property.
+if (Orientation == Orientation.Vertical) { aspectratio = 1 / aspectratio; }
 ```
 
 ## The scenario for BoxPanel
 
 The particular scenario for `BoxPanel` is that it's a panel where one of the main determinants of how to divide space is by knowing the number of child items, and dividing the known available space for the panel. Panels are innately rectangle shapes. Many panels operate by dividing that rectangle space into further rectangles; that's what [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) does for its cells. In **Grid**'s case, the size of the cells is set by [**ColumnDefinition**](/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) and [**RowDefinition**](/uwp/api/Windows.UI.Xaml.Controls.RowDefinition) values, and elements declare the exact cell they go into with [**Grid.Row**](/dotnet/api/system.windows.controls.grid.row) and [**Grid.Column**](/dotnet/api/system.windows.controls.grid.column) attached properties. Getting good layout from a **Grid** usually requires knowing the number of child elements beforehand, so that there are enough cells and each child element sets its attached properties to fit into its own cell.
 
-But what if the number of children is dynamic? That's certainly possible; your app code can add items to collections, in response to any dynamic run-time condition you consider to be important enough to be worth updating your UI. If you're using data binding to backing collections/business objects, getting such updates and updating the UI is handled automatically, so that's often the preferred technique (see [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth.md)).
+But what if the number of children is dynamic? That's certainly possible; your app code can add items to collections, in response to any dynamic run-time condition you consider to be important enough to be worth updating your UI. If you're using data binding to backing collections/business objects, getting such updates and updating the UI is handled automatically, so that's often the preferred technique (see [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth)).
 
 But not all app scenarios lend themselves to data binding. Sometimes, you need to create new UI elements at runtime and make them visible. `BoxPanel` is for this scenario. A changing number of child items is no problem for `BoxPanel` because it's using the child count in calculations, and adjusts both the existing and new child elements into a new layout so they all fit.
 

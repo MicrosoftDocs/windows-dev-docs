@@ -1,10 +1,11 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
+adobe-target: true
 ---
 
 # Microsoft PowerToys: Utilities to customize Windows
@@ -17,12 +18,11 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 ## Processor support
 
 - **x64**: Supported
-- **ARM**: In development (see [issue #490](https://github.com/microsoft/PowerToys/issues/490))
+- **ARM64**: Supported
 
 ## Current PowerToy utilities
 
 The currently available utilities include:
-
 
 ### Always on Top
 
@@ -76,7 +76,29 @@ The currently available utilities include:
         [![File Explorer screenshot.](../images/pt-file-explorer.png)](file-explorer.md)
     :::column-end:::
     :::column span="2":::
-        [File Explorer](file-explorer.md) add-ons enable Preview pane rendering in File Explorer to display SVG icons (.svg), Markdown (.md) and PDF file previews. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+        [File Explorer](file-explorer.md) add-ons enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+    :::column-end:::
+:::row-end:::
+
+### File Locksmith
+
+:::row:::
+    :::column:::
+        [![File Locksmith screenshot.](../images/powertoys-file-locksmith.png)](file-locksmith.md)
+    :::column-end:::
+    :::column span="2":::
+        [File Locksmith](file-locksmith.md) is a Windows shell extension for checking which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **What's using this file?** from the menu.
+    :::column-end:::
+:::row-end:::
+
+### Hosts file editor
+
+:::row:::
+    :::column:::
+        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+    :::column-end:::
+    :::column span="2":::
+        [Hosts file editor](hosts-file-editor.md) is a convenient way to edit the 'Hosts' file that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks. 
     :::column-end:::
 :::row-end:::
 
@@ -113,6 +135,39 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Mouse without Borders
+
+:::row:::
+    :::column:::
+        [![Mouse without Borders screenshot.](../images/powertoys-mouse-without-borders-after-connect-2.png)](mouse-without-borders.md)
+    :::column-end:::
+    :::column span="2":::
+        [Mouse without Borders](mouse-without-borders.md) enables you to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
+    :::column-end:::
+:::row-end:::
+
+### Paste as Plain Text
+
+:::row:::
+    :::column:::
+        [![Paste as Plain Text screenshot.](../images/pt-paste-as-plain-text.png)](paste-as-plain-text.md)
+    :::column-end:::
+    :::column span="2":::
+        [Paste as Plain Text](paste-as-plain-text.md) allows you to paste text from your clipboard, excluding text-formatting, with a quick key shortcut (<kbd>Ctrl</kbd>+<kbd>⊞ Win</kbd>+<kbd>V</kbd>).
+    :::column-end:::
+:::row-end:::
+
+### Peek
+
+:::row:::
+    :::column:::
+        [![Peek screenshot.](../images/powertoys-peek.png)](peek.md)
+    :::column-end:::
+    :::column span="2":::
+        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Just select the file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
+    :::column-end:::
+:::row-end:::
+
 ### PowerRename
 
 :::row:::
@@ -124,6 +179,28 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Quick Accent
+
+:::row:::
+    :::column:::
+        [![Quick Accent screenshot.](../images/pt-keyboard-accent.png)](Quick-accent.md)
+    :::column-end:::
+    :::column span="2":::
+        [Quick Accent](Quick-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
+    :::column-end:::
+:::row-end:::
+
+### Registry Preview
+
+:::row:::
+    :::column:::
+        [![Registry Preview screenshot.](../images/pt-registrypreview.png)](registry-preview.md)
+    :::column-end:::
+    :::column span="2":::
+        [Registry Preview](registry-preview.md) is a utility to visualize and edit Windows Registry files.
+    :::column-end:::
+:::row-end:::
+
 ### PowerToys Run
 
 :::row:::
@@ -131,7 +208,18 @@ The currently available utilities include:
         [![PowerToys Run screenshot.](../images/pt-run.png)](run.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Run](run.md) can help you search and launch your app instantly - just press the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well.
+        [PowerToys Run](run.md) can help you search and launch your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins.
+    :::column-end:::
+:::row-end:::
+
+### Screen Ruler
+
+:::row:::
+    :::column:::
+        [![Screen Ruler screenshot.](../images/pt-screen-ruler.png)](screen-ruler.md)
+    :::column-end:::
+    :::column span="2":::
+        [Screen Ruler](screen-ruler.md) allows you to quickly measure pixels on your screen based with image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
     :::column-end:::
 :::row-end:::
 
@@ -143,6 +231,17 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also change this setting and press and hold <kbd>⊞ Win</kbd>.
+    :::column-end:::
+:::row-end:::
+
+### Text Extractor
+
+:::row:::
+    :::column:::
+        [![Text Extractor screenshot.](../images/pt-image-to-text.png)](text-extractor.md)
+    :::column-end:::
+    :::column span="2":::
+        [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
     :::column-end:::
 :::row-end:::
 
@@ -167,11 +266,11 @@ _Note that new elements of the app might not yet be translated in the first vers
 
 In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
 
-> [!VIDEO https://docs.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
+> [!VIDEO https://learn.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 
-Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. View instructions in the [Report a Bug](reportbug.md) section of these docs.
+Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. If you don't find the issue you are experiencing, you can [Report a Bug](https://github.com/microsoft/PowerToys/issues/new/choose) on the PowerToys product repo.
 
 ## Contribute to PowerToys (Open Source)
 
@@ -199,4 +298,3 @@ PowerToys is a rapid-incubation, open source team aimed at providing power users
 
 - [New specs for possible PowerToys](https://github.com/microsoft/PowerToys/wiki/Specs)
 - [Backlog priority list](https://github.com/microsoft/PowerToys/wiki/Roadmap#backlog-priority-list-in-order)
-- [Version 1.0 Strategy spec](https://github.com/microsoft/PowerToys/wiki/Version-1.0-Strategy), February 2020

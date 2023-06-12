@@ -66,24 +66,3 @@ landingContent:
         links:
           - text: Install and run MySQL, PostgreSQL, SQLite, Microsoft SQL Server, MongoDB, or Redis
             url: /windows/wsl/tutorials/wsl-database
-
-  # Card
-  # - title: Get started with machine learning (Coming soon)
-
-  # Card
-  - title: Additional resources
-    linkLists:
-      - linkListType: reference
-        links:
-          - text: Frequently Asked Questions
-            url: faqs.yml
-      - linkListType: learn
-        links:
-          - text: Try Python (without installing anything) in this intro course
-            url: /learn/modules/intro-to-python/
-          - text: Recommended links
-            url: resources.md
-          - text: Recommended online courses
-            url: resources.md#online-courses
-          - text: Recommended web dev links
-            url: resources.md#web-development

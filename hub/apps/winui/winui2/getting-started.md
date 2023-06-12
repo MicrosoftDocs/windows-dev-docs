@@ -8,12 +8,12 @@ keywords: windows 10, windows 11, Windows App SDK, Windows app development platf
 
 # Getting started with the Windows UI 2 Library
 
-[Windows UI Library 2.7](release-notes/winui-2.7.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
+[Windows UI Library 2.8](release-notes/winui-2.8.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
 
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
 > [!NOTE]
-> For more information on building Windows desktop apps with the latest version of **WinUI 3**, see [Windows UI Library 3](/windows/apps/winui/).
+> For more information on building Windows desktop apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../index.md).
 
 ## Download and install the Windows UI Library
 
@@ -97,10 +97,10 @@ When you add a NuGet package to a C++/WinRT project, the tooling generates a set
 ```cppwinrt
 // pch.h
 ...
-#include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"
-#include "winrt/Microsoft.UI.Xaml.Controls.Primitives.h"
-#include "winrt/Microsoft.UI.Xaml.Media.h"
-#include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
+#include <winrt/Microsoft.UI.Xaml.Automation.Peers.h>
+#include <winrt/Microsoft.UI.Xaml.Controls.Primitives.h>
+#include <winrt/Microsoft.UI.Xaml.Media.h>
+#include <winrt/Microsoft.UI.Xaml.XamlTypeInfo.h>
 ...
 ```
 

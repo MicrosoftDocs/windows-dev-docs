@@ -15,37 +15,45 @@ keywords: windows 10, windows 11, Windows App SDK, Windows app development platf
     :::column-end:::
     :::column span="2":::
 
-The Windows UI Library (WinUI) is a native user experience (UX) framework for both Windows desktop and UWP applications.
-
-By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
-
-With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and Javascript (via [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
+> [!Important]
+> At this time, there are two generations of the Windows UI Library (WinUI): [WinUI 2 for UWP](winui2/index.md) and [WinUI 3 in the Windows App SDK](winui3/index.md). While both can be used in production-ready apps on Windows 10 and later, each have different development targets.
+>
+> See [Comparison of WinUI 3 and WinUI 2](#comparison-of-winui-3-and-winui-2).
 
     :::column-end:::
 :::row-end:::
 
-> [!Important]
-> At this time, there are two generations of the Windows UI Library (WinUI) under active development: [WinUI 2](winui2/index.md) and WinUI 3. While both can be used in production-ready apps on Windows 10 and later, each have different development targets and release schedules. 
->
-> See [Comparison of WinUI 3 and WinUI 2](#comparison-of-winui-3-and-winui-2).
+The Windows UI Library (WinUI) is a native user experience (UX) framework for both Windows desktop and UWP applications.
+
+By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
+
+With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and JavaScript (using [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
 
 ## WinUI resources
 
-**GitHub**: WinUI is an open-source project hosted on GitHub. Use the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml) to file feature requests or bugs, interact with the WinUI team, and view the team's plans for WinUI 3 and beyond on their [roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+**GitHub**: The WinUI libraries are hosted on GitHub (in the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml)) where you can file feature requests or bugs, and interact with the WinUI team.
 
 **Website**: The [WinUI website](https://aka.ms/winui) has product comparisons, explains the various advantages of WinUI, and provides ways to stay engaged with the product and the product team.
 
 ## Comparison of WinUI 3 and WinUI 2
 
-The following table highlights some of most significant differences between WinUI 3 and WinUI 2.
+The following table highlights some of most significant differences between WinUI 3 in the Windows App SDK and WinUI 2 for UWP.
 
-| WinUI 3 | WinUI 2 |
+| WinUI 3 in the Windows App SDK | WinUI 2 for UWP |
 |-|-|
-| **[WinUI 3](winui3/index.md)** ships with the [Windows App SDK](../windows-app-sdk/index.md). | **[WinUI 2](winui2/index.md)**, the 2nd generation of WinUI, ships as a standalone [NuGet package](https://www.nuget.org/packages/Microsoft.UI.Xaml/), and is integrated with [Windows 10 and later SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/). |
-| UX stack and control library completely decoupled from the OS and [Windows 10 and later SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/), including the core framework, composition, and input layers of the UX stack. | UX stack and control library tightly coupled to the OS and [Windows 10 and later SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/). |
+| **[WinUI 3](winui3/index.md)** ships with the [Windows App SDK](../windows-app-sdk/index.md). | **[WinUI 2](winui2/index.md)**, the 2nd generation of WinUI, ships as a standalone [NuGet package](https://www.nuget.org/packages/Microsoft.UI.Xaml/), and is integrated with [Windows SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/). |
+| UX stack and control library completely decoupled from the OS and [Windows SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/), including the core framework, composition, and input layers of the UX stack. | UX stack and control library tightly coupled to the OS and [Windows SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/). |
 | WinUI 3 can be used to build production-ready **desktop/Win32** Windows apps. | WinUI 2 can be used in UWP applications and incorporated into desktop applications using [XAML Islands](../desktop/modernize/xaml-islands.md) (for installation instructions, see [Getting started with the WinUI 2 Library](winui2/getting-started.md)). |
 | WinUI 3 ships as a component of [the Windows App SDK](../windows-app-sdk/index.md) framework package, with Visual Studio project templates in the Windows App SDK Visual Studio Extension (VSIX). | Part of WinUI 2 ships within the operating system itself (the Windows.UI.* family of UWP WinRT APIs) and part of it ships as a library (“Windows UI Library 2”) with additional controls, elements and the latest styles on top of what’s already included in the operating system itself. With WinUI 2, these features ship in a downloadable NuGet package. However, other significant parts of the UI stack are still built-in to the OS, such as the core XAML framework, input, and composition layers. |
-| WinUI 3 supports C# (.NET 5 and later) and C++ for desktop apps. | WinUI 2 supports C# and Visual Basic (.NET Native), and C++ apps. |
+| WinUI 3 supports C# (.NET 6 and later) and C++ for desktop apps. | WinUI 2 supports C# and Visual Basic (.NET Native), and C++ apps. |
 | WinUI 3 is supported only in desktop-based projects. To use WinUI 3, UWP projects can migrate their project type to desktop (see [how to migrate your UWP app to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md)). | WinUI 2 can be incorporated into production UWP apps by installing a NuGet package into a new or existing UWP project. WinUI controls and styles can then be referenced directly in new apps, or by updating "Windows.UI." namespace references to "Microsoft.UI." in existing apps. |
 | WinUI 3 supports the Chromium-based [WebView2](/microsoft-edge/webview2/) control | WinUI 2 supports the [WebView](/windows/uwp/design/controls-and-patterns/web-view) control on all devices, and starting with WinUI 2.7 prerelease, the [WebView2](/microsoft-edge/webview2/) control on Desktop. The WebView2 control will come to a WinUI 2.x stable release in the future. |
-| WinUI 3 works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763). | WinUI 2 works downlevel to Windows 10 Creators Update (Version 1703, OS build 15063). |
+| WinUI 3 works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763). | WinUI 2.0 - 2.7 works downlevel to Windows 10 Creators Update (Version 1703, OS build 15063). WinUI 2.8 and later works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763). |
+
+### See also
+
+- [Windows App SDK](../windows-app-sdk/index.md)
+- [Stable channel release notes for the Windows App SDK](../windows-app-sdk/stable-channel.md)
+- [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
+- [WinUI 2 API docs](/windows/winui/api/)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

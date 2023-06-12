@@ -17,13 +17,13 @@ ms.localizationpriority: medium
 
  
 
-**ListView** and **GridView** controls manage how their items are arranged (horizontal, vertical, wrapping, etc…) and how a user interacts with the items, but not how the individual items are shown on the screen. Item visualization is managed by item containers. When you add items to a list view they are automatically placed in a container. The default item container for ListView is [ListViewItem](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem); for GridView, it's [GridViewItem](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
+**ListView** and **GridView** controls manage how their items are arranged (horizontal, vertical, wrapping, etc…) and how a user interacts with the items, but not how the individual items are shown on the screen. Item visualization is managed by item containers. When you add items to a list view they are automatically placed in a container. The default item container for ListView is [ListViewItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListViewItem); for GridView, it's [GridViewItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridViewItem).
 
-> **Important APIs**: [ListView class](/uwp/api/windows.ui.xaml.controls.listview), [GridView class](/uwp/api/windows.ui.xaml.controls.gridview), [ListViewItem class](/uwp/api/windows.ui.xaml.controls.listviewitem), [GridViewItem class](/uwp/api/windows.ui.xaml.controls.gridviewitem), [ItemTemplate property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), [ItemContainerStyle property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
+> **Important APIs**: [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview), [ListViewItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewitem), [GridViewItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridviewitem), [ItemTemplate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate), [ItemContainerStyle property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle)
 
 
 > [!NOTE]
-> ListView and GridView both derive from the [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) class, so they have the same functionality, but display data differently. In this article, when we talk about list view, the info applies to both the ListView and GridView controls unless otherwise specified. We may refer to classes like ListView or ListViewItem, but the *List* prefix can be replaced with *Grid* for the corresponding grid equivalent (GridView or GridViewItem). 
+> ListView and GridView both derive from the [ListViewBase](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase) class, so they have the same functionality, but display data differently. In this article, when we talk about list view, the info applies to both the ListView and GridView controls unless otherwise specified. We may refer to classes like ListView or ListViewItem, but the *List* prefix can be replaced with *Grid* for the corresponding grid equivalent (GridView or GridViewItem). 
 
 ## ListView items and GridView items
 As mentioned above, ListView items are automatically placed into the ListViewItem container, and GridView items are placed into the GridViewItem container. These item containers are controls that have their own built-in styling and interaction, but can also be highly customized. However, before customization, make sure to familizarize yourself with the recommended styling and guidelines for ListViewItem and GridViewItem:
@@ -34,8 +34,8 @@ As mentioned above, ListView items are automatically placed into the ListViewIte
 ## Introduction to customization
 Container controls (such as ListViewItem and GridViewItem) consist of two important parts that combine to create the final visuals shown for an item: the *data template* and the *control template*.
 
-- **Data template** - You assign a [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) to the [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of the list view to specify how individual data items are shown.
-- **Control template** - The control template provides the part of the item visualization that the framework is responsible for, like visual states. You can use the [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) property to modify the control template. Typically, you do this to modify the list view colors to match your branding, or change how selected items are shown.
+- **Data template** - You assign a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.DataTemplate) to the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the list view to specify how individual data items are shown.
+- **Control template** - The control template provides the part of the item visualization that the framework is responsible for, like visual states. You can use the [ItemContainerStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle) property to modify the control template. Typically, you do this to modify the list view colors to match your branding, or change how selected items are shown.
 
 This image shows how the control template and the data template combine to create the final visual for an item.
 
@@ -86,7 +86,7 @@ Here's the XAML that creates this item. We explain the templates later.
 
 Before we look deeper into how to show data items in a list view, we need to understand the data to be shown. In this example, we create a data type called `NamedColor`. It combines a color name, color value, and a **SolidColorBrush** for the color, which are exposed as 3 properties: `Name`, `Color`, and `Brush`.
  
-We then populate a **List** with a `NamedColor` object for each named color in the [Colors](/uwp/api/windows.ui.colors) class. The list is set as the [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) for the list view.
+We then populate a **List** with a `NamedColor` object for each named color in the [Colors](/windows/windows-app-sdk/api/winrt/microsoft.ui.colors) class. The list is set as the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) for the list view.
 
 Here's the code to define the class and populate the `NamedColors` list.
 
@@ -159,7 +159,7 @@ By default, a data item is displayed in the list view as the string representati
 
 ![list view showing the string representation of items](images/listview-no-template.png)
 
-You can show the string representation of a particular property of the data item by setting the [DisplayMemberPath](/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) to that property. Here, you set DisplayMemberPath to the `Name` property of the `NamedColor` item.
+You can show the string representation of a particular property of the data item by setting the [DisplayMemberPath](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.displaymemberpath) to that property. Here, you set DisplayMemberPath to the `Name` property of the `NamedColor` item.
 
 **XAML**
 ```xaml
@@ -170,12 +170,12 @@ The list view now displays items by name, as shown here. It's more useful, but i
 
 ![List view showing the string representation of an item property](images/listview-display-member-path.png)
 
-You typically want to show a more rich presentation of your data. To specify exactly how items in the list view are displayed, you create a [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. You assign the DataTemplate to the [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of the list control.
+You typically want to show a more rich presentation of your data. To specify exactly how items in the list view are displayed, you create a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. You assign the DataTemplate to the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the list control.
 
 > [!IMPORTANT]
 > You can't use a **ItemTemplate** and **DisplayMemberPath** at the same time. If both properties are set, an exception occurs.
 
-Here, you define a DataTemplate that shows a [Rectangle](/uwp/api/windows.ui.xaml.shapes.rectangle) in the color of the item, along with the color name and RGB values. 
+Here, you define a DataTemplate that shows a [Rectangle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.rectangle) in the color of the item, along with the color name and RGB values. 
 
 > [!NOTE]
 > When you use the [x:Bind markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
@@ -213,8 +213,8 @@ Here's what the data items look like when they're displayed with this data templ
 ![List view items with a data template](images/listview-data-template-0.png)
 
 > [!IMPORTANT]
-> ListViewItems by default have their content aligned left, i.e. their [HorizontalContentAlignmentProperty](/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) is set to Left. If you have multiple elements within a ListViewItem that are horizontally adjacent, such as horizontally stacked elements or elements placed in the same Grid row, they will all be left-aligned and only separated by their defined margin. 
-<br/><br/> In order to have elements spread to fill the entire body of a ListItem, you will need to set the HorizontalContentAlignmentProperty to [Stretch](/uwp/api/windows.ui.xaml.horizontalalignment) by using a [Setter](/uwp/api/windows.ui.xaml.setter) inside of your ListView:
+> ListViewItems by default have their content aligned left, i.e. their [HorizontalContentAlignmentProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) is set to Left. If you have multiple elements within a ListViewItem that are horizontally adjacent, such as horizontally stacked elements or elements placed in the same Grid row, they will all be left-aligned and only separated by their defined margin. 
+<br/><br/> In order to have elements spread to fill the entire body of a ListItem, you will need to set the HorizontalContentAlignmentProperty to [Stretch](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.horizontalalignment) by using a [Setter](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.setter) inside of your ListView:
 
 ```xaml
 <ListView.ItemContainerStyle>
@@ -319,12 +319,12 @@ The list view combines the elements from the data template and control template 
 
 As we noted previously about data templates, the number of XAML elements created for each item can have a significant impact on the performance of a list view. Because the data template and control template are combined to display each item, the actual number of elements needed to display an item includes the elements in both templates.
 
-The ListView and GridView controls are optimized to reduce the number of XAML elements created per item. The **ListViewItem** visuals are created by the [ListViewItemPresenter](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter), which is a special XAML element that displays complex visuals for focus, selection, and other visual states, without the overhead of numerous UIElements.
+The ListView and GridView controls are optimized to reduce the number of XAML elements created per item. The **ListViewItem** visuals are created by the [ListViewItemPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitempresenter), which is a special XAML element that displays complex visuals for focus, selection, and other visual states, without the overhead of numerous UIElements.
  
 > [!NOTE]
-> In UWP apps for Windows 10, both **ListViewItem** and **GridViewItem** use **ListViewItemPresenter**; the GridViewItemPresenter is deprecated and you should not use it. ListViewItem and GridViewItem set different property values on ListViewItemPresenter to achieve different default looks.)
+> In UWP apps for Windows, both **ListViewItem** and **GridViewItem** use **ListViewItemPresenter**; the GridViewItemPresenter is deprecated and you should not use it. ListViewItem and GridViewItem set different property values on ListViewItemPresenter to achieve different default looks.)
 
-To modify the look of the item container, use the [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) property and provide a [Style](/uwp/api/windows.ui.xaml.style) with its [TargetType](/uwp/api/windows.ui.xaml.style.targettype) set to **ListViewItem** or **GridViewItem**.
+To modify the look of the item container, use the [ItemContainerStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle) property and provide a [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style) with its [TargetType](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style.targettype) set to **ListViewItem** or **GridViewItem**.
 
 In this example, you add padding to the ListViewItem to create some space between the items in the list.
 
@@ -418,11 +418,11 @@ You can now modify properties on the ListViewItemPresenter to control the select
 
 #### Inline and Overlay selection visuals
 
-ListView and GridView indicate selected items in different ways depending on the control and the [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode). For more info about list view selection, see [ListView and GridView](listview-and-gridview.md). 
+ListView and GridView indicate selected items in different ways depending on the control and the [SelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectionmode). For more info about list view selection, see [ListView and GridView](listview-and-gridview.md). 
 
-When **SelectionMode** is set to **Multiple**, a selection check box is shown as part of the item's control template. You can use the [SelectionCheckMarkVisualEnabled](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) property to turn off the selection check box in Multiple selection mode. However, this property is ignored in other selection modes, so you can't turn on the check box in Extended or Single selection mode.
+When **SelectionMode** is set to **Multiple**, a selection check box is shown as part of the item's control template. You can use the [SelectionCheckMarkVisualEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) property to turn off the selection check box in Multiple selection mode. However, this property is ignored in other selection modes, so you can't turn on the check box in Extended or Single selection mode.
 
-You can set the [CheckMode](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) property to specify whether the check box is shown using the inline style or overlay style.
+You can set the [CheckMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitempresenter.checkmode) property to specify whether the check box is shown using the inline style or overlay style.
 
 - **Inline**: This style shows the check box to the left of the content, and colors the background of the item container to indicate selection. This is the default style for ListView.
 - **Overlay**: This style shows the check box on top of the content, and colors only the border of the item container to indicate selection. This is the default style for GridView.
@@ -467,7 +467,7 @@ If you need to make more modifications than what is allowed by the **ListViewIte
 As mentioned previously, the number of UIElements in an item template has a significant impact on the performance of your list view. Replacing ListViewItemPresenter with the expanded XAML templates greatly increases the element count, and is not recommended when your list view will show a large number of items or when performance is a concern.
 
 > [!NOTE]
-> **ListViewItemPresenter** is supported only when the list view's [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) is an [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) or [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel). If you change the ItemsPanel to use [VariableSizedWrapGrid](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid), [WrapGrid](/uwp/api/windows.ui.xaml.controls.wrapgrid), or [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel), then the item template is automatically switched to the expanded XAML template. For more info, see [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
+> **ListViewItemPresenter** is supported only when the list view's [ItemsPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemspanel) is an [ItemsWrapGrid](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemswrapgrid) or [ItemsStackPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel). If you change the ItemsPanel to use [VariableSizedWrapGrid](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.variablesizedwrapgrid), [WrapGrid](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.wrapgrid), or [StackPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel), then the item template is automatically switched to the expanded XAML template. For more info, see [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
 To customize an expanded XAML template, you need to make a copy of it in your app, and set the **ItemContainerStyle** property to your copy.
 

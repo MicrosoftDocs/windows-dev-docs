@@ -13,7 +13,7 @@ ms.localizationpriority: low
 
 Provides to desktop application developers C# types that wrap and represent the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/).
 
-These types are available in .NET 5 and later as part of the [Windows App SDK](/windows/apps/windows-app-sdk/).
+These types are available in .NET as part of the [Windows App SDK](../../../windows-app-sdk/index.md).
 
 ## Classes
 

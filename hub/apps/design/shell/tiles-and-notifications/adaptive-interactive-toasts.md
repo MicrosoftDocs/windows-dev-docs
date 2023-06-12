@@ -1,130 +1,183 @@
 ---
-description: Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
-title: Toast content
+description: This article describes the UI elements that can be used in an app notification and provides code examples for generating the XML format for an app notification.
+title: App notification content
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
-label: Toast content
+label: App notification content
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 11/14/2022
 ms.topic: article
-keywords: windows 10, uwp, toast notifications, interactive toasts, adaptive toasts, toast content, toast payload
+keywords: windows 10, uwp, toast notifications, interactive toasts, adaptive toasts, toast content, toast payload, app notifications
 ms.localizationpriority: medium
 ---
-# Toast content
+# App notification content
 
-Adaptive and interactive toast notifications let you create flexible notifications with text, images, and buttons/inputs.
+App notifications are flexible notifications with text, images, and buttons/inputs. This article describes the UI elements that can be used in an app notification and provides code examples for generating the XML format for an app notification.
 
-> **Important APIs**: [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> [!NOTE]
+> The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
 ## Getting started
 
-**Install Notifications library.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (search for "notifications uwp"). The C# samples provided in this article use version 7.0.0 of the NuGet package.
+App notifications are defined with an XML payload which is defined by the [App notification schema](/uwp/schemas/tiles/toastschema/schema-root). Currently, there are three ways of generating the XML payload fo an app notification. The code examples in this article demonstrate all three methods:
 
-**Install Notifications Visualizer.** This free Windows app helps you design interactive toast notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](notifications-visualizer.md) for more information, or [download Notifications Visualizer from the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
+- The [Microsoft.Windows.AppNotifications.Builder](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder) APIs - Introduced in Windows App SDK 1.2, this namespace provides APIs that allow you to easily build the XML payload for a notification programmatically without having to worry about the specifics of the XML format. Code examples using these APIs are in the tabs labeled "Windows App SDK".
+- The `Microsoft.Toolkit.Uwp.Notifications` builder syntax - These APIs are part of the UWP Community Toolkit and provides support for UWP apps.  Although these APIs can also be used for Windows App SDK apps, and continue to be supported, we recommend that new implementations use the **Microsoft.Windows.AppNotifications.Builder** APIs. To use Community Toolkit APIs, add the [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to your project. The C# samples provided in this article use version 7.0.0 of the NuGet package. Code examples using these APIs are in the tabs labeled "Windows Community Toolkit".
+- Raw XML - If you prefer, you can create your own custom code to generate XML strings in the required format. The raw XML examples are in the tabs labeled "XML".
 
+**Install Notifications Visualizer.** This free Windows app helps you design interactive app notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](notifications-visualizer.md) for more information, or [download Notifications Visualizer from the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
-## Sending a toast notification
+This article only covers creating the app notification content. For information on sending a notification after you have generated the XML payload, see [Send a local app notification](send-local-toast.md). 
 
-To learn how to send a notification, see [Send local toast](send-local-toast.md). This documentation only covers creating the toast content.
+## App notification structure
 
+Some important, high-level components of an app notification XML payload include:
 
-## Toast notification structure
+- **toast**: The **launch** attribute of this element defines what arguments will be passed back to your app when the user clicks your toast, allowing you to deep link into the correct content that the toast was displaying. To learn more, see [Send a local app notification](send-local-toast.md).
+- **visual**: This element represents visual portion of the toast, including the generic binding that contains text and images.
+- **actions**: This element represents interactive portion of the toast, including inputs and actions.
+- **audio**: This element specifies the audio played when the toast is shown to the user.
 
-Toast notifications are a combination of some data properties like Tag/Group (which let you identify the notification) and the *toast content*.
-
-The core components of toast content are...
-* **launch**: This defines what arguments will be passed back to your app when the user clicks your toast, allowing you to deep link into the correct content that the toast was displaying. To learn more, see [Send local toast](send-local-toast.md).
-* **visual**: The visual portion of the toast, including the generic binding that contains text and images.
-* **actions**: The interactive portion of the toast, including inputs and actions.
-* **audio**: Controls the audio played when the toast is shown to the user.
-
-The toast content is defined in raw XML, but you can use our [NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to get a C# (or C++) object model for constructing the toast content. This article documents everything that goes within the toast content.
-
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
+var builder = new AppNotificationBuilder()
+    .AddArgument("conversationId", "9813")
+
+    .AddText("Some text")
+
+    .AddButton(new AppNotificationButton("Archive")
+        .AddArgument("action", "archive"))
+
+    .SetAudioUri(new Uri("ms-appx:///Sound.mp3"));
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
     .AddArgument("conversationId", 9813)
 
     .AddText("Some text")
 
     .AddButton(new ToastButton()
         .SetContent("Archive")
-        .AddArgument("action", "archive")
-        .SetBackgroundActivation())
+        .AddArgument("action", "archive"))
 
-    .AddAudio(new Uri("ms-appx:///Sound.mp3"));
+    .AddAudio(new Uri("ms-appx:///Audio/NotificationSound.mp3"));
 ```
 
-#### [XML](#tab/xml)
+### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
+<toast launch='conversationId=9813'>
     <visual>
-        <binding template="ToastGeneric">
-        ...
-        </binding>
-    </visual>
-
-    <actions>
-        ...
-    </actions>
-
-    <audio src="ms-winsoundevent:Notification.Reminder"/>
-
+        <binding template='ToastGeneric'>
+            <text>Some text</text>
+        </binding>
+    </visual>
+    <audio src='ms-appx:///Audio/NotificationSound.mp3'/>
+    <actions>
+        <action content='Archive' arguments='action=archive'/>
+    </actions>
 </toast>
 ```
 
 ---
 
-Here is a visual representation of the toast's content:
+Here is a visual representation of the app notification's content:
 
-![toast notification structure](images/adaptivetoasts-structure.jpg)
+![An screenshot of an app notification with labels for the attribution area at the top showing the app icon and and app name Notifications Visualizer. The middle part of the toast is labeled as the visual area, which includes three lines of text. The bottom section of the toast is labeled as the action area and contains two buttons labeled Accept and Decline. ](images/toast-content-structure.png)
 
+
+## Attribution area
+
+The attribution area is at the top of the app notification. Starting with Windows 11, your app's name and icon are displayed in this area. The attribution area also includes a close button that allows the user to quickly dismiss the notification and an ellipses menu that allows the user to quickly disable notifications for your app or go to the Windows Settings page for your app's notifications. The attribution area is configured by the shell and can't be overridden in the toast XML payload, although your app can add items to the attribution area context menu. For more information see [Context menu actions](#context-menu-actions).
 
 ## Visual
 
-Each toast must specify a visual, where you must provide a generic toast binding, which can contain text, images, and more. These elements will be rendered on various Windows devices, including desktop, phones, tablets, and Xbox.
+Each app notification must specify a **visual** element, where you must provide a generic toast binding and which can contain text and images. These elements will be rendered on various Windows devices, including desktop, phones, tablets, and Xbox.
 
-For all attributes supported in the visual section and its child elements, [see the schema documentation](toast-schema.md#toastvisual).
-
-Your app's identity on the toast notification is conveyed via your app icon. However, if you use the app logo override, we will display your app name beneath your lines of text.
-
-| App identity for normal toast | App identity with appLogoOverride |
-| -- | -- |
-| <img src="images/adaptivetoasts-withoutapplogooverride.jpg" alt="notification without appLogoOverride" width="364"/> | <img alt="notification with appLogoOverride" src="images/adaptivetoasts-withapplogooverride.jpg" width="364"/> |
-
+For all attributes supported in the **visual** section and its child elements, see [App notification schema](toast-schema.md#toastvisual).
 
 ## Text elements
 
-Each toast must have at least one text element, and can contain two additional text elements, all of type [**AdaptiveText**](toast-schema.md#adaptivetext).
+Each app notification must have at least one text element, and can contain two additional text elements, all of type [**AdaptiveText**](toast-schema.md#adaptivetext).
 
-<img alt="Toast with title and description" src="images/toast-title-and-description.jpg" width="364"/>
+![A screenshot of an app notification with three lines of text. The top line of text is bold.](images/toast-content-text-elements.png)
 
 Since the Windows 10 Anniversary Update, you can control how many lines of text are displayed by using the **HintMaxLines** property on the text. The default (and maximum) is up to 2 lines of text for the title, and up to 4 lines (combined) for the two additional description elements (the second and third **AdaptiveText**).
 
-#### [Builder syntax](#tab/builder-syntax)
+
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
+var builder = new AppNotificationBuilder()
+    .AddArgument("conversationId", 9813)
+    .AddText("Adaptive Tiles Meeting", new AppNotificationTextProperties().SetMaxLines(1))
+    .AddText("Conf Room 2001 / Building 135")
+    .AddText("10:00 AM - 10:30 AM");
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddArgument("meetingId", 9813)
     .AddText("Adaptive Tiles Meeting", hintMaxLines: 1)
     .AddText("Conf Room 2001 / Building 135")
     .AddText("10:00 AM - 10:30 AM");
 ```
 
-#### [XML](#tab/xml)
+### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
+<toast launch='meetingId=9813'>
     <visual>
-        <binding template="ToastGeneric">
-            <text hint-maxLines="1">Adaptive Tiles Meeting</text>
+        <binding template='ToastGeneric'>
+            <text hint-maxLines='1'>Adaptive Tiles Meeting</text>
             <text>Conf Room 2001 / Building 135</text>
             <text>10:00 AM - 10:30 AM</text>
         </binding>
     </visual>
+</toast>
+```
 
+---
+
+## Inline image
+
+By default, images are displayed inline, after any text elements, filling the full width of the visual area.
+
+![A screenshot of an app notification showing the default image placement, inline, filling the full width of the visual area.](images/toast-content-inline-image.png)
+
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+var builder = new AppNotificationBuilder()
+    .AddText("Featured image of the day.")
+    .SetInlineImage(new Uri("ms-appx:///Images/InlineImage.png"));
+
+AppNotificationManager.Default.Show(builder.BuildNotification());
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("Featured image of the day.")
+    .AddInlineImage(new Uri("ms-appx:///Images/InlineImage.png"));
+```
+
+### [XML](#tab/xml)
+
+```xml
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Featured image of the day.</text>
+            <image src='ms-appx:///Images/InlineImage.png'/>
+        </binding>
+    </visual>
 </toast>
 ```
 
@@ -133,105 +186,122 @@ new ToastContentBuilder()
 
 ## App logo override
 
-By default, your toast will display your app's logo. However, you can override this logo with your own [**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo) image. For example, if this is a notification from a person, we recommend overriding the app logo with a picture of that person.
+Specifying a **placement** value of "appLogoOverride" will cause the image to be displayed in a square on the left side of the visual area. The name of this property reflects the behavior in previous versions of Windows, where the image would replace the default app logo image. In Windows 11, the app logo is displayed in the attribution area, so it is not overridden by the **appLogoOverride** image placement.
 
-<img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
+Image dimensions are 48x48 pixels at 100% scaling. We generally recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. 
 
-You can use the **HintCrop** property to change the cropping of the image. For example, **Circle** results in a circle-cropped image. Otherwise, the image is square. Image dimensions are 48x48 pixels at 100% scaling. We generally recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. 
+![A screenshot of an app notification showing the app logo override image placement in a square on the left side of the visual area of the notification.](images/toast-content-applogooverride.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
-    ...
-    
-    .AddAppLogoOverride(new Uri("https://picsum.photos/48?image=883"), NotificationAppLogoCrop.Circle);
+var builder = new AppNotificationBuilder()
+    .AddText("Featured image of the day.")
+    .SetAppLogoOverride(new Uri("ms-appx:///Images/AppLogo.png"));
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("Featured image of the day.")
+    .AddAppLogoOverride(new Uri("ms-appx:///Images/AppLogo.png"));
 ```
 
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
+<toast>
     <visual>
-        <binding template="ToastGeneric">
-            ...
-            <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+        <binding template='ToastGeneric'>
+            <text>Featured image of the day.</text>
+            <image placement='appLogoOverride' src='ms-appx:///Images/AppLogo.png'/>
         </binding>
     </visual>
-
 </toast>
 ```
 
 ---
 
+## Hint crop
 
+Microsoft style guidelines recommend representing profile pictures with a circular image to provide a consistent representation of people across apps and the shell. Set the **HintCrop** property to **Circle** to render the image with a circular crop.  
+
+![A screenshot of an app notification showing the app logo override image placement cropped into a circle on the left side of the visual area of the toast.](images/toast-content-hint-crop.png)
+
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+var builder = new AppNotificationBuilder()
+    .AddText("Matt sent you a friend request")
+    .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
+    .SetAppLogoOverride(new Uri("ms-appx:///Images/Profile.png"), AppNotificationImageCrop.Circle);
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("Matt sent you a friend request")
+    .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
+    .AddAppLogoOverride(new Uri("ms-appx:///Images/Profile.png"), ToastGenericAppLogoCrop.Circle);
+```
+
+### [XML](#tab/xml)
+
+```xml
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Matt sent you a friend request</text>
+            <text>Hey, wanna dress up as wizards and ride around on hoverboards?</text>
+            <image placement='appLogoOverride' src='ms-appx:///Images/Profile.png' hint-crop='circle'/>
+        </binding>
+    </visual>
+</toast>
+```
+
+---
 
 ## Hero image
 
-**New in Anniversary Update**: Toasts can display a hero image, which is a featured [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Action Center. Image dimensions are 364x180 pixels at 100% scaling.
+**New in Anniversary Update**: App notifications can display a hero image, which is a featured [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Notification Center. Image dimensions are 364x180 pixels at 100% scaling.
 
-<img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
+![A screenshot of an app notification showing the hero image placement, above the attribution area.](images/toast-content-hero-image.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+var builder = new AppNotificationBuilder()
+    .AddText("Marry Anne")
+    .AddText("Check out where we camped last night!")
+    .SetHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
+```
+
+### [Community Tookit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
-    ...
-    
-    .AddHeroImage(new Uri("https://picsum.photos/364/180?image=1043"));
+    .AddText("Marry Anne")
+    .AddText("Check out where we camped last night!")
+    .AddHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
 ```
 
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
+<toast>
     <visual>
-        <binding template="ToastGeneric">
-            ...
-            <image placement="hero" src="https://picsum.photos/364/180?image=1043"/>
+        <binding template='ToastGeneric'>
+            <text>Mary Anne</text>
+            <text>Check out where we camped last night!</text>
+            <image placement='hero' src='ms-appx:///Images/HeroImage.png'/>
         </binding>
     </visual>
-
 </toast>
 ```
 
 ---
-
-
-## Inline image
-
-You can provide a full-width inline-image that appears when you expand the toast.
-
-<img alt="Toast with additional image" src="images/toast-additionalimage.jpg" width="364"/>
-
-#### [Builder syntax](#tab/builder-syntax)
-
-```csharp
-new ToastContentBuilder()
-    ...
-    
-    .AddInlineImage(new Uri("https://picsum.photos/360/202?image=1043"));
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast launch="app-defined-string">
-
-    <visual>
-        <binding template="ToastGeneric">
-            ...
-            <image src="https://picsum.photos/360/202?image=1043" />
-        </binding>
-    </visual>
-
-</toast>
-```
-
----
-
 
 ## Image size restrictions
 
@@ -252,33 +322,45 @@ If an image exceeds the file size, or fails to download, or times out, the image
 
 ## Attribution text
 
-**New in Anniversary Update**: If you need to reference the source of your content, you can use attribution text. This text is always displayed at the bottom of your notification, along with your app's identity or the notification's timestamp.
+**New in Anniversary Update**: If you need to reference the source of your content, you can use attribution text. This text is always displayed below any text elements, but above inline images. The text uses a slightly smaller size than standard text elements to help to distinguish from regular text elements.
 
 On older versions of Windows that don't support attribution text, the text will simply be displayed as another text element (assuming you don't already have the maximum of three text elements).
 
-<img alt="Toast with attribution text" src="images/toast-attributiontext.jpg" width="364"/>
 
-#### [Builder syntax](#tab/builder-syntax)
+![A screenshot of a toast notification showing the attribution text "via SMS" below the other lines of text in the visual area of the toast.](images/toast-content-attribution-text.png)
+
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+var builder = new AppNotificationBuilder()
+    .AddText("Marry Anne")
+    .AddText("Check out where we camped last night!")
+    .SetAttributionText("via SMS");
+    .SetHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
+```
+
+### [Community Tookit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
-    ...
-    
+    .AddText("Marry Anne")
+    .AddText("Check out where we camped last night!")
     .AddAttributionText("Via SMS");
+    .AddHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
 ```
 
-#### [XML](#tab/xml)
+### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    <visual>
-        <binding template="ToastGeneric">
-            ...
-            <text placement="attribution">Via SMS</text>
-        </binding>
-    </visual>
-
+<toast>  
+  <visual>
+    <binding template="ToastGeneric">
+      <image src="ms-appx:///Images/HeroImage.png"/>
+      <text>Mary Anne</text>
+      <text>Check out where we camped last night!</text>
+      <text placement="attribution">Via SMS</text>
+    </binding>
+  </visual>
 </toast>
 ```
 
@@ -287,26 +369,40 @@ new ToastContentBuilder()
 
 ## Custom timestamp
 
-**New in Creators Update**: You can now override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Action Center.
+**New in Creators Update**: You can now override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Notification Center.
 
-<img alt="Toast with custom timestamp" src="images/toast-customtimestamp.jpg" width="396"/>
+![Screenshot of a notification in the Notifications Center with a custom timestamp](images/toast-content-custom-timestamp.png)
 
 To learn more about using a custom timestamp, please see [custom timestamps on toasts](custom-timestamps-on-toasts.md).
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
-    ...
-    
+var builder = new AppNotificationBuilder()
+    .AddText("Matt sent you a friend request")
+    .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
+    .SetTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("Matt sent you a friend request")
+    .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
     .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
 ```
 
-#### [XML](#tab/xml)
+### [XML](#tab/xml)
 
 ```xml
-<toast displayTimestamp="2017-04-15T19:45:00Z">
-  ...
+<toast displayTimestamp='2017-04-15T12:45:00-07:00'>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Matt sent you a friend request</text>
+            <text>Hey, wanna dress up as wizards and ride around on hoverboards?</text>
+        </binding>
+    </visual>
 </toast>
 ```
 
@@ -315,18 +411,18 @@ new ToastContentBuilder()
 
 ## Progress bar
 
-**New in Creators Update**: You can provide a progress bar on your toast notification to keep the user informed of the progress of operations such as downloads.
+**New in Creators Update**: You can provide a progress bar on your app notification to keep the user informed of the progress of operations such as downloads.
 
-<img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
+![A screenshot of a toast notification showing a progress bar.](images/toast-content-progress-bar.png)
 
 To learn more about using a progress bar, please see [Toast progress bar](toast-progress-bar.md).
 
 
 ## Headers
 
-**New in Creators Update**: You can group notifications under headers within Action Center. For example, you can group messages from a group chat under a header, or group notifications of a common theme under a header, or more.
+**New in Creators Update**: You can group notifications under headers within Notification Center. For example, you can group messages from a group chat under a header, or group notifications of a common theme under a header, or more.
 
-<img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
+![A screenshot of a action center showing multiple notifications for the application Notifications Viewer organized under a header labeled "Camping!".](images/toast-content-headers.png)
 
 To learn more about using headers, please see [Toast headers](toast-headers.md).
 
@@ -344,9 +440,15 @@ Note that any adaptive content must be contained within an [**AdaptiveGroup**](.
 
 Here's an example where columns and some advanced adaptive text elements are used. Since the text elements are within an **AdaptiveGroup**, they support all the rich adaptive styling properties.
 
-<img alt="Toast with additional text" src="images/toast-additionaltext.jpg" width="364"/>
+![A screenshot of a toast notification showing groups of text elements aligned to the left and right of the visual area of the toast.](images/toast-content-columns.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+// The Microsoft.Windows.AppNotifications.Builder syntax does not currently support adaptive text elements.
+```
+
+### [Builder syntax](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -394,27 +496,26 @@ new ToastContentBuilder()
     });
 ```
 
-#### [XML](#tab/xml)
+### [XML](#tab/xml)
 
 ```xml
 <toast launch="app-defined-string">
-
-    <visual>
-        <binding template="ToastGeneric">
-            ...
-            <group>
-                <subgroup>
-                    <text hint-style="base">52 attendees</text>
-                    <text hint-style="captionSubtle">23 minute drive</text>
-                </subgroup>
-                <subgroup>
-                    <text hint-style="captionSubtle" hint-align="right">1 Microsoft Way</text>
-                    <text hint-style="captionSubtle" hint-align="right">Bellevue, WA 98008</text>
-                </subgroup>
-            </group>
-        </binding>
-    </visual>
-
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Reminder: Windows Launch Party</text>
+      <text>4:00 PM, 10/21/2021</text>
+      <group>
+        <subgroup>
+          <text hint-style="base">52 attendees</text>
+          <text hint-style="captionSubtle">23 minute drive</text>
+        </subgroup>
+        <subgroup>
+          <text hint-style="captionSubtle" hint-align="right">1 Microsoft Way</text>
+          <text hint-style="captionSubtle" hint-align="right">Bellevue, WA 98008</text>
+        </subgroup>
+      </group>
+    </binding>
+  </visual>
 </toast>
 ```
 
@@ -423,59 +524,63 @@ new ToastContentBuilder()
 
 ## Buttons
 
-Buttons make your toast interactive, letting the user take quick actions on your toast notification without interrupting their current workflow. For example, users can reply to a message directly from within a toast, or delete an email without even opening the email app. Buttons appear in the expanded portion of your notification.
+Buttons make your toast interactive, letting the user take quick actions on your app notification without interrupting their current workflow. For example, users can reply to a message directly from within a toast, or delete an email without even opening the email app. Buttons appear in the expanded portion of your notification.
 
 To learn more about implementing buttons end-to-end, see [Send local toast](send-local-toast.md).
 
-Buttons can perform the following different actions...
+Buttons can activate an app in the following ways:
 
--   Activating the app in the foreground, with an argument that can be used to navigate to a specific page/context.
--   Activating the app's background task, for a quick-reply or similar scenario.
--   Activating another app via protocol launch.
--   Performing a system action, such as snoozing or dismissing the notification.
+- The app is activated in the foreground, with an argument that can be used to navigate to a specific page/context.
+- Another app is activated via protocol launch. 
+- Background activation is supported explicitly for UWP apps. For Windows App SDK apps, the app is always launched in the foreground. The app can call [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to detect if the activation was launched by a notification and determine from the passed arguments whether to fully launch the foreground app or just handle the notification and exit. 
+- System actions, such as snoozing or dismissing the notification, are supported both for UWP apps and for Windows App SDK. The **AppNotificationBuilder** APIs don't support this scenario but Windows App SDK apps can implement this scenario using the **Microsoft.Windows.AppNotifications.Builder** APIs or raw XML.
 
 > [!NOTE]
 > You can only have up to 5 buttons (including context menu items which we discuss later).
 
-<img alt="notification with actions, example 1" src="images/adaptivetoasts-xmlsample02.jpg" width="364"/>
+![A screenshot of a toast notification showing a line of text followed a row with two buttons defined by action elements".](images/toast-content-buttons.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
 new ToastContentBuilder()
-    ...
-    
+    var builder = new AppNotificationBuilder()
+        .AddText("New product in stock!")
+        .AddButton(new AppNotificationButton("See more details")
+            .AddArgument("action", "viewDetails"))
+            .AddArgument("contentId", "351")
+        .AddButton(new AppNotificationButton("Remind me later")
+            .AddArgument("action", "remindLater"))
+            .AddArgument("contentId", "351");
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("New product in stock!")
     .AddButton(new ToastButton()
         .SetContent("See more details")
         .AddArgument("action", "viewDetails"))
 
     .AddButton(new ToastButton()
         .SetContent("Remind me later")
-        .AddArgument("action", "remindLater")
-        .SetBackgroundActivation());
+        .AddArgument("action", "remindLater"));
 ```
 
-#### [XML](#tab/xml)
+### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    ...
-
-    <actions>
-
-        <action
-            content="See more details"
-            arguments="action=viewDetails&amp;contentId=351"
-            activationType="foreground"/>
-
-        <action
-            content="Remind me later"
-            arguments="action=remindlater&amp;contentId=351"
-            activationType="background"/>
-
-    </actions>
-
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>New product in stock!</text>
+        </binding>
+    </visual>
+      <actions>
+          <action content='See more details' arguments='action=viewDetails;contentId=351'/>
+          <action content='Remind me later' arguments='action=remindLater;contentId=351'/>
+      </actions>
 </toast>
 ```
 
@@ -487,40 +592,60 @@ new ToastContentBuilder()
 You can add icons to your buttons. These icons are white transparent 16x16 pixel images at 100% scaling, and should have no padding included in the image itself. If you choose to provide icons on a toast notification, you must provide icons for ALL of your buttons in the notification, as it transforms the style of your buttons into icon buttons.
 
 > [!NOTE]
-> For accessibility, be sure to include a contrast-white version of the icon (a black icon for white backgrounds), so that when the user turns on High Contrast White mode, your icon is visible. Learn more on the [toast accessiblity page](tile-toast-language-scale-contrast.md).
+> For accessibility, be sure to include a contrast-white version of the icon (a black icon for white backgrounds), so that when the user turns on High Contrast White mode, your icon is visible. For more information, see [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md).
 
-<img src="images\adaptivetoasts-buttonswithicons.png" width="364" alt="Toast that has buttons with icons"/>
+![Screenshot of an app notification that uses buttons with icons.](images/toast-content-button-icons.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
 new ToastContentBuilder()
-    ...
-    
+    var builder = new AppNotificationBuilder()
+        .AddText("Return books to the library.")
+        .AddButton(new AppNotificationButton("Accept")
+            .AddArgument("action", "accept")
+            .SetIcon(new Uri("ms-appx:///Images/Accept.png")))
+        .AddButton(new AppNotificationButton("Snooze")
+            .AddArgument("action", "snooze")
+            .SetIcon(new Uri("ms-appx:///Images/Snooze.png")))
+        .AddButton(new AppNotificationButton("Dismiss")
+            .AddArgument("action", "dismiss")
+            .SetIcon(new Uri("ms-appx:///Images/Dismiss.png")));
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("New product in stock!")
+    .AddButton(new ToastButton()
+        .SetContent("Accept")
+        .AddArgument("action", "accept")
+        .SetImageUri(new Uri("ms-appx:///Images/Accept.png")))
+    .AddButton(new ToastButton()
+        .SetContent("Snooze")
+        .AddArgument("action", "snooze")
+        .SetImageUri(new Uri("ms-appx:///Images/Snooze.png")))
     .AddButton(new ToastButton()
         .SetContent("Dismiss")
         .AddArgument("action", "dismiss")
-        .SetImageUri(new Uri("Assets/NotificationButtonIcons/Dismiss.png", UriKind.Relative))
-        .SetBackgroundActivation());
+        .SetImageUri(new Uri("ms-appx:///Images/Dismiss.png")));
 ```
 
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    ...
-
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Return books to the library.</text>
+        </binding>
+    </visual>
     <actions>
-        
-        <action
-            content="Dismiss"
-            imageUri="Assets/NotificationButtonIcons/Dismiss.png"
-            arguments="dismiss"
-            activationType="background"/>
-
+        <action content='Accept' arguments='action=accept' imageUri='ms-appx:///Assets/Accept.png'/>
+        <action content='Snooze' arguments='action=snooze' imageUri='ms-appx:///Assets/Snooze.png'/>
+        <action content='Dismiss' arguments='action=dismiss' imageUri='ms-appx:///Assets/Dismiss.png'/>
     </actions>
-
 </toast>
 ```
 
@@ -528,30 +653,40 @@ new ToastContentBuilder()
 
 **New in Windows 11 Update**: You can add tooltips to your icons with the **HintToolTip** property in XML. This is ideal if your buttons have icons but no content, as this will make sure you can pass text that Windows Narrator can read. However, if content is present, then Narrator will read the content, no matter what is passed in the tooltip.
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-// The builder syntax does not support icon tooltips yet. 
+var button = new AppNotificationButton("Reply")
+    .AddArgument("action", "reply");
+
+if (AppNotificationButton.IsToolTipSupported())
+{
+    button.ToolTip = "Click to reply.";
+}
+
+var builder = new AppNotificationBuilder()
+    .AddText("Notification text.")
+    .AddButton(button); 
 ```
 
-#### [XML](#tab/xml)
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+// The Community Toolkit builder syntax does not currently support icon tooltips. 
+```
+
+### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    ...
-
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Notification text.</text>
+        </binding>
+    </visual>
     <actions>
-        
-        <action
-            content=""
-            hint-toolTip="Dismiss"
-            imageUri="Assets/NotificationButtonIcons/Dismiss.png"
-            arguments="dismiss"
-            activationType="background"/>
-
+        <action content='Reply' arguments='action=reply' hint-toolTip='Click to reply'/>
     </actions>
-
 </toast>
 ```
 
@@ -559,64 +694,81 @@ new ToastContentBuilder()
 
 ### Buttons with colors
 
-**New in Windows 11 Update**: You can add red or green colors to your buttons by adding the **useButtonStyle** attribute to the toast XML element and the **hint-buttonStyle** attribute to the action XML element as seen below.
+**New in Windows 11 Update**: You can add red or green colors to your buttons by adding the **useButtonStyle** attribute to the **toast** XML element and the **hint-buttonStyle** attribute to the action XML element as seen below.
 
 
-<img alt="notification with buttons with colors" src="images/toast-button-with-colors.png" width="364"/>
+![A screenshot of a notification with three buttons, the two left buttons are green with icons for starting a video call or starting an audio call. The third button is red and has an icon for rejecting the call.](images/toast-content-button-colors.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-// The builder syntax does not support red and green button colors yet.
+var builder = new AppNotificationBuilder()
+    .SetScenario(AppNotificationScenario.IncomingCall)
+    .AddText("Andrew Bares", new AppNotificationTextProperties()
+        .SetIncomingCallAlignment())
+      .AddText("Incoming Call - Mobile", new AppNotificationTextProperties()
+        .SetIncomingCallAlignment())
+      .SetInlineImage(new Uri("ms-appx:///Images/Profile.png"),
+        AppNotificationImageCrop.Circle)
+    .AddButton(new AppNotificationButton()
+        .SetToolTip("Answer Video Call")
+        .SetButtonStyle(AppNotificationButtonStyle.Success)
+        .SetIcon(new Uri("ms-appx:///Images/Video.png"))
+        .AddArgument("videoId", "123"))
+    .AddButton(new AppNotificationButton()
+        .SetToolTip("Answer Phone Call")
+        .SetButtonStyle(AppNotificationButtonStyle.Success)
+        .SetIcon(new Uri("ms-appx:///Images/Call.png"))
+        .AddArgument("callId", "123"))
+    .AddButton(new AppNotificationButton()
+        .SetToolTip("Hang Up")
+        .SetButtonStyle(AppNotificationButtonStyle.Critical)
+        .SetIcon(new Uri("ms-appx:///Images/HangUp.png"))
+        .AddArgument("hangUpId", "123"));
 ```
 
-#### [XML](#tab/xml)
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+// The WIndows Community Toolkit builder syntax does not currently support red and green button colors.
+```
+
+### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string" useButtonStyle="true">
-
-    ...
-
+<toast scenario='incomingCall' useButtonStyle='true'>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text hint-callScenarioCenterAlign='true'>Andrew Bares</text>
+            <text hint-callScenarioCenterAlign='true'>Incoming Call - Mobile</text>
+            <image src='ms-appx:///Images/InlineImage.png' hint-crop='circle'/>
+        </binding>
+    </visual>
     <actions>
-        
-        <action
-            content=""
-            hint-toolTip="Answer Video Call"
-            hint-buttonStyle="Success"
-            imageUri="Assets/Icons/VideoCall.png"
-            activationType="foreground"
-            arguments="videoId" />
-
-        <action
-            content=""
-            hint-toolTip="Answer Phone Call"
-            hint-buttonStyle="Success"
-            imageUri="Assets/Icons/PhoneCall.png"
-            activationType="foreground"
-            arguments="answerId" />
-
-        <action
-            content=""
-            hint-toolTip="Hang Up"
-            hint-buttonStyle="Critical"
-            imageUri="Assets/Icons/HangUp.png"
-            activationType="background"
-            arguments="hangupId" />
-
+        <action 
+            content='' 
+            arguments='videoId=123' 
+            imageUri='ms-appx:///Images/Video.png' 
+            hint-buttonStyle='Success' 
+            hint-toolTip='Answer Video Call'/>
+        <action 
+            content='' 
+            arguments='callId=123' 
+            imageUri='ms-appx:///Images/Call.png' 
+            hint-buttonStyle='Success' 
+            hint-toolTip='Answer Phone Call'/>
+        <action 
+            content='' 
+            arguments='hangUpId=123' 
+            imageUri='ms-appx:///Images/HangUp.png' 
+            hint-buttonStyle='Critical' 
+            hint-toolTip='Hang Up'/>
     </actions>
-
 </toast>
 ```
 
 ---
 
-### Buttons with pending update activation
-
-**New in Fall Creators Update**: On background activation buttons, you can use an after activation behavior of **PendingUpdate** to create multi-step interactions in your toast notifications. When the user clicks your button, your background task is activated, and the toast gets placed in a "pending update" state, where it stays on screen till your background task replaces the toast with a new toast.
-
-To learn how to implement this, see [Toast pending update](toast-pending-update.md).
-
-![Toast with pending update](images/toast-pendingupdate.gif)
 
 
 ## Context menu actions
@@ -624,16 +776,26 @@ To learn how to implement this, see [Toast pending update](toast-pending-update.
 **New in Anniversary Update**: You can add additional context menu actions to the existing context menu that appears when the user right clicks your toast notification or selects the context menu icon.
 
 > [!NOTE]
-> On older devices, these additional context menu actions will simply appear as normal buttons on your toast.
+> On older devices, these additional context menu actions will simply appear as normal buttons on your notification.
 
 The additional context menu actions you add (such as "Mute group chat for 1 hour") appear above the two default system entries.
 
-![Toast with context menu](images/toast-contextmenu.png)
+![Toast with context menu](images/toast-content-context-menu.png)
 
+### [Windows App SDK](#tab/appsdk)
 
-#### [Builder syntax](#tab/builder-syntax)
+```csharp
+var builder = new AppNotificationBuilder()
+    .AddText("Camping this weekend?")
+    .SetAppLogoOverride(new Uri("ms-appx:///images/Reply.png"), AppNotificationImageCrop.Circle)
+    .AddButton(new AppNotificationButton("Mute group chat for 1 hour")
+        .AddArgument("action", "mute")
+        .SetContextMenuPlacement());
+```
 
-The builder syntax doesn't support context menu actions, so we recommend using initializer syntax.
+### [Community Tookit](#tab/toolkit)
+
+The Windows Community Toolkit builder syntax doesn't currently support context menu actions, so we recommend using initializer syntax.
 
 ```csharp
 ToastContent content = new ToastContent()
@@ -650,22 +812,19 @@ ToastContent content = new ToastContent()
 };
 ```
 
-#### [XML](#tab/xml)
+### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    ...
-
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Camping this weekend?</text>
+            <image placement='appLogoOverride' src='ms-appx:///images/Reply.png' hint-crop='circle'/>
+        </binding>
+    </visual>
     <actions>
-
-        <action
-            placement="contextMenu"
-            content="Mute group chat for 1 hour"
-            arguments="action=muteId"/>
-
+        <action content='Mute group chat for 1 hour' arguments='action=mute' placement='contextMenu'/>
     </actions>
-
 </toast>
 ```
 
@@ -679,51 +838,57 @@ Activation of additional context menu items is handled identical to toast button
 
 ## Inputs
 
-Inputs are specified within the Actions region of the toast region of the toast, meaning they are only visible when the toast is expanded.
+Inputs are specified within the **Actions** region of the app notification, meaning they are only visible when the notification is expanded.
 
 
 ### Quick reply text box
 
-To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to to the input field. The icon for the button should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
+To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to to the input field. The optional icon for the button, if provided, should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
 
-<img alt="notification with text input and actions" src="images/adaptivetoasts-xmlsample05.jpg" width="364"/>
+![A screenshot of a toast notification with a profile picture and some lines of text. A text box for typing directly into the toast is included as well as a button to send the reply.](images/toast-content-text-box.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
-    ...
-    
-    .AddInputTextBox("tbReply", "Type a reply")
+var builder = new AppNotificationBuilder()
+    .AddTextBox("textBox", "Type a reply", "Reply")
+    .AddButton(AppNotificationButton("Send")
+        .AddArguments("action", "Send")
+        .SetInputId("textBox"))
+    .BuildNotification();
+```
 
-    .AddButton(new ToastButton()
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddInputTextBox("tbReply", "Type a reply")
+        .AddButton(new ToastButton()
         .SetContent("Reply")
         .SetTextBoxId("tbReply") // To place button next to text box, reference text box's id
         .SetImageUri(new Uri("Assets/Reply.png", UriKind.Relative))
-        .AddArgument("action", "reply")
-        .SetBackgroundActivation());
+        .AddArgument("action", "reply"));
 ```
 
-#### [XML](#tab/xml)
+### [XML](#tab/xml)
 
 ```xml
 <toast launch="app-defined-string">
-
-    ...
-
-    <actions>
-
-        <input id="textBox" type="text" placeHolderContent="Type a reply"/>
-
-        <action
-            content="Send"
-            arguments="action=reply&amp;convId=9318"
-            activationType="background"
-            hint-inputId="textBox"
-            imageUri="Assets/Reply.png"/>
-
-    </actions>
-
+  <visual>
+    <binding template="ToastGeneric">
+      <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+      <text>Andrew Bares</text>
+      <text>Shall we meet up at 8?</text>
+    </binding>
+  </visual>
+  <actions>
+    <input id="textBox" type="text" placeHolderContent="Type a reply"/>
+    <action
+      content="Send"
+      arguments="action=reply&amp;convId=9318"
+      hint-inputId="textBox"
+      imageUri="Assets/Reply.png"/>
+  </actions>
 </toast>
 ```
 
@@ -735,9 +900,15 @@ new ToastContentBuilder()
 
 You also can have one (or many) inputs with normal buttons displayed below the inputs.
 
-<img alt="notification with text and input actions" src="images/adaptivetoasts-xmlsample04.jpg" width="364"/>
+![A screenshot of an app notification showing a line of text, a text box, and a row with two buttons labeled "Reply" and "Video call".](images/toast-content-input-with-buttons.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+// The Microsoft.Windows.AppNotifications.Builder syntax does not currently support quick reply text boxes.
+```
+
+### [Community Tookit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -747,37 +918,34 @@ new ToastContentBuilder()
 
     .AddButton(new ToastButton()
         .SetContent("Reply")
-        .AddArgument("action", "reply")
-        .SetBackgroundActivation())
+        .AddArgument("action", "reply"))
 
     .AddButton(new ToastButton()
         .SetContent("Video call")
         .AddArgument("action", "videoCall"));
 ```
 
-#### [XML](#tab/xml)
+### [XML](#tab/xml)
 
 ```xml
 <toast launch="app-defined-string">
-
-    ...
-
-    <actions>
-
-        <input id="textBox" type="text" placeHolderContent="Type a reply"/>
-
-        <action
-            content="Reply"
-            arguments="action=reply&amp;threadId=9218"
-            activationType="background"/>
-
-        <action
-            content="Video call"
-            arguments="action=videocall&amp;threadId=9218"
-            activationType="foreground"/>
-
-    </actions>
-
+  <visual>
+    <binding template="ToastGeneric">
+      <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+      <text>Andrew Bares</text>
+      <text>Shall we meet up at 8?</text>
+    </binding>
+  </visual>
+  <actions>
+    <input id="textBox" type="text" placeHolderContent="Type a reply"/>
+    <action
+      content="Reply"
+      arguments="action=reply&amp;threadId=9218"/>
+    <action
+      content="Video call"
+      arguments="action=videocall&amp;threadId=9218"
+      activationType="foreground"/>
+  </actions>
 </toast>
 ```
 
@@ -788,48 +956,75 @@ new ToastContentBuilder()
 
 In addition to text boxes, you can also use a selection menu.
 
-<img alt="notification with selection input and actions" src="images/adaptivetoasts-xmlsample06.jpg" width="364"/>
+![A screenshot of an app notification showing a line of text, a selection input with "Lunch" as the selected item, and a row with two buttons labeled "Reserve" and "Call restaurant".](images/toast-content-selection-input.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
-    ...
-    
+var builder = new AppNotificationBuilder()
+    .AddText("4th coffee?")
+    .AddText("When do you plan to come in tomorrow?")
+    .AddComboBox(new AppNotificationComboBox("time")
+        .SetTitle("Select an item:")
+        .AddItem("breakfast", "Breakfast")
+        .AddItem("lunch", "Lunch")
+        .AddItem("dinner", "Dinner")
+        .SetSelectedItem("lunch"))
+    .AddButton(new AppNotificationButton("Reply")
+        .AddArgument("action", "reply")
+        .AddArgument("threadId", "9218")
+        .SetContextMenuPlacement())
+    .AddButton(new AppNotificationButton("Call restaurant")
+        .AddArgument("action", "videocall")
+        .AddArgument("threadId", "9218")
+        .SetContextMenuPlacement());
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("4th coffee?")
+    .AddText("When do you plan to come in tomorrow?")
     .AddToastInput(new ToastSelectionBox("time")
     {
         DefaultSelectionBoxItemId = "lunch",
         Items =
-        {
-            new ToastSelectionBoxItem("breakfast", "Breakfast"),
-            new ToastSelectionBoxItem("lunch", "Lunch"),
-            new ToastSelectionBoxItem("dinner", "Dinner")
-        }
+            {
+                new ToastSelectionBoxItem("breakfast", "Breakfast"),
+                new ToastSelectionBoxItem("lunch", "Lunch"),
+                new ToastSelectionBoxItem("dinner", "Dinner")
+            }
     })
-
-    .AddButton(...)
-    .AddButton(...);
+    .AddButton(new ToastButton()
+        .SetContent("Reply")
+        .AddArgument("action", "reply")
+        .AddArgument("threadId", "9218"))
+    .AddButton(new ToastButton()
+        .SetContent("Call restaurant")
+        .AddArgument("action", "videoCall")
+        .AddArgument("threadId", "9218"));
 ```
 
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    ...
-
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>4th coffee?</text>
+            <text>When do you plan to come in tomorrow?</text>
+        </binding>
+    </visual>
     <actions>
-
-        <input id="time" type="selection" defaultInput="lunch">
-            <selection id="breakfast" content="Breakfast" />
-            <selection id="lunch" content="Lunch" />
-            <selection id="dinner" content="Dinner" />
+        <input id='time' type='selection' title='Select an item:' defaultInput='lunch'>
+            <selection id='breakfast' content='Breakfast'/><selection id='dinner' content='Dinner'/>
+            <selection id='lunch' content='Lunch'/>
         </input>
-
-        ...
-
+        <action content='Reply' arguments='action=reply;threadId=9218' placement='contextMenu'/>
+        <action content='Call Restaurant' arguments='action=videocall;threadId=9218' placement='contextMenu'/>
     </actions>
-
 </toast>
 ```
 
@@ -839,13 +1034,23 @@ new ToastContentBuilder()
 
 ### Snooze/dismiss
 
-Using a selection menu and two buttons, we can create a reminder notification that utilizes the system snooze and dismiss actions. Make sure to set the scenario to Reminder for the notification to behave like a reminder.
+Using a selection menu and two buttons, we can create a reminder notification that utilizes the system snooze and dismiss actions. Make sure to set the scenario to "Reminder" for the notification to behave like a reminder.
 
-<img alt="reminder notification" src="images/adaptivetoasts-xmlsample07.jpg" width="364"/>
+![A screenshot of an app notification with lines of text describing the time and location of a meeting. A selection box has "15 minutes" selected and there are buttons labeled Snooze and Dismiss.](images/toast-content-snooze-dismiss.png)
 
 We link the Snooze button to the selection menu input using the **SelectionBoxId** property on the toast button.
 
-#### [Builder syntax](#tab/builder-syntax)
+The **Microsoft.Windows.AppNotifications.Builder** syntax does not currently support system activation. But this scenario is supported for Windows App SDK apps, and you can build notifications for this scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
+
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+// The Microsoft.Windows.AppNotifications.Builder syntax does not currently support system activation. 
+// But this scenario is supported for Windows App SDK apps, and you can build notifications for this 
+// scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
+```
+
+### [Community Tookit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -873,26 +1078,25 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="reminder" launch="app-defined-string">
-   
-    ...
-    
-    <actions>
-     
-        <input id="snoozeTime" type="selection" defaultInput="15">
-            <selection id="1" content="1 minute"/>
-            <selection id="15" content="15 minutes"/>
-            <selection id="60" content="1 hour"/>
-            <selection id="240" content="4 hours"/>
-            <selection id="1440" content="1 day"/>
-        </input>
- 
-        <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
- 
-        <action activationType="system" arguments="dismiss" content=""/>
-     
-    </actions>
-   
+<toast>
+  <visual>
+    <binding template="ToastGeneric">
+      <text hint-maxLines="1">Adaptive Tiles Meeting</text>
+      <text>Conf Room 2001 / Building 135</text>
+      <text>10:00 AM - 10:30 AM</text>
+    </binding>
+  </visual>
+  <actions>
+    <input id="snoozeTime" type="selection" defaultInput="15">
+      <selection id="1" content="1 minute"/>
+      <selection id="15" content="15 minutes"/>
+      <selection id="60" content="1 hour"/>
+      <selection id="240" content="4 hours"/>
+      <selection id="1440" content="1 day"/>
+    </input>
+    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+    <action activationType="system" arguments="dismiss" content=""/>
+  </actions>
 </toast>
 ```
 
@@ -902,79 +1106,128 @@ To use the system snooze and dismiss actions:
 
 -   Specify a **ToastButtonSnooze** or **ToastButtonDismiss**
 -   Optionally specify a custom content string:
-    -   If you don't provide a string, we'll automatically use localized strings for "Snooze" and "Dismiss".
+  -   If you don't provide a string, we'll automatically use localized strings for "Snooze" and "Dismiss".
 -   Optionally specify the **SelectionBoxId**:
-    -   If you don't want the user to select a snooze interval and instead just want your notification to snooze only once for a system-defined time interval (that is consistent across the OS), then don't construct any &lt;input&gt; at all.
-    -   If you want to provide snooze interval selections:
-        -   Specify **SelectionBoxId** in the snooze action
-        -   Match the id of the input with the **SelectionBoxId** of the snooze action
-        -   Specify **ToastSelectionBoxItem**'s value to be a nonNegativeInteger which represents snooze interval in minutes.
+  -   If you don't want the user to select a snooze interval and instead just want your notification to snooze only once for a system-defined time interval (that is consistent across the OS), then don't construct any &lt;input&gt; at all.
+  -   If you want to provide snooze interval selections:
+    -   Specify **SelectionBoxId** in the snooze action
+    -   Match the id of the input with the **SelectionBoxId** of the snooze action
+    -   Specify **ToastSelectionBoxItem**'s value to be a nonNegativeInteger which represents snooze interval in minutes.
 
 
 
 ## Audio
 
-Custom audio has always been supported by Mobile, and is supported in Desktop Version 1511 (build 10586) or later. Custom audio can be referenced via the following paths:
+Custom audio has always been supported on Mobile, and is supported in Desktop Version 1511 (build 10586) or later. Custom audio can be referenced via the following paths:
 
--   ms-appx:///
--   ms-appdata:///
+- ms-appx:///
+- ms-appdata:///
 
-Alternatively, you can pick from the [list of ms-winsoundevents](/uwp/schemas/tiles/toastschema/element-audio#attributes-and-elements), which have always been supported on both platforms.
-
-#### [Builder syntax](#tab/builder-syntax)
+### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
-    ...
-    
-    .AddAudio(new Uri("ms-appx:///Assets/NewMessage.mp3"));
+var builder = new AppNotificationBuilder()
+    .AddText("Notification text.")
+    .SetAudioUri(new Uri("ms-appx:///Audio/NotificationSound.mp3"));
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("Notification text")
+    .AddAudio(new Uri("ms-appx:///Audio/NotificationSound.mp3"));
 ```
 
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    ...
-
-    <audio src="ms-appx:///Assets/NewMessage.mp3"/>
-
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Notification text.</text>
+        </binding>
+    </visual>
+    <audio src='ms-appx:///Audio/NotificationSound.mp3'/>
 </toast>
 ```
 
 ---
 
+Alternatively, you can pick from the [list of ms-winsoundevents](/uwp/schemas/tiles/toastschema/element-audio#attributes-and-elements), which have always been supported on both platforms.
 
-See the [audio schema page](/uwp/schemas/tiles/toastschema/element-audio) for information on audio in toast notifications. To learn how to send a toast using custom audio, see [custom audio on toasts](custom-audio-on-toasts.md).
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+var builder = new AppNotificationBuilder()
+    .AddText("Notification text.")
+    .SetAudioEvent(AppNotificationSoundEvent.Alarm, AppNotificationAudioLooping.Loop);
+```
+
+### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("Notification text")
+    .AddAudio(new Uri("ms-winsoundevent:Notification.Looping.Alarm"));
+```
+
+### [XML](#tab/xml)
+
+```xml
+<toast>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Notification text.</text>
+        </binding>
+    </visual>
+    <audio src='ms-winsoundevent:Notification.Looping.Alarm' loop='true'/>
+</toast>
+```
+
+---
+
+See the [audio schema page](/uwp/schemas/tiles/toastschema/element-audio) for information on audio in app notifications. To learn how to send an app notification that uses custom audio, see [custom audio on toasts](custom-audio-on-toasts.md).
 
 
 ## Scenarios
 
-To create important notifications, alarms, reminders, and incoming call notifications, you simply use a normal toast notification with a **Scenario** value assigned to it. The scenario adjusts a few behaviors to create a consistent and unified user experience. There are four possible **Scenario** values: 
+To create important notifications, alarms, reminders, and incoming call notifications, you simply use a normal app notification with a **Scenario** value assigned to it. The scenario adjusts a few behaviors to create a consistent and unified user experience. There are four possible **Scenario** values: 
 
-* **Reminder**
-* **Alarm**
-* **IncomingCall** 
-* **Urgent**
+- **Reminder**
+- **Alarm**
+- **IncomingCall** 
+- **Urgent**
 
 ### Reminders
-In the reminder scenario, the notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the toast will also show pre-expanded. A reminder sound will be played. You must provide at least one button on your toast notification. Otherwise, the toast will be treated as a normal toast.
 
-#### [Builder syntax](#tab/builder-syntax)
+In the reminder scenario, the notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the app notification will also show pre-expanded. A reminder sound will be played. You must provide at least one button on your app notification. Otherwise, the notification will be treated as a normal notification.
+
+#### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
+var builder = new AppNotificationBuilder()
+    .AddText("Notification text.")
+    .SetScenario(AppNotificationScenario.Reminder);
+```
+
+#### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("Notification text.")
     .SetToastScenario(ToastScenario.Reminder)
-    ...
 ```
 
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="reminder" launch="app-defined-string">
-
-    ...
-
+<toast scenario='reminder'>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Notification text.</text>
+        </binding>
+    </visual>
 </toast>
 ```
 
@@ -982,23 +1235,41 @@ new ToastContentBuilder()
 
 
 ### Alarms
-Alarms behave the same as reminders, except alarms will additionally loop audio with a default alarm sound. You must provide at least one button on your toast notification. Otherwise, the toast will be treated as a normal toast.
+Alarms behave the same as reminders, except alarms will additionally loop audio with a default alarm sound. You must provide at least one button on your app notification. Otherwise, the notification will be treated as a normal notification.
 
-#### [Builder syntax](#tab/builder-syntax)
+#### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
+var builder = new AppNotificationBuilder()
+    .AddText("Notification text.")
+    .SetScenario(AppNotificationScenario.Alarm)
+    .AddButton(new AppNotificationButton("Dismiss")
+        .AddArgument("action", "dismiss"));
+```
+
+#### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
+    .AddText("Notification text")
     .SetToastScenario(ToastScenario.Alarm)
-    ...
+    .AddButton(new ToastButton()
+        .SetContent("Dismiss")
+        .AddArgument("action", "dismiss"));
 ```
 
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="alarm" launch="app-defined-string">
-
-    ...
-
+<toast scenario='alarm'>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Notification text.</text>
+        </binding>
+    </visual>
+    <actions>
+        <action content='Dismiss' arguments='action=dismiss'/>
+    </actions>
 </toast>
 ```
 
@@ -1009,39 +1280,132 @@ new ToastContentBuilder()
 ### Incoming calls
 Incoming call notifications are displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Ringtone audio will loop by default. On Windows Mobile devices, they display full screen.
 
-![Incoming call toast notification](images/toast-incoming-call.png)
+![Incoming call toast notification](images/toast-content-incoming-call.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+#### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
+var builder = new AppNotificationBuilder()
+    .SetScenario(AppNotificationScenario.IncomingCall)
+    .AddText("Andrew Bares", new AppNotificationTextProperties()
+        .SetIncomingCallAlignment())
+    .AddText("incoming call - mobile", new AppNotificationTextProperties()
+        .SetIncomingCallAlignment())
+      .SetInlineImage(new Uri("ms-appx:///images/profile.png"),
+        AppNotificationImageCrop.Circle)
+    .AddButton(new AppNotificationButton("Text reply")
+        .SetToolTip("Text reply")
+        .SetIcon(new Uri("ms-appx:///images/reply.png"))
+        .AddArgument("textId", "123"))
+    .AddButton(new AppNotificationButton("Reminder")
+        .SetToolTip("Reminder")
+        .SetIcon(new Uri("ms-appx:///images/reminder.png"))
+        .AddArgument("reminderId", "123"))
+    .AddButton(new AppNotificationButton("Ignore")
+        .SetToolTip("Ignore")
+        .SetIcon(new Uri("ms-appx:///images/ignore.png"))
+        .AddArgument("ignoreId", "123"))
+    .AddButton(new AppNotificationButton("Answer")
+        .SetToolTip("Answer")
+        .SetIcon(new Uri("ms-appx:///images/answer.png"))
+        .AddArgument("answerId", "123"));
+```
+
+#### [Community Tookit](#tab/toolkit)
+
+```csharp
+var builder = new ToastContentBuilder()
     .SetToastScenario(ToastScenario.IncomingCall)
-    ...
+    .AddText("Andrew Bares")
+    .AddText("incoming call - mobile")
+    .AddInlineImage(new Uri("ms-appx:///images/profile.png"), 
+        "Andrew Bares",
+        null,
+        AdaptiveImageCrop.Circle)
+    .AddButton(new ToastButton()
+        .SetContent("Text reply")
+        .SetImageUri(new Uri("ms-appx:///images/reply.png"))
+        .AddArgument("textId", "123"))
+    .AddButton(new ToastButton()
+        .SetContent("Reminder")
+        .SetImageUri(new Uri("ms-appx:///images/reminder.png"))
+        .AddArgument("reminderId", "123"))
+    .AddButton(new ToastButton()
+        .SetContent("Ignore")
+        .SetImageUri(new Uri("ms-appx:///images/ignore.png"))
+        .AddArgument("ignoreId", "123"))
+    .AddButton(new ToastButton()
+        .SetContent("Answer")
+        .SetImageUri(new Uri("ms-appx:///images/answer.png"))
+        .AddArgument("answerId", "123"));
 ```
 
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="incomingCall" launch="app-defined-string">
-
-    ...
-
+<toast scenario='incomingCall'>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text hint-callScenarioCenterAlign='true'>Andrew Bares</text>
+            <text hint-callScenarioCenterAlign='true'>incoming call - mobile</text>
+            <image src='ms-appx:///images/profile.png' hint-crop='circle'/>
+        </binding>
+    </visual>
+    <actions>
+        <action 
+            content='Text reply' 
+            arguments='textId=123' 
+            imageUri='ms-appx:///images/reply.png' 
+            hint-toolTip='Text reply'/>
+        <action 
+                content='Reminder' 
+                arguments='reminderId=123' 
+                imageUri='ms-appx:///images/reminder.png' 
+                hint-toolTip='Reminder'/>
+        <action 
+                content='Ignore' 
+                arguments='ignoreId=123' 
+                imageUri='ms-appx:///images/ignore.png' 
+                hint-toolTip='Ignore'/>
+        <action 
+            content='Answer' 
+            arguments='answerId=123' 
+            imageUri='ms-appx:///images/answer.png' 
+            hint-toolTip='Answer'/>
+    </actions>
 </toast>
 ```
+
 
 ---
 
 ### Important Notifications
 
 > [!IMPORTANT]
-> **Requires**: You must be running Windows Insider Preview Build 22546 or higher to use important notifications.
+> **Requires**: You must be running Windows Insider Preview Build 22546 or later to use important notifications.
 
-Important notifications allow users to have more control over what 1st party and 3rd party apps can send them high-priority toast notifications (urgent/important) that can break through Focus Assist (Do not Disturb). This can be modified in the notifications settings.
+Important notifications allow users to have more control over what 1st party and 3rd party apps can send them high-priority app notifications (urgent/important) that can break through Focus Assist (Do not Disturb). This can be modified in the notifications settings.
 
 
-![Important toast notification](images/important-toast-notification.png)
+![A screenshot of an urgent app notification that has an exclamation point in the attribution area next to the app name. The image also shows the system-initiated app notification that provides buttons for the user to allow or disallow urgent notifications from the app.](images/toast-content-urgent.png)
 
-#### [Builder syntax](#tab/builder-syntax)
+#### [Windows App SDK](#tab/appsdk)
+
+```csharp
+var builder = new AppNotificationBuilder()
+    .AddText("Adaptive Tiles Meeting", 
+        new AppNotificationTextProperties()
+            .SetMaxLines(1))
+    .AddText("Conf Room 2001 / Building 135")
+    .AddText("10:00 AM - 10:30 AM");
+
+if (AppNotificationBuilder.IsUrgentScenarioSupported())
+{
+    builder.SetScenario(AppNotificationScenario.Urgent);
+}
+```
+
+#### [Community Tookit](#tab/toolkit)
 
 ```csharp
 // The builder syntax does not support important notifications yet.
@@ -1050,10 +1414,14 @@ Important notifications allow users to have more control over what 1st party and
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="urgent" launch="app-defined-string">
-
-    ...
-
+<toast scenario='urgent'>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text hint-maxLines='1'>Adaptive Tiles Meeting</text>
+            <text>Conf Room 2001 / Building 135</text>
+            <text>10:00 AM - 10:30 AM</text>
+        </binding>
+    </visual>
 </toast>
 ```
 
@@ -1061,11 +1429,11 @@ Important notifications allow users to have more control over what 1st party and
 
 ## Localization and accessibility
 
-Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts. For more info, see [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md).
+Your tiles and app notifications can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts. For more info, see [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md).
 
 
 ## Handling activation
-To learn how to handle toast activations (the user clicking your toast or buttons on the toast), see [Send local toast](send-local-toast.md).
+To learn how to handle app activations (the user clicking your toast or buttons on the toast), see [Send local toast](send-local-toast.md).
  
 ## Related topics
 

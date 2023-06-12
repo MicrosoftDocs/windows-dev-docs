@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 Notification mirroring, powered by Action Center in the Cloud, allows you to see your phone's notifications on your PC.
 
 > [!IMPORTANT]
-> **Requires Anniversary Update**: You must be running build 14393 or higher to see notification mirroring work. If you would like to opt your app out of notification mirroring, you must target SDK 14393 to access the mirroring APIs.
+> **Requires Anniversary Update**: You must be running build 14393 or later to see notification mirroring work. If you would like to opt your app out of notification mirroring, you must target SDK 14393 to access the mirroring APIs.
 
 With notification mirroring and Cortana, users can receive and act on their phone's notifications (Windows Mobile and Android) from the convenience of their PC. As a developer, you don't have to do anything to enable notification mirroring, mirroring automatically works! Clicking buttons on the mirrored toast, like message quick replies, will be routed back to the phone, invoking you background task or launching your foreground app.
 

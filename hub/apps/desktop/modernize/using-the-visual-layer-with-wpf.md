@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Using the Visual Layer with WPF
 
-You can use Windows Runtime Composition APIs (also called the [Visual layer](/windows/uwp/composition/visual-layer)) in your Windows Presentation Foundation (WPF) apps to create modern experiences that light up for Windows 10 users.
+You can use Windows Runtime Composition APIs (also called the [Visual layer](/windows/uwp/composition/visual-layer)) in your Windows Presentation Foundation (WPF) apps to create modern experiences that light up for Windows users.
 
 The complete code for this tutorial is available on GitHub: [WPF HelloComposition sample](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/HelloComposition).
 
@@ -21,8 +21,8 @@ The UWP XAML hosting API has these prerequisites.
 
 - We assume that you have some familiarity with app development using WPF and UWP. For more info, see:
   - [Getting Started (WPF)](/dotnet/framework/wpf/getting-started/)
-  - [Get started with Windows 10 apps](/windows/uwp/get-started/)
-  - [Enhance your desktop application for Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
+  - [Get started with Windows apps](/windows/uwp/get-started/)
+  - [Enhance your desktop application for Windows](/windows/uwp/porting/desktop-to-uwp-enhance)
 - .NET Framework 4.7.2 or later
 - Windows 10 version 1803 or later
 - Windows 10 SDK 17134 or later
@@ -58,7 +58,7 @@ NuGet packages are available to address both of these needs. Install the latest 
 - [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/)
 
 > [!NOTE]
-> While we recommend using the NuGet packages to configure your project, you can add the required references manually. For more info, see [Enhance your desktop application for Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance). The following table shows the files that you need to add references to.
+> While we recommend using the NuGet packages to configure your project, you can add the required references manually. For more info, see [Enhance your desktop application for Windows](/windows/uwp/porting/desktop-to-uwp-enhance). The following table shows the files that you need to add references to.
 
 |File|Location|
 |--|--|
@@ -633,8 +633,8 @@ For a more complete example that builds on the same infrastructure, see the [WPF
 
 - [Getting Started (WPF)](/dotnet/framework/wpf/getting-started/) (.NET)
 - [Interoperating with unmanaged code](/dotnet/framework/interop/) (.NET)
-- [Get started with Windows 10 apps](/windows/uwp/get-started/) (UWP)
-- [Enhance your desktop application for Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Get started with Windows apps](/windows/uwp/get-started/) (UWP)
+- [Enhance your desktop application for Windows](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
 - [Windows.UI.Composition namespace](/uwp/api/windows.ui.composition) (UWP)
 
 ## Complete code

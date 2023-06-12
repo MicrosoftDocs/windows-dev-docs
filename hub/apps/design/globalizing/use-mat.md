@@ -1,5 +1,5 @@
 ---
-description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide Windows apps with translation support, translation file management, and editor tools.
+description: The Multilingual App Toolkit (MAT) integrates with Microsoft Visual Studio 2019 to provide Windows apps with translation support, translation file management, and editor tools.
 title: Use the Multilingual App Toolkit
 template: detail.hbs
 ms.date: 09/24/2020
@@ -8,9 +8,9 @@ keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
 
-# Use the Multilingual App Toolkit 4.0
+# Use the Multilingual App Toolkit
 
-The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio to provide Windows apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
+The Multilingual App Toolkit (MAT) integrates with Microsoft Visual Studio to provide Windows apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
 
 - Helps you manage resource changes and translation status during development.
 - Provides a UI for choosing languages based on configured translation providers.
@@ -29,13 +29,13 @@ For the value proposition of globalization and localization&mdash;as well as def
 
 Also see [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](prepare-your-app-for-localization.md).
 
-### Step 2. Download and install the Multilingual App Toolkit 4.0
+### Step 2. Download and install the Multilingual App Toolkit
 
-There are two parts to the Multilingual App Toolkit 4.0 (MAT 4.0), each with its own installer.
+There are two parts to the Multilingual App Toolkit (MAT), each with its own installer.
 
-- [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2019, in the form of a .vsix installer.
+- [Multilingual App Toolkit Extension for Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT extension for Visual Studio 2019, in the form of a .vsix installer.
 - [Multilingual App Toolkit 4.1 Extension for Visual Studio 2022 and later](https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022). This contains the MAT 4.1 extension for Visual Studio 2022, in the form of a .vsix installer.
-- [Multilingual app toolkit 4.0 Editor](multilingual-app-toolkit-editor-downloads.md). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
+- [Multilingual app toolkit Editor](multilingual-app-toolkit-editor-downloads.md). This contains the MAT standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT extension for Visual Studio 2015 and for Visual Studio 2013.
 
 If you use Visual Studio 2017 or later, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
 
@@ -127,7 +127,7 @@ These third party providers offer localization services, and may be able to assi
 - [Keywords Studios](https://www.keywordsstudios.com/)
 - [Lionbridge](https://www.lionbridge.com)
 - [Moravia](https://www.rws.com/what-we-do/rws-moravia/)
-- [SDL](https://www.sdl.com/translate/get-started/instant-quote.html)
+- [SDL](https://www.rws.com/)
 - [Welocalize](https://www.welocalize.com/)
 
 > [!NOTE]
@@ -135,7 +135,7 @@ These third party providers offer localization services, and may be able to assi
 
 #### Option 3. Use the integrated translation services
 
-Translation services are integrated into the Visual Studio IDE as well as into the Multilingual Editor. This provides easy access to translation services while developing your product as well as localizing your resources. For this service, you'll need an Azure account subscription, as described in [Microsoft Translator Moves to the Azure portal](https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/1167898-microsoft-translator-moves-to-the-azure-portal).
+Translation services are integrated into the Visual Studio IDE as well as into the Multilingual Editor. This provides easy access to translation services while developing your product as well as localizing your resources. For this service, you'll need an Azure account subscription, as described in [Microsoft Translator Moves to the Azure portal](/azure/cognitive-services/translator/quickstart-translator).
 
 To access the translation services inside Visual Studio, select and right-click one or more .xlf files in Solution Explorer and click **Generate machine translations**.
 
@@ -162,11 +162,15 @@ Before you start the Microsoft Store Certification process, you must exclude the
 - [Make your app localizable](prepare-your-app-for-localization.md)
 - [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 
+## Telemetry
+
+The Multilingual App Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. For more details, see [Multilingual App Toolkit FAQ & troubleshooting](./mat-faq-troubleshooting.yml).
+
 ## Downloads
 
-- [Multilingual App Toolkit 4.0 Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-- [Multilingual App Toolkit 4.0 Visual Studio 2022+](https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022)
-- [Multilingual app toolkit 4.0 Editor](multilingual-app-toolkit-editor-downloads.md)
+- [Multilingual App Toolkit Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+- [Multilingual App Toolkit Visual Studio 2022+](https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022)
+- [Multilingual app toolkit Editor](multilingual-app-toolkit-editor-downloads.md)
 
 ## Translation services
 

@@ -68,7 +68,7 @@ Ubuntu 18.04 LTS comes with Python 3.6 already installed, but it does not come w
 
 ## Create a virtual environment
 
-Using virtual environments is a recommended best practice for Python development projects. By creating a virtual environment, you can isolate your project tools and avoid versioning conflicts with tools for your other projects. For example, you may be maintaining an an older web project that requires the Django 1.2 web framework, but then an exciting new project comes along using Django 2.2. If you update Django globally, outside of a virtual environment, you could run into some versioning issues later on. In addition to preventing accidental versioning conflicts, virtual environments let you install and manage packages without administrative privileges.
+Using virtual environments is a recommended best practice for Python development projects. By creating a virtual environment, you can isolate your project tools and avoid versioning conflicts with tools for your other projects. For example, you may be maintaining an older web project that requires the Django 1.2 web framework, but then an exciting new project comes along using Django 2.2. If you update Django globally, outside of a virtual environment, you could run into some versioning issues later on. In addition to preventing accidental versioning conflicts, virtual environments let you install and manage packages without administrative privileges.
 
 1. Open your terminal and, inside your *HelloWorld* project folder, use the following command to create a virtual environment named **.venv**:  `python3 -m venv .venv`.
 
@@ -109,7 +109,7 @@ You will need to install any VS Code extensions for your Remote - WSL. Extension
 
 ## Run a simple Python program
 
-Python is an interpreted language and supports different types of interpretors (Python2, Anaconda, PyPy, etc). VS Code should default to the interpreter associated with your project. If you have a reason to change it, select the interpreter currently displayed in blue bar on the bottom of your VS Code window or open the **Command Palette** (Ctrl+Shift+P) and enter the command **Python: Select Interpreter**. This will display a list of the Python interpreters that you currently have installed. [Learn more about configuring Python environments](https://code.visualstudio.com/docs/python/environments).
+Python is an interpreted language and supports different types of interpreters (Python2, Anaconda, PyPy, etc). VS Code should default to the interpreter associated with your project. If you have a reason to change it, select the interpreter currently displayed in blue bar on the bottom of your VS Code window or open the **Command Palette** (Ctrl+Shift+P) and enter the command **Python: Select Interpreter**. This will display a list of the Python interpreters that you currently have installed. [Learn more about configuring Python environments](https://code.visualstudio.com/docs/python/environments).
 
 Let's create and run a simple Python program as a test and ensure that we have the correct Python interpreter selected.
 
@@ -221,7 +221,7 @@ Congratulations, you've created a Flask web application using Visual Studio Code
 
 3. Create a virtual environment to install your project tools: `python3 -m venv .venv`
 
-4. Open your **HelloWorld-DJango** project in VS Code by entering the command: `code .`
+4. Open your **HelloWorld-Django** project in VS Code by entering the command: `code .`
 
 5. Inside VS Code, open your integrated WSL terminal (aka Bash) by entering **Ctrl+Shift+`** (your **HelloWorld-Django** project folder should already be selected). *Close your Ubuntu command line as we will be working in the WSL terminal integrated with VS Code moving forward.*
 
@@ -313,6 +313,7 @@ Congratulations, you've created a Django web application using VS Code and Windo
 
 ## Additional resources
 
+- [Microsoft Dev Blogs: Python](https://devblogs.microsoft.com/python/): Read the latest updates about all things Python at Microsoft.
 - [Python Tutorial with VS Code](https://code.visualstudio.com/docs/python/python-tutorial): An intro tutorial to VS Code as a Python environment, primarily how to edit, run, and debug code.
 - [Git support in VS Code](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support): Learn how to use Git version control basics in VS Code.  
 - [Learn about updates coming soon with WSL 2!](/windows/wsl/wsl2-index): This new version changes how Linux distributions interact with Windows, increasing file system performance and adding full system call compatibility.

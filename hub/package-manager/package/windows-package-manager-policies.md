@@ -1,9 +1,8 @@
 ---
 title: Windows Package Manager repository policies
 description: Provides the Windows Package Manager repository policies.
-ms.date: 05/25/2021
+ms.date: 11/28/2022
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # Windows Package Manager repository policies
@@ -162,7 +161,7 @@ If the Product declares the use of capabilities, then the capabilities the Produ
 
 ### 1.7 Localization
 
-You should localize your Product for all languages that it supports. The experience provided by a product must be reasonably similar in all languages that it supports.
+You should localize your Product for all languages that it supports. The text of your product’s description should be localized in each language that you declare. If your product is localized such that some features are not available in a localized version, you should clearly state or display the limits of localization in the product description. The experience provided by a product must be reasonably similar in all languages that it supports.  
 
 ### 1.8 Financial Transactions
 
@@ -190,7 +189,7 @@ The product and its associated metadata must provide information about the types
 
 If your game offers “loot boxes” or other mechanisms that provide randomized virtual items, then you must disclose the odds of receiving each item to customers prior to purchase. These disclosures may appear: in-product, such as in an in-app store, on the Microsoft Store Product Description Page (PDP), and/or on a developer or publisher website, with a link from the Store Product Description Page (PDP) and/or in-app.
 
-### 10.8.4
+### 1.8.4
 
 All pricing, including sales or discounting, for your digital products or services shall comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl).
 
@@ -284,6 +283,5 @@ User Generated Content (UGC) is content that users contribute to an app or Produ
 
 ### See also
 
-- [Change history for Windows Package Manager policies](windows-package-manager-policies-change-history.md)
 - [Windows Package Manager Code of Conduct](https://github.com/microsoft/winget-pkgs/blob/master/CODE_OF_CONDUCT.md)
-- [Windows Package Manager Contributing requirements](https://github.com/microsoft/winget-pkgs/blob/master/README.md)
+- [Windows Package Manager Contributing requirements](https://github.com/microsoft/winget-pkgs/blob/master/README.md#contributing)

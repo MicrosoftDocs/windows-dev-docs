@@ -3,10 +3,16 @@ items:
   href: ./index.md
 - name: Developer tools
   items:
-  - name: Windows Subsystem for Linux
-    href: /windows/wsl/
-  - name: Windows Terminal
-    href: /windows/terminal/
+  - name: Dev Home
+    items:
+      - name: Overview
+        href: ../dev-home/index.md
+      - name: Machine configuration
+        href: ../dev-home/setup.md
+      - name: Dev Home extensions
+        href: ../dev-home/extensions.md
+  - name: Dev Drive
+    href: ../dev-drive/index.md
   - name: Windows Package Manager
     items:
       - name: Overview
@@ -15,8 +21,8 @@ items:
         items:
           - name: Overview
             href: ../package-manager/winget/index.md
-          - name: Debugging and troubleshooting
-            href: ../package-manager/winget/troubleshooting.md
+          - name: configure command
+            href: ../package-manager/winget/configure.md
           - name: export command
             href: ../package-manager/winget/export.md
           - name: features command
@@ -27,6 +33,8 @@ items:
             href: ../package-manager/winget/help.md
           - name: import command
             href: ../package-manager/winget/import.md
+          - name: info command
+            href: ../package-manager/winget/info.md
           - name: install command
             href: ../package-manager/winget/install.md
           - name: list command
@@ -39,12 +47,24 @@ items:
             href: ../package-manager/winget/show.md
           - name: source command
             href: ../package-manager/winget/source.md
+          - name: tab completion
+            href: ../package-manager/winget/tab-completion.md  
           - name: uninstall command
             href: ../package-manager/winget/uninstall.md
           - name: upgrade command
             href: ../package-manager/winget/upgrade.md
           - name: validate command
             href: ../package-manager/winget/validate.md
+          - name: Debugging and troubleshooting
+            href: ../package-manager/winget/troubleshooting.md
+      - name: WinGet Configuration
+        items:
+          - name: Overview
+            href: ../package-manager/configuration/index.md
+          - name: Author a configuration
+            href: ../package-manager/configuration/create.md
+          - name: Check a configuration
+            href: ../package-manager/configuration/check.md
       - name: Submit packages
         items:
           - name: Overview
@@ -54,15 +74,11 @@ items:
           - name: Submit your manifest to the repository
             href: ../package-manager/package/repository.md
           - name: Validation process
-            href: ../package-manager/package/winget-validation.md
+            href: ../package-manager/package/repository.md#validation-process
           - name: Troubleshooting submissions
-            href: ../package-manager/package/winget-validation-troubleshooter.md
-          - name: Binary validation errors
-            href: ../package-manager/package/binary-validation-errors.md
+            href: ../package-manager/package/repository.md#submission-troubleshooting
           - name: Repository policies
             href: ../package-manager/package/windows-package-manager-policies.md
-          - name: Repository policies change history
-            href: ../package-manager/package/windows-package-manager-policies-change-history.md
   - name: PowerToys
     items:
       - name: Overview
@@ -71,10 +87,14 @@ items:
             href: ../powertoys/index.md
           - name: Install PowerToys
             href: ../powertoys/install.md
+          - name: General settings
+            href: ../powertoys/general.md
           - name: Run in admin mode
             href: ../powertoys/administrator.md
+          - name: Group Policy
+            href: ../powertoys/grouppolicy.md
           - name: Report a Bug
-            href: ../powertoys/reportBug.md
+            href: https://github.com/microsoft/PowerToys/issues/new/choose
       - name: Always on Top
         href: ../powertoys/always-on-top.md
       - name: PowerToys Awake
@@ -85,20 +105,42 @@ items:
         href: ../powertoys/fancyzones.md
       - name: File Explorer add-ons
         href: ../powertoys/file-explorer.md
+      - name: File Locksmith
+        href: ../powertoys/file-locksmith.md
+      - name: Hosts File Editor
+        href: ../powertoys/hosts-file-editor.md
       - name: Image Resizer
         href: ../powertoys/image-resizer.md
       - name: Keyboard Manager
         href: ../powertoys/keyboard-manager.md
       - name: Mouse Utilities
         href: ../powertoys/mouse-utilities.md
+      - name: Mouse without Borders
+        href: ../powertoys/mouse-without-borders.md
+      - name: Paste as Plain Text
+        href: ../powertoys/paste-as-plain-text.md
+      - name: Peek
+        href: ../powertoys/peek.md
       - name: PowerRename
         href: ../powertoys/powerrename.md
+      - name: Quick Accent
+        href: ../powertoys/quick-accent.md
+      - name: Registry Preview
+        href: ../powertoys/registry-preview.md
       - name: PowerToys Run
         href: ../powertoys/run.md
       - name: Shortcut Guide
         href: ../powertoys/shortcut-guide.md
+      - name: Screen Ruler
+        href: ../powertoys/screen-ruler.md
+      - name: Text Extractor
+        href: ../powertoys/text-extractor.md
       - name: Video Conference Mute
         href: ../powertoys/video-conference-mute.md
+  - name: Windows Subsystem for Linux
+    href: /windows/wsl/
+  - name: Windows Terminal
+    href: /windows/terminal/
   - name: Mac to Windows guide
     href: mac-to-windows.md
   - name: Keyboard shortcuts
@@ -166,17 +208,17 @@ items:
         - name: Overview
           href: ../android/overview.md
         - name: Windows Subsystem for Android™️
-          href: ../android/wsa/index.md
-        - name: Release notes for WSA
-          href:  ../android/wsa/release-notes.md
+          items:
+            - name: Overview
+              href: ../android/wsa/index.md
+            - name: Release notes
+              href:  ../android/wsa/release-notes.md
+            - name: Preview program
+              href: ../android/wsa/preview-program.md
         - name: Native Android
           href: ../android/native-android.md
         - name: Cross-platform
           items:
-            - name: Xamarin Native
-              href: ../android/xamarin-android.md
-            - name: Xamarin Forms
-              href: ../android/xamarin-forms.md
             - name: React Native
               href: ../dev-environment/javascript/react-native-for-android.md
             - name: PWA (Ionic, PhoneGap, Cordova)
@@ -206,12 +248,14 @@ items:
         - name: Rust for Windows
           href: ./rust/rust-for-windows.md
         - name: RSS reader tutorial (Rust for Windows)
-          href: ./rust/rss-reader-rust-for-windows.md    
-        - name: VS Code
-          href: https://code.visualstudio.com/docs
-        - name: Visual Studio
-          href: /visualstudio/windows/?view=vs-2019
-        - name: Azure
-          href: /azure/?product=featured
-        - name: .NET
-          href: /dotnet/
+          href: ./rust/rss-reader-rust-for-windows.md
+        - name: Rust in Visual Studio Code
+          href: https://code.visualstudio.com/docs/languages/rust
+  - name: VS Code docs
+    href: https://code.visualstudio.com/docs
+  - name: Visual Studio docs
+    href: /visualstudio/windows/
+  - name: Azure docs
+    href: /azure/?product=featured
+  - name: .NET docs
+    href: /dotnet/

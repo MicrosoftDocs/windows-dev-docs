@@ -19,7 +19,7 @@ Windows UI Library (WinUI) 3 is a native user experience (UX) framework for buil
 
 This new version of WinUI 3 is available as part of Project Reunion 0.5. To install, see:
 
-**[Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install)**
+**[Install tools for preview and experimental channels of the Windows App SDK](../../../windows-app-sdk/preview-experimental-install.md)**
 
 Now that WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use the Windows App SDK](../../../package-and-deploy/index.md#use-the-windows-app-sdk). The Windows App SDK VSIX includes [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
 
@@ -31,7 +31,7 @@ Once you've set up your development environment, see [WinUI 3 templates in Visua
 For more information about getting started with building a WinUI 3 app, see the following articles:
 
 - [Create your first WinUI 3 project](../create-your-first-winui3-app.md)
-- [Build a basic WinUI 3 desktop app](/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop)
+- [Build a C# .NET app with WinUI 3 and Win32 interop](../desktop-winui3-app-with-basic-interop.md)
 
 Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
@@ -68,7 +68,7 @@ If you created an app with an earlier preview or release version of WinUI 3, you
 
 This release provides the stability and support to make WinUI 3 suitable for production apps that can ship to the Microsoft Store. It includes support and forward compatibility for most features introduced in past previews:
 
-- Ability to create desktop apps with WinUI, including [.NET 5](https://github.com/dotnet/core/tree/master/release-notes/5.0) for Win32 apps
+- Ability to create desktop apps with WinUI, including [.NET](https://github.com/dotnet/core/blob/main/release-notes/6.0/README.md) for Win32 apps
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView updates](/windows/uwp/design/controls-and-patterns/tab-view)
 - Dark theme updates
@@ -80,7 +80,7 @@ This release provides the stability and support to make WinUI 3 suitable for pro
 - SwapChainPanel
 - MRT Core Support
   - This makes apps faster and lighter on startup and provides quicker resource lookup.
-- ARM64 Support
+- Arm64 Support
 - Drag and drop inside and outside of apps
 - RenderTargetBitmap (currently only XAML content - no SwapChainPanel content)
 - Custom cursor support
@@ -89,7 +89,7 @@ This release provides the stability and support to make WinUI 3 suitable for pro
   - Live Visual Tree, Hot Reload, Live Property Explorer and similar tools
   - Intellisense for WinUI 3
 - Improvements required for open source migration
-- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
+- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
 - VirtualSurfaceImageSource support
 - In-app acrylic
 
@@ -108,10 +108,6 @@ As this is a stable release of WinUI 3, preview features have been removed. You 
 
 We welcome your feedback in the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
 
-### What's coming next?
-
-For more information on when specific features are planned, see the [feature roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md#winui-30-feature-roadmap) on GitHub.
-
 ## Limitations and known issues
 
 The following items are some of the known issues with WinUI 3 - Project Reunion 0.5. If you find an issue that isn't listed below, please let us know by contributing to an existing issue or filing a new issue through the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
@@ -123,7 +119,7 @@ WinUI 3 - Project Reunion 0.5 is compatible with PCs running the Windows 10 Octo
 ### Developer tools
 
 - Only C# and C++/WinRT apps are supported
-- Desktop apps support .NET 5 and C# 9, and must be packaged in an MSIX app
+- Desktop apps support .NET 6 (and later) and C# 9, and must be packaged in an MSIX app
 - No XAML Designer support
 - New C++/CX apps are not supported, however, your existing apps will continue to function (please move to C++/WinRT as soon as possible)
 - Unpackaged desktop deployment is not supported
@@ -148,7 +144,7 @@ WinUI 3 - Project Reunion 0.5 is compatible with PCs running the Windows 10 Octo
 - XAML Islands is not supported in this release
 - Using WinUI 3 directly in an existing non-WinUI desktop app has the following limitation: The currently available path for migrating an existing app is to add a **new** WinUI 3 project to your solution, and adjust or refactor your logic as needed.
 
-- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/windows/winui/api/microsoft.ui.xaml.application.suspending?preserve-view=true&view=winui-3.0-preview) for more details. 
+- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/uwp/api/windows.ui.xaml.application.suspending) for more details. 
 
 - CoreWindow, ApplicationView, CoreApplicationView, CoreDispatcher and their dependencies are not supported in desktop apps (see below)
 

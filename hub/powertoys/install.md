@@ -1,7 +1,7 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 04/27/2022
+ms.date: 04/19/2023
 ms.topic: quickstart
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -11,19 +11,15 @@ no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 
 We recommend installing PowerToys via GitHub or Microsoft Store, but alternative install methods are also listed if you prefer using a package manager.
 
-
 ## Requirements
 
 - Supported Operating Systems:
-  - Windows 10 v1903 (18362) or newer.
   - Windows 11 (all versions)
+  - Windows 10 v2004 (19041) or newer
 - System architecture
-  - x64 architecture currently supported.
-  - ARM support to become available at a later date.
+  - x64 and Arm64 architecture are currently supported.
 - Our installer will install the following runtimes:
-  - .NET Core 3.1.22 Desktop Runtime or a newer 3.1.x runtime (This is needed currently for the Settings application)
-  - .NET 6.0.3 Desktop Runtime or a newer 6.0.x runtime
-  - Microsoft Edge WebView2 Runtime bootstrapper (This will always install the latest version)
+  - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (this will always install the latest version available)
 
 To ensure that your machine meets these requirements, check your Windows version and build number by pressing <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 
@@ -36,7 +32,7 @@ To install PowerToys using a Windows executable file:
 
 1. Visit the [Microsoft PowerToys GitHub releases page](https://aka.ms/installpowertoys).
 2. Select the **Assets** drop-down menu to display the files for the release.
-3. Select the `PowerToysSetup-0.##.#-x64.exe` file to download the PowerToys executable installer.
+3. Select the `PowerToysSetup-0.##.#-x64.exe` or `PowerToysSetup-0.##.#-arm64.exe` file to download the PowerToys executable installer.
 4. Once downloaded, open the executable file and follow the installation prompts.
 
 ## Install with Microsoft Store
@@ -48,7 +44,7 @@ Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys)
 To install PowerToys using the [Windows Package Manager](../package-manager/winget/index.md), it is as simple as running the following command from the command line / PowerShell:
 
 ```powershell
-	winget install Microsoft.PowerToys --source winget
+winget install Microsoft.PowerToys --source winget
 ```
 
 ## Installer args
@@ -65,17 +61,17 @@ Here are the common commands you may want:
 | -layout  |              | create a local image of the bootstrapper |
 | -log     | -l           | log to a specific file |
 
-### Extracting the MSI from the bundle:
+### Extracting the MSI from the bundle
 
 Make sure you have Wix toolset installed. https://wixtoolset.org/releases/
 
 This PowerShell example assumes the default install location for Wix toolset 3.11.2 and the PowerToys installer downloaded to the desktop.
 
 ```powershell
-	cd $Env:WIX\"bin"
+cd $Env:WIX\"bin"
 
-	# dark.exe -x OUTPUT_FOLDER INSTALLER_PATH
-	.\dark.exe -x ${Env:\USERPROFILE}"\Desktop\extractedPath" ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.53.0-x64.exe"
+# dark.exe -x OUTPUT_FOLDER INSTALLER_PATH
+.\dark.exe -x ${Env:\USERPROFILE}"\Desktop\extractedPath" ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.53.0-x64.exe"
 ```
 
 ### Fixes for uninstalling 0.51 and earlier builds issues
@@ -84,6 +80,12 @@ If you have an issue where the MSI is not accessible, you can download the insta
 
 In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will extract the MSI to your desktop.
 
+### Clean-up scripts
+
+In case there are problems with uninstalling a version, there are cleanup scripts available:
+
+- https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool
+- https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script
 
 ## Community-driven install tools
 
@@ -91,37 +93,36 @@ These community-driven alternative install methods are not officially supported 
 
 ### Install with Chocolatey
 
-To install PowerToys using [Chocolatey](https://chocolatey.org/), run the following command from your command line / PowerShell:
+To install [PowerToys](https://community.chocolatey.org/packages/powertoys) using [Chocolatey](https://chocolatey.org/), run the following command from your command line / PowerShell:
 
 ```powershell
-	choco install powertoys
+choco install powertoys
 ```
 
 To upgrade PowerToys, run:
 
 ```powershell
-	choco upgrade powertoys
+choco upgrade powertoys
 ```
 
-If you have issues when installing/upgrading, visit the [PowerToys package on Chocolatey.org](https://chocolatey.org/packages/powertoys) and follow the [Chocolatey triage process](https://chocolatey.org/docs/package-triage-process).
+If you have issues when installing/upgrading, create an issue at the [maintainers GitHub repository](https://github.com/mkevenaar/chocolatey-packages/issues) or follow the [Chocolatey triage process](https://docs.chocolatey.org/en-us/community-repository/users/package-triage-process).
 
 ### Install with Scoop
 
 To install PowerToys using [Scoop](https://scoop.sh/), run the following command from the command line / PowerShell:
 
 ```powershell
-	scoop bucket add extras
-	scoop install powertoys
+scoop bucket add extras
+scoop install powertoys
 ```
 
 To update PowerToys, run the following command from the command line / PowerShell:
 
 ```powershell
-	scoop update powertoys
+scoop update powertoys
 ```
 
 If you have issues when installing/updating, file an issue in the [Scoop repo on GitHub](https://github.com/lukesampson/scoop/issues).
-
 
 ## Post Install
 

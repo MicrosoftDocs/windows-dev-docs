@@ -1,0 +1,26 @@
+<svg width="612" height="360" viewBox="0 0 612 360" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="thumbnail-button" clip-path="url(#clip0)">
+<rect width="612" height="360" fill="#243A5E"/>
+<g id="Group">
+<g id="Background">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 0 0L 280 0L 280 89.6L 0 89.6L 0 0Z" transform="translate(166 135)" fill="#50E6FF"/>
+</g>
+</g>
+<g id="Frame" clip-path="url(#clip1)">
+<rect width="125" height="16" fill="#F4F4F4" transform="translate(244 171)"/>
+</g>
+</g>
+</g>
+<defs>
+
+<clipPath id="clip0">
+<rect width="612" height="360" fill="white"/>
+</clipPath>
+<clipPath id="clip1">
+<rect width="125" height="16" fill="white" transform="translate(244 171)"/>
+</clipPath>
+
+</defs>
+</svg>
+

@@ -39,6 +39,8 @@ landingContent:
             url: ../windows-app-sdk/index.md
           - text: Create your first WinUI 3 project
             url: ../winui/winui3/create-your-first-winui3-app.md
+          - text: Overview of Progressive Web Apps (PWAs)
+            url: /microsoft-edge/progressive-web-apps-chromium/
           - text: Make your apps great on Windows 11
             url: ../get-started/make-apps-great-for-windows.md
       - linkListType: reference

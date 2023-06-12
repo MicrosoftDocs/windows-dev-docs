@@ -76,11 +76,11 @@ In Windows 10, **Cortana** extensibility lets you handle voice commands from a 
 
 A voice command is a single utterance, defined in a Voice Command Definition (VCD) file, directed at an installed app through **Cortana**. The app can be launched in the foreground or background, depending on the level and complexity of the interaction. For instance, voice commands that require additional context or user input are best handled in the foreground, while basic commands can be handled in the background.
 
-Integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, lets **Cortana** become a liaison between your app and the user. In many cases, this can save the user significant time and effort. For more info, see [Cortana design guidelines](/cortana/skills/cortana-design-guidelines).
+Integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, lets **Cortana** become a liaison between your app and the user. In many cases, this can save the user significant time and effort. For more info, see [Cortana design guidelines](./cortana-design-guidelines.md).
 
 ### More info
 
-[Cortana design guidelines](/cortana/skills/cortana-design-guidelines)
+[Cortana design guidelines](./cortana-design-guidelines.md)
  
 
 ## Speech

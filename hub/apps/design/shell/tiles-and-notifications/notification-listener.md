@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 The notification listener provides access to a user's notifications. Smartwatches and other wearables can use the notification listener to send the phone's notifications to the wearable device. Home automation apps can use notification listener to perform specific actions when notifications are received, such as making the lights blink when you receive a call. 
 
 > [!IMPORTANT]
-> **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or higher to use Notification Listener.
+> **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or later to use Notification Listener.
 
 
 > **Important APIs**: [UserNotificationListener class](/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger class](/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)

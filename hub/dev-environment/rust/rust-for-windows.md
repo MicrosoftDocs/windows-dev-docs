@@ -19,7 +19,7 @@ ms.date: 03/04/2021
 
 In the [Overview of developing on Windows with Rust](overview.md) topic, we demonstrated a simple app that outputs a *Hello, world!* message. But not only can you use Rust *on* Windows, you can also write apps *for* Windows using Rust.
 
-Rust for Windows is the latest language projection for Windows. It's currently in preview form, and you can see it develop from version to version in its [change log](https://github.com/microsoft/windows-rs/blob/master/docs/changelog.md).
+You can find all of the latest updates in the [Release log of the Rust for Windows repo](https://github.com/microsoft/windows-rs/releases) on GitHub. 
 
 Rust for Windows lets you use any Windows API (past, present, and future) directly and seamlessly via [the *windows* crate](https://crates.io/crates/windows) (*crate* is Rust's term for a binary or a library, and/or the source code that builds into one).
 
@@ -27,17 +27,15 @@ Whether it's timeless functions such as [CreateEventW](/windows/win32/api/syncha
 
 The [win32metadata](https://github.com/microsoft/win32metadata) project aims to provide metadata for Win32 APIs. This metadata describes the API surface&mdash;strongly-typed API signatures, parameters, and types. This enables the entire Windows API to be projected in an automated and complete way for consumption by Rust (as well as languages such as C# and C++). Also see [Making Win32 APIs more accessible to more languages](https://blogs.windows.com/windowsdeveloper/2021/01/21/making-win32-apis-more-accessible-to-more-languages/).
 
-As a Rust developer, you'll use Cargo (Rust's package management tool)&mdash;along with `https://crates.io` (the Rust community's crate registry)&mdash;to manage the dependencies in your projects. The good news is that you can reference [the *windows* crate](https://crates.io/crates/windows) from your Rust apps, and then immediately beginning calling Windows APIs. You can also find Rust [documentation for the *windows* crate](https://docs.rs/windows/0.3.1/windows/) over on `https://docs.rs`.
+As a Rust developer, you'll use Cargo (Rust's package management tool)&mdash;along with `https://crates.io` (the Rust community's crate registry)&mdash;to manage the dependencies in your projects. The good news is that you can reference [the *windows* crate](https://crates.io/crates/windows) from your Rust apps, and then immediately beginning calling Windows APIs. You can also find Rust [documentation for the *windows* crate](https://docs.rs/windows/latest/windows/) over on `https://docs.rs`.
 
 Similar to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/), [Rust for Windows](https://github.com/microsoft/windows-rs) is an open source language projection developed on GitHub. Use the [Rust for Windows](https://github.com/microsoft/windows-rs) repo if you have questions about Rust for Windows, or if you wish to report issues with it.
 
-The Rust for Windows repo also has [some simple examples](https://github.com/microsoft/windows-samples-rs) that you can follow. And there's an excellent sample app in the form of Robert Mikhayelyan's [Minesweeper](https://github.com/robmikh/minesweeper-rs).
+The Rust for Windows repo also has [some simple examples](https://github.com/microsoft/windows-rs/tree/master/crates/samples) that you can follow. And there's an excellent sample app in the form of Robert Mikhayelyan's [Minesweeper](https://github.com/robmikh/minesweeper-rs).
 
 ## Contribute to Rust for Windows
 
 [Rust for Windows](https://github.com/microsoft/windows-rs) welcomes your contributions!
-
-* Identify and fix bugs in the [source code](https://github.com/microsoft/windows-rs/tree/master/src)
 
 ## Rust documentation for the Windows API
 

@@ -65,7 +65,7 @@ Use content transition animations ([**ContentThemeTransition**](/uwp/api/Windows
 [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) represents a motion that can apply to content when a page or large section of UI is first loaded. Thus the first appearance of content can offer different feedback than a change to content does. [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) is equivalent to a [**NavigationThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) with the default parameters, but may be used outside of a [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame).
  
  
-<span id="fade-in-out-and-crossfade"/>
+<span id="fade-in-out-and-crossfade"></span>
 
 ### Fade in/out, and crossfade
 
@@ -73,7 +73,7 @@ Use fade in and fade out animations to show or hide transient UI or controls. In
 
 Use a crossfade animation to smooth the transition when an item's state is changing; for example, when the app refreshes the current contents of a view. The XAML animation library does not supply a dedicated crossfade animation (no equivalent for [**crossFade**](/previous-versions/windows/apps/br212661(v=win.10))), but you can achieve the same result using [**FadeInThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) and [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) with overlapped timing.
 
-<span id="pointer-up-down"/>
+<span id="pointer-up-down"></span>
 
 ### Pointer up/down
 
@@ -83,13 +83,13 @@ Use the [**PointerUpThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.P
 
 Use the reposition animations ([**RepositionThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation) or [**RepositionThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)) to move an element into a new position. For example, moving the headers in an items control uses the reposition animation.
 
-<span id="show-hide-popup"/>
+<span id="show-hide-popup"></span>
 
 ### Show/hide popup
 
 Use the [**PopInThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation) and [**PopOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation) when you show and hide a [**Popup**](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) or similar contextual UI on top of the current view. [**PopupThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition) is a theme transition that's useful feedback if you want to light dismiss a popup.
 
-<span id="show-hide-edge-ui"/>
+<span id="show-hide-edge-ui"></span>
 
 ### Show/hide edge UI
 
@@ -105,7 +105,7 @@ There's also a separate [**ReorderThemeTransition**](/uwp/api/Windows.UI.Xaml.Me
 
 Note that these animations are included in the default [**ListView**](/uwp/api/windows.ui.xaml.controls.listview) and [**GridView**](/uwp/api/windows.ui.xaml.controls.gridview) templates so you do not need to manually add these animations if you are already using these controls.
 
-<span id="drag-drop"/>
+<span id="drag-drop"></span>
 
 ### Drag/drop
 
@@ -120,13 +120,13 @@ The following table summarizes our recommendations for which animation you shoul
 | UI type | Recommended animation |
 |---------|-----------------------|
 | Dialog box | [**FadeInThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) and [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
-| Flyout | [**PopInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) and [**PopOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Flyout | [**PopInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation) and [**PopOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation) |
 | Tooltip | [**FadeInThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) and [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
-| Context menu | [**PopInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) and [**PopOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| Command bar | [**EdgeUIThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
-| Task pane or edge-based panel | [**PaneThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
-| Contents of any UI container | [**ContentThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| For controls or if no other animation applies | [**FadeInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation) and [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
+| Context menu | [**PopInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation) and [**PopOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation) |
+| Command bar | [**EdgeUIThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.edgeuithemetransition) |
+| Task pane or edge-based panel | [**PaneThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.panethemetransition) |
+| Contents of any UI container | [**ContentThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition) |
+| For controls or if no other animation applies | [**FadeInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation) and [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
 
  
 

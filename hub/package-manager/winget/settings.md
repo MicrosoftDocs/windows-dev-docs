@@ -1,7 +1,7 @@
 ---
 title: settings command
 description: Provides customizations for the Windows Package Manager.
-ms.date: 05/05/2021
+ms.date: 08/02/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -15,21 +15,43 @@ The **settings** command will launch your default text editor. Windows by defaul
 >[!NOTE]
 >You can easily install Visual Studio Code by typing `winget install Microsoft.VisualStudioCode`
 
-## Usage
+## Use the winget settings command
 
 Launch your default JSON editing tool: `winget settings`
 
-![Screenshot of the Windows Package Manager Settings.](./images/settings.png)
-
 When you launch the settings for the first time, there will be no settings specified. At the top of the JSON file we provide a [link](https://aka.ms/winget-settings) where you can discover the latest experimental features and settings.
 
+The code snippet below is an example of what your settings file should look like if you would like to enable or modify some of these experimental features and settings.
+
+```json
+{
+    "$schema": "https://aka.ms/winget-settings.schema.json",
+
+    // For documentation on these settings, see: https://aka.ms/winget-settings
+    "experimentalFeatures": {
+	  "dependencies": true,
+	  "directMSI": false,
+	  "zipInstall": false,
+    },
+    "visual": {
+        "progressBar": "rainbow"
+    },
+    "source": {
+        "autoUpdateIntervalInMinutes": 5
+    },
+}
+```
+
 We have also defined a schema for the settings file. This allows you to use TAB to discover settings and syntax if your JSON editor supports JSON schemas.
+
+> [!NOTE]
+> Experimental features are only available in preview builds. Instructions for obtaining a preview build can be found in the [GitHub repository](https://github.com/microsoft/winget-cli).
 
 ## Updating settings
 
 The following settings are available for the 1.0 release of the Windows Package Manager.
 
-### source
+### source settings
 
 The `source` settings involve configuration to the WinGet source.
 
@@ -48,7 +70,7 @@ A positive integer represents the update interval in minutes. The check for upda
 
 To manually update the source use `winget source update`.
 
-### visual
+### visual settings
 
 The `visual` settings involve visual elements that are displayed by WinGet
 
@@ -66,11 +88,44 @@ Color of the progress bar that WinGet displays when not specified by arguments.
 - retro
 - rainbow
 
-### installBehavior
+### installBehavior settings
 
 The `installBehavior` settings affect the default behavior of installing and upgrading (where applicable) packages.
 
-#### preferences and requirements
+### disableInstallNotes
+The `disableInstallNotes` behavior affects whether installation notes are shown after a successful install. Defaults to `false` if value is not set or is invalid.
+
+```json
+    "installBehavior": {
+        "disableInstallNotes": true
+    },
+```
+
+### portablePackageUserRoot setting
+
+The `portablePackageUserRoot` setting affects the default root directory where packages are installed to under `User` scope. This setting only applies to packages with the `portable` installer type. Defaults to `%LOCALAPPDATA%/Microsoft/WinGet/Packages/` if value is not set or is invalid.
+
+> Note: This setting value must be an absolute path.
+
+```json
+    "installBehavior": {
+        "portablePackageUserRoot": "C:/Users/FooBar/Packages"
+    },
+```
+
+### portablePackageMachineRoot setting
+
+The `portablePackageMachineRoot` setting affects the default root directory where packages are installed to under `Machine` scope. This setting only applies to packages with the `portable` installer type. Defaults to `%PROGRAMFILES%/WinGet/Packages/` if value is not set or is invalid.
+
+> Note: This setting value must be an absolute path.
+
+```json
+    "installBehavior": {
+        "portablePackageMachineRoot": "C:/Program Files/Packages/Portable"
+    },
+```
+
+### preferences and requirements settings
 
 Some of the settings are duplicated under `preferences` and `requirements`. 
 
@@ -81,7 +136,7 @@ Any arguments passed on the command line will effectively override the matching 
 
 #### scope
 
-The `scope` behavior affects the choice between installing a package for the current user or for the entire machine. The matching parameter is `--scope`, and uses the same values (`user` or `machine`).
+The `scope` behavior affects the choice between installing a package for the current user or for the entire machine. The matching parameter is `--scope`, and uses the same values (`user` or `machine`). See  [known issues relating to package installation scope](./troubleshooting.md#scope-for-specific-user-vs-machine-wide).
 
 ```json
 "installBehavior": {
@@ -103,7 +158,33 @@ The `locale` behavior affects the choice of installer based on installer locale.
 },
 ```
 
-### telemetry
+#### architectures
+
+The `architectures` behavior affects what architectures will be selected when installing a package. The matching parameter is `--architecture`. Note that only architectures compatible with your system can be selected.
+
+```json
+    "installBehavior": {
+        "preferences": {
+            "architectures": ["x64", "arm64"]
+        }
+    },
+```
+
+### uninstallBehavior
+
+The `uninstallBehavior` settings affect the default behavior of uninstalling (where applicable) packages.
+
+### purgePortablePackage
+
+The `purgePortablePackage` behavior affects the default behavior for uninstalling a portable package. If set to `true`, uninstall will remove all files and directories relevant to the `portable` package. This setting only applies to packages with the `portable` installer type. Defaults to `false` if value is not set or is invalid.
+
+```json
+    "uninstallBehavior": {
+        "purgePortablePackage": true
+    },
+```
+
+### telemetry settings
 
 The `telemetry` settings control whether winget writes ETW events that may be sent to Microsoft on a default installation of Windows.
 
@@ -119,7 +200,7 @@ See [details on telemetry](https://github.com/microsoft/winget-cli/blob/master/R
 
 If set to true, the `telemetry.disable` setting will prevent any event from being written by the program.
 
-### network
+### network settings
 
 The `network` settings influence how winget uses the network to retrieve packages and metadata.
 
@@ -135,7 +216,7 @@ The `downloader` setting controls which code is used when downloading packages. 
 }
 ```
 
-### logging
+### logging settings
 
 The `logging` settings control the level of detail in log files. `--verbose-logs` will override this setting and always creates a verbose log.
 
@@ -147,6 +228,7 @@ The `logging` settings control the level of detail in log files. `--verbose-logs
 ```
 
 #### level
+
 The following logging levels are available. Defaults to `info` if the value is not set or is invalid. 
 
 - verbose

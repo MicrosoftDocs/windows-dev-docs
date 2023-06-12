@@ -1,17 +1,17 @@
 ---
-title: Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET 5 and later apps
-description: In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET 5 or later projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET 5 or later applications.
-ms.date: 11/19/2021
+title: Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET apps
+description: In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET applications.
+ms.date: 03/23/2023
 ms.topic: article
 keywords: windows 10, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
 ---
 
-# Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET 5 and later apps
+# Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET apps
 
-In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET 5 or later projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET 5 or later applications.
+In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET applications.
 
-In .NET 5 and later, consumption of Windows metadata (WinMD) files is no longer supported (see [Built-in support for WinRT is removed from .NET](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed)). Instead, the C#/WinRT tool can be used to generate a projection assembly for any WinMD file, which then enables consumption of WinRT components from .NET 5 and later applications. A projection assembly is also known as an interop assembly. This walkthrough shows you how to do the following:
+In .NET 6 and later, consumption of Windows metadata (WinMD) files is no longer supported (see [Built-in support for WinRT is removed from .NET](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed)). Instead, the C#/WinRT tool can be used to generate a projection assembly for any WinMD file, which then enables consumption of WinRT components from .NET applications. A projection assembly is also known as an interop assembly. This walkthrough shows you how to do the following:
 
 * Use the [C#/WinRT package](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/) to generate a C# projection from a C++/WinRT component.
 * Distribute the component, along with the projection assembly, as a NuGet package.
@@ -22,7 +22,7 @@ In .NET 5 and later, consumption of Windows metadata (WinMD) files is no longer 
 This walkthrough and the corresponding sample require the following tools and components:
 
 * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) (or Visual Studio 2019) with the Universal Windows Platform development workload installed. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option.
-* [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0) or [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0).
+* [.NET 6.0 SDK](https://dotnet.microsoft.com/download/) or later.
 
 **Visual Studio 2019** only. The [C++/WinRT VSIX extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), which gives you C++/WinRT project templates in Visual Studio. The project templates are built in to Visual Studio 2022.
 
@@ -35,7 +35,7 @@ We'll be using Visual Studio 2022 and .NET 6 in this walkthrough.
 
 To follow this walkthrough, you must first have a C++/WinRT Windows Runtime component (WRC) from which to generate the C# projection assembly.
 
-This walkthrough uses the **SimpleMathComponent** WRC from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) on GitHub, which you already downloaded or cloned. **SimpleMathComponent** was created from the **Windows Runtime Component (C++/WinRT)** Visual Studio project template (which comes with Visual Studio 2022, or with the [C++/WinRT VSIX extension](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
+This walkthrough uses the **SimpleMathComponent** WRC from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) on GitHub, which you already downloaded or cloned. **SimpleMathComponent** was created from the **Windows Runtime Component (C++/WinRT)** Visual Studio project template (which comes with Visual Studio 2022, or with the [C++/WinRT VSIX extension](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
 
 To open the **SimpleMathComponent** project in Visual Studio, open the `\CsWinRT\src\Samples\NetProjectionSample\CppWinRTComponentProjectionSample.sln` file, which you'll find in your download or clone of the repo.
 
@@ -122,7 +122,7 @@ Before you can invoke the `cswinrt.exe` tool to generate the projection assembly
 
 1. In **Solution Explorer**, double-click the **SimpleMathProjection** node to open the project file in the editor.
 
-2. Update the `TargetFramework` element to target a specific Windows SDK version. This adds assembly dependencies that are necessary for the interop and projection support. This sample targets the Windows 10 SDK version **net6.0-windows10.0.19041.0** (also known as Windows 10, version 2004). Set the `Platform` element to **AnyCPU** so that the resulting projection assembly can be referenced from any app architecture. To allow referencing applications to support earlier Windows 10 SDK versions, you can also set the `TargetPlatformMinimumVersion` property.
+2. Update the `TargetFramework` element to target a specific Windows SDK version. This adds assembly dependencies that are necessary for the interop and projection support. This sample targets the Windows SDK version **net6.0-windows10.0.19041.0** (also known as Windows 10, version 2004). Set the `Platform` element to **AnyCPU** so that the resulting projection assembly can be referenced from any app architecture. To allow referencing applications to support earlier Windows SDK versions, you can also set the `TargetPlatformMinimumVersion` property.
 
     ```xml
     <PropertyGroup>
@@ -174,7 +174,7 @@ To distribute the projection assembly for .NET application developers, you can a
     > [!NOTE]
     > If you prefer generating a package separately, then you can also choose to run the `nuget.exe` tool from the command line. For more information about creating a NuGet package, see [Create a package using the nuget.exe CLI](/nuget/create-packages/creating-a-package).
 
-3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties, and paste the following code. The snippet below is an example NuGet spec for distributing **SimpleMathComponent** to multiple target frameworks. Note that projection assembly, **SimpleMathProjection.dll**, is specified instead of **SimpleMathComponent.winmd** for the target `lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll`. This behavior is new in .NET 5 and later, and is enabled by C#/WinRT. The implementation assembly, **SimpleMathComponent.dll**, must also be distributed, and will be loaded at runtime.
+3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties, and paste the following code. The snippet below is an example NuGet spec for distributing **SimpleMathComponent** to multiple target frameworks. Note that projection assembly, **SimpleMathProjection.dll**, is specified instead of **SimpleMathComponent.winmd** for the target `lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll`. This behavior is new in .NET 6 and later, and is enabled by C#/WinRT. The implementation assembly, `SimpleMathComponent.dll`, must also be distributed, and will be loaded at runtime.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -200,7 +200,7 @@ To distribute the projection assembly for .NET application developers, you can a
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
         <!--Architecture-specific implementation DLLs should be copied into RID-relative folders-->
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x64\native\SimpleMathComponent.dll" />
-        <!--To support x86 and ARM64, build SimpleMathComponent for those other architectures and uncomment the entries below.-->
+        <!--To support x86 and Arm64, build SimpleMathComponent for those other architectures and uncomment the entries below.-->
         <!--<file src="..\..\_build\Win32\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x86\native\SimpleMathComponent.dll" />-->
         <!--<file src="..\..\_build\arm64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-arm64\native\SimpleMathComponent.dll" />-->
       </files>
@@ -208,7 +208,7 @@ To distribute the projection assembly for .NET application developers, you can a
     ```
 
     > [!NOTE]
-    > **SimpleMathComponent.dll**, the implementation assembly for the component, is architecture-specific. If you're supporting other platforms (for example, x86 or ARM64), then you must first build **SimpleMathComponent** for the desired platforms, and add these assembly files to the appropriate [RID-relative folder](/nuget/create-packages/supporting-multiple-target-frameworks#architecture-specific-folders). The projection assembly **SimpleMathProjection.dll** and the component **SimpleMathComponent.winmd** are both architecture-neutral.
+    > **SimpleMathComponent.dll**, the implementation assembly for the component, is architecture-specific. If you're supporting other platforms (for example, x86 or Arm64), then you must first build **SimpleMathComponent** for the desired platforms, and add these assembly files to the appropriate [RID-relative folder](/nuget/create-packages/supporting-multiple-target-frameworks#architecture-specific-folders). The projection assembly **SimpleMathProjection.dll** and the component **SimpleMathComponent.winmd** are both architecture-neutral.
 
 4. Save and close the files you just edited.
 
@@ -278,7 +278,7 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
 5. Save and close the files you just edited, and build and run the console app. You should see the output below.
 
     ![Console NET5 output](images/console-output.png)
-    
+
 ## Known issues
 
 - When building the projection project, you might see an error like: *Error MSB3271 There was a mismatch between the processor architecture of the project being built "MSIL" and the processor architecture, "x86", of the implementation file "..\SimpleMathComponent.dll" for "..\SimpleMathComponent.winmd". This mismatch may cause runtime failures. Please consider changing the targeted processor architecture of your project through the Configuration Manager so as to align the processor architectures between your project and implementation file, or choose a winmd file with an implementation file that has a processor architecture which matches the targeted processor architecture of your project.*
@@ -289,6 +289,12 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
         <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
     </PropertyGroup>
     ```
+
+## Further considerations
+
+The C# projection (or interop) assembly that we showed how to create in this topic is quite simple&mdash;it doesn't have dependencies on other components. But to generate a C# projection for a C++/WinRT component that has references to Windows App SDK types, in the projection project you'd need to add a reference to the Windows App SDK NuGet package. If any such references are missing, then you'll see errors such as "Type \<T\> could not be found".
+
+Another thing that we do in this topic is to distribute the projection as as a NuGet package. That *is* currently necessary.
 
 ## Resources
 

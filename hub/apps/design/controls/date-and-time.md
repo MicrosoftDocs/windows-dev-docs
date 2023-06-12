@@ -6,34 +6,21 @@ label: Calendar, date, and time controls
 template: detail.hbs
 ms.date: 06/24/2021
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: kisai
-design-contact: ksulliv
-dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ---
 # Calendar, date, and time controls
 
- 
-
 Date and time controls give you standard, localized ways to let a user view and set date and time values in your app. This article provides design guidelines and helps you pick the right control.
 
-> **Important APIs**: [CalendarView class](/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [CalendarDatePicker class](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [TimePicker class](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)
+> [!div class="checklist"]
+>
+> - [Open the WinUI 2 Gallery app and see DateAndTime in action](winui2gallery:/item/DateAndTime). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/category/DataInput">open the app and see these controls in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see DateAndTime in action](winui3gallery:/item/DateAndTime).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Which date or time control should you use?
 
@@ -185,7 +172,7 @@ public sealed partial class MainPage : Page
 
 The XAML date controls support each of the calendar systems supported by Windows. These calendars are specified in the [Windows.Globalization.CalendarIdentifiers](/uwp/api/Windows.Globalization.CalendarIdentifiers) class. Each control uses the correct calendar for your app's default language, or you can set the **CalendarIdentifier** property to use a specific calendar system.
 
-The time picker control supports each of the clock systems specified in the [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers) class. You can set the [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) property to use either a 12-hour clock or 24-hour clock. The type of the property is String, but you must use values that correspond to the static string properties of the ClockIdentifiers class. These are: TwelveHour (the string "12HourClock")and TwentyFourHour (the string "24HourClock"). "12HourClock" is the default value.
+The time picker control supports each of the clock systems specified in the [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers) class. You can set the [ClockIdentifier](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.clockidentifier) property to use either a 12-hour clock or 24-hour clock. The type of the property is String, but you must use values that correspond to the static string properties of the ClockIdentifiers class. These are: TwelveHour (the string "12HourClock")and TwentyFourHour (the string "24HourClock"). "12HourClock" is the default value.
 
 ### DateTime and Calendar values
 
@@ -203,7 +190,7 @@ A related concept is the Calendar class, which influences how dates are interpre
 
 ## Get the sample code
 
-- [XAML UI basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery)
 - [Calendar sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Calendar)
 - [Date and time formatting sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/DateTimeFormatting)
 
@@ -211,7 +198,7 @@ A related concept is the Calendar class, which influences how dates are interpre
 
 ### For developers (XAML)
 
-- [CalendarView class](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)
-- [CalendarDatePicker class](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)
-- [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)
-- [TimePicker class](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)
+- [CalendarView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarView)
+- [CalendarDatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarDatePicker)
+- [DatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.DatePicker)
+- [TimePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TimePicker)

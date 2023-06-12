@@ -1,7 +1,7 @@
 ---
 title: Use the winget tool to install and manage applications
 description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
-ms.date: 04/27/2022
+ms.date: 02/10/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -12,24 +12,43 @@ The **winget** command line tool enables users to discover, install, upgrade, re
 
 ## Install winget
 
-Windows Package Manager **winget** command-line tool is bundled with Windows 11 and modern versions of Windows 10 by default as the **App Installer**.
+Windows Package Manager **winget** command-line tool is available on Windows 11 and modern versions of Windows 10 as a part of the **App Installer**.
 
-If you are running an earlier version of Windows and the App Installer is not installed, you can [get App Installer from the Microsoft Store](https://www.microsoft.com/p/app-installer/9nblggh4nns1#activetab=pivot:overviewtab). If it's already installed, make sure it is updated with the latest version.
-
-App Installer includes the production version of the winget tool.
+You can [get App Installer from the Microsoft Store](https://www.microsoft.com/p/app-installer/9nblggh4nns1#activetab=pivot:overviewtab). If it's already installed, make sure it is updated with the latest version.
 
 > [!NOTE]
-> The **winget** command line tool is only supported on Windows 10 1709 (build 16299) or later at this time.
+> The **winget** command line tool is only supported on Windows 10 1709 (build 16299) or later at this time. The winget tool will not be available until you have logged into Windows as a user for the first time, triggering Microsoft Store to register Windows Package Manager as part of an asynchronous process. If you have recently logged in as a user for the first time and find that winget is not yet available, you can open PowerShell and enter the following command to request this winget registration: `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`.
 
 ### Install winget preview version [Developers Only]
 
-To try the latest Windows Package Manager features, install the latest preview build of the **winget** command line tool in one of the following ways:
+WinGet is included in the Windows App Installer. To try the latest Windows Package Manager features, you can install a preview build one of the following ways:
 
-* Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Dev Channel](https://insider.windows.com/understand-flighting).
+- Download the latest [winget preview version](https://aka.ms/getwingetpreview). Read the [Release notes for winget preview](https://github.com/microsoft/winget-cli/releases) to learn about any new features. Installing this package will give you the preview version of the WinGet client, but it will not enable automatic updates of new preview versions from the Microsoft Store.
 
-* Use a Microsoft Account (MSA) to sign up for the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram).
+- Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Dev Channel](https://insider.windows.com/understand-flighting). The Windows Insider Dev Channel includes automatic updates of new preview versions from the Microsoft Store.
 
-* Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases). Installing this package will give you the WinGet client, but it will not enable automatic updates from the Microsoft Store.
+- Use a Microsoft Account (MSA) to sign up for the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram). Once your Microsoft Account (MSA) has been added (a few days after you receive e-mail notification) you will receive automatic updates of new preview versions from the Microsoft Store.
+
+### Install winget on Windows Sandbox
+
+[Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains "sandboxed" and runs separately from the host machine. Windows Sandbox does not include winget, nor the Microsoft Store app, so you will need to download the latest winget package from the winget releases page on GitHub.
+
+To install the stable release of winget on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:
+
+```powershell
+$progressPreference = 'silentlyContinue'
+$latestWingetMsixBundleUri = $(Invoke-RestMethod https://api.github.com/repos/microsoft/winget-cli/releases/latest).assets.browser_download_url | Where-Object {$_.EndsWith(".msixbundle")}
+$latestWingetMsixBundle = $latestWingetMsixBundleUri.Split("/")[-1]
+Write-Information "Downloading winget to artifacts directory..."
+Invoke-WebRequest -Uri $latestWingetMsixBundleUri -OutFile "./$latestWingetMsixBundle"
+Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
+Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
+Add-AppxPackage $latestWingetMsixBundle
+```
+
+If you would like a preview or different version of the Package Manager, go to https://github.com/microsoft/winget-cli/releases. Copy the URL of the version you would prefer and update the above Uri.
+
+For more information on Windows Sandbox, including how to install a sandbox and what to expect from it's usage, see the [Windows Sandbox docs](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview).
 
 ## Administrator considerations
 
@@ -60,6 +79,7 @@ The current preview of the **winget** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
+| [info](info.md) | Displays metadata about the system (version numbers, architecture, log location, etc). Helpful for troubleshooting. |
 | [install](install.md) | Installs the specified application. |
 | [show](show.md) | Displays details for the specified application. |
 | [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by the **winget** tool. |
@@ -89,12 +109,14 @@ The **winget** tool supports the following options.
 The **winget** tool supports the following types of installers:
 
 * EXE (with **Silent** and **SilentWithProgress** flags)
+* ZIP
 * INNO
 * NULLSOFT
 * MSI
 * APPX
 * MSIX
 * BURN
+* PORTABLE
 
 ## Scripting winget
 
