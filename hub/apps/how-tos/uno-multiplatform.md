@@ -29,7 +29,7 @@ Once you've [created](hello-world-winui3.md) a starter Hello World WinUI 3 app, 
 - .NET desktop development installed (for Gtk, Wpf, and Linux Framebuffer development)
 :::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text=".net desktop workload in VS":::
 
-[!INCLUDE [uno-setup.md](/hub/includes/uno-setup.md)]
+[!INCLUDE [uno-setup.md](/windows-dev-docs/hub/includes/uno-setup.md)]
 
 ## Install the Uno Platform solution templates
 
