@@ -79,6 +79,8 @@ This XAML creates a NavigationView with 3 sections of content, like the example 
         <NavigationViewItem Content="Section 2" x:Name="Section2Content" />
         <NavigationViewItem Content="Section 3" x:Name="Section3Content" />
     </NavigationView.MenuItems>
+    
+    <Frame x:Name="ContentFrame" />
 </NavigationView>
 
 <Page x:Class="AppName.Section1Page">
@@ -99,27 +101,26 @@ NavigationView provides more control over navigation customization and requires 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
-    FrameNavigationOptions navOptions = new FrameNavigationOptions();
-    navOptions.TransitionInfoOverride = new SlideNavigationTransitionInfo() {
-         SlideNavigationTransitionDirection=args.RecommendedNavigationTransitionInfo
-    };
+   var navOptions = new FrameNavigationOptions
+   {
+      TransitionInfoOverride = args.RecommendedNavigationTransitionInfo,
+      IsNavigationStackEnabled = false,
+   };
 
-    navOptions.IsNavigationStackEnabled = False;
+   switch (args.InvokedItemContainer.Name)
+   {
+      case nameof(Section1Content):
+         ContentFrame.NavigateToType(typeof(Section1Page), null, navOptions);
+         break;
 
-    switch (item.Name)
-    {
-        case "Section1Content":
-            ContentFrame.NavigateToType(typeof(Section1Page), null, navOptions);
-            break;
+      case nameof(Section2Content):
+         ContentFrame.NavigateToType(typeof(Section2Page), null, navOptions);
+         break;
 
-        case "Section2Content":
-            ContentFrame.NavigateToType(typeof(Section2Page), null, navOptions);
-            break;
-
-        case "Section3Content":
-            ContentFrame.NavigateToType(typeof(Section3Page), null, navOptions);
-            break;
-    }  
+      case nameof(Section3Content):
+         ContentFrame.NavigateToType(typeof(Section3Page), null, navOptions);
+         break;
+   }  
 }
 ```
 
