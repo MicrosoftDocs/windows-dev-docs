@@ -246,7 +246,7 @@ To bring this code-behind multi-platform, we should first move the following int
 
 - Remove the manual modification of the `ImageGridView` control's `ItemsSource` property
 
-- `ImageGridView_ContainerContentChanging` method: Used as part of a [strategy](https://learn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview#update-listview-and-gridview-items-progressively) to progressively load `GridView` items as they are scrolled into view
+- `ImageGridView_ContainerContentChanging` method: Used as part of a [strategy](/windows/uwp/debug-test-perf/optimize-gridview-and-listview#update-listview-and-gridview-items-progressively) to progressively load `GridView` items as they are scrolled into view
 
 - `ShowImage` method: Loads the image files into the `GridView`
 
@@ -933,5 +933,5 @@ You can now build and run your app on any of the supported platforms. To do so, 
 ## See also
 
 - [Uno Platform documentation](https://platform.uno/docs/articles/intro.html)
-- [Update ListView and GridView items progressively](https://learn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview#update-listview-and-gridview-items-progressively)
+- [Update ListView and GridView items progressively](/windows/uwp/debug-test-perf/optimize-gridview-and-listview#update-listview-and-gridview-items-progressively)
 - [Simple photo viewer tutorial](../get-started/simple-photo-viewer-winui3.md)
