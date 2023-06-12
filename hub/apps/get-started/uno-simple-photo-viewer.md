@@ -26,7 +26,7 @@ After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a st
 - .NET desktop development installed (for Gtk, Wpf, and Linux Framebuffer development)
 :::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text="dotnet desktop workload in VS":::
 
-[!INCLUDE [uno-setup.md](./uno-setup.md)]
+[!INCLUDE [uno-setup.md](/hub/includes/uno-setup.md)]
 
 ## Install the Uno Platform solution templates
 
@@ -77,7 +77,7 @@ Your app will need some images to display. You can use the same images from the 
 
 In the `UnoSimplePhotos` project, create a new folder named `Assets` and copy the JPG image files to a `Samples` subfolder. The `Assets` folder structure should now look like this:
 
-:::image type="content" source="images/uno/screenshot3.png" alt-text="dotnet mobile workload in VS":::
+:::image type="content" source="images/uno/screenshot3.png" alt-text="Solution explorer pane in Visual Studio":::
 
 For more information on creating the `Assets` folder and adding images to it, see the Uno Platform documentation about [Assets and image display](https://platform.uno/docs/articles/features/working-with-assets.html).
 

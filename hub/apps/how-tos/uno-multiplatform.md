@@ -29,7 +29,7 @@ Once you've [created](hello-world-winui3.md) a starter Hello World WinUI 3 app, 
 - .NET desktop development installed (for Gtk, Wpf, and Linux Framebuffer development)
 :::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text=".net desktop workload in VS":::
 
-[!INCLUDE [uno-setup.md](../get-started/uno-setup.md)]
+[!INCLUDE [uno-setup.md](/hub/includes/uno-setup.md)]
 
 ## Install the Uno Platform solution templates
 
@@ -61,7 +61,7 @@ Specify a project name, solution name, and directory. In this example, our Hello
 
 Create a new C# solution using the **Uno Platform App** type from Visual Studio's **Start Page**. To avoid conflicting with the code from the previous tutorial, we'll give this solution a different name, "Hello World Uno".
 
-Now you'll choose a base template to take your Hello World application multi-platform. The Uno Platform App template comes with two preset options that allow you to quickly get started with either a Blank solution or the Default configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications. 
+Now you'll choose a base template to take your Hello World application multi-platform. The Uno Platform App template comes with two preset options that allow you to quickly get started with either a Blank solution or the Default configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications.
 
 :::image type="content" source="../images/uno/uno-vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
 
@@ -82,13 +82,13 @@ Make sure Visual Studio has your WinUI 3 project open, then copy the child XAML 
 
 ```xml
 <Page x:Class="HelloWorld.MainPage"
-	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	  xmlns:local="using:HelloWorld"
-	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	  mc:Ignorable="d"
-	  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:local="using:HelloWorld"
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   mc:Ignorable="d"
+   Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
       <!-- Below is the code you copied from MainWindow: -->
       <StackPanel Orientation="Horizontal"
@@ -105,30 +105,28 @@ Launch the HelloWorld.Windows target. Observe that this WinUI app is identical t
 
 You can now build and run your app on any of the supported platforms. To do so, you can use the debug toolbar drop-down to select a target platform to deploy:
 
-* To run the **WebAssembly** (Wasm) head:
-    - Right-click on the `HelloWorld.Wasm` project, select **Set as startup project**
-    - Press the `HelloWorld.Wasm` button to deploy the app
-    - If desired, you can use the `HelloWorld.Server` project as an alternative
-* To debug for **iOS**:
-    - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
-    - In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.
+- To run the **WebAssembly** (Wasm) head:
+  - Right-click on the `HelloWorld.Wasm` project, select **Set as startup project**
+  - Press the `HelloWorld.Wasm` button to deploy the app
+  - If desired, you can use the `HelloWorld.Server` project as an alternative
+- To debug for **iOS**:
+  - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
+  - In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.
 
       :::image type="content" source="../images/uno/uno-mobile-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
 
-* To debug for **Mac Catalyst**: 
-    - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
-    - In the debug toolbar drop-down, select a remote macOS device. You'll need to be paired with one for this to work.
-* To debug the **Android** platform:
-    - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
-    - In the debug toolbar drop-down, select either an active Android device or the emulator
-        - Select an active device in the "Device" sub-menu
-* To debug on **Linux** with **Skia GTK**:
-    - Right-click on the `HelloWorld.Skia.Gtk` project, and select **Set as startup project**
-    - Press the `HelloWorld.Skia.Gtk` button to deploy the app
-
+- To debug for **Mac Catalyst**:
+  - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
+  - In the debug toolbar drop-down, select a remote macOS device. You'll need to be paired with one for this to work.
+- To debug the **Android** platform:
+  - Right-click on the `HelloWorld.Mobile` project, select **Set as startup project**
+  - In the debug toolbar drop-down, select either an active Android device or the emulator
+    - Select an active device in the "Device" sub-menu
+- To debug on **Linux** with **Skia GTK**:
+  - Right-click on the `HelloWorld.Skia.Gtk` project, and select **Set as startup project**
+  - Press the `HelloWorld.Skia.Gtk` button to deploy the app
 
 Now you're ready to start building your multi-platform application!
-
 
 ## See also
 
