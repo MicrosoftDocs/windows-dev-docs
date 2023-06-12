@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 06/15/2022
+ms.date: 05/27/2023
 ms.topic: article
 keywords: windows 10, uwp, title bar
 doc-status: Draft
@@ -250,8 +250,13 @@ public MainWindow()
 }
 ```
 
-> [!CAUTION]
-> `Title` shows in the XAML IntelliSense for `Window`, but setting it in XAML causes an error. Set this property in code instead.
+```xaml
+<Window
+    ...
+    Title="App title">
+    ...
+</Window>
+```
 
 > [!NOTE]
 > To add color to the default title bar or to change the window icon that comes with a WinUI 3 window, you will need to use the Windows App SDK AppWindow APIs or opt to fully customize your titlebar.

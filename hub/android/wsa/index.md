@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 02/13/2023
+ms.date: 06/06/2023
 ---
 
 # Windows Subsystem for Android™️
@@ -24,9 +24,9 @@ For more information or support:
 
 This guide can help you test and debug your Android app on Windows:
 
-- [Set up your development environment](#set-up-your-development-environment), including [prerequisites](#prerequisites), [installing the Amazon Appstore](#install-the-amazon-appstore), and using the [Settings app](#windows-subsystem-for-android-settings-app).
-- Handle input compatibility considerations for Windows devices, such as: [keyboard input](#keyboard-input), [mouse input](#mouse-input), and [window management and resizing](#window-management-and-resizing).
+- [Set up your development environment](#set-up-your-development-environment), including [prerequisites](#prerequisites), [installing the Amazon Appstore](#install-the-amazon-appstore), and using the [Settings](#windows-subsystem-for-android-settings).
 - [Test and debug](#test-and-debug) your app on a Windows 11 device.
+- Handle input compatibility considerations for Windows devices, such as: [keyboard input](#keyboard-input), [mouse input](#mouse-input), and [window management and resizing](#window-management-and-resizing).
 - [Troubleshoot and find answers](#troubleshooting-issues).
 
 ## Developer GitHub
@@ -49,21 +49,84 @@ Windows Subsystem for Android is available on Windows 11. Your device must meet 
 
 The Microsoft Store will automatically install Windows Subsystem for Android silently in the background when either of the two following user actions are taken:
 
-1. Install the Amazon Appstore from the Microsoft Store. Selecting **Get** will begin the installation of the app.
+1. Install the [Amazon Appstore from the Microsoft Store](https://www.microsoft.com/store/productId/9NJHK44TTKSX). Selecting **Get** will begin the installation of the app.
 2. Install an Android app from the Microsoft Store for the first time, which will also install the Amazon Appstore.
 
-The Amazon Appstore and the Windows Subsystem for Android Settings app will then appear in the Windows 11 Start menu and be available on search, offering a catalogue of Android apps.
+The **Amazon Appstore** app will then appear in the Windows 11 Start menu and be available on search, offering a catalogue of Android apps. The **Windows Subsystem for Android** app, which lets you control mobile app settings and features, will also appear in the Start menu.
 
 ![Screenshot of Microsoft Store page featuring the Get button on the Amazon App Store](../../images/wsa-amazon-appstore-get.png)
 
 > [!NOTE]
 > The Amazon Appstore on Windows (a requirement for running Android apps on Windows 11) is available in [select regions](https://support.microsoft.com/windows/countries-and-regions-that-support-amazon-appstore-on-windows-d8dd17c7-5994-4187-9527-ddb076f9493e?preview=true).
 
-## Windows Subsystem for Android™️ Settings app
+## Windows Subsystem for Android™️ Settings
 
-To access the Windows Subsystem for Android Settings app, go to: **Start > All Apps > Windows Subsystem for Android™️ Settings**. Learn more about specific settings app features: [Manage settings for mobile apps on Windows](https://support.microsoft.com/windows/000f97e8-8c20-490e-9ef4-cd90d903f847).
+To modify Windows Subsystem for Android settings, go to: **Start > All Apps > Windows Subsystem for Android™️**. Learn more about specific settings app features: [Manage settings for mobile apps on Windows](https://support.microsoft.com/windows/000f97e8-8c20-490e-9ef4-cd90d903f847).
 
 ![Screenshot of Latte app settings](../../images/wsa-settings.png)
+
+## Test and debug
+
+To test and debug your app on a Windows 11 device using the Windows Subsystem for Android the following set up steps are required.
+
+### Enable developer mode in Windows Settings
+
+You must first enable developer mode. Open the **[Windows Subsystem for Android™️](#windows-subsystem-for-android-settings)** settings. Once open, enable **Developer mode** under **Advanced settings**.
+
+### Connect to the Windows Subsystem for Android for debugging
+
+To connect to the Windows Subsystem for Android VM for debugging:
+
+1. Launch an Android app that was installed using the Amazon Appstore.
+
+2. You can connect using adb connect with the following command (you must have [adb installed](https://developer.android.com/studio/command-line/adb)):
+
+    ```powershell
+    adb connect 127.0.0.1:58526
+    ```
+
+### Connect to a test device
+
+To connect to a test device (with Windows Subsystem for Android installed) on the same network from Windows/Mac:
+
+1. On the test device (where Windows Subsystem for Android is installed) open a PowerShell window and identify the IP address of the test device by running the command:
+
+    ```powershell
+    ipconfig
+    ```
+
+2. Using the debugging device terminal where Android Studio and the Android SDK is installed (Mac/Windows), enter the command:
+
+    ```console
+    adb connect <TEST DEVICE IP ADDRESS>:58526
+    ```
+
+The `<TEST DEVICE IP ADDRESS>` can be found in the output of "ipconfig" from the test device. You can also deploy and debug apps from Android Studio.
+
+To use Android Debug Bridge (ADB) to connect your development workstation directly to your Android device so you can install packages and evaluate changes, see [Android Debug Bridge in the Android Open Source Project docs](https://source.android.com/setup/build/adb).
+
+### Debug your app
+
+While apps should be installed using the Amazon Appstore, debugging an Android app on a Windows device is possible using an APK (Android application package) and adb (Android Debug Bridge).
+
+To debug an APK using adb:
+
+1. Follow the steps to connect to the Windows Subsystem for Android VM above.
+
+2. Install the APK using the adb install command: `adb install app-debug.apk`
+
+    Expected Output:
+
+    ```powershell
+    Performing Streamed Install
+    Success
+    ```
+
+3. A successful “app installed” notification  will appear in the Windows notification menu and the app will launch once selected.
+
+### Building Universal APKs
+
+Windows Subsystem for Android utilizes Intel Bridge Technology to enable Arm applications on x86 based processors. Arm applications will run on Arm-based processors natively. The emulation layer will induce a performance overhead – for optimal performance, submit your application for both the x86-64 and Arm64 architectures.
 
 ## Input compatibility considerations for Windows devices
 
@@ -137,73 +200,6 @@ Learn more about how to optimize for window resizing scenarios on desktop device
 Developing Android applications for a multi-window environment has an impact on the lifecycle events that you choose to utilize in your application. While overriding the `onPause` event may achieve the results you’d like on a phone or tablet, it’s typically the wrong event to use if you’re changing your app’s UX.
 
 See the [Android documentation](https://developer.android.com/guide/components/activities/activity-lifecycle) for a description of the lifecycle events. More often than not, you’ll want to use the `onStop` event and not the `onPause` or `onUserLeaveHint` events. In fact, many multi-window Android implementations do not deliver the `onUserLeaveHint` notification, and thus any business critical logic that might be in that event handler will not be called on these platforms, including Windows Subsystem for Android.
-
-## Test and debug
-
-To test and debug your app on a Windows 11 device using the Windows Subsystem for Android the following set up steps are required.
-
-### Enable developer mode in Windows Settings
-
-You must first enable developer mode in Windows Settings. There are three ways to enable developer mode:
-
-- Open the [Windows Subsystem for Android Settings app](#windows-subsystem-for-android-settings-app). Once open, enable **Developer Mode**.
-- Search for “Developer Settings” in Windows search.
-- Navigate to Settings > Privacy and Security > For developers > Developer mode.
-
-### Connect to the Windows Subsystem for Android for debugging
-
-To connect to the Windows Subsystem for Android VM for debugging:
-
-1. Launch an Android app that was installed using the Amazon Appstore.
-
-2. You can connect using adb connect with the following command (you must have [adb installed](https://developer.android.com/studio/command-line/adb)):
-
-    ```powershell
-    adb connect 127.0.0.1:58526
-    ```
-
-### Connect to a test device
-
-To connect to a test device (with Windows Subsystem for Android installed) on the same network from Windows/Mac:
-
-1. On the test device (where Windows Subsystem for Android is installed) open a PowerShell window and identify the IP address of the test device by running the command:
-
-    ```powershell
-    ipconfig
-    ```
-
-2. Using the debugging device terminal where Android Studio and the Android SDK is installed (Mac/Windows), enter the command:
-
-    ```console
-    adb connect <TEST DEVICE IP ADDRESS>:58526
-    ```
-
-The `<TEST DEVICE IP ADDRESS>` can be found in the output of "ipconfig" from the test device. You can also deploy and debug apps from Android Studio.
-
-To use Android Debug Bridge (ADB) to connect your development workstation directly to your Android device so you can install packages and evaluate changes, see [Android Debug Bridge in the Android Open Source Project docs](https://source.android.com/setup/build/adb).
-
-### Debug your app
-
-While apps should be installed using the Amazon Appstore, debugging an Android app on a Windows device is possible using an APK (Android application package) and adb (Android Debug Bridge).
-
-To debug an APK using adb:
-
-1. Follow the steps to connect to the Windows Subsystem for Android VM above.
-
-2. Install the APK using the adb install command: `adb install app-debug.apk`
-
-    Expected Output:
-
-    ```powershell
-    Performing Streamed Install
-    Success
-    ```
-
-3. A successful “app installed” notification  will appear in the Windows notification menu and the app will launch once selected.
-
-### Building Universal APKs
-
-Windows Subsystem for Android utilizes Intel Bridge Technology to emulate Arm applications on x86 based processors. Arm applications will run on Arm based processors natively. The emulation layer will induce a performance overhead – for optimal performance, submit your application for both the x86-64 and Arm64 architectures.
 
 ## VM lifecycle considerations
 

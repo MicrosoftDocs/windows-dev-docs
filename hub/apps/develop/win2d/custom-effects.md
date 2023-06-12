@@ -13,6 +13,9 @@ Win2D provides several APIs to represent objects that can be drawn, which are di
 
 Images and effects can also be chained together, to create arbitrary graphs which can then be displayed in your application (also refer to the D2D docs on [Direct2D effects](/windows/win32/direct2d/effects-overview)). Together, they provide an extremely flexible system to author complex graphics in an efficient manner. However, there are cases where the built-in effects are not sufficient, and you might want to build your very own Win2D effect. To support this, Win2D includes a set of powerful interop APIs that allows defining custom images and effects that can seamlessly integrate with Win2D.
 
+> [!TIP]
+> If you are using C# and want to implement a custom effect or effect graph, it is recommended to use [ComputeSharp](https://github.com/Sergio0694/ComputeSharp) rather than trying to implement an effect from scratch. [See the paragraph below](#custom-effects-in-c-using-computesharp) for a detailed explanation of how to use this library to implement custom effects that integrate seamlessly with Win2D.
+
 > **Platform APIs:** [`ICanvasImage`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`CanvasBitmap`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`VirtualizedCanvasBitmap`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`CanvasRenderTarget`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`CanvasEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`GaussianBlurEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`TintEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`ICanvasLuminanceToAlphaEffectImage`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`IGraphicsEffectSource`](/uwp/api/windows.graphics.effects.igraphicseffectsource), [`ID2D21Image`](/windows/win32/api/d2d1/nn-d2d1-id2d1image), [`ID2D1Factory1`](/windows/win32/api/d2d1_1/nn-d2d1_1-id2d1factory1), [`ID2D1Effect`](/windows/win32/api/d2d1_1/nn-d2d1_1-id2d1effect)
 
 ## Implementing a custom `ICanvasImage`
@@ -107,9 +110,6 @@ After all initialization logic is done, the resulting `ID2D1Image` (just like wi
 
 > [!NOTE]
 > Correctly implementing this method (and `ICanvasImageInterop` in general) is **extremely** complicated, and it's only meant to be done by advanced users that absolutely need the extra flexibility. A solid understanding of D2D, Win2D, COM, WinRT and C++ is recommended before attempting to write an `ICanvasImageInterop` implementation. If your custom Win2D effect also has to wrap a custom D2D effect, you'll need to implement your own `ID2D1Effect` object as well (refer to the [D2D docs](/windows/win32/direct2d/custom-effects) on custom effects for more info on this). These docs are not an exhaustive description of all necessary logic (for instance, they don't cover how effect sources should be marshalled and managed across the D2D/Win2D boundary), so it is recommended to also use the `CanvasEffect` implementation in Win2D's codebase as a reference point for a custom effect, and modify it as needed.
-
-> [!NOTE]
-> If you are using C# and want to implement a custom effect or effect graph, it is recommended to use [ComputeSharp](https://github.com/Sergio0694/ComputeSharp) rather than trying to implement an effect from scratch. See the paragraph below for a detailed explanation of how to use this library to implement custom effects.
 
 ### Implementing `GetBounds`
 
@@ -264,7 +264,14 @@ Let's go over how they can be used:
 
 ## Custom effects in C# using ComputeSharp
 
-If you're using C# and want to implement a custom effect, the recommended approach is to use the [ComputeSharp](https://github.com/Sergio0694/ComputeSharp) library, which enables you to both implement custom D2D1 pixel shaders entirely in C#, as well as to easily define custom effects graphs that are compatible with Win2D. The same library is also used in the Microsoft Store to power several graphics components in the application.
+As we mentioned, if you're using C# and want to implement a custom effect, the recommended approach is to use the [ComputeSharp](https://github.com/Sergio0694/ComputeSharp) library. It enables you to both implement custom D2D1 pixel shaders entirely in C#, as well as to easily define custom effects graphs that are compatible with Win2D. The same library is also used in the Microsoft Store to power several graphics components in the application.
+
+You can add a reference to ComputeSharp in your project through NuGet:
+  * On UWP, select the [**ComputeSharp.D2D1.Uwp**](https://www.nuget.org/packages/ComputeSharp.D2D1.Uwp/) package.
+  * On WinAppSDK, select the [**ComputeSharp.D2D1.WinUI**](https://www.nuget.org/packages/ComputeSharp.D2D1.WinUI/) package.
+
+> [!NOTE]
+> Similarly to Win2D, almost all APIs in ComputeSharp.D2D1.\* are identical across the UWP and WinAppSDK targets, the only difference being the namespace (ending in either `.Uwp` or `.WinUI`). Like with the rest of the docs, the following code samples will use the `.WinUI` namespace, but the same code will also work on UWP after adjusting the `using` directives in the file.
 
 There are two main components in ComputeSharp to interop with Win2D:
 - `PixelShaderEffect<T>`: a Win2D effect that is powered by a D2D1 pixel shader. The shader itself is written in C# using the APIs provided by ComputeSharp. This class also provides properties to set effect sources, constant values, and more.

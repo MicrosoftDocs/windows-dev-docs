@@ -2,7 +2,7 @@
 title: Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
 description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [Windows UI Library (WinUI) 3](../../winui/index.md) app that uses the Windows App SDK.
 ms.topic: article
-ms.date: 09/12/2022
+ms.date: 06/06/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
 ms.author: stwhi
 author: stevewhims
@@ -11,24 +11,28 @@ ms.localizationpriority: medium
 
 # Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
 
-The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# Universal Windows Platform (UWP) app to a [Windows UI Library (WinUI) 3](../../winui/index.md) app that uses the Windows App SDK.
+The .NET Upgrade Assistant (see [Overview of the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview)) is a Visual Studio extension (recommended), and a command-line tool, that can assist with migrating a C# Universal Windows Platform (UWP) app to a [Windows UI Library (WinUI) 3](/windows/apps/winui/) app that uses the Windows App SDK.
 
-Also see the [Upgrade Assistant](https://github.com/dotnet/upgrade-assistant) GitHub repository. Command-line options for running the tool are documented there.
+Our roadmap for UWP support in the .NET Upgrade Assistant includes further tooling improvements, and adding migration support for new features. If you find issues related to the .NET Upgrade Assistant, then you can file them within Visual Studio by selecting **Help** > **Send Feedback** > **Report a Problem**.
+
+Also see the [Upgrade Assistant](https://github.com/dotnet/upgrade-assistant) GitHub repository. Options for running the tool on the command-line are documented there.
 
 ## Install the .NET Upgrade Assistant
 
-For info about installing the tool, see [Overview of the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview).
+You can install the .NET Upgrade Assistant as a Visual Studio extension or as a .NET command-line tool. For more info, see [Install the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-install).
 
 ## Summary
 
 When you use the .NET Upgrade Assistant to migrate your UWP app, here are the high-level steps and stages in the migration process that the tool carries out.
 
-* Makes a backup (a copy) of your project in a new folder.
-* Migrates your project in-place, in the same folders and files, without renaming folders.
-* Upgrades your project to the latest SDK format, and cleans up NuGet package references.
+* Optionally copies your project, and migrates the copy; leaving your original project unchanged.
+* Optionally migrates your project in-place (in the same folders and files, without renaming folders); and doesn't make a copy.
+* Upgrades your project from the .NET Framework project format to the latest .NET SDK project format.
+* Cleans up NuGet package references. In addition to the packages referenced by your app, the `packages.config` file contains references to the dependencies of those packages. For example, if you added reference to package **A**, which depends on package **B**, then both packages would be referenced in the `packages.config` file. In the new project system, only the reference to package **A** is required. So this step analyzes the package references, and removes those that aren't required. Your app is still referencing .NET Framework assemblies. Some of those assemblies might be available as NuGet packages. So this step analyzes those assemblies, and references the appropriate NuGet package.
 * Targets .NET 6, and the Windows App SDK.
-* Upgrades from WinUI 2 to WinUI 3.
-* Adds new template files such as `App.Xaml`, `MainWindow.Xaml`, and publishing profiles.
+* Changes the target framework moniker (TFM) (see [Target frameworks in SDK-style projects](/dotnet/standard/frameworks)) from .NET Framework to the suggested SDK. For example, `net6.0-windows`.
+* Migrates your UWP source code from WinUI 2 to WinUI 3, performing source-specific code changes.
+* Adds/updates any template, config, and code files. For example, adding necessary publishing profiles, `App.xaml.cs`, `MainWindow.xaml.cs`, `MainWindow.xaml`, and others.
 * Update namespaces, and adds **MainPage** navigation.
 * Attempts to detect and fix APIs that are different between UWP and the Windows App SDK, and uses **Task List** TODOs to mark APIs that are no longer supported.
 
@@ -72,215 +76,27 @@ Let's take the .NET Upgrade Assistant for a test-drive.
 
 As source material, we'll be migrating the UWP [PhotoLab sample](https://github.com/microsoft/Windows-appsample-photo-lab.git) application. PhotoLab is a sample app for viewing and editing image files. It demonstrates XAML layout, data binding, and UI customization features.
 
-Begin by cloning or downloading the PhotoLab sample source code from the link above.
-
-Be aware that after we've used the tool to automate the migration of the app, additional manual effort will be needed to complete the migration.
-
 > [!NOTE]
-> You can see a case study of the PhotoLab sample being fully migrated manually in [A Windows App SDK migration of the UWP PhotoLab sample app](./case-study-1.md).
+> You can see a case study of the PhotoLab sample being fully manually migrated in [A Windows App SDK migration of the UWP PhotoLab sample app](./case-study-1.md).
 
-### The analysis stage
-
-> [!NOTE]
-> In the current release of the .NET Upgrade Assistant, the `analyze` command is still in development, and it isn't yet working as intended.
-
-The `analyze` command performs a simplified dry run of migrating your app. This stage might provide insights as to what changes you might need to make to your project before going ahead with the migration proper.
-
-At a command prompt, navigate to the folder where the `.sln` file of the PhotoLab sample is. As shown below, to perform the analyis stage, you issue the command `upgrade-assistant analyze`, and pass in the name of the project or solution you want to analyze. In this test drive, we want to analyze `PhotoLab.sln`.
-
-```console
-> upgrade-assistant analyze PhotoLab.sln
-
-[17:36:32 INF] Loaded 8 extensions
-[17:36:34 INF] Using MSBuild from C:\Program Files\dotnet\sdk\6.0.400\
-[17:36:34 INF] Using Visual Studio install from D:\Program Files\Microsoft Visual Studio\2022\Enterprise [v17]
-[17:36:39 INF] Writing output to D:\Windows-appsample-photo-lab-master\AnalysisReport.sarif
-[17:36:40 INF] Skip minimum dependency check because Windows App SDK cannot work with targets lower than already recommended TFM.
-[17:36:40 INF] Recommending Windows TFM net6.0-windows because the project either has Windows-specific dependencies or builds to a WinExe
-[17:36:40 INF] Marking package Microsoft.NETCore.UniversalWindowsPlatform for removal based on package mapping configuration UWP
-[17:36:40 INF] Adding package Microsoft.WindowsAppSDK based on package mapping configuration UWP
-[17:36:40 INF] Adding package Microsoft.Graphics.Win2D based on package mapping configuration UWP
-[17:36:40 INF] Marking package Microsoft.UI.Xaml for removal based on package mapping configuration UWP
-[17:36:41 WRN] No version of Microsoft.Toolkit.Uwp.UI.Animations found that supports ["net6.0-windows"]; leaving unchanged
-[17:36:41 INF] Package Microsoft.UI.Xaml, Version=2.4.2 does not support the target(s) net6.0-windows but a newer version (2.8.1) does.
-[17:36:41 INF] Package Microsoft.WindowsAppSDK, Version=1.1.0 does not support the target(s) net6.0-windows but a newer version (1.1.4) does.
-[17:36:41 INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.4.336902) needs to be added
-[17:36:42 INF] Adding Microsoft.Windows.Compatibility 6.0.0 helps with speeding up the upgrade process for Windows-based APIs
-[17:36:44 WRN] Unable to find a supported WinUI nuget package for Microsoft.Toolkit.Uwp.UI.Animations. Skipping this package.
-[17:36:45 INF] Running analyzers on PhotoLab
-[17:36:54 INF] Identified 0 diagnostics in project PhotoLab
-[17:36:54 INF] Winforms Updater not applicable to the project(s) selected
-[17:36:54 INF] Analysis Complete, the report is available at D:\Windows-appsample-photo-lab-master\AnalysisReport.sarif
-```
-
-There's quite a bit of internal diagnostic information in the output, but some information is helpful. Notice that the analysis indicates that the migration will recommend that the project target the `net6.0-windows` target framework moniker (TFM) (see [Target frameworks in SDK-style projects](/dotnet/standard/frameworks)). A console application would probably get the recommendation to upgrade to TFM `net6.0` directly, unless it used some Windows-specific libraries.
-
-For PhotoLab, the output indicates that no changes need to be made to the project before migrating.
+1. Begin by cloning or downloading the PhotoLab sample source code from the link above.
 
 > [!TIP]
-> When you're analyzing your own UWP projects, if any errors or warnings are reported, then we recommend that you take care of them before you move on to the next stage.
+> Be aware that after we've used the tool to automate the migration of the app, additional manual effort will be needed to complete the migration.
 
-### The migration stage
+1. Open the PhotoLab solution in Visual Studio.
 
-As shown below, to perform the migration stage, you issue the command `upgrade-assistant upgrade`, and pass in the name of the project or solution you want to migrate. In this test drive, we want to migrate `PhotoLab.sln`.
+1. Having installed the .NET Upgrade Assistant extension (see [Install the .NET Upgrade Assistant](#install-the-net-upgrade-assistant) earlier in this topic), right-click on the project in **Solution Explorer**, and click **Upgrade**.
 
-So, still at a command prompt, and still navigated to the folder where the `.sln` file of the PhotoLab sample is, issue this command:
+1. Choose the **In-place project upgrade** option.
 
-```console
-upgrade-assistant upgrade PhotoLab.sln
-```
+1. Choose a target framework.
 
-> [!TIP]
-> For this test drive, the solution contains just one project. Alternatively, you can pass the name of a project to the tool, instead of the name of a solution. However, if you pass the name of a solution that contains multiple projects, then the tool will ask you to indicate which project is the startup project (the tool calls it the *upgrade entrypoint*). Based on that project, the tool creates a dependency graph, and it suggests an order in which to upgrade the projects.
+1. Click **Upgrade selection**.
 
-The .NET Upgrade Assistant runs and prints out the migration steps it will perform. Take this opportunity to read over the list of steps to get an idea for what's involved in the migration process.
+1. The .NET Upgrade Assistant runs, and uses the Visual Studio **Output** window to print out info and status as it goes.
 
-After the list of steps, the tool prints out a menu of commands for you to choose from. You can apply or skip the next step (for example, the first step is to back up your UWP project). Or you can get more information about the next step, adjust logging settings, or stop the upgrade and quit.
-
-You can enter a number, and press <kbd>Enter</kbd>. Or just press <kbd>Enter</kbd> to select the first command in the menu.
-
-As each step begins, the tool might provide information about what will likely happen if you apply the step.
-
-#### Back up project
-
-In this step, either accept the default path (just press <kbd>Enter</kbd>), or enter a custom path.
-
-After the step, press <kbd>Enter</kbd> again to continue.
-
-When the tool moves on to the next step, it prints out the same set of steps again, with indications of which steps are complete, and which steps are yet to take place.
-
-After the list of steps, the tool again prints out the menu of commands for you to choose from.
-
-> [!TIP]
-> If you want to leave the tool to run unattended without needing to repeatedly interact with it, then you can run the tool in non-interactive mode. To do that, provide the `--non-interactive` command-line option. However, when you run `upgrade-assistant` in (the default) interactive mode, you have control over the changes/upgrades performed on your projects. Whereas using `upgrade-assistant` with `--non-interactive` can leave your project in a broken state. We advise you to use the option at your own discretion. All command-line options for running the tool are documented on the [Upgrade Assistant](https://github.com/dotnet/upgrade-assistant) GitHub repository.
-
-#### Convert project file to SDK style
-
-In this step, the project is upgraded from the .NET Framework project format to the .NET SDK project format. Here's some typical output from this step.
-
-```console
-[17:39:52 INF] Applying upgrade step Convert project file to SDK style
-[17:39:52 INF] Converting project file format with try-convert, version 0.4.336902+3799b6849a9457619660a355ca9111c050b0ef79
-[17:39:53 INF] Skip minimum dependency check because Windows App SDK cannot work with targets lower than already recommended TFM.
-[17:39:53 INF] Recommending Windows TFM net6.0-windows because the project either has Windows-specific dependencies or builds to a WinExe
-[17:39:55 INF] Converting project D:\Windows-appsample-photo-lab-master\PhotoLab\PhotoLab.csproj to SDK style
-[17:39:55 INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
-[17:40:00 INF] Upgrade step Convert project file to SDK style applied successfully
-```
-
-> [!TIP]
-> When you're migrating your own UWP projects, we recommend that you pay attention to the output of each step. If any errors or warnings are reported, then we recommend that you take care of them before you move on to the next step.
-
-#### Clean up NuGet package references
-
-In this step (and its potentially many sub-steps), the tool cleans up NuGet package references.
-
-In addition to the packages referenced by your app, the `packages.config` file contains references to the dependencies of those packages. For example, if you added reference to package **A**, which depends on package **B**, then both packages would be referenced in the `packages.config` file. In the new project system, only the reference to package **A** is required. So this step analyzes the package references, and removes those that aren't required.
-
-Your app is still referencing .NET Framework assemblies. Some of those assemblies might be available as NuGet packages. So this step analyzes those assemblies, and references the appropriate NuGet package.
-
-> [!TIP]
-> Again, when you're migrating your own UWP projects, pay attention to the output to see if there's any action for you.
-
-#### Update TFM
-
-The tool next changes the target framework moniker (TFM) (see [Target frameworks in SDK-style projects](/dotnet/standard/frameworks)) from .NET Framework to the suggested SDK. In this example, it's `net6.0-windows`.
-
-```console
-[17:44:52 INF] Initializing upgrade step Update TFM
-[17:44:53 INF] Skip minimum dependency check because Windows App SDK cannot work with targets lower than already recommended TFM.
-[17:44:53 INF] Recommending Windows TFM net6.0-windows10.0.19041 because the project either has Windows-specific dependencies or builds to a WinExe
-```
-
-#### Update NuGet Packages
-
-Next, the tool updates the project's NuGet packages to the versions that support the updated TFM, `net6.0-windows`.
-
-```console
-[17:44:53 INF] Initializing upgrade step Update NuGet Packages
-[17:44:53 INF] Initializing upgrade step Duplicate reference analyzer
-[17:44:53 INF] No package updates needed
-[17:44:53 INF] Initializing upgrade step Package map reference analyzer
-[17:44:53 INF] No package updates needed
-[17:44:53 INF] Initializing upgrade step Target compatibility reference analyzer
-[17:44:53 INF] No package updates needed
-[17:44:53 INF] Initializing upgrade step Upgrade assistant reference analyzer
-[17:44:53 INF] No package updates needed
-[17:44:53 INF] Initializing upgrade step Windows Compatibility Pack Analyzer
-[17:44:53 INF] No package updates needed
-[17:44:53 INF] Initializing upgrade step MyDotAnalyzer reference analyzer
-[17:44:53 INF] No package updates needed
-[17:44:53 INF] Initializing upgrade step Newtonsoft.Json reference analyzer
-[17:44:53 INF] No package updates needed
-[17:44:53 INF] Initializing upgrade step Windows App SDK package analysis
-[17:44:53 INF] No package updates needed
-[17:44:53 INF] Initializing upgrade step Transitive reference analyzer
-[17:44:53 INF] No package updates needed
-[17:44:53 INF] Applying upgrade step Update NuGet Packages
-[17:44:53 INF] Upgrade step Update NuGet Packages applied successfully
-```
-
-#### Add template files
-
-> [!TIP]
-> When you're analyzing your own UWP projects, the tool might automatically skip the next few steps if it determines that there isn't anything to do for the particular project.
-
-This step involves update any template , config, and code files. In this example, the tool automatically adds necessary publish profiles, `App.xaml.cs`, `MainWindow.xaml.cs`, `MainWindow.xaml`, and others.
-
-```console
-[17:44:53 INF] Initializing upgrade step Add template files
-[17:44:54 INF] 9 expected template items needed
-[17:49:44 INF] Applying upgrade step Add template files
-[17:49:44 INF] Added template file app.manifest
-[17:49:44 INF] Added template file Properties\launchSettings.json
-[17:49:44 INF] Added template file Properties\PublishProfiles\win10-arm64.pubxml
-[17:49:44 INF] Added template file Properties\PublishProfiles\win10-x64.pubxml
-[17:49:44 INF] Added template file Properties\PublishProfiles\win10-x86.pubxml
-[17:49:44 INF] File already exists, moving App.xaml.cs to App.xaml.old.cs
-[17:49:44 INF] Added template file App.xaml.cs
-[17:49:44 INF] Added template file MainWindow.xaml.cs
-[17:49:44 INF] Added template file MainWindow.xaml
-[17:49:44 INF] Added template file UWPToWinAppSDKUpgradeHelpers.cs
-[17:49:44 INF] 9 template items added
-[17:49:44 INF] Upgrade step Add template files applied successfully
-```
-
-#### Update Windows Desktop Project (UWP-specific changes)
-
-In this step the tool updates the UWP project to the new Windows Desktop project.
-
-> [!IMPORTANT]
-> You can choose to skip the sub-step for back button insertion if that's best for your project. Inserting back button functionality might cause your UI to behave differently. If that happens, then remove the **StackPanel** that's inserted as a parent of the back button, and reposition the back button where it seems best.
-
-```console
-[17:56:53 INF] Applying upgrade step Update WinUI namespaces
-[17:56:53 INF] Upgrade step Update WinUI namespaces applied successfully
-
-[17:58:45 INF] Applying upgrade step Update WinUI Project Properties
-[17:58:46 INF] Upgrade step Update WinUI Project Properties applied successfully
-
-[17:59:11 INF] Applying upgrade step Update package.appxmanifest
-[17:59:11 INF] Upgrade step Update package.appxmanifest applied successfully
-
-[17:59:11 INF] Applying upgrade step Update package.appxmanifest
-[17:59:11 INF] Upgrade step Update package.appxmanifest applied successfully
-
-[17:59:37 INF] Applying upgrade step Remove unnecessary files
-[17:59:37 INF] Deleting .\source\repos\Windows-appsample-photo-lab\PhotoLab\Properties\AssemblyInfo.cs as it is not required for Windows App SDK projects.
-[17:59:37 INF] Upgrade step Remove unnecessary files applied successfully
-
-[18:00:22 INF] Applying upgrade step Update animations xaml
-[18:00:22 INF] Upgrade step Update animations xaml applied successfully
-
-[18:00:42 INF] Applying upgrade step Insert back button in XAML
-[18:00:42 INF] Upgrade step Insert back button in XAML applied successfully
-[18:00:42 INF] Applying upgrade step Update Windows Desktop Project
-[18:00:42 INF] Upgrade step Update Windows Desktop Project applied successfully
-```
-
-#### Update source code
-
-In this important step, the tool will try to migrate your UWP source code to WinUI 3, performing source-specific code changes.
+You can monitor the progress bar until the upgrade operation completes.
 
 Code migration for the **PhotoLab** sample app includes:
 
@@ -290,63 +106,7 @@ Code migration for the **PhotoLab** sample app includes:
 * Implementing the back button functionality and adding a **Task List** TODO to customize XAML button.
 * A link to documentation is provided that you can use to learn more about back button implementation.
 
-Here's the consolidated output from the next few substeps:
-
-```console
-[18:05:45 INF] Applying upgrade step Apply fix for UA307: Custom back button implementation is needed
-[18:05:45 WRN] D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\MainPage.xaml.cs
-            TODO UA307 Default back button in the title bar does not exist in WinUI3 apps.
-            The tool has generated a custom back button in the MainWindow.xaml.cs file.
-            Feel free to edit its position, behavior and use the custom back button instead.
-            Read: https://learn.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1#restoring-back-button-functionality
-[18:05:45 INF] Diagnostic UA307 fixed in D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\MainPage.xaml.cs
-[18:05:45 WRN] D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\DetailPage.xaml.cs
-            TODO UA307 Default back button in the title bar does not exist in WinUI3 apps.
-            The tool has generated a custom back button in the MainWindow.xaml.cs file.
-            Feel free to edit its position, behavior and use the custom back button instead.
-            Read: https://learn.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1#restoring-back-button-functionality
-[18:05:45 INF] Diagnostic UA307 fixed in D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\DetailPage.xaml.cs
-[18:05:45 INF] Running analyzers on PhotoLab
-[18:05:48 INF] Identified 4 diagnostics in project PhotoLab
-[18:05:48 WRN] D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\DetailPage.xaml.cs
-            TODO UA307 Default back button in the title bar does not exist in WinUI3 apps.
-            The tool has generated a custom back button in the MainWindow.xaml.cs file.
-            Feel free to edit its position, behavior and use the custom back button instead.
-            Read: https://learn.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1#restoring-back-button-functionality
-[18:05:48 INF] Diagnostic UA307 fixed in D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\DetailPage.xaml.cs
-[18:05:48 INF] Running analyzers on PhotoLab
-[18:05:51 INF] Identified 3 diagnostics in project PhotoLab
-[18:05:51 INF] Upgrade step Apply fix for UA307: Custom back button implementation is needed applied successfully
-
-[18:06:06 INF] Applying upgrade step Apply fix for UA309: ContentDialog API needs to set XamlRoot
-[18:06:06 INF] Diagnostic UA309 fixed in D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\DetailPage.xaml.cs
-[18:06:06 INF] Diagnostic UA309 fixed in D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\MainPage.xaml.cs
-[18:06:06 INF] Running analyzers on PhotoLab
-[18:06:09 INF] Identified 1 diagnostics in project PhotoLab
-[18:06:09 INF] Upgrade step Apply fix for UA309: ContentDialog API needs to set XamlRoot applied successfully
-
-[18:06:27 INF] Applying upgrade step Apply fix for UA310: Classes that implement IInitializeWithWindow need to be initialized with Window Handle
-[18:06:27 INF] Diagnostic UA310 fixed in D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\DetailPage.xaml.cs
-[18:06:27 INF] Running analyzers on PhotoLab
-[18:06:31 INF] Identified 0 diagnostics in project PhotoLab
-[18:06:31 INF] Applying upgrade step Update source code
-[18:06:31 INF] Upgrade step Update source code applied successfully
-[18:06:31 INF] Upgrade step Apply fix for UA310: Classes that implement IInitializeWithWindow need to be initialized with Window Handle applied successfully
-```
-
-#### Move to next project, and Finalize upgrade
-
-For PhotoLab, there are no more projects to migrate. But when you're analyzing your own UWP projects, that might not always be the case (in which case the tool would now let you select which project to upgrade next). Since there are no more projects to upgrade, the tool takes you to the **Finalize upgrade** step:
-
-```console
-[18:07:00 INF] Applying upgrade step Finalize upgrade
-[18:07:00 INF] Upgrade step Finalize upgrade applied successfully
-
-[18:07:04 INF] Upgrade has completed. Please review any changes.
-[18:07:04 INF] Deleting upgrade progress file at D:\Windows-appsample-photo-lab-master\.upgrade-assistant
-```
-
-At this point, after most of the migration from UWP app to WinUI 3 app has been done, the resulting `.csproj` file looks like this (with some of the build configuration property groups removed for brevity):
+The version numbers in your resulting `.csproj` will be slightly different, but essentially it will look like this (with some of the build configuration property groups removed for brevity):
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -386,13 +146,13 @@ At this point, after most of the migration from UWP app to WinUI 3 app has been 
 </Project>
 ```
 
-As you can, the project is now referencing the Windows App SDK, WinUI 3, and .NET 6. Now that **PhotoLab** has been migrated, you can take advantage of all of the new features that WinUI 3 apps have to offer, and grow your app with the platform.
+As you can see, the project is now referencing the Windows App SDK, WinUI 3, and .NET 6. Now that **PhotoLab** has been migrated, you can take advantage of all of the new features that WinUI 3 apps have to offer, and grow your app with the platform.
 
 Also, the .NET Upgrade Assistant adds analyzers to the project that assist with continuing with the upgrade process. For example, the **Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers** NuGet package.
 
 ## Follow-up manual migration
 
-At this point you can open the migrated **PhotoLab** solution or project, and see the changes that have been made in the source code. The project does build and run, but it needs a little more work to finish hooking things up before the WinUI 3 version looks and behaves like the UWP version.
+At this point you can open the migrated **PhotoLab** solution or project, and see the changes that have been made in the source code. The project needs a little more work to finish hooking things up before the WinUI 3 version builds, runs, and behaves like the UWP version.
 
 See the **Task List** in Visual Studio (**View** > **Task List**) for TODOs that you should action to manually complete the migration.
 
