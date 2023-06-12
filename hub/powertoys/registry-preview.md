@@ -39,3 +39,5 @@ After opening a Windows Registry file, the file content is shown on the left sid
 **Reload from file**: Select `Reload from file` to reload file content if the loaded file is being edited outside of the **Registry Preview**.
 
 **Write to Registry**: Select `Write to Registry` to save any changes listed in the loaded file to the Windows Registry. The Windows Registry Editor will open and ask for confirmation before writing changes. The User Account Control (UAC) prompt, a Windows security feature designed to mitigate the impact of malware, will appear and need approval to open Windows Registry Editor.
+
+**Open key...**: Select `Open key` to open the Windows Registry Editor with whatever key you have highlighted in the right side of the application as the initial starting point.
