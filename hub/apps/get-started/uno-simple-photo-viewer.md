@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Build a simple photo viewer that targets multiple platforms
 
-After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial will use [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we'll be able to run a pixel-perfect copy of the app ported to these platforms.
+After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial uses [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we can run a pixel-perfect copy of the app ported to these platforms.
 
 :::image type="content" source="images/uno/screenshot1.png" alt-text="Screenshot of UnoSimplePhoto app targeting web and WinUI desktop":::
 
@@ -34,13 +34,13 @@ Launch Visual Studio, then click `Continue without code`. Click `Extensions` -> 
 
 :::image type="content" source="../images/uno/uno-manage-extensions.png" alt-text="Visual Studio Menu bar item that reads manage extensions":::
 
-In the Extension Manager expand the **Online** node and search for `Uno`, install the `Uno Platform` extension, or download it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022), then restart Visual Studio.
+In the Extension Manager expand the **Online** node and search for `Uno`, install the `Uno Platform` extension, or download and install it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022), then restart Visual Studio.
 
 :::image type="content" source="../images/uno/uno-extensions.png" alt-text="Manage Extensions window in Visual Studio with Uno Platform extension as a search result":::
 
 ## Create an application
 
-Now that we are ready to create a multi-platform application, the approach we'll take is to create a new Uno Platform application. We will copy code from the previous tutorial's **SimplePhotos** WinUI 3 project into our multi-platform project. This is possible because Uno Platform lets you reuse your existing codebase. For features dependent on OS APIs provided by each platform, you can easily make them work over time. This approach is especially useful if you have an existing application that you want to port to other platforms.
+Now that we're ready to create a multi-platform application, the approach we'll take is to create a new Uno Platform application. We'll copy code from the previous tutorial's **SimplePhotos** WinUI 3 project into our multi-platform project. This is possible because Uno Platform lets you reuse your existing codebase. For features dependent on OS APIs provided by each platform, you can easily make them work over time. This approach is especially useful if you have an existing application that you want to port to other platforms.
 
 Soon enough, you will be able to reap the benefits of this approach, as you can target more platforms with a familiar XAML flavor and the codebase you already have.
 
@@ -58,7 +58,7 @@ Create a new C# solution using the **Uno Platform App** type from Visual Studio'
 
 Now you'll choose a base template to take your Simple Photo gallery application multi-platform.
 
-The Uno Platform App template comes with two preset options that allow you to quickly get started with either a **Blank** solution or the **Default** configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications.
+The Uno Platform App template comes with two preset options that allow you to quickly get started with either a **Blank** solution or the **Default** configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging. In addition, it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications.
 
 :::image type="content" source="../images/uno/uno-vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
 
@@ -87,7 +87,7 @@ Now that you've generated the functional starting point of your multi-platform W
 
 ### Copy the view
 
-Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy over the same code you created in the [previous tutorial](/hub/apps/get-started/simple-photo-viewer-winui3.md).
+Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy the same code over that you created in the [previous tutorial](/hub/apps/get-started/simple-photo-viewer-winui3.md).
 
 Return to the **SimplePhotos** project from the previous tutorial. In the **Solution Explorer**, find the file named `MainWindow.xaml` and open it. Observe that the contents of the view are defined within a `Window` element rather than a `Page`. This is because the desktop project is a WinUI 3 application, which can use `Window` elements to define the contents of the view:
 
@@ -236,7 +236,7 @@ Uno Platform's multi-platform implementation of the controls found in the `Windo
 </Page>
 ```
 
-Recall that the desktop solution also had a `MainWindow.xaml.cs` file that contained code-behind which corresponds to the view. In the Uno Platform project, the code-behind for the `MainPage` view we've copied into is contained in the `MainPage.xaml.cs` file.
+You may recall that the desktop solution also had a `MainWindow.xaml.cs` file that contained code-behind which corresponds to the view. In the Uno Platform project, the code-behind for the `MainPage` view we've copied into is contained in the `MainPage.xaml.cs` file.
 
 To bring this code-behind multi-platform, we should first move the following into the `MainPage.xaml.cs` file:
 
@@ -455,13 +455,13 @@ public class ImageFileInfo : INotifyPropertyChanged
 }
 ```
 
-This class will serve as a model to represent the image files in the `GridView`. Although it should technically possible to run the app at this point, it may not render the images correctly or display their properties. In the next sections, we will make a set of changes to these copied files to make them compatible in a multi-platform context.
+This class will serve as a model to represent the image files in the `GridView`. Although it should technically possible to run the app at this point, it may not render the images correctly or display their properties. In the next sections, we'll make a set of changes to these copied files to make them compatible in a multi-platform context.
 
 ### Using preprocessor directives
 
-In the desktop project from the previous tutorial, the `MainPage.xaml.cs` file contains a `GetItemsAsync` method that enumerates items from a `StorageFolder` representing the installed package location. Because that location is not available on certain platforms such as WebAssembly, we will need to make changes to this method to make it compatible with all platforms. We will accordingly make some changes to the `ImageFileInfo` class to ensure compatibility.
+In the desktop project from the previous tutorial, the `MainPage.xaml.cs` file contains a `GetItemsAsync` method that enumerates items from a `StorageFolder` representing the installed package location. Because that location is not available on certain platforms such as WebAssembly, we'll need to make changes to this method to make it compatible with all platforms. We'll accordingly make some changes to the `ImageFileInfo` class to ensure compatibility.
 
-First, we will make changes to the `GetItemsAsync` method. Replace the `GetItemsAsync` method in the `MainPage.xaml.cs` file with the following code:
+First, make the required changes to the `GetItemsAsync` method. Replace the `GetItemsAsync` method in the `MainPage.xaml.cs` file with the following code:
 
 ```csharp
 private async Task GetItemsAsync()
@@ -489,9 +489,9 @@ private async Task GetItemsAsync()
 }
 ```
 
-This method now uses a **preprocessor directive** to determine which code to execute based on the platform. On Windows, the method will get the `StorageFolder` representing the installed package location and get the `Samples` folder from it. On other platforms, the method will count up to 20 getting the image files from the `Samples` folder using a `Uri` to represent the image file.
+This method now uses a **preprocessor directive** to determine which code to execute based on the platform. On Windows, the method gets the `StorageFolder` representing the installed package location and returns the `Samples` folder from it. On other platforms, the method counts up to 20, getting the image files from the `Samples` folder using a `Uri` to represent the image file.
 
-Next, we will need to adjust the `LoadImageInfoAsync` method to accommodate the changes we made to the `GetItemsAsync` method. Replace the `LoadImageInfoAsync` method in the `MainPage.xaml.cs` file with the following code:
+Next, adjust the `LoadImageInfoAsync` method to accommodate the changes we made to the `GetItemsAsync` method. Replace the `LoadImageInfoAsync` method in the `MainPage.xaml.cs` file with the following code:
 
 ```csharp
 public async static Task<ImageFileInfo> LoadImageInfoAsync(StorageFile file)
@@ -507,13 +507,13 @@ public async static Task<ImageFileInfo> LoadImageInfoAsync(StorageFile file)
 }
 ```
 
-Similar to the `GetItemsAsync` method, this method now uses a preprocessor directive to determine which code to execute based on the platform. On Windows, the method will get the `ImageProperties` from the `StorageFile` and use it to create an `ImageFileInfo` object. On other platforms, the method will construct an `ImageFileInfo` object without the `ImageProperties` parameter. Later on, modifications will be made to the `ImageFileInfo` class to accommodate this change.
+Similar to the `GetItemsAsync` method, this method now uses a preprocessor directive to determine which code to execute based on the platform. On Windows, the method gets the `ImageProperties` from the `StorageFile` and uses it to create an `ImageFileInfo` object. On other platforms, the method constructs an `ImageFileInfo` object without the `ImageProperties` parameter. Later, modifications will be made to the `ImageFileInfo` class to accommodate this change.
 
-Controls like `GridView` allow for **progressive loading** of updated item container content as they are scrolled into the viewport. This is done by using the `ContainerContentChanging` event. In the desktop project from the previous tutorial, the `ImageGridView_ContainerContentChanging` method uses this event to load the image files into the `GridView`. Because certain aspects of this event are not supported on all platforms, we will need to make changes to this method to make it compatible with them.
+Controls like `GridView` allow for **progressive loading** of updated item container content as they are scrolled into the viewport. This is done by using the `ContainerContentChanging` event. In the desktop project from the previous tutorial, the `ImageGridView_ContainerContentChanging` method uses this event to load the image files into the `GridView`. Because certain aspects of this event are not supported on all platforms, we'll need to make changes to this method to make it compatible with them.
 
 :::image type="content" source="images/uno/xaml-attached-layout-realizationrect.png" alt-text="Diagram of collection control viewport":::
 
-For instance, the `ContainerContentChangingEventArgs.Phase` property is currently unsupported on platforms other than Windows. We will need to make changes to the `ImageGridView_ContainerContentChanging` method to accommodate this change. Replace the `ImageGridView_ContainerContentChanging` method in the `MainPage.xaml.cs` file with the following code:
+For instance, the `ContainerContentChangingEventArgs.Phase` property is currently unsupported on platforms other than Windows. We'll need to make changes to the `ImageGridView_ContainerContentChanging` method to accommodate this change. Replace the `ImageGridView_ContainerContentChanging` method in the `MainPage.xaml.cs` file with the following code:
 
 ```csharp
 private void ImageGridView_ContainerContentChanging(
@@ -543,7 +543,7 @@ ContainerContentChangingEventArgs args)
 }
 ```
 
-The specialized callback is now only registered using `ContainerContentChangingEventArgs.RegisterUpdateCallback()` if the platform is Windows. Otherwise, the `ShowImage` method is called directly. We will also need to make changes to the `ShowImage` method to work alongside the changes made to the `ImageGridView_ContainerContentChanging` method. Replace the `ShowImage` method in the `MainPage.xaml.cs` file with the following code:
+The specialized callback is now only registered using `ContainerContentChangingEventArgs.RegisterUpdateCallback()` if the platform is Windows. Otherwise, the `ShowImage` method is called directly. We'll also need to make changes to the `ShowImage` method to work alongside the changes made to the `ImageGridView_ContainerContentChanging` method. Replace the `ShowImage` method in the `MainPage.xaml.cs` file with the following code:
 
 ```csharp
 private async void ShowImage(ListViewBase sender, ContainerContentChangingEventArgs args)
@@ -576,7 +576,7 @@ private async void ShowImage(ListViewBase sender, ContainerContentChangingEventA
 }
 ```
 
-Again, preprocessor directives ensure that the `ContainerContentChangingEventArgs.Phase` property is only used where it is supported. We make use of the previously unused `GetImageSourceAsync()` method to load the image files into the `GridView` on platforms other than Windows. At this point, we will accommodate the changes made above by editing the `ImageFileInfo` class.
+Again, preprocessor directives ensure that the `ContainerContentChangingEventArgs.Phase` property is only used on platforms where it is supported. We make use of the previously unused `GetImageSourceAsync()` method to load the image files into the `GridView` on platforms other than Windows. At this point, we'll accommodate the changes made above by editing the `ImageFileInfo` class.
 
 ### Creating a separate code path for other platforms
 
@@ -586,7 +586,7 @@ Update `ImageFileInfo.cs` to include a new property called `ImageSource` that wi
 public BitmapImage? ImageSource { get; private set; }
 ```
 
-Because platforms like the web do not support advanced image file properties that are readily available on Windows, we should add a constructor overload that does not require an `ImageProperties` typed parameter. Add a new overload under the existing one using the following code:
+Because platforms like the web do not support advanced image file properties that are readily available on Windows, we'll add a constructor overload that does not require an `ImageProperties` typed parameter. Add the new overload after the existing one using the following code:
 
 ```csharp
 public ImageFileInfo(StorageFile imageFile,
@@ -599,7 +599,7 @@ public ImageFileInfo(StorageFile imageFile,
 }
 ```
 
-This constructor overload will be used to construct an `ImageFileInfo` object on platforms other than Windows. Since we did this, it makes sense to make the `ImageProperties` property nullable. Update the `ImageProperties` property to be nullable using the following code:
+This constructor overload is used to construct an `ImageFileInfo` object on platforms other than Windows. Since we did this, it makes sense to make the `ImageProperties` property nullable. Update the `ImageProperties` property to be nullable using the following code:
 
 ```csharp
 public ImageProperties? ImageProperties { get; }
@@ -623,7 +623,7 @@ public async Task<BitmapImage> GetImageSourceAsync()
 }
 ```
 
-To prevent getting the value of `ImageProperties` when it's null, we will need to make the following changes:
+To prevent getting the value of `ImageProperties` when it's null, make the following changes:
 
 - Modify the `ImageDimensions` property to use the null conditional operator:
 
@@ -688,7 +688,7 @@ To prevent getting the value of `ImageProperties` when it's null, we will need t
     }
     ```
 
-With these edits, the `ImageFileInfo` class should contain the following code which has a newly-separated code path for platforms other than Windows:
+With these edits, the `ImageFileInfo` class should contain the following code. It now has a newly-separated code path for platforms other than Windows:
 
 ```csharp
 using Microsoft.UI.Xaml.Media.Imaging;
@@ -802,18 +802,18 @@ public class ImageFileInfo : INotifyPropertyChanged
 }
 ```
 
-This `ImageFileInfo` class will be used to represent the image files in the `GridView`. Finally, we will make changes to the `MainPage.xaml` file to accommodate these changes.
+This `ImageFileInfo` class is used to represent the image files in the `GridView`. Finally, we'll make changes to the `MainPage.xaml` file to accommodate the changes to the model.
 
 ### Using platform-specific XAML markup
 
-There are a couple of items in our view markup which should be evaluated on Windows only. Add a new namespace on the `Page` element of the `MainPage.xaml` file like this:
+There are a couple of items in our view markup which should only be evaluated on Windows. Add a new namespace on the `Page` element of the `MainPage.xaml` file like this:
 
 ```xml
 ...
 xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 ```
 
-Now, in `MainPage.xaml`, replace the `ItemsPanel` property setter on the GridView element with the following code:
+Now, in `MainPage.xaml`, replace the `ItemsPanel` property setter on the `GridView` element with the following code:
 
 ```xml
 win:ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"
