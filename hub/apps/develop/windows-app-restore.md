@@ -63,4 +63,4 @@ If you can't package your app, be sure your installer implements the below recom
 
 * Make sure your installer specifies a `InstallLocation` value in its uninstall registry key. This is needed to enable the mapping of the start menu shortcuts to the product.
 ** Makee sure that location is specific to the product, usually the sub-directory under `c:\Program Files\<Publisher>\<Application>`.
-* Make sure your start menu shortcuts have machine independent System.AppUserModel.ID (AMUID) values. This is best done by specifying them explicitly in the shortcut metadata,  [this topic](https://learn.microsoft.com/en-us/windows/win32/shell/appids#where-to-assign-an-appusermodelid) for more info.
+* Make sure your start menu shortcuts have machine independent System.AppUserModel.ID (AMUID) values. This is best done by specifying them explicitly in the shortcut metadata,  [this topic](/windows/win32/shell/appids#where-to-assign-an-appusermodelid) for more info.
