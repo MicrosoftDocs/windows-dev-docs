@@ -57,3 +57,10 @@ For more info about the best practices of storing app data, see [Store and retri
 ## Write user-generated content to Known Folders
 
 Windows introduced [known folders](/windows/win32/shell/known-folders) with Windows Vista. Since that time, users have come to expect that they can find the content they create with their apps in those locations. Writing user-generated content to those locations has the added benefit that OneDrive will back up those folders, if enabled, to ensure they're available to the user on their new PC (see [Back up your folders with OneDrive](https://support.microsoft.com/office/back-up-your-folders-with-onedrive-d61a7930-a6fb-4b95-b28a-6552e77c3057)). By using standard Windows APIs to write your user-generated content to the known folders, you're improving the user experience, and decreasing friction in adopting your app.
+
+## Best practices for Unpackaged apps
+If you can't package your app, be sure your installer implements the below recommendations. This will ensure that it is possible to backup and restore the start menu shortcuts that enable installing on a new machine that is restored from backup.
+
+* Make sure your installer specifies a `InstallLocation` value in its uninstall registry key. This is needed to enable the mapping of the start menu shortcuts to the product.
+** Makee sure that location is specific to the product, usually the sub-directory under `c:\Program Files\<Publisher>\<Application>`.
+* Make sure your start menu shortcuts have machine independent System.AppUserModel.ID (AMUID) values. This is best done by specifying them explicitly in the shortcut metadata,  [this topic](https://learn.microsoft.com/en-us/windows/win32/shell/appids#where-to-assign-an-appusermodelid) for more info.
