@@ -33,6 +33,17 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.3
 
+### Version 1.3.2 (1.3.230602002)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.3 release.
+
+- Fixed a crash when setting a Protected Cursor.
+- Fixed a performance issue in XamlMetadataProvider during app startup. For more information, see GitHub issue [#8281](https://github.com/microsoft/microsoft-ui-xaml/issues/8281).
+- Fixed an issue with hyperlinks and touch in a RichTextBlock. For more information, see GitHub issue [#6513](https://github.com/microsoft/microsoft-ui-xaml/issues/6513).
+- Fixed an issue with scrolling and touchpads in WebView2. For more information, see GitHub issue [#7772](https://github.com/microsoft/microsoft-ui-xaml/issues/7772).
+- Fixed an issue where an update of Windows App SDK sometimes required a restart of Visual Studio. For more information, see GitHub issue [#3554](https://github.com/microsoft/microsoft-ui-xaml/issues/3554).
+- Fixed a noisy exception on shutdown when running in a debugger.
+
 ### Version 1.3.1 (1.3.230502000)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.3 release.
