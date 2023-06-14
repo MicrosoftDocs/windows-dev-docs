@@ -9,7 +9,7 @@ author: alvinashcraft
 ms.localizationpriority: medium
 ---
 
-# Localize strings in your UI and app package manifest
+# Localize strings in your UI and the app package manifest
 
 For more info about the value proposition of localizing your Windows App SDK app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
 
