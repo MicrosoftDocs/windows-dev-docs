@@ -4,8 +4,6 @@ description: DWriteCore is the Windows App SDK implementation of DirectWrite.
 ms.topic: article
 ms.date: 03/09/2021
 keywords: 
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

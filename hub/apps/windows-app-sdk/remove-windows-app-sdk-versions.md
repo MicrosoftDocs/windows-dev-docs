@@ -4,8 +4,6 @@ description: This article provides instructions for removing older versions of t
 ms.topic: article
 ms.date: 05/21/2021
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: stwhi
-author: whims
 ms.localizationpriority: medium
 ---
 

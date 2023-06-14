@@ -4,8 +4,6 @@ description: Provides information about the stable release channel for the Windo
 ms.topic: article
 ms.date: 03/31/2022
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: gabilka
-author: gabbybilka
 ms.localizationpriority: medium
 ---
 
