@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Build a simple photo viewer that targets multiple platforms
 
-After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial uses [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we can run a pixel-perfect copy of the app ported to these platforms.
+After you've [created](simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial uses [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we can run a pixel-perfect copy of the app ported to these platforms.
 
 :::image type="content" source="images/uno/uno-simple-photo-viewer-apps.png" alt-text="Screenshot of UnoSimplePhoto app targeting web and WinUI desktop.":::
 
@@ -87,7 +87,7 @@ Now that you've generated the functional starting point of your multi-platform W
 
 ### Copy the view
 
-Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy the same code over that you created in the [previous tutorial](/hub/apps/get-started/simple-photo-viewer-winui3.md).
+Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy the same code over that you created in the [previous tutorial](simple-photo-viewer-winui3.md).
 
 Return to the **SimplePhotos** project from the previous tutorial. In the **Solution Explorer**, find the file named `MainWindow.xaml` and open it. Observe that the contents of the view are defined within a `Window` element rather than a `Page`. This is because the desktop project is a WinUI 3 application, which can use `Window` elements to define the contents of the view:
 
@@ -934,4 +934,4 @@ You can now build and run your app on any of the supported platforms. To do so, 
 
 - [Uno Platform documentation](https://platform.uno/docs/articles/intro.html)
 - [Update ListView and GridView items progressively](/windows/uwp/debug-test-perf/optimize-gridview-and-listview#update-listview-and-gridview-items-progressively)
-- [Simple photo viewer tutorial](../get-started/simple-photo-viewer-winui3.md)
+- [Simple photo viewer tutorial](simple-photo-viewer-winui3.md)
