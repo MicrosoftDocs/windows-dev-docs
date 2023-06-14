@@ -37,7 +37,7 @@ With the latest version of PowerToys installed, you will see Mouse Without Borde
 
     ![Screenshot of Mouse Without Borders settings after entering the first computer information.](../images/powertoys-mouse-without-borders-enter-security-key.png)
 
-4. Once the computers connect to each other, you will be able to switch between them by moving your mouse curser beyond the edge of the screen, transitioning between computers.
+4. Once the computers connect to each other, you will be able to switch between them by moving your mouse cursor beyond the edge of the screen, transitioning between computers.
 
     ![Screenshot of Mouse Without Borders settings on the first computer after connecting.](../images/powertoys-mouse-without-borders-after-connect-1.png)
 
