@@ -65,6 +65,7 @@ The Uno Platform App template comes with two preset options that allow you to qu
 To keep things simple, select the **Blank** preset. Then, click the **Create** button. Wait for the projects to be created and their dependencies to be restored.
 
 A banner at the top of the editor may ask to reload projects, click **Reload projects**:
+
 :::image type="content" source="../images/visual-studio-2022-project-reload.png" alt-text="Screenshot of the Visual Studio banner offering to reload your projects to complete changes.":::
 
 You should see the following default file structure in your **Solution Explorer**:
