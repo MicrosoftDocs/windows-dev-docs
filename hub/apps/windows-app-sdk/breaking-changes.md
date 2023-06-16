@@ -4,8 +4,6 @@ description: If you're migrating an app to Windows App SDK 1.0 from 0.8, the bre
 ms.topic: article
 ms.date: 11/17/2021
 keywords: windows, windows app development, Windows App SDK 
-ms.author: gabilka
-author: gabbybilka
 ms.localizationpriority: medium
 ---
 

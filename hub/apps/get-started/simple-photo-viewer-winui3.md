@@ -963,3 +963,7 @@ The **Images** property value doesn't change at run-time for this particular app
 ## Conclusion
 
 In this tutorial we walked through the process of using Visual Studio to build a simple WinUI 3 app that displays photos. Hopefully this tutorial has given you experience working in a WinUI 3 app with controls, layout panels, data-binding, and GridView UI optimization.
+
+## See also
+
+[Tutorial: Build a simple photo viewer that targets multiple platforms](uno-simple-photo-viewer.md)

@@ -1,3 +1,9 @@
+---
+ms.topic: include
+author: alvinashcraft
+ms.author: aashcraft
+ms.date: 06/14/2023
+---
 ## Finalize your environment
 
 1. Open a command-line prompt, Windows Terminal if you have it installed, or else Command Prompt or Windows Powershell from the Start Menu.

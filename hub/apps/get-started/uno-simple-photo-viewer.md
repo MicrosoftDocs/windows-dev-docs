@@ -11,20 +11,20 @@ ms.localizationpriority: medium
 
 # Tutorial: Build a simple photo viewer that targets multiple platforms
 
-After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial uses [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we can run a pixel-perfect copy of the app ported to these platforms.
+After you've [created](simple-photo-viewer-winui3.md) a starter simple photo viewer WinUI 3 app, you might be wondering how to reach more users without having to rewrite your app. This tutorial uses [Uno Platform](https://platform.uno/) to expand the reach of your existing C# WinUI 3 application enabling reuse of the business logic and UI layer across native mobile, web, and desktop. With only minimal changes to the simple photo viewer app, we can run a pixel-perfect copy of the app ported to these platforms.
 
-:::image type="content" source="images/uno/screenshot1.png" alt-text="Screenshot of UnoSimplePhoto app targeting web and WinUI desktop":::
+:::image type="content" source="images/uno/uno-simple-photo-viewer-apps.png" alt-text="Screenshot of UnoSimplePhoto app targeting web and WinUI desktop.":::
 
 ## Prerequisites
 
 - [Visual Studio 2022 17.4 or later](https://visualstudio.microsoft.com/#vs-section)
 - [Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 - ASP.NET and web development workload (for WebAssembly development)
-:::image type="content" source="../images/uno/uno-vs-install-web.png" alt-text="Web development workload in VS":::
+:::image type="content" source="../images/uno/uno-vs-install-web.png" alt-text="Screenshot of the web development workload in Visual Studio.":::
 - .NET Multi-platform App UI development installed (for iOS, Android, Mac Catalyst development).
-:::image type="content" source="../images/uno/uno-vs-install-dotnet-mobile.png" alt-text="dotnet mobile workload in VS":::
+:::image type="content" source="../images/uno/uno-vs-install-dotnet-mobile.png" alt-text="Screenshot of the dotnet mobile workload in Visual Studio.":::
 - .NET desktop development installed (for Gtk, Wpf, and Linux Framebuffer development)
-:::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text="dotnet desktop workload in VS":::
+:::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text="Screenshot of the dotnet desktop workload in Visual Studio.":::
 
 [!INCLUDE [uno-setup.md](../../includes/uno-setup.md)]
 
@@ -32,11 +32,11 @@ After you've [created](/hub/apps/get-started/simple-photo-viewer-winui3.md) a st
 
 Launch Visual Studio, then click `Continue without code`. Click `Extensions` -> `Manage Extensions` from the Menu Bar.
 
-:::image type="content" source="../images/uno/uno-manage-extensions.png" alt-text="Visual Studio Menu bar item that reads manage extensions":::
+:::image type="content" source="../images/uno/uno-manage-extensions.png" alt-text="Screenshot of the Visual Studio Menu bar item that reads manage extensions.":::
 
 In the Extension Manager expand the **Online** node and search for `Uno`, install the `Uno Platform` extension, or download and install it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022), then restart Visual Studio.
 
-:::image type="content" source="../images/uno/uno-extensions.png" alt-text="Manage Extensions window in Visual Studio with Uno Platform extension as a search result":::
+:::image type="content" source="../images/uno/uno-extensions.png" alt-text="Screenshot of the manage Extensions window in Visual Studio with Uno Platform extension as a search result.":::
 
 ## Create an application
 
@@ -46,30 +46,31 @@ Soon enough, you will be able to reap the benefits of this approach, as you can 
 
 Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
-:::image type="content" source="../images/uno/uno-create-project.png" alt-text="Create a new project":::
+:::image type="content" source="../images/uno/uno-create-project.png" alt-text="Screenshot of the create a new project dialog.":::
 
 Search for Uno and select the Uno Platform App project template:
 
-:::image type="content" source="../images/uno/uno-new-project.png" alt-text="Uno platform app":::
+:::image type="content" source="../images/uno/uno-new-project.png" alt-text="Screenshot of the create a new project dialog with Uno Platform app as the selected project type.":::
 
 Create a new C# solution using the **Uno Platform App** type from Visual Studio's **Start Page**. To avoid conflicting with the code from the previous tutorial, we'll give this solution a different name, "UnoSimplePhotos". Specify the project name, solution name, and directory. In this example, our `UnoSimplePhotos` multi-platform project belongs to a `UnoSimplePhotos` solution, which will live in C:\Projects:
 
-:::image type="content" source="images/uno/uno-configure-project.png" alt-text="Specify project details":::
+:::image type="content" source="images/uno/uno-configure-project.png" alt-text="Screenshot of specifying project details for the new Uno Platform project.":::
 
 Now you'll choose a base template to take your Simple Photo gallery application multi-platform.
 
 The Uno Platform App template comes with two preset options that allow you to quickly get started with either a **Blank** solution or the **Default** configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging. In addition, it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications.
 
-:::image type="content" source="../images/uno/uno-vsix-new-project-options.png" alt-text="Uno solution template for project startup type":::
+:::image type="content" source="../images/uno/uno-vsix-new-project-options.png" alt-text="Screenshot of the Uno solution template for project startup type.":::
 
 To keep things simple, select the **Blank** preset. Then, click the **Create** button. Wait for the projects to be created and their dependencies to be restored.
 
 A banner at the top of the editor may ask to reload projects, click **Reload projects**:
-:::image type="content" source="../images/vs2022-project-reload.png" alt-text="Visual Studio banner offering to reload your projects to complete changes":::
+
+:::image type="content" source="../images/visual-studio-2022-project-reload.png" alt-text="Screenshot of the Visual Studio banner offering to reload your projects to complete changes.":::
 
 You should see the following default file structure in your **Solution Explorer**:
 
-:::image type="content" source="images/uno/screenshot2.png" alt-text="Default file structure":::
+:::image type="content" source="images/uno/solution-explorer-new-uno-project.png" alt-text="Screenshot of the default file structure in Solution Explorer.":::
 
 ### Add image assets to the project
 
@@ -77,7 +78,7 @@ Your app will need some images to display. You can use the same images from the 
 
 In the `UnoSimplePhotos` project, create a new folder named `Assets` and copy the JPG image files to a `Samples` subfolder. The `Assets` folder structure should now look like this:
 
-:::image type="content" source="images/uno/screenshot3.png" alt-text="Solution explorer pane in Visual Studio":::
+:::image type="content" source="images/uno/solution-explorer-uno-project-new-files.png" alt-text="Screenshot of the Solution Explorer pane in Visual Studio with the new files and folders added.":::
 
 For more information on creating the `Assets` folder and adding images to it, see the Uno Platform documentation about [Assets and image display](https://platform.uno/docs/articles/features/working-with-assets.html).
 
@@ -87,7 +88,7 @@ Now that you've generated the functional starting point of your multi-platform W
 
 ### Copy the view
 
-Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy the same code over that you created in the [previous tutorial](/hub/apps/get-started/simple-photo-viewer-winui3.md).
+Because Uno Platform allows you to use the XAML flavor you're already familiar with, you can copy the same code over that you created in the [previous tutorial](simple-photo-viewer-winui3.md).
 
 Return to the **SimplePhotos** project from the previous tutorial. In the **Solution Explorer**, find the file named `MainWindow.xaml` and open it. Observe that the contents of the view are defined within a `Window` element rather than a `Page`. This is because the desktop project is a WinUI 3 application, which can use `Window` elements to define the contents of the view:
 
@@ -511,7 +512,7 @@ Similar to the `GetItemsAsync` method, this method now uses a preprocessor direc
 
 Controls like `GridView` allow for **progressive loading** of updated item container content as they are scrolled into the viewport. This is done by using the `ContainerContentChanging` event. In the desktop project from the previous tutorial, the `ImageGridView_ContainerContentChanging` method uses this event to load the image files into the `GridView`. Because certain aspects of this event are not supported on all platforms, we'll need to make changes to this method to make it compatible with them.
 
-:::image type="content" source="images/uno/xaml-attached-layout-realizationrect.png" alt-text="Diagram of collection control viewport":::
+:::image type="content" source="images/uno/xaml-attached-layout-realization-rect.png" alt-text="Diagram of collection control viewport.":::
 
 For instance, the `ContainerContentChangingEventArgs.Phase` property is currently unsupported on platforms other than Windows. We'll need to make changes to the `ImageGridView_ContainerContentChanging` method to accommodate this change. Replace the `ImageGridView_ContainerContentChanging` method in the `MainPage.xaml.cs` file with the following code:
 
@@ -917,7 +918,7 @@ You can now build and run your app on any of the supported platforms. To do so, 
   - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
   - In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.
 
-      :::image type="content" source="../images/uno/uno-mobile-debug.png" alt-text="Visual Studio dropdown to select a target framework to deploy":::
+      :::image type="content" source="../images/uno/uno-mobile-debug.png" alt-text="Screenshot of the Visual Studio dropdown to select a target framework to deploy.":::
 
 - To debug for **Mac Catalyst**:
   - Right-click on the `UnoSimplePhotos.Mobile` project, and select **Set as startup project**
@@ -934,4 +935,4 @@ You can now build and run your app on any of the supported platforms. To do so, 
 
 - [Uno Platform documentation](https://platform.uno/docs/articles/intro.html)
 - [Update ListView and GridView items progressively](/windows/uwp/debug-test-perf/optimize-gridview-and-listview#update-listview-and-gridview-items-progressively)
-- [Simple photo viewer tutorial](../get-started/simple-photo-viewer-winui3.md)
+- [Simple photo viewer tutorial](simple-photo-viewer-winui3.md)

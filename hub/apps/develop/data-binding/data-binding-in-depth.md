@@ -1,6 +1,6 @@
 ---
 ms.assetid: 2a50c798-6244-4fda-9091-a10a9e87fae2
-title: Data binding in depth
+title: Windows data binding in depth
 description: Learn how to use data binding in Windows App SDK applications
 ms.date: 12/12/2022
 ms.topic: article
@@ -11,7 +11,7 @@ dev_langs:
   - cppwinrt
 ---
 
-# Data binding in depth
+# Windows data binding in depth
 
 In this article, we will describe the Windows App SDK data binding features for the APIs that reside in the [**Microsoft.UI.Xaml.Data** namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data).
 
