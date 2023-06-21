@@ -1,6 +1,6 @@
 ---
 title: The winget pin command
-description: Use the winget pin command and subcommands to list and manage the repositories Windows Package Manager accesses.
+description: Use the winget pin command and subcommands to manage package pins. Pins can limit the Windows Package Manager from upgrading certain packages completely or within a specific range.
 ms.date: 06/16/2023
 ms.topic: reference
 ms.localizationpriority: medium
@@ -9,17 +9,18 @@ ms.custom: kr2b-contr-experiment
 
 # The winget pin command
 
-The [winget](index.md) tool **pin** command allows you to limit the Windows Package Manager from upgrading a package to specific ranges of versions, or it can prevent it from upgrading a package altogether. A pinned package may still upgrade on its own and be upgraded from outside the Windows Package Manager. 
+The [winget](index.md) **pin** command allows you to limit the Windows Package Manager from upgrading a package to specific ranges of versions, or it can prevent it from upgrading a package altogether. A pinned package may still upgrade on its own and be upgraded from outside the Windows Package Manager. 
 
-WinGet pinning supports three types of Package Pinning:
+## Pin Types
+WinGet supports three types of Package Pins:
 - **Pinning**:
-The package is excluded from winget upgrade --all but allows winget upgrade <WinGet package>. You can use the "–include-pinned” argument to let winget upgrade --all include pinned packages.
+The package is excluded from `'winget upgrade --all'` but allows `'winget upgrade <package>'`. You can use the `'–-include-pinned'` argument to let `'winget upgrade --all'` include pinned packages.
 
 - **Blocking**:
-The package is blocked from winget upgrade --all or winget upgrade <WinGet package>, you will have to unblock the package to let WinGet perform an upgrade.
+The package is blocked from `'winget upgrade --all'` or `'winget upgrade <package>'`, you will have to unpin the package to let WinGet perform an upgrade. The `'–-force'` option can be used to override the pin's behavior.
 
 - **Gating**:
-The package is pinned to specific version(s). For example, if a package is pinned to version 1.2.*, any version between 1.2.0 to 1.2.x is considered valid. To allow user override, “–force” can be used with winget upgrade <WinGet package> to override some of the pinning created above.
+The package is pinned to a specific version or version range. You can specify an exact version you want a package to be pinned to or you can utilize the wildcard character `'*'` as the last version part to specify a version range. For example, if a package is pinned to version `1.2.*`, any version between `1.2.0` to `1.2.x` is considered valid. The `'–-force'` option can be used to override the pin's behavior. 
 
 ## Usage
 
@@ -40,7 +41,7 @@ The **pin** command supports the following subcommands.
 
 | Subcommand  | Description |
 |--------------|-------------|
-|  **add** |  Adds a new pin. |
+|  **add** |  Add a new pin. |
 |  **remove** | Remove a package pin. |
 |  **list** | List current pins. |
 |  **reset** | Reset pins |
@@ -73,30 +74,30 @@ The options allow you to customize adding pins to meet your needs.
 | **--moniker**   | Limits the search to the moniker listed for the application. |  
 | **--tag**   | Limits the search to the tag listed for the application. | 
 | **--cmd, --command**   | Limits the search to the command of the application. |   
-| **-v, --version**  |  Enables you to specify an exact version to pin. The wildcard '*' can be used as the last version part. |  
+| **-v, --version**  |  Enables you to specify an exact version to pin. The wildcard '*' can be used as the last version part. Changes pin behavior to be [`'gating'`](#pin-types). |  
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
-| **--force** | Overrides the installer hash check. Not recommended. |
-| **--blocking** | Block from upgrading until the pin is removed, preventing override arguments |
+| **--force** | Direct run the command and continue with non security related issues. |
+| **--blocking** | Block from upgrading until the pin is removed, preventing override arguments. Changes pin behavior to be [`'blocking'`](#pin-types). |
 | **--installed** | Pin a specific installed version |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--wait** | Prompts the user to press any key before exiting |
-| **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
+| **--logs, --open-log**  | Open the default logs location. |
 | **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 | **--disable-interactivity** | Disable interactive prompts. |
 
 ### Examples
 
-The following example adds a pin for an application. Adding this pin will prevent this package from being upgraded when calling `winget upgrade --all`.
+The following example adds a pin for an application. Adding this pin will prevent this package from being upgraded when calling `'winget upgrade --all'`.
 
-> Use the `--include-pinned` argument with `winget upgrade --all` to include any pinned packages.
+> Use the `'--include-pinned'` argument with `'winget upgrade --all'` to include any pinned packages.
 
 ```CMD
 winget pin add powertoys
 ```
 
-The following example adds a blocking pin for an application using its ID. Adding a blocking pin will prevent this package from being upgraded when calling `winget upgrade --all` or `winget upgrade`. You will need to unblock the package to let WinGet perform an upgrade.
+The following example adds a blocking pin for an application using its ID. Adding a blocking pin will prevent this package from being upgraded when calling `'winget upgrade --all'` or `'winget upgrade <package>'`. You will need to unblock the package to let WinGet perform an upgrade.
 
 ```CMD
 winget pin add --id Microsoft.PowerToys --blocking
@@ -142,7 +143,7 @@ The options allow you to customize removing pins to meet your needs.
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--wait** | Prompts the user to press any key before exiting |
-| **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
+| **--logs, --open-log**  | Open the default logs location. |
 | **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 | **--disable-interactivity** | Disable interactive prompts. |
 
@@ -162,7 +163,7 @@ winget pin remove --id Microsoft.PowerToys
 
 ## list
 
-The **list** subcommand lists all current pins, or full details of a specific pin. 
+The **list** subcommand lists all current pins. 
 
 Usage:
 
@@ -193,7 +194,7 @@ The options allow you to customize listing pins to meet your needs.
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--wait** | Prompts the user to press any key before exiting |
-| **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
+| **--logs, --open-log**  | Open the default logs location. |
 | **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 | **--disable-interactivity** | Disable interactive prompts. |
 
@@ -205,7 +206,7 @@ The following example lists all current pins.
 winget pin list
 ```
 
-The following example lists the details for a specific package pin.
+The following example lists a specific package pin.
 
 ```CMD
 winget pin list --id Microsoft.PowerToys
@@ -215,13 +216,13 @@ winget pin list --id Microsoft.PowerToys
 
 The reset subcommand resets all pins.
 
-Using this subcommand without the `--force` argument will show the following pins that would be removed.
+Using this subcommand without the `'--force'` argument will show the pins that would be removed.
 
-To reset all pins, include the `--force` argument.
+To reset all pins, include the `'--force'` argument.
 
 Usage:
 
-The following example shows all pins that will be reset.
+The following example shows all pins that would be reset.
 
 ```cmd
 winget pin reset
