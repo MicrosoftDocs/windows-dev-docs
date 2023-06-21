@@ -108,7 +108,7 @@ For a full, step-by-step walkthrough of adding simple support for the Windows UI
 
 ## Contributing to the Windows UI Library
 
-We welcome bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui) on GitHub.
+We welcome bug reports, feature requests and community code contributions in the [microsoft-ui-xaml repo](https://github.com/microsoft/microsoft-ui-xaml/issues) on GitHub.
 
 ## Other resources
 

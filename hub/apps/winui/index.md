@@ -25,15 +25,11 @@ keywords: windows 10, windows 11, Windows App SDK, Windows app development platf
 
 The Windows UI Library (WinUI) is a native user experience (UX) framework for both Windows desktop and UWP applications.
 
-By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
+By incorporating the [Fluent Design System](https://fluent2.microsoft.design/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
 
 With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and JavaScript (using [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
 
-## WinUI resources
-
-**GitHub**: The WinUI libraries are hosted on GitHub (in the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml)) where you can file feature requests or bugs, and interact with the WinUI team.
-
-**Website**: The [WinUI website](https://aka.ms/winui) has product comparisons, explains the various advantages of WinUI, and provides ways to stay engaged with the product and the product team.
+> The WinUI libraries are hosted in the [WinUI GitHub repo](https://github.com/he WinUI libraries are hosted in the WinUI GitHub repo where you can file feature requests or bugs, and interact with the WinUI team.microsoft/microsoft-ui-xaml) where you can file feature requests or bugs, and interact with the WinUI team.
 
 ## Comparison of WinUI 3 and WinUI 2
 

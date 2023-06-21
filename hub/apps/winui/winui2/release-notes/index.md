@@ -9,9 +9,7 @@ ms.topic: article
 
 # Windows UI Library 2 Release Notes
 
-The Windows UI Library (WinUI) is hosted on [GitHub](https://aka.ms/winui).
-
-We encourage you to file bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui).
+The Windows UI Library (WinUI) is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
 
 WinUI includes two NuGet packages:
 

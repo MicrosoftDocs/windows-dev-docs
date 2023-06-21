@@ -19,25 +19,9 @@ WinUI 3 is the native UI platform component that ships with the [Windows App SDK
 
 ## WinUI resources
 
-:::row:::
-   :::column span="2":::
+**Release notes:** For more details on WinUI 3 in the Windows App SDK, see [WinUI 3 in the Stable channel release notes for the Windows App SDK](../../windows-app-sdk/stable-channel.md#winui-3)
 
-        **Release notes:** For more details on WinUI 3 in the Windows App SDK, see [WinUI 3 in the Stable channel release notes for the Windows App SDK](../../windows-app-sdk/stable-channel.md#winui-3)
-
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-
-        **Github**: WinUI is hosted on Github. Use the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml), to file feature requests or bugs, and interact with the WinUI team.
-
-   :::column-end:::
-   :::column:::
-
-        **Website**: The [WinUI website](https://aka.ms/winui) has product comparisons, explains the various advantages of WinUI, and provides ways to stay engaged with the product and the product team.
-
-   :::column-end:::
-:::row-end:::
+**Github**: WinUI is hosted on Github. Use the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml), to file feature requests or bugs, and interact with the WinUI team.
 
 ## Examples
 
