@@ -29,7 +29,7 @@ By incorporating the [Fluent Design System](https://fluent2.microsoft.design/) i
 
 With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and JavaScript (using [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
 
-> The WinUI libraries are hosted in the [WinUI GitHub repo](https://github.com/he WinUI libraries are hosted in the WinUI GitHub repo where you can file feature requests or bugs, and interact with the WinUI team.microsoft/microsoft-ui-xaml) where you can file feature requests or bugs, and interact with the WinUI team.
+> The WinUI libraries are hosted in the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml) where you can file feature requests or bugs, and interact with the WinUI where you can file feature requests or bugs, and interact with the WinUI team.
 
 ## Comparison of WinUI 3 and WinUI 2
 
