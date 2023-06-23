@@ -2,7 +2,7 @@
 description: Learn how to get started building new apps for Windows desktop and modernizing existing apps.
 title: Writing apps for Windows
 ms.topic: article
-ms.date: 1/26/2023
+ms.date: 6/23/2023
 keywords: windows win32, desktop development
 ms.localizationpriority: medium
 ---
@@ -15,17 +15,25 @@ This article contains the information you need to get started building apps for 
 
 Windows offers a wide range of options for building apps, including [C++](/windows/uwp/cpp-and-winrt-apis/), [.NET](/dotnet/), and other emerging technologies such as [open source tools on WSL](/windows/wsl/) and [Rust](../../dev-environment/rust/index.yml). With so many choices, it can be difficult to know where to begin.
 
+## IDE 
+
 [Visual Studio](/visualstudio) is the go-to development environment for most Windows developers, providing various starting points for different types of apps, each with their own strengths and project types ([here's a quick C# tutorial](/visualstudio/get-started/csharp/tutorial-console?view=vs-2022)). Every app type includes an app model that defines the app's lifecycle, a default UI framework, and access to a comprehensive set of APIs for using Windows features.
 
-If your app will only run on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to be cross-platform, consider [.NET MAUI](/dotnet/maui/what-is-maui), a [Progressive Web App (PWA)](/microsoft-edge/progressive-web-apps-chromium/), or [React Native for Windows](../../dev-environment/javascript/react-native-for-windows.md). There are many other options available as well ([here's a list of popular options](../../dev-environment/index.md)), but the above are some good starting points.
+[Visual Studio Code](https://code.visualstudio.com) is another popular tool, with extensions and support for a large number of development languages and tools. For languages other than C# and C++, it's a great place to start.
+
+## Languages and frameworks
+
+Many apps for Windows are written using [WPF](/dotnet/desktop/wpf/get-started/create-app-visual-studio?view=netdesktop-7.0) or [Windows Forms](/dotnet/desktop/winforms/getting-started-with-windows-forms?view=netframeworkdesktop-4.8), and they remain viable tools today.
+
+Looking to the future, if your app will only run on Windows we recommend investigating the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to be cross-platform, consider [.NET MAUI](/dotnet/maui/what-is-maui), a [Progressive Web App (PWA)](/microsoft-edge/progressive-web-apps-chromium/), or [React Native for Windows](../../dev-environment/javascript/react-native-for-windows.md). There are many other options available ([here's a list of popular options](../../dev-environment/index.md)), but the above are some good starting points.
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWQwHD]
 
 ## Create a WinUI 3 app
 
-The Windows UI Library (WinUI) 3 is the latest and recommended user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest UI patterns.
+The Windows UI Library (WinUI) 3 is the latest user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET, and native apps that use C++ with the Win32 API. It is still under very active development, so while it might not be able to meet all your needs today it's maturing with [every release](/windows/apps/windows-app-sdk/stable-channel).
 
-WinUI 3 is available as part of the **[Windows App SDK](../windows-app-sdk/index.md)**. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any C++ Win32 or C# .NET app on a broad set of target Windows OS versions.
+By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest UI patterns. WinUI 3 is available as part of the **[Windows App SDK](../windows-app-sdk/index.md)**. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any C++ Win32 or C# .NET app on a broad set of target Windows OS versions.
 
 > [!div class="button"]
 > [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
