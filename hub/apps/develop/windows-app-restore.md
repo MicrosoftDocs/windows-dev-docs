@@ -62,6 +62,6 @@ Windows introduced [known folders](/windows/win32/shell/known-folders) with Wind
 
 If you can't package your app, then be sure that your installer implements the recommendations below. That will ensure that it's possible to backup and restore the **Start** menu shortcuts that enable installing on a new machine that's restored from backup.
 
-* Make sure that your installer specifies an `InstallLocation` value in its uninstall registry key. When using MSI specify this using [windows/win32/msi/arpinstalllocation](/windows/win32/msi/arpinstalllocation). That's needed in order to enable the mapping of the **Start** menu shortcuts to the product.
+* Make sure that your installer specifies an `InstallLocation` value in its uninstall registry key. When using MSI specify this using [ARPINSTALLLOCATION](/windows/win32/msi/arpinstalllocation). That's needed in order to enable the mapping of the **Start** menu shortcuts to the product.
 * Make sure that that location is specific to the product; usually the sub-directory under `C:\Program Files\<Publisher>\<Application>`.
 * Make sure that your **Start** menu shortcuts have machine-independent `System.AppUserModel.ID` (AMUID) values. That's best done by specifying them explicitly in the shortcut metadata. For more info, see [Where to Assign an AppUserModelID](/windows/win32/shell/appids#where-to-assign-an-appusermodelid).
