@@ -2,7 +2,7 @@
 title: Use the Windows App SDK in a WPF app
 description: This topic enables you to use Windows App SDK features (such as App Lifecycle, MRT Core, DWriteCore, and others) in a Windows Presentation Foundation (WPF) app.
 ms.topic: article
-ms.date: 05/12/2023
+ms.date: 05/30/2023
 keywords: windows win32, windows app development, Windows App SDK, Windows Presentation Foundation, WPF
 ms.author: stwhi
 author: stevewhims
@@ -67,7 +67,7 @@ First we'll edit the project file.
 
 Next, we'll install the Windows App SDK NuGet package in the project.
 
-6. In **Solution Explorer**, right-click the **Dependencies** node of your project, and choose **Manage Nuget Packages**.
+6. In **Solution Explorer**, right-click the **Dependencies** node of your project, and choose **Manage Nuget Packages...**.
 7. In the **NuGet Package Manager** window, select the **Browse** tab, and install the *Latest stable* **Microsoft.WindowsAppSDK** package.
 
 ## Use some Windows App SDK features in your WPF app

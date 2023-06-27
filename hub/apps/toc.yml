@@ -38,6 +38,8 @@ items:
           href: winui/winui3/create-your-first-winui3-app.md
         - name: "Tutorial: Create a simple photo viewer with WinUI 3"
           href: get-started/simple-photo-viewer-winui3.md
+        - name: "Tutorial: Create a simple multi-platform photo viewer"
+          href: get-started/uno-simple-photo-viewer.md
         - name: Sample apps for Windows
           href: get-started/samples.md
         - name: Windows developer best practices 
@@ -82,6 +84,8 @@ items:
             href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
           - name: "Use the Windows App SDK in a WPF app"
             href: windows-app-sdk/wpf-plus-winappsdk.md
+          - name: "Use the Windows App SDK in a WinForms app"
+            href: windows-app-sdk/winforms-plus-winappsdk.md
           - name: "Package your app using single-project MSIX"
             href: windows-app-sdk/single-project-msix.md
           - name: "Update existing projects to the latest release"
@@ -364,6 +368,38 @@ items:
                 href: develop/win2d/index.md
               - name: "Hello Win2D World"
                 href: develop/win2d/hellowin2dworld.md
+              - name: "Quick start"
+                href: develop/win2d/quick-start.md
+              - name: "Features"
+                href: develop/win2d/features.md
+              - name: Articles
+                items:
+                  - name: "Interop with Direct2D"
+                    href: develop/win2d/interop.md
+                  - name: "Offscreen drawing"
+                    href: develop/win2d/offscreen-drawing.md
+                  - name: "DPI and DIPs"
+                    href: develop/win2d/dpi-and-dips.md
+                  - name: "Choosing control resolution"
+                    href: develop/win2d/choosing-control-resolution.md
+                  - name: "Pixel formats"
+                    href: develop/win2d/pixel-formats.md
+                  - name: "Premultiplied alpha"
+                    href: develop/win2d/premultiplied-alpha.md
+                  - name: "Bitmap block compression"
+                    href: develop/win2d/bitmap-block-compression.md
+                  - name: "Effect precision and clamping"
+                    href: develop/win2d/effect-precision-and-clamping.md
+                  - name: "Handling device lost"
+                    href: develop/win2d/handling-device-lost.md
+                  - name: "Using Win2D without built-in controls"
+                    href: develop/win2d/using-win2d-without-built-in-controls.md
+                  - name: "Loading resources outside of CreateResources"
+                    href: develop/win2d/loading-resources-outside-of-createresources.md
+                  - name: "Avoiding memory leaks"
+                    href: develop/win2d/avoiding-memory-leaks.md
+                  - name: "Custom effects"
+                    href: develop/win2d/custom-effects.md
 
       - name: Data and files
         items:

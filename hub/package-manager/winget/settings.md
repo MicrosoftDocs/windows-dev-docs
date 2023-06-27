@@ -136,7 +136,7 @@ Any arguments passed on the command line will effectively override the matching 
 
 #### scope
 
-The `scope` behavior affects the choice between installing a package for the current user or for the entire machine. The matching parameter is `--scope`, and uses the same values (`user` or `machine`).
+The `scope` behavior affects the choice between installing a package for the current user or for the entire machine. The matching parameter is `--scope`, and uses the same values (`user` or `machine`). See  [known issues relating to package installation scope](./troubleshooting.md#scope-for-specific-user-vs-machine-wide).
 
 ```json
 "installBehavior": {
@@ -188,7 +188,7 @@ The `purgePortablePackage` behavior affects the default behavior for uninstallin
 
 The `telemetry` settings control whether winget writes ETW events that may be sent to Microsoft on a default installation of Windows.
 
-See [details on telemetry](https://github.com/microsoft/winget-cli/blob/master/README.md#datatelemetry), and our [primary privacy statement](https://github.com/microsoft/winget-cli/blob/master/privacy.md).
+See [details on telemetry](https://github.com/microsoft/winget-cli/blob/master/README.md#datatelemetry), and our [primary privacy statement](https://github.com/microsoft/winget-cli/blob/master/PRIVACY.md).
 
 #### disable
 

@@ -21,7 +21,7 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 ## Prerequisites
 
 - Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
-- Visual Studio 2017 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
+- Visual Studio 2022 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
 ## Create a new C++/WinRT win32 console app
 

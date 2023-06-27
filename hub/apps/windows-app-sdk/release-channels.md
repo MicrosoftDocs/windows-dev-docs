@@ -4,8 +4,6 @@ description: Learn about the Windows App SDK's release channels.
 ms.topic: article
 ms.date: 09/06/2022
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +15,7 @@ The following table provides an overview of the different release channels. For 
 
 |         | Channel                                                 | Description                                                                                                                                                                | Release cadence                                                                    | Supported? | Latest release                                                                                      |
 |---------|---------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------------------------------------------|
-| **✅**   | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                                   | Yes        | [1.3.1 (1.3.230502000)](stable-channel.md#version-13) (05/09/2023)                                                 |
+| **✅**   | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                                   | Yes        | [1.3.2 (1.3.230602002)](stable-channel.md#version-13) (06/13/2023)                                                 |
 | **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least one preview per stable version                                           | No         | [1.3.0-preview1](preview-channel.md#version-13-preview-1-130-preview1) (03/07/2023)                 |
 | **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.4.0-experimental1](experimental-channel.md#version-14-experimental-140-experimental1) (05/23/2023) |
 
@@ -50,7 +48,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level | End of servicing |
 |-------------------------|-----------------------|----------------------|--------------------|---------------|----------------  |
-| 1.3                     | 04/12/2023            | 1.3.230502000        | 05/09/2023         | Current       | 04/12/2024       |
+| 1.3                     | 04/12/2023            | 1.3.230602002        | 06/13/2023         | Current       | 04/12/2024       |
 | 1.2                     | 11/10/2022            | 1.2.230313.1         | 03/15/2023         | Maintenance   | 11/10/2023       |
 | 1.1                     | 05/24/2022            | 1.1.5                | 09/14/2022         | Out of Support| 05/24/2023       |
 | 1.0                     | 11/16/2021            | 1.0.4                | 06/14/2022         | Out of Support| 11/16/2022       |

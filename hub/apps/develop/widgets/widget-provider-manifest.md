@@ -119,7 +119,7 @@ Represents the registration for a single widget.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Id**| string | Yes | An ID that identifies the widget. Widget provider implementations use this string to determine or specify which of the app's widgets is being referenced for each operation. This string must be unique for all widgets defined within the app manifest file.  | N/A |
+| **Id**| string | Yes | An ID that identifies the widget. This value is also displayed in the navigation bar of the widget picker. Widget provider implementations use this string to determine or specify which of the app's widgets is being referenced for each operation. This string must be unique for all widgets defined within the app manifest file.  | N/A |
 | **DisplayName** | string | Yes | The name of the widget that is displayed on the widgets host. | N/A |
 | **Description** | string | Yes | Short description of the widget. | N/A |
 | **AllowMultiple** | boolean | No | Set to false if only one instance of this widget is supported. This attribute is optional and the default value is true. | true |

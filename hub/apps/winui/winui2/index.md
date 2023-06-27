@@ -57,7 +57,7 @@ For instructions on installing and using the WinUI 2 library, see [Getting start
 
 ## Developer engagement
 
-WinUI is hosted in the [Windows UI Library repo](https://aka.ms/winui) on GitHub where we welcome bug reports, feature requests, and community code contributions.
+We welcome bug reports, feature requests and community code contributions in the [microsoft-ui-xaml repo](https://github.com/microsoft/microsoft-ui-xaml/issues) on GitHub.
 
 ## NuGet package list
 
@@ -66,8 +66,8 @@ For details on the Windows UI Library NuGet packages, see [Windows UI Library Nu
 ## See also
 
 - [WinUI 2 API docs](/windows/winui/api/)
-- [Source code](https://aka.ms/winui)
 - [Windows App SDK](../../windows-app-sdk/index.md)
 - [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
-- [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
+- [Windows App SDK WinRT API docs](/windows/windows-app-sdk/api/winrt/)
+- [Windows App SDK Win32 API docs](/windows/windows-app-sdk/api/win32/)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

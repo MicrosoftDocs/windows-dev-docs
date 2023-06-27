@@ -1168,6 +1168,8 @@
           href: ../devices-sensors/aep-service-class-ids.md
     - name: Pair devices
       href: ../devices-sensors/pair-devices.md
+    - name: Dynamic lighting
+      href: ../devices-sensors/lighting-dynamic-lamparray.md
     - name: Point of Service
       href: ../devices-sensors/point-of-service.md
       items:
@@ -1275,6 +1277,11 @@
           href: ../devices-sensors/3d-print-from-app.md
         - name: Generate a 3MF package
           href: ../devices-sensors/3d-generate-3mf.md
+    - name: NFC
+      href: ../devices-sensors/nfc.md
+      items:
+        - name: Create an NFC Smart Card app
+          href: ../devices-sensors/host-card-emulation.md
     - name: Get battery information
       href: ../devices-sensors/get-battery-info.md
 - name: Porting apps

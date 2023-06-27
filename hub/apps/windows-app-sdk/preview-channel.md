@@ -4,8 +4,6 @@ description: Provides info about the preview release channel for the Windows App
 ms.topic: article
 ms.date: 09/06/2022
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: gabilka
-author: gabbybilka
 ms.localizationpriority: medium
 ---
 

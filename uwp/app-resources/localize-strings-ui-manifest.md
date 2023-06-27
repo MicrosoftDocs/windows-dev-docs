@@ -25,12 +25,14 @@ Unlike image resources, where only one image resource is contained in an image r
 1. Set your app's default language.
     1. With your solution open in Visual Studio, open `Package.appxmanifest`.
     2. On the Application tab, confirm that the Default language is set appropriately (for example, "en" or "en-US"). The remaining steps will assume that you have set the default language to "en-US".
-    <br>**Note** At a minimum, you need to provide string resources localized for this default language. Those are the resources that will be loaded if no better match can be found for the user's preferred language or display language settings.
+    > [!NOTE]
+    > At a minimum, you need to provide string resources localized for this default language. Those are the resources that will be loaded if no better match can be found for the user's preferred language or display language settings.
 2. Create a Resources File (.resw) for the default language.
-    1. Under your project node, create a new folder and name it "Strings".
-    2. Under `Strings`, create a new sub-folder and name it "en-US".
-    3. Under `en-US`, create a new Resources File (.resw) and confirm that it is named "Resources.resw".
-    <br>**Note** If you have .NET Resources Files (.resx) that you want to port, see [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    1. Under your project node, create a new folder and name it `Strings`.
+    2. Under `Strings`, create a new sub-folder and name it `en-US`.
+    3. Under `en-US`, create a new Resources File (.resw) (under the **XAML** file types in the **Add New Item** dialog) and confirm that it is named `Resources.resw`.
+    > [!NOTE]
+    > If you have .NET Resources Files (.resx) that you want to port, see [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
 3. Open `Resources.resw` and add these string resources.
 
     `Strings/en-US/Resources.resw`

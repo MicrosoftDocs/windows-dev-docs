@@ -9,7 +9,7 @@ author: alvinashcraft
 ms.localizationpriority: medium
 ---
 
-# Localize strings in your UI and app package manifest
+# Localize strings in your UI and the app package manifest
 
 For more info about the value proposition of localizing your Windows App SDK app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
 
@@ -27,9 +27,9 @@ Unlike image resources, where only one image resource is contained in an image r
     > [!NOTE]
     > At a minimum, you need to provide string resources localized for this default language. Those are the resources that will be loaded if no better match can be found for the user's preferred language or display language settings.
 2. Create a Resources File (.resw) for the default language.
-    1. Under your project node, create a new folder and name it "Strings".
-    2. Under `Strings`, create a new sub-folder and name it "en-US".
-    3. Under `en-US`, create a new Resources File (.resw) and confirm that it is named "Resources.resw".
+    1. Under your project node, create a new folder and name it `Strings`.
+    2. Under `Strings`, create a new sub-folder and name it `en-US`.
+    3. Under `en-US`, create a new Resources File (.resw) (under the **WinUI** file types in the **Add New Item** dialog) and confirm that it is named `Resources.resw`.
     > [!NOTE]
     > If you have .NET Resources Files (.resx) that you want to port, see [Porting XAML and UI](/windows/uwp/porting/wpsl-to-uwp-porting-xaml-and-ui#localization-and-globalization).
 3. Open `Resources.resw` and add these string resources.

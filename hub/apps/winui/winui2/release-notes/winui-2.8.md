@@ -12,7 +12,7 @@ WinUI 2.8 is the latest stable release of the Windows UI Library (WinUI) for UWP
 > [!NOTE]
 > For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../../index.md).
 
-WinUI is hosted in the [Windows UI Library repo](https://aka.ms/winui) on GitHub where we welcome bug reports, feature requests, and community code contributions.
+The Windows UI Library (WinUI) is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
 
 All stable releases (and prereleases) are available for download from our [GitHub release page](https://github.com/microsoft/microsoft-ui-xaml/tags) or from our [NuGet page](https://www.nuget.org/packages/Microsoft.UI.Xaml).
 

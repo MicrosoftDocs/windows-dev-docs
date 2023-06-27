@@ -62,7 +62,7 @@ properties:
         module: Microsoft.Windows.Developer
         allowPrerelease: true
       settings:
-        MinVersion: 10.0.19041
+        MinVersion: "10.0.19041"
   resources:
     - resource: DeveloperMode
       directives:

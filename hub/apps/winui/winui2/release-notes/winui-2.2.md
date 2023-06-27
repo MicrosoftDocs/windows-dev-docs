@@ -12,7 +12,7 @@ WinUI 2.2 is the August 2019 release of the Windows UI Library.
 
 You can add WinUI packages to your app using the NuGet package manager: see [Getting Started with the Windows UI Library](../getting-started.md) for more information.
 
-WinUI is hosted in the [Windows UI Library repo](https://aka.ms/winui) on GitHub where we welcome bug reports, feature requests, and community code contributions.
+The Windows UI Library (WinUI) is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
 
 ## Microsoft.UI.Xaml 2.2 Version History
 

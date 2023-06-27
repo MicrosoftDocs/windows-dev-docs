@@ -1931,11 +1931,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/devices-sensors/host-card-emulation.md",
-      "redirect_url": "/windows/uwp/devices-sensors/",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "uwp/devices-sensors/generate-3mf.md",
       "redirect_url": "/windows/uwp/devices-sensors/3d-generate-3mf",
       "redirect_document_id": false

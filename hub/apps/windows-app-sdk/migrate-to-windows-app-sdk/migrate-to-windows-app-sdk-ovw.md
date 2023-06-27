@@ -2,7 +2,7 @@
 title: Migrate from UWP to the Windows App SDK
 description: A collection of topics describing and demonstrating how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
 ms.topic: article
-ms.date: 10/08/2021
+ms.date: 06/05/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
 ms.author: stwhi
 author: stevewhims
@@ -13,23 +13,21 @@ ms.localizationpriority: medium
 
 If you're happy with your current functionality in the Universal Windows Platform (UWP), then there's no need to migrate your project type. WinUI 2.x, and the Windows SDK, support UWP project types.
 
-But if you've decided to migrate your app from UWP to the Windows App SDK, then in most cases your UI code needs just a few namespace changes. Much of your platform code can stay the same. You'll need to adjust some code due to differences between desktop apps and UWP apps. But we expect that for most apps (depending on codebase size, of course), migration will take on the order of days rather than weeks. At a high level, these are the steps:
+But if you've decided to migrate your app from UWP to the Windows App SDK, then in most cases your UI code needs just a few namespace changes. Much of your platform code can stay the same. You'll need to adjust some code due to differences between UWP apps and desktop apps. But we expect that for most apps (depending on codebase size, of course), migration will take on the order of days rather than weeks.
 
-1. Create a WinUI 3 packaged desktop project (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)). That could go into your existing solution.
+At a high level, these are the steps for migrating manually (but see the next section for info about using the the [.NET Upgrade Assistant tool](#migrating-by-using-the-net-upgrade-assistant-tool)):
+
+1. Create a new WinUI 3 packaged desktop project (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)). That could go into your existing solution.
 2. Copy your XAML/UI code. In many cases you can simply change namespaces (for example, **Windows.UI.\*** to **Microsoft.UI.\***).
 3. Copy your app logic code. Some APIs need tweaks, such as **Popup**, **Picker**s, and **SecondaryTile**s.
 
-For full details, see the topics below. They describe and demonstrate how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
+For full details, see the topics in the table below. They describe and demonstrate how to manually migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
 
 Take particular note of [What's supported when migrating from UWP to WinUI 3](./what-is-supported.md). That topic describes any functionality that's not yet supported in WinUI 3 and the Windows App SDK. If your app needs any of those features/libraries, then consider waiting to migrate.
 
 ## Migrating by using the .NET Upgrade Assistant tool
 
-As a next step in assisting you to migrate your Universal Windows Platform (UWP) apps to the Windows App SDK and WinUI 3, we've leveraged the .NET Upgrade Assistant, adding support for migrating C# UWP apps. The UWP support automates much of the migration process. A preview is now available&mdash;for more info, see [Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant](upgrade-assistant.md).
-
-Our roadmap for UWP support in the .NET Upgrade Assistant includes further tooling improvements, and adding migration support for new features.
-
-The [Upgrade Assistant GitHub repository](https://github.com/dotnet/upgrade-assistant) documents troubleshooting tips and known issues. If you find any issues while using the tool, please report them in that same GitHub repository, tagging them with an area tag of `UWP`. We appreciate it!
+As a further step in assisting you to migrate your UWP apps to the Windows App SDK and WinUI 3, we've leveraged the .NET Upgrade Assistant, adding support for migrating C# UWP apps. The UWP support automates much of the migration process. For more info, see the topic [Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant](upgrade-assistant.md).
 
 ## Topics in this section
 

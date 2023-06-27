@@ -4,8 +4,6 @@ description: Older downloads for the Windows App SDK, including the VSIX, instal
 ms.topic: article
 ms.date: 04/05/2023
 keywords: windows win32, windows app development, Windows App SDK
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

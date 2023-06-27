@@ -38,10 +38,10 @@ The following table includes device-specific details for the WDP.
 
 Device family | On by default? | HTTP | HTTPS | USB | Instructions |
 --------------|----------------|------|-------|-----|--------------|
-Desktop| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Set up Windows Device Portal on a Desktop device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
+Desktop and IoT&nbsp;Enterprise| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Device&nbsp;Portal&nbsp;for&nbsp;Desktop or IoT&nbsp;Enterprise device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
 Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A | [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md) |
 HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | `http://127.0.0.1:10080` | [Device Portal for HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
-IoT | Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT](/windows/iot-core/manage-your-device/DevicePortal) |
+IoT&nbsp;Core| Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT Core](/windows/iot-core/manage-your-device/DevicePortal) |
 Phone | Enable inside Dev Mode | 80| 443 | `http://127.0.0.1:10080` | [Device Portal for Mobile](device-portal-mobile.md) |
 
 \* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Registry-based configuration](device-portal-desktop.md#registry-based-configuration) section in [Windows Device Portal for Desktop](device-portal-desktop.md).  
@@ -211,6 +211,7 @@ In order to protect against [CSRF attacks](https://en.wikipedia.org/wiki/Cross-s
 
 > [!IMPORTANT]
 > This protection prevents usages of the REST APIs from a standalone client (such as command-line utilities). This can be solved in 3 ways:
+>
 > - Use an "auto-" username. Clients that prepend "auto-" to their username will bypass CSRF protection. It is important that this username not be used to log in to Device Portal through the browser, as it will open up the service to CSRF attacks. Example: If Device Portal's username is "admin", ```curl -u auto-admin:password <args>``` should be used to bypass CSRF protection.
 > - Implement the cookie-to-header scheme in the client. This requires a GET request to establish the session cookie, and then the inclusion of both the header and the cookie on all subsequent requests.
 > - Disable authentication and use HTTP. CSRF protection only applies to HTTPS endpoints, so connections on HTTP endpoints will not need to do either of the above.
