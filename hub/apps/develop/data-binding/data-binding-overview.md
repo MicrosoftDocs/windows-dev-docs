@@ -1,6 +1,6 @@
 ---
 ms.assetid: 02a08657-285d-4804-a006-168c22aa4904
-title: Data binding overview
+title: Windows data binding overview
 description: This topic shows you how to bind a control (or other UI element) to a single item or bind an item's control to a collection of items in a Windows App SDK app.
 ms.date: 12/12/2022
 ms.topic: article
@@ -10,7 +10,7 @@ dev_langs:
   - csharp
 ---
 
-# Data binding overview
+# Windows data binding overview
 
 This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Windows App SDK app. In addition, we show how to control the rendering of items, implement a details view based on a selection, and convert data for display. For more detailed info, see [Data binding in depth](data-binding-in-depth.md).
 

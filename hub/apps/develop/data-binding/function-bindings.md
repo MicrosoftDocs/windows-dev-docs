@@ -1,13 +1,13 @@
 ---
 description: Learn about using functions as the leaf step of the data binding path in the xBind markup extension.
-title: Functions in x:Bind
+title: Functions in x:Bind with Windows App SDK
 ms.date: 12/13/2022
 ms.topic: article
 keywords: windows 10, windows 11, windows app sdk, xaml, winui, windows ui, xBind
 ms.localizationpriority: medium
 ---
 
-# Functions in x:Bind
+# Functions in x:Bind with Windows App SDK
 
 > [!NOTE]
 > For general info about using data binding in your app with `{x:Bind}` (and for an all-up comparison between `{x:Bind}` and `{Binding}`), see [Data binding in depth](data-binding-in-depth.md) and [{x:Bind} Markup Extension](/windows/uwp/xaml-platform/x-bind-markup-extension).

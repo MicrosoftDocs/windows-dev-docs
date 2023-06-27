@@ -7,8 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
- # Files, folders, and libraries
-
+# Files, folders, and libraries
 
 You use the APIs in the [Windows.Storage](/uwp/api/Windows.Storage), [Windows.Storage.Streams](/uwp/api/Windows.Storage.Streams), and [Windows.Storage.Pickers](/uwp/api/Windows.Storage.Pickers) namespaces to read and write text and other data formats in files, and to manage files and folders. In this section, you'll also learn about reading and writing app settings, about file and folder pickers, and about special sand-boxed locations such as the Video/Music library.
 
@@ -30,11 +29,9 @@ You use the APIs in the [Windows.Storage](/uwp/api/Windows.Storage), [Windows.St
 | [Fast access to file properties in UWP](fast-file-properties.md) | Efficiently gather a list of files and their properties from a library to use in a UWP app. |
 
 ## Related samples
+
 [Folder enumeration sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration)
 
 [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)
 
 [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker)
- 
-
- 
