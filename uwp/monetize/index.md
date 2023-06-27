@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, monetize, engage, promote, Store services
 ms.localizationpriority: medium
 ---
+
 # Monetization, engagement, and Store services
 
 The Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK, and the Microsoft Store provide features that enable you to make more money from your apps and gain customers by engaging with your users. The topics in this section show you how to build these features into your app.

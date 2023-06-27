@@ -17,7 +17,7 @@ If you are not sure what you want you app's name to be, you can reserve multiple
 
 Follow the following steps to reserve your app's name:
 
-1. Sign in to Partner Center.
+1. Sign in to [Partner Center](https://partner.microsoft.com/).
 :::zone pivot="store-installer-msix,store-installer-pwa,store-installer-add-on"
 2. Navigate to the [Partner Center apps and games page](https://partner.microsoft.com/dashboard/apps-and-games/overview).
 3. Click **New product**.

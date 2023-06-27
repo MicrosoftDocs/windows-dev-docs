@@ -32,7 +32,7 @@ In the following table, the "Language tag" column lists the [BCP-47 language tag
 | Central Kurdish (Arabic) | ku-ARAB-IQ | Segoe UI |
 | Cherokee (Cherokee) | chr-CHER-US | Gadugi |
 | Chinese Simplified | zh-CN | Microsoft YaHei UI |
-| Chinese Traditional (Hong Kong) | zh-HK | Microsoft JhengHei UI |
+| Chinese Traditional (Hong Kong Special Administrative Region) | zh-HK | Microsoft JhengHei UI |
 | Chinese Traditional (Taiwan) | zh-TW | Microsoft JhengHei UI |
 | Croatian | hr-HR | Segoe UI |
 | Czech | cs-CZ | Segoe UI |

@@ -497,7 +497,7 @@ In this section we'll add a new property to the **MainWindow** class. The proper
         }
     }
     ```
-    
+
 1. While we're editing the **MainWindow** class, go ahead and remove the **MyProperty** property from the `MainWindow.idl` (it's already been removed in the listing above), and from `MainWindow.h`, and from `MainWindow.cpp`.
 
 1. The code to populate the new collection property with images is shown in the **GetItemsAsync** and **LoadImageInfoAsync** methods below. Paste the include, the `using namespace` directives, and the two method declarations and definitions, into `MainWindow.xaml.h` and `MainWindow.xaml.cpp`.
@@ -912,7 +912,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
 1. In the data template, find the first **TextBlock** element (the one with its **Text** currently set to *ImageTitle*). Replace its **Text** value as shown below.
 
     > [!TIP]
-    > You can either copy and paste the markup below, or you can use IntelliSense in Visual Studio. To do that, select the current value that's inside the quotation marks, and type `{`. IntelliSense automatically adds the closing brace, and displays a code-completion list. You *could* scroll down to `x:Bind`, and double-click it. But it might be more efficient to type `x:` (note how `x:Bind` is then filtered to the of completion list), and press the TAB key. Now press the SPACE key, and type `ImageT` (as much of the property name `ImageTitle` as necessary to get it to the top of the completion list), and TAB.
+    > You can either copy and paste the markup below, or you can use IntelliSense in Visual Studio. To do that, select the current value that's inside the quotation marks, and type `{`. IntelliSense automatically adds the closing brace, and displays a code-completion list. You *could* scroll down to `x:Bind`, and double-click it. But it might be more efficient to type `x:` (note how `x:Bind` is then filtered to the top of the completion list), and press the TAB key. Now press the SPACE key, and type `ImageT` (as much of the property name `ImageTitle` as necessary to get it to the top of the completion list), and TAB.
 
     ```xaml
     <TextBlock Text="{x:Bind ImageTitle}"

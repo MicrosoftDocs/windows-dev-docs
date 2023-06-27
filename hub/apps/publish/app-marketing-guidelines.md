@@ -37,7 +37,7 @@ To promote your app, you may want to show how it looks when running on a Windows
 
 *Microsoft Marks* means the *Microsoft badge* described on the [badge generator](https://apps.microsoft.com/store/app-badge) page. To use these badges, you must:
 
--   Have your app or other content available in the Microsoft Store, or be part of the [Microsoft Affiliate Program](https://www.microsoftaffiliates.com/).
+-   Have your app or other content available in the Microsoft Store, or be part of the [Microsoft Affiliate Program](https://www.microsoft.com/microsoft-365/business/microsoft-365-affiliate-program).
 
 -   If you are registered as an app developer in Partner Center, comply with the [“License to Microsoft Marks”](/legal/windows/agreements/app-developer-agreement#license_to_mark) section of the App Developer Agreement.
 

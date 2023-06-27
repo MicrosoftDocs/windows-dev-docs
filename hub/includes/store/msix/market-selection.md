@@ -169,7 +169,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
   <tr>
     <td>Heard Island and McDonald Islands</td>
     <td>Honduras</td>
-    <td>Hong Kong SAR *</td>
+    <td>Hong Kong Special Administrative Region *</td>
     <td>Hungary *</td>
   </tr>
   <tr>
@@ -407,7 +407,7 @@ The Commerce Expansion Adjustment will be applied to all transactions processed 
 | France               | Gift card       | 2.24%                         | March 2016     |
 | Germany              | Gift card       | 2.24%                         | March 2016     |
 | Greece               | Gift card       | 2.24%                         | March 2016     |
-| Hong Kong            | Gift card       | 2.24%                         | March 2016     |
+| Hong Kong SAR        | Gift card       | 2.24%                         | March 2016     |
 | Hungary              | Gift card       | 2.24%                         | March 2016     |
 | India                | Gift card       | 2.24%                         | March 2016     |
 | Ireland              | Gift card       | 2.24%                         | March 2016     |
