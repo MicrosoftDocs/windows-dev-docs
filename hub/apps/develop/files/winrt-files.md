@@ -16,3 +16,7 @@ ms.localizationpriority: medium
 ## Files and folders in Windows libraries
 
 ## See also
+
+[Access files and folders with Windows App SDK and .NET APIs](dotnet-files.md)
+
+[Files, folders, and libraries with Windows App SDK](index.md)

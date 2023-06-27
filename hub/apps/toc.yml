@@ -445,10 +445,10 @@ items:
             items:
               - name: Files, folders, and libraries
                 href: develop/files/index.md
-              - name: Access files and folders with .NET
-                href: develop/files/dotnet-files.md
               - name: File access with Windows Runtime APIs
                 href: develop/files/winrt-files.md
+              - name: Access files and folders with .NET
+                href: develop/files/dotnet-files.md
           - name: Data and files overview
             href: develop/data-and-files.md
       - name: Communication

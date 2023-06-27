@@ -50,3 +50,9 @@ For examples of using the .NET APIs in a WinUI app, see [Access files and folder
 | [Fast access to file properties](/windows/uwp/files/fast-file-properties) | Efficiently gather a list of files and their properties from a library to use via the Windows Runtime APIs. |
 
 ## See also
+
+[Access files and folders with Windows App SDK and WinRT APIs](winrt-files.md)
+
+[Access files and folders with Windows App SDK and .NET APIs](dotnet-files.md)
+
+[System.IO](/dotnet/api/system.io)

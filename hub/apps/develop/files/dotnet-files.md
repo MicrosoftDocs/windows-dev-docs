@@ -14,3 +14,7 @@ ms.localizationpriority: medium
 ## Working with drives and folders in .NET
 
 ## See also
+
+[Access files and folders with Windows App SDK and WinRT APIs](winrt-files.md)
+
+[Files, folders, and libraries with Windows App SDK](index.md)
