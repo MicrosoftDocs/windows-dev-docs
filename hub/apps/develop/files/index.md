@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Files, folders, and libraries with Windows App SDK
 
-Packaged Windows App SDK apps can use the APIs in the [Windows.Storage](/uwp/api/Windows.Storage), [Windows.Storage.Streams](/uwp/api/Windows.Storage.Streams), and [Windows.Storage.Pickers](/uwp/api/Windows.Storage.Pickers) namespaces to read and write text and other data formats in files, and to manage files and folders. In this section, you'll also learn about reading and writing app settings, about file and folder pickers, and about special sand-boxed locations such as the Video/Music library.
+Packaged Windows App SDK apps can leverage the powerful APIs provided by the [Windows.Storage](/uwp/api/Windows.Storage), [Windows.Storage.Streams](/uwp/api/Windows.Storage.Streams), and [Windows.Storage.Pickers](/uwp/api/Windows.Storage.Pickers) namespaces to efficiently read and write various data formats in files, as well as manage files and folders. This section covers essential topics such as reading and writing app settings, file and folder pickers, and accessing special sand-boxed locations like the Video/Music library. Learn how to optimize your app's file management capabilities with the Windows App SDK.
 
 Windows 10 and later OS releases provide a wide variety of APIs related to files, folders, libraries, and settings for apps. These features are available via a combination of WinRT and .NET APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk) and [.NET SDK](https://dotnet.microsoft.com/en-us/download).
 
