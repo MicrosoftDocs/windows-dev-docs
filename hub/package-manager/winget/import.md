@@ -1,7 +1,7 @@
 ---
 title: import Command
 description: imports the list of installed applications.
-ms.date: 05/02/2021
+ms.date: 06/28/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -40,7 +40,7 @@ The options allow you to customize the import experience to meet your needs.
 
 ## JSON Schema
 
-The driving force behind the **import** command is the JSON file. You can find the schema for the JSON file [here](https://aka.ms/winget-packages.schema.1.0.json).
+The driving force behind the **import** command is the JSON file. You can find the [schema for the JSON file](https://github.com/microsoft/winget-cli/tree/master/schemas/JSON/packages) in the [Windows Package Manager Client repo on GitHub](https://github.com/microsoft/winget-cli).
 
 The JSON file includes the following hierarchy.
 
