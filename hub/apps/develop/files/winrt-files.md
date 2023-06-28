@@ -16,6 +16,7 @@ Packaged Windows App SDK apps can leverage [WinRT APIs](/uwp/api/) for reading a
 The following example shows how to use the [StorageFolder](/uwp/api/windows.storage.storagefolder) and [StorageFile](/uwp/api/windows.storage.storagefile) APIs to query the **Documents** library for files and folders. The example uses the `GetFilesInFolderAsync` method to recursively iterate through the folder structure and append the file names to a `StringBuilder` object.
 
 ```csharp
+using System.Text;
 using Windows.Storage;
 ...
 private async Task<string> GetDocumentsContentsAsync()
@@ -50,6 +51,7 @@ private async Task GetFilesInFolderAsync(StorageFolder folder, StringBuilder out
 The following example takes the `GetFilesInFolderAsync` method from the previous example and adds the ability to retrieve the file size and date modified for each file. The example uses the [BasicProperties](/uwp/api/windows.storage.fileproperties.basicproperties) API to retrieve the file size and date modified for each file, formats the file size, and appends the size and date modified to the `StringBuilder` object after each file and folder name.
 
 ```csharp
+using System.Text;
 using Windows.Storage;
 using Windows.Storage.FileProperties;
 ...
