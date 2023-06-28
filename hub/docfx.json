@@ -167,7 +167,7 @@
         "dev-environment/javascript/**/*.md": "mattwojo",
         "dev-environment/rust/**/*.md": "stevewhims",
         "package-manager/**/*.md": "KevinLaMS",
-        "powertoys/**/*.md": "mattwojo",
+        "powertoys/**/*.md": "alvinashcraft",
         "python/**/*.md": "mattwojo",
         "web/**/*.md": "mattwojo"
       },
@@ -219,7 +219,7 @@
         "dev-environment/javascript/**/*.md": "mattwoj",
         "dev-environment/rust/**/*.md": "stwhi",
         "package-manager/**/*.md": "kevinla",
-        "powertoys/**/*.md": "mattwoj",
+        "powertoys/**/*.md": "aashcraft",
         "python/**/*.md": "mattwoj",
         "web/**/*.md": "mattwoj"
       },
