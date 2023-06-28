@@ -33,7 +33,7 @@ You can create a Windows desktop app using React Native for Windows by following
     ```powershell
     npx react-native init <projectName>
     ```
-    If you want to start a new project with a specific React Native version, you can use the `--version` argumen. For information about versions of React Native, see [Versions - React Native](https://reactnative.dev/versions).
+    If you want to start a new project with a specific React Native version, you can use the `--version` argument. For information about versions of React Native, see [Versions - React Native](https://reactnative.dev/versions).
    
     ```powershell
     npx react-native@X.XX.X init  <projectName> --version X.XX.X
