@@ -18,6 +18,9 @@ The **uninstall** command requires that you specify the exact string to uninstal
 
 ![Image of uninstall command usage](./images/uninstall.png)
 
+> [!NOTE]
+> When using WinGet to uninstall a package, you may encounter a Microsoft Store agreement. This is due to the way in which WinGet queries package manifest sources. If you prefer not to have the Microsoft Store policy popup when uninstalling, you can pass in `--source winget` to suppress the agreement. Alternatively, you can uninstall using **Start  > Settings  > Apps > Apps & features**, finding the app you want to remove, and selecting **More  > Uninstall**.
+
 ## Arguments
 
 The following arguments are available.
