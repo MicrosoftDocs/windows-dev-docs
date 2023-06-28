@@ -43,6 +43,11 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
     ```powershell
     npx react-native init MyReactNativeApp
     ```
+     If you want to start a new project with a specific React Native version, you can use the `--version` argument. For information about versions of React Native, see [Versions - React Native](https://reactnative.dev/versions).
+   
+    ```powershell
+    npx react-native@X.XX.X init  <projectName> --version X.XX.X
+    ```
 
 2. Open your new "MyReactNativeApp" directory:
 
