@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Access files and folders with Windows App SDK and .NET
 
-Packaged Windows App SDK apps can leverage .NET APIs for reading and writing files, working with folders, and reading drive and volume information. Additionally, any packaged desktop app can utilize both WinRT and Win32 APIs in the Windows SDK, as well as the APIs provided in the .NET SDK. This article provides guidance on how to use the .NET `System.IO` APIs to read and write files, manage drives and folders, and work with memory streams to encode or decode string data.
+Packaged Windows App SDK apps can leverage [.NET APIs](/dotnet/) for reading and writing files, working with folders, and reading drive and volume information. Additionally, any packaged desktop app can utilize both WinRT and Win32 APIs in the Windows SDK, as well as the APIs provided in the .NET SDK. This article provides guidance on how to use the .NET [System.IO](/dotnet/api/system.io) APIs to read and write files, manage drives and folders, and work with memory streams to encode or decode string data.
 
 ## Read and write files with .NET APIs
 

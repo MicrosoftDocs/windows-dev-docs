@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Access files and folders with Windows App SDK and WinRT APIs
 
-Packaged Windows App SDK apps can leverage [WinRT APIs](/uwp/api/) for reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library. Additionally, any packaged desktop app can utilize both WinRT and Win32 APIs in the Windows SDK, as well as the APIs provided in the .NET SDK. This article provides guidance on how to use the WinRT storage APIs to query files and folders, retrieve file properties, and work with the **Pictures** library.
+Packaged Windows App SDK apps can leverage [WinRT APIs](/uwp/api/) for reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library. Additionally, any packaged desktop app can utilize both WinRT and Win32 APIs in the Windows SDK, as well as the APIs provided in the .NET SDK. This article provides guidance on how to use the [WinRT storage APIs](/uwp/api/windows.storage) to query files and folders, retrieve file properties, and work with the **Pictures** library.
 
 ## Query files and folders
 
