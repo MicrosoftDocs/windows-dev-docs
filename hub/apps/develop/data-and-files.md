@@ -22,7 +22,7 @@ The [Windows App SDK](../windows-app-sdk/index.md) provides the following featur
 
 Windows 10 and later OS releases provide a wide variety of APIs related to data and files scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
 
-#### WinRT APIs
+### WinRT APIs
 
 The following articles provide information about features available via WinRT APIs provided by the Windows SDK.
 
@@ -32,7 +32,7 @@ The following articles provide information about features available via WinRT AP
 | [Data binding](/windows/uwp/data-binding/) | Learn how to bind your app's UI to data and keep the UI in sync with changes to the data. |
 | [Files, folders, and libraries](/windows/uwp/files/) | Learn how to read and write text and other data formats in files, and to manage files and folders. |
 
-#### Win32 (C++ and COM) APIs
+### Win32 (C++ and COM) APIs
 
 The following articles provide information about features available via Win32 (C++ and COM) APIs provided by the Windows SDK.
 
