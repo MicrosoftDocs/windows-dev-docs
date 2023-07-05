@@ -19,6 +19,15 @@ To keep your device performing its best, make sure that you have the latest upda
 
 The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater.
 
+## June 2023 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater.
+
+| Driver Version | Device Manager |
+|----|----|
+| 30.0.3681.5802 | Qualcomm(R) Adreno(TM) 8cx Gen 3 - Improves graphics stability. |
+| 255.31.3.0 | Surface Integration  |
+
 ## November 2022 updates
 
 | Driver Version | Device Manager |
