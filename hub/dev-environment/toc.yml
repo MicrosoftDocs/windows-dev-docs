@@ -39,6 +39,8 @@ items:
             href: ../package-manager/winget/install.md
           - name: list command
             href: ../package-manager/winget/list.md
+          - name: pin command
+            href: ../package-manager/winget/pinning.md
           - name: search command
             href: ../package-manager/winget/search.md
           - name: settings command
