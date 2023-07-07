@@ -93,6 +93,8 @@ The current preview of the **winget** tool supports the following commands.
 | [features](features.md) | Shows the status of experimental features. |
 | [export](export.md) | Exports a list of the installed packages. |
 | [import](import.md) | Installs all the packages in a file. |
+| [pin](pinning.md) | Manage package pins. |
+| [configure](configure.md) | Configures the system into a desired state. |
 
 ### Options
 
