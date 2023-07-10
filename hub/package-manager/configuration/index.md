@@ -1,7 +1,7 @@
 ---
 title: WinGet Configuration
 description: WinGet Configuration uses the winget configure command, PowerShell, and a YAML-formatted configuration file listing all of the software versions, packages, tools, and settings required to achieve the set up the desired state of the development environment on your Windows machine. Minimizing manual project setup and onboarding to a single command that is reliable and repeatable. 
-ms.date: 05/23/2023
+ms.date: 07/10/2023
 ms.topic: overview
 ---
 
@@ -120,4 +120,4 @@ The [PowerShell Gallery](https://www.powershellgallery.com/packages) hosts hundr
 
 The most common reason for a WinGet Configuration to fail is due to a PowerShell DSC resource requiring administrative access to apply the desired state. Not all DSC resources surface explicit reasons for failure.
 
-More common troubleshooting issues will be added soon. In the meantime, check the issues filed on the [WinGet Configuration repo on GitHub](https://github.com/Microsoft/winget-dsc).
+More common troubleshooting issues will be added soon. In the meantime, check the related issues filed in the [WinGet CLI repo on GitHub](https://github.com/microsoft/winget-cli/issues?q=is%3Aissue+is%3Aopen+label%3Acommand-configure).
