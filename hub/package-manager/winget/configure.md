@@ -19,7 +19,7 @@ The **configure** command of the [winget](./index.md) tool uses a [WinGet Config
 ## Prerequisites
 
 - Windows 10 RS5 or later, and Windows 11.
-- Winget version xxx or later?
+- Winget version v1.5.1572 or later.
 
 ## Usage
 
