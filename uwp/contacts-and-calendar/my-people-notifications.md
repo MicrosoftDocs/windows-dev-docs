@@ -10,13 +10,13 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > My People is no longer supported in Windows 11.
 
-My People notifications provide a new way for users to connect with the people they care about, through quick expressive gestures. This article shows how to design and implement My People notifications in your application. For complete implementations, see the [My People Notifications Sample.](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
+My People notifications provide a new way for users to connect with the people they care about, through quick expressive gestures. This article shows how to design and implement My People notifications in your application. For complete implementations, see the [My People Notifications Sample.](https://github.com/microsoft/Windows-universal-samples/tree/dev/archived/MyPeopleNotifications)
 
 ![heart emoji notification](images/heart-emoji-notification-small.gif)
 
 ## Requirements
 
-+ Windows 10 and Microsoft Visual Studio 2019. For installation details, see [Get set up with Visual Studio](/windows/apps/get-started/get-set-up).
++ Windows 10 and Microsoft Visual Studio 2019 or later. For installation details, see [Get set up with Visual Studio](/windows/apps/get-started/get-set-up).
 + Basic knowledge of C# or a similar object-oriented programming language. To get started with C#, see [Create a "Hello, world" app](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## How it works
@@ -35,6 +35,7 @@ As an alternative to generic toast notifications, you can now send notifications
 ![rainbow spritesheet](images/shoulder-tap-rainbow-spritesheet.png)
 
 ## Notification parameters
+
 My People notifications use the [toast notification](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts) framework, but require an additional binding node in the toast payload. This second binding must include the following parameter:
 
 ```xml
@@ -63,11 +64,11 @@ The image node inside the binding should include the following parameters:
 
 In addition, the top-level toast node must include the **hint-people** parameter to specify the sending contact. This parameter can have any the following values:
 
-+ **Email address** 
++ **Email address**
     + E.g. ` mailto:johndoe@mydomain.com `
-+ **Telephone number** 
++ **Telephone number**
     + E.g. tel:888-888-8888
-+ **Remote ID** 
++ **Remote ID**
     + E.g. remoteid:1234
 
 > [!NOTE]
@@ -77,6 +78,7 @@ In addition, the top-level toast node must include the **hint-people** parameter
 In addition to the second binding and payload, you must include another payload in the first binding for the fallback toast. The notification will use this if it is forced to revert to a regular toast (explained further at the [end of this article](#falling-back-to-toast)).
 
 ## Creating the notification
+
 You can create a My People notification template just like you would a [toast notification](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 Here's an example of how to create a My People notification with a static image payload:
@@ -122,6 +124,7 @@ When you start the notification, it should look like this:
 ![spritesheet notification](images/pizza-notification-small.gif)
 
 ## Starting the notification
+
 To start a My People notification, we need to convert the toast template into an [XmlDocument](/uwp/api/windows.data.xml.dom.xmldocument) object. When you have defined the toast in an XML file (here named "content.xml"), you can use this code to start it:
 
 ```CSharp
@@ -138,6 +141,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
 
 ## Falling back to toast
+
 There are some cases when a My People notification will instead display as a regular toast notification. A My People notification will fall back to toast under the following conditions:
 
 + The notification fails to display
@@ -147,7 +151,8 @@ There are some cases when a My People notification will instead display as a reg
 If a My People notification falls back to toast, the second My-People-specific binding is ignored, and only the first binding is used to display the toast. This is why it is critical to provide a fallback payload in the first toast binding.
 
 ## See also
-+ [My People Notifications Sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
+
++ [My People Notifications Sample](https://github.com/microsoft/Windows-universal-samples/tree/dev/archived/MyPeopleNotifications)
 + [Adding My People support](my-people-support.md)
 + [Adaptive toast notifications](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts)
 + [ToastNotification Class](/uwp/api/windows.ui.notifications.toastnotification)
