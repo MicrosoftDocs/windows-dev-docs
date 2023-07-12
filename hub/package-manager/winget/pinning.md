@@ -25,13 +25,17 @@ WinGet supports three types of package pins:
 winget pin <subcommand> <options>
 ```
 
-## Arguments
+## Options
 
-The following arguments are available.
+The following options are available.
 
-| Argument  | Description |
+| Options  | Description |
 |--------------|-------------|
 | **-?, --help** |  Gets additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 ## Subcommands
 
@@ -59,7 +63,6 @@ winget pin add [[-q] <query>] [<options>]
 | Argument      | Description |
 |-------------|-------------|
 | **-q,--query**  |  The query used to search for an app. |
-| **-?, --help** |  Get additional help on this command. |
 
 ### Options
 
@@ -80,6 +83,7 @@ The options allow you to customize adding pins to meet your needs.
 | **--installed** | Pin a specific installed version |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting |
 | **--logs, --open-logs**  | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
@@ -120,7 +124,6 @@ winget pin remove [[-q] <query>] [<options>]
 | Argument      | Description |
 |-------------|-------------|
 | **-q,--query**  |  The query used to search for an app. |
-| **-?, --help** |  Get additional help on this command. |
 
 ### Options
 
@@ -138,6 +141,7 @@ The options allow you to customize removing pins to meet your needs.
 | **--installed** | Pin a specific installed version |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting |
 | **--logs, --open-logs**  | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
@@ -172,7 +176,6 @@ winget pin list [[-q] <query>] [<options>]
 | Argument      | Description |
 |-------------|-------------|
 | **-q,--query**  |  The query used to search for an app. |
-| **-?, --help** |  Get additional help on this command. |
 
 ### Options
 
@@ -189,6 +192,7 @@ The options allow you to customize listing pins to meet your needs.
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting |
 | **--logs, --open-logs**  | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
