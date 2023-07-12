@@ -26,9 +26,8 @@ The **uninstall** command requires that you specify the exact string to uninstal
 The following arguments are available.
 
 | Argument      | Description |
-|-------------|-------------|  
+|-------------|-------------|
 | **-q,--query**  |  The query used to search for an app. |
-| **-?, --help** |  Get additional help on this command. |
 
 > [!NOTE]
 > The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are uninstalling.
@@ -38,23 +37,29 @@ The following arguments are available.
 The options allow you to customize the uninstall experience to meet your needs.
 
 | Option      | Description |
-|-------------|-------------|  
+|-------------|-------------|
 | **-m, --manifest** |   Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the uninstall experience from a [local YAML file](install.md#local-install). |
-| **--id**    |  Limits the uninstall to the ID of the application.   |  
-| **--name**   |  Limits the search to the name of the application. |  
-| **--moniker**   | Limits the search to the moniker listed for the application. |  
+| **--id**    |  Limits the uninstall to the ID of the application.   |
+| **--name**   |  Limits the search to the name of the application. |
+| **--moniker**   | Limits the search to the moniker listed for the application. |
 | **--product-code** | Filters using the product code |
-| **-v, --version**  |  Enables you to specify an exact version to uninstall. If not specified, latest will uninstall the highest versioned application. |  
-| **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
-| **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
-| **-i, --interactive** |  Runs the uninstaller in interactive mode. The default experience shows uninstaller progress. |  
-| **-h, --silent** |  Runs the uninstaller in silent mode. This suppresses all UI. The default experience shows uninstaller progress. |  
+| **-v, --version**  |  Enables you to specify an exact version to uninstall. If not specified, latest will uninstall the highest versioned application. |
+| **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
+| **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
+| **--scope** | Select installed package scope filter (user or machine) |
+| **-i, --interactive** |  Runs the uninstaller in interactive mode. The default experience shows uninstaller progress. |
+| **-h, --silent** |  Runs the uninstaller in silent mode. This suppresses all UI. The default experience shows uninstaller progress. |
+| **--force** | Direct run the command and continue with non security related issues. |
 | **--purge** | Deletes all files and directories in the package directory (portable) |
 | **--preserve** | Retains all files and directories created by the package (portable) |
 | **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **-?,--help** | Shows help about the selected command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 After you have successfully identified the application intended to uninstall, winget will execute the uninstall command. In the example below, the **name** 'orca' and the **id** was passed in.
 

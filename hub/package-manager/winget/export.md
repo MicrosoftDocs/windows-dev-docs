@@ -25,7 +25,7 @@ The **export** command is often used to create a file that you can share with ot
 The following arguments are available.
 
 | Argument    | Description |
-|-------------|-------------|  
+|-------------|-------------|
 | **-o,--output** | Path to the JSON file to be created |
 
 ## Options
@@ -33,11 +33,15 @@ The following arguments are available.
 The options allow you to customize the export experience to meet your needs.
 
 | Option    | Description |
-|----------------|-------------|  
+|----------------|-------------|
 | **-s, --source**  |  [Optional] Specifies a source to export files from. Use this option when you only want files from a specific source.  |
 | **--include-versions** | [Optional] Includes the version of the app currently installed. Use this option if you want a specific version. By default, unless specified, [**import**](./import.md) will use latest. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **-?,--help** | Shows help about the selected command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 ## JSON schema
 
@@ -46,7 +50,7 @@ The driving force behind the **export** command is the JSON file. You can find t
 The JSON file includes the following hierarchy.
 
 | Entry      | Description |
-|-------------|-------------|  
+|-------------|-------------|
 | **Sources**  |  The sources application manifests come from.  |
 | **Packages**  |  The collection of packages to install.  |
 | **PackageIdentifier**  |  The Windows Package Manager package identifier used to specify the package.  |

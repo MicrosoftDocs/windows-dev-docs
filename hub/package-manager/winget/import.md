@@ -23,7 +23,7 @@ The **import** command is often used to share your developer environment or buil
 The following arguments are available.
 
 | Argument    | Description |
-|-------------|-------------|  
+|-------------|-------------|
 | **-i,--import-file** | JSON file describing the packages to install. |
 
 ## Options
@@ -31,12 +31,17 @@ The following arguments are available.
 The options allow you to customize the import experience to meet your needs.
 
 | Option      | Description |
-|-------------|-------------|  
+|-------------|-------------|
 | **--ignore-unavailable**  |  Suppresses errors if the app requested is unavailable.  |
 | **--ignore-versions** |  Ignores versions specified in the JSON file and installs the latest available version. |
+| **--no-upgrade** | Skips upgrade if an installed version already exists. |
 | **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **-?,--help** | Shows help about the selected command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 ## JSON Schema
 
@@ -45,7 +50,7 @@ The driving force behind the **import** command is the JSON file. You can find t
 The JSON file includes the following hierarchy.
 
 | Entry      | Description |
-|-------------|-------------|  
+|-------------|-------------|
 | **Sources**  |  The sources application manifests come from.  |
 | **Packages**  |  The collection of packages to install.  |
 | **PackageIdentifier**  |  The Windows Package Manager package identifier used to specify the package.  |

@@ -21,8 +21,18 @@ The following arguments are available.
 | Argument  | Description |
 |--------------|-------------|
 | **--manifest** |  the path to the manifest to be validated. |
-| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **-?, --help** |  get additional help on this command |
+
+## Options
+
+The options allow you to customize the validate experience to meet your needs.
+
+| Option  | Description |
+|-------------|-------------|
+| **-?,--help** | Shows help about the selected command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 ## Related topics
 
