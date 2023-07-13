@@ -2,7 +2,7 @@
 title: Tutorial--Create a .NET MAUI app integrating with the Microsoft Graph SDK
 description: Get hands-on with .NET MAUI by building a cross-platform app on Windows that leverages the Microsoft Graph SDK to display user data.
 ms.topic: tutorial
-ms.date: 02/22/2023
+ms.date: 07/13/2023
 keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium
 ---
@@ -245,88 +245,87 @@ After the authentication completes, you will see your user's **DisplayName** in 
 
 Now that the `GraphService` is returning user information, let's update the user interface to display some additional user profile information.
 
-Start by adding some new observable properties to the `MainViewModel` class to store the `DisplayName`, `GivenName`, `Surname`, and `UserPrincipalName` fields from the Graph API response:
-
-``` csharp
-[ObservableProperty]
-private string userName = "";
-
-[ObservableProperty]
-private string userGivenName = "";
-
-[ObservableProperty]
-private string userSurname = "";
-
-[ObservableProperty]
-private string userPrincipalName = "";
-```
-
-In MainPage.xaml.cs, set the values of the new properties in the `GetUserInfoBtn_Clicked` event handler with properties of the Graph User object:
-
-``` csharp
-[RelayCommand]
-private async Task LoadUserInformation()
-{
-    var service = new GraphService();
-    Microsoft.Graph.Models.User user = await service.GetMyDetailsAsync();
-    helloMessage = $"Hello, {user.DisplayName}";
-
-    UserName = user.DisplayName;
-    UserGivenName = user.GivenName;
-    UserSurname = user.Surname;
-    UserPrincipalName = user.UserPrincipalName;
-}
-```
-
-Finally, in MainPage.xaml, update the contents of the `VerticalStackLayout`, removing the existing welcome label and `Image` control and adding four new labels to display the user information. The contents of the `VerticalStackLayout` should now look like this:
+In MainPage.xaml, start by updating the contents of the `VerticalStackLayout`, removing the existing welcome label and `Image` control and adding four new labels to display the user information. Each label that will be updated is named, and we've provided some placeholder text until the data is loaded from the Graph query. The contents of the `VerticalStackLayout` should now look like this:
 
 ``` xaml
 <VerticalStackLayout
     Spacing="25"
     Padding="30,0"
     VerticalOptions="Center">
+
     <Label
-        Text="{Binding Path=HelloMessage, Mode=OneWay}"
+        x:Name="HelloLabel"
+        Text="Hello, World!"
         SemanticProperties.Description="Displays a welcome message for the user"
         SemanticProperties.HeadingLevel="Level1"
         FontSize="32"
         HorizontalOptions="Center" />
+
     <Button
         x:Name="CounterBtn"
         Text="Click me"
         SemanticProperties.Hint="Counts the number of times you click"
-        Command="{Binding Path=IncrementCounterCommand}"
+        Clicked="CounterBtn_Clicked"
         HorizontalOptions="Center" />
+
     <Button
         Text="Load User Info"
         SemanticProperties.Hint="Loads user information from Microsoft Graph"
-        Command="{Binding Path=LoadUserInformationCommand}"
+        Clicked="GetUserInfoBtn_Clicked"
         HorizontalOptions="Center" />
+
     <Label
-        Text="{Binding Path=UserName, Mode=OneWay}"
+        x:Name="DisplayNameLabel"
+        Text="Display name"
         SemanticProperties.Description="Displays the user's display name from Microsoft Graph."
         SemanticProperties.HeadingLevel="Level2"
         FontSize="18"
         HorizontalOptions="Center" />
+
     <Label
-        Text="{Binding Path=UserGivenName, Mode=OneWay}"
+        x:Name="UserFirstNameLabel"
+        Text="First name"
         SemanticProperties.Description="Displays the user's first name info from Microsoft Graph"
         SemanticProperties.HeadingLevel="Level2"
         FontSize="18"
         HorizontalOptions="Center" />
+
     <Label
-        Text="{Binding Path=UserSurname, Mode=OneWay}"
+        x:Name="UserLastNameLabel"
+        Text="Last name"
         SemanticProperties.Description="Displays the user's last name from Microsoft Graph"
         SemanticProperties.HeadingLevel="Level2"
         FontSize="18"
         HorizontalOptions="Center" />
+
     <Label
-        Text="{Binding Path=UserPrincipalName, Mode=OneWay}"
+        x:Name="UserPrincipalNameLabel"
+        Text="User Principal Name"
         SemanticProperties.Description="Displays the user principal name from Microsoft Graph"
         SemanticProperties.HeadingLevel="Level2"
         FontSize="18"
         HorizontalOptions="Center" />
+
 </VerticalStackLayout>
+```
+
+Finally, in MainPage.xaml.cs, update the UI elements with the values of the new properties in the `GetUserInfoBtn_Clicked` event handler using the properties of the Graph User object:
+
+``` csharp
+private async void GetUserInfoBtn_Clicked(object sender, EventArgs e)
+{
+    if (graphService == null)
+    {
+        graphService = new GraphService();
+    }
+    user = await graphService.GetMyDetailsAsync();
+    HelloLabel.Text = $"Hello, {user.DisplayName}!";
+
+    DisplayNameLabel.Text = user.DisplayName;
+    UserFirstNameLabel.Text = user.GivenName;
+    UserLastNameLabel.Text = user.Surname;
+    UserPrincipalNameLabel.Text = user.UserPrincipalName;
+}
 ```
 
 Run the app again and click the **Load User Info** button. You should see your user information displayed in the app after authenticating:
