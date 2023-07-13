@@ -29,7 +29,7 @@ winget pin <subcommand> <options>
 
 The following options are available.
 
-| Options  | Description |
+| Option  | Description |
 |--------------|-------------|
 | **-?, --help** |  Gets additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
