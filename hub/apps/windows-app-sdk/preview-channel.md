@@ -19,6 +19,89 @@ The preview channel provides a preview of the next upcoming stable release. Ther
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 - For documentation on preview releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
+## Version 1.4 Preview 1 (1.4.0-preview1)
+
+This is the latest release of the preview channel for version 1.4.
+
+In an existing Windows App SDK 1.3 (from the stable channel) app, you can update your Nuget package to 1.4.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+
+For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
+
+### New APIs in 1.4.0-preview1
+
+Version 1.4-preview1 includes the following new APIs compared to the stable 1.3 release:
+
+```C#
+Microsoft.UI.System
+ 
+    ThemeSettings
+```
+```C#
+Microsoft.UI.Xaml
+ 
+    Application
+        ResourceManagerRequested
+ 
+    ResourceManagerRequestedEventArgs
+```
+```C#
+Microsoft.UI.Xaml.Automation.Peers
+ 
+    ItemContainerAutomationPeer
+```
+```C#
+Microsoft.UI.Xaml.Controls
+ 
+    ItemContainer
+```
+```C#
+Microsoft.UI.Xaml.Controls.Primitives
+ 
+    CommandBarFlyoutCommandBar
+        SystemBackdrop
+        SystemBackdropProperty
+```
+```C#
+Microsoft.UI.Xaml.Input
+ 
+    AccessKeyManager
+        EnterDisplayMode
+```
+```C#
+Microsoft.Web.WebView2.Core
+ 
+    CoreWebView2
+        LaunchingExternalUriScheme
+        MemoryUsageTargetLevel
+ 
+    CoreWebView2File
+    CoreWebView2LaunchingExternalUriSchemeEventArgs
+    CoreWebView2MemoryUsageTargetLevel
+    CoreWebView2PermissionKind
+        WindowManagement
+ 
+    CoreWebView2Profile
+        CookieManager
+        IsGeneralAutofillEnabled
+        IsPasswordAutosaveEnabled
+ 
+    CoreWebView2Settings
+        IsReputationCheckingRequired
+ 
+    CoreWebView2WebMessageReceivedEventArgs
+        AdditionalObjects
+```
+```C#
+Microsoft.Windows.Widgets.Providers
+ 
+    IWidgetProvider2
+    IWidgetProviderAnalytics
+    IWidgetProviderErrors
+    WidgetAnalyticsInfoReportedArgs
+    WidgetCustomizationRequestedArgs
+    WidgetErrorInfoReportedArgs
+```
+
 ## Version 1.3 Preview 1 (1.3.0-preview1)
 
 This is the latest release of the preview channel for version 1.3. This release includes previews for new features across WinAppSDK and several performance, security, accessibility and reliability bug fixes.
