@@ -1,13 +1,17 @@
 ---
-ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
-description: Use the Microsoft Store reviews API to programmatically submit responses to reviews of your app in the Store.
 title: Respond to reviews using Store services
-ms.date: 06/04/2018
+description: Use the Microsoft Store reviews API to programmatically submit responses to reviews of your app in the Store.
+ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
+ms.date: 07/14/2023
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store reviews API, respond to reviews
 ms.localizationpriority: medium
 ---
+
 # Respond to reviews using Store services
+
+> [!IMPORTANT]
+> The *Microsoft Store reviews API*, as documented in this topic, is currently not in a working state. Instead of using the APIs, you can achieve the same task(s) by [using Partner Center](/windows/apps/publish/respond-to-customer-reviews).
 
 Use the *Microsoft Store reviews API* to programmatically respond to reviews of your app in the Store. This API is especially useful for developers who want to bulk respond to many reviews without using Partner Center. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
@@ -77,11 +81,8 @@ The Microsoft Store reviews API contains several methods you can use to determin
 2. Call the [get response info for app reviews](get-response-info-for-app-reviews.md) method to determine whether you are allowed to respond to the reviews. When a customer submits a review, they can choose not to receive responses to their review. You cannot respond to reviews submitted by customers who have chosen not to receive review responses.
 3. Call the [submit responses to app reviews](submit-responses-to-app-reviews.md) method to programmatically respond to the reviews.
 
-
 ## Related topics
 
 * [Get app reviews](get-app-reviews.md)
 * [Get response info for app reviews](get-response-info-for-app-reviews.md)
 * [Submit responses to app reviews](submit-responses-to-app-reviews.md)
-
- 

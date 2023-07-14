@@ -1,14 +1,17 @@
 ---
-ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
-description: Use this method in the Microsoft Store reviews API to submit responses to reviews of your app.
 title: Submit responses to reviews
-ms.date: 02/08/2017
+description: Use this method in the Microsoft Store reviews API to submit responses to reviews of your app.
+ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
+ms.date: 07/14/2023
 ms.topic: article
 keywords: windows 10, uwp, Store services, Microsoft Store reviews API, add-on acquisitions
 ms.localizationpriority: medium
 ---
+
 # Submit responses to reviews
 
+> [!IMPORTANT]
+> The *Microsoft Store reviews API*, as documented in this topic, is currently not in a working state. Instead of using the APIs, you can achieve the same task(s) by [using Partner Center](/windows/apps/publish/respond-to-customer-reviews).
 
 Use this method in the Microsoft Store reviews API to programmatically respond to reviews of your app. When you call this method, you must specify the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](/windows/apps/publish/download-analytic-reports) of the [Reviews report](/windows/apps/publish/reviews-report).
 
@@ -33,18 +36,15 @@ To use this method, you need to first do the following:
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/reviews/responses``` |
 
-
 ### Request header
 
 | Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-
 ### Request parameters
 
 This method has no request parameters.
-
 
 ### Request body
 
@@ -53,7 +53,6 @@ The request body has the following values.
 | Value        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------|
 | Responses | array | An array of objects that contain the response data you want to submit. For more information about the data in each object, see the following table. |
-
 
 Each object in the *Responses* array contains the following values.
 
@@ -64,7 +63,6 @@ Each object in the *Responses* array contains the following values.
 | ResponseText | string | The response you want to submit. Your response must follow [these guidelines](/windows/apps/publish/respond-to-customer-reviews#guidelines-for-responses).   |  Yes  |
 | SupportEmail | string | Your app's support email address, which the customer can use to contact you directly. This must be a valid email address.     |  Yes  |
 | IsPublic | Boolean |  If you specify **true**, your response will be displayed in your app's Store listing, directly below the customer's review, and will be visible to all customers. If you specify **false** and the user hasn't opted out of receiving email responses, your response will be sent to the customer via email, and it will not be visible to other customers in your app's Store listing. If you specify **false** and the user has opted out of receiving email responses, an error will be returned.   |  Yes  |
-
 
 ### Request example
 
@@ -102,7 +100,6 @@ Content-Type: application/json
 |---------------|--------|---------------------|
 | Result | array | An array of objects that contain data about each response you submitted. For more information about the data in each object, see the following table.  |
 
-
 Each object in the *Result* array contains the following values.
 
 | Value        | Type   | Description                                                                 |
@@ -111,7 +108,6 @@ Each object in the *Result* array contains the following values.
 | ReviewId | string |  The ID of the review you responded to. This is a GUID.   |
 | Successful | string | The value **true** indicates that your response was sent successfully. The value **false** indicates that your response was unsuccessful.    |
 | FailureReason | string | If **Successful** is **false**, this value contains a reason for the failure. If **Successful** is **true**, this value is empty.      |
-
 
 ### Response example
 
