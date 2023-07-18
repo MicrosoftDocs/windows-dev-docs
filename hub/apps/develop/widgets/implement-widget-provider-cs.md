@@ -246,7 +246,7 @@ public void DeleteWidget(string widgetId, string customState)
 }
 ```
 
-For this example, in addition to removing the widget with the specified from the list of enabled widgets, we also check to see if the list is now empty, and if so, we set an event that will be used later to allow the app to exit when there are no enabled widgets. Inside your class definition, add the declaration of the [ManualResetEvent](dotnet/api/system.threading.manualresetevent) and a public accessor function.
+For this example, in addition to removing the widget with the specified from the list of enabled widgets, we also check to see if the list is now empty, and if so, we set an event that will be used later to allow the app to exit when there are no enabled widgets. Inside your class definition, add the declaration of the [ManualResetEvent](/dotnet/api/system.threading.manualresetevent) and a public accessor function.
 
 ```csharp
 // WidgetProvider.cs
