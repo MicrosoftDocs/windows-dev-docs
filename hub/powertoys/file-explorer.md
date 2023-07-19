@@ -75,4 +75,4 @@ Open Windows File Explorer, select the **View** tab in the File Explorer ribbon,
 ![PowerToys Preview Pane demo for Windows 10.](../images/powertoys-fileexplorer.gif)
 
 > [!NOTE]
-> It is not possible to change the background color of the preview pane, so if are working with transparent SVG images with white shapes, you may not be able to see them in the preview.
+> It is not possible to change the background color of the preview pane, so if you are working with transparent SVG images with white shapes, you may not be able to see them in the preview.
