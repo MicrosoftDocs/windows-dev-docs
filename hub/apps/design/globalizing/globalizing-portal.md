@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 Windows is used worldwide by audiences that are diverse in terms of language, region, and culture. Your users speak a variety of different languages and in a variety of different countries and regions. Some users speak more than one language. So, your app runs on configurations that involve many permutations of system settings for language, region, and culture. You can increase the potential market for your app by designing it to be readily adaptable, using *globalization* and *localization*.
 
-This video provides a brief introduction on how to prepare your app for the world: Introduction to globalization and localization.
+For a short video that demonstrates how to prepare your app for the world, see [Introduction to globalization and localization](https://web.archive.org/web/20210123201259/https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 
 **Globalization** is the process of designing and developing your app in such a way that it functions appropriately in different global markets (on systems with different language and culture configurations) without requiring culture-specific changes or customization.
 

@@ -31,12 +31,7 @@ ms.localizationpriority: medium
 
 ## Instructions
 
-These steps will show you how to create a basic mesh cube. 
-
-
-If you prefer a talked-through explanation of these concepts, check out this video.
-</br>
-</br>
+These steps will show you how to create a basic mesh cube.
 
 ### Step 1: Construct the mesh for the model
 

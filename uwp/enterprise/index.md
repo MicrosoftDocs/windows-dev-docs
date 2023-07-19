@@ -102,7 +102,7 @@ Data binding is a way for your app's UI to display data from an external source,
 |-------|-------------|
 | [Data binding overview](../data-binding/data-binding-quickstart.md) | This topic shows you how to bind a control (or other UI element) to a   single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app. In addition, it shows how to control the rendering of items, implement a details view based on a selection, and convert data for display. |
 | [Entity Framework 7 for UWP](/ef/core/get-started/) | Performing complex queries against large data sets is vastly simplified using Entity Framework 7, which supports UWP. In this walkthrough, you will build a UWP app that performs basic data access against a local SQLite   database using Entity Framework. |
-| SQLite local database | This video is a comprehensive developer's guide to using SQLite, the recommended solution for local app databases. Visit [SQLite](https://www.sqlite.org/download.html) to download the latest version for UWP, or use the version that's already provided with the Windows SDK. |
+| SQLite local database | SQLite is the recommended solution for local app databases. Visit [SQLite](https://www.sqlite.org/download.html) to download the latest version for UWP, or use the version that's already provided with the Windows SDK. |
 
 ## Networking and data serialization
 

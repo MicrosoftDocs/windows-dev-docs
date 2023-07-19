@@ -49,7 +49,7 @@ The remainder of this topic discusses design considerations for the 2D experienc
 
 ![Mixed Reality Start Menu](images/MR-start-options.png)
 
-All apps are launched from the Start Menu, but it's also possible to create a 3D object to act as an app launcher. See [this video](https://www.youtube.com/watch?v=TxIslHsEXno) for details.
+All apps are launched from the Start Menu, but it's also possible to create a 3D object to act as an app launcher. See the [Creating 3D App Launchers for Windows Mixed Reality](https://www.youtube.com/watch?v=TxIslHsEXno) video for details.
 
 ## The 2D App Input Overview
 

@@ -35,7 +35,7 @@ Before you start you will need to do the following:
 
 3.  Enable Developer Mode for your development PC (**Settings / Update & Security / For developers / Use developer features / Developer mode**).
 
-Now that your development PC is ready, you can watch this video or continue reading to see how to set up your Xbox One for development and create and deploy a UWP app to it.
+Now that your development PC is ready, continue reading to see how to set up your Xbox One for development and create and deploy a UWP app to it.
 </br>
 </br>
 
