@@ -44,18 +44,18 @@ The default control templates for [**ListViewItem**](/uwp/api/windows.ui.xaml.co
 ```xml
 ...
 <ListView>
- ...
- <ListView.ItemContainerStyle>
- <Style TargetType="ListViewItem">
- <Setter Property="Template">
- <Setter.Value>
- <ControlTemplate TargetType="ListViewItem">
- <ListViewItemPresenter SelectionCheckMarkVisualEnabled="False" SelectedBackground="Orange"/>
- </ControlTemplate>
- </Setter.Value>
- </Setter>
- </Style>
- </ListView.ItemContainerStyle>
+    ...
+    <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <ListViewItemPresenter SelectionCheckMarkVisualEnabled="False" SelectedBackground="Orange"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ListView.ItemContainerStyle>
 </ListView>
 <!-- ... -->
 ```
