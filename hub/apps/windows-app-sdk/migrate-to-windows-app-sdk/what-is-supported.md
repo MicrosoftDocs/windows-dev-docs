@@ -36,12 +36,11 @@ WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, 
 | [Single-app kiosk](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/62-support-single-app-kiosk) | ❌ Not supported in 1.3 |
 | [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) API | ❌ Not supported in 1.3 |
 | WebAuthenticationBroker | ❌ Not supported in 1.3 |
-| [Visual Designer](https://learn.microsoft.com/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio) | ❌ Not supported in 1.3 |
 
 ## Performance considerations
 
 Today in version 1.3 of the Windows App SDK, launch speeds, RAM usage, and installation size of WinUI 3 apps are larger/slower than seen in UWP. We're actively working to improve this.
 
-## Development tools
+## Visual Studio
 
-Today in version 1.3 of the Windows App SDK, Visual Designer does not implement yet
+The **Design** tab of the XAML Designer in Visual Studio (and Blend for Visual Studio) doesn't currently support WinUI 3 projects (as of version 1.3 of the Windows App SDK). For more info, see [Create a UI by using XAML Designer](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
