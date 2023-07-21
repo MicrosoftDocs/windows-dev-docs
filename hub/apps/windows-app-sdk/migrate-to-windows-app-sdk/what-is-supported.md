@@ -36,7 +36,7 @@ WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, 
 | [Single-app kiosk](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/62-support-single-app-kiosk) | ❌ Not supported in 1.3 |
 | [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) API | ❌ Not supported in 1.3 |
 | WebAuthenticationBroker | ❌ Not supported in 1.3 |
-| [Visual Designer](https://learn.microsoft.com/en-us/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio?view=vs-2022) | ❌ Not supported in 1.3 |
+| [Visual Designer](https://learn.microsoft.com/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio) | ❌ Not supported in 1.3 |
 
 ## Performance considerations
 
