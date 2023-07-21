@@ -45,7 +45,7 @@ int main()
 
     Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
     SyndicationClient syndicationClient;
-    syndicationClient.SetRequestHeader(L"user-agent", L"C++/WinRT Test Agent");
+    syndicationClient.SetRequestHeader(L"User-Agent", L"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
     SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
     for (const SyndicationItem syndicationItem : syndicationFeed.Items())
     {
