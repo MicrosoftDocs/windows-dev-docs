@@ -45,10 +45,10 @@ Text Extractor can only recognize languages that have the OCR language pack inst
 The list can be obtained via PowerShell by running the following commands:
 
 ```powershell
-[Windows.Media.Ocr.OcrEngine, Windows.Foundation, ContentType = WindowsRuntime]
-```
+# Please use Windows PowerShell, not PowerShell 7 as these aren't .NET Core libraries
 
-```powershell
+[Windows.Media.Ocr.OcrEngine, Windows.Foundation, ContentType = WindowsRuntime]
+
 [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
 ```
 
@@ -61,7 +61,6 @@ Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*' }
 ```
 
 An example output:
-
 ```powershell
 Name  : Language.OCR~~~el-GR~0.0.1.0
 State : NotPresent
