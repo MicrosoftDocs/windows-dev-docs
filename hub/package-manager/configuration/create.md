@@ -56,41 +56,38 @@ The following is an example WinGet Configuration `configuration.dsc.yaml` format
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 properties:
   assertions:
-    - resource: OsVersion
+    - resource: Microsoft.Windows.Developer/OsVersion
       directives:
         description: Verify min OS version requirement
-        module: Microsoft.Windows.Developer
         allowPrerelease: true
       settings:
-        MinVersion: "10.0.19041"
+        MinVersion: '10.0.22000'
   resources:
-    - resource: DeveloperMode
+    - resource: Microsoft.Windows.Developer/DeveloperMode
       directives:
         description: Enable Developer Mode
-        module: Microsoft.Windows.Developer
         allowPrerelease: true
       settings:
         Ensure: Present
-    - resource: WinGetPackage
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vsPackage
       directives:
         description: Install Visual Studio 2022 Community
-        module: Microsoft.WinGet.DSC
         allowPrerelease: true
       settings:
         id: Microsoft.VisualStudio.2022.Community
         source: winget
-    - resource: InstallVSConfig
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
       dependsOn:
         - vsPackage
       directives:
-        description: Install required VS workloads
-        module: Microsoft.VisualStudio.DSC
+        description: Install required VS workloads from vsconfig file
         allowPrerelease: true
       settings:
         productId: Microsoft.VisualStudio.Product.Community
         channelId: VisualStudio.17.Release
-        vsconfigFile: ${WinGetConfigRoot}\..\.vsconfig
+        vsConfigFile: '${WinGetConfigRoot}\..\.vsconfig'
+        includeRecommended: true
   configurationVersion: 0.2.0
 ```
 
@@ -102,9 +99,9 @@ The components of this file consist of:
 
 3. **Assertions**: List the preconditions (or prerequisites) required for this configuration in this section.
 
-4. **Resource**: Both the "Assertions" and "Resources" list sections consist of individual `resource` nodes to represent the set up task. The `resource` should be given a name to represent the set up task that it will accomplish. Each resource must include **directives** and **settings**. Optionally, it can also include an **id** value.
+4. **Resource**: Both the "Assertions" and "Resources" list sections consist of individual `resource` nodes to represent the set up task. The `resource` should be given the name of the PowerShell module followed by the name of the module's DSC resource that will be invoked to apply your desired state: `{ModuleName}/{DscResource}`. Each resource must include **directives** and **settings**. Optionally, it can also include an **id** value. When applying a configuration, WinGet will know to install the module from the [PowerShell Gallery](https://www.powershellgallery.com/packages) and invoke the specified [DSC resource](/powershell/dsc/concepts/resources).
 
-5. **Directives**: The `directives` value of a resource must include a **module** value, representing the PowerShell module containing the [DSC Resources](/powershell/dsc/concepts/resources) that should be applied to accomplish the desired state configuration task. The `directives` should also include a  `description` value to describe the configuration task being accomplished by the module. The `allowPrerelease` value enables you to choose whether or not the configuration will be allowed (`true`) to use "Prerelease" modules from the [PowerShell Gallery](https://www.powershellgallery.com/packages).
+5. **Directives**: The `directives` section provides information about the module and the resource. This section should include a `description` value to describe the configuration task being accomplished by the module. The `allowPrerelease` value enables you to choose whether or not the configuration will be allowed (`true`) to use "Prerelease" modules from the [PowerShell Gallery](https://www.powershellgallery.com/packages).
 
 6. **Settings**: The `settings` value of a resource represents the collection of name-value pairs being passed to the PowerShell DSC Resource. Settings could represent anything from whether Developer Mode is enabled, to applying a reg key, or to establishing a particular network setting.
 
@@ -121,6 +118,9 @@ There are multiple approaches to consider when determining how to organize the R
 - **Grouping similar resource types**: Organizing your list of resources by grouping together similar resource types is a common approach in software engineering methodologies and may be the most familiar to you or to other developers utilizing your configuration file.
 
 We recommend including a README.md file with any Open Source published WinGet Configuration file that includes the organizational approach of the file structure.
+
+## Using the variable ${WinGetConfigRoot}
+Certain DSC resources may take in a parameter that specifies the path of a file. Instead of specifying the full path, you can use the variable `${WinGetConfigRoot}` to define the working directory where the [`winget configure` command](../winget/configure.md) is being executed and append the relative path to point to that file. This is useful for generalizing a configuration file so that it is machine agnostic. The `Microsoft.VisualStudio.DSC/VSComponents` resource in the example above showcases this functionality by utilizing the `${WinGetConfigRoot}` to point to a .vsconfig file in a project's root directory. This also means that the user should ensure that the target file exists at the relative path based on the current working directory before executing the [`winget configure` command](../winget/configure.md).
 
 ## Where to find PowerShell DSC Resource modules
 
