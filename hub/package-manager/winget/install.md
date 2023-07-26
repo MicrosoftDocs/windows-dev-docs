@@ -1,7 +1,7 @@
 ---
 title: install Command
 description: Installs the specified application.
-ms.date: 04/28/2020
+ms.date: 07/26/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 title: import Command
 description: imports the list of installed applications.
-ms.date: 06/28/2023
+ms.date: 07/26/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -16,7 +16,7 @@ The **import** command is often used to share your developer environment or buil
 
 `winget import [-i] <import-file> [<options>]`
 
-![Image of import command options](./images/import.png)
+![Image of import command options](./images/import-help.png)
 
 ## Arguments
 

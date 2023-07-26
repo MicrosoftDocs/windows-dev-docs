@@ -1,0 +1,85 @@
+### YamlMime:FAQ
+metadata:
+  title: Frequently asked questions about support for Windows on Arm.
+  description: Frequently asked questions about support for Arm-based devices on Windows.
+  ms.prod: windows
+  ms.technology: arm
+  ms.topic: faq
+  author: mattwojo
+  ms.author: mattwoj
+  ms.reviewer: marcs
+  ms.date: 07/21/2023
+title: Frequently asked questions about Windows on Arm
+summary: Use the following questions and answers to better understand the support for Arm-based devices running on Windows.
+
+
+sections:
+  - name: Windows on Arm FAQs
+    questions:
+      - question: |
+          Do I need to create an Arm version of my Windows app?
+        answer: |
+          Arm-based devices are becoming increasingly popular. While Windows supports emulation for apps with an x64 or x86-based architecture, providing an Arm-native build of your Windows app will improve performance and give your customers the best experience when using an Arm-based device.
+
+      - question: |
+          Why update my app to Arm when x64 and x86 are both supported via emulation on Windows 11?
+        answer: |
+          While your customers will be able to use your x64 or x86-based app on their Arm device, there is performance overhead that comes with emulation. Treat your customers to an Arm-native version of your Windows apps for the best performance, responsiveness, and optimized battery life on their Arm device. 
+
+      - question: |
+          How do I add an Arm64 native configuration to my Windows app?
+        answer: |
+          See [Add Arm support to your Windows app](/windows/arm/add-arm-support).
+
+      - question: |
+          Are drivers supported by emulation? Or do I have to rebuild them as Arm?
+        answer: |
+          In all cases, kernel-mode drivers and user-mode print drivers MUST be built as native ARM64 binaries to work on ARM64 devices. Additionally, you cannot execute an x86 or x64 setup program to install an ARM64 driver on ARM64 devices.
+
+      - question: |
+          Does Visual Studio work on Arm?
+        answer: |
+          Both [Visual Studio](/visualstudio/install/visual-studio-on-arm-devices) and [Visual Studio Code](https://code.visualstudio.com/download) offer Arm-native versions for you to install.
+
+      - question: |
+          How do I add Arm64 native support to my driver?
+        answer: |
+          See [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
+
+      - question: |
+          How do I test and debug on Arm64?
+        answer: |
+          See [Debugging on Arm64](/windows-hardware/drivers/debugger/debugging-arm64). For testing, you will need a Windows on Arm device, such as the [Windows Dev Kit 2023](/windows/arm/dev-kit/), or you can run a [Windows 11 Arm64 virtual machine](/windows/arm/add-arm-support#windows-on-arm-hardware-or-virtual-machines-available-for-testing).
+
+      - question: |
+          What if I am blocked from building an Arm-native version of my app by a 3rd party dependency?
+        answer: |
+          There are a few ways to address the scenario when your Windows app relies on a 3rd-party dependency that has not (yet) been updated for Arm. We first recommend reaching out to the owner of the dependency to ask whether there are plans to update the dependency to support Arm. You might also check resources like [NuGet](https://www.nuget.org/) or [vcpkg](https://vcpkg.io/en/), or reach out to the Arm Open Source community for help updating dependencies (such as [Linaro](https://www.linaro.org/windows-on-arm/)). You could rewrite the dependency yourself - Microsoft's "[App Assure program](https://www.microsoft.com/fasttrack/microsoft-365/app-assure)" may be able to help. Or you may want to write your app using [Arm64EC](/windows/arm/arm64ec), which enables you to mix x64 and Arm64 code for a partial Arm-native implementation focused on optimizing the most important aspects of your app for Arm.
+
+      - question: |
+          Question TBD?
+        answer: |
+          Answer TBD.
+          
+      - question: |
+          Question TBD?
+        answer: |
+          Answer TBD.
+
+  - name: Windows on Arm Virtual Machine FAQ
+    questions:
+      - question: |
+          How do I create a Windows 11 Arm64 Virtual Machine (VM)?
+        answer: |
+          You can now create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure ([see the announcement](https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/)). There are multiple ways to do this: use the [Azure portal](/azure/virtual-machines/windows/quick-create-portal), use a script with the [Azure CLI](/azure/virtual-machines/windows/quick-create-cli) or [Azure PowerShell](/azure/virtual-machines/windows/quick-create-powershell), or use an [Azure Resource Manager template](/azure/virtual-machines/windows/quick-create-template). You will want to search in the Azure Marketplace for "Microsoft Windows 11 on Arm" and choose "Windows 11 Professional - Arm64".
+
+      - question: |
+          Can I host a Windows 11 virtual machine using Hyper-V on a Windows 11 Arm64 device?
+        answer: |
+          While Hyper-V is a supported component on Windows 11 Arm64 devices, Hyper-V is not a supported Windows 11 virtual machine host since there is no TPM support. Setup will block if you try installing Windows 11 from an ISO. Windows Hyper-V Manager will display an "Operation failed" error message if you try to enable TPM on a virtual machine. There is work in-progress to add virtual TPM support in a future Windows on Arm VM.
+
+      - question: |
+          Question TBD?
+        answer: |
+          Answer TBD.
+

@@ -1,7 +1,7 @@
 ---
 title: features Command
 description: Displays the list of experimental features available and the state.
-ms.date: 05/5/2021
+ms.date: 07/26/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -21,6 +21,8 @@ You can find the latest up to date information features on the [experimental fea
 ![features command](./images/features.png)
 
 Notice above that the status of each feature is listed. If the feature is **disabled** you will not be able to use it. If the feature is **enabled** you will notice that the command will be available to you through **winget**.
+
+![features command help options](./images/features-help.png)
 
 To enabled any disabled features, go to **settings** and enable the feature.
 

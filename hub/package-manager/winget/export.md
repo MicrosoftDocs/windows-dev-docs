@@ -1,7 +1,7 @@
 ---
 title: export Command
 description: exports the list of installed applications.
-ms.date: 05/02/2021
+ms.date: 07/26/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ The **export** command is often used to create a file that you can share with ot
 
 `winget export [-o] <output> [<options>]`
 
-![Image of the export command usage](./images/export.png)
+![Image of the export command usage](./images/export-help.png)
 
 ## Arguments
 
