@@ -91,7 +91,7 @@ Using containers for remote development and deploying applications with the Dock
 
 ![Basic Docker taxonomy infographic for containers, images, and registries](../../images/taxonomy-of-docker-terms-and-concepts.png)
 
-## .NET Core and Docker
+## .NET and Docker
 
 :::row:::
     :::column:::
@@ -106,8 +106,8 @@ Using containers for remote development and deploying applications with the Dock
     :::column-end:::
     :::column:::
        [![Docker Taxonomy infographic](../../images/taxonomy-of-docker-terms-and-concepts.png)](/dotnet/core/docker/build-container?tabs=windows)<br>
-        **[Tutorial: Containerize a .NET Core app](/dotnet/core/docker/build-container?tabs=windows)**<br>
-        Learn how to containerize a .NET Core application with Docker, including creation of a Dockerfile, essential commands, and cleaning up resources.
+        **[Tutorial: Containerize a .NET app](/dotnet/core/docker/build-container?tabs=windows)**<br>
+        Learn how to containerize a .NET application with Docker, including creation of a Dockerfile, essential commands, and cleaning up resources.
     :::column-end:::
     :::column:::
        [![Inner-loop dev workflow with Docker infographic](../../images/dotnet-docker-workflow.png)](/dotnet/architecture/microservices/docker-application-development-process/docker-app-development-workflow)<br>

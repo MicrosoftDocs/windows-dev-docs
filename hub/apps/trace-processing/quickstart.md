@@ -29,7 +29,7 @@ Microsoft.Windows.EventTracing.Processing.All
 
 You can use this package in a console app to list the process command lines contained in an ETW trace (.etl file).
 
-1. Create a new .NET Core Console App. In Visual Studio, select File, New, Project..., and choose the Console App (.NET Core) template for C#.
+1. Create a new .NET Console App. In Visual Studio, select File, New, Project..., and choose the Console App template for C#.
 
     Enter a Project name, for example, TraceProcessorQuickstart, and choose Create.
 

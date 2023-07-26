@@ -60,7 +60,7 @@ There are two different technologies you can use to build C++ UWP apps:
 * The recommended technology is [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/). This is a C++ language projection that is implemented entirely in header files, and designed to provide you with first-class access to the modern WinRT API.
 * Alternatively, you can use the older [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) set of extensions. C++/CX is still supported, but we recommend that you use C++/WinRT instead.
 
-To access the UWP C++ project templates when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **UWP**. 
+To access the UWP C++ project templates when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **UWP**.
 
 > [!NOTE]
 > By default, the **Universal Windows Platform development** workload in Visual Studio only provides access to the C++/CX project templates. To access the C++/WinRT project templates, you must install the [C++/WinRT VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) package.
@@ -146,8 +146,8 @@ You can use these project templates to create apps using C# and .NET.
 
 | Template | Description |
 |----------|----------|
-| WPF Application | Creates a [WPF](/dotnet/framework/wpf/) app that targets [.NET 6](/dotnet/core/whats-new/dotnet-6) (or later) or [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1). For a walkthrough of this project template, see [Create a WPF application](/visualstudio/get-started/csharp/tutorial-wpf). |
+| WPF Application | Creates a [WPF](/dotnet/framework/wpf/) app that targets [.NET 6](/dotnet/core/whats-new/dotnet-6) (or later). For a walkthrough of this project template, see [Create a WPF application](/visualstudio/get-started/csharp/tutorial-wpf). |
 | WPF App (.NET Framework) | Creates a [WPF](/dotnet/framework/wpf/) app that targets the [.NET Framework](/dotnet/framework/). For a walkthrough of this project template, see [Tutorial: Create your first WPF application](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application). |
-| Windows Forms App | Creates a [Windows Forms](/dotnet/framework/winforms/) app that targets [.NET 6](/dotnet/core/whats-new/dotnet-6) (or later) or [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1).  |
+| Windows Forms App | Creates a [Windows Forms](/dotnet/framework/winforms/) app that targets [.NET 6](/dotnet/core/whats-new/dotnet-6) (or later).  |
 | Windows Forms App (.NET Framework) | Creates a [Windows Forms](/dotnet/framework/winforms/) app that targets the [.NET Framework](/dotnet/framework/). For a walkthrough of this project template, see [Create a Windows Forms app in Visual Studio with C#](/visualstudio/ide/create-csharp-winform-visual-studio). |
 | Windows Application Packaging Project | Creates a project that you can use to build a WPF or Windows Forms app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows features via package extensions, and much more. For more information, see [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). |

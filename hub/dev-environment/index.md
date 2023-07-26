@@ -119,12 +119,12 @@ The first PC platform to provide centralized AI assistance and designed to help 
     :::column:::
        [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
         **[Get started with C#](/dotnet/csharp/)**<br>
-        Get started building apps using C# and .NET Core.
+        Get started building apps using C# and .NET.
     :::column-end:::
     :::column:::
        [![F# icon](../images/fsharp-logo.png)](/dotnet/fsharp/)<br>
         **[Get started with F#](/dotnet/fsharp/)**<br>
-        Get started building apps using F# and .NET Core.
+        Get started building apps using F# and .NET.
     :::column-end:::
     :::column:::
        [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>

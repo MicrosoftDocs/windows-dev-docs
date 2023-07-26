@@ -65,7 +65,7 @@ There are a couple of project settings we recommend using with TraceProcessor:
 
 1. We recommend running exes as 64-bit.
 
-    The Visual Studio default for a new C# .NET Framework console application is Any CPU with Prefer 32-bit checked. The default for .NET Core may already have the recommended setting.
+    The Visual Studio default for a new C# .NET Framework console application is Any CPU with Prefer 32-bit checked. The default for .NET may already have the recommended setting.
 
     Trace processing can be memory-intensive, especially with larger traces, and we recommend changing Platform target to x64 (or unchecking Prefer 32-bit) in exes that use TraceProcessor. To change these settings, see the Build tab under Properties for the project. To change these settings for all configurations, ensure that the Configuration dropdown is set to All Configurations, rather than the default of the current configuration only.
 
