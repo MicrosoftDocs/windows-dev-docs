@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 10/30/2022
+ms.date: 07/25/2023
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -12,7 +12,7 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 **Document version: 7.16.1**
 
-**Publish date: July 18, 2022**
+**Publish date: July 25, 2023**
 
 **Effective date: August 18, 2022**
 
@@ -543,6 +543,7 @@ If your product is a storefront, or enables access to a storefront, the storefro
 - Implement a method for review and detection of content that is in violation of your terms or guidelines and take enforcement actions.
 - Comply with all legal and regulatory requirements regarding operations of digital storefronts.
 
+
 ---
 <sup>1</sup>"Store" or "Microsoft Store" means a Microsoft owned or operated platform, however named, through which Apps may be offered to or acquired by Customers. Unless otherwise specified, Store includes the Microsoft Store, the Windows Store, the Xbox Store, Microsoft Store for Business, and Microsoft Store for Education.
 
@@ -550,20 +551,20 @@ If your product is a storefront, or enables access to a storefront, the storefro
 
 All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to [reportapp@microsoft.com](mailto:reportapp@microsoft.com).
 
-### Microsoft Store complaint and appeal statistics for FY2022
+### Microsoft Store complaint and appeal statistics
 
-Numbers as reported on 8/1/2022
+Numbers reported on 8/1/2023 (from 7/1/2022 through 6/30/2023)
 
 | Statistic                                             | Count    |
 |----------------------------------------------|----------|
-| App and/or Account Enforcement Action Appeals |      2,802 |
-| Complaints about Technological Issues  |       157 |
+| App and/or Account Enforcement Action Appeals |      1,616 |
+| Complaints about Technological Issues  |       54 |
 | Regulatory Compliance Complaints    |       0 |
-| Questions about certification, policy, submission, and technical help                    |      4,051 |
-| Miscellaneous | 486 |
-| Total Issues                              |      7,496 |
-| Overturned decisions                        |       2,106 |
-| Average Processing Time                      | 2.9 days |
+| Questions about certification, policy, submission, and technical help                    |      1,772 |
+| Miscellaneous | 357 |
+| Total Issues                              |      4,212 |
+| Overturned decisions                        |       842 |
+| Average Processing Time                      | 5.95 days |
 
 
 ### See also
@@ -571,3 +572,4 @@ Numbers as reported on 8/1/2022
 - [Change history for Microsoft Store Policies](store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
 - [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+
