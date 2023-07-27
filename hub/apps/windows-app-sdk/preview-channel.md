@@ -112,7 +112,7 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./down
 
 ### XAML Backdrop APIs
 With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI 3 app.
-See the [Xaml Backdrop API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/user/mikehill/xaml-backdrop-api-spec/specs/xaml-backdrop-api.md) on GitHub for more information about the **Window.SystemBackdrop** property.
+See the [Xaml Backdrop API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/33541da536673fa360212e94e4a6ac896b8b49fb/specs/xaml-backdrop-api.md?plain=1#L39) on GitHub for more information about the **Window.SystemBackdrop** property.
 
 ```csharp
 public MainWindow()
@@ -129,7 +129,7 @@ Replacing several lines of boilerplate code, you're now able to use AppWindow AP
 ### New features from across WinAppSDK
 - `ApplicationModel.DynamicDependency`: `PackageDependency.PackageGraphRevisionId` that replaces the deprecated MddGetGenerationId.
 - Environment Manager: `EnvironmentManager.AreChangesTracked` to inform you whether changes to the environment manager are able to be tracked in your application. See the [Environment Manager API spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppLifecycle/EnvironmentVariables/AppLifecycle%20-%20Environment%20Variables%20(EV).md) on GitHub for more information.
-- MRT Core: A new event, `Application.ResourceManagerInitializing` allows your app to provide its own implementation of the `IResourceManager` interface, and gives you access to the ResourceManager that WinUI uses to resolve resource URIs. See the [IResourceManager API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/user/evelynwu/custom-iresourcemanager-spec/specs/custom-iresourcemanager-spec.md) on GitHub for more information.
+- MRT Core: A new event, `Application.ResourceManagerInitializing` allows your app to provide its own implementation of the `IResourceManager` interface, and gives you access to the ResourceManager that WinUI uses to resolve resource URIs. See the [IResourceManager API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/33541da536673fa360212e94e4a6ac896b8b49fb/specs/custom-iresourcemanager-spec.md) on GitHub for more information.
 - With the latest experimental VSIX, you're now able to convert your app between unpackaged and packaged through the Visual Studio menu instead of in your project file.
 - A new event, `DebugSettings.XamlResourceReferenceFailed` is now raised when a referenced Static/ThemeResource lookup can't be resolved. This event gives access to a trace that details where the framework searched for that key in order to better enable you to debug Static & ThemeResource lookup failures. For more information, see the [API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/xaml-resource-references-tracing-spec.md) and issues [4972](https://github.com/microsoft/microsoft-ui-xaml/issues/4972), [2350](https://github.com/microsoft/microsoft-ui-xaml/issues/2350), and [6073](https://github.com/microsoft/microsoft-ui-xaml/issues/6073) on GitHub.
 - Deployment: To manage and repair the Windows App Runtime, `DeploymentRepairOptions` is now available as part of the `DeploymentManager`. For more information, see the Repair section of the [Deployment API Spec](https://github.com/microsoft/WindowsAppSDK/blob/user/sachinta/DeploymentRepairAPISpec/specs/Deployment/DeploymentAPI.md#repair) on GitHub.

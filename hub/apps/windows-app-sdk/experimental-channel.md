@@ -176,7 +176,7 @@ To download, retarget your WinAppSDK NuGet version to `1.3.230202101-experimenta
 
 ### XAML Backdrop APIs
 With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI 3 app.
-See the [Xaml Backdrop API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/user/mikehill/xaml-backdrop-api-spec/specs/xaml-backdrop-api.md) on GitHub for more information about the **Window.SystemBackdrop** property.
+See the [Xaml Backdrop API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/33541da536673fa360212e94e4a6ac896b8b49fb/specs/xaml-backdrop-api.md?plain=1#L39) on GitHub for more information about the **Window.SystemBackdrop** property.
 
 Of note in this release, you're able to set the backdrop only in code-behind, as below. Setting `<Window.SystemBackdrop>` in markup results in a compile error. 
 Additionally, the Xaml Backdrop APIs are currently missing an 'experimental' tag as they are under active development.
