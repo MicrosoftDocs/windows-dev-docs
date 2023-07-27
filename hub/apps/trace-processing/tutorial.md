@@ -13,7 +13,7 @@ ms.topic: tutorial
 
 Microsoft.Windows.EventTracing.Processing.All
 
-This package allows you to access data in a trace file. If you do not already have a trace file, you can use [Windows Performance Recorder](/windows-hardware/test/wpt/start-a-recording) to create one.
+This package allows you to access data in a trace file. If you do not already have a trace file, you can use [Windows Performance Recorder](/windows-hardware/test/wpt/windows-performance-recorder) to create one.
 
 The following example console app shows how to access the command lines of all processes contained in the trace:
 

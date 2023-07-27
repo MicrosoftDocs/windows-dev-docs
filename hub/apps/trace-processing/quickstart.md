@@ -74,7 +74,7 @@ You can use this package in a console app to list the process command lines cont
 
     In Solution Explorer, right-click on the project and choose Properties. Switch to the Debug tab and enter the path to a trace (.etl file) in Application arguments.
 
-    If you do not already have a trace file, you can use [Windows Performance Recorder](/windows-hardware/test/wpt/start-a-recording) to create one.
+    If you do not already have a trace file, you can use [Windows Performance Recorder](/windows-hardware/test/wpt/windows-performance-recorder) to create one.
 
 3. Run the application.
 
