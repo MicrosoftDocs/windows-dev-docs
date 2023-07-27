@@ -2,32 +2,31 @@
 title: Use the dynamic dependency API to reference MSIX packages at run time
 description: Describes how to use the *dynamic dependency API* to dynamically take a dependency on different MSIX packages (other than the Windows App SDK framework package) in an unpackaged app at run time.
 ms.topic: article
-ms.date: 07/26/2023
+ms.date: 07/27/2023
 ms.localizationpriority: medium
 ---
 
 # Use the dynamic dependency API to reference MSIX packages at run time
 
-The forms that MSIX packages can take includes *framework*, *resource*, *optional*, and *main* packages. The *dynamic dependency API* enables unpackaged apps to reference and to use *framework* packages such as [WinUI 2](../../../winui/winui2/index.md) and the DirectX Runtime. For more info about framework package dependencies, see [MSIX framework packages and dynamic dependencies](framework-packages-overview.md).
+## The two implementations
 
-A dynamic dependency can always target a framework package. But as of Windows 11, version 22H2 (10.0; Build 22621), you can reference and use *main* packages as well. The main package must have correctly configured its app package manifest source file (the `Package.appxmanifest` file in Visual Studio). Specifically, the main package (the target, not the caller) needs to set `<uap15:DependencyTarget>true</>` (see [uap15:DependencyTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap15-dependencytarget)). So the purpose of `<uap15::DependencyTarget>` is to enable a dynamic dependency to target a *main* package. In other words, the main package has to opt in to allow itself to be used as a dynamic dependency (whereas framework packages always implicitly allow that).
+There are two implementations of the *dynamic dependency API* that you can choose from, depending on your target platform and scenario:
 
-Specifically, the dynamic dependency API provides ways to manage the *install-time references* and *run-time references* for MSIX packages. For more info, see [Servicing model for framework packages](framework-packages-overview.md#servicing-model-for-framework-packages).
+* **The Windows App SDK's dynamic dependency API**. The Windows App SDK provides C and C++ functions (in [msixdynamicdependency.h](/windows/windows-app-sdk/api/win32/msixdynamicdependency)), and Windows Runtime (WinRT) types (in the [**Microsoft.Windows.ApplicationModel.DynamicDependency**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency) namespace) that implement the dynamic dependency API. You can use this implementation of the API on any version of Windows that supports the [Windows App SDK](/windows/apps/windows-app-sdk/).
+* **Windows 11's dynamic dependency API**. Windows 11 also provides C and C++ functions that implement the dynamic dependency API (in [appmodel.h](/windows/win32/api/appmodel)). This implementation of the API can be used only by apps that target Windows 11, version 22H2 (10.0; Build 22621), and later.
 
-> [!NOTE]
-> Unlike other MSIX packages, you can't use the dynamic dependency API to reference the [Windows App SDK framework package](../../../windows-app-sdk/deployment-architecture.md#framework-package) in your unpackaged app. Instead, you must use the [bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that's designed to take dependencies on the Windows App SDK framework package. For more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
-
-## Use the dynamic dependency API
-
-There are two implementations of the dynamic dependency API that you can choose from, depending on your target platform and scenario.
-
-* The Windows App SDK provides both C and C++ functions (in [msixdynamicdependency.h](/windows/windows-app-sdk/api/win32/msixdynamicdependency)) and Windows Runtime (WinRT) types (in the [**Microsoft.Windows.ApplicationModel.DynamicDependency**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency) namespace) that implement the dynamic dependency API. This implementation of the API can be used by apps that target Windows 10, version 1809 and later, as well as Windows 11. But it has [some limitations](#dynamic-dependency-api-limitations-in-the-windows-app-sdk).
-* Windows 11 also provides C and C++ functions that implement the dynamic dependency API (in [appmodel.h](/windows/win32/api/appmodel)). This implementation of the API can be used only by apps that target Windows 11.
+Also see [Differences between the two implementations](#differences-between-the-two-implementations).
 
 > [!NOTE]
 > As you'll see in this topic, the Windows App SDK (C/C++) APIs have the same names as the Windows 11 (C/C++) APIs with an additional **Mdd** prefix. **Mdd** stands for *Microsoft Dynamic Dependencies*.
 
-To use the dynamic dependency API in your unpackaged app to take a dependency on an MSIX package, follow this general pattern in your code.
+And there are different kinds of MSIX packages, including *framework*, *resource*, *optional*, and *main* packages. The dynamic dependency API enables unpackaged apps to reference and to use *framework* packages such as [WinUI 2](../../../winui/winui2/index.md) and the DirectX Runtime. For more info about framework package dependencies, see [MSIX framework packages and dynamic dependencies](framework-packages-overview.md).
+
+Specifically, the dynamic dependency API provides ways to manage the *install-time references* and *run-time references* for MSIX packages. For more info, see [Servicing model for framework packages](framework-packages-overview.md#servicing-model-for-framework-packages).
+
+## Use the dynamic dependency API
+
+To use the dynamic dependency API in your unpackaged app to take a dependency on an MSIX package, follow this general pattern in your code:
 
 ### 1. Create an install-time reference
 
@@ -37,7 +36,7 @@ In your app's installer, or during the first run of your app, call one of the fo
 * Windows App SDK (C/C++): [MddTryCreatePackageDependency](/windows/windows-app-sdk/api/win32/msixdynamicdependency/nf-msixdynamicdependency-mddtrycreatepackagedependency)
 * Windows App SDK (WinRT): [PackageDependency.Create](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency.packagedependency.create)
 
-The criteria you specify includes the package family name, minimum version, and architectures, but you can't indicate a specific MSIX package. When you add a run-time reference to the MSIX package, the API chooses the highest version that satisfies the specified criteria.
+The criteria you specify include the package family name, minimum version, and architectures; but you can't indicate a specific MSIX package. When you add a run-time reference to the MSIX package, the API chooses the highest version that satisfies the specified criteria.
 
 You must also specify a *lifetime artifact*, which can be the current process, a file, or a Windows Registry key that indicates to the system that the app is still available. If the specified artifact no longer exists, then the OS can assume that the dependency is no longer needed, and it can uninstall the MSIX package if no other apps have declared a dependency on it. That feature is useful for scenarios where an app neglects to remove the install-time pin when it is uninstalled.
 
@@ -73,13 +72,27 @@ When your app is uninstalled, call one of the following functions or methods to 
 
 When you call this API, you must pass in the dependency ID that was returned when you created the install-time reference.
 
-## Dynamic dependency API limitations in the Windows App SDK
+## Differences between the two implementations
 
-When you use the dynamic dependency API in the Windows App SDK to take a dependency on an MSIX package, this API requires help via another installed package and running process to inform Windows that the MSIX package is in use, and to block servicing the framework while it is being used. This is called a *lifetime manager* component.
+### The need for a lifetime manager (Windows App SDK limitation)
+
+When you use the Windows App SDK's dynamic dependency API to take a dependency on an MSIX package, the API requires help via another installed package and running process to inform Windows that the MSIX package is in use, and to block servicing the framework while it is being used. That component is called a *lifetime manager*.
 
 For its framework package, the Windows App SDK provides a lifetime manager component called the [Dynamic Dependency Lifetime Manager (DDLM)](../../../windows-app-sdk/deployment-architecture.md). However, no other framework packages currently provide a similar lifetime manager component from Microsoft.
 
-The dynamic dependency API implementation in Windows 11 (in [appmodel.h](/windows/win32/api/appmodel)) doesn't have this limitation.
+Windows 11's dynamic dependency API doesn't have this limitation.
+
+### Reference and use a main package (Windows App SDK limitation)
+
+A dynamic dependency can always target a *framework* package. But only Windows 11's dynamic dependency API can reference and use *main* packages as well.
+
+The main package must have correctly configured its app package manifest source file (the `Package.appxmanifest` file in Visual Studio). Specifically, the main package (the target, not the caller) needs to set `<uap15:DependencyTarget>true</>` (see [uap15:DependencyTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap15-dependencytarget)). So the purpose of `<uap15::DependencyTarget>` is to enable a dynamic dependency to target a *main* package. In other words, the main package has to opt in to allow itself to be used as a dynamic dependency (whereas framework packages always implicitly allow that).
+
+### Reference the Windows App SDK framework package (Windows App SDK limitation)
+
+In an unpackaged app, you can't use the Windows App SDK's dynamic dependency API to reference the [Windows App SDK framework package](../../../windows-app-sdk/deployment-architecture.md#framework-package) (like you *can* reference other MSIX packages with it). Instead, you need to use the [bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that's designed to take dependencies on the Windows App SDK framework package. For more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
+
+Windows 11's dynamic dependency API doesn't have this limitation.
 
 ## Related topics
 
