@@ -31,6 +31,17 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.3
 
+### Version 1.3.3 (1.3.230724000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.3 release.
+
+- Fixed an issue where the mouse would sometimes stop working when a dialog box was closed.
+- Fixed a deployment issue that prevented apps from installing due to a mismatch of package versions on the system. For more information, see GitHub issue [#3740](https://github.com/microsoft/WindowsAppSDK/issues/3740).
+- Fixed an issue affecting context menu positioning in Windows App SDK 1.3.
+- Fixed an issue causing some WinUI3 apps, in some situations, to crash when the app was closed because XAML shut itself down too early.
+- Fixed an issue where font icons were not mirroring properly in right-to-left languages. For more information, see GitHub issue [#7661](https://github.com/microsoft/microsoft-ui-xaml/issues/7661).
+- Fixed an issue causing an app to crash on shutdown when resources were torn down in a bad order. For more information, see GitHub issue [#7924](https://github.com/microsoft/microsoft-ui-xaml/issues/7924).
+
 ### Version 1.3.2 (1.3.230602002)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.3 release.
