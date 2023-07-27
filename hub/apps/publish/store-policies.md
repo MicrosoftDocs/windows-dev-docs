@@ -12,7 +12,7 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 **Document version: 7.16.1**
 
-**Publish date: July 25, 2023**
+**Publish date: July 27, 2023**
 
 **Effective date: August 18, 2022**
 
