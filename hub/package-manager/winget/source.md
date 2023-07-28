@@ -35,6 +35,18 @@ The following image shows **help** for the **source** command:
 
 :::image type="content" source="images/source.png" alt-text="Screenshot showing help for the source command.":::
 
+## Options
+
+The following options are available.
+
+| Option  | Description |
+|--------------|-------------|
+| **-?,--help** | Shows help about the selected command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
+
 ## Subcommands
 
 The **source** command supports the following subcommands.
@@ -58,6 +70,30 @@ Usage:
 winget source add [-n, --name] <name> [-a, --arg] <url> [[-t, --type] <type>]
 ```
 
+#### Arguments
+
+The following arguments are available.
+
+| Argument  | Description |
+|--------------|-------------|
+| **-n, --name** | The name to identify the source by. |
+| **-a, --arg** | The URL or UNC of the source. |
+| **-t, --type** | The type of source. |
+
+#### Options
+
+The following options are available.
+
+| Option  | Description |
+|--------------|-------------|
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **-?, --help** |  Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
+
 For example,  `winget source add --name Contoso https://www.contoso.com/cache` adds the Contoso repository at URL `https://www.contoso.com/cache`.
 
 #### Optional type parameter
@@ -77,6 +113,26 @@ Usage:
 ```cmd
 winget source list [[-n, --name] <name>]
 ```
+
+#### Arguments
+
+The following arguments are available.
+
+| Argument  | Description |
+|--------------|-------------|
+| **-n, --name** | The name to identify the source by. |
+
+#### Options
+
+The following options are available.
+
+| Option  | Description |
+|--------------|-------------|
+| **-?, --help** |  Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 #### list all
 
@@ -99,10 +155,10 @@ winget source list --name Contoso
 Returns the following output:
 
 ```output
-Name   : Contoso  
-Type   : Microsoft.PreIndexed.Package  
-Arg    : https://pkgmgr-int.azureedge.net/cache  
-Data   : AppInstallerSQLiteIndex-int_g4ype1skzj3jy  
+Name   : Contoso
+Type   : Microsoft.PreIndexed.Package
+Arg    : https://pkgmgr-int.azureedge.net/cache
+Data   : AppInstallerSQLiteIndex-int_g4ype1skzj3jy
 Updated: 2020-4-14 17:45:32.000
 ```
 
@@ -122,6 +178,26 @@ Usage:
 winget source update [[-n, --name] <name>]
 ```
 
+#### Arguments
+
+The following arguments are available.
+
+| Argument  | Description |
+|--------------|-------------|
+| **-n, --name** | The name to identify the source by. |
+
+#### Options
+
+The following options are available.
+
+| Option  | Description |
+|--------------|-------------|
+| **-?, --help** |  Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
+
 #### update all
 
 The **update** subcommand by itself, `winget source update`, requests updates to all repos.
@@ -140,7 +216,33 @@ Usage:
 winget source remove [-n, --name] <name>
 ```
 
-For example: `winget source remove --name Contoso` removes the Contoso repository.
+#### Arguments
+
+The following arguments are available.
+
+| Argument  | Description |
+|--------------|-------------|
+| **-n, --name** | The name to identify the source by. |
+
+#### Options
+
+The following options are available.
+
+| Option  | Description |
+|--------------|-------------|
+| **-?, --help** |  Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
+
+#### Examples
+
+```cmd
+winget source remove --name Contoso
+```
+
+This command removes the Contoso repository.
 
 ### reset
 
@@ -154,11 +256,51 @@ Usage:
 winget source reset --force
 ```
 
+#### Arguments
+
+The following arguments are available.
+
+| Argument  | Description |
+|--------------|-------------|
+| **-n, --name** | The name to identify the source by. |
+
+#### Options
+
+The following options are available.
+
+| Option  | Description |
+|--------------|-------------|
+| **-?, --help** |  Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
+
 ### export
 
 The **export** sub-command exports the specific details for a source to JSON output.
 
-For example:
+#### Arguments
+
+The following arguments are available.
+
+| Argument  | Description |
+|--------------|-------------|
+| **-n, --name** | The name to identify the source by. |
+
+#### Options
+
+The following options are available.
+
+| Option  | Description |
+|--------------|-------------|
+| **-?, --help** |  Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
+
+#### Examples
 
 ```cmd
 winget source export winget
@@ -169,21 +311,6 @@ Returns the following output:
 ```output
 {"Arg":"https://winget.azureedge.net/cache","Data":"Microsoft.Winget.Source_8wekyb3d8bbwe","Identifier":"Microsoft.Winget.Source_8wekyb3d8bbwe","Name":"winget","Type":"Microsoft.PreIndexed.Package"}
 ```
-
-## Options
-
-The  **source** command supports the following options.
-
-| Option  | Description |
-|--------------|-------------|
-|  **-n,--name** | The name to identify the source by. |
-|  **-a,--arg** | The URL or UNC of the source. |
-|  **--force** | Used by **reset** to ensure that a reset is desired. |
-|  **-t,--type** | The type of source. |
-| **--accept-source-agreements** | Accepts the source license agreement, and avoids the prompt. |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--verbose-logs** | Overrides the logging setting and creates a verbose log. |
-|  **-?, --help** |  Gets additional help on this command. |
 
 ## Source agreement
 

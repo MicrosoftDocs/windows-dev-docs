@@ -31,9 +31,19 @@ The following arguments are available:
 | Argument  | Description |
 |--------------|-------------|
 | **-f,--file** |  The path to the file to be hashed. |
+
+## Options
+
+The options allow you to customize the hash experience to meet your needs.
+
+| Option  | Description |
+|-------------|-------------|
 | **-m,--msix**  | Specifies that the hash command will also create the SHA-256 SignatureSha256 for use with MSIX installers. |
-| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 | **-?, --help** |  Gets additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 ## Related topics
 

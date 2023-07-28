@@ -25,7 +25,6 @@ The following arguments are available.
 | Argument  | Description |
 |--------------|-------------|
 | **-q,--query** |  The query used to search for an application. |
-| **-?, --help** |  Gets additional help on this command. |
 
 > [!NOTE]
 > The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are searching for.
@@ -43,10 +42,17 @@ The following options are available.
 | **-v,--version** |  Use the specified version. The default is the latest version. |
 | **-s,--source** |   Find the application using the specified [source](source.md). |
 | **-e,--exact**     | Find the application using exact match. |
+| **--scope**     | Select install scope (user or machine). |
+| **-a,--architecture**     | Select the architecture to install. |
+| **--locale**     | Locale to use (BCP47 format). |
 | **--versions**    | Show available versions of the application. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **-?,--help** | Shows help about the selected command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 ## Multiple selections
 

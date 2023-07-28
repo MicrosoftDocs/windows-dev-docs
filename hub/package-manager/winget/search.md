@@ -27,7 +27,6 @@ The following arguments are available.
 | Argument  | Description |
  --------------|-------------|
 | **-q,--query** |  The query flag is the default argument used to search for an app. It does not need to be specified. Entering the command `winget search foo` will default to using `--query` so including it is unnecessary.|
-| **-?, --help** |  Gets additional help on this command. |
 
 > [!NOTE]
 > The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are searching for.
@@ -41,7 +40,7 @@ To show all of the winget packages available, use the command:
 In PowerShell, you will need to escape the quotes, so this command becomes:
 
 ```powershell
-winget search -q `"`" 
+winget search -q `"`"
 ```
 
 > [!NOTE]
@@ -57,13 +56,18 @@ Search strings can be filtered with the following options.
 | **--name**      |  Limits the search to the name of the application. |
 | **--moniker**  |    Limits the search to the moniker specified. |
 | **--tag**    |  Limits the search to the tags listed for the application. |
-| **--command**   |   Limits the search to the commands listed for the application. |
-| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **-e, --exact**  |     Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.  |  
-| **-n, --count**      |  Show no more than specified number of results (between 1 and 1000). |
+| **--cmd, --command**   |   Limits the search to the commands listed for the application. |
 | **-s, --source**     |  Find package using the specified [source](source.md) name. |
+| **-n, --count**      |  Show no more than specified number of results (between 1 and 1000). |
+| **-e, --exact**  |     Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.  |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--accept-source-agreements** | Accept all source license agreements and avoid the prompt. |
+| **--accept-source-agreements** | Accept all source agreements during source operations. |
+| **--versions** | Show available versions of the package. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **-?, --help** |  Gets additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 The string will be treated as a substring. The search by default is also case insensitive. For example, `winget search micro` could return the following:
 
