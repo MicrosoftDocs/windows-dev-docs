@@ -116,6 +116,6 @@ additionalContent:
           summary: Enables developers to pack and unpack app packages on a variety of platforms.
           url: https://github.com/Microsoft/msix-packaging
         - title: .NET
-          summary: Engage with .NET open source projects including .NET Core, WPF, Windows Forms, and much more.
+          summary: Engage with .NET open source projects including .NET, WPF, Windows Forms, and much more.
           url: https://github.com/microsoft/dotnet
   footer: "[@WindowsDocs on Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute on YouTube](/shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"

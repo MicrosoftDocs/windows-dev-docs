@@ -167,7 +167,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
     :::column:::
        [![ASP.NET icon](../images/aspnet.png)](https://dotnet.microsoft.com/apps/aspnet)<br>
         **[ASP.NET](/aspnet/)**<br>
-        A cross-platform framework for building web apps and services, Internet of Things (IoT) apps, or mobile backends with .NET and C#. Build rich interactive web UI with [Blazor](/aspnet/core/blazor/). Use your favorite dev tools on Windows, macOS, and Linux. Deploy to the cloud or on-premises. Run on .NET Core.<br>
+        A cross-platform framework for building web apps and services, Internet of Things (IoT) apps, or mobile backends with .NET and C#. Build rich interactive web UI with [Blazor](/aspnet/core/blazor/). Use your favorite dev tools on Windows, macOS, and Linux. Deploy to the cloud or on-premises. Run on .NET.<br>
         [Install ASP.NET](https://dotnet.microsoft.com/download)
     :::column-end:::
     :::column:::
