@@ -1,6 +1,6 @@
 ---
 title: list Command
-description: Displays the list of listed apps and if an update is available. 
+description: Displays the list of listed apps and if an update is available.
 ms.date: 05/5/2021
 ms.topic: overview
 ms.localizationpriority: medium
@@ -28,9 +28,8 @@ The **list** command also supports filters which can be used to limit your list 
 The following arguments are available.
 
 | Argument      | Description |
-|-------------|-------------|  
+|-------------|-------------|
 | **-q,--query**  |  The query used to search for an app. |
-| **-?, --help** |  Get additional help on this command. |
 
 > [!NOTE]
 > The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the installed package you are searching for.
@@ -40,18 +39,24 @@ The following arguments are available.
 The options allow you to customize the list experience to meet your needs.
 
 | Option      | Description |
-|-------------|-------------|  
-| **--id**    |  Limits the list to the ID of the application.   |  
-| **--name**   |  Limits the list to the name of the application. |  
-| **--moniker**   | Limits the list to the moniker listed for the application. |  
-| **-s, --source**   |  Restricts the list to the source name provided. Must be followed by the source name. |  
-| **--tag** |  Filters results by tags. |  
-| **--command** |  Filters results by command specified by the application. |  
+|-------------|-------------|
+| **--id**    |  Limits the list to the ID of the application.   |
+| **--name**   |  Limits the list to the name of the application. |
+| **--moniker**   | Limits the list to the moniker listed for the application. |
+| **-s, --source**   |  Restricts the list to the source name provided. Must be followed by the source name. |
+| **--tag** |  Filters results by tags. |
+| **--cmd, --command** |  Filters results by command specified by the application. |
 | **-n, --count** | Limits the number of apps displayed in one query.   |
-| **-e, --exact**   |   Uses the exact string in the list query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **-e, --exact**   |   Uses the exact string in the list query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
+| **--scope** | Select installed package scope filter (user or machine). |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--upgrade-available** | Lists only packages which have an upgrade available. |
+| **-?, --help** |  Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--disable-interactivity** | Disable interactive prompts. |
 
 ### Example queries
 
