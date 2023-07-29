@@ -1,7 +1,7 @@
 ---
 title: Windows Dev Kit 2023 (Project Volterra)
 description: Powered by Arm64 and running Windows 11, this desktop device enables you to develop Windows apps for Arm, on Arm. Find device specifications, set up instructions, Arm-native developer tools, Support, and FAQs. 
-ms.date: 11/02/2022
+ms.date: 07/29/2023
 ms.topic: article
 ms.prod: windows
 ms.technology: arm
@@ -109,9 +109,9 @@ Bringing together local compute on the CPU, GPU, and NPU and cloud compute with 
 
     Learn more about the Snapdragon compute platform that powers Windows on Snapdragon® devices with native AArch64 (64-bit Arm) app support. You will also find a link to download the **Qualcomm Neural Processing SDK for Windows**. The Qualcomm® Neural Processing SDK is engineered to help developers save time and effort in optimizing performance of trained neural networks on devices with Qualcomm® AI products.
 
-- **[SNPE Execution Provider for ONNX Runtime](https://onnxruntime.ai/docs/execution-providers/SNPE-ExecutionProvider.html)**
+- **[QNN Execution Provider for ONNX Runtime](https://onnxruntime.ai/docs/execution-providers/QNN-ExecutionProvider.html)**
 
-    This execution provider makes use of the [Qualcomm Snapdragon Neural Processing Engine SDK](https://developer.qualcomm.com/sites/default/files/docs/snpe/overview.html) to enable hardware accelerated execution of deep neural networks.
+    The QNN Execution Provider for ONNX Runtime enables hardware accelerated execution on Qualcomm chipsets. It uses the [Qualcomm AI Engine Direct SDK (QNN SDK)](https://qpm.qualcomm.com/main/tools/details/qualcomm_ai_engine_direct) to construct a QNN graph from an ONNX model which can be executed by a supported accelerator backend library.
 
 - **[Azure Virtual Machines with Ampere Altra Arm-based processors](https://azure.microsoft.com/blog/now-in-preview-azure-virtual-machines-with-ampere-altra-armbased-processors/)**
 
