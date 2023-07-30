@@ -18,16 +18,21 @@ Windows Package Manager by default creates log files when executing commands. Th
 > Logs: %LOCALAPPDATA%\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\DiagOutputDir
 ```
 
-By navigating to this folder you will find the logs the *winget* tool has written.
+You can include the **--logs** or **--open-logs** option to any command to open the logs directory after the command completes. Here are some examples of using the **--logs** option:
+
+```CMD
+> winget list --logs
+> winget source update --open-logs
+```
 
 ### --verbose-logs
 
-If you need more comprehensive log files, that provide the complete communication with the CDNs and sources, include **--verbose-logs** on the command line as well.  Here are some examples of using the **--verbose-logs** option:
+If you need more comprehensive log files, that provide the complete communication with the CDNs and sources, include **--verbose** or **--verbose-logs** on the command line as well.  Here are some examples of using the **--verbose-logs** option:
 
 ```CMD
 > winget install vscode --verbose-logs
 > winget search -n visual --verbose-logs
-> winget source add -n mysource -t Microsoft.REST -a https://www.contoso.org --verbose-logs
+> winget source add -n mysource -t Microsoft.REST -a https://www.contoso.org --verbose
 ```
 
 ## Known issues
