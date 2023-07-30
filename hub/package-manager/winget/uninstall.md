@@ -12,6 +12,13 @@ The **uninstall** command of the [winget](index.md) tool uninstalls the specifie
 
 The **uninstall** command requires that you specify the exact string to uninstall. If there is any ambiguity, you will be prompted to further filter the **uninstall** command to an exact application.
 
+## Aliases
+
+The following aliases are available for this command:
+
+- remove
+- rm
+
 ## Usage
 
 `winget uninstall [[-q] \<query>] [\<options>]`

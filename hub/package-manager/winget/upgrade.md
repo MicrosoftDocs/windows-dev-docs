@@ -12,6 +12,12 @@ The **upgrade** command of the [winget](index.md) tool upgrades the specified ap
 
 The **upgrade** command requires that you specify the exact string to upgrade. If there is any ambiguity, you will be prompted to further filter the **upgrade** command to  an exact application.
 
+## Aliases
+
+The following aliases are available for this command:
+
+- update
+
 ## Usage
 
 `winget upgrade [[-q] \<query>] [\<options>]`

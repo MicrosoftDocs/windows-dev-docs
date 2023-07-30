@@ -21,6 +21,12 @@ The **configure** command of the [winget](./index.md) tool uses a [WinGet Config
 - Windows 10 RS5 or later, and Windows 11.
 - Winget version v1.5.1572 or later.
 
+## Aliases
+
+The following aliases are available for this command:
+
+- configuration
+
 ## Usage
 
 `winget configure -f <C:/Users/<username>/winget-configs/config-file-name.dsc.yaml>`

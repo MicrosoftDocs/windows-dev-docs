@@ -114,6 +114,12 @@ Usage:
 winget source list [[-n, --name] <name>]
 ```
 
+#### Aliases
+
+The following aliases are available for this subcommand:
+
+- ls
+
 #### Arguments
 
 The following arguments are available.
@@ -178,6 +184,12 @@ Usage:
 winget source update [[-n, --name] <name>]
 ```
 
+#### Aliases
+
+The following aliases are available for this subcommand:
+
+- refresh
+
 #### Arguments
 
 The following arguments are available.
@@ -215,6 +227,12 @@ Usage:
 ```cmd
 winget source remove [-n, --name] <name>
 ```
+
+#### Aliases
+
+The following aliases are available for this subcommand:
+
+- rm
 
 #### Arguments
 

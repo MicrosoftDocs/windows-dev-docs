@@ -12,6 +12,12 @@ The **show** command of the [winget](index.md) tool displays details for the spe
 
 The **show** command only shows metadata that was submitted with the application. If the submitted application excludes some metadata, then the data will not be displayed.
 
+## Aliases
+
+The following aliases are available for this command:
+
+- view
+
 ## Usage
 
 `winget show [[-q] \<query>] [\<options>]`
