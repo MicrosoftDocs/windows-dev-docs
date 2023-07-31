@@ -14,6 +14,12 @@ The **list** command will also display if an update is available for an app, and
 
 The **list** command also supports filters which can be used to limit your list query.
 
+## Aliases
+
+The following aliases are available for this command:
+
+- ls
+
 ## Usage
 
 `winget list [[-q] \<query>] [\<options>]`
