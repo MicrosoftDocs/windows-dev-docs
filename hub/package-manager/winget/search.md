@@ -20,6 +20,12 @@ The **search** command includes parameters for filtering down the applications r
 
 ![Screenshot of the Windows Power Shell window displaying the results of the winget search.](./images/search.png)
 
+## Aliases
+
+The following aliases are available for this command:
+
+- find
+
 ## Arguments
 
 The following arguments are available.

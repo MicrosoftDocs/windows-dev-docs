@@ -15,6 +15,12 @@ The **settings** command will launch your default text editor. Windows by defaul
 >[!NOTE]
 >You can easily install Visual Studio Code by typing `winget install Microsoft.VisualStudioCode`
 
+## Aliases
+
+The following aliases are available for this command:
+
+- config
+
 ## Use the winget settings command
 
 Launch your default JSON editing tool: `winget settings`

@@ -18,6 +18,12 @@ The **install** command requires that you specify the exact string to install. I
 
 ![search command](./images/install.png)
 
+## Aliases
+
+The following aliases are available for this command:
+
+- add
+
 ## Arguments
 
 The following arguments are available.
