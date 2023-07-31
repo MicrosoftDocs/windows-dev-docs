@@ -39,6 +39,10 @@ If you need more comprehensive log files, that provide the complete communicatio
 
 A list of known issues with sources and behaviors is kept up to date in the [Windows Package Manager Client repository](https://www.github.com/microsoft/winget-cli).  If you encounter issues when using the winget tool, go [here](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting) for troubleshooting.
 
+## Exit codes
+
+The winget tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the ["Return codes" file of the Windows Package Manager Client repository](https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md).
+
 ### Scope for specific user vs machine-wide
 
 Not all installers support installing in “user” scope vs. “machine” scope consistently.
