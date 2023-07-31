@@ -12,7 +12,7 @@ This article provides an index of development features that are related to scena
 
 ## Win2D
 
-[Win2D](/graphics/win2d.md) is an easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration.
+[Win2D](/windows/apps/develop/win2d/) is an easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration.
 
 ## Windows App SDK features
 
@@ -21,7 +21,6 @@ The [Windows App SDK](../windows-app-sdk/index.md) provides the following featur
 | Feature | Description |
 |---------|-------------|
 | [Render text with DWriteCore](../windows-app-sdk/dwritecore.md) | Use the C++/COM APIs in the [DWriteCore headers](/windows/windows-app-sdk/api/win32/_dwritecore/) of the Windows App SDK to render text using a device-independent text layout system, high quality sub-pixel Microsoft ClearType text rendering, hardware-accelerated text, multi-format text, wide language support, and much more. |
-
 
 ## Windows OS features
 
