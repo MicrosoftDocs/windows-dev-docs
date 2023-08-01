@@ -1,7 +1,7 @@
 ---
 title: Windows Dev Kit 2023 update history
 description: History of updates available for the Windows Dev Kit 2023. 
-ms.date: 10/28/2022
+ms.date: 08/01/2023
 ms.topic: article
 ms.prod: windows
 ms.technology: arm
@@ -18,6 +18,14 @@ To keep your device performing its best, make sure that you have the latest upda
 [Check for optional updates](ms-settings:windowsupdate-optionalupdates?activationSource=SMC-IA-4027667)
 
 The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater.
+
+## July 2023 updates
+
+The following update is available for Surface Pro 9 with 5G (SQ3 Processor) devices running Windows 11 Update, Version 22H2, or greater.
+
+| Driver Version | Device Manager |
+|----|----|
+| 30.0.3741.85 | Qualcomm(R) Adreno(TM) 680 GPU - Improves stability and addresses system bugcheck. | 
 
 ## June 2023 updates
 
