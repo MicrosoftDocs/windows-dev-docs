@@ -265,7 +265,7 @@ The following filters may be used with Dev Drive:
 | Docker: Running containers out of dev drive | bindFlt, wcifs |
 | Windows Performance Recorder:  Measure file system operations | FileInfo |
 
-The `WdFilt` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
+The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
 
 ```powershell
 fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo
