@@ -30,6 +30,8 @@ PowerToys Run features include:
 - Execute system commands
 - Get time and date information
 - Convert units
+- Calculate hashes
+- Generate GUIDs
 - Open web pages or start a web search
 
 ## Settings
@@ -88,6 +90,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | Shell command | `>` | `> ping localhost` to do a ping query. |
 | Time and date| `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
 | Unit converter | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
+| Value Generator | `#` | `# guid3 ns:URL www.microsoft.com` to generate the GUIDv3 for the URL namespace using the URL namespace. <br />`# sha1 abc` to calculate the SHA1 hash for the string 'abc'. <br />`# base64 abc` to encode the string 'abc' to base64.  |
 | URI-handler | `//` | `//` to launch your default browser.<br />`// learn.microsoft.com` to have your default browser go to Microsoft Learn.<br />`mailto:` and `ms-settings:` links are supported. |
 | Visual Studio Code | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
 | Web search | `??` | `??` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. |
@@ -256,6 +259,49 @@ The Unit Converter plugin supports the following unit types:
 - Speed
 - Temperature
 - Volume
+
+### Value Generator plugin
+
+The Value Generator plugin can generate GUIDs/UUIDs, calculate hashes, and encode strings to base64.
+
+#### UUIDs
+It supports the following GUID versions:
+- v1 - Time based
+- v3 - Namespace and name based, using MD5
+- v4 - Random value
+- v5 - Namespace and name based, using SHA1
+
+> [!NOTE]
+> For versions 3 and 5 there are some predefined namespaces: DNS, URL, OID ad X500. You can use the following predefined namespaces:
+> * `ns:DNS`
+> * `ns:URL`
+> * `ns:OID`
+> * `ns:X500`
+
+Examples:
+| Command | Result |
+| :--- | :--- |
+| `# guid` <br />`# uuid` <br />`# uuidv4` | Generate a random GUID |
+| `# guidv1` <br />`# uuidv1` | Generate a version 1 GUID |
+| `# guidv3 ns:DNS www.microsoft.com` <br />`# uuidv3 ns:DNS www.microsoft.com` | Generate the GUID version 3 for 'www.microsoft.com' using the DNS namespace. <br /> The namespace parameter can be any valid GUID and the name parameter can be any string |
+
+> [!NOTE]
+> The `guid` and `uuid` keywords are interchangeable and the `v` is optional. I.e. `guid5` and `guidv5` are the same.
+
+#### Hashing
+It supports the following hashing algorithms:
+- MD5
+- SHA1
+- SHA256
+- SHA384
+- SHA512
+
+Usage:
+- `# md5 abc`
+
+#### Base64 Encoding
+Usage:
+- `# base64 abc`
 
 ### Folder search filters
 
