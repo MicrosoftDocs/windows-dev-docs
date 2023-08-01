@@ -279,17 +279,20 @@ It supports the following GUID versions:
 > * `ns:X500`
 
 Examples:
+
 | Command | Result |
 | :--- | :--- |
-| `# guid` <br />`# uuid` <br />`# uuidv4` | Generate a random GUID |
-| `# guidv1` <br />`# uuidv1` | Generate a version 1 GUID |
-| `# guidv3 ns:DNS www.microsoft.com` <br />`# uuidv3 ns:DNS www.microsoft.com` | Generate the GUID version 3 for 'www.microsoft.com' using the DNS namespace. <br /> The namespace parameter can be any valid GUID and the name parameter can be any string |
+| `# guid` <br />`# uuid` <br />`# uuidv4` | Generate a random GUID. |
+| `# guidv1` <br />`# uuidv1` | Generate a version 1 GUID. |
+| `# guidv3 ns:DNS www.microsoft.com` <br />`# uuidv3 ns:DNS www.microsoft.com` | Generate the GUID version 3 for `www.microsoft.com` using the DNS namespace. <br /> The namespace parameter can be any valid GUID, and the name parameter can be any string. |
 
 > [!NOTE]
 > The `guid` and `uuid` keywords are interchangeable and the `v` is optional. I.e. `guid5` and `guidv5` are the same.
 
 #### Hashing
+
 It supports the following hashing algorithms:
+
 - MD5
 - SHA1
 - SHA256
@@ -297,10 +300,13 @@ It supports the following hashing algorithms:
 - SHA512
 
 Usage:
+
 - `# md5 abc`
 
 #### Base64 Encoding
+
 Usage:
+
 - `# base64 abc`
 
 ### Folder search filters
