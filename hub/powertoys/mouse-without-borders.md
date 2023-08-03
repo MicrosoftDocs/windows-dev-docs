@@ -1,7 +1,7 @@
 ---
 title: PowerToys Mouse Without Borders
 description: Mouse Without Borders enables you to interact with other computers from the same keyboard and mouse, sharing clipboard contents and files between the machines.
-ms.date: 05/23/2023
+ms.date: 08/03/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Mouse without borders]
 ---
@@ -9,11 +9,6 @@ no-loc: [PowerToys, Windows, Mouse without borders]
 # Mouse Without Borders
 
 Mouse Without Borders enables you to control up to 4 computers from the same machine.
-
-- [How to Use](#how-to-use-mouse-without-borders)
-- [Settings](#mouse-without-borders-settings)
-- [Troubleshooting](#troubleshooting)
-- [Known Issues](#known-issues)
 
 Features:
 
@@ -25,7 +20,7 @@ Features:
 
 With the latest version of PowerToys installed, you will see Mouse Without Borders listed in the PowerToys Settings, where you will need to do some initial configuration.
 
-### Initial Configuration
+### Initial configuration
 
 1. Open Mouse Without borders in PowerToys Settings to configure your connections.
 
@@ -33,11 +28,11 @@ With the latest version of PowerToys installed, you will see Mouse Without Borde
 
     ![Screenshot of Mouse Without Borders settings after pressing New Key.](../images/powertoys-mouse-without-borders-press-new-key.png)
 
-3. On the second computer, enter the Security Key that was generated on the first computer and the name of the first computer. Then select **Connect**.
+3. On the second computer, enter the security key that was generated on the first computer and the name of the first computer. Then select **Connect**.
 
     ![Screenshot of Mouse Without Borders settings after entering the first computer information.](../images/powertoys-mouse-without-borders-enter-security-key.png)
 
-4. Once the computers connect to each other, you will be able to switch between them by moving your mouse cursor beyond the edge of the screen, transitioning between computers.
+4. Once the computers are connected, you will be able to switch between them by moving your mouse cursor beyond the edge of the screen, transitioning between computers.
 
     ![Screenshot of Mouse Without Borders settings on the first computer after connecting.](../images/powertoys-mouse-without-borders-after-connect-1.png)
 
@@ -56,11 +51,11 @@ To enable the service mode, run PowerToys in administrator mode and enable the *
 > [!WARNING]
 > Running Mouse Without Borders as a service account brings added control and ease of use to the controlled machines, but this also brings some additional security risks in case someone wants to use Mouse Without Borders as an attack vector. Be mindful of your risk tolerance.
 
-## Mouse Without Borders Settings
+## Mouse Without Borders settings
 
 | Setting | Description |
 | :-- | :-- |
-| New key | Generates a new key for the machine and resets its current connections. |
+| New key | Generates a new key for the machine and resets current connections. |
 | Security key | Represents the security key used between the connected machines. Can only be changed by generating a new key. |
 | Connect | Connect to other machines knowing the other machine's name and security key. |
 | Local machine's host name | Shows the current machine's host name and copies it to the clipboard if clicked. |
@@ -81,11 +76,11 @@ To enable the service mode, run PowerToys in administrator mode and enable the *
 | Block mouse at screen corners | Avoid accidentally switching machines when the mouse pointer is at screen corners. |
 | Show clipboard and network status messages | Show clipboard activities and network status in system tray notifications. |
 | Easy Mouse | Should the mouse pointer be used to switch between machines at screen edges. Can also be configured to need to select Shift or Control to switch between machines. |
-| Shortcut to toggle Easy Mouse | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+letter shortcut to toggle Easy Mouse. |
-| Shortcut to lock all machines | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+letter shortcut to press twice to lock all machines. Only works in the machines that have the same setting. |
-| Shortcut to try reconnecting | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+letter shortcut to try reconnecting. |
-| Shortcut to switch to multiple machine mode | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+letter shortcut to start sending the same input to all machines at the same time. |
-| Shortcut to switch between machines | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+number shortcut to switch to a specific machine. <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>3</kbd> switches to the third machine and so on. <kbd>F1</kbd>,<kbd>F2</kbd>,<kbd>F3</kbd> and <kbd>F4</kbd> can also be used. |
+| Shortcut to toggle Easy Mouse | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to toggle Easy Mouse. |
+| Shortcut to lock all machines | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to press twice to lock all machines. Only works in the machines that have the same setting. |
+| Shortcut to try reconnecting | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to try reconnecting. |
+| Shortcut to switch to multiple machine mode | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to start sending the same input to all machines at the same time. |
+| Shortcut to switch between machines | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<number> shortcut to switch to a specific machine. <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>3</kbd> switches to the third machine and so on. <kbd>F1</kbd>,<kbd>F2</kbd>,<kbd>F3</kbd> and <kbd>F4</kbd> can also be used. |
 | Add a firewall rule for Mouse Without Borders | Select to install a firewall rule for Mouse Without Borders. |
 | Show the original Mouse Without Borders UI | Show the original UI from the Mouse Without Borders through the original tray icon. Mouse Without Borders needs to be restarted for it to take effect. |
 

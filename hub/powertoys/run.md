@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
-description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 04/19/2023
+description: A quick launcher for power users that contains additional features without sacrificing performance.
+ms.date: 08/03/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
 
 # PowerToys Run utility
 
-PowerToys Run is a quick launcher for power users that contains some additional features without sacrificing performance. It is open source and modular for additional plugins.
+PowerToys Run is a quick launcher for power users that contains additional features without sacrificing performance. It is open source and modular for additional plugins.
 
 To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(Note that this shortcut can be changed in the settings window.)_
 
@@ -67,10 +67,10 @@ PowerToys Run uses a plugin system to provide different types of results. The se
 The plugins can be activated with a direct activation command so that PowerToys Run will only use the targeted plugin. The following table shows the direct activation commands assigned by default.
 
 > [!TIP]
-> You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
+> You can change commands to fit your personal needs in the [plugin manager](#plugin-manager).
 
 > [!IMPORTANT]
-> Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(`  for the `Time and Date` plugin breaks global calculation queries starting with an opening brace.
+> Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(` breaks global calculation queries starting with an opening brace.
 >
 > Currently known conflicting character sequences:
 >
@@ -144,6 +144,7 @@ The Program plugin allows for program arguments to be added when launching an ap
 
 > [!NOTE]
 > To input valid search queries, the first element after the program name has to be one of the following possibilities:
+>
 > - The characters sequence `--`.
 > - A parameter that starts with `-`.
 > - A parameter that starts with `--`.
@@ -163,11 +164,9 @@ If the program plugin's option "Include in global result" is not selected, inclu
 
 ### Calculator plugin
 
-> [!TIP]
-> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
-
 > [!IMPORTANT]
 > Please be aware of the different decimal and thousand delimiters in different locals.
+> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
 > If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
 > [!TIP]
@@ -195,9 +194,9 @@ The Calculator plugin supports the following operations:
 | Square root | sqrt( x ) | |
 | Power of x | pow( x, y ) | Calculate a number (x) raised to the power of some other number (y). |
 | Factorial | x! | |
-| Sign | sign( -x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
+| Sign | sign( -x ) | A number that indicates the sign of value:<br />• `-1` if number is less than zero.<br />• `0` if number is zero.<br />• `1` if number is greater than zero. |
 | Random number | rand() | Returns a fractional number between 0 and 1. |
-| Pi | pi | Returns the number of pi. |
+| Pi | pi | Returns the number pi. |
 | Sine | sin( x ) | |
 | Cosine | cos( x ) | |
 | Tangent | tan( x ) | |
@@ -213,8 +212,7 @@ The Calculator plugin supports the following operations:
 
 ### History plugin
 
-The History plugin allows quick access to previouly selected results from other plugins. You can access and delete them using the direct activation command. 
-To delete them from history, select the "Remove this from history" context menu item.
+The History plugin allows quick access to previously selected results from other plugins. You can access and delete them using the direct activation command. To delete them from history, select the **Remove this from history** context menu item.
 
 #### History plugin examples
 
@@ -265,7 +263,9 @@ The Unit Converter plugin supports the following unit types:
 The Value Generator plugin can generate GUIDs/UUIDs, calculate hashes, and encode strings to base64.
 
 #### UUIDs
+
 It supports the following GUID versions:
+
 - v1 - Time based
 - v3 - Namespace and name based, using MD5
 - v4 - Random value
@@ -273,10 +273,11 @@ It supports the following GUID versions:
 
 > [!NOTE]
 > For versions 3 and 5 there are some predefined namespaces: DNS, URL, OID ad X500. You can use the following predefined namespaces:
-> * `ns:DNS`
-> * `ns:URL`
-> * `ns:OID`
-> * `ns:X500`
+>
+> - `ns:DNS`
+> - `ns:URL`
+> - `ns:OID`
+> - `ns:X500`
 
 Examples:
 
@@ -286,7 +287,7 @@ Examples:
 | `# guidv1` <br />`# uuidv1` | Generate a version 1 GUID. |
 | `# guidv3 ns:DNS www.microsoft.com` <br />`# uuidv3 ns:DNS www.microsoft.com` | Generate the GUID version 3 for `www.microsoft.com` using the DNS namespace. <br /> The namespace parameter can be any valid GUID, and the name parameter can be any string. |
 
-> [!NOTE]
+> [!TIP]
 > The `guid` and `uuid` keywords are interchangeable and the `v` is optional. I.e. `guid5` and `guidv5` are the same.
 
 #### Hashing
@@ -326,7 +327,7 @@ The Windows Settings plugin allows you to search for Windows settings. You can s
 To search by location you can use the following syntax:
 
 - `$ device:` to list all settings with 'device' in the area name.
-- `$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'.
+- `$ control>system>admin` shows all settings of the path Control Panel > System and Security > Administrative Tools.
 
 ### Service plugin
 
@@ -340,7 +341,7 @@ Additionally, you can use the following syntax:
 
 ### Kill a window process
 
-With the Window Walker plugin you can kill the process of a window if it hangs.
+With the Window Walker plugin you can kill the process of a window if it stops responding.
 
 > [!NOTE]
 > There are some limitations for the "kill process" feature:
@@ -358,9 +359,7 @@ If the File Explorer settings in Windows are not set to open each window in a se
 
 ![Explorer Process Info in PowerToys Run.](../images/pt-run-explorer-info.png)
 
-You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. After selecting the message, the "Folder options" window will open.
-
-On the "Folder options" window, you can enable the setting "Launch folder windows in a separate process".
+You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. After selecting the message, the "Folder options" window will open. Then enable the setting **Launch folder windows in a separate process**.
 
 ![Folder Options Window.](../images/pt-run-folder-options.png)
 
@@ -376,9 +375,9 @@ You can turn off the warning in the PowerToys Run plugin manager options for Win
 
 On the "Searching Windows" page, you can:
 
-- Select "Enhanced" mode to enable indexing across all of the drives on your Windows machine.
+- Select **Enhanced** mode to enable indexing across all of the drives on your Windows machine.
 - Specify folder paths to exclude.
-- Select the "Advanced Search Indexer Settings" (near the bottom of the menu options) to set advanced index settings, add or remove search locations, index encrypted files, etc.
+- Select the **Advanced Search Indexer Settings** (near the bottom of the menu options) to set advanced index settings, add or remove search locations, index encrypted files, etc.
 
 ![Advanced Indexing Settings.](../images/pt-run-indexing-advanced.png)
 

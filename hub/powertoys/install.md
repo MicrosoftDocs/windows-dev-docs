@@ -1,7 +1,7 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 04/19/2023
+ms.date: 08/03/2023
 ms.topic: quickstart
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -37,7 +37,7 @@ To install PowerToys using a Windows executable file:
 
 ## Install with Microsoft Store
 
-Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys). You must be using the [new Microsoft Store](https://blogs.windows.com/windowsExperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) which will be available for both Windows 11 and Windows 10.
+Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys).
 
 ## Install with Windows Package Manager
 
@@ -47,9 +47,9 @@ To install PowerToys using the [Windows Package Manager](../package-manager/wing
 winget install Microsoft.PowerToys --source winget
 ```
 
-## Installer args
+## Installer arguments
 
-The installer executable accepts the [Microsoft Standard Installer command-line options](/windows/win32/msi/standard-installer-command-line-options)
+The installer executable accepts the [Microsoft Standard Installer command-line options](/windows/win32/msi/standard-installer-command-line-options).
 
 Here are the common commands you may want:
 
@@ -63,9 +63,9 @@ Here are the common commands you may want:
 
 ### Extracting the MSI from the bundle
 
-Make sure you have Wix toolset installed. https://wixtoolset.org/releases/
+Make sure to have [WiX Toolset](https://wixtoolset.org/releases) installed.
 
-This PowerShell example assumes the default install location for Wix toolset 3.11.2 and the PowerToys installer downloaded to the desktop.
+This PowerShell example assumes the default install location for WiX Toolset and the PowerToys installer downloaded to the desktop.
 
 ```powershell
 cd $Env:WIX\"bin"
@@ -84,8 +84,8 @@ In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will
 
 In case there are problems with uninstalling a version, there are cleanup scripts available:
 
-- https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool
-- https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script
+- <https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool>
+- <https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script>
 
 ## Community-driven install tools
 
@@ -124,7 +124,7 @@ scoop update powertoys
 
 If you have issues when installing/updating, file an issue in the [Scoop repo on GitHub](https://github.com/lukesampson/scoop/issues).
 
-## Post Install
+## After installation
 
 After successfully installing PowerToys, an overview window will display with introductory guidance on each of the available utilities.
 

@@ -1,7 +1,7 @@
 ---
 title: PowerToys Image Resizer utility for Windows
 description: A Windows shell extension for bulk image-resizing
-ms.date: 04/27/2022
+ms.date: 08/03/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
 
 # Image Resizer utility
 
-Image Resizer is a Windows shell extension for bulk image-resizing. After installing PowerToys, right-click on one or more selected image files in File Explorer, and then select **Resize pictures** from the menu.
+Image Resizer is a Windows shell extension for bulk image-resizing. After installing PowerToys, right-click on one or more selected image files in File Explorer, and select **Resize pictures** from the menu.
 
 ![Image Resizer Demo.](../images/powertoys-resize-images.gif)
 
@@ -22,7 +22,7 @@ Image Resizer allows you to resize images by dragging and dropping your selected
 
 ## Settings
 
-Inside the PowerToys Settings window, on the Image Resizer tab, you can configure the following settings.
+On the Image Resizer tab, configure the following settings.
 
 ![PowerToys Image Resizer Settings.](../images/powertoys-imageresize-settings.png)
 
@@ -41,7 +41,7 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 
 ### Fallback encoding
 
-The fallback encoder is used when the file cannot be saved in its original format. For example, the Windows Meta File (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image cannot be saved in its original format. Image Resizer enables you to specify what format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. **This is not a file type conversion tool, but only works as a fallback for unsupported file formats.**
+The fallback encoder is used when the file cannot be saved in its original format. For example, the Windows Meta File (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image cannot be saved in its original format. Specify what format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. **This is not a file type conversion tool, but only works as a fallback for unsupported file formats.**
 
 ### File
 
@@ -56,7 +56,7 @@ The file name of the resized image can be modified with the following parameters
 | `%5` | Actual height |
 | `%6` | Actual width |
 
-Example: setting the filename format to: `%1 (%2)` on the file `example.png` and selecting the `Small` file size setting, would result in the file name `example (Small).png`. Setting the format to `%1_%4` on the file `example.jpg` and selecting the size setting `Medium 1366 x 768px` would result in the file name: `example_768.jpg`.
+Example: setting the filename format to `%1 (%2)` on the file `example.png` and selecting the `Small` file size setting, would result in the file name `example (Small).png`. Setting the format to `%1_%4` on the file `example.jpg` and selecting the size setting `Medium 1366 × 768px` would result in the file name `example_768.jpg`.
 
 You can specify a directory in the filename format to group resized images into sub-directories. Example: a value of `%2\%1` would save the resized image(s) to `Small\example.jpg`
 

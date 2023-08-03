@@ -131,10 +131,10 @@ items:
         href: ../powertoys/registry-preview.md
       - name: PowerToys Run
         href: ../powertoys/run.md
-      - name: Shortcut Guide
-        href: ../powertoys/shortcut-guide.md
       - name: Screen Ruler
         href: ../powertoys/screen-ruler.md
+      - name: Shortcut Guide
+        href: ../powertoys/shortcut-guide.md
       - name: Text Extractor
         href: ../powertoys/text-extractor.md
       - name: Video Conference Mute
