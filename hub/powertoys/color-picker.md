@@ -46,7 +46,7 @@ The copied color will be stored in your clipboard in the format that is configur
 
 ## Editor usage
 
-The editor lets you see the history of (up to 20) picked colors and copy their representation in any predefined string format. In PowerToys Settings you can configure which color formats are visible in the editor and in what order that they appear.
+The editor lets you see the history of (up to 20) picked colors and copy their representation in any predefined string format. In PowerToys Settings, you can configure which color formats are visible in the editor and in what order that they appear.
 
 The color in the middle represents your currently selected color from the colors history. By clicking on it, the fine-tuning control will appear, where you can change HSV or RGB values. Using the **Select** button will add the new color into the colors history.
 
