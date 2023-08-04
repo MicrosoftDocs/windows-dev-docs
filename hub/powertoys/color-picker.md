@@ -15,11 +15,11 @@ A system-wide color picking utility for Windows to pick colors from any screen a
 
 ## Getting started
 
-### Enable
+### Enabling Color Picker
 
-To start using Color Picker, enable it in the PowerToys Settings (Color Picker tab).
+To start using Color Picker, enable it in the PowerToys Settings (**Color Picker** tab).
 
-### Activate
+### Activating Color Picker
 
 Once enabled, you can choose one of the following three behaviors to be executed when launching Color Picker with the activation shortcut (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>).
 
@@ -29,7 +29,7 @@ Once enabled, you can choose one of the following three behaviors to be executed
 - **Color Picker with editor mode enabled** - Opens Color Picker. After selecting a color, the editor is opened and the selected color is copied to the clipboard (in the default format - configurable in the Settings dialog).
 - **Color Picker only** - Opens Color Picker only and the selected color will be copied to the clipboard.
 
-### Select color
+### Selecting colors
 
 After the Color Picker is activated, hover your mouse cursor over the color you would like to copy and left-click the mouse button to select a color. If you want to see the area around your cursor in more detail, scroll up to zoom in.
 
@@ -44,7 +44,7 @@ The copied color will be stored in your clipboard in the format that is configur
 > - Zoom in by scrolling the mouse wheel up (image will be frozen)
 > - In the enlarged area, you can pick the color of the element
 
-## Editor usage
+## Using the Color Picker editor
 
 The editor lets you see the history of (up to 20) picked colors and copy their representation in any predefined string format. In PowerToys Settings, you can configure which color formats are visible in the editor and in what order that they appear.
 
@@ -62,10 +62,10 @@ To export the colors history, right-click a color and select **Export**. The exp
 
 Color Picker has following settings:
 
-- Activation shortcut
-- Behavior of activation shortcut
-- The default format of a copied color (HEX, RGB, etc.)
-- Show the name of the color. The shown name will be a high-level representation of the color. Example: Light Green, Green, Dark Green.
+- **Activation shortcut**
+- **Activation behaviour**
+- **Default color format**, such as HEX, RGB, and more.
+- **Show color name** shows a high-level representation of the color. For example: Light Green, Green, Dark Green.
 - Order and presence of color formats in the editor
 
 ![ColorPicker Settings screenshot.](../images/pt-colorpicker-settings.gif)
@@ -74,15 +74,15 @@ To add a new color format, select **Add custom color format**.
 
 To reorder the colors, select the **...** button on the right and select **Move up** or **Move down**.
 
-To disable a color format, toggle the switch on the right. Disabled color formats are not deleted but are not shown in the Color Picker Editor window.
+To disable a color format, turn off the toggle next to that color format. Disabled color formats are not deleted but are not shown in the Color Picker editor window.
 
 To delete a color format, select the button with the bin icon.
 
-To edit a color format, click on the list item. In the appearing window the name and the format can be modified.
+To edit a color format, select it from the list. You can edit the color format's **Name** and **Format** in the dialog.
 
 ### Managing color formats
 
-Color formats can be deleted or edited and new color formats can be added to the list. The syntax is described in the color format editor window.
+You can add, edit, and delete color formats. The syntax is described in the color format editor dialog.
 
 The following table contains the parameters, which can be used for defining a color format and their meaning:
 

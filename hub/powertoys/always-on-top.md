@@ -18,7 +18,7 @@ With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ct
 
 ## Settings
 
-From the Settings tab, the following options can be configured:
+From the Settings tab, you can configure the following options:
 
 | Setting | Description |
 | :--- | :--- |
