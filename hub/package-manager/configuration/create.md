@@ -46,7 +46,7 @@ If an assertion returns “false” to indicate the system is not in the desired
 
 ### Resources section
 
-The list of Resources cover all of the software, tools, packages, etc. that need to be installed and the configurations settings for your Windows operating system or installed applications. Each resource will need to be given a name, description of the directive to be carried out and the PowerShell module that will be responsible for carrying out that directive, and any associated settings or dependencies.
+The list of Resources covers all of the software, tools, packages, etc. that need to be installed and the configurations settings for your Windows operating system or installed applications. Each resource will need to be given a name, description of the directive to be carried out and the PowerShell module that will be responsible for carrying out that directive, as well as any associated settings or dependencies.
 
 ## Example WinGet Configuration file
 
