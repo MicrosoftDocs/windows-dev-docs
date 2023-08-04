@@ -95,7 +95,7 @@ The components of this file consist of:
 
 1. **Schema**: The first line in your configuration file should contain the following comment: `# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/<most recent schema version #>` to establish the DSC schema being followed by the file. To find the most recent version of the WinGet Configuration schema, go to [https://aka.ms/configuration-dsc-schema/](https://aka.ms/configuration-dsc-schema/). The most recent schema number at the time of this example is `0.2`, so the schema was entered as: `# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2`.
 
-2. **Properties**: The root node for a configuration file is `properties` which must contain a configuration version (`configurationVersion: 0.2.0` in this example). This version should be updated in accordance with updates to the configuration file. The properties node should contain an `assertions` node and a `resources` node
+2. **Properties**: The root node for a configuration file is `properties` which must contain a configuration version (`configurationVersion: 0.2.0` in this example). This version should be updated in accordance with updates to the configuration file. The properties node should contain an `assertions` node and a `resources` node.
 
 3. **Assertions**: List the preconditions (or prerequisites) required for this configuration in this section.
 
