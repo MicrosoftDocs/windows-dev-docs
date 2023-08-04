@@ -15,7 +15,7 @@ When running any application as an administrator (also referred to as elevated p
 
 There are two options for PowerToys to support applications running as administrator (with elevated permissions):
 
-1. **Recommended**: PowerToys will display a notification when an elevated process is detected. Open PowerToys Settings. On the General tab, select <kbd>Restart as administrator</kbd>.
+1. **Recommended**: PowerToys will display a notification when an elevated process is detected. Open PowerToys Settings. On the General tab, select **Restart as administrator**.
 2. Enable **Always run as administrator** in the PowerToys Settings.
 
 ## Support for admin mode with PowerToys
