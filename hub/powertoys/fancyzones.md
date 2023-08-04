@@ -9,21 +9,21 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
 
 # FancyZones utility
 
-FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve your workflow and restore layouts quickly. FancyZones allows you to define a set of zone locations to be used as targets for windows on your desktop. When you drag a window into a zone, or enter the associated keyboard shortcut, the window is resized and repositioned to fill that zone.
+FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve your workflow and restore layouts quickly. You can define a set of zone locations to use as targets for windows on your desktop. When you drag a window into a zone, or enter the associated keyboard shortcut, the window is resized and repositioned to fill that zone.
 
 ## Snapping to a single zone with mouse
 
-First, drag the window. By default, you will also need to press and hold the <kbd>Shift</kbd> key (This setting can be disabled via Settings). You'll see the zones appear. As you move your mouse, hovering over a zone will highlight that zone.
+Drag the window. By default, you'll also need to select and hold the <kbd>Shift</kbd> key. You'll see the zones appear. As you move your mouse, hovering over a zone will highlight that zone.
 
 You can also trigger zone selection mode by using a non-primary mouse button if "Use non-primary mouse button to toggle zone activation" is selected.
 
-If both "Hold Shift key to activate zones while dragging" and "Use non-primary mouse button to toggle zone activation" are cleared, zones will appear immediately after you start dragging the window.
+If both **Hold Shift key to activate zones while dragging** and **Use non-primary mouse button to toggle zone activation** are cleared, zones will appear immediately after you start dragging the window.
 
 ![FancyZones in action screenshot.](../images/pt-fancy-zones2.png)
 
 ## Snapping to a single zone with keyboard
 
-First select **Override Windows Snap** in the FancyZones settings. Use <kbd>Win</kbd>+[arrow keys] to snap a window to a zone. Next zone to snap can be chosen either by its index or by relative position.
+Select **Override Windows Snap** in the FancyZones settings. Use <kbd>Win</kbd>+[arrow keys] to snap a window to a zone. Use **Move windows based on** to choose whether to move windows based the zone index or a window's relative position.
 
 ![Settings for Snapping to Multiple Zones via Keyboard.](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
 
@@ -33,9 +33,9 @@ A window can be snapped to more than one zone in the following ways.
 
 ### Snapping to two zones by hovering the edges
 
-If two zones are adjacent, a window can be snapped to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.
+If two zones are adjacent, you can snap a window to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.
 
-### Snapping to multiple zones with the mouse + keyboard
+### Snapping to multiple zones with the mouse and keyboard
 
 Drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
 
@@ -43,7 +43,7 @@ Drag the window until one zone is activated, then press and hold the <kbd>Contro
 
 ### Snapping to multiple zones with only the keyboard
 
-First select **Override Windows Snap** in the FancyZones settings and select **Move windows based on: Relative position**. Use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[arrow keys] to expand the window to multiple zones.
+Select **Override Windows Snap** in the FancyZones settings and select **Move windows based on: Relative position**. Use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[arrow keys] to expand the window to multiple zones.
 
 ![Settings for Snapping to Multiple Zones via Keyboard.](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
 
@@ -65,7 +65,7 @@ FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+[arr
 
 ### Snapping apps with elevated permission
 
-To snap applications that are elevated (such as Windows Terminal or Task Manager) run PowerToys in administrator mode. Read [Running as administrator](administrator.md) for more information.
+To snap applications that are elevated (such as Windows Terminal or Task Manager), run PowerToys in administrator mode. Read [Running as administrator](administrator.md) for more information.
 
 ## Getting started with the editor
 
@@ -73,13 +73,13 @@ FancyZones includes an editor to give you more control over your window layouts 
 
 ### Launch zones editor
 
-Launch the zones editor using the button in the PowerToys Settings tab or by pressing <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"; note that this shortcut can be changed in the Settings tab).
+Launch the zones editor by selecting **Launch layout editor** in the PowerToys Settings tab or by pressing <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"). You can change the FancyZones layout editor shortcut in PowerToys Settings.
 
 ![FancyZones Settings UI.](../images/pt-fancyzones-settings.png)
 
 ### Choose your layout (Layout Editor)
 
-When first launched, the zones editor presents a list of layouts that can be adjusted by how many windows are on the monitor. Selecting a layout shows a preview of that layout on the screen. The selected layout is applied automatically. Double-clicking a layout will apply it and close the editor.
+When you first launch the zones editor, you'll see a list of layouts that can be adjusted by how many windows are on the monitor. Selecting a layout shows a preview of that layout on the screen. The selected layout is applied automatically. Double-clicking a layout will apply it and close the editor.
 
 ![FancyZones Picker screenshot.](../images/pt-fancyzones-picker.png)
 
@@ -89,11 +89,11 @@ If multiple displays are in use, the editor will detect the available monitors a
 
 ### Space around zones
 
-The **Show space around zones** setting determines what sort of margin will surround each FancyZone window. Enter a custom value for the width of the margin in **Space around zones**. With the Zones Editor open, change the **Show space around zones** after changing the values to see the new value applied.
+**Show space around zones** sets the size of margin around each FancyZone window. Enter a custom value for the width of the margin in **Space around zones**. With the zones editor open, change **Show space around zones** after changing the values to see the new value applied.
 
-The **Distance to highlight adjacent zones** sets a custom value for the amount of space between zones until they snap together, or before both are highlighted enabling them to merge together.
+**Distance to highlight adjacent zones** sets a custom value for the amount of space between zones until they snap together, or before both are highlighted enabling them to merge together.
 
-The **Default layout for horizontal monitor orientation** and **Default layout for vertical monitor orientation** flags can be used to set which layout will be used as default when display configuration is changed in the system (e.g. new display was added).
+**Default layout for horizontal monitor orientation** and **Default layout for vertical monitor orientation** set which layout to use as the default when the display configuration is changed in the system (for example, if you add a new display).
 
 ![FancyZones space around zones screenshot.](../images/pt-fancyzones-spacearound.png)
 
