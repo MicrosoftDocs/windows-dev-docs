@@ -34,7 +34,7 @@ To create mappings with Keyboard Manager, open the PowerToys Settings. Inside Po
 - Launch the Remap Keys settings window by selecting **Remap a key**
 - Launch the Remap Shortcuts settings window by selecting **Remap a shortcut**
 
-### Remap Keys
+### Remapping keys
 
 To remap a key, changing it to a new value, launch the Remap Keyboard settings window with the **Remap a Key** button. When first launched, no predefined mappings will be displayed. Select the **+** button to add a new remap.
 
@@ -54,7 +54,7 @@ To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add anothe
 
 ![Keyboard Remap Keys screenshot.](../images/powertoys-keyboard-remap-a-b.png)
 
-### Key to Shortcut
+### Remapping a key to a shortcut
 
 To remap a key to a shortcut (combination of keys), enter the shortcut key combination in the "Mapped To" column.
 
@@ -65,13 +65,13 @@ For example, to press the <kbd>Ctrl</kbd> key and have it result in `⊞ Win` + 
 | `Ctrl` | `⊞ Win` + `←` |
 
 > [!IMPORTANT]
-> Key remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>Ctrl</kbd>+<kbd>C</kbd> would result as `⊞ Win` + `left arrow` + `C`. Pressing the <kbd>Ctrl</kbd> key will first execute `⊞ Win` + `left arrow`. Pressing the <kbd>C</kbd> key first will execute `C` + `⊞ Win` + `left arrow`.
+> Key remapping will be maintained even if the remapped key is used inside another shortcut. The order of key press matters in this scenario as the action is executed during key-down, not key-up. For example, pressing <kbd>Ctrl</kbd>+<kbd>C</kbd> would result as `⊞ Win` + `left arrow` + `C`. Pressing the <kbd>Ctrl</kbd> key will first execute `⊞ Win` + `left arrow`. Pressing the <kbd>C</kbd> key first will execute `C` + `⊞ Win` + `left arrow`.
 
-### Remap Shortcuts
+### Remapping shortcuts
 
 To remap a shortcut key combination, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, select **Remap a shortcut** to launch the Remap Shortcuts settings window.
 
-When first launched, no predefined mappings will be displayed. Select the **+** button to add a new remap.
+When first launched, no predefined mappings will be displayed. Select **+** to add a new remap.
 
 Once a new remap row appears, select the input keys whose output you want to _change_ in the “Physical Shortcut” column. Select the new shortcut value to assign in the “Mapped To” column.
 
@@ -91,7 +91,7 @@ There are a few rules to follow when remapping shortcuts. These rules only apply
 
 ### Remap a shortcut to a single key
 
-It is possible to remap a shortcut (key combination) to a single key press by selecting the **Remap a shortcut** button in PowerToys Settings.
+It is possible to remap a shortcut (key combination) to a single key press by selecting **Remap a shortcut** in PowerToys Settings.
 
 For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arrow) with a single key press **Alt**:
 
@@ -100,7 +100,7 @@ For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arr
 | `⊞ Win` + `←` | `Alt` |
 
 > [!IMPORTANT]
-> Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example: pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
+> Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of key press matters in this scenario as the action is executed during key-down, not key-up. For example: pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
 
 ### App-specific shortcuts
 
@@ -128,10 +128,10 @@ Keyboard Manager uses process-names (not application names) to target apps. For 
 
 To select a key or shortcut to remap:
 
-- Use the **Type Key** or **Type Shortcut** button.
+- Select **Type Key** or **Type Shortcut**.
 - Use the drop-down menu.
 
-Once you select the **Type Key** or **Type Shortcut** button, a dialogue window will pop up in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. If you’d like to leave the dialogue, hold the <kbd>Esc</kbd> button.
+Once you select **Type Key** or **Type Shortcut**, a dialogue window will pop up in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. If you’d like to leave the dialogue, hold <kbd>Esc</kbd>.
 
 Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can not use the type-key feature while the drop-down menu is open.
 
@@ -175,7 +175,7 @@ Currently no. We are not aware of an API where we can see the input and which de
 
 ### I see keys listed in the drop down menus that don't work. Why is that?
 
-Keyboard Manager lists mappings for all known physical keyboard buttons. Some of these mappings may not be available on your keyboard as there may not be a physical key that it corresponds to. For instance, the <kbd>Start App 1</kbd> option shown below is only available on keyboards that physically have a <kbd>Start App 1</kbd> key. Trying to map to and from this key on a keyboard that does not support the <kbd>Start App 1</kbd> key will result in undefined behavior.
+Keyboard Manager lists mappings for all known physical keyboard keys. Some of these mappings may not be available on your keyboard as there may not be a physical key that it corresponds to. For instance: the <kbd>Start App 1</kbd> option shown below is only available on keyboards that physically have a <kbd>Start App 1</kbd> key. Trying to map to and from this key on a keyboard that does not support the <kbd>Start App 1</kbd> key will result in undefined behavior.
 
 ![PowerToys Keyboard Manager List of Keys.](../images/pt-key-remap-drop-down.png)
 
@@ -188,8 +188,8 @@ If you have tried to remap a key or shortcut and are having trouble, it could be
 
 ## Known Issues
 
-- Keyboard Manager should not be used when playing video games.  Keyboard Manager interception of keypresses currently will impact the FPS.
-- [Remapping keys like Win, Ctrl, Alt or Shift may break gestures and some special buttons](https://github.com/microsoft/PowerToys/issues/3703)
+- Keyboard Manager should not be used when playing video games. Keyboard Manager interception of key presses currently will impact the FPS.
+- [Remapping keys like Win, Ctrl, Alt or Shift may break gestures and some special keys](https://github.com/microsoft/PowerToys/issues/3703)
 - AltGr and Ctrl+Alt gives issues, since AltGr behaves as (L)Ctrl + (R)Alt and remapping one of these keys can break the function.
 
 See the list of all [open keyboard manager issues](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-Keyboard+Shortcut+Manager%22).

@@ -14,7 +14,7 @@ The Hosts File Editor provides a convenient way to edit the hosts file configura
 
 This can be useful for scenarios like migrating a website to a new hosting provider or domain name, which may take a 24-48 hour period of downtime. Creating a custom IP address to associate with your domain using the hosts file can enable you to see how it will look on the new server.
 
-## Add a new entry
+## Adding a new entry
 
 Ensure that the Hosts File Editor is set to **On** in the PowerToys Settings.
 
@@ -24,17 +24,17 @@ To add a new entry using the Hosts File Editor:
 - Enter the IP address
 - Enter the Host name
 - Enter any comments that may be helpful in identifying the purpose of the entry
-- Set the **Active** toggleswitch to on and select **Add**
+- Turn the **Active** toggle on and select **Add**
 
 ![PowerToys Hosts File Editor: Add new entry](../images/pt-hosts-file-editor-add-new-entry.gif)
 
-## Filter host file entries
+## Filtering host file entries
 
 To filter host file entries, select the filter icon and then enter characters in either the Address, Hosts, or Comment field to narrow the scope of results.
 
 ![PowerToys Hosts File Editor: Filtering entries](../images/pt-hosts-file-editor-filter.gif)
 
-## Backup Hosts file
+## Back up Hosts file
 
 Hosts File Editor creates a backup of the hosts file before editing session. The backup files are located near the hosts file in `%SystemRoot%/System32/drivers/etc` named `hosts_PowerToysBackup_YYYYMMDDHHMMSS`.
 
@@ -55,4 +55,4 @@ A "Failed to save hosts file" error appears if a change is made without administ
 
 ![PowerToys Hosts File Editor: Failed to save hosts file](../images/pt-hosts-file-editor-failed-to-save-hosts-file-error.png)
 
-Select **Launch as administrator** option in settings to fix the error.
+Select **Launch as administrator** in settings to fix the error.

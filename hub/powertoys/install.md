@@ -7,7 +7,7 @@ ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 ---
 
-# Install PowerToys
+# Installing PowerToys
 
 We recommend installing PowerToys via GitHub or Microsoft Store, but alternative install methods are also listed if you prefer using a package manager.
 
@@ -23,7 +23,7 @@ We recommend installing PowerToys via GitHub or Microsoft Store, but alternative
 
 To ensure that your machine meets these requirements, check your Windows version and build number by pressing <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 
-## Install with Windows executable file via GitHub
+## Installing with Windows executable file via GitHub
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](https://aka.ms/installpowertoys)
@@ -35,11 +35,11 @@ To install PowerToys using a Windows executable file:
 3. Select the `PowerToysSetup-0.##.#-x64.exe` or `PowerToysSetup-0.##.#-arm64.exe` file to download the PowerToys executable installer.
 4. Once downloaded, open the executable file and follow the installation prompts.
 
-## Install with Microsoft Store
+## Installing with Microsoft Store
 
 Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys).
 
-## Install with Windows Package Manager
+## Installing with Windows Package Manager
 
 To install PowerToys using the [Windows Package Manager](../package-manager/winget/index.md), it is as simple as running the following command from the command line / PowerShell:
 
@@ -91,7 +91,7 @@ In case there are problems with uninstalling a version, there are cleanup script
 
 These community-driven alternative install methods are not officially supported and the PowerToys team does not update or manage these packages.
 
-### Install with Chocolatey
+### Installingwith Chocolatey
 
 To install [PowerToys](https://community.chocolatey.org/packages/powertoys) using [Chocolatey](https://chocolatey.org/), run the following command from your command line / PowerShell:
 
@@ -107,7 +107,7 @@ choco upgrade powertoys
 
 If you have issues when installing/upgrading, create an issue at the [maintainers GitHub repository](https://github.com/mkevenaar/chocolatey-packages/issues) or follow the [Chocolatey triage process](https://docs.chocolatey.org/en-us/community-repository/users/package-triage-process).
 
-### Install with Scoop
+### Installingwith Scoop
 
 To install PowerToys using [Scoop](https://scoop.sh/), run the following command from the command line / PowerShell:
 

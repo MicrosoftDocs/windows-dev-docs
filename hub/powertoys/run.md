@@ -53,7 +53,7 @@ The following general options are available on the PowerToys Run settings page.
 | Wait for slower plugin results before selecting top item in results | Selecting this can help preselect the top, more relevant result, but at the risk of jumpiness |
 | Tab through context buttons | When enabled, you can tab through the context buttons before tabbing to the next result |
 | Generate thumbnails for files | When enabled, thumbnails will be generated for files in the results list (Disabling this can increase speed and stability) |
-| Preferred monitor position | If multiple displays are in use, PowerToys Run can be launched on:<br />- Primary display<br />- Display with mouse cursor<br />- Display with focused window |
+| Preferred monitor position | If multiple displays are in use, PowerToys Run can be launched on:<br />• Primary display<br />• Display with mouse cursor<br />• Display with focused window |
 | App theme | Change the color theme used by PowerToys Run |
 
 ### Plugin manager
@@ -359,7 +359,7 @@ If the File Explorer settings in Windows are not set to open each window in a se
 
 ![Explorer Process Info in PowerToys Run.](../images/pt-run-explorer-info.png)
 
-You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. After selecting the message, the "Folder options" window will open. Then enable the setting **Launch folder windows in a separate process**.
+You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. After selecting the message, the "Folder options" window will open. Then select **Launch folder windows in a separate process**.
 
 ![Folder Options Window.](../images/pt-run-folder-options.png)
 

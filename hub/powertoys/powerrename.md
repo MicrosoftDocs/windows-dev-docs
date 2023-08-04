@@ -83,7 +83,7 @@ Clearing causes files within folders to not be included in the operation. By def
 
 ### Text formatting
 
-Select between four options to either convert items to be all lowercase, all uppercase, title case (first character of sentence is capitalized), or capitalize every word.
+Choose between four options to either convert items to be all lowercase, all uppercase, title case (first character of sentence is capitalized), or capitalize every word.
 
 ### Enumerate items
 
@@ -196,7 +196,7 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
 
 ## Settings
 
-Additional options can be configured from the PowerRename tab in the Settings, as described below:
+Additional options can be configured from the **PowerRename** tab in the Settings, as described below:
 
 | Setting | Description |
 | :--- | :--- |

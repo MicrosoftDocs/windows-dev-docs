@@ -18,7 +18,7 @@ Image Resizer allows you to resize images by dragging and dropping your selected
 ![Image Resizer Drag And Drop Demo.](../images/powertoys-resize-drag-drop.gif)
 
 > [!NOTE]
-> If **Ignore the orientation of pictures** is checked, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If checked, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
+> If **Ignore the orientation of pictures** is selected, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If selected, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
 
 ## Settings
 
@@ -28,7 +28,7 @@ On the Image Resizer tab, configure the following settings.
 
 ### Sizes
 
-Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The dimension to be used for resizing can be configured as Centimeters, Inches, Percent and Pixels.
+Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The dimension to be used for resizing can be configured as centimeters, inches, percent and pixels.
 
 #### Fill versus Fit versus Stretch
 

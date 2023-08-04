@@ -17,7 +17,7 @@ PowerToys **Registry Preview** simplifies the process of visualizing and editing
 
 ### Enable
 
-To start using Registry Preview, enable it in the PowerToys Settings (Registry Preview tab).
+To start using Registry Preview, enable it in the PowerToys Settings (**Registry Preview** tab).
 
 ### How to activate
 
