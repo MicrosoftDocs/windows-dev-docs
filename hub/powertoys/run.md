@@ -262,7 +262,7 @@ The Unit Converter plugin supports the following unit types:
 
 ### Value Generator plugin
 
-The Value Generator plugin can generate GUIDs/UUIDs, calculate hashes, and encode strings to base64.
+The Value Generator plugin can generate GUIDs/UUIDs, calculate hashes, and encode/decode strings to base64.
 
 #### UUIDs
 It supports the following GUID versions:
@@ -308,6 +308,12 @@ Usage:
 Usage:
 
 - `# base64 abc`
+
+#### Base64 Decoding
+
+Usage:
+
+- `# base64d SGVsbG8gV29ybGQ=`
 
 ### Folder search filters
 
