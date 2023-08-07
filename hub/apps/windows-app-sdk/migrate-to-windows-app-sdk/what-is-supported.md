@@ -35,7 +35,10 @@ WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, 
 | [MapControl](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/27-map-control) | ❌ Not supported in 1.3 |
 | [Single-app kiosk](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/62-support-single-app-kiosk) | ❌ Not supported in 1.3 |
 | [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) API | ❌ Not supported in 1.3 |
-| WebAuthenticationBroker | ❌ Not supported in 1.3 |
+| [WebAuthenticationBroker](/windows/uwp/security/web-authentication-broker) | ❌ Not supported in 1.3 |
+| [CoreWindow](/uwp/api/windows.ui.core.corewindow) and related APIs | ❌ Not supported in 1.3. For alternative APIs, see [HWND](/windows/apps/develop/ui-input/retrieve-hwnd) based ones. |
+| [Composition/DirectX interop](https://github.com/microsoft/microsoft-ui-xaml/issues/5025) | ❌ Not supported in 1.3 |
+| [Xbox](/windows/uwp/xbox-apps/) and HoloLens support | ❌ Not supported in 1.3 |
 
 ## Performance considerations
 
