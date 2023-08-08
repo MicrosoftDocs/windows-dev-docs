@@ -15,13 +15,13 @@ PowerToys **Paste as Plain Text** enables you to paste text stored in your clipb
 
 ## Getting started
 
-### Enable
+### Enabling
 
-To start using Paste as Plain Text, enable it in the PowerToys Settings (Paste as Plain Text section).
+To start using Paste as Plain Text, enable it in the PowerToys Settings (Paste as Plain Text tab).
 
-### Activate
+### Activating
 
-Once enabled, execute the paste as plain text action with the activation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd>).
+Execute the paste as plain text action with the activation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd>).
 
 ## Settings
 

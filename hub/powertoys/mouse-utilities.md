@@ -1,7 +1,7 @@
 ---
 title: PowerToys Mouse utilities for Windows
 description: A collection of utilities to expand the range of usage for the mouse and cursor.
-ms.date: 04/19/2023
+ms.date: 08/03/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Mouse, jump]
@@ -9,12 +9,7 @@ no-loc: [PowerToys, Windows, Mouse, jump]
 
 # Mouse utilities
 
-Mouse utilities is a collection of features that enhance mouse and cursor functionality on Windows. Currently, the collection consists of:
-
-- [Find my mouse](#find-my-mouse)
-- [Mouse highlighter](#mouse-highlighter)
-- [Mouse jump](#mouse-jump)
-- [Mouse pointer crosshairs](#mouse-pointer-crosshairs)
+Mouse utilities is a collection of features that enhance mouse and cursor functionality on Windows.
 
 ## Find my mouse
 
@@ -24,12 +19,12 @@ Double press the left <kbd>Ctrl</kbd> key or shake the mouse to activate a spotl
 
 ### Settings
 
-From the settings menu, the following options can be configured:
+From the settings page, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation method | Choose between "Press left Ctrl twice" or "Shake mouse". |
-| Minimum distace to shake | Adjust sensitivity. |
+| Activation method | Choose between **Press left Ctrl** twice or **Shake mouse**. |
+| Minimum distance to shake | Adjust sensitivity. |
 | Do not activate when Game Mode is on | Prevents the spotlight from being used when actively playing a game on the system. |
 | Overlay opacity | The opacity of the spotlight backdrop. (default: 50%) |
 | Background color | The color of the spotlight backdrop. (default: #000000) |
@@ -47,13 +42,14 @@ Display visual indicators when the left or right mouse buttons are clicked. By d
 
 ![Screenshot of Mouse highlighter.](../images/pt-mouse-highlighter.gif)
 
-From the settings menu, the following options can be configured:
+From the settings page, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn on or off mouse highlighting. |
 | Left button highlight color | The highlighter color for the left mouse button. |
 | Right button highlight color | The highlighter color for the right mouse button. |
+| Always on highlight color | The highlighter color for the mouse pointer. |
 | Overlay opacity | The opacity of the highlighter. |
 | Radius | The radius of the highlighter - Measured in pixels. |
 | Fade delay | How long it takes before a highlight starts to disappear - Measured in milliseconds. |
@@ -67,7 +63,7 @@ Mouse jump allows moving the mouse pointer long distances on a single screen or 
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to activate the ability to mouse jump. |
+| Activation shortcut | The customizable keyboard command to activate the mouse jump. |
 
 ## Mouse pointer Crosshairs
 
@@ -84,3 +80,6 @@ Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 | Crosshairs thickness | (default: 5px) |
 | Border color | The color for the crosshair borders. |
 | Border size | Size of the border, in pixels. |
+| Automatically hide crosshairs when the mouse pointer is hidden | |
+| Fix crosshairs length | |
+| Crosshairs fixed length (px) | |

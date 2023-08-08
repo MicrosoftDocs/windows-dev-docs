@@ -27,26 +27,13 @@ File Explorer add-ons currently include:
   - G-code files (.gcode)
   - STL files (.stl)
 
-## Enable PowerToys Thumbnail Previews
-
-> [!NOTE]
-> A reboot may be required after enabling the thumbnail previewer for the settings to take effect.
-> Thumbnails might not appear on paths managed by cloud storage solutions like OneDrive, since these solutions may get their thumbnails from the cloud instead of generating them locally.
-Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerToys adds multiple extensions: SVG, PDF, G-code and STL.
-
-To enable preview support, set the extension to **On**.
-
-### Settings for Stereolithography (.stl) files
-
-You can expand the **STL** section to change the background color.
-
 ## Preview Pane previewers in PowerToys
 
-Preview Pane is an existing feature in the Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, and G-code. In addition to those, PowerToys also adds support for source code files (for more than 150 file extensions).
+Preview Pane is an existing feature in the Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, and G-code. In addition to those, PowerToys also adds support for source code files for more than 150 file extensions.
 
 ### Settings for Source code files previewer
 
-You can expand the **Source code files (Monaco)** section to change the following settings.
+Expand the **Source code files (Monaco)** section to change the following settings.
 
 | Setting | Description |
 | :-- | :-- |
@@ -76,3 +63,16 @@ Open Windows File Explorer, select the **View** tab in the File Explorer ribbon,
 
 > [!NOTE]
 > It is not possible to change the background color of the preview pane, so if you are working with transparent SVG images with white shapes, you may not be able to see them in the preview.
+
+## Enable PowerToys Thumbnail Previews
+
+To enable preview support, set the extension to **On**.
+
+> [!NOTE]
+> A reboot may be required after enabling the thumbnail previewer for the settings to take effect.
+> Thumbnails might not appear on paths managed by cloud storage solutions like OneDrive, since these solutions may get their thumbnails from the cloud instead of generating them locally.
+Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerToys adds support for multiple extensions: SVG, PDF, G-code and STL.
+
+### Settings for Stereolithography (.stl) files
+
+Expand the **Stereolithography** section to change the background color.

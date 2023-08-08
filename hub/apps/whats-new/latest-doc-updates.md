@@ -18,39 +18,37 @@ For the latest Windows Developer Documentation news, or to reach out to us with 
 
 Don't forget to visit the [Windows Developer Center](https://developer.microsoft.com/windows/), where we highlight some of the latest technologies, frameworks and news for Windows developers.
 
-*Many thanks to everyone who has contributed to the documentation. Your corrections and suggestions are very welcome! For information on contributing, please see our [contributor guide](/contribute/).*
+_Many thanks to everyone who has contributed to the documentation. Your corrections and suggestions are very welcome! For information on contributing, please see our [contributor guide](/contribute/)._
 
 Highlights this month include:
 
 ## Microsoft Build announcements for Windows developers
 
 * [Dev Home](/windows/dev-home/): Monitor your work in the centralized dashboard, GitHub and System performance widgets. Get setup and onboard new projects with the Machine configuration tool. Learn about Dev Home’s:  
-    * [Dashboard widgets](/windows/dev-home/), including the ability to set up customized GitHub feeds, 
-    * [Machine configuration tool](/windows/dev-home/setup) for setting up a new machine or onboard a new project, and  
-    * [Customizable extensions](/windows/dev-home/extensions), with the ability to set up GitHub notifications or build and share your own Open Source extension for Dev Home. 
+  * [Dashboard widgets](/windows/dev-home/), including the ability to set up customized GitHub feeds,
+  * [Machine configuration tool](/windows/dev-home/setup) for setting up a new machine or onboard a new project, and  
+  * [Customizable extensions](/windows/dev-home/extensions), with the ability to set up GitHub notifications or build and share your own Open Source extension for Dev Home.
 
-* [Dev Drive](/windows/dev-drive/): Improve your dev workload performance using this new storage format, using ReFS and specifically designed for developer scenarios, with the ability to designate trust, manage antivirus configurations, and attach security filters. 
-    * Microsoft Defender has a new [performance mode](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode?view=o365-worldwide) specifically designed for Dev Drive. 
+* [Dev Drive](/windows/dev-drive/): Improve your dev workload performance using this new storage format, using ReFS and specifically designed for developer scenarios, with the ability to designate trust, manage antivirus configurations, and attach security filters.
+  * Microsoft Defender has a new [performance mode](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode?view=o365-worldwide) specifically designed for Dev Drive.
 
-* [WinGet Configuration](/windows/package-manager/configuration/): Consolidate manual machine setup and project onboarding to a single command that is reliable and repeatable. Learn how to: 
-    * [Author a WinGet Configuration file](/windows/package-manager/configuration/create), 
-    * [Check the trustworthiness of a WinGet Configuration file](/windows/package-manager/configuration/check), 
-    * [Use the winget configure command](/windows/package-manager/winget/configure) to begin setting up your machine to the desired configuration state. 
+* [WinGet Configuration](/windows/package-manager/configuration/): Consolidate manual machine setup and project onboarding to a single command that is reliable and repeatable. Learn how to:
+  * [Author a WinGet Configuration file](/windows/package-manager/configuration/create),
+  * [Check the trustworthiness of a WinGet Configuration file](/windows/package-manager/configuration/check),
+  * [Use the winget configure command](/windows/package-manager/winget/configure) to begin setting up your machine to the desired configuration state.
 
-* [PowerToys](/windows/powertoys/): These open source utilities are suggested by and developed with the help of the developer community using Windows. New utilities in the .70 release include: 
-    * [Mouse without Borders](/windows/powertoys/mouse-without-borders), for seamless transition between multiple machines from the same keyboard and mouse, sharing clipboard contents and files,  
-    * [Peek](/windows/powertoys/peek), for previewing file content without the need to open multiple apps or interrupt your workflow, 
-    * [Paste as Plain Text](/windows/powertoys/paste-as-plain-text), for pasting text from your clipboard, excluding any text-formatting. 
+* [PowerToys](/windows/powertoys/): These open source utilities are suggested by and developed with the help of the developer community using Windows. New utilities in the .70 release include:
+  * [Mouse without Borders](/windows/powertoys/mouse-without-borders), for seamless transition between multiple machines from the same keyboard and mouse, sharing clipboard contents and files,  
+  * [Peek](/windows/powertoys/peek), for previewing file content without the need to open multiple apps or interrupt your workflow,
+  * [Paste as Plain Text](/windows/powertoys/paste-as-plain-text), for pasting text from your clipboard, excluding any text-formatting.
 
-* [Windows Terminal](/windows/terminal/): Customize your terminal and running multiple command lines, all set up to their specific preferences. Learn more about how to customize your prompt and the new Tab Tearout feature. 
+* [Windows Terminal](/windows/terminal/): Customize your terminal and running multiple command lines, all set up to their specific preferences. Learn more about how to customize your prompt and the new Tab Tearout feature.
 
-* [Windows Copilot](/windows/dev-environment/): The first PC platform to provide centralized AI assistance and designed to help people easily take action and get things done is coming soon! 
+* [Windows Copilot](/windows/dev-environment/): The first PC platform to provide centralized AI assistance and designed to help people easily take action and get things done is coming soon!
 
-* [Windows on Arm](/windows/arm/overview): We’ve got a new tutorial that can help you update your apps to run natively on Arm. 
-
+* [Windows on Arm](/windows/arm/overview): We’ve got a new tutorial that can help you update your apps to run natively on Arm.
 
 <hr>
-
 
 The following list of topics have also seen significant updates in the past month:
 
@@ -58,14 +56,12 @@ The following list of topics have also seen significant updates in the past mont
 
 * [WinAppSDK 1.4 Experimental Release Notes](/windows/apps/windows-app-sdk/experimental-channel)
 
-
 ## Code samples, tutorials and Learn Module updates
 
-* Added [examples page for a new Win32 bindlink.h header](/windows/win32/bindlink/bindlink-example). 
-* Added [examples page for a new Win32 hwreqchkapi.h header](/windows/win32/hwreqchkapi/hwreqchk-examples), including four code examples. 
-* Rust: Fixed the code sample in [RSS reader tutorial](/windows/dev-environment/rust/rss-reader-rust-for-windows). 
-* C++/WinRT: Updated [A completion source sample](/windows/uwp/cpp-and-winrt-apis/concurrency-3). 
-
+* Added [examples page for a new Win32 bindlink.h header](/windows/win32/bindlink/bindlink-example).
+* Added [examples page for a new Win32 hwreqchkapi.h header](/windows/win32/hwreqchkapi/hwreqchk-examples), including four code examples.
+* Rust: Fixed the code sample in [RSS reader tutorial](/windows/dev-environment/rust/rss-reader-rust-for-windows).
+* C++/WinRT: Updated [A completion source sample](/windows/uwp/cpp-and-winrt-apis/concurrency-3).
 
 ## Updated content
 
@@ -75,17 +71,12 @@ The following list of topics have also seen significant updates in the past mont
 * [Use the Windows App SDK in a WPF app](/windows/apps/windows-app-sdk/wpf-plus-winappsdk)
 * [Win2D](/windows/apps/develop/win2d/) content migrated from GitHub
 
-
 ## Developer tool updates
 
 * [Windows Subsystem for Linux, Enterprise and Security Control Options](/windows/wsl/enterprise).
 * [Windows Subsystem for Android updates](/windows/android/wsa/).
 * [Windows Package Manager updates](/windows/package-manager/).
 * [PowerToys](/windows/powertoys/install).
-
-
-
-
 
 ## Win32 Conceptual
 
@@ -154,6 +145,7 @@ The following list of topics have also seen significant updates in the past mont
 * [STRINGTABLE resource](/windows/desktop/menurc/stringtable-resource)
 
 ## Win32 API reference
+
 * [Data Access and Storage](/windows/win32/api/_fs/index)
 * [Human Interface Devices Reference](/windows/win32/api/_hid/index)
 * [Hardware Requirement Evaluator (HWREQCHK)](/windows/win32/api/_hwreqchk/index)
