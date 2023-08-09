@@ -58,6 +58,17 @@ The currently available utilities include:
             :::column-end:::
 :::row-end:::
 
+### Crop And Lock
+
+:::row:::
+    :::column:::
+        [![Crop And Lock screenshot.](../images/powertoys-crop-and-lock.png)](crop-and-lock.md)
+    :::column-end:::
+    :::column span="2":::
+        [Crop And Lock](crop-and-lock.md) is a utility that creates a new window that's a crop or a thumbnail of another window.
+    :::column-end:::
+:::row-end:::
+
 ### FancyZones
 
 :::row:::
