@@ -322,6 +322,14 @@ You can access Dev Drive project files, which run on the Windows file system, fr
 
 See [`MSFT_Volume class`](/windows-hardware/drivers/storage/format-msft-volume) in the Windows Driver docs.
 
+### How to configure and use Live Unit Testing with a Dev Drive?
+
+You can find guidance on [How to configure and use Live Unit Testing](/visualstudio/test/live-unit-testing) in the Visual Studio documentation. However, be aware that there is a dependency on [ProjFS](/windows/win32/projfs/projected-file-system). You will need to move the Live Unit Testing workspace root to the Dev Drive and add Windows Projected File System to the allowed filter list. You can do so using the following command in PowerShell:
+
+```powershell
+fsutil devdrv setfiltersallowed PrjFlt
+```
+
 ### How to contribute to these docs and FAQs?
 
 If you find any issues in this documentation or would like to contribute additional FAQ suggestions, visit the [Windows Dev Docs open source repo on GitHub](https://github.com/MicrosoftDocs/windows-dev-docs/issues).
