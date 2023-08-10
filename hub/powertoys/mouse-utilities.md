@@ -46,7 +46,7 @@ From the settings page, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to turn on or off mouse highlighting. |
+| Activation shortcut | The customizable keyboard command to turn mouse highlighting on or off. |
 | Left button highlight color | The highlighter color for the left mouse button. |
 | Right button highlight color | The highlighter color for the right mouse button. |
 | Always on highlight color | The highlighter color for the mouse pointer. |
@@ -73,7 +73,7 @@ Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to turn on or off mouse crosshairs. |
+| Activation shortcut | The customizable keyboard command to turn mouse crosshairs on or off. |
 | Color | The color for the crosshairs. |
 | Opacity | (default: 75%) |
 | Center radius | (default: 20px) |

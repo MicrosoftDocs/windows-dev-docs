@@ -22,7 +22,7 @@ To add a new entry using the Hosts File Editor:
 - Enter the IP address
 - Enter the Host name
 - Enter any comments that may be helpful in identifying the purpose of the entry
-- Turn the **Active** toggle on and select **Add**
+- Turn on the **Active** toggle and select **Add**
 
 ![PowerToys Hosts File Editor: Add new entry](../images/pt-hosts-file-editor-add-new-entry.gif)
 

@@ -46,7 +46,7 @@ It's possible to switch the order of the devices by dragging the device icon to 
 
 To allow Mouse Without Borders to control elevated applications or the lock screen from another computer, it's possible to run Mouse Without Borders as a service under the System account.
 
-To enable the service mode, run PowerToys in administrator mode and turn **Use Service** on, on the Mouse Without Borders page.
+To enable the service mode, run PowerToys in administrator mode and turn the **Use Service** toggle on.
 
 > [!WARNING]
 > Running Mouse Without Borders as a service account brings added control and ease of use to the controlled machines, but this also brings some additional security risks in case someone wants to use Mouse Without Borders as an attack vector. Be mindful of your risk tolerance.

@@ -43,7 +43,7 @@ Drag the window until one zone is activated, then press and hold the <kbd>Ctrl</
 
 ### Snapping to multiple zones with only the keyboard
 
-Turn **Override Windows Snap** on in the FancyZones settings and select **Move windows based on: Relative position**. Use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[arrow keys] to expand the window to multiple zones.
+Turn on the **Override Windows Snap** toggle and select **Move windows based on: Relative position**. Use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[arrow keys] to expand the window to multiple zones.
 
 ![Settings for Snapping to Multiple Zones via Keyboard.](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
 
@@ -127,7 +127,7 @@ Canvas layout also has keyboard support for zone editing. Use the arrow keys (Le
 ### Quickly changing between custom layouts
 
 > [!NOTE]
-> Turn **Enable quick layout switch** on in the settings to use this feature.
+> Turn on the **Enable quick layout switch** toggle to use this feature.
 
 A custom layout can be configured to have a user-defined hotkey to quickly apply it to the active screen. The hotkey can be set by opening the custom layout's edit dialog. Once set, the custom layout can be applied by pressing the <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[number] binding. The layout can also be applied by pressing the hotkey when dragging a window.
 

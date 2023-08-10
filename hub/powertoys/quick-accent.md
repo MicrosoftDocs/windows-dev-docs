@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Quick Accent, Win]
 
 Quick Accent is an alternative way to type accented characters, useful when a keyboard doesn't support that specific accent with a quick key combo. This tool is based on [Damien Leroy's PowerAccent](https://github.com/damienleroy/PowerAccent).
 
-In order to use the Quick Accent utility, open PowerToys Settings, select the **Quick Accent** tab, and turn the **Enable** toggle on.
+In order to use the Quick Accent utility, open PowerToys Settings, select the **Quick Accent** tab, and turn on the **Enable** toggle.
 
 ## How to activate
 

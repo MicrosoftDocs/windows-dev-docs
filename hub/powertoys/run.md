@@ -117,7 +117,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 The Windows System Commands plugin provides a set of system level actions that can be executed.
 
 > [!TIP]
-> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, you can turn **Use localized system commands instead of English ones** in the [plugin manager](#plugin-manager) off.
+> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, clear the **Use localized system commands instead of English ones** checkbox in the [plugin manager](#plugin-manager).
 
 | Command | Action | Note |
 | :--- | :--- | :--- |
