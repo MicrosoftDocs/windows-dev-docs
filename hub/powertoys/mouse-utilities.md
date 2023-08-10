@@ -23,7 +23,7 @@ From the settings page, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation method | Choose between **Press left Ctrl** twice or **Shake mouse**. |
+| Activation method | Choose between **Press left Ctrl twice** or **Shake mouse**. |
 | Minimum distance to shake | Adjust sensitivity. |
 | Do not activate when Game Mode is on | Prevents the spotlight from being used when actively playing a game on the system. |
 | Overlay opacity | The opacity of the spotlight backdrop. (default: 50%) |

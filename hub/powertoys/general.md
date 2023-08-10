@@ -14,7 +14,7 @@ The general section of Microsoft PowerToys contains the following settings:
 
 ## Version
 
-In this section you can check for new updates and if a new update is available, you can download and install it.
+Here you can check for new updates and if a new update is available, you can download and install it.
 
 You can set if updates should be downloaded automatically.
 

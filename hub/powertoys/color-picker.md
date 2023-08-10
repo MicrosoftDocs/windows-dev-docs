@@ -21,17 +21,17 @@ To start using Color Picker, enable it in the PowerToys Settings (**Color Picker
 
 ### Activating Color Picker
 
-Once enabled, you can choose one of the following three behaviors to be executed when launching Color Picker with the activation shortcut (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>).
+Once enabled, you can choose one of the following three behaviors to be executed when opening Color Picker with the activation shortcut (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>).
 
 :::image type="content" source="../images/pt-colorpicker-activation.gif" alt-text="ColorPicker behaviors.":::
 
-- **Editor** - Opens editor window directly, from here you can choose a color from the history, fine-tune a selected color, or capture a new color by opening the color picker.
-- **Color Picker with editor mode enabled** - Opens Color Picker. After selecting a color, the editor is opened and the selected color is copied to the clipboard (in the default format - configurable in the Settings dialog).
-- **Color Picker only** - Opens Color Picker only and the selected color will be copied to the clipboard.
+- **Open editor** - Opens editor window directly, from here you can choose a color from the history, fine-tune a selected color, or capture a new color by opening the color picker.
+- **Pick a color and open editor** - Opens Color Picker. After selecting a color, the editor is opened and the selected color is copied to the clipboard (in the default format - configurable in the Settings dialog).
+- **Only pick a color** - Opens Color Picker only and the selected color will be copied to the clipboard.
 
 ### Selecting colors
 
-After the Color Picker is activated, hover your mouse cursor over the color you would like to copy and left-click the mouse button to select a color. If you want to see the area around your cursor in more detail, scroll up to zoom in.
+After the Color Picker is activated, hover your mouse cursor over the color you would like to copy and left-click the mouse button to select a color. If you want to see the area under your cursor in more detail, scroll up to zoom in.
 
 The copied color will be stored in your clipboard in the format that is configured in the settings (default: HEX).
 
@@ -40,9 +40,9 @@ The copied color will be stored in your clipboard in the format that is configur
 > [!TIP]
 > To select the color of the non-hover state of a element:
 >
-> - Move the mouse pointer close, but not over the element
-> - Zoom in by scrolling the mouse wheel up (image will be frozen)
-> - In the enlarged area, you can pick the color of the element
+> - Move the mouse pointer close, but not over the element.
+> - Zoom in by scrolling the mouse wheel up. Image will be frozen.
+> - In the enlarged area, you can pick the color of the element.
 
 ## Using the Color Picker editor
 
@@ -60,10 +60,10 @@ To export the colors history, right-click a color and select **Export**. The exp
 
 ## Settings
 
-Color Picker has following settings:
+Color Picker has the following settings:
 
 - **Activation shortcut**
-- **Activation behaviour**
+- **Activation behavior**
 - **Default color format**, such as HEX, RGB, and more.
 - **Show color name** shows a high-level representation of the color. For example: Light Green, Green, Dark Green.
 - Order and presence of color formats in the editor
@@ -72,11 +72,11 @@ Color Picker has following settings:
 
 To add a new color format, select **Add custom color format**.
 
-To reorder the colors, select the **...** button on the right and select **Move up** or **Move down**.
+To reorder the colors, select the **•••** button on the right and select **Move up** or **Move down**.
 
 To disable a color format, turn off the toggle next to that color format. Disabled color formats are not deleted but are not shown in the Color Picker editor window.
 
-To delete a color format, select the button with the bin icon.
+To delete a color format, select the **Remove**.
 
 To edit a color format, select it from the list. You can edit the color format's **Name** and **Format** in the dialog.
 
