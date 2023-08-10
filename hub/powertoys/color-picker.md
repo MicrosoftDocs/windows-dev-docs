@@ -76,7 +76,7 @@ To reorder the colors, select the **•••** button on the right and select *
 
 To disable a color format, turn off the toggle next to that color format. Disabled color formats are not deleted but are not shown in the Color Picker editor window.
 
-To delete a color format, select the **Remove**.
+To delete a color format, select **Remove**.
 
 To edit a color format, select it from the list. You can edit the color format's **Name** and **Format** in the dialog.
 

@@ -79,7 +79,7 @@ Open the layout editor by selecting **Launch layout editor** or by pressing <kbd
 
 ### Layout Editor: Choose your layout
 
-When you first launch the layout editor, you'll see a list of layouts that can be adjusted by how many windows are on the monitor. Selecting a layout shows a preview of that layout on the screen. The selected layout is applied automatically. Double-clicking a layout will apply it and close the editor. The editor will detect the available monitors and display them for you to choose between. The chosen monitor will then be the target of the selected layout.
+When you first launch the layout editor, you'll see a list of layouts that can be adjusted by how many windows are on the monitor. Selecting a layout shows a preview of that layout on the screen. The selected layout is applied automatically. Double-clicking a layout will apply it and close the editor. The editor will detect and display the available monitors. Select a monitor, and it becomes the target of the selected layout.
 
 ![FancyZones Picker Multiple Monitors.](../images/pt-fancyzones-multimon.png)
 
