@@ -101,13 +101,13 @@ There are two styles of custom zone layouts: **Grid** and **Canvas**.
 
 The **Grid** model starts with a three column grid and allows zones to be created by splitting and merging zones, moving the gutter between zones as desired. This is a relative layout and will resize with different screen sizes. You can edit the layout using mouse or using keyboard.
 
-**Mouse**
+#### Mouse
 
 - To divide a zone: click your mouse. To rotate the divider: hold down the <kbd>Shift</kbd> key.
 - To move a divider: click on the thumb and drag or select the thumb by focusing the layout.
 - To merge/delete zones: select a zone, hold the left mouse button and drag the mouse until multiple zones are selected. Release the button and a popup menu will show up. Select **Merge** and they will become one zone. This is how a zone should be deleted, by merging it into another zone.
 
-**Keyboard**
+#### Keyboard
 
 - First, focus the layout by pressing <kbd>Ctrl</kbd>+<kbd>Tab</kbd>. All zones and dividers can be focused by pressing <kbd>Tab</kbd> key.
 - To divide a zone: focus the zone you want to divide and press <kbd>S</kbd> or <kbd>Shift</kbd>+<kbd>S</kbd> to divide it.
