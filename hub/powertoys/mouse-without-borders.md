@@ -34,8 +34,6 @@ With the latest version of PowerToys installed, you will see Mouse Without Borde
 
 4. Once the computers are connected, you will be able to switch between them by moving your mouse cursor beyond the edge of the screen, transitioning between computers.
 
-    <!-- ![Screenshot of Mouse Without Borders settings on the first computer after connecting.](../images/powertoys-mouse-without-borders-after-connect-1.png) -->
-
     ![Screenshot of Mouse Without Borders settings on the second computer after connecting.](../images/powertoys-mouse-without-borders-after-connect-2.png)
 
 It's possible to switch the order of the devices by dragging the device icon to a new position in the layout.
