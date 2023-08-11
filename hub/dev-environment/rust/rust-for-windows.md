@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code, rust for windows
 ms.localizationpriority: medium
-ms.date: 03/04/2021
+ms.date: 08/11/2023
 ---
 
 # Rust for Windows, and the *windows* crate
@@ -23,7 +23,7 @@ You can find all of the latest updates in the [Release log of the Rust for Windo
 
 Rust for Windows lets you use any Windows API (past, present, and future) directly and seamlessly via [the *windows* crate](https://crates.io/crates/windows) (*crate* is Rust's term for a binary or a library, and/or the source code that builds into one).
 
-Whether it's timeless functions such as [CreateEventW](/windows/win32/api/synchapi/nf-synchapi-createeventw) and [WaitForSingleObject](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject), powerful graphics engines such as [Direct3D](/windows/win32/direct3d12/directx-12-programming-guide), traditional windowing functions such as [CreateWindowExW](/windows/win32/api/winuser/nf-winuser-createwindowexw) and [DispatchMessageW](/windows/win32/api/winuser/nf-winuser-dispatchmessagew), or more recent user interface (UI) frameworks such as [Composition](/uwp/api/windows.ui.composition) and [Xaml](/uwp/api/windows.ui.xaml), [the *windows* crate](https://crates.io/crates/windows) has you covered.
+Whether it's timeless functions such as [CreateEventW](/windows/win32/api/synchapi/nf-synchapi-createeventw) and [WaitForSingleObject](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject), powerful graphics engines such as [Direct3D](/windows/win32/direct3d12/directx-12-programming-guide), traditional windowing functions such as [CreateWindowExW](/windows/win32/api/winuser/nf-winuser-createwindowexw) and [DispatchMessageW](/windows/win32/api/winuser/nf-winuser-dispatchmessagew), or more recent user interface (UI) frameworks such as [Composition](/uwp/api/windows.ui.composition), [the *windows* crate](https://crates.io/crates/windows) has you covered.
 
 The [win32metadata](https://github.com/microsoft/win32metadata) project aims to provide metadata for Win32 APIs. This metadata describes the API surface&mdash;strongly-typed API signatures, parameters, and types. This enables the entire Windows API to be projected in an automated and complete way for consumption by Rust (as well as languages such as C# and C++). Also see [Making Win32 APIs more accessible to more languages](https://blogs.windows.com/windowsdeveloper/2021/01/21/making-win32-apis-more-accessible-to-more-languages/).
 
