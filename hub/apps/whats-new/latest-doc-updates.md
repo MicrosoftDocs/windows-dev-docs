@@ -2,7 +2,7 @@
 description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows API and developer documentation
 ms.topic: article
-ms.date: 6/16/2023
+ms.date: 8/11/2023
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -10,43 +10,22 @@ author: QuinnRadich
 
 # Latest updates to the Windows developer docs
 
-The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of June 16th, 2023.
-
-Note: For information regarding Windows 11, please see [What's cool for developers](https://developer.microsoft.com/windows/windows-for-developers/) and the [Windows Developer Center](https://developer.microsoft.com/windows/).
+The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of August 11th, 2023.
 
 For the latest Windows Developer Documentation news, or to reach out to us with comments and questions, feel free to find us on Twitter, where our handle is [@WindowsDocs](https://twitter.com/windowsdocs).
 
 Don't forget to visit the [Windows Developer Center](https://developer.microsoft.com/windows/), where we highlight some of the latest technologies, frameworks and news for Windows developers.
 
-_Many thanks to everyone who has contributed to the documentation. Your corrections and suggestions are very welcome! For information on contributing, please see our [contributor guide](/contribute/)._
+Many thanks to everyone who has contributed to the documentation. Your corrections and suggestions are very welcome! For information on contributing, please see our new [contributor hub](/contribute/).
 
 Highlights this month include:
 
-## Microsoft Build announcements for Windows developers
-
-* [Dev Home](/windows/dev-home/): Monitor your work in the centralized dashboard, GitHub and System performance widgets. Get setup and onboard new projects with the Machine configuration tool. Learn about Dev Home’s:  
-  * [Dashboard widgets](/windows/dev-home/), including the ability to set up customized GitHub feeds,
-  * [Machine configuration tool](/windows/dev-home/setup) for setting up a new machine or onboard a new project, and  
-  * [Customizable extensions](/windows/dev-home/extensions), with the ability to set up GitHub notifications or build and share your own Open Source extension for Dev Home.
-
+* [Dev Home](/windows/dev-home/): Monitor your work in the centralized dashboard, GitHub and System performance widgets. Get setup and onboard new projects with the Machine configuration tool.  
 * [Dev Drive](/windows/dev-drive/): Improve your dev workload performance using this new storage format, using ReFS and specifically designed for developer scenarios, with the ability to designate trust, manage antivirus configurations, and attach security filters.
-  * Microsoft Defender has a new [performance mode](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode?view=o365-worldwide) specifically designed for Dev Drive.
-
-* [WinGet Configuration](/windows/package-manager/configuration/): Consolidate manual machine setup and project onboarding to a single command that is reliable and repeatable. Learn how to:
-  * [Author a WinGet Configuration file](/windows/package-manager/configuration/create),
-  * [Check the trustworthiness of a WinGet Configuration file](/windows/package-manager/configuration/check),
-  * [Use the winget configure command](/windows/package-manager/winget/configure) to begin setting up your machine to the desired configuration state.
-
-* [PowerToys](/windows/powertoys/): These open source utilities are suggested by and developed with the help of the developer community using Windows. New utilities in the .70 release include:
-  * [Mouse without Borders](/windows/powertoys/mouse-without-borders), for seamless transition between multiple machines from the same keyboard and mouse, sharing clipboard contents and files,  
-  * [Peek](/windows/powertoys/peek), for previewing file content without the need to open multiple apps or interrupt your workflow,
-  * [Paste as Plain Text](/windows/powertoys/paste-as-plain-text), for pasting text from your clipboard, excluding any text-formatting.
-
-* [Windows Terminal](/windows/terminal/): Customize your terminal and running multiple command lines, all set up to their specific preferences. Learn more about how to customize your prompt and the new Tab Tearout feature.
-
+* Microsoft Defender has a new [performance mode](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode?view=o365-worldwide) specifically designed for Dev Drive.
+* [WinGet v1.5 including Windows Package Manager](/windows/package-manager/): Consolidate manual machine setup and project onboarding to a single command that is reliable and repeatable. 
+* [PowerToys 0.72](/windows/powertoys/): These open source utilities are suggested by and developed with the help of the developer community using Windows. 
 * [Windows Copilot](/windows/dev-environment/): The first PC platform to provide centralized AI assistance and designed to help people easily take action and get things done is coming soon!
-
-* [Windows on Arm](/windows/arm/overview): We’ve got a new tutorial that can help you update your apps to run natively on Arm.
 
 <hr>
 
@@ -54,137 +33,196 @@ The following list of topics have also seen significant updates in the past mont
 
 ## Windows App SDK / WinUI
 
-* [WinAppSDK 1.4 Experimental Release Notes](/windows/apps/windows-app-sdk/experimental-channel)
+* [WinAppSDK 1.4 Preview Release Notes](/windows/apps/windows-app-sdk/preview-channel)
+* Updated topics in [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog?view=windows-app-sdk-1.3).
+* Updated topics in [DebugSettings class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.debugsettings?view=windows-app-sdk-1.3).
+* New content about how to configure an appContainer app in 1- and 2-project WinAppSDK apps, WndProc, WPF, and WinForms apps (MSIX appContainer apps).
+* Updated topics on [MSIX appContainer apps](/windows/msix/msix-container).
+* Updated [Use the dynamic dependency API to reference MSIX packages at run time](/windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api).
 
 ## Code samples, tutorials and Learn Module updates
 
-* Added [examples page for a new Win32 bindlink.h header](/windows/win32/bindlink/bindlink-example).
-* Added [examples page for a new Win32 hwreqchkapi.h header](/windows/win32/hwreqchkapi/hwreqchk-examples), including four code examples.
-* Rust: Fixed the code sample in [RSS reader tutorial](/windows/dev-environment/rust/rss-reader-rust-for-windows).
-* C++/WinRT: Updated [A completion source sample](/windows/uwp/cpp-and-winrt-apis/concurrency-3).
+* Updated the [Microsoft Graph API tutorial for .NET MAUI on Windows development](https://learn.microsoft.com/windows/apps/windows-dotnet-maui/tutorial-graph-api), improving the clarify when using the latest Graph API release.
 
 ## Updated content
 
-* [WindowsTabManager Class](/uwp/api/windows.ui.shell.windowtabmanager?view=winrt-22621)
-* [NavigationView](/windows/apps/design/controls/navigationview)
-* [Apply Mica or Acrylic materials](/windows/apps/windows-app-sdk/system-backdrop-controller)
-* [Use the Windows App SDK in a WPF app](/windows/apps/windows-app-sdk/wpf-plus-winappsdk)
-* [Win2D](/windows/apps/develop/win2d/) content migrated from GitHub
+* Documented [IAccessKeyManagerStaticsDisplayMode.EnterDisplayMode](/windows/apps/api-reference/interface-members/iaccesskeymanagerstaticsdisplaymode-enterdisplaymode).
+* Added sqlite APIs missing from the list on [Extension APIs for Windows 10 devices (grouped by module) - Windows UWP applications](/uwp/win32-and-com/win32-extension-apis#apis-from-winsqlite3dll).
+* Added 60 new topics missing from the [EAPHost and Legacy Schema](/windows/win32/eaphost/eaphost-schemas) documentation.
+* Updated [Opportunistic Locks](/windows/win32/fileio/opportunistic-locks) documentation.
+* Updated [DispatcherQueueTimer.IsRepeating](/windows.system.dispatcherqueuetimer.isrepeating?view=winrt-22621).
 
-## Developer tool updates
 
-* [Windows Subsystem for Linux, Enterprise and Security Control Options](/windows/wsl/enterprise).
-* [Windows Subsystem for Android updates](/windows/android/wsa/).
-* [Windows Package Manager updates](/windows/package-manager/).
-* [PowerToys](/windows/powertoys/install).
+The following list of new and updated content is automatically generated from the GitHub repo storing our documentation:
 
-## Win32 Conceptual
+## WinRT topics
 
-* [LVM_ENABLEGROUPVIEW message (Commctrl.h)](/windows/desktop/Controls/lvm-enablegroupview)
-* [LVM_GETGROUPINFO message (Commctrl.h)](/windows/desktop/Controls/lvm-getgroupinfo)
-* [LVM_HASGROUP message (Commctrl.h)](/windows/desktop/Controls/lvm-hasgroup)
-* [LVM_HITTEST message (Commctrl.h)](/windows/desktop/Controls/lvm-hittest)
-* [LVM_INSERTGROUP message (Commctrl.h)](/windows/desktop/Controls/lvm-insertgroup)
-* [LVM_REMOVEALLGROUPS message (Commctrl.h)](/windows/desktop/Controls/lvm-removeallgroups)
-* [LVM_SETGROUPINFO message (Commctrl.h)](/windows/desktop/Controls/lvm-setgroupinfo)
-* [LVM_SUBITEMHITTEST message (Commctrl.h)](/windows/desktop/Controls/lvm-subitemhittest)
-* [PE Format](/windows/desktop/Debug/pe-format)
-* [TelIsOsInProcessorMode function](/windows/desktop/DevNotes/tellsIsosinprocessormode)
-* [Scale effect](/windows/desktop/Direct2D/high-quality-scale)
-* [File Attribute Constants (WinNT.h)](/windows/desktop/FileIO/file-attribute-constants)
-* [Setting the Cursor Image](/windows/desktop/LearnWin32/setting-the-cursor-image)
-* [Working Set](/windows/desktop/Memory/working-set)
-* [Playing a MIDI File](/windows/desktop/Multimedia/playing-a-midi-file)
-* [Bootstrap profile sample](/windows/desktop/NativeWiFi/bootstrap-profile-sample)
-* [FIPS profile sample](/windows/desktop/NativeWiFi/fips-profile-sample)
-* [OneX Schema](/windows/desktop/NativeWiFi/onexschema-schema)
-* [Network Policy Server](/windows/desktop/Nps/portal)
-* [Application manifests](/windows/desktop/SbsCs/application-manifests)
-* [Assembly Manifests](/windows/desktop/SbsCs/assembly-manifests)
-* [Cipher Suites in TLS/SSL (Schannel SSP)](/windows/desktop/SecAuthN/cipher-suites-in-schannel)
-* [CNG Algorithm Identifiers (Bcrypt.h)](/windows/desktop/SecCNG/cng-algorithm-identifiers)
-* [CNG DPAPI](/windows/desktop/SecCNG/cng-dpapi)
-* [Child Sessions](/windows/desktop/TermServ/child-sessions)
-* [pragma classflags](/windows/desktop/WmiSdk/pragma-classflags)
-* [Capturing WinHTTP Logs](/windows/desktop/WsdApi/capturing-winhttp-logs)
-* [API set loader operation](/windows/desktop/apiindex/api-set-loader-operation)
-* [Windows API index](/windows/desktop/apiindex/windows-api-list)
-* [Windows API sets](/windows/desktop/apiindex/windows-apisets)
-* [Windows umbrella libraries](/windows/desktop/apiindex/windows-umbrella-libraries)
-* [Bind link API enums](/windows/desktop/bindlink/bindlink-api-enums)
-* [Bind link API functions](/windows/desktop/bindlink/bindlink-api-functions)
-* [Bind link API examples](/windows/desktop/bindlink/bindlink-example)
-* [Overview of the Bindlink API](/windows/desktop/bindlink/bindlink-overview)
-* [Bindlink API (bindlink.h)](/windows/desktop/bindlink/index)
-* [DirectComposition interfaces](/windows/desktop/directcomp/interfaces)
-* [About the EAP and EAPHost relationship](/windows/desktop/eap/about-eaphost)
-* [Configuration User Interface](/windows/desktop/eap/configuration-user-interface)
-* [EAP Enumerations](/windows/desktop/eap/eap-enumerations)
-* [EAP Frequently Asked Questions](/windows/desktop/eap/eap-frequently-asked-questions)
-* [EAP Functions](/windows/desktop/eap/eap-functions)
-* [EAP Implementation Details](/windows/desktop/eap/eap-implementation-details)
-* [EAP Installation](/windows/desktop/eap/eap-installation)
-* [EAP Interfaces](/windows/desktop/eap/eap-interfaces)
-* [Extensible Authentication Protocol](/windows/desktop/eap/eap-start-page)
-* [EAP Structures](/windows/desktop/eap/eap-structures)
-* [Interactive User Interface](/windows/desktop/eap/interactive-user-interface)
-* [Obtaining Identity Information](/windows/desktop/eap/obtaining-identity-information)
-* [Access Point Initialization of EAP](/windows/desktop/eap/ras-initialization-of-eap)
-* [Registry Values Example](/windows/desktop/eap/registry-values-example)
-* [User Authentication](/windows/desktop/eap/user-authentication)
-* [Extensible Authentication Protocol Host](/windows/desktop/eaphost/portal)
-* [HWREQCHK API enums](/windows/desktop/hwreqchkapi/hwreqchk-api-enums)
-* [HWREQCHK API functions](/windows/desktop/hwreqchkapi/hwreqchk-api-functions)
-* [HWREQCHK API structures](/windows/desktop/hwreqchkapi/hwreqchk-api-structures)
-* [HWREQCHK API examples](/windows/desktop/hwreqchkapi/hwreqchk-examples)
-* [Overview of the HWREQCHK API](/windows/desktop/hwreqchkapi/hwreqchk-overview)
-* [HWREQCHK API](/windows/desktop/hwreqchkapi/index)
-* [Image Stride](/windows/desktop/medfound/image-stride)
-* [About Cursors](/windows/desktop/menurc/about-cursors)
-* [About Icons](/windows/desktop/menurc/about-icons)
-* [STRINGTABLE resource](/windows/desktop/menurc/stringtable-resource)
+<ul>
+<li><a href="https://learn.microsoft.com/windows/apps/cpp-ref-for-winrt/com-ptr">winrt::com_ptr struct template (C++/WinRT)</a></li>
+<li><a href="https://learn.microsoft.com/windows/apps/cpp-ref-for-winrt/hstring">winrt::hstring struct (C++/WinRT)</a></li>
+<li><a href="https://learn.microsoft.com/windows/apps/win32-and-com/win32-apis">APIs present on all Windows devices</a></li>
+</ul>
 
-## Win32 API reference
+## UWP topics
 
-* [Data Access and Storage](/windows/win32/api/_fs/index)
-* [Human Interface Devices Reference](/windows/win32/api/_hid/index)
-* [Hardware Requirement Evaluator (HWREQCHK)](/windows/win32/api/_hwreqchk/index)
-* [bindlink (bindlink.h)](/windows/win32/api/bindlink/index)
-* [hwreqchkapi (hwreqchkapi.h)](/windows/win32/api/hwreqchkapi/index)
-* [CopyFile function (winbase.h)](/windows/win32/api/winbase/nf-winbase-copyfile)
-* [MoveFile function (winbase.h)](/windows/win32/api/winbase/nf-winbase-movefile)
-* [ToAscii function (winuser.h)](/windows/win32/api/winuser/nf-winuser-toascii)
+<ul>
+<li><a href="https://learn.microsoft.com/windows/uwp/develop/index">Develop UWP apps</a></li>
+<li><a href="https://learn.microsoft.com/windows/uwp/porting/index">Porting apps to Windows 10</a></li>
+</ul>
 
-## UWP reference
+## Win32 reference
 
-* [Windows.Devices.Input.KeyboardCapabilities](/uwp/api/windows.devices.input.keyboardcapabilities)
-* [Windows.Devices.Lights.Lamp.AvailabilityChanged](/uwp/api/windows.devices.lights.lamp.availabilitychanged)
-* [Windows.Devices.Lights.LampArray](/uwp/api/windows.devices.lights.lamparray)
-* [Windows.Devices.Lights.LampArray.BoundingBox](/uwp/api/windows.devices.lights.lamparray.boundingbox)
-* [Windows.Devices.Lights.LampArray.DeviceId](/uwp/api/windows.devices.lights.lamparray.deviceid)
-* [Windows.Devices.Lights.LampArray.IsAvailable](/uwp/api/windows.devices.lights.lamparray.isavailable)
-* [Windows.Devices.Lights.LampArray.IsConnected](/uwp/api/windows.devices.lights.lamparray.isconnected)
-* [Windows.Devices.Lights.LampArray.IsEnabled](/uwp/api/windows.devices.lights.lamparray.isenabled)
-* [Windows.Devices.Lights.LampArray.LampArrayKind](/uwp/api/windows.devices.lights.lamparray.lamparraykind)
-* [Windows.Devices.Lights.LampArray.LampCount](/uwp/api/windows.devices.lights.lamparray.lampcount)
-* [Windows.Devices.Lights.LampArrayKind](/uwp/api/windows.devices.lights.lamparraykind)
-* [N:Windows.Devices.Lights](/uwp/api/windows.devices.lights.windows.devices.lights)
-* [Windows.Devices.Sensors.ActivitySensor](/uwp/api/windows.devices.sensors.activitysensor)
-* [Windows.Devices.Sensors.AdaptiveDimmingOptions](/uwp/api/windows.devices.sensors.adaptivedimmingoptions)
-* [Windows.Devices.Sensors.LockOnLeaveOptions](/uwp/api/windows.devices.sensors.lockonleaveoptions)
-* [Windows.Devices.Sensors.WakeOnApproachOptions](/uwp/api/windows.devices.sensors.wakeonapproachoptions)
-* [Windows.UI.Composition.CompositionTexture](/uwp/api/windows.ui.composition.compositiontexture)
-* [Windows.UI.Shell.WindowTab](/uwp/api/windows.ui.shell.windowtab)
-* [Windows.UI.Shell.WindowTab.Group](/uwp/api/windows.ui.shell.windowtab.group)
-* [Windows.UI.Shell.WindowTab.Icon](/uwp/api/windows.ui.shell.windowtab.icon)
-* [Windows.UI.Shell.WindowTab.Tag](/uwp/api/windows.ui.shell.windowtab.tag)
-* [Windows.UI.Shell.WindowTab.Title](/uwp/api/windows.ui.shell.windowtab.title)
-* [Windows.UI.Shell.WindowTab.#ctor](/uwp/api/windows.ui.shell.windowtab.windowtab)
-* [Windows.UI.Shell.WindowTabCollection](/uwp/api/windows.ui.shell.windowtabcollection)
-* [Windows.UI.Shell.WindowTabCollection.Size](/uwp/api/windows.ui.shell.windowtabcollection.size)
-* [Windows.UI.Shell.WindowTabGroup](/uwp/api/windows.ui.shell.windowtabgroup)
-* [Windows.UI.Shell.WindowTabGroup.Icon](/uwp/api/windows.ui.shell.windowtabgroup.icon)
-* [Windows.UI.Shell.WindowTabGroup.Title](/uwp/api/windows.ui.shell.windowtabgroup.title)
-* [Windows.UI.Shell.WindowTabIcon](/uwp/api/windows.ui.shell.windowtabicon)
-* [Windows.UI.Shell.WindowTabManager](/uwp/api/windows.ui.shell.windowtabmanager)
-* [Windows.UI.Shell.WindowTabManager.Tabs](/uwp/api/windows.ui.shell.windowtabmanager.tabs)
+<ul>
+<li><a href="https://learn.microsoft.com/windows/win32/winrt/gamechattranscription/nf-gamechattranscription-igamechattranscriber-processencodedaudio">8 new topics for GameChatTranscription APIs; for example, IGameChatTranscriber::ProcessEncodedAudio</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/ADSchema/attributes-all">All Attributes</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/DNS/dns-constants">DNS constants</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/DevNotes/edpauditaction-function">EdpAuditAction function</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/DevNotes/fileprotectionstatus-enum">FileProtectionStatus enumeration</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/DevNotes/msdelta-createdeltaw">CreateDeltaW function</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/DevNotes/nt-create-named-pipe-file">NtCreateNamedPipeFile function</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/DevNotes/tip-testcreate-function">TestCreate function</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/DevNotes/tip-testinfo-structure">TestInfo structure</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/FileIO/file-attribute-constants">File Attribute Constants (WinNT.h)</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/FileIO/reparse-point-tags">Reparse Point Tags</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/FileIO/volume-management-structures">Volume management structures</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/Intl/unicode-subset-bitfields">Unicode Subset Bitfields</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/Msi/error-codes">MsiExec.exe and InstMsi.exe error messages (for developers)</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/NativeWiFi/dot11-auth-algorithm">DOT11_AUTH_ALGORITHM enumeration (Wlantypes.h)</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/NativeWiFi/onexschema-onex-element">OneX element</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/Power/system-power-states">System power states</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/SbsCs/application-manifests">Application manifests</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/SecCrypto/signtool">SignTool</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/Sync/registerwaitforsingleobjectex">RegisterWaitForSingleObjectEx function</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/WinAuto/inspect-objects">Accessibility tools - Inspect</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/WmiSdk/win32-serverfeature">Win32_ServerFeature class</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/WmiSdk/wmic">WMI command-line (WMIC) utility</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/bindlink/bindlink-example">Bind link API examples</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/bindlink/bindlink-overview">Overview of the Bindlink API</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/dataxchg/html-clipboard-format">HTML Clipboard Format</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/directcomp/interfaces">DirectComposition interfaces</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/hwreqchkapi/hwreqchk-examples">HWREQCHK API examples</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/lwef/-search-2x-wds-aqsreference">Advanced Query Syntax</a></li>
+<li><a href="https://learn.microsoft.com/windows/desktop/menurc/using-cursors">Using Cursors</a></li>
+</ul>
+
+
+## UWP API reference
+
+<ul>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker">Windows.ApplicationModel.Contacts.ContactPicker</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboard">Windows.ApplicationModel.DataTransfer.Clipboard</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.applicationmodel.search.searchpane">Windows.ApplicationModel.Search.SearchPane</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures">Windows.ApplicationModel.LimitedAccessFeatures</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.applicationmodel.package.description">Windows.ApplicationModel.Package.Description</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.applicationmodel.package.displayname">Windows.ApplicationModel.Package.DisplayName</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.applicationmodel.package.logo">Windows.ApplicationModel.Package.Logo</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.applicationmodel.packagesignaturekind">Windows.ApplicationModel.PackageSignatureKind</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.alljoyn.alljoynstatus">Windows.Devices.AllJoyn.AllJoynStatus</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.enumeration.pnp.pnpobject">Windows.Devices.Enumeration.Pnp.PnpObject</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.enumeration.pnp.pnpobject.id">Windows.Devices.Enumeration.Pnp.PnpObject.Id</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.enumeration.pnp.pnpobject.type">Windows.Devices.Enumeration.Pnp.PnpObject.Type</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.enumeration.pnp.pnpobjecttype">Windows.Devices.Enumeration.Pnp.PnpObjectType</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.enumeration.pnp.pnpobjectupdate">Windows.Devices.Enumeration.Pnp.PnpObjectUpdate</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities">Windows.Devices.Input.KeyboardCapabilities</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.input.pointerdeviceusage">Windows.Devices.Input.PointerDeviceUsage</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamp.availabilitychanged">Windows.Devices.Lights.Lamp.AvailabilityChanged</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamparray">Windows.Devices.Lights.LampArray</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamparray.boundingbox">Windows.Devices.Lights.LampArray.BoundingBox</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamparray.deviceid">Windows.Devices.Lights.LampArray.DeviceId</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamparray.isavailable">Windows.Devices.Lights.LampArray.IsAvailable</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamparray.isconnected">Windows.Devices.Lights.LampArray.IsConnected</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamparray.isenabled">Windows.Devices.Lights.LampArray.IsEnabled</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamparray.lamparraykind">Windows.Devices.Lights.LampArray.LampArrayKind</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamparray.lampcount">Windows.Devices.Lights.LampArray.LampCount</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.lamparraykind">Windows.Devices.Lights.LampArrayKind</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.lights.windows.devices.lights">N:Windows.Devices.Lights</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.sensors.activitysensor">Windows.Devices.Sensors.ActivitySensor</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.sensors.adaptivedimmingoptions">Windows.Devices.Sensors.AdaptiveDimmingOptions</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.sensors.lockonleaveoptions">Windows.Devices.Sensors.LockOnLeaveOptions</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.devices.sensors.wakeonapproachoptions">Windows.Devices.Sensors.WakeOnApproachOptions</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.display.resolutionscale">Windows.Graphics.Display.ResolutionScale</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.imaging.bitmapplanedescription">Windows.Graphics.Imaging.BitmapPlaneDescription</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap">Windows.Graphics.Imaging.SoftwareBitmap</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.printing3d.print3dmanager">Windows.Graphics.Printing3D.Print3DManager</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.printing3d.print3dtask">Windows.Graphics.Printing3D.Print3DTask</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.printing3d.print3dtaskdetail">Windows.Graphics.Printing3D.Print3DTaskDetail</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.printing3d.print3dtaskrequest">Windows.Graphics.Printing3D.Print3DTaskRequest</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dcomponent">Windows.Graphics.Printing3D.Printing3DComponent</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmaterial">Windows.Graphics.Printing3D.Printing3DMaterial</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmesh">Windows.Graphics.Printing3D.Printing3DMesh</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmodel">Windows.Graphics.Printing3D.Printing3DModel</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dmodelunit">Windows.Graphics.Printing3D.Printing3DModelUnit</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.management.deployment.addpackageoptions">Windows.Management.Deployment.AddPackageOptions</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.management.policies.namedpolicykind">Windows.Management.Policies.NamedPolicyKind</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.management.update.windowsupdate">Windows.Management.Update.WindowsUpdate</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.management.update.windowsupdate.isforos">Windows.Management.Update.WindowsUpdate.IsForOS</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.management.update.windowsupdate.title">Windows.Management.Update.WindowsUpdate.Title</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.management.update.windowsupdateitem">Windows.Management.Update.WindowsUpdateItem</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.management.update.windowsupdatemanager">Windows.Management.Update.WindowsUpdateManager</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.networking.xboxlive.xboxlivesocketkind">Windows.Networking.XboxLive.XboxLiveSocketKind</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker">Windows.Storage.Pickers.FileOpenPicker</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker">Windows.Storage.Pickers.FileSavePicker</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.storage.pickers.windows.storage.pickers">N:Windows.Storage.Pickers</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.storage.provider.storageprovidererror">Windows.Storage.Provider.StorageProviderError</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.storage.provider.storageproviderstate">Windows.Storage.Provider.StorageProviderState</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.storage.provider.storageproviderstatus">Windows.Storage.Provider.StorageProviderStatus</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.systemupdateitem">Windows.System.Update.SystemUpdateItem</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.systemupdateitem.id">Windows.System.Update.SystemUpdateItem.Id</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.systemupdateitem.revision">Windows.System.Update.SystemUpdateItem.Revision</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.systemupdateitem.state">Windows.System.Update.SystemUpdateItem.State</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.systemupdateitem.title">Windows.System.Update.SystemUpdateItem.Title</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.systemupdateitemstate">Windows.System.Update.SystemUpdateItemState</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.systemupdatelasterrorinfo">Windows.System.Update.SystemUpdateLastErrorInfo</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.systemupdatemanager">Windows.System.Update.SystemUpdateManager</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.systemupdatemanagerstate">Windows.System.Update.SystemUpdateManagerState</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.update.windows.system.update">N:Windows.System.Update</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.system.dispatcherqueuetimer.isrepeating">Windows.System.DispatcherQueueTimer.IsRepeating</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.composition.compositiontexture">Windows.UI.Composition.CompositionTexture</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.composition.ianimationobject">Windows.UI.Composition.IAnimationObject</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.composition.rectangleclip">Windows.UI.Composition.RectangleClip</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.input.inking.iinkrecognizercontainer">Windows.UI.Input.Inking.IInkRecognizerContainer</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter">Windows.UI.Input.Inking.InkPresenter</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.input.crossslidethresholds">Windows.UI.Input.CrossSlideThresholds</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.input.crossslidingstate">Windows.UI.Input.CrossSlidingState</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.input.edgegesturekind">Windows.UI.Input.EdgeGestureKind</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtab">Windows.UI.Shell.WindowTab</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtab.group">Windows.UI.Shell.WindowTab.Group</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtab.icon">Windows.UI.Shell.WindowTab.Icon</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtab.tag">Windows.UI.Shell.WindowTab.Tag</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtab.title">Windows.UI.Shell.WindowTab.Title</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtab.windowtab">Windows.UI.Shell.WindowTab.#ctor</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtabcollection">Windows.UI.Shell.WindowTabCollection</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtabcollection.size">Windows.UI.Shell.WindowTabCollection.Size</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtabgroup">Windows.UI.Shell.WindowTabGroup</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtabgroup.icon">Windows.UI.Shell.WindowTabGroup.Icon</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtabgroup.title">Windows.UI.Shell.WindowTabGroup.Title</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtabicon">Windows.UI.Shell.WindowTabIcon</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtabmanager">Windows.UI.Shell.WindowTabManager</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.shell.windowtabmanager.tabs">Windows.UI.Shell.WindowTabManager.Tabs</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.viewmanagement.core.coreinputview">Windows.UI.ViewManagement.Core.CoreInputView</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.webui.webuisearchactivatedeventargs">Windows.UI.WebUI.WebUISearchActivatedEventArgs</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties">Windows.UI.Xaml.Automation.AutomationProperties</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.control.tabindex">Windows.UI.Xaml.Controls.Control.TabIndex</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas">Windows.UI.Xaml.Controls.InkCanvas</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter">Windows.UI.Xaml.Controls.InkCanvas.InkPresenter</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar.activetool">Windows.UI.Xaml.Controls.InkToolbar.ActiveTool</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar.children">Windows.UI.Xaml.Controls.InkToolbar.Children</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement">Windows.UI.Xaml.Controls.MediaElement</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope">Windows.UI.Xaml.Controls.PasswordBox.InputScope</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.inputscope">Windows.UI.Xaml.Controls.RichEditBox.InputScope</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines">Windows.UI.Xaml.Controls.TextBlock.Inlines</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope">Windows.UI.Xaml.Controls.TextBox.InputScope</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeymanager">Windows.UI.Xaml.Input.AccessKeyManager</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue">Windows.UI.Xaml.Input.InputScopeNameValue</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.media.solidcolorbrush">Windows.UI.Xaml.Media.SolidColorBrush</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.recthelper.empty">Windows.UI.Xaml.RectHelper.Empty</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.recthelper.getbottom">Windows.UI.Xaml.RectHelper.GetBottom(Windows.Foundation.Rect)</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.recthelper.getleft">Windows.UI.Xaml.RectHelper.GetLeft(Windows.Foundation.Rect)</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.recthelper.getright">Windows.UI.Xaml.RectHelper.GetRight(Windows.Foundation.Rect)</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.recthelper.gettop">Windows.UI.Xaml.RectHelper.GetTop(Windows.Foundation.Rect)</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.sizehelper.empty">Windows.UI.Xaml.SizeHelper.Empty</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.uielement.xamlroot">Windows.UI.Xaml.UIElement.XamlRoot</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.window">Windows.UI.Xaml.Window</a></li>
+<li><a href="https://learn.microsoft.com/uwp/api/windows.ui.xaml.window.activate">Windows.UI.Xaml.Window.Activate</a></li>
+</ul>
+
