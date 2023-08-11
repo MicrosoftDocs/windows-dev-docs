@@ -1,6 +1,6 @@
 ---
 title: General settings for PowerToys
-description: The Microsoft PowerToys app provides custom-built utilities for Windows operating system. Find info about the version, admin mode, app theme, startup behavior, or turn on the experimental features in the General settings dashboard.
+description: The Microsoft PowerToys app provides custom-built utilities for Windows. Find info about the version, admin mode, app theme, startup behavior, or turn on the experimental features in the General settings dashboard.
 ms.date: 08/03/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Insider]
@@ -14,7 +14,7 @@ The general section of Microsoft PowerToys contains the following settings:
 
 ## Version
 
-In this section you can check for new updates and if a new update is available, you can download and install it.
+Here you can check for new updates and if a new update is available, you can download and install it.
 
 You can set if updates should be downloaded automatically.
 

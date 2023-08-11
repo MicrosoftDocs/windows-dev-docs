@@ -25,17 +25,17 @@ In this demo, all instances of the file name "foo" are replaced with "foobar". S
 
 ## PowerRename window
 
-After selecting files in Windows File Explorer, right-clicking and selecting **PowerRename** (which will appear only if enabled in PowerToys), the PowerRename window will appear. The selected items will be displayed, along with search and replace values, a list of options, and a preview window displaying results of the search and replace values entered.
+After selecting files in Windows File Explorer, right-click and select **PowerRename** (which will appear only if enabled in PowerToys). The selected items will be displayed, along with search and replace values, a list of options, and a preview pane displaying results of the search and replace values entered.
 
 ![PowerRename Menu screenshot.](../images/powerrename-menu.png)
 
 ### Search for
 
-Enter text or a [regular expression](https://wikipedia.org/wiki/Regular_expression) to find the files in your selection that contain the criteria matching your entry. You will see the matching items in the _Preview_ window.
+Enter text or a [regular expression](https://wikipedia.org/wiki/Regular_expression) to find the files in your selection that contain the criteria matching your entry. You will see the matching items in the _Preview_ pane.
 
 ### Replace with
 
-Enter text to replace the _Search for_ value entered previously. You can view the original file name and renamed file name in the _Preview_ window.
+Enter text to replace the _Search for_ value entered previously. You can view the original file name and renamed file name in the _Preview_ pane.
 
 ### Use regular expressions
 
@@ -45,7 +45,7 @@ For more information regarding the **Use Boost library** option in the settings 
 
 ### Match all occurrences
 
-If selected, all matches of text in the _Search_ field will be replaced with the Replace text. Otherwise, only the first instance of the _Search for_ text in the file name will be replaced (left to right).
+If selected, all matches of text in the _Search_ field will be replaced with the Replace text. Otherwise, only the first instance of the _Search for_ text in the file name will be replaced.
 
 For example, given the file name: `powertoys-powerrename.txt`:
 
@@ -59,11 +59,11 @@ The value of the renamed file would result in:
 
 ### Case sensitive
 
-If selected, the text specified in the _Search_ field will only match text in the items if the text is the same case. Case matching will be insensitive (not recognizing a difference between upper and lowercase letters) by default.
+If selected, the text specified in the _Search_ field will only match text in the items if the text is the same case. Case matching will be insensitive by default.
 
 ### Apply to: Filename only
 
-Only the file name (not the file extension) is modified by the operation. For example: `txt.txt` → `NewName.txt`.
+Only the file name is modified by the operation. For example: `txt.txt` → `NewName.txt`.
 
 ### Apply to: Extension only
 
@@ -182,13 +182,13 @@ There are great examples/cheatsheets available online to help you:
 
 ## File list filters
 
-Filters can be used in PowerRename to narrow the results of the rename. Use the _Preview_ window to check expected results.
+Filters can be used in PowerRename to narrow the results of the rename. Use the _Preview_ pane to check expected results.
 
-- **Original**, the first column in the _Preview_ window switches between:
+- **Original**, the first column in the _Preview_ pane switches between:
   - Selected: The file is selected to be renamed
   - Cleared: The file is not selected to be renamed (even though it fits the value entered in the search criteria)
 
-- **Renamed**, the second column in the _Preview_ window can be toggled:
+- **Renamed**, the second column in the _Preview_ pane can be toggled:
   - The default preview will show all selected files, with only files matching the _Search for_ criteria displaying the updated rename value.
   - Selecting the _Renamed_ header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
@@ -200,9 +200,9 @@ Additional options can be configured from the **PowerRename** tab in the Setting
 
 | Setting | Description |
 | :--- | :--- |
-| Show PowerRename in | Defines whether PowerRename appears as one of the default options or only in the extended context menu |
+| Show PowerRename in | PowerRename appears as one of the default options or only in the extended context menu |
 | Hide icon in context menu | Hides the PowerRename icon in the context menu |
 | Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename |
-| Maximum number of items | The largest number search and replace suggestions to display |
+| Maximum number of items | The largest number of search and replace suggestions to display |
 | Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used |
-| Use Boost library | Enable extended RegEx functionality. See [Regular Expressions](#regular-expressions) above for more details |
+| Use Boost library | Enable extended RegEx functionality. See [Regular Expressions](#regular-expressions) for more details |

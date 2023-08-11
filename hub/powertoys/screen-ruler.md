@@ -35,7 +35,7 @@ From the Settings menu, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to turn on or off the toolbar. |
+| Activation shortcut | The customizable keyboard command to turn the toolbar on or off. |
 | Capture screen continuously during measuring | When off, the utility takes a single snapshot of your screen. When this is turned on, the utility will attempt real-time detection. Continuous mode will consume more resources when in use. |
 | Per color channel edge detection | Test if all color channels are within a tolerance distance from each other. Otherwise, check that the sum of all color channels differences is smaller than the tolerance. |
 | Pixel tolerance for edge detection | A value between 0-255. A higher value will provide a higher variation so it will be more forgiving with things like gradients and shadows. |

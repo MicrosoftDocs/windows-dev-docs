@@ -117,7 +117,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 The Windows System Commands plugin provides a set of system level actions that can be executed.
 
 > [!TIP]
-> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, you can disable the setting **Use localized system commands instead of English ones** in the [plugin manager](#plugin-manager).
+> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, clear the **Use localized system commands instead of English ones** checkbox in the [plugin manager](#plugin-manager).
 
 | Command | Action | Note |
 | :--- | :--- | :--- |
@@ -170,7 +170,7 @@ If the program plugin's option "Include in global result" is not selected, inclu
 > If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
 > [!TIP]
-> The Calculator plugin can handle some implied multiplication expressions like `2(3+4)` and `(1+2)(3+4)` by inserting the multiplication operator where appropriate.
+> The Calculator plugin can handle some implied multiplications like `2(3+4)` and `(1+2)(3+4)` by inserting the multiplication operator where appropriate.
 
 The Calculator plugin supports the following operations:
 
@@ -212,7 +212,7 @@ The Calculator plugin supports the following operations:
 
 ### History plugin
 
-The History plugin allows quick access to previously selected results from other plugins. You can access and delete them using the direct activation command. To delete them from history, select the **Remove this from history** context menu item.
+The History plugin allows quick access to previously selected results from other plugins. You can access and remove them using the direct activation command. To remove them from history, select the **Remove this from history** context menu item.
 
 #### History plugin examples
 
@@ -355,17 +355,17 @@ With the Window Walker plugin you can kill the process of a window if it stops r
 
 #### File Explorer setting
 
-If the File Explorer settings in Windows are not set to open each window in a separate process, you will receive the following message when searching for open Explorer windows:
+If the File Explorer settings in Windows are not set to open each window in a separate process, you will see the following message when searching for open Explorer windows:
 
 ![Explorer Process Info in PowerToys Run.](../images/pt-run-explorer-info.png)
 
-You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. After selecting the message, the "Folder options" window will open. Then select **Launch folder windows in a separate process**.
+You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. On the **Folder options** window, select **Launch folder windows in a separate process**.
 
 ![Folder Options Window.](../images/pt-run-folder-options.png)
 
 ### Windows Search settings
 
-If the indexing settings for Windows Search are not set to cover all drives, you will receive the following warning when using the Windows Search plugin:
+If the indexing settings for Windows Search are not set to cover all drives, you will see the following warning when using the Windows Search plugin:
 
 ![PowerToys Run Indexer Warning.](../images/pt-run-indexer-warning.png)
 

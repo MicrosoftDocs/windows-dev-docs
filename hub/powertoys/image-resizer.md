@@ -22,7 +22,7 @@ Image Resizer allows you to resize images by dragging and dropping your selected
 
 ## Settings
 
-On the Image Resizer tab, configure the following settings.
+On the **Image Resizer** tab, configure the following settings.
 
 ![PowerToys Image Resizer Settings.](../images/powertoys-imageresize-settings.png)
 
@@ -32,9 +32,9 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 
 #### Fill versus Fit versus Stretch
 
-- **Fill:** Fills the entire specified size with the image. Scales the image proportionally. Crops the image as needed.
-- **Fit:** Fits the entire image into the specified size. Scales the image proportionally. Does not crop the image.
-- **Stretch:** Fills the entire specified size with the image. Stretches the image disproportionally as needed. Does not crop the image.
+- **Fill**: Fills the entire specified size with the image. Scales the image proportionally. Crops the image as needed.
+- **Fit**: Fits the entire image into the specified size. Scales the image proportionally. Does not crop the image.
+- **Stretch**: Fills the entire specified size with the image. Stretches the image disproportionally as needed. Does not crop the image.
 
 > [!TIP]
 > You can leave the width or height empty. The dimension will be calculated to a value proportional to the original image aspect ratio.

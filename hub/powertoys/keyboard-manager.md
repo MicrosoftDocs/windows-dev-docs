@@ -24,7 +24,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 >
 > - <kbd>⊞ Win</kbd>+<kbd>L</kbd> and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> cannot be remapped as they are reserved by the Windows OS.
 > - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd> ~ <kbd>F12</kbd> (and F13 ~ F24) keys can be mapped.
-> - <kbd>Pause</kbd> will only send a single keydown event. So mapping it against the backspace key, for instance, and pressing and holding will only delete a single character.
+> - <kbd>Pause</kbd> will only send a single key-down event. So mapping it against the backspace key, for instance, and pressing and holding will only delete a single character.
 > - <kbd>⊞ Win</kbd>+<kbd>G</kbd> often opens the Xbox Game Bar, even when reassigned. Game Bar can be disabled in [Windows Settings](ms-settings:gaming-gamebar).
 
 ## Settings
@@ -36,7 +36,7 @@ To create mappings with Keyboard Manager, open the PowerToys Settings. Inside Po
 
 ### Remapping keys
 
-To remap a key, changing it to a new value, launch the Remap Keyboard settings window with the **Remap a Key** button. When first launched, no predefined mappings will be displayed. Select the **+** button to add a new remap.
+To remap a key, changing it to a new value, launch the Remap Keyboard settings window with **Remap a Key**. When first launched, no predefined mappings will be displayed. Select **&#9547;** to add a new remap.
 
 Once a new remap row appears, select the input key whose output you want to _change_ in the “Physical Key” column. Select the new key value to assign in the “Mapped To” column.
 
@@ -131,15 +131,13 @@ To select a key or shortcut to remap:
 - Select **Type Key** or **Type Shortcut**.
 - Use the drop-down menu.
 
-Once you select **Type Key** or **Type Shortcut**, a dialogue window will pop up in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. If you’d like to leave the dialogue, hold <kbd>Esc</kbd>.
+Once you select **Type Key** or **Type Shortcut**, a dialogue window will open in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. To leave the dialogue, hold <kbd>Esc</kbd>.
 
 Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can not use the type-key feature while the drop-down menu is open.
 
 ## Orphaning Keys
 
-Orphaning a key means that you mapped it to another key and no longer have anything mapped to it.
-
-For example, if the key is remapped from `A` to `B`, then a key no longer exists on your keyboard that results in `A`. To ensure this does not happen by accident, a warning will display for any orphaned keys. To fix this, use **+** to create another remapped key that is mapped to result in `A`.
+Orphaning a key means that you mapped it to another key and no longer have anything mapped to it. For example, if the key is remapped from `A` to `B`, then a key no longer exists on your keyboard that results in `A`. To ensure this does not happen by accident, a warning will display for any orphaned keys. To fix this, select **&#9547;** to create another remapped key that is mapped to result in `A`.
 
 ![PowerToys Keyboard Manager orphaned key.](../images/powertoys-keyboard-remap-orphaned.png)
 
