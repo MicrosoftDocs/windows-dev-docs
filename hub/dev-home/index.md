@@ -71,7 +71,7 @@ Learn more about **[Dev Home extensions](./extensions.md)**, including how to cr
 
 ## Dev Home open source repos
 
-Both the Dev Home app and Dev Home GitHub extension are open source and welcome your contributions.
+Both Dev Home and Dev Home GitHub extension are open source and welcome your contributions.
 
 - [Dev Home repository on GitHub](https://github.com/microsoft/devhome).
 - [Dev Home GitHub extension repository on GitHub](https://github.com/microsoft/devhomegithubextension)
