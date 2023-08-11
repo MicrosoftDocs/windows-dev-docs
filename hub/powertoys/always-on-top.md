@@ -14,7 +14,7 @@ A system-wide utility for Windows to pin windows above other windows.
 
 ## Toggle windows to be on top
 
-With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the targeted window will be placed above all non-topmost windows and should stay above them, even when the window is deactivated.
+With the activation/deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the active window will be placed above all non-topmost windows and should stay above them, even when the window is deactivated.
 
 ## Settings
 
@@ -22,9 +22,9 @@ From the Settings tab, you can configure the following options:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to turn on or off always on top for that window. |
+| Activation shortcut | The customizable keyboard command to turn on or off the always-on-top property for that window. |
 | Do not activate when Game Mode is on | Prevents the feature from being activated when actively playing a game on the system. |
-| Color mode | Choose either "Windows default" or "Custom color" for the highlight border. |
+| Color mode | Choose either **Windows default** or **Custom color** for the highlight border. |
 | Color | The custom color of the highlight border. |
 | Border thickness (px) | The thickness of the highlight border. Measured in pixels. |
 | Play a sound | Toggle playing of a short alert chirp. Activating and deactivating use different sounds. |
