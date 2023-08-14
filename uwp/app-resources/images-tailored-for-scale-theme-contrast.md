@@ -17,26 +17,26 @@ Some common qualifiers for images are [scale](tailor-resources-lang-scale-contra
 ## Qualify an image resource for scale, theme, and contrast
 The default value for the `scale` qualifier is `scale-100`. So, these two variants are equivalent (they both provide an image at scale 100, or scale factor 1).
 
-<blockquote>
+
 <pre>
 \Assets\Images\logo.png
 \Assets\Images\logo.scale-100.png
 </pre>
-</blockquote>
+
 
 
 You can use qualifiers in folder names instead of file names. That would be a better strategy if you have several asset files per qualifier. For purposes of illustration, these two variants are equivalent to the two above.
 
-<blockquote>
+
 <pre>
 \Assets\Images\logo.png
 \Assets\Images\scale-100\logo.png
 </pre>
-</blockquote>
+
 
 Next is an example of how you can provide variants of an image resource&mdash;named `/Assets/Images/logo.png`&mdash;for different settings of display scale, theme, and high contrast. This example uses folder naming.
 
-<blockquote>
+
 <pre>
 \Assets\Images\contrast-standard\theme-dark
 	\scale-100\logo.png
@@ -48,7 +48,7 @@ Next is an example of how you can provide variants of an image resource&mdash;na
 	\scale-100\logo.png
 	\scale-200\logo.png
 </pre>
-</blockquote>
+
 
 ## Reference an image or other asset from XAML markup and code
 The name&mdash;or identifier&mdash;of an image resource is its path and file name with any and all qualifiers removed. If you name folders and/or files as in any of the examples in the previous section, then you have a single image resource and its name (as an absolute path) is `/Assets/Images/logo.png`. Here’s how you use that name in XAML markup.
@@ -98,29 +98,29 @@ Also see [Tile and toast support for language, scale, and high contrast](/window
 ## Qualify an image resource for targetsize
 You can use the `scale` and `targetsize` qualifiers on different variants of the same image resource; but you can't use them both on a single variant of a resource. Also, you need to define at least one variant without a `TargetSize` qualifier. That variant must either define a value for `scale`, or let it default to `scale-100`. So, these two variants of the `/Assets/Square44x44Logo.png` resource are valid.
 
-<blockquote>
+
 <pre>
 \Assets\Square44x44Logo.scale-200.png
 \Assets\Square44x44Logo.targetsize-24.png
 </pre>
-</blockquote>
+
 
 And these two variants are valid. 
 
-<blockquote>
+
 <pre>
 \Assets\Square44x44Logo.png // defaults to scale-100
 \Assets\Square44x44Logo.targetsize-24.png
 </pre>
-</blockquote>
+
 
 But this variant is not valid.
 
-<blockquote>
+
 <pre>
 \Assets\Square44x44Logo.scale-200_targetsize-24.png
 </pre>
-</blockquote>
+
 
 ## Refer to an image file from your app package manifest
 If you name folders and/or files as in either of the two valid examples in the previous section, then you have a single app icon image resource and its name (as a relative path) is `Assets\Square44x44Logo.png`. In your app package manifest, simply refer to the resource by name. There's no need to use any URI scheme.
