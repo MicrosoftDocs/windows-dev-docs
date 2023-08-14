@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 08/08/2023
+ms.date: 08/14/2023
 ---
 
 # Set up a Dev Drive on Windows 11 (Public Preview)
@@ -285,6 +285,14 @@ There are a few scenarios in which we do not recommend using a Dev Drive. These 
 - The C: drive on your machine cannot be designated as a Dev Drive.
 - The purpose of a Dev Drive is to host files for building and debugging software projects designated to store repositories, package caches, working directories, and temp folders. We do not recommend installing applications on a Dev Drive.
 
+## How to delete a Dev Drive
+
+You can delete a Dev Drive in the Windows 11 System Settings: `System` > `Storage` > `Disks & volumes`.
+
+Open Windows **Settings** menu, then choose **Storage**, then **Advanced Storage Settings**, then **Disks & volumes**, where you will find a list of the storage volumes on your device. Select **Properties** next to the Dev Drive storage volume that you want to delete. In the drive's properties, you will find the option to **Delete** under the **Format** label.
+
+![Delete a Dev Drive in Windows Settings](../images/dev-drive-delete.png)
+
 ## Dev Drive FAQs
 
 Some frequently asked questions about Dev Drive, include:
@@ -313,7 +321,7 @@ No. If you have the space, you can create as many Dev Drives as you would like. 
 Once you have a Dev Drive created, Visual Studio will automatically recognize it when you're creating a new project and pick that filepath by default. To optimize performance when using Visual Studio, we recommend moving any project code, [package caches](#storing-package-cache-on-dev-drive), and `Copy on write` MS Build tasks to the Dev Drive that may have previously been saved elsewhere. (See [How to change the build output directory](/visualstudio/ide/how-to-change-the-build-output-directory) in the Visual Studio docs.) We also recommend that you consider redirecting `%TEMP%` and `%TMP%` envvars to Dev Drive. Many programs use these, so beware of potential side effects. We also recommend using [performance mode for Microsoft Defender](#what-is-microsoft-defender-performance-mode) for asychronous performance gains using Dev Drive. Turning Microsoft Defender completely off may result in the most maximum performance gains, but this may increase security risks and is a setting controlled by the system admin.
 
 For more information, see the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive).
- 
+
 ### Does Dev Drive work with WSL project files?
 
 You can access Dev Drive project files, which run on the Windows file system, from a Linux distribution running via WSL. However, WSL runs in a VHD and for the best performance files should be stored on the Linux file system. WSL is out of the scope of Windows file system so you should not expect to see any performance improvement when accessing project files in Dev Drive from a Linux distribution running via WSL.
