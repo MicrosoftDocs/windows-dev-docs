@@ -1,9 +1,9 @@
 ---
 title: App capability declarations
-description: Capabilities must be declared in your Windows app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
-ms.date: 12/16/2022
+description: To access certain APIs or resources (such as pictures or music), or devices (such as the camera or the microphone), you must declare app capabilities in your Windows app's package manifest.
+ms.date: 08/18/2023
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 11, windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
@@ -11,16 +11,43 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 
 # App capability declarations
 
-Capabilities must be declared in your Windows app's [package manifest](/uwp/schemas/appxpackage/appx-package-manifest) to access certain Windows APIs or resources, such as pictures, music, or devices such as the camera or the microphone. Capabilities are used by UWP apps as well as other types of desktop apps that are packaged in an MSIX or AppX package for Windows.
+## Which kinds of apps do app capabilities apply to?
 
-You request access to specific resources or API by declaring capabilities in your app's [package manifest](/uwp/schemas/appxpackage/appx-package-manifest). You can declare general capabilities by using the [Manifest Designer](/windows/msix/package/packaging-uwp-apps#configure-your-project) in Visual Studio, or you can add them manually. For more information, see [How to specify capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest). It is important to know that when customers get your app from the Store, they're notified of all the capabilities that the app declares. Avoid declaring capabilities that your app doesn't need.
+*Most* scenarios for app capabilities are relevant only to apps that have package identity, and that run in an AppContainer. All UWP apps meet those criteria; so capabilities apply to them. But you can also give a desktop app package identity, and configure it as an AppContainer app. So capabilities apply to some desktop apps, too.
 
-Some capabilities provide apps with access to a *sensitive resource*. These resources are considered sensitive because they can access the user's personal data or cost the user money. Privacy settings, managed by the Settings app, let the user dynamically control access to sensitive resources. Thus, it's important that your app doesn't assume a sensitive resource is always available. For more info about accessing sensitive resources, see [Security](../security/index.md). Capabilities that provide apps with access to a *sensitive resource* are annotated by an asterisk (\*) next to the capability scenario.
+* For more info about packaging and *package identity*, see [Deployment overview](/windows/apps/package-and-deploy/).
+* For more info about AppContainer apps, see [AppContainer for legacy apps](/windows/win32/secauthz/appcontainer-for-legacy-applications-).
 
-There are several types of capabilities.
+A desktop app that's an AppContainer app can be identified by `uap10:TrustLevel="appContainer"` in its app package manifest (for more info, see [Application (Windows 10)](/uwp/schemas/appxpackage/uapmanifestschema/element-application)). Similarly, a desktop app with *mediumIL* (an integrity level of medium) has `uap10:TrustLevel="mediumIL"`. Medium IL apps&mdash;which are also known as *full trust apps*&mdash;don't run in an AppContainer.
+
+The **internetClient** and **enterpriseAuthentication** capabilities grant an application the ability to perform certain operations that the user can already do. So those are examples of capabilities that apply only to AppContainer apps. Conversely, a Medium IL app is already running as the user; so an app like that can already perform those operations without requiring those capabilities.
+
+But there are some scenarios where a Medium IL app should declare a capability, too. In fact, a Medium IL app *needs* to declare the **runFullTrust** restricted capability. And, to be able to register out-of-process COM servers for inter-process communication (IPC), a packaged app needs **runFullTrust**. That feature is known as *Packaged COM* (for more info, see the blog post [COM Server and OLE Document support for the Desktop Bridge](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge/)). 
+
+For info about another scenario that applies even to Medium IL apps, see [Privacy-sensitive capabilities](#privacy-sensitive-capabilities) in this topic.
+
+You can determine whether your app package manifest needs **runFullTrust** simply by building your package. `Makeappx.exe` will validate the schema, and if **runFullTrust** isn't declared but something needs it, then you'll see a detailed error message including what the problem is, together with line and column numbers.
+
+## Declaring capabilities
+
+If you want to access certain APIs or resources (such as pictures or music), or devices (such as the camera or the microphone), then you must declare the appropriate app capabilities in your Windows app's [package manifest](/uwp/schemas/appxpackage/appx-package-manifest) 
+
+You can declare general capabilities by using the [Manifest Designer](/windows/msix/package/packaging-uwp-apps#configure-your-project) in Visual Studio; or you can add them manually. For more info, see [How to specify capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest). It's important to know that when customers get your app from the Microsoft Store, they're notified of all the capabilities that the app declares. So be sure to declare only the capabilities that your app needs.
+
+## Privacy-sensitive capabilities
+
+A *sensitive resource* is a resource that can access the user's personal data, or cost the user money. In this topic, capabilities that provide apps with access to a *sensitive resource* are annotated by an asterisk (\*) in the **Capability scenario** column.
+
+Privacy-sensitive capabilities signal to the operating system (OS)&mdash;and to the user&mdash;what the app intends to do. Since it's good to send this signal to the users of your app, we recommend that you declare privacy-sensitive capabilities *even for Medium IL apps* (where the application identity is used to provide individual privacy toggles). Doing so allows those apps to be managed in the privacy settings pages (managed by the Windows **Settings** app) as soon as they're installed; as opposed to later, when they access privacy-sensitive resources.
+
+Those privacy settings let the user dynamically control access to sensitive resources. Thus, it's important that your app doesn't assume that a sensitive resource is always available. For more info about accessing sensitive resources, see [Security](../security/index.md). 
+
+## Different kinds of capabilities
+
+There are several kinds of capabilities.
 
 - [General-use capabilities](#general-use-capabilities), which apply to most common app scenarios.
-- [Device capabilities](#device-capabilities), which allow your app to access peripheral and internal devices.
+- [Device capabilities](#device-capabilities), which allow your app to access internal and peripheral devices.
 - [Restricted capabilities](#restricted-capabilities), which require approval for Microsoft Store submission and/or are generally only available to Microsoft and certain partners.
 - [Custom capabilities](#custom-capabilities).
 
