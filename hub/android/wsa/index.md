@@ -239,7 +239,7 @@ intent.putExtra("com.microsoft.windows.EXTRA_URI", "ms-calculator:");
 try {
     startActivity(intent);
 } catch (ActivityNotFoundException e) {
-    // Not running in Windows Subsystem for Android™️ (or running on an old build).
+    // Not running in Windows Subsystem for Android™️ (or running on an older build that did not contain this feature).
 }
 ```
 
