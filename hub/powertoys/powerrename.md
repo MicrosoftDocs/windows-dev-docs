@@ -87,7 +87,27 @@ Choose between four options to either convert items to be all lowercase, all upp
 
 ### Enumerate items
 
-Appends a numeric suffix to file names that were modified in the operation. For example: `foo.jpg` → `foo (1).jpg`
+If selected, you can use the following patterns as part of the _Replace with_ text:
+
+| Variable pattern | Explanation                                                            |
+|:-----------------|:-----------------------------------------------------------------------|
+| `${}`            | A simple counter that will start from zero for the first renamed file. |
+| `${increment=X}` | A counter with a customized incrementer value.                         |
+| `${padding=X}`   | A counter with a specified number of leading zeroes for the number.    |
+| `${start=X}`     | A counter with a customized initial value.                             |
+
+You can also use multiple counters in the same replace string and combine customizations.
+
+For example, given a _Search_ text `a` and a set of files:
+- a.jpg
+- ab.jpg
+- abc.jpg
+
+A _Replace with_ text `Image_${padding=4;increment=2;start=10}_` would produce the following:
+- Image_0010_.jpg
+- Image_0012_b.jpg
+- Image_0014_bc.jpg
+
 
 ## Replace using file creation date and time
 
