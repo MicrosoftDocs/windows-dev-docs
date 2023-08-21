@@ -1,6 +1,6 @@
 ---
 title: Windows Subsystem for Android™️
-description: Windows Subsystem for Android enables your Windows 11 device to run Android applications that are available in the Amazon Appstore. Learn more about set up, device requirements, installing and uninstalling, input compatibility, testing and debugging, and using the Amazon Appstore.
+description: Windows Subsystem for Android™️ enables your Windows 11 device to run Android applications that are available in the Amazon Appstore. Learn more about set up, device requirements, installing and uninstalling, input compatibility, testing and debugging, and using the Amazon Appstore.
 author: mattwojo
 ms.author: mattwoj
 ms.reviewer: mousma
@@ -31,7 +31,7 @@ This guide can help you test and debug your Android app on Windows:
 
 ## Developer GitHub
 
-Want to learn more about Windows Subsystem for Android roadmap, discuss developer issues and file bugs or feature requests with the subsystem team? Visit the [Windows Subsystem for Android Developers GitHub](https://github.com/microsoft/WSA).
+Want to learn more about Windows Subsystem for Android™️ roadmap, discuss developer issues and file bugs or feature requests with the subsystem team? Visit the [Windows Subsystem for Android™️ Developers GitHub](https://github.com/microsoft/WSA).
 
 ## Preview Program
 
@@ -43,16 +43,16 @@ To test your Android app in the Windows desktop environment, a bit of set up wil
 
 ### Prerequisites
 
-Windows Subsystem for Android is available on Windows 11. Your device must meet specific requirements: [Device requirements](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
+Windows Subsystem for Android™️ is available on Windows 11. Your device must meet specific requirements: [Device requirements](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
 ### Install the Amazon Appstore
 
-The Microsoft Store will automatically install Windows Subsystem for Android silently in the background when either of the two following user actions are taken:
+The Microsoft Store will automatically install Windows Subsystem for Android™️ silently in the background when either of the two following user actions are taken:
 
 1. Install the [Amazon Appstore from the Microsoft Store](https://www.microsoft.com/store/productId/9NJHK44TTKSX). Selecting **Get** will begin the installation of the app.
 2. Install an Android app from the Microsoft Store for the first time, which will also install the Amazon Appstore.
 
-The **Amazon Appstore** app will then appear in the Windows 11 Start menu and be available on search, offering a catalogue of Android apps. The **Windows Subsystem for Android** app, which lets you control mobile app settings and features, will also appear in the Start menu.
+The **Amazon Appstore** app will then appear in the Windows 11 Start menu and be available on search, offering a catalogue of Android apps. The **Windows Subsystem for Android™️** app, which lets you control mobile app settings and features, will also appear in the Start menu.
 
 ![Screenshot of Microsoft Store page featuring the Get button on the Amazon App Store](../../images/wsa-amazon-appstore-get.png)
 
@@ -61,21 +61,21 @@ The **Amazon Appstore** app will then appear in the Windows 11 Start menu and be
 
 ## Windows Subsystem for Android™️ Settings
 
-To modify Windows Subsystem for Android settings, go to: **Start > All Apps > Windows Subsystem for Android™️**. Learn more about specific settings app features: [Manage settings for mobile apps on Windows](https://support.microsoft.com/windows/000f97e8-8c20-490e-9ef4-cd90d903f847).
+To modify Windows Subsystem for Android™️ settings, go to: **Start > All Apps > Windows Subsystem for Android™️**. Learn more about specific settings app features: [Manage settings for mobile apps on Windows](https://support.microsoft.com/windows/000f97e8-8c20-490e-9ef4-cd90d903f847).
 
 ![Screenshot of Latte app settings](../../images/wsa-settings.png)
 
 ## Test and debug
 
-To test and debug your app on a Windows 11 device using the Windows Subsystem for Android the following set up steps are required.
+To test and debug your app on a Windows 11 device using the Windows Subsystem for Android™️ the following set up steps are required.
 
 ### Enable developer mode in Windows Settings
 
 You must first enable developer mode. Open the **[Windows Subsystem for Android™️](#windows-subsystem-for-android-settings)** settings. Once open, enable **Developer mode** under **Advanced settings**.
 
-### Connect to the Windows Subsystem for Android for debugging
+### Connect to the Windows Subsystem for Android™️ for debugging
 
-To connect to the Windows Subsystem for Android VM for debugging:
+To connect to the Windows Subsystem for Android™️ VM for debugging:
 
 1. Launch an Android app that was installed using the Amazon Appstore.
 
@@ -87,9 +87,9 @@ To connect to the Windows Subsystem for Android VM for debugging:
 
 ### Connect to a test device
 
-To connect to a test device (with Windows Subsystem for Android installed) on the same network from Windows/Mac:
+To connect to a test device (with Windows Subsystem for Android™️ installed) on the same network from Windows/Mac:
 
-1. On the test device (where Windows Subsystem for Android is installed) open a PowerShell window and identify the IP address of the test device by running the command:
+1. On the test device (where Windows Subsystem for Android™️ is installed) open a PowerShell window and identify the IP address of the test device by running the command:
 
     ```powershell
     ipconfig
@@ -111,7 +111,7 @@ While apps should be installed using the Amazon Appstore, debugging an Android a
 
 To debug an APK using adb:
 
-1. Follow the steps to connect to the Windows Subsystem for Android VM above.
+1. Follow the steps to connect to the Windows Subsystem for Android™️ VM above.
 
 2. Install the APK using the adb install command: `adb install app-debug.apk`
 
@@ -126,7 +126,7 @@ To debug an APK using adb:
 
 ### Building Universal APKs
 
-Windows Subsystem for Android utilizes Intel Bridge Technology to enable Arm applications on x86 based processors. Arm applications will run on Arm-based processors natively. The emulation layer will induce a performance overhead – for optimal performance, submit your application for both the x86-64 and Arm64 architectures.
+Windows Subsystem for Android™️ utilizes Intel Bridge Technology to enable Arm applications on x86 based processors. Arm applications will run on Arm-based processors natively. The emulation layer will induce a performance overhead – for optimal performance, submit your application for both the x86-64 and Arm64 architectures.
 
 ## Input compatibility considerations for Windows devices
 
@@ -199,13 +199,13 @@ Learn more about how to optimize for window resizing scenarios on desktop device
 
 Developing Android applications for a multi-window environment has an impact on the lifecycle events that you choose to utilize in your application. While overriding the `onPause` event may achieve the results you’d like on a phone or tablet, it’s typically the wrong event to use if you’re changing your app’s UX.
 
-See the [Android documentation](https://developer.android.com/guide/components/activities/activity-lifecycle) for a description of the lifecycle events. More often than not, you’ll want to use the `onStop` event and not the `onPause` or `onUserLeaveHint` events. In fact, many multi-window Android implementations do not deliver the `onUserLeaveHint` notification, and thus any business critical logic that might be in that event handler will not be called on these platforms, including Windows Subsystem for Android.
+See the [Android documentation](https://developer.android.com/guide/components/activities/activity-lifecycle) for a description of the lifecycle events. More often than not, you’ll want to use the `onStop` event and not the `onPause` or `onUserLeaveHint` events. In fact, many multi-window Android implementations do not deliver the `onUserLeaveHint` notification, and thus any business critical logic that might be in that event handler will not be called on these platforms, including Windows Subsystem for Android™️.
 
 ## VM lifecycle considerations
 
-Windows Subsystem for Android utilizes a virtual machine (VM) which provides compatibility with the [AOSP framework](https://source.android.com/) and devices like keyboards, mice, touch, pen, etc.
+Windows Subsystem for Android™️ utilizes a virtual machine (VM) which provides compatibility with the [AOSP framework](https://source.android.com/) and devices like keyboards, mice, touch, pen, etc.
 
-There are three possible states for the VM running apps with Windows Subsystem for Android:
+There are three possible states for the VM running apps with Windows Subsystem for Android™️:
 
 1. Running
 2. Lightweight Doze: Activated after no app activity for 3 minutes. Deactivated by user activity or an app notification.
@@ -217,7 +217,7 @@ Transitions between these states are triggered by user activity, such as launchi
 
 ### VM Properties
 
-The properties for the Windows Subsystem for Android VM are listed below. Hardcoding these values is not recommended as that could cause future incompatibilities.
+The properties for the Windows Subsystem for Android™️ VM are listed below. Hardcoding these values is not recommended as that could cause future incompatibilities.
 
 | Property | Value |
 | --- | --- |
@@ -226,21 +226,36 @@ The properties for the Windows Subsystem for Android VM are listed below. Hardco
 | Build.VERSION.SDK_INT | 32 |
 | Build.BOARD | windows |
 
-## Security
+## Redirect to Windows apps
 
-Windows Subsystem for Android performs per-file encryption that is software-based.
+Windows Subsystem for Android™️ automatically redirects intents for files and common URI schemes to the corresponding Windows default file/protocol handler (if multiple intent filters match, users see a "Windows default app" option in the chooser dialog). Supported file intents include [ACTION_VIEW](https://developer.android.com/reference/android/content/Intent#ACTION_VIEW), [ACTION_EDIT](https://developer.android.com/reference/android/content/Intent#ACTION_EDIT), [ACTION_SEND](https://developer.android.com/reference/android/content/Intent#ACTION_SEND), and [ACTION_SEND_MULTIPLE](https://developer.android.com/reference/android/content/Intent#ACTION_SEND_MULTIPLE), which copy the file to the Windows Downloads folder before opening it. Supported URI intents include [ACTION_VIEW](https://developer.android.com/reference/android/content/Intent#ACTION_VIEW) for the http/https schemes and [ACTION_VIEW](https://developer.android.com/reference/android/content/Intent#ACTION_VIEW) and [ACTION_SENDTO](https://developer.android.com/reference/android/content/Intent#ACTION_SENDTO) for the mailto scheme.
+
+Android apps can also manually redirect to Windows apps using custom URI schemes. Set the intent action to `com.microsoft.windows.LAUNCH_URI` and add a string extra to the intent named `com.microsoft.windows.EXTRA_URI` with the custom URI as the value. For example, to launch the Windows Calculator app from an Android app (Java):
+
+```java
+Intent intent = new Intent("com.microsoft.windows.LAUNCH_URI");
+intent.putExtra("com.microsoft.windows.EXTRA_URI", "ms-calculator:");
+ 
+try {
+    startActivity(intent);
+} catch (ActivityNotFoundException e) {
+    // Not running in Windows Subsystem for Android™️ (or running on an old build).
+}
+```
+
+## Security
 
 Both Windows kernel-mode drivers and Windows applications running at medium integrity level (IL) can inspect arbitrary Android containers and Android app memory. There are no plans to add detection for cheats/macro/bot/suspicious behaviors detection in the short-term.
 
 Developers querying `getSecurityLevel` will get `SECURITY_LEVEL_SW_SECURE_CRYPTO`. Learn more about `getSecurityLevel` in the [Android API Reference guide](https://developer.android.com/reference/android/media/MediaDrm#getSecurityLevel(byte[])).
 
-## Uninstalling Windows Subsystem for Android
+## Uninstalling Windows Subsystem for Android™️
 
-You can uninstall the Windows Subsystem for Android, but note that all associated apps will also be uninstalled.
+You can uninstall the Windows Subsystem for Android™️, but note that all associated apps will also be uninstalled.
 
-- Uninstalling the Amazon Appstore will uninstall the Windows Subsystem for Android and all other Android apps.
+- Uninstalling the Amazon Appstore will uninstall the Windows Subsystem for Android™️ and all other Android apps.
 - Uninstalling an Amazon Appstore app will only uninstall the app (same behavior as Windows apps).
-- Uninstalling the Windows Subsystem for Android will uninstall the Amazon Appstore and all Android apps.
+- Uninstalling the Windows Subsystem for Android™️ will uninstall the Amazon Appstore and all Android apps.
 
 ## Troubleshooting issues
 
@@ -254,11 +269,11 @@ If you encounter issues specific to the Amazon Appstore on Windows, try the foll
 6. Close the Amazon Appstore Settings window.
 7. Relaunch the Amazon Appstore.
 
-For further troubleshooting steps relating to the Windows Subsystem for Android Settings app or to leave feedback using Feedback Hub, see [Troubleshooting and FAQ for mobile apps on Windows](https://support.microsoft.com/windows/d6062afd-98a1-4018-a7c8-6b3b680a2ea5).
+For further troubleshooting steps relating to the Windows Subsystem for Android™️ Settings app or to leave feedback using Feedback Hub, see [Troubleshooting and FAQ for mobile apps on Windows](https://support.microsoft.com/windows/d6062afd-98a1-4018-a7c8-6b3b680a2ea5).
 
-For any other developer questions and support, use the [Windows Subsystem for Android tag on Microsoft Q&A](/answers/topics/windows-subsystem-for-android.html).
+For any other developer questions and support, use the [Windows Subsystem for Android™️ tag on Microsoft Q&A](/answers/topics/windows-subsystem-for-android.html).
 
 ## Additional resources
 
 - [Apps from the Amazon Appstore](https://support.microsoft.com/en-us/windows/apps-from-the-amazon-appstore-abed2335-81bf-490a-92e5-fe01b66e5c48)
-- [Accessibility on Windows Subsystem for Android](https://support.microsoft.com/windows/97b77924-6df9-4597-8394-15b6e34d1658)
+- [Accessibility on Windows Subsystem for Android™️](https://support.microsoft.com/windows/97b77924-6df9-4597-8394-15b6e34d1658)
