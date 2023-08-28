@@ -82,7 +82,7 @@ UI controls use a visual representation that is defined as part of a XAML resour
 
 When you design your apps, consider how they may be used by people with limited mobility, vision, and hearing. Because assistive technology products make extensive use of standard UI, it is particularly important to provide good keyboard and screen-reader support even if you make no other adjustments for accessibility.
 
-In many cases, you can convey essential information by using multiple techniques to widen your audience. For example, you can highlight information using both icon and color information to help users who are color blind, and you can display visual alerts along with sound effects to help users who are hearing impaired.
+In many cases, you can convey essential information by using multiple techniques to widen your audience. For example, you can highlight information using both icon and color information to help users who are color blind, and you can display visual alerts along with sound effects to help users who are deaf or hard of hearing.
 
 If necessary, you can provide alternative, accessible user interface elements that completely remove nonessential elements and animations, and provide other simplifications to streamline the user experience. The following code example demonstrates how to display one [**UserControl**](/uwp/api/Windows.UI.Xaml.Controls.UserControl) instance in place of another depending on a user setting.
 
