@@ -37,7 +37,7 @@ All glyphs in **Segoe MDL2 Assets** have the same fixed width with a consistent 
 
 ![using a zero-width glyph](images/segoe-ui-symbol-layering.png)
 
-Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
+Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Dari, Persian, and Hebrew.
 
 ## Using the icons
 If you are developing an app in C#/VB/C++ and XAML, you can use specified glyphs from Segoe MDL2 Assets with the [Symbol enumeration](/uwp/api/windows.ui.xaml.controls.symbol). 
