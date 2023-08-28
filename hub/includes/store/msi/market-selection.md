@@ -352,7 +352,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
     <td>Tonga</td>
     <td>Trinidad and Tobago</td>
     <td>Tunisia</td>
-    <td>Turkey *</td>
+    <td>Türkiye *</td>
   </tr>
   <tr>
     <td>Turkmenistan</td>
