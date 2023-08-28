@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction. Flow direction is the direction in which script is written and displayed, and the UI elements on the page are scanned by the eye.
 
 ## Layout guidelines
-Languages such as German and Finnish typically use more characters than English does. Far Eastern fonts typically require more height. And languages such as Arabic and Hebrew require that layout panels and text elements be laid out in right-to-left (RTL) reading order.
+Languages such as German and Finnish typically use more characters than English does. East Asian fonts typically require more height. And languages such as Arabic and Hebrew require that layout panels and text elements be laid out in right-to-left (RTL) reading order.
 
 Because of these variations in the metrics of translated text, we recommend that you don't bake absolute positioning, fixed widths, or fixed heights into your user interface (UI). Instead, take advantage of the dynamic layout mechanisms that are built into the Windows UI elements. For example, content controls (such as buttons), items controls (such as grid views and list views), and layout panels (such as grids and stackpanels) automatically resize and reflow by default to fit their content. Pseudo-localize your app to uncover any problematic edge cases where your UI elements don't size to content properly.
 
