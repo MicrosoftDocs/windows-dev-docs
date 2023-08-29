@@ -49,13 +49,13 @@ The *applicationId* or *addonProductId* parameter is required. To retrieve acqui
 The following examples demonstrates several requests for getting add-on acquisition data. Replace the *addonProductId* and *applicationId* values with the appropriate Store ID for your add-on or app. 
 
 ```syntax
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/addonacquisitions?applicationId=9WZDNCRFJ314&startDate=1/1/2015&endDate=2/1/2015&skip=0 HTTP/1.1 
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/addonacquisitions?applicationId=9WZDNCRFJ314&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1 
 
 Authorization: Bearer <your access token> 
 
  
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/addonacquisitions?applicationId=9WZDNCRFJ314&startDate=1/1/2015&endDate=2/1/2015&skip=0&filter=market eq 'GB' and gender eq 'm' HTTP/1.1 
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/addonacquisitions?applicationId=9WZDNCRFJ314&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0&filter=market eq 'GB' and gender eq 'm' HTTP/1.1 
 
 Authorization: Bearer <your access token>
 ```
