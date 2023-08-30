@@ -64,7 +64,6 @@ We're introducing a new list control called the `ItemsView` and a corresponding 
 ### New features from across the WinAppSDK
 
 - A new `ThemeSettings` class that allows Win32 WinRT apps to detect when the system's High Contrast setting has changed, similar to UWP's [AccessibilitySettings](/uwp/api/windows.ui.viewmanagement.accessibilitysettings) class. See the [ThemeSettings API spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/themes/ThemeSettings.md) on GitHub for more information.
-- `Popup/FlyoutBase.ShouldConstrainToRootBounds` is now supported to allow tooltips, menus, and other popups to extend outside the bounds of the main window.
 - `AccessKeyManager.EnterDisplayMode` is a new method to display access keys for the current focused element of a provided root. Access keys are in "display mode" when showing a key tip to invoke a command, such as pressing the Alt key in Paint to show what keys correspond to what controls. This method allows for programmatically entering display mode.
 - `Application.ResourceManagerRequested` provides a mechanism to provide a different `IResourceManager` to resolve resource URIs for scenarios when the default `ResourceManager` won't work. For more information, see the [Application.ResourceManagerRequested API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/custom-iresourcemanager-spec.md) on GitHub.
 - The version of the WebView2 SDK was updated from 1661.34 to [1823.32](/microsoft-edge/webview2/release-notes?tabs=winrtcsharp#10182332).
