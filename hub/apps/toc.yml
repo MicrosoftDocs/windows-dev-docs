@@ -463,6 +463,8 @@ items:
         href: develop/security-and-identity.md
       - name: Speech
         href: develop/speech.md
+      - name: DispatcherQueue
+        href: develop/dispatcherqueue.md
       - name: Windows AI and machine learning
         href: /windows/ai/
       - name: Windows widget providers
