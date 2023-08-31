@@ -1,7 +1,7 @@
 ---
 title: Partner Center for Xbox
 description: This section describes how to set up your Partner Center account for app development on Xbox
-ms.date: 04/13/2022
+ms.date: 08/31/2023
 ms.topic: article
 keywords: Xbox
 ms.author: HiHaile
@@ -47,9 +47,16 @@ Creating a partner center account is the first step in bringing your app to Xbox
 
 [Beta testing and targeted distribution](/windows/apps/publish/beta-testing-and-targeted-distribution)
 
-## Updating banking info  
+### Updating banking information
 
 - Login to your Partner Center account and click on the gear icon in upper right-hand corner.
 - Select **Account settings**. It should take you to a page that has a menu on the left.
 - Select the items under the **Payout and tax** section and confirm if you have banking information.
 - Partner project 6 and then 6 IDs, need to link with what you have for partner center account from Visual Studio.
+
+### Uploading your symbols to Partner Center
+
+Uploading Symbols through Partner Center is essential to enable crash analytics. For details on how to upload your 
+symbols through Partner Center, see this documentation:
+
+ [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps#create-your-app-package-upload-file-manually)  
