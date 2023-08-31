@@ -242,3 +242,138 @@ When set to `true`, the background image for the currently focused profile is ex
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
+
+___
+
+## New tab dropdown
+
+This setting enables you to configure the list of profiles and the structure of the new tab dropdown menu. This lets you reorder profiles, nest profiles into sub-menus, hide profiles and more. The `newTabMenu` setting accepts a list of "New tab menu entries", which are described below.
+
+An example of this setting might look like:
+
+```json
+{
+    "newTabMenu": [
+        { "type":"profile", "profile": "Command Prompt" },
+        { "type":"profile", "profile": "Windows PowerShell" },
+        { "type":"separator" },
+        {
+            "type":"folder",
+            "name": "ssh",
+            "icon": "C:\\path\\to\\icon.png",
+            "entries":
+            [
+                { "type":"profile", "profile": "Host 1" },
+                { "type":"profile", "profile": "8.8.8.8" },
+                { "type":"profile", "profile": "Host 2" }
+            ]
+        },
+        {
+            "type": "folder",
+            "name": "WSL",
+            "entries": [ { "type": "matchProfile", "source": "Microsoft.Terminal.Wsl" } ]
+        },
+        { "type": "remainingProfiles" }
+    ]
+}
+```
+
+**Property name:** `newTabMenu`
+
+**Necessity:** Optional
+
+**Accepts:** a list of new tab menu entries
+
+**Default value:** ```[ { "type":"remainingProfiles" } ]```
+
+### New tab menu entries
+
+The following are different types of new tab menu entries that can be used in the `newTabMenu` setting. They are each in the form of a JSON object with a `type` property and other properties specific to that entry type. The values for the `type` property are listed below.
+
+* [`profile`](#profile)
+* [`folder`](#folder)
+* [`separator`](#separator)
+* [`matchProfile`](#match-profile)
+* [`remainingProfiles`](#remaining-profiles)
+
+#### Profile
+
+This entry type represents a profile from your list of profiles. The profile can be specified by name or GUID.
+
+```json
+{ "type":"profile", "profile": "Command Prompt" }
+```
+
+##### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `profile` | Required | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
+
+#### Folder
+
+This entry type represents a nested folder in the new tab dropdown menu. Folders can be nested inside of other folders.
+
+```json
+{
+    "type":"folder",
+    "name": "ssh",
+    "icon": "C:\\path\\to\\icon.png",
+    "entries":
+    [
+        { "type":"profile", "profile": "Host 1" },
+        { "type":"profile", "profile": "Host 2" }
+    ]
+}
+```
+
+##### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `name` | Required | Folder name as a string | Name of the folder, displayed on the menu entry. |
+| `icon` | Optional | Path to an icon as a string | Path to an icon that will be displayed next to the folder name. |
+| `entries` | Required | List of new tab menu entries | List of new tab menu entries that will be displayed when the folder is clicked. |
+| `allowEmpty` | Optional | Boolean (defaults to `true`) | If set to `true`, the folder will be displayed even if it has no entries. If set to `false`, the folder will not be displayed if it has no entries. This can be useful with `matchProfile` entries. |
+| `inline` | Optional | Boolean (defaults to `false`) | If set to `true`, and there's only a single entry in the folder, this folder won't create a nested menu. Instead, a the entry in the menu will just be the single entry in the folder. This can be useful with `matchProfile` entries. |
+
+#### Separator
+
+This entry type represents a separator in the new tab dropdown menu.
+
+```json
+{ "type":"separator" }
+```
+
+
+#### Remaining Profiles
+
+This entry type represents all profiles that are not already represented in the new tab dropdown menu. This is useful if you want to have a set of profiles that are always displayed at the top of the new tab dropdown menu, and then have the rest of the profiles displayed in a folder at the bottom of the new tab dropdown menu.
+
+This will return a list of the remaining profiles, in the order they appear in the `profiles` list.
+
+```json
+{ "type": "remainingProfiles" }
+```
+
+#### Match Profile
+
+This entry type is similar to the remaining profiles entry. This entry will expand to a list of profiles that all match a given property. You can match based on the profiles by `name`, `commandline`, or `source`.
+
+For example:
+
+```json
+{ "type": "matchProfile", "source": "Microsoft.Terminal.Wsl" }
+```
+
+Will create a set of entries that are all profiles with the `source` property set to `Microsoft.Terminal.Wsl`. A full string comparison is done on these properties - not a regex or partial string match.
+
+##### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `name` | Optional | Profile name as a string | A value to compare to the `name` of the profile. |
+| `commandline` | Optional | Command line as a string | A value to compare to the `commandline` of the profile. |
+| `source` | Optional | Profile source as a string | A value to compare to the `source` of the profile. |
+
+___
