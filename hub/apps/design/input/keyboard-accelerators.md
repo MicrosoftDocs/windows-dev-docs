@@ -587,7 +587,7 @@ We recommend localizing all keyboard accelerators. You can do this with the stan
 ```
 
 > [!NOTE]
-> Keyboard accelerators are implemented as virtual-keys. Localized accelerators must be chosen from the predefined domain of virtual-keys (see [Virtual-Key codes](/windows/win32/inputdev/virtual-key-codes)). Any other character is not supported and will lead to Xaml parser error.
+> Keyboard accelerators are implemented as virtual-keys. Localized accelerators must be chosen from the predefined collection of [Virtual-Key codes](/windows/win32/inputdev/virtual-key-codes) (otherwise, a XAML parser error will occur).
 
 ### Setup an accelerator programmatically
 
