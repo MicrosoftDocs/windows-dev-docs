@@ -586,6 +586,9 @@ We recommend localizing all keyboard accelerators. You can do this with the stan
 </Button>
 ```
 
+> [!NOTE]
+> Keyboard accelerators are implemented as virtual-keys. Localized accelerators must be chosen from the predefined collection of [Virtual-Key codes](/windows/win32/inputdev/virtual-key-codes) (otherwise, a XAML parser error will occur).
+
 ### Setup an accelerator programmatically
 
 Here is an example of programmatically defining an accelerator:
