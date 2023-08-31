@@ -88,8 +88,12 @@ function Global:__Terminal-Get-LastExitCode {
   if ($? -eq $True) {
     return 0
   }
-  if ("$LastExitCode" -ne "") { return $LastExitCode }
-  return -1
+  $LastHistoryEntry = $(Get-History -Count 1)
+  $IsPowerShellError = $Error[0].InvocationInfo.HistoryId -eq $LastHistoryEntry.Id
+  if ($IsPowerShellError) {
+    return -1
+  }
+  return $LastExitCode
 }
 
 function prompt {
