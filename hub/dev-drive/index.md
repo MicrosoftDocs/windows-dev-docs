@@ -284,6 +284,7 @@ There are a few scenarios in which we do not recommend using a Dev Drive. These 
 - A volume in a VHD hosted by a removable or hot-pluggable disk does not support designation as a Dev Drive.
 - The C: drive on your machine cannot be designated as a Dev Drive.
 - The purpose of a Dev Drive is to host files for building and debugging software projects designated to store repositories, package caches, working directories, and temp folders. We do not recommend installing applications on a Dev Drive.
+- Using Dev Drive on [Dynamic Disks](/windows/win32/fileio/basic-and-dynamic-disks#dynamic-disks) is unsupported. Instead, use [Storage Spaces](https://support.microsoft.com/windows/storage-spaces-in-windows-b6c8b540-b8d8-fb8a-e7ab-4a75ba11f9f2#WindowsVersion=Windows_11), which will help protect your data from drive failures and extend storage over time as you add drives to your PC. 
 
 ## How to delete a Dev Drive
 
