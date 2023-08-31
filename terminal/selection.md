@@ -69,6 +69,8 @@ As mentioned above, selected text can be copied with a right-click or the `copy`
 - Copying formatted text
     - You can use the `copyFormatting` global setting to also copy the formatting of the selected text itself to the clipboard. This allows you to copy the terminal's font information such as foreground color, background color, and font.
     - If you want to limit copying the formatting to certain key bindings (or commands), you can modify the `copyFormatting` parameter on a `copy` action.
+- Copying without dismissing text selection
+    - You can copy text without dismissing the text selection by setting the `dismissSelection` parameter in the `copy` action to `false`.
 - Copying as a single line
     - You can copy text as a single line using the `singleLine` parameter in the `copy` action.
 - Removing trailing whitespace from block selections
