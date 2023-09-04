@@ -63,6 +63,8 @@ For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_sec
 
 After your access token expires, you can refresh it by following the instructions [here](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens).
 
+    > [!NOTE]
+    > ResourceType='Graph.windows.net' will be depricated after September 2023. Please migrate to ResourceType ='Graph.microsoft.com'
 <span id="call-the-windows-store-analytics-api"></span>
 
 ## Step 3: Call the Microsoft Store analytics API
