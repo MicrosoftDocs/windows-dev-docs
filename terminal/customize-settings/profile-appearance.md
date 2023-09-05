@@ -174,7 +174,7 @@ This controls how "intense" text is formatted in the terminal. "Intense" text is
 * `"bright"`: render intense text bright, but not bold
 * `"none"`: the terminal won't do anything special for intense text
 
-**Default value:** `"all"`
+**Default value:** `"bright"`
 
 ## Retro terminal effects
 
