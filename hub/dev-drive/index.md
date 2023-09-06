@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 08/14/2023
+ms.date: 09/05/2023
 ---
 
 # Set up a Dev Drive on Windows 11 (Public Preview)
@@ -89,6 +89,24 @@ Congratulations! You've now resized your Dev Drive.
 To find and **use unallocated space on an existing drive**, you can open **System** > **Storage** > **Disks & volumes**, look through the page to see whether any storage space is listed as "Unallocated". Select **Create volume** and you will be given the choices to **Create Simple Volume** (a standard NTFS storage volume) or **Create Dev Drive**. To create a Dev Drive, the steps are the same as above, you will need to add a **Label** (drive name), **Drive Letter**, and confirm the **Size** allocation.
 
 ![Screenshot of Disks & volumes storage list with unallocated storage space.](../images/dev-drive-unallocated.png)
+
+### Format a storage volume as a Dev Drive from the command line
+
+As an alternative to using Windows Settings, there are two options for creating Dev Drive storage volumes from the command line. Both options require that you open the command line as an Administrator. You must be a member of the Admin group to format a hard drive. These command line formatting methods may be preferred when creating multiple Dev Drives or as an admin for multiple machines.
+
+1. Using the [Format.com](/windows-server/administration/windows-commands/format) command line tool from Windows CMD or PowerShell:
+
+  ```CMD
+  Format D: /DevDrv /Q
+ ```
+
+2. Using the [Format-Volume](/powershell/module/storage/format-volume#-devdrive) cmdlet from PowerShell: 
+
+```PowerShell
+Format-Volume -DriveLetter D -DevDrive
+```
+
+These code samples require that you replace `D:` with the drive location you wish to target. See the links for more options and command parameters.
 
 ## How does Dev Drive work?
 
