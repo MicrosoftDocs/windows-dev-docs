@@ -723,7 +723,7 @@ To generate Arm64EC dynamic code, the process is mostly the same with only two d
 
 - When allocating the memory, use newer `VirtualAlloc2` (instead of `VirtualAlloc` or `VirtualAllocEx`) and provide the `MEM_EXTENDED_PARAMETER_EC_CODE` attribute.
 - When adding function entries:
-  - They must be in Arm64 format. When compiling Arm64EC code, the `RUNTIME_FUNCTION` type will match the x64 format. For Arm64 format when compiling Am64EC, use the `ARM64_RUNTIME_FUNCTION` type instead.
+  - They must be in Arm64 format. When compiling Arm64EC code, the `RUNTIME_FUNCTION` type will match the x64 format. For Arm64 format when compiling Arm64EC, use the `ARM64_RUNTIME_FUNCTION` type instead.
   - Do not use the older `RtlAddFunctionTable` API. Always use the newer `RtlAddGrowableFunctionTable` API instead.
 
 Below is an example of memory allocation:
@@ -750,7 +750,7 @@ Below is an example of memory allocation:
 And an example of adding one unwind function entry:
 
 ```cpp
-Arm64_RUNTIME_FUNCTION FunctionTable[1];
+ARM64_RUNTIME_FUNCTION FunctionTable[1];
 
 FunctionTable[0].BeginAddress = 0;
 FunctionTable[0].Flags = PdataPackedUnwindFunction;
