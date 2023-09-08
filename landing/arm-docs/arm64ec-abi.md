@@ -622,7 +622,7 @@ Writing `fD` in ASM would look something like:
 In the example above:
 
 - Arm64EC uses the same procedure declaration and prolog/epilog macros as Arm64.
-- Function names should be wrapped by the `A64NAME` macro. When compiling C/C++ code as Arm64EC, the compiler marks the `OBJ` as `Arm64EC` containing Arm64EC code. This does not happen with `ArmASM`. When compiling ASM code there is an alternate way to inform the linker that the produced code is Arm64EC. This is by prefixing the function name with `#`. The `A64NAME` macro performs this operation when `_Arm64EC_` is defined and leaves the name unchanged when `_Arm64EC_` is not defined. This makes it possible to share source code between Arm64 and Arm64EC.
+- Function names should be wrapped by the `A64NAME` macro. When compiling C/C++ code as Arm64EC, the compiler marks the `OBJ` as `ARM64EC` containing Arm64EC code. This does not happen with `ARMASM`. When compiling ASM code there is an alternate way to inform the linker that the produced code is Arm64EC. This is by prefixing the function name with `#`. The `A64NAME` macro performs this operation when `_ARM64EC_` is defined and leaves the name unchanged when `_ARM64EC_` is not defined. This makes it possible to share source code between Arm64 and Arm64EC.
 - The `pfE` function pointer must first be run through the EC call checker, together with the appropriate Exit Thunk, in case the target function is x64.
 
 ## Generating Entry and Exit Thunks
@@ -692,7 +692,7 @@ The code above does not supply an Exit Thunk (in register x10). This is not poss
 The above code does need an Entry Thunk to address the case when the caller is x64 code. This is how to author the corresponding Entry Thunk, using the macro for custom Entry Thunks:
 
 ```
-    Arm64EC_CUSTOM_ENTRY_THUNK A64NAME(MyAdjustorThunk)
+    ARM64EC_CUSTOM_ENTRY_THUNK A64NAME(MyAdjustorThunk)
     ldr     x9, [x0, 0x18]
     adrp    xip0, __os_arm64x_x64_jump
     ldr     xip0, [xip0, __os_arm64x_x64_jump]
