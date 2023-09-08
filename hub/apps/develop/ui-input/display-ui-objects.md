@@ -207,7 +207,7 @@ The [**Windows.Security.Credentials.UI.UserConsentVerifier**](/uwp/api/windows.s
 In a desktop app, instead of calling the [**UserConsentVerifier.RequestVerificationAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) method:
 
 * **C#**. Call the **RequestVerificationForWindowAsync** method of the **Windows.Security.Credentials.UI.UserConsentVerifierInterop** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
-* **C++/WinRT**. Call [**IDataTransferManagerInterop::ShowShareUIForWindow**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow).
+* **C++/WinRT**. Call [**IUserConsentVerifierInterop::RequestVerificationForWindowAsync**](/windows/win32/api/userconsentverifierinterop/nf-userconsentverifierinterop-iuserconsentverifierinterop-requestverificationforwindowasync).
 
 For more info, and code examples, see [**UserConsentVerifier**](/uwp/api/windows.security.credentials.ui.userconsentverifier).
 
