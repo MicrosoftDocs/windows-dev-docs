@@ -41,7 +41,7 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 
 *Overridable* methods present themselves differently in different language projections. In C#, for example, overridable methods typically appear as protected virtual methods. In C++/WinRT, they're neither virtual nor protected, but you can still override them and provide your own implementation, as shown above.
 
-If you're overriding one of these overridable methods in C++/WinRT, then your `runtimeclass` IDL mustn't declare the method.
+If you're overriding one of these overridable methods in C++/WinRT, then your `runtimeclass` IDL mustn't declare the method. For more info about the `base_type` syntax shown, see the next section in this topic ([Calling your base type](#calling-your-base-type)).
 
 **IDL**
 
@@ -74,16 +74,17 @@ namespace winrt::Example::implementation
 
 ## Calling your base type
 
-You can access your bass type, and call methods on it, by using the type alias `base_type`. This is just an example of the syntax of calling `base_type` (this isn't a full illustration of how to perform layout in a custom layout panel):
+You can access your base type, and call methods on it, by using the type alias `base_type`. We saw an example of this in the previous section; but you can use `base_type` to access any base class member (not just overriden methods). Here's an example:
 
 ```cppwinrt
-struct CustomGrid : CustomGridT<CustomGrid>
+struct MyDerivedRuntimeClass : MyDerivedRuntimeClassT<MyDerivedRuntimeClass>
 {
-    CustomGrid() {}
+    ...
 
-    Size ArrangeOverride(Size const& finalSize)
+    void Foo()
     {
-        return base_type::ArrangeOverride(finalSize);
+        // Call my base type's Bar method.
+        base_type::Bar();
     }
 };
 ```
