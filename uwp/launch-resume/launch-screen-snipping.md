@@ -38,7 +38,7 @@ The **ms-screensketch:** URI allows you to programatically launch the Snipping T
 | sharedAccessToken | string | no | A token identifying the file to open. Retrieved from [SharedStorageAccessManager.AddFile](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). If this parameter is omitted, the app will be launched without a file open. |
 | secondarySharedAccessToken | string | no | A string identifying a JSON file with metadata about the snip. The metadata may include a **clipPoints** field with an array of x,y coordinates, and/or a [userActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity). |
 | source | string | no | A freeform string to indicate the source that launched the URI. |
-| isTemporary | bool | no | If set to True, Screen Sketch will try to delete the file after opening it. |
+| isTemporary | bool | no | If set to True, Snipping Tool will try to delete the file after opening it. |
 
 The following example calls the [LaunchUriAsync](/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method to send an image to Snipping Tool from the user's app.
 
