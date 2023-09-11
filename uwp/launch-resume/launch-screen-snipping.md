@@ -20,7 +20,7 @@ The **ms-screenclip:** URI allows your app to automatically open up and start a 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | source | string | no | A freeform string to indicate the source that launched the URI. |
-| type | string | no | A string value to indicate which special type of capture is requested. This parameter can be omitted when starting a new snip. Values supported include: snapshot, recording* |
+| type | string | no | A string value to indicate which special type of capture is requested. This parameter can be omitted when starting a new snip. Values supported include: snapshot, recording\* |
 | clippingMode | string | no | A string value to indicate the clipping type for the snip. Values supported include: Rectangle, Freeform, Window |
 | delayInSeconds | int | no | An integer value, from 1 to 30. Specifies the delay, in full seconds, between the URI call and when snipping begins. |
 | callbackformat | string | no | This parameter is unavailable. |
