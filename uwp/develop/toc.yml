@@ -772,6 +772,8 @@
           href: ../cpp-and-winrt-apis/binding-collection.md
         - name: XAML custom (templated) controls
           href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: Calling and overriding your base type
+          href: ../cpp-and-winrt-apis/base-type.md
         - name: Passing parameters into the ABI boundary
           href: ../cpp-and-winrt-apis/pass-parms-to-abi.md
         - name: Consume COM components
