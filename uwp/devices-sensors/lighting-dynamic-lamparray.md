@@ -47,7 +47,7 @@ Dynamic lighting support in Windows lets both app developers and end users contr
 
 A Windows app can control HID LampArray devices when the app is in the foreground (starting with Windows 10) and when it's in the background (also known as *ambient lighting*, starting with Windows 11).
 
-Users can customize their LampArray device experience through the **Settings -> Personalization -> Dynamic lighting** screen, letting them synchronize devices from different manufacturers, control brightness and effects across selected devices and form factors, and prioritize access to devices by ambient background apps.
+Users can customize their LampArray device experience (both foreground and background) through the **Settings -> Personalization -> Dynamic lighting** screen, letting them synchronize devices from different manufacturers, control brightness and effects across selected devices and form factors, and prioritize access to devices by ambient background apps. These features enable your apps to entertain users, make them more productive, make their experiences across Windows more accessible, and deliver cohesive experiences across the set of Dynamic Lighting-compatible devices.
 
 :::image type="content" source="images/lighting/settings-dynamic-lighting.png" alt-text="Screenshot of the Dynamic Lighting settings screen.":::
 
