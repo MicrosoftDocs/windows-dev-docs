@@ -272,7 +272,7 @@ It supports the following GUID versions:
 - v5 - Namespace and name based, using SHA1
 
 > [!NOTE]
-> For versions 3 and 5 there are some predefined namespaces: DNS, URL, OID ad X500. You can use the following predefined namespaces:
+> For versions 3 and 5 there are some predefined namespaces: DNS, URL, OID and X500. You can use the following predefined namespaces:
 >
 > - `ns:DNS`
 > - `ns:URL`
