@@ -55,6 +55,7 @@ You can limit the available characters by selecting a character set from the set
 * Swedish
 * Turkish
 * Welsh
+* Greek
 
 ## Settings
 
