@@ -234,10 +234,6 @@
           href: ../data-access/sqlite-databases.md
         - name: Use a SQL Server database
           href: ../data-access/sql-server-databases.md
-        - name: Use a MongoDB database
-          href: ../data-access/mongo-db-databases.md
-        - name: Use a MySQL database
-          href: ../data-access/mysql-databases.md
     - name: Data binding
       href: ../data-binding/index.md
       items:
