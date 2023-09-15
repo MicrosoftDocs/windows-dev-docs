@@ -116,7 +116,7 @@ ScrollViewer defines the following XAML attached properties:
 - [ScrollViewer.IsScrollInertiaEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.isscrollinertiaenabled)
 - [ScrollViewer.IsVerticalRailEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.isverticalrailenabled)
 - [ScrollViewer.IsVerticalScrollChainingEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled)
-- [ScrollViewer.IsZoomChainingEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.iszoominertiaenabled)
+- [ScrollViewer.IsZoomChainingEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.iszoomchainingenabled)
 - [ScrollViewer.IsZoomInertiaEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.iszoominertiaenabled)
 - [ScrollViewer.VerticalScrollBarVisibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty)
 - [ScrollViewer.VerticalScrollMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.verticalscrollmode)
