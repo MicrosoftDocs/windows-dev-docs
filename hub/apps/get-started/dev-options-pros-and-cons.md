@@ -27,7 +27,7 @@ For more information about Windows app development options, see [Writing apps fo
 | **Enterprise Apps** | Yes | No | Yes | Yes | No | Yes | No |
 | **Recommended for touch** | No | Yes | No | No | Yes | Yes | Yes |
 | **UI type** | XAML | XAML | Code | Code | XAML | HTML/CSS | XAML/Code |
-| **UI designer** | Yes | No | Yes | No | Yes | No | No (live preview) |
+| **UI designer** | Yes | No (use Hot Reload) | Yes | No | Yes | No | No (use Hot Reload) |
 | **Cross-platform** | No | No | No | No | No | Yes | Yes |
 | **Xbox/HoloLens support** | No | No | No | Yes | Yes | No | No |
 
