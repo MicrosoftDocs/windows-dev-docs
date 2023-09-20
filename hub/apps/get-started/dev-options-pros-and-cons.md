@@ -20,8 +20,8 @@ For more information about Windows app development options, see [Writing apps fo
 | **Supported languages** | C#, Visual Basic | C#, C++ | C#, Visual Basic | C++, Rust | C#, C++, Visual Basic | JavaScript, TypeScript | C# |
 | **Fluent Design System** | No | Yes | No | No | No | Yes | Yes |
 | **.NET Runtime** | .NET & .NET Framework | .NET | .NET & .NET Framework | N/A | .NET | N/A | .NET |
-| **Windows App SDK** | Yes (limited) | Yes (full access) | Yes (limited) | Yes (full access) | No | No | No |
-| **Receiving updates** | Yes | Yes | Yes | Yes | Yes (security & bugfix only) | Yes | Yes |
+| **Windows App SDK** | Yes (limited) | Yes (full) | Yes (limited) | Yes (full) | No | No | No |
+| **Receiving updates** | Yes | Yes | Yes | Yes | Yes (security/bugfix only) | Yes | Yes |
 | **Active development** | No | Yes | No | No | No | Yes | Yes |
 | **Currently supported** | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | **Enterprise Apps** | Yes | No | Yes | Yes | No | Yes | No |
@@ -34,10 +34,10 @@ For more information about Windows app development options, see [Writing apps fo
 Learn more about each of these options:
 
 - [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
+- [Windows UI Library in the Windows App SDK (WinUI 3)](/windows/apps/winui/winui3/)
 - [Windows Forms](/dotnet/desktop/winforms/)
 - [C++ and Win32](/windows/win32/)
 - [Universal Windows Platform (UWP)](/windows/uwp/)
-- [Windows UI Library in the Windows App SDK (WinUI 3)](/windows/apps/winui/winui3/)
 - [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows)
 - [.NET Multi-platform App UI (.NET MAUI)](/dotnet/maui/)
 
