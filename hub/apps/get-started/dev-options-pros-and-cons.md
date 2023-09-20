@@ -41,9 +41,9 @@ Learn more about each of these options:
 - [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows)
 - [.NET Multi-platform App UI (.NET MAUI)](/dotnet/maui/)
 
-## Other app development options on Windows
+## Other Windows development options
 
-There are additional options for developers who want to build great apps on Windows.
+There are additional options for developers who want to develop on Windows:
 
 - [Python on Windows](/windows/python/)
 - [Progressive Web Apps (PWAs)](/microsoft-edge/progressive-web-apps-chromium/)
