@@ -43,7 +43,7 @@ Learn more about each of these options:
 
 ## Other Windows development options
 
-There are even more options for developers who want to develop on Windows:
+There are even more options for developing on Windows:
 
 - [Python on Windows](/windows/python/)
 - [Progressive Web Apps (PWAs)](/microsoft-edge/progressive-web-apps-chromium/)
