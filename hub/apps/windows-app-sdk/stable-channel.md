@@ -32,6 +32,19 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.4
 
+### Version 1.4.1 (1.4.230913002)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
+
+- Fixed performance issues to improve the time to first frame.
+- Fixed an issue where menus didn't respect `RequestedTheme`. For example, it was possible for this issue to lead to white text on a white background. For more info, see GitHub issue [#8756](https://github.com/microsoft/microsoft-ui-xaml/issues/8756).
+- Fixed an issue that caused acrylic backgrounds to sometimes become fully transparent in some menus.
+- Fixed an issue where XAML sometimes caused Windows to unnecessarily repaint the desktop wallpaper.
+- Fixed support for `TabNavigation = Local` and `TabNavigation = Cycle` for `ListView` and `GridView`, which now enables navigating between headers and items with TAB in addition to arrow keys.
+- Fixed some noisy exceptions when dismissing a tooltip. For more info, see GitHub issue [#8699](https://github.com/microsoft/microsoft-ui-xaml/issues/8699).
+
+### Version 1.4
+
 The following sections describe new and updated features and known issues for version 1.4.
 
 In an existing Windows App SDK 1.3 app, you can update your Nuget package to 1.4.230822000 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
