@@ -30,8 +30,8 @@ items:
     items:
         - name: Overview of app development options
           href: get-started/index.md
-        - name: Pros and cons of Windows dev options
-          href: get-started/dev-options-pros-and-cons.md
+        - name: App development options and features
+          href: get-started/dev-options.md
         - name: About migrating from UWP to Windows App SDK
           href: get-started/migrate-from-uwp-to-winappsdk.md
         - name: Install tools for the Windows App SDK

@@ -1,13 +1,13 @@
 ---
-description: Review the pros and cons of the different app development options available on Windows.
-title: Windows app development options - pros and cons
+description: Features available to Windows developers when selecting an app development framework.
+title: Windows app development - options and features
 ms.topic: article
 ms.date: 09/20/2023
 keywords: windows, win32, desktop development, app development
 ms.localizationpriority: medium
 ---
 
-# Windows app development options: pros and cons
+# Windows app development: options and features
 
 ## App development frameworks
 
@@ -18,18 +18,17 @@ For more information about Windows app development options, see [Writing apps fo
 | Feature | WPF | WinUI 3 | Windows Forms | Win32 | UWP | React Native | .NET MAUI |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Language** | C#, Visual Basic | C#, C++ | C#, Visual Basic | C++, Rust | C#, C++, Visual Basic | JavaScript, TypeScript | C# |
-| **Fluent Design** | ❌ | ✔️ | ❌ | ❌ | ❌ | ✔️ | ✔️ |
+| **Fluent Design** | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
 | **.NET Runtime** | .NET & .NET Framework | .NET | .NET & .NET Framework | N/A | .NET | N/A | .NET |
-| **Windows App SDK** | ✔️ (limited) | ✔️ (full) | ✔️ (limited) | ✔️ (full) | ❌ | ❌ | ❌ |
-| **Receiving updates** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ (security/bugfix only) | ✔️ | ✔️ |
-| **Active development** | ❌ | ✔️ | ❌ | ❌ | ❌ | ✔️ | ✔️ |
-| **Currently supported** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| **Enterprise Apps** | ✔️ | ❌ | ✔️ | ✔️ | ❌ | ✔️ | ❌ |
-| **Great for touch** | ❌ | ✔️ | ❌ | ❌ | ✔️ | ✔️ | ✔️ |
+| **Windows App SDK** | ✅ (limited) | ✅ (full) | ✅ (limited) | ✅ (full) | ❌ | ❌ | ❌ |
+| **Receiving updates** | ✅ | ✅ | ✅ | ✅ | ✅ (security/bugfix only) | ✅ | ✅ |
+| **Currently supported** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Enterprise Apps** | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| **Great for touch** | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | **UI type** | XAML | XAML | Code | Code | XAML | HTML/CSS | XAML/Code |
-| **UI designer** | ✔️ | ❌ (use Hot Reload) | ✔️ | ❌ | ✔️ | ❌ | ❌ (use Hot Reload) |
-| **Cross-platform** | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️ | ✔️ |
-| **Xbox/HoloLens support** | ❌ | ❌ | ❌ | ✔️ | ✔️ | ❌ | ❌ |
+| **UI designer** | ✅ | ❌ (use Hot Reload) | ✅ | ❌ | ✅ | ❌ | ❌ (use Hot Reload) |
+| **Cross-platform** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| **Xbox/HoloLens support** | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ |
 
 Learn more about each of these options:
 
