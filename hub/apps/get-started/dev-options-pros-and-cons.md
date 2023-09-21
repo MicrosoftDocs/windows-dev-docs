@@ -18,18 +18,18 @@ For more information about Windows app development options, see [Writing apps fo
 | Feature | WPF | WinUI 3 | Windows Forms | Win32 | UWP | React Native | .NET MAUI |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Language** | C#, Visual Basic | C#, C++ | C#, Visual Basic | C++, Rust | C#, C++, Visual Basic | JavaScript, TypeScript | C# |
-| **Fluent Design** | No | Yes | No | No | No | Yes | Yes |
+| **Fluent Design** | ❌ | ✔️ | ❌ | ❌ | ❌ | ✔️ | ✔️ |
 | **.NET Runtime** | .NET & .NET Framework | .NET | .NET & .NET Framework | N/A | .NET | N/A | .NET |
-| **Windows App SDK** | Yes (limited) | Yes (full) | Yes (limited) | Yes (full) | No | No | No |
-| **Receiving updates** | Yes | Yes | Yes | Yes | Yes (security/bugfix only) | Yes | Yes |
-| **Active development** | No | Yes | No | No | No | Yes | Yes |
-| **Currently supported** | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| **Enterprise Apps** | Yes | No | Yes | Yes | No | Yes | No |
-| **Great for touch** | No | Yes | No | No | Yes | Yes | Yes |
+| **Windows App SDK** | ✔️ (limited) | ✔️ (full) | ✔️ (limited) | ✔️ (full) | ❌ | ❌ | ❌ |
+| **Receiving updates** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ (security/bugfix only) | ✔️ | ✔️ |
+| **Active development** | ❌ | ✔️ | ❌ | ❌ | ❌ | ✔️ | ✔️ |
+| **Currently supported** | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| **Enterprise Apps** | ✔️ | ❌ | ✔️ | ✔️ | ❌ | ✔️ | ❌ |
+| **Great for touch** | ❌ | ✔️ | ❌ | ❌ | ✔️ | ✔️ | ✔️ |
 | **UI type** | XAML | XAML | Code | Code | XAML | HTML/CSS | XAML/Code |
-| **UI designer** | Yes | No (use Hot Reload) | Yes | No | Yes | No | No (use Hot Reload) |
-| **Cross-platform** | No | No | No | No | No | Yes | Yes |
-| **Xbox/HoloLens support** | No | No | No | Yes | Yes | No | No |
+| **UI designer** | ✔️ | ❌ (use Hot Reload) | ✔️ | ❌ | ✔️ | ❌ | ❌ (use Hot Reload) |
+| **Cross-platform** | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️ | ✔️ |
+| **Xbox/HoloLens support** | ❌ | ❌ | ❌ | ✔️ | ✔️ | ❌ | ❌ |
 
 Learn more about each of these options:
 
