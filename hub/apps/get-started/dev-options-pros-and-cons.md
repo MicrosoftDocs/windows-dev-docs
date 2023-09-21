@@ -17,15 +17,15 @@ For more information about Windows app development options, see [Writing apps fo
 
 | Feature | WPF | WinUI 3 | Windows Forms | Win32 | UWP | React Native | .NET MAUI |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Supported languages** | C#, Visual Basic | C#, C++ | C#, Visual Basic | C++, Rust | C#, C++, Visual Basic | JavaScript, TypeScript | C# |
-| **Fluent Design System** | No | Yes | No | No | No | Yes | Yes |
+| **Language** | C#, Visual Basic | C#, C++ | C#, Visual Basic | C++, Rust | C#, C++, Visual Basic | JavaScript, TypeScript | C# |
+| **Fluent Design** | No | Yes | No | No | No | Yes | Yes |
 | **.NET Runtime** | .NET & .NET Framework | .NET | .NET & .NET Framework | N/A | .NET | N/A | .NET |
 | **Windows App SDK** | Yes (limited) | Yes (full) | Yes (limited) | Yes (full) | No | No | No |
 | **Receiving updates** | Yes | Yes | Yes | Yes | Yes (security/bugfix only) | Yes | Yes |
 | **Active development** | No | Yes | No | No | No | Yes | Yes |
 | **Currently supported** | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | **Enterprise Apps** | Yes | No | Yes | Yes | No | Yes | No |
-| **Recommended for touch** | No | Yes | No | No | Yes | Yes | Yes |
+| **Great for touch** | No | Yes | No | No | Yes | Yes | Yes |
 | **UI type** | XAML | XAML | Code | Code | XAML | HTML/CSS | XAML/Code |
 | **UI designer** | Yes | No (use Hot Reload) | Yes | No | Yes | No | No (use Hot Reload) |
 | **Cross-platform** | No | No | No | No | No | Yes | Yes |
