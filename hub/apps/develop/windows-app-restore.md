@@ -2,7 +2,7 @@
 title: 'Windows app restore: maximize the value of your app'
 description: This topic defines the tenets of Windows app restore that will enable your app to deliver the best backup and restore experience it can.
 ms.topic: article
-ms.date: 05/18/2023
+ms.date: 09/21/2023
 keywords: Windows, App, SDK, Windows app restore
 ms.author: stwhi
 author: stevewhims
@@ -57,6 +57,9 @@ For more info about the best practices of storing app data, see [Store and retri
 ## Write user-generated content to Known Folders
 
 Windows introduced [known folders](/windows/win32/shell/known-folders) with Windows Vista. Since that time, users have come to expect that they can find the content they create with their apps in those locations. Writing user-generated content to those locations has the added benefit that OneDrive will back up those folders, if enabled, to ensure they're available to the user on their new PC (see [Back up your folders with OneDrive](https://support.microsoft.com/office/back-up-your-folders-with-onedrive-d61a7930-a6fb-4b95-b28a-6552e77c3057)). By using standard Windows APIs to write your user-generated content to the known folders, you're improving the user experience, and decreasing friction in adopting your app.
+
+> [!TIP]
+> We advise not to store machine-specific data in known folders. That's because those user-specific folders travel with the user between machines. So storing machine-specific data can result in conflicts and problems when users use your app on multiple machines, or after an upgrade.
 
 ## Best practices for unpackaged apps
 
