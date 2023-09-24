@@ -46,7 +46,7 @@ You can either use your existing Xbox Live account or create a new account for y
 
 1. Make sure your development PC is on the same local network as the target Xbox One console. Typically, this means they should use the same router and be on the same subnet. A wired network connection is recommended.
 
-2. Ensure that your Xbox One console is in Developer Mode.  For more information, see [Xbox One Developer Mode activation](devkit-activation.md).
+2. Ensure that your Xbox One console is in Developer Mode.  For more information, see [Xbox Developer Mode activation](devkit-activation.md).
 
 3. Decide the programming language that you want to use for your UWP app.
 
@@ -117,7 +117,7 @@ You can either use your existing Xbox Live account or create a new account for y
 Congratulations, you've successfully created and deployed your first UWP app on Xbox!
 
 ## See also
-- [Xbox One Developer Mode activation](devkit-activation.md)  
+- [Xbox Developer Mode activation](devkit-activation.md)  
 - [Downloads and tools for Windows 10](https://developer.microsoft.com/windows/downloads)  
 - [Windows Insider Program](https://insider.windows.com/)  
 - [Introduction to Xbox One tools](introduction-to-xbox-tools.md) 

@@ -33,7 +33,7 @@ If you plan to use a game engine and other middleware, see [Bridges, game engine
 
 If you're doing development for the first time, you'll need to enable Developer Mode on your device. For more information, see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 
-For those who are planning to develop an Xbox game using your retail Xbox console, you'll also need to activate and enable Developer Mode on it. For more information, see [Xbox One Developer Mode activation](../xbox-apps/devkit-activation.md) and [Getting started with UWP app development on Xbox](../xbox-apps/getting-started.md). 
+For those who are planning to develop an Xbox game using your retail Xbox console, you'll also need to activate and enable Developer Mode on it. For more information, see [Xbox Developer Mode activation](../xbox-apps/devkit-activation.md) and [Getting started with UWP app development on Xbox](../xbox-apps/getting-started.md). 
 
 > [!Note]
 > You will need to sign up for a [Partner Center](https://partner.microsoft.com/dashboard)  account before you can enable Developer mode on your Xbox console. For more information about signing up for a Partner Center account, see [Step 5](#step-5-sign-up-for-a-partner-center-account) below.
