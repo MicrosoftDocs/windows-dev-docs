@@ -15,7 +15,7 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 > [!div class="nextstepaction"]
 > [Install PowerToys](install.md)
 
-## Processor support
+## Processor architecture support
 
 - **x64**: Supported
 - **ARM64**: Supported
