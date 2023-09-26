@@ -63,7 +63,7 @@ Here are the common commands you may want:
 
 ### Extracting the MSI from the bundle
 
-Make sure to have [WiX Toolset](https://wixtoolset.org/releases) installed.
+Make sure to have [WiX Toolset v3](https://wixtoolset.org/docs/wix3) installed. The command doesn't work with WiX Toolset v4.
 
 This PowerShell example assumes the default install location for WiX Toolset and the PowerToys installer downloaded to the desktop.
 
