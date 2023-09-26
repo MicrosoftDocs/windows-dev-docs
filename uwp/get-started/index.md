@@ -7,7 +7,7 @@ keywords: get started, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
 ---
 
-# Get started with UWP (Universal Windows Platform)
+# Universal Windows Platform (UWP) - Get Started
 
 Build apps that work across different Windows devices.
 
