@@ -2,13 +2,14 @@ items:
 - name: UWP documentation
   href: index.yml
   items:
-    - name: What's new
-      href: whats-new/toc.yml
-    - name: Get started
+
+    - name: Get started with UWP
       href: get-started/toc.yml
-    - name: Develop apps
+    - name: Develop UWP apps
       href: develop/toc.yml
-    - name: Develop games
+    - name: Develop UWP games
       href: gaming/toc.yml
+    - name: Windows 10 build history
+      href: whats-new/toc.yml
     - name: API reference
       href: /uwp/
