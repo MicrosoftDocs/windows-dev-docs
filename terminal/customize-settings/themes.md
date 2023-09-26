@@ -45,9 +45,6 @@ You may also configure the Terminal to use separate themes for light and dark mo
 "theme": { "dark": "<Dark Theme Name>", "light": "<Light Theme Name>" },
 ```
 
-> [!IMPORTANT]
-> Specifying a pair of `light` and `dark` themes is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ## Theme name
 
 This is the name of the theme. Names should be unique. The names `dark`, `light`, and `system` are reserved for the built-in default themes.
@@ -114,9 +111,6 @@ Note that when Mica is enabled for the window it is enabled under the entirety o
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
-
-> [!IMPORTANT]
-> Mica is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 > [!NOTE]
 > Mica is only available on Windows builds >= 22621.
@@ -194,9 +188,6 @@ Configures how the "close" button on the tab should appear. This accepts the fol
 * `"hover"`: Show the tab close button on the active tab, and any tabs that are hovered with the mouse.
 * `"never"`: Never show tab close buttons. This also disables the ability to close the tab with the middle mouse button.
 * `"activeOnly"`: Show the tab close button on the active tab only.
-
-> [!IMPORTANT]
-> The `"activeOnly"` value is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 **Property name:** `showCloseButton`
 

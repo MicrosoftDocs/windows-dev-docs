@@ -80,7 +80,7 @@ You can zoom the text window of Windows Terminal (making the text size larger or
 You can adjust the opacity of the background by holding <kbd>Ctrl</kbd>+<kbd>Shift</kbd> and scrolling. The opacity will persist for that terminal session. If you want to change your acrylic opacity for a profile, you can learn more about acrylic background effects on the [Profile - Appearance page](./customize-settings/profile-appearance.md#transparency).
 
 > [!NOTE]
-> In [Windows Terminal Preview](https://aka.ms/terminal-preview) version 1.12, changing the background opacity with the mouse wheel will use vintage-style opacity by default, unless `useAcrylic` is set to true in your settings. Prior to 1.12, the terminal would always use acrylic for transparency.
+> In Windows Terminal version 1.12, changing the background opacity with the mouse wheel will use vintage-style opacity by default, unless `useAcrylic` is set to true in your settings. Prior to 1.12, the terminal would always use acrylic for transparency.
 
 ### Open a hyperlink
 
@@ -132,7 +132,7 @@ You can also use this functionality to run builds or test scripts.
 
 ## Focus mode
 
-"Focus mode" hides the title bar and tabs normally located at the top of Windows Terminal, letting you focus only on the terminal content. It is similar to ["Zen mode"](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_zen-mode) in Visual Studio Code. 
+"Focus mode" hides the title bar and tabs normally located at the top of Windows Terminal, letting you focus only on the terminal content. It is similar to ["Zen mode"](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_zen-mode) in Visual Studio Code.
 
 To enter focus mode, open the [command pallette](./command-palette.md) using `Ctrl` + `Shift` + `p`, enter "focus mode", and select "Toggle focus mode."  To exit focus mode, repeat these same steps.
 
@@ -146,7 +146,7 @@ To add a shortcut key (or keybinding) for entering focus mode, open the  `settin
 
 Replace "ctrl+f12" with the shortcut / keybinding of your choice, but be sure not to repeat any existing keybindings from the Actions list. You can also see a list of Actions with associated keybindings, and **+ Add new** bindings, in the **Actions** tab of the Windows Terminal **Settings** dashboard. Remember to **Save** after making any changes. You can now toggle focus mode using the "action" shortcut key that you created. (In the case of our example, `Shift` + `F12`).
 
-To learn more about this command, see [`toggleFocusMode`](/windows/terminal/customize-settings/actions#toggle-focus-mode). 
+To learn more about this command, see [`toggleFocusMode`](/windows/terminal/customize-settings/actions#toggle-focus-mode).
 
 ## Quake mode
 

@@ -35,9 +35,6 @@ You can also drag and drop tabs into existing windows.
 
 ![Dragging and dropping tabs into Terminal windows](./images/attach-tab.gif)
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ## Customized schemes and configurations
 
 You can configure your Windows Terminal to have a variety of color schemes and settings. To learn how to customize your prompt with cool themes, see [Tutorial: Set up a custom prompt for PowerShell or WSL with Oh My Posh](./tutorials/custom-prompt-setup.md) To learn how to make your own color scheme, visit the [Color schemes page](./customize-settings/color-schemes.md).

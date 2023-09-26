@@ -48,10 +48,6 @@ When specified in this manner, the Terminal will automatically switch between th
 
 **Default value:** `"Campbell"`
 
-
-> [!IMPORTANT]
-> Specifying a pair of `light` and `dark` color schemes is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ### Font
 
 This is the structure within which the other font settings must be defined. An example of what this could look like in the JSON file is shown below.
@@ -107,7 +103,7 @@ This sets the weight (lightness or heaviness of the strokes) for the profile's f
 ```
 
 > [!IMPORTANT]
-> This `font` object is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview), version 1.10+. Prior to that version, you should use the `fontFace`, `fontSize`, and `fontWeight` properties separately, like so:
+> This `font` object is only available in Windows Terminal version 1.10+. Prior to that version, you should use the `fontFace`, `fontSize`, and `fontWeight` properties separately, like so:
 > ```json
 > "fontFace": "Cascadia Mono",
 > "fontSize": 12,
@@ -524,7 +520,7 @@ An object you can add to a profile that applies settings to the profile when it 
 **Example:**
 ```json
 // Sets the profile's background image opacity to 0.3 when it is unfocused
-"unfocusedAppearance": 
+"unfocusedAppearance":
 {
     "backgroundImageOpacity": 0.3
 },

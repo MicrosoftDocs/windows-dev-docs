@@ -867,8 +867,6 @@ You can enable read-only mode on a pane. This works similarly to toggling, howev
 ```json
 { "command": "enableReadOnlyMode" }
 ```
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 You can disable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
 
@@ -879,8 +877,6 @@ You can disable read-only mode on a pane. This works similarly to toggling, howe
 ```json
 { "command": "disableReadOnlyMode" }
 ```
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Split a pane
 
@@ -1003,7 +999,7 @@ This toggles mark mode. Mark mode is a mode where you can use the keyboard to cr
 { "command": "markMode", "keys": "ctrl+shift+m" },
 ```
 
-### Switch selection marker 
+### Switch selection marker
 
 When modifying a selection using the keyboard, you are moving one end of the selection around. You can use this action to switch to the other selection marker.
 
@@ -1247,7 +1243,7 @@ Adds a scroll mark to the text buffer. If there's a selection, the mark is place
 { "command": { "action": "addMark", "color": "#ff00ff" } }
 ```
 
-### Experimental scroll to mark 
+### Experimental scroll to mark
 
 Scrolls to the scroll mark in the given direction. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1265,7 +1261,7 @@ Scrolls to the scroll mark in the given direction. This is an experimental featu
 { "command": { "action": "scrollToMark", "direction": "previous" } }
 ```
 
-### Experimental clear mark 
+### Experimental clear mark
 
 Clears scroll mark at the current position, either at a selection if there is one or at the cursor position. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1277,7 +1273,7 @@ Clears scroll mark at the current position, either at a selection if there is on
 { "command": { "action": "clearMark" } }
 ```
 
-### Experimental clear all marks 
+### Experimental clear all marks
 
 Clears all scroll marks in the text buffer. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1442,7 +1438,7 @@ ___
 
 ## Run multiple actions
 
-This action allows the user to bind multiple sequential actions to one command. 
+This action allows the user to bind multiple sequential actions to one command.
 
 **Command name:** `multipleActions`
 
@@ -1455,7 +1451,7 @@ This action allows the user to bind multiple sequential actions to one command.
 #### Example
 
 ```jsonc
-{ "name": "Create My Layout", "command": { 
+{ "name": "Create My Layout", "command": {
     "action": "multipleActions",
     "actions": [
         // Create a new tab with 3 panes
