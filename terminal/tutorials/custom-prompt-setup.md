@@ -45,7 +45,7 @@ Oh My Posh enables you to use a full color set to define and render your termina
 To customize your PowerShell prompt, you can install Oh My Posh using [winget](/windows/package-manager/winget). Enter the command:
 
 ```powershell
-winget install oh-my-posh
+winget install JanDeDobbeleer.OhMyPosh
 ```
 
 This will install:
