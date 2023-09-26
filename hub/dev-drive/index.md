@@ -5,19 +5,16 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 09/05/2023
+ms.date: 09/26/2023
 ---
 
-# Set up a Dev Drive on Windows 11 (Public Preview)
+# Set up a Dev Drive on Windows 11
 
 **Dev Drive** is a new form of storage volume available to improve performance for key developer workloads.
 
 Dev Drive builds on [ReFS](/windows-server/storage/refs/refs-overview) technology to employ targeted file system optimizations and provide more control over storage volume settings and security, including trust designation, antivirus configuration, and administrative control over what filters are attached.
 
-See the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive) for some average improvement measurements across common dev operations.
-
-> [!IMPORTANT]
-> Dev Drive is currently only available via public preview (see [prerequisities](#prerequisites)). Some information relating to this prerelease product may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
+See the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes](https://aka.ms/vsdevdrive) for some average improvement measurements across common dev operations.
 
 ## How to set up a Dev Drive
 
@@ -27,16 +24,15 @@ To set up a new Dev Drive, open Windows **Settings** and navigate to **System** 
 
 ### Prerequisites
 
-- [Windows 11 Insider Program Build](https://www.microsoft.com/windowsinsider/): Dev Channel.
+- Windows 11, Build #10.0.22621.2338 or later ([Check for Windows updates](ms-settings:windowsupdate))
 - Recommend 16gb memory (minimum of 8gb)
 - Minimum 50gb free disk space
 - Dev Drives are available on all Windows SKU versions.
 
-> [!NOTE]
-> When updating your Windows release to a new Insider’s Build, you may need an additional reboot before the Dev Drive preview feature becomes available.
+When updating to the latest Windows 11 release, you may need an additional reboot before the Dev Drive feature becomes available. If you are working in a business enterprise environment, your security administrator will need to [Configure Dev Drive security policy](group-policy.md) in order to enable Dev Drive.
 
 > [!WARNING]
-> Dev Drive is intended only for [key developer scenarios](#what-should-i-put-on-my-dev-drive) and any custom settings will still be covered by [Group Policy](/windows/client-management/manage-settings-app-with-group-policy) settings in Business or Enterprise work environments.
+> Dev Drive is intended only for [key developer scenarios](#what-should-i-put-on-my-dev-drive) and any custom settings will still be covered by [Group Policy](/windows/client-management/manage-settings-app-with-group-policy) settings in Business or Enterprise work environments. Learn more about how to [Configure Dev Drive security policy](group-policy.md).
 
 ### Set up options
 

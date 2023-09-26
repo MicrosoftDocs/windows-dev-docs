@@ -12,7 +12,11 @@ items:
       - name: Dev Home extensions
         href: ../dev-home/extensions.md
   - name: Dev Drive
-    href: ../dev-drive/index.md
+    items:
+      - name: Overview
+        href: ../dev-drive/index.md
+      - name: Group Policy for enterprise control
+        href: ../dev-drive/group-policy.md
   - name: Windows Package Manager
     items:
       - name: Overview
