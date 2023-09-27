@@ -13,7 +13,7 @@ Mouse utilities is a collection of features that enhance mouse and cursor functi
 
 ## Find my mouse
 
-Double press the left <kbd>Ctrl</kbd> key or shake the mouse to activate a spotlight that focuses on the cursor's position. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
+Activate a spotlight that focuses on the cursor's position pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut or shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
 
 ![Screenshot of Find my mouse.](../images/pt-mouse-utilities-find-my-mouse.gif)
 
@@ -23,8 +23,9 @@ From the settings page, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation method | Choose between **Press left Ctrl twice** or **Shake mouse**. |
+| Activation method | Choose between **Press Left Ctrl twice**, **Press Right Ctrl twice**, **Shake mouse** or **Custom shortcut**. |
 | Minimum distance to shake | Adjust sensitivity. |
+| Activation shortcut | The custom shortcut used to activate the spotlight. |
 | Do not activate when Game Mode is on | Prevents the spotlight from being used when actively playing a game on the system. |
 | Overlay opacity | The opacity of the spotlight backdrop. (default: 50%) |
 | Background color | The color of the spotlight backdrop. (default: #000000) |
