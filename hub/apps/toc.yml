@@ -28,6 +28,8 @@ items:
         href: whats-new/latest-doc-updates.md
   - name: Get started
     items:
+        - name: Start here!
+          href: get-started/start-here.md
         - name: Overview of app development options
           href: get-started/index.md
         - name: Sample apps for Windows

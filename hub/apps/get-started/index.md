@@ -15,11 +15,6 @@ This article contains the information you need to get started building apps for 
 
 Windows offers a wide range of options for building apps, including [C++](/windows/uwp/cpp-and-winrt-apis/), [.NET](/dotnet/), and other emerging technologies such as [open source tools on WSL](/windows/wsl/) and [Rust](../../dev-environment/rust/index.yml). With so many choices, it can be difficult to know where to begin.
 
-## Visual Studio
-
-[Visual Studio](/visualstudio) is the preferred integrated development environment (IDE) for most Windows developers. It offers a variety of templates for different app types, each with its own strengths and project types. For instance, you can use the [C# tutorial](/visualstudio/get-started/csharp/tutorial-console?view=vs-2022) for console apps to get started. Every app type includes an app model that defines the app’s lifecycle, a default UI framework, and access to a comprehensive set of APIs for using Windows features.
-
-[Visual Studio Code](https://code.visualstudio.com) is another popular tool that provides extensions and support for a wide range of development languages and tools. It’s an excellent starting point for languages other than C# and C++ (although it supports those too).
 
 ## Languages and frameworks
 

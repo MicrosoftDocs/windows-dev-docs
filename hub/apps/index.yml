@@ -40,6 +40,7 @@ highlightedContent:
      itemType: learn
      url: /training/browse/?products=windows
 
+
 productDirectory:
   title: Dive into developing apps for Windows
   items:
@@ -87,6 +88,7 @@ productDirectory:
         text: Package apps using MSIX
       - url: /windows/msix/desktop/managing-your-msix-deployment-overview
         text: Manage your MSIX deployment
+
 
 tools:
   title: Develop for other Windows device platforms
