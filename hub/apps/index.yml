@@ -47,7 +47,7 @@ productDirectory:
     imageSrc: /media/common/i_get-started.svg
     links:
       - url: ./get-started/index.md
-        text: Overview of app development options
+        text: Overview of Windows development options
       - url: ./windows-app-sdk/set-up-your-development-environment.md
         text: Install tools for the Windows App SDK
       - url: ./winui/winui3/create-your-first-winui3-app.md
@@ -97,9 +97,9 @@ tools:
     - title: Windows for IoT
       imageSrc: /media/hubs/windows/win_developer-4.svg
       url: /windows/iot-core/
-    - title: Xbox One
+    - title: Games
       imageSrc: /media/hubs/windows/win_developer-3.svg
-      url: https://www.xbox.com/developers
+      url: https://developer.microsoft.com/games/
 
 additionalContent:
   sections:

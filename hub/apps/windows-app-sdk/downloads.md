@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 This page provides download links to the *latest* releases of the [Windows App SDK](index.md) in the three release channels (stable, preview, and experimental). To get started quickly, download the latest x64 installer below. Or, for older releases, see [Older downloads for the Windows App SDK](./older-downloads.md).
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download the latest x64 stable installer (1.4.0)](https://aka.ms/windowsappsdk/1.4/latest/windowsappruntimeinstall-x64.exe)
+> [Download the latest x64 stable installer (1.4.1)](https://aka.ms/windowsappsdk/1.4/latest/windowsappruntimeinstall-x64.exe)
 
 For all the latest Windows App SDK downloads, refer to the tables and links below. To learn more, see [Windows App SDK release channels](release-channels.md) and the release notes provided below for each version.
 
@@ -21,6 +21,7 @@ For all the latest Windows App SDK downloads, refer to the tables and links belo
 
 | Version | Runtime downloads |
 |---|---|
+| [1.4.1 (1.4.230913002)](stable-channel.md#version-141-14230913002) <br> 09/19/2023 <br> [Release notes](stable-channel.md#version-141-14230913002) | [Installer (x64)](https://aka.ms/windowsappsdk/1.4/1.4.230913002/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.4/1.4.230913002/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.4/1.4.230913002/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.4/1.4.230913002/Microsoft.WindowsAppRuntime.Redist.1.4.zip) |
 | [1.4.0 (1.4.230822000)](stable-channel.md#version-14) <br> 08/29/2023 <br> [Release notes](stable-channel.md#version-14) | [Installer (x64)](https://aka.ms/windowsappsdk/1.4/1.4.230822000/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.4/1.4.230822000/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.4/1.4.230822000/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.4/1.4.230822000/Microsoft.WindowsAppRuntime.Redist.1.4.zip) |
 
 ## Preview release

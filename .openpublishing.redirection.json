@@ -1,5 +1,55 @@
 {
   "redirections": [
+	{
+		"source_path": "uwp/whats-new/windows-docs-august-2017.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
+	{
+		"source_path": "uwp/whats-new/windows-docs-august-2018.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
+	{
+		"source_path": "uwp/whats-new/windows-docs-december-2017.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
+	{
+		"source_path": "uwp/whats-new/windows-docs-february-2018.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
+	{
+		"source_path": "uwp/whats-new/windows-docs-january-2019.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
+	{
+		"source_path": "uwp/whats-new/windows-docs-july-2017.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
+	{
+		"source_path": "uwp/whats-new/windows-docs-july-2018.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
+	{
+		"source_path": "uwp/whats-new/windows-docs-may-2018.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
+	{
+		"source_path": "uwp/whats-new/windows-docs-september-2017.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
+	{
+		"source_path": "uwp/whats-new/windows-docs-september-2018.md",
+		"redirect_url": "/windows/uwp/",
+		"redirect_document_id": false
+	},
     {
       "source_path": "uwp/monetize/get-xbox-live-analytics.md",
       "redirect_url": "/windows/uwp/publish/xbox-analytics-report",

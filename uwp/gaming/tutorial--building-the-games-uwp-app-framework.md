@@ -117,7 +117,7 @@ As you can see, the actual work is delegated to the constructor of the **GameMai
 
 The **GameMain** constructor (and the other member functions that it calls) begins a set of asynchronous loading operations to create the game objects, load graphics resources, and initialize the game's state machine. We also do any necessary preparations before the game begins, such as setting any starting states or global values.
 
-Windows imposes a limit on the time your game can take before it begins processing input. So using asyc, as we do here, means that **Load** can return quickly while the work that it has begun continues in the background. If loading takes a long time, or if there are lots of resources, then providing your users with a frequently updated progress bar is a good idea. 
+Windows imposes a limit on the time your game can take before it begins processing input. So using async, as we do here, means that **Load** can return quickly while the work that it has begun continues in the background. If loading takes a long time, or if there are lots of resources, then providing your users with a frequently updated progress bar is a good idea. 
 
 If you're new to asynchronous programming, then see [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
 

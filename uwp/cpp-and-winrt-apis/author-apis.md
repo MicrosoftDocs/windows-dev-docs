@@ -1,7 +1,7 @@
 ---
 description: This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly.
 title: Author APIs with C++/WinRT
-ms.date: 07/08/2019
+ms.date: 09/22/2023
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation
 ms.localizationpriority: medium
@@ -399,6 +399,100 @@ void FreeFunction(MyProject::MyOtherClass const& oc)
     oc.DoWork(*myimpl);
 }
 ...
+```
+
+## Runtime class derivation
+
+You can create a runtime class that derives from another runtime class, provided that the base class is declared as "unsealed". The Windows Runtime term for class derivation is "composable classes". The code for implementing a derived class depends on whether the base class is provided by another component or by the same component. Fortunately, you don't have to learn these rules&mdash;you can just copy the sample implementations from the `sources` output folder produced by the `cppwinrt.exe` compiler.
+
+Consider this example.
+
+```idl
+// MyProject.idl
+namespace MyProject
+{
+    [default_interface]
+    runtimeclass MyButton : Windows.UI.Xaml.Controls.Button
+    {
+        MyButton();
+    }
+
+    unsealed runtimeclass MyBase
+    {
+        MyBase();
+        overridable Int32 MethodOverride();
+    }
+
+    [default_interface]
+    runtimeclass MyDerived : MyBase
+    {
+        MyDerived();
+    }
+}
+```
+
+In the above example, **MyButton** is derived from the XAML **Button** control, which is provided by another component. In that case, the implementation looks just like the implementation of a non-composable class:
+
+```cpp
+namespace winrt::MyProject::implementation
+{
+    struct MyButton : MyButtonT<MyButton>
+    {
+    };
+}
+
+namespace winrt::MyProject::factory_implementation
+{
+    struct MyButton : MyButtonT<MyButton, implementation::MyButton>
+    {
+    };
+}
+```
+
+On the other hand, in the above example, **MyDerived** is derived from another class in the same component. In this case, the implementation requires an additional template parameter specifying the implementation class for the base class.
+
+```cpp
+namespace winrt::MyProject::implementation
+{
+    struct MyDerived : MyDerivedT<MyDerived, implementation::MyBase>
+    {                                     // ^^^^^^^^^^^^^^^^^^^^^^
+    };
+}
+
+namespace winrt::MyProject::factory_implementation
+{
+    struct MyDerived : MyDerivedT<MyDerived, implementation::MyDerived>
+    {
+    };
+}
+```
+
+In either case, your implementation can call a method from the base class by qualifying it with the `base_type` type alias:
+
+```cpp
+namespace winrt::MyProject::implementation
+{
+    struct MyButton : MyButtonT<MyButton>
+    {
+        void OnApplyTemplate()
+        {
+            // Call base class method
+            base_type::OnApplyTemplate();
+
+            // Do more work after the base class method is done
+            DoAdditionalWork();
+        }
+    };
+
+    struct MyDerived : MyDerivedT<MyDerived, implementation::MyBase>
+    {
+        int MethodOverride()
+        {
+            // Return double what the base class returns
+            return 2 * base_type::MethodOverride();
+        }
+    };
+}
 ```
 
 ## Deriving from a type that has a non-default constructor
