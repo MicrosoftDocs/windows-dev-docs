@@ -15,7 +15,7 @@ The following table lists the different app development frameworks available on 
 
 For more information about Windows app development options, see [Writing apps for Windows](index.md).
 
-| Feature | WPF | WinUI 3 | Windows Forms | Win32 | UWP | React Native | .NET MAUI |
+| Feature | WPF | WinUI 3 | Windows Forms | Win32 | UWP | React Native (RNW) | .NET MAUI |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Language** | C#, Visual Basic | C#, C++ | C#, Visual Basic | C++, Rust | C#, C++, Visual Basic | JavaScript, TypeScript | C# |
 | **Fluent Design** | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
@@ -37,7 +37,7 @@ Learn more about each of these options:
 - [Windows Forms](/dotnet/desktop/winforms/)
 - [C++ and Win32](/windows/win32/)
 - [Universal Windows Platform (UWP)](/windows/uwp/)
-- [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows)
+- [React Native for Windows (RNW)](/windows/dev-environment/javascript/react-native-for-windows)
 - [.NET Multi-platform App UI (.NET MAUI)](/dotnet/maui/)
 
 ## Other Windows development options
