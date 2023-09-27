@@ -25,10 +25,10 @@ For more information about Windows app development options, see [Writing apps fo
 | **Currently supported** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Enterprise Apps** | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ |
 | **Great for touch** | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| **UI type** | XAML | XAML | Code | Code | XAML | HTML/CSS | XAML/Code |
-| **UI designer** | ✅ | ❌ (use Hot Reload) | ✅ | ❌ | ✅ | ❌ | ❌ (use Hot Reload) |
+| **UI type** | XAML | XAML | Code | Code | XAML | JSX | XAML/Code |
+| **UI designer** | ✅ | ❌ (use Hot Reload) | ✅ | ❌ | ✅ | ❌ (use Fast Refresh) | ❌ (use Hot Reload) |
 | **Cross-platform** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| **Xbox/HoloLens support** | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ |
+| **Xbox/HoloLens support** | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ |
 
 Learn more about each of these options:
 
