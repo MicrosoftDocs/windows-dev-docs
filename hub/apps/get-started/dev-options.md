@@ -26,7 +26,7 @@ For more information about Windows app development options, see [Writing apps fo
 | **Enterprise Apps** | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ |
 | **Great for touch** | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | **UI type** | XAML | XAML | Code | Code | XAML | JSX | XAML/Code |
-| **UI designer** | ✅ | ❌ (use [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload)) | ✅ | ❌ | ✅ | ❌ (use [Fast Refresh](https://reactnative.dev/docs/fast-refresh)) | ❌ (use [Hot Reload](/dotnet/maui/xaml/hot-reload)) |
+| **UI designer**<br/>(drag and drop) | ✅ | ❌ (use [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload)) | ✅ | ❌ | ✅ | ❌ (use [Fast Refresh](https://reactnative.dev/docs/fast-refresh)) | ❌ (use [Hot Reload](/dotnet/maui/xaml/hot-reload)) |
 | **Cross-platform** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
 | **Xbox/HoloLens support** | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ |
 
