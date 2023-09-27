@@ -8,9 +8,9 @@ metadata:
   description: This documentation provides the latest guidance about building desktop apps for Windows 11 and Windows 10.
   ms.topic: landing-page
   ms.collection: collection
-  ms.author: stwhi
-  author: stevewhims
-  ms.date: 06/17/2021
+  ms.author: jken
+  author: GrantMeStrength
+  ms.date: 09/26/2023
   keywords: windows win32, desktop development
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -20,14 +20,22 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Install tools for the Windows App SDK
-            url: ../windows-app-sdk/set-up-your-development-environment.md
+          - text: Install Dev Home
+            url: /windows/dev-home/
+          - text: Create a Dev Drive
+            url: /windows/dev-drive/
+          - text: Create a developer account
+            url: ../get-started/sign-up.md
           - text: Enable your device for development
             url: ../get-started/enable-your-device-for-development.md
           - text: Developer Mode features and debugging
             url: ../get-started/developer-mode-features-and-debugging.md
-          - text: Create a developer account
-            url: ../get-started/sign-up.md
+          - text: Install Windows Package Manager
+            url: /windows/package-manager/
+          - text: Install Windows Subsystem for Linux 
+            url: /windows/package-manager/
+          - text: Windows Terminal
+            url: /windows/terminal/
 
   - title: Start building apps
     linkLists:
@@ -35,14 +43,10 @@ landingContent:
         links:
           - text: Get started with desktop apps
             url: ../get-started/index.md
-          - text: Build apps with the Windows App SDK
-            url: ../windows-app-sdk/index.md
-          - text: Create your first WinUI 3 project
-            url: ../winui/winui3/create-your-first-winui3-app.md
-          - text: Overview of Progressive Web Apps (PWAs)
-            url: /microsoft-edge/progressive-web-apps-chromium/
-          - text: Make your apps great on Windows 11
-            url: ../get-started/make-apps-great-for-windows.md
+          - text: Learning paths and modules
+            url: /training/browse/?products=windows
+          - text: Code samples
+            url: /samples/browse/?products=windows
       - linkListType: reference
         links:
           - text: Visual Studio templates for Windows apps
@@ -54,25 +58,70 @@ landingContent:
         links:
           - text: Design and code your app UI
             url: ../design/index.md
-          - text:  Windows UI Library (WinUI)
-            url: ../winui/index.md
           - text: Windows 11 design principles
             url: ../design/signature-experiences/design-principles.md
+          - text: Make your apps great on Windows 11
+            url: ../get-started/make-apps-great-for-windows.md
       - linkListType: reference
         links:
           - text: WinUI API reference
             url: /windows/winui/api/
 
-  - title: Develop
+
+  - title: Platforms
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Windows App SDK
+            url: ../windows-app-sdk/index.md
+          - text: .NET MAUI
+            url: /dotnet/maui/what-is-maui
+          - text: Universal Windows Platform (UWP)
+            url: /windows/uwp/
+          - text: Windows Presentation Foundation (WPF)
+            url: /dotnet/desktop/wpf/overview/?view=netdesktop-7.0
+          - text: Windows Forms
+            url: /dotnet/desktop/winforms/overview/?view=netdesktop-7.0
+          - text: Other Windows development technologies
+            url: /windows/dev-environment/
+
+
+
+  - title: Deploy and Publish
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Deployment overview
+            url: ../package-and-deploy/index.md
+          - text: Deploy apps
+            url: ../package-and-deploy/index.md
+          - text: The MSIX app package format
+            url: /windows/msix
+          - text: Publish Windows apps and games
+            url: ../publish/index.md
+
+
+  - title: Artificial Intelligence and Machine Learning
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Windows AI
+            url: /windows/ai/
+          - text: GitHub Copilot extension for Visual Studio
+            url: /visualstudio/ide/visual-studio-github-copilot-extension
+          - text: Windows Machine Learning
+            url: /windows/ai/windows-ml/
+          - text: Windows Machine Learning samples
+            url: /windows/ai/windows-ml/samples
+
+  - title: Reference
     linkLists:
       - linkListType: overview
         links:
           - text: Features and technologies for Windows apps
             url: ../develop/index.md
-          - text: Windows App SDK
-            url: ../windows-app-sdk/index.md
-          - text: Modernize your desktop apps
-            url: modernize/index.md
+          - text: API reference for Windows desktop Apps
+            url: /windows/apps/api-reference/
       - linkListType: reference
         links:
           - text: WinRT API for the Windows SDK
@@ -84,26 +133,15 @@ landingContent:
           - text: Win32 API for the Windows App SDK
             url: /windows/windows-app-sdk/api/win32/
 
-  - title: Deploy
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Deployment overview
-            url: ../package-and-deploy/index.md
-          - text: Deploy apps that use the Windows App SDK
-            url: ../package-and-deploy/index.md#use-the-windows-app-sdk
-          - text: MSIX documentation
-            url: /windows/msix
+
 
   - title: Community and support
     linkLists:
       - linkListType: overview
         links:
-          - text: Windows App SDK on GitHub
-            url: https://github.com/microsoft/ProjectReunion
-          - text: Windows UI Library (WinUI) on GitHub
-            url: https://github.com/microsoft/microsoft-ui-xaml
-          - text: "@WindowsDocs on Twitter"
+          - text: Microsoft Q&A Forum
+            url: /answers/questions/
+          - text: "@WindowsDocs"
             url: https://twitter.com/WindowsDocs
           - text: OneDevMinute on YouTube
             url: /shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner
