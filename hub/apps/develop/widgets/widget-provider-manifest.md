@@ -123,6 +123,7 @@ Represents the registration for a single widget.
 | **DisplayName** | string | Yes | The name of the widget that is displayed on the widgets host. | N/A |
 | **Description** | string | Yes | Short description of the widget. | N/A |
 | **AllowMultiple** | boolean | No | Set to false if only one instance of this widget is supported. This attribute is optional and the default value is true. | true |
+| **IsCustomizable** | boolean | No | Set to true if your app supports customization. This causes the **Customize widget** button to be displayed in the widget's ellipsis menu. | true |
 
 ## Capablities
 
