@@ -1,7 +1,7 @@
 ---
 title: WinGet Configuration
 description: WinGet Configuration uses the winget configure command, PowerShell, and a YAML-formatted configuration file listing all of the software versions, packages, tools, and settings required to achieve the set up the desired state of the development environment on your Windows machine. Minimizing manual project setup and onboarding to a single command that is reliable and repeatable.
-ms.date: 07/10/2023
+ms.date: 09/28/2023
 ms.topic: overview
 ---
 
@@ -92,6 +92,10 @@ The [PowerShell Gallery](https://www.powershellgallery.com/packages) hosts hundr
 ### Can I set up a policy to block the use of WinGet Configuration files in my organization?
 
 Yes. [Group Policy Objects](/microsoft-365/compliance/device-onboarding-gp) **EnableWindowsPackageManagerConfiguration** and **EnableWindowsPackageManagerConfigurationExplanation** can be utilized for disabling WinGet Configuration feature in your organization.
+
+### Where can I learn more about using WinGet Configurations with Dev Home and Dev Drives?
+
+Learn more about using the Machine Configuration tool in Windows 11 Dev Home in the article [Set up your Windows development environment with Dev Home](/windows/dev-home/setup). You may also be interested in learning how to use the more performance optimized Dev Drive storage volumes, see [Set up a Dev Drive on Windows 11](/windows/dev-drive/).
 
 ## Troubleshooting WinGet Configurations
 
