@@ -1,13 +1,15 @@
 ---
 title: How to check a WinGet Configuration
 description: Learn how to check a WinGet Configuration.
-ms.date: 05/23/2023
+ms.date: 09/28/2023
 ms.topic: overview
 ---
 
 # How to check the trustworthiness of a WinGet Configuration file
 
 Prior to running a WinGet Configuration file, it is recommended to review and evaluate each resource listed in the file, ensuring that you are fully aware of what is being installed, changed, or applied to your operating system, and that it is coming from a credible and secure source.
+
+Learn more about using the [WinGet configure command](/windows/package-manager/winget/configure).
 
 ## Security notifications and approvals
 
