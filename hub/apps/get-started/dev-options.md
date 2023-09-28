@@ -21,14 +21,15 @@ To read more about each of these Windows app development options, see [Writing a
 | **Fluent Design** | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
 | **.NET Runtime** | .NET & .NET Framework | .NET | .NET & .NET Framework | N/A | Minimal CLR runtime | N/A | .NET |
 | **Windows App SDK** | ✅ ([more info](../windows-app-sdk/wpf-plus-winappsdk.md)) | ✅ | ✅ ([more info](../windows-app-sdk/winforms-plus-winappsdk.md)) | ✅ | ❌ | ✅ (with [XAML Islands](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | ❌ |
-| **Receiving updates** | ✅ | ✅ | ✅ | ✅ | ✅ (security & bugfix) | ✅ | ✅ |
-| **Currently supported** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Enterprise Apps** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
 | **Great for touch** | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | **UI language** | XAML | XAML | Code | Code | XAML | JSX | XAML/Code |
 | **UI designer**<br/>(drag & drop) | ✅ | ❌ (use [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload)) | ✅ | ❌ | ✅ | ❌ (use [Fast Refresh](https://reactnative.dev/docs/fast-refresh)) | ❌ (use [Hot Reload](/dotnet/maui/xaml/hot-reload)) |
 | **Cross-platform** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
 | **Xbox/HoloLens apps** | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ |
+| **Currently supported** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Receiving updates** | ✅ | ✅ | ✅ | ✅ | ✅ (security & bugfix) | ✅ | ✅ |
+| **Roadmap** | [GitHub](https://github.com/dotnet/wpf/blob/main/roadmap.md) | [GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md) | [GitHub](https://github.com/dotnet/winforms/blob/main/docs/roadmap.md) | n/a | n/a | [Milestones](https://github.com/microsoft/react-native-windows/milestones) | [GitHub](https://github.com/dotnet/maui/wiki/Roadmap) |
 
 Learn more about each of these options:
 
