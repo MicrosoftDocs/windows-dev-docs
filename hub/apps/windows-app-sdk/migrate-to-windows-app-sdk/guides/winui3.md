@@ -133,8 +133,9 @@ await showDialog.ShowAsync();
 ...
 auto showDialog{ Windows::UI::Popups::MessageDialog(L"Message here") };
 
+auto windowNative{ this->m_inner.as<::IWindowNative>() };
 HWND hWnd{ 0 };
-this->try_as<::IWindowNative>()->get_WindowHandle(&hWnd);
+windowNative->get_WindowHandle(&hWnd);
 showDialog.as<::IInitializeWithWindow>()->Initialize(hWnd);
 
 co_await showDialog.ShowAsync();

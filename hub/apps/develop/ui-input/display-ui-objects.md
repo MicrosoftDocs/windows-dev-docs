@@ -174,8 +174,7 @@ public sealed partial class MainWindow : Window
 void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 {
     // Retrieve the window handle (HWND) of the current WinUI 3 window.
-    auto windowNative{ this->try_as<::IWindowNative>() };
-    winrt::check_bool(windowNative);
+    auto windowNative{ this->m_inner.as<::IWindowNative>() };
     HWND hWnd{ 0 };
     windowNative->get_WindowHandle(&hWnd);
 
