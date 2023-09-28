@@ -21,14 +21,14 @@ For more information about Windows app development options, see [Writing apps fo
 | **Fluent Design** | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
 | **.NET Runtime** | .NET & .NET Framework | .NET | .NET & .NET Framework | N/A | Minimal CLR runtime | N/A | .NET |
 | **Windows App SDK** | ✅ ([more info](../windows-app-sdk/wpf-plus-winappsdk.md)) | ✅ | ✅ ([more info](../windows-app-sdk/winforms-plus-winappsdk.md)) | ✅ | ❌ | ✅ (with [XAML Islands](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | ❌ |
-| **Receiving updates** | ✅ | ✅ | ✅ | ✅ | ✅ (security/bugfix only) | ✅ | ✅ |
+| **Receiving updates** | ✅ | ✅ | ✅ | ✅ | ✅ (security & bugfix) | ✅ | ✅ |
 | **Currently supported** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Enterprise Apps** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
 | **Great for touch** | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | **UI language** | XAML | XAML | Code | Code | XAML | JSX | XAML/Code |
-| **UI designer**<br/>(drag and drop) | ✅ | ❌ (use [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload)) | ✅ | ❌ | ✅ | ❌ (use [Fast Refresh](https://reactnative.dev/docs/fast-refresh)) | ❌ (use [Hot Reload](/dotnet/maui/xaml/hot-reload)) |
+| **UI designer**<br/>(drag & drop) | ✅ | ❌ (use [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload)) | ✅ | ❌ | ✅ | ❌ (use [Fast Refresh](https://reactnative.dev/docs/fast-refresh)) | ❌ (use [Hot Reload](/dotnet/maui/xaml/hot-reload)) |
 | **Cross-platform** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| **Xbox/HoloLens support** | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ |
+| **Xbox/HoloLens apps** | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ |
 
 Learn more about each of these options:
 
