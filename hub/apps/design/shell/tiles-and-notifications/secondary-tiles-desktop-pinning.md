@@ -144,8 +144,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI 3 Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](../../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
 
     ```cppwinrt
-    auto windowNative{ this->try_as<::IWindowNative>() };
-    winrt::check_bool(windowNative);
+    auto windowNative{ this->m_inner.as<::IWindowNative>() };
     HWND hWnd{ 0 };
     windowNative->get_WindowHandle(&hWnd);
 

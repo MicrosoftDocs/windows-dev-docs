@@ -441,7 +441,7 @@ In the case of Patch Module Update API – only fields which are to be updated n
 | Cambodia | KH |
 | Cameroon | CM |
 | Canada | CA |
-| Cape Verde | CV |
+| Cabo Verde | CV |
 | Cayman Islands | KY |
 | Central African Republic | CF |
 | Chad | TD |
@@ -621,7 +621,7 @@ In the case of Patch Module Update API – only fields which are to be updated n
 | Tonga | TO |
 | Trinidad and Tobag  - TT |
 | Tunisia | TN |
-| Turkey | TR |
+| Türkiye | TR |
 | Turkmenistan | TM |
 | Turks and Caicos Islands | TC |
 | Tuvalu | TV |

@@ -622,7 +622,7 @@ Writing `fD` in ASM would look something like:
 In the example above:
 
 - Arm64EC uses the same procedure declaration and prolog/epilog macros as Arm64.
-- Function names should be wrapped by the `A64NAME` macro. When compiling C/C++ code as Arm64EC, the compiler marks the `OBJ` as `Arm64EC` containing Arm64EC code. This does not happen with `ArmASM`. When compiling ASM code there is an alternate way to inform the linker that the produced code is Arm64EC. This is by prefixing the function name with `#`. The `A64NAME` macro performs this operation when `_Arm64EC_` is defined and leaves the name unchanged when `_Arm64EC_` is not defined. This makes it possible to share source code between Arm64 and Arm64EC.
+- Function names should be wrapped by the `A64NAME` macro. When compiling C/C++ code as Arm64EC, the compiler marks the `OBJ` as `ARM64EC` containing Arm64EC code. This does not happen with `ARMASM`. When compiling ASM code there is an alternate way to inform the linker that the produced code is Arm64EC. This is by prefixing the function name with `#`. The `A64NAME` macro performs this operation when `_ARM64EC_` is defined and leaves the name unchanged when `_ARM64EC_` is not defined. This makes it possible to share source code between Arm64 and Arm64EC.
 - The `pfE` function pointer must first be run through the EC call checker, together with the appropriate Exit Thunk, in case the target function is x64.
 
 ## Generating Entry and Exit Thunks
@@ -692,7 +692,7 @@ The code above does not supply an Exit Thunk (in register x10). This is not poss
 The above code does need an Entry Thunk to address the case when the caller is x64 code. This is how to author the corresponding Entry Thunk, using the macro for custom Entry Thunks:
 
 ```
-    Arm64EC_CUSTOM_ENTRY_THUNK A64NAME(MyAdjustorThunk)
+    ARM64EC_CUSTOM_ENTRY_THUNK A64NAME(MyAdjustorThunk)
     ldr     x9, [x0, 0x18]
     adrp    xip0, __os_arm64x_x64_jump
     ldr     xip0, [xip0, __os_arm64x_x64_jump]
@@ -723,7 +723,7 @@ To generate Arm64EC dynamic code, the process is mostly the same with only two d
 
 - When allocating the memory, use newer `VirtualAlloc2` (instead of `VirtualAlloc` or `VirtualAllocEx`) and provide the `MEM_EXTENDED_PARAMETER_EC_CODE` attribute.
 - When adding function entries:
-  - They must be in Arm64 format. When compiling Arm64EC code, the `RUNTIME_FUNCTION` type will match the x64 format. For Arm64 format when compiling Am64EC, use the `ARM64_RUNTIME_FUNCTION` type instead.
+  - They must be in Arm64 format. When compiling Arm64EC code, the `RUNTIME_FUNCTION` type will match the x64 format. For Arm64 format when compiling Arm64EC, use the `ARM64_RUNTIME_FUNCTION` type instead.
   - Do not use the older `RtlAddFunctionTable` API. Always use the newer `RtlAddGrowableFunctionTable` API instead.
 
 Below is an example of memory allocation:
@@ -750,7 +750,7 @@ Below is an example of memory allocation:
 And an example of adding one unwind function entry:
 
 ```cpp
-Arm64_RUNTIME_FUNCTION FunctionTable[1];
+ARM64_RUNTIME_FUNCTION FunctionTable[1];
 
 FunctionTable[0].BeginAddress = 0;
 FunctionTable[0].Flags = PdataPackedUnwindFunction;

@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
-description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 04/19/2023
+description: A quick launcher for power users that contains additional features without sacrificing performance.
+ms.date: 08/03/2023
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
 
 # PowerToys Run utility
 
-PowerToys Run is a quick launcher for power users that contains some additional features without sacrificing performance. It is open source and modular for additional plugins.
+PowerToys Run is a quick launcher for power users that contains additional features without sacrificing performance. It is open source and modular for additional plugins.
 
 To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(Note that this shortcut can be changed in the settings window.)_
 
@@ -30,6 +30,8 @@ PowerToys Run features include:
 - Execute system commands
 - Get time and date information
 - Convert units
+- Calculate hashes
+- Generate GUIDs
 - Open web pages or start a web search
 
 ## Settings
@@ -51,7 +53,7 @@ The following general options are available on the PowerToys Run settings page.
 | Wait for slower plugin results before selecting top item in results | Selecting this can help preselect the top, more relevant result, but at the risk of jumpiness |
 | Tab through context buttons | When enabled, you can tab through the context buttons before tabbing to the next result |
 | Generate thumbnails for files | When enabled, thumbnails will be generated for files in the results list (Disabling this can increase speed and stability) |
-| Preferred monitor position | If multiple displays are in use, PowerToys Run can be launched on:<br />- Primary display<br />- Display with mouse cursor<br />- Display with focused window |
+| Preferred monitor position | If multiple displays are in use, PowerToys Run can be launched on:<br />• Primary display<br />• Display with mouse cursor<br />• Display with focused window |
 | App theme | Change the color theme used by PowerToys Run |
 
 ### Plugin manager
@@ -65,10 +67,10 @@ PowerToys Run uses a plugin system to provide different types of results. The se
 The plugins can be activated with a direct activation command so that PowerToys Run will only use the targeted plugin. The following table shows the direct activation commands assigned by default.
 
 > [!TIP]
-> You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
+> You can change commands to fit your personal needs in the [plugin manager](#plugin-manager).
 
 > [!IMPORTANT]
-> Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(`  for the `Time and Date` plugin breaks global calculation queries starting with an opening brace.
+> Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(` breaks global calculation queries starting with an opening brace.
 >
 > Currently known conflicting character sequences:
 >
@@ -88,6 +90,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | Shell command | `>` | `> ping localhost` to do a ping query. |
 | Time and date| `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
 | Unit converter | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
+| Value Generator | `#` | `# guid3 ns:URL www.microsoft.com` to generate the GUIDv3 for the URL namespace using the URL namespace. <br />`# sha1 abc` to calculate the SHA1 hash for the string 'abc'. <br />`# base64 abc` to encode the string 'abc' to base64.  |
 | URI-handler | `//` | `//` to launch your default browser.<br />`// learn.microsoft.com` to have your default browser go to Microsoft Learn.<br />`mailto:` and `ms-settings:` links are supported. |
 | Visual Studio Code | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
 | Web search | `??` | `??` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. |
@@ -114,7 +117,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 The Windows System Commands plugin provides a set of system level actions that can be executed.
 
 > [!TIP]
-> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, you can disable the setting **Use localized system commands instead of English ones** in the [plugin manager](#plugin-manager).
+> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, clear the **Use localized system commands instead of English ones** checkbox in the [plugin manager](#plugin-manager).
 
 | Command | Action | Note |
 | :--- | :--- | :--- |
@@ -141,6 +144,7 @@ The Program plugin allows for program arguments to be added when launching an ap
 
 > [!NOTE]
 > To input valid search queries, the first element after the program name has to be one of the following possibilities:
+>
 > - The characters sequence `--`.
 > - A parameter that starts with `-`.
 > - A parameter that starts with `--`.
@@ -160,15 +164,13 @@ If the program plugin's option "Include in global result" is not selected, inclu
 
 ### Calculator plugin
 
-> [!TIP]
-> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
-
 > [!IMPORTANT]
 > Please be aware of the different decimal and thousand delimiters in different locals.
+> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
 > If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
 > [!TIP]
-> The Calculator plugin can handle some implied multiplication expressions like `2(3+4)` and `(1+2)(3+4)` by inserting the multiplication operator where appropriate.
+> The Calculator plugin can handle some implied multiplications like `2(3+4)` and `(1+2)(3+4)` by inserting the multiplication operator where appropriate.
 
 The Calculator plugin supports the following operations:
 
@@ -192,9 +194,9 @@ The Calculator plugin supports the following operations:
 | Square root | sqrt( x ) | |
 | Power of x | pow( x, y ) | Calculate a number (x) raised to the power of some other number (y). |
 | Factorial | x! | |
-| Sign | sign( -x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
+| Sign | sign( -x ) | A number that indicates the sign of value:<br />• `-1` if number is less than zero.<br />• `0` if number is zero.<br />• `1` if number is greater than zero. |
 | Random number | rand() | Returns a fractional number between 0 and 1. |
-| Pi | pi | Returns the number of pi. |
+| Pi | pi | Returns the number pi. |
 | Sine | sin( x ) | |
 | Cosine | cos( x ) | |
 | Tangent | tan( x ) | |
@@ -210,8 +212,7 @@ The Calculator plugin supports the following operations:
 
 ### History plugin
 
-The History plugin allows quick access to previouly selected results from other plugins. You can access and delete them using the direct activation command. 
-To delete them from history, select the "Remove this from history" context menu item.
+The History plugin allows quick access to previously selected results from other plugins. You can access and remove them using the direct activation command. To remove them from history, select the **Remove this from history** context menu item.
 
 #### History plugin examples
 
@@ -257,6 +258,64 @@ The Unit Converter plugin supports the following unit types:
 - Temperature
 - Volume
 
+### Value Generator plugin
+
+The Value Generator plugin can generate GUIDs/UUIDs, calculate hashes, and encode/decode strings to base64.
+
+#### UUIDs
+
+It supports the following GUID versions:
+
+- v1 - Time based
+- v3 - Namespace and name based, using MD5
+- v4 - Random value
+- v5 - Namespace and name based, using SHA1
+
+> [!NOTE]
+> For versions 3 and 5 there are some predefined namespaces: DNS, URL, OID and X500. You can use the following predefined namespaces:
+>
+> - `ns:DNS`
+> - `ns:URL`
+> - `ns:OID`
+> - `ns:X500`
+
+Examples:
+
+| Command | Result |
+| :--- | :--- |
+| `# guid` <br />`# uuid` <br />`# uuidv4` | Generate a random GUID. |
+| `# guidv1` <br />`# uuidv1` | Generate a version 1 GUID. |
+| `# guidv3 ns:DNS www.microsoft.com` <br />`# uuidv3 ns:DNS www.microsoft.com` | Generate the GUID version 3 for `www.microsoft.com` using the DNS namespace. <br /> The namespace parameter can be any valid GUID, and the name parameter can be any string. |
+
+> [!TIP]
+> The `guid` and `uuid` keywords are interchangeable and the `v` is optional. I.e. `guid5` and `guidv5` are the same.
+
+#### Hashing
+
+It supports the following hashing algorithms:
+
+- MD5
+- SHA1
+- SHA256
+- SHA384
+- SHA512
+
+Usage:
+
+- `# md5 abc`
+
+#### Base64 Encoding
+
+Usage:
+
+- `# base64 abc`
+
+#### Base64 Decoding
+
+Usage:
+
+- `# base64d SGVsbG8gV29ybGQ=`
+
 ### Folder search filters
 
 In the Folder plugin you can filter the results by using some special characters.
@@ -274,7 +333,7 @@ The Windows Settings plugin allows you to search for Windows settings. You can s
 To search by location you can use the following syntax:
 
 - `$ device:` to list all settings with 'device' in the area name.
-- `$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'.
+- `$ control>system>admin` shows all settings of the path Control Panel > System and Security > Administrative Tools.
 
 ### Service plugin
 
@@ -288,7 +347,7 @@ Additionally, you can use the following syntax:
 
 ### Kill a window process
 
-With the Window Walker plugin you can kill the process of a window if it hangs.
+With the Window Walker plugin you can kill the process of a window if it stops responding.
 
 > [!NOTE]
 > There are some limitations for the "kill process" feature:
@@ -302,19 +361,17 @@ With the Window Walker plugin you can kill the process of a window if it hangs.
 
 #### File Explorer setting
 
-If the File Explorer settings in Windows are not set to open each window in a separate process, you will receive the following message when searching for open Explorer windows:
+If the File Explorer settings in Windows are not set to open each window in a separate process, you will see the following message when searching for open Explorer windows:
 
 ![Explorer Process Info in PowerToys Run.](../images/pt-run-explorer-info.png)
 
-You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. After selecting the message, the "Folder options" window will open.
-
-On the "Folder options" window, you can enable the setting "Launch folder windows in a separate process".
+You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. On the **Folder options** window, select **Launch folder windows in a separate process**.
 
 ![Folder Options Window.](../images/pt-run-folder-options.png)
 
 ### Windows Search settings
 
-If the indexing settings for Windows Search are not set to cover all drives, you will receive the following warning when using the Windows Search plugin:
+If the indexing settings for Windows Search are not set to cover all drives, you will see the following warning when using the Windows Search plugin:
 
 ![PowerToys Run Indexer Warning.](../images/pt-run-indexer-warning.png)
 
@@ -324,9 +381,9 @@ You can turn off the warning in the PowerToys Run plugin manager options for Win
 
 On the "Searching Windows" page, you can:
 
-- Select "Enhanced" mode to enable indexing across all of the drives on your Windows machine.
+- Select **Enhanced** mode to enable indexing across all of the drives on your Windows machine.
 - Specify folder paths to exclude.
-- Select the "Advanced Search Indexer Settings" (near the bottom of the menu options) to set advanced index settings, add or remove search locations, index encrypted files, etc.
+- Select the **Advanced Search Indexer Settings** (near the bottom of the menu options) to set advanced index settings, add or remove search locations, index encrypted files, etc.
 
 ![Advanced Indexing Settings.](../images/pt-run-indexing-advanced.png)
 

@@ -77,7 +77,7 @@ We recommend ALWAYS validating the integrity of a WinGet Configuration file befo
 
 ### Where can I find sample WinGet Configuration files?
 
-For WinGet Configuration file samples, see [Sample configuration.dsc.yaml files](https://github.com/microsoft/devhome/tree/main/sampleConfigurations).
+You can find sample WinGet Configuration files in the Windows Dev Home repo: [https://aka.ms/dsc.yaml](https://aka.ms/dsc.yaml).
 
 ### When will WinGet configuration move from a preview to a stable feature?
 

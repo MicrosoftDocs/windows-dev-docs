@@ -1,13 +1,14 @@
 ---
-title: Windows 10 UWP App lifecycle
-description: This topic describes the lifecycle of a Windows 10 Universal Windows Platform (UWP) app from the time it is activated until it is closed.
+title: Universal Windows Platform (UWP) application lifecycle
+description: This topic describes the lifecycle of a Universal Windows Platform (UWP) application from the time it is activated until it is closed.
 keywords: app lifecycle suspended resume launch activate
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
-ms.date: 01/23/2018
+ms.date: 09/13/2023
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Windows 10 universal Windows platform (UWP) app lifecycle
+
+# Universal Windows Platform (UWP) app lifecycle
 
 This topic describes the lifecycle of a Universal Windows Platform (UWP) app from the time it is launched until it is closed.
 
@@ -19,11 +20,11 @@ Windows 8 introduced a new application model with UWP apps. At a high level, a n
 
 There are various ways for apps that need to continue to run when they are in the background such as [background tasks](support-your-app-with-background-tasks.md), [extended execution](/uwp/api/windows.applicationmodel.extendedexecution), and activity sponsored execution (for example, the **BackgroundMediaEnabled** capability which allows an app to continue to [play media in the background](../audio-video-camera/background-audio.md)). Also, background transfer operations can continue even if your app is suspended or even terminated. For more info, see [How to download a file](/previous-versions/windows/apps/jj152726(v=win.10)).
 
-By default, apps that are not in the foreground are suspended which results in power savings and more resources available for the app currently in the foreground.
+By default, apps that are not in the foreground are suspended. This results in power savings and more resources available for the app currently in the foreground.
 
 The suspended state adds new requirements for you as a developer because the operating system may elect to terminate a suspended app in order to free up resources. The terminated app will still appear in the task bar. When the user click on it, the app must restore the state that it was in before it was terminated because the user will not be aware that the system closed the app. They will think that it has been waiting in the background while they were doing other things and will expect it to be in the same state it was in when they left it. In this topic we will look at how to accomplish that.
 
-Windows 10, version 1607, introduces two more app model states: **Running in foreground** and **Running in background**. We will also look at these new states in the sections that follow.
+Windows 10, version 1607, introduced two more app model states: **Running in foreground** and **Running in background**. We will look at these additional states in the sections that follow.
 
 ## App execution state
 
@@ -49,8 +50,8 @@ Get the previous state of your app from [LaunchActivatedEventArgs.PreviousExecut
 |**ClosedByUser** | The user closed the app with the system close button, or with Alt+F4. When the user closes the app, it is first suspended and then terminated. | Because the app has essentially gone through the same steps that lead to the Terminated state, handle this the same way you would the Terminated state.|
 |**Running** | The app was already open when the user tried to launch it again. | Nothing. Note that another instance of your app is not launched. The already running instance is simply activated. |
 
->[!NOTE]
->_Current user session_ is based on Windows logon. As long as the current user hasn't logged off, shut down, or restarted Windows, the current user session persists across events such as lock screen authentication, switch-user, and so on.
+> [!NOTE]
+> _Current user session_ is based on Windows logon. As long as the current user hasn't logged off, shut down, or restarted Windows, the current user session persists across events such as lock screen authentication, switch-user, and so on.
 
 One important circumstance to be aware of is that if the device has sufficient resources, the operating system will prelaunch frequently used apps that have opted in for that behavior in order to optimize responsiveness. Apps that are prelaunched are launched in the background and then quickly suspended so that when the user switches to them, they can be resumed which is faster than launching the app.
 
@@ -121,14 +122,14 @@ After you save your data, if you are over your memory usage limit, then you can 
 
 Be aware that if your app has background activity in progress that it can move from the running in the background state to the running in the foreground state without ever reaching the suspended state.
 
->[!NOTE]
->When your app is being closed by the user, it is possible for the **OnSuspending** event to be fired before the **EnteredBackground** event. In some cases, the **EnteredBackground** event may not be fired before the app is terminated. It is important to save your data in the **OnSuspending** event handler.
+> [!NOTE]
+> When your app is being closed by the user, it is possible for the **OnSuspending** event to be fired before the **EnteredBackground** event. In some cases, the **EnteredBackground** event may not be fired before the app is terminated. It is important to save your data in the **OnSuspending** event handler.
 
 ### Asynchronous work and Deferrals
 
 If you make an asynchronous call within your handler, control returns immediately from that asynchronous call. That means that execution can then return from your event handler and your app will move to the next state even though the asynchronous call hasn't completed yet. Use the [**GetDeferral**](/uwp/api/windows.applicationmodel.suspendingoperation.getdeferral) method on the [**EnteredBackgroundEventArgs**](/uwp/api/Windows.ApplicationModel) object that is passed to your event handler to delay suspension until after you call the [**Complete**](/uwp/api/windows.foundation.deferral.complete) method on the returned [**Windows.Foundation.Deferral**](/uwp/api/windows.foundation.deferral) object.
 
-A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's _Complete_ method is called, or the deadline passes-_whichever comes first_.
+A deferral doesn't increase the amount of time you have to run your code before your app is terminated. It only delays termination until either the deferral's _Complete_ method is called, or the deadline passes-_whichever comes first_.
 
 If you need more time to save your state, investigate ways to save your state in stages before your app enters the background state so that there is less to save in your **OnSuspending** event handler. Or you may request an [ExtendedExecutionSession](/archive/msdn-magazine/2015/windows-10-special-issue/app-lifecycle-keep-apps-alive-with-background-tasks-and-extended-execution) to get more time. There is no guarantee that the request will be granted, however, so it is best to find ways to minimize the amount of time you need to save your state.
 

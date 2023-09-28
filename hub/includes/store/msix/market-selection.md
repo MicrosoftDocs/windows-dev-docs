@@ -350,7 +350,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
     <td>Tonga</td>
     <td>Trinidad and Tobago</td>
     <td>Tunisia</td>
-    <td>Turkey *</td>
+    <td>Türkiye *</td>
   </tr>
   <tr>
     <td>Turkmenistan</td>
@@ -429,7 +429,7 @@ The Commerce Expansion Adjustment will be applied to all transactions processed 
 | Sweden               | Gift card       | 2.24%                         | March 2016     |
 | Switzerland          | Gift card       | 2.24%                         | March 2016     |
 | Taiwan               | Gift card       | 2.24%                         | March 2016     |
-| Turkey               | Gift card       | 2.24%                         | March 2016     |
+| Türkiye              | Gift card       | 2.24%                         | March 2016     |
 | United Arab Emirates | Gift card       | 2.24%                         | March 2016     |
 | United Kingdom       | Gift card       | 2.24%                         | March 2016     |
 | United States        | Gift card       | 2.24%                         | March 2016     |

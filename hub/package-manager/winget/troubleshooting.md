@@ -1,38 +1,49 @@
 ---
 title: Debugging and troubleshooting issues with the winget tool
 description: Provides information on logging and winget diagnostics.
-ms.date: 10/01/2021
+ms.date: 08/31/2023
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # Debugging and troubleshooting issues with the winget tool
 
-When Windows Package Manager is installing, searching or listing applications, sometimes it is necessary to look at the log files to understand the behavior better.
+When Windows Package Manager is installing, searching or listing applications, sometimes it is necessary to look at the log files to better understand the behavior.
 
-## Logs
+## WinGet Logs
 
-Windows Package Manager by default creates log files when executing commands. These log files are located here:
+Windows Package Manager by default creates log files when executing commands. These logs contain information that can aid in debugging issues with WinGet. There is no maximum size for the log files. They are typically only a few KB in size. When the number of log files in the directory exceeds 100, the oldest log files will begin being deleted. There is no time-based removal of logs and these settings are not configurable. If you have reached the 100 file log capacity, just move any WinGet logs that you wish to preserve into a different directory.
+
+Use the command [`winget --info`](./info.md) to find the directory path to your WinGet log files. The default path for WinGet log files is:
 
 ```CMD
-> Logs: %LOCALAPPDATA%\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\DiagOutputDir
+%LOCALAPPDATA%\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\DiagOutputDir
 ```
 
-By navigating to this folder you will find the logs the *winget* tool has written.
+You can include the **--logs** or **--open-logs** option to any command to open the logs directory after the command completes. Here are some examples of using the **--logs** option:
+
+```CMD
+> winget list --logs
+> winget source update --open-logs
+```
 
 ### --verbose-logs
 
-If you need more comprehensive log files, that provide the complete communication with the CDNs and sources, include **--verbose-logs** on the command line as well.  Here are some examples of using the **--verbose-logs** option:
+If you need more comprehensive log files, that provide the complete communication with the CDNs and sources, include **--verbose** or **--verbose-logs** on the command line as well.  Here are some examples of using the **--verbose-logs** option:
 
 ```CMD
 > winget install vscode --verbose-logs
 > winget search -n visual --verbose-logs
-> winget source add -n mysource -t Microsoft.REST -a https://www.contoso.org --verbose-logs
+> winget source add -n mysource -t Microsoft.REST -a https://www.contoso.org --verbose
 ```
 
 ## Known issues
 
 A list of known issues with sources and behaviors is kept up to date in the [Windows Package Manager Client repository](https://www.github.com/microsoft/winget-cli).  If you encounter issues when using the winget tool, go [here](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting) for troubleshooting.
+
+## Exit codes
+
+The winget tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the ["Return codes" file of the Windows Package Manager Client repository](https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md).
 
 ### Scope for specific user vs machine-wide
 

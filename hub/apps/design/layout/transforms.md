@@ -32,7 +32,7 @@ In XAML layout, transforms are applied after the layout pass is complete, so ava
 
 **Migration note:**  Windows Presentation Foundation (WPF) had a **LayoutTransform** property that applied transforms prior to the layout pass. But Windows Runtime XAML doesn't support a **LayoutTransform** property. (Microsoft Silverlight didn't have this property either.)
 
-As an alternative, the Windows Community Toolkit provides the [LayoutTransformControl](/windows/communitytoolkit/controls/LayoutTransformControl) that applies Matrix transformations on any FrameworkElement of your application.
+As an alternative, the Windows Community Toolkit provides the [LayoutTransformControl](/dotnet/communitytoolkit/windows/layouttransformcontrol/layouttransformcontrol) that applies Matrix transformations on any FrameworkElement of your application.
 
 ## <span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>Applying a transform to a UI element
 

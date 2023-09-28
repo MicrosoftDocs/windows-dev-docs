@@ -4,8 +4,6 @@ description: Send app notifications using the Windows App SDK
 ms.topic: article
 ms.date: 12/27/2021
 keywords: toast, local, notification, windows app sdk, winappsdk
-ms.author: vmehrshahi
-author: vaheeshta
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 ---

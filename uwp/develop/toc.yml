@@ -234,10 +234,6 @@
           href: ../data-access/sqlite-databases.md
         - name: Use a SQL Server database
           href: ../data-access/sql-server-databases.md
-        - name: Use a MongoDB database
-          href: ../data-access/mongo-db-databases.md
-        - name: Use a MySQL database
-          href: ../data-access/mysql-databases.md
     - name: Data binding
       href: ../data-binding/index.md
       items:
@@ -772,6 +768,8 @@
           href: ../cpp-and-winrt-apis/binding-collection.md
         - name: XAML custom (templated) controls
           href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: Calling and overriding your base type
+          href: ../cpp-and-winrt-apis/base-type.md
         - name: Passing parameters into the ABI boundary
           href: ../cpp-and-winrt-apis/pass-parms-to-abi.md
         - name: Consume COM components

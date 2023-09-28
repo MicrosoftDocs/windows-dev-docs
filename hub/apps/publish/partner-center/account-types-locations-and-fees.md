@@ -216,7 +216,7 @@ In the following table, the **Registration fee** is the current cost to register
 | Tonga                             | 19 USD              | 99 USD           |  
 | Trinidad and Tobago               | 122 TTD             | 636 TTD          |  
 | Tunisia                           | 31 TND              | 140 TND          |  
-| Turkey                            | 37 TRY              | 160 TRY          |  
+| Türkiye                           | 37 TRY              | 160 TRY          |  
 | Turkmenistan                      | 19 USD              | 99 USD           |  
 | Tuvalu                            | 19 USD              | 99 USD           |  
 | Uganda                            | 19 USD              | 99 USD           |  

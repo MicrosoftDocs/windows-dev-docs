@@ -32,6 +32,15 @@ Apps packaged with external location, and unpackaged apps, that use the Windows 
 To learn more, see the [Windows App SDK release channels](release-channels.md) and the release notes provided below for each version.
 
 ## Stable releases
+### Windows App SDK 1.3
+
+| Version | Runtime downloads |
+|---|---|
+| [1.3.3 (1.3.230724000)](stable-channel.md#version-133-13230724000) <br> 07/25/2023 <br> [Release notes](stable-channel.md#version-133-13230724000) | [Installer (x64)](https://aka.ms/windowsappsdk/1.3/1.3.230724000/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.3/1.3.230724000/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.3/1.3.230724000/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.3/1.3.230724000/Microsoft.WindowsAppRuntime.Redist.1.3.zip) |
+| [1.3.2 (1.3.230602002)](stable-channel.md#version-132-13230602002) <br> 06/13/2023 <br> [Release notes](stable-channel.md#version-132-13230602002) | [Installer (x64)](https://aka.ms/windowsappsdk/1.3/1.3.230602002/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.3/1.3.230602002/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.3/1.3.230602002/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.3/1.3.230602002/Microsoft.WindowsAppRuntime.Redist.1.3.zip) |
+| [1.3.1 (1.3.230502000)](stable-channel.md#version-131-13230502000) <br> 05/09/2023 <br> [Release notes](stable-channel.md#version-131-13230502000) | [Installer (x64)](https://aka.ms/windowsappsdk/1.3/1.3.230502000/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.3/1.3.230502000/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.3/1.3.230502000/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.3/1.3.230502000/Microsoft.WindowsAppRuntime.Redist.1.3.zip) |
+| [1.3.0 (1.3.230331000)](stable-channel.md#version-13) <br> 04/12/2023 <br> [Release notes](stable-channel.md#version-13) | [Installer (x64)](https://aka.ms/windowsappsdk/1.3/1.3.230331000/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.3/1.3.230331000/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.3/1.3.230331000/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.3/1.3.230331000/Microsoft.WindowsAppRuntime.Redist.1.3.zip) |
+
 ### Windows App SDK 1.2
 
 | Version | SDK downloads | Runtime downloads |

@@ -12,7 +12,11 @@ items:
       - name: Dev Home extensions
         href: ../dev-home/extensions.md
   - name: Dev Drive
-    href: ../dev-drive/index.md
+    items:
+      - name: Overview
+        href: ../dev-drive/index.md
+      - name: Group Policy for enterprise control
+        href: ../dev-drive/group-policy.md
   - name: Windows Package Manager
     items:
       - name: Overview
@@ -103,6 +107,8 @@ items:
         href: ../powertoys/awake.md
       - name: Color Picker
         href: ../powertoys/color-picker.md
+      - name: Crop And Lock
+        href: ../powertoys/crop-and-lock.md
       - name: FancyZones
         href: ../powertoys/fancyzones.md
       - name: File Explorer add-ons
@@ -131,10 +137,10 @@ items:
         href: ../powertoys/registry-preview.md
       - name: PowerToys Run
         href: ../powertoys/run.md
-      - name: Shortcut Guide
-        href: ../powertoys/shortcut-guide.md
       - name: Screen Ruler
         href: ../powertoys/screen-ruler.md
+      - name: Shortcut Guide
+        href: ../powertoys/shortcut-guide.md
       - name: Text Extractor
         href: ../powertoys/text-extractor.md
       - name: Video Conference Mute

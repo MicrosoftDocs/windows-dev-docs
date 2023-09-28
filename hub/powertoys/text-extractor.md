@@ -16,8 +16,7 @@ With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>
 
 ## How to deactivate
 
-Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard.
-You can exit capture mode by pressing <kbd>Esc</kbd> at any moment.
+Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard. You can exit capture mode by pressing <kbd>Esc</kbd> at any moment.
 
 ## Adjust while trying to capture
 

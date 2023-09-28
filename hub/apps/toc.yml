@@ -28,18 +28,10 @@ items:
         href: whats-new/latest-doc-updates.md
   - name: Get started
     items:
+        - name: Start here!
+          href: get-started/start-here.md
         - name: Overview of app development options
           href: get-started/index.md
-        - name: About migrating from UWP to Windows App SDK
-          href: get-started/migrate-from-uwp-to-winappsdk.md
-        - name: Install tools for the Windows App SDK
-          href: windows-app-sdk/set-up-your-development-environment.md
-        - name: "Create your first WinUI 3 project"
-          href: winui/winui3/create-your-first-winui3-app.md
-        - name: "Tutorial: Create a simple photo viewer with WinUI 3"
-          href: get-started/simple-photo-viewer-winui3.md
-        - name: "Tutorial: Create a simple multi-platform photo viewer"
-          href: get-started/uno-simple-photo-viewer.md
         - name: Sample apps for Windows
           href: get-started/samples.md
         - name: Windows developer best practices 
@@ -58,6 +50,8 @@ items:
           href: get-started/developer-mode-features-and-debugging.md
         - name: Create a developer account
           href: get-started/sign-up.md
+        - name: Install tools for the Windows App SDK
+          href: windows-app-sdk/set-up-your-development-environment.md
         - name: Visual Studio project templates
           items:
             - name: All templates for Windows apps
@@ -70,6 +64,14 @@ items:
         href: how-tos/hello-world-winui3.md
       - name: Target multiple platforms with WinUI 3
         href: how-tos/uno-multiplatform.md
+      - name: About migrating from UWP to Windows App SDK
+        href: get-started/migrate-from-uwp-to-winappsdk.md
+      - name: "Create your first WinUI 3 project"
+        href: winui/winui3/create-your-first-winui3-app.md
+      - name: "Tutorial: Create a simple photo viewer with WinUI 3"
+        href: get-started/simple-photo-viewer-winui3.md
+      - name: "Tutorial: Create a simple multi-platform photo viewer"
+        href: get-started/uno-simple-photo-viewer.md
   - name: Design
     href: design/toc.yml
   - name: Develop
@@ -463,6 +465,8 @@ items:
         href: develop/security-and-identity.md
       - name: Speech
         href: develop/speech.md
+      - name: DispatcherQueue
+        href: develop/dispatcherqueue.md
       - name: Windows AI and machine learning
         href: /windows/ai/
       - name: Windows widget providers
@@ -507,12 +511,12 @@ items:
             href: develop/smart-app-control/code-signing-for-smart-app-control.md
           - name: Test your app's signature with Smart App Control
             href: develop/smart-app-control/test-your-app-with-smart-app-control.md
-  - name: Windows app restore
-    href: develop/windows-app-restore.md
   - name: Deploy
     items:
       - name: Deployment overview
         href: package-and-deploy/index.md
+      - name: Windows app restore
+        href: develop/windows-app-restore.md
       - name: Windows App SDK deployment guide
         items:
           - name: Windows App SDK deployment overview
