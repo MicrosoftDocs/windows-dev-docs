@@ -9,9 +9,6 @@ ms.topic: overview
 
 Prior to running a WinGet Configuration file, it is recommended to review and evaluate each resource listed in the file, ensuring that you are fully aware of what is being installed, changed, or applied to your operating system, and that it is coming from a credible and secure source.
 
-> [!IMPORTANT]
-> WinGet Configuration is currently in preview. To use a WinGet Configuration file with the [`winget configure` command](../winget/configure.md), you must first [enable the experimental configuration feature](index.md#enable-the-winget-configuration-experimental-configuration-preview-feature).
-
 ## Security notifications and approvals
 
 Before running a configuration, the user is prompted (unless they explicitly pass the configuration agreement acceptance parameter) to review and acknowledge their responsibility to verify a configuration.
