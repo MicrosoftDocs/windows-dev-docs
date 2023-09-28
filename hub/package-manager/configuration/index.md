@@ -1,6 +1,6 @@
 ---
 title: WinGet Configuration
-description: WinGet Configuration uses the winget configure command, PowerShell, and a YAML-formatted configuration file listing all of the software versions, packages, tools, and settings required to achieve the set up the desired state of the development environment on your Windows machine. Minimizing manual project setup and onboarding to a single command that is reliable and repeatable. 
+description: WinGet Configuration uses the winget configure command, PowerShell, and a YAML-formatted configuration file listing all of the software versions, packages, tools, and settings required to achieve the set up the desired state of the development environment on your Windows machine. Minimizing manual project setup and onboarding to a single command that is reliable and repeatable.
 ms.date: 07/10/2023
 ms.topic: overview
 ---
@@ -12,9 +12,6 @@ Using a WinGet Configuration file, you can consolidate manual machine setup and 
 - A YAML-formatted WinGet Configuration file that lists all of the software versions, packages, tools, dependencies, and settings required to set up the desired state of the development environment on your Windows machine.
 - [PowerShell Desired State Configuration (DSC)](/powershell/dsc/overview) to automate the configuration of your Windows operating system.
 - The Windows Package Manager [`winget configure` command](../winget/configure.md) to initiate the configuration process.
-
-> [!IMPORTANT]
-> WinGet Configuration is currently in preview. To use a WinGet Configuration file with the [`winget configure` command](../winget/configure.md), you must first [enable the experimental configuration feature](#enable-the-winget-configuration-experimental-configuration-preview-feature).
 
 ## Benefits for machine setup and project onboarding
 
@@ -33,27 +30,7 @@ To set up your machine using a WinGet Configuration file, you can:
 
 1. [Install Dev Home](../../dev-home/index.md), go to **Machine configuration**, select **Configuration file**, and choose the WinGet configuration file that you would like to use. (To create a configuration file, see [How to author a WinGet Configuration file](create.md)).
 
-2. Use [winget configure](../winget/configure.md) in the command line. To use the `winget configure` command, you must be running the preview version of Windows Package Manager and must first [enable the Experimental feature](#enable-the-winget-configuration-experimental-configuration-preview-feature).
-
-## Enable the WinGet Configuration experimental configuration preview feature
-
-In order to use a WinGet Configuration file with the [`winget configure` command](../winget/configure.md):
-
-1. Confirm you're running the [Preview version of WinGet](../winget/index.md#install-winget-preview-version-developers-only).
-
-2. Enter the command: `winget features` to display a list of available experimental features.
-
-3. Enter the command: `winget settings` to open the WinGet Settings file in your default text editor. The WinGet Settings file uses a JSON format.
-
-4. In your WinGet Settings JSON file, enter:
-
-```json
-"experimentalFeatures": {
-       "configuration": true
-   }
-```
-
-Features may be managed by your workplace group policy, potentially blocking your ability to use experimental features. You can use the `winget --info` command to view any policies in effect on your system.
+2. Use [winget configure](../winget/configure.md) in the command line. To use the `winget configure` command, you must be running WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
 
 ## WinGet Configuration FAQs
 
@@ -100,7 +77,7 @@ We recommend ALWAYS validating the integrity of a WinGet Configuration file befo
 
 ### Where can I find sample WinGet Configuration files?
 
-For WinGet Configuration file samples, see [Sample configuration.dsc.yaml files](https://gist.github.com/denelon/dc646f538b4ffd6993878cf545c7918f).
+For WinGet Configuration file samples, see [Sample configuration.dsc.yaml files](https://github.com/microsoft/devhome/tree/main/sampleConfigurations).
 
 ### When will WinGet configuration move from a preview to a stable feature?
 
@@ -114,7 +91,7 @@ The [PowerShell Gallery](https://www.powershellgallery.com/packages) hosts hundr
 
 ### Can I set up a policy to block the use of WinGet Configuration files in my organization?
 
-[Group Policy Objects](/microsoft-365/compliance/device-onboarding-gp) are available for disabling all experimental features. New Group Policy Objects will be created for more fine-grained control before WinGet configuration is shipped as a stable product.
+Yes. [Group Policy Objects](/microsoft-365/compliance/device-onboarding-gp) **EnableWindowsPackageManagerConfiguration** and **EnableWindowsPackageManagerConfigurationExplanation** can be utilized for disabling WinGet Configuration feature in your organization.
 
 ## Troubleshooting WinGet Configurations
 

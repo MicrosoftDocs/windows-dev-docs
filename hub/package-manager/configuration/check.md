@@ -1,6 +1,6 @@
 ---
 title: How to check a WinGet Configuration
-description: Learn how to check a WinGet Configuration. 
+description: Learn how to check a WinGet Configuration.
 ms.date: 05/23/2023
 ms.topic: overview
 ---
