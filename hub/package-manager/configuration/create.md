@@ -1,7 +1,7 @@
 ---
 title: How to author a WinGet Configuration file
-description: Learn how to create a WinGet Configuration. 
-ms.date: 05/23/2023
+description: Learn how to create a WinGet Configuration.
+ms.date: 09/28/2023
 ms.topic: overview
 ---
 
@@ -16,12 +16,11 @@ To create a WinGet Configuration file:
 5. Determine the directives and settings needed for each configuration resource.
 6. Determine the dependencies for each resource.
 
-> [!IMPORTANT]
-> WinGet Configuration is currently in preview. To use a WinGet Configuration file with the [`winget configure` command](../winget/configure.md), you must first [enable the experimental configuration feature](index.md#enable-the-winget-configuration-experimental-configuration-preview-feature).
+Learn more about using the [WinGet configure command](/windows/package-manager/winget/configure).
 
 ## File format
 
-Windows Package Manager uses manifests (YAML files) to locate and install packages for Windows users. WinGet Configuration files use the same YAML style format, adding a JSON schema specification to help define the structure and validation of the file. To further assist in detecting whether the format of your WinGet Configuration file is valid, we recomend using [Visual Studio Code](https://code.visualstudio.com/download) with the [YAML extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) by RedHat to support proper syntax, help detect any formatting errors, provide hover support and auto-completion (when linked to the JSON schema file), and ensure valid formatting.
+Windows Package Manager uses manifests (YAML files) to locate and install packages for Windows users. WinGet Configuration files use the same YAML style format, adding a JSON schema specification to help define the structure and validation of the file. To further assist in detecting whether the format of your WinGet Configuration file is valid, we recommend using [Visual Studio Code](https://code.visualstudio.com/download) with the [YAML extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) by RedHat to support proper syntax, help detect any formatting errors, provide hover support and auto-completion (when linked to the JSON schema file), and ensure valid formatting.
 
 ### File naming convention
 
