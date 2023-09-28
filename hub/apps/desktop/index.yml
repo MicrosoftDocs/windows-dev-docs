@@ -20,8 +20,8 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Enable your device for development
-            url: ../get-started/enable-your-device-for-development.md
+          - text: Start here!
+            url: ../get-started/start-here.md
           - text: An overview of Windows development options
             url: ../get-started/index.md
           - text: Learning paths and modules
@@ -58,7 +58,7 @@ landingContent:
 
   - title: Artificial Intelligence and Machine Learning
     linkLists:
-      - linkListType: overview
+      - linkListType: concept
         links:
           - text: Windows AI
             url: /windows/ai/
@@ -86,7 +86,7 @@ landingContent:
 
   - title: Platforms
     linkLists:
-      - linkListType: overview
+      - linkListType: architecture
         links:
           - text: Windows App SDK
             url: ../windows-app-sdk/index.md
@@ -100,6 +100,9 @@ landingContent:
             url: /dotnet/desktop/winforms/overview/?view=netdesktop-7.0
           - text: Other development technologies
             url: /windows/dev-environment/
+
+  - title: API Reference
+    linkLists:
       - linkListType: reference
         links:
           - text: WinRT API for the Windows SDK
@@ -112,5 +115,4 @@ landingContent:
             url: /windows/windows-app-sdk/api/win32/
           - text: WinUI API reference
             url: /windows/winui/api/
-
 
