@@ -3,12 +3,12 @@ title: Windows Terminal Custom Prompt Setup
 description: In this tutorial, you learn how to set up Oh My Posh and Terminal-Icons in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 12/20/2021
+ms.date: 08/28/2023
 ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to set up a customized command line experience using Oh My Posh, Terminal-Icons, and posh-git in my Windows Terminal.
 ---
 
-# Tutorial: Set up a custom prompt for PowerShell or WSL with Oh My Posh
+# Tutorial - Set up a custom prompt for PowerShell or WSL with Oh My Posh
 
 This tutorial provides some resources and direction to help you customize your command prompt for PowerShell or Windows Subsystem for Linux (WSL) using [Oh My Posh](https://ohmyposh.dev). Oh My Posh provides theme capabilities for a fully customized command prompt experience providing Git status color-coding and prompts.
 
@@ -45,7 +45,7 @@ Oh My Posh enables you to use a full color set to define and render your termina
 To customize your PowerShell prompt, you can install Oh My Posh using [winget](/windows/package-manager/winget). Enter the command:
 
 ```powershell
-winget install oh-my-posh
+winget install JanDeDobbeleer.OhMyPosh
 ```
 
 This will install:
@@ -79,6 +79,12 @@ Choose a theme and update your PowerShell profile with this command. (You can re
 notepad $PROFILE
 ```
 
+If you receive a path error, you may not yet have a profile for PowerShell. To create one, use the following PowerShell command to create a profile and then try opening it with a text editor again.
+
+```powershell
+new-item -type file -path $profile -force
+```
+
 Add the following to the end of your PowerShell profile file to set the `paradox` theme. (Replace `paradox` with the theme of your choice.)
 
 ```powershell
@@ -87,11 +93,17 @@ oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\paradox.omp.json" | Invoke-
 
 Now, each new PowerShell instance will start by importing Oh My Posh and setting your command line theme.
 
+If you receive a script error when trying to open a new PowerShell instance, your Execution Policy for PowerShell may be restricted. To set your PowerShell Execution Policy to unrestricted, you will need to launch PowerShell as an administrator and then use the following command:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+```
+
 > [!NOTE]
 > This is not your Windows Terminal profile. Your PowerShell profile is a script that runs every time PowerShell starts. [Learn more about PowerShell profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
 > [!TIP]
-> Oh My Posh can be configured to restore the current working directory by enabling `osc99` in the General Settings. See the [Oh My Posh docs](https://ohmyposh.dev/docs/configuration/overview#general-settings).
+> See the [Oh My Posh FAQs](https://ohmyposh.dev/docs/faq/) for answers to common questions or issues. To learn more about the configuration and general settings, such as how to restore the current working directory, see the [Oh My Posh docs](https://ohmyposh.dev/docs/configuration/general#general-settings).
 
 ## Customize your WSL prompt with Oh My Posh
 

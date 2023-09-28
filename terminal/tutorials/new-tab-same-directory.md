@@ -58,10 +58,11 @@ Add the following to your [PowerShell profile](/powershell/module/microsoft.powe
 function prompt {
   $loc = $executionContext.SessionState.Path.CurrentLocation;
 
-  $out = "PS $loc$('>' * ($nestedPromptLevel + 1)) ";
+  $out = ""
   if ($loc.Provider.Name -eq "FileSystem") {
     $out += "$([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\"
   }
+  $out += "PS $loc$('>' * ($nestedPromptLevel + 1)) ";
   return $out
 }
 ```
@@ -151,7 +152,7 @@ For MINGW, Git Bash and Cygwin, you need to modify the `PROMPT_COMMAND` for WSL:
 Add the following line to the end of your `.bashrc` file:
 
 ```bash
-PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD"`"'
+PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD" -C ANSI`"'
 ```
 
 > [!NOTE]

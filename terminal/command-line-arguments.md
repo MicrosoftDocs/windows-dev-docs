@@ -39,7 +39,8 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--maximized, -M` | Launches the terminal maximized. |
 | `--fullscreen, -F` | Launches the terminal as full screen. |
 | `--focus, -f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
-| `--pos x,y` | Launches the at the given position. `x` or `y` can be omitted, to use the default value from the settings. |
+| `--pos x,y` | Launches the terminal at the given position. `x` or `y` can be omitted, to use the default value from the settings. |
+| `--size` `c,r` | Launches the terminal with the specified number of columns (`c`) and rows (`r`). |
 | `--window, -w window-id` | Runs the given command in a specific window. |
 
 

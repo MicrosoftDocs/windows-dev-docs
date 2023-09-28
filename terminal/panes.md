@@ -32,9 +32,6 @@ If you would like to change these key bindings, you can create new ones using th
 { "command": { "action": "splitPane", "split": "left" } },
 ```
 
-> [!IMPORTANT]
-> The `"up"`, `"right"`, `"down"`, and `"left"` options for `split` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ### Using the new tab button and dropdown menu
 
 If you'd like to open a new pane of your default profile, you can hold the <kbd>alt</kbd> key and click the new tab button. If you'd like to open a new pane through the dropdown menu, you can hold <kbd>alt</kbd> and click on your desired profile. Both of these options will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
@@ -67,9 +64,6 @@ You can customize this by adding key bindings for the `moveFocus` command and se
 { "command": { "action": "moveFocus", "direction": "parent" } },
 { "command": { "action": "moveFocus", "direction": "child" } }
 ```
-
-> [!IMPORTANT]
-> The `first`, `parent`, and `child` directions are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Swapping panes
 
@@ -114,9 +108,6 @@ After two panes on a tab have been created, the split orientation of those panes
 { "command": "toggleSplitOrientation" }
 ```
 
-> [!IMPORTANT]
-> The `previous`, `previousInOrder`, and `nextInOrder` directions are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ## Swapping panes ([Preview](https://aka.ms/terminal-preview))
 
 Once two panes have been created, you can swap their positions in the terminal.
@@ -132,9 +123,6 @@ The `swapPane` command can be customized using the same navigation `direction`s 
 { "command": { "action": "swapPane", "direction": "previousInOrder" } },
 { "command": { "action": "swapPane", "direction": "nextInOrder" } }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Moving panes ([Preview](https://aka.ms/terminal-preview))
 
@@ -154,9 +142,6 @@ The key bindings for the `movePane` command can be customized for moving panes t
 { "command": { "action": "movePane", "index": 8 } }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 ## Changing split orientation ([Preview](https://aka.ms/terminal-preview))
 
 After two panes on a tab have been created, the split orientation of those panes can be switched between `vertical` and `horizontal` with the `toggleSplitOrientation` command.
@@ -164,9 +149,6 @@ After two panes on a tab have been created, the split orientation of those panes
 ```json
 { "command": "toggleSplitOrientation" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Resizing a pane
 
@@ -234,9 +216,6 @@ You can enable read-only mode on a pane. This works similarly to toggling, howev
 { "command": "enableReadOnlyMode" }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
 You can disable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
 
 **Command name:** `disableReadOnlyMode`
@@ -246,9 +225,6 @@ You can disable read-only mode on a pane. This works similarly to toggling, howe
 ```json
 { "command": "disableReadOnlyMode" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Customizing panes using key bindings
 

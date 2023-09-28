@@ -16,7 +16,7 @@ This guide addresses some of the common errors and obstacles you may encounter w
 If you click on the "settings" button in the dropdown, the Terminal will attempt to open the settings file, `settings.json`. This will cause the OS to try and launch your configured `.json` file editor. This might be Visual Studio, or Notepad, or some other completely unexpected application. If there isn't a configured `.json` editor on your machine, then the OS will eventually show you the "How do you want to open this file" dialog.
 
 > [!TIP]
-> You can also use the settings UI to configure your settings if you are using [Windows Terminal Preview](https://aka.ms/terminal-preview). You can learn how to open the settings UI on the [Actions page](./customize-settings/actions.md#application-level-commands).
+> You can also use the settings UI to configure your settings. You can learn how to open the settings UI on the [Actions page](./customize-settings/actions.md#application-level-commands).
 
 ## Set your WSL distribution to start in the home `~` directory when launched in older versions of Windows Terminal
 

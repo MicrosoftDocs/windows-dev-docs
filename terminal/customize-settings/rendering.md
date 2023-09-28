@@ -40,3 +40,22 @@ When this is set to `true`, the terminal will use the software renderer (a.k.a. 
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
+
+<br />
+
+___
+
+## Enable unfocused acrylic
+
+When this is set to `true`, the terminal will attempt to use acrylic even when the window is unfocused. This will only work if acrylic is enabled in the OS, and in your profile. When set to `false`, acrylic will only be used when the window is focused (even if `useAcrylic` is set to `true` in a profile's `unfocusedAppearance`).
+
+**Property name:** `compatibility.enableUnfocusedAcrylic`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).

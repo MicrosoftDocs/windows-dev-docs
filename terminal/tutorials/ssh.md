@@ -20,6 +20,11 @@ By default, the OpenSSH client will be located in the directory: `C:\Windows\Sys
 
 ![OpenSSH feature in Windows Settings](../images/ssh-optonialfeatures.png)
 
+For more information on configuring OpenSSH, see [OpenSSH Server configuration for Windows](/windows-server/administration/openssh/openssh_server_configuration).
+
+> [!NOTE]
+> Windows Terminal version 1.XX+ can dynamically generate profiles to connect to the SSH hosts within your [OpenSSH config file](https://man.openbsd.org/ssh_config).
+
 ## Create a profile
 
 You can start an SSH session in your command prompt by executing `ssh user@machine` and you will be prompted to enter your password. You can create a Windows Terminal profile that does this on startup by adding the `commandline` setting to a profile in your [settings.json file](../install.md#settings-json-file) inside the `list` of profile objects.

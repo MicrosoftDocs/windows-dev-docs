@@ -1,5 +1,5 @@
 - name: Windows Terminal
-  items: 
+  items:
     - name: Overview
       href: index.md
     - name: Install
@@ -56,6 +56,10 @@
           href: tutorials/tab-title.md
         - name: Open tab or pane in same directory
           href: tutorials/new-tab-same-directory.md
+        - name: Shell integration
+          href: tutorials/shell-integration.md
+        - name: Set the progress bar
+          href: tutorials/progress-bar-sequences.md
     - name: Custom Terminal gallery
       items:
         - name: Custom Terminal guide
@@ -74,4 +78,4 @@
       href: troubleshooting.md
 
 
-    
+

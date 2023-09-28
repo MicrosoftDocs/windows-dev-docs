@@ -40,7 +40,7 @@ A shell has full control over its own title. However, each shell sets its title 
 | Shell | Command |
 | ----- | ------- |
 | PowerShell | `$Host.UI.RawUI.WindowTitle = "New Title"` |
-| Command Prompt | `TITLE "New Title"` |
+| Command Prompt | `TITLE New Title` |
 | bash* | `echo -ne "\033]0;New Title\a"` |
 
 Note that some Linux distributions (e.g. Ubuntu) set their title automatically as you interact with the shell. If the above command doesn't work, run the following command:
