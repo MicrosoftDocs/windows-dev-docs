@@ -778,6 +778,7 @@ Starting with Windows App SDK 1.4, widgets can support user customization. When 
 
 :::image type="content" source="images/widget-customization-menu.png" alt-text="A screenshot showing a widget with the customization dialog displayed.":::
 
+
 The following steps summarize the process for widget customization.
 
 1. In normal operation, the widget provider responds to requests from the widget host with the visual and data JSON templates for the regular widget experience.
@@ -787,6 +788,9 @@ The following steps summarize the process for widget customization.
 1. While in customization mode, the widget provider receives **OnActionInvoked** events as the user interacts with the customization UI and adjusts its internal configuration and behavior based on the user's actions.
 1. When the action associated with the **OnActionInvoked** event is the app-defined "exit customization" action, the widget provider resets it's internal flag to indicate that it is no longer in customization mode and resumes sending the visual and data JSON templates for the regular widget experience, reflecting the changes requested during customization. 
 1. The widget provider persists the customization options to disk or the cloud so that the changes are preserved between invocations of the widget provider.
+
+> [!NOTE]
+> There is a known bug with the Windows Widget Board, for widgets built using the Windows App SDK, that causes the ellipsis menu to become unresponsive after the customization card is shown.
 
 In typical Widget customization scenarios, the user will choose what data is displayed on the widget or adjust visual presentation of the widget. For simplicity, the example in this section will add customization behavior that allows the user to reset the counter of the counting widget implemented in the previous steps.
 
