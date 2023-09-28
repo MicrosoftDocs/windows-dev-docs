@@ -1,7 +1,7 @@
 ---
 title: How to author a WinGet Configuration file
 description: Learn how to create a WinGet Configuration.
-ms.date: 05/23/2023
+ms.date: 09/28/2023
 ms.topic: overview
 ---
 
@@ -15,6 +15,8 @@ To create a WinGet Configuration file:
 4. Identify the PowerShell modules and Desired State Configuration (DSC) Resources needed to accomplish your desired configuration tasks.
 5. Determine the directives and settings needed for each configuration resource.
 6. Determine the dependencies for each resource.
+
+Learn more about using the [WinGet configure command](/windows/package-manager/winget/configure).
 
 ## File format
 
