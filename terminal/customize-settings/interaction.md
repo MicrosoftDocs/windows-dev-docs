@@ -83,7 +83,7 @@ This determines the word delimiters used in a double-click selection. Word delim
 
 **Accepts:** Characters as a string
 
-**Default value:** 
+**Default value:**
 <code>&nbsp;&#x2f;&#x5c;&#x5c;&#x28;&#x29;&#x5c;&#x22;&#x27;&#x2d;&#x3a;&#x2c;&#x2e;&#x3b;&#x3c;&#x3e;&#x7e;&#x21;&#x40;&#x23;&#x24;&#x25;&#x5e;&#x26;&#x2a;&#x7c;&#x2b;&#x3d;&#x5b;&#x5d;&#x7b;&#x7d;&#x3f;│</code>
 <br>
 _(`│` is `U+2502 BOX DRAWINGS LIGHT VERTICAL`)_
@@ -292,3 +292,51 @@ Force the terminal to use the legacy input encoding. Specific keys in some appli
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
+
+<br />
+
+___
+
+## Context Menu
+
+:::row:::
+:::column span="":::
+
+The context menu in the Windows Terminal is an easy way to access common actions quickly. When this is set to `true`, a right-click in the Terminal will activate the context menu. When set to `false`, a right-click will paste.
+
+The context menu can also be opened with the `showContextMenu` action, regardless if this setting is enabled or not.
+
+:::column-end:::
+:::column span="":::
+
+![A screenshot of the context menu in the Terminal](../images/RightClickMenu.png)
+
+:::column-end:::
+:::row-end:::
+
+**Property name:** `experimental.rightClickContextMenu`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+<br />
+
+___
+
+## Web searching
+
+This is the default URL used when searching the web from the terminal with the `searchWeb` action (including the right-click context menu). The `%s` in this string is replaced with the selected text. The default value is `https://www.bing.com/search?q=%s`.
+
+**Property name:** `searchWebDefaultQueryUrl`
+
+**Necessity:** Optional
+
+**Accepts:** URL as a string
+
+**Default value:** `https://www.bing.com/search?q=%s`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).

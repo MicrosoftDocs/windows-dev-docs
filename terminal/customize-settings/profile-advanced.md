@@ -218,6 +218,33 @@ This is an experimental feature, and its continued existence is not guaranteed.
 
 ___
 
+## Experimental: Move cursor with the mouse
+
+:::row:::
+:::column span="":::
+
+This experimentally adds support for moving the text cursor by clicking with the mouse on the current commandline. This is an experimental feature - there are lots of edge cases where this will not work as expected. In ordfer for this setting to work, you will need to enable [shell integration](../tutorials/shell-integration.md) in your shell.
+
+:::column-end:::
+:::column span="":::
+
+![A recording of the user moving the cursor with the mouse](../images/moveCursorWithMouse.gif)
+
+:::column-end:::
+:::row-end:::
+
+**Property name:** `experimental.repositionCursorWithMouse`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+<br />
+
+___
+
 ## VT passthrough mode
 
 When set to true, directs the PTY for this connection to use pass-through mode instead of the original Conhost PTY simulation engine. This is an experimental feature, and its continued existence is not guaranteed.

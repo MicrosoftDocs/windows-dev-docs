@@ -581,6 +581,70 @@ This command moves the tab "backward" and "forward", which is equivalent to "lef
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"backward"`, `"forward"` | Direction in which the tab will move. |
 
+
+### Broadcast input
+
+This command will toggle "broadcast mode" for a pane. When broadcast mode is enabled, all input sent to the pane will be sent to all panes in the same tab. This is useful for sending the same input to multiple panes at once.
+
+**Command name:** `toggleBroadcastInput`
+
+**Default binding:**
+
+```json
+{ "command": "toggleBroadcastInput" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Open context menu
+
+This command will open the "right-click" context menu for the active pane. This menu has context-relevant actions for managing panes, copying and pasting, and more. This action does not require the `experimental.rightClickContextMenu` setting to be enabled.
+
+**Command name:** `showContextMenu`
+
+**Default binding:**
+
+```json
+{ "command": "showContextMenu" }
+```
+
+### Open about dialog
+
+This command will open the about dialog for the terminal. This dialog contains information about the terminal, including the version number, the license, and more.
+
+**Command name:** `openAbout`
+
+**Default binding:**
+
+```json
+{ "command": "openAbout" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Search the web
+
+Attempts to open a browser window with a search for the selected text. This does nothing if there's no text selected. If the `queryUrl` parameter is not provided, the `searchWebDefaultQueryUrl` setting will be used instead. If the `queryUrl` parameter is provided, a `%s` in the string will be replaced by the selected text.
+
+**Command name:** `searchWeb`
+
+**Default binding:**
+
+```json
+{ "command": { "action": "searchWeb" } },
+```
+
+#### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `queryUrl` | Required | String | URL to use to search with. A `%s` in this string will be replaced by the selected text. If omitted, will default to the `searchWebDefaultQueryUrl` setting.  |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 <br />
 
 ___
@@ -878,42 +942,19 @@ You can disable read-only mode on a pane. This works similarly to toggling, howe
 { "command": "disableReadOnlyMode" }
 ```
 
-### Split a pane
+### Restart a pane
 
-This halves the size of the active pane and opens another. Without any arguments, this will open the default profile in the new pane. If an action is not specified, the default profile's equivalent setting will be used.
+This command will manually restart the `commandline` in the active pane. This is especially useful for scenarios like `ssh`, where you might want to restart a connection without closing the pane.
 
-**Command name:** `splitPane`
+Note that this will terminate the process in the pane, if it is currently running.
 
-**Default bindings:**
+**Command name:** `restartConnection`
+
+**Default binding:**
 
 ```json
-// In settings.json
-{ "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
-
-// In defaults.json
-{ "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
-{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" },
-{ "command": { "action": "splitPane", "split": "up" } },
-{ "command": { "action": "splitPane", "split": "right" } },
-{ "command": { "action": "splitPane", "split": "down" } },
-{ "command": { "action": "splitPane", "split": "left" } }
+{ "command": "restartConnection" }
 ```
-
-#### Parameters
-
-| Name | Necessity | Accepts | Description |
-| ---- | --------- | ------- | ----------- |
-| `split` | Required | `"vertical"`, `"horizontal"`, `"auto"`, `"up"`, `"right"`, `"down"`, `"left"` | How the pane will split. `"auto"` will split in the direction that provides the most surface area. |
-| `commandline` | Optional | Executable file name as a string | Executable run within the pane. |
-| `startingDirectory` | Optional | Folder location as a string | Directory in which the pane will open. |
-| `elevate` | Optional | `true`, `false`, `null` | Overrides the [`elevate`](./profile-general.md#automatically-run-as-administrator) property of the profile. When omitted, this action will behave according to the profile's `elevate` setting. When set to `true` or `false`, this action will behave as though the profile was set with `"elevate": true` or `"elevate": false` (respectively). |
-| `tabTitle` | Optional | String | Title of the tab when the new pane is focused. |
-| `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
-| `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
-| `colorScheme` | Optional | The name of a color scheme as a string | The scheme to use instead of the profile's set `colorScheme` |
-| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. |
-| `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
-| `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
 
 <br />
 
@@ -1132,6 +1173,8 @@ This action can be used to manually clear the terminal buffer. This is useful fo
 | ---- | --------- | ------- | ----------- |
 | `clear` | Optional | `"screen"`, `"scrollback"`, `"all"` | What part of the screen to clear. <ul><li>`"screen"`: Clear the terminal viewport content. Leaves the scrollback untouched. Moves the cursor row to the top of the viewport (unmodified).</li><li>`"scrollback"`: Clear the scrollback. Leaves the viewport untouched.</li><li>`"all"` (_default_): Clear the scrollback and the visible viewport. Moves the cursor row to the top of the viewport. </li></ul> |
 
+
+<br />
 ___
 
 ## Visual adjustment commands
@@ -1284,8 +1327,57 @@ Clears all scroll marks in the text buffer. This is an experimental feature, and
 ```json
 { "command": { "action": "clearAllMarks" } }
 ```
-<br />
 
+<br />
+___
+
+## Suggestions
+
+### Open suggestions menu
+
+:::row:::
+:::column span="":::
+
+This allows the user to open the suggestions menu. The entries in the suggestions menu are controlled by the `source` property. The suggestions menu behaves much like the command palette. Typing in the text box will filter the results to only show entries that match the text. Pressing `enter` will execute the selected entry. Pressing `esc` will close the menu.
+
+:::column-end:::
+:::column span="":::
+
+![Suggestions UI](../images/SuggestionsUI.gif)
+
+:::column-end:::
+:::row-end:::
+
+**Command name:** `openSuggestions`
+
+#### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `source` | Required | any number of `"recentCommands"`, `"tasks"`, or `"all"` | Which suggestion sources to use to populate this menu. See below for a description of each.  |
+| `useCommandline` | Optional | Boolean | If [shell integration](./../tutorials/shell-integration.md) is enabled, and this is `true`, the suggestions menu will be pre-populated with the contents of the current commandline. Defaults to `true` |
+
+#### Suggestion sources
+
+The following suggestion sources are supported:
+
+* `"recentCommands"`: This will populate the suggestions menu with the most recently used commands. These are powered by shell integration, so they will only be available if you have your shell configured to support shell integration. See [Shell Integration](./../tutorials/shell-integration.md) for more information.
+* `"tasks"`: This will populate the suggestions menu with all of the `sendInput` actions from your settings.
+* `"all"`: Use all suggestion sources.
+
+These values can be used by themselves as a string parameter value, or combined as an array. For example:
+```json
+{ "command": { "action": "openSuggestions", "source": ["recentCommands", "tasks"] } },
+{ "command": { "action": "openSuggestions", "source": "all" } },
+{ "command": { "action": "openSuggestions", "source": "recentCommands" } },
+```
+
+In the above example, the first two commands will open the suggestions menu with both recent commands and tasks. The third command will open the suggestions menu with only recent commands.
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+<br />
 ___
 
 ## Buffer exporting
@@ -1308,6 +1400,8 @@ This allows the user to export the text of the buffer to a file. If the file doe
 | ---- | --------- | ------- | ----------- |
 | `path` | Optional | String | If provided, then the Terminal will export the buffer contents to the given file. Otherwise, the terminal will open a file picker to choose the file to export to. |
 
+
+<br />
 ___
 
 ## Global commands
