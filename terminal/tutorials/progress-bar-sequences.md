@@ -16,7 +16,7 @@ In the Windows Terminal, the progress bar is displayed in  two places:
 * In the tab header, as a progress ring
 * In the Windows taskbar, in the same manner as a download progress bar.
 
-![An example of what the progress ring it the tab header looks like](https://devblogs.microsoft.com/commandline/wp-content/uploads/sites/33/2021/01/progress-ring.gif)
+![An example of what the progress ring it the tab header looks like](../images/progress-ring.gif)
 
 ## Prerequisites
 
