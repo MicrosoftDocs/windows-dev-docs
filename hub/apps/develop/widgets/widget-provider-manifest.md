@@ -123,7 +123,7 @@ Represents the registration for a single widget.
 | **DisplayName** | string | Yes | The name of the widget that is displayed on the widgets host. | N/A |
 | **Description** | string | Yes | Short description of the widget. | N/A |
 | **AllowMultiple** | boolean | No | Set to false if only one instance of this widget is supported. This attribute is optional and the default value is true. | true |
-| **IsCustomizable** | boolean | No | Introduced in Windows App SDK 1.4. Set to true if your app supports widget customization. This causes the **Customize widget** button to be displayed in the widget's ellipsis menu. | true |
+| **IsCustomizable** | boolean | No | Introduced in Windows App SDK 1.4. Set to true if your app supports widget customization. This causes the **Customize widget** button to be displayed in the widget's ellipsis menu. | false |
 
 ## Capablities
 
