@@ -227,6 +227,8 @@
           href: controls/expander.md
         - name: Scrolling and panning controls
           href: controls/scroll-controls.md
+        - name: Annotated scrollbar
+          href: controls/annotated-scrollbar.md
         - name: Semantic zoom
           href: controls/semantic-zoom.md
         - name: Two-pane view
