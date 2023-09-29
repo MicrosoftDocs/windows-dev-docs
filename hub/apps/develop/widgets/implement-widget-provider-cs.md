@@ -877,7 +877,6 @@ const string countWidgetCustomizationTemplate = @"
 
 #### Send customization template in UpdateWidget
 
-
 Next, we'll update our **UpdateWidget** helper method that sends our data and visual JSON templates to the widget host. When we are updating the counting widget, we send either the regular widget template or the customization template depending on the value of the **inCustomization** field. For brevity, code not relevant to customization is omitted in this code snippet.
 
 ```csharp
