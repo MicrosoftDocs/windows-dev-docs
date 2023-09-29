@@ -781,7 +781,7 @@ Starting with Windows App SDK 1.4, widgets can support user customization. When 
 
 The following steps summarize the process for widget customization.
 
-1. In normal operation, the widget provider responds to requests from the widget host with the visual and data JSON templates for the regular widget experience.
+1. In normal operation, the widget provider responds to requests from the widget host with the template and data payloads for the regular widget experience.
 1. The user clicks the **Customize widget** button in the ellipsis menu.
 1. The widget raises the **OnCustomizationRequested** event on the widget provider to indicate that the user has requested the widget customization experience.
 1. The widget provider sets an internal flag to indicate that the widget is in customization mode. While in customization mode, the widget provider sends the JSON templates for the widget customization UI instead of the regular widget UI.
