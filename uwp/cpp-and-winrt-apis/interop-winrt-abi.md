@@ -304,8 +304,8 @@ static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISa
 
 | Operation | How to do it | Notes |
 |-|-|-|
-| Extract **ISample\*** from **winrt::Sample** | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* still owns the object. |
-| Detach **ISample\*** from **winrt::Sample** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* no longer owns the object. |
+| Extract **ISample\*** from **winrt::Sample** | `p = static_cast<ISample*>(get_abi(s));` | *s* still owns the object. |
+| Detach **ISample\*** from **winrt::Sample** | `p = static_cast<ISample*>(detach_abi(s));` | *s* no longer owns the object. |
 | Transfer **ISample\*** to new **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* takes ownership of the object. |
 | Set **ISample\*** into **winrt::Sample** | `*put_abi(s) = p;` | *s* takes ownership of the object. Any object previously owned by *s* is leaked (will assert in debug). |
 | Receive **ISample\*** into **winrt::Sample** | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | *s* takes ownership of the object. Any object previously owned by *s* is leaked (will assert in debug). |
