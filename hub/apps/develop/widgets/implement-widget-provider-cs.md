@@ -904,7 +904,6 @@ void UpdateWidget(CompactWidgetInfo localWidgetInfo)
     updateOptions.CustomState = localWidgetInfo.customState.ToString();
     WidgetManager.GetDefault().UpdateWidget(updateOptions);
 }
-}
 ```
 
 ### Respond to customization actions
