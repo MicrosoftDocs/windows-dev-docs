@@ -861,7 +861,7 @@ struct CompactWidgetInfo
 };
 ```
 
-Update the **WidgetProvider** declaration to implement the **IWidgetProvider2** interface.
+Update the **WidgetProvider** declaration to implement the [IWidgetProvider2](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider2) interface.
 
 ```cpp
 // WidgetProvider.h
@@ -869,7 +869,7 @@ Update the **WidgetProvider** declaration to implement the **IWidgetProvider2** 
 struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider, winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider2>
 ```
 
-Add a declaration for the **OnCustomizationRequested** callback of the **IWidgetProvider2** interface.
+Add a declaration for the [OnCustomizationRequested](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider2.oncustomizationrequested) callback of the **IWidgetProvider2** interface.
 
 ```cpp
 // WidgetProvider.h

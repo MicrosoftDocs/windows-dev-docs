@@ -828,14 +828,14 @@ public class CompactWidgetInfo
 
 #### Implement IWidgetProvider2
 
-The widget customization feature is exposed through the **IWidgetProvider2** interface. Update the **WidgetProvider** class definition to implement this interface.
+The widget customization feature is exposed through the [IWidgetProvider2](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider2) interface. Update the **WidgetProvider** class definition to implement this interface.
 
 ```csharp
 // WidgetProvider.cs
 internal class WidgetProvider : IWidgetProvider, IWidgetProvider2
 ```
 
-Add an implementation for the **OnCustomizationRequested** callback of the **IWidgetProvider2** interface. This method uses the same pattern as the other callbacks we have used. We get the ID for the widget to be customized from the **WidgetContext** and find the **CompactWidgetInfo** helper struct associated with that widget and set the **inCustomization** field to true.
+Add an implementation for the [OnCustomizationRequested](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider2.oncustomizationrequested) callback of the **IWidgetProvider2** interface. This method uses the same pattern as the other callbacks we have used. We get the ID for the widget to be customized from the **WidgetContext** and find the **CompactWidgetInfo** helper struct associated with that widget and set the **inCustomization** field to true.
 
 ```csharp
 // WidgetProvider.cs
