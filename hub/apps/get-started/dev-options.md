@@ -22,7 +22,7 @@ To read more about each of these Windows app development options, see [Writing a
 | **UI designer**<br/>(drag & drop) | ✅ | ❌ (use [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload)) | ✅ | ❌ | ✅ | ❌ (use [Fast Refresh](https://reactnative.dev/docs/fast-refresh)) | ❌ (use [Hot Reload](/dotnet/maui/xaml/hot-reload)) |
 | **Fluent Design** | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
 | **.NET Runtime** | .NET & .NET Framework | .NET | .NET & .NET Framework | N/A | Minimal CLR runtime | N/A | .NET |
-| **Windows App SDK** | ✅ ([more info](../windows-app-sdk/wpf-plus-winappsdk.md)) | ✅ | ✅ ([more info](../windows-app-sdk/winforms-plus-winappsdk.md)) | ✅ | ❌ | ✅ (with [XAML Islands](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | ❌ |
+| **Windows App SDK** | ✅ ([more info](../windows-app-sdk/wpf-plus-winappsdk.md)) | ✅ | ✅ ([more info](../windows-app-sdk/winforms-plus-winappsdk.md)) | ✅ | ❌ | ✅ (with [XAML Islands](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | ✅ (see [Invoke platform code](/dotnet/maui/platform-integration/invoke-platform-code)) |
 | **Enterprise Apps** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
 | **Great for touch** | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | **Cross-platform** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
