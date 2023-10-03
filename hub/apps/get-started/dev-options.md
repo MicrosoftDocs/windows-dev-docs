@@ -15,21 +15,23 @@ There is a wide range of options for developing applications for Windows. The be
 
 To read more about each of these Windows app development options, see [Writing apps for Windows](index.md).
 
-| Feature | WPF | WinUI 3 | Windows Forms | Win32 | UWP | React Native (RNW) | .NET MAUI |
+| Feature | .NET MAUI | React Native (RNW) | UWP | Win32 | Windows Forms | WinUI 3 | WPF |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Language** | C#, Visual Basic | C#, C++ | C#, Visual Basic | C++, Rust | C#, C++, Visual Basic | JavaScript, TypeScript | C# |
-| **UI language** | XAML | XAML | Code | Code | XAML | JSX | XAML/Code |
-| **UI designer**<br/>(drag & drop) | ✅ | ❌ (use [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload)) | ✅ | ❌ | ✅ | ❌ (use [Fast Refresh](https://reactnative.dev/docs/fast-refresh)) | ❌ (use [Hot Reload](/dotnet/maui/xaml/hot-reload)) |
-| **Fluent Design** | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| **.NET Runtime** | .NET & .NET Framework | .NET | .NET & .NET Framework | N/A | Minimal CLR runtime | N/A | .NET |
-| **Windows App SDK** | ✅ ([more info](../windows-app-sdk/wpf-plus-winappsdk.md)) | ✅ | ✅ ([more info](../windows-app-sdk/winforms-plus-winappsdk.md)) | ✅ | ❌ | ✅ (with [XAML Islands](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | ✅ (see [Invoke platform code](/dotnet/maui/platform-integration/invoke-platform-code)) |
-| **Enterprise Apps** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Great for touch** | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| **Cross-platform** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| **Xbox/HoloLens apps** | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ |
+| **Language** | C# | JavaScript, TypeScript | C#, C++, Visual Basic | C++, Rust | C#, Visual Basic | C#, C++ | C#, Visual Basic |
+| **UI language** | XAML/Code | JSX | XAML | Code | Code | XAML | XAML |
+| **UI designer**<br/>(drag & drop) | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ✅ |
+| **UI debugging** | [Hot Reload](/dotnet/maui/xaml/hot-reload) | [Fast Refresh](https://reactnative.dev/docs/fast-refresh) | [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) | - | [Hot Reload](/visualstudio/debugger/hot-reload) | [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) | [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) |
+| **Fluent Design** | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| **.NET Runtime** | .NET | N/A | Minimal CLR runtime | N/A | .NET & .NET Framework | .NET | .NET & .NET Framework |
+| **Windows App SDK** | ✅ ([more info](/dotnet/maui/platform-integration/invoke-platform-code)) | ✅ ([more info](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | ❌ | ✅ | ✅ ([more info](../windows-app-sdk/winforms-plus-winappsdk.md)) | ✅ | ✅ (see [more info](../windows-app-sdk/wpf-plus-winappsdk.md)) |
+| **Enterprise Apps** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Consumer Apps** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| **Great for touch** | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
+| **Cross-platform** | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Xbox/HoloLens apps** | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | **Currently supported** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Receiving updates** | ✅ | ✅ | ✅ | ✅ | ✅ (security & bugfix) | ✅ | ✅ |
-| **Roadmap** | [GitHub](https://github.com/dotnet/wpf/blob/main/roadmap.md) | [GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md) | [GitHub](https://github.com/dotnet/winforms/blob/main/docs/roadmap.md) | n/a | n/a | [GitHub](https://aka.ms/rnw-roadmap) | [GitHub](https://github.com/dotnet/maui/wiki/Roadmap) |
+| **Receiving updates** | ✅ | ✅ | ✅ (security & bugfix) | ✅ | ✅ | ✅ | ✅ |
+| **Roadmap** | [GitHub](https://github.com/dotnet/maui/wiki/Roadmap) | [GitHub](https://aka.ms/rnw-roadmap) | n/a | n/a | [GitHub](https://github.com/dotnet/winforms/blob/main/docs/roadmap.md) | [GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md) | [GitHub](https://github.com/dotnet/wpf/blob/main/roadmap.md) |
 
 Learn more about each of these options:
 
