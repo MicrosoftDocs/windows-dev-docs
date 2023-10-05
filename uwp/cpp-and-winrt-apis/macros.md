@@ -32,6 +32,12 @@ If defined, disables object counts for the current module. The module never unlo
 ## WINRT_CUSTOM_MODULE_LOCK
 If defined, allows you to provide your own implementation of **winrt::get_module_lock**. May not be combined with **WINRT_NO_MODULE_LOCK**.
 
+Your custom implementation of **winrt::get_module_lock** must support the following operations:
+
+* `++winrt::get_module_lock()`: Increment the reference count on the module lock.
+* `--winrt::get_module_lock()`: Decrement the reference count on the module lock.
+* `if (winrt::get_module_lock())`: Check whether the reference count is nonzero. (Needed if you're building a DLL.)
+
 ## WINRT_ASSERT, WINRT_VERIFY
 These macros allow you to customize assertion handling. **WINRT_ASSERT** doesn't require the argument to be evaluated. **WINRT_VERIFY** requires that the argument be evaluated, even in non-debug builds.
 
