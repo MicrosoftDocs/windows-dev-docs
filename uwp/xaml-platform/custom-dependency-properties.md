@@ -104,9 +104,19 @@ namespace ImageWithLabelControlApp
 
 // ImageWithLabelControl.h
 ...
+struct ImageWithLabelControl : ImageWithLabelControlT<ImageWithLabelControl>
+{
+...
+public:
+    static Windows::UI::Xaml::DependencyProperty LabelProperty()
+    {
+        return m_labelProperty;
+    }
+
 private:
     static Windows::UI::Xaml::DependencyProperty m_labelProperty;
 ...
+};
 
 // ImageWithLabelControl.cpp
 ...
