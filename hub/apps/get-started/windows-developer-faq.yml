@@ -102,10 +102,10 @@ sections:
           Yes. WinUI 3 ships as a part of the Windows App SDK.
       - question: Does Windows App SDK include WinUI 2? 
         answer: |
-          No. WinUI 2 is part of the UWP platform.
+          No. WinUI 2 is shipped as NuGet package and is an extension for UWP XAML.
       - question: Are WinUI 2 and WinUI 3 built on the same technology?
         answer: |
-          Not quite. Although WinUI 3 started from the WinUI 2 codebase, they are distinct technologies. Both WinUI 2 and WinUI 3 are XAML-based UI frameworks that work across .NET and C++. Note that WinUI 2 and WinUI 3 are not compatible with each other.
+          Not quite. Although WinUI 3 started from the UWP XAML codebase, they are distinct technologies. Both UWP XAML and WinUI 3 are XAML-based UI frameworks that work across .NET and C++. WinUI 2 is an extension library for UWP XAML containing updated controls and styling that match the Windows 11 design language. Note that WinUI 2 and WinUI 3 are not compatible with each other.
       - question: Can I use WinUI 3 without using Windows App SDK?
         answer: |
           No. WinUI 3 ships as part of the Windows App SDK.
