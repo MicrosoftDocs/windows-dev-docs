@@ -2,7 +2,7 @@
 title: Create and host a package extension 
 description: This article shows you how to create a Windows 11 package extension and host it in an app. Package extensions are supported in UWP apps and packaged desktop apps.
 keywords: app extension, app service, background
-ms.date: 00/05/2023
+ms.date: 10/05/2023
 ms.topic: article
 ms.localizationpriority: medium
 ---
