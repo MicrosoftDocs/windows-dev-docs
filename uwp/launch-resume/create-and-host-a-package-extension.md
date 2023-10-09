@@ -38,9 +38,9 @@ The following shows an example package extension declaration in a Package.appx
  </Package> 
 ```
 
-Notice the 'xmlns:uap17="http://..."' and the presence of 'uap17' in IgnorableNamespaces. These are necessary because we are using the uap17 namespace.
+Notice the `xmlns:uap17="http://..."` and the presence of `uap17` in IgnorableNamespaces. These are necessary because we are using the uap17 namespace.
 
-'<uap17:Extension Category="windows.packageExtensionHost">' identifies this package as an extension host. 
+`<uap17:Extension Category="windows.packageExtensionHost">` identifies this package as an extension host. 
 
 The Name element in `<uap17:PackageExtensionHost>` is the extension contract name. When an extension specifies the same extension contract name, the host will be able to find it. By convention, we recommend building the extension contract name using your app or publisher name to avoid potential collisions with other extension contract names. 
 
