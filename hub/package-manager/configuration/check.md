@@ -1,7 +1,7 @@
 ---
 title: How to check a WinGet Configuration
-description: Learn how to check a WinGet Configuration. 
-ms.date: 05/23/2023
+description: Learn how to check a WinGet Configuration.
+ms.date: 09/28/2023
 ms.topic: overview
 ---
 
@@ -9,8 +9,7 @@ ms.topic: overview
 
 Prior to running a WinGet Configuration file, it is recommended to review and evaluate each resource listed in the file, ensuring that you are fully aware of what is being installed, changed, or applied to your operating system, and that it is coming from a credible and secure source.
 
-> [!IMPORTANT]
-> WinGet Configuration is currently in preview. To use a WinGet Configuration file with the [`winget configure` command](../winget/configure.md), you must first [enable the experimental configuration feature](index.md#enable-the-winget-configuration-experimental-configuration-preview-feature).
+Learn more about using the [WinGet configure command](/windows/package-manager/winget/configure).
 
 ## Security notifications and approvals
 

@@ -422,7 +422,7 @@ struct MainWindow : MainWindowT<MainWindow>
             m_backdropController = winrt::MUCSB::MicaController();
             m_backdropController.SetSystemBackdropConfiguration(m_configuration);
             m_backdropController.AddSystemBackdropTarget(
-                this->try_as<winrt::MUC::ICompositionSupportsSystemBackdrop>());
+                this->m_inner.as<winrt::MUC::ICompositionSupportsSystemBackdrop>());
         }
         else
         {

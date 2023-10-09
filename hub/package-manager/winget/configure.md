@@ -10,16 +10,13 @@ ms.localizationpriority: medium
 
 The **configure** command of the [winget](./index.md) tool uses a [WinGet Configuration file](../configuration/index.md) to begin setting up your Windows machine to a desired development environment state.
 
-> [!IMPORTANT]
-> WinGet Configuration is currently in preview. To use a WinGet Configuration file with the [`winget configure` command](../winget/configure.md), you must first [enable the experimental configuration feature](../configuration/index.md#enable-the-winget-configuration-experimental-configuration-preview-feature).
-
 > [!WARNING]
 > Do not run a WinGet Configuration file without first reviewing the contents of the file and verifying the credibility of the related resources. See [How to check the trustworthiness of a WinGet Configuration file](../configuration/check.md).
 
 ## Prerequisites
 
 - Windows 10 RS5 or later, and Windows 11.
-- Winget version v1.5.1572 or later.
+- WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
 
 ## Aliases
 

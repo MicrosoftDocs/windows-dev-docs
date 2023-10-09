@@ -5,40 +5,41 @@ brand: windows
 metadata:
    title: Windows development documentation
    description: Design, develop, and deploy apps and solutions for Windows PCs and other devices.
-   ms.author: stwhi
-   author: stevewhims
+   ms.author: jken
+   author: GrantMeStrength
    ms.topic: hub-page
-   ms.date: 06/16/2021
+   ms.date: 6/16/2021
    ms.localizationpriority: medium
    uhfHeaderId: "MSDocsHeader-Windows"
    
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
+   - title: Start here!
+     itemType: quickstart
+     url: ./get-started/start-here.md
    - title: App development options
      itemType: overview
      url: ./get-started/index.md
-   - title: Create your first WinUI 3 project
-     itemType: quickstart
-     url: ./winui/winui3/create-your-first-winui3-app.md
-   - title: What is the Windows App SDK?
-     itemType: concept
-     url: ./windows-app-sdk/index.md
-   - title: Windows App SDK Release Notes
-     itemType: whats-new 
-     url: ./windows-app-sdk/stable-channel.md
-   - title: Download Visual Studio
+   - title: Install the new Dev Home
      itemType: download
-     url: https://developer.microsoft.com/windows/downloads
-   - title: Download the Windows App SDK
-     itemType: download
-     url: https://aka.ms/windowsappsdk/stable-vsix
+     url: /windows/dev-home/
    - title: Windows Subsystem for Linux and other tools
      itemType: overview
      url: ../dev-environment/index.md
+   - title: Windows APIs
+     itemType: reference 
+     url: /windows/win32/apiindex/api-index-portal
+   - title: Download Visual Studio
+     itemType: download
+     url: https://developer.microsoft.com/windows/downloads
+   - title: Windows Code Samples
+     itemType: download
+     url: ./get-started/samples.md
    - title: Online training for Windows app developers
      itemType: learn
      url: /training/browse/?products=windows
+
 
 productDirectory:
   title: Dive into developing apps for Windows
@@ -87,6 +88,7 @@ productDirectory:
         text: Package apps using MSIX
       - url: /windows/msix/desktop/managing-your-msix-deployment-overview
         text: Manage your MSIX deployment
+
 
 tools:
   title: Develop for other Windows device platforms

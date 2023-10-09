@@ -51,6 +51,18 @@ In an existing Windows App SDK 1.3 app, you can update your Nuget package to 1.4
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
+### Custom titlebar + AppWindow titlebar merger
+
+The WinUI 3 custom titlebar uses the AppWindow titlebar implementation, along with the [NonClientInputPointerSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputnonclientpointersource) APIs, under the hood in the Windows App SDK 1.4. As a result, both titlebar implementations now behave the same way with the same features and limitations. This is fully backwards compatible in all supported cases - any app with a custom-defined titlebar will behave as before. But, it's now easier for WinUI 3 developers who might be new to custom titlebars to understand and use them by taking advantage of these new features:
+
+- A better default scenario where the developer doesn't define a titlebar element specifically (replacing the fallback titlebar from WinUI 2)
+- Distinct drag regions in the titlebar, enabling you to create multiple drag regions and place clickable controls on any part of the non-client area (titlebar area)
+- App-wide draggable regions that can be put anywhere in the app or make the whole app draggable
+- Better theming support that replaces resource-based theming
+   - Since drag regions are transparent, they follow the app theme every time
+- More customization: hide the min, max, and close buttons; place system icons in the titlebar; or have different regions act as caption buttons that receive NCHITTEST responses
+- More developer freedom that enables you to mix and match with AppWindow titlebar APIs, such as using higher-level WinUI 3 APIs for most scenarios but with AppWindow APIs mixed in for lower-level control
+
 ### Widgets updates
 
 Three new interfaces have been added for Widget Providers to implement: `IWidgetProvider2`, `IWidgetProviderAnalytics`, and `IWidgetProviderErrors`. `IWidgetProvider2` allows providers to respond to the *Customize* action invoked by the user, which is identical to what is available for 1st party Widgets. The `IWidgetProviderAnalytics` and `IWidgetProviderErrors` interfaces are used by providers to gather telemetry for their widgets; analytics and failure events about widgets are communicated to the respective widget providers. The `WidgetCustomizationRequestedArgs`, `WidgetAnalyticsInfoReportedArgs`, and `WidgetErrorInfoReportedArgs` classes are used to communicate relevant information to support new functionalities.

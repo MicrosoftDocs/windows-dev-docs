@@ -1399,6 +1399,8 @@
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
             - name: Create and host an app extension
               href: ../launch-resume/how-to-create-an-extension.md
+            - name: Create and host a package extension
+              href: ../launch-resume/create-and-host-a-package-extension.md
             - name: Create hosted apps
               href: ../launch-resume/hosted-apps.md
         - name: Support your app with background tasks

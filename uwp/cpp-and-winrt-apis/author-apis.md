@@ -1,7 +1,7 @@
 ---
 description: This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly.
 title: Author APIs with C++/WinRT
-ms.date: 09/22/2023
+ms.date: 09/28/2023
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation
 ms.localizationpriority: medium
@@ -288,7 +288,10 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > However, if you're referencing your type from your XAML UI, then there will be both an implementation type and a projected type in the same project. In that case, **make** returns an instance of the projected type. For a code example of that scenario, see [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
-We can only use `istringable` (in the code example above) to call the members of the **IStringable** interface. But a C++/WinRT interface (which is a projected interface) derives from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) on it to query for other projected types or interfaces, which you can also either use or return.
+We can use `istringable` (in the code example above) only to call the members of the **IStringable** interface. But a C++/WinRT interface (which is a projected interface) derives from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) on it to query for other projected types or interfaces, which you can also either use or return.
+
+> [!TIP]
+> A scenario where you *shouldn't* call **as** or **try_as** is runtime class derivation ("composable classes"). When an implementation type composes another class, don't call **as** or **try_as** in order to perform an unchecked or checked **QueryInterface** of the class being composed. Instead, access the (`this->`) `m_inner` data member, and call **as** or **try_as** on that. For more info, see [Runtime class derivation](#runtime-class-derivation) in this topic.
 
 ```cppwinrt
 istringable.ToString();
@@ -494,6 +497,9 @@ namespace winrt::MyProject::implementation
     };
 }
 ```
+
+> [!TIP]
+> When an implementation type composes another class, don't call **as** or **try_as** in order to perform an unchecked or checked **QueryInterface** of the class being composed. Instead, access the (`this->`) `m_inner` data member, and call **as** or **try_as** on that.
 
 ## Deriving from a type that has a non-default constructor
 
@@ -843,6 +849,7 @@ This requires that all members of the class hierarchy agree on the return value 
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
 * [winrt::make_self function template](/uwp/cpp-ref-for-winrt/make-self)
 * [winrt::Windows::Foundation::IUnknown::as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::Windows::Foundation::IUnknown::try_as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)
 
 ## Related topics
 * [Author events in C++/WinRT](./author-events.md)

@@ -7639,6 +7639,11 @@
       "source_path": "uwp/data-access/mongo-db-databases.md",
       "redirect_url": "/windows/apps/develop/data-access/mongodb-database",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/xamarin-android.md",
+      "redirect_url": "/dotnet/maui/migration/",
+      "redirect_document_id": false
     }
   ]
 }

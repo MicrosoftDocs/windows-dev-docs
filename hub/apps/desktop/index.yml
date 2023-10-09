@@ -20,37 +20,15 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Install Dev Home
-            url: /windows/dev-home/
-          - text: Create a Dev Drive
-            url: /windows/dev-drive/
-          - text: Create a developer account
-            url: ../get-started/sign-up.md
-          - text: Enable your device for development
-            url: ../get-started/enable-your-device-for-development.md
-          - text: Developer Mode features and debugging
-            url: ../get-started/developer-mode-features-and-debugging.md
-          - text: Install Windows Package Manager
-            url: /windows/package-manager/
-          - text: Install Windows Subsystem for Linux 
-            url: /windows/package-manager/
-          - text: Windows Terminal
-            url: /windows/terminal/
-
-  - title: Start building apps
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Get started with desktop apps
+          - text: Start here!
+            url: ../get-started/start-here.md
+          - text: An overview of Windows development options
             url: ../get-started/index.md
           - text: Learning paths and modules
             url: /training/browse/?products=windows
           - text: Code samples
             url: /samples/browse/?products=windows
-      - linkListType: reference
-        links:
-          - text: Visual Studio templates for Windows apps
-            url: visual-studio-templates.md
+
 
   - title: Design and UI
     linkLists:
@@ -62,30 +40,8 @@ landingContent:
             url: ../design/signature-experiences/design-principles.md
           - text: Make your apps great on Windows 11
             url: ../get-started/make-apps-great-for-windows.md
-      - linkListType: reference
-        links:
-          - text: WinUI API reference
-            url: /windows/winui/api/
-
-
-  - title: Platforms
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Windows App SDK
-            url: ../windows-app-sdk/index.md
-          - text: .NET MAUI
-            url: /dotnet/maui/what-is-maui
-          - text: Universal Windows Platform (UWP)
-            url: /windows/uwp/
-          - text: Windows Presentation Foundation (WPF)
-            url: /dotnet/desktop/wpf/overview/?view=netdesktop-7.0
-          - text: Windows Forms
-            url: /dotnet/desktop/winforms/overview/?view=netdesktop-7.0
-          - text: Other Windows development technologies
-            url: /windows/dev-environment/
-
-
+          - text: Windows developer FAQ
+            url: ../get-started/windows-developer-faq.yml
 
   - title: Deploy and Publish
     linkLists:
@@ -100,10 +56,9 @@ landingContent:
           - text: Publish Windows apps and games
             url: ../publish/index.md
 
-
   - title: Artificial Intelligence and Machine Learning
     linkLists:
-      - linkListType: overview
+      - linkListType: concept
         links:
           - text: Windows AI
             url: /windows/ai/
@@ -114,27 +69,7 @@ landingContent:
           - text: Windows Machine Learning samples
             url: /windows/ai/windows-ml/samples
 
-  - title: Reference
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Features and technologies for Windows apps
-            url: ../develop/index.md
-          - text: API reference for Windows desktop Apps
-            url: /windows/apps/api-reference/
-      - linkListType: reference
-        links:
-          - text: WinRT API for the Windows SDK
-            url: /uwp/api/
-          - text: Win32 API for the Windows SDK
-            url: /windows/win32/api/
-          - text: WinRT API for the Windows App SDK
-            url: /windows/windows-app-sdk/api/winrt/
-          - text: Win32 API for the Windows App SDK
-            url: /windows/windows-app-sdk/api/win32/
-
-
-
+  
   - title: Community and support
     linkLists:
       - linkListType: overview
@@ -147,3 +82,37 @@ landingContent:
             url: /shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner
           - text: Windows developer support
             url: https://developer.microsoft.com/windows/support
+
+
+  - title: Platforms
+    linkLists:
+      - linkListType: architecture
+        links:
+          - text: Windows App SDK
+            url: ../windows-app-sdk/index.md
+          - text: .NET MAUI
+            url: /dotnet/maui/what-is-maui
+          - text: Universal Windows Platform (UWP)
+            url: /windows/uwp/
+          - text: Windows Presentation Foundation (WPF)
+            url: /dotnet/desktop/wpf/overview/?view=netdesktop-7.0
+          - text: Windows Forms
+            url: /dotnet/desktop/winforms/overview/?view=netdesktop-7.0
+          - text: Other development technologies
+            url: /windows/dev-environment/
+
+  - title: API Reference
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: WinRT API for the Windows SDK
+            url: /uwp/api/
+          - text: Win32 API for the Windows SDK
+            url: /windows/win32/api/
+          - text: WinRT API for the Windows App SDK
+            url: /windows/windows-app-sdk/api/winrt/
+          - text: Win32 API for the Windows App SDK
+            url: /windows/windows-app-sdk/api/win32/
+          - text: WinUI API reference
+            url: /windows/winui/api/
+
