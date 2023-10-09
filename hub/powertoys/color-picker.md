@@ -40,9 +40,9 @@ The copied color will be stored in your clipboard in the format that is configur
 > [!TIP]
 > To select the color of the non-hover state of a element:
 >
-> - Move the mouse pointer close, but not over the element.
-> - Zoom in by scrolling the mouse wheel up. Image will be frozen.
-> - In the enlarged area, you can pick the color of the element.
+> 1. Move the mouse pointer close, but not over the element.
+> 2. Zoom in by scrolling the mouse wheel up. Image will be frozen.
+> 3. In the enlarged area, you can pick the color of the element.
 
 ## Using the Color Picker editor
 
