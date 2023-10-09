@@ -103,7 +103,7 @@ items:
             href: https://github.com/microsoft/PowerToys/issues/new/choose
       - name: Always on Top
         href: ../powertoys/always-on-top.md
-      - name: PowerToys Awake
+      - name: Awake
         href: ../powertoys/awake.md
       - name: Color Picker
         href: ../powertoys/color-picker.md
@@ -131,12 +131,12 @@ items:
         href: ../powertoys/peek.md
       - name: PowerRename
         href: ../powertoys/powerrename.md
+      - name: PowerToys Run
+        href: ../powertoys/run.md
       - name: Quick Accent
         href: ../powertoys/quick-accent.md
       - name: Registry Preview
         href: ../powertoys/registry-preview.md
-      - name: PowerToys Run
-        href: ../powertoys/run.md
       - name: Screen Ruler
         href: ../powertoys/screen-ruler.md
       - name: Shortcut Guide
