@@ -42,7 +42,7 @@ Notice the 'xmlns:uap17="http://..."' and the presence of 'uap17' in I
 
 '<uap17:Extension Category="windows.packageExtensionHost">' identifies this package as an extension host. 
 
-The Name element in <uap17:PackageExtensionHost> is the extension contract name. When an extension specifies the same extension contract name, the host will be able to find it. By convention, we recommend building the extension contract name using your app or publisher name to avoid potential collisions with other extension contract names. 
+The Name element in `<uap17:PackageExtensionHost>` is the extension contract name. When an extension specifies the same extension contract name, the host will be able to find it. By convention, we recommend building the extension contract name using your app or publisher name to avoid potential collisions with other extension contract names. 
 
 You can define multiple hosts and multiple extensions in the same package. In this example, we declare one host. The extension is defined in another package. 
 
@@ -87,7 +87,7 @@ The meaning of the <uap17:PackageExtension> attributes are as follows
 |**Description** | Can be used from your host app to describe the extension to the user. It is queryable from, and can use, the [new resource management system](../app-resources/using-mrt-for-converted-desktop-apps-and-games.md) (`ms-resource:TokenName`) for localization. The localized content is loaded from the app extension package, not the host app. | |
 |**PublicFolder**|The name of a folder, relative to the package root, where you can share content with the extension host. By convention the name is "Public", but you can use any name that matches a folder in your extension.| :heavy_check_mark: |
 
-`<uap17:Properties>` is an optional element that contains custom metadata that hosts can read at runtime. In the code sample, the extension is implemented as an app service so host needs a way to get the name of that app service so it can call it. The name of the app service is defined in the <Service> element, which we defined (we could have called it anything we wanted). The host in the code sample looks for this property at runtime to learn the name of the app service.
+`<uap17:Properties>` is an optional element that contains custom metadata that hosts can read at runtime. In the code sample, the extension is implemented as an app service so host needs a way to get the name of that app service so it can call it. The name of the app service is defined in the `<Service>` element, which we defined (we could have called it anything we wanted). The host in the code sample looks for this property at runtime to learn the name of the app service.
 
 ## Remarks
 
