@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 09/26/2023
+ms.date: 10/10/2023
 ---
 
 # Set up a Dev Drive on Windows 11
@@ -276,7 +276,7 @@ The following filters may be used with Dev Drive:
 | GVFS: Sparse enlistments of Windows | PrjFlt |
 | MSSense:  Microsoft Defender for Endpoint for EDR Sensor | MsSecFlt |
 | Defender:  Windows Defender Filter | WdFilter |
-| Docker:  Running containers out of dev drive | bindFlt, wcifs |
+| Docker:  Running containers out of Dev Drive | bindFlt, wcifs |
 | Windows Performance Recorder:  Measure file system operations | FileInfo |
 | Process Monitor - Sysinternals:  Monitor file system activities | ProcMon24 |
 
