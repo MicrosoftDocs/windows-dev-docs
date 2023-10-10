@@ -80,7 +80,7 @@ Again, notice the `xmlns:uap17="http://..."` line, and the presence of `ua
 
 `<uap17:Extension Category="windows.packageExtension">` identifies this package as an extension. 
 
-The meaning of the <uap17:PackageExtension> attributes are as follows
+The meaning of the `<uap17:PackageExtension>` attributes are as follows
 
 |Attribute|Description|Required|
 |---------|-----------|:------:|
