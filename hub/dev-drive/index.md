@@ -290,7 +290,7 @@ fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, File
 > To determine the filters required for a specific scenario, you may need to temporarily mark a Dev Drive as *untrusted*. Then, run the scenario and make note of all filters that attached to the volume. Designate the Dev Drive as [*trusted*](#how-do-i-designate-a-dev-drive-as-trusted) again and then add the filters to the Allow list for that Dev Drive to ensure the scenario succeeds. Finally, remove any filters that may not be needed, one at a time, while ensuring that the scenario works as expected.
 
 > [!TIP]
-> The filter name for Process Monitor might change, so if adding ProcMon24 doesn't seem to capture file system activities on a Dev Drive, list the filters using `fltmc filters` to find the filter name for Process Monitor and use the same instead of ProcMon24.
+> The filter name for Process Monitor may change. If adding the filter name "ProcMon24" doesn't seem to capture file system activities on a Dev Drive, list the filters using the command `fltmc filters`, find the filter name for Process Monitor, and use that name instead of "ProcMon24".
 
 ## What scenarios are unsupported by Dev Drive? What are the limitations?
 
