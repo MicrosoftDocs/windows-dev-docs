@@ -24,8 +24,8 @@ To read more about each of these Windows app development options, see [Writing a
 | **Fluent Design** | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ |
 | **.NET Runtime** | .NET | N/A | Minimal CLR runtime | N/A | .NET & .NET Framework | .NET | .NET & .NET Framework |
 | **Windows App SDK** | ✅ ([more info](/dotnet/maui/platform-integration/invoke-platform-code)) | ✅ ([more info](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | ❌ | ✅ | ✅ ([more info](../windows-app-sdk/winforms-plus-winappsdk.md)) | ✅ | ✅ ([more info](../windows-app-sdk/wpf-plus-winappsdk.md)) |
-| **Enterprise Apps** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Consumer Apps** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| **Enterprise Apps** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Consumer Apps** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
 | **Great for touch** | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | **Cross-platform** | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | **Xbox/HoloLens apps** | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
