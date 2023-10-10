@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 09/26/2023
+ms.date: 10/10/2023
 ---
 
 # Set up a Dev Drive on Windows 11
@@ -276,17 +276,21 @@ The following filters may be used with Dev Drive:
 | GVFS: Sparse enlistments of Windows | PrjFlt |
 | MSSense:  Microsoft Defender for Endpoint for EDR Sensor | MsSecFlt |
 | Defender:  Windows Defender Filter | WdFilter |
-| Docker: Running containers out of dev drive | bindFlt, wcifs |
+| Docker:  Running containers out of Dev Drive | bindFlt, wcifs |
 | Windows Performance Recorder:  Measure file system operations | FileInfo |
+| Process Monitor - Sysinternals:  Monitor file system activities | ProcMon24 |
 
 The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
 
 ```powershell
-fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo
+fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24
 ```
 
 > [!TIP]
 > To determine the filters required for a specific scenario, you may need to temporarily mark a Dev Drive as *untrusted*. Then, run the scenario and make note of all filters that attached to the volume. Designate the Dev Drive as [*trusted*](#how-do-i-designate-a-dev-drive-as-trusted) again and then add the filters to the Allow list for that Dev Drive to ensure the scenario succeeds. Finally, remove any filters that may not be needed, one at a time, while ensuring that the scenario works as expected.
+
+> [!TIP]
+> The filter name for Process Monitor may change. If adding the filter name "ProcMon24" doesn't seem to capture file system activities on a Dev Drive, list the filters using the command `fltmc filters`, find the filter name for Process Monitor, and use that name instead of "ProcMon24".
 
 ## What scenarios are unsupported by Dev Drive? What are the limitations?
 
