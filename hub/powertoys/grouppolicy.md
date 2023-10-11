@@ -32,4 +32,4 @@ You will find the policies under "Administrative Templates/Microsoft PowerToys" 
 
 ## Policies
 
-You can find a list of [all available policies](aka.ms/powertoys-gpo-list) on GitHub.
+You can find a list of [all available policies](https://aka.ms/powertoys-gpo-list) on GitHub.
