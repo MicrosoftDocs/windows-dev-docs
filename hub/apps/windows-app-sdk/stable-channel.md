@@ -32,6 +32,25 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.4
 
+### Version 1.4.2 (1.4.231008000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
+
+- Fixed a crashing issue in explorer.exe caused by excessive memory and object allocation.
+- Fixed a titlebar interaction issue that prevented the back button from working properly.
+- Fixed an issue that caused a warning to be generated for a source file being included multiple times.
+- Fixed an issue impacting context menu performance.
+- Fixed a .lnk shortcut issue that made the target .exe always point to the same location for packages in the WindowsApps folder.
+- Fixed a DWriteCore issue affecting proper rendering of Indic text in certain fonts.
+- Fixed an issue in a List View that prevented proper keyboard navigation to and from nested selected items with *Tab/Shift + Tab*.
+- Fixed an issue that broke scrolling ComboBox items by touch after expanding the ComboBox a second time. For more info, see GitHub issue [#8831](https://github.com/microsoft/microsoft-ui-xaml/issues/8831).
+- Fixed an issue where WinAppSDK packages did not include WinUI's localized resources for some languages.
+- Fixed an inconsistency between how File Explorer and XAML display a user's preferred language.
+- Fixed a craftsmanship issue in File Explorer causing a thin line to show under the active tab.
+- Fixed an issue where some framework-provided keyboard accelerators were not properly localized. For more info, see GitHub issue [#2023](https://github.com/microsoft/microsoft-ui-xaml/issues/2023).
+- Fixed an issue with RepeatButton controls that were repeatedly scrolling when tapped.
+- Fixed the WinAppSDK installer .exe to have proper resource version info.
+
 ### Version 1.4.1 (1.4.230913002)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
