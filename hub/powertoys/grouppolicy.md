@@ -1,7 +1,7 @@
 ---
 title: PowerToys Group Policy
 description: Group policy objects 
-ms.date: 08/03/2023
+ms.date: 10/11/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
@@ -32,12 +32,4 @@ You will find the policies under "Administrative Templates/Microsoft PowerToys" 
 
 ## Policies
 
-Policy can force a PowerToys utility to be enabled or disabled for users covered by the policy.
-
-### Configure enabled state
-
-For each utility shipped with PowerToys, there's a "Configure enabled state" policy, which forces an **enabled** state for the utility.
-
-- If you enable this setting, the utility will be always enabled and the user won't be able to disable it.
-- If you disable this setting, the utility will be always disabled and the user won't be able to enable it.
-- If you don't configure this setting, users are able to disable or enable the utility at their own discretion.
+You can find a list of [all available policies](aka.ms/powertoys-gpo-list) on GitHub.
