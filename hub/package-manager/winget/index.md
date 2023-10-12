@@ -115,6 +115,7 @@ The **winget** tool supports the following types of installers:
 * INNO
 * NULLSOFT
 * MSI
+* WIX
 * APPX
 * MSIX
 * BURN

@@ -57,6 +57,7 @@ The options allow you to customize the upgrade experience to meet your needs.
 | **-l, --location** |    Location to upgrade to (if supported). |
 | **-scope** | Select installed package scope filter (user or machine). |
 | **a, --architecture** | Select the architecture to install. |
+| **--installer-type**   |  Select the installer type to upgrade. See [supported installer types for WinGet client](./index.md#supported-installer-formats). |
 | **--locale** | Specifies which locale to use (BCP47 format). |
 | **--ignore-security-hash** | Ignore the installer hash check failure. Not recommended. |
 | **--ignore-local-archive-malware-scan** | Ignore the malware scan performed as part of installing an archive type package from local manifest. |

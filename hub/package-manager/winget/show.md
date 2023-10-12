@@ -41,7 +41,7 @@ The following options are available.
 
 | Option  | Description |
 |--------------|-------------|
-| **-m,--manifest** | The path to the manifest of the application to install. |
+| **-m,--manifest** | The path to the manifest of the application to show. |
 | **--id**         |  Filter results by ID. |
 | **--name**   |      Filter results by name. |
 | **--moniker**   |  Filter results by application moniker. |
@@ -49,7 +49,8 @@ The following options are available.
 | **-s,--source** |   Find the application using the specified [source](source.md). |
 | **-e,--exact**     | Find the application using exact match. |
 | **--scope**     | Select install scope (user or machine). |
-| **-a,--architecture**     | Select the architecture to install. |
+| **-a,--architecture**     | Select the architecture to show. |
+| **--installer-type**   |  Select the installer type to show. See [supported installer types for WinGet client](./index.md#supported-installer-formats). |
 | **--locale**     | Locale to use (BCP47 format). |
 | **--versions**    | Show available versions of the application. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
