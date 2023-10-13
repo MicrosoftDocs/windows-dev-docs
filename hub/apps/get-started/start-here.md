@@ -2,7 +2,7 @@
 title: Start here - get ready to develop Windows apps
 description: List of steps to get started developing Windows apps with links to all the tools and frameworks you'll need.
 ms.topic: how-to
-ms.date: 9/27/2023
+ms.date: 10/13/2023
 keywords: windows, win32, desktop development
 ms.author: jken
 author: GrantMeStrength
@@ -69,6 +69,7 @@ WSL lets you run Linux distributions on Windows. This is a great way to use open
 If you are writing an app that will run on Windows, you'll need to select a development framework. Popular frameworks include Windows App SDK, Windows Presentation Foundation (WPF), Windows Forms, and Win32. Here you will find help selecting one approach over the other:
 
 * [An overview of Windows development options](/windows/apps/get-started/)
+* [Windows app development: options and features](dev-options.md)
 
 If you are using Windows to write apps for Windows and/or other platforms, you'll be interested in this topic. It covers using other langauges such as Python and Rust, and other tips such as installing Linux on Windows to gain access to open source tools.
 
