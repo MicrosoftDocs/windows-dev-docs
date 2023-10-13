@@ -51,8 +51,8 @@ productDirectory:
         text: Overview of Windows development options
       - url: ./windows-app-sdk/set-up-your-development-environment.md
         text: Install tools for the Windows App SDK
-      - url: ./winui/winui3/create-your-first-winui3-app.md
-        text: Create your first WinUI 3 project
+      - url: ./get-started/dev-options.md
+        text: Windows app development - options and features
       - url: ./get-started/samples.md
         text: Sample apps for Windows
   - title: Design
