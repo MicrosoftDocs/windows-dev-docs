@@ -32,6 +32,8 @@ items:
           href: get-started/start-here.md
         - name: Overview of app development options
           href: get-started/index.md
+        - name: App development options and features
+          href: get-started/dev-options.md
         - name: Sample apps for Windows
           href: get-started/samples.md
         - name: Windows developer best practices 
