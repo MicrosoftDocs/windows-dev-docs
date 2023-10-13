@@ -1,6 +1,6 @@
 ---
 title: PowerToys Group Policy
-description: Group policy objects 
+description: Group policy documentation for PowerToys
 ms.date: 10/13/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
@@ -31,6 +31,9 @@ You will find the policies under "Administrative Templates/Microsoft PowerToys" 
 ## Policies
 
 ### Configure global utility enabled state
+
+> [!NOTE]
+> This policy is supported on PowerToys 0.75.0 and later.
 
 This policy configures the enabled state for all PowerToys utilities.
 
@@ -100,6 +103,9 @@ This policy allows you to disable automatic update checks running in the backgro
 
 #### Configure enabled state for all plugins
 
+> [!NOTE]
+> This policy is supported on PowerToys 0.75.0 and later.
+
 This policy configures the enabled state for all PowerToys Run plugins. All plugins will have the same state.
 
 - If you enable this setting, the plugins will be always enabled and the user won't be able to disable it.
@@ -113,12 +119,16 @@ You can override this policy for individual plugins using the policy "Configure 
 
 #### Configure enabled state for individual plugins
 
+> [!NOTE]
+> This policy is supported on PowerToys 0.75.0 and later.
+
 With this policy you can configures an individual enabled state for each PowerToys Run plugin that you add to the list.
 
 If you enable this setting, you can define the list of plugins and their enabled states:
-  - The value name (first column) is the plugin ID. You will find it in the plugin.json which is located in the plugin folder.
-  - The value (second column) is a numeric value: 0 for disabled, 1 for enabled and 2 for user takes control.
-  - Example to disable the Program plugin: `791FC278BA414111B8D1886DFE447410 | 0`
+
+- The value name (first column) is the plugin ID. You will find it in the plugin.json which is located in the plugin folder.
+- The value (second column) is a numeric value: 0 for disabled, 1 for enabled and 2 for user takes control.
+- Example to disable the Program plugin: `791FC278BA414111B8D1886DFE447410 | 0`
 
 If you disable or don't configure this policy, either the user or the policy "Configure enabled state for all plugins" takes control over the enabled state of the plugins.
 
