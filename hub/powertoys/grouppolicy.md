@@ -84,7 +84,8 @@ This policy configures whether the action center notification for new updates is
 - If enabled, the notification is suspended.
 - If disabled or not configured, the notification is shown.
 
- **Note:** The notification about new major versions is always displayed.
+> [!NOTE]
+> The notification about new major versions is always displayed.
 
 <!-- This policy is implemented for later usage (PT v1.0 and later) and therefore inactive. (To make it working please update `src/runner/UpdateUtils.cpp`)
 #### Disable automatic update checks
@@ -107,7 +108,8 @@ This policy configures the enabled state for all PowerToys Run plugins. All plug
 
 You can override this policy for individual plugins using the policy "Configure enabled state for individual plugins".
 
-**Note:** Changes require a restart of PowerToys Run.
+> [!NOTE]
+> Changes require a restart of PowerToys Run.
 
 #### Configure enabled state for individual plugins
 
@@ -122,4 +124,5 @@ If you disable or don't configure this policy, either the user or the policy "Co
 
 You can set the enabled state for all plugins not listed here using the policy "Configure enabled state for all plugins".
 
-**Note:** Changes require a restart of PowerToys Run.
+> [!NOTE]
+> Changes require a restart of PowerToys Run.
