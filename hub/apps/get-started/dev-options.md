@@ -3,6 +3,8 @@ description: Features available to Windows developers when selecting an app deve
 title: Windows app development - options and features
 ms.topic: article
 ms.date: 09/20/2023
+ms.author: aashcraft
+author: alvinashcraft
 keywords: windows, win32, desktop development, app development
 ms.localizationpriority: medium
 ---
