@@ -164,7 +164,7 @@ The Store will need to run your installer in silent mode. To support this, you n
 
 :::image type="content" source="images/msiexe-set-installer-parameters.png" lightbox="images/msiexe-set-installer-parameters.png" alt-text="A screenshot of the Packages section where you can provide the installer parameters for your app.":::
 
-For MSI aps, the Store uses the default silent switch ‘/qn’ to run your installer in silent mode.
+For MSI apps, the Store uses the default silent switch ‘/qn’ to run your installer in silent mode.
 
 **Installer handling for your EXE app**<br>*Required*
 
