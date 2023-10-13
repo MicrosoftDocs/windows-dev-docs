@@ -1,7 +1,7 @@
 ---
 description: Learn how to grant package identity to an unpackaged app so that you can use modern Windows features in that app.
 title: Grant package identity by packaging with external location
-ms.date: 10/04/2022
+ms.date: 10/13/2023
 ms.topic: article
 keywords: windows 10, desktop, package, identity, MSIX, Win32
 ms.localizationpriority: medium
@@ -12,7 +12,7 @@ ms.custom: RS5
 
 If you have an existing desktop app, with its own installer, there's very little you need to change in order to benefit from [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
 
-Many Windows extensibility features&mdash;including background tasks, notifications, live tiles, and share targets&mdash;can be used by a desktop app only if that app has package identity at runtime. That's because the operating system (OS) needs to be able to identify the caller of the corresponding API. See [Features that require package identity](./modernize-packaged-apps.md).
+Many Windows extensibility features&mdash;including background tasks, notifications, live tiles, custom context menu extensions, and share targets&mdash;can be used by a desktop app only if that app has package identity at runtime. That's because the operating system (OS) needs to be able to identify the caller of the corresponding API. See [Features that require package identity](./modernize-packaged-apps.md).
 
 Only packaged apps have package identity at runtime. For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](../../package-and-deploy/index.md).
 
