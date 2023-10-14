@@ -20,7 +20,7 @@ This topic discusses your options concerning:
 * How you'll deploy/distribute your app, and how it'll be installed.
 * Your app's run-time process&mdash;how isolated it'll be; and what APIs will be available to it.
 
-You can make those decisions for both new and existing apps. But if you're still in the planning stage for a new app, then before you start to think about the considerations above, first decide what development platform and user interface (UI) framework you'll use for your app. And for that decision, see [Selecting a development technology](/windows/apps/get-started/).
+You can make those decisions for both new and existing apps. But if you're still in the planning stage for a new app, then before you start to think about the considerations above, first decide what development platform and user interface (UI) framework you'll use for your app. And for that decision, see [An overview of Windows development options](/windows/apps/get-started/).
 
 ## Packaged or unpackaged
 
@@ -30,7 +30,7 @@ Many Windows extensibility features&mdash;including background tasks, notificati
 
 * If you need to use any of those features, then your app needs package identity. And therefore it *needs* to be a packaged app (packaged apps are the only kind that have package identity). A packaged app is packaged by using MSIX technology (see [What is MSIX?](/windows/msix/overview)).
   * For a new app, the packaging process is straightfoward (and at the end of this section there's info about how to do it).
-  * For some existing apps, you can follow the same packaging process as for a new app. But because some existing apps aren't yet ready for all of their content to be present inside an MSIX package, there's an option for your app to be *packaged with external location*. That enables your app to have package identity; thereby being able to use Windows extensibility features that require package identity. For more info, see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
+  * For some existing apps, you can follow the same packaging process as for a new app. But because some existing apps aren't yet ready for all of their content to be present inside an MSIX package, there's an option for your app to be *packaged with external location*. That enables your app to have package identity; thereby being able to use those features that require it. For more info, see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
 * Even if you *don't* need to use any of those features, then creating a packaged app is still a good idea. It gives your users the easiest way to install, uninstall, and update your app. For more info, see [Deployment/distribution/installation](#deploymentdistributioninstallation) in this topic.
 * But creating an unpackaged app is an option.
 
@@ -108,6 +108,8 @@ For packaged apps, to configure the kind of app you want, you use the `uap10:Run
   * The value "packagedClassicApp" indicates either a WinUI 3 app (Windows App SDK) or a Desktop Bridge app (Centennial). The difference is that a Centennial app runs in an AppContainer.
   * And "win32App" indicates any other kind of Win32 app (including an app packaged with external location).
 * Lastly, setting `uap10:RuntimeBehavior` to  "windowsApp" gives you a UWP app.
+
+For all of the options for the kinds of apps you can develop, see [Windows app development: options and features](/windows/apps/get-started/dev-options).
 
 ## Windows App SDK&mdash;framework-dependent or self-contained
 
