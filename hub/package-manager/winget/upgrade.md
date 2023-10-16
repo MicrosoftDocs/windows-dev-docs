@@ -20,7 +20,7 @@ The following aliases are available for this command:
 
 ## Usage
 
-`winget upgrade [[-q] \<query>] [\<options>]`
+`winget upgrade [[-q] \<query> ...] [\<options>]`
 
 ![Image of upgrade command arguments](images\upgrade.png)
 

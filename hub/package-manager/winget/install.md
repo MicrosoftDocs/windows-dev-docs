@@ -14,7 +14,7 @@ The **install** command requires that you specify the exact string to install. I
 
 ## Usage
 
-`winget install [[-q] \<query>] [\<options>]`
+`winget install [[-q] \<query> ...] [\<options>]`
 
 ![search command](./images/install.png)
 
