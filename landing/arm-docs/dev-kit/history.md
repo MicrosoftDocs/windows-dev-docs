@@ -19,7 +19,7 @@ To keep your device performing its best, make sure that you have the latest upda
 
 ## September 2023 updates
 
-The following update is available for Surface Pro 9 with 5G (SQ3 Processor) devices running Windows 11 Update, Version 22H2, or greater. This update addresses critical security vulnerability and improves system stability.
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update addresses critical security vulnerability and improves system stability.
 
 | Driver Version | Device Manager |
 |----|----|
@@ -99,7 +99,7 @@ The following update is available for Surface Pro 9 with 5G (SQ3 Processor) devi
 
 ## July 2023 updates
 
-The following update is available for Surface Pro 9 with 5G (SQ3 Processor) devices running Windows 11 Update, Version 22H2, or greater.
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater.
 
 | Driver Version | Device Manager |
 |----|----|
