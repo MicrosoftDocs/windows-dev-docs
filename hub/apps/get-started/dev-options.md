@@ -17,7 +17,7 @@ There is a wide range of options for developing applications for Windows. The be
 
 To read more about each of these Windows app development options, see [Writing apps for Windows](index.md).
 
-| Feature | .NET MAUI | React Native (RNW) | UWP XAML (Windows.UI.Xaml) | Win32 | Windows Forms | WinUI 3 | WPF |
+| Feature | .NET MAUI | React Native (RNW) | UWP XAML (Windows.UI.Xaml) | Win32 (MFC) | Windows Forms | WinUI 3 | WPF |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Language** | C# | JavaScript, TypeScript | C#, C++, Visual Basic | C++, Rust | C#, Visual Basic | C#, C++ | C#, Visual Basic |
 | **UI language** | XAML/Code | JSX | XAML | Code | Code | XAML | XAML |
@@ -26,8 +26,6 @@ To read more about each of these Windows app development options, see [Writing a
 | **Fluent Design** | ✅ | ✅ | ✅ (via [WinUI 2](/windows/apps/winui/winui2)) | ❌ | ❌ | ✅ | ❌ |
 | **.NET** | .NET | N/A | .NET Core & .NET Native | N/A | .NET & .NET Framework | .NET | .NET & .NET Framework |
 | **Windows App SDK** | ✅ ([more info](/dotnet/maui/platform-integration/invoke-platform-code)) | ✅ ([more info](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | ❌ | ✅ | ✅ ([more info](../windows-app-sdk/winforms-plus-winappsdk.md)) | ✅ | ✅ ([more info](../windows-app-sdk/wpf-plus-winappsdk.md)) |
-| **Enterprise Apps** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Consumer Apps** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
 | **Great for touch** | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | **Cross-platform** | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | **Xbox/HoloLens apps** | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
