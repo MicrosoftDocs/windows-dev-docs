@@ -51,7 +51,7 @@ You can define multiple hosts and multiple extensions in the same package. In th
 
 ## Declare a package to be an extension 
 
-A package identifies itself as a package extension by declaring the `<uap17:PackageExtensionHost>` element in its Package.appxmanifest file. The following example shows an example package declaring itself as an extension
+A package identifies itself as a package extension by declaring the `<uap17:PackageExtension>` element in its Package.appxmanifest file. The following example shows an example package declaring itself as an extension
 
 ```xml
  <Package 
