@@ -122,17 +122,14 @@ The **winget** tool supports the following types of installers:
 
 ## Scripting winget
 
-You can author batch scripts and PowerShell scripts to install multiple applications.
+You can use the following syntax to install multiple applications in a single command.
+
+`USAGE: winget install <query1> <query2> ...`
+
+### Example
 
 ``` CMD
-@echo off  
-Echo Install Powertoys and Terminal  
-REM Powertoys  
-winget install Microsoft.Powertoys  
-if %ERRORLEVEL% EQU 0 Echo Powertoys installed successfully.  
-REM Terminal  
-winget install Microsoft.WindowsTerminal  
-if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
+winget install Microsoft.WindowsTerminal Microsoft.PowerToys Microsoft.VisualStudioCode
 ```
 
 > [!NOTE]
