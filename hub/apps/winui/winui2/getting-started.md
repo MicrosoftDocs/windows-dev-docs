@@ -17,7 +17,7 @@ The library is available as a NuGet package that can be added to any new or exis
 
 ## Download and install the Windows UI Library
 
-1. Download [Visual Studio 2019](https://developer.microsoft.com/windows/downloads) and ensure you choose the **Universal Windows Platform development** Workload in the Visual Studio installer.
+1. Download [Visual Studio 2022](https://developer.microsoft.com/windows/downloads) and ensure you choose the **Universal Windows Platform development** Workload in the Visual Studio installer.
 
 2. Open an existing project, or create a new project using the Blank App template under Visual C# -> Windows -> Universal, or the appropriate template for your language projection.  
 
