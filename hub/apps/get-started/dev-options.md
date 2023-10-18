@@ -37,7 +37,7 @@ To read more about each of these Windows app development options, see [Writing a
 Learn more about each of these options:
 
 - [.NET Multi-platform App UI (.NET MAUI)](/dotnet/maui/)
-- [Blazor Hybrid Apps](/aspnet/core/blazor/hybrid)
+- [ASP.NET Core Blazor Hybrid](/aspnet/core/blazor/hybrid)
 - [React Native for Windows (RNW)](/windows/dev-environment/javascript/react-native-for-windows)
 - [Universal Windows Platform (UWP)](/windows/uwp/)
 - [Recommendations for Choosing Between ATL and MFC](/cpp/atl/recommendations-for-choosing-between-atl-and-mfc)
