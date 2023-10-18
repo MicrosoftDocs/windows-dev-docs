@@ -87,6 +87,10 @@ For example, here's an illustration of how the [AutoSuggestBox](../controls/auto
 
 ![theme brushes control example](images/color/theme-brushes.svg)
 
+> [!TIP]
+> [!div class="nextstepaction"]
+> For a visual overview of available theme brushes, see the WinUI 3 Gallery app: [Colors](winui3gallery://item/Colors)
+
 ### Using theme brushes
 
 :::row:::
@@ -279,7 +283,8 @@ Be aware of how colorblindness could affect the usability of your application. F
     :::column-end:::
 :::row-end:::
 
-## Related articles
+## Related
 
 - [XAML Styles](../style/xaml-styles.md)
 - [XAML Theme Resources](../style/xaml-theme-resources.md)
+- [WinUI 3 Gallery - Colors](winui3gallery://item/Colors)
