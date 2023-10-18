@@ -2,7 +2,7 @@
 title: Windows apps--packaging, deployment, and process
 description: This topic discusses your options around app packaging, deploy/distribute/install, and your app's run-time process.
 ms.topic: article
-ms.date: 10/13/2023
+ms.date: 10/18/2023
 keywords: intro, introduction, all-up, all, up, Windows, Windows apps, packaging, deployment, process, run-time
 ms.author: stwhi
 author: stevewhims
@@ -44,6 +44,8 @@ For info about how to configure your app as packaged or unpackaged:
 * **Desktop apps**. See [Set up your desktop app for MSIX packaging](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 * **Universal Windows Platform (UWP) apps**. UWP apps are already configured as packaged; and that configuration can't be changed.
 
+Also see the [Windows Package Manager and the WinGet client](#windows-package-manager-and-the-winget-client) section in this topic.
+
 ## Deployment/distribution/installation
 
 * A packaged app is packaged by using MSIX technology.
@@ -57,6 +59,8 @@ So, why does it matter whether or not your app is packaged?
 * The Microsoft Store optimizes for apps of this kind (although they can be used in or out of the Store).
 * It's an easy path for use via MSIX app attach (for Azure Virtual Desktop virtual machines). For more info, see [What is MSIX app attach?](/azure/virtual-desktop/what-is-app-attach).
 * A signed package benefits from strong anti-tampering. This benefit is even greater than for an unpackaged app installed under **Program Files**.
+
+Also see the [Windows Package Manager and the WinGet client](#windows-package-manager-and-the-winget-client) section in this topic.
 
 ## AppContainer or Medium IL
 
@@ -119,3 +123,14 @@ If you're developing or maintaining an app that makes use of the [Windows App SD
 * Self-contained. Your app carries with it its Windows App SDK dependencies.
 
 For more info, see [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview).
+
+## Windows Package Manager and the WinGet client
+
+A package manager can help your users to install/upgrade/configure your software by automating the workflow. Package managers can help install any software, but they tend to be used mostly to install developer tools. So if you're building a developer tool, then you might be particuarly interested in this option. But here's how it works:
+
+* You, as the software developer, define to the package manager (in the form of declarative instructions) all of the pieces necessary for a successful install of your product.
+* And then when a user installs your software, the package manager follows your declarative instructions to automate the install-and-configure workflow.
+
+The result is a reduction in time spent getting a user's environment ready, and better compatibility between the components installed. And you can use Windows Package Manager to distribute your packaged or unpackaged apps in formats such as `.msix`, `.msi`, and `.exe`.
+
+For more info, see [Windows Package Manager](/windows/package-manager/).
