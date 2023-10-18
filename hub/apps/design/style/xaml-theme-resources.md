@@ -57,6 +57,12 @@ For additional information about how to apply color in your Windows app, please 
 
 The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. For WinUI 2, the theme resources are defined in the [Common theme resources Xaml file](https://github.com/microsoft/microsoft-ui-xaml/blob/master/dev/CommonStyles/Common_themeresources_any.xaml). The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.
 
+> [!TIP]
+> [!div class="nextstepaction"]
+> For a visual overview of these colors, see the WinUI 3 Gallery app: [Colors](winui3gallery://item/Colors)
+
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+
 ### Windows system contrast theme colors
 
 In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Windows apps. However, many of the XAML [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
@@ -133,6 +139,10 @@ For details of the XAML styles, see WinUI on GitHub:
  - [Title TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L42)
  - [Title Large TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L47)
  - [Display TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L52)
+
+> [!TIP]
+> [!div class="nextstepaction"]
+> For a visual overview of these styles, see the WinUI 3 Gallery app: [Typography](winui3gallery://item/Typography)
 
 ### BaseRichTextBlockStyle
 
