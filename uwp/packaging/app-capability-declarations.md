@@ -1,7 +1,7 @@
 ---
 title: App capability declarations
 description: To access certain APIs or resources (such as pictures or music), or devices (such as the camera or the microphone), you must declare app capabilities in your Windows app's package manifest.
-ms.date: 08/18/2023
+ms.date: 10/11/2023
 ms.topic: article
 keywords: windows 11, windows 10, uwp
 ms.localizationpriority: medium
@@ -10,6 +10,9 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 ---
 
 # App capability declarations
+
+> [!NOTE]
+> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
 ## Which kinds of apps do app capabilities apply to?
 
@@ -104,7 +107,7 @@ Device capabilities allow your app to access peripheral and internal devices. De
 | **Human interface device (HID)** | The **humaninterfacedevice** device capability enables access to APIs in the [How to specify device capabilities for HID](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid). |
 | **Point of Service (POS)** | The **pointOfService** device capability enables access to APIs in the [**Windows.Devices.PointOfService**](/uwp/api/Windows.Devices.PointOfService) namespace. This namespace lets your app access Point of Service (POS) barcode scanners and magnetic stripe readers. The namespace provides a vendor-neutral interface for accessing POS devices from various manufacturers from a UWP app. |
 | **Bluetooth** | The **bluetooth** device capability allows apps to communicate with already paired bluetooth devices over both Generic Attribute (GATT) or Classic Basic Rate (RFCOMM) protocol.<br/>This capability is required to use some APIs in the [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth) namespace. |
-| **Wi-Fi Networking** | The **wiFiControl** device capability allows apps to scan and connect to Wi-Fi networks.<br/>This capability is required to use some APIs in the [**Windows.Devices.WiFi**](/uwp/api/Windows.Devices.WiFi) namespace. |
+| **Wi-Fi Networking** | **IMPORTANT**. The **wiFiControl** device capability will be affected by upcoming changes to operating system behavior, planned for fall 2024. For more info, see [Changes to API behavior for Wi-Fi access and location](/windows/win32/nativewifi/wi-fi-access-location-changes).<br/><br/>The **wiFiControl** device capability allows apps to scan and connect to Wi-Fi networks.<br/>This capability is required to use some APIs in the [**Windows.Devices.WiFi**](/uwp/api/Windows.Devices.WiFi) namespace. |
 | **Radio state** | The **radios** device capability allows apps to toggle the Wi-Fi and Bluetooth radios.<br/>This capability is required to use the APIs in the [**Windows.Devices.Radios**](/uwp/api/Windows.Devices.Radios) namespace.  |
 | **Optical disc** | The **optical** device capability allows apps to access functions on optical disk drives such as CD, DVD, and Blu-ray.<br/>This capability is required to use some APIs in the [**Windows.Devices.Custom**](/uwp/api/Windows.Devices.Custom) namespace. |
 | **Motion activity** | The **activity** device capability allows apps to detect the current motion of the device.<br/>This capability is required to use some APIs in the [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors) namespace. |
