@@ -19,7 +19,7 @@ This section includes setup steps, a guide through the authentication process, i
 |------------|-------------|
 |[Getting started](getting-started.md)| Getting started guide for UWP on Xbox One development. |
 |[What's new](whats-new.md)| Highlights new features in UWP on Xbox One. |
-|[Xbox One Developer Mode activation](devkit-activation.md)| Explains how to enable Developer Mode on Xbox One. |
+|[Xbox Developer Mode activation](devkit-activation.md)| Explains how to enable Developer Mode on Xbox. |
 |[Disabling Developer Mode on Xbox One](devkit-deactivation.md)| Explains how to disable Developer Mode on Xbox One. |
 |[Set up your UWP on Xbox development environment](development-environment-setup.md)| Describes the steps to set up and test your Xbox One development environment. |
 |[Samples](samples.md)| Pointer to the GitHub location – TVHelpers - where you will find useful XAML and JavaScript samples to get you started developing for Xbox. Samples include a full XAML Media App template as well as automatic controller navigation, rich media playback, and search for web-based technologies. |
