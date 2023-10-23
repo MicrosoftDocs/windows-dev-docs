@@ -1,7 +1,7 @@
 ---
 title: Add support Arm devices to your Windows app
 description: Guidance for adding Arm64 support to your app. Optimize your x64 app to perform better on Windows devices powered by Arm processors so that CPU, GPU, and NPU performance is accelerated, less power is consumed to preserve battery life, and wi-fi and mobile data network connections are supported.
-ms.date: 05/23/2023
+ms.date: 10/23/2023
 ms.topic: article
 ms.prod: windows
 ms.technology: arm
@@ -133,7 +133,7 @@ Common issues that may interfere with or block you from adding an Arm64 version 
 - [A dependency not compiled for ARM64 is blocking you from a successful build.](#a-dependency-not-compiled-for-arm64-is-blocking-you-from-a-successful-build)
 - [Code is written for a specific architecture other than Arm64.](#code-is-written-for-a-specific-architecture-other-than-arm64)
 - [Your app relies on a kernel driver.](#your-app-relies-on-a-kernel-driver)
-<!-- - [You're stuck and need assistance.](#need-assistance-leverage-our-app-assure-service) -->
+- [You're stuck and need assistance.](#need-assistance-leverage-our-app-assure-service)
 
 ### A dependency not compiled for ARM64 is blocking you from a successful build
 
@@ -198,3 +198,9 @@ As well as 3rd-party frameworks, including:
 - [Qt for Windows](https://doc.qt.io/qt-6/windows.html), [Boost C++ Library](https://www.boost.org/doc/libs/1_81_0/more/getting_started/windows.html), [Bazel, an open-source build and test tool](https://bazel.build/configure/windows).
 - Support for GCC and Mingw / GNU Toolchain for Windows on Arm is [in-progress over at Linaro](https://linaro.atlassian.net/wiki/spaces/WOAR/pages/28802842658/GNU+Toolchain+for+Windows+on+Arm).
 - For a more complete list, see [Windows On Arm (WOA) - Confluence (atlassian.net)](https://linaro.atlassian.net/wiki/spaces/WOAR/overview).
+
+## Need assistance? Leverage our App Assure service
+
+The App Assure Arm Advisory Service is available to help developers build Arm-optimized apps. This service is in addition to our existing promise: your apps will run on Windows on Arm, and if you encounter any issues, Microsoft will help you remediate them. [Learn more](https://blogs.windows.com/windowsdeveloper/2023/10/16/windows-launching-arm-advisory-service-for-developers/).
+
+[Sign up for Windows Arm Advisory Services](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0hAZezl6y5Om22d_0SBAstUOU9OSlBDQ0dBNkUwTU0ySlNZRklSMFJMViQlQCN0PWcu).

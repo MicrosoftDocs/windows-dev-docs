@@ -1,7 +1,7 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 03/28/2023
+ms.date: 10/23/2023
 ms.topic: article
 ms.prod: windows
 ms.technology: arm
@@ -94,9 +94,11 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 - When given the choice of app architecture, choose the 32-bit x86 version to run the app's 32-bit version on a Windows on Arm PC. If an app's x64 Win32 version doesn't work, most apps will have an x86 version available.
 - For more information about architectures, see [App package architectures](/windows/msix/package/device-architecture).
 
-## App Assure Support for migrating to Arm64
+## App Assure Arm Advisory Service
 
-For help when building or updating applications to support Arm64-based devices, developers can utilize App Assure (part of FastTrack) - an application compatibility program that helps to unblock application issues by providing technical support. Visit [aka.ms/AppAssure](https://aka.ms/AppAssure).
+While our guidance to [Add Arm support to your Windows app](add-arm-support.md) walks through how to create an Arm-optimized version of your app(s). The App Assure Arm Advisory Service is available to help if you get stuck. This service is in addition to our existing promise: your apps will run on Windows on Arm, and if you encounter any issues, Microsoft will help you remediate them. [Learn more](https://blogs.windows.com/windowsdeveloper/2023/10/16/windows-launching-arm-advisory-service-for-developers/).
+
+[Sign up for Windows Arm Advisory Services](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0hAZezl6y5Om22d_0SBAstUOU9OSlBDQ0dBNkUwTU0ySlNZRklSMFJMViQlQCN0PWcu).
 
 ## Additional resources
 
