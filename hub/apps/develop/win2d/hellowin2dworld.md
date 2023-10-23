@@ -57,12 +57,12 @@ public sealed partial class MainWindow : Window
 }
 ```
 
-If you created a C++/CX project, edit `MainPage.xaml.h` and add a function declaration to the `MainPage` class:
+If you created a C++/WinRT project, edit `MainPage.xaml.h` and add a function declaration to the `MainPage` class:
 
 ```cpp
 void CanvasControl_Draw(
-    Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^ sender,
-    Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^ args);
+    Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl const& sender,
+    Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs const& args);
 ```
 
 Then edit `MainPage.xaml.cpp`:
@@ -70,20 +70,19 @@ Then edit `MainPage.xaml.cpp`:
 ```cpp
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include "MainPage.g.cpp"
 
-using namespace App1;
+using namespace winrt;
 using namespace Microsoft::UI;
 using namespace Microsoft::Graphics::Canvas::UI::Xaml;
 
-MainPage::MainPage()
+namespace winrt::App1::implementation
 {
-    InitializeComponent();
-}
-
-void MainPage::CanvasControl_Draw(CanvasControl^ sender, CanvasDrawEventArgs^ args)
-{
-    args->DrawingSession->DrawEllipse(155, 115, 80, 30, Colors::Black, 3);
-    args->DrawingSession->DrawText("Hello, world!", 100, 100, Colors::Yellow);
+    void MainPage::CanvasControl_Draw(CanvasControl const& sender, CanvasDrawEventArgs const& args)
+    {
+        args.DrawingSession().DrawEllipse(155, 115, 80, 30, Colors::Black(), 3);
+        args.DrawingSession().DrawText(L"Hello, world!", 100, 100, Colors::Yellow());
+    }
 }
 ```
 
