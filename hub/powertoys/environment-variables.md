@@ -22,7 +22,7 @@ To edit or remove a variable (profile, User or System) for specific variable sel
 
 ## Add profile
 
-To add new profile:
+To add a new profile:
 
  - Select **New profile**
  - Enter profile name
