@@ -76,7 +76,7 @@ The currently available utilities include:
         [![Environment Variables screenshot.](../images/powertoys-environment-variables.png)](environment-variables.md)
     :::column-end:::
     :::column span="2":::
-        [Environment Variables](environment-variables.md) app offers a nice and easy way to manage environment variables.Also, it allows you to create profiles to be able to manage set of variables at once.
+        [Environment Variables](environment-variables.md) offers an easy and convenient way to manage environment variables. It also allows you to create profiles for managing a set of variables together.
     :::column-end:::
 :::row-end:::
 
