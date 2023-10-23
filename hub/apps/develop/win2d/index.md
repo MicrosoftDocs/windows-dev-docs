@@ -1,38 +1,40 @@
 ---
-title: Win2D
-description: Win2D is an easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration.
-ms.date: 05/25/2023
+title: Overview of Win2D
+description: Win2D is an easy-to-use Windows Runtime API for immediate-mode 2D graphics rendering with GPU acceleration.
+ms.date: 10/23/2023
 ms.topic: article
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games
 ms.localizationpriority: medium
 ---
 
-# Win2D
+# Overview of Win2D
 
-Win2D is an easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration. It is available to C#, C++ and VB developers writing apps for UWP and WinAppSDK. It utilizes the power of Direct2D, and integrates seamlessly with XAML (on both UWP and WinAppSDK, including WinUI 3).
+Win2D is an easy-to-use Windows Runtime (WinRT) API for immediate-mode 2D graphics rendering with GPU acceleration. It's ideal for creating simple games, displays such as charts, and other simple 2D graphics.
 
-It's ideal for creating simple games, displays such as charts, and other simple 2D graphics.
+You can use Win2D in your WinUI 3 (Windows App SDK) apps or Universal Windows Platform (UWP) apps, using either C#, C++, or VB. Win2D utilizes the power of Direct2D, and it integrates seamlessly with XAML on both WinUI 3 (Windows App SDK) and UWP.
 
-> [!NOTE]
-> Win2D on WinAppSDK (including WinUI 3) is a work in progress, and some features are not supported. The documentation refers to both the UWP and WinAppSDK versions, which mostly share the same API surface and functionality. Whenever there's any relevant differences between the two, it will be called out in the docs. When not specified, you can assume that the topics being discussed apply to both frameworks in the same way.
+> [!IMPORTANT]
+> Win2D for WinUI 3 (Windows App SDK) is a work-in-progress, and some features aren't supported. This documentation refers to both the WinUI 3 and UWP versions, which mostly share the same API surface and functionality. Whenever there's any relevant differences between the two, we'll call it out in the documentation. But otherwise, the info being presented applies to both platforms in the same way.
 
-## Get Started
+## Get started
 
-Win2D is available as a NuGet package, or as source code [on GitHub](https://github.com/microsoft/Win2D).
+Win2D is available as a NuGet package, or as source code (for the source code, see the [Win2D](https://github.com/microsoft/Win2D) repo on GitHub).
 
-### Install Win2D
+### Reference the Win2D NuGet package
 
-Add the Win2D NuGet package to your UWP or WinAppSDK app:
+In a WinUI 3 or UWP project in Visual Studio, click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...** > **Browse**. Make sure that **Include prerelease** is unchecked, and type or paste into the search box:
 
-* From within Visual Studio, go to **Tools**, **NuGet Package Manager**, **Manage NuGet Packages for Solution**.
-* Type **Win2D** into the **Search Online** box, and hit **Enter**.
-  * On UWP, select the [**Win2D.uwp**](https://www.nuget.org/packages/Win2D.uwp/) package.
-  * On WinAppSDK, select the [**Microsoft.Graphics.Win2D**](https://www.nuget.org/packages/Microsoft.Graphics.Win2D/) package.
-* Click **Install**, then **OK**.
-* Accept the license agreement.
-* Click **Close**.
+* For a WinUI 3 project, [*Microsoft.Graphics.Win2D*](https://www.nuget.org/packages/Microsoft.Graphics.Win2D/).
+* For a UWP project, [*Win2D.uwp*](https://www.nuget.org/packages/Win2D.uwp/).
 
-Next, visit [Hello Win2D World](hellowin2dworld.md) or the [quick start](./quick-start.md) to learn about creating a simple app. You can also consult the [features list](./features.md) to discover all the things Win2D can do. To learn more about advanced topics, you can refer to the collection of articles included in this docs section as well.
+Select the correct item in search results, check your project, and click **Install** to install the package into that project. Accept the license agreement.
+
+> [!IMPORTANT]
+> If you see any error messages, then try updating the version of the Windows App SDK NuGet package that you're referencing (if appropriate). Or try going into project properties, and setting **Target OS version** to the latest version.
+
+## Next steps
+
+Next, to learn about creating a simple app, try out the [Hello, Win2D World!](./hellowin2dworld.md) tutorial, or the [Win2D quickstart](./quick-start.md). You can also consult the [features list](./features.md) to discover all the things Win2D can do. To learn more about advanced topics, you can refer to the collection of articles included in the documentation here as well.
 
 ## Reference
 

@@ -372,9 +372,9 @@ items:
             items:
               - name: "Overview of Win2D"
                 href: develop/win2d/index.md
-              - name: "Hello Win2D World"
+              - name: "Hello, Win2D World!"
                 href: develop/win2d/hellowin2dworld.md
-              - name: "Quick start"
+              - name: "Win2D quickstart"
                 href: develop/win2d/quick-start.md
               - name: "Features"
                 href: develop/win2d/features.md

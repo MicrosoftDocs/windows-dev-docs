@@ -1,13 +1,13 @@
 ---
-title: Quick start
-description: A quick start tutorial to using Win2D to perform some basic drawing.
+title: Win2D quickstart
+description: A quickstart tutorial to using Win2D to perform some basic drawing.
 ms.date: 05/28/2023
 ms.topic: article
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games
 ms.localizationpriority: medium
 ---
 
-# Quick start
+# Win2D quickstart
 
 This quick start tutorial introduces some of the basic capabilities of Win2D. You will learn how to:
 - Add Win2D to a XAML C# Windows project
@@ -18,7 +18,7 @@ This quick start tutorial introduces some of the basic capabilities of Win2D. Yo
 
 ## Setup your dev machine
 
-Make sure to setup your machine with all the necessary tools:
+Make sure to set up your machine with all the necessary tools:
 - [Install Visual Studio](https://visualstudio.microsoft.com/it/downloads/)
   - Include the UWP or Windows SDK (depending on your needs), 17763+
 - If using UWP, ensure to also [enable developer mode](/windows/apps/get-started/developer-mode-features-and-debugging)
