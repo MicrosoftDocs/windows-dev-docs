@@ -36,7 +36,7 @@ To edit or remove a profile, select the more options button (**•••**) on t
 
 ## Apply profile
 
-To apply profile, set profile toggle to On. Only one profile can be applied at the time. Applied variables list will show applied profile variables at the top (below Path variable):
+To apply a profile, set the profile toggle to On. Only one profile can be applied at a time. The Applied variables list will show applied profile variables at the top (below Path variable):
 
 ![PowerToys Environment Variables: Apply profile](../images/powertoys-environment-variables-apply-profile.gif)
 
