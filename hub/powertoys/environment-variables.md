@@ -16,7 +16,7 @@ Applied variables list shows the current state of the environment, respecting th
 
 ## Edit/Remove variable
 
-To edit or remove a variable (profile, User or System) for specific variable select more options button (**•••**):
+To edit or remove a variable (profile, User or System) for a specific variable, select the more options button (**•••**):
 
 ![PowerToys Environment Variables: Edit/Remove variable](../images/powertoys-environment-variables-edit-variable.gif)
 
