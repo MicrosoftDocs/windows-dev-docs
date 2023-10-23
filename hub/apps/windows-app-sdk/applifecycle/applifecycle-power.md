@@ -4,8 +4,6 @@ title: Power management with the app lifecycle API (Windows App SDK)
 ms.topic: article
 ms.date: 11/16/2021
 keywords: AppLifecycle, Windows, ApplicationModel, power, battery,
-ms.author: hickeys
-author: hickeys
 ms.localizationpriority: medium
 ---
 

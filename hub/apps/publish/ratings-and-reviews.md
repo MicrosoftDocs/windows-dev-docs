@@ -3,8 +3,6 @@ description: Prompt users for ratings and reviews, and analyze reviews provided 
 title: Ratings and reviews in the Microsoft Store
 ms.date: 10/30/2022
 ms.topic: article
-ms.author: hickeys
-author: hickeys
 keywords: windows 10, uwp, rating, rate, review, star, stars, rated, analyze
 ms.localizationpriority: medium
 ---

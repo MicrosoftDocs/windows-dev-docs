@@ -1,8 +1,6 @@
 ---
-author: hickeys
 description: An overview of where and how motion is used in Windows 11
 title: Motion in Windows 11
-ms.author: hickeys
 ms.date: 07/15/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, motion

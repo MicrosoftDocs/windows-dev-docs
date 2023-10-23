@@ -1,9 +1,7 @@
 ---
-author: hickeys
 description: Learn about app and system icons in Windows 11.
 title: Iconography in Windows 11
 ms.assetid: EC94D54F-4C24-4E16-B8E0-08F3916C00F0
-ms.author: hickeys
 ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, icons, app icons, system icons, segoe fluent icons, segoe

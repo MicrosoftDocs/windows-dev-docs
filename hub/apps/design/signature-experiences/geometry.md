@@ -1,9 +1,7 @@
 ---
-author: hickeys
 description: An overview of geometry and spacing in Windows 11
 title: Geometry in Windows 11
 ms.assetid: E9E66189-2C81-406D-9C89-8AFBEE0BCC47
-ms.author: hickeys
 ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, geometry, gutters, margins, corners, rounded corners, corner radius

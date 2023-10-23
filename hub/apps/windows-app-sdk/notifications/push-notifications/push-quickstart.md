@@ -4,8 +4,6 @@ description: Send push notifications using the Windows App SDK
 ms.topic: article
 ms.date: 7/26/2021
 keywords: push, notification
-ms.author: hickeys
-author: hickeys
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 ---

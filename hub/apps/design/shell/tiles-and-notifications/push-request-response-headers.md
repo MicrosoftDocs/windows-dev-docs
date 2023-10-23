@@ -1,9 +1,7 @@
-﻿---
+---
 title: Push notification service request and response headers (Windows Runtime apps) (Windows)
 description: This topic describes the service-to-service web APIs and protocols required to send a push notification.
-author: hickeys
 ms.topic: article
-ms.author: hickeys
 ms.date: 10/06/2021
 ---
 
@@ -286,7 +284,7 @@ X-WNS-Status: received | dropped | channelthrottled
 
 | Value            | Description |
 |------------------|-------------|
-| received         | The notification was received and processed by WNS. **Note**: This does not guarantee that the device received the notification. |
+| received         | The notification was received and processed by WNS. **Note**:�This does not guarantee that the device received the notification. |
 | dropped          | The notification was explicitly dropped because of an error or because the client has explicitly rejected these notifications. Toast notifications will also be dropped if the device is offline. |
 | channelthrottled | The notification was dropped because the app server exceeded the rate limit for this specific channel. |
 
