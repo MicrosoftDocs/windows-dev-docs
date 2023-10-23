@@ -8,7 +8,7 @@ no-loc: [PowerToys, Windows, Environment Variables, Win]
 
 # Environment Variables
 
-Environment Variables app offers a nice and easy way to manage environment variables. Also, you can create profiles and manage multiple variables at once. Profile variables have precedence over User and System variables. In the background, applying the profile adds variables to User environment variables. When profile is applied, if there is an existing User variable with the same name, backup variable is created in User variables which will be reverted to original one on profile un-apply.
+Environment Variables offers an easy and convenient way to manage environment variables. It also allows you to create profiles for managing a set of variables together. Profile variables have precedence over User and System variables. Applying the profile adds variables to User environment variables in the background. When a profile is applied, if there is an existing User variable with the same name, a backup variable is created in User variables which will be reverted to the original value on profile un-apply.
 
 Applied variables list shows the current state of the environment, respecting the order of evaluation of environment variables (Profile -> User -> System). Evaluated Path variable value is shown at the top of the list. 
 
