@@ -4,8 +4,6 @@ title: Rich activation with the app lifecycle API (Windows App SDK)
 ms.topic: article
 ms.date: 11/16/2021
 keywords: AppLifecycle, Windows, activation, activation contracts, rich activation, win32, win32 activation, unpackaged app, unpackaged app activation
-ms.author: hickeys
-author: hickeys
 ms.localizationpriority: medium
 ---
 

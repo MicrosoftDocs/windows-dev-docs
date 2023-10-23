@@ -1,9 +1,7 @@
 ---
-author: hickeys
 description: The distinguishing visual elements in Windows 11
 title: Windows 11 signature experiences
 ms.assetid: 7007693E-C666-4A98-BBEE-F3529B004447
-ms.author: hickeys
 ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, signature experiences

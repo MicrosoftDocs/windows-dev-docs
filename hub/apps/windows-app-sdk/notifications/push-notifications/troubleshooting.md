@@ -4,8 +4,6 @@ description: Troubleshooting guide for push notifications
 ms.topic: article
 ms.date: 7/26/2021
 keywords: push, notification
-ms.author: hickeys
-author: hickeys
 ms.localizationpriority: medium
 ---
 

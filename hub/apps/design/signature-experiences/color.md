@@ -1,9 +1,7 @@
 ---
-author: hickeys
 description: An overview of where and how color is used in Windows 11
 title: Color in Windows 11
 ms.assetid: 139F3A69-8C33-40A8-9FF0-76D62953339E
-ms.author: hickeys
 ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, color, light mode, dark mode

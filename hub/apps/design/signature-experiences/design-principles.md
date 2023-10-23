@@ -1,9 +1,7 @@
 ---
-author: hickeys
 description: An overview of the design principles behind Windows 11
 title: Windows 11 design principles
 ms.assetid: 8A299698-0A42-401B-87BE-6C870135A844
-ms.author: hickeys
 ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, design principles, effortless, calm, personal, familiar, complete, coherent
