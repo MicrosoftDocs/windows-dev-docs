@@ -46,4 +46,4 @@ From the Settings menu, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Launch as administrator | Launch as administrator to be able to manage System variables. If disabled, only profile and User variables can be modified. Environment Variables is started as administrator by default. |
+| Launch as administrator | Launch as administrator allow management of System variables. If disabled, only profile and User variables can be modified. Environment Variables is started as administrator by default. |
