@@ -32,7 +32,7 @@ To add a new profile:
 
 ![PowerToys Environment Variables: Add profile](../images/powertoys-environment-variables-add-profile.gif)
 
-To edit or remove the profile, select profile more options button (**•••**).
+To edit or remove a profile, select the more options button (**•••**) on the desired profile.
 
 ## Apply profile
 
