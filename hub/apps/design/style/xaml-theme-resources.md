@@ -55,7 +55,7 @@ For additional information about how to apply color in your Windows app, please 
 
 ### Light and Dark theme colors
 
-The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. For WinUI 2, the theme resources are defined in the [Common theme resources Xaml file](https://github.com/microsoft/microsoft-ui-xaml/blob/master/dev/CommonStyles/Common_themeresources_any.xaml). The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.
+The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. For WinUI 2, the theme resources are defined in the [Common theme resources Xaml file](https://github.com/microsoft/microsoft-ui-xaml/blob/winui2/main/dev/CommonStyles/Common_themeresources_any.xaml). The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.
 
 ### Windows system contrast theme colors
 

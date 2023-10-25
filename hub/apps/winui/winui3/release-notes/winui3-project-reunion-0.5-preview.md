@@ -44,7 +44,7 @@ Aside from the [limitations and known issues](#limitations-and-known-issues), bu
 
 WinUI 3 API reference documentation is available here: [WinUI 3 API Reference](/windows/winui/api)
 
-If you created a project using WinUI 3 Preview 4, you can upgrade your project to use Project Reunion 0.5 Preview. See the [WinUI GitHub repository](https://aka.ms/winui3/upgrade-instructions) for detailed instructions.
+If you created a project using WinUI 3 Preview 4, you can upgrade your project to use Project Reunion 0.5 Preview.
 
 ### WebView2
 To use WebView2 with this WinUI 3 preview, please download the Evergreen Bootstrapper or Evergreen Standalone Installer found on [this page](https://developer.microsoft.com/microsoft-edge/webview2/) if you don't already have the WebView2 Runtime installed. 
@@ -190,7 +190,7 @@ and one of the features of WinUI3 is to enable multiple.
 
 There are APIs that internally depend on existence of these APIs, which consequently aren't supported in a desktop app. These APIs generally have a static `GetForCurrentView` method. For example [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView).
 
-For more information on affected APIs as well as workarounds and replacements for these APIs, please see [WinRT API changes for desktop apps](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/winrt-apis-for-desktop.md)
+For more information on affected APIs as well as workarounds and replacements for these APIs, please see [WinRT API changes for desktop apps](https://github.com/microsoft/microsoft-ui-xaml/blob/winui2/main/docs/winrt-apis-for-desktop.md)
 
 ### Known issues
 
