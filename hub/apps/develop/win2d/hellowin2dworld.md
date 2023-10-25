@@ -1,13 +1,15 @@
 ---
-title: "Hello, Win2D World!"
-description: "This topic shows you how to create a simple Hello, World! project for Win2D."
-ms.date: 10/23/2023
+title: Win2D "Hello, World!" quickstart
+description: "This topic shows you how to create a very simple \"Hello, World!\" project for Win2D."
+ms.date: 10/25/2023
 ms.topic: article
 keywords: windows 11, windows 10, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, win2d
 ms.localizationpriority: medium
 ---
 
-# Hello, Win2D World!
+# Win2D "Hello, World!" quickstart
+
+In this topic you'll create a very simple "Hello, World!" project for Win2D.
 
 In Visual Studio, create a new project from one of the following project templates:
 

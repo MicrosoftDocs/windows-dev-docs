@@ -34,7 +34,7 @@ Select the correct item in search results, check your project, and click **Insta
 
 ## Next steps
 
-Next, to learn about creating a simple app, try out the [Hello, Win2D World!](./hellowin2dworld.md) tutorial, or the [Win2D quickstart](./quick-start.md). You can also consult the [features list](./features.md) to discover all the things Win2D can do. To learn more about advanced topics, you can refer to the collection of articles included in the documentation here as well.
+Next, to learn about creating a simple app, try out the [Win2D "Hello, World!" quickstart](./hellowin2dworld.md), or the [Build a simple Win2D app](./quick-start.md) tutorial. You can also consult the [features list](./features.md) to discover all the things Win2D can do. To learn more about advanced topics, you can refer to the collection of articles included in the documentation here as well.
 
 ## Reference
 
