@@ -20,7 +20,7 @@ Windows offers a wide range of options for building apps, including [C++](/windo
 
 Many apps for Windows are written using [UWP](/windows/uwp), [WPF](/dotnet/desktop/wpf/get-started/create-app-visual-studio?view=netdesktop-7.0) or [Windows Forms](/dotnet/desktop/winforms/getting-started-with-windows-forms?view=netframeworkdesktop-4.8), and they all remain viable tools today. For a summary of which to use, see [Windows app development: options and features](dev-options.md).
 
-Looking to the future, if your app will only run on Windows you might want to investigate the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to be cross-platform, consider [.NET MAUI](/dotnet/maui/what-is-maui), a [Progressive Web App (PWA)](/microsoft-edge/progressive-web-apps-chromium/), or [React Native for Windows](../../dev-environment/javascript/react-native-for-windows.md). There are many other choices available ([here's a list of popular options](../../dev-environment/index.md)), but the above are some good starting points.
+If your app will run only on Windows you might want to investigate the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to be cross-platform, consider [.NET MAUI](/dotnet/maui/what-is-maui), a [Progressive Web App (PWA)](/microsoft-edge/progressive-web-apps-chromium/), or [React Native for Windows](../../dev-environment/javascript/react-native-for-windows.md). There are many other choices available ([here's a list of popular options](../../dev-environment/index.md)), but the above are some good starting points.
 
 ## Windows platforms
 
