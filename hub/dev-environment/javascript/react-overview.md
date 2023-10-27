@@ -16,7 +16,7 @@ ms.date: 04/13/2021
 
 React is an open-source JavaScript library for building front end user interfaces. Unlike other JavaScript libraries that provide a full application framework, React is focused solely on creating application views through encapsulated units called **components** that maintain state and generate UI elements. You can place an individual component on a web page or nest hierarchies of components to create a complex UI.
 
-React components are typically written in JavaScript and JSX (JavaScript XML) which is a JavaScript extension that looks likes a lot like HTML, but has some syntax features that make it easier to do common tasks like registering event handlers for UI elements. A React component implements the **render** method, which returns the JSX representing the component's UI. In a web app, the JSX code returned by the component is translated into browser-compliant HTML rendered in the browser.
+React components are typically written in JavaScript and JSX (JavaScript XML) which is a JavaScript extension that looks like a lot like HTML, but has some syntax features that make it easier to do common tasks like registering event handlers for UI elements. A React component implements the **render** method, which returns the JSX representing the component's UI. In a web app, the JSX code returned by the component is translated into browser-compliant HTML rendered in the browser.
 
 ## Does React work on Windows?
 
