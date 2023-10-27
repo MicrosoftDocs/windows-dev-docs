@@ -55,7 +55,7 @@ Windows apps can use a light or dark application theme. The theme affects the co
 
 ![dark theme](images/color/dark-theme.svg)
 
-By default, your Windows app's theme is the user’s theme preference from Windows Settings or the device's default theme (i.e., dark on Xbox). However, you can set the theme for your Windows app.
+By default, your Windows app's theme is the user’s theme preference from Windows Settings or the device's default theme. However, you can set the theme specifically for your Windows app.
 
 ### Changing the theme
 

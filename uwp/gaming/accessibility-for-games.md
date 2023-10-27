@@ -204,7 +204,7 @@ Sound provides feedback to the player, in addition to visual feedback. Good game
 
 ### Fully mappable controls
 
-There are companies and organizations, such as [SpecialEffect](https://www.specialeffect.org.uk), that design custom game controllers that can be used with various gaming systems such as Windows and Xbox One. This customization allows people with different forms of disabilities to play games that they might not be able to play otherwise. For more information on people who are now able to play games independently because of customized controllers, see [Whom we've helped](https://www.specialeffect.org.uk/what-we-do/who-weve-helped) on the SpecialEffect website.
+There are companies and organizations, such as [SpecialEffect](https://www.specialeffect.org.uk), that design custom game controllers that can be used with various gaming systems such as Windows and Xbox devices. This customization allows people with different forms of disabilities to play games that they might not be able to play otherwise. For more information on people who are now able to play games independently because of customized controllers, see [Whom we've helped](https://www.specialeffect.org.uk/what-we-do/who-weve-helped) on the SpecialEffect website.
 
 As a game developer, you can make your game more accessible by allowing fully mappable controls so that gamers have the option to plug in their custom controllers and remap the keys according to their needs.
 

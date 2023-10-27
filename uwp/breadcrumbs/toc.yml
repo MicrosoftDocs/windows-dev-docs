@@ -158,7 +158,7 @@
                   tocHref: /windows/uwp/gaming/
                   topicHref: "/windows/uwp/gaming/e2e" 
                   items:   
-                      - name: UWP on Xbox One
+                      - name: UWP on Xbox
                         tocHref: /windows/uwp/xbox-apps/
                         topicHref: "/windows/uwp/xbox-apps/index"                 
                       - name: Game programming
@@ -166,7 +166,7 @@
                         topicHref: "/windows/uwp/gaming/index"                    
                       - name: DirectX programming
                         tocHref: /windows/uwp/gaming/directx-programming
-                        topicHref: "//windows/uwp/gaming/directx-programming"                 
+                        topicHref: "/windows/uwp/gaming/directx-programming"                 
                       - name: Direct3D graphics learning guide
                         tocHref: /windows/uwp/graphics-concepts/
                         topicHref: "/windows/uwp/graphics-concepts/index"   

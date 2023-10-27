@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 ![hero image](images/header-reveal-focus.svg)
 
-Reveal Focus is a lighting effect for [10-foot experiences](../devices/designing-for-tv.md), such as Xbox One and television screens. It animates the border of focusable elements, such as buttons, when the user moves gamepad or keyboard focus to them. It's turned off by default, but it's simple to enable. 
+Reveal Focus is a lighting effect for [10-foot experiences](../devices/designing-for-tv.md), such as game consoles on television screens. It animates the border of focusable elements, such as buttons, when the user moves gamepad or keyboard focus to them. It's turned off by default, but it's simple to enable.
 
 > **Important APIs**: [Application.FocusVisualKind property](/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
