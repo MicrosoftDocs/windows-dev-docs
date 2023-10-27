@@ -7644,6 +7644,71 @@
       "source_path": "hub/android/xamarin-android.md",
       "redirect_url": "/dotnet/maui/migration/",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/analytics.md",
+      "redirect_url": "/partner-center/analyze-app-performance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/acquisitions-report.md",
+      "redirect_url": "/partner-center/acquisitions-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/add-on-acquisitions-report.md",
+      "redirect_url": "/partner-center/add-on-acquisitions-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/usage-report.md",
+      "redirect_url": "/partner-center/usage-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/health-report.md",
+      "redirect_url": "/partner-center/health-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/ratings-and-reviews.md",
+      "redirect_url": "/partner-center/ratings-and-reviews",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/ratings-report.md",
+      "redirect_url": "/partner-center/ratings-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/reviews-report.md",
+      "redirect_url": "/partner-center/reviews-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/feedback-report.md",
+      "redirect_url": "/partner-center/feedback-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/xbox-analytics-report.md",
+      "redirect_url": "/partner-center/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/insights-report.md",
+      "redirect_url": "/partner-center/insights-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/advertising-performance-report.md",
+      "redirect_url": "/partner-center/advertising-performance-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/download-analytic-reports.md",
+      "redirect_url": "/partner-center/download-analytic-reports",
+      "redirect_document_id": false
     }
   ]
 }

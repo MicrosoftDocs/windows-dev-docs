@@ -795,33 +795,6 @@ items:
                 href: publish/send-push-notifications-to-your-apps-customers.md
               - name: Use targeted offers
                 href: publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
-          - name: Analyze app performance
-            href: publish/analytics.md
-            items:
-              - name: Acquisitions report
-                href: publish/acquisitions-report.md
-              - name: Add-on acquisitions report
-                href: publish/add-on-acquisitions-report.md
-              - name: Usage report
-                href: publish/usage-report.md
-              - name: Health report
-                href: publish/health-report.md
-              - name: Ratings and reviews in the Microsoft Store
-                href: publish/ratings-and-reviews.md
-              - name: Ratings report
-                href: publish/ratings-report.md
-              - name: Reviews report
-                href: publish/reviews-report.md
-              - name: Feedback report
-                href: publish/feedback-report.md
-              - name: Xbox analytics report
-                href: publish/xbox-analytics-report.md
-              - name: Insights report
-                href: publish/insights-report.md
-              - name: Advertising performance report
-                href: publish/advertising-performance-report.md
-              - name: Download analytics reports
-                href: publish/download-analytic-reports.md
       - name: Store Policies and Code of Conduct
         href: publish/store-policies-and-code-of-conduct.md
         items:
