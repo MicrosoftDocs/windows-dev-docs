@@ -53,7 +53,7 @@ The list can be obtained via PowerShell by running the following commands:
 
 ### How to query for OCR language packs
 
-To return the list of support language packs, open PowerShell as an Administrator (right-click, then select "Run as Administrator"), and enter the following command:
+To return the list of all supported language packs, open PowerShell as an Administrator (right-click, then select "Run as Administrator"), and enter the following command:
 
 ```powershell
 Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*' }
@@ -77,7 +77,7 @@ Name  : Language.OCR~~~es-MX~0.0.1.0
 State : NotPresent
 ```
 
-The language and location is abbreviated, so "en-US" would be "English-United States" and "en-GB" would be "English-Great Britain". If a language is not available in the output, then it's not supported by OCR.
+The language and location is abbreviated, so "en-US" would be "English-United States" and "en-GB" would be "English-Great Britain". If a language is not available in the output, then it's not supported by OCR. `State: NotPresent` languages must be installed first.
 
 ### How to install an OCR language pack
 
