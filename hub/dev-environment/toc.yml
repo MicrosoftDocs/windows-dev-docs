@@ -109,6 +109,8 @@ items:
         href: ../powertoys/color-picker.md
       - name: Crop And Lock
         href: ../powertoys/crop-and-lock.md
+      - name: Environment Variables
+        href: ../powertoys/environment-variables.md
       - name: FancyZones
         href: ../powertoys/fancyzones.md
       - name: File Explorer add-ons
