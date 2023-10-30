@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 10/30/2022
+ms.date: 09/19/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -26,10 +26,58 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 <tbody>
 </tr>
 
+<tr class="even">
+<td>October 4, 2023</td>
+<td><a href="store-policies.md">7.17</a></td>
+<td>
+
+
+<p>New 10.4.3 Policy setting guidelines for a discontinued or merged app.</p>
+
+<p>New 10.4.4 added policy setting guidelines for reasonable download time.</p>
+
+<p>New 10.5.8 Explicit policy around collection of child data.</p>
+
+<p>New 11.14 Policy outlining gambling requirements and restrictions.</p>
+
+<p>Update to 10.1 Extends game franchise hub to PC and requires them to be categorized as games.</p>
+
+<p>Update to 10.1.5 Clarifies that the product must be distributed/acquired through the Store.</p>
+
+<p>Update to 10.1.6 Excludes game franchise hubs from being submitted as Storefronts, which are subject to app policies and commercial terms.</p>
+
+<p>Update to 10.2.4 Clarified wording dependency on non Microsoft provided driver or NT service.</p>
+
+<p>Update to 10.2.6 Provide more clarity around cryptocurrency wallets and trading platforms.</p>
+
+<p>Update to 10.2.8 Added a link to the blog post for “A principled approach to app pinning and app defaults in Windows”.</p>
+
+<p>Update to 10.4.1 “should” to “must” to reiterate the importance.</p>
+
+<p>Update 10.4.2 Remove 10.4.3 copy and move to 10.4.2</p>
+
+<p>Update to 10.8.1 Providing clarification on disallowing any real-world value exchange in game with a clearer policy.</p>
+
+<p>Update to 10.8.2 Tightened up language to provide clarity around 3P billing requirements and restrictions.</p>
+
+<p>Update to 10.8.3 clarification around accounts requiring financial information.</p>
+
+<p>Update to 10.10.2 & 10.10.3 consolidated 10.10.3 into 10.10.2</p>
+
+<p>Update to 10.13.2 Removed reference to Xbox One.</p>
+
+<p>Update to 10.13.3 Removed reference to Xbox One.</p>
+
+<p>Update to 11.2 Updating IP infringement verbiage to align with what will be updated in the Report an App feature.</p>
+
+<p>Update to 11.13 Strengthen language around limiting access to mature/adult content to minors.</p>
+
+</td>
+</tr>
 
 <tr class="odd">
 <td>July 18, 2022</td>
-<td><a href="store-policies.md">7.16.1</a></td>
+<td><a href="store-policy-archive/store-policy-7-16-1.md">7.16.1</a></td>
 <td>
 <p>Update to 10.8.7 to remove language related to open-source or other free software.</p>
 <p>Update to 11.2 adding a link to Microsoft’s online infringement reporting form.</p>
