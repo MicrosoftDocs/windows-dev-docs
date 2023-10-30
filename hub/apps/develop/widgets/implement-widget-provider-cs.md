@@ -414,7 +414,7 @@ public WidgetProvider()
         var customState = widgetInfo.CustomState;
         if (!RunningWidgets.ContainsKey(widgetId))
         {
-            CompactWidgetInfo runningWidgetInfo = new CompactWidgetInfo() { widgetId = widgetName, widgetName = widgetId };
+            CompactWidgetInfo runningWidgetInfo = new CompactWidgetInfo() { widgetId = widgetId, widgetName = widgetName };
             try
             {
                 // If we had any save state (in this case we might have some state saved for Counting widget)
