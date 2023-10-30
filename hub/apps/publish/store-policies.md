@@ -12,9 +12,9 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 **Document version: 7.17**
 
-**Publish date: October 4, 2023**
+**Publish date: October 30, 2023**
 
-**Effective date: November 4, 2023**
+**Effective date: November 30, 2023**
 
 > [!NOTE]
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](store-policies-change-history.md).
@@ -71,7 +71,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 ### 10.1 Distinct Function & Value; Accurate Representation
 
 - Your product and its associated metadata, including but not limited to your app title, description, screenshots, trailers, content rating and product category, must accurately and clearly reflect the source, functionality, and features of your product.  
-- Game products, including products that primarily offer remote game play and/or control functionality of games running on other devices or platforms, or enable access to a catalog of games behind a gaming subscription service, must be categorized as a game in our Store. 
+- Game products, including products that primarily offer remote game play and/or control functionality of games running on other devices or platforms, or enable access to a catalog of games behind a gaming subscription service, or deliver versions of the same game or from games of a single franchise, must be categorized as a game in our Store.
 
 **10.1.1**
 
@@ -277,7 +277,7 @@ The following products are required to use the Microsoft Store in-product purcha
 
 - (b) Products offered on Xbox consoles.  
 
-If your product is required to use the Microsoft in-product purchase API It must not direct users to a purchase mechanism other than the Microsoft Store in-product purchase API, but may enable users to consume previously purchased digital content or services.
+If your product is required to use the **Microsoft in-product purchase API** It must not direct users to a purchase mechanism other than the Microsoft Store in-product purchase API, but may enable users to consume previously purchased digital content or services.
 
 Non-game in-app products made available on PC devices may either use a secure third-party purchase API or the Microsoft Store in-product purchase API for in-app purchases of digital items or services that are consumed or used within the product.
 
@@ -299,7 +299,7 @@ In cases where your product’s use of a secure third-party purchase API is allo
 
 * If your product requires user registration or payment transaction experience at install, it must take place in the product’s in-app experience. After installation of your product is completed, users may be directed to a browser to complete registration or transactions.
 
-Digital in-game product offerings cannot be converted to, or exchanged for, any legally valid currency (for example, USD, Euro, etc.) or other currency of real-world value.
+* Digital in-game product offerings cannot be converted to, or exchanged for, any legally valid currency (for example, USD, Euro, etc.) or other currency of real-world value.
 
 
 **10.8.3**
@@ -307,8 +307,6 @@ Digital in-game product offerings cannot be converted to, or exchanged for, any 
 If your product requires financial account information, you must submit that product from a company account type.
 
 Financial information includes, but is not limited to, entering bank or credit card account information, account pins or passwords, tax ID information, private or secret keys, or initiating transactions.
-
-Products from individual accounts cannot require financial information for primary functionality. Financial information includes, but it not limited to, entering bank or credit card account information, account pins or passwords, tax ID information, private keys, or cryptocurrency exchanges, initiating transactions, Access to cryptocurrency exchanges, transactions, private keys, API secret keys, recovery phrases etc. Cryptocurrency products that only view public keys (wallet addresses) and associated transaction records are allowed and do not require a privacy policy.
 
 
 **10.8.4**
@@ -411,11 +409,11 @@ Game products that target Xbox consoles, including products that primarily offer
 
 **10.13.2**
 
-Game products that allow cross-player communication or synchronous network play on Xbox One devices must use Xbox Live and be approved through the [ID@Xbox](https://www.xbox.com/Developers/id) program.
+Game products that allow cross-player communication or synchronous network play on Xbox consoles must use Xbox Live and be approved through the [ID@Xbox](https://www.xbox.com/Developers/id) program.
 
 **10.13.3**
 
-Game products on Xbox One must not present an alternate friends list obtained outside Xbox Live.
+Game products on Xbox consoles must not present an alternate friends list obtained outside Xbox Live.
 
 **10.13.4**
 
@@ -487,7 +485,7 @@ Metadata and other content you submit to accompany your product may contain only
 
 ### 11.2 Content Including Names, Logos, Original and Third Party
 
-All content in your product and associated metadata must be either originally created by the application provider, appropriately licensed from the third-party rights holder, used as permitted by the rights holder, or used as otherwise permitted by law. Reporting infringement complaints can be done via our online form: [Report intellectual property infringement](https://www.microsoft.com/legal/intellectualproperty/infringement).
+All content in your product and associated metadata must be either originally created by the application provider, appropriately licensed from the third-party rights holder, used as permitted by the rights holder, or used as otherwise permitted by law. Intellectual property owners can report infringement complaints via our online form: [Report intellectual property infringement](https://www.microsoft.com/legal/intellectualproperty/infringement).
 
 ### 11.3 Risk of Harm
 
@@ -561,6 +559,7 @@ If your product is a storefront, or enables access to a storefront, the storefro
 - Publish and make available a developer and/or publisher terms of service and content guidelines for products listed in your marketplace.
 - Provide a means for users to report inappropriate content, or content that violates your terms of service or content guidelines.
 - Implement a method for review and detection of content that is in violation of your terms or guidelines and take enforcement actions.
+- Enable users to opt-into content that is higher rated than the base product and prevent minors from accessing content that is higher rated than their age or parental controls allow.
 - Comply with all legal and regulatory requirements regarding operations of digital storefronts.
 
 ### 11.14 Gambling Apps
@@ -571,6 +570,7 @@ Apps that process real-world gambling transactions must:
 - Be rated with an 18+ age rating. 
 - Use a secure third-party payment API to process these transactions. 
 - Real-world gambling is not permitted in the following markets: Brazil, Chile, China, Russia, Singapore, Taiwan, United States of America, Republic of Korea, and India. 
+
 Real-world gambling includes any payout of winnings which can be converted into items of real-world value.
 
 
