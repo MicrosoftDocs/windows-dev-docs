@@ -27,7 +27,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 
 <tr class="even">
-<td>October 4, 2023</td>
+<td>October 30, 2023</td>
 <td><a href="store-policies.md">7.17</a></td>
 <td>
 
