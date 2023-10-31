@@ -26,7 +26,7 @@ To add a new profile:
 
  - Select **New profile**
  - Enter profile name
- - Set Enabled toggle to On to apply the profile right after creaton
+ - Set Enabled toggle to On to apply the profile right after creation
  - Select **Add variable** to add variables to profile (either new variable or existing User/System variables).
  - Select **Save**
 
