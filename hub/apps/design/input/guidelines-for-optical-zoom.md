@@ -44,7 +44,7 @@ Use the following guidelines for apps that support either resizing or optical zo
 -   If maximum and minimum size constraints or boundaries are defined, use visual feedback to demonstrate when the user reaches or exceeds those boundaries.
 -   Use snap points to influence zooming and resizing behavior by providing logical points at which to stop the manipulation and ensure a specific subset of content is displayed in the viewport. Provide snap points for common zoom levels or logical views to make it easier for a user to select those levels. For example, photo apps might provide a resizing snap point at 100% or, in the case of mapping apps, snap points might be useful at city, state, and country views.
 
-    Snap points enable users to be imprecise and still achieve their goals. If you're using XAML, see the snap points properties of [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer). For JavaScript and HTML, use [**-ms-content-zoom-snap-points**](/previous-versions/hh771895(v=vs.85)).
+    Snap points enable users to be imprecise and still achieve their goals. If you're using XAML, see the snap points properties of [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer).
 
     There are two types of snap-points:
 
