@@ -113,6 +113,8 @@
       items:
         - name: Overview
           href: controls/lists.md
+        - name: Items view
+          href: controls/itemsview.md
         - name: List view and grid view
           href: controls/listview-and-gridview.md
         - name: Flip view
