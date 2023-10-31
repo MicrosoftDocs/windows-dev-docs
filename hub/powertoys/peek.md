@@ -8,7 +8,7 @@ no-loc: [PowerToys, Windows, Peek, Win]
 
 # Peek utility
 
-A system-wide utility for Windows that allows you to preview file content without the need to open multiple applications or interrupt your workflow. It offers a seamless and quick file preview experience for various file types, including images, web pages, Markdown files, text files, and developer files.
+A system-wide utility for Windows that allows you to preview file content without the need to open multiple applications or interrupt your workflow. It offers a seamless and quick file preview experience for various file types, including images, Office documents, web pages, Markdown files, text files, and developer files.
 
 ![Screenshot of PowerToys Peek utility.](../images/powertoys-peek.png)
 
