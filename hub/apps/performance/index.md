@@ -40,8 +40,6 @@ Visual Studio offers tooling to help you monitor your application and give you i
 
 * [Case Study: Double Performance in under 30 minutes](https://devblogs.microsoft.com/visualstudio/case-study-double-performance-in-under-30-minutes/)
 
-* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
-
 ### ![Windows Performance Analyzer Icon](./images/wpa.png) Windows Performance Toolkit
 
 [Windows Performance Recorder](/windows-hardware/test/wpt/windows-performance-recorder) and [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer) enable detailed monitoring and analysis of your application and the entire system using [Event Tracing for Windows (ETW)](/windows-hardware/test/wpt/event-tracing-for-windows). See the links below on how to get started.

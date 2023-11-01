@@ -116,7 +116,7 @@ While our guidance to [Add Arm support to your Windows app](add-arm-support.md) 
 
 ## External resources
 
-- [Developer Resources for Windows on Snapdragon by Qualcomm](https://developer.qualcomm.com/hardware/windows-on-snapdragon/developer-resources)
+- [Developer Resources for Windows on Snapdragon by Qualcomm](https://www.qualcomm.com/developer/windows-on-snapdragon#overview)
 - [Developer.arm.com: Windows on Arm](https://developer.arm.com/solutions/os/windows-on-arm)
 - [Developer.arm.com: Port applications to Windows on Arm](https://developer.arm.com/documentation/102341/0400/Overview)
 - [Developer.arm.com: Building a Native Windows on Arm App with WinUI 3](https://developer.arm.com/documentation/102767/0100/)

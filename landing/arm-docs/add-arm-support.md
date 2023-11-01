@@ -96,9 +96,8 @@ If you are doing development on a Windows on Arm device, then you have an easy s
 If you are looking for hardware to use for Continuous Integration (CI) and testing, these are a few of the Windows devices with an Arm64-based processor:
 
 - [Windows Dev Kit 2023](/windows/arm/dev-kit)
-- [Surface Pro 9 5G](https://www.microsoft.com/d/surface-pro-9/93vkd8np4fvk?activetab=pivot:overviewtab&rtc=1)
+- [Surface Pro 9 5G](https://www.microsoft.com/en-us/d/surface-pro-9/93vkd8np4fvk)
 - [Lenovo x13s](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx/thinkpad--x13s-(13-inch-snapdragon)/len101t0019)
-- [Surface Pro X](https://www.microsoft.com/d/surface-pro-x/8xtmb6c575md)
 
 If you are looking to set up virtual machines (VMs) running Windows on Arm to support CI and testing, consider:
 
