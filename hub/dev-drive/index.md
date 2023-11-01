@@ -90,7 +90,7 @@ To find and **use unallocated space on an existing drive**, you can open **Syste
 
 As an alternative to using Windows Settings, there are two options for creating Dev Drive storage volumes from the command line. Both options require that you open the command line as an Administrator. You must be a member of the Admin group to format a hard drive. These command line formatting methods may be preferred when creating multiple Dev Drives or as an admin for multiple machines.
 
-1. Using the [Format.com](/windows-server/administration/windows-commands/format) command line tool from Windows CMD or PowerShell:
+1. Using the [Format](/windows-server/administration/windows-commands/format) command line tool from Windows CMD or PowerShell:
 
   ```CMD
   Format D: /DevDrv /Q
