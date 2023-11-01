@@ -17,7 +17,7 @@ You must provide a secure (HTTPS) package URL. Your submission will not proceed 
 The package URL must host your app’s installer packaged as an .exe or .msi file. Your submission will not proceed to the next step if this test has failed.
 
 > [!IMPORTANT]
-> The installer binary on the package URL must not change once it has been submitted. We recommend that you create and submit versioned package URLs (such as https://contoso.com/downloads/1.1/myinstaller.msi). If you need to update the package URL, you may create a new [app submission](../../../apps/publish/publish-your-app/create-app-submission.md) with a new package URL.
+> The installer binary on the package URL must not change once it has been submitted. We recommend that you create and submit versioned package URLs (such as `https://contoso.com/downloads/1.1/myinstaller.msi`). If you need to update the package URL, you may create a new [app submission](../../../apps/publish/publish-your-app/create-app-submission.md) with a new package URL.
 
 ### Malware test
 
