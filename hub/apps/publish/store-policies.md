@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 09/19/2023
+ms.date: 11/02/2023
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -575,7 +575,7 @@ Real-world gambling includes any payout of winnings which can be converted into 
 
 
 ---
-<sup>1</sup>"Store" or "Microsoft Store" means a Microsoft owned or operated platform, however named, through which Apps may be offered to or acquired by Customers. Unless otherwise specified, Store includes the Microsoft Store, the Windows Store, the Xbox Store, Microsoft Store for Business, and Microsoft Store for Education.
+<sup>1</sup>"Store" or "Microsoft Store" means a Microsoft owned or operated platform, however named, through which Apps may be offered to or acquired by Customers. Unless otherwise specified, Store includes the Microsoft Store, the Windows Store, and the Xbox Store.
 
 ## Certification Appeal Process
 
