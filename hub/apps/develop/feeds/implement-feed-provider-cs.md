@@ -26,7 +26,7 @@ This sample code in this article is adapted from the TBD - sample URL [Windows A
 
 ## Create a new C# console app
 
-In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleWidgetProvider". When prompted, set the target .NET version to 6.0. 
+In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleFeedProvider". When prompted, set the target .NET version to 6.0. 
 
 When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version 10.0.19041.0 or later.
 
@@ -38,14 +38,14 @@ This sample uses the latest stable Windows App SDK NuGet package. In **Solution 
 
 ## Add a WidgetProvider class to handle widget operations
 
-In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **Add**. In the generated WidgetProvider.cs file, update the class definition to indicate that it implements the **IWidgetProvider** interface.
+In Visual Studio, right-click the `ExampleFeedProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **Add**. In the generated WidgetProvider.cs file, update the class definition to indicate that it implements the **IFeedProvider** interface.
 
 ```csharp
-// WidgetProvider.cs
-internal class WidgetProvider : IWidgetProvider
+// FeedProvider.cs
+internal class FeedProvider : IFeedProvider
 ```
 
-## Prepare to track enabled widgets
+## Prepare to track enabled feeds
 
 [TBD - I can't tell if you need to implement separate feeds in separate feed providers. Leaving this section here for now as a reminder]
 
@@ -158,7 +158,7 @@ void OnCustomQueryParametersRequested(CustomQueryParametersRequestedArgs args)
 
 ## Initialize the list of enabled feeds on startup
 
-[TBD - this was the "what you do in the constructor" section for widgets. Needs to be updated.]
+[TBD - this was the "what you do in the constructor" section for widgets. Needs to be updated for feeds.]
 
 When our widget provider is first initialized, it's a good idea to ask **WidgetManager** if there are any running widgets that our provider is currently serving. It will help to recover the app to the previous state in case of the computer restart or the provider crash. Call **WidgetManager.GetDefault** to get the default widget manager instance for the app. Then call [GetWidgetInfos](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getwidgetinfos), which returns an array of [WidgetInfo](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetinfo) objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the class definition for the **WidgetProvider** class.
 
@@ -424,7 +424,7 @@ Next, add the extension that registers the app as a widget provider. Paste the [
 
 For detailed descriptions and format information for all of these elements, see [Feed provider package manifest XML format](feed-provider-manifest.md).
 
-## Add icons and other images to your packaging project
+## Add icons to your packaging project
 
 In **Solution Explorer**, right-click your **ExampleFeedProviderPackage** and select **Add->New Folder**. Name this folder ProviderAssets as this is what was used in the `Package.appxmanifest` from the previous step. This is where we will store our feed's **Icon**. Make sure the image names match what comes after **Path=ProviderAssets\\** in your `Package.appxmanifest` or the widgets will not show up in the widget host.
 
