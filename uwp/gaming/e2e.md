@@ -117,7 +117,7 @@ If you want access to even more Xbox Live capabilities, dedicated marketing and 
     </colgroup>
     <tr>
         <td>Xbox Live Creators Program</td>
-        <td><a href="https://developer.microsoft.com/games/xbox/xboxlive/creator">Learn more about the Xbox Live Creators Program</a></td>
+        <td><a href="https://developer.microsoft.com/games/publish/">Learn more about the Xbox Live Creators Program</a></td>
     </tr>
 </table>
 
