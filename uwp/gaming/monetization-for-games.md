@@ -191,7 +191,7 @@ These are other ad networks that provide SDKs for serving ads to UWP apps and ga
 
 #### Vungle
 
-The Vungle SDK for Windows offer video ads in apps and games. To download the SDK, go to [Vungle SDK](https://publisher.vungle.com/sdk/).
+The Vungle SDK for Windows offer video ads in apps and games. To download the SDK, go to [Vungle SDK](https://support.vungle.com/hc/articles/15733752671131).
 
 #### Smaato
 

@@ -14,7 +14,7 @@ This article is a getting started guide for creators who want to develop games o
 Here are some questions to help you find the info you need:
 * Are you an experienced game developer and want all the details? See the [Windows game development guide](e2e.md).
 * Completely new to coding? Something fun like the [Minecraft Hour of Code tutorials](https://code.org/minecraft) might be of interest.
-* Just looking for great games to play? Check out the [Microsoft Store](https://www.microsoft.com/store).
+* Just looking for great games to play? Check out the [Microsoft Store](https://apps.microsoft.com/).
 * Ready to start developing great games for Windows or Xbox?  You’re in the right place!
 
 ## Quick start guide
@@ -46,7 +46,7 @@ For more samples, see [Game samples](e2e.md#game-samples).
 
 ### Step 4: Consider joining a program
 
-If you want to develop an Xbox game or use Xbox Live features in your game, join either the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or [ID@Xbox](https://www.xbox.com/Developers/id) program. 
+If you want to develop an Xbox game or use Xbox Live features in your game, join either the [Xbox Live Creators Program](https://developer.microsoft.com/games/publish/) or [ID@Xbox](https://www.xbox.com/Developers/id) program. 
 
 To learn more about Xbox Live features that are available to each of the programs, see [Feature Table](/gaming/xbox-live/get-started/join-dev-program/live-feature-comparison-table). For more information, see [Developer programs](e2e.md#developer-programs).
 

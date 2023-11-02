@@ -136,7 +136,7 @@ The ID@Xbox program helps qualified game developers self-publish on Windows and 
     </tr>
     <tr>
         <td>ID@Xbox consumer site</td>
-        <td><a href="https://www.idatxbox.com/">ID@Xbox</a></td>
+        <td><a href="https://www.xbox.com/games/id">ID@Xbox</a></td>
     </tr>
 </table>
 
@@ -1456,7 +1456,7 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     </tr>
     <tr>
         <td>Use Vungle to add video ads into your games</td>
-        <td><a href="https://publisher.vungle.com/sdk/">Get Windows SDK for Vungle</a></td>
+        <td><a href="https://support.vungle.com/hc/articles/15733752671131">Get Vungle SDK for Windows</a></td>
     </tr>
 </table>
 
