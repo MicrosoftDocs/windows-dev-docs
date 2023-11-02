@@ -79,91 +79,92 @@ This example will declare some static strings to define the JSON templates for e
 // WidgetProvider.cs
 
 // Class members of WidgetProvider
-const string weatherWidgetTemplate = @"
+const string weatherWidgetTemplate = """
 {
-    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
-    ""type"": ""AdaptiveCard"",
-    ""version"": ""1.0"",
-    ""speak"": ""<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>"",
-    ""backgroundImage"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg"",
-    ""body"": [
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "speak": "<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>",
+    "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg",
+    "body": [
         {
-            ""type"": ""TextBlock"",
-            ""text"": ""Redmond, WA"",
-            ""size"": ""large"",
-            ""isSubtle"": true,
-            ""wrap"": true
+            "type": "TextBlock",
+            "text": "Redmond, WA",
+            "size": "large",
+            "isSubtle": true,
+            "wrap": true
         },
         {
-            ""type"": ""TextBlock"",
-            ""text"": ""Mon, Nov 4, 2019 6:21 PM"",
-            ""spacing"": ""none"",
-            ""wrap"": true
+            "type": "TextBlock",
+            "text": "Mon, Nov 4, 2019 6:21 PM",
+            "spacing": "none",
+            "wrap": true
         },
         {
-            ""type"": ""ColumnSet"",
-            ""columns"": [
+            "type": "ColumnSet",
+            "columns": [
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""auto"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
                         {
-                            ""type"": ""Image"",
-                            ""url"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png"",
-                            ""size"": ""small"",
-                            ""altText"": ""Mostly cloudy weather""
+                            "type": "Image",
+                            "url": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png",
+                            "size": "small",
+                            "altText": "Mostly cloudy weather"
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""auto"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""46"",
-                            ""size"": ""extraLarge"",
-                            ""spacing"": ""none"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "46",
+                            "size": "extraLarge",
+                            "spacing": "none",
+                            "wrap": true
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""stretch"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""°F"",
-                            ""weight"": ""bolder"",
-                            ""spacing"": ""small"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "°F",
+                            "weight": "bolder",
+                            "spacing": "small",
+                            "wrap": true
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""stretch"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""Hi 50"",
-                            ""horizontalAlignment"": ""left"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "Hi 50",
+                            "horizontalAlignment": "left",
+                            "wrap": true
                         },
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""Lo 41"",
-                            ""horizontalAlignment"": ""left"",
-                            ""spacing"": ""none"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "Lo 41",
+                            "horizontalAlignment": "left",
+                            "spacing": "none",
+                            "wrap": true
                         }
                     ]
                 }
             ]
         }
     ]
-}";
+}
+""";
 
 const string countWidgetTemplate = @"
 {                                                                     
