@@ -140,21 +140,6 @@ The ID@Xbox program helps qualified game developers self-publish on Windows and 
     </tr>
 </table>
 
-#### Xbox tools and middleware
-
-The Xbox Tools and Middleware Program licenses Xbox development kits to professional developers of game tools and middleware. Developers accepted into the program can share and distribute their Xbox XDK technologies to other licensed Xbox developers.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Contact the tools and middleware program</td>
-        <td><a href="mailto:xboxtlsm@microsoft.com">xboxtlsm@microsoft.com</a></td>
-    </tr>
-</table>
-
 ### Game samples
 
 There are many Windows game and app samples available to help you understand Windows gaming features, and get a quick start on game development. Samples are developed and published regularly, so don't forget to occasionally check back on sample portals to see what's new. You can also [watch](https://help.github.com/en/articles/watching-and-unwatching-repositories) GitHub repos to be notified of changes and additions.
