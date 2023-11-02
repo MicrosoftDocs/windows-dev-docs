@@ -1,5 +1,5 @@
 ---
-title: Widget provider package manifest XML format
+title: Feed provider package manifest XML format
 description: Describes the package manifest XML format for Windows widget providers. 
 ms.topic: article
 ms.date: 08/12/2022
@@ -8,7 +8,7 @@ author: drewbatgit
 ms.localizationpriority: medium
 ---
 
-# Widget provider package manifest XML format
+# Feed provider package manifest XML format
 
 In order to be displayed in the widgets host, apps that support Windows feeds must register their feed provider with the system. For Win32 apps, only packaged apps are currently supported and feed providers specify their registration information in the app package manifest file. This article documents the XML format for feed registration. See the [Example](#example) section for a code listing of an example package manifest for a Win32 widget provider.
 
