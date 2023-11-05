@@ -529,7 +529,7 @@ You can set the enabled state for all plugins not listed here using the policy "
 
 ##### Registry information
 
-* Path: Software\Policies\PowerToys
+* Path: Software\Policies\PowerToys\PowerLauncherIndividualPluginEnabledList
 * Name: `<PluginID>`
 * Type: STRING
 
@@ -556,5 +556,5 @@ Example value:
 
 ```
 <enabled/>
-<data id="PowerToysRunIndividualPluginEnabledList" value="0778F0C264114FEC8A3DF59447CF0A74&#xF000;2&#xF000;791FC278BA414111B8D1886DFE447410 &#xF000;0&#xF000;CEA0FDFC6D3B4085823D60DC76F28855 &#xF000;1"/>
+<data id="PowerToysRunIndividualPluginEnabledList" value="0778F0C264114FEC8A3DF59447CF0A74&#xF000;2&#xF000;791FC278BA414111B8D1886DFE447410&#xF000;0&#xF000;CEA0FDFC6D3B4085823D60DC76F28855&#xF000;1"/>
 ```
