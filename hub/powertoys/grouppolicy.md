@@ -115,10 +115,12 @@ This policy has a higher priority than the policy "Configure global utility enab
 
 #### Table of utility Policies
 
-Utility|ADMX GP name|ADMX GP unique name /</br>Registry value name /</br>Intune PolicyID
----|---|---|---|---|
-Always On Top|Always On Top: Configure enabled state|ConfigureEnabledUtilityAlwaysOnTop
-Awake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake
+|Utility|ADMX GP name|ADMX GP unique name /</br>Registry value name /</br>Intune PolicyID|
+|---|---|---|---|---|
+|Always On Top|Always On Top: Configure enabled state|ConfigureEnabledUtilityAlwaysOnTop|
+|Awake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake|
+
+
 Color Picker|Color Picker: Configure enabled state|ConfigureEnabledUtilityColorPicker
 Crop And Lock|Crop And Lock: Configure enabled state|ConfigureEnabledUtilityCropAndLock
 Environment Variables|Environment Variables: Configure enabled state|ConfigureEnabledUtilityEnvironmentVariables
