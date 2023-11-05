@@ -74,6 +74,7 @@ The individual enabled state policies for the utilities will override this polic
 * Type: DWORD
 
 <u>Example:</u>
+
 ```
 0x00000000
 ```
@@ -81,11 +82,13 @@ The individual enabled state policies for the utilities will override this polic
 #### Intune information
 
 <u>OMA-URI:</u>
+
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureGlobalUtilityEnabledState
 ```
 
-<u>Example value</u>
+<u>Example value:</u>
+
 ```
 <disabled/>
 ```
@@ -164,6 +167,7 @@ Video Conference Mute: Configure enabled state
 * Type: DWORD
 
 <u>Example:</u>
+
 ```
 0x00000000
 ```
@@ -171,12 +175,15 @@ Video Conference Mute: Configure enabled state
 #### Intune information
 
 <u>OMA-URI:</u>
+
 For the `PolicyID` please see the table above.
+
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/<PolicyID>
 ```
 
-<u>Example value</u>
+<u>Example value:</u>
+
 ```
 <disabled/>
 ```
