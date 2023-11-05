@@ -73,7 +73,7 @@ The individual enabled state policies for the utilities will override this polic
 * Name: ConfigureGlobalUtilityEnabledState
 * Type: DWORD
 
-<ins>Example</ins>
+Example:
 
 ```
 0x00000000
@@ -81,13 +81,13 @@ The individual enabled state policies for the utilities will override this polic
 
 #### Intune information
 
-<ins>OMA-URI</ins>
+OMA-URI:
 
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureGlobalUtilityEnabledState
 ```
 
-<ins>Example value</ins>
+Example value:
 
 ```
 <disabled/>
@@ -168,7 +168,7 @@ This policy has a higher priority than the policy "Configure global utility enab
 * Name: See the table above.
 * Type: DWORD
 
-<ins>Example</ins>
+Example:
 
 ```
 0x00000000
@@ -176,15 +176,14 @@ This policy has a higher priority than the policy "Configure global utility enab
 
 #### Intune information
 
-<ins>OMA-URI</ins>
+OMA-URI:
 
-For the `PolicyID` please see the table above.
 
 ```
-./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/<PolicyID>
+./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/<PolicyID (Please see the table above.)>
 ```
 
-<ins>Example value</ins>
+Example value:
 
 ```
 <disabled/>
@@ -202,7 +201,6 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 
 - If this setting is not configured or enabled, the user can control experimentation in the PowerToys settings menu.
 - If this setting is disabled, experimentation is not allowed.
-- If this setting is not configured, experimentation is allowed.
 
 #### Group Policy (ADMX) info
 
@@ -219,7 +217,7 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 * Name: AllowExperimentation
 * Type: DWORD
 
-<ins>Example</ins>
+Example:
 
 ```
 0x00000000
@@ -227,13 +225,13 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 
 #### Intune information
 
-<ins>OMA-URI</ins>
+OMA-URI:
 
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/AllowExperimentation
 ```
 
-<ins>Example value</ins>
+Example value:
 
 ```
 <disabled/>
@@ -272,24 +270,24 @@ This policy configures whether PowerToys per-user installation is allowed or not
 * Name: DisablePerUserInstallation
 * Type: DWORD
 
-<ins>Example</ins>
+Example:
 
 ```
-0x00000000
+0x00000001
 ```
 
 ##### Intune information
 
-<ins>OMA-URI</ins>
+OMA-URI:
 
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePerUserInstallation
 ```
 
-<ins>Example value</ins>
+Example value:
 
 ```
-<disabled/>
+<enabled/>
 ```
 
 #### Disable automatic downloads
@@ -320,24 +318,24 @@ This policy configures whether automatic downloads of available updates are disa
 * Name: DisableAutomaticUpdateDownload
 * Type: DWORD
 
-<ins>Example</ins>
+Example:
 
 ```
-0x00000000
+0x00000001
 ```
 
 ##### Intune information
 
-<ins>OMA-URI</ins>
+OMA-URI:
 
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableAutomaticUpdateDownload
 ```
 
-<ins>Example value</ins>
+Example value:
 
 ```
-<disabled/>
+<enabled/>
 ```
 
 #### Suspend Action Center notification for new updates
@@ -371,24 +369,24 @@ This policy configures whether the action center notification for new updates is
 * Name: SuspendNewUpdateToast
 * Type: DWORD
 
-<ins>Example</ins>
+Example:
 
 ```
-0x00000000
+0x00000001
 ```
 
 ##### Intune information
 
-<ins>OMA-URI</ins>
+OMA-URI:
 
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/SuspendNewUpdateToast
 ```
 
-<ins>Example value</ins>
+Example value:
 
 ```
-<disabled/>
+<enabled/>
 ```
 
 <!-- This policy is implemented for later usage (PT v1.0 and later) and therefore inactive. (To make it working please update `src/runner/UpdateUtils.cpp`)
@@ -420,7 +418,7 @@ This policy allows you to disable automatic update checks running in the backgro
 * Name: DisablePeriodicUpdateCheck
 * Type: DWORD
 
-<ins>Example</ins>
+Example:
 
 ```
 0x00000000
@@ -428,16 +426,16 @@ This policy allows you to disable automatic update checks running in the backgro
 
 ##### Intune information
 
-<ins>OMA-URI</ins>
+OMA-URI:
 
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePeriodicUpdateCheck
 ```
 
-<ins>Example value</ins>
+Example value:
 
 ```
-<disabled/>
+<enabled/>
 ```
 -->
 
@@ -477,7 +475,7 @@ You can override this policy for individual plugins using the policy "Configure 
 * Name: PowerToysRunAllPluginsEnabledState
 * Type: DWORD
 
-<ins>Example</ins>
+Example:
 
 ```
 0x00000000
@@ -485,13 +483,13 @@ You can override this policy for individual plugins using the policy "Configure 
 
 ##### Intune information
 
-<ins>OMA-URI</ins>
+OMA-URI:
 
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunAllPluginsEnabledState
 ```
 
-<ins>Example value</ins>
+Example value:
 
 ```
 <disabled/>
@@ -535,7 +533,7 @@ You can set the enabled state for all plugins not listed here using the policy "
 * Name: `<PluginID>`
 * Type: STRING
 
-<ins>Example</ins>
+Example:
 
 ```
 Software\Policies\PowerToys\0778F0C264114FEC8A3DF59447CF0A74 = 2 (=> User can enable/disable the OneNote plugin.)
@@ -545,18 +543,18 @@ Software\Policies\PowerToys\CEA0FDFC6D3B4085823D60DC76F28855 = 1 (=> Calculator 
 
 ##### Intune information
 
-<ins>OMA-URI</ins>
+OMA-URI:
 
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunIndividualPluginEnabledState
 ```
 
-<ins>Example value</ins>
+Example value:
 
 > [!NOTE]
 > Syntax: `<PluginID>&#xF000;<Number>&#xF000;<PluginID>&#xF000;<Number>`
 
 ```
-<disabled/>
+<enabled/>
 <data id="PowerToysRunIndividualPluginEnabledList" value="0778F0C264114FEC8A3DF59447CF0A74&#xF000;2&#xF000;791FC278BA414111B8D1886DFE447410 &#xF000;0&#xF000;CEA0FDFC6D3B4085823D60DC76F28855 &#xF000;1"/>
 ```
