@@ -73,7 +73,7 @@ The individual enabled state policies for the utilities will override this polic
 * Name: ConfigureGlobalUtilityEnabledState
 * Type: DWORD
 
-<ins>Example:</ins>
+<ins>Example</ins>
 
 ```
 0x00000000
@@ -81,13 +81,13 @@ The individual enabled state policies for the utilities will override this polic
 
 #### Intune information
 
-<ins>OMA-URI:</ins>
+<ins>OMA-URI</ins>
 
 ```
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureGlobalUtilityEnabledState
 ```
 
-<ins>Example value:</ins>
+<ins>Example value</ins>
 
 ```
 <disabled/>
@@ -110,45 +110,47 @@ For each utility shipped with PowerToys, there's a "Configure enabled state" pol
 
 This policy has a higher priority than the policy "Configure global utility enabled state" and overrides it.
 
+> [!NOTE]
+> PDF file preview: There have been reports of incompatibility between the PDF Preview Handler and Outlook.
+
 #### Table of utility Policies
 
-Utility|ADMX: GP Unique name|ADMX: GP name|Registry: Value name|Intune: PolicyID
+Utility|ADMX GP name|ADMX GP unique name /</br>Registry value name /</br>Intune PolicyID
 ---|---|---|---|---|
-Always On Top|ConfigureEnabledUtilityAlwaysOnTop|Always On Top: Configure enabled state|ConfigureEnabledUtilityAlwaysOnTop|ConfigureEnabledUtilityAlwaysOnTop
-Awake|ConfigureEnabledUtilityAwake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake|ConfigureEnabledUtilityAwake
-
-Color Picker: Configure enabled state
-Crop And Lock: Configure enabled state
-Environment Variables: Configure enabled state
-FancyZones: Configure enabled state
-File Locksmith: Configure enabled state
-SVG file preview: Configure enabled state
-Markdown file preview: Configure enabled state
-Source code file preview: Configure enabled state
-PDF file preview: Configure enabled state
-Gcode file preview: Configure enabled state
-SVG file thumbnail: Configure enabled state
-PDF file thumbnail: Configure enabled state
-Gcode file thumbnail: Configure enabled state
-STL file thumbnail: Configure enabled state
-Hosts file editor: Configure enabled state
-Image Resizer: Configure enabled state
-Keyboard Manager: Configure enabled state
-Find My Mouse: Configure enabled state
-Mouse Highlighter: Configure enabled state
-Mouse Jump: Configure enabled state
-Mouse Pointer Crosshairs: Configure enabled state
-Mouse Without Borders: Configure enabled state
-Paste as Plain Text: Configure enabled state
-Peek: Configure enabled state
-Power Rename: Configure enabled state
-PowerToys Run: Configure enabled state
-Quick Accent: Configure enabled state
-Registry Preview: Configure enabled state
-Screen Ruler: Configure enabled state
-Shortcut Guide: Configure enabled state
-Text Extractor: Configure enabled state
-Video Conference Mute: Configure enabled state
+Always On Top|Always On Top: Configure enabled state|ConfigureEnabledUtilityAlwaysOnTop
+Awake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake
+Color Picker|Color Picker: Configure enabled state|ConfigureEnabledUtilityColorPicker
+Crop And Lock|Crop And Lock: Configure enabled state|ConfigureEnabledUtilityCropAndLock
+Environment Variables|Environment Variables: Configure enabled state|ConfigureEnabledUtilityEnvironmentVariables
+FancyZones|FancyZones: Configure enabled state|ConfigureEnabledUtilityFancyZones
+File Locksmith|File Locksmith: Configure enabled state|ConfigureEnabledUtilityFileLocksmith
+SVG file preview|SVG file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGPreview
+Markdown file preview|Markdown file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMarkdownPreview
+Source code file preview|Source code file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMonacoPreview
+PDF file preview|PDF file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFPreview
+Gcode file preview|Gcode file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodePreview
+SVG file thumbnail|SVG file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGThumbnails
+PDF file thumbnail|PDF file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFThumbnails
+Gcode file thumbnail|Gcode file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodeThumbnails
+STL file thumbnail|STL file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSTLThumbnails
+Hosts file editor|Hosts file editor: Configure enabled state|ConfigureEnabledUtilityHostsFileEditor
+Image Resizer|Image Resizer: Configure enabled state|ConfigureEnabledUtilityImageResizer
+Keyboard Manager|Keyboard Manager: Configure enabled state|ConfigureEnabledUtilityKeyboardManager
+Find My Mouse|Find My Mouse: Configure enabled state|ConfigureEnabledUtilityFindMyMouse
+Mouse Highlighter|Mouse Highlighter: Configure enabled state|ConfigureEnabledUtilityMouseHighlighter
+Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump
+Mouse Pointer Crosshairs|Mouse Pointer Crosshairs: Configure enabled state|ConfigureEnabledUtilityMousePointerCrosshairs
+Mouse Without Borders|Mouse Without Borders: Configure enabled state|ConfigureEnabledUtilityMouseWithoutBorders
+Paste as Plain Text|Paste as Plain Text: Configure enabled state|ConfigureEnabledUtilityPastePlain
+Peek|Peek: Configure enabled state|ConfigureEnabledUtilityPeek
+Power Rename|Power Rename: Configure enabled state|ConfigureEnabledUtilityPowerRename
+PowerToys Run|PowerToys Run: Configure enabled state|ConfigureEnabledUtilityPowerLauncher
+Quick Accent|Quick Accent: Configure enabled state|ConfigureEnabledUtilityQuickAccent
+Registry Preview|Registry Preview: Configure enabled state|ConfigureEnabledUtilityRegistryPreview
+Screen Ruler|Screen Ruler: Configure enabled state|ConfigureEnabledUtilityScreenRuler
+Shortcut Guide|Shortcut Guide: Configure enabled state|ConfigureEnabledUtilityShortcutGuide
+Text Extractor|Text Extractor: Configure enabled state|ConfigureEnabledUtilityTextExtractor
+Video Conference Mute|Video Conference Mute: Configure enabled state|ConfigureEnabledUtilityVideoConferenceMute
 
 
 #### Group Policy (ADMX) info
@@ -166,7 +168,7 @@ Video Conference Mute: Configure enabled state
 * Name: See the table above.
 * Type: DWORD
 
-<ins>Example:</ins>
+<ins>Example</ins>
 
 ```
 0x00000000
@@ -174,7 +176,7 @@ Video Conference Mute: Configure enabled state
 
 #### Intune information
 
-<ins>OMA-URI:</ins>
+<ins>OMA-URI</ins>
 
 For the `PolicyID` please see the table above.
 
@@ -182,7 +184,7 @@ For the `PolicyID` please see the table above.
 ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/<PolicyID>
 ```
 
-<ins>Example value:</ins>
+<ins>Example value</ins>
 
 ```
 <disabled/>
