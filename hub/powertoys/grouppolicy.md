@@ -115,44 +115,42 @@ This policy has a higher priority than the policy "Configure global utility enab
 
 #### Table of utility Policies
 
-|Utility|ADMX GP name|ADMX GP unique name /</br>Registry value name /</br>Intune PolicyID|
-|---|---|---|---|---|
+| Utility | ADMX GP name |ADMX GP unique name /</br>Registry value name /</br>Intune PolicyID |
+| :--- | :--- | :--- |
 |Always On Top|Always On Top: Configure enabled state|ConfigureEnabledUtilityAlwaysOnTop|
 |Awake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake|
-
-
-Color Picker|Color Picker: Configure enabled state|ConfigureEnabledUtilityColorPicker
-Crop And Lock|Crop And Lock: Configure enabled state|ConfigureEnabledUtilityCropAndLock
-Environment Variables|Environment Variables: Configure enabled state|ConfigureEnabledUtilityEnvironmentVariables
-FancyZones|FancyZones: Configure enabled state|ConfigureEnabledUtilityFancyZones
-File Locksmith|File Locksmith: Configure enabled state|ConfigureEnabledUtilityFileLocksmith
-SVG file preview|SVG file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGPreview
-Markdown file preview|Markdown file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMarkdownPreview
-Source code file preview|Source code file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMonacoPreview
-PDF file preview|PDF file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFPreview
-Gcode file preview|Gcode file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodePreview
-SVG file thumbnail|SVG file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGThumbnails
-PDF file thumbnail|PDF file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFThumbnails
-Gcode file thumbnail|Gcode file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodeThumbnails
-STL file thumbnail|STL file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSTLThumbnails
-Hosts file editor|Hosts file editor: Configure enabled state|ConfigureEnabledUtilityHostsFileEditor
-Image Resizer|Image Resizer: Configure enabled state|ConfigureEnabledUtilityImageResizer
-Keyboard Manager|Keyboard Manager: Configure enabled state|ConfigureEnabledUtilityKeyboardManager
-Find My Mouse|Find My Mouse: Configure enabled state|ConfigureEnabledUtilityFindMyMouse
-Mouse Highlighter|Mouse Highlighter: Configure enabled state|ConfigureEnabledUtilityMouseHighlighter
-Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump
-Mouse Pointer Crosshairs|Mouse Pointer Crosshairs: Configure enabled state|ConfigureEnabledUtilityMousePointerCrosshairs
-Mouse Without Borders|Mouse Without Borders: Configure enabled state|ConfigureEnabledUtilityMouseWithoutBorders
-Paste as Plain Text|Paste as Plain Text: Configure enabled state|ConfigureEnabledUtilityPastePlain
-Peek|Peek: Configure enabled state|ConfigureEnabledUtilityPeek
-Power Rename|Power Rename: Configure enabled state|ConfigureEnabledUtilityPowerRename
-PowerToys Run|PowerToys Run: Configure enabled state|ConfigureEnabledUtilityPowerLauncher
-Quick Accent|Quick Accent: Configure enabled state|ConfigureEnabledUtilityQuickAccent
-Registry Preview|Registry Preview: Configure enabled state|ConfigureEnabledUtilityRegistryPreview
-Screen Ruler|Screen Ruler: Configure enabled state|ConfigureEnabledUtilityScreenRuler
-Shortcut Guide|Shortcut Guide: Configure enabled state|ConfigureEnabledUtilityShortcutGuide
-Text Extractor|Text Extractor: Configure enabled state|ConfigureEnabledUtilityTextExtractor
-Video Conference Mute|Video Conference Mute: Configure enabled state|ConfigureEnabledUtilityVideoConferenceMute
+|Color Picker|Color Picker: Configure enabled state|ConfigureEnabledUtilityColorPicker|
+|Crop And Lock|Crop And Lock: Configure enabled state|ConfigureEnabledUtilityCropAndLock|
+|Environment Variables|Environment Variables: Configure enabled state|ConfigureEnabledUtilityEnvironmentVariables|
+|FancyZones|FancyZones: Configure enabled state|ConfigureEnabledUtilityFancyZones|
+|File Locksmith|File Locksmith: Configure enabled state|ConfigureEnabledUtilityFileLocksmith|
+|SVG file preview|SVG file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGPreview|
+|Markdown file preview|Markdown file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMarkdownPreview|
+|Source code file preview|Source code file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMonacoPreview|
+|PDF file preview|PDF file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFPreview|
+|Gcode file preview|Gcode file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodePreview|
+|SVG file thumbnail|SVG file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGThumbnails|
+|PDF file thumbnail|PDF file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFThumbnails|
+|Gcode file thumbnail|Gcode file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodeThumbnails|
+|STL file thumbnail|STL file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSTLThumbnails|
+|Hosts file editor|Hosts file editor: Configure enabled state|ConfigureEnabledUtilityHostsFileEditor|
+|Image Resizer|Image Resizer: Configure enabled state|ConfigureEnabledUtilityImageResizer|
+|Keyboard Manager|Keyboard Manager: Configure enabled state|ConfigureEnabledUtilityKeyboardManager|
+|Find My Mouse|Find My Mouse: Configure enabled state|ConfigureEnabledUtilityFindMyMouse|
+|Mouse Highlighter|Mouse Highlighter: Configure enabled state|ConfigureEnabledUtilityMouseHighlighter|
+|Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump|
+|Mouse Pointer Crosshairs|Mouse Pointer Crosshairs: Configure enabled state|ConfigureEnabledUtilityMousePointerCrosshairs|
+|Mouse Without Borders|Mouse Without Borders: Configure enabled state|ConfigureEnabledUtilityMouseWithoutBorders|
+|Paste as Plain Text|Paste as Plain Text: Configure enabled state|ConfigureEnabledUtilityPastePlain|
+|Peek|Peek: Configure enabled state|ConfigureEnabledUtilityPeek|
+|Power Rename|Power Rename: Configure enabled state|ConfigureEnabledUtilityPowerRename|
+|PowerToys Run|PowerToys Run: Configure enabled state|ConfigureEnabledUtilityPowerLauncher|
+|Quick Accent|Quick Accent: Configure enabled state|ConfigureEnabledUtilityQuickAccent|
+|Registry Preview|Registry Preview: Configure enabled state|ConfigureEnabledUtilityRegistryPreview|
+|Screen Ruler|Screen Ruler: Configure enabled state|ConfigureEnabledUtilityScreenRuler|
+|Shortcut Guide|Shortcut Guide: Configure enabled state|ConfigureEnabledUtilityShortcutGuide|
+|Text Extractor|Text Extractor: Configure enabled state|ConfigureEnabledUtilityTextExtractor|
+|Video Conference Mute|Video Conference Mute: Configure enabled state|ConfigureEnabledUtilityVideoConferenceMute|
 
 
 #### Group Policy (ADMX) info
