@@ -1,16 +1,20 @@
 ---
 title: PowerToys Group Policy
 description: Group policy documentation for PowerToys
-ms.date: 10/13/2023
+ms.date: 11/05/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
 
 # Group Policies
 
-Since version 0.64, PowerToys is released on GitHub with [Administrative Templates that allows you to configure PowerToys using Group Policies](/previous-versions/windows/desktop/policy/group-policy-objects). You can check these releases on <https://github.com/microsoft/PowerToys/releases>.
+Since version 0.64, PowerToys is released on GitHub with Administrative Templates that allows you to configure PowerToys using Group Policies.
 
 ## How to install
+
+### Download
+
+You can find the latest administrative templates (ADMX files) in the assets section of our newest PowerToys release on <https://github.com/microsoft/PowerToys/releases>. The file is named `GroupPolicyObjectsFiles-<Version>.zip`.
 
 ### Add the administrative template to an individual computer
 
@@ -24,16 +28,27 @@ Since version 0.64, PowerToys is released on GitHub with [Administrative Templat
 3. Copy the "PowerToys.adml" file to the matching language folder in the PolicyDefinition folder. Create the folder if it doesn't already exist. (Example: %systemroot%\sysvol\domain\policies\PolicyDefinitions\EN-US)
 4. If your domain has more than one domain controller, the new ADMX files will be replicated to them at the next domain replication interval.
 
+### Import the administrative template in Intune
+
+You can find all instructions on how to import the tdministrative templates in Intune [here](https://learn.microsoft.com/mem/intune/configuration/administrative-templates-import-custom#add-the-admx-and-adml-files).
+
 ### Scope
 
 You will find the policies under "Administrative Templates/Microsoft PowerToys" in both the Computer Configuration and User Configuration folders. If both settings are configured, the setting in Computer Configuration takes precedence over the setting in User Configuration.
 
 ## Policies
 
+<!--Note for every dev who updates tis file:
+The syntax of OMA-URI is the following: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys[[~<category1>]~<categoryN>]/<ADMX-Displayname-ID>
+-->
+
 ### Configure global utility enabled state
 
-> [!NOTE]
-> This policy is supported on PowerToys 0.75.0 and later.
+#### Suppoerted versions
+
+* On PowerToys 0.75.0 or later.
+
+#### Description
 
 This policy configures the enabled state for all PowerToys utilities.
 
@@ -43,7 +58,46 @@ This policy configures the enabled state for all PowerToys utilities.
 
 The individual enabled state policies for the utilities will override this policy.
 
+#### Group Policy (ADMX) info
+
+* GP unique name: ConfigureGlobalUtilityEnabledState
+* GP name: Configure global utility enabled state
+* GP path: Administrative Templates/Microsoft PowerToys
+* GP scoope: Machine and user
+* ADMX file name: PowerToys.admx
+
+
+#### Registry information
+
+* Path: Software\Policies\PowerToys
+* Name: ConfigureGlobalUtilityEnabledState
+* Type: DWORD
+
+<u>Example:</u>
+```
+0x00000000
+```
+
+#### Intune information
+
+<u>OMA-URI:</u>
+```
+./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureGlobalUtilityEnabledState
+```
+
+<u>Example value</u>
+```
+<disabled/>
+```
+
+
 ### Configure enabled state for individual utilities
+
+#### Suppoerted versions
+
+* On PowerToys 0.64.0 or later depending on the utility.
+
+#### Description
 
 For each utility shipped with PowerToys, there's a "Configure enabled state" policy, which forces and Enabled state for the utility.
 
@@ -52,6 +106,85 @@ For each utility shipped with PowerToys, there's a "Configure enabled state" pol
 - If you don't configure this setting, users are able to disable or enable the utility.
 
 This policy has a higher priority than the policy "Configure global utility enabled state" and overrides it.
+
+#### Table of utility Policies
+
+Utility|ADMX: GP Unique name|ADMX: GP name|Registry: Value name|Intune: PolicyID
+---|---|---|---|---|
+Always On Top|ConfigureEnabledUtilityAlwaysOnTop|Always On Top: Configure enabled state|ConfigureEnabledUtilityAlwaysOnTop|ConfigureEnabledUtilityAlwaysOnTop
+Awake|ConfigureEnabledUtilityAwake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake|ConfigureEnabledUtilityAwake
+
+Color Picker: Configure enabled state
+Crop And Lock: Configure enabled state
+Environment Variables: Configure enabled state
+FancyZones: Configure enabled state
+File Locksmith: Configure enabled state
+SVG file preview: Configure enabled state
+Markdown file preview: Configure enabled state
+Source code file preview: Configure enabled state
+PDF file preview: Configure enabled state
+Gcode file preview: Configure enabled state
+SVG file thumbnail: Configure enabled state
+PDF file thumbnail: Configure enabled state
+Gcode file thumbnail: Configure enabled state
+STL file thumbnail: Configure enabled state
+Hosts file editor: Configure enabled state
+Image Resizer: Configure enabled state
+Keyboard Manager: Configure enabled state
+Find My Mouse: Configure enabled state
+Mouse Highlighter: Configure enabled state
+Mouse Jump: Configure enabled state
+Mouse Pointer Crosshairs: Configure enabled state
+Mouse Without Borders: Configure enabled state
+Paste as Plain Text: Configure enabled state
+Peek: Configure enabled state
+Power Rename: Configure enabled state
+PowerToys Run: Configure enabled state
+Quick Accent: Configure enabled state
+Registry Preview: Configure enabled state
+Screen Ruler: Configure enabled state
+Shortcut Guide: Configure enabled state
+Text Extractor: Configure enabled state
+Video Conference Mute: Configure enabled state
+
+
+#### Group Policy (ADMX) info
+
+* GP unique name: See the table above.
+* GP name: See the table above.
+* GP path: Administrative Templates/Microsoft PowerToys
+* GP scoope: Machine and user
+* ADMX file name: PowerToys.admx
+
+
+#### Registry information
+
+* Path: Software\Policies\PowerToys
+* Name: See the table above.
+* Type: DWORD
+
+<u>Example:</u>
+```
+0x00000000
+```
+
+#### Intune information
+
+<u>OMA-URI:</u>
+For the `PolicyID` please see the table above.
+```
+./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/<PolicyID>
+```
+
+<u>Example value</u>
+```
+<disabled/>
+```
+
+
+
+
+
 
 ### Allow experimentation
 
