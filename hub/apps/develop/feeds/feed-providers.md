@@ -18,7 +18,7 @@ This article introduces the concept of feed providers and provides a high-level 
 
 Feeds in the Widgets Board helps users stay on top of what matters, enabling them to easily discover useful information and empowering them to act on it. Feed providers enable users to see content from multiple apps and services at the same time. Users can access content from various apps directly on their Widgets Board without the need to open individual apps, ensuring they have the latest information at their fingertips. Users also have the control to enable or disable feeds from the Widgets Board settings, tailoring the content to their preferences.
 
-[Placeholder Image]
+![A screenshot showing the Windows Widgets Board showing feeds.](./images/feeds-screenshot.png)
 
 ## Getting Started with Feed Providers
 
