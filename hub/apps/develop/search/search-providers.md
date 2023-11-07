@@ -118,7 +118,7 @@ TBD - Update with good example.
       </uap:VisualElements>
         <Extensions>
             <uap3:Extension Category="windows.appExtension">
-                <uap3:AppExtension Name="com.microsoft.windows.search.webprovider" DisplayName="ExampleSearchProviderApp" Id="ContosoSearchApp" PublicFolder="Public">
+                <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="ExampleSearchProviderApp" Id="ContosoSearchApp" PublicFolder="Public">
                     <uap3:Properties>
                         <Endpoint>https://contoso.com</Endpoint>
                         <Protocol>contoso</Protocol>
