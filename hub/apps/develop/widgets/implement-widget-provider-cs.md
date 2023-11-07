@@ -208,7 +208,7 @@ In the next few sections, we'll implement the methods of the **IWidgetProvider**
 > [!NOTE]
 > Objects passed into the callback methods of the **IWidgetProvider** interface are only guaranteed to be valid within the callback. You should not store references to these objects because their behavior outside of the context of the callback is undefined.
 
-## CreateWidget
+### CreateWidget
 
 The widget host calls [CreateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.createwidget) when the user has pinned one of your app's widgets in the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
 
@@ -228,7 +228,7 @@ public void CreateWidget(WidgetContext widgetContext)
 }
 ```
 
-## DeleteWidget
+### DeleteWidget
 
 The widget host calls [DeleteWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.deletewidget) when the user has unpinned one of your app's widgets from the widget host. When this occurs, we will remove the associated widget from our list of enabled widgets so that we don't send any further updates for that widget.
 
@@ -258,7 +258,7 @@ public static ManualResetEvent GetEmptyWidgetListEvent()
 }
 ```
 
-## OnActionInvoked
+### OnActionInvoked
 
 The widget host calls [OnActionInvoked](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.onactioninvoked) when the user interacts with an action you defined in your widget template. For the counter widget used in this example, an action was declared with a **verb** value of "inc" in the JSON template for the widget. The widget provider code will use this **verb** value to determine what action to take in response to the user interaction.  
 
@@ -303,7 +303,7 @@ public void OnActionInvoked(WidgetActionInvokedArgs actionInvokedArgs)
 For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.io/explorer/Action.Execute.html). For guidance about designing interaction for widgets, see [Widget interaction design guidance](/windows/apps/design/widgets/widgets-interaction-design)
 
 
-## OnWidgetContextChanged
+### OnWidgetContextChanged
 
 In the current release, [OnWidgetContextChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.onwidgetcontextchanged) is only called when the user changes the size of a pinned widget. You can choose to return a different JSON template/data to the widget host depending on what size is requested. You can also design the template JSON to support all the available sizes using conditional rendering based on the value of **host.widgetSize**. If you don't need to send a new template or data to account for the size change, you can use the **OnWidgetContextChanged** for telemetry purposes.
 
@@ -324,7 +324,7 @@ public void OnWidgetContextChanged(WidgetContextChangedArgs contextChangedArgs)
     
 ```
 
-## Activate and Deactivate
+### Activate and Deactivate
 
 The [Activate](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.activate) method is called to notify the widget provider that the widget host is currently interested in receiving updated content from the provider. For example, it could mean that the user is currently actively viewing the widget host. The [Deactivate](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.deactivate) method is called to notify the widget provider that the widget host is no longer requesting content updates. These two methods define a window in which the widget host is most interested in showing the most up-to-date content. Widget providers can send updates to the widget at any time, such as in response to a push notification, but as with any background task, it's important to balance providing up-to-date content with resource concerns like battery life. 
 
@@ -772,7 +772,7 @@ After your app has been published on the Microsoft Store, you can request for yo
 
 :::image type="content" source="images/widgets-store-collection.png" alt-text="Screenshot of the Microsoft Store showing the widgets collection that allows users to discover apps that feature Windows Widgets.":::
 
-### Implementing widget customization
+## Implementing widget customization
 
 Starting with Windows App SDK 1.4, widgets can support user customization. When this feature is implemented, a **Customize widget** option is added to the ellipsis menu above the **Unpin widget** option.  
 
@@ -797,7 +797,7 @@ In typical Widget customization scenarios, the user will choose what data is dis
 > [!NOTE]
 > Widget customization is only supported in Windows App SDK 1.4 and later. Make sure you update the references in your project to the latest version of the Nuget package.
 
-#### Update the package manifest to declare customization support
+### Update the package manifest to declare customization support
 
 To let the widget host know that the widget supports customization, add the attribute **IsCustomizable** to the **Definition** element for the widget and set it to true.
 
@@ -810,7 +810,7 @@ To let the widget host know that the widget supports customization, add the attr
 ...
 ```
 
-#### Track when a widget is in customization mode
+### Track when a widget is in customization mode
 
 The example in this article uses the helper struct **CompactWidgetInfo** to track the current state of our active widgets. Add the *inCustomization* field, which will be used to track when the widget host is expecting us to send our customization json template rather than the regular widget template. 
 
@@ -826,7 +826,7 @@ public class CompactWidgetInfo
 }
 ```
 
-#### Implement IWidgetProvider2
+### Implement IWidgetProvider2
 
 The widget customization feature is exposed through the [IWidgetProvider2](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider2) interface. Update the **WidgetProvider** class definition to implement this interface.
 
@@ -875,7 +875,7 @@ const string countWidgetCustomizationTemplate = @"
 }";
 ```
 
-#### Send customization template in UpdateWidget
+### Send customization template in UpdateWidget
 
 Next, we'll update our **UpdateWidget** helper method that sends our data and visual JSON templates to the widget host. When we are updating the counting widget, we send either the regular widget template or the customization template depending on the value of the **inCustomization** field. For brevity, code not relevant to customization is omitted in this code snippet.
 
