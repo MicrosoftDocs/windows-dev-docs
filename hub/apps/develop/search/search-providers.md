@@ -35,13 +35,13 @@ TBD - Steps for creating the package. We should pick the steps that align to the
 
 ### Search provider app extension
 
-The app package manifest file supports many different extensions and features for Windows apps. The app package manifest format is defined by a set of schemas that are documented in the [Package manifest schema reference](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).  Search providers declare their registration information within the [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual). The **Name** attribute of the extension must be set to "com.microsoft.windows.widgets".
+The app package manifest file supports many different extensions and features for Windows apps. The app package manifest format is defined by a set of schemas that are documented in the [Package manifest schema reference](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).  Search providers declare their registration information within the [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual). The **Name** attribute of the extension must be set to "com.microsoft.windows.websearchprovider".
 
 Search providers should include the [uap3:Properties](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-properties-manual) as the child of **uap3:AppExtension**. The package manifest schema does not enforce the structure of the **uap3:Properties** element other than requiring well-formed XML. The rest of this section describes the XML format that the OS expects in order to successfully register a search provider.
 
 ```xml
 <uap3:Extension Category="windows.appExtension">
-  <uap3:AppExtension Name="com.microsoft.windows.search.webprovider" DisplayName="SearchExampleApp" Id="ContosoSearchApp" PublicFolder="Public">
+  <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="SearchExampleApp" Id="ContosoSearchApp" PublicFolder="Public">
     <uap3:Properties>
     <!-- Search provider registration content goes here -->
     </uap3:Properties>
@@ -59,11 +59,11 @@ uap3:Properties
 
 #### Endpoint
 
-Description TBD.
+The URL of the HTTPS endpoint to which the OS will send search query requests.
 
 #### Protocol
 
-Description TBD.
+The protocol schema that will be used when launching the provided web search results. If the specified protocol is not registered by an app on the OS, then the default browser will be launched for search results. For more information on registering protocol schemas, see [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
 
 
 ### Example package manifest file
@@ -138,11 +138,11 @@ TBD - Update with good example.
 
 ## Implement a Windows Search provider suggestion endpoint
 
-Search providers must expose and register an HTTP endpoint that is called by the OS when a user types into the Windows Search box. This endpoint should return a JSON-formatted string containing the search suggestions for the provided user query.
+Search providers must expose and register an HTTPS endpoint that is called by the OS when a user types into the Windows Search box. This endpoint should return a JSON-formatted string containing the search suggestions for the provided user query. Content must be delivered over HTTPS. Search integration does not support content delivered over HTTP.
 
-### Suggestion HTTP request format
+### Suggestion HTTPS request format
 
-The http request to the suggestion endpoint uses the following format.
+The HTTPS request to the suggestion endpoint uses the following format.
 
 `https://contoso.com?setlang=en-US&cc=US&qry=`
 
@@ -152,11 +152,11 @@ The query string parameters passed to the suggestion endpoint are the following.
 |-----------|-------------|
 | setlang   | The locale associated with the query. |
 | cc        | The country code associated with query. |
-| qry       | The query provided by the user. If the parameter has no value, i.e. appears in the query string as `qry=`, then the user query is empty. Search providers can still provide suggestions and preview pages in response to an empty query. |
+| qry       | The query provided by the user. If the parameter has no value, i.e. appears in the query string as `qry=`, then the user query is empty. Search providers can still provide suggestions and preview pages in response to an empty query. **NOTE** The OS does not perform any sanitization of query strings. Search providers can implement their own sanitization when the query is received. |
 
-### Suggestion HTTP response headers
+### Suggestion HTTPS response headers
 
-Search provider must include the following headers in the response from the suggestion HTTP endpoint.
+Search provider must include the following headers in the response from the suggestion HTTPS endpoint.
 
 - Access-Control-Allow-Origin: https://www.bing.com 
 - Access-Control-Allow-Credentials: true 
@@ -164,10 +164,9 @@ Search provider must include the following headers in the response from the sugg
 - Content-Type: application/json; charset=utf-8 
 - Content-Length: \[Must be the exact length of response\] 
 
-
 ### Suggestion response JSON format
 
-The search provider HTTP endpoint for suggestions must return a JSON document with the following format. The key names must match the format exactly.
+The search provider HTTPS endpoint for suggestions must return a JSON document with the following format. The key names must match the format exactly.
 
 | Key | Description |
 |-----|-------------|
@@ -190,11 +189,11 @@ The search provider HTTP endpoint for suggestions must return a JSON document wi
 
 ## Implement a Windows Search provider preview endpoint
 
-Search providers return the URL of an HTTP endpoint that provides an HTML preview of the page associated with each suggestion in the search results. The preview endpoint response must return the HTML code for a functioning page.
+Search providers return the URL of an HTTPS endpoint that provides an HTML preview of the page associated with each suggestion in the search results. The preview endpoint response must return the HTML code for a functioning page.
 
-### Preview HTTP request format
+### Preview HTTPS request format
 
-The http request to the preview endpoint uses the following format.
+The HTTPS request to the preview endpoint uses the following format.
 
 `https://contoso.com?Darkschemeovr=1`
 
@@ -204,7 +203,7 @@ The query string parameters passed to the suggestion endpoint are the following.
 |-----------|-------------|
 | Darkschemeovr | Specifies if the calling Windows system has dark theme enabled. The value is 1 if dark theme is enabled and 0 if the dark theme is disabled. |
 
-### Preview HTTP response headers
+### Preview HTTPS response headers
 
 
 - Access-Control-Allow-Origin: https://www.bing.com 
@@ -212,6 +211,10 @@ The query string parameters passed to the suggestion endpoint are the following.
 - Access-Control-Allow-Methods: GET 
 - Content-Type: text/html; charset=utf-8 
 - Content-Length: \[Must be the exact length of preview html\]
+
+### OPTIONS request and Cross-Origin Resource Sharing (CORS)
+
+Search providers must support the OPTIONS request method and respond to this request with HTTP OK. If the search provider endpoint is using CORS, the Windows search client will send out a HTTP OPTIONS request before each GET request.
 
 ## Related articles
 
