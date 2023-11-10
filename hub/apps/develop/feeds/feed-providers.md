@@ -26,14 +26,13 @@ Apps that are ingested through the Microsoft Store can register as feed provider
 
 The following lists the high-level steps for developing a feed provider:
 
-1.	**Request access** - Begin by requesting access to the public preview for third-party feed extensibility. [Steps TBD]
-2.	**Register feeds** - Register your app's feeds in the app manifest. Once registered and detected, these feeds become directly available in the Widgets Board.
-3.	**Implement feed experience** - Develop the feed experience as a web component that will be rendered within an i-frame on the Widgets Board. Feeds will appear as pivots above the **Feeds** section of the Widgets Board.
-4.	**Provide personalization controls (optional)** - Each feed provider can define a personalization control dialog that allows users to customize their feed experience according to their preferences.
+1.	**Register feeds** - Register your app's feeds in the app manifest. Once registered and detected, these feeds become directly available in the Widgets Board.
+2.	**Implement feed experience** - Develop the feed experience as a web component that will be rendered within an i-frame on the Widgets Board. Feeds will appear as pivots above the **Feeds** section of the Widgets Board.
+3.	**Provide personalization controls (optional)** - Each feed provider can define a personalization control dialog that allows users to customize their feed experience according to their preferences.
 
 ## Limitations and Considerations
 
-- The Feed Providers feature is currently available as a Limited Access Feature and only accessible with explicit permission from Microsoft.
+- The Feed Providers feature is in preview. [add specific widgets package number here]
 - There may be geographical and market restrictions.
 - The feature is contingent upon using the latest Windows App SDK for app development. [add specific version number here]
 - Specific technical and design guidelines must be adhered to for proper feed integration.
