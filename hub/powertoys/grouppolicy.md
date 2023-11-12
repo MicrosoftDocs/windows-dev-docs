@@ -1,7 +1,7 @@
 ---
 title: PowerToys Group Policy
 description: Group policy documentation for PowerToys
-ms.date: 11/05/2023
+ms.date: 11/12/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
@@ -27,7 +27,6 @@ You can find the latest administrative templates (ADMX files) in the assets sect
 2. Copy the "PowerToys.admx" file to the PolicyDefinition folder. (Example: %systemroot%\sysvol\domain\policies\PolicyDefinitions)
 3. Copy the "PowerToys.adml" file to the matching language folder in the PolicyDefinition folder. Create the folder if it doesn't already exist. (Example: %systemroot%\sysvol\domain\policies\PolicyDefinitions\EN-US)
 4. If your domain has more than one domain controller, the new ADMX files will be replicated to them at the next domain replication interval.
-
 ### Import the administrative template in Intune
 
 You can find all instructions on how to import the tdministrative templates in Intune [here](https://learn.microsoft.com/mem/intune/configuration/administrative-templates-import-custom#add-the-admx-and-adml-files).
@@ -39,12 +38,12 @@ You will find the policies under "Administrative Templates/Microsoft PowerToys" 
 ## Policies
 
 <!--Note for every dev who updates tis file:
-The syntax of OMA-URI is the following: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys[[~<category1>]~<categoryN>]/<ADMX-Displayname-ID>
+The syntax of OMA-URI is the following: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys[[~<category1>]~<categoryN>]/<ADMX-DisplayName-ID>
 -->
 
 ### Configure global utility enabled state
 
-> On PowerToys 0.75.0 or later.
+> Supported on PowerToys 0.75.0 or later.
 
 This policy configures the enabled state for all PowerToys utilities.
 
@@ -76,7 +75,7 @@ The individual enabled state policies for the utilities will override this polic
 
 ### Configure enabled state for individual utilities
 
-> On PowerToys 0.64.0 or later depending on the utility.
+> Supported on PowerToys 0.64.0 or later depending on the utility.
 
 For each utility shipped with PowerToys, there's a "Configure enabled state" policy, which forces and Enabled state for the utility.
 
@@ -133,7 +132,7 @@ This policy has a higher priority than the policy "Configure global utility enab
 - GP unique name: See the table above.
 - GP name: See the table above.
 - GP path: Administrative Templates/Microsoft PowerToys
-- GP scoope: Computer and user
+- GP scope: Computer and user
 - ADMX file name: PowerToys.admx
 
 #### Registry information
@@ -141,7 +140,7 @@ This policy has a higher priority than the policy "Configure global utility enab
 - Path: Software\Policies\PowerToys
 - Name: See the table above.
 - Type: DWORD
-- Example: `0x00000000`
+- Example value: `0x00000000`
 
 #### Intune information
 
@@ -150,11 +149,11 @@ This policy has a higher priority than the policy "Configure global utility enab
 
 ### Allow experimentation
 
-> On PowerToys 0.68.0 or later.
+> Supported on PowerToys 0.68.0 or later.
 
 This policy configures whether PowerToys experimentation is allowed. With experimentation allowed the user sees the new features being experimented if it gets selected as part of the test group. (Experimentation will only happen on Windows Insider builds.)
 
-- If this setting is not configured or enabled, the user can control experimentation in the PowerToys settings menu.
+- If this setting is enabled or not configured, the user can control experimentation in the PowerToys settings menu.
 - If this setting is disabled, experimentation is not allowed.
 
 #### Group Policy (ADMX) info
@@ -162,7 +161,7 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 - GP unique name: AllowExperimentation
 - GP name: Allow experimentation
 - GP path: Administrative Templates/Microsoft PowerToys
-- GP scoope: Computer and user
+- GP scope: Computer and user
 - ADMX file name: PowerToys.admx
 
 #### Registry information
@@ -170,7 +169,7 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 - Path: Software\Policies\PowerToys
 - Name: AllowExperimentation
 - Type: DWORD
-- Example: `0x00000000`
+- Example value: `0x00000000`
 
 #### Intune information
 
@@ -181,11 +180,7 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 
 #### Disable per-user installation
 
-##### Supported versions
-
-- On PowerToys 0.68.0 or later.
-
-##### Description
+> Supported on PowerToys 0.68.0 or later.
 
 This policy configures whether PowerToys per-user installation is allowed or not.
 
@@ -200,7 +195,7 @@ This policy configures whether PowerToys per-user installation is allowed or not
 - GP unique name: DisablePerUserInstallation
 - GP name: Disable per-user installation
 - GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
-- GP scoope: Computer only
+- GP scope: Computer only
 - ADMX file name: PowerToys.admx
 
 ##### Registry information
@@ -208,34 +203,16 @@ This policy configures whether PowerToys per-user installation is allowed or not
 - Path: HKLM\Software\Policies\PowerToys
 - Name: DisablePerUserInstallation
 - Type: DWORD
-
-Example:
-
-```
-0x00000001
-```
+- Example value: `0x00000001`
 
 ##### Intune information
 
-OMA-URI:
-
-```
-./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePerUserInstallation
-```
-
-Example value:
-
-```
-<enabled/>
-```
+- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePerUserInstallation
+- Example value: `<enabled/>`
 
 #### Disable automatic downloads
 
-##### Supported versions
-
-- On PowerToys 0.68.0 or later.
-
-##### Description
+> Supported on PowerToys 0.68.0 or later.
 
 This policy configures whether automatic downloads of available updates are disabled or not. (On metered connections updates are never downloaded.)
 
@@ -247,7 +224,7 @@ This policy configures whether automatic downloads of available updates are disa
 - GP unique name: DisableAutomaticUpdateDownload
 - GP name: Disable automatic downloads
 - GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
-- GP scoope: Computer and user
+- GP scope: Computer and user
 - ADMX file name: PowerToys.admx
 
 ##### Registry information
@@ -255,34 +232,16 @@ This policy configures whether automatic downloads of available updates are disa
 - Path: Software\Policies\PowerToys
 - Name: DisableAutomaticUpdateDownload
 - Type: DWORD
-
-Example:
-
-```
-0x00000001
-```
+- Example value: `0x00000001`
 
 ##### Intune information
 
-OMA-URI:
-
-```
-./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableAutomaticUpdateDownload
-```
-
-Example value:
-
-```
-<enabled/>
-```
+- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableAutomaticUpdateDownload
+- Example value: `<enabled/>`
 
 #### Suspend Action Center notification for new updates
 
-##### Supported versions
-
-- On PowerToys 0.68.0 or later.
-
-##### Description
+> Supported on PowerToys 0.68.0 or later.
 
 This policy configures whether the action center notification for new updates is suspended for 2 minor releases. (Example: if the installed version is v0.60.0, then the next notification is shown for the v0.63.* release.)
 
@@ -297,7 +256,7 @@ This policy configures whether the action center notification for new updates is
 - GP unique name: SuspendNewUpdateToast
 - GP name: Suspend Action Center notification for new updates
 - GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
-- GP scoope: Computer and user
+- GP scope: Computer and user
 - ADMX file name: PowerToys.admx
 
 ##### Registry information
@@ -305,35 +264,17 @@ This policy configures whether the action center notification for new updates is
 - Path: Software\Policies\PowerToys
 - Name: SuspendNewUpdateToast
 - Type: DWORD
-
-Example:
-
-```
-0x00000001
-```
+- Example value: `0x00000001`
 
 ##### Intune information
 
-OMA-URI:
-
-```
-./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/SuspendNewUpdateToast
-```
-
-Example value:
-
-```
-<enabled/>
-```
+- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/SuspendNewUpdateToast
+- Example value: `<enabled/>`
 
 <!-- This policy is implemented for later usage (PT v1.0 and later) and therefore inactive. (To make it working please update `src/runner/UpdateUtils.cpp`)
 #### Disable automatic update checks
 
-##### Supported versions
-
-* On PowerToys 0.68.0 or later.
-
-##### Description
+> Supported on PowerToys 0.68.0 or later.
 
 This policy allows you to disable automatic update checks running in the background. (The manual check in PT Settings is not affected by this policy.)
 
@@ -342,48 +283,30 @@ This policy allows you to disable automatic update checks running in the backgro
 
 ##### Group Policy (ADMX) info
 
-* GP unique name: DisablePeriodicUpdateCheck
-* GP name: Disable automatic update checks
-* GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
-* GP scoope: Computer and user
-* ADMX file name: PowerToys.admx
+- GP unique name: DisablePeriodicUpdateCheck
+- GP name: Disable automatic update checks
+- GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
+- GP scope: Computer and user
+- ADMX file name: PowerToys.admx
 
 ##### Registry information
 
-* Path: Software\Policies\PowerToys
-* Name: DisablePeriodicUpdateCheck
-* Type: DWORD
-
-Example:
-
-```
-0x00000000
-```
+- Path: Software\Policies\PowerToys
+- Name: DisablePeriodicUpdateCheck
+- Type: DWORD
+- Example value: `0x00000000`
 
 ##### Intune information
 
-OMA-URI:
-
-```
-./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePeriodicUpdateCheck
-```
-
-Example value:
-
-```
-<enabled/>
-```
+- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePeriodicUpdateCheck
+- Example value: `<enabled/>`
 -->
 
 ### PowerToys Run
 
 #### Configure enabled state for all plugins
 
-##### Supported versions
-
-- On PowerToys 0.75.0 or later.
-
-##### Description
+> Supported on PowerToys 0.75.0 or later.
 
 This policy configures the enabled state for all PowerToys Run plugins. All plugins will have the same state.
 
@@ -401,7 +324,7 @@ You can override this policy for individual plugins using the policy "Configure 
 - GP unique name: PowerToysRunAllPluginsEnabledState
 - GP name: Configure enabled state for all plugins
 - GP path: Administrative Templates/Microsoft PowerToys/PowerToys Run
-- GP scoope: Computer and user
+- GP scope: Computer and user
 - ADMX file name: PowerToys.admx
 
 ##### Registry information
@@ -409,34 +332,16 @@ You can override this policy for individual plugins using the policy "Configure 
 - Path: Software\Policies\PowerToys
 - Name: PowerToysRunAllPluginsEnabledState
 - Type: DWORD
-
-Example:
-
-```
-0x00000000
-```
+- Example value: `0x00000000`
 
 ##### Intune information
 
-OMA-URI:
-
-```
-./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunAllPluginsEnabledState
-```
-
-Example value:
-
-```
-<disabled/>
-```
+- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunAllPluginsEnabledState
+- Example value: `<disabled/>`
 
 #### Configure enabled state for individual plugins
 
-##### Supported versions
-
-- On PowerToys 0.75.0 or later.
-
-##### Description
+> Supported on PowerToys 0.75.0 or later.
 
 With this policy you can configures an individual enabled state for each PowerToys Run plugin that you add to the list.
 
@@ -458,7 +363,7 @@ You can set the enabled state for all plugins not listed here using the policy "
 - GP unique name: PowerToysRunIndividualPluginEnabledState
 - GP name: Configure enabled state for individual plugins
 - GP path: Administrative Templates/Microsoft PowerToys/PowerToys Run
-- GP scoope: Computer and user
+- GP scope: Computer and user
 - ADMX file name: PowerToys.admx
 
 ##### Registry information
@@ -467,9 +372,9 @@ You can set the enabled state for all plugins not listed here using the policy "
 - Name: `<PluginID>`
 - Type: STRING
 
-Example:
+- Example value:
 
-```
+```text
 Software\Policies\PowerToys\0778F0C264114FEC8A3DF59447CF0A74 = 2 (=> User can enable/disable the OneNote plugin.)
 Software\Policies\PowerToys\791FC278BA414111B8D1886DFE447410 = 0 (=> Program plugin force disabled.)
 Software\Policies\PowerToys\CEA0FDFC6D3B4085823D60DC76F28855 = 1 (=> Calculator plugin force enabled.)
@@ -477,18 +382,14 @@ Software\Policies\PowerToys\CEA0FDFC6D3B4085823D60DC76F28855 = 1 (=> Calculator 
 
 ##### Intune information
 
-OMA-URI:
+- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunIndividualPluginEnabledState
 
-```
-./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunIndividualPluginEnabledState
-```
-
-Example value:
+- Example value:
 
 > [!NOTE]
 > Syntax: `<PluginID>&#xF000;<Number>&#xF000;<PluginID>&#xF000;<Number>`
 
-```
+```text
 <enabled/>
 <data id="PowerToysRunIndividualPluginEnabledList" value="0778F0C264114FEC8A3DF59447CF0A74&#xF000;2&#xF000;791FC278BA414111B8D1886DFE447410&#xF000;0&#xF000;CEA0FDFC6D3B4085823D60DC76F28855&#xF000;1"/>
 ```
