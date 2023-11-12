@@ -77,13 +77,13 @@ The individual enabled state policies for the utilities will override this polic
 
 > Supported on PowerToys 0.64.0 or later depending on the utility.
 
-For each utility shipped with PowerToys, there's a "Configure enabled state" policy, which forces and Enabled state for the utility.
+For each utility shipped with PowerToys, there's a "Configure enabled state" policy, which forces an enabled state for the utility.
 
 - If you enable this setting, the utility will be always enabled and the user won't be able to disable it.
 - If you disable this setting, the utility will be always disabled and the user won't be able to enable it.
-- If you don't configure this setting, users are able to disable or enable the utility.
+- If you don't configure this setting, users are able to enable or disable the utility.
 
-This policy has a higher priority than the policy "Configure global utility enabled state" and overrides it.
+These policies have a higher priority than the policy "Configure global utility enabled state" and overrides it.
 
 > [!NOTE]
 > PDF file preview: There have been reports of incompatibility between the PDF Preview Handler and Outlook.
@@ -343,17 +343,17 @@ You can override this policy for individual plugins using the policy "Configure 
 
 > Supported on PowerToys 0.75.0 or later.
 
-With this policy you can configures an individual enabled state for each PowerToys Run plugin that you add to the list.
+With this policy you can configure an individual enabled state for each PowerToys Run plugin that you add to the list.
 
 If you enable this setting, you can define the list of plugins and their enabled states:
 
-- The value name (first column) is the plugin ID. You will find it in the plugin.json which is located in the plugin folder.
+- The value name (first column) is the plugin ID. You will find it in the `plugin.json` file which is located in the plugin folder.
 - The value (second column) is a numeric value: 0 for disabled, 1 for enabled and 2 for user takes control.
 - Example to disable the Program plugin: `791FC278BA414111B8D1886DFE447410 | 0`
 
 If you disable or don't configure this policy, either the user or the policy "Configure enabled state for all plugins" takes control over the enabled state of the plugins.
 
-You can set the enabled state for all plugins not listed here using the policy "Configure enabled state for all plugins".
+You can set the enabled state for all plugins not controlled by this policy using the policy "Configure enabled state for all plugins".
 
 > [!NOTE]
 > Changes require a restart of PowerToys Run.
