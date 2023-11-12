@@ -49,7 +49,7 @@ This policy configures the enabled state for all PowerToys utilities.
 
 - If you enable this setting, all utilities will be always enabled and the user won't be able to disable it.
 - If you disable this setting, all utilities will be always disabled and the user won't be able to enable it.
-- If you don't configure this setting, users are able to disable or enable the utilities.
+- If you don't configure this setting, users are able to enable or disable the utilities.
 
 The individual enabled state policies for the utilities will override this policy.
 
@@ -312,7 +312,7 @@ This policy configures the enabled state for all PowerToys Run plugins. All plug
 
 - If you enable this setting, the plugins will be always enabled and the user won't be able to disable it.
 - If you disable this setting, the plugins will be always disabled and the user won't be able to enable it.
-- If you don't configure this setting, users are able to disable or enable the plugins.
+- If you don't configure this setting, users are able to enable or disable the plugins.
 
 You can override this policy for individual plugins using the policy "Configure enabled state for individual plugins".
 
