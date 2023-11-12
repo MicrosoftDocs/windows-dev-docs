@@ -37,7 +37,7 @@ You will find the policies under "Administrative Templates/Microsoft PowerToys" 
 
 ## Policies
 
-<!--Note for every dev who updates tis file:
+<!--Note for every dev who updates this file:
 The syntax of OMA-URI is the following: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys[[~<category1>]~<categoryN>]/<ADMX-DisplayName-ID>
 -->
 
