@@ -27,6 +27,7 @@ You can find the latest administrative templates (ADMX files) in the assets sect
 2. Copy the "PowerToys.admx" file to the PolicyDefinition folder. (Example: %systemroot%\sysvol\domain\policies\PolicyDefinitions)
 3. Copy the "PowerToys.adml" file to the matching language folder in the PolicyDefinition folder. Create the folder if it doesn't already exist. (Example: %systemroot%\sysvol\domain\policies\PolicyDefinitions\EN-US)
 4. If your domain has more than one domain controller, the new ADMX files will be replicated to them at the next domain replication interval.
+
 ### Import the administrative template in Intune
 
 You can find all instructions on how to import the administrative templates in Intune [here](/mem/intune/configuration/administrative-templates-import-custom#add-the-admx-and-adml-files).
@@ -53,7 +54,7 @@ This policy configures the enabled state for all PowerToys utilities.
 
 The individual enabled state policies for the utilities will override this policy.
 
-#### Group Policy (ADMX) info
+#### Group Policy (ADMX) information
 
 - GP unique name: ConfigureGlobalUtilityEnabledState
 - GP name: Configure global utility enabled state
@@ -127,7 +128,7 @@ These policies have a higher priority than the policy "Configure global utility 
 |Text Extractor|Text Extractor: Configure enabled state|ConfigureEnabledUtilityTextExtractor|
 |Video Conference Mute|Video Conference Mute: Configure enabled state|ConfigureEnabledUtilityVideoConferenceMute|
 
-#### Group Policy (ADMX) info
+#### Group Policy (ADMX) information
 
 - GP unique name: See the table above.
 - GP name: See the table above.
@@ -144,7 +145,11 @@ These policies have a higher priority than the policy "Configure global utility 
 
 #### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/<PolicyID (Please see the table above.)>
+- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/&lt;PolicyID&gt;
+
+    > [!Note]
+    > Please see the table above for the *PolicyID* value.
+
 - Example value: `<disabled/>`
 
 ### Allow experimentation
@@ -156,7 +161,7 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 - If this setting is enabled or not configured, the user can control experimentation in the PowerToys settings menu.
 - If this setting is disabled, experimentation is not allowed.
 
-#### Group Policy (ADMX) info
+#### Group Policy (ADMX) information
 
 - GP unique name: AllowExperimentation
 - GP name: Allow experimentation
@@ -190,7 +195,7 @@ This policy configures whether PowerToys per-user installation is allowed or not
 > [!NOTE]
 > You can set this policy only as Computer policy.
 
-##### Group Policy (ADMX) info
+##### Group Policy (ADMX) information
 
 - GP unique name: DisablePerUserInstallation
 - GP name: Disable per-user installation
@@ -219,7 +224,7 @@ This policy configures whether automatic downloads of available updates are disa
 - If enabled, automatic downloads are disabled.
 - If disabled or not configured, the user is in control of automatic downloads setting.
 
-##### Group Policy (ADMX) info
+##### Group Policy (ADMX) information
 
 - GP unique name: DisableAutomaticUpdateDownload
 - GP name: Disable automatic downloads
@@ -251,7 +256,7 @@ This policy configures whether the action center notification for new updates is
 > [!NOTE]
 > The notification about new major versions is always displayed.
 
-##### Group Policy (ADMX) info
+##### Group Policy (ADMX) information
 
 - GP unique name: SuspendNewUpdateToast
 - GP name: Suspend Action Center notification for new updates
@@ -281,7 +286,7 @@ This policy allows you to disable automatic update checks running in the backgro
 - If enabled, the automatic update checks are disabled.
 - If disabled or not configured, the automatic update checks are enabled.
 
-##### Group Policy (ADMX) info
+##### Group Policy (ADMX) information
 
 - GP unique name: DisablePeriodicUpdateCheck
 - GP name: Disable automatic update checks
@@ -319,7 +324,7 @@ You can override this policy for individual plugins using the policy "Configure 
 > [!NOTE]
 > Changes require a restart of PowerToys Run.
 
-##### Group Policy (ADMX) info
+##### Group Policy (ADMX) information
 
 - GP unique name: PowerToysRunAllPluginsEnabledState
 - GP name: Configure enabled state for all plugins
@@ -358,7 +363,7 @@ You can set the enabled state for all plugins not controlled by this policy usin
 > [!NOTE]
 > Changes require a restart of PowerToys Run.
 
-##### Group Policy (ADMX) info
+##### Group Policy (ADMX) information
 
 - GP unique name: PowerToysRunIndividualPluginEnabledState
 - GP name: Configure enabled state for individual plugins
@@ -371,25 +376,24 @@ You can set the enabled state for all plugins not controlled by this policy usin
 - Path: Software\Policies\PowerToys\PowerLauncherIndividualPluginEnabledList
 - Name: The plugin ID from the `plugin.json` file.
 - Type: STRING
-
 - Example value:
 
-```text
-Software\Policies\PowerToys\0778F0C264114FEC8A3DF59447CF0A74 = 2 (=> User can enable/disable the OneNote plugin.)
-Software\Policies\PowerToys\791FC278BA414111B8D1886DFE447410 = 0 (=> Program plugin force disabled.)
-Software\Policies\PowerToys\CEA0FDFC6D3B4085823D60DC76F28855 = 1 (=> Calculator plugin force enabled.)
-```
+    ```
+    Software\Policies\PowerToys\0778F0C264114FEC8A3DF59447CF0A74 = 2 (=> User can enable/disable the OneNote plugin.)
+    Software\Policies\PowerToys\791FC278BA414111B8D1886DFE447410 = 0 (=> Program plugin force disabled.)
+    Software\Policies\PowerToys\CEA0FDFC6D3B4085823D60DC76F28855 = 1 (=> Calculator plugin force enabled.)
+    ```
 
 ##### Intune information
 
 - OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunIndividualPluginEnabledState
-
 - Example value:
 
-> [!NOTE]
-> Syntax: `<PluginID>&#xF000;<Number>&#xF000;<PluginID>&#xF000;<Number>`
+    > [!NOTE]
+    > Syntax for the :::no-loc text="value"::: property from the :::no-loc text="data"::: element:
+    > `<PluginID>&#xF000;<Number>&#xF000;<PluginID>&#xF000;<Number>`
 
-```text
-<enabled/>
-<data id="PowerToysRunIndividualPluginEnabledList" value="0778F0C264114FEC8A3DF59447CF0A74&#xF000;2&#xF000;791FC278BA414111B8D1886DFE447410&#xF000;0&#xF000;CEA0FDFC6D3B4085823D60DC76F28855&#xF000;1"/>
-```
+    ```
+    <enabled/>
+    <data id="PowerToysRunIndividualPluginEnabledList" value="0778F0C264114FEC8A3DF59447CF0A74&#xF000;2&#xF000;791FC278BA414111B8D1886DFE447410&#xF000;0&#xF000;CEA0FDFC6D3B4085823D60DC76F28855&#xF000;1"/>
+    ```
