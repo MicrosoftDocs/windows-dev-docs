@@ -84,7 +84,7 @@ For each utility shipped with PowerToys, there's a "Configure enabled state" pol
 - If you disable this setting, the utility will be always disabled and the user won't be able to enable it.
 - If you don't configure this setting, users are able to enable or disable the utility.
 
-These policies have a higher priority than the policy "Configure global utility enabled state" and overrides it.
+These policies have a higher priority than the policy "Configure global utility enabled state" and override it.
 
 > [!NOTE]
 > PDF file preview: There have been reports of incompatibility between the PDF Preview Handler and Outlook.
