@@ -369,7 +369,7 @@ You can set the enabled state for all plugins not controlled by this policy usin
 ##### Registry information
 
 - Path: Software\Policies\PowerToys\PowerLauncherIndividualPluginEnabledList
-- Name: `<PluginID>`
+- Name: The plugin ID from the `plugin.json` file.
 - Type: STRING
 
 - Example value:
