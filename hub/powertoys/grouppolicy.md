@@ -29,7 +29,7 @@ You can find the latest administrative templates (ADMX files) in the assets sect
 4. If your domain has more than one domain controller, the new ADMX files will be replicated to them at the next domain replication interval.
 ### Import the administrative template in Intune
 
-You can find all instructions on how to import the tdministrative templates in Intune [here](https://learn.microsoft.com/mem/intune/configuration/administrative-templates-import-custom#add-the-admx-and-adml-files).
+You can find all instructions on how to import the administrative templates in Intune [here](/mem/intune/configuration/administrative-templates-import-custom#add-the-admx-and-adml-files).
 
 ### Scope
 
