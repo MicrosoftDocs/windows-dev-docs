@@ -485,7 +485,7 @@ items:
           href: develop/widgets/widget-provider-manifest.md
         - name: Widget provider ActivateApplication protocol
           href: develop/widgets/widget-provider-activateapplication-protocol.md
-      - name: Windows widget providers
+      - name: Windows feed providers
         items:
         - name: Overview
           href: develop/feeds/feed-providers.md
