@@ -11,68 +11,35 @@ ms.localizationpriority: medium
 # Implement a feed provider in a C# Windows App
 
 
-This article walks you through creating a simple feed provider that registers a feed content URI and implements the TBD - API ref URL - [IFeedProvider]() interface. The methods of this interface are invoked by the Widgets Board to request custom query string parameters, typically to support authentication scenarios. Feed providers can support a single feed or multiple feeds. In this example, we will...TBD
-
-[TBD screen shot of feed]
-:::image type="content" source="images/weather-widget-screenshot.png" alt-text="A screenshot of a simple weather widget. The widget shows some weather-related graphics an data as well as some diagnostic text illustrating that the template for the medium size widget is being displayed.":::
-
+This article walks you through creating a simple feed provider that registers a feed content URI and implements the [IFeedProvider](TBD) interface. The methods of this interface are invoked by the Widgets Board to request custom query string parameters, typically to support authentication scenarios. Feed providers can support a single feed or multiple feeds.
 
 This sample code in this article is adapted from the TBD - sample URL [Windows App SDK Feeds Sample](). To implement a feed provider using C++/WinRT, see [Implement a feed provider in a win32 app (C++/WinRT)](implement-feed-provider-win32.md).
 
 ## Prerequisites
 
 - Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
-- Visual Studio 2022 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
+- Visual Studio 2022 or later with the **Universal Windows Platform development** workload. 
 
 ## Create a new C# console app
 
 In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleFeedProvider". When prompted, set the target .NET version to 6.0. 
 
-When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version 10.0.19041.0 or later.
+When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version [TBD - need build number] 10.0.19041.0 or later.
 
-Note that this walkthrough uses a console app that displays the console window when the widget is activated to enable easy debugging. When you are ready to publish your widget provider app, you can convert the console application to a Windows application by following the steps in [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
+Note that this walkthrough uses a console app that displays the console window when the feed is activated to enable easy debugging. When you are ready to publish your feed provider app, you can convert the console application to a Windows application by following the steps in [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
 
-## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
+## Add references to the Windows App SDK NuGet package
 
 This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
 
-## Add a WidgetProvider class to handle widget operations
+## Add a FeedProvider class to handle feed operations
 
-In Visual Studio, right-click the `ExampleFeedProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **Add**. In the generated WidgetProvider.cs file, update the class definition to indicate that it implements the **IFeedProvider** interface.
+In Visual Studio, right-click the `ExampleFeedProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "FeedProvider" and click **Add**. In the generated FeedProvider.cs file, update the class definition to indicate that it implements the **IFeedProvider** interface.
 
 ```csharp
 // FeedProvider.cs
 internal class FeedProvider : IFeedProvider
 ```
-
-## Prepare to track enabled feeds
-
-[TBD - I can't tell if you need to implement separate feeds in separate feed providers. Leaving this section here for now as a reminder]
-
-A widget provider can support a single widget or multiple widgets. Whenever the widget host initiates an operation with the widget provider, it passes an ID to identify the widget associated with the operation. Each widget also has an associated name and a state value that can be used to store custom data. For this example, we'll declare a simple helper structure to store the ID, name, and data for each pinned widget. Widgets also can be in an active state, which is discussed in the [Activate and Deactivate](#activate-and-deactivate) section below, and we will track this state for each widget with a boolean value. Add the following definition to the WidgetProvider.cs file, inside the **ExampleWidgetProvider** namespace, but outside of the **WidgetProvider** class definition.
-
-```csharp
-// WidgetProvider.cs
-
-public class CompactWidgetInfo
-{
-    public string widgetId { get; set; }
-    public string widgetName { get; set; }
-    public int customState = 0;
-    public bool isActive = false;
-
-}
-```
-
-Inside the **FeedProvider** class definition in FeedProvider.cs, add a member for the map that will maintain the list of enabled widgets, using the widget ID as the key for each entry.
-
-```csharp
-// WidgetProvider.cs
-
-// Class member of WidgetProvider
-public static Dictionary<string, CompactWidgetInfo> RunningWidgets = new Dictionary<string, CompactWidgetInfo>(); 
-```
-
 
 
 ## Implement the IFeedProvider methods
@@ -84,75 +51,72 @@ In the next few sections, we'll implement the methods of the **IFeedProvider** i
 
 ## OnFeedProviderEnabled
 
-[TBD - Just pasting C++/WinRT code from the spec for now. Update to C# if supported]
-```csharp
-// WidgetProvider.cs
+The **OnFeedProviderEnabled** method is invoked when a feed associated with the provider is created by the Widgets Board host. In the implementation of this method, generate a query string that includes the necessary authentication tokens for the remote web service that provides the feed content. Create an instance of **CustomQueryParametersUpdateOptions**, passing in the **FeedProviderDefinitionId** from the event args that identifies the feed that has been enabled and the query string. Get the default **FeedManager** and call **SetCustomQueryParameters** to register the query string parameters with the Widgets Board.
 
-void OnFeedProviderEnabled(FeedProviderEnabledArgs args)
-    {
-        // Get CustomQueryParams that include OAuth token
-        // for newly added provider:
-        hstring customizationParam = L"userOAuth=" + MyFeedProvider::GetUserOAuth(args.FeedProviderDefinitionId());
-        // Update CustomQueryParams for this feed provider:
-        CustomQueryParametersUpdateOptions options{args.FeedProviderDefinitionId(), customizationParam};
-        FeedManager::GetDefault().SetCustomQueryParameters(options);
-    }
+```csharp
+// FeedProvider.cs
+
+public void OnFeedProviderEnabled(FeedProviderEnabledArgs args)
+{
+    var feedQSPWithAuth = MyGenerateQueryStringFunction();
+    var options = new CustomQueryParametersUpdateOptions(args.FeedProviderDefinitionId, feedQSPWithAuth);
+    FeedManager.GetDefault().SetCustomQueryParameters(options);
+}
 ```
+
 
 ## OnFeedProviderDisabled
 
-[TBD - Just pasting C++/WinRT code from the spec for now. Update to C# if supported]
-```csharp
-// WidgetProvider.cs
+**OnFeedProviderDisabled** is called when the Widgets Board disables the feed provider. Feed providers are not required to perform any actions in response to these this method call. The method invocation can be used for telemetry information or to revoke authentication tokens, if needed. Also, the app may choose to shutdown in response to this call if the app is not servicing other active feed providers.
 
-void OnFeedProviderDisabled(FeedProviderDisabledArgs args)
-    {
-       // This call can be used for Telemtry and/or revoked OAuth token if needed
-       // as well as the signal to shutdown the app if it's not serving any other
-       // feed providers.
-    }
+```csharp
+// FeedProvider.cs
+public void OnFeedProviderDisabled(FeedProviderDisabledArgs args)
+{
+    // Information only
+}
+
 ```
 
-## OnFeedEnabled
+## OnFeedEnabled, OnFeedDisabled
 
-[TBD - Just pasting C++/WinRT code from the spec for now. Update to C# if supported]
+**OnFeedEnabled** and **OnFeedDisabled** are invoked by the Widgets Board when a feed is enabled or disabled, or if the feed provider is disabled. Feed providers are not required to perform any actions in response to these method calls. These method invocations can be used for telemetry information or to revoke authentication tokens, if needed.
+
 ```csharp
-// WidgetProvider.cs
-
- void OnFeedEnabled(FeedEnabledArgs args)
-    {
-       // Use for Telemetry and/or modification of OAuth token if needed.
-    }
+// FeedProvider.cs
+public void OnFeedEnabled(FeedEnabledArgs args)
+{
+    // Information only
+}
 ```
 
-## OnFeedDisabled
 
-[TBD - Just pasting C++/WinRT code from the spec for now. Update to C# if supported]
 ```csharp
-// WidgetProvider.cs
-
-void OnFeedDisabled(FeedDisabledArgs args)
-    {
-       // Use for Telemetry and/or modification of OAuth token if needed.
-    }
+// FeedProvider.cs
+public void OnFeedDisabled(FeedDisabledArgs args)
+{
+    // Information only
+}
 ```
 
 ## OnCustomQueryParametersRequested
 
-[TBD - Just pasting C++/WinRT code from the spec for now. Update to C# if supported]
+**OnCustomQueryParametersRequested** is raised when the Widgets Board determines that the custom query parameters associated with the feed provider need to be refreshed. For example, this method may be raised if the operation to fetch feed content from the remote web service fails. The **FeedProviderDefinitionId** property of the **CustomQueryParametersRequestedArgs** passed into this method specifies the feed for which query string params are being request. In the implementation of this method, feed providers should validate that the current query string parameters and auth tokens are still valid and unexpired. If not, the provider should regenerate the query string and pass it back to the Widgets Board by calling **SetCustomQueryParameters**.
+
 ```csharp
 // WidgetProvider.cs
 
-void OnCustomQueryParametersRequested(CustomQueryParametersRequestedArgs args)
+public void OnCustomQueryParametersRequested(CustomQueryParametersRequestedArgs args)
+{
+    // Verify that the query paramters values for args.FeedProviderDefinitionId are still valid, tokens not expired etc...
+    bool updateRequired = false; // Only if values 
+    if (updateRequired)
     {
-        // This FeedProvider has been requested to update their CustomQueryParams.
-        // It can happen because a content fetch has failed (for example).
-        // Get new CustomQueryParams that include refreshed OAuth token
-        hstring customizationParam = L"userOAuth=" + MyFeedProvider::GetUserOAuth(args.FeedProviderDefinitionId());
-        // Update CustomQueryParams for this feed provider:
-        CustomQueryParametersUpdateOptions options{args.FeedProviderDefinitionId(), customizationParam};
-        FeedManager::GetDefault().SetCustomQueryParameters(options);
+        var feedQSPWithAuth = MyGenerateQueryStringFunction(); // Regenerate query parameters
+        var options = new CustomQueryParametersUpdateOptions(args.FeedProviderDefinitionId, feedQSPWithAuth);
+        FeedManager.GetDefault().SetCustomQueryParameters(options);
     }
+}
 ```
 
 
