@@ -1,7 +1,7 @@
 ---
 description: C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library.
 title: C++/WinRT
-ms.date: 01/28/2022
+ms.date: 11/14/2023
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
@@ -62,6 +62,7 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [XAML controls; bind to a C++/WinRT property](./binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
 | [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
 | [XAML custom (templated) controls with C++/WinRT](./xaml-cust-ctrl.md) | This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls. |
+| [Passing parameters to APIs](./pass-parms-to-apis.md) | C++/WinRT provides a number of ways to pass a parameter to a projected API. |
 | [Passing parameters into the ABI boundary](./pass-parms-to-abi.md) | C++/WinRT simplifies passing parameters into the ABI boundary by providing automatic conversions for common cases. |
 | [Consume COM components with C++/WinRT](./consume-com.md) | This topic uses a full Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. |
 | [Author COM components with C++/WinRT](./author-coclasses.md) | C++/WinRT can help you to author classic COM components, just as it helps you to author Windows Runtime classes. |
