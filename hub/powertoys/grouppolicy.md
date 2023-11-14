@@ -71,7 +71,7 @@ The individual enabled state policies for the utilities will override this polic
 
 #### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureGlobalUtilityEnabledState
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureGlobalUtilityEnabledState`
 - Example value: `<disabled/>`
 
 ### Configure enabled state for individual utilities
@@ -145,7 +145,7 @@ These policies have a higher priority than the policy "Configure global utility 
 
 #### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/&lt;PolicyID&gt;
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/<PolicyID>`
 
     > [!Note]
     > Please see the table above for the *PolicyID* value.
@@ -178,7 +178,7 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 
 #### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/AllowExperimentation
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/AllowExperimentation`
 - Example value: `<disabled/>`
 
 ### Installer and Updates
@@ -212,7 +212,7 @@ This policy configures whether PowerToys per-user installation is allowed or not
 
 ##### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePerUserInstallation
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePerUserInstallation`
 - Example value: `<enabled/>`
 
 #### Disable automatic downloads
@@ -241,7 +241,7 @@ This policy configures whether automatic downloads of available updates are disa
 
 ##### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableAutomaticUpdateDownload
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableAutomaticUpdateDownload`
 - Example value: `<enabled/>`
 
 #### Suspend Action Center notification for new updates
@@ -273,7 +273,7 @@ This policy configures whether the action center notification for new updates is
 
 ##### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/SuspendNewUpdateToast
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/SuspendNewUpdateToast`
 - Example value: `<enabled/>`
 
 <!-- This policy is implemented for later usage (PT v1.0 and later) and therefore inactive. (To make it working please update `src/runner/UpdateUtils.cpp`)
@@ -303,7 +303,7 @@ This policy allows you to disable automatic update checks running in the backgro
 
 ##### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePeriodicUpdateCheck
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePeriodicUpdateCheck`
 - Example value: `<enabled/>`
 -->
 
@@ -341,7 +341,7 @@ You can override this policy for individual plugins using the policy "Configure 
 
 ##### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunAllPluginsEnabledState
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunAllPluginsEnabledState`
 - Example value: `<disabled/>`
 
 #### Configure enabled state for individual plugins
@@ -386,7 +386,7 @@ You can set the enabled state for all plugins not controlled by this policy usin
 
 ##### Intune information
 
-- OMA-URI: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunIndividualPluginEnabledState
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunIndividualPluginEnabledState`
 - Example value:
 
     > [!NOTE]
