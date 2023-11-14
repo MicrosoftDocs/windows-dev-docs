@@ -4,6 +4,8 @@ description: The Windows App SDK implementation of the UWP Visual layer.
 ms.topic: article
 ms.date: 11/14/2023
 keywords: 
+ms.author: jimwalk
+author: jwmsft
 ms.localizationpriority: medium
 ---
 
