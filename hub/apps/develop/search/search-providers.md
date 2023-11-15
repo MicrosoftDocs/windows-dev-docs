@@ -31,7 +31,6 @@ This article provides guidance for creating a search provider app package and de
 
 Search providers register with the OS by providing an MSIX package that contains required information about the provider, such as the name of the search provider and the HTTP endpoints for suggestions and previews.
 
-TBD - Steps for creating the package. We should pick the steps that align to the typical 3rd party scenario. I.e. Packaging at the command line or using a Windows Packaging Project in Visual Studio. 
 
 ### Search provider app extension
 
