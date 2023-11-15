@@ -79,6 +79,7 @@ Represents the registration for a single widget.
 | **ContentUri** | string | Yes | The URI from which feed content is retrieved. | N/A |
 | **Icon** | string | Yes | The package-relative path to an icon image file. that is displayed in the Widgets Board. | N/A |
 
+You can use localized resources instead of string literals for the UI-facing attribute values. For more information, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest).
 
 ## Example
 
@@ -86,19 +87,19 @@ The following code example illustrates the usage of the widget package manifest 
 
 ```xml
 <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoApp" Id="ContosoApp" PublicFolder="Public">
-    <uap3:Properties>
-        <FeedProvider Description="Contoso FeedProvider Description" SettingsUri="https://contoso.com/feeds/settings" Icon="ms-appx:Images\ContosoProviderIcon.png">
-            <Activation>
-                <CreateInstance ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
-            </Activation>
-            <Definitions>
-                <Definition Id="Contoso_Feed" DisplayName="Contoso" Description="Contoso Feed"
-                            ContentUri="https://contoso.com/news"
-                            Icon="ms-appx:Images\ContosoFeedIcon.png">
-                </Definition>
-            </Definitions>
-        </FeedProvider>
-    </uap3:Properties>
+  <uap3:Properties>
+      <FeedProvider Description="ms-resource:ProviderDescription" SettingsUri="https://contoso.com/feeds/settings" Icon="ms-appx:Images\ContosoProviderIcon.png">
+          <Activation>
+              <CreateInstance ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
+          </Activation>
+          <Definitions>
+              <Definition Id="Contoso_Feed" DisplayName="ms-resource:FeedDisplayName" Description="ms-resource:FeedDescription"
+                          ContentUri="https://contoso.com/news"
+                          Icon="ms-appx:Images\ContosoFeedIcon.png">
+              </Definition>
+          </Definitions>
+      </FeedProvider>
+  </uap3:Properties>
 </uap3:AppExtension>
 
 ```

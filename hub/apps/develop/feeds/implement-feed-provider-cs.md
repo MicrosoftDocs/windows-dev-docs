@@ -368,12 +368,12 @@ Next, add the extension that registers the app as a widget provider. Paste the [
     <uap3:Extension Category="windows.appExtension">
         <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoApp" Id="ContosoApp" PublicFolder="Public">
             <uap3:Properties>
-                <FeedProvider Description="Contoso FeedProvider Description" SettingsUri="https://contoso.com/feeds/settings" Icon="ms-appx:Images\ContosoProviderIcon.png">
+                <FeedProvider Description="ms-resource:ProviderDescription" SettingsUri="https://contoso.com/feeds/settings" Icon="ms-appx:Images\ContosoProviderIcon.png">
                     <Activation>
                         <CreateInstance ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
                     </Activation>
                     <Definitions>
-                        <Definition Id="Contoso_Feed" DisplayName="Contoso" Description="Contoso Feed"
+                        <Definition Id="Contoso_Feed" DisplayName="ms-resource:FeedDisplayName" Description="ms-resource:FeedDescription"
                                     ContentUri="https://contoso.com/news"
                                     Icon="ms-appx:Images\ContosoFeedIcon.png">
                         </Definition>
