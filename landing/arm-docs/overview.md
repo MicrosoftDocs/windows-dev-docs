@@ -45,7 +45,7 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
     :::column-end:::
     :::column span="2":::
         Arm64EC (“Emulation Compatible”) enables you to incrementally build new apps, or port existing apps, to take advantage of native Arm performance where possible, while utilizing existing x64 code & libraries until fully migrated. Learn more:
-        - [Using ARM64EC to build apps for ARM devices](./arm64ec.md)
+        - [Using Arm64EC to build apps for Arm devices](./arm64ec.md)
         - [Understanding Arm64EC ABI and assembly code](./arm64ec-abi.md)
     :::column-end:::
 :::row-end:::
@@ -98,15 +98,15 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 
 While our guidance to [Add Arm support to your Windows app](add-arm-support.md) walks through how to create an Arm-optimized version of your app(s). The App Assure Arm Advisory Service is available to help if you get stuck. This service is in addition to our existing promise: your apps will run on Windows on Arm, and if you encounter any issues, Microsoft will help you remediate them. [Learn more](https://blogs.windows.com/windowsdeveloper/2023/10/16/windows-launching-arm-advisory-service-for-developers/).
 
-[Sign up for Windows Arm Advisory Services](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0hAZezl6y5Om22d_0SBAstUOU9OSlBDQ0dBNkUwTU0ySlNZRklSMFJMViQlQCN0PWcu).
+[Sign up for Windows Arm Advisory Service](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0hAZezl6y5Om22d_0SBAstUOU9OSlBDQ0dBNkUwTU0ySlNZRklSMFJMViQlQCN0PWcu).
 
 ## Additional resources
 
 - [Satya Nadella's Build 2022 keynote announcing "Project Volterra"](https://youtu.be/BmGiJDeIiY0?t=63)
 - [How x86 emulation works on Arm](./apps-on-arm-x86-emulation.md)
 - [Troubleshooting x86 desktop apps](./apps-on-arm-troubleshooting-x86.md)
-- [Troubleshooting ARM UWP apps](./apps-on-arm-troubleshooting-arm32.md)
-- [Program Compatibility Troubleshooter on ARM](./apps-on-arm-program-compat-troubleshooter.md)
+- [Troubleshooting Arm UWP apps](./apps-on-arm-troubleshooting-arm32.md)
+- [Program Compatibility Troubleshooter on Arm](./apps-on-arm-program-compat-troubleshooter.md)
 - [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers): Instructions for building an Arm64 driver.
 - [Debugging x86 apps on Arm](/windows-hardware/drivers/debugger/debugging-arm64) | Guidance for debugging x86 apps on Arm.
 - [Video: Building Arm64 Win32 C++ Apps](https://www.youtube.com/watch?v=OZtVBDeVqCE)

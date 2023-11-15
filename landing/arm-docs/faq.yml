@@ -34,7 +34,7 @@ sections:
       - question: |
           Are drivers supported by emulation? Or do I have to add Arm64 native support to any drivers used in my app?
         answer: |
-          In all cases, kernel-mode drivers and user-mode print drivers MUST be built as native ARM64 binaries to work on ARM64 devices. Additionally, you cannot execute an x86 or x64 setup program to install an ARM64 driver on ARM64 devices. See [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
+          In all cases, kernel-mode drivers and user-mode print drivers MUST be built as native Arm64 binaries to work on Arm64 devices. Additionally, you cannot execute an x86 or x64 setup program to install an Arm64 driver on Arm64 devices. See [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
       - question: |
           Does Visual Studio work on Arm?
@@ -54,7 +54,7 @@ sections:
       - question: |
           How do I update my C++ Windows app to support Arm devices?
         answer: |
-          See [Configure C++ projects for ARM processors](/cpp/build/configuring-programs-for-arm-processors-visual-cpp).
+          See [Configure C++ projects for Arm processors](/cpp/build/configuring-programs-for-arm-processors-visual-cpp).
 
   - name: Windows on Arm Virtual Machine FAQ
     questions:
