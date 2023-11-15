@@ -19,7 +19,7 @@ ms.localizationpriority: medium
 
 Starting with **TBD - Feature availability information** 3rd party search engines can integrate into the built-in Windows Search experience to provide suggested results and preview pages in response to the query the user types into the Windows Search box.
 
-**TBD - Screenshot of Contoso integration into Search UI**
+:::image type="content" source="images/search-integration.png" alt-text="Screenshot of the Windows Search UI with 3rd party search provider integration.":::
 
 Search providers integrate with the Search experience by creating an [MSIX package](/windows/msix/) with a package manifest file that provides the required information for the OS to register the search provider. Users can add a search provider to Windows by installing the associated app package through [Microsoft Store](https://www.microsoft.com/store/apps/windows) and can remove the search provider through the **Add or remove programs** page in Windows Settings app.
 
@@ -79,24 +79,25 @@ TBD - Update with good example.
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  IgnorableNamespaces="uap rescap">
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="236dc6d8-6490-4c6a-b788-ef7e2e040685"
-    Publisher="CN=drewbat"
-    Version="1.0.0.0" />
+    Name="ef69a2f4-106b-47e1-8c66-8a830fb59531"
+    Publisher="CN=v-xinwli"
+    Version="1.0.38.0" />
+
+	<mp:PhoneIdentity PhoneProductId="d201f4da-cb64-4cac-952c-127bdb312883" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>SearchProviderPackagingProject</DisplayName>
-    <PublisherDisplayName>drewbat</PublisherDisplayName>
-    <Logo>Images\StoreLogo.png</Logo>
+    <DisplayName>CustomSearch</DisplayName>
+    <PublisherDisplayName>v-xinwli</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
   </Dependencies>
 
   <Resources>
@@ -106,32 +107,35 @@ TBD - Update with good example.
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="$targetentrypoint$">
+      EntryPoint="CustomSearchProvider.App">
       <uap:VisualElements
-        DisplayName="SearchProviderPackagingProject"
-        Description="SearchProviderPackagingProject"
-        BackgroundColor="transparent"
-        Square150x150Logo="Images\Square150x150Logo.png"
-        Square44x44Logo="Images\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
-        <uap:SplashScreen Image="Images\SplashScreen.png" />
+        DisplayName="CustomSearch"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="Custom search provider"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
-        <Extensions>
-            <uap3:Extension Category="windows.appExtension">
-                <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="ExampleSearchProviderApp" Id="ContosoSearchApp" PublicFolder="Public">
-                    <uap3:Properties>
-                        <Endpoint>https://contoso.com</Endpoint>
-                        <Protocol>contoso</Protocol>
-                    </uap3:Properties>
-                </uap3:AppExtension>
-            </uap3:Extension>
-        </Extensions>
+      <Extensions>
+		  <uap3:Extension Category="windows.appExtension">
+			  <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="CustomSearch" Id="CustomSearchApp" PublicFolder="Public">
+				  <uap3:Properties>
+					  <Endpoint>https://customsearchendpoint</Endpoint>
+					  <Protocol>customsearch</Protocol>
+				  </uap3:Properties>
+			  </uap3:AppExtension>
+		  </uap3:Extension>
+		  <uap:Extension Category="windows.protocol">
+			  <uap:Protocol Name="customsearch"/>
+		  </uap:Extension>
+    </Extensions>
     </Application>
   </Applications>
 
   <Capabilities>
     <Capability Name="internetClient" />
-    <rescap:Capability Name="runFullTrust" />
+	<Capability Name="privateNetworkClientServer" />
   </Capabilities>
 </Package>
 ```
