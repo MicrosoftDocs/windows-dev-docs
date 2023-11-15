@@ -60,18 +60,20 @@ In addition to **IIterable\<T\>**, the following alternatives are also accepted.
 
 The double-iterator works more generally for the case where you have a collection that doesn't fit any of the scenarios above,
 as long as you can iterate over it and produce things that can be converted to **T**.
-For example, you may have a **IVector\<U\>** or **std::vector\<U\>**, where **U** is convertible to **T*.
+For example, you may have a **IVector\<U\>** or **std::vector\<U\>**, where **U** is convertible to **T**.
 
 In the following example, the **SetStorageItems** method expects an **IIterable\<IStorageItem\>**. The double-iterator pattern lets us pass other types of collections.
 
 ```cppwinrt
-// Vector of derived types.
-std::vector<winrt::StorageFile> storageFiles;
+// IVector of derived types.
+winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Storage::StorageFile>
+    storageFiles{ /* initialization elided */ };
 dataPackage.SetStorageItems(storageFiles); // doesn't work
 dataPackage.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // works
 
 // Array of derived types.
-std::array<StorageFile, 3> storageFiles;
+std::array<winrt::Windows::Storage::StorageFile, 3>
+    storageFiles{ /* initialization elided */ };
 dataPackage.SetStorageItems(storageFiles); // doesn't work
 dataPackage.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // works
 ```
