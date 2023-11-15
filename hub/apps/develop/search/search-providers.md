@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > The feature described in this topic is available in *TBD - Dev Channel preview builds of Windows starting with build 25217*. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
 
-Starting with **TBD - Feature availability information** 3rd party search engines can integrate into the built-in Windows Search experience to provide suggested results and preview pages in response to the query the user types into the Windows Search box.
+By default, Windows Search currently uses the Microsoft Bing Search app to return web content and search results. In the European Economic Area (EEA), you can enable installed Microsoft Store apps that implement a web search provider to return web content and search results in Windows Search through Settings.
 
 :::image type="content" source="images/search-integration.png" alt-text="Screenshot of the Windows Search UI with 3rd party search provider integration.":::
 
