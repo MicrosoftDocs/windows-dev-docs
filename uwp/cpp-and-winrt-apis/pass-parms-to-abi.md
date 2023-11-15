@@ -1,9 +1,9 @@
 ---
 description: C++/WinRT simplifies passing parameters to projected APIs by providing automatic conversions for common cases.
 title: Passing parameters to projected APIs
-ms.date: 07/10/2019
+ms.date: 11/15/2023
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, pass, parameters, ABI
+keywords: windows 11, windows 10, uwp, standard, c++, cpp, winrt, projection, pass, parameters, ABI
 ms.localizationpriority: medium
 ---
 
@@ -91,7 +91,7 @@ For the case of **IIterable\<IKeyValuePair\<K, V\>\>**, the following alternativ
 
 **winrt::param::vector_view\<T\>** and **winrt::param::async_vector_view\<T\>** simplify passing parameters as **IVectorView\<T\>**.
 
-You can use **IVector\<T\>::GetView()** to get an **IVectorView\<T\>** from an **IVector\<T\>**.
+You can call **IVector\<T\>::GetView** to get an **IVectorView\<T\>** from an **IVector\<T\>**.
 
 In addition to **IVectorView\<T\>**, the following alternatives are also accepted. Note that some alternatives are available only for synchronous methods.
 
@@ -109,7 +109,7 @@ The temporary view is more efficient if the `begin` and `end` iterators are rand
 
 **winrt::param::map_view\<T\>** and **winrt::param::async_map_view\<T\>** simplify passing parameters as **IMapView\<T\>**.
 
-You can use **IMap\<K, V\>::GetView()** to get an **IMapView\<K, V\>** from an **IMap\<K, V\>**.
+You can call **IMap\<K, V\>::GetView** to get an **IMapView\<K, V\>** from an **IMap\<K, V\>**.
 
 In addition to **IMapView\<K, V\>**, the following alternatives are also accepted. Note that some alternatives are available only for synchronous methods.
 

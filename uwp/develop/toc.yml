@@ -784,7 +784,7 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx-async.md
         - name: Move to C++/WinRT from WRL
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
-        - name: Porting a sample app from C#
+        - name: Porting a sample app from C#
           href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
         - name: Move to C++/WinRT from C#
           href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
