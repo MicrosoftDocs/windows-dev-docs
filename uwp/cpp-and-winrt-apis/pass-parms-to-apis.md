@@ -19,8 +19,7 @@ don't use them in your own functions and methods.
 
 ## String parameters
 
-The `winrt::param::hstring` simplifies passing parameters as `winrt::hstring`.
-In addition to `winrt::hstring`, these alternatives are also accepted:
+The `winrt::param::hstring` simplifies passing parameters as `winrt::hstring`. In addition to `winrt::hstring`, these alternatives are also accepted:
 
 | Alternative  | Notes |
 |--------------|-------|
@@ -69,7 +68,7 @@ dataPackage.SetStorageItems(storageFiles); // doesn't work
 dataPackage.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // works
 ```
 
-For the case of `IIterable<IKeyValuePair<K, V>>`, these alternatives are also accepted. Note that some alternatives are available only for synchronous methods.
+For the case of `IIterable<IKeyValuePair<K, V>>`, these alternatives are accepted. Note that some alternatives are available only for synchronous methods.
 
 | Alternative  | Sync | Async | Notes |
 |--------------|------|-------|-------|
@@ -90,7 +89,7 @@ In addition to `IVectorView<T>`, the following alternatives are also accepted. N
 
 | Alternative  | Sync | Async | Notes |
 |--------------|------|-------|-------|
-|`std::vector<T>const&` | Yes | No | |
+|`std::vector<T> const&` | Yes | No | |
 |`std::vector<T>&&` | Yes | Yes | Contents are moved into a temporary view. |
 |`std::initializer_list<T>` | Yes | Yes | Async version copies the list into a temporary view. |
 |`{ begin, end }` | Yes | No | `begin` and `end` must be [forward iterators](https://en.cppreference.com/w/cpp/named_req/ForwardIterator), and `*begin` must be convertible to `T`. |
@@ -111,7 +110,7 @@ In addition to `IMapView<K, V>`, the following alternatives are also accepted. N
 |`std::map<K, V>&&` | Yes | Yes | Contents are moved into a temporary view. |
 |`std::unordered_map<K, V> const&` | Yes | No | |
 |`std::unordered_map<K, V>&&` | Yes | Yes | Contents are moved into a temporary view. |
-|`std::initializer_list<std::pair<K, V>>` | Yes | Yes | Contents are copied into the view. Keys may not be duplicated. |
+|`std::initializer_list<std::pair<K, V>>` | Yes | Yes | Contents are copied into a temporary view. Keys may not be duplicated. |
 
 ## Vector parameters
 
