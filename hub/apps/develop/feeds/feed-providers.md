@@ -38,11 +38,11 @@ The following lists the high-level steps for developing a feed provider:
 ## Limitations and Considerations
 
 - The Feed Providers feature is in preview. [add specific widgets package number here]
-- There may be geographical and market restrictions.
-- The feature is contingent upon using the latest Windows App SDK for app development. [add specific version number here]
+- This feature is only available to users in the European Economic Area (EEA). In the EEA, installed Microsoft Store apps that implement a feed provider can provide content feed in the Widgets Board.
+- The feature requires using the latest Windows App SDK for app development. [add specific version number here]
 - Specific technical and design guidelines must be adhered to for proper feed integration.
 
 
 ## Next Steps
 
-Detailed implementation guidance will be published in a future update. Which will include technical specifics, best practices, and a step-by-step guide to registering your application's feed with the Windows Widgets Board.
+Detailed implementation guidance will be provided in a future documentation update. 
