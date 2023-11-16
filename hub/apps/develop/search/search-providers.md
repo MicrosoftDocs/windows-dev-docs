@@ -69,74 +69,22 @@ The protocol schema that will be used when launching the provided web search res
 
 The following is an example `appmanifest.xml` package manifest file for registering a Windows Search provider.
 
-TBD - Update with good example.
 
 ```xml
 <!-- appxmanifest.xml -->
-<?xml version="1.0" encoding="utf-8"?>
 
-<Package
-  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-  IgnorableNamespaces="uap mp">
+  <uap3:Extension Category="windows.appExtension">
+	  <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="CustomSearch" Id="CustomSearchApp" PublicFolder="Public">
+		  <uap3:Properties>
+			  <Endpoint>https://customsearchendpoint</Endpoint>
+			  <Protocol>customsearch</Protocol>
+		  </uap3:Properties>
+	  </uap3:AppExtension>
+  </uap3:Extension>
+  <uap:Extension Category="windows.protocol">
+	  <uap:Protocol Name="customsearch"/>
+  </uap:Extension>
 
-  <Identity
-    Name="ef69a2f4-106b-47e1-8c66-8a830fb59531"
-    Publisher="CN=v-xinwli"
-    Version="1.0.38.0" />
-
-	<mp:PhoneIdentity PhoneProductId="d201f4da-cb64-4cac-952c-127bdb312883" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
-
-  <Properties>
-    <DisplayName>CustomSearch</DisplayName>
-    <PublisherDisplayName>v-xinwli</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
-  </Properties>
-
-  <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
-  </Dependencies>
-
-  <Resources>
-    <Resource Language="x-generate"/>
-  </Resources>
-
-  <Applications>
-    <Application Id="App"
-      Executable="$targetnametoken$.exe"
-      EntryPoint="CustomSearchProvider.App">
-      <uap:VisualElements
-        DisplayName="CustomSearch"
-        Square150x150Logo="Assets\Square150x150Logo.png"
-        Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Custom search provider"
-        BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
-      </uap:VisualElements>
-      <Extensions>
-		  <uap3:Extension Category="windows.appExtension">
-			  <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="CustomSearch" Id="CustomSearchApp" PublicFolder="Public">
-				  <uap3:Properties>
-					  <Endpoint>https://customsearchendpoint</Endpoint>
-					  <Protocol>customsearch</Protocol>
-				  </uap3:Properties>
-			  </uap3:AppExtension>
-		  </uap3:Extension>
-		  <uap:Extension Category="windows.protocol">
-			  <uap:Protocol Name="customsearch"/>
-		  </uap:Extension>
-    </Extensions>
-    </Application>
-  </Applications>
-
-  <Capabilities>
-    <Capability Name="internetClient" />
-	<Capability Name="privateNetworkClientServer" />
-  </Capabilities>
-</Package>
 ```
 
 ## Implement a Windows Search provider suggestion endpoint
