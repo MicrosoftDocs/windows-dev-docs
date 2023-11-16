@@ -1,7 +1,7 @@
 ---
 title: install Command
 description: Installs the specified application.
-ms.date: 07/26/2023
+ms.date: 11/15/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -16,7 +16,7 @@ The **install** command requires that you specify the exact string to install. I
 
 `winget install [[-q] \<query> ...] [\<options>]`
 
-![search command](./images/install.png)
+![install command](./images/install.png)
 
 ## Aliases
 

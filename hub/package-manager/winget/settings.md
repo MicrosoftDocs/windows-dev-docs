@@ -176,17 +176,45 @@ The `architectures` behavior affects what architectures will be selected when in
     },
 ```
 
+#### installerTypes
+
+The `installerTypes` behavior affects what installer types will be selected when installing a package. The matching parameter is `--installer-type`.
+
+```json
+    "installBehavior": {
+        "preferences": {
+            "installerTypes": ["msix", "msi"]
+        }
+    },
+```
+
 ### uninstallBehavior
 
 The `uninstallBehavior` settings affect the default behavior of uninstalling (where applicable) packages.
 
-### purgePortablePackage
+#### purgePortablePackage
 
 The `purgePortablePackage` behavior affects the default behavior for uninstalling a portable package. If set to `true`, uninstall will remove all files and directories relevant to the `portable` package. This setting only applies to packages with the `portable` installer type. Defaults to `false` if value is not set or is invalid.
 
 ```json
     "uninstallBehavior": {
         "purgePortablePackage": true
+    },
+```
+
+### downloadBehavior
+
+The `downloadBehavior` settings affect the default behavior of downloading packages.
+
+#### defaultDownloadDirectory
+
+The `defaultDownloadDirectory` setting affects the default directory where packages are downloaded to. Defaults to `%USERPROFILE%/Downloads` if value is not set or is invalid.
+
+> Note: This setting value must be an absolute path.
+
+```json
+    "downloadBehavior": {
+        "defaultDownloadDirectory": "C:/Users/FooBar/Downloads"
     },
 ```
 

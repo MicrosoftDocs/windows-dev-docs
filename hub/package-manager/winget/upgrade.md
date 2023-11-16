@@ -115,3 +115,9 @@ The example below shows the [**list**](.\list.md) command being used to identify
 
 > [!NOTE]
 > Some applications do not provide a version.  They are always latest.  Because the Windows Package Manager cannot identify if there is a newer version of the app, an upgrade will not be possible.
+
+## **upgrade** --uninstall-previous
+
+**upgrade --uninstall-previous** will uninstall the previous version prior to installing the newer version of the package. When using `--uninstall-previous`, the behavior will depend on the individual package. Some installers are designed to install new versions side-by-side while other installers include a manifest that specifies `uninstallPrevious` as their default upgrade behavior (so earlier versions are uninstalled without needing to use the command flag). 
+
+If the package manifest does not include `uninstallPrevious` as the upgrade behavior and the `--uninstall-previous` flag is not used with the upgrade command, then the default behavior for the installer will apply.
