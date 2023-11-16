@@ -18,11 +18,12 @@ Preview Pane is an existing feature in the Windows File Explorer which allows yo
 
 Preview Pane supports:
 
-- SVG icons (.svg)
+- SVG images (.svg)
 - Markdown files (.md)
 - Source code files (.cs, .cpp, .rs, ...)
 - PDF files (.pdf)
 - G-code files (.gcode)
+- QOI images (.qoi)
 
 ### Settings for Source code files previewer
 
@@ -63,10 +64,11 @@ To enable thumbnail preview support, set the extension to **On**.
 
 Thumbnail preview supports:
 
-- SVG icons (.svg)
+- SVG images (.svg)
 - PDF files (.pdf)
 - G-code files (.gcode)
 - STL files (.stl)
+- QOI images (.qoi)
 
 > [!NOTE]
 > A reboot may be required after enabling the thumbnail previewer for the settings to take effect. Thumbnails might not appear on paths managed by cloud storage solutions like OneDrive, since these solutions may get their thumbnails from the cloud instead of generating them locally.
