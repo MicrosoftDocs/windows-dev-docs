@@ -4,7 +4,7 @@ ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: Landmarks and Headings
 label: Landmarks and Headings
 template: detail.hbs
-ms.date: 01/24/2018
+ms.date: 17/11/2023
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -12,17 +12,17 @@ ms.localizationpriority: medium
 
 # Landmarks and Headings
 
-A user interface is typically organized in a visually efficient way, allowing a sighted user to quickly skim for what interests them without having to slow down to read *all* the content. A screen reader user needs to have this same skimming ability.
-
-**Landmarks** and **headings** define sections of a user interface that aid in more efficient navigation for users of assistive technology (AT). Marking up the content into landmarks and headings provides a screen reader user the option to skim content similar to the way a sighted user would.
+**Landmarks** and **headings** help users of assistive technology (AT) navigate a UI more efficiently by uniquely identifying different sections of a user interface.
 
 ## Background
+
+A user interface is typically organized in a visually efficient way, allowing a sighted user to quickly skim for what interests them without having to slow down to read *all* the content. A screen reader user needs to have this same skimming ability. Marking content as landmarks and headings provides the user of a screen reader the option to skim content similar to the way a sighted user would.
 
 The concepts of [ARIA landmarks](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page), [ARIA headings](https://www.w3.org/TR/WCAG20-TECHS/ARIA12.html), and [HTML headings](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H42.html) have been used in web content for years to allow faster navigation by screen reader users. Web pages utilize landmarks and headings to make their content more usable by allowing the AT user to quickly get to the large chunk (landmark) and smaller chunk (heading).
 
 Specifically, screen readers have commands allowing users to jump between landmarks and jump between headings (next/previous or specific heading level).
 
-Landmarks enable content to be grouped into various categories such as *search*, *navigation*, *main content*, and so on. Once grouped, the AT user can quickly navigate between the groups. This quick navigation allows the user to skip potentially substantial amounts of content which previously may have had to be navigated over item by item, making for a poor experience.
+Landmarks enable content to be grouped into various categories such as *search*, *navigation*, *main content*, and so on. Once grouped, the AT user can quickly navigate between the groups. This quick navigation allows the user to skip potentially substantial amounts of content that previously required navigation item by item.
 
 For example, when using a tab panel, consider making it a *navigation* landmark. When using a search edit box, consider making it a *search* landmark, and consider setting your main content as a *main content* landmark.
 
