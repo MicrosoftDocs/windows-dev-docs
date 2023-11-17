@@ -12,21 +12,35 @@ ms.localizationpriority: medium
 
 # Landmarks and Headings
 
-A user interface is typically organized in a visually efficient way, allowing a sighted user to quickly skim for what interests them without having to slow down to read *all* the content. A screen reader user needs to have this same skimming ability. Landmarks and headings define sections of a user interface that aid in more efficient navigation for users of assistive technology (AT). Marking up the content into landmarks and headings provides a screen reader user the option to skim content similar to the way a sighted user would.
+A user interface is typically organized in a visually efficient way, allowing a sighted user to quickly skim for what interests them without having to slow down to read *all* the content. A screen reader user needs to have this same skimming ability.
 
-The concepts of [ARIA landmarks](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page), [ARIA headings](https://www.w3.org/TR/WCAG20-TECHS/ARIA12.html), and [HTML headings](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H42.html) have been used in web content for years to allow faster navigation by screen reader users. Web pages utilize landmarks and headings to make their content more usable by allowing the AT user to quickly get to the large chunk (landmark) and smaller chunk (heading). Specifically, screen readers have commands allowing users to jump between landmarks and jump between headings (next/previous or specific heading level). It is important to consider landmarks and headings in your apps for the same reasons.
+**Landmarks** and **headings** define sections of a user interface that aid in more efficient navigation for users of assistive technology (AT). Marking up the content into landmarks and headings provides a screen reader user the option to skim content similar to the way a sighted user would.
 
-Landmarks enable content to be grouped into various categories such as search, navigation, main content, and so on. Once grouped, the AT user can quickly navigate between the groups. This quick navigation allows the user to skip potentially substantial amounts of content which previously may have had to be navigated over item by item making for a poor experience.
+## Background
 
-For example, when using a tab panel, consider this a navigational landmark. When using a search edit box, consider this a search landmark and consider setting your main content as a main content landmark. Whether within a landmark or even outside a landmark, consider setting sub elements as headings with logical heading levels.
+The concepts of [ARIA landmarks](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page), [ARIA headings](https://www.w3.org/TR/WCAG20-TECHS/ARIA12.html), and [HTML headings](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H42.html) have been used in web content for years to allow faster navigation by screen reader users. Web pages utilize landmarks and headings to make their content more usable by allowing the AT user to quickly get to the large chunk (landmark) and smaller chunk (heading).
+
+Specifically, screen readers have commands allowing users to jump between landmarks and jump between headings (next/previous or specific heading level).
+
+Landmarks enable content to be grouped into various categories such as *search*, *navigation*, *main content*, and so on. Once grouped, the AT user can quickly navigate between the groups. This quick navigation allows the user to skip potentially substantial amounts of content which previously may have had to be navigated over item by item, making for a poor experience.
+
+For example, when using a tab panel, consider making it a *navigation* landmark. When using a search edit box, consider making it a *search* landmark, and consider setting your main content as a *main content* landmark.
+
+Whether within a landmark or even outside a landmark, consider annotating sub-elements as headings with logical heading levels.
+
+## Example: Settings
 
 Consider the **Ease of Access** page in the Windows Settings app.
 
 ![Ease of Access page in the Windows settings app](images/ease-of-access-settings.png)  
 
-There is a search edit box which is wrapped within a search landmark. The navigational elements on the left are wrapped within a navigational landmark and the main content on the right is wrapped within a main content landmark. Taking this further, within the navigational landmark there is a main group heading called **Ease of Access** which is a heading level 1. Under that are the sub options **Vison**, **Hearing**, and so on. These have a heading level 2. Setting headings is continued within the main content again setting the main subject, **Display**, as heading level 1 and sub groups such as **Make everything bigger** as heading level 2.
+There is a search edit box which is wrapped within a search landmark. The navigational elements on the left are wrapped within a navigational landmark and the main content on the right is wrapped within a main content landmark.
+
+Taking this further, within the navigational landmark there is a main group heading called **Ease of Access** which is a heading level 1. Under that are the sub options **Vison**, **Hearing**, and so on. These have a heading level 2. Setting headings is continued within the main content again setting the main subject, **Display**, as heading level 1 and sub groups such as **Make everything bigger** as heading level 2.
 
 The Settings app would be accessible without landmarks and headings, but it becomes more usable with them. A screen reader user can quickly and easily get to the group (landmark) they need and then quickly get to the sub group (heading) as well.
+
+## Usage
 
 Use [AutomationProperties.LandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) to setup the UI element as the [type of landmark](/windows/desktop/WinAuto/landmark-type-identifiers) you wish. This landmark UI element would encapsulate all the other UI elements which make sense for that landmark.
 
