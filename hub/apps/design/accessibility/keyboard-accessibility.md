@@ -85,6 +85,28 @@ This results in the following tab order:
 1. B
 1. C
 
+### Keyboard navigation between prominent sections of UI
+
+While implementing tab and keyboard navigation alone can provide an accessibly-compliant UI, making an accessibly-*usable* UI often require a few more steps. Typically, that includes:
+
+* Listening to **F6** to navigate between important sections of your UI
+* Adding **keyboard shortcuts** for common actions in your UI
+* Adding **access keys** to important controls in your UI
+
+See [Keybord shortcuts](#keyboard-shortcuts) below and [Access keys](../input/access-keys.md) for more guidance about implementing shortcuts and access keys.
+
+#### Cycling regions of UI with F6
+
+F6 lets keyboard users navigate between sections of your UI without, potentially, needing to tab through dozens of controls.
+
+For example, pressing F6 in Edge will cycle between the tab list, the navigation bar/app bar, and the webpage content. Since a webpage potentially has hundreds of tabbable controls, this makes it easy for keyboard users to reach the tab list and navigation bar without knowing specific shortcuts. This is also helpful in simpler UIs: the Windows taskbar cycles through Start, Search, the apps list, and parts of the systray when you press F6.
+
+The F6 cycle will often correspond to accessible [landmarks or headings](landmarks-and-headings.md), though it doesn't need to match exactly. F6 should focus on large, distinct regions in your UI, whereas landmarks can be more granular. You might mark an app bar and its search box as landmarks, but only include the app bar itself in the F6 cycle.
+
+If possible, though, regions in the F6 cycle should have an accessible name: either via a landmark or by manually adding [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.nameproperty) to the "root" element of the region.
+
+Typically, **Shift-F6** should cycle in the opposite direction.
+
 ## Keyboard navigation within a UI element
 
 For composite elements, it is important to ensure proper inner navigation among the contained elements. A composite element can manage its current active child to reduce the overhead of having all child elements able to have focus. Such a composite element is included in the tab order, and it handles keyboard navigation events itself. Many of the composite controls already have some inner navigation logic built into the into control's event handling. For example, arrow-key traversal of items is enabled by default on the [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView), [**GridView**](/uwp/api/windows.ui.xaml.controls.gridview), [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) and [**FlipView**](/uwp/api/Windows.UI.Xaml.Controls.FlipView) controls.
