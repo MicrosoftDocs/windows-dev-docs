@@ -41,7 +41,6 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/windows/terminal/breadcrumb/toc.json",
-      "extendBreadcrumb": true,
       "uhfHeaderId": "MSDocsHeader-Windows",
       "keywords": "Windows Terminal, terminal, windows shell, terminal docs",
       "feedback_system": "GitHub",

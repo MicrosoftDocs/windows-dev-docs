@@ -44,6 +44,8 @@
       href: json-fragment-extensions.md
     - name: Cascadia Code
       href: cascadia-code.md
+    - name: Terminal Chat
+      href: terminal-chat.md
     - name: Tips and tricks
       href: tips-and-tricks.md
     - name: Tutorials
