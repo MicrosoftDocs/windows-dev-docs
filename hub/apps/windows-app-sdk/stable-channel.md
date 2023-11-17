@@ -32,6 +32,19 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.4
 
+### Version 1.4.3 (1.4.231115000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
+
+-	Fixed an issue where a menu could appear without a background for a short period of time.
+-	Fixed a crash that may occur in specific multi-monitor scenarios.
+-	Fixed an issue where a context menu could appear off-screen.
+-	Fixed an issue with Window styles and maximizing behavior. For more info, see GitHub issue [#8996](https://github.com/microsoft/microsoft-ui-xaml/issues/8996).
+-	Fixed an issue with Islands where focus could be unexpectedly grabbed from another control.
+-	Fixed an issue with tab order on `NavigationView`.
+-	Fixed a rendering issue where a white bar might be visible at the top of the titlebar. For more info, see GitHub issue [#8947](https://github.com/microsoft/microsoft-ui-xaml/issues/8947).
+-	Various performance fixes.
+
 ### Version 1.4.2 (1.4.231008000)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
