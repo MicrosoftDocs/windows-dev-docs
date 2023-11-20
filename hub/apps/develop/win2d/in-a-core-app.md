@@ -11,7 +11,9 @@ ms.localizationpriority: medium
 
 The [Win2D quickstart](./hellowin2dworld.md) and [Build a simple Win2D app](./quick-start.md) topics both show Win2D being used in projects that use the XAML user-interface (UI) framework. But you can *also* use Win2D in a project that doesn't use XAML at all.
 
-This topic shows you how, in a UWP Core App project, you can use a [CanvasSwapChain](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) to display Win2D content. And you can run the resulting app on both Windows and Xbox.
+This topic shows you how, in a UWP Core App project, you can use a [CanvasSwapChain](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) to display Win2D content. And you can run the resulting app on both Windows and Xbox. This type of app is also referred to as a *CoreApplication app*, or a *UWP DirectX app*.
+
+> **Platform APIs:** [IFrameworkViewSource](/uwp/api/windows.applicationmodel.core.iframeworkviewsource), [IFrameworkView](/uwp/api/windows.applicationmodel.core.iframeworkview), [CoreWindow](/uwp/api/windows.ui.core.corewindow), [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication), [CoreApplicationView](/uwp/api/windows.applicationmodel.core.coreapplicationview), [CanvasSwapChain](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm), [CanvasDrawingSession](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasDrawingSession.htm)
 
 ## Create and configure a new project
 
@@ -100,15 +102,18 @@ public static class Program
 }
 ```
 
+> [!NOTE]
+> This example includes a separate **Program** class containing the **Main** entry point for the program, which then starts the actual **CoreApplication** app. But it's not necessary to place the entry point in a separate class; you could instead just move the **Main** method inside of the **App** class if you prefer structuring code that way. If you're using C# 10 or above, then the `CoreApplication.Run(new App());` expression statement could also be in a top-level statement.
+
 ## Finishing up
 
 Now you can go ahead and build and run the app, and see the following output:
 
 ![Win2D content rendered in a Core App](./images/in-a-core-app.png)
 
-In terms of the app model, the code in the previous section has an **App** class that implements the **IFrameworkViewSource** and **IFrameworkView** interfaces, which are necessary for a Core App. And the **Main** function entry point calls **CoreApplication.Run** to run an instance of that **App** class.
+In terms of the app model, the code in the previous section has an **App** class that implements the [IFrameworkViewSource](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) and [IFrameworkView](/uwp/api/windows.applicationmodel.core.iframeworkview) interfaces, which are necessary for a Core App. And the **Main** function entry point calls [**CoreApplication.Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run) to run an instance of that **App** class.
 
-In terms of the graphics, the code creates a [CanvasSwapChain](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) for the main **CoreWindow**, and draws content into it.
+In terms of the graphics, the code creates a [CanvasSwapChain](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) for the main [CoreWindow](/uwp/api/windows.ui.core.corewindow), and draws content into it.
 
 You can extend the sample app above in any way that you like. For example, this could be a good starting point for a simple 2D game.
 
