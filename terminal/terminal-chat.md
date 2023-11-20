@@ -71,7 +71,7 @@ This means that Terminal Chat can identify whether a user's active shell is Comm
 
 Terminal Chat can be set as a keybinding Action. 
 
-This can be done in **Actions** in the **Settings** UI. Add a new keybinding Action by selecting **+ Add new** and then picking **Toggle AI chat** from the dropdown to add a new keybinding Action for the Terminal Chat feature. 
+This can be done in **Actions** in the **Settings** UI. Add a new keybinding Action by selecting **+ Add new** and then picking **Toggle Terminal Chat** from the dropdown to add a new keybinding Action for the Terminal Chat feature. 
 
 ![Setting Terminal Chat as a keybinding Action](./images/terminal-chat-action.png)
 
