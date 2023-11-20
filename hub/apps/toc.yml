@@ -376,6 +376,8 @@ items:
                 href: develop/win2d/hellowin2dworld.md
               - name: "Build a simple Win2D app"
                 href: develop/win2d/quick-start.md
+              - name: "Win2D in a Core App project"
+                href: develop/win2d/in-a-core-app.md
               - name: "Features"
                 href: develop/win2d/features.md
               - name: Articles
@@ -473,6 +475,10 @@ items:
         href: develop/dispatcherqueue.md
       - name: Windows AI and machine learning
         href: /windows/ai/
+      - name: Windows Search providers
+        items:
+        - name: Overview
+          href: develop/search/search-providers.md
       - name: Windows widget providers
         items:
         - name: Overview

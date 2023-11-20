@@ -1,10 +1,8 @@
 ---
 title: Enable user mode access to GPIO, I2C, and SPI
 description: This tutorial describes how to enable user mode access to GPIO, I2C, SPI, and UART on Windows 10 and later.
-ms.date: 05/04/2023
+ms.date: 11/15/2023
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 
@@ -43,7 +41,7 @@ Next we declare each of the GPIO and SPB resources that should be exposed to use
 Raspberry Pi has two exposed SPI buses. SPI0 has two hardware chip select lines and SPI1 has one hardware chip select line. One SPISerialBus() resource declaration is required for each chip select line for each bus. The following two SPISerialBus resource declarations are for the two chip select lines on SPI0. The DeviceSelection field contains a unique value which the driver interprets as a hardware chip select line identifier. The exact value that you put in the DeviceSelection field depends on how your driver interprets this field of the ACPI connection descriptor.
 
 > [!NOTE]
-> This article contains references to the term slave, a term that Microsoft no longer uses. When the term is removed from the software, we’ll remove it from this article.
+> This article contains references to the term slave&mdash;a term that Microsoft doesn't condone, and has stopped using in new products and documentation. When the term is removed from the software, we’ll remove it from this article.
 
 ```cpp
 // Index 0

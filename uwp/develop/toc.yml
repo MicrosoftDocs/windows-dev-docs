@@ -770,7 +770,7 @@
           href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
         - name: Calling and overriding your base type
           href: ../cpp-and-winrt-apis/base-type.md
-        - name: Passing parameters into the ABI boundary
+        - name: Passing parameters to projected APIs
           href: ../cpp-and-winrt-apis/pass-parms-to-abi.md
         - name: Consume COM components
           href: ../cpp-and-winrt-apis/consume-com.md
@@ -784,7 +784,7 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx-async.md
         - name: Move to C++/WinRT from WRL
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
-        - name: Porting a sample app from C#
+        - name: Porting a sample app from C#
           href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
         - name: Move to C++/WinRT from C#
           href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md

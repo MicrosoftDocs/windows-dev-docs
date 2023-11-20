@@ -53,7 +53,7 @@ When choosing the **Create new VHD** option to set up a Dev Drive, you will then
 - **Virtual hard disk size**: Assign the amount of disk space that will be allocated for the volume to use, minimum size is 50GB.
 - **Virtual hard disk format**:
   - **VHD**: Supports virtual disks up to 2040GB in size.
-  - **VHDX**: Supports virtual disks up to 64TB in size and offers more resilient protection against unexpected IO failure caused by issues like power outage). [Learn more about Managing VHDs](/windows-server/storage/disk-management/manage-virtual-hard-disks).
+  - **VHDX** (Recommended): Supports virtual disks up to 64TB in size and offers more resilient protection against unexpected IO failure caused by issues like power outage). [Learn more about Managing VHDs](/windows-server/storage/disk-management/manage-virtual-hard-disks).
 - **Disk type**:
   - **Fixed size** - This virtual hard disk file is allocated to the maximum size when created (Recommended for efficiency)
   - **Dynamically expanding** - Grows to maximum size as data is written
@@ -90,7 +90,7 @@ To find and **use unallocated space on an existing drive**, you can open **Syste
 
 As an alternative to using Windows Settings, there are two options for creating Dev Drive storage volumes from the command line. Both options require that you open the command line as an Administrator. You must be a member of the Admin group to format a hard drive. These command line formatting methods may be preferred when creating multiple Dev Drives or as an admin for multiple machines.
 
-1. Using the [Format.com](/windows-server/administration/windows-commands/format) command line tool from Windows CMD or PowerShell:
+1. Using the [Format](/windows-server/administration/windows-commands/format) command line tool from Windows CMD or PowerShell:
 
   ```CMD
   Format D: /DevDrv /Q

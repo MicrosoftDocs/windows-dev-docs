@@ -6,7 +6,7 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.custom: seo-windows-dev
-ms.date: 04/14/2022
+ms.date: 11/01/2023
 ---
 
 # Web development on Windows
@@ -58,10 +58,10 @@ Microsoft offers a variety of resources for web developers, including new tools 
         [Download Microsoft Edge channel](https://www.microsoft.com/edge/business/download)
     :::column-end:::
     :::column:::
-        [![Microsoft Edge Insider icon](../images/microsoftedge-beta.png)](https://www.microsoftedgeinsider.com/whats-new)<br>
-        **[Microsoft Edge Insider](https://www.microsoftedgeinsider.com/whats-new)**<br>
+        [![Microsoft Edge Insider icon](../images/microsoftedge-beta.png)](https://www.microsoft.com/edge/download/insider)<br>
+        **[Microsoft Edge Insider](https://www.microsoft.com/edge/download/insider)**<br>
         We're building something new for Microsoft Edge every day. Learn about our recent progress and how you can get involved.
-        [Download Microsoft Edge Beta version](https://www.microsoftedgeinsider.com/)
+        [Download Microsoft Edge Beta version](https://www.microsoft.com/edge/download/insider)
     :::column-end:::
     :::column:::
         [![Microsoft Edge Support icon](../images/microsoftedge-support.png)](https://support.microsoft.com/microsoft-edge)<br>

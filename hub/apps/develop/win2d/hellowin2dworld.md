@@ -17,7 +17,7 @@ In Visual Studio, create a new project from one of the following project templat
 * **Universal Windows Platform (UWP)**. To create a new UWP project, use the **Blank App (Universal Windows)** or **Blank App (C++/WinRT)** or **Blank App (Universal Windows - C++/CX)** project template. For language, choose: either *C#* or *C++*; platform: *Windows*; project type: *UWP*.
 
 > [!IMPORTANT]
-> For info about how to set up your project to use Win2D, see [Overview of Win2D](./index.md).
+> For info about how to set up your project to use Win2D, see [Reference the Win2D NuGet package](./index.md#reference-the-win2d-nuget-package).
 
 To host Win2D content, you'll need to add a Win2D **CanvasControl** to your project's `MainWindow.xaml` (or `MainPage.xaml`, for a UWP project).
 

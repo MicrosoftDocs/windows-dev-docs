@@ -2,7 +2,7 @@
 description: The JavaScript API for the Microsoft Take a Test app allows you to do secure assessments. Take a Test provides a secure browser that prevents students from using other computer or internet resources during a test.
 title: Take a Test JavaScript API.
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 09/24/2020
+ms.date: 11/15/2023
 ms.topic: article
 keywords: windows 10, uwp, education
 ms.localizationpriority: medium
@@ -13,10 +13,6 @@ ms.localizationpriority: medium
 [Take a Test](/education/windows/take-tests-in-windows-10) is a browser-based UWP app that renders locked-down online assessments for high-stakes testing, allowing educators to focus on the assessment content rather than how to provide a secure testing environment. To achieve this, it uses a JavaScript API that any web application can utilize. The Take-a-test API supports the [SBAC browser API standard](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) for high stakes common core testing.
 
 See the [Take a Test app technical reference](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) for more information about the app itself. For troubleshooting help, see [Troubleshoot Microsoft Take a Test with the event viewer](troubleshooting.md).
-
-> [!NOTE]
-> This article contains references to the term blacklist, a term that Microsoft no longer uses. When the term is removed from the software, we’ll remove it from this article.
-
 
 ## Reference documentation
 The Take a Test APIs exist in the following namespaces. Note that all of the APIs depend on a global `SecureBrowser` object.
@@ -113,14 +109,14 @@ Windows 10, version 1709 or newer
 <span id="examineProcessList"></span>
 
 ### examineProcessList
-Gets the list of all processes running on the client machine owned by the user. The testing application will invoke this to examine the list and compare it with a list of processes that have been deemed blacklisted during testing cycle. This call should be invoked both at the start of an assessment and periodically while the student is taking the assessment. If a blacklisted process is detected, the assessment should be stopped to preserve test integrity.
+Gets the list of all processes running on the client machine owned by the user. The testing application will invoke this to examine the list and compare it with a list of processes that have been deemed deny-listed during testing cycle. This call should be invoked both at the start of an assessment and periodically while the student is taking the assessment. If a deny-listed process is detected, the assessment should be stopped to preserve test integrity.
 
 **Syntax**  
-`void SecureBrowser.security.examineProcessList(String[] blacklistedProcessList, Function callback);`
+`void SecureBrowser.security.examineProcessList(String[] denylistedProcessList, Function callback);`
 
 **Parameters**  
-* `blacklistedProcessList` - The list of processes that the testing application has blacklisted.  
-`callback` - The function to invoke once the active processes have been found. It must be in the form: `Function(String foundBlacklistedProcesses)` where `foundBlacklistedProcesses` is in the form: `"['process1.exe','process2.exe','processEtc.exe']"`. It will be empty if no blacklisted processes were found. If it is null, this indicates that an error occurred in the original function call.
+* `denylistedProcessList` - The list of processes that the testing application has deny-listed.  
+`callback` - The function to invoke once the active processes have been found. It must be in the form: `Function(String foundDenylistedProcesses)` where `foundDenylistedProcesses` is in the form: `"['process1.exe','process2.exe','processEtc.exe']"`. It will be empty if no deny-listed processes were found. If it is null, this indicates that an error occurred in the original function call.
 
 **Remarks**
 The list does not include system processes.

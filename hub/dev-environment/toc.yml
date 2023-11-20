@@ -27,6 +27,8 @@ items:
             href: ../package-manager/winget/index.md
           - name: configure command
             href: ../package-manager/winget/configure.md
+          - name: download command
+            href: ../package-manager/winget/download.md
           - name: export command
             href: ../package-manager/winget/export.md
           - name: features command
