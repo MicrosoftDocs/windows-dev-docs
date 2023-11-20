@@ -121,9 +121,9 @@ public void OnCustomQueryParametersRequested(CustomQueryParametersRequestedArgs 
 
 ## Initialize the list of enabled feeds on startup
 
-[TBD - this was the "what you do in the constructor" section for widgets. Needs to be updated for feeds.]
+[TBD - this was the "what you do in the constructor" section for feeds. Needs to be updated for feeds.]
 
-When our widget provider is first initialized, it's a good idea to ask **FeedManager** if there are any running widgets that our provider is currently serving. It will help to recover the app to the previous state in case of the computer restart or the provider crash. Call **WidgetManager.GetDefault** to get the default widget manager instance for the app. Then call [GetWidgetInfos](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getwidgetinfos), which returns an array of [WidgetInfo](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetinfo) objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the class definition for the **WidgetProvider** class.
+When our feed provider is first initialized, it's a good idea to ask **FeedManager** if there are any running feeds that our provider is currently serving. It will help to recover the app to the previous state in case of the computer restart or the provider crash. Call **FeedManager.GetDefault** to get the default feed manager instance for the app. Then call [GetWidgetInfos](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getwidgetinfos), which returns an array of [WidgetInfo](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetinfo) objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the class definition for the **WidgetProvider** class.
 
 ```csharp
 // WidgetProvider.cs
@@ -146,11 +146,11 @@ MyFeeedProvider::MyFeedProvider()
 
 ## Implement a class factory that will instantiate FeedProvider on request
 
-In order for the widget host to communicate with our feed provider, we must call [CoRegisterClassObject](/windows/win32/api/combaseapi/nf-combaseapi-coregisterclassobject). This function requires us to create an implementation of the [IClassFactory](/windows/win32/api/unknwn/nn-unknwn-iclassfactory) that will create a class object for our **FeedProvider** class.  We will implement our class factory in a self-contained helper class. 
+In order for the feed host to communicate with our feed provider, we must call [CoRegisterClassObject](/windows/win32/api/combaseapi/nf-combaseapi-coregisterclassobject). This function requires us to create an implementation of the [IClassFactory](/windows/win32/api/unknwn/nn-unknwn-iclassfactory) that will create a class object for our **FeedProvider** class.  We will implement our class factory in a self-contained helper class. 
 
 In Visual Studio, right-click the `ExampleFeedProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "FactoryHelper" and click **Add**.
 
-Replace the contents of the FactoryHelper.cs file with the following code. This code defines the **IClassFactory** interface and implements it's two methods, [CreateInstance](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-createinstance) and [LockServer](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-lockserver). This code is typical boilerplate for implementing a class factory and is not specific to the functionality of a widget provider except that we indicate that the class object being created implements the **IFeedProvider** interface. 
+Replace the contents of the FactoryHelper.cs file with the following code. This code defines the **IClassFactory** interface and implements it's two methods, [CreateInstance](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-createinstance) and [LockServer](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-lockserver). This code is typical boilerplate for implementing a class factory and is not specific to the functionality of a feed provider except that we indicate that the class object being created implements the **IFeedProvider** interface. 
 
 ```csharp
 // FactoryHelper.cs
@@ -226,7 +226,7 @@ Next, you need to create a GUID representing the [CLSID](/windows/win32/com/com-
 
 ## Register the feed provider class object with OLE
 
-In the Program.cs file for our executable, we will call **CoRegisterClassObject** to register our widget provider with OLE, so that the Widgets Board can interact with it. Replace the contents of Program.cs with the following code. This code imports the **CoRegisterClassObject** function and calls it, passing in the **FeedProviderFactory** interface we defined in a previous step. Be sure to update the **CLSID_Factory** variable declaration to use the GUID you generated in the previous step.
+In the Program.cs file for our executable, we will call **CoRegisterClassObject** to register our feed provider with OLE, so that the Widgets Board can interact with it. Replace the contents of Program.cs with the following code. This code imports the **CoRegisterClassObject** function and calls it, passing in the **FeedProviderFactory** interface we defined in a previous step. Be sure to update the **CLSID_Factory** variable declaration to use the GUID you generated in the previous step.
 
 ```csharp
 // Program.cs
@@ -291,7 +291,7 @@ Next, right-click the ExampleFeedProviderPackage project and select **Add->Proje
 
 ### Add Windows App SDK package reference to the packaging project
 
-You need to add a reference to the Windows App SDK nuget package to the MSIX packaging project. In **Solution Explorer**, double-click the ExampleWidgetProviderPackage project to open the ExampleWidgetProviderPackage.wapproj file. Add the following xml inside the **Project** element.
+You need to add a reference to the Windows App SDK nuget package to the MSIX packaging project. In **Solution Explorer**, double-click the ExampleFeedProviderPackage project to open the ExampleFeedProviderPackage.wapproj file. Add the following xml inside the **Project** element.
 
 ```xml
 <!--ExampleWidgetProviderPackage.wapproj-->
@@ -305,7 +305,7 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 > [!NOTE]
 > Make sure the **Version** specified in the **PackageReference** element matches the latest stable version you referenced in the previous step.
 
-If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appxmanifest file for the ExampleWidgetProviderPackage project.
+If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appxmanifest file for the ExampleFeedProviderPackage project.
 
 ```xml
 <!--Package.appxmanifest-->
@@ -359,7 +359,7 @@ The first extension we need to add is the [ComServer](/uwp/schemas/appxpackage/u
 </Extensions>
 ```
 
-Next, add the extension that registers the app as a widget provider. Paste the [uap3:Extension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-extension-manual) element in the following code snippet, as a child of the **Extensions** element. Be sure to replace the **ClassId** attribute of the **COM** element with the GUID you used in previous steps.
+Next, add the extension that registers the app as a feed provider. Paste the [uap3:Extension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-extension-manual) element in the following code snippet, as a child of the **Extensions** element. Be sure to replace the **ClassId** attribute of the **COM** element with the GUID you used in previous steps.
 
 ```xml
 <!-- Package.appxmanifest -->
@@ -389,7 +389,7 @@ For detailed descriptions and format information for all of these elements, see 
 
 ## Add icons to your packaging project
 
-In **Solution Explorer**, right-click your **ExampleFeedProviderPackage** and select **Add->New Folder**. Name this folder ProviderAssets as this is what was used in the `Package.appxmanifest` from the previous step. This is where we will store our feed's **Icon**. Make sure the image names match what comes after **Path=ProviderAssets\\** in your `Package.appxmanifest` or the widgets will not show up in the widget host.
+In **Solution Explorer**, right-click your **ExampleFeedProviderPackage** and select **Add->New Folder**. Name this folder ProviderAssets as this is what was used in the `Package.appxmanifest` from the previous step. This is where we will store our feed's **Icon**. Make sure the image names match what comes after **Path=ProviderAssets\\** in your `Package.appxmanifest` or the feed will not show up in the Widgets Board.
 
 
 
@@ -397,22 +397,22 @@ In **Solution Explorer**, right-click your **ExampleFeedProviderPackage** and se
 
 [TBD - most of this probably needs to change]
 
-Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. To see the feeds you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available feeds and you should see the example feed that was created in this tutorial. Click on the feeds to pin them to your feeds board and test their functionality.
 
 ## Debugging your feed provider
 
-After you have pinned your widgets, the Widget Platform will start your widget provider application in order to receive and send relevant information about the widget. To debug the running widget you can either attach a debugger to the running widget provider application or you can set up Visual Studio to automatically start debugging the widget provider process once it's started.
+After you have pinned your feeds, the Widget Platform will start your feed provider application in order to receive and send relevant information about the feed. To debug the running feed you can either attach a debugger to the running feed provider application or you can set up Visual Studio to automatically start debugging the feed provider process once it's started.
 
 In order to attach to the running process:
 
 1. In Visual Studio click **Debug -> Attach to process**.
-1. Filter the processes and find your desired widget provider application.
+1. Filter the processes and find your desired feed provider application.
 1. Attach the debugger.
 
 In order to automatically attach the debugger to the process when it's initially started:
 
 1. In Visual Studio click **Debug -> Other Debug Targets -> Debug Installed App Package**.
-1. Filter the packages and find your desired widget provider package.
+1. Filter the packages and find your desired feed provider package.
 1. Select it and check the box that says Do not launch, but debug my code when it starts.
 1. Click **Attach**.
 
@@ -421,7 +421,7 @@ In order to automatically attach the debugger to the process when it's initially
 To convert the console app created in this walkthrough to a Windows app, right-click the **ExampleFeedProvider** project in **Solution Explorer** and select **Properties**. Under Application->General change the **Output type** from "Console Application" to "Windows Application".
 
 [TBD - update image for feeds]
-:::image type="content" source="images/convert-to-windows-app-cs.png" alt-text="A screenshot showing the C# widget provider project properties with the output type set to Windows Application":::
+:::image type="content" source="images/convert-to-windows-app-cs.png" alt-text="A screenshot showing the C# feed provider project properties with the output type set to Windows Application":::
 
 ## Publishing your feed provider app
 

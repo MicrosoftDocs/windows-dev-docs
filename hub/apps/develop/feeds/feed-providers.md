@@ -27,10 +27,10 @@ Currently you can implement a feed provider using a packaged Win32 desktop app o
 
 * [Implement a feed provider in a win32 app (C#)](implement-feed-provider-cs.md)
 * [Implement a feed provider in a win32 app (C++/WinRT)](implement-feed-provider-win32.md)
-* [Build PWA-driven widgets](/microsoft-edge/progressive-web-apps-chromium/how-to/widgets)
+* [Build PWA-driven feeds](/microsoft-edge/progressive-web-apps-chromium/how-to/widgets)
 
 
-For API reference documentation for implementing widget providers, see the [Microsoft.Windows.Widgets.Feeds.Providers](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.feeds.providers) namespace.
+For API reference documentation for implementing feed providers, see the [Microsoft.Windows.Widgets.Feeds.Providers](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.feeds.providers) namespace.
 
 
 ![A screenshot showing the Windows Widgets Board showing feeds.](./images/feeds-screenshot.png)
@@ -47,7 +47,7 @@ The following lists the high-level steps for developing a feed provider:
 
 ## Limitations and Considerations
 
-- The Feed Providers feature is in preview. [add specific widgets package number here]
+- The Feed Providers feature is in preview. [add specific feeds package number here]
 - There may be geographical and market restrictions.
 - The feature is contingent upon using the latest Windows App SDK for app development. [add specific version number here]
 - Specific technical and design guidelines must be adhered to for proper feed integration.

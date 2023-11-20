@@ -95,10 +95,10 @@ In Visual Studio, right-click the `ExampleFeedProvider` project in **Solution Ex
 
 ## Declare a class that implements the IFeedProvider interface
 
-The **IFeedProvider** interface defines methods that the widget host will invoke to initiate operations with the feed provider. Replace the empty class definition in the FeedProvider.h file with the following code. This code declares a structure that implements the **IFeedProvider** interface and declares prototypes for the interface methods. 
+The **IFeedProvider** interface defines methods that the Widgets Board will invoke to initiate operations with the feed provider. Replace the empty class definition in the FeedProvider.h file with the following code. This code declares a structure that implements the **IFeedProvider** interface and declares prototypes for the interface methods. 
 
 ```cpp
-// WidgetProvider.h
+// FeedProvider.h
 struct FeedProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>
 {
     WidgetProvider();
@@ -139,7 +139,7 @@ std::unordered_map<winrt::hstring, CompactWidgetInfo> WidgetProvider::RunningWid
 The **OnFeedProviderEnabled** method is invoked when a feed associated with the provider is created by the Widgets Board host. In the implementation of this method, generate a query string that includes the necessary authentication tokens for the remote web service that provides the feed content. Create an instance of **CustomQueryParametersUpdateOptions**, passing in the **FeedProviderDefinitionId** from the event args that identifies the feed that has been enabled and the query string. Get the default **FeedManager** and call **SetCustomQueryParameters** to register the query string parameters with the Widgets Board.
 
 ```csharp
-// WidgetProvider.cs
+// FeedProvider.cs
 
 void OnFeedProviderEnabled(FeedProviderEnabledArgs args)
     {
@@ -157,7 +157,7 @@ void OnFeedProviderEnabled(FeedProviderEnabledArgs args)
 **OnFeedProviderDisabled** is called when the Widgets Board disables the feed provider. Feed providers are not required to perform any actions in response to these this method call. The method invocation can be used for telemetry information or to revoke authentication tokens, if needed. Also, the app may choose to shutdown in response to this call if the app is not servicing other active feed providers.
 
 ```csharp
-// WidgetProvider.cs
+// FeedProvider.cs
 
 void OnFeedProviderDisabled(FeedProviderDisabledArgs args)
     {
@@ -172,7 +172,7 @@ void OnFeedProviderDisabled(FeedProviderDisabledArgs args)
 **OnFeedEnabled** and **OnFeedDisabled** are invoked by the Widgets Board when a feed is enabled or disabled, or if the feed provider is disabled. Feed providers are not required to perform any actions in response to these method calls. These method invocations can be used for telemetry information or to revoke authentication tokens, if needed.
 
 ```csharp
-// WidgetProvider.cs
+// FeedProvider.cs
 
  void OnFeedEnabled(FeedEnabledArgs args)
     {
@@ -181,7 +181,7 @@ void OnFeedProviderDisabled(FeedProviderDisabledArgs args)
 ```
 
 ```csharp
-// WidgetProvider.cs
+// FeedProvider.cs
 
 void OnFeedDisabled(FeedDisabledArgs args)
     {
@@ -194,7 +194,7 @@ void OnFeedDisabled(FeedDisabledArgs args)
 **OnCustomQueryParametersRequested** is raised when the Widgets Board determines that the custom query parameters associated with the feed provider need to be refreshed. For example, this method may be raised if the operation to fetch feed content from the remote web service fails. The **FeedProviderDefinitionId** property of the **CustomQueryParametersRequestedArgs** passed into this method specifies the feed for which query string params are being request. In the implementation of this method, feed providers should validate that the current query string parameters and auth tokens are still valid and unexpired. If not, the provider should regenerate the query string and pass it back to the Widgets Board by calling **SetCustomQueryParameters**.
 
 ```csharp
-// WidgetProvider.cs
+// FeedProvider.cs
 
 void OnCustomQueryParametersRequested(CustomQueryParametersRequestedArgs args)
     {
@@ -233,7 +233,7 @@ MyFeeedProvider::MyFeedProvider()
 
 ## Register a class factory that will instantiate FeedProvider on request
 
-Add the header that defines the **WidgetProvider** class to the includes at the top of your app's `main.cpp` file. We will also be including **mutex** here.
+Add the header that defines the **FeedProvider** class to the includes at the top of your app's `main.cpp` file. We will also be including **mutex** here.
 
 ```cpp
 // main.cpp
@@ -254,19 +254,19 @@ void SignalLocalServerShutdown()
 }
 ```
 
-Next, you will need to create a [CLSID](/windows/win32/com/com-class-objects-and-clsids) that will be used to identify your feed provider for COM activation. Generate a GUID in Visual Studio by going to **Tools->Create GUID**. Select the option "static const GUID =" and click **Copy** and then paste that into `main.cpp`. Update the GUID definition with the following C++/WinRT syntax, setting the GUID variable name widget_provider_clsid. Leave the commented version of the GUID because you will need this format later, when packaging your app.
+Next, you will need to create a [CLSID](/windows/win32/com/com-class-objects-and-clsids) that will be used to identify your feed provider for COM activation. Generate a GUID in Visual Studio by going to **Tools->Create GUID**. Select the option "static const GUID =" and click **Copy** and then paste that into `main.cpp`. Update the GUID definition with the following C++/WinRT syntax, setting the GUID variable name feed_provider_clsid. Leave the commented version of the GUID because you will need this format later, when packaging your app.
 
 ```cpp
 // main.cpp
 ...
 // {80F4CB41-5758-4493-9180-4FB8D480E3F5}
-static constexpr GUID widget_provider_clsid
+static constexpr GUID feed_provider_clsid
 {
     0x80f4cb41, 0x5758, 0x4493, { 0x91, 0x80, 0x4f, 0xb8, 0xd4, 0x80, 0xe3, 0xf5 }
 };
 ```
 
-Add the following class factory definition to `main.cpp`. This is mostly boilerplate code that is not specific to widget provider implementations. Note that **CoWaitForMultipleObjects** waits for our shutdown event to be triggered before the app exits.
+Add the following class factory definition to `main.cpp`. This is mostly boilerplate code that is not specific to feed provider implementations. Note that **CoWaitForMultipleObjects** waits for our shutdown event to be triggered before the app exits.
 
 ```cpp
 // main.cpp
@@ -341,10 +341,10 @@ Next, right-click the ExampleFeedProviderPackage project and select **Add->Proje
 
 ### Add Windows App SDK package reference to the packaging project
 
-You need to add a reference to the Windows App SDK nuget package to the MSIX packaging project. In **Solution Explorer**, double-click the ExampleWidgetProviderPackage project to open the ExampleFeedProviderPackage.wapproj file. Add the following xml inside the **Project** element.
+You need to add a reference to the Windows App SDK nuget package to the MSIX packaging project. In **Solution Explorer**, double-click the ExampleFeedProviderPackage project to open the ExampleFeedProviderPackage.wapproj file. Add the following xml inside the **Project** element.
 
 ```xml
-<!--ExampleWidgetProviderPackage.wapproj-->
+<!--ExampleFeedProviderPackage.wapproj-->
 <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221116.1">
         <IncludeAssets>build</IncludeAssets>
@@ -401,7 +401,7 @@ The first extension we need to add is the [ComServer](/uwp/schemas/appxpackage/u
 <Extensions>
     <com:Extension Category="windows.comServer">
         <com:ComServer>
-            <com:ExeServer Executable="ExampleFeedProvider\ExampleWidgetProvider.exe" DisplayName="ExampleFeedProvider">
+            <com:ExeServer Executable="ExampleFeedProvider\ExampleFeedProvider.exe" DisplayName="ExampleFeedProvider">
                 <com:Class Id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" DisplayName="ExampleFeedProvider" />
             </com:ExeServer>
         </com:ComServer>
@@ -439,7 +439,7 @@ For detailed descriptions and format information for all of these elements, see 
 
 ## Add icons to your packaging project
 
-In **Solution Explorer**, right-click your **ExampleFeedProviderPackage** and select **Add->New Folder**. Name this folder ProviderAssets as this is what was used in the `Package.appxmanifest` from the previous step. This is where we will store our **Icon** for our feeds. Once you add your desired Icons , make sure the image names match what comes after **Path=ProviderAssets\\** in your `Package.appxmanifest` or the widgets will not show up in the Widget Board.
+In **Solution Explorer**, right-click your **ExampleFeedProviderPackage** and select **Add->New Folder**. Name this folder ProviderAssets as this is what was used in the `Package.appxmanifest` from the previous step. This is where we will store our **Icon** for our feeds. Once you add your desired Icons , make sure the image names match what comes after **Path=ProviderAssets\\** in your `Package.appxmanifest` or the feeds will not show up in the Widget Board.
 
 
 
@@ -447,22 +447,22 @@ In **Solution Explorer**, right-click your **ExampleFeedProviderPackage** and se
 
 [TBD - most of this probably needs to change]
 
-Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. To see the feeds you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the feeds that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
 
 ## Debugging your feed provider
 
-After you have pinned your widgets, the Widget Platform will start your widget provider application in order to receive and send relevant information about the widget. To debug the running widget you can either attach a debugger to the running widget provider application or you can set up Visual Studio to automatically start debugging the widget provider process once it's started.
+After you have pinned your feeds, the Widget Platform will start your feed provider application in order to receive and send relevant information about the feed. To debug the running feed you can either attach a debugger to the running feed provider application or you can set up Visual Studio to automatically start debugging the feed provider process once it's started.
 
 In order to attach to the running process:
 
 1. In Visual Studio click **Debug -> Attach to process**.
-1. Filter the processes and find your desired widget provider application.
+1. Filter the processes and find your desired feed provider application.
 1. Attach the debugger.
 
 In order to automatically attach the debugger to the process when it's initially started:
 
 1. In Visual Studio click **Debug -> Other Debug Targets -> Debug Installed App Package**.
-1. Filter the packages and find your desired widget provider package.
+1. Filter the packages and find your desired feed provider package.
 1. Select it and check the box that says Do not launch, but debug my code when it starts.
 1. Click **Attach**.
 
@@ -472,9 +472,9 @@ To convert the console app created in this walkthrough to a Windows app:
 1. Right-click on the ExampleWidgetProvider project in **Solution Explorer** and select **Properties**. Navigate to **Linker -> System** and change **SubSystem** from "Console" to "Windows". This can also be done by adding &lt;SubSystem&gt;Windows&lt;/SubSystem&gt; to the &lt;Link&gt;..&lt;/Link&gt; section of the .vcxproj.
 1. In main.cpp, change `int main()` to `int WINAPI wWinMain(_In_ HINSTANCE /*hInstance*/, _In_opt_ HINSTANCE /*hPrevInstance*/, _In_ PWSTR pCmdLine, _In_ int /*nCmdShow*/)`.
 
-:::image type="content" source="images/convert-to-windows-app-cpp.png" alt-text="A screenshot showing the C++ widget provider project properties with the output type set to Windows Application":::
+:::image type="content" source="images/convert-to-windows-app-cpp.png" alt-text="A screenshot showing the C++ feed provider project properties with the output type set to Windows Application":::
 
 ## Publishing your feed provider app
 
-After you have developed and tested your feed provider you must publish your app on the Microsoft Store in order for users to install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
+After you have developed and tested your feed provider you must publish your app on the Microsoft Store in order for users to install your feeds on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
 
