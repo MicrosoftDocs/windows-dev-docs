@@ -101,7 +101,9 @@ F6 lets keyboard users navigate between sections of your UI without, potentially
 
 For example, pressing F6 in Edge will cycle between the tab list, the navigation bar/app bar, and the webpage content. Since a webpage potentially has hundreds of tabbable controls, this makes it easy for keyboard users to reach the tab list and navigation bar without knowing specific shortcuts. This is also helpful in simpler UIs: the Windows taskbar cycles through Start, Search, the apps list, and parts of the systray when you press F6.
 
-The F6 cycle will often correspond to accessible [landmarks or headings](landmarks-and-headings.md), though it doesn't need to match exactly. F6 should focus on large, distinct regions in your UI, whereas landmarks can be more granular. You might mark an app bar and its search box as landmarks, but only include the app bar itself in the F6 cycle.
+The F6 cycle will often correspond to accessible [landmarks or headings](landmarks-and-headings.md), though it doesn't need to match exactly. F6 should focus on large, distinct regions in your UI, whereas landmarks can be more granular. For example, you might mark an app bar and its search box as landmarks, but only include the app bar itself in the F6 cycle.
+
+XAML does not implement the F6 cycle; you'll need to implement it yourself.
 
 If possible, though, regions in the F6 cycle should have an accessible name: either via a landmark or by manually adding [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.nameproperty) to the "root" element of the region.
 
