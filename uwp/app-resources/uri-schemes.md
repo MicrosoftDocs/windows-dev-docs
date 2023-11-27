@@ -92,10 +92,8 @@ ms-appx:///images/logo.png
 
 The URI above may actually retrieve a file within the current app's package with the following physical file name.
 
-<blockquote>
 <pre>
 \Images\fr-FR\logo.scale-100_contrast-white.png
-</blockquote>
 </pre>
 
 You could of course also retrieve that same physical file by referring to it directly by its full name.

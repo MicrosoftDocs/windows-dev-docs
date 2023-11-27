@@ -196,7 +196,7 @@ There are many APIs related to game development, but not all games need to use a
     <li>Lower resource usage</li>
     <li>Lower API call latency for retrieving input</li>
     <li>The ability to work with more than 4 gamepads at once</li>
-    <li>The ability to access additional Xbox One gamepad features, such as the trigger vibration motors</li>
+    <li>The ability to access additional gamepad features, such as the trigger vibration motors</li>
     <li>The ability to be notified when controllers connect/disconnect via event instead of polling</li>
     <li>The ability to attribute input to a specific user (Windows.System.User)</li>
     </ul>
@@ -315,7 +315,7 @@ There are many APIs related to game development, but not all games need to use a
 
 ## Xbox Live Services
 
-The [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) allows any developer to integrate Xbox Live into their UWP game and publish to Xbox One and Windows 10. Integrate Xbox Live social experiences such as sign-in, presence, leaderboards, and more into your title, with minimal development time. Xbox Live social features are designed to organically grow your audience, spreading awareness to over 55 million active gamers.
+The [Xbox Developer Programs](https://developer.microsoft.com/en-US/games/publish/) allow any developer to integrate Xbox Live into their UWP game and publish to Xbox One and Windows 10. Integrate Xbox Live social experiences such as sign-in, presence, leaderboards, and more into your title, with minimal development time. Xbox Live social features are designed to organically grow your audience, spreading awareness to over 55 million active gamers.
 
 If you want access to even more Xbox Live capabilities, dedicated marketing and development support, and the chance to be featured in the main Xbox One store, apply to the [ID@Xbox](https://www.xbox.com/developers/id) program. To see which features are available to the Xbox Live Creators Program and ID@Xbox program, see the [Feature table](/gaming/gdk/_content/gc/live/get-started/live-xbl-overview).
 

@@ -221,9 +221,9 @@ When you use the keyboard to navigate between items in a `RadioButtons` group, a
 
 You can move focus without changing selection by using Ctrl+arrow keys to navigate. After focus is moved, you can use the Spacebar to select the item that currently has focus.
 
-#### Navigating with Xbox gamepad and remote control
+#### Navigating with game pad and remote control
 
-If you use an Xbox gamepad or remote control to move between radio buttons, the "selection follows focus" behavior is disabled, and the user must press the "A" button to select the radio button that currently has focus.
+If you use a game pad or remote control to move between radio buttons, the "selection follows focus" behavior is disabled, and the user must press the "A" button to select the radio button that currently has focus.
 
 ## Accessibility behavior
 

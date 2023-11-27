@@ -20,9 +20,9 @@ By reading this page, you'll learn:
 
 ## Overview
 
-Flight sticks are gaming input devices that are valued for reproducing the feel of flight sticks that would be found in a plane or spaceship's cockpit. They're the perfect input device for quick and accurate control of flight. Flight sticks are supported in Windows 10 and Xbox One UWP apps by the [Windows.Gaming.Input](/uwp/api/windows.gaming.input) namespace.
+Flight sticks are gaming input devices that are valued for reproducing the feel of flight sticks that would be found in a plane or spaceship's cockpit. They're the perfect input device for quick and accurate control of flight. Flight sticks are supported in Windows 10 or Windows 11 and Xbox One apps through the [Windows.Gaming.Input](/uwp/api/windows.gaming.input) namespace.
 
-Xbox One flight sticks are equipped with the following controls:
+Xbox One-certified flight sticks are equipped with the following controls:
 
 * A twistable analog joystick capable of roll, pitch, and yaw
 * An analog throttle

@@ -103,7 +103,7 @@ Below is a table that shows what specific time zones are used in each market, so
 | Cambodia                                     | (UTC+07:00) Bangkok, Hanoi, Jakarta                           |
 | Cameroon                                     | (UTC+01:00) West Central Africa                               |
 | Canada                                       | (UTC-05:00) Eastern Time (US & Canada)                        |
-| Cape Verde                                   | (UTC-01:00) Cabo Verde Is.                                    |
+| Cabo Verde                                   | (UTC-01:00) Cabo Verde Is.                                    |
 | Cayman Islands                               | (UTC-05:00) Eastern Time (US & Canada)                        |
 | Central African Republic                     | (UTC+01:00) West Central Africa                               |
 | Chad                                         | (UTC+01:00) West Central Africa                               |
@@ -132,7 +132,7 @@ Below is a table that shows what specific time zones are used in each market, so
 | Eritrea                                      | (UTC+03:00) Nairobi                                           |
 | Estonia                                      | (UTC+02:00) Chisinau                                          |
 | Ethiopia                                     | (UTC+03:00) Nairobi                                           |
-| Falkland Islands (Islas Malvinas)            | (UTC-04:00) Santiago                                          |
+| Falkland Islands                             | (UTC-04:00) Santiago                                          |
 | Faroe Islands                                | (UTC+00:00) Dublin, Edinburgh, Lisbon, London                 |
 | Fiji                                         | (UTC+12:00) Fiji                                              |
 | Finland                                      | (UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius     |
@@ -178,7 +178,7 @@ Below is a table that shows what specific time zones are used in each market, so
 | Kiribati                                     | (UTC+14:00) Kiritimati Island                                 |
 | Korea                                        | (UTC+09:00) Seoul                                             |
 | Kuwait                                       | (UTC+04:00) Abu Dhabi, Muscat                                 |
-| Kyrgyzstan                                   | (UTC+06:00) Astana                                            |
+| Kyrgyzstan                                   | (UTC+06:00) Nur-Sultan                                        |
 | Laos                                         | (UTC+07:00) Bangkok, Hanoi, Jakarta                           |
 | Latvia                                       | (UTC+02:00) Chisinau                                          |
 | Lesotho                                      | (UTC+02:00) Harare, Pretoria                                  |
@@ -282,7 +282,7 @@ Below is a table that shows what specific time zones are used in each market, so
 | Tonga                                        | (UTC+13:00) Nuku'alofa                                        |
 | Trinidad and Tobago                          | (UTC-04:00) Atlantic Time (Canada)                            |
 | Tunisia                                      | (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb                  |
-| Turkey                                       | (UTC+03:00) Istanbul                                          |
+| Türkiye                                      | (UTC+03:00) Istanbul                                          |
 | Turkmenistan                                 | (UTC+05:00) Ashgabat, Tashkent                                |
 | Turks and Caicos Islands                     | (UTC-05:00) Eastern Time (US & Canada)                        |
 | Tuvalu                                       | (UTC+12:00) Petropavlovsk-Kamchatsky - Old                    |

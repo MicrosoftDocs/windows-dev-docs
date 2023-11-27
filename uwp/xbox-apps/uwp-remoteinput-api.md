@@ -5,8 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ---
-# Remote Input API reference   
+# Remote Input API reference
 You can send controller, keyboard, and mouse input in real time remotely via this API.
+
+> [!NOTE]
+> Keyboard KeyCodes do not work in game titles, we recommend using the Keyboard ScanCodes option instead.
 
 **Request**
 

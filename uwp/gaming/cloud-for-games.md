@@ -77,11 +77,6 @@ Learn how other developers have implemented cloud solutions in their games.
                 <li>Synchronization of gameplay achievements and stats
             </ul>
         </td>
-        <td>
-            <ul>
-                <li><a href="https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/">Social gameplay implemented using Azure Cosmos DB (via DocumentDB API)</a>
-            </ul>
-        </td>
     </tr>
     <tr>
         <td><a href="http://www.illyriad.co.uk/">Illyriad Games</a></td>
@@ -118,7 +113,6 @@ Learn how other developers have implemented cloud solutions in their games.
         <td>
             <ul>
                 <li><a href="https://azure.microsoft.com/blog/how-we-built-it-next-games-global-online-gaming-platform-on-azure/">How we built it: Next Games global online gaming platform on Azure (blog with video)</a>
-                <li><a href="https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/">Walking Dead uses Azure Cosmos DB (via DocumentDB API) for faster development cycle and more engaging gameplay</a>
             </ul>
         </td>
     </tr>
@@ -208,7 +202,7 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
     
 * [Developer programs](e2e.md#developer-programs)
 
-    Microsoft offers several developer programs like [ID@Xbox](https://www.xbox.com/Developers/id) and [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) to help you develop and publish games.
+    Microsoft offers several developer programs like [ID@Xbox](https://www.xbox.com/Developers/id) and [Xbox Live Creators Program](https://developer.microsoft.com/games/publish/) to help you develop and publish games.
 
 ## Learning resources
 

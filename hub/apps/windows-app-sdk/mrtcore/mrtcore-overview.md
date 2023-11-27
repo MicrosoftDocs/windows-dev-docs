@@ -4,8 +4,6 @@ title: Manage resources MRT Core (Windows App SDK)
 ms.topic: article
 ms.date: 06/21/2021
 keywords: MRT, MRTCore, pri, makepri, resources, resource loading, windows 10, windows 11, windows app sdk
-ms.author: hickeys
-author: hickeys
 ms.localizationpriority: medium
 ---
 

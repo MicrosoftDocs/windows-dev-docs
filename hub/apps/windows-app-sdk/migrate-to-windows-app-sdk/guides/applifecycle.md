@@ -2,7 +2,7 @@
 title: Application lifecycle functionality migration
 description: This topic contains migration guidance in the application lifecycle area.
 ms.topic: article
-ms.date: 07/05/2022
+ms.date: 09/06/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, application lifecycle, applifecycle, application, lifecycle
 ms.author: stwhi
 author: stevewhims
@@ -27,7 +27,9 @@ This topic contains migration guidance in the application lifecycle area.
 
 Universal Windows Platform (UWP) apps are single-instanced by default; Windows App SDK (WinUI 3) apps are multi-instanced by default.
 
-A UWP app has **App** methods such as **OnFileActivated**, **OnSearchActivated**, and **OnActivated** that implicitly tell you how the app was activated; In a Windows App SDK app, in **App.OnLaunched** (or in any method), call ([**AppInstance.GetActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)) to retrieve the activated event args, and check them to determine how the app was activated.
+A UWP app has **App** methods such as **OnFileActivated**, **OnSearchActivated**, **OnActivated**, and **OnBackgroundActivated** that implicitly tell you how the app was activated; In a Windows App SDK app, in **App.OnLaunched** (or in any method), call ([**AppInstance.GetActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)) to retrieve the activated event args, and check them to determine how the app was activated.
+
+Also see the *Background tasks* row in the table in the [What's supported when migrating from UWP to WinUI 3](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported) topic.
 
 ## Single-instanced apps
 

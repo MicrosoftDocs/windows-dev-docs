@@ -278,14 +278,14 @@ The ResFiles indexer is identified by a `type` attribute of RESFILES. It indexes
 
 A `.resfiles` file is a text file containing a flat list of file paths. A `.resfiles` file can contain "//" comments. Here's an example.
 
-<blockquote>
+
 <pre>
 Strings\component1\fr\elements.resjson
 Images\logo.scale-100.png
 Images\logo.scale-140.png
 Images\logo.scale-180.png
 </pre>
-</blockquote>
+
 
 ## ResJSON
 

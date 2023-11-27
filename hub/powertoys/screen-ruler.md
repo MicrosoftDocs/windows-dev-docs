@@ -1,7 +1,7 @@
 ---
 title: PowerToys Screen ruler utility for Windows
 description: Screen ruler allows you to quickly measure pixels on your screen based on image edge detection.
-ms.date: 04/19/2023
+ms.date: 08/03/2023
 ms.topic: article
 no-loc: [PowerToys, Windows, Screen ruler, Win]
 ---
@@ -24,7 +24,7 @@ Press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate and then sele
 - Vertical (&#9475;): This will measure only vertical spacing. Click the symbol and move your mouse pointer to your target location.
 - Cancel interaction: <kbd>Esc</kbd>, &#9587; or mouse click. Upon clicking the primary mouse button, the measurement is copied to the clipboard.
 
-The controls on the toolbar can also be triggered via <kbd>Ctrl</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd>/<kbd>4</kbd>.
+The controls on the toolbar can also be selected via <kbd>Ctrl</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd>/<kbd>4</kbd>.
 
 > [!TIP]
 > Scroll up with the mouse wheel to increase the threshold for pixel difference by 15 units per wheel tick. Effectively the measuring line can become longer. Scroll down to reverse.
@@ -35,7 +35,7 @@ From the Settings menu, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to turn on or off the toolbar. |
+| Activation shortcut | The customizable keyboard command to turn the toolbar on or off. |
 | Capture screen continuously during measuring | When off, the utility takes a single snapshot of your screen. When this is turned on, the utility will attempt real-time detection. Continuous mode will consume more resources when in use. |
 | Per color channel edge detection | Test if all color channels are within a tolerance distance from each other. Otherwise, check that the sum of all color channels differences is smaller than the tolerance. |
 | Pixel tolerance for edge detection | A value between 0-255. A higher value will provide a higher variation so it will be more forgiving with things like gradients and shadows. |

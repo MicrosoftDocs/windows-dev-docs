@@ -6,7 +6,7 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-ms.date: 02/24/2022
+ms.date: 09/28/2023
 ---
 
 # Set up your development environment on Windows
@@ -101,7 +101,7 @@ The first PC platform to provide centralized AI assistance and designed to help 
     :::column:::
        [![Android icon](../images/android-logo.png)](/windows/android)<br>
         **[Get started with Android](/windows/android)**<br>
-        Install Android Studio, or choose a cross-platform solution like Xamarin, React, or Cordova, and get your development environment setup on Windows.
+        Install Android Studio, or choose a cross-platform solution like .NET MAUI, React, or creating a PWA, and get your development environment setup on Windows.
     :::column-end:::
     :::column:::
        [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>

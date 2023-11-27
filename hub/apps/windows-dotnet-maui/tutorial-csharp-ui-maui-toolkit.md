@@ -42,7 +42,7 @@ Now that you have verified that the .NET MAUI app on Windows is working as expec
 
 ## Add C# Markup from the .NET MAUI Community Toolkit
 
-Now that you have your .NET MAUI app running on Windows, let's add a couple of NuGet packages to the project to integrate with the [MVVM Toolkit](/windows/communitytoolkit/mvvm/introduction) and **C# Markup** from the **.NET MAUI Community Toolkit**.
+Now that you have your .NET MAUI app running on Windows, let's add a couple of NuGet packages to the project to integrate with the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/) and **C# Markup** from the **.NET MAUI Community Toolkit**.
 
 Right-click the project in **Solution Explorer** and select **Manage NuGet Packages...** from the context menu.
 
@@ -94,7 +94,7 @@ namespace MauiMarkupSample
 }
 ```
 
-If you have completed the [Build your first .NET MAUI app for Windows](walkthrough-first-app.md) tutorial, you will understand what the code above does. The `MainViewModel` class is decorated with the `INotifyPropertyChanged` attribute, which allows the MVVM Toolkit to generate the `INotifyPropertyChanged` implementation for the class. Marking `MainViewModel` as a `partial class` is required for the .NET source generator to work. The `ObservableProperty` attribute on the `name` private field will a `Name` property for the class with the proper `INotifyPropertyChanged` implementation. Adding the `OnNameChanging` and `OnNameChanged` partial methods is optional, but allows you to add custom logic when the `Name` property is changing or has changed.
+If you have completed the [Build your first .NET MAUI app for Windows](walkthrough-first-app.md) tutorial, you will understand what the code above does. The `MainViewModel` class is decorated with the `INotifyPropertyChanged` attribute, which allows the MVVM Toolkit to generate the `INotifyPropertyChanged` implementation for the class. Marking `MainViewModel` as a `partial class` is required for the .NET source generator to work. The `ObservableProperty` attribute on the `name` private field will add a `Name` property for the class with the proper `INotifyPropertyChanged` implementation in the generated partial class. Adding the `OnNameChanging` and `OnNameChanged` partial methods is optional, but allows you to add custom logic when the `Name` property is changing or has changed.
 
 ## Build a UI with C# Markup
 

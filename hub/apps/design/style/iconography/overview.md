@@ -2,8 +2,6 @@
 title: Iconography in Windows
 description: Design and create an app icon for your Windows app. 
 keywords: windows 10, uwp
-author: hickeys
-ms.author: hickeys
 design-contact: judysa
 ms.date: 10/29/2021
 ms.topic: article

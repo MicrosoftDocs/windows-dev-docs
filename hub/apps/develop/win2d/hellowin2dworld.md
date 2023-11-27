@@ -1,97 +1,145 @@
 ---
-title: Hello Win2D World
-description: Display 'Hello world' using Win2D.
-ms.date: 05/25/2023
+title: Win2D "Hello, World!" quickstart
+description: "This topic shows you how to create a very simple \"Hello, World!\" project for Win2D."
+ms.date: 10/25/2023
 ms.topic: article
-keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games
+keywords: windows 11, windows 10, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, win2d
 ms.localizationpriority: medium
 ---
 
-# Hello Win2D World
+# Win2D "Hello, World!" quickstart
 
-Launch Visual Studio, and create a new project:
-- Go to 'File' -> 'New' -> 'Project...'
-- Select "Visual C#", "Visual C++", or "Visual Basic"
-- Create a 'Blank App (Universal Windows)' (or WinUI 3)
-- Enter a project name of your choosing
-- Click 'OK'
+In this topic you'll create a very simple "Hello, World!" project for Win2D.
 
-Add a `CanvasControl` to your XAML page to host the Win2D view.
+In Visual Studio, create a new project from one of the following project templates:
 
-* Double-click on MainWindow.xaml in Solution Explorer to open the XAML editor
-* Add the **Microsoft.Graphics.Canvas.UI.Xaml** namespace next to the existing xmlns statements:
+* **WinUI 3 (Windows App SDK)**. To create a new WinUI 3 project, use the **Blank App, Packaged (WinUI 3 in Desktop)** project template. You can find that project template by choosing language: either *C#* or *C++*; platform: *Windows*; project type: *Desktop*.
+* **Universal Windows Platform (UWP)**. To create a new UWP project, use the **Blank App (Universal Windows)** or **Blank App (C++/WinRT)** or **Blank App (Universal Windows - C++/CX)** project template. For language, choose: either *C#* or *C++*; platform: *Windows*; project type: *UWP*.
 
-```XAML
-xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
+> [!IMPORTANT]
+> For info about how to set up your project to use Win2D, see [Reference the Win2D NuGet package](./index.md#reference-the-win2d-nuget-package).
+
+To host Win2D content, you'll need to add a Win2D **CanvasControl** to your project's `MainWindow.xaml` (or `MainPage.xaml`, for a UWP project).
+
+First, add the following xml namespace declaration:
+
+```xaml
+xmlns:win2dcanvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
 ```
 
-Next, add a `CanvasControl` inside the existing Grid control:
+And then add a **CanvasControl**, prefixed with that xml namespace. For example, you could add a **Grid** as your layout root, like this:
 
-```XAML
+```xaml
 <Grid>
-    <canvas:CanvasControl Draw="CanvasControl_Draw" ClearColor="CornflowerBlue"/>
+    <win2dcanvas:CanvasControl Draw="CanvasControl_Draw" ClearColor="CornflowerBlue"/>
 </Grid>
 ```
 
-Next, we need to add some drawing code to interact with the `CanvasControl`.
+The project won't build at the moment, due to the referenced-but-not-implemented **Draw** event handler. So we'll remedy that next, while we add some drawing code to interact with the **CanvasControl**.
 
-If you created a C# project, edit `MainPage.xaml.cs`:
+## For a WinUI 3 (Windows App SDK) project
 
-```cs
-using Microsoft.UI;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.Graphics.Canvas.UI.Xaml;
+For a C# project, add the following event handler to `MainWindow.xaml.cs`:
 
+```csharp
+// MainWindow.xaml.cs
+...
 public sealed partial class MainWindow : Window
 {
-    public MainWindow()
+    ...
+    void CanvasControl_Draw(
+        Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender,
+        Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
     {
-        this.InitializeComponent();
-    }
-
-    void CanvasControl_Draw(CanvasControl sender, CanvasDrawEventArgs args)
-    {
-        args.DrawingSession.DrawEllipse(155, 115, 80, 30, Colors.Black, 3);
-        args.DrawingSession.DrawText("Hello, Win2D world!", 100, 100, Colors.Yellow);
+        args.DrawingSession.DrawEllipse(155, 115, 80, 30, Microsoft.UI.Colors.Black, 3);
+        args.DrawingSession.DrawText("Hello, Win2D World!", 100, 100, Microsoft.UI.Colors.Yellow);
     }
 }
+...
 ```
 
-If you created a C++/CX project, edit `MainPage.xaml.h` and add a function declaration to the `MainPage` class:
+For a C++/WinRT project, add the following event handler to `MainWindow.xaml.h` and `MainWindow.xaml.cpp`:
 
-```cpp
+```cppwinrt
+// MainWindow.xaml.h
+...
 void CanvasControl_Draw(
+    winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl const& sender,
+    winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs const& args);
+...
+
+// MainWindow.xaml.cpp
+...
+namespace winrt::MYPROJECT::implementation
+{
+    ...
+    void MainWindow::CanvasControl_Draw(
+        winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl const& sender,
+        winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs const& args)
+    {
+        args.DrawingSession().DrawEllipse(155, 115, 80, 30, winrt::Microsoft::UI::Colors::Black(), 3);
+        args.DrawingSession().DrawText(L"Hello, Win2D World!", 100, 100, winrt::Microsoft::UI::Colors::Yellow());
+    }
+}
+```
+
+You can now build and run the project. You'll see some Win2D content&mdash;a black ellipse with a yellow "Hello, World!" message in front of it.
+
+## For a UWP project
+
+For a C# project, you can use the same C# code as for a WinUI 3 project (see the [For a WinUI 3 project](#for-a-winui-3-windows-app-sdk-project) section above). The only differences are that you'll be editing `MainPage.xaml.cs` instead of `MainWindow.xaml.cs`. And you'll need to change `Microsoft.UI.Colors` to `Windows.UI.Colors`.
+
+For a C++/WinRT project, add the following code to `pch.h`, `MainPage.h`, and `MainPage.cpp`:
+
+```cppwinrt
+// pch.h
+...
+#include <winrt/Microsoft.Graphics.Canvas.UI.Xaml.h>
+
+// MainPage.h
+...
+void CanvasControl_Draw(
+    winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl const& sender,
+    winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs const& args);
+...
+
+// MainPage.cpp
+...
+namespace winrt::MYPROJECT::implementation
+{
+    ...
+    void MainPage::CanvasControl_Draw(
+        winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl const& sender,
+        winrt::Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs const& args)
+    {
+        args.DrawingSession().DrawEllipse(155, 115, 80, 30, winrt::Windows::UI::Colors::Black(), 3);
+        args.DrawingSession().DrawText(L"Hello, Win2D World!", 100, 100, winrt::Windows::UI::Colors::Yellow());
+    }
+}
+```
+
+For a C++/CX project, add the following event handler to `MainPage.xaml.h` and `MainPage.xaml.cpp`:
+
+```cppcx
+// MainPage.xaml.h
+...
+void CanvasControl_Draw(
+	Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^ sender,
+	Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^ args);
+...
+
+// MainWindow.xaml.cpp
+...
+void MainPage::CanvasControl_Draw(
     Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^ sender,
-    Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^ args);
-```
-
-Then edit `MainPage.xaml.cpp`:
-
-```cpp
-#include "pch.h"
-#include "MainPage.xaml.h"
-
-using namespace App1;
-using namespace Microsoft::UI;
-using namespace Microsoft::Graphics::Canvas::UI::Xaml;
-
-MainPage::MainPage()
+    Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^ args)
 {
-    InitializeComponent();
-}
-
-void MainPage::CanvasControl_Draw(CanvasControl^ sender, CanvasDrawEventArgs^ args)
-{
-    args->DrawingSession->DrawEllipse(155, 115, 80, 30, Colors::Black, 3);
-    args->DrawingSession->DrawText("Hello, world!", 100, 100, Colors::Yellow);
+    args->DrawingSession->DrawEllipse(155, 115, 80, 30, Windows::UI::Colors::Black, 3);
+    args->DrawingSession->DrawText("Hello, Win2D World!", 100, 100, Windows::UI::Colors::Yellow);
 }
 ```
-
-Press **F5** to launch and run the project.
-
-> [!NOTE]
-> This sample is using WinUI 3 namespaces (`Microsoft.UI.*`), but the same code can be used on UWP as well, by just changing the namespaces to be `Windows.UI.*` instead). Win2D exposes the same APIs on both frameworks.
 
 ## See Also
 
-* Win2D [Quick start](./quick-start.md)
+* [Overview of Win2D](./index.md)
+* [Win2D quickstart](./quick-start.md)

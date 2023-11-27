@@ -45,7 +45,7 @@ There are a few items you should update:
 -   ShortName: Because there is limited room for your display name to fit on tiles, we recommend that you to specify a ShortName as well, to make sure your app's name doesn’t get truncated.
 -   Logo images:
 
-    You should replace these images with your own. You have the option of supplying images for different visual scales, but you are not required to supply them all. To ensure that you app looks good on a range of devices, we recommend that you provide 100%, 200%, and 400% scale versions of each image. See [App icons and logos](https://learn.microsoft.com/windows/apps/design/style/iconography/overview) to learn more about generating these assets.
+    You should replace these images with your own. You have the option of supplying images for different visual scales, but you are not required to supply them all. To ensure that you app looks good on a range of devices, we recommend that you provide 100%, 200%, and 400% scale versions of each image. See [App icons and logos](/windows/apps/design/style/iconography/overview) to learn more about generating these assets.
 
     Scaled images follow this naming convention:
     

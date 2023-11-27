@@ -42,7 +42,7 @@ void page_Unloaded(object sender, RoutedEventArgs e)
 }
 ```
 
-For working examples, see any of the [Example Gallery](https://github.com/Microsoft/Win2D-Samples/tree/master/ExampleGallery/Shared) demo pages.
+For working examples, see any of the [Example Gallery](https://github.com/microsoft/Win2D-Samples/tree/master/ExampleGallery/) demo pages.
 
 ## How to test for cycle leaks
 

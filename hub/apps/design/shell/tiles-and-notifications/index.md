@@ -31,7 +31,7 @@ A tile is an app's representation on the Start menu. Every Windows app has a til
 | Article | Description |
 | --- | --- |
 | [Create tiles](creating-tiles.md) | Customize the default tile for your app and provide assets for different screen sizes. |
-| [App icon assets](https://learn.microsoft.com/windows/apps/design/style/iconography/overview) | App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Windows app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons. |
+| [App icon assets](/windows/apps/design/style/iconography/overview) | App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Windows app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons. |
 | [Primary tile API's](primary-tile-apis.md) | Request to pin your app's primary tile, and check if the primary tile is currently pinned. |
 | [Tile content](create-adaptive-tiles.md) | Tile notification content is specified using adaptive, a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Windows app. |
 | [Tile content schema](../tiles-and-notifications/tile-schema.md) | Here are the elements and attributes you use to create adaptive tiles. |

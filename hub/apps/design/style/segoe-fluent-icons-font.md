@@ -39,7 +39,7 @@ All glyphs in **Segoe Fluent Icons** have the same fixed width with a consistent
 </Grid>
 ```
 
-Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
+Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Dari, Persian, and Hebrew.
 
 ## Using the icons
 

@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 04/19/2023
+ms.date: 08/03/2023
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
@@ -15,7 +15,7 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 > [!div class="nextstepaction"]
 > [Install PowerToys](install.md)
 
-## Processor support
+## Processor architecture support
 
 - **x64**: Supported
 - **ARM64**: Supported
@@ -31,7 +31,7 @@ The currently available utilities include:
         [![Always on Top screenshot.](../images/pt-always-on-top-menu.png)](always-on-top.md)
     :::column-end:::
     :::column span="2":::
-        [Always on Top](always-on-top.md) enables you to pin windows on top of other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
+        [Always on Top](always-on-top.md) enables you to pin windows above other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
     :::column-end:::
 :::row-end:::
 
@@ -42,7 +42,7 @@ The currently available utilities include:
         [![PowerToys Awake screenshot.](../images/pt-awake-menu.png)](awake.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turns off its screens.
+        [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turns off its displays.
     :::column-end:::
 :::row-end:::
 
@@ -53,8 +53,30 @@ The currently available utilities include:
         [![ColorPicker screenshot.](../images/pt-color-picker.png)](color-picker.md)
     :::column-end:::
     :::column span="2":::
-        [ColorPicker](color-picker.md) is a system-wide color picking utility activated with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from any currently running application, the picker automatically copies the color into your clipboard in a set format.
-		Color Picker contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
+        [ColorPicker](color-picker.md) is a system-wide color picking utility activated with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from anywhere on the screen, the picker automatically copies the color into your clipboard in a set format.
+        Color Picker contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
+            :::column-end:::
+:::row-end:::
+
+### Crop And Lock
+
+:::row:::
+    :::column:::
+        [![Crop And Lock screenshot.](../images/powertoys-crop-and-lock.png)](crop-and-lock.md)
+    :::column-end:::
+    :::column span="2":::
+        [Crop And Lock](crop-and-lock.md) is a utility that creates a new window that's a crop or a thumbnail of another window.
+    :::column-end:::
+:::row-end:::
+
+### Environment Variables
+
+:::row:::
+    :::column:::
+        [![Environment Variables screenshot.](../images/powertoys-environment-variables.png)](environment-variables.md)
+    :::column-end:::
+    :::column span="2":::
+        [Environment Variables](environment-variables.md) offers an easy and convenient way to manage environment variables. It also allows you to create profiles for managing a set of variables together.
     :::column-end:::
 :::row-end:::
 
@@ -76,7 +98,7 @@ The currently available utilities include:
         [![File Explorer screenshot.](../images/pt-file-explorer.png)](file-explorer.md)
     :::column-end:::
     :::column span="2":::
-        [File Explorer](file-explorer.md) add-ons enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+        [File Explorer add-ons](file-explorer.md) enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
     :::column-end:::
 :::row-end:::
 
@@ -87,7 +109,7 @@ The currently available utilities include:
         [![File Locksmith screenshot.](../images/powertoys-file-locksmith.png)](file-locksmith.md)
     :::column-end:::
     :::column span="2":::
-        [File Locksmith](file-locksmith.md) is a Windows shell extension for checking which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **What's using this file?** from the menu.
+        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **What's using this file?**.
     :::column-end:::
 :::row-end:::
 
@@ -98,7 +120,7 @@ The currently available utilities include:
         [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
     :::column-end:::
     :::column span="2":::
-        [Hosts file editor](hosts-file-editor.md) is a convenient way to edit the 'Hosts' file that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks. 
+        [Hosts file editor](hosts-file-editor.md) is a convenient way to edit the 'Hosts' file that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks.
     :::column-end:::
 :::row-end:::
 
@@ -131,18 +153,18 @@ The currently available utilities include:
         [![Mouse utilities screenshot.](../images/pt-mouse-utils.png)](mouse-utilities.md)
     :::column-end:::
     :::column span="2":::
-        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor. With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing). Mouse Highlighter displays visual indicators when the left or right mouse buttons are clicked. Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
+        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor. With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing). Mouse Highlighter displays visual indicators when the left or right mouse buttons are clicked. Mouse Jump allows a quick jump on large displays. Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
     :::column-end:::
 :::row-end:::
 
-### Mouse without Borders
+### Mouse Without Borders
 
 :::row:::
     :::column:::
         [![Mouse without Borders screenshot.](../images/powertoys-mouse-without-borders-after-connect-2.png)](mouse-without-borders.md)
     :::column-end:::
     :::column span="2":::
-        [Mouse without Borders](mouse-without-borders.md) enables you to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
+        [Mouse Without Borders](mouse-without-borders.md) enables you to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
     :::column-end:::
 :::row-end:::
 
@@ -164,7 +186,7 @@ The currently available utilities include:
         [![Peek screenshot.](../images/powertoys-peek.png)](peek.md)
     :::column-end:::
     :::column span="2":::
-        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Just select the file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
+        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Simply select the file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
     :::column-end:::
 :::row-end:::
 
@@ -260,7 +282,7 @@ The currently available utilities include:
 
 Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish.
 
-_Note that new elements of the app might not yet be translated in the first version release._
+_Note that new elements of the app might sometimes not yet be translated in the first version release._
 
 ## PowerToys video walk-through
 

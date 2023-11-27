@@ -20,24 +20,27 @@ The **ms-screenclip:** URI allows your app to automatically open up and start a 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | source | string | no | A freeform string to indicate the source that launched the URI. |
+| type | string | no | A string value to indicate which special type of capture is requested. This parameter can be omitted when starting a new snip. Values supported include: snapshot, recording\* |
 | clippingMode | string | no | A string value to indicate the clipping type for the snip. Values supported include: Rectangle, Freeform, Window |
 | delayInSeconds | int | no | An integer value, from 1 to 30. Specifies the delay, in full seconds, between the URI call and when snipping begins. |
 | callbackformat | string | no | This parameter is unavailable. |
 
-## Launching the Snip & Sketch App
+\* `type=recording` is available only on Windows 11 PCs with Snipping Tool version 11.2307 or newer, and only when the default handler for ms-screenclip is set to "Snipping Tool" instead of "Screen Clipping".
 
-The **ms-screensketch:** URI allows you to programatically launch the Snip & Sketch app, and open a specific image in that app for annotation.
+## Launching the Snipping Tool or Snip & Sketch App
+
+The **ms-screensketch:** URI allows you to programatically launch the Snipping Tool app (on Windows 11) or Snip & Sketch app (on Windows 10), and open a specific image in that app for annotation.
 
 **ms-screensketch:** takes the following parameters:
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| sharedAccessToken | string | no | A token identifying the file to open in the Snip & Sketch app. Retrieved from [SharedStorageAccessManager.AddFile](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). If this parameter is omitted, the app will be launched without a file open. |
+| sharedAccessToken | string | no | A token identifying the file to open. Retrieved from [SharedStorageAccessManager.AddFile](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). If this parameter is omitted, the app will be launched without a file open. |
 | secondarySharedAccessToken | string | no | A string identifying a JSON file with metadata about the snip. The metadata may include a **clipPoints** field with an array of x,y coordinates, and/or a [userActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity). |
 | source | string | no | A freeform string to indicate the source that launched the URI. |
-| isTemporary | bool | no | If set to True, Screen Sketch will try to delete the file after opening it. |
+| isTemporary | bool | no | If set to True, Snipping Tool will try to delete the file after opening it. |
 
-The following example calls the [LaunchUriAsync](/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method to send an image to Snip & Sketch from the user's app.
+The following example calls the [LaunchUriAsync](/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method to send an image to Snipping Tool from the user's app.
 
 ```csharp
 

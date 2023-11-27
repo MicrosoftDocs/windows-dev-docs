@@ -1,7 +1,7 @@
 ---
 title: install Command
 description: Installs the specified application.
-ms.date: 07/26/2023
+ms.date: 11/15/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -14,9 +14,9 @@ The **install** command requires that you specify the exact string to install. I
 
 ## Usage
 
-`winget install [[-q] \<query>] [\<options>]`
+`winget install [[-q] \<query> ...] [\<options>]`
 
-![search command](./images/install.png)
+![install command](./images/install.png)
 
 ## Aliases
 
@@ -49,6 +49,7 @@ The options allow you to customize the install experience to meet your needs.
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
 | **--scope**   |  Allows you to specify if the installer should target user or machine scope. See [known issues relating to package installation scope](./troubleshooting.md#scope-for-specific-user-vs-machine-wide).|
 | **-a, --architecture**   |  Select the architecture to install. |
+| **--installer-type**   |  Select the installer type to install. See [supported installer types for WinGet client](./index.md#supported-installer-formats). |
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
 | **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |
 | **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |

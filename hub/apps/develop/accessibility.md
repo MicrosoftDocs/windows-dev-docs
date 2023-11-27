@@ -30,7 +30,7 @@ This page provides information on how the various Windows development frameworks
 
       **Universal Windows Platform (UWP)**
 
-      Develop accessible apps and tools on the modern platform for Windows applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      Develop accessible apps and tools on the modern platform for Windows applications and games on any Windows device (including PCs, phones, Xbox, HoloLens, and more), and publish them to the Microsoft Store.
 
       [Designing inclusive software](/windows/uwp/accessibility/designing-inclusive-software)
 

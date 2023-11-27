@@ -16,8 +16,7 @@ With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>
 
 ## How to deactivate
 
-Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard.
-You can exit capture mode by pressing <kbd>Esc</kbd> at any moment.
+Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard. You can exit capture mode by pressing <kbd>Esc</kbd> at any moment.
 
 ## Adjust while trying to capture
 
@@ -54,7 +53,7 @@ The list can be obtained via PowerShell by running the following commands:
 
 ### How to query for OCR language packs
 
-To return the list of support language packs, open PowerShell as an Administrator (right-click, then select "Run as Administrator"), and enter the following command:
+To return the list of all supported language packs, open PowerShell as an Administrator (right-click, then select "Run as Administrator"), and enter the following command:
 
 ```powershell
 Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*' }
@@ -78,7 +77,7 @@ Name  : Language.OCR~~~es-MX~0.0.1.0
 State : NotPresent
 ```
 
-The language and location is abbreviated, so "en-US" would be "English-United States" and "en-GB" would be "English-Great Britain". If a language is not available in the output, then it's not supported by OCR.
+The language and location is abbreviated, so "en-US" would be "English-United States" and "en-GB" would be "English-Great Britain". If a language is not available in the output, then it's not supported by OCR. `State: NotPresent` languages must be installed first.
 
 ### How to install an OCR language pack
 

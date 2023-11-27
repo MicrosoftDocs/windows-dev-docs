@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 10/19/2021
+ms.date: 09/28/2023
 ---
 
 # Overview of Android development on Windows
@@ -20,10 +20,11 @@ There are multiple paths for developing an Android device app using the Windows 
 
 - [Native Android](native-android.md)
 - [.NET MAUI](/dotnet/maui/what-is-maui)
-- [Xamarin.Android](xamarin-android.md)
 - [React Native](../dev-environment/javascript/react-native-for-android.md)
 - [PWA with Cordova or Ionic](pwa.md)
 - [C/C++ for game development](native-android.md#use-c-or-c-for-android-game-development)
+
+*If you have been using Xamarin for cross-platform apps, see [Migrate from Xamarin to .NET MAUI](/dotnet/maui/migration/).
 
 In addition, this guide will provide tips on using Windows to:
 
@@ -45,13 +46,13 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 ### Choosing a cross-platform framework
 
-[Xamarin Native (Xamarin.Android)](xamarin-android.md)
+[.NET MAUI](/dotnet/maui/)
 
-- UI code: XML with Android Designer, and Material Theme
-- Logic code: C# or F#
-- Still able to tap into some native Android elements, but good for reuse of the code base for other platforms (iOS, Windows).
-- Only logic code is shared across platforms, not UI code.
-- Great for more complex apps with a device-specific user interface.
+- A cross-platform framework for creating native mobile and desktop apps with C# and XAML.
+- Develop apps that can run on Android, iOS, macOS, and Windows from a single shared code-base, with deep access to every aspect of each native platform from a single unified API that enables a write-once, run-anywhere dev experience.
+- Share UI layout and design across platforms.
+- An open-source evolution of Xamarin.Forms, extended from mobile to desktop scenarios, with UI controls rebuilt for performance and extensibility.
+- [Migrate Xamarin.Android projects to .NET MAUI](/dotnet/maui/migration/android-projects)
 
 [React Native](../dev-environment/javascript/react-native-for-android.md)
 
@@ -59,7 +60,7 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 - Logic code: JavaScript
 - The goal of React Native isn't to write the code once and run it on any platform, rather to learn-once (the React way) and write-anywhere.
 - The community has added tools such as Expo and Create React Native App to help those wanting to build apps without using Xcode or Android Studio.
-- Similar to Xamarin (C#), React Native (JavaScript) calls native UI elements (without the need for writing Java/Kotlin or Swift).
+- Similar to .NET MAUI (C#), React Native (JavaScript) calls native UI elements (without the need for writing Java/Kotlin or Swift).
 
 [Progressive Web Apps (PWAs)](pwa.md)
 
@@ -74,15 +75,14 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 Game development for Android is often unique from developing a standard Android app since games typically use custom rendering logic, often written in OpenGL or Vulkan. For this reason, and because of the many C libraries available that support game development, it's common for developers to use [C/C++ with Visual Studio](/cpp/cross-platform/), along with the Android [Native Development Kit (NDK)](/cpp/cross-platform/create-an-android-native-activity-app), to create games for Android. [Get started with C/C++ for game development](native-android.md#use-c-or-c-for-android-game-development).
 
-Another common path for developing games for Android is to use a game engine. There are many free and open-source engines available, such as [Unity with Visual Studio](/visualstudio/cross-platform/visual-studio-tools-for-unity), [Unreal Engine](https://docs.unrealengine.com/en-US/Platforms/Mobile/Android/GettingStarted/index.html), [MonoGame with Xamarin](/xamarin/graphics-games/monogame/introduction/), [UrhoSharp with Xamarin](/xamarin/graphics-games/urhosharp/introduction), [SkiaSharp with Xamarin.Forms](/xamarin/xamarin-forms/user-interface/graphics/skiasharp/) CocoonJS, App Game Kit, Fusion, Corona SDK, Cocos 2d, and more.
+For more guidance on developing Android games, see the Android Developer site: [Game development basics](https://developer.android.com/games/guides/basics). You will find guidance on using a game engine (like Unity, Unreal, Defold, Godot), as well as using IDEs (like Android Studio or Visual Studio).
 
 ## Next steps
 
 - [Get started with native Android development on Windows](native-android.md)
 - [Get started with Windows Subsystem for Android](./wsa/index.md)
-- [Get started developing for Android using Xamarin.Android](xamarin-android.md)
+- [Get started developing for Android using .NET MAUI](/dotnet/maui)
 - [Get started developing for Android using React Native](../dev-environment/javascript/react-native-for-android.md)
 - [Get started developing a PWA for Android](pwa.md)
 - [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-- [Add Windows Defender exclusions to improve performance](defender-settings.md)
 - [Enable Virtualization support to improve emulator performance](emulator.md#enable-virtualization-support)

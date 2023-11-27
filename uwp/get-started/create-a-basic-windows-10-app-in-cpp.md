@@ -1,6 +1,6 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: Create a "Hello, World!" app using C++/CX
+title: Create a "Hello, World!" UWP app using C++/CX
 description: With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on Windows. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
 ms.date: 06/11/2018
 ms.topic: article
@@ -8,7 +8,7 @@ keywords: uwp, windows 10, windows 11
 ms.localizationpriority: medium
 ---
 
-# Create a "Hello, World!" app in C++/CX
+# Create a "Hello, World!" UWP app in C++/CX
 
 > [!IMPORTANT]
 > This tutorial uses C++/CX. Microsoft has released C++/WinRT: an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more information on this language, please see [C++/WinRT](../cpp-and-winrt-apis/index.md).

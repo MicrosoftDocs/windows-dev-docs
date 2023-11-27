@@ -4,8 +4,6 @@ description: Send app notifications using the Windows App SDK
 ms.topic: article
 ms.date: 12/27/2021
 keywords: toast, local, notification, windows app sdk, winappsdk
-ms.author: vmehrshahi
-author: vaheeshta
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 ---
@@ -611,5 +609,5 @@ winrt::Windows::Foundation::IAsyncAction UpdateProgressAsync()
 - [Microsoft.Windows.AppNotifications API details](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md#api-details)
 - [Notifications code sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/)
 - [App notifications spec on GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md)
-- [Toast content](/hub/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts)
+- [Toast content](../../../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 - [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root)

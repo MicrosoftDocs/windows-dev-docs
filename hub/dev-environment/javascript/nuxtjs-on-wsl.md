@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: Nuxt.js, NuxtJS, Vue, Node.js, windows 10, microsoft, learning nodejs, node on windows, node on wsl, node on linux on windows, install node on windows, nodejs with vs code, develop with node on windows, develop with nodejs on windows, install node on WSL, NodeJS on Windows Subsystem for Linux
 ms.localizationpriority: medium
-ms.date: 03/30/2021
+ms.date: 11/01/2023
 ---
 
 # Get started with Nuxt.js on Windows
@@ -65,13 +65,13 @@ To install Nuxt.js, you will need to answer a series of questions about what sor
 
     Open the WSL terminal integrated in VS Code (**View > Terminal**). Make sure that the terminal path is pointed to your project directory (ie. `~/NuxtProjects/my-nuxt-app$`). Then try running a development instance of your new Nuxt.js app using: `npm run dev`
 
-6. The local development server will start (displaying some kind of cool progress bars for the client and server compiles). Once your project is done building, your terminal will display "Compiled successfully" along with how much time it took to compile. Point your web browser to [http://localhost:3000](http://localhost:3000) to open your new Nuxt.js app.
+7. The local development server will start (displaying some kind of cool progress bars for the client and server compiles). Once your project is done building, your terminal will display "Compiled successfully" along with how much time it took to compile. Point your web browser to `http://localhost:3000` to open your new Nuxt.js app.
 
     ![Your Nuxt.js app running in localhost:3000](../../images/nuxt-app.png)
 
-7. Open the `pages/index.vue` file in your VS Code editor. Find the page title `<v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>` and change it to `<v-card-title class="headline">This is my new Nuxt.js app!</v-card-title>`. With your web browser still open to localhost:3000, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.
+8. Open the `pages/index.vue` file in your VS Code editor. Find the page title `<v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>` and change it to `<v-card-title class="headline">This is my new Nuxt.js app!</v-card-title>`. With your web browser still open to localhost:3000, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.
 
-8. Let's see how Nuxt.js handles errors. Remove the `</v-card-title>` closing tag so that your title code now looks like this: `<v-card-title class="headline">This is my new Nuxt.js app!`. Save this change and notice that a compiling error will display in your browser, and in your terminal, letting your know that a closing tag for `<v-card-title>` is missing, along with the line numbers where the error can be found in your code. Replace the `</v-card-title>` closing tag, save, and the page will reload.
+9. Let's see how Nuxt.js handles errors. Remove the `</v-card-title>` closing tag so that your title code now looks like this: `<v-card-title class="headline">This is my new Nuxt.js app!`. Save this change and notice that a compiling error will display in your browser, and in your terminal, letting your know that a closing tag for `<v-card-title>` is missing, along with the line numbers where the error can be found in your code. Replace the `</v-card-title>` closing tag, save, and the page will reload.
 
 You can use VS Code's debugger with your Nuxt.js app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 

@@ -38,10 +38,10 @@ The following table includes device-specific details for the WDP.
 
 Device family | On by default? | HTTP | HTTPS | USB | Instructions |
 --------------|----------------|------|-------|-----|--------------|
-Desktop and IoT&nbsp;Enterprise| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Device&nbsp;Portal&nbsp;for&nbsp;Desktop or IoT&nbsp;Enterprise device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
+Desktop and IoT Enterprise| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Device Portal for Desktop or IoT Enterprise device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
 Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A | [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md) |
 HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | `http://127.0.0.1:10080` | [Device Portal for HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
-IoT&nbsp;Core| Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT Core](/windows/iot-core/manage-your-device/DevicePortal) |
+IoT Core| Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT Core](/windows/iot-core/manage-your-device/DevicePortal) |
 Phone | Enable inside Dev Mode | 80| 443 | `http://127.0.0.1:10080` | [Device Portal for Mobile](device-portal-mobile.md) |
 
 \* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Registry-based configuration](device-portal-desktop.md#registry-based-configuration) section in [Windows Device Portal for Desktop](device-portal-desktop.md).  

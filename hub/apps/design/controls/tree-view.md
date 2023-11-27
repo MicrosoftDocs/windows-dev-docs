@@ -479,7 +479,32 @@ If your tree view has unrealized nodes, they are not taken into account for sele
 
 #### SelectedItem/SelectedItems
 
-Starting in WinUI 2.2, TreeView has the [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditem) and [SelectedItems](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditems) properties. You can use these properties to get the content of selected nodes directly. If multiple selection is enabled, SelectedItem contains the first item in the SelectedItems collection.
+TreeView has the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selecteditem) and [SelectedItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selecteditems) properties. You can use these properties to get the content of selected nodes directly. If multiple selection is enabled, SelectedItem contains the first item in the SelectedItems collection.
+
+#### SelectionChanged
+
+You can handle the [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selectionchanged) event to respond when the collection of selected items changes, either programmatically or through user interaction.
+
+```xaml
+<TreeView ItemsSource="{x:Bind Folders}"
+          SelectionMode="Multiple"
+          SelectionChanged="TreeView_SelectionChanged"/>
+```
+
+```csharp
+public void TreeView_SelectionChanged(TreeView sender, TreeViewSelectionChangedEventArgs args)
+{
+    foreach (object item in args.RemovedItems)
+    {
+        this.SelectedFolders.Remove((Folder)item);
+    }
+
+    foreach (object item in args.AddedItems)
+    {
+        this.SelectedFolders.Add((Folder)item);
+    }
+}
+```
 
 ## Code examples
 

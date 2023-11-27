@@ -5,19 +5,16 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 06/09/2023
+ms.date: 11/22/2023
 ---
 
-# Set up a Dev Drive on Windows 11 (Public Preview)
+# Set up a Dev Drive on Windows 11
 
 **Dev Drive** is a new form of storage volume available to improve performance for key developer workloads.
 
 Dev Drive builds on [ReFS](/windows-server/storage/refs/refs-overview) technology to employ targeted file system optimizations and provide more control over storage volume settings and security, including trust designation, antivirus configuration, and administrative control over what filters are attached.
 
-See the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive) for some average improvement measurements across common dev operations.
-
-> [!IMPORTANT]
-> Dev Drive is currently only available via public preview (see [prerequisities](#prerequisites)). Some information relating to this prerelease product may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
+See the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes](https://aka.ms/vsdevdrive) for some average improvement measurements across common dev operations.
 
 ## How to set up a Dev Drive
 
@@ -27,16 +24,15 @@ To set up a new Dev Drive, open Windows **Settings** and navigate to **System** 
 
 ### Prerequisites
 
-- [Windows 11 Insider Program Build](https://www.microsoft.com/windowsinsider/): Dev Channel.
+- Windows 11, Build #10.0.22621.2338 or later ([Check for Windows updates](ms-settings:windowsupdate))
 - Recommend 16gb memory (minimum of 8gb)
 - Minimum 50gb free disk space
 - Dev Drives are available on all Windows SKU versions.
 
-> [!NOTE]
-> When updating your Windows release to a new Insider’s Build, you may need an additional reboot before the Dev Drive preview feature becomes available.
+When updating to the latest Windows 11 release, you may need an additional reboot before the Dev Drive feature becomes available. If you are working in a business enterprise environment, your security administrator will need to [Configure Dev Drive security policy](group-policy.md) in order to enable Dev Drive.
 
 > [!WARNING]
-> Dev Drive is intended only for [key developer scenarios](#what-should-i-put-on-my-dev-drive) and any custom settings will still be covered by [Group Policy](/windows/client-management/manage-settings-app-with-group-policy) settings in Business or Enterprise work environments.
+> Dev Drive is intended only for [key developer scenarios](#what-should-i-put-on-my-dev-drive) and any custom settings will still be covered by [Group Policy](/windows/client-management/manage-settings-app-with-group-policy) settings in Business or Enterprise work environments. Learn more about how to [Configure Dev Drive security policy](group-policy.md).
 
 ### Set up options
 
@@ -57,7 +53,7 @@ When choosing the **Create new VHD** option to set up a Dev Drive, you will then
 - **Virtual hard disk size**: Assign the amount of disk space that will be allocated for the volume to use, minimum size is 50GB.
 - **Virtual hard disk format**:
   - **VHD**: Supports virtual disks up to 2040GB in size.
-  - **VHDX**: Supports virtual disks up to 64TB in size and offers more resilient protection against unexpected IO failure caused by issues like power outage). [Learn more about Managing VHDs](/windows-server/storage/disk-management/manage-virtual-hard-disks).
+  - **VHDX** (Recommended): Supports virtual disks up to 64TB in size and offers more resilient protection against unexpected IO failure caused by issues like power outage). [Learn more about Managing VHDs](/windows-server/storage/disk-management/manage-virtual-hard-disks).
 - **Disk type**:
   - **Fixed size** - This virtual hard disk file is allocated to the maximum size when created (Recommended for efficiency)
   - **Dynamically expanding** - Grows to maximum size as data is written
@@ -89,6 +85,24 @@ Congratulations! You've now resized your Dev Drive.
 To find and **use unallocated space on an existing drive**, you can open **System** > **Storage** > **Disks & volumes**, look through the page to see whether any storage space is listed as "Unallocated". Select **Create volume** and you will be given the choices to **Create Simple Volume** (a standard NTFS storage volume) or **Create Dev Drive**. To create a Dev Drive, the steps are the same as above, you will need to add a **Label** (drive name), **Drive Letter**, and confirm the **Size** allocation.
 
 ![Screenshot of Disks & volumes storage list with unallocated storage space.](../images/dev-drive-unallocated.png)
+
+### Format a storage volume as a Dev Drive from the command line
+
+As an alternative to using Windows Settings, there are two options for creating Dev Drive storage volumes from the command line. Both options require that you open the command line as an Administrator. You must be a member of the Admin group to format a hard drive. These command line formatting methods may be preferred when creating multiple Dev Drives or as an admin for multiple machines.
+
+1. Using the [Format](/windows-server/administration/windows-commands/format) command line tool from Windows CMD or PowerShell:
+
+  ```CMD
+  Format D: /DevDrv /Q
+ ```
+
+2. Using the [Format-Volume](/powershell/module/storage/format-volume#-devdrive) cmdlet from PowerShell: 
+
+```PowerShell
+Format-Volume -DriveLetter D -DevDrive
+```
+
+These code samples require that you replace `D:` with the drive location you wish to target. See the links for more options and command parameters.
 
 ## How does Dev Drive work?
 
@@ -122,7 +136,7 @@ These tools should be stored on your main C:\ drive.
 
 A package cache is the global folder location used by applications to store files for installed software. These source files are needed when you want to update, uninstall, or repair the installed software. Visual Studio is one such application that stores a large portion of its data in the Package Cache.
 
-- **Npm cache (NodeJS)**: Create an npm cache directory in your Dev Drive, e.g. `D:\packages\npm`, then set a global environment variable `npm_config_cache` to that path, e.g. `setx /M npm_config_cache D:\packages\npm`. If you have already installed NodeJS on your machine, move the contents of `%AppData%\npm-cache` to this directory. Learn more in the npm docs: [npm-cache](https://docs.npmjs.com/cli/v6/commands/npm-cache) and [npm config: cache](https://docs.npmjs.com/cli/v9/using-npm/config#cache).
+- **Npm cache (NodeJS)**: Create an npm cache directory in your Dev Drive, e.g. `D:\packages\npm`, then set a global environment variable `npm_config_cache` to that path, e.g. `setx /M npm_config_cache D:\packages\npm`. If you have already installed NodeJS on your machine, move the contents of `%AppData%\npm-cache` to this directory. (On some systems the npm cache may be in `%LocalAppData%\npm-cache`). Learn more in the npm docs: [npm-cache](https://docs.npmjs.com/cli/v6/commands/npm-cache) and [npm config: cache](https://docs.npmjs.com/cli/v9/using-npm/config#cache).
 
 - **NuGet global-packages folder**: The NuGet global-packages folder is used by dotnet, MSBuild, and Visual Studio. Create a user specific NuGet directory in your CopyOnWrite (CoW) filesystem. For example: `D:\<username>\.nuget\packages`. Use one of the following ways to change the global-packages folder from the default location to your newly created folder (to manage the globally installed packages):
 
@@ -262,17 +276,21 @@ The following filters may be used with Dev Drive:
 | GVFS: Sparse enlistments of Windows | PrjFlt |
 | MSSense:  Microsoft Defender for Endpoint for EDR Sensor | MsSecFlt |
 | Defender:  Windows Defender Filter | WdFilter |
-| Docker: Running containers out of dev drive | bindFlt, wcifs |
+| Docker:  Running containers out of Dev Drive | bindFlt, wcifs |
 | Windows Performance Recorder:  Measure file system operations | FileInfo |
+| Process Monitor - Sysinternals:  Monitor file system activities | ProcMon24 |
 
 The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
 
 ```powershell
-fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo
+fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24
 ```
 
 > [!TIP]
 > To determine the filters required for a specific scenario, you may need to temporarily mark a Dev Drive as *untrusted*. Then, run the scenario and make note of all filters that attached to the volume. Designate the Dev Drive as [*trusted*](#how-do-i-designate-a-dev-drive-as-trusted) again and then add the filters to the Allow list for that Dev Drive to ensure the scenario succeeds. Finally, remove any filters that may not be needed, one at a time, while ensuring that the scenario works as expected.
+
+> [!TIP]
+> The filter name for Process Monitor may change. If adding the filter name "ProcMon24" doesn't seem to capture file system activities on a Dev Drive, list the filters using the command `fltmc filters`, find the filter name for Process Monitor, and use that name instead of "ProcMon24".
 
 ## What scenarios are unsupported by Dev Drive? What are the limitations?
 
@@ -284,6 +302,15 @@ There are a few scenarios in which we do not recommend using a Dev Drive. These 
 - A volume in a VHD hosted by a removable or hot-pluggable disk does not support designation as a Dev Drive.
 - The C: drive on your machine cannot be designated as a Dev Drive.
 - The purpose of a Dev Drive is to host files for building and debugging software projects designated to store repositories, package caches, working directories, and temp folders. We do not recommend installing applications on a Dev Drive.
+- Using Dev Drive on [Dynamic Disks](/windows/win32/fileio/basic-and-dynamic-disks#dynamic-disks) is unsupported. Instead, use [Storage Spaces](https://support.microsoft.com/windows/storage-spaces-in-windows-b6c8b540-b8d8-fb8a-e7ab-4a75ba11f9f2#WindowsVersion=Windows_11), which will help protect your data from drive failures and extend storage over time as you add drives to your PC. 
+
+## How to delete a Dev Drive
+
+You can delete a Dev Drive in the Windows 11 System Settings: `System` > `Storage` > `Disks & volumes`.
+
+Open Windows **Settings** menu, then choose **Storage**, then **Advanced Storage Settings**, then **Disks & volumes**, where you will find a list of the storage volumes on your device. Select **Properties** next to the Dev Drive storage volume that you want to delete. In the drive's properties, you will find the option to **Delete** under the **Format** label.
+
+![Delete a Dev Drive in Windows Settings](../images/dev-drive-delete.png)
 
 ## Dev Drive FAQs
 
@@ -310,10 +337,10 @@ No. If you have the space, you can create as many Dev Drives as you would like. 
 
 ### What do I need to know about using Dev Drive with Visual Studio?
 
-Once you have a Dev Drive created, Visual Studio will automatically recognize it when you're creating a new project and pick that filepath by default. To optimize performance when using Visual Studio, we recommend moving any project code, [package caches](#storing-package-cache-on-dev-drive), and `Copy on write` MS Build tasks to the Dev Drive that may have previously been saved elsewhere. (See [How to change the build output directory](/visualstudio/ide/how-to-change-the-build-output-directory) in the Visual Studio docs.) We also recommend that you consider redirecting `%TEMP%` and `%TMP%` envvars to Dev Drive. Many programs use these, so beware of potential side effects. We also recommend using [performance mode for Microsoft Defender](#what-is-microsoft-defender-performance-mode) for asychronous performance gains using Dev Drive. Turning Microsoft Defender completely off may result in the most maximum performance gains, but this may increase security risks and is a setting controlled by the system admin.
+Once you have a Dev Drive created, Visual Studio will automatically recognize it when you're creating a new project, or cloning an existing project, and pick that filepath by default. To optimize performance when using Visual Studio, we recommend moving any project code, [package caches](#storing-package-cache-on-dev-drive), and `Copy on write` MS Build tasks to the Dev Drive that may have previously been saved elsewhere. (See [How to change the build output directory](/visualstudio/ide/how-to-change-the-build-output-directory) in the Visual Studio docs.) We also recommend that you consider redirecting `%TEMP%` and `%TMP%` envvars to Dev Drive. Many programs use these, so beware of potential side effects. We also recommend using [performance mode for Microsoft Defender](#what-is-microsoft-defender-performance-mode) for asychronous performance gains using Dev Drive. Turning Microsoft Defender completely off may result in the most maximum performance gains, but this may increase security risks and is a setting controlled by the system admin.
 
 For more information, see the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive).
- 
+
 ### Does Dev Drive work with WSL project files?
 
 You can access Dev Drive project files, which run on the Windows file system, from a Linux distribution running via WSL. However, WSL runs in a VHD and for the best performance files should be stored on the Linux file system. WSL is out of the scope of Windows file system so you should not expect to see any performance improvement when accessing project files in Dev Drive from a Linux distribution running via WSL.
@@ -321,6 +348,14 @@ You can access Dev Drive project files, which run on the Windows file system, fr
 ### What method is used to format a Windows storage volume?
 
 See [`MSFT_Volume class`](/windows-hardware/drivers/storage/format-msft-volume) in the Windows Driver docs.
+
+### How to configure and use Live Unit Testing with a Dev Drive?
+
+You can find guidance on [How to configure and use Live Unit Testing](/visualstudio/test/live-unit-testing) in the Visual Studio documentation. However, be aware that there is a dependency on [ProjFS](/windows/win32/projfs/projected-file-system). You will need to move the Live Unit Testing workspace root to the Dev Drive and add Windows Projected File System to the allowed filter list. You can do so using the following command in PowerShell:
+
+```powershell
+fsutil devdrv setfiltersallowed PrjFlt
+```
 
 ### How to contribute to these docs and FAQs?
 

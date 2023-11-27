@@ -176,6 +176,6 @@ To learn how to display rich content on your tile via tile notifications, please
 
 * [Secondary tiles overview](secondary-tiles.md)
 * [Secondary tiles guidance](secondary-tiles-guidance.md)
-* [Tile assets](https://learn.microsoft.com/windows/apps/design/style/iconography/overview)
+* [Tile assets](/windows/apps/design/style/iconography/overview)
 * [Tile content documentation](create-adaptive-tiles.md)
 * [Send a local tile notification](sending-a-local-tile-notification.md)

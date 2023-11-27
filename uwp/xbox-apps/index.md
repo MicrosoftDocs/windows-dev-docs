@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Get started building apps for the Universal Windows Platform (UWP) on Xbox One.
 
-UWP on Xbox One supports developing both apps and games. You don't have to be part of a developer program to experiment, create, and test games or apps on Xbox. All you need is a [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard). When you are ready to publish and sell games on Xbox One or take advantage of Xbox Live on Windows 10, you need to join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or be an [ID@Xbox](https://www.xbox.com/Developers/id) developer. If you plan to be an ID@Xbox developer, we recommend applying to the program first before registering for a developer account. For more info, see [Developer program overview](/gaming/gdk/_content/gc/live/get-started/live-getstarted-nav).
+UWP on Xbox One supports developing both apps and games. You don't have to be part of a developer program to experiment, create, and test games or apps on Xbox. All you need is a [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard). When you are ready to publish and sell games on Xbox One or take advantage of Xbox Live on Windows 10, you need to join the [Xbox Live Creators Program](https://developer.microsoft.com/games/publish/) or be an [ID@Xbox](https://www.xbox.com/Developers/id) developer. If you plan to be an ID@Xbox developer, we recommend applying to the program first before registering for a developer account. For more info, see [Developer program overview](/gaming/gdk/_content/gc/live/get-started/live-getstarted-nav).
 
 This section includes setup steps, a guide through the authentication process, information about installing the required versions of Visual Studio and Windows 10 tools, and the steps to build, run, and debug your first simple application. 
 
@@ -19,7 +19,7 @@ This section includes setup steps, a guide through the authentication process, i
 |------------|-------------|
 |[Getting started](getting-started.md)| Getting started guide for UWP on Xbox One development. |
 |[What's new](whats-new.md)| Highlights new features in UWP on Xbox One. |
-|[Xbox One Developer Mode activation](devkit-activation.md)| Explains how to enable Developer Mode on Xbox One. |
+|[Xbox Developer Mode activation](devkit-activation.md)| Explains how to enable Developer Mode on Xbox. |
 |[Disabling Developer Mode on Xbox One](devkit-deactivation.md)| Explains how to disable Developer Mode on Xbox One. |
 |[Set up your UWP on Xbox development environment](development-environment-setup.md)| Describes the steps to set up and test your Xbox One development environment. |
 |[Samples](samples.md)| Pointer to the GitHub location – TVHelpers - where you will find useful XAML and JavaScript samples to get you started developing for Xbox. Samples include a full XAML Media App template as well as automatic controller navigation, rich media playback, and search for web-based technologies. |

@@ -26,7 +26,7 @@ This page provides information on how the various Windows development frameworks
 
       **Universal Windows Platform (UWP)**
 
-      Build speech-enabled apps on the modern platform for Windows 10 (and later) applications and games, on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      Build speech-enabled apps on the modern platform for Windows 10 (and later) applications and games, on any Windows device (including PCs, phones, Xbox, HoloLens, and more), and publish them to the Microsoft Store.
 
       [Speech interactions](/windows/uwp/design/input/speech-interactions)
 

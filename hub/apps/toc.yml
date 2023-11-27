@@ -28,18 +28,14 @@ items:
         href: whats-new/latest-doc-updates.md
   - name: Get started
     items:
+        - name: Start here!
+          href: get-started/start-here.md
         - name: Overview of app development options
           href: get-started/index.md
-        - name: About migrating from UWP to Windows App SDK
-          href: get-started/migrate-from-uwp-to-winappsdk.md
-        - name: Install tools for the Windows App SDK
-          href: windows-app-sdk/set-up-your-development-environment.md
-        - name: "Create your first WinUI 3 project"
-          href: winui/winui3/create-your-first-winui3-app.md
-        - name: "Tutorial: Create a simple photo viewer with WinUI 3"
-          href: get-started/simple-photo-viewer-winui3.md
-        - name: "Tutorial: Create a simple multi-platform photo viewer"
-          href: get-started/uno-simple-photo-viewer.md
+        - name: App development options and features
+          href: get-started/dev-options.md
+        - name: "Windows apps: packaging, deployment, and process"
+          href: get-started/intro-pack-dep-proc.md
         - name: Sample apps for Windows
           href: get-started/samples.md
         - name: Windows developer best practices 
@@ -58,6 +54,8 @@ items:
           href: get-started/developer-mode-features-and-debugging.md
         - name: Create a developer account
           href: get-started/sign-up.md
+        - name: Install tools for the Windows App SDK
+          href: windows-app-sdk/set-up-your-development-environment.md
         - name: Visual Studio project templates
           items:
             - name: All templates for Windows apps
@@ -70,6 +68,14 @@ items:
         href: how-tos/hello-world-winui3.md
       - name: Target multiple platforms with WinUI 3
         href: how-tos/uno-multiplatform.md
+      - name: About migrating from UWP to Windows App SDK
+        href: get-started/migrate-from-uwp-to-winappsdk.md
+      - name: "Create your first WinUI 3 project"
+        href: winui/winui3/create-your-first-winui3-app.md
+      - name: "Tutorial: Create a simple photo viewer with WinUI 3"
+        href: get-started/simple-photo-viewer-winui3.md
+      - name: "Tutorial: Create a simple multi-platform photo viewer"
+        href: get-started/uno-simple-photo-viewer.md
   - name: Design
     href: design/toc.yml
   - name: Develop
@@ -366,10 +372,12 @@ items:
             items:
               - name: "Overview of Win2D"
                 href: develop/win2d/index.md
-              - name: "Hello Win2D World"
+              - name: "Win2D quickstart"
                 href: develop/win2d/hellowin2dworld.md
-              - name: "Quick start"
+              - name: "Build a simple Win2D app"
                 href: develop/win2d/quick-start.md
+              - name: "Win2D in a Core App project"
+                href: develop/win2d/in-a-core-app.md
               - name: "Features"
                 href: develop/win2d/features.md
               - name: Articles
@@ -463,8 +471,14 @@ items:
         href: develop/security-and-identity.md
       - name: Speech
         href: develop/speech.md
+      - name: DispatcherQueue
+        href: develop/dispatcherqueue.md
       - name: Windows AI and machine learning
         href: /windows/ai/
+      - name: Windows Search providers
+        items:
+        - name: Overview
+          href: develop/search/search-providers.md
       - name: Windows widget providers
         items:
         - name: Overview
@@ -477,6 +491,10 @@ items:
           href: develop/widgets/widget-provider-manifest.md
         - name: Widget provider ActivateApplication protocol
           href: develop/widgets/widget-provider-activateapplication-protocol.md
+      - name: Windows feed providers
+        items:
+        - name: Overview
+          href: develop/feeds/feed-providers.md
       - name: Platform
         items:
         - name: C#/WinRT
@@ -507,12 +525,12 @@ items:
             href: develop/smart-app-control/code-signing-for-smart-app-control.md
           - name: Test your app's signature with Smart App Control
             href: develop/smart-app-control/test-your-app-with-smart-app-control.md
-  - name: Windows app restore
-    href: develop/windows-app-restore.md
   - name: Deploy
     items:
       - name: Deployment overview
         href: package-and-deploy/index.md
+      - name: Windows app restore
+        href: develop/windows-app-restore.md
       - name: Windows App SDK deployment guide
         items:
           - name: Windows App SDK deployment overview
@@ -787,33 +805,6 @@ items:
                 href: publish/send-push-notifications-to-your-apps-customers.md
               - name: Use targeted offers
                 href: publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
-          - name: Analyze app performance
-            href: publish/analytics.md
-            items:
-              - name: Acquisitions report
-                href: publish/acquisitions-report.md
-              - name: Add-on acquisitions report
-                href: publish/add-on-acquisitions-report.md
-              - name: Usage report
-                href: publish/usage-report.md
-              - name: Health report
-                href: publish/health-report.md
-              - name: Ratings and reviews in the Microsoft Store
-                href: publish/ratings-and-reviews.md
-              - name: Ratings report
-                href: publish/ratings-report.md
-              - name: Reviews report
-                href: publish/reviews-report.md
-              - name: Feedback report
-                href: publish/feedback-report.md
-              - name: Xbox analytics report
-                href: publish/xbox-analytics-report.md
-              - name: Insights report
-                href: publish/insights-report.md
-              - name: Advertising performance report
-                href: publish/advertising-performance-report.md
-              - name: Download analytics reports
-                href: publish/download-analytic-reports.md
       - name: Store Policies and Code of Conduct
         href: publish/store-policies-and-code-of-conduct.md
         items:

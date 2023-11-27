@@ -4,8 +4,6 @@ title: App instancing with the app lifecycle API (Windows App SDK)
 ms.topic: article
 ms.date: 11/16/2021
 keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, multi instance
-ms.author: hickeys
-author: hickeys
 ms.localizationpriority: medium
 ---
 

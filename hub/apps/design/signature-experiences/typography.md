@@ -1,9 +1,7 @@
 ---
-author: hickeys
 description: Segoe UI Variable and the way Windows 11 uses typography to communicate information
 title: Typography in Windows 11
 ms.assetid: D12BA18B-1281-4057-9716-2A6D420FAE1B
-ms.author: hickeys
 ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, typography, segoe, segoe ui variable

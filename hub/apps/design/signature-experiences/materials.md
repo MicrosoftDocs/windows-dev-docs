@@ -1,9 +1,7 @@
 ---
-author: hickeys
 description: The materials Windows 11 uses to create app hierarchy
 title: Materials used in Windows 11 apps
 ms.assetid: 912C88C8-2382-465C-B4AB-902BCFAED48D
-ms.author: hickeys
 ms.date: 06/24/2021
 ms.topic: article
 keywords: windows 11, design, ui, uiux, materials, acrylic, mica, smoke

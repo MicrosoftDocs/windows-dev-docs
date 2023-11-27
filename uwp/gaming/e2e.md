@@ -117,7 +117,7 @@ If you want access to even more Xbox Live capabilities, dedicated marketing and 
     </colgroup>
     <tr>
         <td>Xbox Live Creators Program</td>
-        <td><a href="https://developer.microsoft.com/games/xbox/xboxlive/creator">Learn more about the Xbox Live Creators Program</a></td>
+        <td><a href="https://developer.microsoft.com/games/publish/">Learn more about the Xbox Live Creators Program</a></td>
     </tr>
 </table>
 
@@ -136,22 +136,7 @@ The ID@Xbox program helps qualified game developers self-publish on Windows and 
     </tr>
     <tr>
         <td>ID@Xbox consumer site</td>
-        <td><a href="https://www.idatxbox.com/">ID@Xbox</a></td>
-    </tr>
-</table>
-
-#### Xbox tools and middleware
-
-The Xbox Tools and Middleware Program licenses Xbox development kits to professional developers of game tools and middleware. Developers accepted into the program can share and distribute their Xbox XDK technologies to other licensed Xbox developers.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Contact the tools and middleware program</td>
-        <td><a href="mailto:xboxtlsm@microsoft.com">xboxtlsm@microsoft.com</a></td>
+        <td><a href="https://www.xbox.com/games/id">ID@Xbox</a></td>
     </tr>
 </table>
 
@@ -1471,7 +1456,7 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     </tr>
     <tr>
         <td>Use Vungle to add video ads into your games</td>
-        <td><a href="https://publisher.vungle.com/sdk/">Get Windows SDK for Vungle</a></td>
+        <td><a href="https://support.vungle.com/hc/articles/15733752671131">Get Vungle SDK for Windows</a></td>
     </tr>
 </table>
 

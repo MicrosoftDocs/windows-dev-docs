@@ -8,7 +8,7 @@ metadata:
   author: mattwojo
   ms.author: mattwoj
   ms.reviewer: marcs
-  ms.date: 07/21/2023
+  ms.date: 08/31/2023
 title: Frequently asked questions about Windows on Arm
 summary: Use the following questions and answers to better understand the support for Arm-based devices running on Windows.
 
@@ -32,9 +32,9 @@ sections:
           See [Add Arm support to your Windows app](/windows/arm/add-arm-support).
 
       - question: |
-          Are drivers supported by emulation? Or do I have to rebuild them as Arm?
+          Are drivers supported by emulation? Or do I have to add Arm64 native support to any drivers used in my app?
         answer: |
-          In all cases, kernel-mode drivers and user-mode print drivers MUST be built as native ARM64 binaries to work on ARM64 devices. Additionally, you cannot execute an x86 or x64 setup program to install an ARM64 driver on ARM64 devices.
+          In all cases, kernel-mode drivers and user-mode print drivers MUST be built as native Arm64 binaries to work on Arm64 devices. Additionally, you cannot execute an x86 or x64 setup program to install an Arm64 driver on Arm64 devices. See [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
       - question: |
           Does Visual Studio work on Arm?
@@ -42,14 +42,9 @@ sections:
           Both [Visual Studio](/visualstudio/install/visual-studio-on-arm-devices) and [Visual Studio Code](https://code.visualstudio.com/download) offer Arm-native versions for you to install.
 
       - question: |
-          How do I add Arm64 native support to my driver?
-        answer: |
-          See [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
-
-      - question: |
           How do I test and debug on Arm64?
         answer: |
-          See [Debugging on Arm64](/windows-hardware/drivers/debugger/debugging-arm64). For testing, you will need a Windows on Arm device, such as the [Windows Dev Kit 2023](/windows/arm/dev-kit/), or you can run a [Windows 11 Arm64 virtual machine](/windows/arm/add-arm-support#windows-on-arm-hardware-or-virtual-machines-available-for-testing).
+          See [Add Arm support to your Windows app - Test and Debug](/windows/arm/add-arm-support#step-2---test-and-debug-the-newly-built-arm64-app). For testing, you will need a Windows on Arm device, such as the [Windows Dev Kit 2023](/windows/arm/dev-kit/), or you can run a [Windows 11 Arm64 virtual machine](/windows/arm/add-arm-support#windows-on-arm-hardware-or-virtual-machines-available-for-testing).
 
       - question: |
           What if I am blocked from building an Arm-native version of my app by a 3rd party dependency?
@@ -57,14 +52,9 @@ sections:
           There are a few ways to address the scenario when your Windows app relies on a 3rd-party dependency that has not (yet) been updated for Arm. We first recommend reaching out to the owner of the dependency to ask whether there are plans to update the dependency to support Arm. You might also check resources like [NuGet](https://www.nuget.org/) or [vcpkg](https://vcpkg.io/en/), or reach out to the Arm Open Source community for help updating dependencies (such as [Linaro](https://www.linaro.org/windows-on-arm/)). You could rewrite the dependency yourself - Microsoft's "[App Assure program](https://www.microsoft.com/fasttrack/microsoft-365/app-assure)" may be able to help. Or you may want to write your app using [Arm64EC](/windows/arm/arm64ec), which enables you to mix x64 and Arm64 code for a partial Arm-native implementation focused on optimizing the most important aspects of your app for Arm.
 
       - question: |
-          Question TBD?
+          How do I update my C++ Windows app to support Arm devices?
         answer: |
-          Answer TBD.
-          
-      - question: |
-          Question TBD?
-        answer: |
-          Answer TBD.
+          See [Configure C++ projects for Arm processors](/cpp/build/configuring-programs-for-arm-processors-visual-cpp).
 
   - name: Windows on Arm Virtual Machine FAQ
     questions:
@@ -79,7 +69,7 @@ sections:
           While Hyper-V is a supported component on Windows 11 Arm64 devices, Hyper-V is not a supported Windows 11 virtual machine host since there is no TPM support. Setup will block if you try installing Windows 11 from an ISO. Windows Hyper-V Manager will display an "Operation failed" error message if you try to enable TPM on a virtual machine. There is work in-progress to add virtual TPM support in a future Windows on Arm VM.
 
       - question: |
-          Question TBD?
+          Are there any trainings available for adding Arm support to a Windows app and running a VM for testing and debugging?
         answer: |
-          Answer TBD.
+          Yes, see [Introduction to Windows on Arm - Port a .NET application to natively support Arm-based processors](/training/modules/port-windows-applications-to-natively-support-arm/).
 

@@ -6,7 +6,7 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.localizationpriority: medium
-ms.date: 10/08/2021
+ms.date: 11/01/2023
 ---
 
 # Get started using Python for web development on Windows
@@ -135,7 +135,9 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
 
 ## Hello World tutorial for Flask
 
-[Flask](http://flask.pocoo.org/) is a web application framework for Python. In this brief tutorial, you'll create a small "Hello World" Flask app using VS Code and WSL.
+[Flask](https://flask.palletsprojects.com/) is a web application framework for Python. The Flask documentation offers guidance on getting started and a [more detailed tutorial](https://flask.palletsprojects.com/tutorial/) about how to create a small but complete application.
+
+Following the steps below, you can create a small "Hello World" Flask app using VS Code and WSL.
 
 1. Open Ubuntu 18.04 (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu 18.04".
 
@@ -207,7 +209,7 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
 16. Stop the app by using **Ctrl+C** in the terminal.
 
 > [!TIP]
-> If you want to use a different filename than **app.py**, such as **program.py**, define an environment variable named **FLASK_APP** and set its value to your chosen file. Flask's development server then uses the value of **FLASK_APP** instead of the default file **app.py**. For more information, see [Flask's Command Line Interface documentation](http://flask.pocoo.org/docs/1.0/cli/).
+> If you want to use a different filename than **app.py**, such as **program.py**, define an environment variable named **FLASK_APP** and set its value to your chosen file. Flask's development server then uses the value of **FLASK_APP** instead of the default file **app.py**. For more information, see the [Flask documentation](https://flask.palletsprojects.com/).
 
 Congratulations, you've created a Flask web application using Visual Studio Code and Windows Subsystem for Linux! For a more in-depth tutorial using VS Code and Flask, see [Flask Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-flask).
 

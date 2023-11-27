@@ -13,23 +13,26 @@ ms.localizationpriority: medium
 
 Collections and lists both refer to the representation of multiple related data items that appear together. Collections can be represented in multiple ways, by different collection controls (also may be referred to as collection views). Collection controls display and enable interactions with collection-based content, such as a list of contacts, a list of dates, a collection of images, and so on.
 
-> **Important APIs**: [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView), [FlipView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview), [TreeView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview), [ItemsRepeater class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater)
+> **Important APIs**: [ItemsView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview), [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView), [FlipView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview), [TreeView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview), [ItemsRepeater class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater)
 
 The controls covered in this article include:
 
-- **List views**, which are primarily used to display text-heavy content collections
-- **Grid views**, which are primarily used to display image-heavy content collections
-- **Flip views**, which are primarily used to display image-heavy content collections that require exactly one item to be in focus at a time
-- **Tree views**, which are primarily used to display text-heavy content collections in a specific hierarchy
-- **ItemsRepeater**, which is a customizable building block to create custom collection controls
+| Control | Primary use |
+| -- | -- |
+|  **ItemsView**  |  to display collections using a flexible layout system  |
+|  **ListView**  |  to display text-heavy content collections  |
+|  **GridView**  |  to display image-heavy content collections  |
+|  **FlipView**  |  to display image-heavy content collections that require exactly one item to be in focus at a time  |
+|  **TreeView**  |  to display text-heavy content collections in a specific hierarchy  |
+|  **ItemsRepeater**  |  as a customizable building block to create custom collection controls  |
 
 Design guidelines, features, and examples are given below for each control.
 
-Each of these controls (with the exception of ItemsRepeater) provide built-in styling and interaction. However, to further customize the visual look of your collection view and the items inside it, a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.DataTemplate) is used. Detailed information on data templates and customizing the look of a collection view can be found on the [Item containers and templates](./item-containers-templates.md) page.
+Each of these controls (with the exception of ItemsRepeater) provide built-in styling and interaction. However, to further customize the visual look of your collection view and the items inside it, a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) is used. Detailed information on data templates and customizing the look of a collection view can be found on the [Item containers and templates](./item-containers-templates.md) page.
 
 Each of these controls (with the exception of ItemsRepeater) also have built-in behavior to allow for the selection of single or multiple items. See [Selection modes overview](selection-modes.md) to learn more.
 
-One of the scenarios not covered in this article is displaying collections in a table or across multiple columns. If you're looking to display a collection in this format, consider using the [DataGrid control](/windows/communitytoolkit/controls/datagrid) from the [Windows Community Toolkit](/windows/communitytoolkit/).
+One of the scenarios not covered in this article is displaying collections in a table or across multiple columns. If you're looking to display a collection in this format, consider using the [DataGrid control](/windows/communitytoolkit/controls/datagrid) from the [Windows Community Toolkit](/dotnet/communitytoolkit/windows/).
 
 ## Examples
 
@@ -47,7 +50,40 @@ One of the scenarios not covered in this article is displaying collections in a 
 </tr>
 </table>
 
-## List views
+## Items view
+
+You can use an items view to display text- or image-heavy data items in a variety of flexible layouts that can be swapped at run-time.
+
+### Is this the right control?
+
+Use an items view to:
+
+- Display a collection that primarily consists of text-based items, where all of the items should have the same visual and interaction behavior.
+- Display a content collection in which the focal point of each item is an image, and each item should have the same visual and interaction behavior.
+- Display content libraries.
+- Accommodate a variety of use cases, including the following common ones:
+  - Create a contacts list.
+  - Storefront-type user interface (i.e. browsing apps, songs, products)
+  - Interactive photo libraries
+
+### Examples
+
+Here's an items view that shows a collection of photos in a uniform grid layout.
+
+:::image type="content" source="images/itemsview/itemsview-uniform-grid.png" alt-text="A collection of photos shown in a uniform grid layout where each item is the same size.":::
+
+This is the same collection shown in a stack layout. The focus here is on the text rather than on the photo.
+
+:::image type="content" source="images/itemsview/itemsview-stack.png" alt-text="A collection of small photos shown in a vertical list with several rows of text below each photo.":::
+
+### Related articles
+
+|Topic  |Description  |
+|---------|---------|
+|[Items view](itemsview.md) | Learn the essentials of using an items view in your app. |
+|[Item containers and templates](item-containers-templates.md) | The items you display in a list or grid can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates. |
+
+## List view
 
 List views represent text-heavy items, typically in a single-column, vertically-stacked layout. They let you categorize items and assign group headers, drag and drop items, curate content, and reorder items.
 
@@ -86,7 +122,7 @@ This is a ListView that has been inverted to display a log of messages, with the
 |[Pull-to-refresh](pull-to-refresh.md) | The pull-to-refresh mechanism lets a user pull down on a list of data using touch in order to retrieve more data. Use this article to implement pull-to-refresh in your list view. |
 |[Nested UI](nested-ui.md) | Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users. |
 
-## Grid views
+## Grid view
 
 Grid views are suited for arranging and browsing image-based content collections. A grid view layout scrolls vertically and pans horizontally. Items are in a wrapped layout, as they appear in a left-to-right, then top-to-bottom reading order.
 
@@ -123,7 +159,7 @@ A grid view is an ideal solution for a content library, which is often used to p
 |[Item templates for grid view](item-templates-gridview.md) | Use these example item templates for a ListView to get the look of common app types. |
 |[Nested UI](nested-ui.md) | Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users. |
 
-## Flip views
+## Flip view
 
 Flip views are suited for browsing image-based content collections, specifically where the desired experience is for only one image to be visible at a time. A flip view allows the user to move or "flip" through the collection items (either vertically or horizontally), having each item appear one at a time  after the user interaction.
 
@@ -151,7 +187,7 @@ The following two examples show a FlipView that flips horizontally and verticall
 |---------|---------|
 | [Flip view](flipview.md)  | Learn the essentials of using a flip view in your app, along with how to customize the look of your items within a flip view. |
 
-## Tree views
+## Tree view
 
 Tree views are suited for displaying text-based collections that have an important hierarchy that needs to be showcased. Tree view items are collapsible/expandable, are shown in a visual hierarchy, can be supplmented with icons, and can be dragged and dropped between tree views. Tree views allow for N-level nesting.
 
@@ -179,6 +215,9 @@ Here is an example of a tree view that represents a file explorer, and displays 
 ## ItemsRepeater
 
 ItemsRepeater is different from the rest of the collection controls shown on this page because it does not provide any styling or interaction out-of-box, i.e. when simply placed on a page without defining any properties. ItemsRepeater is rather a building block that you as a developer can use to create your own custom collections control, specifically one that cannot be achieved by using the other controls in this article. ItemsRepeater is a data-driven and high-performance panel that can be tailored to fit your exact needs.
+
+> [!TIP]
+> The ItemsView control is built on top of ItemsRepeater and provides many of the benefits of ItemsRepeater without the need to create your own custom collection control.
 
 ### Is this the right control?
 

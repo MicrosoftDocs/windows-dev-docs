@@ -2,7 +2,7 @@
 title: Deployment overview
 description: The topics in this section introduce options and guidance around deploying different types of Windows apps. Your first decision will be whether or not to package your app.
 ms.topic: article
-ms.date: 05/11/2023
+ms.date: 10/05/2023
 ms.localizationpriority: medium
 ---
 
@@ -14,17 +14,19 @@ The topics in this section introduce options and guidance around deploying diffe
 
 Your first decision will be whether or not to package your app.
 
-* **Packaged app**. Packaged apps are the only kind that have *package identity* at runtime. Package identity is needed for certain Windows features, such as custom context menu extensions (see [Features that require package identity](../desktop/modernize/modernize-packaged-apps.md)). A packaged app is packaged by using MSIX technology (see [What is MSIX?](/windows/msix/overview)).
-  * Commonly, a packaged app's process runs inside a lightweight app container; and is isolated using file system and registry virtualization.
-  * **Packaged app with external location**. But you can opt out of those restrictions and still be a packaged app (still benefit from package identity). You do that by building and registering a *package with external location* with your app. A packaged app with external location uses MSIX to package, but it's not installed by using MSIX (instead, it's a "bring-your-own-installer" model). It's essentially a hybrid option between a packaged and an unpackaged app. See [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps.md).
-* **Unpackaged app**. Another way to opt out of the restrictions described above is to create an unpackaged app, and not use MSIX at all. But be aware that an unpackaged app *doesn't* have package identity at runtime; so it misses out on certain Windows features (see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)).
+* **Packaged app**. Packaged apps are the only kind that have *package identity* at runtime. Package identity is needed for many Windows extensibility features&mdash;including background tasks, notifications, live tiles, custom context menu extensions, and share targets. That's because the operating system (OS) needs to be able to identify the caller of the corresponding API. See [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+  * Commonly, a packaged app's process runs inside a lightweight app container, and is isolated using file system and registry virtualization (see [AppContainer for legacy apps](/windows/win32/secauthz/appcontainer-for-legacy-applications-) and [MSIX AppContainer apps](/windows/msix/msix-container)). But you can configure a packaged app to *not* run in an app container.
+  * A packaged app is packaged by using MSIX technology (see [What is MSIX?](/windows/msix/overview)).
+  * **Packaged app with external location**. But because some existing apps aren't yet ready for all of their content to be present inside an MSIX package, there's an option for your app to be *packaged with external location*. That enables your app to have package identity; thereby being able to use those features that require it. For more info, see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
+  * A packaged app is *installed* by using MSIX, also. But if you choose to *package with external location*, then you can think of that as a "bring-your-own-installer" model. So there *will* be some installer work for you to do with that option. It's essentially a hybrid option between a packaged and an unpackaged app.
+* **Unpackaged app**. You can opt out of using MSIX altogether by creating an unpackaged app. But be aware that an unpackaged app *doesn't* have package identity at runtime; so it misses out on certain Windows features (see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)).
 
 Each type of app can be published to the Microsoft Store, and installed that way or via Windows App Installer.
 
 > [!IMPORTANT]
-> We recommend that you package your app to run in an app container. It'll be a seamless, modern, and reliable installation and update experience for your customers.
+> We recommend that you package your app, and configure it to run in an app container. It'll be a seamless, modern, and reliable installation and update experience for your customers; and it'll be secure at runtime.
 
-| | Packaged to run in an app container | Packaged with external location or unpackaged |
+| | Packaged (and optionally running in an app container) | Packaged with external location or unpackaged |
 | - | - | - |
 | **Advantages** | Gives your users an easy way to install, uninstall, and update your app. Uninstall is clean&mdash;when your app is uninstalled, the system is restored to the same state it was in before installation&mdash;no artifacts are left behind. This kind of app also supports incremental and automatic updates. And the Microsoft Store optimizes for apps of this kind (although they can be used in or out of the Store).<br/><br/>You get the benefits of having package identity. | With these options, your app is unrestricted in terms of the the kind of app it is, the APIs it can call, and its access to the Registry and file system.<br/><br/>Packaging with external location means that you get the benefits of having package identity. |
 | **Disadvantages** | Your app is limited in terms of the kind of app it can be, and the agency it can have within the system. For example, an NT Service isn't possible. Inter-process communication (IPC) options are limited; privileged/elevated access is restricted if you're publishing to the Microsoft Store; file/Registry access is virtualized (but also see [Flexible virtualization](/windows/msix/desktop/flexible-virtualization)). And in some situations enterprise policies can disable updates by disabling the Microsoft Store. | With these options, an app that is at risk of causing stale configuration data and software to accumulate after the app has been uninstalled. That can be an issue for the customer and for the system.<br/><br/>Your app will typically be installed and updated using `.exe` or `.msi` files, or via other installation and update solutions; using a custom installer, ClickOnce, or xcopy deployment.<br/><br/>An unpackaged app lacks the benefits of having package identity. |

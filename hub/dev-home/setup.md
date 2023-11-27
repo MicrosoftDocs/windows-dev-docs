@@ -35,9 +35,6 @@ When using Dev Home to clone a GitHub repository, once you have selected a repo 
 
 If you have not yet created a Dev Drive, you will have the option to create one using Dev Home. Check the box to optimize the performance of your workloads with a Dev Drive. Then you can customize a few options, such as the drive letter, name, size, and location of the dynamic VHDX on which the Dev Drive will be created. The name will be used for both the VHDX file and the Dev Drive. By default, the options are the next available drive letter, size of 50GB, and created at `%userprofile%\DevDrives`.  
 
-> [!IMPORTANT]
-> Dev Drive is only currently available via the Windows 11 Insider program. [Learn more.](../dev-drive/index.md)
-
 ![Screenshot of Dev Home Machine configuration being used to clone a repository.](../images/devhome-github-setup.png)
 
 Learn more about what you can do with **[Dev Home](./index.md)**.

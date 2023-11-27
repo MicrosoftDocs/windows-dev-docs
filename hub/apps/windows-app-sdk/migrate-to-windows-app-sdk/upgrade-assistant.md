@@ -2,7 +2,7 @@
 title: Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
 description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [Windows UI Library (WinUI) 3](../../winui/index.md) app that uses the Windows App SDK.
 ms.topic: article
-ms.date: 06/06/2023
+ms.date: 10/05/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
 ms.author: stwhi
 author: stevewhims
@@ -88,6 +88,8 @@ As source material, we'll be migrating the UWP [PhotoLab sample](https://github.
 
 1. Having installed the .NET Upgrade Assistant extension (see [Install the .NET Upgrade Assistant](#install-the-net-upgrade-assistant) earlier in this topic), right-click on the project in **Solution Explorer**, and click **Upgrade**.
 
+1. Choose the **Upgrade project to a newer .NET version** option.
+
 1. Choose the **In-place project upgrade** option.
 
 1. Choose a target framework.
@@ -157,6 +159,38 @@ At this point you can open the migrated **PhotoLab** solution or project, and se
 See the **Task List** in Visual Studio (**View** > **Task List**) for TODOs that you should action to manually complete the migration.
 
 It's possible that the UWP (.NET Framework) version of your app contained library references that your project isn't actually using. You'll need to analyze each reference, and determine whether or not it's required. The tool might also have added or upgraded a NuGet package reference to the wrong version.
+
+The Upgrade Assistant doesn't edit the `Package.appxmanifest`, which will need some edits in order for the app to launch:
+
+1. Add this namespace on the root \<Package\> element:
+
+```
+xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+```
+
+2. Edit the \<Application\> element from `EntryPoint="appnamehere.App"` to `EntryPoint="$targetentrypoint$"`
+
+4. Replace any specified `Capability` with this:
+
+```xml
+<rescap:Capability Name="runFullTrust" />
+```
+
+In your `.csproj` file, you might need to edit the project file to set `<OutputType>WinExe</OutputType>` and `<UseMaui>False</UseMaui>`.
+
+To use many of the XAML controls, ensure that your `app.xaml` file includes the `<XamlControlsResources>`, such as in this example:
+
+```xml
+<Application.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            <!-- Other merged dictionaries here -->
+        </ResourceDictionary.MergedDictionaries>
+        <!-- Other app resources here -->
+    </ResourceDictionary>
+</Application.Resources>
+```
 
 ## Troubleshooting tips
 

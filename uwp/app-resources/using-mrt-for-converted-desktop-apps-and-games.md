@@ -523,7 +523,7 @@ would not map well to MRT. A better structure would be a `Resources` directory w
 For example, the application might have a set of custom UI commands (used for button labels etc.) in a simple text file named <span>ui.txt</span>, 
 laid out under a <span>UICommands</span> folder:
 
-<blockquote>
+
 <pre>
 + ProjectRoot
 |--+ Strings
@@ -539,14 +539,14 @@ laid out under a <span>UICommands</span> folder:
 |--- AppxManifest.xml
 |--- ...rest of project...
 </pre>
-</blockquote>
+
 
 #### Resource loading code
 
 This article assumes that at some point in your code you want to locate the file that contains a localized resource, load it, and then use it. The APIs used to load the resources, 
 the APIs used to extract the resources, etc. are not important. In pseudocode, there are basically three steps:
 
-<blockquote>
+
 <pre>
 set userLanguage = GetUsersPreferredLanguage()
 set resourceFile = FindResourceFileForLanguage(MY_RESOURCE_NAME, userLanguage)
@@ -554,7 +554,7 @@ set resource = LoadResource(resourceFile)
     
 // now use 'resource' however you want
 </pre>
-</blockquote>
+
 
 MRT only requires changing the first two steps in this process - how you determine the best candidate resources and how you locate them. It doesn't require you to change how you load 
 or use the resources (although it provides facilities for doing that if you want to take advantage of them).
@@ -578,7 +578,7 @@ this example, the file-based resources vs. the string resources)
 
 In pseudo-code, the way you would resolve a given resource file name (like `UICommands\ui.txt` in the sample above) is as follows:
 
-<blockquote>
+
 <pre>
 // Get the ResourceContext that applies to this app
 set resourceContext = ResourceContext.GetForViewIndependentUse()
@@ -598,7 +598,7 @@ set bestCandidate = desiredResource.Resolve(resourceContext)
    
 // Get the string value (the filename) from the ResourceCandidate
 set absoluteFileName = bestCandidate.ValueAsString
-</blockquote>
+
 </pre>
 
 Note in particular that the code does **not** request a specific language folder - like `UICommands\en-US\ui.txt` - even though that is how the files exist on-disk. Instead, it
@@ -618,7 +618,7 @@ user doesn't have the language listed in their preferences).
 
 For example, imagine a .NET application with the following layout, where all the files exist under the `MainApp` folder:
 
-<blockquote>
+
 <pre>
 + MainApp
 |--+ en-us
@@ -629,11 +629,11 @@ For example, imagine a .NET application with the following layout, where all the
 |  \--- MainApp.resources.dll
 \--- MainApp.exe
 </pre>
-</blockquote>
+
 
 After conversion to .appx, the layout will look something like this, assuming `en-US` was the default language and the user has both German and French listed in their language list:
 
-<blockquote>
+
 <pre>
 + WindowsAppsRoot
 |--+ MainApp_neutral
@@ -647,7 +647,7 @@ After conversion to .appx, the layout will look something like this, assuming `e
    \--+ fr-fr
       \--- <span>MainApp.resources.dll</span>
 </pre>
-</blockquote>
+
 
 Because the localized resources no longer exist in sub-directories underneath the main executable's install location, the built-in .NET resource resolution fails. Luckily, .NET has 
 a well-defined mechanism for handling failed assembly load attempts - the `AssemblyResolve` event. A .NET app using MRT must register for this event and provide the missing assembly 

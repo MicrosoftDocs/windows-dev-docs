@@ -1,6 +1,6 @@
 - name: Overview
   href: index.md
-- name: What's a Windows app?
+- name: What's a UWP app?
   href: ../get-started/universal-application-platform-guide.md
 - name: Start coding
   href: ../get-started/create-uwp-apps.md
@@ -16,11 +16,11 @@
     - name: Your first app
       href: ../get-started/your-first-app.md
       items:
-        - name: A "Hello, World!" app in C#
+        - name: A "Hello, World!" UWP app in C#
           href: ../get-started/create-a-hello-world-app-xaml-universal.md
-        - name: A "Hello, World!" app in C++/WinRT
+        - name: A "Hello, World!" UWP app in C++/WinRT
           href: ../get-started/create-a-basic-windows-10-app-in-cppwinrt.md
-        - name: A "Hello, World!" app in C++/CX
+        - name: A "Hello, World!" UWP app in C++/CX
           href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
-    - name: Building a complex app
+    - name: Building a complex UWP app
       href: ../get-started/plan-your-app.md

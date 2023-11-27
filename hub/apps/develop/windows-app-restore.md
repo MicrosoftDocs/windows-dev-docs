@@ -2,7 +2,7 @@
 title: 'Windows app restore: maximize the value of your app'
 description: This topic defines the tenets of Windows app restore that will enable your app to deliver the best backup and restore experience it can.
 ms.topic: article
-ms.date: 05/18/2023
+ms.date: 09/29/2023
 keywords: Windows, App, SDK, Windows app restore
 ms.author: stwhi
 author: stevewhims
@@ -57,6 +57,24 @@ For more info about the best practices of storing app data, see [Store and retri
 ## Write user-generated content to Known Folders
 
 Windows introduced [known folders](/windows/win32/shell/known-folders) with Windows Vista. Since that time, users have come to expect that they can find the content they create with their apps in those locations. Writing user-generated content to those locations has the added benefit that OneDrive will back up those folders, if enabled, to ensure they're available to the user on their new PC (see [Back up your folders with OneDrive](https://support.microsoft.com/office/back-up-your-folders-with-onedrive-d61a7930-a6fb-4b95-b28a-6552e77c3057)). By using standard Windows APIs to write your user-generated content to the known folders, you're improving the user experience, and decreasing friction in adopting your app.
+
+### User-visible files
+
+You should store files that you wish a user to see and to interact with in the appropriate folder in the user's profile. You should store general files in the `FOLDERID_Documents` location; typically in a sub-folder. And you should store pictures, music, and video in their appropriate `FOLDERID_Pictures`, `FOLDERID_Music`, and `FOLDERID_Videos` locations.
+
+### Machine-specific app data
+
+You should store data that's specific to the machine on which the app is currently running in the `FOLDERID_LocalAppData` folder; normally in a sub-folder. That includes data such as:
+
+* System performance metrics. Information gathered and persisted about the current machine, and used to optimize the behavior of the app on that specific machine. For example, if you've gathered info about the machine's graphics capabilities and performance (in order to determine the optimal rendering quality), then you shouldn't roam that data.
+* User customizations connected with machine-specific capabilities. An app that optimizes its rendering performance based on the machine's graphics capabilities and performance should also store any changes that it allows the user to make to those preferences as machine-specific data. That ensures that the user enjoys what they determine to be the best experience for the machine they happen to be running on the app on.
+
+> [!TIP]
+> The reason we advise not to store machine-specific data in known folders is that those user-specific folders travel with the user between machines (they *roam*). So storing machine-specific data can result in conflicts and problems when users use your app on multiple machines, or after an upgrade.
+
+### App data that's not machine-specific
+
+You should store data that's not machine-specific in the `FOLDERID_Documents` location; typically in a sub-folder. Those files often contain user-provided app customization such as: default action to perform on launch; custom backgrounds; or other data that shouldn't change from one machine to another.
 
 ## Best practices for unpackaged apps
 
