@@ -5,9 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: Node.js, windows 10, native windows, directly on windows
-ms.localizationpriority: medium
-ms.date: 03/30/2021
+ms.date: 11/28/2023
 ---
 
 # Install NodeJS on Windows
@@ -74,19 +72,7 @@ To learn more about using Volta to install multiple versions of Node.js on Windo
 
 ## Install Visual Studio Code
 
-We recommend you [install Visual Studio Code](https://code.visualstudio.com), as well as the [Node.js Extension Pack](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack), for developing with Node.js on Windows. Install them all or pick and choose which seem the most useful to you.
-
-To install the Node.js extension pack:
-
-1. Open the **Extensions** window (Ctrl+Shift+X) in VS Code.
-2. In the search box at the top of the Extensions window, enter: "Node Extension Pack" (or the name of whatever extension you are looking for).
-3. Select **Install**. Once installed, your extension will appear in the "Enabled" folder of your **Extensions** window. You can disable, uninstall, or configure settings by selecting the gear icon next to the description of your new extension.
-
-A few additional extensions you may want to consider include:
-
-- [Debugger for Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): Once you finish developing on the server side with Node.js, you'll need to develop and test the client side. This extension integrates your VS Code editor with your Chrome browser debugging service, making things a bit more efficient.
-- [Keymaps from other editors](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): These extensions can help your environment feel right at home if you're transitioning from another text editor (like Atom, Sublime, Vim, eMacs, Notepad++, etc).
-- [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Enables you to synchronize your VS Code settings across different installations using GitHub. If you work on different machines, this helps keep your environment consistent across them.
+We recommend you [install Visual Studio Code](https://code.visualstudio.com) for developing with Node.js on Windows. For help, see [Node.js tutorial in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial).
 
 ### Alternative code editors
 
