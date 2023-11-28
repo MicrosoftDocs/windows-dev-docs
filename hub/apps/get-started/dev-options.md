@@ -53,7 +53,7 @@ There are even more options for developing on Windows:
 - [Progressive Web Apps (PWAs)](/microsoft-edge/progressive-web-apps-chromium/)
 - [Microsoft for Java developers](/java/)
 - [Windows Subsystem for Linux (WSL)](/windows/wsl/)
-- [PowerShell](/powershell/)
+- [PowerShell](/powershell/scripting/overview)
 - [Android development on Windows](/windows/android/overview)
 
 ## See also

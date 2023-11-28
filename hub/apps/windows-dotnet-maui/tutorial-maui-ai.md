@@ -20,7 +20,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-* An OpenAI [account](https://platform.openai.com/signup)
+* An OpenAI [account](https://platform.openai.com/login?launch)
 * An OpenAI [API key](https://platform.openai.com/docs/guides/production-best-practices/api-keys)
 * The .NET MAUI [installation requirements](/dotnet/maui/get-started/installation)
 * If you are new to .NET MAUI on Windows, you should start with the [Build your first .NET MAUI app for Windows](/windows/apps/windows-dotnet-maui/walkthrough-first-app) tutorial.
@@ -123,7 +123,7 @@ To call OpenAI's ChatGPT APIs, we're going to use an open-source library from th
         });
     ```
 
-    This will bootstrap the ChatGptNet library with your API key and set some default options. You can create your API key on the [OpenAI API settings page](https://beta.openai.com/account/api-keys). The `builder` class is part of .NET MAUI's dependency injection system. We're using it to add the ChatGptNet library to the dependency injection container so that we can use it in our app.
+    This will bootstrap the ChatGptNet library with your API key and set some default options. You can create your API key on the [OpenAI API settings page](https://platform.openai.com/account/api-keys). The `builder` class is part of .NET MAUI's dependency injection system. We're using it to add the ChatGptNet library to the dependency injection container so that we can use it in our app.
 
 1. In order to compile the project, you will need to add the following `using` statements to the top of the **MauiProgram.cs** file:
 
