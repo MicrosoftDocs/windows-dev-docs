@@ -21,7 +21,11 @@ To start using Crop And Lock, enable it in the PowerToys Settings (**Crop And Lo
 
 Once enabled, you can focus a Window and press the "Thumbnail" shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>) or the "Reparent" shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>) to select an area of the window to crop.
 
+**Hint:** You can use the <kbd>Esc</kbd> key to cancel the crop selection.
+
 After you've selected the area of the window, a new window will appear and behave according to the selected crop mode.
+
+Use the **X** button on the top right corner of the cropped window to close it and restore the original window.
 
 ## Crop modes
 
