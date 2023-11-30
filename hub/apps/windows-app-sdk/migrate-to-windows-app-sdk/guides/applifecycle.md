@@ -58,7 +58,7 @@ Go to **Properties** > (select **All Configurations** and **All Platforms**) > *
 
 Because we've just prevented the project from auto-generating a **Main** function, the project won't build at the moment. So the second and last step is to implement our own version of that function in a source code file.
 
-Add a new project item of type **Class** to the project, and name it *Program.cs*. Inside `Program.cs`, replace the code `class Program {}` with your own implementation. For an example of the code to use, see `Program.cs` in the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/AppLifecycle/Instancing/cs-winui-packaged/CsWinUiDesktopInstancing/CsWinUiDesktopInstancing/Program.cs).
+Add a new project item of type **Class** to the project, and name it *Program.cs*. Inside `Program.cs`, replace the code `class Program {}` with your own implementation. For an example of the code to use, see `Program.cs` in the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Instancing/cs/cs-winui-packaged/CsWinUiDesktopInstancing/CsWinUiDesktopInstancing/Program.cs).
 
 #### Instructions for C++/WinRT
 
@@ -66,7 +66,7 @@ Go to **Properties** > (select **All Configurations** and **All Platforms**) > *
 
 Because we've just prevented the project from auto-generating a **wWinMain** function, the project won't build at the moment. So the second and last step is to implement our own version of that function in a source code file.
 
-Add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package, and update your project's `pch.h` and `App.xaml.cpp` source code files. For an example of the code to use, see the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/AppLifecycle/Instancing/cpp-winui-packaged/CppWinUiDesktopInstancing/CppWinUiDesktopInstancing/App.xaml.cpp). Be sure to change the namespace in `winrt::CppWinUiDesktopInstancing::implementation::App` to suit your particular project).
+Add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package, and update your project's `pch.h` and `App.xaml.cpp` source code files. For an example of the code to use, see the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Instancing/cpp/cpp-winui-packaged/CppWinUiDesktopInstancing/CppWinUiDesktopInstancing/App.xaml.cpp). Be sure to change the namespace in `winrt::CppWinUiDesktopInstancing::implementation::App` to suit your particular project).
 
 To resolve "error C2872: 'Microsoft': ambiguous symbol", change `using namespace Microsoft::UI::Xaml;` to `using namespace winrt::Microsoft::UI::Xaml;`. And make any additional similar changes to `using` directives.
 
