@@ -105,10 +105,12 @@ These policies have a higher priority than the policy "Configure global utility 
 |Source code file preview|Source code file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMonacoPreview|
 |PDF file preview|PDF file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFPreview|
 |Gcode file preview|Gcode file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodePreview|
+|QOI file preview|QOI file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerQOIPreview|
 |SVG file thumbnail|SVG file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGThumbnails|
 |PDF file thumbnail|PDF file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFThumbnails|
 |Gcode file thumbnail|Gcode file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodeThumbnails|
 |STL file thumbnail|STL file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSTLThumbnails|
+|QOI file thumbnail|QOI file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerQOIThumbnails|
 |Hosts file editor|Hosts file editor: Configure enabled state|ConfigureEnabledUtilityHostsFileEditor|
 |Image Resizer|Image Resizer: Configure enabled state|ConfigureEnabledUtilityImageResizer|
 |Keyboard Manager|Keyboard Manager: Configure enabled state|ConfigureEnabledUtilityKeyboardManager|
