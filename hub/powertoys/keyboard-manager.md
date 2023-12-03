@@ -17,6 +17,8 @@ For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>B</kbd
 
 You can exchange shortcut key combinations. For example: The shortcut key <kbd>Ctrl</kbd>+<kbd>C</kbd> will copy text in many applications. With PowerToys Keyboard Manager utility, you can swap that shortcut for <kbd>⊞ Win</kbd>+<kbd>C</kbd>. Now, <kbd>⊞ Win</kbd>+<kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
 
+Also, you can exchange key or shortcut to arbitrary unicode text sequence. For example, you can exchange the letter <kbd>H</kbd> for the text `Hello!`. When you press the <kbd>H</kbd> key, `Hello!` will be inserted. Similarly, you can exchange shortcut key <kbd>Ctrl</kbd>+<kbd>G</kbd> for some text (e.g. `Hello from shortcut!`) and that text will be inserted on  <kbd>Ctrl</kbd>+<kbd>G</kbd>.
+
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
 > [!IMPORTANT]
@@ -36,19 +38,19 @@ To create mappings with Keyboard Manager, open the PowerToys Settings. Inside Po
 
 ### Remapping keys
 
-To remap a key, changing it to a new value, launch the Remap Keyboard settings window with **Remap a Key**. When first launched, no predefined mappings will be displayed. Select **&#9547;** to add a new remap.
+To remap a key, changing it to a new value, launch the Remap Keyboard settings window with **Remap a Key**. When first launched, no predefined mappings will be displayed. Select **&#9547; Add key remapping** to add a new remap.
 
-Once a new remap row appears, select the input key whose output you want to _change_ in the “Physical Key” column. Select the new key value to assign in the “Mapped To” column.
+Once a new remap row appears, select the input key whose output you want to _change_ in the “Select” column. Select the new key, shortcut or text value to assign in the “To send” column.
 
 For example, to press <kbd>A</kbd> and have `B` appear:
 
-| Physical Key: | Mapped To: |
+| Select: | To send: |
 | :--- | :--- |
 | `A` | `B` |
 
 To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add another remapping with:
 
-| Physical Key: | Mapped To: |
+| Select: | To send: |
 | :--- | :--- |
 | `B` | `A` |
 
@@ -56,28 +58,38 @@ To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add anothe
 
 ### Remapping a key to a shortcut
 
-To remap a key to a shortcut (combination of keys), enter the shortcut key combination in the "Mapped To" column.
+To remap a key to a shortcut (combination of keys), enter the shortcut key combination in the "To send" column.
 
 For example, to press the <kbd>Ctrl</kbd> key and have it result in `⊞ Win` + `←` (left arrow):
 
-| Physical Key: | Mapped To: |
+| Select: | To send: |
 | :--- | :--- |
 | `Ctrl` | `⊞ Win` + `←` |
 
 > [!IMPORTANT]
 > Key remapping will be maintained even if the remapped key is used inside another shortcut. The order of key press matters in this scenario as the action is executed during key-down, not key-up. For example, pressing <kbd>Ctrl</kbd>+<kbd>C</kbd> would result as `⊞ Win` + `left arrow` + `C`. Pressing the <kbd>Ctrl</kbd> key will first execute `⊞ Win` + `left arrow`. Pressing the <kbd>C</kbd> key first will execute `C` + `⊞ Win` + `left arrow`.
 
+### Remapping a key to text
+
+To remap a key to arbitrary unicode text, in the "To send" column first select "Text" in the combo box and then fill the text box with wanted text.
+
+For example, to press the <kbd>H</kbd> key and have it result in `Hello!`:
+
+| Select: | To send: |
+| :--- | :--- |
+| `H` | `Hello!` |
+
 ### Remapping shortcuts
 
 To remap a shortcut key combination, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, select **Remap a shortcut** to launch the Remap Shortcuts settings window.
 
-When first launched, no predefined mappings will be displayed. Select **+** to add a new remap.
+When first launched, no predefined mappings will be displayed. Select **+ Add shortcut remapping** to add a new remap.
 
-Once a new remap row appears, select the input keys whose output you want to _change_ in the “Physical Shortcut” column. Select the new shortcut value to assign in the “Mapped To” column.
+Once a new remap row appears, select the input keys whose output you want to _change_ in the “Select” column. Select the new shortcut value to assign in the “To send” column.
 
 For example, the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> copies selected text. To remap that shortcut to use the <kbd>Alt</kbd> key, rather than the <kbd>Ctrl</kbd> key:
 
-| Physical Shortcut: | Mapped To: |
+| Select: | To send: |
 | :--- | :--- |
 | `Alt` + `C` | `Ctrl` + `C` |
 
@@ -95,12 +107,20 @@ It is possible to remap a shortcut (key combination) to a single key press by se
 
 For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arrow) with a single key press **Alt**:
 
-| Shortcut: | Mapped To: |
+| Select: | To send: |
 | :--- | :--- |
 | `⊞ Win` + `←` | `Alt` |
 
 > [!IMPORTANT]
 > Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of key press matters in this scenario as the action is executed during key-down, not key-up. For example: pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
+
+### Remap a shortcut to text
+
+For example, to replace the shortcut <kbd>Ctrl</kbd>+<kbd>G</kbd> with `Hello!` text, first select "Text" in the combo box and then fill the text box with "Hello!":
+
+| Select: | To send: |
+| :--- | :--- |
+| `Ctrl` + `G` | `Hello!` |
 
 ### App-specific shortcuts
 
@@ -128,10 +148,10 @@ Keyboard Manager uses process-names (not application names) to target apps. For 
 
 To select a key or shortcut to remap:
 
-- Select **Type Key** or **Type Shortcut**.
+- Select **Select**.
 - Use the drop-down menu.
 
-Once you select **Type Key** or **Type Shortcut**, a dialogue window will open in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. To leave the dialogue, hold <kbd>Esc</kbd>.
+Once you select **Select**, a dialogue window will open in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. To leave the dialogue, hold <kbd>Esc</kbd>.
 
 Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can not use the type-key feature while the drop-down menu is open.
 
