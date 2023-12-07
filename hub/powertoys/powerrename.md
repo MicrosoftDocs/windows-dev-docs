@@ -199,7 +199,7 @@ There are great examples/cheatsheets available online to help you:
 
 [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html)
 
-[ECMAScript Regular Expressions Tutorial](https://o7planning.org/en/12219/ecmascript-regular-expressions-tutorial)
+[JavaScript Regular Expressions Tutorial with Examples](https://o7planning.org/12219/javascript-regular-expression)
 
 ## File list filters
 

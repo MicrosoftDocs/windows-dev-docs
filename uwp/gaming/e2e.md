@@ -626,15 +626,15 @@ MonoGame is an open source, cross-platform game development framework originally
     </colgroup>
     <tr>
         <td>MonoGame</td>
-        <td><a href="https://www.monogame.net">MonoGame website</a></td>
+        <td><a href="https://www.monogame.net">Visit the website</a></td>
     </tr>
     <tr>
-        <td>MonoGame Documentation</td>
-        <td><a href="https://www.monogame.net/documentation/">MonoGame Documentation (latest)</a></td>
+        <td>MonoGame documentation</td>
+        <td><a href="https://www.monogame.net/articles/">Visit the documentation</a></td>
     </tr>
     <tr>
-        <td>Monogame Downloads</td>
-        <td><a href="https://www.monogame.net/downloads/">Download releases, development builds, and source code</a> from the MonoGame website, or <a href="https://www.nuget.org/profiles/MonoGame">get the latest release via NuGet</a>.
+        <td>Monogame releases</td>
+        <td><a href="https://www.nuget.org/profiles/MonoGame">Get the latest release via NuGet</a>
     </tr>
 </table>
 
@@ -1456,7 +1456,7 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     </tr>
     <tr>
         <td>Use Vungle to add video ads into your games</td>
-        <td><a href="https://support.vungle.com/hc/articles/15733752671131">Get Vungle SDK for Windows</a></td>
+        <td><a href="https://support.vungle.com/hc/en-us/articles/15733752671131">Download Vungle SDK for Windows</a></td>
     </tr>
 </table>
 

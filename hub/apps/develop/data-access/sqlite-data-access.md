@@ -59,9 +59,9 @@ Right-click the solution, and then click **Manage NuGet Packages for Solution**.
 
 At this point, you have a choice. You can use the version of SQLite that is included with Windows or if you have some reason to use a specific version of SQLite, you can include the SQLite library in your package. We are going to use the version of SQLite that's included with Windows.
 
-Choose the **Browse** tab, search for the **Microsoft.Data.SQLite.Core** package, and then install the latest stable version.
+Choose the **Browse** tab, search for the **Microsoft.Data.SQLite** package, and then install the latest stable version.
 
-![SQLite Core package](images/sqlite-core-package.png)
+![SQLite NuGet package](images/sqlite-nuget-package.png)
 
 ## Add and retrieve data in a SQLite database
 

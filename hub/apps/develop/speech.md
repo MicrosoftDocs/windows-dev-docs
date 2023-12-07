@@ -2,7 +2,7 @@
 title: Speech, voice, and conversation in Windows 11 and Windows 10
 description: This page provides the information for you to get started developing speech-enabled Windows apps.
 ms.topic: article
-ms.date: 09/12/2019
+ms.date: 11/28/2023
 keywords: Speech in Windows 10, speech, voice, conversation, win32 speech apps, UWP speech apps, WPF speech apps, WinForms speech apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
@@ -157,8 +157,11 @@ Download and run full Windows samples that demonstrate various accessibility fea
       [Speech blogs](https://blogs.windows.com/windowsdeveloper/?s=speech)
    :::column-end:::
    :::column:::
-      [Windows community - Speech](https://community.windows.com/search?q=speech)
+      [Windows community - Speech](https://answers.microsoft.com/en-us/search/search?SearchTerm=windows%20speech)
 
       [Windows Speech Developer's Forum](https://social.msdn.microsoft.com/Forums/home?filter=alltypes&sort=firstpostdesc&searchTerm=speech)
+
+      [Stack Overflow](https://stackoverflow.com/questions/tagged/windows+speech)
+
    :::column-end:::
 :::row-end:::
