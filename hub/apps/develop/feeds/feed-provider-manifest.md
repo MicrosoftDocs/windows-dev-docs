@@ -47,14 +47,11 @@ FeedProvider
 The root element of the feed provider registration information.
 
 | Attribute | Type | Required | Description | Default value |
+|-----------|------|----------|-------------|---------------|
 | **DisplayName** | string | Yes | The name of the feed provider that is displayed on the Widgets Board. | N/A |
 | **Icon** | string | Yes | The package-relative path to an icon image file that is displayed in the Widgets Board. | N/A |
 | **Id**| string | Yes | An ID that identifies the feed provider. Feed provider implementations use this string to determine or specify which of the app's feed providers is being referenced for each operation. This string must be unique for all feed providers defined within the app manifest file.  | N/A |
 | **SettingsUri** | string | Yes | The URI where the user is redirected to adjust feed settings. | N/A |
-
-[TBD - Image of feed picker UI with contoso]
-![A screenshot TBD](images/widget-picker.png)
-
 
 
 ## Activation

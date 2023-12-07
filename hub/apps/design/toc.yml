@@ -687,11 +687,5 @@
     href: widgets/widgets-create-a-template.md
   - name: Integrate with the widget picker
     href: widgets/widgets-picker-integration.md
-- name: Windows feeds
-  items:
-  - name: Overview
-    href: feeds/index.md
-  - name: Feeds design fundamentals
-    href: feeds/feeds-design-fundamentals.md
 - name: Design toolkits and samples for Windows apps
   href: downloads/index.md
