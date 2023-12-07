@@ -20,7 +20,7 @@ Feed providers should include the [uap3:Properties](/uwp/schemas/appxpackage/uap
 
 ```xml
 <uap3:Extension Category="windows.appExtension">
-  <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoApp" Id="ContosoApp" PublicFolder="Public">
+  <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoApp" Id="ContosoApp" PublicFolder="Public" SettingsUri="https://contoso.com/feedsettings">
     <uap3:Properties>
       <!-- Feed provider registration content goes here -->
     </uap3:Properties>
@@ -46,8 +46,16 @@ FeedProvider
 
 The root element of the feed provider registration information.
 
+| Attribute | Type | Required | Description | Default value |
+| **DisplayName** | string | Yes | The name of the feed provider that is displayed on the Widgets Board. | N/A |
+| **Icon** | string | Yes | The package-relative path to an icon image file that is displayed in the Widgets Board. | N/A |
+| **Id**| string | Yes | An ID that identifies the feed provider. Feed provider implementations use this string to determine or specify which of the app's feed providers is being referenced for each operation. This string must be unique for all feed providers defined within the app manifest file.  | N/A |
+| **SettingsUri** | string | Yes | The URI where the user is redirected to adjust feed settings. | N/A |
+
 [TBD - Image of feed picker UI with contoso]
 ![A screenshot TBD](images/widget-picker.png)
+
+
 
 ## Activation
 
@@ -78,6 +86,7 @@ Represents the registration for a single feed.
 | **Description** | string | Yes | Short description of the feed. | N/A |
 | **ContentUri** | string | Yes | The URI from which feed content is retrieved. | N/A |
 | **Icon** | string | Yes | The package-relative path to an icon image file that is displayed in the Widgets Board. | N/A |
+
 
 You can use localized resources instead of string literals for the UI-facing attribute values. For more information, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest).
 
