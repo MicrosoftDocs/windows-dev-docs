@@ -110,4 +110,7 @@ To review a detailed summary of promotional code orders for your apps and add-on
 
 You can also [download](#download-and-distribute-promotional-codes) an order from this table.
 
+## Distribute promotional codes for transitioning users from desktop to packaged app
+
+When you convert your current Win32 application into an MSIX package for Store distribution, you have the option to distribute promotional codes via email to your current users. This enables them to seamlessly migrate to your packaged app while retaining access to the features obtained through their initial purchase.
  

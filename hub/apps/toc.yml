@@ -57,7 +57,11 @@ items:
       - name: "Retrieve a window handle (HWND)"
         href: develop/ui-input/retrieve-hwnd.md
       - name: "Display WinRT UI objects that depend on CoreWindow"
-        href: develop/ui-input/display-ui-objects.md                
+        href: develop/ui-input/display-ui-objects.md
+  - name: Distribute through Microsoft Store
+    items:
+      - name: Best practices for distributing Win32 app through Store
+        href: distribute-through-store/best-practices-for-win32-app-distribution.md                
   - name: Publishing your Windows app
     items:
       - name: Overview
