@@ -36,7 +36,7 @@ In this how-to, we'll demonstrate how to add OpenAI's API capabilities to your W
 
 After creating your project, you should see the following default file structure in your Solution Explorer:
 
-:::image type="content" source="images/chatgpt-openai/collapsed-file-structure-openai.png" alt-text="The default directory structure.":::
+:::image type="content" source="images/chatgpt-openai/collapsed-file-structure-chatgpt.png" alt-text="The default directory structure.":::
 
 
 ## Install the OpenAI SDK
