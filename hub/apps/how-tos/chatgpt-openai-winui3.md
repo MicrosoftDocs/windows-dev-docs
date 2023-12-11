@@ -14,7 +14,7 @@ content-type: how-to
 
 # Add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app
 
-In this how-to, we'll demonstrate how to add OpenAI's API capabilities to your WinUI 3 / Windows App SDK desktop app. We'll build a chat-like interface that lets you generate responses to messages using OpenAI's [chat completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api):
+In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / Windows App SDK desktop app. We'll build a chat-like interface that lets you generate responses to messages using OpenAI's [chat completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api):
 
 :::image type="content" source="images/chatgpt-openai/long-story.png" alt-text="A less minimal chat app.":::
 
@@ -39,42 +39,6 @@ After creating your project, you should see the following default file structure
 :::image type="content" source="images/chatgpt-openai/collapsed-file-structure-chatgpt.png" alt-text="The default directory structure.":::
 
 
-## Install the OpenAI SDK
-
-From Visual Studio's `View` menu, select `Terminal`. You should see an instance of Developer Powershell appear. Run the following command from your project's root directory to install the SDK:
-
-```powershell
-dotnet add package Betalgo.OpenAI
-```
-
-
-## Build the chat interface
-
-Let's adjust the UI from the *Hello World* app to display a chat interface. We'll use a `StackPanel` to display a list of messages, and a `TextBox` to let users enter new messages. Update `MainWindow.xaml` as follows:
-
-
-```xml MainWindow.xaml
-<Window
-    x:Class="ChatGPT_WinUI3.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ChatGPT_WinUI3"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
-    <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
-            <ListView x:Name="ConversationList" />
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="InputTextBox" HorizontalAlignment="Stretch"/>
-                <Button x:Name="SendButton" Content="Send" Click="SendButton_Click"/>
-            </StackPanel>
-        </StackPanel>
-    </Grid>
-</Window>
-```
-
-
 ## Set your environment variable
 
 In order to use the OpenAI SDK, you'll need to set an environment variable with your API key. In this example, we'll use the `MY_OPEN_AI_API_KEY` environment variable. Once you have your API key from the [OpenAI developer dashboard](https://platform.openai.com/api-keys), you can set the environment variable from the command line as follows:
@@ -86,7 +50,16 @@ setx MY_OPEN_AI_API_KEY <your-api-key>
 Note that this method works well for development, but you'll want to use a more secure method for production apps (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app).
 
 
-## Initialize the OpenAI SDK
+## Install the OpenAI SDK
+
+From Visual Studio's `View` menu, select `Terminal`. You should see an instance of `Developer Powershell` appear. Run the following command from your project's root directory to install the SDK:
+
+```powershell
+dotnet add package Betalgo.OpenAI
+```
+
+
+## Initialize the SDK
 
 In `MainWindow.xaml.cs`, initialize the SDK with your API key:
 
@@ -118,7 +91,33 @@ namespace ChatGPT_WinUI3
 ```
 
 
-## Implement the chat interface
+## Build the chat UI
+
+We'll use a `StackPanel` to display a list of messages, and a `TextBox` to let users enter new messages. Update `MainWindow.xaml` as follows:
+
+
+```xml MainWindow.xaml
+<Window
+    x:Class="ChatGPT_WinUI3.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ChatGPT_WinUI3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+            <ListView x:Name="ConversationList" />
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="InputTextBox" HorizontalAlignment="Stretch"/>
+                <Button x:Name="SendButton" Content="Send" Click="SendButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+```
+
+## Implement message sending, receiving, and displaying
 
 Add a `SendButton_Click` event handler to handle the sending, receiving, and display of messages:
 
@@ -356,7 +355,7 @@ Then, add the `InputTextBox_KeyDown` event handler to handle the `Enter` key:
     //...
 ```
 
-### Run the app
+## Run the app
 
 Your new-and-improved chat interface should look something like this:
 
