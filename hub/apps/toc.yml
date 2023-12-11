@@ -350,7 +350,7 @@ items:
           - name: Build a Hello World app with C# & WinUI 3
             href: how-tos/hello-world-winui3.md
           - name: Add OpenAI chat completions to your WinUI 3 desktop app
-            href: how-tos/chatgpt-openai-winui3
+            href: how-tos/chatgpt-openai-winui3.md
           - name: Target multiple platforms with WinUI 3
             href: how-tos/uno-multiplatform.md
           - name: About migrating from UWP to Windows App SDK
