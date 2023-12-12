@@ -19,11 +19,147 @@ The experimental channel provides releases of the Windows App SDK that include [
 - For documentation on experimental releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
 **Experimental channel releases:**
+- [Version 1.5 Experimental](#version-15-experimental-150-experimental1)
 - [Version 1.4 Experimental](#version-14-experimental-140-experimental1)
 - [Version 1.3 Experimental](#version-13-experimental-130-experimental1)
 - [Version 1.2 Experimental](#version-12-experimental-120-experimental2)
 - [Version 1.0 Experimental](#version-10-experimental-100-experimental1)
 - [Version 0.8 Preview](#version-08-preview-080-preview)
+
+## Version 1.5 Experimental (1.5.0-experimental1)
+
+This is the latest release of the experimental channel.
+To download, retarget your WinAppSDK NuGet version to `1.5.231202003-experimental1`.
+
+### New APIs
+
+1.5-experimental1 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
+
+```C#
+Microsoft.Windows.Widgets.Feeds.Providers
+    CustomQueryParametersRequestedArgs
+    CustomQueryParametersUpdateOptions
+    FeedDisabledArgs
+    FeedEnabledArgs
+    FeedManager
+    FeedProviderDisabledArgs
+    FeedProviderEnabledArgs
+    FeedProviderInfo
+    IFeedManager
+    IFeedProvider
+```
+
+### Additional Experimental APIs
+
+This release includes the following new and modified experimental APIs:
+
+```C#
+Microsoft.UI.Content
+ 
+    ContentIsland
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        IsRemoteEndpointConnected
+ 
+    ContentIslandEnvironment
+        CurrentOrientation
+        DisplayScale
+        NativeOrientation
+        ThemeChanged
+ 
+    ContentSiteEnvironment
+        CurrentOrientation
+        DisplayScale
+        NativeOrientation
+        NotifyThemeChanged
+ 
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+ 
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentSiteBridgeEndpointConnectionPrivate
+    ProcessStarter
+    SystemVisualSiteBridge
+        IsClosed
+```
+
+```C#
+Microsoft.UI.Input
+ 
+    FocusNavigationReason
+    FocusNavigationRequest
+    FocusNavigationRequestEventArgs
+    FocusNavigationResult
+    InputFocusController
+        DepartFocus
+        NavigateFocusRequested
+ 
+    InputFocusNavigationHost
+```
+
+```C#
+Microsoft.UI.Xaml
+ 
+    DebugSettings
+        LayoutCycleDebugBreaks
+        LayoutCycleTracing
+ 
+    LayoutCycleDebugBreakLevel
+    LayoutCycleTracingLevel
+    XamlIsland
+```
+
+```C#
+Microsoft.UI.Xaml.Controls
+ 
+    SelectionModel
+        SelectAllFlat
+```
+
+```C#
+Microsoft.UI.Xaml.Core.Direct
+ 
+    XamlPropertyIndex
+        FlyoutBase_SystemBackdrop
+        Popup_SystemBackdrop
+```
+
+```C#
+Microsoft.Windows.Management.Deployment
+ 
+    AddPackageOptions
+    AddPackageSetOptions
+    DeploymentPriority
+    DeploymentProcessingModel
+    EnsureIsReadyOptions
+    FindPackageSetOptions
+    PackageDeploymentContract
+    PackageDeploymentManager
+    PackageDeploymentProgress
+    PackageDeploymentProgressStatus
+    PackageDeploymentResult
+    PackageDeploymentStatus
+    PackageRuntimeManager
+    PackageSet
+    PackageSetItem
+    PackageSetItemRuntimeDisposition
+    PackageSetManager
+    PackageSetRuntimeDisposition
+    PackageVolume
+    PackageVolumeManager
+    PackageVolumeStatus
+    RegisterPackageOptions
+    RemovePackageOptions
+    StagePackageOptions
+    StubPackageOption
+```
 
 ## Version 1.4 Experimental (1.4.0-experimental1)
 
