@@ -202,9 +202,6 @@ GameService::RegisterDependencyProperties() {
 
 ## Setting your custom attached property from XAML markup
 
-> [!NOTE]
-> If you're using C++/WinRT, then skip to the following section ([Setting your custom attached property imperatively with C++/WinRT](#setting-your-custom-attached-property-imperatively-with-cwinrt)).
-
 After you have defined your attached property and included its support members as part of a custom type, you must then make the definitions available for XAML usage. To do this, you must map a XAML namespace that will reference the code namespace that contains the relevant class. In cases where you have defined the attached property as part of a library, you must include that library as part of the app package for the app.
 
 An XML namespace mapping for XAML is typically placed in the root element of a XAML page. For example, for the class named `GameService` in the namespace `UserAndCustomControls` that contains the attached property definitions shown in preceding snippets, the mapping might look like this.
@@ -231,9 +228,12 @@ If you are setting the property on an element that is also within the same mappe
 > [!NOTE]
 > If you are writing a XAML UI with C++/CX, then you must include the header for the custom type that defines the attached property, any time that a XAML page uses that type. Each XAML page has an associated code-behind header (.xaml.h). This is where you should include (using **\#include**) the header for the definition of the attached property's owner type.
 
-## Setting your custom attached property imperatively with C++/WinRT
+## Setting your custom attached property imperatively
 
-If you're using C++/WinRT, then you can access a custom attached property from imperative code, but not from XAML markup. The code below shows how.
+> [!IMPORTANT]
+> Previous versions of this documentation _incorrectly_ claimed that attached properties implemented in C++/WinRT could not be set in XAML markup. That is not true: properties implemented in C++/WinRT can be set in XAML markup just like properties implemented in C++/CX or other languages.
+
+You can also access a custom attached property from imperative code, not just XAML markup. The code below shows how.
 
 ```xaml
 <Image x:Name="gameServiceImage"/>
