@@ -1,21 +1,21 @@
 ---
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
-ms.date: 10/30/2022
+ms.date: 12/08/2023
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # Account types, locations, and fees
 
-The Windows program in [Partner Center](https://partner.microsoft.com/dashboard) offers both individual and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft programs.
+The Windows program in [Partner Center](https://partner.microsoft.com/dashboard) offers both individual and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Both accounts give you access to publish apps to the Store and to participate in additional Microsoft programs.
 
 > [!NOTE]
 > When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. You'll have the option to [add additional users to the account](manage-account-users.md) later.
 
-When you [begin the signup process](https://developer.microsoft.com/microsoft-store/register) you'll need to choose whether to create an individual account or a company account. Both types of accounts will allow you to submit apps, games, add-ins, and services.
+When you [begin the signup process](https://developer.microsoft.com/microsoft-store/register) you'll need to choose whether to create an individual account or a company account. Both account types will allow you to submit apps, games, add-ins, and services.
 
-Company accounts are intended for organizations and businesses. For company accounts, we require greater [verification](#account-verification) to confirm that you’re authorized to set up the account for your company. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
+Company accounts must be used for organizations and businesses and any person acting in relation to their trade or profession. For company accounts, we require greater [verification](/windows/apps/publish/partner-center/account-types-locations-and-fees#account-verification) to confirm that you’re authorized to set up the account for your company. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
 
 > [!IMPORTANT]
 > You can't change the account type once you make your selection, so be sure to choose the right type.
@@ -24,13 +24,13 @@ Here are the essential differences between the two account types.
 
 | Individual account | Company account |
 |--------------------|-----------------|
-| <ul><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Shorter account verification process</li></ul> | <ul><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Requires greater account verification</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Able to submit apps with restricted functionality (as described in the [Microsoft Store Policies](../store-policies.md#1014-account-type))</li></ul> |
+| <ul><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Shorter account verification process</li><li>Coming soon: Legal disclaimer added to published products about consumer rights</li></ul> | <ul><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Requires greater account verification including business identification documents to be stored 6 months after account closure</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Able to submit apps with restricted functionality (as described in the [Microsoft Store Policies](../store-policies.md#1014-account-type))</li></ul> |
 
-Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company and set up the account. Per the [Store Policies](../store-policies.md#1014-account-type), apps with certain functionality, such as those that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third party authentication provider), can only be published by company accounts.
+Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company, verify and store identification information, and set up the account. Per the [Store Policies](../store-policies.md#1014-account-type), apps with certain functionality, such as those that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third-party authentication provider), can only be published by company accounts.
 
 ## Account verification
 
-After you've completed the signup process, your account will go through the verification process. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, our verification partner Dun & Bradstreet will confirm that you’re authorized to create an account for the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](../publish-your-app/reserve-your-apps-name.md) continue building and testing apps, and work on getting your submissions ready.
+After you've completed the signup process, your account will go through the verification process. For both individual and company accounts, we check to make sure another individual or company isn't already using your publisher display name. For company accounts, our verification process needs to confirm whether you’re associated with the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](../publish-your-app/reserve-your-apps-name.md) continue building and testing apps, and work on getting your submissions ready.
 
 You can check your verification status on the **Account settings** page.
 
