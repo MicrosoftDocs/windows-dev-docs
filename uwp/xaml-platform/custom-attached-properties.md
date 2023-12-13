@@ -12,6 +12,7 @@ dev_langs:
   - cppwinrt
   - cpp
 ---
+
 # Custom attached properties
 
 An *attached property* is a XAML concept. Attached properties are typically defined as a specialized form of dependency property. This topic explains how to implement an attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
@@ -230,10 +231,7 @@ If you are setting the property on an element that is also within the same mappe
 
 ## Setting your custom attached property imperatively
 
-> [!IMPORTANT]
-> Previous versions of this documentation _incorrectly_ claimed that attached properties implemented in C++/WinRT could not be set in XAML markup. That is not true: properties implemented in C++/WinRT can be set in XAML markup just like properties implemented in C++/CX or other languages.
-
-You can also access a custom attached property from imperative code, not just XAML markup. The code below shows how.
+You can also access a custom attached property from imperative code. The code below shows how.
 
 ```xaml
 <Image x:Name="gameServiceImage"/>
