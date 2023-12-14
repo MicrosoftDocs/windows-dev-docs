@@ -64,6 +64,8 @@ items:
         href: distribute-through-store/best-practices-for-win32-app-distribution.md                
   - name: Publishing your Windows app
     items:
+      - name: Why Microsoft Store?
+        href: publish/publish-your-app/why-distribute-through-store.md
       - name: Overview
         href: publish/index.md
       - name: Opening a developer account
