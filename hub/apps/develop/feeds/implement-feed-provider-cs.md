@@ -392,7 +392,7 @@ Next, add the extension that registers the app as a feed provider. Paste the [ua
                 <FeedProvider SettingsUri="https://learn.microsoft.com/en-us/windows/apps/develop/feeds/feed-providers" Icon="ms-appx:Assets\StoreLogo.png" Description="FeedDescription">
                     <Activation>
                         <!-- Apps exports COM interface which implements IFeedProvider -->
-                        <CreateInstance ClassId="BD0B3E0B-DE34-4D0A-AD51-FF125D71CD82" />
+                        <CreateInstance ClassId="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
                     </Activation>
                     <Definitions>
                         <Definition Id="Contoso_Feed"

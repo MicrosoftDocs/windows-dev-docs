@@ -138,15 +138,16 @@ The **OnFeedProviderEnabled** method is invoked when a feed associated with the 
 
 ```csharp
 // FeedProvider.cs
-void OnFeedProviderEnabled(FeedProviderEnabledArgs args)
-{
 void FeedProvider::OnFeedProviderEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderEnabledArgs args)
 {
-    _putws(L"{args.FeedProviderDefinitionId} feed provider was enabled.");
+    std::wstringstream wstringstream;
+wstringstream << args.FeedProviderDefinitionId().c_str() << L" feed provider was enabled." << std::endl;
+    _putws(wstringstream.str().c_str());
+
     auto updateOptions = winrt::CustomQueryParametersUpdateOptions(args.FeedProviderDefinitionId(), L"param1&param2");
     winrt::FeedManager::GetDefault().SetCustomQueryParameters(updateOptions);
 }
-}
+
 ```
 
 ## OnFeedProviderDisabled
@@ -158,7 +159,9 @@ void FeedProvider::OnFeedProviderEnabled(winrt::Microsoft::Windows::Widgets::Fee
 
 void FeedProvider::OnFeedProviderDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderDisabledArgs args)
 {
-    _putws(L"{args.FeedProviderDefinitionId} feed provider was disabled.");
+    std::wstringstream wstringstream;
+    wstringstream << args.FeedProviderDefinitionId().c_str() << L" feed provider was disabled." << std::endl;
+    _putws(wstringstream.str().c_str());
 }
 ```
 
@@ -171,7 +174,9 @@ void FeedProvider::OnFeedProviderDisabled(winrt::Microsoft::Windows::Widgets::Fe
 
 void FeedProvider::OnFeedEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedEnabledArgs args)
 {
-    _putws(L"{args.FeedDefinitionId} feed was enabled.");
+    std::wstringstream wstringstream;
+    wstringstream << args.FeedDefinitionId().c_str() << L" feed was enabled." << std::endl;
+    _putws(wstringstream.str().c_str());
 }
 ```
 
@@ -180,7 +185,9 @@ void FeedProvider::OnFeedEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Prov
 
 void FeedProvider::OnFeedDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedDisabledArgs args)
 {
-    _putws(L"{args.FeedDefinitionId} feed was disabled.");
+    std::wstringstream wstringstream;
+    wstringstream << args.FeedDefinitionId().c_str() << L" feed was disabled." << std::endl;
+    _putws(wstringstream.str().c_str());
 }
 ```
 
@@ -193,7 +200,10 @@ void FeedProvider::OnFeedDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Pro
 
 void FeedProvider::OnCustomQueryParametersRequested(winrt::Microsoft::Windows::Widgets::Feeds::Providers::CustomQueryParametersRequestedArgs args)
 {
-    _putws(L"CustomQueryParamaters were requested for {args.FeedProviderDefinitionId}.");
+    std::wstringstream wstringstream;
+    wstringstream << L"CustomQueryParameters were requested for " << args.FeedProviderDefinitionId().c_str() << std::endl;
+    _putws(wstringstream.str().c_str());
+
     auto updateOptions = winrt::CustomQueryParametersUpdateOptions(args.FeedProviderDefinitionId(), L"param1&param2");
     winrt::FeedManager::GetDefault().SetCustomQueryParameters(updateOptions);
 }
@@ -314,7 +324,7 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 ```xml
 <!--ExampleFeedProviderPackage.wapproj-->
 <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221116.1">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.231116003-experimentalpr">
         <IncludeAssets>build</IncludeAssets>
     </PackageReference>  
 </ItemGroup>
@@ -330,7 +340,7 @@ If the correct version of the Windows App SDK is already installed on the comput
 ...
 <Dependencies>
 ...
-    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.2-preview2" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.5.231116003-experimentalpr" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
 ...
 </Dependencies>
 ...
@@ -369,8 +379,8 @@ The first extension we need to add is the [ComServer](/uwp/schemas/appxpackage/u
 <Extensions>
     <com:Extension Category="windows.comServer">
         <com:ComServer>
-            <com:ExeServer Executable="ExampleFeedProvider\ExampleFeedProvider.exe" DisplayName="ExampleFeedProvider">
-                <com:Class Id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" DisplayName="ExampleFeedProvider" />
+            <com:ExeServer Executable="ExampleFeedProvider\ExampleFeedProvider.exe" Arguments="-RegisterProcessAsComServer" DisplayName="C++ Feed Provider App">
+                <com:Class Id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" DisplayName="FeedProvider" />
             </com:ExeServer>
         </com:ComServer>
     </com:Extension>
@@ -384,16 +394,25 @@ Next, add the extension that registers the app as a feed provider. Paste the [ua
 <Extensions>
     ...
     <uap3:Extension Category="windows.appExtension">
-        <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoApp" Id="ContosoApp" PublicFolder="Public">
+        <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoFeed" Id="com.examplewidgets.examplefeed" PublicFolder="Public">
             <uap3:Properties>
-                <FeedProvider Description="ms-resource:ProviderDescription" SettingsUri="https://contoso.com/feeds/settings" Icon="ms-appx:Images\ContosoProviderIcon.png">
+                <FeedProvider SettingsUri="https://learn.microsoft.com/en-us/windows/apps/develop/feeds/feed-providers" Icon="ms-appx:Assets\StoreLogo.png" Description="FeedDescription">
                     <Activation>
-                        <CreateInstance ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
+                        <!-- Apps exports COM interface which implements IFeedProvider -->
+                        <CreateInstance ClassId="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
                     </Activation>
                     <Definitions>
-                        <Definition Id="Contoso_Feed" DisplayName="ms-resource:FeedDisplayName" Description="ms-resource:FeedDescription"
-                                    ContentUri="https://contoso.com/news"
-                                    Icon="ms-appx:Images\ContosoFeedIcon.png">
+                        <Definition Id="Contoso_Feed"
+                            DisplayName="Contoso_Feed Feed"
+                            Description="Feed representing Contoso"
+                            ContentUri="https://www.contoso.com/"
+                            Icon="ms-appx:Images\StoreLogo.png">
+                        </Definition>
+                        <Definition Id="Fabrikam_Feed"
+                            DisplayName="Fabrikam Feed"
+                            Description="Feed representing Example"
+                            ContentUri="https://www.fabrikam.com/"
+                            Icon="ms-appx:Images\StoreLogo.png">
                         </Definition>
                     </Definitions>
                 </FeedProvider>
@@ -413,9 +432,7 @@ In **Solution Explorer**, right-click your **ExampleFeedProviderPackage** and se
 
 ## Testing your feed provider
 
-[TBD - most of this probably needs to change]
-
-Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. To see the feeds you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the feeds that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. The console app should launch on deploy and you will see the feeds get enabled in the console output. Open the Widgets Board and you should see the new feeds in the tabs along the top of the feeds section.
 
 ## Debugging your feed provider
 
