@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 **Landmarks** and **headings** help users of assistive technology (AT) navigate a UI more efficiently by uniquely identifying different sections of a user interface.
 
-## Background
+## Overview
 
 A user interface is typically organized in a visually efficient way, allowing a sighted user to quickly skim for what interests them without having to slow down to read *all* the content. A screen reader user needs to have this same skimming ability. Marking content as landmarks and headings provides the user of a screen reader the option to skim content similar to the way a sighted user would.
 
@@ -28,28 +28,28 @@ For example, when using a tab panel, consider making it a *navigation* landmark.
 
 Whether within a landmark or even outside a landmark, consider annotating sub-elements as headings with logical heading levels.
 
-## Example: Settings
+## The Windows Settings app
 
-Consider the **Ease of Access** page in the Windows Settings app.
+The following image shows the **Ease of Access** page in a previous version of the Windows Settings app.
 
 ![Ease of Access page in the Windows settings app](images/ease-of-access-settings.png)  
 
-There is a search edit box which is wrapped within a search landmark. The navigational elements on the left are wrapped within a navigational landmark and the main content on the right is wrapped within a main content landmark.
+For this page, the search edit box is wrapped within a search landmark, the navigation elements on the left are wrapped within a navigation landmark, and the main content on the right is wrapped within a main content landmark.
 
-Taking this further, within the navigational landmark there is a main group heading called **Ease of Access** which is a heading level 1. Under that are the sub options **Vison**, **Hearing**, and so on. These have a heading level 2. Setting headings is continued within the main content again setting the main subject, **Display**, as heading level 1 and sub groups such as **Make everything bigger** as heading level 2.
+Within the navigation landmark there is a main group heading called **Ease of Access** (heading level 1) with sub-options of **Vison**, **Hearing**, and so on (heading level 2). Within the main content, **Display** is set to heading level 1 with sub-groups such as **Make everything bigger** set to heading level 2.
 
-The Settings app would be accessible without landmarks and headings, but it becomes more usable with them. A screen reader user can quickly and easily get to the group (landmark) they need and then quickly get to the sub group (heading) as well.
+The Settings app would be accessible without landmarks and headings, but it becomes much more usable with them. In this case, a user with a screen reader can quickly get to the group (landmark) they're interested in, and from there they can then quickly get to the sub-group (heading).
 
 ## Usage
 
-Use [AutomationProperties.LandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) to setup the UI element as the [type of landmark](/windows/desktop/WinAuto/landmark-type-identifiers) you wish. This landmark UI element would encapsulate all the other UI elements which make sense for that landmark.
+Use [AutomationProperties.LandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) to identify the [type of landmark](/windows/desktop/WinAuto/landmark-type-identifiers) for a UI element. This landmark UI element would then encapsulate all the other UI elements relevant to that landmark.
 
-Use [AutomationProperties.LocalizedLandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) to specifically name the landmark. If you select a predefined landmark type such as main or navigational, these names will be used for the landmark name. However, if you set the landmark type to custom you must specifically name the landmark through this property. You can also use this property to override the default names from the non-custom landmark types.
+Use [AutomationProperties.LocalizedLandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) to name the landmark. If you select a predefined landmark type, such as main or navigation, these names will be used for the landmark name. However, if you set the landmark type to custom, you must name the landmark through this property (you can also use this property to override the default names from the pre-defined landmark types).
 
 Use [AutomationProperties.HeadingLevel](/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) to set the UI element as a heading of a specific level from *Level1* through *Level9*.
 
 ## Examples
 
-For numerous code samples showing how to resolve many common programmatic accessibility issues in Windows desktop apps, see [Code samples for resolving common programmatic accessibility issues in Windows desktop apps](/accessibility-tools-docs/).
+See the [Code samples for resolving common programmatic accessibility issues in Windows desktop apps](/accessibility-tools-docs/) to resolve many common programmatic accessibility issues in Windows desktop apps.
 
-These code samples are referenced directly by[ Microsoft Accessibility Insights for Windows](https://github.com/microsoft/accessibility-insights-windows), which can help to spotlight many accessibility issues in UI.
+These code samples are referenced directly by [Microsoft Accessibility Insights for Windows](https://github.com/microsoft/accessibility-insights-windows), which can help to identify accessibility issues in your app UI.
