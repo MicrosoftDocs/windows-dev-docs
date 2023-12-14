@@ -109,14 +109,21 @@
       },	 
       "feedback_product_url": 
       {
-        "apps/**/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "android/**/*.md": "https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb",
+        "apps/**/*.md": "https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb",
+        "apps/package-and-deploy/**/*.md": "https://github.com/microsoft/msix-packaging/issues",
+        "apps/performance/**/*.md": "https://github.com/microsoft/Windows-Dev-Performance/issues",
         "apps/trace-processing/**/*.md": "https://github.com/microsoft/eventtracing-processing/issues",
         "apps/windows-app-sdk/**/*.md": "https://github.com/microsoft/WindowsAppSDK/issues",
-        "dev-environment/**/*.md": "https://github.com/Microsoft/windev/issues",
+        "apps/windows-dotnet-maui/**/*.md": "https://github.com/dotnet/maui/issues",
+        "apps/winui/**/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "dev-drive/**/*.md": "https://github.com/microsoft/Windows-Dev-Performance/issues",
+        "dev-environment/**/*.md": "https://github.com/microsoft/Windows-Dev-Performance/issues",
+        "dev-home/**/*.md": "https://github.com/microsoft/Windows-Dev-Performance/issues",
         "package-manager/**/*.md": "https://github.com/microsoft/winget-cli/issues",
         "powertoys/**/*.md": "https://github.com/microsoft/PowerToys/issues",
         "python/**/*.md": "https://github.com/microsoft/vscode-python",
-        "web/**/*.md": "https://github.com/Microsoft/windev"
+        "web/**/*.md": "https://github.com/microsoft/Windows-Dev-Performance/issues"
       },
       "author":
       {
