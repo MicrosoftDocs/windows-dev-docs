@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 
 # Implement a feed provider in a win32 app (C++/WinRT)
 
+> [!NOTE]
+> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+
 This article walks you through creating a simple feed provider that registers a feed content URI and implements the **IFeedProvider** interface. The methods of this interface are invoked by the Widgets Board to request custom query string parameters, typically to support authentication scenarios. Feed providers can support a single feed or multiple feeds.
 
 To implement a feed provider using C++/WinRT, see [Implement a feed provider in a C# Windows app (C++/WinRT)](implement-feed-provider-cs.md).
