@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 This article walks you through creating a simple feed provider that registers a feed content URI and implements the **IFeedProvider** interface. The methods of this interface are invoked by the Widgets Board to request custom query string parameters, typically to support authentication scenarios. Feed providers can support a single feed or multiple feeds.
 
-This sample code in this article is adapted from the TBD - sample URL [Windows App SDK Feeds Sample](). To implement a feed provider using C++/WinRT, see [Implement a feed provider in a win32 app (C++/WinRT)](implement-feed-provider-win32.md).
+To implement a feed provider using C++/WinRT, see [Implement a feed provider in a win32 app (C++/WinRT)](implement-feed-provider-win32.md).
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ This sample code in this article is adapted from the TBD - sample URL [Windows A
 
 In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleFeedProvider". For this walkthrough, make sure that **Place solution and project in the same directory** is unchecked. When prompted, set the target .NET version to 6.0. 
 
-When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version [TBD - need build number] 10.0.19041.0 or later.
+When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version 10.022631.2787 or later.
 
 Note that this walkthrough uses a console app that displays the console window when the feed is activated to enable easy debugging. When you are ready to publish your feed provider app, you can convert the console application to a Windows application by following the steps in [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
 
@@ -295,7 +295,7 @@ namespace ExampleFeedProvider
 }
 ```
 
-Note that this code example imports the [GetConsoleWindow](/windows/console/getconsolewindow) function to determine if the app is running as a console application, the default behavior for this walkthrough. If function returns a valid pointer, we write debug information to the console. Otherwise, the app is running as a Windows app. [TBD - Grab event code from widget example] In that case, we wait for the event that we set in **OnFeedProviderDisabled** method when the list of enabled feed providers is empty, and the we exit the app. For information on converting the example console app to a Windows app, see [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
+Note that this code example imports the [GetConsoleWindow](/windows/console/getconsolewindow) function to determine if the app is running as a console application, the default behavior for this walkthrough. If function returns a valid pointer, we write debug information to the console. Otherwise, the app is running as a Windows app. In that case, we wait for the event that we set in **OnFeedProviderDisabled** method when the list of enabled feed providers is empty, and the we exit the app. For information on converting the example console app to a Windows app, see [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
 
 ## Package your feed provider app
 
@@ -330,7 +330,7 @@ If the correct version of the Windows App SDK is already installed on the comput
 ...
 <Dependencies>
 ...
-    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.5.231116003-experimentalpr" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.5.233430000-experimental1" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
 ...
 </Dependencies>
 ...
