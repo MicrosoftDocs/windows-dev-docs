@@ -880,6 +880,12 @@ items:
         items:
         - name: Overview
           href: develop/feeds/feed-providers.md
+        - name: Implement a feed provider in a win32 app (C#)
+          href: develop/feeds/implement-feed-provider-cs.md
+        - name: Implement a feed provider in a win32 app (C++/WinRT)
+          href: develop/feeds/implement-feed-provider-win32.md
+        - name: Feed provider package manifest XML format
+          href: develop/feeds/feed-provider-manifest.md
       - name: Platform
         items:
         - name: C#/WinRT
