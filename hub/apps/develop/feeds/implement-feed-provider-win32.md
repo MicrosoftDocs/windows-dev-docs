@@ -457,7 +457,7 @@ To convert the console app created in this walkthrough to a Windows app:
 1. Right-click on the ExampleWidgetProvider project in **Solution Explorer** and select **Properties**. Navigate to **Linker -> System** and change **SubSystem** from "Console" to "Windows". This can also be done by adding &lt;SubSystem&gt;Windows&lt;/SubSystem&gt; to the &lt;Link&gt;..&lt;/Link&gt; section of the .vcxproj.
 1. In main.cpp, change `int main()` to `int WINAPI wWinMain(_In_ HINSTANCE /*hInstance*/, _In_opt_ HINSTANCE /*hPrevInstance*/, _In_ PWSTR pCmdLine, _In_ int /*nCmdShow*/)`.
 
-:::image type="content" source="images/convert-to-windows-app-cpp.png" alt-text="A screenshot showing the C++ feed provider project properties with the output type set to Windows Application":::
+:::image type="content" source="images/convert-to-windows-app-cs.png" alt-text="A screenshot showing the C++ feed provider project properties with the output type set to Windows Application":::
 
 ## Publishing your feed provider app
 
