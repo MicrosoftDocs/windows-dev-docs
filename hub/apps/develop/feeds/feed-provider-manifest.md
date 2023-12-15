@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 
 # Feed provider package manifest XML format
 
+> [!NOTE]
+> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+
 In order to be displayed on the Widgets Board, apps that support Windows feeds must register their feed provider with the system. For Win32 apps, only packaged apps are currently supported and feed providers specify their registration information in the app package manifest file. This article documents the XML format for feed registration. See the [Example](#example) section for a code listing of an example package manifest for a Win32 feed provider.
 
 ## App extension
@@ -48,6 +51,7 @@ The root element of the feed provider registration information.
 
 | Attribute | Type | Required | Description | Default value |
 |-----------|------|----------|-------------|---------------|
+| **Description** | string | Yes | A short description of the feed provider. | N/A |
 | **DisplayName** | string | Yes | The name of the feed provider that is displayed on the Widgets Board. | N/A |
 | **Icon** | string | Yes | The package-relative path to an icon image file that is displayed in the Widgets Board. | N/A |
 | **Id**| string | Yes | An ID that identifies the feed provider. Feed provider implementations use this string to determine or specify which of the app's feed providers is being referenced for each operation. This string must be unique for all feed providers defined within the app manifest file.  | N/A |
@@ -80,7 +84,7 @@ Represents the registration for a single feed.
 |---|---|---|---|---|
 | **Id**| string | Yes | An ID that identifies the feed. Feed provider implementations use this string to determine or specify which of the app's feeds is being referenced for each operation. This string must be unique for all feeds defined within the app manifest file.  | N/A |
 | **DisplayName** | string | Yes | The name of the feed that is displayed on the Widgets Board. | N/A |
-| **Description** | string | Yes | Short description of the feed. | N/A |
+| **Description** | string | Yes | A short description of the feed. | N/A |
 | **ContentUri** | string | Yes | The URI from which feed content is retrieved. | N/A |
 | **Icon** | string | Yes | The package-relative path to an icon image file that is displayed in the Widgets Board. | N/A |
 
