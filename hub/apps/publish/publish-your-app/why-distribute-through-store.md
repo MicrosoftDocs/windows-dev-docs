@@ -14,7 +14,7 @@ With the launch of Windows 11, Microsoft Store has been redesigned and improved 
 
 1. Support for traditional desktop apps, such as MSI, EXE, and MSIX, without requiring any code changes or repackaging.
 2. A pop-up Store that allows users to access the Store from any app or website, and install apps without leaving their current context.
-3. Flexible revenue sharing options that let developers choose their own commerce platform and keep 100% of the revenue for non-gaming apps, or use Microsoft’s commerce platform and pay a competitive fee of 15% for games, 12% for apps and 25% for In-app purchases.
+3. Flexible revenue sharing options that let developers choose their own commerce platform and keep 100% of the revenue for non-gaming apps, or use Microsoft’s commerce platform and pay a competitive fee of 15% for apps and 12% for games.
 4. Expanded reach to Enterprise customers over Microsoft Intune, a cloud-based service that help enterprise admins secure and manage apps and devices.
 
 In this article, you will see why distributing your apps via Microsoft Store is a good choice for developers of any app type and size. It will explain the benefits and advantages of Microsoft Store for developers in terms of reach and visibility, trust and security, revenue and commerce, and compatibility and flexibility.
