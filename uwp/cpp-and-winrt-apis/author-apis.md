@@ -168,6 +168,23 @@ namespace winrt::MyProject::implementation
 
 Note the F-bound polymorphism pattern being used (**MyRuntimeClass** uses itself as a template argument to its base, **MyRuntimeClassT**). This is also called the curiously recurring template pattern (CRTP). If you follow the inheritance chain upwards, you'll come across **MyRuntimeClass_base**.
 
+Note that the implementation of simple properties can be simplified by using the Windows Implementation Library. 
+```cppwinrt
+
+// MyRuntimeClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyRuntimeClass : MyRuntimeClassT<MyRuntimeClass>
+    {
+        MyRuntimeClass() = default;
+
+        wil::single_threaded_rw_propertywinrt::hstring Name;
+    };
+}```
+
+See [Simple Properties](https://github.com/microsoft/wil/wiki/CppWinRT-authoring-helpers#simple-properties).
+
 ```cppwinrt
 template <typename D, typename... I>
 struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
