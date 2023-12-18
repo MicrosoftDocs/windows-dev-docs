@@ -415,6 +415,10 @@ Instead, use `x:Bind` when binding to a Boolean.
 <TextBlock Text="{x:Bind CanPair}"/>
 ```
 
+## Using the Windows Implementation Libraries (WIL)
+
+The [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil) provides helpers to ease writing bindable properties. See [Notifying Properties](https://github.com/microsoft/wil/wiki/CppWinRT-authoring-helpers#notifying-properties-inotifypropertychanged) in the WIL documentation.
+
 ## Important APIs
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
