@@ -1,7 +1,7 @@
 ---
 description: This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly.
 title: Author APIs with C++/WinRT
-ms.date: 09/28/2023
+ms.date: 12/18/2023
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation
 ms.localizationpriority: medium
@@ -179,7 +179,7 @@ namespace winrt::MyProject::implementation
     {
         MyRuntimeClass() = default;
 
-        wil::single_threaded_rw_propertywinrt::hstring Name;
+        wil::single_threaded_rw_property<winrt::hstring> Name;
     };
 }
 ```
