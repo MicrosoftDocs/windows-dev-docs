@@ -6,7 +6,7 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.custom: seo-windows-dev
-ms.date: 11/01/2023
+ms.date: 11/28/2023
 ---
 
 # Web development on Windows
@@ -79,12 +79,6 @@ Microsoft offers a variety of resources for web developers, including new tools 
         **[Microsoft Edge Tools for VS Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)**<br>
         Without leaving Visual Studio Code, use Microsoft Edge DevTools to connect to an instance and view the runtime HTML structure, change layouts, styles (CSS), read console messages, and view network requests.<br>
         [Install Microsoft Edge Tools for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools)
-    :::column-end:::
-    :::column:::
-       [![Virtual Machines icon](../images/virtualmachine.png)](https://developer.microsoft.com/microsoft-edge/tools/vms/)<br>
-        **[Virtual Machines for Testing](https://developer.microsoft.com/microsoft-edge/tools/vms/)**<br>
-        Test IE11 and Microsoft Edge Legacy using free Windows virtual machines you download and manage locally.<br>
-        [Download a Virtual Machine](https://developer.microsoft.com/microsoft-edge/tools/vms/)
     :::column-end:::
     :::column:::
        [![WebHint icon](../images/webhint.png)](https://webhint.io/)<br>
