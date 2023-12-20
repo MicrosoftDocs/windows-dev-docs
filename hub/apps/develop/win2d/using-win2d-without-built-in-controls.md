@@ -82,7 +82,7 @@ And declare:
 <canvas:CanvasSwapChainPanel x:Name="canvasSwapChainPanel"/>
 ```
 
-A `CanvasSwapChainPanel` does not have a swap chain automatically assigned to it. An example, to assign one:
+A `CanvasSwapChainPanel` does not have a swap chain automatically assigned to it. As an example, to assign one:
 
 ```csharp
 CanvasDevice device = CanvasDevice.GetSharedDevice();
