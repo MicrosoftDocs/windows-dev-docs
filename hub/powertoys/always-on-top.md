@@ -31,4 +31,4 @@ Always On Top has the following settings:
 | **Thickness (px)** | The thickness of the highlight border in pixels. |
 | **Enable round corners** | When selected, the highlight border around the pinned window will have rounded corners.  |
 | **Play a sound when pinning a window** | When selected, this option plays a sound when you activate or deactivate Always On Top. |
-| **Excluded apps** | Prevents you from pinning an application using Always On Top. Add an application's name to stop it from being pinned. The list will also exclude partial matches. For example, `Notepad` will prevent both `Notepad.exe` and `Notepad++.exe` from being pinned. To only prevent a specific application, add `Notepad.exe` to the excluded list. |
+| **Excluded apps** | Prevents you from pinning an application using Always On Top. Add an application's name to stop it from being pinned. The list will also exclude partial matches. For example, `Notepad` will prevent both Notepad.exe and Notepad++.exe from being pinned. To only prevent a specific application, add `Notepad.exe` to the excluded list. |
