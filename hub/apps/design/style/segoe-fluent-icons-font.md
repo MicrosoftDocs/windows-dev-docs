@@ -65,7 +65,7 @@ You can also use the static resource `SymbolThemeFontFamily` to access **Segoe F
 
 * On Windows 11: There's nothing you need to do, the font comes with Windows.
 * On Windows 10: **Segoe Fluent Icons** is not included by default on Windows 10. You can download it [here](../downloads/index.md#fonts).
-* On a Mac or other device: You can download **Segoe Fluent Icons** and other fonts [here](../downloads/index.md#fonts). You can download the font for use in design and development, but you may not not ship it to another platform.
+* On a Mac or other device: You can download **Segoe Fluent Icons** and other fonts [here](../downloads/index.md#fonts). You can download the font for use in design and development, but you may not ship it to another platform.
 
 ## Icon list
 

@@ -36,7 +36,7 @@ The following image shows the **Ease of Access** page in a previous version of t
 
 For this page, the search edit box is wrapped within a search landmark, the navigation elements on the left are wrapped within a navigation landmark, and the main content on the right is wrapped within a main content landmark.
 
-Within the navigation landmark there is a main group heading called **Ease of Access** (heading level 1) with sub-options of **Vison**, **Hearing**, and so on (heading level 2). Within the main content, **Display** is set to heading level 1 with sub-groups such as **Make everything bigger** set to heading level 2.
+Within the navigation landmark there is a main group heading called **Ease of Access** (heading level 1) with sub-options of **Vision**, **Hearing**, and so on (heading level 2). Within the main content, **Display** is set to heading level 1 with sub-groups such as **Make everything bigger** set to heading level 2.
 
 The Settings app would be accessible without landmarks and headings, but it becomes much more usable with them. In this case, a user with a screen reader can quickly get to the group (landmark) they're interested in, and from there they can then quickly get to the sub-group (heading).
 

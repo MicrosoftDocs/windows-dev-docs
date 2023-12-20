@@ -182,7 +182,7 @@ public class CommandBarHack : CommandBar
 
     private void SecondaryMenuOpened(object sender, object e)
     {
-        //This is not neccesay given we are automatically pushing the scope.
+        //This is not necessary given we are automatically pushing the scope.
         var item = secondaryItemsControl.Items.First();
         if (item != null && item is Control)
         {

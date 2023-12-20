@@ -34,7 +34,7 @@ Additionally, [Kernel drivers](/windows-hardware/drivers/kernel/) are required t
 
 If you are updating your app using an Arm-based device (native compiling - generating the code for the same platform on which you're running), you can use:
 
-- [Visual Studio 2022 v17.4](https://devblogs.microsoft.com/visualstudio/visual-studio-2022-17-4/#arm64) or later. This is the first GA release of Visual Studio that natively supports building and debugging Arm64 apps on Arm-based processors. Both Visual Studio 2022 17.4 and and Microsoft Visual C++ (MSVC) native Arm64 versions provide significantly better performance  compared with previous emulated versions.
+- [Visual Studio 2022 v17.4](https://devblogs.microsoft.com/visualstudio/visual-studio-2022-17-4/#arm64) or later. This is the first GA release of Visual Studio that natively supports building and debugging Arm64 apps on Arm-based processors. Both Visual Studio 2022 17.4 and Microsoft Visual C++ (MSVC) native Arm64 versions provide significantly better performance  compared with previous emulated versions.
 
 - (Optional) [LLVM (Clang) v12+](https://releases.llvm.org/12.0.0/tools/clang/docs/ReleaseNotes.html#windows-support) or later. LLVM 12 adds official binary release hosted on Windows on Arm64, including a Clang compiler, LLD Linker, and compiler-rt runtime libraries.
 
@@ -158,7 +158,7 @@ If you can’t build due to a dependency, whether internal, from a 3rd party, or
 
 [Kernel drivers](/windows-hardware/drivers/kernel/) are required to be built as native Arm64. There is no emulation present in the kernel. This primarily impacts virtualization scenarios. For apps that utilize device drivers requiring direct access to the internals of the OS or hardware running in kernel mode, rather than user mode, and that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
-Additionally, [drivers on Windows](/windows-hardware/drivers/gettingstarted/) are required to be built as Arm64 and can not be emulated.  For apps that rely on software drivers that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
+Additionally, [drivers on Windows](/windows-hardware/drivers/gettingstarted/) are required to be built as Arm64 and can't be emulated.  For apps that rely on software drivers that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
 <!-- ### When to rebuild as Arm64EC
 
