@@ -8,7 +8,7 @@ metadata:
   author: mattwojo
   ms.author: mattwoj
   ms.reviewer: marcs
-  ms.date: 08/31/2023
+  ms.date: 12/20/2023
 title: Frequently asked questions about Windows on Arm
 summary: Use the following questions and answers to better understand the support for Arm-based devices running on Windows.
 
@@ -55,6 +55,17 @@ sections:
           How do I update my C++ Windows app to support Arm devices?
         answer: |
           See [Configure C++ projects for Arm processors](/cpp/build/configuring-programs-for-arm-processors-visual-cpp).
+
+      - question: |
+          What Program Files folder should I use to install my ARM64 application?
+        answer: |
+          You may notice the following directories on your Windows device, used for installing and storing different application file types.
+          
+          * `C:\Program Files`: This directory is used for x64 applications, Arm64 applications, Arm64X applications. Learn more about how to [port your app to Arm64](./add-arm-support.md) or build [Arm64X binaries](./arm64x-build.md).
+
+          * `C:\Program Files (x86)`: This directory is used for x86 applications. Learn more about [How x86 emulation works on Arm](./apps-on-arm-x86-emulation.md).
+
+          * `C:\Program Files (Arm)`: This directory was used for 32-bit Arm applications, which are [no longer being supported in future versions of Windows](./arm32-to-arm64.md).
 
   - name: Windows on Arm Virtual Machine FAQ
     questions:
