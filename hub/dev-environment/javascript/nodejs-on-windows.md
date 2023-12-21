@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 11/28/2023
+ms.date: 12/20/2023
 ---
 
 # Install NodeJS on Windows
@@ -47,9 +47,6 @@ Besides choosing whether to install on Windows or WSL, there are additional choi
     ![NVM list showing installed Node versions](../../images/windows-nvm-node-installs.png)
 
 9. After installing the Node.js version numbers you need, select the version that you would like to use by entering: `nvm use <version>` (replacing `<version>` with the number, ie: `nvm use 12.9.0`).
-
-> [!WARNING]
-> [Access Denied Issue](https://github.com/coreybutler/nvm-windows/issues/700) in nvm-windows version [1.1.9](https://github.com/coreybutler/nvm-windows/releases/tag/1.1.9), switching node version requires elevated Powershell (run as administrator). It is recommended to use [version 1.1.7](https://github.com/coreybutler/nvm-windows/releases/tag/1.1.7) to avoid this issue. 
 
 10. To change the version of Node.js you would like to use for a project, create a new project directory `mkdir NodeTest`, and enter the directory `cd NodeTest`, then enter `nvm use <version>` replacing `<version>` with the version number you'd like to use (ie v10.16.3`).
 
