@@ -72,7 +72,7 @@ sections:
       - question: |
           How do I create a Windows 11 Arm64 Virtual Machine (VM)?
         answer: |
-          You can now create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure ([see the announcement](https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/)). There are multiple ways to do this: use the [Azure portal](/azure/virtual-machines/windows/quick-create-portal), use a script with the [Azure CLI](/azure/virtual-machines/windows/quick-create-cli) or [Azure PowerShell](/azure/virtual-machines/windows/quick-create-powershell), or use an [Azure Resource Manager template](/azure/virtual-machines/windows/quick-create-template). You will want to search in the Azure Marketplace for "Microsoft Windows 11 on Arm" and choose "Windows 11 Professional - Arm64".
+          For help on how to create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure, see [Quickstart: Create a Windows on Arm virtual machine in the Azure portal](./create-arm-vm.md).
 
       - question: |
           Can I host a Windows 11 virtual machine using Hyper-V on a Windows 11 Arm64 device?

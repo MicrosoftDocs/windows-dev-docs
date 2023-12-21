@@ -1,7 +1,7 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 10/23/2023
+ms.date: 12/19/2023
 ms.topic: article
 ms.prod: windows
 ms.technology: arm
@@ -25,11 +25,16 @@ For the best performance, responsiveness, and battery life, users will want and 
 
 Microsoft is working to deliver an Arm-native developer toolset that includes Arm-native Visual Studio 2022, VSCode, VC++ toolchain, classic .NET Framework, modern .NET, and Java. Microsoft is also working with several 3rd parties and open-source communities to port common tools, runtimes, frameworks and libraries to natively target Windows on Arm. See the [announcement from Build 2022](https://blogs.windows.com/windowsdeveloper/2022/05/24/create-next-generation-experiences-at-scale-with-windows/) about this comprehensive suite of tools, services, and devices that enable developers to build and port apps that natively target Arm just as easily as when targeting x64.
 
-### Arm developer services
+### Virtual Machines
 
-Many developers today also rely on Virtual Machines and Containers. Which is why Microsoft's Azure team recently announced a [preview of their new Arm Virtual Machines service](https://azure.microsoft.com/blog/now-in-preview-azure-virtual-machines-with-ampere-altra-armbased-processors/) and will soon be previewing Arm Containers via Azure Kubernetes Services.
+You can create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure. Learn how in this [Quickstart article](./create-arm-vm.md).
 
-Most developers also rely on build and test automation via Continual Integration / Continual Deployment (CI/CD), often hosted in cloud services, like [Azure DevOps](/azure/architecture/example-scenario/apps/devops-dotnet-webapp) or [GitHub](https://resources.github.com/ci-cd/). In late Summer 2022, Microsoft will begin work to port the CI/CD automation runner/agent shared by Azure DevOps and GitHub. Details are coming soon regarding when cloud-hosted Arm CI/CD services will become available.
+Learn more about using Windows on Arm Virtual Machines:
+
+- [Windows on Arm Virtual Machine FAQ](./faq.yml#windows-on-arm-virtual-machine-faq)
+- [Azure Virtual Machines with Ampere Altra Arm–based processors—generally available](https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/)
+- [Deploy an Arm-based Azure Kubernetes Service (AKS) Cluster using Terraform - ARM Developer Hub](https://learn.arm.com/learning-paths/servers-and-cloud-computing/aks/cluster_deployment/)
+- Learn more about build and test automation via Continual Integration / Continual Deployment (CI/CD) hosted in the cloud, such as [Azure DevOps](/azure/architecture/example-scenario/apps/devops-dotnet-webapp) or [GitHub](https://resources.github.com/ci-cd/).
 
 ### Arm developer devices
 
