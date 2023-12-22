@@ -31,7 +31,7 @@ You can choose what happens when you activate Color Picker (default: <kbd>Win</k
 
 ### Picking colors
 
-After activating Color Picker, hover over a color and click to pick that color. If you want to see the area under your cursor in more detail, scroll up to zoom in.
+After activating Color Picker, select a color on your screen to pick that color. If you want to see the area under your cursor in more detail, scroll up to zoom in.
 
 Color Picker copies the selected color to the clipboard in the **Default color format** you've chosen in Color Picker's settings (default: HEX).
 
@@ -61,7 +61,7 @@ To choose a similar color, select one of the segments on the left and right edge
 
 To remove a color from the colors history, right-click a color and select **Remove**.
 
-To export the colors history, right-click a color and hover over **Export**. You can group the exported values by colors or formats.
+To export the colors history, select and hold (or right-click) a color and select **Export**. You can group the exported values by colors or formats.
 
 ## Settings
 
