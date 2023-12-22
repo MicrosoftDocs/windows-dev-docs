@@ -185,7 +185,7 @@ Next, move several important files to the application project. There are differe
 
 1. In **File Explorer**, move the **Package.appxmanifest** file and the **Images** folder from your packaging project to your application project. Place this file and folder in the top level of the application project's folder hierarchy.
 2. In Visual Studio, select the application project in **Solution Explorer** and click **Show all files**.
-3. In **Solution Explorer**, select the **Package.appxmanifest** file and all files in the **Images** folder. Right-click the selected files and and select **Include in Project**.
+3. In **Solution Explorer**, select the **Package.appxmanifest** file and all files in the **Images** folder. Right-click the selected files and select **Include in Project**.
 4. Remove the packaging project from your solution.
 
 ---

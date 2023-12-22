@@ -257,7 +257,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
 
 ## Transitioning between Mac and Windows
 
-Check out our [guide to transitioning between between a Mac and Windows](../dev-environment/mac-to-windows.md) (or Windows Subsystem for Linux) development environment.
+Check out our [guide to transitioning between a Mac and Windows](../dev-environment/mac-to-windows.md) (or Windows Subsystem for Linux) development environment.
 
 - [Keyboard shortcuts](../dev-environment/mac-to-windows.md#keyboard-shortcuts)
 - [Trackpad shortcuts](../dev-environment/mac-to-windows.md#trackpad-shortcuts)

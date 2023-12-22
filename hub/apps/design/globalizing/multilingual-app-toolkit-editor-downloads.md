@@ -9,7 +9,7 @@ ms.date: 10/18/2021
 
 Use the standalone [**Multilingual App Toolkit Editor**](use-mat.md) to help you localize your apps with localization file management, translation support, and editing tools.
 
-Each of the following downloads contain an .msi installer for the Multilingual App Toolkit Editor (also known as the Multilingual Editor). The installer is available in 11 langauges, please select the link for your preferred language.
+Each of the following downloads contain an .msi installer for the Multilingual App Toolkit Editor (also known as the Multilingual Editor). The installer is available in 11 languages, please select the link for your preferred language.
 
 - To start the installation immediately, click **Run**.
 - To save the download to your computer for installation at a later time, click **Save**.

@@ -611,7 +611,7 @@ This release introduces new experimental deployment features for unpackaged apps
 - Standalone installer for Windows App SDK.
 - MSIX package bundle that includes dynamic dependencies functionality.
 
-For more more info, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md).
+For more info, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md).
 
 ### DWriteCore
 
@@ -622,7 +622,7 @@ This release adds the following features:
 - Font face kerning API
 - Experimental support for unpackaged apps
 
-For more more information, see [Render text with DWriteCore](dwritecore.md).
+For more information, see [Render text with DWriteCore](dwritecore.md).
 
 ### MRT Core
 
@@ -631,7 +631,7 @@ This release adds the following features:
 - The build action for resources is now automatically set, reducing the need for manual project configuration.
 - Experimental support for unpackaged apps.
 
-For more more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overview.md).
+For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overview.md).
 
 ### Limitations and known issues
 

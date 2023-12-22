@@ -64,7 +64,7 @@ You enable content links in a RichEditBox by adding one or more content link pro
 - [PlaceContentLinkProvider](/uwp/api/windows.ui.xaml.documents.placecontentlinkprovider) – looks up places using the **Maps** app.
 
 > [!IMPORTANT]
-> The default value for the RichEditBox.ContentLinkProviders property is **null**, not an empty collection. You need to explicity create the [ContentLinkProviderCollection](/uwp/api/windows.ui.xaml.documents.contentlinkprovidercollection) before you add content link providers.
+> The default value for the RichEditBox.ContentLinkProviders property is **null**, not an empty collection. You need to explicitly create the [ContentLinkProviderCollection](/uwp/api/windows.ui.xaml.documents.contentlinkprovidercollection) before you add content link providers.
 
 Here’s how to add the content link providers in XAML.
 
@@ -278,7 +278,7 @@ Here's an example of a ContentLink used in a TextBlock. The ContentLinkInfo is c
 <StackPanel>
     <TextBlock>
         <Span xml:space="preserve">
-            <Run>This valcano erupted in 1980: </Run><ContentLink x:Name="placeContentLink" Cursor="Pin"/>
+            <Run>This volcano erupted in 1980: </Run><ContentLink x:Name="placeContentLink" Cursor="Pin"/>
             <LineBreak/>
         </Span>
     </TextBlock>
