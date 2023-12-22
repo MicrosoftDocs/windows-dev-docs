@@ -4,7 +4,7 @@ ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: Landmarks and Headings
 label: Landmarks and Headings
 template: detail.hbs
-ms.date: 17/11/2023
+ms.date: 12/22/2023
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
