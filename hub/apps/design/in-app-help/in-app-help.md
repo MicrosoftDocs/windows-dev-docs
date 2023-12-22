@@ -36,7 +36,7 @@ Having a separate page or pages of help within your app is a quick and easy way 
 
 #### Popups
 
-Popups allow for highly contexual help, displaying instructions and advice that is relevant to the specific task that the user is attempting.
+Popups allow for highly contextual help, displaying instructions and advice that is relevant to the specific task that the user is attempting.
 
 -   **Focus on one issue:** Space is even more restricted in a popup than a help page. Help popups needs to refer specifically a single task to be effective.
 -   **Visibility is important:** Because help popups can only be viewed from one location, make sure that they're clearly visible to the user without being obstructive. If the user misses it, they might move away from the popup in search of a help page.

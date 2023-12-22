@@ -294,7 +294,7 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
 
 The C# projection (or interop) assembly that we showed how to create in this topic is quite simple&mdash;it doesn't have dependencies on other components. But to generate a C# projection for a C++/WinRT component that has references to Windows App SDK types, in the projection project you'd need to add a reference to the Windows App SDK NuGet package. If any such references are missing, then you'll see errors such as "Type \<T\> could not be found".
 
-Another thing that we do in this topic is to distribute the projection as as a NuGet package. That *is* currently necessary.
+Another thing that we do in this topic is to distribute the projection as a NuGet package. That *is* currently necessary.
 
 ## Resources
 

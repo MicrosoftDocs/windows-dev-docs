@@ -51,7 +51,7 @@ Java is more widely used for a broader range of applications and offers some fea
 
 ### Minimum API Level
 
-You will need to decide the minimum API level for your application. This determines which version of Android your application will support. Lower API levels are older and therefore generally support more devices, but higher API levels are newer and therefor provide more features.
+You will need to decide the minimum API level for your application. This determines which version of Android your application will support. Lower API levels are older and therefore generally support more devices, but higher API levels are newer and therefore provide more features.
 
 ![Android Studio Minimum API selection screen](../images/android-minimum-api-selection.png)
 

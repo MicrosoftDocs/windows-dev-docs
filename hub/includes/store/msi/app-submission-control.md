@@ -22,6 +22,6 @@ To cancel a review process, follow these steps:
 1. On the Application overview page, do one of the following:
   
     - If you submitted a new app, navigate to the App setup card. Click on the three dots on the top right corner of the card. Select Cancel review from the menu.
-    - If you submitted an app update, navigate to to the Update app card. Click on the three dots. Select Cancel review from the menu.
+    - If you submitted an app update, navigate to the Update app card. Click on the three dots. Select Cancel review from the menu.
 
 1. Confirm that you want to cancel the review process. It may take up to a minute for your app to go back to draft state.

@@ -51,7 +51,7 @@ var builder = new AppNotificationBuilder()
     .SetAudioUri(new Uri("ms-appx:///Sound.mp3"));
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -118,7 +118,7 @@ var builder = new AppNotificationBuilder()
     .AddText("10:00 AM - 10:30 AM");
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -843,7 +843,7 @@ Inputs are specified within the **Actions** region of the app notification, mean
 
 ### Quick reply text box
 
-To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to to the input field. The optional icon for the button, if provided, should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
+To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to the input field. The optional icon for the button, if provided, should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
 
 ![A screenshot of a toast notification with a profile picture and some lines of text. A text box for typing directly into the toast is included as well as a button to send the reply.](images/toast-content-text-box.png)
 

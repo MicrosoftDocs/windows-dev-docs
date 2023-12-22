@@ -19,7 +19,7 @@ Use visual feedback to show users when their interactions are detected, interpre
 
 ## Recommendations
 
-- Try to limit modifcations of a control template to those directly related to your design intent, as extensive changes can impact the performance and accessibility of both the control and your application. 
+- Try to limit modifications of a control template to those directly related to your design intent, as extensive changes can impact the performance and accessibility of both the control and your application. 
     - See [XAML styles](../style/xaml-styles.md) for more info on customizing the properties of a control, including visual state properties.
     - See the [UserControl Class](/uwp/api/windows.ui.xaml.controls.usercontrol) for details on making changes to a control template
     - Consider creating your own custom templated control if you need to make significant changes to a control template. For an example of a custom templated control, see the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).

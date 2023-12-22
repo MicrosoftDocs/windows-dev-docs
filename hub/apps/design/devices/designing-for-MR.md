@@ -59,7 +59,7 @@ Other, more natural, input methods are also supported, and these may be particul
 
 Without any extra hardware or coding, apps will use gaze - the vector your user is looking along - as a mouse pointer when working with 2D apps. It is implemented as if a mouse pointer was hovering over something in the virtual scene.
 
-In a typical interaction, your user will look at a control in your app, causing it to highlight. The user will when trigger an action, using either a gesture (on the HoloLens), or a contoller or by giving a voice command. If the user selects a text input field, the software keyboard will appear. 
+In a typical interaction, your user will look at a control in your app, causing it to highlight. The user will when trigger an action, using either a gesture (on the HoloLens), or a controller or by giving a voice command. If the user selects a text input field, the software keyboard will appear. 
 
 
 ![The pop-up keyboard in Mixed Reality](images/MR-keyboard.png)
