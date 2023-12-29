@@ -304,17 +304,51 @@ Usage:
 
 - `# md5 abc`
 
-#### Base64 Encoding
+#### Base64
 
-Usage:
+Usage for encoding a string:
 
 - `# base64 abc`
 
-#### Base64 Decoding
-
-Usage:
+Usage for decoding a string:
 
 - `# base64d SGVsbG8gV29ybGQ=`
+
+#### URL
+
+Usage for encoding an URL:
+
+- `# url https://bing.com/?q=My Test query`
+
+> [!NOTE]
+> The whole URL including the `/` and the protocol identifier gets encoded. If you only like to encode the query part of the URL you should only enter this part.
+
+Usage for decoding an URL:
+
+- `# urld https://bing.com/?q=My+Test+query`
+
+#### Escaped data string
+
+Usage for escaping a data string:
+
+- `# esc:data C:\Program Files\PowerToys\PowerToys.exe`
+
+Usage for unescaping a data string:
+
+- `# uesc:data C%3A%5CProgram%20Files%5CPowerToys%5CPowerToys.exe`
+
+#### Escaped hex character
+
+Usage for escaping a single character:
+
+- `# esc:hex z`
+
+Usage for decoding an URL:
+
+- `# uesc:hex %7A`
+
+> [!NOTE]
+> Only the first hexadecimal character of your input is converted. The rest of the input is ignored.
 
 ### Folder plugin
 
