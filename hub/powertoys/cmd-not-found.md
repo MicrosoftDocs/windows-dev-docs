@@ -18,7 +18,8 @@ A PowerShell 7 module that detects an error thrown by a command and suggests a r
 
 ## Install the module
 
-To install the Command Not Found module, navigate to PowerToys settings Command Not Found page and press Install button. On module install, PowerShell 7 experimental features needed for the module to function will be enabled:
+To install the Command Not Found module, navigate to the Command Not Found page in PowerToys settings and select the **Install** button. Once the module installation has completed, PowerShell 7 experimental features needed for the module to function will be enabled:
+
  - PSFeedbackProvider
  - PSCommandNotFoundSuggestion
 
