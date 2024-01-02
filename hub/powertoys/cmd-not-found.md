@@ -33,4 +33,4 @@ Note: The profile file will be created if needed. Restart PowerShell session to 
 
 ## Uninstall the module
 
-To uninstall the Command Not Found module, navigate to PowerToys settings Command Not Found page and press Uninstall button. On module uninstall, previously added block of commands will be removed from PowerShell profile file. 
+To uninstall the Command Not Found module, navigate to the Command Not Found page in PowerToys settings and select the **Uninstall** button. Once the module uninstall has completed, the block of commands previously added will be removed from the PowerShell profile file. 
