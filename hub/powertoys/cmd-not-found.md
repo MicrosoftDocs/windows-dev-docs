@@ -13,7 +13,7 @@ A PowerShell 7 module that detects an error thrown by a command and suggests a r
 ![AlwaysOnTop screenshot.](../images/pt-cmd-not-found.png)
 
 ## Requirements
- - [PowerShell 7](https://learn.microsoft.com/en-us/PowerShell/scripting/install/installing-PowerShell-on-windows?view=PowerShell-7.4)
+ - [PowerShell 7](/PowerShell/scripting/install/installing-PowerShell-on-windows)
  - [PowerShell Microsoft.WinGet.Client module](https://www.powershellgallery.com/packages/Microsoft.WinGet.Client)
 
 ## Install the module
@@ -30,7 +30,7 @@ Import-Module "<powertoys install dir>/WinGetCommandNotFound.psd1"
 #34de4b3d-13a8-4540-b76d-b9e8d3851756
 ```
 
-Note: The profile file will be created if needed. Restart PowerShell session to use the module.
+**Note:** The profile file will be created if needed. Restart PowerShell session to use the module.
 
 ## Uninstall the module
 
