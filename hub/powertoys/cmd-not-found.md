@@ -29,7 +29,7 @@ Import-Module "<powertoys install dir>/WinGetCommandNotFound.psd1"
 #34de4b3d-13a8-4540-b76d-b9e8d3851756
 ```
 
-Note: If there is no profile file at the time of installing the module, profile file will be created. After installing the module, restart PowerShell session to use the module.
+Note: The profile file will be created if needed. Restart PowerShell session to use the module.
 
 ## Uninstall the module
 
