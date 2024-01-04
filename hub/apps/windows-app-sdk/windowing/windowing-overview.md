@@ -78,11 +78,50 @@ Some of the benefits of using **AppWindow** (even when working with a UI framewo
 
 ## Code example
 
-This code example demonstrates how to retrieve an [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from a WinUI 3 window. To use the example, create a new **Blank App, Packaged (WinUI 3 in Desktop)** project, and paste the code in.
-
-**C#**. The code example uses the **WinRT.Interop.WindowNative** and the [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md) classes (see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)). Also see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md).
+This code example demonstrates how to retrieve a [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from a WinUI 3 window by using the [**Microsoft.UI.Xaml.Window.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property. To use the example, create a new **Blank App, Packaged (WinUI 3 in Desktop)** project, and paste the code in.
 
 For additional details on how to work with **AppWindow**, see the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
+
+```csharp
+// MainWindow.xaml.cs
+private void myButton_Click(object sender, RoutedEventArgs e)
+{
+    // Retrieve the AppWindow for the current (XAML) WinUI 3 window.
+    Microsoft.UI.Windowing.AppWindow appWindow = this.AppWindow;
+
+    if (appWindow != null)
+    {
+        // With a non-null AppWindow object, you can call its methods
+        // to manipulate the window. As an example, let's change the title
+        // text of the window.
+        appWindow.Title = "Title text updated via AppWindow!";
+    }
+}
+```
+
+```cppwinrt
+// pch.h
+#include <winrt/Microsoft.UI.Windowing.h> // For the AppWindow class.
+
+// mainwindow.xaml.cpp
+void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
+{
+    // Retrieve the AppWindow for the current (XAML) WinUI 3 window.
+    Microsoft::UI::Windowing::AppWindow appWindow = this->AppWindow();
+
+    if (appWindow)
+    {
+        // With a non-null AppWindow object, you can call its methods
+        // to manipulate the window. As an example, let's change the title
+        // text of the window.
+        appWindow.Title(L"Title text updated via AppWindow!");
+    }
+}
+```
+
+## Code example for versions of Windows App SDK prior to 1.3
+
+The [**Microsoft.UI.Xaml.Window.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property (used in the code example above) is available in Windows App SDK version 1.3 and later. For earlier versions, you can use the functionally equivalent code example in this section.
 
 ```csharp
 // MainWindow.xaml.cs
@@ -113,7 +152,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 // pch.h
 #include "microsoft.ui.xaml.window.h" // For the IWindowNative interface.
 #include <winrt/Microsoft.UI.Interop.h> // For the WindowId struct and the GetWindowIdFromWindow function.
-#include <winrt/Microsoft.UI.Windowing.h> // For AppWindow::GetFromWindowId
+#include <winrt/Microsoft.UI.Windowing.h> // For the AppWindow class.
 
 // mainwindow.xaml.cpp
 void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
@@ -142,11 +181,9 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 
 ## Limitations
 
-- [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) is available only to desktop apps (both packaged and unpackaged); it's not available to UWP apps.
-- The Windows App SDK doesn't currently provide methods for attaching UI framework content to an **AppWindow**. You're
-  limited to using the **HWND** interop access methods demonstrated in the [Code example](#code-example) section.
-- TitleBar customization is currently only supported on Windows 11 or later versions. See [Title bar
-  customization](../../develop/title-bar.md?tabs=wasdk) for details.
+- [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) is a WinUI 3 API. That means that it's available only to desktop apps (both packaged and unpackaged); and isn't available to UWP apps.
+- The Windows App SDK doesn't currently provide methods for attaching UI framework content to an **AppWindow**. But see the [Code example](#code-example) section.
+- Title bar customization is supported in Windows 11 and later; and in Windows 10 for version 1.2 and later of the Windows App SDK. For details, see [Title bar customization](/windows/apps/develop/title-bar).
 
 ## Related topics
 
