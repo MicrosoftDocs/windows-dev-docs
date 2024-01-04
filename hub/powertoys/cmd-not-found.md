@@ -8,7 +8,7 @@ no-loc: [PowerToys, Windows, Command Not Found, Win]
 
 # Command Not Found utility
 
-A PowerShell 7 module that detects an error thrown by a command and suggests a relevant WinGet package to install, if available.
+A PowerShell 7 module that detects command-line errors and suggests a relevant WinGet package to install, if available.
 
 ![Command Not Found screenshot.](../images/pt-cmd-not-found.png)
 
