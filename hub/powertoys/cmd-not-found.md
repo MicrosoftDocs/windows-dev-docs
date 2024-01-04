@@ -13,6 +13,7 @@ A PowerShell 7 module that detects an error thrown by a command and suggests a r
 ![Command Not Found screenshot.](../images/pt-cmd-not-found.png)
 
 ## Requirements
+
  - [PowerShell 7](/PowerShell/scripting/install/installing-PowerShell-on-windows)
  - [PowerShell Microsoft.WinGet.Client module](https://www.powershellgallery.com/packages/Microsoft.WinGet.Client)
 
