@@ -132,7 +132,7 @@ public sealed partial class MainWindow : Window
         string userInput = InputTextBox.Text;
         if (!string.IsNullOrEmpty(userInput))
         {
-            AddMessageToConversation("User: " + userInput);
+            AddMessageToConversation($"User: {userInput}");
             InputTextBox.Text = string.Empty;
             var completionResult = await openAiService.ChatCompletion.CreateCompletion(new ChatCompletionCreateRequest()
             {
