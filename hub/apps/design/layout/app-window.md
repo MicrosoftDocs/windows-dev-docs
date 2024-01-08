@@ -38,7 +38,7 @@ Here are some of the important APIs you use to show content in an AppWindow.
 
 ### AppWindow
 
-The [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) class can be used to display a portion of a Windows Runtime app in a secondary window. It is similar in concept to an [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), but not the same in behavior and lifetime. A main feature of AppWindow is that each instance shares the same UI processing thread (including the event dispatcher) from which they were created, which simplifies multi-window apps.
+The [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) class can be used to display a portion of a UWP app in a secondary window. It is similar in concept to an [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), but not the same in behavior and lifetime. A main feature of AppWindow is that each instance shares the same UI processing thread (including the event dispatcher) from which they were created, which simplifies multi-window apps.
 
 You can only connect XAML content to your AppWindow, there is no support for native DirectX or Holographic content. However, you can show a XAML [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) that hosts DirectX content.
 
