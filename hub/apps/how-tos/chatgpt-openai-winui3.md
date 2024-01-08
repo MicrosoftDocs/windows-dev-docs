@@ -156,7 +156,7 @@ public sealed partial class MainWindow : Window
     private void AddMessageToConversation(string message)
     {
         ConversationList.Items.Add(message);
-        ConversationList.ScrollIntoView(ConversationList.Items[ConversationList.Items.Count - 1]);
+        ConversationList.ScrollIntoView(ConversationList.Items[ConversationList.Items.Last()]);
     }
 }
 ```
