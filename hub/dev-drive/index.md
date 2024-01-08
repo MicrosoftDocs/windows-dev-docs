@@ -331,9 +331,9 @@ No, applications or tools installed on your machine’s C: drive can utilize fil
 
 Yes, ReFS uses slightly more memory than NTFS. We recommend a machine with at least 8gb of memory, ideally 16gb.
 
-### Can I only have a single Dev Drive on my machine?
+### Can I have more than one Dev Drive on my machine?
 
-No. If you have the space, you can create as many Dev Drives as you would like. Using a separate Dev Drive for each software development project would allow you to simply delete the drive at the end of development, rather than repartitioning your disk again. However, keep in mind that the minimum size for a Dev Drive is 50GB.
+Yes. If you have the space, you can create as many Dev Drives as you would like. Using a separate Dev Drive for each software development project would allow you to simply delete the drive at the end of development, rather than repartitioning your disk again. However, keep in mind that the minimum size for a Dev Drive is 50GB.
 
 ### What do I need to know about using Dev Drive with Visual Studio?
 
