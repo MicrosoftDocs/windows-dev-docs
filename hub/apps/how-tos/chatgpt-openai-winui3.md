@@ -355,6 +355,8 @@ Then, add the `InputTextBox_KeyDown` event handler to handle the `Enter` key:
     //...
 ```
 
+<!-- commit d28ead6f96d69c8e8d3b5b5bdf17a0d5 -->
+
 ## Run the improved app
 
 Your new-and-improved chat interface should look something like this:
