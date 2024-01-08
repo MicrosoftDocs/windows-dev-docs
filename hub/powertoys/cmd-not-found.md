@@ -28,7 +28,8 @@ To install the Command Not Found module, navigate to the Command Not Found page 
  - PSCommandNotFoundSuggestion
 
 After that, PowerShell profile file will be appended with following block of PowerShell commands:
-```
+
+```psh
 #34de4b3d-13a8-4540-b76d-b9e8d3851756 PowerToys CommandNotFound module
 Import-Module "<powertoys install dir>/WinGetCommandNotFound.psd1"
 #34de4b3d-13a8-4540-b76d-b9e8d3851756
