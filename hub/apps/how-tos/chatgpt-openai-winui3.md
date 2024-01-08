@@ -32,7 +32,7 @@ In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / W
 
  1. Open Visual Studio and create a new project via `File` > `New` > `Project`.
  2. Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` C# project template.
- 3. Specify a project name, solution name, and directory. In this example, our `ChatGPT_WinUI3` project belongs to a `ChatGPT_WinUI3` solution, which will live in `C:\Projects\`.
+ 3. Specify a project name, solution name, and directory. In this example, our `ChatGPT_WinUI3` project belongs to a `ChatGPT_WinUI3` solution, which will be created in `C:\Projects\`.
 
 After creating your project, you should see the following default file structure in your Solution Explorer:
 
