@@ -215,7 +215,7 @@ Modify the `AddMessageToConversation` method to style the user's input and the G
             messageBlock.Foreground = new SolidColorBrush(Colors.LightGreen);
         }
         ConversationList.Items.Add(messageBlock);
-        ConversationList.ScrollIntoView(ConversationList.Items[ConversationList.Items.Count - 1]);
+        ConversationList.ScrollIntoView(ConversationList.Items.Last()); 
     }
 ```
 
