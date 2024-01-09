@@ -80,23 +80,23 @@ The plugins can be activated with a direct activation command so that PowerToys 
 
 | Plug-in | Direct activation command | Example |
 | :--- | :--- | :--- |
-| Calculator | `=` | `= 2+2` |
-| Windows search | `?` | `? road` to find 'roadmap.txt' |
-| History | `!!` | `!! car` to find any results that have been selected in the past, from any enabled plugin, that matches 'car'. |
-| Installed programs | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
+| [Calculator](#calculator-plugin) | `=` | `= 2+2` |
+| [Windows search](#windows-search-plugin) | `?` | `? road` to find 'roadmap.txt' |
+| [History](#history-plugin) | `!!` | `!! car` to find any results that have been selected in the past, from any enabled plugin, that matches 'car'. |
+| [Installed programs](#program-plugin) | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
 | OneNote | `o:` | `o: powertoys` to search your local OneNote notebooks for pages containing "powertoys" |
 | Registry keys | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
-| Windows services | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
+| [Windows services](#service-plugin) | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
 | Shell command | `>` | `> ping localhost` to do a ping query. |
-| Time and date| `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
-| Unit converter | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
-| Value Generator | `#` | `# guid3 ns:URL www.microsoft.com` to generate the GUIDv3 for the URL namespace using the URL namespace. <br />`# sha1 abc` to calculate the SHA1 hash for the string 'abc'. <br />`# base64 abc` to encode the string 'abc' to base64.  |
+| [Time and date](#time-and-date-plugin) | `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
+| [Unit converter](#unit-converter-plugin) | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
+| [Value Generator](#value-generator-plugin) | `#` | `# guid3 ns:URL www.microsoft.com` to generate the GUIDv3 for the URL namespace using the URL namespace. <br />`# sha1 abc` to calculate the SHA1 hash for the string 'abc'. <br />`# base64 abc` to encode the string 'abc' to base64.  |
 | URI-handler | `//` | `//` to launch your default browser.<br />`// learn.microsoft.com` to have your default browser go to Microsoft Learn.<br />`mailto:` and `ms-settings:` links are supported. |
 | Visual Studio Code | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
 | Web search | `??` | `??` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. |
-| Windows settings | `$` | `$ Add/Remove Programs` to launch the Windows settings page for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
+| [Windows settings](#windows-settings-plugin) | `$` | `$ Add/Remove Programs` to launch the Windows settings page for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
 | Windows Terminal profiles | `_` | `_ powershell` to list all profiles that contains 'powershell' in their name. |
-| Window Walker | `<` | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process. |
+| [Window Walker](#window-walker-plugin) | `<` | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process. |
 
 ## Using PowerToys Run
 
@@ -304,19 +304,57 @@ Usage:
 
 - `# md5 abc`
 
-#### Base64 Encoding
+#### Base64
 
-Usage:
+Usage for encoding a string:
 
 - `# base64 abc`
 
-#### Base64 Decoding
-
-Usage:
+Usage for decoding a string:
 
 - `# base64d SGVsbG8gV29ybGQ=`
 
-### Folder search filters
+#### URL
+
+Usage for encoding an URL:
+
+- `# url https://bing.com/?q=My Test query`
+
+> [!NOTE]
+> The whole URL including the `/` and the protocol identifier gets encoded. If you only like to encode the query part of the URL you should only enter this part.
+
+Usage for decoding an URL:
+
+- `# urld https://bing.com/?q=My+Test+query`
+
+#### Escaped data string
+
+Usage for escaping a data string:
+
+- `# esc:data C:\Program Files\PowerToys\PowerToys.exe`
+
+Usage for unescaping a data string:
+
+- `# uesc:data C%3A%5CProgram%20Files%5CPowerToys%5CPowerToys.exe`
+
+#### Escaped hex character
+
+Usage for escaping a single character:
+
+- `# esc:hex z`
+
+Usage for decoding an URL:
+
+- `# uesc:hex %7A`
+
+> [!NOTE]
+> Only the first hexadecimal character of your input is converted. The rest of the input is ignored.
+
+### Folder plugin
+
+With the folder plugin you can navigate through your directories.
+
+#### Search filter
 
 In the Folder plugin you can filter the results by using some special characters.
 
@@ -345,7 +383,11 @@ Additionally, you can use the following syntax:
 - `!startup:automatic` to list all services with start type 'automatic'.
 - `!status:running` to list all currently running services.
 
-### Kill a window process
+### Window Walker plugin
+
+With the Window Walker plugin you can switch to other windows, close them or kill the window process.
+
+#### Kill a window process
 
 With the Window Walker plugin you can kill the process of a window if it stops responding.
 
@@ -359,7 +401,7 @@ With the Window Walker plugin you can kill the process of a window if it stops r
 > [!WARNING]
 > If you kill the process of an UWP app window, you kill all instances of the app. All windows are assigned to the same process.
 
-#### File Explorer setting
+##### File Explorer setting
 
 If the File Explorer settings in Windows are not set to open each window in a separate process, you will see the following message when searching for open Explorer windows:
 
@@ -369,7 +411,11 @@ You can turn off the message in the PowerToys Run plugin manager options for Win
 
 ![Folder Options Window.](../images/pt-run-folder-options.png)
 
-### Windows Search settings
+### Windows Search plugin
+
+With the Windows Search plugin you can search for files and folders that are index by the `Windows Search Index` service.
+
+#### Windows Search settings
 
 If the indexing settings for Windows Search are not set to cover all drives, you will see the following warning when using the Windows Search plugin:
 
