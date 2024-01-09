@@ -82,6 +82,23 @@ To enable the service mode, run PowerToys in administrator mode and turn on the 
 | Add a firewall rule for Mouse Without Borders | Install a firewall rule for Mouse Without Borders. |
 | Show the original Mouse Without Borders UI | Show the original UI from Mouse Without Borders through the original tray icon. Mouse Without Borders needs to be restarted for it to take effect. |
 
+## Status Colors
+The following colors are used to indicate the connection status to the user when trying to connect to another computer:
+
+| Connection Status | Color    | Hex Code    |
+| :-----: | :---: | :---: |
+| NA | Dark Grey   | #00717171  |
+| Resolving | Yellow   | #FFFFFF00   |
+| Connecting | Orange   | #FFFFA500   |
+| Handshaking | Blue   | #FF0000FF   |
+| Error | Red  | #FFFF0000   |
+| ForceClosed | Purple   | #FF800080   |
+| InvalidKey | Brown   | #FFA52A2A   |
+| Timeout | Pink   | #FFFFC0CB   |
+| SendError | Maroon   | #FF800000   |
+| Connected | Green   | #FF008000   |
+
+
 ## Troubleshooting
 
 If you can't setup the initial connection:
