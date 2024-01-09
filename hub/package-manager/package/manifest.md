@@ -57,7 +57,7 @@ For a complete list and descriptions of items in a manifest, see the [manifest s
 
 ### Minimal required schema
 
-As specified in the [singleton JSON schema](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.singleton.1.0.0.json),
+As specified in the [singleton JSON schema](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.singleton.1.5.0.json),
 only certain fields are required. The minimal supported YAML file would look like the example below. The singleton format is only valid for packages containing a single installer and a single locale. If more than one installer or locale is provided, the multiple YAML file format and schema must be used.
 
 The partitioning scheme was added to help with GitHub's UX. Folders with thousands of children do not render well in the browser.
@@ -110,10 +110,10 @@ ManifestVersion: 1.0.0
 To provide the best user experience, manifests should contain as much meta-data as possible. In order to separate concerns for validating installers
 and providing localized metadata, manifests should be split into multiple files. The minimum number of YAML files for this kind of manifest is three. Additional locales should also be provided.
 
-* A [version](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.version.1.0.0.json) file.
-* The [default locale](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.defaultLocale.1.0.0.json) file.
-* An [installer](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.installer.1.0.0.json) file.
-* Additional [locale](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.locale.1.0.0.json) files.
+* A [version](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.version.1.5.0.json) file.
+* The [default locale](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.defaultLocale.1.5.0.json) file.
+* An [installer](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.installer.1.5.0.json) file.
+* Additional [locale](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.locale.1.5.0.json) files.
 
 The example below shows many optional metadata fields and multiple locales. Note the default locale has more requirements than additional locales. In the [show command](../winget/show.md), any required fields that aren't provided for additional locales will display fields from the default locale.
 

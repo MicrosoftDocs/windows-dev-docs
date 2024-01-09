@@ -96,6 +96,7 @@ These policies have a higher priority than the policy "Configure global utility 
 |Always On Top|Always On Top: Configure enabled state|ConfigureEnabledUtilityAlwaysOnTop|
 |Awake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake|
 |Color Picker|Color Picker: Configure enabled state|ConfigureEnabledUtilityColorPicker|
+|Command Not Found|Command Not Found: Configure enabled state|ConfigureEnabledUtilityCmdNotFound|
 |Crop And Lock|Crop And Lock: Configure enabled state|ConfigureEnabledUtilityCropAndLock|
 |Environment Variables|Environment Variables: Configure enabled state|ConfigureEnabledUtilityEnvironmentVariables|
 |FancyZones|FancyZones: Configure enabled state|ConfigureEnabledUtilityFancyZones|

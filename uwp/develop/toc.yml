@@ -787,6 +787,8 @@
                   href: ../devices-sensors/pos-camerabarcode-enable-disable.md
                 - name: Supported symbologies
                   href: ../devices-sensors/pos-camerabarcode-symbologies.md
+                - name: Advanced configuration
+                  href: ../devices-sensors/pos-camerabarcode-advancedconfig.md  
         - name: Magnetic stripe reader
           href: ../devices-sensors/pos-magnetic-stripe-reader.md
           items:

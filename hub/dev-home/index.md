@@ -1,7 +1,7 @@
 ---
 title: Dev Home for Windows Developers
 description: Dev Home is a new control center for Windows providing the ability to track your workflows and coding tasks using customizable widgets, set up your dev environment, connect to your developer accounts and tools (such as GitHub), and install apps and packages all in one place.
-ms.date: 05/23/2023
+ms.date: 01/05/2024
 ms.topic: overview
 ---
 
@@ -55,7 +55,7 @@ The Dev Home system widgets can provide real-time information on:
 
 The [Dev Home GitHub extension](./extensions.md#dev-home-github-extension) enables you to connect your GitHub account to Dev Home and create customized widgets that integrate with your GitHub repositories. To connect your GitHub account to Dev Home and begin creating GitHub widgets:
 
-1. Once you've installed Dev Home, the GitHub extension will be available by default, but you will need to log-in to your GitHub account to gain access to the integrated features.
+1. Once you've installed Dev Home, the GitHub extension will be available by default, but you will need to log-in to your GitHub account to gain access to the integrated features. Currently DevHome supports only a single GitHub account. (See the [DevHome Extension repo on GitHub](https://github.com/microsoft/devhomegithubextension/issues/276) for updates on adding support for multiple accounts.) 
 
 2. Select **Add a widget** from the top-right of your Dev Home dashboard. A list of widget options will appear, some of which will require customization in order to be added to your dashboard.
 

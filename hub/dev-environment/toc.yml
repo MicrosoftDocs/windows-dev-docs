@@ -109,6 +109,8 @@ items:
         href: ../powertoys/awake.md
       - name: Color Picker
         href: ../powertoys/color-picker.md
+      - name: Command Not Found
+        href: ../powertoys/cmd-not-found.md
       - name: Crop And Lock
         href: ../powertoys/crop-and-lock.md
       - name: Environment Variables
