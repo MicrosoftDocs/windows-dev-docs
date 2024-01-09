@@ -58,6 +58,18 @@ The currently available utilities include:
             :::column-end:::
 :::row-end:::
 
+### Command Not Found
+
+:::row:::
+    :::column:::
+        [![Command Not Found screenshot.](../images/pt-cmd-not-found.png)](cmd-not-found.md)
+    :::column-end:::
+    :::column span="2":::
+        [Command Not Found](cmd-not-found.md) is a PowerShell 7 module that detects an error thrown by a command and suggests a relevant WinGet package to install, if available..
+            :::column-end:::
+:::row-end:::
+
+
 ### Crop And Lock
 
 :::row:::
