@@ -38,7 +38,7 @@ By distributing your apps via Microsoft Store, you can also avoid the risks and 
 
 ### Revenue and commerce
 
-Microsoft Store offers developers a flexible and transparent revenue sharing model (including in-app purchases, subscriptions, ads, and tips) that lets you choose your own commerce platform and keep 100% of the revenue for non-gaming apps, or use Microsoft’s commerce platform and pay a competitive fee of 15% for games, 12% for apps and 25% for In-app purchases. This means that you can maximize your profit and control your business model, while benefiting from the convenience and security of Microsoft’s commerce platform.
+Microsoft Store offers developers a flexible and transparent revenue sharing model (including in-app purchases, subscriptions, ads, and tips) that lets you choose your own commerce platform and keep 100% of the revenue for non-gaming apps, or use Microsoft’s commerce platform and pay a competitive fee of 12% for games and 15% for apps. This means that you can maximize your profit and control your business model, while benefiting from the convenience and security of Microsoft’s commerce platform.
 Microsoft Store also provides you with tools and services to manage your app pricing, promotions, and payments, and to comply with local tax and legal requirements. You can also use the Microsoft Partner Center to manage your app catalog, submissions, and distribution options, and to access your app analytics and earnings reports.
 
 ### Compatibility and flexibility
