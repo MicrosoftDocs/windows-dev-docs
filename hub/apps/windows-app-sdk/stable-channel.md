@@ -32,6 +32,17 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.4
 
+### Version 1.4.4 (1.4.231219000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
+
+- Fixed a WinUI 3 diagnostics security issue.
+- Fixed an input issue where the password box didn't show the on-screen keyboard when activated via touch. For more info, see GitHub issue [#8946](https://github.com/microsoft/microsoft-ui-xaml/issues/8946).
+- Fixed an issue that caused the `Microsoft.UI.Xaml.Controls.dll` file size to grow unexpectedly.
+- Fixed a `CommandBarFlyout` issue that could cause crashes when setting focus.
+- Updated Windows App SDK support for .NET 8 RID-specific asset handling.
+- Fixed an issue causing some swapchains to be positioned or stretched incorrectly.
+
 ### Version 1.4.3 (1.4.231115000)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
