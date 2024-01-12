@@ -13,11 +13,11 @@ ms.localizationpriority: medium
 
 The Visual layer in the [Windows App SDK/WinUI 3](index.md) provides a high performance, retained-mode API for graphics, effects, animations, and input. It's the foundation for all UI across Windows devices.
 
-The types in [Microsoft.UI.Composition](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition) form the Windows App SDK/WinUI 3 implementation of the Visual layer. It's equivalent to the [UWP Visual layer](/windows/uwp/composition/visual-layer), which is implemented in the **Windows.UI.Composition** namespace.
+The types in [Microsoft.UI.Composition](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition) form the Windows App SDK/WinUI 3 implementation of the Visual layer. It's very similar to the [UWP Visual layer](/windows/uwp/composition/visual-layer), which is implemented in the **Windows.UI.Composition** namespace. The differences between the two and the missing functionality from the Windows App SDK/WinUI 3 Visual layer are detailed below.
 
 ## Differences from UWP
 
-The primary difference between **Microsoft.UI.Composition** and the UWP Visual layer is the namespace. **Microsoft.UI.Composition** provides access to functionality that's nearly identical to that of the UWP Visual layer. But there are exceptions, and differences.
+The most obvious difference between **Microsoft.UI.Composition** and the UWP Visual layer is the namespace. **Microsoft.UI.Composition** provides access to functionality that's nearly identical to that of the UWP Visual layer, in the most commonly used scenarios. But there are exceptions, and differences.
 
 The Windows App SDK/WinUI 3 uses **Microsoft.UI.Composition** to describe a tree of individual Visuals. Those Visuals are then composited to create the complete rendering of the window. It's very similar to how **Windows.UI.Composition** works (for UWP apps). But one big difference is that the **Microsoft.UI.Composition** compositor runs entirely within a Windows App SDK app; and it has access only to pixels that it drew. That means that any *external* content (content that wasn't drawn by the compositor) is unknown to the compositor. Which creates certain limitations.
 
@@ -25,7 +25,7 @@ An example of external content is the (**Microsoft.UI.Xaml.Controls**) [MediaPla
 
 [![Diagram of rendering external content](images/external-content.png) ](images/external-content.png#lightbox)
 
-In general, the approach allows external content (such as swap chains) to be part of the overall rendering for the window; and it still allows other content drawn by the compositor to overlap on top of the external content&mdash;for example, XAML's [MediaTransportControls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) rendering on top of the media.
+In general, the approach allows external content (such as swap chains) to be part of the overall rendering for the window; and it still allows other content drawn by the compositor to overlap on top of the external content&mdash;for example, XAML's [MediaTransportControls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) rendering on top of the media. But it doesn't allow more advanced effect interactions with this external content. That applies to all approaches that one could use to plug a swap chain into a view: either via XAML (for example, via [SwapChainPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel)), or via Composition (for example, using [ICompositorInterop::CreateCompositionSurfaceForSwapChain](/windows/win32/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositorinterop-createcompositionsurfaceforswapchain)).
 
 In the Windows App SDK/WinUI 3, the following APIs all create external content.
 
