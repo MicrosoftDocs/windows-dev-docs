@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Crop And Lock, Win]
 ---
 
-# Crop And Lock
+# Crop And Lock utility
 
 PowerToys **Crop And Lock** allows you to crop a current application into a smaller window or just create a thumbnail. Focus the target window and press the shortcut to start cropping.</value>
 
@@ -15,7 +15,7 @@ PowerToys **Crop And Lock** allows you to crop a current application into a smal
 
 ## Getting started
 
-### How to use
+### Cropping a window
 
 To start using Crop And Lock, enable it in the PowerToys Settings (**Crop And Lock** tab).
 

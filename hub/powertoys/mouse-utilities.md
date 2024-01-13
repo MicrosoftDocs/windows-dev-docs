@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Mouse, jump]
 
 Mouse utilities is a collection of features that enhance mouse and cursor functionality on Windows.
 
-## Find my mouse
+## Find My Mouse
 
 Activate a spotlight that focuses on the cursor's position pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut or shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
 
@@ -56,7 +56,7 @@ From the settings page, the following options can be configured:
 | Fade delay | How long it takes before a highlight starts to disappear - Measured in milliseconds. |
 | Fade duration | Duration of the disappear animation - Measured in milliseconds. |
 
-## Mouse jump
+## Mouse Jump
 
 ![Screenshot of Mouse jump.](../images/pt-mouse-jump.gif)
 
@@ -66,7 +66,7 @@ Mouse jump allows moving the mouse pointer long distances on a single screen or 
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to activate the mouse jump. |
 
-## Mouse pointer Crosshairs
+## Mouse Pointer Crosshairs
 
 ![Screenshot of Crosshairs.](../images/pt-mouseutilities-crosshairs.png)
 

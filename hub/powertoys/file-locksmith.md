@@ -12,7 +12,7 @@ File Locksmith is a Windows shell extension for checking which files are in use 
 
 ![File Locksmith Demo.](../images/powertoys-file-locksmith.gif)
 
-## How to activate and use File Locksmith
+## Activating and using File Locksmith
 
 To activate File Locksmith, open PowerToys and turn on the **Enable File Locksmith** toggle. Select one or more files or directories in Windows File Explorer. If a directory is selected, all of its files and subdirectories will be scanned as well. Right-click on the selected file(s), select **Show more options** from the menu to expand your list of menu options, then select **What's using this file?** to open File Locksmith and see which processes are using the file(s).
 

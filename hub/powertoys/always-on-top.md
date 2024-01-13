@@ -12,7 +12,7 @@ A system-wide Windows utility to pin windows above other windows.
 
 ![AlwaysOnTop screenshot.](../images/pt-always-on-top.png)
 
-## Pin a window
+## Pinning a window
 
 When you activate Always On Top (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the utility pins the active window above all other windows. The pinned window stays on top, even when you select other windows.
 

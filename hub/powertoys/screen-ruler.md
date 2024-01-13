@@ -6,17 +6,17 @@ ms.topic: article
 no-loc: [PowerToys, Windows, Screen ruler, Win]
 ---
 
-# Screen ruler utility
+# Screen Ruler utility
 
 ![Screen ruler utility](../images/pt-screen-ruler.png)
 
-Screen ruler allows you to quickly measure pixels on your screen based on image edge detection. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
+Screen Ruler allows you to quickly measure pixels on your screen based on image edge detection. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
 
-## How to activate
+## Activating Screen Ruler
 
 Press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate and then select which tool you want to measure with. To exit, press <kbd>Esc</kbd> or click &#9587; in the toolbar.
 
-## How to use
+## Using Screen Ruler
 
 - Bounds (Dashed square symbol): This is a bounding box. Click and drag with your mouse. If you hold <kbd>Shift</kbd>, the box(es) will stay in place until you cancel the interaction.
 - Spacing (&#9547;): This will measure horizontal and vertical spacing at the same time.  Click the symbol and move your mouse to your target location.

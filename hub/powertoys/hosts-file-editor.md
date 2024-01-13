@@ -32,7 +32,7 @@ To filter host file entries, select the filter icon and then enter characters in
 
 ![PowerToys Hosts File Editor: Filtering entries](../images/pt-hosts-file-editor-filter.gif)
 
-## Back up Hosts file
+## Backing up the hosts file
 
 Hosts File Editor creates a backup of the hosts file before editing session. The backup files are located near the hosts file in `%SystemRoot%/System32/drivers/etc` named `hosts_PowerToysBackup_YYYYMMDDHHMMSS`.
 
@@ -47,7 +47,7 @@ From the Settings menu, the following options can be configured:
 | Additional lines position | Default value is **Top**. If **Bottom** is selected, the file header is moved below hosts settings to the bottom. |
 | Consider loopback addresses as duplicates | Loopback addresses (like 127.0.0.1 and ::1) are considered as duplicates. |
 
-## Troubleshooting
+## Troubleshooting Hosts File Editor
 
 A "Failed to save hosts file" error appears if a change is made without administrator permissions:
 

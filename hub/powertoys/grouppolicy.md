@@ -10,25 +10,25 @@ no-loc: [PowerToys, Windows, Group Policy, Win]
 
 Since version 0.64, PowerToys is released on GitHub with Administrative Templates that allows you to configure PowerToys using Group Policies.
 
-## How to install
+## Installing PowerToys using Group Policy
 
 ### Download
 
 You can find the latest administrative templates (ADMX files) in the assets section of our newest PowerToys release on <https://github.com/microsoft/PowerToys/releases>. The file is named `GroupPolicyObjectsFiles-<Version>.zip`.
 
-### Add the administrative template to an individual computer
+### Adding the administrative template to an individual computer
 
 1. Copy the "PowerToys.admx" file to your Policy Definition template folder. (Example: C:\Windows\PolicyDefinitions)
 2. Copy the "PowerToys.adml" file to the matching language folder in your Policy Definition folder. (Example: C:\Windows\PolicyDefinitions\en-US)
 
-### Add the administrative template to Active Directory
+### Adding the administrative template to Active Directory
 
 1. On a domain controller or workstation with RSAT, go to the **PolicyDefinition** folder (also known as the *Central Store*) on any domain controller for your domain. For older versions of Windows Server, you might need to create the **PolicyDefinition** folder. For more information, see [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
 2. Copy the "PowerToys.admx" file to the PolicyDefinition folder. (Example: %systemroot%\sysvol\domain\policies\PolicyDefinitions)
 3. Copy the "PowerToys.adml" file to the matching language folder in the PolicyDefinition folder. Create the folder if it doesn't already exist. (Example: %systemroot%\sysvol\domain\policies\PolicyDefinitions\EN-US)
 4. If your domain has more than one domain controller, the new ADMX files will be replicated to them at the next domain replication interval.
 
-### Import the administrative template in Intune
+### Importing the administrative template in Intune
 
 You can find all instructions on how to import the administrative templates in Intune [here](/mem/intune/configuration/administrative-templates-import-custom#add-the-admx-and-adml-files).
 
@@ -42,7 +42,7 @@ You will find the policies under "Administrative Templates/Microsoft PowerToys" 
 The syntax of OMA-URI is the following: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys[[~<category1>]~<categoryN>]/<ADMX-DisplayName-ID>
 -->
 
-### Configure global utility enabled state
+### Configuring global utility enabled state
 
 > Supported on PowerToys 0.75.0 or later.
 
@@ -74,7 +74,7 @@ The individual enabled state policies for the utilities will override this polic
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureGlobalUtilityEnabledState`
 - Example value: `<disabled/>`
 
-### Configure enabled state for individual utilities
+### Configuring enabled state for individual utilities
 
 > Supported on PowerToys 0.64.0 or later depending on the utility.
 
@@ -155,7 +155,7 @@ These policies have a higher priority than the policy "Configure global utility 
 
 - Example value: `<disabled/>`
 
-### Allow experimentation
+### Allowing experimentation
 
 > Supported on PowerToys 0.68.0 or later.
 
@@ -186,7 +186,7 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 
 ### Installer and Updates
 
-#### Disable per-user installation
+#### Disabling per-user installation
 
 > Supported on PowerToys 0.68.0 or later.
 
@@ -218,7 +218,7 @@ This policy configures whether PowerToys per-user installation is allowed or not
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePerUserInstallation`
 - Example value: `<enabled/>`
 
-#### Disable automatic downloads
+#### Disabling automatic downloads
 
 > Supported on PowerToys 0.68.0 or later.
 
@@ -347,7 +347,7 @@ You can override this policy for individual plugins using the policy "Configure 
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunAllPluginsEnabledState`
 - Example value: `<disabled/>`
 
-#### Configure enabled state for individual plugins
+#### Configuring enabled state for individual plugins
 
 > Supported on PowerToys 0.75.0 or later.
 

@@ -6,7 +6,7 @@ ms.topic: article
 no-loc: [PowerToys, Windows, Environment Variables, Win]
 ---
 
-# Environment Variables
+# Environment Variables utility
 
 Environment Variables offers an easy and convenient way to manage environment variables. It also allows you to create profiles for managing a set of variables together. Profile variables have precedence over User and System variables. Applying the profile adds variables to User environment variables in the background. When a profile is applied, if there is an existing User variable with the same name, a backup variable is created in User variables which will be reverted to the original value on profile un-apply.
 
@@ -14,13 +14,13 @@ Applied variables list shows the current state of the environment, respecting th
 
 ![PowerToys Environment Variables screenshot.](../images/powertoys-environment-variables.png)
 
-## Edit/Remove variable
+## Editing or removing a variable
 
 To edit or remove a variable (profile, User or System), select the more options button (**•••**) on the desired variable:
 
 ![PowerToys Environment Variables: Edit/Remove variable](../images/powertoys-environment-variables-edit-variable.gif)
 
-## Add profile
+## Adding a profile
 
 To add a new profile:
 
@@ -34,7 +34,7 @@ To add a new profile:
 
 To edit or remove a profile, select the more options button (**•••**) on the desired profile.
 
-## Apply profile
+## Applying a profile
 
 To apply a profile, set the profile toggle to On. Only one profile can be applied at a time. The Applied variables list will show applied profile variables at the top (below Path variable):
 

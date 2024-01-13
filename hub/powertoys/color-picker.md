@@ -13,13 +13,11 @@ A system-wide color picking utility for Windows to pick colors from any screen a
 
 ![ColorPicker.](../images/pt-colorpicker-hex-editor.png)
 
-## Getting started
-
-### Enabling Color Picker
+## Enabling Color Picker
 
 Enable Color Picker in the **Color Picker** tab in PowerToys.
 
-### Activating Color Picker
+## Activating Color Picker
 
 You can choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>) by changing **Activation Behavior**:
 
@@ -139,7 +137,7 @@ For example `%ReX` means the red value in hex uppercase two digits format.
 
 Color formats can contain any words or characters that you prefer. For example, the default color format, which shows up on color format creation is: `_'new Color (R = %Re, G = %Gr, B = %Bl)'_`.
 
-## Limitations
+## Limitations of Color Picker
 
 - Color Picker can't display on top of the Start menu or Action Center, but you can still pick a color.
 - If you started the currently-focused application with an administrator elevation (**Run as administrator**), the Color Picker activation shortcut won't work, unless you also started PowerToys with an administrator elevation.

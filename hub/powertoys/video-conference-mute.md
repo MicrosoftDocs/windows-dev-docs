@@ -7,14 +7,14 @@ ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute, Shift]
 ---
 
-# Video Conference Mute
+# Video Conference Mute utility
 
 > [!NOTE]
 > VCM is moving into legacy mode. Please find more about what this means [in our dedicated discussion issue](https://github.com/microsoft/PowerToys/issues/21473).
 
 Quickly mute your microphone (audio) and turn off your camera (video) with a single keystroke while on a conference call, regardless of what application has focus on your computer.
 
-## Getting started
+## Using Video Conference Mute
 
 The default shortcuts to use Video Conference Mute are:
 
@@ -48,7 +48,7 @@ The Video Conference Mute page in Settings provides the following options:
 
 ![Video Conference Mute options in PowerToys settings.](../images/pt-video-conference-mute-settings.png)
 
-## How this works under the hood
+## How Video Conference Mute works
 
 Applications interact with audio and video in different ways. If a camera stops working, the application using it tends not to recover until the API does a full reset. To toggle the global privacy camera on and off while using the camera in an application, typically it will crash and not recover.
 
@@ -57,7 +57,7 @@ So, how does PowerToys handle this so you can keep streaming?
 - **Audio:** PowerToys uses the global microphone mute API in Windows. Apps should recover when this is toggled on and off.
 - **Video:** PowerToys has a virtual driver for the camera. The video is routed _through_ the driver and then to the application. Selecting the Video Conference Mute shortcut key stops video from streaming, but the application still thinks it is receiving video. The video is just replaced with black or the image placeholder you've saved in the settings.
 
-### Debug the camera driver
+### Debugging the camera driver
 
 To debug the camera driver, open this file on your machine: `C:\Windows\ServiceProfiles\LocalService\AppData\Local\Temp\PowerToysVideoConference.log`
 

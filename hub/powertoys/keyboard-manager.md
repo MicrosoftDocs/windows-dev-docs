@@ -101,7 +101,7 @@ There are a few rules to follow when remapping shortcuts. These rules only apply
 - Shortcuts must end with an action key (all non-modifier keys): A, B, C, 1, 2, 3, etc.
 - Shortcuts cannot be longer than four keys
 
-### Remap a shortcut to a single key
+### Remapping a shortcut to a single key
 
 It is possible to remap a shortcut (key combination) to a single key press by selecting **Remap a shortcut** in PowerToys Settings.
 
@@ -114,7 +114,7 @@ For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arr
 > [!IMPORTANT]
 > Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of key press matters in this scenario as the action is executed during key-down, not key-up. For example: pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
 
-### Remap a shortcut to text
+### Remapping a shortcut to text
 
 For example, to replace the shortcut <kbd>Ctrl</kbd>+<kbd>G</kbd> with `Hello!` text, first select "Text" in the combo box and then fill the text box with "Hello!":
 
@@ -144,7 +144,7 @@ Keyboard Manager uses process-names (not application names) to target apps. For 
 | Word            | winword.exe   |
 | Powerpoint      | powerpnt.exe  |
 
-## How to select a key
+## Selecting a key
 
 To select a key or shortcut to remap:
 
@@ -197,7 +197,7 @@ Keyboard Manager lists mappings for all known physical keyboard keys. Some of th
 
 ![PowerToys Keyboard Manager List of Keys.](../images/pt-key-remap-drop-down.png)
 
-## Troubleshooting
+## Troubleshooting Keyboard Manager
 
 If you have tried to remap a key or shortcut and are having trouble, it could be one of the following issues:
 

@@ -10,15 +10,15 @@ no-loc: [PowerToys, Windows, Text Extractor, Win]
 
 Text Extractor enables you to copy text from anywhere on your screen, including inside images or videos. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
 
-## How to activate
+## Activating Text Extractor
 
 With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>), you'll see an overlay on the screen. Click and hold your primary mouse button and drag to activate your capture. The text will be saved to your clipboard.
 
-## How to deactivate
+## Deactivating Text Extractor
 
-Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard. You can exit capture mode by pressing <kbd>Esc</kbd> at any moment.
+Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard. You can deactivate capture mode by pressing <kbd>Esc</kbd> at any moment.
 
-## Adjust while trying to capture
+## Adjusting the capture region while using Text Extractor
 
 By holding <kbd>Shift</kbd>, you will change from adjusting the capture region's size to moving the capture region. When you release <kbd>Shift</kbd>, you will be able to resize again.
 
@@ -51,7 +51,7 @@ The list can be obtained via PowerShell by running the following commands:
 [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
 ```
 
-### How to query for OCR language packs
+### Viewing supported OCR language packs
 
 To return the list of all supported language packs, open PowerShell as an Administrator (right-click, then select "Run as Administrator"), and enter the following command:
 
@@ -79,7 +79,7 @@ State : NotPresent
 
 The language and location is abbreviated, so "en-US" would be "English-United States" and "en-GB" would be "English-Great Britain". If a language is not available in the output, then it's not supported by OCR. `State: NotPresent` languages must be installed first.
 
-### How to install an OCR language pack
+### Installing an OCR language pack
 
 The following commands install the OCR pack for "en-US":
 
@@ -91,7 +91,7 @@ $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Lang
 $Capability | Add-WindowsCapability -Online
 ```
 
-### How to remove an OCR language pack
+### Removing an OCR language pack
 
 The following commands remove the OCR pack for "en-US":
 
@@ -103,7 +103,7 @@ $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Lang
 $Capability | Remove-WindowsCapability -Online
 ```
 
-## Troubleshooting
+## Troubleshooting Text Extractor
 
 This section will list possible errors and solutions.
 
