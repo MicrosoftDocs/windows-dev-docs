@@ -36,11 +36,13 @@
         }        	  
       },
     "fileMetadata": {
+      "ms.service": {
+        "apps/trace-processing/**/*.md": "traceprocessor"
+      },
       "ms.prod":
       {
         "android/**/*.md": "dev-environment",
         "apps/**/*.md": "reunion",
-        "apps/trace-processing/**/*.md": "traceprocessor",
         "dev-environment/**/*.md": "dev-environment",
         "dev-home/*.md": "dev-environment",
         "dev-drive/*.md": "dev-environment",
