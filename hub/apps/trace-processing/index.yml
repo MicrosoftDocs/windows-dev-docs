@@ -6,7 +6,7 @@ summary: .NET TraceProcessing is a NuGet package that provides easy access to da
 metadata:
   title: Documentation - .NET TraceProcessing
   description: .NET TraceProcessing is a NuGet package that provides easy access to data in Event Tracing for Windows (ETW) files.
-  ms.prod: traceprocessor
+  ms.service: traceprocessor
   ms.technology: ""
   ms.topic: landing-page
   author: maiak
