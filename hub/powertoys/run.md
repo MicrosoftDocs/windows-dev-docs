@@ -115,7 +115,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 The Windows System Commands plugin provides a set of system level actions that can be executed.
 
 > [!TIP]
-> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, clear the **Use localized system commands instead of English ones** checkbox in the [plugin manager](#plugin-manager).
+> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, clear the **Use localized system commands instead of English ones** checkbox in the [plugin manager](#using-plugins-for-powertoys-run).
 
 | Command | Action | Note |
 | :--- | :--- | :--- |
@@ -164,7 +164,7 @@ If the program plugin's option "Include in global result" is not selected, inclu
 
 > [!IMPORTANT]
 > Please be aware of the different decimal and thousand delimiters in different locals.
-> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
+> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#using-plugins-for-powertoys-run).
 > If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
 > [!TIP]
@@ -375,7 +375,7 @@ To search by location you can use the following syntax:
 
 The Service plugin lets you search, start, stop and restart Windows services directly from the PowerToys Run search screen.
 
-To search for Windows services, [enable the plugin](#plugin-manager), open PowerToys Run and enter the name of the service.
+To search for Windows services, [enable the plugin](#using-plugins-for-powertoys-run), open PowerToys Run and enter the name of the service.
 Additionally, you can use the following syntax:
 
 - `!startup:automatic` to list all services with start type 'automatic'.
