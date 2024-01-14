@@ -95,7 +95,7 @@ The current preview of the **winget** tool supports the following commands.
 | [import](import.md) | Installs all the packages in a file. |
 | [pin](pinning.md) | Manage package pins. |
 | [configure](configure.md) | Configures the system into a desired state. |
-| [download](download.md) | Downloads the specification application's installation file. |
+| [download](download.md) | Downloads the specified application's installation file. |
 
 ### Options
 
