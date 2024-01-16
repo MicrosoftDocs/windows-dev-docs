@@ -2,7 +2,7 @@
 description: Customize the title bar of a UWP app to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 05/27/2023
+ms.date: 01/15/2024
 ms.topic: article
 keywords: windows 10, uwp, title bar
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ author: jwmsft
 ---
 # Title bar customization
 
-Windows provides a default title bar for every window and lets you to customize it to match the personality of your app. The default title bar comes with some standard components and core functionality such as dragging and resizing the window.
+Windows provides a default title bar for every window and lets you customize it to match the personality of your app. The default title bar comes with some standard components and core functionality such as dragging and resizing the window.
 
 :::image type="content" source="images/titlebar-overview.png" alt-text="A Windows app showing the title bar" border="false":::
 
