@@ -153,6 +153,8 @@ items:
         href: ../powertoys/video-conference-mute.md
   - name: Windows Subsystem for Linux
     href: /windows/wsl/
+  - name: Windows Subsystem for Android
+    href: /windows/android/wsa/
   - name: Windows Terminal
     href: /windows/terminal/
   - name: Mac to Windows guide
