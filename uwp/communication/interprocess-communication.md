@@ -95,7 +95,7 @@ Unpackaged applications and services don't have package identity, so they can't 
 
 * By default, named pipes in packaged applications are supported only between processes within the same package, unless a process is full trust.
 * Named pipes can be shared across packages following the guidelines for [sharing named objects](./sharing-named-objects.md).
-* Named pipes in packaged applications must use the syntax `\\.\pipe\LOCAL\` for the pipe name.
+* Named pipes (in packaged *and* unpackaged apps) must use the syntax `\\.\pipe\LOCAL\` for the pipe name.
 
 ## Registry
 
