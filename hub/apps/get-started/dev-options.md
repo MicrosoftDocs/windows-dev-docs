@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 ## App development frameworks
 
-There is a wide range of options for developing applications for Windows. The best option for you depends on your app requirements, your existing code, and your familiarity with the technology. The following table lists the most popular app development frameworks available on Windows and the features supported by each framework.
+There is a wide range of options for developing applications for Windows. The best option for you depends on your application requirements, your existing code, and your familiarity with the technology. The following table lists the most popular app development frameworks available on Windows and the features supported by each framework.
 
 To read more about each of these Windows app development options, see [Writing apps for Windows](index.md).
 
