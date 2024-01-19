@@ -1,7 +1,7 @@
 ---
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
-ms.date: 12/08/2023
+ms.date: 01/11/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 
 When you [begin the signup process](https://developer.microsoft.com/microsoft-store/register) you'll need to choose whether to create an individual account or a company account. Both account types will allow you to submit apps, games, add-ins, and services.
 
-Company accounts must be used for organizations and businesses and any person acting in relation to their trade or profession. For company accounts, we require greater [verification](/windows/apps/publish/partner-center/account-types-locations-and-fees#account-verification) to confirm that you’re authorized to set up the account for your company. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
+Company accounts must be used for organizations and businesses and any person acting in relation to their trade or profession. For company accounts, we require greater [verification](/windows/apps/publish/partner-center/account-types-locations-and-fees#account-verification) to confirm that you’re authorized to set up the account for your company, as well as requiring that you enter a customer contact email, business address, and business phone number if available. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
 
 > [!IMPORTANT]
 > You can't change the account type once you make your selection, so be sure to choose the right type.
@@ -24,7 +24,7 @@ Here are the essential differences between the two account types.
 
 | Individual account | Company account |
 |--------------------|-----------------|
-| <ul><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Shorter account verification process</li><li>Coming soon: Legal disclaimer added to published products about consumer rights</li></ul> | <ul><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Requires greater account verification including business identification documents to be stored 6 months after account closure</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Able to submit apps with restricted functionality (as described in the [Microsoft Store Policies](../store-policies.md#1014-account-type))</li></ul> |
+| <ul><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Shorter account verification process</li><li>Coming soon: Legal disclaimer added to published products about consumer rights</li></ul> | <ul><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Requires greater account verification including business identification documents to be stored 6 months after account closure</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Able to submit apps with restricted functionality (as described in the [Microsoft Store Policies](../store-policies.md#1014-account-type))</li><li>Requires that you submit your email, business address, and phone number which will be visible to users on product pages.</li></ul> |
 
 Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company, verify and store identification information, and set up the account. Per the [Store Policies](../store-policies.md#1014-account-type), apps with certain functionality, such as those that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third-party authentication provider), can only be published by company accounts.
 

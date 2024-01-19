@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 11/22/2023
+ms.date: 01/16/2024
 ---
 
 # Set up a Dev Drive on Windows 11
@@ -356,6 +356,10 @@ You can find guidance on [How to configure and use Live Unit Testing](/visualstu
 ```powershell
 fsutil devdrv setfiltersallowed PrjFlt
 ```
+
+### Will a VHD created for use as a Dev Drive be encrypted when the drive storing it is BitLocker enabled?
+
+Yes, the Dev Drive VHD will be included in the BitLocker encryption of the hosting volume.
 
 ### How to contribute to these docs and FAQs?
 

@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 11/02/2023
+ms.date: 01/16/2024
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -65,6 +65,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 - [11.11 Age Ratings](#1111-age-ratings)
 - [11.12 User Generated Content](#1112-user-generated-content)
 - [11.13 Third Party Digital Storefronts Content](#1113-third-party-digital-storefronts-content)
+- [11.14 Gambling Apps](#1114-gambling-apps)
 
 ## Product Policies
 

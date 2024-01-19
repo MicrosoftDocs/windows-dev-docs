@@ -484,7 +484,11 @@
         - name: Add an InkToolbar
           href: input/ink-toolbar.md
     - name: Touch
-      href: input/touch-interactions.md
+      items:
+        - name: Touch design guidelines
+          href: input/touch-interactions.md
+        - name: Touch developer guidelines
+          href: input/touch-developer-guide.md
     - name: Mouse
       href: input/mouse-interactions.md
     - name: Keyboard

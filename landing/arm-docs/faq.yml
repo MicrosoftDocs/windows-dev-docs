@@ -8,7 +8,7 @@ metadata:
   author: mattwojo
   ms.author: mattwoj
   ms.reviewer: marcs
-  ms.date: 12/20/2023
+  ms.date: 01/12/2024
 title: Frequently asked questions about Windows on Arm
 summary: Use the following questions and answers to better understand the support for Arm-based devices running on Windows.
 
@@ -83,4 +83,10 @@ sections:
           Are there any trainings available for adding Arm support to a Windows app and running a VM for testing and debugging?
         answer: |
           Yes, see [Introduction to Windows on Arm - Port a .NET application to natively support Arm-based processors](/training/modules/port-windows-applications-to-natively-support-arm/).
+          
+      - question: |
+          Is CPU Sampling with the Windows Performance Recorder tool supported on ARM-based Hyper-V virtual machines?
+        answer: |
+          Yes, but the feature is currently only available in the [Windows Insider Preview](https://www.microsoft.com/windowsinsider/) Canary channel.  If you are willing to enroll your physical ARM device that is hosting your virtual machines in the Canary channel, CPU sampling will be supported in virtual machines; the feature is already supported on physical ARM devices. Sample usage: `wpr -start cpu`.
+      
 

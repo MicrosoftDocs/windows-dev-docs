@@ -55,7 +55,7 @@ The options allow you to customize the upgrade experience to meet your needs.
 | **--custom** | Arguments to be passed on to the installer in addition to the defaults.  |
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to upgrade to (if supported). |
-| **-scope** | Select installed package scope filter (user or machine). |
+| **--scope** | Select installed package scope filter (user or machine). |
 | **a, --architecture** | Select the architecture to install. |
 | **--installer-type**   |  Select the installer type to upgrade. See [supported installer types for WinGet client](./index.md#supported-installer-formats). |
 | **--locale** | Specifies which locale to use (BCP47 format). |
