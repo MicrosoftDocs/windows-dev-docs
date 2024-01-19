@@ -45,33 +45,30 @@ You can provide these images as .png files (no greater than 50 MB), each of whic
 
 ### 2:3 Poster art (720 x 1080 or 1440 x 2160 pixels)
 
-This is used as the main logo image for customers on Windows 10, Windows 11, and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. Your listing may not look good if you don't include it, and won't be consistent with other listings that customers see while browsing the Store. This image may also be used in search results or in editorially-curated collections.
+For games, this is used as the main logo image for customers on Windows 10, Windows 11, and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. This does not apply to apps. For information related to app icons, please refer to the section below on [1:1 App tile icon (300 x 300 pixels)](#11-app-tile-icon-300-x-300-pixels).
 
-This image should include your app’s name, and any text on the image should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom quarter of this image, so make sure you don't include text or key imagery there.
+Your listing may not look good if you don't include it, and it won't be consistent with other listings that customers see while browsing the Store. This image may also be used in search results or in editorially curated collections.
+
+This image can include your app’s name. If you have added the app name on the image, it should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom quarter of this image, so make sure you don't include text or key imagery there.
 
 > [!NOTE]
 > If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
 
 ### 1:1 box art (1080 x 1080 or 2160 x 2160 pixels)
 
-This image may appear in various Store pages for Windows 10, Windows 11, and Xbox devices, and if you don't provide the **2:3 Poster art** image it will be used as your main logo. This image should also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there. Be sure to include your app’s name in this image.
+For games, this image may appear in various Store pages for Windows 10, Windows 11, and Xbox devices, and if you don't provide the **2:3 Poster art** image it will be used as your main logo. This does not apply to apps. For information related to app icons, please refer to the section below on [1:1 App tile icon (300 x 300 pixels)](#11-app-tile-icon-300-x-300-pixels).
+
+This image can also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there.
 
 > [!NOTE]
 > If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
 
 ### 1:1 App tile icon (300 x 300 pixels)
 
-This image is required for proper display on Windows Phone 8.1 and earlier. If your previously-published app supports Windows Phone 8.1 or earlier, and you don't provide this image, those customers will see a blank icon with your app's listing. (This also applies to customers on Windows 10 or Windows 11 if your app only has packages targeting Windows Phone 8.1 or earlier.)
+This image will appear on various Store pages for Windows 10, Windows 11 and Xbox devices. We **strongly recommend** that you provide this image for your app. If you don’t provide this image, the Store will use the image from your app package.
 
-If your submission *only* includes UWP packages, you don’t need to provide this image (unless you check the box for  **For customers on Windows 10 or Windows 11 and Xbox, display uploaded logo images instead of the images from my packages**, as described in the next section).
-
-### Display only uploaded logo images in the Store
-
-You have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10, Windows 11, and Xbox devices and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store for customers on those platforms. (If your previously-published app supports earlier OS versions, those customers may still see images from your packages.)
-
-To have the Store use only the images you upload (for customers on Windows 10, Windows 11, and Xbox devices), and not use any images from your packages, check the box that says **For customers on Windows 10, Windows 11, and Xbox devices, display uploaded logo images instead of the images from my packages**.
-
-When you check this box, a new section called **Store display images** appears. Here, you can upload 3 images, including the **1:1 app tile icon (300 x 300 pixels)** size (if you check the box, the field to provide that image will move into this section). We recommend providing all three image sizes if you use this option: 300 x 300, 150 x 150, and 71 x 71 pixels. However, only the 300 x 300 size is required.
+> [!NOTE]
+> If you choose to upload a 1:1 app tile icon (300 x 300 pixels), which is recommended, the Store will prioritize this image over the one included in your app package.
 
 ## Trailers and additional assets
 
