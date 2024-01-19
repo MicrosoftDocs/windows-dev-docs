@@ -3,8 +3,8 @@ title: Windows Dev Kit 2023 update history
 description: History of updates available for the Windows Dev Kit 2023. 
 ms.date: 08/01/2023
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: mattwojo
 ms.author: mattwoj
 ---

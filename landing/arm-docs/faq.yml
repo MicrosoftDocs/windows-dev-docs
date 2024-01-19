@@ -2,8 +2,8 @@
 metadata:
   title: Frequently asked questions about support for Windows on Arm.
   description: Frequently asked questions about support for Arm-based devices on Windows.
-  ms.prod: windows
-  ms.technology: arm
+  ms.service: windows
+  ms.subservice: arm
   ms.topic: faq
   author: mattwojo
   ms.author: mattwoj

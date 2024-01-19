@@ -9,8 +9,8 @@ metadata:
   manager: jken
   ms.author: stwhi
   ms.date: 03/04/2021
-  ms.prod: dev-environment
-  ms.technology: windows-rust
+  ms.service: dev-environment
+  ms.subservice: windows-rust
   ms.topic: landing-page
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new

@@ -9,8 +9,8 @@ metadata:
   manager: jken
   ms.author: mattwoj
   ms.date: 09/15/2019
-  ms.prod: dev-environment
-  ms.technology: windows-python
+  ms.service: dev-environment
+  ms.subservice: windows-python
   ms.topic: landing-page
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new

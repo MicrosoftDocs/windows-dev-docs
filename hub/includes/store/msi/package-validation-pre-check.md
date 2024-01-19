@@ -1,7 +1,7 @@
 ---
 ms.date: 5/22/2023
 ms.topic: include
-ms.prod: windows
+ms.service: windows
 ---
 
 You can validate your app packages against [Microsoft Store policy](/windows/apps/publish/store-policies) section **10.2 Security** before you submit it for review. Manual validation helps reduce validation delay by fixing validation failures before you submit your app for review.
