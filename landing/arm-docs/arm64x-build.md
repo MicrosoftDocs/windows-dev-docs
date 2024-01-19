@@ -3,8 +3,8 @@ title: Build Arm64X Files
 description: Build Arm64X files for situations where one file is loaded into both x64/Arm64EC and Arm64 processes.
 ms.date: 08/08/2022
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: marswe
 ms.author: marcs
 ---

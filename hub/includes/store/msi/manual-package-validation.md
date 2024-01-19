@@ -1,7 +1,7 @@
 ---
 ms.date: 5/22/2023
 ms.topic: include
-ms.prod: windows
+ms.service: windows
 ---
 
 You can manually run each of the package validation tests on your local machine. This can help diagnose validation failures, or can be done in advance to ensure your app will pass once you're ready to submit your app.

@@ -3,7 +3,7 @@ ms.topic: include
 author: mattwojo
 ms.author: mattwoj
 ms.date: 08/31/2020
-ms.prod: uwp
+ms.service: uwp
 ---
 
 ## Support and feedback

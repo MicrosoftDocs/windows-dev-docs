@@ -3,8 +3,8 @@ title: Get started with Arm64EC apps for Windows 11 on Arm
 description: Build Arm64EC apps that run on Arm-powered devices with Windows 11.
 ms.date: 08/08/2022
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: marswe
 ms.author: marcs
 ---

@@ -3,8 +3,8 @@ title: Program Compatibility Troubleshooter on Arm
 description: Guidance for adjusting compatibility settings if your app isn't working correctly on Arm
 ms.date: 06/25/2021
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: mattwojo
 ms.author: mattwoj
 ms.reviewer: marcs
