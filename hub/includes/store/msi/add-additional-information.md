@@ -1,17 +1,21 @@
 The items described below help customers discover and understand your product.
 
-## Search terms
+:::image type="content" source="images/msiexe-additional-info.png" lightbox="images/msiexe-additional-info.png" alt-text="A screenshot of the Store listings section where you can provide additional information like keywords, copyright and trademark info for your app listing.":::
 
-*Character limit: 30 per search term*<br>*Search term limit: 7*
+## Keywords
 
-Search terms are single words or short phrases that help make your app discoverable in the Store when customers search using those terms. They are not displayed to customers.
+*Character limit: 40 per keyword*<br>*Keyword limit: 7*
 
-When adding search terms, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Only use search terms that are relevant to your app.
+Keywords are single words or short phrases that help make your app discoverable in the Store when customers search using those terms. They are not displayed to customers.
 
-:::image type="content" source="images/msiexe-additional-info.png" lightbox="images/msiexe-additional-info.png" alt-text="A screenshot of the Store listings section where you can provide additional information like search terms, copyright and trademark info for your app listing.":::
+When adding keywords, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Only use keywords that are relevant to your app.
+
+You can also use **AI-Generated keywords** for your app. You just need to enter the app description and AI will recommend you search terms for your app. You will see a card for recommended keywords near the keyword field. You can click on **Add All** to add all recommended keywords to your app submission, or you can manually add one recommended keyword at a time. 
+
+:::image type="content" source="images/msiexe-ai-generated-keywords.png" lightbox="images/msiexe-ai-generated-keywords.png" alt-text="A screenshot of the Store listings section where you can use AI-Generated keywords for your app listing.":::
 
 > [!WARNING]
-> In addition to the search term and character limits described above, you cannot use more than 21 unique words across all of your search terms.
+> In addition to the keyword and character limits described above, you cannot use more than 21 unique words across all of your keywords.
 
 ## Copyright and trademark info
 
