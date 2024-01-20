@@ -1,7 +1,7 @@
 ---
 title: PowerToys Group Policy
 description: Group policy documentation for PowerToys
-ms.date: 20/01/2024
+ms.date: 01/20/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
