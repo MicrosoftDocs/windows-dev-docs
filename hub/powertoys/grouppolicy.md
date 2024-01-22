@@ -1,7 +1,7 @@
 ---
 title: PowerToys Group Policy
 description: Group policy documentation for PowerToys
-ms.date: 11/12/2023
+ms.date: 01/20/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
@@ -278,37 +278,6 @@ This policy configures whether the action center notification for new updates is
 
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/SuspendNewUpdateToast`
 - Example value: `<enabled/>`
-
-<!-- This policy is implemented for later usage (PT v1.0 and later) and therefore inactive. (To make it working please update `src/runner/UpdateUtils.cpp`)
-#### Disable automatic update checks
-
-> Supported on PowerToys 0.68.0 or later.
-
-This policy allows you to disable automatic update checks running in the background. (The manual check in PT Settings is not affected by this policy.)
-
-- If enabled, the automatic update checks are disabled.
-- If disabled or not configured, the automatic update checks are enabled.
-
-##### Group Policy (ADMX) information
-
-- GP unique name: DisablePeriodicUpdateCheck
-- GP name: Disable automatic update checks
-- GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
-- GP scope: Computer and user
-- ADMX file name: PowerToys.admx
-
-##### Registry information
-
-- Path: Software\Policies\PowerToys
-- Name: DisablePeriodicUpdateCheck
-- Type: DWORD
-- Example value: `0x00000000`
-
-##### Intune information
-
-- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePeriodicUpdateCheck`
-- Example value: `<enabled/>`
--->
 
 ### PowerToys Run
 
