@@ -58,6 +58,8 @@ items:
         href: develop/ui-input/retrieve-hwnd.md
       - name: "Display WinRT UI objects that depend on CoreWindow"
         href: develop/ui-input/display-ui-objects.md
+      - name: "Choose the right visual tree viewer for your Windows app"
+        href: develop/ui-input/visual-tree.md
   - name: Distribute through Microsoft Store
     items:
       - name: Best practices for distributing Win32 app through Store
