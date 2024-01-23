@@ -1,7 +1,7 @@
 {
   "build": {
     "globalMetadata": {
-      "ms.subservice": "design",
+      "ms.technology": "design",
     "recommendations": true
     }
   }
