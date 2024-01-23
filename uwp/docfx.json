@@ -36,6 +36,12 @@
             }
         },
         "fileMetadata": {
+            "ms.subservice": {
+                "get-started/*.md": "get-started",
+                "debug-test-perf/*.md": "deployment",
+                "packaging/*.md": "deployment",
+                "updates-and-versions/*.md": "deployment"
+            },
             "titleSuffix": {
                 "app-resources/*.md": "UWP applications",
                 "app-to-app/*.md": "UWP applications",
@@ -83,24 +89,20 @@
                 "csharp-winrt/*.md": "platform",
                 "data-access/*.md": "data-and-files",
                 "data-binding/*.md": "data-and-files",
-                "debug-test-perf/*.md": "deployment",
                 "develop/*.md": "develop",
                 "devices-sensors/*.md": "peripherals-sensors-and-power",
                 "dotnet-native/*.md": "platform",
                 "enterprise/*.md": "app-types",
                 "files/*.md": "data-and-files",
                 "gaming/*.md": "games",
-                "get-started/*.md": "get-started",
                 "graphics-concepts/*.md": "platform",
                 "launch-resume/*.md": "processes-and-threading",
                 "maps-and-location/*.md": "people-and-places",
                 "monetize/*.md": "publish",
                 "networking/*.md": "communication",
-                "packaging/*.md": "deployment",
                 "porting/*.md": "porting-apps",
                 "security/*.md": "platform",
                 "threading-async/*.md": "processes-and-threading",
-                "updates-and-versions/*.md": "deployment",
                 "whats-new/*.md": "whats-new",
                 "winrt-components/*.md": "platform",
                 "xaml-platform/*.md": "platform",
