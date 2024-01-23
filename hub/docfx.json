@@ -76,12 +76,12 @@
         "apps/api-reference/**/*.md": "reunion-reference"
       },
       "ms.service": {
-        "apps/trace-processing/**/*.md": "traceprocessor"
+        "apps/trace-processing/**/*.md": "traceprocessor",
+        "apps/**/*.md": "windows-app-sdk"
       },
       "ms.prod":
       {
         "android/**/*.md": "dev-environment",
-        "apps/**/*.md": "reunion",
         "dev-environment/**/*.md": "dev-environment",
         "dev-home/*.md": "dev-environment",
         "dev-drive/*.md": "dev-environment",
