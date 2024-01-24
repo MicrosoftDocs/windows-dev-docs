@@ -73,11 +73,13 @@
         "apps/windows-app-sdk/remove-windows-app-sdk-versions.md": "deployment",
         "apps/windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md": "deployment",
         "apps/windows-app-sdk/tutorial-unpackaged-deployment.md": "deployment",
-        "apps/api-reference/**/*.md": "reunion-reference"
+        "apps/api-reference/**/*.md": "reunion-reference",
+        "web/**/*.md": "web"
       },
       "ms.service": {
         "apps/trace-processing/**/*.md": "traceprocessor",
-        "apps/**/*.md": "windows-app-sdk"
+        "apps/**/*.md": "windows-app-sdk",
+        "web/**/*.md": "windows"
       },
       "ms.prod":
       {
@@ -87,8 +89,7 @@
         "dev-drive/*.md": "dev-environment",
         "package-manager/**/*.md": "dev-environment",
         "powertoys/**/*.md": "dev-environment",
-        "python/**/*.md": "dev-environment",
-        "web/**/*.md": "windows"
+        "python/**/*.md": "dev-environment"
       },
       "ms.technology":
       {
@@ -103,8 +104,7 @@
         "dev-environment/rust/**/*.md": "windows-rust",
         "package-manager/**/*.md": "package-manager",
         "powertoys/**/*.md": "powertoys",
-        "python/**/*.md": "windows-python",
-        "web/**/*.md": "web"
+        "python/**/*.md": "windows-python"
       },
       "ms.collection":
       {
