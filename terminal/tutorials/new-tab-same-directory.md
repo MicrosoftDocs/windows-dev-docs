@@ -165,7 +165,7 @@ Once you've got the shell configured to tell the Terminal what the current direc
 
 ### Open a new tab with `duplicateTab`
 
-To open a new tab with the same path (and profile) as the currently active terminal, use the "Duplicate Tab" action. This is bound by default to <kbd>ctrl+shift+d</kbd>, as follows:
+To open a new tab with the same path (and profile) as the currently active terminal, use the "Duplicate Tab" action. This is bound by default to <kbd>Ctrl+Shift+D</kbd>, as follows:
 
 ```json
         { "command": "duplicateTab", "keys": "ctrl+shift+d" },

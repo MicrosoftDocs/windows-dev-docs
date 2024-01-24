@@ -13,7 +13,7 @@ The command palette lets you see which actions you can run inside Windows Termin
 
 ## Invoking the command palette
 
-You can invoke the command palette by typing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>. This can be customized by adding the `commandPalette` command to your key bindings.
+You can invoke the command palette by typing <kbd>Ctrl+Shift+P</kbd>. This can be customized by adding the `commandPalette` command to your key bindings.
 
 ```json
 { "command": "commandPalette", "keys": "ctrl+shift+p" }

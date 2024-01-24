@@ -31,31 +31,31 @@ You can create a selection by using the `selectAll` or `markMode` actions. The `
 | Key binding | Result |
 | ----------- | ------ |
 | Arrow keys | Move by character in the specified direction |
-| <kbd>Ctrl</kbd> + <kbd>Left</kbd> | Move to the beginning of the previous or existing word |
-| <kbd>Ctrl</kbd> + <kbd>Right</kbd> | Move to the end of the next or existing word |
+| <kbd>Ctrl+Left</kbd> | Move to the beginning of the previous or existing word |
+| <kbd>Ctrl+Right</kbd> | Move to the end of the next or existing word |
 | <kbd>Home</kbd> | Move to the beginning of the line |
 | <kbd>End</kbd> | Move to the end of the line |
 | <kbd>Pgup</kbd> | Move up by a page (viewport) |
 | <kbd>Pgdn</kbd> | Move down by a page (viewport) |
-| <kbd>Ctrl</kbd> + <kbd>Home</kbd> | Move to the beginning of the buffer |
-| <kbd>Ctrl</kbd> + <kbd>End</kbd> | Move to the end of the buffer |
+| <kbd>Ctrl+Home</kbd> | Move to the beginning of the buffer |
+| <kbd>Ctrl+End</kbd> | Move to the end of the buffer |
 | <kbd>Enter</kbd> | Copy the active selection |
 
-When in mark mode, you can use <kbd>Tab</kbd> or <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to the next or previous hyperlink in the buffer. Windows Terminal can automatically detect hyperlinks if [`experimental.detectUrls`](/windows/terminal/customize-settings/interaction#automatically-detect-urls-and-make-them-clickable) is enabled.
+When in mark mode, you can use <kbd>Tab</kbd> or <kbd>Shift+Tab</kbd> to navigate to the next or previous hyperlink in the buffer. Windows Terminal can automatically detect hyperlinks if [`experimental.detectUrls`](/windows/terminal/customize-settings/interaction#automatically-detect-urls-and-make-them-clickable) is enabled.
 
 Regardless of being in mark mode, you can expand an existing selection using the following non-configurable key bindings:
 
 | Key binding | Result |
 | ----------- | ------ |
 | <kbd>Shift</kbd> + Arrow keys | Expand by character in the specified direction |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd> | Expand to the beginning of the previous or existing word |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd> | Expand to the end of the next or existing word |
-| <kbd>Shift</kbd> + <kbd>Home</kbd> | Expand to the beginning of the line |
-| <kbd>Shift</kbd> + <kbd>End</kbd> | Expand to the end of the line |
-| <kbd>Shift</kbd> + <kbd>Pgup</kbd> | Expand up by a page (viewport) |
-| <kbd>Shift</kbd> + <kbd>Pgdn</kbd> | Expand down by a page (viewport) |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Home</kbd> | Expand to the beginning of the buffer |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>End</kbd> | Expand to the end of the buffer |
+| <kbd>Ctrl+Shift+Left</kbd> | Expand to the beginning of the previous or existing word |
+| <kbd>Ctrl+Shift+Right</kbd> | Expand to the end of the next or existing word |
+| <kbd>Shift+Home</kbd> | Expand to the beginning of the line |
+| <kbd>Shift+End</kbd> | Expand to the end of the line |
+| <kbd>Shift+Pgup</kbd> | Expand up by a page (viewport) |
+| <kbd>Shift+Pgdn</kbd> | Expand down by a page (viewport) |
+| <kbd>Ctrl+Shift+Home</kbd> | Expand to the beginning of the buffer |
+| <kbd>Ctrl+Shift+End</kbd> | Expand to the end of the buffer |
 
 Use the `toggleBlockSelection` action to transform the existing selection into a block selection.
 
@@ -87,4 +87,4 @@ Color schemes let you customize the selection color using the `selectionBackgrou
 
 ## Customizing word delimiters
 
-As mentioned above, double-clicking and using <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + Arrow keys (or <kbd>Ctrl</kbd> + Arrow keys when in mark mode) allow you to navigate by word. However, words can be separated by more than just whitespace. You can customize these word boundaries using the `wordDelimiters` global setting.
+As mentioned above, double-clicking and using <kbd>Ctrl+Shift</kbd> + Arrow keys (or <kbd>Ctrl</kbd> + Arrow keys when in mark mode) allow you to navigate by word. However, words can be separated by more than just whitespace. You can customize these word boundaries using the `wordDelimiters` global setting.
