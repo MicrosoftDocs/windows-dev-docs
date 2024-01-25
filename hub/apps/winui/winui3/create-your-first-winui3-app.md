@@ -2,7 +2,7 @@
 title: Create your first WinUI 3 (Windows App SDK) project
 description: In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
 ms.topic: article
-ms.date: 12/13/2022
+ms.date: 01/25/2024
 keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, app sdk, Windows App SDK, WinUI 3
 ms.author: stwhi
 author: stevewhims
@@ -32,7 +32,7 @@ Packaging is an important consideration of any Windows App SDK project. For more
 
 1. In Visual Studio, select **File** > **New** > **Project**.
 
-1. In the **New Project** dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **WinUI**, respectively.
+1. In the **New Project** dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **winui**, respectively.
 
 1. Select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**. That template creates a desktop app with a WinUI 3-based user interface. The generated project is configured with the package manifest and other support needed to build the app into an MSIX package (see [What is MSIX?](/windows/msix/overview)). For more information about this project template, see [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix).
 
