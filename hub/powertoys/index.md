@@ -292,7 +292,7 @@ The currently available utilities include:
 
 ## Languages
 
-Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish.
+Currently, PowerToys is available in the following languages: Arabic (Saudi Arabia), Chinese (simplified), Chinese (traditional), Czech, Dutch, English, Farsi (Persian), French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish, Ukrainian.
 
 _Note that new elements of the app might sometimes not yet be translated in the first version release._
 
