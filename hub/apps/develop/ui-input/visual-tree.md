@@ -22,12 +22,12 @@ The following table identifies several UI visualization tools and the UI framewo
 |UI platform/framework    |Visual Studio - [**Live Visual Tree**](#visual-studio---live-visual-tree)  |[Spy++](#spy)        |[Accessibility Insights](#accessibility-insights-for-windows---live-inspect)  |[Chromium UI DevTools](#chromium-ui-devtools-for-windows)  |
 |-------------------------|------------------|-------------|------------------------|---------------------|
 |[WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md)                   | ✅      | ❌           | ✅            | ❌                   |
-|[WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/)               | ✅      | ❌           | ✅            | ❌                   |
 |[WPF](/dotnet/desktop/wpf/)                      | ✅      | ❌           | ✅            | ❌                   |
-|[Xamarin.Forms](/xamarin/xamarin-forms/)            | ✅      | ❌           | ✅            | ❌                   |
+|[React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows)     | ✅      | ❌           | ✅            | ✅         |
 |[.NET MAUI](/dotnet/maui/)                | ✅      | ❌           | ✅            | ❌                   |
 |[WinForms](/dotnet/desktop/winforms/)                 | ✅      | ✅ | ✅            | ❌                   |
-|[React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows)     | ✅      | ❌           | ✅            | ✅         |
+|[WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/)               | ✅      | ❌           | ✅            | ❌                   |
+|[Xamarin.Forms](/xamarin/xamarin-forms/)            | ✅      | ❌           | ✅            | ❌                   |
 |[Classic Visual Basic apps](/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation) | ❌                | ✅ | ❌                      | ❌                   |
 |[Classic Win32 apps](/windows/win32/)        | ❌                | ✅ | ❌                      | ❌                   |
 |[Chromium-based apps](https://developer.chrome.com/docs/chromium)      | ❌                | ❌           | ❌                      | ✅         |
