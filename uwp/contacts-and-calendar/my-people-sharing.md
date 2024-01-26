@@ -1,7 +1,7 @@
 ---
 title: My People sharing
 description: Use My People sharing to let users pin contacts to their taskbar and stay in touch easily from anywhere in Windows.
-ms.date: 06/28/2017
+ms.date: 01/04/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 # My People sharing
 
 > [!IMPORTANT]
-> My people is no longer supported in Windows 11.
+> My people is no longer supported in Windows 11 and Windows 10 versions with KB5034203 applied.
 
 The My People feature allows users to pin contacts to their taskbar, enabling them to stay in touch easily from anywhere in Windows, no matter what application they are connected by. Now users can share content with their pinned contacts by dragging files from the File Explorer to their My People pin. They can also share to any contacts in the Windows contact store via the standard share charm. Keep reading to learn how to enable your application as a My People sharing target.
 
