@@ -1,4 +1,4 @@
-We recommend you to submit updates for your EXE or MSI apps through the Store. This lets new customers always get and install your latest app version.
+We recommend you submit updates for your EXE or MSI apps through the Store. This ensures that new customers always get and install your latest app version.
 
 The Store allows existing users to install in-app updates through your app, if your installer supports it. The Store does not provide these updates automatically or manually to existing users. 
 
