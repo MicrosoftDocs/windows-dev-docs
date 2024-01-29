@@ -16,11 +16,11 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "ms.service": "uwp",
       "recommendations": true,
       "ROBOTS": "INDEX, FOLLOW",
       "author": "GrantMeStrength",
       "ms.author": "jken",
-      "ms.prod": "uwp",
       "Search.Product": "eADQiWindows 10XVcnh",
       "uhfHeaderId": "MSDocsHeader-Windows",
       "breadcrumb_path":  "/windows/breadcrumbs/toc.json",
