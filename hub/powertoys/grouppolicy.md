@@ -1,7 +1,7 @@
 ---
 title: PowerToys Group Policy
 description: Group policy documentation for PowerToys
-ms.date: 01/20/2024
+ms.date: 01/28/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
@@ -222,10 +222,10 @@ This policy configures whether PowerToys per-user installation is allowed or not
 
 > Supported on PowerToys 0.68.0 or later.
 
-This policy configures whether automatic downloads of available updates are disabled or not. (On metered connections updates are never downloaded.)
+This policy configures whether the automatic download and installation of available updates is disabled or not. (On metered connections updates are never downloaded.)
 
-- If enabled, automatic downloads are disabled.
-- If disabled or not configured, the user is in control of automatic downloads setting.
+- If enabled, automatic download and installation is disabled.
+- If disabled or not configured, the user can control this in the settings.
 
 ##### Group Policy (ADMX) information
 
@@ -277,6 +277,64 @@ This policy configures whether the action center notification for new updates is
 ##### Intune information
 
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/SuspendNewUpdateToast`
+- Example value: `<enabled/>`
+
+#### Disable Action Center notification for new updates
+
+> Supported on PowerToys 0.78.0 or later.
+
+This policy configures whether the action center notification for new updates is shown or not.
+
+- If enabled, the notification is disabled.
+- If disabled or not configured, the user can control if the notification is shown or not.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: DisableNewUpdateToast
+- GP name: Disable Action Center notification for new updates
+- GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
+- GP scope: Computer and user
+- ADMX file name: PowerToys.admx
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: DisableNewUpdateToast
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableNewUpdateToast`
+- Example value: `<enabled/>`
+
+#### Do not show the release notes after updates
+
+> Supported on PowerToys 0.78.0 or later.
+
+This policy allows you to configure if the window with the release notes is shown after updates.
+
+- If enabled, the window with the release notes is not shown automatically.
+- If disabled or not configured, the user can control this in the settings of PowerToys.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: DoNotShowWhatsNewAfterUpdates
+- GP name: Disable Action Center notification for new updates
+- GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
+- GP scope: Computer and user
+- ADMX file name: PowerToys.admx
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: DoNotShowWhatsNewAfterUpdates
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DoNotShowWhatsNewAfterUpdates`
 - Example value: `<enabled/>`
 
 ### PowerToys Run
