@@ -173,7 +173,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Mouse without Borders screenshot.](../images/powertoys-mouse-without-borders-after-connect-2.png)](mouse-without-borders.md)
+        [![Mouse without Borders screenshot.](../images/pt-mouse-without-borders.png)](mouse-without-borders.md)
     :::column-end:::
     :::column span="2":::
         [Mouse Without Borders](mouse-without-borders.md) enables you to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
@@ -292,7 +292,7 @@ The currently available utilities include:
 
 ## Languages
 
-Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish.
+Currently, PowerToys is available in the following languages: Arabic (Saudi Arabia), Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish, Ukrainian.
 
 _Note that new elements of the app might sometimes not yet be translated in the first version release._
 
