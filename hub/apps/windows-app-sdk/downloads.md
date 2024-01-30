@@ -30,7 +30,7 @@ For all the latest Windows App SDK downloads, refer to the tables and links belo
 
 ## Preview release
 
-### Windows App SDK 1.4 Preview2
+### Windows App SDK 1.4 Preview
 
 | Version | Runtime downloads |
 |---|---|
@@ -39,10 +39,11 @@ For all the latest Windows App SDK downloads, refer to the tables and links belo
 
 ## Experimental release
 
-###  Windows App SDK 1.5 Experimental1
+###  Windows App SDK 1.5 Experimental
 
 | Version | Runtime downloads |
 |---|---|
+| [1.5 Experimental2 (1.5.240124002-experimental2) ](/windows/apps/windows-app-sdk/experimental-channel#version-15-experimental-150-experimental2) <br/> 01/25/2024 <br/> [Release notes](/windows/apps/windows-app-sdk/experimental-channel#version-15-experimental-150-experimental2) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.5-experimental2) | [Installer (x64)](https://aka.ms/windowsappsdk/1.5/1.5.240124002-experimental2/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.5/1.5.240124002-experimental2/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.5/1.5.240124002-experimental2/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.5/1.5.240124002-experimental2/Microsoft.WindowsAppRuntime.Redist.1.5.zip) |
 | [1.5 Experimental1 (1.5.231202003-experimental1) ](/windows/apps/windows-app-sdk/experimental-channel#version-15-experimental-150-experimental1) <br/> 12/06/2023 <br/> [Release notes](/windows/apps/windows-app-sdk/experimental-channel#version-15-experimental-150-experimental1) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.5-experimental1) | [Installer (x64)](https://aka.ms/windowsappsdk/1.5/1.5.231202003-experimental1/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.5/1.5.231202003-experimental1/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.5/1.5.231202003-experimental1/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.5/1.5.231202003-experimental1/Microsoft.WindowsAppRuntime.Redist.1.5.zip) |
 
 Depending on your development scenario, you might require the following:
