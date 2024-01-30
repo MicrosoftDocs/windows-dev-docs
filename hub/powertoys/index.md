@@ -173,7 +173,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Mouse without Borders screenshot.](../images/powertoys-mouse-without-borders-after-connect-2.png)](mouse-without-borders.md)
+        [![Mouse without Borders screenshot.](../images/pt-mouse-without-borders.png)](mouse-without-borders.md)
     :::column-end:::
     :::column span="2":::
         [Mouse Without Borders](mouse-without-borders.md) enables you to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
