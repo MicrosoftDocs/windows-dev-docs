@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, File Explorer, Monaco]
 > [!WARNING]
 > Enabling the preview handlers will override other preview handlers already installed - there have been reports of incompatibility between Outlook and the PDF Preview Handler.
 
-## Preview Pane previewers
+## Previewing files with Preview Pane
 
 Preview Pane is an existing feature in the Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, G-code and QOI. In addition to those, PowerToys also adds support for source code files for more than 150 file extensions.
 
@@ -35,7 +35,7 @@ Expand the **Source code files (Monaco)** section to change the following settin
 | Try to format the source for preview | Enable or disable formatting of the source code for json and xml files.<br />The original file stays unchanged. |
 | Maximum file size to preview | Maximum file size in kilobytes to preview. |
 
-### Enabling Preview Pane support
+### Enabling Preview Pane
 
 To enable preview support, set the extension to **On**.
 
@@ -58,7 +58,7 @@ Open Windows File Explorer, select the **View** tab in the Explorer ribbon, and 
 > [!NOTE]
 > It is not possible to change the background color of the preview pane, so if you are working with transparent images with white shapes, you may not be able to see them in the preview.
 
-## Thumbnail Previews
+## Previewing files with thumbnail previews
 
 To enable thumbnail preview support, set the extension to **On**.
 

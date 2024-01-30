@@ -6,7 +6,7 @@ ms.topic: article
 no-loc: [PowerToys, Windows, Mouse without borders]
 ---
 
-# Mouse Without Borders
+# Mouse Without Borders utility
 
 **Mouse Without Borders** enables you to control up to 4 computers from the same machine.
 
@@ -16,11 +16,11 @@ Features:
 - Share clipboard between the machines.
 - Transfer files between the machines.
 
-## How to use Mouse Without Borders
+## Using Mouse Without Borders
 
 With the latest version of PowerToys installed, you will see Mouse Without Borders listed in the PowerToys Settings, where you will need to do some initial configuration.
 
-### Initial configuration
+### Setting up Mouse Without Borders
 
 1. Open Mouse Without borders in PowerToys Settings to configure your connections.
 
@@ -40,7 +40,7 @@ It's possible to switch the order of the devices by dragging the device icon to 
 
    ![Animation of Mouse Without Borders settings configuring device layout.](../images/powertoys-mouse-without-borders-drag-device-layout.gif)
 
-### Install Mouse Without Borders as a service
+### Installing Mouse Without Borders as a service
 
 To allow Mouse Without Borders to control elevated applications or the lock screen from another computer, it's possible to run Mouse Without Borders as a service under the System account.
 

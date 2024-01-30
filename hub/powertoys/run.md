@@ -11,15 +11,6 @@ no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
 
 PowerToys Run is a quick launcher for power users that contains additional features without sacrificing performance. It is open source and modular for additional plugins.
 
-To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(Note that this shortcut can be changed in the settings window.)_
-
-> [!IMPORTANT]
-> PowerToys must be running in the background and Run must be enabled for this utility to work.
-
-![PowerToys Run demo opening apps.](../images/pt-powerrun-demo.gif)
-
-## Features
-
 PowerToys Run features include:
 
 - Search for applications, folders or files
@@ -33,6 +24,27 @@ PowerToys Run features include:
 - Calculate hashes
 - Generate GUIDs
 - Open web pages or start a web search
+
+## Using PowerToys Run
+
+To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(Note that this shortcut can be changed in the settings window.)_
+
+> [!IMPORTANT]
+> PowerToys must be running in the background and Run must be enabled for this utility to work.
+
+![PowerToys Run demo opening apps.](../images/pt-powerrun-demo.gif)
+
+### General keyboard shortcuts
+
+| Shortcut | Action |
+| :--- | :--- |
+| <kbd>Alt</kbd>+<kbd>Space</kbd> (default) | Show or hide PowerToys Run |
+| <kbd>Esc</kbd> | Hide PowerToys Run |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Open the selected application as administrator (only applicable to applications) |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> | Open the selected application as different user (only applicable to applications) |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> | Open containing folder in File Explorer (only applicable to applications and files) |
+| <kbd>Ctrl</kbd>+<kbd>C</kbd> | Copy path location (only applicable to folders and files) |
+| <kbd>Tab</kbd> | Navigate through the search results and context menu buttons |
 
 ## Settings
 
@@ -56,18 +68,18 @@ The following general options are available on the PowerToys Run settings page.
 | Preferred monitor position | If multiple displays are in use, PowerToys Run can be launched on:<br />• Primary display<br />• Display with mouse cursor<br />• Display with focused window |
 | App theme | Change the color theme used by PowerToys Run |
 
-### Plugin manager
+## Using plugins for PowerToys Run
 
 PowerToys Run uses a plugin system to provide different types of results. The settings page includes a plugin manager that allows you to enable/disable the various available plugins. By selecting and expanding the sections, you can customize the direct activation commands used by each plugin. In addition, you can select whether a plugin appears in global results and set additional plugin options where available.
 
 ![PowerToys Run Plugin Manager.](../images/pt-run-plugin-manager.png)
 
-#### Direct activation commands
+### Activating plugins with direct activation commands
 
 The plugins can be activated with a direct activation command so that PowerToys Run will only use the targeted plugin. The following table shows the direct activation commands assigned by default.
 
 > [!TIP]
-> You can change commands to fit your personal needs in the [plugin manager](#plugin-manager).
+> You can change commands to fit your personal needs in the [plugin manager](#using-plugins-for-powertoys-run).
 
 > [!IMPORTANT]
 > Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(` breaks global calculation queries starting with an opening brace.
@@ -98,26 +110,12 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | Windows Terminal profiles | `_` | `_ powershell` to list all profiles that contains 'powershell' in their name. |
 | [Window Walker](#window-walker-plugin) | `<` | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process. |
 
-## Using PowerToys Run
-
-### General keyboard shortcuts
-
-| Shortcut | Action |
-| :--- | :--- |
-| <kbd>Alt</kbd>+<kbd>Space</kbd> (default) | Show or hide PowerToys Run |
-| <kbd>Esc</kbd> | Hide PowerToys Run |
-| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Open the selected application as administrator (only applicable to applications) |
-| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> | Open the selected application as different user (only applicable to applications) |
-| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> | Open containing folder in File Explorer (only applicable to applications and files) |
-| <kbd>Ctrl</kbd>+<kbd>C</kbd> | Copy path location (only applicable to folders and files) |
-| <kbd>Tab</kbd> | Navigate through the search results and context menu buttons |
-
-### System commands
+### System commands plugin
 
 The Windows System Commands plugin provides a set of system level actions that can be executed.
 
 > [!TIP]
-> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, clear the **Use localized system commands instead of English ones** checkbox in the [plugin manager](#plugin-manager).
+> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, clear the **Use localized system commands instead of English ones** checkbox in the [plugin manager](#using-plugins-for-powertoys-run).
 
 | Command | Action | Note |
 | :--- | :--- | :--- |
@@ -166,7 +164,7 @@ If the program plugin's option "Include in global result" is not selected, inclu
 
 > [!IMPORTANT]
 > Please be aware of the different decimal and thousand delimiters in different locals.
-> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
+> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#using-plugins-for-powertoys-run).
 > If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
 > [!TIP]
@@ -377,7 +375,7 @@ To search by location you can use the following syntax:
 
 The Service plugin lets you search, start, stop and restart Windows services directly from the PowerToys Run search screen.
 
-To search for Windows services, [enable the plugin](#plugin-manager), open PowerToys Run and enter the name of the service.
+To search for Windows services, [enable the plugin](#using-plugins-for-powertoys-run), open PowerToys Run and enter the name of the service.
 Additionally, you can use the following syntax:
 
 - `!startup:automatic` to list all services with start type 'automatic'.

@@ -14,7 +14,7 @@ Quick Accent is an alternative way to type accented characters, useful when a ke
 
 In order to use the Quick Accent utility, open PowerToys Settings, select the **Quick Accent** tab, and turn on the **Enable** toggle.
 
-## How to activate
+## Activating Quick Accent
 
 Activate by holding the key for the character you want to add an accent to, then (while held down) press the activation key (Space key or Left / Right arrow keys). If you continue to hold, an overlay to choose the accented character will appear.
 
@@ -22,7 +22,7 @@ For example: If you want "à", press and hold <kbd>A</kbd> and press <kbd>Space<
 
 With the dialog enabled, keep pressing your activation key.
 
-## Character sets
+## Choosing which character sets to show
 
 You can limit the available characters by selecting a character set from the settings menu. Available character sets are:
 

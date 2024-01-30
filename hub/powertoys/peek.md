@@ -12,13 +12,13 @@ A system-wide utility for Windows that allows you to preview file content withou
 
 ![Screenshot of PowerToys Peek utility.](../images/powertoys-peek.png)
 
-## Preview a file
+## Previewing a file
 
 Select a file in the File Explorer and open the Peek preview using the activation / deactivation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Space</kbd>).
 
 Using <kbd>Left</kbd> and <kbd>Right</kbd> or <kbd>Up</kbd> and <kbd>Down</kbd>, you can scroll between all files in the current folder. Select multiple files in the File Explorer for previewing to scroll only between selected ones.
 
-## Pin preview window position and size
+## Pinning the position and size of a Peek preview window
 
 The Peek window adjusts its size based on the dimensions of the images being previewed. However, if you prefer to keep the window's size and position, you can utilize the pinning feature.
 
@@ -26,7 +26,7 @@ By selecting the pinning button located in the top right corner of the Peek wind
 
 Selecting the pinning button again will unpin the window. When unpinned, the Peek window will return to the default position and size when previewing the next file.
 
-## Open file with the default program
+## Opening a file with the default program
 
 Select **Open with** on the top or <kbd>Enter</kbd> to open the current file with the default program.
 

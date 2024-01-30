@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Paste as Plain Text, Win]
 ---
 
-# Paste as Plain Text
+# Paste As Plain Text utility
 
 PowerToys **Paste as Plain Text** enables you to paste text stored in your clipboard, excluding any text-formatting, using a quick key shortcut. Any formatting included with the clipboard text will be replaced with an unformatted version of the text.
 
@@ -15,11 +15,11 @@ PowerToys **Paste as Plain Text** enables you to paste text stored in your clipb
 
 ## Getting started
 
-### Enabling
+### Enabling Paste As Plain Text
 
 To start using Paste as Plain Text, enable it in the PowerToys Settings (Paste as Plain Text tab).
 
-### Activating
+### Activating Paste As Plain Text
 
 Execute the paste as plain text action with the activation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd>).
 

@@ -20,7 +20,7 @@ A PowerShell 7 module that detects command-line errors and suggests a relevant W
  - [PowerShell 7](/PowerShell/scripting/install/installing-PowerShell-on-windows)
  - [PowerShell Microsoft.WinGet.Client module](https://www.powershellgallery.com/packages/Microsoft.WinGet.Client)
 
-## Install the module
+## Installing Command Not Found
 
 To install the Command Not Found module, navigate to the Command Not Found page in PowerToys settings and select the **Install** button. Once the module installation has completed, PowerShell 7 experimental features needed for the module to function will be enabled:
 
@@ -37,6 +37,6 @@ Import-Module "<powertoys install dir>/WinGetCommandNotFound.psd1"
 
 **Note:** The profile file will be created if needed. Restart PowerShell session to use the module.
 
-## Uninstall the module
+## Uninstalling Command Not Found
 
 To uninstall the Command Not Found module, navigate to the Command Not Found page in PowerToys settings and select the **Uninstall** button. Once the module uninstall has completed, the block of commands previously added will be removed from the PowerShell profile file. 

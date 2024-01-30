@@ -17,13 +17,13 @@ PowerRename is a bulk renaming tool that enables you to:
 - Check expected rename results in a preview window before finalizing a bulk rename.
 - Undo a rename operation after it is completed.
 
-## Demo
+## An example of using PowerRename
 
 In this demo, all instances of the file name "foo" are replaced with "foobar". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command makes it possible to undo the last change.
 
 ![PowerRename Demo.](../images/powerrename-demo.gif)
 
-## PowerRename window
+## Using PowerRename
 
 After selecting files in Windows File Explorer, right-click and select **PowerRename** (which will appear only if enabled in PowerToys). The selected items will be displayed, along with search and replace values, a list of options, and a preview pane displaying results of the search and replace values entered.
 

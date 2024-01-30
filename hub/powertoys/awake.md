@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 PowerToys Awake is a tool for Windows designed to keep a computer awake without having to manage its [power & sleep settings](https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679). This can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
 
-## Getting started
+## Using PowerToys Awake
 
 You can use PowerToys Awake directly from PowerToys Settings or as a standalone executable. When it's running from PowerToys, it can be managed from PowerToys Settings or the system tray.
 
