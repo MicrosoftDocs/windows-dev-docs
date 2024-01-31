@@ -74,29 +74,8 @@
         "apps/windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md": "deployment",
         "apps/windows-app-sdk/tutorial-unpackaged-deployment.md": "deployment",
         "apps/api-reference/**/*.md": "reunion-reference",
-        "web/**/*.md": "web"
-      },
-      "ms.service": {
-        "apps/trace-processing/**/*.md": "traceprocessor",
-        "apps/**/*.md": "windows-app-sdk",
-        "web/**/*.md": "windows"
-      },
-      "ms.prod":
-      {
-        "android/**/*.md": "dev-environment",
-        "dev-environment/**/*.md": "dev-environment",
-        "dev-home/*.md": "dev-environment",
-        "dev-drive/*.md": "dev-environment",
-        "package-manager/**/*.md": "dev-environment",
-        "powertoys/**/*.md": "dev-environment",
-        "python/**/*.md": "dev-environment"
-      },
-      "ms.technology":
-      {
+        "web/**/*.md": "web",
         "android/**/*.md": "windows-android",
-        "apps/trace-processing/**/*.md": "",        
-        "apps/windows-app-sdk/notifications/**/*.md": "",
-        "dev-environment/**/*.md": "dev-environment",
         "dev-home/*.md": "windows-devhome",
         "dev-drive/*.md": "windows-devhome",
         "dev-environment/docker/**/*.md": "windows-nodejs",
@@ -105,6 +84,18 @@
         "package-manager/**/*.md": "package-manager",
         "powertoys/**/*.md": "powertoys",
         "python/**/*.md": "windows-python"
+      },
+      "ms.service": {
+        "apps/trace-processing/**/*.md": "traceprocessor",
+        "apps/**/*.md": "windows-app-sdk",
+        "web/**/*.md": "windows",
+        "android/**/*.md": "dev-environment",
+        "dev-environment/**/*.md": "dev-environment",
+        "dev-home/*.md": "dev-environment",
+        "dev-drive/*.md": "dev-environment",
+        "package-manager/**/*.md": "dev-environment",
+        "powertoys/**/*.md": "dev-environment",
+        "python/**/*.md": "dev-environment"
       },
       "ms.collection":
       {
