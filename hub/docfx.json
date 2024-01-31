@@ -73,37 +73,37 @@
         "apps/windows-app-sdk/remove-windows-app-sdk-versions.md": "deployment",
         "apps/windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md": "deployment",
         "apps/windows-app-sdk/tutorial-unpackaged-deployment.md": "deployment",
-        "apps/api-reference/**/*.md": "reunion-reference"
+        "apps/api-reference/**/*.md": "reunion-reference",
+        "android/**/*.md": "windows-android",
+        "dev-environment/javascript/**/*.md": "windows-javascript",
+        "dev-home/*.md": "windows-devhome",
+        "dev-drive/*.md": "windows-devhome",
+        "dev-environment/docker/**/*.md": "windows-nodejs",
+        "package-manager/**/*.md": "package-manager",
+        "dev-environment/rust/**/*.md": "windows-rust",
+        "python/**/*.md": "windows-python",
+        "powertoys/**/*.md": "powertoys"
       },
       "ms.service": {
         "apps/trace-processing/**/*.md": "traceprocessor",
-        "apps/**/*.md": "windows-app-sdk"
-      },
-      "ms.prod":
-      {
+        "apps/**/*.md": "windows-app-sdk",
         "android/**/*.md": "dev-environment",
-        "dev-environment/**/*.md": "dev-environment",
         "dev-home/*.md": "dev-environment",
         "dev-drive/*.md": "dev-environment",
         "package-manager/**/*.md": "dev-environment",
-        "powertoys/**/*.md": "dev-environment",
         "python/**/*.md": "dev-environment",
+        "powertoys/**/*.md": "dev-environment"
+      },
+      "ms.prod":
+      {
+        "dev-environment/**/*.md": "dev-environment",
         "web/**/*.md": "windows"
       },
       "ms.technology":
       {
-        "android/**/*.md": "windows-android",
         "apps/trace-processing/**/*.md": "",        
         "apps/windows-app-sdk/notifications/**/*.md": "",
         "dev-environment/**/*.md": "dev-environment",
-        "dev-home/*.md": "windows-devhome",
-        "dev-drive/*.md": "windows-devhome",
-        "dev-environment/docker/**/*.md": "windows-nodejs",
-        "dev-environment/javascript/**/*.md": "windows-javascript",
-        "dev-environment/rust/**/*.md": "windows-rust",
-        "package-manager/**/*.md": "package-manager",
-        "powertoys/**/*.md": "powertoys",
-        "python/**/*.md": "windows-python",
         "web/**/*.md": "web"
       },
       "ms.collection":
