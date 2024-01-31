@@ -92,11 +92,11 @@
         "dev-drive/*.md": "dev-environment",
         "package-manager/**/*.md": "dev-environment",
         "python/**/*.md": "dev-environment",
-        "powertoys/**/*.md": "dev-environment"
+        "powertoys/**/*.md": "dev-environment",
+        "dev-environment/**/*.md": "dev-environment"
       },
       "ms.prod":
       {
-        "dev-environment/**/*.md": "dev-environment",
         "web/**/*.md": "windows"
       },
       "ms.technology":
