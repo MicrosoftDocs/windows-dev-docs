@@ -5,7 +5,6 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.technology: windows-javascript
 keywords: Node.js, NodeJS, next.js, nuxt.js, gatsby, react, vue, windows, install, wsl, Set up windows, Dev Environment
 ms.localizationpriority: medium
 ms.date: 06/04/2021
