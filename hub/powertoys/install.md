@@ -84,8 +84,8 @@ In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will
 
 In case there are problems with uninstalling a version, there are cleanup scripts available:
 
-- <https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool>
-- <https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script>
+- <github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool>
+- <github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script>
 
 ## Community-driven install tools
 
