@@ -97,16 +97,6 @@
         "powertoys/**/*.md": "dev-environment",
         "python/**/*.md": "dev-environment"
       },
-      "ms.prod":
-      {
-        "android/**/*.md": "dev-environment",
-        "dev-environment/**/*.md": "dev-environment",
-        "dev-home/*.md": "dev-environment",
-        "dev-drive/*.md": "dev-environment",
-        "package-manager/**/*.md": "dev-environment",
-        "powertoys/**/*.md": "dev-environment",
-        "python/**/*.md": "dev-environment"
-      },
       "ms.collection":
       {
         "apps/design/controls/**/*.md": "windows11",
