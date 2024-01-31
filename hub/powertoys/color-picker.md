@@ -4,26 +4,26 @@ description: A system-wide color picking utility for Windows to pick colors from
 ms.date: 08/03/2023
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows, ColorPicker, Color, Picker]
+no-loc: [PowerToys, Windows, Color Picker, Color, Picker]
 ---
 
 # Color Picker utility
 
 A system-wide color picking utility for Windows to pick colors from any screen and copy it in a configurable format to the clipboard.
 
-![ColorPicker.](../images/pt-colorpicker-hex-editor.png)
+![Color Picker screenshot.](../images/pt-colorpicker-hex-editor.png)
 
 ## Getting started
 
 ### Enabling Color Picker
 
-Enable Color Picker in the **Color Picker** tab in PowerToys.
+Enable Color Picker in the **Color Picker** tab in PowerToys Settings.
 
 ### Activating Color Picker
 
 You can choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>) by changing **Activation Behavior**:
 
-:::image type="content" source="../images/pt-colorpicker-activation.gif" alt-text="ColorPicker behaviors.":::
+:::image type="content" source="../images/pt-colorpicker-activation.gif" alt-text="Color Picker behaviors.":::
 
 - **Open editor** opens an editor that lets you choose a color from the colors history, fine-tune a selected color, or pick a new color
 - **Pick a color and open editor** activates Color Picker, then opens an editor and copies the selected color to the clipboard after you've picked a color
@@ -48,7 +48,7 @@ Color Picker copies the selected color to the clipboard in the **Default color f
 
 The Color Picker editor stores a history of up to 20 picked colors and lets you copy them to the clipboard. You can choose which color formats are visible in the editor in **Color formats** in PowerToys Settings.
 
-The colored bar at the top of the Color Picker editors lets you:
+The colored bar at the top of the Color Picker editor lets you:
 
 * fine tune your chosen color
 * pick a similar color
@@ -57,7 +57,7 @@ To fine tune your chosen color, select the central color in the color bar. The f
 
 To choose a similar color, select one of the segments on the left and right edges of the color bar. The Color Picker editor suggests two lighter shades on the left of the bar, and two darker shades on the right of the bar. Selecting one of these similar colors adds that color to the colors history.
 
-![ColorPicker Editor window.](../images/pt-colorpicker-editor.gif)
+![Color Picker Editor window.](../images/pt-colorpicker-editor.gif)
 
 To remove a color from the colors history, right-click a color and select **Remove**.
 
@@ -75,7 +75,7 @@ Color Picker has the following settings:
 | **Show color name** | When turned on, this setting shows a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'. |
 | **Color formats** | This section lets you enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about **Color formats** in [Managing color formats](#managing-color-formats).
 
-![ColorPicker Settings screenshot.](../images/pt-colorpicker-settings.gif)
+![Color Picker Settings screenshot.](../images/pt-colorpicker-settings.gif)
 
 ### Managing color formats
 
@@ -142,5 +142,5 @@ Color formats can contain any words or characters that you prefer. For example, 
 ## Limitations
 
 - Color Picker can't display on top of the Start menu or Action Center, but you can still pick a color.
-- If you started the currently-focused application with an administrator elevation (**Run as administrator**), the Color Picker activation shortcut won't work, unless you also started PowerToys with an administrator elevation.
+- If you started the currently focused application with an administrator elevation (**Run as administrator**), the Color Picker activation shortcut won't work, unless you also started PowerToys with administrator elevation.
 - Wide Color Gamut (WCG) and High Dynamic Range (HDR) color formats are currently not supported.
