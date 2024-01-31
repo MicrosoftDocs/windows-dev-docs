@@ -50,13 +50,17 @@
       }
     },
     "fileMetadata": {
+      "ms.subservice": {
+        "arm-docs/*.md": "arm"
+      },
+      "ms.service": {
+        "arm-docs/*.md": "windows"
+      },
       "ms.prod":
       {
-        "arm-docs/*.md": "windows"
       },
       "ms.technology":
       {
-        "arm-docs/*.md": "arm"
       }
     },
     "template": [],

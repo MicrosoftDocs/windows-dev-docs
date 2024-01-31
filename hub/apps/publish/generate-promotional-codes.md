@@ -2,7 +2,7 @@
 description: You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.
 title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
-ms.date: 10/30/2022
+ms.date: 1/30/2024
 ms.topic: article
 keywords: windows 10, uwp, promo code, promo codes, token, tokens
 ms.localizationpriority: medium
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Generate promotional codes
 
 
-[Partner Center](https://partner.microsoft.com/dashboard) lets you generate promotional codes for an app or add-on that you have published in the Microsoft Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](beta-testing-and-targeted-distribution.md) with Windows 10. 
+[Partner Center](https://partner.microsoft.com/dashboard) lets you generate promotional codes for an app or add-on that you have published in the Microsoft Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](beta-testing-and-targeted-distribution.md).
 
 Each promotional code has a corresponding unique redeemable URL that a customer can click in order to redeem the code and install your app or add-on from the Microsoft Store.  Note that your app must pass the final publishing phase of the [app certification process](publish-your-app/app-certification-process.md?pivots=store-installer-msix) before customers can redeem a promotional code to install it.
 
@@ -19,19 +19,18 @@ You can generate single-use codes (and distribute one to each customer), or you 
 > [!TIP]
 > You can use [targeted push notifications](send-push-notifications-to-your-apps-customers.md) to distribute a promotional code to a segment of your customers. When doing so, be sure to use a promotional code that allows multiple customers to use the same code.
 
-
 ## Promotional code policies
 
 Be aware of the following policies for promotional codes:
 
--   You can generate promotional codes for any app or add-on (with the exception of subscription add-ons) that you published to the Microsoft Store. Customers can redeem the codes on any version of Windows that is supported by your app or add-on.
+-   You can generate promotional codes for any app or add-on (with the exception of subscription add-ons) that you have published to the Microsoft Store. Customers can redeem the codes on any version of Windows that is supported by your app or add-on.
 -   For games:
     - You can generate up to 5000 promotional codes per game.
     - Promotional codes generated for games never expire.
 - For all other types of apps or add-ons:
-    - In any six-month period, you may generate up to 1600 single use promotional codes, or any number of multiple use codes such that the total allowed redemptions does not exceed 1600.
-    - The 6 month period begins when you generate the first promotional code is created and lasts for 6 months regardless of whether or not you set an earlier expiration date on the codes.
-    - Any codes created during an existing six-month period will be count toward the number of codes generated within that period, even if they will expire after the period ends (For example, if you generate a code on the last day of the six-month window, it will be will be still be valid for a full 6 months from its creation.)
+    - In any six-month period, you may generate up to 1600 single-use promotional codes, or any number of multiple-use codes such that the total allowed redemptions does not exceed 1600.
+    - The 6 month period begins when you generate the first promotional code and lasts for 6 months regardless of whether or not you set an earlier expiration date on the codes.
+    - Any codes created during an existing 6 month period will count toward the number of codes generated within that period, even if they will expire after the period ends. For example, if you generate a code on the last day of the six-month window, it will be will be still be valid for a full 6 months from its creation.
 -   You must follow the requirements defined in the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including section **3k. Promotional Codes**.
 
 > [!NOTE]
@@ -70,7 +69,7 @@ To download a fulfilled promotional code order and distribute the codes to custo
     -   **Product name**: The name of the app or add-on that the code is associated with.
     -   **Order name**: The name of the order in which this code was generated.
     -   **Promotional code**: The code itself. This is a 5x5 string of alphanumeric characters separated by hyphens. For example: DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
-    -   **Redeemable URL**: The URL that a customer can use to redeem the code and install your app or add-on. The URL has the following format: https://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt;promotional_code>
+    -   **Redeemable URL**: The URL that a customer can use to redeem the code and install your app or add-on. The URL has the following format: `https://go.microsoft.com/fwlink/?LinkId=532540&mstoken=<promotional_code>`
     -   **Start date**: The date this code became active.
     -   **Expire date**: The date this code expires.
     -   **Code ID**: A unique ID for this code.
@@ -87,7 +86,7 @@ To download a fulfilled promotional code order and distribute the codes to custo
 
 ## Code redemption user experience
 
-After you distribute a promotional code (or its redeemable URL) to a customer, they can click the URL to get the product for free. Clicking the redeemable URL will launch an authenticated **Redeem your code** page at <https://account.microsoft.com/billing/redeem>. This page includes a description of the app the user is about to redeem. If the customer is not logged in with their Microsoft account, they may be prompted to do so. Your customer can also visit <https://account.microsoft.com/billing/redeem> and enter the code directly.
+After you distribute a promotional code (or its redeemable URL) to a customer, they can click the URL to get the product for free. Clicking the redeemable URL will launch an authenticated **Redeem your code** page at `https://account.microsoft.com/billing/redeem`. This page includes a description of the app the user is about to redeem. If the customer is not logged in with their Microsoft account, they may be prompted to do so. Your customer can also visit `https://account.microsoft.com/billing/redeem` and enter the code directly.
 
 > [!IMPORTANT]
 > We recommend that you don't distribute promotional codes to your customers until your product has completed the publishing process (even if you have selected **Make this product available but not discoverable in the Store**). Customers will see an error if they try to use a promotional code for a product which hasn't been published yet.
@@ -113,4 +112,3 @@ You can also [download](#download-and-distribute-promotional-codes) an order fro
 ## Distribute promotional codes for transitioning users from desktop to packaged app
 
 When you convert your current Win32 application into an MSIX package for Store distribution, you have the option to distribute promotional codes via email to your current users. This enables them to seamlessly migrate to your packaged app while retaining access to the features obtained through their initial purchase.
- 

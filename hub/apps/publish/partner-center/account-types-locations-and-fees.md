@@ -1,7 +1,7 @@
 ---
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
-ms.date: 01/11/2024
+ms.date: 01/15/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -178,8 +178,7 @@ In the following table, the **Registration fee** is the current cost to register
 | Paraguay                          | 19 USD              | 99 USD           |  
 | Peru                              | 54 PEN              | 280 PEN          |  
 | Philippines                       | 832 PHP             | 4400 PHP         |  
-| Poland                            | 59 PLN              | 280 PLN          |  
-| Portugal                          | 14 EUR              | 75 EUR           |  
+| Poland                            | 59 PLN              | 280 PLN          |    
 | Qatar                             | 69 QAR              | 360 QAR          |  
 | Romania                           | 14 EUR              | 75 EUR           |  
 | Russia                            | 626 RUB             | 3000 RUB         |  
