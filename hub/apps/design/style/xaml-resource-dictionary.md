@@ -9,7 +9,6 @@ label: ResourceDictionary and XAML resource references
 template: detail.hbs
 ms.date: 01/24/2022
 ms.topic: conceptual
-ms.custom: contperf-fy21q1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:

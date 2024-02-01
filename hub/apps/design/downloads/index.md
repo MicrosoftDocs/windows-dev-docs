@@ -3,7 +3,7 @@ description: Get the latest downloads and tools for Windows apps user interface 
 title: Design toolkits and samples for Windows apps
 ms.date: 01/11/2022
 ms.topic: conceptual
-ms.custom: RS5, seo-windows-dev
+ms.custom: RS5
 ---
 
 # Design toolkits and samples for Windows apps
