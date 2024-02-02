@@ -5,7 +5,6 @@ ms.date: 01/28/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: contperf-fy21q2
 dev_langs:
   - csharp
   - cppwinrt

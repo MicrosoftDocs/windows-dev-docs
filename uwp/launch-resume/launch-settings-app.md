@@ -1,4 +1,4 @@
-﻿---
+---
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app using the ms-settings URI scheme.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
@@ -6,7 +6,6 @@ ms.date: 03/21/2023
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: contperf-fy21q2
 dev_langs:
   - csharp
   - cppwinrt

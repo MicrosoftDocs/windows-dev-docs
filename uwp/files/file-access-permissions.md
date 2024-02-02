@@ -11,7 +11,6 @@ dev_langs:
   - cppwinrt
   - cpp
   - javascript
-ms.custom: contperf-fy21q1
 ---
 
 # File access permissions

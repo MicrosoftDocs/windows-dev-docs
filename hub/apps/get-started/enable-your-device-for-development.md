@@ -5,7 +5,6 @@ description: Activate Developer Mode on your PC to develop apps.
 keywords: Developer mode, Visual Studio, developer license, enable device
 ms.date: 10/12/2022
 ms.topic: article
-ms.custom: seo-windows-dev
 ---
 
 # Enable your device for development
