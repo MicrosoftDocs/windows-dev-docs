@@ -24,3 +24,11 @@ Enter the URL of the web page where your customers can go for support with your 
 
 > [!IMPORTANT]
 > The **Support contact info** field is required if your app or game is available on Xbox. Otherwise, it is optional (but recommended).
+
+### Phone number and address info
+
+Enter Phone number, Address, Apartment / Suite, City, State / Province, Country and Postal code so customers can reach out to you in case of any concern or dispute. 
+
+> [!IMPORTANT]
+> Businesses / Company accounts offering products in France market need to ensure to provide this info for compliance with France Consumer Protection Laws and Regulations 2023 - 2024. This is optional for individual developers.
+
