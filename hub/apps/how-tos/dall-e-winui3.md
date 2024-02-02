@@ -91,7 +91,7 @@ private async void SendButton_Click(object sender, RoutedEventArgs e)
         {
             Prompt = userInput,
             N = 2,
-            Size = StaticValues.ImageStatics.Size.Size256,
+            Size = StaticValues.ImageStatics.Size.Size256, // StaticValues is available as part of the Betalgo OpenAI SDK
             ResponseFormat = StaticValues.ImageStatics.ResponseFormat.Url,
             User = "TestUser"
         });
@@ -154,7 +154,6 @@ In this guide, you've learned how to:
 
 ## Related
 
-- [WinUI 3 Documentation](https://docs.microsoft.com/en-us/windows/apps/winui/)
 - [OpenAI API Documentation](https://platform.openai.com/docs/)
 - [Windows App SDK Samples](../get-started/samples.md)
 - [Betalgo/OpenAI SDK](https://github.com/betalgo/openai)
