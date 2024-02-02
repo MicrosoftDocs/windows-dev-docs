@@ -86,7 +86,6 @@ private async void SendButton_Click(object sender, RoutedEventArgs e)
     if (!string.IsNullOrEmpty(userInput))
     {
         InputTextBox.Text = string.Empty;
-                
         var imageResult = await openAiService.Image.CreateImage(new ImageCreateRequest
         {
             Prompt = userInput,
@@ -121,6 +120,8 @@ private void AddImageMessageToConversation(string imageUrl)
 }
 
 ```
+
+The `openAiService.Image.CreateImage()` method is responsible for calling OpenAI's DALL-E API. Refer to the [Betalgo OpenAI SDK wiki](https://github.com/betalgo/openai/wiki/Dall-E) for more usage examples.
 
 Note the presence of `ImageUrl` in the `MessageItem` class. This is a new property:
 
