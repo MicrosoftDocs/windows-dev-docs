@@ -56,7 +56,7 @@ ___
 
 ## AltGr aliasing
 
-This allows you to control if Windows Terminal will treat <kbd>ctrl+alt</kbd> as an alias for <kbd>AltGr</kbd>.
+This allows you to control if Windows Terminal will treat <kbd>Ctrl+Alt</kbd> as an alias for <kbd>AltGr</kbd>.
 
 **Property name:** `altGrAliasing`
 

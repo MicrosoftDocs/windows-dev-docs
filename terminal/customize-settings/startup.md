@@ -13,7 +13,7 @@ The properties listed below affect the entire terminal window, regardless of the
 
 ## Default profile
 
-Set the default profile that opens by typing <kbd>ctrl+shift+t</kbd>, typing the key binding assigned to `newTab`, running `wt new-tab` without specifying a profile, or clicking the '+' icon.
+Set the default profile that opens by typing <kbd>Ctrl+Shift+T</kbd>, typing the key binding assigned to `newTab`, running `wt new-tab` without specifying a profile, or clicking the '+' icon.
 
 **Property name:** `defaultProfile`
 

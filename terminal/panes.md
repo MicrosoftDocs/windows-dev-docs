@@ -15,7 +15,7 @@ Panes give you the ability to run multiple command-line applications next to eac
 
 ### Using the keyboard
 
-You can either create a new vertical or horizontal pane in Windows Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. Using directional splits `up`, `right`, `down`, or `left` gives more options for where the new pane can go. `right` and `down` are equivalent to `vertical` and `horizontal`, whereas `up` and `left` allow you to put the new pane above and to the left of the focused pane respectively. To create a new vertical pane of your default profile, you can press the <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>+</kbd> key combination. For a horizontal pane of your default profile, you can use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd>.
+You can either create a new vertical or horizontal pane in Windows Terminal. Splitting vertically will open a new pane to the right of the focused pane and splitting horizontally will open a new pane below the focused pane. Using directional splits `up`, `right`, `down`, or `left` gives more options for where the new pane can go. `right` and `down` are equivalent to `vertical` and `horizontal`, whereas `up` and `left` allow you to put the new pane above and to the left of the focused pane respectively. To create a new vertical pane of your default profile, you can press the <kbd>Alt+Shift++</kbd> key combination. For a horizontal pane of your default profile, you can use <kbd>Alt+Shift+-</kbd>.
 
 ![Windows Terminal create pane](./images/open-panes.gif)
 _Configuration: [Raspberry Ubuntu](./custom-terminal-gallery/raspberry-ubuntu.md)_
@@ -34,7 +34,7 @@ If you would like to change these key bindings, you can create new ones using th
 
 ### Using the new tab button and dropdown menu
 
-If you'd like to open a new pane of your default profile, you can hold the <kbd>alt</kbd> key and click the new tab button. If you'd like to open a new pane through the dropdown menu, you can hold <kbd>alt</kbd> and click on your desired profile. Both of these options will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
+If you'd like to open a new pane of your default profile, you can hold the <kbd>Alt</kbd> key and click the new tab button. If you'd like to open a new pane through the dropdown menu, you can hold <kbd>Alt</kbd> and click on your desired profile. Both of these options will `auto` split the active window or pane into a new pane of the selected profile. The `auto` split mode splits in the direction that has the longest edge to create a pane.
 
 ![Windows Terminal dropdown pane](./images/alt-click-pane.gif)
 
@@ -152,7 +152,7 @@ After two panes on a tab have been created, the split orientation of those panes
 
 ## Resizing a pane
 
-You can adjust the size of your panes by holding <kbd>Alt</kbd>+<kbd>Shift</kbd> and using your arrow keys to resize the focused pane.
+You can adjust the size of your panes by holding <kbd>Alt+Shift</kbd> and using your arrow keys to resize the focused pane.
 
 ![Windows Terminal resize pane](./images/resize-panes.gif)
 
@@ -167,7 +167,7 @@ To customize this key binding, you can add new ones using the `resizePane` actio
 
 ## Closing a pane
 
-You can close the focused pane by typing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd>. If you only have one pane, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd> will close the tab. As always, closing the last tab will close the window.
+You can close the focused pane by typing <kbd>Ctrl+Shift+W</kbd>. If you only have one pane, <kbd>Ctrl+Shift+W</kbd> will close the tab. As always, closing the last tab will close the window.
 
 ![Windows Terminal close panes](./images/close-panes.gif)
 
@@ -194,7 +194,7 @@ This can be done by using the `togglePaneZoom` command.
 ```
 
 > [!NOTE]
-> The `togglePaneZoom` action is not bound to any keys by default, but it can be accessed through the [command palette](./command-palette.md), which is bound to <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> by default.
+> The `togglePaneZoom` action is not bound to any keys by default, but it can be accessed through the [command palette](./command-palette.md), which is bound to <kbd>Ctrl+Shift+P</kbd> by default.
 
 ## Marking a pane as read-only
 
