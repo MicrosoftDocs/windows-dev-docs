@@ -25,7 +25,8 @@
         "files": [
           "**/*.png",
           "**/*.gif",
-          "**/*.jpg"
+          "**/*.jpg",
+          "**.*.svg"
         ],
         "exclude": [
           "**/obj/**",
@@ -43,14 +44,20 @@
       "breadcrumb_path": "/windows/terminal/breadcrumb/toc.json",
       "uhfHeaderId": "MSDocsHeader-Windows",
       "keywords": "Windows Terminal, terminal, windows shell, terminal docs",
-      "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/terminal",
       "feedback_product_url": "https://github.com/Microsoft/terminal/issues",
+      "feedback_system": "OpenSource",
+      "open_source_feedback_contributorGuideUrl": "https://learn.microsoft.com/contribute/content/how-to-write-quick-edits",
+      "open_source_feedback_issueTitle": "",
+      "open_source_feedback_issueLabels": "needs-triage",
+      "open_source_feedback_issueUrl": "https://github.com/MicrosoftDocs/terminal/issues/new?template=customer-feedback.yml",
+      "open_source_feedback_productLogoLightUrl": "https://learn.microsoft.com/windows/terminal/images/terminal.svg",
+      "open_source_feedback_productLogoDarkUrl": "/images/terminal.svg",
+      "open_source_feedback_productName": "Windows Terminal",     
       "ms.service": "dev-environment",
       "ms.subservice": "windows-terminal",
       "searchScope": ["terminal"],
-      "ms.author": "cinnamon",
-      "author": "cinnamon-msft",
+      "ms.author": "mattwoj",
+      "author": "mattwojo",
       "adobe-target": true
     },
     "fileMetadata": {},

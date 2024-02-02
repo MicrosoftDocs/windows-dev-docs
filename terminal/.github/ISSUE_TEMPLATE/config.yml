@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report issues, bugs, or file feature requests related to Windows Terminal
+    url: https://github.com/microsoft/terminal/issues
+    about: Windows Terminal product repo (for reporting issues, bugs, or feature requests)
