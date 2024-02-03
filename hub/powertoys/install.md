@@ -55,11 +55,11 @@ Here are the common commands you may want:
 
 | Command  | Abbreviation | Function     |
 |----------|--------------| ------------ |
-| /quiet   | /q           | Silent install |
-| /silent  | /s           | Silent install |
-| /passive |              | progress bar only install |
-| /layout  |              | create a local image of the bootstrapper |
-| /log     | /l           | log to a specific file |
+| **/quiet**   | **/q**       | Silent install |
+| **/silent**  | **/s**       | Silent install |
+| **/passive** |              | progress bar only install |
+| **/layout**  |              | create a local image of the bootstrapper |
+| **/log**     | **/l**       | log to a specific file |
 
 ### Extracting the MSI from the bundle
 
