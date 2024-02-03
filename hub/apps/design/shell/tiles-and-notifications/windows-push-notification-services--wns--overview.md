@@ -5,7 +5,6 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 09/28/2020
 ms.topic: article
-ms.custom: contperfq1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

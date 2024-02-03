@@ -7,8 +7,7 @@ keywords: windows win32, windows app development, Windows App SDK, stable
 ms.author: stwhi
 author: stevewhims
 ms.custom:
-- seo-windows-dev
-- kr2b-contr-experiment
+  - kr2b-contr-experiment
 ---
 
 # Install tools for the Windows App SDK

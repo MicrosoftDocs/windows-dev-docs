@@ -32,3 +32,10 @@ Enter the URL of the web page for your app. This URL must point to a page on you
 *Recommended*
 
 Enter the URL of the web page where your customers can go for support with your app, or an email address that customers can contact for support. We recommend including this info for all submissions, so that your customers know how to get support if they need it. Note that Microsoft does not provide your customers with support for your app.
+
+### Phone number and address info
+
+Enter Phone number, Address, Apartment / Suite, City, State / Province, Country and Postal code so customers can reach out to you in case of any concern or dispute. 
+
+> [!IMPORTANT]
+> Businesses / Company accounts offering products in France market need to ensure to provide this info for compliance with France Consumer Protection Laws and Regulations 2023 - 2024. This is optional for individual developers.
