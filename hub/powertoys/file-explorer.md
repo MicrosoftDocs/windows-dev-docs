@@ -14,13 +14,13 @@ no-loc: [PowerToys, Windows, File Explorer, Monaco]
 
 ## Preview Pane previewers
 
-Preview Pane is an existing feature in the Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, G-code and QOI. In addition to those, PowerToys also adds support for source code files for more than 150 file extensions.
+Preview Pane is an existing feature in Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, G-code and QOI. In addition to those, PowerToys also adds support for source code files for more than 150 file extensions.
 
 Preview Pane supports:
 
 - SVG images (.svg)
 - Markdown files (.md)
-- Source code files (.cs, .cpp, .rs, ...)
+- Source code files (.cs, .cpp, .rs, …)
 - PDF files (.pdf)
 - G-code files (.gcode)
 - QOI images (.qoi)
