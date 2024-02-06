@@ -206,7 +206,7 @@ It's time to add the code to our code-behind file that will use the Azure.AI.Ope
     The `GetChatCompletionsAsync` method returns a `Response<ChatCompletions>` object containing the response from the API. We'll get the `Message.Content` response text from the first `Choice` in the `response.Value.Choices` collection and display it in a control at the bottom of the UI.
 
    > [!NOTE]
-   > It would be a good idea to add some error handling to the `GetRecommendationAsync` method to handle any exceptions that might be thrown by the API call. We've left that out of this example for simplicity.
+   > It's' a good idea to add error handling to the `GetRecommendationAsync` method to handle any exceptions that might be thrown by the API call. We've left that out of this example for simplicity.
 
 1. The following `using` statements at the top of the **MainPage.xaml.cs** file are also needed for the code we added in this section:
 
