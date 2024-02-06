@@ -25,7 +25,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 > There are some shortcut keys that are reserved for the operating system or cannot be replaced. Keys that cannot be remapped include:
 >
 > - <kbd>⊞ Win</kbd>+<kbd>L</kbd> and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> cannot be remapped as they are reserved by the Windows OS.
-> - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd> ~ <kbd>F12</kbd> (and F13 ~ F24) keys can be mapped.
+> - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd> ~ <kbd>F12</kbd> (and <kbd>F13</kbd> ~ <kbd>F24</kbd>) keys can be mapped.
 > - <kbd>Pause</kbd> will only send a single key-down event. So mapping it against the backspace key, for instance, and pressing and holding will only delete a single character.
 > - <kbd>⊞ Win</kbd>+<kbd>G</kbd> often opens the Xbox Game Bar, even when reassigned. Game Bar can be disabled in [Windows Settings](ms-settings:gaming-gamebar).
 
@@ -135,7 +135,7 @@ Keyboard Manager uses process-names (not application names) to target apps. For 
 | Microsoft Edge  | msedge.exe    |
 | OneNote         | onenote.exe   |
 | Outlook         | outlook.exe   |
-| Teams           | Teams.exe     |
+| Teams           | ms-teams.exe  |
 | Adobe Photoshop | Photoshop.exe |
 | File Explorer   | explorer.exe  |
 | Spotify Music   | spotify.exe   |
