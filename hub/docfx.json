@@ -24,9 +24,15 @@
       "Search.Product": "eADQiWindows 10XVcnh",
       "uhfHeaderId": "MSDocsHeader-Windows",
       "breadcrumb_path":  "/windows/breadcrumbs/toc.json",
-      "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/windows-uwp",
       "feedback_product_url": "https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app",
+      "feedback_system": "OpenSource",
+      "open_source_feedback_contributorGuideUrl": "https://learn.microsoft.com/contribute/content/how-to-write-quick-edits",
+      "open_source_feedback_issueTitle": "",
+      "open_source_feedback_issueLabels": "needs-triage",
+      "open_source_feedback_issueUrl": "https://github.com/MicrosoftDocs/windows-dev-docs/issues/new?template=customer-feedback.yml",
+      "open_source_feedback_productLogoLightUrl": "https://learn.microsoft.com/windows/windows11.svg",
+      "open_source_feedback_productLogoDarkUrl": "https://learn.microsoft.com/windows/windows11.svg",
+      "open_source_feedback_productName": "Windows developer",  
       "zone_pivot_group_filename": "apps/zone-pivot-groups.json",
       "_op_documentIdPathDepotMapping": {
           "./": {
