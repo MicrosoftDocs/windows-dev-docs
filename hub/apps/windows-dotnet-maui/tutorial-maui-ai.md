@@ -14,7 +14,7 @@ In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 > * Create a simple user interface for your .NET MAUI app
-> * Reference and bootstrap the Azure.AI.OpenAI library
+> * Reference and bootstrap the **Azure.AI.OpenAI** library
 > * Use an API key to link your app to an OpenAI API account
 > * Make calls to the OpenAI chat APIs to get recommendations
 
@@ -97,7 +97,7 @@ The event handlers are all marked as `async` because we will be making asynchron
 
 Users can enter their location in the `Entry` control and click one of the buttons to get recommendations for restaurants, hotels, or attractions. The `Label` control at the bottom of the UI will display the results.
 
-Next, let's add the Azure.AI.OpenAI library to the project and get it ready to make some API calls.
+Next, let's add the **Azure.AI.OpenAI** library to the project and get it ready to make some API calls.
 
 ## Reference and initialize the Azure.AI.OpenAI library
 
