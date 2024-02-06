@@ -1,22 +1,22 @@
 ---
 title: Tutorial--Create a recommendation app with .NET MAUI and ChatGPT
-description: In this tutorial, you'll learn how to create a .NET MAUI app for Windows in Visual Studio that calls OpenAI's ChatGPT APIs to provide recommendations based on the user's location.
+description: In this tutorial, you'll learn how to create a .NET MAUI app for Windows in Visual Studio that calls OpenAI's ChatGPT APIs to provide recommendations based on a location entered by the user.
 ms.topic: tutorial
-ms.date: 04/26/2023
+ms.date: 02/66/2024
 ms.custom: template-tutorial
 ---
 
 # Tutorial: Create a recommendation app with .NET MAUI and ChatGPT
 
-In this tutorial, you'll learn how to create a .NET MAUI app for Windows in Visual Studio that calls OpenAI's ChatGPT APIs to provide recommendations based on the user's location. The app will have a simple UI that allows the user to enter a location and get recommendations for restaurants, hotels, and attractions.
+In this tutorial, you'll learn how to create a .NET MAUI app for Windows in Visual Studio that calls OpenAI's ChatGPT APIs to provide recommendations based on a location entered by the user. The app will have a simple UI that allows the user to enter a location and get recommendations for restaurants, hotels, and attractions.
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 > * Create a simple user interface for your .NET MAUI app
-> * Reference and bootstrap the ChatGptNet library
+> * Reference and bootstrap the Azure.AI.OpenAI library
 > * Use an API key to link your app to an OpenAI API account
-> * Make calls to the ChatGptNet library to get recommendations
+> * Make calls to the OpenAI chat APIs to get recommendations
 
 ## Prerequisites
 
@@ -91,58 +91,32 @@ We're going to start by creating a new .NET MAUI project in Visual Studio. We'll
     }
     ```
 
-The event handlers are all marked as `async` because we will be making asynchronous calls to the ChatGptNet library. Now when you run the app, you should see the following UI:
+The event handlers are all marked as `async` because we will be making asynchronous calls to the Azure.AI.OpenAI library. Now when you run the app, you should see the following UI:
 
 ![Windows .NET MAUI app with the UI for providing recommendations.](images/maui-chatgpt-create-the-ui.png)
 
 Users can enter their location in the `Entry` control and click one of the buttons to get recommendations for restaurants, hotels, or attractions. The `Label` control at the bottom of the UI will display the results.
 
-Next, let's add the ChatGptNet library to the project and get it ready to make some API calls.
+Next, let's add the Azure.AI.OpenAI library to the project and get it ready to make some API calls.
 
-## Reference and bootstrap the ChatGptNet library
+## Reference and initialize the Azure.AI.OpenAI library
 
-To call OpenAI's ChatGPT APIs, we're going to use an open-source library from the .NET community called [ChatGPT for .NET (ChatGptNet)](https://github.com/marcominerva/ChatGptNet). This library provides a simple interface for making calls to the OpenAI API. We'll add the library to our project and bootstrap it with our API key.
+To call OpenAI's ChatGPT APIs, we're going to use an pre-release NuGet package from the Microsoft Azure team called [Azure.AI.OpenAI](https://www.nuget.org/packages/Azure.AI.OpenAI/). This library provides .NET APIs for making calls to both the OpenAI and Azure OpenAI APIs. We'll add the library to our project and bootstrap it with our API key.
 
 1. Open the **Package Manager Console** from the **Tools** menu in Visual Studio.
-1. Install the ChatGptNet library by running the following command:
+1. Install the Azure.AI.OpenAI library by running the following command. The `IncludePrerelease` flag is required because the library is still in preview:
 
     ```powershell
-    Install-Package ChatGptNet
+    Install-Package Azure.AI.OpenAI -IncludePrerelease
     ```
 
-1. Open **MauiProgram.cs** and add the following code to the CreateMauiApp method before the `#if DEBUG` statement:
+1. Open **MainPage.xaml.cs**, the code-behind file for the **MainPage**. Add the following code to the top of the file to reference the Azure.AI.OpenAI library and create a variable to hold your OpenAI API key. Update the constructor to call the `MainPage_Loaded` method when the page is loaded, and add the `MainPage_Loaded` method to initialize the Azure OpenAI library:
 
     ```csharp
-    builder.Services.AddChatGpt(options =>
-        {
-            options.ApiKey = "<your-api-key-here>";
-            options.Organization = null; // Optional
-            options.DefaultModel = ChatGptModels.Gpt35Turbo; // Default: ChatGptModels.Gpt35Turbo
-            options.MessageLimit = 10; // Default: 10
-            options.MessageExpiration = TimeSpan.FromMinutes(5); // Default: 1 hour
-        });
-    ```
+    private OpenAIClient _chatGptClient;
+    private string openAIKey = "<your-api-key-here>";
+    private string openAIEndpoint = null;
 
-    This will bootstrap the ChatGptNet library with your API key and set some default options. You can create your API key on the [OpenAI API settings page](https://platform.openai.com/account/api-keys). The `builder` class is part of .NET MAUI's dependency injection system. We're using it to add the ChatGptNet library to the dependency injection container so that we can use it in our app.
-
-1. In order to compile the project, you will need to add the following `using` statements to the top of the **MauiProgram.cs** file:
-
-    ```csharp
-    using ChatGptNet;
-    using ChatGptNet.Models;
-    ```
-
-Now we're ready to put it all together. In the next section, we'll add some code to the three event handlers to make calls to the ChatGptNet library and display the recommendation results.
-
-## Add ChatGPT API calls and test the app
-
-It's time to add the code to our code-behind file that will use the ChatGptNet library to make calls to the OpenAI ChatGPT API. We'll add the code to the three event handlers we created earlier. The code will get the user's location from the `Entry` control and pass it to the ChatGptNet library to get recommendations. Then we'll display the results in the `Label` control at the bottom of the UI.
-
-1. First, we need some code to get an instance of the ChatGptNet library. Add the following code to the top of the **MainPage.xaml.cs** file:
-
-    ```csharp
-    private IChatGptClient _chatGptClient;
-    
     public MainPage()
     {
         InitializeComponent();
@@ -151,31 +125,48 @@ It's time to add the code to our code-behind file that will use the ChatGptNet l
 
     private void MainPage_Loaded(object sender, EventArgs e)
     {
-        _chatGptClient = Handler.MauiContext.Services.GetService<IChatGptClient>();
+        _chatGptClient = !string.IsNullOrWhiteSpace(openAIEndpoint)
+            ? new OpenAIClient(
+                new Uri(openAIEndpoint),
+                new AzureKeyCredential(openAIKey))
+            : new OpenAIClient(openAIKey);
     }
     ```
 
-    This code uses the dependency injection (DI) system to get an instance of the ChatGptNet library. The DI system won't be initialized until after the `MainPage` has loaded, so we'll put the code in an event handler for the `Loaded` event. We'll use this instance to make calls to the OpenAI ChatGPT API
+    This will bootstrap the Azure OpenAI library with your API key and set some default options. You can create your API key on the [OpenAI API settings page](https://platform.openai.com/account/api-keys). The code is written so you could also set an endpoint if you are using the Azure OpenAI API. If you are using the OpenAI API, you will leave the `openAIEndpoint` variable set to `null`.
 
-1. Next, we'll create an async method named `GetRecommendation` and call it from each of the event handlers:
+1. In order to compile the project, you will need to add the following `using` statements to the top of the **MainPage.xaml.cs** file:
+
+    ```csharp
+    using Azure.AI.OpenAI;
+    using Azure;
+    ```
+
+Now we're ready to put it all together. In the next section, we'll add some code to the three event handlers to make calls to the Azure.AI.OpenAI library and display the recommendation results.
+
+## Add ChatGPT API calls and test the app
+
+It's time to add the code to our code-behind file that will use the Azure.AI.OpenAI library to make calls to the OpenAI ChatGPT API. We'll add the code to the three event handlers we created earlier. The code will get the user's location from the `Entry` control and pass it to the API to get recommendations. Then we'll display the results in the `Label` control at the bottom of the UI.
+
+1. Create an `async` method named `GetRecommendationAsync` and call it from each of the event handlers:
 
     ```csharp
     private async void OnRestaurantClicked(object sender, EventArgs e)
     {
-        await GetRecommendation("restaurant");
+        await GetRecommendationAsync("restaurant");
     }
 
     private async void OnHotelClicked(object sender, EventArgs e)
     {
-        await GetRecommendation("hotel");
+        await GetRecommendationAsync("hotel");
     }
 
     private async void OnAttractionClicked(object sender, EventArgs e)
     {
-        await GetRecommendation("attraction");
+        await GetRecommendationAsync("attraction");
     }
 
-    private async Task GetRecommendation(string recommendationType)
+    private async Task GetRecommendationAsync(string recommendationType)
     {
         if (string.IsNullOrWhiteSpace(LocationEntry.Text))
         {
@@ -183,37 +174,52 @@ It's time to add the code to our code-behind file that will use the ChatGptNet l
             return;
         }
 
-        if (_sessionGuid == Guid.Empty)
+        string prompt = $"What is a recommended {recommendationType} near {LocationEntry.Text}";
+
+        // DeploymentName must match your custom deployment name (Azure OpenAI)
+        // Or a default deployment name (such as OpenAI's GPT-3.5-turbo-0125) can be used
+        ChatCompletionsOptions options = new()
         {
-            _sessionGuid = Guid.NewGuid();
-        }
+            DeploymentName = "gpt-3.5-turbo-0125",
+            Messages =
+            {
+                new ChatRequestUserMessage(prompt)
+            },
+            ChoiceCount = 1,
+            MaxTokens = 100,
+        };
 
-        ChatGptResponse response = await _chatGptClient.AskAsync(_sessionGuid,
-                                    ""What is a recommended " + recommendationType + " near " + LocationEntry.Text);
-        var message = response.GetMessage();
-        SmallLabel.Text = message;
+        var message = new ChatRequestUserMessage(prompt);
+        options.Messages.Add(message);
+        Response<ChatCompletions> response = await _chatGptClient.GetChatCompletionsAsync(options);
+        SmallLabel.Text = response.Value.Choices[0].Message.Content;
     }
-
-    private Guid _sessionGuid = Guid.Empty;
     ```
 
-    This code first checks to make sure the user has entered a location in the `Entry` control. If not, it displays an alert and returns. If the user has entered a location, it calls the `AskAsync` method on the ChatGptNet library to make a call to the OpenAI ChatGPT API. The `AskAsync` method takes two parameters: a `Guid` that identifies the user's session and a string containing the question to ask the API. The `AskAsync` method returns a `ChatGptResponse` object that contains the response from the API. We'll use the `GetMessage` method on the `ChatGptResponse` object to get the response text and display it in the `Label` control at the bottom of the UI.
+    This code first checks to make sure the user has entered a location in the `Entry` control. If not, it displays an alert and returns. If the user has entered a location, it calls the `GetChatCompletionsAsync` method on the Azure.AI.OpenAI library to make a call to OpenAI. The `GetChatCompletionsAsync` method takes a `ChatCompletionOptions` parameter. This parameter was created with the following options:
 
-1. Add the following `using` statements to the top of the **MainPage.xaml.cs** file:
+    * **DeploymentName** - This is the name of the deployment (model) you want to use.
+    * **Messages** - This is a collection of `ChatRequestUserMessage` objects. We're only using one message in this example, but you can add more to the collection to provide more context to the API.
+    * **ChoiceCount** - This is the number of recommendations you want to get back from the API. We're only asking for one recommendation in this example.
+    * **MaxTokens** - This is the maximum number of tokens (words) you want the API to return in the response. We're asking for 100 tokens in this example.
+
+    The `GetChatCompletionsAsync` method returns a `Response<ChatCompletions>` object containing the response from the API. We'll get the `Message.Content` response text from the first `Choice` in the `response.Value.Choices` collection and display it in a control at the bottom of the UI.
+
+1. The following `using` statements at the top of the **MainPage.xaml.cs** file are also needed for the code we added in this section:
 
     ```csharp
-    using ChatGptNet;
-    using ChatGptNet.Models;
+    using Azure.AI.OpenAI;
+    using Azure;
     ```
 
 1. Run the app, enter a location, and test the recommendation buttons. You should see a response from the API in the `Label` control at the bottom of the UI:
 
     ![Windows .NET MAUI app with the UI for providing recommendations and results from ChatGPT.](images/maui-chatgpt-ui-with-results.png)
 
-That's it! You've successfully created a Windows .NET MAUI app that uses the OpenAI ChatGPT API to provide recommendations for restaurants, hotels, and attractions. Try changing the prompts to see if you can improve the results. You can also try changing the `ChatGptModels` enum value in the `AddChatGpt` method in **MauiProgram.cs** to see if you get better results from a different model.
+That's it! You've successfully created a Windows .NET MAUI app that uses the OpenAI ChatGPT API to provide recommendations for restaurants, hotels, and attractions. Try changing the prompts to see if you can improve the results. You can also try changing the `DeploymentName` value in the `ChatCompletionsOptions` object in `GetRecommendationAsync` to see if you get better results from a different model.
 
->[!NOTE]
->Remember to keep an eye on your API usage after your trial period has expired. You can also set monthly spending limits on your OpenAI account to avoid unexpected charges.
+> [!IMPORTANT]
+> Remember to keep an eye on your API usage after your trial period has expired. You can also set monthly spending limits on your OpenAI account to avoid unexpected charges.
 
 ## Next steps
 
@@ -225,4 +231,6 @@ Advance to the next article to learn how to...
 
 [Build Windows apps with .NET MAUI](index.md)
 
-[ChatGPT for .NET](https://github.com/marcominerva/ChatGptNet)
+[Get started with OpenAI in .NET](https://devblogs.microsoft.com/dotnet/getting-started-azure-openai-dotnet/)
+
+[Get started using GPT-35-Turbo and GPT-4 with Azure OpenAI Service](/azure/ai-services/openai/chatgpt-quickstart)
