@@ -14,7 +14,7 @@ Since version 0.64, PowerToys is released on GitHub with Administrative Template
 
 ### Download
 
-You can find the latest administrative templates (ADMX files) in the assets section of our newest PowerToys release on <https://github.com/microsoft/PowerToys/releases>. The file is named `GroupPolicyObjectsFiles-<Version>.zip`.
+You can find the latest administrative templates (ADMX files) in the assets section of our newest PowerToys release on <github.com/microsoft/PowerToys/releases>. The file is named `GroupPolicyObjectsFiles-<Version>.zip`.
 
 ### Add the administrative template to an individual computer
 
