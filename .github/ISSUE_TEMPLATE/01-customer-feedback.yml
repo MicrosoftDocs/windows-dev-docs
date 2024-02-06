@@ -1,7 +1,7 @@
 name: "Post a documentation issue"
 title: "Feedback"
 description: >-
-  Post an issue specific to Windows developer documentation.
+  Post an issue specific to Windows developer documentation.  ⛔ This template is intended for use by the feedback link on the bottom of the documentation page on learn.microsoft.com. If you are submitting an issue using the GitHub repo, choose one of the other templates.⛔
 labels:
   - "needs-triage"
 body:
