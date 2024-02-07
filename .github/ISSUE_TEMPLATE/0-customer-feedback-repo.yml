@@ -1,7 +1,7 @@
-name: "Post a documentation issue from the repo"
+name: "Post a general documentation issue using the repo link"
 title: "Feedback"
 description: >-
-  Post an issue for Windows developer docs. It is generally preferred to use the feedback link from the bottom of the learn.microsoft.com page so that the associated doc is linked, but this works too. 
+  Post an issue for Windows developer docs. Use the feedback link from the bottom of the learn.microsoft.com page to link the associated doc or this template for a general issue.
   - "needs-triage"
 body:
   - type: markdown
