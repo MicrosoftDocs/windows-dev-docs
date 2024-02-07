@@ -105,7 +105,7 @@ Looking for other ways to increase your monetization? Consider these options.
 
  Topic                | Description                 |
 |--------------------|-----------------------------|
-| [Microsoft Affiliate Program](https://www.microsoftaffiliates.com/) | Earn commissions by linking to Microsoft products from your app, blog, web page or other communications. You can link to apps, games, music, movies, hardware, accessories, and other goods sold in the Microsoft Store.
+| [Microsoft Affiliate Program]((https://www.microsoft.com/microsoft-365/business/microsoft-365-affiliate-program) | Earn commissions by linking to Microsoft products from your app, blog, web page or other communications. You can link to apps, games, music, movies, hardware, accessories, and other goods sold in the Microsoft Store.
 | [A/B experimentation](./run-app-experiments-with-a-b-testing.md) | Run A/B tests in your apps to measure the effectiveness of feature changes on some customers before you enable the changes for everyone.
 | [Engage customers with the Microsoft Store Services SDK](microsoft-store-services-sdk.md) | The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you engage with your customers. These features include targeted notifications, A/B tests, and launching Feedback Hub from your app.
 | [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md) | Add code to your UWP apps to direct your Windows 10 and Windows 11 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](/windows/apps/publish/feedback-report) in Partner Center. This feature requires the Microsoft Store Services SDK. 
