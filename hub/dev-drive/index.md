@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 01/16/2024
+ms.date: 02/07/2024
 ---
 
 # Set up a Dev Drive on Windows 11
@@ -281,6 +281,7 @@ The following filters may be used with Dev Drive:
 | Docker:  Running containers out of Dev Drive | bindFlt, wcifs |
 | Windows Performance Recorder:  Measure file system operations | FileInfo |
 | Process Monitor - Sysinternals:  Monitor file system activities | ProcMon24 |
+| Windows Upgrade: Used during OS Upgrade. Required if user moves TEMP environment variable to Dev Drive | WinSetupMon |
 
 The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
 
