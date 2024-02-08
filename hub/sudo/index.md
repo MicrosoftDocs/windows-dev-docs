@@ -6,12 +6,14 @@ ms.author: mattwoj
 manager: jken
 ms.reviewer: jordiadoumie
 ms.topic: article
-ms.date: 02/02/2024
+ms.date: 02/08/2024
 ---
 
 # Sudo for Windows
 
 **Sudo for Windows** is a new way for users to run elevated commands (as an administrator) directly from an unelevated console session on Windows.
+
+[Read the announcement](https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/), which includes a demo video and deep-dive into how Sudo for Windows works.
 
 ## Prerequisites
 
