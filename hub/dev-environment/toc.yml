@@ -155,6 +155,10 @@ items:
     href: /windows/wsl/
   - name: Windows Terminal
     href: /windows/terminal/
+  - name: Sudo for Windows
+    items:
+      - name: Overview
+        href: ../sudo/index.md
   - name: Mac to Windows guide
     href: mac-to-windows.md
   - name: Keyboard shortcuts
