@@ -74,7 +74,7 @@ Use a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) so t
         // we finish making changes and call CompleteUpdatesAsync.
         Windows.Storage.CachedFileManager.DeferUpdates(file);
         // write to file
-        await Windows.Storage.FileIO.WriteTextAsync(file, file.Name);
+        await Windows.Storage.FileIO.WriteTextAsync(file, "file contents");
         // Let Windows know that we're finished changing the file so
         // the other app can update the remote version of the file.
         // Completing updates may require Windows to ask for user input.
