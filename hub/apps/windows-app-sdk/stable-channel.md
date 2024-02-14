@@ -32,6 +32,15 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.4
 
+### Version 1.4.5 (1.4.240211001)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
+
+- Fixed an issue that could hang applications when clicking a mouse button while scrolling with the mouse wheel. For more info, see GitHub issue [#9233](https://github.com/microsoft/microsoft-ui-xaml/issues/9233).
+- Fixed an issue with duplicate assets when referencing a chain of NuGet packages. For more info, see GitHub issue [#8857](https://github.com/microsoft/microsoft-ui-xaml/issues/8857).
+- Fixed several `BreadcrumbBar` issues including a memory leak, a crash when the ellipsis menu is empty, and the ellipsis menu being incorrectly constrained within the window.
+- Fixed a potential crash on shutdown when releasing graphics resources.
+
 ### Version 1.4.4 (1.4.231219000)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
