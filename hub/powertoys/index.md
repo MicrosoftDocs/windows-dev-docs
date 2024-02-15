@@ -121,7 +121,7 @@ The currently available utilities include:
         [![File Locksmith screenshot.](../images/powertoys-file-locksmith.png)](file-locksmith.md)
     :::column-end:::
     :::column span="2":::
-        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **What's using this file?**.
+        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **Unlock with File Locksmith**.
     :::column-end:::
 :::row-end:::
 
