@@ -1,7 +1,7 @@
 ---
 description: This section will guide you on how to transition users from your web unpackaged app to Store packaged app.
 title: How to transition users from your web unpackaged app to Store packaged app.
-ms.date: 02/12/2024
+ms.date: 02/15/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -118,7 +118,7 @@ Subsequently, you can use the following code to silently download and install th
         }
 ```
 
-<br>
+
 
 ### How to launch the Store application from your web unpackaged app
 To launch a Store application, it is necessary to know its AMUID, which consists of the Package Family Name (found in the "Product Identity" section of the Partner Center) and the Application Id (from your appxmanifest), separated by an exclamation mark (!).
@@ -130,50 +130,59 @@ To launch a Store application, it is necessary to know its AMUID, which consists
         );
 ```
 
-<br>
+
 
 ### How to detect if the Store packaged version is installed and launch it
 
-You can determine whether your packaged version of the application is installed by using the [GetPackagesByPackageFamily](https://learn.microsoft.com/windows/win32/api/appmodel/nf-appmodel-getpackagesbypackagefamily) win32 API and passing in the Package Family Name of your packaged app. If the count value is higher than zero, it indicates that the application is installed.
-<br>
+You can determine whether your packaged version of the application is installed by using the [GetPackagesByPackageFamily](/windows/win32/api/appmodel/nf-appmodel-getpackagesbypackagefamily) win32 API and passing in the Package Family Name of your packaged app. If the count value is higher than zero, it indicates that the application is installed.
+
 
 ### How to uninstall your web unpackaged application from the packaged one
 
 To retrieve the absolute path of your uninstaller, you can access the registry.
 
 Your uninstaller information is located in the registry at:
-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\<your product code GUID\>.
+
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\<your product code GUID\>
+```
 
 Retrieve the full command in the `UninstallString` value and execute it.
 It is recommended to either perform the uninstallation silently or inform the user that you are migrating data and uninstalling the other application.
-<br>
+
 
 ### How to migrate data
-Your unpackaged application likely stores its local data in %localAppData%/\<YourPublisherName\>/\<YourAppName\>.
-Packaged applications have their reserved space for data storage, which is automatically deleted when the application is uninstalled. It is highly recommended (though not mandatory) to migrate the data to this space upon the first launch. You can retrieve the absolute path of this folder by calling Windows.Storage.ApplicationData.Current.LocalFolder.Path.
-<br>
+Your unpackaged application likely stores its local data in:
+
+```
+%localAppData%/<YourPublisherName\>/<YourAppName\>
+```
+
+
+Packaged applications have their reserved space for data storage, which is automatically deleted when the application is uninstalled. It is highly recommended (though not mandatory) to migrate the data to this space upon the first launch. You can retrieve the absolute path of this folder by calling [Windows.Storage.ApplicationData.Current.LocalFolder.Path](/uwp/api/windows.storage.applicationdata.localfolder?view=winrt-22621).
+
 
 ### How to migrate acquisitions and in-app purchases
 #### In-app purchases
 To guarantee an optimal user experience, it is essential that users can seamlessly access content they have purchased in the unpackaged version of your application. With this objective, the Microsoft Store has increased its flexibility for publishers by permitting the use of their own or third-party commerce platforms in addition to Microsoft's since June 2021.
-<br>
+
 
 We strongly encourage publishers to continue verifying in-app purchase entitlements as performed in the unpackaged version of their application in addition to integrate with the Microsoft Commerce platform to enable users to effortlessly purchase your content with just a few clicks on Windows.
-<br>
+
 
 #### Allow paid users of the unpackaged application to migrate to the packaged version
 If users have purchased your product on your website, they should not have to pay again to download the packaged version from the Store.
 To ensure a seamless transition, we recommend the following approaches:
 
 1. Offer a free/demo version of your product, allowing users to unlock the full version through in-app purchases. For users who have already paid on your website, enable them to access the full version by signing in to verify their licenses or by entering their license key in the application's user interface.
-2. Set your application as a paid offering but distribute coupon code to your existing users through your own channels. These codes will allow them to download the Store version at no additional cost. More information can be found [here](https://learn.microsoft.com/windows/apps/publish/generate-promotional-codes).
-<br>
+2. Set your application as a paid offering but distribute coupon code to your existing users through your own channels. These codes will allow them to download the Store version at no additional cost. More information can be found in [Generate promotional codes](/windows/apps/publish/generate-promotional-codes).
+
 
 ### How to migrate existing pinned taskbar and Start Menu shortcuts
 Your users may have pinned your desktop application to the taskbar or the Start menu. You can direct these shortcuts to your new packaged app by including the "windows.desktopAppMigration" extension in your application manifest.
-<br>
 
-#### Example:
+
+#### Example
 
 ```csharp
 xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3"
@@ -189,12 +198,12 @@ xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/r
 </rescap3:Extension>
 </Extensions>
 ```
-<br>\
+
 After installing your application, the pins in the taskbar or in the Start menu, as well as the tiles (for Windows 10) will launch automatically the Store application.
 
 ### How to migrate file extension & protocol associations
 If your application supports file extension or protocol associations and users have selected your app as the default application for specific file extensions and protocols, you have the option to migrate these associations to your Store packaged application. This migration can be achieved by updating your app manifest with the following code snippet.
-<br>
+
 ```code
 xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3"
 ...
@@ -210,4 +219,4 @@ xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/r
 </Extensions>
 ```
 
-Simply list the [programmatic identifiers](https://learn.microsoft.com/windows/win32/shell/fa-progids?redirectedfrom=MSDN) you want to migrate to and the system will automatically migrate them to your application after installation.
+Simply list the [programmatic identifiers](/windows/win32/shell/fa-progids) to which you want to migrate, and the system will automatically migrate them to your application after installation.
