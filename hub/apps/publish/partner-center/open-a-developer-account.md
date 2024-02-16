@@ -25,7 +25,8 @@ Follow the steps below to open a developer account in Partner Center so you can 
     > By default, The Microsoft account that is used to sign up to Partner Center is the only account that you may use to edit your payment and tax profile information in Partner Center.
 
 3. Select the [country or region](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) where you live or where your business is located. You won't be able to change this later.
-4. Select your [developer account type](account-types-locations-and-fees.md) (individual or company). You won't be able to change this later, so be sure to choose the right type of account.
+1. Select your [developer account type](account-types-locations-and-fees.md) (individual or company). You won't be able to change this later, so be sure to choose the right type of account.
+1. For company accounts, if your company is registered with [Dun & Bradstreet](https://partner.microsoft.com/marketing/usisvshowcase/dunandbrad), use the DUNS ID to look up your company info. If you want to provide your company details yourself, select **I don't have a DUNS number.** If you do not provide a DUNS number, you will need to provide a legal document for business verification in next step. The legal document should have registered name, address of your company.
 5. Enter the **publisher display name** that you want to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name. For company accounts, be sure to use your organization's registered business name or trade name. If you enter a name that someone else has already selected, or if someone else has the rights to use that name, we won't permit you to use it.
 
     > [!NOTE]
