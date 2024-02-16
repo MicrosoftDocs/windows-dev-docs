@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Manage app name reservations
 
-The **Manage app names** page in Partner Center lets you view all of the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete names you don't need. You can find this page in [Partner Center](https://partner.microsoft.com/dashboard) by expanding the **App management** section in the left navigation menu for any of your apps.
+The **Manage app names** page in Partner Center lets you view all of the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete names you don't need. You can find this page in [Partner Center](https://partner.microsoft.com/dashboard) by expanding the **Product management** section in the left navigation menu for any of your apps.
 
 :::image type="content" source="../images/manage-app-name.png" lightbox="../images/manage-app-name.png" alt-text="A screenshot of the Manage app name page on Partner Center.":::
 

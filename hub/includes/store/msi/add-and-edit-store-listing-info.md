@@ -44,7 +44,7 @@ See [App screenshots and images](../../../apps/publish/publish-your-app/screensh
 
 ### Store logos
 
-Store logos are optional images that you can upload to enhance the way your app is displayed to customers.
+You can upload Store logos to create a more customized display in the Store.
 
 See [App screenshots and images](../../../apps/publish/publish-your-app/screenshots-and-images.md) for more information.
 

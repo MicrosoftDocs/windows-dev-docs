@@ -30,8 +30,14 @@ Follow the following steps to reserve your app's name:
 2. MSI or EXE app publishing experience is only available in the new Workspace interface and you can click the “Workspaces” button on the top right of the page to toggle to the new interface. For more information, see [Partner Center Workspaces](../partner-center/partner-center-workspaces.md)
 3. Navigate to the [Partner Center apps and games page](https://partner.microsoft.com/dashboard/apps-and-games/overview).
 4. Click **New product**.
-5. Choose your app's type.
+5. Click on EXE or MSI app.
+
+:::image type="content" source="../../../includes/store/msi/images/msiexe-new-product.png" lightbox="../../../includes/store/msi/images/msiexe-new-product.png" alt-text="A screenshot showing how to create an EXE/MSI app.":::
+
 6. Enter the name you'd like to use and click **Check availability**. If the name is available, you'll see a green check mark. If the name is already in use, you'll see a message indicating so.
+
+:::image type="content" source="../../../includes/store/msi/images/msiexe-app-name-reservation-page.png" lightbox="../../../includes/store/msi/images/msiexe-app-name-reservation-page.png" alt-text="A screenshot showing how to reserve a name for EXE/MSI app.":::
+
 7. Once you've selected an available name that you'd like to reserve, click **Reserve product name**.
 :::zone-end
 

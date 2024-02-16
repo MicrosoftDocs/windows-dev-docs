@@ -9,10 +9,19 @@ You can validate your app packages against [Microsoft Store policy](/windows/app
 To run the validation checks, follow these steps:
 
 1. Navigate to the Manage Packages page.
-1. Click the **Run** next to the app package you'd like to validate in the packages table. This starts the validation checks.
-1. Once the tests have completed, you can click on **View status** to see the results of the validation checks.
-1. You can also see the validation results on the Package Validation page.
-1. If the validation report shows any issues, fix them and run the validation again.
+2. Click the **Run** next to the app package you'd like to validate in the packages table. This starts the validation checks.
+
+:::image type="content" source="images/msiexe-package-validation-on-packages-page.png" lightbox="images/msiexe-package-validation-on-packages-page.png" alt-text="A screenshot of the Packages section showing how to run package validation.":::
+
+3. Once the tests have completed, you can click on **View status** to see the results of the validation checks.
+
+:::image type="content" source="images/msiexe-package-validation-in-progress.png" lightbox="images/msiexe-package-validation-in-progress.png" alt-text="A screenshot of the package validation section showing the checks in progress.":::
+
+4. You can also see the validation results on the Package Validation page.
+
+:::image type="content" source="images/msiexe-package-validation-completed.png" lightbox="images/msiexe-package-validation-completed.png" alt-text="A screenshot of the package validation section showing the checks are completed.":::
+
+5. If the validation report shows any issues, fix them and run the validation again.
 
 > [!NOTE]
 > To run the validation again on the same package, you need to update either the package binary or the silent install parameter.

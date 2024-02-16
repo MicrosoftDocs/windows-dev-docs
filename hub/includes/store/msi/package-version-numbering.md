@@ -1,2 +1,1 @@
-> [!IMPORTANT]
-> Package version numbering is not supported for MSI and EXE apps.
+ You can manage the package version numbering through your installer. Package version numbering for Win32 is not suppoted through the Store.

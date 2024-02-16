@@ -1,4 +1,4 @@
-**System Requirements** (Touch screen, Keyboard, Mouse, Camera, NFC HCE, NFC Proximity, Bluetooth LE, Telephony, Microphone, Memory, DirectX, Video Memory, Processor, Graphics)
+**System Requirements** (Touch screen, Keyboard, Mouse, Camera, NFC HCE, NFC Proximity, Bluetooth LE, Telephony, Microphone, Memory, DirectX, Dedicated GPU Memory, Processor, Graphics)
 
 :::image type="content" source="images/msiexe-system-requirements.png" lightbox="images/msiexe-system-requirements.png" alt-text="A screenshot of the Properties section where you can provide system requirements for your app.":::
 

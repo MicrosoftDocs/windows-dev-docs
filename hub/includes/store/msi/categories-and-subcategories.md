@@ -4,7 +4,7 @@ You must choose the category that best describes your app. You can optionally ch
 
 :::image type="content" source="images/msiexe-set-app-category-subcategory.png" lightbox="images/msiexe-set-app-category-subcategory.png" alt-text="A screenshot of the Properties section where you can provide category and sub-category for your app.":::
 
-To change the category or secondary category of an app that's already in the Store (except for changing from Games to another category or vice versa), [create a new submission](../../../apps/publish/publish-your-app/create-app-submission.md) and select the new category or subcategory.
+To change the category, subcategory or secondary category of an app that's already in the Store, [update your app](../../../apps/publish/publish-your-app/publish-update-to-your-app-on-store.md) and select the new category, subcategory or secondary category.
 
 ## Categories and subcategories
 

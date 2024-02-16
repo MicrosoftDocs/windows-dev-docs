@@ -1,3 +1,5 @@
+The **Visibility** section of the [Pricing and availability page](../../../apps/publish/publish-your-app/price-and-availability.md) allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
+
 There are two separate sections within the Visibility section: **Audience** and **Discoverability**.
 
 ## Audience

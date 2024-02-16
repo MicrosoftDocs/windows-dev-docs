@@ -138,7 +138,7 @@ items:
             items:
               - name: Define market selection
                 href: publish/publish-your-app/market-selection.md
-              - name: Choose visibility options
+              - name: Choose visibility or discoverability options
                 href: publish/publish-your-app/visibility-options.md
               - name: Configure precise release scheduling
                 href: publish/publish-your-app/release-schedule.md
@@ -160,6 +160,8 @@ items:
           - name: Upload app packages
             href: publish/publish-your-app/upload-app-packages.md
             items:
+              - name: Package validation
+                href: publish/publish-your-app/package-validation-pre-check.md
               - name: Device family availability
                 href: publish/publish-your-app/device-families.md
               - name: App package requirements
@@ -199,8 +201,6 @@ items:
             items:
               - name: The app certification process
                 href: publish/publish-your-app/app-certification-process.md
-              - name: Package validation
-                href: publish/publish-your-app/package-validation-pre-check.md
               - name: Manual package validation
                 href: publish/publish-your-app/manual-package-validation.md
               - name: Resolve submission errors
