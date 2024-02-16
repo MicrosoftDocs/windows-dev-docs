@@ -67,7 +67,7 @@ The `inline` configuration option runs the elevated process in the current windo
 
  The `sudo` command offers a way to quickly elevate a command as administrator from your current unelevated command line context and is familiar to some users coming from other operating systems. The `runas` command offers a way to run programs as any user, including administrator if you so choose. At this point in time, the `sudo` command on Windows does not support running programs as other users. Other key differences between `sudo` and `runas` include:
 
-- `runas` allows you to run programs as other users, including but not limited to as administrator. This funtionality is on the roadmap for the sudo command, but does not yet exist.
+- `runas` allows you to run programs as other users, including but not limited to as administrator. This functionality is on the roadmap for the sudo command, but does not yet exist.
 
 - `sudo` allows you to quickly elevate a process (as administrator):
   - You can choose to do so in a new window, which resembles the `runas` administrator flow.
