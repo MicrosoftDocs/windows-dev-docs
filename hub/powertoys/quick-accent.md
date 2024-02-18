@@ -32,7 +32,7 @@ You can limit the available characters by selecting a character set from the set
 * Czech
 * Danish
 * Gaeilge
-* Gaidhlig
+* Gàidhlig
 * Dutch
 * Greek
 * Estonian
