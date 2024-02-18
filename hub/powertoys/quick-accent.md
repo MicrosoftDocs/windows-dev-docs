@@ -30,10 +30,13 @@ You can limit the available characters by selecting a character set from the set
 * Currency
 * Croatian
 * Czech
+* Danish
 * Gaeilge
-* Gàidhlig
+* Gaidhlig
 * Dutch
+* Greek
 * Estonian
+* Finnish
 * French
 * German
 * Hebrew
@@ -49,7 +52,8 @@ You can limit the available characters by selecting a character set from the set
 * Polish
 * Portuguese
 * Romanian
-* Slovakian
+* Slovak
+* Slovenian
 * Spanish
 * Serbian
 * Swedish
