@@ -1,12 +1,12 @@
 ---
-description: This section will guide you on how to distribute your Win32 application through Microrosft Store.
-title: How to distribute your Win32 application through Microrosft Store.
+description: This section will guide you on how to distribute your Win32 application through Microsoft Store.
+title: How to distribute your Win32 application through Microsoft Store.
 ms.date: 02/15/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# How to distribute your Win32 application through Microrosft Store
+# How to distribute your Win32 application through Microsoft Store
 
 This article guides you on a smooth onboarding process, various distribution options, recommended best practices, and scenarios to consider when distributing your app via the Store, to ensure a better customer experience. 
 

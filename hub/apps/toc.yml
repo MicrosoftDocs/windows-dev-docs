@@ -62,7 +62,7 @@ items:
         href: develop/ui-input/visual-tree.md
   - name: Distribute through Microsoft Store
     items:
-      - name: How to distribute your Win32 application through Micrososft Store
+      - name: How to distribute your Win32 application through Microsoft Store
         href: distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md
       - name: How to transition users from your web unpackaged app to Store packaged app
         href: distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md
