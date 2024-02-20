@@ -1,7 +1,7 @@
 ---
 title: Dev Home extensions
 description: Dev Home supports both default and custom-built extensions. Learn more about the Dev Home GitHub extension, how to customize Git widgets and notifications in the Dev Home dashboard, and how to build your own Dev Home extension.
-ms.date: 01/05/2024
+ms.date: 02/20/2024
 ms.topic: overview
 ---
 
@@ -40,6 +40,24 @@ The Dev Home GitHub extension powers widgets that can be customized and display 
 The Dev Home GitHub extension has the ability to send Windows notifications based on GitHub events. As of now, the only supported notification event is when checks fail on a pull request that has been authored by the account that’s signed into the extension. Notifications can be disabled from the [Windows notification settings](https://support.microsoft.com/windows/change-notification-settings-in-windows-8942c744-6198-fe56-4639-34320cf9444e).
 
 ![Screenshot of Windows notification of check failure driven by Dev Home GitHub extention](../images/devhome-github-notification.png)
+
+## Dev Home Azure extension
+
+The Dev Home Azure extension provides Azure DevOps (ADO) integration into Dev Home's dashboard and [machine configuration tool](setup.md). The extension provides recommended repositories to clone and also adds ADO widgets for queries and pull requests.
+
+To add the Azure extension, select the **Extensions** tab in Dev Home, then select **Get** on the Azure extension from the list of Dev Home extensions **Available in the Microsoft Store**.
+
+If you're logged into Windows with an Azure work account, the extension will automatically detect your account after installation.
+
+Want to contribute to or file an issue on this extension? See the open source [Azure extension repository for Dev Home](https://github.com/microsoft/devhomeazureextension).
+
+### Customize Azure extension widgets in Dev Home
+
+The Dev Home Azure extension provides customizable widgets for the Dev Home dashboard. These widgets display:
+
+- Query results
+- Query tiles with counts of items per query
+- Pull requests for a specific ADO repo that are created by you, assigned to you, or assigned to your team
 
 ## Build your own custom Dev Home extension
 
