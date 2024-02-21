@@ -717,6 +717,8 @@ items:
             href: windows-dotnet-maui/tutorial-graph-api.md
           - name: "Create a recommendation app with .NET MAUI and ChatGPT"
             href: windows-dotnet-maui/tutorial-maui-ai.md
+          - name: "Quickstart: Add DALL-E to a .NET MAUI app for Windows"
+            href: windows-dotnet-maui/dall-e-maui-windows.md
           - name: "Create a .NET MAUI app with C# Markup"
             href: windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit.md
       - name: App lifecycle and system services 
