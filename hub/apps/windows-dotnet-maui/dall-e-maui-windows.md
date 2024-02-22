@@ -20,28 +20,10 @@ In this quickstart, we'll demonstrate how to integrate DALL-E's image generation
 - An OpenAI API key from your [OpenAI developer dashboard](https://platform.openai.com/api-keys) assigned to the `openAIKey` variable in your project.
 - An [Azure.AI.OpenAI](https://www.nuget.org/packages/Azure.AI.OpenAI/) NuGet package installed in your project. If you've followed along with the .NET MAUI ChatGPT tutorial, you will have this dependency installed and configured.
 
-<!-- Use this exact H2 -->
 ## What problem will we solve?
 
 You want to add DALL-E's image generation capabilities to your .NET MAUI Windows desktop app to provide users with a rich, interactive experience. They can already use the app to generate text-based recommendations, and you want to add the ability to generate images that visualize an activity in the location they have entered.
 
-<!-- 
-
-Present the demonstration in a series of H2s.
-
-Each H2 should describe either what they'll do in the step or which part of the problem the step solves.
-
-* Each H2 should be a major step in the demonstration
-* The H2 title should describe either what they'll do in the step or which part of the problem the step solves
-* Phrase each H2 title as "<verb> * <noun>".
-* Don't start with a gerund.
-* Don't number the H2s.
-* Begin each H2 with a brief explanation for context
-* Provide a numbered list of procedural steps as applicable
-* Provide a code block, diagram, or screenshot if appropriate
-* An image, code block, or other graphical element comes after numbered step it illustrates.
-
--->
 ## Install and initialize the Azure OpenAI SDK
 
 In this section, we'll install the SDK into the .NET MAUI project and initialize it with your OpenAI API key.
