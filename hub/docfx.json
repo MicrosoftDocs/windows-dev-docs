@@ -42,18 +42,6 @@
         }        	  
       },
     "fileMetadata": {
-      "ms.service": {
-        "apps/trace-processing/**/*.md": "traceprocessor",
-        "apps/**/*.md": "windows-app-sdk",
-        "web/**/*.md": "windows",
-        "android/**/*.md": "dev-environment",
-        "dev-environment/**/*.md": "dev-environment",
-        "dev-home/*.md": "dev-environment",
-        "dev-drive/*.md": "dev-environment",
-        "package-manager/**/*.md": "dev-environment",
-        "powertoys/**/*.md": "dev-environment",
-        "python/**/*.md": "dev-environment"
-      },
       "ms.subservice": {
         "apps/design/**/*.md": "design",
         "apps/**/*.md": "apps",
@@ -102,6 +90,18 @@
         "package-manager/**/*.md": "package-manager",
         "powertoys/**/*.md": "powertoys",
         "python/**/*.md": "windows-python"
+      },
+      "ms.service": {
+        "apps/trace-processing/**/*.md": "traceprocessor",
+        "apps/**/*.md": "windows-app-sdk",
+        "web/**/*.md": "windows",
+        "android/**/*.md": "dev-environment",
+        "dev-environment/**/*.md": "dev-environment",
+        "dev-home/*.md": "dev-environment",
+        "dev-drive/*.md": "dev-environment",
+        "package-manager/**/*.md": "dev-environment",
+        "powertoys/**/*.md": "dev-environment",
+        "python/**/*.md": "dev-environment"
       },
       "ms.collection":
       {
