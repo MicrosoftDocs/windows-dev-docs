@@ -82,7 +82,7 @@ Next, we'll modify the user interface to include an `Image` control that display
     ...
     ```
 
-1. Add an `Image` control to your `MainPage.xaml` below the `SmallLabel` control to display the generated image:
+1. Add an `Image` control below the `SmallLabel` control to display the generated image:
 
     ```xml MainPage.xaml
     ...
