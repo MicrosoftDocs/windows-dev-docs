@@ -1,12 +1,9 @@
 ---
 title: Quickstart - Add DALL-E image generation to your .NET MAUI app for Windows
 description: A quickstart to get started with .NET MAUI on Windows by integrating DALL-E image capabilities into your app. 
-ms.service: windows
 ms.topic: quickstart
 ms.date: 02/21/2024
-ms.localizationpriority: medium
 keywords: windows, desktop development, Windows App SDK, .net maui, openai, dall-e, ai
-content-type: how-to
 ---
 
 # Quickstart: Add DALL-E to your .NET MAUI Windows desktop app
