@@ -23,7 +23,7 @@ In this quickstart, we'll demonstrate how to integrate DALL-E's image generation
 <!-- Use this exact H2 -->
 ## What problem will we solve?
 
-TODO: Write a brief description of the problem and how the product or service solves that problem. Include one or more diagrams when appropriate to show the solution architecture and/or the dataflow.
+You want to add DALL-E's image generation capabilities to your .NET MAUI Windows desktop app to provide users with a rich, interactive experience. They can already use the app to generate text-based recommendations, and you want to add the ability to generate images that visualize an activity in the location they have entered.
 
 <!-- 
 
@@ -42,73 +42,128 @@ Each H2 should describe either what they'll do in the step or which part of the 
 * An image, code block, or other graphical element comes after numbered step it illustrates.
 
 -->
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+## Install and initialize the Azure OpenAI SDK
 
-## Task 2
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+In this section, we'll install the SDK into the .NET MAUI project and initialize it with your OpenAI API key.
 
-## Task 3
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+1. If you haven't already installed the `Azure.AI.OpenAI` NuGet package, you can do so by running `dotnet add package Azure.AI.OpenAI -IncludePrerelease` from Visual Studio's terminal window.
 
-<!-- Use this exact H2 -->
+1. Once installed, you can initialize the `OpenAIClient` instance from the SDK with your OpenAI API key as follows:
+
+    ```csharp MainPage.xaml.cs
+    private OpenAIClient _chatGptClient;
+    private Guid _sessionGuid = Guid.Empty;
+    private string openAIKey = "MY_OPEN_AI_API_KEY";
+    private string openAIEndpoint = null;
+    private char[] trimChars = { '\n', '?' };
+    
+    public MainPage()
+    {
+        InitializeComponent();
+        this.Loaded += MainPage_Loaded;
+    }
+    
+    private void MainPage_Loaded(object sender, EventArgs e)
+    {
+        _chatGptClient = !string.IsNullOrWhiteSpace(openAIEndpoint)
+            ? new OpenAIClient(
+                new Uri(openAIEndpoint),
+                new AzureKeyCredential(openAIKey))
+            : new OpenAIClient(openAIKey);
+    }
+    ```
+
+1. Replace `MY_OPEN_AI_API_KEY` with your OpenAI API key.
+
+## Modify your app's UI
+
+In this section, we'll modify the user interface to include an `Image` control that displays a generated image below the recommendation text.
+
+1. If you are are starting with a new project, copy the XAML for `MainPage.xaml` from the [Create a recommendation app with .NET MAUI and ChatGPT](tutorial-maui-ai.md) tutorial.
+
+1. Add a `StackLayout` containing a `Label` control and a  `CheckBox` control to `MainPage.xaml` below the `LocationEntry` control to allow users to select whether to generate an image:
+
+    ```xml MainPage.xaml
+    ...
+    <Entry
+        x:Name="LocationEntry"
+        Placeholder="Enter your location"
+        SemanticProperties.Hint="Enter the location for recommendations"
+        HorizontalOptions="Center"/>
+    
+    <!-- Add this markup -->
+    <StackLayout Orientation="Horizontal"
+                    HorizontalOptions="Center">
+        <Label Text="Generate image" VerticalOptions="Center"/>
+        <CheckBox x:Name="IncludeImageChk" VerticalOptions="Center"/>
+    </StackLayout>
+    ...
+    ```
+
+1. Add an `Image` control to your `MainPage.xaml` below the `SmallLabel` control to display the generated image:
+
+    ```xml MainPage.xaml
+    ...
+        <Image x:Name="GeneratedImage"
+               WidthRequest="256"
+               HeightRequest="256"
+               HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+    ```
+
+## Implement DALL-E image generation
+
+1. If you are are starting with a new project, make sure your code in `MainPage.xaml.cs` matches the code from the [Create a recommendation app with .NET MAUI and ChatGPT](tutorial-maui-ai.md) tutorial.
+
+1. Add a method named `GetImageAsync` to handle image generation. The new method will call the OpenAI API to generate an image based on the prompt we'll build in the next step. It returns an `ImageSource` object that is used to display the image in the UI:
+
+    ```csharp MainPage.xaml.cs
+    public async Task<ImageSource> GetImageAsync(string prompt)
+    {
+        Response<ImageGenerations> imageGenerations = await _chatGptClient.GetImageGenerationsAsync(
+            new ImageGenerationOptions()
+            {
+                Prompt = prompt,
+                Size = ImageSize.Size256x256,
+            });
+
+        // Image Generations responses provide URLs you can use to retrieve requested images
+        Uri imageUri = imageGenerations.Value.Data[0].Url;
+
+        return ImageSource.FromUri(imageUri);
+    }
+    ```
+
+1. Add the following code to the end of the `GetRecommendation` method to conditionally call the `GetImageAsync` method and display the generated image:
+
+    ```csharp MainPage.xaml.cs
+    ...
+    if (IncludeImageChk.IsChecked)
+    {
+        var imagePrompt = $"Show some fun things to do in {LocationEntry.Text} when visiting a {recommendationType}.";
+        GeneratedImage.Source = await GetImageAsync(imagePrompt);
+    }
+    ```
+
+    The `imagePrompt` string is built based on the user's location input and the recommendation type selected.
+
+## Run and test
+
+Run your app, enter a valid location, and click one of the recommendation buttons. You should see something like this:
+
+:::image type="content" source="images/maui-dalle-recommendation-with-image.png" alt-text="Image generation demo":::
+
 ## How did we solve the problem?
-TODO: End the demonstration with a few paragraphs of analysis to make it clear that the product or service was a good choice to solve the customer problem.
 
-<!-- 8. Clean up resources ------------------------------------------------------------------------
+We added DALL-E's image generation capabilities to our .NET MAUI Windows desktop app. Users can now generate images based on the location they enter and the type of recommendation they select. This provides a rich, interactive experience for users and enhances the app's functionality.
 
-Required: To avoid any costs associated with following the Quickstart procedure, a Clean up resources (H2) should come just before Next step or Related content (H2)
-
-If there is a follow-on Quickstart that uses the same resources, make that option clear so that a reader doesn't need to recreate those resources. 
-
--->
-
-<!-- Use this exact H2 -->
 ## Clean up resources
 
-If you're not going to continue to use this application, delete <resources> with the following steps:
-
-1. From the left-hand menu...
-2. ...click Delete, type...and then click Delete
-
-<!-- 9. Next step/Related content ------------------------------------------------------------------------ 
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
-
-## Next step
-
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
+It's important to make sure your OpenAI account is secure. If you're not planning to use the [OpenAI API](https://platform.openai.com/api-keys) key for any other projects, you should delete it from your OpenAI developer dashboard. You should also set a reasonable spending limit on your OpenAI account to avoid any unexpected charges. You can check your current usage and spending in the OpenAI dashboard on the [Usage](https://platform.openai.com/usage) page.
 
 ## Related content
 
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
+- [.NET MAUI Installation](/dotnet/maui/get-started/installation)
+- [Create a recommendation app with .NET MAUI and ChatGPT](tutorial-maui-ai.md)
+- [Add DALL-E to your WinUI 3 / Windows App SDK desktop app](../how-tos/dall-e-winui3.md)
+- [Create a .NET MAUI app with C# Markup and the Community Toolkit](tutorial-csharp-ui-maui-toolkit.md)
