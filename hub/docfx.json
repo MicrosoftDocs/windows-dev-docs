@@ -45,6 +45,7 @@
       "ms.subservice": {
         "apps/design/**/*.md": "design",
         "apps/**/*.md": "apps",
+        "apps/windows-dotnet-maui/**/*.md": "desktop-app-ui-dev",
         "apps/windows-app-sdk/**/*.md": "apps",
         "apps/windows-app-sdk/applifecycle/**/*.md": "app-lifecycle",
         "apps/windows-app-sdk/windowing/**/*.md": "windowing",
@@ -94,6 +95,7 @@
       "ms.service": {
         "apps/trace-processing/**/*.md": "traceprocessor",
         "apps/**/*.md": "windows-app-sdk",
+        "apps/windows-dotnet-maui/**/*.md": "windows-dev-apps",
         "web/**/*.md": "windows",
         "android/**/*.md": "dev-environment",
         "dev-environment/**/*.md": "dev-environment",
