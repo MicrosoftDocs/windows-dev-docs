@@ -77,7 +77,7 @@ In this section, we'll install the SDK into the .NET MAUI project and initialize
 
 ## Modify your app's UI
 
-In this section, we'll modify the user interface to include an `Image` control that displays a generated image below the recommendation text.
+Next, we'll modify the user interface to include an `Image` control that displays a generated image below the recommendation text.
 
 1. If you are are starting with a new project, copy the XAML for `MainPage.xaml` from the [Create a recommendation app with .NET MAUI and ChatGPT](tutorial-maui-ai.md) tutorial.
 
@@ -112,6 +112,8 @@ In this section, we'll modify the user interface to include an `Image` control t
     ```
 
 ## Implement DALL-E image generation
+
+In this section, we'll add a method to handle image generation and call it from the existing `GetRecommendation` method to display the generated image.
 
 1. If you are are starting with a new project, make sure your code in `MainPage.xaml.cs` matches the code from the [Create a recommendation app with .NET MAUI and ChatGPT](tutorial-maui-ai.md) tutorial.
 
