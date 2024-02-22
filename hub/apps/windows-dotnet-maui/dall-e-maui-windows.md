@@ -30,9 +30,9 @@ In this section, we'll install the SDK into the .NET MAUI project and initialize
 
 1. If you haven't already installed the `Azure.AI.OpenAI` NuGet package, you can do so by running `dotnet add package Azure.AI.OpenAI -IncludePrerelease` from Visual Studio's terminal window.
 
-1. Once installed, you can initialize the `OpenAIClient` instance from the SDK with your OpenAI API key as follows:
+1. Once installed, you can initialize the `OpenAIClient` instance from the SDK with your OpenAI API key in `MainPage.xaml.cs` as follows:
 
-    ```csharp MainPage.xaml.cs
+    ```csharp
     private OpenAIClient _chatGptClient;
     private Guid _sessionGuid = Guid.Empty;
     private string openAIKey = "MY_OPEN_AI_API_KEY";
@@ -65,7 +65,7 @@ Next, we'll modify the user interface to include an `Image` control that display
 
 1. Add a `StackLayout` containing a `Label` control and a  `CheckBox` control to `MainPage.xaml` below the `LocationEntry` control to allow users to select whether to generate an image:
 
-    ```xml MainPage.xaml
+    ```xml
     ...
     <Entry
         x:Name="LocationEntry"
@@ -84,7 +84,7 @@ Next, we'll modify the user interface to include an `Image` control that display
 
 1. Add an `Image` control below the `SmallLabel` control to display the generated image:
 
-    ```xml MainPage.xaml
+    ```xml
     ...
         <Image x:Name="GeneratedImage"
                WidthRequest="256"
@@ -101,7 +101,7 @@ In this section, we'll add a method to handle image generation and call it from 
 
 1. Add a method named `GetImageAsync` to handle image generation. The new method will call the OpenAI API to generate an image based on the prompt we'll build in the next step. It returns an `ImageSource` object that is used to display the image in the UI:
 
-    ```csharp MainPage.xaml.cs
+    ```csharp
     public async Task<ImageSource> GetImageAsync(string prompt)
     {
         Response<ImageGenerations> imageGenerations = await _chatGptClient.GetImageGenerationsAsync(
@@ -120,7 +120,7 @@ In this section, we'll add a method to handle image generation and call it from 
 
 1. Add the following code to the end of the `GetRecommendation` method to conditionally call the `GetImageAsync` method and display the generated image:
 
-    ```csharp MainPage.xaml.cs
+    ```csharp
     ...
     if (IncludeImageChk.IsChecked)
     {
