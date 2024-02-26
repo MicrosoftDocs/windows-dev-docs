@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 02/07/2024
+ms.date: 02/26/2024
 ---
 
 # Set up a Dev Drive on Windows 11
@@ -373,6 +373,10 @@ fsutil devdrv setfiltersallowed PrjFlt
 ### Will a VHD created for use as a Dev Drive be encrypted when the drive storing it is BitLocker enabled?
 
 Yes, the Dev Drive VHD will be included in the BitLocker encryption of the hosting volume.
+
+### Can Dev Drive make Java development faster on Windows?
+
+Yes, using a Dev Drive can enhance efficiency and reduce build times when working on a Java development project. See the blog post ["Speed up your Java Development on Windows with Dev Drive"](https://devblogs.microsoft.com/java/speed-up-your-java-development-on-windows-with-microsoft-dev-drive/).
 
 ### How to contribute to these docs and FAQs?
 
