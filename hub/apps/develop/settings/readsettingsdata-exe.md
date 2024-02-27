@@ -1,6 +1,6 @@
 ---
 title: Cloud Data Store Settings Reader Tool (readsettingdata.exe)
-description: Packaged Windows App SDK apps can leverage WinRT APIs for reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library.
+description: This article describes the Cloud Data Store Settings Reader Tool, readsettingdata.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device.
 ms.date: 02/27/2024
 ms.topic: article
 keywords: windows 10, windows 11, settings
