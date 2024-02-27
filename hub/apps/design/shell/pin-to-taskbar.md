@@ -31,9 +31,9 @@ The [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) class lets you as
 
 ## Limited Access Feature (LAF) approval
 
-Taskbar pinning is a Limited Access Feature (LAF). To gain access to this API you will need to receive a token to unlock the LAF gating. To request a token, email [taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com) with the information listed below. If the request is approved you will receive a token to unlock the LAF.
+> [!IMPORTANT]
+> The Taskbar Pinning is a Limited Access Feature (see [LimitedAccessFeatures class](/uwp/api/windows.applicationmodel.limitedaccessfeatures)). For more information or to request an unlock token, contact [Microsoft Support](https://support.serviceshub.microsoft.com/supportforbusiness/create?sapId=d15d3aa2-0512-7cb8-1df9-86221f5cbfde).
 
-* The UX experience – please provide images in the LAF request email.
 
 ## 1. Check whether the required APIs exist
 
