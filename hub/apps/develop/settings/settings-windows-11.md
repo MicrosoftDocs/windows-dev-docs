@@ -84,7 +84,7 @@ This setting controls settings related to gaming and controls such as Game bar a
 
 Settings related to the lunar Calendar in the task bar. The scope of this type is per user.
 
-### Type: Windows.Data.LunarCalendar
+### Type: Windows.Data.LunarCalendar Structure
 
 ### Properties
 
@@ -92,13 +92,13 @@ Settings related to the lunar Calendar in the task bar. The scope of this type i
 |------|------|-------------|
 | languageType   | **LunarCalendarLanguageType** | A member of the **LunarCalendarLanguageType** enumeration. The default value is **Default**. |
 
-### Type: Windows.Data.LunarCalendarLanguageType
+### Type: Windows.Data.LunarCalendarLanguageType Enumeration
 
 ### Fields
 
-| Name |Description |
-|------|-------------|
-| Default    | The default lunar calendar configuration. |
-| None    | No lunar calendar. |
-| SimplifiedChinese    | The Simplified Chinese lunar calendar. |
-| TraditionalChinese    | The Traditional Chinese calendar. |
+| Name | Value | Description |
+|------|-------|---------|
+| Default | 0   | The default lunar calendar configuration. |
+| None   | 1 | No lunar calendar. |
+| SimplifiedChinese  | 2 | The Simplified Chinese lunar calendar. |
+| TraditionalChinese | 2   | The Traditional Chinese calendar. |
