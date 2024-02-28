@@ -859,7 +859,9 @@ items:
               - name: Overview
                 href: develop/settings/index.md
               - name: Reference for Windows 11 settings
-                href: develop/settings/windows-11-settings.md
+                href: develop/settings/settings-windows-11.md
+              - name: Reference for common Windows settings
+                href: develop/settings/settings-common.md
               - name: Cloud Data Store Settings Reader Tool (readsettingdata.exe)
                 href: develop/settings/readsettingsdata-exe.md
       - name: Communication

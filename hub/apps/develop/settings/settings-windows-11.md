@@ -9,16 +9,16 @@ ms.localizationpriority: medium
 
 # Reference for Windows 11 settings
 
-Overview content TBD. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md).
+Overview content TBD. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md). Link to [Reference for common Windows settings](settings-common.md).
 
 
 ## Ease cursor movement across displays 
 
 When enabled, Windows makes it easier to move your cursor and windows between displays by letting your cursor jump over areas where it would previously get stuck.
 
-### Namespace: Windows.Data.Settings.DisplaySettings
+This setting is single-instance.
 
-### Type: MultipleDisplays
+### Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays
 
 ### Properties
 
@@ -50,6 +50,8 @@ Data: {binary data}
 
 This setting controls settings related to gaming and controls such as Game bar and gaming shortcuts.
 
+This setting is single instance.
+
 ### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR
 
 **TBD - ALL DESCRIPTIONS TENTATIVE**
@@ -75,7 +77,7 @@ This setting controls settings related to gaming and controls such as Game bar a
 
 ### Registry values under HKCU\Software\Microsoft\GameBar
 
-| Registry key | Type | Value | Description |
+| Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
 | UseNexusForGameBarEnabled | REG_DWORD | 0 or 1 | TBD |
 | AutoGameModeEnabled | REG_DWORD | 0 or 1 | TBD |
