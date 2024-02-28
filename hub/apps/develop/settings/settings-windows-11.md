@@ -25,9 +25,9 @@ When enabled, Windows makes it easier to move your cursor and windows between di
 
 | Name | Type | Description |
 |------|------|-------------|
-| rememberWindowLocationsPerMonitorConnection | nullable<bool> | Remember window locations based on monitor connection. |
-| minimizeWindowsOnMonitorDisconnect | nullable<bool> | Minimize windows when a monitor is disconnected. |
-| easeCursorMovementBetweenDisplays | nullable<bool> | Ease cursor movement between displays. |
+| rememberWindowLocationsPerMonitorConnection | `nullable<bool>` | Remember window locations based on monitor connection. |
+| minimizeWindowsOnMonitorDisconnect | `nullable<bool>` | Minimize windows when a monitor is disconnected. |
+| easeCursorMovementBetweenDisplays | `nullable<bool>` | Ease cursor movement between displays. |
 
 ## Gaming: Game Bar, Game Mode, Gaming Shortcuts
 
