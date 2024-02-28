@@ -12,6 +12,31 @@ ms.localizationpriority: medium
 **TBD - Still working on the language to frame these settings**
 This page lists the settings that are supported by both Windows 10 and Windows 11. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md). Link to [Reference for Windows 11 settings](settings-windows-11.md). Link to [Reference for Windows 11 settings - TBD]().
 
+
+## BackupUnitStore
+
+ **TBD - I can't infer a description for this setting. Seems to use some non-primitive types that aren't explained.**
+
+### Type: Windows.Data.SettingsBackup.BackupUnitStore
+
+### Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| context | OperationContext | The context of the section within the manifest that defined the collection rules. |
+| manifestId | wstring | the name of the manifest that defined the collection rules. |
+| scope | wstring | the scope within the manifest. |
+| dataSetIdFormat | DataSetIdFormat | the format of the data set id contained in the dataSetId field. |
+| dataSetId | wstring | the data set id that should be restored from the data blob. |
+| created | int64 | Timestamp when the blob was created on the client. This is a client-based time and not a server based time. |
+| lastModified | int64 | Timestamp when the blob was most recently updated on the client. This is a client-based time and not a server based time. |
+| osVersion | wstring | OS version. |
+| generatorId | bond.GUID | Indicates the component that generated the contents of the data field. |
+| dataEncoding | uint64 | Indicates the generator-specific format that the generator used to produce the content. |
+| encryptionInfo | EncryptionInfo | If present, the data field is encrypted and this provides details on how to do so. If NOT present, the data field is not encrypted. |
+| data | blob | Migration engine generated data. |
+
+
 ## File Explorer Classic
 
 Settings related to the classic Windows File Explorer.
@@ -182,7 +207,55 @@ These are settings related to desktop icons.
 | sortColPropertyKeyPid | Unit32 | 10. |
 | sortColDirection | bool | 1=Ascending -1=Descending Default value is Ascending (true). |
 
+## ManifestBackupStore 
 
+ **TBD - I can't infer a description for this setting. Seems to use some non-primitive types that aren't explained.**
+
+### Type: Windows.Data.Platform.BackupRestore.ManifestBackupStore 
+
+This type is multi-instance and must be retrieved using the following collection collection names:
+
+* "Deviceprofiles"
+
+For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readsettingsdata-exe.md).
+
+### Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| profileId |wstring | Contains unique ID and CDS would also use this for partitionId to store all perDevice settings as part of this profile. This value is case-sensitive with a maximum length of 64 characters. The following characters are not allowed: '\\', '/', ':', '*', '?', '\', '<', '>', '\|', '#', '%', '$'.|
+| context | BackupContext | Context. | 
+| sourceManifestId | wstring | The ID of the manifest used to create this instance. |
+| sourceManifestName | wstring | Name of the manifest used to create this instance. | 
+| filters | vector&lt;wstring&gt; | The collection of filters used to partition the manifest used to create this instance. |
+| sourceProfileId | wstring | Optional. Source profileId where current profile is created from. Used for internal/debugging purposes only. |
+| createdTime | uint64 | UTC timestamp of the first time this item was submitted to the cloud. |
+| modifiedTime | uint64 | UTC timestamp of the most recent time this item was submitted to the cloud. |
+| OSVersion | uint64 | OS version. |
+| isActive | bool | A value indicating if the profile active or not. |
+| payload | blob | The data payload. |
+
+
+## NlmSignature 
+
+ **TBD - I can't infer a description for this setting.**
+
+### Type: Windows.Data.Nlm. NlmSignature 
+
+This type is multi-instance and must be retrieved using the following collection collection names:
+
+* "wificloudstore3"
+* "wifi3_wpa3"
+* "wifi3_owe"
+
+For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readsettingsdata-exe.md).
+
+
+### Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| category | uint64 | Category of signature? *TBD - description in source seems tentative* |
 
 ## Windows Update
 

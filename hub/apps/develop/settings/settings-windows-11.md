@@ -84,6 +84,8 @@ This setting is single instance.
 
 ## Lunar calendar
 
+**TBD - Lunar calendar appears in the "legacy" Word doc, so it probably should go in the "Common" settings page**
+
 Settings related to the lunar Calendar in the task bar. 
 
 This setting is single-instance.
