@@ -90,7 +90,7 @@ The scope of this type is per user.
 
 ### Type: Windows.Data.LunarCalendarPerDevice Structure
 
-This type inherits from **LunarCalendar**.
+This type inherits from **LunarCalendar**. The scope of this type is per device.
 
 ### Properties
 
