@@ -16,7 +16,7 @@ This page lists the settings that are supported on Windows 10 and Windows 11, bu
 
 Settings related to the classic Windows File Explorer.
 
-### Type: Windows.Data.FileExplorerClassic.ShellStateSetting
+### Type: Windows.Data.FileExplorerClassic.ShellStateSetting Structure
 
 ### Properties
 
@@ -36,7 +36,7 @@ Settings related to the classic Windows File Explorer.
 | showTypeOverlay | bool | Indicates whether Shell state should show type overlay. |
 
 
-### Type: Windows.Data.FileExplorerClassic.CabinetStateSettings
+### Type: Windows.Data.FileExplorerClassic.CabinetStateSettings Structure
 
 ### Properties
 
@@ -47,7 +47,7 @@ Settings related to the classic Windows File Explorer.
 | saveLocalView | bool | Indicates whether the cabinet state setting should save local view. |
 | newWindowMode | bool | Indicates whether the cabinet state setting should open in new window mode. |
 
-### Type: Windows.Data.FileExplorerClassic.AdvancedSettings
+### Type: Windows.Data.FileExplorerClassic.AdvancedSettings Structure
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -67,7 +67,7 @@ Settings related to the classic Windows File Explorer.
 | showLibraries | bool | Indicates whether the file explorer advanced settings should show libraries. |
 | showCompColor | bool | Indicates whether to show comp color for advanced settings. |
 
-### Type: Windows.Data.FileExplorerClassic.ExplorerSettings
+### Type: Windows.Data.FileExplorerClassic.ExplorerSettings Structure
 
 ### Properties
 
@@ -78,7 +78,7 @@ Settings related to the classic Windows File Explorer.
 | underlineIconsNever | bool | Indicates whether Explorer settings should never underline icons. |
 | underlineIconsAsBrowser | bool | Indicates whether Explorer settings should underline icons as browser. |
 
-### Type: Windows.Data.FileExplorerClassic.SearchSettings
+### Type: Windows.Data.FileExplorerClassic.SearchSettings Structure
 
 ### Properties
 
@@ -90,7 +90,7 @@ Settings related to the classic Windows File Explorer.
 | systemFolders | bool | Indicates whether search setting show system folders. |
 | archivedFiles | bool | Indicates whether search setting show archived files. |
 
-### Type: Type: Windows.Data.FileExplorerClassic.RegistrySettings
+### Type: Type: Windows.Data.FileExplorerClassic.RegistrySettings Structure
 
 These are blobs that are in the registry. There are three things that use registry stream settings:
 
@@ -110,7 +110,7 @@ These are blobs that are in the registry. There are three things that use regist
 | readingPaneSettings | unit32 | Indicates reading pane settings. |
 | navigationPaneVisible | bool | Indicates whether navigation pane is visible or not. |
 
-### Type: Windows.Data.FileExplorerClassic.FolderOptionGeneralSettings
+### Type: Windows.Data.FileExplorerClassic.FolderOptionGeneralSettings Structure
 
 These are settings found in File Explorer->Folder options(...)->General tab
 
@@ -128,7 +128,7 @@ These are settings found in File Explorer->Folder options(...)->General tab
 | showFrequentlyUsedFolders | bool | Indicates whether to show frequently used folders. |
 | showFilesFromOffice | bool | Indicates whether to show files from MS office. |
 
-### Type: Windows.Data.FileExplorerClassic.FolderOptionsAdvancedSettings
+### Type: Windows.Data.FileExplorerClassic.FolderOptionsAdvancedSettings Structure
 
 These are settings found in File Explorer->Folder options(...)->View tab->Advanced settings
 
@@ -157,7 +157,7 @@ These are settings found in File Explorer->Folder options(...)->View tab->Advanc
 | navPaneShowNetwork | bool | Show pane navigation network. |
 | navPaneShowThisPC | bool | This is used to show navigation pane to show current folder. |
 
-### Type: Windows.Data.FileExplorerClassic.RecycleBinSettings
+### Type: Windows.Data.FileExplorerClassic.RecycleBinSettings Structure
 
 These are settings found in Recycle bin-> right click Properties
 
@@ -167,7 +167,7 @@ These are settings found in Recycle bin-> right click Properties
 |------|------|-------------|
 | displayDeleteConfirmationDialog | bool | Indicates whether to show delete confirmation dialog
 
-### Type: Windows.Data.FileExplorerClassic.DesktopIconSettings
+### Type: Windows.Data.FileExplorerClassic.DesktopIconSettings Structure
 
 These are settings related to desktop icons.
 
