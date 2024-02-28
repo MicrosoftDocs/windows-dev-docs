@@ -86,6 +86,8 @@ This setting is single instance.
 
 Settings related to the lunar Calendar in the task bar. 
 
+This setting is single-instance.
+
 ### Type: Windows.Data.LunarCalendar Structure
 
 The scope of this type is per user.
@@ -110,3 +112,26 @@ This type inherits from **LunarCalendar**. The scope of this type is per device.
 | None   | 1 | No lunar calendar. |
 | SimplifiedChinese  | 2 | The Simplified Chinese lunar calendar. |
 | TraditionalChinese | 2   | The Traditional Chinese calendar. |
+
+
+## Time & Language -> Typing
+
+This setting contains toggles and other settings related to touch keyboard, text suggestions and preferences.
+
+This setting is single-instance.
+
+### Registry values under HKCU\Software\Microsoft\TabletTip\1.7
+
+### Registry values under HKCU\Software\Microsoft\input\Settings
+
+**TBD - The word doc lists both of these registry paths but doesn't indicate which values are under which path**
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| EnableAutoShiftEngage | REG_DWORD | 1 or 0 | Enables auto shift engage. |
+| EnableDoubleTapSpace | REG_DWORD | 1 or 0 | Enables double-tap space. |
+| EnableAutocorrection | REG_DWORD | 1 or 0 | Enables auto-correction. |
+| IsVoiceTypingKeyEnabled | REG_DWORD | 1 or 0 | Indicates if voice typing key is enabled. |
+| MultilingualEnabled | REG_DWORD | 1 or 0 | Indicates in multingual is enabled. |
+| EnableHwkbTextPrediction | REG_DWORD | 1 or 0 | ASCII Value for keys. |
+

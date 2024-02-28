@@ -1,6 +1,6 @@
 ---
 title: Reference for common Windows settings
-description: This page lists the settings that are supported on Windows 10 and Windows 11, but were introduced in earlier Windows versions.
+description: This page lists the settings that are supported by both Windows 10 and Windows 11.
 ms.date: 02/27/2024
 ms.topic: article
 keywords: windows 10, windows 11, settings
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Reference for common Windows settings
 
 **TBD - Still working on the language to frame these settings**
-This page lists the settings that are supported on Windows 10 and Windows 11, but were introduced in earlier Windows versions. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md). Link to [Reference for Windows 11 settings](settings-windows-11.md). Link to [Reference for Windows 11 settings - TBD]().
+This page lists the settings that are supported by both Windows 10 and Windows 11. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md). Link to [Reference for Windows 11 settings](settings-windows-11.md). Link to [Reference for Windows 11 settings - TBD]().
 
 ## File Explorer Classic
 
@@ -182,3 +182,21 @@ These are settings related to desktop icons.
 | sortColPropertyKeyPid | Unit32 | 10. |
 | sortColDirection | bool | 1=Ascending -1=Descending Default value is Ascending (true). |
 
+
+
+## Windows Update
+
+**TBD - I am placing this setting in the "common" page for now because the Word doc explicitly calls out that the setting is available and identical on Windows 10 and Windows 11. Catorization of settings is still TBD**
+
+This setting is single instance.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR
+
+**TBD - ALL DESCRIPTIONS TENTATIVE**
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| IsContinuousInnovationOptedIn | REG_DWORD | 0/1 | Enables devices to get the latest updates as soon as they’re released. |
+| AllowMUUpdateService | REG_DWORD | 0/1 | Allows users to get other Microsoft products alongside with Windows Updates. |
+| IsExpedited | REG_DWORD | 0/1 | User selects this to invoke device restart 15 min after all updates finished installing. |
+| RestartNotificationsAllowed2 | REG_DWORD | 0/1 | Users decides if they want to be notified about the updates pending restart. |
