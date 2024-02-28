@@ -82,9 +82,15 @@ This setting controls settings related to gaming and controls such as Game bar a
 
 ## Lunar calendar
 
-Settings related to the lunar Calendar in the task bar. The scope of this type is per user.
+Settings related to the lunar Calendar in the task bar. 
 
 ### Type: Windows.Data.LunarCalendar Structure
+
+The scope of this type is per user.
+
+### Type: Windows.Data.LunarCalendarPerDevice Structure
+
+This type inherits from **LunarCalendar**.
 
 ### Properties
 
@@ -94,7 +100,7 @@ Settings related to the lunar Calendar in the task bar. The scope of this type i
 
 ### Type: Windows.Data.LunarCalendarLanguageType Enumeration
 
-### Fields
+### Values
 
 | Name | Value | Description |
 |------|-------|---------|
