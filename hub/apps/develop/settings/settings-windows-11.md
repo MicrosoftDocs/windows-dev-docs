@@ -54,12 +54,12 @@ This setting controls settings related to gaming and controls such as Game bar a
 
 **TBD - ALL DESCRIPTIONS TENTATIVE**
 
-| Registry key | Type | Value | Description |
+| Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
 | VKMSaveHistoricalVideo | REG_DWORD | 0 or 1 | Toggles save historical video enabled. |
 | VKMTakeScreenshot | REG_DWORD | 0 or 1 | Toggles take screenshot enabled. |
-| VKTakeScreenshot | REG_DWORD | ASCII Value for keys | Key binding for take screenshot. |
-| VKSaveHistoricalVideo | REG_DWORD | ASCII Value for keys |
+| VKTakeScreenshot | REG_DWORD | ASCII Value for keys | Key binding for save historical screenshot. |
+| VKSaveHistoricalVideo | REG_DWORD | ASCII Value for keys | Key binding for take screenshot. |
 | VKMToggleBroadcast | REG_DWORD | 0 or 1 | Toggles broadcast enabled. |
 | VKToggleBroadcast | REG_DWORD | ASCII Value for keys | Key binding for take broadcast. |
 | VKMToggleCameraCapture | REG_DWORD | 0 or 1 | Toggles camera capture enabled. |
