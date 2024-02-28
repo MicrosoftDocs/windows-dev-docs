@@ -14,10 +14,9 @@ Overview content TBD. Link to [Settings back up and restore overview](index.md).
 
 ## Ease cursor movement across displays 
 
+When enabled, Windows makes it easier to move your cursor and windows between displays by letting your cursor jump over areas where it would previously get stuck.
 
 ### Namespace: Windows.Data.Settings.DisplaySettings
-
-When enabled, Windows makes it easier to move your cursor and windows between displays by letting your cursor jump over areas where it would previously get stuck.
 
 ### Type: MultipleDisplays
 
@@ -28,6 +27,24 @@ When enabled, Windows makes it easier to move your cursor and windows between di
 | rememberWindowLocationsPerMonitorConnection | `nullable<bool>` | Remember window locations based on monitor connection. |
 | minimizeWindowsOnMonitorDisconnect | `nullable<bool>` | Minimize windows when a monitor is disconnected. |
 | easeCursorMovementBetweenDisplays | `nullable<bool>` | Ease cursor movement between displays. |
+
+
+** TBD - Document Multiple Displays as reg keys rather than schema - waiting for info about the following:
+
+Copy of what the user has saved in user profile for system-wide parameter SPI_GETCURSORDEADZONEJUMPING
+
+### Registry values under Computer\HKEY_USERS\{The users generated unique id}\Software\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Current\default$windows.data.settings.displaysettings.multipledisplays 
+
+Computer\HKEY_USERS\{The users generated unique id}\Software\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Current\default$windows.data.settings.displaysettings.multipledisplays
+
+Name: (Default)
+Type: REG_SZ
+Data: (value not set)
+
+Name: Data
+Type: REG_Binary
+Data: {binary data}
+
 
 ## Gaming: Game Bar, Game Mode, Gaming Shortcuts
 
@@ -63,3 +80,25 @@ This setting controls settings related to gaming and controls such as Game bar a
 | UseNexusForGameBarEnabled | REG_DWORD | 0 or 1 | TBD |
 | AutoGameModeEnabled | REG_DWORD | 0 or 1 | TBD |
 
+## Lunar calendar
+
+Settings related to the lunar Calendar in the task bar. The scope of this type is per user.
+
+### Type: Windows.Data.LunarCalendar
+
+### Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| languageType   | **LunarCalendarLanguageType** | A member of the **LunarCalendarLanguageType** enumeration. The default value is **Default**. |
+
+### Type: Windows.Data.LunarCalendarLanguageType
+
+### Fields
+
+| Name |Description |
+|------|-------------|
+| Default    | The default lunar calendar configuration. |
+| None    | No lunar calendar. |
+| SimplifiedChinese    | The Simplified Chinese lunar calendar. |
+| TraditionalChinese    | The Traditional Chinese calendar. |
