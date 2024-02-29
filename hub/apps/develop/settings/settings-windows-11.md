@@ -9,8 +9,16 @@ ms.localizationpriority: medium
 
 # Reference for Windows 11 settings
 
-Overview content TBD. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md). Link to [Reference for common Windows settings](settings-common.md).
+This page provides information for accessing Windows settings for Windows 11. For information on accessing settings on Windows l0, see [Reference for Windows 10 settings](settings-windows-10.md). Note that some settings may have different implementations for Windows 10 and Windows 11, in which case they will appear on both pages. Settings that are supported and have identical implementations on both Windows 10 and Windows 11 are documented in [Reference for common Windows settings](settings-common.md).
 
+For an overview of the Settings backup and restore feature, see [Settings back up and restore overview](index.md).
+
+Some settings are accessed via the Windows registry. Other settings are using a tool that retrieves the settings data from the Cloud Data Store and returns them in serialized JSON format. For information on using this tool to access Windows settings data, see [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md).
+
+
+## Do not disturb (Windows 11)
+
+Set "do not disturb" status manually or automatically, so that notifications will be sent directly to the notification center. There is an implmentation of this setting for Windows 10 that has a different implementation. For more information, see [Reference for Windows 10 settings](settings-windows-10).
 
 ## Ease cursor movement across displays 
 
