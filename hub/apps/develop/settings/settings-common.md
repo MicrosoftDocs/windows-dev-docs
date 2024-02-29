@@ -36,6 +36,69 @@ This page lists the settings that are supported by both Windows 10 and Windows 1
 | encryptionInfo | EncryptionInfo | If present, the data field is encrypted and this provides details on how to do so. If NOT present, the data field is not encrypted. |
 | data | blob | Migration engine generated data. |
 
+## Calling
+
+The settings below are for a deprecated Windows calling experience and are no longer read by the operating system, however the settings data may be present on user devices or in the cloud.
+
+## Type: Windows.data.calling.settings
+
+**TBD - No info provided for this type in the "legacy settings" doc**
+
+## Type: Windows.data.calling.callhistoryItem
+
+### Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| uniqueId | String | Unique identifier for the record. |
+| phoneNumber | String | Phone number of the caller. |
+| calltype | Enum CallType | Possible values: Outgoing, IncomingAnswered, IncomingMissed, IncomingRinging, OutgoingMissed, OutgoingRinging. |
+| voicemailCall | Bool | Indicates whether the call was a voice mail. |
+| videocall | Bool | Indicates whether the call was a video call. |
+| Seen | Bool | Indicates whether the call history was seen by the user. |
+| callerIdBlocked | Bool | Indicates whether the call was blocked. |
+| emergencycall | Bool | Indicates whether call was an emergency call. |
+| linenumber | String | The number of the phone line that received the call. |
+| lineName | String | The phone line’s name. |
+| callerLocation | String | Caller location. |
+| callerCategory | String | Caller category. |
+| callerCategoryDescription | String | Caller category description. |
+| Calltimestamp | Unit64 | unix time stamp. | 
+| Callarrivaltime | Unit64 | Unix time the call arrived on the device. |
+| callEndTime | Unit64 | Unix time stamp when the call was ended. |
+
+
+## Type: Windows.Data.calling.callhistory
+
+### Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| historyItems | Map&lt;string, CallHistoryItem&gt; | A collection of call history items where the keys are each history item’s UniqueId. |
+| highestSequenceNumber | Unit32 | Highest sequence number issued, used for internal business logic. |
+
+## Type: Windows.data.calling.callfavorites
+
+| Name | Type | Description |
+|------|------|-------------|
+| favoriteItems | vector&lt;CallFavoriteItem&gt; | A collection of calling favorites. |
+
+## Type: Windows.data.calling.CallFavoriteItem
+
+| Name | Type | Description |
+|------|------|-------------|
+| phoneNumber | String | A collection of calling favorites. |
+| displayName | String | Display name of the favorite. |
+| lineNumber | String | Line number the favorite is associated with. |
+| phoneNumberName | Uint32 | Phone number name. |
+| remoteIdHash | String | Remote ID hash. |
+| propHash | String | Property hash. |
+| isVideoCall | Bool | Indicates whether the item is a video call. |
+| isPublicSwitchTelephoneNetwork | Bool | Indicates whether the item is a telephone call. |
+| applicationId | String | Application ID. |
+| callbackToken | String | Callback token. |
+| UniqueId | Unit64 | A unique identifier for the item. |
+
 
 ## File Explorer Classic
 
@@ -43,7 +106,7 @@ Settings related to the classic Windows File Explorer.
 
 ### Type: Windows.Data.FileExplorerClassic.ShellStateSetting Structure
 
-### Properties
+### ShellStateSetting Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -63,7 +126,7 @@ Settings related to the classic Windows File Explorer.
 
 ### Type: Windows.Data.FileExplorerClassic.CabinetStateSettings Structure
 
-### Properties
+### CabinetStateSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -94,7 +157,7 @@ Settings related to the classic Windows File Explorer.
 
 ### Type: Windows.Data.FileExplorerClassic.ExplorerSettings Structure
 
-### Properties
+### ExplorerSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -105,7 +168,7 @@ Settings related to the classic Windows File Explorer.
 
 ### Type: Windows.Data.FileExplorerClassic.SearchSettings Structure
 
-### Properties
+### SearchSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -125,7 +188,7 @@ These are blobs that are in the registry. There are three things that use regist
 | Details Preview Settings | Two DWORDs (dwPreviewPaneSettings and dwReadingPaneSettings) |
 | Navigation Pane Visibility | A bool |
 
-### Properties
+### RegistrySettingsProperties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -142,7 +205,7 @@ These are settings found in File Explorer->Folder options(...)->General tab
 •	File explorer can be opened to either Home or This PC 
 •	File explorer can be opened to One Drive folder as well if user has signed in to One Drive (This option is available only if user has signed in)
 
-### Properties
+### FolderOptionGeneralSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -157,7 +220,7 @@ These are settings found in File Explorer->Folder options(...)->General tab
 
 These are settings found in File Explorer->Folder options(...)->View tab->Advanced settings
 
-### Properties
+### FolderOptionsAdvancedSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -186,7 +249,7 @@ These are settings found in File Explorer->Folder options(...)->View tab->Advanc
 
 These are settings found in Recycle bin-> right click Properties
 
-### Properties
+### RecycleBinSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -196,7 +259,7 @@ These are settings found in Recycle bin-> right click Properties
 
 These are settings related to desktop icons.
 
-### Properties
+### DesktopIconSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -207,11 +270,111 @@ These are settings related to desktop icons.
 | sortColPropertyKeyPid | Unit32 | 10. |
 | sortColDirection | bool | 1=Ascending -1=Descending Default value is Ascending (true). |
 
-## ManifestBackupStore 
+
+
+## Input Method Editors (IME)
+
+History files are used to optimize the Japanese IME user experience across devices.
+
+**TBD - This setting references some non-primitive types. Are these documented somewhere? **
+
+## Type: Windows.Data.Input.HistoryFiles
+
+### HistoryFiles Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| InputDataFiles | Map&lt;string,FilePathInfo&gt;| A map of input history FilePathInfo structs where the key represents a relative folder path. |
+
+## Type: Windows.Data.Input.FilePathInfo
+
+### FilePathInfo Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| filePath | Map&lt;string,fileData&gt;| A map of FileData structs where the key is the file name. |
+
+## Type: Windows.Data.Input.FileData
+
+### FileData Properties
+
+**TBD - Seems suspicious that this property name is listed as "filePath". Copy and paste error in the doc?**
+
+
+| Name | Type | Description |
+|------|------|-------------|
+| filePath | blob | Raw input data, byte array serialized as a collection of integers. |
+
+
+## Internet Explorer
+
+Although Internet explorer has reached end of life, some settings stored by the browser may remain in the cloud or on Windows through settings backup. 
+
+The **SettingUnit** stucture used with the following settings has the following definition:
+
+```cpp
+struct SettingUnit 
+{
+    String settingType
+    String settingUnitID
+    FILETIME timeStamp
+    blob settingData
+}
+```
+
+### Type: Windows.Data.InternetExplorer.Favorites
+
+The scope of this type is per-user.
+
+### Favorites Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| favoriteSettings | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer favorites. |
+
+### Type: Windows.Data.InternetExplorer.TypedURLS
+
+The scope of this type is per-user.
+
+### TypedURLS Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| typedURLSettings | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer  TypedURLS. |
+
+### Type: Windows.Data.InternetExplorer.BrowserHistory
+
+The scope of this type is per-user.
+
+### BrowserHistory Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| BrowserHistory | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer browser history. |
+
+### Type: Windows.Data.InternetExplorer.AutoComplete
+
+### AutoComplete Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| AutoCompleteSetting | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer autocomplete. |
+
+### Type: Windows.Data.InternetExplorer.TabRoaming
+
+**TBD - In the "legacy settings" word doc, this entry was mangled by a copy/paste error. A SME should validate the way that I fixed it**
+
+### TabRoaming Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| TabRoamingSetting | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer tab roaming settings. |
+
+## ManifestBackupStore
 
  **TBD - I can't infer a description for this setting. Seems to use some non-primitive types that aren't explained.**
 
-### Type: Windows.Data.Platform.BackupRestore.ManifestBackupStore 
+### Type: Windows.Data.Platform.BackupRestore.ManifestBackupStore
 
 This type is multi-instance and must be retrieved using the following collection collection names:
 
@@ -219,7 +382,7 @@ This type is multi-instance and must be retrieved using the following collection
 
 For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readsettingsdata-exe.md).
 
-### Properties
+### ManifestBackupStore Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -251,7 +414,7 @@ This type is multi-instance and must be retrieved using the following collection
 For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readsettingsdata-exe.md).
 
 
-### Properties
+### NlmSignature Properties
 
 | Name | Type | Description |
 |------|------|-------------|

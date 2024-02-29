@@ -20,7 +20,7 @@ This setting is single-instance.
 
 ### Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays
 
-### Properties
+### MultipleDisplays Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -29,7 +29,7 @@ This setting is single-instance.
 | easeCursorMovementBetweenDisplays | `nullable<bool>` | Ease cursor movement between displays. |
 
 
-** TBD - Document Multiple Displays as reg keys rather than schema - waiting for info about the following:
+**TBD - Document Multiple Displays as reg keys rather than schema - waiting for info about the following:**
 
 Copy of what the user has saved in user profile for system-wide parameter SPI_GETCURSORDEADZONEJUMPING
 
@@ -98,7 +98,7 @@ The scope of this type is per user.
 
 This type inherits from **LunarCalendar**. The scope of this type is per device.
 
-### Properties
+### LunarCalendarPerDevice Properties
 
 | Name | Type | Description |
 |------|------|-------------|
