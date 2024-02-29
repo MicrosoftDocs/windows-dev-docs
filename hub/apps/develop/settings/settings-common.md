@@ -13,6 +13,46 @@ ms.localizationpriority: medium
 This page lists the settings that are supported by both Windows 10 and Windows 11. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md). Link to [Reference for Windows 11 settings](settings-windows-11.md). Link to [Reference for Windows 11 settings - TBD]().
 
 
+
+## Autoplay
+
+This setting helps to set defaults for removable drives and memory cards
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers
+
+**TBD - There are some values I couldn't deduce meanings for (e.g. that GUID), but also I can't figure out how these registry keys match with the UI strings in the doc. **
+
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| DisableAutoplay | REG_DWORD | 0/1 | Toggle the use of autoplay for all media and devices. |
+| UserChosenExecuteHandlers\CameraAlternate\ShowPicturesOnArrival | REG_SZ | 0/1 | User selected default autoplay behavior for removable drive. |
+| UserChosenExecuteHandlers\ StorageOnArrival | REG_DWORD | 0/1 | User selected default autoplay behavior for memory card. |
+| EventHandlersDefaultSelection\CameraAlternate\ShowPicturesOnArrival | REG_DWORD | 0/1 | System default autoplay behavior for removable drive. |
+| EventHandlersDefaultSelection\ StorageOnArrival | REG_DWORD | 0/1 | System default autoplay behavior for memory card. |
+
+#### Supported data values for ShowPicturesOnArrival
+
+| Data value | Description |
+|------------|-------------|
+| dsd9eksajf9re3669zh5z2jykhws2jy42gypaqjh1qe66nyek1hg!content!import | TBD |
+| MSPlayMediaOnArrival | Play media on arrival. |
+| MSOpenFolder | Open folder. |
+| MSPromptEachTime | Prompt each time. |
+| OneDriveAutoPlay | TBD |
+| MSTAKENOACTION | Take no action. |
+
+#### Supported data values for StorageOnArrival
+
+| Data value | Description |
+|------------|-------------|
+| MSTAKENOACTION | Take no action. |
+| MSOpenFolder | Open folder. |
+| MSStorageSense | TBD |
+| MSPromptEachTime | Prompt each time. |
+
+
+
 ## BackupUnitStore
 
  **TBD - I can't infer a description for this setting. Seems to use some non-primitive types that aren't explained.**
