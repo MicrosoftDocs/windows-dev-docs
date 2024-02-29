@@ -99,7 +99,17 @@ There are a few rules to follow when remapping shortcuts. These rules only apply
 
 - Shortcuts must begin with a modifier key: <kbd>Ctrl</kbd>, <kbd>Shift</kbd>, <kbd>Alt</kbd>, or <kbd>⊞ Win</kbd>
 - Shortcuts must end with an action key (all non-modifier keys): A, B, C, 1, 2, 3, etc.
-- Shortcuts cannot be longer than four keys
+- Shortcuts cannot exceed four keys in length, or five if the shortcut is a 'chord'.
+
+#### Shortcuts with chords
+Shortcuts can be created with one or more modifiers and two non-modifier keys. These are called 'chords.' In order to create a chord, you need to use the edit button to open the modal to record the shortcut using the keyboard. Once this is open, you need to toggle on the 'Allow chords' switch. Doing this allows you to enter two non-modifier keys. For example, you can create shortcuts using a chord based on 'V' for **V**olume **U**p and **V**olume **D**own like this::
+| Select: | To send: |
+| :--- | :--- |
+| `Shirt`+`Ctrl` + `V` , `U` | `Volume Up` |
+| `Shirt`+`Ctrl` + `V` , `D` | `Volume Down` |
+
+Chords are handy if you have a number of shortcuts that are similar, and so it makes sense to have them all start with the same non-modifier key. 
+
 
 ### Remap a shortcut to a single key
 
@@ -121,6 +131,20 @@ For example, to replace the shortcut <kbd>Ctrl</kbd>+<kbd>G</kbd> with `Hello!` 
 | Select: | To send: |
 | :--- | :--- |
 | `Ctrl` + `G` | `Hello!` |
+
+### Remap a shortcut to start an app
+Keyboard Manager enables you to start applications with the activation of any shortcut. Select "Start App" from the action in the "To:" column to do this. There are a few options to configure when using this type of shortcut. They are:
+| Option     | Meaning  |
+| :---            | :---          |
+| App  | This is the path to an executable. Environment variables will be expanded.     |
+| Args         | Arguments that will be sent to the app.   |
+| Start in     | The working directory for the app to start in.  |
+| Elevation    | Specify the elevation level to start the app. The options include Normal, Elevated, and Different User.  |
+| If running | What action should be taken when this shortcut is activated while the app is already running? The options are: Show Window, Start another instance, Do nothing, Close, End task.   |
+| Visibility   | Specifies whether the app will be visible. This is useful when the app is a console or something you don't want to see.  |
+
+### Remap a shortcut to open a URI
+This type of shortcut action will open a URI. The only option is the actual Path/URI. Almost anything you can issue on the command line should work. You can find some other examples here: https://learn.microsoft.com/en-us/windows/uwp/launch-resume/launch-app-with-uri
 
 ### App-specific shortcuts
 
