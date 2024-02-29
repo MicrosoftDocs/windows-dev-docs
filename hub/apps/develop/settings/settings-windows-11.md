@@ -116,17 +116,30 @@ This type inherits from **LunarCalendar**. The scope of this type is per device.
 | TraditionalChinese | 2   | The Traditional Chinese calendar. |
 
 
-## Time & Language -> Typing
+## Text Input
+
+This setting helps to chose a theme for touch keyboard, voice typing, emoji and more, and input method editors.
+
+### Registry values under HKCU\Software\Microsoft\TabletTip\1.7
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| IsKeyBackgroundEnabled | REG_DWORD | 0 or 1 | Indicates if key background is enabled. |
+| KeyLabelSize | REG_DWORD | Min value: 0, Max value: 2 | Key label size. |
+| UserKeyboardScalingFactor | REG_DWORD | Min value: 1, Max value: 1000 | User keyboard scaling factor. |
+| SelectedThemeIndex | REG_DWORD | Min value: 0, Max value: 15 | Selected theme index. |
+| SelectedThemeName | REG_SZ | One of the following values: "LightTheme", "DarkTheme", "ColorPopTheme", "BlackWhiteTheme", "PoppyRedTheme", "IceBlueTheme", "PlatinumTheme", "TangerineTidesTheme", "LilacRiverTheme", "SilkyDawnTheme", "IndigoBreezeTheme", "PinkBlueTheme", "GreenPurpleTheme", "PinkOrangeTheme", "CustomTheme" | Selected theme name. |
+| ThemeDataVersion | REG_DWORD | 2 | Theme data version. |
+
+
+## Typing
 
 This setting contains toggles and other settings related to touch keyboard, text suggestions and preferences.
 
 This setting is single-instance.
 
-### Registry values under HKCU\Software\Microsoft\TabletTip\1.7
 
 ### Registry values under HKCU\Software\Microsoft\input\Settings
-
-**TBD - The word doc lists both of these registry paths but doesn't indicate which values are under which path**
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
@@ -136,4 +149,18 @@ This setting is single-instance.
 | IsVoiceTypingKeyEnabled | REG_DWORD | 1 or 0 | Indicates if voice typing key is enabled. |
 | MultilingualEnabled | REG_DWORD | 1 or 0 | Indicates in multingual is enabled. |
 | EnableHwkbTextPrediction | REG_DWORD | 1 or 0 | ASCII Value for keys. |
+
+## USB - notifications
+
+This setting controls toggles such as connection notifications, battery saver and other notifications related to charging of PC.
+
+This setting is single-instance.
+
+### Registry values under HKCU\Software\Microsoft\Shell\USB
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| NotifyOnUsbErrors | REG_DWORD | 0 or 1 | Enables notifications for USB errors. |
+| NotifyOnWeakCharger | REG_DWORD | 0 or 1 | Enables notifications for weak charger detected. |
+
 
