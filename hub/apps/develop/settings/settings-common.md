@@ -143,7 +143,72 @@ The settings below are for a deprecated Windows calling experience and are no lo
 | callbackToken | String | Callback token. |
 | UniqueId | Unit64 | A unique identifier for the item. |
 
+## Contrast themes
 
+Settings related to high-contrast themes.
+
+### Type: Windows.Data.ContrastThemes.CurrentThemeType enumeration
+
+#### CurrentThemeType values
+
+| Name | Value | Description |
+|------|-------|---------|
+| Contrast_Inbox | 0   | In-box high contrast theme. |
+| Contrast_Custom | 1   | Customized high contrast theme. |
+| Backup_disabled | 2   | **TBD - This looks like "backup disabled" to me, but the description of the struct property that uses this is "Signifies whether current theme is personalized theme or inbox high contrast theme or customized high contrast theme"** |
+
+### Type: Windows.Data.ContrastThemes.SynchedTheme structure
+
+#### SynchedTheme properties
+
+| Name | Value | Description |
+|------|-------|---------|
+| type  | **CurrentThemeType**   | Specifies whether current theme is personalized theme or inbox high contrast theme or customized high contrast theme. |
+| currentThemePath  | wstring   | The complete path to the currently applied theme file.  |
+| contrastThemePath  | wstring   | The complete path to the last applied high contrast theme file.This can be same as of *currentThemePath* if current theme is high contrast. |
+| baseContrastThemeName  | wstring | Specifies the base in-box high contrast theme is applied. Any customization may have been applied on top of these themes. Supported values are "High Contrast #1", " or "High Contrast #2", "High Contrast Black", or "High Contrast White" |
+| customThemeName  | wstring   | The user-defined name for a customized contrast theme. |
+| rgbBackground  | **Windows.Data.Common.Color**   | Theme background color. |
+| rgbText  | **Windows.Data.Common.Color**   | Theme text color. |
+| rgbHyperlink  | **Windows.Data.Common.Color**   | Theme hyperlink color. |
+| rgbInactiveText  | **Windows.Data.Common.Color**   | Theme inactive text color. |
+| rgbSelectedText1  | **Windows.Data.Common.Color**   | Theme selected text 1 color. |
+| rgbSelectedText2  | **Windows.Data.Common.Color**   | Theme selected text 2 color. |
+| rgbButtonText1  | **Windows.Data.Common.Color**   | Theme button text 1 color. |
+| rgbButtonText2  | **Windows.Data.Common.Color**   | Theme button text 2 color. |
+
+### Type: Windows.Data.Common.Color structure
+
+#### Color values
+
+| Name | Value | Description |
+|------|-------|---------|
+| red  | uint8 | Red channel value of an RGBA color. |
+| green  | uint8 | Green channel value of an RGBA color.  |
+| blue  | uint8 | Blue channel value of an RGBA color.  |
+| alpha  | uint8 | Alpha channel value of an RGBA color. |
+
+## Date and Time
+
+Settings related to date and time.
+
+### Registry values under HKLM\SYSTEM\CurrentControlSet\Services\tzautoupdate
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| start | REG_DWORD | 0/1 | Enables set time zone automatically. |
+
+### Registry values under HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| timeZone | REG_SZ | System timezone as string.  | The currently set time zone for the system. |
+
+
+HKLM\SYSTEM\CurrentControlSet\Services\tzautoupdate [start]
+Value Type: REG_DWORD
+HKLM\ SYSTEM\CurrentControlSet\Control\TimeZoneInformation [TimeZoneKeyName]
+Value Type: REG_SZ
 
 ## Do not disturb
 
@@ -155,8 +220,8 @@ Set "do not disturb" status manually or automatically, so that notifications wil
 
 | Name | Value | Description |
 |------|-------|---------|
-| Default | 0   |  |
-| User | 1  |  |
+| Default | 0   | Default setting. |
+| User | 1  | User setting.  |
 
 ### Type: BoolWithMetadata structure
 
@@ -381,7 +446,7 @@ History files are used to optimize the Japanese IME user experience across devic
 
 **TBD - This setting references some non-primitive types. Are these documented somewhere? **
 
-## Type: Windows.Data.Input.HistoryFiles structure
+### Type: Windows.Data.Input.HistoryFiles structure
 
 #### HistoryFiles Properties
 
@@ -389,7 +454,7 @@ History files are used to optimize the Japanese IME user experience across devic
 |------|------|-------------|
 | InputDataFiles | Map&lt;string,FilePathInfo&gt;| A map of input history FilePathInfo structs where the key represents a relative folder path. |
 
-## Type: Windows.Data.Input.FilePathInfo structure
+### Type: Windows.Data.Input.FilePathInfo structure
 
 #### FilePathInfo Properties
 
@@ -397,7 +462,7 @@ History files are used to optimize the Japanese IME user experience across devic
 |------|------|-------------|
 | filePath | Map&lt;string,fileData&gt;| A map of FileData structs where the key is the file name. |
 
-## Type: Windows.Data.Input.FileData structure
+### Type: Windows.Data.Input.FileData structure
 
 #### FileData Properties
 
@@ -473,6 +538,43 @@ The scope of this type is per-user.
 |------|------|-------------|
 | TabRoamingSetting | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer tab roaming settings. |
 
+## Lock screen
+
+Setting for managing and personalizing the lock screen.  
+
+### Type: Windows.Data.LockScreenSettings.LockScreenKind enumeration
+
+#### LockScreenKind values
+
+| Name | Value | Description |
+|------|-------|---------|
+| Picture | 0   | Picture. |
+| Slideshow | 1  | Slideshow  |
+| Spotlight | 2  | Spotlight |
+
+
+### Type: Windows.Data.LockScreenSettings structure
+
+The scope of this type is per device.
+
+#### LockScreenSettings Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| kind | **LockScreenKind** | Specifies whether current Lockscreen is set as Wallpaper or Slideshow or Spotlight |
+| pictureOnSignInScreen | bool | Specifies whether show the lock screen background picture on the sign-in screen is enabled. |
+| funItems | bool | Specifies whether “Get fun facts, tips, tricks, and more on your lock screen” is enabled. |
+| itemId | wstring | The unique ID for the lockscreen wallpaper uploaded to OneDrive during backup.  |
+| contentUri | wstring | The url for the lockscreen wallpaper uploaded to OneDrive during backup |
+| lockScreenStatus | wstring | Not used. |
+| slideShowAutoLock | Not used. |  |
+| slideShowEnabledOnBattery | Not used. |  |
+| slideshowOptimizePhotoSelection | Not used. |  |
+| slideShowIncludeCameraRoll | Not used. |  |
+| slideShowDuration | Not used. |  |
+| syncRootRelativePaths | Not used. |  |
+
+
 ## ManifestBackupStore
 
  **TBD - I can't infer a description for this setting. Seems to use some non-primitive types that aren't explained.**
@@ -507,7 +609,7 @@ Settings related to multiple displays.
 
 This setting is single-instance.
 
-### Type: WWindows.Data.Settings.DisplaySettings.MultipleDisplays structure
+### Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays structure
 
 The scope of this type is per device.
 
@@ -541,9 +643,38 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 |------|------|-------------|
 | category | uint64 | Category of signature? *TBD - description in source seems tentative* |
 
+
+## Personalization - colors
+
+Settings related to system colors.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| AppsUseLightTheme | REG_DWORD | 0/1 | Apps use light theme. |
+| SystemUsesLightTheme | REG_DWORD | 0/1 | System uses light theme. |
+| EnableTransparency | REG_DWORD | 0/1 | Enable transparency |
+| ColorPrevalance | REG_DWORD | 0/1 | **TBD - I can't infer a description for this**|
+
+### Registry values under HKCU\Control Panel\Desktop
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| AutoColorization | REG_DWORD | 0/1 | Enable auto-colorization. |
+
+### Registry values under HKCU\Software\Microsoft\Windows\DWM
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| ColorPrevalence | REG_DWORD | 0/1 | **TBD - I can't derive a description for this** |
+
+
+
+
 ## Secondary accounts
 
-Provides information about Microsoft accounts (MSA) and work or school accounts added to the device to sign in to apps or online services, in addition to the account used to log on to the device.
+Provides information about Microsoft accounts (MSA) and work or school accounts added to the device to sign in to apps or online services, in addition to the account used to log on to the device. On Windows 11, backup and restore of this setting is supported. On Windows 10, backup is supported but restore is not.
 
 ### Type: Windows.Data.Account.AccountType enumeration
 
@@ -551,9 +682,9 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 
 | Name | Value | Description |
 |------|-------|---------|
-| MSA | 0   |  |
-| AAD | 1  |  |
-| Others | 2  |  |
+| MSA | 0   | Microsoft account. |
+| AAD | 1  | Azure Active Directory account,  |
+| Others | 2  | Oher account. |
 
 ### Type: Windows.Data.Account.AccountInfo structure
 
