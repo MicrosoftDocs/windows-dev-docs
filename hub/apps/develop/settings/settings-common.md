@@ -59,7 +59,7 @@ This setting helps to set defaults for removable drives and memory cards
 
 ### Type: Windows.Data.SettingsBackup.BackupUnitStore structure
 
-### BackupUnitStore Properties
+#### BackupUnitStore Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -86,7 +86,7 @@ The settings below are for a deprecated Windows calling experience and are no lo
 
 ### Type: Windows.data.calling.callhistoryItem structure
 
-### callhistoryItem Properties
+#### callhistoryItem Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -110,7 +110,7 @@ The settings below are for a deprecated Windows calling experience and are no lo
 
 ### Type: Windows.Data.calling.callhistory structure
 
-### callhistory Properties
+#### callhistory Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -119,7 +119,7 @@ The settings below are for a deprecated Windows calling experience and are no lo
 
 ### Type: Windows.data.calling.callfavorites structure
 
-### callfavorites Properties
+#### callfavorites Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -127,7 +127,7 @@ The settings below are for a deprecated Windows calling experience and are no lo
 
 ### Type: Windows.data.calling.CallFavoriteItem structure
 
-### CallFavoriteItem Properties
+#### CallFavoriteItem Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -151,7 +151,7 @@ Set "do not disturb" status manually or automatically, so that notifications wil
 
 ### Type: Windows.Data.DoNotDisturb.ChangeReason enumeration
 
-### ChangeReason values
+#### ChangeReason values
 
 | Name | Value | Description |
 |------|-------|---------|
@@ -160,7 +160,7 @@ Set "do not disturb" status manually or automatically, so that notifications wil
 
 ### Type: BoolWithMetadata structure
 
-### ChangeReason properties
+#### ChangeReason properties
 
 | Name | Value | Description |
 |------|-------|---------|
@@ -169,7 +169,7 @@ Set "do not disturb" status manually or automatically, so that notifications wil
 
 ### Type: Windows.Data.DoNotDisturb.QuietHoursProfile structure
 
-### QuietHoursProfile Properties
+#### QuietHoursProfile Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -181,7 +181,7 @@ Set "do not disturb" status manually or automatically, so that notifications wil
 
 ### Type: Windows.Data.DoNotDisturb.QuietHoursSettings structure
 
-### QuietHoursSettings Properties
+#### QuietHoursSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -191,7 +191,7 @@ Set "do not disturb" status manually or automatically, so that notifications wil
 
 ### Type: Windows.Data.DoNotDisturb.QuietMoment structure
 
-### QuietMoment Properties
+#### QuietMoment Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -209,7 +209,7 @@ Settings related to the classic Windows File Explorer.
 
 ### Type: Windows.Data.FileExplorerClassic.ShellStateSetting structure
 
-### ShellStateSetting Properties
+#### ShellStateSetting Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -229,7 +229,7 @@ Settings related to the classic Windows File Explorer.
 
 ### Type: Windows.Data.FileExplorerClassic.CabinetStateSettings structure
 
-### CabinetStateSettings Properties
+#### CabinetStateSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -260,7 +260,7 @@ Settings related to the classic Windows File Explorer.
 
 ### Type: Windows.Data.FileExplorerClassic.ExplorerSettings structure
 
-### ExplorerSettings Properties
+#### ExplorerSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -271,7 +271,7 @@ Settings related to the classic Windows File Explorer.
 
 ### Type: Windows.Data.FileExplorerClassic.SearchSettings structure
 
-### SearchSettings Properties
+#### SearchSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -291,7 +291,7 @@ These are blobs that are in the registry. There are three things that use regist
 | Details Preview Settings | Two DWORDs (dwPreviewPaneSettings and dwReadingPaneSettings) |
 | Navigation Pane Visibility | A bool |
 
-### RegistrySettingsProperties
+#### RegistrySettingsProperties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -308,7 +308,7 @@ These are settings found in File Explorer->Folder options(...)->General tab
 •	File explorer can be opened to either Home or This PC 
 •	File explorer can be opened to One Drive folder as well if user has signed in to One Drive (This option is available only if user has signed in)
 
-### FolderOptionGeneralSettings Properties
+#### FolderOptionGeneralSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -323,7 +323,7 @@ These are settings found in File Explorer->Folder options(...)->General tab
 
 These are settings found in File Explorer->Folder options(...)->View tab->Advanced settings
 
-### FolderOptionsAdvancedSettings Properties
+#### FolderOptionsAdvancedSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -352,7 +352,7 @@ These are settings found in File Explorer->Folder options(...)->View tab->Advanc
 
 These are settings found in Recycle bin-> right click Properties
 
-### RecycleBinSettings Properties
+#### RecycleBinSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -362,7 +362,7 @@ These are settings found in Recycle bin-> right click Properties
 
 These are settings related to desktop icons.
 
-### DesktopIconSettings Properties
+#### DesktopIconSettings Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -383,7 +383,7 @@ History files are used to optimize the Japanese IME user experience across devic
 
 ## Type: Windows.Data.Input.HistoryFiles structure
 
-### HistoryFiles Properties
+#### HistoryFiles Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -391,7 +391,7 @@ History files are used to optimize the Japanese IME user experience across devic
 
 ## Type: Windows.Data.Input.FilePathInfo structure
 
-### FilePathInfo Properties
+#### FilePathInfo Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -399,7 +399,7 @@ History files are used to optimize the Japanese IME user experience across devic
 
 ## Type: Windows.Data.Input.FileData structure
 
-### FileData Properties
+#### FileData Properties
 
 **TBD - Seems suspicious that this property name is listed as "filePath". Copy and paste error in the doc?**
 
@@ -429,7 +429,7 @@ struct SettingUnit
 
 The scope of this type is per-user.
 
-### Favorites Properties
+#### Favorites Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -439,7 +439,7 @@ The scope of this type is per-user.
 
 The scope of this type is per-user.
 
-### TypedURLS Properties
+#### TypedURLS Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -449,7 +449,7 @@ The scope of this type is per-user.
 
 The scope of this type is per-user.
 
-### BrowserHistory Properties
+#### BrowserHistory Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -457,7 +457,7 @@ The scope of this type is per-user.
 
 ### Type: Windows.Data.InternetExplorer.AutoComplete structure
 
-### AutoComplete Properties
+#### AutoComplete Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -467,7 +467,7 @@ The scope of this type is per-user.
 
 **TBD - In the "legacy settings" word doc, this entry was mangled by a copy/paste error. A SME should validate the way that I fixed it**
 
-### TabRoaming Properties
+#### TabRoaming Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -485,7 +485,7 @@ This type is multi-instance and must be retrieved using the following collection
 
 For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readsettingsdata-exe.md).
 
-### ManifestBackupStore Properties
+#### ManifestBackupStore Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -511,7 +511,7 @@ This setting is single-instance.
 
 The scope of this type is per device.
 
-### CallFavoriteItem Properties
+#### CallFavoriteItem Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -535,7 +535,7 @@ This type is multi-instance and must be retrieved using the following collection
 For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readsettingsdata-exe.md).
 
 
-### NlmSignature Properties
+#### NlmSignature Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -557,7 +557,7 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 
 ### Type: Windows.Data.Account.AccountInfo structure
 
-### AccountInfo Properties
+#### AccountInfo Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -571,11 +571,32 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 
 ### Type: Windows.Data.Account.SecondaryAccounts structure
 
-### SecondaryAccounts Properties
+#### SecondaryAccounts Properties
 
 | Name | Type | Description |
 |------|------|-------------|
 | accountDetails | vector&lt;AccountInfo&gt; | A vector of **AccountInfo** objects representing secondary accounts.  |
+
+## Windows Backup - Remember my preferences
+
+Helps user to synchronize the settings and Data on multiple machines.
+
+### Type: Windows.Data.WindowsBackup.Preference.CloudStorePolicyEnum enumeration
+
+#### CloudStorePolicyEnum values
+
+| Name | Value | Description |
+|------|-------|---------|
+| SyncEnabled | 0   | Sync enabled. |
+| SyncDisabledByUser | 1  | Sync disabled by user. |
+| SyncDisabledByGroupPolicy | 2  | Sync disabled by group policy. |
+
+#### Toggles properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| toggleState | map&lt;wstring, **CloudStorePolicyEnum**&gt; | A map of sync policy names that holds the user preference in terms of mapping of the Sync policy and CloudStorePolicy option. |
+
 
 
 ## Windows Update

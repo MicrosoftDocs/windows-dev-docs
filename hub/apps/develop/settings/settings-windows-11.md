@@ -24,7 +24,7 @@ This setting is single-instance.
 
 ### Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays structure
 
-### MultipleDisplays Properties
+#### MultipleDisplays Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -80,7 +80,7 @@ This setting is single-instance.
 
 The scope of this type is per user.
 
-### LunarCalendar Properties
+#### LunarCalendar Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -118,7 +118,7 @@ This setting is used to set a personalized theme.
 
 ### Type: Windows.Data.PersonalizationThemes.CurrentThemeType structure
 
-### CurrentThemeType Properties
+#### CurrentThemeType Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -173,5 +173,27 @@ This setting is single-instance.
 |---------------|------|-------|------------|
 | NotifyOnUsbErrors | REG_DWORD | 0 or 1 | Enables notifications for USB errors. |
 | NotifyOnWeakCharger | REG_DWORD | 0 or 1 | Enables notifications for weak charger detected. |
+
+## VPN
+
+VPN settings that apply to all VPN connections configured in the Settings app.
+
+### Registry values under HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\Parameters\Config\VpnCostedNetworkSettings
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| NoCostedNetwork | REG_DWORD | 0 or 1 | Block VPN over metered networks. |
+| NoRoamingNetwork | REG_DWORD | 0 or 1 | Block VPN while roaming. |
+
+## Wi-Fi
+
+Global random hardware addresses preference.
+
+### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WlanSvc\Interfaces\&lt;Interface GUID&gt;
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| RandomMacState | REG_DWORD | 0 or 1 | Whether to use random hardware addresses for newly configured Wi-Fi networks. |
+
 
 
