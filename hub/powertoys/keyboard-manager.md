@@ -144,7 +144,7 @@ Keyboard Manager enables you to start applications with the activation of any sh
 | Visibility   | Specifies whether the app will be visible. This is useful when the app is a console or something you don't want to see.  |
 
 ### Remap a shortcut to open a URI
-This type of shortcut action will open a URI. The only option is the actual Path/URI. Almost anything you can issue on the command line should work. You can find some other examples here: https://learn.microsoft.com/windows/uwp/launch-resume/launch-app-with-uri
+This type of shortcut action will open a URI. The only option is the actual Path/URI. Almost anything you can issue on the command line should work. See [Launch an app with a URI](/windows/uwp/launch-resume/launch-app-with-uri) for more examples.
 
 ### App-specific shortcuts
 
