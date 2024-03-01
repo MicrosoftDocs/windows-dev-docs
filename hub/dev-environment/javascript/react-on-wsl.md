@@ -66,7 +66,6 @@ Since React is a JavaScript library that is, in its most basic form, just a coll
 
 - [React docs](https://reactjs.org/)
 - [Create React App docs](https://create-react-app.dev/docs/getting-started)
-- [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install Next.js](./nextjs-on-wsl.md)
 - [Install Gatsby](./gatsby-on-wsl.md)
 - [Install React Native for Windows](https://microsoft.github.io/react-native-windows/docs/getting-started)

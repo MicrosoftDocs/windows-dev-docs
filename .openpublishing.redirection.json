@@ -7714,6 +7714,11 @@
       "source_path": "hub/apps/distribute-through-store/best-practices-for-win32-app-distribution.md",
       "redirect_url": "hub/apps/distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/javascript/windows-or-wsl.md",
+      "redirect_url": "hub/dev-environment/javascript/nodejs-overview.md",
+      "redirect_document_id": false
     }
   ]
 }

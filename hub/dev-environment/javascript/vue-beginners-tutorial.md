@@ -19,7 +19,7 @@ If you're brand new to using Vue.js, this guide will help you to get started wit
 
 ## Prerequisites
 
-- You must first install Vue.js on [Windows](./vue-on-windows.md) or on [Windows Subsystem for Linux](./vue-on-wsl.md). Not sure which to use, generally we recommend beginners install on Windows to learn, but professionals install on WSL, see [Should I install Node.js on Windows or Windows Subsystem for Linux](./windows-or-wsl.md).
+- You must first install Vue.js on [Windows](./vue-on-windows.md) or on [Windows Subsystem for Linux](./vue-on-wsl.md).
 
 ## Try NodeJS with Visual Studio Code
 

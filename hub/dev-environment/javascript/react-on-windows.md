@@ -1,13 +1,11 @@
 ---
 title: Install React on Windows
-description: Install a React development environment on Windows 10.
+description: Install a React development environment on Windows.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: React, React JS, install react on windows, install react with windows, react on windows
-ms.localizationpriority: medium
-ms.date: 04/13/2021
+ms.date: 03/01/2024
 ---
 
 # Install React directly on Windows
@@ -18,19 +16,16 @@ We recommend following these instructions if you are new to React and just inter
 
 For more general information about React, deciding between React (web apps), React Native (mobile apps), and React Native for Windows (desktop apps), see the [React overview](./react-overview.md).
 
-## Prerequisites
-
-- Install the latest version of Windows 10 (Version 1903+, Build 18362+) or Windows 11
-- [Install Windows Subsystem for Linux (WSL)](/windows/wsl/install-win10), including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: `wsl -l -v`
-- [Install Node.js on WSL 2](./nodejs-on-wsl.md): These instructions use Node Version Manager (nvm) for installation, you will need a recent version of NodeJS to run create-react-app, as well as a recent version of Node Package Manager (npm). For exact version requirements, see the [Create React App website](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app).
+> [!WARNING]
+> If you've previously installed `create-react-app` on your machine, globally or via `npm install -g create-react-app`, it is recommended to uninstall the package using `npm uninstall -g create-react-app` or `yarn global remove create-react-app` to ensure that `npx` always uses the latest version.
 
 ## Create your React app
 
-To install the full React toolchain on WSL, we recommend using create-react-app:
+To install Create React App:
 
 1. Open a terminal(Windows Command Prompt or PowerShell).
 2. Create a new project folder: `mkdir ReactProjects` and enter that directory: `cd ReactProjects`.
-3. Install React using create-react-app, a tool that installs all of the dependencies to build and run a full React.js application:
+3. Install create-react-app, a tool that installs all of the dependencies to build and run a full React.js application:
 
     ```powershell
     npx create-react-app my-app
@@ -54,11 +49,11 @@ To install the full React toolchain on WSL, we recommend using create-react-app:
 
 6. When you're ready to deploy your web app to production, running `npm run build` will create a build of your app in the "build" folder. You can learn more in the [Create React App User Guide](https://create-react-app.dev/docs/deployment).
 
+Learn more in the [Create React App repo on GitHub](https://github.com/facebook/create-react-app). You can also find or file issues here if something doesn't work or ask questions in the GitHub Discussions tab of the repo.
+
 ## Additional resources
 
 - [React docs](https://reactjs.org/)
-- [Create React App docs](https://create-react-app.dev/docs/getting-started)
-- [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install Next.js](./nextjs-on-wsl.md)
 - [Install Gatsby](./gatsby-on-wsl.md)
 - [Install React Native for Windows](https://microsoft.github.io/react-native-windows/docs/getting-started)

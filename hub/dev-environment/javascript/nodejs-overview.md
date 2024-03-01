@@ -21,8 +21,6 @@ Yes. Windows supports two different environments for developing apps with Node.j
 - [Install a Node.js development environment on Windows](./nodejs-on-windows.md)
 - [Install a Node.js development environment on Windows Subsystem for Linux](./nodejs-on-wsl.md)
 
-For help determining which environment to use, check out [Should I install on Windows or Windows Subsystem for Linux?](./windows-or-wsl.md)
-
 ## What can you do with NodeJS?
 
 Node.js is primarily used for building fast and scalable web applications. It uses an event-driven, non-blocking I/O model, making it lightweight and efficient. It's a great framework for data-intensive real-time applications that run across distributed devices. Here are a few examples of what you might create with Node.js.
@@ -37,7 +35,6 @@ Node.js is primarily used for building fast and scalable web applications. It us
 
 ## Next steps
 
-- [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
 - [Install NodeJS on WSL](./nodejs-on-wsl.md)
 - [Build JavaScript applications with Node.js](/training/paths/build-javascript-applications-nodejs/) learning path
