@@ -32,24 +32,6 @@ This setting is single-instance.
 | minimizeWindowsOnMonitorDisconnect | `nullable<bool>` | Minimize windows when a monitor is disconnected. |
 | easeCursorMovementBetweenDisplays | `nullable<bool>` | Ease cursor movement between displays. |
 
-
-**TBD - Document Multiple Displays as reg keys rather than schema - waiting for info about the following:**
-
-Copy of what the user has saved in user profile for system-wide parameter SPI_GETCURSORDEADZONEJUMPING
-
-### Registry values under Computer\HKEY_USERS\{The users generated unique id}\Software\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Current\default$windows.data.settings.displaysettings.multipledisplays 
-
-Computer\HKEY_USERS\{The users generated unique id}\Software\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Current\default$windows.data.settings.displaysettings.multipledisplays
-
-Name: (Default)
-Type: REG_SZ
-Data: (value not set)
-
-Name: Data
-Type: REG_Binary
-Data: {binary data}
-
-
 ## Gaming: Game Bar, Game Mode, Gaming Shortcuts
 
 This setting controls settings related to gaming and controls such as Game bar and gaming shortcuts.
@@ -98,19 +80,19 @@ This setting is single-instance.
 
 The scope of this type is per user.
 
-### Type: Windows.Data.LunarCalendarPerDevice structure
-
-This type inherits from **LunarCalendar**. The scope of this type is per device.
-
-### LunarCalendarPerDevice Properties
+### LunarCalendar Properties
 
 | Name | Type | Description |
 |------|------|-------------|
 | languageType   | **LunarCalendarLanguageType** | A member of the **LunarCalendarLanguageType** enumeration. The default value is **Default**. |
 
+### Type: Windows.Data.LunarCalendarPerDevice structure
+
+This type inherits from **LunarCalendar**. The scope of this type is per device.
+
 ### Type: Windows.Data.LunarCalendarLanguageType enumeration
 
-### Values
+### LunarCalendarLanguageType Values
 
 | Name | Value | Description |
 |------|-------|---------|
@@ -118,6 +100,31 @@ This type inherits from **LunarCalendar**. The scope of this type is per device.
 | None   | 1 | No lunar calendar. |
 | SimplifiedChinese  | 2 | The Simplified Chinese lunar calendar. |
 | TraditionalChinese | 3   | The Traditional Chinese calendar. |
+
+
+## Personalization - Themes
+
+This setting is used to set a personalized theme.
+
+### Type: Windows.Data.PersonalizationThemes.CurrentThemeType enumeration
+
+### CurrentThemeType Values
+
+| Name | Value | Description |
+|------|-------|---------|
+| InboxTheme | 0   | In-box theme. |
+| ContrastTheme | 1   | Contrast theme. |
+
+
+### Type: Windows.Data.PersonalizationThemes.CurrentThemeType structure
+
+### CurrentThemeType Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| type   | **CurrentThemeType** | The current theme type. |
+| basePersonalizationThemeName   | wstring | The name of the current inbox theme applied in the system. The user may have done customization on top of this inbox theme.  |
+
 
 
 ## Text Input

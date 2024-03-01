@@ -57,9 +57,9 @@ This setting helps to set defaults for removable drives and memory cards
 
  **TBD - I can't infer a description for this setting. Seems to use some non-primitive types that aren't explained.**
 
-### Type: Windows.Data.SettingsBackup.BackupUnitStore
+### Type: Windows.Data.SettingsBackup.BackupUnitStore structure
 
-### Properties
+### BackupUnitStore Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -84,9 +84,9 @@ The settings below are for a deprecated Windows calling experience and are no lo
 
 **TBD - No info provided for this type in the "legacy settings" doc**
 
-### Type: Windows.data.calling.callhistoryItem
+### Type: Windows.data.calling.callhistoryItem structure
 
-### Properties
+### callhistoryItem Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -108,22 +108,26 @@ The settings below are for a deprecated Windows calling experience and are no lo
 | callEndTime | Unit64 | Unix time stamp when the call was ended. |
 
 
-### Type: Windows.Data.calling.callhistory
+### Type: Windows.Data.calling.callhistory structure
 
-### Properties
+### callhistory Properties
 
 | Name | Type | Description |
 |------|------|-------------|
 | historyItems | Map&lt;string, CallHistoryItem&gt; | A collection of call history items where the keys are each history item’s UniqueId. |
 | highestSequenceNumber | Unit32 | Highest sequence number issued, used for internal business logic. |
 
-### Type: Windows.data.calling.callfavorites
+### Type: Windows.data.calling.callfavorites structure
+
+### callfavorites Properties
 
 | Name | Type | Description |
 |------|------|-------------|
 | favoriteItems | vector&lt;CallFavoriteItem&gt; | A collection of calling favorites. |
 
-### Type: Windows.data.calling.CallFavoriteItem
+### Type: Windows.data.calling.CallFavoriteItem structure
+
+### CallFavoriteItem Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -138,6 +142,8 @@ The settings below are for a deprecated Windows calling experience and are no lo
 | applicationId | String | Application ID. |
 | callbackToken | String | Callback token. |
 | UniqueId | Unit64 | A unique identifier for the item. |
+
+
 
 ## Do not disturb
 
@@ -495,6 +501,24 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 | isActive | bool | A value indicating if the profile active or not. |
 | payload | blob | The data payload. |
 
+## Multiple displays
+
+Settings related to multiple displays. 
+
+This setting is single-instance.
+
+### Type: WWindows.Data.Settings.DisplaySettings.MultipleDisplays structure
+
+The scope of this type is per device.
+
+### CallFavoriteItem Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| rememberWindowLocationsPerMonitorConnection | nullable&lt;bool&gt; | Enables remember window locations per monitor connection |
+| minimizeWindowsOnMonitorDisconnect | nullable&lt;bool&gt; | Enables minimize windows on monitor disconnect. |
+| easeCursorMovementBetweenDisplays | nullable&lt;bool&gt; | Enables minimize windows on monitor disconnect. |
+
 
 ## NlmSignature
 
@@ -516,6 +540,43 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 | Name | Type | Description |
 |------|------|-------------|
 | category | uint64 | Category of signature? *TBD - description in source seems tentative* |
+
+## Secondary accounts
+
+Provides information about Microsoft accounts (MSA) and work or school accounts added to the device to sign in to apps or online services, in addition to the account used to log on to the device.
+
+### Type: Windows.Data.Account.AccountType enumeration
+
+#### AccountType values
+
+| Name | Value | Description |
+|------|-------|---------|
+| MSA | 0   |  |
+| AAD | 1  |  |
+| Others | 2  |  |
+
+### Type: Windows.Data.Account.AccountInfo structure
+
+### AccountInfo Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| accountName | wstring | The user name of the account such as "example@outlook.com". |
+| accountId | wstring | The unique identifier of the account. |
+| accountType | **AccountType** | The type of the account. |
+| country | wstring | The code of the country or region in which a MSA is registered.  |
+| safeCustomerId | wstring | An alternative identifier for an MSA. |
+| ageGroup | wstring | Age group of an MSA, based on the registered birth date of the MSA user. Current values are 0 = unknown, 1 = child, 2 = teen, 3 = adult. |
+| scope | wstring | Represents the “Sign in options” setting state. |
+
+### Type: Windows.Data.Account.SecondaryAccounts structure
+
+### SecondaryAccounts Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| accountDetails | vector&lt;AccountInfo&gt; | A vector of **AccountInfo** objects representing secondary accounts.  |
+
 
 ## Windows Update
 
