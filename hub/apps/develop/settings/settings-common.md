@@ -80,11 +80,11 @@ This setting helps to set defaults for removable drives and memory cards
 
 The settings below are for a deprecated Windows calling experience and are no longer read by the operating system, however the settings data may be present on user devices or in the cloud.
 
-## Type: Windows.data.calling.settings
+### Type: Windows.data.calling.settings
 
 **TBD - No info provided for this type in the "legacy settings" doc**
 
-## Type: Windows.data.calling.callhistoryItem
+### Type: Windows.data.calling.callhistoryItem
 
 ### Properties
 
@@ -108,7 +108,7 @@ The settings below are for a deprecated Windows calling experience and are no lo
 | callEndTime | Unit64 | Unix time stamp when the call was ended. |
 
 
-## Type: Windows.Data.calling.callhistory
+### Type: Windows.Data.calling.callhistory
 
 ### Properties
 
@@ -117,13 +117,13 @@ The settings below are for a deprecated Windows calling experience and are no lo
 | historyItems | Map&lt;string, CallHistoryItem&gt; | A collection of call history items where the keys are each history item’s UniqueId. |
 | highestSequenceNumber | Unit32 | Highest sequence number issued, used for internal business logic. |
 
-## Type: Windows.data.calling.callfavorites
+### Type: Windows.data.calling.callfavorites
 
 | Name | Type | Description |
 |------|------|-------------|
 | favoriteItems | vector&lt;CallFavoriteItem&gt; | A collection of calling favorites. |
 
-## Type: Windows.data.calling.CallFavoriteItem
+### Type: Windows.data.calling.CallFavoriteItem
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -139,12 +139,69 @@ The settings below are for a deprecated Windows calling experience and are no lo
 | callbackToken | String | Callback token. |
 | UniqueId | Unit64 | A unique identifier for the item. |
 
+## Do not disturb
+
+Set "do not disturb" status manually or automatically, so that notifications will be sent directly to the notification center.
+
+### Type: Windows.Data.DoNotDisturb.ChangeReason enumeration
+
+### ChangeReason values
+
+| Name | Value | Description |
+|------|-------|---------|
+| Default | 0   |  |
+| User | 1  |  |
+
+### Type: BoolWithMetadata structure
+
+### ChangeReason properties
+
+| Name | Value | Description |
+|------|-------|---------|
+| value  | bool   | The boolean value. |
+| changeReason  | **ChangeReason**  | The reason a user changed their profile.|
+
+### Type: Windows.Data.DoNotDisturb.QuietHoursProfile structure
+
+### QuietHoursProfile Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| isInitialized | bool | CDS data initialize status.  |
+| settings | map&lt;uint64, bool&gt; | Map of the boolean state of the settings. Specifies when a given settings checkbox is checked or unchecked. |
+| allowedContacts | set&lt;wstring&gt; | The set of allowed contacts as a list. |
+| allowedApps | set&lt;wstring&gt; | The list of app names to set notifications on. |
+| defaultAllowedAppsRemoved | set&lt;wstring&gt; | The list of names of the default app names removed. |
+
+### Type: Windows.Data.DoNotDisturb.QuietHoursSettings structure
+
+### QuietHoursSettings Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| isInitialized | bool | CDS data initialize status. . |
+| selectedProfile | wstring | The string value of the user profile. "Unrestricted" or "Priority Only"   |
+| shouldShowSummaryToast | BoolWithMetadata | Sets whether the summary toast should be shown and the associated reason. |
+
+### Type: Windows.Data.DoNotDisturb.QuietMoment structure
+
+### QuietMoment Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| isInitialized | bool | CDS data initialize status. Default value is false. |
+| isEnabled | bool | Settings enabled or disabled. |
+| assignedProfile | wstring | The value of the user profile set by automatic rules. "Unrestricted", "Priority Only", or "Alarms Only"  |
+| startTime | TimeSpan | When automatic rules should start. |
+| endTime | TimeSpan | When automatic rules should end. |
+| repeatType | uint32 | **TBD - The data type is an int. Is there a missing enum?** How frequently the rules should apply. "Daily", "Weekend", or "Weekdays"|
+| shouldShowActiveToast | BoolWithMetadata | Sets whether the active toast should be shown and the associated reason.  |
 
 ## File Explorer Classic
 
 Settings related to the classic Windows File Explorer.
 
-### Type: Windows.Data.FileExplorerClassic.ShellStateSetting Structure
+### Type: Windows.Data.FileExplorerClassic.ShellStateSetting structure
 
 ### ShellStateSetting Properties
 
@@ -164,7 +221,7 @@ Settings related to the classic Windows File Explorer.
 | showTypeOverlay | bool | Indicates whether Shell state should show type overlay. |
 
 
-### Type: Windows.Data.FileExplorerClassic.CabinetStateSettings Structure
+### Type: Windows.Data.FileExplorerClassic.CabinetStateSettings structure
 
 ### CabinetStateSettings Properties
 
@@ -175,7 +232,7 @@ Settings related to the classic Windows File Explorer.
 | saveLocalView | bool | Indicates whether the cabinet state setting should save local view. |
 | newWindowMode | bool | Indicates whether the cabinet state setting should open in new window mode. |
 
-### Type: Windows.Data.FileExplorerClassic.AdvancedSettings Structure
+### Type: Windows.Data.FileExplorerClassic.AdvancedSettings structure
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -195,7 +252,7 @@ Settings related to the classic Windows File Explorer.
 | showLibraries | bool | Indicates whether the file explorer advanced settings should show libraries. |
 | showCompColor | bool | Indicates whether to show comp color for advanced settings. |
 
-### Type: Windows.Data.FileExplorerClassic.ExplorerSettings Structure
+### Type: Windows.Data.FileExplorerClassic.ExplorerSettings structure
 
 ### ExplorerSettings Properties
 
@@ -206,7 +263,7 @@ Settings related to the classic Windows File Explorer.
 | underlineIconsNever | bool | Indicates whether Explorer settings should never underline icons. |
 | underlineIconsAsBrowser | bool | Indicates whether Explorer settings should underline icons as browser. |
 
-### Type: Windows.Data.FileExplorerClassic.SearchSettings Structure
+### Type: Windows.Data.FileExplorerClassic.SearchSettings structure
 
 ### SearchSettings Properties
 
@@ -218,7 +275,7 @@ Settings related to the classic Windows File Explorer.
 | systemFolders | bool | Indicates whether search setting show system folders. |
 | archivedFiles | bool | Indicates whether search setting show archived files. |
 
-### Type: Type: Windows.Data.FileExplorerClassic.RegistrySettings Structure
+### Type: Type: Windows.Data.FileExplorerClassic.RegistrySettings structure
 
 These are blobs that are in the registry. There are three things that use registry stream settings:
 
@@ -238,7 +295,7 @@ These are blobs that are in the registry. There are three things that use regist
 | readingPaneSettings | unit32 | Indicates reading pane settings. |
 | navigationPaneVisible | bool | Indicates whether navigation pane is visible or not. |
 
-### Type: Windows.Data.FileExplorerClassic.FolderOptionGeneralSettings Structure
+### Type: Windows.Data.FileExplorerClassic.FolderOptionGeneralSettings structure
 
 These are settings found in File Explorer->Folder options(...)->General tab
 
@@ -256,7 +313,7 @@ These are settings found in File Explorer->Folder options(...)->General tab
 | showFrequentlyUsedFolders | bool | Indicates whether to show frequently used folders. |
 | showFilesFromOffice | bool | Indicates whether to show files from MS office. |
 
-### Type: Windows.Data.FileExplorerClassic.FolderOptionsAdvancedSettings Structure
+### Type: Windows.Data.FileExplorerClassic.FolderOptionsAdvancedSettings structure
 
 These are settings found in File Explorer->Folder options(...)->View tab->Advanced settings
 
@@ -285,7 +342,7 @@ These are settings found in File Explorer->Folder options(...)->View tab->Advanc
 | navPaneShowNetwork | bool | Show pane navigation network. |
 | navPaneShowThisPC | bool | This is used to show navigation pane to show current folder. |
 
-### Type: Windows.Data.FileExplorerClassic.RecycleBinSettings Structure
+### Type: Windows.Data.FileExplorerClassic.RecycleBinSettings structure
 
 These are settings found in Recycle bin-> right click Properties
 
@@ -295,7 +352,7 @@ These are settings found in Recycle bin-> right click Properties
 |------|------|-------------|
 | displayDeleteConfirmationDialog | bool | Indicates whether to show delete confirmation dialog
 
-### Type: Windows.Data.FileExplorerClassic.DesktopIconSettings Structure
+### Type: Windows.Data.FileExplorerClassic.DesktopIconSettings structure
 
 These are settings related to desktop icons.
 
@@ -318,7 +375,7 @@ History files are used to optimize the Japanese IME user experience across devic
 
 **TBD - This setting references some non-primitive types. Are these documented somewhere? **
 
-## Type: Windows.Data.Input.HistoryFiles
+## Type: Windows.Data.Input.HistoryFiles structure
 
 ### HistoryFiles Properties
 
@@ -326,7 +383,7 @@ History files are used to optimize the Japanese IME user experience across devic
 |------|------|-------------|
 | InputDataFiles | Map&lt;string,FilePathInfo&gt;| A map of input history FilePathInfo structs where the key represents a relative folder path. |
 
-## Type: Windows.Data.Input.FilePathInfo
+## Type: Windows.Data.Input.FilePathInfo structure
 
 ### FilePathInfo Properties
 
@@ -334,7 +391,7 @@ History files are used to optimize the Japanese IME user experience across devic
 |------|------|-------------|
 | filePath | Map&lt;string,fileData&gt;| A map of FileData structs where the key is the file name. |
 
-## Type: Windows.Data.Input.FileData
+## Type: Windows.Data.Input.FileData structure
 
 ### FileData Properties
 
@@ -362,7 +419,7 @@ struct SettingUnit
 }
 ```
 
-### Type: Windows.Data.InternetExplorer.Favorites
+### Type: Windows.Data.InternetExplorer.Favorites structure
 
 The scope of this type is per-user.
 
@@ -372,7 +429,7 @@ The scope of this type is per-user.
 |------|------|-------------|
 | favoriteSettings | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer favorites. |
 
-### Type: Windows.Data.InternetExplorer.TypedURLS
+### Type: Windows.Data.InternetExplorer.TypedURLS structure
 
 The scope of this type is per-user.
 
@@ -382,7 +439,7 @@ The scope of this type is per-user.
 |------|------|-------------|
 | typedURLSettings | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer  TypedURLS. |
 
-### Type: Windows.Data.InternetExplorer.BrowserHistory
+### Type: Windows.Data.InternetExplorer.BrowserHistory structure
 
 The scope of this type is per-user.
 
@@ -392,7 +449,7 @@ The scope of this type is per-user.
 |------|------|-------------|
 | BrowserHistory | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer browser history. |
 
-### Type: Windows.Data.InternetExplorer.AutoComplete
+### Type: Windows.Data.InternetExplorer.AutoComplete structure
 
 ### AutoComplete Properties
 
@@ -400,7 +457,7 @@ The scope of this type is per-user.
 |------|------|-------------|
 | AutoCompleteSetting | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer autocomplete. |
 
-### Type: Windows.Data.InternetExplorer.TabRoaming
+### Type: Windows.Data.InternetExplorer.TabRoaming structure
 
 **TBD - In the "legacy settings" word doc, this entry was mangled by a copy/paste error. A SME should validate the way that I fixed it**
 
@@ -414,7 +471,7 @@ The scope of this type is per-user.
 
  **TBD - I can't infer a description for this setting. Seems to use some non-primitive types that aren't explained.**
 
-### Type: Windows.Data.Platform.BackupRestore.ManifestBackupStore
+### Type: Windows.Data.Platform.BackupRestore.ManifestBackupStore structure
 
 This type is multi-instance and must be retrieved using the following collection collection names:
 
@@ -439,11 +496,11 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 | payload | blob | The data payload. |
 
 
-## NlmSignature 
+## NlmSignature
 
  **TBD - I can't infer a description for this setting.**
 
-### Type: Windows.Data.Nlm. NlmSignature 
+### Type: Windows.Data.Nlm.NlmSignature structure
 
 This type is multi-instance and must be retrieved using the following collection collection names:
 
@@ -462,7 +519,7 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 
 ## Windows Update
 
-**TBD - I am placing this setting in the "common" page for now because the Word doc explicitly calls out that the setting is available and identical on Windows 10 and Windows 11. Catorization of settings is still TBD**
+Settings related to Windows Update.
 
 This setting is single instance.
 

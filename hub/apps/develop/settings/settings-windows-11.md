@@ -16,17 +16,13 @@ For an overview of the Settings backup and restore feature, see [Settings back u
 Some settings are accessed via the Windows registry. Other settings are using a tool that retrieves the settings data from the Cloud Data Store and returns them in serialized JSON format. For information on using this tool to access Windows settings data, see [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md).
 
 
-## Do not disturb (Windows 11)
-
-Set "do not disturb" status manually or automatically, so that notifications will be sent directly to the notification center. There is an implmentation of this setting for Windows 10 that has a different implementation. For more information, see [Reference for Windows 10 settings](settings-windows-10).
-
-## Ease cursor movement across displays 
+## Ease cursor movement across displays
 
 When enabled, Windows makes it easier to move your cursor and windows between displays by letting your cursor jump over areas where it would previously get stuck.
 
 This setting is single-instance.
 
-### Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays
+### Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays structure
 
 ### MultipleDisplays Properties
 
@@ -98,11 +94,11 @@ Settings related to the lunar Calendar in the task bar.
 
 This setting is single-instance.
 
-### Type: Windows.Data.LunarCalendar Structure
+### Type: Windows.Data.LunarCalendar structure
 
 The scope of this type is per user.
 
-### Type: Windows.Data.LunarCalendarPerDevice Structure
+### Type: Windows.Data.LunarCalendarPerDevice structure
 
 This type inherits from **LunarCalendar**. The scope of this type is per device.
 
@@ -112,7 +108,7 @@ This type inherits from **LunarCalendar**. The scope of this type is per device.
 |------|------|-------------|
 | languageType   | **LunarCalendarLanguageType** | A member of the **LunarCalendarLanguageType** enumeration. The default value is **Default**. |
 
-### Type: Windows.Data.LunarCalendarLanguageType Enumeration
+### Type: Windows.Data.LunarCalendarLanguageType enumeration
 
 ### Values
 
@@ -121,7 +117,7 @@ This type inherits from **LunarCalendar**. The scope of this type is per device.
 | Default | 0   | The default lunar calendar configuration. |
 | None   | 1 | No lunar calendar. |
 | SimplifiedChinese  | 2 | The Simplified Chinese lunar calendar. |
-| TraditionalChinese | 2   | The Traditional Chinese calendar. |
+| TraditionalChinese | 3   | The Traditional Chinese calendar. |
 
 
 ## Text Input
