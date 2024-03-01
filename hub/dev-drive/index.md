@@ -280,6 +280,7 @@ The following filters may be used with Dev Drive:
 | Defender:  Windows Defender Filter | WdFilter |
 | Docker:  Running containers out of Dev Drive | bindFlt, wcifs |
 | Windows Performance Recorder:  Measure file system operations | FileInfo |
+| Resource Monitor: Shows resource usage. Required to show file names in Disk Activity | FileInfo |
 | Process Monitor - Sysinternals:  Monitor file system activities | ProcMon24 |
 | Windows Upgrade: Used during OS Upgrade. Required if user moves TEMP environment variable to Dev Drive | WinSetupMon |
 
@@ -315,13 +316,11 @@ Open Windows **Settings** menu, then choose **Storage**, then **Advanced Storage
 
 ![Delete a Dev Drive in Windows Settings](../images/dev-drive-delete.png)
 
-The Dev Drive will now be deleted. **However**, if you have attempted to delete a Dev Drive, but see that storage space still appears to be allocated to it, another step may be required. 
-
-It could be that the VHD hosting the Dev Drive was attached as a virtual disk (rather than created in unallocated disk space or repurposing an existing disk volume). In this case, you will need to first detach the virtual disk so that the VHD file hosting the Dev Drive can be deleted, following these steps:
+The Dev Drive will now be deleted. **However**, if the Dev Drive was created as a new VHD, the VHD will need to be deleted to reclaim the storage space used by that VHD. To accomplish this, you must detach the virtual disk so that the VHD file hosting the Dev Drive can be deleted, following these steps:
 
 1. Open the Disk Management tool by entering "Computer Management" in the search box on the taskbar. Select **Disk Management** under the Storage heading. Select the **Disk** (not the Volume) of the Dev Drive. Right-click the selected Disk hosting the Dev Drive and, from the resulting menu, select **Detach VHD**.
 2. A pop-up window will appear informing you that detaching a virtual hard disk will make it unavailable.
-3. Once detached, the VHD can be deleted. Right-click and select **Delete Volume...**.
+3. Once detached, the VHD can be deleted.
 
 ![Screenshot of the Disk Management tool showing that the VHD can be selected and Detach VHD is an option in the action menu.](../images/dev-drive-disk-management-detach-vhd.png)
 
