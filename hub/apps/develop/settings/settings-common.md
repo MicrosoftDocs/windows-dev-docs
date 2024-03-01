@@ -708,6 +708,19 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 |------|------|-------------|
 | accountDetails | vector&lt;AccountInfo&gt; | A vector of **AccountInfo** objects representing secondary accounts.  |
 
+## USB
+
+This setting controls toggles such as connection notifications, battery saver and other notifications related to charging of PC.
+
+This setting is single-instance.
+
+### Registry values under HKCU\Software\Microsoft\Shell\USB
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| NotifyOnUsbErrors | REG_DWORD | 0 or 1 | Enables notifications for USB errors. |
+| NotifyOnWeakCharger | REG_DWORD | 0 or 1 | Enables notifications for weak charger detected. |
+
 ## Windows Backup - Remember my preferences
 
 Helps user to synchronize the settings and Data on multiple machines.
