@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Reference for common Windows settings
 
 **TBD - Still working on the language to frame these settings**
-This page lists the settings that are supported by both Windows 10 and Windows 11. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md). Link to [Reference for Windows 11 settings](settings-windows-11.md). Link to [Reference for Windows 11 settings - TBD]().
+This page lists the settings that are supported by both Windows 10 and Windows 11. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md). Link to [Reference for Windows 11 settings](settings-windows-11.md). 
 
 
 
@@ -589,7 +589,7 @@ This type is multi-instance and must be retrieved using the following collection
 
 * "Deviceprofiles"
 
-For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readsettingsdata-exe.md).
+For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readclouddatasettings-exe.md).
 
 #### ManifestBackupStore Properties
 
@@ -638,7 +638,7 @@ This type is multi-instance and must be retrieved using the following collection
 * "wifi3_wpa3"
 * "wifi3_owe"
 
-For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readsettingsdata-exe.md).
+For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readclouddatasettings-exe.md).
 
 
 #### NlmSignature Properties

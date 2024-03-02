@@ -13,7 +13,7 @@ This page provides information for accessing Windows settings for Windows 11. Se
 
 For an overview of the Settings backup and restore feature, see [Settings back up and restore overview](index.md).
 
-Some settings are accessed via the Windows registry. Other settings are using a tool that retrieves the settings data from the Cloud Data Store and returns them in serialized JSON format. For information on using this tool to access Windows settings data, see [Cloud Data Store Settings Reader Tool (readsettingdata.exe)](readsettingsdata-exe.md).
+Some settings are accessed via the Windows registry. Other settings are using a tool that retrieves the settings data from the Cloud Data Store and returns them in serialized JSON format. For information on using this tool to access Windows settings data, see [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md).
 
 
 ## Ease cursor movement across displays
