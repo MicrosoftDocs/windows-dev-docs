@@ -860,12 +860,10 @@ items:
                 href: develop/settings/index.md
               - name: Reference for Windows 11 settings
                 href: develop/settings/settings-windows-11.md
-              - name: Reference for Windows 10 settings
-                href: develop/settings/settings-windows-10.md
               - name: Reference for common Windows settings
                 href: develop/settings/settings-common.md
-              - name: Cloud Data Store Settings Reader Tool (readsettingdata.exe)
-                href: develop/settings/readsettingsdata-exe.md
+              - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
+                href: develop/settings/readclouddatasettings-exe.md
       - name: Communication
         href: develop/communication.md
       - name: Accessibility

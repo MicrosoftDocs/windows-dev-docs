@@ -1,25 +1,25 @@
 ---
-title: Cloud Data Store Settings Reader Tool (readsettingdata.exe)
-description: This article describes the Cloud Data Store Settings Reader Tool, readsettingdata.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device.
+title: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
+description: This article describes the Cloud Data Store Settings Reader Tool, readCloudDataSettings.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device.
 ms.date: 02/27/2024
 ms.topic: article
 keywords: windows 10, windows 11, settings
 ms.localizationpriority: medium
 ---
 
-# Cloud Data Store Settings Reader tool (readsettingdata.exe)
+# Cloud Data Store Settings Reader tool (readCloudDataSettings.exe)
 
-This article describes the Cloud Data Store Settings Reader Tool, readsettingdata.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device. 
+This article describes the Cloud Data Store Settings Reader Tool, readCloudDataSettings.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device. 
 
 ## Usage 
 
 ### Single instance items 
 
-`readsettingdata.exe get -type:<type name> [-account:<secondary account id>]`
+`readCloudDataSettings.exe get -type:<type name> [-account:<secondary account id>]`
 
 ### Multi-instance items 
 
-`readsettingdata.exe enum -type:<type name> [-collection:<collection name>] [-account:<secondary account id>]`
+`readCloudDataSettings.exe enum -type:<type name> [-collection:<collection name>] [-account:<secondary account id>]`
 
 ### Command line parameter descriptions 
 
@@ -45,7 +45,7 @@ If the data does not exist or an error occurs, the output will report a pair of 
 Command line:
 
 ```powershell
-C:\> readsettingdata.exe get /type:windows.data.platform.diagnostics.diagnosticdata
+C:\> readCloudDataSettings.exe get /type:windows.data.platform.diagnostics.diagnosticdata
 ```
 
 Output:
@@ -63,7 +63,7 @@ Output:
 Command line:
 
 ```powershell
-C:\> readsettingdata.exe get /type:windows.data.platform.diagnostics.diagnosticdata -account:otheraccount@contoso.com 
+C:\> readCloudDataSettings.exe get /type:windows.data.platform.diagnostics.diagnosticdata -account:otheraccount@contoso.com 
 ```
 
 Output:
@@ -81,7 +81,7 @@ Output:
 Command line:
 
 ```powershell
-C:\> readsettingdata.exe enum /type:windows.data.samplemetadata.sampledataitem /collection:samples 
+C:\> readCloudDataSettings.exe enum /type:windows.data.samplemetadata.sampledataitem /collection:samples 
 ```
 
 Output:

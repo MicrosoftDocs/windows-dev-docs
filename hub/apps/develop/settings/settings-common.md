@@ -80,9 +80,23 @@ This setting helps to set defaults for removable drives and memory cards
 
 The settings below are for a deprecated Windows calling experience and are no longer read by the operating system, however the settings data may be present on user devices or in the cloud.
 
-### Type: Windows.data.calling.settings
+### Type: Windows.data.calling.Settings structure
 
-**TBD - No info provided for this type in the "legacy settings" doc**
+#### Settings Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| perKeySettings | map&lt;wstring, KeyPathSettings&gt; | A map of per-key settings |
+
+### Type: Windows.Data.ContrastThemes.CurrentThemeType enumeration
+
+### Type: Windows.data.calling.KeyPathSettings structure
+
+#### Settings Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| values | map&lt;wstring, wstring&gt; | A map of key/path settings |
 
 ### Type: Windows.data.calling.callhistoryItem structure
 
@@ -205,14 +219,12 @@ Settings related to date and time.
 | timeZone | REG_SZ | System timezone as string.  | The currently set time zone for the system. |
 
 
-HKLM\SYSTEM\CurrentControlSet\Services\tzautoupdate [start]
-Value Type: REG_DWORD
-HKLM\ SYSTEM\CurrentControlSet\Control\TimeZoneInformation [TimeZoneKeyName]
-Value Type: REG_SZ
 
 ## Do not disturb
 
 Set "do not disturb" status manually or automatically, so that notifications will be sent directly to the notification center.
+
+This setting is multi-instance. 
 
 ### Type: Windows.Data.DoNotDisturb.ChangeReason enumeration
 
@@ -492,33 +504,27 @@ struct SettingUnit
 
 ### Type: Windows.Data.InternetExplorer.Favorites structure
 
-The scope of this type is per-user.
-
 #### Favorites Properties
 
 | Name | Type | Description |
 |------|------|-------------|
-| favoriteSettings | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer favorites. |
+| favoriteSettings | vector&lt;**SettingUnit**&gt; | **SettingUnit** structures related to Internet Explorer favorites. |
 
 ### Type: Windows.Data.InternetExplorer.TypedURLS structure
-
-The scope of this type is per-user.
 
 #### TypedURLS Properties
 
 | Name | Type | Description |
 |------|------|-------------|
-| typedURLSettings | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer  TypedURLS. |
+| typedURLSettings | vector&lt;**SettingUnit**&gt; | **SettingUnit** structures related to Internet Explorer  TypedURLS. |
 
 ### Type: Windows.Data.InternetExplorer.BrowserHistory structure
-
-The scope of this type is per-user.
 
 #### BrowserHistory Properties
 
 | Name | Type | Description |
 |------|------|-------------|
-| BrowserHistory | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer browser history. |
+| BrowserHistory | vector&lt;**SettingUnit**&gt; | **SettingUnit** structures related to Internet Explorer browser history. |
 
 ### Type: Windows.Data.InternetExplorer.AutoComplete structure
 
@@ -526,17 +532,15 @@ The scope of this type is per-user.
 
 | Name | Type | Description |
 |------|------|-------------|
-| AutoCompleteSetting | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer autocomplete. |
+| AutoCompleteSetting | vector&lt;**SettingUnit**&gt; | **SettingUnit** structures related to Internet Explorer autocomplete. |
 
 ### Type: Windows.Data.InternetExplorer.TabRoaming structure
-
-**TBD - In the "legacy settings" word doc, this entry was mangled by a copy/paste error. A SME should validate the way that I fixed it**
 
 #### TabRoaming Properties
 
 | Name | Type | Description |
 |------|------|-------------|
-| TabRoamingSetting | Collection of **SettingUnit** structures | **SettingUnit** structures related to Internet Explorer tab roaming settings. |
+| TabRoamingSetting | vector&lt;**SettingUnit**&gt; | **SettingUnit** structures related to Internet Explorer tab roaming settings. |
 
 ## Lock screen
 

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Reference for Windows 11 settings
 
-This page provides information for accessing Windows settings for Windows 11. For information on accessing settings on Windows l0, see [Reference for Windows 10 settings](settings-windows-10.md). Note that some settings may have different implementations for Windows 10 and Windows 11, in which case they will appear on both pages. Settings that are supported and have identical implementations on both Windows 10 and Windows 11 are documented in [Reference for common Windows settings](settings-common.md).
+This page provides information for accessing Windows settings for Windows 11. Settings that are supported on both Windows 10 and Windows 11 are documented in [Reference for common Windows settings](settings-common.md).
 
 For an overview of the Settings backup and restore feature, see [Settings back up and restore overview](index.md).
 
@@ -77,8 +77,6 @@ Settings related to the lunar Calendar in the task bar.
 This setting is single-instance.
 
 ### Type: Windows.Data.LunarCalendar structure
-
-The scope of this type is per user.
 
 #### LunarCalendar Properties
 
@@ -161,18 +159,6 @@ This setting is single-instance.
 | MultilingualEnabled | REG_DWORD | 1 or 0 | Indicates in multingual is enabled. |
 | EnableHwkbTextPrediction | REG_DWORD | 1 or 0 | ASCII Value for keys. |
 
-## USB - notifications
-
-This setting controls toggles such as connection notifications, battery saver and other notifications related to charging of PC.
-
-This setting is single-instance.
-
-### Registry values under HKCU\Software\Microsoft\Shell\USB
-
-| Registry value | Type | Data | Description |
-|---------------|------|-------|------------|
-| NotifyOnUsbErrors | REG_DWORD | 0 or 1 | Enables notifications for USB errors. |
-| NotifyOnWeakCharger | REG_DWORD | 0 or 1 | Enables notifications for weak charger detected. |
 
 ## VPN
 
