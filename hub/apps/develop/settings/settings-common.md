@@ -12,6 +12,81 @@ ms.localizationpriority: medium
 **TBD - Still working on the language to frame these settings**
 This page lists the settings that are supported by both Windows 10 and Windows 11. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md). Link to [Reference for Windows 11 settings](settings-windows-11.md). 
 
+## App Compatability
+
+The app compatibility setting is a json file that describes compatibility information for apps installed on the device. The json file is stored in the following registry value:
+
+**TBD - Need registry location for app compatibility json file**
+
+The format of the backup JSON file. Install, Update, and Uninstall nodes contain arrays of applications, which contain arrays of files. The following code segment describes the format of the file and provides descriptions for each field.
+
+```json
+{
+  "Install": [
+    {
+      "path": App's uninstall registry path,
+      "programId": The unique identifier of the installed Win32 application,
+      "compatFlags": Applicable backup/restore compatibility flags OR'ed together,
+      "restoreAction": Actions to be taken on app restore,
+      "files": [
+        {
+          "name": File name,
+          "path": File path,
+          "osComponent": Boolean stating if the file is an OS file,
+          "size": The file size as a 32-bit value,
+          "magic": The PE header's magic number,
+          "peHeaderHash": Hash of the file's PE header,
+          "sizeOfImage": PE header's SizeOfImage value,
+          "peChecksum": PE header's CheckSum value,
+          "linkDate": PE header's TimeDateStamp value,
+          "linkerVersion": PE header's MarjorImageVersion and MinorImageVersion,
+          "binFileVersion": File version obtained from GetFileVersionInfo,
+          "binProductVersion": Product version obtained from GetFileVersionInfo,
+          "binaryType": Type of binary (e.g. PE64_AMD64),
+          "created": File creation time obtained from file system,
+          "modified": File modification time obtained from file system,
+          "lastAccessed": File access time obtained from file system,
+          "verLanguage": Language obtained from GetFileVersionInfo,
+          "id": Unique identifier obtained from hashing file contents,
+          "switchBackContext": Value for OS runtime compatibility fixes,
+          "sigDisplayName": Display name obtained from the file signature,
+          "sigPublisherName": Publisher name obtained from the file signature,
+          "sigMoreInfoURL": URL obtained from the file signature,
+          "fileVersion": File version obtained from GetFileVersionInfo,
+          "companyName": Company name obtained from GetFileVersionInfo,
+          "fileDescription": File description obtained from GetFileVersionInfo,
+          "internalName": Internal name obtained from GetFileVersionInfo,
+          "legalCopyright": Copyright information obtained from GetFileVersionInfo,
+          "originalFileName": Original filename obtained from GetFileVersionInfo,
+          "productName": Product name obtained from GetFileVersionInfo,
+          "productVersion": Product version obtained from GetFileVersionInfo,
+          "peImageType": Image type obtained from PE header,
+          "peSubsystem": Subsystem obtained from PE header,
+          "runLevel": Executable's runlevel obtained from app manifest,
+          "uiAccess": UI access obtained from app manifest,
+          "crcChecksum": File's CRC checksum,
+          "clrVersion": CLR version obtained from app manifest,
+          "boeProgramId": Unique ID describing the application,
+          "boeProgramName": Same as "productName", if it exists. Otherwise same as "name",
+          "boeProgramPublisher": Same as "companyName", if it exists. Otherwise same as "fileDescription", if it exists,
+          "boeProgramVersion": Same as "productVersion", if it exists. Otherwise same as "fileVersion", if it exists. Otherwise same as "binProductVersion", if it exists. Otherwise same as "binFileVersion", if it exists,
+          "boeProgramLanguage": Same as "verLanguage", if it exists,
+          "fileSize": File's size as a 64-bit number,
+          "peCharacteristics": Image characteristics obtained from PE header,
+          "sha256": SHA256 hash of file,
+        }
+      ]
+    },
+  ],
+  "Update": [
+    { }
+  ],
+  "Uninstalled": [
+    { }
+  ]
+}
+
+```
 
 
 ## Autoplay
@@ -505,6 +580,12 @@ History files are used to optimize the Japanese IME user experience across devic
 
 ### Type: Windows.Data.Input.HistoryFiles structure
 
+This type is multi-instance and must be retrieved using the following collection collection names:
+
+* "historyfiles"
+
+For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readclouddatasettings-exe.md).
+
 #### HistoryFiles Properties
 
 | Name | Type | Description |
@@ -612,7 +693,7 @@ The scope of this type is per device.
 |------|------|-------------|
 | kind | **LockScreenKind** | Specifies whether current Lockscreen is set as Wallpaper or Slideshow or Spotlight |
 | pictureOnSignInScreen | bool | Specifies whether show the lock screen background picture on the sign-in screen is enabled. |
-| funItems | bool | Specifies whether “Get fun facts, tips, tricks, and more on your lock screen” is enabled. |
+| funItems | bool | Specifies whether “Get fun facts, tips, tricks, and more on your lock screen" is enabled. |
 | itemId | wstring | The unique ID for the lockscreen wallpaper uploaded to OneDrive during backup.  |
 | contentUri | wstring | The url for the lockscreen wallpaper uploaded to OneDrive during backup |
 | lockScreenStatus | wstring | Not used. |
@@ -885,7 +966,7 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 | country | wstring | The code of the country or region in which a MSA is registered.  |
 | safeCustomerId | wstring | An alternative identifier for an MSA. |
 | ageGroup | wstring | Age group of an MSA, based on the registered birth date of the MSA user. Current values are 0 = unknown, 1 = child, 2 = teen, 3 = adult. |
-| scope | wstring | Represents the “Sign in options” setting state. |
+| scope | wstring | Represents the “Sign in options" setting state. |
 
 ### Type: Windows.Data.Account.SecondaryAccounts structure
 
