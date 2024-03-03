@@ -147,7 +147,7 @@ namespace CsUnpackagedAppNotifications
     {
         private bool m_isRegistered;
 
-        private Dictionary<string, Action<AppNotificationActivatedEventArgs>> c_map;
+        private Dictionary<int, Action<AppNotificationActivatedEventArgs>> c_map;
 
         public NotificationManager()
         {
