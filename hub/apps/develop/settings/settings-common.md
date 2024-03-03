@@ -777,6 +777,21 @@ Settings related to pen and Windows Ink.
 | doubleClickCustomAppID | wstring | Specifies the app ID app opened on double-click. |
 | longPressCustomAppID | wstring | Specifies the app ID app opened on long-press. |
 
+Supported  override and verb values:
+
+| Dropdown Option Selected | Override | PenWorkspaceVerb | Override (Win10) | PenWorkspaceVerb (Win10) |
+|--------------------------|----------|------------------|------------------|--------------------------|
+| Nothing | 1 | 0/1 | 1 | 0 |
+| Screen Snipping | 8 | 0/1 | 8 | 0 |
+| Pen Menu | 5 | 0 | 5 | 0 |
+| Whiteboard | 9 | 0 | 5 | 2 |
+| One Note | 6 | 0/1 | 0 | 0 |
+| One Note Quick Notes | 13 | 0/1 | NA | NA |
+| Sticky Notes | 5 | 1 | 5 | 1 |
+| Snip & Sketch | NA | NA | 5 | 3 |
+| Open Program | 3 | 0 | 3 | 0 |
+| Open App | 2 | 0 | 2 | 0 |
+
 
 ## Personalization - colors
 
