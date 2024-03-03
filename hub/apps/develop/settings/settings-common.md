@@ -880,6 +880,12 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 |------|------|-------------|
 | accountDetails | vector&lt;AccountInfo&gt; | A vector of **AccountInfo** objects representing secondary accounts.  |
 
+## Spelling dictionary
+
+The user's custom spelling dictionary is stored in a file in the following registry location:
+
+`HKEY_CURRENT_USER\AppData\Roaming\Microsoft\Spelling\neutral\default.dic`
+
 ## USB
 
 This setting controls toggles such as connection notifications, battery saver and other notifications related to charging of PC.
