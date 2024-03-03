@@ -45,6 +45,11 @@ There are different constraints that can define when a menu entry is shown and w
 
 ## Supported hash types
 
+> [!WARNING]
+> Certain hash types are nowadays considered unsafe (like md5 or SHA1). Please inform yourself about the insecurities of the hash types you use.
+
+Following types of hashes are supported.
+
 - CRC32 Decimal
 - CRC32 Hex
 - CRC64 Decimal
