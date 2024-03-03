@@ -673,8 +673,46 @@ Settings related to system colors.
 |---------------|------|-------|-------------|
 | ColorPrevalence | REG_DWORD | 0/1 | **TBD - I can't derive a description for this** |
 
+## Personalization - Start - Folders
 
+Specifies the folders that are shown at the bottom of the Start menu.
 
+### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| VisiblePlaces | REG_BINARY | A vector of GUIDs. | A list of GUIDs indicating the folders that are shown at the bottom of Start.  |
+
+The folder GUIDs that are supported for *Start_Layout* are:
+• Documents: {2D34D5CE-FA5A-4543-82F2-22E6EAF7773C}
+• Downloads: {E367B32F-89DE-4355-BFCE-61F37B18A937}
+• Music: {B00B0620-7F51-4C32-AA1E-34CC547F7315}
+• Pictures: {383F07A0-E80A-4C80-B05A-86DB845DBC4D}
+• Videos: {42B3A5C5-7D86-42F4-80A4-93FACA7A88B5}
+• Network: {FE758144-080D-42AE-8BDA-34ED97B66394}
+• UserProfile: {74BDB04A-F94A-4F68-8BD6-4398071DA8BC}
+• Explorer: {148A24BC-D60C-4289-A080-6ED9BBA24882}
+• Settings: {52730886-51AA-4243-9F7B-2776584659D4}
+
+## Personalization - Start - Layout
+
+Specifies the start layout.
+
+### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| Config | REG_BINARY | A JSON file.  | The contents of the Pinned Layout in JSON. |
+
+## Personalization - Start - Show recent apps
+
+Specifies whether apps that were recently installed in Start in various surfaces on are shown on Start.
+
+### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| ShowRecentList | REG_BOOL | 0 or 1  | Specifies whether apps that were recently installed in Start in various surfaces on are shown on Start. |
 
 ## Secondary accounts
 

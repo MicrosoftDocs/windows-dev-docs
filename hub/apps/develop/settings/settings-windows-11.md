@@ -100,6 +100,26 @@ This type inherits from **LunarCalendar**. The scope of this type is per device.
 | TraditionalChinese | 3   | The Traditional Chinese calendar. |
 
 
+## Personalization - Start - Layout - Pins and recomendations
+
+Specifies the start layout type.
+
+### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| Start_Layout | REG_DWORD | 0 [Default], 1 [More Pins], 2 [More Recommendations] | The start layout. |
+
+## Personalization - Start - Recommendations
+
+Specifies whether recommendations for tips, shortcuts, new apps and more are shown.
+
+### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| Start_IrisRecommendations | REG_BOOL | 0 or 1 | Specifies whether recommendations are enabled. |
+
 ## Personalization - Themes
 
 This setting is used to set a personalized theme.
