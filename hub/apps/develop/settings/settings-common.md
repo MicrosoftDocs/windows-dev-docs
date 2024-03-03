@@ -51,6 +51,51 @@ This setting helps to set defaults for removable drives and memory cards
 | MSStorageSense | TBD |
 | MSPromptEachTime | Prompt each time. |
 
+## Backgound
+
+Setting for managing and personalizing the desktop background.  
+
+### Type: Windows.Data.Background.WallpaperPosition enumeration
+
+#### WallpaperPosition values
+
+| Name | Value | Description |
+|------|-------|---------|
+| Fill | 0   | Fill. |
+| Fit  | 1  | Fit.  |
+| Stretch | 2  | Stretch. |
+| Tile | 2  | Tile. |
+| Center | 2  | Center. |
+| Span | 2  | Span |
+
+### Type: Windows.Data.Background.WallpaperKind enumeration
+
+#### WallpaperKind values
+
+| Name | Value | Description |
+|------|-------|---------|
+| SolidColor | 0   | Solid color. |
+| Image | 1  | Image.  |
+| Slideshow | 2  | Slideshow. |
+| Spotlight | 3  | Spotlight. |
+
+
+### Type: Windows.Data.Background.DesktopWallpaper structure
+
+The scope of this type is per device.
+
+#### DesktopWallpaper Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| kind | **WallpaperKind** | Specifies whether current background is set as Wallpaper or Solid Color or Slideshow or Spotlight. |
+| position | **WallpaperPosition** | Specifies how wallpaper or slideshow images are positioned on background. |
+| color | Windows.Data.Common.Color | Specifies the solid color value if background is selected as Solid Color |
+| itemId | wstring | The unique ID for the wallpaper or slideshow uploaded to OneDrive during backup.  |
+| contentUri | wstring | The url ffor the wallpaper or slideshow uploaded to OneDrive during backup.  |
+| intervalInSeconds | uint64 | The interval between images of slideshow if background is selected as slideshow. |
+| shuffle | bool | Signifies whether slideshow images are shuffled if background is selected as slideshow |
+| syncRootRelativePath | wstring |  |
 
 
 ## BackupUnitStore
@@ -646,6 +691,31 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 | Name | Type | Description |
 |------|------|-------------|
 | category | uint64 | Category of signature? *TBD - description in source seems tentative* |
+
+## Pen and Windows Ink
+
+Settings related to pen and Windows Ink.
+
+### Type: Windows.Data.Input.Devices.PenPerDevice structure
+
+#### PenPerDevice Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| singleClickOverride | uint64 | Any integer value 0 - 13. Value corresponds to options available for Single Click setting dropdown. |
+| singleClickPenWorkspaceVerb | uint64 | Any integer value 0-3. Value corresponds to options available for Single Click setting dropdown. |
+| doubleClickOverride | uint64 | Any integer value 0 - 13. Value corresponds to options available for Double Click setting dropdown. |
+| doubleClickPenWorkspaceVerb | uint64 | Any integer value 0-3. Value corresponds to options available for Double Click setting dropdown. |
+| longPressOverride | uint64 | Any integer value 0 - 13. Value corresponds to options available for long press setting dropdown. |
+| longPressPenWorkspaceVerb | uint64 | Any integer value 0-3. Value corresponds to options available for Long Press setting dropdown. |
+| penWorkspaceAppLaunchOnPenDetachEnabled | bool | Specifies whether the pen menu is shown after pen is removed from storage. |
+| penEnablePenButtonOverride | bool | Specifies whether apps are allowed to override the shortcut button behavior. |
+| singleClickCustomAppPath | wstring | Specifies the path to the app opened on single-click.|
+| doubleClickCustomAppPath | wstring | Specifies the path to the app opened on double-click. |
+| longPressCustomAppPath | wstring | Specifies the path to the app opened on long-press. |
+| singleClickCustomAppID | wstring |  Specifies the app ID app opened on single-click. |
+| doubleClickCustomAppID | wstring | Specifies the app ID app opened on double-click. |
+| longPressCustomAppID | wstring | Specifies the app ID app opened on long-press. |
 
 
 ## Personalization - colors
