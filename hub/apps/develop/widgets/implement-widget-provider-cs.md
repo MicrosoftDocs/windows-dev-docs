@@ -75,130 +75,135 @@ public static Dictionary<string, CompactWidgetInfo> RunningWidgets = new Diction
 
 This example will declare some static strings to define the JSON templates for each widget. For convenience, these templates are stored in the member variables of the **WidgetProvider** class. If you need a general storage for the templates - they can be included as part of the application package: [Accessing Package Files](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web). For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Card Designer](../../design/widgets/widgets-create-a-template.md).
 
+> [!NOTE]
+> Raw string literals are only available in C# 11
+
 ```csharp
 // WidgetProvider.cs
 
 // Class members of WidgetProvider
-const string weatherWidgetTemplate = @"
+const string weatherWidgetTemplate = """
 {
-    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
-    ""type"": ""AdaptiveCard"",
-    ""version"": ""1.0"",
-    ""speak"": ""<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>"",
-    ""backgroundImage"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg"",
-    ""body"": [
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "speak": "<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>",
+    "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg",
+    "body": [
         {
-            ""type"": ""TextBlock"",
-            ""text"": ""Redmond, WA"",
-            ""size"": ""large"",
-            ""isSubtle"": true,
-            ""wrap"": true
+            "type": "TextBlock",
+            "text": "Redmond, WA",
+            "size": "large",
+            "isSubtle": true,
+            "wrap": true
         },
         {
-            ""type"": ""TextBlock"",
-            ""text"": ""Mon, Nov 4, 2019 6:21 PM"",
-            ""spacing"": ""none"",
-            ""wrap"": true
+            "type": "TextBlock",
+            "text": "Mon, Nov 4, 2019 6:21 PM",
+            "spacing": "none",
+            "wrap": true
         },
         {
-            ""type"": ""ColumnSet"",
-            ""columns"": [
+            "type": "ColumnSet",
+            "columns": [
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""auto"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
                         {
-                            ""type"": ""Image"",
-                            ""url"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png"",
-                            ""size"": ""small"",
-                            ""altText"": ""Mostly cloudy weather""
+                            "type": "Image",
+                            "url": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png",
+                            "size": "small",
+                            "altText": "Mostly cloudy weather"
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""auto"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""46"",
-                            ""size"": ""extraLarge"",
-                            ""spacing"": ""none"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "46",
+                            "size": "extraLarge",
+                            "spacing": "none",
+                            "wrap": true
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""stretch"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""°F"",
-                            ""weight"": ""bolder"",
-                            ""spacing"": ""small"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "°F",
+                            "weight": "bolder",
+                            "spacing": "small",
+                            "wrap": true
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""stretch"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""Hi 50"",
-                            ""horizontalAlignment"": ""left"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "Hi 50",
+                            "horizontalAlignment": "left",
+                            "wrap": true
                         },
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""Lo 41"",
-                            ""horizontalAlignment"": ""left"",
-                            ""spacing"": ""none"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "Lo 41",
+                            "horizontalAlignment": "left",
+                            "spacing": "none",
+                            "wrap": true
                         }
                     ]
                 }
             ]
         }
     ]
-}";
+}
+""";
 
-const string countWidgetTemplate = @"
+const string countWidgetTemplate = """
 {                                                                     
-    ""type"": ""AdaptiveCard"",                                         
-    ""body"": [                                                         
+    "type": "AdaptiveCard",                                         
+    "body": [                                                         
         {                                                               
-            ""type"": ""TextBlock"",                                    
-            ""text"": ""You have clicked the button ${count} times""    
+            "type": "TextBlock",                                    
+            "text": "You have clicked the button ${count} times"    
         },
         {
-                ""text"":""Rendering Only if Small"",
-                ""type"":""TextBlock"",
-                ""$when"":""${$host.widgetSize==\""small\""}""
+                "text":"Rendering Only if Small",
+                "type":"TextBlock",
+                "$when":"${$host.widgetSize==\"small\"}"
         },
         {
-                ""text"":""Rendering Only if Medium"",
-                ""type"":""TextBlock"",
-                ""$when"":""${$host.widgetSize==\""medium\""}""
+                "text":"Rendering Only if Medium",
+                "type":"TextBlock",
+                "$when":"${$host.widgetSize==\"medium\"}"
         },
         {
-            ""text"":""Rendering Only if Large"",
-            ""type"":""TextBlock"",
-            ""$when"":""${$host.widgetSize==\""large\""}""
+            "text":"Rendering Only if Large",
+            "type":"TextBlock",
+            "$when":"${$host.widgetSize==\"large\"}"
         }                                                                    
     ],                                                                  
-    ""actions"": [                                                      
+    "actions": [                                                      
         {                                                               
-            ""type"": ""Action.Execute"",                               
-            ""title"": ""Increment"",                                   
-            ""verb"": ""inc""                                           
+            "type": "Action.Execute",                               
+            "title": "Increment",                                   
+            "verb": "inc"                                           
         }                                                               
     ],                                                                  
-    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
-    ""version"": ""1.5""                                                
-}";
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5"                                                
+}
+""";
 ```
 
 ## Implement the IWidgetProvider methods
@@ -853,26 +858,30 @@ public void OnCustomizationRequested(WidgetCustomizationRequestedArgs customizat
 
 Now, declare a string variable that defines the JSON template for the widget customization UI. For this example, we have a "Reset counter" button and an "Exit customization" button that will signal our provider to return to regular widget behavior. Place this definition next to the other template definitions.
 
+> [!NOTE]
+> Raw string literals are only available in C# 11
+
 ```csharp
 // WidgetProvider.cs
-const string countWidgetCustomizationTemplate = @"
+const string countWidgetCustomizationTemplate = """
 {
-    ""type"": ""AdaptiveCard"",
-    ""actions"" : [
+    "type": "AdaptiveCard",
+    "actions" : [
         {
-            ""type"": ""Action.Execute"",
-            ""title"" : ""Reset counter"",
-            ""verb"": ""reset""
+            "type": "Action.Execute",
+            "title" : "Reset counter",
+            "verb": "reset"
             },
             {
-            ""type"": ""Action.Execute"",
-            ""title"": ""Exit customization"",
-            ""verb"": ""exitCustomization""
+            "type": "Action.Execute",
+            "title": "Exit customization",
+            "verb": "exitCustomization"
             }
     ],
-    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
-    ""version"": ""1.5""
-}";
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5"
+}
+""";
 ```
 
 ### Send customization template in UpdateWidget
