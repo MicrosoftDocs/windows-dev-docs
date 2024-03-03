@@ -670,6 +670,66 @@ The scope of this type is per device.
 | minimizeWindowsOnMonitorDisconnect | nullable&lt;bool&gt; | Enables minimize windows on monitor disconnect. |
 | easeCursorMovementBetweenDisplays | nullable&lt;bool&gt; | Enables minimize windows on monitor disconnect. |
 
+## Nightlight
+
+Settings related to changing screen lighting or set brightness for certain hours.
+
+### Type: Windows.Data.BlueLightReduction.ScheduleTime structure
+
+The scope of this type is per device.
+
+#### ScheduleTime Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| hour | int8 | Hours. |
+| minute | int8 | Minutes.  |
+
+### Type: Windows.Data.BlueLightReduction.Settings structure
+
+#### BlueLightReduction.Settings Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| automaticOnSchedule | bool | Specifies whether blue light reduction is automatically turned on or off based on a schedule. |
+| automaticOnSunset | bool | Specifies if blue light reduction schedule is automatically set based on sunrise and sunset. |
+| manualScheduleBlueLightReductionOnTime | **ScheduleTime** | The start time of blue light reduction for a user manually setting their schedule. |
+| manualScheduleBlueLightReductionOffTime | **ScheduleTime** | The end time of blue light reduction for a user manually setting their schedule. |
+| targetColorTemperature | **int16** | The target color temperature (in Kelvin) for blue light reduction. |
+| sunsetTime | **ScheduleTime** | The scheduled sunset time for blue light reduction.  |
+| sunriseTime | **ScheduleTime** | he scheduled sunrise time for blue light reduction.  |
+| previewColorTemperatureChanges | bool | Specifies whether blue light reduction color temperature changes should be previewed. |
+| darkMode | bool | Specifies whether app mode should change when blue light reduction is turned on or off |
+
+### Type: Windows.Data.BlueLightReduction.ActiveState enumeration
+
+#### ActiveState values
+
+| Name | Value | Description |
+|------|-------|---------|
+| BlueLightReductionOn | 0   |  |
+| BlueLightReductionOff | 1  |  |
+
+### Type: Windows.Data.BlueLightReduction.ChangeSource enumeration
+
+#### ActiveState values
+
+| Name | Value | Description |
+|------|-------|---------|
+| Schedule | 0   |  |
+| User | 1  |  |
+
+### Type: Windows.Data.BlueLightReduction.BlueLightReductionState structure
+
+#### BlueLightReductionState Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| state | **ActiveState** | The current state of blue light reduction. |
+| source | **ChangeSource** | Where the change came from, user change or scheduled change. |
+| timestampUTC | int64 | The time the change in active state was applied. |
+| isSupported | bool |  Whether or not current configuration supports blue light reduction. |
+
 
 ## NlmSignature
 
