@@ -19,9 +19,9 @@ Press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate and then sele
 ## How to use
 
 - Bounds (Dashed square symbol): This is a bounding box. Click and drag with your mouse. If you hold <kbd>Shift</kbd>, the box(es) will stay in place until you cancel the interaction.
-- Spacing (&#9547;): This will measure horizontal and vertical spacing at the same time.  Click the symbol and move your mouse to your target location.
-- Horizontal (&#9473;): This will measure only horizontal spacing. Click the symbol and move your mouse pointer to your target location.
-- Vertical (&#9475;): This will measure only vertical spacing. Click the symbol and move your mouse pointer to your target location.
+- Spacing (↔<span style="position:relative; right:9px; top:-1px">↕</span><span style="position:relative; right:7px">): This will measure horizontal and vertical spacing at the same time.  Click the symbol and move your mouse to your target location.</span>
+- Horizontal (↔): This will measure only horizontal spacing. Click the symbol and move your mouse pointer to your target location.
+- Vertical (↕): This will measure only vertical spacing. Click the symbol and move your mouse pointer to your target location.
 - Cancel interaction: <kbd>Esc</kbd>, &#9587; or mouse click. Upon clicking the primary mouse button, the measurement is copied to the clipboard.
 
 The controls on the toolbar can also be selected via <kbd>Ctrl</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd>/<kbd>4</kbd>.
