@@ -169,8 +169,8 @@ The scope of this type is per device.
 | kind | **WallpaperKind** | Specifies whether current background is set as Wallpaper or Solid Color or Slideshow or Spotlight. |
 | position | **WallpaperPosition** | Specifies how wallpaper or slideshow images are positioned on background. |
 | color | Windows.Data.Common.Color | Specifies the solid color value if background is selected as Solid Color |
-| itemId | wstring | The unique ID for the wallpaper or slideshow uploaded during backup.  |
-| contentUri | wstring | The url for the wallpaper or slideshow uploaded during backup  |
+| itemId | wstring | The unique ID for the wallpaper or slideshow uploaded to OneDrive during backup.  |
+| contentUri | wstring | The url ffor the wallpaper or slideshow uploaded to OneDrive during backup.  |
 | intervalInSeconds | uint64 | The interval between images of slideshow if background is selected as slideshow. |
 | shuffle | bool | Signifies whether slideshow images are shuffled if background is selected as slideshow |
 | syncRootRelativePath | wstring |  |
@@ -345,7 +345,7 @@ Set "do not disturb" status manually or automatically, so that notifications wil
 
 ### Type: Windows.Data.DoNotDisturb.QuietHoursProfile structure
 
-This type is multi-instance.
+This setting is multi-instance.
 
 #### QuietHoursProfile Properties
 
@@ -675,8 +675,8 @@ The scope of this type is per device.
 | kind | **LockScreenKind** | Specifies whether current Lockscreen is set as Wallpaper or Slideshow or Spotlight |
 | pictureOnSignInScreen | bool | Specifies whether show the lock screen background picture on the sign-in screen is enabled. |
 | funItems | bool | Specifies whether “Get fun facts, tips, tricks, and more on your lock screen" is enabled. |
-| itemId | wstring | The unique ID for the wallpaper or slideshow uploaded during backup.  |
-| contentUri | wstring | The url for the wallpaper or slideshow uploaded during backup. |
+| itemId | wstring | The unique ID for the lockscreen wallpaper uploaded to OneDrive during backup.  |
+| contentUri | wstring | The url for the lockscreen wallpaper uploaded to OneDrive during backup |
 | lockScreenStatus | wstring | Not used. |
 | slideShowAutoLock | Not used. |  |
 | slideShowEnabledOnBattery | Not used. |  |

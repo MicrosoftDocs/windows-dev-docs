@@ -16,6 +16,33 @@ Settings status is accessed in one of two ways:
 1. Via the Windows registry: For settings below that include registry details, please use that information to access the settings.
 1. Via the Cloud Data Store Reader tool. These settings must be extracted from a data store to be readable. If the setting below does not list registry details, then the settings must be extracted using the Cloud Data Store Reader tool. For information on how to use this tool, see [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md).
 
+## Cellular
+
+User preferences that customize the Windows behavior when a cellular connection is available.
+
+### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\CellularFailover
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| AllowFailover | REG_DWORD | 0 or 1 | Use cellular whenever Wi-Fi is poor.  |
+
+### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\SubscriptionManager\&lt;ICCID&gt;\&lt;IMSI&gt;
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| UserCost | REG_DWORD | 0 or 1 | Maps the metered/unmetered state to each IMSI.   |
+
+### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WwanSvc\DisallowAutoConnectByClient
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| &lt;interface GUID&gt;| REG_DWORD | 0 or 1 | Let Windows keep the device connected to cellular. |
+
+### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WwanSvc\RoamingPolicyForPhone\&lt;interface GUID&gt;
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|-------------|
+| InternetAlwaysOn| REG_DWORD | 0 or 1 | Roaming or no roaming. When entering a roaming area, your data connection will be turned off if roaming is not allowed. |
 
 ## Ease cursor movement across displays
 
