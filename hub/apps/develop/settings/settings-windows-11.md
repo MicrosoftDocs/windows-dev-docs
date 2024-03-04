@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Reference for Windows 11 settings
 
-The information provided on this page includes details for accessing the status of Windows Backup and Restore settings that are supported in Windows 11. This public documentation fulfills the regulatory requirement to ensure effective data portability by providing third-party developers with a means to access and export that data. Settings that are supported on both Windows 10 and Windows 11 are documented in [Reference for common Windows settings](settings-common.md).
+The information provided on this page includes details for accessing the status of Windows Backup and Restore settings that are supported in Windows 11. This public documentation ensures effective data portability by providing third-party developers with a streamlined process to access the data. Settings that are supported on both Windows 10 and Windows 11 are documented in [Reference for common Windows settings](settings-common.md).
 
 Settings status is accessed in one of two ways:
 
