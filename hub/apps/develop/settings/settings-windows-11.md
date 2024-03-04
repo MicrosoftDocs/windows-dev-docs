@@ -148,6 +148,98 @@ Specifies whether recommendations for tips, shortcuts, new apps and more are sho
 |---------------|------|-------|------------|
 | Start_IrisRecommendations | REG_BOOL | 0 or 1 | Specifies whether recommendations are enabled. |
 
+## Personalization - Taskbar - Alignment
+
+This setting sets the alignment of the taskbar.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarAl
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_Al | REG_SZ | 0 or 1 | Specifies the taskbar alignment. 0 is left aligned. 1 is center aligned. |
+
+## Personalization - Taskbar - Autohide
+
+This setting sets the auto-hide behavior of the taskbar.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3\
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_Autohide | REG_SZ | 0 or 1 | **TBD** |
+| SystemSettings_Taskbar_Autohide | REG_SZ | 0 or 1 | **TBD** |
+
+## Personalization - Taskbar - Combine buttons
+
+This setting enables combining buttons on the taskbar.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarGlomLevel
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_GroupingMode | REG_SZ | 0, 1, or 2 | 0: Always, 1: When taskbar is full, 2: Never. |
+
+## Personalization - Taskbar - Flashing
+
+This setting enables flashing for taskbar apps.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarFlashing
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_Flashing | REG_SZ | 0 or 1 | Enables flashing for taskbar apps. |
+
+## Personalization - Taskbar - Share window
+
+This setting enables sharing any window from taskbar.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarSn
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_Sn | REG_SZ | 0 or 1 | Enables sharing any window from taskbar. |
+
+## Personalization - Taskbar - Show desktop
+
+This setting enables showing the desktop by clicking the far corner of the taskbar.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarSd
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_Sd | REG_SZ | 0 or 1 | Enables showing the desktop by clicking the far corner of the taskbar. |
+
+## Personalization - Taskbar - Show recent searches
+
+This setting enables showing recent searches when hovering on the search icon in taskbar.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds\DSB\OpenOnHover
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_Sh | REG_SZ | 0 or 1 | Enables showing recent searches when hovering on the search icon in taskbar. |
+
+## Personalization - Taskbar - Task view
+
+This setting shows or hides the Task View button on the taskbar.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\ShowTaskViewButton
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_TaskView | REG_SZ | 0 or 1 | Specifies whether the task view button is shown on the taskbar. |
+
+## Personalization - Taskbar - Widgets button
+
+This setting shows or hides the Widgets button on the taskbar.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDa
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_Da | REG_SZ | 0 or 1 | Specifies whether the Widgets button is shown on the taskbar. |
+
+
 ## Personalization - Themes
 
 This setting is used to set a personalized theme.

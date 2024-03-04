@@ -893,6 +893,59 @@ Specifies whether apps that were recently installed in Start in various surfaces
 |---------------|------|-------|------------|
 | ShowRecentList | REG_BOOL | 0 or 1  | Specifies whether apps that were recently installed in Start in various surfaces on are shown on Start. |
 
+## Personalization - Taskbar - Badges
+
+This setting enables badges for apps on the taskbar.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarBadges
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_Taskbar_Badging | REG_SZ | 0 or 1 | Enables badges for apps on the taskbar. |
+
+## Personalization - Taskbar - Combine buttons, mult-monitor
+
+This setting enables combining buttons and hiding labels on the taskbar on multiple monitors.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\MMTaskbarGlomLevel
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_DesktopTaskbar_GroupingMode | REG_SZ | 0, 1, or 2 | 0: Always, 1: When taskbar is full, 2: Never. |
+
+## Personalization - Taskbar - Multi-monitor
+
+Enables showing the taskbar on multiple displays.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\MMTaskbarEnabled
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SystemSettings_Taskbar_MultiMon | REG_SZ | 0 or 1 | Enables showing the taskbar on multiple displays. |
+| SystemSettings_DesktopTaskbar_MultiMon | REG_SZ | 0 or 1 | Enables showing the taskbar on multiple displays. |
+
+## Personalization - Taskbar - Multi-monitor taskbar mode
+
+Specifies the behavior of the taskbar when displayed on multiple monitors.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\MMTaskbarMode
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| SSystemSettings_Taskbar_MultiMonTaskbarMode | REG_SZ | 0, 1, or 2 | 0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on. |
+| SSystemSettings_DesktopTaskbar_MultiMonTaskbarMode | REG_SZ | 0  1 | 0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on. |
+
+## Personalization - Taskbar - Pinned apps from other devices
+
+Specifies the set of apps pinned to the taskbar from another device.
+
+### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband\FavoritesMigration
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| FavoritesMigration | REG_BLOB | A binary blob. | This is an opaque binary blob copied from the following location on the backed up.  |
+| Favorites | REG_SZ | 0  1 | The format of this key is undocumented. |
+
 ## Secondary accounts
 
 Provides information about Microsoft accounts (MSA) and work or school accounts added to the device to sign in to apps or online services, in addition to the account used to log on to the device. On Windows 11, backup and restore of this setting is supported. On Windows 10, backup is supported but restore is not.
