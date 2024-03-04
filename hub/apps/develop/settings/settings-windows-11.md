@@ -171,7 +171,7 @@ This setting sets the auto-hide behavior of the taskbar.
 
 ## Personalization - Taskbar - Combine buttons
 
-This setting enables combining buttons on the taskbar.
+This setting enables combining buttons and hiding labels on the taskbar.
 
 ### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarGlomLevel
 
