@@ -107,17 +107,17 @@ This setting helps to set defaults for removable drives and memory cards
 | UserChosenExecuteHandlers\CameraAlternate\ShowPicturesOnArrival | REG_SZ | 0/1 | User selected default autoplay behavior for removable drive. |
 | UserChosenExecuteHandlers\ StorageOnArrival | REG_DWORD | 0/1 | User selected default autoplay behavior for memory card. |
 | EventHandlersDefaultSelection\CameraAlternate\ShowPicturesOnArrival | REG_DWORD | 0/1 | System default autoplay behavior for removable drive. |
-| EventHandlersDefaultSelection\ StorageOnArrival | REG_DWORD | 0/1 | System default autoplay behavior for memory card. |
+| EventHandlersDefaultSelection\StorageOnArrival | REG_DWORD | 0/1 | System default autoplay behavior for memory card. |
 
 #### Supported data values for ShowPicturesOnArrival
 
 | Data value | Description |
 |------------|-------------|
-| dsd9eksajf9re3669zh5z2jykhws2jy42gypaqjh1qe66nyek1hg!content!import | TBD |
+| dsd9eksajf9re3669zh5z2jykhws2jy42gypaqjh1qe66nyek1hg!content!import | Import Photos and Videos (Photos) |
 | MSPlayMediaOnArrival | Play media on arrival. |
 | MSOpenFolder | Open folder. |
 | MSPromptEachTime | Prompt each time. |
-| OneDriveAutoPlay | TBD |
+| OneDriveAutoPlay | Import Photos and Videos (OneDrive). |
 | MSTAKENOACTION | Take no action. |
 
 #### Supported data values for StorageOnArrival
@@ -126,7 +126,7 @@ This setting helps to set defaults for removable drives and memory cards
 |------------|-------------|
 | MSTAKENOACTION | Take no action. |
 | MSOpenFolder | Open folder. |
-| MSStorageSense | TBD |
+| MSStorageSense | Configure Storage Settings (Settings). |
 | MSPromptEachTime | Prompt each time. |
 
 ## Backgound
@@ -142,9 +142,9 @@ Setting for managing and personalizing the desktop background.
 | Fill | 0   | Fill. |
 | Fit  | 1  | Fit.  |
 | Stretch | 2  | Stretch. |
-| Tile | 2  | Tile. |
-| Center | 2  | Center. |
-| Span | 2  | Span |
+| Tile | 3  | Tile. |
+| Center | 4  | Center. |
+| Span | 5  | Span |
 
 ### Type: Windows.Data.Background.WallpaperKind enumeration
 
@@ -173,7 +173,7 @@ The scope of this type is per device.
 | contentUri | wstring | The url ffor the wallpaper or slideshow uploaded to OneDrive during backup.  |
 | intervalInSeconds | uint64 | The interval between images of slideshow if background is selected as slideshow. |
 | shuffle | bool | Signifies whether slideshow images are shuffled if background is selected as slideshow |
-| syncRootRelativePath | wstring |  |
+| syncRootRelativePath | wstring | Signifies path to slideshow folder if background is selected as slideshow. |
 
 
 
@@ -287,10 +287,10 @@ Settings related to high-contrast themes.
 | rgbText  | **Windows.Data.Common.Color**   | Theme text color. |
 | rgbHyperlink  | **Windows.Data.Common.Color**   | Theme hyperlink color. |
 | rgbInactiveText  | **Windows.Data.Common.Color**   | Theme inactive text color. |
-| rgbSelectedText1  | **Windows.Data.Common.Color**   | Theme selected text 1 color. |
-| rgbSelectedText2  | **Windows.Data.Common.Color**   | Theme selected text 2 color. |
-| rgbButtonText1  | **Windows.Data.Common.Color**   | Theme button text 1 color. |
-| rgbButtonText2  | **Windows.Data.Common.Color**   | Theme button text 2 color. |
+| rgbSelectedText1  | **Windows.Data.Common.Color**   | Signifies color value of Text of highlighted text. |
+| rgbSelectedText2  | **Windows.Data.Common.Color**   | Signifies color value of Text of highlight. |
+| rgbButtonText1  | **Windows.Data.Common.Color**   | Signifies color value of Text of button text. |
+| rgbButtonText2  | **Windows.Data.Common.Color**   | Signifies color value of Face of button. |
 
 ### Type: Windows.Data.Common.Color structure
 
@@ -311,7 +311,7 @@ Settings related to date and time.
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
-| start | REG_DWORD | 0/1 | Enables set time zone automatically. |
+| start | REG_DWORD | 3/4 | 3: Set timezone toggle value on. 4: Set Timezone toggle value off. |
 
 ### Registry values under HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
 
@@ -835,22 +835,22 @@ Settings related to system colors.
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
-| AppsUseLightTheme | REG_DWORD | 0/1 | Apps use light theme. |
-| SystemUsesLightTheme | REG_DWORD | 0/1 | System uses light theme. |
-| EnableTransparency | REG_DWORD | 0/1 | Enable transparency |
-| ColorPrevalance | REG_DWORD | 0/1 | **TBD - I can't infer a description for this**|
+| AppsUseLightTheme | REG_DWORD | 0/1 | Signifies light/dark color mode for an app. |
+| SystemUsesLightTheme | REG_DWORD | 0/1 | Signifies light/dark color mode for Windows. |
+| EnableTransparency | REG_DWORD | 0/1 | Signifies the transparency effect on windows and surfaces. |
+| ColorPrevalance | REG_DWORD | 0/1 | Signifies the toggle state for "Show Accent Color on Start and Taskbar". |
 
 ### Registry values under HKCU\Control Panel\Desktop
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
-| AutoColorization | REG_DWORD | 0/1 | Enable auto-colorization. |
+| AutoColorization | REG_DWORD | 0/1 | signifies auto-apply accent color based on background or manually. |
 
 ### Registry values under HKCU\Software\Microsoft\Windows\DWM
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
-| ColorPrevalence | REG_DWORD | 0/1 | **TBD - I can't derive a description for this** |
+| ColorPrevalence | REG_DWORD | 0/1 | Signifies toggle state for "show Accent color in title bar and windows borders". |
 
 ## Personalization - Start - Folders
 

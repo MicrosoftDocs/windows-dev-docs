@@ -93,8 +93,8 @@ This setting is single instance.
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
-| UseNexusForGameBarEnabled | REG_DWORD | 0 or 1 | TBD |
-| AutoGameModeEnabled | REG_DWORD | 0 or 1 | TBD |
+| UseNexusForGameBarEnabled | REG_DWORD | 0 or 1 | Key associated with toggle Gaming -> Game Bar -> "Allow your controller to open Game Bar" |
+| AutoGameModeEnabled | REG_DWORD | 0 or 1 | Key associated with toggle Gaming -> Game Mode -> Game Mode. |
 
 ## Lunar calendar
 
@@ -166,8 +166,8 @@ This setting sets the auto-hide behavior of the taskbar.
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
-| SystemSettings_DesktopTaskbar_Autohide | REG_SZ | 0 or 1 | **TBD** |
-| SystemSettings_Taskbar_Autohide | REG_SZ | 0 or 1 | **TBD** |
+| SystemSettings_DesktopTaskbar_Autohide | REG_BINARY | A binary blob. | This is an opaque binary blob copied from the following location on the backed up. |
+| SystemSettings_Taskbar_Autohide | REG_BINARY | A binary blob. | This is an opaque binary blob copied from the following location on the backed up. |
 
 ## Personalization - Taskbar - Combine buttons
 
