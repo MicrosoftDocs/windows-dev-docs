@@ -9,8 +9,12 @@ ms.localizationpriority: medium
 
 # Reference for common Windows settings
 
-**TBD - Still working on the language to frame these settings**
-This page lists the settings that are supported by both Windows 10 and Windows 11. Link to [Settings back up and restore overview](index.md). Link to [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md). Link to [Reference for Windows 11 settings](settings-windows-11.md). 
+The information provided on this page includes details for accessing the status of Windows Backup and Restore settings that are supported for both Windows 10 and Windows 11. This public documentation fulfills the regulatory requirement to ensure effective data portability, by providing third-party developers with a means to access and export that data. Settings that are supported on Windows 11 only are documented in [Reference for Windows 11 settings](settings-windows-11.md)..
+
+Settings status is accessed in one of two ways:
+
+1. Via the Windows registry: For settings below that include registry details, please use that information to access the settings.
+1. Via the Cloud Data Store Reader tool. These settings must be extracted from a data store to be readable. If the setting below does not list registry details, then the settings must be extracted using the Cloud Data Store Reader tool. For information on how to use this tool, see [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md).
 
 ## App Compatability
 

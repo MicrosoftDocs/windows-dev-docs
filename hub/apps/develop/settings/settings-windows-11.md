@@ -9,11 +9,12 @@ ms.localizationpriority: medium
 
 # Reference for Windows 11 settings
 
-This page provides information for accessing Windows settings for Windows 11. Settings that are supported on both Windows 10 and Windows 11 are documented in [Reference for common Windows settings](settings-common.md).
+The information provided on this page includes details for accessing the status of Windows Backup and Restore settings that are supported in Windows 11. This public documentation fulfills the regulatory requirement to ensure effective data portability by providing third-party developers with a means to access and export that data. Settings that are supported on both Windows 10 and Windows 11 are documented in [Reference for common Windows settings](settings-common.md).
 
-For an overview of the Settings backup and restore feature, see [Settings back up and restore overview](index.md).
+Settings status is accessed in one of two ways:
 
-Some settings are accessed via the Windows registry. Other settings are using a tool that retrieves the settings data from the Cloud Data Store and returns them in serialized JSON format. For information on using this tool to access Windows settings data, see [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md).
+1. Via the Windows registry: For settings below that include registry details, please use that information to access the settings.
+1. Via the Cloud Data Store Reader tool. These settings must be extracted from a data store to be readable. If the setting below does not list registry details, then the settings must be extracted using the Cloud Data Store Reader tool. For information on how to use this tool, see [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md).
 
 
 ## Ease cursor movement across displays
