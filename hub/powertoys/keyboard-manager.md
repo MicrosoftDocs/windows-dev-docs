@@ -102,14 +102,15 @@ There are a few rules to follow when remapping shortcuts. These rules only apply
 - Shortcuts cannot exceed four keys in length, or five if the shortcut is a 'chord'.
 
 #### Shortcuts with chords
-Shortcuts can be created with one or more modifiers and two non-modifier keys. These are called 'chords.' In order to create a chord, you need to use the edit button to open the modal to record the shortcut using the keyboard. Once this is open, you need to toggle on the 'Allow chords' switch. Doing this allows you to enter two non-modifier keys. For example, you can create shortcuts using a chord based on 'V' for **V**olume **U**p and **V**olume **D**own like this::
+
+Shortcuts can be created with one or more modifiers and two non-modifier keys. These are called 'chords.' In order to create a chord, you need to use the edit button to open the modal to record the shortcut using the keyboard. Once this is open, you need to toggle on the 'Allow chords' switch. Doing this allows you to enter two non-modifier keys. For example, you can create shortcuts using a chord based on 'V' for **V**olume **U**p and **V**olume **D**own like this:
+
 | Select: | To send: |
 | :--- | :--- |
-| `Shirt`+`Ctrl` + `V` , `U` | `Volume Up` |
-| `Shirt`+`Ctrl` + `V` , `D` | `Volume Down` |
+| `Shift`+`Ctrl` + `V` \, `U` | `Volume Up` |
+| `Shift`+`Ctrl` + `V` \, `D` | `Volume Down` |
 
-Chords are handy if you have a number of shortcuts that are similar, and so it makes sense to have them all start with the same non-modifier key. 
-
+Chords are handy if you have a number of shortcuts that are similar, and so it makes sense to have them all start with the same non-modifier key.
 
 ### Remap a shortcut to a single key
 
