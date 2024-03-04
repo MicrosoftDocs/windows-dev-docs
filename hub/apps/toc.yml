@@ -856,8 +856,6 @@ items:
             href: develop/data-and-files.md
           - name: Windows Settings access
             items:
-              - name: Overview
-                href: develop/settings/index.md
               - name: Reference for Windows 11 settings
                 href: develop/settings/settings-windows-11.md
               - name: Reference for common Windows settings
