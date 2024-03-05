@@ -791,6 +791,8 @@ The scope of this type is per device.
 
 ## NlmSignature
 
+Settings related to Nlm signatures. Each network is uniquely identified with a network signature based on the uniquely identifiable properties of that network.
+
 ### Type: Windows.Data.Nlm.NlmSignature structure
 
 This type is multi-instance and must be retrieved using the following collection names:
