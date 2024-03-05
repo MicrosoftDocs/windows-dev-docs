@@ -1086,8 +1086,6 @@ Valid sync policy names:
 
 Settings related to Windows Update.
 
-This setting is single instance.
-
 ### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings
 
 | Registry value | Type | Data | Description |

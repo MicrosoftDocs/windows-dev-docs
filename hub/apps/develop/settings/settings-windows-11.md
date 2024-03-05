@@ -49,8 +49,6 @@ User preferences that customize the Windows behavior when a cellular connection 
 
 This setting controls settings related to gaming and controls such as Game bar and gaming shortcuts.
 
-This setting is single instance.
-
 ### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR
 
 
