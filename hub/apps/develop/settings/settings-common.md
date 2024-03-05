@@ -928,6 +928,7 @@ This setting enables badges for apps on the taskbar.
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
 | SystemSettings_Taskbar_Badging | REG_SZ | 0 or 1 | Enables badges for apps on the taskbar. |
+| SystemSettings_DesktopTaskbar_Badging | REG_SZ | 0 or 1 | Enables badges for apps on the taskbar. |
 
 ## Personalization - Taskbar - Combine buttons, mult-monitor
 
