@@ -1021,9 +1021,9 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 
 ## Spelling dictionary
 
-The user's custom spelling dictionary is stored in a file in the following registry location:
+The user's custom spelling dictionary is stored in a file in the following file path:
 
-`HKEY_CURRENT_USER\AppData\Roaming\Microsoft\Spelling\neutral\default.dic`
+`%userprofile%\AppData\Roaming\Microsoft\Spelling\neutral\default.dic`
 
 ## USB
 
