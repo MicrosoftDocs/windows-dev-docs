@@ -332,7 +332,7 @@ Set "do not disturb" status manually or automatically, so that notifications wil
 
 ### Type: BoolWithMetadata structure
 
-#### ChangeReason properties
+#### BoolWithMetadata properties
 
 | Name | Value | Description |
 |------|-------|---------|
