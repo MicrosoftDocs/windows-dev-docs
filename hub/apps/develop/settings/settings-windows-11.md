@@ -250,7 +250,7 @@ This setting is single-instance.
 | EnableAutocorrection | REG_DWORD | 1 or 0 | Enables auto-correction. |
 | IsVoiceTypingKeyEnabled | REG_DWORD | 1 or 0 | Indicates if voice typing key is enabled. |
 | MultilingualEnabled | REG_DWORD | 1 or 0 | Indicates in multingual is enabled. |
-| EnableHwkbTextPrediction | REG_DWORD | 1 or 0 | ASCII Value for keys. |
+| EnableHwkbTextPrediction | REG_DWORD | An integer. | ASCII Value for keys. |
 
 
 ## VPN
