@@ -671,8 +671,8 @@ The scope of this type is per device.
 | kind | **LockScreenKind** | Specifies whether current Lockscreen is set as Wallpaper or Slideshow or Spotlight |
 | pictureOnSignInScreen | bool | Specifies whether show the lock screen background picture on the sign-in screen is enabled. |
 | funItems | bool | Specifies whether “Get fun facts, tips, tricks, and more on your lock screen" is enabled. |
-| itemId | wstring | The unique ID for the lockscreen wallpaper uploaded to OneDrive during backup.  |
-| contentUri | wstring | The url for the lockscreen wallpaper uploaded to OneDrive during backup |
+| itemId | wstring | The unique ID for the lockscreen wallpaper uploaded to during backup.  |
+| contentUri | wstring | The url for the lockscreen wallpaper uploaded to during backup |
 | lockScreenStatus | wstring | Not used. |
 | slideShowAutoLock |   | Not used. |
 | slideShowEnabledOnBattery |   | Not used. |
