@@ -407,7 +407,7 @@ Settings related to the classic Windows File Explorer.
 
 | Name | Type | Description |
 |------|------|-------------|
-| migratedFromSSF | bool | Indicates whether the cabinet state is migrated from SSF. |
+| migratedFromSSF | bool | Indicates whether the cabinet state is migrated from legacy setting framework to current solution. |
 | fullPathTitle | bool | Indicates whether the cabinet state setting should show full path title. |
 | saveLocalView | bool | Indicates whether the cabinet state setting should save local view. |
 | newWindowMode | bool | Indicates whether the cabinet state setting should open in new window mode. |
