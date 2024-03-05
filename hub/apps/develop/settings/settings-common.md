@@ -471,7 +471,7 @@ These are blobs that are in the registry. There are three things that use regist
 
 | Name | Type | Description |
 |------|------|-------------|
-| migratedFromSSF | bool | Indicates whether registry settings are migrated from SSF. |
+| migratedFromSSF | bool | Indicates whether registry settings are migrated from legacy setting framework to current solution. |
 | ribbonQat | blob | A single blob. |
 | detailsPreviewPaneSettings | unit32 | Details about preview pane settings. |
 | readingPaneSettings | unit32 | Indicates reading pane settings. |
