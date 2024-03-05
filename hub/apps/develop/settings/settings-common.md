@@ -1056,7 +1056,31 @@ Helps user to synchronize the settings and Data on multiple machines.
 
 | Name | Type | Description |
 |------|------|-------------|
-| toggleState | map&lt;wstring, **CloudStorePolicyEnum**&gt; | A map of sync policy names that holds the user preference in terms of mapping of the Sync policy and CloudStorePolicy option. |
+| toggleState | map&lt;wstring, **CloudStorePolicyEnum**&gt; | The user preference in terms of mapping of sync policy and CloudStorePolicy option. Allowed values for sync policy names are listed below. |
+
+Valid sync policy names:
+
+* Microsoft
+* MicrosoftDevice
+* MicrosoftUserProfile
+* Microsoft.Accessibility
+* MicrosoftDevice.Accessibility
+* MicrosoftUserProfile.Accessibility
+* Microsoft.Credentials
+* MicrosoftDevice.Credentials
+* MicrosoftUserProfile.Credentials
+* Microsoft.Personalization
+* MicrosoftDevice.Personalization
+* MicrosoftUserProfile.Personalization
+* Microsoft.Language
+* MicrosoftDevice.Language
+* MicrosoftUserProfile.Language
+* Microsoft.Default
+* MicrosoftDevice.Default
+* MicrosoftUserProfile.Default
+* Microsoft.Ink
+* MicrosoftDevice.Ink
+* MicrosoftUserProfile.Ink
 
 
 
