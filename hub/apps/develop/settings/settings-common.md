@@ -684,7 +684,6 @@ The scope of this type is per device.
 
 Settings related to the lunar Calendar in the task bar. 
 
-This setting is single-instance.
 
 ### Type: Windows.Data.LunarCalendar structure
 
@@ -714,7 +713,6 @@ This type inherits from **LunarCalendar**. The scope of this type is per device.
 
 Settings related to multiple displays. 
 
-This setting is single-instance.
 
 ### Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays structure
 
@@ -770,7 +768,7 @@ The scope of this type is per device.
 
 ### Type: Windows.Data.BlueLightReduction.ChangeSource enumeration
 
-#### ActiveState values
+#### ChangeSource values
 
 | Name | Value | Description |
 |------|-------|---------|
@@ -1027,7 +1025,6 @@ The user's custom spelling dictionary is stored in a file in the following file 
 
 This setting controls toggles such as connection notifications, battery saver and other notifications related to charging of PC.
 
-This setting is single-instance.
 
 ### Registry values under HKCU\Software\Microsoft\Shell\USB
 
