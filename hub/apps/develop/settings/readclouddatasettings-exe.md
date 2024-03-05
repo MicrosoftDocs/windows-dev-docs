@@ -83,7 +83,7 @@ Output:
 Command line:
 
 ```powershell
-readclouddatasettingex.exe enum -type:windows.data.wifi.wifiprofile -collection:wificloudstore3
+readclouddatasetting.exe enum -type:windows.data.wifi.wifiprofile -collection:wificloudstore3
  
 ```
 
