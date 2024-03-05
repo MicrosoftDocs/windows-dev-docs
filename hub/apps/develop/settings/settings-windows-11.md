@@ -26,7 +26,7 @@ User preferences that customize the Windows behavior when a cellular connection 
 |---------------|------|-------|-------------|
 | AllowFailover | REG_DWORD | 0 or 1 | Use cellular whenever Wi-Fi is poor.  |
 
-### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\SubscriptionManager\&lt;ICCID&gt;\&lt;IMSI&gt;
+### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\SubscriptionManager\\&lt;ICCID&gt;\\&lt;IMSI&gt;
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
@@ -38,7 +38,7 @@ User preferences that customize the Windows behavior when a cellular connection 
 |---------------|------|-------|-------------|
 | &lt;interface GUID&gt;| REG_DWORD | 0 or 1 | Let Windows keep the device connected to cellular. |
 
-### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WwanSvc\RoamingPolicyForPhone\&lt;interface GUID&gt;
+### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WwanSvc\RoamingPolicyForPhone\\&lt;interface GUID&gt;
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
@@ -268,7 +268,7 @@ VPN settings that apply to all VPN connections configured in the Settings app.
 
 Global random hardware addresses preference.
 
-### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WlanSvc\Interfaces\&lt;Interface GUID&gt;
+### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WlanSvc\Interfaces\\&lt;Interface GUID&gt;
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
