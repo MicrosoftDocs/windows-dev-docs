@@ -7712,7 +7712,12 @@
     },
     {
       "source_path": "hub/apps/distribute-through-store/best-practices-for-win32-app-distribution.md",
-      "redirect_url": "hub/apps/distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md",
+      "redirect_url": "hub/apps/distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/settings/index.md",
+      "redirect_url": "/windows/apps/develop/settings/settings-windows-11",
       "redirect_document_id": false
     }
   ]
