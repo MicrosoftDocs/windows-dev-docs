@@ -6,10 +6,13 @@ ms.author: mousma
 ms.reviewer: mattwojo
 manager: aleader
 ms.topic: article
-ms.date: 03/07/2022
+ms.date: 03/05/2024
 ---
 
 # Windows Subsystem for Android™️ Preview Program
+
+> [!IMPORTANT]
+> Windows Subsystem for Android™️ and the Amazon Appstore will no longer be available in the Microsoft Store after March 5, 2025. [Learn more](index.md).
 
 The Windows Subsystem for Android™️ Preview Program allows users to receive early-preview builds of the Windows Subsystem for Android™ and Amazon Appstore on Windows. Installing the Amazon Appstore on Windows automatically installs Windows Subsystem for Android™️. Learn more about [installing the Amazon Appstore](https://support.microsoft.com/en-us/windows/install-mobile-apps-and-the-amazon-appstore-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
