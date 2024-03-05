@@ -462,7 +462,7 @@ These are blobs that are in the registry. There are three things that use regist
 | Name | Type | Description |
 |------|------|-------------|
 | migratedFromSSF | bool | Indicates whether the registry settings are migrated from legacy setting framework to current solution. |
-| RibbonQat | blob | A single blob | **TBD** |
+| RibbonQat | blob | A single blob **TBD** |
 | detailsPreviewPaneSettings| unit32 | Details about preview pane settings. |
 | readingPaneSettings | unit32 | Indicates reading pane settings. |
 | navigationPaneVisible | bool | Indicates whether navigation pane is visible or not.  |
