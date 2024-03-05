@@ -30,7 +30,7 @@ User preferences that customize the Windows behavior when a cellular connection 
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
-| UserCost | REG_DWORD | 0 or 1 | Maps the metered/unmetered state to each IMSI.   |
+| UserCost | REG_DWORD | 0 or 1 | Maps the metered/unmetered state to each IMSI. 0: Unmetered. 1: Metered.   |
 
 ### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WwanSvc\DisallowAutoConnectByClient
 
@@ -236,7 +236,6 @@ This setting helps to chose a theme for touch keyboard, voice typing, emoji and 
 
 This setting contains toggles and other settings related to touch keyboard, text suggestions and preferences.
 
-This setting is single-instance.
 
 
 ### Registry values under HKCU\Software\Microsoft\input\Settings
