@@ -1,5 +1,5 @@
 ---
-title: Reference for common Windows settings
+title: Reference for Windows 11 and Windows 10 settings
 description: This page lists the settings that are supported by both Windows 10 and Windows 11.
 ms.date: 02/27/2024
 ms.topic: article
@@ -7,7 +7,7 @@ keywords: windows 10, windows 11, settings
 ms.localizationpriority: medium
 ---
 
-# Reference for common Windows settings
+# Reference for Windows 11 and Windows 10 settings
 
 The information provided on this page includes details for accessing the status of Windows Backup and Restore settings that are supported for both Windows 10 and Windows 11. This public documentation ensures effective data portability by providing third-party developers with a streamlined process to access the data. Settings that are supported on Windows 11 only are documented in [Reference for Windows 11 settings](settings-windows-11.md).
 
@@ -341,7 +341,11 @@ Set "do not disturb" status manually or automatically, so that notifications wil
 
 ### Type: Windows.Data.DoNotDisturb.QuietHoursProfile structure
 
-This setting is multi-instance.
+This setting is multi-instance. The following is an example command line for retrieving this type:
+
+`readCloudDataSettings.exe enum -type:windows.data.donotdisturb.QuietHoursProfile`
+
+For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readclouddatasettings-exe.md).
 
 #### QuietHoursProfile Properties
 
@@ -364,6 +368,12 @@ This setting is multi-instance.
 | shouldShowSummaryToast | BoolWithMetadata | Sets whether the summary toast should be shown and the associated reason. |
 
 ### Type: Windows.Data.DoNotDisturb.QuietMoment structure
+
+This setting is multi-instance. The following is an example command line for retrieving this type:
+
+`readCloudDataSettings.exe enum -type:windows.data.donotdisturb.quietmoment`
+
+For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readclouddatasettings-exe.md).
 
 #### QuietMoment Properties
 
@@ -560,6 +570,10 @@ History files are used to optimize the Japanese IME user experience across devic
 This type is multi-instance and must be retrieved using the following collection collection names:
 
 * "historyfiles"
+
+The following is an example command line for retrieving this type:
+
+`readCloudDataSettings.exe enum -type:Windows.Data.Input.HistoryFiles -collection:historyfiles`
 
 For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readclouddatasettings-exe.md).
 
@@ -798,6 +812,10 @@ This type is multi-instance and must be retrieved using the following collection
 * "wificloudstore3"
 * "wifi3_wpa3"
 * "wifi3_owe"
+
+The following is an example command line for retrieving this type:
+
+`readCloudDataSettings.exe enum -type:windows.data.nlm.nlmsignature -collection:wificloudstore3`
 
 For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readclouddatasettings-exe.md).
 

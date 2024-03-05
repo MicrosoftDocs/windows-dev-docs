@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Cloud Data Store Settings Reader tool (readCloudDataSettings.exe)
 
-This article describes the Cloud Data Store Settings Reader Tool, readCloudDataSettings.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device. 
+This article describes the Cloud Data Store Settings Reader Tool, readCloudDataSettings.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device. For settings documented in [Reference for Windows 11 settings](settings-windows-11.md) or [Reference for Windows 11 and Windows 10 settings](settings-common.md), if the setting lists a type name rather than a registry key, then you must use this tool to retrieve the data.
 
 ## Usage 
 
@@ -45,17 +45,18 @@ If the data does not exist or an error occurs, the output will report a pair of 
 Command line:
 
 ```powershell
-C:\> readCloudDataSettings.exe get /type:windows.data.platform.diagnostics.diagnosticdata
+C:\Windows\System32>readCloudDataSettings.exe get -type:windows.data.settings.settingsusagehistory
+
 ```
 
 Output:
 
 ```powershell
-/type: windows.data.platform.diagnostics.diagnosticdata 
+/type: windows.data.settings.settingsusagehistory
 
-[ 
-    {"Data":{"diagnosticMessage":"test message data with current user"}} 
-] 
+[
+{"Data":{"pageUsages":{"\"SettingsPageAppsNotifications\"":{"Data":{"frequency":1,"lastUsedTime":1.3353819570909629E+17,"lastUsedSettingId":"SystemSettings_Notifications_QuietHours_MuteNotification_Enabled"}},"\"SettingsPageOtherUsers\"":{"Data":{"frequency":1,"lastUsedTime":1.3353709031552022E+17,"lastUsedSettingId":"SystemSettings.UserAccountsHandlers.RemoveOtherUserSetting"}}}}}
+]
 ```
 
 ### Single-instance type, alternate account
@@ -63,16 +64,17 @@ Output:
 Command line:
 
 ```powershell
-C:\> readCloudDataSettings.exe get /type:windows.data.platform.diagnostics.diagnosticdata -account:otheraccount@contoso.com 
+C:\Windows\System32>readCloudDataSettings.exe get -type:windows.data.settings.settingsusagehistory -account:otheruser@contoso.com
+
 ```
 
 Output:
 
 ```powershell
-/type: windows.data.platform.diagnostics.diagnosticdata 
+/type: windows.data.settings.settingsusagehistory
 
-[ 
-    {"Data":{"diagnosticMessage":"test message data for otheraccount@contoso.com associated with current user"}} 
+[
+{"Data":{"pageUsages":{"\"SettingsPageAppsNotifications\"":{"Data":{"frequency":1,"lastUsedTime":1.3353819570909629E+17,"lastUsedSettingId":"SystemSettings_Notifications_QuietHours_MuteNotification_Enabled"}},"\"SettingsPageOtherUsers\"":{"Data":{"frequency":1,"lastUsedTime":1.3353709031552022E+17,"lastUsedSettingId":"SystemSettings.UserAccountsHandlers.RemoveOtherUserSetting"}}}}}
 ] 
 ```
 
@@ -81,17 +83,20 @@ Output:
 Command line:
 
 ```powershell
-C:\> readCloudDataSettings.exe enum /type:windows.data.samplemetadata.sampledataitem /collection:samples 
+readclouddatasettingex.exe enum -type:windows.data.wifi.wifiprofile -collection:wificloudstore3
+ 
 ```
 
 Output:
 
 ```powershell
-/type: windows.data.samplemetadata.sampledataitem 
-/collection: samples 
-
-[    {"Data":{"identifier":{"Data":{"Data1":0,"Data2":0,"Data3":0,"Data4":0}},"itemName":"name","someArbitraryPriority":0,"scale":{"Data":{"x":1,"y":1,"z":1}},"rotationAxis":{"Data":{"x":2,"y":2,"z":2}},"translation":{"Data":{"x":3,"y":3,"z":3}},"rotationAngle":4,"isVisible":true,"projection":0}},    {"Data":{"identifier":{"Data":{"Data1":1,"Data2":1,"Data3":1,"Data4":1}},"itemName":"name2","someArbitraryPriority":0,"scale":{"Data":{"x":1.1,"y":1.1,"z":1.1}},"rotationAxis":{"Data":{"x":2.1,"y":2.1,"z":2.1}},"translation":{"Data":{"x":3.1,"y":3.1,"z":3.1}},"rotationAngle":4.1,"isVisible":true,"projection":1}} 
-] 
+/type: windows.data.wifi.wifiprofile
+/collection: wificloudstore3
+ 
+[
+    {"Data":{"profileXml":"<?xml version=\"1.0\"?>\r\n<WLANProfile xmlns=\"http://www.microsoft.com/networking/WLAN/profile/v1\">\r\n\t<name>MySpectrumWiFi98-5G</name>\r\n\t<SSIDConfig>\r\n\t\t<SSID>\r\n\t\t\t<hex>4D79537065637472756D5769466939382D3547</hex>\r\n\t\t\t<name>MySpectrumWiFi98-5G</name>\r\n\t\t</SSID>\r\n\t</SSIDConfig>\r\n\t<connectionType>ESS</connectionType>\r\n\t<connectionMode>auto</connectionMode>\r\n\t<MSM>\r\n\t\t<security>\r\n\t\t\t<authEncryption>\r\n\t\t\t\t<authentication>WPA2PSK</authentication>\r\n\t\t\t\t<encryption>AES</encryption>\r\n\t\t\t\t<useOneX>false</useOneX>\r\n\t\t\t</authEncryption>\r\n\t\t\t<sharedKey>\r\n\t\t\t\t<keyType>passPhrase</keyType>\r\n\t\t\t\t<protected>false</protected>\r\n\t\t\t\t<keyMaterial>ancientzebra274</keyMaterial>\r\n\t\t\t</sharedKey>\r\n\t\t</security>\r\n\t</MSM>\r\n\t<MacRandomization xmlns=\"http://www.microsoft.com/networking/WLAN/profile/v3\">\r\n\t\t<enableRandomization>false</enableRandomization>\r\n\t\t<randomizationSeed>1865639973</randomizationSeed>\r\n\t</MacRandomization>\r\n</WLANProfile>\r\n","lastModifiedTime":1.3354054522984058E+17}},
+    {"Data":{"profileXml":"<?xml version=\"1.0\"?>\r\n<WLANProfile xmlns=\"http://www.microsoft.com/networking/WLAN/profile/v1\">\r\n\t<name>KIA Service Color</name>\r\n\t<SSIDConfig>\r\n\t\t<SSID>\r\n\t\t\t<hex>4B4941205365727669636520436F6C6F72</hex>\r\n\t\t\t<name>KIA Service Color</name>\r\n\t\t</SSID>\r\n\t</SSIDConfig>\r\n\t<connectionType>ESS</connectionType>\r\n\t<connectionMode>manual</connectionMode>\r\n\t<MSM>\r\n\t\t<security>\r\n\t\t\t<authEncryption>\r\n\t\t\t\t<authentication>WPA2PSK</authentication>\r\n\t\t\t\t<encryption>AES</encryption>\r\n\t\t\t\t<useOneX>false</useOneX>\r\n\t\t\t</authEncryption>\r\n\t\t\t<sharedKey>\r\n\t\t\t\t<keyType>passPhrase</keyType>\r\n\t\t\t\t<protected>false</protected>\r\n\t\t\t\t<keyMaterial>4258270521</keyMaterial>\r\n\t\t\t</sharedKey>\r\n\t\t</security>\r\n\t</MSM>\r\n\t<MacRandomization xmlns=\"http://www.microsoft.com/networking/WLAN/profile/v3\">\r\n\t\t<enableRandomization>false</enableRandomization>\r\n\t\t<randomizationSeed>4088426234</randomizationSeed>\r\n\t</MacRandomization>\r\n</WLANProfile>\r\n","lastModifiedTime":1.3354054522999686E+17}}
+]
 ```
 
 ## Note on serialization

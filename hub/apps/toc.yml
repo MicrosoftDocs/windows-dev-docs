@@ -858,7 +858,7 @@ items:
             items:
               - name: Reference for Windows 11 settings
                 href: develop/settings/settings-windows-11.md
-              - name: Reference for common Windows settings
+              - name: Reference for Windows 11 and Windows 10 settings
                 href: develop/settings/settings-common.md
               - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
                 href: develop/settings/readclouddatasettings-exe.md
