@@ -18,7 +18,9 @@ Settings status is accessed in one of two ways:
 
 ## App Compatability
 
-The app compatibility setting is a json file that describes compatibility information for apps installed on the device. 
+The app compatibility setting is a JSON file that describes compatibility information for apps installed on the device. The path to this JSON is:
+
+`C:\Windows\appcompat\Backup\[user SID].json`
 
 The format of the backup JSON file. Install, Update, and Uninstall nodes contain arrays of applications, which contain arrays of files. The following code segment describes the format of the file and provides descriptions for each field.
 
