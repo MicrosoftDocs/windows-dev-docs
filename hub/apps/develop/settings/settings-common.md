@@ -374,7 +374,7 @@ This setting is multi-instance.
 | assignedProfile | wstring | The value of the user profile set by automatic rules. "Unrestricted", "Priority Only", or "Alarms Only"  |
 | startTime | TimeSpan | When automatic rules should start. |
 | endTime | TimeSpan | When automatic rules should end. |
-| repeatType | uint32 | **TBD - The data type is an int. Is there a missing enum?** How frequently the rules should apply. "Daily", "Weekend", or "Weekdays"|
+| repeatType | uint32 | How frequently the rules should apply. "Daily", "Weekend", or "Weekdays"|
 | shouldShowActiveToast | BoolWithMetadata | Sets whether the active toast should be shown and the associated reason.  |
 
 ## File Explorer Classic
@@ -462,7 +462,7 @@ These are blobs that are in the registry. There are three things that use regist
 | Name | Type | Description |
 |------|------|-------------|
 | migratedFromSSF | bool | Indicates whether the registry settings are migrated from legacy setting framework to current solution. |
-| RibbonQat | blob | A single blob **TBD** |
+| RibbonQat | blob | A single blob. |
 | detailsPreviewPaneSettings| unit32 | Details about preview pane settings. |
 | readingPaneSettings | unit32 | Indicates reading pane settings. |
 | navigationPaneVisible | bool | Indicates whether navigation pane is visible or not.  |
@@ -580,8 +580,6 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 ### Type: Windows.Data.Input.FileData structure
 
 #### FileData Properties
-
-**TBD - Seems suspicious that this property name is listed as "filePath". Copy and paste error in the doc?**
 
 
 | Name | Type | Description |
@@ -793,11 +791,9 @@ The scope of this type is per device.
 
 ## NlmSignature
 
- **TBD - I can't infer a description for this setting.**
-
 ### Type: Windows.Data.Nlm.NlmSignature structure
 
-This type is multi-instance and must be retrieved using the following collection collection names:
+This type is multi-instance and must be retrieved using the following collection names:
 
 * "wificloudstore3"
 * "wifi3_wpa3"
@@ -810,7 +806,7 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 
 | Name | Type | Description |
 |------|------|-------------|
-| category | uint64 | Category of signature? *TBD - description in source seems tentative* |
+| category | uint64 | Category of signature. |
 
 ## Pen and Windows Ink
 
