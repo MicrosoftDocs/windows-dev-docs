@@ -272,7 +272,7 @@ Global random hardware addresses preference.
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
-| RandomMacState | REG_DWORD | 0 or 1 | Whether to use random hardware addresses for newly configured Wi-Fi networks. |
+RandomMacState | REG_BINARY | 00 00 00 00 or 01 00 00 00 | Whether to use random hardware addresses for newly configured Wi-Fi networks. |
 
 
 
