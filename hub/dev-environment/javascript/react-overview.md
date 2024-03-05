@@ -25,8 +25,6 @@ Yes. Windows supports two different environments for developing React apps:
 - [Install a React development environment on Windows](./react-on-windows.md)
 - [Install a React development environment on Windows Subsystem for Linux](./react-on-wsl.md)
 
-For help determining which environment to use, check out [Should I install on Windows or Windows Subsystem for Linux?](./windows-or-wsl.md)
-
 ## What can you do with React?
 
 Windows supports a wide range of scenarios for React developers, including:
@@ -62,7 +60,7 @@ While writing a simple React component in a plain text editor is a good introduc
 
 Together, the suite of frameworks that help you create, build, and deploy your app are called a toolchain. An easy toolchain to get started with is [create-react-app](https://create-react-app.dev), which generates a simple one-page app for you. The only setup required to use **create-react-app** is Node.js.
 
-- For Windows development, follow the instructions to [install Node.js on WSL](./nodejs-on-wsl.md) or [install Node.js on Windows](./nodejs-on-windows.md). For help deciding which to use, check out the article: [Should I install on Windows or Windows Subsystem for Linux?](./windows-or-wsl.md).
+- For Windows development, follow the instructions to [install Node.js on WSL](./nodejs-on-wsl.md) or [install Node.js on Windows](./nodejs-on-windows.md).
 
 ### React Native component directory
 

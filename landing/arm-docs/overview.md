@@ -1,7 +1,7 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 12/19/2023
+ms.date: 03/01/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -78,6 +78,7 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
         - **Visual Studio Code** natively supports Arm and [can be installed on Arm devices](https://code.visualstudio.com/#alt-downloads). The [VS Code C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) also offers C++ IntelliSense and build support for developing Windows apps that run natively on Arm64 devices.
         - [**.NET 6** already supports Arm](/dotnet/core/whats-new/dotnet-6#arm64-support), both for native Arm execution and x64 emulation. To develop .NET apps that run natively on Arm64 devices, we recommend installing the new Arm native Visual Studio 2022 17.4, and [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0) Arm64 SDK. Learn more about .NET 7 support for Arm and the performance improvements for Arm64 on the [.NET Blog](https://devblogs.microsoft.com/dotnet/arm64-performance-improvements-in-dotnet-7/).
         - **.NET 6 Arm64 SDK:** By default, if you `dotnet run` a .NET 6 app with the Arm64 SDK, it will run as Arm64. The `dotnet-runtimeinfo` tool can be used to discover the environment that .NET is running on. See the [.NET 6 blog announcement on Arm64 support](https://devblogs.microsoft.com/dotnet/announcing-net-6/#windows-arm64) to learn more.
+        - **[Test Base for Microsoft 365](https://www.microsoft.com/en-us/testbase)** has added support for Arm64! Expanding Test Base to include Arm64 will help you ensure that your applications will work across a broader range of devices and releases by executing tests run against all Windows operating systems. See [Announcing Windows 11 Arm Private Preview for Test Base - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/announcing-windows-11-arm-private-preview-for-test-base/ba-p/3876380), and [sign up for the Arm private preview](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR8h5ixgVgMhNopWzBv8BM05UQ1lFTEVBU044SU45T1I4NURYQlBEVjdDUiQlQCN0PWcu). 
     :::column-end:::
 :::row-end:::
 

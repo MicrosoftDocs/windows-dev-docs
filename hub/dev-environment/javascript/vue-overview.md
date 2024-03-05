@@ -45,7 +45,6 @@ Vue.js is focused only on the view layer, so may require additional tools to cre
 
 - [Vue docs](https://vuejs.org/)
 - [Vue.js overview](./vue-overview.md)
-- [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install Vue.js on WSL](./vue-on-wsl.md)
 - [Install Vue.js on Windows](./vue-on-windows.md)
 - [Install Nuxt.js](./nuxtjs-on-wsl.md)

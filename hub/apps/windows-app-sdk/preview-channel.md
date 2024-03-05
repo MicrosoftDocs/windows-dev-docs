@@ -70,8 +70,6 @@ The `Maps` control is entirely new and we welcome your feedback to evaluate its 
 - Fixed an issue where highlighted text would not remain highlighted upon right-click. For more info, see GitHub issue [#1801](https://github.com/microsoft/microsoft-ui-xaml/issues/1801).
 - Fixed an issue causing inactive windows to crash the app when closed. For more info, see GitHub issue [#8913](https://github.com/microsoft/microsoft-ui-xaml/issues/8913).
 - Fixed an issue that could hang applications when scrolling with the middle mouse button and left-clicking immediately afterwards. For more info, see GitHub issue [#9233](https://github.com/microsoft/microsoft-ui-xaml/issues/9233).
-- Fixed an issue where teaching tips did not receive proper focus. For more info, see GitHub issue [#3257](https://github.com/microsoft/microsoft-ui-xaml/issues/3257).
-- Fixed an issue that crashed the application when setting the `TailVibility` of a `TeachingTip` to *Collapsed* on startup. For more info, see GitHub issue [#8731](https://github.com/microsoft/microsoft-ui-xaml/issues/8731).
 
 ### New APIs in 1.5.0-preview1
 
