@@ -958,8 +958,8 @@ Specifies the behavior of the taskbar when displayed on multiple monitors.
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
-| SSystemSettings_Taskbar_MultiMonTaskbarMode | REG_SZ | 0, 1, or 2 | 0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on. |
-| SSystemSettings_DesktopTaskbar_MultiMonTaskbarMode | REG_SZ | 0  1 | 0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on. |
+| SystemSettings_Taskbar_MultiMonTaskbarMode | REG_SZ | 0, 1, or 2 | 0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on. |
+| SystemSettings_DesktopTaskbar_MultiMonTaskbarMode | REG_SZ | 0  1 | 0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on. |
 
 ## Personalization - Taskbar - Pinned apps from other devices
 
