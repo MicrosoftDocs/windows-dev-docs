@@ -106,7 +106,7 @@ All structures (including top level structures) are wrapped in a JSON element ca
 
 #### Example
 
-This Bond schema:
+This structure definition:
 
 ```csharp
 struct MyInnerDataType
@@ -141,11 +141,11 @@ Becomes the following JSON:
 
 ### Vectors / Lists
 
-Vectors and lists in Bond are translated into standard JSON arrays (with the caveat from above that a list of structures has each element wrapped in a JSON element named "Data").
+Vectors and lists are translated into standard JSON arrays (with the caveat from above that a list of structures has each element wrapped in a JSON element named "Data").
 
 #### Example
 
-This Bond schema:
+This structure definition:
 
 ```csharp
 struct MyInnerDataType
@@ -192,7 +192,7 @@ Blobs are translated into arrays of integers
 
 #### Example
 
-This Bond schema:
+This structure definition:
 
 ```C#
 Struct mySetting

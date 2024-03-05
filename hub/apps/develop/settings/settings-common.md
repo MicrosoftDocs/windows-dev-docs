@@ -98,16 +98,14 @@ This setting helps to set defaults for removable drives and memory cards
 
 ### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers
 
-**TBD - There are some values I couldn't deduce meanings for (e.g. that GUID), but also I can't figure out how these registry keys match with the UI strings in the doc. **
-
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
 | DisableAutoplay | REG_DWORD | 0/1 | Toggle the use of autoplay for all media and devices. |
-| UserChosenExecuteHandlers\CameraAlternate\ShowPicturesOnArrival | REG_SZ | 0/1 | User selected default autoplay behavior for removable drive. |
-| UserChosenExecuteHandlers\ StorageOnArrival | REG_DWORD | 0/1 | User selected default autoplay behavior for memory card. |
-| EventHandlersDefaultSelection\CameraAlternate\ShowPicturesOnArrival | REG_DWORD | 0/1 | System default autoplay behavior for removable drive. |
-| EventHandlersDefaultSelection\StorageOnArrival | REG_DWORD | 0/1 | System default autoplay behavior for memory card. |
+| UserChosenExecuteHandlers\CameraAlternate\ShowPicturesOnArrival | REG_SZ | A string. | User selected default autoplay behavior for removable drive. See table below for supported values. |
+| UserChosenExecuteHandlers\ StorageOnArrival | REG_SZ | A string. | User selected default autoplay behavior for memory card. See table below for supported values. |
+| EventHandlersDefaultSelection\CameraAlternate\ShowPicturesOnArrival | REG_SZ | A string. | System default autoplay behavior for removable drive. See table below for supported values. |
+| EventHandlersDefaultSelection\StorageOnArrival | REG_SZ | A string. | System default autoplay behavior for memory card. See table below for supported values. |
 
 #### Supported data values for ShowPicturesOnArrival
 
@@ -169,8 +167,8 @@ The scope of this type is per device.
 | kind | **WallpaperKind** | Specifies whether current background is set as Wallpaper or Solid Color or Slideshow or Spotlight. |
 | position | **WallpaperPosition** | Specifies how wallpaper or slideshow images are positioned on background. |
 | color | Windows.Data.Common.Color | Specifies the solid color value if background is selected as Solid Color |
-| itemId | wstring | The unique ID for the wallpaper or slideshow uploaded to OneDrive during backup.  |
-| contentUri | wstring | The url ffor the wallpaper or slideshow uploaded to OneDrive during backup.  |
+| itemId | wstring | The unique ID for the wallpaper or slideshow uploaded during backup.  |
+| contentUri | wstring | The url ffor the wallpaper or slideshow uploaded during backup.  |
 | intervalInSeconds | uint64 | The interval between images of slideshow if background is selected as slideshow. |
 | shuffle | bool | Signifies whether slideshow images are shuffled if background is selected as slideshow |
 | syncRootRelativePath | wstring | Signifies path to slideshow folder if background is selected as slideshow. |
@@ -188,8 +186,6 @@ The settings below are for a deprecated Windows calling experience and are no lo
 | Name | Type | Description |
 |------|------|-------------|
 | perKeySettings | map&lt;wstring, KeyPathSettings&gt; | A map of per-key settings |
-
-### Type: Windows.Data.ContrastThemes.CurrentThemeType enumeration
 
 ### Type: Windows.data.calling.KeyPathSettings structure
 
@@ -270,7 +266,7 @@ Settings related to high-contrast themes.
 |------|-------|---------|
 | Contrast_Inbox | 0   | In-box high contrast theme. |
 | Contrast_Custom | 1   | Customized high contrast theme. |
-| Backup_disabled | 2   | **TBD - This looks like "backup disabled" to me, but the description of the struct property that uses this is "Signifies whether current theme is personalized theme or inbox high contrast theme or customized high contrast theme"** |
+| Backup_disabled | 2   | Backup disablesd. |
 
 ### Type: Windows.Data.ContrastThemes.SynchedTheme structure
 
@@ -396,9 +392,9 @@ Settings related to the classic Windows File Explorer.
 | bshowExtensions | bool | Indicates whether Shell state should show all extensions. |
 | bshowCompColor | bool | Indicates whether Shell state should show all colors. |
 | bdoubleClickInWebView | bool | Indicates whether Shell state should show all objects. |
-| bdontPrettyPath | bool | Indicates whether Shell state should show super hidden. |
+| bdontPrettyPath | bool | Indicates whether Shell state should show pretty path |
 | showInfoTip | bool | Indicates whether Shell state should show info tip. |
-| noConfirmRecycle | bool | Indicates whether Shell state should show super hidden. |
+| noConfirmRecycle | bool | Indicates whether Shell state should should confirm recycle option. |
 | showSuperHidden | bool | Indicates whether Shell state should show super hidden. |
 | sepProcess | bool | Indicates whether Shell state should show the separation process. |
 | iconsOnly | bool | Indicates whether Shell state should show icons only. |
@@ -463,11 +459,13 @@ Settings related to the classic Windows File Explorer.
 
 These are blobs that are in the registry. There are three things that use registry stream settings:
 
-| Setting | Type |
-|---------|------|
-| RibbonQat | A single blob |
-| Details Preview Settings | Two DWORDs (dwPreviewPaneSettings and dwReadingPaneSettings) |
-| Navigation Pane Visibility | A bool |
+| Name | Type | Description |
+|------|------|-------------|
+| migratedFromSSF | bool | Indicates whether Explorer settings are migrated from SSF. |
+| RibbonQat | blob | A single blob | **TBD** |
+| detailsPreviewPaneSettings| unit32 | Details about preview pane settings. |
+| readingPaneSettings | unit32 | Indicates reading pane settings. |
+| navigationPaneVisible | bool | Indicates whether navigation pane is visible or not.  |
 
 #### RegistrySettingsProperties
 
@@ -547,7 +545,7 @@ These are settings related to desktop icons.
 | viewAutoArrangeIcons | bool | Indicates values for AutoArrangement of icons. |
 | viewAlignIconsToGrid | bool | Indicates values for snapping to grid. |
 | viewShowDesktopIcons | bool | Indicates values to view desktop icons. |
-| sortColPropertyKeyFmtid | wstring	L"B725F130-47EF-101A-A5F1-02608C9EEBAC". |
+| sortColPropertyKeyFmtid | wstring | L"B725F130-47EF-101A-A5F1-02608C9EEBAC". |
 | sortColPropertyKeyPid | Unit32 | 10. |
 | sortColDirection | bool | 1=Ascending -1=Descending Default value is Ascending (true). |
 
@@ -556,8 +554,6 @@ These are settings related to desktop icons.
 ## Input Method Editors (IME)
 
 History files are used to optimize the Japanese IME user experience across devices.
-
-**TBD - This setting references some non-primitive types. Are these documented somewhere? **
 
 ### Type: Windows.Data.Input.HistoryFiles structure
 
@@ -678,12 +674,42 @@ The scope of this type is per device.
 | itemId | wstring | The unique ID for the lockscreen wallpaper uploaded to OneDrive during backup.  |
 | contentUri | wstring | The url for the lockscreen wallpaper uploaded to OneDrive during backup |
 | lockScreenStatus | wstring | Not used. |
-| slideShowAutoLock | Not used. |  |
-| slideShowEnabledOnBattery | Not used. |  |
-| slideshowOptimizePhotoSelection | Not used. |  |
-| slideShowIncludeCameraRoll | Not used. |  |
-| slideShowDuration | Not used. |  |
-| syncRootRelativePaths | Not used. |  |
+| slideShowAutoLock |   | Not used. |
+| slideShowEnabledOnBattery |   | Not used. |
+| slideshowOptimizePhotoSelection |   |Not used.  |
+| slideShowIncludeCameraRoll |  |Not used.  |
+| slideShowDuration |   | Not used.  |
+| syncRootRelativePaths |   | Not used. |
+
+
+## Lunar calendar
+
+Settings related to the lunar Calendar in the task bar. 
+
+This setting is single-instance.
+
+### Type: Windows.Data.LunarCalendar structure
+
+#### LunarCalendar Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| languageType   | **LunarCalendarLanguageType** | A member of the **LunarCalendarLanguageType** enumeration. The default value is **Default**. |
+
+### Type: Windows.Data.LunarCalendarPerDevice structure
+
+This type inherits from **LunarCalendar**. The scope of this type is per device.
+
+### Type: Windows.Data.LunarCalendarLanguageType enumeration
+
+### LunarCalendarLanguageType Values
+
+| Name | Value | Description |
+|------|-------|---------|
+| Default | 0   | The default lunar calendar configuration. |
+| None   | 1 | No lunar calendar. |
+| SimplifiedChinese  | 2 | The Simplified Chinese lunar calendar. |
+| TraditionalChinese | 3   | The Traditional Chinese calendar. |
 
 
 ## Multiple displays
@@ -696,7 +722,7 @@ This setting is single-instance.
 
 The scope of this type is per device.
 
-#### CallFavoriteItem Properties
+#### MultipleDisplays Properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -1029,9 +1055,7 @@ Settings related to Windows Update.
 
 This setting is single instance.
 
-### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR
-
-**TBD - ALL DESCRIPTIONS TENTATIVE**
+### Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|

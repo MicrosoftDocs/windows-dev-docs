@@ -44,21 +44,6 @@ User preferences that customize the Windows behavior when a cellular connection 
 |---------------|------|-------|-------------|
 | InternetAlwaysOn| REG_DWORD | 0 or 1 | Roaming or no roaming. When entering a roaming area, your data connection will be turned off if roaming is not allowed. |
 
-## Ease cursor movement across displays
-
-When enabled, Windows makes it easier to move your cursor and windows between displays by letting your cursor jump over areas where it would previously get stuck.
-
-This setting is single-instance.
-
-### Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays structure
-
-#### MultipleDisplays Properties
-
-| Name | Type | Description |
-|------|------|-------------|
-| rememberWindowLocationsPerMonitorConnection | `nullable<bool>` | Remember window locations based on monitor connection. |
-| minimizeWindowsOnMonitorDisconnect | `nullable<bool>` | Minimize windows when a monitor is disconnected. |
-| easeCursorMovementBetweenDisplays | `nullable<bool>` | Ease cursor movement between displays. |
 
 ## Gaming: Game Bar, Game Mode, Gaming Shortcuts
 
@@ -68,7 +53,6 @@ This setting is single instance.
 
 ### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR
 
-**TBD - ALL DESCRIPTIONS TENTATIVE**
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
@@ -95,37 +79,6 @@ This setting is single instance.
 |---------------|------|-------|------------|
 | UseNexusForGameBarEnabled | REG_DWORD | 0 or 1 | Key associated with toggle Gaming -> Game Bar -> "Allow your controller to open Game Bar" |
 | AutoGameModeEnabled | REG_DWORD | 0 or 1 | Key associated with toggle Gaming -> Game Mode -> Game Mode. |
-
-## Lunar calendar
-
-**TBD - Lunar calendar appears in the "legacy" Word doc, so it probably should go in the "Common" settings page**
-
-Settings related to the lunar Calendar in the task bar. 
-
-This setting is single-instance.
-
-### Type: Windows.Data.LunarCalendar structure
-
-#### LunarCalendar Properties
-
-| Name | Type | Description |
-|------|------|-------------|
-| languageType   | **LunarCalendarLanguageType** | A member of the **LunarCalendarLanguageType** enumeration. The default value is **Default**. |
-
-### Type: Windows.Data.LunarCalendarPerDevice structure
-
-This type inherits from **LunarCalendar**. The scope of this type is per device.
-
-### Type: Windows.Data.LunarCalendarLanguageType enumeration
-
-### LunarCalendarLanguageType Values
-
-| Name | Value | Description |
-|------|-------|---------|
-| Default | 0   | The default lunar calendar configuration. |
-| None   | 1 | No lunar calendar. |
-| SimplifiedChinese  | 2 | The Simplified Chinese lunar calendar. |
-| TraditionalChinese | 3   | The Traditional Chinese calendar. |
 
 
 ## Personalization - Start - Layout - Pins and recomendations
