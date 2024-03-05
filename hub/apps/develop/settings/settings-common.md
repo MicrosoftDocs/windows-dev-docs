@@ -387,7 +387,7 @@ Settings related to the classic Windows File Explorer.
 
 | Name | Type | Description |
 |------|------|-------------|
-| bmigratedFromSSF | bool | Indicates whether the shell state is migrated from SSF. |
+| bmigratedFromSSF | bool | Indicates whether the shell state is migrated from legacy setting framework to current solution. |
 | bshowAllObjects | bool | Indicates whether Shell state should show all objects. |
 | bshowExtensions | bool | Indicates whether Shell state should show all extensions. |
 | bshowCompColor | bool | Indicates whether Shell state should show all colors. |
@@ -416,7 +416,7 @@ Settings related to the classic Windows File Explorer.
 
 | Name | Type | Description |
 |------|------|-------------|
-| migratedFromSSF | bool | Indicates whether advanced settings are migrated from SSF. |
+| migratedFromSSF | bool | Indicates whether advanced settings are migrated from legacy setting framework to current solution. |
 | alwaysShowMenus | bool | Indicates whether advanced settings should always show menu. |
 | folderContentsInfoTip | bool | Indicates whether advanced settings should show folder contents info tip. |
 | hideDrivesWithNoMedia | bool | Indicates whether advanced settings should hide the drives with no media present. |
@@ -438,7 +438,7 @@ Settings related to the classic Windows File Explorer.
 
 | Name | Type | Description |
 |------|------|-------------|
-| migratedFromSSF | bool | Indicates whether Explorer settings are migrated from SSF. |
+| migratedFromSSF | bool | Indicates whether the explorer settings are migrated from legacy setting framework to current solution. |
 | underlineIconsAlways | bool | Indicates whether Explorer settings should always underline icons. |
 | underlineIconsNever | bool | Indicates whether Explorer settings should never underline icons. |
 | underlineIconsAsBrowser | bool | Indicates whether Explorer settings should underline icons as browser. |
@@ -449,7 +449,7 @@ Settings related to the classic Windows File Explorer.
 
 | Name | Type | Description |
 |------|------|-------------|
-| migratedFromSSF | bool | Indicates whether search settings are migrated from SSF. |
+| migratedFromSSF | bool | Indicates whether the search settings are migrated from legacy setting framework to current solution. |
 | searchOnly | bool | Indicates whether search setting show search only. |
 | wholeFileSystem | bool | Indicates whether search setting show the whole file system. |
 | systemFolders | bool | Indicates whether search setting show system folders. |
@@ -461,7 +461,7 @@ These are blobs that are in the registry. There are three things that use regist
 
 | Name | Type | Description |
 |------|------|-------------|
-| migratedFromSSF | bool | Indicates whether Explorer settings are migrated from SSF. |
+| migratedFromSSF | bool | Indicates whether the registry settings are migrated from legacy setting framework to current solution. |
 | RibbonQat | blob | A single blob | **TBD** |
 | detailsPreviewPaneSettings| unit32 | Details about preview pane settings. |
 | readingPaneSettings | unit32 | Indicates reading pane settings. |
