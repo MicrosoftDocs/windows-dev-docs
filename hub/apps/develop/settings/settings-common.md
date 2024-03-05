@@ -919,6 +919,16 @@ Specifies whether apps that were recently installed in Start in various surfaces
 |---------------|------|-------|------------|
 | ShowRecentList | REG_BOOL | 0 or 1  | Specifies whether apps that were recently installed in Start in various surfaces on are shown on Start. |
 
+## Personalization - Start - Show recommended apps
+
+Specifies whether recommended files in Start, recent files in File Explorer, and items in Jump Lists are shown.
+
+### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| Start_TrackDocs | REG_BOOL | 0 or 1  | Specifies whether recommended files in Start, recent files in File Explorer, and items in Jump Lists are shown. |
+
 ## Personalization - Taskbar - Badges
 
 This setting enables badges for apps on the taskbar.
