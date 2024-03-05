@@ -1021,7 +1021,7 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 
 The user's custom spelling dictionary is stored in a file in the following file path:
 
-`%userprofile%\AppData\Roaming\Microsoft\Spelling\[locale id]\default.dic`
+`%userprofile%\AppData\Roaming\Microsoft\Spelling\neutral\default.dic`
 
 ## USB
 
