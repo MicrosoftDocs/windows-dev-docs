@@ -1,6 +1,8 @@
 The **Properties** page of the [app submission process](../../../apps/publish/publish-your-app/create-app-submission.md) is where you define your app's category and enter other info and declarations. Be sure to provide complete and accurate details about your app on this page.
 
-## Category and subcategory
+:::image type="content" source="images/msix-properties-overview.png" lightbox="images/msix-properties-overview.png" alt-text="A screenshot showing the overview of Pricing and availability section for MSIX/PWA app.":::
+
+## Category, subcategory and secondary category
 
 You must indicate the category (and subcategory/genre, if applicable) which the Store should use to categorize your app. Specifying a category is required in order to submit your app. You can optionally choose a secondary category for your app. Secondary category has the same list of categories as the Primary category.
 

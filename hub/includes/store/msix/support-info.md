@@ -1,5 +1,7 @@
 This section lets you provide info to help customers understand more about your app and how to get support.
 
+:::image type="content" source="images/msix-support-info.png" lightbox="images/msix-support-info.png" alt-text="A screenshot showing the overview of Properties section showing support info.":::
+
 ### Privacy policy URL
 
 You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy URL here if required.

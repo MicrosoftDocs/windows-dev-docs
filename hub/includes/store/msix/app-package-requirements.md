@@ -32,7 +32,7 @@ If you don't use Visual Studio to create your package, you must [create your pac
 
 Be sure to review the [App package manifest](/uwp/schemas/appxpackage/appx-package-manifest) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
 
-Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](../../../apps/publish/view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
+Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](../../../apps/publish/view-app-identity-details.md) in the **Product management** section of your app's overview page in the dashboard.
 
 > [!NOTE]
 > Values in the manifest are case-sensitive. Spaces and other punctuation must also match. Enter the values carefully and review them to ensure that they are correct.
@@ -48,7 +48,7 @@ Your app’s packages must comply with these requirements.
 
 | App package property | Requirement        |
 |----------------------|--------------------|
-| Package size         | .msixbundle or .appxbundle: 25 GB maximum per bundle<br>.msix or .appx packages targeting Windows 10 or Windows 11: 25 GB maximum per package<br>.appx packages targeting Windows 8.1: 8 GB maximum per package<br>.appx packages targeting Windows 8: 2 GB maximum per package<br>.appx packages targeting Windows Phone 8.1: 4 GB maximum per package<br> .xap packages: 1 GB maximum per package |
+| Package size         | .msixbundle or .appxbundle: 25 GB maximum per bundle<br>.msix or .appx packages targeting Windows 10 or Windows 11: 25 GB maximum per package |
 | Block map hashes     | SHA2-256 algorithm |
 
 > [!IMPORTANT]

@@ -11,11 +11,11 @@ Many of the fields in a Store listing are optional, but we suggest providing mul
 
 You must complete the Store listing page for at least one language. We recommend providing a Store listing in each language that your packages support, and you also have flexibility to create Store listings in additional languages which are not supported by your packages and not support languages for which you do not wish to provide a Store listing.
 
-To add or remove languages for your Store listings, click Add/remove languages from Manage Store listings page.
+To add or remove languages for your Store listings, click Add languages from Manage Store listings page.
 
 :::image type="content" source="images/msiexe-listings-select-languages.png" lightbox="images/msiexe-listings-select-languages.png" alt-text="A screenshot of the Store listings section where you can add a language for listing your app in Microsoft Store.":::
 
-When you have finished making your selections, click Save to return to the application overview page.
+When you have finished making your selections, click Save to return to the Manage Store listing page.
 
 :::image type="content" source="images/msiexe-listings-language-added.png" lightbox="images/msiexe-listings-language-added.png" alt-text="A screenshot of the Store listings section showing a language has been added for listing.":::
 

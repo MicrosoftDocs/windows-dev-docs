@@ -1,3 +1,5 @@
+:::image type="content" source="images/msix-pricing-overview.png" lightbox="images/msix-pricing-overview.png" alt-text="A screenshot showing the overview of Pricing and availability section for MSIX/PWA app.":::
+
 ## Markets
 
 The Microsoft Store reaches customers in over 240 countries and regions around the world. By default, we’ll offer your app in all possible markets. If you prefer, you can choose the specific markets in which you'd like to offer your app.

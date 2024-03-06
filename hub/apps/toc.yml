@@ -267,7 +267,7 @@ items:
           - name: App management and services
             href: publish/app-management-and-services.md
             items:
-              - name: View app identity details
+              - name: View product identity details
                 href: publish/view-app-identity-details.md
               - name: Generate preinstall packages for OEMs
                 href: publish/generate-preinstall-packages-for-oems.md

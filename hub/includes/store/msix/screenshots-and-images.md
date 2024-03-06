@@ -10,9 +10,11 @@ The Store may also use your app's icon and other images that you include in your
 
 Screenshots are images of your app that are displayed to your customers in your app's Store listing.
 
+:::image type="content" source="images/msix-screenshots-logos.png" lightbox="images/msix-screenshots-logos.png" alt-text="A screenshot showing a section where you can add screenshots and logo for a MSIX/PWA app.":::
+
 You have the option to provide screenshots for the different device families that your app supports so that the appropriate screenshots will appear when a customer views your app's Store listing on that type of device.
 
-Only one screenshot (for any device family) is required for your submission, though you can provide several; up to 9 desktop screenshots and up to 8 screenshots for the other device families. We suggest providing at least four screenshots for each device family that your app supports so that people can see how the app will look on their device type. (Do not include screenshots for device families that your app does not support.) Note that **Desktop** screenshots will also be shown to customers on Surface Hub devices.
+Only one screenshot (for any device family) is required for your submission, though you can provide several; up to 10 desktop screenshots and up to 8 screenshots for the other device families. We suggest providing at least four screenshots for each device family that your app supports so that people can see how the app will look on their device type. (Do not include screenshots for device families that your app does not support.) Note that **Desktop** screenshots will also be shown to customers on Surface Hub devices.
 
 > [!NOTE]
 > Microsoft Visual Studio provides a [tool to help you capture screenshots](/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
@@ -21,8 +23,8 @@ Each screenshot must be a .png file in either landscape or portrait orientation,
 The size requirements vary depending on the device family:
 
 - **Desktop** 1366 x 768 pixels or larger. Supports 4K images (3840 x 2160). (Will also be shown to customers on Surface Hub devices.)
-- **Mobile** Images must be one of the following: 1080 x 1920, 1920 x 1080, 768 x 1280, 1280 x 768, 720 x 1280, 1280 x 720, 800 x 480, or 480 x 800 pixels.
-- **Xbox** 3480 x 2160 pixels or smaller. Supports 4K images (3840 x 2160).
+- (*This is deprecated*) **Mobile** Images must be one of the following: 1080 x 1920, 1920 x 1080, 768 x 1280, 1280 x 768, 720 x 1280, 1280 x 720, 800 x 480, or 480 x 800 pixels.
+- **Xbox** 3480 x 2160 pixels or smaller and 1920 x 1080 pixels or larger. Supports 4K images (3840 x 2160).
 - **Holographic** 1268 x 720 pixels or larger. Supports 4K images (3840 x 2160).
 
 For the best display, keep the following guidelines in mind when creating your screenshots:
@@ -75,11 +77,13 @@ This image will appear on various Store pages for Windows 10, Windows 11 and Xbo
 This section lets you provide artwork to help display your product more effectively in the Store. We recommend providing these images to create a more inviting Store listing.
 
 > [!TIP]
-> The [16:9 Super hero art](#windows-10-and-xbox-image-169-super-hero-art) image is especially recommended if you plan to include [video trailers](#trailers) in your Store listing; if you don't include it, your trailers won't appear at the top of your listing.
+> The [16:9 Super hero art](#windows-10-and-xbox-image-169-super-hero-art) image is especially recommended for games if you plan to include [video trailers](#trailers) in your Store listing; if you don't include it, your trailers won't appear at the top of your listing.
 
 ### Trailers
 
 Trailers are short videos that give customers a way to see your product in action, so they can get a better understanding of what it’s like. They are shown at the top of your app's Store listing (as long as you include a [16:9 Super hero art](#windows-10-and-xbox-image-169-super-hero-art) image).
+
+:::image type="content" source="images/msix-trailers.png" lightbox="images/msix-trailers.png" alt-text="A screenshot showing a section where you can add trailer for a MSIX/PWA app.":::
 
 Trailers are encoded with [Smooth Streaming](https://www.iis.net/downloads/microsoft/smooth-streaming), which adapts the quality of a video stream delivered to clients in real time based on their available bandwidth and CPU resources.
 
@@ -93,7 +97,7 @@ You can add up to 15 trailers to your Store listing. Be sure they meet all of th
 For each trailer you provide, you must upload a video file (.mp4 or .mov), a thumbnail image, and a title.
 
 > [!IMPORTANT]
-> When using trailers, you must also provide a [16:9 Super hero art](#windows-10-and-xbox-image-169-super-hero-art) image section in order for your trailers to appear at the top of your Store listing. This image will appear after your trailers have finished playing.
+> When using trailers for games, you must also provide a [16:9 Super hero art](#windows-10-and-xbox-image-169-super-hero-art) image section in order for your trailers to appear at the top of your Store listing. This image will appear after your trailers have finished playing.
 Follow these recommendations to make your trailers effective:
 
 - Trailers should be of good quality and minimal length (60 seconds or less and less than 2 GB recommended).
@@ -181,7 +185,7 @@ For H.264 Mezzanine files, we recommend the following:
 
 In the **Windows 10 or Windows 11 and Xbox image** section, the **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** image is used in various layouts in the Microsoft Store on all Windows 10, Windows 11, and Xbox devices. We recommend providing this image, regardless of which OS versions or device types your app targets.
 
-This image is *required* for proper display if your listing includes [video trailers](#trailers). For customers on Windows 10, version 1607 or later (which includes Xbox), it is used as the main image on the top of your Store listing (or appears after any trailers finish playing). It may also be used to feature your app in promotional layouts throughout the Store. Note that this image must not include the product's title or other text.
+This image is *required* for games for proper display if your listing includes [video trailers](#trailers). For customers on Windows 10, version 1607 or later (which includes Xbox), it is used as the main image on the top of your Store listing (or appears after any trailers finish playing). It may also be used to feature your app in promotional layouts throughout the Store. Note that this image must not include the product's title or other text.
 
 Here are some tips to keep in mind when designing this image:
 
@@ -216,6 +220,9 @@ There are 3 different sizes that you can upload:
 The **2:1 (2400 x 1200)** image is only used if your app supports the Holographic device family. If it does, we recommend providing this image.
 
 ### Images only for Windows 8.x and/or Windows Phone 8.x
+
+>[!NOTE]
+> Windows 8. and Windows Phone 8.x are are not supported anymore. Do not add any images for them.
 
 If your previously-submitted app supports earlier OS versions (Windows 8.x and/or Windows Phone 8.x), these images must be provided in order for us to consider featuring your app in promotional layouts (though they don't guarantee that your app will be featured). If your app does not support these earlier OS versions, skip this section. (This section was formerly called **Optional promotional images**.)
 

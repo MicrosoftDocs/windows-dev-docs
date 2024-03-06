@@ -21,8 +21,14 @@ Follow the following steps to reserve your app's name:
 :::zone pivot="store-installer-msix,store-installer-pwa,store-installer-add-on"
 2. Navigate to the [Partner Center apps and games page](https://partner.microsoft.com/dashboard/apps-and-games/overview).
 3. Click **New product**.
-4. Choose your app's type.
+4. Click on MSIX or PWA app. If you want to submit MSIX game, click on Game.
+
+:::image type="content" source="../../../includes/store/msix/images/msix-new-product.png" lightbox="../../../includes/store/msix/images/msix-new-product.png" alt-text="A screenshot showing how to create a MSIX/PWA app.":::
+
 5. Enter the name you'd like to use and click **Check availability**. If the name is available, you'll see a green check mark. If the name is already in use, you'll see a message indicating so.
+
+:::image type="content" source="../../../includes/store/msix/images/msix-app-name-reservation.png" lightbox="../../../includes/store/msix/images/msix-app-name-reservation.png" alt-text="A screenshot showing how to reserve a name for MSIX/PWA app.":::
+
 6. Once you've selected an available name that you'd like to reserve, click **Reserve product name**.
 :::zone-end
 

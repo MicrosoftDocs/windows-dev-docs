@@ -20,6 +20,7 @@
 | **Privacy policy URL**       | **Required** | Sometimes not required. |
 | **Website**                  | Not required |       |
 | **Support contact info**     | Not required | **Required** if your product is available on Xbox. |
+| **Contact details**          | Not required | Required for business/company accounts       |
 | **Game settings**            | Not required |       |
 | **Display mode**             | Not required |       |
 | **Product declarations**     | Not required |       |

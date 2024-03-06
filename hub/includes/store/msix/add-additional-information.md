@@ -1,5 +1,7 @@
 The items described below help customers discover and understand your product. (This section was formerly called **Shared fields**).
 
+:::image type="content" source="images/msix-additional-info.png" lightbox="images/msix-additional-info.png" alt-text="A screenshot showing additional information requirements for listing of a MSIX/PWA app.":::
+
 ### Search terms
 
 Search terms (formerly called keywords) are single words or short phrases that are not displayed to customers, but can help your make your app discoverable in the Store when customers search using those terms. You can include up to 7 search terms with a maximum of 40 characters each, and can use no more than 21 separate words across all search terms.
