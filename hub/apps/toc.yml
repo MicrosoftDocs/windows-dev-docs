@@ -854,6 +854,14 @@ items:
                 href: develop/files/dotnet-files.md
           - name: Data and files overview
             href: develop/data-and-files.md
+          - name: Windows Settings access
+            items:
+              - name: Reference for Windows 11 settings
+                href: develop/settings/settings-windows-11.md
+              - name: Reference for Windows 11 and Windows 10 settings
+                href: develop/settings/settings-common.md
+              - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
+                href: develop/settings/readclouddatasettings-exe.md
       - name: Communication
         href: develop/communication.md
       - name: Accessibility
