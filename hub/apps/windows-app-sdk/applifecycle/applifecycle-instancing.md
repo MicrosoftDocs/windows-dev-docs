@@ -13,8 +13,6 @@ An app's instancing model determines whether multiple instances of your app's pr
 
 ## Prerequisites
 
-
-
 To use the app lifecycle API in the Windows App SDK:
 
 1. Download and install the latest release of the Windows App SDK. For more information, see [Install tools for the Windows App SDK](../set-up-your-development-environment.md).
@@ -407,7 +405,7 @@ void CALLBACK OnFileClosed(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam
 }
 ```
 
-> [!Warning]
+> [!WARNING]
 > Although keys are automatically unregistered when their process terminates, race conditions are possible where another instance may have initiated a redirection to the terminated instance before the terminated instance was unregistered. To mitigate this possibility, an app can use [UnregisterKey](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.unregisterkey) to manually unregister its key before it is terminated, giving the app a chance to redirect activations to another app that is not in the process of exiting.
 
 ### Instance information
