@@ -24,7 +24,7 @@ To use the app lifecycle API in the Windows App SDK:
 
 The following example demonstrates how to subscribe and respond to [PowerManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager) events. This code subscribes to the [BatteryStatusChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager.batterystatuschanged) event during startup. The app then responds to changes by checking the current power level and adjusting its resource usage appropriately. For example, if the battery discharges at a low power state, the app might defer any non-critical background work.
 
-### [C++ sample](#tab/cpp)
+### [C++](#tab/cpp)
 
 > [!NOTE]
 > Apps can register and unregister for these events at any time, but most apps will want to set callbacks in `WinMain` that persist as long as the app continues to run.
@@ -96,7 +96,7 @@ void OnPowerSupplyStatusChanged()
 }
 ```
 
-### [C# sample](#tab/csharp)
+### [C#](#tab/csharp)
 
 > [!NOTE]
 > Apps can register and unregister for these events at any time, but most apps will want to set callbacks that persist as long as the app continues to run.
@@ -156,7 +156,7 @@ private void OnPowerSupplyStatusChanged()
 
 [PowerManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager) events are relatively low-level, and in some scenarios, a single event handler being called might not provide enough information for the app to decide how to behave. In this example, the [PowerSupplyStatusChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager.powersupplystatuschanged) event could be called when the device is disconnected from power. In that case, the app must check the current battery status before deciding how to proceed.
 
-### [C++ sample](#tab/cpp)
+### [C++](#tab/cpp)
 
 ```cpp
 void DetermineWorkloads()
@@ -186,7 +186,7 @@ void DetermineWorkloads()
 }
 ```
 
-### [C# sample](#tab/csharp)
+### [C#](#tab/csharp)
 
 ```csharp
 private void DetermineWorkloads()
@@ -222,7 +222,7 @@ private void DetermineWorkloads()
 
 The [PowerManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager) class offers information about other device states relevant to an app's power usage. For example, apps can disable graphics processing when the device's display is turned off.
 
-### [C++ sample](#tab/cpp)
+### [C++](#tab/cpp)
 
 ```cpp
 void OnDisplayStatusChanged()
@@ -257,7 +257,7 @@ void OnDisplayStatusChanged()
 }
 ```
 
-### [C# sample](#tab/csharp)
+### [C#](#tab/csharp)
 
 ```csharp
 private void OnDisplayStatusChanged()
@@ -288,7 +288,7 @@ private void OnDisplayStatusChanged()
 
 Apps can register and deregister for notifications during their lifecycle. Use your language's preferred event registration management system if your app doesn't need to receive power status notifications during its entire lifecycle.
 
-### [C++ sample](#tab/cpp)
+### [C++](#tab/cpp)
 
 ```cpp
 void UnregisterPowerManagerCallbacks()
@@ -302,7 +302,7 @@ void UnregisterPowerManagerCallbacks()
 }
 ```
 
-### [C# sample](#tab/csharp)
+### [C#](#tab/csharp)
 
 ```csharp
 private void UnregisterPowerManagerCallbacks()
