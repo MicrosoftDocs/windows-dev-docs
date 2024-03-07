@@ -30,7 +30,7 @@ The format of the backup JSON file. Install, Update, and Uninstall nodes contain
     {
       "path": App's uninstall registry path,
       "programId": The unique identifier of the installed Win32 application,
-      "compatFlags": Applicable backup/restore compatibility flags OR'ed together,
+      "compatFlags": Applicable backup/restore compatibility flags OR'ed together. For the list of supported values, see the table below,
       "restoreAction": Actions to be taken on app restore,
       "files": [
         {
@@ -91,6 +91,28 @@ The format of the backup JSON file. Install, Update, and Uninstall nodes contain
 }
 
 ```
+The value of the *compatFlags* field of the backup JSON file is a combination of the following values, computed with an OR operation.
+
+| Value | Description |
+|-------|-------------|
+| 0x00000000 | App is compatible. |
+| 0x00000001 |  App is incompatible with this OS. |
+| 0x00000002 |  App is developed for specific OEM. |
+| 0x00000004 |  App is a redistributable package. |
+| 0x00000008 |  Plugin or extension that requires the main app. |
+| 0x00000010 |  Middleware. |
+| 0x00000020 |  App was acquired from third party such as a game store. |
+| 0x00000040 |  App is incompatible with HVCI. |
+| 0x00000080 |  App is incompatible with Kernet CET. |
+| 0x00000100 |  App depends on a kernel mode driver. |
+| 0x00000200 |  App is not compatible with Android. |
+| 0x00000400 |  App will not work if S mode is enabled. |
+| 0x00000800 |  App is only available in a certain market. |
+| 0x00001000 |  App does not support this architecture. |
+| 0x00002000 |  App is targeted for other device families. |
+| 0x00004000 |  Generic hardware incompatibility. |
+| 0x00008000 | App is incompatible up to certain version. |
+
 
 ## Autoplay
 
