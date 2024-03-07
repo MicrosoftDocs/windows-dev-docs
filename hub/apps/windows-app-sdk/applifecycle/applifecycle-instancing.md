@@ -2,7 +2,7 @@
 description: Describes how to use app instancing features with the app lifecycle API (Windows App SDK).
 title: App instancing with the app lifecycle API (Windows App SDK)
 ms.topic: article
-ms.date: 11/16/2021
+ms.date: 03/07/2024
 keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, multi instance
 ms.localizationpriority: medium
 ---
@@ -19,6 +19,9 @@ To use the app lifecycle API in the Windows App SDK:
 2. Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Single-instance apps
+
+> [!NOTE]
+> For an example of how to implement single instancing in a WinUI 3 app with C#, see [Making the app single-instanced](https://blogs.windows.com/windowsdeveloper/2022/01/28/making-the-app-single-instanced-part-3/) on the Windows developer blog.
 
 Apps are single-instanced if there can be only one main process running at a time. Attempting to launch a second instance of a single-instanced app typically results in the first instance's main window being activated instead. Note that this only applies to the main process. Single-instanced apps can create multiple background processes and still be considered single instanced.
 
