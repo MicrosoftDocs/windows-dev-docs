@@ -262,6 +262,8 @@ items:
             href: publish/analyze-msi-exe/analyze-app-performance.md
       - name: Additional features for MSIX apps
         items:
+          - name: What's new on MSIX app overview page
+            href: publish/whats-new-msix-app-overview-page.md
           - name: In-app ads
             href: publish/in-app-ads.md
           - name: App management and services
