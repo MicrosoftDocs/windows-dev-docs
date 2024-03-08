@@ -228,7 +228,7 @@ The properties for the Windows Subsystem for Android™️ VM are listed below. 
 | --- | --- |
 | Build.MANUFACTURER | Microsoft Corporation |
 | Build.MODEL | Subsystem for Android(TM) |
-| Build.VERSION.SDK_INT | 32 |
+| Build.VERSION.SDK_INT | 33 |
 | Build.BOARD | windows |
 
 ## Redirect to Windows apps
