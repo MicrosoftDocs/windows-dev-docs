@@ -5,8 +5,6 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-keywords: Vue, Vue.js, windows 10, install vue, install vue on windows, install vue with windows, install vue for windows, web app with vue, vue dev environment
-ms.localizationpriority: medium
 ms.date: 03/30/2021
 ---
 
@@ -14,7 +12,7 @@ ms.date: 03/30/2021
 
 A guide to help you set up a Vue.js development environment on Windows. Learn more on the [Vue.js overview](./vue-overview.md) page.
 
-Vue can be installed directly on Windows or on the Windows Subsystem for Linux (WSL). We generally recommend that you [install Vue on WSL](./vue-on-wsl.md) if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands.
+Vue can be installed directly on Windows or on the Windows Subsystem for Linux (WSL). We generally recommend that you [install Vue on WSL](./vue-on-wsl.md) if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands. You may also want to consider [Vite](https://vitejs.dev/guide/why.html) as an alternative to Vue.js.
 
 ## Prerequisites
 

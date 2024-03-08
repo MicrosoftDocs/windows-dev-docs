@@ -14,7 +14,7 @@ ms.date: 08/18/2021
 
 A guide to help you set up a Vue.js development environment on Windows by installing the Vue.js web framework on Windows Subsystem for Linux (WSL). Learn more on the [Vue.js overview](./vue-overview.md) page.
 
-Vue can be installed [directly on Windows](./vue-on-windows.md) or on WSL. We generally recommend installing on WSL if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands.
+Vue can be installed [directly on Windows](./vue-on-windows.md) or on WSL. We generally recommend installing on WSL if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands. You may also want to consider [Vite](https://vitejs.dev/guide/why.html) as an alternative to Vue.js.
 
 ## Prerequisites
 
