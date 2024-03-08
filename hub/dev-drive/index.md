@@ -301,7 +301,7 @@ fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, File
 There are a few scenarios in which we do not recommend using a Dev Drive. These include:
 
 - Reformatting an existing storage volume to be a "Dev Drive" will destroy any content stored in that volume. Reformatting an existing volume while preserving the content stored there is not supported.
-- When creating a VHD hosted by a fixed disk, it is not safe to copy the VHD, move it to a different machine, and then return to using it as a Dev Drive.
+- When you create a Virtual Hard Disk (VHD) hosted on a fixed disk (HDD or SSD), it is not recommended to copy the VHD, move it to a different machine, and then continue using it as a Dev Drive.
 - A volume stored on a removable or hot-pluggable disk (such as a USB, HDD, or SSD external drive) does not support designation as a Dev Drive.
 - A volume in a VHD hosted by a removable or hot-pluggable disk does not support designation as a Dev Drive.
 - The C: drive on your machine cannot be designated as a Dev Drive.
