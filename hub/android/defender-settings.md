@@ -60,11 +60,3 @@ Please remember that adding exclusions lowers the protection offered by Defender
 
 > [!NOTE]
 > Daniel Knoodle has set up a GitHub repo with recommended scripts to add [Microsoft Defender exclusions for Visual Studio 2017](https://gist.github.com/dknoodle/5a66b8b8a3f2243f4ca5c855b323cb7b#file-windows-defender-exclusions-vs-2017-ps1-L10).
-
-## Additional resources
-
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-
-- [Add Microsoft Defender exclusions to improve performance](./defender-settings.md)
-
-- [Enable Virtualization support to improve emulator performance](./emulator.md#enable-virtualization-support)
