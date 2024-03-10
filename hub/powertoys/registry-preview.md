@@ -21,7 +21,7 @@ To start using Registry Preview, enable it in the PowerToys Settings (**Registry
 
 ### How to activate
 
-Select one or more .reg files in Windows File Explorer. Right-click on the selected file(s), then select **Preview** to open Registry Preview. (On Windows 11: select **Show more options** from the menu to expand the list of menu options). **Registry Preview** can also be opened from PowerToys Settings' **Registry Preview** tab.
+Select one or more .reg files in Windows File Explorer. Right-click on the selected file(s), then select **Preview** to open Registry Preview. On Windows 11: select **Show more options** from the menu to expand the list of menu options. **Registry Preview** can also be opened from PowerToys Settings' **Registry Preview** tab.
 
 **Note:** Currently, there is a 10MB file limit for opening Windows Registry files with Registry Preview. It will show a message if a file contains invalid content.
 
