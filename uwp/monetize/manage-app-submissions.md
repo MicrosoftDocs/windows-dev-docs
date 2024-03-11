@@ -356,6 +356,7 @@ This resource has the following values.
 | allowTargetFutureDeviceFamilies           | object   |  A dictionary of key and value pairs, where each key is a [Windows 10 and Windows 11 device family](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix) and each value is a boolean that indicates whether your app is allowed to target the specified device family.     |    
 | friendlyName           |   string  |  The friendly name of the submission, as shown in Partner Center. This value is generated for you when you create the submission.       |  
 | trailers           |  array |   An array that contains up to 15 [trailer resources](#trailer-object) that represent video trailers for the app listing.<br/><br/>   |  
+| isSeekEnabled | boolean | For IngestionAPI when "IsSeekEnabled" property on the Rollout Entity for the flight is set to true (which is same as the checking the check box on the UX for "Always provide the newest packages when customers manually check for updates") and if the user is not part of the staged rollout (% rollout) and if the user check for the updates, then the latest version will be installed for the user. |
 
 
 <span id="pricing-object"></span>
