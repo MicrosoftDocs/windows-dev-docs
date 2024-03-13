@@ -156,7 +156,7 @@ Select your app type – (EXE/MSI). If you choose EXE, you are required to provi
 
 :::image type="content" source="images/msiexe-packages-set-app-type.png" lightbox="images/msiexe-packages-set-app-type.png" alt-text="A screenshot of the Packages section where you can provide the type (msi/exe) of your app.":::
 
-:::image type="content" source="images/msiexe-packages-exe-overview.png" lightbox="images/msiexe-packages-exe-overview.png" alt-text="A screenshot of the Packages section showing the the additional fields required for exe type of apps.":::
+:::image type="content" source="images/msiexe-packages-exe-overview.png" lightbox="images/msiexe-packages-exe-overview.png" alt-text="A screenshot of the Packages section showing the additional fields required for exe type of apps.":::
 
 **Installer parameters**<br>*Required*
 

@@ -15,7 +15,17 @@ Once you've [created your app by reserving a name](reserve-your-apps-name.md), y
 
 You can start your submission when your app is complete and ready to publish, or you can start entering info before you have written a single line of code. Updates you make to your submission are saved, so you can come back and work on it whenever you're ready.
 
+:::zone pivot="store-installer-msix,store-installer-pwa"
+
 After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Update** next to the most recent submission shown on its **Overview** page.
+
+:::zone-end
+
+:::zone pivot="store-installer-msi-exe"
+
+You can make changes to a published app at any time. To submit updates, go to the application's overview page in Partner Center. Navigate to the update app section. An update submission has already been created using the info from your previous submission as a starting point. You can add a new package or update any of the information like pricing model, listing details etc.
+
+:::zone-end
 
 :::zone pivot="store-installer-msix,store-installer-pwa,store-installer-msi-exe"
 
@@ -62,14 +72,20 @@ After you select **Create a new add-on**, you'll be prompted to specify a produc
 > [!IMPORTANT]
 > To ensure that you receive critical email notifications, you'll be required to verify your email address in Action Center. Go to [My Preferences](https://partner.microsoft.com/dashboard/actioncenter/mypreferences) in Action Center to verify.
 
-After publishing an app, the [owner](../partner-center/assign-account-level-custom-permissions-to-account-users.md) of your developer account is always notified of the publishing status and required actions through email and the [Action Center](/partner-center/action-center-overview) in Partner Center. In addition, you can add members in either **developer** or **manager** role within your developer account to receive same notifications or remove those who no longer need be notified.
+After publishing an app, the [owner](../partner-center/assign-account-level-custom-permissions-to-account-users.md) of your developer account is always notified of the publishing status and required actions through email and the [Action Center](/partner-center/action-center-overview) in Partner Center. 
+
+:::zone pivot="store-installer-msix,store-installer-pwa"
+
+In addition, you can add members in either **developer** or **manager** role within your developer account to receive same notifications or remove those who no longer need be notified.
 
 To add or remove:
 1. On the Submission options page, look for the field of “Submission notification audience”
-1. Click “Click here” to open Notification audience overview page
-1. On the Notification audience overview page, add or remove audience 
+2. Click “Click here” to open Notification audience overview page
+3. On the Notification audience overview page, add or remove audience 
 
 > [!NOTE]
 > - The owner of your developer account is always notified and can’t be removed from the audience list.
 > - The audience list is product specific and applied to all submissions of the product. To modify the notification recipients for a different product, follow the steps above for each product.
 > - Add-on inherits parent product’s audience list and can’t be managed separately.
+
+:::zone-end

@@ -65,3 +65,4 @@ msstore publish "C:\path\to\pwa_app"
 | Option               | Description |
 |----------------------|-------------|
 | -i, --inputDirectory | The directory where the '.msix' or '.msixupload' file to be used for the publishing command. If not provided, the cli will try to find the best candidate based on the 'pathOrUrl' argument. |
+| -id, --appId | Specifies the Application Id. Only needed if the project has not been initialized before with the 'init' command. |

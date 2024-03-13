@@ -4,8 +4,6 @@ To edit a Store listing, select the language name from the Store listings overvi
 
 ### Product name
 
-*Required*
-
 Your app's name. Must be a name you've already reserved for your app.
 
 If you need to rename the app after it's already been published, you can select a different reserved name here when you create a new submission, after you've provided URLs to packages that use the new name.
@@ -44,7 +42,7 @@ See [App screenshots and images](../../../apps/publish/publish-your-app/screensh
 
 ### Store logos
 
-Store logos are optional images that you can upload to enhance the way your app is displayed to customers.
+You can upload Store logos to create a more customized display in the Store.
 
 See [App screenshots and images](../../../apps/publish/publish-your-app/screenshots-and-images.md) for more information.
 

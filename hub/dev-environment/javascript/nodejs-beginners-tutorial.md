@@ -22,8 +22,6 @@ If you're brand new to using Node.js, this guide will help you to get started wi
 
 - Installing on Node.js on [Windows](./nodejs-on-windows.md) or on [Windows Subsystem for Linux](./nodejs-on-wsl.md)
 
-If you are a beginner, trying Node.js for the first time, we recommend installing directly on Windows. For more information, see [Should I install Node.js on Windows or Windows Subsystem for Linux](./windows-or-wsl.md)
-
 ## Try NodeJS with Visual Studio Code
 
 If you have not yet installed Visual Studio Code, return to the prerequisite section above and follow the installation steps linked for Windows or WSL.

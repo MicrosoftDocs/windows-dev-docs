@@ -12,4 +12,4 @@ Screenshots are images of your app that are displayed to your customers in your 
 
 *Required: 1:1 box art*<br>*Recommended: 2:3 poster art*
 
-Store logos are optional images that you can upload to enhance the way your app is displayed to customers.
+You can upload Store logos to create a more customized display in the Store.

@@ -3,7 +3,6 @@ title: Configure a barcode scanner
 description: This topic describes how barcode scanners can be configured in Universal Windows Platform (UWP) apps.
 ms.date: 05/04/2023
 ms.topic: article
-ms.custom: seo-windows-dev
 ---
 
 # Configure a barcode scanner

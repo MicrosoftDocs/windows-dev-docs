@@ -1,5 +1,7 @@
 To edit a Store listing, select the language name from the submission overview page. You must edit each language separately, unless you choose to export your Store listings and work offline, then import all of the listing data at once. For more about how that works, see [Import and export Store listings](../../../apps/publish/publish-your-app/import-and-export-store-listings.md).
 
+:::image type="content" source="images/msix-listing-overview.png" lightbox="images/msix-listing-overview.png" alt-text="A screenshot showing the overview of the listing page for MSIX/PWA app.":::
+
 The available fields are described below.
 
 ## Product name
@@ -41,7 +43,7 @@ For more info, see [App screenshots and images](../../../apps/publish/publish-yo
 Store logos are optional images that you can upload to enhance the way your app is displayed to customers. You can also optionally specify that only images you upload here should be used in your app’s Store listing for customers on Windows 10 or Windows 11 (including Xbox), rather than allowing the Store to use logo images from your app’s packages.
 
 > [!IMPORTANT]
-> If your app supports Xbox, or if it supports Windows Phone 8.1 or earlier, you must provide certain images here in order for the listing to appear properly in the Store.
+> If your app supports Xbox, you must provide certain images here in order for the listing to appear properly in the Store.
 
 For more info, see [Store logos](../../../apps/publish/publish-your-app/screenshots-and-images.md#store-logos).
 

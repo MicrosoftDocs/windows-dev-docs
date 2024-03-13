@@ -7,13 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# View app identity details
+# View product identity details
 
 
-You can view details related to the unique identity assigned to your app by the Microsoft Store on its **App identity** pages. You can also get a link to your app's Store listing on this page.
+You can view details related to the unique identity assigned to your app by the Microsoft Store on its **Product identity** pages. You can also get a link to your app's Store listing on this page.
 
-To find this info, navigate to one of your apps, then expand **App management** in the left navigation menu. Select **App identity** to view these details.
+To find this info, navigate to one of your apps, then expand **Product management** in the left navigation menu. Select **Product identity** to view these details.
 
+:::image type="content" source="../../includes/store/msix/images/msix-product-identity.png" lightbox="../../includes/store/msix/images/msix-product-identity.png" alt-text="A screenshot showing the product identity section for MSIX/PWA app.":::
 
 ## Values to include in your app package manifest
 

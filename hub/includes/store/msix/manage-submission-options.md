@@ -1,5 +1,7 @@
 The **Submission options** page of the app submission process is where you can provide more information to help us test your product properly. This is an optional step, but is recommended for many submissions. You can also optionally set publishing hold options if you want to delay the publishing process.
 
+:::image type="content" source="images/msix-submission-options.png" lightbox="images/msix-submission-options.png" alt-text="A screenshot showing the submission options page for a MSIX/PWA app.":::
+
 ## Publishing hold options
 
 By default, we'll publish your submission as soon as it passes certification (or per any dates you specified in the  [Schedule](../../../apps/publish/publish-your-app/release-schedule.md) section of the **Pricing and availability** page). You can optionally choose to place a hold on publishing your submission until a certain date, or until you manually indicate that it should be published. The options in this section are described below.

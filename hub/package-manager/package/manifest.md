@@ -57,7 +57,7 @@ For a complete list and descriptions of items in a manifest, see the [manifest s
 
 ### Minimal required schema
 
-As specified in the [singleton JSON schema](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.singleton.1.0.0.json),
+As specified in the [singleton JSON schema](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.singleton.1.5.0.json),
 only certain fields are required. The minimal supported YAML file would look like the example below. The singleton format is only valid for packages containing a single installer and a single locale. If more than one installer or locale is provided, the multiple YAML file format and schema must be used.
 
 The partitioning scheme was added to help with GitHub's UX. Folders with thousands of children do not render well in the browser.
@@ -78,7 +78,7 @@ Installers:
    InstallerUrl:    # Path to download installation file.
    InstallerSha256: # SHA256 calculated from installer.
 ManifestType:       # The manifest file type
-ManifestVersion: 1.0.0
+ManifestVersion: 1.5.0
 ```
 
 #### [Example](#tab/minexample/)
@@ -100,7 +100,7 @@ Installers:
    InstallerSha256: 092aa89b1881e058d31b1a8d88f31bb298b5810afbba25c5cb341cfa4904d843
    SignatureSha256: e53f48473621390c8243ada6345826af7c713cf1f4bbbf0d030599d1e4c175ee
 ManifestType: singleton
-ManifestVersion: 1.0.0
+ManifestVersion: 1.5.0
 ```
 
 * * *
@@ -110,10 +110,10 @@ ManifestVersion: 1.0.0
 To provide the best user experience, manifests should contain as much meta-data as possible. In order to separate concerns for validating installers
 and providing localized metadata, manifests should be split into multiple files. The minimum number of YAML files for this kind of manifest is three. Additional locales should also be provided.
 
-* A [version](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.version.1.0.0.json) file.
-* The [default locale](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.defaultLocale.1.0.0.json) file.
-* An [installer](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.installer.1.0.0.json) file.
-* Additional [locale](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.0.0/manifest.locale.1.0.0.json) files.
+* A [version](https://github.com/microsoft/winget-pkgs/blob/master/doc/manifest/schema/1.5.0/version.md) ([JSON Schema](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.version.1.5.0.json)) file.
+* The [default locale](https://github.com/microsoft/winget-pkgs/blob/master/doc/manifest/schema/1.5.0/defaultLocale.md) ([JSON Schema](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.defaultLocale.1.5.0.json)) file.
+* An [installer](https://github.com/microsoft/winget-pkgs/blob/master/doc/manifest/schema/1.5.0/installer.md) ([JSON Schema](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.installer.1.5.0.json)) file.
+* Additional [locale](https://github.com/microsoft/winget-pkgs/blob/master/doc/manifest/schema/1.5.0/locale.md) ([JSON Schema](https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.5.0/manifest.locale.1.5.0.json)) files.
 
 The example below shows many optional metadata fields and multiple locales. Note the default locale has more requirements than additional locales. In the [show command](../winget/show.md), any required fields that aren't provided for additional locales will display fields from the default locale.
 
@@ -126,7 +126,7 @@ PackageIdentifier: "Microsoft.WindowsTerminal"
 PackageVersion: "1.6.10571.0"
 DefaultLocale: "en-US"
 ManifestType: "version"
-ManifestVersion: "1.0.0"
+ManifestVersion: "1.5.0"
 ```
 
 #### [Default locale file example](#tab/default-locale-example/)
@@ -159,7 +159,7 @@ Tags:
 - "ps"
 - "terminal"
 ManifestType: "defaultLocale"
-ManifestVersion: "1.0.0"
+ManifestVersion: "1.5.0"
 ```
 
 #### [Additional locale file example](#tab/additional-locale-example/)
@@ -173,7 +173,7 @@ PackageLocale: "fr-FR"
 Publisher: "Microsoft"
 ShortDescription: "Le nouveau terminal Windows, une expérience de ligne de commande à onglets pour Windows."
 ManifestType: "locale"
-ManifestVersion: "1.0.0"
+ManifestVersion: "1.5.0"
 ```
 
 #### [Installer file example](#tab/installer-example/)
@@ -204,7 +204,7 @@ Installers:
    InstallerSha256: 092aa89b1881e058d31b1a8d88f31bb298b5810afbba25c5cb341cfa4904d843
    SignatureSha256: e53f48473621390c8243ada6345826af7c713cf1f4bbbf0d030599d1e4c175ee
 ManifestType: "installer"
-ManifestVersion: "1.0.0"
+ManifestVersion: "1.5.0"
 ```
 
 * * *

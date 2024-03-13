@@ -3,8 +3,8 @@ title: Arm64EC for Windows 11 apps on Arm
 description: Learn how Arm64EC empowers you to build and incrementally update apps that benefit from native performance on Arm devices, without interrupting your current x64 functionality.
 ms.date: 08/08/2022
 ms.topic: overview
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: marswe
 ms.author: marcs
 ---

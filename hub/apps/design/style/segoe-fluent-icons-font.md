@@ -61,11 +61,14 @@ You can also use the static resource `SymbolThemeFontFamily` to access **Segoe F
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
+> [!NOTE]
+> For optimal appearance, use these specific sizes: 16, 20, 24, 32, 40, 48, and 64. Deviating from these font sizes could lead to less crisp or blurry outcomes.
+
 ## How do I get this font?
 
 * On Windows 11: There's nothing you need to do, the font comes with Windows.
 * On Windows 10: **Segoe Fluent Icons** is not included by default on Windows 10. You can download it [here](../downloads/index.md#fonts).
-* On a Mac or other device: You can download **Segoe Fluent Icons** and other fonts [here](../downloads/index.md#fonts). You can download the font for use in design and development, but you may not not ship it to another platform.
+* On a Mac or other device: You can download **Segoe Fluent Icons** and other fonts [here](../downloads/index.md#fonts). You can download the font for use in design and development, but you may not ship it to another platform.
 
 ## Icon list
 

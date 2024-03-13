@@ -5,7 +5,6 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.technology: windows-nodejs
 keywords: Microsoft, Windows, Docker, WSL, Remote development, Containers, Docker Desktop, Windows vs WSL
 ms.date: 09/24/2020
 ---

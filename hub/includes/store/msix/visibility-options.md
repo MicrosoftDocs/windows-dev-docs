@@ -1,4 +1,8 @@
+The **Visibility** section of the [Pricing and availability page](../../../apps/publish/publish-your-app/price-and-availability.md) allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
+
 There are two separate sections within the Visibility section: **Audience** and **Discoverability**.
+
+:::image type="content" source="images/msix-visibility-options.png" lightbox="images/msix-visibility-options.png" alt-text="A screenshot of the Pricing and availability section showing visibility options available for an app.":::
 
 ## Audience
 
@@ -63,7 +67,7 @@ You must also choose one of the following options to specify how your app can be
 >[!IMPORTANT]
 > Each of these options limits the OS versions on which customers can acquire your app. Please read the descriptions carefully to make sure you are aware which OS versions are supported.
 
-- **Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.** Any customer who gets to your app's listing via a direct link can download it on devices running Windows 10, Windows 11, or Windows Phone 8.1 or earlier (but not on devices running Windows 8.x).
+- **Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.** Any customer who gets to your app's listing via a direct link can download it on devices running Windows 10, Windows 11.
 - **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 11 or Windows 10 device.** Even if a customer has a direct link, they can't download the app unless they have a [promotional code](../../../apps/publish/generate-promotional-codes.md) and are using a Windows 11 or Windows 10 device. If a customer has a promotional code, they can use it to get your app for free (on Windows 11 and Windows 10 only), even though you aren't offering it to any other customers. Aside from using a promotional code, there is no way for anyone to get your app.
 
 > [!TIP]

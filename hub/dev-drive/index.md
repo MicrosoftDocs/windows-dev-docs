@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 11/22/2023
+ms.date: 02/26/2024
 ---
 
 # Set up a Dev Drive on Windows 11
@@ -154,6 +154,8 @@ A package cache is the global folder location used by applications to store file
 
 - **Maven cache (Java)**: Create a Maven cache directory in your Dev Drive, e.g. `D:\packages\maven`, then set a global environment variable `MAVEN_OPTS` to add a configuration setting to that path, e.g. `setx /M MAVEN_OPTS "-Dmaven.repo.local=D:\packages\maven %MAVEN_OPTS%"`. Move the contents of `%USERPROFILE%\.m2` to this directory. Learn more in the [Maven docs](https://maven.apache.org/settings.html) and see StackOverflow for [How to specify an alternate location for the .m2 folder or settings.xml permanently?](https://stackoverflow.com/questions/16649420/how-to-specify-an-alternate-location-for-the-m2-folder-or-settings-xml-permanen).
 
+- **Gradle cache (Java)**: Create a Gradle cache directory in your Dev Drive, for example, `D:\packages\gradle`. Then, set a global environment variable `GRADLE_USER_HOME` to point to that path, for example, use `setx /M GRADLE_USER_HOME "D:\packages\gradle"` in the command line to set it system-wide. After setting this variable, Gradle will use the specified directory (`D:\packages\gradle`) for its caches and configuration files. If you have existing Gradle files, move the contents of `%USERPROFILE%\.gradle` to this new directory. For more detailed information, you can refer to the [Gradle documentation](https://docs.gradle.org/current/userguide/userguide.html) and explore community resources like StackOverflow for [tips on managing Gradle configurations and cache directories](https://stackoverflow.com/questions/56350799/gradle-user-home-set-in-gradle-properties-build-gradle-or-settings-gradle-to).
+
 ## Understanding security risks and trust in relation to Dev Drive
 
 Security and trust are important considerations when working with project files. Typically, there is a tradeoff between performance and security. Using a Dev Drive places control over this balance in the hands of developers and security administrators, with a responsibility for choosing which filters are attached and the settings for Microsoft Defender Antivirus scans.
@@ -278,7 +280,9 @@ The following filters may be used with Dev Drive:
 | Defender:  Windows Defender Filter | WdFilter |
 | Docker:  Running containers out of Dev Drive | bindFlt, wcifs |
 | Windows Performance Recorder:  Measure file system operations | FileInfo |
+| Resource Monitor: Shows resource usage. Required to show file names in Disk Activity | FileInfo |
 | Process Monitor - Sysinternals:  Monitor file system activities | ProcMon24 |
+| Windows Upgrade: Used during OS Upgrade. Required if user moves TEMP environment variable to Dev Drive | WinSetupMon |
 
 The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
 
@@ -297,7 +301,7 @@ fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, File
 There are a few scenarios in which we do not recommend using a Dev Drive. These include:
 
 - Reformatting an existing storage volume to be a "Dev Drive" will destroy any content stored in that volume. Reformatting an existing volume while preserving the content stored there is not supported.
-- When creating a VHD hosted by a fixed disk, it is not safe to copy the VHD, move it to a different machine, and then return to using it as a Dev Drive.
+- When you create a Virtual Hard Disk (VHD) hosted on a fixed disk (HDD or SSD), it is not recommended to copy the VHD, move it to a different machine, and then continue using it as a Dev Drive.
 - A volume stored on a removable or hot-pluggable disk (such as a USB, HDD, or SSD external drive) does not support designation as a Dev Drive.
 - A volume in a VHD hosted by a removable or hot-pluggable disk does not support designation as a Dev Drive.
 - The C: drive on your machine cannot be designated as a Dev Drive.
@@ -311,6 +315,14 @@ You can delete a Dev Drive in the Windows 11 System Settings: `System` > `Storag
 Open Windows **Settings** menu, then choose **Storage**, then **Advanced Storage Settings**, then **Disks & volumes**, where you will find a list of the storage volumes on your device. Select **Properties** next to the Dev Drive storage volume that you want to delete. In the drive's properties, you will find the option to **Delete** under the **Format** label.
 
 ![Delete a Dev Drive in Windows Settings](../images/dev-drive-delete.png)
+
+The Dev Drive will now be deleted. **However**, if the Dev Drive was created as a new VHD, the VHD will need to be deleted to reclaim the storage space used by that VHD. To accomplish this, you must detach the virtual disk so that the VHD file hosting the Dev Drive can be deleted, following these steps:
+
+1. Open the Disk Management tool by entering "Computer Management" in the search box on the taskbar. Select **Disk Management** under the Storage heading. Select the **Disk** (not the Volume) of the Dev Drive. Right-click the selected Disk hosting the Dev Drive and, from the resulting menu, select **Detach VHD**.
+2. A pop-up window will appear informing you that detaching a virtual hard disk will make it unavailable.
+3. Once detached, the VHD can be deleted.
+
+![Screenshot of the Disk Management tool showing that the VHD can be selected and Detach VHD is an option in the action menu.](../images/dev-drive-disk-management-detach-vhd.png)
 
 ## Dev Drive FAQs
 
@@ -331,9 +343,9 @@ No, applications or tools installed on your machine’s C: drive can utilize fil
 
 Yes, ReFS uses slightly more memory than NTFS. We recommend a machine with at least 8gb of memory, ideally 16gb.
 
-### Can I only have a single Dev Drive on my machine?
+### Can I have more than one Dev Drive on my machine?
 
-No. If you have the space, you can create as many Dev Drives as you would like. Using a separate Dev Drive for each software development project would allow you to simply delete the drive at the end of development, rather than repartitioning your disk again. However, keep in mind that the minimum size for a Dev Drive is 50GB.
+Yes. If you have the space, you can create as many Dev Drives as you would like. Using a separate Dev Drive for each software development project would allow you to simply delete the drive at the end of development, rather than repartitioning your disk again. However, keep in mind that the minimum size for a Dev Drive is 50GB.
 
 ### What do I need to know about using Dev Drive with Visual Studio?
 
@@ -356,6 +368,14 @@ You can find guidance on [How to configure and use Live Unit Testing](/visualstu
 ```powershell
 fsutil devdrv setfiltersallowed PrjFlt
 ```
+
+### Will a VHD created for use as a Dev Drive be encrypted when the drive storing it is BitLocker enabled?
+
+Yes, the Dev Drive VHD will be included in the BitLocker encryption of the hosting volume.
+
+### Can Dev Drive make Java development faster on Windows?
+
+Yes, using a Dev Drive can enhance efficiency and reduce build times when working on a Java development project. See the blog post ["Speed up your Java Development on Windows with Dev Drive"](https://devblogs.microsoft.com/java/speed-up-your-java-development-on-windows-with-microsoft-dev-drive/).
 
 ### How to contribute to these docs and FAQs?
 

@@ -1,0 +1,20 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report issues, bugs, or file feature requests related to Windows development.
+    url: hhttps://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb
+    about: Windows Feedback Hub (for reporting issues, bugs, or feature requests)
+  - name: Report issues, bugs, or file feature requests for PowerToys.
+    url: https://github.com/Microsoft/powertoys/issues
+    about: Windows PowerToys product repo on GitHub (for reporting issues, bugs, or feature requests)
+  - name: Report issues, bugs, or file feature requests for Windows Dev Home.
+    url: https://github.com/Microsoft/devhome/issues
+    about: Windows Dev Home product repo on GitHub (for reporting issues, bugs, or feature requests)
+  - name: Report issues, bugs, or file feature requests for Windows Package Manager.
+    url: https://github.com/microsoft/winget-cli/issues
+    about: Windows Package Manager product repo on GitHub (for reporting issues, bugs, or feature requests)
+  - name: Report issues, bugs, or file feature requests for Windows Terminal.
+    url: https://github.com/Microsoft/terminal/issues
+    about: Windows Terminal product repo on GitHub (for reporting issues, bugs, or feature requests)
+  - name: Report issues, bugs, or file feature requests for Windows Subsystem for Linux.
+    url: https://github.com/Microsoft/WSL/issues
+    about: Report issues, bugs, or file feature requests for Windows Subsystem for Linux.

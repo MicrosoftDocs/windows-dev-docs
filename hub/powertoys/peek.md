@@ -14,9 +14,9 @@ A system-wide utility for Windows that allows you to preview file content withou
 
 ## Preview a file
 
-Select a file in the File Explorer and open the Peek preview using the activation / deactivation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Space</kbd>).
+Select a file in File Explorer and open the Peek preview using the activation / deactivation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Space</kbd>).
 
-Using <kbd>Left</kbd> and <kbd>Right</kbd> or <kbd>Up</kbd> and <kbd>Down</kbd>, you can scroll between all files in the current folder. Select multiple files in the File Explorer for previewing to scroll only between selected ones.
+Using <kbd>Left</kbd> and <kbd>Right</kbd> or <kbd>Up</kbd> and <kbd>Down</kbd>, you can scroll between all files in the current folder. Select multiple files in File Explorer for previewing to scroll only between selected ones.
 
 ## Pin preview window position and size
 

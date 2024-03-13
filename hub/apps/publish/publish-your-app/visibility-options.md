@@ -7,9 +7,7 @@ ms.localizationpriority: medium
 zone_pivot_groups: store-installer-packaging
 ---
 
-# Choose visibility options
-
-The **Visibility** section of the [Pricing and availability page](price-and-availability.md) allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
+# Choose visibility or discoverability options
 
 :::zone pivot="store-installer-msix,store-installer-pwa,store-installer-add-on"
 [!INCLUDE [name](../../../includes/store/msix/visibility-options.md)]

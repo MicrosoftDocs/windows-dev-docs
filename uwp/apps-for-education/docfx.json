@@ -1,7 +1,7 @@
 {
   "build": {
     "globalMetadata": {
-		"ms.technology": "design",
+      "ms.technology": "design",
     "recommendations": true
     }
   }

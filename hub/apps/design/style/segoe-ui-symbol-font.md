@@ -9,7 +9,6 @@ ms.date: 12/05/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: contperf-fy21q2
 ---
 # Segoe MDL2 Assets icons
 

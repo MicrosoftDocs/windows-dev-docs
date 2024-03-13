@@ -13,12 +13,12 @@ zone_pivot_groups: msstoredevcli-installer-packaging
 
 ## Step 1: Install .NET Windows Runtime
 
-If you haven't done so already, install the latest version of the [.NET 7 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/7.0). This is a requirement to run the Microsoft Store Developer CLI.
+If you haven't done so already, install the latest version of the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0). This is a requirement to run the Microsoft Store Developer CLI.
 
 The easiest way to install it is to use *winget*:
 
 ```console
-winget install Microsoft.DotNet.DesktopRuntime.7
+winget install Microsoft.DotNet.DesktopRuntime.8
 ```
 
 ## Step 2: Install the Microsoft Store Developer CLI
@@ -34,7 +34,7 @@ winget install "Microsoft Store Developer CLI"
 
 ## Step 1: Install .NET macOS Runtime
 
-If you haven't done so already, install the latest version of the [.NET 7 Runtime](https://dotnet.microsoft.com/download/dotnet/7.0). This is a requirement to run the Microsoft Store Developer CLI.
+If you haven't done so already, install the latest version of the [.NET 8 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0). This is a requirement to run the Microsoft Store Developer CLI.
 
 ## Step 2: Install the Microsoft Store Developer CLI
 
@@ -42,8 +42,8 @@ You can download the macOS *.tar.gz* for your specific architecture (x64 or Arm6
 
 ```console
 mkdir MSStoreCLI
-curl https://github.com/microsoft/msstore-cli/releases/latest/download/MSStoreCLI-osx.12-x64.tar.gz -o MSStoreCLI-osx.12-x64.tar.gz
-tar -xvf MSStoreCLI-osx.12-x64.tar.gz -C ./MSStoreCLI
+curl https://github.com/microsoft/msstore-cli/releases/latest/download/MSStoreCLI-osx-x64.tar.gz -o MSStoreCLI-osx-x64.tar.gz
+tar -xvf MSStoreCLI-osx-x64.tar.gz -C ./MSStoreCLI
 sudo cp -R MSStoreCLI/. /usr/local/bin
 ```
 
@@ -58,7 +58,7 @@ brew install microsoft/msstore-cli/msstore-cli
 
 ## Step 1: Install .NET Linux Runtime
 
-If you haven't done so already, install the latest version of the [.NET 7 Runtime](https://dotnet.microsoft.com/download/dotnet/7.0). This is a requirement to run the Microsoft Store Developer CLI.
+If you haven't done so already, install the latest version of the [.NET 8 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0). This is a requirement to run the Microsoft Store Developer CLI.
 
 ## Step 2: Install the Microsoft Store Developer CLI
 

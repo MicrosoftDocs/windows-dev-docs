@@ -6,10 +6,13 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 03/15/2023
+ms.date: 03/05/2024
 ---
 
 # Release Notes for Windows Subsystem for Android™️
+
+> [!IMPORTANT]
+> Windows Subsystem for Android™️ and the Amazon Appstore will no longer be available in the Microsoft Store after March 5, 2025. [Learn more](index.md).
 
 These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 

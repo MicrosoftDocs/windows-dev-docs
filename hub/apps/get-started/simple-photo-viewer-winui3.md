@@ -2,7 +2,7 @@
 title: Tutorial--Create a simple photo viewer with WinUI 3
 description: In this topic we walk through the process of building a simple WinUI 3 app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 ms.topic: article
-ms.date: 04/05/2023
+ms.date: 01/25/2024
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
 ms.author: stwhi
 author: stevewhims
@@ -96,7 +96,7 @@ A *model* (in the sense of models, views, and view models) is a class that to so
 
 ### [C#](#tab/cs/)
 
-1. Right-click the project node (**SimplePhotos**), and click **Add** > **New Item...**. Under **Visual C# Items** > **Code**, select **Class**. Set the name to *ImageFileInfo.cs*, and click **Add**.
+1. Right-click the project node (**SimplePhotos**), and click **Add** > **New Item...**. Under **C# Items** > **Code**, select **Class**. Set the name to *ImageFileInfo.cs*, and click **Add**.
 
 1. Replace the contents of `ImageFileInfo.cs` with the code listing below.
 
@@ -436,7 +436,7 @@ In this section we'll add a new property to the **MainWindow** class. The proper
     }
     ```
 
-1. The code to populate the new collection property with images is shown in the **GetItemsAsync** and **LoadImageInfoAsync** methods below. Paste the `using` directives, and the two method implementations, into `MainWindow.xaml.cs`, too.
+1. The code to populate the new collection property with images is shown in the **GetItemsAsync** and **LoadImageInfoAsync** methods below. Paste the `using` directives, and the two method implementations, into `MainWindow.xaml.cs`, too. These methods are members of the **MainWindow** class, so paste them inside there just as you did with the **Images** property above.
 
     ```csharp
     ...

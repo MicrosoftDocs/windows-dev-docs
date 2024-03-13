@@ -406,7 +406,7 @@ if (localSettings.Containers.ContainsKey("exampleContainer"))
 ## Delete app settings and containers
 
 
-To delete a simple setting that your app no longer needs, use the [**ApplicationDataContainerSettings.Remove**](/uwp/api/windows.storage.applicationdatacontainersettings.remove) method. This example deletesthe `exampleSetting` local setting that we created earlier.
+To delete a simple setting that your app no longer needs, use the [**ApplicationDataContainerSettings.Remove**](/uwp/api/windows.storage.applicationdatacontainersettings.remove) method. This example deletes the `exampleSetting` local setting that we created earlier.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 

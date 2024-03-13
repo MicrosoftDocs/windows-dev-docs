@@ -1,10 +1,10 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 10/23/2023
+ms.date: 03/01/2024
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: mattwojo
 ms.author: mattwoj
 ---
@@ -25,11 +25,16 @@ For the best performance, responsiveness, and battery life, users will want and 
 
 Microsoft is working to deliver an Arm-native developer toolset that includes Arm-native Visual Studio 2022, VSCode, VC++ toolchain, classic .NET Framework, modern .NET, and Java. Microsoft is also working with several 3rd parties and open-source communities to port common tools, runtimes, frameworks and libraries to natively target Windows on Arm. See the [announcement from Build 2022](https://blogs.windows.com/windowsdeveloper/2022/05/24/create-next-generation-experiences-at-scale-with-windows/) about this comprehensive suite of tools, services, and devices that enable developers to build and port apps that natively target Arm just as easily as when targeting x64.
 
-### Arm developer services
+### Virtual Machines
 
-Many developers today also rely on Virtual Machines and Containers. Which is why Microsoft's Azure team recently announced a [preview of their new Arm Virtual Machines service](https://azure.microsoft.com/blog/now-in-preview-azure-virtual-machines-with-ampere-altra-armbased-processors/) and will soon be previewing Arm Containers via Azure Kubernetes Services.
+You can create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure. Learn how in this [Quickstart article](./create-arm-vm.md).
 
-Most developers also rely on build and test automation via Continual Integration / Continual Deployment (CI/CD), often hosted in cloud services, like [Azure DevOps](/azure/architecture/example-scenario/apps/devops-dotnet-webapp) or [GitHub](https://resources.github.com/ci-cd/). In late Summer 2022, Microsoft will begin work to port the CI/CD automation runner/agent shared by Azure DevOps and GitHub. Details are coming soon regarding when cloud-hosted Arm CI/CD services will become available.
+Learn more about using Windows on Arm Virtual Machines:
+
+- [Windows on Arm Virtual Machine FAQ](./faq.yml#windows-on-arm-virtual-machine-faq)
+- [Azure Virtual Machines with Ampere Altra Arm–based processors—generally available](https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/)
+- [Deploy an Arm-based Azure Kubernetes Service (AKS) Cluster using Terraform - ARM Developer Hub](https://learn.arm.com/learning-paths/servers-and-cloud-computing/aks/cluster_deployment/)
+- Learn more about build and test automation via Continual Integration / Continual Deployment (CI/CD) hosted in the cloud, such as [Azure DevOps](/azure/architecture/example-scenario/apps/devops-dotnet-webapp) or [GitHub](https://resources.github.com/ci-cd/).
 
 ### Arm developer devices
 
@@ -73,6 +78,7 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
         - **Visual Studio Code** natively supports Arm and [can be installed on Arm devices](https://code.visualstudio.com/#alt-downloads). The [VS Code C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) also offers C++ IntelliSense and build support for developing Windows apps that run natively on Arm64 devices.
         - [**.NET 6** already supports Arm](/dotnet/core/whats-new/dotnet-6#arm64-support), both for native Arm execution and x64 emulation. To develop .NET apps that run natively on Arm64 devices, we recommend installing the new Arm native Visual Studio 2022 17.4, and [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0) Arm64 SDK. Learn more about .NET 7 support for Arm and the performance improvements for Arm64 on the [.NET Blog](https://devblogs.microsoft.com/dotnet/arm64-performance-improvements-in-dotnet-7/).
         - **.NET 6 Arm64 SDK:** By default, if you `dotnet run` a .NET 6 app with the Arm64 SDK, it will run as Arm64. The `dotnet-runtimeinfo` tool can be used to discover the environment that .NET is running on. See the [.NET 6 blog announcement on Arm64 support](https://devblogs.microsoft.com/dotnet/announcing-net-6/#windows-arm64) to learn more.
+        - **[Test Base for Microsoft 365](https://www.microsoft.com/en-us/testbase)** has added support for Arm64! Expanding Test Base to include Arm64 will help you ensure that your applications will work across a broader range of devices and releases by executing tests run against all Windows operating systems. See [Announcing Windows 11 Arm Private Preview for Test Base - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/announcing-windows-11-arm-private-preview-for-test-base/ba-p/3876380), and [sign up for the Arm private preview](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR8h5ixgVgMhNopWzBv8BM05UQ1lFTEVBU044SU45T1I4NURYQlBEVjdDUiQlQCN0PWcu). 
     :::column-end:::
 :::row-end:::
 

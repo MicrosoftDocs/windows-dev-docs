@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.technology: windows-nodejs
+ms.subservice: windows-nodejs
 ms.date: 09/28/2023
 ---
 

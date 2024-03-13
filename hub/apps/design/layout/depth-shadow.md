@@ -62,7 +62,7 @@ The following common controls will automatically use ThemeShadow to cast shadows
 - [Connected animation](../motion/connected-animation.md)
 
 > [!NOTE]
-> ThemeShadow was introduced in Windows 10 version 1903 (SDK 18362). It is updated in Windows 11 to to use ninegrid shadow instead of projected shadow for better performance.
+> ThemeShadow was introduced in Windows 10 version 1903 (SDK 18362). It is updated in Windows 11 to use ninegrid shadow instead of projected shadow for better performance.
 
 ### ThemeShadow in Popups
 

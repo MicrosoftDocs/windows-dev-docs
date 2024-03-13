@@ -1,7 +1,7 @@
 ---
 title: PowerToys Group Policy
 description: Group policy documentation for PowerToys
-ms.date: 11/12/2023
+ms.date: 01/28/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
@@ -14,7 +14,7 @@ Since version 0.64, PowerToys is released on GitHub with Administrative Template
 
 ### Download
 
-You can find the latest administrative templates (ADMX files) in the assets section of our newest PowerToys release on <https://github.com/microsoft/PowerToys/releases>. The file is named `GroupPolicyObjectsFiles-<Version>.zip`.
+You can find the latest administrative templates (ADMX files) in the assets section of our newest PowerToys release on <github.com/microsoft/PowerToys/releases>. The file is named `GroupPolicyObjectsFiles-<Version>.zip`.
 
 ### Add the administrative template to an individual computer
 
@@ -96,6 +96,7 @@ These policies have a higher priority than the policy "Configure global utility 
 |Always On Top|Always On Top: Configure enabled state|ConfigureEnabledUtilityAlwaysOnTop|
 |Awake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake|
 |Color Picker|Color Picker: Configure enabled state|ConfigureEnabledUtilityColorPicker|
+|Command Not Found|Command Not Found: Configure enabled state|ConfigureEnabledUtilityCmdNotFound|
 |Crop And Lock|Crop And Lock: Configure enabled state|ConfigureEnabledUtilityCropAndLock|
 |Environment Variables|Environment Variables: Configure enabled state|ConfigureEnabledUtilityEnvironmentVariables|
 |FancyZones|FancyZones: Configure enabled state|ConfigureEnabledUtilityFancyZones|
@@ -221,10 +222,10 @@ This policy configures whether PowerToys per-user installation is allowed or not
 
 > Supported on PowerToys 0.68.0 or later.
 
-This policy configures whether automatic downloads of available updates are disabled or not. (On metered connections updates are never downloaded.)
+This policy configures whether the automatic download and installation of available updates is disabled or not. (On metered connections updates are never downloaded.)
 
-- If enabled, automatic downloads are disabled.
-- If disabled or not configured, the user is in control of automatic downloads setting.
+- If enabled, automatic download and installation is disabled.
+- If disabled or not configured, the user can control this in the settings.
 
 ##### Group Policy (ADMX) information
 
@@ -278,20 +279,19 @@ This policy configures whether the action center notification for new updates is
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/SuspendNewUpdateToast`
 - Example value: `<enabled/>`
 
-<!-- This policy is implemented for later usage (PT v1.0 and later) and therefore inactive. (To make it working please update `src/runner/UpdateUtils.cpp`)
-#### Disable automatic update checks
+#### Disable Action Center notification for new updates
 
-> Supported on PowerToys 0.68.0 or later.
+> Supported on PowerToys 0.78.0 or later.
 
-This policy allows you to disable automatic update checks running in the background. (The manual check in PT Settings is not affected by this policy.)
+This policy configures whether the action center notification for new updates is shown or not.
 
-- If enabled, the automatic update checks are disabled.
-- If disabled or not configured, the automatic update checks are enabled.
+- If enabled, the notification is disabled.
+- If disabled or not configured, the user can control if the notification is shown or not.
 
 ##### Group Policy (ADMX) information
 
-- GP unique name: DisablePeriodicUpdateCheck
-- GP name: Disable automatic update checks
+- GP unique name: DisableNewUpdateToast
+- GP name: Disable Action Center notification for new updates
 - GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
 - GP scope: Computer and user
 - ADMX file name: PowerToys.admx
@@ -299,15 +299,43 @@ This policy allows you to disable automatic update checks running in the backgro
 ##### Registry information
 
 - Path: Software\Policies\PowerToys
-- Name: DisablePeriodicUpdateCheck
+- Name: DisableNewUpdateToast
 - Type: DWORD
-- Example value: `0x00000000`
+- Example value: `0x00000001`
 
 ##### Intune information
 
-- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePeriodicUpdateCheck`
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableNewUpdateToast`
 - Example value: `<enabled/>`
--->
+
+#### Do not show the release notes after updates
+
+> Supported on PowerToys 0.78.0 or later.
+
+This policy allows you to configure if the window with the release notes is shown after updates.
+
+- If enabled, the window with the release notes is not shown automatically.
+- If disabled or not configured, the user can control this in the settings of PowerToys.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: DoNotShowWhatsNewAfterUpdates
+- GP name: Disable Action Center notification for new updates
+- GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
+- GP scope: Computer and user
+- ADMX file name: PowerToys.admx
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: DoNotShowWhatsNewAfterUpdates
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DoNotShowWhatsNewAfterUpdates`
+- Example value: `<enabled/>`
 
 ### PowerToys Run
 

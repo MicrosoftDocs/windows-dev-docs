@@ -20,9 +20,8 @@ If you're brand new to using React, this guide will help you to get started with
 
 ## Prerequisites
 
-- Install React *([Should I install on Windows or Windows Subsystem for Linux](./windows-or-wsl.md))*
-  - [Install React on Windows](./react-on-windows.md)
-  - [Install React on Windows Subsystem for Linux](./react-on-wsl.md)
+- [Install React on Windows](./react-on-windows.md)
+- [Install React on Windows Subsystem for Linux](./react-on-wsl.md)
 - [Install VS Code](https://code.visualstudio.com/download). We recommend installing VS Code on Windows, regardless of whether you plan to use React on Windows or WSL.
 
 ## A few basic terms and concepts

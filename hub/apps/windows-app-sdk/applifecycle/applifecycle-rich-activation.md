@@ -2,7 +2,7 @@
 description: Describes how to use rich activation features with the app lifecycle API in unpackaged apps (Windows App SDK).
 title: Rich activation with the app lifecycle API (Windows App SDK)
 ms.topic: article
-ms.date: 11/16/2021
+ms.date: 03/07/2024
 keywords: AppLifecycle, Windows, activation, activation contracts, rich activation, win32, win32 activation, unpackaged app, unpackaged app activation
 ms.localizationpriority: medium
 ---
@@ -18,12 +18,9 @@ Supporting rich activations requires two steps:
 
 ## Prerequisites
 
-> [!IMPORTANT]
-> The app lifecycle API is currently supported in the [preview release channel](../preview-channel.md) and [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not currently supported for use by apps in production environments.
-
 To use the app lifecycle API in the Windows App SDK:
 
-1. Download and install the latest preview or experimental release of the Windows App SDK. For more information, see [Install tools for the Windows App SDK](../set-up-your-development-environment.md).
+1. Download and install the latest release of the Windows App SDK. For more information, see [Install tools for the Windows App SDK](../set-up-your-development-environment.md).
 2. Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Activation details for unpackaged apps
@@ -32,10 +29,10 @@ The current version of the Windows App SDK supports the four most common activat
 
 | Activation kind | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
-| `Launch`          | Activate the app from the command line, when the user double-clicks the app's icon, or programmatically via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw) or [CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw). |
-| `File`            | Activate an app that has registered for a file type when a file of the type is opened via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw), [Launcher.LaunchFileAsync](/uwp/api/windows.system.launcher.launchfileasync), or the command line. |
-| `Protocol`        | Activate an app that has registered for a protocol when a string of that protocol is executed via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw), [Launcher.LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync), or the command-line. |
-| `StartupTask`     | Activate the app when the user logs into Windows, either because of a registry key, or because of a shortcut in a well-known startup folder. |
+| `Launch` | Activate the app from the command line, when the user double-clicks the app's icon, or programmatically via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw) or [CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw). |
+| `File` | Activate an app that has registered for a file type when a file of the type is opened via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw), [Launcher.LaunchFileAsync](/uwp/api/windows.system.launcher.launchfileasync), or the command line. |
+| `Protocol` | Activate an app that has registered for a protocol when a string of that protocol is executed via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw), [Launcher.LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync), or the command-line. |
+| `StartupTask` | Activate the app when the user logs into Windows, either because of a registry key, or because of a shortcut in a well-known startup folder. |
 
 Each type of unpackaged app retrieves its command line arguments in different ways. For example, C++ Win32 apps expect to receive activation arguments to be passed into `WinMain` in the form of a string (though they also have the option to call [GetCommandLineW](/windows/win32/api/processenv/nf-processenv-getcommandlinew)). Windows Forms apps, however, *must* call [Environment.GetCommandLineArgs](/dotnet/api/system.environment.getcommandlineargs), because arguments will not be automatically passed to them.
 

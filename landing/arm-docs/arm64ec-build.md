@@ -3,8 +3,8 @@ title: Get started with Arm64EC apps for Windows 11 on Arm
 description: Build Arm64EC apps that run on Arm-powered devices with Windows 11.
 ms.date: 08/08/2022
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: marswe
 ms.author: marcs
 ---
@@ -80,7 +80,7 @@ By design, not all projects in an Arm64EC solution need to be targeting Arm64EC 
 
 ## Developer Command Prompt
   
-If you are interested in using the Visual Studio Developer Command Prompt for compiling and linking source files for Arm64EC, you need to use the **Arm64** Developer Command Prompt, and then run your`cl` and `link` commands separately.  Use the `/arm64EC` switch for `cl` and `/MACHINE:ARM64EC` for `link` to build and link Arm64EC code.
+If you are interested in using the Visual Studio Developer Command Prompt for compiling and linking source files for Arm64EC, you need to use the **Arm64** Developer Command Prompt, and then run your `cl` and `link` commands separately.  Use the `/arm64EC` switch for `cl` and `/MACHINE:ARM64EC` for `link` to build and link Arm64EC code.
 
 ```cpp
 cl /arm64EC /c <args>

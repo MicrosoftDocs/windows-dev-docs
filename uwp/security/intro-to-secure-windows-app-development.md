@@ -65,7 +65,7 @@ For all of its disadvantages, single-factor authentication gives the user contro
 
 As previously discussed, one of the challenges with password authentication for an IT department is the added overhead of managing the base of usernames/passwords, reset mechanisms, etc. An increasingly popular option is to rely on third-party identity providers that offer authentication through OAuth, an open standard for authentication.
 
-Using OAuth, IT departments can effectively "outsource" the complexity of maintaining a database with usernames and passwords, reset password functionality, etc. to a third party identity provider like Facebook, Twitter or Microsoft.
+Using OAuth, IT departments can effectively "outsource" the complexity of maintaining a database with usernames and passwords, reset password functionality, etc. to a third party identity provider like Facebook, X or Microsoft.
 
 Users have complete control over their identity on these platforms, but apps can request a token from the provider, after the user is authenticated and with their consent, which can be used to authorize authenticated users.
 

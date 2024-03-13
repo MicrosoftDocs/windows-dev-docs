@@ -1,6 +1,10 @@
-We recommend you to submit updates for your EXE or MSI apps through the Store. The Store allows existing users to install app updates through the Store, if your installer supports it. The Store does not provide these updates automatically to existing users. 
+We recommend you submit updates for your EXE or MSI apps through the Store. This ensures that new customers always get and install your latest app version.
 
-You can make changes to a published app at any time. To submit updates, go to the application's page in Partner Center and click  **Update** on the right-hand side for your app submission that’s live on the Store. This will create a new submission for the application, using the info from your previous submission as a starting point. 
+The Store allows existing users to install in-app updates through your app, if your installer supports it. The Store does not provide these updates automatically or manually to existing users. 
+
+You can make changes to a published app at any time. To submit updates, go to the application's overview page in Partner Center. Navigate to the Update app section. An update submission has already been created using the info from your previous submission as a starting point.
+
+:::image type="content" source="images/msiexe-update-app.png" lightbox="images/msiexe-update-app.png" alt-text="A screenshot showing how to submit an update for EXE/MSI app.":::
 
 Go to the required sections like [Pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md), [Properties](../../../apps/publish/publish-your-app/enter-app-properties.md), [Age ratings](../../../apps/publish/publish-your-app/age-ratings.md), [Packages](../../../apps/publish/publish-your-app/upload-app-packages.md) and [Store listing](../../../apps/publish/publish-your-app/create-app-store-listing.md) to make the changes you'd like and save them. Then click  **Publish** on Manage Store listing page.
 

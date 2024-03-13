@@ -1,35 +1,34 @@
 ---
-title: Add Windows Defender exceptions for Android
-description: Learn how to improve performance speed and build times by updating Windows Defender settings to exclude checking specified file types.
+title: Add Microsoft Defender exceptions for Android
+description: Learn how to improve performance speed and build times by updating Microsoft Defender settings to exclude checking specified file types.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: android, windows defender, exceptions, configuration, exclusions, %USERPROFILE%, devenv.exe, performance, speed, build, gradle
-ms.date: 04/28/2020
+ms.date: 03/08/2024
 ---
 
-# Add Windows Defender exceptions to speed up Android build performance
+# Add Microsoft Defender exceptions to speed up Android build performance
 
-This guide covers how to set up exclusions in your Windows Defender security settings in order to improve your build times when developing Android apps using a Windows machine.
+This guide covers how to set up exclusions in your Microsoft Defender security settings in order to improve your build times when developing Android apps using a Windows machine.
 
-## Windows Defender Overview
+## Microsoft Defender Antivirus Overview
 
-In Windows 10, version 1703 and later, the [Windows Defender Antivirus](/windows/security/threat-protection/windows-defender-antivirus/windows-defender-security-center-antivirus) app is part of Windows Security. Windows Defender aims to keep your PC safe with built-in, real-time protection against viruses, ransomware, spyware, and other security threats.
+In Windows 10, version 1703 and later, the [Microsoft Defender Antivirus](/windows/security/threat-protection/windows-defender-antivirus/windows-defender-security-center-antivirus) app is part of Windows Security. Microsoft Defender aims to keep your PC safe with built-in, real-time protection against viruses, ransomware, spyware, and other security threats.
 
-**However**, Windows Defender's real-time protection will also dramatically slow file system access and build speed when developing Android apps.
+**However**, Microsoft Defender's real-time protection will also dramatically slow file system access and build speed when developing Android apps.
 
 During the Android build process, many files are created on your computer. With antivirus real-time scanning enabled, the build process will halt each time a new file is created while the antivirus scans that file.
 
-Fortunately, Windows Defender has the capability to exclude files, project directories, or file types that you know to be secure from it's antivirus scanning process.
+Fortunately, Microsoft Defender has the capability to exclude files, project directories, or file types that you know to be secure from it's antivirus scanning process.
 
 > [!WARNING]
-> To ensure that your computer is safe from malicious software, you should not completely disable real-time scanning or your Windows Defender antivirus software. 
+> To ensure that your computer is safe from malicious software, you should not completely disable real-time scanning or your Microsoft Defender antivirus software.
 > Defining exclusions lowers the protection offered by Defender. You should always evaluate the risks that are associated with implementing exclusions, and only exclude files that you are confident are not malicious.
 
-## How to add exclusions to Windows Defender
+## How to add antivirus exclusions to Microsoft Defender
 
-To add exclusions in the [Windows Defender Security Center](windowsdefender://):
+To add exclusions in the [Microsoft Defender Security Center](windowsdefender://):
 
 1. Select the Windows menu **Start** button
 2. Enter **Windows Security**
@@ -38,18 +37,16 @@ To add exclusions in the [Windows Defender Security Center](windowsdefender://):
 5. Scroll to the **Exclusions** heading and select **Add or remove exclusions**
 6. Select **+ Add an exclusion**. You will then need to choose whether the exclusion you wish to add is a **File**, **Folder**, **File type**, or **Process**.
 
-![Windows Defender Add Exclusion screenshot](../images/windows-defender-exclusions.png)
+![Microsoft Defender Add Exclusion screenshot](../images/windows-defender-exclusions.png)
 
-## Exclusions to consider for Android development 
+## Exclusions to consider for Android development
 
-The following list shows the default location of each Android Studio directory that could be added as an exclusion from Windows Defender real-time scanning:
+Use Microsoft Defender Antivirus exclusions sparingly. See [Configure custom exclusions for Microsoft Defender Antivirus](/microsoft-365/security/defender-endpoint/configure-exclusions-microsoft-defender-antivirus) for more details about using exclusions.
 
-- Gradle cache: `%USERPROFILE%\.gradle`
-- Android Studio projects: `%USERPROFILE%\AndroidStudioProjects`
-- Android SDK: `%USERPROFILE%\AppData\Local\Android\SDK`
-- Android Studio system files: `%USERPROFILE%\.AndroidStudio<version>\system`
+Microsoft Defender Antivirus interprets *user environment variables* in the context of the system user, using the LocalSystem account, which means it gets information from the system environment variable, and not from the user environment variable. See [Using incorrect environment variables as wildcards in the file name and folder path or extension exclusion lists](/microsoft-365/security/defender-endpoint/common-exclusion-mistakes-microsoft-defender-antivirus#using-incorrect-environment-variables-as-wildcards-in-the-file-name-and-folder-path-or-extension-exclusion-lists). You can find a list of [System environment variables](/microsoft-365/security/defender-endpoint/configure-extension-file-exclusions-microsoft-defender-antivirus#system-environment-variables) in the Microsoft Defender for Endpoint documentation. You can also [Use wildcards in the file name and folder path or extension exclusion lists](/microsoft-365/security/defender-endpoint/configure-extension-file-exclusions-microsoft-defender-antivirus#use-wildcards-in-the-file-name-and-folder-path-or-extension-exclusion-lists). This explains the use of the asterisk `*`, question mark `?`, or environment variables (such as `%ALLUSERSPROFILE%`) as wildcards when defining items in the file name or folder path exclusion list. The way these wildcards are interpreted differs from their usual usage in other apps and languages.
 
-These directory locations may not apply to your project if you have not used the default locations set by Android Studio or if you have downloaded a project from GitHub (for example). Consider adding an exclusion to the directory of your current Android development project, wherever that may be located.
+Microsoft Defender Antivirus expands `%USERPROFILE%` to `C:\Windows\system32\config\systemprofile`, not a wildcard expression applying to all user profiles.  Instead of `%USERPROFILE%`
+, for a single user scenario use a pre-expanded user environment variable. For example: `"${env:UserProfile}\AndroidStudioProjects"` or, for the all users scenario, use a wildcard pattern like: `"%SystemDrive%\Users\*\AndroidStudioProjects"` to include Android Studio project files.
 
 Additional exclusions you may want to consider include:
 
@@ -61,13 +58,5 @@ For more information on adding antivirus scanning exclusions, including how to c
 
 Please remember that adding exclusions lowers the protection offered by Defender. You should always evaluate the risks that are associated with implementing exclusions, and only exclude files that you are confident are not malicious.
 
-> [!Note]
-> Daniel Knoodle has set up a GitHub repo with recommended scripts to add [Windows Defender exclusions for Visual Studio 2017](https://gist.github.com/dknoodle/5a66b8b8a3f2243f4ca5c855b323cb7b#file-windows-defender-exclusions-vs-2017-ps1-L10).
-
-## Additional resources
-
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-
-- [Add Windows Defender exclusions to improve performance](./defender-settings.md)
-
-- [Enable Virtualization support to improve emulator performance](./emulator.md#enable-virtualization-support)
+> [!NOTE]
+> Daniel Knoodle has set up a GitHub repo with recommended scripts to add [Microsoft Defender exclusions for Visual Studio 2017](https://gist.github.com/dknoodle/5a66b8b8a3f2243f4ca5c855b323cb7b#file-windows-defender-exclusions-vs-2017-ps1-L10).

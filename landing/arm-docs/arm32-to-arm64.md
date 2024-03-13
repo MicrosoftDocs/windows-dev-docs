@@ -3,8 +3,8 @@ title: Update app architecture from Arm32 to Arm64
 description: Guidance for changing apps with Arm32 architecture, a default for older UWP apps, to the updated Arm64 architecture using Visual Studio so that your app will work on the latest Windows on Arm devices.
 ms.date: 09/27/2023
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: mattwojo
 ms.author: mattwoj
 ms.reviewer: marcs

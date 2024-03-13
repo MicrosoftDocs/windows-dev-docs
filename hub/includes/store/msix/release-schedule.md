@@ -1,5 +1,7 @@
 The **Schedule** section on the [Pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md) page lets you set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 
+:::image type="content" source="images/msix-precise-release-scheduling.png" lightbox="images/msix-precise-release-scheduling.png" alt-text="A screenshot of the Pricing and availability section showing precise release scheduling options.":::
+
 > [!NOTE]
 > Although this topic refers to apps, release scheduling for add-on submissions uses the same process.
 You can additionally opt to set a date when the product should no longer be available in the Store. Note that this means that the product can no longer be found in the Store via searching or browsing, but any customer with a direct link can see the product's Store listing. They can only download it if they already own the product or if they have a [promotional code](../../../apps/publish/generate-promotional-codes.md) and are using a Windows 10 or Windows 11 device.
@@ -31,7 +33,6 @@ Here are the options you can configure for a product’s **Release** schedule:
 - **at**: The product will release on the date and time that you select. You additionally have two options:
   - **UTC**: The time you select will be Universal Coordinated Time (UTC) time, so that the app releases at the same time everywhere.
   - **Local**: The time you select will be the used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used. A comprehensive list of time zones is shown further down this page.)
-- **not scheduled**: The app will not be available in the Store. If you choose this option, you can make the app available in the Store later by creating a new submission and choosing one of the other options.
 
 ## Stop acquisition
 
@@ -47,9 +48,9 @@ It's important to understand that this option has the same impact as selecting *
 
 By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, click **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the [Markets](../../../apps/publish/publish-your-app/market-selection.md) section, those markets will not be shown.
 
-To add a schedule for one market, select it and click **Save**. You’ll then see the same **Release** and **Stop acquisition** options described above, but the selections you make will only apply to that market.
+To add a schedule for one market, select it and click **Create**. You’ll then see the same **Release** and **Stop acquisition** options described above, but the selections you make will only apply to that market.
 
-To add a schedule that will apply to multiple markets, you’ll create a *market group*. To do so, select the markets you wish to include, then enter a name for the group. (This name is for your reference only and won’t be visible to any customers.) For example, if you want to create a market group for North America, you can select **Canada**, **Mexico**, and **United States**, and name it **North America** or another name that you choose. When you’re finished creating your market group, click **Save**. You’ll then see the same **Release** and **Stop acquisition** options described above, but the selections you make will only apply to that market group.
+To add a schedule that will apply to multiple markets, you’ll create a *market group*. To do so, select the markets you wish to include, then enter a name for the group. (This name is for your reference only and won’t be visible to any customers.) For example, if you want to create a market group for North America, you can select **Canada**, **Mexico**, and **United States**, and name it **North America** or another name that you choose. When you’re finished creating your market group, click **Create**. You’ll then see the same **Release** and **Stop acquisition** options described above, but the selections you make will only apply to that market group.
 
 To add a custom schedule for an additional market, or an additional market group, just click **Customize for specific markets** again and repeat these steps. To change the markets included in a market group, select its name. To remove the custom schedule for a market group (or individual market), click **Remove**.
 

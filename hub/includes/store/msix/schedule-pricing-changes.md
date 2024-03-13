@@ -1,5 +1,7 @@
 The **Pricing** section of the [Pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency.
 
+:::image type="content" source="images/msix-set-app-pricing.png" lightbox="images/msix-set-app-pricing.png" alt-text="A screenshot of the Pricing and availability section showing how to set app pricing.":::
+
 > [!NOTE]
 > Although this topic refers to apps, price selection for add-on submissions uses the same process. Note that for [subscription add-ons](/windows/uwp/monetize/enable-subscription-add-ons-for-your-app), the base price that you select can't ever be increased (whether by changing the base price or by scheduling a price change), although it may be decreased.
 
@@ -25,7 +27,7 @@ Keep in mind that the price tier you select may include sales or value-added tax
 You can optionally schedule one or more price changes if you want the base price of your app to change at a specific date and time.
 
 > [!IMPORTANT]
-> Price changes are only shown to customers on Windows 10 or Windows 11 devices (including Xbox). If your previously-published app supports earlier OS versions, the price changes will not apply to those customers. For customers on Windows 8, the app will always be offered at its **Base price** (and not any market-specific price), even if you schedule additional price changes. For customers on Windows 8.1, and on Windows Phone 8.1 and earlier, the app will always be offered at the first price tier for the customer's market.
+> Price changes are only shown to customers on Windows 10 or Windows 11 devices (including Xbox). If your previously-published app supports earlier OS versions, the price changes will not apply to those customers. For customers on Windows 8, the app will always be offered at its **Base price** (and not any market-specific price), even if you schedule additional price changes. For customers on Windows 8.1, the app will always be offered at the first price tier for the customer's market.
 Click **Schedule a price change** to see the price change options. Choose the price tier you’d like to use (or enter a free-form price for single-market base price overrides), then select the date, time, and time zone.
 
 You can click **Schedule a price change** again to schedule as many subsequent changes as you’d like.
@@ -41,7 +43,6 @@ By default, the options you select above will apply to all markets in which your
 
 > [!IMPORTANT]
 > If your previously-published app supports Windows 8, those customers will always see the app at its **Base price**, even if you select a different price for their market.
-To change the price for specific markets, click **Select markets for base price override**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. (If you excluded any markets in the **Markets** section, those markets won't be available.)
 
 You can override the base price for one market at a time, or for a group of markets together. Once you’ve done so, you can override the base price for an additional market, (or an additional market group) by selecting **Select markets for base price override** again and repeating the process described below. To remove the override pricing you’ve specified for a market (or market group), click **Remove**.
 

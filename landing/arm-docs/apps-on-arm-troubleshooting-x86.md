@@ -3,8 +3,8 @@ title: Troubleshooting x86 desktop apps
 description: Learn how to troubleshoot and fix common issues with an x86 desktop app running on Arm64 including information about drivers, shell extensions, and debugging.
 ms.date: 06/25/2021
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: mattwojo
 ms.author: mattwoj
 ms.reviewer: marcs

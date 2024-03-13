@@ -55,11 +55,11 @@ Here are the common commands you may want:
 
 | Command  | Abbreviation | Function     |
 |----------|--------------| ------------ |
-| -quiet   | -q           | Silent install |
-| -silent  | -s           | Silent install |
-| -passive |              | progress bar only install |
-| -layout  |              | create a local image of the bootstrapper |
-| -log     | -l           | log to a specific file |
+| **/quiet**   | **/q**       | Silent install |
+| **/silent**  | **/s**       | Silent install |
+| **/passive** |              | progress bar only install |
+| **/layout**  |              | create a local image of the bootstrapper |
+| **/log**     | **/l**       | log to a specific file |
 
 ### Extracting the MSI from the bundle
 
@@ -76,7 +76,7 @@ cd $Env:WIX\"bin"
 
 ### Fixes for uninstalling 0.51 and earlier builds issues
 
-If you have an issue where the MSI is not accessible, you can download the installer, that corresponds with the installed version, via the [PowerToys release page](https://github.com/microsoft/PowerToys/releases) and then run the following command. You'll want to change the EXECUTABLE_INSTALLER_NAME to what the file name actually is.
+If you have an issue where the MSI is not accessible, you can download the installer, that corresponds with the installed version, via the [PowerToys release page](https://github.com/microsoft/PowerToys/releases) and then run the following command. You'll want to change EXECUTABLE_INSTALLER_NAME to what the file name actually is.
 
 In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will extract the MSI to your desktop.
 
@@ -84,8 +84,8 @@ In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will
 
 In case there are problems with uninstalling a version, there are cleanup scripts available:
 
-- <https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool>
-- <https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script>
+- <github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool>
+- <github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script>
 
 ## Community-driven install tools
 

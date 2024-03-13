@@ -2,13 +2,13 @@
 metadata:
   title: Frequently asked questions about support for Windows on Arm.
   description: Frequently asked questions about support for Arm-based devices on Windows.
-  ms.prod: windows
-  ms.technology: arm
+  ms.service: windows
+  ms.subservice: arm
   ms.topic: faq
   author: mattwojo
   ms.author: mattwoj
   ms.reviewer: marcs
-  ms.date: 08/31/2023
+  ms.date: 01/12/2024
 title: Frequently asked questions about Windows on Arm
 summary: Use the following questions and answers to better understand the support for Arm-based devices running on Windows.
 
@@ -56,12 +56,23 @@ sections:
         answer: |
           See [Configure C++ projects for Arm processors](/cpp/build/configuring-programs-for-arm-processors-visual-cpp).
 
+      - question: |
+          What Program Files folder should I use to install my ARM64 application?
+        answer: |
+          You may notice the following directories on your Windows device, used for installing and storing different application file types.
+          
+          * `C:\Program Files`: This directory is used for x64 applications, Arm64 applications, Arm64X applications. Learn more about how to [port your app to Arm64](./add-arm-support.md) or build [Arm64X binaries](./arm64x-build.md).
+
+          * `C:\Program Files (x86)`: This directory is used for x86 applications. Learn more about [How x86 emulation works on Arm](./apps-on-arm-x86-emulation.md).
+
+          * `C:\Program Files (Arm)`: This directory was used for 32-bit Arm applications, which are [no longer being supported in future versions of Windows](./arm32-to-arm64.md).
+
   - name: Windows on Arm Virtual Machine FAQ
     questions:
       - question: |
           How do I create a Windows 11 Arm64 Virtual Machine (VM)?
         answer: |
-          You can now create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure ([see the announcement](https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/)). There are multiple ways to do this: use the [Azure portal](/azure/virtual-machines/windows/quick-create-portal), use a script with the [Azure CLI](/azure/virtual-machines/windows/quick-create-cli) or [Azure PowerShell](/azure/virtual-machines/windows/quick-create-powershell), or use an [Azure Resource Manager template](/azure/virtual-machines/windows/quick-create-template). You will want to search in the Azure Marketplace for "Microsoft Windows 11 on Arm" and choose "Windows 11 Professional - Arm64".
+          For help on how to create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure, see [Quickstart: Create a Windows on Arm virtual machine in the Azure portal](./create-arm-vm.md).
 
       - question: |
           Can I host a Windows 11 virtual machine using Hyper-V on a Windows 11 Arm64 device?
@@ -72,4 +83,10 @@ sections:
           Are there any trainings available for adding Arm support to a Windows app and running a VM for testing and debugging?
         answer: |
           Yes, see [Introduction to Windows on Arm - Port a .NET application to natively support Arm-based processors](/training/modules/port-windows-applications-to-natively-support-arm/).
+          
+      - question: |
+          Is CPU Sampling with the Windows Performance Recorder tool supported on ARM-based Hyper-V virtual machines?
+        answer: |
+          Yes, but the feature is currently only available in the [Windows Insider Preview](https://www.microsoft.com/windowsinsider/) Canary channel.  If you are willing to enroll your physical ARM device that is hosting your virtual machines in the Canary channel, CPU sampling will be supported in virtual machines; the feature is already supported on physical ARM devices. Sample usage: `wpr -start cpu`.
+      
 

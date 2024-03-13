@@ -56,36 +56,36 @@ Additionally, there is a **Dev Drive filter attach policy** setting, which offer
 
 There are a few ways to enable the Dev Drive feature and update Group Policy:
 
-- [Update Group Policy using Microsoft InTune](#use-microsoft-intune-to-update-group-policy-for-dev-drive)
+- [Update Group Policy using Microsoft Intune](#use-microsoft-intune-to-update-group-policy-for-dev-drive)
 - [Update Group Policy using Microsoft Configuration Manager](#use-microsoft-configuration-manager-to-update-group-policy-for-dev-drive)
 - [Update Group Policy using Windows 11 Local Group Policy Editor](#use-windows-11-local-group-policy-editor-to-update-group-policy-for-dev-drive)
 
-## Use Microsoft InTune to update Group Policy for Dev Drive
+## Use Microsoft Intune to update Group Policy for Dev Drive
 
-To update Group Policy and enable [Dev Drive](index.md) using [Microsoft InTune)](/mem/intune/):
+To update Group Policy and enable [Dev Drive](index.md) using [Microsoft Intune)](/mem/intune/):
 
-1. Open the InTune portal ([https://endpoint.microsoft.com](https://endpoint.microsoft.com)) and log in with your credentials.
+1. Open the Intune portal ([https://endpoint.microsoft.com](https://endpoint.microsoft.com)) and log in with your credentials.
 
 2. Create a profile:
     1. Devices > Windows > Configuration pofiles > Create profile
     1. Select Platform > Windows 10 and later
     1. Select Profile type > Settings catalog
 
-    ![Screenshot of Microsoft InTune admin center Windows configuration profiles](..\images\dev-drive-group-policy-intune1.png)
+    ![Screenshot of Microsoft Intune admin center Windows configuration profiles](..\images\dev-drive-group-policy-intune1.png)
 
 3. Set a custom profile name and description.
 
-    ![Screenshot of Microsoft InTune creating a configuration profile](..\images\dev-drive-group-policy-intune2.png)
+    ![Screenshot of Microsoft Intune creating a configuration profile](..\images\dev-drive-group-policy-intune2.png)
 
 4. Configure Dev Drive related settings:
     1. Search “Dev Drive” in settings picker or navigate to “Administrative Templates\System\Filesystem”
     1. Select Dev Drive related policies: **Enable Dev Drive** and **Let antivirus filter protect Dev Drives**, **Dev Drive filter attach policy** and **Filter list**
 
-    ![Screenshot of Microsoft InTune admin center Setting picker with Dev Drive results](..\images\dev-drive-group-policy-intune3.png)
+    ![Screenshot of Microsoft Intune admin center Setting picker with Dev Drive results](..\images\dev-drive-group-policy-intune3.png)
 
 5. Configure the Dev Drive policy settings, complete the remaining configuration of Scope tags and Assignments, then select **Create**
 
-    ![Screenshot of Microsoft InTune admin center final profile configuration step to Review and Create](..\images\dev-drive-group-policy-intune4.png)
+    ![Screenshot of Microsoft Intune admin center final profile configuration step to Review and Create](..\images\dev-drive-group-policy-intune4.png)
 
 ## Use Microsoft Configuration Manager to update Group Policy for Dev Drive
 

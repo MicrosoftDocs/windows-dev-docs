@@ -1,8 +1,14 @@
+The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md) features per market or per group of markets.
+
+For info to help make your app suitable for customers around the world, see [Guidelines for globalization](../../../apps/design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](../../../apps/design/globalizing/prepare-your-app-for-localization.md).
+
 ## Markets
 
 By default, we'll offer your app in all possible markets, including any future markets that we may add later, at its base price.
 
 If you prefer, you can define the specific markets in which you'd like to offer your app. To do so, select **Show options** in the **Markets** section on the **Pricing and availability** page. This will display the **Market selection** popup window, where you can choose the markets in which to offer your app.
+
+:::image type="content" source="images/msix-market-selection.png" lightbox="images/msix-market-selection.png" alt-text="A screenshot of the Pricing and availability section where you can provide details of the market, you want to make your app available to.":::
 
 By default, all markets are selected. You can unselect individual markets to exclude them, or you can click **Unselect all** and then add individual markets of your choice. You can search for a particular market in the search bar, and you can also change the dropdown from **All markets** to **Xbox markets** if you only want to view the markets in which you can sell Xbox products. Once you’ve finished, click **OK** to save your selections.
 

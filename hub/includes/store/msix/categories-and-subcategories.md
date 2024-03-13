@@ -46,7 +46,7 @@ To change the category or subcategory of an app that's already in the Store (exc
 
 
 > [!NOTE]
-> Some of the categories and subcategories used in the Store for customers on Windows 8.x and Windows Phone 8.x and earlier may appear differently than the categories listed above.
+> Some of the categories and subcategories used in the Store for customers on Windows 8.x may appear differently than the categories listed above.
 
 
 **Following are the available genres for Games category:**

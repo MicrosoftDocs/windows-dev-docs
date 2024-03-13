@@ -3,8 +3,8 @@ title: Arm64X PE Files
 description: Arm64X are a type of PE file in the Windows 11 SDK used for x64 compatibility on Arm64. Arm64X may be a good solution for developers of middleware or plugins, where code could get loaded into x64 or Arm64 processes.
 ms.date: 08/08/2022
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: marswe
 ms.author: marcs
 ---

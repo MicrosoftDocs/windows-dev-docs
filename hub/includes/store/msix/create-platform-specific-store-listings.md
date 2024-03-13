@@ -1,6 +1,6 @@
-If your previously-published app has packages that target different operating systems, you have the option to customize parts of your Store listing for customers on earlier OS versions (Windows 8.x or earlier and/or Windows Phone 8.x or earlier).
+If your previously-published app has packages that target different operating systems, you have the option to customize parts of your Store listing for customers on earlier OS versions (Windows 8.x or earlier).
 
-Customers on Windows 10 (including Xbox) will always see the default [Store listing](../../../apps/publish/publish-your-app/create-app-store-listing.md). You won't see the option to create platform-specific Store listings unless you have already published your app with packages that support one or more earlier OS versions.
+Customers on Windows 10 and 11 (including Xbox) will always see the default [Store listing](../../../apps/publish/publish-your-app/create-app-store-listing.md). You won't see the option to create platform-specific Store listings unless you have already published your app with packages that support one or more earlier OS versions.
 
 > [!IMPORTANT]
 > You can no longer upload new XAP packages built using the Windows Phone 8.x SDK(s). Apps that are already in Store with XAP packages will continue to work on Windows 10 Mobile devices. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
@@ -8,9 +8,10 @@ Platform-specific Store listings can be useful if you want to mention features t
 
 > [!NOTE]
 > Creating a platform-specific Store listing in one language does not create a platform-specific Store listing in other languages that your app supports. You'll need to create the platform-specific Store listing separately for each language. Also note that you cannot [import and export Store listing data](../../../apps/publish/publish-your-app/import-and-export-store-listings.md) for platform-specific listings.
+
 ## Creating a platform-specific Store listing
 
-Near the top of your **Store listing** page, if your previously-published app includes packages that support earlier OS versions ((Windows 8.x or earlier and/or Windows Phone 8.x or earlier), you can select **create a platform-specific app Store listing**. After selecting this option, you'll be prompted to choose from the targeted OS versions that your submission supports. Once you've already created platform-specific Store listings for all of the earlier OS versions your app targets, you won't be able to make another selection.
+Near the top of your **Store listing** page, if your previously-published app includes packages that support earlier OS versions (Windows 8.x or earlier ), you can select **create a platform-specific app Store listing**. After selecting this option, you'll be prompted to choose from the targeted OS versions that your submission supports. Once you've already created platform-specific Store listings for all of the earlier OS versions your app targets, you won't be able to make another selection.
 
 You can use your default (Windows 10 or Windows 11) Store listing as a starting point, which will bring over the applicable text and images you've entered for your default Store listing; you'll then be able to make any changes you'd like before saving. You can also start from a completely blank Store listing if you prefer.
 

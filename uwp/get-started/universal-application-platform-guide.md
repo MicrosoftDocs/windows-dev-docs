@@ -4,7 +4,6 @@ description: Learn about Universal Windows Platform (UWP) apps that can run acro
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 12/10/2021
 ms.topic: article
-ms.custom: contperf-fy21q1
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
 ---

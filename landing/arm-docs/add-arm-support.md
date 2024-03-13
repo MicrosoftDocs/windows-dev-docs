@@ -1,10 +1,10 @@
 ---
 title: Add support Arm devices to your Windows app
 description: Guidance for adding Arm64 support to your app. Optimize your x64 app to perform better on Windows devices powered by Arm processors so that CPU, GPU, and NPU performance is accelerated, less power is consumed to preserve battery life, and wi-fi and mobile data network connections are supported.
-ms.date: 10/23/2023
+ms.date: 12/19/2023
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: mattwojo
 ms.author: mattwoj
 ms.reviewer: marcs
@@ -34,7 +34,7 @@ Additionally, [Kernel drivers](/windows-hardware/drivers/kernel/) are required t
 
 If you are updating your app using an Arm-based device (native compiling - generating the code for the same platform on which you're running), you can use:
 
-- [Visual Studio 2022 v17.4](https://devblogs.microsoft.com/visualstudio/visual-studio-2022-17-4/#arm64) or later. This is the first GA release of Visual Studio that natively supports building and debugging Arm64 apps on Arm-based processors. Both Visual Studio 2022 17.4 and and Microsoft Visual C++ (MSVC) native Arm64 versions provide significantly better performance  compared with previous emulated versions.
+- [Visual Studio 2022 v17.4](https://devblogs.microsoft.com/visualstudio/visual-studio-2022-17-4/#arm64) or later. This is the first GA release of Visual Studio that natively supports building and debugging Arm64 apps on Arm-based processors. Both Visual Studio 2022 17.4 and Microsoft Visual C++ (MSVC) native Arm64 versions provide significantly better performance  compared with previous emulated versions.
 
 - (Optional) [LLVM (Clang) v12+](https://releases.llvm.org/12.0.0/tools/clang/docs/ReleaseNotes.html#windows-support) or later. LLVM 12 adds official binary release hosted on Windows on Arm64, including a Clang compiler, LLD Linker, and compiler-rt runtime libraries.
 
@@ -99,11 +99,13 @@ If you are looking for hardware to use for Continuous Integration (CI) and testi
 - [Surface Pro 9 5G](https://www.microsoft.com/en-us/d/surface-pro-9/93vkd8np4fvk)
 - [Lenovo x13s](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx/thinkpad--x13s-(13-inch-snapdragon)/len101t0019)
 
-If you are looking to set up virtual machines (VMs) running Windows on Arm to support CI and testing, consider:
+For help setting up a virtual machine (VM) running Windows on Arm to support CI and testing, see [Quickstart: Create a Windows on Arm virtual machine in the Azure portal](./create-arm-vm.md).
 
-- [Windows 11 on Arm Insider Preview (VHDX)](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64): With Windows 11 on Arm, you can create local Windows on Arm VMs using Hyper-V and the Windows Insider VHDX. *Arm64 VMs are only supported on devices that meet the prerequisites.
+- Read the Azure blog announcement of general availability for [Azure Virtual Machines with Ampere Altra Arm-based processors](https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/) with the ability to run Arm64-based versions of Windows 11 Pro and Enterprise.
 
-- [Azure Virtual Machines with Ampere Altra Arm-based processors](https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/):  Arm64-based versions of Windows 11 Pro an Enterprise are now available to run on these Azure VMs and have been designed to run tests for CI/CD in the cloud. To create a Windows on Arm VM, you will need to [login to the Azure Portal](https://ms.portal.azure.com/#create/Microsoft.VirtualMachine). Learn more in this video ["Ask the Expert: Create Apps with Ampere-based Azure VMs"](/shows/ask-the-expert/ask-the-expert-create-apps-with-ampere-based-azure-vms).
+- Learn more about the [Windows 11 on Arm Insider Preview (VHDX)](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64) for creating a local Windows on Arm VM using Hyper-V and the Windows Insider VHDX. *Arm64 VMs are only supported on devices that meet the prerequisites. Creating Arm64 VMs is not supported on x64 hardware - you will need to host the VM in the cloud, see the quickstart link above.
+
+-  Check out the video ["Ask the Expert: Create Apps with Ampere-based Azure VMs"](/shows/ask-the-expert/ask-the-expert-create-apps-with-ampere-based-azure-vms).
 
 ## Step 3 - Build and test your app on Arm devices
 
@@ -158,7 +160,7 @@ If you can’t build due to a dependency, whether internal, from a 3rd party, or
 
 [Kernel drivers](/windows-hardware/drivers/kernel/) are required to be built as native Arm64. There is no emulation present in the kernel. This primarily impacts virtualization scenarios. For apps that utilize device drivers requiring direct access to the internals of the OS or hardware running in kernel mode, rather than user mode, and that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
-Additionally, [drivers on Windows](/windows-hardware/drivers/gettingstarted/) are required to be built as Arm64 and can not be emulated.  For apps that rely on software drivers that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
+Additionally, [drivers on Windows](/windows-hardware/drivers/gettingstarted/) are required to be built as Arm64 and can't be emulated.  For apps that rely on software drivers that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
 <!-- ### When to rebuild as Arm64EC
 

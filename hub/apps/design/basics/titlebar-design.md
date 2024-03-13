@@ -76,7 +76,7 @@ If you create your own caption buttons for your app, follow these guidelines to 
   - Maximize icon: E922 ChromeMaximize
   - Restore icon: E923 ChromeRestore
   - Close icon: E8BB ChromeClose
-- The icons for the the maximize and restore buttons have rounded corners.
+- The icons for the maximize and restore buttons have rounded corners.
 - Caption buttons have full bleed backplates.
 - Caption buttons respond to _rest_, _on hover_, _on pressed_, _active_, and _inactive_ states.
 

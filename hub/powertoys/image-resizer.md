@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
 
 # Image Resizer utility
 
-Image Resizer is a Windows shell extension for bulk image-resizing. After installing PowerToys, right-click on one or more selected image files in File Explorer, and select **Resize pictures** from the menu.
+Image Resizer is a Windows shell extension for bulk image-resizing. After installing PowerToys, right-click on one or more selected image files in File Explorer, and select **Resize with ImageResizer** from the menu.
 
 ![Image Resizer Demo.](../images/powertoys-resize-images.gif)
 
@@ -63,3 +63,9 @@ You can specify a directory in the filename format to group resized images into 
 [Characters that are illegal in file names](/windows/win32/fileio/naming-a-file#file-and-directory-names) will be replaced by an underscore `_`.
 
 You can choose to retain the original _last modified_ date on the resized image or reset it at time of the resizing action.
+
+## See also
+
+- [Microsoft PowerToys overview](index.md)
+- [Installing PowerToys](install.md)
+- [General settings for PowerToys](general.md)

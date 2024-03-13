@@ -4,7 +4,7 @@ description: Microsoft PowerToys is a set of utilities for customizing Windows. 
 ms.date: 08/03/2023
 ms.topic: overview
 ms.localizationpriority: medium
-no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
+no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always On Top]
 adobe-target: true
 ---
 
@@ -24,14 +24,14 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 
 The currently available utilities include:
 
-### Always on Top
+### Always On Top
 
 :::row:::
     :::column:::
-        [![Always on Top screenshot.](../images/pt-always-on-top-menu.png)](always-on-top.md)
+        [![Always On Top screenshot.](../images/pt-always-on-top-menu.png)](always-on-top.md)
     :::column-end:::
     :::column span="2":::
-        [Always on Top](always-on-top.md) enables you to pin windows above other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
+        [Always On Top](always-on-top.md) enables you to pin windows above other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
     :::column-end:::
 :::row-end:::
 
@@ -50,13 +50,25 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![ColorPicker screenshot.](../images/pt-color-picker.png)](color-picker.md)
+        [![Color Picker screenshot.](../images/pt-color-picker.png)](color-picker.md)
     :::column-end:::
     :::column span="2":::
-        [ColorPicker](color-picker.md) is a system-wide color picking utility activated with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from anywhere on the screen, the picker automatically copies the color into your clipboard in a set format.
+        [Color Picker](color-picker.md) is a system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from anywhere on the screen, the picker automatically copies the color into your clipboard in a set format.
         Color Picker contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
             :::column-end:::
 :::row-end:::
+
+### Command Not Found
+
+:::row:::
+    :::column:::
+        [![Command Not Found screenshot.](../images/pt-cmd-not-found.png)](cmd-not-found.md)
+    :::column-end:::
+    :::column span="2":::
+        [Command Not Found](cmd-not-found.md) is a PowerShell 7 module that detects an error thrown by a command and suggests a relevant WinGet package to install, if available.
+            :::column-end:::
+:::row-end:::
+
 
 ### Crop And Lock
 
@@ -109,18 +121,18 @@ The currently available utilities include:
         [![File Locksmith screenshot.](../images/powertoys-file-locksmith.png)](file-locksmith.md)
     :::column-end:::
     :::column span="2":::
-        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **What's using this file?**.
+        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **Unlock with File Locksmith**.
     :::column-end:::
 :::row-end:::
 
-### Hosts file editor
+### Hosts File Editor
 
 :::row:::
     :::column:::
-        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+        [![Hosts File Editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
     :::column-end:::
     :::column span="2":::
-        [Hosts file editor](hosts-file-editor.md) is a convenient way to edit the 'Hosts' file that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks.
+        [Hosts File Editor](hosts-file-editor.md) is a convenient way to edit the 'Hosts' file that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks.
     :::column-end:::
 :::row-end:::
 
@@ -161,21 +173,21 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Mouse without Borders screenshot.](../images/powertoys-mouse-without-borders-after-connect-2.png)](mouse-without-borders.md)
+        [![Mouse without Borders screenshot.](../images/pt-mouse-without-borders.png)](mouse-without-borders.md)
     :::column-end:::
     :::column span="2":::
         [Mouse Without Borders](mouse-without-borders.md) enables you to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
     :::column-end:::
 :::row-end:::
 
-### Paste as Plain Text
+### Paste As Plain Text
 
 :::row:::
     :::column:::
-        [![Paste as Plain Text screenshot.](../images/pt-paste-as-plain-text.png)](paste-as-plain-text.md)
+        [![Paste As Plain Text screenshot.](../images/pt-paste-as-plain-text.png)](paste-as-plain-text.md)
     :::column-end:::
     :::column span="2":::
-        [Paste as Plain Text](paste-as-plain-text.md) allows you to paste text from your clipboard, excluding text-formatting, with a quick key shortcut (<kbd>Ctrl</kbd>+<kbd>⊞ Win</kbd>+<kbd>V</kbd>).
+        [Paste As Plain Text](paste-as-plain-text.md) allows you to paste text from your clipboard, excluding text-formatting, with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd>).
     :::column-end:::
 :::row-end:::
 
@@ -201,6 +213,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### PowerToys Run
+
+:::row:::
+    :::column:::
+        [![PowerToys Run screenshot.](../images/pt-run.png)](run.md)
+    :::column-end:::
+    :::column span="2":::
+        [PowerToys Run](run.md) can help you search and launch your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins.
+    :::column-end:::
+:::row-end:::
+
 ### Quick Accent
 
 :::row:::
@@ -220,17 +243,6 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [Registry Preview](registry-preview.md) is a utility to visualize and edit Windows Registry files.
-    :::column-end:::
-:::row-end:::
-
-### PowerToys Run
-
-:::row:::
-    :::column:::
-        [![PowerToys Run screenshot.](../images/pt-run.png)](run.md)
-    :::column-end:::
-    :::column span="2":::
-        [PowerToys Run](run.md) can help you search and launch your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins.
     :::column-end:::
 :::row-end:::
 
@@ -280,7 +292,7 @@ The currently available utilities include:
 
 ## Languages
 
-Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish.
+Currently, PowerToys is available in the following languages: Arabic (Saudi Arabia), Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish, Ukrainian.
 
 _Note that new elements of the app might sometimes not yet be translated in the first version release._
 

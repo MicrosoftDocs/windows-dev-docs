@@ -4,7 +4,7 @@ Learn how your app's packages are made available to your customers, and how to m
 
 Different operating systems can run different types of packages. If more than one of your packages can run on a customer's device, the Microsoft Store will provide the best available match.
 
-Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. Windows 10 devices can run all previous supported OS versions (per device family). Windows 10 desktop devices can run apps that were built for Windows 8.1 or Windows 8; Windows 10 mobile devices can run apps that were built for Windows Phone 8.1, Windows Phone 8, and even Windows Phone 7.x. However, customers on Windows 10 or Windows 11 will only get those packages if the app doesn't include UWP packages targeting the applicable device family.
+Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. Windows 10 devices can run all previous supported OS versions (per device family). Windows 10 desktop devices can run apps that were built for Windows 8.1 or Windows 8. However, customers on Windows 10 or Windows 11 will only get those packages if the app doesn't include UWP packages targeting the applicable device family.
 
 > [!IMPORTANT]
 > You can no longer upload new XAP packages built using the Windows Phone 8.x SDK(s). Apps that are already in Store with XAP packages will continue to work on Windows 10 Mobile devices. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
@@ -23,7 +23,7 @@ Note that any customers who already have the app will still be able to use it an
 After making the app unavailable, you'll still see it in Partner Center. If you decide to offer the app to customers again, you can click **Make app available** from the App overview page. After you confirm, the app will be available to new customers (unless restricted by the settings in your last submission) within a few hours.
 
 > [!NOTE]
-> If you want to keep your app available, but don't want to continuing offering it to new customers on a particular OS version, you can create a new submission and remove all packages for the OS version on which you want to prevent new acquisitions. For example, if you previously had packages for Windows Phone 8.1 and Windows 10, and you don't want to keep offering the app to new customers on Windows Phone 8.1, remove all of your Windows Phone 8.1 packages from the submission. After the update is published, no new customers on Windows Phone 8.1 will be able to acquire the app though customers who already have it can continue to use it). However, the app will still be available for new customers on Windows 10.
+> If you want to keep your app available, but don't want to continuing offering it to new customers on a particular OS version, you can create a new submission and remove all packages for the OS version on which you want to prevent new acquisitions.
 
 ## Removing packages for a previously-supported device family
 
@@ -35,11 +35,11 @@ Be aware that even if you remove all of the packages that support a certain devi
 
 ## Adding packages for Windows 10 to an existing app
 
-If you have an app in the Store that only included packages for Windows 8.x and/or Windows Phone 8.x, and you want to update your app for Windows 10, create a new submission and add your UWP .msixupload or .appxupload package(s) during the [Packages](../../../apps/publish/publish-your-app/upload-app-packages.md) step. After your app goes through the certification process, the UWP package will also be available for new acquisitions by customers on Windows 10.
+If you have an app in the Store that only included packages for Windows 8.x and you want to update your app for Windows 10 and 11, create a new submission and add your UWP .msixupload or .appxupload package(s) during the [Packages](../../../apps/publish/publish-your-app/upload-app-packages.md) step. After your app goes through the certification process, the UWP package will also be available for new acquisitions by customers on Windows 10 and 11.
 
 > [!NOTE]
-> Once a customer on Windows 10 gets your UWP package, you can't roll that customer back to using a package for any previous OS version.
+> Once a customer on Windows 10 or 11 gets your UWP package, you can't roll that customer back to using a package for any previous OS version.
 
-Note that the version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you have used. For more info, see [Package version numbering](../../../apps/publish/publish-your-app/package-version-numbering.md).
+Note that the version number of your Windows 10 and 11 packages must be higher than those for any Windows 8, Windows 8.1 packages you have used. For more info, see [Package version numbering](../../../apps/publish/publish-your-app/package-version-numbering.md).
 
 For more info about packaging UWP apps for the Store, see [Packaging apps](/windows/uwp/packaging/).

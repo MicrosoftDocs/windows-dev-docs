@@ -32,7 +32,7 @@ The only Windows 10 or Windows 11 device family that is not checked by default f
 
 If you're submitting a UWP app for Windows 10 IoT Core, you should not make changes to the default selections after uploading your packages; there is no separate checkbox for Windows 10 IoT. For more about publishing IoT Core UWP apps, see [Microsoft Store support for IoT Core UWP apps](/windows/iot-core/commercialize-your-device/installingandservicing).
 
-If your submission for a previously published app includes packages that can run on **Windows 8/8.1** and **Windows Phone 8.x and earlier**, those packages will be made available to customers on those OS versions. To stop offering your app to these customers, remove the corresponding packages from your submission.
+If your submission for a previously published app includes packages that can run on **Windows 8/8.1**, those packages will be made available to customers on those OS versions. To stop offering your app to these customers, remove the corresponding packages from your submission.
 
 > [!IMPORTANT]
 > To completely prevent a specific Windows 10 or Windows 11 device family from getting your submission, update the [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element in your manifest to target only the device family that you want to support (i.e., Windows.Mobile or Windows.Desktop), rather than leaving it as the Windows.Universal value (for the universal device family) that Microsoft Visual Studio includes in the manifest by default.

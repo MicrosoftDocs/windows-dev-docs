@@ -3,8 +3,8 @@ title: Troubleshooting Arm32 UWP apps
 description: Common issues with Arm32 apps when running on Arm, and how to fix them.
 ms.date: 06/25/2021
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
+ms.service: windows
+ms.subservice: arm
 author: mattwojo
 ms.author: mattwoj
 ms.reviewer: marcs

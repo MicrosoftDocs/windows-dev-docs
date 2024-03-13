@@ -2,7 +2,7 @@
 title: Developer Mode features and debugging
 description: Learn about Developer Mode features and installation errors in Windows.
 keywords: Get started Developer license Visual Studio, developer license enable device
-ms.date: 10/12/2022
+ms.date: 02/19/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -33,23 +33,6 @@ For device-specific setup instructions, see:
 
 If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) to learn which WSUS KBs to allow in order to unblock the Developer Mode package.
 
-### Sideload apps
-
-> [!IMPORTANT]
-> As of the latest Windows 10 update, this setting won't be visible (as sideloading is enabled by default). If you're on a previous version of Windows 10, your default settings will only permit you to run apps from the Microsoft Store and you'll need to enable Sideloading to install apps from sources other than Microsoft.
-
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store (or anyone else who needs to run apps from sources other than Microsoft). In this case, it's common for an organization to enforce a policy that disables the UWP apps setting. The organization also provides the required certificate and install location to sideload apps. For more info, see the Microsoft Learn articles [Sideload Windows apps](/mem/intune/apps/app-sideload-windows) and [Microsoft Intune fundamentals](/mem/intune/fundamentals/).
-
-Device family specific info:
-
-- **On the desktop device family**: You can install an app package (`.appx`) and any certificate(s) needed to run the app by running the Windows PowerShell script that's created with the package (`Add-AppDevPackage.ps1`). For more info, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps).
-- **On the mobile device family**: If the required certificate is already installed, you can tap the file to install any `.appx` sent to you by email (or on an SD card).
-
-Sideload apps is a more secure option than Developer Mode because you can't install apps on the device without a trusted certificate.
-
-> [!NOTE]
-> If you sideload apps, you should still only install apps from trusted sources. When you install a sideloaded app that hasn't been certified by the Microsoft Store, you're agreeing that you've obtained all the rights necessary to sideload the app, and you're solely responsible for any harm that may result from installing and running the app. See the **Windows &rarr; Microsoft Store** section of this [privacy statement](https://privacy.microsoft.com/en-US/privacystatement).
-
 ### SSH
 
 SSH services are enabled when you enable Device Discovery on your device. This is used when your device is a remote deployment target for MSIX packaged applications. The names of the services are *SSH Server Broker* and *SSH Server Proxy*.
@@ -75,7 +58,7 @@ You should enable Device Discovery only if you intend to make the device a deplo
 
 ### Optimizations for Windows Explorer, Remote Desktop, and PowerShell (desktop only)
 
-On the desktop device family, the **For developers** settings page has shortcuts to settings you can use to optimize your PC for development tasks. For each setting, you can select the checkbox and click **Apply** (or click the **Show settings** link to open the settings page for that option).
+On the desktop device family, the **For developers** settings page has shortcuts to settings you can use to optimize your PC for development tasks. The sliders let you enable or disable settings easily from this single location.
 
 ![Shortcuts for developers](./images/for-developers-shortcuts.jpg)
 
