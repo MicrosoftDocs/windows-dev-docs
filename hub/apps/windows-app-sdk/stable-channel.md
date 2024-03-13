@@ -31,6 +31,24 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 ## Version 1.5
 
+### Version 1.5.1 (1.5.240311000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
+
+- Fixed an issue where self-contained apps may fail to build due to not being able to copy "map.html".
+- Fixed an issue where `MapControl` would fail to initialize due to rejecting valid tokens. For more info, see GitHub [#9324](https://github.com/microsoft/microsoft-ui-xaml/issues/9324).
+- Fixed an issue where `MapControl` loaded with a blue background. For more info, see GitHub [#9377](https://github.com/microsoft/microsoft-ui-xaml/issues/9377).
+- Fixed an issue where clicking on the chevron of a `NavigationViewItem` did not correctly expand or collapse on a single click. This also caused menus to show as blank when clicking the chevron in `PaneDisplayMode="Top"` mode. For more info, see GitHub [#9423](https://github.com/microsoft/microsoft-ui-xaml/issues/9423) and [#9426](https://github.com/microsoft/microsoft-ui-xaml/issues/9426).
+- Fixed an issue where tapping on a `NavigationViewItem` with touch or pen would prevent the item from responding to any future input. For more info, see GitHub [#9429](https://github.com/microsoft/microsoft-ui-xaml/issues/9429).
+- Fixed a crash when clicking on an item in the `NavigationView.PaneFooter` area. For more info, see GitHub [#9396](https://github.com/microsoft/microsoft-ui-xaml/issues/9396).
+- Fixed an issue where icons in menus were sometimes showing in the wrong place. For more info, see GitHub [#9409](https://github.com/microsoft/microsoft-ui-xaml/issues/9409).
+- Fixed an issue where acrylic does not show on menus until switching away from the window and back. For more info, see GitHub [#9406](https://github.com/microsoft/microsoft-ui-xaml/issues/9406).
+- Fixed a crash which could occur during `TextBox`/`RichEditBox` initialization. For more info, see GitHub [#9216](https://github.com/microsoft/microsoft-ui-xaml/issues/9216).
+- Fixed some noisy exceptions which `NavigationView` threw and caught on destruction.
+- Fixed an issue where a "pinch to zoom" gesture would sometimes show up as a pan or tap due to an incorrect `PointerCaptureLost` message firing.
+
+### Version 1.5
+
 The following sections describe new and updated features and known issues for version 1.5.
 
 In an existing Windows App SDK 1.4 app, you can update your Nuget package to 1.5.240227000 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).

@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 This page provides download links to the *latest* releases of the [Windows App SDK](index.md) in the three release channels (stable, preview, and experimental). To get started quickly, download the latest x64 installer below. Or, for older releases, see [Older downloads for the Windows App SDK](./older-downloads.md).
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download the latest x64 stable installer (1.5.0)](https://aka.ms/windowsappsdk/1.5/latest/windowsappruntimeinstall-x64.exe)
+> [Download the latest x64 stable installer (1.5.1)](https://aka.ms/windowsappsdk/1.5/latest/windowsappruntimeinstall-x64.exe)
 
 For all the latest Windows App SDK downloads, refer to the tables and links below. To learn more, see [Windows App SDK release channels](release-channels.md) and the release notes provided below for each version.
 
@@ -22,6 +22,7 @@ For all the latest Windows App SDK downloads, refer to the tables and links belo
 
 | Version | Runtime downloads |
 |---|---|
+| [1.5.1 (1.5.240311000)](stable-channel.md#version-151-15240311000) <br/> 03/12/2024 <br/> [Release notes](stable-channel.md#version-151-15240311000) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.5.1) | [Installer (x64)](https://aka.ms/windowsappsdk/1.5/1.5.240311000/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.5/1.5.240311000/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.5/1.5.240311000/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.5/1.5.240311000/Microsoft.WindowsAppRuntime.Redist.1.5.zip) |
 | [1.5.0 (1.5.240227000)](stable-channel.md#version-15) <br/> 02/29/2024 <br/> [Release notes](stable-channel.md#version-15) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.5.0) | [Installer (x64)](https://aka.ms/windowsappsdk/1.5/1.5.240227000/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.5/1.5.240227000/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.5/1.5.240227000/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.5/1.5.240227000/Microsoft.WindowsAppRuntime.Redist.1.5.zip) |
 
 ## Preview release
