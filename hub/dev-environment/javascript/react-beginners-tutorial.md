@@ -52,7 +52,7 @@ There are many ways to create an application with React (see the [React Overview
 
 1. Use vite on Windows or WSL (see the [prerequisites above](#prerequisites)) to create a new project: `npm create vite@latest hello-world -- --template react`
 
-2. Change directories so that you're inside the folder for your new app: `cd hello-world`, install the dependencies: `npm install` and start your local development server: `npm run dev`
+2. Change directories so that you're inside the folder for your new app: `cd hello-world`, install the dependencies: `npm install` and then start your local development server: `npm run dev`
 
     Your new React Hello World app will compile and open your default web browser to show that it's running on `http://localhost:5173`.
 
