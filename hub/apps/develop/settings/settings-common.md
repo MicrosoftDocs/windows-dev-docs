@@ -113,6 +113,240 @@ The value of the *compatFlags* field of the backup JSON file is a combination of
 | 0x00004000 |  Generic hardware incompatibility. |
 | 0x00008000 | App is incompatible up to certain version. |
 
+## AppList
+
+As part of backup, when the user has enabled backup of the apps list, the following data is collected and placed in a db file for uploading to the Cloud. The path to this JSON is:
+
+`%LocalAppData%\ConnectedDevicesPlatform\<Any folder starting with “AAD.”>\Activity.db`
+
+> [!NOTE]
+> This data is ephemeral and is removed locally once it has been uploaded to the cloud. 
+
+The following code segment describes the format of the file and provides descriptions for each field.
+
+```json
+{
+    "appId": Unique identifier for App , 
+    "installSource": Description of type of installer for the app. See below for supported values, 
+    "appName": String containing the friendly name of the app from ARP [TBD - What is ARP?], 
+    "publisher": String containing the publisher name of the app from ARP [TBD - What is ARP?], 
+    "lastLaunchTime": Calculated value. The last time the app was launched. , 
+    "appVersion": Version of the app from ARP, 
+    "appLanguage": Language list in ARP, 
+    "appArch": Architecture specified in ARP, 
+    "reinstallId": Reinstall ID specified in ARP, 
+    "productUrl": Product URL Specified in ARP, 
+    "isPinned": A boolean indicating if this app was pinned to the start menu , 
+    "wingetID": Identifier to indicate if this app can be installed through winget, 
+    "wingetSource": Specifies if this app was installed  originally from winget community repository, or from the web. See below for supported values. 
+} 
+lightIconInfo=>{ 
+    "Data": { 
+        "appIconAssetId": Unique identifier for light icon, 
+        "isPlated": false 
+    }
+} 
+
+darkIconInfo=>{ 
+    "Data": { 
+        "appIconAssetId": Unique identifier for light icon, 
+        "isPlated": false 
+    } 
+} 
+
+```
+
+Supported values for the *installSource* field.
+
+| Value | Description |
+|-------|-------------|
+| "Store MSIX" | An MSIX from the Microsoft Store |
+| "Sideloaded MSIX” | A sideloaded MSIX |
+| "Edge PWA MSIX” | A PWA MSIX |
+| "Unknown MSIX” | Not one of the other MSIX values. |
+| “Store Win32” | A non-UWP app from the Microsoft Store  |
+| "Android" | An Android app |
+| "External MSI" | An external MSI. |
+
+Supported values for the *wingetSource* field.
+| Value | Description | 
+|-------|-------------|
+| "External" | From the web, but winget has an ID.   |
+| "Winget" | From the winget catalog. |
+| "Spark" | Spark app. |
+| "MSStore" | Microsoft Store. |
+| "NoReliableInfo" | Don’t have info from winget APIs. | 
+
+### Type: Windows.Data.Apps.IconInfo structure
+
+#### IconInfo values
+
+| Name | Type | Description |
+|------|-------|---------|
+| appIconAssetId | wstring   | The ID representing an icon. |
+| isPlated | bool   | Plated or not. |
+
+### Type: Windows.Data.Apps.AppMetaData structure
+
+#### AppMetaData values
+
+| Name | Type | Description |
+|------|-------|---------|
+| appId | wstring   | PackageFamilyName (packaged) or ProductCode (unpackaged) |
+| installSource | bool   | Description of type of installer for the app. See above for supported values |
+| lightIconInfo | **IconInfo**  | Information about the light icon. |
+| darkIconInfo | **IconInfo**  | Information about the light icon. |
+| appName | wstring  | App display name. |
+| publisher | wstring  | Publishers name of the app from ARP. |
+| lastLaunchTime | uint64  | Calculated value. The last time the app was launched. |
+| appVersion | wstring  | Version of the app from ARP. |
+| appLanguage | wstring  | Language list in ARP. |
+| appArch | wstring  | Architecture specified in ARP. |
+| reinstallId | wstring  | Reinstall ID specified in ARP. |
+| productUrl | wstring  | Product URL Specified in ARP. |
+| productUrl | wstring  | Product URL Specified in ARP. |
+| isPinned | bool | Boolean indicating if this app was pinned to the start menu. |
+| wingetID | wstring | Identifier to indicate if this app can be installed through winget. |
+| wingetSource | wstring | Specifies if this app was installed originally from winget community repository, or from the web. See above for supported values. |
+
+
+### Type: Windows.Data.Apps.ShortcutInfo structure
+struct  
+
+#### ShortcutInfo values
+
+| Name | Type | Description |
+|------|-------|---------|
+| targetPath | wstring   | Link to the executable that launching the tile will shell execute.  |
+| shortcutArgs | wstring   | Arguments provided on launch.  |
+
+### Type: Windows.Data.Apps.AppLevelTileInfo structure
+
+#### AppLevelTileInfo values
+
+| Name | Type | Description |
+|------|-------|---------|
+| tileId | wstring   | UnifiedTileIdentifier for tile  |
+| lightIconInfo | **IconInfo**   | UnifiedTileIdentifier for light tile  |
+| darkIconInfo | **IconInfo**   | UnifiedTileIdentifier for dark tile  |
+| displayName | wstring   | String displayed on tile   |
+| sortName | wstring   | String value used for sorting in search    |
+| packageId | wstring   | PackageFamilyName (packaged), ProductCode (unpackaged), empty for unmapped products (appId is specified in **AppMetaData**)    |
+| shortcut | **ShortcutInfo**   | Shortcut information.  |
+| suiteName | wstring   | String name for a collection of apps.    |
+
+### Type: Windows.Data.Apps.FileInfo structure
+
+#### FileInfo values
+
+| Name | Type | Description |
+|------|-------|---------|
+| name | wstring   | File name. Optional. |
+| path | wstring   | File path. Optional. |
+| osComponent | bool   | Boolean stating if the file is an OS file.  TBD - Type is wstring, but description says bool |
+| size | uin32   | The file size as a 32-bit value. |
+| magic | wstring   | The PE header's magic number. Optional. TBD - What is PE?|
+| peHeaderHash | wstring   | Hash of the file's PE header. Optional. |
+| sizeOfImage | wstring   | PE header's SizeOfImage value. Optional. TBD - size, but type is wstring |
+| peChecksum | wstring   | PE header's CheckSum value. Optional. |
+| linkDate | wstring   | PE header's TimeDateStamp value. Optional. |
+| linkerVersion | wstring   | PE header's MarjorImageVersion and MinorImageVersion. Optional. |
+| binFileVersion | wstring   | File version obtained from GetFileVersionInfo. Optional. |
+| binProductVersion | wstring   | Product version obtained from GetFileVersionInfo. Optional. |
+| binaryType | wstring   | PType of binary (e.g. PE64_AMD64). Optional. |
+| created | wstring   | File creation time obtained from file system. Optional. |
+| modified | wstring   | File modification time obtained from file system. Optional. |
+| lastAccessed | wstring   | File access time obtained from file system. Optional. |
+| verLanguage | wstring   | Language obtained from **GetFileVersionInfo**. Optional.|
+| id | wstring   | Unique identifier obtained from hashing file contents. Optional.|
+| switchBackContext | wstring   | Value for OS runtime compatibility fixes. Optional.|
+| sigDisplayName | wstring   | Display name obtained from the file signature. Optional.|
+| sigPublisherName | wstring   | Publisher name obtained from the file signature. Optional.|
+| sigMoreInfoURL | wstring   | URL obtained from the file signature. Optional.|
+| fileVersion | wstring   | File version obtained from **GetFileVersionInfo**. Optional.|
+| companyName | wstring   | Company name obtained from **GetFileVersionInfo**. Optional.|
+| fileDescription | wstring   | File description obtained from **GetFileVersionInfo**. Optional.|
+| internalName | wstring   | Internal name obtained from **GetFileVersionInfo**. Optional.|
+| legalCopyright | wstring   | Copyright information obtained from **GetFileVersionInfo**. Optional.|
+| originalFileName | wstring   | Original filename obtained from **GetFileVersionInfo**. Optional.|
+| productName | wstring   | Product name obtained from **GetFileVersionInfo**. Optional.|
+| productVersion | wstring   | Product version obtained from **GetFileVersionInfo**. Optional.|
+| peImageType | wstring   | Image type obtained from PE header. Optional.|
+| peSubsystem | wstring   | Subsystem obtained from PE header. Optional.|
+| runLevel | wstring   | Executable's runlevel obtained from app manifest. Optional.|
+| uiAccess | wstring   | UI access obtained from app manifest. Optional.|
+| crcChecksum | wstring   | File's CRC checksum. Optional.|
+| clrVersion | wstring   | CLR version obtained from app manifest. Optional.|
+| boeProgramId | wstring   | Unique ID describing the application. Optional.|
+| boeProgramName | wstring   |Same as "productName", if it exists. Otherwise same as "name". Optional.|
+| boeProgramPublisher | wstring   |Same as "companyName", if it exists. Otherwise same as "fileDescription", if it exists. Optional.|
+| boeProgramVersion | wstring   | USame as "productVersion", if it exists. Otherwise same as "fileVersion", if it exists. Otherwise same as "binProductVersion", if it exists. Otherwise same as "binFileVersion", if it exists . Optional.|
+| boeProgramLanguage | wstring   | Same as "verLanguage", if it exists. Optional.|
+| fileSize | uint64   | File's size as a 64-bit number. Optional.|
+| peCharacteristics | wstring   | Image characteristics obtained from PE header. Optional.|
+| sha256 | wstring   | SHA256 hash of file. Optional.|
+| aumid | wstring   | Application user model ID. Optional. For more information, see [Find the Application User Model ID of an installed app](/windows/configuration/store/find-aumid?tabs=ps)|
+
+### Type: Windows.Data.Apps.DeviceMetadata structure
+
+#### DeviceMetadata values
+
+| Name | Type | Description |
+|------|-------|---------|
+| userIntent | uint32   | Present when the user identified as a developer during the Out of Box Experience (OOBE) An OR'd combination of values specifying user intent. TBD - Only two values listed in the doc. Probably need to list all of the values? |
+| predictedUserIntent | uint32   | Windows sets flag to indicate that the user had one or more apps that are a signal of a developer. |
+| devModeEnabled | bool   | Whether the user has specified DevMode. |
+
+Supported *userIntent* values.
+
+| Value | Description |
+|-------|-------------|
+| 0x00000001 | INTENT_BUSINESS |
+| 0x00000001 | INTENT_GAMING |
+
+
+
+## AppList - Tiles
+
+As part of backup, when the user has enabled backup of the apps list, the following data about tiles is collected and placed in a db file for uploading to the Cloud. The path to this JSON is:
+
+`%LocalAppData%\ConnectedDevicesPlatform\<Any folder starting with “AAD.”>\Activity.db`
+
+> [!NOTE]
+> This data is ephemeral and is removed locally once it has been uploaded to the cloud. 
+
+The following code segment describes the format of the file and provides descriptions for each field.
+
+```json
+{ 
+    "tileId": Unique tile identifier, 
+    "displayName": String displayed on tile, 
+    "sortName": String value used for sorting in search, 
+    "packageId": String containing the package name the executable is associated with, 
+    "shortcut": { 
+        "Data": { 
+            "targetPath": String containing the path to the executable that launching the tile will shell execute, 
+            "shortcutArgs": A string containing the arguments provided on launch   
+           } 
+    }, 
+    "suiteName": "" 
+} 
+
+lightIconInfo=>{ 
+    "Data": { 
+        "appIconAssetId": Unique identifier for light icon, 
+        "isPlated": TBD 
+    } 
+} 
+
+darkIconInfo=>{ 
+    "Data": { 
+        "appIconAssetId": Unique identifier for dark icon, 
+        "isPlated": TBD 
+    } 
+} 
+
+```
 
 ## Autoplay
 
@@ -1019,6 +1253,8 @@ Specifies the set of apps pinned to the taskbar from another device.
 | FavoritesMigration | REG_BLOB | A binary blob. | This is an opaque binary blob copied from the following location on the backed up.  |
 | Favorites | REG_SZ | 0  1 | The format of this key is undocumented. |
 
+
+
 ## Secondary accounts
 
 Provides information about Microsoft accounts (MSA) and work or school accounts added to the device to sign in to apps or online services, in addition to the account used to log on to the device. On Windows 11, backup and restore of this setting is supported. On Windows 10, backup is supported but restore is not.
@@ -1060,6 +1296,8 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 The user's custom spelling dictionary is stored in a file in the following file path:
 
 `%userprofile%\AppData\Roaming\Microsoft\Spelling\neutral\default.dic`
+
+
 
 ## USB
 
