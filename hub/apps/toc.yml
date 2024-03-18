@@ -363,6 +363,8 @@ items:
             href: how-tos/chatgpt-openai-winui3.md
           - name: Add DALL-E image generation to your WinUI 3 desktop app
             href: how-tos/dall-e-winui3.md
+          - name: Use Github Copilot to build WinUI 3 apps in Visual Studio
+            href: how-tos/github-copilot-winui-vs.md
           - name: Target multiple platforms with WinUI 3
             href: how-tos/uno-multiplatform.md
           - name: About migrating from UWP to Windows App SDK
