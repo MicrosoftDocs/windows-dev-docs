@@ -14,7 +14,7 @@ content-type: how-to
 
 # Use GitHub Copilot to create WinUI 3 / Windows App SDK apps in Visual Studio
 
-In this how-to, we'll demonstrate how [GitHub Copilot](https://github.com/features/copilot) can be used to build WinUI 3 / Windows App SDK desktop apps in Visual Studio. This guide builds upon *[What is the GitHub Copilot extension for Visual Studio?](https://learn.microsoft.com/visualstudio/ide/visual-studio-github-copilot-extension)*, offering tailored tips and best practices for Copilot-assisted WinUI 3 app development.
+In this how-to, we'll demonstrate how [GitHub Copilot](https://github.com/features/copilot) can be used to build WinUI 3 / Windows App SDK desktop apps in Visual Studio. This guide builds upon *[What is the GitHub Copilot extension for Visual Studio?](/visualstudio/ide/visual-studio-github-copilot-extension)*, offering tailored tips and best practices for Copilot-assisted WinUI 3 app development.
 
 :::image type="content" source="images/github-copilot-winui-vs/github-copilot-extension-example.gif" alt-text="Animated screenshot that shows the code completion capabilities of the GitHub Copilot extension.":::
 
@@ -40,37 +40,37 @@ The GitHub Copilot extension provides real-time code suggestions and completions
 
 <!-- todo: animated gifs as an optimization -->
 
-:::image type="content" source="images/github-copilot-winui-vs/1-basic-autocomplete.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension.":::
+:::image type="content" source="images/github-copilot-winui-vs/1-basic-autocomplete.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension (basic autocomplete).":::
 
 ### Generate multiple autocomplete suggestions
 
 Select `Edit` -> `Copilot suggestions` -> `Open Copilot`. A window will open with a list of suggestions based on the latest cursor position:
 
-:::image type="content" source="images/github-copilot-winui-vs/2-generate-multiple-autocomplete-suggestions.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension.":::
+:::image type="content" source="images/github-copilot-winui-vs/2-generate-multiple-autocomplete-suggestions.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension (multiple autocomplete).":::
 
 ### Prompt Copilot with plain-language comments
 
 Although Copilot is used primarily for code completion, you can also use natural language comments to guide Copilot in generating specific code snippets. For example, you can use comments to request a specific feature or functionality:
 
-:::image type="content" source="images/github-copilot-winui-vs/3-prompt-copilot-with-inline-comment.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension.":::
+:::image type="content" source="images/github-copilot-winui-vs/3-prompt-copilot-with-inline-comment.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension (prompting).":::
 
 ### Use temporary comments to add code from other files to Copilot's context
 
 If you're working on a code-behind file and want Copilot to incorporate context from the associated XAML file, you can use temporary comments to include this additional code within Copilot's context. Here's an example of how you can specify the XAML code first, and then have Copilot generate the corresponding C# code:
 
-:::image type="content" source="images/github-copilot-winui-vs/4-add-context-temporary-comments.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension.":::
+:::image type="content" source="images/github-copilot-winui-vs/4-add-context-temporary-comments.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension (context expansion).":::
 
 ### Ask Copilot to explain how something works with inline comments
 
 You can use inline comments to ask Copilot to explain how a specific piece of code works. This is similar to using the Copilot Chat Extension, except your prompt is typed directly into the code editor:
 
-:::image type="content" source="images/github-copilot-winui-vs/5-ask-copilot-inline-explanation.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension.":::
+:::image type="content" source="images/github-copilot-winui-vs/5-ask-copilot-inline-explanation.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension (explain).":::
 
 ### Use Copilot to test code standards
 
 You can use Copilot to generate code that adheres to your project's coding standards, and to test any given snippet's adherence to those standards. Here's an example of how you can use inline comments to specify two conventions, and then have Copilot validate the code snippet against these conventions:
 
-:::image type="content" source="images/github-copilot-winui-vs/6-enforce-code-standards.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension.":::
+:::image type="content" source="images/github-copilot-winui-vs/6-enforce-code-standards.png" alt-text="Screenshot that shows the code completion capabilities of the GitHub Copilot extension (standards).":::
 
 ## Recap
 
