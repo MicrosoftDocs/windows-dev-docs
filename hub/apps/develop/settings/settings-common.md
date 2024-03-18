@@ -162,6 +162,7 @@ Supported values for the *installSource* field.
 | "External MSI" | An external MSI. |
 
 Supported values for the *wingetSource* field.
+
 | Value | Description | 
 |-------|-------------|
 | "External" | From the web, but winget has an ID.   |
