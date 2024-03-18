@@ -115,67 +115,6 @@ The value of the *compatFlags* field of the backup JSON file is a combination of
 
 ## AppList
 
-As part of backup, when the user has enabled backup of the apps list, the following data is collected and placed in a db file for uploading to the Cloud. The path to this JSON is:
-
-`%LocalAppData%\ConnectedDevicesPlatform\<Any folder starting with “AAD.”>\Activity.db`
-
-> [!NOTE]
-> This data is ephemeral and is removed locally once it has been uploaded to the cloud. 
-
-The following code segment describes the format of the file and provides descriptions for each field.
-
-```json
-{
-    "appId": Unique identifier for App , 
-    "installSource": Description of type of installer for the app. See below for supported values, 
-    "appName": String containing the friendly name of the app from ARP [TBD - What is ARP?], 
-    "publisher": String containing the publisher name of the app from ARP [TBD - What is ARP?], 
-    "lastLaunchTime": Calculated value. The last time the app was launched. , 
-    "appVersion": Version of the app from ARP, 
-    "appLanguage": Language list in ARP, 
-    "appArch": Architecture specified in ARP, 
-    "reinstallId": Reinstall ID specified in ARP, 
-    "productUrl": Product URL Specified in ARP, 
-    "isPinned": A boolean indicating if this app was pinned to the start menu , 
-    "wingetID": Identifier to indicate if this app can be installed through winget, 
-    "wingetSource": Specifies if this app was installed  originally from winget community repository, or from the web. See below for supported values. 
-} 
-lightIconInfo=>{ 
-    "Data": { 
-        "appIconAssetId": Unique identifier for light icon, 
-        "isPlated": false 
-    }
-} 
-
-darkIconInfo=>{ 
-    "Data": { 
-        "appIconAssetId": Unique identifier for light icon, 
-        "isPlated": false 
-    } 
-} 
-
-```
-
-Supported values for the *installSource* field.
-
-| Value | Description |
-|-------|-------------|
-| "Store MSIX" | An MSIX from the Microsoft Store |
-| "Sideloaded MSIX” | A sideloaded MSIX |
-| "Edge PWA MSIX” | A PWA MSIX |
-| "Unknown MSIX” | Not one of the other MSIX values. |
-| “Store Win32” | A non-UWP app from the Microsoft Store  |
-| "Android" | An Android app |
-| "External MSI" | An external MSI. |
-
-Supported values for the *wingetSource* field.
-| Value | Description | 
-|-------|-------------|
-| "External" | From the web, but winget has an ID.   |
-| "Winget" | From the winget catalog. |
-| "Spark" | Spark app. |
-| "MSStore" | Microsoft Store. |
-| "NoReliableInfo" | Don’t have info from winget APIs. | 
 
 ### Type: Windows.Data.Apps.IconInfo structure
 
@@ -207,11 +146,32 @@ Supported values for the *wingetSource* field.
 | productUrl | wstring  | Product URL Specified in ARP. |
 | isPinned | bool | Boolean indicating if this app was pinned to the start menu. |
 | wingetID | wstring | Identifier to indicate if this app can be installed through winget. |
-| wingetSource | wstring | Specifies if this app was installed originally from winget community repository, or from the web. See above for supported values. |
+| wingetSource | wstring | Specifies if this app was installed originally from winget community repository, or from the web. See below for supported values. |
 
+
+Supported values for the *installSource* field.
+
+| Value | Description |
+|-------|-------------|
+| "Store MSIX" | An MSIX from the Microsoft Store |
+| "Sideloaded MSIX” | A sideloaded MSIX |
+| "Edge PWA MSIX” | A PWA MSIX |
+| "Unknown MSIX” | Not one of the other MSIX values. |
+| “Store Win32” | A non-UWP app from the Microsoft Store  |
+| "Android" | An Android app |
+| "External MSI" | An external MSI. |
+
+Supported values for the *wingetSource* field.
+| Value | Description | 
+|-------|-------------|
+| "External" | From the web, but winget has an ID.   |
+| "Winget" | From the winget catalog. |
+| "Spark" | Spark app. |
+| "MSStore" | Microsoft Store. |
+| "NoReliableInfo" | Don’t have info from winget APIs. | 
 
 ### Type: Windows.Data.Apps.ShortcutInfo structure
-struct  
+ 
 
 #### ShortcutInfo values
 
