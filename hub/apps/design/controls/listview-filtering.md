@@ -3,7 +3,7 @@ description: Filter the items in your collection through user input.
 title: Filtering collections
 label: Filtering collections
 template: detail.hbs
-ms.date: 12/3/2019
+ms.date: 3/20/2024
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
@@ -76,14 +76,17 @@ The code below performs the filtering operation through the following steps, sho
  ```csharp
 using System.Linq;
 
+IList<Person> People;
+ObservableCollection<Person> PeopleFiltered;
+
 public MainPage()
 {
     // Define People collection to hold all Person objects. 
     // Populate collection - i.e. add Person objects (not shown)
-    IList<Person> People = new List<Person>();
+    People = new List<Person>();
 
     // Create PeopleFiltered collection and copy data from original People collection
-    ObservableCollection<Person> PeopleFiltered = new ObservableCollection<Person>(People);
+    PeopleFiltered = new ObservableCollection<Person>(People);
 
     // Set the ListView's ItemsSource property to the PeopleFiltered collection
     FilteredListView.ItemsSource = PeopleFiltered;
@@ -99,7 +102,7 @@ private void FilteredLV_LNameChanged(object sender, TextChangedEventArgs e)
     
     /* Make sure all text is case-insensitive when comparing, and make sure 
     the filtered items are in a List object */
-    TempFiltered = people.Where(contact => contact.LastName.Contains(FilterByLName.Text, StringComparison.InvariantCultureIgnoreCase)).ToList();
+    TempFiltered = People.Where(contact => contact.LastName.Contains(FilterByLName.Text, StringComparison.InvariantCultureIgnoreCase)).ToList();
     
     /* Go through TempFiltered and compare it with the current PeopleFiltered collection,
     adding and subtracting items as necessary: */
