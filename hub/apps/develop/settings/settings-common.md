@@ -16,7 +16,7 @@ Settings status is accessed in one of two ways:
 1. Via the Windows registry: For settings below that include registry details, please use that information to access the settings.
 1. Via the Cloud Data Store Reader tool. These settings must be extracted from a data store to be readable. If the setting below does not list registry details, then the settings must be extracted using the Cloud Data Store Reader tool. For information on how to use this tool, see [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md).
 
-## App Compatability
+## App Compatibility
 
 The app compatibility setting is a JSON file that describes compatibility information for apps installed on the device. The path to this JSON is:
 
@@ -115,6 +115,51 @@ The value of the *compatFlags* field of the backup JSON file is a combination of
 
 ## AppList
 
+### Type: Windows.Data.Apps.AppMetaData structure
+
+#### AppMetaData values
+
+| Name | Type | Description |
+|------|-------|---------|
+| appId | wstring   | PackageFamilyName (packaged) or ProductCode (unpackaged). |
+| installSource | wstring | Description of type of installer for the app. See *installSource* for supported values. |
+| lightIconInfo | **IconInfo**  | Information about the light icon. |
+| darkIconInfo | **IconInfo**  | Information about the light icon. |
+| appName | wstring  | App display name. |
+| publisher | wstring  | Publishers name of the app from Add Remove Programs. |
+| lastLaunchTime | uint64  | This is a calculated value that represents the last time the app was launched. |
+| appVersion | wstring  | Version of the app from  Add Remove Programs. |
+| appLanguage | wstring  | Language list in  Add Remove Programs. |
+| appArch | wstring  | Architecture specified in  Add Remove Programs. |
+| reinstallId | wstring  | Reinstall ID specified in  Add Remove Programs. |
+| productUrl | wstring  | Product URL Specified in  Add Remove Programs. |
+| isPinned | bool | Boolean indicating if this app was pinned to the start menu. |
+| wingetID | wstring | Identifier to indicate if this app can be installed through winget, and the winget ID. |
+| wingetSource | wstring | Specifies where the app was sourced from through the Winget APIs. See *wingetSource* for supported values. |
+
+
+Supported values for the *installSource* field.
+
+| Value | Description |
+|-------|-------------|
+| "Store MSIX" | An MSIX from the Microsoft Store. |
+| "Sideloaded MSIX" | A sideloaded MSIX. |
+| "Edge PWA MSIX" | A PWA MSIX. |
+| "Unknown MSIX" | Not one of the other MSIX values. |
+| "Store Win32" | A non-UWP app from the Microsoft Store.  |
+| "Android" | An Android app. |
+| "External MSI" | An external MSI. |
+
+Supported values for the *wingetSource* field.
+
+| Value | Description | 
+|-------|-------------|
+| "External" | Installed from the web, but winget has an ID a match in the winget catalog. |
+| "Winget" | Installed from the winget catalog. |
+| "Spark" | Microsoft Store non-UWP app. |
+| "MSStore" | Microsoft Store MSIX app. |
+| "NoReliableInfo" | No data provided for source. | 
+
 
 ### Type: Windows.Data.Apps.IconInfo structure
 
@@ -124,62 +169,6 @@ The value of the *compatFlags* field of the backup JSON file is a combination of
 |------|-------|---------|
 | appIconAssetId | wstring   | The ID representing an icon. |
 | isPlated | bool   | Plated or not. |
-
-### Type: Windows.Data.Apps.AppMetaData structure
-
-#### AppMetaData values
-
-| Name | Type | Description |
-|------|-------|---------|
-| appId | wstring   | PackageFamilyName (packaged) or ProductCode (unpackaged) |
-| installSource | bool   | Description of type of installer for the app. See above for supported values |
-| lightIconInfo | **IconInfo**  | Information about the light icon. |
-| darkIconInfo | **IconInfo**  | Information about the light icon. |
-| appName | wstring  | App display name. |
-| publisher | wstring  | Publishers name of the app from ARP. |
-| lastLaunchTime | uint64  | Calculated value. The last time the app was launched. |
-| appVersion | wstring  | Version of the app from ARP. |
-| appLanguage | wstring  | Language list in ARP. |
-| appArch | wstring  | Architecture specified in ARP. |
-| reinstallId | wstring  | Reinstall ID specified in ARP. |
-| productUrl | wstring  | Product URL Specified in ARP. |
-| productUrl | wstring  | Product URL Specified in ARP. |
-| isPinned | bool | Boolean indicating if this app was pinned to the start menu. |
-| wingetID | wstring | Identifier to indicate if this app can be installed through winget. |
-| wingetSource | wstring | Specifies if this app was installed originally from winget community repository, or from the web. See below for supported values. |
-
-
-Supported values for the *installSource* field.
-
-| Value | Description |
-|-------|-------------|
-| "Store MSIX" | An MSIX from the Microsoft Store |
-| "Sideloaded MSIX” | A sideloaded MSIX |
-| "Edge PWA MSIX” | A PWA MSIX |
-| "Unknown MSIX” | Not one of the other MSIX values. |
-| “Store Win32” | A non-UWP app from the Microsoft Store  |
-| "Android" | An Android app |
-| "External MSI" | An external MSI. |
-
-Supported values for the *wingetSource* field.
-
-| Value | Description | 
-|-------|-------------|
-| "External" | From the web, but winget has an ID.   |
-| "Winget" | From the winget catalog. |
-| "Spark" | Spark app. |
-| "MSStore" | Microsoft Store. |
-| "NoReliableInfo" | Don’t have info from winget APIs. | 
-
-### Type: Windows.Data.Apps.ShortcutInfo structure
- 
-
-#### ShortcutInfo values
-
-| Name | Type | Description |
-|------|-------|---------|
-| targetPath | wstring   | Link to the executable that launching the tile will shell execute.  |
-| shortcutArgs | wstring   | Arguments provided on launch.  |
 
 ### Type: Windows.Data.Apps.AppLevelTileInfo structure
 
@@ -196,19 +185,30 @@ Supported values for the *wingetSource* field.
 | shortcut | **ShortcutInfo**   | Shortcut information.  |
 | suiteName | wstring   | String name for a collection of apps.    |
 
+
+### Type: Windows.Data.Apps.ShortcutInfo structure
+ 
+#### ShortcutInfo values
+
+| Name | Type | Description |
+|------|-------|---------|
+| targetPath | wstring   | Link to the executable that launching the tile will shell execute.  |
+| shortcutArgs | wstring   | Arguments provided on launch.  |
+
 ### Type: Windows.Data.Apps.FileInfo structure
 
 #### FileInfo values
+FileInfo values are populated from the *App Compatibility* JSON above. All FileInfo values are provided as WSTRINGs, though some of the values in the JSON are different.
 
 | Name | Type | Description |
 |------|-------|---------|
 | name | wstring   | File name. Optional. |
 | path | wstring   | File path. Optional. |
-| osComponent | bool   | Boolean stating if the file is an OS file.  TBD - Type is wstring, but description says bool |
-| size | uin32   | The file size as a 32-bit value. |
-| magic | wstring   | The PE header's magic number. Optional. TBD - What is PE?|
+| osComponent | wstring   | Boolean stating if the file is an OS file. |
+| size | wstring   | The file size as a 32-bit value. |
+| magic | wstring   | The PE header's magic number. Optional. For information on the PE header, see https://learn.microsoft.com/en-us/windows/win32/debug/pe-format. |
 | peHeaderHash | wstring   | Hash of the file's PE header. Optional. |
-| sizeOfImage | wstring   | PE header's SizeOfImage value. Optional. TBD - size, but type is wstring |
+| sizeOfImage | wstring   | PE header's SizeOfImage value. Optional. |
 | peChecksum | wstring   | PE header's CheckSum value. Optional. |
 | linkDate | wstring   | PE header's TimeDateStamp value. Optional. |
 | linkerVersion | wstring   | PE header's MarjorImageVersion and MinorImageVersion. Optional. |
@@ -252,9 +252,10 @@ Supported values for the *wingetSource* field.
 
 #### DeviceMetadata values
 
+BUGBUG
 | Name | Type | Description |
 |------|-------|---------|
-| userIntent | uint32   | Present when the user identified as a developer during the Out of Box Experience (OOBE) An OR'd combination of values specifying user intent. TBD - Only two values listed in the doc. Probably need to list all of the values? |
+| userIntent | uint32   | An OR'd combination of values specifying user intent during Windows OOBE setup. See *userIntent* values.
 | predictedUserIntent | uint32   | Windows sets flag to indicate that the user had one or more apps that are a signal of a developer. |
 | devModeEnabled | bool   | Whether the user has specified DevMode. |
 
@@ -263,18 +264,24 @@ Supported *userIntent* values.
 | Value | Description |
 |-------|-------------|
 | 0x00000001 | INTENT_BUSINESS |
-| 0x00000001 | INTENT_GAMING |
+| 0x00000020 | INTENT_GAMING |
 
+BUGBUG
+    static const PCWSTR Option_business = L"business";
+    static const PCWSTR Option_creativity = L"creative";
+    static const PCWSTR Option_entertainment = L"entertainment";
+    static const PCWSTR Option_gaming = L"gaming";
+    static const PCWSTR Option_family = L"family";
+    static const PCWSTR Option_schoolwork = L"schoolwork";
+
+    // OOBE/GetStarted/Setting all show "Development" to the User, but SDX code writes in the Registry as "developer",
+    // so we need to match the Registry here
+    static const PCWSTR Option_development = L"developer";
 
 
 ## AppList - Tiles
 
-As part of backup, when the user has enabled backup of the apps list, the following data about tiles is collected and placed in a db file for uploading to the Cloud. The path to this JSON is:
-
-`%LocalAppData%\ConnectedDevicesPlatform\<Any folder starting with “AAD.”>\Activity.db`
-
-> [!NOTE]
-> This data is ephemeral and is removed locally once it has been uploaded to the cloud. 
+As part of backup, when the user has enabled backup of the apps list, the following data about tiles is collected and placed in a db file for uploading to the Cloud. 
 
 The following code segment describes the format of the file and provides descriptions for each field.
 
@@ -296,14 +303,13 @@ The following code segment describes the format of the file and provides descrip
 lightIconInfo=>{ 
     "Data": { 
         "appIconAssetId": Unique identifier for light icon, 
-        "isPlated": TBD 
-    } 
+        "isPlated": Plated or not.    } 
 } 
 
 darkIconInfo=>{ 
     "Data": { 
         "appIconAssetId": Unique identifier for dark icon, 
-        "isPlated": TBD 
+        "isPlated": Plated or not. 
     } 
 } 
 
