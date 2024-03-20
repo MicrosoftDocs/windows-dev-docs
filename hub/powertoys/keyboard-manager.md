@@ -134,17 +134,20 @@ For example, to replace the shortcut <kbd>Ctrl</kbd>+<kbd>G</kbd> with `Hello!` 
 | `Ctrl` + `G` | `Hello!` |
 
 ### Remap a shortcut to start an app
+
 Keyboard Manager enables you to start applications with the activation of any shortcut. Select "Start App" from the action in the "To:" column to do this. There are a few options to configure when using this type of shortcut. They are:
-| Option     | Meaning  |
-| :---            | :---          |
-| App  | This is the path to an executable. Environment variables will be expanded.     |
-| Args         | Arguments that will be sent to the app.   |
-| Start in     | The working directory for the app to start in.  |
-| Elevation    | Specify the elevation level to start the app. The options include Normal, Elevated, and Different User.  |
-| If running | What action should be taken when this shortcut is activated while the app is already running? The options are: Show Window, Start another instance, Do nothing, Close, End task.   |
-| Visibility   | Specifies whether the app will be visible. This is useful when the app is a console or something you don't want to see.  |
+
+| Option | Meaning  |
+| :--- | :--- |
+| App  | This is the path to an executable. Environment variables will be expanded. |
+| Args | Arguments that will be sent to the app. |
+| Start in | The working directory for the app to start in. |
+| Elevation | Specify the elevation level to start the app. The options include Normal, Elevated, and Different User. |
+| If running | What action should be taken when this shortcut is activated while the app is already running? The options are: Show Window, Start another instance, Do nothing, Close, End task. |
+| Visibility | Specifies whether the app will be visible. This is useful when the app is a console or something you don't want to see. |
 
 ### Remap a shortcut to open a URI
+
 This type of shortcut action will open a URI. The only option is the actual Path/URI. Almost anything you can issue on the command line should work. See [Launch an app with a URI](/windows/uwp/launch-resume/launch-app-with-uri) for more examples.
 
 ### App-specific shortcuts
