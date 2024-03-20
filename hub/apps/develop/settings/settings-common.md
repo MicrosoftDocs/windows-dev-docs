@@ -206,7 +206,7 @@ FileInfo values are populated from the *App Compatibility* JSON above. All FileI
 | path | wstring   | File path. Optional. |
 | osComponent | wstring   | Boolean stating if the file is an OS file. |
 | size | wstring   | The file size as a 32-bit value. |
-| magic | wstring   | The PE header's magic number. Optional. For information on the PE header, see https://learn.microsoft.com/en-us/windows/win32/debug/pe-format. |
+| magic | wstring   | The PE header's magic number. Optional. For information on the PE header, see [PE Format](/windows/win32/debug/pe-format). |
 | peHeaderHash | wstring   | Hash of the file's PE header. Optional. |
 | sizeOfImage | wstring   | PE header's SizeOfImage value. Optional. |
 | peChecksum | wstring   | PE header's CheckSum value. Optional. |
@@ -253,6 +253,7 @@ FileInfo values are populated from the *App Compatibility* JSON above. All FileI
 #### DeviceMetadata values
 
 BUGBUG
+
 | Name | Type | Description |
 |------|-------|---------|
 | userIntent | uint32   | An OR'd combination of values specifying user intent during Windows OOBE setup. See *userIntent* values.
