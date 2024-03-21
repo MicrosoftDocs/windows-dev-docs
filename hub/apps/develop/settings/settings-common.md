@@ -201,50 +201,50 @@ FileInfo values are populated from the *App Compatibility* JSON above. All FileI
 
 | Name | Type | Description |
 |------|-------|---------|
-| name | wstring   | File name. Optional. |
-| path | wstring   | File path. Optional. |
-| osComponent | wstring   | Boolean stating if the file is an OS file. |
-| size | wstring   | The file size as a 32-bit value. |
-| magic | wstring   | The PE header's magic number. Optional. For information on the PE header, see [PE Format](/windows/win32/debug/pe-format). |
-| peHeaderHash | wstring   | Hash of the file's PE header. Optional. |
-| sizeOfImage | wstring   | PE header's SizeOfImage value. Optional. |
-| peChecksum | wstring   | PE header's CheckSum value. Optional. |
-| linkDate | wstring   | PE header's TimeDateStamp value. Optional. |
-| linkerVersion | wstring   | PE header's MarjorImageVersion and MinorImageVersion. Optional. |
-| binFileVersion | wstring   | File version obtained from GetFileVersionInfo. Optional. |
-| binProductVersion | wstring   | Product version obtained from GetFileVersionInfo. Optional. |
-| binaryType | wstring   | PType of binary (e.g. PE64_AMD64). Optional. |
-| created | wstring   | File creation time obtained from file system. Optional. |
-| modified | wstring   | File modification time obtained from file system. Optional. |
-| lastAccessed | wstring   | File access time obtained from file system. Optional. |
-| verLanguage | wstring   | Language obtained from **GetFileVersionInfo**. Optional.|
-| id | wstring   | Unique identifier obtained from hashing file contents. Optional.|
-| switchBackContext | wstring   | Value for OS runtime compatibility fixes. Optional.|
-| sigDisplayName | wstring   | Display name obtained from the file signature. Optional.|
-| sigPublisherName | wstring   | Publisher name obtained from the file signature. Optional.|
-| sigMoreInfoURL | wstring   | URL obtained from the file signature. Optional.|
-| fileVersion | wstring   | File version obtained from **GetFileVersionInfo**. Optional.|
-| companyName | wstring   | Company name obtained from **GetFileVersionInfo**. Optional.|
-| fileDescription | wstring   | File description obtained from **GetFileVersionInfo**. Optional.|
-| internalName | wstring   | Internal name obtained from **GetFileVersionInfo**. Optional.|
-| legalCopyright | wstring   | Copyright information obtained from **GetFileVersionInfo**. Optional.|
-| originalFileName | wstring   | Original filename obtained from **GetFileVersionInfo**. Optional.|
-| productName | wstring   | Product name obtained from **GetFileVersionInfo**. Optional.|
-| productVersion | wstring   | Product version obtained from **GetFileVersionInfo**. Optional.|
-| peImageType | wstring   | Image type obtained from PE header. Optional.|
-| peSubsystem | wstring   | Subsystem obtained from PE header. Optional.|
-| runLevel | wstring   | Executable's runlevel obtained from app manifest. Optional.|
-| uiAccess | wstring   | UI access obtained from app manifest. Optional.|
-| crcChecksum | wstring   | File's CRC checksum. Optional.|
-| clrVersion | wstring   | CLR version obtained from app manifest. Optional.|
-| boeProgramId | wstring   | Unique ID describing the application. Optional.|
-| boeProgramName | wstring   |Same as "productName", if it exists. Otherwise same as "name". Optional.|
-| boeProgramPublisher | wstring   |Same as "companyName", if it exists. Otherwise same as "fileDescription", if it exists. Optional.|
-| boeProgramVersion | wstring   | USame as "productVersion", if it exists. Otherwise same as "fileVersion", if it exists. Otherwise same as "binProductVersion", if it exists. Otherwise same as "binFileVersion", if it exists . Optional.|
-| boeProgramLanguage | wstring   | Same as "verLanguage", if it exists. Optional.|
-| fileSize | uint64   | File's size as a 64-bit number. Optional.|
-| peCharacteristics | wstring   | Image characteristics obtained from PE header. Optional.|
-| sha256 | wstring   | SHA256 hash of file. Optional.|
+| name | wstring   | Read from App compatibility JSON. Optional.|
+| path | wstring   | Read from App compatibility JSON. Optional.|
+| osComponent | wstring   | Read from App compatibility JSON. Optional.|
+| size | wstring   | Read from App compatibility JSON. Optional.|
+| magic | wstring   | Read from App compatibility JSON. For information on the PE header, see [PE Format](/windows/win32/debug/pe-format). |
+| peHeaderHash | wstring   | Read from App compatibility JSON. Optional.|
+| sizeOfImage | wstring   | Read from App compatibility JSON. Optional.|
+| peChecksum | wstring   | Read from App compatibility JSON. Optional.|
+| linkDate | wstring   | Read from App compatibility JSON. Optional.|
+| linkerVersion | wstring   | Read from App compatibility JSON. Optional.|
+| binFileVersion | wstring   | Read from App compatibility JSON. Optional.|
+| binProductVersion | wstring   | Read from App compatibility JSON. Optional.|
+| binaryType | wstring   | Read from App compatibility JSON. Optional.|
+| created | wstring   | Read from App compatibility JSON. Optional.|
+| modified | wstring    | Read from App compatibility JSON. Optional.|
+| lastAccessed | wstring   | Read from App compatibility JSON. Optional.|
+| verLanguage | wstring   | Read from App compatibility JSON. Optional.|
+| id | wstring   | Read from App compatibility JSON. Optional.|
+| switchBackContext | wstring    | Read from App compatibility JSON. Optional.|
+| sigDisplayName | wstring    | Read from App compatibility JSON. Optional.|
+| sigPublisherName | wstring   | Read from App compatibility JSON. Optional.|
+| sigMoreInfoURL | wstring    | Read from App compatibility JSON. Optional.|
+| fileVersion | wstring    | Read from App compatibility JSON. Optional.|
+| companyName | wstring    | Read from App compatibility JSON. Optional.|
+| fileDescription | wstring   | Read from App compatibility JSON. Optional.|
+| internalName | wstring    | Read from App compatibility JSON. Optional.|
+| legalCopyright | wstring   | Read from App compatibility JSON. Optional.|
+| originalFileName | wstring   | Read from App compatibility JSON. Optional.|
+| productName | wstring   | Read from App compatibility JSON. Optional.|
+| productVersion | wstring    | Read from App compatibility JSON. Optional.|
+| peImageType | wstring   | Read from App compatibility JSON. Optional.|
+| peSubsystem | wstring   | Read from App compatibility JSON. Optional.|
+| runLevel | wstring   | Read from App compatibility JSON. Optional.|
+| uiAccess | wstring   | Read from App compatibility JSON. Optional.|
+| crcChecksum | wstring   | Read from App compatibility JSON. Optional.|
+| clrVersion | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramId | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramName | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramPublisher | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramVersion | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramLanguage | wstring   | Read from App compatibility JSON. Optional.|
+| fileSize | wstring   | Read from App compatibility JSON. Optional.|
+| peCharacteristics | wstring   | Read from App compatibility JSON. Optional.|
+| sha256 | wstring   | Read from App compatibility JSON. Optional.|
 | aumid | wstring   | Application user model ID. Optional. For more information, see [Find the Application User Model ID of an installed app](/windows/configuration/store/find-aumid?tabs=ps)|
 
 ### Type: Windows.Data.Apps.DeviceMetadata structure
