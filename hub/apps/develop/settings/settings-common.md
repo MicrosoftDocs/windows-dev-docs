@@ -66,7 +66,7 @@ The format of the backup JSON file. Install, Update, and Uninstall nodes contain
           "productVersion": Product version obtained from GetFileVersionInfo,
           "peImageType": Image type obtained from PE header,
           "peSubsystem": Subsystem obtained from PE header,
-          "runLevel": Executable's runl”evel obtained from app manifest,
+          "runLevel": Executable's runlevel obtained from app manifest,
           "uiAccess": UI access obtained from app manifest,
           "crcChecksum": File's CRC checksum,
           "clrVersion": CLR version obtained from app manifest,
@@ -232,7 +232,7 @@ The settings below are for a deprecated Windows calling experience and are no lo
 | callerIdBlocked | Bool | Indicates whether the call was blocked. |
 | emergencycall | Bool | Indicates whether call was an emergency call. |
 | linenumber | String | The number of the phone line that received the call. |
-| lineName | String | The phone line’s name. |
+| lineName | String | The phone line's name. |
 | callerLocation | String | Caller location. |
 | callerCategory | String | Caller category. |
 | callerCategoryDescription | String | Caller category description. |
@@ -247,7 +247,7 @@ The settings below are for a deprecated Windows calling experience and are no lo
 
 | Name | Type | Description |
 |------|------|-------------|
-| historyItems | Map&lt;string, CallHistoryItem&gt; | A collection of call history items where the keys are each history item’s UniqueId. |
+| historyItems | Map&lt;string, CallHistoryItem&gt; | A collection of call history items where the keys are each history item's UniqueId. |
 | highestSequenceNumber | Unit32 | Highest sequence number issued, used for internal business logic. |
 
 ### Type: Windows.data.calling.callfavorites structure
@@ -513,8 +513,8 @@ These are blobs that are in the registry. There are three things that use regist
 
 These are settings found in File Explorer->Folder options(...)->General tab
 
-•	File explorer can be opened to either Home or This PC 
-•	File explorer can be opened to One Drive folder as well if user has signed in to One Drive (This option is available only if user has signed in)
+*    File explorer can be opened to either Home or This PC 
+*    File explorer can be opened to One Drive folder as well if user has signed in to One Drive (This option is available only if user has signed in)
 
 #### FolderOptionGeneralSettings Properties
 
@@ -704,7 +704,7 @@ The scope of this type is per device.
 |------|------|-------------|
 | kind | **LockScreenKind** | Specifies whether current Lockscreen is set as Wallpaper or Slideshow or Spotlight |
 | pictureOnSignInScreen | bool | Specifies whether show the lock screen background picture on the sign-in screen is enabled. |
-| funItems | bool | Specifies whether “Get fun facts, tips, tricks, and more on your lock screen" is enabled. |
+| funItems | bool | Specifies whether "Get fun facts, tips, tricks, and more on your lock screen" is enabled. |
 | itemId | wstring | The unique ID for the lockscreen wallpaper uploaded to during backup.  |
 | contentUri | wstring | The url for the lockscreen wallpaper uploaded to during backup |
 | lockScreenStatus | wstring | Not used. |
@@ -925,15 +925,15 @@ Specifies the folders that are shown at the bottom of the Start menu.
 | VisiblePlaces | REG_BINARY | A vector of GUIDs. | A list of GUIDs indicating the folders that are shown at the bottom of Start.  |
 
 The folder GUIDs that are supported for *Start_Layout* are:
-• Documents: {2D34D5CE-FA5A-4543-82F2-22E6EAF7773C}
-• Downloads: {E367B32F-89DE-4355-BFCE-61F37B18A937}
-• Music: {B00B0620-7F51-4C32-AA1E-34CC547F7315}
-• Pictures: {383F07A0-E80A-4C80-B05A-86DB845DBC4D}
-• Videos: {42B3A5C5-7D86-42F4-80A4-93FACA7A88B5}
-• Network: {FE758144-080D-42AE-8BDA-34ED97B66394}
-• UserProfile: {74BDB04A-F94A-4F68-8BD6-4398071DA8BC}
-• Explorer: {148A24BC-D60C-4289-A080-6ED9BBA24882}
-• Settings: {52730886-51AA-4243-9F7B-2776584659D4}
+* Documents: {2D34D5CE-FA5A-4543-82F2-22E6EAF7773C}
+* Downloads: {E367B32F-89DE-4355-BFCE-61F37B18A937}
+* Music: {B00B0620-7F51-4C32-AA1E-34CC547F7315}
+* Pictures: {383F07A0-E80A-4C80-B05A-86DB845DBC4D}
+* Videos: {42B3A5C5-7D86-42F4-80A4-93FACA7A88B5}
+* Network: {FE758144-080D-42AE-8BDA-34ED97B66394}
+* UserProfile: {74BDB04A-F94A-4F68-8BD6-4398071DA8BC}
+* Explorer: {148A24BC-D60C-4289-A080-6ED9BBA24882}
+* Settings: {52730886-51AA-4243-9F7B-2776584659D4}
 
 ## Personalization - Start - Layout
 
@@ -1045,7 +1045,7 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 | country | wstring | The code of the country or region in which a MSA is registered.  |
 | safeCustomerId | wstring | An alternative identifier for an MSA. |
 | ageGroup | wstring | Age group of an MSA, based on the registered birth date of the MSA user. Current values are 0 = unknown, 1 = child, 2 = teen, 3 = adult. |
-| scope | wstring | Represents the “Sign in options" setting state. |
+| scope | wstring | Represents the "Sign in options" setting state. |
 
 ### Type: Windows.Data.Account.SecondaryAccounts structure
 
@@ -1127,7 +1127,7 @@ Settings related to Windows Update.
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
-| IsContinuousInnovationOptedIn | REG_DWORD | 0/1 | Enables devices to get the latest updates as soon as they’re released. |
+| IsContinuousInnovationOptedIn | REG_DWORD | 0/1 | Enables devices to get the latest updates as soon as they're released. |
 | AllowMUUpdateService | REG_DWORD | 0/1 | Allows users to get other Microsoft products alongside with Windows Updates. |
 | IsExpedited | REG_DWORD | 0/1 | User selects this to invoke device restart 15 min after all updates finished installing. |
 | RestartNotificationsAllowed2 | REG_DWORD | 0/1 | Users decides if they want to be notified about the updates pending restart. |
