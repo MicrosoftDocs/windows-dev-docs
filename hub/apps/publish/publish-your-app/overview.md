@@ -9,13 +9,13 @@ zone_pivot_groups: store-installer-packaging
 # Publish your app in the Microsoft Store
 
 :::zone pivot="store-installer-msix,store-installer-msi-exe"
-[!INCLUDE [name](../../../includes/store/msix/overview.md)]
+[!INCLUDE [mccoy](../../../includes/store/msix/overview.md)]
 :::zone-end
 
 :::zone pivot="store-installer-pwa"
-[!INCLUDE [name](../../../includes/store/pwa/overview.md)]
+[!INCLUDE [mccoy](../../../includes/store/pwa/overview.md)]
 :::zone-end
 
 :::zone pivot="store-installer-add-on"
-[!INCLUDE [name](../../../includes/store/add-on/overview.md)]
+[!INCLUDE [mccoy](../../../includes/store/add-on/overview.md)]
 :::zone-end
