@@ -741,6 +741,8 @@
           href: ../devices-sensors/aep-service-class-ids.md
     - name: Pair devices
       href: ../devices-sensors/pair-devices.md
+    - name: Pairing a set
+      href: ../devices-sensors/pairing-a-set.md
     - name: Dynamic lighting
       href: ../devices-sensors/lighting-dynamic-lamparray.md
     - name: Point of Service
