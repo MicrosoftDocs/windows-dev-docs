@@ -2,7 +2,7 @@
 title: Use the Windows App SDK in a WPF app
 description: This topic enables you to use Windows App SDK features (such as App Lifecycle, MRT Core, DWriteCore, and others) in a Windows Presentation Foundation (WPF) app.
 ms.topic: article
-ms.date: 05/30/2023
+ms.date: 03/25/2024
 keywords: windows win32, windows app development, Windows App SDK, Windows Presentation Foundation, WPF
 ms.author: stwhi
 author: stevewhims
@@ -49,7 +49,7 @@ First we'll edit the project file.
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
     ```
 
-3. Also inside the **PropertyGroup** element, add a [RuntimeIdentifiers](/dotnet/core/project-sdk/msbuild-props#runtimeidentifiers) element, like this:
+3. Also inside the **PropertyGroup** element, add a [RuntimeIdentifiers](/dotnet/core/project-sdk/msbuild-props#runtimeidentifiers) element, as shown below. If you're targeting .NET 8 or later, then use the value `win-x86;win-x64;win-arm64` instead.
 
     ```xml
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
