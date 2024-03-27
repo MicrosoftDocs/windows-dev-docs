@@ -41,7 +41,7 @@ Antivirus filters, including both Microsoft Defender and 3rd-party antivirus fil
 
 The **Enable Dev Drive** policy settings include:
 
-- **Not Configured**: By default, the Dev Drive storage volume option will be turned off under the Temporary enterprise feature conrol policy until enabled by an enterprise administrator in the Group Policy.
+- **Not Configured**: By default, the Dev Drive storage volume option will be turned off under the Temporary enterprise feature control policy until enabled by an enterprise administrator in the Group Policy.
 - **Enabled**: Enabling turns on the option to create [Dev Drive](index.md) storage volumes.
 - **Options - Let antivirus filter protect Dev Drives**: Dev Drives are optimized for performance in developer scenarios, allowing the **local** administrator (user account) to choose which file system filters are attached. This also allows local administrators to detach the default antivirus features, unless the option to "Let antivirus filter protect Dev Drives" is checked. Checking this option forces default antivirus filters to remain attached.
 - **Disabled**: Disabling this setting turns off the ability to create and use Dev Drive storage volumes.
@@ -51,7 +51,7 @@ The **Enable Dev Drive** policy settings include:
 Additionally, there is a **Dev Drive filter attach policy** setting, which offers enterprise administrators control over what filters can be attached to a Dev Drive. Settings include:
 
 - **Not Configured**: By default, Dev Drive is optimized for performance, with Microsoft Defender and 3rd-party antivirus filters attached, but with no other file system filters. This default setting allows local administrators to attach or detach filters, including the default antivirus filters. Checking the optional "Let antivirus filter protect Dev Drives" in the Enable Dev Drive policy above will force antivirus filters to remain attached even if no further filter policy is defined.
-- **Enabled**: Local administrators (user accounts) are allowed to attach or detach filters. Adding a Filter list enables enterprise administrators (at the Group Policy Doman level) to define what filters can be attached. Not including a filter list will enable any filter to be attached.
+- **Enabled**: Local administrators (user accounts) are allowed to attach or detach filters. Adding a Filter list enables enterprise administrators (at the Group Policy Domain level) to define what filters can be attached. Not including a filter list will enable any filter to be attached.
 - **Disabled**: Local administrators (user accounts) are not allowed to attach or detach filters.
 
 There are a few ways to enable the Dev Drive feature and update Group Policy:
@@ -67,7 +67,7 @@ To update Group Policy and enable [Dev Drive](index.md) using [Microsoft Intune)
 1. Open the Intune portal ([https://endpoint.microsoft.com](https://endpoint.microsoft.com)) and log in with your credentials.
 
 2. Create a profile:
-    1. Devices > Windows > Configuration pofiles > Create profile
+    1. Devices > Windows > Configuration profiles > Create profile
     1. Select Platform > Windows 10 and later
     1. Select Profile type > Settings catalog
 

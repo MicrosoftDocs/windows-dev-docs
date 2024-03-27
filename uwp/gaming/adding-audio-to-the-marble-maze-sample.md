@@ -782,7 +782,7 @@ void  _stdcall AudioEngineCallbacks::OnCriticalError(HRESULT Error)
 // Audio.h (Audio class)
 
 // This flag can be used to tell when the audio system 
-// is experiencing critial errors.
+// is experiencing critical errors.
 // XAudio2 gives a critical error when the user unplugs
 // the headphones and a new speaker configuration is generated.
 void SetEngineExperiencedCriticalError()

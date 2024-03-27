@@ -227,7 +227,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
     :::column-end:::
 :::row-end:::
 
-## Addtional resources
+## Additional resources
 
 :::row:::
     :::column:::

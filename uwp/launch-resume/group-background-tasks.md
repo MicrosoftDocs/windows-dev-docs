@@ -13,7 +13,7 @@ keywords: windows 10, background task
 
 Background tasks can now be registered in a group, which you can think of as a logical namespace. This isolation helps ensure that different components of an app, or different libraries, don’t interfere with each other’s background task registration.
 
-When an app and the framework (or library) it uses registers a background task with the same name, the app could inadvertently remove the framework's background task registrations. App authors could also accidently remove framework and library background task registrations because they could unregister all registered background tasks by using [BackgroundTaskRegistration.AllTasks](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks).  With groups, you can isolate your background task registrations so this doesn't happen.
+When an app and the framework (or library) it uses registers a background task with the same name, the app could inadvertently remove the framework's background task registrations. App authors could also accidentally remove framework and library background task registrations because they could unregister all registered background tasks by using [BackgroundTaskRegistration.AllTasks](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks).  With groups, you can isolate your background task registrations so this doesn't happen.
 
 ## Features of groups
 

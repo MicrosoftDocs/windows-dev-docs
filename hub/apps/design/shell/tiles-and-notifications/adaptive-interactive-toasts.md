@@ -160,7 +160,7 @@ var builder = new AppNotificationBuilder()
 AppNotificationManager.Default.Show(builder.BuildNotification());
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -200,7 +200,7 @@ var builder = new AppNotificationBuilder()
     .SetAppLogoOverride(new Uri("ms-appx:///Images/AppLogo.png"));
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -238,7 +238,7 @@ var builder = new AppNotificationBuilder()
     .SetAppLogoOverride(new Uri("ms-appx:///Images/Profile.png"), AppNotificationImageCrop.Circle);
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -278,7 +278,7 @@ var builder = new AppNotificationBuilder()
     .SetHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -339,7 +339,7 @@ var builder = new AppNotificationBuilder()
     .SetHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -384,7 +384,7 @@ var builder = new AppNotificationBuilder()
     .SetTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -554,7 +554,7 @@ new ToastContentBuilder()
             .AddArgument("contentId", "351");
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -613,7 +613,7 @@ new ToastContentBuilder()
             .SetIcon(new Uri("ms-appx:///Images/Dismiss.png")));
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -669,7 +669,7 @@ var builder = new AppNotificationBuilder()
     .AddButton(button); 
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 // The Community Toolkit builder syntax does not currently support icon tooltips. 
@@ -727,7 +727,7 @@ var builder = new AppNotificationBuilder()
         .AddArgument("hangUpId", "123"));
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 // The WIndows Community Toolkit builder syntax does not currently support red and green button colors.
@@ -793,7 +793,7 @@ var builder = new AppNotificationBuilder()
         .SetContextMenuPlacement());
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 The Windows Community Toolkit builder syntax doesn't currently support context menu actions, so we recommend using initializer syntax.
 
@@ -858,7 +858,7 @@ var builder = new AppNotificationBuilder()
     .BuildNotification();
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -908,7 +908,7 @@ You also can have one (or many) inputs with normal buttons displayed below the i
 // The Microsoft.Windows.AppNotifications.Builder syntax does not currently support quick reply text boxes.
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -981,7 +981,7 @@ var builder = new AppNotificationBuilder()
         .SetContextMenuPlacement());
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -1050,7 +1050,7 @@ The **Microsoft.Windows.AppNotifications.Builder** syntax does not currently sup
 // scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -1131,7 +1131,7 @@ var builder = new AppNotificationBuilder()
     .SetAudioUri(new Uri("ms-appx:///Audio/NotificationSound.mp3"));
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -1164,7 +1164,7 @@ var builder = new AppNotificationBuilder()
     .SetAudioEvent(AppNotificationSoundEvent.Alarm, AppNotificationAudioLooping.Loop);
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -1211,7 +1211,7 @@ var builder = new AppNotificationBuilder()
     .SetScenario(AppNotificationScenario.Reminder);
 ```
 
-#### [Community Tookit](#tab/toolkit)
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -1247,7 +1247,7 @@ var builder = new AppNotificationBuilder()
         .AddArgument("action", "dismiss"));
 ```
 
-#### [Community Tookit](#tab/toolkit)
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -1311,7 +1311,7 @@ var builder = new AppNotificationBuilder()
         .AddArgument("answerId", "123"));
 ```
 
-#### [Community Tookit](#tab/toolkit)
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()
@@ -1405,7 +1405,7 @@ if (AppNotificationBuilder.IsUrgentScenarioSupported())
 }
 ```
 
-#### [Community Tookit](#tab/toolkit)
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 // The builder syntax does not support important notifications yet.

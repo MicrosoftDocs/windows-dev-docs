@@ -71,7 +71,7 @@ If you are writing an app that will run on Windows, you'll need to select a deve
 * [An overview of Windows development options](/windows/apps/get-started/)
 * [Windows app development: options and features](dev-options.md)
 
-If you are using Windows to write apps for Windows and/or other platforms, you'll be interested in this topic. It covers using other langauges such as Python and Rust, and other tips such as installing Linux on Windows to gain access to open source tools.
+If you are using Windows to write apps for Windows and/or other platforms, you'll be interested in this topic. It covers using other languages such as Python and Rust, and other tips such as installing Linux on Windows to gain access to open source tools.
 
 * [Set up your development environment on Windows](/windows/dev-environment/)
 

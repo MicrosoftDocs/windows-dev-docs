@@ -17,7 +17,7 @@ To develop apps for Windows 10 and 11, you'll need *Visual Studio*, the *Windows
 
 ## Visual Studio
 
-Visual Studio is a comprehensive *Integrated Development Envrionment (IDE)* that's used to *edit*, *debug*, *build*, and *publish* apps.
+Visual Studio is a comprehensive *Integrated Development Environment (IDE)* that's used to *edit*, *debug*, *build*, and *publish* apps.
 
 For the minimum system requirements, see:
 

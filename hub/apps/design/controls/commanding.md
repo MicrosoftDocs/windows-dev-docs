@@ -291,7 +291,7 @@ private void ListView_Loaded(object sender, RoutedEventArgs e)
 private void DeleteCommand_ExecuteRequested(
     XamlUICommand sender, ExecuteRequestedEventArgs args)
 {
-    // If possible, remove specfied item from collection.
+    // If possible, remove specified item from collection.
     if (args.Parameter != null)
     {
         foreach (var i in collection)

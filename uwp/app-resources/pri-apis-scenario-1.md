@@ -222,7 +222,7 @@ The info begins with a resource map, which is named with the package family name
 The first string resource is *EnOnlyString* from `en-US\resources.resw`, and it has just one candidate (which matches the *language-en-US* qualifier). Next comes *LocalizedString1* from both `resources.resw` and `en-US\resources.resw`. Consequently, it has two candidates: one matching *language-en-US*, and a fallback neutral candidate that matches any context. Similarly, *LocalizedString2* has two candidates: *language-de-DE*, and neutral. And, finally, *NeutralOnlyString* only exists in neutral form. I gave it that name to make it clear that it's not meant to be localized.
 
 ## Summary
-In this scenario, we showed how to use the [package resource indexing (PRI) APIs](/windows/desktop/menurc/pri-indexing-reference) to create a resource indexer. We added string resources and asset files to the resource indexer. Then, we used the resource indexer to generated a binary PRI file. And finally we dumped the binary PRI file in the form of XML so that we could confirm that it contains the info we expected.
+In this scenario, we showed how to use the [package resource indexing (PRI) APIs](/windows/desktop/menurc/pri-indexing-reference) to create a resource indexer. We added string resources and asset files to the resource indexer. Then, we used the resource indexer to generate a binary PRI file. And finally we dumped the binary PRI file in the form of XML so that we could confirm that it contains the info we expected.
 
 ## Important APIs
 * [Package resource indexing (PRI) reference](/windows/desktop/menurc/pri-indexing-reference)
