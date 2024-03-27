@@ -229,11 +229,25 @@ For example, for `ListView` and `GridView` controls, the **Page up** key scrolls
 
 ![page up and down keys](images/keyboard/page-up-and-down.png)
 
+#### F6 key
+
+The **F6** key lets a user cycle between important sections of your app or UI. **Shift-F6** typically cycles backwards.
+
+These are often related to [landmarks and headings](../accessibility/landmarks-and-headings.md), but do not need to correspond directly.
+
+For example:
+
+* In Edge, pressing F6 will cycle between the tab bar, the address bar/app bar, and the page content.
+* In File Explorer, pressing F6 will cycle between the sections of the app.
+* On the desktop, pressing F6 will cycle between parts of the taskbar and the desktop.
+
+![f6 key](images/keyboard/f6.png)
+
 ### Keyboard shortcuts
 
 Keyboard shortcuts can make your app easier to use by providing both enhanced support for accessibility and improved efficiency for keyboard users.
 
-In addition to supporting keyboard navigation and activation in your app, it is also good practice to provide shortcuts for your application's functionality. Tab navigation provides a good, basic level of keyboard support, but with more complex UI you might want to add support for shortcut keys as well. 
+In addition to supporting keyboard navigation and activation in your app, it is also good practice to provide shortcuts for your application's functionality. Tab navigation provides a good, basic level of keyboard support, but with more complex UI you might want to add support for shortcut keys as well.
 
 A shortcut is a keyboard combination that enhances productivity by providing an efficient way for the user to access app functionality. There are two kinds of shortcut:
 -   [Accelerators](#accelerators) are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.
