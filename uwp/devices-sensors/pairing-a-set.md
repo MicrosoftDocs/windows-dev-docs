@@ -1,7 +1,7 @@
 ---
 title: Pairing a set with the DeviceInformationPairing.Custom property
 description: Windows supports pairing a collection of devices as an automatically-discovered set or as an explicit set.
-ms.date: 03/25/2024
+ms.date: 03/27/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -95,7 +95,7 @@ void PairingTests::PairingSetMembersRequestedHandler(DeviceInformationCustomPair
 
 This code example implements explicit set pairing using a custom pairing object. As with a typical implementation of custom pairing, a *pairing-requested handler* is required to handle the pairing ceremony. In this case, the code example implements only the *confirm only* pairing ceremony. As with the Bluetooth code example, the new and interesting part is adding a *pairing-set-member-requested* handler. The set member handler enables the platform to attempt pairing devices as a set. 
 
-As compared to the Bluetooth-style set-pairing scenario, this code example explicitly adds devices to the set. As compared to Bluetooth, the set handler implies something a bit different from the protocols related to pairing IPP printers. It implies that clients are handling device discovery over the various protocols, and the PnP state and print queues created as a result of pairing all of the set members should be synchronized.
+As compared to the Bluetooth-style set-pairing scenario, this code example explicitly adds devices to the set. And the set handler implies something a bit different for the protocols related to pairing IPP printers. It implies that clients are handling device discovery over the various protocols, and the PnP state and print queues created as a result of pairing all of the set members should be synchronized.
 
 To keep the implementation of the code example simple, it assumes that a vector of set member endpoints were discovered beforehand, and passed in as a parameter along with the primary device. For example, in a typical IPP scenario, endpoints are discovered in arbitrary order. So the primary device could have been discovered over WSD for instance; and then the vector would contain devices representing endpoints discovered over IPP, and eSCL. But any combination is possible and valid. It adds set members to the primary device's custom pairing object on the app's main thread, and then calls [PairAsync](/uwp/api/windows.devices.enumeration.deviceinformationcustompairing.pairasync).
 
@@ -153,15 +153,15 @@ void PairingTests::PairingSetMembersRequestedHandler(DeviceInformationCustomPair
     switch (args.Status())
     {
     case DevicePairingAddPairingSetMemberStatus::AddedToSet:
-        // This is the expected result of adding a set member(s) to
-        // a Bluetooth device. Note: there still might be no set members.
+        // This is the expected result of adding a set member(s)
+        // by calling the AddPairingSetMember method.
         break;
     case DevicePairingAddPairingSetMemberStatus::CouldNotBeAddedToSet:
         // Means we failed to add set member(s).
         break;
     case DevicePairingAddPairingSetMemberStatus::SetDiscoveryNotAttemptedByProtocol:
     default:
-        // The other constants aren't expected in an auto-discovered Bluetooth set scenario.
+        // The other constants aren't expected in an explicit set scenario.
         // Error handling can go here.
     }
 
