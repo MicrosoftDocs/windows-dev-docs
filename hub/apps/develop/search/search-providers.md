@@ -198,7 +198,7 @@ The query string parameters passed to the suggestion endpoint are the following.
 
 ### Gleam icon response JSON format
 
-The search provider HTTPS endpoint for gleam icons must return a JSON document with the following format. The key names must match the format exactly.
+The search provider HTTPS endpoint for gleam icons must return a JSON document with the following format. The key names must match the format exactly. The current schema version is 1.0.0.
 
 | Key | Description |
 |-----|-------------|
@@ -211,6 +211,7 @@ The search provider HTTPS endpoint for gleam icons must return a JSON document w
 | iconUrl | Contains the URLs for the light and dark gleam icon image files. |
 | light | The URL for the light gleam icon image file. |
 | dark | The URL for the dark gleam icon image file. |
+
 
 ```json
 {
