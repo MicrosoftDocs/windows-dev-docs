@@ -114,7 +114,7 @@ The value of the *compatFlags* field of the backup JSON file is a combination of
 | 0x00004000 |  Generic hardware incompatibility. |
 | 0x00008000 | App is incompatible up to certain version. |
 
-## AppList
+## AppList Backup Data
 
 ### Type: Windows.Data.Apps.AppMetaData structure
 
@@ -125,7 +125,7 @@ The value of the *compatFlags* field of the backup JSON file is a combination of
 | appId | wstring   | PackageFamilyName (packaged) or ProductCode (unpackaged). |
 | installSource | wstring | Description of type of installer for the app. See *installSource* for supported values. |
 | lightIconInfo | **IconInfo**  | Information about the light icon. |
-| darkIconInfo | **IconInfo**  | Information about the light icon. |
+| darkIconInfo | **IconInfo**  | Information about the dark icon. |
 | appName | wstring  | App display name. |
 | publisher | wstring  | Publishers name of the app from Add Remove Programs. |
 | lastLaunchTime | uint64  | This is a calculated value that represents the last time the app was launched. |
@@ -166,8 +166,17 @@ Supported values for the *wingetSource* field.
 
 | Name | Type | Description |
 |------|-------|---------|
-| appIconAssetId | wstring   | The ID representing an icon. |
+| appIconAssetId | wstring   | The ID representing an icon from the cloud. The appIconAssetId represents the icon stored in the cloud which was generated from the app installer either through add remove programs metadata or AppxManifest files. |
 | isPlated | bool   | Plated or not. |
+
+### Type: Windows.Data.Apps.ShortcutInfo structure
+
+#### ShortcutInfo values
+
+| Name | Type | Description |
+|------|-------|---------|
+| targetPath | wstring   | Link to the executable that launching the tile will shell execute.  |
+| shortcutArgs | wstring   | Arguments provided on launch.  |
 
 ### Type: Windows.Data.Apps.AppLevelTileInfo structure
 
@@ -183,17 +192,6 @@ Supported values for the *wingetSource* field.
 | packageId | wstring   | PackageFamilyName (packaged), ProductCode (unpackaged), empty for unmapped products (appId is specified in **AppMetaData**)    |
 | shortcut | **ShortcutInfo**   | Shortcut information.  |
 | suiteName | wstring   | String name for a collection of apps.    |
-
-### Type: Windows.Data.Apps.ShortcutInfo structure
-
-#### ShortcutInfo values
-
-| Name | Type | Description |
-|------|-------|---------|
-| targetPath | wstring   | Link to the executable that launching the tile will shell execute.  |
-| shortcutArgs | wstring   | Arguments provided on launch.  |
-
-### Type: Windows.Data.Apps.FileInfo structure
 
 #### FileInfo values
 
@@ -247,6 +245,19 @@ FileInfo values are populated from the *App Compatibility* JSON above. All FileI
 | sha256 | wstring   | Read from App compatibility JSON. Optional.|
 | aumid | wstring   | Application user model ID. Optional. For more information, see [Find the Application User Model ID of an installed app](/windows/configuration/store/find-aumid?tabs=ps)|
 
+### Type: Windows.Data.Apps.AppCompatInfo structure
+
+#### AppCompatInfo values
+| Name | Type | Description |
+|------|-------|---------|
+| name | wstring   | Read from App compatibility JSON. |
+| path | wstring   | Read from App compatibility JSON. |
+| appId | wstring   | Read from App compatibility JSON.|
+| programId | wstring   | Read from App compatibility JSON.|
+| compatFlags | wstring   | Read from App compatibility JSON. |
+| restoreActions | wstring   | Read from App compatibility JSON|
+| files | **vector &lt;FileInfo&gt;** | Read from App compatibility JSON.|
+
 ### Type: Windows.Data.Apps.DeviceMetadata structure
 
 #### DeviceMetadata values
@@ -269,42 +280,6 @@ Supported *userIntent* values.
 | 0b00100000 | Entertainment |
 | 0b01000000 | Business |
 | 0b10000000 | Development |
-
-## AppList - Tiles
-
-As part of backup, when the user has enabled backup of the apps list, the following data about tiles is collected and placed in a db file for uploading to the Cloud.
-
-The following code segment describes the format of the file and provides descriptions for each field.
-
-```json
-{ 
-    "tileId": Unique tile identifier, 
-    "displayName": String displayed on tile, 
-    "sortName": String value used for sorting in search, 
-    "packageId": String containing the package name the executable is associated with, 
-    "shortcut": { 
-        "Data": { 
-            "targetPath": String containing the path to the executable that launching the tile will shell execute, 
-            "shortcutArgs": A string containing the arguments provided on launch   
-           } 
-    }, 
-    "suiteName": "" 
-} 
-
-lightIconInfo=>{ 
-    "Data": { 
-        "appIconAssetId": Unique identifier for light icon, 
-        "isPlated": Plated or not.    } 
-} 
-
-darkIconInfo=>{ 
-    "Data": { 
-        "appIconAssetId": Unique identifier for dark icon, 
-        "isPlated": Plated or not. 
-    } 
-} 
-
-```
 
 ## Autoplay
 
