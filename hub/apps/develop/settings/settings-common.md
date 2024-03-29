@@ -164,6 +164,7 @@ Supported values for the *wingetSource* field.
 ### Type: Windows.Data.Apps.IconInfo structure
 
 #### IconInfo values
+The paths to the icons used to generate the IconInfo, can be found in the [AppXManifest](https://learn.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest) for MSIX packages, and [Uninstall registries](https://learn.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key) for other formats.
 
 | Name | Type | Description |
 |------|-------|---------|
