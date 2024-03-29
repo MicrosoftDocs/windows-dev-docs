@@ -119,6 +119,7 @@ The value of the *compatFlags* field of the backup JSON file is a combination of
 ### Type: Windows.Data.Apps.AppMetaData structure
 
 #### AppMetaData values
+Unless otherwise specified, the Values are found in the [AppXManifest](https://learn.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest) for MSIX packages, and [Uninstall registries](https://learn.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key) for other formats.
 
 | Name | Type | Description |
 |------|-------|---------|
@@ -135,8 +136,8 @@ The value of the *compatFlags* field of the backup JSON file is a combination of
 | reinstallId | wstring  | Reinstall ID specified in  Add Remove Programs. |
 | productUrl | wstring  | Product URL Specified in  Add Remove Programs. |
 | isPinned | bool | Boolean indicating if this app was pinned to the start menu. |
-| wingetID | wstring | Identifier to indicate if this app can be installed through winget, and the winget ID. |
-| wingetSource | wstring | Specifies where the app was sourced from through the Winget APIs. See *wingetSource* for supported values. |
+| wingetID | wstring | Identifier to indicate if this app can be installed through [winget](https://github.com/microsoft/winget-cli), and the winget ID. |
+| wingetSource | wstring | Specifies where the app was sourced from through the [Winget APIs](https://github.com/microsoft/winget-cli). See *wingetSource* for supported values. |
 
 Supported values for the *installSource* field.
 
@@ -181,6 +182,7 @@ Supported values for the *wingetSource* field.
 ### Type: Windows.Data.Apps.AppLevelTileInfo structure
 
 #### AppLevelTileInfo values
+AppLevelTileInfo are populated using an internal API.
 
 | Name | Type | Description |
 |------|-------|---------|
@@ -264,15 +266,15 @@ FileInfo values are populated from the *App Compatibility* JSON above. All FileI
 
 | Name | Type | Description |
 |------|-------|---------|
-| userIntent | uint32   | This is a bit array of values specifying user intent during Windows setup. See *userIntent* values. |
+| userIntent | uint32   | This is a bit array of values specifying user intent during Windows setup. See *userIntent* values. This data is read from HKCU\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent|
 | predictedUserIntent | uint32   | Windows sets flag to indicate that the user had one or more apps that are a signal of a developer. |
-| devModeEnabled | bool   | Whether the user has specified Developer Mode from Windows Settings. |
+| devModeEnabled | bool   | Whether the user has specified Developer Mode from Windows Settings. This data is read from from HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock |
 
 Supported *userIntent* values.
 
 | Value | Description |
 |-------|-------------|
-| 0b00000001  | None |
+| 0b00000001 | None |
 | 0b00000010 | Gaming |
 | 0b00000100 | Family |
 | 0b00001000 | Creativity |
