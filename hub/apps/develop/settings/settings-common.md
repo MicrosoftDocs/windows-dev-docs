@@ -183,7 +183,7 @@ The paths to the icons used to generate the IconInfo, can be found in the [AppXM
 ### Type: Windows.Data.Apps.AppLevelTileInfo structure
 
 #### AppLevelTileInfo values
-AppLevelTileInfo are populated using an internal API.
+AppLevelTileInfo values are populated using an internal API.
 
 | Name | Type | Description |
 |------|-------|---------|
