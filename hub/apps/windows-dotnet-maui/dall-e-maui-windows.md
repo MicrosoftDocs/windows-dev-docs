@@ -14,12 +14,22 @@ In this quickstart, we'll demonstrate how to integrate DALL-E's image generation
 
 - Visual Studio 2022 17.8 or greater, with the .NET Multi-platform App UI workload installed. For more information, see [Installation](/dotnet/maui/get-started/installation).
 - A functional .NET MAUI project with OpenAI integration into which this capability will be integrated. See *[Create a recommendation app with .NET MAUI and ChatGPT](tutorial-maui-ai.md)* - we'll demonstrate how to integrate DALL-E into the user interface from this how-to.
-- An OpenAI API key from your [OpenAI developer dashboard](https://platform.openai.com/api-keys) assigned to the `openAIKey` variable in your project.
+- An OpenAI API key from your [OpenAI developer dashboard](https://platform.openai.com/api-keys).
 - An [Azure.AI.OpenAI](https://www.nuget.org/packages/Azure.AI.OpenAI/) NuGet package installed in your project. If you've followed along with the .NET MAUI ChatGPT tutorial, you will have this dependency installed and configured.
 
 ## What problem will we solve?
 
 You want to add DALL-E's image generation capabilities to your .NET MAUI Windows desktop app to provide users with a rich, interactive experience. They can already use the app to generate text-based recommendations, and you want to add the ability to generate images that visualize an activity in the location they have entered.
+
+## Set your environment variable
+
+In order to use the OpenAI SDK, you'll need to set an environment variable with your API key. In this example, we'll use the `OPENAI_API_KEY` environment variable. Once you have your API key from the [OpenAI developer dashboard](https://platform.openai.com/api-keys), you can set the environment variable from the command line as follows:
+
+```powershell
+setx OPENAI_API_KEY <your-api-key>
+```
+
+Note that this method works for development on Windows, but you'll want to use a more secure method for production apps and for mobile support (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app). See [Best practices for OpenAI key safety](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety).
 
 ## Install and initialize the Azure OpenAI SDK
 
@@ -32,7 +42,6 @@ In this section, we'll install the SDK into the .NET MAUI project and initialize
     ```csharp
     private OpenAIClient _chatGptClient;
     private Guid _sessionGuid = Guid.Empty;
-    private string openAIKey = "MY_OPEN_AI_API_KEY";
     private string openAIEndpoint = null;
     private char[] trimChars = { '\n', '?' };
     
@@ -44,6 +53,8 @@ In this section, we'll install the SDK into the .NET MAUI project and initialize
     
     private void MainPage_Loaded(object sender, EventArgs e)
     {
+        var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
+
         _chatGptClient = !string.IsNullOrWhiteSpace(openAIEndpoint)
             ? new OpenAIClient(
                 new Uri(openAIEndpoint),
@@ -51,8 +62,6 @@ In this section, we'll install the SDK into the .NET MAUI project and initialize
             : new OpenAIClient(openAIKey);
     }
     ```
-
-1. Replace `MY_OPEN_AI_API_KEY` with your OpenAI API key.
 
 ## Modify your app's UI
 

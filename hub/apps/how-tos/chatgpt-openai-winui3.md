@@ -41,13 +41,13 @@ After creating your project, you should see the following default file structure
 
 ## Set your environment variable
 
-In order to use the OpenAI SDK, you'll need to set an environment variable with your API key. In this example, we'll use the `MY_OPEN_AI_API_KEY` environment variable. Once you have your API key from the [OpenAI developer dashboard](https://platform.openai.com/api-keys), you can set the environment variable from the command line as follows:
+In order to use the OpenAI SDK, you'll need to set an environment variable with your API key. In this example, we'll use the `OPENAI_API_KEY` environment variable. Once you have your API key from the [OpenAI developer dashboard](https://platform.openai.com/api-keys), you can set the environment variable from the command line as follows:
 
 ```powershell
-setx MY_OPEN_AI_API_KEY <your-api-key>
+setx OPENAI_API_KEY <your-api-key>
 ```
 
-Note that this method works well for development, but you'll want to use a more secure method for production apps (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app).
+Note that this method works well for development, but you'll want to use a more secure method for production apps (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app). See [Best practices for OpenAI key safety](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety).
 
 
 ## Install the OpenAI SDK
@@ -80,7 +80,7 @@ namespace ChatGPT_WinUI3
         {
             this.InitializeComponent();
            
-            var openAiKey = Environment.GetEnvironmentVariable("MY_OPEN_AI_API_KEY");
+            var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
             openAiService = new OpenAIService(new OpenAiOptions(){
                 ApiKey = openAiKey
@@ -446,7 +446,7 @@ namespace ChatGPT_WinUI3
         {
             this.InitializeComponent();
 
-            var openAiKey = Environment.GetEnvironmentVariable("MY_OPEN_AI_API_KEY");
+            var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
             openAiService = new OpenAIService(new OpenAiOptions(){
                 ApiKey = openAiKey
