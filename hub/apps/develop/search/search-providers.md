@@ -182,8 +182,8 @@ Search providers can optionally provide light and dark mode gleam icons that are
 
 The HTTPS request to the gleam icon endpoint uses the following format.
 
-TBD - need sample query string
-`https://contoso.com?setlang=en-US&cc=US&qry=`
+
+`https://www.contoso.com/Gleam?cc=FR&setlang=en-us&dateTime=3%2F29%2F2024%2C%208%3A33%3A56%20PM&deviceOs=windows10&schemaversion=1.0.0`
 
 The query string parameters passed to the suggestion endpoint are the following.
 
@@ -191,7 +191,7 @@ The query string parameters passed to the suggestion endpoint are the following.
 |-----------|-------------|
 | setlang   | The locale associated with the query. |
 | cc        | The country code associated with query. |
-| dateTime       | The current date and time from client device. |
+| dateTime       | The current date and time from client device, url-encoded. |
 | deviceOs       | The OS of the client device. The value of this parameter can be "Windows10" or "Windows11". On Windows 10, the gleam icon size is 30x60. On Windows 11, the gleam icon size is 30x36 |
 | schemaversion | The gleam schema version. |
 
@@ -203,7 +203,7 @@ The search provider HTTPS endpoint for gleam icons must return a JSON document w
 | Key | Description |
 |-----|-------------|
 | schemaVersion | The gleam schema version. This should match the *schemaVersion* query string parameter in the request. |
-| telemetryId | An identifier used for telemetry purposes. |
+| telemetryId | A unique identifier for the gleam icon. If the value in the response is the same as the value for the current gleam icon, the OS will not update the icon. |
 | taskbarSearchBox | Contains settings for the search box. |
 | gleam | Contains settings for the gleam icon. |
 | altText | Alternate text for the gleam icon. |
@@ -215,28 +215,29 @@ The search provider HTTPS endpoint for gleam icons must return a JSON document w
 
 ```json
 {
-  "schemaVersion": "1.0.0",
-  "telemetryId": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+  "schemaVersion":"1.0.0",
+  "telemetryId":"<unique gleam Id>",
+  "expirationTime":"2025-12-09T20:37:13Z(must be sometime in the future)",
   "content": {
     "taskbarSearchBox": {
-      "gleam" : {
-        "altText": "alternate text for the gleam icon",
-        "dimensionEnum": "30x36",
+      "gleam":{
+        "altText": "<alt text of the gleam>",
+        "dimensionEnum": "(30x60 if win10, 20x36 if win11)",
         "iconUrl": {
-          "light": "http://contoso.com/light",
-          "dark": "http://contoso.com/dark"
+          "light":"<3p's light gleam url>",
+          "dark": "<3p's dark gleam url>"
         }
       }
     }
   }
-} 
+}
 ```
 
 #### Gleam icon response validation
 
 The response must specify both the light asset URL and the dark asset URL. The domains for the icon image URLs must use HTTPS and the subdomain must match the subdomain specified in the **DynamicContentEndpoint** element in the app manifest file.
 
-The image files must be in SVG format and the maximum file size is 300 kB.
+The image files must be in SVG format and the maximum file size is 300 kB. The gleam needs to be within a 240x120px frame inside the SVG. All content must to be outlined or expanded.
 
 If an empty payload is received, that will clear the active gleam icon and no gleam will be displayed.
 
