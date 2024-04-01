@@ -209,7 +209,7 @@ The search provider HTTPS endpoint for gleam icons must return a JSON document w
 | taskbarSearchBox | Contains settings for the search box. |
 | gleam | Contains settings for the gleam icon. |
 | altText | Alternate text for the gleam icon. |
-| dimensionEnum | TBD. |
+| dimensionEnum | The value "30x60" if the request was sent from a Windows 10 device. The value "20x36" if the request was sent from a Windows 11 device. |
 | iconUrl | Contains the URLs for the light and dark gleam icon image files. |
 | light | The URL for the light gleam icon image file. |
 | dark | The URL for the dark gleam icon image file. |
@@ -224,7 +224,7 @@ The search provider HTTPS endpoint for gleam icons must return a JSON document w
     "taskbarSearchBox": {
       "gleam":{
         "altText": "<alt text of the gleam>",
-        "dimensionEnum": "(30x60 if win10, 20x36 if win11)",
+        "dimensionEnum": "(30x60 for Windows 10, 20x36 for Windows 11)",
         "iconUrl": {
           "light":"<3p's light gleam url>",
           "dark": "<3p's dark gleam url>"
