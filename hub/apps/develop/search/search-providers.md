@@ -204,6 +204,8 @@ The search provider HTTPS endpoint for gleam icons must return a JSON document w
 |-----|-------------|
 | schemaVersion | The gleam schema version. This should match the *schemaVersion* query string parameter in the request. |
 | telemetryId | A unique identifier for the gleam icon. If the value in the response is the same as the value for the current gleam icon, the OS will not update the icon. |
+| expirationTime | The expiration time for the gleam icon. Must be a time in the future. |
+| content | The content section of the response. |
 | taskbarSearchBox | Contains settings for the search box. |
 | gleam | Contains settings for the gleam icon. |
 | altText | Alternate text for the gleam icon. |
@@ -217,7 +219,7 @@ The search provider HTTPS endpoint for gleam icons must return a JSON document w
 {
   "schemaVersion":"1.0.0",
   "telemetryId":"<unique gleam Id>",
-  "expirationTime":"2025-12-09T20:37:13Z(must be sometime in the future)",
+  "expirationTime":"2025-12-09T20:37:13Z",
   "content": {
     "taskbarSearchBox": {
       "gleam":{
