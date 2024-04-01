@@ -66,7 +66,7 @@ The format of the backup JSON file. Install, Update, and Uninstall nodes contain
           "productVersion": Product version obtained from GetFileVersionInfo,
           "peImageType": Image type obtained from PE header,
           "peSubsystem": Subsystem obtained from PE header,
-          "runLevel": Executable's runl"evel obtained from app manifest,
+          "runLevel": Executable's runlevel obtained from app manifest,
           "uiAccess": UI access obtained from app manifest,
           "crcChecksum": File's CRC checksum,
           "clrVersion": CLR version obtained from app manifest,
@@ -675,8 +675,8 @@ These are blobs that are in the registry. There are three things that use regist
 
 These are settings found in File Explorer->Folder options(...)->General tab
 
-* File explorer can be opened to either Home or This PC
-* File explorer can be opened to One Drive folder as well if user has signed in to One Drive (This option is available only if user has signed in)
+*    File explorer can be opened to either Home or This PC 
+*    File explorer can be opened to One Drive folder as well if user has signed in to One Drive (This option is available only if user has signed in)
 
 #### FolderOptionGeneralSettings Properties
 

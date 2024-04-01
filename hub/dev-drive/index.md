@@ -55,8 +55,8 @@ When choosing the **Create new VHD** option to set up a Dev Drive, you will then
   - **VHD**: Supports virtual disks up to 2040GB in size.
   - **VHDX** (Recommended): Supports virtual disks up to 64TB in size and offers more resilient protection against unexpected IO failure caused by issues like power outage). [Learn more about Managing VHDs](/windows-server/storage/disk-management/manage-virtual-hard-disks).
 - **Disk type**:
-  - **Fixed size** - This virtual hard disk file is allocated to the maximum size when created (Recommended for efficiency)
-  - **Dynamically expanding** - Grows to maximum size as data is written
+  - **Fixed size** - This virtual hard disk file is allocated to the maximum size when created 
+  - **Dynamically expanding** - Grows to maximum size as data is written (Recommended)
 
 Once you complete the process of selecting between these options, your Dev Drive will be created.
 
