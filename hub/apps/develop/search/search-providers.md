@@ -192,7 +192,7 @@ The query string parameters passed to the suggestion endpoint are the following.
 | setlang   | The locale associated with the query. |
 | cc        | The country code associated with query. |
 | dateTime       | The current date and time from client device, url-encoded. |
-| deviceOs       | The OS of the client device. The value of this parameter can be "Windows10" or "Windows11". On Windows 10, the gleam icon size is 30x60. On Windows 11, the gleam icon size is 30x36 |
+| deviceOs       | The OS of the client device. The value of this parameter can be "Windows10" or "Windows11". On Windows 10, the gleam icon size is 30x60. On Windows 11, the gleam icon size is 20x36 |
 | schemaversion | The gleam schema version. |
 
 
