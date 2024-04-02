@@ -7,8 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, contacts, calendar, appointments, email messages
 ms.localizationpriority: medium
 ---
-# Contacts, My People, and calendar
 
+# Contacts, My People, and calendar
 
 You can let your users access their contacts and appointments so they can share content, email, calendar info, or messages with each other, or whatever functionality you design.
 
@@ -24,8 +24,7 @@ To see a few different ways in which your app can access contacts and appointmen
 | [Adding My People support to an application](my-people-support.md) | Shows how to add My People support to an application and how to pin and unpin contacts on the taskbar. |
 | [My People sharing](my-people-sharing.md) | Shows how to add support for My People sharing, which lets users share content with their pinned contacts by dragging files from the File Explorer to a My People pin. |
 | [My People notifications](my-people-notifications.md) | Shows how to create and use My People notifications, a new kind of toast notification that's sent from a pinned contact. |
-
- 
+| [Third party contacts for Windows People Experiences](/windows/apps/develop/contacts-and-calendar/third-party-contacts-for-windows-people) | Shows how third party apps can integrate with Windows People Experiences with APIs to store all their contacts. |
 
 ## Related topics
 

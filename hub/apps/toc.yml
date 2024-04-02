@@ -824,6 +824,10 @@ items:
                 href: windows-app-sdk/mrtcore/localize-strings.md
               - name: Load images, assets tailored for scale, theme, contrast, others
                 href: windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast.md
+          - name: People and places
+            items:
+              - name: Third party contacts for Windows People Experiences
+                href: develop/contacts-and-calendar/third-party-contacts-for-windows-people.md
           - name: Data access
             items: 
               - name: Overview
