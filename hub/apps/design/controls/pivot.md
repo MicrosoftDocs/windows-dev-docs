@@ -16,7 +16,7 @@ The Pivot control enables touch-swiping between a small set of content sections.
 
 ## Is this the right control?
 
-> [!NOTE]
+> [!WARNING]
 >The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
 >
 > - **WinUI 3** - Use the [SelectorBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar) control.
@@ -110,7 +110,7 @@ This code mimics the Pivot control's built-in navigation experience, minus the t
 
 ## Create a pivot control
 
-> [!NOTE]
+> [!WARNING]
 >The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
 >
 > - **WinUI 3** - Use the [SelectorBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar) control.
@@ -183,7 +183,7 @@ The control comes in two modes:
 - Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.
 - Pivot items in a carousel loop from last to first pivot section.
 
-> **TIP**
+> [!TIP]
 >
 > - Avoid using more than 5 headers when using carousel mode, as looping more than 5 can become confusing.
 > - Pivot headers should not carousel in a [10ft environment](../devices/designing-for-tv.md). Set the [IsHeaderItemsCarouselEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.IsHeaderItemsCarouselEnabled) property to `false` if your app will run on Xbox.
