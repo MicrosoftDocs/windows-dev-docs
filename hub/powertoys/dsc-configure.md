@@ -94,7 +94,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | Enabled | Bool | The enabled state for this utility | ✅ |
 | KeepDisplayOn | Boolean | This setting is only available when keeping the PC awake | ✅ |
 | Mode | AwakeMode | Possible values: PASSIVE INDEFINITE TIMED EXPIRABLE  | ✅ |
-| IntervalHours | UInt32 | When using TIMED Mode, specifies the amount of hours | ✅ |
+| IntervalHours | UInt32 | When using TIMED Mode, specifies the number of hours. | ✅ |
 | IntervalMinutes | UInt32 | When using TIMED Mode, specifies the amount of minutes | ✅ |
 | ExpirationDateTime | DateTimeOffset | When using EXPIRABLE Mode, specifies the date time in a format parsable with `DateTimeOffset.TryParse` | ✅ |
 
