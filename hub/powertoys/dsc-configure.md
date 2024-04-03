@@ -359,6 +359,22 @@ PowerLaucher is the internal name for PowerToys Run.
 | MaximumNumberOfResults | Int | Number of results shown before having to scroll | ✅ |
 | UsePinyin | Boolean | Use Pinyin | ✅ |
 | GenerateThumbnailsFromFiles | Boolean | Whether thumbnail generation for files is turned on | ✅ |
+| Plugins | explained in the next subsection | Whether thumbnail generation for files is turned on | ✅ |
+
+#### PowerToys Run plugins
+
+PowerToys Run plugins can be configured in the Plugins property. [A sample can be found in the PowerToys repository.](https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/configureLauncherPlugins.dsc.yaml)
+
+These are the available properties to configure each plugin:
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Name | String | Name of the plugin we want to configure |
+| Disabled | Boolean | Whether the plugin should be disabled |
+| IsGlobal | Boolean | Whether the results for this plugin are shown in the global results |
+| ActionKeyword | String | Configure the action keyword of the plugin |
+| WeightBoost | Int | The weight modifier to help in ordering the results for this plugin |
+
+Note: Configuring additional properties of plugins is not yet supported through DSC.
 
 ### PowerOcr
 
