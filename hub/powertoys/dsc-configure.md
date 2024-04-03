@@ -67,7 +67,7 @@ Use the following command to apply the configuration from the file:
 winget configure .\configuration.dsc.yaml
 ```
 
-This command installs the latest version of PowerToys and then uses the PowerToysConfigure resource to apply various settings for multiple PowerToys modules. More examples can be found [here](https://github.com/microsoft/PowerToys/tree/main/src/dsc/Microsoft.PowerToys.Configure/examples).
+This command installs the latest version of PowerToys and uses the PowerToysConfigure resource to apply settings for multiple PowerToys modules. More examples can be found [here](https://github.com/microsoft/PowerToys/tree/main/src/dsc/Microsoft.PowerToys.Configure/examples).
 
 ## Available Configuration Settings by Module
 
