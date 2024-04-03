@@ -225,6 +225,8 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 ### MeasureTool
 
+Measure Tool is the internal name for Screen Ruler.
+
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility | ✅ |
@@ -318,6 +320,8 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 ### PowerAccent
 
+PowerAccent is the internal name for Quick Accent.
+
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility | ✅ |
@@ -332,6 +336,8 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | StartSelectionFromTheLeft | Boolean | Start selection from the left | ✅ |
 
 ### PowerLauncher
+
+PowerLaucher is the internal name for PowerToys Run.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
@@ -355,6 +361,8 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | GenerateThumbnailsFromFiles | Boolean | Whether thumbnail generation for files is turned on | ✅ |
 
 ### PowerOcr
+
+PowerOcr is the internal name for Text Extractor.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
