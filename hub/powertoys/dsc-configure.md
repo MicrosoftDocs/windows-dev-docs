@@ -223,7 +223,8 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | ImageresizerFallbackEncoder | String | Fallback encoder to use. | ✅ |
 | ImageresizerCustomSize | — | — | ❌ |
 
-Note: Configuring custom sizes through DSC is not supported yet.
+> [NOTE]
+> Configuring custom sizes through DSC is not supported yet.
 
 ### KeyboardManager
 
@@ -233,7 +234,8 @@ Note: Configuring custom sizes through DSC is not supported yet.
 | ActiveConfiguration | — | — | ❌ |
 | KeyboardConfigurations | — | — | ❌ |
 
-Note: Configuring remappings through DSC is not supported yet.
+> [NOTE]
+> Configuring remappings through DSC is not supported yet.
 
 ### MeasureTool
 
@@ -386,7 +388,8 @@ These are the available properties to configure each plugin:
 | ActionKeyword | String | Configure the action keyword of the plugin |
 | WeightBoost | Int | The weight modifier to help in ordering the results for this plugin |
 
-Note: Configuring additional properties of plugins is not yet supported through DSC.
+> [NOTE]
+> Configuring additional properties of plugins is not yet supported through DSC.
 
 ### PowerOcr
 
