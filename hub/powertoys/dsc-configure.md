@@ -96,7 +96,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | Mode | AwakeMode | Possible values: PASSIVE INDEFINITE TIMED EXPIRABLE  | ✅ |
 | IntervalHours | UInt32 | When using TIMED Mode, specifies the number of hours. | ✅ |
 | IntervalMinutes | UInt32 | When using TIMED Mode, specifies the number of minutes. | ✅ |
-| ExpirationDateTime | DateTimeOffset | When using EXPIRABLE Mode, specifies the date time in a format parsable with `DateTimeOffset.TryParse` | ✅ |
+| ExpirationDateTime | DateTimeOffset | When using EXPIRABLE Mode, specifies the date and time in a format parsable with `DateTimeOffset.TryParse` | ✅ |
 
 ### ColorPicker
 
