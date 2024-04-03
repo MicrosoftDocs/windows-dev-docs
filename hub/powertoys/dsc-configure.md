@@ -93,7 +93,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility. | ✅ |
 | KeepDisplayOn | Boolean | This setting is only available when keeping the PC awake. | ✅ |
-| Mode | AwakeMode | Possible values: PASSIVE INDEFINITE TIMED EXPIRABLE.  | ✅ |
+| Mode | AwakeMode | Possible values: PASSIVE, INDEFINITE, TIMED, EXPIRABLE.  | ✅ |
 | IntervalHours | UInt32 | When using TIMED Mode, specifies the number of hours. | ✅ |
 | IntervalMinutes | UInt32 | When using TIMED Mode, specifies the number of minutes. | ✅ |
 | ExpirationDateTime | DateTimeOffset | When using EXPIRABLE Mode, specifies the date and time in a format parsable with `DateTimeOffset.TryParse`. | ✅ |
@@ -202,8 +202,8 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | LaunchAdministrator | Boolean | Needs to be launched as administrator in order to make changes to the system environment variables. | ✅ |
 | ShowStartupWarning | Boolean | Show a warning at startup. | ✅ |
 | LoopbackDuplicates | Boolean | Consider loopback addresses as duplicates. | ✅ |
-| AdditionalLinesPosition | HostsAdditionalLinesPosition | Possible values: Top Bottom  | ✅ |
-| Encoding | HostsEncoding | Possible values: Utf8 Utf8Bom.  | ✅ |
+| AdditionalLinesPosition | HostsAdditionalLinesPosition | Possible values: Top, Bottom. | ✅ |
+| Encoding | HostsEncoding | Possible values: Utf8, Utf8Bom.  | ✅ |
 
 ### ImageResizer
 
@@ -337,7 +337,7 @@ PowerAccent is the internal name for Quick Accent.
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility. | ✅ |
-| ActivationKey | PowerAccentActivationKey | Possible values: LeftRightArrow Space Both . | ✅ |
+| ActivationKey | PowerAccentActivationKey | Possible values: LeftRightArrow, Space, Both. | ✅ |
 | DoNotActivateOnGameMode | Boolean | Disable activation shortcut when Game Mode is on. | ✅ |
 | ToolbarPosition | String | Toolbar position index. | ✅ |
 | InputTime | Int | Input time delay in milliseconds. | ✅ |
@@ -358,9 +358,9 @@ PowerLaucher is the internal name for PowerToys Run.
 | IgnoreHotkeysInFullscreen | Boolean | Ignore shortcuts in fullscreen mode. | ✅ |
 | ClearInputOnLaunch | Boolean | Clear the previous query on launch. | ✅ |
 | TabSelectsContextButtons | Boolean | Tab through context buttons. | ✅ |
-| Theme | Theme | Possible values: System Light Dark HighContrastOne HighContrastTwo HighContrastBlack HighContrastWhite . | ✅ |
+| Theme | Theme | Possible values: System, Light, Dark, HighContrastOne, HighContrastTwo, HighContrastBlack, HighContrastWhite. | ✅ |
 | TitleFontSize | Int32 | Text size in points. | ✅ |
-| Position | StartupPosition | Possible values: Cursor PrimaryMonitor Focus . | ✅ |
+| Position | StartupPosition | Possible values: Cursor, PrimaryMonitor, Focus. | ✅ |
 | UseCentralizedKeyboardHook | Boolean | Use centralized keyboard hook. | ✅ |
 | SearchQueryResultsWithDelay | Boolean | Input Smoothing. | ✅ |
 | SearchInputDelay | Int32 | Immediate plugins delay in milliseconds. | ✅ |
