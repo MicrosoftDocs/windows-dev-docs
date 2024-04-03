@@ -61,7 +61,7 @@ properties:
   configurationVersion: 0.2.0
 ```
 
-The configuration file can be executed as follows:
+Use the following command to apply the configuration from the file:
 
 ```ps
 winget configure .\configuration.dsc.yaml
