@@ -109,7 +109,8 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | VisibleColorFormats | — | — | ❌ |
 | ShowColorName | Boolean | This will show the name of the color when picking a color | ✅ |
 
-Note: Configuring custom color formats through DSC is not supported yet.
+> [NOTE]
+> Configuring custom color formats through DSC is not yet supported.
 
 ### CropAndLock
 
