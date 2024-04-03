@@ -105,7 +105,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module | ✅ |
 | CopiedColorRepresentation | String | The default color representation to be used. Example :"HEX" | ✅ |
-| ActivationAction | ColorPickerActivationAction | Possible values: OpenEditor OpenColorPickerAndThenEditor OpenOnlyColorPicker  | ✅ |
+| ActivationAction | ColorPickerActivationAction | Possible values: OpenEditor, OpenColorPickerAndThenEditor, OpenOnlyColorPicker. | ✅ |
 | VisibleColorFormats | — | — | ❌ |
 | ShowColorName | Boolean | This will show the name of the color when picking a color | ✅ |
 
