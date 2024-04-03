@@ -367,7 +367,7 @@ PowerLaucher is the internal name for PowerToys Run.
 | SearchInputDelayFast | Int32 | Background execution plugins delay in milliseconds | ✅ |
 | SearchClickedItemWeight | Int32 | Selected item weight | ✅ |
 | SearchQueryTuningEnabled | Boolean | Results order tuning | ✅ |
-| SearchWaitForSlowResults | Boolean | Wait on slower plugin results before selecting top item in results | ✅ |
+| SearchWaitForSlowResults | Boolean | Wait for slower plugin results before selecting top item in results | ✅ |
 | MaximumNumberOfResults | Int | Number of results shown before having to scroll | ✅ |
 | UsePinyin | Boolean | Use Pinyin | ✅ |
 | GenerateThumbnailsFromFiles | Boolean | Whether thumbnail generation for files is turned on | ✅ |
