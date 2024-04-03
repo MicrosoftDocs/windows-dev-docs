@@ -33,7 +33,7 @@ In order to use the OpenAI SDK, you'll need to set an environment variable with 
 setx OPENAI_API_KEY <your-api-key>
 ```
 
-Note that this method works for development on Windows, but you'll want to use a more secure method for production apps and for mobile support (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app). See [Best practices for OpenAI key safety](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety).
+Note that this method works for development on Windows, but you'll want to use a more secure method for production apps and for mobile support (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app). See [Best practices for OpenAI key safety](https://help.openai.com/articles/5112595-best-practices-for-api-key-safety).
 
 ## Create a new .NET MAUI project with the required UI elements
 
