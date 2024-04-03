@@ -195,6 +195,8 @@ The paths to the icons used to generate the IconInfo, can be found in the [AppXM
 | shortcut | **ShortcutInfo**   | Shortcut information.  |
 | suiteName | wstring   | String name for a collection of apps.    |
 
+### Type: Windows.Data.Apps.FileInfo structure
+
 #### FileInfo values
 
 FileInfo values are populated from the *App Compatibility* JSON above. All FileInfo values are provided as WSTRINGs, though some of the values in the JSON are different.
