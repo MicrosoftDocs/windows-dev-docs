@@ -13,6 +13,7 @@ Since version 0.80, the PowerToys installer has been released on GitHub with `Mi
 ## Installation
 
 ### Prerequisites
+
 - `PSDesiredStateConfiguration` 2.0.7 or higher: Refer to the [PowerShell DSC documentation](/powershell/dsc/overview) for installation instructions.
 - PowerShell 7.2 or higher.
 - WinGet [version v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
