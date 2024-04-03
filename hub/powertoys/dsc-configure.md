@@ -8,7 +8,7 @@ no-loc: [PowerToys, Windows, DSC, Win]
 
 # DSC configuration
 
-Since version 0.80, PowerToys installer is released on GitHub with `Microsoft.PowerToys.Configure` [DSC resource](/powershell/dsc/overview) that allows you to configure PowerToys using a [Winget configuration file](/windows/package-manager/configuration/create).
+Since version 0.80, the PowerToys installer has been released on GitHub with `Microsoft.PowerToys.Configure` [DSC resource](/powershell/dsc/overview) that allows you to configure PowerToys using a [Winget configuration file](/windows/package-manager/configuration/create).
 
 ## Installation
 
