@@ -102,7 +102,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module | ✅ |
-| CopiedColorRepresentation | String | — | ✅ |
+| CopiedColorRepresentation | String | The default color representation to be used. Example :"HEX" | ✅ |
 | ActivationAction | ColorPickerActivationAction | Possible values: OpenEditor OpenColorPickerAndThenEditor OpenOnlyColorPicker  | ✅ |
 | VisibleColorFormats | — | — | ❌ |
 | ShowColorName | Boolean | This will show the name of the color when picking a color | ✅ |
@@ -350,7 +350,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | SearchQueryTuningEnabled | Boolean | Results order tuning | ✅ |
 | SearchWaitForSlowResults | Boolean | Wait on slower plugin results before selecting top item in results | ✅ |
 | UsePinyin | Boolean | Use Pinyin | ✅ |
-| GenerateThumbnailsFromFiles | Boolean | — | ✅ |
+| GenerateThumbnailsFromFiles | Boolean | Whether thumbnail generation for files is turned on | ✅ |
 
 ### PowerOcr
 
@@ -358,7 +358,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module | ✅ |
-| PreferredLanguage | String | — | ✅ |
+| PreferredLanguage | String | Should match the full name of one of the languages installed in the system. Example: "English (United States)" | ✅ |
 
 ### PowerPreview
 
@@ -407,7 +407,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | Enabled | Bool | The enabled state for this utility | ✅ |
 | OpenShortcutGuide | HotkeySettings | Customize the shortcut to activate this module | ✅ |
 | OverlayOpacity | Int | Background opacity in percentage | ✅ |
-| UseLegacyPressWinKeyBehavior | Bool | — | ✅ |
+| UseLegacyPressWinKeyBehavior | Bool | If ShortcutGuide should be activated by pressing the Windows key | ✅ |
 | PressTimeForGlobalWindowsShortcuts | Int | Press duration before showing global Windows shortcuts in milliseconds | ✅ |
 | PressTimeForTaskbarIconShortcuts | Int | Press duration before showing taskbar icon shortcuts in milliseconds | ✅ |
 | Theme | String | Theme index | ✅ |
@@ -418,31 +418,30 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility | ✅ |
-| MuteCameraAndMicrophoneHotkey | KeyboardKeys | — | ✅ |
-| MuteMicrophoneHotkey | KeyboardKeys | — | ✅ |
-| PushToTalkMicrophoneHotkey | KeyboardKeys | — | ✅ |
+| MuteCameraAndMicrophoneHotkey | KeyboardKeys | Shortcut for muting the camera and microphone | ✅ |
+| MuteMicrophoneHotkey | KeyboardKeys | Shortcut for muting the microphone | ✅ |
+| PushToTalkMicrophoneHotkey | KeyboardKeys | Shortcut for push to talk | ✅ |
 | PushToReverseEnabled | Bool | If enabled, allows both push to talk and push to mute, depending on microphone state | ✅ |
-| MuteCameraHotkey | KeyboardKeys | — | ✅ |
+| MuteCameraHotkey | KeyboardKeys | Shortcut for muting the camera | ✅ |
 | SelectedCamera | String | Device name | ✅ |
 | SelectedMicrophone | String | Device name or [All] | ✅ |
-| ToolbarPosition | String | Toolbar position option name | ✅ |
-| ToolbarMonitor | String | Toolbar monitor option name | ✅ |
-| CameraOverlayImagePath | String | — | ✅ |
-| Theme | String | — | ✅ |
-| ToolbarHide | String | Toolbar hide option name | ✅ |
-| StartupAction | String | Startup action option name | ✅ |
+| ToolbarPosition | String | Toolbar position option: "Top center", "Bottom center", "Top right corner", "Top left corner", "Bottom right corner", "Bottom left corner" | ✅ |
+| ToolbarMonitor | String | Toolbar monitor option: "Main monitor", "All monitors" | ✅ |
+| CameraOverlayImagePath | String | Path to the image used for the camera overlay | ✅ |
+| ToolbarHide | String | When to hide the toolbar: "Never", "When both camera and microphone are unmuted", "When both camera and microphone are muted", "After timeout" | ✅ |
+| StartupAction | String | Startup action: "Nothing", "Unmute", "Mute" | ✅ |
 
 ### GeneralSettings
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Startup | Boolean | — | ✅ |
+| Startup | Boolean | Whether PowerToys is automatically enabled at startup | ✅ |
 | EnableWarningsElevatedApps | Boolean | Show a warning for functionality issues when running alongside elevated applications | ✅ |
-| Theme | String | — | ✅ |
-| ShowNewUpdatesToastNotification | Boolean | — | ✅ |
-| AutoDownloadUpdates | Boolean | — | ✅ |
-| ShowWhatsNewAfterUpdates | Boolean | — | ✅ |
-| EnableExperimentation | Boolean | — | ✅ |
+| Theme | String | What theme to use for the Settings application: "system", "dark", "light" | ✅ |
+| ShowNewUpdatesToastNotification | Boolean | Show a toast notification when a new PowerToys update is available | ✅ |
+| AutoDownloadUpdates | Boolean | If new updates of PowerToys should be automatically downloaded in the background | ✅ |
+| ShowWhatsNewAfterUpdates | Boolean | After updating PowerToys, open the "What's new" screen | ✅ |
+| EnableExperimentation | Boolean | Whether to opt-in into experimental features | ✅ |
 
 ## Contributing
 
