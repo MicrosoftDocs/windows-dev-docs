@@ -107,6 +107,8 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | VisibleColorFormats | — | — | ❌ |
 | ShowColorName | Boolean | This will show the name of the color when picking a color | ✅ |
 
+Note: Configuring custom color formats through DSC is not supported yet.
+
 ### CropAndLock
 
 | Name | Type | Description | Available |
@@ -159,6 +161,8 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | FancyzonesNumberColor | String | If not using FancyzonesSystemTheme, number color to use in #FFFFFFFF format | ✅ |
 | FancyzonesSystemTheme | Bool | Whether to use system theme for zone appearance | ✅ |
 | FancyzonesShowZoneNumber | Bool | Whether to show zone number | ✅ |
+
+Note: Configuring layouts through DSC is not supported yet.
 
 ### FileLocksmith
 
@@ -215,6 +219,8 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | ImageresizerFallbackEncoder | String | Fallback encoder to use | ✅ |
 | ImageresizerCustomSize | — | — | ❌ |
 
+Note: Configuring custom sizes through DSC is not supported yet.
+
 ### KeyboardManager
 
 | Name | Type | Description | Available |
@@ -222,6 +228,8 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | Enabled | Bool | The enabled state for this utility | ✅ |
 | ActiveConfiguration | — | — | ❌ |
 | KeyboardConfigurations | — | — | ❌ |
+
+Note: Configuring remappings through DSC is not supported yet.
 
 ### MeasureTool
 
