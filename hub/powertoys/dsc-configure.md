@@ -294,7 +294,7 @@ Measure Tool is the internal name for Screen Ruler.
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility | ✅ |
-| ShowOriginalUI | Boolean | show the original Mouse Without Borders UI | ✅ |
+| ShowOriginalUI | Boolean | Show the original Mouse Without Borders UI. | ✅ |
 | WrapMouse | Boolean | Move control back to the first machine when mouse moves past the last one | ✅ |
 | ShareClipboard | Boolean | If share clipboard stops working, Ctrl+Alt+Del then Esc may solve the problem. | ✅ |
 | TransferFile | Boolean | If a file (<100MB) is copied, it will be transferred to the remote machine clipboard | ✅ |
