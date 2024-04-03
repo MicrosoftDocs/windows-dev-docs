@@ -79,7 +79,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | Hotkey | KeyboardKeys | Customize the shortcut to pin or unpin an app window. | ✅ |
 | FrameEnabled | Bool | Show a border around the pinned window. | ✅ |
 | FrameThickness | Int | Border thickness in pixels. | ✅ |
-| FrameColor | String | Specify a color in a #FFFFFFFF format. | ✅ |
+| FrameColor | String | Specify a color in a `#FFFFFFFF` format. | ✅ |
 | FrameOpacity | Int | Border opacity in percentage. | ✅ |
 | FrameAccentColor | Bool | Whether to use a custom FrameColor value. | ✅ |
 | SoundEnabled | Bool | Play a sound when pinning a window. | ✅ |
@@ -152,16 +152,16 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | FancyzonesMakeDraggedWindowTransparent | Bool | Make dragged window transparent. | ✅ |
 | FancyzonesAllowChildWindowSnap | Bool | Allow child windows snapping. | ✅ |
 | FancyzonesDisableRoundCornersOnSnap | Bool | Disable round corners when window is snapped. | ✅ |
-| FancyzonesZoneHighlightColor | String | If not using FancyzonesSystemTheme, highlight color to use in #FFFFFFFF format. | ✅ |
+| FancyzonesZoneHighlightColor | String | If not using FancyzonesSystemTheme, highlight color to use in `#FFFFFFFF` format. | ✅ |
 | FancyzonesHighlightOpacity | Int | Zone opacity in percentage. | ✅ |
 | FancyzonesEditorHotkey | KeyboardKeys | Customize the shortcut to activate this module. | ✅ |
 | FancyzonesWindowSwitching | Bool | Switch between windows in the current zone. | ✅ |
 | FancyzonesNextTabHotkey | KeyboardKeys | Next window shortcut. | ✅ |
 | FancyzonesPrevTabHotkey | KeyboardKeys | Previous window shortcut. | ✅ |
 | FancyzonesExcludedApps | String | '\r'-separated list of executable names to exclude from snapping. | ✅ |
-| FancyzonesBorderColor | String | If not using FancyzonesSystemTheme, border color to use in #FFFFFFFF format. | ✅ |
-| FancyzonesInActiveColor | String | If not using FancyzonesSystemTheme, inactive color to use in #FFFFFFFF format. | ✅ |
-| FancyzonesNumberColor | String | If not using FancyzonesSystemTheme, number color to use in #FFFFFFFF format. | ✅ |
+| FancyzonesBorderColor | String | If not using FancyzonesSystemTheme, border color to use in `#FFFFFFFF` format. | ✅ |
+| FancyzonesInActiveColor | String | If not using FancyzonesSystemTheme, inactive color to use in `#FFFFFFFF` format. | ✅ |
+| FancyzonesNumberColor | String | If not using FancyzonesSystemTheme, number color to use in `#FFFFFFFF` format. | ✅ |
 | FancyzonesSystemTheme | Bool | Whether to use system theme for zone appearance. | ✅ |
 | FancyzonesShowZoneNumber | Bool | Whether to show zone number. | ✅ |
 
@@ -183,8 +183,8 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | ActivationMethod | Int | Activation method index. | ✅ |
 | ActivationShortcut | HotkeySettings | Custom activation shortcut when using Custom for ActivationMethod. | ✅ |
 | DoNotActivateOnGameMode | Bool | Disable activation shortcut when Game Mode is on. | ✅ |
-| BackgroundColor | String | Background color in #FFFFFFFF format. | ✅ |
-| SpotlightColor | String | Spotlight color in #FFFFFFFF format. | ✅ |
+| BackgroundColor | String | Background color in `#FFFFFFFF` format. | ✅ |
+| SpotlightColor | String | Spotlight color in `#FFFFFFFF` format. | ✅ |
 | OverlayOpacity | Int | Overlay opacity in percentage. | ✅ |
 | SpotlightRadius | Int | Spotlight radius in px. | ✅ |
 | AnimationDurationMs | Int | Animation duration in milliseconds. | ✅ |
@@ -247,7 +247,7 @@ Measure Tool is the internal name for Screen Ruler.
 | DrawFeetOnCross | Boolean | Adds feet to the end of cross lines. | ✅ |
 | PerColorChannelEdgeDetection | Boolean | Enable a different edge detection algorithm. | ✅ |
 | PixelTolerance | Int | Pixel Tolerance for edge detection. | ✅ |
-| MeasureCrossColor | String | Line color in #FFFFFFFF format. | ✅ |
+| MeasureCrossColor | String | Line color in `#FFFFFFFF` format. | ✅ |
 | DefaultMeasureStyle | Int | Default measure style index. | ✅ |
 
 ### MouseHighlighter
@@ -256,9 +256,9 @@ Measure Tool is the internal name for Screen Ruler.
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to turn on or off this mode. | ✅ |
-| LeftButtonClickColor | String | Primary button highlight color in #FFFFFFFF format. | ✅ |
-| RightButtonClickColor | String | Secondary button highlight color in #FFFFFFFF format. | ✅ |
-| AlwaysColor | String | Always highlight color in #FFFFFFFF format. | ✅ |
+| LeftButtonClickColor | String | Primary button highlight color in `#FFFFFFFF` format. | ✅ |
+| RightButtonClickColor | String | Secondary button highlight color in `#FFFFFFFF` format. | ✅ |
+| AlwaysColor | String | Always highlight color in `#FFFFFFFF` format. | ✅ |
 | HighlightRadius | Int | Highlight radius in pixels. | ✅ |
 | HighlightFadeDelayMs | Int | Fade delay in milliseconds. | ✅ |
 | HighlightFadeDurationMs | Int | Fade duration in milliseconds. | ✅ |
@@ -278,11 +278,11 @@ Measure Tool is the internal name for Screen Ruler.
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to show/hide the crosshairs. | ✅ |
-| CrosshairsColor | String | Crosshairs color in #FFFFFFFF. | ✅ |
+| CrosshairsColor | String | Crosshairs color in `#FFFFFFFF`. | ✅ |
 | CrosshairsOpacity | Int | Crosshairs opacity in percentage. | ✅ |
 | CrosshairsRadius | Int | Crosshairs center radius in pixels. | ✅ |
 | CrosshairsThickness | Int | Crosshairs thickness in pixels. | ✅ |
-| CrosshairsBorderColor | String | Crosshairs border color in #FFFFFFFF format. | ✅ |
+| CrosshairsBorderColor | String | Crosshairs border color in `#FFFFFFFF` format. | ✅ |
 | CrosshairsBorderSize | Int | Crosshairs border size in pixels. | ✅ |
 | CrosshairsAutoHide | Bool | Automatically hide crosshairs when the mouse pointer is hidden. | ✅ |
 | CrosshairsIsFixedLengthEnabled | Bool | Fix crosshairs length. | ✅ |
@@ -404,7 +404,7 @@ PowerOcr is the internal name for Text Extractor.
 | :--- | :--- | :--- | :--- |
 | EnableSvgPreview | Boolean | Scalable Vector Graphics Preview Handler Enabled state. | ✅ |
 | SvgBackgroundColorMode | Int | Color mode index. | ✅ |
-| SvgBackgroundSolidColor | String | When using Solid color SvgBackgroundColorMode, specifies the color in #FFFFFFFF format. | ✅ |
+| SvgBackgroundSolidColor | String | When using Solid color SvgBackgroundColorMode, specifies the color in `#FFFFFFFF` format. | ✅ |
 | SvgBackgroundCheckeredShade | Int | When using Checkered pattern SvgBackgroundColorMode, specifies the shade index. | ✅ |
 | EnableSvgThumbnail | Boolean | Scalable Vector Graphics Thumbnail Generator Enabled state. | ✅ |
 | EnableMdPreview | Boolean | Markdown Preview Handler Enabled state. | ✅ |
@@ -417,7 +417,7 @@ PowerOcr is the internal name for Text Extractor.
 | EnableGcodePreview | Boolean | Geometric Code Preview Handler Enabled state. | ✅ |
 | EnableGcodeThumbnail | Boolean | Geometric Code Thumbnail Generator Enabled state. | ✅ |
 | EnableStlThumbnail | Boolean | Stereolithography Thumbnail Generator Enabled state. | ✅ |
-| StlThumbnailColor | String | Thumbnail color in #FFFFFFFF format . | ✅ |
+| StlThumbnailColor | String | Thumbnail color in `#FFFFFFFF` format . | ✅ |
 | EnableQoiPreview | Boolean | Quite OK Image Preview Handler Enabled state. | ✅ |
 | EnableQoiThumbnail | Boolean | Quite OK Image Thumbnail Generator Enabled state. | ✅ |
 
