@@ -73,6 +73,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | Hotkey | KeyboardKeys | Customize the shortcut to pin or unpin an app window | ✅ |
 | FrameEnabled | Bool | Show a border around the pinned window | ✅ |
 | FrameThickness | Int | Border thickness in pixels | ✅ |
@@ -88,6 +89,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | KeepDisplayOn | Boolean | This setting is only available when keeping the PC awake | ✅ |
 | Mode | AwakeMode | Possible values: PASSIVE INDEFINITE TIMED EXPIRABLE  | ✅ |
 | IntervalHours | UInt32 | When using TIMED Mode, specifies the amount of hours | ✅ |
@@ -98,6 +100,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module | ✅ |
 | CopiedColorRepresentation | String | — | ✅ |
 | ActivationAction | ColorPickerActivationAction | Possible values: OpenEditor OpenColorPickerAndThenEditor OpenOnlyColorPicker  | ✅ |
@@ -108,6 +111,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ReparentHotkey | KeyboardKeys | Shortcut to crop an application's window into a cropped window. This is experimental and can cause issues with some applications, since the cropped window will contain the original application window. | ✅ |
 | ThumbnailHotkey | KeyboardKeys | Shortcut to crop and create a thumbnail of another window. The application isn't controllable through the thumbnail but it'll have less compatibility issues. | ✅ |
 
@@ -115,12 +119,14 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | LaunchAdministrator | Boolean | Needs to be launched as administrator in order to make changes to the system environment variables | ✅ |
 
 ### FancyZones
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | FancyzonesShiftDrag | Bool | Hold Shift key to activate zones while dragging a window | ✅ |
 | FancyzonesMouseSwitch | Bool | Use a non-primary mouse button to toggle zone activation | ✅ |
 | FancyzonesMouseMiddleClickSpanningMultipleZones | Bool | Use middle-click mouse button to toggle multiple zones spanning | ✅ |
@@ -158,12 +164,14 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ExtendedContextMenuOnly | Bool | Show File Locksmith in extended context menu only or in default context menu as well | ✅ |
 
 ### FindMyMouse
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationMethod | Int | Activation method index | ✅ |
 | ActivationShortcut | HotkeySettings | Custom activation shortcut when using Custom for ActivationMethod | ✅ |
 | DoNotActivateOnGameMode | Bool | Disable activation shortcut when Game Mode is on | ✅ |
@@ -182,6 +190,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ShowStartupWarning | Boolean | Show a warning at startup | ✅ |
 | LoopbackDuplicates | Boolean | Consider loopback addresses as duplicates | ✅ |
 | AdditionalLinesPosition | HostsAdditionalLinesPosition | Possible values: Top Bottom  | ✅ |
@@ -191,6 +200,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ImageresizerSelectedSizeIndex | Int | Default size preset index | ✅ |
 | ImageresizerShrinkOnly | Bool | Make pictures smaller but not larger | ✅ |
 | ImageresizerReplace | Bool | Overwrite files | ✅ |
@@ -208,6 +218,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActiveConfiguration | — | — | ❌ |
 | KeyboardConfigurations | — | — | ❌ |
 
@@ -215,6 +226,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to bring up the command bar | ✅ |
 | ContinuousCapture | Boolean | Capture screen continuously during measuring | ✅ |
 | DrawFeetOnCross | Boolean | Adds feet to the end of cross lines | ✅ |
@@ -227,6 +239,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to turn on or off this mode | ✅ |
 | LeftButtonClickColor | String | Primary button highlight color in #FFFFFFFF format | ✅ |
 | RightButtonClickColor | String | Secondary button highlight color in #FFFFFFFF format | ✅ |
@@ -240,6 +253,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to turn on or off this mode | ✅ |
 | ThumbnailSize | MouseJumpThumbnailSize | Thumbnail size | ✅ |
 
@@ -247,6 +261,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to show/hide the crosshairs | ✅ |
 | CrosshairsColor | String | Crosshairs color in #FFFFFFFF | ✅ |
 | CrosshairsOpacity | Int | Crosshairs opacity in percentage | ✅ |
@@ -263,6 +278,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ShowOriginalUI | Boolean | show the original Mouse Without Borders UI | ✅ |
 | WrapMouse | Boolean | Move control back to the first machine when mouse moves past the last one | ✅ |
 | ShareClipboard | Boolean | If share clipboard stops working, Ctrl+Alt+Del then Esc may solve the problem. | ✅ |
@@ -287,12 +303,14 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module | ✅ |
 
 ### Peek
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module | ✅ |
 | AlwaysRunNotElevated | Bool | Always run not elevated, even when PowerToys is elevated | ✅ |
 | CloseAfterLosingFocus | Bool | Automatically close the Peek window after it loses focus | ✅ |
@@ -301,6 +319,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationKey | PowerAccentActivationKey | Possible values: LeftRightArrow Space Both  | ✅ |
 | DoNotActivateOnGameMode | Boolean | Disable activation shortcut when Game Mode is on | ✅ |
 | ToolbarPosition | String | Toolbar position index | ✅ |
@@ -315,6 +334,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | OpenPowerLauncher | HotkeySettings | Customize the shortcut to activate the module | ✅ |
 | IgnoreHotkeysInFullscreen | Boolean | Ignore shortcuts in fullscreen mode | ✅ |
 | ClearInputOnLaunch | Boolean | Clear the previous query on launch | ✅ |
@@ -336,6 +356,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module | ✅ |
 | PreferredLanguage | String | — | ✅ |
 
@@ -343,29 +364,30 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| EnableSvgPreview | Boolean | Scalable Vector Graphics | ✅ |
+| EnableSvgPreview | Boolean | Scalable Vector Graphics Preview Handler Enabled state | ✅ |
 | SvgBackgroundColorMode | Int | Color mode index | ✅ |
 | SvgBackgroundSolidColor | String | When using Solid color SvgBackgroundColorMode, specifies the color in #FFFFFFFF format | ✅ |
 | SvgBackgroundCheckeredShade | Int | | When using Checkered pattern SvgBackgroundColorMode, specifies the shade index | ✅ |
-| EnableSvgThumbnail | Boolean | Scalable Vector Graphics | ✅ |
-| EnableMdPreview | Boolean | Markdown | ✅ |
-| EnableMonacoPreview | Boolean | Source code files | ✅ |
+| EnableSvgThumbnail | Boolean | Scalable Vector Graphics Thumbnail Generator Enabled state | ✅ |
+| EnableMdPreview | Boolean | Markdown Preview Handler Enabled state | ✅ |
+| EnableMonacoPreview | Boolean | Source code files Preview Handler Enabled state | ✅ |
 | EnableMonacoPreviewWordWrap | Boolean | Wrap text | ✅ |
 | MonacoPreviewTryFormat | Boolean | Try to format the source for preview | ✅ |
 | MonacoPreviewMaxFileSize | Int | Maximum file size to preview in KB | ✅ |
-| EnablePdfPreview | Boolean | Portable Document Format | ✅ |
-| EnablePdfThumbnail | Boolean | Portable Document Format | ✅ |
-| EnableGcodePreview | Boolean | Geometric Code | ✅ |
-| EnableGcodeThumbnail | Boolean | Geometric Code | ✅ |
-| EnableStlThumbnail | Boolean | Stereolithography | ✅ |
+| EnablePdfPreview | Boolean | Portable Document Format Preview Handler Enabled state | ✅ |
+| EnablePdfThumbnail | Boolean | Portable Document Format Thumbnail Generator Enabled state | ✅ |
+| EnableGcodePreview | Boolean | Geometric Code Preview Handler Enabled state | ✅ |
+| EnableGcodeThumbnail | Boolean | Geometric Code Thumbnail Generator Enabled state | ✅ |
+| EnableStlThumbnail | Boolean | Stereolithography Thumbnail Generator Enabled state | ✅ |
 | StlThumbnailColor | String | Thumbnail color in #FFFFFFFF format  | ✅ |
-| EnableQoiPreview | Boolean | Quite OK Image | ✅ |
-| EnableQoiThumbnail | Boolean | Quite OK Image | ✅ |
+| EnableQoiPreview | Boolean | Quite OK Image Preview Handler Enabled state | ✅ |
+| EnableQoiThumbnail | Boolean | Quite OK Image Thumbnail Generator Enabled state | ✅ |
 
 ### PowerRename
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | MRUEnabled | Bool | Enable auto-complete for the search & replace fields | ✅ |
 | MaxMRUSize | Int | Maximum number of recently used items to remember | ✅ |
 | ExtendedContextMenuOnly | Bool | Show PowerRename in extended context menu only or in default context menu as well | ✅ |
@@ -375,12 +397,14 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | DefaultRegApp | Boolean | Make Registry Preview default app for opening .reg files | ✅ |
 
 ### ShortcutGuide
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | OpenShortcutGuide | HotkeySettings | Customize the shortcut to activate this module | ✅ |
 | OverlayOpacity | Int | Background opacity in percentage | ✅ |
 | UseLegacyPressWinKeyBehavior | Bool | — | ✅ |
@@ -393,6 +417,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
+| Enabled | Bool | The enabled state for this utility | ✅ |
 | MuteCameraAndMicrophoneHotkey | KeyboardKeys | — | ✅ |
 | MuteMicrophoneHotkey | KeyboardKeys | — | ✅ |
 | PushToTalkMicrophoneHotkey | KeyboardKeys | — | ✅ |
