@@ -165,7 +165,8 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | FancyzonesSystemTheme | Bool | Whether to use system theme for zone appearance | ✅ |
 | FancyzonesShowZoneNumber | Bool | Whether to show zone number | ✅ |
 
-Note: Configuring layouts through DSC is not supported yet.
+> [NOTE]
+> Configuring layouts through DSC is not yet supported.
 
 ### FileLocksmith
 
