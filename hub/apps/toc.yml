@@ -555,6 +555,8 @@ items:
             href: performance/power.md
           - name: Improve responsiveness
             href: performance/responsive.md
+          - name: WinUI performance optimization
+            href: performance/winui-perf.md
       - name: Deploy
         items:
         - name: Deployment overview
