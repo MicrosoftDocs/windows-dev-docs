@@ -191,6 +191,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
 | Enabled | Bool | The enabled state for this utility | ✅ |
+| LaunchAdministrator | Boolean | Needs to be launched as administrator in order to make changes to the system environment variables | ✅ |
 | ShowStartupWarning | Boolean | Show a warning at startup | ✅ |
 | LoopbackDuplicates | Boolean | Consider loopback addresses as duplicates | ✅ |
 | AdditionalLinesPosition | HostsAdditionalLinesPosition | Possible values: Top Bottom  | ✅ |
@@ -349,6 +350,7 @@ This command installs the latest version of PowerToys and then uses the PowerToy
 | SearchClickedItemWeight | Int32 | Selected item weight | ✅ |
 | SearchQueryTuningEnabled | Boolean | Results order tuning | ✅ |
 | SearchWaitForSlowResults | Boolean | Wait on slower plugin results before selecting top item in results | ✅ |
+| MaximumNumberOfResults | Int | Number of results shown before having to scroll | ✅ |
 | UsePinyin | Boolean | Use Pinyin | ✅ |
 | GenerateThumbnailsFromFiles | Boolean | Whether thumbnail generation for files is turned on | ✅ |
 
