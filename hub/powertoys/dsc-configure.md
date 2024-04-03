@@ -8,18 +8,18 @@ no-loc: [PowerToys, Windows, DSC, Win]
 
 # DSC configuration
 
-Since version 0.80, PowerToys installer is released on GitHub with `Microsoft.PowerToys.Configure` [DSC resource](https://learn.microsoft.com/en-us/powershell/dsc/overview?view=dsc-2.0) that allows you to configure PowerToys using a [Winget configuration file](../package-manager/configuration/create).
+Since version 0.80, PowerToys installer is released on GitHub with `Microsoft.PowerToys.Configure` [DSC resource](/powershell/dsc/overview) that allows you to configure PowerToys using a [Winget configuration file](/windows/package-manager/configuration/create).
 
 ## Installation
 
 ### Prerequisites
-- `PSDesiredStateConfiguration` 2.0.7 or higher: Refer to the [PowerShell DSC documentation](https://learn.microsoft.com/en-us/powershell/dsc/overview?view=dsc-2.0) for installation instructions.
+- `PSDesiredStateConfiguration` 2.0.7 or higher: Refer to the [PowerShell DSC documentation](/powershell/dsc/overview) for installation instructions.
 - PowerShell 7.2 or higher.
 - WinGet [version v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
 
 ### Download
 
-`Microsoft.PowerToys.Configure` is [installed alongside PowerToys](./install). Depending on the installer type, it is installed as follows:
+`Microsoft.PowerToys.Configure` is [installed alongside PowerToys](install.md). Depending on the installer type, it is installed as follows:
 - For the per-user install scope, the module is located in `%USERPROFILE%\Documents\PowerShell\Modules\Microsoft.PowerToys.Configure`.
 - For the machine-wide install scope, it is found in `%ProgramFiles%\WindowsPowerShell\Modules\Microsoft.PowerToys.Configure`.
 
@@ -401,7 +401,7 @@ PowerOcr is the internal name for Text Extractor.
 | EnableSvgPreview | Boolean | Scalable Vector Graphics Preview Handler Enabled state | ✅ |
 | SvgBackgroundColorMode | Int | Color mode index | ✅ |
 | SvgBackgroundSolidColor | String | When using Solid color SvgBackgroundColorMode, specifies the color in #FFFFFFFF format | ✅ |
-| SvgBackgroundCheckeredShade | Int | | When using Checkered pattern SvgBackgroundColorMode, specifies the shade index | ✅ |
+| SvgBackgroundCheckeredShade | Int | When using Checkered pattern SvgBackgroundColorMode, specifies the shade index | ✅ |
 | EnableSvgThumbnail | Boolean | Scalable Vector Graphics Thumbnail Generator Enabled state | ✅ |
 | EnableMdPreview | Boolean | Markdown Preview Handler Enabled state | ✅ |
 | EnableMonacoPreview | Boolean | Source code files Preview Handler Enabled state | ✅ |
