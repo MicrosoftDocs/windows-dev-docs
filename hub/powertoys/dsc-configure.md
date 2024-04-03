@@ -20,7 +20,8 @@ Since version 0.80, the PowerToys installer has been released on GitHub with `Mi
 
 ### Download
 
-`Microsoft.PowerToys.Configure` is [installed alongside PowerToys](install.md). Depending on the installer type, it is installed as follows:
+`Microsoft.PowerToys.Configure` is [installed alongside PowerToys](install.md). Depending on the installer type, it's installed as follows:
+
 - For the per-user install scope, the module is located in `%USERPROFILE%\Documents\PowerShell\Modules\Microsoft.PowerToys.Configure`.
 - For the machine-wide install scope, it is found in `%ProgramFiles%\WindowsPowerShell\Modules\Microsoft.PowerToys.Configure`.
 
