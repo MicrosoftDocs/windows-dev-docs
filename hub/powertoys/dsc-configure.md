@@ -1,7 +1,7 @@
 ---
 title: PowerToys DSC Configure module
 description: DSC configure module documentation for PowerToys
-ms.date: 03/22/2024
+ms.date: 04/03/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, DSC, Win]
 ---
