@@ -19,7 +19,7 @@ The Pivot control enables touch-swiping between a small set of content sections.
 > [!WARNING]
 >The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
 >
-> - **WinUI 3** - Use the [SelectorBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar) control.
+> - **WinUI 3** - Use the [SelectorBar](selector-bar.md) control.
 > - **WinUI 2/UWP** - Use a [NavigationView](navigationview.md) or [TabView](tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
 
 To create a Pivot-like UI when using WinUI 3 and the Windows App SDK, use the [SelectorBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar) control.
@@ -113,7 +113,7 @@ This code mimics the Pivot control's built-in navigation experience, minus the t
 > [!WARNING]
 >The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
 >
-> - **WinUI 3** - Use the [SelectorBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar) control.
+> - **WinUI 3** - Use the [SelectorBar](selector-bar.md) control.
 > - **WinUI 2/UWP** - Use a [NavigationView](navigationview.md) or [TabView](tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
 
 This XAML creates a basic Pivot control with 3 sections of content.
@@ -191,4 +191,7 @@ The control comes in two modes:
 ## Related topics
 
 - [Pivot class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot)
+- [SelectorBar](selector-bar.md)
+- [NavigationView](navigationview.md)
+- [TabView](tab-view.md)
 - [Navigation design basics](../basics/navigation-basics.md)
