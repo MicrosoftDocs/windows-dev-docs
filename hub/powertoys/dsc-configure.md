@@ -109,7 +109,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | VisibleColorFormats | — | — | ❌ |
 | ShowColorName | Boolean | This will show the name of the color when picking a color. | ✅ |
 
-> [NOTE]
+> [!NOTE]
 > Configuring custom color formats through DSC is not yet supported.
 
 ### CropAndLock
@@ -165,7 +165,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | FancyzonesSystemTheme | Bool | Whether to use system theme for zone appearance. | ✅ |
 | FancyzonesShowZoneNumber | Bool | Whether to show zone number. | ✅ |
 
-> [NOTE]
+> [!NOTE]
 > Configuring layouts through DSC is not yet supported.
 
 ### FileLocksmith
@@ -223,7 +223,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | ImageresizerFallbackEncoder | String | Fallback encoder to use. | ✅ |
 | ImageresizerCustomSize | — | — | ❌ |
 
-> [NOTE]
+> [!NOTE]
 > Configuring custom sizes through DSC is not supported yet.
 
 ### KeyboardManager
@@ -234,7 +234,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | ActiveConfiguration | — | — | ❌ |
 | KeyboardConfigurations | — | — | ❌ |
 
-> [NOTE]
+> [!NOTE]
 > Configuring remappings through DSC is not supported yet.
 
 ### MeasureTool
@@ -380,6 +380,7 @@ PowerLaucher is the internal name for PowerToys Run.
 PowerToys Run plugins can be configured in the Plugins property. [A sample can be found in the PowerToys repository.](https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/configureLauncherPlugins.dsc.yaml)
 
 These are the available properties to configure each plugin:
+
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | Name | String | Name of the plugin we want to configure |
@@ -388,7 +389,7 @@ These are the available properties to configure each plugin:
 | ActionKeyword | String | Configure the action keyword of the plugin |
 | WeightBoost | Int | The weight modifier to help in ordering the results for this plugin |
 
-> [NOTE]
+> [!NOTE]
 > Configuring additional properties of plugins is not yet supported through DSC.
 
 ### PowerOcr
