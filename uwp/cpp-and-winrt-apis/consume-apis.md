@@ -52,31 +52,21 @@ In fact, that projected value is a proxy; it's essentially just a smart pointer 
 When the `contosoUri` value falls out of scope, it destructs, and releases its reference to the default interface. If that reference is the last reference to the backing Windows Runtime **Windows.Foundation.Uri** object, the backing object destructs as well.
 
 > [!TIP]
-> A *projected type* is a wrapper over a runtime class for purposes of consuming its APIs. A *projected interface* is a wrapper over a Windows Runtime interface.
+> A *projected type* is a wrapper over a Windows Runtime type for purposes of consuming its APIs. For example, a *projected interface* is a wrapper over a Windows Runtime interface.
 
 ## C++/WinRT projection headers
-To consume Windows namespace APIs from C++/WinRT, you include headers from the `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt` folder. It's common for a type in a subordinate namespace to reference types in its immediate parent namespace. Consequently, each C++/WinRT projection header automatically includes its parent namespace header file; so you don't *need* to explicitly include it. Although, if you do, there will be no error.
+To consume Windows namespace APIs from C++/WinRT, you include headers from the `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt` folder. You must include the headers corresponding to each namespace you use.
 
-For example, for the [**Windows::Security::Cryptography::Certificates**](/uwp/api/windows.security.cryptography.certificates) namespace, the equivalent C++/WinRT type definitions reside in `winrt/Windows.Security.Cryptography.Certificates.h`. Types in **Windows::Security::Cryptography::Certificates** require types in the parent **Windows::Security::Cryptography** namespace; and types in that namespace could require types in its own parent, **Windows::Security**.
+For example, for the [**Windows::Security::Cryptography::Certificates**](/uwp/api/windows.security.cryptography.certificates) namespace, the equivalent C++/WinRT type definitions reside in `winrt/Windows.Security.Cryptography.Certificates.h`. Including that header gives you access to all the types in the [**Windows::Security::Cryptography::Certificates**](/uwp/api/windows.security.cryptography.certificates) namespace.
 
-So, when you include `winrt/Windows.Security.Cryptography.Certificates.h`, that file in turn includes `winrt/Windows.Security.Cryptography.h`; and `winrt/Windows.Security.Cryptography.h` includes `winrt/Windows.Security.h`. That's where the trail stops, since there is no `winrt/Windows.h`. This transitive inclusion process stops at the second-level namespace.
+Sometimes, one namespace header will include portions of related namespace headers, but you shouldn't rely on this implementation detail. Explicitly include the headers for the namespaces you use.
 
-This process transitively includes the header files that provide the necessary *declarations* and *implementations* for the classes defined in parent namespaces.
+For example, the [**Certificate::GetCertificateBlob**](/uwp/api/windows.security.cryptography.certificates.certificate.getcertificateblob) method returns an
+[**Windows::Storage::Streams::IBuffer**](/uwp/api/windows.storage.streams.ibuffer) interface.
+Before calling the [**Certificate::GetCertificateBlob**](/uwp/api/windows.security.cryptography.certificates.certificate.getcertificateblob) method,
+you must include the `winrt/Windows.Storage.Streams.h` namespace header file to ensure that you can receive and operate on the returned [**Windows::Storage::Streams::IBuffer**](/uwp/api/windows.storage.streams.ibuffer).
 
-A member of a type in one namespace can reference one or more types in other, unrelated, namespaces. In order for the compiler to compile these member definitions successfully, the compiler needs to see the type declarations for the closure of all these types. Consequently, each C++/WinRT projection header includes the namespace headers it needs to *declare* any dependent types. Unlike for parent namespaces, this process does *not* pull in the *implementations* for referenced types.
-
-> [!IMPORTANT]
-> When you want to actually *use* a type (instantiate, call methods, etc.) declared in an unrelated namespace, you must include the appropriate namespace header file for that type. Only *declarations*, not *implementations*, are automatically included.
-
-For example, if you only include `winrt/Windows.Security.Cryptography.Certificates.h`, then that causes declarations to be pulled in from these namespaces (and so on, transitively).
-
-- Windows.Foundation
-- Windows.Foundation.Collections
-- Windows.Networking
-- Windows.Storage.Streams
-- Windows.Security.Cryptography
-
-In other words, some APIs are forward-declared in a header that you've included. But their definitions are in a header that you haven't yet included. So, if you then call [**Windows::Foundation::Uri::RawUri**](/uwp/api/windows.foundation.uri.rawuri), then you'll receive a linker error indicating that the member is undefined. The solution is to explicitly `#include <winrt/Windows.Foundation.h>`. In general, when you see a linker error such as this, include the header named for the API's namespace, and rebuild.
+Forgetting to include the required namespace headers before using types in that namespace is a common source of build errors.
 
 ## Accessing members via the object, via an interface, or via the ABI
 With the C++/WinRT projection, the runtime representation of a Windows Runtime class is no more than the underlying ABI interfaces. But, for your convenience, you can code against classes in the way that their author intended. For example, you can call the **ToString** method of a [**Uri**](/uwp/api/windows.foundation.uri) as if that were a method of the class (in fact, under the covers, it's a method on the separate **IStringable** interface).

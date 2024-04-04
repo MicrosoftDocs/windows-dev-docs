@@ -1,7 +1,7 @@
 ---
 title: Reference for Windows 11 and Windows 10 settings
 description: This page lists the settings that are supported by both Windows 10 and Windows 11.
-ms.date: 02/27/2024
+ms.date: 03/20/2024
 ms.topic: article
 keywords: windows 10, windows 11, settings
 ms.localizationpriority: medium
@@ -14,9 +14,9 @@ The information provided on this page includes details for accessing the status 
 Settings status is accessed in one of two ways:
 
 1. Via the Windows registry: For settings below that include registry details, please use that information to access the settings.
-1. Via the Cloud Data Store Reader tool. These settings must be extracted from a data store to be readable. If the setting below does not list registry details, then the settings must be extracted using the Cloud Data Store Reader tool. For information on how to use this tool, see [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md).
+2. Via the Cloud Data Store Reader tool. These settings must be extracted from a data store to be readable. If the setting below does not list registry details, then the settings must be extracted using the Cloud Data Store Reader tool. For information on how to use this tool, see [Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)](readclouddatasettings-exe.md).
 
-## App Compatability
+## App compatibility
 
 The app compatibility setting is a JSON file that describes compatibility information for apps installed on the device. The path to this JSON is:
 
@@ -91,6 +91,7 @@ The format of the backup JSON file. Install, Update, and Uninstall nodes contain
 }
 
 ```
+
 The value of the *compatFlags* field of the backup JSON file is a combination of the following values, computed with an OR operation.
 
 | Value | Description |
@@ -113,13 +114,182 @@ The value of the *compatFlags* field of the backup JSON file is a combination of
 | 0x00004000 |  Generic hardware incompatibility. |
 | 0x00008000 | App is incompatible up to certain version. |
 
+## AppList Backup Data
+
+### Type: Windows.Data.Apps.AppMetaData structure
+
+#### AppMetaData values
+Unless otherwise specified, the Values are found in the [AppXManifest](/uwp/schemas/appxpackage/appx-package-manifest) for MSIX packages, and [Uninstall registries](/windows/win32/msi/uninstall-registry-key) for other formats.
+
+| Name | Type | Description |
+|------|-------|---------|
+| appId | wstring   | PackageFamilyName (packaged) or ProductCode (unpackaged). |
+| installSource | wstring | Description of type of installer for the app. See *installSource* for supported values. |
+| lightIconInfo | **IconInfo**  | Information about the light icon. |
+| darkIconInfo | **IconInfo**  | Information about the dark icon. |
+| appName | wstring  | App display name. |
+| publisher | wstring  | Publishers name of the app from Add Remove Programs. |
+| lastLaunchTime | uint64  | This is a calculated value that represents the last time the app was launched. |
+| appVersion | wstring  | Version of the app from  Add Remove Programs. |
+| appLanguage | wstring  | Language list in  Add Remove Programs. |
+| appArch | wstring  | Architecture specified in  Add Remove Programs. |
+| reinstallId | wstring  | Reinstall ID specified in  Add Remove Programs. |
+| productUrl | wstring  | Product URL Specified in  Add Remove Programs. |
+| isPinned | bool | Boolean indicating if this app was pinned to the start menu. |
+| wingetID | wstring | Identifier to indicate if this app can be installed through [winget](https://github.com/microsoft/winget-cli), and the winget ID. |
+| wingetSource | wstring | Specifies where the app was sourced from through the [Winget APIs](https://github.com/microsoft/winget-cli). See *wingetSource* for supported values. |
+
+Supported values for the *installSource* field.
+
+| Value | Description |
+|-------|-------------|
+| "Store MSIX" | An MSIX from the Microsoft Store. |
+| "Sideloaded MSIX" | A sideloaded MSIX. |
+| "Edge PWA MSIX" | A PWA MSIX. |
+| "Unknown MSIX" | Not one of the other MSIX values. |
+| "Store Win32" | A non-UWP app from the Microsoft Store.  |
+| "Android" | An Android app. |
+| "External MSI" | An external MSI. |
+
+Supported values for the *wingetSource* field.
+
+| Value | Description |
+|-------|-------------|
+| "External" | Installed from the web, but winget has an ID a match in the winget catalog. |
+| "Winget" | Installed from the winget catalog. |
+| "Spark" | Microsoft Store non-UWP app. |
+| "MSStore" | Microsoft Store MSIX app. |
+| "NoReliableInfo" | No data provided for source. |
+
+### Type: Windows.Data.Apps.IconInfo structure
+
+#### IconInfo values
+The paths to the icons used to generate the IconInfo, can be found in the [AppXManifest](/uwp/schemas/appxpackage/appx-package-manifest) for MSIX packages, and [Uninstall registries](/windows/win32/msi/uninstall-registry-key) for other formats.
+
+| Name | Type | Description |
+|------|-------|---------|
+| appIconAssetId | wstring   | The ID representing an icon from the cloud. The appIconAssetId represents the icon stored in the cloud which was generated from the app installer either through add remove programs metadata or AppxManifest files. |
+| isPlated | bool   | Plated or not. |
+
+### Type: Windows.Data.Apps.ShortcutInfo structure
+
+#### ShortcutInfo values
+
+| Name | Type | Description |
+|------|-------|---------|
+| targetPath | wstring   | Link to the executable that launching the tile will shell execute.  |
+| shortcutArgs | wstring   | Arguments provided on launch.  |
+
+### Type: Windows.Data.Apps.AppLevelTileInfo structure
+
+#### AppLevelTileInfo values
+
+| Name | Type | Description |
+|------|-------|---------|
+| tileId | wstring   | UnifiedTileIdentifier for tile  |
+| lightIconInfo | **IconInfo**   | UnifiedTileIdentifier for light tile  |
+| darkIconInfo | **IconInfo**   | UnifiedTileIdentifier for dark tile  |
+| displayName | wstring   | String displayed on tile   |
+| sortName | wstring   | String value used for sorting in search    |
+| packageId | wstring   | PackageFamilyName (packaged), ProductCode (unpackaged), empty for unmapped products (appId is specified in **AppMetaData**)    |
+| shortcut | **ShortcutInfo**   | Shortcut information.  |
+| suiteName | wstring   | String name for a collection of apps.    |
+
+### Type: Windows.Data.Apps.FileInfo structure
+
+#### FileInfo values
+
+FileInfo values are populated from the *App Compatibility* JSON above. All FileInfo values are provided as WSTRINGs, though some of the values in the JSON are different.
+
+| Name | Type | Description |
+|------|-------|---------|
+| name | wstring   | Read from App compatibility JSON. Optional.|
+| path | wstring   | Read from App compatibility JSON. Optional.|
+| osComponent | wstring   | Read from App compatibility JSON. Optional.|
+| size | wstring   | Read from App compatibility JSON. Optional.|
+| magic | wstring   | Read from App compatibility JSON. For information on the PE header, see [PE Format](/windows/win32/debug/pe-format). |
+| peHeaderHash | wstring   | Read from App compatibility JSON. Optional.|
+| sizeOfImage | wstring   | Read from App compatibility JSON. Optional.|
+| peChecksum | wstring   | Read from App compatibility JSON. Optional.|
+| linkDate | wstring   | Read from App compatibility JSON. Optional.|
+| linkerVersion | wstring   | Read from App compatibility JSON. Optional.|
+| binFileVersion | wstring   | Read from App compatibility JSON. Optional.|
+| binProductVersion | wstring   | Read from App compatibility JSON. Optional.|
+| binaryType | wstring   | Read from App compatibility JSON. Optional.|
+| created | wstring   | Read from App compatibility JSON. Optional.|
+| modified | wstring    | Read from App compatibility JSON. Optional.|
+| lastAccessed | wstring   | Read from App compatibility JSON. Optional.|
+| verLanguage | wstring   | Read from App compatibility JSON. Optional.|
+| id | wstring   | Read from App compatibility JSON. Optional.|
+| switchBackContext | wstring    | Read from App compatibility JSON. Optional.|
+| sigDisplayName | wstring    | Read from App compatibility JSON. Optional.|
+| sigPublisherName | wstring   | Read from App compatibility JSON. Optional.|
+| sigMoreInfoURL | wstring    | Read from App compatibility JSON. Optional.|
+| fileVersion | wstring    | Read from App compatibility JSON. Optional.|
+| companyName | wstring    | Read from App compatibility JSON. Optional.|
+| fileDescription | wstring   | Read from App compatibility JSON. Optional.|
+| internalName | wstring    | Read from App compatibility JSON. Optional.|
+| legalCopyright | wstring   | Read from App compatibility JSON. Optional.|
+| originalFileName | wstring   | Read from App compatibility JSON. Optional.|
+| productName | wstring   | Read from App compatibility JSON. Optional.|
+| productVersion | wstring    | Read from App compatibility JSON. Optional.|
+| peImageType | wstring   | Read from App compatibility JSON. Optional.|
+| peSubsystem | wstring   | Read from App compatibility JSON. Optional.|
+| runLevel | wstring   | Read from App compatibility JSON. Optional.|
+| uiAccess | wstring   | Read from App compatibility JSON. Optional.|
+| crcChecksum | wstring   | Read from App compatibility JSON. Optional.|
+| clrVersion | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramId | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramName | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramPublisher | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramVersion | wstring   | Read from App compatibility JSON. Optional.|
+| boeProgramLanguage | wstring   | Read from App compatibility JSON. Optional.|
+| fileSize | wstring   | Read from App compatibility JSON. Optional.|
+| peCharacteristics | wstring   | Read from App compatibility JSON. Optional.|
+| sha256 | wstring   | Read from App compatibility JSON. Optional.|
+| aumid | wstring   | Application user model ID. Optional. For more information, see [Find the Application User Model ID of an installed app](/windows/configuration/store/find-aumid?tabs=ps)|
+
+### Type: Windows.Data.Apps.AppCompatInfo structure
+
+#### AppCompatInfo values
+| Name | Type | Description |
+|------|-------|---------|
+| name | wstring   | Read from App compatibility JSON. |
+| path | wstring   | Read from App compatibility JSON. |
+| appId | wstring   | Read from App compatibility JSON.|
+| programId | wstring   | Read from App compatibility JSON.|
+| compatFlags | wstring   | Read from App compatibility JSON. |
+| restoreActions | wstring   | Read from App compatibility JSON|
+| files | **vector &lt;FileInfo&gt;** | Read from App compatibility JSON.|
+
+### Type: Windows.Data.Apps.DeviceMetadata structure
+
+#### DeviceMetadata values
+
+| Name | Type | Description |
+|------|-------|---------|
+| userIntent | uint32   | This is a bit array of values specifying user intent during Windows setup. See *userIntent* values. This data is read from HKCU\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent|
+| predictedUserIntent | uint32   | Windows sets flag to indicate that the user had one or more apps that are a signal of a developer. |
+| devModeEnabled | bool   | Whether the user has specified Developer Mode from Windows Settings. This data is read from from HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock |
+
+Supported *userIntent* values.
+
+| Value | Description |
+|-------|-------------|
+| 0b00000001 | None |
+| 0b00000010 | Gaming |
+| 0b00000100 | Family |
+| 0b00001000 | Creativity |
+| 0b00010000 | Schoolwork |
+| 0b00100000 | Entertainment |
+| 0b01000000 | Business |
+| 0b10000000 | Development |
 
 ## Autoplay
 
 This setting helps to set defaults for removable drives and memory cards
 
 ### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers
-
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
@@ -177,7 +347,6 @@ Setting for managing and personalizing the desktop background.
 | Slideshow | 2  | Slideshow. |
 | Spotlight | 3  | Spotlight. |
 
-
 ### Type: Windows.Data.Background.DesktopWallpaper structure
 
 The scope of this type is per device.
@@ -195,15 +364,13 @@ The scope of this type is per device.
 | shuffle | bool | Signifies whether slideshow images are shuffled if background is selected as slideshow |
 | syncRootRelativePath | wstring | Signifies path to slideshow folder if background is selected as slideshow. |
 
-
-
 ## Calling
 
 The settings below are for a deprecated Windows calling experience and are no longer read by the operating system, however the settings data may be present on user devices or in the cloud.
 
 ### Type: Windows.data.calling.Settings structure
 
-#### Settings Properties
+#### Settings properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -211,7 +378,7 @@ The settings below are for a deprecated Windows calling experience and are no lo
 
 ### Type: Windows.data.calling.KeyPathSettings structure
 
-#### Settings Properties
+#### KeyPathSettings properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -219,7 +386,7 @@ The settings below are for a deprecated Windows calling experience and are no lo
 
 ### Type: Windows.data.calling.callhistoryItem structure
 
-#### callhistoryItem Properties
+#### callhistoryItem properties
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -236,10 +403,9 @@ The settings below are for a deprecated Windows calling experience and are no lo
 | callerLocation | String | Caller location. |
 | callerCategory | String | Caller category. |
 | callerCategoryDescription | String | Caller category description. |
-| Calltimestamp | Unit64 | unix time stamp. | 
+| Calltimestamp | Unit64 | unix time stamp. |
 | Callarrivaltime | Unit64 | Unix time the call arrived on the device. |
 | callEndTime | Unit64 | Unix time stamp when the call was ended. |
-
 
 ### Type: Windows.Data.calling.callhistory structure
 
@@ -337,11 +503,9 @@ Settings related to date and time.
 |---------------|------|-------|-------------|
 | timeZone | REG_SZ | System timezone as string.  | The currently set time zone for the system. |
 
-
-
 ## Do not disturb
 
-Set "do not disturb" status manually or automatically, so that notifications will be sent directly to the notification center. 
+Set "do not disturb" status manually or automatically, so that notifications will be sent directly to the notification center.
 
 ### Type: Windows.Data.DoNotDisturb.ChangeReason enumeration
 
@@ -432,7 +596,6 @@ Settings related to the classic Windows File Explorer.
 | iconsOnly | bool | Indicates whether Shell state should show icons only. |
 | showTypeOverlay | bool | Indicates whether Shell state should show type overlay. |
 
-
 ### Type: Windows.Data.FileExplorerClassic.CabinetStateSettings structure
 
 #### CabinetStateSettings Properties
@@ -455,7 +618,7 @@ Settings related to the classic Windows File Explorer.
 | navPaneExpandToCurrentFolder | bool | Indicates whether advanced settings should expand the navigation pane to current folder. |
 | navPaneShowAllFolders | bool | Indicates whether advanced settings should expand the navigation panel to show all folders. |
 | navPaneShowFavorites | bool | Indicates whether advanced settings should expand the navigation panel to show all favorites. |
-| persistBrowsers | bool | Indicates advanced settings for file explorer should persist browsers. | 
+| persistBrowsers | bool | Indicates advanced settings for file explorer should persist browsers. |
 | sharingWizardOn | bool | Indicates whether sharing wizard is on for advanced settings. |
 | showDriveLetters | bool | Indicates whether drives letters are shown for advanced settings. |
 | showPreviewHandlers | bool | Indicates whether to show preview handlers. |
@@ -564,7 +727,7 @@ These are settings found in Recycle bin-> right click Properties
 
 | Name | Type | Description |
 |------|------|-------------|
-| displayDeleteConfirmationDialog | bool | Indicates whether to show delete confirmation dialog
+| displayDeleteConfirmationDialog | bool | Indicates whether to show delete confirmation dialog |
 
 ### Type: Windows.Data.FileExplorerClassic.DesktopIconSettings structure
 
@@ -580,8 +743,6 @@ These are settings related to desktop icons.
 | sortColPropertyKeyFmtid | wstring | L"B725F130-47EF-101A-A5F1-02608C9EEBAC". |
 | sortColPropertyKeyPid | Unit32 | 10. |
 | sortColDirection | bool | 1=Ascending -1=Descending Default value is Ascending (true). |
-
-
 
 ## Input Method Editors (IME)
 
@@ -617,15 +778,13 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 
 #### FileData Properties
 
-
 | Name | Type | Description |
 |------|------|-------------|
 | filePath | blob | Raw input data, byte array serialized as a collection of integers. |
 
-
 ## Internet Explorer
 
-Although Internet explorer has reached end of life, some settings stored by the browser may remain in the cloud or on Windows through settings backup. 
+Although Internet explorer has reached end of life, some settings stored by the browser may remain in the cloud or on Windows through settings backup.
 
 The **SettingUnit** stucture used with the following settings has the following definition:
 
@@ -693,7 +852,6 @@ Setting for managing and personalizing the lock screen.
 | Slideshow | 1  | Slideshow  |
 | Spotlight | 2  | Spotlight |
 
-
 ### Type: Windows.Data.LockScreenSettings structure
 
 The scope of this type is per device.
@@ -715,11 +873,9 @@ The scope of this type is per device.
 | slideShowDuration |   | Not used.  |
 | syncRootRelativePaths |   | Not used. |
 
-
 ## Lunar calendar
 
-Settings related to the lunar Calendar in the task bar. 
-
+Settings related to the lunar Calendar in the task bar.
 
 ### Type: Windows.Data.LunarCalendar structure
 
@@ -744,11 +900,9 @@ This type inherits from **LunarCalendar**. The scope of this type is per device.
 | SimplifiedChinese  | 2 | The Simplified Chinese lunar calendar. |
 | TraditionalChinese | 3   | The Traditional Chinese calendar. |
 
-
 ## Multiple displays
 
-Settings related to multiple displays. 
-
+Settings related to multiple displays.
 
 ### Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays structure
 
@@ -822,7 +976,6 @@ The scope of this type is per device.
 | timestampUTC | int64 | The time the change in active state was applied. |
 | isSupported | bool |  Whether or not current configuration supports blue light reduction. |
 
-
 ## NlmSignature
 
 Settings related to Nlm signatures. Each network is uniquely identified with a network signature based on the uniquely identifiable properties of that network.
@@ -840,7 +993,6 @@ The following is an example command line for retrieving this type:
 `readCloudDataSettings.exe enum -type:windows.data.nlm.nlmsignature -collection:wificloudstore3`
 
 For more information on retrieving multi-instance settings, see [Cloud Data Store Settings Reader Tool](readclouddatasettings-exe.md).
-
 
 #### NlmSignature Properties
 
@@ -888,7 +1040,6 @@ Supported  override and verb values:
 | Open Program | 3 | 0 | 3 | 0 |
 | Open App | 2 | 0 | 2 | 0 |
 
-
 ## Personalization - colors
 
 Settings related to system colors.
@@ -925,6 +1076,7 @@ Specifies the folders that are shown at the bottom of the Start menu.
 | VisiblePlaces | REG_BINARY | A vector of GUIDs. | A list of GUIDs indicating the folders that are shown at the bottom of Start.  |
 
 The folder GUIDs that are supported for *Start_Layout* are:
+
 * Documents: {2D34D5CE-FA5A-4543-82F2-22E6EAF7773C}
 * Downloads: {E367B32F-89DE-4355-BFCE-61F37B18A937}
 * Music: {B00B0620-7F51-4C32-AA1E-34CC547F7315}
@@ -939,7 +1091,7 @@ The folder GUIDs that are supported for *Start_Layout* are:
 
 Specifies the start layout.
 
-### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start
+### Registry values for layout under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
@@ -947,13 +1099,13 @@ Specifies the start layout.
 
 ## Personalization - Start - Show recent apps
 
-Specifies whether apps that were recently installed in Start in various surfaces on are shown on Start.
+Specifies whether apps that were recently installed in Start in various surfaces are shown on Start.
 
-### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start
+### Registry values for recent apps under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
-| ShowRecentList | REG_BOOL | 0 or 1  | Specifies whether apps that were recently installed in Start in various surfaces on are shown on Start. |
+| ShowRecentList | REG_BOOL | 0 or 1  | Specifies whether apps that were recently installed in Start in various surfaces are shown on Start. |
 
 ## Personalization - Start - Show recommended apps
 
@@ -1039,7 +1191,7 @@ Provides information about Microsoft accounts (MSA) and work or school accounts 
 
 | Name | Type | Description |
 |------|------|-------------|
-| accountName | wstring | The user name of the account such as "example@outlook.com". |
+| accountName | wstring | The user name of the account such as "<example@outlook.com>". |
 | accountId | wstring | The unique identifier of the account. |
 | accountType | **AccountType** | The type of the account. |
 | country | wstring | The code of the country or region in which a MSA is registered.  |
@@ -1064,7 +1216,6 @@ The user's custom spelling dictionary is stored in a file in the following file 
 ## USB
 
 This setting controls toggles such as connection notifications, battery saver and other notifications related to charging of PC.
-
 
 ### Registry values under HKCU\Software\Microsoft\Shell\USB
 
@@ -1116,8 +1267,6 @@ Valid sync policy names:
 * Microsoft.Ink
 * MicrosoftDevice.Ink
 * MicrosoftUserProfile.Ink
-
-
 
 ## Windows Update
 

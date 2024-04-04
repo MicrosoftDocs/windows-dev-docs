@@ -75,7 +75,7 @@ Color Picker has the following settings:
 | **Show color name** | When turned on, this setting shows a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'. |
 | **Color formats** | This section lets you enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about **Color formats** in [Managing color formats](#managing-color-formats).
 
-![Color Picker Settings screenshot.](../images/pt-colorpicker-settings.gif)
+![Color Picker Settings screenshot.](../images/pt-colorpicker-settings.png)
 
 ### Managing color formats
 
