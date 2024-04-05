@@ -25,6 +25,16 @@ In this tutorial, you learn how to:
 * The .NET MAUI [installation requirements](/dotnet/maui/get-started/installation)
 * If you are new to .NET MAUI on Windows, you should start with the [Build your first .NET MAUI app for Windows](/windows/apps/windows-dotnet-maui/walkthrough-first-app) tutorial.
 
+## Set your environment variable
+
+In order to use the OpenAI SDK, you'll need to set an environment variable with your API key. In this example, we'll use the `OPENAI_API_KEY` environment variable. Once you have your API key from the [OpenAI developer dashboard](https://platform.openai.com/api-keys), you can set the environment variable from the command line as follows:
+
+```powershell
+setx OPENAI_API_KEY <your-api-key>
+```
+
+Note that this method works for development on Windows, but you'll want to use a more secure method for production apps and for mobile support. For example, you can store your API key in a secure key vault that a remote service can access on behalf of your app. See [Best practices for OpenAI key safety](https://help.openai.com/articles/5112595-best-practices-for-api-key-safety) for more information.
+
 ## Create a new .NET MAUI project with the required UI elements
 
 We're going to start by creating a new .NET MAUI project in Visual Studio. We'll use the **.NET MAUI App** template and add some UI elements to the **MainPage** to provide users with some recommendations based on a provided location. The UI will have buttons to get recommendations for restaurants, hotels, and attractions.
