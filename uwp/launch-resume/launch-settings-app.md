@@ -322,7 +322,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Accounts | ms-settings:surfacehub-accounts |
 | Session cleanup | ms-settings:surfacehub-sessioncleanup |
 | Team Conferencing | ms-settings:surfacehub-calling |
-| Team device management | ms-settings:surfacehub-devicemanagenent |
+| Team device management | ms-settings:surfacehub-devicemanagement |
 | Welcome screen | ms-settings:surfacehub-welcome |
 
 ### System
