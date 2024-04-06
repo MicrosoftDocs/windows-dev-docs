@@ -11,9 +11,9 @@ no-loc: [PowerToys, Windows, Command Not Found, Win]
 A PowerShell 7 module that detects command-line errors and suggests a relevant WinGet package to install, if available.
 
 > [!IMPORTANT]
-> There are some incompatibilities between Command Not Found and some PowerShell configurations. You can read more about them in [issue 30818](https://github.com/microsoft/PowerToys/issues/30818) on GitHub.
+> There are some incompatibilities between Command Not Found and some PowerShell configurations. Read more about them in [issue 30818](https://github.com/microsoft/PowerToys/issues/30818) on GitHub.
 
-![Command Not Found screenshot.](../images/pt-cmd-not-found.png)
+![Command Not Found screenshot](../images/pt-cmd-not-found.png)
 
 ## Requirements
 
@@ -27,7 +27,7 @@ To install the Command Not Found module, navigate to the Command Not Found page 
  - PSFeedbackProvider
  - PSCommandNotFoundSuggestion
 
-After that, PowerShell profile file will be appended with following block of PowerShell commands:
+After that, the PowerShell profile file will be appended with following block of PowerShell commands:
 
 ```psh
 #34de4b3d-13a8-4540-b76d-b9e8d3851756 PowerToys CommandNotFound module

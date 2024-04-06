@@ -11,11 +11,11 @@ no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
 
 Image Resizer is a Windows shell extension for bulk image-resizing. After installing PowerToys, right-click on one or more selected image files in File Explorer, and select **Resize with ImageResizer** from the menu.
 
-![Image Resizer Demo.](../images/powertoys-resize-images.gif)
+![Image Resizer Demo](../images/powertoys-resize-images.gif)
 
 Image Resizer allows you to resize images by dragging and dropping your selected files with the right mouse button. This way, resized pictures can quickly be saved in a different folder.
 
-![Image Resizer Drag And Drop Demo.](../images/powertoys-resize-drag-drop.gif)
+![Image Resizer Drag And Drop Demo](../images/powertoys-resize-drag-drop.gif)
 
 > [!NOTE]
 > If **Ignore the orientation of pictures** is selected, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If selected, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
@@ -24,7 +24,7 @@ Image Resizer allows you to resize images by dragging and dropping your selected
 
 On the **Image Resizer** tab, configure the following settings.
 
-![PowerToys Image Resizer Settings.](../images/powertoys-imageresize-settings.png)
+![PowerToys Image Resizer Settings](../images/powertoys-imageresize-settings.png)
 
 ### Sizes
 
@@ -63,9 +63,3 @@ You can specify a directory in the filename format to group resized images into 
 [Characters that are illegal in file names](/windows/win32/fileio/naming-a-file#file-and-directory-names) will be replaced by an underscore `_`.
 
 You can choose to retain the original _last modified_ date on the resized image or reset it at time of the resizing action.
-
-## See also
-
-- [Microsoft PowerToys overview](index.md)
-- [Installing PowerToys](install.md)
-- [General settings for PowerToys](general.md)

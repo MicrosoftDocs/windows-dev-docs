@@ -42,7 +42,7 @@ From the Settings menu, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Launch as administrator | Launch as administrator to be able edit the hosts file. If disabled, the editor is run in read-only mode. Hosts File Editor is started as administrator by default. |
+| Launch as administrator | Open as administrator to be able edit the hosts file. If disabled, the editor is run in read-only mode. Hosts File Editor is started as administrator by default. |
 | Show a warning at startup | Warns that editing hosts can change DNS names resolution. Enabled by default. |
 | Additional lines position | Default value is **Top**. If **Bottom** is selected, the file header is moved below hosts settings to the bottom. |
 | Consider loopback addresses as duplicates | Loopback addresses (like 127.0.0.1 and ::1) are considered as duplicates. |

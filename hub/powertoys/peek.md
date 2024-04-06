@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Peek, Win]
 
 A system-wide utility for Windows that allows you to preview file content without the need to open multiple applications or interrupt your workflow. It offers a seamless and quick file preview experience for various file types, including images, Office documents, web pages, Markdown files, text files, and developer files.
 
-![Screenshot of PowerToys Peek utility.](../images/powertoys-peek.png)
+![Screenshot of PowerToys Peek utility](../images/powertoys-peek.png)
 
 ## Preview a file
 
@@ -21,9 +21,7 @@ Using <kbd>Left</kbd> and <kbd>Right</kbd> or <kbd>Up</kbd> and <kbd>Down</kbd>,
 ## Pin preview window position and size
 
 The Peek window adjusts its size based on the dimensions of the images being previewed. However, if you prefer to keep the window's size and position, you can utilize the pinning feature.
-
 By selecting the pinning button located in the top right corner of the Peek window, the window will preserve the current size and position.
-
 Selecting the pinning button again will unpin the window. When unpinned, the Peek window will return to the default position and size when previewing the next file.
 
 ## Open file with the default program

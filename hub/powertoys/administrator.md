@@ -59,8 +59,8 @@ The simplest way to run an app or program in administrative mode is to right-cli
 
 If you see this User Account Control prompt, the application is requesting administrator level elevated permission:
 
-![Windows UAC elevated permission prompt screenshot.](../images/pt-admin-prompt.png)
+![Windows UAC elevated permission prompt screenshot](../images/pt-admin-prompt.png)
 
 In the case of an elevated command line, typically the text "Administrator" will be included in the title bar.
 
-![Windows Powershell and Command Line with elevated permissions screenshot.](../images/pt-admin-terminal.png)
+![Windows Powershell and Command Line with elevated permissions screenshot](../images/pt-admin-terminal.png)
