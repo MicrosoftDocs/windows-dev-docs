@@ -15,7 +15,7 @@ Windows Subsystem for Android™️ enables your Windows 11 device to run Androi
 
 > [!IMPORTANT]
 > Microsoft is ending support for the Windows Subsystem for Android™️ (WSA). As a result, the Amazon Appstore on Windows and all applications and games dependent on WSA will no longer be supported beginning **March 5, 2025**. Until then, technical support will remain available to customers.  
-> Customers that have installed the Amazon Appstore or Android apps prior to March 5, 2024, will continue to have access to those apps through the deprecation date of March 5, 2025. Please reach out to our support team for further questions at [support.microsoft.com](https://support.microsoft.com).
+> Customers that have installed the Amazon Appstore or Android apps prior to March 5, 2025, will continue to have access to those apps through the deprecation date of March 5, 2025. Please reach out to our support team for further questions at [support.microsoft.com](https://support.microsoft.com).
 > We are grateful for the support of our developer community and remain committed to listening to feedback as we evolve experiences.
 
 To make your Android app available on Windows 11 devices, you must:
