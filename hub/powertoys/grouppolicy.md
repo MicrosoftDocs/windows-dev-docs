@@ -151,7 +151,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/<PolicyID>`
 
 > [!Note]
-> Please see the table above for the __PolicyID_ value.
+> Please see the table above for the _PolicyID_ value.
 
 - Example value: `<disabled/>`
 
