@@ -13,7 +13,7 @@ The PowerToys Keyboard Manager enables you to redefine keys on your keyboard.
 
 For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>B</kbd> on your keyboard. When you press the <kbd>A</kbd> key, a `B` will be inserted.
 
-![PowerToys Keyboard Manager remap keys screenshot.](../images/powertoys-keyboard-remap.png)
+![PowerToys Keyboard Manager remap keys screenshot](../images/powertoys-keyboard-remap.png)
 
 You can exchange shortcut key combinations. For example: The shortcut key <kbd>Ctrl</kbd>+<kbd>C</kbd> will copy text in many applications. With PowerToys Keyboard Manager utility, you can swap that shortcut for <kbd>⊞ Win</kbd>+<kbd>C</kbd>. Now, <kbd>⊞ Win</kbd>+<kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
 
@@ -22,7 +22,7 @@ Also, you can exchange key or shortcut to arbitrary unicode text sequence. For e
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
 > [!IMPORTANT]
-> There are some shortcut keys that are reserved for the operating system or cannot be replaced. Keys that cannot be remapped include:
+> There are some shortcut keys that are reserved by the operating system or cannot be replaced. Keys that cannot be remapped include:
 >
 > - <kbd>⊞ Win</kbd>+<kbd>L</kbd> and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> cannot be remapped as they are reserved by the Windows OS.
 > - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd> ~ <kbd>F12</kbd> (and <kbd>F13</kbd> ~ <kbd>F24</kbd>) keys can be mapped.
@@ -31,14 +31,14 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 
 ## Settings
 
-To create mappings with Keyboard Manager, open the PowerToys Settings. Inside PowerToys Settings, on the Keyboard Manager tab, you will see options to:
+To create mappings with Keyboard Manager, open the PowerToys Settings. In PowerToys Settings, on the Keyboard Manager tab, you will see options to:
 
-- Launch the Remap Keys settings window by selecting **Remap a key**
-- Launch the Remap Shortcuts settings window by selecting **Remap a shortcut**
+- Open the Remap Keys settings window by selecting **Remap a key**
+- Open the Remap Shortcuts settings window by selecting **Remap a shortcut**
 
 ### Remapping keys
 
-To remap a key, changing it to a new value, launch the Remap Keyboard settings window with **Remap a Key**. When first launched, no predefined mappings will be displayed. Select **&#9547; Add key remapping** to add a new remap.
+To remap a key, changing it to a new value, open the Remap Keyboard settings window with **Remap a Key**. When first opened, no predefined mappings will be displayed. Select **Add key remapping** to add a new remap.
 
 Once a new remap row appears, select the input key whose output you want to _change_ in the “Select” column. Select the new key, shortcut or text value to assign in the “To send” column.
 
@@ -54,7 +54,7 @@ To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add anothe
 | :--- | :--- |
 | `B` | `A` |
 
-![Keyboard Remap Keys screenshot.](../images/powertoys-keyboard-remap-a-b.png)
+![Keyboard Remap Keys screenshot](../images/powertoys-keyboard-remap-a-b.png)
 
 ### Remapping a key to a shortcut
 
@@ -81,9 +81,9 @@ For example, to press the <kbd>H</kbd> key and have it result in `Hello!`:
 
 ### Remapping shortcuts
 
-To remap a shortcut key combination, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, select **Remap a shortcut** to launch the Remap Shortcuts settings window.
+To remap a shortcut key combination, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, select **Remap a shortcut** to open the Remap Shortcuts settings window.
 
-When first launched, no predefined mappings will be displayed. Select **+ Add shortcut remapping** to add a new remap.
+When first opened, no predefined mappings will be displayed. Select **Add shortcut remapping** to add a new remap.
 
 Once a new remap row appears, select the input keys whose output you want to _change_ in the “Select” column. Select the new shortcut value to assign in the “To send” column.
 
@@ -93,7 +93,7 @@ For example, the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> copies selected text. To 
 | :--- | :--- |
 | `Alt` + `C` | `Ctrl` + `C` |
 
-![Keyboard Remap Shortcut screenshot.](../images/powertoys-keyboard-remap-shortcut.png)
+![Keyboard Remap Shortcut screenshot](../images/powertoys-keyboard-remap-shortcut.png)
 
 There are a few rules to follow when remapping shortcuts. These rules only apply to the "Shortcut" column.
 
@@ -103,12 +103,13 @@ There are a few rules to follow when remapping shortcuts. These rules only apply
 
 #### Shortcuts with chords
 
-Shortcuts can be created with one or more modifiers and two non-modifier keys. These are called 'chords.' In order to create a chord, you need to use the edit button to open the modal to record the shortcut using the keyboard. Once this is open, you need to toggle on the 'Allow chords' switch. Doing this allows you to enter two non-modifier keys. For example, you can create shortcuts using a chord based on 'V' for **V**olume **U**p and **V**olume **D**own like this:
+Shortcuts can be created with one or more modifiers and two non-modifier keys. These are called "chords". In order to create a chord, select **Edit**  to open the dialog to record the shortcut using the keyboard. Once opened, toggle on the **Allow chords** switch. This allows you to enter two non-modifier keys.
+For example, you can create shortcuts using a chord based on 'V' for **V**olume **U**p and **V**olume **D**own like this:
 
 | Select: | To send: |
 | :--- | :--- |
-| `Shift`+`Ctrl` + `V` \, `U` | `Volume Up` |
-| `Shift`+`Ctrl` + `V` \, `D` | `Volume Down` |
+| `Shift` + `Ctrl` + `V` , `U` | `Volume Up` |
+| `Shift` + `Ctrl` + `V` , `D` | `Volume Down` |
 
 Chords are handy if you have a number of shortcuts that are similar, and so it makes sense to have them all start with the same non-modifier key.
 
@@ -187,7 +188,7 @@ Using the drop-down menu, you can search with the key name and additional drop-d
 
 Orphaning a key means that you mapped it to another key and no longer have anything mapped to it. For example, if the key is remapped from `A` to `B`, then a key no longer exists on your keyboard that results in `A`. To ensure this does not happen by accident, a warning will display for any orphaned keys. To fix this, select **&#9547;** to create another remapped key that is mapped to result in `A`.
 
-![PowerToys Keyboard Manager orphaned key.](../images/powertoys-keyboard-remap-orphaned.png)
+![PowerToys Keyboard Manager orphaned key](../images/powertoys-keyboard-remap-orphaned.png)
 
 ## Frequently asked questions
 
@@ -223,7 +224,7 @@ Currently no. We are not aware of an API where we can see the input and which de
 
 Keyboard Manager lists mappings for all known physical keyboard keys. Some of these mappings may not be available on your keyboard as there may not be a physical key that it corresponds to. For instance: the <kbd>Start App 1</kbd> option shown below is only available on keyboards that physically have a <kbd>Start App 1</kbd> key. Trying to map to and from this key on a keyboard that does not support the <kbd>Start App 1</kbd> key will result in undefined behavior.
 
-![PowerToys Keyboard Manager List of Keys.](../images/pt-key-remap-drop-down.png)
+![PowerToys Keyboard Manager List of Keys](../images/pt-key-remap-drop-down.png)
 
 ## Troubleshooting
 

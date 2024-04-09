@@ -26,19 +26,19 @@ With the latest version of PowerToys installed, you will see Mouse Without Borde
 
 2. On the first computer, select **New Key** to generate a security key for connecting.
 
-    ![Screenshot of Mouse Without Borders settings after pressing New Key.](../images/powertoys-mouse-without-borders-press-new-key.png)
+    ![Screenshot of Mouse Without Borders settings after pressing New Key](../images/powertoys-mouse-without-borders-press-new-key.png)
 
 3. On the second computer, enter the security key that was generated on the first computer and the name of the first computer. Then select **Connect**.
 
-    ![Screenshot of Mouse Without Borders settings after entering the first computer information.](../images/powertoys-mouse-without-borders-enter-security-key.png)
+    ![Screenshot of Mouse Without Borders settings after entering the first computer information](../images/powertoys-mouse-without-borders-enter-security-key.png)
 
 4. Once the computers are connected, you will be able to switch between them by moving your mouse cursor beyond the edge of the screen, transitioning between computers.
 
-    ![Screenshot of Mouse Without Borders settings on the second computer after connecting.](../images/powertoys-mouse-without-borders-after-connect-2.png)
+    ![Screenshot of Mouse Without Borders settings on the second computer after connecting](../images/powertoys-mouse-without-borders-after-connect-2.png)
 
 It's possible to switch the order of the devices by dragging the device icon to a new position in the layout.
 
-   ![Animation of Mouse Without Borders settings configuring device layout.](../images/powertoys-mouse-without-borders-drag-device-layout.gif)
+   ![Animation of Mouse Without Borders settings configuring device layout](../images/powertoys-mouse-without-borders-drag-device-layout.gif)
 
 ### Install Mouse Without Borders as a service
 
@@ -83,11 +83,12 @@ To enable the service mode, run PowerToys in administrator mode and turn on the 
 | Show the original Mouse Without Borders UI | Show the original UI from Mouse Without Borders through the original tray icon. Mouse Without Borders needs to be restarted for it to take effect. |
 
 ## Status Colors
+
 The following colors are used to indicate the connection status to the user when trying to connect to another computer:
 
 | Connection Status | Color    | Hex Code    |
-| :-----: | :---: | :---: |
-| NA | Dark Grey   | `#00717171`  |
+| :--- | :--- | :--- |
+| N/A | Dark Grey   | `#00717171`  |
 | Resolving | Yellow   | `#FFFFFF00`   |
 | Connecting | Orange   | `#FFFFA500`   |
 | Handshaking | Blue   | `#FF0000FF`   |
@@ -97,7 +98,6 @@ The following colors are used to indicate the connection status to the user when
 | Timeout | Pink   | `#FFFFC0CB`   |
 | SendError | Maroon   | `#FF800000`   |
 | Connected | Green   | `#FF008000`   |
-
 
 ## Troubleshooting
 

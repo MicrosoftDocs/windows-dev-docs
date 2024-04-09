@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Color Picker, Color, Picker]
 
 A system-wide color picking utility for Windows to pick colors from any screen and copy it in a configurable format to the clipboard.
 
-![Color Picker screenshot.](../images/pt-colorpicker-hex-editor.png)
+![Color Picker screenshot](../images/pt-colorpicker-hex-editor.png)
 
 ## Getting started
 
@@ -21,7 +21,7 @@ Enable Color Picker in the **Color Picker** tab in PowerToys Settings.
 
 ### Activating Color Picker
 
-You can choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>) by changing **Activation Behavior**:
+Choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>) by changing **Activation Behavior**:
 
 :::image type="content" source="../images/pt-colorpicker-activation.gif" alt-text="Color Picker behaviors.":::
 
@@ -35,7 +35,7 @@ After activating Color Picker, select a color on your screen to pick that color.
 
 Color Picker copies the selected color to the clipboard in the **Default color format** you've chosen in Color Picker's settings (default: HEX).
 
-![Selecting a Color.](../images/pt-colorpicker.gif)
+![Selecting a Color](../images/pt-colorpicker.gif)
 
 > [!TIP]
 > To select the color of the non-hover state of a element:
@@ -46,7 +46,7 @@ Color Picker copies the selected color to the clipboard in the **Default color f
 
 ## Using the Color Picker editor
 
-The Color Picker editor stores a history of up to 20 picked colors and lets you copy them to the clipboard. You can choose which color formats are visible in the editor in **Color formats** in PowerToys Settings.
+The Color Picker editor stores a history of up to 20 picked colors and lets you copy them to the clipboard. Choose which color formats are visible in the editor in **Color formats** in PowerToys Settings.
 
 The colored bar at the top of the Color Picker editor lets you:
 
@@ -57,7 +57,7 @@ To fine tune your chosen color, select the central color in the color bar. The f
 
 To choose a similar color, select one of the segments on the left and right edges of the color bar. The Color Picker editor suggests two lighter shades on the left of the bar, and two darker shades on the right of the bar. Selecting one of these similar colors adds that color to the colors history.
 
-![Color Picker Editor window.](../images/pt-colorpicker-editor.gif)
+![Color Picker Editor window](../images/pt-colorpicker-editor.gif)
 
 To remove a color from the colors history, right-click a color and select **Remove**.
 
@@ -75,7 +75,7 @@ Color Picker has the following settings:
 | **Show color name** | When turned on, this setting shows a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'. |
 | **Color formats** | This section lets you enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about **Color formats** in [Managing color formats](#managing-color-formats).
 
-![Color Picker Settings screenshot.](../images/pt-colorpicker-settings.png)
+![Color Picker Settings screenshot](../images/pt-colorpicker-settings.png)
 
 ### Managing color formats
 
@@ -87,9 +87,9 @@ To disable a color format, turn off the toggle next to that color format. Color 
 
 To delete a color format, select **•••** next to a color format and select **Delete**.
 
-To add a new color format, select **Add custom color format**. You can choose the color format's **Name** and **Format**. Select **Save** to add the color format. The syntax for color formats is described in the **Add custom color format** dialog.
+To add a new color format, select **Add custom color format**. Choose the color format's **Name** and **Format**. Select **Save** to add the color format. The syntax for color formats is described in the **Add custom color format** dialog.
 
-To edit a color format, select it from the list. You can edit the color format's **Name** and **Format** in the **Edit custom color format** dialog. Select **Update** to save your changes. The syntax for color formats is described in the **Edit custom color format** dialog.
+To edit a color format, select it from the list. Edit the color format's **Name** and **Format** in the **Edit custom color format** dialog. Select **Update** to save your changes. The syntax for color formats is described in the **Edit custom color format** dialog.
 
 Define color formats with these parameters:
 

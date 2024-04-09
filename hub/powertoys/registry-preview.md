@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Registry Preview, Win]
 
 PowerToys **Registry Preview** simplifies the process of visualizing and editing complex Windows Registry files. It can also write changes to the Windows Registry.
 
-![Registry Preview screenshot.](../images/pt-registrypreview.png)
+![Registry Preview screenshot](../images/pt-registrypreview.png)
 
 ## Getting started
 
