@@ -2,7 +2,7 @@
 title: Start here - get ready to develop Windows apps
 description: List of steps to get started developing Windows apps with links to all the tools and frameworks you'll need.
 ms.topic: how-to
-ms.date: 10/13/2023
+ms.date: 4/9/2024
 keywords: windows, win32, desktop development
 ms.author: jken
 author: GrantMeStrength
@@ -71,7 +71,7 @@ If you are writing an app that will run on Windows, you'll need to select a deve
 * [An overview of Windows development options](/windows/apps/get-started/)
 * [Windows app development: options and features](dev-options.md)
 
-If you are using Windows to write apps for Windows and/or other platforms, you'll be interested in this topic. It covers using other langauges such as Python and Rust, and other tips such as installing Linux on Windows to gain access to open source tools.
+If you are using Windows to write apps for Windows and/or other platforms, you'll be interested in the following topic. It covers using other langauges such as Python and Rust, and includes tips such as how to install Linux on Windows in order to gain access to open source tools.
 
 * [Set up your development environment on Windows](/windows/dev-environment/)
 
@@ -80,4 +80,4 @@ Once you have your developer tools all set up, you might want to explore some of
 * [Training modules and paths for Windows developers](/training/browse/?products=windows)
 * [Code samples for Windows developers](/windows/apps/get-started/samples)
 * [Getting started with GitHub Copilot](https://docs.github.com/en/copilot/getting-started-with-github-copilot)
-
+* [C# language documentation](/dotnet/csharp/)
