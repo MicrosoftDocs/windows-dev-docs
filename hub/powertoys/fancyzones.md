@@ -74,7 +74,7 @@ FancyZones includes an editor to give you more control over your window layouts 
 
 ### Open the layout editor
 
-Open the layout editor by selecting **Launch layout editor** or by <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"). You can change the FancyZones layout editor shortcut in PowerToys Settings.
+Open the layout editor by selecting **Launch layout editor** or with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"). You can change the FancyZones layout editor shortcut in PowerToys Settings.
 
 ![FancyZones Settings UI](../images/pt-fancyzones-settings.png)
 
