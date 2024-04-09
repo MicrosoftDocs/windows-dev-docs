@@ -1,12 +1,12 @@
 ---
 title: PowerToys DSC Configure module
-description: DSC configure module documentation for PowerToys
+description: Desired State Configuration module documentation for PowerToys
 ms.date: 04/03/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, DSC, Win]
 ---
 
-# DSC configuration
+# Desired State Configuration
 
 Since version 0.80, the PowerToys installer has been released on GitHub with `Microsoft.PowerToys.Configure` [DSC resource](/powershell/dsc/overview) that allows you to configure PowerToys using a [Winget configuration file](/windows/package-manager/configuration/create).
 
@@ -14,26 +14,26 @@ Since version 0.80, the PowerToys installer has been released on GitHub with `Mi
 
 ### Prerequisites
 
-- `PSDesiredStateConfiguration` 2.0.7 or higher: Refer to the [PowerShell DSC documentation](/powershell/dsc/overview) for installation instructions.
+- PSDesiredStateConfiguration 2.0.7 or later: Refer to the [PowerShell DSC documentation](/powershell/dsc/overview) for installation instructions.
 - PowerShell 7.2 or higher.
 - WinGet [version v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
 
 ### Download
 
-`Microsoft.PowerToys.Configure` is [installed alongside PowerToys](install.md). Depending on the installer type, it's installed as follows:
+Microsoft.PowerToys.Configure is [installed with PowerToys](install.md). Depending on the installer type, it's installed as follows:
 
 - For the per-user install scope, the module is located in `%USERPROFILE%\Documents\PowerShell\Modules\Microsoft.PowerToys.Configure`.
 - For the machine-wide install scope, it's found in `%ProgramFiles%\WindowsPowerShell\Modules\Microsoft.PowerToys.Configure`.
 
 ## Usage
 
-You can invoke the resource directly using the following syntax:
+You can invoke the resource directly using the following Powershell syntax:
 
 ```ps
 Invoke-DscResource -Name PowerToysConfigure -Method Set -ModuleName Microsoft.PowerToys.Configure -Property @{ Awake = @{ Enabled = $false; Mode = "TIMED"; IntervalMinutes = "10" } }
 ```
 
-However, creating a configuration.dsc.yaml file that contains the required settings in a simpler format is more convenient. Here's an example:
+However, creating a _configuration.dsc.yaml_ file that contains the required settings in a simpler format is more convenient. Here's an example:
 
 ```yaml
 properties:
@@ -67,7 +67,7 @@ Use the following command to apply the configuration from the file:
 winget configure .\configuration.dsc.yaml
 ```
 
-This command installs the latest version of PowerToys and uses the PowerToysConfigure resource to apply settings for multiple PowerToys modules. More examples can be found [here](https://github.com/microsoft/PowerToys/tree/main/src/dsc/Microsoft.PowerToys.Configure/examples).
+This command installs the latest version of PowerToys and uses the PowerToysConfigure resource to apply settings for multiple PowerToys modules. More examples can be found [in the PowerToys repo](https://github.com/microsoft/PowerToys/tree/main/src/dsc/Microsoft.PowerToys.Configure/examples).
 
 ## Available Configuration Settings by Module
 
@@ -75,34 +75,34 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | Hotkey | KeyboardKeys | Customize the shortcut to pin or unpin an app window. | ✅ |
-| FrameEnabled | Bool | Show a border around the pinned window. | ✅ |
+| FrameEnabled | Boolean | Show a border around the pinned window. | ✅ |
 | FrameThickness | Int | Border thickness in pixels. | ✅ |
 | FrameColor | String | Specify a color in a `#FFFFFFFF` format. | ✅ |
 | FrameOpacity | Int | Border opacity in percentage. | ✅ |
-| FrameAccentColor | Bool | Whether to use a custom FrameColor value. | ✅ |
-| SoundEnabled | Bool | Play a sound when pinning a window. | ✅ |
-| DoNotActivateOnGameMode | Bool | Disable activation shortcut when Game Mode is on. | ✅ |
+| FrameAccentColor | Boolean | Use a custom FrameColor value. | ✅ |
+| SoundEnabled | Boolean | Play a sound when pinning a window. | ✅ |
+| DoNotActivateOnGameMode | Boolean | Disable activation shortcut when Game Mode is on. | ✅ |
 | ExcludedApps | String | '\r'-separated list of executable names to exclude from pinning on top. | ✅ |
-| RoundCornersEnabled | Bool | Enable round corners. | ✅ |
+| RoundCornersEnabled | Boolean | Enable round corners. | ✅ |
 
 ### Awake
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | KeepDisplayOn | Boolean | This setting is only available when keeping the PC awake. | ✅ |
 | Mode | AwakeMode | Possible values: PASSIVE, INDEFINITE, TIMED, EXPIRABLE.  | ✅ |
-| IntervalHours | UInt32 | When using TIMED Mode, specifies the number of hours. | ✅ |
-| IntervalMinutes | UInt32 | When using TIMED Mode, specifies the number of minutes. | ✅ |
-| ExpirationDateTime | DateTimeOffset | When using EXPIRABLE Mode, specifies the date and time in a format parsable with `DateTimeOffset.TryParse`. | ✅ |
+| IntervalHours | UInt32 | When using TIMED mode, specifies the number of hours. | ✅ |
+| IntervalMinutes | UInt32 | When using TIMED mode, specifies the number of minutes. | ✅ |
+| ExpirationDateTime | DateTimeOffset | When using EXPIRABLE mode, specifies the date and time in a format parsable with `DateTimeOffset.TryParse`. | ✅ |
 
 ### ColorPicker
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module. | ✅ |
 | CopiedColorRepresentation | String | The default color representation to be used. Example :"HEX". | ✅ |
 | ActivationAction | ColorPickerActivationAction | Possible values: OpenEditor, OpenColorPickerAndThenEditor, OpenOnlyColorPicker. | ✅ |
@@ -116,7 +116,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ReparentHotkey | KeyboardKeys | Shortcut to crop an application's window into a cropped window. | ✅ |
 | ThumbnailHotkey | KeyboardKeys | Shortcut to crop and create a thumbnail of another window. | ✅ |
 
@@ -124,46 +124,46 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | LaunchAdministrator | Boolean | Needs to be launched as administrator in order to make changes to the system environment variables. | ✅ |
 
 ### FancyZones
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
-| FancyzonesShiftDrag | Bool | Hold Shift key to activate zones while dragging a window. | ✅ |
-| FancyzonesMouseSwitch | Bool | Use a non-primary mouse button to toggle zone activation. | ✅ |
-| FancyzonesMouseMiddleClickSpanningMultipleZones | Bool | Use middle-click mouse button to toggle multiple zones spanning. | ✅ |
-| FancyzonesOverrideSnapHotkeys | Bool | This overrides the Windows Snap shortcut (Win + arrow) to move windows between zones. | ✅ |
-| FancyzonesMoveWindowsAcrossMonitors | Bool | Move windows between zones across all monitors. | ✅ |
-| FancyzonesMoveWindowsBasedOnPosition | Bool | Move windows based on relative position or zone index. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
+| FancyzonesShiftDrag | Boolean | Hold Shift key to activate zones while dragging a window. | ✅ |
+| FancyzonesMouseSwitch | Boolean | Use a non-primary mouse button to toggle zone activation. | ✅ |
+| FancyzonesMouseMiddleClickSpanningMultipleZones | Boolean | Use middle-click mouse button to toggle multiple zones spanning. | ✅ |
+| FancyzonesOverrideSnapHotkeys | Boolean | This overrides the Windows Snap shortcut (Win + arrow) to move windows between zones. | ✅ |
+| FancyzonesMoveWindowsAcrossMonitors | Boolean | Move windows between zones across all monitors. | ✅ |
+| FancyzonesMoveWindowsBasedOnPosition | Boolean | Move windows based on relative position or zone index. | ✅ |
 | FancyzonesOverlappingZonesAlgorithm | Int | When multiple zones overlap algorithm index. | ✅ |
-| FancyzonesDisplayOrWorkAreaChangeMoveWindows | Bool | Keep windows in their zones when the screen resolution or work area changes. | ✅ |
-| FancyzonesZoneSetChangeMoveWindows | Bool | During zone layout changes, windows assigned to a zone will match new size/positions. | ✅ |
-| FancyzonesAppLastZoneMoveWindows | Bool | Move newly created windows to their last known zone. | ✅ |
-| FancyzonesOpenWindowOnActiveMonitor | Bool | Move newly created windows to the curreynt active monitor (Experimental). | ✅ |
-| FancyzonesRestoreSize | Bool | Restore the original size of windows when unsnapping. | ✅ |
-| FancyzonesQuickLayoutSwitch | Bool | Enable quick layout switch. | ✅ |
-| FancyzonesFlashZonesOnQuickSwitch | Bool | Flash zones when switching layout. | ✅ |
-| UseCursorposEditorStartupscreen | Bool | Whether to launch editor on the display where the mouse point is. | ✅ |
-| FancyzonesShowOnAllMonitors | Bool | Show zones on all monitors while dragging a window. | ✅ |
-| FancyzonesSpanZonesAcrossMonitors | Bool | Allow zones to span across monitors. | ✅ |
-| FancyzonesMakeDraggedWindowTransparent | Bool | Make dragged window transparent. | ✅ |
-| FancyzonesAllowChildWindowSnap | Bool | Allow child windows snapping. | ✅ |
-| FancyzonesDisableRoundCornersOnSnap | Bool | Disable round corners when window is snapped. | ✅ |
+| FancyzonesDisplayOrWorkAreaChangeMoveWindows | Boolean | Keep windows in their zones when the screen resolution or work area changes. | ✅ |
+| FancyzonesZoneSetChangeMoveWindows | Boolean | During zone layout changes, windows assigned to a zone will match new size/positions. | ✅ |
+| FancyzonesAppLastZoneMoveWindows | Boolean | Move newly created windows to their last known zone. | ✅ |
+| FancyzonesOpenWindowOnActiveMonitor | Boolean | Move newly created windows to the curreynt active monitor (Experimental). | ✅ |
+| FancyzonesRestoreSize | Boolean | Restore the original size of windows when unsnapping. | ✅ |
+| FancyzonesQuickLayoutSwitch | Boolean | Enable quick layout switch. | ✅ |
+| FancyzonesFlashZonesOnQuickSwitch | Boolean | Flash zones when switching layout. | ✅ |
+| UseCursorposEditorStartupscreen | Boolean | Open editor on the display where the mouse point is. | ✅ |
+| FancyzonesShowOnAllMonitors | Boolean | Show zones on all monitors while dragging a window. | ✅ |
+| FancyzonesSpanZonesAcrossMonitors | Boolean | Allow zones to span across monitors. | ✅ |
+| FancyzonesMakeDraggedWindowTransparent | Boolean | Make dragged window transparent. | ✅ |
+| FancyzonesAllowChildWindowSnap | Boolean | Allow child windows snapping. | ✅ |
+| FancyzonesDisableRoundCornersOnSnap | Boolean | Disable round corners when window is snapped. | ✅ |
 | FancyzonesZoneHighlightColor | String | If not using FancyzonesSystemTheme, highlight color to use in `#FFFFFFFF` format. | ✅ |
 | FancyzonesHighlightOpacity | Int | Zone opacity in percentage. | ✅ |
 | FancyzonesEditorHotkey | KeyboardKeys | Customize the shortcut to activate this module. | ✅ |
-| FancyzonesWindowSwitching | Bool | Switch between windows in the current zone. | ✅ |
+| FancyzonesWindowSwitching | Boolean | Switch between windows in the current zone. | ✅ |
 | FancyzonesNextTabHotkey | KeyboardKeys | Next window shortcut. | ✅ |
 | FancyzonesPrevTabHotkey | KeyboardKeys | Previous window shortcut. | ✅ |
 | FancyzonesExcludedApps | String | '\r'-separated list of executable names to exclude from snapping. | ✅ |
 | FancyzonesBorderColor | String | If not using FancyzonesSystemTheme, border color to use in `#FFFFFFFF` format. | ✅ |
 | FancyzonesInActiveColor | String | If not using FancyzonesSystemTheme, inactive color to use in `#FFFFFFFF` format. | ✅ |
 | FancyzonesNumberColor | String | If not using FancyzonesSystemTheme, number color to use in `#FFFFFFFF` format. | ✅ |
-| FancyzonesSystemTheme | Bool | Whether to use system theme for zone appearance. | ✅ |
-| FancyzonesShowZoneNumber | Bool | Whether to show zone number. | ✅ |
+| FancyzonesSystemTheme | Boolean | Use system theme for zone appearance. | ✅ |
+| FancyzonesShowZoneNumber | Boolean | Show zone number. | ✅ |
 
 > [!NOTE]
 > Configuring layouts through DSC is not yet supported.
@@ -172,17 +172,17 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
-| ExtendedContextMenuOnly | Bool | Show File Locksmith in extended context menu only or in default context menu as well. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
+| ExtendedContextMenuOnly | Boolean | Show File Locksmith in extended context menu only or in default context menu as well. | ✅ |
 
 ### FindMyMouse
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationMethod | Int | Activation method index. | ✅ |
 | ActivationShortcut | HotkeySettings | Custom activation shortcut when using Custom for ActivationMethod. | ✅ |
-| DoNotActivateOnGameMode | Bool | Disable activation shortcut when Game Mode is on. | ✅ |
+| DoNotActivateOnGameMode | Boolean | Disable activation shortcut when Game Mode is on. | ✅ |
 | BackgroundColor | String | Background color in `#FFFFFFFF` format. | ✅ |
 | SpotlightColor | String | Spotlight color in `#FFFFFFFF` format. | ✅ |
 | OverlayOpacity | Int | Overlay opacity in percentage. | ✅ |
@@ -198,8 +198,8 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
-| LaunchAdministrator | Boolean | Needs to be launched as administrator in order to make changes to the system environment variables. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
+| LaunchAdministrator | Boolean | Needs to be opened as administrator in order to make changes to the system environment variables. | ✅ |
 | ShowStartupWarning | Boolean | Show a warning at startup. | ✅ |
 | LoopbackDuplicates | Boolean | Consider loopback addresses as duplicates. | ✅ |
 | AdditionalLinesPosition | HostsAdditionalLinesPosition | Possible values: Top, Bottom. | ✅ |
@@ -209,33 +209,33 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ImageresizerSelectedSizeIndex | Int | Default size preset index. | ✅ |
-| ImageresizerShrinkOnly | Bool | Make pictures smaller but not larger. | ✅ |
-| ImageresizerReplace | Bool | Overwrite files. | ✅ |
-| ImageresizerIgnoreOrientation | Bool | Ignore the orientation of pictures. | ✅ |
+| ImageresizerShrinkOnly | Boolean | Make pictures smaller but not larger. | ✅ |
+| ImageresizerReplace | Boolean | Overwrite files. | ✅ |
+| ImageresizerIgnoreOrientation | Boolean | Ignore the orientation of pictures. | ✅ |
 | ImageresizerJpegQualityLevel | Int | JPEG quality level in percentage. | ✅ |
 | ImageresizerPngInterlaceOption | Int | PNG interlacing option index. | ✅ |
 | ImageresizerTiffCompressOption | Int | Tiff compression index. | ✅ |
 | ImageresizerFileName | String | This format is used as the filename for resized images.  | ✅ |
 | ImageresizerSizes | — | — | ❌ |
-| ImageresizerKeepDateModified | Bool | Remove metadata that doesn't affect rendering. | ✅ |
+| ImageresizerKeepDateModified | Boolean | Remove metadata that doesn't affect rendering. | ✅ |
 | ImageresizerFallbackEncoder | String | Fallback encoder to use. | ✅ |
 | ImageresizerCustomSize | — | — | ❌ |
 
 > [!NOTE]
-> Configuring custom sizes through DSC is not supported yet.
+> Configuring custom sizes through DSC is not yet supported.
 
 ### KeyboardManager
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActiveConfiguration | — | — | ❌ |
 | KeyboardConfigurations | — | — | ❌ |
 
 > [!NOTE]
-> Configuring remappings through DSC is not supported yet.
+> Configuring remappings through DSC is not yet supported.
 
 ### MeasureTool
 
@@ -243,7 +243,7 @@ Measure Tool is the internal name for Screen Ruler.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to bring up the command bar. | ✅ |
 | ContinuousCapture | Boolean | Capture screen continuously during measuring. | ✅ |
 | DrawFeetOnCross | Boolean | Adds feet to the end of cross lines. | ✅ |
@@ -256,7 +256,7 @@ Measure Tool is the internal name for Screen Ruler.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to turn on or off this mode. | ✅ |
 | LeftButtonClickColor | String | Primary button highlight color in `#FFFFFFFF` format. | ✅ |
 | RightButtonClickColor | String | Secondary button highlight color in `#FFFFFFFF` format. | ✅ |
@@ -264,13 +264,13 @@ Measure Tool is the internal name for Screen Ruler.
 | HighlightRadius | Int | Highlight radius in pixels. | ✅ |
 | HighlightFadeDelayMs | Int | Fade delay in milliseconds. | ✅ |
 | HighlightFadeDurationMs | Int | Fade duration in milliseconds. | ✅ |
-| AutoActivate | Bool | Automatically activate on utility startup. | ✅ |
+| AutoActivate | Boolean | Automatically activate on utility startup. | ✅ |
 
 ### MouseJump
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to turn on or off this mode. | ✅ |
 | ThumbnailSize | MouseJumpThumbnailSize | Thumbnail size. | ✅ |
 
@@ -278,7 +278,7 @@ Measure Tool is the internal name for Screen Ruler.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to show/hide the crosshairs. | ✅ |
 | CrosshairsColor | String | Crosshairs color in `#FFFFFFFF`. | ✅ |
 | CrosshairsOpacity | Int | Crosshairs opacity in percentage. | ✅ |
@@ -286,16 +286,16 @@ Measure Tool is the internal name for Screen Ruler.
 | CrosshairsThickness | Int | Crosshairs thickness in pixels. | ✅ |
 | CrosshairsBorderColor | String | Crosshairs border color in `#FFFFFFFF` format. | ✅ |
 | CrosshairsBorderSize | Int | Crosshairs border size in pixels. | ✅ |
-| CrosshairsAutoHide | Bool | Automatically hide crosshairs when the mouse pointer is hidden. | ✅ |
-| CrosshairsIsFixedLengthEnabled | Bool | Fix crosshairs length. | ✅ |
+| CrosshairsAutoHide | Boolean | Automatically hide crosshairs when the mouse pointer is hidden. | ✅ |
+| CrosshairsIsFixedLengthEnabled | Boolean | Fix crosshairs length. | ✅ |
 | CrosshairsFixedLength | Int | Crosshairs fixed length in pixels. | ✅ |
-| AutoActivate | Bool | Automatically activate on utility startup. | ✅ |
+| AutoActivate | Boolean | Automatically activate on utility startup. | ✅ |
 
 ### MouseWithoutBorders
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ShowOriginalUI | Boolean | Show the original Mouse Without Borders UI. | ✅ |
 | WrapMouse | Boolean | Move control back to the first machine when mouse moves past the last one. | ✅ |
 | ShareClipboard | Boolean | If share clipboard stops working, Ctrl+Alt+Del then Esc may solve the problem. | ✅ |
@@ -320,17 +320,17 @@ Measure Tool is the internal name for Screen Ruler.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module. | ✅ |
 
 ### Peek
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module. | ✅ |
-| AlwaysRunNotElevated | Bool | Always run not elevated, even when PowerToys is elevated. | ✅ |
-| CloseAfterLosingFocus | Bool | Automatically close the Peek window after it loses focus. | ✅ |
+| AlwaysRunNotElevated | Boolean | Always run not elevated, even when PowerToys is elevated. | ✅ |
+| CloseAfterLosingFocus | Boolean | Automatically close the Peek window after it loses focus. | ✅ |
 
 ### PowerAccent
 
@@ -338,7 +338,7 @@ PowerAccent is the internal name for Quick Accent.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationKey | PowerAccentActivationKey | Possible values: LeftRightArrow, Space, Both. | ✅ |
 | DoNotActivateOnGameMode | Boolean | Disable activation shortcut when Game Mode is on. | ✅ |
 | ToolbarPosition | String | Toolbar position index. | ✅ |
@@ -355,10 +355,10 @@ PowerLaucher is the internal name for PowerToys Run.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | OpenPowerLauncher | HotkeySettings | Customize the shortcut to activate the module. | ✅ |
 | IgnoreHotkeysInFullscreen | Boolean | Ignore shortcuts in fullscreen mode. | ✅ |
-| ClearInputOnLaunch | Boolean | Clear the previous query on launch. | ✅ |
+| ClearInputOnLaunch | Boolean | Clear the previous query on open. | ✅ |
 | TabSelectsContextButtons | Boolean | Tab through context buttons. | ✅ |
 | Theme | Theme | Possible values: System, Light, Dark, HighContrastOne, HighContrastTwo, HighContrastBlack, HighContrastWhite. | ✅ |
 | TitleFontSize | Int32 | Text size in points. | ✅ |
@@ -372,25 +372,25 @@ PowerLaucher is the internal name for PowerToys Run.
 | SearchWaitForSlowResults | Boolean | Wait for slower plugin results before selecting top item in results. | ✅ |
 | MaximumNumberOfResults | Int | Number of results shown before having to scroll. | ✅ |
 | UsePinyin | Boolean | Use Pinyin. | ✅ |
-| GenerateThumbnailsFromFiles | Boolean | Whether thumbnail generation for files is turned on. | ✅ |
-| Plugins | explained in the next subsection | Whether thumbnail generation for files is turned on. | ✅ |
+| GenerateThumbnailsFromFiles | Boolean | Thumbnail generation for files is turned on. | ✅ |
+| Plugins | explained in the next subsection | Thumbnail generation for files is turned on. | ✅ |
 
 #### PowerToys Run plugins
 
-PowerToys Run plugins can be configured in the Plugins property. [A sample can be found in the PowerToys repository.](https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/configureLauncherPlugins.dsc.yaml)
+PowerToys Run plugins can be configured in the Plugins property. [A sample](https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/configureLauncherPlugins.dsc.yaml) can be found in the PowerToys repository.
 
 These are the available properties to configure each plugin:
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | Name | String | Name of the plugin we want to configure |
-| Disabled | Boolean | Whether the plugin should be disabled |
-| IsGlobal | Boolean | Whether the results for this plugin are shown in the global results |
+| Disabled | Boolean | The plugin should be disabled |
+| IsGlobal | Boolean | The results for this plugin are shown in the global results |
 | ActionKeyword | String | Configure the action keyword of the plugin |
 | WeightBoost | Int | The weight modifier to help in ordering the results for this plugin |
 
 > [!NOTE]
-> Configuring additional properties of plugins is not yet supported through DSC.
+> Configuring additional properties of plugins through DSC is not yet supported.
 
 ### PowerOcr
 
@@ -398,7 +398,7 @@ PowerOcr is the internal name for Text Extractor.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | ActivationShortcut | HotkeySettings | Customize the shortcut to activate this module. | ✅ |
 | PreferredLanguage | String | Should match the full name of one of the languages installed in the system. Example: "English (United States)". | ✅ |
 
@@ -429,27 +429,27 @@ PowerOcr is the internal name for Text Extractor.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
-| MRUEnabled | Bool | Enable auto-complete for the search & replace fields. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
+| MRUEnabled | Boolean | Enable auto-complete for the search & replace fields. | ✅ |
 | MaxMRUSize | Int | Maximum number of recently used items to remember. | ✅ |
-| ExtendedContextMenuOnly | Bool | Show PowerRename in extended context menu only or in default context menu as well. | ✅ |
-| UseBoostLib | Bool | Use Boost Library. | ✅ |
+| ExtendedContextMenuOnly | Boolean | Show PowerRename in extended context menu only or in default context menu as well. | ✅ |
+| UseBoostLib | Boolean | Use Boost Library. | ✅ |
 
 ### RegistryPreview
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | DefaultRegApp | Boolean | Make Registry Preview default app for opening .reg files. | ✅ |
 
 ### ShortcutGuide
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | OpenShortcutGuide | HotkeySettings | Customize the shortcut to activate this module. | ✅ |
 | OverlayOpacity | Int | Background opacity in percentage. | ✅ |
-| UseLegacyPressWinKeyBehavior | Bool | If ShortcutGuide should be activated by pressing the Windows key. | ✅ |
+| UseLegacyPressWinKeyBehavior | Boolean | If ShortcutGuide should be activated by pressing the Windows key. | ✅ |
 | PressTimeForGlobalWindowsShortcuts | Int | Press duration before showing global Windows shortcuts in milliseconds. | ✅ |
 | PressTimeForTaskbarIconShortcuts | Int | Press duration before showing taskbar icon shortcuts in milliseconds. | ✅ |
 | Theme | String | Theme index. | ✅ |
@@ -459,11 +459,11 @@ PowerOcr is the internal name for Text Extractor.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Enabled | Bool | The enabled state for this utility. | ✅ |
+| Enabled | Boolean | The enabled state for this utility. | ✅ |
 | MuteCameraAndMicrophoneHotkey | KeyboardKeys | Shortcut for muting the camera and microphone. | ✅ |
 | MuteMicrophoneHotkey | KeyboardKeys | Shortcut for muting the microphone. | ✅ |
 | PushToTalkMicrophoneHotkey | KeyboardKeys | Shortcut for push to talk. | ✅ |
-| PushToReverseEnabled | Bool | If enabled, allows both push to talk and push to mute, depending on microphone state. | ✅ |
+| PushToReverseEnabled | Boolean | If enabled, allows both push to talk and push to mute, depending on microphone state. | ✅ |
 | MuteCameraHotkey | KeyboardKeys | Shortcut for muting the camera. | ✅ |
 | SelectedCamera | String | Device name. | ✅ |
 | SelectedMicrophone | String | Device name or [All]. | ✅ |
@@ -477,13 +477,13 @@ PowerOcr is the internal name for Text Extractor.
 
 | Name | Type | Description | Available |
 | :--- | :--- | :--- | :--- |
-| Startup | Boolean | Whether PowerToys is automatically enabled at startup. | ✅ |
+| Startup | Boolean | PowerToys is automatically enabled at startup. | ✅ |
 | EnableWarningsElevatedApps | Boolean | Show a warning for functionality issues when running alongside elevated applications. | ✅ |
 | Theme | String | What theme to use for the Settings application: "system", "dark", "light". | ✅ |
 | ShowNewUpdatesToastNotification | Boolean | Show a toast notification when a new PowerToys update is available. | ✅ |
 | AutoDownloadUpdates | Boolean | If new updates of PowerToys should be automatically downloaded in the background. | ✅ |
 | ShowWhatsNewAfterUpdates | Boolean | After updating PowerToys, open the "What's new" screen. | ✅ |
-| EnableExperimentation | Boolean | Whether to opt-in into experimental features. | ✅ |
+| EnableExperimentation | Boolean | Opt-in into experimental features. | ✅ |
 
 ## Contributing
 

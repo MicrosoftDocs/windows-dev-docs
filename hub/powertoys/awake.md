@@ -21,7 +21,7 @@ You can use PowerToys Awake directly from PowerToys Settings or as a standalone 
 
 In the PowerToys Settings, start PowerToys Awake by toggling **Enable Awake** on. Once enabled, the application will manage the awakeness state of the computer.
 
-![A screenshot of the Awake settings.](../images/pt-awake-settings-menu.png)
+![A screenshot of the Awake settings](../images/pt-awake-settings-menu.png)
 
 You can choose the following Awake states:
 
@@ -45,7 +45,7 @@ This feature only works if Awake is running in one of the three **Keep awake** s
 
 To manage the execution of the tool from the system tray, right-click on the PowerToys Awake icon.
 
-![Awake settings managed from the system tray on Windows.](../images/pt-awake-tray.gif)
+![Awake settings managed from the system tray on Windows](../images/pt-awake-tray.gif)
 
 ## Command Line Interface (CLI)
 
