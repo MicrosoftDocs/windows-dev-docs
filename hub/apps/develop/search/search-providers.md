@@ -68,7 +68,7 @@ The protocol schema that will be used when launching the provided web search res
 
 #### DynamicContentEndpoint
 
-The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint).
+The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). This feature is supported starting with Windows 10 build 19045.4233 and Windows 11 build 22621.3371. Client devices on earlier versions of Windows will not see the gleam icon in the Search UI.
 
 
 ### Example package manifest file
@@ -239,7 +239,7 @@ The search provider HTTPS endpoint for gleam icons must return a JSON document w
 
 The response must specify both the light asset URL and the dark asset URL. The domains for the icon image URLs must use HTTPS and the subdomain must match the subdomain specified in the **DynamicContentEndpoint** element in the app manifest file.
 
-The image files must be in SVG format and the maximum file size is 300 kB. The gleam needs to be within a 240x120px frame inside the SVG. All content must to be outlined or expanded.
+The image files must be in SVG format and the maximum file size is 300 kB. The gleam needs to be within a 240x120px frame inside the SVG.
 
 If an empty payload is received, that will clear the active gleam icon and no gleam will be displayed.
 
