@@ -7724,6 +7724,16 @@
       "source_path": "hub/dev-environment/javascript/windows-or-wsl.md",
       "redirect_url": "hub/dev-environment/javascript/nodejs-overview.md",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/dall-e-maui-windows.md",
+      "redirect_url": "/windows/ai/samples/dall-e-maui-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/tutorial-maui-ai.md",
+      "redirect_url": "/windows/ai/samples/tutorial-maui-ai",
+      "redirect_document_id": false
     }
   ]
 }
