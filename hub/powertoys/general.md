@@ -14,9 +14,7 @@ The general section of Microsoft PowerToys contains the following settings:
 
 ## Version
 
-Here you can check for new updates and if one is available, you can download and install it.
-
-You can set if updates should be downloaded automatically.
+Here you can check for new updates and if one is available, you can download and install it. You can set if updates should be downloaded automatically.
 
 ## Administrator mode
 
@@ -38,4 +36,4 @@ Set a location where you want to save your PowerToys settings. You can also rest
 
 ## Experimentation
 
-Will activate experimentation with new features for Windows Insider builds.
+Will activate experimentation with new features on Windows Insider builds, if availabe.

@@ -21,9 +21,9 @@ We recommend installing PowerToys via GitHub or Microsoft Store, but alternative
 - Our installer will install the following runtimes:
   - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (this will always install the latest version available)
 
-To ensure that your machine meets these requirements, check your Windows version and build number by pressing <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in **Windows Update**.
+To see if your machine meets these requirements, check your Windows version and build number by opening a Run dialog (Win+R), then type `winver` and select <kbd>OK</kbd> or <kbd>Enter</kbd>. Alternatively, enter the `ver` command in Windows Command Prompt. You may be able to [update to the latest Windows version](ms-settings:windowsupdate) in **Windows Update**.
 
-## Installing with Windows executable file via GitHub
+## Installing with Windows executable file from GitHub
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](https://aka.ms/installpowertoys)
@@ -57,11 +57,11 @@ Here are the common commands you may want:
 
 | Command  | Abbreviation | Function     |
 |----------|--------------| ------------ |
-| /quiet   | /q       | Silent install |
-| /silent  | /s       | Silent install |
-| /passive |          | progress bar only install |
-| /layout  |          | create a local image of the bootstrapper |
-| /log     | /l       | log to a specific file |
+| /quiet   | /q           | Silent install |
+| /silent  | /s           | Silent install |
+| /passive |              | progress bar only install |
+| /layout  |              | create a local image of the bootstrapper |
+| /log     | /l           | log to a specific file |
 
 ### Extracting the MSI from the bundle
 
@@ -78,7 +78,7 @@ cd $Env:WIX\"bin"
 
 ### Fixes for uninstalling 0.51 and earlier builds issues
 
-If you have an issue where the MSI is not accessible, you can download the installer, that corresponds with the installed version, via the [PowerToys release page](https://github.com/microsoft/PowerToys/releases) and then run the following command. You'll want to change EXECUTABLE_INSTALLER_NAME to what the file name actually is.
+If you have an issue where the MSI is not accessible, you can download the installer that corresponds with the installed version via the [PowerToys release page](https://github.com/microsoft/PowerToys/releases) and then run the following command. You'll need to change EXECUTABLE_INSTALLER_NAME to the actual file name.
 
 In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will extract the MSI to your desktop.
 
@@ -132,6 +132,6 @@ After successfully installing PowerToys, an overview window will display with in
 
 ## Updates
 
-PowerToys uses an auto-updater that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. Updates can also be checked for manually from the PowerToys Settings, under the General page.
+PowerToys uses an auto-updater that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. Updates can also be checked for manually from the PowerToys Settings, on the **General** page.
 
 ![PowerToys Update](../images/powertoys-updates.png)

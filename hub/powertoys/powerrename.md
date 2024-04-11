@@ -158,9 +158,7 @@ For most use cases, a simple search and replace is sufficient. There may be occa
 
 Regular Expressions define a search pattern for text. They can be used to search, edit and manipulate text. The pattern defined by the regular expression may match once, several times, or not at all for a given string. PowerRename uses the [ECMAScript](https://wikipedia.org/wiki/ECMAScript) grammar, which is common amongst modern programming languages.
 
-To enable regular expressions, select **Use Regular Expressions**.
-
-**Note:** You will likely want to select **Match all occurrences** while using regular expressions.
+To enable regular expressions, select **Use Regular Expressions**. Note: You will likely want to select **Match all occurrences** while using regular expressions.
 
 To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) instead of the standard library, select the **Use Boost library** option in the PowerToys settings. It enables extended features, like [lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind), which are not supported by the standard library.
 
@@ -180,8 +178,7 @@ Simple matching examples.
 | `foo[\s\S]*bar` | Match everything between and including "foo" and "bar" |
 
 Matching and variable examples. Capturing groups are defined in parentheses `()`. To refer to them, use `$` followed by a number: `$1` will refer to the first group, `$2` to the second etc.
-
-_When using the variables, "Match all occurrences" must be selected._
+When using the variables, "Match all occurrences" must be selected.
 
 | Search for                                              | Replace with | Description                                                                          |
 |:--------------------------------------------------------|:-------------|:-------------------------------------------------------------------------------------|
@@ -217,7 +214,7 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
 
 ## Settings
 
-Additional options can be configured from the **PowerRename** tab in the Settings, as described below:
+Additional options can be configured in the settings, as described below:
 
 | Setting | Description |
 | :--- | :--- |
@@ -226,4 +223,4 @@ Additional options can be configured from the **PowerRename** tab in the Setting
 | Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename |
 | Maximum number of items | The largest number of search and replace suggestions to display |
 | Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used |
-| Use Boost library | Enable extended RegEx functionality. See [Regular Expressions](#regular-expressions) for more details |
+| Use Boost library | Enable extended regex functionality. See [Regular Expressions](#regular-expressions) for more details |
