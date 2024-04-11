@@ -35,7 +35,7 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release and a new feature for Widget feed providers.
 
-### Widget feed provider udpates
+#### Widget feed provider updates
 
 - Feed providers are now able to show announcements in the Widgets Dashboard:
   - The new `FeedManager.TryShowAnnouncement` API allows a Feed Provider to request that the Widget Dashboard show their announcements. To show your announcement, create a `FeedAnnouncement` object and call the `FeedManager.TryShowAnnouncement` API.
