@@ -31,19 +31,72 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 ## Version 1.5
 
+### Version 1.5.2 (1.5.240404000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release and a new feature for Widget feed providers.
+
+### Widget feed provider udpates
+
+- Feed providers are now able to show announcements in the Widgets Dashboard:
+  - The new `FeedManager.TryShowAnnouncement` API allows a Feed Provider to request that the Widget Dashboard show their announcements. To show your announcement, create a `FeedAnnouncement` object and call the `FeedManager.TryShowAnnouncement` API.
+  - Feed announcements will have their own badges displayed in the taskbar that can be customized using the `FeedAnnouncement` API.
+- Feed providers can now opt in to receive Analytics and Error Reports information about their provider as a user interacts with it. To opt in, implement the `IFeedProviderAnalytics` and/or `IFeedProviderErrors` interfaces by your provider.
+
+The feed provider updates includes the following new APIs:
+
+```C#
+Microsoft.Windows.Widgets.Feeds.Providers
+ 
+    FeedAnalyticsInfoReportedArgs
+    FeedErrorInfoReportedArgs
+    FeedManager
+        SendMessageToContent
+        TryShowAnnouncement
+ 
+    FeedMessageReceivedArgs
+    FeedResourceRequest
+    FeedResourceRequestedArgs
+    FeedResourceResponse
+    IFeedAnnouncementInvokedTarget
+    IFeedManager2
+    IFeedProviderAnalytics
+    IFeedProviderErrors
+    IFeedProviderMessage
+    IFeedResourceProvider
+```
+
+```C#
+Microsoft.Windows.Widgets.Notifications
+ 
+    AnnouncementActionKind
+    AnnouncementTextColor
+    FeedAnnouncement
+    FeedAnnouncementInvokedArgs
+```
+
+### Bug fixes
+
+- Fixed an issue where `DispatcherTimer` would not fire at the correct time if the primary display wasn't running at 60 Hz.
+- Fixed an issue where a textbox input method editor (IME) window would be incorrectly positioned when running at a scale factor other than 100%. For more info, see GitHub issue [#9382](https://github.com/microsoft/microsoft-ui-xaml/issues/9382).
+- Fixed an issue where a drag-and-drop operation started from another app might not allow the correct Copy/Move/Link drop operations.
+- Fixed a potential crash when a ListView's `ItemsSource` is reset and given focus right away.
+- Fixed a problem where `ShouldConstrainToRootBounds="false"` popups/flyouts don't apply any inherited scale transform. For more info, see GitHub issues [#9118](https://github.com/microsoft/microsoft-ui-xaml/issues/9118) and [#9433](https://github.com/microsoft/microsoft-ui-xaml/issues/9433).
+- Fixed a potential crash when a Composition object is destroyed with an animation still running.
+- Fixed a potential crash on shutdown in `NavigationView::RevokeNavigationViewItemRevokers`.
+
 ### Version 1.5.1 (1.5.240311000)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
 
 - Fixed an issue where self-contained apps may fail to build due to not being able to copy "map.html".
-- Fixed an issue where `MapControl` would fail to initialize due to rejecting valid tokens. For more info, see GitHub [#9324](https://github.com/microsoft/microsoft-ui-xaml/issues/9324).
-- Fixed an issue where `MapControl` loaded with a blue background. For more info, see GitHub [#9377](https://github.com/microsoft/microsoft-ui-xaml/issues/9377).
-- Fixed an issue where clicking on the chevron of a `NavigationViewItem` did not correctly expand or collapse on a single click. This also caused menus to show as blank when clicking the chevron in `PaneDisplayMode="Top"` mode. For more info, see GitHub [#9423](https://github.com/microsoft/microsoft-ui-xaml/issues/9423) and [#9426](https://github.com/microsoft/microsoft-ui-xaml/issues/9426).
-- Fixed an issue where tapping on a `NavigationViewItem` with touch or pen would prevent the item from responding to any future input. For more info, see GitHub [#9429](https://github.com/microsoft/microsoft-ui-xaml/issues/9429).
-- Fixed a crash when clicking on an item in the `NavigationView.PaneFooter` area. For more info, see GitHub [#9396](https://github.com/microsoft/microsoft-ui-xaml/issues/9396).
-- Fixed an issue where icons in menus were sometimes showing in the wrong place. For more info, see GitHub [#9409](https://github.com/microsoft/microsoft-ui-xaml/issues/9409).
-- Fixed an issue where acrylic does not show on menus until switching away from the window and back. For more info, see GitHub [#9406](https://github.com/microsoft/microsoft-ui-xaml/issues/9406).
-- Fixed a crash which could occur during `TextBox`/`RichEditBox` initialization. For more info, see GitHub [#9216](https://github.com/microsoft/microsoft-ui-xaml/issues/9216).
+- Fixed an issue where `MapControl` would fail to initialize due to rejecting valid tokens. For more info, see GitHub issue [#9324](https://github.com/microsoft/microsoft-ui-xaml/issues/9324).
+- Fixed an issue where `MapControl` loaded with a blue background. For more info, see GitHub issue [#9377](https://github.com/microsoft/microsoft-ui-xaml/issues/9377).
+- Fixed an issue where clicking on the chevron of a `NavigationViewItem` did not correctly expand or collapse on a single click. This also caused menus to show as blank when clicking the chevron in `PaneDisplayMode="Top"` mode. For more info, see GitHub issues [#9423](https://github.com/microsoft/microsoft-ui-xaml/issues/9423) and [#9426](https://github.com/microsoft/microsoft-ui-xaml/issues/9426).
+- Fixed an issue where tapping on a `NavigationViewItem` with touch or pen would prevent the item from responding to any future input. For more info, see GitHub issue [#9429](https://github.com/microsoft/microsoft-ui-xaml/issues/9429).
+- Fixed a crash when clicking on an item in the `NavigationView.PaneFooter` area. For more info, see GitHub issue [#9396](https://github.com/microsoft/microsoft-ui-xaml/issues/9396).
+- Fixed an issue where icons in menus were sometimes showing in the wrong place. For more info, see GitHub issue [#9409](https://github.com/microsoft/microsoft-ui-xaml/issues/9409).
+- Fixed an issue where acrylic does not show on menus until switching away from the window and back. For more info, see GitHub issue [#9406](https://github.com/microsoft/microsoft-ui-xaml/issues/9406).
+- Fixed a crash which could occur during `TextBox`/`RichEditBox` initialization. For more info, see GitHub issue [#9216](https://github.com/microsoft/microsoft-ui-xaml/issues/9216).
 - Fixed some noisy exceptions which `NavigationView` threw and caught on destruction.
 - Fixed an issue where a "pinch to zoom" gesture would sometimes show up as a pan or tap due to an incorrect `PointerCaptureLost` message firing.
 
