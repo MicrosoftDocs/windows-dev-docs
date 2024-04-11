@@ -363,10 +363,12 @@ This entry type is similar to the remaining profiles entry. This entry will expa
 For example:
 
 ```json
-{ "type": "matchProfile", "source": "Microsoft.Terminal.Wsl" }
+{ "type": "matchProfiles", "source": "Microsoft.Terminal.Wsl" }
 ```
 
-Will create a set of entries that are all profiles with the `source` property set to `Microsoft.Terminal.Wsl`. A full string comparison is done on these properties - not a regex or partial string match.
+Will create a set of entries that are all profiles with the `source` property set to `Microsoft.Terminal.Wsl`. Note that the `source` property is set from automatically generated profiles. If you are manually creating a profile and enter a custom source property, it will not be recognized by matchProfiles and the profile will not appear in the list.
+
+A full string comparison is done on these properties - not a regex or partial string match.
 
 ##### Parameters
 
