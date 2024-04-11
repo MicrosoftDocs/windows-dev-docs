@@ -66,8 +66,8 @@ Used to create a new tab. See also the [`newTab` action](./customize-settings/ac
 | `new-tab`, `nt` | `commandline` | Creates a new tab based on the command line assigned. | Executable with optional commands |
 | `new-tab`, `nt` | `--title` | Creates a new tab with the title assigned. | Text to use as the tab title |
 | `new-tab`, `nt` | `--tabColor` | Creates a new tab with the tab color assigned. | Hex color as #RGB or #RRGGBB |
-| `new-tab`, `nt` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `true` |  |
-| `new-tab`, `nt` | `--useApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `false` |  |
+| `new-tab`, `nt` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `true` |  |
+| `new-tab`, `nt` | `--useApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `false` |  |
 | `new-tab`, `nt` | `--colorScheme scheme-name` | Override the profile's `colorScheme` setting, and set it to the scheme from the settings with the name `scheme-name` | The name of a color scheme in the settings |
 
 > [!TIP]
@@ -87,8 +87,8 @@ Used to create a new split pane. See also the [`splitPane` action](./customize-s
 | `split-pane`, `sp` | `--size, -s size`| Creates a new split window pane with the assigned size. | Float that specifies the portion of the parent pane to use represented by a decimal. For example, `.4` to represent 40% of the parent pane. |
 | `split-pane`, `sp` | `commandline` | Creates a new split window pane based on the assigned command line. | Executable with optional commands  |
 | `split-pane`, `sp` | `--duplicate, -D` | Creates a new split window pane that is a duplicate of the current pane. | N/A. No additional values to assign. |
-| `split-pane`, `sp` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `true` |  |
-| `split-pane`, `sp` | `--useApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `false` |  |
+| `split-pane`, `sp` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `true` |  |
+| `split-pane`, `sp` | `--useApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `false` |  |
 | `split-pane`, `sp` | `--colorScheme scheme-name` | Override the profile's `colorScheme` setting, and set it to the scheme from the settings with the name `scheme-name` | The name of a color scheme in the settings |
 
 ### Focus-tab command
