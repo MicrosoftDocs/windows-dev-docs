@@ -233,6 +233,7 @@ items:
             - name: WinUI performance optimization
               href: performance/winui-perf.md
         - name: Integrate with Windows
+          href: develop/windows-integration/index.md
           items: 
             - name: Windows feed providers
               items: 
