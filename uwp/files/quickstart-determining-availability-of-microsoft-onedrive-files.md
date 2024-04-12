@@ -24,7 +24,7 @@ Determine if a Microsoft OneDrive file is available using the [**StorageFile.IsA
 
     You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
--   **App capabilty declarations**
+-   **App capability declarations**
 
     See [File access permissions](file-access-permissions.md).
 

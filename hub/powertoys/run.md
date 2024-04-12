@@ -47,14 +47,14 @@ The following general options are available on the PowerToys Run settings page.
 | Immediate plugins | How many milliseconds a plugin that makes the UI wait should wait before showing results |
 | Background execution plugins | How many milliseconds a plugin that executes in the background should wait before showing results |
 | Maximum number of results before scrolling | Maximum number of results shown without scrolling |
-| Clear the previous query on launch | When opened, previous searches will not be highlighted |
+| Clear the previous query on opening | When opened, previous searches will not be highlighted |
 | Results order tuning | Fine tunes the ordering of the displayed results |
 | Selected item weight | Use a higher number to get selected results to rise faster (Default: 5, 0 to disable) |
 | Wait for slower plugin results before selecting top item in results | Selecting this can help preselect the top, more relevant result, but at the risk of jumpiness |
 | Tab through context buttons | When enabled, you can tab through the context buttons before tabbing to the next result |
-| Generate thumbnails for files | When enabled, thumbnails will be generated for files in the results list (Disabling this can increase speed and stability) |
+| Generate thumbnails for files | Thumbnails will be generated for files in the results list (this may affect speed and stability) |
 | Preferred monitor position | If multiple displays are in use, PowerToys Run can be opened on:<br />• Primary display<br />• Display with mouse cursor<br />• Display with focused window |
-| App theme | Change the color theme used by PowerToys Run |
+| App theme | Change the theme used by PowerToys Run |
 
 ### Plugin manager
 
@@ -71,7 +71,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 > You can change commands to fit your personal needs in the [plugin manager](#plugin-manager).
 
 > [!IMPORTANT]
-> Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(` breaks global calculation queries starting with an opening brace.
+> Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(` breaks global calculation queries starting with an opening parenthesis.
 >
 > Currently known conflicting character sequences:
 >
@@ -95,7 +95,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | URI-handler | `//` | `//` to open your default browser.<br />`// learn.microsoft.com` to have your default browser go to Microsoft Learn.<br />`mailto:` and `ms-settings:` links are supported. |
 | Visual Studio Code | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
 | Web search | `??` | `??` to open your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. |
-| [Windows settings](#windows-settings-plugin) | `$` | `$ Add/Remove Programs` to open the Windows settings page for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
+| [Windows settings](#windows-settings-plugin) | `$` | `$ Add/Remove Programs` to open the Windows settings page for managing installed apps.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
 | Windows Terminal profiles | `_` | `_ powershell` to list all profiles that contains 'powershell' in their name. |
 | [Window Walker](#window-walker-plugin) | `<` | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process. |
 
@@ -137,7 +137,7 @@ _*) This command may take some time to provide the results._
 
 ### Program plugin
 
-The **Program** plugin can open software applications (such as Win32 or packaged programs). The plugin works by scanning common install locations, like the start menu and desktops that you have access to, looking for executable files (.exe) or shortcut files (such as .lnk or .url).
+The **Program** plugin can open software applications (such as Win32 or packaged programs). The plugin scans common install locations, like the Start menu and desktops that you have access to, looking for executable files (.exe) or shortcut files (such as .lnk or .url).
 On occasion, a program may not be found by the program plugin scan and you may want to manually create a shortcut in the directory containing the program you want to access.
 
 #### Program parameters
@@ -156,11 +156,11 @@ For example, when opening Visual Studio Code, specify the folder to be opened wi
 
 `Visual Studio Code -- C:\myFolder`
 
-Visual Studio Code also supports a set of [command line parameters](https://code.visualstudio.com/docs/editor/command-line), which can be utilized with their corresponding arguments in PowerToys Run to, for instance, view the difference between files:
+Visual Studio Code also supports a set of [command line parameters](https://code.visualstudio.com/docs/editor/command-line), which can be used with their corresponding arguments in PowerToys Run to, for instance, view the difference between files:
 
 `Visual Studio Code -d C:\foo.txt C:\bar.txt`
 
-If the program plugin's option "Include in global result" is not selected, include the activation phrase, `.` by default, to invoke the plugin's behavior:
+If the program plugin's option **Include in global result** is not selected, include the activation phrase, `.` by default, to invoke the plugin's behavior:
 
 `.Visual Studio Code -- C:\myFolder`
 
@@ -226,7 +226,7 @@ The History plugin allows quick access to previously selected results from other
 
 The Time and date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.
 
-> [!NOTE]
+> [!IMPORTANT]
 > The Time and Date plugin respects the date and time format settings of your system. Please be aware of the different notations in different locals.
 
 > [!IMPORTANT]
@@ -241,8 +241,8 @@ Examples:
 
 ### Unit converter plugin
 
-> [!NOTE]
-> The Unit Converter plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals. The names and abbreviations of the units aren't localized yet.
+> [!IMPORTANT]
+> The Unit Converter plugin respects the number format settings of your system. Please be aware of the different decimal characters and thousands delimiters in different locals. The names and abbreviations of the units aren't localized yet.
 
 The Unit Converter plugin supports the following unit types:
 
@@ -368,7 +368,7 @@ In the Folder plugin you can filter the results by using some special characters
 
 ### Windows Settings plugin
 
-The Windows Settings plugin allows you to search for Windows settings. You can search the settings by their name or by their location.
+The Windows Settings plugin allows you to search in Windows settings. You can search by their name or by their location.
 
 To search by location you can use the following syntax:
 
@@ -415,7 +415,7 @@ You can turn off the message in the PowerToys Run plugin manager options for Win
 
 ### Windows Search plugin
 
-With the Windows Search plugin you can search for files and folders that are index by the **Windows Search Index** service.
+With the Windows Search plugin you can search for files and folders that are indexed by the **Windows Search Index** service.
 
 #### Windows Search settings
 

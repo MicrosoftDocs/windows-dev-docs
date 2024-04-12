@@ -76,7 +76,7 @@ Note the asynchronous method calls defined using JavaScript promises. Looking at
 promise = upload.startAsync().then(complete, error, progress);
 ```
 
-The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](/previous-versions/windows).
+The async method call is followed by a `then` statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](/previous-versions/windows).
 
 ### Uploading multiple files
 **Identify the files and destination for the upload**

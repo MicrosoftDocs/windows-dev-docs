@@ -36,7 +36,7 @@ All of the capture methods described in this article require the first step of i
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetInitMediaCapture":::
 
 ## Set up the camera preview
-It's possible to capture photos, videos, and audio using **MediaCapture** without showing the camera preview, but typically you want to show the preview stream so that the user can see what's being captured. Also, a few **MediaCapture** features require the preview stream to be running before they can be enbled, including auto focus, auto exposure, and auto white balance. To see how to set up the camera preview, see [**Display the camera preview**](simple-camera-preview-access.md).
+It's possible to capture photos, videos, and audio using **MediaCapture** without showing the camera preview, but typically you want to show the preview stream so that the user can see what's being captured. Also, a few **MediaCapture** features require the preview stream to be running before they can be enabled, including auto focus, auto exposure, and auto white balance. To see how to set up the camera preview, see [**Display the camera preview**](simple-camera-preview-access.md).
 
 ## Capture a photo to a SoftwareBitmap
 The [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) class was introduced in Windows 10 to provide a common representation of images across multiple features. If you want to capture a photo and then immediately use the captured image in your app, such as displaying it in XAML, instead of capturing to a file, then you should capture to a **SoftwareBitmap**. You still have the option of saving the image to disk later.

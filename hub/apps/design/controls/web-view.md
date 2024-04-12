@@ -106,7 +106,7 @@ webView1.NavigationStarting += webView1_NavigationStarting;
 
 private void webView1_NavigationStarting(object sender, WebViewNavigationStartingEventArgs args)
 {
-    // Cancel navigation if URL is not allowed. (Implemetation of IsAllowedUri not shown.)
+    // Cancel navigation if URL is not allowed. (Implementation of IsAllowedUri not shown.)
     if (!IsAllowedUri(args.Uri))
         args.Cancel = true;
 }

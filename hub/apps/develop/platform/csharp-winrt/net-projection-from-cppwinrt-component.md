@@ -193,7 +193,7 @@ To distribute the projection assembly for .NET application developers, you can a
       </metadata>
       <files>
         <!--Support .NET 6, .NET Core 3, UAP, .NET Framework 4.6, C++ -->
-        <!--Architecture-netural assemblies-->
+        <!--Architecture-neutral assemblies-->
         <file src="..\..\_build\AnyCPU\Release\SimpleMathProjection\bin\SimpleMathProjection.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll" />
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\netcoreapp3.0\SimpleMathComponent.winmd" />
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\uap10.0\SimpleMathComponent.winmd" />
