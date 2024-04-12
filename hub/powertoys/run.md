@@ -242,7 +242,7 @@ Examples:
 ### Unit converter plugin
 
 > [!IMPORTANT]
-> The Unit Converter plugin respects the number format settings of your system. Please be aware of the different decimals and thousand delimiters in different locals. The names and abbreviations of the units aren't localized yet.
+> The Unit Converter plugin respects the number format settings of your system. Please be aware of the different decimal characters and thousands delimiters in different locals. The names and abbreviations of the units aren't localized yet.
 
 The Unit Converter plugin supports the following unit types:
 
