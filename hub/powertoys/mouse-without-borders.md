@@ -32,7 +32,7 @@ With the latest version of PowerToys installed, you will see Mouse Without Borde
 
     ![Screenshot of Mouse Without Borders settings after entering the first computer information](../images/powertoys-mouse-without-borders-enter-security-key.png)
 
-4. Once the computers are connected, you will be able to switch between them by moving your mouse cursor beyond the edge of the screen, transitioning between computers.
+4. Once the computers are connected, you will be able to move between them by moving your mouse cursor beyond the edge of the screen.
 
     ![Screenshot of Mouse Without Borders settings on the second computer after connecting](../images/powertoys-mouse-without-borders-after-connect-2.png)
 
@@ -119,6 +119,6 @@ If the connection is lost:
 - Copy/Paste between machines only works with a single file and the size limit is 100MB.
 - Drag/Drop between machines works with single file only and it does not work with network files.
 - Copy/Paste, Drag/Drop does not work with folder and multiple files, the workaround is to zip them first.
-- If the host machine has a full-screen focused Remote Desktop/virtual machine window (or some kind of simulator window), the keyboard might not follow the mouse to another machine. The workaround is to enable the option "Hide mouse at screen edge" in the Settings or switch the focus to another window first.
+- If the host machine has a full-screen focused Remote Desktop/virtual machine window (or some kind of simulator window), the keyboard might not follow the mouse to another machine. The workaround is to enable the option **Hide mouse at screen edge** in the Settings or switch the focus to another window first.
 - The mouse pointer might be invisible if there is no physical mouse attached to the machine. Plug in an unused mouse or turn on **Mouse Keys** in Control Panel.
 - Some settings may not sync correctly and may need to be manually changed to be the same on all machines.

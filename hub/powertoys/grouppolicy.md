@@ -159,7 +159,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 
 Supported on PowerToys 0.68.0 or later.
 
-This policy configures whether PowerToys experimentation is allowed. With experimentation allowed the user sees the new features being experimented if it gets selected as part of the test group. (Experimentation will only happen on Windows Insider builds.)
+This policy configures whether PowerToys experimentation is allowed. With experimentation allowed the user sees the new features being experimented if it gets selected as part of the test group. Experimentation will only happen on Windows Insider builds.
 
 - If this setting is enabled or not configured, the user can control experimentation in the PowerToys settings menu.
 - If this setting is disabled, experimentation is not allowed.
@@ -222,7 +222,7 @@ This policy configures whether PowerToys per-user installation is allowed or not
 
 Supported on PowerToys 0.68.0 or later.
 
-This policy configures whether the automatic download and installation of available updates is disabled or not. (On metered connections updates are never downloaded.)
+This policy configures whether the automatic download and installation of available updates is disabled or not. Updates are never downloaded on metered connections.
 
 - If enabled, automatic download and installation is disabled.
 - If disabled or not configured, the user can control this in the settings.

@@ -53,7 +53,7 @@ The currently available utilities include:
         [![Color Picker screenshot](../images/pt-color-picker.png)](color-picker.md)
     :::column-end:::
     :::column span="2":::
-        [Color Picker](color-picker.md) is a system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from anywhere on the screen, the picker automatically copies the color into your clipboard in a set format.
+        [Color Picker](color-picker.md) is a system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from anywhere on the screen, the picker automatically copies the color to your clipboard in a set format.
         Color Picker contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
             :::column-end:::
 :::row-end:::
@@ -88,7 +88,7 @@ The currently available utilities include:
         [![Environment Variables screenshot](../images/powertoys-environment-variables.png)](environment-variables.md)
     :::column-end:::
     :::column span="2":::
-        [Environment Variables](environment-variables.md) offers an easy and convenient way to manage environment variables. It also allows you to create profiles for managing a set of variables together.
+        [Environment Variables](environment-variables.md) offers an easy and convenient way to manage environment variables. You can create profiles for managing a set of variables together.
     :::column-end:::
 :::row-end:::
 
@@ -110,7 +110,7 @@ The currently available utilities include:
         [![File Explorer screenshot](../images/pt-file-explorer.png)](file-explorer.md)
     :::column-end:::
     :::column span="2":::
-        [File Explorer add-ons](file-explorer.md) enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+        [File Explorer add-ons](file-explorer.md) enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To open the Preview pane, go to **View** in File Explorer and select **Preview Pane**.
     :::column-end:::
 :::row-end:::
 
@@ -121,7 +121,7 @@ The currently available utilities include:
         [![File Locksmith screenshot](../images/powertoys-file-locksmith.png)](file-locksmith.md)
     :::column-end:::
     :::column span="2":::
-        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **Unlock with File Locksmith**.
+        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer and select **Unlock with File Locksmith**.
     :::column-end:::
 :::row-end:::
 
@@ -143,7 +143,7 @@ The currently available utilities include:
         [![Image Resizer screenshot](../images/pt-image-resizer.png)](image-resizer.md)
     :::column-end:::
     :::column span="2":::
-        [Image Resizer](image-resizer.md) is a Windows Shell extension for quickly resizing images. With a simple right click from File Explorer, resize one or many images instantly. This code is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
+        [Image Resizer](image-resizer.md) is a Windows Shell extension for quickly resizing images. With a right click from File Explorer, instantly resize one or many images. This code is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
     :::column-end:::
 :::row-end:::
 
@@ -165,7 +165,11 @@ The currently available utilities include:
         [![Mouse utilities screenshot](../images/pt-mouse-utils.png)](mouse-utilities.md)
     :::column-end:::
     :::column span="2":::
-        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor. With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing). Mouse Highlighter displays visual indicators when the left or right mouse buttons are clicked. Mouse Jump allows a quick jump on large displays. Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
+        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor.
+        With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing).
+        Mouse Highlighter displays visual indicators when basic mouse buttons are clicked.
+        Mouse Jump allows a quick jump on large displays.
+        Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
     :::column-end:::
 :::row-end:::
 
@@ -176,7 +180,7 @@ The currently available utilities include:
         [![Mouse without Borders screenshot](../images/pt-mouse-without-borders.png)](mouse-without-borders.md)
     :::column-end:::
     :::column span="2":::
-        [Mouse Without Borders](mouse-without-borders.md) enables you to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
+        Use [Mouse Without Borders](mouse-without-borders.md) to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
     :::column-end:::
 :::row-end:::
 
@@ -198,7 +202,7 @@ The currently available utilities include:
         [![Peek screenshot](../images/powertoys-peek.png)](peek.md)
     :::column-end:::
     :::column span="2":::
-        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Simply select the file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
+        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Select the file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
     :::column-end:::
 :::row-end:::
 
@@ -209,7 +213,7 @@ The currently available utilities include:
         [![PowerRename screenshot](../images/pt-rename.png)](powerrename.md)
     :::column-end:::
     :::column span="2":::
-        [PowerRename](powerrename.md) enables you to perform bulk renaming, searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. This code is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
+        Use [PowerRename](powerrename.md) to perform bulk renaming; searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. This code is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
     :::column-end:::
 :::row-end:::
 
@@ -231,7 +235,7 @@ The currently available utilities include:
         [![Quick Accent screenshot](../images/pt-keyboard-accent.png)](Quick-accent.md)
     :::column-end:::
     :::column span="2":::
-        [Quick Accent](Quick-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
+        [Quick Accent](Quick-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific character with a quick key combo.
     :::column-end:::
 :::row-end:::
 
@@ -253,7 +257,7 @@ The currently available utilities include:
         [![Screen Ruler screenshot](../images/pt-screen-ruler.png)](screen-ruler.md)
     :::column-end:::
     :::column span="2":::
-        [Screen Ruler](screen-ruler.md) allows you to quickly measure pixels on your screen based with image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
+        Use [Screen Ruler](screen-ruler.md) to quickly measure pixels on your screen based with image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
     :::column-end:::
 :::row-end:::
 
@@ -293,8 +297,6 @@ The currently available utilities include:
 ## Languages
 
 Currently, PowerToys is available in the following languages: Arabic (Saudi Arabia), Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish, Ukrainian.
-
-_Note that new elements of the app might sometimes not yet be translated in the first version release._
 
 ## PowerToys video walk-through
 
