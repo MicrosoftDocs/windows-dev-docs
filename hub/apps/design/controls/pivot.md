@@ -2,7 +2,7 @@
 description: The Pivot control enables touch-swiping between a small set of content sections.
 title: Pivot
 template: detail.hbs
-ms.date: 04/04/2022
+ms.date: 03/29/2024
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -10,50 +10,19 @@ ms.localizationpriority: medium
 
 # Pivot
 
-The [Pivot](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Pivot) control enables touch-swiping between a small set of content sections.
-
-![Default focus underlines selected header](images/pivot_focus_selectedHeader.png)
-
-**Get the Windows UI Library**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
-:::row-end:::
-
-> **Platform APIs**: [Pivot class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Pivot), [NavigationView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.NavigationView)
-
-## Examples
-
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Pivot">open the app and see the Pivot control in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
-The Pivot control, just like [NavigationView](navigationview.md), underlines the selected item.
+The Pivot control enables touch-swiping between a small set of content sections.
 
 ![Default focus underlines selected header](images/pivot_focus_selectedHeader.png)
 
 ## Is this the right control?
 
-> [!NOTE]
->The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). When designing for Windows 11, consider using a [NavigationView](navigationview.md) or [TabView](tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
+> [!WARNING]
+>The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
+>
+> - **WinUI 3** - Use the [SelectorBar](selector-bar.md) control.
+> - **WinUI 2/UWP** - Use a [NavigationView](navigationview.md) or [TabView](tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
+
+To create a Pivot-like UI when using WinUI 3 and the Windows App SDK, use the [SelectorBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar) control.
 
 To create a tabbed UI, use a [TabView](tab-view.md) control.
 
@@ -65,9 +34,22 @@ Some key differences between the NavigationView and Pivot are listed here:
 - Overflow items in a Pivot carousel, while NavigationView uses a menu dropdown overflow so that users can see all items.
 - Pivot handles navigation between content sections, while NavigationView allows for more control over navigation behavior.
 
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [Pivot class](/uwp/api/windows.ui.xaml.controls.pivot)
+> - [Open the WinUI 2 Gallery app and see the Pivot in action](winui2gallery:/item/Pivot). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
+
 ## Use NavigationView instead of Pivot
 
-If your app's UI uses the Pivot control, then you can convert Pivot to NavigationView with the code below.
+If your app's UI uses the Pivot control, you can convert Pivot to [NavigationView](/windows/winui/api/microsoft.ui.xaml.controls.navigationview) following this example.
 
 This XAML creates a NavigationView with 3 sections of content, like the example Pivot in [Create a pivot control](#create-a-pivot-control).
 
@@ -128,7 +110,13 @@ This code mimics the Pivot control's built-in navigation experience, minus the t
 
 ## Create a pivot control
 
-This code creates a basic Pivot control with 3 sections of content.
+> [!WARNING]
+>The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
+>
+> - **WinUI 3** - Use the [SelectorBar](selector-bar.md) control.
+> - **WinUI 2/UWP** - Use a [NavigationView](navigationview.md) or [TabView](tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
+
+This XAML creates a basic Pivot control with 3 sections of content.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Category Title">
@@ -149,7 +137,7 @@ This code creates a basic Pivot control with 3 sections of content.
 
 ### Pivot items
 
-Pivot is an [ItemsControl](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ItemsControl), so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a [PivotItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PivotItem) is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the [Items](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items) collection directly with XAML UI elements. Or, you can set the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) and [HeaderTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.headertemplate) to specify how the items are displayed.
+Pivot is an [ItemsControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol), so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a [PivotItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivotitem) is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the [Items](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items) collection directly with XAML UI elements. Or, you can set the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) and [HeaderTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.headertemplate) to specify how the items are displayed.
 
 You can use the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.selecteditem) property to get or set the Pivot's active item. Use the [SelectedIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.selectedindex) property to get or set the index of the active item.
 
@@ -195,17 +183,15 @@ The control comes in two modes:
 - Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.
 - Pivot items in a carousel loop from last to first pivot section.
 
-> **Note** Pivot headers should not carousel in a [10ft environment](../devices/designing-for-tv.md). Set the [IsHeaderItemsCarouselEnabled](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) property to **false** if your app will run on Xbox.
-
-## Recommendations
-
-- Avoid using more than 5 headers when using carousel (round-trip) mode, as looping more than 5 can become confusing.
-
-## Get the sample code
-
-- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+> [!TIP]
+>
+> - Avoid using more than 5 headers when using carousel mode, as looping more than 5 can become confusing.
+> - Pivot headers should not carousel in a [10ft environment](../devices/designing-for-tv.md). Set the [IsHeaderItemsCarouselEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.IsHeaderItemsCarouselEnabled) property to `false` if your app will run on Xbox.
 
 ## Related topics
 
-- [Pivot class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Pivot)
+- [Pivot class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot)
+- [SelectorBar](selector-bar.md)
+- [NavigationView](navigationview.md)
+- [TabView](tab-view.md)
 - [Navigation design basics](../basics/navigation-basics.md)

@@ -8,12 +8,9 @@ zone_pivot_groups: store-installer-packaging
 
 # Reserve your app's name
 
-> [!IMPORTANT]
-> There is currently a bug preventing new products being created in some circumstances. Please see [Troubleshooting App Creation in Partner Center](../partner-center/troubleshoot-app-creation.md) for more information, including a workaround.
-
 All apps on the Microsoft Store must have a unique name. The first step toward putting your app on the store is to reserve the name you'd like to use. You can reserve your app's name up to three months before you are ready to publish, even if you have not started to write your app yet. We recommend reserving your name as soon as possible to ensure it will be available when you're ready to publish. Reserved names not used within three months will have the reservation removed.
 
-If you are not sure what you want you app's name to be, you can reserve multiple names. You'll be able to choose the final name when you're ready to publish.
+If you are not sure what you want your app's name to be, you can reserve multiple names. You'll be able to choose the final name when you're ready to publish.
 
 Follow the following steps to reserve your app's name:
 

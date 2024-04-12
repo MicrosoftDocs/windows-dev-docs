@@ -201,6 +201,8 @@
           href: controls/navigationview.md
         - name: Pivot
           href: controls/pivot.md
+        - name: Selector bar
+          href: controls/selector-bar.md
         - name: Tab view
           href: controls/tab-view.md
     - name: People

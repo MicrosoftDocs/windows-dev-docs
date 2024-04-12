@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Always On Top, Win]
 
 A system-wide Windows utility to pin windows above other windows.
 
-![Always On Top screenshot.](../images/pt-always-on-top.png)
+![Always On Top screenshot](../images/pt-always-on-top.png)
 
 ## Pin a window
 

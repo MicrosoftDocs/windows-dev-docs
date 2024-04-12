@@ -16,17 +16,17 @@ With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>
 
 ## How to deactivate
 
-Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard. You can exit capture mode by pressing <kbd>Esc</kbd> at any moment.
+Capture mode is closed immediately after text in the selected region is recognized and copied to the clipboard. Close capture mode with <kbd>Esc</kbd> at any moment.
 
 ## Adjust while trying to capture
 
-By holding <kbd>Shift</kbd>, you will change from adjusting the capture region's size to moving the capture region. When you release <kbd>Shift</kbd>, you will be able to resize again.
+By holding <kbd>Shift</kbd>, you change from adjusting the capture region's size to moving the capture region. When you release <kbd>Shift</kbd>, you will be able to resize again.
 
 > [!IMPORTANT]
 >
 > 1. The produced text may not be perfect, so you have to do a quick proof read of the output.
 > 2. This tool uses OCR (Optical Character Recognition) to read text on the screen.
-> 3. The default language used will be based on your [Windows system language > keyboard settings](https://support.microsoft.com/windows/manage-the-input-and-display-language-settings-in-windows-12a10cb4-8626-9b77-0ccb-5013e0c7c7a2) (OCR language packs are available for install).
+> 3. The default language used will be based on your [Windows system language > Keyboard settings](https://support.microsoft.com/windows/manage-the-input-and-display-language-settings-in-windows-12a10cb4-8626-9b77-0ccb-5013e0c7c7a2). OCR language packs are available for installation.
 
 ## Settings
 
@@ -107,7 +107,7 @@ $Capability | Remove-WindowsCapability -Online
 
 This section will list possible errors and solutions.
 
-### "No Possible OCR languages are installed."
+### "No Possible OCR languages are installed"
 
 This message is shown when there are no available languages for recognition.
 

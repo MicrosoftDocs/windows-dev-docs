@@ -99,6 +99,8 @@ items:
             href: ../powertoys/general.md
           - name: Run in admin mode
             href: ../powertoys/administrator.md
+          - name: DSC configuration
+            href: ../powertoys/dsc-configure.md
           - name: Group Policy
             href: ../powertoys/grouppolicy.md
           - name: Report a Bug

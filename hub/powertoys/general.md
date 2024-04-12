@@ -14,9 +14,7 @@ The general section of Microsoft PowerToys contains the following settings:
 
 ## Version
 
-Here you can check for new updates and if a new update is available, you can download and install it.
-
-You can set if updates should be downloaded automatically.
+Here you can check for new updates and if one is available, you can download and install it. You can set if updates should be downloaded automatically.
 
 ## Administrator mode
 
@@ -26,7 +24,7 @@ Read more about the administrator mode in the [PowerToys running with administra
 
 ### App theme
 
-Here you can set the theme of the PowerToys settings app and the PowerToys flyout. You can set it to Windows default, light or dark.
+Here you can set the theme of the PowerToys settings app and the PowerToys flyout: **Dark**, **Light**, or **Windows default**.
 
 ### Run at startup
 
@@ -38,4 +36,4 @@ Set a location where you want to save your PowerToys settings. You can also rest
 
 ## Experimentation
 
-Will activate experimentation with new features for Windows Insider builds.
+Will activate experimentation with new features on Windows Insider builds, if available.

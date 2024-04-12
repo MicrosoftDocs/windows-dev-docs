@@ -146,7 +146,7 @@ Some types of apps—for example, a weather app or a local information app—nee
 
 A user's geographic location is personally identifiable information (PII). The following website provides guidance for protecting user privacy.
 
--   [Microsoft Privacy]( https://www.microsoft.com/privacy/dpd/default.aspx)
+-   [Microsoft Privacy]( https://privacy.microsoft.com/privacystatement)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 

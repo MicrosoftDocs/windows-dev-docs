@@ -74,7 +74,7 @@ sections:
       - question: |
           Why is the compiler giving me a "C3779: consume_Something: function that returns 'auto' cannot be used before it is defined" error?
         answer: |
-          You're consuming an API from the Windows namespace headers for the C++/WinRT projection (in the **winrt** namespace), and the API is forward-declared in a header that you've included, but its definition is in a header that you haven't yet included. Include the header named for the API's namespace, and rebuild. For more info, see [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers).
+          You're using a Windows Runtime object without having first included the corresponding namespace header file. Include the header named for the API's namespace, and rebuild. For more info, see [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers).
 
       - question: |
           Why is the linker giving me a "LNK2019: Unresolved external symbol" error?
@@ -87,7 +87,7 @@ sections:
 
           It's important that you resolve any linker errors that you can by linking **WindowsApp.lib** instead of an alternative static-link library, otherwise your application won't pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by Visual Studio and by the Microsoft Store to validate submissions (meaning that it consequently won't be possible for your application to be successfully ingested into the Microsoft Store).
 
-          **Relatively rare**: if the unresolved symbol is an API from the Windows namespace headers for the C++/WinRT projection (in the **winrt** namespace), then the API is forward-declared in a header that you've included, but its definition is in a header that you haven't yet included. Include the header named for the API's namespace, and rebuild. For more info, see [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers).
+          If the unresolved symbol is a constructor, you may have forgotten to include the namespace header file for the class being constructed. Include the header named for the class's namespace, and rebuild. For more info, see [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers).
 
       - question: |
           Why am I getting a "class not registered" exception?

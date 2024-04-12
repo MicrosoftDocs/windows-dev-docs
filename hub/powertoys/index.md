@@ -28,7 +28,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Always On Top screenshot.](../images/pt-always-on-top-menu.png)](always-on-top.md)
+        [![Always On Top screenshot](../images/pt-always-on-top-menu.png)](always-on-top.md)
     :::column-end:::
     :::column span="2":::
         [Always On Top](always-on-top.md) enables you to pin windows above other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
@@ -39,7 +39,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![PowerToys Awake screenshot.](../images/pt-awake-menu.png)](awake.md)
+        [![PowerToys Awake screenshot](../images/pt-awake-menu.png)](awake.md)
     :::column-end:::
     :::column span="2":::
         [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turns off its displays.
@@ -50,10 +50,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Color Picker screenshot.](../images/pt-color-picker.png)](color-picker.md)
+        [![Color Picker screenshot](../images/pt-color-picker.png)](color-picker.md)
     :::column-end:::
     :::column span="2":::
-        [Color Picker](color-picker.md) is a system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from anywhere on the screen, the picker automatically copies the color into your clipboard in a set format.
+        [Color Picker](color-picker.md) is a system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from anywhere on the screen, the picker automatically copies the color to your clipboard in a set format.
         Color Picker contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
             :::column-end:::
 :::row-end:::
@@ -62,7 +62,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Command Not Found screenshot.](../images/pt-cmd-not-found.png)](cmd-not-found.md)
+        [![Command Not Found screenshot](../images/pt-cmd-not-found.png)](cmd-not-found.md)
     :::column-end:::
     :::column span="2":::
         [Command Not Found](cmd-not-found.md) is a PowerShell 7 module that detects an error thrown by a command and suggests a relevant WinGet package to install, if available.
@@ -74,7 +74,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Crop And Lock screenshot.](../images/powertoys-crop-and-lock.png)](crop-and-lock.md)
+        [![Crop And Lock screenshot](../images/powertoys-crop-and-lock.png)](crop-and-lock.md)
     :::column-end:::
     :::column span="2":::
         [Crop And Lock](crop-and-lock.md) is a utility that creates a new window that's a crop or a thumbnail of another window.
@@ -85,10 +85,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Environment Variables screenshot.](../images/powertoys-environment-variables.png)](environment-variables.md)
+        [![Environment Variables screenshot](../images/powertoys-environment-variables.png)](environment-variables.md)
     :::column-end:::
     :::column span="2":::
-        [Environment Variables](environment-variables.md) offers an easy and convenient way to manage environment variables. It also allows you to create profiles for managing a set of variables together.
+        [Environment Variables](environment-variables.md) offers an easy and convenient way to manage environment variables. You can create profiles for managing a set of variables together.
     :::column-end:::
 :::row-end:::
 
@@ -96,7 +96,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![FancyZones screenshot.](../images/pt-fancy-zones.png)](fancyzones.md)
+        [![FancyZones screenshot](../images/pt-fancy-zones.png)](fancyzones.md)
     :::column-end:::
     :::column span="2":::
         [FancyZones](fancyzones.md) is a window manager that makes it easy to create complex window layouts and quickly position windows into those layouts.
@@ -107,10 +107,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![File Explorer screenshot.](../images/pt-file-explorer.png)](file-explorer.md)
+        [![File Explorer screenshot](../images/pt-file-explorer.png)](file-explorer.md)
     :::column-end:::
     :::column span="2":::
-        [File Explorer add-ons](file-explorer.md) enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+        [File Explorer add-ons](file-explorer.md) enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To open the Preview pane, go to **View** in File Explorer and select **Preview Pane**.
     :::column-end:::
 :::row-end:::
 
@@ -118,10 +118,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![File Locksmith screenshot.](../images/powertoys-file-locksmith.png)](file-locksmith.md)
+        [![File Locksmith screenshot](../images/powertoys-file-locksmith.png)](file-locksmith.md)
     :::column-end:::
     :::column span="2":::
-        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **Unlock with File Locksmith**.
+        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer and select **Unlock with File Locksmith**.
     :::column-end:::
 :::row-end:::
 
@@ -129,7 +129,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Hosts File Editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+        [![Hosts File Editor screenshot](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
     :::column-end:::
     :::column span="2":::
         [Hosts File Editor](hosts-file-editor.md) is a convenient way to edit the 'Hosts' file that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks.
@@ -140,10 +140,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Image Resizer screenshot.](../images/pt-image-resizer.png)](image-resizer.md)
+        [![Image Resizer screenshot](../images/pt-image-resizer.png)](image-resizer.md)
     :::column-end:::
     :::column span="2":::
-        [Image Resizer](image-resizer.md) is a Windows Shell extension for quickly resizing images. With a simple right click from File Explorer, resize one or many images instantly. This code is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
+        [Image Resizer](image-resizer.md) is a Windows Shell extension for quickly resizing images. With a right click from File Explorer, instantly resize one or many images. This code is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
     :::column-end:::
 :::row-end:::
 
@@ -151,7 +151,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Keyboard Manager screenshot.](../images/pt-keyboard-manager.png)](keyboard-manager.md)
+        [![Keyboard Manager screenshot](../images/pt-keyboard-manager.png)](keyboard-manager.md)
     :::column-end:::
     :::column span="2":::
         [Keyboard Manager](keyboard-manager.md) allows you to customize the keyboard to be more productive by remapping keys and creating your own keyboard shortcuts.
@@ -162,10 +162,14 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Mouse utilities screenshot.](../images/pt-mouse-utils.png)](mouse-utilities.md)
+        [![Mouse utilities screenshot](../images/pt-mouse-utils.png)](mouse-utilities.md)
     :::column-end:::
     :::column span="2":::
-        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor. With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing). Mouse Highlighter displays visual indicators when the left or right mouse buttons are clicked. Mouse Jump allows a quick jump on large displays. Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
+        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor.
+        With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing).
+        Mouse Highlighter displays visual indicators when basic mouse buttons are clicked.
+        Mouse Jump allows a quick jump on large displays.
+        Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
     :::column-end:::
 :::row-end:::
 
@@ -173,10 +177,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Mouse without Borders screenshot.](../images/pt-mouse-without-borders.png)](mouse-without-borders.md)
+        [![Mouse without Borders screenshot](../images/pt-mouse-without-borders.png)](mouse-without-borders.md)
     :::column-end:::
     :::column span="2":::
-        [Mouse Without Borders](mouse-without-borders.md) enables you to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
+        Use [Mouse Without Borders](mouse-without-borders.md) to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
     :::column-end:::
 :::row-end:::
 
@@ -184,7 +188,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Paste As Plain Text screenshot.](../images/pt-paste-as-plain-text.png)](paste-as-plain-text.md)
+        [![Paste As Plain Text screenshot](../images/pt-paste-as-plain-text.png)](paste-as-plain-text.md)
     :::column-end:::
     :::column span="2":::
         [Paste As Plain Text](paste-as-plain-text.md) allows you to paste text from your clipboard, excluding text-formatting, with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd>).
@@ -195,10 +199,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Peek screenshot.](../images/powertoys-peek.png)](peek.md)
+        [![Peek screenshot](../images/powertoys-peek.png)](peek.md)
     :::column-end:::
     :::column span="2":::
-        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Simply select the file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
+        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Select the file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
     :::column-end:::
 :::row-end:::
 
@@ -206,10 +210,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![PowerRename screenshot.](../images/pt-rename.png)](powerrename.md)
+        [![PowerRename screenshot](../images/pt-rename.png)](powerrename.md)
     :::column-end:::
     :::column span="2":::
-        [PowerRename](powerrename.md) enables you to perform bulk renaming, searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. This code is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
+        Use [PowerRename](powerrename.md) to perform bulk renaming; searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. This code is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
     :::column-end:::
 :::row-end:::
 
@@ -217,10 +221,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![PowerToys Run screenshot.](../images/pt-run.png)](run.md)
+        [![PowerToys Run screenshot](../images/pt-run.png)](run.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Run](run.md) can help you search and launch your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins.
+        [PowerToys Run](run.md) can help you search and open your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins.
     :::column-end:::
 :::row-end:::
 
@@ -228,10 +232,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Quick Accent screenshot.](../images/pt-keyboard-accent.png)](Quick-accent.md)
+        [![Quick Accent screenshot](../images/pt-keyboard-accent.png)](Quick-accent.md)
     :::column-end:::
     :::column span="2":::
-        [Quick Accent](Quick-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
+        [Quick Accent](Quick-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific character with a quick key combo.
     :::column-end:::
 :::row-end:::
 
@@ -239,7 +243,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Registry Preview screenshot.](../images/pt-registrypreview.png)](registry-preview.md)
+        [![Registry Preview screenshot](../images/pt-registrypreview.png)](registry-preview.md)
     :::column-end:::
     :::column span="2":::
         [Registry Preview](registry-preview.md) is a utility to visualize and edit Windows Registry files.
@@ -250,10 +254,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Screen Ruler screenshot.](../images/pt-screen-ruler.png)](screen-ruler.md)
+        [![Screen Ruler screenshot](../images/pt-screen-ruler.png)](screen-ruler.md)
     :::column-end:::
     :::column span="2":::
-        [Screen Ruler](screen-ruler.md) allows you to quickly measure pixels on your screen based with image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
+        Use [Screen Ruler](screen-ruler.md) to quickly measure pixels on your screen based with image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
     :::column-end:::
 :::row-end:::
 
@@ -261,10 +265,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Shortcut Guide screenshot.](../images/pt-shortcut-guide.png)](shortcut-guide.md)
+        [![Shortcut Guide screenshot](../images/pt-shortcut-guide.png)](shortcut-guide.md)
     :::column-end:::
     :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also change this setting and press and hold <kbd>⊞ Win</kbd>.
+        [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also use press and hold <kbd>⊞ Win</kbd>.
     :::column-end:::
 :::row-end:::
 
@@ -272,7 +276,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Text Extractor screenshot.](../images/pt-image-to-text.png)](text-extractor.md)
+        [![Text Extractor screenshot](../images/pt-image-to-text.png)](text-extractor.md)
     :::column-end:::
     :::column span="2":::
         [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
@@ -283,7 +287,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Video Conference Mute screenshot.](../images/pt-video-conference-mute.png)](video-conference-mute.md)
+        [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
     :::column-end:::
     :::column span="2":::
         [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus.
@@ -294,13 +298,11 @@ The currently available utilities include:
 
 Currently, PowerToys is available in the following languages: Arabic (Saudi Arabia), Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish, Ukrainian.
 
-_Note that new elements of the app might sometimes not yet be translated in the first version release._
-
 ## PowerToys video walk-through
 
 In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
 
-> [!VIDEO https://learn.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
+[!VIDEO https://learn.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 
@@ -324,7 +326,7 @@ PowerToys [release notes](https://github.com/microsoft/PowerToys/releases/) are 
 
 ## PowerToys history
 
-Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. An overview of the original PowerToys can be found here: [Using Windows 95 PowerToys](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
+Inspired by the [Windows 95 era PowerToys project](https://wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. An overview of the original PowerToys can be found here: [Using Windows 95 PowerToys](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
 
 ## PowerToys roadmap
 
