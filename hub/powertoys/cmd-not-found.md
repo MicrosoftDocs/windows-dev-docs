@@ -22,7 +22,7 @@ A PowerShell 7 module that detects command-line errors and suggests a relevant W
 
 ## Install the module
 
-To install the Command Not Found module, navigate to the Command Not Found page in PowerToys settings and select the **Install** button. Once the module installation has completed, PowerShell 7 experimental features needed for the module to function will be enabled:
+To install the Command Not Found module, go to the Command Not Found page in PowerToys settings and select **Install**. Once the installation has completed, PowerShell 7 experimental features needed for the module to function will be enabled:
 
  - PSFeedbackProvider
  - PSCommandNotFoundSuggestion
@@ -39,4 +39,4 @@ Import-Module "<powertoys install dir>/WinGetCommandNotFound.psd1"
 
 ## Uninstall the module
 
-To uninstall the Command Not Found module, navigate to the Command Not Found page in PowerToys settings and select the **Uninstall** button. Once the module uninstall has completed, the block of commands previously added will be removed from the PowerShell profile file. 
+To uninstall the Command Not Found module, go to the Command Not Found page in PowerToys settings and select **Uninstall**. Once the uninstallation has completed, the block of commands previously added will be removed from the PowerShell profile file. 

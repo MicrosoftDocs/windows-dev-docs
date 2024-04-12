@@ -10,11 +10,11 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
 # FancyZones utility
 
 FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve your workflow and restore layouts quickly.
-You can define a set of zone locations to use as targets for windows on your desktop. When you drag a window into a zone, or enter the associated keyboard shortcut, the window is resized and repositioned to fill that zone.
+You can define a set of zone locations to use as targets for windows on your desktop. When you drag a window into a zone, or use the associated keyboard shortcut, the window is resized and repositioned to fill that zone.
 
 ## Snapping to a single zone with mouse
 
-Drag the window. By default, you'll also need to select and hold the <kbd>Shift</kbd> key. You'll see the zones appear. As you move your mouse, hovering over a zone will highlight that zone.
+Drag the window. By default, you'll also need to select and hold <kbd>Shift</kbd>. You'll see the zones appear. As you move your mouse, hovering over a zone will highlight that zone.
 
 You can also trigger zone selection mode by using a non-primary mouse button if **Use non-primary mouse button to toggle zone activation** is selected.
 
@@ -38,7 +38,7 @@ If two zones are adjacent, you can snap a window to the sum of their area (round
 
 ### Snapping to multiple zones with the mouse and keyboard
 
-Drag the window until one zone is activated, then press and hold the <kbd>Ctrl</kbd> key while dragging the window to select multiple zones.
+Drag the window until one zone is activated, then hold <kbd>Ctrl</kbd> while dragging the window to select multiple zones.
 
 ![Two Zones Activation screenshot](../images/pt-fancyzones-twozones.png)
 
@@ -70,23 +70,23 @@ To snap applications that are elevated (such as Windows Terminal or Task Manager
 
 ## Getting started with the editor
 
-FancyZones includes an editor to give you more control over your window layouts that can be accessed in the PowerToys Settings.
+FancyZones includes an editor for layouts that can be accessed in PowerToys Settings.
 
 ### Open the layout editor
 
-Open the layout editor by selecting **Launch layout editor** or with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"). You can change the FancyZones layout editor shortcut in PowerToys Settings.
+Open the layout editor by selecting **Open layout editor** or with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"). You can change the FancyZones layout editor shortcut in PowerToys Settings.
 
 ![FancyZones Settings UI](../images/pt-fancyzones-settings.png)
 
 ### Layout Editor: Choose your layout
 
-When you first open the layout editor, you'll see a list of layouts that can be adjusted by how many windows are on the monitor. Selecting a layout shows a preview of that layout on the screen. The selected layout is applied automatically. Double-clicking a layout will apply it and close the editor. The editor will detect and display the available monitors. Select a monitor, and it becomes the target of the selected layout.
+When you first open the layout editor, you'll see a list of layouts that can be adjusted by how many windows are on the monitor. Selecting a layout shows a preview of that layout on the screen. The selected layout is applied automatically. Double-clicking a layout will apply it and close the editor. Select a monitor, and it becomes the target of the selected layout.
 
 ![FancyZones Picker Multiple Monitors](../images/pt-fancyzones-multimon.png)
 
 #### Space around zones
 
-**Show space around zones** sets the size of margin around each FancyZone window. Enter a custom value for the width of the margin in **Space around zones**. With the layout editor open, change **Show space around zones** after changing the values to see the new value applied.
+**Show space around zones** sets the size of margin around each FancyZone window. Enter a custom width of the margin in **Space around zones**. With the layout editor open, change **Show space around zones** after changing the values to see the new value applied.
 
 **Distance to highlight adjacent zones** sets a custom value for the amount of space between zones until they snap together, or before both are highlighted enabling them to merge together.
 
@@ -104,13 +104,13 @@ The **Grid** model starts with a three column grid and allows zones to be create
 
 #### Mouse
 
-- To divide a zone: click your mouse. To rotate the divider: hold down the <kbd>Shift</kbd> key.
+- To divide a zone: click your mouse. To rotate the divider: hold down <kbd>Shift</kbd>.
 - To move a divider: click on the thumb and drag or select the thumb by focusing the layout.
 - To merge/delete zones: select a zone, hold the left mouse button and drag the mouse until multiple zones are selected. Release the button and a popup menu will show up. Select **Merge** and they will become one zone. This is how a zone should be deleted, by merging it into another zone.
 
 #### Keyboard
 
-- First, focus the layout by pressing <kbd>Ctrl</kbd>+<kbd>Tab</kbd>. All zones and dividers can be focused by pressing <kbd>Tab</kbd> key.
+- First, focus the layout by pressing <kbd>Ctrl</kbd>+<kbd>Tab</kbd>. All zones and dividers can be focused by pressing <kbd>Tab</kbd>.
 - To divide a zone: focus the zone you want to divide and press <kbd>S</kbd> or <kbd>Shift</kbd>+<kbd>S</kbd> to divide it.
 - To move a divider: focus the divider and press arrow keys to move it.
 - To merge/delete zones: focus the divider between zones and press <kbd>Delete</kbd>. All zones adjacent to deleted divider will be merged into one zone.
@@ -119,7 +119,7 @@ The **Grid** model starts with a three column grid and allows zones to be create
 
 The **Canvas** model starts with one zone and supports adding zones that can be moved and resized, similar to windows. Zones in the canvas model may be overlapping.
 
-Canvas layout also has keyboard support for zone editing. Use the arrow keys (Left, Right, Up, Down) to move a zone by 10 pixels, or <kbd>Ctrl</kbd>+arrow to move a zone by 1 pixel. Use the <kbd>Shift</kbd>+arrow keys to resize a zone by 10 pixels (5 per edge), or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+arrow to resize a zone by 2 pixels (1 per edge). To switch between the editor and dialog, press the <kbd>Ctrl</kbd>+<kbd>Tab</kbd> keys.
+Canvas layout also has keyboard support for zone editing. Use the arrow keys (Left, Right, Up, Down) to move a zone by 10 pixels, or <kbd>Ctrl</kbd>+arrow to move a zone by 1 pixel. Use <kbd>Shift</kbd>+arrow to resize a zone by 10 pixels (5 per edge), or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+arrow to resize a zone by 2 pixels (1 per edge). To switch between the editor and dialog, press <kbd>Ctrl</kbd>+<kbd>Tab</kbd>.
 
 ![FancyZones Window Editor Mode](../images/pt-fancyzones-canvaseditor.png)
 
@@ -142,7 +142,7 @@ In the demo below, we start with a default template applied to the screen and tw
 | Setting | Description |
 | :-- | :-- |
 | Activation shortcut | To change the default hotkey, click on the control and enter the desired key combination. |
-| Launch editor on the display | Select where the Editor will show. |
+| Open editor on the display | Select where the Editor will show. |
 | Hold Shift key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the <kbd>Shift</kbd> key during a drag enables snapping. |
 | Use a non-primary mouse button to toggle zone activation | Clicking a non-primary mouse button toggles the zones activation |
 | Use middle mouse button to toggle multiple zones spanning | Use the middle mouse button to select multiple zones |

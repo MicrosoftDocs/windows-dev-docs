@@ -16,11 +16,11 @@ With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>
 
 ## How to deactivate
 
-Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard. Exit capture mode with <kbd>Esc</kbd> at any moment.
+Capture mode is closed immediately after text in the selected region is recognized and copied to the clipboard. Close capture mode with <kbd>Esc</kbd> at any moment.
 
 ## Adjust while trying to capture
 
-By holding <kbd>Shift</kbd>, you will change from adjusting the capture region's size to moving the capture region. When you release <kbd>Shift</kbd>, you will be able to resize again.
+By holding <kbd>Shift</kbd>, you change from adjusting the capture region's size to moving the capture region. When you release <kbd>Shift</kbd>, you will be able to resize again.
 
 > [!IMPORTANT]
 >

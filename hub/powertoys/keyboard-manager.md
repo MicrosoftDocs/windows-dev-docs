@@ -17,7 +17,7 @@ For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>B</kbd
 
 You can exchange shortcut key combinations. For example: The shortcut key <kbd>Ctrl</kbd>+<kbd>C</kbd> will copy text in many applications. With PowerToys Keyboard Manager utility, you can swap that shortcut for <kbd>⊞ Win</kbd>+<kbd>C</kbd>. Now, <kbd>⊞ Win</kbd>+<kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
 
-Also, you can exchange key or shortcut to arbitrary unicode text sequence. For example, you can exchange the letter <kbd>H</kbd> for the text `Hello!`. When you press the <kbd>H</kbd> key, `Hello!` will be inserted. Similarly, you can exchange shortcut key <kbd>Ctrl</kbd>+<kbd>G</kbd> for some text (e.g. `Hello from shortcut!`) and that text will be inserted on  <kbd>Ctrl</kbd>+<kbd>G</kbd>.
+Also, you can exchange key or shortcut to arbitrary unicode text sequence. For example, you can exchange the letter <kbd>H</kbd> for the text `Hello!`. When you press the <kbd>H</kbd> key, `Hello!` will be inserted. Similarly, you can use shortcut <kbd>Ctrl</kbd>+<kbd>G</kbd> to send some text (e.g. `Hello from shortcut!`).
 
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
@@ -38,7 +38,7 @@ To create mappings with Keyboard Manager, open the PowerToys Settings. In PowerT
 
 ### Remapping keys
 
-To remap a key, changing it to a new value, open the Remap Keyboard settings window with **Remap a Key**. When first opened, no predefined mappings will be displayed. Select **Add key remapping** to add a new remap.
+To remap a key, open the Remap Keyboard settings window with **Remap a Key**. When first opened, no predefined mappings will be displayed. Select **Add key remapping** to add a new remap. Note that various keyboard keys actually send a shortcut.
 
 Once a new remap row appears, select the input key whose output you want to _change_ in the “Select” column. Select the new key, shortcut or text value to assign in the “To send” column.
 
@@ -85,7 +85,7 @@ To remap a shortcut key combination, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, select *
 
 When first opened, no predefined mappings will be displayed. Select **Add shortcut remapping** to add a new remap.
 
-Once a new remap row appears, select the input keys whose output you want to _change_ in the “Select” column. Select the new shortcut value to assign in the “To send” column.
+When a new remap row appears, select the input keys whose output you want to _change_ in the “Select” column. Select the new shortcut value to assign in the “To send” column.
 
 For example, the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> copies selected text. To remap that shortcut to use the <kbd>Alt</kbd> key, rather than the <kbd>Ctrl</kbd> key:
 
@@ -103,7 +103,7 @@ There are a few rules to follow when remapping shortcuts. These rules only apply
 
 #### Shortcuts with chords
 
-Shortcuts can be created with one or more modifiers and two non-modifier keys. These are called "chords". In order to create a chord, select **Edit**  to open the dialog to record the shortcut using the keyboard. Once opened, toggle on the **Allow chords** switch. This allows you to enter two non-modifier keys.
+Shortcuts can be created with one or more modifiers and two non-modifier keys. These are called "chords". In order to create a chord, select **Edit** to open the dialog to record the shortcut using the keyboard. Once opened, toggle on the **Allow chords** switch. This allows you to enter two non-modifier keys.
 For example, you can create shortcuts using a chord based on 'V' for **V**olume **U**p and **V**olume **D**own like this:
 
 | Select: | To send: |
@@ -111,7 +111,7 @@ For example, you can create shortcuts using a chord based on 'V' for **V**olume 
 | `Shift` + `Ctrl` + `V` , `U` | `Volume Up` |
 | `Shift` + `Ctrl` + `V` , `D` | `Volume Down` |
 
-Chords are handy if you have a number of shortcuts that are similar, and so it makes sense to have them all start with the same non-modifier key.
+Chords are handy if you have a number of shortcuts that are similar, and it makes sense to have them all start with the same non-modifier key.
 
 ### Remap a shortcut to a single key
 
@@ -128,7 +128,7 @@ For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arr
 
 ### Remap a shortcut to text
 
-For example, to replace the shortcut <kbd>Ctrl</kbd>+<kbd>G</kbd> with `Hello!` text, first select "Text" in the combo box and then fill the text box with "Hello!":
+For example, to replace the shortcut <kbd>Ctrl</kbd>+<kbd>G</kbd> with `Hello!` text, choose **Text** in the combo box and enter "Hello!":
 
 | Select: | To send: |
 | :--- | :--- |
@@ -136,20 +136,20 @@ For example, to replace the shortcut <kbd>Ctrl</kbd>+<kbd>G</kbd> with `Hello!` 
 
 ### Remap a shortcut to start an app
 
-Keyboard Manager enables you to start applications with the activation of any shortcut. Select "Start App" from the action in the "To:" column to do this. There are a few options to configure when using this type of shortcut. They are:
+Keyboard Manager enables you to start applications with the activation of any shortcut. Choose **Start App** for the action in the "To:" column. There are a few options to configure when using this type of shortcut.
 
 | Option | Meaning  |
 | :--- | :--- |
 | App  | This is the path to an executable. Environment variables will be expanded. |
 | Args | Arguments that will be sent to the app. |
 | Start in | The working directory for the app to start in. |
-| Elevation | Specify the elevation level to start the app. The options include Normal, Elevated, and Different User. |
-| If running | What action should be taken when this shortcut is activated while the app is already running? The options are: Show Window, Start another instance, Do nothing, Close, End task. |
-| Visibility | Specifies whether the app will be visible. This is useful when the app is a console or something you don't want to see. |
+| Elevation | Specify the elevation level to start the app. The options include **Normal**, **Elevated**, and **Different User**. |
+| If running | What action should be taken when this shortcut is activated while the app is already running? The options are: **Show Window**, **Start another instance**, **Do nothing**, **Close**, **End task**. |
+| Visibility | The app will be visible. This is useful if the app is a console or something you don't want to see. |
 
 ### Remap a shortcut to open a URI
 
-This type of shortcut action will open a URI. The only option is the actual Path/URI. Almost anything you can issue on the command line should work. See [Launch an app with a URI](/windows/uwp/launch-resume/launch-app-with-uri) for more examples.
+This type of shortcut action will open a URI. The only input is the actual Path/URI. Almost anything you can issue on the command line should work. See [Launch an app with a URI](/windows/uwp/launch-resume/launch-app-with-uri) for more examples.
 
 ### App-specific shortcuts
 
@@ -180,13 +180,13 @@ To select a key or shortcut to remap:
 - Select **Select**.
 - Use the drop-down menu.
 
-Once you select **Select**, a dialogue window will open in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. To leave the dialogue, hold <kbd>Esc</kbd>.
+Once you select **Select**, a dialog window will open in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. To leave the dialog, hold <kbd>Esc</kbd>.
 
 Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can not use the type-key feature while the drop-down menu is open.
 
 ## Orphaning Keys
 
-Orphaning a key means that you mapped it to another key and no longer have anything mapped to it. For example, if the key is remapped from `A` to `B`, then a key no longer exists on your keyboard that results in `A`. To ensure this does not happen by accident, a warning will display for any orphaned keys. To fix this, select **&#9547;** to create another remapped key that is mapped to result in `A`.
+Orphaning a key means that you mapped it to another key and no longer have anything mapped to it. For example, if the key is remapped from `A` to `B`, then a key no longer exists on your keyboard that results in `A`. To remind you of this, a warning will display for any orphaned keys. To fix this, create another remapped key that is mapped to result in `A`.
 
 ![PowerToys Keyboard Manager orphaned key](../images/powertoys-keyboard-remap-orphaned.png)
 
@@ -198,7 +198,7 @@ For key remapping to work, PowerToys must be running in the background and Keybo
 
 ### Can I use Keyboard Manager at my log-in screen?
 
-No, Keyboard Manager is only available when PowerToys is running and doesn’t work on any password screen, including while Run As Admin.
+No, Keyboard Manager is only available when PowerToys is running and doesn't work on any password screen, including while Run As Admin.
 
 ### Do I have to restart my computer or PowerToys for the remapping to take effect?
 
@@ -231,12 +231,13 @@ Keyboard Manager lists mappings for all known physical keyboard keys. Some of th
 If you have tried to remap a key or shortcut and are having trouble, it could be one of the following issues:
 
 - **Run As Admin:** Remapping will not work on an app or window if that window is running in administrator (elevated) mode and PowerToys is not running as administrator. Try [running PowerToys as an administrator](administrator.md).
-- **Not Intercepting Keys:** Keyboard Manager intercepts keyboard hooks to remap your keys. Some apps that also do this can interfere with Keyboard Manager. To fix this, go to the settings, disable and enable Keyboard Manager.
+- **Not intercepting keys:** Keyboard Manager intercepts keyboard hooks to remap your keys. Some apps that also do this can interfere with Keyboard Manager. To fix this, go to the settings, disable and enable Keyboard Manager.
 
 ## Known Issues
 
 - Keyboard Manager should not be used when playing video games. Keyboard Manager interception of key presses currently will impact the FPS.
 - [Remapping keys like Win, Ctrl, Alt or Shift may break gestures and some special keys](https://github.com/microsoft/PowerToys/issues/3703)
 - AltGr and Ctrl+Alt gives issues, since AltGr behaves as (L)Ctrl + (R)Alt and remapping one of these keys can break the function.
+- Note that some keyboard keys actually send a shortcut. Common examples are the Office key (Win+Ctrl+Alt+Shift) and the Copilot key (Win + C or Left-Shift + Windows key + F23).
 
 See the list of all [open keyboard manager issues](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-Keyboard+Shortcut+Manager%22).

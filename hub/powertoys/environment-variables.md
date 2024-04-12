@@ -8,8 +8,8 @@ no-loc: [PowerToys, Windows, Environment Variables, Win]
 
 # Environment Variables
 
-Environment Variables offers an easy and convenient way to manage environment variables. It also allows you to create profiles for managing a set of variables together. Profile variables have precedence over User and System variables. Applying the profile adds variables to User environment variables in the background. When a profile is applied, if there is an existing User variable with the same name, a backup variable is created in User variables which will be reverted to the original value on profile un-apply.
-
+Environment Variables offers an easy and convenient way to manage environment variables. It allows you to create profiles for managing a set of variables together. Profile variables have precedence over User and System variables.
+Applying the profile adds variables to User environment variables in the background. When a profile is applied, if there is an existing User variable with the same name, a backup variable is created in User variables which will be reverted to the original value on profile un-apply.
 Applied variables list shows the current state of the environment, respecting the order of evaluation of environment variables (Profile > User > System). Evaluated Path variable value is shown at the top of the list.
 
 ![PowerToys Environment Variables screenshot](../images/powertoys-environment-variables.png)
@@ -42,8 +42,8 @@ To apply a profile, set the **profile** toggle to On. Only one profile can be ap
 
 ## Settings
 
-From the Settings menu, the following options can be configured:
+From the settings, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Open as administrator | Allow management of System variables. If disabled, only profile and User variables can be modified. Environment Variables is opened as administrator by default. |
+| Open as administrator | Allow management of System variables. If off, only profile and User variables can be modified. Environment Variables is opened as administrator by default. |
