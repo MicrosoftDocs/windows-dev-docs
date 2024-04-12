@@ -193,7 +193,7 @@ Note that Windows Forms does not have animations built in, unlike the other UI f
 - API Reference: [.NET API Reference](/dotnet/api)
 - Controls: [Overview of using controls (Windows Forms .NET)](/dotnet/desktop/winforms/controls/overview)
 - Input: [User input (Windows Forms)](/dotnet/framework/winforms/user-input-in-windows-forms)
-- Accessibility: [Windows Forms Acessibility](/dotnet/desktop/winforms/advanced/windows-forms-accessibility)
+- Accessibility: [Windows Forms Accessibility](/dotnet/desktop/winforms/advanced/windows-forms-accessibility)
 - Samples: [Winforms Samples GitHub repo](https://github.com/dotnet/samples/tree/main/windowsforms)
 
 ### [Other](#tab/other)

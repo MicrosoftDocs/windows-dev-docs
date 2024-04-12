@@ -115,7 +115,7 @@ For more specific information on how to use Spy++ from Visual Studio, see [Spy++
 
 Spy++ displays a graphical tree of relationships among system objects, with the current desktop window at the top of the tree and child nodes representing all other windows listed according to the standard window hierarchy. It can provide valuable insight into an application's behavior that is not available through the Visual C++ debugger.
 
-:::image type="content" source="images/spy++-app-window.png" alt-text="Screenshot of the Spy++ applciation window.":::
+:::image type="content" source="images/spy++-app-window.png" alt-text="Screenshot of the Spy++ application window.":::
 
 With Spy++ you can:
 

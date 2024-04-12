@@ -623,7 +623,7 @@ Here are various places where a C++/WinRT features expects a type, and what kind
 
 This section describes a C++/WinRT 2.0 feature that's opt-in, although it is enabled by default for new projects. For an existing project, you'll need to opt in by configuring the `cppwinrt.exe` tool. In Visual Studio, set project property **Common Properties** > **C++/WinRT** > **Optimized** to *Yes*. That has the effect of adding `<CppWinRTOptimized>true</CppWinRTOptimized>` to your project file. And it has the same effect as adding the  switch when invoking `cppwinrt.exe` from the command line.
 
-The `-opt[imize]` switch enables what's often called *uniform construction*. With uniform (or *unified*) construction, you use the C++/WinRT language projection itself to create and use your implmentation types (types implemented by your component, for consumption by applications) efficiently and without any loader difficulties.
+The `-opt[imize]` switch enables what's often called *uniform construction*. With uniform (or *unified*) construction, you use the C++/WinRT language projection itself to create and use your implementation types (types implemented by your component, for consumption by applications) efficiently and without any loader difficulties.
 
 Before describing the feature, let's first show the situation *without* uniform construction. To illustrate, we'll begin with this example Windows Runtime class.
 
