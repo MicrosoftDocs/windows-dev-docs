@@ -197,7 +197,7 @@ The default column width is "*", so you don't need to explicitly set this value 
         <ColumnDefinition Width="44"/>
         <ColumnDefinition Width="2*"/>
     </Grid.ColumnDefinitions>
-    <TextBlock Text="Column 1 sizes to its conent." FontSize="24"/>
+    <TextBlock Text="Column 1 sizes to its content." FontSize="24"/>
 </Grid>
 ```
 

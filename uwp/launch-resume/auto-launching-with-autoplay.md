@@ -243,7 +243,7 @@ The **Action Display Name** setting identifies the string that AutoPlay displays
 
 ### Step 2: Add assembly reference for the desktop extensions
 
-The APIs required to access storage on a Windows Portable Device, [**Windows.Devices.Portable.StorageDevice**](/uwp/api/Windows.Devices.Portable.StorageDevice), are part of the desktop [desktop device family](../get-started/universal-application-platform-guide.md). This means a special assembly is required to use the APIs and those calls will only work on a device in the desktop device family (such as a PC).
+The APIs required to access storage on a Windows Portable Device, [**Windows.Devices.Portable.StorageDevice**](/uwp/api/Windows.Devices.Portable.StorageDevice), are part of the [desktop device family](../get-started/universal-application-platform-guide.md). This means a special assembly is required to use the APIs and those calls will only work on a device in the desktop device family (such as a PC).
 
 1. In **Solution Explorer**, right click on **References** and then **Add Reference...**.
 2. Expand **Universal Windows** and click **Extensions**.
