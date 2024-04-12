@@ -720,10 +720,10 @@ items:
                   href: windows-dotnet-maui/walkthrough-first-app.md
                 - name: Integrate a .NET MAUI app with the Graph SDK
                   href: windows-dotnet-maui/tutorial-graph-api.md
-                - name: Create a recommendation app with .NET MAUI and ChatGPT
-                  href: windows-dotnet-maui/tutorial-maui-ai.md
-                - name: Add DALL-E to a .NET MAUI app for Windows
-                  href: windows-dotnet-maui/dall-e-maui-windows.md
+                - name: Create a recommendation app with .NET MAUI and OpenAI >>
+                  href: /windows/ai/samples/tutorial-maui-ai
+                - name: Add DALL-E to a .NET MAUI app >>
+                  href: /windows/ai/samples/dall-e-maui-windows
                 - name: Create a .NET MAUI app with C# Markup
                   href: windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit.md
         - name: Migrate from UWP to Windows App SDK
