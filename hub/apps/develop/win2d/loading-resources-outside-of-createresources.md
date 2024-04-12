@@ -34,7 +34,7 @@ The app needs to load some of its resources after `CreateResources` is completed
 
 To make `CreateResources` work in this situation, and be robust against lost devices, an app needs to do four things:
 1. Track when `LoadResourcesForLevelAsync` is in progress.
-2. Allow Win2D to handle any exceptions (in particular, device lost) that the app does't know how to handle.
+2. Allow Win2D to handle any exceptions (in particular, device lost) that the app doesn't know how to handle.
 3. If Win2D raises the `CreateResources` event to recover from a lost device while `LoadResourcesForLevelAsync` is in progress, your `CreateResources` handler should cancel that task.
 4. If Win2D raises `CreateResources` to recover from a lost device after you have finished loading data using `LoadResourcesForLevelAsync`, your `CreateResources` handler must reload that custom data as well as its usual global resources.
 
