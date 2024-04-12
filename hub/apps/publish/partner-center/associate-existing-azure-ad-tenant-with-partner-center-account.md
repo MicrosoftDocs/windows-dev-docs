@@ -24,7 +24,7 @@ If your organization already uses Azure AD, follow these steps to link your Part
 
     :::image type="content" source="../images/partner-center-connect-azure-ad.png" alt-text="Screenshot showing option to Associate Azure AD with your Partner Center account.":::
 
-3. A the Microsoft Partner Center sign in page, enter the Azure AD credentials for the tenant that you want to associate.
+3. On the Microsoft Partner Center sign in page, enter the Azure AD credentials for the tenant that you want to associate.
 
     :::image type="content" source="../images/partner-center-signin-azure-ad-credentials.png" alt-text="Screenshot showing Microsoft Partner Center sign-in dialog where you should sign in using Azure AD credentials for your tenant.":::
 

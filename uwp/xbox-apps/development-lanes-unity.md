@@ -42,7 +42,7 @@ Open the newly generated solution in the **UWP** folder, and then change the tar
 
 ![x64 Build Platform](images/x64-build-platform.png)
 
-Now that you have a UWP Visual Studio solution for your game, [following these steps](getting-started.md) will allow you to successfuly deploy your game onto your retail Xbox One!
+Now that you have a UWP Visual Studio solution for your game, [following these steps](getting-started.md) will allow you to successfully deploy your game onto your retail Xbox One!
 
 ## Step 3: Modify and rebuild
 
