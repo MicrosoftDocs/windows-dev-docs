@@ -87,6 +87,7 @@ Represents the registration for a single feed.
 | **Description** | string | Yes | A short description of the feed. | N/A |
 | **ContentUri** | string | Yes | The URI from which feed content is retrieved. | N/A |
 | **Icon** | string | Yes | The package-relative path to an icon image file that is displayed in the Widgets Board. | N/A |
+| **WebRequestFilter** | string | No | A web request filter string specifying the set of URLs for which the resource requests will be redirected to the feed provider's implementation of **IFeedResourceProvider**. The pattern is expressed using the format described in [Match Patterns](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns). The filter string in the registration must use [Punycode](https://en.wikipedia.org/wiki/Punycode) where necessary. All content types will be redirected when matched so the filter should only resolve to content intended to be obtained through the **IFeedResourceProvider** in the application. | N/A |
 
 
 You can use localized resources instead of string literals for the UI-facing attribute values. For more information, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest).
@@ -103,9 +104,10 @@ The following code example illustrates the usage of the feed package manifest XM
               <CreateInstance ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
           </Activation>
           <Definitions>
-              <Definition Id="Contoso_Feed" DisplayName="ms-resource:FeedDisplayName" Description="ms-resource:FeedDescription"
-                          ContentUri="https://contoso.com/news"
-                          Icon="ms-appx:Images\ContosoFeedIcon.png">
+              <Definition Id="Contoso_Feed" DisplayName="ms-resource:FeedDisplayName"                  Description="ms-resource:FeedDescription"
+                  ContentUri="https://contoso.com/news"
+                  Icon="ms-appx:Images\ContosoFeedIcon.png"
+                  WebRequestFilter="https://contoso.com/*/feed/appResource/*" >
               </Definition>
           </Definitions>
       </FeedProvider>
