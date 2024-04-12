@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 > [!CAUTION]
 > These defaults are set after extensive testing to optimize a balance between decode performance and CPU utilization while not sacrificing battery life.  Cnahging these values can not only increase or decrease scanning performance, but also impact overall system performance by consuming more CPU cycles and decrease battery life.  Use caution and test the impact of each setting changed thoroughly.
 
-The settings which control the behavior of the sofware barcode decoder are stored in the system registry under ```HKLM\Software\Microsoft\PointOfService\InboxDecoder```.  If you do not see any settings written to the registry in this location, it means they are following the default settings defined here.
+The settings which control the behavior of the software barcode decoder are stored in the system registry under ```HKLM\Software\Microsoft\PointOfService\InboxDecoder```.  If you do not see any settings written to the registry in this location, it means they are following the default settings defined here.
 
 ## Enable / Disable
 
@@ -42,7 +42,7 @@ PreferredVideoFrameRate default is set at 5 frames per second to balance perform
 
 ## PreferredVideoFrameWidth
 
-PreferredVideoFrameWidth by defualt is set to 1920 pixels. Increasing the pixel depth can require more CPU cycles and battery consumption to decode frames scanned.  Decreasing the pixel depth can reduce the CPU cycles, however it will also reduce the detection rate.
+PreferredVideoFrameWidth by default is set to 1920 pixels. Increasing the pixel depth can require more CPU cycles and battery consumption to decode frames scanned.  Decreasing the pixel depth can reduce the CPU cycles, however it will also reduce the detection rate.
 
 | Value name   | Value Type | Value | Notes |
 |:------------ |:----------:|:-------:|:------|
