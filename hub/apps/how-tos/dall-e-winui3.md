@@ -20,7 +20,7 @@ In this how-to, we'll integrate DALL-E's image generation capabilities into your
 
 - [Visual Studio 2022 and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 - A functional chat interface into which this capability will be integrated. See *[How to add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app](./chatgpt-openai-winui3.md)* - we'll demonstrate how to integrate DALL-E into the chat interface from this how-to.
-- An OpenAI API key from your [OpenAI developer dashboard](https://platform.openai.com/api-keys) assigned to the `MY_OPEN_AI_API_KEY` environment variable.
+- An OpenAI API key from your [OpenAI developer dashboard](https://platform.openai.com/api-keys) assigned to the `OPENAI_API_KEY` environment variable.
 - An OpenAI SDK installed in your project. Refer to the [OpenAI documentation](https://platform.openai.com/docs/libraries) for a list of community libraries. In this how-to, we'll use [betalgo/openai](https://github.com/betalgo/openai).
 
 ## Install and initialize the OpenAI SDK
@@ -44,7 +44,7 @@ namespace ChatGPT_WinUI3
         {
             this.InitializeComponent();
            
-            var openAiKey = Environment.GetEnvironmentVariable("MY_OPEN_AI_API_KEY");
+            var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
             openAiService = new OpenAIService(new OpenAiOptions(){
                 ApiKey = openAiKey

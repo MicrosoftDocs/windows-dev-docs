@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Crop And Lock, Win]
 
 PowerToys **Crop And Lock** allows you to crop a current application into a smaller window or just create a thumbnail. Focus the target window and press the shortcut to start cropping.
 
-![Crop And Lock screenshot.](../images/powertoys-crop-and-lock.gif)
+![Crop And Lock screenshot](../images/powertoys-crop-and-lock.gif)
 
 ## Getting started
 
@@ -19,14 +19,14 @@ PowerToys **Crop And Lock** allows you to crop a current application into a smal
 
 To start using Crop And Lock, enable it in the PowerToys Settings (**Crop And Lock** tab).
 
-Once enabled, you can focus a Window and press the "Thumbnail" shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>) or the "Reparent" shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>) to select an area of the window to crop.
+Once enabled, focus a Window and press the "Thumbnail" shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>) or the "Reparent" shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>) to select an area of the window to crop.
 
 > [!TIP]
-> You can use the <kbd>Esc</kbd> key to cancel the crop selection.
+> Use <kbd>Esc</kbd> to cancel the crop selection.
 
 After you've selected the area of the window, a new window will appear and behave according to the selected crop mode.
 
-Use the **X** button on the top right corner of the cropped window to close it and restore the original window.
+Select the **Close** button of the cropped window to close it and restore the original window.
 
 ## Crop modes
 
@@ -42,4 +42,4 @@ Creates a window that replaces the original window, showing only the selected ar
 
 - Cropping maximized or full-screen windows in "Reparent" mode might not work. It's recommended to resize the window to fill the screen corners instead.
 - Some UWP apps won't react well to being cropped in "Reparent" mode. The Windows Calculator is a notable example of this.
-- Applications that use sub-windows or tabs can also react poorly to being cropped in "Reparent" mode. Notepad and OneNote are notable examples of applications that react poorly.
+- Applications that use sub-windows or tabs can react poorly to being cropped in "Reparent" mode. Notepad and OneNote are notable examples of applications that react poorly.

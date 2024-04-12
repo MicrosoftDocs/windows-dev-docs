@@ -13,9 +13,10 @@ Mouse utilities is a collection of features that enhance mouse and cursor functi
 
 ## Find my mouse
 
-Activate a spotlight that focuses on the cursor's position pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut or shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
+Activate a spotlight that focuses on the cursor's position pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut or shaking the mouse. Click the mouse or press any keyboard key to dismiss it.
+If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
 
-![Screenshot of Find my mouse.](../images/pt-mouse-utilities-find-my-mouse.gif)
+![Screenshot of Find my mouse](../images/pt-mouse-utilities-find-my-mouse.gif)
 
 ### Settings
 
@@ -41,7 +42,7 @@ Display visual indicators when the left or right mouse buttons are clicked. By d
 
 ### Settings
 
-![Screenshot of Mouse highlighter.](../images/pt-mouse-highlighter.gif)
+![Screenshot of Mouse highlighter](../images/pt-mouse-highlighter.gif)
 
 From the settings page, the following options can be configured:
 
@@ -58,7 +59,7 @@ From the settings page, the following options can be configured:
 
 ## Mouse jump
 
-![Screenshot of Mouse jump.](../images/pt-mouse-jump.gif)
+![Screenshot of Mouse jump](../images/pt-mouse-jump.gif)
 
 Mouse jump allows moving the mouse pointer long distances on a single screen or across multiple screens.
 
@@ -68,7 +69,7 @@ Mouse jump allows moving the mouse pointer long distances on a single screen or 
 
 ## Mouse pointer Crosshairs
 
-![Screenshot of Crosshairs.](../images/pt-mouseutilities-crosshairs.png)
+![Screenshot of Crosshairs](../images/pt-mouseutilities-crosshairs.png)
 
 Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 

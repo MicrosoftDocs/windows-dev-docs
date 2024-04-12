@@ -39,7 +39,7 @@ Expand the **Source code files (Monaco)** section to change the following settin
 
 To enable preview support, set the extension to **On**.
 
-![PowerToys Settings Enable File Explorer screenshot.](../images/powertoys-settings-fileexplorer.png)
+![PowerToys Settings Enable File Explorer screenshot](../images/powertoys-settings-fileexplorer.png)
 
 If the preview pane does not appear to work after setting the extension to **On**, there is an advanced setting in Windows that may be blocking the preview handler. Open the **Options** menu in Windows File Explorer and select the **View** tab. Under the **View** tab, you will see a list of **Advanced settings**. Ensure that **Show preview handlers in preview pane** has a check next to it in order for the preview pane to display.
 
@@ -47,13 +47,13 @@ If the preview pane does not appear to work after setting the extension to **On*
 
 Open Windows File Explorer, select the **View** menu in the Explorer ribbon. Hover over **Show**, and then select **Preview pane**.
 
-![PowerToys Preview Pane demo for Windows 11.](../images/powertoys-fileexplorer-win11.gif)
+![PowerToys Preview Pane demo for Windows 11](../images/powertoys-fileexplorer-win11.gif)
 
 ### Enabling the Explorer pane in Windows 10
 
 Open Windows File Explorer, select the **View** tab in the Explorer ribbon, and then select **Preview Pane**.
 
-![PowerToys Preview Pane demo for Windows 10.](../images/powertoys-fileexplorer.gif)
+![PowerToys Preview Pane demo for Windows 10](../images/powertoys-fileexplorer.gif)
 
 > [!NOTE]
 > It is not possible to change the background color of the preview pane, so if you are working with transparent images with white shapes, you may not be able to see them in the preview.
