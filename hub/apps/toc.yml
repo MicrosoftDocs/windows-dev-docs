@@ -196,6 +196,10 @@ items:
                   href: windows-app-sdk/notifications/app-notifications/index.md
                 - name: Quickstart
                   href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
+        - name: People and places
+          items:
+            - name: Third party contacts for Windows People Experiences
+              href: develop/contacts-and-calendar/third-party-contacts-for-windows-people.md
         - name: Security and identity
           href: develop/security-and-identity.md
         - name: Speech
