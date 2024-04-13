@@ -96,12 +96,12 @@ If you created an app with an earlier preview or stable version of WinUI 3, you 
 - WinUI 3 error message needs rewording: "Cannot resolve 'Windows.metadata'. Please install the Windows Software Development Kit. The Windows SDK is installed with Visual Studio."
 
 - VSM Setter quirk for raising exception has backwards logic
-  - Thanks to @HppZ for filiing this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/1048)!
+  - Thanks to @HppZ for filling this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/1048)!
 
 - Move focus off the WebView2 (if necessary) when browser process crashes
 
 - ProgressBar doesn't show difference between Paused and Error option
-  - Thansk to @j0shuams for filing this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/3694)!
+  - Thanks to @j0shuams for filing this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/3694)!
 
 - PointerReplay constantly running
 
@@ -219,7 +219,7 @@ For more information on affected APIs as well as workarounds and replacements fo
 
 ### Known issues
 
-- You may recieve a build error due to mismatched versions of the .NET SDK and the winrt.runtime.dll. As a workaround, you can try the following:
+- You may receive a build error due to mismatched versions of the .NET SDK and the winrt.runtime.dll. As a workaround, you can try the following:
 
   Explicitly set your .NET SDK to the correct version. To determine the correct version for your app, locate the `<TargetFramework>` tag in your project file. Using the Windows SDK build number that your app is targeting in the `<TargetFramework>` tag (such as 18362 or 19041), add the following item to your project file, then save your project: 
 

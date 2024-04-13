@@ -1,1 +1,1 @@
- You can manage the package version numbering through your installer. Package version numbering for Win32 is not suppoted through the Store.
+ You can manage the package version numbering through your installer. Package version numbering for Win32 is not supported through the Store.

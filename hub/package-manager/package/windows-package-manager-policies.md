@@ -195,7 +195,7 @@ All pricing, including sales or discounting, for your digital products or servic
 
 ### 1.9 Notifications
 
-If the Product supports notifications, then the Product must respect system settings for notifications and remain functional when they are disabled. This includes the presentation of ads and notifications to the customer, which must also be consistent with the customer’s preferences, whether the notifications are provided by the Microsoft Push Notification Service (MPNS), Windows Push Notification Service (WNS) or any other service. If the customer disables notifications, either on an Product-specific or system-wide basis, the Product must remain functional.
+If the Product supports notifications, then the Product must respect system settings for notifications and remain functional when they are disabled. This includes the presentation of ads and notifications to the customer, which must also be consistent with the customer’s preferences, whether the notifications are provided by the Microsoft Push Notification Service (MPNS), Windows Push Notification Service (WNS) or any other service. If the customer disables notifications, either on a Product-specific or system-wide basis, the Product must remain functional.
 
 ### 1.10 Advertising Conduct and Content
 
@@ -267,7 +267,7 @@ China
 
 ### 2.11 Age Ratings
 
-The Product should have a age rating that would merit a rating of PEGI 12, ESRB EVERYONE 10+, or lower.
+The Product should have an age rating that would merit a rating of PEGI 12, ESRB EVERYONE 10+, or lower.
 
 ### 2.11.1
 
