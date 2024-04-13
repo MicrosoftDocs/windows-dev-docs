@@ -43,7 +43,7 @@ properties:
         description: Install PowerToys
         allowPrerelease: true
       settings:
-        id: PowerToys (Preview)
+        id: Microsoft.PowerToys
         source: winget
 
     - resource: PowerToysConfigure
