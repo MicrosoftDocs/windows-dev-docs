@@ -50,6 +50,6 @@ The .NET SDK also provides APIs related to audio, video, and camera scenarios fo
 | Article | Description |
 |---------|-------------|
 | [Graphics (WPF)](/dotnet/framework/wpf/graphics-multimedia/graphics) | Learn about support for multimedia, vector graphics, animation, and content composition in WPF apps. |
-| [Mutimedia (WPF)](/dotnet/framework/wpf/graphics-multimedia/multimedia-overview) | Learn about integrating audio and video into your WPF apps. |
+| [Multimedia (WPF)](/dotnet/framework/wpf/graphics-multimedia/multimedia-overview) | Learn about integrating audio and video into your WPF apps. |
 | [Graphics and drawing (Windows Forms)](/dotnet/framework/winforms/advanced/graphics-and-drawing-in-windows-forms) | Learn how to create graphics, draw text, and manipulate graphical images in Windows Forms apps. |
 | [SoundPlayer class (Windows Forms)](/dotnet/framework/winforms/controls/soundplayer-class-overview) | Learn how to include sounds in your Windows Forms applications. |

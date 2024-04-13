@@ -80,7 +80,7 @@ For accessibility, the following table presents the text of the table shown in t
 | Body (for hyperlinks) | 14/20 epx | Default, Lighter, Accent |
 | Body Strong | 14/20 epx | Default, Bolder |
 | Body Large | 18/24 epx | Medium, Lighter |
-| Body Larget | 18/24 epx | Medium, Bolder |
+| Body Largest | 18/24 epx | Medium, Bolder |
 | Subtitle | 20/28 epx | Large, Bolder |
 | Title | 28/36 epx | Extra Large, Bolder | 
 

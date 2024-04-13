@@ -212,7 +212,7 @@ Let's hook the events and initialize all the basic state fields of the camera co
 void CameraPanController::Initialize( _In_ CoreWindow^ window )
 {
 
-    // Start recieving touch/mouse events.
+    // Start receiving touch/mouse events.
     window->PointerPressed += 
     ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &CameraPanController::OnPointerPressed);
 

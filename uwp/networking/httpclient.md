@@ -322,7 +322,7 @@ int main()
 
 ## Exceptions in Windows.Web.Http
 
-An exception is thrown when an invalid string for a the Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) object.
+An exception is thrown when an invalid string for a Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) object.
 
 **.NET:**  The [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) type appears as [**System.Uri**](/dotnet/api/system.uri) in C# and VB.
 

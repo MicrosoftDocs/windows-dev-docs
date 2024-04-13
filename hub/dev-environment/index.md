@@ -198,7 +198,7 @@ Learn more in the [Windows Terminal docs](/windows/terminal).
 
 ## Transitioning between Mac and Windows
 
-Check out our [guide to transitioning between between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment. It can help you map the difference between:
+Check out our [guide to transitioning between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment. It can help you map the difference between:
 
 - [Keyboard shortcuts](./mac-to-windows.md#keyboard-shortcuts)
 - [Trackpad shortcuts](./mac-to-windows.md#trackpad-shortcuts)
