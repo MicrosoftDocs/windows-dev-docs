@@ -16,9 +16,9 @@ Windows has a built-in SSH client that you can use in Windows Terminal. In this 
 
 The latest builds of Windows 10 and Windows 11 include a built-in SSH server and client that are based on OpenSSH, a connectivity tool for remote sign-in that uses the SSH protocol. OpenSSH encrypts all traffic between client and server to eliminate eavesdropping, connection hijacking, and other attacks.
 
-By default, the OpenSSH client will be located in the directory: `C:\Windows\System32\OpenSSH`. You can also check that it is installed in Windows Settings > Apps > Optional features, then search for "OpenSSH" in your installed features.
+By default, the OpenSSH client will be located in the directory: `C:\Windows\System32\OpenSSH`. You can also check that it is present in Windows Settings > System > Optional features, then search for "OpenSSH" in your added features.
 
-![OpenSSH feature in Windows Settings](../images/ssh-optonialfeatures.png)
+![ssh_optionalfeature](media/ssh/ssh-optionalfeature.png)
 
 For more information on configuring OpenSSH, see [OpenSSH Server configuration for Windows](/windows-server/administration/openssh/openssh_server_configuration).
 
