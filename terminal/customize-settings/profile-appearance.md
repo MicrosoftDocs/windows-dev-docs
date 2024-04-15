@@ -353,13 +353,13 @@ ___
 
 This sets the transparency of the window for the profile. This accepts an integer value from 0-100, representing a "percent opaque". `100` is "fully opaque", `50` is semi-transparent, and `0` is fully transparent.
 
-When `useAcrylic` is set to `true`, the window will use the acrylic material to create a blurred background for the terminal. When `useAcrylic` is set to false, the terminal will use a unblurred opacity.
+When `useAcrylic` is set to `true`, the window will use the acrylic material to create a blurred background for the terminal. When `useAcrylic` is set to false, the terminal will use an unblurred opacity.
 
 **Property name:** `opacity`
 
 **Necessity:** Optional
 
-**Accepts:** Number as a integer value from 0-100
+**Accepts:** Number as an integer value from 0-100
 
 **Default value:** `100` when `useAcrylic` is false, `50` when `useAcrylic` is true.
 

@@ -42,7 +42,7 @@ Below are some examples of [Themes](./../customize-settings/themes.md).
 
 ```json
 {
-    "name": "Under Contruction",
+    "name": "Under Construction",
     "tab":
     {
         "background": "#FFFF00FF",

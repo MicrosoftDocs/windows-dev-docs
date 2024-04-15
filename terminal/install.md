@@ -82,7 +82,7 @@ The path for your Windows Terminal settings.json file may be found in one of the
 
 - Terminal (stable / general release): `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`
 - Terminal (preview release): `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json`
-- Terminal (unpackaged: Scoop, Chocolately, etc): `%LOCALAPPDATA%\Microsoft\Windows Terminal\settings.json`
+- Terminal (unpackaged: Scoop, Chocolatey, etc): `%LOCALAPPDATA%\Microsoft\Windows Terminal\settings.json`
 
 > [!Tip]
 > 1. You can access the default settings for Windows Terminal by selecting  **Settings** in the dropdown menu while holding <kbd>Alt</kbd> to open the `defaults.json` file in your default text editor. This file is auto-generated and any changes to it will be ignored.

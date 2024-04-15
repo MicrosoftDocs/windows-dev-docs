@@ -223,7 +223,7 @@ ___
 :::row:::
 :::column span="":::
 
-This experimentally adds support for moving the text cursor by clicking with the mouse on the current commandline. This is an experimental feature - there are lots of edge cases where this will not work as expected. In ordfer for this setting to work, you will need to enable [shell integration](../tutorials/shell-integration.md) in your shell.
+This experimentally adds support for moving the text cursor by clicking with the mouse on the current commandline. This is an experimental feature - there are lots of edge cases where this will not work as expected. In order for this setting to work, you will need to enable [shell integration](../tutorials/shell-integration.md) in your shell.
 
 :::column-end:::
 :::column span="":::

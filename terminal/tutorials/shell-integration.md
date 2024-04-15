@@ -135,7 +135,7 @@ function prompt {
 
 ### Command Prompt
 
-Command Prompt sources it's prompt from the `PROMPT` environment variable. CMD.exe reads `$e` as a the `ESC` character.  Unfortunately, CMD.exe doesn't have a way to get the return code of the previous command in the prompt, so we're not able to provide success / error information in CMD prompts.
+Command Prompt sources it's prompt from the `PROMPT` environment variable. CMD.exe reads `$e` as the `ESC` character.  Unfortunately, CMD.exe doesn't have a way to get the return code of the previous command in the prompt, so we're not able to provide success / error information in CMD prompts.
 
 You can change the prompt for the current CMD.exe instance by running:
 
@@ -156,7 +156,7 @@ PROMPT $e]133;D$e\$e]133;A$e\$e]9;9;$P$e\%PROMPT%$e]133;B$e\
 ```
 
 > **Note**:
-> Don't see your favorite shell here? If you figure it out, feel free to [to contribute a solution for your preferred shell!](https://github.com/MicrosoftDocs/terminal/compare)
+> Don't see your favorite shell here? If you figure it out, feel free to [contribute a solution for your preferred shell!](https://github.com/MicrosoftDocs/terminal/compare)
 
 ## Shell integration demos
 

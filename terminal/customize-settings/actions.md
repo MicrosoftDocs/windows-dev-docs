@@ -672,7 +672,7 @@ This creates a new window. Without any arguments, this will open the default pro
 | `tabTitle` | Optional | String | Title of the window tab. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
-| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false` allows applications to change tab title by sending title change messages. When set to true `true` suppresses these messages. If not provided, the behavior is inherited from profile settings. |
+| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false` allows applications to change tab title by sending title change messages. When set to `true` suppresses these messages. If not provided, the behavior is inherited from profile settings. |
 
 ### Rename window
 
@@ -1054,7 +1054,7 @@ When modifying a selection using the keyboard, you are moving one end of the sel
 
 ### Toggle block selection
 
-Makes the exisiting selection a block selection, meaning that the selected area is a rectangle, as opposed to wrapping to the beginning and end of each line.
+Makes the existing selection a block selection, meaning that the selected area is a rectangle, as opposed to wrapping to the beginning and end of each line.
 
 **Command name:** `toggleBlockSelection`
 

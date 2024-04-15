@@ -101,7 +101,7 @@ This enables the Mica effect on this window, beneath all other UI layers. For Mi
 },
 ```
 
-Note that when Mica is enabled for the window it is enabled under the entirety of the window, including as a backdrop for the Terminal panes in the window. This means that profiles which are using `opacity` without `useAcrylic` enabled will show through to the new Mica background. It is not currently possible to have a unblurred transparent background for the Terminal and a Mica background for the tabs / tab row simultaneously.
+Note that when Mica is enabled for the window it is enabled under the entirety of the window, including as a backdrop for the Terminal panes in the window. This means that profiles which are using `opacity` without `useAcrylic` enabled will show through to the new Mica background. It is not currently possible to have an unblurred transparent background for the Terminal and a Mica background for the tabs / tab row simultaneously.
 
 **Property name:** `useMica`
 

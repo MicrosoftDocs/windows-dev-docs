@@ -335,7 +335,7 @@ This entry type represents a nested folder in the new tab dropdown menu. Folders
 | `icon` | Optional | Path to an icon as a string | Path to an icon that will be displayed next to the folder name. |
 | `entries` | Required | List of new tab menu entries | List of new tab menu entries that will be displayed when the folder is clicked. |
 | `allowEmpty` | Optional | Boolean (defaults to `true`) | If set to `true`, the folder will be displayed even if it has no entries. If set to `false`, the folder will not be displayed if it has no entries. This can be useful with `matchProfile` entries. |
-| `inline` | Optional | Boolean (defaults to `false`) | If set to `true`, and there's only a single entry in the folder, this folder won't create a nested menu. Instead, a the entry in the menu will just be the single entry in the folder. This can be useful with `matchProfile` entries. |
+| `inline` | Optional | Boolean (defaults to `false`) | If set to `true`, and there's only a single entry in the folder, this folder won't create a nested menu. Instead, the entry in the menu will just be the single entry in the folder. This can be useful with `matchProfile` entries. |
 
 #### Separator
 

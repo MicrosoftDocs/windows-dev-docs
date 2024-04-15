@@ -64,7 +64,7 @@ This is the directory the shell starts in when it is loaded.
 
 **Default value:** `"%USERPROFILE%"`
 
-**NOTE:** When starting directory is not defined, the default value will be set to `"%USERPROFILE%"` (the path relative to your user settings, for example this may be `C:\Users\<your username>`). However, if the starting directory is explicitely set to `null`, then you will get different results depending on where you launch Terminal.
+**NOTE:** When starting directory is not defined, the default value will be set to `"%USERPROFILE%"` (the path relative to your user settings, for example this may be `C:\Users\<your username>`). However, if the starting directory is explicitly set to `null`, then you will get different results depending on where you launch Terminal.
 
 **Example:** Start the PowerShell profile in the *GitHubRepos* folder of your *Documents* directory by finding the powershell.exe profile and adding `"startingDirectory": "%USERPROFILE%/Documents/GitHubRepos",`
 
