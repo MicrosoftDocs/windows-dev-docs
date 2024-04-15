@@ -59,7 +59,7 @@ Assuming that you've installed cmder into `%CMDER_ROOT%`:
 
 ```json
 {
-    "commandline": "cmd.exe /k \"%CMDER_ROOT%\\vendor\\init.bat\"",
+    "commandline": "cmd.exe /k %CMDER_ROOT%\\vendor\\init.bat",
     "name": "cmder",
     "icon": "%CMDER_ROOT%\\icons\\cmder.ico",
     "startingDirectory": "%USERPROFILE%"
@@ -68,14 +68,14 @@ Assuming that you've installed cmder into `%CMDER_ROOT%`:
 
 ### Cygwin
 
-Assuming that you've installed Cygwin into `C:\Cygwin`:
+Assuming that you've installed Cygwin into `C:\cygwin64`:
 
 ```json
 {
     "name": "Cygwin",
-    "commandline": "C:\\Cygwin\\bin\\bash --login -i",
-    "icon": "C:\\Cygwin\\Cygwin.ico",
-    "startingDirectory": "C:\\Cygwin\\bin"
+    "commandline": "C:\\cygwin64\\bin\\bash --login -i",
+    "icon": "C:\\cygwin64\\Cygwin.ico",
+    "startingDirectory": "C:\\cygwin64\\bin"
 }
 ```
 
