@@ -37,16 +37,17 @@ The following table highlights the development features that are provided by the
 The following articles provide information to help you get started using features of the full Windows app development platform for common app scenarios, including features provided by the Windows App SDK, the Windows SDK, and the .NET SDK.
 
 * [Modernize your existing desktop apps](../desktop/modernize/index.md)
-* [User interface and input](user-interface.md)
-* [App lifecycle and system services](app-lifecycle-and-system-services.md)
-* [Communication](communication.md)
 * [Accessibility](accessibility.md)
+* [App lifecycle and system services](app-lifecycle-and-system-services.md)
 * [Audio, video, and camera](audio-video-camera.md)
-* [Graphics](graphics.md)
+* [Communication](communication.md)
 * [Data and files](data-and-files.md)
-* [Windows AI and machine learning](/windows/ai/)
 * [Devices and sensors](devices-and-sensors.md)
+* [Graphics](graphics.md)
+* [People API](./contacts-and-calendar/cross-device-people-api.md)
 * [Security and identity](security-and-identity.md)
+* [User interface and input](user-interface.md)
+* [Windows AI and machine learning](/windows/ai/)
 * [Deployment overview](../package-and-deploy/index.md)
 
 For information about setting up your development environment and getting started creating a new app, see the following articles:
