@@ -27,7 +27,6 @@ The following table identifies several UI visualization tools and the UI framewo
 |[.NET MAUI](/dotnet/maui/)                | ✅      | ❌           | ✅            | ❌                   |
 |[WinForms](/dotnet/desktop/winforms/)                 | ✅      | ✅ | ✅            | ❌                   |
 |[WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/)               | ✅      | ❌           | ✅            | ❌                   |
-|[Xamarin.Forms](/xamarin/xamarin-forms/)            | ✅      | ❌           | ✅            | ❌                   |
 |[Classic Visual Basic apps](/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation) | ❌                | ✅ | ❌                      | ❌                   |
 |[Classic Win32 apps](/windows/win32/)        | ❌                | ✅ | ❌                      | ❌                   |
 |[Chromium-based apps](https://developer.chrome.com/docs/chromium)      | ❌                | ❌           | ❌                      | ✅         |
@@ -38,11 +37,10 @@ The Live Visual Tree and Live Property Explorer features ship with Visual Studio
 
 #### When to use Live Visual Tree
 
-Use these tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [Xamarin.Forms](/xamarin/xamarin-forms/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows).
+Use these tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows).
 
 - For more information on WinUI in the Windows App SDK, WinUI 2 for UWP, and WPF, see [Inspect XAML properties while debugging](/visualstudio/xaml-tools/inspect-xaml-properties-while-debugging).
 - For more information on .NET MAUI, see [Inspect the visual tree of a .NET MAUI app](/dotnet/maui/user-interface/live-visual-tree).
-- For more information on Xamarin.Forms, see [Xamarin.Forms live visual tree](/xamarin/xamarin-forms/xaml/live-visual-tree).
 
 > [!NOTE]
 > The [WPF Tree Visualizer](/visualstudio/debugger/how-to-use-the-wpf-tree-visualizer) is a legacy feature and is not in active development. You can use the WPF Tree visualizer to explore the visual tree of a WPF object, and to view the WPF dependency properties for the objects that are contained in that tree.
@@ -90,7 +88,7 @@ Spy++ (SPYXX.EXE) is a Win32-based utility that ships with Visual Studio and pro
 Use Spy++ when building a classic Win32 application or one that uses Win32 APIs to draw its UI elements, such as WinForms and [Classic Visual Basic apps](/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation).
 
 > [!NOTE]
-> For .NET framework apps, Spy++ is of limited usefulness as the window messages and classes intercepted by Spy++ don’t correspond to managed events and property values.
+> For .NET framework apps, Spy++ is of limited usefulness as the window messages and classes intercepted by Spy++ don't correspond to managed events and property values.
 
 #### How to use Spy++
 
@@ -134,7 +132,7 @@ For Spy++ documentation, see [Spy++ Help](/visualstudio/debugger/spy-increment-h
 
 #### When to use Accessibility Insights - Live Inspect
 
-Live Inspect is typically used in conjunction with Live Visual Tree, Spy++, and other tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [Xamarin.Forms](/xamarin/xamarin-forms/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows).
+Live Inspect is typically used in conjunction with Live Visual Tree, Spy++, and other tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows).
 
 #### How to use Accessibility Insights - Live Inspect
 
@@ -162,7 +160,7 @@ To learn more about Accessibility Insights, see [Accessibility Insights for Wind
 
 #### When to use Chromium UI DevTools for Windows
 
-Use Chrome UI DevTools if you’re developing a Chromium project, including progressive web apps or Electron desktop apps. For more information on Electron, see the [DevTools extension](https://github.com/electron/electron/blob/main/docs/tutorial/devtools-extension.md) on GitHub.
+Use Chrome UI DevTools if you're developing a Chromium project, including progressive web apps or Electron desktop apps. For more information on Electron, see the [DevTools extension](https://github.com/electron/electron/blob/main/docs/tutorial/devtools-extension.md) on GitHub.
 
 #### How to use Chromium UI DevTools for Windows
 
