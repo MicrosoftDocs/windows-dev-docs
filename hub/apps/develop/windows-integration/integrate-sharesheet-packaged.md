@@ -90,6 +90,8 @@ See the [Photo Store Demo](https://github.com/microsoft/AppModelSamples/blob/mas
 
 ## Handle shared files
 
+The following code snippet shows how to handle shared files in a packaged app. The code snippet is part of the `HandleShareAsync` method that is called when the app is activated as a Share Target in the previous example.
+
 ```csharp
 static async void HandleShareAsync(ShareTargetActivatedEventArgs args)
 {
