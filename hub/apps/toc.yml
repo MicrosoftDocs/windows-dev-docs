@@ -269,6 +269,22 @@ items:
                   href: develop/smart-app-control/code-signing-for-smart-app-control.md
                 - name: Test your app's signature with Smart App Control
                   href: develop/smart-app-control/test-your-app-with-smart-app-control.md
+            - name: Windows Share support
+              items:
+                - name: Windows Share Sheet overview
+                  href: develop/windows-integration/integrate-sharesheet-overview.md
+                - name: Packaged apps
+                  items:
+                    - name: Integrate packaged apps with Windows Share Sheet
+                      href: develop/windows-integration/integrate-sharesheet-packaged.md
+                    - name: Integrate PWAs with Windows Share Sheet
+                      href: develop/windows-integration/integrate-sharesheet-pwa.md
+                    - name: Share data in UWP apps
+                      href: /windows/uwp/app-to-app/share-data
+                - name: Unpackaged apps
+                  items:
+                    - name: Integrate unpackaged apps with Windows Share Sheet
+                      href: develop/windows-integration/integrate-sharesheet-unpackaged.md
         - name: DispatcherQueue
           href: develop/dispatcherqueue.md
     - name: Package and deploy
