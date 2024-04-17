@@ -17,7 +17,7 @@ Share Target is a feature that was introduced in Windows 8, and it allows an app
 For the default share target registration to work with Win32 apps, the app needs to have a package identity and also handle the share arguments as `ShareTargetActivatedEventArgs`, which is a live object from the source app. It isn't a static memory content that is sent to the target app.
 
 > [!NOTE]
-> In a C++ app, use the [GetCurrentPackageFullName](/win32/api/appmodel/nf-appmodel-getcurrentpackagefullname) API to check if the running app has package identity. The API returns the `APPMODEL_ERROR_NO_PACKAGE` error code if it isn't running with package identity.
+> In a C++ app, use the [GetCurrentPackageFullName](/windows/win32/api/appmodel/nf-appmodel-getcurrentpackagefullname) API to check if the running app has package identity. The API returns the `APPMODEL_ERROR_NO_PACKAGE` error code if it isn't running with package identity.
 
 ## Prerequisites
 
