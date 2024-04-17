@@ -279,7 +279,7 @@ items:
                       href: develop/windows-integration/integrate-sharesheet-packaged.md
                     - name: Integrate PWAs with Windows Share Sheet
                       href: develop/windows-integration/integrate-sharesheet-pwa.md
-                    - name: Share data in UWP apps
+                    - name: Share data in UWP apps >>
                       href: /windows/uwp/app-to-app/share-data
                 - name: Unpackaged apps
                   items:
