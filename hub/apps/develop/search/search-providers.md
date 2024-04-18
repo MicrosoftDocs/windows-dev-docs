@@ -64,11 +64,11 @@ The URL of the HTTPS endpoint to which the OS will send search query requests.
 
 #### Protocol
 
-The protocol schema that will be used when launching the provided web search results. This feature is supported starting with Windows 10 build 19045.4233 and Windows 11 build 22621.3371. For more information on registering protocol schemas, see [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
+The protocol schema that will be used when launching the provided web search results. If the specified protocol is not registered by an app on the OS, then the default browser will be launched for search results. For more information on registering protocol schemas, see [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
 
 #### DynamicContentEndpoint
 
-The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). This feature is supported starting with Windows 10 build 19045.4233 and Windows 11 build 22621.3371. Client devices on earlier versions of Windows will not see the gleam icon in the Search UI.
+The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). This feature is supported starting with Windows 10 build 19045.4233 and Windows 11 build 22621.3371. 
 
 
 ### Example package manifest file
