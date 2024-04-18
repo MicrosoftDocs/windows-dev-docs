@@ -45,7 +45,7 @@ A sample app is available on GitHub: [SparsePackages](https://github.com/microso
 
 ## Register as a Share Target
 
-Once the app has package identity, the next step is to implement the Share contract. The Share contract allows your app to receive data from another app. The Share contract is a system-provided UI that enables users to share content from your app with other apps.
+Once the app has package identity, the next step is to implement the Share contract. The Share contract allows your app to receive data from another app.
 
 You can follow the same steps in the [Register as a Share Target](integrate-sharesheet-packaged.md#register-as-a-share-target) section of the documentation for packaged apps to integrate with Share Sheet.
 
