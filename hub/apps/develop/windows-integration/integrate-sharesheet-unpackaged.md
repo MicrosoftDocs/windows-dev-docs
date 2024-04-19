@@ -1,14 +1,14 @@
 ---
-description: Discover how to integrate unpackaged apps with the Windows Share Sheet.
-title: Integrate unpackaged apps with Windows Share Sheet
+description: Discover how to integrate unpackaged apps with the Windows Share.
+title: Integrate unpackaged apps with Windows Share
 ms.topic: article
 ms.date: 04/16/2024
 ms.localizationpriority: medium
 ---
 
-# Integrate unpackaged apps with Windows Share Sheet
+# Integrate unpackaged apps with Windows Share
 
-The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other apps. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. The Share Sheet provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
+The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other apps. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. It provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
 
 How to onboard an unpackaged app as a Share Target:
 
@@ -20,7 +20,7 @@ How to onboard an unpackaged app as a Share Target:
 An app can get package identity in two ways:  
 
 - Make a new MSIX installation package (preferred method) **OR**
-- Make Sparse Packaging compatible with the current installer. This is only recommended for apps that have a existing installer and switch to MSIX installation.
+- Make Sparse Packaging compatible with the current installer. This is only recommended for apps that have a existing installer and which can't switch to MSIX installation.
 
 ### Make a new MSIX installation package
 
@@ -57,4 +57,4 @@ You can follow the same steps in the [Register as a Share Target](integrate-shar
 - [Advantages and Disadvantages of packaging an application - Deployment overview](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app)
 - [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/)
 - [Share Contract Implementation for WinAppSDK App](https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp)
-- [Share Contract Implementation for Sparse Packaged based Apps](https://github.com/microsoft/AppModelSamples/blob/master/Samples/SparsePackages/PhotoStoreDemo/StartUp.cs)
+- [Share Contract Implementation for Sparse Packaged based Apps](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages)

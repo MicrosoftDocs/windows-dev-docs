@@ -1,14 +1,14 @@
 ---
-description: Discover how to integrate packaged apps with the Windows Share Sheet.
-title: Integrate packaged apps with Windows Share Sheet
+description: Discover how to integrate packaged apps with the Windows Share.
+title: Integrate packaged apps with Windows Share
 ms.topic: article
 ms.date: 04/16/2024
 ms.localizationpriority: medium
 ---
 
-# Integrate packaged apps with Windows Share Sheet
+# Integrate packaged apps with Windows Share
 
-The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other apps. The Share Sheet is available in the Windows shell and is accessible from any app that is registered as a Share Target. The Share Sheet provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
+The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other apps. The Share Sheet is available in the Windows shell and is accessible from any app that is registered as a Share Target. It provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
 
 ## What is Share Target?
 

@@ -1,22 +1,22 @@
 ---
-description: Learn how to integrate apps with the Windows Share Sheet.
-title: An overview of app integration options with Windows Share Sheet
+description: Learn how to integrate apps with the Windows Share.
+title: An overview of app integration options with Windows Share
 ms.topic: article
 ms.date: 04/16/2024
 ms.localizationpriority: medium
 ---
 
-# App integration options with Windows Share Sheet
+# App integration options with Windows Share
 
-The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other apps. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. The Share Sheet provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
+The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other apps. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. It provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
 
 ## In this section
 
 | Topic | Description |
 |--|--|
-| [Integrate packaged apps with Windows Share Sheet](integrate-sharesheet-packaged.md) | Discover how to integrate packaged apps with the Windows Share Sheet. |
-| [Integrate Progressive Web Apps (PWAs) with Windows Share Sheet](integrate-sharesheet-pwa.md) | Discover how to integrate a Progressive Web App (PWA) with the Windows Share Sheet. |
-| [Integrate unpackaged apps with Windows Share Sheet](integrate-sharesheet-unpackaged.md) | Discover how to integrate unpackaged apps with the Windows Share Sheet. |
+| [Integrate packaged apps with Windows Share](integrate-sharesheet-packaged.md) | Discover how to integrate packaged apps with the Windows Share Sheet. |
+| [Integrate Progressive Web Apps (PWAs) with Windows Share](integrate-sharesheet-pwa.md) | Discover how to integrate a Progressive Web App (PWA) with the Windows Share Sheet. |
+| [Integrate unpackaged apps with Windows Share](integrate-sharesheet-unpackaged.md) | Discover how to integrate unpackaged apps with the Windows Share Sheet. |
 | [Share data - UWP apps](/windows/uwp/app-to-app/share-data) | Learn how to share data between UWP apps. |
 
 ## See also
