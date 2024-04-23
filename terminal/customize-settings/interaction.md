@@ -91,6 +91,18 @@ _(`│` is `U+2502 BOX DRAWINGS LIGHT VERTICAL`)_
 > [!IMPORTANT]
 > The following characters must be escaped with a backslash : `\`, `"`
 
+As an example, here are some sets of delimiters you can use to match the behavior of various other terminal emulators:
+
+| Terminal       | Delimiters                                                                                                                      |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Xterm          | <code>&#x22;&#x24;&#x27;&#x28;&#x29;&#x2A;&#x3B;&#x3C;&#x3E;&#x5B;&#x5C;&#x5D;&#x5E;&#x7B;&#x7C;&#x7D;</code>                   |
+| Gnome Terminal | <code>&#x21;&#x22;&#x24;&#x27;&#x28;&#x29;&#x2A;&#x3A;&#x3B;&#x3C;&#x3E;&#x5B;&#x5D;&#x5E;&#x7B;&#x7C;&#x7D;</code>             |
+| Konsole        | <code>&#x21;&#x22;&#x24;&#x27;&#x28;&#x29;&#x2A;&#x2C;&#x3B;&#x3C;&#x3E;&#x5B;&#x5C;&#x5D;&#x5E;&#x7B;&#x7C;&#x7D;</code>       |
+| Rxvt           | <code>&#x26;&#x28;&#x29;&#x3B;&#x3C;&#x3E;&#x7C;</code>                                                                         |
+| Alacritty      | <code>&#x22;&#x27;&#x28;&#x29;&#x2C;&#x3A;&#x3C;&#x3E;&#x5B;&#x5D;&#x7B;&#x7C;&#x7D;</code>                                     |
+| Kitty          | <code>&#x21;&#x22;&#x24;&#x27;&#x28;&#x29;&#x2A;&#x2C;&#x3A;&#x3B;&#x3C;&#x3E;&#x5B;&#x5C;&#x5D;&#x5E;&#x7B;&#x7C;&#x7D;</code> |
+
+
 ___
 
 ## Snap window resizing to character grid
