@@ -580,7 +580,13 @@ This command moves the tab "backward" and "forward", which is equivalent to "lef
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"backward"`, `"forward"` | Direction in which the tab will move. |
+| `window` | Optional | A window ID | See below |
 
+`window` is optional, and follows the same format as the `--window-id` argument to the `wt.exe` command line. If it's omitted, then this will move the tab within the current window. If provided, it may either be the integer ID of a window, or the name of a window. It also accepts the following reserved values:
+* `"new"` or `-1`: Always run this command in a new window
+* `"last"` or `0`: Always run this command in the most recently used window
+
+If no window exists with the given `window` ID, then a new window will be created with that id/name.
 
 ### Broadcast input
 
