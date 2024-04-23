@@ -25,7 +25,7 @@ In this demo, all instances of the file name "foo" are replaced with "foobar". S
 
 ## PowerRename window
 
-After selecting files in Windows File Explorer, right-click and select **Resize with PowerRename** (which will appear only if enabled in PowerToys). The selected items will be displayed, along with search and replace values, a list of options, and a preview pane displaying results of the search and replace values entered.
+After selecting files in Windows File Explorer, right-click and select **Rename with PowerRename** (which will appear only if enabled in PowerToys). The selected items will be displayed, along with search and replace values, a list of options, and a preview pane displaying results of the search and replace values entered.
 
 ![PowerRename Menu screenshot](../images/powerrename-menu.png)
 
