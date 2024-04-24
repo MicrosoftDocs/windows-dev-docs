@@ -66,11 +66,28 @@ Windows invites you to code as you are. Use whatever coding language or framewor
     :::column:::
        [![WSA icon](../images/wsa-icon.png)](/windows/android/wsa/)<br>
         **[Windows Subsystem for Android](/windows/android/wsa/)**<br>
-        Windows Subsystem for Android™️ enables your Windows 11 device to run Android applications that are available in the Amazon Appstore.<br>
+        Windows Subsystem for Android™️ support ends March 5, 2025.<br>
         [Learn more](/windows/android/wsa/)
     :::column-end:::
 :::row-end:::
-
+:::row:::
+    :::column:::
+       [![Sudo for Windows icon](../images/sudo.png)](/windows/sudo/)<br>
+        **[Sudo for Windows](/windows/sudo/)**<br>
+        Sudo for Windows is a new way for users to run elevated commands directly from an unelevated console session.
+        <br>
+        [Enable and configure Sudo for Windows](/windows/sudo)
+    :::column-end:::
+    :::column:::
+       [![Copilot in Windows icon](../images/copilot.png)](/windows/ai/)<br>
+        **[Windows AI](/windows/ai/)**<br>
+        A new era of AI has arrived at Microsoft. See how AI is being integrated in Windows 11.
+        <br>
+        [Explore Windows AI](/windows/ai)
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 <br>
 
 > [!VIDEO 54e6c532-a86c-4a39-81ab-40e28ce2ba96]
