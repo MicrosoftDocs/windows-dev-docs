@@ -41,7 +41,7 @@ The second way to give your app package identity is to add a package with extern
 
 Documentation on how to create a package with external location is available here, including information on templates to use: [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
 
-A sample app is available on GitHub: [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages).
+A sample app is available on GitHub: [SparsePackages (Packaged with External Location)](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages).
 
 ## Register as a Share Target
 
