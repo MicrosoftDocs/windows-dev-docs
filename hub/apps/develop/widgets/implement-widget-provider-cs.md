@@ -88,8 +88,8 @@ This example will declare some static strings to define the JSON templates for e
 // Class members of WidgetProvider
         const string weatherWidgetTemplate = """
 {
-    "$schema": ""http://adaptivecards.io/schemas/adaptive-card.json"",
-    "type": ""AdaptiveCard"",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
     "version": "1.0",
     "speak": "<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>",
     "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg",
