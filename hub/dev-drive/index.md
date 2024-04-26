@@ -52,11 +52,11 @@ When choosing the **Create new VHD** option to set up a Dev Drive, you will then
 - **Location**: Assign a directory path where the Dev Drive VHD will be located on your machine. The default location is `C:\`, unless creating a Dev Drive using [Dev Home](../dev-home/index.md), in which case the default location is `%userprofile%\DevDrives`. We recommend using a per-user directory path location to store your Dev Drive to avoid any unintentional sharing.
 - **Virtual hard disk size**: Assign the amount of disk space that will be allocated for the volume to use, minimum size is 50GB.
 - **Virtual hard disk format**:
-  - **VHD**: Supports virtual disks up to 2040GB in size.
-  - **VHDX** (Recommended): Supports virtual disks up to 64TB in size and offers more resilient protection against unexpected IO failure caused by issues like power outage). [Learn more about Managing VHDs](/windows-server/storage/disk-management/manage-virtual-hard-disks).
+  - **VHD**: Supports virtual disks up to 2040 GB in size.
+  - **VHDX** (Recommended): Supports a maximum of 64 TB and offers more resilient protection against unexpected IO failure caused by issues like power outage. [Learn more about Managing VHDs](/windows-server/storage/disk-management/manage-virtual-hard-disks).
 - **Disk type**:
-  - **Fixed size** - This virtual hard disk file is allocated to the maximum size when created 
-  - **Dynamically expanding** - Grows to maximum size as data is written (Recommended)
+  - **Fixed size** - This virtual hard disk file is allocated to the maximum size when created.
+  - **Dynamically expanding** - The virtual hard disk file grows to its maximum size as data is written to the disk. (Recommended)
 
 Once you complete the process of selecting between these options, your Dev Drive will be created.
 
