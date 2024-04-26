@@ -26,13 +26,20 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 
 ## Create a new C# console app
 
-In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleWidgetProvider". When prompted, set the target .NET version to 6.0. 
+In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleWidgetProvider". When prompted, set the target .NET version to 8.0.
 
 When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version 10.0.19041.0 or later.
 
+To update your project to support .NET 8.0, in **Solution Explorer** right-click the project name and select **Edit Project File**. Inside of **PropertyGroup**, add the following **RuntimeIdentifiers** element.
+
+```xml
+<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+```
+
+
 Note that this walkthrough uses a console app that displays the console window when the widget is activated to enable easy debugging. When you are ready to publish your widget provider app, you can convert the console application to a Windows application by following the steps in [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
 
-## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
+## Add references to the Windows App SDK
 
 This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
 
@@ -54,8 +61,8 @@ A widget provider can support a single widget or multiple widgets. Whenever the 
 
 public class CompactWidgetInfo
 {
-    public string widgetId { get; set; }
-    public string widgetName { get; set; }
+    public string? widgetId { get; set; }
+    public string? widgetName { get; set; }
     public int customState = 0;
     public bool isActive = false;
 
@@ -79,126 +86,128 @@ This example will declare some static strings to define the JSON templates for e
 // WidgetProvider.cs
 
 // Class members of WidgetProvider
-const string weatherWidgetTemplate = @"
+        const string weatherWidgetTemplate = """
 {
-    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
-    ""type"": ""AdaptiveCard"",
-    ""version"": ""1.0"",
-    ""speak"": ""<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>"",
-    ""backgroundImage"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg"",
-    ""body"": [
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "speak": "<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>",
+    "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg",
+    "body": [
         {
-            ""type"": ""TextBlock"",
-            ""text"": ""Redmond, WA"",
-            ""size"": ""large"",
-            ""isSubtle"": true,
-            ""wrap"": true
+            "type": "TextBlock",
+            "text": "Redmond, WA",
+            "size": "large",
+            "isSubtle": true,
+            "wrap": true
         },
         {
-            ""type"": ""TextBlock"",
-            ""text"": ""Mon, Nov 4, 2019 6:21 PM"",
-            ""spacing"": ""none"",
-            ""wrap"": true
+            "type": "TextBlock",
+            "text": "Mon, Nov 4, 2019 6:21 PM",
+            "spacing": "none",
+            "wrap": true
         },
         {
-            ""type"": ""ColumnSet"",
-            ""columns"": [
+            "type": "ColumnSet",
+            "columns": [
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""auto"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
                         {
-                            ""type"": ""Image"",
-                            ""url"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png"",
-                            ""size"": ""small"",
-                            ""altText"": ""Mostly cloudy weather""
+                            "type": "Image",
+                            "url": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png",
+                            "size": "small",
+                            "altText": "Mostly cloudy weather"
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""auto"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""46"",
-                            ""size"": ""extraLarge"",
-                            ""spacing"": ""none"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "46",
+                            "size": "extraLarge",
+                            "spacing": "none",
+                            "wrap": true
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""stretch"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""°F"",
-                            ""weight"": ""bolder"",
-                            ""spacing"": ""small"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "°F",
+                            "weight": "bolder",
+                            "spacing": "small",
+                            "wrap": true
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""stretch"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""Hi 50"",
-                            ""horizontalAlignment"": ""left"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "Hi 50",
+                            "horizontalAlignment": "left",
+                            "wrap": true
                         },
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""Lo 41"",
-                            ""horizontalAlignment"": ""left"",
-                            ""spacing"": ""none"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "Lo 41",
+                            "horizontalAlignment": "left",
+                            "spacing": "none",
+                            "wrap": true
                         }
                     ]
                 }
             ]
         }
     ]
-}";
+}
+""";
 
-const string countWidgetTemplate = @"
+    const string countWidgetTemplate = """
 {                                                                     
-    ""type"": ""AdaptiveCard"",                                         
-    ""body"": [                                                         
+    "type": "AdaptiveCard",                                         
+    "body": [                                                         
         {                                                               
-            ""type"": ""TextBlock"",                                    
-            ""text"": ""You have clicked the button ${count} times""    
+            "type": "TextBlock",                                    
+            "text": "You have clicked the button ${count} times"    
         },
         {
-                ""text"":""Rendering Only if Small"",
-                ""type"":""TextBlock"",
-                ""$when"":""${$host.widgetSize==\""small\""}""
+                "text":"Rendering Only if Small",
+                "type":"TextBlock",
+                "$when":"${$host.widgetSize==\"small\"}"
         },
         {
-                ""text"":""Rendering Only if Medium"",
-                ""type"":""TextBlock"",
-                ""$when"":""${$host.widgetSize==\""medium\""}""
+                "text":"Rendering Only if Medium",
+                "type":"TextBlock",
+                "$when":"${$host.widgetSize==\"medium\"}"
         },
         {
-            ""text"":""Rendering Only if Large"",
-            ""type"":""TextBlock"",
-            ""$when"":""${$host.widgetSize==\""large\""}""
+            "text":"Rendering Only if Large",
+            "type":"TextBlock",
+            "$when":"${$host.widgetSize==\"large\"}"
         }                                                                    
     ],                                                                  
-    ""actions"": [                                                      
+    "actions": [                                                      
         {                                                               
-            ""type"": ""Action.Execute"",                               
-            ""title"": ""Increment"",                                   
-            ""verb"": ""inc""                                           
+            "type": "Action.Execute",                               
+            "title": "Increment",                                   
+            "verb": "inc"                                           
         }                                                               
     ],                                                                  
-    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
-    ""version"": ""1.5""                                                
-}";
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5"                                                
+}
+""";
 ```
 
 ## Implement the IWidgetProvider methods
@@ -367,7 +376,7 @@ void UpdateWidget(CompactWidgetInfo localWidgetInfo)
 {
     WidgetUpdateRequestOptions updateOptions = new WidgetUpdateRequestOptions(localWidgetInfo.widgetId);
 
-    string templateJson = null;
+    string? templateJson = null;
     if (localWidgetInfo.widgetName == "Weather_Widget")
     {
         templateJson = weatherWidgetTemplate.ToString();
@@ -377,7 +386,7 @@ void UpdateWidget(CompactWidgetInfo localWidgetInfo)
         templateJson = countWidgetTemplate.ToString();
     }
 
-    string dataJson = null;
+    string? dataJson = null;
     if (localWidgetInfo.widgetName == "Weather_Widget")
     {
         dataJson = "{}";
