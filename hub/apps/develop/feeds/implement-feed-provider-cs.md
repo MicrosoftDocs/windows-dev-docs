@@ -392,7 +392,7 @@ Next, add the extension that registers the app as a feed provider. Paste the [ua
     <uap3:Extension Category="windows.appExtension">
         <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoFeed" Id="com.examplewidgets.examplefeed" PublicFolder="Public">
             <uap3:Properties>
-                <FeedProvider SettingsUri="https://learn.microsoft.com/en-us/windows/apps/develop/feeds/feed-providers" Icon="ms-appx:Assets\StoreLogo.png" Description="FeedDescription">
+                <FeedProvider Icon="ms-appx:Assets\StoreLogo.png" Description="FeedDescription">
                     <Activation>
                         <!-- Apps exports COM interface which implements IFeedProvider -->
                         <CreateInstance ClassId="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
@@ -449,5 +449,5 @@ To convert the console app created in this walkthrough to a Windows app, right-c
 
 ## Publishing your feed provider app
 
-After you have developed and tested your feed provider you must publish your app on the Microsoft Store in order for users to install your feeds on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
+After you have developed and tested your feed provider you can publish your app on the Microsoft Store in order for users to install your feeds on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
 

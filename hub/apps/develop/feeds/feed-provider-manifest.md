@@ -23,7 +23,7 @@ Feed providers should include the [uap3:Properties](/uwp/schemas/appxpackage/uap
 
 ```xml
 <uap3:Extension Category="windows.appExtension">
-  <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoApp" Id="ContosoApp" PublicFolder="Public" SettingsUri="https://contoso.com/feedsettings">
+  <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoApp" Id="ContosoApp" PublicFolder="Public">
     <uap3:Properties>
       <!-- Feed provider registration content goes here -->
     </uap3:Properties>
@@ -55,7 +55,6 @@ The root element of the feed provider registration information.
 | **DisplayName** | string | Yes | The name of the feed provider that is displayed on the Widgets Board. | N/A |
 | **Icon** | string | Yes | The package-relative path to an icon image file that is displayed in the Widgets Board. | N/A |
 | **Id**| string | Yes | An ID that identifies the feed provider. Feed provider implementations use this string to determine or specify which of the app's feed providers is being referenced for each operation. This string must be unique for all feed providers defined within the app manifest file.  | N/A |
-| **SettingsUri** | string | Yes | The URI where the user is redirected to adjust feed settings. | N/A |
 
 
 ## Activation
@@ -99,7 +98,7 @@ The following code example illustrates the usage of the feed package manifest XM
 ```xml
 <uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="ContosoApp" Id="ContosoApp" PublicFolder="Public">
   <uap3:Properties>
-      <FeedProvider Description="ms-resource:ProviderDescription" SettingsUri="https://contoso.com/feeds/settings" Icon="ms-appx:Images\ContosoProviderIcon.png">
+      <FeedProvider Description="ms-resource:ProviderDescription" Icon="ms-appx:Images\ContosoProviderIcon.png">
           <Activation>
               <CreateInstance ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
           </Activation>
