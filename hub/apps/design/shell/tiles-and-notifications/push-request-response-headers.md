@@ -2,7 +2,7 @@
 title: Push notification service request and response headers (Windows Runtime apps) (Windows)
 description: This topic describes the service-to-service web APIs and protocols required to send a push notification.
 ms.topic: article
-ms.date: 10/06/2021
+ms.date: 05/03/2024
 ---
 
 # Push notification service request and response headers (Windows Runtime apps)
@@ -254,7 +254,7 @@ X-WNS-DeviceConnectionStatus: connected | disconnected | tempdisconnected
 |---------------|-------------|
 | connected     | The device is online and connected to WNS. |
 | disconnected  | The device is offline and not connected to WNS. |
-| tempconnected | The device temporarily lost connection to WNS, for instance when a 3G connection is dropped or the wireless switch on a laptop is thrown. It is seen by the Notification Client Platform as a temporary interruption rather than an intentional disconnection. |
+| tempconnected (deprecated) | The device temporarily lost connection to WNS, for instance when a 3G connection is dropped or the wireless switch on a laptop is thrown. It is seen by the Notification Client Platform as a temporary interruption rather than an intentional disconnection. |
 
 ### X-WNS-Error-Description
 
@@ -284,7 +284,7 @@ X-WNS-Status: received | dropped | channelthrottled
 
 | Value            | Description |
 |------------------|-------------|
-| received         | The notification was received and processed by WNS. **Note**: This does not guarantee that the device received the notification. |
+| received         | The notification was received and processed by WNS. **Note**:ï¿½This does not guarantee that the device received the notification. |
 | dropped          | The notification was explicitly dropped because of an error or because the client has explicitly rejected these notifications. Toast notifications will also be dropped if the device is offline. |
 | channelthrottled | The notification was dropped because the app server exceeded the rate limit for this specific channel. |
 
