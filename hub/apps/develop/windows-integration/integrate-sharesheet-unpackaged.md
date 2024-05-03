@@ -15,7 +15,7 @@ How to onboard an unpackaged app as a Share Target:
 - Provide the app with package identity
 - Implement the Share contract
 
-## Provide unpackaged apps package identity
+## Provide unpackaged apps with package identity
 
 An app can get package identity in two ways:  
 
