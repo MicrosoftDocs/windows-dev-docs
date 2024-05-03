@@ -19,6 +19,16 @@ The Windows Share Sheet is a system-provided UI that enables users to share cont
 | [Integrate unpackaged apps with Windows Share](integrate-sharesheet-unpackaged.md) | Discover how to integrate unpackaged apps with the Windows Share Sheet. |
 | [Share data - UWP apps](/windows/uwp/app-to-app/share-data) | Learn how to share data between UWP apps. |
 
+## Share registration videos
+
+The following video demonstrates how an app with package identity can handle shared files:
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=b09d23f4-db82-4df8-a236-5af04f7cf29a]
+
+This video demonstraes how an unpackaged app without package identity won't appear as a Share Target:
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=1cb658ce-30ec-49dc-baf0-04351771707d]
+
 ## See also
 
 - [Communication - Windows apps](/windows/apps/develop/communication)
