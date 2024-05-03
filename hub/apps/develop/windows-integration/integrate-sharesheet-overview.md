@@ -25,7 +25,7 @@ The following video demonstrates how an app with package identity can handle sha
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=b09d23f4-db82-4df8-a236-5af04f7cf29a]
 
-This video demonstraes how an unpackaged app without package identity won't appear as a Share Target:
+This video demonstrates how an unpackaged app without package identity won't appear as a Share Target:
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=1cb658ce-30ec-49dc-baf0-04351771707d]
 
