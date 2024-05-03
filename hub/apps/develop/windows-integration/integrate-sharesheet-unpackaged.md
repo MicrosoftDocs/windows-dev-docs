@@ -1,5 +1,5 @@
 ---
-description: Discover how to integrate unpackaged apps with the Windows Share.
+description: Discover how to integrate unpackaged apps with the Windows Share feature.
 title: Integrate unpackaged apps with Windows Share
 ms.topic: article
 ms.date: 04/16/2024
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Integrate unpackaged apps with Windows Share
 
-The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other apps. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. It provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
+This article explains how to integrate unpackaged apps with the **Windows Share** feature. The Share feature allows users to share content from one Windows app to another. An unpackaged app must be provided with package identity so it can register as a **Share Target**. Once registered, the app can receive and process shared files.
 
 How to onboard an unpackaged app as a Share Target:
 
@@ -39,9 +39,21 @@ When that is completed, you will create the package by following [Package a desk
 
 The second way to give your app package identity is to add a package with external location to your application and register it with your existing installer. The package with external location is an empty MSIX package that contains the .appxmanifest having identity, share target registration, and visual assets. The app's binaries are still managed by app's existing installer. When registering the package, you need to provide the app's install location in the API. It is important to keep the identity in the MSIX package manifest and the Win32 app manifest in sync with the certificate used for signing the app.
 
-#### Steps to grant package identity to an unpackaged app
+### Steps to grant package identity to an unpackaged app
 
-In this walkthrough on package identity, registration & share activation for unpackaged Win32 Applications, you will learn how to grant package identity to an unpackaged Win32 application by creating a package with external location. You will take the following steps using the PhotoStoreDemo sample:
+Documentation on how to create a package with external location is available here, including information on templates to use: [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
+
+The full sample app is available on GitHub: [SparsePackages (Packaged with External Location)](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages).
+
+## Register as a Share Target
+
+Once the app has package identity, the next step is to implement the Share contract. The Share contract allows your app to receive data from another app.
+
+You can follow the same steps in the [Register as a Share Target](integrate-sharesheet-packaged.md#register-as-a-share-target) section of the documentation for packaged apps to integrate with Share Sheet.
+
+## Walkthrough of the sample PhotoStore app
+
+In this walkthrough on package identity, registration & share activation for unpackaged Win32 Applications, you will learn how to grant package identity to an unpackaged Win32 application by creating a package with external location. Once the app has package identity, it can register and handle activation as a Share Target. You will take the following steps using the PhotoStoreDemo sample:
 
 - Generate the `AppxManifest.xml` file
 - Create a package
@@ -65,7 +77,7 @@ This is a sample `AppxManifest.xml` snippet with external content allowed:
     <Resource Language="en-us" />
   </Resources>
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.18950.0" MaxVersionTested="10.0.19000.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.19041.0" />
   </Dependencies>
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
@@ -236,16 +248,6 @@ public static void Main(string[] cmdArgs)
         }
     }
 ```
-
-Additional documentation on how to create a package with external location is available here, including information on templates to use: [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
-
-The full sample app is available on GitHub: [SparsePackages (Packaged with External Location)](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages).
-
-## Register as a Share Target
-
-Once the app has package identity, the next step is to implement the Share contract. The Share contract allows your app to receive data from another app.
-
-You can follow the same steps in the [Register as a Share Target](integrate-sharesheet-packaged.md#register-as-a-share-target) section of the documentation for packaged apps to integrate with Share Sheet.
 
 ## See also
 

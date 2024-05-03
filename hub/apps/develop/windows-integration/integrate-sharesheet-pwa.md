@@ -1,5 +1,5 @@
 ---
-description: Discover how to integrate a Progressive Web App (PWA) with the Windows Share.
+description: Discover how to integrate a Progressive Web App (PWA) with the Windows Share feature.
 title: Integrate Progressive Web Apps (PWAs) with Windows Share
 ms.topic: article
 ms.date: 04/16/2024
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Integrate Progressive Web Apps with Windows Share
 
-The **Share Sheet** is a system-provided UI that enables users to share content from your app with other apps in Windows. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. It provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
+This article explains how to integrate a Progressive Web App (PWA) with the **Windows Share** feature. This feature allows users to share content from one Windows app to another. The PWA registers as a **Share Target** to receive and handle shared files within the app.
 
 ## What is Share Target?
 
