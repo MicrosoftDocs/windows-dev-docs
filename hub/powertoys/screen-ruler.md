@@ -14,7 +14,7 @@ Screen ruler allows you to quickly measure pixels on your screen, based on image
 
 ## How to activate
 
-Use <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate and select which tool you want to measure with. To close, use <kbd>Esc</kbd> or select &#9587; in the toolbar.
+Use <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate and select which tool you want to measure with. To close, use <kbd>Esc</kbd> or select &#9587; in the toolbar.
 
 ## How to use
 
