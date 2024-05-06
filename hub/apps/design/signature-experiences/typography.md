@@ -19,7 +19,7 @@ As the visual representation of language, typography's main task is to communica
 ## Metrics
 
 ![The word 'Segoe' rendered in Segoe UI Variable with several aspects of the typeface highlighted](images/typography_Metrics.svg)
-
+https://github.com/MicrosoftDocs/windows-dev-docs/blob/docs/hub/apps/design/signature-experiences/typography.md
 ### Weights
 
 | Weight name   | Weight axis value | Visual |
