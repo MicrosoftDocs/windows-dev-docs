@@ -392,6 +392,8 @@ items:
               href: distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md
             - name: How to transition users from your web unpackaged app to Store packaged app
               href: distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md
+            - name: How to use Microsoft Store Web Installer to distribute apps
+              href: distribute-through-store/how-to-use-store-web-installer-for-distribution.md  
         - name: Publish your app to the Microsoft Store
           items: 
             - name: Publish your app to the Microsoft Store
