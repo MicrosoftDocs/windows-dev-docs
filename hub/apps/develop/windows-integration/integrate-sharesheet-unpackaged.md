@@ -251,7 +251,7 @@ public static void Main(string[] cmdArgs)
 
 ## Windows Share with package identity demo
 
-The following video demonstrates how adding package identity to an app provides the ability to seamlessly handle shared files in Windows Share:
+The following video demonstrates how an unpackaged app can be a share target after being granted package identity and registering as a share target:
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=49784732-8213-43b2-b1fe-003aa218432e]
 
