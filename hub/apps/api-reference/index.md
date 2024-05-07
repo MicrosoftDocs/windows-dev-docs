@@ -17,5 +17,6 @@ The following collections of APIs can be used to build Windows desktop apps for 
 | **.NET** | .NET is a free, cross-platform, open source developer platform for building many different types of applications, including Windows desktop apps. | [.NET API reference](/dotnet/api/) |
 | **Schema specifications** | File and XML schema specifications for Universal Windows Platform (UWP) apps. | [Schema reference](/uwp/schemas) |
 
-For inquiries about Windows data access or interoperability related to the Digital Markets Act (DMA), please use [this form](https://aka.ms/DMARequest).
+> [!IMPORTANT]
+> For inquiries about Windows data access or interoperability related to the Digital Markets Act (DMA), please use [this form](https://aka.ms/DMARequest).
 
