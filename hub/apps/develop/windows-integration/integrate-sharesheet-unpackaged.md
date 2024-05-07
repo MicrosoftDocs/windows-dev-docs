@@ -249,6 +249,12 @@ public static void Main(string[] cmdArgs)
     }
 ```
 
+## Windows Share with package identity demo
+
+The following video demonstrates how adding package identity to an app can provide it with the ability to seamlessly handle shared files in Windows Share:
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=49784732-8213-43b2-b1fe-003aa218432e]
+
 ## See also
 
 - [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview)
