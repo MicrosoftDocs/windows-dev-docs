@@ -732,9 +732,9 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="myfiletypes">
-            <uap2SupportedFileTypes>
+            <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
-                </uap2SupportedFileTypes>
+                </uap:SupportedFileTypes>
               <desktop2:DesktopPreviewHandler Clsid ="20000000-0000-0000-0000-000000000001" />
            </uap3:FileTypeAssociation>
         </uap:Extension>
