@@ -1,14 +1,14 @@
 ---
 description: You can use extensions to integrate your packaged desktop app with Windows 10 and later releases in predefined ways.
 title: Integrate your desktop app with Windows using packaging extensions
-ms.date: 09/11/2020
+ms.date: 05/07/2024
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 11, windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ---
 
-# Integrate your desktop app with Windows using packaging extensions
+# Integrate your desktop app with Windows by using packaging extensions
 
 If your desktop app is packaged (has package identity at runtime), then you can use extensions to integrate your app with Windows by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions). Also see [Features that require package identity](./modernize-packaged-apps.md).
 
@@ -670,9 +670,9 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="myfiletypes">
-            <uap2:SupportedFileTypes>
+            <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
-            </uap2:SupportedFileTypes>
+            </uap:SupportedFileTypes>
             <desktop2:ThumbnailHandler
               Clsid  ="20000000-0000-0000-0000-000000000001"  />
             </uap3:FileTypeAssociation>
