@@ -18,5 +18,5 @@ The following collections of APIs can be used to build Windows desktop apps for 
 | **Schema specifications** | File and XML schema specifications for Universal Windows Platform (UWP) apps. | [Schema reference](/uwp/schemas) |
 
 > [!IMPORTANT]
-> For inquiries about Windows data access or interoperability related to the Digital Markets Act (DMA), please use [this form](https://aka.ms/DMARequest).
+> For inquiries about Windows data access or interoperability related to the Digital Markets Act (DMA), please use [this form](https://go.microsoft.com/fwlink/?linkid=2271128&clcid=0x409).
 
