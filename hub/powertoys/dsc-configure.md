@@ -344,7 +344,7 @@ PowerAccent is the internal name for Quick Accent.
 | ToolbarPosition | String | Toolbar position index. | ✅ |
 | InputTime | Int | Input time delay in milliseconds. | ✅ |
 | SelectedLang | String | A character set to use. | ✅ |
-| ExcludedApps | String | '\r'-separated list of executable names to to prevent module activation if they're in a foreground. | ✅ |
+| ExcludedApps | String | '\r'-separated list of executable names to prevent module activation if they're in a foreground. | ✅ |
 | ShowUnicodeDescription | Boolean | Show the Unicode code and name of the currently selected character. | ✅ |
 | SortByUsageFrequency | Boolean | Sort characters by usage frequency. | ✅ |
 | StartSelectionFromTheLeft | Boolean | Start selection from the left. | ✅ |
