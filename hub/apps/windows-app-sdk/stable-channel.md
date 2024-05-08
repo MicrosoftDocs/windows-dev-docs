@@ -31,6 +31,15 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 ## Version 1.5
 
+### Version 1.5.3 (1.5.240428000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
+
+- Fixed an issue where `ItemsRepeater` sometimes caused its window to be brought to the front.
+- Fixed a potential crash when the transparency state of an `AcrylicBrush` was updated.
+- Fixed an issue where `ItemsRepeater` would not generate enough items if it was in a `ShouldConstrainToRootBounds="false"` popup that was taller or wider than the main window.
+- Fixed an issue where error **MSB4086** could occur at build time if the project file didn't specify a *TargetPlatformVersion*. This error was hit as part of GitHub issue [#9531](https://github.com/microsoft/microsoft-ui-xaml/issues/9531).
+
 ### Version 1.5.2 (1.5.240404000)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release and a new feature for Widget feed providers.

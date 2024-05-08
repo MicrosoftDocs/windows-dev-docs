@@ -273,6 +273,22 @@ items:
                   href: develop/smart-app-control/code-signing-for-smart-app-control.md
                 - name: Test your app's signature with Smart App Control
                   href: develop/smart-app-control/test-your-app-with-smart-app-control.md
+            - name: Cross Device Share API
+              items:
+                - name: Windows Share Overview
+                  href: develop/windows-integration/integrate-sharesheet-overview.md
+                - name: Packaged apps
+                  items:
+                    - name: Integrate packaged apps with Windows Share
+                      href: develop/windows-integration/integrate-sharesheet-packaged.md
+                    - name: Integrate PWAs with Windows Share
+                      href: develop/windows-integration/integrate-sharesheet-pwa.md
+                    - name: Share data in UWP apps >>
+                      href: /windows/uwp/app-to-app/share-data
+                - name: Unpackaged apps
+                  items:
+                    - name: Integrate unpackaged apps with Windows Share Sheet
+                      href: develop/windows-integration/integrate-sharesheet-unpackaged.md
         - name: DispatcherQueue
           href: develop/dispatcherqueue.md
     - name: Package and deploy
@@ -396,6 +412,8 @@ items:
               href: distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md
             - name: How to transition users from your web unpackaged app to Store packaged app
               href: distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md
+            - name: How to use Microsoft Store Web Installer to distribute apps
+              href: distribute-through-store/how-to-use-store-web-installer-for-distribution.md  
         - name: Publish your app to the Microsoft Store
           items: 
             - name: Publish your app to the Microsoft Store
