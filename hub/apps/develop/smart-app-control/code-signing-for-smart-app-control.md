@@ -15,9 +15,9 @@ There are several ways to sign your app.
 
 Code can be signed with any certificate, but Smart App Control only considers certificates issued by trusted providers. For information about how to obtain a code signing certificate from a trusted provider, see [Manage code signing certificates](/windows-hardware/drivers/dashboard/code-signing-cert-manage#get-or-renew-a-code-signing-certificate)
 
-## Sign your app with Azure Code Signing
+## Sign your app with Trusted Signing
 
-[Azure Code Signing](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/azure-code-signing-democratizing-trust-for-developers-and/ba-p/3604669) is the preferred way to sign your app. Azure Code Signing is currently in private preview.
+[Trusted Signing](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/trusted-signing-is-in-public-preview/ba-p/4103457) (formerly Azure Code Signing) is the preferred way to sign your app. Trusted Signing is currently in public preview.
 
 ## Sign your app with signtool.exe
 
