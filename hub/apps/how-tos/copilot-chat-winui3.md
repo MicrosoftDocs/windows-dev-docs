@@ -90,7 +90,7 @@ Update #MainWindow.xaml and #MainWindow.xaml.cs to display "Hello, world!" when 
 
 You should see Copilot generate the necessary code within code blocks labeled `MainWindow.xaml` and `MainWindow.xaml.cs`. These code blocks should each display two options: `Insert in new file` and `Preview`. Click `Preview` **while your cursor is active in the target file** to stage and accept the changes:
 
-:::image type="content" source="images/copilot-chat/4-preview-codebehind" alt-text="Preview codebehind":::
+:::image type="content" source="images/copilot-chat/4-preview-codebehind.png" alt-text="Preview codebehind":::
 
 :::image type="content" source="images/copilot-chat/5-preview-markup.png" alt-text="Preview markup":::
 
