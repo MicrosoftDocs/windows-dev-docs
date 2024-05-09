@@ -3,14 +3,11 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: nguyen-dows
 ms.author: chrnguyen
-ms.date: 03/31/2023
+ms.date: 05/08/2024
 ms.topic: how-to
 ---
 
 # Custom actions in Windows Terminal
-
-> [!IMPORTANT]
-> As of Windows Terminal version 1.4, the `keybindings` array has been renamed to `actions` inside the settings.json file. Support for the `keybindings` array still exists for backward compatibility, however the terminal will not automatically rename `keybindings` to `actions` inside your [settings.json file](../install.md#settings-json-file).
 
 You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette.
 
@@ -42,7 +39,24 @@ For example, this default setting uses the shortcut key <kbd>Ctrl+Shift+1</kbd> 
 { "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+shift+1" }
 ```
 
-<br />
+### Commands with command line arguments
+
+```json
+{ "command": { "action": "wt", "commandline": "value" }, "keys": "modifiers+key" }
+```
+
+For example, this default setting uses the shortcut key <kbd>Ctrl+Shift+O</kbd> to use [`wt`](../command-line-arguments.md) to open a new PowerShell tab with additional panes for Command Prompt and Ubuntu:
+
+```json
+{
+  "command": 
+  {
+    "action": "wt",
+    "commandline": "new-tab pwsh.exe ; split-pane -p \"Command Prompt\" -d C:\\ ; split-pane -p \"Ubuntu\" -H"
+  },
+  "keys": "ctrl+shift+o"
+}
+```
 
 ___
 
