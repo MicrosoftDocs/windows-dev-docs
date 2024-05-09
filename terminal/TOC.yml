@@ -42,6 +42,8 @@
       href: dynamic-profiles.md
     - name: JSON fragment extensions
       href: json-fragment-extensions.md
+    - name: Shell integration
+      href: tutorials/shell-integration.md
     - name: Cascadia Code
       href: cascadia-code.md
     - name: Terminal Chat
@@ -58,8 +60,6 @@
           href: tutorials/tab-title.md
         - name: Open tab or pane in same directory
           href: tutorials/new-tab-same-directory.md
-        - name: Shell integration
-          href: tutorials/shell-integration.md
         - name: Set the progress bar
           href: tutorials/progress-bar-sequences.md
     - name: Custom Terminal gallery
