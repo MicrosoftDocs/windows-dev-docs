@@ -1,5 +1,5 @@
 ---
-title: Dev Home extensions
+title: Dev Home Extensions
 description: Dev Home supports both default and custom-built extensions. Learn more about the Dev Home GitHub extension, how to customize Git widgets and notifications in the Dev Home dashboard, and how to build your own Dev Home extension.
 ms.date: 02/20/2024
 ms.topic: overview

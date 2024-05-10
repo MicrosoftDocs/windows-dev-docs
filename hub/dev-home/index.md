@@ -1,7 +1,7 @@
 ---
 title: Dev Home for Windows Developers
 description: Dev Home is a new control center for Windows providing the ability to track your workflows and coding tasks using customizable widgets, set up your dev environment, connect to your developer accounts and tools (such as GitHub), and install apps and packages all in one place.
-ms.date: 02/20/2024
+ms.date: 05/07/2024
 ms.topic: overview
 ---
 
@@ -16,6 +16,8 @@ Dev Home is a new control center for Windows providing the ability to monitor pr
 
 > [!div class="nextstepaction"]
 > [Install Dev Home (Preview)](https://aka.ms/devhome)
+
+To update Dev Home to the latest version, run the following command in Windows Terminal: `winget upgrade Microsoft.DevHome`
 
 ![Screenshot of the Dev Home welcome message](../images/devhome-welcome.png)
 
@@ -64,9 +66,9 @@ Learn more about the [Dev Home GitHub extension](extensions.md#dev-home-github-e
 
 ![Screenshot of customized GitHub widgets on the Dev Home dashboard.](../images/devhome-github-widgets.png)
 
-## Dev Home extensions
+## Dev Home Extensions
 
-Dev Home extensions power the functionality of Dev Home's customizable widgets. By default, Dev Home includes the GitHub extension, but you can also create and share your own custom-built extensions.
+Dev Home Extensions power the functionality of Dev Home's customizable widgets. By default, Dev Home includes the GitHub extension, but you can also create and share your own custom-built extensions.
 
 Learn more about **[Dev Home extensions](./extensions.md)**, including how to create customized GitHub widgets, set up GitHub notifications, create custom ADO widgets, or build and share your own Dev Home extensions.
 
@@ -79,6 +81,12 @@ The [Dev Home Azure extension](https://apps.microsoft.com/detail/9MV8F79FGXTR) p
 2. Select **Add a widget** from the top-right of your Dev Home dashboard. A list of widget options will appear that you can pin and then customize to your liking.
 
 ![Screenshot of an Azure widget Query Result showing DevOp items including an Epic and User Story in Dev Home](../images/dev-home-ado.png)
+
+## Dev Home Environments
+
+Dev Home Environments can help you to centralize your interactions with virtual or cloud environments in a single place. Quickly launch, start, stop, or sync virtual environments, seamlessly integrating with the Windows OS. Learn more about **[Dev Home Environments](./environments.md)**.
+
+![Environments in Dev Home](../images/devhome-environment-manage.png)
 
 ## Dev Home open source repos
 
