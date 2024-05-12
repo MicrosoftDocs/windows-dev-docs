@@ -87,7 +87,7 @@ Choose between four options to either convert items to be all lowercase, all upp
 
 ### Enumerate items
 
-If selected, you can use the following patterns as part of the _Replace with_ text:
+If **Use Regular Expressions** is selected, you can toggle enumeration features and use the following patterns as part of the _Replace with_ text:
 
 | Variable pattern | Explanation                                                            |
 |:-----------------|:-----------------------------------------------------------------------|
@@ -109,6 +109,17 @@ A _Replace with_ text `Image_${padding=4;increment=2;start=10}_` would produce t
 - Image_0010_.jpg
 - Image_0012_b.jpg
 - Image_0014_bc.jpg
+
+### Random string values
+
+If **Use Regular Expressions** is selected, you can toggle random string features and use the following patterns as part of the _Replace with_ text:
+
+| Variable pattern   | Explanation                                                                      |
+| :----------------- | :------------------------------------------------------------------------------- |
+| `${rstring=X}`     | Random string with ASCII alphabet characters and 0-9 numbers, customized length. |
+| `${rstringchar=X}` | Random string with ASCII alphabet characters, customized length.                 |
+| `${rstringnum=X}`  | Random string with 0-9 numbers, customized length.                               |
+| `${ruuidv4=X}`     | Random UUID according to v4 specification.                                       |
 
 ## Replace using file creation date and time
 
