@@ -1,11 +1,11 @@
 ---
-title: Dev Home Environments
+title: Environments in Dev Home
 description: Learn about interacting with your virtual or cloud environments from Dev Home.
 ms.date: 05/09/2024
 ms.topic: overview
 ---
 
-# Dev Home Environments
+# Environments in Dev Home
 
 A virtual environment is a self-contained workspace that allows you to maintain separate dependencies and settings for different projects, effectively isolating them from each other. The type of virtual environments supported currently include:
 
@@ -14,7 +14,7 @@ A virtual environment is a self-contained workspace that allows you to maintain 
 <!-- - A [Windows Sandbox](/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview)
 - A [Windows Subsystem for Linux (WSL) distribution](/windows/wsl/install) -->
 
-**Dev Home Environments** can help you to centralize your interactions with these virtual or cloud environments in a single place.
+**Environments in Dev Home** can help you to centralize your interactions with these virtual or cloud environments in a single place.
 
 - Create and configure virtual environments associated with GitHub repositories, apps, and packages.
 - Perform quick actions such as launch, snapshot, start, stop, or pinning environments to Windows Start menu or taskbar.
@@ -30,7 +30,7 @@ A virtual environment is a self-contained workspace that allows you to maintain 
 
 ![Screenshot of Experimental settings in Dev Home](../images/devhome-experimental-settings.png)
 
-## Manage your Dev Home Environments
+## Manage your Environments in Dev Home
 
 Each virtual environment that has been installed in Dev Home can display some key information:
 
@@ -89,7 +89,7 @@ Alternatively, you can remotely configure your environment:
 
 ![Machine configuration](../images/devhome-environment-config.png)
 
-## Build a Dev Home Environment Extension
+## Build an Extension for Environments in Dev Home
 
 If there is a type of virtual environment that you regularly use that is currently unsupported by Dev Home, you can build your own Dev Home Environment Extension to display the virtual environment in Dev Home.
 

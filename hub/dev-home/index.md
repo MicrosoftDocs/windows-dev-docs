@@ -82,9 +82,9 @@ The [Dev Home Azure extension](https://apps.microsoft.com/detail/9MV8F79FGXTR) p
 
 ![Screenshot of an Azure widget Query Result showing DevOp items including an Epic and User Story in Dev Home](../images/dev-home-ado.png)
 
-## Dev Home Environments
+## Environments in Dev Home
 
-Dev Home Environments can help you to centralize your interactions with virtual or cloud environments in a single place. Quickly launch, start, stop, or sync virtual environments, seamlessly integrating with the Windows OS. Learn more about **[Dev Home Environments](./environments.md)**.
+Environments in Dev Home can help you to centralize your interactions with virtual or cloud environments in a single place. Quickly launch, start, stop, or sync virtual environments, seamlessly integrating with the Windows OS. Learn more about **[Environments in Dev Home](./environments.md)**.
 
 ![Environments in Dev Home](../images/devhome-environment-manage.png)
 
