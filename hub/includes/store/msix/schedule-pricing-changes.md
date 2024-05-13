@@ -1,4 +1,4 @@
-The **Pricing** section of the [Pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency.
+The **Pricing** section of the [Pricing and availability](../../../apps/publish/publish-your-app/price-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency. Please note that Microsoft does not change the product pricing you published without your consent. You’re responsible for ensuring the prices reflect the latest market conditions, including foreign exchange rates. 
 
 :::image type="content" source="images/msix-set-app-pricing.png" lightbox="images/msix-set-app-pricing.png" alt-text="A screenshot of the Pricing and availability section showing how to set app pricing.":::
 
@@ -39,7 +39,7 @@ You can click **Schedule a price change** again to schedule as many subsequent c
 
 ## Override base price for specific markets
 
-By default, the options you select above will apply to all markets in which your app is offered. You can optionally change the price for one or more markets, either by choosing a different price tier or entering a free-form price in the market’s local currency.
+By default, the options you select above will apply to all markets in which your app is offered. You can optionally change the price for one or more markets, either by choosing a different price tier or entering a free-form price in the market’s local currency. By doing so, you can adhere to your regional pricing strategy and better address the fluctuations in the currency exchange rates in each market. 
 
 > [!IMPORTANT]
 > If your previously-published app supports Windows 8, those customers will always see the app at its **Base price**, even if you select a different price for their market.
