@@ -35,15 +35,15 @@ The goal of this how-to is to equip you with **vocabulary** and **prompting tech
 
 In Visual Studio, select **View > GitHub Copilot Chat**.
 
-:::image type="content" source="images/copilot-chat/0-view-github-copilot-chat.png" alt-text="Display Copilot Chat":::
+:::image type="content" source="images/copilot-chat/0-view-github-copilot-chat.png" alt-text="Screenshot of Copilot Chat being selected":::
 
-This opens the GitHub Copilot Chat pane on the left side of the Visual Studio window. You can use this chat window to ask Copilot for help with your code. This technique is useful when you're working across multiple files and don't mind explicitly specifying the files that need to change, and it's the technique we'll focus on in this how-to.
+This opens the **GitHub Copilot Chat pane** on the left side of the Visual Studio window. You can use this chat window to ask Copilot for help with your code. This technique is useful when you're working across multiple files and don't mind explicitly specifying the files that need to change, and it's the technique we'll focus on in this how-to.
 
 ### Prompting through inline Copilot Chat
 
 From any file's editor window, right click and select Ask Copilot to bring up the inline chat view of Copilot Chat in the editor itself.
 
-:::image type="content" source="images/copilot-chat/1-right-click.png" alt-text="Display inline Copilot Chat":::
+:::image type="content" source="images/copilot-chat/1-right-click.png" alt-text="Screenshot of displaying inline Copilot Chat via right-click":::
 
 This will reveal an inline chat window where you can prompt Copilot to assist you with the file you're currently working on. Use this when you're working within the context of a single file.
 
@@ -53,17 +53,14 @@ This will reveal an inline chat window where you can prompt Copilot to assist yo
 Type the following into the Copilot Chat window:
 
 ```
-Get me started with a blank WinUI3 / WinAppSDK project
+Get me started with a blank WinUI 3 / WinAppSDK project
 ```
 
 You should see instructions appear:
 
-:::image type="content" source="images/copilot-chat/2-get-me-started-winui3.png" alt-text="Demonstrating a naive prompt":::
+:::image type="content" source="images/copilot-chat/2-get-me-started-winui3.png" alt-text="Screenshot of response to 'Get me started with a blank WinUI 3 / WinAppSDK project'":::
 
 This highlights a limitation that you should be aware of: at the time of this writing, the Chat extension can't create a new project or file structure for you, but it *can* provide you with step-by-step instructions. Follow the instructions to create a new project.
-
-> [!TIP]
-> By default, the `GitHub Copilot Chat` pane is docked to the left side of the Visual Studio window. You can drag it to the right side of the window if you'd like to see both both the Chat interface and your `Solution Explorer` pane at the same time.
 
 
 ## Display a "Hello, world!" message
@@ -76,9 +73,9 @@ Update my app to display a "Hello, world!" message
 
 Copilot's response will likely indicate that it is unaware of your development context:
 
-:::image type="content" source="images/copilot-chat/3-update-my-app-nocontext.png" alt-text="Demonstrating a nocontext response":::
+:::image type="content" source="images/copilot-chat/3-update-my-app-nocontext.png" alt-text="Screenshot of response to 'Update my app to display...'":::
 
-Without explicitly specifying context, the Copilot Chat window is effectively a convenient interface that lets you prompt the underlying LLM *without including any additional context* by default.
+Without explicitly specifying context, the Copilot Chat window is effectively a convenient interface that lets you prompt the underlying LLM (Large Language Model) *without including any additional context* by default.
 
 To address this, you can use **slash commands** and **hash references** to explicitly provide Copilot with relevant context. See [Get better answers by setting the context for GitHub Copilot Chat in Visual Studio](/visualstudio/ide/copilot-chat-context) for details.
 
@@ -90,9 +87,9 @@ Update #MainWindow.xaml and #MainWindow.xaml.cs to display "Hello, world!" when 
 
 You should see Copilot generate the necessary code within code blocks labeled `MainWindow.xaml` and `MainWindow.xaml.cs`. These code blocks should each display two options: `Insert in new file` and `Preview`. Click `Preview` **while your cursor is active in the target file** to stage and accept the changes:
 
-:::image type="content" source="images/copilot-chat/4-preview-codebehind.png" alt-text="Preview codebehind":::
+:::image type="content" source="images/copilot-chat/4-preview-codebehind.png" alt-text="Screenshot of the Preview button when working with the codebehind file":::
 
-:::image type="content" source="images/copilot-chat/5-preview-markup.png" alt-text="Preview markup":::
+:::image type="content" source="images/copilot-chat/5-preview-markup.png" alt-text="Screenshot of the Preview button when working with the markup file":::
 
 This highlights an important consideration: **You must know the files that need to change**, in order to instruct Copilot to modify them. We'll use this pattern throughout the rest of our development workflow.
 
@@ -114,7 +111,7 @@ Update #MainWindow.xaml and #MainWindow.xaml.cs to display ONLY "Hello, world!" 
 
 Accept the suggested changes. You should see the button removed from the UI and the corresponding code removed from the codebehind file. Run the application to verify that only the "Hello, world!" message is displayed:
 
-:::image type="content" source="images/copilot-chat/6-results-hello-world.png" alt-text="Hello world results":::
+:::image type="content" source="images/copilot-chat/6-results-hello-world.png" alt-text="Screenshot of the hello world results":::
 
 
 ## Build the chat interface
@@ -231,7 +228,7 @@ namespace ImageGenerator
 
 Which yielded the following UI:
 
-:::image type="content" source="images/copilot-chat/7-working-example.png" alt-text="Working example":::
+:::image type="content" source="images/copilot-chat/7-working-example.png" alt-text="Screenshot of the working example's UI":::
 
 
 ## Fix and iterate upon the generated code
