@@ -87,7 +87,7 @@ Choose between four options to either convert items to be all lowercase, all upp
 
 ### Enumerate items
 
-If **Use Regular Expressions** is selected, you can toggle enumeration features and use the following patterns as part of the _Replace with_ text:
+If selected, you can use the following patterns as part of the _Replace with_ text:
 
 | Variable pattern | Explanation                                                            |
 |:-----------------|:-----------------------------------------------------------------------|
@@ -112,7 +112,7 @@ A _Replace with_ text `Image_${padding=4;increment=2;start=10}_` would produce t
 
 ### Random string values
 
-If **Use Regular Expressions** is selected, you can toggle random string features and use the following patterns as part of the _Replace with_ text:
+If selected, you can use the following patterns as part of the _Replace with_ text:
 
 | Variable pattern    | Explanation                                                                                |
 | :------------------ | :----------------------------------------------------------------------------------------- |
