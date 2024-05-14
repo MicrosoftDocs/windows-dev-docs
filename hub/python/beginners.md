@@ -197,6 +197,8 @@ We recommend the following resources to support you in continuing to learn about
 
 - [The Python.org Tutorials](https://docs.python.org/3/tutorial/index.html): Introduces the reader informally to the basic concepts and features of the Python language and system.
 
+- [Python Tutorials](https://www.programiz.com/python-programming): A free step-by-step guide to learn Python that provides learners a solid foundation in Python.
+
 ### Working with Python in VS Code
 
 - [Editing Python in VS Code](https://code.visualstudio.com/docs/python/editing): Learn more about how to take advantage of VS Code's autocomplete and IntelliSense support for Python, including how to customize their behavior... or just turn them off.
