@@ -31,7 +31,7 @@ When you select **Machine configuration**, Dev Home will provide multiple set up
 
 - **Install applications**: Use Dev Home to discover and install software applications -- one at a time or have Dev Home install several while you take a snack break.
 
-- **Add a Dev Drive**: To add a storage volume that utilizes ReFS and optimized security settings to be more performant for development-focused scenarios, consider adding Dev Drive. You must currently be running a Windows Insider Program Build on the Dev Channel in order to use Dev Drive. Learn more in the [Dev Drive](../dev-drive/index.md) docs.
+- **Add a Dev Drive**: To add a storage volume that utilizes ReFS and optimized security settings to be more performant for development-focused scenarios, consider adding Dev Drive. Learn more in the [Dev Drive](../dev-drive/index.md) docs.
 
 ## Clone a repo and store it on a Dev Drive
 
