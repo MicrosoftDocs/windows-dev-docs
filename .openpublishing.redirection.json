@@ -7734,6 +7734,11 @@
       "source_path": "hub/apps/windows-dotnet-maui/tutorial-maui-ai.md",
       "redirect_url": "/windows/ai/samples/tutorial-maui-ai",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/dev-options.md",
+      "redirect_url": "/windows/apps/get-started/",
+      "redirect_document_id": false
     }
   ]
 }

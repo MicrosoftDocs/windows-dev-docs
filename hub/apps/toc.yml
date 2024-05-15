@@ -28,21 +28,19 @@ items:
           href: whats-new/latest-doc-updates.md
     - name: Get started
       items: 
-        - name: Start here!
-          href: get-started/start-here.md
-        - name: Overview of app development options
+        - name: Overview of framework options
           href: get-started/index.md
-        - name: App development options and features
-          href: get-started/dev-options.md
-        - name: "Windows apps: packaging, deployment, and process"
-          href: get-started/intro-pack-dep-proc.md
-        - name: Sample apps for Windows
+        - name: Get started with WinUI
+          href: get-started/start-here.md
+        - name: Build your first app
+          href: how-tos/hello-world-winui3.md
+        - name: Samples and resources
           href: get-started/samples.md
-        - name: Windows developer best practices
+        - name: Best practices
           href: get-started/best-practices.md
-        - name: Windows developer FAQ
+        - name: FAQ
           href: get-started/windows-developer-faq.yml
-        - name: Windows developer glossary
+        - name: Glossary
           href: get-started/windows-developer-glossary.md
     - name: Design
       href: design/toc.yml
@@ -293,6 +291,8 @@ items:
           items: 
             - name: Package identity overview
               href: desktop/modernize/package-identity-overview.md
+            - name: "Windows apps: packaging, deployment, and process"
+              href: get-started/intro-pack-dep-proc.md
             - name: Features that require package identity
               items: 
                 - name: Overview
@@ -672,8 +672,6 @@ items:
                       href: windows-app-sdk/preview-experimental-unpackaged-tutorial.md
             - name: How tos
               items: 
-                - name: Build a Hello World app with C# & WinUI 3
-                  href: how-tos/hello-world-winui3.md
                 - name: Use Github Copilot to build WinUI 3 apps in Visual Studio
                   href: how-tos/github-copilot-winui-vs.md
                 - name: Target multiple platforms with WinUI 3

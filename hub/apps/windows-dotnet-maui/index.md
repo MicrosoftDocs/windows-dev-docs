@@ -2,7 +2,7 @@
 title: Build Windows apps with .NET MAUI
 description: Learn about .NET MAUI, benefits it provides to Windows developers, and how take your Windows apps cross-platform.
 ms.topic: article
-ms.date: 11/02/2022
+ms.date: 05/09/2024
 keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium
 ---
@@ -53,7 +53,18 @@ This [one-day live stream](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWeP
 
 ### Code samples
 
-Explore the .NET MAUI code samples in the [samples browser](/samples/browse/?expanded=dotnet&products=dotnet-maui) or on [GitHub](https://github.com/dotnet/maui-samples).
+Explore the .NET MAUI code samples in the [samples browser](/samples/browse/?expanded=dotnet&products=dotnet-maui) or on GitHub at [dotnet/maui-samples](https://github.com/dotnet/maui-samples).
+
+#### Samples that demonstrate specific tasks
+
+| Sample Name/Link | Task |
+|--|--|
+| [Animations](https://github.com/dotnet/maui-samples/tree/main/6.0/Animations) | **Use animations** to bring your app to life. |
+| [Behaviors](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/BehaviorsDemos) | **Add functionality without subclassing** using behaviors, instead attaching behavior classes to your controls. |
+| [Control Templates](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/ControlTemplateDemos) | **Define the visual structure** of `ContentView` derived custom controls, and `ContentPage` derived pages. |
+| [Data Binding](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/DataBindingDemos) | **Bind objects** to the actual UI elements, responsively updating one another when one changes. |
+| [Shell App](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/Shell) | **Use a .NET Shell app** to reduce complexity, reuse code, and integrate existing Windows functionality (such as URI navigation and integrated search bars) into your app. |
+| [Triggers](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/TriggersDemos) | **Use triggers** to selectively update, hide, or display specific controls when an event or data changes. |
 
 ## Get started with .NET MAUI on Windows
 
