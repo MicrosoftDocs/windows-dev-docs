@@ -240,6 +240,15 @@ Dynamic lighting has been removed from the roadmap for the time being.
 
 ## Version 1.4
 
+### Version 1.4.6 (1.4.240512000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
+
+- Fixed a potential crash when processing input.
+- Fixed an issue where a drag-and-drop operation that started from another app might not allow the correct Copy/Move/Link drop operations.
+- Fixed WinUI source server information for debugging to properly point to the microsoft-ui-xaml GitHub repo.
+- Fixed an issue with the fix for GitHub issue [#8857](https://github.com/microsoft/microsoft-ui-xaml/issues/8857) to properly merge a library's `resources.pri` into the app's `resources.pri`.
+
 ### Version 1.4.5 (1.4.240211001)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
