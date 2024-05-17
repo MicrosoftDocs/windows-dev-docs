@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Data binding in Windows apps
 
-Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data. Data binding allows you to separation of concerns between your data and UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app. In XAML markup, you can choose to use either the [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) or the [{Binding} markup extension](/windows/uwp/xaml-platform/binding-markup-extension). And you can even use a mixture of the two in the same app—even on the same UI element. `{x:Bind}` was new for UWP in Windows 10, is also available in Windows App SDK, and it has better performance.
+Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data. Data binding allows you to create a separation of concerns between your data and UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app. In XAML markup, you can choose to use either the [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) or the [{Binding} markup extension](/windows/uwp/xaml-platform/binding-markup-extension). And you can even use a mixture of the two in the same app—even on the same UI element. `{x:Bind}` was new for UWP in Windows 10, is also available in Windows App SDK, and it has better performance.
 
 | Topic | Description |
 |-------|-------------|
