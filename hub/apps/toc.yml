@@ -541,6 +541,14 @@ items:
                   href: publish/msstore-dev-cli/package-command.md
                 - name: Publish Command
                   href: publish/msstore-dev-cli/publish-command.md
+        - name: Analyze app performance
+          items: 
+            - name: Analyze performance of MSIX apps and games 
+              href: publish/analyze-app-performance/msix.md
+            - name: Analyze performance of MSI or EXE apps
+              href: publish/analyze-app-performance/msi-exe.md
+            - name: Analyze performance of GDK or Xbox games
+              href: publish/analyze-app-performance/gdk-xbox.md
         - name: Additional features for MSI and EXE apps
           items: 
             - name: Microsoft Store Submission API for MSI or EXE app
