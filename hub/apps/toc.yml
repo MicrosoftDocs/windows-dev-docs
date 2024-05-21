@@ -559,6 +559,8 @@ items:
               href: publish/analyze-msi-exe/analyze-app-performance.md
         - name: Additional features for MSIX apps
           items: 
+            - name: View actionable insights for MSIX apps and games
+              href: publish/actionable-analytics-insights.md
             - name: What's new on MSIX app overview page
               href: publish/whats-new-msix-app-overview-page.md
             - name: In-app ads
