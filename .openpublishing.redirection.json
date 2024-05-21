@@ -7736,6 +7736,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/powertoys/paste-as-plain-text.md",
+      "redirect_url": "/windows/powertoys/advanced-paste",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/get-started/dev-options.md",
       "redirect_url": "/windows/apps/get-started/",
       "redirect_document_id": false

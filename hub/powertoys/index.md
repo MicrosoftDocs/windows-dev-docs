@@ -24,6 +24,17 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 
 The currently available utilities include:
 
+### Advanced Paste
+
+:::row:::
+    :::column:::
+        [![Advanced Paste screenshot](../images/pt-advanced-paste.png)](advanced-paste.md)
+    :::column-end:::
+    :::column span="2":::
+        [Advanced Paste](advanced-paste.md) is an AI enhanced tool that enables you to intelligently paste the text from your clipboard into any format needed.
+    :::column-end:::
+:::row-end:::
+
 ### Always On Top
 
 :::row:::
@@ -181,17 +192,6 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         Use [Mouse Without Borders](mouse-without-borders.md) to interact with multiple computers from the same keyboard and mouse, sharing clipboard contents and files between the machines seamlessly.
-    :::column-end:::
-:::row-end:::
-
-### Paste As Plain Text
-
-:::row:::
-    :::column:::
-        [![Paste As Plain Text screenshot](../images/pt-paste-as-plain-text.png)](paste-as-plain-text.md)
-    :::column-end:::
-    :::column span="2":::
-        [Paste As Plain Text](paste-as-plain-text.md) allows you to paste text from your clipboard, excluding text-formatting, with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd>).
     :::column-end:::
 :::row-end:::
 
