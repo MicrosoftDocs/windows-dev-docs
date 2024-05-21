@@ -214,7 +214,7 @@ items:
               href: develop/ui-input/display-ui-objects.md
             - name: Choose the right visual tree viewer for your Windows app
               href: develop/ui-input/visual-tree.md
-        - name: Optimize performance & fundamentals
+        - name: Performance
           items: 
             - name: Overview
               href: performance/index.md
@@ -233,7 +233,7 @@ items:
         - name: Integrate with Windows
           href: develop/windows-integration/index.md
           items: 
-            - name: Windows feed providers
+            - name: Feed providers
               items: 
                 - name: Overview
                   href: develop/feeds/feed-providers.md
@@ -243,11 +243,11 @@ items:
                   href: develop/feeds/implement-feed-provider-win32.md
                 - name: Feed provider package manifest XML format
                   href: develop/feeds/feed-provider-manifest.md
-            - name: Windows Search providers
+            - name: Search providers
               items: 
                 - name: Overview
                   href: develop/search/search-providers.md
-            - name: Windows widget providers
+            - name: Widget providers
               items: 
                 - name: Overview
                   href: develop/widgets/widget-providers.md
@@ -283,6 +283,16 @@ items:
                   items:
                     - name: Integrate unpackaged apps with Windows Share Sheet
                       href: develop/windows-integration/integrate-sharesheet-unpackaged.md
+        - name: Windows AI and machine learning
+          items: 
+            - name: Windows AI >>
+              href: /windows/ai/
+            - name: Add DALL-E image generation to your WinUI 3 desktop app
+              href: how-tos/dall-e-winui3.md
+            - name: Add OpenAI chat completions to your WinUI 3 desktop app
+              href: how-tos/chatgpt-openai-winui3.md
+            - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
+              href: how-tos/copilot-chat-winui3.md
         - name: DispatcherQueue
           href: develop/dispatcherqueue.md
     - name: Package and deploy
@@ -638,6 +648,8 @@ items:
       items: 
         - name: Windows App SDK
           items: 
+            - name: Overview of Windows App SDK
+              href: windows-app-sdk/index.md
             - name: Setup guides and resources
               items: 
                 - name: System requirements
@@ -658,8 +670,6 @@ items:
                       href: winui/winui3/winui-project-templates-in-visual-studio.md
             - name: Build apps with the Windows App SDK
               items: 
-                - name: Overview of Windows App SDK
-                  href: windows-app-sdk/index.md
                 - name: Use the Windows App SDK in an existing project
                   href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
                 - name: Use the Windows App SDK in a WPF app
@@ -696,11 +706,11 @@ items:
                   href: get-started/simple-photo-viewer-winui3.md
                 - name: "Tutorial: Create a simple multi-platform photo viewer"
                   href: get-started/uno-simple-photo-viewer.md
-        - name: Windows UI Library (WinUI)
+        - name: WinUI
           items: 
             - name: Overview
               href: winui/index.md
-            - name: Windows UI Library 3
+            - name: WinUI 3
               href: winui/winui3/index.md
               items: 
                 - name: Build a C# .NET app with WinUI 3 and Win32 interop
@@ -711,7 +721,7 @@ items:
                   href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
                 - name: Localize your WinUI 3 app
                   href: winui/winui3/localize-winui3-app.md
-            - name: Windows UI Library 2
+            - name: WinUI 2
               href: winui/winui2/index.md
               items: 
                 - name: Get started with WinUI 2
@@ -892,16 +902,6 @@ items:
                       href: develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
                     - name: Diagnose component errors
                       href: develop/platform/csharp-winrt/authoring-diagnostics.md
-    - name: Windows AI and machine learning
-      items: 
-        - name: Windows AI and machine learning >>
-          href: /windows/ai/
-        - name: Add DALL-E image generation to your WinUI 3 desktop app
-          href: how-tos/dall-e-winui3.md
-        - name: Add OpenAI chat completions to your WinUI 3 desktop app
-          href: how-tos/chatgpt-openai-winui3.md
-        - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
-          href: how-tos/copilot-chat-winui3.md
     - name: API reference
       href: api-reference/index.md
       items: 
@@ -981,6 +981,6 @@ items:
                       href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
         - name: .NET API reference >>
           href: /dotnet/api/
-        - name: Schema specifications for Windows apps >>
+        - name: Schema specs for Windows apps >>
           href: /uwp/schemas/
 
