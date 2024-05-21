@@ -563,6 +563,8 @@ items:
               href: publish/actionable-analytics-insights.md
             - name: What's new on MSIX app overview page
               href: publish/whats-new-msix-app-overview-page.md
+            - name: Product page experiments
+              href: publish/product-page-experiments.md
             - name: In-app ads
               href: publish/in-app-ads.md
             - name: App management and services

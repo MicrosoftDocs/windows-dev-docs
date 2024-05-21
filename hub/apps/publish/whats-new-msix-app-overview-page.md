@@ -83,13 +83,19 @@ Once the product is live or it has been updated, the following celebratory banne
 
 :::image type="content" source="../../includes/store/msix/images/new-overview-congrats-banner.png" lightbox="../../includes/store/msix/images/new-overview-congrats-banner.png" alt-text="A screenshot of the new msix overview page showing congrats banner after app is successfully published.":::
 
-## 7.	Check product details which are live in Store directly from the application overview page
+## 7.	Start update CTA is now available in Product release section
 
-If the developer wants to check the product details which are currently live on the Store, they can simply go to ‘Store presence’ section and click on product details.
+To start a update submission for your app, click on 'Start update'. This will create an update submission. Update the details you want for your app and then submit it for certification.
+
+:::image type="content" source="../../includes/store/msix/images/new-overview-start-update.png" lightbox="../../includes/store/msix/images/new-overview-start-update.png" alt-text="A screenshot of the new msix overview page showing how to create an update submission for your app.":::
+
+## 8.	Check product details which are live in Store directly from the application overview page
+
+If the developer wants to check the product details which are currently live on the Store, they can simply go to ‘Store presence’ section and click on 'View product details'.
 
 :::image type="content" source="../../includes/store/msix/images/new-overview-store-presence.png" lightbox="../../includes/store/msix/images/new-overview-store-presence.png" alt-text="A screenshot of the new msix overview page showing Store presence section for viewing app details which are currently live on the Store.":::
 
-## 8.	Make product unavailable/available options have been moved to the Store presence card
+## 9.	Make product unavailable/available options have been moved to the Store presence card
 
 Previously, Make product unavailable/available options were accessible from the top right corner of the application overview page.
 
@@ -103,7 +109,7 @@ Now, these options have been moved to Store presence card. Just toggle the switc
 
 :::image type="content" source="../../includes/store/msix/images/new-overview-make-product-available.png" lightbox="../../includes/store/msix/images/new-overview-make-product-available.png" alt-text="A screenshot of the new msix overview page showing how to make product available in Store":::
 
-## 9.	Product identity details can also be accessed from the application overview page
+## 10.	Product identity details can also be accessed from the application overview page
 
 Apart from accessing the product identity details from the Product identity page on the left focus navigation, the developer can also access the details from a dedicated Product identity card on application overview page.
 
