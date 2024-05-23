@@ -26,7 +26,7 @@ From the Settings menu, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Enable Paste with AI | Enables the AI-powered paste feature. An OpenAI API key is required. |
+| Enable Paste with AI | Enables the AI-powered paste feature. An OpenAI API key is required (requires an account on [platform.openai.com](https://platform.openai.com/)). |
 | Custom format preview | Enable to preview the output of the custom format before pasting. |
 | Clipboard history | Enable to automatically save clipboard history. |
 | Open Advanced Paste shortcut | The customizable keyboard command to open the **Advanced Paste** window. |
