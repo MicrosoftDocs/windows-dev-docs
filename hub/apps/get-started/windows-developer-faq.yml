@@ -68,7 +68,7 @@ sections:
           Yes - "WinUI 3 app” is the term that we recommend you use.
       - question: Can I incrementally update my WinUI 2 app to WinUI 3 by gradually replacing WinUI 2 components with WinUI 3 components?
         answer: |
-          No. Windows App SDK can't be used in UWP apps, and WinUI 2 can't be mixed with WinUI 3. See [About migrating from UWP to the Windows App SDK](./migrate-from-uwp-to-winappsdk.md).
+          No. Windows App SDK can't be used in UWP apps, and WinUI 2 can't be mixed with WinUI 3. See [Migrate from UWP to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md).
       - question: How hard is it to migrate a UWP app to Windows App SDK / WinUI 3? 
         answer: |
           Migrating UI components is generally straightforward (for C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)). Otherwise, the cost of migrating from UWP to Windows App SDK / WinUI 3 will depend primarily on these factors:
@@ -78,7 +78,7 @@ sections:
            3. **UI component libraries:** If you use UI component libraries, then you'll need new versions of them that target WinUI 3.
            4. If your UWP source code is written in the now-superseded C++/CX, then some source code porting will be involved. See [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx).
 
-          For more info about UWP migration, see [About migrating from UWP to the Windows App SDK](./migrate-from-uwp-to-winappsdk.md).
+          For more info about UWP migration, see [Migrate from UWP to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md).
       - question: If I have an existing UWP app in the Store, can I publish a new packaged WinUI 3 app using the same identifiers?
         answer: |
           Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version. This guidance applies only to desktop apps. Xbox, HoloLens, and Surface Hub apps can't migrate to WinUI 3. 
@@ -87,7 +87,7 @@ sections:
            See [Deployment overview](../package-and-deploy/index.md).
       - question: Where can I find Windows App SDK migration guidance?
         answer: |
-          See [About migrating from UWP to the Windows App SDK](./migrate-from-uwp-to-winappsdk.md).
+          See [Migrate from UWP to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md).
       - question: Do I need to use XAML markup if I want to use WinUI 3?
         answer: |
           No. UI controls can be created in code. But there are many benefits to representing your WinUI 3 UI in the form of declarative XAML markup, such as improved developer experience. 
