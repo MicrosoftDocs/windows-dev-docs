@@ -7,9 +7,9 @@ keywords: windows win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
 
-# Latest downloads for the Windows App SDK
+# Latest Windows App SDK downloads
 
-This page provides download links to the *latest* releases of the [Windows App SDK](index.md) in the three release channels (stable, preview, and experimental). To get started quickly, download the latest x64 installer below. Or, for older releases, see [Older downloads for the Windows App SDK](./older-downloads.md).
+This page provides download links to the *latest* releases of the [Windows App SDK](index.md) in the three release channels (stable, preview, and experimental). To get started quickly, download the latest x64 installer below. Or, for older releases, see [Archive of Windows App SDK downloads](downloads-archive.md).
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
 > [Download the latest x64 stable installer (1.5.3)](https://aka.ms/windowsappsdk/1.5/latest/windowsappruntimeinstall-x64.exe)

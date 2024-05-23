@@ -20,7 +20,8 @@ To get started, [install the tools and SDK](https://developer.microsoft.com/wind
 
 Feature | Description
 :------ | :------
-Windows Apps SDK | [The Windows App SDK](../windows-app-sdk/index.md) is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 (and downlevel to Windows 10, version 1809).
+Windows App SDK | [The Windows App SDK](../windows-app-sdk/index.md) is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 (and downlevel to Windows 10, version 1809).
+Windows App SDK release notes | Details on [the latest stable release of the Windows App SDK](../windows-app-sdk/stable-channel.md), which can be used by apps in production environments and by apps published to the Microsoft Store.
 Create a new app with the Windows App SDK | The Windows App SDK includes WinUI 3 project templates that enable you to create apps with an entirely WinUI-based user interface. When you create a project using these templates (see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)), the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3.
 Use the Windows App SDK in an existing project | If you have an existing project in which you want to use the Windows App SDK, [you can install the latest version of the Windows App SDK NuGet package in your project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md). Unpackaged apps must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
 Download the Windows App SDK | There are several packages and release channels for the Windows App SDK. The [Download the Windows App SDK page](../windows-app-sdk/downloads.md) provides guidance on which ones you need, download links, and installation instructions.
@@ -51,8 +52,9 @@ Pen haptics | [Pen haptic feedback](../design/input/pen-haptics.md), introduced 
 WinHttp connection groups | [The WinHttpQueryConnectionGroup function](/windows/win32/api/winhttp/nf-winhttp-winhttpqueryconnectiongroup) allows you to pull the current state of WinHttp's connections.
 VPN foreground activation | New APIs have been added to VPN foreground activation, which is often used to let a user input VPN credentials. See the [VpnForegroundActivationOperation class](/uwp/api/windows.networking.vpn.vpnforegroundactivatedeventargs) and [VpnForegroundActivatedEventArgs](/uwp/api/windows.networking.vpn.vpnforegroundactivatedeventargs) for more information.
 
-
 ## Samples
+
+The [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) on GitHub is updated regularly to showcase the latest additions and improvements to WinUI in the Windows App SDK. The gallery app can also be downloaded from the [Microsoft Store](https://apps.microsoft.com/detail/9p3jfpwwdzrc).
 
 The [Family Notes](https://github.com/Microsoft/Windows-appsample-familynotes) has been updated with a user interface created using WinUI.
 
@@ -62,5 +64,3 @@ The [Family Notes](https://github.com/Microsoft/Windows-appsample-familynotes) h
 * Check pen haptics capabilities: SimpleHapticsController has properties for pen hardware capabilities, such as IsIntensitySupported, IsPlayCountSupported, SupportedFeedback, etc.
 * Start and stop haptic feedback: start and stop feedback using variations of SendHapticFeedback and StopFeedback API
 * Trigger both inking and interaction haptic feedback: the code shows how to trigger inking feedback for inking scenarios and interaction feedback for user interactions
-
-[The WinUI 2 Gallery](/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/) has been updated to showcase the latest additions to the Windows UI Library in WinUI 2.7.

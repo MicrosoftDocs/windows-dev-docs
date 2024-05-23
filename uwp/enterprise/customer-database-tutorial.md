@@ -20,7 +20,7 @@ The starting point for this tutorial is a single-page app with minimal UI and fu
 
 ### Prerequisites
 
-* [Ensure you have the latest version of Visual Studio and the Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/)
+* [Ensure you have the latest version of Visual Studio and the Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)
 * [Clone or download the Customer Database Tutorial sample](https://github.com/microsoft/windows-tutorials-customer-database)
 
 After you've cloned/downloaded the repo, you can edit the project by opening **CustomerDatabaseTutorial.sln** with Visual Studio.
@@ -67,26 +67,26 @@ NuGet package has already been included in this project. Let's add the grid to o
 
 2. Below the **CommandBar** within the main **RelativePanel** of the View, add a **RadDataGrid** control, with some basic configuration options:
 
-	```xaml
-	<Grid
-	    x:Name="CustomerListRoot"
-	    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-	    <RelativePanel>
-	        <CommandBar
-	            x:Name="mainCommandBar"
-	            HorizontalAlignment="Stretch"
-	            Background="AliceBlue">
-	            <!--CommandBar content-->
+    ```xaml
+    <Grid
+        x:Name="CustomerListRoot"
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RelativePanel>
+            <CommandBar
+                x:Name="mainCommandBar"
+                HorizontalAlignment="Stretch"
+                Background="AliceBlue">
+                <!--CommandBar content-->
             </CommandBar>
             <telerikGrid:RadDataGrid
-	            x:Name="DataGrid"
-	            BorderThickness="0"
-	            ColumnDataOperationsMode="Flyout"
-	            GridLinesVisibility="None"
-	            GroupPanelPosition="Left"
-	            RelativePanel.AlignLeftWithPanel="True"
-	            RelativePanel.AlignRightWithPanel="True"
-	            RelativePanel.Below="mainCommandBar" />
+                x:Name="DataGrid"
+                BorderThickness="0"
+                ColumnDataOperationsMode="Flyout"
+                GridLinesVisibility="None"
+                GroupPanelPosition="Left"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.Below="mainCommandBar" />
         </RelativePanel>
     </Grid>
     ```
@@ -107,24 +107,24 @@ When it's initialized, **ViewModels\CustomerListPageViewModel.cs** calls the **G
 
 1. In **ViewModels\CustomerListPageViewModel.cs**, update your **GetCustomerListAsync** method with this code:
 
-	```csharp
-	public async Task GetCustomerListAsync()
-	{
-	    var customers = await App.Repository.Customers.GetAsync(); 
-	    if (customers == null)
-	    {
-	        return;
-	    }
-	    await DispatcherHelper.ExecuteOnUIThreadAsync(() =>
-	    {
-	        Customers.Clear();
-	        foreach (var c in customers)
-	        {
-	            Customers.Add(new CustomerViewModel(c));
-	        }
-	    });
-	}
-	```
+    ```csharp
+    public async Task GetCustomerListAsync()
+    {
+        var customers = await App.Repository.Customers.GetAsync(); 
+        if (customers == null)
+        {
+            return;
+        }
+        await DispatcherHelper.ExecuteOnUIThreadAsync(() =>
+        {
+            Customers.Clear();
+            foreach (var c in customers)
+            {
+                Customers.Add(new CustomerViewModel(c));
+            }
+        });
+    }
+    ```
     The **GetCustomerListAsync** method is called when the ViewModel is loaded, but before this step, it didn't do anything. Here, we've added a call to the **GetAsync** method in **Repository/SqlCustomerRepository**. This allows it to contact the repository to retrieve an enumerable collection of Customer objects. It then parses them into individual objects, before adding them to its internal **ObservableCollection** so they can be displayed and edited.
 
 2. Run your app - you'll now see the data grid displaying the list of customers.
@@ -147,7 +147,7 @@ You can edit the entries in the data grid by double-clicking them, but you need 
     public event PropertyChangedEventHandler PropertyChanged;
 
     public void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
-	    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     ```
 
     The **OnPropertyChanged** method makes it easy for your setters to raise the **PropertyChanged** event, which is necessary for two-way data binding.
@@ -157,15 +157,15 @@ You can edit the entries in the data grid by double-clicking them, but you need 
     ```csharp
     public CustomerViewModel SelectedCustomer
     {
-	    get => _selectedCustomer;
-	    set
-	    {
+        get => _selectedCustomer;
+        set
+        {
             if (_selectedCustomer != value)
             {
-	            _selectedCustomer = value;
-	            OnPropertyChanged();
+                _selectedCustomer = value;
+                OnPropertyChanged();
             }
-	    }
+        }
     }
     ```
 
@@ -190,12 +190,12 @@ Now that you can see and edit your customers, you'll need to be able to push you
     ```csharp
     public async Task UpdateCustomersAsync()
     {
-	    foreach (var modifiedCustomer in Customers
-	        .Where(x => x.IsModified).Select(x => x.Model))
-	    {
-	        await App.Repository.Customers.UpsertAsync(modifiedCustomer);
-	    }
-	    await GetCustomerListAsync();
+        foreach (var modifiedCustomer in Customers
+            .Where(x => x.IsModified).Select(x => x.Model))
+        {
+            await App.Repository.Customers.UpsertAsync(modifiedCustomer);
+        }
+        await GetCustomerListAsync();
     }
     ```
     This code utilizes the **IsModified** property of **ViewModels\CustomerViewModel.cs**, which is automatically updated whenever the customer is changed. This allows you to avoid unnecessary calls, and to only push changes from updated customers to the database.
@@ -213,15 +213,15 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
 
     public bool AddingNewCustomer
     {
-	    get => _addingNewCustomer;
-	    set
-	    {
+        get => _addingNewCustomer;
+        set
+        {
             if (_addingNewCustomer != value)
             {
-	            _addingNewCustomer = value;
-	            OnPropertyChanged();
+                _addingNewCustomer = value;
+                OnPropertyChanged();
             }
-	    }
+        }
     }
     ```
 
@@ -286,14 +286,14 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
 1. Navigate back to **Views\CustomerListPage.xaml**, and add a **StackPanel** with the following properties between your **CommandBar** and your data grid:
 
     ```xaml
-	<StackPanel
-	    x:Name="newCustomerPanel"
-	    Orientation="Horizontal"
-	    x:Load="{x:Bind ViewModel.AddingNewCustomer, Mode=OneWay}"
-	    RelativePanel.Below="mainCommandBar">
-	</StackPanel>
+    <StackPanel
+        x:Name="newCustomerPanel"
+        Orientation="Horizontal"
+        x:Load="{x:Bind ViewModel.AddingNewCustomer, Mode=OneWay}"
+        RelativePanel.Below="mainCommandBar">
+    </StackPanel>
     ```
-	The **x:Load** attribute ensures that this panel only appears when you're adding a new customer.
+    The **x:Load** attribute ensures that this panel only appears when you're adding a new customer.
 
 2. Make the following change to the position of your data grid, to ensure that it moves down when the new panel appears:
 
@@ -305,34 +305,34 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
 
     ```xaml
     <StackPanel
-	    x:Name="newCustomerPanel"
-	    Orientation="Horizontal"
-	    x:Load="{x:Bind ViewModel.AddingNewCustomer, Mode=OneWay}"
-	    RelativePanel.Below="mainCommandBar">
-	    <TextBox
-	        Header="First name"
-	        PlaceholderText="First"
-	        Margin="8,8,16,8"
-	        MinWidth="120"
-	        Text="{x:Bind ViewModel.NewCustomer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-	    <TextBox
-	        Header="Last name"
-	        PlaceholderText="Last"
-	        Margin="0,8,16,8"
-	        MinWidth="120"
-	        Text="{x:Bind ViewModel.NewCustomer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-	    <TextBox
-	        Header="Address"
-	        PlaceholderText="1234 Address St, Redmond WA 00000"
-	        Margin="0,8,16,8"
-	        MinWidth="280"
-	        Text="{x:Bind ViewModel.NewCustomer.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-	    <TextBox
-	        Header="Company"
-	        PlaceholderText="Company"
-	        Margin="0,8,16,8"
-	        MinWidth="120"
-	        Text="{x:Bind ViewModel.NewCustomer.Company, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        x:Name="newCustomerPanel"
+        Orientation="Horizontal"
+        x:Load="{x:Bind ViewModel.AddingNewCustomer, Mode=OneWay}"
+        RelativePanel.Below="mainCommandBar">
+        <TextBox
+            Header="First name"
+            PlaceholderText="First"
+            Margin="8,8,16,8"
+            MinWidth="120"
+            Text="{x:Bind ViewModel.NewCustomer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox
+            Header="Last name"
+            PlaceholderText="Last"
+            Margin="0,8,16,8"
+            MinWidth="120"
+            Text="{x:Bind ViewModel.NewCustomer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox
+            Header="Address"
+            PlaceholderText="1234 Address St, Redmond WA 00000"
+            Margin="0,8,16,8"
+            MinWidth="280"
+            Text="{x:Bind ViewModel.NewCustomer.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox
+            Header="Company"
+            PlaceholderText="Company"
+            Margin="0,8,16,8"
+            MinWidth="120"
+            Text="{x:Bind ViewModel.NewCustomer.Company, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>
     ```
 
@@ -383,19 +383,19 @@ Deleting a customer is the final basic operation that you need to implement. Whe
 
 2. In **Views\CustomerListPage.xaml**, update the stack panel for adding a new customer so it contains a second button:
 
-	```xaml
-	<StackPanel>
-	    <!--Text boxes for adding a new customer-->
-	    <AppBarButton
-	        x:Name="DeleteNewCustomer"
-	        Click="{x:Bind ViewModel.DeleteNewCustomerAsync}"
-	        Icon="Cancel"/>
-	    <AppBarButton
-	        x:Name="SaveNewCustomer"
-	        Click="{x:Bind ViewModel.SaveInitialChangesAsync}"
-	        Icon="Save"/>
-	</StackPanel>
-	```
+    ```xaml
+    <StackPanel>
+        <!--Text boxes for adding a new customer-->
+        <AppBarButton
+            x:Name="DeleteNewCustomer"
+            Click="{x:Bind ViewModel.DeleteNewCustomerAsync}"
+            Icon="Cancel"/>
+        <AppBarButton
+            x:Name="SaveNewCustomer"
+            Click="{x:Bind ViewModel.SaveInitialChangesAsync}"
+            Icon="Save"/>
+    </StackPanel>
+    ```
 
 3. In **ViewModels\CustomerListPageViewModel.cs**, update the **DeleteNewCustomerAsync** method to delete the new customer:
 

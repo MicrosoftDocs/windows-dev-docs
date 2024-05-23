@@ -63,7 +63,7 @@ If you created a project using version 0.8 (for example, version 0.8.4), then yo
 ## Update from 0.8 or 0.8 Preview to 1.0 Experimental or Preview 3
 
 > [!IMPORTANT]
-> Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
+> Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you've already installed one of these previews, see [Important issue impacting 1.0 Preview 1 and Preview 2](release-notes-archive/preview-channel-1.0.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [Version 1.0 Preview 3 (1.0.0-preview3)](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3) instead.
 
 If you created a project using version 0.8 Preview or any version of 0.8 (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Preview 3 or Experimental release.
 
