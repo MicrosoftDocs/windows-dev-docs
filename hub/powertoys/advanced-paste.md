@@ -1,6 +1,6 @@
 ---
 title: PowerToys Advanced Paste for Windows
-description: An AI enhanced tool that enables you to intelligently paste the text from your clipboard into any format needed.
+description: A tool that enables you to paste the text from your clipboard into any format needed. It can be enhanced with an AI powered option that is 100% opt-in and requires an Open AI key.
 ms.date: 04/24/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
@@ -8,7 +8,7 @@ no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 
 # Advanced Paste
 
-PowerToys **Advanced Paste** is an AI enhanced tool that enables you to intelligently paste the text from your clipboard into any format needed.
+PowerToys **Advanced Paste** is a tool that enables you to paste the text from your clipboard into any format needed. It can paste as plain text, markdown, or json directly with the UX or with a direct keystroke invoke. These are fully locally executed. In addition, it has an AI powered option that is 100% opt-in and requires and Open AI key.
 
 ## Getting started
 
@@ -49,6 +49,9 @@ Advanced Paste includes several text-based paste options. These options are avai
 
 :::image type="content" source="../images/pt-paste-as-plain-text.png" alt-text="Paste as Plain Text screenshot":::
 
+> [!NOTE]
+> Paste as Plain Text is a feature that runs locally and doesn't use AI.
+
 ### Paste as JSON
 
 **Paste as JSON** enables you to paste text stored in your clipboard, updating any text-formatting to JSON, using a quick key shortcut. Any formatting included with the clipboard text will be replaced with a JSON formatted version of the text.
@@ -75,6 +78,9 @@ JSON output:
 }
 ```
 
+> [!NOTE]
+> Paste as JSON is a feature that runs locally and doesn't use AI.
+
 ### Paste as Markdown
 
 **Paste as Markdown** enables you to paste text stored in your clipboard, updating any text-formatting to markdown, using a quick key shortcut. Any formatting included with the clipboard text will be replaced with a markdown formatted version of the text.
@@ -90,6 +96,9 @@ Markdown output:
 ```md
 **Paste** *as* [Markdown](https://en.wikipedia.org/wiki/Markdown)
 ```
+
+> [!NOTE]
+> Paste as Markdown is a feature that runs locally and doesn't use AI.
 
 ### Paste text with AI
 
