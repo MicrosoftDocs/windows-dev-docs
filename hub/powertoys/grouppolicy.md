@@ -121,7 +121,6 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump|
 |Mouse Pointer Crosshairs|Mouse Pointer Crosshairs: Configure enabled state|ConfigureEnabledUtilityMousePointerCrosshairs|
 |Mouse Without Borders|Mouse Without Borders: Configure enabled state|ConfigureEnabledUtilityMouseWithoutBorders|
-|Paste as Plain Text|Paste as Plain Text: Configure enabled state|ConfigureEnabledUtilityPastePlain|
 |Peek|Peek: Configure enabled state|ConfigureEnabledUtilityPeek|
 |Power Rename|Power Rename: Configure enabled state|ConfigureEnabledUtilityPowerRename|
 |PowerToys Run|PowerToys Run: Configure enabled state|ConfigureEnabledUtilityPowerLauncher|
