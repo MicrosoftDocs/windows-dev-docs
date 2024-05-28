@@ -11,7 +11,7 @@ ms.date: 03/01/2024
 # Install React directly on Windows
 
 
-This guide will walk through installing React on a Linux distribution (ie. Ubuntu) running on the Windows Subsystem for Linux (WSL) using the [vite](https://vitejs.dev/) frontend tooling.
+This guide will walk through installing React directly on Windows using the [vite](https://vitejs.dev/) frontend tooling.
 
 We recommend following these instructions if you are new to React and just interested in learning. If you are creating a single-page app (SPA) that you would like to use Bash commands or tools with and/or plan to deploy to a Linux server, we recommend that you [install with vite on Windows Subsystem for Linux (WSL)](./react-on-wsl.md).
 
