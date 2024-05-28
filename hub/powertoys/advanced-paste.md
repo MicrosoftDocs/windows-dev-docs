@@ -8,7 +8,7 @@ no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 
 # Advanced Paste
 
-PowerToys **Advanced Paste** is a tool that enables you to paste the text from your clipboard into any format needed. It can paste as plain text, markdown, or json directly with the UX or with a direct keystroke invoke. These are fully locally executed. In addition, it has an AI powered option that is 100% opt-in and requires and Open AI key.
+PowerToys **Advanced Paste** is a tool that enables you to paste the text from your clipboard into any format needed. It can paste as plain text, markdown, or JSON directly with the UX or with a direct keystroke invoke. These actions are executed entirely on your local machine. Additionally, the tool has an AI-powered option that is 100% opt-in and requires entering an OpenAI key in settings.
 
 ## Getting started
 
