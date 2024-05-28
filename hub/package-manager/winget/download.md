@@ -80,7 +80,7 @@ winget download --id Microsoft.WingetCreate --installer-type msix
 The following example downloads an application by architecture and scope to a specific download directory.
 
 ```CMD
-winget install --id Microsoft.PowerToys --scope machine --architecture x64 --download-directory <Path>
+winget download --id Microsoft.PowerToys --scope machine --architecture x64 --download-directory <Path>
 ```
 
 
