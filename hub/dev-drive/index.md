@@ -287,7 +287,7 @@ The following filters may be used with Dev Drive:
 The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
 
 ```powershell
-fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24
+fsutil devdrv setfiltersallowed "PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24"
 ```
 
 > [!TIP]
