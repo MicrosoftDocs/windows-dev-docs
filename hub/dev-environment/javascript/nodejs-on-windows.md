@@ -75,7 +75,7 @@ We recommend you [install Visual Studio Code](https://code.visualstudio.com) for
 
 If you prefer to use a code editor or IDE other than Visual Studio Code, the following are also good options for your Node.js development environment:
 
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows)
+- [WebStorm](https://www.jetbrains.com/webstorm/download/#section=windows)
 - [Sublime Text](https://www.sublimetext.com/3)
 - [Atom](https://atom.io/)
 - [Brackets](http://brackets.io/)
