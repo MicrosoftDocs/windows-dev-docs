@@ -31,7 +31,7 @@ The currently available utilities include:
         [![Advanced Paste screenshot](../images/pt-advanced-paste.png)](advanced-paste.md)
     :::column-end:::
     :::column span="2":::
-        [Advanced Paste](advanced-paste.md) is an AI enhanced tool that enables you to intelligently paste the text from your clipboard into any format needed.
+        [Advanced Paste](advanced-paste.md) is a tool that enables you to paste the text from your clipboard into any format needed. It can be enhanced with an AI-powered option that is 100% opt-in and requires an OpenAI key.
     :::column-end:::
 :::row-end:::
 
