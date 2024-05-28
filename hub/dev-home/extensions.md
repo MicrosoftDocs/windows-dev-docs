@@ -61,4 +61,4 @@ The Dev Home Azure extension provides customizable widgets for the Dev Home dash
 
 ## Build your own custom Dev Home extension
 
-If you are interested in building your own extension to use with Dev Home, visit the [Dev Home repo on GitHub](https://github.com/microsoft/devhome/blob/main/docs/extensions.md) to find documentation on how to get started.
+If you are interested in building your own extension to use with Dev Home, visit the [Dev Home repo on GitHub](https://github.com/microsoft/devhome/blob/main/docs/extensions/readme.md) to find documentation on how to get started.
