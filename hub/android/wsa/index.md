@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 03/05/2024
+ms.date: 05/29/2024
 ---
 
 # Windows Subsystem for Android™️
@@ -40,7 +40,7 @@ Want to learn more about Windows Subsystem for Android™️ roadmap, discuss de
 
 ## Preview Program
 
-The Windows Subsystem for Android™️ Preview Program is no longer available. If you have previously joined the program, you can [Opt out of the Preview Program](https://aka.ms/WSAPreviewProgramOptOut). After opting out of the program, you will receive a confirmation email. It may take up to 7 days before you are no longer in the preview program and return to receiving the general public builds. Opting out of this program will *not* opt your account out of the Windows Insider Program.
+The Windows Subsystem for Android™️ Preview Program is no longer available. 
 
 ## Set up your development environment
 
