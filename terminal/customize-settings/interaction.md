@@ -24,14 +24,7 @@ When set to  `false` unfocused windows cannot have acrylic, when the focused win
 
 **Default value:** `false`
 
-:::column-end:::
-:::column span="":::
 ![enable_unfocused_docs](./../images/opacity.gif)
-
-:::column-end:::
-:::row-end:::
-
-<br />
 
 ___
 
