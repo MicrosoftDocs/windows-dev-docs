@@ -3,27 +3,24 @@ title: Windows Terminal SSH
 description: In this tutorial, learn how to set up an SSH connection in Windows Terminal.
 author: nguyen-dows
 ms.author: chrnguyen
-ms.date: 03/31/2023
+ms.date: 05/08/2024
 ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to set up am SSH connection in Windows Terminal so that I can connect to other servers.
 ---
 
 # Tutorial: SSH in Windows Terminal
 
-Windows has a built-in SSH client that you can use in Windows Terminal. In this tutorial, you'll learn how to set up a profile in Windows Terminal that uses SSH. Note that this feature is in preview.
+Windows has a built-in SSH client and SSH server that you can use in Windows Terminal. In this tutorial, you'll learn how to set up a profile in Windows Terminal that uses SSH. Note that this feature is in preview.
 
-## Access Windows SSH Client
+## Access Windows SSH Client and SSH Server
 
 The latest builds of Windows 10 and Windows 11 include a built-in SSH server and client that are based on OpenSSH, a connectivity tool for remote sign-in that uses the SSH protocol. OpenSSH encrypts all traffic between client and server to eliminate eavesdropping, connection hijacking, and other attacks.
 
-By default, the OpenSSH client will be located in the directory: `C:\Windows\System32\OpenSSH`. You can also check that it is installed in Windows Settings > Apps > Optional features, then search for "OpenSSH" in your installed features.
+By default, the OpenSSH client and OpenSSH server are located in the directory: `C:\Windows\System32\OpenSSH`. You can also check that it is present in Windows Settings > System > Optional features, then search for "OpenSSH" in your added features.
 
-![OpenSSH feature in Windows Settings](../images/ssh-optonialfeatures.png)
+![ssh_optionalfeature](media/ssh/ssh-optionalfeature.png)
 
 For more information on configuring OpenSSH, see [OpenSSH Server configuration for Windows](/windows-server/administration/openssh/openssh_server_configuration).
-
-> [!NOTE]
-> Windows Terminal version 1.XX+ can dynamically generate profiles to connect to the SSH hosts within your [OpenSSH config file](https://man.openbsd.org/ssh_config).
 
 ## Create a profile
 

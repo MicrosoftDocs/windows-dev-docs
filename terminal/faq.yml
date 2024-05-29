@@ -15,12 +15,20 @@ summary: |
 sections:
   - name: General
     questions:
+      - question: Where can I find the settings file?
+        answer: |
+          The settings file can be found in the following location:
+          * Windows Terminal (Stable): `%localappdata%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`
+          * Windows Terminal (Preview): `%localappdata%\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json`
+          * Windows Terminal (Canary): `%localappdata%\Packages\Microsoft.WindowsTerminalCanary_8wekyb3d8bbwe\LocalState\settings.json`
+          * Unpackaged distribution: `%localappdata%\Microsoft\Windows Terminal\settings.json`
+
       - question: How do I run a shell in Windows Terminal in administrator mode?
         answer: |
           To run Windows Terminal with elevated administrator permission (admin mode), right-click on the Windows Terminal icon, then again on the Windows Terminal title that displays, then select "Run as administrator".
 
           ![Windows Terminal admin mode](./images/admin-mode.png)
-          
+
           Alternatively, you can open the Windows Quick Access menu using the shortcut, ⊞ Windows key + X, and then selecting Windows Terminal (Admin).
 
       - question: Is it possible to mix admin and non-admin tabs in a Windows Terminal window?
@@ -45,6 +53,10 @@ sections:
           You can also add a profile using the terminal settings ui by scrolling to the bottom of your profiles list and selecting "+ Add a new profile".
           ![Screenshot of settings add a profile](./images/settings-add-profile.png)
 
+      - question: Help! The Terminal doesn't have a titlebar or tabs or any UI at all! What's going on?
+        answer: |
+          Sounds like you're in focus mode. Focus mode will hide the tabs and title bar.
+
       - question: How do I exit focus mode?
         answer: |
           To exit [focus mode](./customize-settings/actions.md#toggle-focus-mode), which hides the tabs and title bar on Windows Terminal, open the terminal command palette (Ctrl+Shift+P), find "toggle focus mode", then hit enter.
@@ -52,7 +64,7 @@ sections:
           ![Toggle focus mode setting in Windows Terminal command palette](./images/toggle-focus-mode.png)
 
           You may also want to ensure that your launch mode is not set to "focus" in the Startup settings.
-          
+
           ![Focus mode selector in Windows Terminal Startup settings](./images/startup-focus-mode.png)
 
       - question: What is the difference between Windows Terminal and Windows Terminal (Preview)?
@@ -102,7 +114,7 @@ sections:
       - question: How can I customize PowerShell prompt colors using PSReadLine?
         answer: |
          The PSReadLine module is responsible for setting the colors and behavior of your PowerShell command line. You can set colors for specific attributes of your PowerShell prompt by using the [Set-PSReadLineOption, see Example 4: Set multiple color options](/powershell/module/psreadline/set-psreadlineoption#example-4--set-multiple-color-options).
-        
+
       - question: Can you have have tabs running as Administrator (elevated) in unelevated Terminal windows?
         answer: |
           No. For more technical details, refer to [this spec](https://github.com/microsoft/terminal/blob/main/doc/specs/%235000%20-%20Process%20Model%202.0/%231032%20-%20Elevation%20Quality%20of%20Life%20Improvements.md#background) and [this doc](https://github.com/microsoft/terminal/blob/main/doc/Niksa.md#elevation).
@@ -118,7 +130,7 @@ sections:
       - question: Why is the tab still black after I set Windows Terminal to Light theme?
         answer: |
           This is a side effect of the Theme changes introduced in v1.16. The default themes in v1.16 and later will always use the Terminal background color as the default color for each tab. By default on a black terminal window, you will get a black tab. With a blue color scheme (like Campbell PowerShell), you'll get a blue tab. This is to give the Terminal a "seamless" feel. In Light mode, that creates a case where a black tab will appear on a white tab row. However, with v1.16 and later, you can customize the theme of the terminal. For example:
-          
+
           ```json
           "theme": "White Tabs",
           "themes":

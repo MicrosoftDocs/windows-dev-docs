@@ -3,13 +3,30 @@ title: Windows Terminal Interaction Settings
 description: Learn how to customize interaction settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 03/10/2023
+ms.date: 05/29/2024
 ms.topic: how-to
 ---
 
 # Interaction settings in Windows Terminal
 
 The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your [settings.json file](../install.md#settings-json-file).
+
+## Enable unfocused acrylic
+
+Controls if unfocused acrylic is possible. When this is set to  `true`, unfocused windows can have acrylic instead of opaque.
+When set to  `false` unfocused windows cannot have acrylic, when the focused window has acrylic the unfocused window will be Solid. 
+
+**Property name:** `compatibility.enableUnfocusedAcrylic`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+![enable_unfocused_docs](./../images/opacity.gif)
+
+___
 
 ## Automatically copy selection to clipboard
 
@@ -90,6 +107,18 @@ _(`│` is `U+2502 BOX DRAWINGS LIGHT VERTICAL`)_
 
 > [!IMPORTANT]
 > The following characters must be escaped with a backslash : `\`, `"`
+
+As an example, here are some sets of delimiters you can use to match the behavior of various other terminal emulators:
+
+| Terminal       | Delimiters                                                                                                                      |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Xterm          | <code>&#x22;&#x24;&#x27;&#x28;&#x29;&#x2A;&#x3B;&#x3C;&#x3E;&#x5B;&#x5C;&#x5D;&#x5E;&#x7B;&#x7C;&#x7D;</code>                   |
+| Gnome Terminal | <code>&#x21;&#x22;&#x24;&#x27;&#x28;&#x29;&#x2A;&#x3A;&#x3B;&#x3C;&#x3E;&#x5B;&#x5D;&#x5E;&#x7B;&#x7C;&#x7D;</code>             |
+| Konsole        | <code>&#x21;&#x22;&#x24;&#x27;&#x28;&#x29;&#x2A;&#x2C;&#x3B;&#x3C;&#x3E;&#x5B;&#x5C;&#x5D;&#x5E;&#x7B;&#x7C;&#x7D;</code>       |
+| Rxvt           | <code>&#x26;&#x28;&#x29;&#x3B;&#x3C;&#x3E;&#x7C;</code>                                                                         |
+| Alacritty      | <code>&#x22;&#x27;&#x28;&#x29;&#x2C;&#x3A;&#x3C;&#x3E;&#x5B;&#x5D;&#x7B;&#x7C;&#x7D;</code>                                     |
+| Kitty          | <code>&#x21;&#x22;&#x24;&#x27;&#x28;&#x29;&#x2A;&#x2C;&#x3A;&#x3B;&#x3C;&#x3E;&#x5B;&#x5C;&#x5D;&#x5E;&#x7B;&#x7C;&#x7D;</code> |
+
 
 ___
 

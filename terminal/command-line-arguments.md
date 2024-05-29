@@ -66,8 +66,8 @@ Used to create a new tab. See also the [`newTab` action](./customize-settings/ac
 | `new-tab`, `nt` | `commandline` | Creates a new tab based on the command line assigned. | Executable with optional commands |
 | `new-tab`, `nt` | `--title` | Creates a new tab with the title assigned. | Text to use as the tab title |
 | `new-tab`, `nt` | `--tabColor` | Creates a new tab with the tab color assigned. | Hex color as #RGB or #RRGGBB |
-| `new-tab`, `nt` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `true` |  |
-| `new-tab`, `nt` | `--useApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `false` |  |
+| `new-tab`, `nt` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `true` |  |
+| `new-tab`, `nt` | `--useApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `false` |  |
 | `new-tab`, `nt` | `--colorScheme scheme-name` | Override the profile's `colorScheme` setting, and set it to the scheme from the settings with the name `scheme-name` | The name of a color scheme in the settings |
 
 > [!TIP]
@@ -87,8 +87,8 @@ Used to create a new split pane. See also the [`splitPane` action](./customize-s
 | `split-pane`, `sp` | `--size, -s size`| Creates a new split window pane with the assigned size. | Float that specifies the portion of the parent pane to use represented by a decimal. For example, `.4` to represent 40% of the parent pane. |
 | `split-pane`, `sp` | `commandline` | Creates a new split window pane based on the assigned command line. | Executable with optional commands  |
 | `split-pane`, `sp` | `--duplicate, -D` | Creates a new split window pane that is a duplicate of the current pane. | N/A. No additional values to assign. |
-| `split-pane`, `sp` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `true` |  |
-| `split-pane`, `sp` | `--useApplicationTitle` | Override the profile's `suppressApplicationTilte` setting, and set it to `false` |  |
+| `split-pane`, `sp` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `true` |  |
+| `split-pane`, `sp` | `--useApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `false` |  |
 | `split-pane`, `sp` | `--colorScheme scheme-name` | Override the profile's `colorScheme` setting, and set it to the scheme from the settings with the name `scheme-name` | The name of a color scheme in the settings |
 
 ### Focus-tab command
@@ -289,7 +289,7 @@ wt ; ;
 wt `; `;
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
@@ -317,7 +317,7 @@ wt -p "Command Prompt" ; new-tab -p "Windows PowerShell"
 wt -p "Command Prompt" `; new-tab -p "Windows PowerShell"
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
@@ -347,7 +347,7 @@ wt -p "Command Prompt" ; split-pane -p "Windows PowerShell" ; split-pane -H wsl.
 wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
@@ -379,7 +379,7 @@ wt -p "Command Prompt" ; split-pane -V wsl.exe ; new-tab -d c:\ ; split-pane -H 
 wt -p "Command Prompt" `; split-pane -V wsl.exe `; new-tab -d c:\ `; split-pane -H -d c:\ wsl.exe
 ```
 
-PowerShell uses a semicolon ; to delimit statements. To interpret a semicolon ; as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (--%), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
@@ -409,6 +409,8 @@ wt --title tabname1 ; new-tab -p "Ubuntu-18.04" --title tabname2
 wt --title tabname1 `; new-tab -p "Ubuntu-18.04" --title tabname2
 ```
 
+PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+
 #### [Linux](#tab/linux)
 
 ```bash
@@ -434,6 +436,8 @@ wt --title pane1 ; split-pane -p "Command Prompt" --title pane2
 ```powershell
 wt --title pane1 `; split-pane -p "Command Prompt" --title pane2
 ```
+
+PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 
@@ -491,6 +495,8 @@ wt --tabColor #009999 ; new-tab --tabColor #f59218
 wt --tabColor '#009999' `; new-tab --tabColor '#f59218'
 ```
 
+PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+
 #### [Linux](#tab/linux)
 
 ```bash
@@ -525,6 +531,8 @@ wt --colorScheme Vintage ; split-pane --colorScheme "Tango Light"
 wt --colorScheme Vintage `; split-pane --colorScheme "Tango Light"
 ```
 
+PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim.
+
 #### [Linux](#tab/linux)
 
 ```bash
@@ -552,6 +560,8 @@ wt ; new-tab -p "Ubuntu-18.04" ; focus-tab -t 1
 ```powershell
 wt `; new-tab -p "Ubuntu-18.04" `; focus-tab -t 1
 ```
+
+PowerShell uses a semicolon `;` to delimit statements. To interpret a semicolon `;` as a command delimiter for wt command-line arguments, you need to escape semicolon characters using backticks. PowerShell also has the stop parsing operator (`--%`), which instructs it to stop interpreting anything after it and just pass it on verbatim.
 
 #### [Linux](#tab/linux)
 

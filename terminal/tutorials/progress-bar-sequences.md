@@ -79,11 +79,11 @@ Console.Write("\x1b]9;4;1;50\x07");
 Command Prompt is a little trickier, since it doesn't have great support for escape sequences. You can use the `echo` command to send the escape sequence, but you'll need to use literal ESC and BEL characters in the file. These might be rendered as boxes in the web browser, but they should work in the terminal.
 
 ```bat
-<NUL set /p =]9;4;1;50
+<NUL set /p =]9;4;1;50 
 echo Started progress (normal, 50)
 ```
 
 The above example uses the `NUL` device to write the escape sequence to the console without a newline.
 
 > **Note**:
-> Don't see your favorite shell here? If you figure it out, feel free to [to contribute a solution for your preferred shell!](https://github.com/MicrosoftDocs/terminal/compare)
+> Don't see your favorite shell here? If you figure it out, feel free to [contribute a solution for your preferred shell!](https://github.com/MicrosoftDocs/terminal/compare)

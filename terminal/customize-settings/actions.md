@@ -3,14 +3,11 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: nguyen-dows
 ms.author: chrnguyen
-ms.date: 03/31/2023
+ms.date: 05/08/2024
 ms.topic: how-to
 ---
 
 # Custom actions in Windows Terminal
-
-> [!IMPORTANT]
-> As of Windows Terminal version 1.4, the `keybindings` array has been renamed to `actions` inside the settings.json file. Support for the `keybindings` array still exists for backward compatibility, however the terminal will not automatically rename `keybindings` to `actions` inside your [settings.json file](../install.md#settings-json-file).
 
 You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette.
 
@@ -42,7 +39,24 @@ For example, this default setting uses the shortcut key <kbd>Ctrl+Shift+1</kbd> 
 { "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+shift+1" }
 ```
 
-<br />
+### Commands with command line arguments
+
+```json
+{ "command": { "action": "wt", "commandline": "value" }, "keys": "modifiers+key" }
+```
+
+For example, this default setting uses the shortcut key <kbd>Ctrl+Shift+O</kbd> to use [`wt`](../command-line-arguments.md) to open a new PowerShell tab with additional panes for Command Prompt and Ubuntu:
+
+```json
+{
+  "command": 
+  {
+    "action": "wt",
+    "commandline": "new-tab pwsh.exe ; split-pane -p \"Command Prompt\" -d C:\\ ; split-pane -p \"Ubuntu\" -H"
+  },
+  "keys": "ctrl+shift+o"
+}
+```
 
 ___
 
@@ -580,7 +594,13 @@ This command moves the tab "backward" and "forward", which is equivalent to "lef
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"backward"`, `"forward"` | Direction in which the tab will move. |
+| `window` | Optional | A window ID | See below |
 
+`window` is optional, and follows the same format as the `--window-id` argument to the `wt.exe` command line. If it's omitted, then this will move the tab within the current window. If provided, it may either be the integer ID of a window, or the name of a window. It also accepts the following reserved values:
+* `"new"` or `-1`: Always run this command in a new window
+* `"last"` or `0`: Always run this command in the most recently used window
+
+If no window exists with the given `window` ID, then a new window will be created with that id/name.
 
 ### Broadcast input
 
@@ -672,7 +692,7 @@ This creates a new window. Without any arguments, this will open the default pro
 | `tabTitle` | Optional | String | Title of the window tab. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
-| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false` allows applications to change tab title by sending title change messages. When set to true `true` suppresses these messages. If not provided, the behavior is inherited from profile settings. |
+| `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false` allows applications to change tab title by sending title change messages. When set to `true` suppresses these messages. If not provided, the behavior is inherited from profile settings. |
 
 ### Rename window
 
@@ -1054,7 +1074,7 @@ When modifying a selection using the keyboard, you are moving one end of the sel
 
 ### Toggle block selection
 
-Makes the exisiting selection a block selection, meaning that the selected area is a rectangle, as opposed to wrapping to the beginning and end of each line.
+Makes the existing selection a block selection, meaning that the selected area is a rectangle, as opposed to wrapping to the beginning and end of each line.
 
 **Command name:** `toggleBlockSelection`
 
@@ -1268,9 +1288,9 @@ Changes the active color scheme.
 { "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "keys": "" }
 ```
 
-### Experimental add scroll mark
+### Add scroll mark
 
-Adds a scroll mark to the text buffer. If there's a selection, the mark is placed at the selection, otherwise it's placed at the cursor row. This is an experimental feature, and its continued existence is not guaranteed.
+Adds a scroll mark to the text buffer. If there's a selection, the mark is placed at the selection, otherwise it's placed at the cursor row.
 
 **Command name:** `addMark`
 
@@ -1286,9 +1306,12 @@ Adds a scroll mark to the text buffer. If there's a selection, the mark is place
 { "command": { "action": "addMark", "color": "#ff00ff" } }
 ```
 
-### Experimental scroll to mark
+> [!IMPORTANT]
+> This action became stable in v1.21. Before that version, it was only available in [Windows Terminal Preview](https://aka.ms/terminal-preview)
 
-Scrolls to the scroll mark in the given direction. This is an experimental feature, and its continued existence is not guaranteed.
+### Scroll to mark
+
+Scrolls to the scroll mark in the given direction. For more info, see [Scroll marks](../customize-settings/profile-advanced.md#scroll-marks-preview) and [Shell Integration](../tutorials/shell-integration.md).
 
 **Command name:** `scrollToMark`
 
@@ -1304,7 +1327,10 @@ Scrolls to the scroll mark in the given direction. This is an experimental featu
 { "command": { "action": "scrollToMark", "direction": "previous" } }
 ```
 
-### Experimental clear mark
+> [!IMPORTANT]
+> This action became stable in v1.21. Before that version, it was only available in [Windows Terminal Preview](https://aka.ms/terminal-preview)
+
+### Clear mark
 
 Clears scroll mark at the current position, either at a selection if there is one or at the cursor position. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1316,7 +1342,10 @@ Clears scroll mark at the current position, either at a selection if there is on
 { "command": { "action": "clearMark" } }
 ```
 
-### Experimental clear all marks
+> [!IMPORTANT]
+> This action became stable in v1.21. Before that version, it was only available in [Windows Terminal Preview](https://aka.ms/terminal-preview)
+
+### Clear all marks
 
 Clears all scroll marks in the text buffer. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -1327,6 +1356,9 @@ Clears all scroll marks in the text buffer. This is an experimental feature, and
 ```json
 { "command": { "action": "clearAllMarks" } }
 ```
+
+> [!IMPORTANT]
+> This action became stable in v1.21. Before that version, it was only available in [Windows Terminal Preview](https://aka.ms/terminal-preview)
 
 <br />
 ___
@@ -1348,7 +1380,7 @@ This allows the user to open the suggestions menu. The entries in the suggestion
 :::column-end:::
 :::row-end:::
 
-**Command name:** `openSuggestions`
+**Command name:** `showSuggestions`
 
 #### Parameters
 
@@ -1367,9 +1399,9 @@ The following suggestion sources are supported:
 
 These values can be used by themselves as a string parameter value, or combined as an array. For example:
 ```json
-{ "command": { "action": "openSuggestions", "source": ["recentCommands", "tasks"] } },
-{ "command": { "action": "openSuggestions", "source": "all" } },
-{ "command": { "action": "openSuggestions", "source": "recentCommands" } },
+{ "command": { "action": "showSuggestions", "source": ["recentCommands", "tasks"] } },
+{ "command": { "action": "showSuggestions", "source": "all" } },
+{ "command": { "action": "showSuggestions", "source": "recentCommands" } },
 ```
 
 In the above example, the first two commands will open the suggestions menu with both recent commands and tasks. The third command will open the suggestions menu with only recent commands.

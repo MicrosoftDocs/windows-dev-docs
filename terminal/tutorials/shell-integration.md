@@ -8,14 +8,30 @@ ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to enable shell integration
 ---
 
-# Tutorial: Enable shell integration in the Windows Terminal
+# Shell Integration
+
+- [Shell Integration](#shell-integration)
+  - [How does this work?](#how-does-this-work)
+  - [How to enable shell integration marks](#how-to-enable-shell-integration-marks)
+    - [PowerShell (`pwsh.exe`)](#powershell-pwshexe)
+    - [Command Prompt](#command-prompt)
+    - [Bash](#bash)
+  - [Shell integration features](#shell-integration-features)
+    - [Open new tabs in the same working directory](#open-new-tabs-in-the-same-working-directory)
+    - [Show marks for each command in the scrollbar](#show-marks-for-each-command-in-the-scrollbar)
+    - [Automatically jump between commands](#automatically-jump-between-commands)
+    - [Select the entire output of a command](#select-the-entire-output-of-a-command)
+    - [Recent command suggestions](#recent-command-suggestions)
+  - [Additional resources](#additional-resources)
+
 
 Starting in Terminal 1.15 Preview, the Windows Terminal has started experimentally supporting some "shell integration" features. These features make the command-line easier to use. In earlier releases, we enabled shell to tell the Terminal what the current working directory is. Now, we've added support for more sequences to allow your shell to semantically describe parts of the terminal output as a "prompt", a "command", or "output". The shell can also tell the terminal whether a command succeeded or failed.
 
 This is a guide to some of the shell integration features we've rolled out as of Terminal v1.18. We're planning on building even more features on top of these in the future, so we'd love to get some additional feedback on how folks using them.
 
 > **Note**:
->  Notably, "marks" are still experimental, and are **only enabled for [Preview](https://aka.ms/terminal-preview) builds of the Terminal**. The settings for these features may change in a future release.
+>  As of Terminal 1.21, marks are now a stable feature. Prior to 1.21, marks were **only enabled for [Preview](https://aka.ms/terminal-preview) builds of the Terminal**.
+> If you're using a version of Terminal before 1.21, the `showMarksOnScrollbar` setting was named `experimental.showMarksOnScrollbar`, and `autoMarkPrompts` was named `experimental.autoMarkPrompts`.
 
 ## How does this work?
 
@@ -41,16 +57,16 @@ Supporting these features requires cooperation between your shell and the Termin
 
 To enable these features in the Terminal, you'll want to add the following to your settings:
 
-```jsonc
+```json
 "profiles":
 {
     "defaults":
     {
-        // Marks in general
-        "experimental.showMarksOnScrollbar": true,
+        // Enable marks on the scrollbar
+        "showMarksOnScrollbar": true,
 
-        // Needed for both pwsh and CMD shell integration
-        "experimental.autoMarkPrompts": true,
+        // Needed for both pwsh, CMD and bash shell integration
+        "autoMarkPrompts": true,
 
         // Add support for a right-click context menu
         // You can also just bind the `showContextMenu` action
@@ -59,15 +75,16 @@ To enable these features in the Terminal, you'll want to add the following to yo
 }
 "actions":
 [
+    // Scroll between prompts
     { "keys": "ctrl+up",   "command": { "action": "scrollToMark", "direction": "previous" }, },
     { "keys": "ctrl+down", "command": { "action": "scrollToMark", "direction": "next" }, },
 
     // Add the ability to select a whole command (or its output)
-    { "keys": "ctrl+shift+w", "command": { "action": "selectOutput", "direction": "prev" }, },
-    { "keys": "ctrl+shift+s", "command": { "action": "selectOutput", "direction": "next" }, },
+    { "command": { "action": "selectOutput", "direction": "prev" }, },
+    { "command": { "action": "selectOutput", "direction": "next" }, },
 
-    { "keys": "ctrl+alt+shift+w", "command": { "action": "selectCommand", "direction": "prev" }, },
-    { "keys": "ctrl+alt+shift+s", "command": { "action": "selectCommand", "direction": "next" }, },
+    { "command": { "action": "selectCommand", "direction": "prev" }, },
+    { "command": { "action": "selectCommand", "direction": "next" }, },
 ]
 ```
 
@@ -81,7 +98,7 @@ We'll need to edit your `prompt` to make sure we tell the Terminal about the CWD
 
 Add the following to your [PowerShell profile](/powershell/module/microsoft.powershell.core/about/about_profiles):
 
-```pwsh
+```powershell
 $Global:__LastHistoryId = -1
 
 function Global:__Terminal-Get-LastExitCode {
@@ -135,7 +152,7 @@ function prompt {
 
 ### Command Prompt
 
-Command Prompt sources it's prompt from the `PROMPT` environment variable. CMD.exe reads `$e` as a the `ESC` character.  Unfortunately, CMD.exe doesn't have a way to get the return code of the previous command in the prompt, so we're not able to provide success / error information in CMD prompts.
+Command Prompt sources it's prompt from the `PROMPT` environment variable. CMD.exe reads `$e` as the `ESC` character.  Unfortunately, CMD.exe doesn't have a way to get the return code of the previous command in the prompt, so we're not able to provide success / error information in CMD prompts.
 
 You can change the prompt for the current CMD.exe instance by running:
 
@@ -155,10 +172,20 @@ These examples assume your current `PROMPT` is just `$P$G`. You can instead choo
 PROMPT $e]133;D$e\$e]133;A$e\$e]9;9;$P$e\%PROMPT%$e]133;B$e\
 ```
 
-> **Note**:
-> Don't see your favorite shell here? If you figure it out, feel free to [to contribute a solution for your preferred shell!](https://github.com/MicrosoftDocs/terminal/compare)
+### Bash
 
-## Shell integration demos
+You can add the following to the end of your `~/.bashrc` to enable shell integration in bash:
+
+```bash
+PS1="\[\033]133;D;\007\]\[\033]133;A;\007\]$PS1\[\033]133;B;\007\]"
+```
+
+This will wrap your existing `$PS1` with the necessary sequences to enable shell integration.
+
+> **Note**:
+> Don't see your favorite shell here? If you figure it out, feel free to [contribute a solution for your preferred shell!](https://github.com/MicrosoftDocs/terminal/compare)
+
+## Shell integration features
 
 ### Open new tabs in the same working directory
 ![Open new tabs in the same working directory](../images/duplicate-tab-same-cwd.gif)
@@ -168,9 +195,37 @@ PROMPT $e]133;D$e\$e]133;A$e\$e]9;9;$P$e\%PROMPT%$e]133;B$e\
 
 ### Automatically jump between commands
 
+This uses the `scrollToMark` actions as we have them defined above.
+
 ![Automatically jump between commands](https://user-images.githubusercontent.com/18356694/164290677-ffaafe09-81c4-4181-a4b8-db79a8aed235.gif)
 
 ### Select the entire output of a command
+
+In this gif, we use the `selectOutput` action bound to `ctrl+g` to select the entire output of a command.
 ![Select the entire output of a command](https://user-images.githubusercontent.com/18356694/207696859-a227abe2-ccd4-4b81-8a2c-8a22219cd0dd.gif)
 
+The following uses the `experimental.rightClickContextMenu` setting to enable a right-click context menu in the Terminal. With that and shell integration enabled, you can right-click on a command to select the entire command or its output.
+
 ![Select the command using the right-click context menu](https://user-images.githubusercontent.com/18356694/222840120-7a2493b2-2264-4e94-af2b-17bfacc90353.gif)
+
+
+### Recent command suggestions
+
+With shell integration enabled, the Suggestions UI can be configured to also show your recent commands.
+
+![The suggestions UI showing recent commands in it](../images/recent-command-suggestions.gif)
+
+You can open this menu with the following action:
+
+```json
+{
+    "command": { "action": "showSuggestions", "source": "recentCommands", "useCommandline": true },
+},
+```
+
+(For more info, see the [Suggestions documentation](../customize-settings/actions.md#open-suggestions-menu))
+
+## Additional resources
+* [`autoMarkPrompts`](../customize-settings/profile-advanced.md#automatically-add-scroll-marks)
+* [`showMarksOnScrollbar`](../customize-settings/profile-advanced.md#show-marks-on-scrollbar)
+* [`showSuggestions`](../customize-settings/actions.md#open-suggestions-menu)

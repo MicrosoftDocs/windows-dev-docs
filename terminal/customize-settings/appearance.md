@@ -271,7 +271,7 @@ An example of this setting might look like:
         {
             "type": "folder",
             "name": "WSL",
-            "entries": [ { "type": "matchProfile", "source": "Microsoft.Terminal.Wsl" } ]
+            "entries": [ { "type": "matchProfiles", "source": "Microsoft.Terminal.Wsl" } ]
         },
         { "type": "remainingProfiles" }
     ]
@@ -293,7 +293,7 @@ The following are different types of new tab menu entries that can be used in th
 * [`profile`](#profile)
 * [`folder`](#folder)
 * [`separator`](#separator)
-* [`matchProfile`](#match-profile)
+* [`matchProfiles`](#match-profiles)
 * [`remainingProfiles`](#remaining-profiles)
 
 #### Profile
@@ -334,8 +334,8 @@ This entry type represents a nested folder in the new tab dropdown menu. Folders
 | `name` | Required | Folder name as a string | Name of the folder, displayed on the menu entry. |
 | `icon` | Optional | Path to an icon as a string | Path to an icon that will be displayed next to the folder name. |
 | `entries` | Required | List of new tab menu entries | List of new tab menu entries that will be displayed when the folder is clicked. |
-| `allowEmpty` | Optional | Boolean (defaults to `true`) | If set to `true`, the folder will be displayed even if it has no entries. If set to `false`, the folder will not be displayed if it has no entries. This can be useful with `matchProfile` entries. |
-| `inline` | Optional | Boolean (defaults to `false`) | If set to `true`, and there's only a single entry in the folder, this folder won't create a nested menu. Instead, a the entry in the menu will just be the single entry in the folder. This can be useful with `matchProfile` entries. |
+| `allowEmpty` | Optional | Boolean (defaults to `true`) | If set to `true`, the folder will be displayed even if it has no entries. If set to `false`, the folder will not be displayed if it has no entries. This can be useful with `matchProfiles` entries. |
+| `inline` | Optional | Boolean (defaults to `false`) | If set to `true`, and there's only a single entry in the folder, this folder won't create a nested menu. Instead, the entry in the menu will just be the single entry in the folder. This can be useful with `matchProfiles` entries. |
 
 #### Separator
 
@@ -356,17 +356,19 @@ This will return a list of the remaining profiles, in the order they appear in t
 { "type": "remainingProfiles" }
 ```
 
-#### Match Profile
+#### Match Profiles
 
 This entry type is similar to the remaining profiles entry. This entry will expand to a list of profiles that all match a given property. You can match based on the profiles by `name`, `commandline`, or `source`.
 
 For example:
 
 ```json
-{ "type": "matchProfile", "source": "Microsoft.Terminal.Wsl" }
+{ "type": "matchProfiles", "source": "Microsoft.Terminal.Wsl" }
 ```
 
-Will create a set of entries that are all profiles with the `source` property set to `Microsoft.Terminal.Wsl`. A full string comparison is done on these properties - not a regex or partial string match.
+Will create a set of entries that are all profiles with the `source` property set to `Microsoft.Terminal.Wsl`. Note that the `source` property is set from automatically generated profiles. If you are manually creating a profile and enter a custom source property, it will not be recognized by matchProfiles and the profile will not appear in the list.
+
+A full string comparison is done on these properties - not a regex or partial string match.
 
 ##### Parameters
 
