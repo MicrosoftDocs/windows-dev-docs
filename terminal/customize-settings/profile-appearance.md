@@ -355,18 +355,20 @@ This sets the transparency of the window for the profile. This accepts an intege
 
 When `useAcrylic` is set to `true`, the window will use the acrylic material to create a blurred background for the terminal. When `useAcrylic` is set to false, the terminal will use an unblurred opacity.
 
+Users can choose different opacity values for focused and unfocused windows allowing for customization.
+
 **Property name:** `opacity`
 
 **Necessity:** Optional
 
 **Accepts:** Number as an integer value from 0-100
 
-**Default value:** `100` when `useAcrylic` is false, `50` when `useAcrylic` is true.
+**Default value:** `100` 
 
 :::column-end:::
 :::column span="":::
-![Windows Terminal acrylic opacity](./../images/acrylic-opacity.gif)
-
+![opacity_permutations_1_doc](https://github.com/Jaswir/terminal-docs/assets/15957528/8efc1447-f50c-44f2-a36d-f8ea9a83cf09)
+![jolsen](https://github.com/Jaswir/terminal-docs/assets/15957528/066ecc66-5172-47c5-abc1-fc9ee425fe45)
 :::column-end:::
 :::row-end:::
 
@@ -383,7 +385,7 @@ When `useAcrylic` is set to `true`, the window will use the acrylic material to 
 
 :::row:::
 :::column span="":::
-When this is set to `true`, the window will have an acrylic background. When it's set to `false`, the window will have a plain, untextured background. The transparency only applies to focused windows due to OS limitations.
+When this is set to `true`, the window will have an acrylic background. When it's set to `false`, the window will have a plain, untextured background. Depending on the `Enable Unfocused Acrylic` global setting the transparency applies to unfocused windows aswell as focused windows when set to `true` or only applies to focused windows when set to `false`.
 
 **Property name:** `useAcrylic`
 
@@ -395,7 +397,7 @@ When this is set to `true`, the window will have an acrylic background. When it'
 
 :::column-end:::
 :::column span="":::
-![Windows Terminal acrylic](./../images/acrylic.gif)
+![updated_acrylic_toggle_doc](https://github.com/Jaswir/terminal-docs/assets/15957528/f27e8213-1311-4c3f-b91d-f66a0b4c1d3c)
 
 :::column-end:::
 :::row-end:::
@@ -515,7 +517,7 @@ An object you can add to a profile that applies settings to the profile when it 
 
 **Necessity:** Optional
 
-**Accepts:** `backgroundImage`, `backgroundImageAlignment`, `backgroundImageOpacity`, `backgroundImageStretchMode`, `cursorHeight`, `cursorShape`, `cursorColor`, `colorScheme`, `foreground`, `background`, `selectionBackground`, `experimental.retroTerminalEffect`, `experimental.pixelShaderPath`
+**Accepts:** `backgroundImage`, `backgroundImageAlignment`, `backgroundImageOpacity`, `backgroundImageStretchMode`, `cursorHeight`, `cursorShape`, `cursorColor`, `colorScheme`, `foreground`, `background`, `opacity`, `selectionBackground`, `useAcrylic`, `experimental.retroTerminalEffect`, `experimental.pixelShaderPath`
 
 **Example:**
 ```json
