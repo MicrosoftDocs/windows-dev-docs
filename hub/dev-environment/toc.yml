@@ -241,8 +241,6 @@ items:
               href: ../android/wsa/index.md
             - name: Release notes
               href:  ../android/wsa/release-notes.md
-            - name: Preview program
-              href: ../android/wsa/preview-program.md
         - name: Native Android
           href: ../android/native-android.md
         - name: Cross-platform
