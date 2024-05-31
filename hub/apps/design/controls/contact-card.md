@@ -17,7 +17,7 @@ The contact card displays contact information, such as the name, phone number, a
 > **Important APIs**: [ShowContactCard method](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard),   [ShowFullContactCard method](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard),  [IsShowContactCardSupported method](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported),  [Contact class](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 There are two ways to display the contact card:  
-* As a standard contact card that appears in a flyout that is light-dismissable--the contact card disapears when the user clicks outside of it. 
+* As a standard contact card that appears in a flyout that is light-dismissable--the contact card disappears when the user clicks outside of it. 
 * As a full contact card that takes up more space and is not light-dismissable--the user must click **close** to close it. 
 
 
