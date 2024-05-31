@@ -3,13 +3,13 @@
     "content":
       [
         {
-          "files": ["**/**.md", "**/**.yml"],
+          "files": ["**/*.md", "**/*.yml"],
           "exclude": ["**/obj/**", "**/includes/**", "README.md", "LICENSE", "LICENSE-CODE"]
         }
       ],
     "resource": [
         {
-          "files": ["**/images/**"],
+          "files": ["**/images/**", "**/media/**"],
           "exclude": ["**/obj/**"]
         }
     ],
