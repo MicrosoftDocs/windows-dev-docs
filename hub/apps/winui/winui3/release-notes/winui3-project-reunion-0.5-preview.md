@@ -1,14 +1,14 @@
 ---
-title: Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release notes
-description: Release notes for the Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+title: WinUI 3 - Project Reunion 0.5 Preview (March 2021) release notes
+description: Release notes for WinUI 3 - Project Reunion 0.5 Preview (March 2021) release.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 03/19/2021
 ms.topic: article
 ---
 
-# Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release notes
+# WinUI 3 - Project Reunion 0.5 Preview (March 2021) release notes
 
-Windows UI Library (WinUI) 3 is a native user experience (UX) platform for building modern Windows apps. This preview of WinUI 3 works with both desktop/Win32 and UWP apps, and includes Visual Studio project templates to help get started building apps with a WinUI-based user interface as well as a NuGet package that contains the WinUI libraries.
+WinUI 3 is a native user experience (UX) platform for building modern Windows apps. This preview of WinUI 3 works with both desktop/Win32 and UWP apps, and includes Visual Studio project templates to help get started building apps with a WinUI-based user interface as well as a NuGet package that contains the WinUI libraries.
 
 **WinUI 3 - Project Reunion 0.5 Preview** is the first release of WinUI 3 where it is provided as a part of the Project Reunion package (now called the **Windows App SDK**). Alongside that change, this preview release contains critical bug fixes, increased stability, and a few other general improvements (see **[Capabilities introduced in WinUI 3  - Project Reunion 0.5 Preview](#major-changes-introduced-in-this-release)**).
 

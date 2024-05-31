@@ -1,22 +1,22 @@
 ---
 title: WinUI 2.1 Release Notes
 description: Release notes for WinUI 2.1 including new features and bugfixes.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 07/15/2020
 ms.topic: article
 ---
 
-# Windows UI Library 2.1
+# WinUI 2.1
 
-The first open-source version of the Windows UI Library – WinUI 2.1 (released April 2019).
+The first open-source version of WinUI – WinUI 2.1 (released April 2019).
 
 WinUI gives you many of the latest Windows UX platform features, including up-to-date Fluent controls and styles, available in a way you can use right away, backward-compatible to Windows 10 Anniversary Update (14393). The [WinUI 2 Gallery](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) gives you samples to explore all the cool new features added to the library.
 
 Download the [WinUI 2.1 NuGet package](https://www.nuget.org/packages/Microsoft.UI.Xaml/2.1.190405004)
 
-You can choose to use the WinUI packages in your app using the NuGet package manager: see [Getting Started with the Windows UI Library](/uwp/toolkits/winui/getting-started) for more information.
+You can choose to use the WinUI packages in your app using the NuGet package manager: see [Getting Started with WinUI](/uwp/toolkits/winui/getting-started) for more information.
 
-The Windows UI Library (WinUI) is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
+WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
 
 ## What's new in this release
 
@@ -84,9 +84,9 @@ With Windows 10 May 2019 Update, many of our common controls add elevation by us
 
 ## Documentation
 
-How-to articles for Windows UI Library controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
+How-to articles for WinUI controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
 
-API reference docs are located here: [Windows UI Library APIs](/windows/winui/api/).
+API reference docs are located here: [WinUI APIs](/windows/winui/api/).
 
 ## Microsoft.UI.Xaml 2.1 Version History
 

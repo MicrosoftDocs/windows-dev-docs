@@ -1,14 +1,14 @@
 ---
 title: WinUI 2.0 Release Notes
 description: Release notes for WinUI 2.0.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 07/15/2020
 ms.topic: article
 ---
 
-# Windows UI Library 2.0
+# WinUI 2.0
 
-WinUI 2.0 is the first public release of the Windows UI Library (released October 2018).
+WinUI 2.0 is the first public release of WinUI (released October 2018).
 
 WinUI is the easiest way to build great Fluent Design experiences for Windows.
 
@@ -18,9 +18,9 @@ It includes two NuGet packages:
 
 * [Microsoft.UI.Xaml.Core.Direct](https://www.nuget.org/packages/Microsoft.UI.Xaml.Core.Direct): Low-level APIs for use in middleware components.
 
-You can download and use WinUI packages in your app using the NuGet package manager: see [Getting Started with the Windows UI Library](/uwp/toolkits/winui/getting-started) for more information.
+You can download and use WinUI packages in your app using the NuGet package manager: see [Getting Started with WinUI](/uwp/toolkits/winui/getting-started) for more information.
 
-The Windows UI Library (WinUI) is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
+WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
 
 ## Microsoft.UI.Xaml 2.0.181011001
 
@@ -73,6 +73,6 @@ Controls and patterns in this release include:
 
 ## Documentation
 
-How-to articles for Windows UI Library controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
+How-to articles for WinUI controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
 
-API reference docs are located here: [Windows UI Library APIs](/windows/winui/api/).
+API reference docs are located here: [WinUI APIs](/windows/winui/api/).

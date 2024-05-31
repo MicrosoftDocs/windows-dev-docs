@@ -31,7 +31,7 @@ Create a new app with the Windows App SDK | The Windows App SDK includes WinUI 3
 Use the Windows App SDK in an existing project | If you have an existing project in which you want to use the Windows App SDK, [you can install the latest version of the Windows App SDK NuGet package in your project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md). Unpackaged apps must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
 Download the Windows App SDK | There are several packages and release channels for the Windows App SDK. The [Download the Windows App SDK page](../windows-app-sdk/downloads.md) provides guidance on which ones you need, download links, and installation instructions.
 
-## Windows UI Library (WinUI)
+## WinUI
 
 Feature | Description
 :------ | :------

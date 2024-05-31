@@ -100,13 +100,13 @@ A UI framework for building Windows desktop applications. WPF applications are b
 The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. The Windows SDK is not the same as the [Windows App SDK](#windows-app-sdk).
 
 #### WinUI
-The Windows UI Library (WinUI) is the modern native user interface (UX) framework for both Windows desktop and UWP applications. [Windows UI Library (WinUI)](../winui/index.md). 
+WinUI is the modern native user interface (UX) framework for both Windows desktop and UWP applications. [WinUI](../winui/index.md). 
 
 #### WinUI 2
-Windows UI Library (WinUI) 2 is tightly integrated with Windows SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [Windows UI Library (WinUI) 2](../winui/winui2/index.md).
+WinUI 2 is tightly integrated with Windows SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [WinUI 2](../winui/winui2/index.md).
 
 #### WinUI 3
-The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. See [Windows UI Library (WinUI) 3](../winui/winui3/index.md).
+The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. See [WinUI 3](../winui/winui3/index.md).
 
 #### XAML Islands
 XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands.md).

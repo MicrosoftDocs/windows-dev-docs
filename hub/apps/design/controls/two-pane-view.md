@@ -19,26 +19,26 @@ While it works on all Windows devices, the TwoPaneView control is designed to he
 > [!NOTE]
 > A _dual-screen device_ is a special kind of device with unique capabilities. It's not equivalent to a desktop device with multiple monitors. For more info about dual-screen devices, see [Introduction to dual-screen devices](/dual-screen/introduction). (See [Show multiple views](../layout/show-multiple-views.md) for more info about ways you can optimize your app for multiple monitors.)
 
-**Get the Windows UI Library**
+**Get WinUI**
 
 :::row:::
    :::column:::
       ![WinUI logo](images/winui-logo-64x64.png)
    :::column-end:::
    :::column span="3":::
-      The **TwoPaneView** control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
+      The **TwoPaneView** control is included as part of WinUI, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [WinUI](/uwp/toolkits/winui/).
    :::column-end:::
    :::column:::
 
    :::column-end:::
 :::row-end:::
 
-> **Windows UI Library APIs:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
+> **WinUI APIs:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 
 > [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Throughout this document, we use the **muxc** alias in XAML to represent WinUI APIs that we have included in our project. We have added this to our [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
->In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
+>In the code-behind, we also use the **muxc** alias in C# to represent WinUI APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## Is this the right control?
 

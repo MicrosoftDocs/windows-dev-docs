@@ -73,7 +73,7 @@ Registering app display name and icon for app notification is now supported. Che
 
 ### WinUI 3
 
-- Controls and styles are up to date with the [Windows UI Library 2.8](../../winui/winui2/release-notes/winui-2.8.md) release.
+- Controls and styles are up to date with the [WinUI 2.8](../../winui/winui2/release-notes/winui-2.8.md) release.
 - UWP is no longer supported in the experimental releases.
 
 ### Other limitations and known issues

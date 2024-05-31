@@ -1,9 +1,9 @@
 ---
 title: User interface migration (including WinUI 3)
-description: This topic shows how to migrate your user interface (UI) code, including migrating to the [Windows UI Library (WinUI) 3](../../../winui/index.md).
+description: This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI 3](../../../winui/index.md).
 ms.topic: article
 ms.date: 06/23/2022
-keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, Windows UI Library, WinUI
+keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, WinUI
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
@@ -14,7 +14,7 @@ dev_langs:
 
 # User interface migration (including WinUI 3)
 
-This topic shows how to migrate your user interface (UI) code, including migrating to the [Windows UI Library (WinUI) 3](../../../winui/index.md).
+This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI 3](../../../winui/index.md).
 
 ## Summary of API and/or feature differences
 

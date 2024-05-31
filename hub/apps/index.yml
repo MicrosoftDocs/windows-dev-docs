@@ -111,7 +111,7 @@ additionalContent:
         - title: Windows App SDK
           summary: A set of developer tools and APIs that represent the next evolution in the Windows app platform.
           url: https://github.com/microsoft/WindowsAppSDK
-        - title: Windows UI Library (WinUI)
+        - title: WinUI
           summary: The native user interface layer for building Windows apps including modern controls and styles.
           url: https://github.com/microsoft/microsoft-ui-xaml
         - title: MSIX SDK

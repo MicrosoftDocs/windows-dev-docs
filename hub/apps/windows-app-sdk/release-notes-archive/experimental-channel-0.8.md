@@ -38,7 +38,7 @@ The following sections describe new and updated features, limitations, and known
 
 ### WinUI 3
 
-This release introduces critical bug fixes (including those fixed in 0.5 servicing releases) and other changes for WinUI. For a complete list, see the [Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview (May 2021)](../../winui/winui3/release-notes/release-notes-08-preview.md).
+This release introduces critical bug fixes (including those fixed in 0.5 servicing releases) and other changes for WinUI. For a complete list, see the [Overview and release notes: WinUI 3 - Project Reunion 0.8 Preview (May 2021)](../../winui/winui3/release-notes/release-notes-08-preview.md).
 
 ### App lifecycle (experimental feature)
 
