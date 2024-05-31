@@ -209,7 +209,7 @@ This release includes many bug fixes and improved stabilization across WinUI 3. 
 
 - The `AcrylicBrush.BackgroundSource` property has been removed, since `HostBackdrop` is not supported as a `BackgroundSource` in WinUI 3.
 
-For more information on WinUI, see [Windows UI Library (WinUI)](../../winui/index.md).
+For more information on WinUI, see [WinUI](../../winui/index.md).
 
 To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app [from GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main), or download the app [from the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 

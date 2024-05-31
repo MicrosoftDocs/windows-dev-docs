@@ -442,4 +442,4 @@ From here, the remaining steps to migrate the code that you copied are the same 
 * [UWP Photo Editor sample app](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/)
 * [Overall migration strategy](overall-migration-strategy.md)
 * [Mapping UWP APIs to the Windows App SDK](api-mapping-table.md)
-* [Windows UI Library (WinUI) migration](guides/winui3.md)
+* [WinUI migration](guides/winui3.md)

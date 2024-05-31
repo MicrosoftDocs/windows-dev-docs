@@ -69,7 +69,7 @@ We now support deploying WinUI 3 apps without MSIX packaging. See [Create your f
 
 For more info, or to get started developing with WinUI 3, see:
 
-- [Windows UI Library (WinUI)](../../winui/index.md)
+- [WinUI](../../winui/index.md)
 - [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md)
 
 **Other limitations and known issues:**
@@ -191,7 +191,7 @@ The following sections describe new and updated features, limitations, and known
 
 **New updates**:
 
-- Controls have been updated to reflect the latest Windows styles from [Windows UI Library 2.6](../../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
+- Controls have been updated to reflect the latest Windows styles from [WinUI 2.6](../../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
 - Single-project MSIX is supported.
 - WinUI 3 package can now target build 17763 and later. See [issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921) for more info.
 - In-app toolbar is supported. However, the in-app toolbar and existing Hot Reload/Live Visual Tree support require the upcoming Visual Studio 17.0 Preview 5 release, available later in October.
@@ -200,7 +200,7 @@ The following sections describe new and updated features, limitations, and known
 
 For more info or to get started developing with WinUI 3, see:
 
-- [Windows UI Library (WinUI)](../../winui/index.md)
+- [WinUI](../../winui/index.md)
 - [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md)
 
 ### Windowing (1.0.0-preview2)
@@ -339,7 +339,7 @@ This release of WinUI 3 is focused on building towards 1.0 with bug fixes.
 
 For more info or to get started developing with WinUI 3, see:
 
-- [Windows UI Library (WinUI)](../../winui/index.md)
+- [WinUI](../../winui/index.md)
 - [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md)
 
 ### Windowing (1.0.0-preview1)

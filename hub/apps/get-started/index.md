@@ -206,7 +206,7 @@ Learn more about each of these options:
 - [Recommendations for Choosing Between ATL and MFC](/cpp/atl/recommendations-for-choosing-between-atl-and-mfc)
 - [Windows Forms](/dotnet/desktop/winforms/)
 - [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
-- [Windows UI Library in the Windows App SDK (WinUI 3)](/windows/apps/winui/winui3/)
+- [WinUI in the Windows App SDK (WinUI 3)](/windows/apps/winui/winui3/)
 
 ## Next steps
 

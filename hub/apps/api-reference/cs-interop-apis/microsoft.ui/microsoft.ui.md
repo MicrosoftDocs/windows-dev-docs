@@ -3,7 +3,7 @@ title: Microsoft.UI namespace
 description: Provides to desktop application developers C# interop classes whose methods wrap and represent several interoperability functions.
 ms.topic: article
 ms.date: 02/08/2022
-keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, Windows UI Library, app sdk, C#, interop, Microsoft.UI namespace
+keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, app sdk, C#, interop, Microsoft.UI namespace
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: low

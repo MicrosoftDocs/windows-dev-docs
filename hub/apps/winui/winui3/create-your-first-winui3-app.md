@@ -1,9 +1,9 @@
 ---
 title: Create your first WinUI 3 (Windows App SDK) project
-description: In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a Windows UI Library (WinUI) 3 user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
+description: In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a WinUI 3 user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
 ms.topic: article
 ms.date: 01/25/2024
-keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, app sdk, WinUI 3
+keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, app sdk, Windows App SDK, WinUI 3
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Create your first WinUI 3 (Windows App SDK) project
 
-In this topic we'll see how to use Visual Studio to create a new [Windows App SDK](/windows/apps/windows-app-sdk/) project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
+In this topic we'll see how to use Visual Studio to create a new [Windows App SDK](/windows/apps/windows-app-sdk/) project for a C# .NET or C++ app that has a [WinUI 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
 
 Links to full installation details are in the steps below. We recommend that you install and target the latest Stable release of the Windows App SDK (see [Stable channel release notes](/windows/apps/windows-app-sdk/stable-channel)).
 
@@ -160,7 +160,7 @@ Then, to continue your development journey with the Windows App SDK, see [Develo
 
 ## Related topics
 
-* [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/)
+* [WinUI 3](/windows/apps/winui/winui3/)
 * [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels)
 * [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment)
 * [What is MSIX?](/windows/msix/overview)

@@ -36,7 +36,7 @@ The [.NET MAUI docs](/dotnet/maui/) include resources for learning about .NET MA
 
 ### WinUI documentation
 
-Explore the [WinUI docs](../winui/winui3/index.md) to learn about the features of the Windows UI library.
+Explore the [WinUI docs](../winui/winui3/index.md) to learn about the features of WinUI.
 
 ### .NET Conf: Focus on MAUI
 

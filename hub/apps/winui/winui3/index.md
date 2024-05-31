@@ -1,11 +1,11 @@
 ---
-title: Windows UI Library (WinUI) 3
+title: WinUI 3
 description: Provides info for WinUI 3 and Windows app development with the Windows App SDK. 
 ms.topic: article
 ms.date: 11/10/2021
 ---
 
-# Windows UI Library in the Windows App SDK (WinUI 3)
+# WinUI in the Windows App SDK (WinUI 3)
 
 WinUI 3 is the native UI platform component that ships with the [Windows App SDK](../../windows-app-sdk/index.md) (completely decoupled from [Windows SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/)). The Windows App SDK provides a unified set of APIs and tools that can be used to create production desktop apps that target Windows 10 and later, and can be published to the Microsoft Store.
 
