@@ -8,7 +8,7 @@ Keep in mind that you can always create or update listings directly in Partner C
 
 ## Export listings
 
-On the submission overview page for an app, click **Export listing** (in the **Store listings** section) to generate a .csv file encoded in UTF-8. Save this file to a location on your computer.
+On the app overview page for an app, click **Export listing** (in the **Store listings** section) to generate a .csv file encoded in UTF-8. Save this file to a location on your computer.
 
 You can use Microsoft Excel or another editor to edit this file. Note that Microsoft 365 versions of Excel will let you save a .csv file as **CSV UTF-8 (Comma-delimited) (*.csv)**, but other versions may not support this. You can find details about which versions of Excel support this feature at the [Excel 2016 New features bulletin](https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&rs=en-001&ad=US), and more info about encoding as UTF-8 in various editors [here](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
 
@@ -66,7 +66,7 @@ For example, if your root folder is named **my_folder**, and you want to use an 
 
 Once you have entered all of your changes into the .csv file (and included any assets you want to upload), you’ll need to save your file before uploading it. If you're using a version of Microsoft Excel that supports UTF-8 encoding, be sure to select **Save as** and use the **CSV UTF-8 (Comma-delimited) (*.csv)** format. If you use a different editor to view and edit your .csv file, make sure the .csv file is encoded in UTF-8 before you upload.
 
-When you’re ready to upload the updated .csv file and import your listing data, select **Import listings** on your submission overview page. If you’re only importing a .csv file, choose **Import .csv**, browse to your file, and click **Open**. If you’re importing a folder with image files, choose Import folder, browse to your folder, and click **Select folder**. Make sure there is only one .csv file in your folder, along with any assets you’re uploading.
+When you’re ready to upload the updated .csv file and import your listing data, select **Import listings** on your app overview page. If you’re only importing a .csv file, choose **Import .csv**, browse to your file, and click **Open**. If you’re importing a folder with image files, choose Import folder, browse to your folder, and click **Select folder**. Make sure there is only one .csv file in your folder, along with any assets you’re uploading.
 
 As we process your imported .csv file, you’ll see a progress bar reflecting the import and validation status. This can take some time, especially if you have a lot of listings and/or image files.
 

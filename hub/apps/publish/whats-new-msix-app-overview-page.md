@@ -20,15 +20,17 @@ Now, the submission sections and their respective status are directly accessible
 
 :::image type="content" source="../../includes/store/msix/images/new-overview-submission-sections.png" lightbox="../../includes/store/msix/images/new-overview-submission-sections.png" alt-text="A screenshot of the new msix overview page showing submission sections.":::
 
-## 2.	Delete submission and Delete product options are now clubbed together
+## 2.	Position of delete submission and delete product options has been changed
 
-In previous experience, to delete a product, a developer had to delete a submission first and then delete the product.
+In previous experience, the developer could delete a draft submission from the action column in the submission list. The option to delete a product was seen on the top right corner on the app overview page.
 
 :::image type="content" source="../../includes/store/msix/images/old-overview-delete-submission.png" lightbox="../../includes/store/msix/images/old-overview-delete-submission.png" alt-text="A screenshot of the old msix app overview page showing delete submission scenario.":::
 
 :::image type="content" source="../../includes/store/msix/images/old-overview-delete-product.png" lightbox="../../includes/store/msix/images/old-overview-delete-product.png" alt-text="A screenshot of the old msix app overview page showing delete product scenario.":::
 
-In the new experience, a developer cannot delete just the draft submission. If a developer clicks on ‘Delete product’, the existing submission and the product will be deleted. The ‘Delete product’ option can be found adjacent to the product name on the top of the page.
+In the new experience, a developer can delete the draft submission from **Product submission** card (or product update card in case of an update submission). The ‘Delete product’ option can be found adjacent to the product name on the top of the page.
+
+:::image type="content" source="../../includes/store/msix/images/new-msix-delete-submission.png" lightbox="../../includes/store/msix/images/new-msix-delete-submission.png" alt-text="A screenshot of the new msix app overview page showing delete submission scenario.":::
 
 :::image type="content" source="../../includes/store/msix/images/new-overview-delete-product.png" lightbox="../../includes/store/msix/images/new-overview-delete-product.png" alt-text="A screenshot of the new msix app overview page showing delete product scenario.":::
 
