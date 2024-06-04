@@ -75,7 +75,9 @@ Navigate to **Certificates & secrets** and select **New client secret**.
 
 ### Step 4: Map your app's Package Family Name to its Azure AppId
 
-If your app is a packaged Win32 app, then create a Package Family Name (PFN) mapping request by emailing [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) with subject line "Windows App SDK Push Notifications Request" and body "PFN: \[your PFN\]", AppId: \[your APPId\], Service Principle ObjectId: \[your Service Principle ObjectId\]. Mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
+If you're a packaged app (including packaged with an external location), you can use this flow to map your app's Package Family Name (PFN) and its Azure AppId.
+
+If your app is a packaged Win32 app, then create a Package Family Name (PFN) mapping request by emailing [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) with subject line "Windows App SDK Push Notifications Mapping Request" and body "PFN: \[your PFN\]", AppId: \[your APPId\], ObjectId: \[your ObjectId\]. Mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
 
 ## Configure your app to receive push notifications
 
