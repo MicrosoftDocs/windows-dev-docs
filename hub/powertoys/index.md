@@ -302,7 +302,7 @@ Currently, PowerToys is available in the following languages: Arabic (Saudi Arab
 
 In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
 
-[!VIDEO https://learn.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
+> [!VIDEO https://learn.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 
