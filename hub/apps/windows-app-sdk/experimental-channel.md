@@ -122,7 +122,7 @@ For complete root descriptor XML expression syntax, see [Root Descriptors](/dotn
 
 A new `TitleBar` control makes it easy to create a great, customizable titlebar for your app with the following features:
 
-- Configurable icon, Title, and Subtitle properties
+- Configurable Icon, Title, and Subtitle properties
 - An integrated back button
 - The ability to add a custom control like a search box
 - Automatic hiding and showing of elements based on window width
@@ -130,6 +130,33 @@ A new `TitleBar` control makes it easy to create a great, customizable titlebar 
 - Support for default titlebar features including draggable regions in empty areas, theme responsiveness, default caption (min/max/close) buttons, and built-in accessibility support
 
 The `TitleBar` control is designed to support various combinations of titlebars, making it flexible to create the experience you want without having to write a lot of custom code. We took feedback from the [community toolkit titlebar prototype](https://github.com/CommunityToolkit/Labs-Windows/discussions/454) and look forward to additional feedback!
+
+**Known issue:** In this release, the `TitleBar` only shows the Icon and Title due to an issue where some elements don't show up on load. To work around this, use the following code to load the other elements (Subtitle, Header, Content, and Footer):
+
+```C#
+public MainWindow()
+  {
+      this.InitializeComponent();
+      this.ExtendsContentIntoTitleBar = true;
+      this.SetTitleBar(MyTitleBar);
+
+      MyTitleBar.Loaded += MyTitleBar_Loaded;
+  }
+
+  private void MyTitleBar_Loaded(object sender, RoutedEventArgs e)
+  {
+      // Parts get delay loaded. If you have the parts, make them visible.
+      VisualStateManager.GoToState(MyTitleBar, "SubtitleTextVisible", false);
+      VisualStateManager.GoToState(MyTitleBar, "HeaderVisible", false);
+      VisualStateManager.GoToState(MyTitleBar, "ContentVisible", false);
+      VisualStateManager.GoToState(MyTitleBar, "FooterVisible", false);
+
+      // Run layout so we re-calculate the drag regions.
+      MyTitleBar.InvalidateMeasure();
+  }
+```
+
+This issue will be fixed in the next 1.6 release.
 
 ### Other notable changes
 
@@ -243,7 +270,7 @@ Microsoft.UI.Xaml.Controls.Primitives
         ViewChanging
 ```
 
-### Known issues
+### Other known issues
 
 - Non-XAML applications that use `Microsoft.UI.Content.ContentIslands` and do not handle the *ContentIsland.AutomationProviderRequested* event (or return *nullptr* as the automation provider) will crash if any accessibility or UI automation tool is enabled such as Voice Access, Narrator, Accessibility Insights, Inspect.exe, etc.
 
