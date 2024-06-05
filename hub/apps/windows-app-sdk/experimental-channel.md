@@ -53,19 +53,11 @@ In addition, Windows App SDK managed apps using C#/WinRT should update to [Micro
 
 ### Native AOT support
 
-The .NET `PublishAOT` project property is now supported for native Ahead-Of-Time compilation. For details, see [Native AOT Deployment](/dotnet/core/deploying/native-aot/). Because AOT builds on Trimming support, much of the following trimming-related guidance applies to AOT as well.
+The .NET `PublishAot` project property is now supported for native Ahead-Of-Time compilation. For details, see [Native AOT Deployment](/dotnet/core/deploying/native-aot/). Because AOT builds on Trimming support, much of the following trimming-related guidance applies to AOT as well.
 
-For `PublishAOT` support, in addition to the C# project changes described in the previous section you'll also need a package reference to [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT) `2.1.0-prerelease.240602.1` (or later) to enable the source generator from that package. 
+For `PublishAot` support, in addition to the C# project changes described in the previous section you'll also need a package reference to [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT) `2.1.0-prerelease.240602.1` (or later) to enable the source generator from that package. 
 
-To enable the `PublishAOT` MSBuild targets, the NuGet restore operation must explicitly set the `PublishAOT` property to **true**. For example:
-
-`dotnet restore -p:publishAot=true ...`
-
-or 
-
-`msbuild /t:restore /p:publishAot=true ...`
-
-Or you can add this to your `csproj` file:
+To enable the `PublishAot` MSBuild targets, add this to your `csproj` file:
 
 ```XML
 <PublishAot Condition="'$(ExcludeRestorePackageImports)'=='true'">true</PublishAot>
@@ -77,7 +69,7 @@ In this release, the developer is responsible for ensuring that all types are pr
 
 ##### Partial Classes
 
-C#/WinRT also includes `PublishAOT` support in version 2.1.0-prerelease.240602.1. To enable a class for AOT publishing with C#/WinRT, it must first be marked `partial`. This allows the C#/WinRT AOT source analyzer to attribute the classes for static analysis. Only classes (which contain methods, the targets of trimming) require this attribute.
+C#/WinRT also includes `PublishAot` support in version 2.1.0-prerelease.240602.1. To enable a class for AOT publishing with C#/WinRT, it must first be marked `partial`. This allows the C#/WinRT AOT source analyzer to attribute the classes for static analysis. Only classes (which contain methods, the targets of trimming) require this attribute.
 
 ##### Reflection-Free Techniques
 
