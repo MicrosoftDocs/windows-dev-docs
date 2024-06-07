@@ -57,10 +57,16 @@ The .NET `PublishAot` project property is now supported for native Ahead-Of-Time
 
 For `PublishAot` support, in addition to the C# project changes described in the previous section you'll also need a package reference to [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT) `2.1.0-prerelease.240602.1` (or later) to enable the source generator from that package. 
 
-To enable the `PublishAot` MSBuild targets, add this to your `csproj` file:
+Because the Windows App SDK invokes publishing targets when F5 deploying, we recommend enabling `PublishAot` at NuGet restore time by adding this to your `csproj` file:
 
 ```XML
 <PublishAot Condition="'$(ExcludeRestorePackageImports)'=='true'">true</PublishAot>
+```
+
+In addition, we recommend conditionally enabling `PublishAot` when publishing release configurations, either in publish profiles or the project:
+
+```XML
+<PublishAot Condition="'$(Configuration)'=='Release'">true</PublishAot>
 ```
 
 #### Resolving AOT Issues
