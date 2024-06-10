@@ -692,7 +692,7 @@ In this exercise you will be changing the client side views and helper classes f
     }
     ```
 
-- The SignInPassport method in Login.xaml.cs file will need to be updated to use the AuthService instead of the AccountHelper. Validation of credentials will happen through the AuthService. For this hands on lab the only configured account is "sampleUsername". This account is created in the InitializeSampleUserAccounts method in MockStore.cs. Update the SignInPassport method in Login.xaml.cs now to reflect the code snippet below.
+- The SignInPassportAsync method in Login.xaml.cs file will need to be updated to use the AuthService instead of the AccountHelper. Validation of credentials will happen through the AuthService. For this hands on lab the only configured account is "sampleUsername". This account is created in the InitializeSampleUserAccounts method in MockStore.cs. Update the SignInPassportAsync method in Login.xaml.cs now to reflect the code snippet below.
 
     ```cs
     private async void SignInPassportAsync()
