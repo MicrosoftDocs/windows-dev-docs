@@ -48,7 +48,7 @@ Use [AutomationProperties.LocalizedLandmarkTypeProperty](/uwp/api/windows.ui.xam
 
 Use [AutomationProperties.HeadingLevel](/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) to set the UI element as a heading of a specific level from *Level1* through *Level9*.
 
-Also consider adding a keyhandler to the F6 key that navigates between landmarks, which is a common pattern in complex apps like File Explorer and Outlook. See [Keyboard navigation between prominent sections of UI](keyboard-accessibility.md#keyboard-navigation-between-prominent-sections-of-ui) on the Keyboard accessibility page for more guidance.
+Use the F6 key and handler to support navigation between landmarks, which is a common pattern in complex apps like File Explorer and Outlook. See [Keyboard navigation between application panes with F6](keyboard-accessibility.md#keyboard-navigation-between-application-panes-with-f6) for more guidance.
 
 ## Examples
 

@@ -354,7 +354,8 @@ Users have to memorize keyboard accelerators and expect the same (or similar) re
 | **Navigation** | |
 | Find content in a focused control or Window | Ctrl + F |
 | Go to the next search result | F3 |
-| Go to the next/previous section of UI | F6, Shift + F6 |
+| Go to the next UI pane | F6 |
+| Go to the previous UI pane | Shift + F6 |
 | **Other Actions** | |
 | Add favorites | Ctrl + D |
 | Refresh | F5 or Ctrl + R |
