@@ -32,6 +32,18 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 ## Version 1.5
 
+### Version 1.5.4 (1.5.240607001)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
+
+- Fixed an issue with the fix for GitHub issue [#8857](https://github.com/microsoft/microsoft-ui-xaml/issues/8857) to properly merge a library's resources.pri into the app's resources.pri.
+- Fixed an issue where WebView2 sent extra `blur` and `focus` events on every click. For more info, see GitHub issue [#9288](https://github.com/microsoft/microsoft-ui-xaml/issues/9288). This also fixes problems with dropdowns not responding, as seen in GitHub issue [#9566](https://github.com/microsoft/microsoft-ui-xaml/issues/9566).
+- Fixed an issue where creating a new window or popup canceled any in-progress drag operation. For more info, see GitHub issue [#9360](https://github.com/microsoft/microsoft-ui-xaml/issues/9360).
+- Fixed an issue where SVG files defining a negative viewbox no longer rendered. For more info, see GitHub issue [#9415](https://github.com/microsoft/microsoft-ui-xaml/issues/9415).
+- Fixed an issue where `x:Bind` didn't check for **null** before using a weak reference, which could result in a crash. For more info, see GitHub issue [#9551](https://github.com/microsoft/microsoft-ui-xaml/issues/9551).
+- Fixed an issue where a resize cursor was incorrectly shown at titlebar edges when a window was maximized, which also caused incorrect behavior when clicking or dragging in those areas. For more info, see GitHub issue [#8665](https://github.com/microsoft/microsoft-ui-xaml/issues/8665).
+
+
 ### Version 1.5.3 (1.5.240428000)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
