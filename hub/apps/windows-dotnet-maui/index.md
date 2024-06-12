@@ -59,12 +59,12 @@ Explore the .NET MAUI code samples in the [samples browser](/samples/browse/?exp
 
 | Sample Name/Link | Task |
 |--|--|
-| [Animations](https://github.com/dotnet/maui-samples/tree/main/6.0/Animations) | **Use animations** to bring your app to life. |
-| [Behaviors](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/BehaviorsDemos) | **Add functionality without subclassing** using behaviors, instead attaching behavior classes to your controls. |
-| [Control Templates](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/ControlTemplateDemos) | **Define the visual structure** of `ContentView` derived custom controls, and `ContentPage` derived pages. |
-| [Data Binding](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/DataBindingDemos) | **Bind objects** to the actual UI elements, responsively updating one another when one changes. |
-| [Shell App](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/Shell) | **Use a .NET Shell app** to reduce complexity, reuse code, and integrate existing Windows functionality (such as URI navigation and integrated search bars) into your app. |
-| [Triggers](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/TriggersDemos) | **Use triggers** to selectively update, hide, or display specific controls when an event or data changes. |
+| [Animations](https://github.com/dotnet/maui-samples/tree/main/8.0/Animations) | **Use animations** to bring your app to life. |
+| [Behaviors](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/BehaviorsDemos) | **Add functionality without subclassing** using behaviors, instead attaching behavior classes to your controls. |
+| [Control Templates](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/ControlTemplateDemos) | **Define the visual structure** of `ContentView` derived custom controls, and `ContentPage` derived pages. |
+| [Data Binding](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/DataBindingDemos) | **Bind objects** to the actual UI elements, responsively updating one another when one changes. |
+| [Shell App](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/Shell) | **Use a .NET Shell app** to reduce complexity, reuse code, and integrate existing Windows functionality (such as URI navigation and integrated search bars) into your app. |
+| [Triggers](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/TriggersDemos) | **Use triggers** to selectively update, hide, or display specific controls when an event or data changes. |
 
 ## Get started with .NET MAUI on Windows
 
