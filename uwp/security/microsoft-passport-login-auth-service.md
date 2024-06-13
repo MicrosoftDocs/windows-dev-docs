@@ -1061,7 +1061,7 @@ In this exercise you will be changing the client side views and helper classes f
         }
 
         Guid deviceId = Helpers.GetDeviceId();
-        //Update the Pasport details with the information we have just gotten above.
+        //Update the Passport details with the information we have just gotten above.
         //UpdatePassportDetails(userId, deviceId, publicKey.ToArray(), keyAttestationResult);
     }
     ```

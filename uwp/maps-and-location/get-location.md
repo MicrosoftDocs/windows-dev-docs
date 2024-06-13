@@ -181,7 +181,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 switch (accessStatus)
 {
     case GeolocationAccessStatus.Allowed:
-        // Create Geolocator and define perodic-based tracking (2 second interval).
+        // Create Geolocator and define periodic-based tracking (2 second interval).
         _geolocator = new Geolocator { ReportInterval = 2000 };
 
         // Subscribe to the PositionChanged event to get location updates.
@@ -202,7 +202,7 @@ switch (accessStatus)
         break;
 
     case GeolocationAccessStatus.Unspecified:
-        _rootPage.NotifyUser("Unspecificed error!", NotifyType.ErrorMessage);
+        _rootPage.NotifyUser("Unspecified error!", NotifyType.ErrorMessage);
         LocationDisabledMessage.Visibility = Visibility.Collapsed;
         break;
 }

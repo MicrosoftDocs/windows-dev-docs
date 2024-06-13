@@ -13,7 +13,7 @@ Windows Package Manager is a helpful tool for:
 
 - [Developers](#windows-package-manager-for-developers) who want to manage their software applications using the command line.
 - [Independent Software Vendors (ISVs)](#windows-package-manager-for-isv-software-distribution) who want to distribute software.
-- [Enteprise organizations](#windows-package-manager-for-enterprise-security) who want to automate device set up and maintain a secure work environment.
+- [Enterprise organizations](#windows-package-manager-for-enterprise-security) who want to automate device set up and maintain a secure work environment.
 
 ## Understanding package managers
 

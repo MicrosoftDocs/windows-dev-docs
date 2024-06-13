@@ -31,7 +31,7 @@ WinUI is a declarative, [retained-mode](/windows/win32/learnwin32/retained-mode-
 
 ### Install the "XAML Frame Analysis" plugin
 
-WinUI logs ETW events that track the start and stop of each frame (shown in the following screenshot of the WPA "Generic Events" table). However, because the duration of each frame needs to be calculated manually, it's difficult to identify slow frame occurences.
+WinUI logs ETW events that track the start and stop of each frame (shown in the following screenshot of the WPA "Generic Events" table). However, because the duration of each frame needs to be calculated manually, it's difficult to identify slow frame occurrences.
 
 :::image type="content" source="images/wpa-generic-events.png" alt-text="Screenshot of the Windows Performance Analyzer showing the Generic Events table with a series of frame starts and stops.":::
 

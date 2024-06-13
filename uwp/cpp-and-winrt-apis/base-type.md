@@ -74,7 +74,7 @@ namespace winrt::Example::implementation
 
 ## Calling your base type
 
-You can access your base type, and call methods on it, by using the type alias `base_type`. We saw an example of this in the previous section; but you can use `base_type` to access any base class member (not just overriden methods). Here's an example:
+You can access your base type, and call methods on it, by using the type alias `base_type`. We saw an example of this in the previous section; but you can use `base_type` to access any base class member (not just overridden methods). Here's an example:
 
 ```cppwinrt
 struct MyDerivedRuntimeClass : MyDerivedRuntimeClassT<MyDerivedRuntimeClass>

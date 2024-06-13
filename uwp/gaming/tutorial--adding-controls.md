@@ -233,7 +233,7 @@ m_fireUpperLeft = upperLeft;
 m_fireLowerRight = lowerRight;
 ```
 
-If the screen is resized, these rectangles are redrawn to the approperiate size.
+If the screen is resized, these rectangles are redrawn to the appropriate size.
 
 Now that we've zoned off our controls, it's time to determine when a user is actually using them.
 To do this, we set up some event handlers in the **MoveLookController::InitWindow** method for when the user presses, moves, or releases their pointer.
@@ -577,7 +577,7 @@ If the state of the game is **WaitForInput**, we only listen for the Start/Menu 
 If it's **Active**, we check the user's input and determine what in-game action needs to happen.
 For instance, if the user moved the left analog stick in a specific direction, this lets the game know we need to move the player in the direction the stick is being moved. The movement of the stick in a specific direction must register as larger than the radius of the **dead zone**; otherwise, nothing will happen. This dead zone radius is necessary to prevent "drifting," which is when the controller picks up small movements from the player's thumb as it rests on the stick. Without dead zones, the controls can appear too sensitive to the user.
 
-Thumbstick input is between -1 and 1 for both the x and y axis. The following consant specifies the radius of the thumbstick dead zone.
+Thumbstick input is between -1 and 1 for both the x and y axis. The following constant specifies the radius of the thumbstick dead zone.
 
 ```cppwinrt
 #define THUMBSTICK_DEADZONE 0.25f

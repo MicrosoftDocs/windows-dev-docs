@@ -185,7 +185,7 @@ There are many APIs related to game development, but not all games need to use a
     <td align="left">XInput</td>
     <td align="left"><p>The XInput Game Controller API enables applications to receive input from game controllers.</p>
     <p><strong>When to use</strong></p>
-    <p>If your game needs to support gampad input and you have existing XInput code, you can continue to make use of XInput. XInput has been replaced by Windows.Gaming.Input for UWP, and if you're writing new input code, you should use Windows.Gaming.Input instead of XInput.</p>
+    <p>If your game needs to support gamepad input and you have existing XInput code, you can continue to make use of XInput. XInput has been replaced by Windows.Gaming.Input for UWP, and if you're writing new input code, you should use Windows.Gaming.Input instead of XInput.</p>
     <p><strong>For more information</strong></p>
     <p>See the <a href="/windows/win32/xinput/xinput-game-controller-apis-portal">XInput</a> documentation.</p></td>
     </tr>
