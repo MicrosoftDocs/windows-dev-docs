@@ -180,7 +180,7 @@ Implementing these features requires the Windows Hello companion device app to c
 
 ### Overview
 
-A Windows Hello companion device app should contain two components: a foregroud app with UI responsible for registering and unregistering the device, and a background task that handles authentication.
+A Windows Hello companion device app should contain two components: a foreground app with UI responsible for registering and unregistering the device, and a background task that handles authentication.
 
 The overall API flow is as follows:
 

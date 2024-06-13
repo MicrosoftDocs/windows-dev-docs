@@ -57,7 +57,7 @@ This article demonstrates how to use the [WinRT XAML hosting API](using-the-xaml
 6. Add a reference to the Windows Runtime metadata:
    1. In **Solution Explorer**, right-click on your project **References** node and select **Add Reference**.
    2. Click the **Browse** button at the bottom of the page and navigate to the UnionMetadata folder in your SDK install path. By default the SDK will be installed to `C:\Program Files (x86)\Windows Kits\10\UnionMetadata`. 
-   3. Then, select the folder named after the Windows version you are targetting (e.g. 10.0.18362.0) and inside of that folder pick the `Windows.winmd` file.
+   3. Then, select the folder named after the Windows version you are targeting (e.g. 10.0.18362.0) and inside of that folder pick the `Windows.winmd` file.
    4. Click **OK** to close the **Add Reference** dialog.
 
 ## Use the XAML hosting API to host a WinRT XAML control
