@@ -17,6 +17,22 @@ To keep your device performing its best, make sure that you have the latest upda
 
 [Check for optional updates](ms-settings:windowsupdate-optionalupdates?activationSource=SMC-IA-4027667)
 
+## April 2024 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update: Extends device security certificate authority. Addresses data collection regulatory requirements. Improves interoperability with the Surface Thunderbolt 4 Dock by resolving issues that were preventing the system from detecting audio devices. Reduces device crash rate. Improves system performance and stability, and addresses bug check.
+
+| Driver Version | Device Manager |
+|----|----|
+| 1.49.5.0 | Surface EEPROM Driver - Human Interface Devices |
+| 6.213.30.0 | Surface Integration Service - System devices |
+| 12.6.235.0 | Surface UEFI - Firmware |
+| 1.0.3851.4800 | Qualcomm WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter - Network adapters |
+| 1153.9.20.0823 | Surface Ethernet Adapter - Network adapters |
+| 10.104.30.0 | Surface System Telemetry Driver - System devices |
+| 6.197.9.0 | Microsoft Devices Telemetry Service - Extensions |
+| 2.148.18.0 | Surface SPT Core - System devices |
+| 2.26.7.0 | Surface Thunderbolt(TM) 4 Dock Firmware Update - Firmware |
+
 ## September 2023 updates
 
 The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update addresses critical security vulnerability and improves system stability.

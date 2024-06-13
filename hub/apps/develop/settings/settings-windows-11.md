@@ -1,7 +1,7 @@
 ---
 title: Reference for Windows 11 settings
 description: This article provides reference information for accessing settings values on devices running Windows 11.
-ms.date: 02/27/2024
+ms.date: 05/06/2024
 ms.topic: article
 keywords: windows 10, windows 11, settings
 ms.localizationpriority: medium
@@ -44,13 +44,11 @@ User preferences that customize the Windows behavior when a cellular connection 
 |---------------|------|-------|-------------|
 | InternetAlwaysOn| REG_DWORD | 0 or 1 | Roaming or no roaming. When entering a roaming area, your data connection will be turned off if roaming is not allowed. |
 
-
 ## Gaming: Game Bar, Game Mode, Gaming Shortcuts
 
 This setting controls settings related to gaming and controls such as Game bar and gaming shortcuts.
 
 ### Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR
-
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|-------------|
@@ -78,7 +76,6 @@ This setting controls settings related to gaming and controls such as Game bar a
 | UseNexusForGameBarEnabled | REG_DWORD | 0 or 1 | Key associated with toggle Gaming -> Game Bar -> "Allow your controller to open Game Bar" |
 | AutoGameModeEnabled | REG_DWORD | 0 or 1 | Key associated with toggle Gaming -> Game Mode -> Game Mode. |
 
-
 ## Personalization - Start - Layout - Pins and recomendations
 
 Specifies the start layout type.
@@ -97,7 +94,7 @@ Specifies whether recommendations for tips, shortcuts, new apps and more are sho
 
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
-| Start_IrisRecommendations | REG_BOOL | 0 or 1 | Specifies whether recommendations are enabled. |
+| Start_IrisRecommendations | REG_DWORD | 0 or 1 | Specifies whether recommendations are enabled. |
 
 ## Personalization - Taskbar - Alignment
 
@@ -190,7 +187,6 @@ This setting shows or hides the Widgets button on the taskbar.
 |---------------|------|-------|------------|
 | SystemSettings_DesktopTaskbar_Da | REG_SZ | 0 or 1 | Specifies whether the Widgets button is shown on the taskbar. |
 
-
 ## Personalization - Themes
 
 This setting is used to set a personalized theme.
@@ -204,7 +200,6 @@ This setting is used to set a personalized theme.
 | InboxTheme | 0   | In-box theme. |
 | ContrastTheme | 1   | Contrast theme. |
 
-
 ### Type: Windows.Data.PersonalizationThemes.CurrentThemeType structure
 
 #### CurrentThemeType Properties
@@ -213,8 +208,6 @@ This setting is used to set a personalized theme.
 |------|------|-------------|
 | type   | **CurrentThemeType** | The current theme type. |
 | basePersonalizationThemeName   | wstring | The name of the current inbox theme applied in the system. The user may have done customization on top of this inbox theme.  |
-
-
 
 ## Text Input
 
@@ -231,12 +224,9 @@ This setting helps to chose a theme for touch keyboard, voice typing, emoji and 
 | SelectedThemeName | REG_SZ | One of the following values: "LightTheme", "DarkTheme", "ColorPopTheme", "BlackWhiteTheme", "PoppyRedTheme", "IceBlueTheme", "PlatinumTheme", "TangerineTidesTheme", "LilacRiverTheme", "SilkyDawnTheme", "IndigoBreezeTheme", "PinkBlueTheme", "GreenPurpleTheme", "PinkOrangeTheme", "CustomTheme" | Selected theme name. |
 | ThemeDataVersion | REG_DWORD | 2 | Theme data version. |
 
-
 ## Typing
 
 This setting contains toggles and other settings related to touch keyboard, text suggestions and preferences.
-
-
 
 ### Registry values under HKCU\Software\Microsoft\input\Settings
 
@@ -248,7 +238,6 @@ This setting contains toggles and other settings related to touch keyboard, text
 | IsVoiceTypingKeyEnabled | REG_DWORD | 1 or 0 | Indicates if voice typing key is enabled. |
 | MultilingualEnabled | REG_DWORD | 1 or 0 | Indicates in multingual is enabled. |
 | EnableHwkbTextPrediction | REG_DWORD | An integer. | ASCII Value for keys. |
-
 
 ## VPN
 
@@ -270,6 +259,3 @@ Global random hardware addresses preference.
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
 RandomMacState | REG_BINARY | 00 00 00 00 or 01 00 00 00 | Whether to use random hardware addresses for newly configured Wi-Fi networks. |
-
-
-

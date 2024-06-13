@@ -54,7 +54,7 @@ You can create a Windows desktop app using React Native for Windows by following
 
 ## Debug your React Native desktop app using Visual Studio
 
-- [Install Visual Studio 2019](/visualstudio/install/install-visual-studio) with the following options checked:
+- [Install Visual Studio 2022](/visualstudio/install/install-visual-studio) with the following options checked:
   - Workloads: Universal Windows Platform development & Desktop development with C++.
   - Individual Components: Development activities & Node.js development support.
 

@@ -38,10 +38,19 @@ You can set the **MediaPlayer** instance that the element is bound to by calling
 
 You can also set the playback source on the **MediaPlayerElement** and the element will automatically create a new **MediaPlayer** instance that you can access using the [**MediaPlayer**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) property.
 
+> [!NOTE]
+> Setting MediaPlayerElement properties will set the corresponding properties on its underlying **MediaPlayer**. You have the option to use the underlying **MediaPlayer** directly instead of using MediaPlayerElement properties. Be aware that using **MediaPlayer** directly where an equivalent **MediaPlayerElement** property could otherwise be used can cause unexpected behavior. This is because the MediaPlayerElement is not aware of everything happening to its underlying **MediaPlayer**. For example, if you set the source directly on **MediaPlayer**, then **MediaPlayerElement** [Source](m/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property will not reflect the change. For this reason, you must be consistent in using **MediaPlayerElement** properties or directly using the underlying **MediaPlayer**.
+
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetGetPlayerFromElement":::
 
 > [!NOTE] 
 > If you disable the [**MediaPlaybackCommandManager**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) of the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) by setting [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) to false, it will break the link between the **MediaPlayer** the [**TransportControls**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) provided by the **MediaPlayerElement**, so the built-in transport controls will no longer automatically control the playback of the player. Instead, you must implement your own controls to control the **MediaPlayer**.
+
+The **MediaPlayer** is detached from **MediaPlayerElement** when the **MediaPlayerElement** is destroyed or when a new **MediaPlayer** is set using [SetMediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.setmediaplayer). When detached, **MediaPlayerElement** treats the underlying **MediaPlayer** differently depending on whether it was created by **MediaPlayerElement** or set using **SetMediaPlayer**.
+
+If the **MediaPlayer** was created by **MediaPlayerElement**, it will properly [Close](/uwp/api/windows.media.playback.mediaplayer.close) the **MediaPlayer** for you. If the **MediaPlayer** was set on **MediaPlayerElement** using **SetMediaPlayer**, you are responsible for ensuring the **MediaPlayer** is properly closed. Failing to do so may result in fatal playback errors in **MediaPlayer**. The following code snippet shows how to properly detach and close in code.
+
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetDisposeMediaPlayer":::
 
 ## Common MediaPlayer tasks
 This section shows you how to use some of the features of the **MediaPlayer**.

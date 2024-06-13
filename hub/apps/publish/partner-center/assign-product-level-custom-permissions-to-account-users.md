@@ -12,6 +12,9 @@ The permissions in this section can be granted to all products in the account, o
 
 Product-level permissions are grouped into four categories: **Analytics**, **Monetization**, **Publishing**, and **Xbox Live**. You can expand each of these categories to view the individual permissions in each category. You also have the option to enable **All permissions** for one or more specific products.
 
+> [!Note]
+> By default, an Owner or Manager has all custom permissions. Other standard roles such as Developer get assigned few custom permissions.
+
 To grant a permission for every product in the account, make your selections for that permission (by toggling the box to indicate **Read only** or **Read/write**) in the row marked **All products**.
 
 > [!TIP]

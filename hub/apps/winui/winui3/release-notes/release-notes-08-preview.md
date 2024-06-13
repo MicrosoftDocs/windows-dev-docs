@@ -1,14 +1,14 @@
 ---
 title: WinUI 3 Project Reunion 0.8 Preview (April 2021)
 description: Overview of WinUI 3 Project Reunion 0.8 Preview.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 05/25/2021
 ms.topic: article
 ---
 
-# Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview (May 2021)
+# Overview and release notes: WinUI 3 - Project Reunion 0.8 Preview (May 2021)
 
-Windows UI Library (WinUI) 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../../windows-app-sdk/index.md) (now called the **Windows App SDK**). The 0.8 Preview release provides [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to help you start building apps with a WinUI 3-based user interface.
+WinUI 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../../windows-app-sdk/index.md) (now called the **Windows App SDK**). The 0.8 Preview release provides [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to help you start building apps with a WinUI 3-based user interface.
 
 **WinUI 3 - Project Reunion 0.8 Preview** is a pre-release version of WinUI 3 that includes bug fixes, general improvements, and experimental features - some of which will be stabilized for the Windows App SDK 0.8 stable release in June 2021.
 

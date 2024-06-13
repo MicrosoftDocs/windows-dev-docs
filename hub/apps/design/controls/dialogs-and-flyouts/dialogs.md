@@ -74,7 +74,7 @@ private async void DisplayNoWifiDialog()
     {
         Title = "No wifi connection",
         Content = "Check your connection and try again.",
-        CloseButtonText = "Ok"
+        CloseButtonText = "OK"
     };
 
     ContentDialogResult result = await noWifiDialog.ShowAsync();
@@ -123,7 +123,7 @@ private async void DisplayNoWifiDialog()
     {
         Title = "No wifi connection",
         Content = "Check your connection and try again.",
-        CloseButtonText = "Ok"
+        CloseButtonText = "OK"
     };
 
     ContentDialogResult result = await noWifiDialog.ShowAsync();
@@ -265,7 +265,7 @@ private async void DisplayNoWifiDialog()
     {
         Title = "No wifi connection",
         Content = "Check your connection and try again.",
-        CloseButtonText = "Ok"
+        CloseButtonText = "OK"
     };
 
     // Use this code to associate the dialog to the appropriate AppWindow by setting

@@ -15,21 +15,21 @@ metadata:
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
-   - title: Start here!
+   - title: Get started with WinUI
      itemType: quickstart
      url: ./get-started/start-here.md
-   - title: App development options
+   - title: App framework options
      itemType: overview
      url: ./get-started/index.md
-   - title: Install the new Dev Home
-     itemType: download
-     url: /windows/dev-home/
-   - title: Windows Subsystem for Linux and other tools
+   - title: Enhance your Windows apps with AI
+     itemType: overview
+     url: /windows/ai/
+   - title: Set up your environment with Dev Home, WinGet, Terminal, WSL, and more
      itemType: overview
      url: ../dev-environment/index.md
    - title: Windows APIs
      itemType: reference 
-     url: /windows/win32/apiindex/api-index-portal
+     url: /windows/apps/api-reference/
    - title: Download Visual Studio
      itemType: download
      url: https://developer.microsoft.com/windows/downloads
@@ -48,11 +48,11 @@ productDirectory:
     imageSrc: /media/common/i_get-started.svg
     links:
       - url: ./get-started/index.md
-        text: Overview of Windows development options
+        text: Overview of framework options
+      - url: ./get-started/start-here.md
+        text: Get started with WinUI
       - url: ./windows-app-sdk/set-up-your-development-environment.md
         text: Install tools for the Windows App SDK
-      - url: ./get-started/dev-options.md
-        text: Windows app development - options and features
       - url: ./get-started/samples.md
         text: Sample apps for Windows
   - title: Design
@@ -74,9 +74,9 @@ productDirectory:
       - url: ./windows-app-sdk/release-channels.md#features-available-by-release-channel
         text: Windows App SDK features
       - url: ./winui/index.md
-        text: Windows UI Library (WinUI)
-      - url: ./desktop/modernize/index.md
-        text: Modernize your desktop apps
+        text: WinUI
+      - url: /windows/ai/
+        text: Use AI in your apps
   - title: Deploy
     imageSrc: /media/common/i_deploy.svg
     links:
@@ -110,8 +110,8 @@ additionalContent:
       items:
         - title: Windows App SDK
           summary: A set of developer tools and APIs that represent the next evolution in the Windows app platform.
-          url: https://github.com/microsoft/ProjectReunion
-        - title: Windows UI Library (WinUI)
+          url: https://github.com/microsoft/WindowsAppSDK
+        - title: WinUI
           summary: The native user interface layer for building Windows apps including modern controls and styles.
           url: https://github.com/microsoft/microsoft-ui-xaml
         - title: MSIX SDK

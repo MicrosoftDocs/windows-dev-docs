@@ -39,14 +39,17 @@ However, creating a _configuration.dsc.yaml_ file that contains the required set
 properties:
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPowerToys
       directives:
         description: Install PowerToys
         allowPrerelease: true
       settings:
-        id: PowerToys (Preview)
+        id: Microsoft.PowerToys
         source: winget
 
-    - resource: PowerToysConfigure
+    - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
+      dependsOn:
+        - installPowerToys
       directives:
         description: Configure PowerToys
       settings:

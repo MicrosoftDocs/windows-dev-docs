@@ -1,7 +1,7 @@
 ---
 title: Bluetooth GATT Server
 description: This article provides an overview of Bluetooth Generic Attribute Profile (GATT) Server for Universal Windows Platform (UWP) apps, along with sample code for common use cases.
-ms.date: 05/04/2023
+ms.date: 04/16/2024
 ms.topic: article
 
 ms.localizationpriority: medium
@@ -47,8 +47,7 @@ The following Services are reserved by the system and cannot be published at thi
 1. Device Information Service (DIS)
 2. Generic Attribute Profile Service (GATT)
 3. Generic Access Profile Service (GAP)
-4. Human Interface Device Service (HOGP)
-5. Scan Parameters Service (SCP)
+4. Scan Parameters Service (SCP)
 
 > Attempting to create a blocked service will result in BluetoothError.DisabledByPolicy being returned from the call to CreateAsync.
 

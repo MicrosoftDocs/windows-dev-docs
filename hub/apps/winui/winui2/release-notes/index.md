@@ -1,15 +1,15 @@
 ---
 title: WinUI Release Notes
 description: Index of WinUI release notes.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 
 ms.date: 09/14/2021
 ms.topic: article
 ---
 
-# Windows UI Library 2 Release Notes
+# WinUI 2 Release Notes
 
-The Windows UI Library (WinUI) is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
+WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
 
 WinUI includes two NuGet packages:
 
@@ -17,7 +17,7 @@ WinUI includes two NuGet packages:
 
 * [Microsoft.UI.Xaml.Core.Direct](https://www.nuget.org/packages/Microsoft.UI.Xaml.Core.Direct): Low-level APIs for use in middleware components.
 
-You can download and use WinUI packages in your app using the NuGet package manager: see [Getting Started with the Windows UI Library](/uwp/toolkits/winui/getting-started) for more information.
+You can download and use WinUI packages in your app using the NuGet package manager: see [Getting Started with WinUI](/uwp/toolkits/winui/getting-started) for more information.
 
 ## Examples
 
@@ -34,9 +34,9 @@ You can download and use WinUI packages in your app using the NuGet package mana
 
 ## Documentation
 
-How-to articles for Windows UI Library controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
+How-to articles for WinUI controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
 
-API reference docs are located here: [Windows UI Library APIs](/windows/winui/api/).
+API reference docs are located here: [WinUI APIs](/windows/winui/api/).
 
 ## Version History
 
@@ -54,6 +54,6 @@ Version history for the main [Microsoft.UI.Xaml NuGet package](https://www.nuget
 | [2.1](winui-2.1.md) | stable | April 2019 | [Release Notes](winui-2.1.md) | **First open source release** from [GitHub](https://github.com/microsoft/microsoft-ui-xaml). Includes [ItemsRepeater](winui-2.1.md#itemsrepeater), [AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer), [TeachingTip](winui-2.1.md#teachingtip), [RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem), [CompactDensity](winui-2.1.md#compactdensity), [Shadows](winui-2.1.md#shadows). |
 | [2.0](winui-2.0.md) | stable | October 2018 | [Release Notes](winui-2.0.md) | **Initial release**. Includes official native Fluent controls and features for Windows UWP apps.  |
 
-### Windows UI Library 3 Preview 4 (February 2021)
+### WinUI 3 Preview 4 (February 2021)
 
-For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see  [Windows UI Library 3](../../index.md).
+For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see  [WinUI 3](../../index.md).
