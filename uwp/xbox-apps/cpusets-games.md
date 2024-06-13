@@ -76,8 +76,33 @@ Now that information about the CPU sets is available, it can be used to organize
 
 ```
 HANDLE audioHandle = CreateThread(nullptr, 0, AudioThread, nullptr, 0, nullptr);
-unsigned long cores [] = { cpuSets[0].CpuSet.Id, cpuSets[1].CpuSet.Id };
-SetThreadSelectedCpuSets(audioHandle, cores, 2);
+
+unsigned long retsize = 0;
+(void)GetSystemCpuSetInformation( nullptr, 0, &retsize,
+    GetCurrentProcess(), 0);
+ 
+std::unique_ptr<uint8_t[]> data( new uint8_t[retsize] );
+if ( !GetSystemCpuSetInformation(
+    reinterpret_cast<PSYSTEM_CPU_SET_INFORMATION>( data.get() ),
+    retsize, &retsize, GetCurrentProcess(), 0) )
+{
+    // Error!
+}
+ 
+std::vector<DWORD> cores;
+uint8_t const * ptr = data.get();
+for( DWORD size = 0; size < retsize; ) {
+    auto info = reinterpret_cast<const SYSTEM_CPU_SET_INFORMATION*>( ptr );
+    if ( info->Type == CpuSetInformation ) {
+         cores.push_back( info->CpuSet.Id );
+    }
+    ptr += info->Size;
+    size += info->Size;
+}
+
+if ( cores.size() >= 2 ) {
+   SetThreadSelectedCpuSets(audioHandle, cores.data(), 2);
+}
 ```
 In this example, a thread is created based on a function declared as **AudioThread**. This thread is then allowed to be scheduled on one of two CPU sets. Thread ownership of the CPU set is not exclusive. Threads that are created without being locked to a specific CPU set may take time from the **AudioThread**. Likewise, other threads created may also be locked to one or both of these CPU sets at a later time.
 
@@ -148,29 +173,31 @@ if (!GetSystemCpuSetInformation(
 {
     // Error!
 }
- 
-unsigned long count = retsize / sizeof(SYSTEM_CPU_SET_INFORMATION);
+
 bool sharedcache = false;
  
-std::map<unsigned char, std::vector<SYSTEM_CPU_SET_INFORMATION>> cachemap;
-for (size_t i = 0; i < count; ++i)
+std::map<unsigned char, std::vector<const SYSTEM_CPU_SET_INFORMATION*>> cachemap;
+uint8_t const * ptr = data.get();
+for(DWORD size = 0; size < retsize;)
 {
-    auto cpuset = reinterpret_cast<PSYSTEM_CPU_SET_INFORMATION>(data.get())[i];
-    if (cpuset.Type == CPU_SET_INFORMATION_TYPE::CpuSetInformation)
+    auto cpuset = reinterpret_cast<const SYSTEM_CPU_SET_INFORMATION*>(ptr);
+    if (cpuset->Type == CpuSetInformation)
     {
-        if (cachemap.find(cpuset.CpuSet.LastLevelCacheIndex) == cachemap.end())
+        if (cachemap.find(cpuset->CpuSet.LastLevelCacheIndex) == cachemap.end())
         {
-            std::pair<unsigned char, std::vector<SYSTEM_CPU_SET_INFORMATION>> newvalue;
-            newvalue.first = cpuset.CpuSet.LastLevelCacheIndex;
+            std::pair<unsigned char, std::vector<const SYSTEM_CPU_SET_INFORMATION*>> newvalue;
+            newvalue.first = cpuset->CpuSet.LastLevelCacheIndex;
             newvalue.second.push_back(cpuset);
             cachemap.insert(newvalue);
         }
         else
         {
             sharedcache = true;
-            cachemap[cpuset.CpuSet.LastLevelCacheIndex].push_back(cpuset);
+            cachemap[cpuset->CpuSet.LastLevelCacheIndex].push_back(cpuset);
         }
     }
+    ptr += cpuset->Size;
+    size += cpuset->Size;
 }
 ```
 
