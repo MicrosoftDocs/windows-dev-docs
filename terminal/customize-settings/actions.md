@@ -606,6 +606,8 @@ If no window exists with the given `window` ID, then a new window will be create
 
 This command will toggle "broadcast mode" for a pane. When broadcast mode is enabled, all input sent to the pane will be sent to all panes in the same tab. This is useful for sending the same input to multiple panes at once.
 
+As with any action, you can also invoke "broadcast mode" by search for "Toggle broadcast input to all panes" in the Command palette. 
+
 **Command name:** `toggleBroadcastInput`
 
 **Default binding:**
@@ -614,8 +616,11 @@ This command will toggle "broadcast mode" for a pane. When broadcast mode is ena
 { "command": "toggleBroadcastInput" }
 ```
 
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+:::column span="":::
+
+![Broadcast Input](../images/broadcast-input.gif)
+
+:::column-end:::
 
 ### Open context menu
 
