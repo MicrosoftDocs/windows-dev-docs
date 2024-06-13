@@ -77,7 +77,7 @@ In this section, we cover some basic Windows Ink toolbar customization scenarios
 
 ### Specify location and orientation
 
-When you add an ink toolbar to your app, you can accept the default location and orientaion of the toolbar or set them as required by your app or user.
+When you add an ink toolbar to your app, you can accept the default location and orientation of the toolbar or set them as required by your app or user.
 
 **XAML**
 
@@ -168,7 +168,7 @@ You can also use binding to look after UI updates based on changes to user prefe
 
     1. Add two bool properties to the InkToolbarSnippetHostViewModel class: **LeftHandedLayout** (same functionality as the previous XAML-only example) and **PortraitLayout** (orientation of the device).
         >[!NOTE] 
-        > The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event.
+        > The PortraitLayout property is settable and includes the definition for the [PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event.
 
         ```csharp
         public bool LeftHandedLayout
@@ -1027,7 +1027,7 @@ namespace Ink_Basic_InkToolbar
             }
         }
 
-        // Handle unprocessed pointer events from modifed input.
+        // Handle unprocessed pointer events from modified input.
         // The input is used to provide selection functionality.
         // Selection UI is drawn on a canvas under the InkCanvas.
         private void UnprocessedInput_PointerPressed(
