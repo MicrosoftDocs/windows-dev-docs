@@ -72,12 +72,12 @@ sections:
       - question: |
           How do I create a Windows 11 Arm64 Virtual Machine (VM)?
         answer: |
-          For help on how to create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure, see [Quickstart: Create a Windows on Arm virtual machine in the Azure portal](./create-arm-vm.md).
+          For help on how to create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure, see [Quickstart: Create a Windows on Arm virtual machine in the Azure portal](./create-arm-vm.md).  You can also create an Windows on Arm VM locally with a Windows on Arm device using Hyper-V. 
 
       - question: |
           Can I host a Windows 11 virtual machine using Hyper-V on a Windows 11 Arm64 device?
         answer: |
-          While Hyper-V is a supported component on Windows 11 Arm64 devices, Hyper-V is not a supported Windows 11 virtual machine host since there is no TPM support. Setup will block if you try installing Windows 11 from an ISO. Windows Hyper-V Manager will display an "Operation failed" error message if you try to enable TPM on a virtual machine. There is work in-progress to add virtual TPM support in a future Windows on Arm VM.
+          Yes, you can.  The easiest way to do so is to download the Windows 11 on Arm Insider Preview VHDX from [Windows Insider Preview Downloads](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64) and use it to create a VM.
 
       - question: |
           Are there any trainings available for adding Arm support to a Windows app and running a VM for testing and debugging?
