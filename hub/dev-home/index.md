@@ -88,6 +88,10 @@ Environments in Dev Home can help you to centralize your interactions with virtu
 
 ![Environments in Dev Home](../images/devhome-environment-manage.png)
 
+## Project Ironsides
+
+Dev Home "Project Ironsides" enables developers to "peek under the hood" of Windows to better understand how your Windows app is working. Learn more about [Project Ironsides](./project-ironsides.md).  
+
 ## Dev Home open source repos
 
 Both Dev Home and Dev Home GitHub extension are open source and welcome your contributions.
