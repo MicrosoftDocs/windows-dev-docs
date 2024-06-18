@@ -1,14 +1,13 @@
 ---
 title: Cross Device People API
-description: Explains how third party apps can integrate with Windows People Experiences with APIs to store all their contacts.
-ms.date: 04/02/2024
+description: Learn how third party apps can integrate with Windows People experiences with APIs to store all their contacts.
+ms.date: 06/18/2024
 ms.topic: article
-keywords: windows 11, windows people experiences, contacts, share, people contract, winrt
 ---
 
 # Cross Device People API
 
-Windows is an ideal platform for many third parties to integrate their top people contacts. This enables users to interact with these personas for various people experiences. Windows now provides third party WinUI 3, UWP, and other packaged desktop apps with APIs to store all their contacts.
+Windows is an ideal platform for third party apps to integrate their top people contacts. This integration enables users to interact with the personas for various people experiences. Windows now provides third party WinUI 3, UWP, and other apps with [package identity](/windows/apps/desktop/modernize/package-identity-overview) with APIs to store all their contacts.
 
 > [!IMPORTANT]
 > Some information relates to a prerelease product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
