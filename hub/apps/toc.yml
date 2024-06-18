@@ -266,7 +266,7 @@ items:
                     - name: Integrate unpackaged apps with Windows Share Sheet
                       href: develop/windows-integration/integrate-sharesheet-unpackaged.md
             - name: Cross Device People API
-              href: develop/contacts-and-calendar/cross-device-people-api.md
+              href: develop/windows-integration/cross-device-people-api.md
         - name: Windows AI and machine learning
           items: 
             - name: Windows AI >>
