@@ -176,10 +176,6 @@ items:
                   href: windows-app-sdk/notifications/app-notifications/index.md
                 - name: Quickstart
                   href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
-        - name: People and places
-          items:
-            - name: Cross Device People API
-              href: develop/contacts-and-calendar/cross-device-people-api.md
         - name: Security and identity
           href: develop/security-and-identity.md
         - name: Speech
@@ -269,6 +265,8 @@ items:
                   items:
                     - name: Integrate unpackaged apps with Windows Share Sheet
                       href: develop/windows-integration/integrate-sharesheet-unpackaged.md
+            - name: Cross Device People API
+              href: develop/contacts-and-calendar/cross-device-people-api.md
         - name: Windows AI and machine learning
           items: 
             - name: Windows AI >>
