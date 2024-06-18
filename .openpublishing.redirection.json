@@ -1,11 +1,16 @@
 {
   "redirections": [
-	{
-		"source_path": "uwp/whats-new/windows-docs-august-2017.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
-	{
+  {
+      "source_path": "hub/apps/windows-app-sdk/older-downloads.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/downloads-archive",
+      "redirect_document_id": false
+  },
+  {
+      "source_path": "uwp/whats-new/windows-docs-august-2017.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+  },
+  {
 		"source_path": "uwp/whats-new/windows-docs-august-2018.md",
 		"redirect_url": "/windows/uwp/",
 		"redirect_document_id": false
@@ -6921,6 +6926,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/get-started/migrate-from-uwp-to-winappsdk.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw",
+      "redirect_document_id": false
+    },  
+    {
       "source_path": "hub/package-manager/package/windows-package-manager-policies-change-history.md",
       "redirect_url": "/windows/package-manager/package/windows-package-manager-policies",
       "redirect_document_id": false
@@ -7733,6 +7743,16 @@
     {
       "source_path": "hub/apps/windows-dotnet-maui/tutorial-maui-ai.md",
       "redirect_url": "/windows/ai/samples/tutorial-maui-ai",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/powertoys/paste-as-plain-text.md",
+      "redirect_url": "/windows/powertoys/advanced-paste",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/dev-options.md",
+      "redirect_url": "/windows/apps/get-started/",
       "redirect_document_id": false
     }
   ]

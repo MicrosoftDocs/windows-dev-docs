@@ -127,7 +127,7 @@ Dev Drive is **not** intended to store developer tools, such as:
 - .NET SDK
 - Windows SDK, etc.
 
-These tools should be stored on your main C:\ drive.
+These tools should be stored on your main C: drive.
 
 > [!NOTE]
 > IT Admins will want to create per-user Access Control List (ACL) folders for multi-user devices as a best practice to avoid EOP attacks.
@@ -198,7 +198,7 @@ To confirm whether a Dev Drive is trusted, enter the command:
 fsutil devdrv query <drive-letter>:
 ```
 
-The C: drive on your machine cannot be designated as a Dev Drive. Developer tools, such as Visual Studio, MSBuild, .NET SDK, Windows SDK, etc, should be stored on your C:/ drive and not in a Dev Drive.
+The C: drive on your machine cannot be designated as a Dev Drive. Developer tools, such as Visual Studio, MSBuild, .NET SDK, Windows SDK, etc, should be stored on your C: drive and not in a Dev Drive.
 
 ### What is Microsoft Defender performance mode?
 
@@ -287,7 +287,7 @@ The following filters may be used with Dev Drive:
 The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
 
 ```powershell
-fsutil devdrv setfiltersallowed PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24
+fsutil devdrv setfiltersallowed "PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24"
 ```
 
 > [!TIP]

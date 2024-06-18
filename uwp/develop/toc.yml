@@ -1168,8 +1168,6 @@
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: Raising events in Windows Runtime components
           href: ../winrt-components/raising-events-in-windows-runtime-components.md
-        - name: Brokered Windows Runtime components for side-loaded UWP apps
-          href: ../winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md
     - name: XAML platform
       href: ../xaml-platform/index.md
       items:

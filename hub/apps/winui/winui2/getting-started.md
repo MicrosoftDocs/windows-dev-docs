@@ -1,21 +1,21 @@
 ---
-title: Getting started with the Windows UI library
-description: How to install and use the Windows UI Library. 
+title: Getting started with WinUI
+description: How to install and use WinUI. 
 ms.topic: article
 ms.date: 09/14/2021
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ---
 
-# Getting started with the Windows UI 2 Library
+# Getting started with WinUI 2
 
-[Windows UI Library 2.8](release-notes/winui-2.8.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
+[WinUI 2.8](release-notes/winui-2.8.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
 
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
 > [!NOTE]
-> For more information on building Windows desktop apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../index.md).
+> For more information on building Windows desktop apps with the latest version of **WinUI 3**, see [WinUI 3](../index.md).
 
-## Download and install the Windows UI Library
+## Download and install WinUI
 
 1. Download [Visual Studio 2022](https://developer.microsoft.com/windows/downloads) and ensure you choose the **Universal Windows Platform development** Workload in the Visual Studio installer.
 
@@ -28,13 +28,13 @@ The library is available as a NuGet package that can be added to any new or exis
 
     :::image type="content" source="images/ManageNugetPackages.png" alt-text="Screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.":::<br/>*The Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.*
 
-4. In the **NuGet Package Manager**, select the **Browse** tab and search for **Microsoft.UI.Xaml** or **WinUI**. Select which [Windows UI Library NuGet Packages](nuget-packages.md) you want to use (the **Microsoft.UI.Xaml** package contains Fluent controls and features suitable for all apps). Click Install. 
+4. In the **NuGet Package Manager**, select the **Browse** tab and search for **Microsoft.UI.Xaml** or **WinUI**. Select which [WinUI NuGet Packages](nuget-packages.md) you want to use (the **Microsoft.UI.Xaml** package contains Fluent controls and features suitable for all apps). Click Install. 
 
     Check the "Include prerelease" checkbox to see the latest prerelease versions that include experimental new features.
 
     :::image type="content" source="images/NugetPackages.png" alt-text="Screenshot of the NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.":::<br/>*The NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.*
 
-5. Add the Windows UI (WinUI) Theme Resources to your App.xaml file.
+5. Add the WinUI Theme Resources to your App.xaml file.
 
     There are two ways to do this, depending on whether you have additional application resources.
 
@@ -104,9 +104,9 @@ When you add a NuGet package to a C++/WinRT project, the tooling generates a set
 ...
 ```
 
-For a full, step-by-step walkthrough of adding simple support for the Windows UI Library to a C++/WinRT project, see [A simple C++/WinRT Windows UI Library example](/windows/uwp/cpp-and-winrt-apis/simple-winui-example).
+For a full, step-by-step walkthrough of adding simple support for WinUI to a C++/WinRT project, see [A simple C++/WinRT WinUI example](/windows/uwp/cpp-and-winrt-apis/simple-winui-example).
 
-## Contributing to the Windows UI Library
+## Contributing to WinUI
 
 We welcome bug reports, feature requests and community code contributions in the [microsoft-ui-xaml repo](https://github.com/microsoft/microsoft-ui-xaml/issues) on GitHub.
 

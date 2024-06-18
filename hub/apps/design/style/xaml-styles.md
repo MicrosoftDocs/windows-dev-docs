@@ -21,7 +21,7 @@ You can customize the appearance of your apps in many ways by using the XAML fra
 
 ## WinUI and styles
 
-Starting with WinUI 2.2, we have used the [Windows UI Library](../../winui/index.md) (WinUI) to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
+Starting with WinUI 2.2, we have used [WinUI](../../winui/index.md) to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
 
 Starting with WinUI 2.6, we provide new styles for most of the controls, and a new versioning system that let's you revert to the previous control styles if needed. We encourage you to use the new styles, as they better match the design direction of Windows. However, if your scenario cannot support the new styles, the previous versions are still available.
 
@@ -267,7 +267,7 @@ Its required that you use a `ThemeDictionary` that is duplicated three times in 
 
 ## Avoid restyling controls
 
-The [Windows UI Library](../../winui/winui2/index.md) 2.2 or later includes new styles and templates for both WinUI and system controls. 
+The [WinUI](../../winui/winui2/index.md) 2.2 or later includes new styles and templates for both WinUI and system controls. 
 
 The best way to stay current with our latest visual styles is to use the latest WinUI 2 package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
 

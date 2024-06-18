@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 A web view control embeds a view into your app that renders web content using the Microsoft Edge Legacy rendering engine. Hyperlinks can also appear and function in a web view control.
 
 > [!IMPORTANT]
-> The `WebView2` control is available as part of the [Windows UI Library 3 (WinUI3)](../../winui/index.md). `WebView2` uses Microsoft Edge (Chromium) as the rendering engine to display web content in apps. For more info, see [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/), [Getting started with WebView2 in WinUI 3 (Preview)](/microsoft-edge/webview2/gettingstarted/winui), and [WebView2](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2) in the WinUI API reference.
+> The `WebView2` control is available as part of [WinUI3](../../winui/index.md). `WebView2` uses Microsoft Edge (Chromium) as the rendering engine to display web content in apps. For more info, see [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/), [Getting started with WebView2 in WinUI 3 (Preview)](/microsoft-edge/webview2/gettingstarted/winui), and [WebView2](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2) in the WinUI API reference.
 
 ## Is this the right control?
 

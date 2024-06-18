@@ -133,7 +133,7 @@ private enum Row { TextEntry }
 private enum Column { Description, Input }
 ```
 
-The `ViewModel` property will create an instance of the `MainViewModel` class to be used when data binding the UI. The `Row` and `Column` enums will be used to define the layout of the UI with C# Markup. It's a simple UI with a single row and two columns which we'll be defining in the next step.
+The `ViewModel` property will create an instance of the `MainViewModel` class to be used when data binding the UI. The `Row` and `Column` enums will be used to define the layout of the UI with C# Markup. It's a simple UI with a single row and two columns which we'll be defining in the next step. You'll also need to add a namespace directive to the top of the file: `using static CommunityToolkit.Maui.Markup.GridRowsColumns;`.
 
 Because the UI elements are going to be defined in the C# code, the `InitializeComponent()` method will not be needed. Remove the call and replace it with the following code to create the UI:
 

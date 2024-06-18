@@ -1,4 +1,4 @@
-To edit a Store listing, select the language name from the submission overview page. You must edit each language separately, unless you choose to export your Store listings and work offline, then import all of the listing data at once. For more about how that works, see [Import and export Store listings](../../../apps/publish/publish-your-app/import-and-export-store-listings.md).
+To edit a Store listing, select the language name from the app overview page. You must edit each language separately, unless you choose to export your Store listings and work offline, then import all of the listing data at once. For more about how that works, see [Import and export Store listings](../../../apps/publish/publish-your-app/import-and-export-store-listings.md).
 
 :::image type="content" source="images/msix-listing-overview.png" lightbox="images/msix-listing-overview.png" alt-text="A screenshot showing the overview of the listing page for MSIX/PWA app.":::
 

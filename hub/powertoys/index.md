@@ -24,6 +24,17 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 
 The currently available utilities include:
 
+### Advanced Paste
+
+:::row:::
+    :::column:::
+        [![Advanced Paste screenshot](../images/pt-advanced-paste.png)](advanced-paste.md)
+    :::column-end:::
+    :::column span="2":::
+        [Advanced Paste](advanced-paste.md) is a tool that enables you to paste the text from your clipboard into any format needed. It can be enhanced with an AI-powered option that is 100% opt-in and requires an OpenAI key.
+    :::column-end:::
+:::row-end:::
+
 ### Always On Top
 
 :::row:::
@@ -184,17 +195,6 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-### Paste As Plain Text
-
-:::row:::
-    :::column:::
-        [![Paste As Plain Text screenshot](../images/pt-paste-as-plain-text.png)](paste-as-plain-text.md)
-    :::column-end:::
-    :::column span="2":::
-        [Paste As Plain Text](paste-as-plain-text.md) allows you to paste text from your clipboard, excluding text-formatting, with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd>).
-    :::column-end:::
-:::row-end:::
-
 ### Peek
 
 :::row:::
@@ -302,7 +302,7 @@ Currently, PowerToys is available in the following languages: Arabic (Saudi Arab
 
 In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
 
-[!VIDEO https://learn.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
+> [!VIDEO https://learn.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 

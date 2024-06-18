@@ -12,7 +12,7 @@ This article provides an overview of the Windows UI frameworks that are currentl
 
 Microsoft produces both UI frameworks and app platforms. App platforms typically include a UI framework, while UI frameworks are either standalone (not shipped with an app platform) or can be used with multiple app platforms (see [Choose your app platform](/windows/apps/desktop/#choose-your-app-typechoose-your-app-type)).
 
-The frameworks discussed here include the Windows UI Library (WinUI) for both Windows App SDK (WinUI 3) and UWP (WinUI 2), Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
+The frameworks discussed here include WinUI for both Windows App SDK (WinUI 3) and UWP (WinUI 2), Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
 
 ## User interface fundamentals
 
@@ -94,7 +94,7 @@ For most new Windows apps, we recommend WinUI with the Windows App SDK (WinUI 3)
 
 WinUI 3 is completely decoupled from the Windows OS and ships as a part of the Windows App SDK, which is a set of tools and components that represent the next evolution in the Windows app development platform.
 
-WinUI 3 is the latest generation of the Windows UI Library. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals (see [Comparison of WinUI 2 and WinUI 3](../winui/index.md)).
+WinUI 3 is the latest generation of WinUI. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals (see [Comparison of WinUI 2 and WinUI 3](../winui/index.md)).
 
 #### Key app scenarios enabled by WinUI 3
 
@@ -106,7 +106,7 @@ WinUI 3 is the latest generation of the Windows UI Library. WinUI 2 and 3 share 
 
 #### Helpful documentation for WinUI 3
 
-- Overview: [Windows UI Library (WinUI) 3](../winui/winui3/index.md)
+- Overview: [WinUI 3](../winui/winui3/index.md)
 - Get started: [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - Writing XAML: [XAML Platform](/windows/uwp/xaml-platform)
 - API Reference: [WinUI API Reference](/windows/winui/api)
@@ -120,7 +120,7 @@ WinUI 3 is the latest generation of the Windows UI Library. WinUI 2 and 3 share 
 
 ### WinUI 2 for UWP
 
-For most UWP apps, we recommend using Windows UI Library (WinUI) 2 to build your user interface. WinUI 2 is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience.
+For most UWP apps, we recommend using WinUI 2 to build your user interface. WinUI 2 is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience.
 
 WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals (see [Comparison of WinUI 2 and WinUI 3](../winui/index.md)).
 
@@ -133,7 +133,7 @@ WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals
 
 #### Helpful documentation for WinUI 2
 
-- Overview: [Windows UI Library 2](../winui/winui2/index.md)
+- Overview: [WinUI 2](../winui/winui2/index.md)
 - Get started: [Getting started with the Windows UI 2.x Library](../winui/winui2/getting-started.md)
 - Writing XAML: [XAML Platform](/windows/uwp/xaml-platform)
 - API Reference: [WinUI API Reference](/windows/winui/api)

@@ -189,7 +189,7 @@ The following two examples show a FlipView that flips horizontally and verticall
 
 ## Tree view
 
-Tree views are suited for displaying text-based collections that have an important hierarchy that needs to be showcased. Tree view items are collapsible/expandable, are shown in a visual hierarchy, can be supplmented with icons, and can be dragged and dropped between tree views. Tree views allow for N-level nesting.
+Tree views are suited for displaying text-based collections that have an important hierarchy that needs to be showcased. Tree view items are collapsible/expandable, are shown in a visual hierarchy, can be supplemented with icons, and can be dragged and dropped between tree views. Tree views allow for N-level nesting.
 
 ### Is this the right control?
 

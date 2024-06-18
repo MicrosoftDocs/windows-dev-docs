@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Universal Windows Platform documentation
-summary: The Universal Windows Platform (UWP) lets you build apps for any Windows device—PCs, Xbox One, HoloLens, and more—and publish them to the Store.
+summary: Note UWP is still supported, but the preferred way to develop Windows apps is with WinUI and the Windows App SDK.
 
 metadata:
   title: UWP Documentation - UWP app developer | Microsoft Docs

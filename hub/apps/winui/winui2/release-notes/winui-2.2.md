@@ -1,22 +1,22 @@
 ---
 title: WinUI 2.2 Release Notes
 description: Release notes for WinUI 2.2 including new features and bugfixes.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 07/15/2020
 ms.topic: article
 ---
 
-# Windows UI Library 2.2
+# WinUI 2.2
 
-WinUI 2.2 is the August 2019 release of the Windows UI Library.
+WinUI 2.2 is the August 2019 release of WinUI.
 
-You can add WinUI packages to your app using the NuGet package manager: see [Getting Started with the Windows UI Library](../getting-started.md) for more information.
+You can add WinUI packages to your app using the NuGet package manager: see [Getting Started with WinUI](../getting-started.md) for more information.
 
-The Windows UI Library (WinUI) is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
+WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
 
 ## Microsoft.UI.Xaml 2.2 Version History
 
-### Windows UI Library 2.2 Official Release
+### WinUI 2.2 Official Release
 
 AUGUST 2019
 
@@ -141,9 +141,9 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/839
 
 ## Documentation
 
-How-to articles for Windows UI Library controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
+How-to articles for WinUI controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
 
-API reference docs are located here: [Windows UI Library APIs](/windows/winui/api/).
+API reference docs are located here: [WinUI APIs](/windows/winui/api/).
 
 ## Microsoft.UI.Xaml 2.2-prerelease Version History
 

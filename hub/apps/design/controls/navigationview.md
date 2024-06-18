@@ -34,7 +34,7 @@ For other navigation patterns, see [Navigation design basics](../basics/navigati
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The NavigationView control for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
+The NavigationView control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
 
 > [!div class="checklist"]
 >
@@ -42,7 +42,7 @@ The NavigationView control for UWP apps is included as part of the Windows UI Li
 > - **WinUI 2 Apis:** [Microsoft.UI.Xaml.Controls.NavigationView class](/windows/winui/api/microsoft.ui.xaml.controls.navigationview)
 > - [Open the WinUI 2 Gallery app and see the NavigationView in action](winui2gallery:/item/NavigationView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls. Some features of NavigationView, such as _top_ and _hierarchical_ navigation, require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](/uwp/toolkits/winui/).
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls. Some features of NavigationView, such as _top_ and _hierarchical_ navigation, require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or [WinUI 2](../../winui/winui2/index.md).
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 
@@ -1495,7 +1495,7 @@ This table shows which theme resource is used in each display mode.
 This example shows how to override the theme resources in App.xaml. When you override theme resources, you should always provide "Default" and "HighContrast" resource dictionaries at a minimum, and dictionaries for "Light" or "Dark" resources as needed. For more info, see [ResourceDictionary.ThemeDictionaries](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.themedictionaries).
 
 > [!IMPORTANT]
-> This code shows how to use the [Windows UI Library](/uwp/toolkits/winui/) version of AcrylicBrush. If you use the platform version of AcrylicBrush instead, the minimum version for your app project must be SDK 16299 or greater. To use the platform version, remove all references to `muxm:`.
+> This code shows how to use the [WinUI 2](../../winui/winui2/index.md) version of AcrylicBrush. If you use the platform version of AcrylicBrush instead, the minimum version for your app project must be SDK 16299 or greater. To use the platform version, remove all references to `muxm:`.
 
 ```xaml
 <Application ... xmlns:muxm="using:Microsoft.UI.Xaml.Media" ...>
@@ -1540,7 +1540,7 @@ This example shows how to override the theme resources in App.xaml. When you ove
 
 ### Top whitespace
 
-> The `IsTitleBarAutoPaddingEnabled` property requires the [Windows UI Library](/uwp/toolkits/winui/) 2.2 or later.
+> The `IsTitleBarAutoPaddingEnabled` property requires [WinUI](../../winui/winui2/index.md) 2.2 or later.
 
 Some apps choose to [customize their window's title bar](../../develop/title-bar.md), potentially extending their app content into the title bar area.
 When NavigationView is the root element in apps that extend into the title bar **using the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**, the control automatically adjusts the position of its interactive elements to prevent overlap with [the draggable region](../../develop/title-bar.md).

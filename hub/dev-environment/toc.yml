@@ -9,8 +9,16 @@ items:
         href: ../dev-home/index.md
       - name: Machine configuration
         href: ../dev-home/setup.md
-      - name: Dev Home extensions
+      - name: Utilities
+        href: ../dev-home/utilities.md
+      - name: Extensions
         href: ../dev-home/extensions.md
+      - name: Environments
+        href: ../dev-home/environments.md
+      - name: Windows customization
+        href: ../dev-home/windows-customization.md
+      - name: Quickstart Playground
+        href: ../dev-home/quickstart-playground.md
   - name: Dev Drive
     items:
       - name: Overview
@@ -105,6 +113,8 @@ items:
             href: ../powertoys/grouppolicy.md
           - name: Report a Bug
             href: https://github.com/microsoft/PowerToys/issues/new/choose
+      - name: Advanced Paste
+        href: ../powertoys/advanced-paste.md
       - name: Always on Top
         href: ../powertoys/always-on-top.md
       - name: Awake
@@ -133,8 +143,6 @@ items:
         href: ../powertoys/mouse-utilities.md
       - name: Mouse without Borders
         href: ../powertoys/mouse-without-borders.md
-      - name: Paste as Plain Text
-        href: ../powertoys/paste-as-plain-text.md
       - name: Peek
         href: ../powertoys/peek.md
       - name: PowerRename
@@ -233,8 +241,6 @@ items:
               href: ../android/wsa/index.md
             - name: Release notes
               href:  ../android/wsa/release-notes.md
-            - name: Preview program
-              href: ../android/wsa/preview-program.md
         - name: Native Android
           href: ../android/native-android.md
         - name: Cross-platform

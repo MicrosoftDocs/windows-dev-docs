@@ -1,6 +1,6 @@
 ---
 title: Windows App SDK release channels
-description: Learn about the Windows App SDK's release channels.
+description: Learn about the Experimental, Preview, and Stable release channels used to ship the latest version of the Windows App SDK.
 ms.topic: article
 ms.date: 09/06/2022
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
@@ -9,15 +9,18 @@ ms.localizationpriority: medium
 
 # Windows App SDK release channels
 
-The Windows App SDK provides the three release channels. When you [Install tools for the Windows App SDK](set-up-your-development-environment.md), install the release channel that best serves your development scenario.
+The latest version of the Windows App SDK ships via three release channels: Experimental, Preview, and Stable. The following table provides an overview of these release channels.
 
-The following table provides an overview of the different release channels. For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).
+> [!NOTE]
+> When you [Install tools for the Windows App SDK](set-up-your-development-environment.md), install the release channel that best serves your development scenario.
 
 |         | Channel                                                 | Description                                                                                                                                                                | Release cadence                                                                    | Supported? | Latest release                                                                                      |
 |---------|---------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------------------------------------------|
-| **✅**   | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                                   | Yes        | [1.5.3 (1.5.240428000)](stable-channel.md#version-153-15240428000) (05/01/2024)                                                 |
+| **✅**   | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                                   | Yes        | [1.5.4 (1.5.240607001)](stable-channel.md#version-154-15240607001) (06/11/2024)                                                 |
 | **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least one preview per stable version                                           | No         | [1.5.0-preview1](preview-channel.md#version-15-preview-1-150-preview1) (02/06/2024)                 |
-| **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.5.0-experimental2](experimental-channel.md#version-15-experimental-150-experimental2) (01/25/2024) |
+| **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.6.0-experimental1](experimental-channel.md#version-16-experimental-160-experimental1) (06/04/2024) |
+
+For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).
 
 ## Features available by release channel
 
@@ -38,7 +41,7 @@ The following table shows which features are currently available in each release
 | [App notifications](notifications/app-notifications/index.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
 | [Windows Widgets](../design/widgets/index.md)   | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available   |
 
-## Windows App SDK release policy
+## Windows App SDK release servicing policy
 
 The following policies define the servicing you can expect when you use a given Windows App SDK release.
 
@@ -48,8 +51,8 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level | End of servicing |
 |-------------------------|-----------------------|----------------------|--------------------|---------------|----------------  |
-| 1.5                     | 02/29/2024            | 1.5.240428000        | 05/01/2024         | Current       | 02/28/2025       |
-| 1.4                     | 08/29/2023            | 1.4.240211001        | 02/13/2024         | Maintenance   | 08/29/2024       |
+| 1.5                     | 02/29/2024            | 1.5.240607001        | 06/11/2024         | Current       | 02/28/2025       |
+| 1.4                     | 08/29/2023            | 1.4.240512000        | 05/14/2024         | Maintenance   | 08/29/2024       |
 | 1.3                     | 04/12/2023            | 1.3.230724000        | 07/25/2023         | Out of Support| 04/12/2024       |
 | 1.2                     | 11/10/2022            | 1.2.230313.1         | 03/15/2023         | Out of Support| 11/10/2023       |
 | 1.1                     | 05/24/2022            | 1.1.5                | 09/14/2022         | Out of Support| 05/24/2023       |

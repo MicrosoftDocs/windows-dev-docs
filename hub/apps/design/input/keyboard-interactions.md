@@ -5,18 +5,19 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.date: 09/24/2020
+ms.date: 06/11/2024
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ---
+
 # Keyboard interactions
 
 ![keyboard hero image](images/keyboard/keyboard-hero.jpg)
 
-Learn how to design and optimize your Windows apps so they provide the best experience possible for both keyboard power users and those with disabilities and other accessibility requirements.
+Learn how to design and optimize your Windows apps so they provide the best experiences for both keyboard power users and those with disabilities and other accessibility requirements.
 
 Across devices, keyboard input is an important part of the overall Windows app interaction experience. A well-designed keyboard experience lets users efficiently navigate the UI of your app and access its full functionality without ever lifting their hands from the keyboard.
 
@@ -58,12 +59,12 @@ Here are the devices and tools discussed in this topic:
 ## Custom experiences and efficient keyboarding
 As mentioned, keyboard support is integral to ensuring your applications work great for users with different skills, abilities, and expectations. We recommend that you prioritize the following.
 - Support keyboard navigation and interaction
-	- Ensure actionable items are identified as tab stops (and non-actionable items are not), and navigation order is logical and predictable (see [Tab stops](#tab-stops))
-	- Set initial focus on the most logical element (see [Initial focus](#initial-focus))
-	- Provide arrow key navigation for "inner navigations" (see [Navigation](#navigation))
+    - Ensure actionable items are identified as tab stops (and non-actionable items are not), and navigation order is logical and predictable (see [Tab stops](#tab-stops))
+    - Set initial focus on the most logical element (see [Initial focus](#initial-focus))
+    - Provide arrow key navigation for "inner navigations" (see [Navigation](#navigation))
 - Support keyboard shortcuts
-	- Provide accelerator keys for quick actions (see [Accelerators](#accelerators))
-	- Provide access keys to navigate your application's UI (see [Access keys](access-keys.md))
+    - Provide accelerator keys for quick actions (see [Accelerators](#accelerators))
+    - Provide access keys to navigate your application's UI (see [Access keys](access-keys.md))
 
 ### Focus visuals
 
@@ -229,15 +230,32 @@ For example, for `ListView` and `GridView` controls, the **Page up** key scrolls
 
 ![page up and down keys](images/keyboard/page-up-and-down.png)
 
+#### F6 key
+
+The **F6** key lets a user cycle between panes or important sections of your app or UI. **Shift-F6** typically cycles backwards (see [Keyboard accessibility](../accessibility/keyboard-accessibility.md)).
+
+These are often related to [landmarks and headings](../accessibility/landmarks-and-headings.md), but do not need to correspond directly.
+
+For example:
+
+- In Edge, pressing F6 will cycle between the tab bar, the address bar/app bar, and the page content.
+- In File Explorer, pressing F6 will cycle between the sections of the app.
+- On the desktop, pressing F6 will cycle between parts of the taskbar and the desktop.
+
+![f6 key](images/keyboard/f6.png)
+
 ### Keyboard shortcuts
+
+In addition to implementing keyboard navigation and activation, it is also good practice to implement keyboard shortcuts such as [keyboard accelerators](../input/keyboard-accelerators.md) and [access keys](../input/access-keys.md) for important or frequently used functionality.
 
 Keyboard shortcuts can make your app easier to use by providing both enhanced support for accessibility and improved efficiency for keyboard users.
 
-In addition to supporting keyboard navigation and activation in your app, it is also good practice to provide shortcuts for your application's functionality. Tab navigation provides a good, basic level of keyboard support, but with more complex UI you might want to add support for shortcut keys as well. 
-
 A shortcut is a keyboard combination that enhances productivity by providing an efficient way for the user to access app functionality. There are two kinds of shortcut:
--   [Accelerators](#accelerators) are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.
--   [Access keys](#access-keys) are shortcuts that set focus to specific UI in your application. Access keys typicaly consist of the Alt key plus a letter key.
+
+
+- [Accelerators](#accelerators) are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.
+- [Access keys](#access-keys) are shortcuts that set focus to specific UI in your application. Access keys typicaly consist of the Alt key plus a letter key.
+
 
 Providing consistent keyboard shortcuts that support similar tasks across applications makes them much more useful and powerful and helps users remember them.
 

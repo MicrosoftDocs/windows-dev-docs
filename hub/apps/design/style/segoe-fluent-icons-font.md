@@ -34,8 +34,8 @@ All glyphs in **Segoe Fluent Icons** have the same fixed width with a consistent
 
 ```xaml
 <Grid>
-    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB51;" Foreground="#C72335" />
-    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB52;" />
+    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB52;" Foreground="#C72335" />
+    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB51;" />
 </Grid>
 ```
 

@@ -92,7 +92,7 @@ The extensions from the preview channel are available only from the download loc
 
 For experimental features, install the latest extension from the experimental release channel. For more info, see [Experimental release channel](experimental-channel.md).
 
-Choose one of these options to install the latest experimental release ([version 1.0 Experimental](experimental-channel.md#version-10-experimental-100-experimental1)):
+Choose one of these options to install the latest experimental release ([Version 1.0 Experimental (1.0.0-experimental1)](release-notes-archive/experimental-channel-1.0.md#version-10-experimental-100-experimental1)):
 
 * In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Windows App SDK (Experimental)**, and install the latest extension.
 * Alternatively, you can download and install the extension directly from Visual Studio Marketplace:

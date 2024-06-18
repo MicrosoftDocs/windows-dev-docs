@@ -17,7 +17,7 @@ You can start your submission when your app is complete and ready to publish, or
 
 :::zone pivot="store-installer-msix,store-installer-pwa"
 
-After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Update** next to the most recent submission shown on its **Overview** page.
+After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Start update** from the Product release section on **App overview** page.
 
 :::zone-end
 

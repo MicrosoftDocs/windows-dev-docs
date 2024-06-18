@@ -251,6 +251,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Background | ms-settings:personalization-background |
 | Choose which folders appear on Start | ms-settings:personalization-start-places |
 | Colors | ms-settings:personalization-colors<br/>ms-settings:colors |
+| Dynamic Lighting | ms-settings:personalization-lighting |
 | Glance | ms-settings:personalization-glance (**Deprecated in Windows 10, version 1809 and later**) |
 | Lock screen | ms-settings:lockscreen |
 | Navigation bar | ms-settings:personalization-navbar (**Deprecated in Windows 10, version 1809 and later**) |

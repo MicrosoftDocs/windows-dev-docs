@@ -179,7 +179,7 @@ Now that you've configured your project to use UWP XAML Islands, you're ready to
     xmlns:controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"
     ```
 
-1. Still in `MainWindow.xaml`, edit the existing **Grid** element so that it looks like the XAML below. This XAML adds to the **Grid** an [**InkCanvas**](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and a [**InkToolbar**](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) control (prefixed by the **controls** XML namespace that you defined in the previous step).
+1. Still in `MainWindow.xaml`, edit the existing **Grid** element so that it looks like the XAML below. This XAML adds to the **Grid** an [**InkCanvas**](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and an [**InkToolbar**](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) control (prefixed by the **controls** XML namespace that you defined in the previous step).
 
     ```xml
     <Grid Margin="10,50,10,10">
