@@ -31,6 +31,11 @@ Take particular note of [What's supported when migrating from UWP to WinUI 3](wh
 
 As a further step in assisting you to migrate your UWP apps to the Windows App SDK and WinUI 3, we've leveraged the .NET Upgrade Assistant, adding support for migrating C# UWP apps. The UWP support automates much of the migration process. For more info, see the topic [Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant](upgrade-assistant.md).
 
+## Containerization benefits
+
+When transitioning to the Windows App SDK, UWP applications may lose the inherent containerization benefits of their original platform. However, these benefits can be restored using Win32 App Isolation — a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more information and to begin using Win32 App Isolation, visit this [GitHub](https://github.com/microsoft/win32-app-isolation) repository.
+
+
 ## Topics in this section
 
 | Topic | Description |
