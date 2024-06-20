@@ -20,7 +20,7 @@ To use this method, you need to first do the following:
 * If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 * Create a submission for one of your apps. You can do this in Partner Center, or you can do this by using the [create an app submission](create-an-app-submission.md) method.
-* Enable a gradual package rollout for the submission. You can do this in [in Partner Center](/windows/apps/publish/gradual-package-rollout), or you can do this by [using the Microsoft Store submission API](manage-app-submissions.md#manage-gradual-package-rollout).
+* Enable a gradual package rollout for the submission. You can do this in [Partner Center](/windows/apps/publish/gradual-package-rollout), or you can do this by [using the Microsoft Store submission API](manage-app-submissions.md#manage-gradual-package-rollout).
 
 ## Request
 

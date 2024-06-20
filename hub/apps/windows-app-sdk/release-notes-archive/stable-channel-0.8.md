@@ -105,7 +105,7 @@ If you don't set this property, then you'll see an error like: `"Error: This ver
 
 This is a servicing release of the Windows App SDK that includes several performance improvements for C#/.NET applications for the 0.8.0 release.
 
-To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (see [Download .NET](https://dotnet.microsoft.com/download) and [.NET 5 will reach End of Support on May 10, 2022](https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)). If you don't have the minimum required version of the .NET SDK installed, then you''ll see an error like `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater."`
+To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (see [Download .NET](https://dotnet.microsoft.com/download) and [.NET 5 will reach End of Support on May 10, 2022](https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)). If you don't have the minimum required version of the .NET SDK installed, then you'll see an error like `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater."`
 
 #### Bug Fixes (0.8.6)
 

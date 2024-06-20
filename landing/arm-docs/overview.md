@@ -23,7 +23,7 @@ For the best performance, responsiveness, and battery life, users will want and 
 
 ### Virtual Machines
 
-You can create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure. Learn how in this [Quickstart article](./create-arm-vm.md).
+You can create and deploy Windows 11 Arm64 VMs with Ampere Altra Arm–based processors on Azure. Learn how in this [Quickstart article](./create-arm-vm.md).
 
 Learn more about using Windows on Arm Virtual Machines:
 

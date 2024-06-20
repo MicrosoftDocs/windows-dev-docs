@@ -34,7 +34,7 @@ To cancel certification, follow these steps:
 To make your app unavailable without deleting it from the store, follow the following steps.
 
 1. Go to the Apps and Games overview page and open the app you want to make unavailable.
-1. From the Store presence card under Product release section, turn off the toogle switch to make product unavailable.
+1. From the Store presence card under Product release section, turn off the toggle switch to make product unavailable.
 1. Confirm that you want to make your app unavailable.
 
 To make your app available again, perform the same steps as above, but turn on the toggle switch instead.
