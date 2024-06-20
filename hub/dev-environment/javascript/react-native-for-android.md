@@ -20,16 +20,12 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
 
 1. [Install Visual Studio Code](https://code.visualstudio.com) (or your code editor of choice).
 
-2. [Install Android Studio for Windows](https://developer.android.com/studio). Android Studio installs the latest Android SDK by default. React Native requires Android 6.0 (Marshmallow) SDK or later. We recommend using the latest SDK.
+2. Install Android Studio for Windows and set the ANDROID_HOME environment variable. Follow the instructions at [Set Up Your Environment - React Native](https://reactnative.dev/docs/set-up-your-environment?platform=android). Be sure to set the **Development OS** selection to "Windows" and the **Target OS** selection to Android.
 
-3. Create environment variable paths for the Java SDK and Android SDK:
+3. Set the JAVA_HOME environment variable. The Gradle tool used to build Android apps requires a specific version requirement for the Java SDK. To find the supported version, in Android Studio, go to **Settings->Build, Execution, Deployment->Build Tools->Gradle**. Write down the path selected in the **Gradle JDK** drop-down. Set the JAVA_HOME environment variable to this path using the following steps:
     - In the Windows search menu, enter: "Edit the system environment variables", this will open the **System Properties** window.
     - Choose **Environment Variables...** and then choose **New...** under **User variables**.
-    - Enter the Variable name and value (path). The default paths for the Java and Android SDKs are as follows. If you've chosen a specific location to install the Java and Android SDKs, be sure to update the variable paths accordingly.
-        - JAVA_HOME: C:\Program Files\Android\Android Studio\jre\bin
-        - ANDROID_HOME: C:\Users\username\AppData\Local\Android\Sdk
-
-    ![Screenshot of adding environmental variable path](../../images/add-environmental-variable-path.png)
+    - Set the Variable name to JAVA_HOME and the value to the path that you retrieved from Android Studio.
 
 4. [Install NodeJS for Windows](https://nodejs.org/en/) You may want to consider using [Node Version Manager (nvm) for Windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) if you will be working with multiple projects and version of NodeJS. We recommend installing the latest LTS version for new projects.
 
