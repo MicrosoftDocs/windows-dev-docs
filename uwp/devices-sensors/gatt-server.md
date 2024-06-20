@@ -212,7 +212,7 @@ There are 2 types of Writes - with and without response. Use GattWriteOption (a 
 
 ## Send notifications to subscribed clients
 
-The most frequent of the GATT Server operations, notifications perform the critical function of pushing data to the remote devices. Sometimes, you'll want to notify all subscribed clients but othertimes you may want to pick which devices to send the new value to:
+The most frequent of the GATT Server operations, notifications perform the critical function of pushing data to the remote devices. Sometimes, you'll want to notify all subscribed clients but other times you may want to pick which devices to send the new value to:
 
 ```csharp
 async void NotifyValue()

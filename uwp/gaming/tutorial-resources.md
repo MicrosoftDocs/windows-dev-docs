@@ -36,7 +36,7 @@ While they have similar end results, there are a number of differences between i
 
 Feature | XAML| Direct2D
 :----------|:----------- | :-----------
-Defining overlay | Defined in a XAML file, `\*.xaml`. Once understanding XAML, creating and configuring more complicated overlays are made simpiler when compared to Direct2D.| Defined as a collection of Direct2D primitives and [DirectWrite](/windows/desktop/DirectWrite/direct-write-portal) strings manually placed and written to a Direct2D target buffer. 
+Defining overlay | Defined in a XAML file, `\*.xaml`. Once understanding XAML, creating and configuring more complicated overlays are made simpler when compared to Direct2D.| Defined as a collection of Direct2D primitives and [DirectWrite](/windows/desktop/DirectWrite/direct-write-portal) strings manually placed and written to a Direct2D target buffer. 
 User interface elements | XAML user interface elements come from standardized elements that are part of the Windows Runtime XAML APIs, including [**Windows::UI::Xaml**](/uwp/api/Windows.UI.Xaml) and [**Windows::UI::Xaml::Controls**](/uwp/api/Windows.UI.Xaml.Controls). The code that handles the behavior of the XAML user interface elements is defined in a codebehind file, Main.xaml.cpp. | Simple shapes can be drawn like rectangles and ellipses.
 Window resizing | Naturally handles resize and view state change events, transforming the overlay accordingly | Need to manually specify how to redraw the overlay's components.
 
