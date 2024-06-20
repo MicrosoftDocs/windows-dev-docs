@@ -101,7 +101,7 @@ The top button corresponds to the first button and the bottom button corresponds
 
 The following example demonstrates the [VisibleOnPointerOver](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility) setting for the navigation buttons.
 
-:::image type="content" source="images/pipspager-visible-on-pointer-over.gif" alt-text="A PipsPager with five vertical dots and navigation buttons visiblility based on pointer over and current page.":::
+:::image type="content" source="images/pipspager-visible-on-pointer-over.gif" alt-text="A PipsPager with five vertical dots and navigation buttons visibility based on pointer over and current page.":::
 
 ```xaml
 <PipsPager x:Name="VerticalPipsPager"

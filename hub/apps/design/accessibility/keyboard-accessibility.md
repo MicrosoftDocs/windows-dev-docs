@@ -58,7 +58,7 @@ Whether you adjust [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabi
   - UI elements with [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) greater than 0 are added to the tab order based on the **TabIndex** value.
   - UI elements with [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) less than 0 are added to the tab order and appear before any zero value.
 
-The following code nippet shows a collection of elements with various [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) settings (`B` is assigned the value of [Int32.MaxValue](/dotnet/api/system.int32.maxvalue), or 2,147,483,647).
+The following code snippet shows a collection of elements with various [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) settings (`B` is assigned the value of [Int32.MaxValue](/dotnet/api/system.int32.maxvalue), or 2,147,483,647).
 
 ```xaml
 <StackPanel Background="#333">
@@ -94,13 +94,13 @@ While keyboard navigation can provide an accessibly-compliant UI, making an acce
 - Adding **keyboard shortcuts** for common actions in your UI.
 - Adding **access keys** to important controls in your UI.
 
-See [Keybord shortcuts](#keyboard-shortcuts) below and [Access keys](../input/access-keys.md) for more guidance about implementing shortcuts and access keys.
+See [Keyboard shortcuts](#keyboard-shortcuts) below and [Access keys](../input/access-keys.md) for more guidance about implementing shortcuts and access keys.
 
 #### Optimize for F6
 
 F6 lets keyboard users efficiently navigate between panes of UI without tabbing through potentially hundreds of controls.
 
-For example, F6 in Microsoft Edge cycles between the address bar, the bookmark bar, the tab bar, and the content panel. As a web page can potentially have hundreds of tabbable controls, F6 can make it easier for keyboard users to reach the tab bar and address bar without using application-specific shortcuts.
+For example, F6 in Microsoft Edge cycles between the address bar, the bookmark bar, the tab bar, and the content panel. As a web page can potentially have hundreds of tabable controls, F6 can make it easier for keyboard users to reach the tab bar and address bar without using application-specific shortcuts.
 
 The F6 tab cycle can also loosely correspond to [landmarks or headings](landmarks-and-headings.md) in content, though it doesn't need to match exactly. F6 should focus on large, distinct regions in your UI, whereas landmarks can be more granular. For example, you might mark an app bar and its search box as landmarks, but only include the app bar itself in the F6 cycle.
 
@@ -194,7 +194,7 @@ For more guidance about implementing shortcut keys, see [Shortcut keys](/windows
 
 ### Implementing a key event handler
 
-Input events (such as the key events) use an event concept called *routed events*. A routed event can bubble up through the child elements of a parent composite control, such that the parent control can handle events for multiple child elements. This event model is convenient for defining shortcut key actions for a control that contains several child elememts, none of which can have focus or be part of the tab order.
+Input events (such as the key events) use an event concept called *routed events*. A routed event can bubble up through the child elements of a parent composite control, such that the parent control can handle events for multiple child elements. This event model is convenient for defining shortcut key actions for a control that contains several child elements, none of which can have focus or be part of the tab order.
 
 For example code that shows how to write a key event handler that includes checking for modifiers such as the Ctrl key, see [Keyboard interactions](../input/keyboard-interactions.md).
 

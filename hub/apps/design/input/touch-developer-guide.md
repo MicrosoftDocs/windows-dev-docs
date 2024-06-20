@@ -563,7 +563,7 @@ All of the pointer events, gesture events and manipulation events mentioned here
 > [!Important]
 > If you need to handle pointer events for a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
 
-## Dos and dont's
+## Dos and don'ts
 
 - Design applications with touch interaction as the primary expected input method.
 - Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)

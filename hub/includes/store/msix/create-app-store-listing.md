@@ -18,7 +18,7 @@ To add or remove languages for your Store listings, click **Add/remove languages
 
 In the **Additional Store listing languages** section, you can click **Manage additional languages** to add or remove languages that are *not* included in your packages. Check the boxes for the languages that you’d like to add, then click **Update**. The languages you’ve selected will be displayed in the **Additional Store listing languages** section. To remove one or more of these languages, click **Remove** (or click **Manage additional languages** and uncheck the box for languages you’d like to remove).
 
-:::image type="content" source="images/msix-listing-languages-pop-up.png" lightbox="images/msix-listing-languages-pop-up.png" alt-text="A screenshot showing thelist of languages available for listing a MSIX/PWA app.":::
+:::image type="content" source="images/msix-listing-languages-pop-up.png" lightbox="images/msix-listing-languages-pop-up.png" alt-text="A screenshot showing the list of languages available for listing a MSIX/PWA app.":::
 
 :::image type="content" source="images/msix-listing-language-added.png" lightbox="images/msix-listing-language-added.png" alt-text="A screenshot showing a listing language has ben added for MSIX/PWA app.":::
 

@@ -20,7 +20,7 @@ To create and run an A/B test, follow these steps:
 1. [Create a project and define remote variables in Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). This project contains the variables and default variable values for your experiments.  
 2. [Code your app for experimentation](code-your-experiment-in-your-app.md). Use an API in the Microsoft Store Services SDK to get remote variable values from the project you created in Partner Center, use this data to modify the behavior of the feature you are testing, and send view event and conversion events to Partner Center.
 3. [Define your experiment in Partner Center ](define-your-experiment-in-the-dev-center-dashboard.md). Create an experiment in your project that defines the unique goals and variations for your A/B test.
-4. [Run and manage your experiment in Partner Center ashboard](manage-your-experiment.md). Activate your experiment, and use Partner Center to review the results of the experiment and complete the experiment.
+4. [Run and manage your experiment in Partner Center dashboard](manage-your-experiment.md). Activate your experiment, and use Partner Center to review the results of the experiment and complete the experiment.
 
 For a walkthrough that demonstrates the end-to-end process, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
 
