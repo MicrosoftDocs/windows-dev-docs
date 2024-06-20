@@ -142,7 +142,7 @@ namespace WinUITest1
 
     Select the "WinUIClassLibrary1" item from the **Projects** list.
 
-    :::image type="content" source="media/visual-studio-unittest-add-project-reference-ref-manager.png" alt-text="Screenshot of the Reference Manager diaolg with the 'WinUIClassLibrary1' project selected.":::
+    :::image type="content" source="media/visual-studio-unittest-add-project-reference-ref-manager.png" alt-text="Screenshot of the Reference Manager dialog with the 'WinUIClassLibrary1' project selected.":::
 
 13. Create a new test method in UnitTests.cs. As this test case requires a XAML UI Thread to run, mark it with the [UITestMethod] attribute instead of the standard [TestMethod] attribute.
 

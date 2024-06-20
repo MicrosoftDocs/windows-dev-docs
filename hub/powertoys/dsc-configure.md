@@ -145,7 +145,7 @@ This command installs the latest version of PowerToys and uses the PowerToysConf
 | FancyzonesDisplayOrWorkAreaChangeMoveWindows | Boolean | Keep windows in their zones when the screen resolution or work area changes. | ✅ |
 | FancyzonesZoneSetChangeMoveWindows | Boolean | During zone layout changes, windows assigned to a zone will match new size/positions. | ✅ |
 | FancyzonesAppLastZoneMoveWindows | Boolean | Move newly created windows to their last known zone. | ✅ |
-| FancyzonesOpenWindowOnActiveMonitor | Boolean | Move newly created windows to the curreynt active monitor (Experimental). | ✅ |
+| FancyzonesOpenWindowOnActiveMonitor | Boolean | Move newly created windows to the current active monitor (Experimental). | ✅ |
 | FancyzonesRestoreSize | Boolean | Restore the original size of windows when unsnapping. | ✅ |
 | FancyzonesQuickLayoutSwitch | Boolean | Enable quick layout switch. | ✅ |
 | FancyzonesFlashZonesOnQuickSwitch | Boolean | Flash zones when switching layout. | ✅ |

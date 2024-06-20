@@ -14,7 +14,7 @@ ms.date: 03/30/2021
 
 A guide to help you install the Next.js web framework and get up and running on Windows.
 
-Next.js is a JavaScript framework tailored for building React-based web applications, offering support for both static and server-side rendered web applicaions. Built with best practices in mind, Next.js enables you to create "universal" web apps in a consistent manner, requiring mininmal configuration. These "universal" server-rendered web apps, also referred to as “isomorphic”, share code between the client and server.
+Next.js is a JavaScript framework tailored for building React-based web applications, offering support for both static and server-side rendered web applications. Built with best practices in mind, Next.js enables you to create "universal" web apps in a consistent manner, requiring minimal configuration. These "universal" server-rendered web apps, also referred to as “isomorphic”, share code between the client and server.
 Next.js enables developers to create fast, scalable, and SEO-friendly web applications with ease.
 
 To learn more about React and other JavaScript frameworks based on React, see the [React overview](./react-overview.md) page.
