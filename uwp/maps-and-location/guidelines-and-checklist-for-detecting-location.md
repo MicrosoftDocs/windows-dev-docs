@@ -2,22 +2,21 @@
 description: This topic describes performance guidelines for apps that require access to a user's location.
 title: Guidelines for location-aware apps
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.date: 10/20/2020
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, location, map, geolocation
 ms.localizationpriority: medium
 ---
 # Guidelines for location-aware apps
 
+This topic describes performance guidelines for apps that require access to a user's location.
+
 **Important APIs**
 
 -   [**Geolocation**](/uwp/api/Windows.Devices.Geolocation)
 -   [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
-This topic describes performance guidelines for apps that require access to a user's location.
-
 ## Recommendations
-
 
 -   Start using the location object only when the app requires location data.
 
@@ -155,7 +154,6 @@ A user's geographic location is personally identifiable information (PII). The f
 * [Set up a geofence](./set-up-a-geofence.md)
 * [Get current location](./get-location.md)
 * [Display maps with 2D, 3D, and Streetside views](./display-maps.md)
-<!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP location sample (geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
