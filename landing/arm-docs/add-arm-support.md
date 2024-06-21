@@ -1,7 +1,7 @@
 ---
 title: Add support Arm devices to your Windows app
 description: Guidance for adding Arm64 support to your app. Optimize your x64 app to perform better on Windows devices powered by Arm processors so that CPU, GPU, and NPU performance is accelerated, less power is consumed to preserve battery life, and wi-fi and mobile data network connections are supported.
-ms.date: 052/21/2024
+ms.date: 05/21/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
