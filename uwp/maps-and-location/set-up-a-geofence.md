@@ -2,24 +2,16 @@
 title: Set up a geofence
 description: Set up a Geofence in your app, and learn how to handle notifications in the foreground and background.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.date: 10/20/2020
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, map, location, geofence, notifications
 ms.localizationpriority: medium
 ---
 # Set up a geofence
 
-> [!NOTE]
-> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services requite a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
-
 Set up a [**Geofence**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) in your app, and learn how to handle notifications in the foreground and background.
 
-**Tip** To learn more about accessing location in your app, download the following sample from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub.
-
--   [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
-
 ## Enable the location capability
-
 
 1.  In **Solution Explorer**, double-click on **package.appxmanifest** and select the **Capabilities** tab.
 2.  In the **Capabilities** list, check **Location**. This adds the `Location` device capability to the package manifest file.
@@ -31,12 +23,12 @@ Set up a [**Geofence**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence
   </Capabilities>
 ```
 
-## Set up a geofence
-
+## Geofence set up
 
 ### Step 1: Request access to the user's location
 
-**Important** You must request access to the user's location by using the [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) method before attempting to access the user's location. You must call the **RequestAccessAsync** method from the UI thread and your app must be in the foreground. Your app will not be able to access the user's location information until after the user grants permission to your app.
+> [!IMPORTANT]
+> You must request access to the user's location by using the [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) method before attempting to access the user's location. You must call the **RequestAccessAsync** method from the UI thread and your app must be in the foreground. Your app will not be able to access the user's location information until after the user grants permission to your app.
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -221,7 +213,6 @@ public async void OnGeofenceStatusChanged(GeofenceMonitor sender, object e)
 
 ## Set up foreground notifications
 
-
 After your geofences are created, you must add the logic to handle what happens when a geofence event occurs. Depending on the [**MonitoredStates**](/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) that you have set up, you may receive an event when:
 
 -   The user enters a region of interest.
@@ -285,13 +276,9 @@ public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
         }
     });
 }
-
-
-
 ```
 
 ## Set up background notifications
-
 
 After your geofences are created, you must add the logic to handle what happens when a geofence event occurs. Depending on the [**MonitoredStates**](/uwp/api/windows.devices.geolocation.geofencing.geofence.monitoredstates) that you have set up, you may receive an event when:
 
@@ -305,7 +292,7 @@ To listen for a geofence event in the background
 -   Register the background task in your app. If your app needs internet access, say for accessing a cloud service, you can set a flag for that when the event is triggered. You can also set a flag to make sure that the user is present when the event is triggered so that you are sure that the user gets notified.
 -   While your app is running in the foreground, prompt the user to grant your app location permissions.
 
-### Step 1: Register for geofence state change events
+### Step 1: Register for geofence state changes
 
 In your app's manifest, under the **Declarations** tab, add a declaration for a location background task. To do this:
 
@@ -410,10 +397,9 @@ async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTas
 
 ## Change the privacy settings
 
-
 If the location privacy settings don't allow your app to access the user's location, we recommend that you provide a convenient link to the **location privacy settings** in the **Settings** app. In this example, a Hyperlink control is used navigate to the `ms-settings:privacy-location` URI.
 
-```xml
+```xaml
 <!--Set Visibility to Visible when access to the user's location is denied. -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
@@ -435,7 +421,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 ## Test and debug your app
 
-
 Testing and debugging geofencing apps can be a challenge because they depend on a device's location. Here, we outline several methods for testing both foreground and background geofences.
 
 **To debug a geofencing app**
@@ -446,7 +431,7 @@ Testing and debugging geofencing apps can be a challenge because they depend on 
 
 ### Test and debug a geofencing app that is running in the foreground
 
-**To test your geofencing app that is running the foreground**
+**To test your geofencing app that is running in the foreground**
 
 1.  Build your app in Visual Studio.
 2.  Launch your app in the Visual Studio emulator.
@@ -465,7 +450,6 @@ Testing and debugging geofencing apps can be a challenge because they depend on 
 6.  Use Visual Studio to trigger the location background task. For more info about triggering background tasks in Visual Studio, see [How to trigger background tasks](/previous-versions/hh974425(v=vs.120)#BKMK_Trigger_background_tasks).
 
 ## Troubleshoot your app
-
 
 Before your app can access location, **Location** must be enabled on the device. In the **Settings** app, check that the following **location privacy settings** are turned on:
 
