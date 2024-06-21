@@ -2,7 +2,7 @@
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app using the ms-settings URI scheme.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 03/21/2023
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -87,23 +87,7 @@ The following sections describe different categories of ms-settings URIs used to
 - [User accounts](#user-accounts)
 
 > [!NOTE]
-> Whether a settings page is available varies by Windows SKU. The notes column also captures additional requirements that must be met for a page to be available.
-
-<!-- TODO: 
-* ms-settings:controlcenter (not working on 07/11/2022)
-* ms-settings:holographic (not working on 07/11/2022)
-* ms-settings:keyboard-advanced (not working on 07/11/2022)
-* ms-settings:regionlanguage-adddisplaylanguage (Goes to Language and Region page - 07/11/2022)
-* ms-settings:regionlanguage-setdisplaylanguage (Goes to Language and Region page - 07/11/2022)
-* ms-settings:signinoptions-launchpinenrollment (not working on 07/11/2022)
-* ms-settings:storagecleanup (not working on 07/11/2022)
-* ms-settings:update-security (not working on 07/11/2022) 
-* ms-settings:advanced-apps (not working on 07/11/2022)
-* ms-settings:gaming-xboxnetworking (not working on 07/11/2022) 
-* ms-settings:datausage (Goes to Network & internet page - 07/11/2022) 
-* ms-settings:personalization-textinput (not working on 07/11/2022)
-* ms-settings:sound-defaultoutputdevices (not working on 07/11/2022)
-* ms-settings:sound-defaultinputdevices (not working on 07/11/2022) -->
+> The availability of some settings pages varies by Windows version and SKU. The notes column also captures additional requirements that must be met for a page to be available.
 
 ### Accounts
 
@@ -148,6 +132,9 @@ The following sections describe different categories of ms-settings URIs used to
 | Searching Windows | ms-settings:cortana-windowssearch |
 | Talk to Cortana | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
 
+> [!IMPORTANT]
+> Cortana voice assistance in Windows as a standalone app was retired in the spring of 2023. For more information, see [End of support for Cortana](https://support.microsoft.com/topic/end-of-support-for-cortana-d025b39f-ee5b-4836-a954-0ab646ee1efa).
+
 > [!NOTE]
 > This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case.
 
@@ -168,7 +155,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Text Suggestions | ms-settings:devicestyping-hwkbtextsuggestions |
 | Typing | ms-settings:typing |
 | USB | ms-settings:usb |
-| Wheel | ms-settings:wheel (only available if Dial is paired) |
+| Wheel | ms-settings:wheel (only available if a **Surface Dial** device is paired) |
 | Your phone | ms-settings:mobile-devices  |
 
 ### Ease of access
@@ -195,7 +182,7 @@ The following sections describe different categories of ms-settings URIs used to
 
 |Settings page| URI |
 |-------------|-----|
-| Extras | ms-settings:extras (only available if "settings apps" are installed, for example, by a 3rd party) |
+| Extras | ms-settings:extras (only available if "settings apps" have been installed, for example, by a 3rd party) |
 
 ### Family Group
 
@@ -216,7 +203,7 @@ The following sections describe different categories of ms-settings URIs used to
 ### Mixed reality
 
 > [!NOTE]
-> These settings are only available if the Mixed Reality Portal app is installed.
+> These settings are only available if the [Mixed Reality Portal](https://apps.microsoft.com/detail/9ng1h8b3zc7m) app is installed.
 
 | Settings page | URI |
 |---------------|-----|
@@ -343,7 +330,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Duplicating my display | ms-settings:quietmomentspresentation |
 | During these hours | ms-settings:quietmomentsscheduled |
 | Encryption | ms-settings:deviceencryption |
-| Energy recommendatations | ms-settings:energyrecommendations **(Added in February Moment update for Windows 11, Version 22H2, Build 22624)** |
+| Energy recommendatations | ms-settings:energyrecommendations **(Available in February Moment update for Windows 11, Version 22H2, Build 22624 or later)** |
 | Focus assist | ms-settings:quiethours |
 | Graphics Settings | ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options) |
 | Graphics Default Settings | ms-settings:display-advancedgraphics-default |
