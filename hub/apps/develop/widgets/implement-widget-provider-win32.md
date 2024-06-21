@@ -107,7 +107,7 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
     WidgetProvider();
 
     /* IWidgetProvider required functions that need to be implemented */
-    void CreateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext WidgetContext);
+    void CreateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext);
     void DeleteWidget(winrt::hstring const& widgetId, winrt::hstring const& customState);
     void OnActionInvoked(winrt::Microsoft::Windows::Widgets::Providers::WidgetActionInvokedArgs actionInvokedArgs);
     void OnWidgetContextChanged(winrt::Microsoft::Windows::Widgets::Providers::WidgetContextChangedArgs contextChangedArgs);
@@ -147,6 +147,7 @@ Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for 
 
 ```cpp
 // WidgetProvider.h
+#include <unordered_map>
 struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>
 {
 ...
