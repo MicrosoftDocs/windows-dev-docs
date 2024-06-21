@@ -1,8 +1,8 @@
 ---
 title: Migrate from UWP to the Windows App SDK
 description: A collection of topics describing and demonstrating how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
+ms.date: 06/21/2024
 ms.topic: article
-ms.date: 06/05/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
 ms.author: stwhi
 author: stevewhims
@@ -11,21 +11,23 @@ ms.localizationpriority: medium
 
 # Migrate from UWP to the Windows App SDK
 
-To migrate your app from UWP to the Windows App SDK, the UI code likely needs just a few namespace changes while much of the platform code can stay the same.
+To migrate your app from the [Universal Windows Platform](/windows/uwp/) (UWP) to the Windows App SDK, your UI code likely needs just a few namespace changes, while much of your platform code can stay the same. You'll need to adjust some code due to differences between UWP apps and desktop apps. But we expect that for most apps (depending on codebase size, of course), migration will take on the order of days rather than weeks.
 
 > [!NOTE]
-> There's no need to migrate your project if the functionality currently supported by the [Universal Windows Platform (UWP)](/windows/uwp/) is sufficient as [WinUI 2](../../winui/winui2/index.md), and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/), support UWP project types.
+> If you're happy with the current functionality of the UWP platform and your UWP app, then there's no need to migrate your project. [WinUI 2](../../winui/winui2/index.md) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/) continue to support UWP project types.
 
-Even though you might need to adjust some code due to differences between desktop apps and UWP apps, migrating most apps requires just a few steps.
+Below are the steps, at a high level, for migrating manually. But see the following section for info about using the [.NET Upgrade Assistant tool](#migrating-by-using-the-net-upgrade-assistant-tool)).
 
-1. [Create your first WinUI 3 (Windows App SDK) project packaged desktop project](../../winui/winui3/create-your-first-winui3-app.md) (this could go into your app's existing solution).
+1. Create a new WinUI 3 packaged desktop project (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)). That could go into your project's existing solution.
 2. Copy your XAML/UI code. In many cases you can simply change namespaces (for example, **Windows.UI.\*** to **Microsoft.UI.\***).
 3. Copy your app logic code. Some APIs need tweaks, such as **Popup**, **Picker**s, and **SecondaryTile**s.
 
-Take particular note of [What's supported when migrating from UWP to WinUI 3](what-is-supported.md), which describes any functionality that's not yet supported in WinUI 3 and the Windows App SDK. If your app needs any of those features/libraries, you might want to consider postponing migration.
+For full details, see the topics in the table below. They describe and demonstrate how to manually migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
+
+Take particular note of [What's supported when migrating from UWP to WinUI 3](./what-is-supported.md), which describes any functionality that's not yet supported in WinUI 3 and the Windows App SDK. If your app needs any of those features/libraries, then you might want to consider postponing migration.
 
 > [!NOTE]
-> If your UWP source code is written in C++/CX, you will need to port that code (see [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)).
+> If your UWP app's source code is written in C++/CX, then also see [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx).
 
 ## Migrating by using the .NET Upgrade Assistant tool
 
@@ -33,8 +35,7 @@ As a further step in assisting you to migrate your UWP apps to the Windows App S
 
 ## Containerization benefits
 
-When transitioning to the Windows App SDK, UWP applications may lose the inherent containerization benefits of their original platform. However, these benefits can be restored using Win32 App Isolation — a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more information and to begin using Win32 App Isolation, visit this [GitHub](https://github.com/microsoft/win32-app-isolation) repository.
-
+When transitioning to the Windows App SDK, UWP applications might lose the inherent containerization benefits of their original platform. However, those benefits can be restored by using Win32 App Isolation&mdash;a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more info, and to begin using Win32 App Isolation, visit [Welcome to the Win32 app isolation repo](https://github.com/microsoft/win32-app-isolation) on GitHub.
 
 ## Topics in this section
 
