@@ -277,8 +277,8 @@ private void SelectAll_Indeterminate(object sender, RoutedEventArgs e)
     // If the SelectAll box is checked (all options are selected),
     // clicking the box will change it to its indeterminate state.
     // Instead, we want to uncheck all the boxes,
-    // so we do this programatically. The indeterminate state should
-    // only be set programatically, not by the user.
+    // so we do this programmatically. The indeterminate state should
+    // only be set programmatically, not by the user.
 
     if (Option1CheckBox.IsChecked == true &&
         Option2CheckBox.IsChecked == true &&

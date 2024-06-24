@@ -139,7 +139,7 @@ By default, the [Expander](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.
 <Expander IsExpanded="True" ExpandDirection="Up">
 ```
 
-An `Expander` is expanded or collapsed either programatically by setting the `IsExpanded` property, or by interacting with the `Header`; it cannot be light-dismissed.
+An `Expander` is expanded or collapsed either programmatically by setting the `IsExpanded` property, or by interacting with the `Header`; it cannot be light-dismissed.
 
 > [!TIP]
 > Transient UI, such as a `Flyout` or the open drop-down of a `ComboBox`, closes when you click or tap outside of it. This is called _light-dismiss_. The content area of an `Expander` is not considered transient and does not overlay other UI, so it does not support light-dismiss.

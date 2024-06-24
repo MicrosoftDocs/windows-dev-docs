@@ -67,7 +67,7 @@ If you run your app and click the "Log in" button, it should display an empty wi
 
 ![Screenshot of the Choose an account window with no accounts listed.](images/tb-1.png)
 
-The pane is empty because the system only provides a UI shell - it's up to the developer to programatically populate the pane with the identity providers. 
+The pane is empty because the system only provides a UI shell - it's up to the developer to programmatically populate the pane with the identity providers. 
 
 > [!TIP]
 > Optionally, you can use **[ShowAddAccountAsync](/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** instead of **[Show](/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**, which will return an **[IAsyncAction](/uwp/api/Windows.Foundation.IAsyncAction)**, to query for the status of the operation. 

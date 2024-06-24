@@ -35,13 +35,13 @@ To associate a Microsoft Entra application with your Partner Center account and 
 1.  In Partner Center, [associate your organization's Partner Center account with your organization's Microsoft Entra directory](/windows/apps/publish/partner-center/associate-azure-ad-with-partner-center).
 1.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Microsoft Entra application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center) that represents the app or service that you will use to access analytics data for your Partner Center account. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Microsoft Entra directory, you can [create a new Microsoft Entra application in Partner Center](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
 1. Return to the **Users Management** page and navigate to **Microsoft Entra applications** tab, click the name of your Microsoft Entra application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
-1. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Microsoft Entra application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#manage-keys).
+1. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for a Microsoft Entra application](/windows/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center#manage-keys).
 
 <span id="obtain-an-azure-ad-access-token"></span>
 
 ## Step 2: Obtain a Microsoft Entra access token
 
-Before you call any of the methods in the Microsoft Store analytics API, you must first obtain an Microsoft Entra access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
+Before you call any of the methods in the Microsoft Store analytics API, you must first obtain a Microsoft Entra access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
 
 To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
 
