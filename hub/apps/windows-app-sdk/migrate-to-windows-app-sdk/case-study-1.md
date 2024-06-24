@@ -308,3 +308,7 @@ private void BackButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e
 ## Test the migrated app
 
 Now build the project, and run the app to test it. Select an image, set a zoom level, choose effects, and configure them.
+
+## See Also
+
+- [Windows App SDK and suppported Windows releases](../support.md)

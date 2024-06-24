@@ -66,3 +66,7 @@ During the migration process, you might find your app in a state where your XAML
 ## Unregistering an event handler (C++/WinRT)
 
 In a C++/WinRT project, you can manually revoke (unregister) an event handler such as **SizeChanged** (for more details, and code examples, see [Revoke a registered delegate](/windows/uwp/cpp-and-winrt-apis/handle-events#revoke-a-registered-delegate)). But an alternative to manually revoking&mdash;and one that you could consider if you're having problems with manually revoking&mdash;is to use a C++/WinRT auto event revoker. Again, more details and code examples in [Revoke a registered delegate](/windows/uwp/cpp-and-winrt-apis/handle-events#revoke-a-registered-delegate).
+
+## See Also
+
+- [Windows App SDK and suppported Windows releases](../support.md)

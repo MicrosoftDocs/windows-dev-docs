@@ -59,9 +59,10 @@ If your existing project is a C++ project, and you want to call Windows Runtime 
 
 If you encounter a *Class not registered* error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md).
 
-## Related topics
+## See Also
 
 - [Windows App SDK](index.md)
 - [Release channels and release notes](release-channels.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
+- [Windows App SDK and suppported Windows releases](support.md)

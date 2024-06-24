@@ -112,6 +112,7 @@ Also see the [Load resources using MRT Core](https://github.com/microsoft/Window
 
 ## Related Topics
 
+* [Windows App SDK and suppported Windows releases](../../support.md)
 * [Manage resources with MRT Core](../../mrtcore/mrtcore-overview.md)
 * [MRT Core images](https://github.com/MicrosoftDocs/windows-uwp/tree/docs/hub/apps/windows-app-sdk/mrtcore/images)
 * [Resource Management System](/windows/uwp/app-resources/resource-management-system)
