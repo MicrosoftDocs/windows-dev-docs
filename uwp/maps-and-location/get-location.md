@@ -2,29 +2,31 @@
 title: Get the user's location
 description: Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in the Settings app. This topic also shows how to check if your app has permission to access the user's location.
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
-ms.date: 10/20/2020
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, map, location, location capability
 ms.localizationpriority: medium
 ---
 # Get the user's location
 
+> [!IMPORTANT]
+> **Bing Maps for Enterprise service retirement**
+>
+> The UWP [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services from the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+>
+> For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
+
 > [!NOTE]
-> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services requite a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services require a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
-Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in the Settings app. This topic also shows how to check if your app has permission to access the user's location.
-
-**Tip** To learn more about accessing the user's location in your app, download the following sample from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub.
-
--   [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in the Windows Settings app. This topic also shows how to check if your app has permission to access the user's location.
 
 ## Enable the location capability
-
 
 1.  In **Solution Explorer**, double-click **package.appxmanifest** and select the **Capabilities** tab.
 2.  In the **Capabilities** list, check the box for **Location**. This adds the `location` device capability to the package manifest file.
 
-```XML
+```xml
   <Capabilities>
     <!-- DeviceCapability elements must follow Capability elements (if present) -->
     <DeviceCapability Name="location"/>
@@ -32,7 +34,6 @@ Find the user's location and respond to changes in location. Access to the user'
 ```
 
 ## Get the current location
-
 
 This section describes how to detect the user's geographic location using APIs in the [**Windows.Devices.Geolocation**](/uwp/api/Windows.Devices.Geolocation) namespace.
 
@@ -46,15 +47,14 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-
-
 The [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) method prompts the user for permission to access their location. The user is only prompted once (per app). After the first time they grant or deny permission, this method no longer prompts the user for permission. To help the user change location permissions after they've been prompted, we recommend that you provide a link to the location settings as demonstrated later in this topic.
 
->Note:  The coarse location feature allows your app to obtain an intentionally obfuscated (imprecise) location without getting the user's explicit permission (the system-wide location switch must still be **on**, however). To learn how to utilize coarse location in your app, see the [**AllowFallbackToConsentlessPositions**](/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions) method in the [**Geolocator**](/uwp/api/windows.devices.geolocation.geolocator) class.
+> [!NOTE]
+> The coarse location feature allows your app to obtain an intentionally obfuscated (imprecise) location without getting the user's explicit permission (the system-wide location switch must still be **on**, however). To learn how to utilize coarse location in your app, see the [**AllowFallbackToConsentlessPositions**](/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions) method in the [**Geolocator**](/uwp/api/windows.devices.geolocation.geolocator) class.
 
 ### Step 2: Get the user's location and register for changes in location permissions
 
-The [**GetGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) method performs a one-time reading of the current location. Here, a **switch** statement is used with **accessStatus** (from the previous example) to act only when access to the user's location is allowed. If access to the user's location is allowed, the code creates a [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) object, registers for changes in location permissions, and requests the user's location.
+The [**GetGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) method performs a one-time reading of the current location. Here, a `switch` statement is used with **accessStatus** (from the previous example) to act only when access to the user's location is allowed. If access to the user's location is allowed, the code creates a [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) object, registers for changes in location permissions, and requests the user's location.
 
 ```csharp
 switch (accessStatus)
@@ -158,14 +158,13 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 
 ## Respond to location updates
 
-
 This section describes how to use the [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) event to receive updates of the user's location over a period of time. Because the user could revoke access to location at any time, it's important call [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) and use the [**StatusChanged**](/uwp/api/windows.devices.geolocation.geolocator.statuschanged) event as shown in the previous section.
 
 This section assumes that you've already enabled the location capability and called [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) from the UI thread of your foreground app.
 
 ### Step 1: Define the report interval and register for location updates
 
-In this example, a **switch** statement is used with **accessStatus** (from the previous example) to act only when access to the user's location is allowed. If access to the user's location is allowed, the code creates a [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) object, specifies the tracking type, and registers for location updates.
+In this example, a `switch` statement is used with **accessStatus** (from the previous example) to act only when access to the user's location is allowed. If access to the user's location is allowed, the code creates a [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) object, specifies the tracking type, and registers for location updates.
 
 The [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) object can trigger the [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) event based on a change in position (distance-based tracking) or a change in time (periodic-based tracking).
 
@@ -173,6 +172,7 @@ The [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) object can
 -   For periodic-based tracking, set the [**ReportInterval**](/uwp/api/windows.devices.geolocation.geolocator.reportinterval) property.
 
 If neither property is set, a position is returned every 1 second (equivalent to `ReportInterval = 1000`). Here, a 2 second (`ReportInterval = 2000`) report interval is used.
+
 ```csharp
 using Windows.Devices.Geolocation;
 ...
@@ -181,7 +181,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 switch (accessStatus)
 {
     case GeolocationAccessStatus.Allowed:
-        // Create Geolocator and define perodic-based tracking (2 second interval).
+        // Create Geolocator and define periodic-based tracking (2 second interval).
         _geolocator = new Geolocator { ReportInterval = 2000 };
 
         // Subscribe to the PositionChanged event to get location updates.
@@ -202,7 +202,7 @@ switch (accessStatus)
         break;
 
     case GeolocationAccessStatus.Unspecified:
-        _rootPage.NotifyUser("Unspecificed error!", NotifyType.ErrorMessage);
+        _rootPage.NotifyUser("Unspecified error!", NotifyType.ErrorMessage);
         LocationDisabledMessage.Visibility = Visibility.Collapsed;
         break;
 }
@@ -227,18 +227,17 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 
 ## Change the location privacy settings
 
-
 If the location privacy settings don't allow your app to access the user's location, we recommend that you provide a convenient link to the **location privacy settings** in the **Settings** app. In this example, a Hyperlink control is used navigate to the `ms-settings:privacy-location` URI.
 
-```xml
+```xaml
 <!--Set Visibility to Visible when access to location is denied -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
-                 Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
-          <Run Text="This app is not able to access Location. Go to " />
-              <Hyperlink NavigateUri="ms-settings:privacy-location">
-                  <Run Text="Settings" />
-              </Hyperlink>
-          <Run Text=" to check the location privacy settings."/>
+           Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap">
+    <Run Text="This app is not able to access Location. Go to "/>
+        <Hyperlink NavigateUri="ms-settings:privacy-location">
+            <Run Text="Settings"/>
+        </Hyperlink>
+    <Run Text=" to check the location privacy settings."/>
 </TextBlock>
 ```
 
@@ -251,7 +250,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 ```
 
 ## Troubleshoot your app
-
 
 Before your app can access the user's location, **Location** must be enabled on the device. In the **Settings** app, check that the following **location privacy settings** are turned on:
 

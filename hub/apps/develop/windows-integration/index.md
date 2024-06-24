@@ -25,3 +25,5 @@ The following table lists the Windows system components that support integration
 | Feature | Description |
 |--|--|
 | [Smart App Control](../smart-app-control/overview.md) | Smart App Control is a new app execution control feature that combines Microsoft’s app intelligence services and Windows' code integrity features to protect users from untrusted or potentially dangerous code. |
+| [Windows Share integration](integrate-sharesheet-overview.md) | The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other apps. |
+| [Windows People experiences](cross-device-people-api.md) | Learn how third party apps can integrate with Windows People experiences using APIs to store their contacts. |

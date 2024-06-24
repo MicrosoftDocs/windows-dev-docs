@@ -160,6 +160,8 @@ In the handler for the [**TimedTextSource.Resolved**](/uwp/api/windows.media.cor
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetTimedTextSourceResolved":::
 
+For a list of the timed text formats that are supported on Windows, see [Supported codecs](supported-codecs.md).
+
 ## Add additional metadata tracks
 
 You can dynamically create custom metadata tracks in code and associate them with a media source. The tracks you create can contain subtitle or caption text, or they can contain your proprietary app data.

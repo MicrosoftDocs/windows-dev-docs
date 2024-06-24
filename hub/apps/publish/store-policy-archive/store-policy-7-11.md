@@ -234,7 +234,7 @@ You must use the Microsoft recurring billing API to bill for subscriptions of di
 
 ### 10.9 Notifications
 
-Your product must respect system settings for notifications and remain functional when they are disabled. This includes the presentation of ads and notifications to the customer, which must also be consistent with the customer’s preferences, whether the notifications are provided by the Microsoft Push Notification Service (MPNS), Windows Push Notification Service (WNS) or any other service. If the customer disables notifications, either on an product-specific or system-wide basis, your product must remain functional.
+Your product must respect system settings for notifications and remain functional when they are disabled. This includes the presentation of ads and notifications to the customer, which must also be consistent with the customer’s preferences, whether the notifications are provided by the Microsoft Push Notification Service (MPNS), Windows Push Notification Service (WNS) or any other service. If the customer disables notifications, either on a product-specific or system-wide basis, your product must remain functional.
 
 If your product uses MPNS or WNS to transmit notifications, it must comply with the following requirements:
 

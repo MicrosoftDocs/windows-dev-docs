@@ -33,14 +33,14 @@ General instructions and code examples for adding and styling controls in XAML a
     :::column-end:::
 :::row-end:::
 
-## Get the Windows UI Library
+## Get WinUI
 
 :::row:::
    :::column:::
       ![WinUI logo](images/winui-logo-64x64.png)
    :::column-end:::
    :::column span="3":::
-      Some controls are only available in the Windows UI Library (WinUI), a NuGet package that contains new controls and UI features. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).
+      Some controls are only available in WinUI, a NuGet package that contains new controls and UI features. To get it, see the [WinUI overview and installation instructions](/uwp/toolkits/winui/).
    :::column-end:::
    :::column:::
 

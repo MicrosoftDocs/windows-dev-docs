@@ -22,7 +22,7 @@ Most [Windows Runtime (WinRT)](/uwp/api/) APIs can be used by Windows App SDK ap
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
 * APIs that require package identity. These APIs are supported only in desktop apps that are packaged using MSIX.
 
-For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in the [Windows UI Library (WinUI)](../../winui/index.md), or via WinRT COM interfaces that are available in the Windows App SDK.
+For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in [WinUI](../../winui/index.md), or via WinRT COM interfaces that are available in the Windows App SDK.
 
 For example, we'll see certain UI scenarios where you'll need to track your main window object, and use various **HWND**-based APIs and interoperation patterns, such as [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
@@ -41,7 +41,7 @@ In addition, the Windows App SDK is backward compatible; it supports apps down t
 
 The value proposition of moving the Windows App SDK is manifold. Here are some considerations:
 
-* Latest user interface (UI) platform and controls such as [Windows UI Library (WinUI)](../../winui/index.md) 3 and [WebView2](/microsoft-edge/webview2/).
+* Latest user interface (UI) platform and controls such as [WinUI](../../winui/index.md) 3 and [WebView2](/microsoft-edge/webview2/).
 * A single API surface across desktop app platforms.
 * More frequent release cadence that releases separately from Windows.
 * A consistent experience across Windows versions.
@@ -112,7 +112,7 @@ For example, in the case study [A Windows App SDK migration of the UWP PhotoLab 
 ## Related topics
 
 * [Windows Runtime (WinRT)](/uwp/api/) APIs
-* [Windows UI Library (WinUI)](../../winui/index.md)
+* [WinUI](../../winui/index.md)
 * [Stable release channel for the Windows App SDK](../stable-channel.md)
 * [PhotoLab case study](case-study-1.md)
 * [Photo Editor case study](case-study-2.md)

@@ -2,7 +2,7 @@
 title: Display maps with 2D, 3D, and Streetside views
 description: You can show a map in light dismissable window called a map *place card* or in a full featured map control.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.date: 08/27/2021
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, map, location, map control, map views
 ms.localizationpriority: medium
@@ -10,6 +10,12 @@ ms.localizationpriority: medium
 
 # Display maps with 2D, 3D, and Streetside views
 
+> [!IMPORTANT]
+> **Bing Maps for Enterprise service retirement**
+>
+> The UWP [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services from the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+>
+> For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
 You can show a map in light dismissable window called a map *placecard* or in a full featured map control.
 
 Download the [map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) to try out some the features described in this guide.
@@ -90,7 +96,7 @@ Display a map on a XAML page by adding a [**MapControl**](/uwp/api/Windows.UI.Xa
 
 The following example displays a basic map control and configures the map to display the zoom and tilt controls in addition to accepting touch inputs.
 
-```xml
+```xaml
 <Page
     x:Class="MapsAndLocation1.DisplayMaps"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -444,6 +450,4 @@ Handle changes that happen when the user or the app changes the settings of the 
 - [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 - [Get current location](get-location.md)
 - [Design guidelines for location-aware apps](./guidelines-and-checklist-for-detecting-location.md)
-- Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
-- [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
 - [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)

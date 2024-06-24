@@ -56,7 +56,7 @@ A teaching tip can require the user to dismiss it via an "X" button in a top cor
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
-The TeachingTip for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The TeachingTip for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI](../../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >

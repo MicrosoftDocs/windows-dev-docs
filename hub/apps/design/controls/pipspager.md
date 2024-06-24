@@ -34,7 +34,7 @@ This UI is commonly used in apps such as photo viewers and app lists, where disp
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The PipsPager for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The PipsPager for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >
@@ -101,7 +101,7 @@ The top button corresponds to the first button and the bottom button corresponds
 
 The following example demonstrates the [VisibleOnPointerOver](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility) setting for the navigation buttons.
 
-:::image type="content" source="images/pipspager-visible-on-pointer-over.gif" alt-text="A PipsPager with five vertical dots and navigation buttons visiblility based on pointer over and current page.":::
+:::image type="content" source="images/pipspager-visible-on-pointer-over.gif" alt-text="A PipsPager with five vertical dots and navigation buttons visibility based on pointer over and current page.":::
 
 ```xaml
 <PipsPager x:Name="VerticalPipsPager"

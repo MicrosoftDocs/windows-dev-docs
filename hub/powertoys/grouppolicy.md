@@ -93,6 +93,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 
 | Utility | ADMX GP name |ADMX GP unique name /</br>Registry value name /</br>Intune PolicyID |
 | :--- | :--- | :--- |
+|Advanced Paste|Advanced Paste: Configure enabled state|ConfigureEnabledUtilityAdvancedPaste|
 |Always On Top|Always On Top: Configure enabled state|ConfigureEnabledUtilityAlwaysOnTop|
 |Awake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake|
 |Color Picker|Color Picker: Configure enabled state|ConfigureEnabledUtilityColorPicker|
@@ -120,7 +121,6 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump|
 |Mouse Pointer Crosshairs|Mouse Pointer Crosshairs: Configure enabled state|ConfigureEnabledUtilityMousePointerCrosshairs|
 |Mouse Without Borders|Mouse Without Borders: Configure enabled state|ConfigureEnabledUtilityMouseWithoutBorders|
-|Paste as Plain Text|Paste as Plain Text: Configure enabled state|ConfigureEnabledUtilityPastePlain|
 |Peek|Peek: Configure enabled state|ConfigureEnabledUtilityPeek|
 |Power Rename|Power Rename: Configure enabled state|ConfigureEnabledUtilityPowerRename|
 |PowerToys Run|PowerToys Run: Configure enabled state|ConfigureEnabledUtilityPowerLauncher|
@@ -336,6 +336,41 @@ This policy allows you to configure if the window with the release notes is show
 
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DoNotShowWhatsNewAfterUpdates`
 - Example value: `<enabled/>`
+
+### Advanced Paste
+
+#### Allow using online AI models
+
+Supported on PowerToys 0.81.1 or later.
+
+This policy configures the enabled disable state for using Advanced Paste online AI models.
+
+If you enable or don't configure this policy, the user takes control over the enabled state of the Enable paste with AI Advanced Paste setting.
+
+If you disable this policy, the user won't be able to enable Enable paste with AI Advanced Paste setting and use Advanced Paste AI prompt nor set up the Open AI key in PowerToys Settings.
+
+> [!NOTE]
+> Changes require a restart of Advanced Paste.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: AllowPowerToysAdvancedPasteOnlineAIModels
+- GP name: Advanced Paste: Allow using online AI models
+- GP path: Administrative Templates/Microsoft PowerToys/Advanced Paste
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: AllowPowerToysAdvancedPasteOnlineAIModels
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~AdvancedPaste/AllowPowerToysAdvancedPasteOnlineAIModels`
+- Example value: `<disabled/>`
 
 ### PowerToys Run
 

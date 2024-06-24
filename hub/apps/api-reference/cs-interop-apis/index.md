@@ -3,7 +3,7 @@ title: Interop C# APIs for WinUI
 description: In .NET you can make use of the **Win32Interop** class, whose methods wrap and represent several interoperability functions including the [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) function.
 ms.topic: article
 ms.date: 02/08/2022
-keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, Windows UI Library, app sdk, C#, interop
+keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, app sdk, C#, interop
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: low

@@ -9,6 +9,9 @@ ms.localizationpriority: medium
 
 # Universal Windows Platform (UWP) - Get Started
 
+>[!NOTE]
+> The [preferred approach for writing Windows apps](/windows/apps/get-started/) is to use the Windows App SDK and [WinUI](/windows/apps/get-started/start-here). Another option is [WPF](/dotnet/desktop/wpf/getting-started).
+
 Build apps that work across different Windows devices.
 
 <br/>

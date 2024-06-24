@@ -1,7 +1,7 @@
 ---
 title: WinUI 3 templates in Visual Studio
 description: Once you've set up your development computer (see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)), you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 03/10/2022
 ms.topic: article
 ---

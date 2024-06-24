@@ -45,6 +45,7 @@ The following articles provide information to help you get started using feature
 * [Graphics](graphics.md)
 * [Data and files](data-and-files.md)
 * [Windows AI and machine learning](/windows/ai/)
+* [Integrate with Windows](windows-integration/index.md)
 * [Devices and sensors](devices-and-sensors.md)
 * [Security and identity](security-and-identity.md)
 * [Deployment overview](../package-and-deploy/index.md)
@@ -57,5 +58,5 @@ For information about setting up your development environment and getting starte
 ## Related topics
 
 * [Windows App SDK](../windows-app-sdk/index.md)
-* [Windows UI Library (WinUI)](../winui/index.md)
+* [WinUI](../winui/index.md)
 * [Deployment overview](../package-and-deploy/index.md)

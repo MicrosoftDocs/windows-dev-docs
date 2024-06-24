@@ -89,11 +89,11 @@ To use an indexer, the model needs to implement **IList&lt;T&gt;** or **IVector&
 
 If the data source is a Dictionary or Map, then a property path can specify items in the collection by their string name. For example **&lt;TextBlock Text="{x:Bind Players\['John Smith'\]}" /&gt;** will look for an item in the dictionary named "John Smith". The name needs to be enclosed in quotes, and either single or double quotes can be used. Hat (^) can be used to escape quotes in strings. It's usually easiest to use alternate quotes from those used for the XAML attribute. (Note that IReadOnlyDictionary&lt;T&gt; and IMapView&lt;T&gt; do not support the indexer syntax.)
 
-To use an string indexer, the model needs to implement **IDictionary&lt;string, T&gt;** or **IMap&lt;string, T&gt;** on the type of the property that is going to be indexed. If the type of the indexed property supports **IObservableMap** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
+To use a string indexer, the model needs to implement **IDictionary&lt;string, T&gt;** or **IMap&lt;string, T&gt;** on the type of the property that is going to be indexed. If the type of the indexed property supports **IObservableMap** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
 
 ### Attached Properties
 
-To bind to [attached properties](./attached-properties-overview.md), you need to put the class and property name into parentheses after the dot. For example **Text="{x:Bind Button22.(Grid.Row)}"**. If the property is not declared in a Xaml namespace, then you will need to prefix it with a xml namespace, which you should map to a code namespace at the head of the document.
+To bind to [attached properties](./attached-properties-overview.md), you need to put the class and property name into parentheses after the dot. For example **Text="{x:Bind Button22.(Grid.Row)}"**. If the property is not declared in a Xaml namespace, then you will need to prefix it with an xml namespace, which you should map to a code namespace at the head of the document.
 
 ### Casting
 

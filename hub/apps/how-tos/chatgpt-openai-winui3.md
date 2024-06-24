@@ -376,7 +376,7 @@ Here's what you accomplished in this how-to:
     3. adding a `ProgressBar` to indicate when the app is waiting for a response from the GPT API,
     4. centering the `StackPanel` in the window,
     5. ensuring that messages wrap to the next line when they reach the edge of the window, and
-    6. making the `TextBox` larger, resizeable, and responsive to the `Enter` key.
+    6. making the `TextBox` larger, resizable, and responsive to the `Enter` key.
 
 
 

@@ -30,7 +30,7 @@ ItemsRepeater does not have a built-in Items collection. If you need to provide 
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The ItemsRepeater for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The ItemsRepeater for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >
@@ -224,7 +224,7 @@ The following interfaces on an ItemsSource enable special functionality in the L
 - [ISelectionInfo](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.iselectioninfo)
 
 > [!TIP]
-> We want your feedback! Let us know what you think on the [Windows UI Library GitHub project](https://github.com/Microsoft/microsoft-ui-xaml/issues). Consider adding your thoughts on existing proposals such as [#374](https://github.com/Microsoft/microsoft-ui-xaml/issues/374): Add incremental loading support for ItemsRepeater.
+> We want your feedback! Let us know what you think on the [WinUI GitHub project](https://github.com/Microsoft/microsoft-ui-xaml/issues). Consider adding your thoughts on existing proposals such as [#374](https://github.com/Microsoft/microsoft-ui-xaml/issues/374): Add incremental loading support for ItemsRepeater.
 
 An alternative approach to incrementally load your data as the user scrolls up or down is to observe the position of the ScrollViewer's viewport and load more data as the viewport approaches the extent.
 

@@ -90,7 +90,7 @@ The visual and behavioral changes are built in to [WinUI 3](../winui/index.md). 
 
 #### Context menu
 
-A context menu is a shortcut menu that the user invokes with a right-click or tap & hold action to reveal a menu of commands relevant to the context of the control the user is interacting with. Users expect the appearance and behavior of context menus to be coherent accross Windows. Use platform-provided context menus whenever possible to keep them consistent with the rest of the system.
+A context menu is a shortcut menu that the user invokes with a right-click or tap & hold action to reveal a menu of commands relevant to the context of the control the user is interacting with. Users expect the appearance and behavior of context menus to be coherent across Windows. Use platform-provided context menus whenever possible to keep them consistent with the rest of the system.
 
 #### Iconography and typography
 

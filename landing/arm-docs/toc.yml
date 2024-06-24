@@ -11,6 +11,8 @@ items:
     href: ./create-arm-vm.md
   - name: FAQs
     href: ./faq.yml
+  - name: How emulation works on Arm
+    href: ./apps-on-arm-x86-emulation.md
   - name: Windows Dev Kit 2023
     items:
     - name: Overview & Set up
@@ -45,8 +47,6 @@ items:
         href: /cpp/build/configuring-programs-for-arm-processors-visual-cpp
       - name: .NET 7 for Arm
         href: https://dotnet.microsoft.com/download/dotnet/7.0
-  - name: How x86 emulation works on Arm
-    href: ./apps-on-arm-x86-emulation.md
   - name: Change Arm32 to Arm64
     href: ./arm32-to-arm64.md
   - name: Build Arm64 drivers with the WDK

@@ -185,7 +185,7 @@ private static bool registerPackageWithExternalLocation(string externalLocation,
 
 ## Sample app
 
-See the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app using a package with external location. More information about building and running the sample is provided in the blog post [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/).
+See the [SparsePackages (Packages with External Location)](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app using a package with external location. The walkthrough in this topic highlights the key steps to grant package identity to an unpackaged app, but the sample app provides a complete example that you can use as a reference. More information about building and running the sample is provided in the blog post [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/).
 
 This sample includes the following:
 

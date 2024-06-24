@@ -222,7 +222,7 @@ The **2:1 (2400 x 1200)** image is only used if your app supports the Holographi
 ### Images only for Windows 8.x and/or Windows Phone 8.x
 
 >[!NOTE]
-> Windows 8. and Windows Phone 8.x are are not supported anymore. Do not add any images for them.
+> Windows 8. and Windows Phone 8.x are not supported anymore. Do not add any images for them.
 
 If your previously-submitted app supports earlier OS versions (Windows 8.x and/or Windows Phone 8.x), these images must be provided in order for us to consider featuring your app in promotional layouts (though they don't guarantee that your app will be featured). If your app does not support these earlier OS versions, skip this section. (This section was formerly called **Optional promotional images**.)
 

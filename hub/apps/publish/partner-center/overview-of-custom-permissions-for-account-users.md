@@ -11,6 +11,8 @@ ms.localizationpriority: medium
 To assign custom permissions rather than standard roles, click **Customize permissions** in the **Roles** section when adding or editing the user account.
 
 To enable a permission for the user, toggle the box to the appropriate setting.
+> [!NOTE]
+> Any user with a standard role of Owner, Manager or Developer will have access to all products irrespective of custom permissions set.
 
 ![Guide to access settings](../images/permission-key.png)
 

@@ -319,7 +319,7 @@ This setting helps to set defaults for removable drives and memory cards
 | MSStorageSense | Configure Storage Settings (Settings). |
 | MSPromptEachTime | Prompt each time. |
 
-## Backgound
+## Background
 
 Setting for managing and personalizing the desktop background.  
 
@@ -359,7 +359,7 @@ The scope of this type is per device.
 | position | **WallpaperPosition** | Specifies how wallpaper or slideshow images are positioned on background. |
 | color | Windows.Data.Common.Color | Specifies the solid color value if background is selected as Solid Color |
 | itemId | wstring | The unique ID for the wallpaper or slideshow uploaded during backup.  |
-| contentUri | wstring | The url ffor the wallpaper or slideshow uploaded during backup.  |
+| contentUri | wstring | The url for the wallpaper or slideshow uploaded during backup.  |
 | intervalInSeconds | uint64 | The interval between images of slideshow if background is selected as slideshow. |
 | shuffle | bool | Signifies whether slideshow images are shuffled if background is selected as slideshow |
 | syncRootRelativePath | wstring | Signifies path to slideshow folder if background is selected as slideshow. |
@@ -454,7 +454,7 @@ Settings related to high-contrast themes.
 |------|-------|---------|
 | Contrast_Inbox | 0   | In-box high contrast theme. |
 | Contrast_Custom | 1   | Customized high contrast theme. |
-| Backup_disabled | 2   | Backup disablesd. |
+| Backup_disabled | 2   | Backup disabled. |
 
 ### Type: Windows.Data.ContrastThemes.SynchedTheme structure
 
@@ -786,7 +786,7 @@ For more information on retrieving multi-instance settings, see [Cloud Data Stor
 
 Although Internet explorer has reached end of life, some settings stored by the browser may remain in the cloud or on Windows through settings backup.
 
-The **SettingUnit** stucture used with the following settings has the following definition:
+The **SettingUnit** structure used with the following settings has the following definition:
 
 ```cpp
 struct SettingUnit 

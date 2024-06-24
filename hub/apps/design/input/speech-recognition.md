@@ -231,7 +231,7 @@ First, we initialize a global variable (HResultPrivacyStatementDeclined) to the 
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
 ```
 
-We then catch any standard exceptions during recogntion and test if the [**HResult**](/uwp/api/Windows.Foundation.HResult) value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` to open the Settings page.
+We then catch any standard exceptions during recognition and test if the [**HResult**](/uwp/api/Windows.Foundation.HResult) value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` to open the Settings page.
 
 ```csharp
 catch (Exception exception)

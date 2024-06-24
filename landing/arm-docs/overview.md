@@ -1,7 +1,7 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 03/01/2024
+ms.date: 05/21/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -21,13 +21,9 @@ Windows 10 enables existing unmodified x86 apps to run on Arm devices. Windows 1
 
 For the best performance, responsiveness, and battery life, users will want and need Arm-native Windows apps, which means that developers will need to build or port Arm-native Windows apps.
 
-### Arm developer tools
-
-Microsoft is working to deliver an Arm-native developer toolset that includes Arm-native Visual Studio 2022, VSCode, VC++ toolchain, classic .NET Framework, modern .NET, and Java. Microsoft is also working with several 3rd parties and open-source communities to port common tools, runtimes, frameworks and libraries to natively target Windows on Arm. See the [announcement from Build 2022](https://blogs.windows.com/windowsdeveloper/2022/05/24/create-next-generation-experiences-at-scale-with-windows/) about this comprehensive suite of tools, services, and devices that enable developers to build and port apps that natively target Arm just as easily as when targeting x64.
-
 ### Virtual Machines
 
-You can create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure. Learn how in this [Quickstart article](./create-arm-vm.md).
+You can create and deploy Windows 11 Arm64 VMs with Ampere Altra Arm–based processors on Azure. Learn how in this [Quickstart article](./create-arm-vm.md).
 
 Learn more about using Windows on Arm Virtual Machines:
 
@@ -41,19 +37,6 @@ Learn more about using Windows on Arm Virtual Machines:
 Developers need Arm devices upon which to build and test Arm-native Windows apps. Several Arm-powered devices are already available from Microsoft partners. These portable devices, whether a laptop form-factor device or convertible-tablet, offer great performance, battery life, and run the growing array of Arm-native developer tools.
 
 [Windows Dev Kit 2023](./dev-kit/index.md) (code name “Project Volterra”) is the latest Arm device built to support Windows developers, AI researchers, and developers looking to integrate AI into their apps and experiences.
-
-## Arm64EC - Build apps for Windows 11 on Arm
-
-:::row:::
-    :::column span="":::
-       ![Arm64EC graphic.](./images/arm64ec.png)
-    :::column-end:::
-    :::column span="2":::
-        Arm64EC (“Emulation Compatible”) enables you to incrementally build new apps, or port existing apps, to take advantage of native Arm performance where possible, while utilizing existing x64 code & libraries until fully migrated. Learn more:
-        - [Using Arm64EC to build apps for Arm devices](./arm64ec.md)
-        - [Understanding Arm64EC ABI and assembly code](./arm64ec-abi.md)
-    :::column-end:::
-:::row-end:::
 
 ## Support for existing Windows apps on Arm
 
@@ -73,17 +56,33 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
        ![Tools graphic](./images/arm-tools.png)
     :::column-end:::
     :::column span="2":::
-        Windows offers a variety of tools and frameworks to support app development for Arm, on Arm.
-        - The new **[Arm-native Visual Studio](/visualstudio/install/visual-studio-on-arm-devices)** includes **Visual C++**, **.NET & .NET Framework** and **Java** and will enable developers to natively build and debug Arm apps on Arm-based devices. Learn more in the [blog announcement](https://devblogs.microsoft.com/visualstudio/arm64-visual-studio/).
-        - **Visual Studio Code** natively supports Arm and [can be installed on Arm devices](https://code.visualstudio.com/#alt-downloads). The [VS Code C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) also offers C++ IntelliSense and build support for developing Windows apps that run natively on Arm64 devices.
-        - [**.NET 6** already supports Arm](/dotnet/core/whats-new/dotnet-6#arm64-support), both for native Arm execution and x64 emulation. To develop .NET apps that run natively on Arm64 devices, we recommend installing the new Arm native Visual Studio 2022 17.4, and [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0) Arm64 SDK. Learn more about .NET 7 support for Arm and the performance improvements for Arm64 on the [.NET Blog](https://devblogs.microsoft.com/dotnet/arm64-performance-improvements-in-dotnet-7/).
+        Microsoft is continuously delivering Arm-native developer toolset updates to build and port apps that natively target Windows ARM-powered devices just as easily as when targeting x64. Supporting app development for Arm, on Arm.
+        - **[Arm-native Visual Studio](/visualstudio/install/visual-studio-on-arm-devices)** includes **Visual C++**, **.NET & .NET Framework** and **Java** and will enable developers to natively build and debug Arm apps on Arm-based devices. Learn more:  [Arm64 Visual Studio is officially here!(Nov 2022)](https://devblogs.microsoft.com/visualstudio/arm64-visual-studio-is-officially-here/), [MSVC ARM64 Optimizations in Visual Studio 2022 17.7 (Sept 2023)](https://devblogs.microsoft.com/cppblog/msvc-arm64-optimizations-in-visual-studio-2022-17-7/).
+        - **[Visual Studio Code](https://code.visualstudio.com/download)** natively supports Arm and can be installed on Arm devices. The [VS Code C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) also offers C++ IntelliSense and build support for developing Windows apps that run natively on Arm64 devices.
+        - [**.NET 6+** already supports Arm](/dotnet/core/whats-new/dotnet-6#arm64-support), both for native Arm execution and x64 emulation. To develop .NET apps that run natively on Arm64 devices, we recommend installing the new Arm native Visual Studio 2022 17.4, and [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) Arm64 SDK. Learn more about .NET 8 support for Arm and the performance improvements for Arm64 on the .NET Blog: **[Arm64 Performance Improvements in .NET 8 (Oct 2023)](https://devblogs.microsoft.com/dotnet/this-arm64-performance-in-dotnet-8)**.
         - **.NET 6 Arm64 SDK:** By default, if you `dotnet run` a .NET 6 app with the Arm64 SDK, it will run as Arm64. The `dotnet-runtimeinfo` tool can be used to discover the environment that .NET is running on. See the [.NET 6 blog announcement on Arm64 support](https://devblogs.microsoft.com/dotnet/announcing-net-6/#windows-arm64) to learn more.
-        - **[Test Base for Microsoft 365](https://www.microsoft.com/en-us/testbase)** has added support for Arm64! Expanding Test Base to include Arm64 will help you ensure that your applications will work across a broader range of devices and releases by executing tests run against all Windows operating systems. See [Announcing Windows 11 Arm Private Preview for Test Base - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/announcing-windows-11-arm-private-preview-for-test-base/ba-p/3876380), and [sign up for the Arm private preview](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR8h5ixgVgMhNopWzBv8BM05UQ1lFTEVBU044SU45T1I4NURYQlBEVjdDUiQlQCN0PWcu). 
+        - **[VC++ toolchain (Arm Developer)](https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain)** is the GNU toolchain for Arm Architecture releases produced by Arm, enabling partners, developers and the community to use new features from recent Arm Architecture and from open-source projects GCC, Binutils, glibc, Newlib, and GDB.
+        - **Java support for Arm in the OpenJDK**: [Announcing OpenJDK for Windows on ARM (June 2020)](https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/)
+        - **[GitHub Actions](https://github.com/features/actions)**: GitHub Actions, GitHub's CI/CD workflow engine is an integral part of many developers’ workflows, they use this to continuously build, test, and deploy apps. GitHub Actions is now available for Windows on Arm in 2 flavors: 1. **[self-hosted runners](https://github.blog/changelog/2022-09-28-github-actions-self-hosted-runners-now-support-windows-arm-hardware/)** that can be hosted on an Arm VM or Arm device, and 2. **[GitHub hosted runners](https://github.blog/changelog/2023-10-30-accelerate-your-ci-cd-with-arm-based-hosted-runners-in-github-actions/)** (currently available in private beta, but general release is coming soon).
+        - **[Docker Desktop](https://www.docker.com/products/docker-desktop/)**: Containers are a pretty popular deployment target for many reasons - a streamlined development workflow, isolation and security, efficient resource utilization, portability, and Reproducibility. Docker desktop is now runs natively on Windows on Arm.
     :::column-end:::
 :::row-end:::
 
 > [!NOTE]
 > We use the term *Arm* as a shorthand for PCs that run the desktop version of Windows on Arm64 (also commonly called *AArch64*) processors.  We use the term *Arm32* here as a shorthand for the 32-bit Arm architecture (commonly called *Arm* in other documentation). PCs powered by Arm provide great application compatibility and allow you to run your existing unmodified x86 win32 applications. Arm apps run natively without any emulation, while x86 and x64 apps run under emulation on Arm devices.
+
+## Arm64EC - Help for updating Windows apps to run on Arm
+
+:::row:::
+    :::column span="":::
+       ![Arm64EC graphic.](./images/arm64ec.png)
+    :::column-end:::
+    :::column span="2":::
+        Arm64EC (“Emulation Compatible”) enables you to incrementally build new apps, or port existing apps, to take advantage of native Arm performance where possible, while utilizing existing x64 code & libraries until fully migrated. Learn more:
+        - [Using Arm64EC to build apps for Arm devices](./arm64ec.md)
+        - [Understanding Arm64EC ABI and assembly code](./arm64ec-abi.md)
+    :::column-end:::
+:::row-end:::
 
 ## Additional tips for developing Windows apps that run on Arm devices
 

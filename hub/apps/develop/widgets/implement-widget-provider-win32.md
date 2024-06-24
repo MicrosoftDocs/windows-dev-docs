@@ -107,7 +107,7 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
     WidgetProvider();
 
     /* IWidgetProvider required functions that need to be implemented */
-    void CreateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext WidgetContext);
+    void CreateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext);
     void DeleteWidget(winrt::hstring const& widgetId, winrt::hstring const& customState);
     void OnActionInvoked(winrt::Microsoft::Windows::Widgets::Providers::WidgetActionInvokedArgs actionInvokedArgs);
     void OnWidgetContextChanged(winrt::Microsoft::Windows::Widgets::Providers::WidgetContextChangedArgs contextChangedArgs);
@@ -147,6 +147,7 @@ Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for 
 
 ```cpp
 // WidgetProvider.h
+#include <unordered_map>
 struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>
 {
 ...
@@ -798,7 +799,7 @@ To convert the console app created in this walkthrough to a Windows app:
 
 ## Publishing your widget
 
-After you have developed and tested your widget you must publish your app on the Microsoft Store in order for users to install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
+After you have developed and tested your widget you can publish your app on the Microsoft Store in order for users to install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
 
 ### The widgets Store Collection
 

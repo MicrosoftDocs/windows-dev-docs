@@ -104,7 +104,7 @@ In the example below, you will see **winget upgrade** shows the user which apps 
 ![Animation demonstrating upgrade command](./images/upgrade.gif)
 
 ## Using **list** and **upgrade**
-To search for an available update for a specific app, use to the [**list**](.\list.md) command. Once you have identified that a update is available for your specific app, use **upgrade** to install the latest.
+To search for an available update for a specific app, use to the [**list**](.\list.md) command. Once you have identified that an update is available for your specific app, use **upgrade** to install the latest.
 
 The example below shows the [**list**](.\list.md) command being used to identify that an update is available for *Microsoft.WindowsTerminalPreview*. The user then uses **upgrade** to update the application.
 ![Animation demonstrating list command used in conjunction with upgrade command](./images/listUpgrade.gif)

@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Report issues, bugs, or file feature requests related to Windows development.
-    url: hhttps://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb
+    url: https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb
     about: Windows Feedback Hub (for reporting issues, bugs, or feature requests)
   - name: Report issues, bugs, or file feature requests for PowerToys.
     url: https://github.com/Microsoft/powertoys/issues

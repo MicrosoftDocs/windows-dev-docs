@@ -4,45 +4,25 @@ items:
   items: 
     - name: What's new?
       items: 
-        - name: Windows App SDK release notes
-          items: 
-            - name: Stable channel release notes
-              href: windows-app-sdk/stable-channel.md
-            - name: Preview channel release notes
-              href: windows-app-sdk/preview-channel.md
-            - name: Experimental channel release notes
-              href: windows-app-sdk/experimental-channel.md
-            - name: Breaking changes
-              href: windows-app-sdk/breaking-changes.md
-            - name: Release notes archive
-              items: 
-                - name: WinUI 3 - Project Reunion 0.8 Preview
-                  href: winui/winui3/release-notes/release-notes-08-preview.md
-                - name: WinUI 3 - Project Reunion 0.5
-                  href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
-                - name: WinUI 3 - Project Reunion 0.5 Preview
-                  href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
         - name: What's new for developers in Windows 11
           href: whats-new/windows-11-build-22000.md
         - name: Latest doc updates
           href: whats-new/latest-doc-updates.md
     - name: Get started
       items: 
-        - name: Start here!
-          href: get-started/start-here.md
-        - name: Overview of app development options
+        - name: Overview of framework options
           href: get-started/index.md
-        - name: App development options and features
-          href: get-started/dev-options.md
-        - name: "Windows apps: packaging, deployment, and process"
-          href: get-started/intro-pack-dep-proc.md
-        - name: Sample apps for Windows
+        - name: Get started with WinUI
+          href: get-started/start-here.md
+        - name: Build your first app
+          href: how-tos/hello-world-winui3.md
+        - name: Samples and resources
           href: get-started/samples.md
-        - name: Windows developer best practices
+        - name: Best practices
           href: get-started/best-practices.md
-        - name: Windows developer FAQ
+        - name: FAQ
           href: get-started/windows-developer-faq.yml
-        - name: Windows developer glossary
+        - name: Glossary
           href: get-started/windows-developer-glossary.md
     - name: Design
       href: design/toc.yml
@@ -216,7 +196,7 @@ items:
               href: develop/ui-input/display-ui-objects.md
             - name: Choose the right visual tree viewer for your Windows app
               href: develop/ui-input/visual-tree.md
-        - name: Optimize performance & fundamentals
+        - name: Performance
           items: 
             - name: Overview
               href: performance/index.md
@@ -235,7 +215,7 @@ items:
         - name: Integrate with Windows
           href: develop/windows-integration/index.md
           items: 
-            - name: Windows feed providers
+            - name: Feed providers
               items: 
                 - name: Overview
                   href: develop/feeds/feed-providers.md
@@ -245,11 +225,11 @@ items:
                   href: develop/feeds/implement-feed-provider-win32.md
                 - name: Feed provider package manifest XML format
                   href: develop/feeds/feed-provider-manifest.md
-            - name: Windows Search providers
+            - name: Search providers
               items: 
                 - name: Overview
                   href: develop/search/search-providers.md
-            - name: Windows widget providers
+            - name: Widget providers
               items: 
                 - name: Overview
                   href: develop/widgets/widget-providers.md
@@ -269,6 +249,34 @@ items:
                   href: develop/smart-app-control/code-signing-for-smart-app-control.md
                 - name: Test your app's signature with Smart App Control
                   href: develop/smart-app-control/test-your-app-with-smart-app-control.md
+            - name: Cross Device Share API
+              items:
+                - name: Windows Share Overview
+                  href: develop/windows-integration/integrate-sharesheet-overview.md
+                - name: Packaged apps
+                  items:
+                    - name: Integrate packaged apps with Windows Share
+                      href: develop/windows-integration/integrate-sharesheet-packaged.md
+                    - name: Integrate PWAs with Windows Share
+                      href: develop/windows-integration/integrate-sharesheet-pwa.md
+                    - name: Share data in UWP apps >>
+                      href: /windows/uwp/app-to-app/share-data
+                - name: Unpackaged apps
+                  items:
+                    - name: Integrate unpackaged apps with Windows Share Sheet
+                      href: develop/windows-integration/integrate-sharesheet-unpackaged.md
+            - name: Cross Device People API
+              href: develop/windows-integration/cross-device-people-api.md
+        - name: Windows AI and machine learning
+          items: 
+            - name: Windows AI >>
+              href: /windows/ai/
+            - name: Add DALL-E image generation to your WinUI 3 desktop app
+              href: how-tos/dall-e-winui3.md
+            - name: Add OpenAI chat completions to your WinUI 3 desktop app
+              href: how-tos/chatgpt-openai-winui3.md
+            - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
+              href: how-tos/copilot-chat-winui3.md
         - name: DispatcherQueue
           href: develop/dispatcherqueue.md
     - name: Package and deploy
@@ -277,6 +285,8 @@ items:
           items: 
             - name: Package identity overview
               href: desktop/modernize/package-identity-overview.md
+            - name: "Windows apps: packaging, deployment, and process"
+              href: get-started/intro-pack-dep-proc.md
             - name: Features that require package identity
               items: 
                 - name: Overview
@@ -392,6 +402,8 @@ items:
               href: distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md
             - name: How to transition users from your web unpackaged app to Store packaged app
               href: distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md
+            - name: How to use Microsoft Store Web Installer to distribute apps
+              href: distribute-through-store/how-to-use-store-web-installer-for-distribution.md  
         - name: Publish your app to the Microsoft Store
           items: 
             - name: Publish your app to the Microsoft Store
@@ -523,6 +535,14 @@ items:
                   href: publish/msstore-dev-cli/package-command.md
                 - name: Publish Command
                   href: publish/msstore-dev-cli/publish-command.md
+        - name: Analyze app performance
+          items: 
+            - name: Analyze performance of MSIX apps and games 
+              href: publish/analyze-app-performance/msix.md
+            - name: Analyze performance of MSI or EXE apps
+              href: publish/analyze-app-performance/msi-exe.md
+            - name: Analyze performance of GDK or Xbox games
+              href: publish/analyze-app-performance/gdk-xbox.md
         - name: Additional features for MSI and EXE apps
           items: 
             - name: Microsoft Store Submission API for MSI or EXE app
@@ -533,8 +553,12 @@ items:
               href: publish/analyze-msi-exe/analyze-app-performance.md
         - name: Additional features for MSIX apps
           items: 
+            - name: View actionable insights for MSIX apps and games
+              href: publish/actionable-analytics-insights.md
             - name: What's new on MSIX app overview page
               href: publish/whats-new-msix-app-overview-page.md
+            - name: Product page experiments
+              href: publish/product-page-experiments.md
             - name: In-app ads
               href: publish/in-app-ads.md
             - name: App management and services
@@ -608,6 +632,69 @@ items:
       items: 
         - name: Windows App SDK
           items: 
+            - name: Overview of Windows App SDK
+              href: windows-app-sdk/index.md
+            - name: Windows App SDK release notes
+              href: windows-app-sdk/release-channels.md
+              items: 
+                - name: Stable channel release notes
+                  href: windows-app-sdk/stable-channel.md
+                - name: Preview channel release notes
+                  href: windows-app-sdk/preview-channel.md
+                - name: Experimental channel release notes
+                  href: windows-app-sdk/experimental-channel.md
+                - name: Release notes archive
+                  items: 
+                    - name: Stable channel release notes
+                      items: 
+                        - name: Windows App SDK 1.4
+                          href: windows-app-sdk/release-notes-archive/stable-channel-1.4.md
+                        - name: Windows App SDK 1.3
+                          href: windows-app-sdk/release-notes-archive/stable-channel-1.3.md
+                        - name: Windows App SDK 1.2
+                          href: windows-app-sdk/release-notes-archive/stable-channel-1.2.md
+                        - name: Windows App SDK 1.1
+                          href: windows-app-sdk/release-notes-archive/stable-channel-1.1.md
+                        - name: Windows App SDK 1.0
+                          href: windows-app-sdk/release-notes-archive/stable-channel-1.0.md
+                        - name: Windows App SDK 0.8
+                          href: windows-app-sdk/release-notes-archive/stable-channel-0.8.md
+                        - name: Windows App SDK 0.5
+                          href: windows-app-sdk/release-notes-archive/stable-channel-0.5.md
+                    - name: Preview channel release notes
+                      items: 
+                        - name: Windows App SDK 1.4
+                          href: windows-app-sdk/release-notes-archive/preview-channel-1.4.md
+                        - name: Windows App SDK 1.3
+                          href: windows-app-sdk/release-notes-archive/preview-channel-1.3.md
+                        - name: Windows App SDK 1.2
+                          href: windows-app-sdk/release-notes-archive/preview-channel-1.2.md
+                        - name: Windows App SDK 1.1
+                          href: windows-app-sdk/release-notes-archive/preview-channel-1.1.md
+                        - name: Windows App SDK 1.0
+                          href: windows-app-sdk/release-notes-archive/preview-channel-1.0.md
+                    - name: Experimental channel release notes
+                      items: 
+                        - name: Windows App SDK 1.4
+                          href: windows-app-sdk/release-notes-archive/experimental-channel-1.4.md
+                        - name: Windows App SDK 1.3
+                          href: windows-app-sdk/release-notes-archive/experimental-channel-1.3.md
+                        - name: Windows App SDK 1.2
+                          href: windows-app-sdk/release-notes-archive/experimental-channel-1.2.md
+                        - name: Windows App SDK 1.0
+                          href: windows-app-sdk/release-notes-archive/experimental-channel-1.0.md
+                        - name: Windows App SDK 0.8
+                          href: windows-app-sdk/release-notes-archive/experimental-channel-0.8.md
+                    - name: WinUI/Project Reunion release notes
+                      items: 
+                        - name: Breaking changes - Project Reunion 0.8 to Windows App SDK 1.0
+                          href: windows-app-sdk/breaking-changes.md
+                        - name: WinUI 3 - Project Reunion 0.8 Preview
+                          href: winui/winui3/release-notes/release-notes-08-preview.md
+                        - name: WinUI 3 - Project Reunion 0.5
+                          href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
+                        - name: WinUI 3 - Project Reunion 0.5 Preview
+                          href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
             - name: Setup guides and resources
               items: 
                 - name: System requirements
@@ -620,6 +707,12 @@ items:
                   href: get-started/sign-up.md
                 - name: Install tools for the Windows App SDK
                   href: windows-app-sdk/set-up-your-development-environment.md
+                - name: Install tools for preview and experimental channels of the Windows App SDK
+                  href: windows-app-sdk/preview-experimental-install.md
+                - name: Latest Windows App SDK downloads
+                  href: windows-app-sdk/downloads.md
+                - name: Archive of Windows App SDK downloads
+                  href: windows-app-sdk/downloads-archive.md
                 - name: Visual Studio project templates
                   items: 
                     - name: All templates for Windows apps
@@ -628,8 +721,6 @@ items:
                       href: winui/winui3/winui-project-templates-in-visual-studio.md
             - name: Build apps with the Windows App SDK
               items: 
-                - name: Overview of Windows App SDK
-                  href: windows-app-sdk/index.md
                 - name: Use the Windows App SDK in an existing project
                   href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
                 - name: Use the Windows App SDK in a WPF app
@@ -638,41 +729,27 @@ items:
                   href: windows-app-sdk/winforms-plus-winappsdk.md
                 - name: Update existing projects to the latest release
                   href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
-                - name: Release channels
-                  href: windows-app-sdk/release-channels.md
-                - name: Latest downloads
-                  href: windows-app-sdk/downloads.md
-                - name: Older downloads
-                  href: windows-app-sdk/older-downloads.md
-                - name: Preview and experimental guidance
-                  items: 
-                    - name: Install tools for preview and experimental channels of the Windows App SDK
-                      href: windows-app-sdk/preview-experimental-install.md
-                    - name: Create a WinUI 3 app
-                      href: windows-app-sdk/preview-experimental-create-winui3-app.md
-                    - name: "Tutorial: Build and deploy an unpackaged app"
-                      href: windows-app-sdk/preview-experimental-unpackaged-tutorial.md
             - name: How tos
               items: 
-                - name: Build a Hello World app with C# & WinUI 3
-                  href: how-tos/hello-world-winui3.md
                 - name: Use Github Copilot to build WinUI 3 apps in Visual Studio
                   href: how-tos/github-copilot-winui-vs.md
                 - name: Target multiple platforms with WinUI 3
                   href: how-tos/uno-multiplatform.md
-                - name: About migrating from UWP to Windows App SDK
-                  href: get-started/migrate-from-uwp-to-winappsdk.md
                 - name: Create your first WinUI 3 project
                   href: winui/winui3/create-your-first-winui3-app.md
+                - name: Create a WinUI 3 app
+                  href: windows-app-sdk/preview-experimental-create-winui3-app.md
+                - name: "Tutorial: Build and deploy an unpackaged app"
+                  href: windows-app-sdk/preview-experimental-unpackaged-tutorial.md
                 - name: "Tutorial: Create a simple photo viewer with WinUI 3"
                   href: get-started/simple-photo-viewer-winui3.md
                 - name: "Tutorial: Create a simple multi-platform photo viewer"
                   href: get-started/uno-simple-photo-viewer.md
-        - name: Windows UI Library (WinUI)
+        - name: WinUI
           items: 
             - name: Overview
               href: winui/index.md
-            - name: Windows UI Library 3
+            - name: WinUI 3
               href: winui/winui3/index.md
               items: 
                 - name: Build a C# .NET app with WinUI 3 and Win32 interop
@@ -683,7 +760,12 @@ items:
                   href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
                 - name: Localize your WinUI 3 app
                   href: winui/winui3/localize-winui3-app.md
-            - name: Windows UI Library 2
+                - name: "Test apps built with the Windows App SDK and WinUI"
+                  href: winui/winui3/testing/index.md
+                  items:
+                    - name: "Unit tests for Windows UI Library (WinUI) apps in Visual Studio"
+                      href: winui/winui3/testing/create-winui-unit-test-project.md
+            - name: WinUI 2
               href: winui/winui2/index.md
               items: 
                 - name: Get started with WinUI 2
@@ -864,14 +946,6 @@ items:
                       href: develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
                     - name: Diagnose component errors
                       href: develop/platform/csharp-winrt/authoring-diagnostics.md
-    - name: Windows AI and machine learning
-      items: 
-        - name: Windows AI and machine learning >>
-          href: /windows/ai/
-        - name: Add DALL-E image generation to your WinUI 3 desktop app
-          href: how-tos/dall-e-winui3.md
-        - name: Add OpenAI chat completions to your WinUI 3 desktop app
-          href: how-tos/chatgpt-openai-winui3.md
     - name: API reference
       href: api-reference/index.md
       items: 
@@ -951,6 +1025,6 @@ items:
                       href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
         - name: .NET API reference >>
           href: /dotnet/api/
-        - name: Schema specifications for Windows apps >>
+        - name: Schema specs for Windows apps >>
           href: /uwp/schemas/
 
