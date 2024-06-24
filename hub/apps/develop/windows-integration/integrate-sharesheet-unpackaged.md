@@ -20,7 +20,7 @@ How to onboard an unpackaged app as a Share Target:
 An app can get package identity in two ways:  
 
 - Make a new MSIX installation package (preferred method) **OR**
-- Make apps packaged with external location compatible with the current installer. This is only recommended for apps that have a existing installer and which can't switch to MSIX installation.
+- Make apps packaged with external location compatible with the current installer. This is only recommended for apps that have an existing installer and which can't switch to MSIX installation.
 
 ### Make a new MSIX installation package
 
