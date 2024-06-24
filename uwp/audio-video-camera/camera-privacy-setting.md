@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Handle the Windows camera privacy setting
 
-Windows allows users to grant or deny access to the device's camera in the Windows Settings app, under **Privacy & Security -> Camera**. Camera access can be disabled for the entire device, for all unpackaged apps, or for individual packaged apps. This article describes the best practices for checking for checking whether your app has access to the camera and handling the case where access is denied by the user.
+Windows allows users to grant or deny access to the device's camera in the Windows Settings app, under **Privacy & Security -> Camera**. Camera access can be disabled for the entire device, for all unpackaged apps, or for individual packaged apps. This article describes the best practices for checking whether your app has access to the camera and handling the case where access is denied by the user.
 
 ## Check for access before initializing the camera
 
