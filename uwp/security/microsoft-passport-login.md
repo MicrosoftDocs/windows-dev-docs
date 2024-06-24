@@ -330,7 +330,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
             public static bool ValidateAccountCredentials(string username)
             {
                 // In the real world, this method would call the server to authenticate that the account exists and is valid.
-                // For this tutorial however we will just have a existing sample user that is just "sampleUsername"
+                // For this tutorial however we will just have an existing sample user that is just "sampleUsername"
                 // If the username is null or does not match "sampleUsername" it will fail validation. In which case the user should register a new passport user
      
                 if (string.IsNullOrEmpty(username))
