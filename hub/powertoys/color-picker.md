@@ -38,7 +38,7 @@ Color Picker copies the selected color to the clipboard in the **Default color f
 ![Selecting a Color](../images/pt-colorpicker.gif)
 
 > [!TIP]
-> To select the color of the non-hover state of a element:
+> To select the color of the non-hover state of an element:
 >
 > 1. Move the mouse pointer close, but not over the element.
 > 2. Zoom in by scrolling the mouse wheel up. Image will be frozen.

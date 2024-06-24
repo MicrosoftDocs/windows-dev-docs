@@ -65,7 +65,7 @@ If you're ready to enlighten your app, see one of these guides:
 
 ## Create non-enlightened enterprise app
 
-if you're creating an Line of Business (LOB) app that is not intended for personal use, you might not have to enlighten it.
+if you're creating a Line of Business (LOB) app that is not intended for personal use, you might not have to enlighten it.
 
 ### Windows desktop apps
 You don't need to enlighten a Windows desktop app but you should test your app to ensure that it functions properly under policy. For example, start your app, use it, then unenroll the device from MDM. Then, make sure the app can start again. If files critical to the operation of the app are encrypted, the app might not start. Also, review the files that your app interacts with to ensure that your app won't inadvertently encrypt files that are personal to the user. This might include metadata files, images and other things.
