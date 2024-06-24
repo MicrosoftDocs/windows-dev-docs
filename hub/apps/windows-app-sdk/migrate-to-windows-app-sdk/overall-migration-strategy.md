@@ -111,6 +111,7 @@ For example, in the case study [A Windows App SDK migration of the UWP PhotoLab 
 
 ## Related topics
 
+* [Windows App SDK and suppported Windows releases](../support.md)
 * [Windows Runtime (WinRT)](/uwp/api/) APIs
 * [WinUI](../../winui/index.md)
 * [Stable release channel for the Windows App SDK](../stable-channel.md)

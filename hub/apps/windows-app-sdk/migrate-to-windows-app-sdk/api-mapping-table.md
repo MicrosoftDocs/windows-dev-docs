@@ -41,7 +41,7 @@ There are differences in the names of namespaces and classes (including UI contr
 | (**Windows.UI.Core**) [**CoreDispatcher.RunAsync**](/uwp/api/Windows.UI.Core.CoreDispatcher.RunAsync) method | (**Microsoft.UI.Dispatching**) [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method. See [Change RunAsync to TryEnqueue](guides/threading.md#change-coredispatcherrunasync-to-dispatcherqueuetryenqueue). |
 | (**Windows.UI.Core**) [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) class | (**Microsoft.UI.Windowing**) [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class. See [Windowing functionality migration](guides/windowing.md). |
 | (**Windows.UI.Core**) [**CoreWindow.Bounds**](/uwp/api/windows.ui.core.corewindow.bounds) property (commonly appears in C# as `CoreWindow.GetForCurrentThread.Bounds`) | (**Microsoft.UI.Windowing**) [**AppWindow.Size**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.size) property |
-| (**Windows.UI.Core**) [**CoreWindow.GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) method | 	No direct 1:1 mapping to a Windows App SDK API. When using XAML, you can get **Window.AppWindow** to get the **AppWindow** associated with a XAML **Window**, but an app needs to cache the **Window** or **AppWindow** if it wants to access it from somewhere that doesn't otherwise have access. We recommend caching and exposing the **Window** on the **App** object. |
+| (**Windows.UI.Core**) [**CoreWindow.GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) method |     No direct 1:1 mapping to a Windows App SDK API. When using XAML, you can get **Window.AppWindow** to get the **AppWindow** associated with a XAML **Window**, but an app needs to cache the **Window** or **AppWindow** if it wants to access it from somewhere that doesn't otherwise have access. We recommend caching and exposing the **Window** on the **App** object. |
 | (**Windows.UI.Core**) [**CoreWindow.Activate**](/uwp/api/windows.ui.core.corewindow.activate) method | (**Microsoft.UI.Windowing**) [**AppWindow.Show**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.show) method |
 | (**Windows.UI.Core**) [**CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) property | (**Microsoft.UI.Xaml**) [**Window.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) property. See [Change CoreWindow.Dispatcher to Window.DispatcherQueue](guides/windowing.md#change-corewindowdispatcher-to-windowdispatcherqueue). |
 | (**Windows.UI.Core**) [**CoreWindow.SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) event | (**Microsoft.UI.Windowing**) [**AppWindowChangedEventArgs.DidSizeChange**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange) method |
@@ -104,3 +104,7 @@ This section documents various libraries that were supported in UWP, and need to
 | UWP | Windows App SDK |
 | - | - |
 | OneDrive SDK | Microsoft Graph SDK |
+
+## See Also
+
+- [Windows App SDK and suppported Windows releases](../support.md)

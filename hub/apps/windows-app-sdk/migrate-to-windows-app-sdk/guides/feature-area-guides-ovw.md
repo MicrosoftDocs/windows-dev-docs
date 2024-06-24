@@ -25,3 +25,7 @@ A collection of migration guidance topics, each focusing on a specific feature a
 | [DirectWrite to DWriteCore migration](dwritecore.md) | DWriteCore is the [Windows App SDK](../../index.md) implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal). |
 | [MRT to MRT Core migration](mrtcore.md) | This topic contains guidance for migrating from UWP's [Resource Management System](/windows/uwp/app-resources/resource-management-system) (also known as MRT) to the Windows App SDK's MRT Core. |
 | [Threading functionality migration](threading.md) | This topic shows how to migrate your threading code. |
+
+## See Also
+
+* [Windows App SDK and suppported Windows releases](../../support.md)

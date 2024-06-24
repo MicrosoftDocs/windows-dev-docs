@@ -148,6 +148,7 @@ Status            : Ok
 
 ## Related topics
 
+- [Windows App SDK and suppported Windows releases](support.md)
 - [Runtime architecture](deployment-architecture.md)
 - [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)

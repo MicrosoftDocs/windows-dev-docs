@@ -216,4 +216,5 @@ For more info, and code examples, see [Change Windows.UI.Core.CoreDispatcher to 
 
 ## Related topics
 
+* [Windows App SDK and suppported Windows releases](../../support.md)
 * [Migrate your threading functionality](threading.md)
