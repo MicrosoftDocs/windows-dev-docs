@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged
 description: This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.
 ms.topic: article
-ms.date: 10/03/2022
+ms.date: 06/25/2024
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: stwhi
 author: stevewhims
@@ -131,6 +131,161 @@ If the Windows App SDK installer returns an error during installation, it will r
 As an alternative to using the Windows App SDK installer for deployment to end users, you can manually deploy the MSIX packages through your app's program or MSI. This option can be best for developers who want more control.
 
 For an example that demonstrates how your setup program can install the MSIX packages, see [install.cpp](https://aka.ms/testinstallpackages) in the Windows App SDK installer code.
+
+To check whether the Windows App SDK is installed already (and, if so, what version), you can check for specific package families by calling [PackageManager.FindPackagesForUserWithPackageTypes](/uwp/api/windows.management.deployment.packagemanager.findpackagesforuserwithpackagetypes#windows-management-deployment-packagemanager-findpackagesforuserwithpackagetypes(system-string-system-string-system-string-windows-management-deployment-packagetypes)).
+
+From a *mediumIL* (full trust) unpackaged process (see [Application element](/uwp/schemas/appxpackage/uapmanifestschema/element-application)), you can use the following code to check for a package registered to the current user:
+
+```csharp
+using Windows.Management.Deployment;
+
+public class WindowsAppSDKRuntime
+{
+    public static IsPackageRegisteredForCurrentUser(
+        string packageFamilyName,
+        PackageVersion minVersion,
+        Windows.System.ProcessorArchitecture architecture,
+        PackageTypes packageType)
+    {
+        ulong minPackageVersion = ToVersion(minVersion);
+
+        foreach (var p : PackageManager.FindPackagesForUserWithPackageTypes(
+            string.Empty, packageFamilyName, packageType)
+        {
+            // Is the package architecture compatible?
+            if (p.Id.Architecture != architecture)
+            {
+                continue;
+            }
+
+            // Is the package version sufficient for our needs?
+            ulong packageVersion = ToVersion(p.Id.Version);
+            if (packageVersion < minPackageVersion)
+            {
+                continue;
+            }
+
+            // Success.
+            return true;
+        }
+
+        // No qualifying package found.
+        return false;
+    }
+
+    private static ulong ToVersion(PackageVersion packageVersion)
+    {
+        return ((ulong)packageVersion.Major << 48) |
+               ((ulong)packageVersion.Minor << 32) |
+               ((ulong)packageVersion.Build << 16) |
+               ((ulong)packageVersion.Revision);
+    }
+}
+```
+
+For the scenario above, calling **FindPackagesForUserWithPackageTypes** is preferable to calling **FindPackagesForUser**. That's because you can narrow the search to (for this example), just *framework* or main *packages*. And that avoids matching other types of packages (such as *resource*, *optional*, or *bundle*) which aren't of interest for this example.
+
+To use the current/calling user context, set the *userSecurityId* parameter is to an empty string.
+
+And now some info to help you decide *how* to call the function in the code example above. A properly installed runtime is composed of multiple packages that depend on the system's CPU architecture:
+* On an x86 machine: Fwk=\[x86], Main=\[x86], Singleton=\[x86], DDLM=\[x86].
+* On an x64 machine: Fwk=\[x86, x64], Main=\[x64], Singleton=\[x64], DDLM=\[x86, x64].
+* On an arm64 machine: Fwk=\[x86, x64, arm64], Main=\[arm64], Singleton=\[arm64], DDLM=\[x86, x64, arm64].
+
+For the *Main* and *Singleton* packages, their architecture should match the system's CPU architecture; for example, x64 packages on an x64 system. For the *Framework* package, an x64 system can run both x64 and x86 apps; similarly an arm64 system can run arm64, x64, and x86 apps. A *DDLM* package check is similar to a *Framework* check, except that `PackageType=main`, and the *packagefamilyname* differs, and more than one (different) *packagefamilyname* could be applicable, due to *DDLM*'s unique naming scheme. For more info, see the  [MSIX packages](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/Deployment/MSIXPackages.md) spec. So the checks are more like this:
+
+```csharp
+public static bool IsRuntimeRegisteredForCurrentUser(PackageVersion minVersion)
+{
+    ProcessorArchitecture systemArchitecture = DetectSystemArchitecture();
+
+    return IsFrameworkRegistered(systemArchitecture, minVersion) &&
+           IsMainRegistered(systemArchitecture, minVersion) &&
+           IsSingletonRegistered(systemArchitecture, minVersion) &&
+           IsDDLMRegistered(systemArchitecture, minVersion);
+}
+
+private static ProcecssorArchitecture DetectSystemArchitecture()
+{
+    // ...see the call to IsWow64Process2(), and how the result is used...
+    // ...as per `IsPackageApplicable()` in
+    // [install.cpp](https://github.com/microsoft/WindowsAppSDK/blob/main/installer/dev/install.cpp)
+    // line 99-116...
+    // ...WARNING: Use IsWow64Process2 to detect the system architecture....
+    // ...         Other similar APIs exist, but don't give reliably accurate results...
+}
+
+private static bool IsFrameworkRegistered(ProcessorArchitecture systemArchitecture,
+    PackageVersion minVersion)
+{
+    // Check x86.
+    if (!IsPackageRegisteredForCurrentUser(
+        global::Microsoft.WindowsAppSDK.Runtime.Packages.Framework.PackageFamilyName,
+        minVersion, ProcessorArchitecture.X86,
+        PackageTypes.Framework))
+    {
+        return false;
+    }
+
+    // Check x64 (if necessary).
+    if ((systemArchitecture == ProcessorArchitecture.X64) || 
+        (systemArchitecture == ProcessorArchitcture.Arm64))
+    {
+        if (!IsPackageRegisteredForCurrentUser(
+            global::Microsoft.WindowsAppSDK.Runtime.Packages.Framework.PackageFamilyName,
+            minVersion, ProcessorArchitecture.X64,
+            PackageTypes.Framework))
+        {
+            return false;
+        }
+    }
+
+    // Check arm64 (if necessary).
+    if (systemArchitecture == ProcessorArchitcture.Arm64)
+    {
+        if (!IsPackageRegisteredForCurrentUser(
+            global::Microsoft.WindowsAppSDK.Runtime.Packages.Framework.PackageFamilyName,
+            minVersion, ProcessorArchitecture.Arm64,
+            PackageTypes.Framework))
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+private static bool IsMainRegistered(ProcessorArchitecture systemArchitecture,
+    PackageVersion minVersion)
+{
+    return IsPackageRegisteredForCurrentUser(
+        global::Microsoft.WindowsAppSDK.Runtime.Packages.Main.PackageFamilyName,
+        minVersion,
+        systemArchitecture,
+        PackageTypes.Main);
+}
+
+private static bool IsSingletonRegistered(ProcessorArchitecture systemArchitecture,
+    PackageVersion minVersion)
+{
+    return IsPackageRegisteredForCurrentUser(
+        global::Microsoft.WindowsAppSDK.Runtime.Packages.Singleton.PackageFamilyName,
+        minVersion,
+        systemArchitecture,
+        PackageTypes.Main);
+}
+
+private static bool IsDDLMRegistered(ProcessorArchitecture systemArchitecture,
+    PackageVersion minVersion)
+{
+    // ...similar to IsFrameworkRegistered, but the packageFamilyName is more complicated...
+    // ...and no predefined constant is currently available...
+    // ...for more details, see
+    // https://github.com/microsoft/WindowsAppSDK/blob/main/specs/Deployment/MSIXPackages.md.
+}
+```
+
+The info and code above covers the basic detection scenario. To detect whether the runtime is provisioned for all users, or to do the above from an App Container, and/or do it from a packaged `mediumIL` process, additional logic is needed.
 
 ## Deployment scenarios
 
