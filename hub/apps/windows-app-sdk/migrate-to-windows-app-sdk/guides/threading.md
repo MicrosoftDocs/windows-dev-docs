@@ -207,3 +207,7 @@ winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&, RoutedEventAr
     ...
 }
 ```
+
+## See Also
+
+* [Windows App SDK and suppported Windows releases](../../support.md)

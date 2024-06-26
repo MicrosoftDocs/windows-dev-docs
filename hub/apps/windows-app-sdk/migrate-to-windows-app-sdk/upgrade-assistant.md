@@ -197,3 +197,7 @@ To use many of the XAML controls, ensure that your `app.xaml` file includes the 
 There are several known problems that can occur when using the .NET Upgrade Assistant. In some cases, these problems are with the [try-convert tool](https://github.com/dotnet/try-convert) that the .NET Upgrade Assistant uses internally.
 
 But for more troubleshooting tips and known issues, see the [Upgrade Assistant](https://github.com/dotnet/upgrade-assistant) GitHub repository.
+
+## See Also
+
+- [Windows App SDK and suppported Windows releases](../support.md)

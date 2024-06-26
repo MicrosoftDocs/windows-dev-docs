@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 
-This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.
+This example code shows how to create a random number or buffer for use in cryptography in a Universal Windows Platform (UWP) app.
 
 ```cs
 public string GenerateRandomData()

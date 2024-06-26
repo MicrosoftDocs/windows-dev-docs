@@ -39,8 +39,6 @@ highlightedContent:
    - title: Online training for Windows app developers
      itemType: learn
      url: /training/browse/?products=windows
-
-
 productDirectory:
   title: Dive into developing apps for Windows
   items:
@@ -51,6 +49,8 @@ productDirectory:
         text: Overview of framework options
       - url: ./get-started/start-here.md
         text: Get started with WinUI
+      - url: ./windows-app-sdk/support.md
+        text: Windows App SDK and suppported Windows releases
       - url: ./windows-app-sdk/set-up-your-development-environment.md
         text: Install tools for the Windows App SDK
       - url: ./get-started/samples.md

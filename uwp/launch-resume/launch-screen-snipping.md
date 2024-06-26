@@ -29,7 +29,7 @@ The **ms-screenclip:** URI allows your app to automatically open up and start a 
 
 ## Launching the Snipping Tool or Snip & Sketch App
 
-The **ms-screensketch:** URI allows you to programatically launch the Snipping Tool app (on Windows 11) or Snip & Sketch app (on Windows 10), and open a specific image in that app for annotation.
+The **ms-screensketch:** URI allows you to programmatically launch the Snipping Tool app (on Windows 11) or Snip & Sketch app (on Windows 10), and open a specific image in that app for annotation.
 
 **ms-screensketch:** takes the following parameters:
 

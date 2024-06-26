@@ -71,6 +71,8 @@
           href: ../audio-video-camera/get-a-preview-frame.md
         - name: Launch the camera settings page
           href: ../audio-video-camera/launch-camera-settings.md
+        - name: Handle the Windows camera privacy setting
+          href: ../audio-video-camera/camera-privacy-setting.md
     - name: Media playback
       href: ../audio-video-camera/media-playback.md
       items:

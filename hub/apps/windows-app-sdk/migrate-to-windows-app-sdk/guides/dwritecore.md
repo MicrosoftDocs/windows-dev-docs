@@ -32,6 +32,7 @@ Also see the [DWriteCoreGallery](https://github.com/microsoft/WindowsAppSDK-Samp
 
 ## Related topics
 
+* [Windows App SDK and suppported Windows releases](../../support.md)
 * [DWriteCore overview](/windows/win32/directwrite/dwritecore-overview)
 * [DWriteCoreGallery](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/TextRendering) sample app
 * [DirectWrite](/windows/win32/directwrite/direct-write-portal)

@@ -89,3 +89,7 @@ Content-Length: 46
 
 { Sync: "Hello from the Contoso App Service" }
 ```
+
+## See Also
+
+* [Windows App SDK and suppported Windows releases](../../support.md)

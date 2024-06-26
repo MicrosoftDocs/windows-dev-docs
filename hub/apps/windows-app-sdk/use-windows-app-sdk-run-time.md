@@ -112,8 +112,9 @@ Replace the **Id** attribute of the **maxversiontested** element with the versio
 </assembly>
 ```
 
-## Related topics
+## See Also
 
+- [Windows App SDK and suppported Windows releases](support.md)
 - [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md)
 - [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md)
