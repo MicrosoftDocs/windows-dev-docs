@@ -28,4 +28,4 @@ A collection of migration guidance topics, each focusing on a specific feature a
 
 ## See Also
 
-* [Windows App SDK and suppported Windows releases](../../support.md)
+* [Windows App SDK and supported Windows releases](../../support.md)

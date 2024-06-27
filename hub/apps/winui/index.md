@@ -50,7 +50,7 @@ The following table highlights some of most significant differences between WinU
 
 - [Windows App SDK](../windows-app-sdk/index.md)
 - [Stable channel release notes for the Windows App SDK](../windows-app-sdk/stable-channel.md)
-- [Windows App SDK and suppported Windows releases](../windows-app-sdk/support.md)
+- [Windows App SDK and supported Windows releases](../windows-app-sdk/support.md)
 - [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
 - [WinUI 2 API docs](/windows/winui/api/)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

@@ -65,4 +65,4 @@ If you encounter a *Class not registered* error when you try to use a Windows Ap
 - [Release channels and release notes](release-channels.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
-- [Windows App SDK and suppported Windows releases](support.md)
+- [Windows App SDK and supported Windows releases](support.md)

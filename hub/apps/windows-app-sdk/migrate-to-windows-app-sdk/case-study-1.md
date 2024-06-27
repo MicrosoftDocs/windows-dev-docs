@@ -311,4 +311,4 @@ Now build the project, and run the app to test it. Select an image, set a zoom l
 
 ## See Also
 
-- [Windows App SDK and suppported Windows releases](../support.md)
+- [Windows App SDK and supported Windows releases](../support.md)

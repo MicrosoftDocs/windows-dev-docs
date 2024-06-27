@@ -69,4 +69,4 @@ In a C++/WinRT project, you can manually revoke (unregister) an event handler su
 
 ## See Also
 
-- [Windows App SDK and suppported Windows releases](../support.md)
+- [Windows App SDK and supported Windows releases](../support.md)

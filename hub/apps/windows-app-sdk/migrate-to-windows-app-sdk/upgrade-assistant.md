@@ -200,4 +200,4 @@ But for more troubleshooting tips and known issues, see the [Upgrade Assistant](
 
 ## See Also
 
-- [Windows App SDK and suppported Windows releases](../support.md)
+- [Windows App SDK and supported Windows releases](../support.md)

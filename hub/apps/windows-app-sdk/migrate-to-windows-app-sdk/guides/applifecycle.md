@@ -214,6 +214,6 @@ See the [File type association](#file-type-association) section above for more d
 
 ## Related topics
 
-* [Windows App SDK and suppported Windows releases](../../support.md)
+* [Windows App SDK and supported Windows releases](../../support.md)
 * [App instancing with the app lifecycle API](../../applifecycle/applifecycle-instancing.md)
 * [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation)
