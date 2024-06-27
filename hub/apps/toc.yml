@@ -634,7 +634,7 @@ items:
           items: 
             - name: Overview of Windows App SDK
               href: windows-app-sdk/index.md
-            - name: Windows App SDK and suppported Windows releases
+            - name: Windows App SDK and supported Windows releases
               href: windows-app-sdk/support.md
             - name: Windows App SDK release notes
               href: windows-app-sdk/release-channels.md
