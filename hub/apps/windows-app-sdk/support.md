@@ -1,5 +1,5 @@
 ---
-title: Windows App SDK and suppported Windows releases.
+title: Windows App SDK and supported Windows releases.
 description: Details on the Windows OS versions that are supported by the Windows App SDK.
 ms.topic: article
 ms.date: 04/25/2024
@@ -7,7 +7,7 @@ keywords: Windows, Windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
 
-# Windows App SDK and suppported Windows releases
+# Windows App SDK and supported Windows releases
 
 This topic identifies the versions of the [Windows client](/windows/) and [Windows Server](/windows-server/) operating systems (OS) supported by the [Windows App SDK](index.md), along with the various servicing categories, channels, and SKUs for each OS.
 
