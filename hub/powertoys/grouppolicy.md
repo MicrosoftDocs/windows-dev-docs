@@ -1,7 +1,7 @@
 ---
 title: PowerToys Group Policy
 description: Group policy documentation for PowerToys
-ms.date: 01/28/2024
+ms.date: 06/27/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
@@ -56,7 +56,7 @@ The individual enabled state policies for the utilities will override this polic
 
 #### Group Policy (ADMX) information
 
-- GP unique name: ConfigureGlobalUtilityEnabledState
+- GP unique name: ConfigureAllUtilityGlobalEnabledState
 - GP name: Configure global utility enabled state
 - GP path: Administrative Templates/Microsoft PowerToys
 - GP scope: Computer and user
@@ -71,7 +71,7 @@ The individual enabled state policies for the utilities will override this polic
 
 #### Intune information
 
-- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureGlobalUtilityEnabledState`
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureAllUtilityGlobalEnabledState`
 - Example value: `<disabled/>`
 
 ### Configure enabled state for individual utilities
@@ -155,7 +155,9 @@ These policies have a higher priority than, and will override, the policy "Confi
 
 - Example value: `<disabled/>`
 
-### Allow experimentation
+### General settings
+
+#### Allow experimentation
 
 Supported on PowerToys 0.68.0 or later.
 
@@ -164,24 +166,24 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 - If this setting is enabled or not configured, the user can control experimentation in the PowerToys settings menu.
 - If this setting is disabled, experimentation is not allowed.
 
-#### Group Policy (ADMX) information
+##### Group Policy (ADMX) information
 
 - GP unique name: AllowExperimentation
 - GP name: Allow experimentation
-- GP path: Administrative Templates/Microsoft PowerToys
+- GP path: Administrative Templates/Microsoft PowerToys/General settings
 - GP scope: Computer and user
 - ADMX file name: _PowerToys.admx_
 
-#### Registry information
+##### Registry information
 
 - Path: Software\Policies\PowerToys
 - Name: AllowExperimentation
 - Type: DWORD
 - Example value: `0x00000000`
 
-#### Intune information
+##### Intune information
 
-- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/AllowExperimentation`
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~GeneralSettings/AllowExperimentation`
 - Example value: `<disabled/>`
 
 ### Installer and Updates
