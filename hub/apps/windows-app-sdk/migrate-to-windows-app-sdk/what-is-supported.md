@@ -50,4 +50,4 @@ The **Design** tab of the XAML Designer in Visual Studio (and Blend for Visual S
 
 ## See Also
 
-- [Windows App SDK and suppported Windows releases](../support.md)
+- [Windows App SDK and supported Windows releases](../support.md)

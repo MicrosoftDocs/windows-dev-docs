@@ -50,7 +50,7 @@ productDirectory:
       - url: ./get-started/start-here.md
         text: Get started with WinUI
       - url: ./windows-app-sdk/support.md
-        text: Windows App SDK and suppported Windows releases
+        text: Windows App SDK and supported Windows releases
       - url: ./windows-app-sdk/set-up-your-development-environment.md
         text: Install tools for the Windows App SDK
       - url: ./get-started/samples.md

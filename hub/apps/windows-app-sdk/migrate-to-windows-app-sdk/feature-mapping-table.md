@@ -31,4 +31,4 @@ This topic compares major feature areas in the different forms in which they app
 
 ## See Also
 
-- [Windows App SDK and suppported Windows releases](../support.md)
+- [Windows App SDK and supported Windows releases](../support.md)

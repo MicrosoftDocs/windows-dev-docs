@@ -107,4 +107,4 @@ This section documents various libraries that were supported in UWP, and need to
 
 ## See Also
 
-- [Windows App SDK and suppported Windows releases](../support.md)
+- [Windows App SDK and supported Windows releases](../support.md)

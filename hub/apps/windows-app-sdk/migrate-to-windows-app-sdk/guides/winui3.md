@@ -257,5 +257,5 @@ So if you're accessing the **AcrylicBrush.BackgroundSource** property in the sou
 
 ## Related topics
 
-* [Windows App SDK and suppported Windows releases](../../support.md)
+* [Windows App SDK and supported Windows releases](../../support.md)
 * [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md)
