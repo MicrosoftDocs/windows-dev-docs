@@ -129,7 +129,7 @@ The [Customer database tutorial](../enterprise/customer-database-tutorial.md) cr
 
 ### Photo Editor C++/WinRT
 
-The [Photo Editor sample app](https://github.com/Microsoft/Windows-appsample-photo-editor) showcases development with the [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) language projection. The app allows you to retrieve photos from the **Pictures** library, and then edit a elected image with associated photo effects.
+The [Photo Editor sample app](https://github.com/Microsoft/Windows-appsample-photo-editor) showcases development with the [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) language projection. The app allows you to retrieve photos from the **Pictures** library, and then edit an elected image with associated photo effects.
 
 ### Windows Machine Learning
 

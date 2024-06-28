@@ -85,7 +85,7 @@ The following sections provide background for some of the key concepts discussed
 
 In Windows 8, Microsoft introduced a new API set as part of the Windows Runtime (WinRT). Unlike the .NET Framework, WinRT is a native layer of APIs which are exposed directly to apps. WinRT also introduced language projections, which are layers added on top of the runtime to allow developers to interact with it using languages such as C# and JavaScript in addition to C++. Projections enable developers to build apps on top of WinRT that leverage the same C# and XAML knowledge they acquired in building apps with the .NET Framework. 
 
-In Windows 10, Microsoft introduced the [Universal Windows Platform (UWP)](/windows/uwp/get-started/universal-application-platform-guide), which is built on top of WinRT. The most important feature of UWP is that it offers a common set of APIs across every device platform: no matter if the app is running on a desktop, on a Xbox One or on a HoloLens, you’re able to use the same APIs.
+In Windows 10, Microsoft introduced the [Universal Windows Platform (UWP)](/windows/uwp/get-started/universal-application-platform-guide), which is built on top of WinRT. The most important feature of UWP is that it offers a common set of APIs across every device platform: no matter if the app is running on a desktop, on an Xbox One or on a HoloLens, you’re able to use the same APIs.
 
 Going forward, most new Windows features are exposed via WinRT APIs, including features such as Timeline, Project Rome, and Windows Hello.
 
