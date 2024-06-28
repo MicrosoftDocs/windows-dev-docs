@@ -258,5 +258,5 @@ Starting with Windows 10, version 1703, you can supply an [**AdaptiveMediaSource
 ## Related topics
 * [Media playback](media-playback.md)
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Integrate with the Sytem Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
+* [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
 * [Play media in the background](background-audio.md)

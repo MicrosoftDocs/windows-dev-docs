@@ -1475,7 +1475,7 @@ The following tables show the video codec and format support for each device fam
 
 <sup>*</sup> MPEG-2/MPEG-1 codec is available with install of optional Microsoft UWP DVD application.
 
-<sup>**</sup> H.265 and AV1 are avaliable with the install of the corresponding optional codec pack.
+<sup>**</sup> H.265 and AV1 are available with the install of the corresponding optional codec pack.
 
 ### Mobile
 
@@ -1842,7 +1842,7 @@ The following tables show the video codec and format support for each device fam
 
 <sup>*</sup> MPEG-2/MPEG-1 codec is available with install of optional Microsoft UWP DVD application.
 
-<sup>**</sup> H.265 and AV1 are avaliable with the install of the corresponding optional codec pack.
+<sup>**</sup> H.265 and AV1 are available with the install of the corresponding optional codec pack.
  
 
 

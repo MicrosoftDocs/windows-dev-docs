@@ -76,7 +76,7 @@ try
 }
 catch (System.UnauthorizedAccessException ex)
 {
-    // E_ACCESSDENIED, 0x80070005 in hexidecimal, -2147024891 in decimal
+    // E_ACCESSDENIED, 0x80070005 in hexadecimal, -2147024891 in decimal
     if (ex.HResult == -2147024891)
     {
         StatusTextBlock.Text = "Access to the camera has been denied." +
