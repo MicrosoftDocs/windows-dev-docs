@@ -60,7 +60,7 @@ Starting with Windows 10, version 1803, you can get the metadata, such as EXIF i
 frame control values, such as exposure and flash settings, used when the image was captured by accessing the [**ControlValues**](/uwp/api/windows.media.capture.capturedframe.controlvalues) property. For more information, see [Capture device controls for photo and video capture](capture-device-controls-for-photo-and-video-capture.md).
 
 ## Capture a photo to a file
-A typical photography app will save a captured photo to disk or to cloud storage and will need to add metadata, such as photo orientation, to the file. The following example shows you how to capture an photo to a file. You still have the option of creating a **SoftwareBitmap** from the image file later. 
+A typical photography app will save a captured photo to disk or to cloud storage and will need to add metadata, such as photo orientation, to the file. The following example shows you how to capture a photo to a file. You still have the option of creating a **SoftwareBitmap** from the image file later. 
 
 The technique shown in this example captures the photo to an in-memory stream and then transcode the photo from the stream to a file on disk. This example uses [**GetLibraryAsync**](/uwp/api/windows.storage.storagelibrary.getlibraryasync) to get the user's pictures library and then the [**SaveFolder**](/uwp/api/windows.storage.storagelibrary.savefolder) property to get a reference default save folder. Remember to add the **Pictures Library** capability to your app manifest to access this folder. [**CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) creates a new [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) to which the photo will be saved.
 

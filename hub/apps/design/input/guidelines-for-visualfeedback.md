@@ -89,7 +89,7 @@ The thickness, margin, or whether or not the app-developer wishes to have the fo
 
 ### Color Properties
 
-There are only two color properties for the focus visuals: the primary border color, and the secondary border color. These focus visual border colors can be changed per-control on an page level, and globally on an app-wide level:
+There are only two color properties for the focus visuals: the primary border color, and the secondary border color. These focus visual border colors can be changed per-control on a page level, and globally on an app-wide level:
 
 To brand focus visuals app-wide, override the system brushes:
 ```XAML

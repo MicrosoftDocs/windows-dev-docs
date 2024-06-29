@@ -72,7 +72,7 @@ When the app enables frame processing, it sets the denoising mode to **Off** if 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetEnableFrameProcessing":::
 
-When the app disables frame prcessing, it sets the denoising mode to **On** or **Auto**, depending on which mode is supported.
+When the app disables frame processing, it sets the denoising mode to **On** or **Auto**, depending on which mode is supported.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs" id="SnippetDisableFrameProcessing":::
 
