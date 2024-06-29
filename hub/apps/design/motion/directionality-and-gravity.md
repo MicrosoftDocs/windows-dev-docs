@@ -38,7 +38,7 @@ Directional signals help to solidify the mental model of the journey a user take
 :::row:::
     :::column:::
 Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
-When you move objects, avoid unnatural collisions. ​Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.​
+When you move objects, avoid unnatural collisions. ​Keep in mind where objects come from and go to, and always support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.​
     :::column-end:::
     :::column:::
         ![Short video showing a circle and then the addition of an X axis, a Y axis, and a Z axis.](images/direction.gif)

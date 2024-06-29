@@ -528,7 +528,7 @@ namespace SecondaryAuthFactorSample
 			// Register canceled event for this task
 			taskInstance.Canceled += TaskInstanceCanceled;
 
-			// Find all device registred by this application
+			// Find all device registered by this application
 			IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList =
 				await SecondaryAuthenticationFactorRegistration.FindAllRegisteredDeviceInfoAsync(
 					SecondaryAuthenticationFactorDeviceFindScope.AllUsers);
