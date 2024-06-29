@@ -453,5 +453,5 @@ After you have developed and tested your feed provider you can publish your app 
 
 ### The Feeds Store Collection
 
-After your app has been published on the Microsoft Store, you can request for your app to be included in the feeds Store Collection that helps users discover apps that feature Windows feeds. To submit your request, see [Submit your Feed/Board for addition to the Store Collection]([https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbRzIsoQuXjKhIoGxHt2iT41RUNjJJM09JSlFBOFJTTDJQT1dOODBEWlNYQy4u&wdLOR=c3CBC769A-D2E1-4558-8FAF-09B14B60351D](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR33MBPKauFRGiaSf7B00-UBUMk9FU1M0TEVOTjA4R0xGQTQwNU1aTFVQNi4u).
+After your app has been published on the Microsoft Store, you can request for your app to be included in the feeds Store Collection that helps users discover apps that feature Windows feeds. To submit your request, see [Submit your Feed/Board for addition to the Store Collection](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR33MBPKauFRGiaSf7B00-UBUMk9FU1M0TEVOTjA4R0xGQTQwNU1aTFVQNi4u).
 
