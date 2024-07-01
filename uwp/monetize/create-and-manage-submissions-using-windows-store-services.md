@@ -29,6 +29,9 @@ The following steps describe the end-to-end process of using the Microsoft Store
 > [!NOTE]
 > This API cannot be used with apps or add-ons that use mandatory app updates and Store-managed consumable add-ons. If you use the Microsoft Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use Partner Center to manage the submissions for the app or add-on.
 
+> [!NOTE]
+> This API cannot be used with apps or add-ons that are on Pricing Version 2. You know a product is Pricing Version 2 if you can find a "Review price per market" button on the Pricing section of the Pricing and availability page. If you use the Microsoft Store submission API with an app or add-on that are on Pricing Version 2, the API will return a unknown tier for the pricing part. You can continue using this API to update modules other than Pricing and availability.
+
 <span id="prerequisites"></span>
 
 ## Step 1: Complete prerequisites for using the Microsoft Store submission API
