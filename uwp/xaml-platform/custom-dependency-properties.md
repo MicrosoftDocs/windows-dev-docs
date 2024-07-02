@@ -75,7 +75,7 @@ For C++/CX, you have options for how you split the implementation between the he
 
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
-  "Label",
+  nameof(Label),
   typeof(String),
   typeof(ImageWithLabelControl),
   new PropertyMetadata(null)
@@ -257,7 +257,7 @@ This next example modifies the previously shown [**DependencyProperty.Register**
 
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
-  "Label",
+  nameof(Label),
   typeof(String),
   typeof(ImageWithLabelControl),
   new PropertyMetadata(null,new PropertyChangedCallback(OnLabelChanged))
@@ -457,6 +457,32 @@ Nevertheless, scenarios for collection-type dependency properties do exist. The 
 ### Initializing the collection
 
 When you create a dependency property, you can establish a default value by means of dependency property metadata. But be careful to not use a singleton static collection as the default value. Instead, you must deliberately set the collection value to a unique (instance) collection as part of class-constructor logic for the owner class of the collection property.
+
+```csharp
+// WARNING - DO NOT DO THIS
+public static readonly DependencyProperty ItemsProperty = DependencyProperty.Register(
+  nameof(Items),
+  typeof(IList<object>),
+  typeof(ImageWithLabelControl),
+  new PropertyMetadata(new List<object>())
+);
+
+// DO THIS Instead
+public static readonly DependencyProperty ItemsProperty = DependencyProperty.Register(
+  nameof(Items),
+  typeof(IList<object>),
+  typeof(ImageWithLabelControl),
+  new PropertyMetadata(null)
+);
+
+public ImageWithLabelControl()
+{
+    // Need to initialize in constructor instead
+    Items = new List<object>();
+}
+```
+
+A DependencyProperty and its PropertyMetadata's default value are part of the static definition of the DependencyProperty. By providing a default collection (or other instanced) value as the default value, it will be shared across all instances of your class instead of each class having its own collection, as would typically be desired.
 
 ### Change notifications
 
