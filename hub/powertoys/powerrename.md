@@ -110,6 +110,21 @@ A _Replace with_ text `Image_${padding=4;increment=2;start=10}_` would produce t
 - Image_0012_b.jpg
 - Image_0014_bc.jpg
 
+### Random string values
+
+If selected, you can use the following patterns as part of the _Replace with_ text:
+
+| Variable pattern    | Explanation                                                                                |
+| :------------------ | :----------------------------------------------------------------------------------------- |
+| `${rstringalnum=X}` | Random string with uppercase letters, lowercase letters and 0-9 digits, customized length. |
+| `${rstringalpha=X}` | Random string with uppercase letters and lowercase letters, customized length.             |
+| `${rstringdigit=X}` | Random string with 0-9 digits, customized length.                                          |
+| `${ruuidv4}`      | Random UUID according to v4 specification.                                                 |
+
+By default, random string values created are mixed case. You can adjust the generating behavior with the general [text formatting options that PowerRename provides](#text-formatting).
+
+If you wish to create UUID values with braces, you can add `{` and `}` to the _Replace with_ input in combination with the ruuidv4 pattern accordingly: `{${ruuidv4}}`.
+
 ## Replace using file creation date and time
 
 The creation date and time attributes of a file can be used in the _Replace with_ text by entering a variable pattern according to the table below. Selecting the tool-tip in the _Replace with_ field allows you to view and select from the supported patterns.
