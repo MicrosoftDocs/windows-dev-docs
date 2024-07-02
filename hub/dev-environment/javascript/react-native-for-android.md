@@ -5,7 +5,7 @@ author: drewbatgit
 ms.author: drewbat 
 manager: jken
 ms.topic: article
-ms.date: 03/30/2021
+ms.date: 06/19/2024
 ---
 
 # Get started developing for Android using React Native
