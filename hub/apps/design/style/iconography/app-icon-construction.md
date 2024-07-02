@@ -183,7 +183,7 @@ Windows 10 supports four tile sizes: small, medium, wide, and large.
 * LargeTile.scale-125_altform-colorful_theme-light.png
 * LargeTile.scale-150_altform-colorful_theme-light.png
 * LargeTile.scale-200_altform-colorful_theme-light.png
-8 LargeTile.scale-400_altform-colorful_theme-light.png
+* LargeTile.scale-400_altform-colorful_theme-light.png
 
 > [!NOTE]
 > Windows 11 does not use the tile assets, but currently at minimum the Medium tile assets at 100% are required to publish to the Microsoft Store. If your app is Windows 10 & 11 compatible it is suggested that you include as many tile assets as possible.
