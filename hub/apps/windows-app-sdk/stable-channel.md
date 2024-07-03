@@ -215,6 +215,7 @@ In 1.5, we made progress on the following features that we announced on our road
 
 - Tabbed windows
 - Drag-n-drop support for WebView2
+  - To clarify, in 1.5 dragging *into* WebView2 is supported, such as dragging a PNG from File Explorer into Bing for Visual Search. Work is ongoing in 1.6 to support dragging *out* of WebView2.
 - Investigations into the table view and ink controls
 
 Dynamic lighting has been removed from the roadmap for the time being.
