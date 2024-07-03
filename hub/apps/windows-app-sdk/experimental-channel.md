@@ -28,6 +28,409 @@ The experimental channel includes releases of the Windows App SDK with [experime
 - [Experimental channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
 - [Experimental channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
 
+## Version 1.6 Experimental (1.6.0-experimental2)
+
+This is the latest release of the experimental channel.
+
+To download, retarget your WinAppSDK NuGet version to `1.6.240701003-experimental2`.
+
+> [!NOTE]
+> Phi Silica and OCR APIs are not included in this release. These will be coming in a future 1.6 release.
+
+### Native AOT support updates
+
+In 1.6-experimental1, the XAML compiler was generating `XamlTypeInfo.g.cs` with code that wasn’t safe for AOT/Trimming. This relates to GitHub issue [#9675](https://github.com/microsoft/microsoft-ui-xaml/issues/9675), though it does not fully fix that issue.
+
+### Changed Edge WebView2 SDK Integration
+
+The Windows App SDK now consumes the Edge WebView2 SDK as a NuGet reference rather than embedding a hardcoded version of the Edge WebView2 SDK. The new model allows apps to choose a newer version of the `Microsoft.Web.WebView2` package instead of being limited to the version with which the Windows App SDK was built. The new model also allows apps to reference NuGet packages which also reference the Edge WebView2 SDK. For more info, see GitHub issue [#5689](https://github.com/microsoft/microsoft-ui-xaml/issues/5689).
+
+### New Package Deployment APIs
+
+The Package Management API has received several enhancements including Is\*ReadyOrNewerAvailable\*(), EnsureReadyOptions.RegisterNewerIfAvailable, Is\*Provisioned\*(), IsPackageRegistrationPending(), and several bug fixes. See [PackageManagement.md](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/packagemanager/PackageManagement.md) and [Pull Request #4453](https://github.com/microsoft/WindowsAppSDK/pull/4453) for more details. 
+
+### Other notable changes
+
+- Starting with 1.6-experimental2, the latest WinUI 3 source will now publish to the main branch in the microsoft-ui-xaml GitHub repo, which will enable source searching in that repo.
+- We added a new `ColorHelper.ToDisplayName()` API, filling that gap from UWP.
+    - **Known issue:** Some language translations have character encoding issues. This will be fixed in the next 1.6 release.
+- Added a new `Microsoft.Windows.Globalization.ApplicationLanguages` class, which notably includes a new `PrimaryLanguageOverride` feature. For more info, see GitHub issue [#4523](https://github.com/microsoft/WindowsAppSDK/pull/4523).
+- New extensions enable Widget Providers to provide Widgets with web content and announcements for Widgets.
+
+### New APIs for 1.6-experimental2
+
+1.6-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
+
+```C#
+Microsoft.UI.Xaml.Controls
+
+    PipsPager
+        WrapMode
+        WrapModeProperty
+
+    PipsPagerWrapMode
+```
+
+```C#
+Microsoft.Windows.Globalization
+
+    ApplicationLanguages
+```
+
+```C#
+Microsoft.Windows.Management.Deployment
+
+    EnsureReadyOptions
+        RegisterNewerIfAvailable
+
+    PackageDeploymentFeature
+    PackageDeploymentManager
+        IsPackageDeploymentFeatureSupported
+        IsPackageProvisioned
+        IsPackageProvisionedByUri
+        IsPackageReadyOrNewerAvailable
+        IsPackageReadyOrNewerAvailableByUri
+        IsPackageSetProvisioned
+        IsPackageSetReadyOrNewerAvailable
+
+    PackageReadyOrNewerAvailableStatus
+```
+
+### Additional 1.6-experimental1 APIs
+
+This release includes the following new and modified experimental APIs:
+
+```C#
+Microsoft.UI
+
+    ColorHelper
+        ToDisplayName
+```
+
+```C#
+Microsoft.UI.Composition
+
+    CompositionNotificationDeferral
+```
+
+```C#
+Microsoft.UI.Composition.Experimental
+
+    ExpCompositionVisualSurface
+    ExpExpressionNotificationProperty
+    IExpCompositionPropertyChanged
+    IExpCompositionPropertyChangedListener
+    IExpCompositor
+    IExpVisual
+```
+
+```C#
+Microsoft.UI.Content
+
+    AutomationOptions
+    ChildContentLink
+    ContentAppWindowBridge
+    ContentDisplayOrientations
+    ContentExternalBackdropLink
+    ContentExternalOutputLink
+    ContentIsland
+        Children
+        Compositor
+        Connected
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        Create
+        Disconnected
+        FindAllForCompositor
+        FragmentRootAutomationProvider
+        GetByVisual
+        IsRemoteEndpointConnected
+        NextSiblingAutomationProvider
+        Offset
+        ParentAutomationProvider
+        PreviousSiblingAutomationProvider
+        Root
+        RotationAngleInDegrees
+
+    ContentIslandEnvironment
+        AutomationOption
+        CurrentOrientation
+        DisplayScale
+        NativeOrientation
+        ThemeChanged
+
+    ContentSite
+        Compositor
+        Offset
+        RotationAngleInDegrees
+        SetContentNodeParent
+        SetIsInputPassThrough
+        SiteVisual
+        TryGetAutomationProvider
+
+    ContentSiteAutomationProviderRequestedEventArgs
+    ContentSiteEnvironment
+        CurrentOrientation
+        DisplayScale
+        NativeOrientation
+        NotifyThemeChanged
+
+    ContentSiteView
+        Offset
+        RotationAngleInDegrees
+
+    CoreWindowSiteBridge
+    CoreWindowTopLevelWindowBridge
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+
+    DesktopSiteBridge
+        TryCreatePopupSiteBridge
+
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentLink
+    IContentNodeOwner
+    IContentSiteBridge2
+    IContentSiteBridgeAutomation
+    IContentSiteBridgeEndpointConnectionPrivate
+    PopupWindowSiteBridge
+    ProcessStarter
+    ReadOnlyDesktopSiteBridge
+    SystemVisualSiteBridge
+```
+
+```C#
+Microsoft.UI.Input
+
+    EnteredMoveSizeEventArgs
+    EnteringMoveSizeEventArgs
+    ExitedMoveSizeEventArgs
+    InputKeyboardSource
+        GetForWindowId
+
+    InputLayoutPolicy
+    InputLightDismissAction
+        GetForIsland
+
+    InputNonClientPointerSource
+        EnteredMoveSize
+        EnteringMoveSize
+        ExitedMoveSize
+        WindowRectChanged
+        WindowRectChanging
+
+    InputPointerActivationBehavior
+    InputPointerSource
+        ActivationBehavior
+        DirectManipulationHitTest
+        GetForVisual
+        GetForWindowId
+        RemoveForVisual
+        TouchHitTesting
+        TrySetDeviceKinds
+
+    MoveSizeOperation
+    ProximityEvaluation
+    TouchHitTestingEventArgs
+    WindowRectChangedEventArgs
+    WindowRectChangingEventArgs
+```
+
+```C#
+Microsoft.UI.Input.Experimental
+
+    ExpInputSite
+    ExpPointerPoint
+```
+
+```C#
+Microsoft.UI.Windowing
+
+    AppWindow
+        DefaultTitleBarShouldMatchAppModeTheme
+
+    DisplayArea
+        GetMetricsFromWindowId
+```
+
+```C#
+Microsoft.UI.Xaml
+
+    XamlIsland
+    XamlRoot
+        CoordinateConverter
+        TryGetContentIsland
+```
+
+```C#
+Microsoft.UI.Xaml.Automation.Peers
+
+    PagerControlAutomationPeer
+    ScrollPresenterAutomationPeer
+```
+
+```C#
+Microsoft.UI.Xaml.Controls
+
+    ContentDialogPlacement
+        UnconstrainedPopup
+
+    ElementFactory
+    FlowLayout
+    FlowLayoutAnchorInfo
+    FlowLayoutLineAlignment
+    FlowLayoutState
+    IApplicationViewSpanningRects
+    IndexPath
+    ISelfPlayingAnimatedVisual
+    ItemContainer
+        CanUserInvoke
+        CanUserInvokeProperty
+        CanUserSelect
+        CanUserSelectProperty
+        ItemInvoked
+        MultiSelectMode
+        MultiSelectModeProperty
+
+    ItemContainerInteractionTrigger
+    ItemContainerInvokedEventArgs
+    ItemContainerMultiSelectMode
+    ItemContainerUserInvokeMode
+    ItemContainerUserSelectMode
+    LayoutPanel
+    NumberBox
+        InputScope
+        InputScopeProperty
+        TextAlignment
+        TextAlignmentProperty
+
+    PagerControl
+    PagerControlButtonVisibility
+    PagerControlDisplayMode
+    PagerControlSelectedIndexChangedEventArgs
+    PagerControlTemplateSettings
+    ProgressRing
+        DeterminateSource
+        DeterminateSourceProperty
+        IndeterminateSource
+        IndeterminateSourceProperty
+
+    RecyclePool
+    RecyclingElementFactory
+    ScrollingViewChangingEventArgs
+    ScrollView
+        ViewChanging
+
+    SelectionModel
+    SelectionModelChildrenRequestedEventArgs
+    SelectionModelSelectionChangedEventArgs
+    SelectTemplateEventArgs
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+
+    StackLayoutState
+    TabView
+        CanTearOutTabs
+        CanTearOutTabsProperty
+        ExternalTornOutTabsDropped
+        ExternalTornOutTabsDropping
+        TabTearOutRequested
+        TabTearOutWindowRequested
+
+    TabViewExternalTornOutTabsDroppedEventArgs
+    TabViewExternalTornOutTabsDroppingEventArgs
+    TabViewTabTearOutRequestedEventArgs
+    TabViewTabTearOutWindowRequestedEventArgs
+    TitleBar
+    TitleBarAutomationPeer
+    TitleBarTemplateSettings
+    UniformGridLayoutState
+```
+
+```C#
+Microsoft.UI.Xaml.Controls.Primitives
+
+    ScrollPresenter
+        ViewChanging
+```
+
+```C#
+Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+
+    DeploymentManager
+        Repair
+
+    DeploymentStatus
+        PackageRepairFailed
+
+    ReleaseInfo
+    RuntimeInfo
+    VersionInfoContract
+```
+
+```C#
+Microsoft.Windows.Widgets.Feeds.Providers
+
+    FeedManager
+        TryRemoveAnnouncementById
+
+    IFeedManager3
+```
+
+```C#
+Microsoft.Windows.Widgets.Notifications
+
+    WidgetAnnouncement
+    WidgetAnnouncementInvokedArgs
+```
+
+```C#
+Microsoft.Windows.Widgets.Providers
+
+    IWidgetAnnouncementInvokedTarget
+    IWidgetManager2
+    IWidgetManager3
+    IWidgetProviderMessage
+    IWidgetResourceProvider
+    WidgetManager
+        SendMessageToContent
+        TryRemoveAnnouncementById
+        TryShowAnnouncement
+
+    WidgetMessageReceivedArgs
+    WidgetResourceRequest
+    WidgetResourceRequestedArgs
+    WidgetResourceResponse
+```
+
+### Known issues
+
+- For TabView tab tear-out, pointer input behavior for *CanTearOutTabs* is incorrect on monitors with scale factor different from 100%. This will be fixed in the next 1.6 release.
+
+### Bug fixes
+
+- Fixed an issue from 1.6-experimental1 where `NumberBox` wasn't using the correct foreground and background colors. For more info, see GitHub issue [#9714](https://github.com/microsoft/microsoft-ui-xaml/issues/9714).
+- Fixed an issue where duplicate `KeyUp` events were raised for arrow and tab keys. For more info, see GitHub issue [#9399](https://github.com/microsoft/microsoft-ui-xaml/issues/9399).
+- Fixed an issue where the `PowerManager.SystemSuspendStatusChanged` event was unusable to get the `SystemSuspendStatus`. For more info, see GitHub issue [#2833](https://github.com/microsoft/WindowsAppSDK/issues/2833).
+- Fixed an issue where initial keyboard focus was not correctly given to a `WebView2` when that was the only control in the window.
+- Fixed an issue when using `ExtendsContentIntoTitleBar=true` where the Min/Max/Close buttons did not correctly appear in the UI Automation, which prevented Voice Access from showing numbers for those buttons.
+- Fixed an issue where an app might crash in a lock check due to unexpected reentrancy.
+- Fixed an issue from 1.6-experimental1 where `TitleBar` only shows the Icon and Title because some elements did not show up on load.
+- Fixed an issue where `Hyperlink` colors did not correctly update when switching into a high contrast theme.
+- Fixed an issue where changing the collection of a `ListView` in a background window may incorrectly move that window to the foreground and take focus.
+- Fixed an issue from 1.6-experimental1 where setting `AcrylicBrush.TintLuminosityOpacity` in .xaml in a class library project would crash with a type conversion error.
+- Fixed an issue where calling `ItemsRepeater.StartBringIntoView` could sometimes cause items to disappear.
+- Fixed an issue where touching and dragging on a `Button` in a `ScrollViewer` would leave it in a pressed state.
+- Updated IntelliSense, which was missing information for many newer types and members.
+
 ## Version 1.6 Experimental (1.6.0-experimental1)
 
 This is the latest release of the experimental channel.
@@ -178,7 +581,7 @@ Microsoft.UI.Xaml.Controls
         Wrap
 ```
 
-## Additional 1.6-experimental1 APIs
+### Additional 1.6-experimental1 APIs
 
 This release includes the following new and modified experimental APIs:
 
@@ -208,7 +611,9 @@ Microsoft.UI.Content
     IContentLink
     IContentSiteBridge2
     ReadOnlyDesktopSiteBridge
+```
 
+```C#
 Microsoft.UI.Input
 
     EnteredMoveSizeEventArgs
@@ -224,18 +629,24 @@ Microsoft.UI.Input
     MoveSizeOperation
     WindowRectChangedEventArgs
     WindowRectChangingEventArgs
+```
 
+```C#
 Microsoft.UI.Windowing
 
     AppWindow
         DefaultTitleBarShouldMatchAppModeTheme
+```
 
+```C#
 Microsoft.UI.Xaml
 
     XamlRoot
         CoordinateConverter
         TryGetContentIsland
+```
 
+```C#
 Microsoft.UI.Xaml.Controls
 
     ScrollingViewChangingEventArgs
@@ -261,7 +672,9 @@ Microsoft.UI.Xaml.Controls
     TitleBar
     TitleBarAutomationPeer
     TitleBarTemplateSettings
+```
 
+```C#
 Microsoft.UI.Xaml.Controls.Primitives
 
     ScrollPresenter
