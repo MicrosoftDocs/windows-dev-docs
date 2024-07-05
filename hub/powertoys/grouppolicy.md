@@ -502,7 +502,7 @@ The policy "File Explorer add-ons: Configure enabled state" will override this p
 
 ##### Intune information
 
-- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/<PolicyID>`
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~FileExplorerAddOns/<PolicyID>`
 
 > [!Note]
 > Please see the table above for the _PolicyID_ value.
