@@ -1,7 +1,7 @@
 ---
 title: PowerToys Group Policy
 description: Group policy documentation for PowerToys
-ms.date: 01/28/2024
+ms.date: 07/06/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
@@ -371,6 +371,117 @@ If you disable this policy, the user won't be able to enable Enable paste with A
 
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~AdvancedPaste/AllowPowerToysAdvancedPasteOnlineAIModels`
 - Example value: `<disabled/>`
+
+### Mouse Without Borders
+
+#### Clipboard sharing enabled
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user can share the clipboard between machines.
+
+If you enable or don't configure this policy, the user takes control over the clipboard sharing setting.
+
+If you disable this policy, the user won't be able to enable the clipboard sharing setting.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbClipboardSharingEnabled
+- GP name: Clipboard sharing enabled
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbClipboardSharingEnabled
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbClipboardSharingEnabled`
+- Example value: `<disabled/>`
+
+#### Connect only in same subnet
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if connections are only allowed in the same subnet.
+
+If you enable this policy, the setting is enabled and only connections in the same subnet are allowed.
+
+If you disable this policy, the setting is disabled and all connections are allowed.
+
+If you don't configure this policy, the user takes control over the setting and can enable or disable it.
+
+#### Disable user defined IP Address mapping rules
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user can define IP Address mapping rules.
+
+If you enable this policy, the setting is disabled and the user can't define rules or use existing ones.
+
+If you disable or don't configure this policy, the user takes control over the setting.
+
+Note: Enabling this policy does not prevent policy defined mapping rules from working.
+
+#### Disallow blocking screensaver on other machines
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user is allowed to disable the screensaver on the remote machines.
+
+If you enable this policy, the user won't be able to enable the "block screensaver" screensaver setting and the screensaver is not blocked.
+
+If you disable or don't configure this policy, the user takes control over the setting and can block the screensaver.
+
+#### File transfer enabled
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user can transfer files between machines.
+
+If you enable or don't configure this policy, the user takes control over the file sharing setting.
+
+If you disable this policy, the user won't be able to enable the file sharing Settings.
+
+Note: The file sharing feature depends on the clipboard sharing feature. Disabling clipboard sharing automatically disables file sharing too.
+
+#### Original user interface is available
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user can use the old Mouse Without Borders user interface.
+
+If you enable or don't configure this policy, the user takes control over the setting and can enable or disable the old user interface.
+
+If you disable this policy, the user won't be able to enable the old user interface.
+
+#### Validate remote machine IP Address
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if reverse DNS lookup is used to validate the remote machine IP Address.
+
+If you enable this policy, the setting is enabled and the IP Address is validated.
+
+If you disable this policy, the setting is disabled and the IP Address is not validated.
+
+If you don't configure this policy, the user takes control over the setting and can enable or disable it.
+
+#### Predefined IP Address mapping rules
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy allows you to define IP Address mapping rules.
+
+If you enable this policy, you can define IP Address mapping rules that the user can't change or disable.
+Please enter one mapping per line in the format: "hostname IP"
+
+If you disable or don't configure this policy, no predefined rules are applied.
 
 ### PowerToys Run
 
