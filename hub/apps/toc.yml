@@ -677,6 +677,8 @@ items:
                           href: windows-app-sdk/release-notes-archive/preview-channel-1.0.md
                     - name: Experimental channel release notes
                       items: 
+                        - name: Windows App SDK 1.5
+                          href: windows-app-sdk/release-notes-archive/experimental-channel-1.5.md
                         - name: Windows App SDK 1.4
                           href: windows-app-sdk/release-notes-archive/experimental-channel-1.4.md
                         - name: Windows App SDK 1.3

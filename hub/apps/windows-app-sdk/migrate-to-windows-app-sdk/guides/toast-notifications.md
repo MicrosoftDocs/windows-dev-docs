@@ -420,6 +420,6 @@ new ToastContentBuilder()
 
 ## Related topics
 
-* [Windows App SDK and suppported Windows releases](../../support.md)
+* [Windows App SDK and supported Windows releases](../../support.md)
 * [Send a local toast notification from C# apps](../../../design/shell/tiles-and-notifications/send-local-toast.md)
 * [Send a local toast notification from Win32 C++ WRL apps](../../../design/shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md)

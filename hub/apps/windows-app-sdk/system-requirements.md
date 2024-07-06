@@ -58,4 +58,4 @@ You can build, run, and deploy apps built with stable versions of the Windows Ap
 
 ## See Also
 
-- [Windows App SDK and suppported Windows releases](support.md)
+- [Windows App SDK and supported Windows releases](support.md)

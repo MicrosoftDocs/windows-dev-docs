@@ -1,7 +1,7 @@
 ---
 title: Environments in Dev Home
 description: Learn about interacting with your virtual or cloud environments from Dev Home.
-ms.date: 05/09/2024
+ms.date: 07/01/2024
 ms.topic: overview
 ---
 
@@ -21,14 +21,16 @@ A virtual environment is a self-contained workspace that allows you to maintain 
 
 ## Get started with Environments in Dev Home
 
-1. Ensure that you have the latest version of Dev Home by running the command: `winget upgrade Microsoft.DevHome`.
-2. Enable the Environments features in the Dev Home Experimental settings (**Settings** > **Experimental features** > toggle to **On**).
-3. Each type of virtual environment in Dev Home is supported by a Dev Home extension. To add a new environment, you must first ensure that the supporting extension is installed.
+To get started using virtual environments in Dev Home, select the **Environments** tab in the left column user interface inside Dev Home. Once the Environments pane is open, select **+ Create Environment**.
+
+Each type of virtual environment in Dev Home is supported by a Dev Home extension. To add a new environment, you must ensure that the Dev Home extension supporting the associated virtual environment that you wish to use is installed.
+
     - **Hyper-V extension**: Installed by default in Dev Home. By default, your local Hyper-V VMs will be visible on the Dev Home Environments page.
     - **Microsoft Dev Box**: To display Dev Box virtual environments, install the [Dev Home Azure extension](extensions.md#dev-home-azure-extension). Once installed, each Dev Box that you have set up on your Azure account will be visible on the Dev Home Environments page.
     <!-- - **WSL distributions**: To display Linux distributions installed with WSL, you can download and install the [Dev Home WSL Extension Preview](https://github.com/WhitewaterFoundry/devhome/releases). This `.msixbundle` is contributed by Whitewater Foundry.* -->
 
-![Screenshot of Experimental settings in Dev Home](../images/devhome-experimental-settings.png)
+> [!TIP]
+> If you do not see the Environments tab in Dev Home or are having trouble, ensure that you have the latest version of Dev Home by running the command: `winget upgrade Microsoft.DevHome`.
 
 ## Manage your Environments in Dev Home
 

@@ -186,7 +186,7 @@ Also see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in
 * [Windows App SDK release channels](./release-channels.md)
 * [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md)
 * [System requirements for Windows app development](system-requirements.md)
-* [Windows App SDK and suppported Windows releases](support.md)
+* [Windows App SDK and supported Windows releases](support.md)
 * [Downloads for the Windows App SDK](downloads.md)
 * [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 * [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)

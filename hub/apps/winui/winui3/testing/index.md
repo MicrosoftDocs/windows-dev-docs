@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 In this topic we provide some recommendations for how to test and validate functionality in apps created with the [Windows App SDK](/windows/apps/windows-app-sdk/) using [Windows UI Library (WinUI)](/windows/apps/winui/winui3/) user interface (UI) features.
 
-## Test WinUI functionality
+## How do I test WinUI functionality in my app?
 
 Most object types under the Microsoft.UI.Xaml namespaces must be used from a UI thread in a Xaml application process. (For details on testing apps created with Windows App SDK that don't use WinUI, see the following section, [How do I test non-WinUI functionality in my app?](#how-do-i-test-non-winui-functionality-in-my-app).)
 
