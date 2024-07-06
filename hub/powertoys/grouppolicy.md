@@ -416,6 +416,26 @@ If you disable this policy, the setting is disabled and all connections are allo
 
 If you don't configure this policy, the user takes control over the setting and can enable or disable it.
 
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbSameSubnetOnly
+- GP name: Connect only in same subnet
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbSameSubnetOnly
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbSameSubnetOnly`
+- Example value: `<enabled/>`
+
 #### Disable user defined IP Address mapping rules
 
 Supported on PowerToys 0.83.0 or later.
@@ -428,6 +448,26 @@ If you disable or don't configure this policy, the user takes control over the s
 
 Note: Enabling this policy does not prevent policy defined mapping rules from working.
 
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbDisableUserDefinedIpMappingRules
+- GP name: Disable user defined IP Address mapping rules
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbDisableUserDefinedIpMappingRules
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbDisableUserDefinedIpMappingRules`
+- Example value: `<enabled/>`
+
 #### Disallow blocking screensaver on other machines
 
 Supported on PowerToys 0.83.0 or later.
@@ -437,6 +477,26 @@ This policy configures if the user is allowed to disable the screensaver on the 
 If you enable this policy, the user won't be able to enable the "block screensaver" screensaver setting and the screensaver is not blocked.
 
 If you disable or don't configure this policy, the user takes control over the setting and can block the screensaver.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbDisallowBlockingScreensaver
+- GP name: Disallow blocking screensaver on other machines
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbDisallowBlockingScreensaver
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbDisallowBlockingScreensaver`
+- Example value: `<enabled/>`
 
 #### File transfer enabled
 
@@ -450,6 +510,26 @@ If you disable this policy, the user won't be able to enable the file sharing Se
 
 Note: The file sharing feature depends on the clipboard sharing feature. Disabling clipboard sharing automatically disables file sharing too.
 
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbFileTransferEnabled
+- GP name: File transfer enabled
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbFileTransferEnabled
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbFileTransferEnabled`
+- Example value: `<disabled/>`
+
 #### Original user interface is available
 
 Supported on PowerToys 0.83.0 or later.
@@ -459,6 +539,26 @@ This policy configures if the user can use the old Mouse Without Borders user in
 If you enable or don't configure this policy, the user takes control over the setting and can enable or disable the old user interface.
 
 If you disable this policy, the user won't be able to enable the old user interface.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbUseOriginalUserInterface
+- GP name: Original user interface is available
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbUseOriginalUserInterface
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbUseOriginalUserInterface`
+- Example value: `<disabled/>`
 
 #### Validate remote machine IP Address
 
@@ -472,6 +572,26 @@ If you disable this policy, the setting is disabled and the IP Address is not va
 
 If you don't configure this policy, the user takes control over the setting and can enable or disable it.
 
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbValidateRemoteIp
+- GP name: Validate remote machine IP Address
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbValidateRemoteIp
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbValidateRemoteIp`
+- Example value: `<enabled/>`
+
 #### Predefined IP Address mapping rules
 
 Supported on PowerToys 0.83.0 or later.
@@ -482,6 +602,40 @@ If you enable this policy, you can define IP Address mapping rules that the user
 Please enter one mapping per line in the format: "hostname IP"
 
 If you disable or don't configure this policy, no predefined rules are applied.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbPolicyDefinedIpMappingRules
+- GP name: Predefined IP Address mapping rules
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbPolicyDefinedIpMappingRules
+- Type: DWORD
+- Example value:
+
+    ```
+    Host1 192.0.2.1
+    Host2 192.0.2.2
+    Host3 192.0.2.3
+    ```
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbPolicyDefinedIpMappingRules`
+- Example value:
+
+    ```
+    <enabled/>
+    <data id="MwbPolicyDefinedIpMappingsList" value="Host1 192.0.2.1&#xF000Host2 192.0.2.2&#xF000Host3 192.0.2.3"/>
+    ```
+    > [!NOTE]
+    > Syntax for the :::no-loc text="value"::: property from the :::no-loc text="data"::: element:
+    > `<Hostname> <IP Address>&#xF000;<Hostname 2> <IP Address 2>&#xF000;<Hostname 3> <IP Address 3>`
 
 ### PowerToys Run
 
