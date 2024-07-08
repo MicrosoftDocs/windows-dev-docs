@@ -96,7 +96,7 @@ Microsoft.Windows.Management.Deployment
     PackageReadyOrNewerAvailableStatus
 ```
 
-### Additional 1.6-experimental1 APIs
+### Additional 1.6-experimental2 APIs
 
 This release includes the following new and modified experimental APIs:
 
@@ -423,7 +423,7 @@ Microsoft.Windows.Widgets.Providers
 - Fixed an issue where initial keyboard focus was not correctly given to a `WebView2` when that was the only control in the window.
 - Fixed an issue when using `ExtendsContentIntoTitleBar=true` where the Min/Max/Close buttons did not correctly appear in the UI Automation, which prevented Voice Access from showing numbers for those buttons.
 - Fixed an issue where an app might crash in a lock check due to unexpected reentrancy.
-- Fixed an issue from 1.6-experimental1 where `TitleBar` only shows the Icon and Title because some elements did not show up on load.
+- Fixed an issue from 1.6-experimental1 where `TitleBar` only showed the Icon and Title because some elements did not show up on load.
 - Fixed an issue where `Hyperlink` colors did not correctly update when switching into a high contrast theme.
 - Fixed an issue where changing the collection of a `ListView` in a background window may incorrectly move that window to the foreground and take focus.
 - Fixed an issue from 1.6-experimental1 where setting `AcrylicBrush.TintLuminosityOpacity` in .xaml in a class library project would crash with a type conversion error.
