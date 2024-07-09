@@ -948,7 +948,7 @@ In this exercise, you create a new page that can create a new account with Windo
 
 - Build and run the application. Try to register a new user. Then return to the user list and validate that you can select that user and login.
 
-    ![A screenshot of the Windows Hello register new user page](images/passport-login-11.png)
+    ![A screenshot of the Windows Hello register new user page](images/windows-hello-login-11.png)
 
 In this lab, you have learned the essential skills needed to use the new Windows Hello API to authenticate existing users and create accounts for new users. With this new knowledge, you can start removing the need for users to remember passwords for your application, yet remain confident that your applications remain protected by user authentication. Windows uses Windows Hello's new authentication technology to support its biometrics login options.
 
