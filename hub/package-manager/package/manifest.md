@@ -249,4 +249,4 @@ Think of a package as an application or a software program. Windows Package Mana
 
 Package versions are associated with a specific release. In some cases you will see a perfectly formed semantic version numbers and in other cases you might see something different. These may be date driven or they might have other characters with some package-specific meaning. The YAML key for a package version is "PackageVersion".
 
-For more information on understanding the directory structure and creating your first manifest, see [Authoring Manifests](https://github.com/microsoft/winget-pkgs/blob/master/AUTHORING_MANIFESTS.md) in the winget-pkgs repo on GitHub.
+For more information on understanding the directory structure and creating your first manifest, see [Authoring Manifests](https://github.com/microsoft/winget-pkgs/blob/master/doc/Authoring.md) in the winget-pkgs repo on GitHub.
