@@ -1,7 +1,7 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C++/WinRT.
 title: Build XAML controls with C++/WinRT
-ms.date: 07/09/2020
+ms.date: 07/09/2024
 ms.topic: article
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, custom control, templated control
 ms.author: drewbat
@@ -16,9 +16,8 @@ This article walks you through creating a templated XAML control for WinUI 3 wit
 
 ## Prerequisites
 
-1. Set up your development environment&mdash;see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
+1. [Get started with WinUI](../../get-started/start-here.md)
 2. Download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
-3. Follow the instructions on how to [Create your first WinUI 3 project](create-your-first-winui3-app.md). 
 
 ## Create a Blank App (BgLabelControlApp)
 
