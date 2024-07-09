@@ -12,11 +12,13 @@ ms.topic: article
 ![Enable your devices for development](./images/developer-poster.png)
 
 > [!IMPORTANT]
-> If you're not creating your own applications on your PC, you don't need to enable Developer Mode. If you're trying to fix an issue with your computer, check out [Windows help](/windows). If you're developing for the first time, you'll also want to [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
+> If you're not creating your own applications on your PC, you don't need to enable Developer Mode. If you're trying to fix an issue with your computer, check out [Windows help](/windows).
 
 If you're using your computer for ordinary day-to-day activities (such as gaming, web browsing, email, or Office apps), you *don't* need to activate Developer Mode, and in fact, you shouldn't activate it. The rest of the information on this page won't matter to you, and you can safely get back to whatever you were doing. Thanks for stopping by!
 
-However, if you're writing software with Visual Studio on a computer for the first time, you *will* need to enable Developer Mode on both the development PC and on any devices you'll use to test your code. Opening a Windows project when Developer Mode *isn't* enabled will either open the **For developers** settings page, or cause the following dialog to appear in Visual Studio:
+## Developer Mode
+
+If you're writing software with Visual Studio on a computer for the first time, you *will* need to enable Developer Mode on both the development PC and on any devices you'll use to test your code. Opening a Windows project when Developer Mode *isn't* enabled will either open the **For developers** settings page, or cause the following dialog to appear in Visual Studio:
 
 ![Enable Developer Mode dialog](./images/enable-developer-mode-dialog.jpg)
 

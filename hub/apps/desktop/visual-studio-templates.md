@@ -14,7 +14,7 @@ Visual Studio 2019 (and later) provides many project and item templates that hel
 * Project templates include project files, code files, and other assets that are configured to build an app or a component that can be loaded and used by an app.
 * Item templates are project files that contain commonly used code and XAML that can be added to a project to reduce development time. For example, you can use an item template to add a new window, page, or control to your app.
 
-For more information about installing and configuring Visual Studio to get access to these templates, see [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md).
+For more information about installing and configuring Visual Studio to get access to these templates, see [Get started with WinUI](../get-started/start-here.md).
 
 ## WinUI templates
 
