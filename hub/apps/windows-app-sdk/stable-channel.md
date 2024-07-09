@@ -32,6 +32,14 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 ## Version 1.5
 
+### Version 1.5.5 (1.5.240627000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
+- Fixed a potential crash during image loading when the image source is changed before loading completes.
+- Fixed a potential crash when using `InputNonClientPointerSource`.
+- Fixed an issue where a window containing only a WebView2 control doesn't correctly set initial keyboard focus into the WebView2, leaving it unusable by keyboard and accessibility tools. For more info, see GitHub issue [WebView2Feedback#2330](https://github.com/MicrosoftEdge/WebView2Feedback/issues/2330).
+
+
 ### Version 1.5.4 (1.5.240607001)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
