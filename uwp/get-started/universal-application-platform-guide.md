@@ -123,7 +123,7 @@ In addition to interaction on different devices, [plan your app](./plan-your-app
 
 - Design your workflow using [Navigation design basics for UWP apps](/windows/apps/design/basics/navigation-basics) to accommodate mobile, small-screen, and large-screen devices. [Lay out your user interface](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design) to respond to different screen sizes and resolutions.
 
-- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](/windows/apps/design/layout/index) to learn how users can interact with your app by using [Cortana](/cortana/skills/), [Speech](/windows/apps/design/input/speech-interactions), [Touch interactions](/windows/apps/design/input/touch-interactions), the [Touch keyboard](/windows/apps/design/input/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](/windows/apps/design/controls/text-controls) for more traditional interaction experiences.
+- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](/windows/apps/design/layout/index) to learn how users can interact with your app by using [Speech](/windows/apps/design/input/speech-interactions), [Touch interactions](/windows/apps/design/input/touch-interactions), the [Touch keyboard](/windows/apps/design/input/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](/windows/apps/design/controls/text-controls) for more traditional interaction experiences.
 
 ### Add services
 

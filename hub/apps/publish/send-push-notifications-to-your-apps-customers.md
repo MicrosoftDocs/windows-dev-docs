@@ -17,7 +17,7 @@ Engaging with your customers at the right time and with the right message is key
 > These notifications can only be used with UWP apps.
 
 When considering the content of your notifications, keep in mind:
-- The content in your notifications must comply with the Store [Content Policies](/legal/windows/agreements/store-policies#content_policies).
+- The content in your notifications must comply with the Store [Content Policies](/windows/apps/publish/store-policies-and-code-of-conduct#content_policies).
 - Your notification content should not include confidential or potentially sensitive info.
 - While we’ll make every effort to deliver your notification as scheduled, there may occasionally be latency issues that impact delivery.
 - Be sure not to send notifications too often. More than once every 30 minutes can seem intrusive (and for many scenarios, less frequently than that is preferable).

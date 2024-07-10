@@ -36,10 +36,6 @@ By integrating the basic functionality of your app, and providing a central entr
 
 See [Speech, voice, and conversation in Windows 10](../../develop/speech.md) for information on how the various Windows development frameworks provide speech recognition, speech synthesis, and conversation support for developers building Windows applications.
 
-### Cortana Skills Kit
-
-See the [Cortana Skills Kit](/cortana/skills/) if you want to extend Cortana by adding your own skills that enable users to interact with your **service** via Cortana. [**Deprecation notice:** As part of our goal to transform the modern productivity experiences by embedding Cortana deeply into Microsoft 365, we are retiring the Cortana skills kit for Consumer (the developer platform) and all skills built on this platform.]
-
 ## Related articles
 
 - [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
