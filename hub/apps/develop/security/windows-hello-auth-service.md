@@ -16,7 +16,7 @@ In order to build this project, you'll need some experience with C#, and XAML. Y
 
 In this exercise, you start with the Windows Hello application built in the first lab and create a local mock server and database. This hands on lab is designed to teach how Windows Hello can be integrated into an existing system. By using a mock server and mock database, a lot of unrelated setup is eliminated. In your own applications, you will need to replace the mock objects with the real services and databases.
 
-- To begin, open up the **WindowsHelloLogin** solution from the first [Windows Hello Hands On Lab]((windows-hello-login.md)).
+- To begin, open up the **WindowsHelloLogin** solution from the first [Windows Hello Hands On Lab](windows-hello-login.md).
 - You will start by implementing the mock server and mock database. Create a new folder named "AuthService". In Solution Explorer, right-click the **WindowsHelloLogin** project and select **Add** > **New Folder**.
 - Create **UserAccount** and **WindowsHelloDevices** classes that will act as models for data to be saved in the mock database. The **UserAccount** will be similar to the user model implemented on a traditional authentication server. Right-click the **AuthService** folder and add a new class named "UserAccount".
 
