@@ -33,10 +33,41 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
 
     ![A screenshot of adding a new folder named Views to the Windows Hello Login project](images/windows-hello-login-2.png)
 
-- Right-click the new **Views** folder, select **Add** > **New Item** and select the **Blank Page** template. Name this page "Login.xaml".
+- Open MainWindow.xaml and replace the `Window` contents with an empty `StackPanel` or `Grid` control. We will be implementing page navigation and navigating to a new page when the **MainWindow** is loaded, so we don't need any content in the **MainWindow**.
+- Remove the myButton_Click event handler from MainWindow.xaml.cs to avoid any compilation errors. This event handler is not needed for this sample.
+- Right-click the new **Views** folder, select **Add** > **New Item** and select the **Blank Page** template. Name this page "MainPage.xaml".
 
     ![A screenshot of adding a new Blank Page to the Windows Hello Login project](images/windows-hello-login-3.png)
 
+- Open the App.xaml.cs file and update the **OnLaunched** handler to implement page navigation for the app. You'll also need to add a **RootFrame_NavigationFailed** handler method to deal with any errors that occur while loading pages.
+
+    ```cs
+    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+    {
+        m_window = new MainWindow();
+        var rootFrame = new Frame();
+        rootFrame.NavigationFailed += RootFrame_NavigationFailed;
+        rootFrame.Navigate(typeof(MainPage), args);
+        m_window.Content = rootFrame;
+        m_window.Activate();
+    }
+
+    private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
+    {
+        throw new Exception($"Error loading page {e.SourcePageType.FullName}");
+    }
+    ```
+
+- You'll also need to add four using statements to the top of the App.xaml.cs file to resolve compilation errors in the code.
+
+    ```cs
+    using Microsoft.UI.Xaml.Controls;
+    using Microsoft.UI.Xaml.Navigation;
+    using System;
+    using WindowsHelloLogin.Views;
+    ```
+
+- Right-click the new **Views** folder, select **Add** > **New Item** and select the **Blank Page** template. Name this page "Login.xaml".
 - To define the user interface for the new login page, add the following XAML. This XAML defines a `StackPanel` to align the following children:
 
   - A `TextBlock` that will contain a title.
