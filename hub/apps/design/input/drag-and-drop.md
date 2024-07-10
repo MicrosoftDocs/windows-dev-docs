@@ -51,7 +51,8 @@ For other content, you'll need to handle the [**DragStarting**](/uwp/api/windows
 
 ## Enable dropping
 
-The following markup shows how to set a specific area of the app as valid for dropping by using the [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) in XAML. If a user tries to drop somewhere else, the system won't let them. If you want users to be able to drop items anywhere on your app, set the entire background as a drop target.
+The following markup shows how to set a specific area of the app as valid for dropping by using the [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) in XAML. If a user tries to drop somewhere else, the system won't let them. 
+If you want users to be able to drop items anywhere on your app, set the entire background as a drop target. Note that the background property defaults to null, which will not allow drops to happen (as there is nothing to hit-test), so make sure you set the background to a brush (a transparent brush will work too).
 
 :::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDropArea":::
 
