@@ -7754,9 +7754,21 @@
       "source_path": "hub/apps/get-started/dev-options.md",
       "redirect_url": "/windows/apps/get-started/",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/microsoft-passport.md",
+      "redirect_url": "/windows/apps/develop/security/windows-hello",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/microsoft-passport-login.md",
+      "redirect_url": "/windows/apps/develop/security/windows-hello-login",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/microsoft-passport-login-auth-service.md",
+      "redirect_url": "/windows/apps/develop/security/windows-hello-auth-service",
+      "redirect_document_id": false
     }
   ]
 }
-
-
-
