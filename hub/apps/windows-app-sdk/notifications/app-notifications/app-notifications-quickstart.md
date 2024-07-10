@@ -19,7 +19,7 @@ In this quickstart, you will create a desktop Windows application that sends and
 
 ## Prerequisites
 
-- [Set up your development environment](../../set-up-your-development-environment.md)
+- [Get started with WinUI](../../../get-started/start-here.md)
 - Either [Create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) OR [Use the Windows App SDK in an existing project](../../use-windows-app-sdk-in-existing-project.md)
 
 ## Sample app

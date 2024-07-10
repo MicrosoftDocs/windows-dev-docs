@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 # Tutorial: Create a simple photo viewer with WinUI 3
 
 > [!NOTE]
-> For info about the benefits of WinUI 3, as well as other app type options, see [Overview of app development options](./index.md).
+> For info about the benefits of WinUI 3, as well as other app type options, see [Overview of framework options](./index.md).
 
 In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and your choice of either C# or C++ code (which are *imperative*, or *procedural*). Use the language picker above the topic title to choose C# or C++/WinRT.
 
@@ -21,7 +21,7 @@ In this topic we walk through the process of creating a new WinUI 3 project in V
 
 ## Step 1: Install tools for the Windows App SDK
 
-To set up your development computer, see [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md). You could then optionally follow along with [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
+To set up your development computer, see [Get started with WinUI](../get-started/start-here.md). In that article, you'll also find instructions to create and launch a WinUI 3 project.
 
 > [!IMPORTANT]
 > You'll find release notes topics along with the [Windows App SDK release channels](../windows-app-sdk/release-channels.md) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this tutorial and/or running the app we'll build.

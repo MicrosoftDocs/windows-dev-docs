@@ -2,7 +2,7 @@
 title: Manage app windows
 description: Overview of windowing APIs in the Windows App SDK
 ms.topic: article
-ms.date: 01/04/2024
+ms.date: 07/09/2024
 keywords: windowing, window, AppWindow, Windows App SDK
 ms.author: stwhi
 author: stevewhims
@@ -20,7 +20,7 @@ The Windows App SDK provides the easy-to-use [**Microsoft.UI.Windowing.AppWindow
 
 The Windows App SDK version of **Microsoft.UI.Windowing.AppWindow** doesn't rely on asynchronous patterns; and it provides immediate feedback to your app about whether API calls have succeeded.
 
-Also see [Install tools for the Windows App SDK](../set-up-your-development-environment.md), [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md), and [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+Also [Get started with WinUI](../../get-started/start-here.md) and [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## The AppWindow class
 

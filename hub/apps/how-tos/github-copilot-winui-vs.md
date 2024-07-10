@@ -20,7 +20,7 @@ In this how-to, we'll demonstrate how [GitHub Copilot](https://github.com/featur
 
 ## Prerequisites
 
-- [Visual Studio 2022 (v17.6+) and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
+- Visual Studio 2022 (v17.6+) and Tools for Windows App SDK (see [Get started with WinUI](../get-started/start-here.md)).
 - An active subscription to [GitHub Copilot](https://github.com/features/copilot/plans) associated with the GitHub account that you sign in to Visual Studio with.
 - Familiarity with C# and WinUI 3 / Windows App SDK.
 

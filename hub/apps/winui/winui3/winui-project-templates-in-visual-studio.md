@@ -1,14 +1,14 @@
 ---
 title: WinUI 3 templates in Visual Studio
-description: Once you've set up your development computer (see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)), you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates.
+description: Once you've set up your development computer, you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
-ms.date: 03/10/2022
+ms.date: 07/09/2024
 ms.topic: article
 ---
 
 # WinUI 3 templates in Visual Studio
 
-Once you've set up your development computer (see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)), you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates. And [Create your first WinUI 3 project](./create-your-first-winui3-app.md) walks you through creating a project.
+Once you've set up your development computer (see [Get started with WinUI](../../get-started/start-here.md)), you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates.
 
 To access the WinUI 3 project templates, in the **New Project** dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **WinUI**, respectively. Alternatively, you can search for *WinUI*, and select one of the available C# or C++ templates.
 
@@ -73,7 +73,7 @@ The following item templates are available for use in a WinUI 3 project. To acce
 ## See also
 
 * [Windows App SDK](../../windows-app-sdk/index.md)
-* [Create your first WinUI 3 project](./create-your-first-winui3-app.md)
+* [Get started with WinUI](../../get-started/start-here.md)
 * [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 * [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
 * [Windows App SDK Sample Templates](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Templates)
