@@ -24,9 +24,10 @@ In this exercise, you start with the Windows Hello application built in the firs
 
     ![A screenshot of creating the new class for Windows Hello user authorization](images/windows-hello-auth-2.png)
 
-- Change the class scope to be public and add the following public properties. You will need to add a using statement for the `System.ComponentModel.DataAnnotations` namespace.
+- Change the class scope to be public and add the following public properties for the **UserAccount** class. You will need to add a using statement for the `System.ComponentModel.DataAnnotations` namespace.
 
     ```cs
+    using System;
     using System.ComponentModel.DataAnnotations;
      
     namespace WindowsHelloLogin.AuthService
@@ -48,6 +49,8 @@ In this exercise, you start with the Windows Hello application built in the firs
 - Create a new class in the **AuthService** folder called "WindowsHelloDevice.cs". This is the model for the Windows Hello devices as discussed above. Change the class scope to be public and add the following properties.
 
     ```cs
+    using System;
+
     namespace WindowsHelloLogin.AuthService
     {
         public class WindowsHelloDevice
@@ -86,9 +89,12 @@ In this exercise, you start with the Windows Hello application built in the firs
 - With the model for the **UserAccount** and the **WindowsHelloDevice** created, you need to create another new class in the **AuthService** folder that will act as the mock database, as this is a mock database from where you will be saving and loading a list of user accounts locally. In the real world, this would be your database implementation. Create a new class in the **AuthService** folder named "MockStore.cs". Change the class scope to public.
 - As the mock store will save and load a list of user accounts locally, you can implement the logic to save and load that list using an **XmlSerializer**. You will also need to remember the filename and save location. In MockStore.cs implement the following:
 
-```cs
+    ```cs
+    using System.Collections.Generic;
+    using System;
     using System.IO;
     using System.Linq;
+    using System.Text;
     using System.Threading.Tasks;
     using System.Xml.Serialization;
     using Windows.Storage;
@@ -173,9 +179,9 @@ In this exercise, you start with the Windows Hello application built in the firs
     #endregion
         }
     }
-```
+    ```
 
-- In the load method, you may have noticed that an **InitializeSampleUserAccountsAsync** method was commented out. You will need to create this method in the MockStore.cs. This method will populate the user accounts list so that a login can take place. In the real world, the user database would already be populated. In this step, you will also be creating a constructor that will initialize the user list and call **LoadAccountListAsync**.
+- In the **LoadAccountListAsync** method, you may have noticed that an **InitializeSampleUserAccountsAsync** method was commented out. You will need to create this method in the MockStore.cs. This method will populate the user accounts list so that a login can take place. In the real world, the user database would already be populated. In this step, you will also be creating a constructor that will initialize the user list and call **LoadAccountListAsync**.
 
     ```cs
     namespace WindowsHelloLogin.AuthService
@@ -191,7 +197,7 @@ In this exercise, you start with the Windows Hello application built in the firs
             public MockStore()
             {
                 _mockDatabaseUserAccountsList = new List<UserAccount>();
-                LoadAccountListAsync();
+                _ = LoadAccountListAsync();
             }
 
             private async Task InitializeSampleUserAccountsAsync()
@@ -430,7 +436,7 @@ In this exercise, you start with the Windows Hello application built in the firs
             private AuthService()
             { }
 
-            private MockStore _mockStore = new MockStore();
+            private MockStore _mockStore = new();
      
             public Guid GetUserId(string username)
             {
@@ -468,7 +474,7 @@ In this exercise, you start with the Windows Hello application built in the firs
 
     public async Task<bool> WindowsHelloRemoveDeviceAsync(Guid userId, Guid deviceId)
     {
-        return _mockStore.RemoveDeviceAsync(userId, deviceId);
+        return await _mockStore.RemoveDeviceAsync(userId, deviceId);
     }
 
     public async Task WindowsHelloUpdateDetailsAsync(Guid userId, Guid deviceId, byte[] publicKey, 
@@ -537,7 +543,7 @@ In this exercise, you start with the Windows Hello application built in the firs
 
 In this exercise, you will be changing the client side views and helper classes from the first lab to use the **AuthService** class. In the real world, the **AuthService** would be the authentication server and you would need to use Web API’s to send and receive data from the server. For this hands on lab, the client and server are both local to keep things simple. The objective is to learn how to use the Windows Hello APIs.
 
-- In the MainPage.xaml.cs, you can remove the **AccountHelper.LoadAccountListAsync** method call in the loaded method as the **AuthService** class creates an instance of the **MockStore** to load the accounts list. The `Loaded` method should now look like the snippet below. Note the async method definition is removed as nothing is being awaited.
+- In the MainPage.xaml.cs, you can remove the **AccountHelper.LoadAccountListAsync** method call in the loaded method as the **AuthService** class creates an instance of the **MockStore** to load the accounts list. The `Loaded` method should now look like the snippet below. Note that the async method definition is removed as nothing is being awaited.
 
     ```cs
     private void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -694,7 +700,7 @@ In this exercise, you will be changing the client side views and helper classes 
 - The **SignInWindowsHelloAsync** method in Login.xaml.cs file will need to be updated to use the **AuthService** instead of the **AccountHelper**. Validation of credentials will happen through the **AuthService**. For this hands on lab, the only configured account is "sampleUsername". This account is created in the **InitializeSampleUserAccountsAsync** method in MockStore.cs. Update the SignInWindowsHelloAsync method in Login.xaml.cs now to reflect the code snippet below.
 
     ```cs
-    private async void SignInWindowsHelloAsync()
+    private async Task SignInWindowsHelloAsync()
     {
         if (_isExistingAccount)
         {
@@ -815,7 +821,7 @@ In this exercise, you will be changing the client side views and helper classes 
         //Remove it from Windows Hello
         await WindowsHelloHelper.RemoveWindowsHelloAccountAsync(_activeAccount);
 
-        Debug.WriteLine("User " + _activeAccount.Username + " deleted.");
+        Debug.WriteLine($"User {_activeAccount.Username} deleted.");
 
         //Navigate back to UserSelection page.
         Frame.Navigate(typeof(UserSelection));
@@ -861,7 +867,7 @@ In this exercise, you will be changing the client side views and helper classes 
             //Remove it from Windows Hello
             await WindowsHelloHelper.RemoveWindowsHelloDeviceAsync(_activeAccount, selectedDevice.DeviceId);
 
-            Debug.WriteLine("User " + _activeAccount.Username + " deleted.");
+            Debug.WriteLine($"User {_activeAccount.Username} deleted.");
 
             if (!UserListView.Items.Any())
             {
@@ -939,7 +945,7 @@ In this exercise, you will be changing the client side views and helper classes 
                     UserAccount account = (UserAccount)((ListView)sender).SelectedValue;
                     if (account != null)
                     {
-                        Debug.WriteLine("Account " + account.Username + " selected!");
+                        Debug.WriteLine($"Account {account.Username} selected!");
                     }
                     Frame.Navigate(typeof(Login), account);
                 }
@@ -1011,7 +1017,7 @@ In this exercise, you will be changing the client side views and helper classes 
                 break;
             case KeyCredentialStatus.NotFound:
                 // User needs to setup Windows Hello
-                Debug.WriteLine("Windows Hello is not set up!\nPlease go to Windows Settings and set up a PIN to use it.");
+                Debug.WriteLine($"Windows Hello is not set up!{Environment.NewLine}Please go to Windows Settings and set up a PIN to use it.");
                 break;
             default:
                 break;
@@ -1058,8 +1064,9 @@ In this exercise, you will be changing the client side views and helper classes 
         }
 
         Guid deviceId = Helpers.GetDeviceId();
+
         //Update the Windows Hello details with the information we have just fetched above.
-        //UpdateWindowsHelloDetailsAsync(userId, deviceId, publicKey.ToArray(), keyAttestationResult);
+        //await UpdateWindowsHelloDetailsAsync(userId, deviceId, publicKey.ToArray(), keyAttestationResult);
     }
     ```
 
