@@ -34,6 +34,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
     ![A screenshot of adding a new folder named Views to the Windows Hello Login project](images/windows-hello-login-2.png)
 
 - Open MainWindow.xaml and replace the `Window` contents with an empty `StackPanel` or `Grid` control. We will be implementing page navigation and navigating to a new page when the **MainWindow** is loaded, so we don't need any content in the **MainWindow**.
+- Add a `Title` property to **MainWindow** in the XAML. The attribute should look like this: `Title="Windows Hello Login"`.
 - Remove the myButton_Click event handler from MainWindow.xaml.cs to avoid any compilation errors. This event handler is not needed for this sample.
 - Right-click the new **Views** folder, select **Add** > **New Item** and select the **Blank Page** template. Name this page "MainPage.xaml".
 
@@ -105,9 +106,16 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
     </Grid>
     ```
 
-- A few methods need to be added to the code-behind file to get the solution building. Either press F7 or use the **Solution Explorer** to edit the Login.xaml.cs file. Add in the following two event methods to handle the **Login** and **Register** events. For now these methods will set the `ErrorMessage.Text` to an empty string.
+- A few methods need to be added to the code-behind file to get the solution building. Either press F7 or use the **Solution Explorer** to edit the Login.xaml.cs file. Add in the following two event methods to handle the **Login** and **Register** events. For now these methods will set the `ErrorMessage.Text` to an empty string. Be sure to include the following using statements. They will be needed for the next steps.
 
     ```cs
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Controls;
+    using Microsoft.UI.Xaml.Input;
+    using Microsoft.UI.Xaml.Media;
+    using Microsoft.UI.Xaml.Navigation;
+    using System;
+
     namespace WindowsHelloLogin.Views
     {
         public sealed partial class Login : Page
@@ -131,7 +139,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
 - In order to render the **Login** page, edit the **MainPage** code to navigate to the **Login** page when the **MainPage** is loaded. Open the MainPage.xaml.cs file. In **Solution Explorer**, double-click on MainPage.xaml.cs. If you can’t find this click the little arrow next to MainPage.xaml to show the code-behind file. Create a **Loaded** event handler method that will navigate to the **Login** page.
 
     ```cs
-    namespace WindowsHelloLogin
+    namespace WindowsHelloLogin.Views
     {
         public sealed partial class MainPage : Page
         {
@@ -140,7 +148,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
                 this.InitializeComponent();
                 Loaded += MainPage_Loaded;
             }
-     
+    
             private void MainPage_Loaded(object sender, RoutedEventArgs e)
             {
                 Frame.Navigate(typeof(Login));
@@ -169,8 +177,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
             {
                 // Windows Hello isn't set up, so inform the user
                 WindowsHelloStatus.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 50, 170, 207));
-                WindowsHelloStatusText.Text = "Windows Hello is not set up!\n" + 
-                    "Please go to Windows Settings and set up a PIN to use it.";
+                WindowsHelloStatusText.Text = $"Windows Hello is not set up!{Environment.NewLine}Please go to Windows Settings and set up a PIN to use it.";
                 LoginButton.IsEnabled = false;
             }
         }
@@ -178,11 +185,11 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
     ```
 
 - To create the WindowsHelloHelper class, right-click the **WindowsHelloLogin** project and click **Add** > **New Folder**. Name this folder **Utils**.
+- Right click the **Utils** folder and select **Add** > **Class**. Name this new class "WindowsHelloHelper.cs".
 
     ![A screenshot of creating the Windows Hello login helper class](images/windows-hello-login-5.png)
 
-- Right click the **Utils** folder and select **Add** > **Class**. Name this new class "WindowsHelloHelper.cs".
-- Change the scope of the WindowsHelloHelper class to be `public static`, then add the following method that to inform the user if Windows Hello is ready to be used or not. You will need to add the required namespaces.
+- Change the scope of the **WindowsHelloHelper** class to be `public static`, then add the following method that to inform the user if Windows Hello is ready to be used or not. You will need to add the required namespaces.
 
     ```cs
     using System;
@@ -228,8 +235,6 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
 
     ![A screenshot of the Windows Hello login screen with a ready status](images/windows-hello-login-6.png)
 
-    ![A screenshot of the Windows Hello login screen with a not set up status](images/windows-hello-login-7.png)
-
 - The next thing you need to do is build the logic for signing in. Create a new folder in the project named "Models".
 - In the **Models** folder, create a new class called "Account.cs". This class will act as your account model. As this is a sample project, it will only contain a username. Change the class scope to `public` and add the `Username` property.
 
@@ -263,7 +268,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
             // For this tutorial we will just be storing accounts locally.
             private const string USER_ACCOUNT_LIST_FILE_NAME = "accountlist.txt";
             private static string _accountListPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, USER_ACCOUNT_LIST_FILE_NAME);
-            public static List<Account> AccountList = new();
+            public static List<Account> AccountList = [];
      
             /// <summary>
             /// Create and save a useraccount list file. (Updating the old one)
@@ -334,43 +339,43 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
 
     ```cs
     public static Account AddAccount(string username)
-            {
-                // Create a new account with the username
-                var account = new Account() { Username = username };
-                // Add it to the local list of accounts
-                AccountList.Add(account);
-                // SaveAccountList and return the account
-                SaveAccountListAsync();
-                return account;
-            }
-     
-            public static void RemoveAccount(Account account)
-            {
-                // Remove the account from the accounts list
-                AccountList.Remove(account);
-                // Re save the updated list
-                SaveAccountListAsync();
-            }
-     
-            public static bool ValidateAccountCredentials(string username)
-            {
-                // In the real world, this method would call the server to authenticate that the account exists and is valid.
-                // However, for this tutorial, we'll just have an existing sample user that's named "sampleUsername".
-                // If the username is null or does not match "sampleUsername" validation will fail. 
-                // In this case, the user should register a new Windows Hello user.
-     
-                if (string.IsNullOrEmpty(username))
-                {
-                    return false;
-                }
-     
-                if (!string.Equals(username, "sampleUsername"))
-                {
-                    return false;
-                }
-     
-                return true;
-            }
+    {
+        // Create a new account with the username
+        var account = new Account() { Username = username };
+        // Add it to the local list of accounts
+        AccountList.Add(account);
+        // SaveAccountList and return the account
+        SaveAccountListAsync();
+        return account;
+    }
+
+    public static void RemoveAccount(Account account)
+    {
+        // Remove the account from the accounts list
+        AccountList.Remove(account);
+        // Re save the updated list
+        SaveAccountListAsync();
+    }
+
+    public static bool ValidateAccountCredentials(string username)
+    {
+        // In the real world, this method would call the server to authenticate that the account exists and is valid.
+        // However, for this tutorial, we'll just have an existing sample user that's named "sampleUsername".
+        // If the username is null or does not match "sampleUsername" validation will fail. 
+        // In this case, the user should register a new Windows Hello user.
+
+        if (string.IsNullOrEmpty(username))
+        {
+            return false;
+        }
+
+        if (!string.Equals(username, "sampleUsername"))
+        {
+            return false;
+        }
+
+        return true;
+    }
     ```
 
 - The next thing you need to do is handle a sign in request from the user. In Login.xaml.cs, create a new private variable that will hold the current account logging in. Then add a new method named **SignInWindowsHelloAsync**. This will validate the account credentials using the **AccountHelper.ValidateAccountCredentials** method. This method will return a **Boolean** value if the entered user name is the same as the hard coded string value you configured in the previous step. The hard-coded value for this sample is "sampleUsername".
@@ -379,6 +384,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
     using WindowsHelloLogin.Models;
     using WindowsHelloLogin.Utils;
     using System.Diagnostics;
+    using System.Threading.Tasks;
      
     namespace WindowsHelloLogin.Views
     {
@@ -417,7 +423,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
                 ErrorMessage.Text = "";
             }
      
-            private async void SignInWindowsHelloAsync()
+            private async Task SignInWindowsHelloAsync()
             {
                 if (AccountHelper.ValidateAccountCredentials(UsernameTextBox.Text))
                 {
@@ -573,7 +579,7 @@ In this exercise, you will continue from the previous exercise. When a user succ
                 // Remove it from the local accounts list and re-save the updated list
                 AccountHelper.RemoveAccount(_activeAccount);
      
-                Debug.WriteLine("User " + _activeAccount.Username + " deleted.");
+                Debug.WriteLine($"User {_activeAccount.Username} deleted.");
             }
         }
     }
@@ -617,7 +623,7 @@ In this exercise, you will continue from the previous exercise. When a user succ
         // Remove it from the local accounts list and re-save the updated list
         AccountHelper.RemoveAccount(_activeAccount);
      
-        Debug.WriteLine("User " + _activeAccount.Username + " deleted.");
+        Debug.WriteLine($"User {_activeAccount.Username} deleted.");
     }
     ```
 
@@ -712,7 +718,7 @@ In this exercise, you will continue from the previous exercise. When a user succ
                     Account account = (Account)((ListView)sender).SelectedValue;
                     if (account != null)
                     {
-                        Debug.WriteLine("Account " + account.Username + " selected!");
+                        Debug.WriteLine($"Account {account.Username} selected!");
                     }
                     Frame.Navigate(typeof(Login), account);
                 }
@@ -759,7 +765,7 @@ In this exercise, you will continue from the previous exercise. When a user succ
         // Remove it from the local accounts list and re-save the updated list
         AccountHelper.RemoveAccount(_activeAccount);
 
-        Debug.WriteLine("User " + _activeAccount.Username + " deleted.");
+        Debug.WriteLine($"User {_activeAccount.Username} deleted.");
 
         // Navigate back to UserSelection page.
         Frame.Navigate(typeof(UserSelection));
@@ -804,9 +810,8 @@ In this exercise, you will continue from the previous exercise. When a user succ
                 {
                     // Windows Hello is not set up, so inform the user
                     WindowsHelloStatus.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 50, 170, 207));
-                    WindowsHelloStatusText.Text = "Windows Hello is not set up!\n" + 
-                        "Please go to Windows Settings and set up a PIN to use it.";
-                    WindowsHelloSignInButton.IsEnabled = false;
+                    WindowsHelloStatusText.Text = $"Windows Hello is not set up!{Environment.NewLine}Please go to Windows Settings and set up a PIN to use it.";
+                    LoginButton.IsEnabled = false;
                 }
             }
         }
@@ -863,7 +868,7 @@ In this exercise, you will continue from the previous exercise. When a user succ
 - Update the **SignInWindowsHelloAsync** method in Login.xaml.cs to handle the existing account. This will use the new method in the WindowsHelloHelper.cs. If successful the account will be signed in and the user navigated to the **Welcome** page.
 
     ```cs
-    private async void SignInWindowsHelloAsync()
+    private async Task SignInWindowsHelloAsync()
     {
         if (_isExistingAccount)
         {
@@ -928,6 +933,8 @@ In this exercise, you create a new page that can create a new account with Windo
 - In the WindowsHelloRegister.xaml.cs code-behind file, implement a private `Account` variable and a `Click` event for the register button. This will add a new local account and create a Windows Hello key.
 
     ```cs
+    using Microsoft.UI.Xaml.Controls;
+    using Microsoft.UI.Xaml;
     using WindowsHelloLogin.Models;
     using WindowsHelloLogin.Utils;
 
