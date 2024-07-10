@@ -662,5 +662,5 @@ Update the background JavaScript code to call Close() correctly.
 ## Related topics
 
 * [Windows Desktop Bridge app tests](windows-desktop-bridge-app-tests.md)
-* [Microsoft Store Policies](/legal/windows/agreements/store-policies)
+* [Microsoft Store Policies](/windows/apps/publish/store-policies-and-code-of-conduct)
  
