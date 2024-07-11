@@ -1,7 +1,7 @@
 ---
 title: export Command
 description: exports the list of installed applications.
-ms.date: 07/26/2023
+ms.date: 07/11/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -26,7 +26,7 @@ The following arguments are available.
 
 | Argument    | Description |
 |-------------|-------------|
-| **-o,--output** | Path to the JSON file to be created |
+| **-o,--output** | Path to the JSON file to be created. |
 
 ## Options
 
@@ -41,7 +41,10 @@ The options allow you to customize the export experience to meet your needs.
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ## JSON schema
 

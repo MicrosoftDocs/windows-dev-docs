@@ -1,7 +1,7 @@
 ---
 title: The winget source command
 description: Use the winget source command and subcommands to list and manage the repositories Windows Package Manager accesses.
-ms.date: 06/22/2022
+ms.date: 07/11/2024
 ms.topic: reference
 ms.localizationpriority: medium
 ms.custom: kr2b-contr-experiment
@@ -45,7 +45,10 @@ The following options are available.
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ## Subcommands
 
@@ -67,7 +70,7 @@ The **add** subcommand adds a new source. This subcommand requires the **--name*
 Usage:
 
 ```cmd
-winget source add [-n, --name] <name> [-a, --arg] <url> [[-t, --type] <type>]
+winget source add [-n] <name> [-a] <arg> [[-t] <type>] [<options>]
 ```
 
 #### Arguments
@@ -86,13 +89,18 @@ The following options are available.
 
 | Option  | Description |
 |--------------|-------------|
+| **--trust-level** | Trust level of the source (none or trusted). |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--explicit** |  |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 For example,  `winget source add --name Contoso https://www.contoso.com/cache` adds the Contoso repository at URL `https://www.contoso.com/cache`.
 
@@ -111,7 +119,7 @@ The **list** subcommand enumerates the currently enabled sources, or provides de
 Usage:
 
 ```cmd
-winget source list [[-n, --name] <name>]
+winget source list [[-n] <name>] [<options>]
 ```
 
 #### Aliases
@@ -138,7 +146,10 @@ The following options are available.
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 #### list all
 
@@ -181,7 +192,7 @@ The **update** subcommand forces an update to an individual source, or to all so
 Usage:
 
 ```cmd
-winget source update [[-n, --name] <name>]
+winget source update [[-n] <name>] [<options>]
 ```
 
 #### Aliases
@@ -208,7 +219,10 @@ The following options are available.
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 #### update all
 
@@ -225,7 +239,7 @@ The **remove** subcommand removes a source. This subcommand requires the **--nam
 Usage:
 
 ```cmd
-winget source remove [-n, --name] <name>
+winget source remove [-n] <name> [<options>]
 ```
 
 #### Aliases
@@ -252,7 +266,10 @@ The following options are available.
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 #### Examples
 
@@ -271,7 +288,41 @@ Because the **reset** command removes all sources, you must force the action by 
 Usage:
 
 ```cmd
-winget source reset --force
+winget source reset [[-n] <name>] [<options>]
+```
+
+#### Arguments
+
+The following arguments are available.
+
+| Argument  | Description |
+|--------------|-------------|
+| **-n, --name** | The name to identify the source by. |
+
+#### Options
+
+The following options are available.
+
+| Option  | Description |
+|--------------|-------------|
+| **--force** | Forces the reset of the sources. |
+| **-?, --help** |  Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
+| **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
+
+### export
+
+The **export** sub-command exports the specific details for a source to JSON output.
+
+Usage:
+
+```cmd
+winget source export [[-n] <name>] [<options>]
 ```
 
 #### Arguments
@@ -292,31 +343,10 @@ The following options are available.
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
-
-### export
-
-The **export** sub-command exports the specific details for a source to JSON output.
-
-#### Arguments
-
-The following arguments are available.
-
-| Argument  | Description |
-|--------------|-------------|
-| **-n, --name** | The name to identify the source by. |
-
-#### Options
-
-The following options are available.
-
-| Option  | Description |
-|--------------|-------------|
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 #### Examples
 

@@ -1,7 +1,7 @@
 ---
 title: uninstall Command
 description: uninstalls the specified application.
-ms.date: 05/05/2021
+ms.date: 07/11/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -21,7 +21,7 @@ The following aliases are available for this command:
 
 ## Usage
 
-`winget uninstall [[-q] \<query>] [\<options>]`
+`winget uninstall [[-q] <query>] [<options>]`
 
 ![Image of uninstall command usage](./images/uninstall.png)
 
@@ -49,24 +49,30 @@ The options allow you to customize the uninstall experience to meet your needs.
 | **--id**    |  Limits the uninstall to the ID of the application.   |
 | **--name**   |  Limits the search to the name of the application. |
 | **--moniker**   | Limits the search to the moniker listed for the application. |
-| **--product-code** | Filters using the product code |
+| **--product-code** | Filters using the product code. |
 | **-v, --version**  |  Enables you to specify an exact version to uninstall. If not specified, latest will uninstall the highest versioned application. |
+| **--all,--all-versions** | Uninstall all versions. |
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
-| **--scope** | Select installed package scope filter (user or machine) |
+| **--scope** | Select installed package scope filter (user or machine). |
 | **-i, --interactive** |  Runs the uninstaller in interactive mode. The default experience shows uninstaller progress. |
 | **-h, --silent** |  Runs the uninstaller in silent mode. This suppresses all UI. The default experience shows uninstaller progress. |
 | **--force** | Direct run the command and continue with non security related issues. |
-| **--purge** | Deletes all files and directories in the package directory (portable) |
-| **--preserve** | Retains all files and directories created by the package (portable) |
+| **--purge** | Deletes all files and directories in the package directory (portable). |
+| **--preserve** | Retains all files and directories created by the package (portable). |
 | **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
+| **--authentication-account** | Specify the account to be used for authentication. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **-?,--help** | Shows help about the selected command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 After you have successfully identified the application intended to uninstall, winget will execute the uninstall command. In the example below, the **name** 'orca' and the **id** was passed in.
 
