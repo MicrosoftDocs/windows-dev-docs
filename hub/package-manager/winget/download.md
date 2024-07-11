@@ -15,9 +15,6 @@ The **download** command requires that you specify the exact string to download.
 > [!NOTE]
 > By default, the **download** command will download the appropriate installer to the user's Downloads folder. Use the **--download-directory** option to specify a custom download path.
 
-> [!NOTE]
-> As of March 2024, the download option does not support the msstore source.
-
 ## Usage
 
 `winget download [[-q] <query>] [\<options>]`
