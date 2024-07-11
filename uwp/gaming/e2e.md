@@ -104,7 +104,7 @@ Microsoft offers several developer programs to help you develop and publish Wind
 
 #### Xbox Live Creators Program
 
-The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title, and publish to Xbox One and Windows. There's a simplified certification process, and no concept approval is required outside of the standard [Microsoft Store policies](/legal/windows/agreements/store-policies).
+The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title, and publish to Xbox One and Windows. There's a simplified certification process, and no concept approval is required outside of the standard [Microsoft Store policies](/windows/apps/publish/store-policies-and-code-of-conduct).
 
 You can deploy, design, and publish your game in the Creators Program without a dedicated dev kit, using only retail hardware. To get started, download the [Dev Mode Activation app](../xbox-apps/devkit-activation.md) on your Xbox One.
 
@@ -1364,7 +1364,7 @@ Don't let certification issues delay your game's release. Here are policies and 
     </tr>
     <tr>
         <td>Policies for publishing apps in the Microsoft Store</td>
-        <td><a href="/legal/windows/agreements/store-policies">Microsoft Store Policies</a></td>
+        <td><a href="/windows/apps/publish/store-policies-and-code-of-conduct">Microsoft Store Policies</a></td>
     </tr>
     <tr>
         <td>How to avoid some common app certification issues</td>

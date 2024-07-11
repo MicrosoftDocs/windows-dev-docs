@@ -272,7 +272,7 @@ An Speech Recognition Grammar Specification (SRGS) grammar is a static document 
 
 ### Voice command constraints
 
-Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. For more detail, see [Activate a foreground app with voice commands through Cortana](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
+Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. For more detail, see [Activate a foreground app with voice commands through Cortana](cortana-launch-a-foreground-app-with-voice-commands.md).
 
 See [**SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
