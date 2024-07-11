@@ -1051,12 +1051,12 @@
             - name: Fingerprint biometrics
               href: ../security/fingerprint-biometrics.md
             - name: Windows Hello
-              href: ../security/microsoft-passport.md
+              href: /windows/apps/develop/security/windows-hello
               items:
                 - name: Create a Windows Hello login app
-                  href: ../security/microsoft-passport-login.md
+                  href: /windows/apps/develop/security/windows-hello-login
                 - name: Create a Windows Hello login service
-                  href: ../security/microsoft-passport-login-auth-service.md
+                  href: /windows/apps/develop/security/windows-hello-auth-service
             - name: Smart cards
               href: ../security/smart-cards.md
             - name: Shared certificates

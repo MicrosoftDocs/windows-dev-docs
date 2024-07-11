@@ -178,6 +178,14 @@ items:
                   href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
         - name: Security and identity
           href: develop/security-and-identity.md
+          items:
+            - name: Windows Hello
+              href: develop/security/windows-hello.md
+              items:
+              - name: Create a Windows Hello login app
+                href: develop/security/windows-hello-login.md
+              - name: Create a Windows Hello login service
+                href: develop/security/windows-hello-auth-service.md
         - name: Speech
           href: develop/speech.md
         - name: User interface
