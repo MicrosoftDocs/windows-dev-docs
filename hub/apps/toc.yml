@@ -177,7 +177,7 @@ items:
                 - name: Quickstart
                   href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
         - name: Security and identity
-          href: develop/security-and-identity.md
+          href: develop/security/index.md
           items:
             - name: Windows Hello
               href: develop/security/windows-hello.md
