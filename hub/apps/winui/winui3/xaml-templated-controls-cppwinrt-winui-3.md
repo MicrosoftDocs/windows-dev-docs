@@ -182,7 +182,7 @@ Open `MainWindow.xaml`, which contains the XAML markup for our main UI page. Imm
 Also, add the following include directive to `MainWindow.h` so that the **MainWindow** type (a combination of compiling XAML markup and imperative code) is aware of the **BgLabelControl** templated control type. If you want to use **BgLabelControl** from another XAML page, then add this same include directive to the header file for that page, too. Or, alternatively, just put a single include directive in your precompiled header file.
 
 ```cppwinrt
-//MainPage.h
+//MainWindow.h
 ...
 #include "BgLabelControl.h"
 ...
