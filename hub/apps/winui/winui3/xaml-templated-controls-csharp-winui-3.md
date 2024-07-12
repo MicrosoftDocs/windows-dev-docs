@@ -18,7 +18,8 @@ To create standalone WinUI 3 components in C# for consumption from both C# and C
 
 ## Prerequisites
 
-1. [Get started with WinUI](../../get-started/start-here.md).
+1. Set up your development environment&mdash;see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
+2. Follow the instructions on how to [Create your first WinUI 3 project](create-your-first-winui3-app.md).
 
 ## Create a Blank App (BgLabelControlApp)
 
@@ -41,7 +42,7 @@ public BgLabelControl()
 }
 ```
 
-Our templated control will have a text label that can be set programmatically in code, in XAML, or via data binding. In order for the system to keep the text of our control's label up to date, it needs to be implemented as a [DependencyPropety](/uwp/api/Windows.UI.Xaml.DependencyProperty). To do this, first we declare a string property and call it **Label**. Instead of using a backing variable, we set and get the value of our dependency property by calling [GetValue](/uwp/api/windows.ui.xaml.dependencyobject.getvalue) and [SetValue](/uwp/api/windows.ui.xaml.dependencyobject.setvalue). These methods are provided by the [DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject), which **Microsoft.UI.Xaml.Controls.Control** inherits.
+Our templated control will have a text label that can be set programatically in code, in XAML, or via data binding. In order for the system to keep the text of our control's label up to date, it needs to be implemented as a [DependencyPropety](/uwp/api/Windows.UI.Xaml.DependencyProperty). To do this, first we declare a string property and call it **Label**. Instead of using a backing variable, we set and get the value of our dependency property by calling [GetValue](/uwp/api/windows.ui.xaml.dependencyobject.getvalue) and [SetValue](/uwp/api/windows.ui.xaml.dependencyobject.setvalue). These methods are provided by the [DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject), which **Microsoft.UI.Xaml.Controls.Control** inherits.
 
 ```csharp
 public string Label
@@ -53,7 +54,7 @@ public string Label
 Next, declare the dependency property and register it with the system by calling [DependencyProperty.Register](/uwp/api/windows.ui.xaml.dependencyproperty.register). This method specifies the name and type of our **Label** property, the type of the owner of the property, our **BgLabelControl** class, and the default value for the property.
 
 ```csharp
-static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
+DependencyProperty LabelProperty = DependencyProperty.Register(
     nameof(Label), 
     typeof(string),
     typeof(BgLabelControl), 
@@ -79,6 +80,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     }
 }
 ```
+
 For more information on how dependency properties work, see [Dependency properties overview](/windows/uwp/xaml-platform/dependency-properties-overview).
 
 ## Define the default style for BgLabelControl
