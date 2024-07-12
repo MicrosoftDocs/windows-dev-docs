@@ -14,7 +14,11 @@ A system-wide Windows utility to pin windows above other windows.
 
 ## Pin a window
 
-When you activate Always On Top (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the utility pins the active window above all other windows. The pinned window stays on top, even when you select other windows. To unpin a pinned window, you can either use the activation shortcut again or close the window.
+When you activate Always On Top (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the utility pins the active window above all other windows. The pinned window stays on top, even when you select other windows.
+
+## Unpin a window
+
+To unpin a window pinned by Always On Top, you can either use the activation shortcut again or close the window.
 
 ## Settings
 
