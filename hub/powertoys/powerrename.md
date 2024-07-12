@@ -239,3 +239,5 @@ Additional options can be configured in the settings, as described below:
 | Maximum number of items | The largest number of search and replace suggestions to display |
 | Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used |
 | Use Boost library | Enable extended regex functionality. See [Regular Expressions](#regular-expressions) for more details |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

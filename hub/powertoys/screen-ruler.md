@@ -41,3 +41,5 @@ From the Settings menu, the following options can be configured:
 | Pixel tolerance for edge detection | A value between 0-255. A higher value will provide a higher variation so it will be more forgiving with things like gradients and shadows. |
 | Draw feet on the cross | Adds small, serif-like "feet" for additional visual recognition. |
 | Line color | The color for the line that does the measuring. |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

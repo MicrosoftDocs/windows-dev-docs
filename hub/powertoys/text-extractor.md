@@ -112,3 +112,5 @@ This section will list possible errors and solutions.
 This message is shown when there are no available languages for recognition.
 
 If an OCR pack is supported and installed, but still is not available and your system drive _X:_ is different than "C:", then copy `X:/Windows/OCR` folder to `C:/Windows/OCR` to fix the issue.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

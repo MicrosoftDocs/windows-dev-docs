@@ -76,3 +76,5 @@ Thumbnail preview supports:
 ### Settings for Stereolithography (.stl) files
 
 Expand the **Stereolithography** section to change the background color.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

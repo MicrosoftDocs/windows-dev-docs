@@ -128,8 +128,4 @@ AI output when prompting to "Format the text as if it were written by Mark Twain
 > [!NOTE]
 > As with any AI tool, the quality of the output is dependent on the quality of the input. The more context you provide, the better the AI will be able to understand and respond to your request. Be sure to carefully review the output before using it. Please see OpenAI's [privacy](https://openai.com/policies/privacy-policy) and [terms](https://openai.com/policies/terms-of-use) pages for more info on AI usage in this feature.
 
-## See also
-
-- [Microsoft PowerToys: Utilities to customize Windows](index.md)
-- [Installing PowerToys](install.md)
-- [General settings for PowerToys](general.md)
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

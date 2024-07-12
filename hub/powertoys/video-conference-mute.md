@@ -62,3 +62,5 @@ So, how does PowerToys handle this so you can keep streaming?
 To debug the camera driver, open this file on your machine: `C:\Windows\ServiceProfiles\LocalService\AppData\Local\Temp\PowerToysVideoConference.log`
 
 You can create an empty `PowerToysVideoConferenceVerbose.flag` in the same directory to enable verbose logging mode in the driver.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

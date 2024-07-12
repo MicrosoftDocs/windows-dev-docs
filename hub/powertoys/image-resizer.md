@@ -65,8 +65,4 @@ You can specify a directory in the filename format to group resized images into 
 
 You can choose to retain the original _last modified_ date on the resized image or reset it at time of the resizing action.
 
-## See also
-
-- [Microsoft PowerToys overview](index.md)
-- [Installing PowerToys](install.md)
-- [General settings for PowerToys](general.md)
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
