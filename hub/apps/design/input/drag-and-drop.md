@@ -54,10 +54,9 @@ For other content, you'll need to handle the [**DragStarting**](/uwp/api/windows
 The following markup shows how the [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) property can be used to specify that an area of the app is a valid drop target for a dragged item (the specified area must not have a null background, it must be able to receive pointer input, and the item cannot be dropped anywhere other than the specified area).
 
 > [!NOTE]
-> Typically, a UI element has a null background. If you want users to be able to drop an item anywhere within your app, you must set the app background to something other than null. If the element shouldn't have a visible background, set `Background="Transparent"`.
+> Typically, a UI element has a null background by default. If you want users to be able to drop an item anywhere within your app, the app background cannot be null (set `Background="Transparent"` if the background should not be visible).
 
 :::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDropArea":::
-
 
 ## Handle the DragOver event
 
