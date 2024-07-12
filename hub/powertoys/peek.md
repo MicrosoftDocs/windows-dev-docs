@@ -36,3 +36,5 @@ From the settings page, the following options can be configured:
 | Activation shortcut | The customizable keyboard command to open Peek for the selected file(s). |
 | Always run not elevated, even when PowerToys is elevated | Tries to run Peek without elevated permissions, to fix access to network shares. |
 | Automatically close the Peek window after it loses focus |  |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

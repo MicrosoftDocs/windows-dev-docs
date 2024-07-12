@@ -74,3 +74,5 @@ From the Settings menu, the following options can be configured:
 | Start selection from the left | Starts the selection from the leftmost character for all activation keys (including Left/Right arrow). |
 | Input delay | The delay in milliseconds before the dialog appears. |
 | Excluded apps | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

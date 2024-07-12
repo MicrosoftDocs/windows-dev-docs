@@ -24,7 +24,4 @@ When File Locksmith is opened, it will scan all of the running processes that it
 After scanning, a list of processes will be displayed. Select **End task** to terminate the process, or select the expander to show more information.
 File Locksmith will automatically remove terminated processes from the list, whether or not this action was done via File Locksmith. To manually refresh the list of processes, select **Reload**.
 
-## See also
-
-- [PowerToys overview](index.md)
-- [Installing PowerToys](install.md)
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

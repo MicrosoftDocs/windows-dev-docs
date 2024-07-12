@@ -53,3 +53,5 @@ A "Failed to save hosts file" message appears if a change is made without admini
 ![PowerToys Hosts File Editor: Failed to save hosts file](../images/pt-hosts-file-editor-failed-to-save-hosts-file-error.png)
 
 Select **Open as administrator** in settings to fix the error.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

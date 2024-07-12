@@ -443,3 +443,5 @@ For a list of all known issues and suggestions, see the [PowerToys product repos
 
 - [Wox](https://github.com/Wox-launcher/Wox/)
 - [Beta Tadele's Window Walker](https://github.com/betsegaw/windowwalker)
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
