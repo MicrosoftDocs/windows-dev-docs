@@ -73,3 +73,5 @@ When setting the value for the `--expire-at` parameter, these formats will be ac
 
 - `PowerToys.Awake.exe --expire-at=17:00:00` will expire at 5PM of the current day
 - `PowerToys.Awake.exe --expire-at="4/13/2023 17:00:00"` will expire at 5PM on April 13 2023
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

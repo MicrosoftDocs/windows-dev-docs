@@ -176,3 +176,5 @@ In the demo below, we start with a default template applied to the screen and tw
 | Exclude applications from snapping to zones | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension) |
 
 ![FancyZones Settings bottom screenshot](../images/pt-fancyzones-settings2.png)
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

@@ -122,3 +122,5 @@ If the connection is lost:
 - If the host machine has a full-screen focused Remote Desktop/virtual machine window (or some kind of simulator window), the keyboard might not follow the mouse to another machine. The workaround is to enable the option **Hide mouse at screen edge** in the Settings or switch the focus to another window first.
 - The mouse pointer might be invisible if there is no physical mouse attached to the machine. Plug in an unused mouse or turn on **Mouse Keys** in Control Panel.
 - Some settings may not sync correctly and may need to be manually changed to be the same on all machines.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

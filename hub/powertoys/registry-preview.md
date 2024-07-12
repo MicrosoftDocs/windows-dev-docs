@@ -40,3 +40,5 @@ Select **Reload** to reload file content in case the file is changed outside of 
 Select **Write to registry** to save the data listed in the Preview to the Windows Registry. The Windows Registry Editor will ask for confirmation before writing data.
 
 Select **Open key** to open the Windows Registry Editor with the location of the key you have highlighted in the treeview as the initial starting point.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

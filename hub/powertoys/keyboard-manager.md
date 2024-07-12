@@ -241,3 +241,5 @@ If you have tried to remap a key or shortcut and are having trouble, it could be
 - Note that some keyboard keys actually send a shortcut. Common examples are the Office key (Win+Ctrl+Alt+Shift) and the Copilot key (Win + C or Left-Shift + Windows key + F23).
 
 See the list of all [open keyboard manager issues](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-Keyboard+Shortcut+Manager%22).
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

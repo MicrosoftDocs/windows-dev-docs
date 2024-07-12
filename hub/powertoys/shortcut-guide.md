@@ -44,3 +44,5 @@ These configurations can be edited from the PowerToys Settings:
 | Excluded apps | Ignores Shortcut Guide when these apps are in focus. Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
 
 ![Shortcut Guide settings](../images/pt-shortcut-guide-settings.png)
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

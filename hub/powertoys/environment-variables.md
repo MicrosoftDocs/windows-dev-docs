@@ -24,11 +24,11 @@ To edit or remove a variable (profile, User or System), select the **more** butt
 
 To add a new profile:
 
- - Select **New profile**
- - Enter profile name
- - Set **Enabled** toggle to On to apply the profile right after creation
- - Select **Add variable** to add variables to profile (either new variable or existing User/System variables)
- - Select **Save**
+- Select **New profile**
+- Enter profile name
+- Set **Enabled** toggle to On to apply the profile right after creation
+- Select **Add variable** to add variables to profile (either new variable or existing User/System variables)
+- Select **Save**
 
 ![PowerToys Environment Variables: Add profile](../images/powertoys-environment-variables-add-profile.gif)
 
@@ -47,3 +47,5 @@ From the settings, the following options can be configured:
 | Setting | Description |
 | :--- | :--- |
 | Open as administrator | Allow management of System variables. If off, only profile and User variables can be modified. Environment Variables is opened as administrator by default. |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
