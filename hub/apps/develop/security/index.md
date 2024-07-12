@@ -10,7 +10,7 @@ ms.date: 07/12/2024
 This article provides an index of development features that are related to scenarios involving security and identity in Windows apps.
 
 > [!NOTE]
-> The [Windows App SDK](../windows-app-sdk/index.md) currently does not provide APIs related to security and identity scenarios.
+> The [Windows App SDK](../../windows-app-sdk/index.md) currently does not provide APIs related to security and identity scenarios.
 
 ## Windows OS features
 
@@ -25,9 +25,9 @@ The following articles provide information about features available via WinRT AP
 | [Security](/windows/uwp/security) | Learn about the breadth of security features for Windows apps.  |
 | [Authentication and user identity](/windows/uwp/security/authentication-and-user-identity) | Windows apps have several options for user authentication, ranging from simple single sign-on (SSO) using Web authentication broker to highly secure two-factor authentication. |
 | [Cryptography](/windows/uwp/security/cryptography) | Learn about cryptography features available to Windows apps. |
-| [Windows Hello](./security/windows-hello.md) | This article describes the Windows Hello technology and discusses how developers can implement this technology to protect their apps and backend services. It highlights specific capabilities of Windows Hello that help mitigate threats from conventional credentials and provides guidance about designing and deploying these technologies as part of your packaged Windows apps. |
-| [Create a Windows Hello login app](./security/windows-hello-login.md) | Part 1 of a complete walkthrough on how to create a packaged Windows app that uses Windows Hello as an alternative to traditional username and password authentication systems. |
-| [Create a Microsoft Passport login service](./security/windows-hello-auth-service.md) | Part 2 of a complete walkthrough on how to use Windows Hello as an alternative to traditional username and password authentication systems in packaged Windows apps. |
+| [Windows Hello](windows-hello.md) | This article describes the Windows Hello technology and discusses how developers can implement this technology to protect their apps and backend services. It highlights specific capabilities of Windows Hello that help mitigate threats from conventional credentials and provides guidance about designing and deploying these technologies as part of your packaged Windows apps. |
+| [Create a Windows Hello login app](windows-hello-login.md) | Part 1 of a complete walkthrough on how to create a packaged Windows app that uses Windows Hello as an alternative to traditional username and password authentication systems. |
+| [Create a Microsoft Passport login service](windows-hello-auth-service.md) | Part 2 of a complete walkthrough on how to use Windows Hello as an alternative to traditional username and password authentication systems in packaged Windows apps. |
 
 ### Win32 (C++ and COM) APIs
 
