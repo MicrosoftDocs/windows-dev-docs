@@ -2,8 +2,7 @@
 title: Security and identity
 description: This article provides an index of development features that are related to security and identity scenarios in Windows apps.
 ms.topic: article
-ms.date: 10/14/2021
-keywords: 
+ms.date: 07/12/2024
 ---
 
 # Security and identity
@@ -17,7 +16,7 @@ This article provides an index of development features that are related to scena
 
 Windows 10 and later OS releases provide a wide variety of APIs related to graphics scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
 
-#### WinRT APIs
+### WinRT APIs
 
 The following articles provide information about features available via WinRT APIs provided by the Windows SDK.
 
@@ -30,7 +29,7 @@ The following articles provide information about features available via WinRT AP
 | [Create a Windows Hello login app](./security/windows-hello-login.md) | Part 1 of a complete walkthrough on how to create a packaged Windows app that uses Windows Hello as an alternative to traditional username and password authentication systems. |
 | [Create a Microsoft Passport login service](./security/windows-hello-auth-service.md) | Part 2 of a complete walkthrough on how to use Windows Hello as an alternative to traditional username and password authentication systems in packaged Windows apps. |
 
-#### Win32 (C++ and COM) APIs
+### Win32 (C++ and COM) APIs
 
 The following articles provide information about features available via Win32 (C++ and COM) APIs provided by the Windows SDK.
 
@@ -42,7 +41,7 @@ The following articles provide information about features available via Win32 (C
 
 ## .NET features
 
-The .NET SDK also provides APIs related to security and identity scenarios for WPF and Windows Forms apps.
+The .NET SDK also provides APIs related to security and identity scenarios for WPF and Windows Forms apps. The security and cryptography APIs in .NET can also be used in C# WinUI apps.
 
 | Article | Description |
 |---------|-------------|

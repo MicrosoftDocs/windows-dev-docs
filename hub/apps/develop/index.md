@@ -47,7 +47,7 @@ The following articles provide information to help you get started using feature
 * [Windows AI and machine learning](/windows/ai/)
 * [Integrate with Windows](windows-integration/index.md)
 * [Devices and sensors](devices-and-sensors.md)
-* [Security and identity](security-and-identity.md)
+* [Security and identity](security/index.md)
 * [Deployment overview](../package-and-deploy/index.md)
 
 For information about setting up your development environment and getting started creating a new app, see:

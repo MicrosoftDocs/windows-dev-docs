@@ -7769,6 +7769,11 @@
       "source_path": "uwp/security/microsoft-passport-login-auth-service.md",
       "redirect_url": "/windows/apps/develop/security/windows-hello-auth-service",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/security-and-identity.md",
+      "redirect_url": "/windows/apps/develop/security/",
+      "redirect_document_id": false
     }
   ]
 }
