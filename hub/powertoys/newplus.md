@@ -28,7 +28,8 @@ To create a new template, start by right-clicking on the folder. This will open 
 
 ### <a name="template_location"></a>Templates
 
-**Templates location**
+#### Templates location
+
 After the enablement toggle, the New+ Templates location setting is likely the most interesting one. By default, the template location is in your local app data folder, specifically at %localappdata%\Microsoft\PowerToys\NewPlus\Templates. However, these templates will not roam with you across devices. If you want a common set of templates across devices, a popular option is to change the template location to a folder that is synced with a cloud drive, such as OneDrive. This way, you can access your templates from any device.
 
 ### Display options
