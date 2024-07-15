@@ -1495,4 +1495,6 @@
   href: ../ui-input/index.md
   items:
     - name: Title bar customization
-      href: ../ui-input/title-bar.md      
+      href: ../ui-input/title-bar.md
+    - name: Use Mica in UWP apps
+      href: ../ui-input/mica-uwp.md    
