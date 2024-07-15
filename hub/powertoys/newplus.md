@@ -8,7 +8,7 @@ no-loc: [PowerToys, Windows, New+, New, NewPlus, Win]
 
 # New+
 
-**PowerToys New+** enables you to create files and folders from an easily personalized set of templates, directly from the File Explorer context menu.
+**PowerToys New+** enables you to create files and folders from a personalized set of templates, directly from the File Explorer context menu.
 
 ## Getting started
 
