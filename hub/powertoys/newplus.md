@@ -34,7 +34,8 @@ After the enablement toggle, the New+ Templates location setting is likely the m
 
 ### Display options
 
-**Hide template filename extensions**
+#### Hide template filename extensions
+
 The option enables you to toggle the display of filename extensions. When this option is toggled off, a file named “filename.ext” will be displayed with its extension, appearing as “filename.ext”. However, when this option is toggled on (the default), the template will be displayed without its extension, appearing simply as “filename”.
 
 **Hide template filename starting digits, spaces and dots**
