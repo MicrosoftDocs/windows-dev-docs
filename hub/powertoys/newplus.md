@@ -1,6 +1,6 @@
 ---
 title: PowerToys New+ for Windows
-description: A tool that enables you to create files and folders from an easily personalized set of templates, directly from the File Explorer context menu.
+description: A tool that enables you to create files and folders from a personalized set of templates, directly from the File Explorer context menu.
 ms.date: 07/13/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, New+, New, NewPlus, Win]
