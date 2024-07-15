@@ -69,7 +69,7 @@ A package identifies itself as a package extension by declaring the `<uap17:Pa
              <uap17:Properties> 
                  <Service>com.microsoft.powservice</Service>
              </uap17:Properties> 
-       </uap17:PackagepExtension> 
+       </uap17:PackageExtension> 
      </uap17:Extension> 
    </Extensions> 
      ... 
