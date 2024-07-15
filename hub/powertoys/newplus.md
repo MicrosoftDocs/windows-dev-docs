@@ -18,7 +18,7 @@ To start using New+, enable New+ in the PowerToys settings.
 
 ### How to create a new object using New+
 
-To create a new item within a folder, right-click on the background of the folder to bring up the context menu. From there, click on the “New+” option and then select the template you were looking for.
+To create a new item within a folder, right-click on the folder to bring up the context menu. From there, click on the “New+” option and then select the template you were looking for.
 
 ### How to add or customize a new template to New+
 
