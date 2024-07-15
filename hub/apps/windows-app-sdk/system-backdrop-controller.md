@@ -25,7 +25,7 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 > [!NOTE]
 >
 > - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/apply-mica-win32.md).
-> - To use backdrop materials in a UWP/WinUI 2 app, see [Mica](../design/style/mica.md) or [Acrylic](../design/style/acrylic.md).
+> - To use backdrop materials in a UWP/WinUI 2 app, see [Apply Mica with WinUI 2 for UWP](/windows/uwp/ui-input/mica-uwp) or [Acrylic](../design/style/acrylic.md).
 
 ## How to use a backdrop material
 
