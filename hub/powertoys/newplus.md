@@ -22,7 +22,7 @@ To create a new item within a folder, right-click on the folder to bring up the 
 
 ### How to add or customize a new template to New+
 
-To create a new template, start by right-clicking the background of a folder. This will open a context menu where you can select the ‘New+’ option. From there, choose ‘Open templates’ to access the “Templates” folder. In this folder, you have the freedom to add, edit, or rename objects as per your needs. It’s important to note that the objects you add here will be displayed on the ‘New+’ menu in a sorted order, with folders always appearing first. This makes it easy for you to find and select your templates.
+To create a new template, start by right-clicking on the folder. This will open a context menu where you can select the ‘New+’ option. From there, choose ‘Open templates’ to access the “Templates” folder. In this folder, you have the freedom to add, edit, or rename objects as per your needs. It’s important to note that the objects you add here will be displayed on the ‘New+’ menu in a sorted order, with folders always appearing first. This provides the ability to find and select your templates.
 
 ## Settings
 
