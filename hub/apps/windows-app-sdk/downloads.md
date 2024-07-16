@@ -2,7 +2,7 @@
 title: Latest downloads for the Windows App SDK
 description: Latest downloads for the Windows App SDK, including the installer and MSIX packages
 ms.topic: article
-ms.date: 04/05/2023
+ms.date: 07/15/2024
 keywords: windows win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
