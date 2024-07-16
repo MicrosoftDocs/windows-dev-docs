@@ -9,8 +9,10 @@ ms.topic: overview
 
 Windows Customization in Dev Home enables you to configure your Windows environment to suit your development needs.
 
-- Adjust advanced Windows settings, such as showing file extensions, hidden and system files, full paths in the title bar, empty drives, and more in File Explorer.
+- Adjust advanced File Explorer settings, such as showing file extensions, hidden and system files, full paths in the title bar, and empty drives.
 - Optimize the performance of your Windows machine using [Dev Drive insights](#dev-drive-insights).
+- Enable or disable optional Windows virtualization features.
+- Customize general system settings such as long paths and taskbar behaviors.
 - New experimental features.
 
 ## Get started with Windows Customization
@@ -40,6 +42,27 @@ Check Dev Drive information at a glance, such as total size, amount of storage s
 Dev Drive Insights will also list suggestions for moving package caches, such as the Pip cache or NuGet cache location, in order to improve your machine's performance. This suggestion may look something like: "Move contents of `C:\Users\user-name\AppData\Local\npm-cache` to a directory on the Dev Drive, such as `G:\packages\npm` and set `NPM_CONFIG_CACHE` to that chosen directory location on Dev Drive.
 
 :::image type="content" source="../images/devhome-devdrive-insights.png" alt-text="Screenshot of Dev Drive insights in Windows Customization." lightbox="../images/devhome-devdrive-insights.png":::
+
+### Virtualization Feature Management
+
+Configure optional **virtualization features** to enable/disable virtualization behavior on your machine, including: 
+
+- **Containers**: Provides services and tools to create and manage Windows Server Containers and their resources.
+- **Guarded Host**: Enables the device to create and run Shielded Virtual Machine using remote attestation.
+- **Hyper-V**: Provides services and management tools for creating and running virtual machines and their resources.
+- **Hyper-V Management Tools**: Includes GUI and command-line tools for managing Hyper-V.
+- **Hyper-V Platform**: Provides the services you can use to create and manage virtual machines and their resources.
+- **Virtual Machine Platform**: Enables platform support for virtual machines.
+- **Windows Hypervisor Platform**: Enables virtualization software to run on the Windows hypervisor.
+- **Windows Sandbox**: Enables the dependencies required to run Windows Sandbox scenarios.
+- **Windows Subsystem for Linux**: Provides services and environments for running native-user-mode Linux shells and tools on Windows.
+
+### General System Settings
+
+Configure various **general system** settings for developer workfloows, including: 
+
+- **End Task**: Enable end task in taskbar by right-click.
+- **Enable long paths**: Remove MAX_PATH limitations from common Win32 file and directory functions.
 
 ### Quiet Background Processes
 
