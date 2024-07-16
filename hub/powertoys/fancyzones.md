@@ -1,7 +1,7 @@
 ---
 title: PowerToys FancyZones utility for Windows
 description: A window manager utility for arranging and snapping windows into efficient layouts
-ms.date: 04/19/2023
+ms.date: 07/16/2024
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
 # FancyZones utility
 
 FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve your workflow and restore layouts quickly.
-You can define a set of zone locations to use as targets for windows on your desktop. When you drag a window into a zone, or use the associated keyboard shortcut, the window is resized and repositioned to fill that zone.
+You can define a set of zone locations to use as targets for windows on your desktop. When you drag a window into a zone or use the associated keyboard shortcut, the window is resized and repositioned to fill that zone.
 
 ## Snapping to a single zone with mouse
 
