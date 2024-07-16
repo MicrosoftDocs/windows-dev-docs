@@ -170,7 +170,7 @@ If you want to build and run this source code example then first install (or upd
 
 ### Step 1. Edit `pch.h`
 
-Open `pch.h`, and add `#include <unknwn.h>` immediately after including `windows.h`. This is because we're using [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown). It's a good idea to `#include <unknwn.h>` explicity whenever you use **winrt::get_unknown**, even if that header has been included by another header.
+Open `pch.h`, and add `#include <unknwn.h>` immediately after including `windows.h`. This is because we're using [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown). It's a good idea to `#include <unknwn.h>` explicitly whenever you use **winrt::get_unknown**, even if that header has been included by another header.
 
 > [!NOTE]
 > If you omit this step then you'll see the build error *'get_unknown': identifier not found*.

@@ -87,7 +87,7 @@ Once the product is live or it has been updated, the following celebratory banne
 
 ## 7.	Start update CTA is now available in Product release section
 
-To start a update submission for your app, click on 'Start update'. This will create an update submission. Update the details you want for your app and then submit it for certification.
+To start an update submission for your app, click on 'Start update'. This will create an update submission. Update the details you want for your app and then submit it for certification.
 
 :::image type="content" source="../../includes/store/msix/images/new-overview-start-update.png" lightbox="../../includes/store/msix/images/new-overview-start-update.png" alt-text="A screenshot of the new msix overview page showing how to create an update submission for your app.":::
 
