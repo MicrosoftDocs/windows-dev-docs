@@ -47,23 +47,23 @@ You will also want to integrate with the System Media Transport Controls, which 
 ### WebView audio playback
 If you are hosting your application in a WebView, you have two options when it comes to where you play the background audio:
 1.	You can play it using an HTML audio element within the WebView itself
-2.	You can use [WebView.AddWebAllowedObject](/windows.ui.xaml.controls.webview.addweballowedobject) to allow your JavaScript code to call into C#, and do the playback using the C# [MediaPlayer](/Windows.Media.Playback.MediaPlayer) API
+2.	You can use [WebView.AddWebAllowedObject](/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject) to allow your JavaScript code to call into C#, and do the playback using the C# [MediaPlayer](/uwp/api/windows.media.playback.mediaplayer) API
 
 Approach #2 is strongly recommended because it allows your app to dispose the memory used by the WebView when it enters the background. This is much easier than trying to control your background memory usage without disposing of the WebView.
 
 ### Light and dark mode
 Users can select a preference for light and dark themes in the Xbox settings menu. Your app can check the user’s preference and render the app appropriately. For more information, see this documentation:
 
-[Application.RequestedTheme Property (Windows.UI.Xaml) - Windows UWP applications](/windows.ui.xaml.application.requestedtheme?view=winrt-22000)
+[Application.RequestedTheme Property (Windows.UI.Xaml) - Windows UWP applications](/uwp/api/windows.ui.xaml.application.requestedtheme)
 
 ### DIAL protocol support (Google Assistant, etc)
 The DIAL protocol allows secondary devices (like tablets and phones) to launch content on your Xbox and automatically pair with it. For more details, see this documentation:
-[Windows.Media.DialProtocol Namespace - Windows UWP applications](/windows.media.dialprotocol?view=winrt-22000)
+[Windows.Media.DialProtocol Namespace - Windows UWP applications](/uwp/api/windows.media.dialprotocol)
 
 ### Media remote
 If you plan to support media remote functionality and use the controls on the media remote to control media playback, you will need to integrate SMTC into your code. For more details, see this documentation.
 
-[SystemMediaTransportControls Class (Windows.Media) - Windows UWP applications | Microsoft Docs](/Windows.Media.SystemMediaTransportControls?view=winrt-22000)
+[SystemMediaTransportControls Class (Windows.Media) - Windows UWP applications | Microsoft Docs](/uwp/api/windows.media.systemmediatransportcontrols)
 
 ### Request ratings
 There is an API you can call to request users to rate your application. This can help to bolster your ratings:
