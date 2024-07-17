@@ -261,11 +261,11 @@ For all advertising related activities, the following requirements apply:
 
 **10.10.2**
 
-If you purchase or create promotional ad campaigns to promote your apps through the “Promote Your App” capability in Dev Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://go.microsoft.com/fwlink/p/?LinkId=532593) and [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
+If you purchase or create promotional ad campaigns to promote your apps through the “Promote Your App” capability in Dev Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0) and [Creative Acceptance Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
 
 **10.10.3**
 
-Any advertising content your app displays must adhere to Microsoft’s [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
+Any advertising content your app displays must adhere to Microsoft’s [Creative Acceptance Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
 
 If your app displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
 

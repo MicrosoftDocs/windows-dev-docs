@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 07/2/2024
+ms.date: 07/17/2024
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -371,9 +371,8 @@ For all advertising related activities, the following requirements apply:
 
 **10.10.2**
 
-Any advertising content your product displays must adhere to Microsoft’s must comply with Microsoft’s [Creative Specifications Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-specs) and [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
-
-If your product displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
+Any advertising content your product displays must adhere to Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
+If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
 
 
 **10.10.3** Policy removed

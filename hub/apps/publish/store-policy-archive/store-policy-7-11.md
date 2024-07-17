@@ -266,13 +266,12 @@ For all advertising related activities, the following requirements apply:
 
 **10.10.2**
 
-If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://go.microsoft.com/fwlink/p/?LinkId=532593) and [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
+If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0) and [Creative Acceptance Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
 
 **10.10.3**
 
-Any advertising content your product displays must adhere to Microsoft’s [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
-
-If your product displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
+Any advertising content your product displays must adhere to Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
+If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
 
 **10.10.4**
 
