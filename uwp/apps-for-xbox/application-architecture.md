@@ -15,7 +15,7 @@ For general guidance on developing UWP applications for Xbox see this documentat
 [UWP on Xbox One - UWP applications](../xbox-apps/index.md)
 ### App development models
 In general, there are 2 recommended patterns for writing a media app for Xbox:
-1.	Using a website hosted in a WebView – You write a thin C# application which loads a website in a full-screen [WebView](/Windows.UI.Xaml.Controls.WebView?view=winrt-22000). Most of your app’s UI is written in web technologies like JavaScript and HTML, hosted on a server you manage. (Please note that WebView2 is not yet supported on Xbox.)
+1.	Using a website hosted in a WebView – You write a thin C# application which loads a website in a full-screen [WebView](/uwp/api/windows.ui.xaml.controls.webview). Most of your app’s UI is written in web technologies like JavaScript and HTML, hosted on a server you manage. (Please note that WebView2 is not yet supported on Xbox.)
 You might choose this option if: You are most comfortable working in web technologies, or you want to rapidly deploy changes to your UI without going through the app store publishing process.
 
 2.	Using the native UWP API – Your app is built in XAML and C#, C++/Cx, or C++/WinRT, using [MediaElement](/windows/apps/design/controls/media-playback) and the [MediaPlayer API](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) to play content.
