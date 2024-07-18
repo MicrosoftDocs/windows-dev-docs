@@ -8,7 +8,7 @@ metadata:
    ms.author: jken
    author: GrantMeStrength
    ms.topic: hub-page
-   ms.date: 6/16/2021
+   ms.date: 7/17/2024
    ms.localizationpriority: medium
    uhfHeaderId: "MSDocsHeader-Windows"
    
@@ -75,8 +75,8 @@ productDirectory:
         text: Windows App SDK features
       - url: ./winui/index.md
         text: WinUI
-      - url: /windows/ai/
-        text: Use AI in your apps
+      - url: /windows/ai/overview
+        text: Windows Copilot Runtime
   - title: Deploy
     imageSrc: /media/common/i_deploy.svg
     links:
@@ -93,7 +93,7 @@ productDirectory:
 tools:
   title: Develop for other Windows device platforms
   items:
-    - title: Mixed Reality and HoloLens
+    - title: HoloLens
       imageSrc: /media/hubs/windows/win_developer-5.svg
       url: /windows/mixed-reality/
     - title: Windows for IoT
