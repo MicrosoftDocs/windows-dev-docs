@@ -63,7 +63,7 @@ As you can see, it's fairly easy to turn on Reveal Focus when the app detects it
 
 You can customize the Reveal Focus effect by modifying the focus visual properties for each control: [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush), and [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). These properties let you customize the color and thickness of the focus rectangle. (They're the same properties you use for creating [High Visibility focus visuals](../input/guidelines-for-visualfeedback.md#high-visibility-focus-visuals).) 
 
-But before you start customzing it, it's helpful to know a little more about the components that make up Reveal Focus.
+But before you start customizing it, it's helpful to know a little more about the components that make up Reveal Focus.
 
 There are three parts to the default Reveal Focus visuals: the primary border, the secondary border and the Reveal glow. The primary border is **2px** thick, and runs around the *outside* of the secondary border. The secondary border is **1px** thick and runs around the *inside* of the primary border. The Reveal Focus glow has a thickness proportional to the thickness of the primary border and runs around the *outside* of the primary border.
 

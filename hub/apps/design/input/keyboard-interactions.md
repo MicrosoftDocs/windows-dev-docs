@@ -254,7 +254,7 @@ A shortcut is a keyboard combination that enhances productivity by providing an 
 
 
 - [Accelerators](#accelerators) are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.
-- [Access keys](#access-keys) are shortcuts that set focus to specific UI in your application. Access keys typicaly consist of the Alt key plus a letter key.
+- [Access keys](#access-keys) are shortcuts that set focus to specific UI in your application. Access keys typically consist of the Alt key plus a letter key.
 
 
 Providing consistent keyboard shortcuts that support similar tasks across applications makes them much more useful and powerful and helps users remember them.

@@ -23,7 +23,7 @@ The [**MagnetometerAccuracy**](/uwp/api/Windows.Devices.Sensors.MagnetometerAccu
 
 | Value           | Description    |
 | ----------------- | ------------------- |
-| **Unknown**     | The sensor driver could not report the current accuracy. This does not necessarily mean the device is out of calibration. It is up to your app to decide the best course of action if **Unknown** is returned. If your app is dependant on an accurate sensor reading, you may want to prompt the user to calibrate the device. |
+| **Unknown**     | The sensor driver could not report the current accuracy. This does not necessarily mean the device is out of calibration. It is up to your app to decide the best course of action if **Unknown** is returned. If your app is dependent on an accurate sensor reading, you may want to prompt the user to calibrate the device. |
 | **Unreliable**  | There is currently a high degree of inaccuracy in the magnetometer. Apps should always ask for a calibration from the user when this value is first returned. |
 | **Approximate** | The data is accurate enough for some applications. A virtual reality app, that only needs to know if the user has moved the device up/down or left/right, can continue without calibration. Apps that need an absolute heading, like a navigation app that needs to know what direction you are driving in order to give you directions, need to ask for calibration. |
 | **High**        | The data is precise. No calibration is needed, even for apps that need to know an absolute heading such as augmented reality or navigation apps. |

@@ -67,7 +67,7 @@ After you've added users, groups, and/or Microsoft Entra applications to your Pa
 > Changes made to [roles or permissions](set-custom-permissions-for-account-users.md) will only affect Partner Center access. All other changes (such as changing a user's name or group membership, or the Reply URL and App ID URI for a Microsoft Entra application) will be reflected in your organization's Microsoft Entra tenant as well as in your Partner Center account.
 
 1. From the **User management** page (under **Account settings**), select the name of the user, group, or Microsoft Entra application account that you want to edit.
-1. Make your desired changes. For an **Microsoft Entra application**, you can enter new values for the **Reply URL** or **App ID URI**.
+1. Make your desired changes. For a **Microsoft Entra application**, you can enter new values for the **Reply URL** or **App ID URI**.
     Remember that these changes will be made in your organization's directory as well as in your Partner Center account.
 1. For changes related to Partner Center access, select or deselect the role(s) that you want to apply, or select **Customize permissions** and make the desired changes. These changes only impact Partner Center access and will not change any permissions within your organization's Microsoft Entra tenant.
 1. Select **Save**.
