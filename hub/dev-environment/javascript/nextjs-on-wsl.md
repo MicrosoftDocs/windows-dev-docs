@@ -64,7 +64,7 @@ To install Next.js, which includes installing next, react, and react-dom:
 
     ![Your Next.js app running in localhost:3000](../../images/next-app.png)
 
-7. Open the `app/page.tsx` file in your VS Code editor. Find `Get started by editing..` and replace everthing inside the `<p>` tag with `This is my new Next.js app!the page title`. With your web browser still open to localhost:3000, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.
+7. Open the `app/page.tsx` file in your VS Code editor. Find `Get started by editing..` and replace everything inside the `<p>` tag with `This is my new Next.js app!the page title`. With your web browser still open to localhost:3000, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.
 
 You can use VS Code's debugger with your Next.js app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 

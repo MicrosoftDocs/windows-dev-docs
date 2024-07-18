@@ -516,7 +516,7 @@ OpenGL rendering code
 // Both vertex shader and fragment shader are in a program.
 glUseProgram(m_shader->getProgram());
  
-// Input asssembly 
+// Input assembly 
 // Get the position and color attributes of the vertex.
 
 m_positionLocation = glGetAttribLocation(m_shader->getProgram(), "position");

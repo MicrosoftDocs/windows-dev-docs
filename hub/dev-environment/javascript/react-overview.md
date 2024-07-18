@@ -59,7 +59,7 @@ While writing a simple React component in a plain text editor is a good introduc
 - **Bundling** - Since performance is key for modern web apps, it's important that an app's JavaScript includes only the needed code for the app and combined into as few files as possible. A bundler, such as [webpack](https://webpack.js.org/) performs this task for you.
 - **Package management** - Package managers make it easy to include the functionality of third-party packages in your app, including updating them and managing dependencies. Commonly used package managers include [Yarn](https://yarnpkg.com/) and [npm](https://www.npmjs.com/).
 
-Together, the suite of frameworks that help you create, build, and deploy your app are called a toolchain. An easy to setup development enviornment for react that uses this toolchain is [Vite](https://vitejs.dev/) which generates a simple one-page app for you. The only setup required to use **Vite** is Node.js.
+Together, the suite of frameworks that help you create, build, and deploy your app are called a toolchain. An easy to setup development environment for react that uses this toolchain is [Vite](https://vitejs.dev/) which generates a simple one-page app for you. The only setup required to use **Vite** is Node.js.
 
 - For Windows development, follow the instructions to [install Node.js on WSL](./nodejs-on-wsl.md) or [install Node.js on Windows](./nodejs-on-windows.md).
 

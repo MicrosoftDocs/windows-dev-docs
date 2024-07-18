@@ -60,7 +60,7 @@ If no short description is provided, the store will use the first 100 characters
 
 Short descriptions can be up to 1,000 characters, but some store views display only the first 270 characters (along with a link to view the entire short description). For best results, keep your short description under 270 characters.
 
-:::image type="content" source="images/msiexe-supplemental-fields.png" lightbox="images/msiexe-supplemental-fields.png" alt-text="A screenshot of the Store listings section where you can provide short decription and other additional system requirements for your app listing.":::
+:::image type="content" source="images/msiexe-supplemental-fields.png" lightbox="images/msiexe-supplemental-fields.png" alt-text="A screenshot of the Store listings section where you can provide short description and other additional system requirements for your app listing.":::
 
 ### Additional system requirements
 

@@ -22,7 +22,7 @@ NuGet package download: [Microsoft.UI.Xaml](https://www.nuget.org/packages/Micro
 
 ### Progress Bar Visual Refresh
 
-The **ProgressBar** has two different visual represetations.
+The **ProgressBar** has two different visual representations.
 
 #### Indeterminate Progress Bar
 

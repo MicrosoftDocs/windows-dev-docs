@@ -43,7 +43,7 @@ Use alignment, margin, and padding to influence layout behavior.
     :::column-end:::
     :::column:::
 ### [Layout panels](layout-panels.md)
-Learn about each type of layout panel an how to use them to arrange UI elements.
+Learn about each type of layout panel and how to use them to arrange UI elements.
     :::column-end:::
 :::row-end:::
 
