@@ -39,6 +39,7 @@ The permissions in this section cannot be limited to specific products. Granting
 | **Store sale events** *| N/A | Can configure the option to automatically include products in Store sale events. |
 | **Tax profile** | Can view <a href="/partner-center/set-up-your-payout-account#tax-forms">tax profile info and forms</a> in **Account settings**. | Can fill out tax forms and update <a href="/partner-center/set-up-your-payout-account#tax-forms">tax profile info</a> in **Account settings**. |
 | **Test accounts** *| Can view accounts for testing Xbox Live configuration. | Can create, manage, and view accounts for testing Xbox Live configuration. |
+| **Ticketing Administrator** | N/A | Can view and edit all tickets created under this Partner Center account in the Game Creator Ticketing Portal. |
 | **Xbox devices** | Can view the Xbox development consoles enabled for the account in the **Account settings** section. | Can add, remove, and view the Xbox development consoles enabled for the account in the **Account settings** section. |
 
 \* Permissions marked with an asterisk (*) grant access to features which are not available to all accounts. If your account has not been enabled for these features, your selections for these permissions will not have any effect.   
