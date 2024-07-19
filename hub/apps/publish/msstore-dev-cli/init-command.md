@@ -81,6 +81,8 @@ msstore init https://contoso.com --output .
 | -n, --publisherDisplayName | The Publisher Display Name used to configure the application. If provided, avoids an extra APIs call. |
 | --package | If supported by the app type, automatically packs the project. |
 | --publish | If supported by the app type, automatically publishes the project. Implies '--package true' |
+| -f, --flightId | Specifies the Flight Id where the package will be published. |
+| -prp, --packageRolloutPercentage | Specifies the rollout percentage of the package. The value must be between 0 and 100. |
 | -a, --arch | The architecture(s) to build for. If not provided, the default architecture for the current OS, and project type, will be used. Allowed values: "x86", "x64", "arm64". Only used it used in conjunction with '--package true'. |
 | -o, --output | The output directory where the packaged app will be stored. If not provided, the default directory for each different type of app will be used. |
 | -ver, --version | The version used when building the app. If not provided, the version from the project file will be used. |

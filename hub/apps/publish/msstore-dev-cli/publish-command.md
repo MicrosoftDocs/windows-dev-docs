@@ -67,3 +67,5 @@ msstore publish "C:\path\to\pwa_app"
 | -i, --inputDirectory | The directory where the '.msix' or '.msixupload' file to be used for the publishing command. If not provided, the cli will try to find the best candidate based on the 'pathOrUrl' argument. |
 | -id, --appId | Specifies the Application Id. Only needed if the project has not been initialized before with the 'init' command. |
 | -nc, --noCommit | Disables committing the submission, keeping it in draft state. |
+| -f, --flightId | Specifies the Flight Id where the package will be published. |
+| -prp, --packageRolloutPercentage | Specifies the rollout percentage of the package. The value must be between 0 and 100. |
