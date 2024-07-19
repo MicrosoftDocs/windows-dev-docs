@@ -2,7 +2,7 @@
 description: This article lists and provides usage guidance for the glyphs that come with the Segoe Fluent Icons font.
 title: Segoe Fluent Icons font
 label: Segoe Fluent Icons font
-ms.date: 08/20/2021
+ms.date: 07/18/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -14,27 +14,27 @@ This article provides developer guidelines for using the Segoe Fluent Icons font
 
 **Important APIs**:
 
-* [**Symbol enum**](/uwp/api/windows.ui.xaml.controls.symbol)
-* [**FontIcon class**](/uwp/api/windows.ui.xaml.controls.fonticon)
+* [**FontIcon class**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon)
 
 ## About Segoe Fluent Icons
 
 > [!TIP]
-> With the release of Windows 11, the Segoe Fluent Icons font will replace Segoe MDL2 Assets as the recommended symbol icon font. **Segoe MDL2 Assets** will still be available, but we recommend updating your app to use the new **Segoe Fluent Icons**.
+> With the release of Windows 11, the **`Segoe Fluent Icons`** font replaced `Segoe MDL2 Assets` as the recommended symbol icon font. `Segoe MDL2 Assets` is still available, but we recommend updating your app to use the `Segoe Fluent Icons` font.
 
-Most of the icons included in the **Segoe Fluent Icons** font are mapped to the Private Use Area of Unicode (PUA). The PUA range is a non-standardized range of Unicode that allows font developers to define their own characters. This is useful when creating a symbol font, but it creates an interoperability problem when **Segoe Fluent Icons** is not available.
+Most of the icons included in the `Segoe Fluent Icons` font are mapped to the Private Use Area of Unicode (PUA). The PUA range is a non-standardized range of Unicode that allows font developers to define their own characters. This is useful when creating a symbol font, but it creates an interoperability problem when `Segoe Fluent Icons` is not available.
 
-Icons in the **Segoe Fluent Icons** font are not intended for use in-line with text. This means that some older "tricks" like the progressive disclosure arrows no longer apply. Likewise, since all of the new icons are sized and positioned the same, they do not have to be made with zero width; we have made sure they work as a set.
+Icons in the `Segoe Fluent Icons` font are not intended for use in-line with text. This means that some older "tricks" like the progressive disclosure arrows no longer apply. Likewise, since all of the new icons are sized and positioned the same, they do not have to be made with zero width; we have made sure they work as a set.
 
 ## Layering and mirroring
 
-All glyphs in **Segoe Fluent Icons** have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other. This example show a black outline drawn on top of the zero-width red heart.
+All glyphs in `Segoe Fluent Icons` have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other. This example show a black outline drawn on top of the zero-width red heart.
 
 ![using a zero-width glyph](images/segoe-ui-symbol-layering.png)
 
 ```xaml
 <Grid>
-    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB52;" Foreground="#C72335" />
+    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB52;"
+              Foreground="#C72335" />
     <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB51;" />
 </Grid>
 ```
@@ -43,19 +43,19 @@ Many of the icons also have mirrored forms available for use in languages that u
 
 ## Using the icons
 
-If you are developing an app in C#/VB/C++ and XAML, you can use specified glyphs from Segoe Fluent Icons with the [Symbol enumeration](/uwp/api/windows.ui.xaml.controls.symbol).
+If you are developing an app in XAML, you can use specified glyphs from `Segoe Fluent Icons` with a [SymbolIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon) and the [Symbol enumeration](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbol).
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
 ```
 
-If you would like to use a glyph from the *Segoe Fluent Icons** font that is not included in the Symbol enum, then use a [**FontIcon**](/uwp/api/windows.ui.xaml.controls.fonticon).
+If you would like to use a glyph from the `Segoe Fluent Icons` font that is not included in the Symbol enum, set it as the [Glyph](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon.glyph) property of a [**FontIcon**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon) control.
 
 ```xaml
 <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE700;"/>
 ```
 
-You can also use the static resource `SymbolThemeFontFamily` to access **Segoe Fluent Icons**, instead of specifying the font by name:
+You can also use the static resource `SymbolThemeFontFamily` to access `Segoe Fluent Icons`, instead of specifying the font by name:
 
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
@@ -67,17 +67,17 @@ You can also use the static resource `SymbolThemeFontFamily` to access **Segoe F
 ## How do I get this font?
 
 * On Windows 11: There's nothing you need to do, the font comes with Windows.
-* On Windows 10: **Segoe Fluent Icons** is not included by default on Windows 10. You can download it [here](../downloads/index.md#fonts).
-* On a Mac or other device: You can download **Segoe Fluent Icons** and other fonts [here](../downloads/index.md#fonts). You can download the font for use in design and development, but you may not ship it to another platform.
+* On Windows 10: `Segoe Fluent Icons` is not included by default on Windows 10. You can download it [here](../downloads/index.md#fonts).
+* On a Mac or other device: You can download `Segoe Fluent Icons` and other fonts [here](../downloads/index.md#fonts). You can download the font for use in design and development, but you may not ship it to another platform.
 
 ## Icon list
 
-Please keep in mind that the **Segoe Fluent Icons** font includes many more icons than we can show here. Many of the icons are intended for specialized purposes and are not typically used anywhere else.
+Please keep in mind that the `Segoe Fluent Icons` font includes many more icons than we can show here. Many of the icons are intended for specialized purposes and are not typically used anywhere else.
 
 > [!NOTE]
 > Glyphs with prefixes ranging from **E0-** to **E5-** (e.g. E001, E5B1) are currently marked as legacy and are therefore deprecated.
 
-The following tables display all **Segoe Fluent Icons** glyphs and their respective unicode values and descriptive names. Select a range from the following list to view glyphs according to the PUA range they belong to.
+The following tables display all `Segoe Fluent Icons` glyphs and their respective unicode values and descriptive names. Select a range from the following list to view glyphs according to the PUA range they belong to.
 
 * [PUA E700-E900](#pua-e700-e900)
 * [PUA EA00-EC00](#pua-ea00-ec00)

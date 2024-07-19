@@ -2,7 +2,7 @@
 title: WinUI
 description: WinUI Libraries for Windows app development. 
 ms.topic: article
-ms.date: 07/20/2021
+ms.date: 07/19/2024
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ---
 
@@ -15,7 +15,7 @@ keywords: windows 10, windows 11, Windows App SDK, Windows app development platf
     :::column-end:::
     :::column span="2":::
 
-> [!Important]
+> [!IMPORTANT]
 > At this time, there are two generations of WinUI: [WinUI 2 for UWP](winui2/index.md) and [WinUI in the Windows App SDK (WinUI 3)](winui3/index.md). While both can be used in production-ready apps on Windows 10 and later, each have different development targets.
 >
 > See [Comparison of WinUI 3 and WinUI 2](#comparison-of-winui-3-and-winui-2).
@@ -43,7 +43,7 @@ The following table highlights some of most significant differences between WinU
 | WinUI 3 ships as a component of [the Windows App SDK](../windows-app-sdk/index.md) framework package, with Visual Studio project templates in the Windows App SDK Visual Studio Extension (VSIX). | Part of WinUI 2 ships within the operating system itself (the Windows.UI.* family of UWP WinRT APIs) and part of it ships as a library ("WinUI 2") with additional controls, elements and the latest styles on top of what's already included in the operating system itself. With WinUI 2, these features ship in a downloadable NuGet package. However, other significant parts of the UI stack are still built-in to the OS, such as the core XAML framework, input, and composition layers. |
 | WinUI 3 supports C# (.NET 6 and later) and C++ for desktop apps. | WinUI 2 supports C# and Visual Basic (.NET Native), and C++ apps. |
 | WinUI 3 is supported only in desktop-based projects. To use WinUI 3, UWP projects can migrate their project type to desktop (see [how to migrate your UWP app to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md)). | WinUI 2 can be incorporated into production UWP apps by installing a NuGet package into a new or existing UWP project. WinUI controls and styles can then be referenced directly in new apps, or by updating "Windows.UI." namespace references to "Microsoft.UI." in existing apps. |
-| WinUI 3 supports the Chromium-based [WebView2](/microsoft-edge/webview2/) control | WinUI 2 supports the [WebView](/windows/uwp/design/controls-and-patterns/web-view) control on all devices, and starting with WinUI 2.7 prerelease, the [WebView2](/microsoft-edge/webview2/) control on Desktop. The WebView2 control will come to a WinUI 2.x stable release in the future. |
+| WinUI 3 supports the Chromium-based [WebView2](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2) control | WinUI 2 supports the [WebView](/uwp/api/windows.ui.xaml.controls.webview) control on all devices, and starting with WinUI 2.8, the [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2) control on Desktop. |
 | WinUI 3 works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763). | WinUI 2.0 - 2.7 works downlevel to Windows 10 Creators Update (Version 1703, OS build 15063). WinUI 2.8 and later works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763). |
 
 ### See also
