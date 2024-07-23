@@ -19,9 +19,9 @@ The Microsoft Store showcases different apps grouped by category or theme. There
 
 -   **Include great screenshots and images**
 
-    When featuring apps, the Microsoft Store may use your [app screenshots and images](publish-your-app/screenshots-and-images.md?pivots=store-installer-msix) in various layouts. Be sure to design great screenshots that represent your app, and make sure the first screenshot is especially representative and appealing. You can provide different sets of screenshots to show how the app looks on each device type that it supports.
+    When featuring apps, the Microsoft Store may use your [app screenshots and images](publish-your-app/msix/screenshots-and-images.md) in various layouts. Be sure to design great screenshots that represent your app, and make sure the first screenshot is especially representative and appealing. You can provide different sets of screenshots to show how the app looks on each device type that it supports.
 
-    To maximize your app's chance of getting featured in the Store, provide all applicable images in the **Store logos** and **Additional art assets** sections of your Store listing. The **9:16 Poster art (720 x 1080 or 1440 x 2160 pixels)** and **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** images are particularly important. If your app supports the Xbox and/or Holographic device family, we recommend providing all applicable images for those device families as well. For more details and guidelines, see [App screenshots, images, and trailers](publish-your-app/screenshots-and-images.md?pivots=store-installer-msix).
+    To maximize your app's chance of getting featured in the Store, provide all applicable images in the **Store logos** and **Additional art assets** sections of your Store listing. The **9:16 Poster art (720 x 1080 or 1440 x 2160 pixels)** and **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** images are particularly important. If your app supports the Xbox and/or Holographic device family, we recommend providing all applicable images for those device families as well. For more details and guidelines, see [App screenshots, images, and trailers](publish-your-app/msix/screenshots-and-images.md).
 
 -   **Build one version of your app, not one free version and a distinct paid version**
 
@@ -29,7 +29,7 @@ The Microsoft Store showcases different apps grouped by category or theme. There
 
 -   **List your app in all relevant markets and languages**
 
-    Submitting your app to all relevant [markets](publish-your-app/market-selection.md?pivots=store-installer-msix) can help you get broader coverage for your app. Of course, you'll want to make sure that your app is appropriate and meets all local guidelines for the markets you choose. Localizing your app's content and Store listing info into additional [languages](publish-your-app/supported-languages.md?pivots=store-installer-msix) can also help.
+    Submitting your app to all relevant [markets](publish-your-app/msix/market-selection.md) can help you get broader coverage for your app. Of course, you'll want to make sure that your app is appropriate and meets all local guidelines for the markets you choose. Localizing your app's content and Store listing info into additional [languages](publish-your-app/msix/app-package-requirements.md#supported-languages) can also help.
 
 -   **Enable filters for apps containing 16+ and 18+ content**
 

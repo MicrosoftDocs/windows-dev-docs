@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Create a developer account
 
-[Register now](/microsoft.com/microsoft-365/dev-program) for a developer account so you can publish your apps to the Microsoft Store and participate in other Microsoft programs.
+[Register now](https://aka.ms/partnercenterregistration) for a developer account so you can publish your apps to the Microsoft Store and participate in other Microsoft programs.
 
 ## Opening your developer account
 
@@ -18,4 +18,4 @@ We offer [individual and company accounts](../publish/partner-center/account-typ
 
 ## Have a name for your app?
 
-As soon as you open your developer account, you can [create your app by reserving a name](../publish/publish-your-app/reserve-your-apps-name.md).
+As soon as you open your developer account, you can [create your app by reserving a name](../publish/publish-your-app/msix/reserve-your-apps-name.md).

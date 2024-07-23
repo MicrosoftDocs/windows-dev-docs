@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, promo code, promo codes, token, tokens
 ms.localizationpriority: medium
 ---
-# Generate promotional codes
 
+# Generate promotional codes
 
 [Partner Center](https://partner.microsoft.com/dashboard) lets you generate promotional codes for an app or add-on that you have published in the Microsoft Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](beta-testing-and-targeted-distribution.md).
 
-Each promotional code has a corresponding unique redeemable URL that a customer can click in order to redeem the code and install your app or add-on from the Microsoft Store.  Note that your app must pass the final publishing phase of the [app certification process](publish-your-app/app-certification-process.md?pivots=store-installer-msix) before customers can redeem a promotional code to install it.
+Each promotional code has a corresponding unique redeemable URL that a customer can click in order to redeem the code and install your app or add-on from the Microsoft Store.  Note that your app must pass the final publishing phase of the [app certification process](publish-your-app/msix/app-certification-process.md) before customers can redeem a promotional code to install it.
 
 You can generate single-use codes (and distribute one to each customer), or you can choose to generate a code that can be used multiple times by a specified number of customers.
 
@@ -34,7 +34,7 @@ Be aware of the following policies for promotional codes:
 -   You must follow the requirements defined in the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including section **3k. Promotional Codes**.
 
 > [!NOTE]
-> You can use promotional codes even if your app is unavailable to customers (that is, if you have selected **Make this product available but not discoverable in the Store** with the **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device** option in your submission's [Discoverability](publish-your-app/visibility-options.md?pivots=store-installer-msix#discoverability) section). With this option, customers must be on Windows 10 or Windows 11 (including Xbox) in order to acquire your product with a promotional code.
+> You can use promotional codes even if your app is unavailable to customers (that is, if you have selected **Make this product available but not discoverable in the Store** with the **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device** option in your submission's [Discoverability](publish-your-app/msix/visibility-options.md#discoverability) section). With this option, customers must be on Windows 10 or Windows 11 (including Xbox) in order to acquire your product with a promotional code.
 
 
 ## Order promotional codes

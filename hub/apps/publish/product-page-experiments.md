@@ -18,7 +18,7 @@ To conduct a product page experiment, start by signing in to Partner Center and 
 > [!NOTE] 
 > We are using the Goodnotes for Windows app in Microsoft Store as an example in the following images.
 
-:::image type="content" source="../../includes/store/msix/images/submit-product-page-experiment.png" lightbox="../../includes/store/msix/images/submit-product-page-experiment.png" alt-text="A screenshot showing how to create product page experiment for your app from the application overview page.":::
+:::image type="content" source="publish-your-app/msix/images/submit-product-page-experiment.png" lightbox="publish-your-app/msix/images/submit-product-page-experiment.png" alt-text="A screenshot showing how to create product page experiment for your app from the application overview page.":::
 
 **Step 1:** From this view you can start your product page experiment to test app logo and screenshots across all languages.
 
@@ -29,25 +29,25 @@ To conduct a product page experiment, start by signing in to Partner Center and 
 3.	**Logo:** The logo must be in PNG format and should be less than 50MB in size. The main logo must have dimensions of 300 x 300 pixels. For casual games, a poster image is supported: it must be either 720 x 1080 pixels or 1440 x 2160 pixels.
 4.	**Screenshots:** Screenshots must be in PNG format and should be less than 50MB in size. A maximum of 10 screenshots or images are supported; 4 are recommended. Images must be in PNG format, and 1366 x 768 pixels or larger (4K images of 3840 x 2160 are supported). Images can be either landscape or portrait.
 
-:::image type="content" source="../../includes/store/msix/images/configure-product-page-experiment.png" lightbox="../../includes/store/msix/images/configure-product-page-experiment.png" alt-text="A screenshot showing how to configure product page experiment for your app.":::
+:::image type="content" source="publish-your-app/msix/images/configure-product-page-experiment.png" lightbox="publish-your-app/msix/images/configure-product-page-experiment.png" alt-text="A screenshot showing how to configure product page experiment for your app.":::
 
 > [!NOTE] 
 > You can delete your experiment in draft from your app overview page in Partner Center. 
 
 **Step 3:** When you are ready, submit the experiment. By default, all experiments run for up to a maximum length of 90 days. You can also stop the experiment manually from your app overview page. 
 
-:::image type="content" source="../../includes/store/msix/images/submit-product-page-experiment.png" lightbox="../../includes/store/msix/images/submit-product-page-experiment.png" alt-text="A screenshot showing how to submit product page experiment for your app.":::
+:::image type="content" source="publish-your-app/msix/images/submit-product-page-experiment.png" lightbox="publish-your-app/msix/images/submit-product-page-experiment.png" alt-text="A screenshot showing how to submit product page experiment for your app.":::
 
 **Step 4:** Once submitted, your experiment will go through certification process. Your experiment will go live in Microsoft Store if it is compliant with Microsoft Store policies. Once approved, 50% of your customers on Microsoft Store will be taken to your new product page while the other 50% will view the original product page. 
 
 When your experiment is live, we recommend not changing logos or screenshots in your original listing via the update submission as that can invalidate the results of your experiment. 
 
-:::image type="content" source="../../includes/store/msix/images/product-page-experiment-in-certification.png" lightbox="../../includes/store/msix/images/product-page-experiment-in-certification.png" alt-text="A screenshot showing a product page experiment in certification.":::
+:::image type="content" source="publish-your-app/msix/images/product-page-experiment-in-certification.png" lightbox="publish-your-app/msix/images/product-page-experiment-in-certification.png" alt-text="A screenshot showing a product page experiment in certification.":::
 
 **Step 5:** To learn how your experiment is performing, you can go to Partner Center insights.
 
-:::image type="content" source="../../includes/store/msix/images/product-page-experiment-live-in-store.png" lightbox="../../includes/store/msix/images/product-page-experiment-live-in-store.png" alt-text="A screenshot how to check analytics of a live product page experiment.":::
+:::image type="content" source="publish-your-app/msix/images/product-page-experiment-live-in-store.png" lightbox="publish-your-app/msix/images/product-page-experiment-live-in-store.png" alt-text="A screenshot how to check analytics of a live product page experiment.":::
 
 **Step 6:** Compare the Search impressions, Page views, Installs and Conversion rates of both product pages. You can then update your page with the best performing app icons and screenshots and all customers will see them on the product page. 
 
-:::image type="content" source="../../includes/store/msix/images/analyse-product-page-experiment-results.png" lightbox="../../includes/store/msix/images/analyse-product-page-experiment-results.png" alt-text="A screenshot showing analytics of a live product page experiment.":::
+:::image type="content" source="publish-your-app/msix/images/analyse-product-page-experiment-results.png" lightbox="publish-your-app/msix/images/analyse-product-page-experiment-results.png" alt-text="A screenshot showing analytics of a live product page experiment.":::
