@@ -1,7 +1,7 @@
 ---
 title: Environments in Dev Home
 description: Learn about interacting with your virtual or cloud environments from Dev Home.
-ms.date: 07/01/2024
+ms.date: 07/23/2024
 ms.topic: overview
 ---
 
@@ -11,8 +11,7 @@ A virtual environment is a self-contained workspace that allows you to maintain 
 
 - [Local Hyper-V virtual machine (VM)](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v)
 - [Microsoft Dev Box](/azure/dev-box/overview-what-is-microsoft-dev-box)
-<!-- - A [Windows Sandbox](/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview)
-- A [Windows Subsystem for Linux (WSL) distribution](/windows/wsl/install) -->
+- A [Windows Subsystem for Linux (WSL) distribution](/windows/wsl/install)
 
 **Environments in Dev Home** can help you to centralize your interactions with these virtual or cloud environments in a single place.
 
@@ -25,9 +24,11 @@ To get started using virtual environments in Dev Home, select the **Environments
 
 Each type of virtual environment in Dev Home is supported by a Dev Home extension. To add a new environment, you must ensure that the Dev Home extension supporting the associated virtual environment that you wish to use is installed.
 
-    - **Hyper-V extension**: Installed by default in Dev Home. By default, your local Hyper-V VMs will be visible on the Dev Home Environments page.
-    - **Microsoft Dev Box**: To display Dev Box virtual environments, install the [Dev Home Azure extension](extensions.md#dev-home-azure-extension). Once installed, each Dev Box that you have set up on your Azure account will be visible on the Dev Home Environments page.
-    <!-- - **WSL distributions**: To display Linux distributions installed with WSL, you can download and install the [Dev Home WSL Extension Preview](https://github.com/WhitewaterFoundry/devhome/releases). This `.msixbundle` is contributed by Whitewater Foundry.* -->
+- **Hyper-V extension**: Installed by default in Dev Home. By default, your local Hyper-V VMs will be visible on the Dev Home Environments page.
+
+- **Microsoft Dev Box**: To display Dev Box virtual environments, install the [Dev Home Azure extension](extensions.md#dev-home-azure-extension). Once installed, each Dev Box that you have set up on your Azure account will be visible on the Dev Home Environments page.
+
+- **WSL distributions**: To display Linux distributions install the [WSL extension](extensions.md).
 
 > [!TIP]
 > If you do not see the Environments tab in Dev Home or are having trouble, ensure that you have the latest version of Dev Home by running the command: `winget upgrade Microsoft.DevHome`.
