@@ -13,12 +13,12 @@ You can use package flights to distribute specific packages to a limited group o
 
 With package flights, only the packages are different; the Store listing details will be the same for all of your customers. Anyone in your flight group will receive the packages that you include in the package flight, while customers who aren't in the flight group continue to receive your regular (non-flighted) packages.  If you later decide that you want to make packages from a package flight available to all your customers, you can easily use those same packages in a non-flighted submission. 
 
-Note that the [certification process](publish-your-app/app-certification-process.md?pivots=store-installer-msix) is applied to package flights just the same as any submission, however some WACK failures are reported as **passing with notes** and will allow submission for flighting. This relaxation of the WACK checks is only while the package is flighting to a limited audience and is intended  to assist with package testing and preparation for release. WACK failures must be fixed before general release.   
+Note that the [certification process](publish-your-app/msix/app-certification-process.md) is applied to package flights just the same as any submission, however some WACK failures are reported as **passing with notes** and will allow submission for flighting. This relaxation of the WACK checks is only while the package is flighting to a limited audience and is intended  to assist with package testing and preparation for release. WACK failures must be fixed before general release.   
 
 When you set up package flights, you can specify the people who should get specific packages by adding them to a **known user group** (sometimes referred to as flight group). Anyone in a flight group who is using a device running a version of Windows 10 or Windows 11 that supports package flights (Windows.Desktop build 10586 or later; or Xbox One) will get the packages from the package flight(s) that you designate for that particular group. Anyone who has not been added to one of your flight groups, or is using a device that doesn’t support package flights, will get packages from the non-flighted submission.
 
 > [!IMPORTANT] 
-> On desktop and mobile devices, people in your flight groups will get the packages in your flight automatically whenever you provide updates. However, **people in your flight groups who are using Xbox devices will need to check for updates manually** in order to get the latest packages, making sure they are signed into their device using their Microsoft account (with the associated email address that you included in your known user group).
+> On desktop devices, people in your flight groups will get the packages in your flight automatically whenever you provide updates. However, **people in your flight groups who are using Xbox devices will need to check for updates manually** in order to get the latest packages, making sure they are signed into their device using their Microsoft account (with the associated email address that you included in your known user group).
 
 Note that package flights will not be distributed via [Microsoft Store for Business](https://businessstore.microsoft.com/store) and [Microsoft Store for Education](https://educationstore.microsoft.com/store). This is because people in your known user groups must be signed in with their Microsoft accounts in order to receive a package flight. All acquisitions made via Microsoft Store for Business or Microsoft Store for Education will receive your non-flighted packages.
 
@@ -47,7 +47,7 @@ On the package flight creation page, you'll need to enter a name for your flight
 
 After you've saved your package flight details, you'll see its overview page. Click **Packages** to specify the packages you'd like to include in the flight. You can include packages targeting any OS version that your app supports.
 
-You have the option to select packages that were associated with a previous published submission (either a non-flighted submission, or one of your other package flights, if you have more than one). If you need to upload new packages to use for this package flight, you can upload them here (using the [same process as when you upload app packages to a regular non-flighted submission](publish-your-app/upload-app-packages.md?pivots=store-installer-msix)). Click **Save** when you have finished specifying the packages to be included in this package flight.
+You have the option to select packages that were associated with a previous published submission (either a non-flighted submission, or one of your other package flights, if you have more than one). If you need to upload new packages to use for this package flight, you can upload them here (using the [same process as when you upload app packages to a regular non-flighted submission](publish-your-app/msix/upload-app-packages.md)). Click **Save** when you have finished specifying the packages to be included in this package flight.
 
 If your app supports multiple device families, make sure you include packages to support the same set of device families in your flight. People in your flight groups will **only** be able to get packages from that flight. They won't be able to access packages from other flights, or from your non-flighted submission. 
 
@@ -66,36 +66,36 @@ For more info, see [Gradual package rollout](gradual-package-rollout.md).
 
 ## Configure additional package flight options
 
-By default, your package flight will be published and made available to your flight group as soon as it completes the certification process. If you'd like to change the [publish date](publish-your-app/price-and-availability.md?pivots=store-installer-msix#publish-date), you can do so in the **Flight options** section. Click **Save** to return to the package flight overview page. 
+By default, your package flight will be published and made available to your flight group as soon as it completes the certification process. If you'd like to change the [publish date](publish-your-app/msix/price-and-availability.md#publish-date), you can do so in the **Flight options** section. Click **Save** to return to the package flight overview page. 
 
 
 ## Submit your package flight to the Store
 
-When you've specified packages and configured any options needed, click **Submit to the Store**. Your package flight will then go through the [app certification process](publish-your-app/app-certification-process.md?pivots=store-installer-msix). 
+When you've specified packages and configured any options needed, click **Submit to the Store**. Your package flight will then go through the [app certification process](publish-your-app/msix/app-certification-process.md). 
 
-Note that the [certification process](publish-your-app/app-certification-process.md?pivots=store-installer-msix) is applied to package flights just the same as any submission, however some WACK failures are reported as **passing with notes** and will allow submission for flighting. This relaxation of the WACK checks is only while the package is flighting to a limited audience and is intended  to assist with package testing and preparation for release. WACK failures must be fixed before general release.
+Note that the [certification process](publish-your-app/msix/app-certification-process.md) is applied to package flights just the same as any submission, however some WACK failures are reported as **passing with notes** and will allow submission for flighting. This relaxation of the WACK checks is only while the package is flighting to a limited audience and is intended  to assist with package testing and preparation for release. WACK failures must be fixed before general release.
 
 People in your flight group(s) associated with that package flight who already have your app will now get an update using the packages you included in your package flight. If those people don’t have your app yet, they’ll get the packages from your package flight when they install it. 
 
 > [!NOTE]
-> People who have a package that is only available in a package flight can give the app a star rating and leave reviews, but their ratings and reviews won’t be shown to other customers. (This excludes legacy 7.x or 8.0 XAP packages; ratings and reviews left by members of your flight groups using those packages will be visible to other customers.) You can see ratings and feedback from all customers, including those in your flight groups, in the **Reviews** and **Feedback** reports for the app.
+> People who have a package that is only available in a package flight can give the app a star rating and leave reviews, but their ratings and reviews won’t be shown to other customers. You can see ratings and feedback from all customers, including those in your flight groups, in the **Reviews** and **Feedback** reports for the app.
 
 
 ## Device family support
 
 In most cases, you’ll want to include packages that support the same set of device families supported by your non-flighted submission. Device family availability for an app will always be based on the non-flighted submission, whether or not a customer is in a flight group.
 
-**If your non-flighted submission supports a device family that your package flight doesn’t support**, people in your flight group won’t be able to download the app on that device family. For example, if your non-flighted submission includes Mobile and Desktop packages, and you then create a package flight that only includes a Mobile package, people in your flight group will only be able to download the app on mobile devices, even though you do have a desktop package available to customers who aren’t in the flight. Even if you're only using the package flight to test changes in your Mobile package, you should include the Desktop package from your non-flighted submission in the package flight so that customers in the flight group are able to download your app on desktop devices.
+**If your non-flighted submission supports a device family that your package flight doesn’t support**, people in your flight group won’t be able to download the app on that device family.
 
-**If your package flight supports a device family that your non-flighted submission doesn’t support**, no one will be able to download the app on that device family, whether they’re in your flight group or not. For example, if your non-flighted submission only includes a Mobile package, and you then create a package flight that includes both Mobile and Desktop packages, people in your flight group will still only be able to download the app on mobile devices. The desktop package won’t be offered to anyone, even people in your flight group. If you want to make a desktop package available to people in your flight group, you’ll need to first update your non-flighted submission to include a desktop package. For the best experience for all of your app’s customers, your non-flighted submission should support the same device families as your package flight. 
+**If your package flight supports a device family that your non-flighted submission doesn’t support**, no one will be able to download the app on that device family, whether they’re in your flight group or not. For the best experience for all of your app’s customers, your non-flighted submission should support the same device families as your package flight. 
 
 > [!NOTE]
-> Packages added to your package flights can support any OS version (or any build of Windows 10 or Windows 11), but as noted above, people in flight groups running Windows 10 must be using a device running a version that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later) in order to get packages from the package flight.
+> Packages added to your package flights can support any OS version (or any build of Windows 10 or Windows 11), but as noted above, people in flight groups running Windows 10 must be using a device running a version that supports package flights (Windows.Desktop build 10586 or laterr) in order to get packages from the package flight.
 
 
 ## Update or modify your package flight
 
-To create a new submission for a package flight you've already published, click **Update** next to the flight name on your App overview page. You can then upload new packages (and remove unneeded packages), just as you would with a non-flighted submission. Make any other needed changes, and then click **Submit to the Store** to send the updated package flight through the [app certification process](publish-your-app/app-certification-process.md?pivots=store-installer-msix).
+To create a new submission for a package flight you've already published, click **Update** next to the flight name on your App overview page. You can then upload new packages (and remove unneeded packages), just as you would with a non-flighted submission. Make any other needed changes, and then click **Submit to the Store** to send the updated package flight through the [app certification process](publish-your-app/msix/app-certification-process.md).
 
 To modify an existing flight without creating and submitting a new update, click **Modify** next to the flight name. This lets you change details such as the flight groups, name, and rank, without  requiring that the package flight go through the certification process again. Note that if you have an update in progress, or if your package flight hasn’t been published yet, you won’t see the **Modify** option. 
 
@@ -117,7 +117,7 @@ For example, let's say you want to create two package flights in addition to you
 
 If you decide that one or more of the packages you included in a published package flight should be made available to customers who aren’t in a flight group, you can update your non-flighted submission to use those packages, without having to upload the same packages all over again. 
 
-When you create your new submission, on the [**Packages**](publish-your-app/upload-app-packages.md?pivots=store-installer-msix) page you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in the non-flighted submission.
+When you create your new submission, on the [**Packages**](publish-your-app/msix/upload-app-packages.md) page you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in the non-flighted submission.
 
 Note that all of the same package validation rules will apply, even when using packages from a previously published submission. 
 
