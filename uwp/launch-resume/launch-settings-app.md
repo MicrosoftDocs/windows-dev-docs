@@ -2,7 +2,7 @@
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app using the ms-settings URI scheme.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 06/21/2024
+ms.date: 07/24/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -80,6 +80,7 @@ The following sections describe different categories of ms-settings URIs used to
 - [Phone](#phone)
 - [Privacy](#privacy)
 - [Search](#search)
+- [Sound](#sound)
 - [Surface Hub](#surface-hub)
 - [System](#system)
 - [Time and language](#time-and-language)
@@ -303,6 +304,18 @@ The following sections describe different categories of ms-settings URIs used to
 | Search more details | ms-settings:search-moredetails |
 | Search Permissions | ms-settings:search-permissions |
 
+### Sound
+
+|Settings page| URI |
+|-------------|-----|
+| Volume mixer | ms-settings:apps-volume |
+| Sound | ms-settings:sound |
+| Sound devices | ms-settings:sound-devices |
+| Default microphone | ms-settings:sound-defaultinputproperties |
+| Default audio output| ms-settings:sound-defaultoutputproperties |
+| Audio device properties<br/>(specific device) | ms-settings:sound-properties?endpointId={0.0.0.00000000}.{bc8d17d6-f87a-4538-90ea-c1604c6dee2b}<br/><br/>**Note:** User of URI must know the `endpointId` string to use. |
+| Audio device properties<br/>(specific device) | ms-settings:sound-properties?interfaceId=\\\\?\\SWD#MMDEVAPI#{3.0.0.00000003}.{6C26BA7D-F0B2-4225-B422-8168C5261E45}#{e6327cad-dcec-4949-ae8a-991e976a79d2}<br/><br/>**Note:** User of URI must know the `interfaceId` string to use and the string must be escaped correctly before sending. |
+
 ### Surface Hub
 
 |Settings page| URI |
@@ -319,7 +332,6 @@ The following sections describe different categories of ms-settings URIs used to
 |-------------|-----|
 | About | ms-settings:about |
 | Advanced display settings | ms-settings:display-advanced (only available on devices that support advanced display options) |
-| App volume and device preferences | ms-settings:apps-volume (**Added in Windows 10, version 1903**) |
 | Battery Saver | ms-settings:batterysaver (only available on devices that have a battery, such as a tablet) |
 | Battery Saver settings | ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet) |
 | Battery use | ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet) |
@@ -345,8 +357,6 @@ The following sections describe different categories of ms-settings URIs used to
 | Phone | ms-settings:phone (**Deprecated in Windows 10, version 1809 and later**) |
 | Power & sleep | ms-settings:powersleep |
 | Presence sensing | ms-settings:presence (**Added in May Moment update for Windows 11, Version 22H2, Build 22624**) |
-| Sound | ms-settings:sound |
-| Sound devices | ms-settings:sound-devices |
 | Storage | ms-settings:storagesense |
 | Storage Sense | ms-settings:storagepolicies |
 | Storage recommendations | ms-settings:storagerecommendations |
