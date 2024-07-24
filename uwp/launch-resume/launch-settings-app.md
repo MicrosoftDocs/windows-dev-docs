@@ -313,8 +313,8 @@ The following sections describe different categories of ms-settings URIs used to
 | Sound devices | ms-settings:sound-devices |
 | Default microphone | ms-settings:sound-defaultinputproperties |
 | Default audio output| ms-settings:sound-defaultoutputproperties |
-| Audio device properties<br/>(specific device) | ms-settings:sound-properties?endpointId={0.0.0.00000000}.{bc8d17d6-f87a-4538-90ea-c1604c6dee2b}<br/><br/>**Note:** User of URI must know the `endpointId` string to use. |
-| Audio device properties<br/>(specific device) | ms-settings:sound-properties?interfaceId=\\\\?\\SWD#MMDEVAPI#{3.0.0.00000003}.{6C26BA7D-F0B2-4225-B422-8168C5261E45}#{e6327cad-dcec-4949-ae8a-991e976a79d2}<br/><br/>**Note:** User of URI must know the `interfaceId` string to use and the string must be escaped correctly before sending. |
+| Audio device properties<br/>(specific device) | ms-settings:sound-properties?endpointId={0.0.0.00000000}.{aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb}<br/><br/>**Note:** User of URI must know the `endpointId` string to use. |
+| Audio device properties<br/>(specific device) | ms-settings:sound-properties?interfaceId=\\\\?\\SWD#MMDEVAPI#{3.0.0.00000003}.{bbbbbbbb-1111-2222-3333-cccccccccccc}#{cccccccc-2222-3333-4444-dddddddddddd}<br/><br/>**Note:** User of URI must know the `interfaceId` string to use and the string must be escaped correctly before sending. |
 
 ### Surface Hub
 
