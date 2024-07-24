@@ -10,8 +10,6 @@ ms.localizationpriority: medium
 
 # Get started: Publish your first app in the Microsoft Store
 
-:::image type="content" source="./images/store-image.png" lightbox="./images/store-image.png" alt-text="Microsoft Store welcome banner":::
-
 ## Introduction
 
 Distributing apps via Microsoft Store is a good choice for developers of any app type and size. The Microsoft Store is a centralized hub for Windows users to discover and install a wide range of apps, providing developers access to a vast audience of over a billion users across Windows 10 and Windows 11. Microsoft Store also offers you various ways to make money from your apps, and lets you choose your own commerce platform and revenue sharing model. Microsoft Store also supports a wide range of app types and technologies, and allows you to bring your traditional desktop apps to the Store without changing your code or installer. 
