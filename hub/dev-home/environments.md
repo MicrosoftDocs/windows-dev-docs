@@ -7,41 +7,44 @@ ms.topic: overview
 
 # Environments in Dev Home
 
-A virtual environment is a self-contained workspace that allows you to maintain separate dependencies and settings for different projects, effectively isolating them from each other. The type of virtual environments supported currently include:
+A virtual environment is a self-contained workspace that allows you to maintain separate dependencies and settings for different projects, effectively isolating them from each other. The type of virtual environments supported and maintained by Microsoft currently include:
 
 - [Local Hyper-V virtual machine (VM)](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v)
 - [Microsoft Dev Box](/azure/dev-box/overview-what-is-microsoft-dev-box)
-- A [Windows Subsystem for Linux (WSL) distribution](/windows/wsl/install)
+- [Windows Subsystem for Linux (WSL) distribution](/windows/wsl/install)
 
-**Environments in Dev Home** can help you to centralize your interactions with these virtual or cloud environments in a single place.
+To add your own environment to Dev Home, see: [Build an extension for Environments in Dev Home](#build-an-extension-for-environments-in-dev-home).
 
-- Create and configure virtual environments associated with GitHub repositories, apps, and packages.
+**Environments in Dev Home** centralize your interactions with virtual or cloud environments in a single place.
+
+- View all of your environments in a single place
+- Create new environments and quickly configure them with repositories, apps, and packages.
 - Perform quick actions such as launch, snapshot, start, stop, or pinning environments to Windows Start menu or taskbar.
 
 ## Get started with Environments in Dev Home
 
-To get started using virtual environments in Dev Home, select the **Environments** tab in the left column user interface inside Dev Home. Once the Environments pane is open, select **+ Create Environment**.
-
-Each type of virtual environment in Dev Home is supported by a Dev Home extension. To add a new environment, you must ensure that the Dev Home extension supporting the associated virtual environment that you wish to use is installed.
+To get started using environments in Dev Home, select the **Environments** tab in the left column user interface inside Dev Home. Your existing environments will be displayed here. To create new environments, select **+ Create Environment**.
 
 - **Hyper-V extension**: Installed by default in Dev Home. By default, your local Hyper-V VMs will be visible on the Dev Home Environments page.
+  
+- **Windows Subsystem for Linux extension**: Installed by default in Dev Home. By default, your local WSL distributions will be visible on the Dev Home Environments page.
 
-- **Microsoft Dev Box**: To display Dev Box virtual environments, install the [Dev Home Azure extension](extensions.md#dev-home-azure-extension). Once installed, each Dev Box that you have set up on your Azure account will be visible on the Dev Home Environments page.
+- **Microsoft Dev Box**: To display Dev Box cloud environments, install the [Dev Home Azure extension](extensions.md#dev-home-azure-extension). Once installed, each Dev Box that you have in your Azure account will be visible on the Dev Home Environments page.
 
-- **WSL distributions**: To display Linux distributions install the [WSL extension](extensions.md).
+Each type of environment in Dev Home is supported by a Dev Home extension. To add a new environment, you must ensure that the Dev Home extension supporting the associated environment that you wish to use is installed.
 
 > [!TIP]
 > If you do not see the Environments tab in Dev Home or are having trouble, ensure that you have the latest version of Dev Home by running the command: `winget upgrade Microsoft.DevHome`.
 
 ## Manage your Environments in Dev Home
 
-Each virtual environment that has been installed in Dev Home can display some key information:
+Each environment in Dev Home can display some key information:
 
-1. The type of virtual environment (*such as Hyper-V VM, Microsoft Dev Box, more coming soon)*.
+1. The type of environment (*such as Hyper-V VM, WSL distro, Microsoft Dev Box, more coming soon)*.
 
-2. The name of the virtual environment instance *(whatever name you have chosen for the environment)*.
+2. The name of the environment instance *(whatever name you have chosen for the environment)*.
 
-3. Status of the virtual environment: started, stopped, running.
+3. Status of the environment: started, stopped, running.
 
 4. Environment specific information, such as the project name for a Microsoft Dev Box, the vCPU usage, the RAM usage, the storage capacity, the uptime, or checkpoints.
 
@@ -51,7 +54,7 @@ Each virtual environment offers the following quick actions:
 
 1. **Launch**: Connect to or launch the environment.
 
-    - Microsoft Dev Box will launch in the web browser by default. To launch the Dev Box in the new Windows App RDP client, install [Windows App](https://www.microsoft.com/store/productId/9N1F85V9T8BN) from Microsoft Store.
+    - Microsoft Dev Box will launch in the web browser by default. To launch the Dev Box in the new Windows App RDP client for a native experience, install [Windows App](https://www.microsoft.com/store/productId/9N1F85V9T8BN) from Microsoft Store.
 
 2. **Start** or **Stop**: Select the drop-drown arrow beside the Launch button to find the start and stop actions.
 
@@ -59,24 +62,24 @@ Each virtual environment offers the following quick actions:
 
     - The "Pin to Taskbar" and "Pin to Start menu" actions will not appear unless [Windows App](https://www.microsoft.com/store/productId/9N1F85V9T8BN) is installed from Microsoft Store.
 
-4. **Sync**: Select the **Sync** button on the top of the Dev Home Environments window if your virtual environment has been installed, but is not displayed. For example, if you have Dev Home open and simultaneously delete a Hyper-V VM outside of Dev Home, or create a new Microsoft Dev Box in the Azure portal, these changes may not be reflected in Dev Home until you select **Sync** or Dev Home relaunches.
+4. **Sync**: Select the **Sync** button on the top of the Dev Home Environments window to refresh the list of environments. For example, if you have Dev Home open and simultaneously delete a Hyper-V VM outside of Dev Home, or create a new Microsoft Dev Box in the Azure portal, these changes may not be reflected in Dev Home until you select **Sync** or Dev Home relaunches.
 
-## Create a new virtual environment using Dev Home
+## Create a new environment using Dev Home
 
-To create a new virtual environment:
+To create a new environment:
 
 1. Select **Create Environment** in the Environments or Machine Configuration window of Dev Home.
 
 2. Select the type of environment you would like to create (only supported and installed environment types will be available).
 
 3. Each environment can have different creation parameters, such as name, pool, project, image, and more. These specifications depend on the environment type.
-    - For Hyper-V VMs, currently quick-creation images are supported. Custom images (.iso, .vhd, .vhdx) for VM creation are not yet supported, but are in development.
+    - For Hyper-V VMs, currently Windows and Linux quick-creation images are supported. Custom images (.iso, .vhd, .vhdx) for VM creation are not yet supported, but are in development.
 
 ![Creating an environment](../images/devhome-environment-creation.png)
 
 ## Create a WinGet Configuration file for your Dev Home Environment
 
-If your virtual environment has Dev Home installed, you can launch the environment and use the Machine Configuration local setup tool.
+If your environment has Dev Home installed, you can launch the environment and use the Machine Configuration local setup tool.
 
 Alternatively, you can remotely configure your environment:
 
