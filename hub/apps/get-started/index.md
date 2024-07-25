@@ -30,10 +30,11 @@ We recommend WinUI and the Windows App SDK to create apps that look great and ta
 >
 > While WinUI is the native UI layer, you can use the Windows App SDK with WPF, WinForms, or Win32 apps. If you've developed apps for Windows before, but are looking to get started with the Windows App SDK in an existing app, see [Framework-specific guides](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
 
-
 ## WPF
 
 WPF is a well-established framework for Windows desktop applications with access to [.NET](/dotnet/desktop/wpf/overview/) or the [.NET Framework](/dotnet/framework/wpf/getting-started/). Like WinUI, it also uses XAML markup to separate UI from code. WPF provides a comprehensive set of application development features that include controls, data binding, layout, 2D and 3D graphics, animation, styles, templates, documents, media, text, and typography. WPF is part of .NET, so you can build applications that incorporate other elements of the .NET API.
+
+Additionally, you can now integrate a sandbox environment into your packaged WPF applications, providing an additional layer of security. This enhancement requires little to no change to your code, thanks to the new [Win32 App Isolation](https://github.com/microsoft/win32-app-isolation) security feature.
 
 > [!div class="button"]
 > [Get started with WPF](/dotnet/desktop/wpf/overview/)
@@ -62,6 +63,8 @@ Here are a few highlights of what the Win32 API and C++ offers to enable you to 
 - DirectX, in particular Direct3D and DirectCompute.
 - Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to create modern desktop Win32 apps with first-class access to Windows Runtime (WinRT) APIs.
 
+Additionally, you can now integrate a sandbox environment into your Win32 applications, providing an additional layer of security. This enhancement requires little to no change to your code, thanks to the new [Win32 App Isolation](https://github.com/microsoft/win32-app-isolation) security feature.
+
 > [!div class="button"]
 > [Get started with Win32](/windows/win32/desktop-programming/)
 
@@ -70,6 +73,8 @@ You also have access to modern Windows platform features and APIs provided by th
 ### [Windows Forms](#tab/windows-forms)
 
 Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to [.NET](/dotnet/desktop/winforms/overview) or the [.NET Framework](/dotnet/framework/winforms/getting-started-with-windows-forms). It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to rewrite your application to WinUI entails a complete re-write of your UI.
+
+Additionally, you can now integrate a sandbox environment into your packaged Windows Forms applications, providing an additional layer of security. This enhancement requires little to no change to your code, thanks to the new [Win32 App Isolation](https://github.com/microsoft/win32-app-isolation) security feature.
 
 > [!div class="button"]
 > [Get started with Windows Forms](/dotnet/desktop/winforms/overview)
