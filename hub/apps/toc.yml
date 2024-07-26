@@ -639,6 +639,8 @@ items:
                         href: publish/app-marketing-guidelines.md
                       - name: Link to your app
                         href: publish/link-to-your-app.md
+                      - name: Get the updated Microsoft Store Badge
+                        href: publish/microsoft-store-app-badge.md
                       - name: Make your app easier to promote
                         href: publish/make-your-app-easier-to-promote.md
                   - name: Engage with your customers
