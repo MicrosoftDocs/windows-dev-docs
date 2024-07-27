@@ -17,12 +17,12 @@ If you’re a developer with an app published on the Microsoft Store, and if you
 
 ## Old
 
-| ![old-badge-dark](https://github.com/user-attachments/assets/01b8dcdc-e002-4b3b-9a99-a02ad3887f52) | ![old-badge-light](https://github.com/user-attachments/assets/c4d2e80d-0eff-4cc0-b2c5-50c7a21f8816)  |
+| <img src="../images/old-badge-dark.png" width="200" alt="Old Store badge for dark mode">  | <img src="../images/old-badge-light.png" width="200" alt="Old Store badge for light mode"> |
 | ------------- | ------------- |
 
 ## New
 
-| <img src="https://github.com/user-attachments/assets/a33d46aa-9406-4f8c-bd25-f982d25dff7b" width="256" alt="new-badge-dark">  | <img src="https://github.com/user-attachments/assets/ea1118ca-da09-4107-a7c9-913416f925e8" width="256" alt="new-badge-light"> |
+| <img src="../images/new-badge-dark.png" width="256" alt="New Store badge for dark mode">  | <img src="../images/new-badge-light.png" width="256" alt="New Store badge for light mode"> |
 | ------------- | ------------- |
 
 
