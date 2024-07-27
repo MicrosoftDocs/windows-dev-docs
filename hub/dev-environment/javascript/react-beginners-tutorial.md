@@ -78,7 +78,7 @@ There are many ways to create an application with React (see the [React Overview
 
 ## Application file structure
 
-The intial file structure looks like
+The initial file structure looks like
 
 ```markdown
 hello-world

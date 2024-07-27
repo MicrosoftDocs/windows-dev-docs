@@ -136,7 +136,7 @@ The **MultithreadLock** helper class wraps the SharpDX **Multithread** class tha
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_MultithreadLock":::
 
-**SurfaceWithInfo** is used to associate an **IDirect3DSurface** with a **SystemRelativeTime** representing the a captured frame and the time it was captured, respectively.
+**SurfaceWithInfo** is used to associate an **IDirect3DSurface** with a **SystemRelativeTime** representing a captured frame and the time it was captured, respectively.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_SurfaceWithInfo":::
 

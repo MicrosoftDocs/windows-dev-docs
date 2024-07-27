@@ -121,7 +121,7 @@ In addition to all of the [Preview 1](#version-11-preview-1-110-preview1) featur
 **New features:**
 
 - Packaged apps can now force deploy the Windows App SDK runtime packages using the **DeploymentManager.Initialize** API.
-- The Bootstrapper API now includes new options for improved usability and troubleshooting. For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../use-windows-app-sdk-run-time.md) and [Rich information on Bootstrap initalization failure](https://github.com/microsoft/WindowsAppSDK/pull/2316).
+- The Bootstrapper API now includes new options for improved usability and troubleshooting. For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../use-windows-app-sdk-run-time.md) and [Rich information on Bootstrap initialization failure](https://github.com/microsoft/WindowsAppSDK/pull/2316).
 
 **Known limitations:**
 

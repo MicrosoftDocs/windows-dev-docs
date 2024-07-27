@@ -1951,7 +1951,7 @@ namespace Win32SubmissionApiCSharpSample
                     {
                         if(AppDraftStatus.errors[index].code == "packageuploaderror")
                         {
-                            throw new InvalidOperationException("Package Upload Failed. Please try commiting packages again.");
+                            throw new InvalidOperationException("Package Upload Failed. Please try committing packages again.");
                         }
                     }
                 }

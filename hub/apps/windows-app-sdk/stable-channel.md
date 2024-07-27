@@ -168,7 +168,7 @@ The WinUI `Maps` control is now available! This control is powered by WebView2 a
 
 - Panning and zooming with either the map buttons or touch.
 - Changing the style of the map to satellite, terrain, or street view. 
-- Programatically adding interactable pins with developer-customizable icons to the map. 
+- Programmatically adding interactable pins with developer-customizable icons to the map. 
 - Developer customization for where the map is centered on initial load.
 - Control for developers over hiding or showing the buttons for panning, zooming, and map styles.
 
@@ -195,7 +195,7 @@ The visuals of the `CommandBarFlyout` have been updated to display a text label 
 
 The WinUI `WebView2` control now exposes the ability to customize the underlying `CoreWebView2` object with a custom `CoreWebView2Environment` and `CoreWebView2ControllerOptions`. This enables the app author to specify an alternate path from which to load the WebView2Runtime, choose to use a different *UserDataFolder*, or set options such as *IsPrivateModeEnabled* and *ScriptLocale*.
 
-### Suppport for .NET 8
+### Support for .NET 8
 
 We added support for .NET 8 in a recent 1.4 servicing release, but that still kept the warning for the use of platform-specific RIDs. In 1.5, we completed that work so that the warning is no longer present.
 
