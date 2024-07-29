@@ -13,7 +13,9 @@ ms.localizationpriority: medium
 
 We’ve refreshed the Microsoft Store badge to feature the new logo, with a more refined call-to-action to give users more confidence to acquire your app. These will go live on our [badge creator page](https://apps.microsoft.com/badge) on **August 12, 2024** in all supported languages.
 
-If you’re a developer with an app published on the Microsoft Store, and if you’ve been using these badges externally, you should switch to the new design once they’re live.
+## How do I get the new badge?
+
+If you’re a developer with an app published on the Microsoft Store, and if you’ve been using these badges externally using code from our badge generator page linked above, you'll get the new badge automatically once it goes live. However, if you've got a custom implementation of the badge on your website, you should switch to the new design.
 
 ## Old
 
