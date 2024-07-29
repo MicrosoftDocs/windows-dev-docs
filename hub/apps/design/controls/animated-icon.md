@@ -2,7 +2,7 @@
 description: An AnimatedIcon is a control which plays animated images in response to user interaction and visual state changes.
 title: AnimatedIcon
 template: detail.hbs
-ms.date: 03/24/2022
+ms.date: 07/29/2024
 ms.topic: article
 ms.custom: 20H2
 ms.localizationpriority: medium
@@ -78,7 +78,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [AnimatedIcon class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the AnimatedIcon in action](winui3gallery:/item/AnimatedIcon).
+> [Open the WinUI 3 Gallery app to see AnimatedIcon in action](winui3gallery:/item/AnimatedIcon)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -236,5 +236,5 @@ private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
 
 ## Related articles
 
-- [Icons](/windows/uwp/design/style/icons)
-- [Animations in XAML](/windows/uwp/design/motion/xaml-animation)
+- [Icons in Windows apps](../style/icons.md)
+- [Motion for Windows apps](../motion/index.md)
