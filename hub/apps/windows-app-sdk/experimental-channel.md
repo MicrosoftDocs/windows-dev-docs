@@ -527,7 +527,7 @@ A new `TitleBar` control makes it easy to create a great, customizable titlebar 
 - An integrated back button
 - The ability to add a custom control like a search box
 - Automatic hiding and showing of elements based on window width
-- Affordances for showing active or deactive window state
+- Affordances for showing active or inactive window state
 - Support for default titlebar features including draggable regions in empty areas, theme responsiveness, default caption (min/max/close) buttons, and built-in accessibility support
 
 The `TitleBar` control is designed to support various combinations of titlebars, making it flexible to create the experience you want without having to write a lot of custom code. We took feedback from the [community toolkit titlebar prototype](https://github.com/CommunityToolkit/Labs-Windows/discussions/454) and look forward to additional feedback!

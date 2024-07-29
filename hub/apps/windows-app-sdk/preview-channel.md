@@ -55,7 +55,7 @@ The initial release of the WinUI `Maps` control is now available! This control i
 
 - Panning and zooming with either the map buttons or touch.
 - Changing the style of the map to satellite, terrain, or street view. 
-- Programatically adding interactable pins with developer-customizable icons to the map. 
+- Programmatically adding interactable pins with developer-customizable icons to the map. 
 - Developer customization for where the map is centered on initial load.
 - Control for developers over hiding or showing the buttons for panning, zooming, and map styles.
 

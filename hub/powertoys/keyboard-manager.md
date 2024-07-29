@@ -182,7 +182,7 @@ To select a key or shortcut to remap:
 
 Once you select **Select**, a dialog window will open in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. To leave the dialog, hold <kbd>Esc</kbd>.
 
-Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can not use the type-key feature while the drop-down menu is open.
+Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can't use the type-key feature while the drop-down menu is open.
 
 ## Orphaning Keys
 

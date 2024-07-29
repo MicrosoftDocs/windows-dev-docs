@@ -60,7 +60,7 @@ Follow the steps in this section to modify an existing WinUI 3-based app that us
 
 If you already have a solution for a WinUI 3 desktop app (see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)) that includes a **Windows Application Packaging Project** (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)), then open that solution in Visual Studio now.
 
-If not, then create a new WinUI 3 desktop app in Visual Studio by using the **Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)** template. Your solution will look similiar to the screenshot below.
+If not, then create a new WinUI 3 desktop app in Visual Studio by using the **Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)** template. Your solution will look similar to the screenshot below.
 
 ![A solution using the packaging project](images/single-project-packaging-project.png)
 
