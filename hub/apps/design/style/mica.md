@@ -67,7 +67,7 @@ Card pattern content layer<br/>
 
 Mica is ideal as a foundation layer in your app's hierarchy due to its inactive and active states and subtle personalization. To follow the two-layer [Layering and Elevation](../signature-experiences/layering.md) system, we encourage you to apply Mica as the base layer of your app and add an additional content layer that sits on top of the base layer. The content layer should pick up the material behind it, Mica, using the `LayerFillColorDefaultBrush`, a low-opacity solid color, as its background. Our recommended content layer patterns are:
 
-* **Standard pattern**: A contiguous background for large areas that need a distinct hierarchial differentiation from the base layer. The `LayerFillColorDefaultBrush` should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).
+* **Standard pattern**: A contiguous background for large areas that need a distinct hierarchical differentiation from the base layer. The `LayerFillColorDefaultBrush` should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).
 * **Card pattern**: Segmented cards for apps that are designed with multiple sectioned and discontinuous UI components. For the definition of the card UI using the `LayerFillColorDefaultBrush`, see [Layering and Elevation](../signature-experiences/layering.md) guidance.
 
 To give your app's window a seamless look, Mica should be visible in the title bar if you choose to apply the material to your app. You can show Mica in the title bar by extending your app into the non-client area and creating a transparent custom title bar. For more info, see [Title bar](../basics/titlebar-design.md).
@@ -104,7 +104,7 @@ A common scenario for using Mica Alt is when you are creating an application wit
 
 * **Mica Alt**: The base layer.
 * **Commanding layer**: Requires distinct hierarchical differentiation from the base layer. The `LayerOnMicaBaseAltFillColorDefaultBrush` should be applied to the commanding areas of your WinUI app surfaces (e.g. MenuBar, navigation structure, etc.)
-* **Content layer**: A contiguous background for large areas that need a distinct hierarchial differentiation from the commanding layer. The `LayerFillColorDefaultBrush` should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).
+* **Content layer**: A contiguous background for large areas that need a distinct hierarchical differentiation from the commanding layer. The `LayerFillColorDefaultBrush` should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).
 
 To give your app's window a seamless look, Mica Alt should be visible in the title bar if you choose to apply the material to your app. You can show Mica Alt in the title bar by extending your app into the non-client area and creating a transparent custom title bar.
 
