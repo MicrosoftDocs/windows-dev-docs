@@ -167,6 +167,8 @@
       href: controls/forms.md
     - name: Media, graphics, and shapes
       items:
+        - name: Icons in Windows apps
+          href: style/icons.md
         - name: Animated icons
           href: controls/animated-icon.md
         - name: Images and image brushes
