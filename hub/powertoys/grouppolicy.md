@@ -101,8 +101,18 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Crop And Lock|Crop And Lock: Configure enabled state|ConfigureEnabledUtilityCropAndLock|
 |Environment Variables|Environment Variables: Configure enabled state|ConfigureEnabledUtilityEnvironmentVariables|
 |FancyZones|FancyZones: Configure enabled state|ConfigureEnabledUtilityFancyZones|
-|File Explorer add-ons|File Explorer add-ons: Configure enabled state|ConfigureEnabledUtilityFileExplorerAddOns
 |File Locksmith|File Locksmith: Configure enabled state|ConfigureEnabledUtilityFileLocksmith|
+|Gcode file preview|Gcode file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodePreview|
+|Markdown file preview|Markdown file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMarkdownPreview|
+|PDF file preview|PDF file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFPreview|
+|QOI file preview|QOI file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerQOIPreview|
+|Source code file preview|Source code file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMonacoPreview|
+|SVG file preview|SVG file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGPreview|
+|Gcode file thumbnail|Gcode file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodeThumbnails|
+|PDF file thumbnail|PDF file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFThumbnails|
+|QOI file thumbnail|QOI file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerQOIThumbnails|
+|STL file thumbnail|STL file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSTLThumbnails|
+|SVG file thumbnail|SVG file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGThumbnails|
 |Hosts file editor|Hosts file editor: Configure enabled state|ConfigureEnabledUtilityHostsFileEditor|
 |Image Resizer|Image Resizer: Configure enabled state|ConfigureEnabledUtilityImageResizer|
 |Keyboard Manager|Keyboard Manager: Configure enabled state|ConfigureEnabledUtilityKeyboardManager|
@@ -718,60 +728,3 @@ You can set the enabled state for all plugins not controlled by this policy usin
     > [!NOTE]
     > Syntax for the :::no-loc text="value"::: property from the :::no-loc text="data"::: element:
     > `<PluginID>&#xF000;<Number>&#xF000;<PluginID>&#xF000;<Number>`
-
-### File Explorer add-ons
-
-#### Configure enabled state for individual add-ons
-
-Supported on PowerToys 0.83.0 or later, depending on the add-on.
-
-For each File Explorer add-on, there's a "Configure enabled state" policy, which forces an enabled state for the add-on.
-
-- If you enable this setting, the add-on will be always enabled and the user won't be able to disable it.
-- If you disable this setting, the add-on will be always disabled and the user won't be able to enable it.
-- If you don't configure this setting, users are able to enable or disable the add-on.
-
-The policy "File Explorer add-ons: Configure enabled state" will override this policy.
-
-> [!NOTE]
-> PDF file preview: There have been reports of incompatibility between the PDF Preview Handler and Outlook.
-
-##### Table of utility Policies
-
-| Utility | ADMX GP name |ADMX GP unique name /</br>Registry value name /</br>Intune PolicyID |
-| :--- | :--- | :--- |
-|Gcode file preview|Gcode file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodePreview|
-|Markdown file preview|Markdown file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMarkdownPreview|
-|PDF file preview|PDF file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFPreview|
-|QOI file preview|QOI file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerQOIPreview|
-|Source code file preview|Source code file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMonacoPreview|
-|SVG file preview|SVG file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGPreview|
-|Gcode file thumbnail|Gcode file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodeThumbnails|
-|PDF file thumbnail|PDF file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFThumbnails|
-|QOI file thumbnail|QOI file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerQOIThumbnails|
-|STL file thumbnail|STL file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSTLThumbnails|
-|SVG file thumbnail|SVG file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGThumbnails|
-
-##### Group Policy (ADMX) information
-
-- GP unique name: See the table above.
-- GP name: See the table above.
-- GP path: Administrative Templates/Microsoft PowerToys/File Explorer add-ons
-- GP scope: Computer and user
-- ADMX file name: _PowerToys.admx_
-
-##### Registry information
-
-- Path: Software\Policies\PowerToys
-- Name: See the table above.
-- Type: DWORD
-- Example value: `0x00000000`
-
-##### Intune information
-
-- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~FileExplorerAddOns/<PolicyID>`
-
-> [!Note]
-> Please see the table above for the _PolicyID_ value.
-
-- Example value: `<disabled/>`
