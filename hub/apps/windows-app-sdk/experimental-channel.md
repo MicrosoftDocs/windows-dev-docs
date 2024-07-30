@@ -96,7 +96,7 @@ Microsoft.Windows.Management.Deployment
     PackageReadyOrNewerAvailableStatus
 ```
 
-### Additional 1.6-experimental1 APIs
+### Additional 1.6-experimental2 APIs
 
 This release includes the following new and modified experimental APIs:
 
@@ -423,7 +423,7 @@ Microsoft.Windows.Widgets.Providers
 - Fixed an issue where initial keyboard focus was not correctly given to a `WebView2` when that was the only control in the window.
 - Fixed an issue when using `ExtendsContentIntoTitleBar=true` where the Min/Max/Close buttons did not correctly appear in the UI Automation, which prevented Voice Access from showing numbers for those buttons.
 - Fixed an issue where an app might crash in a lock check due to unexpected reentrancy.
-- Fixed an issue from 1.6-experimental1 where `TitleBar` only shows the Icon and Title because some elements did not show up on load.
+- Fixed an issue from 1.6-experimental1 where `TitleBar` only showed the Icon and Title because some elements did not show up on load.
 - Fixed an issue where `Hyperlink` colors did not correctly update when switching into a high contrast theme.
 - Fixed an issue where changing the collection of a `ListView` in a background window may incorrectly move that window to the foreground and take focus.
 - Fixed an issue from 1.6-experimental1 where setting `AcrylicBrush.TintLuminosityOpacity` in .xaml in a class library project would crash with a type conversion error.
@@ -527,7 +527,7 @@ A new `TitleBar` control makes it easy to create a great, customizable titlebar 
 - An integrated back button
 - The ability to add a custom control like a search box
 - Automatic hiding and showing of elements based on window width
-- Affordances for showing active or deactive window state
+- Affordances for showing active or inactive window state
 - Support for default titlebar features including draggable regions in empty areas, theme responsiveness, default caption (min/max/close) buttons, and built-in accessibility support
 
 The `TitleBar` control is designed to support various combinations of titlebars, making it flexible to create the experience you want without having to write a lot of custom code. We took feedback from the [community toolkit titlebar prototype](https://github.com/CommunityToolkit/Labs-Windows/discussions/454) and look forward to additional feedback!

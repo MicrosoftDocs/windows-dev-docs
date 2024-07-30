@@ -2,7 +2,7 @@
 description: This article explains how to add dragging and dropping in your Windows app.
 title: Drag and drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
-ms.date: 09/24/2020
+ms.date: 07/12/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -15,7 +15,7 @@ Drag and drop is an intuitive way to transfer data within an application or betw
 
 The drag source, which is the application or area where the drag gesture is triggered, provides the data to be transferred by filling a data package object that can contain standard data formats, including text, RTF, HTML, bitmaps, storage items or custom data formats. The source also indicates the kind of operations it supports: copy, move or link. When the pointer is released, drop occurs. The drop target, which is the application or area underneath the pointer, processes the data package and returns the type of operation it performed.
 
-During drag and drop, the drag UI provides a visual indication of the type of drag-and-drop operation that’s taking place. This visual feedback is initially provided by the source but can be changed by the targets as the pointer moves over them.
+During drag and drop, the drag UI provides a visual indication of the type of drag-and-drop operation that's taking place. This visual feedback is initially provided by the source but can be changed by the targets as the pointer moves over them.
 
 Modern drag and drop is available on all devices that support UWP. It allows data transfer between or within any kind of application, including Classic Windows apps, although this article focuses on the XAML API for modern drag and drop. Once implemented, drag and drop works seamlessly in all directions, including app-to-app, app-to-desktop, and desktop-to app.
 
@@ -51,10 +51,12 @@ For other content, you'll need to handle the [**DragStarting**](/uwp/api/windows
 
 ## Enable dropping
 
-The following markup shows how to set a specific area of the app as valid for dropping by using the [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) in XAML. If a user tries to drop somewhere else, the system won't let them. If you want users to be able to drop items anywhere on your app, set the entire background as a drop target.
+The following markup shows how the [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) property can be used to specify that an area of the app is a valid drop target for a dragged item (the specified area must not have a null background, it must be able to receive pointer input, and the item cannot be dropped anywhere other than the specified area).
+
+> [!NOTE]
+> Typically, a UI element has a null background by default. If you want users to be able to drop an item anywhere within your app, the app background cannot be null (set `Background="Transparent"` if the background should not be visible).
 
 :::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDropArea":::
-
 
 ## Handle the DragOver event
 

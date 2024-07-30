@@ -1,7 +1,7 @@
 ---
 description: Build a C# .NET and C++ desktop (Win32) application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
 title: Build a C# .NET app with WinUI 3 and Win32 interop
-ms.date: 08/02/2021
+ms.date: 07/09/2024
 ms.topic: article
 keywords: windows 10, windows 11, uwp, COM, win32, winui, interop
 ms.author: kbridge
@@ -16,8 +16,7 @@ In this article, we step through how to build a basic **C# .NET** application wi
 
 ## Prerequisites
 
-1. Set up your development environment as described in [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
-2. Test your configuration by following along with the steps in [Create your first WinUI 3 project](create-your-first-winui3-app.md).
+1. [Get started with WinUI](../../get-started/start-here.md)
 
 ## Basic managed C#/.NET app
 

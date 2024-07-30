@@ -1,7 +1,7 @@
 ---
 title: PowerToys File Explorer add-ons utility for Windows
 description: A File Explorer add-on that enables different preview pane and thumbnail renderers for different file types.
-ms.date: 04/19/2023
+ms.date: 07/16/2024
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Monaco]
@@ -56,7 +56,7 @@ Open Windows File Explorer, go to **View** in the Explorer ribbon and select **P
 ![PowerToys Preview Pane demo for Windows 10](../images/powertoys-fileexplorer.gif)
 
 > [!NOTE]
-> It is not possible to change the background color of the preview pane, so if you are working with transparent images with white shapes, you may not be able to see them in the preview.
+> It isn't possible to change the background color of the preview pane, so if you're working with transparent images with white shapes, you may not be able to see them in the preview.
 
 ## Thumbnail Previews
 
@@ -76,3 +76,5 @@ Thumbnail preview supports:
 ### Settings for Stereolithography (.stl) files
 
 Expand the **Stereolithography** section to change the background color.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

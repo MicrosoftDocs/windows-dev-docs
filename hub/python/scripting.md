@@ -58,7 +58,7 @@ VS Code contains a [built-in terminal](https://code.visualstudio.com/docs/editor
 1. Open the terminal in VS Code, select **View** > **Terminal**, or alternatively use the shortcut **Ctrl+`** (using the backtick character).
 
     > [!NOTE]
-    > The default terminal should be PowerShell, but if you need to change it, use **Ctrl+Shift+P** to enter the command pallette. Enter **Terminal: Select Default Shell** and a list of terminal options will display containing PowerShell, Command Prompt, WSL, etc. Select the one you'd like to use and enter **Ctrl+Shift+`** (using the backtick) to create a new terminal.
+    > The default terminal should be PowerShell, but if you need to change it, use **Ctrl+Shift+P** to enter the command palette. Enter **Terminal: Select Default Shell** and a list of terminal options will display containing PowerShell, Command Prompt, WSL, etc. Select the one you'd like to use and enter **Ctrl+Shift+`** (using the backtick) to create a new terminal.
 
 2. Inside your VS Code terminal, open Python by entering: `python`
 

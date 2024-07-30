@@ -2,7 +2,7 @@
 description: Learn about app and system icons in Windows 11.
 title: Iconography in Windows 11
 ms.assetid: EC94D54F-4C24-4E16-B8E0-08F3916C00F0
-ms.date: 06/24/2021
+ms.date: 07/24/2024
 ms.topic: article
 keywords: windows 11, design, ui, uiux, icons, app icons, system icons, segoe fluent icons, segoe
 ms.localizationpriority: medium
@@ -14,19 +14,20 @@ Iconography is a set of visual images and symbols that help users understand and
 
 Windows 11 uses three types of icons: application, system, and file type. This article focuses on the first two.
 
+This article describes how the [Fluent Design language](https://fluent2.microsoft.design/) is applied to Windows apps. For more information, see [Fluent Design Iconography](https://fluent2.microsoft.design/iconography).
 ## Application icons
 
 ![An abstract application icon for a hypothetical maps app.](images/iconography_hero_1880.png)
 
 Application icons represent your app in the Windows shell. They're primarily used to open your application, but they also represent your app wherever it appears in the Windows shell.
 
-App icons should represent your app's core functionality through a metaphor. For more information about designing and constructing your app's icon, see [Iconography in Windows](../style/iconography/overview.md).
+App icons should represent your app's core functionality through a metaphor. For more information about designing and constructing your app's icon, see [App icons](../style/iconography/overview.md).
 
 ## System icons
 
 ![A shopping cart icon from Segoe Fluent Icons.](images/iconography_SystemIcons.svg)
 
-Windows 11 introduces a new system icon font, [Segoe Fluent Icons](..\downloads\index.md#fonts). This new font complements [geometry](geometry.md) in Windows 11.
+Use system icons inside your app UI for items like command bars, navigation, or status indicators. Windows 11 introduces a new system icon font, [Segoe Fluent Icons](../style/segoe-fluent-icons-font.md). This new font complements [geometry](geometry.md) in Windows 11.
 
 All glyphs in Segoe Fluent Icons are drawn in a monoline style. That means they're created through a single stroke of 1 epx.
 
@@ -36,7 +37,9 @@ Glyphs in Segoe Fluent Icons follow three aesthetic principles:
 - **Harmonious**: Glyphs are based on simple and geometric forms.
 - **Evolved**: Glyphs use modern metaphors that are easily understood.
 
-### Sizing
+For more information about using icons in your app UI, see [Icons in Windows apps](../style/icons.md).
+
+### Icon size
 
 ![A properly sized printer icon.](images/iconography_IconSizing.svg)
 
@@ -44,7 +47,7 @@ Font metrics for Segoe Fluent Icons match how designers and developers are accus
 
 Each font glyph is designed so that the footprint of the icon area is a square em. An icon with a 16-epx font size is the equivalent of a 16x16-epx icon, to make sizing and positioning more predictable.
 
-### Anatomy
+### Modifiers
 
 You can visually construct system icon glyphs by combining a base icon with a modifier icon.
 
@@ -83,7 +86,7 @@ Understand the cultural connotations of symbols. Although iconography doesn't re
 
 ## Examples
 
-> [!TIP]
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Iconography principles in action](winui3gallery:/item/Icons).
-> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+> [Open the WinUI 3 Gallery app and see Iconography principles in action](winui3gallery:/item/Iconography)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]

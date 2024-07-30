@@ -10,10 +10,6 @@ ms.localizationpriority: medium
 
 This article guides you on a smooth onboarding process, various distribution options, recommended best practices, and scenarios to consider when distributing your app via the Store, to ensure a better customer experience. 
 
-## Create a Partner Center account
-
-You must have a [Partner Center account](https://partner.microsoft.com/dashboard/) to submit an app to the Store. If you don’t have an account, follow these [steps](../publish/partner-center/partner-center-developer-account.md) for account creation and then follow these [steps](../publish/publish-your-app/overview.md) to effortlessly introduce your application to the Store.
-
 ## Distribution options – Select the one that works best for you!
 
 When you are distributing your Win32 app — which may be built using a variety of frameworks and technologies such as Windows App SDK, WPF, WinForms, Electron, QT, and others — through the Microsoft Store, there are two main options you can choose:

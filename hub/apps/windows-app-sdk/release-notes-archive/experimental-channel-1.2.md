@@ -59,9 +59,9 @@ New to this release, the experimental classes in the Microsoft.UI.Content namesp
 Notable APIs:
 
 - `ContentIsland` - brings together Output, Input, and Accessibility and provides the abstraction for interactive content. A custom visual tree can be constructed and made interactive with these APIs.
-- `DesktopChildSiteBridge` - enables a `ContentIsland` to be connected into a HWND-based hierarchy.
+- `DesktopChildSiteBridge` - enables a `ContentIsland` to be connected into an HWND-based hierarchy.
 
-Check out the [sample on GitHub](https://aka.ms/windowsappsdk/1.2/1.2.0-experimental1/content-islands-sample) for more information.
+Check out the [sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Islands) for more information.
 
 ### Dispatching
 

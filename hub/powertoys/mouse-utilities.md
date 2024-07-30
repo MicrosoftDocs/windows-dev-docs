@@ -85,3 +85,5 @@ Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 | Automatically hide crosshairs when the mouse pointer is hidden | |
 | Fix crosshairs length | |
 | Crosshairs fixed length (px) | |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

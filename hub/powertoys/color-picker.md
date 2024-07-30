@@ -144,3 +144,5 @@ Color formats can contain any words or characters that you prefer. For example, 
 - Color Picker can't display on top of the Start menu or Action Center, but you can still pick a color.
 - If you started the currently focused application with an administrator elevation (**Run as administrator**), the Color Picker activation shortcut won't work, unless you also started PowerToys with administrator elevation.
 - Wide Color Gamut (WCG) and High Dynamic Range (HDR) color formats are currently not supported.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

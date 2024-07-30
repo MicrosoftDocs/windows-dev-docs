@@ -64,5 +64,5 @@ UWP apps are packaged and deployed using MSIX.
 
 ## Related topics
 
-- [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
+- [Get started with WinUI](../get-started/start-here.md)
 - [Get started developing apps](../get-started/index.md)

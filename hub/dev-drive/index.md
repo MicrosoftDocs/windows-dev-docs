@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 02/26/2024
+ms.date: 07/22/2024
 ---
 
 # Set up a Dev Drive on Windows 11
@@ -18,7 +18,7 @@ See the blog post: [Dev Drive for Performance Improvements in Visual Studio and 
 
 ## How to set up a Dev Drive
 
-To set up a new Dev Drive, open Windows **Settings** and navigate to **System** > **Storage** > **Advanced Storage Settings** > **Disks & volumes**. Select **Create dev drive**. **Before setting up a Dev Drive, ensure that the prerequisites are met.* You can also set up a Dev Drive using **[Dev Home's Machine configuration](../dev-home/setup.md#clone-a-github-repo-and-store-it-on-a-dev-drive)**.
+To set up a new Dev Drive, open Windows **Settings** and navigate to **System** > **Storage** > **Advanced Storage Settings** > **Disks & volumes**. Select **Create dev drive**. **Before setting up a Dev Drive, ensure that the prerequisites are met.* You can also set up a Dev Drive using **[Dev Home's Machine configuration](../dev-home/setup.md)**.
 
 ![Screenshot of System > Storage > Disks & volumes](../images/dev-drive-create.png)
 
@@ -349,7 +349,7 @@ Yes. If you have the space, you can create as many Dev Drives as you would like.
 
 ### What do I need to know about using Dev Drive with Visual Studio?
 
-Once you have a Dev Drive created, Visual Studio will automatically recognize it when you're creating a new project, or cloning an existing project, and pick that filepath by default. To optimize performance when using Visual Studio, we recommend moving any project code, [package caches](#storing-package-cache-on-dev-drive), and `Copy on write` MS Build tasks to the Dev Drive that may have previously been saved elsewhere. (See [How to change the build output directory](/visualstudio/ide/how-to-change-the-build-output-directory) in the Visual Studio docs.) We also recommend that you consider redirecting `%TEMP%` and `%TMP%` envvars to Dev Drive. Many programs use these, so beware of potential side effects. We also recommend using [performance mode for Microsoft Defender](#what-is-microsoft-defender-performance-mode) for asychronous performance gains using Dev Drive. Turning Microsoft Defender completely off may result in the most maximum performance gains, but this may increase security risks and is a setting controlled by the system admin.
+Once you have a Dev Drive created, Visual Studio will automatically recognize it when you're creating a new project, or cloning an existing project, and pick that filepath by default. To optimize performance when using Visual Studio, we recommend moving any project code, [package caches](#storing-package-cache-on-dev-drive), and `Copy on write` MS Build tasks to the Dev Drive that may have previously been saved elsewhere. (See [How to change the build output directory](/visualstudio/ide/how-to-change-the-build-output-directory) in the Visual Studio docs.) We also recommend that you consider redirecting `%TEMP%` and `%TMP%` envvars to Dev Drive. This will require also adding the `WinSetupMon` filter, which is needed for the Windows Update process. (See [Filters for common scenarios](#filters-for-common-scenarios). Many programs use these, so beware of potential side effects. We also recommend using [performance mode for Microsoft Defender](#what-is-microsoft-defender-performance-mode) for asynchronous performance gains using Dev Drive. Turning Microsoft Defender completely off may result in the most maximum performance gains, but this may increase security risks and is a setting controlled by the system admin.
 
 For more information, see the blog post: [Dev Drive for Performance Improvements in Visual Studio and Dev Boxes]( https://aka.ms/vsdevdrive).
 

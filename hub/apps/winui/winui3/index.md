@@ -2,7 +2,7 @@
 title: WinUI 3
 description: Provides info for WinUI 3 and Windows app development with the Windows App SDK. 
 ms.topic: article
-ms.date: 11/10/2021
+ms.date: 07/15/2024
 ---
 
 # WinUI in the Windows App SDK (WinUI 3)

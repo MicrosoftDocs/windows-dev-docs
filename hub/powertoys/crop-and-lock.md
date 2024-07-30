@@ -44,3 +44,5 @@ Not every window will react well to being contained in another application so th
 - Cropping maximized or full-screen windows in "Reparent" mode might not work. It's recommended to resize the window to fill the screen corners instead.
 - Some UWP apps won't react well to being cropped in "Reparent" mode. Windows Calculator is a notable example of this.
 - Applications that use sub-windows or tabs can react poorly to being cropped in "Reparent" mode. Notepad and OneNote are notable examples of applications that react poorly.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

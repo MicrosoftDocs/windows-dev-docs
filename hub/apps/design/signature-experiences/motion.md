@@ -1,7 +1,7 @@
 ---
 description: An overview of where and how motion is used in Windows 11
 title: Motion in Windows 11
-ms.date: 07/15/2021
+ms.date: 07/24/2024
 ms.topic: article
 keywords: windows 11, design, ui, uiux, motion
 ms.localizationpriority: medium
@@ -112,7 +112,7 @@ _Click the image to see it animated._
 
 #### Animated Icon: Adds delight and reveals information through micro interactions
 
-Use [animated icons](../controls/animated-icon.md) to implement lightweight, vector based, icons and illustrations with motion using [Lottie](/windows/communitytoolkit/animations/lottie) animations.
+Use [animated icons](../controls/animated-icon.md) to implement lightweight, vector-based icons and illustrations with motion using [Lottie](/windows/communitytoolkit/animations/lottie) animations.
 
 Animated icons draw attention to specific entry points, provide feedback from state to state, and add delight to an interaction.
 

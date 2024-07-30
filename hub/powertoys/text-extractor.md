@@ -1,7 +1,7 @@
 ---
 title: PowerToys Text Extractor utility for Windows
 description: Text Extractor is a convenient way to copy text from anywhere on your screen.
-ms.date: 04/19/2023
+ms.date: 07/16/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Text Extractor, Win]
 ---
@@ -20,7 +20,7 @@ Capture mode is closed immediately after text in the selected region is recogniz
 
 ## Adjust while trying to capture
 
-By holding <kbd>Shift</kbd>, you change from adjusting the capture region's size to moving the capture region. When you release <kbd>Shift</kbd>, you will be able to resize again.
+By holding <kbd>Shift</kbd>, you change from adjusting the capture region's size to moving the capture region. When you release <kbd>Shift</kbd>, you'll be able to resize again.
 
 > [!IMPORTANT]
 >
@@ -53,13 +53,14 @@ The list can be obtained via PowerShell by running the following commands:
 
 ### How to query for OCR language packs
 
-To return the list of all supported language packs, open PowerShell as an Administrator (right-click, then select "Run as Administrator"), and enter the following command:
+To return the list of all supported language packs, open PowerShell as an Administrator (right-click, then select "Run as Administrator") and enter the following command:
 
 ```powershell
 Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*' }
 ```
 
 An example output:
+
 ```powershell
 Name  : Language.OCR~~~el-GR~0.0.1.0
 State : NotPresent
@@ -112,3 +113,5 @@ This section will list possible errors and solutions.
 This message is shown when there are no available languages for recognition.
 
 If an OCR pack is supported and installed, but still is not available and your system drive _X:_ is different than "C:", then copy `X:/Windows/OCR` folder to `C:/Windows/OCR` to fix the issue.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

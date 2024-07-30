@@ -12,7 +12,7 @@ ms.date: 03/04/2021
 
 # Overview of developing on Windows with Rust
 
-It's not hard to get started with [Rust](https://www.rust-lang.org/). If you're a beginner who's interested in learning Rust using Windows, then we recommend that you follow each detail of this step-by-step guide. It shows you what to install, and how to set up your development evironment.
+It's not hard to get started with [Rust](https://www.rust-lang.org/). If you're a beginner who's interested in learning Rust using Windows, then we recommend that you follow each detail of this step-by-step guide. It shows you what to install, and how to set up your development environment.
 
 > [!TIP]
 > If you're already sold on Rust and you have your Rust environment already set up, and you just want to start calling Windows APIs, then feel free to jump forward to the [Rust for Windows, and the windows crate](rust-for-windows.md) topic.

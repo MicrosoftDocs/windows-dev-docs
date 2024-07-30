@@ -32,6 +32,14 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 ## Version 1.5
 
+### Version 1.5.5 (1.5.240627000)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
+- Fixed a potential crash during image loading when the image source is changed before loading completes.
+- Fixed a potential crash when using `InputNonClientPointerSource`.
+- Fixed an issue where a window containing only a WebView2 control doesn't correctly set initial keyboard focus into the WebView2, leaving it unusable by keyboard and accessibility tools. For more info, see GitHub issue [WebView2Feedback#2330](https://github.com/MicrosoftEdge/WebView2Feedback/issues/2330).
+
+
 ### Version 1.5.4 (1.5.240607001)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
@@ -160,7 +168,7 @@ The WinUI `Maps` control is now available! This control is powered by WebView2 a
 
 - Panning and zooming with either the map buttons or touch.
 - Changing the style of the map to satellite, terrain, or street view. 
-- Programatically adding interactable pins with developer-customizable icons to the map. 
+- Programmatically adding interactable pins with developer-customizable icons to the map. 
 - Developer customization for where the map is centered on initial load.
 - Control for developers over hiding or showing the buttons for panning, zooming, and map styles.
 
@@ -187,7 +195,7 @@ The visuals of the `CommandBarFlyout` have been updated to display a text label 
 
 The WinUI `WebView2` control now exposes the ability to customize the underlying `CoreWebView2` object with a custom `CoreWebView2Environment` and `CoreWebView2ControllerOptions`. This enables the app author to specify an alternate path from which to load the WebView2Runtime, choose to use a different *UserDataFolder*, or set options such as *IsPrivateModeEnabled* and *ScriptLocale*.
 
-### Suppport for .NET 8
+### Support for .NET 8
 
 We added support for .NET 8 in a recent 1.4 servicing release, but that still kept the warning for the use of platform-specific RIDs. In 1.5, we completed that work so that the warning is no longer present.
 

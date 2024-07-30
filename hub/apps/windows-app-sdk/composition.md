@@ -48,8 +48,8 @@ For more details about the Visual layer, see the [Visual layer overview](/window
 
 To use **Microsoft.UI.Composition** APIs in the Windows App SDK/WinUI 3:
 
-1. Download and install the latest release of the Windows App SDK. For more information, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
-2. And then follow the instructions to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
+1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../get-started/start-here.md).
+2. Create a new project as described in Get started with WinUI, or follow the instructions to [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
 To learn more about the availability of **Microsoft.UI.Composition** in the Windows App SDK/WinUI 3, see [release channels](release-channels.md).
 

@@ -14,7 +14,7 @@ Screen ruler allows you to quickly measure pixels on your screen, based on image
 
 ## How to activate
 
-Use <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate and select which tool you want to measure with. To close, use <kbd>Esc</kbd> or select &#9587; in the toolbar.
+Use <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate and select which tool you want to measure with. To close, use <kbd>Esc</kbd> or select &#9587; in the toolbar.
 
 ## How to use
 
@@ -41,3 +41,5 @@ From the Settings menu, the following options can be configured:
 | Pixel tolerance for edge detection | A value between 0-255. A higher value will provide a higher variation so it will be more forgiving with things like gradients and shadows. |
 | Draw feet on the cross | Adds small, serif-like "feet" for additional visual recognition. |
 | Line color | The color for the line that does the measuring. |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

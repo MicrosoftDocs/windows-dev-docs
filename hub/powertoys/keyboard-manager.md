@@ -182,7 +182,7 @@ To select a key or shortcut to remap:
 
 Once you select **Select**, a dialog window will open in which you can enter the key or shortcut, using your keyboard. Once you’re satisfied with the output, hold <kbd>Enter</kbd> to continue. To leave the dialog, hold <kbd>Esc</kbd>.
 
-Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can not use the type-key feature while the drop-down menu is open.
+Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can't use the type-key feature while the drop-down menu is open.
 
 ## Orphaning Keys
 
@@ -241,3 +241,5 @@ If you have tried to remap a key or shortcut and are having trouble, it could be
 - Note that some keyboard keys actually send a shortcut. Common examples are the Office key (Win+Ctrl+Alt+Shift) and the Copilot key (Win + C or Left-Shift + Windows key + F23).
 
 See the list of all [open keyboard manager issues](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-Keyboard+Shortcut+Manager%22).
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
