@@ -617,7 +617,7 @@ If you disable or don't configure this policy, no predefined rules are applied.
 
 - Path: Software\Policies\PowerToys
 - Name: MwbPolicyDefinedIpMappingRules
-- Type: DWORD
+- Type: MULTI_SZ
 - Example value:
 
     ```
