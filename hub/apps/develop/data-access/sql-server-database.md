@@ -237,3 +237,7 @@ See [Share code between desktop and UWP](/windows/uwp/porting/desktop-to-uwp-mig
 ### Add master detail pages with Azure SQL back ends
 
 See [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database).
+
+## See also
+
+- [Data access in Windows apps](index.md)
