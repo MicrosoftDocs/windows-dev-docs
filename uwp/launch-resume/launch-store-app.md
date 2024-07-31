@@ -1,7 +1,7 @@
 ---
 title: Using ms-windows-store URIs
 description: Launch the Microsoft Store app directly to a landing page or your product's page.
-ms.date: 01/11/2022
+ms.date: 07/31/2024
 ms.topic: article
 ---
 
@@ -34,9 +34,9 @@ Starting with the October 2021 update to the Store app, there are two modes avai
 
 | URI Scheme                                                          | Description | Notes |
 |---------------------------------------------------------------------|-------------|-------|
-| ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL                      | Launches the full product details page (PDP) for a product | This is the recommended way to link to a specific product.
-| ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe | Launches the full product details page (PDP) for a product | Using the package family name is deprecated.
-| ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117  | Launches the full product details page (PDP) for a product | Using the App ID is deprecated.
+| ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL                      | Launches the full product details page (PDP) for a product | This is the recommended way to link to a specific product. |
+| ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe | Launches the full product details page (PDP) for a product | Using the package family name is deprecated. |
+| ms-windows-store://pdp/?AppId=00001111-aaaa-2222-bbbb-3333cccc4444  | Launches the full product details page (PDP) for a product | Using the App ID is deprecated. |
 | ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL&mode=mini            | Launches the popup Store dialog experience | The popup experience only supports Product ID |
 
 ## Launching the rating and review experience for a product
@@ -47,7 +47,7 @@ To enable users to review your app, you can link to that PDP and launch directly
 |------------------------------------------------------------------------|-------------|-------|
 | ms-windows-store://review/?ProductId=9WZDNCRFHVJL                      | Launches the write a review experience for a product. | Using StoreId is recommended |
 | ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe | Launches the write a review experience for a product. | Using product family name is deprecated. |
-| ms-windows-store://review/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117  | Launches the write a review experience for a product. | Using productid is deprecated |
+| ms-windows-store://review/?AppId=11112222-bbbb-3333-cccc-4444dddd5555  | Launches the write a review experience for a product. | Using productid is deprecated |
 
 ## Searching the Store
 
@@ -61,3 +61,7 @@ You can launch the Store app directly into search results with several supported
 | ms-windows-store://publisher/?name=Microsoft Corporation                  | Launches a search for products from the specified publisher. | Spaces in the name are allowed. |
 | ms-windows-store://assoc/?FileExt=pdf                                     | Launches a search for products associated with a file extension. | |
 | ms-windows-store://assoc/?Protocol=ms-word                                | Launches a search for products associated with a protocol. | |
+
+## See also
+
+[Launching, resuming, and background tasks](index.md)
