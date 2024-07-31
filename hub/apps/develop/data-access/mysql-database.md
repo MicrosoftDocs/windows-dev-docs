@@ -19,10 +19,10 @@ Open the **Package Manager Console** (View -> Other Windows -> Package Manager C
 
 ## Test your connection using sample code
 
-The following is an example of connecting to and reading from a remote MySQL database. Note that the IP address, credentials, and database name will need to be customized.
+The following is an example of connecting to and reading from a remote MySQL database. Note that the server address and database name will need to be customized.
 
 ``` csharp
-const string M_str_sqlcon = "server=10.xxx.xx.xxx;user id=foo;password=bar;database=baz";
+const string M_str_sqlcon = "Server=myServerAddress;Database=myDataBase;IntegratedSecurity=yes;Uid=auth_windows;";
 using (var mySqlCn = new MySqlConnection(M_str_sqlcon))
 {
     using (var mySqlCmd = new MySqlCommand("select * from table1", mySqlCn))
@@ -41,6 +41,9 @@ using (var mySqlCn = new MySqlConnection(M_str_sqlcon))
 
 > [!IMPORTANT]
 > In production applications, connection information should be stored securely in app configuration (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)). Connection strings and other secrets should not be hard-coded.
+
+> [!NOTE]
+> [MySQL Connector/NET](https://dev.mysql.com/downloads/connector/net/) version 6.4.4 or later is required to use the `MySql.Data` package with Windows authentication.
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 title: Use a SQL Server database in a Windows app
 description: Learn how to connect a Windows App SDK app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
-ms.date: 12/06/2022
+ms.date: 07/31/2024
 ms.topic: article
 keywords: windows 10, windows 11, Windows App SDK, SQL Server, database
 ms.localizationpriority: medium
@@ -60,10 +60,6 @@ sealed partial class App : Application
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
 
-    // This is an example connection string for using SQL Server Authentication.
-    // private string connectionString =
-    //     @"Data Source=YourServerName\YourInstanceName;Initial Catalog=DatabaseName; User Id=XXXXX; Password=XXXXX";
-
     public string ConnectionString { get => connectionString; set => connectionString = value; }
 
     ...
@@ -71,7 +67,7 @@ sealed partial class App : Application
 ```
 
 > [!IMPORTANT]
-> In production applications, connection information should be stored securely in app configuration (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)). Connection strings and other secrets should not be hard-coded.
+> In production applications, connection information should be stored securely in app configuration (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)). Connection strings and other secrets should never be hard-coded.
 
 ### Create a class to hold product data
 
