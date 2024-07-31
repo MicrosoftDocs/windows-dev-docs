@@ -1,7 +1,7 @@
 ---
 title: Use a SQL Server database in a UWP app
 description: Learn how to connect a UWP app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
-ms.date: 10/03/2022
+ms.date: 07/31/2024
 ms.topic: article
 keywords: windows 10, windows 11, uwp, SQL Server, database
 ms.localizationpriority: medium
@@ -58,19 +58,18 @@ Our connection string points to the Northwind database in a SQL Server Express i
 ```csharp
 sealed partial class App : Application
 {
-    // Connection string for using Windows Authentication.
+    // Create a connection string using Windows Authentication.
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
-
-    // This is an example connection string for using SQL Server Authentication.
-    // private string connectionString =
-    //     @"Data Source=YourServerName\YourInstanceName;Initial Catalog=DatabaseName; User Id=XXXXX; Password=XXXXX";
 
     public string ConnectionString { get => connectionString; set => connectionString = value; }
 
     ...
 }
 ```
+
+> [!IMPORTANT]
+> In production applications, connection information should be stored securely in app configuration (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)). Connection strings and other secrets should never be hard-coded.
 
 ### Create a class to hold product data
 
