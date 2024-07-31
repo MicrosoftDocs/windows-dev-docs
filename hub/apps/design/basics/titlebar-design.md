@@ -2,7 +2,7 @@
 description: Design the title bar of a desktop app to match the personality of the app.
 title: Windows app title bar
 template: detail.hbs
-ms.date: 12/13/2021
+ms.date: 07/31/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -31,7 +31,7 @@ This section describes the design recommendations and behaviors of the parts of 
 **Behavior**
 
 - The title bar plays a vital role in repositioning and resizing a window. All empty space in the title bar or space taken up by non-interactive elements like the window title should be draggable.
-- A single-click/tap on any part of the title bar that does not have an interactive element should show the system window menu.
+- A right-click/press-and-hold on any part of the title bar that does not have an interactive element should show the system window menu.
 - A double-click/tap should toggle between maximizing the window and restoring the window.
 
 ### Icon
@@ -60,10 +60,9 @@ This section describes the design recommendations and behaviors of the parts of 
 
 **Behavior**
 
-- A single-click/tap on the icon should show system window menu.
+- A right-click/press-and-hold on the icon should show the system window menu.
 - A double-click/tap should toggle between maximizing the window and restoring the window.
 - The window title and other textual elements in the title bar should respond to [text-scaling](../input/text-scaling.md). This might require that the title bar grows in height.
-
 
 ### Caption controls (minimize, maximize, restore, close)
 
@@ -93,7 +92,6 @@ The recommended back button icon is: [E830 ChromeBack](../style/segoe-fluent-ico
 - The back button should be 16px by 16px and vertically centered in the title bar. The button should have a full bleed backplate.
 - The back button should be 16px from the left-most border in LTR, or right-most border in RTL, and 16px from the next element to the left or right of it.
 
-
 :::image type="content" source="images/titlebar/back-button.png" alt-text="An example of a back button in the title bar":::
 
 ### Search
@@ -113,13 +111,11 @@ Increase the size of the title bar to 48px when you include a person-picture.
 
 :::image type="content" source="images/titlebar/people.png" alt-text="An example of a person picture control in the title bar":::
 
-
 ### Tabs
 
 If you use tabs as the main element of your app, use the title bar space and keep caption controls anchored to the right.
 
 :::image type="content" source="images/titlebar/tabs.png" alt-text="An example of a tab view with tabs in the titlebar area":::
-
 
 ### Next steps
 
