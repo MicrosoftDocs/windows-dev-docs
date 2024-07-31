@@ -1,7 +1,7 @@
 ---
 title: winget download command
 description: Downloads an installer for a package.
-ms.date: 10/02/2023
+ms.date: 07/11/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ The **download** command requires that you specify the exact string to download.
 
 ## Usage
 
-`winget download [[-q] <query>] [\<options>]`
+`winget download [[-q] <query>] [<options>]`
 
 ![download command](./images/download.png)
 
@@ -50,15 +50,23 @@ The options allow you to customize the download experience to meet your needs.
 | **--installer-type**  | Select the installer type to download. |
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
 | **--locale** | Specifies which locale to use (BCP47 format). |
-| **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
 | **--ignore-security-hash** |    Ignore the installer hash check failure. Not recommended. |
+| **--skip-dependencies** | Skips processing package dependencies and Windows features. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
+| **--authentication-account** | Specify the account to be used for authentication. |
 | **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--skip-license,--skip-microsoft-store-package-license** | Skips retrieving Microsoft Store package offline license. |
+| **--platform** | Select the target platform. |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ### Example queries
 
