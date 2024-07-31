@@ -17,7 +17,7 @@ While handcrafting each icon file will create the best, most consistent user exp
 :::row:::
     :::column:::
         1. Use Visual Studio to open a WinUI or UWP project.
-        2. In the **Solution Explorer**, double-click the Package.appmxanifest file.
+        2. In the **Solution Explorer**, double-click the Package.appxmanifest file.
     :::column-end:::
     :::column:::
         :::image type="content" source="images/package-appmanifest.png" alt-text="A diagram that shows a view of solution explorer highlighting the Package.appxmanifest file.":::
