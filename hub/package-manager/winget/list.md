@@ -1,7 +1,7 @@
 ---
 title: list Command
 description: Displays the list of listed apps and if an update is available.
-ms.date: 05/5/2021
+ms.date: 07/11/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -22,7 +22,7 @@ The following aliases are available for this command:
 
 ## Usage
 
-`winget list [[-q] \<query>] [\<options>]`
+`winget list [[-q] <query>] [<options>]`
 
 ![Image of list command usage](./images/list.png)
 
@@ -56,13 +56,18 @@ The options allow you to customize the list experience to meet your needs.
 | **-e, --exact**   |   Uses the exact string in the list query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
 | **--scope** | Select installed package scope filter (user or machine). |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
+| **--authentication-account** | Specify the account to be used for authentication. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--upgrade-available** | Lists only packages which have an upgrade available. |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ### Example queries
 
