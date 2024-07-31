@@ -1,7 +1,7 @@
 ---
 title: winget validate Command
 description: Validates a manifest file for submitting software to the Microsoft Community Package Manifest Repository on GitHub.
-ms.date: 04/28/2020
+ms.date: 07/11/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -12,7 +12,7 @@ The **validate** command of the [winget](index.md) tool validates a [manifest](.
 
 ## Usage
 
-`winget validate [--manifest] \<path>`
+`winget validate [--manifest] <manifest> [<options>]`
 
 ## Arguments
 
@@ -20,7 +20,7 @@ The following arguments are available.
 
 | Argument  | Description |
 |--------------|-------------|
-| **--manifest** |  the path to the manifest to be validated. |
+| **--manifest** |  The path to the manifest to be validated. |
 
 ## Options
 
@@ -32,7 +32,10 @@ The options allow you to customize the validate experience to meet your needs.
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ## Related topics
 

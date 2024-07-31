@@ -1,7 +1,7 @@
 ---
 title: search Command
 description: Queries the sources for available applications that can be installed
-ms.date: 08/24/2022
+ms.date: 07/11/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -16,7 +16,7 @@ The **search** command includes parameters for filtering down the applications r
 
 ## Usage
 
-`winget search [[-q] \<query>] [\<options>]`
+`winget search [[-q] <query>] [<options>]`
 
 ![Screenshot of the Windows Power Shell window displaying the results of the winget search.](./images/search.png)
 
@@ -67,13 +67,18 @@ Search strings can be filtered with the following options.
 | **-n, --count**      |  Show no more than specified number of results (between 1 and 1000). |
 | **-e, --exact**  |     Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.  |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
+| **--authentication-account** | Specify the account to be used for authentication. |
 | **--accept-source-agreements** | Accept all source agreements during source operations. |
 | **--versions** | Show available versions of the package. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
 | **-?, --help** |  Gets additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 The string will be treated as a substring. The search by default is also case insensitive. For example, `winget search micro` could return the following:
 
