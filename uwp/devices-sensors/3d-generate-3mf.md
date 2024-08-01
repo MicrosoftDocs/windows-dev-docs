@@ -78,7 +78,7 @@ The default material type is **Base Material**, which has both a **Color Materia
 
 ### Composite materials
 
-**Composite Materials** instruct the manufacturing device to use a uniform mixture of different **Base Materials**. Each **Composite Material Group** must reference exactly one **Base Material Group** from which to draw ingredients. Additonally, the **Base Materials** within this group that are to be made available must be listed in a **Material Indices** list, which each **Composite Material** will reference when specifying the ratios (every **Composite Material** is a ratio of **Base Materials**).
+**Composite Materials** instruct the manufacturing device to use a uniform mixture of different **Base Materials**. Each **Composite Material Group** must reference exactly one **Base Material Group** from which to draw ingredients. Additionally, the **Base Materials** within this group that are to be made available must be listed in a **Material Indices** list, which each **Composite Material** will reference when specifying the ratios (every **Composite Material** is a ratio of **Base Materials**).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetCompositeMaterialGroup":::
 
