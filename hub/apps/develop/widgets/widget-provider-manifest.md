@@ -107,7 +107,7 @@ Specifies activation information for the widget provider. If both **CreateInstan
 
 ## ActivateApplication
 
-When **ActivateApplication** is specified, the widget provider is activated via the command line, with the arguments provided as [base64url encoded](https://datatracker.ietf.org/doc/html/rfc4648#section-5) JSON strings. It is recommended that widget providers use the **CreateInstance** activiation type. For information on the **ActivateApplication** command line format, see [Widget provider ActivateApplication protocol](widget-provider-activateapplication-protocol.md).
+When **ActivateApplication** is specified, the widget provider is activated via the command line, with the arguments provided as [base64url encoded](https://datatracker.ietf.org/doc/html/rfc4648#section-5) JSON strings. It is recommended that widget providers use the **CreateInstance** activation type. For information on the **ActivateApplication** command line format, see [Widget provider ActivateApplication protocol](widget-provider-activateapplication-protocol.md).
 
 ## Definitions
 
@@ -125,7 +125,7 @@ Represents the registration for a single widget.
 | **AllowMultiple** | boolean | No | Set to false if only one instance of this widget is supported. This attribute is optional and the default value is true. | true |
 | **IsCustomizable** | boolean | No | Introduced in Windows App SDK 1.4. Set to true if your app supports widget customization. This causes the **Customize widget** button to be displayed in the widget's ellipsis menu. | false |
 
-## Capablities
+## Capabilities
 
 Optional. Specifies capabilities for a single widget. If no capabilities are declared, one capability specifying a "large" size is added by default.
 
