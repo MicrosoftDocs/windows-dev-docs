@@ -48,7 +48,7 @@ Media compositions typically contain one or more video clips. You can use a [**F
 
 -   Create a **MediaClip** from an image file by calling [**CreateFromImageFileAsync**](/uwp/api/windows.media.editing.mediaclip.createfromimagefileasync) and specifying an image file and a duration for the clip.
 
--   Create a **MediaClip** from a [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) by calling [**CreateFromSurface**](/uwp/api/windows.media.editing.mediaclip.createfromsurface) and specifying a surface and a duration from the clip.
+-   Create a **MediaClip** from an [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) by calling [**CreateFromSurface**](/uwp/api/windows.media.editing.mediaclip.createfromsurface) and specifying a surface and a duration from the clip.
 
 ## Preview the composition in a MediaElement
 

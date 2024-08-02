@@ -342,7 +342,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Duplicating my display | ms-settings:quietmomentspresentation |
 | During these hours | ms-settings:quietmomentsscheduled |
 | Encryption | ms-settings:deviceencryption |
-| Energy recommendatations | ms-settings:energyrecommendations **(Available in February Moment update for Windows 11, Version 22H2, Build 22624 or later)** |
+| Energy recommendations | ms-settings:energyrecommendations **(Available in February Moment update for Windows 11, Version 22H2, Build 22624 or later)** |
 | Focus assist | ms-settings:quiethours |
 | Graphics Settings | ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options) |
 | Graphics Default Settings | ms-settings:display-advancedgraphics-default |
