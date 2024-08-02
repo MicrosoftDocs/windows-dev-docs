@@ -1,10 +1,11 @@
 ---
 title: Use a SQLite database in a Windows app
 description: Learn how to use a SQLite database in a Windows app to store and retrieve data in a lightweight database on the user's device.
-ms.date: 12/06/2022
-ms.topic: article
+ms.date: 08/01/2024
+ms.topic: how-to
 keywords: windows 10, windows 11, windows app sdk, SQLite, database
 ms.localizationpriority: medium
+#customer intent: As a Windows developer, I want to learn how to use a SQLite database in a Windows app to store and retrieve data in a lightweight database on the user's device.
 ---
 
 # Use a SQLite database in a Windows app
@@ -53,15 +54,15 @@ All supported versions of Windows support SQLite, so your app does not have to p
 
 Let's start by adding a class to your project named **DataAccess**. If you plan to share your data access logic with other client code, you can use a .NET class library project to contain your data access code, but we won't use one in our example.
 
-Right-click the solution, and then click **Manage NuGet Packages for Solution**.
+1. Right-click the solution, and then click **Manage NuGet Packages for Solution**.
 
-![A screenshot of Visual Studio's Solution Explorer with the project right-clicked and the Manage NuGet Packages option highlighted.](images/manage-nuget-2.png)
+    ![A screenshot of Visual Studio's Solution Explorer with the project right-clicked and the Manage NuGet Packages option highlighted.](images/manage-nuget-2.png)
 
-At this point, you have a choice. You can use the version of SQLite that is included with Windows or if you have some reason to use a specific version of SQLite, you can include the SQLite library in your package. We are going to use the version of SQLite that's included with Windows.
+    At this point, you have a choice. You can use the version of SQLite that is included with Windows or if you have some reason to use a specific version of SQLite, you can include the SQLite library in your package. We are going to use the version of SQLite that's included with Windows.
 
-Choose the **Browse** tab, search for the **Microsoft.Data.SQLite** package, and then install the latest stable version.
+1. Choose the **Browse** tab, search for the **Microsoft.Data.SQLite** package, and then install the latest stable version.
 
-![SQLite NuGet package](images/sqlite-nuget-package.png)
+    ![SQLite NuGet package](images/sqlite-nuget-package.png)
 
 ## Add and retrieve data in a SQLite database
 
@@ -247,7 +248,7 @@ public MainWindow()
 
 That's it. Explore the [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite) to see what other things you can do with your SQLite database. Check out the links below to learn about other ways to use data in your Windows apps.
 
-## Next steps
+## Related content
 
 ### Connect your app directly to a SQL Server database
 
