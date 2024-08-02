@@ -24,7 +24,7 @@ When porting the simple renderer from OpenGL ES 2.0, the first step is to set up
 > [!NOTE]
 > Have you created a new Direct3D project? If not, follow the instructions in [Create a new DirectX 11 project for Universal Windows Platform (UWP)](user-interface.md). This walkthrough assumes that you have the created the DXGI and Direct3D resources for drawing to the screen, and which are provided in the template.
 
-Much like OpenGL ES 2.0, the compiled shaders in Direct3D must be associated with a drawing context. However, Direct3D does not have the concept of a shader program object per se; instead, you must assign the shaders directly to a [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext). This step follows the OpenGL ES 2.0 process for creating and binding shader objects, and provides you with the corresponding API behaviors in Direct3D.
+Much like OpenGL ES 2.0, the compiled shaders in Direct3D must be associated with a drawing context. However, Direct3D does not have the concept of a shader program object per se; instead, you must assign the shaders directly to an [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext). This step follows the OpenGL ES 2.0 process for creating and binding shader objects, and provides you with the corresponding API behaviors in Direct3D.
 
 ## Instructions
 
