@@ -1,15 +1,18 @@
 ---
 title: Use a SQL Server database in a Windows app
 description: Learn how to connect a Windows App SDK app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
-ms.date: 07/31/2024
-ms.topic: article
+ms.date: 08/01/2024
+ms.topic: how-to
 keywords: windows 10, windows 11, Windows App SDK, SQL Server, database
 ms.localizationpriority: medium
+#customer intent: As a Windows developer, I want to learn how to connect my Windows App SDK app directly to a SQL Server database so that I can store and retrieve data.
 ---
 
 # Use a SQL Server database in a Windows app
 
 Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace.
+
+## Getting started
 
 In this guide, we'll show you one way to do that in your Windows App SDK apps. If you install the [Northwind](/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.
 
@@ -21,9 +24,8 @@ The snippets that appear in this guide are based on this [UWP sample app](https:
 
 To connect your app directly to a SQL Server database, your app can target any minimum version of Windows supported by Windows App SDK.  You can find that information in the properties page of your project.
 
-Open the **Package.appxmanifest** file of your Windows App SDK project in the manifest designer.
-
-In the **Capabilities** tab, select the **Enterprise Authentication** checkbox if you are using Windows Authentication for authenticating your SQL Server.
+1. Open the **Package.appxmanifest** file of your Windows App SDK project in the manifest designer.
+1. In the **Capabilities** tab, select the **Enterprise Authentication** checkbox if you are using Windows Authentication for authenticating your SQL Server.
 
 ![Enterprise Authentication Capability](images/enterprise-authentication.png)
 
@@ -224,20 +226,7 @@ Then, make sure that your SQL Server Browser service is running.
 
 ![SQL Server Browser Service](images/sql-browser-service.png)
 
-## Next steps
+## Next step
 
-### Use a lightweight database to store data on the users device
-
-See [Use a SQLite database in a Windows app](sqlite-data-access.md).
-
-### Share code between different apps across multiple platforms
-
-See [Share code between desktop and UWP](/windows/uwp/porting/desktop-to-uwp-migrate).
-
-### Add master detail pages with Azure SQL back ends
-
-See [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database).
-
-## See also
-
-- [Data access in Windows apps](index.md)
+> [!div class="nextstepaction"]
+> [Use a SQLite database in a Windows app](sqlite-data-access.md)

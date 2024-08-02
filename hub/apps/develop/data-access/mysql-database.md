@@ -1,10 +1,11 @@
 ---
 title: Use a MySQL database in a Windows app
 description: Learn how to connect to a MySQL database from your Windows app, and test your connection using sample code.
-ms.date: 07/31/2024
-ms.topic: article
+ms.date: 08/01/2024
+ms.topic: how-to
 keywords: windows, windows app sdk, MySQL, database, uwp, wpf, winforms, windows forms, winui
 ms.localizationpriority: medium
+#customer intent: As a Windows developer, I want to learn how to connect to a MySQL database from my Windows app so that I can store and retrieve data.
 ---
 
 # Use a MySQL database in a Windows app
@@ -15,7 +16,10 @@ This article contains the steps required to enable working with a MySQL database
 
 This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to a MySQL database. Follow these steps to install the package and try out the example code to read data from an existing MySQL database.
 
-Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console). Use the command `Install-Package MySql.Data` to install the NuGet package for the MySQL core class library. This will allow you to programmatically access MySQL databases.
+1. Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console).
+1. Use the command `Install-Package MySql.Data` to install the NuGet package for the MySQL core class library.
+
+This will allow you to programmatically access MySQL databases.
 
 ## Test your connection using sample code
 
@@ -45,7 +49,7 @@ using (var mySqlCn = new MySqlConnection(M_str_sqlcon))
 > [!NOTE]
 > [MySQL Connector/NET](https://dev.mysql.com/downloads/connector/net/) version 6.4.4 or later is required to use the `MySql.Data` package with Windows authentication.
 
-## See also
+## Related content
 
 - [Use a SQL Server database in a Windows app](sql-server-database.md)
 - [Data access in Windows apps](index.md)
