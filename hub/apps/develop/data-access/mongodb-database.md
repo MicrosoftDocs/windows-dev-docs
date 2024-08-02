@@ -1,10 +1,11 @@
 ---
 title: Use a MongoDB database in a Windows app
 description: Learn how to connect your Windows app directly to a MongoDB database and test the connection programmatically.
-ms.date: 12/08/2022
-ms.topic: article
+ms.date: 08/01/2024
+ms.topic: how-to
 keywords: windows, windows app sdk, mongodb, nosql, database, uwp, wpf, winforms, windows forms, winui
 ms.localizationpriority: medium
+#customer intent: As a Windows developer, I want to learn how to connect my Windows app directly to a MongoDB database so that I can store and retrieve data.
 ---
 
 # Use a MongoDB database in a Windows app
@@ -15,7 +16,10 @@ This article contains the steps required to enable working with a MongoDB databa
 
 This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to MongoDB. Follow these steps to install the package and try out the example code to read data from an existing MongoDB database.
 
-Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console). Use the command `Install-Package MongoDB.Driver` to install the NuGet package for the official driver for MongoDB. This will allow you to programmatically access MongoDB databases.
+1. Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console).
+1. Use the command `Install-Package MongoDB.Driver` to install the NuGet package for the official driver for MongoDB.
+
+This will allow you to programmatically access MongoDB databases.
 
 ## Test your connection using sample code
 
@@ -41,8 +45,7 @@ Console.WriteLine(document1.ToString());
 
 Note that the IP address and database name will need to be customized. The port, 27017, is the default MongoDB port number. In a production application, connection information such as server address and database name should be stored in app configuration rather than hard-coded (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)).
 
-## See also
+## Related content
 
 - [Use a SQL Server database in a Windows app](sql-server-database.md)
-
 - [Use a MySQL database in a Windows app](mysql-database.md)
