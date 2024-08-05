@@ -179,6 +179,8 @@ items:
         - name: Security and identity
           href: develop/security/index.md
           items:
+            - name: Credential locker
+              href: develop/security/credential-locker.md
             - name: Windows Hello
               href: develop/security/windows-hello.md
               items:
