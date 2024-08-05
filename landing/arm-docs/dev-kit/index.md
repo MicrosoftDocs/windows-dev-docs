@@ -1,7 +1,7 @@
 ---
-title: Windows Dev Kit 2023 (Project Volterra)
+title: Windows Dev Kit 2023
 description: Powered by Arm64 and running Windows 11, this desktop device enables you to develop Windows apps for Arm, on Arm. Find device specifications, set up instructions, Arm-native developer tools, Support, and FAQs. 
-ms.date: 07/29/2023
+ms.date: 08/05/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -11,9 +11,11 @@ ms.author: mattwoj
 
 # Windows Dev Kit 2023
 
-Windows Dev Kit 2023 (code name “Project Volterra”) is the latest Arm device built for Windows developers with a Neural Processing Unit (NPU) that provides best-in-class AI computing capacity, multiple ports, and a stackable design for desktops and rack deployment. Purpose-built with everything you need to develop, debug, and test native Windows apps for Arm.
+The Windows Dev Kit 2023 (code name “Project Volterra”) offered Windows developers one of the first opportunities to support development and testing on a device with a Neural Processing Unit (NPU) that provides best-in-class AI computing capacity, multiple ports, and a stackable design for desktops and rack deployment. Purpose-built to develop, debug, and test native Windows apps for Arm.
 
-> [!VIDEO https://learn-video.azurefd.net/vod/player?show=tabs-vs-spaces&ep=windows-developer-kit-for-arm]
+Windows Dev Kit 2023 is no longer available to purchase new, but now you can find [Copilot+ PCs](https://www.microsoft.com/windows/copilot-plus-pcs) offering NPUs and the latest in AI features and computing capacity.
+
+Qualcomm also now offers an updated [Snapdragon Dev Kit for Windows](https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Snapdragon-Dev-Kit-for-Windows-Product-Brief.pdf). Learn more on the Qualcomm site: [Windows on Snapdragon](https://www.qualcomm.com/developer/windows-on-snapdragon).
 
 ## Device specifics
 
@@ -21,7 +23,6 @@ Windows Dev Kit 2023 (code name “Project Volterra”) is the latest Arm device
 - Snapdragon® 8cx Gen 3 compute platform
 - Ports: 3x USB-A, 2x USB-C, Mini-Display (HBR2 support), Ethernet (RJ45)
 - Made with 20% recycled ocean plastic
-- Available in the [Microsoft Store](https://aka.ms/windowsdevkit2023)
 
 ![Windows Dev Kit 2023](../images/windowsdevkit2023-side.png)
 
@@ -188,5 +189,11 @@ For hardware or warranty support with your Windows on Arm developer kit, open a 
 - **Are custom OS images supported?**
 
     No, currently custom operating system images are not supported on Microsoft Arm devices. Only the Windows OS image provided on the device when purchased is supported. This image can be reinstalled if necessary using the downloadable recovery image on the [Recovery Image page](https://support.microsoft.com/surface-recovery-image).
+
+  - **Where can I see Windows Dev Kit?**
+
+While no longer available to purchase through Microsoft Store, you can see the device demo video below. }
+
+[!VIDEO https://learn-video.azurefd.net/vod/player?show=tabs-vs-spaces&ep=windows-developer-kit-for-arm]
 
 To learn more, see **[FAQs for Windows Arm-based PCs](https://support.microsoft.com/en-us/windows/windows-arm-based-pcs-faq-477f51df-2e3b-f68f-31b0-06f5e4f8ebb5)**.
