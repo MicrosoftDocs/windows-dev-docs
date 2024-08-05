@@ -1,20 +1,21 @@
 ---
 title: Security and identity
 description: This article provides an index of development features that are related to security and identity scenarios in Windows apps.
-ms.topic: article
-ms.date: 07/12/2024
+ms.topic: overview
+ms.date: 08/05/2024
+#customer intent: As a Windows developers, I want to learn to use security and identity features available to Windows apps so that I can build more secure apps.
 ---
 
 # Security and identity
 
 This article provides an index of development features that are related to scenarios involving security and identity in Windows apps.
 
-> [!NOTE]
-> The [Windows App SDK](../../windows-app-sdk/index.md) currently does not provide APIs related to security and identity scenarios.
-
 ## Windows OS features
 
 Windows 10 and later OS releases provide a wide variety of APIs related to graphics scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
+
+> [!NOTE]
+> The [Windows App SDK](../../windows-app-sdk/index.md) currently does not provide APIs related to security and identity scenarios.
 
 ### WinRT APIs
 
@@ -51,3 +52,8 @@ The .NET SDK also provides APIs related to security and identity scenarios for W
 | [Security in .NET](/dotnet/standard/security/)  | Learn about security concepts and features for all .NET apps.  |
 | [Security (WPF)](/dotnet/desktop/wpf/security-wpf) | Learn about security concepts and features for WPF apps. |
 | [Windows Forms Security](/dotnet/desktop/winforms/windows-forms-security) | Learn about security concepts and features for Windows Forms apps. |
+
+## Related content
+
+- [App lifecycle and system services](../app-lifecycle-and-system-services.md)
+- [Develop Windows desktop apps](../index.md)
