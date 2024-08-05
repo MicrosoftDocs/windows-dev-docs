@@ -28,7 +28,7 @@ While handcrafting each icon file will create the best, most consistent user exp
         3. Visual Studio displays the Manifest Designer.
     :::column-end:::
     :::column:::
-            :::image type="content" source="images/manifest-properties.png" lightbox="images/manifest-properties.png" alt-text="A diagram that shows a view of the properties panel for a Package.ammxmanifest file.":::
+            :::image type="content" source="images/manifest-properties.png" lightbox="images/manifest-properties.png" alt-text="A diagram that shows a view of the properties panel for a Package.appxmanifest file.":::
     :::column-end:::
 :::row-end:::
 :::row:::
