@@ -61,8 +61,10 @@ To create a virtual smart card using [SmartCardProvisioning](/uwp/api/Windows.De
 1. Pass these values along with the *FriendlyNameText* string to [RequestVirtualSmartCardCreationAsync](/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync).
 
 ```cs
-var pinPolicy = new SmartCardPinPolicy();
-pinPolicy.MinLength = 6;
+var pinPolicy = new SmartCardPinPolicy
+    {
+        MinLength = 6
+    };
 
 IBuffer adminkey = CryptographicBuffer.GenerateRandom(24);
 
