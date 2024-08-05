@@ -723,7 +723,7 @@ You can set the enabled state for all plugins not controlled by this policy usin
 
 #### Configure enabled state for individual add-ons
 
-Supported on PowerToys 0.83.0 or later, depending on the add-on.
+Supported on PowerToys 0.84.0 or later, depending on the add-on.
 
 For each File Explorer add-on, there's a "Configure enabled state" policy, which forces an enabled state for the add-on.
 
