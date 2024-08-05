@@ -14,8 +14,9 @@ This article provides an index of development features that are related to scena
 
 Windows 10 and later OS releases provide a wide variety of APIs related to graphics scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
 
-> [!NOTE]
-> The [Windows App SDK](../../windows-app-sdk/index.md) currently does not provide APIs related to security and identity scenarios.
+### Windows App SDK APIs
+
+The [Windows App SDK](../../windows-app-sdk/index.md) currently does not provide APIs related to security and identity scenarios other than a few helper APIs in the [Microsoft.Windows.Security.AccessControl](/windows/windows-app-sdk/api/winrt/microsoft.windows.security.accesscontrol) namespace. These APIs are related to named object sharing between packaged apps and Win32 applications.
 
 ### WinRT APIs
 
