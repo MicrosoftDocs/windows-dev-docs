@@ -181,6 +181,8 @@ items:
           items:
             - name: Credential locker
               href: develop/security/credential-locker.md
+            - name: Fingerprint biometrics
+              href: develop/security/fingerprint-biometrics.md
             - name: Windows Hello
               href: develop/security/windows-hello.md
               items:
