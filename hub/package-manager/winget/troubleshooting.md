@@ -1,12 +1,12 @@
 ---
-title: Debugging and troubleshooting issues with the winget tool
-description: Provides information on logging and winget diagnostics.
-ms.date: 08/31/2023
+title: Debugging and troubleshooting issues with the WinGet tool
+description: Provides information on logging and WinGet diagnostics.
+ms.date: 08/05/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Debugging and troubleshooting issues with the winget tool
+# Debugging and troubleshooting issues with the WinGet tool
 
 When Windows Package Manager is installing, searching or listing applications, sometimes it is necessary to look at the log files to better understand the behavior.
 
@@ -39,11 +39,11 @@ If you need more comprehensive log files, that provide the complete communicatio
 
 ## Known issues
 
-A list of known issues with sources and behaviors is kept up to date in the [Windows Package Manager Client repository](https://www.github.com/microsoft/winget-cli).  If you encounter issues when using the winget tool, go [here](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting) for troubleshooting.
+A list of known issues with sources and behaviors is kept up to date in the [Windows Package Manager Client repository](https://www.github.com/microsoft/winget-cli).  If you encounter issues when using the WinGet tool, go [here](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting) for troubleshooting.
 
 ## Exit codes
 
-The winget tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the ["Return codes" file of the Windows Package Manager Client repository](https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md).
+The WinGet tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the ["Return codes" file of the Windows Package Manager Client repository](https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md).
 
 ### Scope for specific user vs machine-wide
 
