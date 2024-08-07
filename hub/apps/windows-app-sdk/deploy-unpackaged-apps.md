@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged
 description: This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.
 ms.topic: article
-ms.date: 06/25/2024
+ms.date: 08/07/2024
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: stwhi
 author: stevewhims
@@ -12,6 +12,10 @@ ms.localizationpriority: medium
 # Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged
 
 This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.
+
+* Such apps are desktop apps (not UWP apps).
+* They can be written in a .NET language such as C#, or in C++.
+* For their user-interface, they can use WinUI 3, or WPF, or WinForms, or another UI framework.
 
 ## Overview
 
@@ -291,7 +295,7 @@ The info and code above covers the basic detection scenario. To detect whether t
 
 - **Installing the Windows App SDK Runtime system-wide**: System-wide install alters the machine for all users, including new users that are added in the future. If the app is running elevated and the user doing the installation has admin privileges, then the installer will register the MSIX packages system-wide by calling the [ProvisionPackageForAllUsersAsync](/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync). If system-wide registration is not successful, the installation will be performed for the current user doing the installation only. In a managed Enterprise environment, the IT admin should be able to provision for everyone as usual.
 
-- **Architectures redistributed by the Windows App SDK installer**: The Windows App SDK installer is available in the `x86`, `x64` and `Arm64` architectures. Each version of the installer includes the MSIX packages for that specific architecture. For example, if you run the x86 WindowsAppRuntimeInstall.exe on an x64 or Arm64 device, the installer will deploy the packages for that device architecture. 
+- **Architectures redistributed by the Windows App SDK installer**: The Windows App SDK installer is available in the `x86`, `x64`, and `Arm64` architectures. Each version of the installer includes the MSIX packages for just the specific architecture it's named for. For example, if you run the `x86` `WindowsAppRuntimeInstall.exe` on an x64 or and Arm64 device, then that `x86` installer will deploy onto that device only the packages for the x86 architecture.
 
 - **All Windows App SDK MSIX packages are already installed on the computer**: MSIX packages are installed to a system-wide location with only one copy on disk. If an app attempts installation of the Windows App SDK when all the MSIX package dependencies are already installed on the machine, then the installation is not performed.
 
