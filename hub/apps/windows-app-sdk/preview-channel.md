@@ -2,7 +2,7 @@
 title: Preview release channel for the Windows App SDK 
 description: Provides info about the preview release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 04/25/2024
+ms.date: 08/07/2024
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -21,11 +21,11 @@ The preview channel includes releases of the Windows App SDK with [preview chann
 
 **Preview channel release note archive:**
 
-- [Preview channel release notes for the Windows App SDK 1.4](release-notes-archive/experimental-channel-1.4.md)
-- [Preview channel release notes for the Windows App SDK 1.3](release-notes-archive/experimental-channel-1.3.md)
-- [Preview channel release notes for the Windows App SDK 1.2](release-notes-archive/experimental-channel-1.2.md)
-- [Preview channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
-- [Preview channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
+- [Preview channel release notes for the Windows App SDK 1.4](release-notes-archive/preview-channel-1.4.md)
+- [Preview channel release notes for the Windows App SDK 1.3](release-notes-archive/preview-channel-1.3.md)
+- [Preview channel release notes for the Windows App SDK 1.2](release-notes-archive/preview-channel-1.2.md)
+- [Preview channel release notes for the Windows App SDK 1.1](release-notes-archive/preview-channel-1.1.md)
+- [Preview channel release notes for the Windows App SDK 1.0](release-notes-archive/preview-channel-1.0.md)
 
 ## Version 1.5 Preview 1 (1.5.0-preview1)
 
