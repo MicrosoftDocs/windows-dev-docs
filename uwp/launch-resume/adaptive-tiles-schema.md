@@ -11,14 +11,13 @@ ms.localizationpriority: medium
 ---
 # Adaptive tile templates: schema and guidance
 
- 
+[!INCLUDE [notes](includes/live-tiles-note.md)]
 
 Here are the elements and attributes you use to create adaptive tiles. For instructions and examples, see [Create adaptive tiles](create-adaptive-tiles.md).
 
 ## tile element
 
-
-``` xml
+```xml
 <tile>
   
   <!-- Child elements -->
@@ -29,8 +28,7 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 
 ## visual element
 
-
-``` xml
+```xml
 <visual
   version? = integer
   lang? = string
@@ -48,8 +46,7 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 
 ## binding element
 
-
-``` xml
+```xml
 <binding
   template = tileTemplateNameV3
   fallback? = tileTemplateNameV1
@@ -73,8 +70,7 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 
 ## image element
 
-
-``` xml
+```xml
 <image
   src = string
   placement? = "inline" | "background" | "peek"
@@ -87,8 +83,7 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 
 ## text element
 
-
-``` xml
+```xml
 <text
   lang? = string
   hint-style? = textStyle
@@ -106,8 +101,7 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 
 ## group element
 
-
-``` xml
+```xml
 <group>
 
   <!-- Child elements -->
@@ -118,8 +112,7 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 
 ## subgroup element
 
-
-``` xml
+```xml
 <subgroup
   hint-weight? = [0-100]
   hint-textStacking? = "top" | "center" | "bottom" >
@@ -134,12 +127,4 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 
 ## Related topics
 
-
 * [Create adaptive tiles](create-adaptive-tiles.md)
- 
-
- 
-
-
-
-

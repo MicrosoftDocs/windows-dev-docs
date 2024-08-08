@@ -3,13 +3,14 @@ description: Secondary tiles allow users to pin specific content and deep links 
 title: Secondary tiles
 label: Secondary tiles
 template: detail.hbs
-ms.date: 05/25/2017
+ms.date: 08/08/2024
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles
 ms.localizationpriority: medium
 ---
 # Secondary tiles
 
+[!INCLUDE [notes](includes/live-tiles-note.md)]
 
 Secondary tiles allow users to pin specific content and deep links from your app onto their Start menu, providing easy future access to the content within your app.
 
@@ -27,8 +28,7 @@ By adding secondary tiles to your app, you help the user re-engage quickly and e
 | --- | --- |
 | [Guidance on secondary tiles](secondary-tiles-guidance.md) | Learn about when and where you should use secondary tiles. |
 | [Pin secondary tiles](secondary-tiles-pinning.md) | Learn how to pin a secondary tile. |
-| [Pin from desktop apps](secondary-tiles-desktop-pinning.md) | Desktop apps can pin secondary tiles thanks to the Desktop Bridge! |
-
+| [Pin from desktop apps](/windows/apps/design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning) | Desktop apps can pin secondary tiles thanks to the Desktop Bridge! |
 
 ## Secondary tiles in relation to primary tiles
 
@@ -64,14 +64,14 @@ However, secondary tiles differ from primary tiles in some noticeable ways:
 
 For sending notifications, specific methods are provided for tile and badge updaters and push notification channels used with secondary tiles. These parallel the versions used with primary tiles. For instance, CreateBadgeUpdaterForApplication vs. CreateBadgeUpdaterForSecondaryTile.
 
-
 ## Guidance on secondary tiles
-To learn about when and where you should use secondary tiles, and other usage guidance, please see [Guidance on secondary tiles](secondary-tiles-guidance.md)
 
+To learn about when and where you should use secondary tiles, and other usage guidance, please see [Guidance for secondary tiles](secondary-tiles-guidance.md)
 
 ## Pinning secondary tiles
+
 To learn how to pin secondary tiles, please see [Pin secondary tiles](secondary-tiles-pinning.md).
 
-
 ## Desktop applications and secondary tiles
-To learn how to use secondary tiles from your desktop application via the Desktop Bridge, please see [Pin secondary tiles from desktop apps](secondary-tiles-desktop-pinning.md).
+
+To learn how to use secondary tiles from your desktop application via the Desktop Bridge, please see [Pin secondary tiles from desktop apps](/windows/apps/design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning).
