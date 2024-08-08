@@ -4,32 +4,30 @@ title: Create adaptive tiles
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 08/08/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Create adaptive tiles
 
-Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Windows app. For the complete list of adaptive elements and attributes, see the [Adaptive tiles schema](../tiles-and-notifications/tile-schema.md).
+[!INCLUDE [notes](includes/live-tiles-note.md)]
+
+Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Windows app. For the complete list of adaptive elements and attributes, see the [Adaptive tiles schema](tile-schema.md).
 
 (If you'd like, you can still use the preset templates from the [Windows 8 tile template catalog](/previous-versions/windows/apps/hh761491(v=win.10)) when designing notifications for Windows 10.)
-
 
 ## Getting started
 
 **Install Notifications library.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (search for "notifications uwp"). The C# samples provided in this article use version 1.0.0 of the NuGet package.
 
-**Install Notifications Visualizer.** This free Windows app helps you design adaptive live tiles by providing an instant visual preview of your tile as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](notifications-visualizer.md) for more information, or [download Notifications Visualizer from the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
-
+**Install Notifications Visualizer.** This free Windows app helps you design adaptive live tiles by providing an instant visual preview of your tile as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](/windows/apps/design/shell/tiles-and-notifications/notifications-visualizer) for more information, or [download Notifications Visualizer from the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
 ## How to send a tile notification
 
 Please read our [Quickstart on sending local tile notifications](sending-a-local-tile-notification.md). The documentation below explains all the visual UI possibilities you have with adaptive tiles.
 
-
 ## Usage guidance
-
 
 Adaptive templates are designed to work across different form factors and notification types. Elements such as group and subgroup link together content and don't imply a particular visual behavior on their own. The final appearance of a notification should be based on the specific device on which it will appear, whether it's phone, tablet, or desktop, or another device.
 
@@ -37,27 +35,26 @@ Hints are optional attributes that can be added to elements in order to achieve 
 
 ## A basic example
 
-
 This example demonstrates what the adaptive tile templates can produce.
 
 ```xml
 <tile>
   <visual>
-  
+
     <binding template="TileMedium">
       ...
     </binding>
-  
+
     <binding template="TileWide">
       <text hint-style="subtitle">Jennifer Parker</text>
       <text hint-style="captionSubtle">Photos from our trip</text>
       <text hint-style="captionSubtle">Check out these awesome photos I took while in New Zealand!</text>
     </binding>
-  
+
     <binding template="TileLarge">
       ...
     </binding>
-  
+
   </visual>
 </tile>
 ```
@@ -107,36 +104,35 @@ TileContent content = new TileContent()
 
 ## Tile sizes
 
+Content for each tile size is individually specified in separate [TileBinding](tile-schema.md#tilebinding) elements within the XML payload. Choose the target size by setting the template attribute to one of the following values:
 
-Content for each tile size is individually specified in separate [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) elements within the XML payload. Choose the target size by setting the template attribute to one of the following values:
-
--   TileSmall
--   TileMedium
--   TileWide
--   TileLarge (only for desktop)
+- `TileSmall`
+- `TileMedium`
+- `TileWide`
+- `TileLarge`
 
 For a single tile notification XML payload, provide &lt;binding&gt; elements for each tile size that you'd like to support, as shown in this example:
 
 ```xml
 <tile>
   <visual>
-  
+
     <binding template="TileSmall">
       <text>Small</text>
     </binding>
-  
+
     <binding template="TileMedium">
       <text>Medium</text>
     </binding>
-  
+
     <binding template="TileWide">
       <text>Wide</text>
     </binding>
-  
+
     <binding template="TileLarge">
       <text>Large</text>
     </binding>
-  
+
   </visual>
 </tile>
 ```
@@ -199,12 +195,7 @@ TileContent content = new TileContent()
 
 ## Branding
 
-
-You can control the branding on the bottom of a live tile (the display name and corner logo) by using the branding attribute on the notification payload. You can choose to display "none," only the "name," only the "logo," or both with "nameAndLogo."
-
-**Note**  Windows Mobile doesn't support the corner logo, so "logo" and "nameAndLogo" default to "name" on Mobile.
-
- 
+You can control the branding on the bottom of a live tile (the display name and corner logo) by using the branding attribute on the notification payload. You can choose to display `none`, only the `name`, only the `logo`, or both with `nameAndLogo`.
 
 ```xml
 <visual branding="logo">
@@ -226,23 +217,24 @@ new TileVisual()
 
 Branding can be applied for specific tile sizes one of two ways:
 
-1. By applying the attribute on the [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) element
-2. By applying the attribute on the [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual) element, which affects the entire notification payload
+1. By applying the attribute on the [TileBinding](tile-schema.md#tilebinding) element.
+2. By applying the attribute on the [TileVisual](tile-schema.md#tilevisual) element, which affects the entire notification payload.
+
 If you don't specify branding for a binding, it will use the branding that's provided on the visual element.
 
 ```xml
 <tile>
   <visual branding="nameAndLogo">
- 
+
     <binding template="TileMedium" branding="logo">
       ...
     </binding>
- 
+
     <!--Inherits branding from visual-->
     <binding template="TileWide">
       ...
     </binding>
- 
+
   </visual>
 </tile>
 ```
@@ -273,32 +265,27 @@ TileContent content = new TileContent()
 
 ![default branding on tiles](images/adaptive-tiles-defaultbranding.png)
 
-If you don't specify the branding in your notification payload, the base tile's properties will determine the branding. If the base tile shows the display name, then the branding will default to "name." Otherwise, the branding will default to "none" if the display name isn't shown.
+If you don't specify the branding in your notification payload, the base tile's properties will determine the branding. If the base tile shows the display name, then the branding will default to `name`. Otherwise, the branding will default to `none` if the display name isn't shown.
 
 **Note**   This is a change from Windows 8.x, in which the default branding was "logo."
 
- 
+ ## Display name
 
-## Display name
-
-
-You can override the display name of a notification by entering the text string of your choice with the **displayName** attribute. As with branding, you can specify this on the [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual) element, which affects the entire notification payload, or on the [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) element, which only affects individual tiles.
-
-**Known Issue**  On Windows Mobile, if you specify a ShortName for your Tile, the display name provided in your notification will not be used (the ShortName will always be displayed). 
+You can override the display name of a notification by entering the text string of your choice with the `displayName` attribute. As with branding, you can specify this on the [TileVisual](tile-schema.md#tilevisual) element, which affects the entire notification payload, or on the [TileBinding](tile-schema.md#tilebinding) element, which only affects individual tiles.
 
 ```xml
 <tile>
   <visual branding="nameAndLogo" displayName="Wednesday 22">
- 
+
     <binding template="TileMedium" displayName="Wed. 22">
       ...
     </binding>
- 
+
     <!--Inherits displayName from visual-->
     <binding template="TileWide">
       ...
     </binding>
- 
+
   </visual>
 </tile>
 ```
@@ -332,13 +319,11 @@ TileContent content = new TileContent()
 
 ## Text
 
-
-The [AdaptiveText](../tiles-and-notifications/tile-schema.md#adaptivetext) element is used to display text. You can use hints to modify how text appears.
+The [AdaptiveText](tile-schema.md#adaptivetext) element is used to display text. You can use hints to modify how text appears.
 
 ```xml
 <text>This is a line of text</text>
 ```
-
 
 ```csharp
 new AdaptiveText()
@@ -353,13 +338,11 @@ new AdaptiveText()
 
 ## Text wrapping
 
-
-By default, text doesn't wrap and will continue off the edge of the tile. Use the **hint-wrap** attribute to set text wrapping on a text element. You can also control the minimum and maximum number of lines by using **hint-minLines** and **hint-maxLines**, both of which accept positive integers.
+By default, text doesn't wrap and will continue off the edge of the tile. Use the `hint-wrap` attribute to set text wrapping on a text element. You can also control the minimum and maximum number of lines by using `hint-minLines` and `hint-maxLines`, both of which accept positive integers.
 
 ```xml
 <text hint-wrap="true">This is a line of wrapping text</text>
 ```
-
 
 ```csharp
 new AdaptiveText()
@@ -374,7 +357,6 @@ new AdaptiveText()
 ![adaptive tile with text wrapping](images/adaptive-tiles-textwrapping.png)
 
 ## Text styles
-
 
 Styles control the font size, color, and weight of text elements. There are a number of available styles, including a "subtle" variation of each style that sets the opacity to 60%, which usually makes the text color a shade of light gray.
 
@@ -403,8 +385,6 @@ new AdaptiveText()
 
 **Note**  The style defaults to caption if hint-style isn't specified.
 
- 
-
 **Basic text styles**
 
 | &lt;text hint-style="\*" /&gt; | Font height               | Font weight |
@@ -417,55 +397,36 @@ new AdaptiveText()
 | subheader                      | 34 epx                    | Light       |
 | header                         | 46 epx                    | Light       |
 
- 
-
 **Numeral text style variations**
 
 These variations reduce the line height so that content above and below come much closer to the text.
 
 - titleNumeral
-
 - subheaderNumeral
-
 - headerNumeral
-
- 
 
 **Subtle text style variations**
 
 Each style has a subtle variation that gives the text a 60% opacity, which usually makes the text color a shade of light gray.
 
 - captionSubtle
-
 - bodySubtle
-
 - baseSubtle
-
 - subtitleSubtle
-
 - titleSubtle
-
 - titleNumeralSubtle
-
 - subheaderSubtle
-
 - subheaderNumeralSubtle
-
 - headerSubtle
-
 - headerNumeralSubtle
 
- 
-
 ## Text alignment
-
 
 Text can be horizontally aligned left, center, or right. In left-to-right languages like English, text defaults to left-aligned. In right-to-left languages like Arabic, text defaults to right-aligned. You can manually set alignment with the **hint-align** attribute on elements.
 
 ```xml
 <text hint-align="center">Hello</text>
 ```
-
 
 ```csharp
 new AdaptiveText()
@@ -481,14 +442,11 @@ new AdaptiveText()
 
 ## Groups and subgroups
 
-
 Groups allow you to semantically declare that the content inside the group is related and must be displayed in its entirety for the content to make sense. For example, you might have two text elements, a header, and a subheader, and it would not make sense for only the header to be shown. By grouping those elements inside a subgroup, the elements will either all be displayed (if they can fit) or not be displayed at all (because they can't fit).
 
 To provide the best experience across devices and screens, provide multiple groups. Having multiple groups allows your tile to adapt to larger screens.
 
 **Note**  The only valid child of a group is a subgroup.
-
- 
 
 ```xml
 <binding template="TileWide" branding="nameAndLogo">
@@ -499,9 +457,9 @@ To provide the best experience across devices and screens, provide multiple grou
       <text hint-style="captionSubtle">Check out these awesome photos I took while in New Zealand!</text>
     </subgroup>
   </group>
- 
+
   <text />
- 
+
   <group>
     <subgroup>
       <text hint-style="subtitle">Steve Bosniak</text>
@@ -576,10 +534,9 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 
 ## Subgroups (columns)
 
-
 Subgroups also allow you to divide data into semantic sections within a group. For live tiles, this visually translates to columns.
 
-The **hint-weight** attribute lets you to control the widths of columns. The value of **hint-weight** is expressed as a weighted proportion of available space, which is identical to **GridUnitType.Star** behavior. For equal-width columns, assign each weight to 1.
+The `hint-weight` attribute lets you to control the widths of columns. The value of `hint-weight` is expressed as a weighted proportion of available space, which is identical to `GridUnitType.Star` behavior. For equal-width columns, assign each weight to 1.
 
 <table>
 <colgroup>
@@ -614,8 +571,6 @@ The **hint-weight** attribute lets you to control the widths of columns. The val
 </tbody>
 </table>
 
- 
-
 ![subgroups, even columns](images/adaptive-tiles-subgroups01.png)
 
 To make one column twice as large as another column, assign the smaller column a weight of 1 and the larger column a weight of 2.
@@ -644,8 +599,6 @@ To make one column twice as large as another column, assign the smaller column a
 </tr>
 </tbody>
 </table>
-
- 
 
 ![subgroups, one column twice the size of the other](images/adaptive-tiles-subgroups02.png)
 
@@ -676,15 +629,11 @@ If you want your first column to take up 20% of the total width and your second 
 </tbody>
 </table>
 
- 
-
 ![subgroups, with weights totalling 100](images/adaptive-tiles-subgroups03.png)
 
 **Note**  An 8-pixel margin is automatically added between the columns.
 
- 
-
-When you have more than two subgroups, you should specify the **hint-weight**, which only accepts positive integers. If you don't specify hint-weight for the first subgroup, it will be assigned a weight of 50. The next subgroup that doesn't have a specified hint-weight will be assigned a weight equal to 100 minus the sum of the preceding weights, or to 1 if the result is zero. The remaining subgroups that don't have specified hint-weights will be assigned a weight of 1.
+When you have more than two subgroups, you should specify the `hint-weight`, which only accepts positive integers. If you don't specify `hint-weight` for the first subgroup, it will be assigned a weight of 50. The next subgroup that doesn't have a specified `hint-weight` will be assigned a weight equal to 100 minus the sum of the preceding weights, or to 1 if the result is zero. The remaining subgroups that don't have specified hint-weights will be assigned a weight of 1.
 
 Here's sample code for a weather tile that shows how you can achieve a tile with five columns of equal width:
 
@@ -790,13 +739,10 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ## Images
 
-
 The &lt;image&gt; element is used to display images on the tile notification. Images can be placed inline within the tile content (default), as a background image behind your content, or as a peek image that animates in from the top of the notification.
 
 > [!NOTE]
 > Images can be used from the app's package, the app's local storage, or from the web. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB.
-
- 
 
 With no extra behaviors specified, images will uniformly shrink or expand to fill the available width. This example shows a tile using two columns and inline images. The inline images stretch to fill the width of the column.
 
@@ -1002,7 +948,7 @@ Images can be cropped into a circle using the **hint-crop** attribute, which cur
     </subgroup>
     <subgroup hint-weight="1"/>
   </group>
- 
+
   <text hint-style="title" hint-align="center">Hi,</text>
   <text hint-style="subtitleSubtle" hint-align="center">MasterHip</text>
 </binding>
@@ -1208,7 +1154,6 @@ The result will look like this:
 
 ![peek and background image used together](images/peekandbackground.png)
 
-
 ### Peek and background image overlays
 
 You can set a black overlay on your background and peek images using **hint-overlay**, which accepts integers from 0-100, with 0 being no overlay and 100 being full black overlay. You can use the overlay to help ensure that text on your tile is readable.
@@ -1246,7 +1191,7 @@ TileWide = new TileBinding()
 
 **Use hint-overlay on a peek image**
 
-In Version 1511 of Windows 10, we support an overlay for your peek image too, just like your background image. Specify hint-overlay on the peek image element as an integer from 0-100. The default overlay for peek images is 0 (no overlay).
+Starting in Windows 10 version 1511, we support an overlay for your peek image too, just like your background image. Specify hint-overlay on the peek image element as an integer from 0-100. The default overlay for peek images is 0 (no overlay).
 
 ```xml
 <binding template="TileMedium">
@@ -1276,12 +1221,11 @@ This example shows a peek image at 20% opacity (left) and at 0% opacity (right):
 
 ## Vertical alignment (text stacking)
 
-
-You can control the vertical alignment of content on your tile by using the **hint-textStacking** attribute on both the [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) element and [AdaptiveSubgroup](../tiles-and-notifications/tile-schema.md#adaptivesubgroup) element. By default, everything is vertically aligned to the top, but you can also align content to the bottom or center.
+You can control the vertical alignment of content on your tile by using the `hint-textStacking` attribute on both the [TileBinding](tile-schema.md#tilebinding) element and [AdaptiveSubgroup](tile-schema.md#adaptivesubgroup) element. By default, everything is vertically aligned to the top, but you can also align content to the bottom or center.
 
 ### Text stacking on binding element
 
-When applied at the [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) level, text stacking sets the vertical alignment of the notification content as a whole, aligning in the available vertical space above the branding/badge area.
+When applied at the [TileBinding](tile-schema.md#tilebinding) level, text stacking sets the vertical alignment of the notification content as a whole, aligning in the available vertical space above the branding/badge area.
 
 ```xml
 <binding template="TileMedium" hint-textStacking="center" branding="logo">
@@ -1321,7 +1265,7 @@ TileMedium = new TileBinding()
 
 ### Text stacking on subgroup element
 
-When applied at the [AdaptiveSubgroup](../tiles-and-notifications/tile-schema.md#adaptivesubgroup) level, text stacking sets the vertical alignment of the subgroup (column) content, aligning in the available vertical space within the entire group.
+When applied at the [AdaptiveSubgroup](tile-schema.md#adaptivesubgroup) level, text stacking sets the vertical alignment of the subgroup (column) content, aligning in the available vertical space within the entire group.
 
 ```xml
 <binding template="TileWide" branding="nameAndLogo">
@@ -1391,12 +1335,9 @@ TileWide = new TileBinding()
 ```
 
 ## Related topics
-* [Tile content schema](../tiles-and-notifications/tile-schema.md)
-* [Send a local tile notification](sending-a-local-tile-notification.md)
-* [Special tile templates](special-tile-templates-catalog.md)
-* [UWP Community Toolkit - Notifications](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
-* [Windows Notifications on GitHub](https://github.com/WindowsNotifications)
 
- 
-
- 
+- [Tile content schema](tile-schema.md)
+- [Send a local tile notification](sending-a-local-tile-notification.md)
+- [Special tile templates](special-tile-templates-catalog.md)
+- [UWP Community Toolkit - Notifications](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+- [Windows Notifications on GitHub](https://github.com/WindowsNotifications)

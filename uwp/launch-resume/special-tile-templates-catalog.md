@@ -3,20 +3,20 @@ description: Special tile templates are unique templates that are either animate
 title: Special tile templates
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 08/08/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Special tile templates
- 
+
+[!INCLUDE [notes](includes/live-tiles-note.md)]
 
 Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles. Each special tile template was specifically built for Windows 10, except for the iconic tile template, a classic special template that has been updated for Windows 10. This article covers three special tile templates: Iconic, Photos, and People.
 
 ## Iconic tile template
 
-
-The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop.
+The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile.
 
 ![small and medium mail tiles](images/iconic-template-mail-2sizes.png)
 
@@ -28,25 +28,11 @@ The following steps cover everything you need to know to create an iconic tile f
 
 **Step 1: Create your image assets in PNG format**
 
-Create the icon assets for your tile and place those in your project resources with your other assets. At a bare minimum, create a 200x200 pixel icon, which works for both small and medium tiles on phone and desktop. To provide the best user experience, create an icon for each size. No padding is needed on these assets. See sizing details in the below image.
+Create the icon assets for your tile and place those in your project resources with your other assets. At a bare minimum, create a 200x200 pixel icon, which works for both small and medium tiles. To provide the best user experience, create an icon for each size. No padding is needed on these assets. See sizing details in the below image. Windows 10 on tablet, laptop, and desktop only supports square icon assets.
 
-Save icon assets in PNG format and with transparency. On Windows Phone, every non-transparent pixel is displayed as white (RGB 255, 255, 255). For consistency and simplicity, use white for desktop icons as well.
+Save icon assets in PNG format and with transparency.
 
-Windows 10 on tablet, laptop, and desktop only supports square icon assets. Phone supports both square assets and assets that are taller than they are wide, up to a 2:3 width:height ratio, which is useful for images such as a phone icon.
-
-![icon sizing on small and medium tiles, on phone and desktop](images/iconic-template-sizing-info.png)
-
-![sizing for assets with and without badge](images/assetguidance24.png)
-
-For square assets, automatic centering within the container occurs:
-
-![square asset sizing, with and without badge](images/assetguidance25.png)
-
-For non-square assets, automatic horizontal/vertical centering and snapping to the width/height of the container occurs:
-
-![Screenshot showing automatically centered horizontal non-square asset sizing, with and without a badge.](images/assetguidance26a.png)
-
-![Screenshot showing automatically centered vertical non-square asset sizing, with and without a badge.](images/assetguidance26b.png)
+![icon sizing on small and medium tiles, on desktop](images/iconic-template-sizing-info-desktop.png)
 
 **Step 2: Create your base tile**
 
@@ -90,12 +76,11 @@ The tile's badge will update accordingly.
 
 **Step 5: Putting it all together**
 
-The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](/previous-versions/windows/apps/hh779724(v=win.10)) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](/previous-versions/windows/apps/hh779719(v=win.10)) specifies the numerical value; tile properties control your tile's display name, color, and more.
+The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](sending-a-local-tile-notification.md) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](/windows/apps/design/shell/tiles-and-notifications/badges) specifies the numerical value; tile properties control your tile's display name, color, and more.
 
 ![apis and payloads associated with the iconic tile template](images/iconic-template-properties-info.png)
 
 ## Photos tile template
-
 
 The photos tile template lets you display a slideshow of photos on your live tile. The template is supported on all tile sizes, including small, and behaves the same on each tile size. The below example shows five frames of a medium tile that uses the photos template. The template has a zoom and cross-fade animation that cycles through selected photos and loops indefinitely.
 
@@ -105,10 +90,9 @@ The photos tile template lets you display a slideshow of photos on your live til
 
 Using the photos template is easy if you've installed the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). Although you can use raw XML, we highly recommend using the library so you don't have to worry about generating valid XML or XML-escaping content.
 
-Windows Phone displays up to 9 photos in a slideshow; tablet, laptop, and desktop display up to 12.
+Windows displays up to 12 photos in a slideshow.
 
 For information about sending the tile notification, see the [Send notifications article](index.md).
-
 
 ```xml
 <!--
@@ -142,13 +126,11 @@ To use the Photos template...
 
 ```csharp
 /*
- 
 To use the Photos template...
  
  - On any TileBinding object
    - Set Content property to new instance of TileBindingContentPhotos
-   - Add up to 12 images to Images property of TileBindingContentPhotos.
- 
+   - Add up to 12 images to Images property of TileBindingContentPhotos. 
 */
  
 TileContent content = new TileContent()
@@ -177,7 +159,6 @@ TileContent content = new TileContent()
 
 ## People tile template
 
-
 The People app in Windows 10 uses a special tile template that displays a collection of images in circles that slide around vertically or horizontally on the tile. This tile template has been available since Windows 10 Build 10572, and anyone is welcome to use it in their app.
 
 The People tile template works on tiles of these sizes:
@@ -186,19 +167,13 @@ The People tile template works on tiles of these sizes:
 
 ![medium people tile](images/people-tile-medium.png)
 
- 
-
 **Wide tile** (TileWide)
 
 ![wide people tile](images/people-tile-wide.png)
 
- 
-
 **Large tile (desktop only)** (TileLarge)
 
 ![large people tile](images/people-tile-large.png)
-
- 
 
 If you're using the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), all you have to do to make use of the People tile template is create a new *TileBindingContentPeople* object for your *TileBinding* content. The *TileBindingContentPeople* class has an Images property where you add your images.
 
@@ -255,22 +230,18 @@ TileContent content = new TileContent()
 
 For the best user experience, we recommend that you provide the following number of photos for each tile size:
 
--   Medium tile: 9 photos
--   Wide tile: 15 photos
--   Large tile: 20 photos
+- Medium tile: 9 photos
+- Wide tile: 15 photos
+- Large tile: 20 photos
 
 Having that number of photos allows for a few empty circles, which means that the tile won't be too visually busy. Feel free to tweak the number of photos to get the look that works best for you.
 
-To send the notification, see [Choose a notification delivery method](choosing-a-notification-delivery-method.md).
+To send the notification, see [Choose a notification delivery method](/windows/apps/design/shell/tiles-and-notifications/choosing-a-notification-delivery-method).
 
 ## Related topics
 
-
-* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
-* [Tiles, badges, and notifications](index.md)
-* [Create adaptive tiles](create-adaptive-tiles.md)
-* [Tile content schema](../tiles-and-notifications/tile-schema.md)
- 
-
- 
+- [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-people-tile-template)
+- [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+- [Create adaptive tiles](create-adaptive-tiles.md)
+- [Tile content schema](tile-schema.md)
+  
