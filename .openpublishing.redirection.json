@@ -8084,6 +8084,76 @@
       "source_path": "hub/apps/publish/publish-your-app/pwa/overview.md",
       "redirect_url": "/windows/apps/publish/",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/adaptive-tiles-schema.md",
+      "redirect_url": "/windows/uwp/launch-resume/adaptive-tiles-schema",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/chaseable-tile-notifications.md",
+      "redirect_url": "/windows/uwp/launch-resume/chaseable-tile-notifications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/create-adaptive-tiles.md",
+      "redirect_url": "/windows/uwp/launch-resume/create-adaptive-tiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/creating-tiles.md",
+      "redirect_url": "/windows/uwp/launch-resume/creating-tiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/primary-tile-apis.md",
+      "redirect_url": "/windows/uwp/launch-resume/primary-tile-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/secondary-tiles-guidance.md",
+      "redirect_url": "/windows/uwp/launch-resume/secondary-tiles-guidance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md",
+      "redirect_url": "/windows/uwp/launch-resume/secondary-tiles-pin-to-taskbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/secondary-tiles-pinning.md",
+      "redirect_url": "/windows/uwp/launch-resume/secondary-tiles-pinning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/secondary-tiles.md",
+      "redirect_url": "/windows/uwp/launch-resume/secondary-tiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/sending-a-local-tile-notification.md",
+      "redirect_url": "/windows/uwp/launch-resume/sending-a-local-tile-notification",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/special-tile-templates-catalog.md",
+      "redirect_url": "/windows/uwp/launch-resume/special-tile-templates-catalog",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/tile-schema.md",
+      "redirect_url": "/windows/uwp/launch-resume/tile-schema",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md",
+      "redirect_url": "/windows/uwp/launch-resume/tile-toast-language-scale-contrast",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/index.md",
+      "redirect_url": "/windows/uwp/launch-resume/creating-tiles",
+      "redirect_document_id": false
     }
   ]
 }

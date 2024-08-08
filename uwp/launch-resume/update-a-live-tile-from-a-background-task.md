@@ -3,21 +3,21 @@ title: Update a live tile from a background task
 description: Use a background task to update your app's live tile with fresh content.
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
-ms.date: 01/11/2018
+ms.date: 08/08/2024
 ms.topic: article
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 ---
 # Update a live tile from a background task
 
-**Important APIs**
-
--   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+[!INCLUDE [notes](includes/live-tiles-note.md)]
 
 Use a background task to update your app's live tile with fresh content.
 
-Here's a video that shows how to add live tiles to your apps.
+**Important APIs**
+
+- [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+- [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 ## Create the background task project  
 
@@ -29,7 +29,6 @@ To enable a live tile for your app, add a new Windows Runtime component project 
 4.  In the main project, add a reference to the BackgroundTasks project.
 
 ## Implement the background task
-
 
 Implement the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface to create a class that updates your app's live tile. Your background work goes in the Run method. In this case, the task gets a syndication feed for the MSDN blogs. To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.
 
@@ -252,8 +251,4 @@ To debug the background task, set a breakpoint in the task’s Run method. In th
 * [**TileUpdateManager**](/uwp/api/Windows.UI.Notifications.TileUpdateManager)
 * [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)
-* [Guidelines and checklist for tiles and badges](/windows/apps/design/shell/tiles-and-notifications/creating-tiles)
-
- 
-
  

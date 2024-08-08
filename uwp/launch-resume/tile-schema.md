@@ -4,38 +4,38 @@ title: Tile content schema
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Tile content schema
 template: detail.hbs
-ms.date: 07/28/2017
+ms.date: 08/08/2024
 ms.topic: article
 keywords: windows 10, uwp, tile, tile notification, tile content, schema, tile payload
 ms.localizationpriority: medium
 ---
 # Tile content schema
 
- 
+[!INCLUDE [notes](includes/live-tiles-note.md)]
 
 The following describes all of the properties and elements within tile content.
 
-If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema](../tiles-and-notifications/adaptive-tiles-schema.md).
+If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema](adaptive-tiles-schema.md).
 
-[TileContent](#tilecontent)
-* [TileVisual](#tilevisual)
-  * [TileBinding](#tilebinding)
-    * [TileBindingContentAdaptive](#tilebindingcontentadaptive)
-    * [TileBindingContentIconic](#tilebindingcontenticonic)
-    * [TileBindingContentContact](#tilebindingcontentcontact)
-    * [TileBindingContentPeople](#tilebindingcontentpeople)
-    * [TileBindingContentPhotos](#tilebindingcontentphotos)
-
+* [TileContent](#tilecontent)
+  * [TileVisual](#tilevisual)
+    * [TileBinding](#tilebinding)
+      * [TileBindingContentAdaptive](#tilebindingcontentadaptive)
+      * [TileBindingContentIconic](#tilebindingcontenticonic)
+      * [TileBindingContentContact](#tilebindingcontentcontact)
+      * [TileBindingContentPeople](#tilebindingcontentpeople)
+      * [TileBindingContentPhotos](#tilebindingcontentphotos)
 
 ## TileContent
+
 TileContent is the top level object that describes a tile notification's content, including visuals.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
 | **Visual** | [ToastVisual](#tilevisual) | true | Describes the visual portion of the tile notification. |
 
-
 ## TileVisual
+
 The visual portion of tiles contains the visual specifications for all tile sizes, and more visual-related properties.
 
 | Property | Type | Required | Description |
@@ -54,8 +54,8 @@ The visual portion of tiles contains the visual specifications for all tile size
 | **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **Language**| string | false | The target locale of the visual payload when using localized resources, specified as BCP-47 language tags such as "en-US" or "fr-FR". This locale is overridden by any locale specified in binding or text. If not provided, the system locale will be used instead. |
 
-
 ## TileBinding
+
 The binding object contains the visual content for a specific tile size.
 
 | Property | Type | Required | Description |
@@ -68,8 +68,8 @@ The binding object contains the visual content for a specific tile size.
 | **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **Language**| string | false | The target locale of the visual payload when using localized resources, specified as BCP-47 language tags such as "en-US" or "fr-FR". This locale is overridden by any locale specified in binding or text. If not provided, the system locale will be used instead. |
 
-
 ## ITileBindingContent
+
 Marker interface for tile binding content. These let you choose what you want to specify your tile visuals in - Adaptive, or one of the special templates.
 
 | Implementations |
@@ -80,8 +80,8 @@ Marker interface for tile binding content. These let you choose what you want to
 | [TileBindingContentPeople](#tilebindingcontentpeople) |
 | [TileBindingContentPhotos](#tilebindingcontentphotos) |
 
-
 ## TileBindingContentAdaptive
+
 Supported on all sizes. This is the recommended way of specifying your tile content. Adaptive Tile templates new in Windows 10, and you can create a wide variety of custom tiles through adaptive.
 
 | Property | Type | Required | Description |
@@ -91,8 +91,8 @@ Supported on all sizes. This is the recommended way of specifying your tile cont
 | **PeekImage** | [TilePeekImage](#tilepeekimage) | false | An optional peek image that animates in from the top of the Tile. |
 | **TextStacking** | [TileTextStacking](#tiletextstacking) | false | Controls the text stacking (vertical alignment) of the children content as a whole. |
 
-
 ## AdaptiveText
+
 An adaptive text element.
 
 | Property | Type | Required |Description |
@@ -105,8 +105,8 @@ An adaptive text element.
 | **HintAlign** | [AdaptiveTextAlign](#adaptivetextalign) | false | The horizontal alignment of the text. |
 | **Language** | string | false | The target locale of the XML payload, specified as a BCP-47 language tags such as "en-US" or "fr-FR". The locale specified here overrides any other specified locale, such as that in binding or visual. If this value is a literal string, this attribute defaults to the user's UI language. If this value is a string reference, this attribute defaults to the locale chosen by Windows Runtime in resolving the string. |
 
-
 ### AdaptiveTextStyle
+
 Text style controls font size, weight, and opacity. Subtle opacity is 60% opaque.
 
 | Value | Meaning |
@@ -130,8 +130,8 @@ Text style controls font size, weight, and opacity. Subtle opacity is 60% opaque
 | **HeaderSubtle** | Same as Header but with subtle opacity. |
 | **HeaderNumeral** | Same as Header but with top/bottom padding removed. |
 
-
 ### AdaptiveTextAlign
+
 Controls the horizontal alignment of text.
 
 | Value | Meaning |
@@ -142,8 +142,8 @@ Controls the horizontal alignment of text.
 | **Center** | Horizontally align the text in the center. |
 | **Right** | Horizontally align the text to the right. |
 
-
 ## AdaptiveImage
+
 An inline image.
 
 | Property | Type | Required |Description |
@@ -155,8 +155,8 @@ An inline image.
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
 | **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the tile notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
-
 ### AdaptiveImageCrop
+
 Specifies the desired cropping of the image.
 
 | Value | Meaning |
@@ -165,8 +165,8 @@ Specifies the desired cropping of the image.
 | **None** | Image is not cropped. |
 | **Circle** | Image is cropped to a circle shape. |
 
-
 ### AdaptiveImageAlign
+
 Specifies the horizontal alignment for an image.
 
 | Value | Meaning |
@@ -177,16 +177,16 @@ Specifies the horizontal alignment for an image.
 | **Center** | Align the image in the center horizontally, displaying the image at its native resolution. |
 | **Right** | Align the image to the right, displaying the image at its native resolution. |
 
-
 ## AdaptiveGroup
+
 Groups semantically identify that the content in the group must either be displayed as a whole, or not displayed if it cannot fit. Groups also allow creating multiple columns.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
 | **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | Subgroups are displayed as vertical columns. You must use subgroups to provide any content inside an AdaptiveGroup. |
 
-
 ## AdaptiveSubgroup
+
 Subgroups are vertical columns that can contain text and images.
 
 | Property | Type | Required |Description |
@@ -195,8 +195,8 @@ Subgroups are vertical columns that can contain text and images.
 | **HintWeight** | int? | false | Control the width of this subgroup column by specifying the weight, relative to the other subgroups. |
 | **HintTextStacking** | [AdaptiveSubgroupTextStacking](#adaptivesubgrouptextstacking) | false | Control the vertical alignment of this subgroup's content. |
 
-
 ### IAdaptiveSubgroupChild
+
 Marker interface for subgroup children.
 
 | Implementations |
@@ -204,8 +204,8 @@ Marker interface for subgroup children.
 | [AdaptiveText](#adaptivetext) |
 | [AdaptiveImage](#adaptiveimage) |
 
-
 ### AdaptiveSubgroupTextStacking
+
 TextStacking specifies the vertical alignment of content.
 
 | Value | Meaning |
@@ -215,8 +215,8 @@ TextStacking specifies the vertical alignment of content.
 | **Center** | Vertical align to the center. |
 | **Bottom** | Vertical align to the bottom. |
 
-
 ## TileBackgroundImage
+
 A background image displayed full-bleed on the tile.
 
 | Property | Type | Required |Description |
@@ -227,8 +227,8 @@ A background image displayed full-bleed on the tile.
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
 | **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the tile notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
-
 ### TileBackgroundImageCrop
+
 Controls the cropping of the background image.
 
 | Value | Meaning |
@@ -237,8 +237,8 @@ Controls the cropping of the background image.
 | **None** | Image is not cropped, displayed square. |
 | **Circle** | Image is cropped to a circle. |
 
-
 ## TilePeekImage
+
 A peek image that animates in from the top of the tile.
 
 | Property | Type | Required |Description |
@@ -249,8 +249,8 @@ A peek image that animates in from the top of the tile.
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
 | **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the tile notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
-
 ### TilePeekImageCrop
+
 Controls the cropping of the peek image.
 
 | Value | Meaning |
@@ -259,8 +259,8 @@ Controls the cropping of the peek image.
 | **None** | Image is not cropped, displayed square. |
 | **Circle** | Image is cropped to a circle. |
 
-
 ### TileTextStacking
+
 Text stacking specifies the vertical alignment of the content.
 
 | Value | Meaning |
@@ -270,16 +270,16 @@ Text stacking specifies the vertical alignment of the content.
 | **Center** | Vertical align to the center. |
 | **Bottom** | Vertical align to the bottom. |
 
-
 ## TileBindingContentIconic
+
 Supported on Small and Medium. Enables an iconic tile template, where you can have an icon and badge display next to each other on the tile, in true classic Windows Phone style. The number next to the icon is achieved through a separate badge notification.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
-| **Icon** | [TileBasicImage](#tilebasicimage) | true | At minimum, to support both Desktop and Mobile, Small and Medium tiles, provide a square aspect ratio image with a resolution of 200x200, PNG format, with transparency and no color other than white. For more info see: [Special Tile Templates](../tiles-and-notifications/special-tile-templates-catalog.md). |
-
+| **Icon** | [TileBasicImage](#tilebasicimage) | true | At minimum, to support both Desktop and Mobile, Small and Medium tiles, provide a square aspect ratio image with a resolution of 200x200, PNG format, with transparency and no color other than white. For more info see: [Special Tile Templates](special-tile-templates-catalog.md). |
 
 ## TileBindingContentContact
+
 Mobile-only. Supported on Small, Medium, and Wide.
 
 | Property | Type | Required |Description |
@@ -287,24 +287,24 @@ Mobile-only. Supported on Small, Medium, and Wide.
 | **Image** | [TileBasicImage](#tilebasicimage) | true | The image to display. |
 | **Text** | [TileBasicText](#tilebasictext) | false | A line of text that is displayed. Not displayed on small tile. |
 
-
 ## TileBindingContentPeople
+
 New in 1511: Supported on Medium, Wide, and Large (Desktop and Mobile). Previously this was Mobile-only and only Medium and Wide.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
 | **Images** | IList<[TileBasicImage](#tilebasicimage)> | true | Images that will roll around as circles. |
 
-
 ## TileBindingContentPhotos
+
 Animates through a slideshow of photos. Supported on all sizes.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
 | **Images** | IList<[TileBasicImage](#tilebasicimage)> | true | Up to 12 images can be provided (Mobile will only display up to 9), which will be used for the slideshow. Adding more than 12 will throw an exception. |
 
-
 ### TileBasicImage
+
 An image used on various special templates.
 
 | Property | Type | Required |Description |
@@ -313,8 +313,8 @@ An image used on various special templates.
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
 | **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the tile notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
-
 ### TileBasicText
+
 A basic text element used on various special templates.
 
 | Property | Type | Required |Description |
@@ -322,8 +322,7 @@ A basic text element used on various special templates.
 | **Text** | string | false | The text to display. |
 | **Language** | string | false | The target locale of the XML payload, specified as a BCP-47 language tags such as "en-US" or "fr-FR". The locale specified here overrides any other specified locale, such as that in binding or visual. If this value is a literal string, this attribute defaults to the user's UI language. If this value is a string reference, this attribute defaults to the locale chosen by Windows Runtime in resolving the string. |
 
-
 ## Related topics
 
-* [Quickstart: Send a local tile notification](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [Send a local tile notification](sending-a-local-tile-notification.md)
 * [Notifications library on GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit/)

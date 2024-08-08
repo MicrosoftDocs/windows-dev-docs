@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Pin your app to the taskbar
 
-Now you can programmatically request users to pin your Win32 or UWP app to the taskbar, similar to how you can [pin your app to the Start menu](tiles-and-notifications/primary-tile-apis.md). And you can check whether your app is currently pinned, and whether the taskbar allows pinning.
+Now you can programmatically request users to pin your Win32 or UWP app to the taskbar, similar to how you can [pin your app to the Start menu](/windows/uwp/launch-resume/primary-tile-apis). And you can check whether your app is currently pinned, and whether the taskbar allows pinning.
 
 ![Screenshot of a Windows 11 task bar showing the app pinned there.](images/taskbar/taskbar.png)
 
@@ -132,4 +132,4 @@ This method returns a boolean value that indicates whether your app is now pinne
 * [Full UWP code sample on GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
 * [Full desktop code sample on GitHub](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TaskbarManager)
 * [TaskbarManager class](/uwp/api/windows.ui.shell.taskbarmanager)
-* [Pin an app to the Start menu](tiles-and-notifications/primary-tile-apis.md)
+* [Pin an app to the Start menu](/windows/uwp/launch-resume/primary-tile-apis)

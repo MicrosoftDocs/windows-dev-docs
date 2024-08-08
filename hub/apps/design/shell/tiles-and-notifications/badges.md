@@ -11,11 +11,6 @@ ms.localizationpriority: medium
 ---
 # Badge notifications for Windows apps
 
- 
-
-<div>
-<img src="images/badge-example.png" alt="A tile with a numeric badge displaying the number 63 to indicate 63 unread mails." /><br/>A tile with a numeric badge displaying<br/> the number 63 to indicate 63 unread mails.</div>
-
 A notification badge conveys summary or status information specific to your app. They can be numeric (1-99) or one of a set of system-provided glyphs. Examples of information best conveyed through a badge include network connection status in an online game, user status in a messaging app, number of unread mails in a mail app, and number of new posts in a social media app. 
 
 Notification badges appear on your app's taskbar icon and in the lower-right corner of its start tile, regardless of whether the app is running. Badges can be displayed on all tile sizes.  
@@ -125,5 +120,5 @@ private void clearBadge()
 ## Related articles
 
 * [Adaptive and interactive toast notifications](adaptive-interactive-toasts.md)
-* [Create tiles](creating-tiles.md)
-* [Create adaptive tiles](create-adaptive-tiles.md)
+* [Create tiles](/windows/uwp/launch-resume/creating-tiles)
+* [Create adaptive tiles](/windows/uwp/launch-resume/create-adaptive-tiles)

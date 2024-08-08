@@ -11,22 +11,21 @@ ms.localizationpriority: medium
 ---
 # Chaseable tile notifications
 
-Chaseable tile notifications let you determine which tile notifications your app's Live Tile was displaying when the user clicked the tile.  
-For example, a news app could use this feature to determine which news story its Live Tile was displaying when the user launched it; it could that ensure that the story is prominently displayed so that the user can find it. 
+[!INCLUDE [notes](includes/live-tiles-note.md)]
+
+Chaseable tile notifications let you determine which tile notifications your app's Live Tile was displaying when the user clicked the tile.
+For example, a news app could use this feature to determine which news story its Live Tile was displaying when the user launched it; it could that ensure that the story is prominently displayed so that the user can find it.
 
 > [!IMPORTANT]
-> **Requires Anniversary Update**: To use chaseable tile notifications with C#, C++, or VB-based UWP apps, you must target SDK 14393 and be running build 14393 or later. For JavaScript-based UWP apps, you must target SDK 17134 and be running build 17134 or later. 
-
+> **Requires Anniversary Update**: To use chaseable tile notifications with C#, C++, or VB-based UWP apps, you must target SDK 14393 and be running build 14393 or later.
 
 > **Important APIs**: [LaunchActivatedEventArgs.TileActivatedInfo property](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
-
 
 ## How it works
 
 To enable chaseable tile notifications, you use the **Arguments** property on the tile notification payload, similar to the launch property on the toast notification payload, to embed info about the content in the tile notification.
 
 When your app is launched via the Live Tile, the system returns a list of arguments from the current/recently displayed tile notifications.
-
 
 ## When to use chaseable tile notifications
 
@@ -38,14 +37,13 @@ The most important thing to note is that in most scenarios, **you should NOT dir
 
 For example, clicking the MSN News app's Live Tile launches the app normally: it displays the home page, or whichever article the user was previously reading. However, on the home page, the app ensures that the story from the Live Tile is easily discoverable. That way, both scenarios are supported: the scenario where you simply want to launch/resume the app, and the scenario where you want to view the specific story.
 
-
 ## How to include the Arguments property in your tile notification payload
 
 In a notification payload, the arguments property enables your app to provide data you can use to later identify the notification. For example, your arguments might include the story's id, so that when launched, you can retrieve and display the story. The property accepts a string, which can be serialized however you like (query string, JSON, etc), but we typically recommend query string format, since it's lightweight and XML-encodes nicely.
 
 The property can be set on both the **TileVisual** and the **TileBinding** elements, and will cascade down. If you want the same arguments on every tile size, simply set the arguments on the **TileVisual**. If you need specific arguments for specific tile sizes, you can set the arguments on individual **TileBinding** elements.
 
-This example creates a notification payload that uses the arguments property so that notification can be identified later. 
+This example creates a notification payload that uses the arguments property so that notification can be identified later.
 
 ```csharp
 // Uses the following NuGet packages
@@ -96,7 +94,6 @@ TileContent content = new TileContent()
 };
 ```
 
-
 ## How to check for the arguments property when your app launches
 
 Most apps have an App.xaml.cs file that contains an override for the [OnLaunched](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method. As its name suggests, your app calls this method when it's launched. It takes a single argument, a [LaunchActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) object.
@@ -132,7 +129,6 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
     // TODO: Initialize app
 }
 ```
-
 
 ### Accessing OnLaunched from desktop applications
 
@@ -172,10 +168,9 @@ static void Main()
                     // TODO: Highlight each story in the app
                 }
             }
-    
+
             break;
 ```
-
 
 ## Raw XML example
 
@@ -210,8 +205,6 @@ If you're using raw XML instead of the Notifications library, here's the XML.
   </visual>
 </tile>
 ```
-
-
 
 ## Related articles
 
