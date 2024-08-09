@@ -8154,6 +8154,21 @@
       "source_path": "hub/apps/design/shell/tiles-and-notifications/index.md",
       "redirect_url": "/windows/uwp/launch-resume/creating-tiles",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/fingerprint-biometrics.md",
+      "redirect_url": "/windows/apps/develop/security/fingerprint-biometrics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/smart-cards.md",
+      "redirect_url": "/windows/apps/develop/security/smart-cards",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/credential-locker.md",
+      "redirect_url": "/windows/apps/develop/security/credential-locker",
+      "redirect_document_id": false
     }
   ]
 }
