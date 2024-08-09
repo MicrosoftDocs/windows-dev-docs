@@ -56,6 +56,8 @@ PowerToys Awake tray icon represents the currently selected mode:
 | Expirable          | ![Expirable mode icon for PowerToys Awake](../images/powertoys-awakeexpirable.png)    | PowerToys Awake will be keeping the defined power request until a date and time that you've set through PowerToys settings or in the configuration file. |
 | Indefinite         | ![Indefinite mode icon for PowerToys Awake](../images/powertoys-awake/indefinite.png) | PowerToys Awake will continue to keep your computer awake until you exit the application. |
 
+The tray icon tooltip will also provide a hint about the currently active PowerToys Awake mode.
+
 ## Command Line Interface (CLI)
 
 PowerToys Awake can also be executed as a standalone application, directly from the PowerToys folder. The following command line arguments can be used when running `PowerToys.Awake.exe` from the terminal:
