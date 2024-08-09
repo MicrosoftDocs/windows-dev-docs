@@ -53,7 +53,7 @@ PowerToys Awake tray icon represents the currently selected mode:
 |:------|:-----|:------------|
 | Disabled (Passive) | ![Passive mode icon for PowerToys Awake](../images/powertoys-awake/passive.png)       | PowerToys Awake is running but does not hold any power states. Your operating system's power plan is in effect. |
 | Timed (Interval)   | ![Timed mode icon for PowerToys Awake](../images/powertoys-awake/timed.png)           | You set PowerToys Awake to keep your computer awake for a pre-defined time interval (for example, 30 minutes). |
-| Expirable          | ![Expirable mode icon for PowerToys Awake](../images/powertoys-awakeexpirable.png)    | PowerToys Awake will be keeping the defined power request until a date and time that you've set through PowerToys settings or in the configuration file. |
+| Expirable          | ![Expirable mode icon for PowerToys Awake](../images/powertoys-awake/expirable.png)    | PowerToys Awake will be keeping the defined power request until a date and time that you've set through PowerToys settings or in the configuration file. |
 | Indefinite         | ![Indefinite mode icon for PowerToys Awake](../images/powertoys-awake/indefinite.png) | PowerToys Awake will continue to keep your computer awake until you exit the application. |
 
 The tray icon tooltip will also provide a hint about the currently active PowerToys Awake mode.
