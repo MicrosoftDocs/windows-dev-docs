@@ -1210,19 +1210,19 @@
         - name: Authentication and user identity
           href: ../security/authentication-and-user-identity.md
           items: 
-            - name: Credential locker
-              href: ../security/credential-locker.md
-            - name: Fingerprint biometrics
-              href: ../security/fingerprint-biometrics.md
-            - name: Windows Hello
+            - name: Credential locker >>
+              href: /windows/apps/develop/security/credential-locker
+            - name: Fingerprint biometrics >>
+              href: /windows/apps/develop/security/fingerprint-biometrics
+            - name: Windows Hello >>
               href: /windows/apps/develop/security/windows-hello
               items: 
-                - name: Create a Windows Hello login app
+                - name: Create a Windows Hello login app >>
                   href: /windows/apps/develop/security/windows-hello-login
-                - name: Create a Windows Hello login service
+                - name: Create a Windows Hello login service >>
                   href: /windows/apps/develop/security/windows-hello-auth-service
-            - name: Smart cards
-              href: ../security/smart-cards.md
+            - name: Smart cards >>
+              href: /windows/apps/develop/security/smart-cards
             - name: Shared certificates
               href: ../security/share-certificates.md
             - name: Web Account Manager

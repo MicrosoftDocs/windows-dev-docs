@@ -1,23 +1,20 @@
 ---
 title: Fingerprint biometrics
-description: This article explains how to add fingerprint biometrics to your Universal Windows Platform (UWP) app.
-ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
-ms.date: 02/08/2017
-ms.topic: article
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
+description: This article explains how to add fingerprint biometrics to your packaged Windows app using WinRT APIs from the Windows SDK.
+ms.date: 08/05/2024
+ms.topic: how-to
+#customer intent: As a Windows developer, I want to add fingerprint biometrics to my Windows apps.
 ---
+
 # Fingerprint biometrics
 
+This article explains how to add fingerprint biometrics to your Windows app, including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app. For example, you could require fingerprint authentication before authorizing an in-app purchase, or access to restricted resources. Fingerprint authentication is managed using the [UserConsentVerifier](/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier) class in the [Windows.Security.Credentials.UI](/uwp/api/Windows.Security.Credentials.UI) namespace.
 
-
-
-This article explains how to add fingerprint biometrics to your Universal Windows Platform (UWP) app. Including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app. For example, you could require fingerprint authentication before authorizing an in-app purchase, or access to restricted resources. Fingerprint authentication is managed using the [**UserConsentVerifier**](/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier) class in the [**Windows.Security.Credentials.UI**](/uwp/api/Windows.Security.Credentials.UI) namespace.
+The Windows Runtime (WinRT) APIs for fingerprint biometrics are part of the [Windows Software Development Kit (SDK)](https://developer.microsoft.com/windows/downloads/windows-sdk/). These APIs were created for use in Universal Windows Platform (UWP) apps, but they can also be used in WinUI apps or in packaged desktop apps, including WPF and Windows Forms. For more information about using WinRT APIs in your Windows desktop app, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 ## Check the device for a fingerprint reader
 
-
-To find out whether the device has a fingerprint reader, call [**UserConsentVerifier.CheckAvailabilityAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.checkavailabilityasync). Even if a device supports fingerprint authentication, your app should still provide users with an option in Settings to enable or disable it.
+To find out whether the device has a fingerprint reader, call [UserConsentVerifier.CheckAvailabilityAsync](/uwp/api/windows.security.credentials.ui.userconsentverifier.checkavailabilityasync). Even if a device supports fingerprint authentication, your app should still provide users with an option in Settings to enable or disable it.
 
 ```cs
 public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
@@ -54,7 +51,7 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
     }
     catch (Exception ex)
     {
-        returnMessage = "Fingerprint authentication availability check failed: " + ex.ToString();
+        returnMessage = $"Fingerprint authentication availability check failed: {ex.ToString()}";
     }
 
     return returnMessage;
@@ -63,10 +60,8 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 
 ## Request consent and return results
 
-
-To request user consent from a fingerprint scan, call the [**UserConsentVerifier.RequestVerificationAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) method. For fingerprint authentication to work, the user must have previously added a fingerprint "signature" to the fingerprint database.
-
-When you call the [**UserConsentVerifier.RequestVerificationAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync), the user is presented with a modal dialog requesting a fingerprint scan. You can supply a message to the **UserConsentVerifier.RequestVerificationAsync** method that will be displayed to the user as part of the modal dialog, as shown in the following image.
+1. To request user consent from a fingerprint scan, call the [UserConsentVerifier.RequestVerificationAsync](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) method. For fingerprint authentication to work, the user must have previously added a fingerprint "signature" to the fingerprint database.
+1. When you call the [UserConsentVerifier.RequestVerificationAsync](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync), the user is presented with a modal dialog requesting a fingerprint scan. You can supply a message to the **UserConsentVerifier.RequestVerificationAsync** method that will be displayed to the user as part of the modal dialog, as shown in the following image.
 
 ```cs
 private async System.Threading.Tasks.Task<string> RequestConsent(string userMessage)
@@ -114,9 +109,15 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
     }
     catch (Exception ex)
     {
-        returnMessage = "Fingerprint authentication failed: " + ex.ToString();
+        returnMessage = $"Fingerprint authentication failed: {ex.ToString()}";
     }
 
     return returnMessage;
 }
 ```
+
+## Related content
+
+- [UserConsentVerifier](/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier)
+- [Windows.Security.Credentials.UI namespace](/uwp/api/Windows.Security.Credentials.UI)
+- [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
