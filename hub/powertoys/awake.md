@@ -25,15 +25,16 @@ In the PowerToys Settings, start PowerToys Awake by toggling **Enable Awake** on
 
 You can choose the following Awake states:
 
-| Setting | Description |
-| :-- | :-- |
-| Keep using the selected power plan | The computer awakeness state is unaffected. The application is waiting for user input. |
-| Keep awake indefinitely | The computer stays awake indefinitely, until you explicitly put the machine to sleep or close/disable the application. |
-| Keep awake for a time interval | Keep machine awake for a defined limited time. After the defined time, Awake returns to the previous state. |
-| Keep awake until expiration. | Keep machine awake until a defined time. |
+| Setting                                   | Description                                                                                                            |
+| :---------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| Keep awake for duration                   | Keep machine awake for the specified duration. After expiry, Awake returns to its previous state.                      |
+| Keep awake until expiration date and time | Keep machine awake until a defined time.                                                                               |
+| Keep awake indefinitely                   | The computer stays awake indefinitely, until you explicitly put the machine to sleep or close/disable the application. |
+| Off (keep using the selected power plan)  | PowerToys Awake feature is deactivated and the sleep/stand-by duration is determined by the computer's Power Plan.     |
+| Keep screen on                            | Prevents powering off the monitors or activating the screen saver while Awake mode is active.                          |
 
 > [!NOTE]
-> Changing the hours or minutes while the computer is kept awake temporarily will reset the timer.
+> Selecting a new Awake duration while the computer is already in Awake mode will reset the timer.
 
 ### Keep screen on
 
