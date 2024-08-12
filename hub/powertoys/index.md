@@ -50,7 +50,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![PowerToys Awake screenshot](../images/pt-awake-menu.png)](awake.md)
+        [![PowerToys Awake screenshot](../images/powertoys-awake/pt-awake-menu.png)](awake.md)
     :::column-end:::
     :::column span="2":::
         [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turns off its displays.
