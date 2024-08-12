@@ -15,7 +15,7 @@ PowerToys Awake is a tool for Windows designed to keep a computer awake without 
 You can use PowerToys Awake directly from PowerToys Settings or as a standalone executable (`PowerToys.Awake.exe` in the PowerToys installation folder).
 
 > [!NOTE]
-> PowerToys Awake does not modify any of the Windows power plan settings and does not depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine. Once PowerToys Awake exists, the threads are terminated and the computer will resume its standard power plan behavior.
+> PowerToys Awake does not modify any of the Windows power plan settings and does not depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine. Once PowerToys Awake exits, the threads are terminated and the computer will resume its standard power plan behavior.
 
 ## Settings
 
