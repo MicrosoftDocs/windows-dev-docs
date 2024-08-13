@@ -29,9 +29,9 @@ If the desired Arm64X binary is a combination of two separate projects, one as A
 
 ## Building an Arm64X DLL with CMake
 
-To build your CMake project binaries as Arm64X, you can use any version of [CMake](https://cmake.org/documentation/) that supports building as ARM64EC. The process involves initially building the project targeting ARM64 to generate the ARM64 linker inputs. Subsequently, the project should be built again targeting ARM64EC, this time combining the ARM64 and ARM64EC inputs to form Arm64X binaries. The steps below leverage the use of [CMakePresets.json](/cpp/build/cmake-presets-vs).
+To build your CMake project binaries as Arm64X, you can use any version of [CMake](https://cmake.org/documentation/) that supports building as Arm64EC. The process involves initially building the project targeting Arm64 to generate the Arm64 linker inputs. Subsequently, the project should be built again targeting Arm64EC, this time combining the Arm64 and Arm64EC inputs to form Arm64X binaries. The steps below leverage the use of [CMakePresets.json](/cpp/build/cmake-presets-vs).
 
-1. Ensure you have separate configuration presets targeting ARM64 and ARM64EC. For example:
+1. Ensure you have separate configuration presets targeting Arm64 and Arm64EC. For example:
 
 	```JSON
 	{
@@ -78,7 +78,7 @@ To build your CMake project binaries as Arm64X, you can use any version of [CMak
 	}
 	```
 
-2. Add two new configurations that inherit from the ARM64 and ARM64EC presets you have above. Set `BUILD_AS_ARM64X` to `ARM64EC` in the config that inherits from ARM64EC and `BUILD_AS_ARM64X` to `ARM64` in the other. These variables will be used to signify that the builds from these two presets are a part of Arm64X.
+2. Add two new configurations that inherit from the Arm64 and Arm64EC presets you have above. Set `BUILD_AS_ARM64X` to `ARM64EC` in the config that inherits from Arm64EC and `BUILD_AS_ARM64X` to `ARM64` in the other. These variables will be used to signify that the builds from these two presets are a part of Arm64X.
 
 	 ```JSON
 	    {
@@ -194,9 +194,9 @@ endif()
 	endif()
 	```
 
-5. Build your CMake project using the Arm64X enabled ARM64 preset (arm64-debug-x).
+5. Build your CMake project using the Arm64X enabled Arm64 preset (arm64-debug-x).
 
-6. Build your CMake project using the Arm64X enabled ARM64EC preset (arm64ec-debug-x). The final dll(s) contained in output directory for this build will be ARM64X binaries.
+6. Build your CMake project using the Arm64X enabled Arm64EC preset (arm64ec-debug-x). The final dll(s) contained in output directory for this build will be Arm64X binaries.
 
 ## Building an Arm64X pure forwarder DLL
 
@@ -217,7 +217,7 @@ You can build an Arm64X pure forwarder from the Arm64 developer command prompt f
     cl /c /arm64EC /Foempty_x64.obj empty.cpp
     ```
     
-   > If the error message "cl : Command line warning D9002 : ignoring unknown option '-arm64EC'" appears, the incorrect compiler is being used. To resolve that please switch to [the ARM64 Developer Command Prompt](https://devblogs.microsoft.com/cppblog/arm64ec-support-in-visual-studio/#developer-command-prompt).
+   > If the error message "cl : Command line warning D9002 : ignoring unknown option '-arm64EC'" appears, the incorrect compiler is being used. To resolve that please switch to [the Arm64 Developer Command Prompt](https://devblogs.microsoft.com/cppblog/arm64ec-support-in-visual-studio/#developer-command-prompt).
 
 2. Create `DEF` files for both x64 and Arm64. These files enumerate all of the API exports of the DLL and points the loader to the name of the DLL that can fulfill those API calls.
 
