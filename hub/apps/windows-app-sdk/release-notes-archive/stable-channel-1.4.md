@@ -24,6 +24,13 @@ The stable channel provides releases of the Windows App SDK that are supported f
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
 
+### Version 1.4.7 (1.4.240802001)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
+
+- Fixed an issue where `ItemsRepeater` would not generate enough items if it was in a `ShouldConstrainToRootBounds="false"` popup which was taller or wider than the main window.
+- Fixed a potential crash on shutdown if an `AnnotatedScrollBar` label update was pending.
+
 ### Version 1.4.6 (1.4.240512000)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.
