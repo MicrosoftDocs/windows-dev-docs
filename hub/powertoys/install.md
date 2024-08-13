@@ -44,7 +44,7 @@ Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys)
 To install PowerToys using the [Windows Package Manager](../package-manager/winget/index.md), it is as simple as running the following command from the command line / PowerShell:
 
 ```powershell
-winget install Microsoft.PowerToys --source winget
+winget install --id Microsoft.PowerToys -e --source winget
 ```
 
 PowerToys supports configuring through `winget configure` using [Desired State Configuration](dsc-configure.md).
