@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 07/17/2024
+ms.date: 08/13/2024
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -583,7 +583,7 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 ### Microsoft Store complaint and appeal statistics
 
-Numbers reported on umbers reported on 7/2/2024 (from 7/1/2023 – 6/30/2024)
+Numbers reported on numbers reported on 7/2/2024 (from 7/1/2023 – 6/30/2024)
 
 
 | Statistic (FY2024) | Count    |
