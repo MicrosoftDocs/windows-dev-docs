@@ -21,7 +21,7 @@ As of Windows Version 1903 (May 2019 Update), you can use the ActiveCodePage pro
 You can declare the ActiveCodePage property, and target/run on earlier Windows builds, but you must handle legacy code page detection and conversion as usual. With a minimum target version of Windows Version 1903, the process code page will always be UTF-8, so legacy code page detection and conversion can be avoided.
 
 > [!NOTE]
-> An encoded character takes between 1 and 4 bytes. UTF-8 encoding supports longer byte sequences, up to 6 bytes, but the biggest code point of Unicode 6.0 (U+10FFFF) only takes 4 bytes.
+> In UTF-8, an encoded character is represented by a sequence of 1 to 4 bytes. (See definition D92 in Chapter 3 of [The Unicode Standard](https://www.unicode.org/versions/latest/) for the formal specification.)
 
 ## Examples
 
