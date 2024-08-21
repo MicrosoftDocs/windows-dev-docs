@@ -4,8 +4,6 @@ description: A case study of taking the C++/WinRT [UWP Photo Editor sample app](
 ms.topic: article
 ms.date: 11/17/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C++/WinRT, Photo, Editor, UWP
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

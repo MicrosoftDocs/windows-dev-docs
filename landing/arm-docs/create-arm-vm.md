@@ -5,8 +5,6 @@ ms.date: 12/20/2023
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
-author: mattwojo
-ms.author: mattwoj
 ms.reviewer: jcoliz
 ---
 

@@ -1,9 +1,6 @@
 ---
 title: Configure Dev Drive policy for enterprise business devices
 description: Group Policy managers will need to make policy updates in order to enable Dev Drive on Windows 11 devices. Find guidance for using Microsoft InTune, Configuration Manager, or Local Group Policy Editor to update policy, enable Dev Drive, and set security filter permissions.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.date: 09/26/2023
 ---
@@ -78,7 +75,7 @@ To update Group Policy and enable [Dev Drive](index.md) using [Microsoft Intune)
     ![Screenshot of Microsoft Intune creating a configuration profile](..\images\dev-drive-group-policy-intune2.png)
 
 4. Configure Dev Drive related settings:
-    1. Search “Dev Drive” in settings picker or navigate to “Administrative Templates\System\Filesystem”
+    1. Search "Dev Drive" in settings picker or navigate to "Administrative Templates\System\Filesystem"
     1. Select Dev Drive related policies: **Enable Dev Drive** and **Let antivirus filter protect Dev Drives**, **Dev Drive filter attach policy** and **Filter list**
 
     ![Screenshot of Microsoft Intune admin center Setting picker with Dev Drive results](..\images\dev-drive-group-policy-intune3.png)

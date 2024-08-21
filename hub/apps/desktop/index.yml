@@ -8,8 +8,6 @@ metadata:
   description: This documentation provides the latest guidance about building desktop apps for Windows 11 and Windows 10.
   ms.topic: landing-page
   ms.collection: collection
-  ms.author: jken
-  author: GrantMeStrength
   ms.date: 09/26/2023
   keywords: windows win32, desktop development
 

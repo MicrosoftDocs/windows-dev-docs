@@ -4,8 +4,6 @@ description: Configure your development computer by installing the appropriate t
 ms.topic: how-to
 ms.date: 07/15/2024
 keywords: windows win32, windows app development, Windows App SDK, stable
-ms.author: stwhi
-author: stevewhims
 ms.custom:
   - kr2b-contr-experiment
 ---

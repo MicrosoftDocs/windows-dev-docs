@@ -4,8 +4,6 @@ description: A collection of migration guidance topics, each focusing on a speci
 ms.topic: article
 ms.date: 09/20/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

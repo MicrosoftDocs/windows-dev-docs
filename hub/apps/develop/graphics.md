@@ -33,7 +33,7 @@ The following articles provide information about features available via WinRT AP
 | Article | Description |
 |---------|-------------|
 | [Visual layer](../windows-app-sdk/composition.md) | Learn how to use the visual layer in UWP apps. The visual layer provides a high performance, retained-mode API for graphics, effects and animations, and is the foundation for all WinRT XAML-based UI in Windows apps. |
-| [Using the Visual layer in desktop apps](../desktop/modernize/visual-layer-in-desktop-apps.md) | Learn how to use the visual layer in WPF, Windows Forms, and C++ Win32 apps. |
+| [Using the Visual layer in desktop apps](../desktop/modernize/ui/visual-layer-in-desktop-apps.md) | Learn how to use the visual layer in WPF, Windows Forms, and C++ Win32 apps. |
 | [XAML platform](/windows/uwp/xaml-platform/) | Learn the fundamentals of the XAML language and concepts for WinRT-based graphic components Windows apps. |
 
 #### Win32 (C++ and COM) APIs

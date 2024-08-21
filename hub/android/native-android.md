@@ -1,9 +1,6 @@
 ---
 title: Native Android development on Windows
 description: A step-by-step guide on how to get started developing Android native apps on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: android, windows, android studio, visual studio, c++ android game, windows defender, emulator, virtual device, install, java, kotlin
 ms.date: 04/28/2020

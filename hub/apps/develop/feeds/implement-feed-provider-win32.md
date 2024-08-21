@@ -3,8 +3,6 @@ title: Implement a feed provider in a Win32 app (C++/WinRT)
 description: This article walks you through the process of creating a feed provider, implemented in WinRT/C++, that registers a feed content URI and responds to requests from the Widgets Board. 
 ms.topic: article
 ms.date: 11/02/2023
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 

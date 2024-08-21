@@ -4,8 +4,6 @@ description: This topic provides guidance about deploying apps that are packaged
 ms.topic: article
 ms.date: 08/07/2024
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

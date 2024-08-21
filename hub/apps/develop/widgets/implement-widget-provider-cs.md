@@ -3,8 +3,6 @@ title: Implement a widget provider in a C# Windows App
 description: This article walks you through the process of creating a widget provider, implemented in C#, that provides widget content and responds to widget actions. 
 ms.topic: article
 ms.date: 07/06/2022
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 

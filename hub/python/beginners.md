@@ -1,9 +1,6 @@
 ---
 title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: python, windows 10, microsoft, learning python, python on windows for beginners, install python with microsoft store, python with vs code, pygame on windows
 ms.localizationpriority: medium

@@ -2,10 +2,8 @@
 title: Samples and tools for Windows development
 description: Use these Github repositories to learn about Windows development. Sample apps demonstrate Windows features, API usage patterns, and end-to-end scenarios.
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 08/19/2024
 keywords: windows, win32, desktop development
-ms.author: mikben
-author: matchamatch
 ms.localizationpriority: medium
 ms.collection: windows11
 ms.custom: kr2b-contr-experiment

@@ -4,8 +4,6 @@ title: Latest updates to the Windows API and developer documentation
 ms.topic: article
 ms.date: 05/23/2024
 ms.localizationpriority: medium
-ms.author: quradic
-author: QuinnRadich
 ---
 
 # Latest updates to the Windows developer documentation

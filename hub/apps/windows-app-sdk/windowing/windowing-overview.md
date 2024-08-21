@@ -4,8 +4,6 @@ description: Overview of windowing APIs in the Windows App SDK
 ms.topic: article
 ms.date: 07/09/2024
 keywords: windowing, window, AppWindow, Windows App SDK
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 dev_langs:
   - csharp

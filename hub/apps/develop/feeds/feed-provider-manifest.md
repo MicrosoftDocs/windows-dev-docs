@@ -3,8 +3,6 @@ title: Feed provider package manifest XML format
 description: Describes the package manifest XML format for Windows feed providers. 
 ms.topic: article
 ms.date: 08/12/2022
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 

@@ -1,9 +1,6 @@
 ---
 title: Sudo for Windows
 description: Learn how to use sudo in your command line to run elevated commands (as an administrator) directly from an unelevated console session on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.reviewer: jordiadoumie
 ms.topic: article
 ms.date: 02/08/2024

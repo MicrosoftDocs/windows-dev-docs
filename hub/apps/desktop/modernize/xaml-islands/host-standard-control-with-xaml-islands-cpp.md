@@ -4,8 +4,6 @@ title: Host a standard WinRT XAML control in a C++ desktop (Win32) app using XAM
 ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, cpp, win32, xaml islands, wrapped controls, standard controls
-ms.author: kbridge
-author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---

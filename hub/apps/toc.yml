@@ -865,9 +865,9 @@ items:
                 - name: Use the Windows App SDK in an existing project
                   href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
                 - name: Use the Windows App SDK in a WPF app
-                  href: windows-app-sdk/wpf-plus-winappsdk.md
+                  href: windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md
                 - name: Use the Windows App SDK in a WinForms app
-                  href: windows-app-sdk/winforms-plus-winappsdk.md
+                  href: windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md
                 - name: Update existing projects to the latest release
                   href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
             - name: How tos
@@ -998,13 +998,13 @@ items:
                 - name: Overview
                   href: get-started/make-apps-great-for-windows.md
                 - name: Apply rounded corners on Windows 11
-                  href: desktop/modernize/apply-rounded-corners.md
+                  href: desktop/modernize/ui/apply-rounded-corners.md
                 - name: Apply Mica on Windows 11
-                  href: desktop/modernize/apply-mica-win32.md
+                  href: desktop/modernize/ui/apply-mica-win32.md
                 - name: Support snap layouts on Windows 11
-                  href: desktop/modernize/apply-snap-layout-menu.md
+                  href: desktop/modernize/ui/apply-snap-layout-menu.md
                 - name: Support Dark and Light themes
-                  href: desktop/modernize/apply-windows-themes.md
+                  href: desktop/modernize/ui/apply-windows-themes.md
             - name: Call Windows Runtime APIs
               items: 
                 - name: Overview
@@ -1024,23 +1024,23 @@ items:
             - name: Host WinRT XAML controls (XAML Islands)
               items: 
                 - name: Overview
-                  href: desktop/modernize/xaml-islands.md
+                  href: desktop/modernize/xaml-islands/xaml-islands.md
                 - name: XAML Islands in WPF and Windows Forms apps
                   items: 
                     - name: Use XAML Islands to host a UWP XAML control in a C# WPF app
-                      href: desktop/modernize/host-standard-control-with-xaml-islands.md
+                      href: desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands.md
                     - name: Host a custom WinRT XAML control
-                      href: desktop/modernize/host-custom-control-with-xaml-islands.md
+                      href: desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands.md
                 - name: XAML Islands in C++ desktop apps
                   items: 
                     - name: Using the WinRT XAML hosting API
-                      href: desktop/modernize/using-the-xaml-hosting-api.md
+                      href: desktop/modernize/xaml-islands/using-the-xaml-hosting-api.md
                     - name: Host a standard WinRT XAML control
-                      href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
+                      href: desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands-cpp.md
                     - name: Host a custom WinRT XAML control
-                      href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
+                      href: desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands-cpp.md
                     - name: Advanced scenarios
-                      href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
+                      href: desktop/modernize/xaml-islands/advanced-scenarios-xaml-islands-cpp.md
             - name: "Tutorial: Modernize a WPF app"
               items: 
                 - name: Overview
@@ -1058,13 +1058,13 @@ items:
         - name: Using the Visual layer (Windows.UI.Composition)
           items: 
             - name: Overview
-              href: desktop/modernize/visual-layer-in-desktop-apps.md
+              href: desktop/modernize/ui/visual-layer-in-desktop-apps.md
             - name: WPF
-              href: desktop/modernize/using-the-visual-layer-with-wpf.md
+              href: desktop/modernize/ui/using-the-visual-layer-with-wpf.md
             - name: Windows Forms
-              href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
+              href: desktop/modernize/ui/using-the-visual-layer-with-windows-forms.md
             - name: C++ desktop (Win32)
-              href: desktop/modernize/using-the-visual-layer-with-win32.md
+              href: desktop/modernize/ui/using-the-visual-layer-with-win32.md
         - name: Platform
           items: 
             - name: C#/WinRT

@@ -4,8 +4,6 @@ title: Advanced scenarios for XAML Islands in C++ desktop (Win32) apps
 ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, cpp, win32, xaml islands, wrapped controls, standard controls
-ms.author: kbridge
-author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---

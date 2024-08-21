@@ -4,8 +4,6 @@ title: Build XAML controls with C#
 ms.date: 07/09/2024
 ms.topic: article
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, custom control, templated control
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
 ---

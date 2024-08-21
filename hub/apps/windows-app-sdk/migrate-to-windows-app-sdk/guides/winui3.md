@@ -4,8 +4,6 @@ description: This topic shows how to migrate your user interface (UI) code, incl
 ms.topic: article
 ms.date: 06/23/2022
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, WinUI
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 dev_langs:
   - csharp

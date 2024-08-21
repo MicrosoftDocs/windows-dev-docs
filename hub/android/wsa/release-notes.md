@@ -1,22 +1,19 @@
 ---
-title: Windows Subsystem for Android™️ Release Notes
+title: Windows Subsystem for Android&trade;️ Release Notes
 description: Release notes for Windows Subsystem for Android.
-author: mattwojo
-ms.author: mattwoj
 ms.reviewer: mousma
-manager: jken
 ms.topic: article
 ms.date: 07/31/2024
 ---
 
-# Release Notes for Windows Subsystem for Android™️
+# Release Notes for Windows Subsystem for Android&trade;️
 
 > [!IMPORTANT]
-> Windows Subsystem for Android™️ and the Amazon Appstore will no longer be available in the Microsoft Store after March 5, 2025. [Learn more](index.md).
+> Windows Subsystem for Android&trade;️ and the Amazon Appstore will no longer be available in the Microsoft Store after March 5, 2025. [Learn more](index.md).
 
-These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
+These release notes are based on updates to the Windows Subsystem for Android&trade;️. For basic information on how to install and run Android&trade;️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android&trade;️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
-For the latest information on Windows Subsystem for Android™️, see the [WSA GitHub repository Discussions](https://github.com/microsoft/WSA/discussions).
+For the latest information on Windows Subsystem for Android&trade;️, see the [WSA GitHub repository Discussions](https://github.com/microsoft/WSA/discussions).
 
 ## Build 2304.40000.3.0
 
@@ -131,7 +128,7 @@ August 31, 2022
 - Improvements with handling VPN
 - Scrollbar fix for Windows Subsystem for Android Settings compatibility page
 - User crash data and system app crash data is now being reported
-- “No internet available” toast notification is now suppressed
+- "No internet available" toast notification is now suppressed
 - Custom Android toasts now render correctly
 - Amazon Appstore 60.09 update
 - Android security update
@@ -204,7 +201,7 @@ Known Issues:
 - Instability printing via Android apps
 - Some apps rendered at lower resolutions may lay out incorrectly
 - Some VPNs may not work with Advanced Networking. If you use a VPN and find Android apps do not have network connectivity, please disable Advanced Networking in the Windows Subsystem for Android Settings app
-- Some apps that were previously available might be missing from the experience, fail to launch, or function incorrectly for various known issues. We’re working with our partners to address these issues as soon as possible. 
+- Some apps that were previously available might be missing from the experience, fail to launch, or function incorrectly for various known issues. We're working with our partners to address these issues as soon as possible. 
 
 
 ## Build 2203.40000.3.0
@@ -233,8 +230,8 @@ February 15, 2022. Windows Subsystem for Android is available for **public previ
 - Improvements to the OAuth experience 
 - Improved screen reader support for the Amazon Appstore
 - Fix for issue with file attachments not displaying an email dialog correctly
-- When Windows Subsystem for Android™️ Settings subsystem resources are configured for continuous mode, the subsystem will restart at Windows boot up
-- Windows Subsystem for Android™️ Settings App now includes the ability to choose GPU
+- When Windows Subsystem for Android&trade;️ Settings subsystem resources are configured for continuous mode, the subsystem will restart at Windows boot up
+- Windows Subsystem for Android&trade;️ Settings App now includes the ability to choose GPU
 - Copy and paste clipboard reliability improvements 
 - Fixes to camera rotation and aspect ratio
 - Fixes for onscreen keyboard in apps

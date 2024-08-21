@@ -2,10 +2,8 @@
 title: Tutorial--Build a simple photo viewer that targets multiple platforms
 description: Learn how to reach users across native mobile, web, and desktop with minimal changes to the C#/WinUI 3 simple photo viewer built in the previous tutorial. We'll use Uno Platform to create a new multi-platform app, which we can move code from the existing desktop project to.
 ms.topic: article
-ms.date: 05/21/2023
+ms.date: 08/19/2024
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, uno platform, uno
-ms.author: aashcraft
-author: alvinashcraft
 ms.localizationpriority: medium
 ---
 

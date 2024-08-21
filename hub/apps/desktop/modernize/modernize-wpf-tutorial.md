@@ -85,7 +85,7 @@ The following sections provide background for some of the key concepts discussed
 
 In Windows 8, Microsoft introduced a new API set as part of the Windows Runtime (WinRT). Unlike the .NET Framework, WinRT is a native layer of APIs which are exposed directly to apps. WinRT also introduced language projections, which are layers added on top of the runtime to allow developers to interact with it using languages such as C# and JavaScript in addition to C++. Projections enable developers to build apps on top of WinRT that leverage the same C# and XAML knowledge they acquired in building apps with the .NET Framework. 
 
-In Windows 10, Microsoft introduced the [Universal Windows Platform (UWP)](/windows/uwp/get-started/universal-application-platform-guide), which is built on top of WinRT. The most important feature of UWP is that it offers a common set of APIs across every device platform: no matter if the app is running on a desktop, on an Xbox One or on a HoloLens, you’re able to use the same APIs.
+In Windows 10, Microsoft introduced the [Universal Windows Platform (UWP)](/windows/uwp/get-started/universal-application-platform-guide), which is built on top of WinRT. The most important feature of UWP is that it offers a common set of APIs across every device platform: no matter if the app is running on a desktop, on an Xbox One or on a HoloLens, you're able to use the same APIs.
 
 Going forward, most new Windows features are exposed via WinRT APIs, including features such as Timeline, Project Rome, and Windows Hello.
 
@@ -114,7 +114,7 @@ For more information, see [UWP controls in desktop applications (XAML Islands)](
 
 Through its first several releases, the focus of .NET Core was for supporting web or back-end apps. With .NET Core, you can easily build scalable web apps or APIs that can be hosted on Windows, Linux, or in micro-service architectures like Docker containers.
 
-.NET Core 3 is latest release of .NET Core. The highlight of this release is support for Windows desktop apps, including Windows Forms and WPF apps. You can run new and existing Windows desktop apps on .NET Core 3 and enjoy all the benefits that .NET Core has to offer. UWP controls that are hosted in [XAML Islands](xaml-islands.md) can also be used in Windows Forms and WPF apps that target .NET Core 3.
+.NET Core 3 is latest release of .NET Core. The highlight of this release is support for Windows desktop apps, including Windows Forms and WPF apps. You can run new and existing Windows desktop apps on .NET Core 3 and enjoy all the benefits that .NET Core has to offer. UWP controls that are hosted in [XAML Islands](xaml-islands/xaml-islands.md) can also be used in Windows Forms and WPF apps that target .NET Core 3.
 
 > [!NOTE]
 > WPF and Windows Forms are not becoming cross-platform, and you cannot run a WPF or Windows Forms on Linux and MacOS. The UI components of WPF and Windows Forms still have a dependency on the Windows rendering system.

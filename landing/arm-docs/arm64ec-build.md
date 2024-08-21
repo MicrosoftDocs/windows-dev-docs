@@ -5,8 +5,6 @@ ms.date: 08/08/2022
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
-author: marswe
-ms.author: marcs
 ---
 
 # Get started with Arm64EC
@@ -65,7 +63,7 @@ By design, not all projects in an Arm64EC solution need to be targeting Arm64EC 
 
     The default generator is Ninja. If using the Visual Studio generator, change the strategy field to **set**.
 
-4. If using the Ninja generator, you’ll also need to set some environment variables by adding the environment object to your CMakePresets configuration.
+4. If using the Ninja generator, you'll also need to set some environment variables by adding the environment object to your CMakePresets configuration.
 
     ```cpp
      "environment": { 

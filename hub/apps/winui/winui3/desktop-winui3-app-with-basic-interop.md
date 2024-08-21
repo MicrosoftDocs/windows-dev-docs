@@ -4,8 +4,6 @@ title: Build a C# .NET app with WinUI 3 and Win32 interop
 ms.date: 07/09/2024
 ms.topic: article
 keywords: windows 10, windows 11, uwp, COM, win32, winui, interop
-ms.author: kbridge
-author: Karl-Bridge-Microsoft
 ms.localizationpriority: high
 ms.custom: 19H1
 ---

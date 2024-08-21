@@ -1,9 +1,6 @@
 ---
 title: React Native for Android development on Windows
 description: Get started developing Android apps using React Native on Windows.
-author: drewbatgit
-ms.author: drewbat 
-manager: jken
 ms.topic: article
 ms.date: 06/19/2024
 ---

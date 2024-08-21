@@ -4821,6 +4821,81 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/advanced-scenarios-xaml-islands-cpp",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands-cpp",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/host-custom-control-with-xaml-islands.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands-cpp",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/host-standard-control-with-xaml-islands.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/using-the-xaml-hosting-api.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/using-the-xaml-hosting-api",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/xaml-islands",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/apply-mica-win32.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/apply-mica-win32",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/apply-rounded-corners.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/apply-rounded-corners",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/apply-snap-layout-menu.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/apply-snap-layout-menu",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/apply-windows-themes.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/apply-windows-themes",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/using-the-visual-layer-with-win32.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/using-the-visual-layer-with-win32",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/using-the-visual-layer-with-windows-forms.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/using-the-visual-layer-with-windows-forms",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/using-the-visual-layer-with-wpf.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/using-the-visual-layer-with-wpf",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/visual-layer-in-desktop-apps.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/visual-layer-in-desktop-apps",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "uwp/porting/desktop-to-uwp-root.md",
       "redirect_url": "/windows/msix/desktop/desktop-to-uwp-root",
       "redirect_document_id": false
@@ -6929,6 +7004,16 @@
       "source_path": "hub/apps/get-started/migrate-from-uwp-to-winappsdk.md",
       "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw",
       "redirect_document_id": false
+    },  
+    {
+      "source_path": "hub/apps/windows-app-sdk/winforms-plus-winappsdk.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk",
+      "redirect_document_id": true
+    },  
+    {
+      "source_path": "hub/apps/windows-app-sdk/wpf-plus-winappsdk.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk",
+      "redirect_document_id": true
     },  
     {
       "source_path": "hub/package-manager/package/windows-package-manager-policies-change-history.md",

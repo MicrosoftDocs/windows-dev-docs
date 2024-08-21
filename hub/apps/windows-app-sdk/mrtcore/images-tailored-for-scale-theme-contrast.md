@@ -1,11 +1,9 @@
 ---
 description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
 title: Load images and assets tailored for scale, theme, high contrast, and others
-ms.date: 03/08/2023
+ms.date: 08/19/2024
 ms.topic: article
 keywords: windows 10, windows 11, winui, windows app sdk, resource, image, asset, MRT, qualifier
-ms.author: aashcraft
-author: alvinashcraft
 ms.localizationpriority: medium
 ---
 # Load images and assets tailored for scale, theme, high contrast, and others
@@ -53,7 +51,7 @@ The next example shows how you can provide variants of an image resource&mdash;n
 
 ## Reference an image or other asset from XAML markup and code
 
-The name&mdash;or identifier&mdash;of an image resource is its path and file name with any and all qualifiers removed. If you name folders and/or files as in any of the examples in the previous section, then you have a single image resource and its name (as an absolute path) is `/Assets/Images/logo.png`. Here’s how you use that name in XAML markup.
+The name&mdash;or identifier&mdash;of an image resource is its path and file name with any and all qualifiers removed. If you name folders and/or files as in any of the examples in the previous section, then you have a single image resource and its name (as an absolute path) is `/Assets/Images/logo.png`. Here's how you use that name in XAML markup.
 
 ```xaml
 <Image x:Name="myXAMLImageElement" Source="ms-appx:///Assets/Images/logo.png"/>

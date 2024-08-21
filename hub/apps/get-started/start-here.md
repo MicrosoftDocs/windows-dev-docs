@@ -2,10 +2,8 @@
 title: Get started with Windows development using WinUI
 description: List of steps to get started developing Windows apps with WinUI and the Windows App SDK.
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 08/19/2024
 keywords: windows, desktop development
-ms.author: jken
-author: GrantMeStrength
 ms.localizationpriority: medium
 ms.collection: windows11
 ---

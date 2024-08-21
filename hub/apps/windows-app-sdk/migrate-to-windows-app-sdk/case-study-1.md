@@ -4,8 +4,6 @@ description: A case study of taking the C# [UWP PhotoLab sample app](/samples/mi
 ms.topic: article
 ms.date: 10/01/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C#, PhotoLab, UWP
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

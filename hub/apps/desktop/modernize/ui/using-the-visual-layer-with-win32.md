@@ -2,11 +2,9 @@
 title: Using the Visual Layer with Win32
 description: Learn how to use the Universal Windows Platform (UWP) Windows Runtime Composition APIs, also known as the Visual layer, to enhance the UI of a Win32 C++ app.
 template: detail.hbs
-ms.date: 03/18/2019
+ms.date: 08/21/2024
 ms.topic: article
 keywords: UWP, rendering, composition, win32
-ms.author: jimwalk
-author: jwmsft
 ms.localizationpriority: medium
 ---
 # Using the Visual Layer with Win32
@@ -32,7 +30,7 @@ The UWP hosting API has these prerequisites.
 
 In this tutorial, you create a simple Win32 C++ app and add UWP Composition elements to it. The focus is on correctly configuring the project, creating the interop code, and drawing something simple using Windows Composition APIs. The finished app looks like this.
 
-![The running app UI](images/visual-layer-interop/win32-comp-interop-app-ui.png)
+![The running app UI](../images/visual-layer-interop/win32-comp-interop-app-ui.png)
 
 ## Create a C++ Win32 project in Visual Studio
 
@@ -60,15 +58,15 @@ To use Windows Runtime (WinRT) APIs in your Win32 app, we use C++/WinRT. You nee
     - For **Configuration**, select _All Configurations_. For **Platform**, select _All Platforms_.
     - **Configuration Properties** > **General** > **Windows SDK Version** = _10.0.17763.0_ or greater
 
-    ![Set SDK version](images/visual-layer-interop/sdk-version.png)
+    ![Set SDK version](../images/visual-layer-interop/sdk-version.png)
 
     - **C/C++** > **Language** > **C++ Language Standard** = _ISO C++ 17 Standard (/stf:c++17)_
 
-    ![Set language standard](images/visual-layer-interop/language-standard.png)
+    ![Set language standard](../images/visual-layer-interop/language-standard.png)
 
     - **Linker** > **Input** > **Additional Dependencies** must include "_windowsapp.lib_". If it's not included in the list, add it.
 
-    ![Add linker dependency](images/visual-layer-interop/linker-dependencies.png)
+    ![Add linker dependency](../images/visual-layer-interop/linker-dependencies.png)
 
 1. Update the precompiled header
 
@@ -78,7 +76,7 @@ To use Windows Runtime (WinRT) APIs in your Win32 app, we use C++/WinRT. You nee
 
         (**Edit** > **Find and Replace** > **Find in Files**)
 
-        ![Find and replace stdafx.h](images/visual-layer-interop/replace-stdafx.png)
+        ![Find and replace stdafx.h](../images/visual-layer-interop/replace-stdafx.png)
 
     - In `pch.h`, include `winrt/base.h` and `unknwn.h`.
 

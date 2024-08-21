@@ -1,9 +1,7 @@
 ---
 title: API reference - .NET TraceProcessing
 description: Consult the .NET TraceProcessing API reference.
-author: maiak
-ms.author: maiak
-ms.date: 02/23/2020
+ms.date: 08/19/2024
 ms.topic: reference
 ---
 

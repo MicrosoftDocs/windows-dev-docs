@@ -4,8 +4,6 @@ description: Sample code for applying Mica in a WinUI 3 application.
 ms.topic: article
 ms.date: 07/15/2024
 keywords: windows, windows app development, Windows App SDK, Mica
-ms.author: jimwalk
-author: jwmsft
 ms.localizationpriority: medium
 dev_langs: 
 - csharp
@@ -25,7 +23,7 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 > [!NOTE]
 >
 > - To use an in-app AcrylicBrush, see [Acrylic material](../design/style/acrylic.md).
-> - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/apply-mica-win32.md).
+> - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/ui/apply-mica-win32.md).
 > - To use backdrop materials in a UWP/WinUI 2 app, see [Apply Mica with WinUI 2 for UWP](/windows/uwp/ui-input/mica-uwp) or [Acrylic material](../design/style/acrylic.md).
 
 ## How to use a backdrop material
@@ -511,4 +509,4 @@ struct MainWindow : MainWindowT<MainWindow>
 - [Materials in Windows 11](../design/signature-experiences/materials.md)
 - [Mica](../design/style/mica.md)
 - [Acrylic](../design/style/acrylic.md)
-- [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/apply-mica-win32.md)
+- [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/ui/apply-mica-win32.md)

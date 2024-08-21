@@ -1,9 +1,6 @@
 ---
 title: Using Python for scripting and automation 
 description: How to get started using Python for scripting, automation, and systems administration on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: python, windows 10, microsoft, python system administration, python file automation, python scripts on windows, set up python on windows, python developer environment on windows, python dev environment on windows, python with powershell, python scripts for file system tasks
 ms.localizationpriority: medium

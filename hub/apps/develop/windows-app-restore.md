@@ -4,8 +4,6 @@ description: This topic defines the tenets of Windows app restore that will enab
 ms.topic: article
 ms.date: 09/29/2023
 keywords: Windows, App, SDK, Windows app restore
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

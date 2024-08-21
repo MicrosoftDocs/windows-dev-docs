@@ -1,7 +1,5 @@
 ---
 ms.topic: include
-author: mattwojo
-ms.author: mattwoj
 ms.date: 10/04/2019
 ---
 Typing out `sudo service mongodb start` or `sudo service postgres start` and `sudo -u postgrest psql` can get tedious.  However, you could consider setting up aliases in your `.profile` file on WSL to make these commands quicker to use and easier to remember. 

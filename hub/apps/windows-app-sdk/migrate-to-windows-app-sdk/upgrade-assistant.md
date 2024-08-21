@@ -4,8 +4,6 @@ description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant
 ms.topic: article
 ms.date: 10/05/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

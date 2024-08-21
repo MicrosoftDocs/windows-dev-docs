@@ -129,7 +129,7 @@ You can use Mica in UWP apps that use WinUI 2, or in apps that use Windows App S
 
 To use Mica in a WinUI 3 XAML app, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../windows-app-sdk/system-backdrop-controller.md).
 
-To use Mica in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/apply-mica-win32.md).
+To use Mica in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/ui/apply-mica-win32.md).
 
 ### Use Mica with WinUI 2 for UWP
 
@@ -140,5 +140,5 @@ To use Mica in a UWP app with WinUI 2, see [Apply Mica with WinUI 2 for UWP](/wi
 - [Materials](../signature-experiences/materials.md)
 - [Layering and Elevation](../signature-experiences/layering.md)
 - [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../windows-app-sdk/system-backdrop-controller.md)
-- [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/apply-mica-win32.md)
+- [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/ui/apply-mica-win32.md)
 - [NavigationView](../controls/navigationview.md)

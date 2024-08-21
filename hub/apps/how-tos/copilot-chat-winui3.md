@@ -4,8 +4,6 @@ description: Get started with GitHub Copilot Chat by learning how to streamline 
 ms.topic: article
 ms.date: 5/8/2024
 keywords: windows app sdk, winappsdk, winui3, openai, chatgpt, copilot
-ms.author: mikben
-author: matchamatch
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers

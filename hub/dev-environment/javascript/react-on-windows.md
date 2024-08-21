@@ -1,9 +1,6 @@
 ---
 title: Install React on Windows
 description: Install a React development environment on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.date: 03/01/2024
 ---

@@ -4,8 +4,6 @@ description: This topic contains additional migration guidance not categorized i
 ms.topic: article
 ms.date: 09/16/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

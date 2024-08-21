@@ -4,8 +4,6 @@ description: In this topic we'll see how to use Visual Studio to create a new pr
 ms.topic: article
 ms.date: 01/25/2024
 keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, app sdk, Windows App SDK, WinUI 3
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

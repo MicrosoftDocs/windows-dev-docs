@@ -4,8 +4,6 @@ description: This topic compares major feature areas in the different forms in w
 ms.topic: article
 ms.date: 10/01/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, mapping, mappings, uwp
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

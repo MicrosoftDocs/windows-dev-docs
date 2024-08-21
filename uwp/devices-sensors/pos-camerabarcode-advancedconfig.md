@@ -2,8 +2,6 @@
 title: Camera Barcode Scanner Advanced Configuration
 description: Advanced configuration of the camera barcode scanner
 ms.date: 04/08/2019
-author: twarwick
-ms.author: twarwick
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium

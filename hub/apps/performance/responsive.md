@@ -1,8 +1,6 @@
 ---
 title: Responsive interactions and Windows Application Performance
 description: This guide will help you to improve the responsiveness of your Windows application by optimizing latency for launch and key interactions.
-ms.author: mattwoj
-author: mattwojo
 ms.reviewer: prrapa
 ms.topic: conceptual
 ms.date: 05/16/2022
@@ -57,7 +55,7 @@ The basic steps to drive latency optimization are:
     - Expand the **System Activity** dropdown and double-click on "Generic Events" to open the analysis view.
     - Choose the event series related to your application and expand the "Provider Name" dropdown until you are able to find the Process, Task Name, and Event name associated with the key interaction you are seeking. The duration of the interaction event will be listed in the **Time** column, as well as in the graph, showing **Duration**, **Start Time**, and **End Time**.
 
-    If the duration from your trace does not meet the interaction class goals (ex: 500ms), identify the key threads for your App (likely the UI thread), and look at the top stacks for CPU usage and waits. *Remember that as you perform the analysis, some issues may not be specific to your own application’s code.
+    If the duration from your trace does not meet the interaction class goals (ex: 500ms), identify the key threads for your App (likely the UI thread), and look at the top stacks for CPU usage and waits. *Remember that as you perform the analysis, some issues may not be specific to your own application's code.
 
     ![Analysis of trace event duration](../performance/images/responsive-analysis.png)
 

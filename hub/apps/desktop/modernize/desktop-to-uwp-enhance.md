@@ -201,7 +201,7 @@ You'll often hear us use the terms *enhance* and *extend*, so we'll take a momen
 We use the term *enhance* to describe WinRT APIs that you can call directly from your desktop app whether or not it's a packaged app. When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in [this list](desktop-to-uwp-supported-api.md). This is a list of APIs that you can call directly from your desktop app. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that render UWP XAML such as a UWP map control or a Windows Hello security prompt.
 
 > [!NOTE]
-> Although APIs that render UWP XAML typically cannot be called directly from your desktop, you might be able to use alternative approaches. If you want to host UWP XAML controls or other custom visual experiences, you can use [XAML Islands](xaml-islands.md) (starting in Windows 10, version 1903) and the [Visual layer](visual-layer-in-desktop-apps.md) (starting in Windows 10, version 1803). These features can be used in packaged or unpackaged desktop apps.
+> Although APIs that render UWP XAML typically cannot be called directly from your desktop, you might be able to use alternative approaches. If you want to host UWP XAML controls or other custom visual experiences, you can use [XAML Islands](xaml-islands/xaml-islands.md) (starting in Windows 10, version 1903) and the [Visual layer](ui/visual-layer-in-desktop-apps.md) (starting in Windows 10, version 1803). These features can be used in packaged or unpackaged desktop apps.
 
 If you have chosen to package your desktop app, then another option is to *extend* the application by adding a UWP project to your solution. The desktop project is still the entry point of your application, but the UWP project gives you access to all of the APIs that do not appear in [this list](desktop-to-uwp-supported-api.md). The desktop app can communicate with the UWP process by using a an app service and we have lots of guidance on how to set that up. If you want to add an experience that requires a UWP project, see [Extend with UWP components](desktop-to-uwp-extend.md).
 
@@ -293,25 +293,25 @@ using namespace Windows::Data::Xml::Dom;
 
 void UWP::ShowToast()
 {
-	Platform::String ^title = "featured picture of the day";
-	Platform::String ^content = "beautiful scenery";
-	Platform::String ^image = "https://picsum.photos/360/180?image=104";
-	Platform::String ^logo = "https://picsum.photos/64?image=883";
+    Platform::String ^title = "featured picture of the day";
+    Platform::String ^content = "beautiful scenery";
+    Platform::String ^image = "https://picsum.photos/360/180?image=104";
+    Platform::String ^logo = "https://picsum.photos/64?image=883";
 
-	Platform::String ^xmlString =
-		L"<toast><visual><binding template='ToastGeneric'>" +
-		L"<text>" + title + "</text>" +
-		L"<text>"+ content + "</text>" +
-		L"<image src='" + image + "'/>" +
-		L"<image src='" + logo + "'" +
-		L" placement='appLogoOverride' hint-crop='circle'/>" +
-		L"</binding></visual></toast>";
+    Platform::String ^xmlString =
+        L"<toast><visual><binding template='ToastGeneric'>" +
+        L"<text>" + title + "</text>" +
+        L"<text>"+ content + "</text>" +
+        L"<image src='" + image + "'/>" +
+        L"<image src='" + logo + "'" +
+        L" placement='appLogoOverride' hint-crop='circle'/>" +
+        L"</binding></visual></toast>";
 
-	XmlDocument ^toastXml = ref new XmlDocument();
+    XmlDocument ^toastXml = ref new XmlDocument();
 
-	toastXml->LoadXml(xmlString);
+    toastXml->LoadXml(xmlString);
 
-	ToastNotificationManager::CreateToastNotifier()->Show(ref new ToastNotification(toastXml));
+    ToastNotificationManager::CreateToastNotifier()->Show(ref new ToastNotification(toastXml));
 }
 ```
 
