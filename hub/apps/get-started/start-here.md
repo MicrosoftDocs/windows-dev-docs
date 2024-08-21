@@ -1,5 +1,5 @@
 ---
-title: Get started with WinUI
+title: Get started with Windows development using WinUI
 description: List of steps to get started developing Windows apps with WinUI and the Windows App SDK.
 ms.topic: how-to
 ms.date: 05/13/2024
@@ -10,9 +10,10 @@ ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Get started with WinUI
+# Start developing Windows apps
 
-Welcome to developing apps with WinUI. This guide will walk you through the steps you need to get started. It will also point you to resources that will help you learn more about Windows development.
+Welcome to Windows app development. This guide will take you through the steps needed to begin creating apps using the latest Windows development frameworks: the Windows App SDK and WinUI. It will also point you to resources that will help you learn more about Windows development. If you are already comfortable developing apps for Windows, but want to know more about the latest tools, please see [Develop Windows desktop apps](/windows/apps/develop/).
+
 
 ## 1. Install Visual Studio
 

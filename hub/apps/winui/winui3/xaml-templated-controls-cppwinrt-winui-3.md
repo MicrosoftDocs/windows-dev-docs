@@ -16,7 +16,7 @@ This article walks you through creating a templated XAML control for WinUI 3 wit
 
 ## Prerequisites
 
-1. [Get started with WinUI](../../get-started/start-here.md)
+1. [Start developing Windows apps](../../get-started/start-here.md)
 2. Download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
 
 ## Create a Blank App (BgLabelControlApp)
