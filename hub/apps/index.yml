@@ -15,7 +15,7 @@ metadata:
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
-   - title: Get started with WinUI
+   - title: Start developing Windows apps
      itemType: quickstart
      url: ./get-started/start-here.md
    - title: App framework options

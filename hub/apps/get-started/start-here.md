@@ -14,6 +14,9 @@ ms.collection: windows11
 
 Welcome to Windows app development. This guide will take you through the steps needed to begin creating apps using the latest Windows development frameworks: the Windows App SDK and WinUI. It will also point you to resources that will help you learn more about Windows development. If you are already comfortable developing apps for Windows, but want to know more about the latest tools, please see [Develop Windows desktop apps](/windows/apps/develop/).
 
+> [!TIP]
+> [Microsoft Copilot](https://copilot.microsoft.com) is a great resource if you have questions about getting started writing Windows apps.
+
 
 ## 1. Install Visual Studio
 
