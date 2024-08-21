@@ -4,8 +4,6 @@ title: Top 11 things you can do to make your app great on Windows 11
 ms.topic: article
 ms.date: 05/06/2022
 keywords: windows win32, desktop development
-ms.author: jimwalk
-author: jwmsft
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -113,8 +111,8 @@ Snap layouts are a new Windows 11 feature to help introduce users to the power o
 - Most apps will automatically receive rounded corners and support for the menu with snap layouts, but in some cases you might need to do a little work to get them:
   - Allow the system to draw your border and shadow.
   -  If you need to draw your own border and shadow:
-     - Call our rounding API to opt in. See [Apply rounded corners in desktop apps for Windows 11](../desktop/modernize/apply-rounded-corners.md).
-     - Use our APIs to have the platform draw and implement the caption buttons. See [Support snap layouts for desktop apps on Windows 11](../desktop/modernize/apply-snap-layout-menu.md).
+     - Call our rounding API to opt in. See [Apply rounded corners in desktop apps for Windows 11](../desktop/modernize/ui/apply-rounded-corners.md).
+     - Use our APIs to have the platform draw and implement the caption buttons. See [Support snap layouts for desktop apps on Windows 11](../desktop/modernize/ui/apply-snap-layout-menu.md).
 - You will get these features automatically if you use UWP or you adopt Windows App SDK windowing to:
   - Configure the style of your window using the pre-defined templates.
   - Customize the title bar of your windows.
@@ -126,7 +124,7 @@ We support Light and Dark themes, which is a great way to let the user express t
 ![A split image of an app in light theme on the left, and dark theme on the right.](images/great-apps/themes.png)
 
 - The color palette of WinUI is being updated to feel lighter (use WinUI 2.6 or greater). If your apps have hardcoded custom colors, you may need to make updates to match the overall color theory, regardless of technology.
-- If you are using [UXTheme](/windows/win32/api/uxtheme/) based Win32 surfaces, the Light theme will have rejuvenated controls (for example, rounded buttons). You should test your apps to validate that local styling does not override updated global defaults. (For Win32 apps, see [Support Dark and Light themes in Win32 apps](../desktop/modernize/apply-windows-themes.md).)
+- If you are using [UXTheme](/windows/win32/api/uxtheme/) based Win32 surfaces, the Light theme will have rejuvenated controls (for example, rounded buttons). You should test your apps to validate that local styling does not override updated global defaults. (For Win32 apps, see [Support Dark and Light themes in Win32 apps](../desktop/modernize/ui/apply-windows-themes.md).)
 
 ## 8. Optimize your app's context menu extensions and Share targets
 

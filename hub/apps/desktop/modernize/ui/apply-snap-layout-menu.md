@@ -3,8 +3,6 @@ description: Support the snap layouts menu in your desktop application.
 title: Support snap layouts for desktop apps on Windows 11
 ms.topic: article
 ms.date: 10/01/2021
-ms.author: jimwalk
-author: jwmsft
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +10,7 @@ ms.localizationpriority: medium
 
 Snap layouts are a new Windows 11 feature to help introduce users to the power of window snapping. Snap layouts are easily accessible by hovering the mouse over a window's maximize button or pressing Win + Z. After invoking the menu that shows the available layouts, users can click on a zone in a layout to snap a window to that particular zone and then use Snap Assist to finish building an entire layout of windows. Snap layouts are tailored to the current screen size and orientation, including support for three side-by-side windows on large landscape screens and top/bottom stacked windows on portrait screens.
 
-:::image type="content" source="./images/apply-design/snap-layout-menu.png" alt-text="The Notepad app on Windows 11 with rounded corners.":::
+:::image type="content" source="../images/apply-design/snap-layout-menu.png" alt-text="The Notepad app on Windows 11 with rounded corners.":::
 
 If the app's window has the maximize caption button available, the system will automatically show snap layouts when a user hovers the mouse over the window's maximize button. Snap layouts will appear automatically for most apps, but some desktop apps may not show snap layouts. This topic describes how to make sure your app shows the menu with snap layouts if the system does not show it automatically.
 
@@ -24,7 +22,7 @@ If your app's main window has the maximize caption button available but does not
 
 If you have a custom title bar, then you can:​
 
-- Use the Windows App SDK windowing APIs (see [Manage app windows](../../windows-app-sdk/windowing/windowing-overview.md)) and have the platform draw and implement the caption buttons for you​.
+- Use the Windows App SDK windowing APIs (see [Manage app windows](../../../windows-app-sdk/windowing/windowing-overview.md)) and have the platform draw and implement the caption buttons for you​.
 - For Win32 apps, make sure you are responding appropriately to [WM_NCHITTEST](/windows/win32/inputdev/wm-nchittest) (with a return value of `HTMAXBUTTON` for the maximize/restore button)​.
 
     ```cpp

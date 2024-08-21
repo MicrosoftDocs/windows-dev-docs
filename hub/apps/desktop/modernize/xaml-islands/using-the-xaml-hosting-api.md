@@ -4,8 +4,6 @@ title: Using the WinRT XAML hosting API in a C++ desktop (Win32) app
 ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, win32, xaml islands
-ms.author: kbridge
-author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
@@ -84,7 +82,7 @@ The following diagram illustrates the hierarchy of objects in a XAML Island that
 
 * Finally, at the top level is the WinRT XAML control you want to host in your desktop app. This can be any UWP object that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including any WinRT XAML control provided by the Windows SDK as well as custom user controls.
 
-![DesktopWindowXamlSource architecture](images/xaml-islands/xaml-hosting-api-rev2.png)
+![DesktopWindowXamlSource architecture](../images/xaml-islands/xaml-hosting-api-rev2.png)
 
 > [!NOTE]
 > When you host XAML Islands in a desktop app, you can have multiple trees of XAML content running on the same thread at the same time. To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. The [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) APIs won't provide the correct information for XAML Islands. For more information, see [this section](xaml-islands.md#window-host-context-for-xaml-islands).

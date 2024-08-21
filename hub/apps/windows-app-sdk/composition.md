@@ -2,10 +2,7 @@
 title: Enhance UI with the Visual layer (Windows App SDK/WinUI 3)
 description: The Windows App SDK implementation of the UWP Visual layer.
 ms.topic: article
-ms.date: 11/14/2023
-keywords: 
-ms.author: jimwalk
-author: jwmsft
+ms.date: 08/19/2024
 ms.localizationpriority: medium
 ---
 
@@ -62,4 +59,4 @@ We've updated the Windows Composition Samples Gallery to now take a dependency o
 ## Related topics
 
 - [UWP Visual layer overview](/windows/uwp/composition/visual-layer)
-- [Using the Visual layer in desktop apps](../desktop/modernize/visual-layer-in-desktop-apps.md)
+- [Using the Visual layer in desktop apps](../desktop/modernize/ui/visual-layer-in-desktop-apps.md)

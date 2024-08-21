@@ -6,8 +6,6 @@ ms.date: 01/15/2024
 ms.topic: article
 keywords: windows 10, uwp, title bar
 ms.localizationpriority: medium
-ms.author: jimwalk
-author: jwmsft
 ---
 # Title bar customization
 

@@ -2,9 +2,7 @@
 title: Windows developer glossary
 description:  A glossary of terms related to Windows application development.
 ms.topic: article
-ms.date: 2/20/2023
-ms.author: mikben
-author: MatchaMatch
+ms.date: 08/19/2024
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -109,7 +107,7 @@ WinUI 2 is tightly integrated with Windows SDKs, and provides official native Wi
 The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. See [WinUI 3](../winui/winui3/index.md).
 
 #### XAML Islands
-XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands.md).
+XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands/xaml-islands.md).
 
 ## Related topics
   - [Windows developer FAQ](windows-developer-faq.yml)

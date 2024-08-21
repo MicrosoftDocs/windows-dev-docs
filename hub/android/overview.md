@@ -1,9 +1,6 @@
 ---
 title: Android development on Windows
 description: A guide to help you get started developing for Android on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.date: 09/28/2023
 ---

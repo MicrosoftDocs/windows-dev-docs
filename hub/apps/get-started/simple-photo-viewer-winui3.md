@@ -2,10 +2,8 @@
 title: Tutorial--Create a simple photo viewer with WinUI 3
 description: In this topic we walk through the process of building a simple WinUI 3 app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 ms.topic: article
-ms.date: 01/25/2024
+ms.date: 08/19/2024
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

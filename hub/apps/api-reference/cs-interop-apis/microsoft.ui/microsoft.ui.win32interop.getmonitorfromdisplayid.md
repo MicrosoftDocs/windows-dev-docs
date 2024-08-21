@@ -4,8 +4,6 @@ description: Gets the display monitor handle that corresponds to the specified *
 ms.topic: article
 ms.date: 02/08/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, app sdk, C#, interop, Win32Interop.GetDisplayIdFromMonitor, GetDisplayIdFromMonitor
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: low
 ---
 

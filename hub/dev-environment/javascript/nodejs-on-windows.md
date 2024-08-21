@@ -1,9 +1,6 @@
 ---
 title: Set up Node.js on native Windows
 description: A guide to help you get your Node.js development environment set up directly on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.date: 12/20/2023
 ---

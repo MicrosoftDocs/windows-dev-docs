@@ -1,9 +1,6 @@
 ---
 title: React on Windows
 description: A guide to help you set up a React JavaScript development environment on Windows.
-author: drewbatgit 
-ms.author: drewbat 
-manager: jken
 ms.topic: article
 keywords: React, React JS, react on windows 10, react on windows, what is react, react with windows, web app with react
 ms.localizationpriority: medium

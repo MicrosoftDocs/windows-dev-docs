@@ -3,8 +3,6 @@ title: Feed providers
 description: Introduction to the feed providers feature in the Windows App SDK, a new integration point for third-party applications.
 ms.topic: article
 ms.date: 11/06/2023
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 

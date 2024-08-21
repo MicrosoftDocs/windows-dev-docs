@@ -5,8 +5,6 @@ brand: windows
 metadata:
    title: Windows app development documentation
    description: Design, develop, and deploy apps and solutions for Windows PCs and other devices.
-   ms.author: jken
-   author: GrantMeStrength
    ms.topic: hub-page
    ms.date: 7/17/2024
    ms.localizationpriority: medium

@@ -1,9 +1,6 @@
 ---
 title: Set up a Dev Drive on Windows 11
 description: Learn about the new Dev Drive storage available to improve file system performance for development scenarios using the ReFS volume format, including how to set it up, designate trust to use performance mode for Microsoft Defender Antivirus, customized filters, and FAQs.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.date: 07/22/2024
 ---

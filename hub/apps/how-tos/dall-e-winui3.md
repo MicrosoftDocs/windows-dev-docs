@@ -4,8 +4,6 @@ description: Get started with WinUI 3 / Windows App SDK by integrating DALL-E im
 ms.topic: article
 ms.date: 1/12/2024
 keywords: windows app sdk, winappsdk, winui3
-ms.author: mikben
-author: matchamatch
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers

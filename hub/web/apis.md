@@ -1,9 +1,6 @@
 ---
 title: APIs for web development
 description: A broad list of APIs that can be used for web development from products across Microsoft.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: web development, web dev, web on windows, apis, edge
 ms.date: 11/01/2023

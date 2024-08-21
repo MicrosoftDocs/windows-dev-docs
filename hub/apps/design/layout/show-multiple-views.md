@@ -34,14 +34,14 @@ There are different ways that Windows content can be hosted inside an app.
 
 - [CoreWindow](/uwp/api/windows.ui.core.corewindow)/[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)
 
-     An app view is the 1:1 pairing of a thread and a window that the app uses to display content. The first view that’s created when your app starts is called the *main view*. Each CoreWindow/ApplicationView operates in its own thread. Having to work on different UI threads can complicate multi-window apps.
+     An app view is the 1:1 pairing of a thread and a window that the app uses to display content. The first view that's created when your app starts is called the *main view*. Each CoreWindow/ApplicationView operates in its own thread. Having to work on different UI threads can complicate multi-window apps.
 
     The main view for your app is always hosted in an ApplicationView. Content in a secondary window can be hosted in a ApplicationView or in an AppWindow.
 
     To learn how to use ApplicationView to show secondary windows in your app, see [Use ApplicationView](application-view.md).
 - [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)
 
-    AppWindow simplifies the creation of multi-window Windows apps because it operates on the same UI thread that it’s created from.
+    AppWindow simplifies the creation of multi-window Windows apps because it operates on the same UI thread that it's created from.
 
     The AppWindow class and other APIs in the [WindowManagement](/uwp/api/windows.ui.windowmanagement) namespace are available starting in Windows 10, version 1903 (SDK 18362). If your app targets earlier versions of Windows 10, you must use ApplicationView to create secondary windows.
 
@@ -53,18 +53,18 @@ There are different ways that Windows content can be hosted inside an app.
 
      UWP XAML content in a Win32 app (using HWND), also known as XAML Islands, is hosted in a DesktopWindowXamlSource.
 
-    For more info about XAML Islands, see [Using the UWP XAML hosting API in a desktop application](../../desktop/modernize/using-the-xaml-hosting-api.md)
+    For more info about XAML Islands, see [Using the UWP XAML hosting API in a desktop application](../../desktop/modernize/xaml-islands/using-the-xaml-hosting-api.md)
 
 ### Make code portable across windowing hosts
 
 When XAML content is displayed in a [CoreWindow](/uwp/api/windows.ui.core.corewindow), there's always an associated [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) and XAML [Window](/uwp/api/windows.ui.xaml.window). You can use APIs on these classes to get information such as the window bounds. To retrieve an instance of these classes, you use the static [CoreWindow.GetForCurrentThread](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) method, [ApplicationView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) method, or [Window.Current](/uwp/api/windows.ui.xaml.window.current) property. In addition, there are many classes that use the `GetForCurrentView` pattern to retrieve an instance of the class, such as [DisplayInformation.GetForCurrentView](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview).
 
-These APIs work because there is only a single tree of XAML content for a CoreWindow/ApplicationView, so the XAML knows the context in which it’s hosted is that CoreWindow/ApplicationView.
+These APIs work because there is only a single tree of XAML content for a CoreWindow/ApplicationView, so the XAML knows the context in which it's hosted is that CoreWindow/ApplicationView.
 
-When XAML content is running inside an AppWindow or DesktopWindowXamlSource, you can have multiple trees of XAML content running on the same thread at the same time. In this case, these APIs don’t give the right information, since the content is no longer running inside the current CoreWindow/ApplicationView (and XAML Window).
+When XAML content is running inside an AppWindow or DesktopWindowXamlSource, you can have multiple trees of XAML content running on the same thread at the same time. In this case, these APIs don't give the right information, since the content is no longer running inside the current CoreWindow/ApplicationView (and XAML Window).
 
 To ensure that your code works correctly across all windowing hosts, you should replace APIs that rely on [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) with new APIs that get their context from the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class.
-The XamlRoot class represents a tree of XAML content and information about the context in which it is hosted, whether it’s a CoreWindow, AppWindow, or DesktopWindowXamlSource. This abstraction layer lets you write the same code regardless of which windowing host the XAML runs in.
+The XamlRoot class represents a tree of XAML content and information about the context in which it is hosted, whether it's a CoreWindow, AppWindow, or DesktopWindowXamlSource. This abstraction layer lets you write the same code regardless of which windowing host the XAML runs in.
 
 This table shows code that does not work correctly across windowing hosts, and the new portable code that you can replace it with, as well as some APIs that you don't need to change.
 
@@ -87,7 +87,7 @@ This table shows code that does not work correctly across windowing hosts, and t
 | menuFlyout.ShowAt(null, new Point(10, 10)); | menuFlyout.[XamlRoot](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.xamlroot) = _uiElement_.XamlRoot;<br/>menuFlyout.ShowAt(null, new Point(10, 10)); |
 
 > [!NOTE]
-> For XAML content in a DesktopWindowXamlSource, there does exist a CoreWindow/Window on the thread, but it is always invisible and has a size of 1x1. It is still accessible to the app but won’t return meaningful bounds or visibility.
+> For XAML content in a DesktopWindowXamlSource, there does exist a CoreWindow/Window on the thread, but it is always invisible and has a size of 1x1. It is still accessible to the app but won't return meaningful bounds or visibility.
 >
 >For XAML content in an AppWindow, there will always be exactly one CoreWindow on the same thread. If you call a `GetForCurrentView` or `GetForCurrentThread` API, that API will return an object that reflects the state of the CoreWindow on the thread, not any of the AppWindows that may be running on that thread.
 

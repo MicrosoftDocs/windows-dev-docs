@@ -3,8 +3,6 @@ title: Windows app performance and fundamentals overview
 description: Learn about ways to optimize the performance of your Windows apps.
 ms.topic: article
 ms.date: 05/16/2022
-ms.author: mattwoj
-author: mattwojo
 ms.reviewer: adityar
 ms.localizationpriority: medium
 #Customer intent: As a Windows application developer, I want to learn how to measure and improve my application's performance so that my users have a better experience.
@@ -98,7 +96,7 @@ Interested in learning how performance engineering intersects with sustainabilit
 
 ### Our content road map
 
-Performance can be a tricky part of your development process without the right guidance. Ensuring that the right documentation is available for app developers is key to creating faster apps. The road map below details the next pages to be added to this doc set, and in the order that they will be published. If you see something you like or something that’s missing, let us know on GitHub via the Feedback links at the bottom of this page! Our goal is to curate a well-rounded and educational doc set for app performance that meets your needs, so we’d love to hear from you. Please feel welcome to submit feedback for this page below with your recommendations for what you would like to see covered in regard to Windows application performance.
+Performance can be a tricky part of your development process without the right guidance. Ensuring that the right documentation is available for app developers is key to creating faster apps. The road map below details the next pages to be added to this doc set, and in the order that they will be published. If you see something you like or something that's missing, let us know on GitHub via the Feedback links at the bottom of this page! Our goal is to curate a well-rounded and educational doc set for app performance that meets your needs, so we'd love to hear from you. Please feel welcome to submit feedback for this page below with your recommendations for what you would like to see covered in regard to Windows application performance.
 
 |Topic |Description|
 |----------|-----------|

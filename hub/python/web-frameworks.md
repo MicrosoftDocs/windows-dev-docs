@@ -1,9 +1,6 @@
 ---
 title: Web development with Python on Windows
 description: A step-by-step guide to get started using Python for web development on Windows, including set up for frameworks like Flask and Django.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 11/01/2023

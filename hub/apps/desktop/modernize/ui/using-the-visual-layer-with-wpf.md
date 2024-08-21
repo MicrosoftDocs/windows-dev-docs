@@ -4,8 +4,6 @@ description: Learn techniques for using the Visual Layer API's in combination wi
 ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
-ms.author: jimwalk
-author: jwmsft
 ms.localizationpriority: medium
 ---
 
@@ -31,7 +29,7 @@ The UWP XAML hosting API has these prerequisites.
 
 In this tutorial, you create a simple WPF app UI and add animated Composition elements to it. Both the WPF and Composition components are kept simple, but the interop code shown is the same regardless of the complexity of the components. The finished app looks like this.
 
-![The running app UI](images/visual-layer-interop/wpf-comp-interop-app-ui.png)
+![The running app UI](../images/visual-layer-interop/wpf-comp-interop-app-ui.png)
 
 ## Create a WPF project
 

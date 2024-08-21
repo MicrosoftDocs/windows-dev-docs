@@ -1,9 +1,6 @@
 ---
 title: Install JavaScript frameworks on Windows
 description: A guide to help you get started with JavaScript frameworks on Windows, including Node.js, React.js, Vue.js, Next.js, Nuxt.js, or Gatsby.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: Node.js, NodeJS, next.js, nuxt.js, gatsby, react, vue, windows, install, wsl, Set up windows, Dev Environment
 ms.localizationpriority: medium

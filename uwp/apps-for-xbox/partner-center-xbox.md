@@ -4,8 +4,6 @@ description: This section describes how to set up your Partner Center account fo
 ms.date: 08/31/2023
 ms.topic: article
 keywords: Xbox
-ms.author: HiHaile
-author: Hilina-H
 ---
 
 # Setting up your Partner Center account 
@@ -13,7 +11,7 @@ author: Hilina-H
 Creating a partner center account is the first step in bringing your app to Xbox. Please consider the items below before getting started:
 
 - Do you or your company have an existing Partner Center account? If so, there is no need to create a new account; you can add new projects to the existing account.
-- Be sure to select the right type of Partner Center account which is “Business Developer Account”.
+- Be sure to select the right type of Partner Center account which is "Business Developer Account".
 - To simplify the verification process, use an email with a corporate domain.
 - To go through the account set-up, please use the following process: [Opening developer account](/windows/apps/publish/partner-center/opening-a-developer-account?pivots=store-installer-msix)
 

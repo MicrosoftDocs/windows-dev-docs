@@ -5,13 +5,11 @@ ms.date: 08/08/2022
 ms.topic: overview
 ms.service: windows
 ms.subservice: arm
-author: marswe
-ms.author: marcs
 ---
 
 # Arm64EC - Build and port apps for native performance on Arm
 
-Arm64EC (“Emulation Compatible”) enables you to build new native apps or incrementally transition existing x64 apps to take advantage of the native speed and performance possible with Arm-powered devices, including better power consumption, battery life, and accelerated AI & ML workloads.
+Arm64EC ("Emulation Compatible") enables you to build new native apps or incrementally transition existing x64 apps to take advantage of the native speed and performance possible with Arm-powered devices, including better power consumption, battery life, and accelerated AI & ML workloads.
 
 Arm64EC is a new application binary interface (ABI) for apps running on Arm devices with Windows 11. It is a Windows 11 feature that requires the use of the Windows 11 SDK and is not available on Windows 10 on Arm.
 

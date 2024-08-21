@@ -4,8 +4,6 @@ description: This page provides the information for you to get started developin
 ms.topic: article
 ms.date: 11/28/2023
 keywords: Speech in Windows 10, speech, voice, conversation, win32 speech apps, UWP speech apps, WPF speech apps, WinForms speech apps
-ms.author: kbridge
-author: Karl-Bridge-Microsoft
 ---
 
 # Speech, voice, and conversation in Windows 11 and Windows 10

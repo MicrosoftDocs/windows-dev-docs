@@ -4,8 +4,6 @@ description: This topic contains migration guidance in the application lifecycle
 ms.topic: article
 ms.date: 09/06/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, application lifecycle, applifecycle, application, lifecycle
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 dev_langs:
   - csharp

@@ -3,9 +3,7 @@ metadata:
   description: The official Windows developer FAQ. Get answers to common questions about Windows application development and Windows App SDK.
   title: Windows developer FAQ
   ms.topic: faq
-  ms.date: 05/13/2024
-  ms.author: mikben
-  author: matchamatch
+  ms.date: 08/19/2024
   ms.localizationpriority: medium
   ms.collection: windows11
   audience: new-desktop-app-developers
@@ -115,7 +113,7 @@ sections:
       - question: What's the difference between XAML Islands and WinUI 3?
         answer: |
           XAML Islands allow you to host modern WinUI controls alongside existing Win32 UI from other frameworks, such as WinForms and WPF. 
-          Today, XAML Islands are supported with _most_ system XAML and WinUI 2 controls. See [here](../desktop/modernize/xaml-islands.md) for more information. XAML Islands support for WinUI 3 controls is available starting in [Windows App SDK 1.4](/windows/apps/windows-app-sdk/stable-channel#xaml-islands-no-longer-experimental).
+          Today, XAML Islands are supported with _most_ system XAML and WinUI 2 controls. See [Host WinRT XAML controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands/xaml-islands.md) for more information. XAML Islands support for WinUI 3 controls is available starting in [Windows App SDK 1.4](/windows/apps/windows-app-sdk/stable-channel#xaml-islands-no-longer-experimental).
       - question: If I use WinUI 3, will my app look modern on both Windows 11 and Windows 10?
         answer: |
           Yes, your app's UI will inherit the latest Fluent UI design principles on all supported versions of Windows 11 and Windows 10 down to version 1809 in both packaged and unpackaged scenarios.
@@ -136,7 +134,7 @@ sections:
           Yes. If your [MSIX](/windows/msix/) package is signed, the signing certificate must be valid and trusted on the target device.
       - question: Can I mix UWP XAML UI controls with Win32, WPF, or WinForms UI controls?
         answer: |
-          Yes - XAML Islands lets you do this. [Learn more about XAML Islands](../desktop/modernize/xaml-islands.md).
+          Yes - XAML Islands lets you do this. [Learn more about XAML Islands](../desktop/modernize/xaml-islands/xaml-islands.md).
   - name: Cross-platform development
     questions:
       - question: Can I start with WinUI 3 and App SDK, and later integrate .NET MAUI if I eventually want to target cross-platform scenarios?

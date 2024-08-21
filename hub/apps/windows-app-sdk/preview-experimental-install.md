@@ -2,10 +2,8 @@
 title: Install tools for preview and experimental versions of the Windows App SDK
 description: Configure your development computer by installing the appropriate tools to develop apps for Windows by using the preview and experimental channels of the [Windows App SDK](./index.md).
 ms.topic: article
-ms.date: 02/15/2022
+ms.date: 08/19/2024
 keywords: windows win32, windows app development, Windows App SDK, preview, experimental
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

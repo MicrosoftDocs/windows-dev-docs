@@ -4,8 +4,6 @@ description: Get started with WinUI 3 / Windows App SDK by integrating OpenAI's 
 ms.topic: article
 ms.date: 12/11/2023
 keywords: windows app sdk, winappsdk, winui3, openai, chatgpt
-ms.author: mikben
-author: matchamatch
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers

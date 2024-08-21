@@ -1,8 +1,6 @@
 ---
 title: Camera barcode scanner
 description: Explains what a camera barcode scanner is and provides links to various topics that describe its features.
-author: twarwick
-ms.author: twarwick
 ms.date: 03/08/2023
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos

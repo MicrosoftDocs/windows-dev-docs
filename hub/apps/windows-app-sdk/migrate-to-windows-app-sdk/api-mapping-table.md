@@ -4,8 +4,6 @@ description: This topic provides a mapping of UWP APIs and libraries to their Wi
 ms.topic: article
 ms.date: 10/01/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, api, class, mapping, mappings, uwp
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

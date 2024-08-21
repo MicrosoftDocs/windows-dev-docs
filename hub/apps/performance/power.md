@@ -1,8 +1,6 @@
 ---
 title: Power consumption improvements and Windows Application Performance
 description: Improve power consumption and battery life by minimizing the use of system resources and not waking the CPU when your Windows app is in the background.
-ms.author: mattwoj
-author: mattwojo
 ms.reviewer: sandeepp
 ms.topic: conceptual
 ms.date: 05/16/2022
@@ -31,7 +29,7 @@ It is important to set up the correct conditions when running your app before ca
 
 1. Get your test device to idle by opening Task Manager and ensuring that CPU utilization is less than 5%. Doing so will minimize measurement interference and provide reasonable size traces.
 
-2. Launch your app and navigate to a view that’s expected to be commonly used.
+2. Launch your app and navigate to a view that's expected to be commonly used.
 
 3. Minimize your app. *You may want to repeat the following steps while your app window is fully occluded (blocked from view) behind other windows and when your app is in the foreground, after a period of no interaction by the user, to ensure unnecessary work is not being initiated by the app.
 

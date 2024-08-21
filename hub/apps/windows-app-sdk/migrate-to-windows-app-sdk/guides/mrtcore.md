@@ -4,8 +4,6 @@ description: This topic contains guidance for migrating from UWP's [Resource Man
 ms.topic: article
 ms.date: 10/01/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, MRT, MRTCore
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

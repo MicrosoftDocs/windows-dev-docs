@@ -1,9 +1,6 @@
 ---
 title: React Native for Windows desktop app development
 description: Install React Native for Windows and get started with Windows desktop app development using React Native components.
-author: drewbatgit
-ms.author: drewbat 
-manager: jken
 ms.topic: article
 keywords: react native for windows, windows, react native, install react native on windows, install react native for windows, build a desktop app with react, create a windows app with react, react for desktop apps, npx react-native, react-native-windows-init 
 ms.date: 03/30/2021

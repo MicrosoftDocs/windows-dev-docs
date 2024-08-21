@@ -1,9 +1,6 @@
 ---
 title: Install Gatsby.js on Windows
 description: A guide to help you get started using the Gatsby.js web frameworks on Windows Subsystem for Linux.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 03/30/2021

@@ -1,9 +1,6 @@
 ---
 title: Add Microsoft Defender exceptions for Android
 description: Learn how to improve performance speed and build times by updating Microsoft Defender settings to exclude checking specified file types.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.date: 03/08/2024
 ---

@@ -4,8 +4,6 @@ description: This topic contains migration guidance in the app notifications fea
 ms.topic: article
 ms.date: 12/14/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications, toast, toast notifications, app notifications, uwp
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

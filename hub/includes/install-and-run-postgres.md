@@ -1,7 +1,5 @@
 ---
 ms.topic: include
-author: mattwojo
-ms.author: mattwoj
 ms.date: 10/04/2019
 ---
 To install PostgreSQL:

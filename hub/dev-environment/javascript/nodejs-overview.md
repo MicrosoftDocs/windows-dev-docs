@@ -1,9 +1,6 @@
 ---
 title: NodeJS on Windows
 description: A guide to help you set up a NodeJS development environment on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, learning nodejs, node on windows, node on windows for beginners, develop with node on windows, developer with nodejs on windows
 ms.localizationpriority: medium

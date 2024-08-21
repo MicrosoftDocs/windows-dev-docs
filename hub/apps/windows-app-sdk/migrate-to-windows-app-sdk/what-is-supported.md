@@ -4,8 +4,6 @@ description: WinUI 3 and the Windows App SDK are new technologies and, when comp
 ms.topic: article
 ms.date: 03/05/2024
 keywords: Windows, App, SDK, port, porting, migrate, migration, support
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

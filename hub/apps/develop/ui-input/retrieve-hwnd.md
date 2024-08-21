@@ -4,8 +4,6 @@ description: This topic shows you how, in a desktop app, to retrieve the window 
 ms.topic: article
 ms.date: 03/07/2022
 keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, WinUI
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

@@ -1,8 +1,6 @@
 ---
-author: drewbatgit
 description: This article walks you through the creation of a widget template using the Adaptive Cards Designer.
 title: Create a widget template with the Adaptive Cards Designer
-ms.author: drewbat
 ms.date: 01/19/2022
 ms.topic: article
 keywords: windows 11, widgets

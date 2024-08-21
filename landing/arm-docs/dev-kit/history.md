@@ -5,8 +5,6 @@ ms.date: 08/01/2023
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
-author: mattwojo
-ms.author: mattwoj
 ---
 
 # Windows Dev Kit 2023 update history

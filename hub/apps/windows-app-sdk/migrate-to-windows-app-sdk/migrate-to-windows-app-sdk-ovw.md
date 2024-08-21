@@ -4,8 +4,6 @@ description: A collection of topics describing and demonstrating how to migrate 
 ms.date: 06/21/2024
 ms.topic: article
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

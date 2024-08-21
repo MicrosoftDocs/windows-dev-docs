@@ -5,8 +5,6 @@ ms.date: 05/21/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
-author: mattwojo
-ms.author: mattwoj
 ---
 
 # Windows on Arm

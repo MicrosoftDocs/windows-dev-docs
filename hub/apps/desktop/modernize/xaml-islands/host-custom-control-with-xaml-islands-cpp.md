@@ -4,8 +4,6 @@ title: Host a custom WinRT XAML control in a C++ desktop (Win32) app using the X
 ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, custom controls, user controls, host controls
-ms.author: kbridge
-author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
@@ -69,17 +67,17 @@ Next, add a **UWP (C++/WinRT)** app project to your solution and make some confi
 
 4. Right-click the **MyUWPApp** node and select **Properties**. On the **Common Properties** -> **C++/WinRT** page, set the **Verbosity** property to **normal** and then click **Apply**. When you are done, the properties page should look like this.
 
-    ![C++/WinRT project properties](images/xaml-islands/xaml-island-cpp-1.png)
+    ![C++/WinRT project properties](../images/xaml-islands/xaml-island-cpp-1.png)
 
 5. On the **Configuration Properties** -> **General** page of the properties window, set **Configuration Type** to **Dynamic Library (.dll)**, and then click **OK** to close the properties window.
 
-    ![General project properties](images/xaml-islands/xaml-island-cpp-2.png)
+    ![General project properties](../images/xaml-islands/xaml-island-cpp-2.png)
 
 6. Add a placeholder executable file to the **MyUWPApp** project. This placeholder executable file is required for Visual Studio to generate the required project files and properly build the project.
 
     1. In **Solution Explorer**, right-click the **MyUWPApp** project node and select **Add** -> **New Item**.
     2. In the **Add New Item** dialog, select **Utility** in the left page, and then select **Text File (.txt)**. Enter the name **placeholder.exe** and click **Add**.
-      ![Add text file](images/xaml-islands/xaml-island-cpp-3.png)
+      ![Add text file](../images/xaml-islands/xaml-island-cpp-3.png)
     3. In **Solution Explorer**, select the **placeholder.exe** file. In the **Properties** window, make sure the **Content** property is set to **True**.
     4. In **Solution Explorer**, right-click the **Package.appxmanifest** file in the **MyUWPApp** project, select **Open With**, and select **XML (Text) Editor**, and click **OK**.
     5. Find the **&lt;Application&gt;** element and change the **Executable** attribute to the value `placeholder.exe`. When you are done, the **&lt;Application&gt;** element should look similar to this.
@@ -137,10 +135,10 @@ In this section, you'll update the solution that contains both projects to confi
 5. Repeat the previous step to add the **Solution.props** file to the **MyUWPApp** project in the **Property Manager** window.
 6. Close the **Property Manager** window.
 7. Confirm that the property sheet changes were saved properly. In **Solution Explorer**, right-click the **MyDesktopWin32App** project and choose **Properties**. Click **Configuration Properties** -> **General**, and confirm that the **Output Directory** and **Intermediate Directory** properties have the values you added to the **Solution.props** file. You can also confirm the same for the **MyUWPApp** project.
-    ![Project properties](images/xaml-islands/xaml-island-cpp-4.png)
+    ![Project properties](../images/xaml-islands/xaml-island-cpp-4.png)
 
 8. In **Solution Explorer**, right-click the solution node and choose **Project Dependencies**. In the **Projects** drop-down, make sure that **MyDesktopWin32App** is selected, and select **MyUWPApp** in the **Depends On** list.
-    ![Project dependencies](images/xaml-islands/xaml-island-cpp-5.png)
+    ![Project dependencies](../images/xaml-islands/xaml-island-cpp-5.png)
 
 9. Click **OK**.
 
@@ -308,7 +306,7 @@ You can package the app in an [MSIX package](/windows/msix) for deployment. MSIX
 1. Add a new [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, name it **MyDesktopWin32Project** and select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version**.
 
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the check box next to the **MyDesktopWin32App** project and click **OK**.
-    ![Reference project](images/xaml-islands/xaml-island-cpp-6.png)
+    ![Reference project](../images/xaml-islands/xaml-island-cpp-6.png)
 
 3. For info about distributing/deploying the package, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview). 
 
@@ -375,7 +373,7 @@ Next, update the **MyDesktopWin32App** project to define a macro for additional 
 
 5. Right-click the **MyDesktopWin32App** project, select **Properties**, and expand **Manifest Tool** -> **Input and Output** in the left pane. Set the **DPI Awareness** property to **Per Monitor High DPI Aware**. If you do not set this property, you may encounter a manifest configuration error in certain high DPI scenarios.
 
-    ![Screenshot of the C/C++ project settings.](images/xaml-islands/xaml-island-cpp-8.png)
+    ![Screenshot of the C/C++ project settings.](../images/xaml-islands/xaml-island-cpp-8.png)
 
 6. Click **OK** to close the **Property Pages** dialog.
 
@@ -581,7 +579,7 @@ This section demonstrates how to add a WinRT XAML control from the WinUI 2 libra
 
 Run the solution and confirm that **MyDesktopWin32App** opens with the following window.
 
-![MyDesktopWin32App app](images/xaml-islands/xaml-island-cpp-9.png)
+![MyDesktopWin32App app](../images/xaml-islands/xaml-island-cpp-9.png)
 
 ## Next steps
 
