@@ -16,7 +16,7 @@ In this article, we step through how to build a basic **C# .NET** application wi
 
 ## Prerequisites
 
-1. [Get started with WinUI](../../get-started/start-here.md)
+1. [Start developing Windows apps](../../get-started/start-here.md)
 
 ## Basic managed C#/.NET app
 
