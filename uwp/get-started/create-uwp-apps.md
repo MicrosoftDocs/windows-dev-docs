@@ -10,7 +10,11 @@ ms.localizationpriority: medium
 
 ![Build your app](images/build-your-app.png)
 
-Welcome to the [UWP platform](universal-application-platform-guide.md)! On this page, we'll point you at the right information you need to start coding the Windows apps you want to create.
+Welcome to the [UWP platform](universal-application-platform-guide.md)! 
+
+> [!NOTE]
+> If you are starting to develop Windows apps, we recommend you consider using the [Windows App SDK](/windows/apps/windows-app-sdk/), and [WinUI](/windows/apps/develop/) rather than UWP. Although still supported, UWP is not under active development. Please see [Start developing Windows apps](/windows/apps/get-started/start-here) for more information.
+
 
 Before you begin development, you should be sure to [get set up.](/windows/apps/get-started/get-set-up)
 
