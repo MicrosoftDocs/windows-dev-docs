@@ -12,7 +12,7 @@ items:
       items: 
         - name: Overview of framework options
           href: get-started/index.md
-        - name: Get started with WinUI
+        - name: Start developing Windows apps
           href: get-started/start-here.md
         - name: Build your first app
           href: how-tos/hello-world-winui3.md
