@@ -28,6 +28,47 @@ The preview channel includes releases of the Windows App SDK with [preview chann
 - [Preview channel release notes for the Windows App SDK 1.1](release-notes-archive/preview-channel-1.1.md)
 - [Preview channel release notes for the Windows App SDK 1.0](release-notes-archive/preview-channel-1.0.md)
 
+## Version 1.6 Preview 2 (1.6.0-preview2)
+
+This is the latest release of the preview channel for version 1.6.
+
+In an existing Windows App SDK 1.5 (from the stable channel) app, you can update your Nuget package to 1.6.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+
+For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
+
+### New features
+
+#### Required C# project changes for 1.6-preview2
+
+The C# project guidance from [1.6-preview1](#required-c-project-changes-for-16-preview1) is also required for this release.
+
+#### Native AOT support
+
+1.6-preview2 includes significant changes to update to the released [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT) version 2.1.1 and make building more reliable for native Ahead-Of-Time compilation.
+
+#### Updated Edge WebView2 SDK Integration
+
+This release now references the released 1.0.2651.64 version of the `Microsoft.Web.WebView2` package, which should fix issues hit with the prerelease version referenced in 1.6-preview1. As noted in 1.6-preview1, apps are now able to choose a newer version of the `Microsoft.Web.WebView2` package if desired.
+
+### Bug Fixes
+
+1.6-preview2 contains the following new fixes since 1.6-preview1's release:
+
+- Fixed a crash when setting `InfoBar.IsOpen` in .xaml. For more info, see GitHub issue [#8391](https://github.com/microsoft/microsoft-ui-xaml/issues/8391).
+- Fixed an issue where HTML elements would lose pointer capture when the mouse moved outside of the `WebView2` bounds. For more info, see GitHub issue [#8677](https://github.com/microsoft/microsoft-ui-xaml/issues/8677).
+- Fixed an issue where drag and drop into a flyout with `ShouldConstrainToRootBounds=false` did not work. For more info, see GitHub issue [#9276](https://github.com/microsoft/microsoft-ui-xaml/issues/9276).
+- Fixed an issue where `ms-appx://` references did not work when `PublishSingleFile` is enabled. For more info, see GitHub issue [#9468](https://github.com/microsoft/microsoft-ui-xaml/issues/9468).
+- Fixed an issue where debugger symbols weren't working correctly for some binaries. For more info, see GitHub issue [#4633](https://github.com/microsoft/windowsappsdk/issues/4633).
+- Fixed a build break when using `/permissive-`. For more info, see GitHub issue [#4643](https://github.com/microsoft/windowsappsdk/issues/4643).
+- Fixed a couple of API breaking changes in 1.6-preview1 caused by renamed parameters. For more info, see GitHub issue [#4645](https://github.com/microsoft/windowsappsdk/issues/4645).
+- Fixed type conflict build breaks hit by some projects in 1.6-preview1, particularly with `Windows.UI.Text` types. For more info, see GitHub issue [#4646](https://github.com/microsoft/windowsappsdk/issues/4646).
+- Fixed an issue with resource lookups by control libraries in 1.6-preview1. For more info, see GitHub issue [#4649](https://github.com/microsoft/windowsappsdk/issues/4649).
+- Fixed a potential crash when subclassing `NavigationView`.
+- Fixed an issue where table borders in a `RichEditBox` would not correctly erase when scrolling or reducing the size of the table.
+- Fixed an issue where flyouts from `MediaTransportControls` had a fully transparent background.
+- Fixed an issue where dragging into a WebView2 would fail or drop in the wrong location on display scale factors other than 100% or when system text scaling is enabled.
+- Fixed an issue where `TextBox`/`RichEditBox` would not announce to Accessibility tools when input is blocked due to being at the `MaxLength` limit.
+
 ## Version 1.6 Preview 1 (1.6.0-preview1)
 
 This is the latest release of the preview channel for version 1.6.
