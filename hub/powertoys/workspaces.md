@@ -9,7 +9,11 @@ no-loc: [PowerToys, Windows, Win]
 
 # Workspaces utility
 
-PowerToys Workspaces is a desktop m anager utility for launching a set of applications to custom positions and configurations with one-click, getting you into your ideal desktop state for any project or activity faster. You can capture your desktop state as a new workspace using the editor, add arguments to apps to configure their state on launch, and pin the workspace as a desktop shortcut for quick-launching. Launching the workspace will launch all apps to their assigned positions. 
+PowerToys Workspaces is a desktop m anager utility for launching a set of applications to custom positions and configurations with one-click, getting you into your ideal desktop state for any project or activity faster. You can capture your desktop state as a new workspace using the editor, add arguments to apps to configure their state on launch, and pin the workspace as a desktop shortcut for quick-launching. Launching the workspace will launch all apps to their assigned positions.
+
+## Enabling
+
+To start using Workspaces, enable it in the PowerToys Settings.
 
 ## Creating a new workspace
 
