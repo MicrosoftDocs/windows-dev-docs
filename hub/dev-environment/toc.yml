@@ -163,6 +163,8 @@ items:
         href: ../powertoys/text-extractor.md
       - name: Video Conference Mute
         href: ../powertoys/video-conference-mute.md
+      - name: Workspaces
+        href: ../powertoys/workspaces.md
   - name: Windows Subsystem for Linux
     href: /windows/wsl/
   - name: Windows Terminal
