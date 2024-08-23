@@ -13,7 +13,9 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 > [!NOTE]
 > When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. You'll have the option to [add additional users to the account](manage-account-users.md) later.
 
-When you [begin the signup process](https://developer.microsoft.com/microsoft-store/register) you'll need to choose whether to create an individual account or a company account. Both account types will allow you to submit apps, games, add-ins, and services.
+[Create a microsoft account](https://signup.live.com/?lic=1) if you don't have one.
+
+Log into [partner portal](https://partner.microsoft.com/dashboard) with microsoft account. First time setup click on blue plus mark in Workspaces > My access > plus.  Then click on Programs in side menu. Then Other Programs> Windows "Register as an app developer to submit apps and games to Microsoft marketplaces.". Follow steps to setup. You'll need to choose whether to create an individual account or a company account. Both account types will allow you to submit apps, games, add-ins, and services.
 
 Company accounts must be used for organizations and businesses and any person acting in relation to their trade or profession. For company accounts, we require greater [verification](/windows/apps/publish/partner-center/account-types-locations-and-fees#account-verification) to confirm that you’re authorized to set up the account for your company, as well as requiring that you enter a customer contact email, business address, and business phone number if available. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
 
