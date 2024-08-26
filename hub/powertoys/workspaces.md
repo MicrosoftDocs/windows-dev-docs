@@ -72,6 +72,15 @@ To launch apps as admin, select the "Launch as Admin" box in the respective app'
 > [!NOTE] 
 > There is a known issue where apps that launch as admin are unable to be repositioned to the desired layout. The team is actively working on a fix for an upcoming release.
 
+## Opening new windows vs. repositioning existing windows
+
+Different apps may behave differently on launch if there is already an existing instance of the application open on the desktop - some apps will reposition the existing instance, whereas others may launch a new instance by default. For tailoring to user preference, the recommendation is to handle launch behaviour via available CLI arguments.
+
+For example, VS Code will launch a new window by default, but should a user prefer to move the existing window, the `--reuse-window` CLI argument can be added to VS Code's CLI arguments. 
+
+> [!NOTE] 
+> Some apps are "single-instance" applications, meaning that there may only be one active instance of the app open at a time. One example of this is the Windows Settings app. These apps, if already active, will be repositioned by default, and new instances cannot be launched.  
+
 ## Frequently Asked Questions
 
 **Why do app windows launch and then jump to the positions I saved them in?**
