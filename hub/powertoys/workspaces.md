@@ -27,20 +27,20 @@ Open the editor using by selecting "Launch editor" from PowerToys Workspaces set
 
 After capturing, you will enter the editor where you can name the workspace, adjust window sizes, add CLI arguments, remove apps, and create a desktop shortcut before finally saving the workspace. 
 
-![alt text](../images/powertoys-workspaces/post_capture_edit.png)
+![Edit screen after capture](../images/powertoys-workspaces/post_capture_edit.png)
 
 ## Launching a workspace
 
 Launch a workspace by either selecting "Launch" from the list of workspaces in the editor, or by using a desktop shortcut if you chose to create one when saving the workspace originally. Shortcuts can also be pinned to the taskbar for convenient launching.
 
-![alt text](../images/powertoys-workspaces/launch_buttons.png)
+![Workspaces methods](../images/powertoys-workspaces/launch_buttons.png)
 
 While the workspace launches, PowerToys will display a dialogue box presenting the status of each app. Each app will have one of the following statuses:
 
 | Symbol      | Status    |
 |-------------|-----------|
-| <img src="../images/powertoys-workspaces/checkmark.png" alt="red x" width="16" hspace="2"/> | The app has successfully launched and repositioned. |
-| <img src="../images/powertoys-workspaces/spinner.gif" alt="red x" width="20"/> | The app is in the process of launching and moving to the correct position. |
+| <img src="../images/powertoys-workspaces/checkmark.png" alt="green checkmard" width="16" hspace="2"/> | The app has successfully launched and repositioned. |
+| <img src="../images/powertoys-workspaces/spinner.gif" alt="loading spinner" width="20"/> | The app is in the process of launching and moving to the correct position. |
 | <img src="../images/powertoys-workspaces/failed.png" alt="red x" width="16" hspace="2"/> | The app has failed to launch. |
 
 
@@ -57,7 +57,7 @@ Start by launching the editor and selecting the workspace you would like to edit
 
 To launch apps in a desired state, CLI arguments can be added to each app in their respective drop-down menus. These arguments are specific to the app itself and are called alongside the app when launched. In the below example, VS Code is launched to the file provided at the path and Terminal is launched to the "Ubuntu" profile.
 
-![alt text](../images/powertoys-workspaces/cli_args.png)
+![CLI arguments in editor](../images/powertoys-workspaces/cli_args.png)
 
 You can find more information on VS Code and Terminal CLI arguments can be found below:
 - [VS Code CLI Docs](https://code.visualstudio.com/docs/editor/command-line)
