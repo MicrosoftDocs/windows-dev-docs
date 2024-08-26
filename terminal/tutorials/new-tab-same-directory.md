@@ -113,7 +113,7 @@ Windows Subsystem for Linux distributions primarily use BASH as the command line
 Add the following line to the end of your `.bash_profile` config file:
 
 ```bash
-PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
+PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
 ```
 
 The `PROMPT_COMMAND` variable in bash tells bash what command to run before displaying the prompt. The `printf` statement is what we're using to append the sequence for setting the working directory with the Terminal. The `$(wslpath -w "$PWD")` bit will invoke the `wslpath` executable to convert the current directory into its Windows-like path. The `${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}` bit is [some bash magic](https://unix.stackexchange.com/a/466100) to make sure we append this command to any existing command (if you've already set `PROMPT_COMMAND` somewhere else.)
