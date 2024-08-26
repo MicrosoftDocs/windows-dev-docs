@@ -3,7 +3,6 @@ title: PowerToys Workspaces utility for Windows
 description: A desktop manager utility for PowerToys Workspaces is a desktop manager utility for launching a set of applications to custom positions and configurations efficiently
 ms.date: 08/21/2024
 ms.topic: article
-ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Win]
 ---
 
@@ -35,13 +34,14 @@ Launch a workspace by either selecting "Launch" from the list of workspaces in t
 
 ![Workspaces methods](../images/powertoys-workspaces/launch_buttons.png)
 
+
 While the workspace launches, PowerToys will display a dialogue box presenting the status of each app. Each app will have one of the following statuses:
 
 | Symbol      | Status    |
 |-------------|-----------|
-| <img src="../images/powertoys-workspaces/checkmark.png" alt="green checkmard" width="16" hspace="2"/> | The app has successfully launched and repositioned. |
-| <img src="../images/powertoys-workspaces/spinner.gif" alt="loading spinner" width="20"/> | The app is in the process of launching and moving to the correct position. |
-| <img src="../images/powertoys-workspaces/failed.png" alt="red x" width="16" hspace="2"/> | The app has failed to launch. |
+| ![Green checkmark](../images/powertoys-workspaces/checkmark_resized.png) | The app has successfully launched and repositioned. |
+| ![Loading circle](../images/powertoys-workspaces/spinner_resized.png) | The app is in the process of launching and moving to the correct position. |
+| ![Red X](../images/powertoys-workspaces/failed_resized.png) | The app has failed to launch. |
 
 
 ## Editing a workspace
@@ -66,8 +66,6 @@ You can find more information on VS Code and Terminal CLI arguments can be found
 ## Launching apps as admin 
 
 To launch apps as admin, select the "Launch as Admin" box in the respective app's drop-down menu. On launch, a UAC dialogue will be shown for each app that has been set to launch as admin. 
-
-![Launch as Admin gif](../images/powertoys-workspaces/AdminLaunchDemo.gif)
 
 > [!NOTE] 
 > There is a known issue where apps that launch as admin are unable to be repositioned to the desired layout. The team is actively working on a fix for an upcoming release.
