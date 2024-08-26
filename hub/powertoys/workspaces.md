@@ -61,7 +61,7 @@ To launch apps in a desired state, CLI arguments can be added to each app in the
 
 You can find more information on VS Code and Terminal CLI arguments can be found below:
 - [VS Code CLI Docs](https://code.visualstudio.com/docs/editor/command-line)
-- [Terminal CLI Docs](https://learn.microsoft.com/windows/terminal/command-line-arguments?tabs=windows)
+- [Terminal CLI Docs](/windows/terminal/command-line-arguments?tabs=windows)
 
 ## Launching apps as admin 
 
