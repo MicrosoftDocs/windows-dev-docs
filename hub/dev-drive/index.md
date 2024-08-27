@@ -2,7 +2,7 @@
 title: Set up a Dev Drive on Windows 11
 description: Learn about the new Dev Drive storage available to improve file system performance for development scenarios using the ReFS volume format, including how to set it up, designate trust to use performance mode for Microsoft Defender Antivirus, customized filters, and FAQs.
 ms.topic: article
-ms.date: 07/22/2024
+ms.date: 08/13/2024
 ---
 
 # Set up a Dev Drive on Windows 11
@@ -292,6 +292,10 @@ fsutil devdrv setfiltersallowed "PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, Fil
 
 > [!TIP]
 > The filter name for Process Monitor may change. If adding the filter name "ProcMon24" doesn't seem to capture file system activities on a Dev Drive, list the filters using the command `fltmc filters`, find the filter name for Process Monitor, and use that name instead of "ProcMon24".
+
+## Block Cloning Support
+
+Beginning in Windows 11 24H2 & Windows Server 2025, Block cloning is now supported on Dev Drive. Because Dev Drive utilizes the [ReFS](/windows-server/storage/refs/refs-overview) file system format, Block cloning support will mean free performance benefits whenever you copy a file using Dev Drive. Block cloning allows the file system to copy a range of file bytes on behalf of an application as a low-cost metadata operation, rather than performing expensive read and write operations to the underlying physical data. **This results in faster copy completion, less I/O to the underlying storage, and improved storage capacity** by enabling multiple files to share the same logical clusters. Learn more about [Block cloning](/windows-server/storage/refs/block-cloning).
 
 ## What scenarios are unsupported by Dev Drive? What are the limitations?
 
