@@ -39,9 +39,9 @@ While the workspace launches, PowerToys will display a dialogue box presenting t
 
 | Symbol      | Status    |
 |-------------|-----------|
-| ![Green checkmark](../images/powertoys-workspaces/checkmark_resized.png) | The app has successfully launched and repositioned. |
+| ![Green checkmark](../images/powertoys-workspaces/checkmark.png) | The app has successfully launched and repositioned. |
 | ![Loading circle](../images/powertoys-workspaces/spinner.png) | The app is in the process of launching and moving to the correct position. |
-| ![Red X](../images/powertoys-workspaces/failed_resized.png) | The app has failed to launch. |
+| ![Red X](../images/powertoys-workspaces/failed.png) | The app has failed to launch. |
 
 
 ## Editing a workspace
