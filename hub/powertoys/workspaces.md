@@ -67,7 +67,7 @@ You can find more information on VS Code and Terminal CLI arguments can be found
 
 To launch apps as admin, select the "Launch as Admin" box in the respective app's dropdown menu. On launch, a UAC dialogue will be shown for each app that has been set to launch as admin. 
 
-> [!NOTE] 
+> [!IMPORTANT] 
 > There is a known issue where apps that launch as admin are unable to be repositioned to the desired layout. The team is actively working on a fix for an upcoming release.
 
 ## Opening new windows vs. repositioning existing windows
