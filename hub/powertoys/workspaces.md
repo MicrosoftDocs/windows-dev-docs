@@ -83,7 +83,7 @@ For example, VS Code will launch a new window by default, but should a user pref
 
 **Why do app windows launch and then jump to the positions I saved them in?**
 
-PowerToys cannot tell an app to launch to a specific position. What we can do, is launch an app first and then give an instruction to move and resize it to a certain position, but this results in the user visibly seeing the process on-screen. To help with this, we added the dialogue box during launch to display the launch status of each app.
+PowerToys cannot tell an app to launch to a specific position. What we can do is launch an app first, and then give an instruction to move and resize it to a certain position. However, this results in the user visibly seeing the process on-screen. To help with this, we added the dialogue box during launch to display the launch status of each app.
 
 **My windows were snapped when I saved my workspace, but when I launch the workspace from a clean state they are not snapped. Why is this?**
 
