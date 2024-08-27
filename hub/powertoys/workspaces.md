@@ -87,7 +87,7 @@ PowerToys cannot tell an app to launch to a specific position. What we can do is
 
 **My windows were snapped when I saved my workspace, but when I launch the workspace from a clean state they are not snapped. Why is this?**
 
-PowerToys uses publicly available APIs and the FancyZone engine under the hood for positioning apps. Unfortunately, this does not include snapping capabilities.  
+PowerToys uses publicly available APIs and the [FancyZones](fancyzones.md) engine under the hood for positioning apps. Unfortunately, this does not include snapping capabilities.  
 
 **How can I pin to taskbar?**
 
