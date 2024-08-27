@@ -46,7 +46,7 @@ While the workspace launches, PowerToys will display a dialogue box presenting t
 
 ## Editing a workspace
 
-Start by launching the editor and selecting the workspace you would like to edit. Once in the edit view for that layout, you can modify the window positions manually via each app's drop-down menu or select "Launch & Edit" to launch the layout and re-enter the same Capture experience as when it was first created. 
+Start by launching the editor and selecting the workspace you would like to edit. Once in the edit view for that layout, you can modify the window positions manually via each app's dropdown menu or select "Launch & Edit" to launch the layout and re-enter the same Capture experience as when it was first created. 
 
 ![Launch & Edit gif](../images/powertoys-workspaces/Workspaces%20Demo.gif)
 
@@ -55,7 +55,7 @@ Start by launching the editor and selecting the workspace you would like to edit
 
 ## Adding CLI arguments to applications
 
-To launch apps in a desired state, CLI arguments can be added to each app in their respective drop-down menus. These arguments are specific to the app itself and are called alongside the app when launched. In the below example, VS Code is launched to the file provided at the path and Terminal is launched to the "Ubuntu" profile.
+To launch apps in a desired state, CLI arguments can be added to each app in their respective dropdown menus. These arguments are specific to the app itself and are called alongside the app when launched. In the below example, VS Code is launched to the file provided at the path and Terminal is launched to the "Ubuntu" profile.
 
 ![CLI arguments in editor](../images/powertoys-workspaces/cli_args.png)
 
@@ -65,7 +65,7 @@ You can find more information on VS Code and Terminal CLI arguments can be found
 
 ## Launching apps as admin 
 
-To launch apps as admin, select the "Launch as Admin" box in the respective app's drop-down menu. On launch, a UAC dialogue will be shown for each app that has been set to launch as admin. 
+To launch apps as admin, select the "Launch as Admin" box in the respective app's dropdown menu. On launch, a UAC dialogue will be shown for each app that has been set to launch as admin. 
 
 > [!NOTE] 
 > There is a known issue where apps that launch as admin are unable to be repositioned to the desired layout. The team is actively working on a fix for an upcoming release.
