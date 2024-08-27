@@ -53,7 +53,7 @@ Start by launching the editor and selecting the workspace you would like to edit
 > [!NOTE] 
 > Capturing the adjusted workspace will perform a clean re-capture, and all previous CLI arguments and settings will be removed. The re-capture can be reverted to return to the original workspace if necessary.
 
-## Adding CLI arguments to applications
+## Adding command arguments to applications
 
 To launch apps in a desired state, CLI arguments can be added to each app in their respective dropdown menus. These arguments are specific to the app itself and are called alongside the app when launched. In the below example, VS Code is launched to the file provided at the path and Terminal is launched to the "Ubuntu" profile.
 
