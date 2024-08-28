@@ -153,6 +153,8 @@
       href: ../audio-video-camera/supported-codecs.md
     - name: Query for installed codecs
       href: ../audio-video-camera/codec-query.md
+    - name: Supported media type strings
+      href: ../audio-video-camera/supported-play-type-strings.md
     - name: Screen capture
       href: ../audio-video-camera/screen-capture.md
     - name: Screen capture to video
