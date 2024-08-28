@@ -2,7 +2,7 @@
 title: Retrieve a window handle (HWND)
 description: This topic shows you how, in a desktop app, to retrieve the window handle for a window.
 ms.topic: article
-ms.date: 03/07/2022
+ms.date: 08/28/2024
 keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, WinUI
 ms.localizationpriority: medium
 ---
@@ -71,6 +71,10 @@ private void button1_Click(object sender, EventArgs e)
     var hWnd = this.Handle;
 }
 ```
+
+## Determining the window that's hosting a visual element
+
+From a visual element, you can access [UIElement.XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot); then [XamlRoot.ContentIslandEnvironment](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.contentislandenvironment); then the [ContentIslandEnvironment.AppWindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.content.contentislandenvironment.appwindowid) property contains the ID of the top-level Win32 HWND.
 
 ## Related topics
 
