@@ -46,22 +46,22 @@ While the workspace launches, PowerToys will display a dialogue box presenting t
 
 ## Editing a workspace
 
-Start by launching the editor and selecting the workspace you would like to edit. Once in the edit view for that layout, you can modify the window positions manually via each app's dropdown menu or select "Launch & Edit" to launch the layout and re-enter the same Capture experience as when it was first created. 
-
-![Launch & Edit gif](../images/powertoys-workspaces/Workspaces%20Demo.gif)
+Start by launching the editor and selecting the workspace you would like to edit. Once in the edit view for that layout, you can remove apps, modify the window positions manually via each app's dropdown menu, or select "Launch & Edit" to launch the layout and re-enter the same Capture experience as when it was first created. 
 
 > [!NOTE] 
 > Capturing the adjusted workspace will perform a clean re-capture, and all previous CLI arguments and settings will be removed. The re-capture can be reverted to return to the original workspace if necessary.
 
-## Adding command arguments to applications
+## Adding command line (CLI) arguments to applications
 
-To launch apps in a desired state, CLI arguments can be added to each app in their respective dropdown menus. These arguments are specific to the app itself and are called alongside the app when launched. In the below example, VS Code is launched to the file provided at the path and Terminal is launched to the "Ubuntu" profile.
+To launch apps in a desired state, CLI arguments can be added to each app in their respective dropdown menus. These arguments are specific to the app itself and are called alongside the app when launched. In the below example, VS Code is launched to the file provided at the path and Terminal is launched to the "Ubuntu" profile. 
 
 ![CLI arguments in editor](../images/powertoys-workspaces/cli_args.png)
 
 You can find more information on VS Code and Terminal CLI arguments can be found below:
 - [VS Code CLI Docs](https://code.visualstudio.com/docs/editor/command-line)
 - [Terminal CLI Docs](/windows/terminal/command-line-arguments?tabs=windows)
+
+Each app will have its own set of command line arguments that can be used to modify the launch behaviour, but many apps use similar patterns. 
 
 ## Launching apps as admin 
 
