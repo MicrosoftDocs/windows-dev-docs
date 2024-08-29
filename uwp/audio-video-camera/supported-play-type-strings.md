@@ -95,7 +95,7 @@ It is up to the content provider to choose the resolution limit to use when this
 
 ### Supported audio endpoint codecs
 
-Some audio encoding features require the audio endpoint to support the feature natively. The *audio-endpoint-codec* extension is useful for applications and streaming services, allowing them to figure out dynamically whether they should send stereo audio or 5.1 (because the device supports 5.1), and therefore control used bandwidth while maximizing audio quality.
+Some audio encoding features require the audio endpoint to support the feature natively. The *audio-endpoint-codec* extension is useful for applications and streaming services, allowing them to figure out dynamically whether they should send stereo audio or 5.1 (because the device supports 5.1), and therefore control used bandwidth while maximizing audio quality. Support for *audio-endpoint-codec* was introduced in TBD Windows version.
 
 The following is an example content type string using *audio-endpoint-codec*.
 
@@ -103,10 +103,10 @@ The following is an example content type string using *audio-endpoint-codec*.
 
 | Codec string | Description | Remarks |
 |--------------|-------------|---------|
-| DD             | Dolby Digital            |         |
+| DD             | Dolby Digital            |        |
 | DD+JOC             | Colby Digital + Joint Object Coding            |         |
-| DTS |             |  Digital Theater Sound      |
-| DTSHD |             |  Digital Theater Sound HD       |
+| DTS |   Digital Theater Sound          |        |
+| DTSHD |   Digital Theater Sound HD          |         |
 | PCM2.0 |  Pulse Code Modulation 2.0 channel           |         |
 | PCM5.1 |  Pulse Code Modulation 5.1 channel           |         |
 | PCM7.1 |  Pulse Code Modulation 7.1 channel           |         |
