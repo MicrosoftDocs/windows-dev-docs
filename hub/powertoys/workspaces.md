@@ -61,7 +61,8 @@ You can find more information on VS Code and Terminal CLI arguments can be found
 - [VS Code CLI Docs](https://code.visualstudio.com/docs/editor/command-line)
 - [Terminal CLI Docs](/windows/terminal/command-line-arguments?tabs=windows)
 
-Each app will have its own set of command line arguments that can be used to modify the launch behaviour, but many apps use similar patterns. 
+> [!TIP]
+> Each app will have its own set of command line arguments that can be used to modify the launch behaviour, but many apps use similar patterns. For example, try passing a comma-separated list of  URLs to Edge and other browsers to launch the browser with those tabs open, or pass a filepath to an Office application, text editor or IDE to launch directly to that file. 
 
 ## Launching apps as admin 
 
