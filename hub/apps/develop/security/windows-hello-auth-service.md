@@ -653,7 +653,7 @@ In this exercise, you will be changing the client side views and helper classes 
         return true;
     }
 
-    public static async void RemoveWindowsHelloAccountAsync(UserAccount account)
+    public static async Task RemoveWindowsHelloAccountAsync(UserAccount account)
     {
 
     }
@@ -831,7 +831,7 @@ In this exercise, you will be changing the client side views and helper classes 
 - The **WindowsHelloHelper** method is not using the **AuthService** to remove the account. You need to make a call to the **AuthService** and pass the *userId*.
 
     ```cs
-    public static async void RemoveWindowsHelloAccountAsync(UserAccount account)
+    public static async Task RemoveWindowsHelloAccountAsync(UserAccount account)
     {
         //Open the account with Windows Hello
         KeyCredentialRetrievalResult keyOpenResult = await KeyCredentialManager.OpenAsync(account.Username);
