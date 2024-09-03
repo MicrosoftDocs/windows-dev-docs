@@ -34,7 +34,6 @@ Launch a workspace by either selecting "Launch" from the list of workspaces in t
 
 ![Workspaces methods](../images/powertoys-workspaces/launch_buttons.png)
 
-
 While the workspace launches, PowerToys will display a dialogue box presenting the status of each app. Each app will have one of the following statuses:
 
 | Symbol      | Status    |
