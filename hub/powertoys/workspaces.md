@@ -43,6 +43,7 @@ While the workspace launches, PowerToys will display a dialogue box presenting t
 | ![Loading circle](../images/powertoys-workspaces/spinner.png) | The app is in the process of launching and moving to the correct position. |
 | ![Red X](../images/powertoys-workspaces/failed.png) | The app has failed to launch. |
 
+The dialogue box will dismiss itself once all apps have properly launched and been arranged in their desired positions. You can also dismiss the dialogue yourself at anytime, or use it to cancel the launch. 
 
 ## Editing a workspace
 
