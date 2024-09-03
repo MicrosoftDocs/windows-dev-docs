@@ -16,7 +16,7 @@ To start using Workspaces, enable it in the PowerToys Settings.
 
 ## Creating a new workspace
 
-Open the editor using by selecting "Launch editor" from PowerToys Workspaces settings or by using the shortcut <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd>.
+Open the editor using by selecting "Launch editor" from PowerToys Workspaces settings or by using the shortcut <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>`</kbd>.
 
 ![Workspaces Editor](../images/powertoys-workspaces/workspaces_editor.png)
 
