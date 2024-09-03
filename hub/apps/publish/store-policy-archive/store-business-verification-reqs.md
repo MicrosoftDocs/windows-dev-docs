@@ -42,12 +42,12 @@ For the fastest and easiest verification, we recommend obtaining and providing a
 - Invoices (billed to supplier organization).
 - Contract.
 
-## Customer Support Contact Information
+## Customer Contact Information
 
-If you have a company account, Microsoft requires that you enter customer support contact information for each product available in the Microsoft Store. Once this is provided, the contact information will appear on the Product Detail page.
+If you have a company account, Microsoft requires that you enter customer contact information for each product available in the Microsoft Store. Once this is provided, the contact information will appear on the Product Detail page.
 
-- To provide customer support contact information: Sign in to your [Microsoft Partner Center account](https://partner.microsoft.com/dashboard/home).
-- To update customer support contact information:
+- To provide customer contact information: Sign in to your [Microsoft Partner Center account](https://partner.microsoft.com/dashboard/home).
+- To update customer contact information:
   - Sign into your Partner Center account.
   - For every product available in the European Union markets, go to the Properties page, fill the five required fields (Support contact info, Phone number, Address / Address Line 1, City, and Country), and then publish the update.
   - Once provided, this information will appear on the product detail pages.
@@ -58,7 +58,7 @@ If a valid business verification ID is not submitted by the deadline, the follow
 
 - All publisher products will be restricted from distribution in the European markets.
 
-If valid customer support contact information is not submitted for a product by the deadline, the following action will be taken until the publisher meets compliance:
+If valid customer contact information is not submitted for a product by the deadline, the following action will be taken until the publisher meets compliance:
 
 - The product will be restricted from distribution in the European markets.
 
