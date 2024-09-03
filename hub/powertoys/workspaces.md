@@ -1,7 +1,7 @@
 ---
 title: PowerToys Workspaces utility for Windows
-description: A desktop manager utility for PowerToys Workspaces is a desktop manager utility for launching a set of applications to custom positions and configurations efficiently
-ms.date: 08/21/2024
+description: The PowerToys Workspaces utility is a desktop manager that can efficiently launch a set of applications to custom positions and configurations.
+ms.date: 09/03/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Win]
 ---
