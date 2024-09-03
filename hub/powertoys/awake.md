@@ -69,6 +69,7 @@ PowerToys Awake can also be executed as a standalone application, directly from 
 | `--time-limit`    | Duration, in seconds, during which PowerToys Awake keeps the computer awake. Can be used in combination with `--display-on`. |
 | `--expire-at`     | Expiration date and/or time when PowerToys Awake will turn off and resume the standard power state. Can be used in combination with `--display-on`. |
 | `--pid`           | Attaches the execution of Awake to a Process ID (PID). When the process with a given PID terminates, PowerToys Awake terminates as well. |
+| `--use-parent-pid`| Attaches the execution of Awake to a parent process. When the parent process terminates, PowerToys Awake terminates as well. |
 
 In absence of command-line arguments, PowerToys Awake will keep the computer awake indefinitely.
 
