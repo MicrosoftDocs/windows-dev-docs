@@ -12,7 +12,7 @@ The **download** command of the [winget](index.md) tool downloads the installer,
 
 The **download** command requires that you specify the exact string to download. If there is any ambiguity, you will be prompted to further filter the **download** command to an exact application.
 
-The **download** command requires EntraID (formally Azure Active Directory) authentication to download a Microsoft Store packaged app (*.msix, *.appx, *.msixbundle, or *.appxbundle) and to download the Microsoft Store packaged app license file. The EntraID account that is provided for authentication must be a member of one of the following three Azure roles: Global Administrator, User Administrator, or License Administrator.
+The **download** command requires EntraID (formally Azure Active Directory) authentication to download a Microsoft Store packaged app (*.msix, *.appx, *.msixbundle, or *.appxbundle) and to download the Microsoft Store packaged app license file. The EntraID account used for authentication to retrieve a Microsoft Store packaged app license file must be a member of one of the following three Azure roles: Global Administrator, User Administrator, or License Administrator.
 
 > [!NOTE]
 > By default, the **download** command will download the appropriate installer to the user's Downloads folder. Use the **--download-directory** option to specify a custom download path.
