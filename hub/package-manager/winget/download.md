@@ -8,9 +8,11 @@ ms.localizationpriority: medium
 
 # download command (winget)
 
-The **download** command of the [winget](index.md) tool downloads the installer from the selected package. Use the [**search**](search.md) command and the [**show**](show.md) command to identify the package installer you want to download .
+The **download** command of the [winget](index.md) tool downloads the installer, dependencies, and license file (when downloading a Microsoft Store Packaged app). Use the [**search**](search.md) command and the [**show**](show.md) command to identify the package installer you want to download.
 
 The **download** command requires that you specify the exact string to download. If there is any ambiguity, you will be prompted to further filter the **download** command to an exact application.
+
+The **download** command requires EntraID (formally Azure Active Directory) authentication to download a Microsoft Store packaged app (*.msix, *.appx, *.msixbundle, or *.appxbundle) and to download the Microsoft Store packaged app license file. The EntraID account that is provided for authentication must be a member of one of the following three Azure roles: Global Administrator, User Administrator, or License Administrator.
 
 > [!NOTE]
 > By default, the **download** command will download the appropriate installer to the user's Downloads folder. Use the **--download-directory** option to specify a custom download path.
@@ -20,6 +22,40 @@ The **download** command requires that you specify the exact string to download.
 `winget download [[-q] <query>] [<options>]`
 
 ![download command](./images/download.png)
+
+### Download without license file
+Downloading a package using WinGet, the package license file can be omitted by appending to the command the `--skip-license` parameter. The exclusion of the package license file will remove the authorization requirement for generating the offline license file.
+
+```cmd
+winget download [[--id] <package id>] [[--skip-license]] [<options>]
+```
+
+### Download for a specific platform
+Downloading a package using WinGet, by default will download the latest available version of a package for each applicable use case (architecture, device platform, etc.). Filtering the downloaded content for a specific device platform is done by appending to the command the `--platform` parameter.
+
+```cmd
+winget download [[--id] <package id>] [[--platform] <platform type> ] [<options>]
+```
+
+| Platform | Description |
+|--|--|
+| Windows.Desktop | Supports being installed on Windows desktop experience |
+| Windows.Universal | Supports being installed on all Microsoft operating systems |
+| Windows.Holographic | Supports being installed on Microsoft HoloLens devices |
+
+### Download for a specific architecture
+Downloading a package using WinGet, by default will download the latest available version of a package for each applicable use case (architecture, device platform, etc.). Filtering the downloaded content with a specific architecture is done by appending to the command the `--architecture` parameter.
+
+```cmd
+winget download [[--id] <package id>] [[--architecture] <Architecture>] [<options>]
+```
+
+| Architecture | Description |
+|--|--|
+| x86 | 32-bit processor |
+| x64 | 64-bit processor |
+| arm | 32-bit ARM processor |
+| arm64 | 64-bit ARM processor |
 
 ## Arguments
 
