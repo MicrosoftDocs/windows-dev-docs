@@ -784,6 +784,8 @@ items:
                   items: 
                     - name: Stable channel release notes
                       items: 
+                        - name: Windows App SDK 1.5
+                          href: windows-app-sdk/release-notes-archive/stable-channel-1.5.md
                         - name: Windows App SDK 1.4
                           href: windows-app-sdk/release-notes-archive/stable-channel-1.4.md
                         - name: Windows App SDK 1.3
