@@ -744,25 +744,30 @@ items:
                 href: publish/partner-center/close-your-developer-account-in-partner-center.md
               - name: Trademark and copyright protection
                 href: publish/partner-center/trademark-and-copyright-protection.md                
-        - name: Store policies and code of conduct
-          href: publish/store-policies-and-code-of-conduct.md
+        - name: Microsoft Store policies and resources
           items: 
               - name: Microsoft Store Policies
                 href: publish/store-policies.md
               - name: Store Policies change history
                 href: publish/store-policies-change-history.md
-              - name: App Quality
-                href: publish/store-app-quality.md
               - name: Developer Code of Conduct
                 href: publish/store-developer-code-of-conduct.md
+              - name: App developer agreement
+                href: https://https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/store/legal-and-policy-documents/ada/MS-Store-ADA-v8.9-FINAL-EN.pdf
               - name: Microsoft Store Product Ranking, Placement and Marketing Disclosure Statement
                 href: https://aka.ms/disclosurepolicypdf
-              - name: Microsoft Store complaint and appeal statistics
-                href: publish/store-policies.md#microsoft-store-complaint-and-appeal-statistics
-              - name: Microsoft Edge Add-ons store developer policies
-                href: /microsoft-edge/extensions-chromium/store-policies/developer-policies
-        - name: Raise a support ticket
-          href: publish/contact-us.md
+              - name: Resources
+                items:
+                  - name: App Quality
+                    href: publish/store-app-quality.md
+                  - name: Upcoming company account verification requirements
+                    href: publish/store-business-verification-reqs.md
+                  - name: Microsoft Edge Add-ons store developer policies
+                    href: /microsoft-edge/extensions-chromium/store-policies/developer-policies
+                  - name: Microsoft Store complaint and appeal statistics
+                    href: publish/store-policies.md#microsoft-store-complaint-and-appeal-statistics
+                  - name: Raise a support ticket
+                    href: publish/contact-us.md
     - name: Framework-specific guides
       items: 
         - name: Windows App SDK
