@@ -22,14 +22,16 @@ The **download** command requires [EntraID (formally Azure Active Directory) aut
 
 ![download command](./images/download.png)
 
-### Download without license file
+## Download without license file
+
 Downloading a package using WinGet, the package license file can be omitted by appending to the command the `--skip-license` parameter. The exclusion of the package license file will remove the authorization requirement for generating the offline license file.
 
 ```cmd
 winget download [[--id] <package id>] [[--skip-license]] [<options>]
 ```
 
-### Download for a specific platform
+## Download for a specific platform
+
 Downloading a package using WinGet, by default will download the latest available version of a package for each applicable use case (architecture, device platform, etc.). Filtering the downloaded content for a specific device platform is done by appending to the command the `--platform` parameter.
 
 ```cmd
@@ -42,7 +44,8 @@ winget download [[--id] <package id>] [[--platform] <platform type> ] [<options>
 | Windows.Universal | Supports being installed on all Microsoft operating systems |
 | Windows.Holographic | Supports being installed on Microsoft HoloLens devices |
 
-### Download for a specific architecture
+## Download for a specific architecture
+
 Downloading a package using WinGet, by default will download the latest available version of a package for each applicable use case (architecture, device platform, etc.). Filtering the downloaded content with a specific architecture is done by appending to the command the `--architecture` parameter.
 
 ```cmd
