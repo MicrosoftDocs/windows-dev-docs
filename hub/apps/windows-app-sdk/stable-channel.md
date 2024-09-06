@@ -164,6 +164,7 @@ The Package Management API has received several enhancements including Is\*Ready
 
 - If the debugger is set to break on all C++ exceptions, it will break on some noisy exceptions on start-up in the BCP47 (Windows Globalization) code. For more info, see GitHub issue [#4691](https://github.com/microsoft/WindowsAppSDK/issues/4691).
 - Component library packages which reference the WinAppSDK 1.6 package will not correctly get the referenced WebView2 package contents. For more info, see [WebView2Feedback #4743](https://github.com/MicrosoftEdge/WebView2Feedback/issues/4743). A workaround is to add a direct reference to the `Microsoft.Web.WebView2` package where needed.
+- Apps compiled with Native AOT might sometimes experience a hanging issue after page navigation due to a race condition in the .NET runtime's GC thread. For more info, see [.NET issue #104582](https://github.com/dotnet/runtime/issues/104582).
 
 ### Bug Fixes
 
