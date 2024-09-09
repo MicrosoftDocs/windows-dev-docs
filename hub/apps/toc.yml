@@ -192,6 +192,18 @@ items:
                 href: develop/security/windows-hello-login.md
               - name: Create a Windows Hello login service
                 href: develop/security/windows-hello-auth-service.md
+            - name: Intro to passkeys
+              href: develop/security/intro.md
+            - name: Implement passkeys
+              href: develop/security/implement.md
+            - name: Design guidelines for passkeys
+              href: develop/security/design.md
+            - name: Use cases for passkeys
+              href: develop/security/use-cases.md
+            - name: Tools and libraries for passkeys
+              href: develop/security/tools-libraries.md
+            - name: Reference for passkeys
+              href: develop/security/reference.md
         - name: Speech
           href: develop/speech.md
         - name: User interface
