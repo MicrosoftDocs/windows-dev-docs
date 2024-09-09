@@ -2,7 +2,7 @@
 title: Security and identity
 description: This article provides an index of development features that are related to security and identity scenarios in Windows apps.
 ms.topic: overview
-ms.date: 08/05/2024
+ms.date: 09/09/2024
 #customer intent: As a Windows developer, I want to learn to use security and identity features available to Windows apps so that I can build more secure apps.
 ---
 
@@ -53,6 +53,17 @@ The .NET SDK also provides APIs related to security and identity scenarios for W
 | [Security in .NET](/dotnet/standard/security/)  | Learn about security concepts and features for all .NET apps.  |
 | [Security (WPF)](/dotnet/desktop/wpf/security-wpf) | Learn about security concepts and features for WPF apps. |
 | [Windows Forms Security](/dotnet/desktop/winforms/windows-forms-security) | Learn about security concepts and features for Windows Forms apps. |
+
+## Other features
+
+| Topic | Description |
+|---------|-------------|
+| [Intro to passkeys](./intro.md) | Passkeys are simpler, stronger, passwordless sign-ins. |
+| [Implement passkeys](./implement.md) | Describes how to implement passkey sign-ins across online, enterprise, and government applications, and for payments. |
+| [Design guidelines for passkeys](./design.md) | There are 14 design patterns for passkeys. You can get started with two essential patterns, and then add optional patterns to your passkeys deployment based on your unique business needs. |
+| [Use cases for passkeys](./use-cases.md) | This topic describes some use cases for passkeys. |
+| [Tools and libraries for passkeys](./tools-libraries.md) | This topic contains info about tools and libraries to help you implement passkeys. |
+| [Reference for passkeys](./reference.md) | This topic offers some reference info, demos, and examples. |
 
 ## Related content
 
