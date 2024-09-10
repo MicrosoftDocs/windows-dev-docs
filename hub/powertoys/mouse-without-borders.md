@@ -1,14 +1,14 @@
 ---
 title: PowerToys Mouse Without Borders
 description: Mouse Without Borders enables you to interact with other computers from the same keyboard and mouse, sharing clipboard contents and files between the machines.
-ms.date: 08/03/2023
+ms.date: 09/10/2024
 ms.topic: article
-no-loc: [PowerToys, Windows, Mouse without borders]
+no-loc: [PowerToys, Windows, Mouse Without Borders]
 ---
 
 # Mouse Without Borders
 
-**Mouse Without Borders** enables you to control up to 4 computers from the same machine.
+**Mouse Without Borders** enables you to control up to four computers from the same machine.
 
 Features:
 
@@ -23,18 +23,17 @@ With the latest version of PowerToys installed, you will see Mouse Without Borde
 ### Initial configuration
 
 1. Open Mouse Without borders in PowerToys Settings to configure your connections.
+1. On the first computer, select **New Key** to generate a security key for connecting.
 
-2. On the first computer, select **New Key** to generate a security key for connecting.
+   ![Screenshot of Mouse Without Borders settings after pressing New Key](../images/powertoys-mouse-without-borders-press-new-key.png)
 
-    ![Screenshot of Mouse Without Borders settings after pressing New Key](../images/powertoys-mouse-without-borders-press-new-key.png)
+1. On the second computer, enter the security key that was generated on the first computer and the name of the first computer. Then select **Connect**.
 
-3. On the second computer, enter the security key that was generated on the first computer and the name of the first computer. Then select **Connect**.
+   ![Screenshot of Mouse Without Borders settings after entering the first computer information](../images/powertoys-mouse-without-borders-enter-security-key.png)
 
-    ![Screenshot of Mouse Without Borders settings after entering the first computer information](../images/powertoys-mouse-without-borders-enter-security-key.png)
+1. Once the computers are connected, you will be able to move between them by moving your mouse cursor beyond the edge of the screen.
 
-4. Once the computers are connected, you will be able to move between them by moving your mouse cursor beyond the edge of the screen.
-
-    ![Screenshot of Mouse Without Borders settings on the second computer after connecting](../images/powertoys-mouse-without-borders-after-connect-2.png)
+   ![Screenshot of Mouse Without Borders settings on the second computer after connecting](../images/powertoys-mouse-without-borders-after-connect-2.png)
 
 It's possible to switch the order of the devices by dragging the device icon to a new position in the layout.
 
@@ -58,7 +57,7 @@ To enable the service mode, run PowerToys in administrator mode and turn on the 
 | Connect | Connect to other machines knowing the other machine's name and security key. |
 | Local machine's host name | Show the current machine's host name. |
 | Device layout | Allows arranging the machine's position relative to each other by dragging the machines in the layout. |
-| Refresh connections | Select this button to refresh the connections this machine has to the other machines.
+| Refresh connections | Select this button to refresh the connections this machine has to the other machines. |
 | Devices in a single row | Arrange the devices in a single row or in a 2x2 matrix. |
 | Use Service | Install Mouse Without Borders as a service to allow controlling the lock screen and elevated applications. |
 | Uninstall Service | Uninstall the service from the computer. |
