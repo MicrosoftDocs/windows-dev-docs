@@ -2,7 +2,7 @@
 description: An overview of Windows app development frameworks
 title: Overview of framework options
 ms.topic: article
-ms.date: 09/06/2024
+ms.date: 09/10/2024
 keywords: windows, desktop development
 ms.localizationpriority: medium
 ---
@@ -86,7 +86,7 @@ If you have a [Windows Forms .NET](/dotnet/desktop/winforms/overview/) app, you 
 The Universal Windows Platform (UWP) provides a common type system, APIs, and application model for all devices in the Universal Windows Platform. Not only can you use UWP to create desktop applications for Windows PCs, but UWP is also the only supported platform to write a single native universal app that runs across Xbox, HoloLens, and Surface Hub. UWP apps can be native or managed.
 
 > [!NOTE]
-> Your existing UWP app will continue to function as expected. However, to take advantage of modern features in [WinUI 3](/windows/apps/winui/winui3) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/) we recommend migrating your app.
+> Your existing UWP app will continue to function as expected. However, to take advantage of modern features in [WinUI 3](../winui/winui3/index.md) and the [Windows App SDK](/windows/apps/windows-app-sdk) we recommend migrating your app.
 
 > [!div class="button"]
 > [Get started with UWP](/windows/uwp/get-started/)
