@@ -1,7 +1,7 @@
 ---
-title: Microsoft Store Policies
+title: Microsoft Store Policies version 7.18
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 08/13/2024
+ms.date: 09/09/2024
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -10,16 +10,17 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 # Microsoft Store Policies
 
-**Document version: 7.17**
+**Document version: 7.18**
 
-**Publish date: October 30, 2023**
+**Publish date: September 10, 2024**
 
-**Effective date: November 30, 2023**
+**Effective date: October 10, 2024**
 
 > [!NOTE]
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](store-policies-change-history.md).
 
-Thank you for your interest in developing products for the Microsoft Store<sup>1</sup>. "Product" means content in whatever form submitted including, but not limited to, apps, games, titles, and any additional content sold or offered from within a Product. We’re committed to a diverse catalog of products for customers worldwide. Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
+
+Thank you for your interest in developing products for the Microsoft Store<sup>1</sup>. "Product" means content in whatever form submitted including, but not limited to, apps, games, titles, add-ons, in-product consumables, subscriptions and any additional content soldor offered in any of our storefronts or within a Product. We’re committed to a diverse catalog of products for customers worldwide. Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
 
 A few principles to get you started:
 
@@ -71,7 +72,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 
 ### 10.1 Distinct Function & Value; Accurate Representation
 
-- Your product and its associated metadata, including but not limited to your app title, description, screenshots, trailers, content rating and product category, must accurately and clearly reflect the source, functionality, and features of your product.  
+- Your product and its associated metadata, including but not limited to your app title, description, screenshots, trailers, content rating, search terms, and product category, must accurately and clearly reflect the source, functionality, and features of your product.  
 - Game products, including products that primarily offer remote game play and/or control functionality of games running on other devices or platforms, or enable access to a catalog of games behind a gaming subscription service, or deliver versions of the same game or from games of a single franchise, must be categorized as a game in our Store.
 
 **10.1.1**
@@ -99,7 +100,7 @@ Your product must be fully functional and must provide appropriate functionality
 
 **10.1.3**
 
-Search terms may not exceed seven unique terms and must be relevant to your product. When choosing terms, you must not use irrelevant terms or phrases in an effort to manipulate search results.
+Search terms must not exceed seven unique terms, must be relevant to your product, and must not use other product titles unless the product is also published by you.
 
 
 **10.1.4**
@@ -148,11 +149,9 @@ Your product must not contain or enable malware as defined by the Microsoft crit
 
 **10.2.4**
 
-Your product may depend on non-integrated software (such as another product, module, or service) to deliver its primary functionality, subject to the following requirements:
-- You disclose the dependency at the beginning of the description metadata.
+Your product may depend on non-integrated software (such as another product, module, or service) to deliver its primary functionality if you disclose the dependency at the beginning of the description in metadata.
 
-If your product has a dependency on non-Microsoft provided driver(s) or NT service(s), you must disclose that dependency to Microsoft in the certification notes in Microsoft Partner Center. Dependency on non-Microsoft provided driver(s) or NT service(s) is not allowed.
-
+Generally, dependency on non-Microsoft provided drivers or NT services is not allowed, but may be considered case by case for WHCP certified drivers. (link here). If your product has a dependency on non-Microsoft provided driver(s) or NT service(s), you must disclose that dependency to Microsoft in the certification notes in Microsoft Partner Center.
 
 **10.2.5**
 
@@ -160,7 +159,7 @@ All game products, (exclusive of games made available through a subscription in 
 
 **10.2.6**
 
-Apps that enable the mining of crypto-currency on device are not allowed. Apps that enable remote management of the mining of cryptocurrency are allowed, as well as cryptocurrency wallets and trading platforms.
+Apps that enable the mining of cryptocurrency on device are not allowed. Cryptocurrency products that only view public keys (wallet addresses) and associated transaction records are allowed. Apps that enable remote management of the mining of cryptocurrency, cryptocurrency wallets, and trading platforms are allowed, but must be distributed by a Company account. 
 
 **10.2.7**
 
@@ -187,6 +186,7 @@ Non-gaming products may submit an HTTPS-enabled download URL (direct link) to th
 - The installer is a standalone installer and is not a downloader stub/web installer that downloads bits when run.
 
 - Your product may only be made available to PC devices.
+
 
 
 ### 10.3 Product is Testable
@@ -278,11 +278,12 @@ The following products are required to use the Microsoft Store in-product purcha
 
 - (b) Products offered on Xbox consoles.  
 
-If your product is required to use the **Microsoft in-product purchase API** It must not direct users to a purchase mechanism other than the Microsoft Store in-product purchase API, but may enable users to consume previously purchased digital content or services.
+If your product is required to use the **Microsoft in-product purchase API** it must not direct users to a purchase mechanism other than the Microsoft Store in-product purchase API but may enable users to consume previously purchased digital content or services.
 
-Non-game in-app products made available on PC devices may either use a secure third-party purchase API or the Microsoft Store in-product purchase API for in-app purchases of digital items or services that are consumed or used within the product.
+Non-game products made available on PC devices may either use a secure third-party purchase API or the Microsoft Store in-product purchase API for in-app purchases of digital items or services that are consumed or used within the product.
 
 Digital in-product offerings sold in your product using the Microsoft in-product purchase API cannot be converted to, or exchanged for, any legally valid currency (for example, USD, Euro, etc.) or any physical goods or services or other currency of real-world value.
+
 
 **10.8.2**
 
@@ -307,7 +308,10 @@ In cases where your product’s use of a secure third-party purchase API is allo
 
 If your product requires financial account information, you must submit that product from a company account type.
 
-Financial information includes, but is not limited to, entering bank or credit card account information, account pins or passwords, tax ID information, private or secret keys, or initiating transactions.
+Products from individual accounts cannot require financial information for primary functionality.
+
+Financial information includes, but is not limited to, entering bank or credit card account information, account pins or passwords, tax ID information, initiating cryptocurrency transactions, access to cryptocurrency exchanges, API secret keys, private keys, or recovery phrases. 
+
 
 
 **10.8.4**
@@ -389,6 +393,11 @@ Your privacy statement or terms of use must let users know you will send Persona
 
 If your product is directed at children under the age of 13 (as defined in the [Children’s Online Privacy Protection Act](https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy)), you must notify Microsoft of this fact in Partner Center and ensure that all ad content displayed in your product is appropriate for children under the age of 13.
 
+**10.10.7**
+
+If your product is a game and targets Xbox consoles, then Section 10.13.11 applies and supersedes policies in Section 10.10 where there is conflict.
+
+
 ### 10.11 Policy removed
 
 ### 10.12 Policy removed
@@ -465,15 +474,25 @@ Products that emulate a game system or game platform are not allowed on any devi
 
 The following privacy requirements apply to Xbox Live user data:
 
-- Services and user data are only for use in your game by you. Don't sell, license, or share any data obtained from us or our services. If you receive personal data of end users through Xbox Live, you are an independent controller of such data and must have a privacy statement (or policy) in place with end users governing your use of personal data, as required by the App Developer Agreement. We recommend you include a link to your privacy statement on your website and on the Microsoft Store pages for your games.
 - Services and user data must be used appropriately in games. This data includes (without limitation) usage data, account identifiers and any other personally identifiable data, statistics, scores, ratings, rankings, connections with other users, and any other data relating to a user’s social activity.
+
+- Services and user data may not be used in conjunction with third-party services for the purposes of serving personalized or targeted advertising on Xbox Consoles. 
+
+- Services and user data are only for use in your game by you. Don't sell, license, or share any data obtained from us or our services. If you receive personal data of end users through Xbox Live, you are an independent controller of such data and must have a privacy statement (or policy) in place with end users governing your use of personal data, as required by the App Developer Agreement. We recommend you include a link to your privacy statement on your website and on the Microsoft Store pages for your games.
+
 - Don’t store any Xbox Live social graph data (for example, friends lists), except for account identifiers for users who’ve linked their Xbox Live account with your game.
+
 - Delete all account identifiers, when you remove your game from our service, or when a user unlinks their Xbox Live account from your game. Do not share services or user data (even if anonymous, aggregate, or derived data) to any ad network, data broker or other advertising or monetization-related service.
-- When Microsoft receives requests from end users to delete their personal data, we will communicate the requests to you by providing a list of end user identifiers. You must check the list at least every 30 days to ensure you receive all delete requests and must use the information provided on the list only to satisfy the delete requests of end users. You can find details about this process at [Deleted Account List Tools](https://forums.xboxlive.com/users/login.html).
+
+- When Microsoft receives requests from end users to delete their personal data, we will communicate the requests to you by providing a list of end user identifiers. You must check the list at least every 30 days to ensure you receive all delete requests and must use the information provided on the list only to satisfy the delete requests of end users. You can find details about this process at 
+ [Deleted Account List Tools](https://forums.xboxlive.com/users/login.html).
 
 ### 10.14 Account Type
 
-If a reasonable consumer would interpret your application or publisher name to be that of a business entity, you must publish from a company account type, not an individual account type.
+Company accounts must be used for organizations, businesses, and any person acting in relation to their trade or profession. Individual accounts are usually appropriate for a single developer working on their own. A company account is required if your product requires financial information for primary functionality (see Policy 10.8.3) or if a reasonable consumer would interpret your application or publisher name to be that of a business entity.
+
+If your developer account is a Company account type, you must provide identification or business verification information during account creation, and you must include customer support contact information that will be displayed on your product’s Product Detail Page (PDP) in certain regions. This information is required to be accurate and current. 
+
 
 ## Content Policies
 
@@ -538,7 +557,7 @@ China
 
 ### 11.11 Age Ratings
 
-You must obtain an age rating for your product when you submit it in Partner Center. You are responsible for accurately completing the International Age Rate Coalition (IARC) rating questionnaire during submission to obtain the appropriate rating. 
+You must obtain an age rating for your product when you submit it in Partner Center ([see here](/windows/apps/publish/publish-your-app/msix/age-ratings)). You are responsible for accurately completing the International Age Rate Coalition (IARC) rating questionnaire during submission to obtain the appropriate rating. 
 
 **11.11.3**
 
