@@ -838,17 +838,6 @@
               href: ../devices-sensors/ble-beacon.md
         - name: Bluetooth developer FAQ
           href: ../devices-sensors/bluetooth-dev-faq.yml
-    - name: Printing and scanning
-      href: ../devices-sensors/printing-and-scanning.md
-      items: 
-        - name: Print from your app
-          href: ../devices-sensors/print-from-your-app.md
-        - name: Customize the print preview UI
-          href: ../devices-sensors/customize-the-print-preview-ui.md
-        - name: Customize the print workflow
-          href: ../devices-sensors/print-workflow-customize.md
-        - name: Scan from your app
-          href: ../devices-sensors/scan-from-your-app.md
     - name: 3D printing
       href: ../devices-sensors/3d-printing.md
       items: 
@@ -863,6 +852,8 @@
           href: ../devices-sensors/host-card-emulation.md
     - name: Get battery information
       href: ../devices-sensors/get-battery-info.md
+    - name: Customize the print workflow
+      href: ../devices-sensors/print-workflow-customize.md
 - name: Launching, resuming, and background tasks
   href: ../launch-resume/index.md
   items: 
