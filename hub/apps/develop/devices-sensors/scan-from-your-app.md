@@ -18,9 +18,6 @@ This topic describes how to scan content from your app by using a flatbed, feede
 -   [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)
 -   [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass)
 
-> [!IMPORTANT]
-> The [**Windows.Devices.Scanners**](/uwp/api/Windows.Devices.Scanners) APIs are part of the desktop [device family](../get-started/universal-application-platform-guide.md). Apps can use these APIs only on the desktop version of Windows 10.
-
 To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) object and getting the [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass) type. Only scanners that are installed locally with WIA drivers are listed and available to your app.
 
 After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration and must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](/windows-hardware/drivers/image/auto-configured-scanning).
@@ -36,7 +33,7 @@ Windows does not detect scanners automatically. You must perform this step in or
     using Windows.Devices.Scanners;
 ```
 
-2.  Next, implement a device watcher to start enumerating scanners. For more info, see [Enumerate devices](enumerate-devices.md).
+2.  Next, implement a device watcher to start enumerating scanners. For more info, see [Enumerate devices](/windows/uwp/devices-sensors/enumerate-devices).
 
 ```csharp
     void InitDeviceWatcher()
@@ -169,4 +166,4 @@ cancellationToken = new CancellationTokenSource();
 
 ## Scanning to the pictures library
 
-Users can scan to any folder dynamically using the [**FolderPicker**](/uwp/api/Windows.Storage.Pickers.FolderPicker) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see [App capability declarations](../packaging/app-capability-declarations.md).
+Users can scan to any folder dynamically using the [**FolderPicker**](/uwp/api/Windows.Storage.Pickers.FolderPicker) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations).

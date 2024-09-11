@@ -8254,6 +8254,26 @@
       "source_path": "uwp/security/credential-locker.md",
       "redirect_url": "/windows/apps/develop/security/credential-locker",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/printing-and-scanning.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/printing-and-scanning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/print-from-your-app.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/print-from-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/customize-the-print-preview-ui.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/customize-the-print-preview-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/scan-from-your-app.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/scan-from-your-app",
+      "redirect_document_id": false
     }
   ]
 }

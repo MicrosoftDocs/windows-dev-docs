@@ -112,6 +112,16 @@ items:
                   href: develop/settings/readclouddatasettings-exe.md
         - name: Devices and sensors
           href: develop/devices-and-sensors.md
+          items:
+            - name: Printing and scanning
+              href: develop/devices-sensors/printing-and-scanning.md
+              items: 
+                - name: Print from your app
+                  href: develop/devices-sensors/print-from-your-app.md
+                - name: Customize the print preview UI
+                  href: develop/devices-sensors/customize-the-print-preview-ui.md
+                - name: Scan from your app
+                  href: develop/devices-sensors/scan-from-your-app.md
         - name: Graphics
           items: 
             - name: Overview
