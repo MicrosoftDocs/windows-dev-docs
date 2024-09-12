@@ -246,6 +246,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Personalization (category) | ms-settings:personalization |
 | Start | ms-settings:personalization-start |
 | Taskbar | ms-settings:taskbar |
+| Text input | ms-settings:personalization-textinput |
 | Touch Keyboard| ms-settings:personalization-touchkeyboard |
 | Themes | ms-settings:themes |
 
