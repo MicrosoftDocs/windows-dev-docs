@@ -996,6 +996,8 @@ items:
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
                 - name: User interface migration (including WinUI 3)
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
+                - name: Keyboard API and events parity between UWP and Windows App SDK
+                  href: windows-app-sdk/migrate-to-windows-app-sdk/guides/keyboard-events.md
                 - name: Windowing functionality migration
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
                 - name: Application lifecycle functionality migration
