@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 09/09/2024
+ms.date: 09/17/2024
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -28,7 +28,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 
 
 <tr class="odd">
-<td>September 10, 2024</td>
+<td>October 19, 2024</td>
 <td><a href="store-policies.md">7.18</a></td>
 <td>
 
