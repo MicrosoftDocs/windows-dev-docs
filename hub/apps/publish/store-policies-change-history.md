@@ -359,4 +359,4 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 ### See also
 
 - [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

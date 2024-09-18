@@ -371,7 +371,7 @@ For all advertising related activities, the following requirements apply:
 **10.10.2**
 
 Any advertising content your product displays must adhere to Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
-If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
+If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
 
 
 **10.10.3** Policy removed
@@ -601,4 +601,4 @@ Numbers reported on numbers reported on 7/2/2024 (from 7/1/2023 – 6/30/2024)
 
 - [Change history for Microsoft Store Policies](../store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](/windows/apps/publish/store-policies-and-code-of-conduct)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)
