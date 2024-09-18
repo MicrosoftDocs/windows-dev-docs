@@ -19,8 +19,8 @@ items:
         href: ../dev-home/windows-customization.md
       - name: Quickstart Playground
         href: ../dev-home/quickstart-playground.md
-      - name: Project Ironsides
-        href: ../dev-home/project-ironsides.md
+      - name: Dev Diagnostics
+        href: ../dev-home/dev-diagnostics.md
   - name: Dev Drive
     items:
       - name: Overview
