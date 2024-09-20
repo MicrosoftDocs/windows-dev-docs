@@ -42,6 +42,8 @@ items:
                   href: windows-app-sdk/applifecycle/applifecycle.md
                 - name: App instancing
                   href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+                - name: Create a single-instanced app
+                  href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
                 - name: Rich activation
                   href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
                 - name: Power management
