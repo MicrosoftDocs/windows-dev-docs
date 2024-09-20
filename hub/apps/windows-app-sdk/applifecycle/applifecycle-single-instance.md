@@ -67,6 +67,8 @@ A customized Program.cs file must be created instead of running the default Main
 
    ```csharp
    using System;
+   using System.Diagnostics;
+   using System.Runtime.InteropServices;
    using System.Threading;
    using System.Threading.Tasks;
    using Microsoft.UI.Dispatching;
@@ -80,10 +82,10 @@ A customized Program.cs file must be created instead of running the default Main
    public class Program
    {
        [STAThread]
-       static async Task<int> Main(string[] args)
+       static int Main(string[] args)
        {
            WinRT.ComWrappersSupport.InitializeComWrappers();
-           bool isRedirect = await DecideRedirection();
+           bool isRedirect = DecideRedirection();
 
            if (!isRedirect)
            {
@@ -92,7 +94,7 @@ A customized Program.cs file must be created instead of running the default Main
                    var context = new DispatcherQueueSynchronizationContext(
                        DispatcherQueue.GetForCurrentThread());
                    SynchronizationContext.SetSynchronizationContext(context);
-                   new App();
+                   _ = new App();
                });
            }
 
@@ -106,7 +108,7 @@ A customized Program.cs file must be created instead of running the default Main
 1. Define the **DecideRedirection** method below the **Main** method:
 
    ```csharp
-   private static async Task<bool> DecideRedirection()
+   private static bool DecideRedirection()
    {
        bool isRedirect = false;
        AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
@@ -120,14 +122,61 @@ A customized Program.cs file must be created instead of running the default Main
        else
        {
            isRedirect = true;
-           await keyInstance.RedirectActivationToAsync(args);
+           RedirectActivationTo(args, keyInstance);
        }
 
        return isRedirect;
    }
    ```
 
-   **DecideRedirection** determines if the app has been registered by registering a unique key that represents your app instance. Based on the result of key registration, it can determine if there's a current instance of the app running. After making the determination, the method knows whether to redirect or allow the app to continue launching the new instance.
+   **DecideRedirection** determines if the app has been registered by registering a unique key that represents your app instance. Based on the result of key registration, it can determine if there's a current instance of the app running. After making the determination, the method knows whether to redirect or allow the app to continue launching the new instance. The **RedirectActivationTo** method is called if redirection is necessary.
+
+1. Next, let's create the RedirectActivationTo method below the DecideRedirection method, along with the required DllImport statements. Add the following code to the Program class:
+
+   ```csharp
+   [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
+   private static extern IntPtr CreateEvent(
+       IntPtr lpEventAttributes, bool bManualReset,
+       bool bInitialState, string lpName);
+
+   [DllImport("kernel32.dll")]
+   private static extern bool SetEvent(IntPtr hEvent);
+
+   [DllImport("ole32.dll")]
+   private static extern uint CoWaitForMultipleObjects(
+       uint dwFlags, uint dwMilliseconds, ulong nHandles,
+       IntPtr[] pHandles, out uint dwIndex);
+
+   [DllImport("user32.dll")]
+   static extern bool SetForegroundWindow(IntPtr hWnd);
+
+   private static IntPtr redirectEventHandle = IntPtr.Zero;
+
+   // Do the redirection on another thread, and use a non-blocking
+   // wait method to wait for the redirection to complete.
+   public static void RedirectActivationTo(AppActivationArguments args,
+                                           AppInstance keyInstance)
+   {
+       redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
+       Task.Run(() =>
+       {
+           keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
+           SetEvent(redirectEventHandle);
+       });
+
+       uint CWMO_DEFAULT = 0;
+       uint INFINITE = 0xFFFFFFFF;
+       _ = CoWaitForMultipleObjects(
+          CWMO_DEFAULT, INFINITE, 1,
+          [redirectEventHandle], out uint handleIndex);
+
+       // Bring the window to the foreground
+       Process process = Process.GetProcessById((int)keyInstance.ProcessId);
+       SetForegroundWindow(process.MainWindowHandle);
+   }
+   ```
+
+   The **RedirectActivationTo** method is responsible for redirecting the activation to the first instance of the app. It creates an event handle, starts a new thread to redirect the activation, and waits for the redirection to complete. After the redirection is complete, the method brings the window to the foreground.
 
 1. Finally, define the helper method **OnActivated** below the **DecideRedirection** method:
 
@@ -135,11 +184,8 @@ A customized Program.cs file must be created instead of running the default Main
    private static void OnActivated(object sender, AppActivationArguments args)
    {
        ExtendedActivationKind kind = args.Kind;
-       // TODO: Handle the activation kind
    }
    ```
-
-    **OnActivated** is called when the app is activated. You can handle the activation arguments here.
 
 ## Test single-instancing via app deployment
 
