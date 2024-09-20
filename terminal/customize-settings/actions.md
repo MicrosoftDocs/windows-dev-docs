@@ -7,9 +7,9 @@ ms.date: 05/08/2024
 ms.topic: how-to
 ---
 
-# Custom actions in Windows Terminal
+# Custom actions and keybindings in Windows Terminal
 
-You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette.
+You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette. You can assign a custom action a unique ID (if not, one will be automatically generated for you), and then refer to that action with that ID when binding keys.
 
 ## Action formats
 
@@ -18,34 +18,34 @@ Actions can be structured in the following formats:
 ### Commands without arguments
 
 ```json
-{ "command": "commandName", "keys": "modifiers+key" }
+{ "command": "commandName", "id": "User.MyCommand" }
 ```
 
-For example, this default setting uses the shortcut key <kbd>Alt+F4</kbd> to close the terminal window:
+For example, this action closes the terminal window:
 
 ```json
-{ "command": "closeWindow", "keys": "alt+f4" }
+{ "command": "closeWindow", "id": "User.MyCloseWindow" }
 ```
 
 ### Commands with arguments
 
 ```json
-{ "command": { "action": "commandName", "argument": "value" }, "keys": "modifiers+key" }
+{ "command": { "action": "commandName", "argument": "value" }, "id": "User.MyCommand" }
 ```
 
-For example, this default setting uses the shortcut key <kbd>Ctrl+Shift+1</kbd> to open a new tab in the terminal based on whichever profile is listed first in your dropdown menu (typically this will open the PowerShell profile):
+For example, this action opens a new tab in the terminal based on whichever profile is listed first in your dropdown menu (typically this will open the PowerShell profile):
 
 ```json
-{ "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+shift+1" }
+{ "command": { "action": "newTab", "index": 0 }, "id": "User.MyNewTabAction" }
 ```
 
 ### Commands with command line arguments
 
 ```json
-{ "command": { "action": "wt", "commandline": "value" }, "keys": "modifiers+key" }
+{ "command": { "action": "wt", "commandline": "value" }, "id": "User.MyCommand" }
 ```
 
-For example, this default setting uses the shortcut key <kbd>Ctrl+Shift+O</kbd> to use [`wt`](../command-line-arguments.md) to open a new PowerShell tab with additional panes for Command Prompt and Ubuntu:
+For example, this action uses [`wt`](../command-line-arguments.md) to open a new PowerShell tab with additional panes for Command Prompt and Ubuntu:
 
 ```json
 {
@@ -54,15 +54,32 @@ For example, this default setting uses the shortcut key <kbd>Ctrl+Shift+O</kbd> 
     "action": "wt",
     "commandline": "new-tab pwsh.exe ; split-pane -p \"Command Prompt\" -d C:\\ ; split-pane -p \"Ubuntu\" -H"
   },
-  "keys": "ctrl+shift+o"
+  "id": "User.MyCoolSetupAction"
 }
+```
+
+The resultant `actions` array, consisting of all the actions above, would look like this:
+
+```json
+"actions": [
+  { "command": "closeWindow", "id": "User.MyCloseWindow" },
+  { "command": { "action": "newTab", "index": 0 }, "id": "User.MyNewTabAction" },
+  {
+    "command":
+    {
+      "action": "wt",
+      "commandline": "new-tab pwsh.exe ; split-pane -p \"Command Prompt\" -d C:\\ ; split-pane -p \"Ubuntu\" -H"
+    },
+    "id": "User.MyCoolSetup"
+  }
+]
 ```
 
 ___
 
 ## Action properties
 
-Actions can be constructed using the following properties.
+Actions are stored in the `actions` array and can be constructed using the following properties.
 
 ### Command
 
@@ -73,18 +90,6 @@ This is the command executed when the associated keys are pressed.
 **Necessity:** Required
 
 **Accepts:** String
-
-### Keys
-
-This defines the key combinations used to call the command. Keys can have any number of modifiers with one key. Accepted modifiers and keys are listed [below](#accepted-modifiers-and-keys).
-
-If the action does not have keys, it will appear in the command palette but cannot be invoked with the keyboard.
-
-**Property name:** `keys`
-
-**Necessity:** Optional
-
-**Accepts:** String or array[string]
 
 ### Action
 
@@ -116,13 +121,60 @@ This sets the icon that displays within the command palette.
 
 **Accepts:** File location as a string, or an emoji
 
+### ID
+
+This sets the id of this action. If one isn't provided, the terminal will generate an ID for this action. The ID is used to refer to this action when creating keybindings.
+
+**Property name:** `id`
+
+**Necessity**: Optional
+
+**Accepts:** String
 <br />
 
 ___
 
-## Accepted modifiers and keys
+## Keybindings
 
-### Modifiers
+Actions can be assigned keybindings by referring to them with their unique ID. For example, here is a possible `keybindings` array that assigns <kbd>Alt+F4</kbd>, <kbd>Ctrl+Shift+1</kbd> and <kbd>Ctrl+Shift+o</kbd> to the actions defined above. Multiple keybinding entries may be created for the same action.
+
+```json
+"keybindings": [
+  { "keys": "alt+f4", "id": "User.MyCloseWindow" },
+  { "keys": "ctrl+shift+1", "id": "User.MyNewTabAction" },
+  { "keys": "ctrl+shift+o", "id": "User.MyCoolSetup"}
+]
+```
+
+## Keybinding properties
+
+Keybindings are stored in the `keybindings` array and are constructed using the following properties.
+
+### Keys
+
+This defines the key combinations used to call the command. Keys can have any number of modifiers with one key. Accepted modifiers and keys are listed [below](#accepted-modifiers).
+
+If the action does not have keys, it will appear in the command palette but cannot be invoked with the keyboard.
+
+**Property name:** `keys`
+
+**Necessity:** Required
+
+**Accepts:** String or array[string]
+
+### ID
+
+This is the ID of the action to be invoked when this keybinding is pressed.
+
+**Property name:** `id`
+
+**Necessity:** Required
+
+**Accepts:** String
+
+___
+
+### Accepted Modifiers
 
 `ctrl+`, `shift+`, `alt+`, `win+`
 
@@ -152,10 +204,10 @@ This closes all open terminal windows. A confirmation dialog will appear in the 
 
 **Command name:** `quit`
 
-**Default Binding:**
+**Default ID:**
 
 ```json
-{ "command": "quit" }
+{ "command": "quit", "id": "Terminal.Quit" }
 ```
 
 ### Close window
@@ -166,10 +218,16 @@ This closes the current window and all tabs within it. If `confirmCloseAllTabs` 
 
 **Command name:** `closeWindow`
 
+**Default ID:**
+
+```json
+{ "command": "closeWindow", "id": "Terminal.CloseWindow" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "closeWindow", "keys": "alt+f4" }
+{ "keys": "alt+f4", "id": "Terminal.CloseWindow" }
 ```
 
 :::column-end:::
@@ -185,10 +243,16 @@ This opens the search dialog box. More information on search can be found on the
 
 **Command name:** `find`
 
+**Default ID:**
+
+```json
+{ "command": "find", "id": "Terminal.FindText" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "find", "keys": "ctrl+shift+f" }
+{ "keys": "ctrl+shift+f", "id": "Terminal.FindText" }
 ```
 
 ### Find next/previous search match
@@ -197,11 +261,11 @@ This lets you navigate through your search matches.
 
 **Command name:** `findMatch`
 
-**Default bindings:**
+**Default IDs:**
 
 ```json
-{ "command": { "action": "findMatch", "direction": "next" } },
-{ "command": { "action": "findMatch", "direction": "prev" } }
+{ "command": { "action": "findMatch", "direction": "next" }, "id": "Terminal.FindNextMatch" },
+{ "command": { "action": "findMatch", "direction": "prev" }, "id": "Terminal.FindPrevMatch" }
 ```
 
 #### Parameters
@@ -216,10 +280,16 @@ This opens the dropdown menu.
 
 **Command name:** `openNewTabDropdown`
 
+**Default ID:**
+
+```json
+{ "command": "openNewTabDropdown", "id": "Terminal.OpenNewTabDropdown" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "openNewTabDropdown", "keys": "ctrl+shift+space" }
+{ "keys": "ctrl+shift+space", "id": "Terminal.OpenNewTabDropdown" }
 ```
 
 ### Open settings files
@@ -229,12 +299,19 @@ Without the `target` field, the custom settings file will be opened.
 
 **Command name:** `openSettings`
 
-**Default bindings:**
+**Default IDs:**
 
 ```json
-{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+," },
-{ "command": { "action": "openSettings", "target": "settingsFile" }, "keys": "ctrl+shift+," },
-{ "command": { "action": "openSettings", "target": "defaultsFile" }, "keys": "ctrl+alt+," },
+{ "command": { "action": "openSettings", "target": "settingsUI" }, "id": "Terminal.OpenSettingsUI" },
+{ "command": { "action": "openSettings", "target": "settingsFile" }, "id": "Terminal.OpenSettingsFile" },
+{ "command": { "action": "openSettings", "target": "defaultsFile" }, "keys": "Terminal.OpenDefaultSettingsFile" }
+```
+
+**Default bindings:**
+```json
+{ "keys": "ctrl+,", "id": "Terminal.OpenSettingsUI" },
+{ "keys": "ctrl+shift+,", "id": "Terminal.OpenSettingsFile" },
+{ "keys": "ctrl+alt+,", "id": "Terminal.OpenDefaultSettingsFile" }
 ```
 
 #### Parameters
@@ -249,10 +326,16 @@ Opens the system menu at the top left corner of the window.
 
 **Command name:** `openSystemMenu`
 
+**Default ID:**
+
+```json
+{ "command": "openSystemMenu", "id": "Terminal.OpenSystemMenu" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "openSystemMenu", "keys": "alt+space" }
+{ "keys": "alt+space", "id": "Terminal.OpenSystemMenu" }
 ```
 
 ### Toggle full screen
@@ -261,11 +344,16 @@ This allows you to switch between full screen and default window sizes.
 
 **Command name:** `toggleFullscreen`
 
+**Default ID**
+```json
+{ "command": "toggleFullscreen", "id": "Terminal.ToggleFullscreen" }
+```
+
 **Default bindings:**
 
 ```json
-{ "command": "toggleFullscreen", "keys": "alt+enter" },
-{ "command": "toggleFullscreen", "keys": "f11" }
+{ "keys": "alt+enter", "id": "Terminal.ToggleFullscreen" },
+{ "keys": "f11", "id": "Terminal.ToggleFullscreen" }
 ```
 
 ### Toggle focus mode
@@ -274,10 +362,10 @@ This allows you to enter "focus mode", which hides the tabs and title bar.
 
 **Command name:** `toggleFocusMode`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "toggleFocusMode" }
+{ "command": "toggleFocusMode", "id": "Terminal.ToggleFocusMode" }
 ```
 
 ### Toggle always on top mode
@@ -286,10 +374,10 @@ This allows you toggle the "always on top" state of the window. When in "always 
 
 **Command name:** `toggleAlwaysOnTop`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "toggleAlwaysOnTop" }
+{ "command": "toggleAlwaysOnTop", "id": "Terminal.ToggleAlwaysOnTop" }
 ```
 
 ### Send input
@@ -307,7 +395,7 @@ For instance `"\u001b[A"` will behave as if the up arrow button had been pressed
 _This command is not currently bound in the default settings_.
 
 ```json
-{ "command": { "action": "sendInput", "input": "\u001b[A" }, "keys": "" }
+{ "command": { "action": "sendInput", "input": "\u001b[A" } }
 ```
 
 #### Parameters
@@ -340,10 +428,10 @@ This closes all tabs except for the one at an index. If no index is provided, us
 
 **Command name:** `closeOtherTabs`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "closeOtherTabs" }
+{ "command": "closeOtherTabs", "id": "Terminal.CloseOtherTabs" }
 ```
 
 #### Parameters
@@ -358,10 +446,10 @@ This closes the tabs following the tab at an index. If no index is provided, use
 
 **Command name:** `closeTabsAfter`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "closeTabsAfter" }
+{ "command": "closeTabsAfter", "id": "Terminal.CloseTabsAfter" }
 ```
 
 #### Parameters
@@ -376,10 +464,16 @@ This makes a copy of the current tab's profile and directory and opens it. This 
 
 **Command name:** `duplicateTab`
 
+**Default ID:**
+
+```json
+{ "command": "duplicateTab", "id": "Terminal.DuplicateTab" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "duplicateTab", "keys": "ctrl+shift+d" }
+{ "keys": "ctrl+shift+d", "id": "Terminal.DuplicateTab" }
 ```
 
 ### New tab
@@ -388,19 +482,34 @@ This creates a new tab. Without any arguments, this will open the default profil
 
 **Command name:** `newTab`
 
+**Default IDs:**
+
+```json
+{ "command": "newTab", "id": "Terminal.OpenNewTab" },
+{ "command": { "action": "newTab", "index": 0 }, "id": "Terminal.OpenNewTabProfile0" },
+{ "command": { "action": "newTab", "index": 1 }, "id": "Terminal.OpenNewTabProfile1" },
+{ "command": { "action": "newTab", "index": 2 }, "id": "Terminal.OpenNewTabProfile2" },
+{ "command": { "action": "newTab", "index": 3 }, "id": "Terminal.OpenNewTabProfile3" },
+{ "command": { "action": "newTab", "index": 4 }, "id": "Terminal.OpenNewTabProfile4" },
+{ "command": { "action": "newTab", "index": 5 }, "id": "Terminal.OpenNewTabProfile5" },
+{ "command": { "action": "newTab", "index": 6 }, "id": "Terminal.OpenNewTabProfile6" },
+{ "command": { "action": "newTab", "index": 7 }, "id": "Terminal.OpenNewTabProfile7" },
+{ "command": { "action": "newTab", "index": 8 }, "id": "Terminal.OpenNewTabProfile8" }
+```
+
 **Default bindings:**
 
 ```json
-{ "command": "newTab", "keys": "ctrl+shift+t" },
-{ "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+shift+1" },
-{ "command": { "action": "newTab", "index": 1 }, "keys": "ctrl+shift+2" },
-{ "command": { "action": "newTab", "index": 2 }, "keys": "ctrl+shift+3" },
-{ "command": { "action": "newTab", "index": 3 }, "keys": "ctrl+shift+4" },
-{ "command": { "action": "newTab", "index": 4 }, "keys": "ctrl+shift+5" },
-{ "command": { "action": "newTab", "index": 5 }, "keys": "ctrl+shift+6" },
-{ "command": { "action": "newTab", "index": 6 }, "keys": "ctrl+shift+7" },
-{ "command": { "action": "newTab", "index": 7 }, "keys": "ctrl+shift+8" },
-{ "command": { "action": "newTab", "index": 8 }, "keys": "ctrl+shift+9" }
+{ "keys": "ctrl+shift+t", "id": "Terminal.OpenNewTab" },
+{ "keys": "ctrl+shift+1", "id": "Terminal.OpenNewTabProfile0" },
+{ "keys": "ctrl+shift+2", "id": "Terminal.OpenNewTabProfile1" },
+{ "keys": "ctrl+shift+3", "id": "Terminal.OpenNewTabProfile2" },
+{ "keys": "ctrl+shift+4", "id": "Terminal.OpenNewTabProfile3" },
+{ "keys": "ctrl+shift+5", "id": "Terminal.OpenNewTabProfile4" },
+{ "keys": "ctrl+shift+6", "id": "Terminal.OpenNewTabProfile5" },
+{ "keys": "ctrl+shift+7", "id": "Terminal.OpenNewTabProfile6" },
+{ "keys": "ctrl+shift+8", "id": "Terminal.OpenNewTabProfile7" },
+{ "keys": "ctrl+shift+9", "id": "Terminal.OpenNewTabProfile8" }
 ```
 
 #### Parameters
@@ -422,10 +531,16 @@ This opens the tab to the right of the current one.
 
 **Command name:** `nextTab`
 
+**Default ID:**
+
+```json
+{ "command": "nextTab", "id": "Terminal.NextTab" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "nextTab", "keys": "ctrl+tab" }
+{ "keys": "ctrl+tab", "id": "Terminal.NextTab" }
 ```
 
 #### Parameters
@@ -440,10 +555,16 @@ This opens the tab to the left of the current one.
 
 **Command name:** `prevTab`
 
+**Default ID:**
+
+```json
+{ "command": "prevTab", "id": "Terminal.PrevTab" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "prevTab", "keys": "ctrl+shift+tab" }
+{ "keys": "ctrl+shift+tab", "id": "Terminal.PrevTab" }
 ```
 
 #### Parameters
@@ -465,7 +586,7 @@ This opens the tab search box.
 _This command is not currently bound in the default settings_.
 
 ```json
-{"command": "tabSearch", "keys": ""}
+{"command": "tabSearch"}
 ```
 
 :::column-end:::
@@ -481,18 +602,30 @@ This opens a specific tab depending on the index.
 
 **Command name:** `switchToTab`
 
+**Default IDs:**
+
+```json
+{ "command": { "action": "switchToTab", "index": 0 }, "id": "Terminal.SwitchToTab0" },
+{ "command": { "action": "switchToTab", "index": 1 }, "id": "Terminal.SwitchToTab1" },
+{ "command": { "action": "switchToTab", "index": 2 }, "id": "Terminal.SwitchToTab2" },
+{ "command": { "action": "switchToTab", "index": 3 }, "id": "Terminal.SwitchToTab3" },
+{ "command": { "action": "switchToTab", "index": 4 }, "id": "Terminal.SwitchToTab4" },
+{ "command": { "action": "switchToTab", "index": 5 }, "id": "Terminal.SwitchToTab5" },
+{ "command": { "action": "switchToTab", "index": 6 }, "id": "Terminal.SwitchToTab6" },
+{ "command": { "action": "switchToTab", "index": 7 }, "id": "Terminal.SwitchToTab7" }
+```
+
 **Default bindings:**
 
 ```json
-{ "command": { "action": "switchToTab", "index": 0 }, "keys": "ctrl+alt+1" },
-{ "command": { "action": "switchToTab", "index": 1 }, "keys": "ctrl+alt+2" },
-{ "command": { "action": "switchToTab", "index": 2 }, "keys": "ctrl+alt+3" },
-{ "command": { "action": "switchToTab", "index": 3 }, "keys": "ctrl+alt+4" },
-{ "command": { "action": "switchToTab", "index": 4 }, "keys": "ctrl+alt+5" },
-{ "command": { "action": "switchToTab", "index": 5 }, "keys": "ctrl+alt+6" },
-{ "command": { "action": "switchToTab", "index": 6 }, "keys": "ctrl+alt+7" },
-{ "command": { "action": "switchToTab", "index": 7 }, "keys": "ctrl+alt+8" },
-{ "command": { "action": "switchToTab", "index": 8 }, "keys": "ctrl+alt+9" }
+{ "keys": "ctrl+alt+1", "id": "Terminal.SwitchToTab0" },
+{ "keys": "ctrl+alt+2", "id": "Terminal.SwitchToTab1" },
+{ "keys": "ctrl+alt+3", "id": "Terminal.SwitchToTab2" },
+{ "keys": "ctrl+alt+4", "id": "Terminal.SwitchToTab3" },
+{ "keys": "ctrl+alt+5", "id": "Terminal.SwitchToTab4" },
+{ "keys": "ctrl+alt+6", "id": "Terminal.SwitchToTab5" },
+{ "keys": "ctrl+alt+7", "id": "Terminal.SwitchToTab6" },
+{ "keys": "ctrl+alt+8", "id": "Terminal.SwitchToTab7" }
 ```
 
 #### Parameters
@@ -513,10 +646,10 @@ _This command is not currently bound in the default settings_.
 
 ```json
 // Rename a tab to "Foo"
-{ "command": { "action": "renameTab", "title": "Foo" }, "keys": "" }
+{ "command": { "action": "renameTab", "title": "Foo" } }
 
 // Reset the tab's name
-{ "command": { "action": "renameTab", "title": null }, "keys": "" }
+{ "command": { "action": "renameTab", "title": null } }
 ```
 
 #### Parameters
@@ -531,10 +664,10 @@ This command changes the tab title into a text field that lets you edit the titl
 
 **Command name:** `openTabRenamer`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "openTabRenamer" }
+{ "command": "openTabRenamer", "id": "Terminal.OpenTabRenamer" }
 ```
 
 ### Change tab color
@@ -549,10 +682,10 @@ _This command is not currently bound in the default settings_.
 
 ```json
 // Change the tab's color to a bright magenta
-{ "command": { "action": "setTabColor", "color": "#ff00ff" }, "keys": "" }
+{ "command": { "action": "setTabColor", "color": "#ff00ff" } }
 
 // Reset the tab's color
-{ "command": { "action": "setTabColor", "color": null }, "keys": "" }
+{ "command": { "action": "setTabColor", "color": null } }
 ```
 
 #### Parameters
@@ -567,10 +700,10 @@ This command can be used to open the color picker for the active tab. The color 
 
 **Command name:** `openTabColorPicker`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "openTabColorPicker" }
+{ "command": "openTabColorPicker", "id": "Terminal.OpenTabColorPicker" }
 ```
 
 ### Move tab
@@ -579,14 +712,14 @@ This command moves the tab "backward" and "forward", which is equivalent to "lef
 
 **Command name:** `moveTab`
 
-**Default binding:**
+**Default IDs:**
 
 ```json
 // Move tab backward (left in LTR)
-{ "command": { "action": "moveTab", "direction": "backward" } }
+{ "command": { "action": "moveTab", "direction": "backward" }, "id": "Terminal.MoveTabBackward" }
 
 // Move tab forward (right in LTR)
-{ "command": { "action": "moveTab", "direction": "forward" } }
+{ "command": { "action": "moveTab", "direction": "forward" }, "id": "Terminal.MoveTabForward" }
 ```
 
 #### Parameters
@@ -610,10 +743,10 @@ As with any action, you can also invoke "broadcast mode" by search for "Toggle b
 
 **Command name:** `toggleBroadcastInput`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "toggleBroadcastInput" }
+{ "command": "toggleBroadcastInput", "id": "Terminal.ToggleBroadcastInput" }
 ```
 
 :::column span="":::
@@ -628,10 +761,10 @@ This command will open the "right-click" context menu for the active pane. This 
 
 **Command name:** `showContextMenu`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "showContextMenu" }
+{ "command": "showContextMenu", "id": "Terminal.ShowContextMenu" }
 ```
 
 ### Open about dialog
@@ -640,10 +773,10 @@ This command will open the about dialog for the terminal. This dialog contains i
 
 **Command name:** `openAbout`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "openAbout" }
+{ "command": "openAbout", "id": "Terminal.OpenAboutDialog" }
 ```
 
 > [!IMPORTANT]
@@ -655,10 +788,10 @@ Attempts to open a browser window with a search for the selected text. This does
 
 **Command name:** `searchWeb`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": { "action": "searchWeb" } },
+{ "command": { "action": "searchWeb" }, "id": "Terminal.SearchWeb" },
 ```
 
 #### Parameters
@@ -682,10 +815,16 @@ This creates a new window. Without any arguments, this will open the default pro
 
 **Command name:** `newWindow`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": "newWindow", "keys": "ctrl+shift+n" },
+{ "command": "newWindow", "id": "Terminal.OpenNewWindow" },
+```
+
+**Default binding:**
+
+```json
+{ "keys": "ctrl+shift+n", "id": "Terminal.OpenNewWindow" },
 ```
 
 #### Parameters
@@ -711,10 +850,10 @@ _This command is not currently bound in the default settings_.
 
 ```json
 // Rename a window to "Foo"
-{ "command": { "action": "renameWindow", "name": "Foo" }, "keys": "" }
+{ "command": { "action": "renameWindow", "name": "Foo" } }
 
 // Reset the window's name
-{ "command": { "action": "renameWindow", "name": null }, "keys": "" }
+{ "command": { "action": "renameWindow", "name": null } }
 ```
 
 #### Parameters
@@ -729,10 +868,10 @@ This command changes displays a popup window that lets you edit the name for the
 
 **Command name:** `openWindowRenamer`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "openWindowRenamer" }
+{ "command": "openWindowRenamer", "id": "Terminal.OpenWindowRenamer" }
 ```
 
 ### Identify window
@@ -741,10 +880,10 @@ This pops up an overlay on the focused window that displays the window's name an
 
 **Command name:** `identifyWindow`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{"command": "identifyWindow", "keys": "" },
+{"command": "identifyWindow", "id": "Terminal.IdentifyWindow" },
 ```
 
 ### Identify windows
@@ -758,7 +897,7 @@ This pops up an overlay on all windows that displays each window's name and inde
 _This command is not currently bound in the default settings_.
 
 ```json
-{"command": "identifyWindows" },
+{ "command": "identifyWindows" },
 ```
 
 <br />
@@ -773,19 +912,24 @@ This halves the size of the active pane and opens another. Without any arguments
 
 **Command name:** `splitPane`
 
+**Default IDs:**
+
+```json
+{ "command": { "action": "splitPane", "splitMode": "duplicate", "split": "auto" }, "id": "Terminal.DuplicatePaneAuto" },
+{ "command": { "action": "splitPane", "split": "up" }, "id": "Terminal.SplitPaneUp" },
+{ "command": { "action": "splitPane", "split": "down" }, "id": "Terminal.SplitPaneDown" },
+{ "command": { "action": "splitPane", "split": "left" }, "id": "Terminal.SplitPaneLeft" },
+{ "command": { "action": "splitPane", "split": "right" }, "id": "Terminal.SplitPaneRight" },
+{ "command": { "action": "splitPane", "splitMode": "duplicate", "split": "down" }, "id": "Terminal.DuplicatePaneDown" },
+{ "command": { "action": "splitPane", "splitMode": "duplicate", "split": "right" }, "id": "Terminal.DuplicatePaneRight" }
+```
+
 **Default bindings:**
 
 ```json
-// In settings.json
-{ "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
-
-// In defaults.json
-{ "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
-{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" },
-{ "command": { "action": "splitPane", "split": "up" } },
-{ "command": { "action": "splitPane", "split": "right" } },
-{ "command": { "action": "splitPane", "split": "down" } },
-{ "command": { "action": "splitPane", "split": "left" } }
+{ "keys": "alt+shift+d", "id": "Terminal.DuplicatePaneAuto" },
+{ "keys": "alt+shift+-", "id": "Terminal.DuplicatePaneDown" },
+{ "keys": "alt+shift+plus", "id": "Terminal.DuplicatePaneRight" }
 ```
 
 #### Parameters
@@ -810,10 +954,16 @@ This closes the active pane. If there aren't any split panes, this will close th
 
 **Command name:** `closePane`
 
+**Default ID:**
+
+```json
+{ "command": "closePane", "id": "Terminal.ClosePane" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "closePane", "keys": "ctrl+shift+w" }
+{ "keys": "ctrl+shift+w", "id": "Terminal.ClosePane" }
 ```
 
 ### Move pane focus
@@ -822,14 +972,24 @@ This changes focus to a different pane depending on the direction. Setting the `
 
 **Command name:** `moveFocus`
 
+**Default IDs:**
+
+```json
+{ "command": { "action": "moveFocus", "direction": "down" }, "id": "Terminal.MoveFocusDown" },
+{ "command": { "action": "moveFocus", "direction": "left" }, "id": "Terminal.MoveFocusLeft" },
+{ "command": { "action": "moveFocus", "direction": "right" }, "id": "Terminal.MoveFocusRight" },
+{ "command": { "action": "moveFocus", "direction": "up" }, "id": "Terminal.MoveFocusUp" },
+{ "command": { "action": "moveFocus", "direction": "previous" }, "id": "Terminal.MoveFocusPrevious" }
+```
+
 **Default bindings:**
 
 ```json
-{ "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
-{ "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
-{ "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
-{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" },
-{ "command": { "action": "moveFocus", "direction": "previous" }, "keys": "ctrl+alt+left" }
+{ "keys": "alt+down", "id": "Terminal.MoveFocusDown" },
+{ "keys": "alt+left", "id": "Terminal.MoveFocusLeft" },
+{ "keys": "alt+right", "id": "Terminal.MoveFocusRight" },
+{ "keys": "alt+up", "id": "Terminal.MoveFocusUp" },
+{ "keys": "ctrl+alt+left", "id": "Terminal.MoveFocusPrevious" }
 ```
 
 #### Parameters
@@ -852,7 +1012,19 @@ Move the currently active pane to a different tab in the window.
 
 **Command name:** `movePane`
 
-**Default bindings:** _(none)_
+**Default IDs:**
+
+```json
+{ "command": { "action": "movePane", "index": 0 }, "id": "Terminal.MovePaneToTab0" },
+{ "command": { "action": "movePane", "index": 1 }, "id": "Terminal.MovePaneToTab1" },
+{ "command": { "action": "movePane", "index": 2 }, "id": "Terminal.MovePaneToTab2" },
+{ "command": { "action": "movePane", "index": 3 }, "id": "Terminal.MovePaneToTab3" },
+{ "command": { "action": "movePane", "index": 4 }, "id": "Terminal.MovePaneToTab4" },
+{ "command": { "action": "movePane", "index": 5 }, "id": "Terminal.MovePaneToTab5" },
+{ "command": { "action": "movePane", "index": 6 }, "id": "Terminal.MovePaneToTab6" },
+{ "command": { "action": "movePane", "index": 7 }, "id": "Terminal.MovePaneToTab7" },
+{ "command": { "action": "movePane", "index": 8 }, "id": "Terminal.MovePaneToTab8" }
+```
 
 #### Parameters
 
@@ -864,19 +1036,19 @@ Move the currently active pane to a different tab in the window.
 
 Swap the position of two panes in a tab. This operates on the active pane, and a target pane, as designated by the `direction` parameter.
 
-**Command name:** `moveFocus`
+**Command name:** `swapPane`
 
-**Default bindings:**
+**Default IDs:**
 
 ```json
-{ "command": { "action": "swapPane", "direction": "down" } },
-{ "command": { "action": "swapPane", "direction": "left" } },
-{ "command": { "action": "swapPane", "direction": "right" } },
-{ "command": { "action": "swapPane", "direction": "up" } },
-{ "command": { "action": "swapPane", "direction": "previous"} },
-{ "command": { "action": "swapPane", "direction": "previousInOrder"} },
-{ "command": { "action": "swapPane", "direction": "nextInOrder"} },
-{ "command": { "action": "swapPane", "direction": "first" } },
+{ "command": { "action": "swapPane", "direction": "down" }, "id": "Terminal.SwapPaneDown" },
+{ "command": { "action": "swapPane", "direction": "left" }, "id": "Terminal.SwapPaneLeft" },
+{ "command": { "action": "swapPane", "direction": "right" }, "id": "Terminal.SwapPaneRight" },
+{ "command": { "action": "swapPane", "direction": "up" }, "id": "Terminal.SwapPaneUp" },
+{ "command": { "action": "swapPane", "direction": "previous"}, "id": "Terminal.SwapPanePrevious" },
+{ "command": { "action": "swapPane", "direction": "previousInOrder"}, "id": "Terminal.SwapPanePreviousInOrder" },
+{ "command": { "action": "swapPane", "direction": "nextInOrder"}, "id": "Terminal.SwapPaneNextInOrder" },
+{ "command": { "action": "swapPane", "direction": "first" }, "id": "Terminal.SwapPaneFirst" }
 ```
 
 #### Parameters
@@ -901,10 +1073,10 @@ This expands the focused pane to fill the entire contents of the window.
 
 **Command name:** `togglePaneZoom`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "togglePaneZoom" }
+{ "command": "togglePaneZoom", "id": "Terminal.TogglePaneZoom" }
 ```
 
 :::column-end:::
@@ -920,13 +1092,22 @@ This changes the size of the active pane.
 
 **Command name:** `resizePane`
 
+**Default IDs:**
+
+```json
+{ "command": { "action": "resizePane", "direction": "down" }, "id": "Terminal.ResizePaneDown" },
+{ "command": { "action": "resizePane", "direction": "left" }, "id": "Terminal.ResizePaneLeft" },
+{ "command": { "action": "resizePane", "direction": "right" }, "id": "Terminal.ResizePaneRight" },
+{ "command": { "action": "resizePane", "direction": "up" }, "id": "Terminal.ResizePaneUp" }
+```
+
 **Default bindings:**
 
 ```json
-{ "command": { "action": "resizePane", "direction": "down" }, "keys": "alt+shift+down" },
-{ "command": { "action": "resizePane", "direction": "left" }, "keys": "alt+shift+left" },
-{ "command": { "action": "resizePane", "direction": "right" }, "keys": "alt+shift+right" },
-{ "command": { "action": "resizePane", "direction": "up" }, "keys": "alt+shift+up" }
+{ "keys": "alt+shift+down", "id": "Terminal.ResizePaneDown" },
+{ "keys": "alt+shift+left", "id": "Terminal.ResizePaneLeft" },
+{ "keys": "alt+shift+right", "id": "Terminal.ResizePaneRight" },
+{ "keys": "alt+shift+up", "id": "Terminal.ResizePaneUp" }
 ```
 
 #### Parameters
@@ -941,30 +1122,30 @@ You can mark a pane as read-only, which will prevent input from going into the t
 
 **Command name:** `toggleReadOnlyMode`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": "toggleReadOnlyMode" }
+{ "command": "toggleReadOnlyMode", "id": "Terminal.ToggleReadOnlyMode" }
 ```
 
 You can enable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
 
 **Command name:** `enableReadOnlyMode`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": "enableReadOnlyMode" }
+{ "command": "enableReadOnlyMode", "id": "Terminal.EnableReadOnlyMode" }
 ```
 
 You can disable read-only mode on a pane. This works similarly to toggling, however, will not switch state if triggered again.
 
 **Command name:** `disableReadOnlyMode`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": "disableReadOnlyMode" }
+{ "command": "disableReadOnlyMode", "id": "Terminal.DisableReadOnlyMode" }
 ```
 
 ### Restart a pane
@@ -975,10 +1156,10 @@ Note that this will terminate the process in the pane, if it is currently runnin
 
 **Command name:** `restartConnection`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "restartConnection" }
+{ "command": "restartConnection", "id": "Terminal.RestartConnection" }
 ```
 
 <br />
@@ -993,16 +1174,19 @@ This copies the selected terminal content to your clipboard. If no selection exi
 
 **Command name:** `copy`
 
+**Default ID:**
+
+```json
+{ "command": { "action": "copy", "singleLine": false }, "id": "Terminal.CopyToClipboard" }
+```
+
 **Default bindings:**
 
 ```json
-// In settings.json
-{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-
-// In defaults.json
-{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+shift+c" },
-{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" },
-{ "command": { "action": "copy", "singleLine": false }, "keys": "enter" }
+{ "keys": "ctrl+c", "id": "Terminal.CopyToClipboard" },
+{ "keys": "ctrl+shift+c", "id": "Terminal.CopyToClipboard" },
+{ "keys": "ctrl+insert", "id": "Terminal.CopyToClipboard" },
+{ "keys": "enter", "id": "Terminal.CopyToClipboard" }
 ```
 
 #### Parameters
@@ -1018,15 +1202,18 @@ This inserts the content that was copied onto the clipboard.
 
 **Command name:** `paste`
 
+**Default ID:**
+
+```json
+{ "command": "paste", "id": "Terminal.PasteFromClipboard" }
+```
+
 **Default bindings:**
 
 ```json
-// In settings.json
-{ "command": "paste", "keys": "ctrl+v" },
-
-// In defaults.json
-{ "command": "paste", "keys": "ctrl+shift+v" },
-{ "command": "paste", "keys": "shift+insert" }
+{ "keys": "ctrl+v", "id": "Terminal.PasteFromClipboard" },
+{ "keys": "ctrl+shift+v", "id": "Terminal.PasteFromClipboard" },
+{ "keys": "shift+insert", "id": "Terminal.PasteFromClipboard" }
 ```
 
 ### Expand selection to word
@@ -1035,10 +1222,10 @@ If a selection exists, this expands the selection to fully encompass any words p
 
 **Command name:** `expandSelectionToWord`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": "expandSelectionToWord" }
+{ "command": "expandSelectionToWord", "id": "Terminal.ExpandSelectionToWord" }
 ```
 
 ### Select all
@@ -1047,10 +1234,16 @@ This selects all of the content in the text buffer.
 
 **Command name:** `selectAll`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": "selectAll", "keys": "ctrl+shift+a" }
+{ "command": "selectAll", "id": "Terminal.SelectAll" }
+```
+
+**Default binding:**
+
+```json
+{ "keys": "ctrl+shift+a", "id": "Terminal.SelectAll" }
 ```
 
 ### Mark mode
@@ -1059,10 +1252,16 @@ This toggles mark mode. Mark mode is a mode where you can use the keyboard to cr
 
 **Command name:** `markMode`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": "markMode", "keys": "ctrl+shift+m" },
+{ "command": "markMode", "id": "Terminal.ToggleMarkMode" }
+```
+
+**Default binding:**
+
+```json
+{ "keys": "ctrl+shift+m", "id": "Terminal.ToggleMarkMode" }
 ```
 
 ### Switch selection marker
@@ -1071,10 +1270,10 @@ When modifying a selection using the keyboard, you are moving one end of the sel
 
 **Command name:** `switchSelectionEndpoint`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": "switchSelectionEndpoint" },
+{ "command": "switchSelectionEndpoint", "id": "Terminal.SwitchSelectionEndpoint" },
 ```
 
 ### Toggle block selection
@@ -1083,10 +1282,10 @@ Makes the existing selection a block selection, meaning that the selected area i
 
 **Command name:** `toggleBlockSelection`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": "toggleBlockSelection" },
+{ "command": "toggleBlockSelection", "id": "Terminal.ToggleBlockSelection" },
 ```
 <br />
 
@@ -1100,10 +1299,16 @@ This scrolls the screen up by the number of rows defined by `"rowsToScroll"`. If
 
 **Command name:** `scrollUp`
 
+**Default ID:**
+
+```json
+{ "command": "scrollUp", "id": "Terminal.ScrollUp" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "scrollUp", "keys": "ctrl+shift+up" }
+{ "keys": "ctrl+shift+up", "id": "Terminal.ScrollUp" }
 ```
 
 #### Parameters
@@ -1118,10 +1323,16 @@ This scrolls the screen down by the number of rows defined by `"rowsToScroll"`. 
 
 **Command name:** `scrollDown`
 
+**Default ID:**
+
+```json
+{ "command": "scrollDown", "id": "Terminal.ScrollDown" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "scrollDown", "keys": "ctrl+shift+down" }
+{ "keys": "ctrl+shift+down", "id": "Terminal.ScrollDown" }
 ```
 
 #### Parameters
@@ -1136,10 +1347,16 @@ This scrolls the screen up by a whole page, which is the height of the window.
 
 **Command name:** `scrollUpPage`
 
+**Default ID:**
+
+```json
+{ "command": "scrollUpPage", "id": "Terminal.ScrollUpPage" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "scrollUpPage", "keys": "ctrl+shift+pgup" }
+{ "keys": "ctrl+shift+pgup", "id": "Terminal.ScrollUpPage" }
 ```
 
 ### Scroll down a whole page
@@ -1148,10 +1365,16 @@ This scrolls the screen down by a whole page, which is the height of the window.
 
 **Command name:** `scrollDownPage`
 
+**Default ID:**
+
+```json
+{ "command": "scrollDownPage", "id": "Terminal.ScrollDownPage" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "scrollDownPage", "keys": "ctrl+shift+pgdn" }
+{ "keys": "ctrl+shift+pgdn", "id": "Terminal.ScrollDownPage" }
 ```
 
 ### Scroll to the earliest history
@@ -1160,10 +1383,16 @@ This scrolls the screen up to the top of the input buffer.
 
 **Command name:** `scrollToTop`
 
+**Default ID:**
+
+```json
+{ "command": "scrollToTop", "id": "Terminal.ScrollToTop" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "scrollToTop", "keys": "ctrl+shift+home" }
+{ "keys": "ctrl+shift+home", "id": "Terminal.ScrollToTop" }
 ```
 
 ### Scroll to the latest history
@@ -1172,10 +1401,16 @@ This scrolls the screen down to the bottom of the input buffer.
 
 **Command name:** `scrollToBottom`
 
+**Default ID:**
+
+```json
+{ "command": "scrollToBottom", "id": "Terminal.ScrollToBottom" }
+```
+
 **Default binding:**
 
 ```json
-{ "command": "scrollToBottom", "keys": "ctrl+shift+end" }
+{ "keys": "ctrl+shift+end", "id": "Terminal.ScrollToBottom" }
 ```
 
 <br />
@@ -1186,10 +1421,10 @@ This action can be used to manually clear the terminal buffer. This is useful fo
 
 **Command name:** `clearBuffer`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": { "action": "clearBuffer", "clear": "all" } }
+{ "command": { "action": "clearBuffer", "clear": "all" }, "id": "Terminal.ClearBuffer" }
 ```
 
 #### Parameters
@@ -1210,13 +1445,20 @@ This changes the text size by a specified point amount.
 
 **Command name:** `adjustFontSize`
 
+**Default IDs:**
+
+```json
+{ "command": { "action": "adjustFontSize", "delta": 1 }, "id": "Terminal.IncreaseFontSize" },
+{ "command": { "action": "adjustFontSize", "delta": -1 }, "id": "Terminal.DecreaseFontSize" }
+```
+
 **Default bindings:**
 
 ```json
-{ "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
-{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" },
-{ "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+numpad_plus" },
-{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+numpad_minus" }
+{ "keys": "ctrl+plus", "id": "Terminal.IncreaseFontSize" },
+{ "keys": "ctrl+minus", "id": "Terminal.DecreaseFontSize" },
+{ "keys": "ctrl+numpad_plus", "id": "Terminal.IncreaseFontSize" },
+{ "keys": "ctrl+numpad_minus", "id": "Terminal.DecreaseFontSize" }
 ```
 
 #### Parameters
@@ -1231,11 +1473,17 @@ This resets the text size to the default value.
 
 **Command name:** `resetFontSize`
 
+**Default ID:**
+
+```json
+{ "command": "resetFontSize", "id": "Terminal.ResetFontSize" }
+```
+
 **Default bindings:**
 
 ```json
-{ "command": "resetFontSize", "keys": "ctrl+0" },
-{ "command": "resetFontSize", "keys": "ctrl+numpad_0" }
+{ "keys": "ctrl+0", "id": "Terminal.ResetFontSize" },
+{ "keys": "ctrl+numpad_0", "id": "Terminal.ResetFontSize" }
 ```
 
 ### Adjust opacity
@@ -1250,6 +1498,7 @@ This changes the opacity of the window. If `relative` is set to true, it will ad
 { "command": { "action": "adjustOpacity", "relative": false, "opacity": 0 } },
 { "command": { "action": "adjustOpacity", "relative": false, "opacity": 25 } },
 { "command": { "action": "adjustOpacity", "relative": false, "opacity": 50 } },
+{ "command": { "action": "adjustOpacity", "relative": false, "opacity": 75 } },
 { "command": { "action": "adjustOpacity", "relative": false, "opacity": 100 } }
 ```
 
@@ -1266,10 +1515,10 @@ This toggles any pixel shader effects enabled in the terminal. If the user speci
 
 **Command name:** `toggleShaderEffects`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "command": "toggleShaderEffects" }
+{ "command": "toggleShaderEffects", "id": "Terminal.ToggleShaderEffects" }
 ```
 
 > [!CAUTION]
@@ -1287,10 +1536,10 @@ Changes the active color scheme.
 | ---- | --------- | ------- | ----------- |
 | `colorScheme` | Required | String | The `name` of the color scheme to apply. |
 
-**Example binding:**
+**Example declaration:**
 
 ```json
-{ "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "keys": "" }
+{ "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "id": "User.SetSchemeToCampbell" }
 ```
 
 ### Add scroll mark
@@ -1305,10 +1554,10 @@ Adds a scroll mark to the text buffer. If there's a selection, the mark is place
 | ---- | --------- | ------- | ----------- |
 | `color` | Optional | String, in hex format: `"#rgb"` or `"#rrggbb"` | The color of the mark. |
 
-**Example binding:**
+**Example declaration:**
 
 ```json
-{ "command": { "action": "addMark", "color": "#ff00ff" } }
+{ "command": { "action": "addMark", "color": "#ff00ff" }, "id": "User.AddMark" }
 ```
 
 > [!IMPORTANT]
@@ -1326,10 +1575,10 @@ Scrolls to the scroll mark in the given direction. For more info, see [Scroll ma
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"first"`, `"previous"`, `"next"`, `"last"` | The direction in which to scroll. |
 
-**Example binding:**
+**Example declaration:**
 
 ```json
-{ "command": { "action": "scrollToMark", "direction": "previous" } }
+{ "command": { "action": "scrollToMark", "direction": "previous" }, "id": "User.ScrollToMark" }
 ```
 
 > [!IMPORTANT]
@@ -1341,10 +1590,10 @@ Clears scroll mark at the current position, either at a selection if there is on
 
 **Command name:** `clearMark`
 
-**Example binding:**
+**Example declaration:**
 
 ```json
-{ "command": { "action": "clearMark" } }
+{ "command": { "action": "clearMark" }, "id": "User.ClearMark" }
 ```
 
 > [!IMPORTANT]
@@ -1356,10 +1605,10 @@ Clears all scroll marks in the text buffer. This is an experimental feature, and
 
 **Command name:** `clearAllMarks`
 
-**Example binding:**
+**Example declaration:**
 
 ```json
-{ "command": { "action": "clearAllMarks" } }
+{ "command": { "action": "clearAllMarks" }, "id": "User.ClearAllMarks" }
 ```
 
 > [!IMPORTANT]
@@ -1425,10 +1674,10 @@ This allows the user to export the text of the buffer to a file. If the file doe
 
 **Command name:** `exportBuffer`
 
-**Default bindings:**
+**Default ID:**
 
 ```json
-{ "command": { "action": "exportBuffer" } }
+{ "command": { "action": "exportBuffer" }, "id": "Terminal.ExportBuffer" }
 ```
 
 #### Parameters
@@ -1463,7 +1712,7 @@ This is a special action that works globally in the OS, rather than only in the 
 _This command is not currently bound in the default settings_.
 
 ```json
-{ "keys": "", "command": { "action": "globalSummon" } }
+{ "command": { "action": "globalSummon" } }
 ```
 
 #### Parameters
@@ -1503,27 +1752,27 @@ The `desktop` and `monitor` properties can be combined in the following ways:
 // Summon the most recently used (MRU) window, to the current virtual desktop,
 // to the monitor the mouse cursor is on, without an animation. If the window is
 // already in the foreground, then minimize it.
-{ "keys": "ctrl+1", "command": { "action": "globalSummon" } },
+{ "command": { "action": "globalSummon" }, "id": "User.MyGlobalSummon" },
 
 // Summon the MRU window, by going to the virtual desktop the window is
 // currently on. Move the window to the monitor the mouse is on.
-{ "keys": "ctrl+2", "command": { "action": "globalSummon", "desktop": "any" } },
+{ "command": { "action": "globalSummon", "desktop": "any" }, "id": "User.MyGlobalSummonAnyDesktop" },
 
 // Summon the MRU window to the current desktop, leaving the position of the window untouched.
-{ "keys": "ctrl+3", "command": { "action": "globalSummon", "monitor": "any" } },
+{ "command": { "action": "globalSummon", "monitor": "any" }, "id": "User.MyGlobalSummonAnyMonitor" },
 
 // Summon the MRU window, by going to the virtual desktop the window is
 // currently on, leaving the position of the window untouched.
-{ "keys": "ctrl+4", "command": { "action": "globalSummon", "desktop": "any", "monitor": "any" } },
+{ "command": { "action": "globalSummon", "desktop": "any", "monitor": "any" }, "id": "User.MyGlobalSummonAnywhere" },
 
 // Summon the MRU window with a dropdown duration of 200ms.
-{ "keys": "ctrl+5", "command": { "action": "globalSummon", "dropdownDuration": 200 } },
+{ "command": { "action": "globalSummon", "dropdownDuration": 200 }, "id": "User.MyGlobalSummonDrop" },
 
 // Summon the MRU window. If the window is already in the foreground, do nothing.
-{ "keys": "ctrl+6", "command": { "action": "globalSummon", "toggleVisibility": false } },
+{ "command": { "action": "globalSummon", "toggleVisibility": false }, "id": "User.MyGlobalSummonIfNotVisible" },
 
 // Summon the window named "_quake". If no window with that name exists, then create a new window.
-{ "keys": "ctrl+7", "command": { "action": "globalSummon", "name": "_quake" } }
+{ "command": { "action": "globalSummon", "name": "_quake" }, "id": "User.MyGlobalSummonQuake" }
 ```
 
 ### Open the quake mode window
@@ -1534,7 +1783,7 @@ This action is a special variation of the [`globalSummon`](#global-commands) act
 
 ```json
 {
-    "keys": "win+`",
+    "id": "User.MySummonQuake",
     "command": {
         "action": "globalSummon",
         "name": "_quake",
@@ -1550,10 +1799,10 @@ If you'd like to change the behavior of the `quakeMode` action, we recommended c
 
 **Command name:** `quakeMode`
 
-**Default binding:**
+**Default ID:**
 
 ```json
-{ "keys": "win+`", "command": { "action": "quakeMode" } }
+{ "command": "quakeMode", "id": "Terminal.QuakeMode" }
 ```
 
 :::column-end:::
@@ -1569,7 +1818,7 @@ ___
 
 ## Run multiple actions
 
-This action allows the user to bind multiple sequential actions to one command.
+This action allows the user to bind multiple sequential actions to one command. These actions do not support IDs.
 
 **Command name:** `multipleActions`
 
@@ -1613,25 +1862,25 @@ You can disable keybindings or "unbind" the associated keys from any command. Th
 
 **Example using unbound:**
 
-For example, to unbind the shortcut keys <kbd>Alt+Shift+-</kbd>" and <kbd>Alt+Shift+=</kbd>", include these commands in the `actions` section of your [settings.json file](../install.md#settings-json-file).
+For example, to unbind the shortcut keys <kbd>Alt+Shift+-</kbd>" and <kbd>Alt+Shift+=</kbd>", include these entries in the `keybindings` section of your [settings.json file](../install.md#settings-json-file).
 
 ```json
 {
-    "actions": [
-        { "command": "unbound", "keys": "alt+shift+-" },
-        { "command": "unbound", "keys": "alt+shift+=" }
+    "keybindings": [
+        { "id": "unbound", "keys": "alt+shift+-" },
+        { "id": "unbound", "keys": "alt+shift+=" }
     ]
 }
 ```
 
 **Example using null:**
 
-You can also unbind a keystroke that is bound by default to an action by setting `"command"` to `null`. This will also allow the keystroke to associate with the command line application setting instead of performing the default action.
+You can also unbind a keystroke that is bound by default to an action by setting `"id"` to `null`. This will also allow the keystroke to associate with the command line application setting instead of performing the default action.
 
 ```json
 {
-   "command" : null, "keys" : ["ctrl+v"]
-},
+   "id" : null, "keys" : ["ctrl+v"]
+}
 ```
 
 **Use-case scenario:**
