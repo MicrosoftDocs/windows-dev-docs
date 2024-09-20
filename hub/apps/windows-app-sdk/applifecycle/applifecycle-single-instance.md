@@ -15,12 +15,12 @@ In this article, you will learn how to:
 
 > [!div class="checklist"]
 > - Turn off XAML's generated `Program` code
-> - Define customized `MAIN` method for redirection
+> - Define customized `Main` method for redirection
 > - Test single-instancing after app deployment
 
 ## Pre-requisites
 
-This tutorial uses Visual Studio and builds on the WinUI blank app template. To get set up, follow the instructions in [Get started with WinUI](../../get-started/start-here.md). You'll install Visual Studio, configure it for developing apps with WinUI, create the Hello World project, and make sure you have the latest version of WinUI.
+This tutorial uses Visual Studio and builds on the WinUI blank app template. If you're new to WinUI development, you can get set up by following the instructions in [Get started with WinUI](../../get-started/start-here.md). There you'll install Visual Studio, configure it for developing apps with WinUI while ensuring you have the latest version of WinUI and the Windows App SDK, and create a Hello World project.
 
 When you've done that, come back here to learn how to turn your "Hello World" project into a single-instanced app.
 
@@ -29,7 +29,7 @@ When you've done that, come back here to learn how to turn your "Hello World" pr
 
 ## Disable auto-generated Program code
 
-We need to check for redirection as early as possible, and before creating any windows. To do this, we must define the symbol “DISABLE_XAML_GENERATED_MAIN” in the project build properties.
+We need to check for redirection as early as possible, before creating any windows. To do this, we must define the symbol “DISABLE_XAML_GENERATED_MAIN” in the project file. Follow these steps to disable the auto-generated Program code:
 
 1. Right-click on the project name in Solution Explorer and select **Edit Project File**.
 1. Define the **DISABLE_XAML_GENERATED_MAIN** symbol for each configuration and platform. Add the following XML to the project file:
@@ -54,6 +54,8 @@ We need to check for redirection as early as possible, and before creating any w
      <defineconstants>DISABLE_XAML_GENERATED_MAIN</defineconstants>
    </propertygroup>
    ```
+
+Adding the **DISABLE_XAML_GENERATED_MAIN** symbol will disable the auto-generated Program code for your project.
 
 ## Define a Program class with a Main method
 
@@ -147,6 +149,10 @@ Until this point, we've been testing the app by debugging within Visual Studio. 
 1. Open the Start menu and click into the search field.
 1. Type your app's name in the search field.
 1. Click the app icon from the search result to launch your app.
+
+   > [!NOTE]
+   > If you experience app crashes in release mode, there are some known issues with trimmed apps in the Windows App SDK. You can disable trimming in the project by setting the **PublishTrimmed** property to **false** for all build configurations in your project's `.pubxml` files. For more information, see [this issue](https://github.com/microsoft/microsoft-ui-xaml/issues/9914#issuecomment-2303010651) on GitHub.
+
 1. Repeat steps 2 to 4 to launch the same app again and see if another instance opens. If the app is single-instanced, the first instance will be activated instead of a new instance opening.
 
    > [!TIP]
