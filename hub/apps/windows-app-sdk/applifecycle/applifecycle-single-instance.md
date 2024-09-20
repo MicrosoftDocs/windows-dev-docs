@@ -202,7 +202,7 @@ Until this point, we've been testing the app by debugging within Visual Studio. 
 1. Repeat steps 2 to 4 to launch the same app again and see if another instance opens. If the app is single-instanced, the first instance will be activated instead of a new instance opening.
 
    > [!TIP]
-   > You can optionally add some logging code to the **OnActivated** method to verify that the existing instance has been activated.
+   > You can optionally add some logging code to the **OnActivated** method to verify that the existing instance has been activated. Try asking [Copilot](https://copilot.microsoft.com/) for help with adding an [ILogger implementation](/dotnet/core/extensions/logging) to your WinUI app.
 
 ## Summary
 
