@@ -7,6 +7,8 @@ ms.localizationpriority: medium
 no-loc: [PowerToys, Win]
 ---
 
+# File Actions menu
+
 ![File Actions menu](../images/PowerToys-FileActionsMenu-HashMenu.png)
 
 The PowerToys File Action Menu is a menu, which is invoked by a shortcut and allows you to perform certain actions on your selected files.
