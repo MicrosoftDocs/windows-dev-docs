@@ -639,6 +639,41 @@ If you disable or don't configure this policy, no predefined rules are applied.
     > Syntax for the :::no-loc text="value"::: property from the :::no-loc text="data"::: element:
     > `<Hostname> <IP Address>&#xF000;<Hostname 2> <IP Address 2>&#xF000;<Hostname 3> <IP Address 3>`
 
+### New+
+
+#### Hide template filename extension
+
+Supported on PowerToys 0.85.0 or later.
+
+This policy configures, if the template filenames are shown with extension or not.
+
+If you enable this policy, the setting is enabled and the extension is hidden.
+
+If you disable this policy, the setting is disabled and the extension is shown.
+
+If you don't configure this policy, the user takes control over the setting and can enable or disable it.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: NewPlusHideTemplateFilenameExtension
+- GP name: Hide template filename extension
+- GP path: Administrative Templates/Microsoft PowerToys/New+
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: NewPlusHideTemplateFilenameExtension
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~NewPlus/NewPlusHideTemplateFilenameExtension`
+- Example value: `<disabled/>`
+
+
 ### PowerToys Run
 
 #### Configure enabled state for all plugins
