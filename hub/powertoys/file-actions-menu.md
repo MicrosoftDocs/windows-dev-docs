@@ -1,11 +1,13 @@
 ---
 title: PowerToys File Actions Menu
 description: A per shortcut invokable menu for certain file actions
-ms.date: 02/25/2024
+ms.date: 09/22/2024
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Win]
 ---
+
+![File Actions menu](../images/PowerToys-FileActionsMenu-HashMenu.png)
 
 The PowerToys File Action Menu is a menu, which is invoked by a shortcut and allows you to perform certain actions on your selected files.
 
