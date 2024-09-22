@@ -645,7 +645,7 @@ If you disable or don't configure this policy, no predefined rules are applied.
 
 Supported on PowerToys 0.85.0 or later.
 
-This policy configures, if the template filenames are shown with extension or not.
+This policy configures if the template filenames are shown with extension or not.
 
 If you enable this policy, the setting is enabled and the extension is hidden.
 
@@ -672,7 +672,6 @@ If you don't configure this policy, the user takes control over the setting and 
 
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~NewPlus/NewPlusHideTemplateFilenameExtension`
 - Example value: `<disabled/>`
-
 
 ### PowerToys Run
 
