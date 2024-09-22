@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Package your app using single-project MSIX
 
-Single-project MSIX is a feature that lets you build a packaged WinUI 3 desktop app without the need for a separate packaging project. A WinUI 3 app is one that uses the [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) framework for its user interface (UI); and it uses the Windows App SDK. To package a desktop app that's *not* a WinUI 3 app, see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
+Single-project MSIX is a feature that lets you build a packaged WinUI 3 desktop app without the need for a separate packaging project. A WinUI 3 app is one that uses the [WinUI 3](/windows/apps/winui/winui3/) framework for its user interface (UI); and it uses the Windows App SDK. To package a desktop app that's *not* a WinUI 3 app, see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 The single-project MSIX feature is available as a Visual Studio extension that you can use for these scenarios:
 
@@ -60,7 +60,7 @@ Follow the steps in this section to modify an existing WinUI 3-based app that us
 
 If you already have a solution for a WinUI 3 desktop app (see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)) that includes a **Windows Application Packaging Project** (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)), then open that solution in Visual Studio now.
 
-If not, then create a new WinUI 3 desktop app in Visual Studio by using the **Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)** template. Your solution will look similiar to the screenshot below.
+If not, then create a new WinUI 3 desktop app in Visual Studio by using the **Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)** template. Your solution will look similar to the screenshot below.
 
 ![A solution using the packaging project](images/single-project-packaging-project.png)
 

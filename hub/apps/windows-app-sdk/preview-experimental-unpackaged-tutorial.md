@@ -29,7 +29,7 @@ You can choose to follow this tutorial using a C++ project or a C# project.
 
 ### [C++](#tab/cpp)
 
-Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3), you can also configure a C++ project that includes WinUI 3 unpackaged support.  
+Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C++ project that includes WinUI 3 unpackaged support.  
 
 1. In Visual Studio, create a new C++ **Console App** project. Name the project **DynamicDependenciesTest**.
     ![Screenshot of creating a new C++ app in Visual Studio](images/tutorial-deploy-create-project.png)
@@ -123,7 +123,7 @@ Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3
 
 ### [C# with 1.0 Preview 3 and later](#tab/csharp-dotnet-preview3)
 
-Follow these instructions to configure a C# project. Starting in [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3), you can also configure a C# project that includes WinUI 3 unpackaged support.  
+Follow these instructions to configure a C# project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C# project that includes WinUI 3 unpackaged support.  
 
 1. In Visual Studio, create a new C# **Console Application** project. Name the project **DynamicDependenciesTest**.
 
@@ -197,7 +197,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
 
         ```csharp
         // Create a resource manager using the resource index generated during build.
-	    var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
+        var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
 
         // Lookup a string in the RESW file using its name.
         Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);
@@ -207,7 +207,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
 
 ### [C# with 1.0 Experimental and earlier](#tab/csharp-dotnet-experimental1)
 
-Follow these instructions to configure a C# project that uses the [1.0 Experimental](experimental-channel.md#version-10-experimental-100-experimental1) or earlier release of the Windows App SDK.
+Follow these instructions to configure a C# project that uses the [1.0 Experimental](release-notes-archive/experimental-channel-1.0.md#version-10-experimental-100-experimental1) or earlier release of the Windows App SDK.
 
 1. In Visual Studio, create a new C# **Console Application** project. Name the project **DynamicDependenciesTest**.
 

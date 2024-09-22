@@ -1,9 +1,6 @@
 ---
 title: Web development on Windows
 description: A guide to Microsoft web development tools available on Windows, including Microsoft Edge, DevTools, WebView, PWAs, Visual Studio Code extensions, virtual machines, terminal, package manager, and more.
-author: mattwojo
-ms.author: mattwoj
-manager: jken
 ms.topic: article
 ms.date: 11/28/2023
 ---
@@ -227,7 +224,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
     :::column-end:::
 :::row-end:::
 
-## Addtional resources
+## Additional resources
 
 :::row:::
     :::column:::

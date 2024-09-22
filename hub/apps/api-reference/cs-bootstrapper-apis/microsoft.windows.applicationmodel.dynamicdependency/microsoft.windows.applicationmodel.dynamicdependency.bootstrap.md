@@ -4,8 +4,6 @@ description: The **Bootstrap** class contains static helper methods that conveni
 ms.topic: article
 ms.date: 04/05/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, C#, interop, Bootstrapper, Bootstrapper API
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: low
 ---
 

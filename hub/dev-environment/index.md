@@ -1,9 +1,6 @@
 ---
 title: Setup a development environment on Windows
 description: A guide to help you setup your development environment on Windows and install your preferred tools and code languages. 
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.subservice: windows-nodejs
 ms.date: 09/28/2023
@@ -66,11 +63,28 @@ Windows invites you to code as you are. Use whatever coding language or framewor
     :::column:::
        [![WSA icon](../images/wsa-icon.png)](/windows/android/wsa/)<br>
         **[Windows Subsystem for Android](/windows/android/wsa/)**<br>
-        Windows Subsystem for Android™️ enables your Windows 11 device to run Android applications that are available in the Amazon Appstore.<br>
+        Windows Subsystem for Android™️ support ends March 5, 2025.<br>
         [Learn more](/windows/android/wsa/)
     :::column-end:::
 :::row-end:::
-
+:::row:::
+    :::column:::
+       [![Sudo for Windows icon](../images/sudo.png)](/windows/sudo/)<br>
+        **[Sudo for Windows](/windows/sudo/)**<br>
+        Sudo for Windows is a new way for users to run elevated commands directly from an unelevated console session.
+        <br>
+        [Enable and configure Sudo for Windows](/windows/sudo)
+    :::column-end:::
+    :::column:::
+       [![Copilot in Windows icon](../images/copilot.png)](/windows/ai/)<br>
+        **[Windows AI](/windows/ai/)**<br>
+        A new era of AI has arrived at Microsoft. See how AI is being integrated in Windows 11.
+        <br>
+        [Explore Windows AI](/windows/ai)
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 <br>
 
 > [!VIDEO 54e6c532-a86c-4a39-81ab-40e28ce2ba96]
@@ -198,7 +212,7 @@ Learn more in the [Windows Terminal docs](/windows/terminal).
 
 ## Transitioning between Mac and Windows
 
-Check out our [guide to transitioning between between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment. It can help you map the difference between:
+Check out our [guide to transitioning between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment. It can help you map the difference between:
 
 - [Keyboard shortcuts](./mac-to-windows.md#keyboard-shortcuts)
 - [Trackpad shortcuts](./mac-to-windows.md#trackpad-shortcuts)

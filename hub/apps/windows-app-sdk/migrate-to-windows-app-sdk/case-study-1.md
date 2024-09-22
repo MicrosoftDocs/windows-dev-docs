@@ -4,8 +4,6 @@ description: A case study of taking the C# [UWP PhotoLab sample app](/samples/mi
 ms.topic: article
 ms.date: 10/01/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C#, PhotoLab, UWP
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -308,3 +306,7 @@ private void BackButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e
 ## Test the migrated app
 
 Now build the project, and run the app to test it. Select an image, set a zoom level, choose effects, and configure them.
+
+## See Also
+
+- [Windows App SDK and supported Windows releases](../support.md)

@@ -1,233 +1,186 @@
 ---
-title: Experimental release channel for the Windows App SDK
+title: Latest experimental channel release notes for the Windows App SDK
 description: Learn about the latest experimental releases of the Windows App SDK.
 ms.topic: article
-ms.date: 11/16/2021
+ms.date: 04/25/2024
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
 
-# Experimental channel release notes for the Windows App SDK
+# Latest experimental channel release notes for the Windows App SDK
 
 > [!IMPORTANT]
 > The experimental channel is **not supported** for use in production environments, and apps that use the experimental releases cannot be published to the Microsoft Store.
 
-The experimental channel provides releases of the Windows App SDK that include [experimental channel features](release-channels.md#features-available-by-release-channel) that are in early stages of development. APIs for experimental features have the [Experimental](/uwp/api/Windows.Foundation.Metadata.ExperimentalAttribute) attribute. If you call an experimental API in your code, you will receive a build-time warning. All APIs in the experimental channel might have breaking changes in future releases, but experimental APIs are especially subject to change. Experimental features may be removed from the next release, or may never be released.
+The experimental channel includes releases of the Windows App SDK with [experimental channel features](release-channels.md#features-available-by-release-channel) in early stages of development. APIs for experimental features have the [Experimental](/uwp/api/Windows.Foundation.Metadata.ExperimentalAttribute) attribute. If you call an experimental API in your code, you will receive a build-time warning. All APIs in the experimental channel are subject to extensive revisions and breaking changes. Experimental features and APIs may be removed from subsequent releases at any time.
 
-**Important links**: 
+**Important links**:
+
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 - For documentation on experimental releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
-**Experimental channel releases:**
-- [Version 1.5 Experimental](#version-15-experimental-150-experimental1)
-- [Version 1.4 Experimental](#version-14-experimental-140-experimental1)
-- [Version 1.3 Experimental](#version-13-experimental-130-experimental1)
-- [Version 1.2 Experimental](#version-12-experimental-120-experimental2)
-- [Version 1.0 Experimental](#version-10-experimental-100-experimental1)
-- [Version 0.8 Preview](#version-08-preview-080-preview)
+**Experimental channel release note archive:**
 
-## Version 1.5 Experimental (1.5.0-experimental2)
+- [Experimental channel release notes for the Windows App SDK 1.5](release-notes-archive/experimental-channel-1.5.md)
+- [Experimental channel release notes for the Windows App SDK 1.4](release-notes-archive/experimental-channel-1.4.md)
+- [Experimental channel release notes for the Windows App SDK 1.3](release-notes-archive/experimental-channel-1.3.md)
+- [Experimental channel release notes for the Windows App SDK 1.2](release-notes-archive/experimental-channel-1.2.md)
+- [Experimental channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
+- [Experimental channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
+
+## Version 1.6 Experimental (1.6.0-experimental2)
 
 This is the latest release of the experimental channel.
-To download, retarget your WinAppSDK NuGet version to `1.5.240124002-experimental2`.
 
-### Bug fixes
+To download, retarget your WinAppSDK NuGet version to `1.6.240701003-experimental2`.
 
-This release includes the following bug fixes:
+> [!NOTE]
+> Phi Silica and OCR APIs are not included in this release. These will be coming in a future 1.6 release.
 
-- Fixed an issue causing apps to crash on startup when using a custom `NavigationViewItem`. For more info, see GitHub issue [#8814](https://github.com/microsoft/microsoft-ui-xaml/issues/8814).
-- Fixed a `NavigationView` issue where the ellipsis button would incorrectly generate an error. For more info, see GitHub issue [#8380](https://github.com/microsoft/microsoft-ui-xaml/issues/8380).
-- Fixed an issue where a `SystemBackdrop` would not render properly in a multi-window app. For more info, see GitHub issue [#8423](https://github.com/microsoft/microsoft-ui-xaml/issues/8423).
-- Fixed a duplication issue when inserting into the beginning of an `ObservableCollection`. For more info, see GitHub issue [#8370](https://github.com/microsoft/microsoft-ui-xaml/issues/8370).
+### Native AOT support updates
 
-### New APIs
+In 1.6-experimental1, the XAML compiler was generating `XamlTypeInfo.g.cs` with code that wasn’t safe for AOT/Trimming. This relates to GitHub issue [#9675](https://github.com/microsoft/microsoft-ui-xaml/issues/9675), though it does not fully fix that issue.
 
-1.5-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
+### Changed Edge WebView2 SDK Integration
 
-```C#
-Microsoft.Graphics.DirectX
- 
-    DirectXPixelFormat
-        A4B4G4R4
-```
+The Windows App SDK now consumes the Edge WebView2 SDK as a NuGet reference rather than embedding a hardcoded version of the Edge WebView2 SDK. The new model allows apps to choose a newer version of the `Microsoft.Web.WebView2` package instead of being limited to the version with which the Windows App SDK was built. The new model also allows apps to reference NuGet packages which also reference the Edge WebView2 SDK. For more info, see GitHub issue [#5689](https://github.com/microsoft/microsoft-ui-xaml/issues/5689).
 
-```C#
-Microsoft.UI.Xaml
- 
-    DebugSettings
-        LayoutCycleDebugBreakLevel
-        LayoutCycleTracingLevel
- 
-    LayoutCycleDebugBreakLevel
-    LayoutCycleTracingLevel
-```
+### New Package Deployment APIs
 
-```C#
-Microsoft.UI.Xaml.Automation.Peers
- 
-    SelectorBarItemAutomationPeer
-```
+The Package Management API has received several enhancements including Is\*ReadyOrNewerAvailable\*(), EnsureReadyOptions.RegisterNewerIfAvailable, Is\*Provisioned\*(), IsPackageRegistrationPending(), and several bug fixes. See [PackageManagement.md](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/packagemanager/PackageManagement.md) and [Pull Request #4453](https://github.com/microsoft/WindowsAppSDK/pull/4453) for more details. 
+
+### Other notable changes
+
+- Starting with 1.6-experimental2, the latest WinUI 3 source will now publish to the main branch in the microsoft-ui-xaml GitHub repo, which will enable source searching in that repo.
+- We added a new `ColorHelper.ToDisplayName()` API, filling that gap from UWP.
+    - **Known issue:** Some language translations have character encoding issues. This will be fixed in the next 1.6 release.
+- Added a new `Microsoft.Windows.Globalization.ApplicationLanguages` class, which notably includes a new `PrimaryLanguageOverride` feature. For more info, see GitHub issue [#4523](https://github.com/microsoft/WindowsAppSDK/pull/4523).
+- New extensions enable Widget Providers to provide Widgets with web content and announcements for Widgets.
+
+### New APIs for 1.6-experimental2
+
+1.6-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
 
 ```C#
 Microsoft.UI.Xaml.Controls
- 
-    MapControl
-    MapControlMapServiceErrorOccurredEventArgs
-    MapElement
-    MapElementClickEventArgs
-    MapElementsLayer
-    MapIcon
-    MapLayer
-    SelectorBar
-    SelectorBarItem
-    SelectorBarSelectionChangedEventArgs
-    WebView2
-        EnsureCoreWebView2Async
-        EnsureCoreWebView2Async
+
+    PipsPager
+        WrapMode
+        WrapModeProperty
+
+    PipsPagerWrapMode
+```
+
+```C#
+Microsoft.Windows.Globalization
+
+    ApplicationLanguages
 ```
 
 ```C#
 Microsoft.Windows.Management.Deployment
- 
+
     EnsureReadyOptions
+        RegisterNewerIfAvailable
+
+    PackageDeploymentFeature
     PackageDeploymentManager
-        AddPackageSetAsync
-        DeprovisionPackageAsync
-        DeprovisionPackageByUriAsync
-        DeprovisionPackageSetAsync
-        EnsurePackageReadyAsync
-        EnsurePackageReadyByUriAsync
-        EnsurePackageSetReadyAsync
-        IsPackageReady
-        IsPackageReadyByUri
-        IsPackageRegistrationPending
-        IsPackageRegistrationPendingForUser
-        ProvisionPackageAsync
-        ProvisionPackageByUriAsync
-        ProvisionPackageSetAsync
-        RegisterPackageAsync
-        RegisterPackageByUriAsync
-        RegisterPackageSetAsync
-        RemovePackageByUriAsync
-        RepairPackageAsync
-        RepairPackageByUriAsync
-        RepairPackageSetAsync
-        ResetPackageAsync
-        ResetPackageByUriAsync
-        ResetPackageSetAsync
-        StagePackageAsync
-        StagePackageByUriAsync
-        StagePackageSetAsync
- 
-    PackageDeploymentProgress
-    PackageDeploymentResult
-        Error
-        ErrorText
- 
-    PackageSet
-        Items
-        PackageUri
- 
-    PackageVolume
-        FindPackageVolumeByName
-        FindPackageVolumeByPath
-        FindPackageVolumes
-        IsRepairNeeded
-        Repair
- 
-    ProvisionPackageOptions
-    RegisterPackageOptions
-        DependencyPackageFamilyNames
- 
-    RemovePackageOptions
-        FailIfNotFound
+        IsPackageDeploymentFeatureSupported
+        IsPackageProvisioned
+        IsPackageProvisionedByUri
+        IsPackageReadyOrNewerAvailable
+        IsPackageReadyOrNewerAvailableByUri
+        IsPackageSetProvisioned
+        IsPackageSetReadyOrNewerAvailable
+
+    PackageReadyOrNewerAvailableStatus
 ```
 
-### Additional Experimental APIs
+### Additional 1.6-experimental2 APIs
 
 This release includes the following new and modified experimental APIs:
 
 ```C#
-Microsoft.UI.Xaml
- 
-    Application
-        DispatcherShutdownMode
- 
-    DispatcherShutdownMode
-    XamlIsland
-        SystemBackdrop
+Microsoft.UI
+
+    ColorHelper
+        ToDisplayName
 ```
 
 ```C#
-Microsoft.UI.Xaml.Hosting
- 
-    WindowsXamlManager
-        IsXamlRunningOnCurrentThread
-        XamlShutdownCompletedOnThread
- 
-    XamlShutdownCompletedOnThreadEventArgs
+Microsoft.UI.Composition
+
+    CompositionNotificationDeferral
 ```
 
 ```C#
-Microsoft.Windows.System.Workloads
- 
-    IWorkloadHandler
-    Workload
-    WorkloadManager
-    WorkloadProgress
-    WorkloadProgressStatus
-    WorkloadResult
-    WorkloadsContract
-    WorkloadStatus
+Microsoft.UI.Composition.Experimental
+
+    ExpCompositionVisualSurface
+    ExpExpressionNotificationProperty
+    IExpCompositionPropertyChanged
+    IExpCompositionPropertyChangedListener
+    IExpCompositor
+    IExpVisual
 ```
-
-## Version 1.5 Experimental (1.5.0-experimental1)
-
-This is the latest release of the experimental channel.
-To download, retarget your WinAppSDK NuGet version to `1.5.231202003-experimental1`.
-
-### New APIs
-
-1.5-experimental1 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
-
-```C#
-Microsoft.Windows.Widgets.Feeds.Providers
-    CustomQueryParametersRequestedArgs
-    CustomQueryParametersUpdateOptions
-    FeedDisabledArgs
-    FeedEnabledArgs
-    FeedManager
-    FeedProviderDisabledArgs
-    FeedProviderEnabledArgs
-    FeedProviderInfo
-    IFeedManager
-    IFeedProvider
-```
-
-### Additional Experimental APIs
-
-This release includes the following new and modified experimental APIs:
 
 ```C#
 Microsoft.UI.Content
- 
+
+    AutomationOptions
+    ChildContentLink
+    ContentAppWindowBridge
+    ContentDisplayOrientations
+    ContentExternalBackdropLink
+    ContentExternalOutputLink
     ContentIsland
+        Children
+        Compositor
+        Connected
         ConnectionInfo
         ConnectRemoteEndpoint
+        Create
+        Disconnected
+        FindAllForCompositor
+        FragmentRootAutomationProvider
+        GetByVisual
         IsRemoteEndpointConnected
- 
+        NextSiblingAutomationProvider
+        Offset
+        ParentAutomationProvider
+        PreviousSiblingAutomationProvider
+        Root
+        RotationAngleInDegrees
+
     ContentIslandEnvironment
+        AutomationOption
         CurrentOrientation
         DisplayScale
         NativeOrientation
         ThemeChanged
- 
+
+    ContentSite
+        Compositor
+        Offset
+        RotationAngleInDegrees
+        SetContentNodeParent
+        SetIsInputPassThrough
+        SiteVisual
+        TryGetAutomationProvider
+
+    ContentSiteAutomationProviderRequestedEventArgs
     ContentSiteEnvironment
         CurrentOrientation
         DisplayScale
         NativeOrientation
         NotifyThemeChanged
- 
+
+    ContentSiteView
+        Offset
+        RotationAngleInDegrees
+
+    CoreWindowSiteBridge
+    CoreWindowTopLevelWindowBridge
     DesktopChildSiteBridge
         AcceptRemoteEndpoint
         ConnectionInfo
@@ -235,567 +188,537 @@ Microsoft.UI.Content
         RemoteEndpointConnecting
         RemoteEndpointDisconnected
         RemoteEndpointRequestedStateChanged
- 
+
+    DesktopSiteBridge
+        TryCreatePopupSiteBridge
+
     EndpointConnectionEventArgs
     EndpointRequestedStateChangedEventArgs
     IContentIslandEndpointConnectionPrivate
+    IContentLink
+    IContentNodeOwner
+    IContentSiteBridge2
+    IContentSiteBridgeAutomation
     IContentSiteBridgeEndpointConnectionPrivate
+    PopupWindowSiteBridge
     ProcessStarter
+    ReadOnlyDesktopSiteBridge
     SystemVisualSiteBridge
-        IsClosed
-```
-
-```C#
-Microsoft.UI.Input
- 
-    FocusNavigationReason
-    FocusNavigationRequest
-    FocusNavigationRequestEventArgs
-    FocusNavigationResult
-    InputFocusController
-        DepartFocus
-        NavigateFocusRequested
- 
-    InputFocusNavigationHost
-```
-
-```C#
-Microsoft.UI.Xaml
- 
-    DebugSettings
-        LayoutCycleDebugBreaks
-        LayoutCycleTracing
- 
-    LayoutCycleDebugBreakLevel
-    LayoutCycleTracingLevel
-    XamlIsland
-```
-
-```C#
-Microsoft.UI.Xaml.Controls
- 
-    SelectionModel
-        SelectAllFlat
-```
-
-```C#
-Microsoft.UI.Xaml.Core.Direct
- 
-    XamlPropertyIndex
-        FlyoutBase_SystemBackdrop
-        Popup_SystemBackdrop
-```
-
-```C#
-Microsoft.Windows.Management.Deployment
- 
-    AddPackageOptions
-    AddPackageSetOptions
-    DeploymentPriority
-    DeploymentProcessingModel
-    EnsureIsReadyOptions
-    FindPackageSetOptions
-    PackageDeploymentContract
-    PackageDeploymentManager
-    PackageDeploymentProgress
-    PackageDeploymentProgressStatus
-    PackageDeploymentResult
-    PackageDeploymentStatus
-    PackageRuntimeManager
-    PackageSet
-    PackageSetItem
-    PackageSetItemRuntimeDisposition
-    PackageSetManager
-    PackageSetRuntimeDisposition
-    PackageVolume
-    PackageVolumeManager
-    PackageVolumeStatus
-    RegisterPackageOptions
-    RemovePackageOptions
-    StagePackageOptions
-    StubPackageOption
-```
-
-## Version 1.4 Experimental (1.4.0-experimental1)
-
-This is the latest release of the experimental channel.
-To download, retarget your WinAppSDK NuGet version to `1.4.230518007-experimental1`.
-
-### Bug fixes
-This release contains miscellaneous fixes, including the following:
-
-- Fixed an issue where enabling the debug settings framerate counter in a new WinUI desktop application caused an access violation. For more information, see issue [2835](https://github.com/microsoft/microsoft-ui-xaml/issues/2835) on GitHub.
-- Fixed an issue where horizontal scrolling on a touchpad did not work in a WebView2 web page. For more information, see issue [7772](https://github.com/microsoft/microsoft-ui-xaml/issues/7772) on GitHub.
-
-### Additional Experimental APIs
-This release includes the following new and modified experimental APIs:
-
-```C#
-Microsoft.UI
-
-   IClosableNotifier
-```
-
-```C#
-Microsoft.UI.Composition.SystemBackdrops
-
-   DesktopAcrylicController
-       Closed
-       FrameworkClosed
-       Kind
-
-   DesktopAcrylicKind
-   MicaController
-       Closed
-       FrameworkClosed
-```
-```C#
-Microsoft.UI.Content
-
-   ContentAppWindowBridge
-       SettingChanged
-
-   ContentEnvironmentSettingChangedEventArgs
-   ContentExternalBackdropLink
-   ContentExternalOutputLink
-       ExternalOutputBorderMode
-
-   ContentIsland
-       FrameworkClosed
-
-   ContentIslandWindow
-       SettingChanged
-
-   ContentSite
-       FrameworkClosed
-
-   ContentSiteWindow
-       NotifySettingChanged
-       SettingChanged
-
-   CoreWindowTopLevelWindowBridge
-       SettingChanged
-
-   DesktopSiteBridge
-       Closed
-       FrameworkClosed
-
-   IContentWindow
-       SettingChanged
-
-   SystemVisualSiteBridge
-       Closed
-       FrameworkClosed
 ```
 
 ```C#
 Microsoft.UI.Input
 
-   InputLayoutPolicy
-   InputNonClientPointerSource
-       ConfigurationChanged
-       GetForWindowId
+    EnteredMoveSizeEventArgs
+    EnteringMoveSizeEventArgs
+    ExitedMoveSizeEventArgs
+    InputKeyboardSource
+        GetForWindowId
 
-   NonClientRegionConfigurationChangedEventArgs
+    InputLayoutPolicy
+    InputLightDismissAction
+        GetForIsland
+
+    InputNonClientPointerSource
+        EnteredMoveSize
+        EnteringMoveSize
+        ExitedMoveSize
+        WindowRectChanged
+        WindowRectChanging
+
+    InputPointerActivationBehavior
+    InputPointerSource
+        ActivationBehavior
+        DirectManipulationHitTest
+        GetForVisual
+        GetForWindowId
+        RemoveForVisual
+        TouchHitTesting
+        TrySetDeviceKinds
+
+    MoveSizeOperation
+    ProximityEvaluation
+    TouchHitTestingEventArgs
+    WindowRectChangedEventArgs
+    WindowRectChangingEventArgs
 ```
 
 ```C#
-Microsoft.UI.System
+Microsoft.UI.Input.Experimental
 
-   ThemeSettings
+    ExpInputSite
+    ExpPointerPoint
 ```
 
 ```C#
 Microsoft.UI.Windowing
 
-   DisplayArea
-       GetMetricsFromWindowId
+    AppWindow
+        DefaultTitleBarShouldMatchAppModeTheme
+
+    DisplayArea
+        GetMetricsFromWindowId
 ```
 
 ```C#
 Microsoft.UI.Xaml
 
-   XamlRoot
-       ContentWindow
+    XamlIsland
+    XamlRoot
+        CoordinateConverter
+        TryGetContentIsland
+```
+
+```C#
+Microsoft.UI.Xaml.Automation.Peers
+
+    PagerControlAutomationPeer
+    ScrollPresenterAutomationPeer
 ```
 
 ```C#
 Microsoft.UI.Xaml.Controls
 
-   ItemContainer
-       Child
-       ChildProperty
+    ContentDialogPlacement
+        UnconstrainedPopup
 
-   ItemContainerMultiSelectMode
-       Extended
-
-   ItemsView
-       Animator
-       AnimatorProperty
-
-   MenuFlyoutPresenter
-       SystemBackdrop
-       SystemBackdropProperty
-
-   RiverFlowLayout
-       InvalidateItemsInfo
-       RequestedRangeCount
-       RequestedRangeStartIndex
-
-   RiverFlowLayoutElementAnimator
-```
-
-```C#
-Microsoft.UI.Xaml.Controls.Primitives
-
-   CommandBarFlyoutCommandBar
-       SystemBackdrop
-       SystemBackdropProperty
-```
-
-```C#
-Microsoft.UI.Xaml.Input
-
-   AccessKeyManager
-       EnterDisplayMode
-```
-
-## Version 1.3 Experimental (1.3.0-experimental1)
-
-This is the latest release of the experimental channel.
-To download, retarget your WinAppSDK NuGet version to `1.3.230202101-experimental1`.
-
-### XAML Backdrop APIs
-With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI 3 app.
-See the [Xaml Backdrop API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/33541da536673fa360212e94e4a6ac896b8b49fb/specs/xaml-backdrop-api.md?plain=1#L39) on GitHub for more information about the **Window.SystemBackdrop** property.
-
-Of note in this release, you're able to set the backdrop only in code-behind, as below. Setting `<Window.SystemBackdrop>` in markup results in a compile error. 
-Additionally, the Xaml Backdrop APIs are currently missing an 'experimental' tag as they are under active development.
-
-```csharp
-public MainWindow()
-{
-    this.InitializeComponent();
-
-    this.SystemBackdrop = new MicaBackdrop();
-}
-```
-
-### Window.AppWindow
-Replacing several lines of boilerplate code, you're now able to use AppWindow APIs directly from an **Window** through `Window.AppWindow`. See the [Window.AppWindow API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/appwindow-spec.md) on GitHub for additional background and usage information.
-
-### New features from across WinAppSDK
-- `ApplicationModel.DynamicDependency`: `PackageDependency.PackageGraphRevisionId` that replaces the deprecated MddGetGenerationId.
-- Environment Manager: `EnvironmentManager.AreChangesTracked` to inform you whether changes to the environment manager are able to be tracked in your application. See the [Environment Manager API spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppLifecycle/EnvironmentVariables/AppLifecycle%20-%20Environment%20Variables%20(EV).md) on GitHub for more information.
-- MRT Core: A new event, `Application.ResourceManagerInitializing` allows your app to provide its own implementation of the `IResourceManager` interface, and gives you access to the ResourceManager that WinUI uses to resolve resource URIs.
-- With the latest experimental VSIX, you're now able to convert your app between unpackaged and packaged through the Visual Studio menu instead of in your project file.
-- A new event, `DebugSettings.XamlResourceReferenceFailed` is now raised when a referenced Static/ThemeResource lookup can't be resolved. This event gives access to a trace that details where the framework searched for that key in order to better enable you to debug Static & ThemeResource lookup failures. For more information, see issues [4972](https://github.com/microsoft/microsoft-ui-xaml/issues/4972), [2350](https://github.com/microsoft/microsoft-ui-xaml/issues/2350), and [6073](https://github.com/microsoft/microsoft-ui-xaml/issues/6073) on GitHub.
-
-### Bug fixes
-- Fixed issues with touch input causing the soft keyboard to not appear on text boxes. For more information, see issue [6291](https://github.com/microsoft/microsoft-ui-xaml/issues/6291) on GitHub.
-- Fixed issue causing an ItemsRepeater with an IElementFactory as its ItemTemplate to throw an ArgumentException. For more info, see issue [4705](https://github.com/microsoft/microsoft-ui-xaml/issues/4705) on GitHub.
-
-### Additional Experimental APIs
-This release also includes several APIs that are in early development.
-
-The list below details the APIs introduced in this experimental release that we don't plan to ship in the 1.3.0 stable release.
-
-```csharp
-**Microsoft.UI.Content**
-
-    DesktopSiteBridge
-        GetInputEnabledToRoot
-        GetVisibleToRoot
-        InputEnabled
-```
-
-```csharp
-**Microsoft.UI.Dispatching**
-
-    DispatcherQueue
-        FrameworkShutdownStarting
-```
-
-```csharp
-**Microsoft.UI.Input**
-
-    InputLightDismissAction
-        GetForIsland
-
-    InputNonClientPointerSource
-    InputPointerActivationBehavior
-    InputPointerSource
-        ActivationBehavior
-
-    NonClientRegionCaptionTappedEventArgs
-    NonClientRegionHoverEventArgs
-    NonClientRegionKind
-```
-
-```csharp
-**Microsoft.UI.Input.DragDrop**
-
-    DragDropManager
-    DragDropModifiers
-    DragInfo
-    DragOperation
-    DragUIContentMode
-    DragUIOverride
-    DropOperationTargetRequestedEventArgs
-    IDropOperationTarget
-```
-
-```csharp
-**Microsoft.UI.Xaml.Automation.Peers**
-
-    ItemContainerAutomationPeer
-    ItemsViewAutomationPeer
-```
-
-```csharp
-**Microsoft.UI.Xaml.Controls**
-
-    AnnotatedScrollBar
-    AnnotatedScrollBarLabel
-    AnnotatedScrollBarScrollEventArgs
-    AnnotatedScrollBarScrollEventType
-    AnnotatedScrollBarScrollOffsetRequestedEventArgs
-    AnnotatedScrollBarSubLabelRequestedEventArgs
-    AnnotatedScrollBarValueRequestedEventArgs
     ElementFactory
-        GetElement
-        GetElementCore
-        RecycleElement
-        RecycleElementCore
-
-    IndexBasedLayoutOrientation
+    FlowLayout
+    FlowLayoutAnchorInfo
+    FlowLayoutLineAlignment
+    FlowLayoutState
+    IApplicationViewSpanningRects
+    IndexPath
+    ISelfPlayingAnimatedVisual
     ItemContainer
+        CanUserInvoke
+        CanUserInvokeProperty
+        CanUserSelect
+        CanUserSelectProperty
+        ItemInvoked
+        MultiSelectMode
+        MultiSelectModeProperty
+
     ItemContainerInteractionTrigger
     ItemContainerInvokedEventArgs
     ItemContainerMultiSelectMode
     ItemContainerUserInvokeMode
     ItemContainerUserSelectMode
-    ItemsView
-    ItemsViewItemInvokedEventArgs
-    ItemsViewItemInvokeMode
-    ItemsViewSelectionMode
-    Layout
-        IndexBasedLayoutOrientation
+    LayoutPanel
+    NumberBox
+        InputScope
+        InputScopeProperty
+        TextAlignment
+        TextAlignmentProperty
 
-    NonVirtualizingLayout
-        IndexBasedLayoutOrientationCore
+    PagerControl
+    PagerControlButtonVisibility
+    PagerControlDisplayMode
+    PagerControlSelectedIndexChangedEventArgs
+    PagerControlTemplateSettings
+    ProgressRing
+        DeterminateSource
+        DeterminateSourceProperty
+        IndeterminateSource
+        IndeterminateSourceProperty
 
-    RiverFlowLayout
-    RiverFlowLayoutItemsInfoRequestedEventArgs
-    RiverFlowLayoutItemsJustification
-    RiverFlowLayoutItemsStretch
-    VirtualizingLayout
-        IndexBasedLayoutOrientationCore
+    RecyclePool
+    RecyclingElementFactory
+    ScrollingViewChangingEventArgs
+    ScrollView
+        ViewChanging
 
-    VirtualizingLayoutContext
-        VisibleRect
-        VisibleRectCore
+    SelectionModel
+    SelectionModelChildrenRequestedEventArgs
+    SelectionModelSelectionChangedEventArgs
+    SelectTemplateEventArgs
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+
+    StackLayoutState
+    TabView
+        CanTearOutTabs
+        CanTearOutTabsProperty
+        ExternalTornOutTabsDropped
+        ExternalTornOutTabsDropping
+        TabTearOutRequested
+        TabTearOutWindowRequested
+
+    TabViewExternalTornOutTabsDroppedEventArgs
+    TabViewExternalTornOutTabsDroppingEventArgs
+    TabViewTabTearOutRequestedEventArgs
+    TabViewTabTearOutWindowRequestedEventArgs
+    TitleBar
+    TitleBarAutomationPeer
+    TitleBarTemplateSettings
+    UniformGridLayoutState
 ```
 
-```csharp
-**Microsoft.Graphics.Display**
+```C#
+Microsoft.UI.Xaml.Controls.Primitives
 
-    DisplayInformation
-        AngularOffsetFromNativeOrientation
-        DpiChanged
-        OrientationChanged
-        RawDpi
-        RawPixelsPerViewPixel
-
-    DisplayOrientation
+    ScrollPresenter
+        ViewChanging
 ```
 
-```csharp
-**Microsoft.UI.Xaml.Hosting**
+```C#
+Microsoft.Windows.ApplicationModel.WindowsAppRuntime
 
-    DesktopWindowXamlSource
-        CreateSiteBridge
-        SiteBridge
-        SystemBackdrop
+    DeploymentManager
+        Repair
+
+    DeploymentStatus
+        PackageRepairFailed
+
+    ReleaseInfo
+    RuntimeInfo
+    VersionInfoContract
 ```
-## Version 1.2 Experimental (1.2.0-experimental2)
 
-This is the latest release of the experimental channel. It supports all [experimental channel features](release-channels.md#features-available-by-release-channel) and features from [1.2.0-preview 1](preview-channel.md#version-12-preview-1-120-preview1).
+```C#
+Microsoft.Windows.Widgets.Feeds.Providers
 
-To download, retarget your WinAppSDK NuGet version to `1.2.220909.2-experimental2`.
+    FeedManager
+        TryRemoveAnnouncementById
 
-### Fixed issue
-In upcoming Windows Insider Preview builds, applications using Windows App SDK would fail to launch.
+    IFeedManager3
+```
 
-## Version 1.2 Experimental (1.2.0-experimental1)
+```C#
+Microsoft.Windows.Widgets.Notifications
 
-This is the latest release of the experimental channel. It supports all [experimental channel features](release-channels.md#features-available-by-release-channel).
+    WidgetAnnouncement
+    WidgetAnnouncementInvokedArgs
+```
 
-To download, retarget your WinAppSDK NuGet version to `1.2.220727.1-experimental1`.
+```C#
+Microsoft.Windows.Widgets.Providers
 
-### Input & Composition
-First introduced in Windows App SDK 0.8, there are several experimental classes in the
-[Microsoft.UI.Input.Experimental](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.experimental) & [Microsoft.UI.Composition.Experimental](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.experimental) namespaces.
+    IWidgetAnnouncementInvokedTarget
+    IWidgetManager2
+    IWidgetManager3
+    IWidgetProviderMessage
+    IWidgetResourceProvider
+    WidgetManager
+        SendMessageToContent
+        TryRemoveAnnouncementById
+        TryShowAnnouncement
 
-New to this release:
-- [InputPointerSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputpointersource) has a new static factory, GetforWindowId.
+    WidgetMessageReceivedArgs
+    WidgetResourceRequest
+    WidgetResourceRequestedArgs
+    WidgetResourceResponse
+```
 
-### Content
-New to this release, the experimental classes in the Microsoft.UI.Content namespace provide the building blocks of interactive content. These are low level primitives that can be assembled into content to provide the interactive experience for an end user. The content defines the structure for: rendering output with animations, processing input on different targets, providing accessibility representation, and handling host state changes.
+### Known issues
 
-Notable APIs:
-- `ContentIsland` - brings together Output, Input, and Accessibility and provides the abstraction for interactive content. A custom visual tree can be constructed and made interactive with these APIs.
-- `DesktopChildSiteBridge` - enables a `ContentIsland` to be connected into a HWND-based hierarchy.
+- For TabView tab tear-out, pointer input behavior for *CanTearOutTabs* is incorrect on monitors with scale factor different from 100%. This will be fixed in the next 1.6 release.
 
-Check out the [sample on GitHub](https://aka.ms/windowsappsdk/1.2/1.2.0-experimental1/content-islands-sample) for more information.
+### Bug fixes
 
-### Dispatching
-[DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) now dispatches as reentrant. Previously, no more than a single [DispatcherQueueHandler](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuehandler) callback could be active on a single thread at a time. Now, if a handler starts a nested message pump, additional callbacks dispatch as reentrant. This matches Win32 behavior around window messages and nested message pumps.
+- Fixed an issue from 1.6-experimental1 where `NumberBox` wasn't using the correct foreground and background colors. For more info, see GitHub issue [#9714](https://github.com/microsoft/microsoft-ui-xaml/issues/9714).
+- Fixed an issue where duplicate `KeyUp` events were raised for arrow and tab keys. For more info, see GitHub issue [#9399](https://github.com/microsoft/microsoft-ui-xaml/issues/9399).
+- Fixed an issue where the `PowerManager.SystemSuspendStatusChanged` event was unusable to get the `SystemSuspendStatus`. For more info, see GitHub issue [#2833](https://github.com/microsoft/WindowsAppSDK/issues/2833).
+- Fixed an issue where initial keyboard focus was not correctly given to a `WebView2` when that was the only control in the window.
+- Fixed an issue when using `ExtendsContentIntoTitleBar=true` where the Min/Max/Close buttons did not correctly appear in the UI Automation, which prevented Voice Access from showing numbers for those buttons.
+- Fixed an issue where an app might crash in a lock check due to unexpected reentrancy.
+- Fixed an issue from 1.6-experimental1 where `TitleBar` only showed the Icon and Title because some elements did not show up on load.
+- Fixed an issue where `Hyperlink` colors did not correctly update when switching into a high contrast theme.
+- Fixed an issue where changing the collection of a `ListView` in a background window may incorrectly move that window to the foreground and take focus.
+- Fixed an issue from 1.6-experimental1 where setting `AcrylicBrush.TintLuminosityOpacity` in .xaml in a class library project would crash with a type conversion error.
+- Fixed an issue where calling `ItemsRepeater.StartBringIntoView` could sometimes cause items to disappear.
+- Fixed an issue where touching and dragging on a `Button` in a `ScrollViewer` would leave it in a pressed state.
+- Updated IntelliSense, which was missing information for many newer types and members.
 
-### Notifications
-Registering app display name and icon for app notification is now supported. Check out the [spec on GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md) for additional information.
+## Version 1.6 Experimental (1.6.0-experimental1)
 
-### WinUI 3
+This is the latest release of the experimental channel.
 
-- Controls and styles are up to date with the [WinUI 2.8](../winui/winui2/release-notes/winui-2.8.md) release.
-- UWP is no longer supported in the experimental releases.
+To download, retarget your WinAppSDK NuGet version to `1.6.240531000-experimental1`.
 
-### Other limitations and known issues
+### Required C# project changes for 1.6-experimental1
 
-- Apps need to be rebuilt after updating to Windows App SDK 1.2-experimental1 due to a breaking change introduced in the ABI.
-- Apps that reference a package that depends on WebView2 (like Microsoft.Identity.Client) fail to build. This is caused by conflicting binaries at build time. See [issue 2492](https://github.com/microsoft/WindowsAppSDK/issues/2492) on GitHub for more information.
-- Using `dotnet build` with a WinAppSDK C# class library project may see a build error "Microsoft.Build.Packaging.Pri.Tasks.ExpandPriContent task could not be loaded". To resolve this issue set `<EnableMsixTooling>true</EnableMsixTooling>` in your project file.
-- The default WinAppSDK templates note that the MaxVersionTested="10.0.19041.0" when it should be "10.0.22000.0". For full support of some features, notably UnlockedDEHs, update the MaxVersionTested to "10.0.22000.0" in your project file.
+In 1.6-experimental1, Windows App SDK managed apps require [Microsoft.Windows.SDK.NET.Ref](https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref) `*.*.*.35-preview` (or later), which can be specified via [WindowsSdkPackageVersion](/dotnet/core/compatibility/sdk/5.0/override-windows-sdk-package-version) in your `csproj` file. For example:
 
-## Version 1.0 Experimental (1.0.0-experimental1)
+```XML
+<Project Sdk="Microsoft.NET.Sdk">
+   <PropertyGroup>
+       <OutputType>WinExe</OutputType>
+       <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+       <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+       <WindowsSdkPackageVersion>10.0.22621.35-preview</WindowsSdkPackageVersion>
+   <PropertyGroup>
+   ...
+```
 
-This release supports all [experimental channel features](release-channels.md#features-available-by-release-channel).
+In addition, Windows App SDK managed apps using C#/WinRT should update to [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT) `2.1.0-prerelease.240602.1` (or later).
 
-> [!div class="button"]
-> [Download](https://aka.ms/windowsappsdk/experimental-vsix)
+### Native AOT support
 
-The following sections describe new and updated features, limitations, and known issues for this release.
+> [!NOTE]
+> For Windows App SDK 1.6.0 stable, the following guidance is obsolete. Projects should instead simply set `PublishAot` to **true** unconditionally.
 
-### WinUI 3
+The .NET `PublishAot` project property is now supported for native Ahead-Of-Time compilation. For details, see [Native AOT Deployment](/dotnet/core/deploying/native-aot/). Because AOT builds on Trimming support, much of the following trimming-related guidance applies to AOT as well.
 
-This release of WinUI 3 is focused on building towards new features for 1.0 stable and fixing bugs.
+For `PublishAot` support, in addition to the C# project changes described in the previous section you'll also need a package reference to [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT) `2.1.0-prerelease.240602.1` (or later) to enable the source generator from that package. 
 
-- **New features**: Support for showing a ContentDialog per window rather than per thread.
-- **Bugs**: For the full list of bugs addressed in this release, see [our GitHub repo](https://aka.ms/winui3/1.0-exp-announcement). 
-- **Samples**: To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app [from GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main), or download the app [from the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+Because the Windows App SDK invokes publishing targets when F5 deploying, we recommend enabling `PublishAot` at NuGet restore time by adding this to your `csproj` file:
 
-For more information or to get started developing with WinUI, see:
+```XML
+<PublishAot Condition="'$(ExcludeRestorePackageImports)'=='true'">true</PublishAot>
+```
 
-- [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
+In addition, we recommend conditionally enabling `PublishAot` when publishing release configurations, either in publish profiles or the project:
 
-### Push notifications (experimental feature)
+```XML
+<PublishAot Condition="'$(Configuration)'=='Release'">true</PublishAot>
+```
 
-This release introduces a push notifications API that can be used by packaged desktop apps with Azure app registration-based identities. To use this feature, you must [sign up for our private preview](https://aka.ms/windowsappsdk/push-private-preview).
+#### Resolving AOT Issues
 
-Important limitations:
+In this release, the developer is responsible for ensuring that all types are properly rooted to avoid trimming (such as with reflection-based `{Binding}` targets). Later releases will enhance both C#/WinRT and the XAML Compiler to automate rooting where possible, alert developers to trimming risks, and provide mechanisms to resolve.
 
-- Push notifications are only supported in MSIX packaged apps that are running on Windows 10 version 2004 (build 19041) or later releases.
-- Microsoft reserves the right to disable or revoke apps from push notifications during the private preview.
-- Microsoft does not guarantee the reliability or latency of push notifications.
-- During the private preview, push notification volume is limited to 1 million per month.
+##### Partial Classes
 
-For more information, see [Push notifications](notifications/push-notifications/index.md).
+C#/WinRT also includes `PublishAot` support in version 2.1.0-prerelease.240602.1. To enable a class for AOT publishing with C#/WinRT, it must first be marked `partial`. This allows the C#/WinRT AOT source analyzer to attribute the classes for static analysis. Only classes (which contain methods, the targets of trimming) require this attribute.
 
-### Windowing 
+##### Reflection-Free Techniques
 
-This release includes updates to the windowing APIs. These are a set of high-level windowing APIs, centered around the AppWindow class, which allows for easy-to-use windowing scenarios that integrates well with the Windows user experience and other apps. This is similar to, but not the same as, the UWP AppWindow.
+To enable AOT compatibility, reflection-based techniques should be replaced with statically typed serialization, AppContext.BaseDirectory, typeof(), etc. For details, see [Introduction to trim warnings](/dotnet/core/deploying/trimming/fixing-warnings).
 
-Important limitations:
+##### Rooting Types
 
-- This release of `AppWindow` is currently available only to Win32 apps (both packaged and unpackaged).
-- The Windows App SDK does not currently provide methods for attaching UI framework content to an `AppWindow`; you're limited to using the `HWND` interop access methods.
-- The Windowing API's will currently not work on Windows version 1809 and 1903 for AMD64.
+Until full support for `{Binding}` is implemented, types may be preserved from trimming as follows:
+Given project `P` consuming assembly `A` with type `T` in namespace `N`, which is only dynamically referenced (so normally trimmed), `T` can be preserved via:
 
-For more information, see [Manage app windows](windowing/windowing-overview.md).
+`P.csproj`:
 
-### Deployment for unpackaged apps 
+```xml
+<ItemGroup>
+    <TrimmerRootDescriptor Include="ILLink.Descriptors.xml" />
+</ItemGroup>
+```
 
-This release introduces updates to the *dynamic dependencies* feature, including the *bootstrapper API*.
+`ILLink.Descriptors.xml`:
 
-Important limitations:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+    <assembly fullname="A">
+        <type fullname="N.T" preserve="all" />
+    </assembly>
+</linker>
+```
 
-- The dynamic dependencies feature is only supported for unpackaged apps.
-- Elevated callers aren't supported.
+For complete root descriptor XML expression syntax, see [Root Descriptors](/dotnet/core/deploying/trimming/trimming-options?pivots=dotnet-8-0#root-descriptors).
 
-For more information, see the following articles:
+> [!NOTE]
+> Dependency packages that have not yet adopted AOT support may exhibit runtime issues.
 
-- [Use MSIX framework packages dynamically from your desktop app](../desktop/modernize/framework-packages/framework-packages-overview.md)
-- [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md)
+### Improved TabView tab tear-out
 
-### Other limitations and known issues
+`TabView` supports a new `CanTearOutTabs` mode which provides an enhanced experience for dragging tabs and dragging out to a new window. When this new option is enabled, tab dragging is very much like the tab drag experience in Edge and Chrome, where a new window is immediately created during the drag, allowing the user to drag it to the edge of the screen to maximize or snap the window in one smooth motion. This implementation also doesn't use drag-and-drop APIs, so it isn't impacted by any limitations in those APIs. Notably, tab tear-out is supported in processes running elevated as Administrator.
 
-- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
-- **.NET apps must target build 18362 or later**: Your TFM must be set to `net6.0-windows10.0.18362` or later, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or later. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
-- **C# apps using 1.0 Experimental must use one of the following .NET SDKs**: 
-	- .NET 6 SDK or later (see [Download .NET](https://dotnet.microsoft.com/download) and [.NET 5 will reach End of Support on May 10, 2022](https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)).
+**Known issue:** In this release, pointer input behavior for `CanTearOutTabs` is incorrect on monitors with scale factor different than 100%. This will be fixed in the next 1.6 release.
 
-## Version 0.8 Preview (0.8.0-preview)
+### New TitleBar control
 
-This release supports all [experimental channel features](release-channels.md#features-available-by-release-channel).
+A new `TitleBar` control makes it easy to create a great, customizable titlebar for your app with the following features:
 
-> [!div class="button"]
-> [Download](https://aka.ms/projectreunion/previewdownload)
+- Configurable Icon, Title, and Subtitle properties
+- An integrated back button
+- The ability to add a custom control like a search box
+- Automatic hiding and showing of elements based on window width
+- Affordances for showing active or inactive window state
+- Support for default titlebar features including draggable regions in empty areas, theme responsiveness, default caption (min/max/close) buttons, and built-in accessibility support
 
-The following sections describe new and updated features, limitations, and known issues for this release.
+The `TitleBar` control is designed to support various combinations of titlebars, making it flexible to create the experience you want without having to write a lot of custom code. We took feedback from the [community toolkit titlebar prototype](https://github.com/CommunityToolkit/Labs-Windows/discussions/454) and look forward to additional feedback!
 
-### WinUI 3
+**Known issue:** In this release, the `TitleBar` only shows the Icon and Title due to an issue where some elements don't show up on load. To work around this, use the following code to load the other elements (Subtitle, Header, Content, and Footer):
 
-This release introduces critical bug fixes (including those fixed in 0.5 servicing releases) and other changes for WinUI. For a complete list, see the [WinUI 3 - Windows App SDK 0.8 release notes](../winui/winui3/release-notes/release-notes-08-preview.md).
+```C#
+public MainWindow()
+  {
+      this.InitializeComponent();
+      this.ExtendsContentIntoTitleBar = true;
+      this.SetTitleBar(MyTitleBar);
 
-### App lifecycle (experimental feature)
+      MyTitleBar.Loaded += MyTitleBar_Loaded;
+  }
 
-This release introduces new experimental features related to managing the app lifecycle of your app.
+  private void MyTitleBar_Loaded(object sender, RoutedEventArgs e)
+  {
+      // Parts get delay loaded. If you have the parts, make them visible.
+      VisualStateManager.GoToState(MyTitleBar, "SubtitleTextVisible", false);
+      VisualStateManager.GoToState(MyTitleBar, "HeaderVisible", false);
+      VisualStateManager.GoToState(MyTitleBar, "ContentVisible", false);
+      VisualStateManager.GoToState(MyTitleBar, "FooterVisible", false);
 
-- All apps (packaged and unpackaged) can use **GetActivatedEventArgs** (although packaged apps can already use the implementation of this in the platform).
-- Only unpackaged apps can use the **RegisterForXXXActivation** functions.
-- Packaged desktop apps can use app lifecycle instancing.
+      // Run layout so we re-calculate the drag regions.
+      MyTitleBar.InvalidateMeasure();
+  }
+```
 
+This issue will be fixed in the next 1.6 release.
 
-For more information, see [App instancing](applifecycle/applifecycle-instancing.md) and [Rich activation](applifecycle/applifecycle-rich-activation.md).
+### Other notable changes
 
-### Deployment for unpackaged apps (experimental feature)
+- Unsealed `ItemsWrapGrid`. This should be a backward-compatible change.
+- `PipsPager` supports a new mode where it can wrap between the first and list items.
+- `RatingControl` is now more customizable, by moving some hard-coded style properties to theme resources. This allows apps to override these values to better customize the appearance of RatingControl.
 
-This release introduces new experimental deployment features for unpackaged apps. Unpackaged apps can now dynamically take a dependency on the Windows App SDK runtime packages so you can continue using your existing MSI or setup program for app deployment. This is available through the following features:
+### New APIs for 1.6-experimental1
 
-- Standalone installer for Windows App SDK.
-- MSIX package bundle that includes dynamic dependencies functionality.
+1.6-experimental1 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
 
-For more info, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md).
+```C#
+Microsoft.UI.Xaml.Controls
 
-### DWriteCore
+    PipsPager
+        WrapMode
+        WrapModeProperty
 
-This release adds the following features:  
+    PipsPagerWrapMode
+        None
+        Wrap
+```
 
-- Text decorations (underline and strikethrough in the text layout API)
-- Vertical text layout
-- Font face kerning API
-- Experimental support for unpackaged apps
+### Additional 1.6-experimental1 APIs
 
-For more information, see [Render text with DWriteCore](dwritecore.md).
+This release includes the following new and modified experimental APIs:
 
-### MRT Core
+```C#
+Microsoft.UI.Content
 
-This release adds the following features:
+    ChildContentLink
+    ContentExternalOutputLink
+        IsAboveContent
 
-- The build action for resources is now automatically set, reducing the need for manual project configuration.
-- Experimental support for unpackaged apps.
+    ContentIsland
+        Children
+        Create
+        FindAllForCompositor
+        GetByVisual
+        Offset
+        RotationAngleInDegrees
 
-For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overview.md).
+    ContentSite
+        Offset
+        RotationAngleInDegrees
 
-### Limitations and known issues
+    ContentSiteView
+        Offset
+        RotationAngleInDegrees
 
-- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
-- **.NET apps must target build 18362 or later**: Your TFM must be set to `net6.0-windows10.0.18362` or later, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or later. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
+    IContentLink
+    IContentSiteBridge2
+    ReadOnlyDesktopSiteBridge
+```
 
-### Samples
-
-The [Windows App SDK samples](https://github.com/microsoft/Project-Reunion-Samples) do not yet work with this release. New and updated samples, including samples that demonstrate new features such as unpackaged app deployment, are coming soon.
+```C#
+Microsoft.UI.Input
+
+    EnteredMoveSizeEventArgs
+    EnteringMoveSizeEventArgs
+    ExitedMoveSizeEventArgs
+    InputNonClientPointerSource
+        EnteredMoveSize
+        EnteringMoveSize
+        ExitedMoveSize
+        WindowRectChanged
+        WindowRectChanging
+
+    MoveSizeOperation
+    WindowRectChangedEventArgs
+    WindowRectChangingEventArgs
+```
+
+```C#
+Microsoft.UI.Windowing
+
+    AppWindow
+        DefaultTitleBarShouldMatchAppModeTheme
+```
+
+```C#
+Microsoft.UI.Xaml
+
+    XamlRoot
+        CoordinateConverter
+        TryGetContentIsland
+```
+
+```C#
+Microsoft.UI.Xaml.Controls
+
+    ScrollingViewChangingEventArgs
+    ScrollView
+        ViewChanging
+
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+
+    TabView
+        CanTearOutTabs
+        CanTearOutTabsProperty
+        ExternalTornOutTabsDropped
+        ExternalTornOutTabsDropping
+        TabTearOutRequested
+        TabTearOutWindowRequested
+
+    TabViewExternalTornOutTabsDroppedEventArgs
+    TabViewExternalTornOutTabsDroppingEventArgs
+    TabViewTabTearOutRequestedEventArgs
+    TabViewTabTearOutWindowRequestedEventArgs
+    TitleBar
+    TitleBarAutomationPeer
+    TitleBarTemplateSettings
+```
+
+```C#
+Microsoft.UI.Xaml.Controls.Primitives
+
+    ScrollPresenter
+        ViewChanging
+```
+
+### Other known issues
+
+- Non-XAML applications that use `Microsoft.UI.Content.ContentIslands` and do not handle the *ContentIsland.AutomationProviderRequested* event (or return *nullptr* as the automation provider) will crash if any accessibility or UI automation tool is enabled such as Voice Access, Narrator, Accessibility Insights, Inspect.exe, etc.
+
+### Bug fixes
+
+This release includes the following bug fixes:
+
+- Fixed an issue where clicking in an empty area of a `ScrollViewer` would always move focus to the first focusable control in the `ScrollViewer` and scroll that control into view. For more info, see GitHub issue [#597](https://github.com/microsoft/microsoft-ui-xaml/issues/597).
+- Fixed an issue where the `Window.Activated` event sometimes fired multiple times. For more info, see GitHub issue [#7343](https://github.com/microsoft/microsoft-ui-xaml/issues/7343).
+- Fixed an issue setting the `NavigationViewItem.IsSelected` property to `true` prevents its children from showing when expanded. For more info, see GitHub issue [#7930](https://github.com/microsoft/microsoft-ui-xaml/issues/7930).
+- Fixed an issue where `MediaPlayerElement` would not properly display captions with `None` or `DropShadow` edge effects. For more info, see GitHub issue [#7981](https://github.com/microsoft/microsoft-ui-xaml/issues/7981).
+- Fixed an issue where the `Flyout.ShowMode` property was not used when showing the flyout. For more info, see GitHub issue [#7987](https://github.com/microsoft/microsoft-ui-xaml/issues/7987).
+- Fixed an issue where `NumberBox` would sometimes have rounding errors. For more info, see GitHub issue [#8780](https://github.com/microsoft/microsoft-ui-xaml/issues/8780).
+- Fixed an issue where using a library compiled against an older version of WinAppSDK can hit a trying to find a type or property. 
+For more info, see GitHub issue [#8810](https://github.com/microsoft/microsoft-ui-xaml/issues/8810).
+- Fixed an issue where initial keyboard focus is not set when launching a window. For more info, see GitHub issue [#8816](https://github.com/microsoft/microsoft-ui-xaml/issues/8816).
+- Fixed an issue where `FlyoutShowMode.TransientWithDismissOnPointerMoveAway` didn't work after the first time it is shown. 
+For more info, see GitHub issue [#8896](https://github.com/microsoft/microsoft-ui-xaml/issues/8896).
+- Fixed an issue where some controls did not correctly template bind `Foreground` and `Background` properties. For more info, see GitHub issue [#7070](https://github.com/microsoft/microsoft-ui-xaml/issues/7070), [#9020](https://github.com/microsoft/microsoft-ui-xaml/issues/9020), [#9029](https://github.com/microsoft/microsoft-ui-xaml/issues/9029), [#9083](https://github.com/microsoft/microsoft-ui-xaml/issues/9083) and [#9102](https://github.com/microsoft/microsoft-ui-xaml/issues/9102).
+- Fixed an issue where `ThemeResource`s used in `VisualStateManager` setters wouldn't update on theme change. This commonly affected controls in flyouts. For more info, see GitHub issue [#9198](https://github.com/microsoft/microsoft-ui-xaml/issues/9198).
+- Fixed an issue where `WebView` would lose key focus, resulting in extra blur/focus events and other issues. 
+For more info, see GitHub issue [#9288](https://github.com/microsoft/microsoft-ui-xaml/issues/9288).
+- Fixed an issue where `NavigationView` can show a binding error in debug output. For more info, see GitHub issue [#9384](https://github.com/microsoft/microsoft-ui-xaml/issues/9384).
+- Fixed an issue where SVG files defining a negative viewbox no longer rendered. For more info, see GitHub issue [#9415](https://github.com/microsoft/microsoft-ui-xaml/issues/9415).
+- Fixed an issue where changing `ItemsView.Layout` orientation caused an item to be removed. For more info, see GitHub issue [#9422](https://github.com/microsoft/microsoft-ui-xaml/issues/9422).
+- Fixed an issue where scrolling a `ScrollView` generated a lot of debug output. For more info, see GitHub issue [#9434](https://github.com/microsoft/microsoft-ui-xaml/issues/9434).
+- Fixed an issue where `MapContorl.InteractiveControlsVisible` does not work properly. For more info, see GitHub issue [#9486](https://github.com/microsoft/microsoft-ui-xaml/issues/9486).
+- Fixed an issue where `MapControl.MapElementClick` event doesn't properly fire. For more info, see GitHub issue [#9487](https://github.com/microsoft/microsoft-ui-xaml/issues/9487).
+- Fixed an issue where x:Bind doesn't check for null before using a weak reference, which can result in a crash. For more info, see GitHub issue [#9551](https://github.com/microsoft/microsoft-ui-xaml/issues/9551).
+- Fixed an issue where changing the `TeachingTip.Target` property doesn't correctly update its position. For more info, see GitHub issue [#9553](https://github.com/microsoft/microsoft-ui-xaml/issues/9553).
+- Fixed an issue where dropdowns did not respond in WebView2. For more info, see GitHub issue [#9566](https://github.com/microsoft/microsoft-ui-xaml/issues/9566).
+- Fixed a memory leak when using `GeometryGroup`. For more info, see GitHub issue [#9578](https://github.com/microsoft/microsoft-ui-xaml/issues/9578).
+- Fixed an issue where scrolling through a very large number of items from an `ItemRepeater` in a `ScrollView` can cause blank render frames. For more info, see GitHub issue [#9643](https://github.com/microsoft/microsoft-ui-xaml/issues/9643).
+- Fixed an issue where `SceneVisual` wasn't working.
 
 ## Related topics
 

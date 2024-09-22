@@ -33,8 +33,6 @@ For more info, see [Run app experiments with A/B testing](/windows/uwp/monetize/
 
 To use map services in apps targeting Windows 10 or Windows 11, visit the [Bing Maps Dev Center](https://www.bingmapsportal.com/). For info about how to request a maps authentication key from the Bing Maps Developer Center and add it to your app, see [Request a maps authentication key](/windows/uwp/maps-and-location/authentication-key) for more info. 
 
-Use the **Maps** page only for previously-published apps for Windows Phone 8.1 and earlier. To use map services in these apps, you'll need to request a map service application ID and a token to include in your app's code. When you click **Get token**, we'll generate a Map service Application ID (**ApplicationID**) and Map service Authentication Token (**AuthenticationToken**) for your app. Be sure to add these values to your code before you package and submit your app. For more info, see [How to add a Map control to a page (Windows Phone 8.1)](/previous-versions/windows/apps/jj207033(v=vs.105)).
-
 ## Product collections and purchases
 
 To use the Microsoft Store collection API and the Microsoft Store purchase API to access ownership information for apps and add-ons, you need to enter the associated Azure AD client IDs here. Note that it may take up to 16 hours for these changes to take effect.
@@ -85,9 +83,6 @@ Depending on your app's package type and its specific requirements, you can also
 
 -   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview).
 
--   **Microsoft Azure Mobile Apps** lets you send push notifications, authenticate and manage app users, and store app data in the cloud. For more info, see the [Mobile Apps documentation](/azure/developer/mobile-apps/).
-
--   **Microsoft Push Notifications Service (MPNS)** can be used with previously published .xap packages for Windows Phone. You can send a limited number of unauthenticated notifications without doing any configuration here, although we recommend using authenticated notifications to avoid throttling limits. If you're using MPNS, you'll need to upload a certificate to the field provided on the **WNS/MPNS** page. For more info, see [Setting up an authenticated web service to send push notifications for Windows Phone 8](/previous-versions/windows/apps/ff941099(v=vs.105)).
  
 
  

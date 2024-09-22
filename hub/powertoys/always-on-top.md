@@ -1,7 +1,7 @@
 ---
 title: PowerToys Always On Top utility for Windows
 description: A system-wide utility for Windows that allows you to pin windows to the top of your screen.
-ms.date: 08/03/2023
+ms.date: 07/12/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Always On Top, Win]
 ---
@@ -10,11 +10,15 @@ no-loc: [PowerToys, Windows, Always On Top, Win]
 
 A system-wide Windows utility to pin windows above other windows.
 
-![Always On Top screenshot.](../images/pt-always-on-top.png)
+![Always On Top screenshot](../images/pt-always-on-top.png)
 
 ## Pin a window
 
 When you activate Always On Top (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the utility pins the active window above all other windows. The pinned window stays on top, even when you select other windows.
+
+## Unpin a window
+
+To unpin a window pinned by Always On Top, you can either use the activation shortcut again or close the window.
 
 ## Settings
 
@@ -32,3 +36,5 @@ Always On Top has the following settings:
 | **Enable round corners** | When selected, the highlight border around the pinned window will have rounded corners.  |
 | **Play a sound when pinning a window** | When selected, this option plays a sound when you activate or deactivate Always On Top. |
 | **Excluded apps** | Prevents you from pinning an application using Always On Top. Add an application's name to stop it from being pinned. The list will also exclude partial matches. For example, `Notepad` will prevent both Notepad.exe and Notepad++.exe from being pinned. To only prevent a specific application, add `Notepad.exe` to the excluded list. |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

@@ -4,8 +4,6 @@ description: A case study of taking the C++/WinRT [UWP Photo Editor sample app](
 ms.topic: article
 ms.date: 11/17/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C++/WinRT, Photo, Editor, UWP
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -366,15 +364,15 @@ Photo(Photo(Windows::Storage::FileProperties::ImageProperties const& props,
     ...
     ) : ...
 {
-	if (m_imageProperties.Title() != L"")
-	{
-		m_imageName = m_imageProperties.Title();
-	}
+    if (m_imageProperties.Title() != L"")
+    {
+        m_imageName = m_imageProperties.Title();
+    }
 }
 ...
 hstring ImageTitle() const
 {
-	return m_imageName;
+    return m_imageName;
 }
 ...
 ```
@@ -385,7 +383,7 @@ Those are the last of the changes we need to make to migrate the *Photo Editor* 
 
 ### App type issue (affects only Preview 3)
 
-If you followed along with this case study using the project template from the VSIX for Windows App SDK [version 1.0 Preview 3](../preview-channel.md#version-10-preview-3-100-preview3), then you'll need to make a small correction to `PhotoEditor.vcxproj`. Here's how to do that.
+If you followed along with this case study using the project template from the VSIX for Windows App SDK [version 1.0 Preview 3](../release-notes-archive/preview-channel-1.0.md#winui-3-100-preview3), then you'll need to make a small correction to `PhotoEditor.vcxproj`. Here's how to do that.
 
 In Visual Studio, in **Solution Explorer**, right-click the project node, and click **Unload Project**. Now `PhotoEditor.vcxproj` is open for editing. As the first child of **Project**, add a **PropertyGroup** element like this:
 
@@ -439,7 +437,8 @@ From here, the remaining steps to migrate the code that you copied are the same 
 
 ## Related topics
 
+* [Windows App SDK and supported Windows releases](../support.md)
 * [UWP Photo Editor sample app](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/)
 * [Overall migration strategy](overall-migration-strategy.md)
 * [Mapping UWP APIs to the Windows App SDK](api-mapping-table.md)
-* [Windows UI Library (WinUI) migration](guides/winui3.md)
+* [WinUI migration](guides/winui3.md)

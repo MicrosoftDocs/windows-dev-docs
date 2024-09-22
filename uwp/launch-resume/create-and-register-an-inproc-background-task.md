@@ -91,7 +91,7 @@ Task progress and completion can be monitored the same way as for multi-process 
 
 ## Handle background task cancellation
 
-In-process background tasks are cancelled the same way as out-of-process background tasks are (see [Handle a cancelled background task](handle-a-cancelled-background-task.md)). Be aware that your **BackgroundActivated** event handler must exit before the cancellation occurs, or the whole process will be terminated. If your foreground app closes unexpectedly when you cancel the background task, verify that your handler exited before the cancellation occured.
+In-process background tasks are cancelled the same way as out-of-process background tasks are (see [Handle a cancelled background task](handle-a-cancelled-background-task.md)). Be aware that your **BackgroundActivated** event handler must exit before the cancellation occurs, or the whole process will be terminated. If your foreground app closes unexpectedly when you cancel the background task, verify that your handler exited before the cancellation occurred.
 
 ## The manifest
 
@@ -99,7 +99,7 @@ Unlike out-of-process background tasks, you are not required to add background t
 
 ## Summary and next steps
 
-You should now understand the basics of how to write a in-process background task.
+You should now understand the basics of how to write an in-process background task.
 
 See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
 

@@ -4,8 +4,6 @@ description: Get started with WinUI 3 / Windows App SDK by building a simple Win
 ms.topic: article
 ms.date: 2/20/2023
 keywords: windows app sdk, winappsdk, winui3
-ms.author: mikben
-author: matchamatch
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers
@@ -14,58 +12,29 @@ content-type: how-to
 
 # Build a Hello World app using C# and WinUI 3 / Windows App SDK
 
-> [!IMPORTANT]
-> This how-to is currently **experimental** and is likely to evolve significantly based on feedback from developers like you. Want to help us improve? [Grade this doc](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR6A2NSrqm-tGt2feGYAotohUMjEzS1pMTzJTU1VZN1RPNjNDOE4yUFRSSi4u) or [request an update on Github](https://github.com/MicrosoftDocs/windows-dev-docs/issues/new?title=Update%20request%3A%20How%20to%20build%20a%20hello%20world%20app&body=%28How%20can%20we%20help%3F%29&assignee=matchamatch) - we're listening!
-
 In this how-to, we'll use Visual Studio 2022 and WinUI 3 / Windows App SDK to build a Windows desktop app that displays "Hello world!" when launched:
 
 :::image type="content" source="images/hello-world/end-result.png" alt-text="The 'Hello world' app we're building.":::
 
 This how-to is targeted at **beginners** and makes no assumptions about your familiarity with Windows desktop development.
 
-<!--todo: The source code for the app we're building in this how-to is available [on Github](https://github.com/microsoft/WindowsAppSDK-Samples).-->
-
 ## Prerequisites
 
-- [Visual Studio 2022 and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
+This tutorial uses Visual Studio and builds on the WinUI 3 blank app template. To get set up, follow the instructions in [Get started with WinUI](../get-started/start-here.md). You'll install Visual Studio, configure it for developing apps with WinUI, create the Hello World project, and make sure you have the latest version of WinUI.
 
-## Create a new project using the WinUI 3 C# project template
+When you've done that, come back here to learn more about the Hello World project and make some updates to it.
 
-Open Visual Studio and create a new project via `File` > `New` > `Project`:
+## Review the blank app project
 
-:::image type="content" source="images/hello-world/create-project.png" alt-text="Create a new project":::
-
-Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` C# project template:
-
-:::image type="content" source="images/hello-world/vsix.png" alt-text="Blank, packaged WinUI 3 C# desktop app":::
-
-Specify a project name, solution name, and directory. In this example, our `Hello World` project belongs to a `Hello World` solution, which will live in `C:\Projects\`:
-
-:::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
-
-After creating your project, you should see the following default file structure in your Solution Explorer:
-
-:::image type="content" source="images/hello-world/collapsed-file-structure.png" alt-text="Default file structure":::
-
-## Build and run your project
-
-Click the "Start" button to build and run your project:
-
-:::image type="content" source="images/hello-world/start-click.png" alt-text="Build and run your project":::
-
-Visual Studio may prompt you to `Enable Developer Mode for Windows`:
-
-:::image type="content" source="images/hello-world/enable-developer-mode.png" alt-text="Enable Developer Mode":::
-
-With Developer Mode enabled, your `Hello World` project should build and run:
+The WinUI project templates in Visual Studio contain everything you need to build and run your app. The Blank App template creates a Window with an interactive Button that looks like this when you run it in debug mode.
 
 :::image type="content" source="images/hello-world/click-me.png" alt-text="Templated project built running":::
 
-Click the `Click Me` button for a demonstration of event [binding](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding):
+Click the `Click Me` button for a demonstration of [event handling](/windows/uwp/xaml-platform/events-and-routed-events-overview):
 
 :::image type="content" source="images/hello-world/clicked-me.png" alt-text="The 'Click Me' button":::
 
-In this case, a [`Button` control](../design/controls/buttons.md#create-a-button)'s [`Click` event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) is bound to the `myButton_Click` event handler located in `MainWindow.xaml.cs`:
+In this case, a [Button](../design/controls/buttons.md#create-a-button) control's [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event is bound to the `myButton_Click` event handler located in `MainWindow.xaml.cs`:
 
 :::image type="content" source="images/hello-world/code-screenshot.png" alt-text="The 'Click Me' button's event handler, located in your main window's code-behind file":::
 
@@ -75,31 +44,32 @@ While `MainWindow.xaml.cs` contains our main window's **business logic** concern
 
 This separation of **business logic** and **presentation** concerns lets you bind data and events to and from your application's UI using a consistent application development pattern.
 
-Let's review your project's file structure before making code changes.
 
-## Review your project's file structure
+### The project's file structure
 
-Our project's file structure currently looks like this:
+Let's review the project's file structure before making code changes.
+
+The project's file structure currently looks like this:
 
 :::image type="content" source="images/hello-world/expanded-file-structure.png" alt-text="File structure overview":::
 
-Starting from the top and working our way down:
+This table describes the files, starting from the top and working down:
 
-| Item                     | Description                                                                                                                                                                                                                             |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Solution 'Hello World'` | This is a **solution file**, a logical container for your **projects**. Projects are often apps, but they can also be supporting class libraries.                                                                                       |
-| `Hello World`            | This is a **project file**, a logical container for your app's files.                                                                                                                                                                   |
-| `Dependencies`           | Your app depends on **frameworks** (like [.NET](/dotnet/fundamentals/) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)) and **packages** (like [Windows App SDK](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab)). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here. |
-| `Properties`             | By convention, WinUI 3 projects tuck publish profiles and launch configuration files into this folder.                                                                                                                                  |
-| `PublishProfiles`        | Your **publish profiles** specify your app's publishing configuration across a variety of platforms.                                                                                                                                    |
-| `launchSettings.json`    | This file lets you configure **launch profiles** that can be used when running your app via `dotnet run`.                                                                                                                               |
-| `Assets`                 | This folder contains your app's logo, images, and other media assets.                                                                                                                                                                   |
-| `app.manifest`           | This app manifest file contains configuration related to the way that Windows displays your app when installed on user devices.                                                                                                         |
-| `App.xaml`               | This markup file specifies the shared, globally accessible resources that your app depends on.                                                                                                                                          |
-| `App.xaml.cs`            | This code-behind file represents the entry point to your app's business logic. It's responsible for creating and activating an instance of your `MainWindow`.                                                                           |
-| `MainWindow.xaml`        | This markup file contains the presentation concerns for your app's main window.                                                                                                                                                         |
-| `MainWindow.xaml.cs`     | This code-behind file contains the business logic concerns associated with your app's main window.                                                                                                                                      |
-| `Package.appxmanifest`   | This [package manifest file](/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) lets you configure publisher information, logos, processor architectures, and other details that determine how your app appears in the Windows Store.                                                                                                               |
+| Item | Description |
+|--|--|
+| `Solution 'Hello World'` | This is a **solution file**, a logical container for your **projects**. Projects are often apps, but they can also be supporting class libraries. |
+| `Hello World` | This is a **project file**, a logical container for your app's files. |
+| `Dependencies` | Your app depends on **frameworks** (like [.NET](/dotnet/fundamentals/) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)) and **packages** (like [Windows App SDK](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab)). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here. |
+| `Properties` | By convention, WinUI 3 projects place publish profiles and launch configuration files in this folder. |
+| `PublishProfiles` | Your **publish profiles** specify your app's publishing configuration across a variety of platforms. |
+| `launchSettings.json` | This file lets you configure **launch profiles** that can be used when running your app via `dotnet run`. |
+| `Assets` | This folder contains your app's logo, images, and other media assets. |
+| `app.manifest` | This app manifest file contains configuration related to the way that Windows displays your app when installed on user devices. |
+| `App.xaml` | This markup file specifies the shared, globally accessible resources that your app depends on. |
+| `App.xaml.cs` | This code-behind file represents the entry point to your app's business logic. It's responsible for creating and activating an instance of your `MainWindow`. |
+| `MainWindow.xaml` | This markup file contains the presentation concerns for your app's main window. |
+| `MainWindow.xaml.cs` | This code-behind file contains the business logic concerns associated with your app's main window. |
+| `Package.appxmanifest` | This [package manifest file](/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) lets you configure publisher information, logos, processor architectures, and other details that determine how your app appears in the Windows Store. |
 
 ## Display "Hello world!"
 
@@ -114,7 +84,7 @@ To display "Hello world!" instead of the "Click me" button, navigate to `MainWin
 > [!TIP]
 > You'll frequently refer to **API reference docs** while building Windows apps. [StackPanel's reference docs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel) tell you more about the `StackPanel` control and how to customize it.
 
-Let's update our `StackPanel` control to display `Hello world!` with red text:
+Let's update the `StackPanel` control to display `Hello world!` with red text:
 
 ```xml
 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -178,9 +148,7 @@ Here's what you accomplished in this how-to:
 
 ## Full code files
 
-<!--todo: embed from github -->
-
-```xml MainWindow.xaml
+```xaml
 <!-- MainWindow.xaml -->
 <Window
     x:Class="Hello_World.MainWindow"
@@ -227,7 +195,7 @@ namespace Hello_World
 }
 ```
 
-```xml App.xaml
+```xaml App.xaml
 <!-- App.xaml -->
 <Application
     x:Class="Hello_World.App"
@@ -298,13 +266,10 @@ Although technically possible, we strongly recommend using Visual Studio 2019 / 
 
 **Q: Can I use C++ to build WinUI 3 apps?**
 
-Yes! If you'd like to see this how-to updated with C++ guidance, [request an update on Github](https://github.com/MicrosoftDocs/windows-dev-docs/issues/new?title=Update%20request%3A%20How%20to%20build%20a%20hello%20world%20app&body=%28How%20can%20we%20help%3F%29&assignee=matchamatch) and we'll make it happen.
-
+Yes! For more information, see [Introduction to C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 ## Related
 
 - [Sample applications for Windows development](../get-started/samples.md)
 - [Windows developer FAQ](../get-started/windows-developer-faq.yml)
 - [Windows developer glossary](../get-started/windows-developer-glossary.md)
 - [Windows development best practices](../get-started/best-practices.md)
-- [How to target multiple platforms with your WinUI 3 app](uno-multiplatform.md)
-<!-- - [How to build a form with bidirectional data binding](todo) -->

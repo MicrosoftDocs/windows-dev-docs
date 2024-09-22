@@ -3,8 +3,6 @@ title: Windows Search providers
 description: Learn how to integrate into the Windows Search experience. 
 ms.topic: article
 ms.date: 09/07/2023
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 
@@ -15,13 +13,13 @@ ms.localizationpriority: medium
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 > [!IMPORTANT]
-> The feature described in this topic is available in preview builds of Windows starting with build 22631.2787. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
+> The feature described in this topic is available in preview builds of Windows starting with build 22631.2787 for Windows 11 and build 19045.3758 for Windows 10, although newer builds are recommended because they contain stability improvements. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
 
-By default, Windows Search currently uses the Microsoft Bing Search app to return web content and search results. In the European Economic Area (EEA), you can enable installed Microsoft Store apps that implement a web search provider to return web content and search results in Windows Search through Settings.
+Windows Search currently uses the Web Search from Microsoft Bing app to return web content and search results. In the European Economic Area (EEA), you can enable installed apps that implement a web search provider to return web content and search results in Windows Search through Settings.
 
 :::image type="content" source="images/search-integration.png" alt-text="Screenshot of the Windows Search UI with 3rd party search provider integration.":::
 
-Search providers integrate with the Search experience by creating an [MSIX package](/windows/msix/) with a package manifest file that provides the required information for the OS to register the search provider. Users can add a search provider to Windows by installing the associated app package through [Microsoft Store](https://www.microsoft.com/store/apps/windows) and can remove the search provider through the **Add or remove programs** page in Windows Settings app.
+Search providers integrate with the Search experience by creating an [MSIX package](/windows/msix/) with a package manifest file that provides the required information for the OS to register the search provider. Users can add a search provider to Windows by installing the associated app package and can remove the search provider through the **Add or remove programs** page in Windows Settings app.
 
 For development and testing, when Developer Mode is enabled and the search provider app has been sideloaded on the device, it will appear in the list of available search providers. For more information, see [Developer Mode features and debugging](/windows/apps/get-started/developer-mode-features-and-debugging).
 
@@ -66,6 +64,10 @@ The URL of the HTTPS endpoint to which the OS will send search query requests.
 
 The protocol schema that will be used when launching the provided web search results. If the specified protocol is not registered by an app on the OS, then the default browser will be launched for search results. For more information on registering protocol schemas, see [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
 
+#### DynamicContentEndpoint
+
+The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). This feature is supported starting with Windows 10 build 19045.4233 and Windows 11 build 22621.3371. 
+
 
 ### Example package manifest file
 
@@ -80,6 +82,7 @@ The following is an example `appmanifest.xml` package manifest file for register
 		  <uap3:Properties>
 			  <Endpoint>https://customsearchendpoint</Endpoint>
 			  <Protocol>customsearch</Protocol>
+        <DynamicContentEndpoint>https://sub.contoso.com/dynamic</DynamicContentEndpoint>
 		  </uap3:Properties>
 	  </uap3:AppExtension>
   </uap3:Extension>
@@ -168,6 +171,76 @@ The query string parameters passed to the suggestion endpoint are the following.
 ### OPTIONS request and Cross-Origin Resource Sharing (CORS)
 
 Search providers must support the OPTIONS request method and respond to this request with HTTP OK. If the search provider endpoint is using CORS, the Windows search client will send out a HTTP OPTIONS request before each GET request.
+
+## Implement a gleam icon endpoint
+
+Search providers can optionally provide light and dark mode gleam icons that are displayed in the search bar when the search provider is currently enabled. When the **DynamicContentEndpoint** element is provided in the app manifest, a request will be sent to the specified URL and the search provider responds with a json file in the format defined below that includes the URLs of the icon image files and other metadata. The gleam icon request will be sent periodically while the search provider is the most recent provider active in Windows Search. The cadence for this request is every 6 hours. A request will also be sent upon each Search launch and on device unlock.
+
+### Gleam icon HTTPS request format
+
+The HTTPS request to the gleam icon endpoint uses the following format.
+
+
+`https://www.contoso.com/Gleam?cc=FR&setlang=en-us&dateTime=3%2F29%2F2024%2C%208%3A33%3A56%20PM&deviceOs=windows10&schemaversion=1.0.0`
+
+The query string parameters passed to the suggestion endpoint are the following.
+
+| Parameter | Description |
+|-----------|-------------|
+| setlang   | The locale associated with the query. |
+| cc        | The country code associated with query. |
+| dateTime       | The current date and time from client device, url-encoded. |
+| deviceOs       | The OS of the client device. The value of this parameter can be "Windows10" or "Windows11". On Windows 10, the gleam icon size is 30x60. On Windows 11, the gleam icon size is 20x36 |
+| schemaversion | The gleam schema version. |
+
+
+### Gleam icon response JSON format
+
+The search provider HTTPS endpoint for gleam icons must return a JSON document with the following format. The key names must match the format exactly. The current schema version is 1.0.0.
+
+| Key | Description |
+|-----|-------------|
+| schemaVersion | The gleam schema version. This should match the *schemaVersion* query string parameter in the request. |
+| telemetryId | A unique identifier for the gleam icon. If the value in the response is the same as the value for the current gleam icon, the OS will not update the icon. |
+| expirationTime | The expiration time for the gleam icon. Must be a time in the future. |
+| content | The content section of the response. |
+| taskbarSearchBox | Contains settings for the search box. |
+| gleam | Contains settings for the gleam icon. |
+| altText | Alternate text for the gleam icon. |
+| dimensionEnum | The value "30x60" if the request was sent from a Windows 10 device. The value "20x36" if the request was sent from a Windows 11 device. |
+| iconUrl | Contains the URLs for the light and dark gleam icon image files. |
+| light | The URL for the light gleam icon image file. |
+| dark | The URL for the dark gleam icon image file. |
+
+
+```json
+{
+  "schemaVersion":"1.0.0",
+  "telemetryId":"<unique gleam Id>",
+  "expirationTime":"2025-12-09T20:37:13Z",
+  "content": {
+    "taskbarSearchBox": {
+      "gleam":{
+        "altText": "<alt text of the gleam>",
+        "dimensionEnum": "(30x60 for Windows 10, 20x36 for Windows 11)",
+        "iconUrl": {
+          "light":"<3p's light gleam url>",
+          "dark": "<3p's dark gleam url>"
+        }
+      }
+    }
+  }
+}
+```
+
+#### Gleam icon response validation
+
+The response must specify both the light asset URL and the dark asset URL. The domains for the icon image URLs must use HTTPS and the subdomain must match the subdomain specified in the **DynamicContentEndpoint** element in the app manifest file.
+
+The image files must be in SVG format and the maximum file size is 300 kB. The gleam needs to be within a 240x120px frame inside the SVG.
+
+If an empty payload is received, that will clear the active gleam icon and no gleam will be displayed.
+
 
 ## Related articles
 

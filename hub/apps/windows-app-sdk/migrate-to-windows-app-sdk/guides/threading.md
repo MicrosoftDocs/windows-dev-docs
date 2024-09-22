@@ -4,8 +4,6 @@ description: This topic describes how to migrate the threading code in a Univers
 ms.topic: article
 ms.date: 03/29/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing, reentrancy
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 dev_langs:
   - csharp
@@ -40,7 +38,7 @@ Stowed exception crashes save away a possible error, and that gets used later if
 
 For stowed exception crashes (to see a nested message pump, or to see the XAML control's specific exception being thrown), you can get more info on the crash by loading a crash dump in the Windows Debugger (WinDbg) (see [Download debugging tools for Windows](/windows-hardware/drivers/debugger/debugger-download-tools)), and then using `!pde.dse` to dump the stowed exceptions.
 
-The PDE debugger extension (for the `!pde.dse` command) is available by downloading the [PDE*.zip](https://onedrive.live.com/?authkey=%21AJeSzeiu8SQ7T4w&id=DAE128BD454CF957%217152&cid=DAE128BD454CF957) file from OneDrive. Put the appropiate x64 or x86 `.dll` from that zip file into the `winext` directory of your WinDbg install, and then `!pde.dse` will work on stowed exception crash dumps.
+The PDE debugger extension (for the `!pde.dse` command) is available by downloading the [PDE*.zip](https://onedrive.live.com/?authkey=%21AJeSzeiu8SQ7T4w&id=DAE128BD454CF957%217152&cid=DAE128BD454CF957) file from OneDrive. Put the appropriate x64 or x86 `.dll` from that zip file into the `winext` directory of your WinDbg install, and then `!pde.dse` will work on stowed exception crash dumps.
 
 Frequently there'll be multiple stowed exceptions, with some at the end that were handled/ignored. Most commonly, the first stowed exception is the interesting one. In some cases, the first stowed exception might be a re-throw of the second, so if the second stowed exception shows deeper into the same stack as the first, then the second exception might be the origination of the error. The error code shown with each stowed exception is also valuable, since that provides the **HRESULT** associated with that exception.
 
@@ -207,3 +205,7 @@ winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&, RoutedEventAr
     ...
 }
 ```
+
+## See Also
+
+* [Windows App SDK and supported Windows releases](../../support.md)

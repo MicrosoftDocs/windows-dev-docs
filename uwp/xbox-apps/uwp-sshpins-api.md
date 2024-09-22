@@ -1,6 +1,6 @@
 ---
 title: Device Portal SSH pins API reference
-description: Learn how to remove all trusted Secure Shell (SSH) pins programatically using the /ext/app/sshpins Xbox Device Portal REST API.
+description: Learn how to remove all trusted Secure Shell (SSH) pins programmatically using the /ext/app/sshpins Xbox Device Portal REST API.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017

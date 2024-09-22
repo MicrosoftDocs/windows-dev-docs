@@ -33,22 +33,24 @@ Admin mode permissions may be required in the following scenarios:
 
 - Always On Top
   - Pin windows that are elevated
-- File Locksmith
-  - End elevated processes
 - FancyZones
   - Snapping an elevated window (e.g. Task Manager) into a Fancy Zone
   - Moving the elevated window to a different zone
+- File Locksmith
+  - End elevated processes
 - Hosts file editor
-- Shortcut guide
-  - Display shortcut
 - Keyboard remapper
   - Key to key remapping
   - Global level shortcuts remapping
   - App-targeted shortcuts remapping
+- Mouse without Borders
+  - Use Service
 - PowerToys Run
   - Use shortcut
 - Registry Preview
   - Write keys to the registry
+- Shortcut guide
+  - Display shortcut
 - Video Conference Mute
 
 ## Run as administrator: elevated processes explained
@@ -59,8 +61,8 @@ The simplest way to run an app or program in administrative mode is to right-cli
 
 If you see this User Account Control prompt, the application is requesting administrator level elevated permission:
 
-![Windows UAC elevated permission prompt screenshot.](../images/pt-admin-prompt.png)
+![Windows UAC elevated permission prompt screenshot](../images/pt-admin-prompt.png)
 
 In the case of an elevated command line, typically the text "Administrator" will be included in the title bar.
 
-![Windows Powershell and Command Line with elevated permissions screenshot.](../images/pt-admin-terminal.png)
+![Windows Powershell and Command Line with elevated permissions screenshot](../images/pt-admin-terminal.png)

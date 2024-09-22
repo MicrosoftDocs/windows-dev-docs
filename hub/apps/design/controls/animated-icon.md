@@ -2,7 +2,7 @@
 description: An AnimatedIcon is a control which plays animated images in response to user interaction and visual state changes.
 title: AnimatedIcon
 template: detail.hbs
-ms.date: 03/24/2022
+ms.date: 07/29/2024
 ms.topic: article
 ms.custom: 20H2
 ms.localizationpriority: medium
@@ -56,7 +56,7 @@ Defining a color property in your Lottie animation named "Foreground" lets you t
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The AnimatedIcon for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The AnimatedIcon for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >
@@ -78,7 +78,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [AnimatedIcon class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the AnimatedIcon in action](winui3gallery:/item/AnimatedIcon).
+> [Open the WinUI 3 Gallery app to see AnimatedIcon in action](winui3gallery:/item/AnimatedIcon)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -236,5 +236,5 @@ private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
 
 ## Related articles
 
-- [Icons](/windows/uwp/design/style/icons)
-- [Animations in XAML](/windows/uwp/design/motion/xaml-animation)
+- [Icons in Windows apps](../style/icons.md)
+- [Motion for Windows apps](../motion/index.md)

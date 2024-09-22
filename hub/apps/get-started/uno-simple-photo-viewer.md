@@ -2,10 +2,8 @@
 title: Tutorial--Build a simple photo viewer that targets multiple platforms
 description: Learn how to reach users across native mobile, web, and desktop with minimal changes to the C#/WinUI 3 simple photo viewer built in the previous tutorial. We'll use Uno Platform to create a new multi-platform app, which we can move code from the existing desktop project to.
 ms.topic: article
-ms.date: 05/21/2023
+ms.date: 08/19/2024
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, uno platform, uno
-ms.author: aashcraft
-author: alvinashcraft
 ms.localizationpriority: medium
 ---
 
@@ -18,13 +16,16 @@ After you've [created](simple-photo-viewer-winui3.md) a starter simple photo vie
 ## Prerequisites
 
 - [Visual Studio 2022 17.4 or later](https://visualstudio.microsoft.com/#vs-section)
-- [Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
+- Set up your development computer (see [Get started with WinUI](../get-started/start-here.md))
 - ASP.NET and web development workload (for WebAssembly development)
-:::image type="content" source="../images/uno/uno-vs-install-web.png" alt-text="Screenshot of the web development workload in Visual Studio.":::
-- .NET Multi-platform App UI development installed (for iOS, Android, Mac Catalyst development).
-:::image type="content" source="../images/uno/uno-vs-install-dotnet-mobile.png" alt-text="Screenshot of the dotnet mobile workload in Visual Studio.":::
+
+  :::image type="content" source="../images/uno/uno-vs-install-web.png" alt-text="Screenshot of the web development workload in Visual Studio.":::
+- .NET Multi-platform App UI development installed (for iOS, Android, Mac Catalyst development)
+
+  :::image type="content" source="../images/uno/uno-vs-install-dotnet-mobile.png" alt-text="Screenshot of the dotnet mobile workload in Visual Studio.":::
 - .NET desktop development installed (for Gtk, Wpf, and Linux Framebuffer development)
-:::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text="Screenshot of the dotnet desktop workload in Visual Studio.":::
+
+  :::image type="content" source="../images/uno/uno-vs-install-dotnet.png" alt-text="Screenshot of the dotnet desktop workload in Visual Studio.":::
 
 [!INCLUDE [uno-setup.md](../../includes/uno-setup.md)]
 

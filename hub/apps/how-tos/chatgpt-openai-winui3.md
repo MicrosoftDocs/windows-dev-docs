@@ -4,8 +4,6 @@ description: Get started with WinUI 3 / Windows App SDK by integrating OpenAI's 
 ms.topic: article
 ms.date: 12/11/2023
 keywords: windows app sdk, winappsdk, winui3, openai, chatgpt
-ms.author: mikben
-author: matchamatch
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers
@@ -22,7 +20,7 @@ In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / W
 
 ## Prerequisites
 
-- [Visual Studio 2022 and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
+- Set up your development computer (see [Get started with WinUI](../get-started/start-here.md)).
 - Familiarity with the core concepts in *[How to build a Hello World app using C# and WinUI 3 / Windows App SDK](./hello-world-winui3.md)* - we'll build upon that how-to in this one.
 - An OpenAI API key from your [OpenAI developer dashboard](https://platform.openai.com/api-keys).
 - An OpenAI SDK installed in your project. Refer to the [OpenAI documentation](https://platform.openai.com/docs/libraries) for a list of community libraries. In this how-to, we'll use [betalgo/openai](https://github.com/betalgo/openai).
@@ -41,13 +39,13 @@ After creating your project, you should see the following default file structure
 
 ## Set your environment variable
 
-In order to use the OpenAI SDK, you'll need to set an environment variable with your API key. In this example, we'll use the `MY_OPEN_AI_API_KEY` environment variable. Once you have your API key from the [OpenAI developer dashboard](https://platform.openai.com/api-keys), you can set the environment variable from the command line as follows:
+In order to use the OpenAI SDK, you'll need to set an environment variable with your API key. In this example, we'll use the `OPENAI_API_KEY` environment variable. Once you have your API key from the [OpenAI developer dashboard](https://platform.openai.com/api-keys), you can set the environment variable from the command line as follows:
 
 ```powershell
-setx MY_OPEN_AI_API_KEY <your-api-key>
+setx OPENAI_API_KEY <your-api-key>
 ```
 
-Note that this method works well for development, but you'll want to use a more secure method for production apps (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app).
+Note that this method works well for development, but you'll want to use a more secure method for production apps (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app). See [Best practices for OpenAI key safety](https://help.openai.com/articles/5112595-best-practices-for-api-key-safety).
 
 
 ## Install the OpenAI SDK
@@ -80,7 +78,7 @@ namespace ChatGPT_WinUI3
         {
             this.InitializeComponent();
            
-            var openAiKey = Environment.GetEnvironmentVariable("MY_OPEN_AI_API_KEY");
+            var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
             openAiService = new OpenAIService(new OpenAiOptions(){
                 ApiKey = openAiKey
@@ -376,7 +374,7 @@ Here's what you accomplished in this how-to:
     3. adding a `ProgressBar` to indicate when the app is waiting for a response from the GPT API,
     4. centering the `StackPanel` in the window,
     5. ensuring that messages wrap to the next line when they reach the edge of the window, and
-    6. making the `TextBox` larger, resizeable, and responsive to the `Enter` key.
+    6. making the `TextBox` larger, resizable, and responsive to the `Enter` key.
 
 
 
@@ -446,7 +444,7 @@ namespace ChatGPT_WinUI3
         {
             this.InitializeComponent();
 
-            var openAiKey = Environment.GetEnvironmentVariable("MY_OPEN_AI_API_KEY");
+            var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
             openAiService = new OpenAIService(new OpenAiOptions(){
                 ApiKey = openAiKey

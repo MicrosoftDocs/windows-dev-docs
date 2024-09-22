@@ -1,9 +1,6 @@
 ---
 title: 'Tutorial: Node.js on Windows for beginners'
 description: A guide to help beginners get started with Node.js development on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: NodeJS beginners tutorial, Node.js for beginners, windows 10, microsoft, learning nodejs, node on windows, node on windows for beginners, develop with node on windows, developer with nodejs on windows
 ms.localizationpriority: medium
@@ -21,8 +18,6 @@ If you're brand new to using Node.js, this guide will help you to get started wi
 ## Prerequisites
 
 - Installing on Node.js on [Windows](./nodejs-on-windows.md) or on [Windows Subsystem for Linux](./nodejs-on-wsl.md)
-
-If you are a beginner, trying Node.js for the first time, we recommend installing directly on Windows. For more information, see [Should I install Node.js on Windows or Windows Subsystem for Linux](./windows-or-wsl.md)
 
 ## Try NodeJS with Visual Studio Code
 

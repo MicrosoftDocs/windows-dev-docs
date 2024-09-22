@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Pin your app to the taskbar
 
-Now you can programmatically request users to pin your Win32 or UWP app to the taskbar, similar to how you can [pin your app to the Start menu](tiles-and-notifications/primary-tile-apis.md). And you can check whether your app is currently pinned, and whether the taskbar allows pinning.
+Now you can programmatically request users to pin your Win32 or UWP app to the taskbar, similar to how you can [pin your app to the Start menu](/windows/uwp/launch-resume/primary-tile-apis). And you can check whether your app is currently pinned, and whether the taskbar allows pinning.
 
 ![Screenshot of a Windows 11 task bar showing the app pinned there.](images/taskbar/taskbar.png)
 
@@ -31,9 +31,9 @@ The [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) class lets you as
 
 ## Limited Access Feature (LAF) approval
 
-Taskbar pinning is a Limited Access Feature (LAF). To gain access to this API you will need to receive a token to unlock the LAF gating. To request a token, email [taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com) with the information listed below. If the request is approved you will receive a token to unlock the LAF.
+> [!IMPORTANT]
+> The Taskbar Pinning is a Limited Access Feature (see [LimitedAccessFeatures class](/uwp/api/windows.applicationmodel.limitedaccessfeatures)). For more information or to request an unlock token, please use the [LAF Access Token Request Form](https://go.microsoft.com/fwlink/?linkid=2271232&clcid=0x409).
 
-* The UX experience – please provide images in the LAF request email.
 
 ## 1. Check whether the required APIs exist
 
@@ -132,4 +132,4 @@ This method returns a boolean value that indicates whether your app is now pinne
 * [Full UWP code sample on GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
 * [Full desktop code sample on GitHub](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TaskbarManager)
 * [TaskbarManager class](/uwp/api/windows.ui.shell.taskbarmanager)
-* [Pin an app to the Start menu](tiles-and-notifications/primary-tile-apis.md)
+* [Pin an app to the Start menu](/windows/uwp/launch-resume/primary-tile-apis)

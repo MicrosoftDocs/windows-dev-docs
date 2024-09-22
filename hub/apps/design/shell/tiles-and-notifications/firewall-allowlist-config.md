@@ -16,7 +16,7 @@ Many enterprises use firewalls to block unwanted network traffic and ports; unfo
 ## Proxy Support
 
 > [!Note]
-> WNS Push Notifications *does not* support proxies. For best results, the connection to WNS must be a direct connection, however, VPN interfaces can be used. 
+> WNS Push Notifications *may not* support proxies. There are many different proxy setups and environments, and not all configurations are guaranteed work with WNS. For best results, the connection to WNS must be a direct connection, however, VPN interfaces can be used. 
 
 We welcome any feedback about proxy support. Please direct your feedback to [https://aka.ms/windowsappsdk](https://aka.ms/windowsappsdk) and file an issue for tracking interest in proxy support for WNS. Feel free to add the "area-Notifications" label to your issue for quicker visibility with the notifications team.
 
@@ -69,7 +69,7 @@ Below are explanations on the notations and elements used in the above XML snipp
 | **Dot-decimal notation (i.e. 64.4.28.0/26)** | Dot-decimal notation is a way to describe the range of IP addresses. For example, 64.4.28.0/26 means the first 26 bits of 64.4.28.0 are constant, while the last 6 bits are variable.  In this case, the IPv4 range is 64.4.28.0 - 64.4.28.63. |
 | **ClientDNS** | These are the Fully-Qualified Domain Name (FQDN) filters for the client devices (Windows PCs, desktops) receiving notifications from WNS. These must be allowed through the firewall in order for WNS clients to use the WNS Functionality.  It is recommended to allow-list by the FQDNs instead of the IP/VIP ranges, since these will never change. |
 | **ClientIPsIPv4** | These are the IPv4 addresses of the servers accessed by client devices (Windows PCs, desktops) receiving notifications from WNS. |
-| **CloudServiceDNS** | These are the Fully-Qualified Domain Name (FQDN) filters for the WNS servers your cloud service will talk to send notificatios to WNS. These must be allowed through the firewall in order for services to send WNS notifications.  It is recommended to allow-list by the FQDNs instead of the IP/VIP ranges, since these will never change.|
+| **CloudServiceDNS** | These are the Fully-Qualified Domain Name (FQDN) filters for the WNS servers your cloud service will talk to send notifications to WNS. These must be allowed through the firewall in order for services to send WNS notifications.  It is recommended to allow-list by the FQDNs instead of the IP/VIP ranges, since these will never change.|
 | **CloudServiceIPs** | CloudServiceIPs are the IPv4 addresses of the servers used for cloud services to send notifications to WNS  |
 
 

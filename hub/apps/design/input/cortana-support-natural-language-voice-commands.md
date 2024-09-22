@@ -1,7 +1,6 @@
 ---
 title: Support more natural voice commands in Cortana - Cortana UWP design and development
 description: Extend Cortana with more flexible and natural voice commands that let a user say your app's name anywhere in the command.
-author: kbridge
 label: Conceptual
 ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
@@ -130,7 +129,7 @@ When you declare a **ListenFor** element where **RequireAppName** is either "Aft
 
     Similar to case 2, you need to ensure your commands contain sufficient phonetic content to minimize the chances your app is launched unintentionally.
 
-    This helps you set up your application for best possible success so your application does not get incorrectly launched when user says for example “Find Kinect Adventure works”.
+    This helps you set up your application for best possible success so your application does not get incorrectly launched when user says for example "Find Kinect Adventure works".
 
     Here are invalid declarations that could lead to **Cortana** launching the **Adventure Works** app if the user says something like "Hey adventure works" or "Find Kinect adventure works".
 
@@ -168,21 +167,21 @@ Here is a VCD file that demonstrates various ways to provide more natural langua
         when is my] trip to {destination} </ListenFor>
 
       <!-- This ListenFor command will set up Cortana to accept commands like 
-           “Show my next trip to Las Vegas on Adventure Works”; “Show my next 
-           trip to Las Vegas using Adventure Works” -->
+           "Show my next trip to Las Vegas on Adventure Works"; "Show my next 
+           trip to Las Vegas using Adventure Works" -->
       <ListenFor RequireAppName="AfterPhrase">
         show [my] next trip to {destination} </ListenFor>
 
       <!-- This ListenFor command will set up Cortana to accept commands when 
            the user specifies your app name either before or after the command. 
-           “Adventure Works, show my next trip to Las Vegas”; 
-           “Show my next trip to Last Vegas on Adventure works” -->
+           "Adventure Works, show my next trip to Las Vegas"; 
+           "Show my next trip to Last Vegas on Adventure works" -->
       <ListenFor RequireAppName="BeforeOrAfterPhrase">
         show [my] next trip to {destination} </ListenFor>
 
       <!-- This ListenFor command will set up Cortana to accept commands 
            when the user specifies your app name inline. 
-           “Show my next Adventure Works trip to Las Vegas” -->
+           "Show my next Adventure Works trip to Las Vegas" -->
       <ListenFor RequireAppName="ExplicitlySpecified">
         show [my] next {builtin:AppName} trip to {destination} </ListenFor>
 

@@ -2,17 +2,15 @@
 title: Install tools for the Windows App SDK
 description: Configure your development computer by installing the appropriate tools to develop apps for Windows by using the Windows App SDK.
 ms.topic: how-to
-ms.date: 12/12/2022
+ms.date: 07/15/2024
 keywords: windows win32, windows app development, Windows App SDK, stable
-ms.author: stwhi
-author: stevewhims
 ms.custom:
   - kr2b-contr-experiment
 ---
 
 # Install tools for the Windows App SDK
 
-Configure your development computer by installing the appropriate tools to develop apps for Windows with the [Windows App SDK](./index.md) and [WinUI](/windows/apps/winui/).
+Configure your development computer by installing the appropriate tools to develop apps for Windows with the [Windows App SDK](./index.md) and [WinUI 3](/windows/apps/winui/winui3/).
 
 > [!NOTE]
 > This article is for the stable release channel of the Windows App SDK. See [Windows App SDK release channels](./release-channels.md). For other channels, see [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md).
@@ -68,12 +66,13 @@ winget install "Visual Studio Professional 2022"  --override "--add  Microsoft.V
 ## Install tools manually
 
 To install the required tools and workloads manually, read the following sections.
+
 ## Install Visual Studio
 
 Use these links to install Visual Studio 2022 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community Edition, Visual Studio Professional, or Visual Studio Enterprise. Before you begin, see [System requirements for Windows app development](system-requirements.md).
 
 > [!IMPORTANT]
-> Visual Studio 2019 only supports Windows App SDK 1.1 and earlier. Visual Studio 2022 is recommended for developing apps with all versions of the Windows App SDK.
+> Visual Studio 2019 supports only Windows App SDK 1.1 and earlier. Visual Studio 2022 is recommended for developing apps with all versions of the Windows App SDK.
 
 > [!div class="button"]
 > [Download Visual Studio 2022](/visualstudio/releases/2022/release-notes)
@@ -147,7 +146,7 @@ Download the extension directly, and install it:
 ### [Visual Studio 2019](#tab/vs-2019)
 
 > [!IMPORTANT]
-> Visual Studio 2019 only supports Windows App SDK 1.1 and earlier. Visual Studio 2022 is recommended for developing apps with all versions of the Windows App SDK.
+> Visual Studio 2019 supports only Windows App SDK 1.1 and earlier. Visual Studio 2022 is recommended for developing apps with all versions of the Windows App SDK.
 
 The templates are available by installing a Visual Studio extension (VSIX).
 
@@ -186,6 +185,7 @@ Also see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in
 * [Windows App SDK release channels](./release-channels.md)
 * [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md)
 * [System requirements for Windows app development](system-requirements.md)
+* [Windows App SDK and supported Windows releases](support.md)
 * [Downloads for the Windows App SDK](downloads.md)
 * [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 * [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)

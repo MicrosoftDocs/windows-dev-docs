@@ -74,7 +74,7 @@ private async void DisplayNoWifiDialog()
     {
         Title = "No wifi connection",
         Content = "Check your connection and try again.",
-        CloseButtonText = "Ok"
+        CloseButtonText = "OK"
     };
 
     ContentDialogResult result = await noWifiDialog.ShowAsync();
@@ -123,7 +123,7 @@ private async void DisplayNoWifiDialog()
     {
         Title = "No wifi connection",
         Content = "Check your connection and try again.",
-        CloseButtonText = "Ok"
+        CloseButtonText = "OK"
     };
 
     ContentDialogResult result = await noWifiDialog.ShowAsync();
@@ -254,7 +254,7 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
 
 > NOTE: This section applies only to apps that target Windows 10, version 1903 or later. AppWindow and XAML Islands are not available in earlier versions. For more info about versioning, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
-By default, content dialogs display modally relative to the root [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). When you use ContentDialog inside of either an [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) or a [XAML Island](../../../desktop/modernize/xaml-islands.md), you need to manually set the [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot) on the dialog to the root of the XAML host.
+By default, content dialogs display modally relative to the root [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). When you use ContentDialog inside of either an [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) or a [XAML Island](../../../desktop/modernize/xaml-islands/xaml-islands.md), you need to manually set the [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot) on the dialog to the root of the XAML host.
 
 To do so, set the ContentDialog's XamlRoot property to the same XamlRoot as an element already in the AppWindow or XAML Island, as shown here.
 
@@ -265,7 +265,7 @@ private async void DisplayNoWifiDialog()
     {
         Title = "No wifi connection",
         Content = "Check your connection and try again.",
-        CloseButtonText = "Ok"
+        CloseButtonText = "OK"
     };
 
     // Use this code to associate the dialog to the appropriate AppWindow by setting

@@ -1,6 +1,6 @@
 ---
 title: Sliders
-description: Learn how to implement a Windows UI Library slider control that lets the user select from a range of values by moving a thumb control along a track.
+description: Learn how to implement a WinUI slider control that lets the user select from a range of values by moving a thumb control along a track.
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs

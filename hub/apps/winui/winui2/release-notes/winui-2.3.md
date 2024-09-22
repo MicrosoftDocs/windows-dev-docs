@@ -1,20 +1,20 @@
 ---
 title: WinUI 2.3 Release Notes
 description: Release notes for WinUI 2.3 including new features and bug fixes.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 07/15/2020
 ms.topic: article
 ---
 
-# Windows UI Library 2.3
+# WinUI 2.3
 
-WinUI 2.3 is the January 2020 release of the Windows UI Library (WinUI).
+WinUI 2.3 is the January 2020 release of WinUI.
 
-The Windows UI Library (WinUI) is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
+WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
 
 WinUI Releases: [GitHub release page](https://github.com/microsoft/microsoft-ui-xaml/releases)
 
-WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Getting Started with the Windows UI Library](../getting-started.md).
+WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Getting Started with WinUI](../getting-started.md).
 
 NuGet package download: [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)
 
@@ -22,7 +22,7 @@ NuGet package download: [Microsoft.UI.Xaml](https://www.nuget.org/packages/Micro
 
 ### Progress Bar Visual Refresh
 
-The **ProgressBar** has two different visual represetations.
+The **ProgressBar** has two different visual representations.
 
 #### Indeterminate Progress Bar
 
@@ -71,6 +71,6 @@ A **NumberBox** represents a control that can be used to display and edit number
 
 ## Documentation
 
-How-to articles for Windows UI Library controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
+How-to articles for WinUI controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
 
-API reference docs are located here: [Windows UI Library APIs](/windows/winui/api/).
+API reference docs are located here: [WinUI APIs](/windows/winui/api/).

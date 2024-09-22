@@ -1,17 +1,15 @@
 ---
 title: Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
-description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [Windows UI Library (WinUI) 3](../../winui/index.md) app that uses the Windows App SDK.
+description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [WinUI 3](../../winui/index.md) app that uses the Windows App SDK.
 ms.topic: article
 ms.date: 10/05/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
 # Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
 
-The .NET Upgrade Assistant (see [Overview of the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview)) is a Visual Studio extension (recommended), and a command-line tool, that can assist with migrating a C# Universal Windows Platform (UWP) app to a [Windows UI Library (WinUI) 3](/windows/apps/winui/) app that uses the Windows App SDK.
+The .NET Upgrade Assistant (see [Overview of the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview)) is a Visual Studio extension (recommended), and a command-line tool, that can assist with migrating a C# Universal Windows Platform (UWP) app to a [WinUI 3](/windows/apps/winui/) app that uses the Windows App SDK.
 
 Our roadmap for UWP support in the .NET Upgrade Assistant includes further tooling improvements, and adding migration support for new features. If you find issues related to the .NET Upgrade Assistant, then you can file them within Visual Studio by selecting **Help** > **Send Feedback** > **Report a Problem**.
 
@@ -197,3 +195,7 @@ To use many of the XAML controls, ensure that your `app.xaml` file includes the 
 There are several known problems that can occur when using the .NET Upgrade Assistant. In some cases, these problems are with the [try-convert tool](https://github.com/dotnet/try-convert) that the .NET Upgrade Assistant uses internally.
 
 But for more troubleshooting tips and known issues, see the [Upgrade Assistant](https://github.com/dotnet/upgrade-assistant) GitHub repository.
+
+## See Also
+
+- [Windows App SDK and supported Windows releases](../support.md)

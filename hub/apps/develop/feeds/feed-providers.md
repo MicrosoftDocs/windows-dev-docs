@@ -1,10 +1,8 @@
 ---
 title: Feed providers
-description: Introduction to the feed providers feature in the Windows App SDK, a new integration point for third-party applications distributed through the Microsoft Store.
+description: Introduction to the feed providers feature in the Windows App SDK, a new integration point for third-party applications.
 ms.topic: article
 ms.date: 11/06/2023
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +11,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
-The feed providers feature in the Windows App SDK is a new integration point for third-party applications distributed through the Microsoft Store. It enables these applications to register their content feeds to be directly available within the Windows Widgets Board, enhancing the user experience by providing quick access to a variety of content directly from the desktop.
+The feed providers feature in the Windows App SDK is a new integration point for third-party applications. It enables these applications to register their content feeds to be directly available within the Windows Widgets Board, enhancing the user experience by providing quick access to a variety of content directly from the desktop.
 
 This article introduces the concept of feed providers and provides a high-level explanation the feature. Detailed implementation guidance will be published in a future update.
 
@@ -22,8 +20,6 @@ Feeds in the Widgets Board helps users stay on top of what matters, enabling the
 ![A screenshot showing the Windows Widgets Board showing feeds.](./images/feeds-screenshot.png)
 
 ## Getting started with feed providers
-
-Apps that are ingested through the Microsoft Store can register as feed providers using the Windows App SDK. 
 
 The following lists the high-level steps for developing a feed provider:
 
@@ -34,7 +30,7 @@ The following lists the high-level steps for developing a feed provider:
 ## Limitations and considerations
 
 - The feed providers feature is in preview.
-- This feature is available only to users in the European Economic Area (EEA). In the EEA, installed Microsoft Store apps that implement a feed provider can provide content feed in the Widgets Board.
+- This feature is available only to users in the European Economic Area (EEA). In the EEA, installed apps that implement a feed provider can provide content feed in the Widgets Board.
 - The feature requires using the latest Windows App SDK for app development.
 - Specific technical and design guidelines must be adhered to for proper feed integration.
 

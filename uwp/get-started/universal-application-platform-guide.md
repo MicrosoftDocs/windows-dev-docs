@@ -2,7 +2,7 @@
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 12/10/2021
+ms.date: 08/21/2024
 ms.topic: article
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
@@ -10,7 +10,10 @@ ms.localizationpriority: medium
 
 # What's a Universal Windows Platform (UWP) app?
 
-UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices.
+UWP is one of many ways to create client applications for Windows. 
+
+> [!NOTE]
+> If you are starting to develop Windows apps, we recommend you consider using the [Windows App SDK](/windows/apps/windows-app-sdk/), and [WinUI](/windows/apps/develop/) rather than UWP. Although still supported, UWP is not under active development. Please see [Start developing Windows apps](/windows/apps/get-started/start-here) for more information.
 
 To download the tools you will need to start creating Windows apps, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment), and then [write your first app](your-first-app.md).
 
@@ -18,7 +21,6 @@ To download the tools you will need to start creating Windows apps, see [Install
 
 UWP is one choice for creating apps that run on Windows 10 and Windows 11 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)).
 
-The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and the [Windows App SDK](/windows/apps/windows-app-sdk/), UWP is a powerful tool for creating client apps.
 
 
 ## Features of a UWP app
@@ -123,7 +125,7 @@ In addition to interaction on different devices, [plan your app](./plan-your-app
 
 - Design your workflow using [Navigation design basics for UWP apps](/windows/apps/design/basics/navigation-basics) to accommodate mobile, small-screen, and large-screen devices. [Lay out your user interface](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design) to respond to different screen sizes and resolutions.
 
-- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](/windows/apps/design/layout/index) to learn how users can interact with your app by using [Cortana](/cortana/skills/), [Speech](/windows/apps/design/input/speech-interactions), [Touch interactions](/windows/apps/design/input/touch-interactions), the [Touch keyboard](/windows/apps/design/input/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](/windows/apps/design/controls/text-controls) for more traditional interaction experiences.
+- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](/windows/apps/design/layout/index) to learn how users can interact with your app by using [Speech](/windows/apps/design/input/speech-interactions), [Touch interactions](/windows/apps/design/input/touch-interactions), the [Touch keyboard](/windows/apps/design/input/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](/windows/apps/design/controls/text-controls) for more traditional interaction experiences.
 
 ### Add services
 

@@ -144,7 +144,7 @@ The hosted app consists of a python script and package artifacts such as the pac
 
 The package manifest for the hosted app (the NumberGuesser/AppxManifest.xml file) contains the following items:
 
-* The **Publisher** attribute of the [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element contains the `OID.2.25.311729368913984317654407730594956997722=1` identifer, which is required for an unsigned package.
+* The **Publisher** attribute of the [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element contains the `OID.2.25.311729368913984317654407730594956997722=1` identifier, which is required for an unsigned package.
 * The **uap10:HostId** attribute of the [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element identifies **PythonHost** as its host.
 
 ### Run the sample

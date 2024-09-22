@@ -24,7 +24,7 @@ Use an `Expander` when some primary content should always be visible, but relate
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The Expander for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The Expander for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >
@@ -139,7 +139,7 @@ By default, the [Expander](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.
 <Expander IsExpanded="True" ExpandDirection="Up">
 ```
 
-An `Expander` is expanded or collapsed either programatically by setting the `IsExpanded` property, or by interacting with the `Header`; it cannot be light-dismissed.
+An `Expander` is expanded or collapsed either programmatically by setting the `IsExpanded` property, or by interacting with the `Header`; it cannot be light-dismissed.
 
 > [!TIP]
 > Transient UI, such as a `Flyout` or the open drop-down of a `ComboBox`, closes when you click or tap outside of it. This is called _light-dismiss_. The content area of an `Expander` is not considered transient and does not overlay other UI, so it does not support light-dismiss.

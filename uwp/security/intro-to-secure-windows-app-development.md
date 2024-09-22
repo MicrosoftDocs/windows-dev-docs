@@ -2,7 +2,7 @@
 title: Intro to secure Windows app development
 description: This introductory article helps app architects and developers better understand the various Windows 10 platform capabilities that accelerate creating secure Universal Windows Platform (UWP) apps.
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
-ms.date: 02/08/2017
+ms.date: 07/08/2024
 ms.topic: article
 keywords: windows 10, windows 11, uwp, security
 ms.localizationpriority: medium
@@ -14,19 +14,19 @@ This introductory article helps app architects and developers better understand 
 
 ## 1 Introduction
 
-Developing a secure app can be a challenge. In today’s fast-paced world of mobile, social, cloud, and complex enterprise apps, customers expect apps to become available and updated faster than ever. They also use many types of devices, further adding to the complexity of creating app experiences. If you build for the Windows 10 and Windows 11 Universal Windows Platform (UWP), that could include the traditional list of desktops, laptops, tablets, and mobile devices; in addition to a growing list of new devices spanning the Internet of Things, Xbox One, Microsoft Surface Hub, and HoloLens. As the developer, you must ensure your apps communicate and store data securely, across all the platforms or devices involved.
+Developing a secure app can be a challenge. In today’s fast-paced world of mobile, social, cloud, and complex enterprise apps, customers expect apps to become available and updated faster than ever. They also use many types of devices, further adding to the complexity of creating app experiences. If you build for the Windows Universal Windows Platform (UWP), that could include the traditional list of desktops, laptops, tablets, and mobile devices; in addition to a growing list of new devices spanning the Internet of Things, Xbox One, Microsoft Surface Hub, and HoloLens. As the developer, you must ensure your apps communicate and store data securely, across all the platforms or devices involved.
 
-Here are some of the benefits of utilizing Windows 10 and Windows 11 security features.
+Here are some of the benefits of utilizing Windows security features.
 
-- You will have standardized security across all devices that support Windows 10 and Windows 11, by using consistent APIs for security components and technologies.
+- You will have standardized security across all devices that support Windows, by using consistent APIs for security components and technologies.
 - You write, test, and maintain less code than you would if you implemented custom code to cover these security scenarios.
 - Your apps become more stable and secure because you use the operating system to control how the app accesses its resources and local or remote system resources.
 
-During authentication, the identity of a user requesting access to a particular service is validated. Windows Hello is the component in Windows 10 and Windows 11 that helps create a more secure authentication mechanism in Windows apps. With it, you can use a Personal Identification Number (PIN) or biometrics such as the user’s fingerprints, face, or iris to implement multi-factor authentication for your apps.
+During authentication, the identity of a user requesting access to a particular service is validated. Windows Hello is the component in Windows that helps create a more secure authentication mechanism in Windows apps. With it, you can use a Personal Identification Number (PIN) or biometrics such as the user’s fingerprints, face, or iris to implement multi-factor authentication for your apps.
 
 Data-in-flight refers to the connection and the messages transferred across it. An example of this is retrieving data from a remote server using web services. The use of Secure Sockets Layer (SSL) and Secure Hypertext Transfer Protocol (HTTPS) ensures the security of the connection. Preventing intermediary parties from accessing these messages, or unauthorized apps from communicating with the web services, is key to securing data in flight.
 
-Lastly, data-at-rest relates to data residing in memory or on storage media. Windows 10 and Windows 11 have an app model that prevents unauthorized data access between apps, and offers encryption APIs to further secure data on the device. A feature called Credential Locker can be used to securely store user credentials on the device, with the operating system preventing other apps from accessing them.
+Lastly, data-at-rest relates to data residing in memory or on storage media. Windows apps have an app model that prevents unauthorized data access between apps, and offers encryption APIs to further secure data on the device. A feature called Credential Locker can be used to securely store user credentials on the device, with the operating system preventing other apps from accessing them.
 
 ## 2 Authentication Factors
 
@@ -65,11 +65,11 @@ For all of its disadvantages, single-factor authentication gives the user contro
 
 As previously discussed, one of the challenges with password authentication for an IT department is the added overhead of managing the base of usernames/passwords, reset mechanisms, etc. An increasingly popular option is to rely on third-party identity providers that offer authentication through OAuth, an open standard for authentication.
 
-Using OAuth, IT departments can effectively "outsource" the complexity of maintaining a database with usernames and passwords, reset password functionality, etc. to a third party identity provider like Facebook, Twitter or Microsoft.
+Using OAuth, IT departments can effectively "outsource" the complexity of maintaining a database with usernames and passwords, reset password functionality, etc. to a third party identity provider like Facebook, X or Microsoft.
 
 Users have complete control over their identity on these platforms, but apps can request a token from the provider, after the user is authenticated and with their consent, which can be used to authorize authenticated users.
 
-The web authentication broker in Windows 10 and Windows 11 provides a set of APIs and infrastructure for apps to use authentication and authorization protocols like OAuth and OpenID. Apps can initiate authentication operations through the [**WebAuthenticationBroker**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) API, resulting in the return of a [**WebAuthenticationResult**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationResult). An overview of the communication flow is illustrated in the following figure.
+The web authentication broker in Windows provides a set of APIs and infrastructure for apps to use authentication and authorization protocols like OAuth and OpenID. Apps can initiate authentication operations through the [**WebAuthenticationBroker**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) API, resulting in the return of a [**WebAuthenticationResult**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationResult). An overview of the communication flow is illustrated in the following figure.
 
 ![wab workflow](images/secure-wab.png)
 
@@ -146,7 +146,7 @@ Additionally, Azure AD can be used as an OAuth provider, providing the standard 
 
 ## 2.4 Windows Hello
 
-In Windows 10 and Windows 11, a convenient multi-factor authentication mechanism is built into the operating system. Windows Hello is the new biometric sign-in system built into Windows 10 and Windows 11. Because it is built directly into the operating system, Windows Hello allows face or fingerprint identification to unlock users’ devices. The Windows secure credential store protects biometric data on the device.
+In Windows, a convenient multi-factor authentication mechanism is built into the operating system. Windows Hello is the new biometric sign-in system built into Windows. Because it is built directly into the operating system, Windows Hello allows face or fingerprint identification to unlock users’ devices. The Windows secure credential store protects biometric data on the device.
 
 Windows Hello provides a robust way for a device to recognize an individual user, which addresses the first part of the path between a user and a requested service or data item. After the device has recognized the user, it still must authenticate the user before determining whether to grant access to a requested resource. Windows Hello also provides strong two-factor authentication (2FA) that is fully integrated into Windows and replaces reusable passwords with the combination of a specific device, and a biometric gesture or PIN. The PIN is specified by the user as part of their Microsoft account enrollment.
 
@@ -160,11 +160,11 @@ The registration workflow of an app might look like the following:
 
 The registration information you collect may include a lot more identifying information than it does in this simple scenario. For example, if your app accesses a secured service such as one for banking, you’d need to request proof of identity and other things as part of the sign-up process. Once all the conditions are met, the public key of this user will be stored in the back-end and used to validate the next time the user uses the service.
 
-For more information on Windows Hello, see the [Windows Hello guide](/windows/keep-secure/microsoft-passport-guide) and the [Windows Hello developer guide](microsoft-passport.md).
+For more information on Windows Hello, see the [Windows Hello for Business overview](/windows/security/identity-protection/hello-for-business/) and the [Windows Hello developer guide](/windows/apps/develop/security/windows-hello).
 
 ## 3 Data-in-flight security methods
 
-Data-in-flight security methods apply to data in transit between devices connected to a network. The data may be transferred between systems on the high-security environment of a private corporate intranet, or between a client and web service in the non-secure environment of the web. Windows 10 and Windows 11 apps support standards such as SSL through their networking APIs, and work with technologies such as Azure API Management with which developers can ensure the appropriate level of security for their apps.
+Data-in-flight security methods apply to data in transit between devices connected to a network. The data may be transferred between systems on the high-security environment of a private corporate intranet, or between a client and web service in the non-secure environment of the web. Windows apps support standards such as SSL through their networking APIs, and work with technologies such as Azure API Management with which developers can ensure the appropriate level of security for their apps.
 
 ## 3.1 Remote system authentication
 
@@ -258,7 +258,7 @@ Azure API Management can also reduce the number of API calls to a service (a pro
 
 ## 4 Data-at-rest security methods
 
-When data arrives on a device, we refer to it as "data-at-rest." This data needs to be stored on the device in a secure manner, so that it cannot be accessed by unauthorized users or apps. The app model in Windows 10 and Windows 11 does a lot to ensure that the data stored by any app is only accessible to that app, while providing APIs to share the data when necessary. Additional APIs are also available to ensure that data can be encrypted and credentials can be stored safely.
+When data arrives on a device, we refer to it as "data-at-rest." This data needs to be stored on the device in a secure manner, so that it cannot be accessed by unauthorized users or apps. The app model in Windows does a lot to ensure that the data stored by any app is only accessible to that app, while providing APIs to share the data when necessary. Additional APIs are also available to ensure that data can be encrypted and credentials can be stored safely.
 
 ## 4.1 Windows app model
 
@@ -266,7 +266,7 @@ Traditionally, Windows has never had a definition of an app. It was most commonl
 
 Windows 10 apps run in a container, which means that they have limited privileges by default (additional privileges can be requested and granted by the user). For example, if an app wants to access files on the system, a file picker from the [**Windows.Storage.Pickers**](/uwp/api/Windows.Storage.Pickers) namespace has to be used to let the user pick a file (no direct access to files is enabled). Another example is if an app wants to access the user’s location data, it needs to enable the location device capability needs to be declared, prompting the user at download time that this app will request access to the user’s location. On top of that, the first time the app wants to access the user’s location, an additional consent prompt is shown to the user, requesting permission to access the data.
 
-Note that this app model acts as a "jail" for apps, meaning that they can’t reach out, but it is not a “castle” that cannot be reached from the outside (applications with administrator privileges can of course still reach in). Device Guard in Windows 10 and Windows 11, which enables organizations/IT to specify which (Win32) apps are allowed to execute, can further help limit this access.
+Note that this app model acts as a "jail" for apps, meaning that they can’t reach out, but it is not a “castle” that cannot be reached from the outside (applications with administrator privileges can of course still reach in). Device Guard in Windows, which enables organizations/IT to specify which (Win32) apps are allowed to execute, can further help limit this access.
 
 The app model also manages the app lifecycle. It limits the background execution of apps by default, for example; as soon as an app goes into the background, the process is suspended – after giving the app a brief period to address app suspension in code – and its memory is frozen. The operating system does provide mechanisms for apps to ask for specific background task execution (on a schedule, triggered by various events such as Internet/Bluetooth connectivity, power changes, etc., and in specific scenarios such as music playing or GPS tracking).
 
@@ -276,7 +276,7 @@ For more information, see [It's Universal: Understanding the Lifecycle of a Wind
 
 ## 4.2 Stored credential protection
 
-Windows apps that access authenticated services often provide the users the option of storing their credentials on the local device. This is a convenience for the users; when they provide their username and password, the app automatically uses them in subsequent launches of the app. Because this can be a security issue if an attacker gains access to this stored data, Windows 10 and Windows 11 provide the ability for Windows apps to store user credentials in a secure credential locker. The app calls the Credential Locker API to store and retrieve the credentials from the locker instead of storing them in the app’s storage container. The credential locker is managed by the operating system, but access is limited to the app that stores them, providing a securely managed solution for credential storage.
+Windows apps that access authenticated services often provide the users the option of storing their credentials on the local device. This is a convenience for the users; when they provide their username and password, the app automatically uses them in subsequent launches of the app. Because this can be a security issue if an attacker gains access to this stored data, Windows provides the ability for packaged apps to store user credentials in a secure credential locker. The app calls the Credential Locker API to store and retrieve the credentials from the locker instead of storing them in the app’s storage container. The credential locker is managed by the operating system, but access is limited to the app that stores them, providing a securely managed solution for credential storage.
 
 When a user supplies the credentials to be stored, the app gets a reference to the credential locker using the [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) object in the [**Windows.Security.Credentials**](/uwp/api/Windows.Security.Credentials) namespace. It then creates a [**PasswordCredential**](/uwp/api/Windows.Security.Credentials.PasswordCredential) object containing an identifier for the Windows app and the username and password. This is passed to the [**PasswordVault.Add**](/uwp/api/windows.security.credentials.passwordvault.add) method to store the credentials in the locker. The following C# code example shows how this is done.
 
@@ -380,7 +380,7 @@ Windows apps can implement MAC message verification by calling the [**MacAlgorit
 
 A hash function is a cryptographic algorithm that takes an arbitrarily long block of data and returns a fixed-size bit string called a hash value. There is an entire family of hash functions that can do this.
 
-A hash value can be used in place of a MAC in the message-transfer scenario above. The sender sends a hash value and a message, and the receiver derives their own hash value from the sender's hash value and message and compares the two hash values. Apps running on Windows 10 and Windows 11 can call the [**HashAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) class to enumerate the hash algorithms that are available and run one of them. The [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) class represents the hash value. The [**CryptographicHash.GetValueAndReset**](/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) method can be used to repeatedly hash different data without having to re-create the object for each use. The Append method of the **CryptographicHash** class adds new data to a buffer to be hashed. This entire process is shown in the following C# code example.
+A hash value can be used in place of a MAC in the message-transfer scenario above. The sender sends a hash value and a message, and the receiver derives their own hash value from the sender's hash value and message and compares the two hash values. Apps running on Windows can call the [**HashAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) class to enumerate the hash algorithms that are available and run one of them. The [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) class represents the hash value. The [**CryptographicHash.GetValueAndReset**](/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) method can be used to repeatedly hash different data without having to re-create the object for each use. The Append method of the **CryptographicHash** class adds new data to a buffer to be hashed. This entire process is shown in the following C# code example.
 
 ```cs
 public void SampleReusableHash()
@@ -431,7 +431,7 @@ For more information, take a look articles on [Digital signatures](/windows/desk
 
 ## 5 Summary
 
-The Universal Windows Platform in Windows 10 and Windows 11 offers a number of ways to leverage operating system capabilities to create more secure apps. In different authentication scenarios, such as single-factor, multi-factor, or brokered authentication with an OAuth identity provider, APIs exist to mitigate the most common challenges with authentication. Windows Hello provides a new biometric sign-in system that recognizes the user and actively defeats efforts to circumvent proper identification. It also delivers multiple layers of keys and certificates that can never be revealed or used outside the trusted platform module. Plus, a further layer of security is available through the optional use of attestation identity keys and certificates.
+The Universal Windows Platform in Windows offers a number of ways to leverage operating system capabilities to create more secure apps. In different authentication scenarios, such as single-factor, multi-factor, or brokered authentication with an OAuth identity provider, APIs exist to mitigate the most common challenges with authentication. Windows Hello provides a new biometric sign-in system that recognizes the user and actively defeats efforts to circumvent proper identification. It also delivers multiple layers of keys and certificates that can never be revealed or used outside the trusted platform module. Plus, a further layer of security is available through the optional use of attestation identity keys and certificates.
 
 To secure data in flight, APIs exist to communicate with remote systems securely over SSL, while providing the possibility to validate the server’s authenticity with SSL pinning. Publishing APIs securely and in a controlled manner is something in which Azure API Management aids by providing powerful configuration options for exposing APIs across the web using a proxy that provides additional obfuscation of the API endpoint. Access to these APIs is secured by using API keys and API calls can be throttled to control performance.
 
@@ -442,7 +442,7 @@ When the data arrives on the device, the Windows app model provides more control
 ### 6.1 How-to articles
 
 - [Authentication and user identity](authentication-and-user-identity.md)
-- [Windows Hello](microsoft-passport.md)
+- [Windows Hello](/windows/apps/develop/security/windows-hello)
 - [Credential locker](credential-locker.md)
 - [Web authentication broker](web-authentication-broker.md)
 - [Fingerprint biometrics](fingerprint-biometrics.md)

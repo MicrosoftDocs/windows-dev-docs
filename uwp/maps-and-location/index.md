@@ -2,26 +2,25 @@
 title: Maps and location overview
 description: This section explains how you can display maps, use map services, find the location, and set up a geofence in your app. This section also shows you how to launch the Windows Maps app to a specific map, route, or a set of turn-by-turn directions.
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.date: 10/20/2020
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, map, location, map services
 ms.localizationpriority: medium
 ---
 # Maps and location overview
 
+> [!IMPORTANT]
+> **Bing Maps for Enterprise service retirement**
+>
+> The UWP [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services from the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+>
+> For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
+
 This section explains how you can display maps, use map services, find the location, and set up a geofence in your app. This section also shows you how to launch the Windows Maps app to a specific map, route, or a set of turn-by-turn directions.
 
 [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services require a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
-> [!TIP]
-> To learn more about using maps and location in your app, download the following samples from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub:
--   [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
--   [UWP geolocation sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
-
- 
-
 ## Display maps
-
 
 Display maps with 2D, 3D, or Streetside views in your app by using APIs from the [**Windows.UI.Xaml.Controls.Maps**](/uwp/api/Windows.UI.Xaml.Controls.Maps) namespace. You can mark points of interest (POI) on the map by using pushpins, images, shapes, or XAML UI elements. You can also overlay tiled images or replace the map images altogether.
 
@@ -31,8 +30,6 @@ Display maps with 2D, 3D, or Streetside views in your app by using APIs from the
 | [Display maps with 2D, 3D, and Streetside views](display-maps.md) | Display customizable maps in your app by using the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) class. This topic also introduces aerial 3D and Streetside views. |
 | [Display points of interest (POI) on a map](display-poi.md) | Add points of interest (POI) to a map by using pushpins, images, shapes, and XAML UI elements. |
 | [Overlay tiled images on a map](overlay-tiled-images.md) | Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely. |
-
-
 
 ## Access map services
 
@@ -54,7 +51,7 @@ Get the user's current location and be notified when the location changes in you
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Request a maps authentication key](authentication-key.md) | Your app must be authenticated before it can use the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services in the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace. To authenticate your app, you must specify a maps authentication key. This article describes how to request a maps authentication key from the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and add it to your app. |
 | [Design guidelines for location-aware apps](guidelines-and-checklist-for-detecting-location.md) | Performance guidelines for apps that require access to a user's location. |
-| [Get the user's location](get-location.md) | Get access to the user's location, then retreive it. | 
+| [Get the user's location](get-location.md) | Get access to the user's location, then retrieve it. | 
 | [Guidelines for using Visits tracking](guidelines-for-visits.md) | Learn how to use the powerful Visits Tracking feature for more practical location tracking. |
 | [Design guidance for geofencing](guidelines-for-geofencing.md) | Performance guidelines for apps that utilize the geofencing feature. |
 | [Set up a geofence](set-up-a-geofence.md) | Set up a geofence in your app, and learn how to handle notifications in the foreground and background. |
@@ -74,5 +71,3 @@ Your app can launch the Windows Maps app as shown here to display specific maps 
 * [Design guidelines for location-aware apps](guidelines-and-checklist-for-detecting-location.md)
 * [Design guidelines for maps](./display-maps.md)
 * [Design guidelines for privacy-aware apps](../security/index.md)
-* Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
-* [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)

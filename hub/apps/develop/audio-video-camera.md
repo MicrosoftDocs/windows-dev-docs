@@ -27,7 +27,7 @@ The following articles provide information about features available via WinRT AP
 | [Camera](/windows/uwp/audio-video-camera/camera) | Learn about how to use the camera or microphone to capture photos, video, or audio. |
 | [Media playback](/windows/uwp/audio-video-camera/media-playback/) | Learn about how to play back audio and video in your apps. |
 | [Visual layer](/windows/uwp/composition/visual-layer) | The Visual layer provides a high performance, retained-mode API for graphics, effects and animations, and is the foundation for all UI across Windows devices. |
-| [XAML platform](/windows/uwp/xaml-platform/) |  Describes the XAML language and concepts to apps that use a WinRT XAML-based UI, including XAML UI components provided by Windows 10 and later as well as the Windows UI Library. |
+| [XAML platform](/windows/uwp/xaml-platform/) |  Describes the XAML language and concepts to apps that use a WinRT XAML-based UI, including XAML UI components provided by Windows 10 and later as well as WinUI. |
 
 #### Win32 (C++ and COM) APIs
 
@@ -50,6 +50,6 @@ The .NET SDK also provides APIs related to audio, video, and camera scenarios fo
 | Article | Description |
 |---------|-------------|
 | [Graphics (WPF)](/dotnet/framework/wpf/graphics-multimedia/graphics) | Learn about support for multimedia, vector graphics, animation, and content composition in WPF apps. |
-| [Mutimedia (WPF)](/dotnet/framework/wpf/graphics-multimedia/multimedia-overview) | Learn about integrating audio and video into your WPF apps. |
+| [Multimedia (WPF)](/dotnet/framework/wpf/graphics-multimedia/multimedia-overview) | Learn about integrating audio and video into your WPF apps. |
 | [Graphics and drawing (Windows Forms)](/dotnet/framework/winforms/advanced/graphics-and-drawing-in-windows-forms) | Learn how to create graphics, draw text, and manipulate graphical images in Windows Forms apps. |
 | [SoundPlayer class (Windows Forms)](/dotnet/framework/winforms/controls/soundplayer-class-overview) | Learn how to include sounds in your Windows Forms applications. |

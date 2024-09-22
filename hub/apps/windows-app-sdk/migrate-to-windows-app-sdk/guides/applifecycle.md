@@ -4,8 +4,6 @@ description: This topic contains migration guidance in the application lifecycle
 ms.topic: article
 ms.date: 09/06/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, application lifecycle, applifecycle, application, lifecycle
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 dev_langs:
   - csharp
@@ -214,5 +212,6 @@ See the [File type association](#file-type-association) section above for more d
 
 ## Related topics
 
+* [Windows App SDK and supported Windows releases](../../support.md)
 * [App instancing with the app lifecycle API](../../applifecycle/applifecycle-instancing.md)
 * [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation)

@@ -131,7 +131,7 @@ Finally, you can register for the track's [**OpenFailed**](/uwp/api/windows.medi
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetAudioTracksChanged_CodecCheck":::
 
-In the [**OpenFailed**](/uwp/api/windows.media.core.audiotrack.openfailed) event handler, you can check to see if the **MediaSource** status is unknown, and if so, you can programatically select a different track to play, allow the user to choose a different track, or abandon playback.
+In the [**OpenFailed**](/uwp/api/windows.media.core.audiotrack.openfailed) event handler, you can check to see if the **MediaSource** status is unknown, and if so, you can programmatically select a different track to play, allow the user to choose a different track, or abandon playback.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetOpenFailed":::
 
@@ -159,6 +159,8 @@ Register all of your **TimedTextSource** objects with the **MediaSource** by add
 In the handler for the [**TimedTextSource.Resolved**](/uwp/api/windows.media.core.timedtextsource.resolved) event, check the **Error** property of the [**TimedTextSourceResolveResultEventArgs**](/uwp/api/Windows.Media.Core.TimedTextSourceResolveResultEventArgs) passed into the handler to determine if an error occurred while trying to load the timed text data. If the item was resolved successfully, you can use this handler to update additional properties of the resolved track. This example adds a label for each track based on the URI previously stored in the **Dictionary**.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetTimedTextSourceResolved":::
+
+For a list of the timed text formats that are supported on Windows, see [Supported codecs](supported-codecs.md).
 
 ## Add additional metadata tracks
 
@@ -202,7 +204,7 @@ To enable playback of your list, set the playback source of the **MediaPlayer** 
 
 In the **CurrentItemChanged** event handler, update your UI to reflect the currently playing item, which can be retrieved using the [**NewItem**](/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.newitem) property of the [**CurrentMediaPlaybackItemChangedEventArgs**](/uwp/api/Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs) object passed into the event. Remember that if you update the UI from this event, you should do so within a call to [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) so that the updates are made on the UI thread.
 
-Starting with Windows 10, version 1703, you can check the [CurrentMediaPlaybackItemChangedEventArgs.Reason](/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.Reason) property to get a value that indicates the reason that the item changed, such as the app switching items programatically, the previously playing item reaching its end, or an error occurring.
+Starting with Windows 10, version 1703, you can check the [CurrentMediaPlaybackItemChangedEventArgs.Reason](/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.Reason) property to get a value that indicates the reason that the item changed, such as the app switching items programmatically, the previously playing item reaching its end, or an error occurring.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetMediaPlaybackListItemChanged":::
 
@@ -256,5 +258,5 @@ Starting with Windows 10, version 1703, you can supply an [**AdaptiveMediaSource
 ## Related topics
 * [Media playback](media-playback.md)
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Integrate with the Sytem Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
+* [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
 * [Play media in the background](background-audio.md)

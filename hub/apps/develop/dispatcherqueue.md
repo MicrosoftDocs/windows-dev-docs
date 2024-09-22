@@ -4,8 +4,6 @@ description: Describes the purpose and function of the Windows App SDK Dispatche
 ms.date: 08/30/2023
 ms.topic: article
 keywords: windows 11, windows 10, dispatcherqueue, dispatcherqueuecontroller
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: high
 ---
 

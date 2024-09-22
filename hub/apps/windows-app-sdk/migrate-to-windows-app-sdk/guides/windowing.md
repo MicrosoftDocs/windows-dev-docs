@@ -4,8 +4,6 @@ description: This topic contains guidance related to window management, includin
 ms.topic: article
 ms.date: 09/02/2022
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -216,4 +214,5 @@ For more info, and code examples, see [Change Windows.UI.Core.CoreDispatcher to 
 
 ## Related topics
 
+* [Windows App SDK and supported Windows releases](../../support.md)
 * [Migrate your threading functionality](threading.md)

@@ -2,7 +2,7 @@
 title: Create a multi-instance Universal Windows App
 description: This topic describes how to write UWP apps that support multi-instancing.
 keywords: multi-instance uwp
-ms.date: 08/10/2022
+ms.date: 02/29/2024
 ms.topic: article
 
 
@@ -20,6 +20,9 @@ From Windows 10, version 1803 (10.0; Build 17134) onward, your UWP app can opt i
 ## Opt in to multi-instance behavior
 
 If you are creating a new multi-instance application, you can install the [Multi-Instance App Project Templates.VSIX](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps), available from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/). Once you install the templates, they will be available in the **New Project** dialog under **Visual C# > Windows Universal** (or **Other Languages > Visual C++ > Windows Universal**).
+
+> [!Note]
+> The Multi-Instance App Project template is no longer available. The VSIX template was a convenience, so you will need to modify the existing project instead, as described below.  Be certain to add the DISABLE_XAML_GENERATED_MAIN constant to the project build symbols, as this prevents the build from generating a default Main(). This allows used of a specially written app-specific version of Main().
 
 Two templates are installed: **Multi-Instance UWP app**, which provides the template for creating a multi-instance app, and **Multi-Instance Redirection UWP app**, which provides additional logic that you can build on to either launch a new instance or selectively activate an instance that has already been launched. For example, perhaps you only want one instance at a time editing the same document, so you bring the instance that has that file open to the foreground rather than launching a new instance.
 

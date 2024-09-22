@@ -1,7 +1,7 @@
 ---
 description: This article describes WinRT APIs that aren't supported for use in desktop apps, or that have restrictions.
 title: Windows Runtime APIs not supported in desktop apps
-ms.date: 09/16/2022
+ms.date: 02/27/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
@@ -68,7 +68,7 @@ The following classes *are* supported in desktop apps; but to retrieve an instan
 | [**ResourceLoader**](/uwp/api/windows.applicationmodel.resources.resourceloader) | See [MRT to MRT Core migration](../../windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md). |
 | [**SpatialInteractionManager**](/uwp/api/windows.ui.input.spatial.spatialinteractionmanager) | Use the [**ISpatialInteractionManagerInterop**](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop) COM interface instead (in `spatialinteractionmanagerinterop.h`). |
 | [**SystemMediaTransportControls**](/uwp/api/windows.media.systemmediatransportcontrols) | Use the [**ISystemMediaTransportControlsInterop**](/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop) COM interface instead (in `systemmediatransportcontrolsinterop.h`). |
-| [**UserActivityRequestManager**](/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager) | Use the [**IUserActivityRequestManagerInterop**](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivityrequestmanagerinterop) COM interface insead (in `useractivityinterop.h`). |
+| [**UserActivityRequestManager**](/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager) | Use the [**IUserActivityRequestManagerInterop**](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivityrequestmanagerinterop) COM interface instead (in `useractivityinterop.h`). |
 | [**UIViewSettings**](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the [**IUIViewSettingsInterop**](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) COM interface instead (in `uiviewsettingsinterop.h`). |
 
 The following classes are *not* supported in desktop apps because the APIs don't provide an alternative to their **GetForCurrentView** or **CreateForCurrentView** method. The list might not be comprehensive.
@@ -125,7 +125,7 @@ The following classes are supported in desktop apps, except for the specified me
 
 #### Methods that use the Request naming pattern
 
-Methods that follow the **Request** naming pattern&mdash;such as [**AppCapability.RequestAccessAsync**](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability.requestaccessasync) and [**StoreContext.RequestPurchaseAsync**](/uwp/api/windows.services.store.storecontext.requestpurchaseasync)&mdash;aren't supported in desktop apps. Internally, these methods use the [**Windows.UI.Popups**](/uwp/api/windows.ui.popups) class. That class requires that the thread have a [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) object, which isn't supported in desktop apps.
+Most methods that follow the **Request** naming pattern&mdash;such as [**AppCapability.RequestAccessAsync**](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability.requestaccessasync) and [**StoreContext.RequestPurchaseAsync**](/uwp/api/windows.services.store.storecontext.requestpurchaseasync)&mdash;aren't supported in desktop apps. Internally, these methods use the [**Windows.UI.Popups**](/uwp/api/windows.ui.popups) class. That class requires that the thread have a [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) object, which isn't supported in desktop apps.
 
 The full list of methods that follow the **Request** naming pattern is very long, and this article doesn't provide a comprehensive list of those methods.
 

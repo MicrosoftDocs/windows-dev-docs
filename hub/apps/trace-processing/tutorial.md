@@ -1,9 +1,7 @@
 ---
 title: Access trace data - .NET TraceProcessing
 description: In this tutorial, learn how to access trace data using TraceProcessor.
-author: maiak
-ms.author: maiak
-ms.date: 02/23/2020
+ms.date: 08/19/2024
 ms.topic: tutorial
 ---
 
@@ -94,7 +92,7 @@ An .etl file can capture many kinds of data in a trace. Note that which data is 
 | trace.UseHandles()                        | Provides partial data from a trace about active kernel handles.                                                            | Handles table                                                        |
 | trace.UseHardFaults()                     | Provides data from a trace about hard page faults.                                                                         | Hard Faults table                                                    |
 | trace.UseHeapSnapshots()                  | Provides data from a trace about process heap usage.                                                                       | Heap Snapshot table                                                  |
-| trace.UseHypercalls()                     | Provides data about Hyper-V hypercalls that ocurred during a trace.                                                        |                                                                      |
+| trace.UseHypercalls()                     | Provides data about Hyper-V hypercalls that occurred during a trace.                                                        |                                                                      |
 | trace.UseImageSections()                  | Provides data from a trace about the sections of an image.                                                                 | Section Name column of the CPU Usage (Sampled) table                 |
 | trace.UseInterruptHandlingData()          | Provides data from a trace about Interrupt Service Routine (ISR) and Deferred Procedure Call (DPC) activity.               | DPC/ISR table                                                        |
 | trace.UseMarks()                          | Provides the marks (labeled timestamps) from a trace.                                                                      | Marks table                                                          |

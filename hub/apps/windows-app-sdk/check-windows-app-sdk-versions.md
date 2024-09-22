@@ -2,10 +2,8 @@
 title: Check for installed versions of the Windows App SDK runtime
 description: This article provides instructions for verifying the version of the Windows App SDK runtime installed on your development computer. 
 ms.topic: article
-ms.date: 05/21/2021
+ms.date: 08/19/2024
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: stwhi
-author: whims
 ms.localizationpriority: medium
 ---
 
@@ -148,6 +146,7 @@ Status            : Ok
 
 ## Related topics
 
+- [Windows App SDK and supported Windows releases](support.md)
 - [Runtime architecture](deployment-architecture.md)
 - [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)

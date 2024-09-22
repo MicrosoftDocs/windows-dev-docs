@@ -1,7 +1,7 @@
 ---
 title: features Command
 description: Displays the list of experimental features available and the state.
-ms.date: 07/26/2023
+ms.date: 07/11/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -16,7 +16,7 @@ You can find the latest up to date information features on the [experimental fea
 
 ## Usage
 
-`winget features`
+`winget features [<options>]`
 
 ![features command](./images/features.png)
 
@@ -28,3 +28,18 @@ To enabled any disabled features, go to **settings** and enable the feature.
 
 > [!NOTE]
 > Features may be managed by group policy. You can use the **winget --info** command to view any policies in effect on your system.
+
+## Options
+
+The following options are available.
+
+| Option  | Description |
+|--------------|-------------|
+| **-?,--help** | Shows help about the selected command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
+| **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |

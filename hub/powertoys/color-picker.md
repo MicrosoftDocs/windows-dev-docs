@@ -11,17 +11,17 @@ no-loc: [PowerToys, Windows, Color Picker, Color, Picker]
 
 A system-wide color picking utility for Windows to pick colors from any screen and copy it in a configurable format to the clipboard.
 
-![Color Picker screenshot.](../images/pt-colorpicker-hex-editor.png)
+![Color Picker screenshot](../images/pt-colorpicker-hex-editor.png)
 
 ## Getting started
 
 ### Enabling Color Picker
 
-Enable Color Picker in the **Color Picker** tab in PowerToys Settings.
+Enable Color Picker in PowerToys Settings.
 
 ### Activating Color Picker
 
-You can choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>) by changing **Activation Behavior**:
+Choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>) by changing **Activation Behavior**:
 
 :::image type="content" source="../images/pt-colorpicker-activation.gif" alt-text="Color Picker behaviors.":::
 
@@ -35,10 +35,10 @@ After activating Color Picker, select a color on your screen to pick that color.
 
 Color Picker copies the selected color to the clipboard in the **Default color format** you've chosen in Color Picker's settings (default: HEX).
 
-![Selecting a Color.](../images/pt-colorpicker.gif)
+![Selecting a Color](../images/pt-colorpicker.gif)
 
 > [!TIP]
-> To select the color of the non-hover state of a element:
+> To select the color of the non-hover state of an element:
 >
 > 1. Move the mouse pointer close, but not over the element.
 > 2. Zoom in by scrolling the mouse wheel up. Image will be frozen.
@@ -46,22 +46,22 @@ Color Picker copies the selected color to the clipboard in the **Default color f
 
 ## Using the Color Picker editor
 
-The Color Picker editor stores a history of up to 20 picked colors and lets you copy them to the clipboard. You can choose which color formats are visible in the editor in **Color formats** in PowerToys Settings.
+The Color Picker editor stores a history of up to 20 picked colors and lets you copy them to the clipboard. Choose which color formats are visible in the editor in **Color formats** in PowerToys Settings.
 
 The colored bar at the top of the Color Picker editor lets you:
 
-* fine tune your chosen color
-* pick a similar color
+- fine tune your chosen color
+- pick a similar color
 
 To fine tune your chosen color, select the central color in the color bar. The fine-tuning control lets you change the color's **HSV**, **RGB**, and **HEX** values. **Select** adds the new color to the colors history.
 
-To choose a similar color, select one of the segments on the left and right edges of the color bar. The Color Picker editor suggests two lighter shades on the left of the bar, and two darker shades on the right of the bar. Selecting one of these similar colors adds that color to the colors history.
+To choose a similar color, select one of the segments on the top and bottom edges of the color bar. Selecting one of these similar colors adds it to the history.
 
-![Color Picker Editor window.](../images/pt-colorpicker-editor.gif)
+![Color Picker Editor window](../images/pt-colorpicker-editor.gif)
 
-To remove a color from the colors history, right-click a color and select **Remove**.
+To remove a color from the history, right-click a color and select **Remove**.
 
-To export the colors history, select and hold (or right-click) a color and select **Export**. You can group the exported values by colors or formats.
+To export the colors history, right-click a color and select **Export**. You can group the values by colors or formats.
 
 ## Settings
 
@@ -70,26 +70,26 @@ Color Picker has the following settings:
 | Setting | Description |
 | :--- | :--- |
 | **Activation shortcut** | The shortcut that activates Color Picker. |
-| **Activation behavior** | Changes what happens when you activate Color Picker. Read more about this setting in [Activating Color Picker](#activating-color-picker). |
+| **Activation behavior** | Sets what happens when you activate Color Picker. Read more about this setting in [Activating Color Picker](#activating-color-picker). |
 | **Default color format** | The color format that Color Picker copies to the clipboard. |
-| **Show color name** | When turned on, this setting shows a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'. |
-| **Color formats** | This section lets you enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about **Color formats** in [Managing color formats](#managing-color-formats).
+| **Show color name** | Shows a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'. |
+| **Color formats** | Enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about color formats in [Managing color formats](#managing-color-formats).
 
-![Color Picker Settings screenshot.](../images/pt-colorpicker-settings.gif)
+![Color Picker Settings screenshot](../images/pt-colorpicker-settings.png)
 
 ### Managing color formats
 
 You can add, edit, delete, disable, and change the order of color formats in **Color formats**.
 
-To change the order that color formats appear in the Color Picker editor, select **•••** next to a color format and select **Move up** or **Move down**.
+To change the order that color formats appear in the Color Picker editor, select the **more** button (•••) next to a color format and select **Move up** or **Move down**.
 
 To disable a color format, turn off the toggle next to that color format. Color Picker doesn't show disabled color formats in the editor.
 
-To delete a color format, select **•••** next to a color format and select **Delete**.
+To delete a color format, select the **more** button (•••) next to a color format and select **Delete**.
 
-To add a new color format, select **Add custom color format**. You can choose the color format's **Name** and **Format**. Select **Save** to add the color format. The syntax for color formats is described in the **Add custom color format** dialog.
+To add a new color format, select **Add custom color format**. Enter the color format's **Name** and **Format**. The syntax for color formats is described in the dialog.
 
-To edit a color format, select it from the list. You can edit the color format's **Name** and **Format** in the **Edit custom color format** dialog. Select **Update** to save your changes. The syntax for color formats is described in the **Edit custom color format** dialog.
+To edit a color format, select it from the list. Edit the color format's **Name** and **Format** in the **Edit custom color format** dialog. The syntax for color formats is described in the dialog.
 
 Define color formats with these parameters:
 
@@ -144,3 +144,5 @@ Color formats can contain any words or characters that you prefer. For example, 
 - Color Picker can't display on top of the Start menu or Action Center, but you can still pick a color.
 - If you started the currently focused application with an administrator elevation (**Run as administrator**), the Color Picker activation shortcut won't work, unless you also started PowerToys with administrator elevation.
 - Wide Color Gamut (WCG) and High Dynamic Range (HDR) color formats are currently not supported.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

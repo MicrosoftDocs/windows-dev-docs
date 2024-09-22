@@ -4,10 +4,7 @@ title: Developing with Rust on Windows
 summary: Get started developing with Rust using Windows, including setup for your development environment, Rust for Windows, and code examples.
 
 metadata: 
-  author: stevewhims
   description: Get started developing with Rust using Windows, including setup for your development environment, Rust for Windows, and code examples.
-  manager: jken
-  ms.author: stwhi
   ms.date: 03/04/2021
   ms.service: dev-environment
   ms.subservice: windows-rust

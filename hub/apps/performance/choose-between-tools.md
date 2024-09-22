@@ -3,8 +3,6 @@ title: Choosing between Visual Studio Performance Profiler and Windows Performan
 description: Learn how to select between Visual Studio Performance Profiler and Windows Performance Toolkit for general purpose performance analysis activities on Windows
 ms.topic: article
 ms.date: 11/05/2021
-ms.author: miniksa
-author: miniksa
 ms.localizationpriority: medium
 ---
 
@@ -126,7 +124,7 @@ A few of the benefits that PerfView offers include:
 
 For analyses surrounding a **single application** and especially a **single process**, all of the tools are very capable for collecting and understanding performance. The advantage, however, would side with Visual Studio Performance Profiler, especially when the application source and project system is already available. The Visual Studio Performance Profiler engine is designed to collect CPU, GPU, and memory information from a binary in a similar streamlined fashion to the F5 debugging capability. While only focusing on the one application at hand, this collection mechanism offers a tighter turn around and developer loop.
 
-Choose PerfView if Visual Studio doesn’t have the necessary capabilities, can’t be run due to collection requirements (common in production environments), or more detailed .NET diagnostic capabilities are needed.
+Choose PerfView if Visual Studio doesn't have the necessary capabilities, can't be run due to collection requirements (common in production environments), or more detailed .NET diagnostic capabilities are needed.
 
 For situations with **larger complexity** that include **multiple cross-process requests**, **hardware devices** and their **drivers**, or deep dives into **Windows platform technologies**, the Windows Performance Toolkit is the optimal choice.
 

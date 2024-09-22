@@ -1,9 +1,6 @@
 ---
 title: Native Android development on Windows
 description: A step-by-step guide on how to get started developing Android native apps on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: android, windows, android studio, visual studio, c++ android game, windows defender, emulator, virtual device, install, java, kotlin
 ms.date: 04/28/2020
@@ -68,7 +65,7 @@ Google Play **Instant apps** provide a way for people to try an app or game with
 **AndroidX artifacts** represents the new version of the Android support library and provides backwards-compatibility across Android releases. AndroidX provides a consistent namespace starting with the string androidx for all available packages.
 
 > [!NOTE]
-> AndroidX is now the default library. To uncheck this box and use the previous support library requires removing the lastest Android Q SDK. See [Uncheck use Androidx artifacts](https://stackoverflow.com/questions/56580980/uncheck-use-androidx-artifacts) on StackOverflow for instructions, but first note that the former Support Library packages have been mapped into corresponding androidx.* packages. For a full mapping of all the old classes and build artifacts to the new ones, see [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).
+> AndroidX is now the default library. To uncheck this box and use the previous support library requires removing the latest Android Q SDK. See [Uncheck use Androidx artifacts](https://stackoverflow.com/questions/56580980/uncheck-use-androidx-artifacts) on StackOverflow for instructions, but first note that the former Support Library packages have been mapped into corresponding androidx.* packages. For a full mapping of all the old classes and build artifacts to the new ones, see [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).
 
 ## Project files
 

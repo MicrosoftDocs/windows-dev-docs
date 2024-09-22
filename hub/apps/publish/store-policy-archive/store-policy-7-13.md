@@ -250,7 +250,7 @@ All pricing, including sales or discounting, for your digital products or servic
 
 ### 10.9 Notifications
 
-Your product must respect system settings for notifications and remain functional when they are disabled. This includes the presentation of ads and notifications to the customer, which must also be consistent with the customer’s preferences, whether the notifications are provided by the Microsoft Push Notification Service (MPNS), Windows Push Notification Service (WNS) or any other service. If the customer disables notifications, either on an product-specific or system-wide basis, your product must remain functional.
+Your product must respect system settings for notifications and remain functional when they are disabled. This includes the presentation of ads and notifications to the customer, which must also be consistent with the customer’s preferences, whether the notifications are provided by the Microsoft Push Notification Service (MPNS), Windows Push Notification Service (WNS) or any other service. If the customer disables notifications, either on a product-specific or system-wide basis, your product must remain functional.
 
 If your product uses MPNS or WNS to transmit notifications, it must comply with the following requirements:
 
@@ -283,13 +283,12 @@ For all advertising related activities, the following requirements apply:
 
 **10.10.2**
 
-If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-specs) and [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
+If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0) and [Creative Acceptance Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
 
 **10.10.3**
 
-Any advertising content your product displays must adhere to Microsoft’s [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
-
-If your product displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
+Any advertising content your product displays must adhere to Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
+If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
 
 **10.10.4**
 
@@ -471,4 +470,4 @@ User Generated Content (UGC) is content that users contribute to an app or produ
 
 - [Change history for Microsoft Store Policies](../store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

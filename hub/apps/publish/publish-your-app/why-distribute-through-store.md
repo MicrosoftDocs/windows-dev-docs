@@ -19,17 +19,17 @@ With the launch of Windows 11, Microsoft Store has been redesigned and improved 
 
 In this article, you will see why distributing your apps via Microsoft Store is a good choice for developers of any app type and size. It will explain the benefits and advantages of Microsoft Store for developers in terms of reach and visibility, trust and security, revenue and commerce, and compatibility and flexibility.
 
-
 ## Benefits and advantages of Microsoft Store for developers
 
 ### Reach and visibility
 
 Distributing your apps via Microsoft Store provides a large and diverse audience of Windows users, who can easily discover and install your work. Microsoft Store has over 1 billion users and it is available in over 200 markets and 100 languages. By publishing your apps to the Store, you can leverage this audience and grow your user base and brand awareness.
 Microsoft Store also offers various promotion and marketing opportunities for developers to increase the visibility and discoverability of their apps. For example, you can:
-1. Boost your app installs with Ad campaigns that target your ideal customers. Store Ads lets you choose from premium placements in high visibility assets such as Spotlight and Search, where users can easily find and download your app. 
+
+1. Boost your app installs with Ad campaigns that target your ideal customers. Store Ads lets you choose from premium placements in high visibility assets such as Spotlight and Search, where users can easily find and download your app.
 2. Optimize your app listing with keywords, screenshots, videos, and ratings and reviews.
 3. Participate in curated collections, seasonal events, and editorial features on the Store homepage.
-4. Improve your brand recognition with Microsoft Store Badge, a smart and convenient way to link your app in Microsoft Store from social media, websites, email campaigns, or any other online platforms to drive traffic and conversions. 
+4. Improve your brand recognition with Microsoft Store Badge, a smart and convenient way to link your app in Microsoft Store from social media, websites, email campaigns, or any other online platforms to drive traffic and conversions.
 
 ### Trust and security
 
@@ -43,13 +43,10 @@ Microsoft Store also provides you with tools and services to manage your app pri
 
 ### Compatibility and flexibility
 
-Microsoft Store allows you to bring your existing apps to the Store without changing your code or installer, and to use your preferred tools and frameworks. A wide range of app types and technologies that are supported by the Store. This means that you can leverage your existing investments and skills, and reach more users with minimal effort and cost. You can also use the Microsoft Store to distribute your apps to different audiences and devices, and to provide a guided purchase experience for your customers. If you want to learn more about the different app types and technologies that you can use with Microsoft Store, and how to get started with them, you can check out [Publish Your App in the Microsoft Store](https://go.microsoft.com/fwlink/?linkid=2247663) section. 
+Microsoft Store allows you to bring your existing apps to the Store without changing your code or installer, and to use your preferred tools and frameworks. A wide range of app types and technologies that are supported by the Store. This means that you can leverage your existing investments and skills, and reach more users with minimal effort and cost. You can also use the Microsoft Store to distribute your apps to different audiences and devices, and to provide a guided purchase experience for your customers. If you want to learn more about the different app types and technologies that you can use with Microsoft Store, and how to get started with them, you can check out [Publish Your App in the Microsoft Store](https://go.microsoft.com/fwlink/?linkid=2247663) section.
 
 ## Summary
 
 Distributing your apps via Microsoft Store is a good choice for developers of any app type and size. Microsoft Store helps you reach and engage a large and diverse audience of Windows users, who can trust and enjoy your apps. Microsoft Store also offers you various ways to make money from your apps, and lets you choose your own commerce platform and revenue sharing model. Microsoft Store also supports a wide range of app types and technologies, and allows you to bring your traditional desktop apps to the Store without changing your code or installer. Microsoft Store also provides you with flexibility and choice in how you distribute your apps to different audiences and devices.
 
 If you are ready to publish your apps to Microsoft Store and join the Microsoft developer community, you can start by [creating a developer account](https://go.microsoft.com/fwlink/?linkid=2254524). You can also find more resources and support for developing and distributing your apps [here](https://go.microsoft.com/fwlink/?linkid=2256201).
-
-
-

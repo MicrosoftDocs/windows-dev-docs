@@ -1,6 +1,6 @@
 ---
 ms.assetid: 
-description: This article shows you how to capture video from multiple sources simulataneously to a single file with multiple embedded video tracks.
+description: This article shows you how to capture video from multiple sources simultaneously to a single file with multiple embedded video tracks.
 title: Capture from multiple sources using MediaFrameSourceGroup
 ms.date: 09/12/2017
 ms.topic: article
@@ -16,7 +16,7 @@ For information on using **[MediaFrameSourceGroup](/uwp/api/windows.media.captur
 The rest of this article will walk you through the steps of recording video from two color cameras to a single file with multiple video tracks.
 
 ## Find available sensor groups
-A **MediaFrameSourceGroup** represents a collection of frame sources, typically cameras, that can be accessed simulataneously. The set of available frame source groups is different for each device, so the first step in this example is to get the list of available frame source groups and finding one that contains the necessary cameras for the scenario, which in this case requires two color cameras.
+A **MediaFrameSourceGroup** represents a collection of frame sources, typically cameras, that can be accessed simultaneously. The set of available frame source groups is different for each device, so the first step in this example is to get the list of available frame source groups and finding one that contains the necessary cameras for the scenario, which in this case requires two color cameras.
 
 The **[MediaFrameSourceGroup.FindAllAsync](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)** method returns all source groups available on the current device. Each returned **MediaFrameSourceGroup** has a list of **[MediaFrameSourceInfo](/uwp/api/windows.media.capture.frames.mediaframesourceinfo)** objects that describes each frame source in the group. A Linq query is used to find a source group that contains two color cameras, one on the front panel and one on the back. An anonymous object is returned that contains the selected **MediaFrameSourceGroup** and the **MediaFrameSourceInfo** for each color camera. Instead of using Linq syntax, you could instead loop through each group, and then each **MediaFrameSourceInfo** to look for a group that meets your requirements.
 
@@ -46,7 +46,7 @@ Starting with Windows 10, version 1803, in addition to audio and video you can e
 
 Encoding metadata uses a pattern that is parallel to encoding audio or video. The [**TimedMetadataEncodingProperties**](/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties) class describes the type, subtype and encoding properties of the metadata, like **VideoEncodingProperties** does for video. The [**TimedMetadataStreamDescriptor**](/uwp/api/windows.media.core.timedmetadatastreamdescriptor) identifies a metadata stream, just as the **VideoStreamDescriptor** does for video streams.  
 
-The following example shows how to intialize a **TimedMetadataStreamDescriptor** object. First, a **TimedMetadataEncodingProperties** object is created and the **Subtype** is set to a GUID that identifies the type of metadata that will be included in the stream. This example uses the GUID for GoPro metadata (gpmd). The [**SetFormatUserData**](/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) method is called to set format-specific data. For MP4 files, the format-specific data is stored in the SampleDescription box (stsd). Next, a new **TimedMetadataStreamDescriptor** is created from the encoding properties. The **Label** and **Name** properties are set to identify the stream to be encoded. 
+The following example shows how to initialize a **TimedMetadataStreamDescriptor** object. First, a **TimedMetadataEncodingProperties** object is created and the **Subtype** is set to a GUID that identifies the type of metadata that will be included in the stream. This example uses the GUID for GoPro metadata (gpmd). The [**SetFormatUserData**](/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) method is called to set format-specific data. For MP4 files, the format-specific data is stored in the SampleDescription box (stsd). Next, a new **TimedMetadataStreamDescriptor** is created from the encoding properties. The **Label** and **Name** properties are set to identify the stream to be encoded. 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetGetStreamDescriptor":::
 

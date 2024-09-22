@@ -83,9 +83,9 @@ For the case of **IIterable\<IKeyValuePair\<K, V\>\>**, the following alternativ
 | Alternative  | Sync | Async | Notes |
 |--------------|------|-------|-------|
 |**std::map\<K, V\> const&** | Yes | No | |
-|**std::map\<K, V\>&&** | Yes | Yes | Contents are moved into into a temporary iterable. |
+|**std::map\<K, V\>&&** | Yes | Yes | Contents are moved into  a temporary iterable. |
 |**std::unordered_map\<K, V\> const&** | Yes | No | |
-|**std::unordered_map\<K, V\>&&** | Yes | Yes | Contents are moved into into a temporary iterable. |
+|**std::unordered_map\<K, V\>&&** | Yes | Yes | Contents are moved into a temporary iterable. |
 |**std::initializer_list\<std::pair\<K, V\>\>** | Yes | Yes | Async version copies the list into a temporary iterable. |
 |`{ begin, end }` | Yes | No | `begin` and `end` must be [forward iterators](https://en.cppreference.com/w/cpp/named_req/ForwardIterator), and `begin->first` and `begin->second` must be convertible to **K** and **V**, respectively. |
 

@@ -122,7 +122,7 @@ In order to integrate with line-of-business tools, like printers, barcode scanne
 | Topic  | Description |
 |--------|-------------|
 | [Enumerate devices](../devices-sensors/enumerate-devices.md) | This article explains how to use the [Windows.Devices.Enumeration](/uwp/api/Windows.Devices.Enumeration) namespace to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. Start here if you're building any app that works with devices. |
-| [Printing and scanning](../devices-sensors/printing-and-scanning.md) | Describes how to print and scan from your app, including connecting to   and working with business devices like point-of-sale (POS) systems, receipt printers, and high-capacity feeder scanners. |
+| [Printing and scanning](/windows/apps/develop/devices-sensors/printing-and-scanning) | Describes how to print and scan from your app, including connecting to   and working with business devices like point-of-sale (POS) systems, receipt printers, and high-capacity feeder scanners. |
 | [Bluetooth](../devices-sensors/bluetooth.md) | In addition to using traditional Bluetooth connections to send and receive data or control devices, Windows 10 enables using Bluetooth Low Energy (BTLE) to send or receive beacons in the background. Use this to display notifications or enable functionality when a user gets close to or leaves a particular location. |
 | [Enterprise shared storage](enterprise-shared-storage.md) | In device lockdown scenarios, learn how data can be shared within the same app, between instances of an app, or even between apps. |
 

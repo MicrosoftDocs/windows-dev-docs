@@ -1,19 +1,16 @@
 ---
 title: Set up Node.js on WSL 2
 description: A guide to help you get your Node.js development environment set up on Windows Subsystem for Linux (WSL).
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.localizationpriority: medium
-ms.date: 05/19/2022
+ms.date: 03/01/2024
 ---
 
 # Install Node.js on Windows Subsystem for Linux (WSL2)
 
-If you are using Node.js professionally, find performance speed and system call compatibility important, want to run [Docker containers](/windows/wsl/tutorials/wsl-containers) that leverage Linux workspaces and avoid having to maintain both Linux and Windows build scripts, or just prefer using a Bash command line, then you want to install Node.js on the Windows Subsystem for Linux (more specifically, WSL 2).
+If you prefer using Node.js in a Linux environment, find performance speed and system call compatibility important, want to run [Docker containers](/windows/wsl/tutorials/wsl-containers) that leverage Linux workspaces and avoid having to maintain both Linux and Windows build scripts, or just prefer using a Bash command line, then you want to install Node.js on the Windows Subsystem for Linux (more specifically, WSL 2).
 
-Using Windows Subsystem for Linux (WSL), enables you to install your preferred Linux distribution (Ubuntu is our default) so that you can have consistency between your development environment (where you write code) and production environment (the server where your code is deployed).
+Using Windows Subsystem for Linux (WSL), might also enable you to install your preferred Linux distribution (Ubuntu is our default) so that you can have consistency between your development environment (where you write code) and production environment (the server where your code is deployed).
 
 > [!NOTE]
 > If you are new to developing with Node.js and want to get up and running quickly so that you can learn, [install Node.js on Windows](./nodejs-on-windows.md). This recommendation also applies if you plan to use a Windows Server production environment.
@@ -38,6 +35,8 @@ Besides choosing whether to install on Windows or WSL, there are additional choi
 
 > [!IMPORTANT]
 > It is always recommended to remove any existing installations of Node.js or npm from your operating system before installing a version manager as the different types of installation can lead to strange and confusing conflicts. For example, the version of Node that can be installed with Ubuntu's `apt-get` command is currently outdated. For help with removing previous installations, see [How to remove nodejs from ubuntu](https://askubuntu.com/questions/786015/how-to-remove-nodejs-from-ubuntu-16-04).)
+
+For the most current information on installing NVM, see [Installing and Updating in the NVM repo on GitHub](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating).
 
 1. Open your Ubuntu command line (or distribution of your choice).
 1. Install cURL (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`

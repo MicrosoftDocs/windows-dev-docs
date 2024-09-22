@@ -1,9 +1,6 @@
 ---
 title: RSS reader tutorial (Rust for Windows with VS Code)
 description: A walkthrough of writing a simple app that downloads the titles of blog posts from an RSS feed.
-author: stevewhims
-ms.author: stwhi 
-manager: jken
 ms.topic: article
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code, rust for windows
 ms.localizationpriority: medium

@@ -58,4 +58,4 @@ The .NET SDK also provides APIs related to system services for WPF and Windows F
 | Article | Description |
 |---------|-------------|
 | [Threading model (WPF)](/dotnet/framework/wpf/advanced/threading-model) | Learn about the threading model of WPF apps. |
-| [System information](/dotnet/framework/winforms/advanced/system-information-and-windows-forms) | Learn how to access sytem information in Windows Forms apps. |
+| [System information](/dotnet/framework/winforms/advanced/system-information-and-windows-forms) | Learn how to access system information in Windows Forms apps. |

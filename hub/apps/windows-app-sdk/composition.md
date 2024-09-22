@@ -2,10 +2,7 @@
 title: Enhance UI with the Visual layer (Windows App SDK/WinUI 3)
 description: The Windows App SDK implementation of the UWP Visual layer.
 ms.topic: article
-ms.date: 11/14/2023
-keywords: 
-ms.author: jimwalk
-author: jwmsft
+ms.date: 08/19/2024
 ms.localizationpriority: medium
 ---
 
@@ -48,8 +45,8 @@ For more details about the Visual layer, see the [Visual layer overview](/window
 
 To use **Microsoft.UI.Composition** APIs in the Windows App SDK/WinUI 3:
 
-1. Download and install the latest release of the Windows App SDK. For more information, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
-2. And then follow the instructions to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
+1. Download and install the latest release of the Windows App SDK. For more information, see [Start developing Windows apps](../get-started/start-here.md).
+2. Create a new project as described in Start developing Windows apps, or follow the instructions to [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
 To learn more about the availability of **Microsoft.UI.Composition** in the Windows App SDK/WinUI 3, see [release channels](release-channels.md).
 
@@ -62,4 +59,4 @@ We've updated the Windows Composition Samples Gallery to now take a dependency o
 ## Related topics
 
 - [UWP Visual layer overview](/windows/uwp/composition/visual-layer)
-- [Using the Visual layer in desktop apps](../desktop/modernize/visual-layer-in-desktop-apps.md)
+- [Using the Visual layer in desktop apps](../desktop/modernize/ui/visual-layer-in-desktop-apps.md)

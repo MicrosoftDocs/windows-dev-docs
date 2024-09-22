@@ -1,12 +1,10 @@
 ---
 title: Sudo for Windows
 description: Learn how to use sudo in your command line to run elevated commands (as an administrator) directly from an unelevated console session on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.reviewer: jordiadoumie
 ms.topic: article
 ms.date: 02/08/2024
+no-loc: [Gerardo Grignoli]
 ---
 
 # Sudo for Windows
@@ -85,4 +83,4 @@ Sudo for Windows is open source and welcomes your contributions and feedback. Yo
 
 ## Additional functionality
 
-If you’re looking for additional functionality that Sudo for Windows does not provide, check out [Gerardo Grignoli’s gsudo](https://github.com/gerardog/gsudo) which has a number of additional features and configuration options or check out other solutions from the community.
+If you’re looking for additional functionality that Sudo for Windows does not provide, check out [gsudo by Gerardo Grignoli](https://github.com/gerardog/gsudo) which has a number of additional features and configuration options or check out other solutions from the community.

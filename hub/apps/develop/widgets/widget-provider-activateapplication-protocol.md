@@ -3,8 +3,6 @@ title: Widget provider ActivateApplication protocol
 description: Describes the format of the command line activation parameters for widgets 
 ms.topic: article
 ms.date: 09/27/2022
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 

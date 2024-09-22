@@ -121,7 +121,7 @@ catch (WebException webException)
     }
 ```
 
-**HttpStatusCode.NotAcceptable**: This channel is being throttled by WNS. Implement a retry strategy that exponentially reduces the amount of notifications being sent in order to prevent being throttled again. Also, rethink scenarios that are causing your notificaitons to be throttled. You will provide a richer user experience by limiting the notifications you send to those that add true value.
+**HttpStatusCode.NotAcceptable**: This channel is being throttled by WNS. Implement a retry strategy that exponentially reduces the amount of notifications being sent in order to prevent being throttled again. Also, rethink scenarios that are causing your notifications to be throttled. You will provide a richer user experience by limiting the notifications you send to those that add true value.
 
 ``` csharp
     else if (status == HttpStatusCode.NotAcceptable)

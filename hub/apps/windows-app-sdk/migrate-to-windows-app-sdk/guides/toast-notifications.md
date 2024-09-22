@@ -4,8 +4,6 @@ description: This topic contains migration guidance in the app notifications fea
 ms.topic: article
 ms.date: 12/14/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications, toast, toast notifications, app notifications, uwp
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -420,5 +418,6 @@ new ToastContentBuilder()
 
 ## Related topics
 
+* [Windows App SDK and supported Windows releases](../../support.md)
 * [Send a local toast notification from C# apps](../../../design/shell/tiles-and-notifications/send-local-toast.md)
 * [Send a local toast notification from Win32 C++ WRL apps](../../../design/shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md)

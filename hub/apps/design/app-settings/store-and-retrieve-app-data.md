@@ -163,7 +163,7 @@ Roaming data for an app is available in the cloud as long as it is accessed by t
 > See important note about [roaming data](#roaming-data).
 
 - Use roaming for user preferences and customizations, links, and small data files. For example, use roaming to preserve a user's background color preference across all devices.
-- Use roaming to let users continue a task across devices. For example, roam app data like the contents of an drafted email or the most recently viewed page in a reader app.
+- Use roaming to let users continue a task across devices. For example, roam app data like the contents of a drafted email or the most recently viewed page in a reader app.
 - Handle the [**DataChanged**](/uwp/api/windows.storage.applicationdata.datachanged) event by updating app data. This event occurs when app data has just finished syncing from the cloud.
 - Roam references to content rather than raw data. For example, roam a URL rather than the content of an online article.
 - For important, time critical settings, use the *HighPriority* setting associated with [**RoamingSettings**](/uwp/api/windows.storage.applicationdata.roamingsettings).

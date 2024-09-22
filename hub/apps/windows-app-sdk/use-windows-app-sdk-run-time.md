@@ -3,8 +3,6 @@ title: Use the Windows App SDK runtime for apps packaged with external location 
 description: If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore.
 ms.topic: article
 ms.date: 01/10/2023
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -112,8 +110,9 @@ Replace the **Id** attribute of the **maxversiontested** element with the versio
 </assembly>
 ```
 
-## Related topics
+## See Also
 
+- [Windows App SDK and supported Windows releases](support.md)
 - [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md)
 - [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md)

@@ -246,7 +246,7 @@ In the **CheckedChanged** event handler of the auto ISO speed checkbox, turn on 
 
 ## Optical image stabilization
 
-Optical image stabilization (OIS) stabilizes a the captured video stream by mechanically manipulating the hardware capture device, which can provide a superior result than digital stabilization. On devices that don't support OIS, you can use the VideoStabilizationEffect to perform digital stabilization on your captured vide. For more information, see [Effects for video capture](effects-for-video-capture.md).
+Optical image stabilization (OIS) stabilizes a captured video stream by mechanically manipulating the hardware capture device, which can provide a superior result than digital stabilization. On devices that don't support OIS, you can use the VideoStabilizationEffect to perform digital stabilization on your captured video. For more information, see [Effects for video capture](effects-for-video-capture.md).
 
 Determine if OIS is supported on the current device by checking the [**OpticalImageStabilizationControl.Supported**](/uwp/api/windows.media.devices.opticalimagestabilizationcontrol.supported) property.
 

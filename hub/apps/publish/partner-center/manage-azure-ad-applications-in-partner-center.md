@@ -37,14 +37,14 @@ If you want to grant Partner Center access to a brand new Microsoft Entra applic
 1. In the **Roles** section, specify the [role(s) or customized permissions](set-custom-permissions-for-account-users.md) for the Microsoft Entra application.
 1. Select **Save**.
 
-After you add or create an Microsoft Entra application, you can return to the **Users** section and select the application name to review settings for the application, including the Tenant ID, Client ID, Reply URL, and App ID URI.
+After you add or create a Microsoft Entra application, you can return to the **Users** section and select the application name to review settings for the application, including the Tenant ID, Client ID, Reply URL, and App ID URI.
 
 > [!NOTE]
-> If you intend to use the REST APIs provided by the [Microsoft Store services](/windows/uwp/monetize/using-windows-store-services), you will need the Tenant ID and Client ID values shown on this page to obtain an Microsoft Entra access token that you can use to authenticate the calls to services.
+> If you intend to use the REST APIs provided by the [Microsoft Store services](/windows/uwp/monetize/using-windows-store-services), you will need the Tenant ID and Client ID values shown on this page to obtain a Microsoft Entra access token that you can use to authenticate the calls to services.
 
-## Manage keys for an Microsoft Entra application
+## Manage keys for a Microsoft Entra application
 
-If your Microsoft Entra application reads and writes data in Microsoft Entra ID, it will need a key. You can create keys for an Microsoft Entra application by editing its info in Partner Center. You can also remove keys that are no longer needed.
+If your Microsoft Entra application reads and writes data in Microsoft Entra ID, it will need a key. You can create keys for a Microsoft Entra application by editing its info in Partner Center. You can also remove keys that are no longer needed.
 
 1. From the **User management** page (under **Account settings**), select the name of the Microsoft Entra application.
 
@@ -59,15 +59,15 @@ If your Microsoft Entra application reads and writes data in Microsoft Entra ID,
 
 1. If you want to create more keys, select **Add another key**.
 
-## Edit an Microsoft Entra application
+## Edit a Microsoft Entra application
 
 After you've added users, groups, and/or Microsoft Entra applications to your Partner Center account, you can make changes to their account info.
 
 > [!IMPORTANT]
-> Changes made to [roles or permissions](set-custom-permissions-for-account-users.md) will only affect Partner Center access. All other changes (such as changing a user's name or group membership, or the Reply URL and App ID URI for an Microsoft Entra application) will be reflected in your organization's Microsoft Entra tenant as well as in your Partner Center account.
+> Changes made to [roles or permissions](set-custom-permissions-for-account-users.md) will only affect Partner Center access. All other changes (such as changing a user's name or group membership, or the Reply URL and App ID URI for a Microsoft Entra application) will be reflected in your organization's Microsoft Entra tenant as well as in your Partner Center account.
 
 1. From the **User management** page (under **Account settings**), select the name of the user, group, or Microsoft Entra application account that you want to edit.
-1. Make your desired changes. For an **Microsoft Entra application**, you can enter new values for the **Reply URL** or **App ID URI**.
+1. Make your desired changes. For a **Microsoft Entra application**, you can enter new values for the **Reply URL** or **App ID URI**.
     Remember that these changes will be made in your organization's directory as well as in your Partner Center account.
 1. For changes related to Partner Center access, select or deselect the role(s) that you want to apply, or select **Customize permissions** and make the desired changes. These changes only impact Partner Center access and will not change any permissions within your organization's Microsoft Entra tenant.
 1. Select **Save**.
@@ -83,5 +83,5 @@ On the **User management** page (under **Account settings**), select the link sh
 To remove Microsoft Entra application from your Partner Center account, select the radio button left to application, and then select **Remove** option on top of the table on the **User management** page. After confirming that you want to remove it, that Microsoft Entra application will no longer be able to access to your Partner Center account (unless you add it again later).
 
 > [!IMPORTANT]
-> Removing an Microsoft Entra application means that it will no longer have access to your Partner Center account. It **doesn't** delete the Microsoft Entra application from your organization's directory.
+> Removing a Microsoft Entra application means that it will no longer have access to your Partner Center account. It **doesn't** delete the Microsoft Entra application from your organization's directory.
 

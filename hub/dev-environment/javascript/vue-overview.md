@@ -1,9 +1,6 @@
 ---
 title: Vue on Windows
 description: A guide to help you set up a Vue development environment on Windows 10.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: Vue, Vue.js, vue on windows 10, vue on windows, vue overview, what is vue, vue with windows, set up vue on windows, vue dev environment, set up a vue development environment 
 ms.localizationpriority: medium
@@ -45,7 +42,6 @@ Vue.js is focused only on the view layer, so may require additional tools to cre
 
 - [Vue docs](https://vuejs.org/)
 - [Vue.js overview](./vue-overview.md)
-- [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install Vue.js on WSL](./vue-on-wsl.md)
 - [Install Vue.js on Windows](./vue-on-windows.md)
 - [Install Nuxt.js](./nuxtjs-on-wsl.md)

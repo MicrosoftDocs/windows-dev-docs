@@ -96,7 +96,7 @@ A [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input
 In this example, we show how to enhance a basic [ListView](listview-and-gridview.md) with a Delete item command implemented through the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class, while optimizing the user experience for a variety of input types using a [MenuBar](menus.md), [Swipe](swipe.md) control, hover buttons, and [context menu](menus.md).
 
 > [!NOTE]
-> This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of the [Microsoft Windows UI Library](/uwp/toolkits/winui/).
+> This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of [WinUI 2](../../winui/winui2/index.md).
 
 **Xaml:**
 
@@ -291,7 +291,7 @@ private void ListView_Loaded(object sender, RoutedEventArgs e)
 private void DeleteCommand_ExecuteRequested(
     XamlUICommand sender, ExecuteRequestedEventArgs args)
 {
-    // If possible, remove specfied item from collection.
+    // If possible, remove specified item from collection.
     if (args.Parameter != null)
     {
         foreach (var i in collection)
@@ -381,7 +381,7 @@ This example shares the Delete functionality of the previous [StandardUICommand]
 Many platform controls use the XamlUICommand properties under the covers, just like our StandardUICommand example in the previous section. 
 
 > [!NOTE]
-> This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of the [Microsoft Windows UI Library](/uwp/toolkits/winui/).
+> This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of [WinUI 2](../../winui/winui2/index.md).
 
 **Xaml:**
 

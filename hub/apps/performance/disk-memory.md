@@ -1,8 +1,6 @@
 ---
 title: Disk use, memory improvements and Windows Application Performance
 description: This guide will demonstrate ways to improve the memory consumption and the disk footprint of your Windows app(s).
-ms.author: mattwoj
-author: mattwojo
 ms.reviewer: visu
 ms.topic: conceptual
 ms.date: 05/11/2022
@@ -42,7 +40,7 @@ The amount of memory that an application uses impacts its runtime performance, a
 
 Memory displacement can happen as the system attempts to retain in-memory content accessed recently and, if necessary, will trim and page-out content used earlier. When the user switches back to the shell, or another application, and the necessary data is not resident in-memory, the data will need to be read from the disk. The user will likely notice a slowdown due to this process.
 
-There are two key pieces to the memory used by an application: 1) dynamic memory, and 2) file-backed memory. File-backed memory usage comes from binaries and data files, such as databases, used by an application. This is commonly not a significant chunk of an application’s memory usage and often a constant. *(Exceptions would be data processing applications, code compilation etc.)* The more significant source of memory usage and where leaks manifest is dynamic memory.
+There are two key pieces to the memory used by an application: 1) dynamic memory, and 2) file-backed memory. File-backed memory usage comes from binaries and data files, such as databases, used by an application. This is commonly not a significant chunk of an application's memory usage and often a constant. *(Exceptions would be data processing applications, code compilation etc.)* The more significant source of memory usage and where leaks manifest is dynamic memory.
 
 Dynamic memory corresponds to virtual memory allocated by an application using [memory allocation routines](/cpp/c-runtime-library/memory-allocation). Unlike file-backed memory, which persists across system reboots, dynamic memory only exists for the lifetime of the application. Dynamic memory is a commonly significant source of memory usage and where memory leaks manifest.
 

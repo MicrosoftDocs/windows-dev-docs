@@ -2,10 +2,8 @@
 title: Windows apps--packaging, deployment, and process
 description: This topic discusses your options around app packaging, deploy/distribute/install, and your app's run-time process.
 ms.topic: article
-ms.date: 10/18/2023
+ms.date: 08/19/2024
 keywords: intro, introduction, all-up, all, up, Windows, Windows apps, packaging, deployment, process, run-time
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

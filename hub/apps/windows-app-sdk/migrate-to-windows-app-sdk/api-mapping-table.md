@@ -4,8 +4,6 @@ description: This topic provides a mapping of UWP APIs and libraries to their Wi
 ms.topic: article
 ms.date: 10/01/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, api, class, mapping, mappings, uwp
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -41,7 +39,7 @@ There are differences in the names of namespaces and classes (including UI contr
 | (**Windows.UI.Core**) [**CoreDispatcher.RunAsync**](/uwp/api/Windows.UI.Core.CoreDispatcher.RunAsync) method | (**Microsoft.UI.Dispatching**) [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method. See [Change RunAsync to TryEnqueue](guides/threading.md#change-coredispatcherrunasync-to-dispatcherqueuetryenqueue). |
 | (**Windows.UI.Core**) [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) class | (**Microsoft.UI.Windowing**) [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class. See [Windowing functionality migration](guides/windowing.md). |
 | (**Windows.UI.Core**) [**CoreWindow.Bounds**](/uwp/api/windows.ui.core.corewindow.bounds) property (commonly appears in C# as `CoreWindow.GetForCurrentThread.Bounds`) | (**Microsoft.UI.Windowing**) [**AppWindow.Size**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.size) property |
-| (**Windows.UI.Core**) [**CoreWindow.GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) method | (**Microsoft.UI.Windowing**) [**AppWindow.Create**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.create) method |
+| (**Windows.UI.Core**) [**CoreWindow.GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) method |     No direct 1:1 mapping to a Windows App SDK API. When using XAML, you can get **Window.AppWindow** to get the **AppWindow** associated with a XAML **Window**, but an app needs to cache the **Window** or **AppWindow** if it wants to access it from somewhere that doesn't otherwise have access. We recommend caching and exposing the **Window** on the **App** object. |
 | (**Windows.UI.Core**) [**CoreWindow.Activate**](/uwp/api/windows.ui.core.corewindow.activate) method | (**Microsoft.UI.Windowing**) [**AppWindow.Show**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.show) method |
 | (**Windows.UI.Core**) [**CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) property | (**Microsoft.UI.Xaml**) [**Window.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) property. See [Change CoreWindow.Dispatcher to Window.DispatcherQueue](guides/windowing.md#change-corewindowdispatcher-to-windowdispatcherqueue). |
 | (**Windows.UI.Core**) [**CoreWindow.SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) event | (**Microsoft.UI.Windowing**) [**AppWindowChangedEventArgs.DidSizeChange**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange) method |
@@ -92,7 +90,7 @@ There are differences in the names of namespaces and classes (including UI contr
 | (**Windows.UI.Xaml.Controls**) [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) class | (**Microsoft.UI.Xaml.Controls**) [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) is supported, but you must set its [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. See [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). |
 | (**Windows.UI.Xaml.Controls**) [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) class | Not supported in Windows App SDK 1.0. |
 | (**Windows.UI.Xaml.Controls**) [**MediaElement**](/uwp/api/windows.ui.xaml.controls.mediaelement) class | Not supported in Windows App SDK 1.0. |
-| (**Windows.UI.Xaml.Controls.Maps**) [**MapControl**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) class | Not supported in Windows App SDK 1.0. |
+| (**Windows.UI.Xaml.Controls.Maps**) [**MapControl**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) class | (**Microsoft.UI.Xaml.Controls**) [**MapControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol) class |
 | (**Windows.UI.Xaml.Controls.Primitives**) [**Popup**](/uwp/api/windows.ui.xaml.controls.primitives.popup) class | (**Microsoft.UI.Xaml.Controls.Primitives**) [**Popup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup) is supported, but you must set its [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. See [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). |
 | (**Windows.UI.Xaml.Media**) [**AcrylicBrush.BackgroundSource**](/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource) property | In the Windows App SDK, the (**Microsoft.UI.Xaml.Media**) [**AcrylicBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content. See [AcrylicBrush.BackgroundSource property](guides/winui3.md#acrylicbrushbackgroundsource-property). |
 | **C++/WinRT**. `co_await winrt.resume_foreground(this->Dispatcher());` | See [Migrate winrt.resume_foreground](guides/threading.md#migrate-winrtresume_foreground-cwinrt) |
@@ -104,3 +102,7 @@ This section documents various libraries that were supported in UWP, and need to
 | UWP | Windows App SDK |
 | - | - |
 | OneDrive SDK | Microsoft Graph SDK |
+
+## See Also
+
+- [Windows App SDK and supported Windows releases](../support.md)

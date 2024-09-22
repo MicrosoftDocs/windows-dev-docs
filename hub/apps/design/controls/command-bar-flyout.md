@@ -13,7 +13,7 @@ ms.custom: RS5
 
 The command bar flyout lets you provide users with easy access to common tasks by showing commands in a floating toolbar related to an element on your UI canvas.
 
-![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
+![An expanded text proofing command bar flyout](images/command-bar-flyout-text-full-1-5.png)
 
 Like [CommandBar](command-bar.md), CommandBarFlyout has **PrimaryCommands** and **SecondaryCommands** properties you can use to add commands. You can place commands in either collection, or both. When and how the primary and secondary commands are displayed depends on the display mode.
 
@@ -44,7 +44,7 @@ You can use the CommandBarFlyout in either way, or even a mixture of the two.
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The CommandBarFlyout control for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+The CommandBarFlyout control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
 
 > [!div class="checklist"]
 >
@@ -79,18 +79,19 @@ This example shows how to create a command bar flyout and use it both proactivel
 <Grid>
     <Grid.Resources>
         <CommandBarFlyout x:Name="ImageCommandsFlyout">
-            <AppBarButton Icon="OutlineStar" ToolTipService.ToolTip="Favorite"/>
-            <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
-            <AppBarButton Icon="Share" ToolTipService.ToolTip="Share"/>
+            <AppBarButton Label="Favorite" Icon="OutlineStar" ToolTipService.ToolTip="Favorite"/>
+            <AppBarButton Label="Copy" Icon="Copy" ToolTipService.ToolTip="Copy"/>
+            <AppBarButton Label="Share" Icon="Share" ToolTipService.ToolTip="Share"/>
             <CommandBarFlyout.SecondaryCommands>
-                <AppBarButton Label="Select all"/>
+                <AppBarButton Label="Rotate" Icon="Rotate"/>
                 <AppBarButton Label="Delete" Icon="Delete"/>
             </CommandBarFlyout.SecondaryCommands>
         </CommandBarFlyout>
     </Grid.Resources>
 
     <Image Source="Assets/image1.png" Width="300"
-           Tapped="Image_Tapped" FlyoutBase.AttachedFlyout="{x:Bind ImageCommandsFlyout}"
+           Tapped="Image_Tapped" 
+           FlyoutBase.AttachedFlyout="{x:Bind ImageCommandsFlyout}"
            ContextFlyout="{x:Bind ImageCommandsFlyout}"/>
 </Grid>
 ```
@@ -112,11 +113,11 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 Here's the command bar flyout in its collapsed state.
 
-![Example of a collapsed command bar flyout](images/command-bar-flyout-img-collapsed.png)
+![Example of a collapsed command bar flyout](images/command-bar-flyout-img-collapsed-1-5.png)
 
 Here's the same command bar flyout in its expanded state showing secondary commands.
 
-![Example of an expanded command bar flyout](images/command-bar-flyout-img-expanded.png)
+![Example of an expanded command bar flyout](images/command-bar-flyout-img-expanded-1-5.png)
 
 ### Show commands proactively
 
@@ -164,7 +165,11 @@ You can populate the PrimaryCommands and SecondaryCommands directly with [AppBar
 
 The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is shown in the command bar or the overflow menu.
 
-- App bar buttons used as primary commands are shown in the command bar with only their icon; the text label is not shown. We recommend that you use a [tooltip](tooltips.md) to show a text description of the command, as shown here.
+- **In Windows App SDK 1.5 and later:** App bar buttons used as primary commands are shown in the command bar with both the text label and icon (if both are set).
+    ```xaml
+    <AppBarButton Icon="Copy" Label="Copy"/>
+    ```
+- **In Windows App SDK 1.4 and earlier:** App bar buttons used as primary commands are shown in the command bar with only their icon; the text label is not shown. We recommend that you use a [tooltip](tooltips.md) to show a text description of the command, as shown here.
     ```xaml
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     ```
@@ -186,7 +191,7 @@ You can add other controls to a command bar flyout by wrapping them in an AppBar
 
 In order to be added to the primary or secondary command collections of a command bar flyout, an element must implement the [ICommandBarElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement) interface. [AppBarElementContainer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarelementcontainer) is a wrapper that implements this interface so you can add an element to a command bar even if it doesn't implement the interface itself.
 
-Here, an AppBarElementContainer is used to add extra elements to a command bar flyout. A SplitButton is added to the primary commands to allow selection of colors. A StackPanel is added to the secondary commands to allow a more complex layout for zoom controls.
+Here, an AppBarElementContainer is used to add extra elements to a command bar flyout. A SplitButton is added to the primary commands to enable text alignment. A StackPanel is added to the secondary commands to allow a more complex layout for zoom controls.
 
 > [!TIP]
 > By default, elements designed for the app canvas might not look right in a command bar. When you add an element using AppBarElementContainer, there are some steps you should take to make the element match other command bar elements:
@@ -200,9 +205,9 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 
 ```xaml
 <CommandBarFlyout>
-    <AppBarButton Icon="Cut" ToolTipService.ToolTip="Cut"/>
-    <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
-    <AppBarButton Icon="Paste" ToolTipService.ToolTip="Paste"/>
+    <AppBarButton Icon="Cut" Label="Cut" ToolTipService.ToolTip="Cut"/>
+    <AppBarButton Icon="Copy" Label="Copy" ToolTipService.ToolTip="Copy"/>
+    <AppBarButton Icon="Paste" Label="Paste" ToolTipService.ToolTip="Paste"/>
     <!-- Alignment controls -->
     <AppBarElementContainer>
          <SplitButton ToolTipService.ToolTip="Alignment">
@@ -302,11 +307,11 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 
 Here's the collapsed command bar flyout with an open SplitButton.
 
-![A command bar flyout with a split button](images/command-bar-flyout-split-button.png)
+![A command bar flyout with a split button](images/command-bar-flyout-split-button-1-5.png)
 
 Here's the expanded command bar flyout with custom zoom UI in the menu.
 
-![A command bar flyout with complex UI](images/command-bar-flyout-custom-ui.png)
+![A command bar flyout with complex UI](images/command-bar-flyout-custom-ui-1-5.png)
 
 ## Create a context menu with secondary commands only
 

@@ -4,8 +4,6 @@ description: Reach more users with a single WinUI 3 / .NET codebase using Uno Pl
 ms.topic: article
 ms.date: 3/31/2023
 keywords: uno platform, winui
-ms.author: aashcraft
-author: alvinashcraft
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers
@@ -21,7 +19,7 @@ Once you've [created](hello-world-winui3.md) a starter Hello World WinUI 3 app, 
 ## Prerequisites
 
 - [Visual Studio 2022 17.4 or later](https://visualstudio.microsoft.com/#vs-section)
-- [Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
+- Set up your development computer (see [Get started with WinUI](../get-started/start-here.md))
 - ASP.NET and web development workload (for WebAssembly development)
 :::image type="content" source="../images/uno/uno-vs-install-web.png" alt-text="Web development workload in VS":::
 - .NET Multi-platform App UI development installed (for iOS, Android, Mac Catalyst development).

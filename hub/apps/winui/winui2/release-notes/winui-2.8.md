@@ -5,18 +5,18 @@ ms.date: 07/18/2021
 ms.topic: article
 ---
 
-# Windows UI Library 2.8
+# WinUI 2.8
 
-WinUI 2.8 is the latest stable release of the Windows UI Library (WinUI) for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands.md)).
+WinUI 2.8 is the latest stable release of WinUI for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands/xaml-islands.md)).
 
 > [!NOTE]
-> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../../index.md).
+> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [WinUI 3](../../index.md).
 
-The Windows UI Library (WinUI) is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
+WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
 
 All stable releases (and prereleases) are available for download from our [GitHub release page](https://github.com/microsoft/microsoft-ui-xaml/tags) or from our [NuGet page](https://www.nuget.org/packages/Microsoft.UI.Xaml).
 
-WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Getting started with the Windows UI 2 Library](../getting-started.md).
+WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Getting started with WinUI 2](../getting-started.md).
 
 ## What's New
 

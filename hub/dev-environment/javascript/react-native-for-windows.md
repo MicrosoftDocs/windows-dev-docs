@@ -1,9 +1,6 @@
 ---
 title: React Native for Windows desktop app development
 description: Install React Native for Windows and get started with Windows desktop app development using React Native components.
-author: drewbatgit
-ms.author: drewbat 
-manager: jken
 ms.topic: article
 keywords: react native for windows, windows, react native, install react native on windows, install react native for windows, build a desktop app with react, create a windows app with react, react for desktop apps, npx react-native, react-native-windows-init 
 ms.date: 03/30/2021
@@ -54,7 +51,7 @@ You can create a Windows desktop app using React Native for Windows by following
 
 ## Debug your React Native desktop app using Visual Studio
 
-- [Install Visual Studio 2019](/visualstudio/install/install-visual-studio) with the following options checked:
+- [Install Visual Studio 2022](/visualstudio/install/install-visual-studio) with the following options checked:
   - Workloads: Universal Windows Platform development & Desktop development with C++.
   - Individual Components: Development activities & Node.js development support.
 
@@ -96,6 +93,5 @@ You can create a Windows desktop app using React Native for Windows by following
 - [React Native for Windows docs](https://microsoft.github.io/react-native-windows/docs/getting-started)
 - [React Native docs](https://reactnative.dev/docs/getting-started)
 - [React docs](https://reactjs.org/)
-- [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
 - Try the [React learning path](/training/paths/react/)

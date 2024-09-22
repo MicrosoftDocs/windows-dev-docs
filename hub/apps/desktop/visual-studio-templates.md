@@ -14,11 +14,11 @@ Visual Studio 2019 (and later) provides many project and item templates that hel
 * Project templates include project files, code files, and other assets that are configured to build an app or a component that can be loaded and used by an app.
 * Item templates are project files that contain commonly used code and XAML that can be added to a project to reduce development time. For example, you can use an item template to add a new window, page, or control to your app.
 
-For more information about installing and configuring Visual Studio to get access to these templates, see [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md).
+For more information about installing and configuring Visual Studio to get access to these templates, see [Start developing Windows apps](../get-started/start-here.md).
 
 ## WinUI templates
 
-The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](../winui/index.md) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
+[WinUI](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](../winui/index.md) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
 
 WinUI 3 is available as part of [the Windows App SDK](../windows-app-sdk/index.md). It includes a VSIX package for Visual Studio 2019 (and later) that provides project and item templates that help you get started building apps with a WinUI-based interface.
 

@@ -4,8 +4,6 @@ description: This article shows how to configure an app that's not installed by 
 ms.topic: article
 ms.date: 02/23/2023
 keywords: windows win32, windows app development, Windows App SDK
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -107,7 +105,7 @@ Follow these instructions to configure a C# WinUI 3 project that's either packag
 
     ```csharp
     // Create a resource manager using the resource index generated during build.
-   	var manager = new Microsoft.Windows.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
+       var manager = new Microsoft.Windows.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
 
     // Look up a string in the .resw file using its name.
     Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);
@@ -207,7 +205,7 @@ Follow these instructions to configure a C++ WinUI 3 project that's either packa
 
 ## If your project is WPF
 
-For a Windows Presentation Foundation (WPF) app, see [Use the Windows App SDK in a WPF app](./wpf-plus-winappsdk.md).
+For a Windows Presentation Foundation (WPF) app, see [Use the Windows App SDK in a WPF app](./migrate-to-windows-app-sdk/wpf-plus-winappsdk.md).
 
 ## Related topics
 

@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 09/19/2022
+ms.date: 09/17/2024
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -26,9 +26,39 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 <tbody>
 </tr>
 
+
+<tr class="odd">
+<td>October 19, 2024</td>
+<td><a href="store-policies.md">7.18</a></td>
+<td>
+
+
+<p>Updated what is considered a “Product” in the introduction section.</p>
+
+<p>Updated 10.1 to include search terms in the definition of metadata.</p>
+
+<p>Updated 10.1.3 to clarify that developers cannot use other product titles in their search terms unless published by them.</p>
+
+<p>Updated 10.2.4 to clarify language on disclosing dependency on non-integrated software and inform of the exception request which will be handled on a case-by-case process.</p>
+
+<p>Updated 10.2.6 to consolidate policy related to cryptocurrency accounts under the main crypto policy, as well as reiterate the requirement of a company account if the app requires financial information.</p>
+
+<p>Updated 10.8.3 to include that an app that requires financial information must be a company account. Clarified what is considered financial information.</p>
+
+<p>New 10.10.7 added to support the updated policy regarding in-game/in-app ads 3P middleware. See 10.13.11.2</p>
+
+<p>Updated 10.13.11 to include language to restrict data sharing between 3rd party API/Ad services to serve in-game/in-app ads.</p>
+
+<p>Updated 10.14 to align with the EU Digital Services Act that requires business verification and customer support contact information that is required for company accounts (for more information, see <a href="/windows/apps/publish/store-business-verification-reqs">Upcoming company account verification requirements</a>).</p>
+
+<p>Updated 11.11 to include a link to the Age Rating page.</p>
+
+</td>
+</tr>
+
 <tr class="even">
 <td>October 30, 2023</td>
-<td><a href="store-policies.md">7.17</a></td>
+<td><a href="store-policy-archive/store-policy-7-17.md">7.17</a></td>
 <td>
 
 
@@ -329,4 +359,4 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 ### See also
 
 - [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

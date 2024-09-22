@@ -1,8 +1,6 @@
 ---
-author: drewbatgit
 description: Learn about the fundamentals of designing the UI for a Windows widget.
 title: Widget design fundamentals
-ms.author: drewbat
 ms.date: 01/19/2022
 ms.topic: article
 keywords: windows 11, widgets
@@ -43,7 +41,7 @@ Large sizes allow for more information to be presented, but the content should s
 
 ![Three example widget templates demonstrating the dark theme. The first is an empty widget with a black backgroud. The second is an empty widget with a dark gradient background. The third is a widget with an image background. All three have the word "text" in a light font to demonstrate the contrast with the dark background.](./images/widgets-color-theme-2.png)
 
-Windows 11 supports two color modes: light and dark. Each mode consists of a set of neutral color values that are automatically adjusted to ensure optimal contrast. For each widget size you support, make sure to create separate designs for light and dark themes so that the widget integrates seamlessly within the wider operating system and user’s theme choice. The widget background supports customization with either a solid light/dark background, gradient tint, or image background. 
+Windows 11 supports two color modes: light and dark. Each mode consists of a set of neutral color values that are automatically adjusted to ensure optimal contrast. For each widget size you support, make sure to create separate designs for light and dark themes so that the widget integrates seamlessly within the wider operating system and user's theme choice. The widget background supports customization with either a solid light/dark background, gradient tint, or image background. 
 
 ![Two widget examples side by side. The left example has a light gradient background and text in a light grey font. The image is marked with a red X to indicate that the low contrast makes the text unreadable. The right image has a light gradient background and text in a dark black font. The image is marked with a green check to indicate that the high contrast makes the text legible.](./images/widgets-light-theme-font-color.png)
 
@@ -80,7 +78,7 @@ For accessibility, the following table presents the text of the table shown in t
 | Body (for hyperlinks) | 14/20 epx | Default, Lighter, Accent |
 | Body Strong | 14/20 epx | Default, Bolder |
 | Body Large | 18/24 epx | Medium, Lighter |
-| Body Larget | 18/24 epx | Medium, Bolder |
+| Body Largest | 18/24 epx | Medium, Bolder |
 | Subtitle | 20/28 epx | Large, Bolder |
 | Title | 28/36 epx | Extra Large, Bolder | 
 

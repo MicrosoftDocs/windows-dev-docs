@@ -21,13 +21,13 @@ PowerRename is a bulk renaming tool that enables you to:
 
 In this demo, all instances of the file name "foo" are replaced with "foobar". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command makes it possible to undo the last change.
 
-![PowerRename Demo.](../images/powerrename-demo.gif)
+![PowerRename Demo](../images/powerrename-demo.gif)
 
 ## PowerRename window
 
-After selecting files in Windows File Explorer, right-click and select **Resize with PowerRename** (which will appear only if enabled in PowerToys). The selected items will be displayed, along with search and replace values, a list of options, and a preview pane displaying results of the search and replace values entered.
+After selecting files in Windows File Explorer, right-click and select **Rename with PowerRename** (which will appear only if enabled in PowerToys). The selected items will be displayed, along with search and replace values, a list of options, and a preview pane displaying results of the search and replace values entered.
 
-![PowerRename Menu screenshot.](../images/powerrename-menu.png)
+![PowerRename Menu screenshot](../images/powerrename-menu.png)
 
 ### Search for
 
@@ -35,7 +35,7 @@ Enter text or a [regular expression](https://wikipedia.org/wiki/Regular_expressi
 
 ### Replace with
 
-Enter text to replace the _Search for_ value entered previously. You can view the original file name and renamed file name in the _Preview_ pane.
+Enter text to replace the _Search for_ value entered previously. You can see the original file name and renamed file name in the _Preview_ pane.
 
 ### Use regular expressions
 
@@ -110,6 +110,21 @@ A _Replace with_ text `Image_${padding=4;increment=2;start=10}_` would produce t
 - Image_0012_b.jpg
 - Image_0014_bc.jpg
 
+### Random string values
+
+If selected, you can use the following patterns as part of the _Replace with_ text:
+
+| Variable pattern    | Explanation                                                                                |
+| :------------------ | :----------------------------------------------------------------------------------------- |
+| `${rstringalnum=X}` | Random string with uppercase letters, lowercase letters and 0-9 digits, customized length. |
+| `${rstringalpha=X}` | Random string with uppercase letters and lowercase letters, customized length.             |
+| `${rstringdigit=X}` | Random string with 0-9 digits, customized length.                                          |
+| `${ruuidv4}`      | Random UUID according to v4 specification.                                                 |
+
+By default, random string values created are mixed case. You can adjust the generating behavior with the general [text formatting options that PowerRename provides](#text-formatting).
+
+If you wish to create UUID values with braces, you can add `{` and `}` to the _Replace with_ input in combination with the ruuidv4 pattern accordingly: `{${ruuidv4}}`.
+
 ## Replace using file creation date and time
 
 The creation date and time attributes of a file can be used in the _Replace with_ text by entering a variable pattern according to the table below. Selecting the tool-tip in the _Replace with_ field allows you to view and select from the supported patterns.
@@ -158,9 +173,7 @@ For most use cases, a simple search and replace is sufficient. There may be occa
 
 Regular Expressions define a search pattern for text. They can be used to search, edit and manipulate text. The pattern defined by the regular expression may match once, several times, or not at all for a given string. PowerRename uses the [ECMAScript](https://wikipedia.org/wiki/ECMAScript) grammar, which is common amongst modern programming languages.
 
-To enable regular expressions, select **Use Regular Expressions**.
-
-**Note:** You will likely want to select **Match all occurrences** while using regular expressions.
+To enable regular expressions, select **Use Regular Expressions**. Note: You will likely want to select **Match all occurrences** while using regular expressions.
 
 To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) instead of the standard library, select the **Use Boost library** option in the PowerToys settings. It enables extended features, like [lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind), which are not supported by the standard library.
 
@@ -180,8 +193,7 @@ Simple matching examples.
 | `foo[\s\S]*bar` | Match everything between and including "foo" and "bar" |
 
 Matching and variable examples. Capturing groups are defined in parentheses `()`. To refer to them, use `$` followed by a number: `$1` will refer to the first group, `$2` to the second etc.
-
-_When using the variables, "Match all occurrences" must be selected._
+When using the variables, "Match all occurrences" must be selected.
 
 | Search for                                              | Replace with | Description                                                                          |
 |:--------------------------------------------------------|:-------------|:-------------------------------------------------------------------------------------|
@@ -213,11 +225,11 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
   - The default preview will show all selected files, with only files matching the _Search for_ criteria displaying the updated rename value.
   - Selecting the _Renamed_ header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
-![PowerToys PowerRename Filter demo.](../images/powerrename-demo2.gif)
+![PowerToys PowerRename Filter demo](../images/powerrename-demo2.gif)
 
 ## Settings
 
-Additional options can be configured from the **PowerRename** tab in the Settings, as described below:
+Additional options can be configured in the settings, as described below:
 
 | Setting | Description |
 | :--- | :--- |
@@ -226,4 +238,6 @@ Additional options can be configured from the **PowerRename** tab in the Setting
 | Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename |
 | Maximum number of items | The largest number of search and replace suggestions to display |
 | Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used |
-| Use Boost library | Enable extended RegEx functionality. See [Regular Expressions](#regular-expressions) for more details |
+| Use Boost library | Enable extended regex functionality. See [Regular Expressions](#regular-expressions) for more details |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

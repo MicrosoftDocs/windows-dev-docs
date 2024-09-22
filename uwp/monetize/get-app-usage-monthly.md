@@ -94,7 +94,7 @@ Elements in the *Value* array contain the following values.
 | monthlyNewDevices | long  | The number of devices which used the app for the first time in that month. |No|Yes|No |
 
 > [!NOTE]
-> If a field is not valid for a specific product, then the value to those fields will be sent as 0 or null in the response. Computation of new users and new devices is done with the rolling window of 3 years, i.e., if an user/device doesn’t use the application for 3 years and above, they will be treated as new user/device after 3 years.
+> If a field is not valid for a specific product, then the value to those fields will be sent as 0 or null in the response. Computation of new users and new devices is done with the rolling window of 3 years, i.e., if a user/device doesn’t use the application for 3 years and above, they will be treated as new user/device after 3 years.
 
 ### Request and Response example
 

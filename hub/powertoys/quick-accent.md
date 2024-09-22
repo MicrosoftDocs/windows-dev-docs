@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Quick Accent, Win]
 
 Quick Accent is an alternative way to type accented characters, useful when a keyboard doesn't support that specific accent with a quick key combo. This tool is based on [Damien Leroy's PowerAccent](https://github.com/damienleroy/PowerAccent).
 
-In order to use the Quick Accent utility, open PowerToys Settings, select the **Quick Accent** tab, and turn on the **Enable** toggle.
+In order to use the Quick Accent utility, open PowerToys Settings, select the **Quick Accent** page, and turn on the **Enable** toggle.
 
 ## How to activate
 
@@ -30,10 +30,13 @@ You can limit the available characters by selecting a character set from the set
 * Currency
 * Croatian
 * Czech
+* Danish
 * Gaeilge
 * Gàidhlig
 * Dutch
+* Greek
 * Estonian
+* Finnish
 * French
 * German
 * Hebrew
@@ -43,13 +46,14 @@ You can limit the available characters by selecting a character set from the set
 * Kurdish
 * Lithuanian
 * Macedonian
-* Maori
+* Māori
 * Norwegian
 * Pinyin
 * Polish
 * Portuguese
 * Romanian
-* Slovakian
+* Slovak
+* Slovenian
 * Spanish
 * Serbian
 * Swedish
@@ -70,3 +74,5 @@ From the Settings menu, the following options can be configured:
 | Start selection from the left | Starts the selection from the leftmost character for all activation keys (including Left/Right arrow). |
 | Input delay | The delay in milliseconds before the dialog appears. |
 | Excluded apps | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

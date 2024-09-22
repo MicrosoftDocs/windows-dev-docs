@@ -11,11 +11,17 @@ items:
     href: ./create-arm-vm.md
   - name: FAQs
     href: ./faq.yml
-  - name: Windows Dev Kit 2023
+  - name: How emulation works on Arm
+    href: ./apps-on-arm-x86-emulation.md
+  - name: Devices
     items:
-    - name: Overview & Set up
+    - name: Copilot+ PCs
+      href: https://www.microsoft.com/windows/copilot-plus-pcs
+    - name: Snapdragon Dev Kit for Windows
+      href: https://www.qualcomm.com/developer/windows-on-snapdragon
+    - name: Windows Dev Kit 2023
       href: ./dev-kit/index.md
-    - name: Update History
+    - name: Windows Dev Kit 2023 Update History
       href: ./dev-kit/history.md
   - name: Arm64EC for Windows 11 apps
     items:
@@ -25,8 +31,6 @@ items:
         href: ./arm64ec-build.md
       - name: Understand Arm64EC ABI
         href: ./arm64ec-abi.md
-      # - name: Choose Arm64 or Arm64EC ABI
-      #   href: ./arm64-or-arm64ec.md
       - name: Arm64X PE files
         items:
           - name: Overview
@@ -45,8 +49,6 @@ items:
         href: /cpp/build/configuring-programs-for-arm-processors-visual-cpp
       - name: .NET 7 for Arm
         href: https://dotnet.microsoft.com/download/dotnet/7.0
-  - name: How x86 emulation works on Arm
-    href: ./apps-on-arm-x86-emulation.md
   - name: Change Arm32 to Arm64
     href: ./arm32-to-arm64.md
   - name: Build Arm64 drivers with the WDK

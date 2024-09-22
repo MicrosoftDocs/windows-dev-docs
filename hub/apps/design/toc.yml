@@ -167,6 +167,8 @@
       href: controls/forms.md
     - name: Media, graphics, and shapes
       items:
+        - name: Icons in Windows apps
+          href: style/icons.md
         - name: Animated icons
           href: controls/animated-icon.md
         - name: Images and image brushes
@@ -201,6 +203,8 @@
           href: controls/navigationview.md
         - name: Pivot
           href: controls/pivot.md
+        - name: Selector bar
+          href: controls/selector-bar.md
         - name: Tab view
           href: controls/tab-view.md
     - name: People
@@ -421,34 +425,6 @@
       items:
         - name: Pin your app to the taskbar
           href: shell/pin-to-taskbar.md
-    - name: Live Tiles
-      href: shell/tiles-and-notifications/creating-tiles.md
-      items:
-        - name: Secondary tiles
-          href: shell/tiles-and-notifications/secondary-tiles.md
-          items:
-            - name: Guidance
-              href: shell/tiles-and-notifications/secondary-tiles-guidance.md
-            - name: Pin to Start
-              href: shell/tiles-and-notifications/secondary-tiles-pinning.md
-            - name: Pin to taskbar
-              href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
-            - name: Desktop applications
-              href: shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md
-        - name: Tile content
-          href: shell/tiles-and-notifications/create-adaptive-tiles.md
-        - name: Tile content schema
-          href: shell/tiles-and-notifications/tile-schema.md
-        - name: Special tile templates
-          href: shell/tiles-and-notifications/special-tile-templates-catalog.md
-        - name: Send local tile notification
-          href: shell/tiles-and-notifications/sending-a-local-tile-notification.md
-        - name: Chaseable tile notifications
-          href: shell/tiles-and-notifications/chaseable-tile-notifications.md
-        - name: Primary tile APIs
-          href: shell/tiles-and-notifications/primary-tile-apis.md
-        - name: Tile, toast notification support for language, scale, contrast
-          href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
     - name: Misc
       items:
         - name: Notifications Visualizer

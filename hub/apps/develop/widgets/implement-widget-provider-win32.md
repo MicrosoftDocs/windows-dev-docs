@@ -3,8 +3,6 @@ title: Implement a widget provider in a win32 app (C++/WinRT)
 description: This article walks you through the process of creating widget provider, implemented in C++/WinRT that provides widget content and responds to widget actions. 
 ms.topic: article
 ms.date: 07/06/2022
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +10,7 @@ ms.localizationpriority: medium
 
 This article walks you through creating a simple widget provider that implements the [IWidgetProvider](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider) interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget  that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
 
-:::image type="content" source="images/weather-widget-screenshot.png" alt-text="A screenshot of a simple weather widget. The widget shows some weather-related graphics an data as well as some diagnostic text illustrating that the template for the medium size widget is being displayed.":::
+:::image type="content" source="images/weather-widget-screenshot.png" alt-text="A screenshot of a simple weather widget. The widget shows some weather-related graphics and data as well as some diagnostic text illustrating that the template for the medium size widget is being displayed.":::
 
 :::image type="content" source="images/counting-widget-screenshot.png" alt-text="A screenshot of a simple counting widget. The widget shows a string containing the numeric value to be incremented and a button labeled Increment, as well as some diagnostic text illustrating that the template for the small size widget is being displayed.":::
 
@@ -107,7 +105,7 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
     WidgetProvider();
 
     /* IWidgetProvider required functions that need to be implemented */
-    void CreateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext WidgetContext);
+    void CreateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext);
     void DeleteWidget(winrt::hstring const& widgetId, winrt::hstring const& customState);
     void OnActionInvoked(winrt::Microsoft::Windows::Widgets::Providers::WidgetActionInvokedArgs actionInvokedArgs);
     void OnWidgetContextChanged(winrt::Microsoft::Windows::Widgets::Providers::WidgetContextChangedArgs contextChangedArgs);
@@ -147,6 +145,7 @@ Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for 
 
 ```cpp
 // WidgetProvider.h
+#include <unordered_map>
 struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>
 {
 ...
@@ -798,7 +797,7 @@ To convert the console app created in this walkthrough to a Windows app:
 
 ## Publishing your widget
 
-After you have developed and tested your widget you must publish your app on the Microsoft Store in order for users to install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
+After you have developed and tested your widget you can publish your app on the Microsoft Store in order for users to install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
 
 ### The widgets Store Collection
 

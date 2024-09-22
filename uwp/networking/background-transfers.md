@@ -76,7 +76,7 @@ Note the asynchronous method calls defined using JavaScript promises. Looking at
 promise = upload.startAsync().then(complete, error, progress);
 ```
 
-The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](/previous-versions/windows).
+The async method call is followed by a `then` statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](/previous-versions/windows).
 
 ### Uploading multiple files
 **Identify the files and destination for the upload**
@@ -274,7 +274,7 @@ Regular app servicing, including manifest updates which add or remove capabiliti
 To work around this issue, completely uninstall all versions of the app and re-deploy with the new language, architecture, culture, or capability. This can be done via the **Start** screen or using PowerShell and the **Remove-AppxPackage** cmdlet.
 
 ## Exceptions in Windows.Networking.BackgroundTransfer
-An exception is thrown when an invalid string for a the Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) object.
+An exception is thrown when an invalid string for a Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) object.
 
 **.NET:** The [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) type appears as [**System.Uri**](/dotnet/api/system.uri) in C# and VB.
 

@@ -14,7 +14,7 @@ In this quickstart you will create a desktop Windows application that sends and 
 
 ## Prerequisites
 
-- [Set up your development environment](../../set-up-your-development-environment.md)
+- [Start developing Windows apps](../../../get-started/start-here.md)
 - Either [Create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) OR [Use the Windows App SDK in an existing project](../../use-windows-app-sdk-in-existing-project.md)
 - An [Azure Account](https://azure.microsoft.com/free/) is required in order to use Windows App SDK push notifications.
 - Read [Push notifications overview](index.md)
@@ -75,10 +75,9 @@ Navigate to **Certificates & secrets** and select **New client secret**.
 
 ### Step 4: Map your app's Package Family Name to its Azure AppId
 
-> [!IMPORTANT]
-> Windows Push Notification Service (WNS) is now integrated with Azure Portal. The new registration experience is available in preview. If you're a packaged app (including packaged with external location), you can use this flow to map your app's Package Family Name (PFN) and its Azure AppId.
+If your app is packaged (including packaged with an external location), you can use this flow to map your app's Package Family Name (PFN) and its Azure AppId.
 
-If your app is a packaged Win32 app, then request access to our new Azure Portal *Preview* experience by emailing [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) with subject line "Windows App SDK Push Notifications Request" and body "Azure Subscription: \[your Azure Subscription ID\]". Requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
+If your app is a packaged Win32 app, then create a Package Family Name (PFN) mapping request by emailing [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) with subject line "Windows App SDK Push Notifications Mapping Request" and body "PFN: \[your PFN\]", AppId: \[your APPId\], ObjectId: \[your ObjectId\]. Mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
 
 ## Configure your app to receive push notifications
 

@@ -288,7 +288,7 @@ private async Task InstallPackageUpdatesAsync(IEnumerable<StorePackageUpdate> up
         this.context.RequestDownloadAndInstallStorePackageUpdatesAsync(updates);
 
     // The package updates were already downloaded separately, so this method skips the download
-    // operatation and only installs the updates; no download progress notifications are provided.
+    // operation and only installs the updates; no download progress notifications are provided.
     StorePackageUpdateResult result = await installOperation.AsTask();
 
     switch (result.OverallState)

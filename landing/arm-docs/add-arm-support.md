@@ -1,12 +1,10 @@
 ---
 title: Add support Arm devices to your Windows app
 description: Guidance for adding Arm64 support to your app. Optimize your x64 app to perform better on Windows devices powered by Arm processors so that CPU, GPU, and NPU performance is accelerated, less power is consumed to preserve battery life, and wi-fi and mobile data network connections are supported.
-ms.date: 12/19/2023
+ms.date: 05/21/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
-author: mattwojo
-ms.author: mattwoj
 ms.reviewer: marcs
 ---
 
@@ -34,13 +32,14 @@ Additionally, [Kernel drivers](/windows-hardware/drivers/kernel/) are required t
 
 If you are updating your app using an Arm-based device (native compiling - generating the code for the same platform on which you're running), you can use:
 
+- [Introducing Visual Studio 17.10 – Preview 1 (Feb 2024)](https://devblogs.microsoft.com/visualstudio/introducing-visual-studio-17-10-preview-1-is-here/)
 - [Visual Studio 2022 v17.4](https://devblogs.microsoft.com/visualstudio/visual-studio-2022-17-4/#arm64) or later. This is the first GA release of Visual Studio that natively supports building and debugging Arm64 apps on Arm-based processors. Both Visual Studio 2022 17.4 and Microsoft Visual C++ (MSVC) native Arm64 versions provide significantly better performance  compared with previous emulated versions.
 
 - (Optional) [LLVM (Clang) v12+](https://releases.llvm.org/12.0.0/tools/clang/docs/ReleaseNotes.html#windows-support) or later. LLVM 12 adds official binary release hosted on Windows on Arm64, including a Clang compiler, LLD Linker, and compiler-rt runtime libraries.
 
 If you are updating your Windows app to support Arm using an x64 or x86 Intel-based device (cross compiling), you can use:
 
-- [Visual Studio 2022 v17.x​](/visualstudio/releases/2022/release-notes-v17.4#summary-of-whats-new-in-this-release-of-visual-studio-2022-version-174) (Recommended)
+- [Visual Studio 2022 v17.10​](/visualstudio/releases/2022/release-notes-v17.0) (Recommended)
 - [Visual Studio 2019 v16.x​](/visualstudio/releases/2019/history#prior-release-notes)
 - [Visual Studio 2017 v15.9 onwards (UWP, Desktop bridge, win32 C++)​](/visualstudio/releasenotes/vs2017-relnotes)
 - [LLVM (Clang) v12+](https://releases.llvm.org/12.0.0/tools/clang/docs/ReleaseNotes.html#windows-support)

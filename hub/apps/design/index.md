@@ -1,7 +1,7 @@
 ---
 description: Design guidelines and UI code examples for creating Windows app experiences.
 title: Design and code Windows apps
-ms.date: 01/28/2022
+ms.date: 07/19/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---

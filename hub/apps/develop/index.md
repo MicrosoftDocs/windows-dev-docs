@@ -2,7 +2,7 @@
 description: This section of the documentation provides information about APIs and features you can use while developing a Windows desktop apps.
 title: Develop Windows desktop apps
 ms.topic: article
-ms.date: 10/07/2021
+ms.date: 06/28/2024
 ms.localizationpriority: medium
 ---
 
@@ -45,17 +45,17 @@ The following articles provide information to help you get started using feature
 * [Graphics](graphics.md)
 * [Data and files](data-and-files.md)
 * [Windows AI and machine learning](/windows/ai/)
+* [Integrate with Windows](windows-integration/index.md)
 * [Devices and sensors](devices-and-sensors.md)
-* [Security and identity](security-and-identity.md)
+* [Security and identity](security/index.md)
 * [Deployment overview](../package-and-deploy/index.md)
 
-For information about setting up your development environment and getting started creating a new app, see the following articles:
+For information about setting up your development environment and getting started creating a new app, see:
 
-* [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
-* [Get started developing apps](../get-started/index.md)
+* [Get started with WinUI](../get-started/start-here.md)
 
 ## Related topics
 
 * [Windows App SDK](../windows-app-sdk/index.md)
-* [Windows UI Library (WinUI)](../winui/index.md)
+* [WinUI](../winui/index.md)
 * [Deployment overview](../package-and-deploy/index.md)

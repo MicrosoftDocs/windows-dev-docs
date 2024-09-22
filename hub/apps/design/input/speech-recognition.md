@@ -231,7 +231,7 @@ First, we initialize a global variable (HResultPrivacyStatementDeclined) to the 
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
 ```
 
-We then catch any standard exceptions during recogntion and test if the [**HResult**](/uwp/api/Windows.Foundation.HResult) value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` to open the Settings page.
+We then catch any standard exceptions during recognition and test if the [**HResult**](/uwp/api/Windows.Foundation.HResult) value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` to open the Settings page.
 
 ```csharp
 catch (Exception exception)
@@ -272,7 +272,7 @@ An Speech Recognition Grammar Specification (SRGS) grammar is a static document 
 
 ### Voice command constraints
 
-Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. For more detail, see [Activate a foreground app with voice commands through Cortana](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
+Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. For more detail, see [Activate a foreground app with voice commands through Cortana](cortana-launch-a-foreground-app-with-voice-commands.md).
 
 See [**SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 

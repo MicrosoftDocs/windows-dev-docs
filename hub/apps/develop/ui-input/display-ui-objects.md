@@ -3,9 +3,7 @@ title: Display WinRT UI objects that depend on CoreWindow
 description: You can use certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects in your desktop app by adding a little bit of interoperation code.
 ms.topic: article
 ms.date: 02/28/2023
-keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, Windows UI Library, WinUI, interop, IInitializeWithWindow, IInitializeWithWindow::Initialize, WinRT.Interop.InitializeWithWindow, IDataTransferManagerInterop, IUserConsentVerifierInterop
-ms.author: stwhi
-author: stevewhims
+keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, WinUI, interop, IInitializeWithWindow, IInitializeWithWindow::Initialize, WinRT.Interop.InitializeWithWindow, IDataTransferManagerInterop, IUserConsentVerifierInterop
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +11,7 @@ ms.localizationpriority: medium
 
 Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [CoreWindow](/uwp/api/windows.ui.core.corewindow); typically to display a user-interface (UI). Even though **CoreWindow** isn't supported in desktop apps (see [Core unsupported classes](../../desktop/modernize/desktop-to-uwp-supported-api.md#core-unsupported-classes)), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
 
-Your desktop app can be [Windows UI Library (WinUI) 3](../../winui/winui3/index.md), [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/), or [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. Code examples are presented in C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
+Your desktop app can be [WinUI 3](../../winui/winui3/index.md), [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/), or [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. Code examples are presented in C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
 ## Set the owner window handle (HWND) for a WinRT UI object
 
@@ -230,7 +228,7 @@ These interfaces have **XxxForWindow** methods, which let you set an owner windo
 ## Related topics
 
 * [Retrieve a window handle (HWND)](./retrieve-hwnd.md)
-* [Windows UI Library (WinUI) 3](../../winui/winui3/index.md)
+* [WinUI 3](../../winui/winui3/index.md)
 * [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
 * [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
 * [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)
