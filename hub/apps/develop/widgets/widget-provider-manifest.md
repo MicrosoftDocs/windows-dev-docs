@@ -122,6 +122,9 @@ Represents the registration for a single widget.
 | **Description** | string | Yes | Short description of the widget. | N/A |
 | **AllowMultiple** | boolean | No | Set to false if only one instance of this widget is supported. This attribute is optional and the default value is true. | true |
 | **IsCustomizable** | boolean | No | Introduced in Windows App SDK 1.4. Set to true if your app supports widget customization. This causes the **Customize widget** button to be displayed in the widget's ellipsis menu. | false |
+| **AdditionalInfoUri** | string | No | A URI that can be associated with the widget to be used when the user clicks on the title bar of the widget frame or when clicking the **Powered by** element of its context menu.|  N/A |
+| **ExcludedRegions** | string | No | A list of regions where the widget should not be available. Widgets can specify **ExcludedRegions** or **ExclusiveRegions** but must not specify both in a single widget definition. The value of the attribute is a comma separated list of two character region codes.| N/A |
+| **ExclusiveRegions** | string | No | A list of the only regions where the widget should be available. Widgets can specify **ExcludedRegions** or **ExclusiveRegions** but must not specify both in single widget definition. The value of the attribute is a comma separated list of two character region codes.| N/A |
 
 ## Capabilities
 
@@ -200,6 +203,8 @@ The following code example illustrates the usage of the widget package manifest 
             Id="Weather_Widget"
             DisplayName="Microsoft Weather Widget"
             Description="Weather Widget Description"
+            AdditionalInfoUri="https://contoso.com/widgets/Weather"
+            ExclusiveRegions="US,UK"
             AllowMultiple="true">
             <Capabilities>
               <Capability>
