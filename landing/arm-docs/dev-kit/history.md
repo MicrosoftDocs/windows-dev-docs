@@ -1,7 +1,7 @@
 ---
 title: Windows Dev Kit 2023 update history
 description: History of updates available for the Windows Dev Kit 2023. 
-ms.date: 08/01/2023
+ms.date: 09/24/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -14,6 +14,49 @@ To keep your device performing its best, make sure that you have the latest upda
 [Check for Windows updates](ms-settings:windowsupdate?activationSource=SMC-IA-4027667)
 
 [Check for optional updates](ms-settings:windowsupdate-optionalupdates?activationSource=SMC-IA-4027667)
+
+## September 2024 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update:
+
+- Improves security for devices with PXE boot enabled in IPv6 networks by protecting them against external access within compromised network segments.
+- Addresses data collection regulatory requirements and updates the consent experience for data transmission.
+- Mitigates a potential security vulnerability, increasing protection against unauthorized privilege.
+
+| Driver Version | Device Manager |
+|----|----|
+| 1.0.3741.8500        | Qualcomm(R) Audio DSP Subsystem Device - Extensions |
+| 13.101.139.0         | Surface System Aggregator - Firmware |
+| 1.0.3933.9300        | Qualcomm(R) FastRPC Device - System devices         |
+| 1.0.3933.9300        | Qualcomm(R) Audio RPC Daemon Device - System devices|
+| 1.0.3933.9300        | Qualcomm Secure Processor Device - System devices   |
+| 12.21.235.0          | Surface UEFI - Firmware                             |
+| 6.214.10.0           | Surface Integration Service - System devices        |
+| 10.105.10.0          | Surface System Telemetry Driver - System devices    |
+| 1153.13.20.0420      | Surface Ethernet Adapter - Network adapters         |
+| 9.166.37.0           | Surface Serial Hub Driver - System devices          |
+
+## June 2024 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update:
+
+- Enhances the gaming experience by preventing glitches in the video playback.
+- Improves stability addressing the Blue Screen error.
+- Improves Windows Hello facial recognition success rate.
+
+| Driver Version | Device Manager |
+|----|----|
+| 1.0.3638.8100        | Qualcomm(R) Analog-to-Digital Converter Device - System devices |
+| Surface - Firmware - 5.65.139.0  | Surface System Aggregator - Firmware |
+| 9.166.8.0        | Surface Serial Hub Driver - System devices        |
+| 1.0.3851.4800        | Qualcomm ADC Temperature Monitor Device - System devices |
+| 1.0.3902.9400       | Qualcomm(R) Bluetooth UART Transport Driver - Bluetooth  |
+| 1.0.3820.3000         | Qualcomm(R) System Manager GPIO Device - System devices|
+| 1.0.3933.9300         | Qualcomm WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter - Network adapters |
+| 1.0.3933.9300           | Qualcomm(R) Wlan Thermal Mitigation Device - Extensions  |
+| 1.0.3902.9400      | Qualcomm(R) Bluetooth Radio Driver - Bluetooth        |
+| 30.0.3959.8900     | Qualcomm(R) Adreno(TM) 8cx Gen 3 - Display adapters       |
+| 1.0.3959.8900     | Qualcomm(R) Device Crash Dump Injector Service - System devices |
 
 ## April 2024 updates
 
