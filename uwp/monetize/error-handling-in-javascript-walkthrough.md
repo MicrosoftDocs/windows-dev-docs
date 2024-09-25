@@ -1,12 +1,10 @@
 ---
-ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: Learn how to catch and handle errors from an AdControl in a JavaScript and HTML5 app by following this walkthrough.
 title: Error handling in JavaScript walkthrough
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp, ads, advertising, error handling, javascript
-ms.localizationpriority: medium
 ---
+
 # Error handling in JavaScript walkthrough
 
 >[!WARNING]
@@ -14,7 +12,7 @@ ms.localizationpriority: medium
 
 This walkthrough demonstrates how to catch ad-related errors in your JavaScript app. This walkthrough uses an [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) to display a banner ad, but the general concepts in it also apply to interstitial ads and native ads.
 
-These examples assume that you have a JavaScript app that contains an **AdControl**. For step-by-step instructions that demonstrate how to add an **AdControl** to your app, see [AdControl in HTML 5 and JavaScript](adcontrol-in-html-5-and-javascript.md). For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub]https://github.com/microsoft/Windows-universal-samples/tree/b1cb20f191d3fd99ce89df50c5b7d1a6e2382c01/archived/Advertising).
+These examples assume that you have a JavaScript app that contains an **AdControl**. For step-by-step instructions that demonstrate how to add an **AdControl** to your app, see [AdControl in HTML 5 and JavaScript](adcontrol-in-html-5-and-javascript.md). For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub](https://github.com/microsoft/Windows-universal-samples/tree/b1cb20f191d3fd99ce89df50c5b7d1a6e2382c01/archived/Advertising).
 
 1.  In the default.html file, add a value for the **onErrorOccurred** event where you define the **data-win-options** in the **div** for the **AdControl**. Find the following code in the default.html file.
     ``` HTML
