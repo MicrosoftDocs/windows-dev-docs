@@ -14,7 +14,7 @@ Typically, the "new tab" and "split pane" actions will always open a new tab/pan
 
 Unfortunately, on Windows, it's tricky to determine what the current working directory ("CWD") for a process is. Even if we were able to look it up, not all applications actually set their CWD as they navigate. Notably, Windows PowerShell doesn't change its CWD as you `cd` around the file system! Duplicating the CWD of PowerShell automatically would almost always be wrong.
 
-Fortunately, there's a workaround. Applications can emit a special escape sequence to manually tell the Terminal what the CWD should be.
+Fortunately, there's a workaround. Applications can emit a special escape sequence (specifically the "OSC 9;9" format) to manually tell the Terminal what the CWD should be.
 
 In this tutorial, you learn how to:
 
