@@ -1,7 +1,7 @@
 ---
 description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your MSIX app's Store listing.
 title: App screenshots, images, and trailers for MSIX app
-ms.date: 10/30/2022
+ms.date: 9/26/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -211,7 +211,7 @@ There are 3 different sizes that you can upload:
 - **Featured Promotional Square art, 1080 x 1080 pixels**: Must _not_ include the product’s title.
 
 > [!NOTE]
-> For the best display on Xbox, you must also provide a **9:16 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
+> For the best display on Xbox, you must also provide a **2:3 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
 
 #### Holographic image
 
