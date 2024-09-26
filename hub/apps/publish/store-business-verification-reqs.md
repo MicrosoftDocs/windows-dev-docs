@@ -13,7 +13,7 @@ Due to new regulatory requirements, including the European Union Digital Service
 
 ## When does this go into effect?
 
-Any new company accounts are already required to enter in their Dun & Bradstreet D-U-N-S® Number or supporting documents during account creation. **Existing partners will have until early 2025** to upload their D-U-N-S® Number or business verification information or they will be blocked from making edits to new or existing apps in impacted markets.
+Any new company accounts are already required to enter in their Dun & Bradstreet D-U-N-S® Number or supporting documents during account creation. **Existing partners will have until early 2025** to upload their D-U-N-S® Number or business verification information or their products will be restricted from distribution in the European markets.
 
 ## Business verification
 
@@ -44,13 +44,7 @@ For the fastest and easiest verification, we recommend obtaining and providing a
 
 ## Customer contact information
 
-If you have a company account, Microsoft requires that you enter customer contact information for each product available in the Microsoft Store. Once this is provided, the contact information will appear on the Product Detail page.
-
-- To provide customer contact information: Sign in to your [Microsoft Partner Center account](https://partner.microsoft.com/dashboard/home).
-- To update customer contact information:
-  - Sign into your Partner Center account.
-  - For every product available in the European Union markets, go to the Properties page, fill the five required fields (Support contact info, Phone number, Address / Address Line 1, City, and Country), and then publish the update.
-  - Once provided, this information will appear on the product detail pages.
+If you have a company account, Microsoft requires that your customer support contact information is displayed in Microsoft Storefronts. We will be updating a new section in the Account Settings page where you will be able to enter your customer contact information once and it will display across all your product detail pages. You can still elect to update each product now, otherwise stay tuned for a November update and we will provide further instructions.
 
 ## What if impacted developers do not update their information by the deadline?
 
@@ -58,7 +52,7 @@ If a valid business verification ID is not submitted by the deadline, the follow
 
 - All publisher products will be restricted from distribution in the European Union markets.
 
-If valid customer contact information is not submitted for a product by the deadline, the following action will be taken until the publisher meets compliance:
+If valid customer contact information is not submitted for your company account, nor is submitted to a product by the deadline, the following action will be taken until the publisher meets compliance:
 
 - The product will be restricted from distribution in the European markets.
 
