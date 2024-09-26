@@ -1,16 +1,18 @@
 ---
 title: Windows Terminal Custom Prompt Setup
 description: In this tutorial, you learn how to set up Oh My Posh and Terminal-Icons in Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
-ms.date: 08/28/2023
+author: nguyen-dows
+ms.author: chrnguyen
+ms.date: 09/20/2024
 ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to set up a customized command line experience using Oh My Posh, Terminal-Icons, and posh-git in my Windows Terminal.
 ---
 
 # Tutorial - Set up a custom prompt for PowerShell or WSL with Oh My Posh
 
-This tutorial provides some resources and direction to help you customize your command prompt for PowerShell or Windows Subsystem for Linux (WSL) using [Oh My Posh](https://ohmyposh.dev). Oh My Posh provides theme capabilities for a fully customized command prompt experience providing Git status color-coding and prompts.
+[Oh My Posh](https://ohmyposh.dev) provides theme capabilities for a fully customized command prompt experience providing Git status color-coding and prompts.
+
+If you just want to customize the [color schemes](/customize-settings/color-schemes) or [appearance](/customize-settings/appearance) of your terminal, you can do so in the Windows Terminal settings (without the need to install Oh My Posh themes).
 
 In this tutorial, you learn how to:
 
@@ -25,16 +27,16 @@ In this tutorial, you learn how to:
 
 ## Install a Nerd Font
 
-Customized command prompts often use glyphs (a graphic symbol) in order to style the prompt. If your font does not include the appropriate glyphs, you may see several Unicode replacement characters '&#x25AF;' throughout your prompt. In order to see all of the glyphs in your terminal, we recommend installing a [Nerd Font](https://www.nerdfonts.com/font-downloads).
+Customized command prompts often use glyphs (a graphic symbol) to style the prompt. If your font does not include the appropriate glyphs, you may see several Unicode replacement characters '&#x25AF;' in your prompt. 
 
-If you'd like a font that looks like Cascadia Code, the Caskaydia Cove Nerd Font was built from the Cascadia Code repository by a community member.)
+To see all of the glyphs in your terminal, we recommend installing a [Nerd Font](https://www.nerdfonts.com/font-downloads) like Cascadia Code NF, which can be downloaded from the [Cascadia Code release page](https://github.com/microsoft/cascadia-code/releases).
 
 After downloading, you will need to unzip and install the font on your system. ([How to add a new font to Windows](https://support.microsoft.com/en-us/office/add-a-font-b7c5f17c-4426-4b53-967f-455339c564c1)).
 
-To set a Nerd Font for use with Oh My Posh and Terminal Icons, open the Windows Terminal settings UI by selecting **Settings** (Ctrl+,) from your Windows Terminal dropdown menu. Select the profile where you wish to apply the font, PowerShell for example, and then the **Appearance** tab. In the **Font face** drop-down menu, select *CaskaydiaCove Nerd Font* or whichever Nerd font you would like to use with your customized prompt.
+To set a Nerd Font for use with Oh My Posh and Terminal Icons, open the Windows Terminal settings UI by selecting **Settings** (Ctrl+,) from your Windows Terminal dropdown menu. Select the profile where you wish to apply the font (PowerShell for example) and then select **Appearance**. In the **Font face** drop-down menu, select *Cascadia Code NF* or whichever Nerd Font you want to use.
 
 > [!NOTE]
-> If you want to use a terminal font that does not support glyph icons, such as [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases), you may consider using an Oh My Posh theme that contains the `minimal` function, indicating that additional icons aren't required.
+> If you want to use a terminal font that does not support glyph icons, such as [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases), consider using an Oh My Posh theme that contains the `minimal` function, indicating that additional icons aren't required.
 
 ## Customize your PowerShell prompt with Oh My Posh
 
@@ -42,18 +44,18 @@ Oh My Posh enables you to use a full color set to define and render your termina
 
 ### Install Oh My Posh for PowerShell
 
-To customize your PowerShell prompt, you can install Oh My Posh using [winget](/windows/package-manager/winget). Enter the command:
+To customize your PowerShell prompt, install Oh My Posh using [winget](/windows/package-manager/winget), which will install:
+
+- `oh-my-posh.exe`: The Windows executable
+- `themes`: The latest [Oh My Posh themes](https://ohmyposh.dev/docs/themes)
+
+To start the installation, enter the command:
 
 ```powershell
 winget install JanDeDobbeleer.OhMyPosh
 ```
 
-This will install:
-
-- `oh-my-posh.exe`: The Windows executable
-- `themes`: The latest [Oh My Posh themes](https://ohmyposh.dev/docs/themes)
-
-You will need to agree to the source terms and may run into the instance that more than one package is available. In this case, select package ID that you wish to use and re-enter the command: `winget install <package ID>`.
+You will need to agree to the source terms and may run into the instance that more than one package is available. In this case, select the package ID that you want to use and re-enter the command: `winget install <package ID>`.
 
 ![Screenshot of winget install oh my posh packages.](../images/oh-my-posh-winget.png)
 
@@ -91,7 +93,7 @@ Add the following to the end of your PowerShell profile file to set the `paradox
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\paradox.omp.json" | Invoke-Expression
 ```
 
-Now, each new PowerShell instance will start by importing Oh My Posh and setting your command line theme.
+Now, each new PowerShell instance will start by importing Oh My Posh and setting your theme.
 
 If you receive a script error when trying to open a new PowerShell instance, your Execution Policy for PowerShell may be restricted. To set your PowerShell Execution Policy to unrestricted, you will need to launch PowerShell as an administrator and then use the following command:
 
@@ -107,13 +109,13 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 ## Customize your WSL prompt with Oh My Posh
 
-Oh My Posh now allows you to customize WSL prompts, just like you would a PowerShell prompt using [built-in themes](https://ohmyposh.dev/docs/themes).
+Oh My Posh also allows you to customize WSL prompts using [built-in themes](https://ohmyposh.dev/docs/themes).
 
 ### Install Oh My Posh for WSL
 
 We recommend installing Oh My Posh for WSL, whether using Bash, Zsh, or something else, by following the [Linux install guide in the Oh My Posh docs](https://ohmyposh.dev/docs/installation/linux).
 
-Currently the recommended path for customizing WSL prompts with Oh My Posh uses the [Homebrew package manager](https://brew.sh/) for installation. (Homebrew works with WSL now!) When installing Homebrew for Linux, be sure to follow [Next steps](https://docs.brew.sh/Homebrew-on-Linux#install) instructions to add Homebrew to your PATH and to your bash shell profile script.
+Customizing WSL prompts with Oh My Posh uses the [Homebrew package manager](https://brew.sh/) for installation. When installing Homebrew for Linux, be sure to follow [Next steps](https://docs.brew.sh/Homebrew-on-Linux#install) instructions to add Homebrew to your PATH and to your bash shell profile script.
 
 Homebrew will install:
 
@@ -122,7 +124,7 @@ Homebrew will install:
 
 ### Choose and apply a WSL prompt theme
 
-The Oh My Posh themes will be found in the oh-my-posh directory as JSON files. You can find it by entering `cd $(brew --prefix oh-my-posh)`, then just `cd themes` and `ls` for the list. For Ubuntu-20.04 running via WSL, the path is likely to be something like: `\\wsl.localhost\Ubuntu-20.04\home\linuxbrew\.linuxbrew\Cellar\oh-my-posh\6.34.1\themes`. You can also view what the themes look like in the Oh My Posh docs: [Themes](https://ohmyposh.dev/docs/themes).
+The Oh My Posh themes will be found in the oh-my-posh directory as JSON files. You can find it by entering `cd $(brew --prefix oh-my-posh)`, then just `cd themes` and `ls` for the list. For Ubuntu-20.04 running via WSL, the path is likely to be something like: `\\wsl.localhost\Ubuntu-20.04\home\linuxbrew\.linuxbrew\Cellar\oh-my-posh\6.34.1\themes`. You can view what the themes look like in the Oh My Posh [Themes docs](https://ohmyposh.dev/docs/themes).
 
 To use a theme, copy it from the `themes` folder to your `$Home` folder, then add this line to the bottom of the `.profile` file found in your `$Home` folder:
 
@@ -130,7 +132,7 @@ To use a theme, copy it from the `themes` folder to your `$Home` folder, then ad
 eval "$(oh-my-posh init bash --config ~/jandedobbeleer.omp.json)"
 ```
 
-You can replace `jandedobbeleer.omp.json` with the name of whichever theme you prefer to use as long as it's copied to your `$Home` folder.
+You can replace `jandedobbeleer.omp.json` with the name of the theme you want to use (just make sure that it is copied in your `$Home` folder).
 
 Alternatively, if you are using oh-my-posh in both Windows with PowerShell and with WSL, you can share your PowerShell theme with WSL by pointing to a theme in your Windows user's home folder. In your WSL distribution's `.profile` path, replace ~ with the path: `/mnt/c/Users/<WINDOWSUSERNAME>`. Replacing `<WINDOWSUSERNAME>` with your own Windows username.
 
