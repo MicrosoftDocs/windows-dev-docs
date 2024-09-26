@@ -42,6 +42,8 @@ items:
                   href: windows-app-sdk/applifecycle/applifecycle.md
                 - name: App instancing
                   href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+                - name: Create a single-instanced app
+                  href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
                 - name: Rich activation
                   href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
                 - name: Power management
@@ -775,7 +777,7 @@ items:
               - name: Developer Code of Conduct
                 href: publish/store-developer-code-of-conduct.md
               - name: App developer agreement
-                href: https://https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/store/legal-and-policy-documents/ada/MS-Store-ADA-v8.9-FINAL-EN.pdf
+                href: https://go.microsoft.com/fwlink/?linkid=528905
               - name: Microsoft Store Product Ranking, Placement and Marketing Disclosure Statement
                 href: https://aka.ms/disclosurepolicypdf
               - name: Resources
@@ -996,6 +998,8 @@ items:
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
                 - name: User interface migration (including WinUI 3)
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
+                - name: Keyboard API and events parity between UWP and WinUI 3
+                  href: windows-app-sdk/migrate-to-windows-app-sdk/guides/keyboard-events.md
                 - name: Windowing functionality migration
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
                 - name: Application lifecycle functionality migration

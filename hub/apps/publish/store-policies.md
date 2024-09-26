@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies version 7.18
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 09/10/2024
+ms.date: 09/17/2024
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -14,7 +14,7 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 **Publish date: September 10, 2024**
 
-**Effective date: October 13, 2024**
+**Effective date: October 19, 2024**
 
 > [!NOTE]
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](store-policies-change-history.md).
@@ -376,7 +376,7 @@ For all advertising related activities, the following requirements apply:
 **10.10.2**
 
 Any advertising content your product displays must adhere to Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
-If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
+If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
 
 
 **10.10.3** Policy removed
@@ -621,5 +621,5 @@ Numbers reported on numbers reported on 7/2/2024 (from 7/1/2023 – 6/30/2024)
 
 - [Change history for Microsoft Store Policies](store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)
 

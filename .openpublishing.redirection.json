@@ -8274,6 +8274,11 @@
       "source_path": "uwp/devices-sensors/scan-from-your-app.md",
       "redirect_url": "/windows/apps/develop/devices-sensors/scan-from-your-app",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/project-ironsides.md",
+      "redirect_url": "windows/dev-home/dev-diagnostics",
+      "redirect_document_id": false
     }
   ]
 }

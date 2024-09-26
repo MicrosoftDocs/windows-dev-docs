@@ -1,7 +1,7 @@
 ---
 title: Dev Home for Windows Developers
 description: Dev Home is a new control center for Windows providing the ability to track your workflows and coding tasks using customizable widgets, set up your dev environment, connect to your developer accounts and tools (such as GitHub), and install apps and packages all in one place.
-ms.date: 05/07/2024
+ms.date: 09/12/2024
 ms.topic: overview
 ---
 
@@ -88,9 +88,9 @@ Environments in Dev Home can help you to centralize your interactions with virtu
 
 ![Environments in Dev Home](../images/devhome-environment-manage.png)
 
-## Project Ironsides
+## Dev Diagnostics
 
-Dev Home "Project Ironsides" enables developers to "peek under the hood" of Windows to better understand how your Windows app is working. Learn more about [Project Ironsides](./project-ironsides.md).  
+The Dev Diagnostics utility in Dev Home enables developers to "peek under the hood" of Windows to better understand how your Windows app is working. Learn more about [Dev Diagnostics](./dev-diagnostics.md).  
 
 ## Dev Home open source repos
 
