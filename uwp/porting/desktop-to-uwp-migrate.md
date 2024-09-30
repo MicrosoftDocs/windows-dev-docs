@@ -86,9 +86,7 @@ public static ArrayList GetCustomerNames()
 
     using (SqlConnection conn = new SqlConnection())
     {
-        conn.ConnectionString =
-            @"Data Source=" +
-            @"<Your Server Name>\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+        conn.ConnectionString = ...; // Your connection string goes here.
 
         conn.Open();
 
@@ -118,8 +116,7 @@ public static ArrayList GetCustomerNames(DbProviderFactory factory)
 
     using (DbConnection conn = factory.CreateConnection())
     {
-        conn.ConnectionString = @"Data Source=" +
-                        @"<Your Server Name>\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+        conn.ConnectionString = ...; // Your connection string goes here.
 
         conn.Open();
 
