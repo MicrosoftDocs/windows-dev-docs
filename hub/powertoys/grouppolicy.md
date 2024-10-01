@@ -121,6 +121,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump|
 |Mouse Pointer Crosshairs|Mouse Pointer Crosshairs: Configure enabled state|ConfigureEnabledUtilityMousePointerCrosshairs|
 |Mouse Without Borders|Mouse Without Borders: Configure enabled state|ConfigureEnabledUtilityMouseWithoutBorders|
+|New+|New+: Configure enabled state|ConfigureEnabledUtilityNewPlus|
 |Peek|Peek: Configure enabled state|ConfigureEnabledUtilityPeek|
 |Power Rename|Power Rename: Configure enabled state|ConfigureEnabledUtilityPowerRename|
 |PowerToys Run|PowerToys Run: Configure enabled state|ConfigureEnabledUtilityPowerLauncher|
@@ -130,6 +131,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Shortcut Guide|Shortcut Guide: Configure enabled state|ConfigureEnabledUtilityShortcutGuide|
 |Text Extractor|Text Extractor: Configure enabled state|ConfigureEnabledUtilityTextExtractor|
 |Video Conference Mute|Video Conference Mute: Configure enabled state|ConfigureEnabledUtilityVideoConferenceMute|
+|Workspaces|Workspaces: Configure enabled state|ConfigureEnabledUtilityWorkspaces|
 
 #### Group Policy (ADMX) information
 
