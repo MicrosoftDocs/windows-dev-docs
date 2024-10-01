@@ -95,6 +95,13 @@ private void TabView_TabCloseRequested(muxc.TabView sender, muxc.TabViewTabClose
 
 There are a number of ways to take advantage of or extend a [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview)'s functionality.
 
+### Tab tear-out
+
+Starting in Windows App SDK 1.6, TabView supports a [CanTearOutTabs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.cantearouttabs) mode which provides an enhanced experience for dragging tabs out to a new window. When this new option is enabled, tab dragging is very much like the tab drag experience in Edge and Chrome where a new window is immediately created during the drag, allowing the user to drag it to the edge of the screen to maximize or snap the window in one smooth motion. This implementation also doesn't use drag-and-drop APIs, so it isn't impacted by any limitations in those APIs.
+
+> [!NOTE]
+> Tab tear-out is supported in processes running elevated as Administrator.
+
 ### Bind TabItemsSource to a TabViewItemCollection
 
 ```xaml
