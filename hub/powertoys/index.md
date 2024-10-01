@@ -195,6 +195,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### New+
+
+:::row:::
+    :::column:::
+        [![New+ image](../images/pt-newplus.png)](newplus.md)
+    :::column-end:::
+    :::column span="2":::
+        [New+](newplus.md) enables you to create files and folders from a personalized set of templates in File Explorer.
+    :::column-end:::
+:::row-end:::
+
 ### Peek
 
 :::row:::

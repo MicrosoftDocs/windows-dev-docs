@@ -121,6 +121,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump|
 |Mouse Pointer Crosshairs|Mouse Pointer Crosshairs: Configure enabled state|ConfigureEnabledUtilityMousePointerCrosshairs|
 |Mouse Without Borders|Mouse Without Borders: Configure enabled state|ConfigureEnabledUtilityMouseWithoutBorders|
+|New+|New+: Configure enabled state|ConfigureEnabledUtilityNewPlus|
 |Peek|Peek: Configure enabled state|ConfigureEnabledUtilityPeek|
 |Power Rename|Power Rename: Configure enabled state|ConfigureEnabledUtilityPowerRename|
 |PowerToys Run|PowerToys Run: Configure enabled state|ConfigureEnabledUtilityPowerLauncher|
@@ -130,6 +131,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Shortcut Guide|Shortcut Guide: Configure enabled state|ConfigureEnabledUtilityShortcutGuide|
 |Text Extractor|Text Extractor: Configure enabled state|ConfigureEnabledUtilityTextExtractor|
 |Video Conference Mute|Video Conference Mute: Configure enabled state|ConfigureEnabledUtilityVideoConferenceMute|
+|Workspaces|Workspaces: Configure enabled state|ConfigureEnabledUtilityWorkspaces|
 
 #### Group Policy (ADMX) information
 
@@ -638,6 +640,40 @@ If you disable or don't configure this policy, no predefined rules are applied.
     > [!NOTE]
     > Syntax for the :::no-loc text="value"::: property from the :::no-loc text="data"::: element:
     > `<Hostname> <IP Address>&#xF000;<Hostname 2> <IP Address 2>&#xF000;<Hostname 3> <IP Address 3>`
+
+### New+
+
+#### Hide template filename extension
+
+Supported on PowerToys 0.85.0 or later.
+
+This policy configures if the template filenames are shown with extension or not.
+
+If you enable this policy, the setting is enabled and the extension is hidden.
+
+If you disable this policy, the setting is disabled and the extension is shown.
+
+If you don't configure this policy, the user takes control over the setting and can enable or disable it.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: NewPlusHideTemplateFilenameExtension
+- GP name: Hide template filename extension
+- GP path: Administrative Templates/Microsoft PowerToys/New+
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: NewPlusHideTemplateFilenameExtension
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~NewPlus/NewPlusHideTemplateFilenameExtension`
+- Example value: `<disabled/>`
 
 ### PowerToys Run
 
