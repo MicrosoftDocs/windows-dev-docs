@@ -31,6 +31,17 @@ The stable channel provides releases of the Windows App SDK that are supported f
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
 
+### Version 1.6.1 (1.6.240923002)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
+
+- Fixed a crash when using FocusVisualKind.Reveal(). For more info, see GitHub issue [#9966](https://github.com/microsoft/microsoft-ui-xaml/issues/9966).
+- Fixed noisy C++ exceptions from Bcp47Langs.dll. For more info, see GitHub issue [#4691](https://github.com/microsoft/WindowsAppSDK/issues/4691). Note that this fix removes the synchronization with `Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride`.
+- Fixed an issue where an extra `Unloaded` event was raised immediately after showing a `ContentDialog`. For more info, see GitHub issue [#8402](https://github.com/microsoft/microsoft-ui-xaml/issues/8402).
+- Fixed an issue where a CommandBar menu might have incorrectly opened up even when there was room for it to open down.
+- Fixed some issues where input to `InputNonClientPointerSource` regions was not handled correctly when the top-level window was running in right-to-left mode.
+- Fixed the compile-time check for the Windows SDK framework version to handle the slightly different framework name used for .NET 9.
+
 ## Version 1.6
 
 The following sections describe new and updated features and known issues for version 1.6.
