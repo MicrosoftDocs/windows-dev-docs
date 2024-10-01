@@ -83,7 +83,6 @@ In addition to the resources listed in the sections below, the [WebAuthn Awesome
 
 ### Advanced FIDO2/WebAuthn tools
 
-* [WebAuthn Test App](https://webauthntest.identitystandards.io/).
 * [lbuchs/WebAuthn](https://webauthn.lubu.ch/_test/client.html).
 * [WebAuthn Debugger](https://debugger.simplewebauthn.dev/?).
 * [WebAuthn Developer Tool](https://demo.yubico.com/webauthn-developers).
