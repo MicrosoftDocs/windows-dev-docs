@@ -11,8 +11,6 @@ keywords: cortana
 
 >[!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
->
-> See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
 
 Access and update the list of supported phrases (**PhraseList** elements) in a Voice Command Definition (VCD) file at run time using the speech recognition result.
 
@@ -97,13 +95,13 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
         "AdventureWorksCommandSet_en-us", out commandSetEnUs))
 {
   await commandSetEnUs.SetPhraseListAsync(
-    "destination", new string[] {“London”, “Dallas”, “New York”, “Phoenix”});
+    "destination", new string[] {"London", "Dallas", "New York", "Phoenix"});
 }
 ```
 
 ## Remarks
 
-Using a **PhraseList** to constrain the recognition is appropriate for a relatively small set or words. When the set of words is too large (hundreds of words, for example), or shouldn’t be constrained at all, use the **PhraseTopic** element and a **Subject** element to refine the relevance of speech-recognition results to improve scalability.
+Using a **PhraseList** to constrain the recognition is appropriate for a relatively small set or words. When the set of words is too large (hundreds of words, for example), or shouldn't be constrained at all, use the **PhraseTopic** element and a **Subject** element to refine the relevance of speech-recognition results to improve scalability.
 
 In our example, we have a **PhraseTopic** with a **Scenario** of "Search", further refined by a **Subject** of "City\\State".
 
