@@ -1,11 +1,13 @@
 ---
 description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
 title: Load images and assets tailored for scale, theme, high contrast, and others
-ms.date: 08/19/2024
-ms.topic: article
+ms.date: 10/08/2024
+ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
+#customer-intent: To learn how to load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
 ---
+
 # Load images and assets tailored for scale, theme, high contrast, and others
 
 Your app can load image resource files (or other asset files) tailored for [display scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design), theme, high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image). They can also appear in your app package manifest source file (the `Package.appxmanifest` file)&mdash;for example, as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer&mdash;or on your tiles and toasts. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for display scale, theme, high contrast, language, and other contexts.
@@ -94,6 +96,29 @@ Absolute paths are a good choice if your image files remain where they are in th
 ```
 
 Also see [Tile and toast support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast).
+
+## Load an images and other resources from a class library
+
+You can load images and other resources from a referenced **Class library (WinUI 3 in Desktop)** project by referencing the resource in a URI that uses the `ms-appx` scheme. The URI should include the name of the class library project and the path to the resource within the class library project. For example, if you have a class library project named `MyClassLibrary` that contains an image named `logo.png` in a folder named `Assets`, you can reference the image in your app project like this:
+
+```xaml
+<Image Source="ms-appx:///MyClassLibrary/Assets/logo.png"/>
+```
+
+You'll use this same URI format to reference resources in a class library from XAML markup or from code. For example, you can use the following code to load the image from your class library and put it into a [StorageFile](/uwp/api/windows.storage.storagefile) object:
+
+```csharp
+private async Task<DateTimeOffset> GetLogoCreatedDateAsync()
+{
+    Uri uri = new($"ms-appx:///MyClassLibrary/Assets/logo.png");
+    Windows.Storage.StorageFile file =
+        await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+
+    return file.DateCreated;
+}
+```
+
+Note that you can reference images from the class library from both the app project and the class library project itself.
 
 ## Qualify an image resource for targetsize
 
