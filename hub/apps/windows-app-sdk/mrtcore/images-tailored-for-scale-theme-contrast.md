@@ -1,11 +1,11 @@
 ---
 description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
-title: Load images and assets tailored for scale, theme, high contrast, and others
+title: Load tailored images and assets in your apps
 ms.date: 10/08/2024
 ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
-#customer-intent: To learn how to load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
+#customer intent: To learn how to load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
 ---
 
 # Load images and assets tailored for scale, theme, high contrast, and others
@@ -189,15 +189,13 @@ By default, the [ResourceManager](/windows/windows-app-sdk/api/winrt/microsoft.w
 
 ## Important APIs
 
+The following APIs are imporant to understand when working with image resources:
+
 - [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext)
 - [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap)
 
-## See also
+## Related content
 
-- [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
-- [Localize strings in your UI and app package manifest](localize-strings.md)
 - [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data)
 - [Tile and toast support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast)
-- [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 - [Mirroring images](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl#mirroring-images)
-- [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal)
