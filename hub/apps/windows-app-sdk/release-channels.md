@@ -52,7 +52,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level | End of servicing |
 |-------------------------|-----------------------|----------------------|--------------------|---------------|----------------  |
 | 1.6                     | 09/04/2024            | 1.6.240923002        | 10/01/2024         | Current       | 09/04/2025       |
-| 1.5                     | 02/29/2024            | 1.5.240802000        | 08/13/2024         | Maintenance   | 02/28/2025       |
+| 1.5                     | 02/29/2024            | 1.5.241001000        | 10/08/2024         | Maintenance   | 02/28/2025       |
 | 1.4                     | 08/29/2023            | 1.4.240802001        | 08/13/2024         | Out of Support| 08/29/2024       |
 | 1.3                     | 04/12/2023            | 1.3.230724000        | 07/25/2023         | Out of Support| 04/12/2024       |
 | 1.2                     | 11/10/2022            | 1.2.230313.1         | 03/15/2023         | Out of Support| 11/10/2023       |
