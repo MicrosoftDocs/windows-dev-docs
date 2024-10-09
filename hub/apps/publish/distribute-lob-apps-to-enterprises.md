@@ -31,6 +31,9 @@ Another option for distributing LOB apps directly to users in your organization 
 
 ## Microsoft Store for Business or Microsoft Store for Education
 
+> [!NOTE]
+> Microsoft [has announced](/lifecycle/announcements/microsoft-store-for-business-education-retiring) the retirement of the Microsoft Store for Business and Microsoft Store for Education in 2023. The instructions below are therefore no longer valid. For the replacement, please refer to [Add a Windows line-of-business app to Microsoft Intune](/mem/intune/apps/lob-apps-windows).
+
 You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store. When using this option, the apps are signed by the Store and must comply with the standard Store Policies.
 
 > [!NOTE]
