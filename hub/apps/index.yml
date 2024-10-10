@@ -89,11 +89,14 @@ productDirectory:
 
 
 tools:
-  title: Develop for other Windows device platforms
+  title: More development options
   items:
-    - title: HoloLens
-      imageSrc: /media/hubs/windows/win_developer-5.svg
-      url: /windows/mixed-reality/
+    - title: .NET
+      imageSrc: /media/hubs/windows/win_developer-1.svg
+      url: /dotnet/
+    - title: UWP
+      imageSrc: /media/hubs/windows/win_developer-2.svg
+      url: /windows/uwp/
     - title: Windows for IoT
       imageSrc: /media/hubs/windows/win_developer-4.svg
       url: /windows/iot-core/
