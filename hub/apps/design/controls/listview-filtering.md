@@ -37,10 +37,9 @@ For filtering to work, the ListView must have a data source that can be manipula
                  Header="Filter by Last Name"
                  TextChanged="OnFilterChanged"/>
         <ListView x:Name="FilteredListView"
-             ItemTemplate="{StaticResource ContactListViewTemplate}"/>
+                  ItemTemplate="{StaticResource ContactListViewTemplate}"/>
     </StackPanel>
 </Grid>
-
 ```
 
 ## Filtering the data
@@ -67,85 +66,85 @@ using System.Linq;
 
 public sealed partial class MainPage : Page
 {
-// Define Contact collection to hold all Contact objects.
-IList<Contact> allContacts = new List<Contact>();
-// Define an ObservableCollection<Contact> object to serve as the ListView's
-// ItemsSource. This collection will get updated after the filters are used:
-ObservableCollection<Contact> contactsFiltered;
+    // Define Contact collection to hold all Contact objects.
+    IList<Contact> allContacts = new List<Contact>();
+    // Define an ObservableCollection<Contact> object to serve as the ListView's
+    // ItemsSource. This collection will get updated after the filters are used:
+    ObservableCollection<Contact> contactsFiltered;
 
-public MainPage()
-{
-    this.InitializeComponent();
-
-    // Populate allContacts collection.
-    allContacts.Add(new Contact("Kendall", "Collins", "Adatum Corporation"));
-    allContacts.Add(new Contact("Victoria", "Burke", "Bellows College"));
-    allContacts.Add(new Contact("Preston", "Morales", "Margie's Travel"));
-    allContacts.Add(new Contact("Miguel", "Reyes", "Tailspin Toys"));
-
-    // Populate contactsFiltered with all Contact objects (in this case,
-    // allContacts holds all of our Contact objects so we copy them into
-    // contactsFiltered). Set this newly populated collection as the
-    // ItemsSource for the ListView.
-    contactsFiltered = new ObservableCollection<Contact>(allContacts);
-    Filtereditemscontrol.itemssource = contactsFiltered;
-}
-
-// Whenever text changes in the filtering text box, this function is called:
-private void OnFilterChanged(object sender, TextChangedEventArgs args)
-{
-    // This is a Linq query that selects only items that return true after
-    // being passed through the Filter function, and adds all of those
-    // selected items to filtered.
-    var filtered = allContacts.Where(contact => Filter(contact));
-    Remove_NonMatching(filtered);
-    AddBack_Contacts(filtered);
-}
-
-// The following functions are called inside OnFilterChanged:
-
-// When the text in any filter is changed, perform a check on each item in
-// the original contact list to see if the item should be displayed. If the
-// item passes the check, the function returns true and the item is added to
-// the filtered list. Make sure all text is case-insensitive when comparing.
-private bool Filter(Contact contact)
-{
-    return contact.LastName.Contains
-        (FilterByLastName.Text, StringComparison.InvariantCultureIgnoreCase);
-}
-
-// These functions go through the current list being displayed
-// (contactsFiltered), and remove any items not in the filtered collection
-// (any items that don't belong), or add back any items from the original
-// allContacts list that are now supposed to be displayed. (Adding/removing
-// the items ensures the list view uses the desired add/remove animations.)
-
-private void Remove_NonMatching(IEnumerable<Contact> filteredData)
-{
-    for (int i = contactsFiltered.Count - 1; i >= 0; i--)
+    public MainPage()
     {
-        var item = contactsFiltered[i];
-        // If contact is not in the filtered argument list,
-        // remove it from the ListView's source.
-        if (!filteredData.Contains(item))
+        this.InitializeComponent();
+
+        // Populate allContacts collection.
+        allContacts.Add(new Contact("Kendall", "Collins", "Adatum Corporation"));
+        allContacts.Add(new Contact("Victoria", "Burke", "Bellows College"));
+        allContacts.Add(new Contact("Preston", "Morales", "Margie's Travel"));
+        allContacts.Add(new Contact("Miguel", "Reyes", "Tailspin Toys"));
+
+        // Populate contactsFiltered with all Contact objects (in this case,
+        // allContacts holds all of our Contact objects so we copy them into
+        // contactsFiltered). Set this newly populated collection as the
+        // ItemsSource for the ListView.
+        contactsFiltered = new ObservableCollection<Contact>(allContacts);
+        Filtereditemscontrol.itemssource = contactsFiltered;
+    }
+
+    // Whenever text changes in the filtering text box, this function is called:
+    private void OnFilterChanged(object sender, TextChangedEventArgs args)
+    {
+        // This is a Linq query that selects only items that return true after
+        // being passed through the Filter function, and adds all of those
+        // selected items to filtered.
+        var filtered = allContacts.Where(contact => Filter(contact));
+        Remove_NonMatching(filtered);
+        AddBack_Contacts(filtered);
+    }
+
+    // The following functions are called inside OnFilterChanged:
+
+    // When the text in any filter is changed, perform a check on each item in
+    // the original contact list to see if the item should be displayed. If the
+    // item passes the check, the function returns true and the item is added to
+    // the filtered list. Make sure all text is case-insensitive when comparing.
+    private bool Filter(Contact contact)
+    {
+        return contact.LastName.Contains
+            (FilterByLastName.Text, StringComparison.InvariantCultureIgnoreCase);
+    }
+
+    // These functions go through the current list being displayed
+    // (contactsFiltered), and remove any items not in the filtered collection
+    // (any items that don't belong), or add back any items from the original
+    // allContacts list that are now supposed to be displayed. (Adding/removing
+    // the items ensures the list view uses the desired add/remove animations.)
+
+    private void Remove_NonMatching(IEnumerable<Contact> filteredData)
+    {
+        for (int i = contactsFiltered.Count - 1; i >= 0; i--)
         {
-            contactsFiltered.Remove(item);
+            var item = contactsFiltered[i];
+            // If contact is not in the filtered argument list,
+            // remove it from the ListView's source.
+            if (!filteredData.Contains(item))
+            {
+                contactsFiltered.Remove(item);
+            }
         }
     }
-}
 
-private void AddBack_Contacts(IEnumerable<Contact> filteredData)
-{
-    foreach (var item in filteredData)
+    private void AddBack_Contacts(IEnumerable<Contact> filteredData)
     {
-        // If the item in the filtered list is not currently in
-        // the ListView's source collection, add it back in.
-        if (!contactsFiltered.Contains(item))
+        foreach (var item in filteredData)
         {
-            contactsFiltered.Add(item);
+            // If the item in the filtered list is not currently in
+            // the ListView's source collection, add it back in.
+            if (!contactsFiltered.Contains(item))
+            {
+                contactsFiltered.Add(item);
+            }
         }
     }
-}
 }
  ```
 
