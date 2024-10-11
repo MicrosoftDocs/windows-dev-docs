@@ -44,7 +44,7 @@ For the fastest and easiest verification, we recommend obtaining and providing a
 
 ## Customer contact information
 
-If you have a company account, Microsoft requires that your customer support contact information is displayed in Microsoft Storefronts. We will be updating a new section in the Account Settings page where you will be able to enter your customer contact information once and it will display across all your product detail pages. You can still elect to update each product now, otherwise stay tuned for a November update and we will provide further instructions.
+If you have a company account, Microsoft requires that your customer support contact information is displayed in Microsoft Storefronts. We will be updating a new section in the Account Settings page where you will be able to enter your customer contact information once and it will display across all your product detail pages. Please stay tuned for a November update and we will provide further instructions.
 
 ## What if impacted developers do not update their information by the deadline?
 
@@ -52,9 +52,9 @@ If a valid business verification ID is not submitted by the deadline, the follow
 
 - All publisher products will be restricted from distribution in the European Union markets.
 
-If valid customer contact information is not submitted for your company account, nor is submitted to a product by the deadline, the following action will be taken until the publisher meets compliance:
+If valid customer contact information is not submitted for your company account, the following action will be taken until the publisher meets compliance:
 
-- The product will be restricted from distribution in the European markets.
+- All publisher products will be restricted from distribution in the European Union markets.
 
 ## Additional resources
 

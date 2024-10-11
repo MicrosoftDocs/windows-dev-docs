@@ -235,7 +235,7 @@ public MainWindow()
 > [!CAUTION]
 > `ExtendsContentIntoTitleBar` shows in the XAML IntelliSense for `Window`, but setting it in XAML causes an error. Set this property in code instead.
 
-This example shows how to get the [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) and set the [AppWindow.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property to `true`. This example shows how to use interop APIs to get the AppWindow, which is needed if your app does not use WinUI 3 1.3 or later.
+This example shows how to get the [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) and set the [AppWindowTitleBar.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property to `true`. This example shows how to use interop APIs to get the AppWindow, which is needed if your app does not use WinUI 3 1.3 or later.
 
 ```csharp
 using Microsoft.UI;           // Needed for WindowId.

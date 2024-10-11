@@ -14,8 +14,6 @@ ms.localizationpriority: medium
 
 >[!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
->
-> See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
 
 Extend the basic functionality of **Cortana** with voice commands that launch and execute a single action in a Windows application.
 

@@ -4,7 +4,7 @@ description: A guide to help you get started if your brand new to using Python o
 ms.topic: article
 keywords: python, windows 10, microsoft, learning python, python on windows for beginners, install python with microsoft store, python with vs code, pygame on windows
 ms.localizationpriority: medium
-ms.date: 05/05/2021
+ms.date: 10/01/2024
 ---
 
 # Get started using Python on Windows for beginners
@@ -13,7 +13,9 @@ The following is a step-by-step guide for beginners interested in learning Pytho
 
 ## Set up your development environment
 
-For beginners who are new to Python, we recommend you [install Python from the Microsoft Store](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates. This is especially helpful if you are in an educational environment or a part of an organization that restricts permissions or administrative access on your machine.
+There are multiple ways to install Python on Windows:
+
+- **[Install using Microsoft Store](https://apps.microsoft.com/search?query=python)**: Installing Python via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates. We especially recommend installing Python on Windows via the Microsoft Store if you are a beginner or if you are in an educational environment or part of a business organization that may restrict permissions or administrative access on your machine. You will need to determine which version of Python you need. You can reference the what versions of Python are currently supported at [Status of Python versions | Python Developer's Guide](https://devguide.python.org/versions/#versions). We recommend either using a modern, supported version, or matching the version of the whatever Python project that you hope to contribute to.
 
 If you are using Python on Windows for **web development**, we recommend a different set up for your development environment. Rather than installing directly on Windows, we recommend installing and using Python via the Windows Subsystem for Linux. For help, see: [Get started using Python for web development on Windows](./web-frameworks.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./scripting.md). For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
@@ -181,18 +183,6 @@ Read more about writing games with pygame at [pygame.org](http://www.pygame.org)
 We recommend the following resources to support you in continuing to learn about Python development on Windows.
 
 - [Microsoft Dev Blogs: Python](https://devblogs.microsoft.com/python/): Read the latest updates about all things Python at Microsoft.
-
-### Online resources for learning Python
-
-- [Introduction to Python](/training/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
-
-- [Learning Python on LinkedIn.com](https://www.linkedin.com/learning/learning-python-14393370/learning-python-22821893): A basic introduction to Python.
-
-- [Python Tutorial For Beginners](https://python.land/python-tutorial): A complete and free Python tutorial with interactive (runnable) code examples, ideal for both complete beginners and those with prior experience.
-
-- [LearnPython.org Tutorials](https://www.learnpython.org/): Get started on learning Python without needing to install or set anything up with these free interactive Python tutorials from the folks at DataCamp.
-
-- [The Python.org Tutorials](https://docs.python.org/3/tutorial/index.html): Introduces the reader informally to the basic concepts and features of the Python language and system.
 
 ### Working with Python in VS Code
 

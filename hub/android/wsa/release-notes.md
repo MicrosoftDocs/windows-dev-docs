@@ -15,6 +15,8 @@ These release notes are based on updates to the Windows Subsystem for Android&tr
 
 For the latest information on Windows Subsystem for Android&trade;️, see the [WSA GitHub repository Discussions](https://github.com/microsoft/WSA/discussions).
 
+For the latest information on Windows Subsystem for Android™️, see the [WSA GitHub repository Discussions](https://github.com/microsoft/WSA/discussions).
+
 ## Build 2304.40000.3.0
 
 June 1, 2023
