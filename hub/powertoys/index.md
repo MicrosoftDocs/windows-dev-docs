@@ -114,6 +114,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### File Actions menu
+
+:::row:::
+    :::column:::
+        [![File Actions Mneu screenshot](../images/PowerToys-FileActionsMenu.png)](file-actions-menu.md)
+    :::column-end:::
+    :::column span="2":::
+        [File Actions menu](file-actions-menu.md) adds a seperate menu to explorer invokable via a shortcut, which adds several functionalities like generating and comparing file hashes, creating a new folder with a selection of files and much more.
+    :::column-end:::
+:::row-end:::
+
 ### File Explorer add-ons
 
 :::row:::

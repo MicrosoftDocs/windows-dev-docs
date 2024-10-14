@@ -101,6 +101,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Crop And Lock|Crop And Lock: Configure enabled state|ConfigureEnabledUtilityCropAndLock|
 |Environment Variables|Environment Variables: Configure enabled state|ConfigureEnabledUtilityEnvironmentVariables|
 |FancyZones|FancyZones: Configure enabled state|ConfigureEnabledUtilityFancyZones|
+|File Actions menu|File Actions menu: Configure enabled state|ConfigureEnabledUtilityFileActionsMenu|
 |File Locksmith|File Locksmith: Configure enabled state|ConfigureEnabledUtilityFileLocksmith|
 |Gcode file preview|Gcode file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodePreview|
 |Markdown file preview|Markdown file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMarkdownPreview|

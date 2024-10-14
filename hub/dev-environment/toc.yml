@@ -131,6 +131,8 @@ items:
         href: ../powertoys/environment-variables.md
       - name: FancyZones
         href: ../powertoys/fancyzones.md
+      - name: File Actions menu
+        href: ../powertoys/file-actions-menu.md
       - name: File Explorer add-ons
         href: ../powertoys/file-explorer.md
       - name: File Locksmith
