@@ -35,7 +35,8 @@ Hover over the preview to see extra information about the file, including its si
 
 Press the <kbd>Delete</kbd> key to send the current file to the Recycle Bin. Peek will automatically preview the next file. If there are no more files to preview, a message will be displayed.
 
-Note: only files may be deleted. Folders may not be deleted, even if they are empty.
+> [!TIP]
+> Only files may be deleted. Folders may not be deleted, even if they are empty.
 
 ## Settings
 
