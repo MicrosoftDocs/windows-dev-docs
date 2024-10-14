@@ -180,7 +180,7 @@ The path component of `ms-appdata` is, like generic URIs, case sensitive. Howeve
 The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '"' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a local file named Hello#World.html, use this URI.
 
 ```xml
-ms-appdata://local/Hello%23World.html
+ms-appdata:///local/Hello%23World.html
 ```
 
 Retrieval of the resource, and identification of the top level path segment, are handled after normalization of dots (".././b/c"). Therefore, URIs cannot dot themselves out of one of the reserved folders. Thus, the following URI is not allowed.
