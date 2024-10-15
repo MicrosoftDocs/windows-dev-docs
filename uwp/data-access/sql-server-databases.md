@@ -1,10 +1,10 @@
 ---
 title: Use a SQL Server database in a UWP app
 description: Learn how to connect a UWP app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
-ms.date: 07/31/2024
-ms.topic: article
+ms.date: 10/15/2024
+ms.topic: how-to
 keywords: windows 10, windows 11, uwp, SQL Server, database
-ms.localizationpriority: medium
+#customer intent: As a UWP developer, I want to connect my app to a SQL Server database so that I can store and retrieve data.
 ---
 
 # Use a SQL Server database in a UWP app
@@ -14,6 +14,9 @@ Your app can connect directly to a SQL Server database and then store and retrie
 In this guide, we'll show you one way to do that. If you install the [Northwind](/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.
 
 ![Northwind products](images/products-northwind.png)
+
+> [!TIP]
+> You can also get scripts to create the **Northwind** and **pubs** sample databases from the [SQL Server Samples GitHub repository](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/readme.md).
 
 The snippets that appear in this guide are based on this more [complete sample](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo).
 
@@ -53,14 +56,14 @@ In this section,  we'll do these things:
 
 In the **App.xaml.cs** file, add a property to the `App` class, that gives other classes in your solution access to the connection string.
 
-Our connection string points to the Northwind database in a SQL Server Express instance.
+Our connection string points to the Northwind database in a SQL Server Express instance. The connection string in this snippet assumes you kept the default instance name `SQLEXPRESS` when installing SQL Server Express. You can make changes to the connection string to match your SQL Server instance, database, and authentication method.
 
 ```csharp
 sealed partial class App : Application
 {
     // Create a connection string using Windows Authentication.
     private string connectionString =
-        @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+        @"Data Source=.\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
 
     public string ConnectionString { get => connectionString; set => connectionString = value; }
 
