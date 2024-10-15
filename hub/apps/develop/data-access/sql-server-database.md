@@ -1,7 +1,7 @@
 ---
 title: Use a SQL Server database in a Windows app
 description: Learn how to connect a Windows App SDK app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
-ms.date: 08/01/2024
+ms.date: 10/15/2024
 ms.topic: how-to
 keywords: windows 10, windows 11, Windows App SDK, SQL Server, database
 ms.localizationpriority: medium
@@ -17,6 +17,9 @@ Your app can connect directly to a SQL Server database and then store and retrie
 In this guide, we'll show you one way to do that in your Windows App SDK apps. If you install the [Northwind](/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.
 
 ![Northwind products](images/products-northwind.png)
+
+> [!TIP]
+> You can also get scripts to create the **Northwind** and **pubs** sample databases from the [SQL Server Samples GitHub repository](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/readme.md).
 
 The snippets that appear in this guide are based on this [UWP sample app](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo).
 
@@ -53,14 +56,14 @@ In this section, we'll do these things:
 
 In the **App.xaml.cs** file, add a property to the `App` class, that gives other classes in your solution access to the connection string.
 
-Our connection string points to the Northwind database in a SQL Server Express instance.
+Our connection string points to the Northwind database in a SQL Server Express instance. The connection string in this snippet assumes you kept the default instance name `SQLEXPRESS` when installing SQL Server Express. You can make changes to the connection string to match your SQL Server instance, database, and authentication method.
 
 ```csharp
 sealed partial class App : Application
 {
     // Connection string for using Windows Authentication.
     private string connectionString =
-        @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+        @"Data Source=.\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
 
     public string ConnectionString { get => connectionString; set => connectionString = value; }
 
@@ -215,6 +218,9 @@ Start the project and see products from the Northwind sample database appear in 
 ![Northwind products](images/products-northwind.png)
 
 Explore the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace to see what other things you can do with data in your SQL Server database.
+
+> [!TIP]
+> Try asking [Microsoft Copilot](https://copilot.microsoft.com/) for help with your SQL queries. Copilot can help you write SQL queries, and suggest ways to improve your code.
 
 ## Trouble connecting to your database?
 
