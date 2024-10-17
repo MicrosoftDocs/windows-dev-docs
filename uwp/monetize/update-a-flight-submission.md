@@ -30,13 +30,11 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` |
 
-
 ### Request header
 
 | Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
-
 
 ### Request parameters
 
@@ -45,7 +43,7 @@ This method has the following syntax. See the following sections for usage examp
 | applicationId | string | Required. The Store ID of the app for which you want to update a package flight submission. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).  |
 | flightId | string | Required. The ID of the package flight for which you want to update a submission. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md). For a flight that was created in Partner Center, this ID is also available in the URL for the flight page in Partner Center.  |
 | submissionId | string | Required. The ID of the submission to update. This ID is available in the response data for requests to [create a package flight submission](create-a-flight-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
-
+| packageId | string | Required. The ID of the existing Package. |
 
 ### Request body
 
@@ -87,6 +85,7 @@ Content-Type: application/json
     "isMandatoryUpdate": false,
     "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
   },
+  "id": "existingPackage.Id",
   "targetPublishMode": "Immediate",
   "targetPublishDate": "",
   "notesForCertification": "No special steps are required for certification of this app."
