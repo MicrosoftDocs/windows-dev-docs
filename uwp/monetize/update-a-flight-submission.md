@@ -69,6 +69,7 @@ Content-Type: application/json
 {
   "flightPackages": [
     {
+      "id": "existingPackage.Id",
       "fileName": "newPackage.appx",
       "fileStatus": "PendingUpload",
       "minimumDirectXVersion": "None",
@@ -85,7 +86,6 @@ Content-Type: application/json
     "isMandatoryUpdate": false,
     "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
   },
-  "id": "existingPackage.Id",
   "targetPublishMode": "Immediate",
   "targetPublishDate": "",
   "notesForCertification": "No special steps are required for certification of this app."
