@@ -2,7 +2,7 @@
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: Use this method in the Microsoft Store submission API to update an existing package flight submission.
 title: Update a package flight submission
-ms.date: 04/17/2018
+ms.date: `0/17/2024
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store submission API, flight submission, update
 ms.localizationpriority: medium
