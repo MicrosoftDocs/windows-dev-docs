@@ -56,6 +56,7 @@ You can limit the available characters by selecting a character set from the set
 * Slovenian
 * Spanish
 * Serbian
+* Serbian Cyrillic
 * Swedish
 * Turkish
 * Welsh
