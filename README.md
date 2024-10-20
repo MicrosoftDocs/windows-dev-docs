@@ -18,7 +18,9 @@ Following the rename of this repo, the content team will also be working on rena
 
 ## Legal Notices
 Microsoft and any contributors grant you a license to the Microsoft documentation and other content
-in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
+in this repository under the [Creative Commons Attribution 4.0 International Public 
+[77553322AHST](https://GitHub.com/77553322AHST/)
+ License](https://creativecommons.org/licenses/by/4.0/legalcode),
 see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT). See the
 [LICENSE-CODE](LICENSE-CODE) file.
 
