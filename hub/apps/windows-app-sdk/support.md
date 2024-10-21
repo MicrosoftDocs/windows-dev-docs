@@ -2,7 +2,7 @@
 title: Windows App SDK and supported Windows releases.
 description: Details on the Windows OS versions that are supported by the Windows App SDK.
 ms.topic: article
-ms.date: 04/25/2024
+ms.date: 10/20/2024
 keywords: Windows, Windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -18,14 +18,17 @@ This table summarizes the Windows client and server releases supported by the Wi
 <th>Windows App SDK</th><th>Release date</th><th>Windows client</th><th>Windows Server</th>
 </tr>
 <tr>
-<td valign="top">1.4</td>
-<td valign="top">2023-08-29</td>
+<td valign="top">1.5</td>
+<td valign="top">2024-02-29</td>
 <td valign="top">
 Win10 1809<br>
 Win10 21H2<br>
 Win10 22H2<br>
+Win10 23H2<br>
 Win11 21H2<br>
-Win11 22H2
+Win11 22H2<br>
+Win11 23H2<br>
+Win11 24H2
 </td>
 <td valign="top">
 Server 2019<br>
@@ -33,14 +36,17 @@ Server 2022
 </td>
 </tr>
 <tr>
-<td valign="top">1.5</td>
-<td valign="top">2024-02-29</td>
+<td valign="top">1.6</td>
+<td valign="top">2024-09-04</td>
 <td valign="top">
 Win10 1809<br>
 Win10 21H2<br>
 Win10 22H2<br>
+Win10 23H2<br>
 Win11 21H2<br>
-Win11 22H2
+Win11 22H2<br>
+Win11 23H2<br>
+Win11 24H2
 </td>
 <td valign="top">
 Server 2019<br>
