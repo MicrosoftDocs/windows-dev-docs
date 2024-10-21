@@ -31,8 +31,10 @@ If you see this dialog, select **settings for developers** to open the **For dev
 
 To enable Developer Mode, or access other settings:
 
-1. Toggle the Developer Mode setting, at the top of the **For developers** page
-2. Read the disclaimer for the setting you choose. Click **Yes** to accept the change.
+1. Open Windows Settings.
+2. Search for **Developer settings** or Go to **Update & Settings** then **For developers**.
+3. Toggle the Developer Mode setting, at the top of the **For developers** page
+4. Read the disclaimer for the setting you choose. Click **Yes** to accept the change.
 
 ![Developer Mode settings entry](./images/developer-mode-dialog.png)
 
