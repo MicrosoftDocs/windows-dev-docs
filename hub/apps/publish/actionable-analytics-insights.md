@@ -45,8 +45,7 @@ In AI review summary, we don’t clarify which positive and negative feedback is
 
 ## Trend Insights
 
-View your past actions including app updates and app performance metrics in one consolidated view on the same trendline. Evaluating how specific updates correlate with change in your app’s metrics can help you understand the effectiveness of your investments. 
-These trend insights have been added in the Installs chart in [Acquisitions report](https://partner.microsoft.com/dashboard/insights/analytics/reports/acquisitions). You can also see these insights for Failure hits and Rating in [Insights report](https://aka.ms/Insights_Report) in Partner Center.
+View your past actions including app updates and app performance metrics in one consolidated view on the same trendline. Evaluating how specific updates correlate with changes in your app’s metrics can help you to understand the effectiveness of your investments. These trend insights have been added in the Installs chart in the [Acquisitions report](https://partner.microsoft.com/dashboard/insights/analytics/reports/acquisitions). You can also see these insights for Failure hits and Rating in the [Insights report](https://aka.ms/Insights_Report) in Partner Center.
 
 :::image type="content" source="images/trend-insights.png" lightbox="images/trend-insights.png" alt-text="A screenshot showing app updates.":::
 
