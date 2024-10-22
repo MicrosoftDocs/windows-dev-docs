@@ -9,19 +9,7 @@ ms.localizationpriority: medium
 
 # View actionable insights for MSIX apps and games
 
-> [!IMPORTANT] 
-> Trend insights and AI review summary will be coming soon in few weeks to all MSIX apps and games.
-
 View meaningful insights about your app performance metrics and take actions to improve your app’s performance using Trend insights and AI review summary in [Partner Center](https://aka.ms/Insights_Report).
-
-## Trend Insights
-
-View your past actions including app updates and app performance metrics in one consolidated view on the same trendline. Evaluating how specific updates correlate with change in your app’s metrics can help you understand the effectiveness of your investments. 
-These trend insights have been added in the Installs chart in [Acquisitions report](https://partner.microsoft.com/dashboard/insights/analytics/reports/acquisitions). You can also see these insights for Failure hits and Rating in [Insights report](https://aka.ms/Insights_Report) in Partner Center.
-
-:::image type="content" source="images/trend-insights.png" lightbox="images/trend-insights.png" alt-text="A screenshot showing app updates.":::
-
-:::image type="content" source="images/trend-insights-hover.png" lightbox="images/trend-insights-hover.png" alt-text="A screenshot showing date for app updates, as part of Trend insights.":::
 
 ## AI Review summary
 
@@ -54,3 +42,14 @@ AI-review summary in Partner Center underwent substantial testing including red 
 #### What are the limitations of Microsoft Store AI review summary? How can developers minimize the impact of Microsoft Store AI review summary's limitations when using the system?
 
 In AI review summary, we don’t clarify which positive and negative feedback is reported commonly by most users. Developers need to read through recent reviews to understand which feedback is commonly reported.
+
+## Trend Insights
+
+View your past actions including app updates and app performance metrics in one consolidated view on the same trendline. Evaluating how specific updates correlate with changes in your app’s metrics can help you to understand the effectiveness of your investments. These trend insights have been added in the Installs chart in the [Acquisitions report](https://partner.microsoft.com/dashboard/insights/analytics/reports/acquisitions). You can also see these insights for Failure hits and Rating in the [Insights report](https://aka.ms/Insights_Report) in Partner Center.
+
+:::image type="content" source="images/trend-insights.png" lightbox="images/trend-insights.png" alt-text="A screenshot showing app updates.":::
+
+:::image type="content" source="images/trend-insights-hover.png" lightbox="images/trend-insights-hover.png" alt-text="A screenshot showing date for app updates, as part of Trend insights.":::
+
+> [!IMPORTANT] 
+> Trend insights will be coming soon for all MSIX apps and games.
