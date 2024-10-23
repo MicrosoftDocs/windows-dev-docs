@@ -155,6 +155,24 @@ Five older versions of Windows client are still in service for at least one serv
 <td>N/A</td>
 <td>2025-10-14</td>
 </tr>
+<tr>
+<td>Win11 23H2</td>
+<td>22631</td>
+<td>2025-11-11</td>
+<td>2026-11-10</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>2026-11-10</td>
+</tr>
+<tr>
+<td>Win11 24H2</td>
+<td>26100</td>
+<td>2026-10-13</td>
+<td>2027-10-12</td>
+<td>2029-10-09</td>
+<td>2034-10-10</td>
+<td>2034-10-10</td>
+</tr>
 </table>
 
 > [!NOTE]
