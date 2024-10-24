@@ -37,16 +37,15 @@ To install the stable release of WinGet on Windows Sandbox, follow these steps f
 
 ```powershell
 $progressPreference = 'silentlyContinue'
-Write-Information "Downloading WinGet and its dependencies..."
-Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
-Invoke-WebRequest -Uri https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x64.appx -OutFile Microsoft.UI.Xaml.2.8.x64.appx
-Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
-Add-AppxPackage Microsoft.UI.Xaml.2.8.x64.appx
-Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+Write-Host "Installing WinGet PowerShell module from PSGallery..."
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
+Repair-WinGetPackageManager
+Write-Host "Done."
 ```
 
-If you would like a preview or different version of the Package Manager, go to https://github.com/microsoft/winget-cli/releases. Copy the URL of the version you would prefer and update the above Uri.
+To install the PowerShell module in machine scope, you can use the `-Scope AllUsers` parameter with the `Install-Module` cmdlet. If you would like a preview version of WinGet, you can add `-IncludePrerelease` parameter with the Repair-WinGetPackageManager cmdlet. To see the available parameters for the Repair-WinGetPackageManager cmdlet, you can run `Get-Help Repair-WinGetPackageManager -Full`.
 
 For more information on Windows Sandbox, including how to install a sandbox and what to expect from it's usage, see the [Windows Sandbox docs](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview).
 
