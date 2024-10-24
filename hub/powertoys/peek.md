@@ -8,7 +8,7 @@ no-loc: [PowerToys, Windows, Peek, Win]
 
 # Peek utility
 
-A system-wide utility for Windows to preview file content without the need to open multiple applications or interrupt your workflow. It offers a seamless and quick file preview experience for various file types, including images, Office documents, web pages, Markdown files, text files, and developer files.
+A system-wide utility for Windows to preview file content without the need to open multiple applications or interrupt your workflow. It offers a seamless and quick file preview experience for various file types, including images, Office documents, videos, web pages, Markdown files, text files, and developer files. Peek also lets you see summary information about folders.
 
 ![Screenshot of PowerToys Peek utility](../images/powertoys-peek.png)
 
@@ -26,6 +26,17 @@ By selecting the pinning button, the window will preserve the current size and p
 ## Open file with the default program
 
 Select **Open with** or <kbd>Enter</kbd> to open the current file with the default program.
+
+## See extra information about the current file
+
+Hover over the preview to see extra information about the file, including its size, type, and when it was last modified.
+
+## Delete files
+
+Press the <kbd>Delete</kbd> key to send the current file to the Recycle Bin. Peek will automatically preview the next file. If there are no more files to preview, a message will be displayed.
+
+> [!TIP]
+> Only files may be deleted. Folders may not be deleted, even if they are empty.
 
 ## Settings
 
