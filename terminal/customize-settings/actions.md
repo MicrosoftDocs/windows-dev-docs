@@ -9,7 +9,7 @@ ms.topic: how-to
 
 # Custom actions and keybindings in Windows Terminal
 
-You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette. You can assign a custom action a unique ID (if not, one will be automatically generated for you), and then refer to that action with that ID when binding keys.
+You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette.
 
 ## Action formats
 
@@ -21,7 +21,7 @@ Actions can be structured in the following formats:
 { "command": "commandName", "id": "User.MyCommand" }
 ```
 
-For example, this action closes the terminal window:
+For example, this default setting uses the shortcut key <kbd>Alt+F4</kbd> to close the terminal window:
 
 ```json
 { "command": "closeWindow", "id": "User.MyCloseWindow" }
@@ -33,7 +33,7 @@ For example, this action closes the terminal window:
 { "command": { "action": "commandName", "argument": "value" }, "id": "User.MyCommand" }
 ```
 
-For example, this action opens a new tab in the terminal based on whichever profile is listed first in your dropdown menu (typically this will open the PowerShell profile):
+For example, this default setting uses the shortcut key <kbd>Ctrl+Shift+1</kbd> to open a new tab in the terminal based on whichever profile is listed first in your dropdown menu (typically this will open the PowerShell profile):
 
 ```json
 { "command": { "action": "newTab", "index": 0 }, "id": "User.MyNewTabAction" }
@@ -42,10 +42,10 @@ For example, this action opens a new tab in the terminal based on whichever prof
 ### Commands with command line arguments
 
 ```json
-{ "command": { "action": "wt", "commandline": "value" }, "id": "User.MyCommand" }
+{ "command": { "action": "wt", "commandline": "value" }, "keys": "modifiers+key" }
 ```
 
-For example, this action uses [`wt`](../command-line-arguments.md) to open a new PowerShell tab with additional panes for Command Prompt and Ubuntu:
+For example, this default setting uses the shortcut key <kbd>Ctrl+Shift+O</kbd> to use [`wt`](../command-line-arguments.md) to open a new PowerShell tab with additional panes for Command Prompt and Ubuntu:
 
 ```json
 {
@@ -54,25 +54,8 @@ For example, this action uses [`wt`](../command-line-arguments.md) to open a new
     "action": "wt",
     "commandline": "new-tab pwsh.exe ; split-pane -p \"Command Prompt\" -d C:\\ ; split-pane -p \"Ubuntu\" -H"
   },
-  "id": "User.MyCoolSetupAction"
+  "keys": "ctrl+shift+o"
 }
-```
-
-The resultant `actions` array, consisting of all the actions above, would look like this:
-
-```json
-"actions": [
-  { "command": "closeWindow", "id": "User.MyCloseWindow" },
-  { "command": { "action": "newTab", "index": 0 }, "id": "User.MyNewTabAction" },
-  {
-    "command":
-    {
-      "action": "wt",
-      "commandline": "new-tab pwsh.exe ; split-pane -p \"Command Prompt\" -d C:\\ ; split-pane -p \"Ubuntu\" -H"
-    },
-    "id": "User.MyCoolSetup"
-  }
-]
 ```
 
 ___
@@ -1862,7 +1845,7 @@ You can disable keybindings or "unbind" the associated keys from any command. Th
 
 **Example using unbound:**
 
-For example, to unbind the shortcut keys <kbd>Alt+Shift+-</kbd>" and <kbd>Alt+Shift+=</kbd>", include these entries in the `keybindings` section of your [settings.json file](../install.md#settings-json-file).
+For example, to unbind the shortcut keys <kbd>Alt+Shift+-</kbd>" and <kbd>Alt+Shift+=</kbd>", include these commands in the `actions` section of your [settings.json file](../install.md#settings-json-file).
 
 ```json
 {
