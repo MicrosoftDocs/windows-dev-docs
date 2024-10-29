@@ -46,7 +46,7 @@
       href: tutorials/shell-integration.md
     - name: Cascadia Code
       href: cascadia-code.md
-    - name: Terminal Chat
+    - name: Terminal Chat (Experimental)
       href: terminal-chat.md
     - name: Group Policy
       href: group-policy.md
