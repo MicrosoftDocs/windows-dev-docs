@@ -22,7 +22,7 @@ You must be running Windows 11 Insider Preview Build 26052 or higher to use the 
 
 ## How to enable Sudo for Windows
 
-To enable Sudo for Windows, open `Settings > For Developers` and set **Enable sudo** to **On**.
+To enable Sudo for Windows, open `Privary & security > For Developers` and set **Enable sudo** to **On**.
 
 ![Enable Sudo](../images/sudo-enable.png)
 
