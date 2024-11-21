@@ -255,7 +255,7 @@ An example of this setting might look like:
 {
     "newTabMenu": [
         { "type":"profile", "profile": "Command Prompt" },
-        { "type":"profile", "profile": "Windows PowerShell" },
+        { "type":"profile", "profile": "Windows PowerShell", "icon": "C:\\path\\to\\icon.png" },
         { "type":"separator" },
         {
             "type":"folder",
@@ -295,6 +295,7 @@ The following are different types of new tab menu entries that can be used in th
 * [`separator`](#separator)
 * [`matchProfiles`](#match-profiles)
 * [`remainingProfiles`](#remaining-profiles)
+* [`action`](#action)
 
 #### Profile
 
@@ -309,6 +310,7 @@ This entry type represents a profile from your list of profiles. The profile can
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `profile` | Required | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
+| `icon` | Optional | Path to an icon as a string | Path to an icon that will be displayed next to the profile name. The profile's default icon will be used if not specified. |
 
 #### Folder
 
@@ -345,7 +347,6 @@ This entry type represents a separator in the new tab dropdown menu.
 { "type":"separator" }
 ```
 
-
 #### Remaining Profiles
 
 This entry type represents all profiles that are not already represented in the new tab dropdown menu. This is useful if you want to have a set of profiles that are always displayed at the top of the new tab dropdown menu, and then have the rest of the profiles displayed in a folder at the bottom of the new tab dropdown menu.
@@ -378,4 +379,20 @@ A full string comparison is done on these properties - not a regex or partial st
 | `commandline` | Optional | Command line as a string | A value to compare to the `commandline` of the profile. |
 | `source` | Optional | Profile source as a string | A value to compare to the `source` of the profile. |
 
+#### Action
+
+This entry type represents a menu entry that should execute a specific action. The text for this menu entry will be the action's label (which is either provided as the "name" in the action's definition, or the generated name if no name was provided).
+
+For more information, see the [custom actions and keybindings](actions.md) documentation.
+
+```json
+{ "type": "action", "id": "User.MyCommand" }
+```
+
+##### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `id` | Required | Action ID as a string | Action that will be executed |
+| `icon` | Optional | Path to an icon as a string | Path to an icon that will be displayed next to the action name. If not specified, the action's own icon will be used (if configured). |
 ___
