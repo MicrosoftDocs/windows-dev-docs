@@ -73,6 +73,8 @@ As mentioned above, selected text can be copied with a right-click or the `copy`
     - You can copy text without dismissing the text selection by setting the `dismissSelection` parameter in the `copy` action to `false`.
 - Copying as a single line
     - You can copy text as a single line using the `singleLine` parameter in the `copy` action.
+- Copying with control sequences
+    - You can include [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) control sequences in the copied text using the `withControlSequences` parameter in the `copy` action.
 - Removing trailing whitespace from block selections
     - You can remove the trailing whitespace from a block selection using the `trimBlockSelection` global setting.
 
