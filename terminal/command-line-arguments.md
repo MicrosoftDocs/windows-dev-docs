@@ -1,9 +1,7 @@
 ---
 title: Windows Terminal command line arguments
 description: Learn how to create command line arguments for Windows Terminal.
-author: nguyen-dows
-ms.author: chrnguyen
-ms.date: 05/19/2023
+ms.date: 10/28/2024
 ms.topic: how-to
 ---
 
@@ -242,7 +240,7 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
-The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any terminal profile that you have installed. This will always open a new window. Windows Terminal is not yet capable of opening new tabs or panes in an existing instance.
+The `-p` flag is used to specify the Windows Terminal profile that should be opened. Substitute "Ubuntu-18.04" with the name of any terminal profile that you have installed. This will always open a new window. To open a new shell tab in an existing (already open) instance of Windows Terminal, use: wt -w [window id](#options-and-commands) [executable name]. For example, `wt -w 0 cmd` to open a Command Prompt shell in the most recent instance of Windows Terminal. If you're launching a profile (shell executable combined with color scheme, title, command, other settings pertaining to how it interacts with the console session), you must use the profile name in the command: `wt -w 0 -p "Profile Name"`.
 
 ### Target a directory
 
