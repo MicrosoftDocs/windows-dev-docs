@@ -14,7 +14,7 @@ items:
       items: 
         - name: Client app development frameworks FAQ
           href: get-started/client-frameworks-faq.yml
-        - name: Start developing Windows apps
+        - name: Start developing Windows appsss
           href: get-started/start-here.md
         - name: Build your first app
           href: how-tos/hello-world-winui3.md
