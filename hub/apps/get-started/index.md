@@ -18,7 +18,7 @@ Windows offers a wide range of languages, frameworks, and tools for building app
 
 :::image type="content" source="images/winui-header.png" alt-text=".":::
 
-We recommend WinUI and the Windows App SDK to create apps that look great and take advantage of the latest Windows releases. If you're new to Windows development, or starting work on a new Windows app, WinUI provides the resources you need to create great [apps for Windows 11](https://www.microsoft.com/en-us/windows/windows-11-apps).
+We recommend WinUI 3 and the Windows App SDK to create apps that look great and take advantage of the latest Windows releases. If you're new to Windows development, or starting work on a new Windows app, WinUI provides the resources you need to create great [apps for Windows 11](https://www.microsoft.com/en-us/windows/windows-11-apps).
 <!-- The en-us is needed in this link. Please leave it there.  -->
 
 [WinUI](../winui/index.md) is a XAML markup-based user interface layer that contains modern controls and styles for building Windows apps. As the native UI layer for the Windows App SDK, it embodies [Fluent Design](https://fluent2.microsoft.design/), giving each Windows app the polished feel that customers expect.
