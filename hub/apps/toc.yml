@@ -1,5 +1,5 @@
 items:
-- name: Build Windows apps
+- name: Build WinUI apps
   href: desktop/index.yml
   items: 
     - name: What's new?
@@ -8,10 +8,10 @@ items:
           href: whats-new/windows-11-build-22000.md
         - name: Latest doc updates
           href: whats-new/latest-doc-updates.md
+    - name: Overview of framework options
+      href: get-started/index.md
     - name: Get started
       items: 
-        - name: Overview of framework options
-          href: get-started/index.md
         - name: Client app development frameworks FAQ
           href: get-started/client-frameworks-faq.yml
         - name: Start developing Windows apps
