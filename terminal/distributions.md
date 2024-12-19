@@ -49,7 +49,7 @@ Windows Terminal is distributed via [GitHub releases] in a variety of formats:
 
 ## Windows Terminal Portable
 
-As of stable channel version 1.17, Windows Terminal supports being deployed in ["Portable mode"]. Portable mode ensures
+Windows Terminal supports being deployed in ["Portable mode"]. Portable mode ensures
 that all data created and maintained by Windows Terminal is saved next to the application so that it can be more easily
 moved across different environments.
 
@@ -59,6 +59,8 @@ This is an officially-supported mode of execution where Windows Terminal stores 
 to `WindowsTerminal.exe`.
 
 Portable mode is not supported in the packaged or preinstallation kit distributions of Windows Terminal.
+
+Portable mode will only run on Windows 10 version 2004 (10.019041) or higher. 
 
 ### Why use Portable mode?
 
