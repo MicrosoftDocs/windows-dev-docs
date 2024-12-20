@@ -216,13 +216,107 @@ PROMPT $e]133;D$e\$e]133;A$e\$e]9;9;$P$e\%PROMPT%$e]133;B$e\
 
 ### Bash
 
-You can add the following to the end of your `~/.bashrc` to enable shell integration in bash:
+You may source the following script to an active shell with `source` or `.`
+built-in `bash` commands or add it to the end of your `${HOME}/.bash_profile`
+(for login shells) or `${HOME}/.bashrc` (for non-login shells) to enable
+a complete shell integration in `bash` with versions greater or equal to
+`bash-4.4` (where the `PS0` built-in variable was [implemented
+initially](https://lists.gnu.org/archive/html/bug-bash/2016-09/msg00018.html)).
+Complete shell integration means that every announced terminal feature works as
+designed.
 
-```bash
-PS1="\[\033]133;D;\007\]\[\033]133;A;\007\]$PS1\[\033]133;B;\007\]"
+> [!NOTE]
+> It should be pointed out that if there are `PROMPT_COMMAND`, `PS0`, `PS1` or
+> `PS2` variables already assigned to any [non-default
+> values](https://www.gnu.org/software/bash/manual/bash.html#index-PS1) that
+> may lead to unpredictable results. It would be better to test the script with
+> the "clean" shell first by executing `env --ignore-environment bash
+> --noprofile --norc` and sourcing the described file as it was indicated
+> earlier.
+
+``` bash
+# .bash_profile | .bashrc
+
+function __set_ps1() {
+    local PS1_TMP="${__PS1_BASE}"
+    if [ ! -z "${__IS_WT}" ]; then
+        local __FTCS_CMD_FINISHED='\e]133;D;'"${1}"'\e\\'
+        PS1_TMP="\[${__FTCS_CMD_FINISHED}\]${__PS1_BASE}"
+    fi
+    printf '%s' "${PS1_TMP}"
+}
+
+function __prompt_command() {
+    # Must be first in the list otherwise the exit status will be overwritten.
+    local PS1_EXIT_STATUS=${?}
+    PS1="$(__set_ps1 ${PS1_EXIT_STATUS})"
+}
+
+# ---------------------------------------------------------------------------
+# PROMPT (PS0..PS2).
+
+# The given variable might be linked to a function detecting whether `bash`
+# actually runs under `Microsoft Terminal` otherwise unexpected garbage might
+# be displayed on the user screen.
+__IS_WT='true'
+
+printf -v __BASH_V '%d' ${BASH_VERSINFO[*]:0:2}
+
+if [ ${__BASH_V} -ge 44 ]; then
+    __PS0_BASE=''
+fi
+
+# The following assignments reflect the default values.
+__PS1_BASE='\s-\v\$ '
+__PS2_BASE='> '
+
+if [ ! -z "${__IS_WT}" ]; then
+    __FTCS_PROMPT='\e]133;A\e\\'
+    __FTCS_CMD_START='\e]133;B\e\\'
+    if [ ${__BASH_V} -ge 44 ]; then
+        __FTCS_CMD_EXECUTED='\e]133;C\e\\'
+        __PS0_BASE="\[${__FTCS_CMD_EXECUTED}\]"
+    fi
+    __PS1_BASE="\[${__FTCS_PROMPT}\]${__PS1_BASE}\[${__FTCS_CMD_START}\]"
+    # Required, otherwise the `PS2` prefix will split and corrupt a long
+    # command.
+    __PS2_BASE=''
+fi
+
+PROMPT_COMMAND=__prompt_command
+
+if [ ${__BASH_V} -ge 44 ]; then
+    PS0="${__PS0_BASE}"
+fi
+# `PS1` is set with the `__prompt_command` function call.
+PS2="${__PS2_BASE}"
 ```
 
-This will wrap your existing `$PS1` with the necessary sequences to enable shell integration.
+That wraps all assortment of `bash` prompt variables (`PS0`, `PS1` and `PS2`)
+with the necessary sequences to enable the complete shell integration.
+
+In addition, `${HOME}/.inputrc` might also need an adjustment to remove the
+"editing mode notification" and "modified lines" signs:
+
+``` inputrc
+# .inputrc
+
+set mark-modified-lines Off
+set show-mode-in-prompt Off
+```
+
+That is what it should look like if everything is done correctly:
+
+``` bash
+$ env --ignore-environment bash --noprofile --norc
+bash-5.2$ . /tmp/msft-terminal-bash.sh
+bash-5.2$ echo "|${PS0}|"
+|\[\e]133;C\e\\\]|
+bash-5.2$ echo "|${PS1}|"
+|\[\e]133;D;0\e\\\]\[\e]133;A\e\\\]\s-\v\$ \[\e]133;B\e\\\]|
+bash-5.2$ echo "|${PS2}|"
+||
+```
 
 > **Note**:
 > Don't see your favorite shell here? If you figure it out, feel free to [contribute a solution for your preferred shell!](https://github.com/MicrosoftDocs/terminal/compare)
