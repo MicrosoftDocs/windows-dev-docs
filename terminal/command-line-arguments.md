@@ -61,12 +61,14 @@ Used to create a new tab. See also the [`newTab` action](./customize-settings/ac
 | ------- | ---------- | ----------- | ------ |
 | `new-tab`, `nt` | `--profile, -p profile-name` | Creates a new tab based on the profile name assigned. | Profile name |
 | `new-tab`, `nt` | `--startingDirectory, -d starting-directory` | Creates a new tab based on the starting directory path assigned. | Directory path |
-| `new-tab`, `nt` | `commandline` | Creates a new tab based on the command line assigned. | Executable with optional commands |
-| `new-tab`, `nt` | `--title` | Creates a new tab with the title assigned. | Text to use as the tab title |
-| `new-tab`, `nt` | `--tabColor` | Creates a new tab with the tab color assigned. | Hex color as #RGB or #RRGGBB |
+| `new-tab`, `nt` | `--title title` | Creates a new tab with the title assigned. | Text to use as the tab title |
+| `new-tab`, `nt` | `--tabColor hex-color` | Creates a new tab with the tab color assigned. | Hex color as #RGB or #RRGGBB |
 | `new-tab`, `nt` | `--suppressApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `true` |  |
 | `new-tab`, `nt` | `--useApplicationTitle` | Override the profile's `suppressApplicationTitle` setting, and set it to `false` |  |
 | `new-tab`, `nt` | `--colorScheme scheme-name` | Override the profile's `colorScheme` setting, and set it to the scheme from the settings with the name `scheme-name` | The name of a color scheme in the settings |
+| `new-tab`, `nt` | `--appendCommandLine` | Appends the provided command-line to the profile's default command instead of replacing it |  |
+| `new-tab`, `nt` | `--inheritEnvironment, !--reloadEnvironment` | Inherit the terminal's own environment variables when creating the new session, rather than creating a fresh environment block. This defaults to set when a `commandline` is passed. |  |
+| `new-tab`, `nt` | `commandline` | Creates a new tab based on the command line assigned. | Executable with optional arguments |
 
 > [!TIP]
 > If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/profile-advanced.md#suppress-title-changes) option by setting it to `true`.
