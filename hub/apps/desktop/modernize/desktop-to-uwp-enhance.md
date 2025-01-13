@@ -45,7 +45,9 @@ This option is supported only in projects that use .NET 6 (or later) and target 
     * **net6.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
     * **net6.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
     * **net6.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
-    * **net6.0-windows10.0.22000.0**: If your app targets Windows 11.
+    * **net6.0-windows10.0.22000.0**: If your app targets initial release of Windows 11.
+    * **net6.0-windows10.0.22621.0**: If your app targets Windows 11, version 22H2.
+    * **net6.0-windows10.0.26100.0**: If your app targets Windows 11, version 24H2.
 
     For example, the following element is for a project that targets Windows 10, version 2004.
 
@@ -53,7 +55,7 @@ This option is supported only in projects that use .NET 6 (or later) and target 
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
     ```
     
-    In later versions of .NET, you can replace the value with the relevant version, for example **net6.0-windows10.0.19041.0**.
+    In later versions of .NET, you can replace the value with the relevant version, for example **net8.0-windows10.0.19041.0**.
 
 3. Save your changes and close the project file.
 
@@ -131,6 +133,9 @@ If your project multi-targets .NET 6 (or later) and earlier versions (including 
         * **net6.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
         * **net6.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
         * **net6.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
+        * **net6.0-windows10.0.22000.0**: If your app targets initial release of Windows 11.
+        * **net6.0-windows10.0.22621.0**: If your app targets Windows 11, version 22H2.
+        * **net6.0-windows10.0.26100.0**: If your app targets Windows 11, version 24H2.
     * For .NET Core 3.x, use **netcoreapp3.0** or **netcoreapp3.1**.
     * For .NET Framework, use **net46**.
 
