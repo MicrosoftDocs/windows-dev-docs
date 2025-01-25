@@ -32,26 +32,11 @@ When you've done that, come back here to learn how to turn your "Hello World" pr
 We need to check for redirection as early as possible, before creating any windows. To do this, we must define the symbol “DISABLE_XAML_GENERATED_MAIN” in the project file. Follow these steps to disable the auto-generated Program code:
 
 1. Right-click on the project name in Solution Explorer and select **Edit Project File**.
-1. Define the **DISABLE_XAML_GENERATED_MAIN** symbol for each configuration and platform. Add the following XML to the project file:
+1. Define the **DISABLE_XAML_GENERATED_MAIN** symbol. Add the following XML to the project file:
 
    ```xml
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'">
-     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm64'">
-     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+   <PropertyGroup>
+     <DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
    </PropertyGroup>
    ```
 

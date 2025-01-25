@@ -122,7 +122,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs**: [RefreshContainer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see PullToRefresh in action](winui3gallery:/item/PullToRefresh).
+> [Open the WinUI 3 Gallery app and see PullToRefresh in action](winui3gallery:/item/PullToRefresh)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

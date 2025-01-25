@@ -132,7 +132,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [InfoBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery:/item/InfoBar).
+> [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery:/item/InfoBar)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

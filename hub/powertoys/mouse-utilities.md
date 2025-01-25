@@ -1,7 +1,7 @@
 ---
 title: PowerToys Mouse utilities for Windows
 description: A collection of utilities to expand the range of usage for the mouse and cursor.
-ms.date: 11/19/2024
+ms.date: 12/13/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Mouse, jump]
@@ -66,6 +66,8 @@ Mouse jump allows moving the mouse pointer long distances on a single screen or 
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to activate the mouse jump. |
+| Thumbnail Size | Constrains the thumbnail image to a maximum size. The default size is 1600x1200 pixels. |
+| Appearance | Expand this section to adjust the popup appearance by customizing the colors, borders, spacing, and more. |
 
 ## Mouse pointer Crosshairs
 

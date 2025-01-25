@@ -85,7 +85,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [CommandBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar), [AppBarButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarseparator)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the CommandBar in action](winui3gallery:/item/CommandBar).
+> [Open the WinUI 3 Gallery app and see the CommandBar in action](winui3gallery:/item/CommandBar)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 This example creates the command bar shown previously.

@@ -74,7 +74,7 @@ _Click the image to see it animated._
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Motion examples in action](winui3gallery://category/Motion).
+> [Open the WinUI 3 Gallery app and see Motion examples in action](winui3gallery://category/Motion)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

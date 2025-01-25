@@ -22,7 +22,7 @@ The Sudo for Windows command is available in [Windows 11, version 24H2](https://
 
 ## How to enable Sudo for Windows
 
-To enable Sudo for Windows, open `Settings > For Developers` and set **Enable sudo** to **On**.
+To enable Sudo for Windows, open `Settings > System > For Developers` and set **Enable sudo** to **On**.
 
 ![Enable Sudo](../images/sudo-enable.png)
 

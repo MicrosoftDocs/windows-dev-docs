@@ -1,20 +1,21 @@
 ---
-title: How to add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app
-description: Get started with WinUI 3 / Windows App SDK by integrating OpenAI's chat completions API into your WinUI 3 / Windows App SDK desktop app. 
-ms.topic: article
-ms.date: 12/11/2023
+title: How to add OpenAI chat completions to a WinUI desktop app
+description: Get started with WinUI 3 / Windows App SDK desktop apps by integrating OpenAI's chat completions API into the app. 
+ms.topic: how-to
+ms.date: 11/26/2024
 keywords: windows app sdk, winappsdk, winui3, openai, chatgpt
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers
 content-type: how-to
+#Customer intent: As a Windows developer, I want to learn how to integrate OpenAI's chat completions API into my WinUI 3 / Windows App SDK desktop app so that I can build a chat-like interface that generates responses to messages.
 ---
 
 # Add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app
 
 In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / Windows App SDK desktop app. We'll build a chat-like interface that lets you generate responses to messages using OpenAI's [chat completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api):
 
-:::image type="content" source="images/chatgpt-openai/long-story.png" alt-text="A less minimal chat app.":::
+:::image type="content" source="images/chatgpt-openai/long-story.png" alt-text="A screenshot of a less minimal WinUI chat app.":::
 
 <!--todo: The source code for the app we're building in this how-to is available todo -->
 
@@ -23,19 +24,17 @@ In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / W
 - Set up your development computer (see [Get started with WinUI](../get-started/start-here.md)).
 - Familiarity with the core concepts in *[How to build a Hello World app using C# and WinUI 3 / Windows App SDK](./hello-world-winui3.md)* - we'll build upon that how-to in this one.
 - An OpenAI API key from your [OpenAI developer dashboard](https://platform.openai.com/api-keys).
-- An OpenAI SDK installed in your project. Refer to the [OpenAI documentation](https://platform.openai.com/docs/libraries) for a list of community libraries. In this how-to, we'll use [betalgo/openai](https://github.com/betalgo/openai).
-
+- An OpenAI SDK installed in your project. Refer to the [OpenAI documentation](https://platform.openai.com/docs/libraries) for a list of community libraries. In this how-to, we'll use the official [OpenAI .NET API library](https://github.com/openai/openai-dotnet).
 
 ## Create a project
 
  1. Open Visual Studio and create a new project via `File` > `New` > `Project`.
- 2. Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` C# project template.
- 3. Specify a project name, solution name, and directory. In this example, our `ChatGPT_WinUI3` project belongs to a `ChatGPT_WinUI3` solution, which will be created in `C:\Projects\`.
+ 1. Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` C# project template.
+ 1. Specify a project name, solution name, and directory. In this example, our `ChatGPT_WinUI3` project belongs to a `ChatGPT_WinUI3` solution, which will be created in `C:\Projects\`.
 
 After creating your project, you should see the following default file structure in your Solution Explorer:
 
-:::image type="content" source="images/chatgpt-openai/collapsed-file-structure-chatgpt.png" alt-text="The default directory structure.":::
-
+:::image type="content" source="images/chatgpt-openai/collapsed-file-structure-chatgpt.png" alt-text="A screenshot of the default directory structure in Solution Explorer.":::
 
 ## Set your environment variable
 
@@ -47,32 +46,28 @@ setx OPENAI_API_KEY <your-api-key>
 
 Note that this method works well for development, but you'll want to use a more secure method for production apps (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app). See [Best practices for OpenAI key safety](https://help.openai.com/articles/5112595-best-practices-for-api-key-safety).
 
+## Install the OpenAI library
 
-## Install the OpenAI SDK
-
-From Visual Studio's `View` menu, select `Terminal`. You should see an instance of `Developer Powershell` appear. Run the following command from your project's root directory to install the SDK:
+From Visual Studio's `View` menu, select `Terminal`. You should see an instance of `Developer Powershell` appear. Run the following command from your project's root directory to install the OpenAI .NET package:
 
 ```powershell
-dotnet add package Betalgo.OpenAI
+dotnet add package OpenAI
 ```
 
+## Initialize the library
 
-## Initialize the SDK
-
-In `MainWindow.xaml.cs`, initialize the SDK with your API key:
+In `MainWindow.xaml.cs`, initialize the OpenAI library with your API key:
 
 ```csharp MainWindow.xaml.cs
 //...
 using OpenAI;
-using OpenAI.Managers;
-using OpenAI.ObjectModels.RequestModels;
-using OpenAI.ObjectModels;
+using OpenAI.Chat;
 
 namespace ChatGPT_WinUI3
 {
     public sealed partial class MainWindow : Window
     {
-        private OpenAIService openAiService;
+        private OpenAIClient openAiService;
 
         public MainWindow()
         {
@@ -80,19 +75,15 @@ namespace ChatGPT_WinUI3
            
             var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
-            openAiService = new OpenAIService(new OpenAiOptions(){
-                ApiKey = openAiKey
-            });
+            openAiService = new(openAiKey);
         }
     }
 }
 ```
 
-
 ## Build the chat UI
 
 We'll use a `StackPanel` to display a list of messages, and a `TextBox` to let users enter new messages. Update `MainWindow.xaml` as follows:
-
 
 ```xml MainWindow.xaml
 <Window
@@ -119,7 +110,6 @@ We'll use a `StackPanel` to display a list of messages, and a `TextBox` to let u
 
 Add a `SendButton_Click` event handler to handle the sending, receiving, and display of messages:
 
-
 ```csharp MainWindow.xaml.cs
 public sealed partial class MainWindow : Window
 {
@@ -127,27 +117,41 @@ public sealed partial class MainWindow : Window
 
     private async void SendButton_Click(object sender, RoutedEventArgs e)
     {
-        string userInput = InputTextBox.Text;
-        if (!string.IsNullOrEmpty(userInput))
+        try
         {
-            AddMessageToConversation($"User: {userInput}");
-            InputTextBox.Text = string.Empty;
-            var completionResult = await openAiService.ChatCompletion.CreateCompletion(new ChatCompletionCreateRequest()
-            {
-                Messages = new List<ChatMessage>
-                {
-                    ChatMessage.FromSystem("You are a helpful assistant."),
-                    ChatMessage.FromUser(userInput)
-                },
-                Model = Models.Gpt_4_1106_preview,
-                MaxTokens = 300
-            });
+            string userInput = InputTextBox.Text;
 
-            if (completionResult != null && completionResult.Successful) {
-                AddMessageToConversation("GPT: " + completionResult.Choices.First().Message.Content);
-            } else {
-                AddMessageToConversation("GPT: Sorry, something bad happened: " + completionResult.Error?.Message);
+            if (!string.IsNullOrEmpty(userInput))
+            {
+                AddMessageToConversation($"User: {userInput}");
+                InputTextBox.Text = string.Empty;
+                var chatClient = openAiService.GetChatClient("gpt-4o"); // or another model
+                var chatOptions = new ChatCompletionOptions
+                {
+                    MaxOutputTokenCount = 300
+                };
+
+                // Assemble the chat prompt with a system message and the user's input
+                var completionResult = await chatClient.CompleteChatAsync(
+                    [
+                        ChatMessage.CreateSystemMessage("You are a helpful assistant."),
+                        ChatMessage.CreateUserMessage(userInput)
+                    ],
+                    chatOptions);
+
+                if (completionResult != null && completionResult.Value.Content.Count > 0)
+                {
+                    AddMessageToConversation($"GPT: {completionResult.Value.Content.First().Text}");
+                }
+                else
+                {
+                    AddMessageToConversation($"GPT: Sorry, something bad happened: {completionResult?.Value.Refusal ?? "Unknown error."}");
+                }
             }
+        }
+        catch (Exception ex)
+        {
+            AddMessageToConversation($"GPT: Sorry, something bad happened: {ex.Message}");
         }
     }
 
@@ -159,13 +163,11 @@ public sealed partial class MainWindow : Window
 }
 ```
 
-
 ## Run the app
 
 Run the app and try chatting! You should see something like this:
 
-:::image type="content" source="images/chatgpt-openai/hello-gpt.png" alt-text="A minimal chat app.":::
-
+:::image type="content" source="images/chatgpt-openai/hello-gpt.png" alt-text="A screenshot of a minimal WinUI chat app.":::
 
 ## Improve the chat interface
 
@@ -201,9 +203,11 @@ Modify the `AddMessageToConversation` method to style the user's input and the G
     // ...
     private void AddMessageToConversation(string message)
     {
-        var messageBlock = new TextBlock();
-        messageBlock.Text = message;
-        messageBlock.Margin = new Thickness(5);
+        var messageBlock = new TextBlock
+        {
+            Text = message,
+            Margin = new Thickness(5)
+        };
         if (message.StartsWith("User:"))
         {
             messageBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
@@ -236,28 +240,48 @@ Then, update the `SendButton_Click` event handler to show the `ProgressBar` whil
     private async void SendButton_Click(object sender, RoutedEventArgs e)
     {
         ResponseProgressBar.Visibility = Visibility.Visible; // new!
-
         string userInput = InputTextBox.Text;
-        if (!string.IsNullOrEmpty(userInput))
-        {
-            AddMessageToConversation("User: " + userInput);
-            InputTextBox.Text = string.Empty;
-            var completionResult = await openAiService.Completions.CreateCompletion(new CompletionCreateRequest()
-            {
-                Prompt = userInput,
-                Model = Models.TextDavinciV3
-            });
 
-            if (completionResult != null && completionResult.Successful) {
-                AddMessageToConversation("GPT: " + completionResult.Choices.First().Text);
-            } else {
-                AddMessageToConversation("GPT: Sorry, something bad happened: " + completionResult.Error?.Message);
+        try
+        {
+            if (!string.IsNullOrEmpty(userInput))
+            {
+                AddMessageToConversation($"User: {userInput}");
+                InputTextBox.Text = string.Empty;
+                var chatClient = openAiService.GetChatClient("gpt-4o"); // or another model
+                var chatOptions = new ChatCompletionOptions
+                {
+                    MaxOutputTokenCount = 300
+                };
+
+                // Assemble the chat prompt with a system message and the user's input
+                var completionResult = await chatClient.CompleteChatAsync(
+                    [
+                        ChatMessage.CreateSystemMessage("You are a helpful assistant."),
+                        ChatMessage.CreateUserMessage(userInput)
+                    ],
+                    chatOptions);
+
+                if (completionResult != null && completionResult.Value.Content.Count > 0)
+                {
+                    AddMessageToConversation($"GPT: {completionResult.Value.Content.First().Text}");
+                }
+                else
+                {
+                    AddMessageToConversation($"GPT: Sorry, something bad happened: {completionResult?.Value.Refusal ?? "Unknown error."}");
+                }
             }
         }
-        ResponseProgressBar.Visibility = Visibility.Collapsed; // new!
+        catch (Exception ex)
+        {
+            AddMessageToConversation($"GPT: Sorry, something bad happened: {ex.Message}");
+        }
+        finally // new!
+        {
+            ResponseProgressBar.Visibility = Visibility.Collapsed; // new!
+        }
     }
 ```
-
 
 ### Center the `StackPanel`
 
@@ -313,9 +337,12 @@ Finally, update the `AddMessageToConversation` method to use the new `MessageIte
     // ...
     private void AddMessageToConversation(string message)
     {
-        var messageItem = new MessageItem();
-        messageItem.Text = message;
-        messageItem.Color = message.StartsWith("User:") ? new SolidColorBrush(Colors.LightBlue) : new SolidColorBrush(Colors.LightGreen);
+        var messageItem = new MessageItem
+        {
+            Text = message,
+            Color = message.StartsWith("User:") ? new SolidColorBrush(Colors.LightBlue)
+                                                : new SolidColorBrush(Colors.LightGreen)
+        };
         ConversationList.Items.Add(messageItem);
 
         // handle scrolling
@@ -324,7 +351,6 @@ Finally, update the `AddMessageToConversation` method to use the new `MessageIte
     }
     // ...
 ```
-
 
 ### Improve the `TextBox`
 
@@ -359,28 +385,25 @@ Then, add the `InputTextBox_KeyDown` event handler to handle the `Enter` key:
 
 Your new-and-improved chat interface should look something like this:
 
-:::image type="content" source="images/chatgpt-openai/long-story.png" alt-text="A less minimal chat app.":::
-
+:::image type="content" source="images/chatgpt-openai/long-story.png" alt-text="A screenshot of a less minimal WinUI 3 chat app.":::
 
 ## Recap
 
 Here's what you accomplished in this how-to:
 
- 1. You added OpenAI's API capabilities to your WinUI 3 / Windows App SDK desktop app by installing a community SDK and initializing it with your API key.
- 2. You built a chat-like interface that lets you generate responses to messages using OpenAI's [chat completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api).
- 3. You improved the chat interface by:
+ 1. You added OpenAI's API capabilities to your WinUI 3 / Windows App SDK desktop app by installing the official OpenAI library and initializing it with your API key.
+ 1. You built a chat-like interface that lets you generate responses to messages using OpenAI's [chat completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api).
+ 1. You improved the chat interface by:
     1. adding a `ScrollViewer`,
-    2. using a `TextBlock` to display the GPT response,
-    3. adding a `ProgressBar` to indicate when the app is waiting for a response from the GPT API,
-    4. centering the `StackPanel` in the window,
-    5. ensuring that messages wrap to the next line when they reach the edge of the window, and
-    6. making the `TextBox` larger, resizable, and responsive to the `Enter` key.
-
-
+    1. using a `TextBlock` to display the GPT response,
+    1. adding a `ProgressBar` to indicate when the app is waiting for a response from the GPT API,
+    1. centering the `StackPanel` in the window,
+    1. ensuring that messages wrap to the next line when they reach the edge of the window, and
+    1. making the `TextBox` larger, resizable, and responsive to the `Enter` key.
 
 ## Full code files
 
-<!--todo: embed from github -->
+The following code is a full example of the chat app with OpenAI chat completions integrated:
 
 ```xml MainWindow.xaml
 <?xml version="1.0" encoding="utf-8"?>
@@ -424,9 +447,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using OpenAI;
-using OpenAI.Managers;
-using OpenAI.ObjectModels.RequestModels;
-using OpenAI.ObjectModels;
+using OpenAI.Chat;
 
 namespace ChatGPT_WinUI3
 {
@@ -446,50 +467,62 @@ namespace ChatGPT_WinUI3
 
             var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
-            openAiService = new OpenAIService(new OpenAiOptions(){
-                ApiKey = openAiKey
-            });
+            openAiService = new(openAiKey);
         }
 
         private async void SendButton_Click(object sender, RoutedEventArgs e)
         {
             ResponseProgressBar.Visibility = Visibility.Visible;
-
             string userInput = InputTextBox.Text;
-            if (!string.IsNullOrEmpty(userInput))
+    
+            try
             {
-                AddMessageToConversation("User: " + userInput);
-                InputTextBox.Text = string.Empty;
-                var completionResult = await openAiService.ChatCompletion.CreateCompletion(new ChatCompletionCreateRequest()
+                if (!string.IsNullOrEmpty(userInput))
                 {
-                    Messages = new List<ChatMessage>
+                    AddMessageToConversation($"User: {userInput}");
+                    InputTextBox.Text = string.Empty;
+                    var chatClient = openAiService.GetChatClient("gpt-4o"); // or another model
+                    var chatOptions = new ChatCompletionOptions
                     {
-                        ChatMessage.FromSystem("You are a helpful assistant."),
-                        ChatMessage.FromUser(userInput)
-                    },
-                    Model = Models.Gpt_4_1106_preview,
-                    MaxTokens = 300
-                });
+                        MaxOutputTokenCount = 300
+                    };
 
-                Console.WriteLine(completionResult.ToString());
-
-                if (completionResult != null && completionResult.Successful)
-                {
-                    AddMessageToConversation("GPT: " + completionResult.Choices.First().Message.Content);
-                }
-                else
-                {
-                    AddMessageToConversation("GPT: Sorry, something bad happened: " + completionResult.Error?.Message);
+                    // Assemble the chat prompt with a system message and the user's input
+                    var completionResult = await chatClient.CompleteChatAsync(
+                        [
+                            ChatMessage.CreateSystemMessage("You are a helpful assistant."),
+                            ChatMessage.CreateUserMessage(userInput)
+                        ],
+                        chatOptions);
+    
+                    if (completionResult != null && completionResult.Value.Content.Count > 0)
+                    {
+                        AddMessageToConversation($"GPT: {completionResult.Value.Content.First().Text}");
+                    }
+                    else
+                    {
+                        AddMessageToConversation($"GPT: Sorry, something bad happened: {completionResult?.Value.Refusal ?? "Unknown error."}");
+                    }
                 }
             }
-            ResponseProgressBar.Visibility = Visibility.Collapsed;
+            catch (Exception ex)
+            {
+                AddMessageToConversation($"GPT: Sorry, something bad happened: {ex.Message}");
+            }
+            finally
+            {
+                ResponseProgressBar.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void AddMessageToConversation(string message)
         {
-            var messageItem = new MessageItem();
-            messageItem.Text = message;
-            messageItem.Color = message.StartsWith("User:") ? new SolidColorBrush(Colors.LightBlue) : new SolidColorBrush(Colors.LightGreen);
+            var messageItem = new MessageItem
+            {
+                Text = message,
+                Color = message.StartsWith("User:") ? new SolidColorBrush(Colors.LightBlue)
+                                                    : new SolidColorBrush(Colors.LightGreen)
+            };
             ConversationList.Items.Add(messageItem);
 
             // handle scrolling
@@ -509,11 +542,8 @@ namespace ChatGPT_WinUI3
 
 ```
 
-
-## Related
+## Related content
 
 - [Sample applications for Windows development](../get-started/samples.md)
-- [Windows developer FAQ](../get-started/windows-developer-faq.yml)
-- [Windows developer glossary](../get-started/windows-developer-glossary.md)
 - [Windows development best practices](../get-started/best-practices.md)
 - [How to target multiple platforms with your WinUI 3 app](uno-multiplatform.md)

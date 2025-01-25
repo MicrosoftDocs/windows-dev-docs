@@ -16,7 +16,7 @@ While motion is based in the real world, we are also a digital medium, which com
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Easing Functions in action](winui3gallery://item/EasingFunction).
+> [Open the WinUI 3 Gallery app and see Easing Functions in action](winui3gallery://item/EasingFunction)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

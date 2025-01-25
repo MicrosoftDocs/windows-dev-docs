@@ -57,7 +57,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [AutoSuggestBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox), [TextChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the AutoSuggestBox in action](winui3gallery:/item/AutoSuggestBox).
+> [Open the WinUI 3 Gallery app and see the AutoSuggestBox in action](winui3gallery:/item/AutoSuggestBox)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

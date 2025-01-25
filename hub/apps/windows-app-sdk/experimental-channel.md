@@ -29,6 +29,385 @@ The experimental channel includes releases of the Windows App SDK with [experime
 - [Experimental channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
 - [Experimental channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
 
+## Version 1.7 Experimental (1.7.0-experimental2)
+### Background Task Registration
+
+A new `BackgroundTaskBuilder` API enables registering background tasks for Windows App SDK apps. For more info, see GitHub [#4831](https://github.com/microsoft/WindowsAppSDK/issues/4831).
+
+### New Notifications Features
+
+New badge notification support allows showing a number or glyph badge on your app in the taskbar. For more info, see GitHub [#4926](https://github.com/microsoft/WindowsAppSDK/issues/4926).
+> [!IMPORTANT]
+> In this release, the C# projections are missing for the new `BadgeNotifications` APIs, which prevents using them from C#. The APIs are available in C++.
+
+Video or audio calling can have an enhanced user experience in notifications. For more info, see GitHub [#4783](https://github.com/microsoft/WindowsAppSDK/issues/4783).
+> [!IMPORTANT]
+> This functionality is only available on the latest Windows Insider releases of Windows.
+
+### Other notable changes
+
+* `RichEditBox` now supports math mode, via `RichEditTextDocument.SetMathMode` and `RichEditTextDocument.SetMath`.
+* New `CompatibilityOptions` support will allow more control over how servicing changes affect apps. For more info, see GitHub [#4976](https://github.com/microsoft/WindowsAppSDK/issues/4976).
+
+### New APIs
+This release includes the following new and modified experimental APIs:
+```
+Microsoft.Security.Authentication.OAuth
+
+    AuthFailure
+    AuthRequestParams
+    AuthRequestResult
+    AuthResponse
+    ClientAuthentication
+    CodeChallengeMethodKind
+    OAuth2Manager
+    OAuthContract
+    TokenFailure
+    TokenFailureKind
+    TokenRequestParams
+    TokenRequestResult
+    TokenResponse
+```
+```
+Microsoft.UI.Composition
+
+    CompositionNotificationDeferral
+    CompositionProjectedShadow
+        MaxOpacity
+        MinOpacity
+        OpacityFalloff
+
+    CompositionProjectedShadowCaster
+        AncestorClip
+        Mask
+
+    CompositionProjectedShadowDrawOrder
+    CompositionProjectedShadowReceiver
+        DrawOrder
+        Mask
+```
+```
+Microsoft.UI.Composition.Experimental
+
+    ExpCompositionVisualSurface
+    ExpExpressionNotificationProperty
+    IExpCompositionPropertyChanged
+    IExpCompositionPropertyChangedListener
+    IExpCompositor
+    IExpVisual
+```
+```
+Microsoft.UI.Content
+
+    AutomationTreeOptions
+    ChildSiteLink
+    ContentAppWindowBridge
+    ContentDisplayOrientations
+    ContentEnvironmentStateChangedEventArgs
+        DidDisplayScaleChange
+
+    ContentExternalBackdropLink
+    ContentExternalOutputLink
+    ContentIsland
+        AutomationTreeOption
+        Children
+        Connected
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        CreateForSystemVisual
+        Disconnected
+        FindAllForSystemCompositor
+        FragmentRootAutomationProvider
+        GetBySystemVisual
+        InputCapabilities
+        IsRemoteEndpointConnected
+        LocalToClientTransformMatrix
+        LocalToParentTransformMatrix
+        NextSiblingAutomationProvider
+        ParentAutomationProvider
+        Popups
+        PreviousSiblingAutomationProvider
+        Root
+
+    ContentIslandEnvironment
+        CurrentOrientation
+        DisplayScale
+        NativeOrientation
+        ThemeChanged
+
+    ContentIslandStateChangedEventArgs
+        DidLocalToClientTransformMatrixChange
+        DidLocalToParentTransformMatrixChange
+
+    ContentSite
+        InputCapabilities
+        LocalToClientTransformMatrix
+        LocalToParentTransformMatrix
+        SetContentNodeParent
+        TryGetAutomationProvider
+
+    ContentSiteAutomationProviderRequestedEventArgs
+    ContentSiteEnvironment
+        CurrentOrientation
+        DisplayScale
+        NativeOrientation
+        NotifyThemeChanged
+
+    ContentSiteEnvironmentView
+        DisplayScale
+
+    ContentSiteView
+        AutomationTreeOption
+        InputCapabilities
+        LocalToClientTransformMatrix
+        LocalToParentTransformMatrix
+
+    CoreWindowSiteBridge
+    CoreWindowTopLevelWindowBridge
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        CreateWithDispatcherQueue
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+
+    DesktopPopupSiteBridge
+    DesktopSiteBridge
+        TryCreatePopupSiteBridge
+
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentNodeOwner
+    IContentSiteAutomation
+    IContentSiteBridgeEndpointConnectionPrivate
+    IContentSiteInput
+    IContentSiteLink
+    IContentSiteLink2
+    InputCapabilities
+    PopupWindowSiteBridge
+    ProcessStarter
+    ReadOnlyDesktopSiteBridge
+    SystemVisualSiteBridge
+```
+```
+Microsoft.UI.Input
+
+    InputFocusNavigationHost
+        GetForSiteLink
+
+    InputKeyboardSource
+        GetForWindowId
+
+    InputLayoutPolicy
+    InputLightDismissAction
+        GetForIsland
+
+    InputPointerActivationBehavior
+    InputPointerSource
+        ActivationBehavior
+        DirectManipulationHitTest
+        GetForVisual
+        GetForWindowId
+        RemoveForVisual
+        TouchHitTesting
+        TrySetDeviceKinds
+
+    ProximityEvaluation
+    TouchHitTestingEventArgs
+```
+```
+Microsoft.UI.Input.Experimental
+
+    ExpInputSite
+    ExpPointerPoint
+```
+```
+Microsoft.UI.Text
+
+    RichEditTextDocument
+        GetMath
+        SetMath
+        SetMathMode
+```
+```
+Microsoft.UI.Windowing
+
+    AppWindow
+        DefaultTitleBarShouldMatchAppModeTheme
+
+    DisplayArea
+        GetMetricsFromWindowId
+```
+```
+Microsoft.UI.Xaml
+
+    XamlIsland
+    XamlRoot
+        TryGetContentIsland
+```
+```
+Microsoft.UI.Xaml.Automation.Peers
+
+    AutomationEvents
+        Notification
+
+    InkCanvasAutomationPeer
+    PagerControlAutomationPeer
+```
+```
+Microsoft.UI.Xaml.Controls
+
+    ContentDialogPlacement
+        UnconstrainedPopup
+
+    DoInkPresenterWork
+    ElementFactory
+    FlowLayout
+    FlowLayoutAnchorInfo
+    FlowLayoutLineAlignment
+    FlowLayoutState
+    IApplicationViewSpanningRects
+    IndexPath
+    InkCanvas
+    ISelfPlayingAnimatedVisual
+    ItemContainer
+        CanUserInvoke
+        CanUserInvokeProperty
+        CanUserSelect
+        CanUserSelectProperty
+        ItemInvoked
+        MultiSelectMode
+        MultiSelectModeProperty
+
+    ItemContainerInteractionTrigger
+    ItemContainerInvokedEventArgs
+    ItemContainerMultiSelectMode
+    ItemContainerUserInvokeMode
+    ItemContainerUserSelectMode
+    LayoutPanel
+    NumberBox
+        InputScope
+        InputScopeProperty
+        TextAlignment
+        TextAlignmentProperty
+
+    PagerControl
+    PagerControlButtonVisibility
+    PagerControlDisplayMode
+    PagerControlSelectedIndexChangedEventArgs
+    PagerControlTemplateSettings
+    ProgressRing
+        DeterminateSource
+        DeterminateSourceProperty
+        IndeterminateSource
+        IndeterminateSourceProperty
+
+    RecyclePool
+    RecyclingElementFactory
+    ScrollingScrollStartingEventArgs
+    ScrollingZoomStartingEventArgs
+    ScrollView
+        ScrollStarting
+        ZoomStarting
+
+    SelectionModel
+    SelectionModelChildrenRequestedEventArgs
+    SelectionModelSelectionChangedEventArgs
+    SelectTemplateEventArgs
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+
+    StackLayoutState
+    TitleBar
+    TitleBarAutomationPeer
+    TitleBarTemplateSettings
+    UniformGridLayoutState
+```
+```
+Microsoft.UI.Xaml.Controls.Primitives
+
+    ScrollPresenter
+        ScrollStarting
+        ZoomStarting
+```
+```
+Microsoft.Windows.ApplicationModel.Background
+
+    BackgroundTaskBuilder
+    BackgroundTaskContract
+```
+```
+Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+
+    Task
+```
+```
+Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+
+    CompatibilityChange
+    CompatibilityContract
+    CompatibilityOptions
+    DeploymentManager
+        Repair
+
+    DeploymentStatus
+        PackageRepairFailed
+
+    ReleaseInfo
+    RuntimeInfo
+    VersionInfoContract
+    WindowsAppRuntimeVersion
+```
+```
+Microsoft.Windows.AppNotifications
+
+    AppNotification
+        ConferencingConfig
+
+    AppNotificationConferencingConfig
+```
+```
+Microsoft.Windows.AppNotifications.Builder
+
+    AppNotificationBuilder
+        AddCameraPreview
+
+    AppNotificationButton
+        SetSettingStyle
+
+    AppNotificationButtonSettingStyle
+```
+```
+Microsoft.Windows.BadgeNotifications
+
+    BadgeNotificationGlyph
+    BadgeNotificationManager
+    BadgeNotificationsContract
+```
+```
+Microsoft.Windows.Media.Capture
+
+    CameraCaptureUI
+    CameraCaptureUIContract
+    CameraCaptureUIMaxPhotoResolution
+    CameraCaptureUIMaxVideoResolution
+    CameraCaptureUIMode
+    CameraCaptureUIPhotoCaptureSettings
+    CameraCaptureUIPhotoFormat
+    CameraCaptureUIVideoCaptureSettings
+    CameraCaptureUIVideoFormat
+```
+```
+Microsoft.Windows.Storage
+
+    ApplicationData
+        GetForUnpackaged
+```
+
 ## Version 1.7 Experimental (1.7.0-experimental1)
 
 This is the latest release of the experimental channel.

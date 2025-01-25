@@ -39,7 +39,7 @@ Accent color is used to emphasize important elements in the user interface and t
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Color principles in action](winui3gallery:/item/Color).
+> [Open the WinUI 3 Gallery app and see Color principles in action](winui3gallery:/item/Color)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

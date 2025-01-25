@@ -59,7 +59,7 @@ Grow: 150ms; Easing: Default Accelerate
 ### Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition).
+> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

@@ -133,7 +133,7 @@ After successfully installing PowerToys, an overview window will display with in
 
 ## Updates
 
-PowerToys uses an auto-updater that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. You can also check for updates manually from the PowerToys Settings.
+PowerToys uses an automatic update checker that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. You can also check for updates manually from the PowerToys Settings.
 
 ![PowerToys Update](../images/powertoys-updates.png)
 

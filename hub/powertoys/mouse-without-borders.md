@@ -1,9 +1,10 @@
 ---
 title: PowerToys Mouse Without Borders
 description: Mouse Without Borders enables you to interact with other computers from the same keyboard and mouse, sharing clipboard contents and files between the machines.
-ms.date: 09/10/2024
-ms.topic: article
+ms.date: 01/08/2025
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, Mouse Without Borders]
+# Customer intent: As a Windows power user, I want to use Mouse Without Borders to control multiple computers from the same keyboard and mouse.
 ---
 
 # Mouse Without Borders
@@ -22,7 +23,7 @@ With the latest version of PowerToys installed, you will see Mouse Without Borde
 
 ### Initial configuration
 
-1. Open Mouse Without borders in PowerToys Settings to configure your connections.
+1. Open Mouse Without Borders in PowerToys Settings to configure your connections.
 1. On the first computer, select **New Key** to generate a security key for connecting.
 
    ![Screenshot of Mouse Without Borders settings after pressing New Key](../images/powertoys-mouse-without-borders-press-new-key.png)
@@ -85,7 +86,7 @@ To enable the service mode, run PowerToys in administrator mode and turn on the 
 
 The following colors are used to indicate the connection status to the user when trying to connect to another computer:
 
-| Connection Status | Color    | Hex Code    |
+| Connection Status | Color | Hex Code |
 | :--- | :--- | :--- |
 | N/A | Dark Grey   | `#00717171`  |
 | Resolving | Yellow   | `#FFFFFF00`   |

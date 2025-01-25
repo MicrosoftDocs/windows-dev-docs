@@ -33,7 +33,7 @@ While you are developing your app, use the test application ID and ad unit ID va
 ### Banner ads (using the AdControl class)
 
 * Ad unit ID: ```test```
-* Application ID:  ```3f83fe91-d6be-434d-a0ae-7351c5a997f1```
+* Application ID:  ```00001111-aaaa-2222-bbbb-3333cccc4444```
 
     > [!IMPORTANT]
     > For an **AdControl**, the size of a live ad is defined by the **Width** and **Height** properties. For best results, make sure that the **Width** and **Height** properties in your code are one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md). The **Width** and **Height** properties will not change based on the size of a live ad.
@@ -41,7 +41,7 @@ While you are developing your app, use the test application ID and ad unit ID va
 ### Interstitial ads and native ads
 
 * Ad unit ID: ```test```
-* Application ID:  ```d25517cb-12d4-4699-8bdc-52040c712cab```
+* Application ID:  ```11112222-bbbb-3333-cccc-4444dddd5555```
 
 <span id="live-ad-units"></span>
 

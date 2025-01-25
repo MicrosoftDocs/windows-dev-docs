@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/design/devices/kinect-for-windows.md",
+      "redirect_url": "https://azure.microsoft.com/en-us/products/kinect-dk",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "uwp/xbox-apps/automate-launching-uwp-apps.md",
       "redirect_url": "/previous-versions/windows/uwp/xbox-apps/automate-launching-uwp-apps",
       "redirect_document_id": false
@@ -8634,9 +8639,91 @@
       "source_path": "hub/android/defender-settings.md",
       "redirect_url": "/defender-endpoint/microsoft-defender-security-center-antivirus",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/client-frameworks-faq.yml",
+      "redirect_url": "/windows/apps/get-started/windows-developer-faq",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/in-app-ads.md",
+      "redirect_url": "/windows/apps/publish/attract-customers-and-promote-your-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md",
+      "redirect_url": "/windows/apps/develop/camera/basic-photo-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/camera-profiles.md",
+      "redirect_url": "/windows/apps/develop/camera/camera-profiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/set-media-encoding-properties.md",
+      "redirect_url": "/windows/apps/develop/camera/set-media-encoding-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/high-dynamic-range-hdr-photo-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/high-dynamic-range-hdr-photo-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/capture-device-controls-for-photo-and-video-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/capture-device-controls-for-photo-and-video-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/capture-device-controls-for-video-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/capture-device-controls-for-video-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/effects-for-video-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/effects-for-video-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/scene-analysis-for-media-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/scene-analysis-for-media-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/variable-photo-sequence.md",
+      "redirect_url": "/windows/apps/develop/camera/variable-photo-sequence",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/process-media-frames-with-mediaframereader.md",
+      "redirect_url": "/windows/apps/develop/camera/process-media-frames-with-mediaframereader",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/process-audio-frames-with-mediaframereader.md",
+      "redirect_url": "/windows/apps/develop/camera/process-audio-frames-with-mediaframereader",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/capture-from-multiple-sources-simultaneously.md",
+      "redirect_url": "/windows/apps/develop/camera/capture-from-multiple-sources-simultaneously",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/connect-to-remote-cameras.md",
+      "redirect_url": "/windows/apps/develop/camera/connect-to-remote-cameras",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/launch-camera-settings.md",
+      "redirect_url": "/windows/apps/develop/camera/launch-camera-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/camera/index.md",
+      "redirect_url": "/windows/apps/develop/camera/camera",
+      "redirect_document_id": false
     }
   ]
 }
-
-
-

@@ -56,7 +56,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs**: [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the PipsPager in action](winui3gallery:/item/PipsPager).
+> [Open the WinUI 3 Gallery app and see the PipsPager in action](winui3gallery:/item/PipsPager)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

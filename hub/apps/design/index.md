@@ -1,6 +1,6 @@
 ---
 description: Design guidelines and UI examples for creating Windows app experiences.
-title: Design Windows apps
+title: Design for Windows apps
 ms.date: 10/28/2024
 ms.topic: article
 ms.localizationpriority: medium

@@ -43,7 +43,7 @@ Starting in Windows 10, version 1607, the **Image** element supports animated GI
 > - **Important APIs:** [Image class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Image), [Source property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image.source), [ImageBrush class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.ImageBrush), [ImageSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush.imagesource)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see ImageBrushes in action](winui3gallery:/item/Image).
+> [Open the WinUI 3 Gallery app and see ImageBrushes in action](winui3gallery:/item/Image)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

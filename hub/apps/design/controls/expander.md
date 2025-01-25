@@ -46,7 +46,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [Expander class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander), [Header property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the Expander in action](winui3gallery:/item/Expander).
+> [Open the WinUI 3 Gallery app and see the Expander in action](winui3gallery:/item/Expander)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

@@ -34,45 +34,14 @@
           href: ../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md
         - name: Display the camera preview
           href: ../audio-video-camera/simple-camera-preview-access.md
-        - name: Basic photo, video, and audio capture with MediaCapture
-          href: ../audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md
         - name: Camera UI features for mobile devices
           href: ../audio-video-camera/camera-ui-features-for-mobile-devices.md
         - name: Handle device and screen orientation with MediaCapture
           href: ../audio-video-camera/handle-device-orientation-with-mediacapture.md
-        - name: Discover and select camera capabilities with camera profiles
-          href: ../audio-video-camera/camera-profiles.md
-        - name: Set format, resolution, and frame rate for MediaCapture
-          href: ../audio-video-camera/set-media-encoding-properties.md
-        - name: HDR and low-light photo capture
-          href: ../audio-video-camera/high-dynamic-range-hdr-photo-capture.md
-        - name: Manual camera controls for photo and video capture
-          href: ../audio-video-camera/capture-device-controls-for-photo-and-video-capture.md
-        - name: Manual camera controls for video capture
-          href: ../audio-video-camera/capture-device-controls-for-video-capture.md
-        - name: Video stabilization effect for video capture
-          href: ../audio-video-camera/effects-for-video-capture.md
-        - name: Scene analysis for MediaCapture
-          href: ../audio-video-camera/scene-analysis-for-media-capture.md
-        - name: Capture a photo sequence with VariablePhotoSequence
-          href: ../audio-video-camera/variable-photo-sequence.md
-        - name: Process media frames with MediaFrameReader
-          href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
-          items: 
-            - name: Process audio frames with MediaFrameReader
-              href: ../audio-video-camera/process-audio-frames-with-mediaframereader.md
-            - name: Use OpenCV with MediaFrameReader
-              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
-        - name: Capture from multiple sources using MediaFrameSourceGroup
-          href: ../audio-video-camera/capture-from-multiple-sources-simultaneously.md
-        - name: Connect to remote cameras
-          href: ../audio-video-camera/connect-to-remote-cameras.md
+        - name: Use OpenCV with MediaFrameReader
+          href: ../audio-video-camera/use-opencv-with-mediaframereader.md
         - name: Get a preview frame
           href: ../audio-video-camera/get-a-preview-frame.md
-        - name: Launch the camera settings page
-          href: ../audio-video-camera/launch-camera-settings.md
-        - name: Handle the Windows camera privacy setting
-          href: ../audio-video-camera/camera-privacy-setting.md
     - name: Media playback
       href: ../audio-video-camera/media-playback.md
       items: 

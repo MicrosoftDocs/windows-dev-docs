@@ -19,7 +19,7 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
 1.  In your MainPage.xaml file, locate the definition for the **AdControl**. That code looks like this.
     ``` xml
     <UI:AdControl
-      ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
+      ApplicationId="00001111-aaaa-2222-bbbb-3333cccc4444"
       AdUnitId="test"
       HorizontalAlignment="Left"
       Height="250"
@@ -31,7 +31,7 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
 2.   After the **Width** property, but before the closing tag, assign a name of an error event handler to the [ErrorOccurred](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred) event. In this walkthrough, the name of the error event handler is **OnAdError**.
     ``` xml
     <UI:AdControl
-      ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
+      ApplicationId="00001111-aaaa-2222-bbbb-3333cccc4444"
       AdUnitId="test"
       HorizontalAlignment="Left"
       Height="250"
@@ -67,7 +67,7 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
 
 4.  Build and run the project. After the app is running, you will see a message similar to the one below in the **Output** window of Visual Studio.
     ```json
-    AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
+    AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, 11112222-bbbb-3333-cccc-4444dddd5555) ErrorCode: ClientConfiguration
     ```
 
 ## Related topics

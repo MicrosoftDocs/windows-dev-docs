@@ -59,7 +59,7 @@ Windows 11 uses Segoe UI Variable with the following attributes based on the con
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Typography principles in action](winui3gallery:/item/Typography).
+> [Open the WinUI 3 Gallery app and see Typography principles in action](winui3gallery:/item/Typography)
 
 > The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 

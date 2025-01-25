@@ -25,7 +25,7 @@ With the dialog enabled, keep pressing your activation key.
 
 ## Character sets
 
-You can limit the available characters by selecting a character set from the settings menu. Available character sets are:
+You can limit the available characters by selecting character sets from the settings menu. Available character sets are:
 
 * Catalan
 * Currency
@@ -69,7 +69,7 @@ From the Settings menu, the following options can be configured:
 | Setting | Description |
 | :--- | :--- |
 | Activation key | Choose **Left/Right Arrow**, **Space** or **Left, Right or Space**. |
-| Character set | Show only characters that are in the chosen set. |
+| Character set | Show only characters that are in the chosen sets. |
 | Toolbar location | Position of the toolbar. |
 | Show the Unicode code and name of the currently selected character | Shows the Unicode code (in hexadecimal) and name of the currently selected character under the selector. |
 | Sort characters by usage frequency | |

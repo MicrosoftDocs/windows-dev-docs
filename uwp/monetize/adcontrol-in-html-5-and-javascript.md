@@ -58,7 +58,7 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
     ``` HTML
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
         data-win-control="MicrosoftNSJS.Advertising.AdControl"
-        data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: 'test'}">
+        data-win-options="{applicationId: '00001111-aaaa-2222-bbbb-3333cccc4444', adUnitId: 'test'}">
     </div>
     ```
 
@@ -85,7 +85,7 @@ The following example shows the complete index.html for a simple app.
 <body>
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
-      data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: 'test'}">
+      data-win-options="{applicationId: '00001111-aaaa-2222-bbbb-3333cccc4444', adUnitId: 'test'}">
     </div>
     <p>Content goes here</p>
 </body>

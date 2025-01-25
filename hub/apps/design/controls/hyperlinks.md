@@ -74,7 +74,7 @@ The hyperlink appears inline and flows with the surrounding text:
 > - **Important APIs**: [HyperlinkButton control](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the Hyperlinks in action](winui3gallery:/item/HyperlinkButton).
+> [Open the WinUI 3 Gallery app and see the Hyperlinks in action](winui3gallery:/item/HyperlinkButton)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

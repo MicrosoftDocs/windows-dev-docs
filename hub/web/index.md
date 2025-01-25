@@ -147,11 +147,11 @@ Microsoft offers a variety of resources for web developers, including new tools 
        [![Docker Desktop for Windows icon](../images/docker-icon.png)](../dev-environment/docker/overview.md)<br>
         **[Docker Desktop for Windows](../dev-environment/docker/overview.md)**<br>
         Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.<br>
-        [Install Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/)
+        [Install Docker Desktop for Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
     :::column-end:::
 :::row-end:::
 
-## ASP.NET, Typescript, Xamarin
+## ASP.NET, Typescript, .NET MAUI
 
 :::row:::
     :::column:::
@@ -168,11 +168,11 @@ Microsoft offers a variety of resources for web developers, including new tools 
         [Install locally](https://www.typescriptlang.org/#installation)
     :::column-end:::
     :::column:::
-       [![Xamarin repo icon](../images/xamarin-icon.png)](/xamarin/)<br>
-        **[Xamarin](/xamarin/)**<br>
-        Xamarin lets you build native apps for Android, iOS, and macOS using .NET code and platform-specific user interfaces. Xamarin.Forms allows you to build native apps, with shared UI code written in C# or XAML.
+       [![.NET MAUI icon](../images/dotnet.png)](/dotnet/maui/)<br>
+        **[.NET MAUI](/dotnet/maui/)**<br>
+        .NET Multi-platform App UI (.NET MAUI) lets you build native apps using a .NET cross-platform UI toolkit that targets the mobile and desktop form factors on Android, iOS, macOS, Windows, and Tizen.
         <br>
-        [Install Xamarin](/xamarin/get-started/installation/)
+        [Install .NET MAUI](/dotnet/maui/get-started/installation)
     :::column-end:::
 :::row-end:::
 
@@ -184,13 +184,6 @@ Microsoft offers a variety of resources for web developers, including new tools 
         **[Open Source at Microsoft](https://opensource.microsoft.com/)**<br>
         Thousands of Microsoft engineers use, contribute to and release open source every day. Popular projects include Visual Studio Code, TypeScript, .NET, and ChakraCore.<br>
         [Get involved](https://opensource.microsoft.com/collaborate)
-    :::column-end:::
-    :::column:::
-       [![WinDev repo icon](../images/windev-repo.png)](https://github.com/microsoft/WinDev)<br>
-        **[Windows Developer Performance Issues repo](https://github.com/microsoft/WinDev)**<br>
-        Whether you're developing FOR Windows or ON Windows, using it as your cross-platform dev machine, we want to hear about any performance issues causing you trouble.
-        <br>
-        [File a Performance Issue](https://github.com/microsoft/WinDev/issues)
     :::column-end:::
     :::column:::
        [![docs icon](../images/docs.png)](/contribute/)<br>
@@ -217,9 +210,9 @@ Microsoft offers a variety of resources for web developers, including new tools 
         [Try Cognitive Service](https://azure.microsoft.com/services/cognitive-services/)
     :::column-end:::
     :::column:::
-       [![Azure dev guide icon](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>
-        **[Learn Azure](/azure/guides/developer/azure-developer-guide)**<br>
-        A complete cloud platform to host your existing apps and streamline new development. Azure services integrate everything you need to develop, test, deploy, and manage your apps.<br>
+       [![Azure dev guide icon](../images/Azure.png)](/azure/)<br>
+        **[Browse Azure products](/azure/)**<br>
+        Azure offers a huge variety of products and services - take a look at through the documentation or see the [Azure product descriptions and pricing](https://azure.microsoft.com/products/).<br>
         [Set up an Azure account](https://azure.microsoft.com/free/)
     :::column-end:::
 :::row-end:::
@@ -239,8 +232,8 @@ Microsoft offers a variety of resources for web developers, including new tools 
         **[React Native for Desktop](https://microsoft.github.io/react-native-windows/)**<br>
         Bring React Native support to the Windows SDK and macOS 10.13 SDK. Use JavaScript to build native Windows apps for all devices supported by Windows including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
         <br>
-        [Install React Native for Desktop](https://microsoft.github.io/react-native-windows/docs/getting-started)<br>
-        [Install React Native for Desktop](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)
+        [Install React Native for Windows](https://microsoft.github.io/react-native-windows/docs/getting-started)<br>
+        [Install React Native for MacOS](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)
     :::column-end:::
     :::column:::
        [![Learn icon](../images/learn-icon.png)](/training/browse/?terms=web)<br>

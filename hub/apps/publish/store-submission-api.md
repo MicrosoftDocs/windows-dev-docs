@@ -1771,7 +1771,7 @@ namespace Win32SubmissionApiCSharpSample
     {
         /// <summary>
         /// Client Id of your Azure Active Directory app.
-        /// Example" ba3c223b-03ab-4a44-aa32-38aa10c27e32
+        /// Example" 00001111-aaaa-2222-bbbb-3333cccc4444
         /// </summary>
         public string ClientId { get; set; }
 
@@ -2178,7 +2178,7 @@ namespace Win32SubmissionApiCSharpSample
         /// </summary>
         /// <param name="tokenEndpoint">Token endpoint to which the request is to be made. Specific to your
         /// Azure Active Directory app. Example: https://login.microsoftonline.com/d454d300-128e-2d81-334a-27d9b2baf002/oauth2/v2.0/token </param>
-        /// <param name="clientId">Client Id of your Azure Active Directory app. Example" ba3c223b-03ab-4a44-aa32-38aa10c27e32</param>
+        /// <param name="clientId">Client Id of your Azure Active Directory app. Example" 00001111-aaaa-2222-bbbb-3333cccc4444</param>
         /// <param name="clientSecret">Client secret of your Azure Active Directory app</param>
         /// <param name="scope">Scope. If not provided, default one is used for the production API endpoint.</param>
         /// <returns>Autorization token. Prepend it with "Bearer: " and pass it in the request header as the

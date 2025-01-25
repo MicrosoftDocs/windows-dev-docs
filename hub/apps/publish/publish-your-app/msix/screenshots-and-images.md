@@ -1,7 +1,7 @@
 ---
 description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your MSIX app's Store listing.
 title: App screenshots, images, and trailers for MSIX app
-ms.date: 9/26/2024
+ms.date: 1/24/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -40,7 +40,7 @@ The size requirements vary depending on the device family:
 
 For the best display, keep the following guidelines in mind when creating your screenshots:
 
-- Keep critical visuals and text in the top 3/4 of the image. Text overlays may appear on the bottom 1/4.
+- Keep critical visuals and text in the top two-thirds of the image. Text overlays may appear on the bottom third.
 - Don’t add additional logos, icons, or marketing messages to your screenshots.
 - Don’t use extremely light or dark colors or highly-contrasting stripes that may interfere with readability of text overlays.
 
@@ -62,19 +62,19 @@ For games, this is used as the main logo image for customers on Windows 10, Wind
 
 Your listing may not look good if you don't include it, and it won't be consistent with other listings that customers see while browsing the Store. This image may also be used in search results or in editorially curated collections.
 
-This image can include your app’s name. If you have added the app name on the image, it should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom quarter of this image, so make sure you don't include text or key imagery there.
+This image can include your app’s name. If you have added the app name on the image, it should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom third of this image, so make sure you don't include text or key imagery there.
 
 > [!NOTE]
-> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
+> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top two-thirds of the image, since text overlays may appear on the bottom third of the image.
 
 #### 1:1 box art (1080 x 1080 or 2160 x 2160 pixels)
 
 For games, this image may appear in various Store pages for Windows 10, Windows 11, and Xbox devices, and if you don't provide the **2:3 Poster art** image it will be used as your main logo. This does not apply to apps. For information related to app icons, please refer to the section below on [1:1 App tile icon (300 x 300 pixels)](#11-app-tile-icon-300-x-300-pixels).
 
-This image can also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there.
+This image can also include your app’s name. Text overlays may appear on the bottom third of this image, so don't include text or key imagery there.
 
 > [!NOTE]
-> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
+> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top two-thirds of the image, since text overlays may appear on the bottom third of the image.
 
 #### 1:1 App tile icon (300 x 300 pixels)
 
@@ -206,8 +206,8 @@ These images are required for proper display if you publish your app to Xbox.
 
 There are 3 different sizes that you can upload:
 
-- **Branded key art, 584 x 800 pixels**: Must include the product’s title. A Branding Bar is required on this image. Keep the title and all key imagery in the top three-quarters of the image, as an overlay may appear over the bottom quarter.
-- **Titled hero art, 1920 x 1080 pixels**: Must include the product’s title. Keep the title and all key imagery in the top three-quarters of the image, as an overlay may appear over the bottom quarter.
+- **Branded key art, 584 x 800 pixels**: Must include the product’s title. A Branding Bar is required on this image. Keep the title and all key imagery in the top two-thirds of the image, as an overlay may appear over the bottom third.
+- **Titled hero art, 1920 x 1080 pixels**: Must include the product’s title. Keep the title and all key imagery in the top two-thirds of the image, as an overlay may appear over the bottom third.
 - **Featured Promotional Square art, 1080 x 1080 pixels**: Must _not_ include the product’s title.
 
 > [!NOTE]

@@ -1,7 +1,9 @@
 ---
 title: PowerToys PowerRename utility for Windows
 description: A windows shell extension for bulk renaming of files
-ms.date: 11/19/2024
+ms.collection: ce-skilling-ai-copilot
+ms.custom: copilot-scenario-highlight
+ms.date: 01/23/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, regex, Boost]
@@ -204,6 +206,24 @@ Matching and variable examples. Capturing groups are defined in parentheses `()`
 | `(\d\d)-(\d\d)-(\d\d\d\d)` or `(\d{2})-(\d{2})-(\d{4})` | `$3-$2-$1`   | Move parts in the filename: "29-03-2020" becomes "2020-03-29"                      |
 | `^(.{n})(.*)` or `(.*)(.{n})$`                          | `$1foo$2`    | Insert "foo" *n* characters from the beginning or the end, respectively              |
 | `^.{n}` or `.{n}$`                                      | nothing      | Trim *n* characters from the beginning or the end, respectively                      |
+
+### Ask Microsoft Copilot for help with regular expressions
+
+You can get AI assistance from [Copilot](https://copilot.microsoft.com/) to generate simple or complex regular expressions. You can customize the prompt to generate a string per your requirements.
+
+The following text shows an example prompt for Copilot:
+
+```copilot-prompt
+Generate a regular expression to match a string that starts with "foo" and ends with "bar" and has at least six letters and two numeric characters in between them.
+```
+
+Copilot will generate a regular expression similar to the following:
+
+```
+^foo(?=[A-Za-z0-9]{8,}bar$)(?=(.*\d){2})[A-Za-z0-9]*bar$
+```
+
+Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://www.microsoft.com/microsoft-copilot/learn/).
 
 ### Additional resources for learning regular expressions
 

@@ -51,7 +51,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [TimePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TimePicker), [SelectedTime property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtime)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TimePicker in action](winui3gallery:/item/TimePicker).
+> [Open the WinUI 3 Gallery app and see the TimePicker in action](winui3gallery:/item/TimePicker)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

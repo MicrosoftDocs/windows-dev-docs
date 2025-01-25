@@ -159,21 +159,24 @@ Keyboard Manager enables you to remap shortcuts for only specific apps (rather t
 
 For example, in the Outlook email app the shortcut <kbd>Ctrl</kbd>+<kbd>E</kbd> is set by default to search for an email. If you prefer instead to set <kbd>Ctrl</kbd>+<kbd>F</kbd> to search your email (rather than forward an email as set by default), you can remap the shortcut with "Outlook" set as your "Target app".
 
-Keyboard Manager uses process names (not application names) to target apps. For example, Microsoft Edge is set as "msedge" (process name), not "Microsoft Edge" (application name). To find an application's process name, open PowerShell and enter the command `get-process` or open Command Prompt and enter the command `tasklist`. This will result in a list of process names for all applications you currently have open. Below is a list of a few popular application process names.
+Keyboard Manager uses process names, not application names, to target apps. For example, Microsoft Edge is set as "msedge" (process name), not "Microsoft Edge" (application name). To find an application's process name, open PowerShell and enter the command `Get-Process` or open Command Prompt and enter the command `tasklist`. This will result in a list of process names for all applications you currently have open. Below is a list of a few popular application process names.
 
-| Application     | Process name  |
-| :---            | :---          |
-| Microsoft Edge  | msedge.exe    |
-| OneNote         | onenote.exe   |
-| Outlook         | outlook.exe   |
-| Teams           | ms-teams.exe  |
-| Adobe Photoshop | Photoshop.exe |
-| File Explorer   | explorer.exe  |
-| Spotify Music   | spotify.exe   |
-| Google Chrome   | chrome.exe    |
-| Excel           | excel.exe     |
-| Word            | winword.exe   |
-| Powerpoint      | powerpnt.exe  |
+| Application     | Process name from `tasklist` |
+| :---            | :---                         |
+| Microsoft Edge  | msedge.exe                   |
+| OneNote         | onenote.exe                  |
+| Outlook         | outlook.exe                  |
+| Teams           | ms-teams.exe                 |
+| Adobe Photoshop | Photoshop.exe                |
+| File Explorer   | explorer.exe                 |
+| Spotify Music   | spotify.exe                  |
+| Google Chrome   | chrome.exe                   |
+| Excel           | excel.exe                    |
+| Word            | winword.exe                  |
+| Powerpoint      | powerpnt.exe                 |
+
+> [!NOTE]
+> If you use `tasklist` from the Command Prompt to get the list of processes, the process name will be listed in the **Image Name** column. The process names in `Get-Process` will not include the `.exe` file extensions. These process names do not match the process names in Windows **Task Manager** window.
 
 ## How to select a key
 

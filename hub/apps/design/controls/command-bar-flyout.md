@@ -69,7 +69,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [CommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textcommandbarflyout), [AppBarButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarseparator)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the CommandBarFlyout in action](winui3gallery:/item/CommandBarFlyout).
+> [Open the WinUI 3 Gallery app and see the CommandBarFlyout in action](winui3gallery:/item/CommandBarFlyout)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

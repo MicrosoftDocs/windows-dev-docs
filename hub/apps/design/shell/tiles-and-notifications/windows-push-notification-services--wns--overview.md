@@ -3,7 +3,7 @@ description: The Windows Push Notification Services (WNS) enables third-party de
 title: Windows Push Notification Services (WNS) overview
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 09/28/2020
+ms.date: 11/27/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

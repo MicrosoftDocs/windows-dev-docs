@@ -1,7 +1,9 @@
 ---
 title: Use a MySQL database in a Windows app
 description: Learn how to connect to a MySQL database from your Windows app, and test your connection using sample code.
-ms.date: 08/01/2024
+ms.date: 01/23/2025
+ms.collection: ce-skilling-ai-copilot
+ms.custom: copilot-scenario-highlight
 ms.topic: how-to
 keywords: windows, windows app sdk, MySQL, database, uwp, wpf, winforms, windows forms, winui
 ms.localizationpriority: medium
@@ -20,6 +22,9 @@ This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project t
 1. Use the command `Install-Package MySql.Data` to install the NuGet package for the MySQL core class library.
 
 This will allow you to programmatically access MySQL databases.
+
+> [!NOTE]
+> [MySQL Connector/NET](https://dev.mysql.com/downloads/connector/net/) version 6.4.4 or later is required to use the `MySql.Data` package with Windows authentication.
 
 ## Test your connection using sample code
 
@@ -46,8 +51,19 @@ using (var mySqlCn = new MySqlConnection(M_str_sqlcon))
 > [!IMPORTANT]
 > In production applications, connection information should be stored securely in app configuration (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)). Connection strings and other secrets should not be hard-coded.
 
-> [!NOTE]
-> [MySQL Connector/NET](https://dev.mysql.com/downloads/connector/net/) version 6.4.4 or later is required to use the `MySql.Data` package with Windows authentication.
+## Building a connection string with GitHub Copilot
+
+You can use GitHub Copilot to build the connection string for your MySQL database. You can customize the prompt to create a connection string per your requirements.
+
+The following text shows an example prompt for Copilot Chat that generates a connection string similar to the one shown in the previous code snippet:
+
+```copilot-prompt
+Show me how to create a MySQL connection string to a server named myServerAddress and a database called myDatabase. Use Windows authentication.
+```
+
+GitHub Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://aka.ms/copilot-general-use-faqs).
+
+Learn more about [GitHub Copilot in Visual Studio](/visualstudio/ide/visual-studio-github-copilot-install-and-states) and [GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview).
 
 ## Related content
 

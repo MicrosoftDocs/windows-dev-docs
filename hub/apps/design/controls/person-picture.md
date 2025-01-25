@@ -57,7 +57,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [PersonPicture class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.personpicture)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see PersonPicture in action](winui3gallery:/item/PersonPicture).
+> [Open the WinUI 3 Gallery app and see PersonPicture in action](winui3gallery:/item/PersonPicture)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

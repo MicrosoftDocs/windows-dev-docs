@@ -1,4 +1,4 @@
-- name: Design principles and signature experiences
+- name: Overview
   href: index.md
 - name: Color
   href: signature-experiences/color.md
@@ -14,13 +14,13 @@
       items: 
         - name: Overview
           href: style/iconography/overview.md
-        - name: Design guidelines for Windows app icons
+        - name: Design guidelines
           href: style/iconography/app-icon-design.md
-        - name: Construct your Windows app's icon
+        - name: Construct your app icon
           href: style/iconography/app-icon-construction.md
         - name: Construction guidelines for Windows 10 icons
           href: style/iconography/live-tile-icons.md
-        - name: Create icons using Visual Studio's asset generation tool
+        - name: Generate app icons using Visual Studio
           href: style/iconography/visual-studio-asset-generation.md
     - name: Segoe MDL2 icons
       href: style/segoe-ui-symbol-font.md
@@ -110,7 +110,7 @@
       href: controls/index.md
     - name: Intro to controls and events
       href: controls/controls-and-events-intro.md
-    - name: Commanding in Windows apps using StandardUICommand, XamlUICommand, and ICommand
+    - name: Commanding using StandardUICommand, XamlUICommand, and ICommand
       href: controls/commanding.md
     - name: Basic input
       items:
@@ -188,7 +188,7 @@
       href: controls/forms.md
     - name: Media, graphics, and shapes
       items:
-        - name: Icons in Windows apps
+        - name: Icons
           href: style/icons.md
         - name: Animated icons
           href: controls/animated-icon.md
@@ -596,15 +596,15 @@
   items:
   - name: Overview
     href: widgets/index.md
-  - name: Widgets design fundamentals
+  - name: Design fundamentals
     href: widgets/widgets-design-fundamentals.md
-  - name: Widget states and built-in UI components
+  - name: States and built-in UI components
     href: widgets/widgets-states-and-ui.md
-  - name: Widget interaction design guidance
+  - name: Interaction design guidance
     href: widgets/widgets-interaction-design.md
-  - name: Create a widget template with the Adaptive Card Designer
+  - name: Create a template with the Adaptive Card Designer
     href: widgets/widgets-create-a-template.md
   - name: Integrate with the widget picker
     href: widgets/widgets-picker-integration.md
-- name: Design toolkits and samples
+- name: Design resources
   href: downloads/index.md

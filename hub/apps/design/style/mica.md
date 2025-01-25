@@ -117,7 +117,7 @@ To give your app's window a seamless look, Mica Alt should be visible in the tit
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Mica in action](winui3gallery://item/SystemBackdrops).
+> [Open the WinUI 3 Gallery app and see Mica in action](winui3gallery://item/SystemBackdrops)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

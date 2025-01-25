@@ -272,6 +272,7 @@ The following GUID versions are supported:
 - v3 - Namespace and name based, using MD5
 - v4 - Random value
 - v5 - Namespace and name based, using SHA1
+- v7 - Time-ordered random value
 
 > [!NOTE]
 > For versions 3 and 5 there are some predefined namespaces: DNS, URL, OID and X500. You can use the following predefined namespaces:
@@ -288,6 +289,7 @@ Examples:
 | `# guid` <br />`# uuid` <br />`# uuidv4` | Generate a random GUID. |
 | `# guidv1` <br />`# uuidv1` | Generate a version 1 GUID. |
 | `# guidv3 ns:DNS www.microsoft.com` <br />`# uuidv3 ns:DNS www.microsoft.com` | Generate the GUID version 3 for `www.microsoft.com` using the DNS namespace. <br /> The namespace parameter can be any valid GUID, and the name parameter can be any string. |
+| `# uuid7` <br /> `# guidv7` | Generate a random version 7 GUID with the first 48-bit corresponding to the current timestamp, providing a well-defined order of subsequently generated values. |
 
 > [!TIP]
 > The `guid` and `uuid` keywords are interchangeable and the `v` is optional. I.e. `guid5` and `guidv5` are the same.

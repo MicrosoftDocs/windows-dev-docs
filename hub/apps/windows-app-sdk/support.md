@@ -175,9 +175,6 @@ Five older versions of Windows client are still in service for at least one serv
 </tr>
 </table>
 
-> [!NOTE]
-> Windows App SDK does not support IoT SKUs.
-
 ## Windows Server SKUs and channels
 
 Windows Server is the platform for building an infrastructure of connected applications, networks, and web services, from the workgroup to the data center. Windows Server offers services to other devices, has more features and capacities than a client OS, and can support more network connections.

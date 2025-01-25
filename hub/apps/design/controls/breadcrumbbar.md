@@ -68,7 +68,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [BreadcrumbBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the BreadcrumbBar in action](winui3gallery:/item/BreadcrumbBar).
+> [Open the WinUI 3 Gallery app and see the BreadcrumbBar in action](winui3gallery:/item/BreadcrumbBar)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

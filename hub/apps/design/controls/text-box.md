@@ -96,7 +96,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TextBox in action](winui3gallery:/item/TextBox).
+> [Open the WinUI 3 Gallery app and see the TextBox in action](winui3gallery:/item/TextBox)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

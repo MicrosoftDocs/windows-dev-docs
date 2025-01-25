@@ -18,14 +18,14 @@ These examples assume that you have a JavaScript app that contains an **AdContro
     ``` HTML
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
-      data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: 'test'}">
+      data-win-options="{applicationId: '00001111-aaaa-2222-bbbb-3333cccc4444', adUnitId: 'test'}">
     </div>
     ```
     Following the **adUnitId** attribute, add the value for the **onErrorOccurred** event.
     ``` HTML
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
-      data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: 'test', onErrorOccurred: errorLogger}">
+      data-win-options="{applicationId: '00001111-aaaa-2222-bbbb-3333cccc4444', adUnitId: 'test', onErrorOccurred: errorLogger}">
   </div>
   ```
 

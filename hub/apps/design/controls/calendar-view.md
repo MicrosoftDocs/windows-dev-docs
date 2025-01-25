@@ -49,7 +49,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [CalendarView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarView), [SelectedDatesChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddateschanged)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the CalendarView in action](winui3gallery:/item/CalendarView).
+> [Open the WinUI 3 Gallery app and see the CalendarView in action](winui3gallery:/item/CalendarView)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

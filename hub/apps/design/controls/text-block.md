@@ -42,7 +42,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [TextBlock class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text), [Inlines property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.inlines)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TextBlock in action](winui3gallery:/item/TextBlock).
+> [Open the WinUI 3 Gallery app and see the TextBlock in action](winui3gallery:/item/TextBlock)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

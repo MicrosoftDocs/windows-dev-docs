@@ -1,14 +1,16 @@
 ---
 title: winget validate Command
 description: Validates a manifest file for submitting software to the Microsoft Community Package Manifest Repository on GitHub.
-ms.date: 07/11/2024
+ms.date: 12/11/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # validate command (winget)
 
-The **validate** command of the [winget](index.md) tool validates a [manifest](../package/manifest.md) for submitting software to the **Microsoft Community Package Manifest Repository** on GitHub. The manifest must be a YAML file that follows the [specification](https://github.com/microsoft/winget-pkgs/blob/master/AUTHORING_MANIFESTS.md).
+The **validate** command of the [winget](index.md) tool validates a [manifest](../package/manifest.md) for submitting software to the **Microsoft Community Package Manifest Repository** on GitHub. 
+
+A few different tools are available to help you author a manifest, including Windows Package Manager Manifest Creator, YamlCreate.ps1, and tools authored by the user community. See [Authoring a Manifest in the winget-pkgs repo on GitHub](https://github.com/microsoft/winget-pkgs/blob/master/doc/README.md#authoring-a-manifest).
 
 ## Usage
 

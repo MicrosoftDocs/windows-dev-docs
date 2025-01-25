@@ -18,7 +18,7 @@ After you successfully upload the app's packages and submit the app for certific
 
 During this phase, several tests are conducted:
 
-- **Security tests:** This first test checks your app's packages for viruses and malware. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.
+- **Security tests:** This first test checks your app's packages for viruses and malware. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system. For more info on security tests, see [Trust and Security Services Scan](https://aka.ms/securityscan).
 - **Technical compliance tests:** Technical compliance is tested by the Windows App Certification Kit. (You should always make sure to [test your app with the Windows App Certification Kit](/windows/uwp/debug-test-perf/windows-app-certification-kit) before you submit it to the Store.)
 - **Content compliance:** The amount of time this takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the [Notes for certification](./manage-submission-options.md#notes-for-certification) page.
 

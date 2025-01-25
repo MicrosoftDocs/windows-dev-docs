@@ -3,7 +3,7 @@ title: Setup a development environment on Windows
 description: A guide to help you setup your development environment on Windows and install your preferred tools and code languages. 
 ms.topic: article
 ms.subservice: windows-nodejs
-ms.date: 11/21/2024
+ms.date: 01/07/2025
 ---
 
 # Set up your development environment on Windows
@@ -14,10 +14,11 @@ Windows invites you to code as you are. Use whatever coding language or framewor
 
 :::row:::
     :::column:::
-       [![Dev Home icon](../images/dev-home-icon.png)](/windows/dev-home)<br>
-        **[Dev Home](/windows/dev-home/)**<br>
-        Monitor your work in the centralized dashboard, GitHub and System performance widgets. Get setup and onboard new projects with the Machine configuration tool.<br>
-        [Install Dev Home](https://aka.ms/devhome)
+       [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
+        **[Windows Terminal](/windows/terminal/)**<br>
+        Customize your terminal environment to work with multiple command line shells.
+        <br>
+        [Install Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)
     :::column-end:::
     :::column:::
        [![Dev Drive icon](../images/dev-drive-icon.png)](/windows/dev-drive)<br>
@@ -27,10 +28,10 @@ Windows invites you to code as you are. Use whatever coding language or framewor
         [Create a Dev Drive](/windows/dev-drive#how-to-set-up-a-dev-drive)
     :::column-end:::
     :::column:::
-       [![Windows Package Manager icon](../images/winget.png)](../package-manager/configuration/index.md)<br>
-        **[WinGet Configuration](../package-manager/configuration/index.md)**<br>
-        Consolidate manual machine setup and project onboarding to a single command that is reliable and repeatable.<br>
-        [Author a configuration file](../package-manager/configuration/create.md)
+       [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
+        **[Windows Package Manager](../package-manager/index.md)**<br>
+        Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
+        [Install Windows Package Manager](../package-manager/winget/index.md#install-winget)
     :::column-end:::
     :::column:::
        [![WSL icon](../images/wsl-icon.png)](/windows/wsl/)<br>
@@ -42,17 +43,10 @@ Windows invites you to code as you are. Use whatever coding language or framewor
 
 :::row:::
     :::column:::
-       [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
-        **[Windows Terminal](/windows/terminal/)**<br>
-        Customize your terminal environment to work with multiple command line shells.
-        <br>
-        [Install Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)
-    :::column-end:::
-    :::column:::
-       [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
-        **[Windows Package Manager](../package-manager/index.md)**<br>
-        Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
-        [Install Windows Package Manager](../package-manager/winget/index.md#install-winget)
+       [![Windows Package Manager icon](../images/winget.png)](../package-manager/configuration/index.md)<br>
+        **[WinGet Configuration](../package-manager/configuration/index.md)**<br>
+        Consolidate manual machine setup and project onboarding to a single command that is reliable and repeatable.<br>
+        [Author a configuration file](../package-manager/configuration/create.md)
     :::column-end:::
     :::column:::
        [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
@@ -61,33 +55,14 @@ Windows invites you to code as you are. Use whatever coding language or framewor
         [Install PowerToys](../powertoys/install.md)
     :::column-end:::
     :::column:::
-       [![WSA icon](../images/wsa-icon.png)](/windows/android/wsa/)<br>
-        **[Windows Subsystem for Android](/windows/android/wsa/)**<br>
-        Windows Subsystem for Android™️ support ends March 5, 2025.<br>
-        [Learn more](/windows/android/wsa/)
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
        [![Sudo for Windows icon](../images/sudo.png)](/windows/sudo/)<br>
         **[Sudo for Windows](/windows/sudo/)**<br>
         Sudo for Windows is a new way for users to run elevated commands directly from an unelevated console session.
         <br>
         [Enable and configure Sudo for Windows](/windows/sudo)
     :::column-end:::
-    :::column:::
-       [![Copilot in Windows icon](../images/copilot.png)](/windows/ai/)<br>
-        **[Windows AI](/windows/ai/)**<br>
-        A new era of AI has arrived at Microsoft. See how AI is being integrated in Windows 11.
-        <br>
-        [Explore Windows AI](/windows/ai)
-    :::column-end:::
-    :::column:::
-    :::column-end:::
 :::row-end:::
 <br>
-
-> [!VIDEO 54e6c532-a86c-4a39-81ab-40e28ce2ba96]
 
 ## AI for Windows apps
 

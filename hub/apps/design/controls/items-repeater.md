@@ -72,7 +72,7 @@ When you use an **ItemsRepeater**, you should provide scrolling functionality by
 > - **Important APIs**: [ItemsRepeater class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater), [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater).
+> [Open the WinUI 3 Gallery app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

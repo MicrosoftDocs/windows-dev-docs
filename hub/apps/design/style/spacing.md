@@ -2,7 +2,7 @@
 title: Spacing and Sizes
 description: The new Fluent Standard and Compact control styles ensure a comfortable user experience regardless of device and input method.
 keywords: UWP, Windows 10, controls, size, density, standard, compact
-ms.date: 09/20/2024
+ms.date: 11/27/2024
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
@@ -19,7 +19,9 @@ While functionality and behavior has not changed and remains consistent across t
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Compact Sizing in action](winui3gallery://item/CompactSizing).
+> [Open the WinUI 3 Gallery app and see Spacing examples](winui3gallery://item/Spacing)
+>
+> [Open the WinUI 3 Gallery app and see Compact Sizing in action](winui3gallery://item/CompactSizing)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -70,9 +72,9 @@ The following examples show how the `Compact` style can be applied for the page 
 </Grid>
 ```
 
-## Sizing in Windows 10
+## Sizing in Windows apps
 
-For the Windows 10 October 2018 Update (version 1809), the standard, default size for all Windows XAML controls was decreased to increase usability across all usage scenarios.
+In the Windows 10 October 2018 Update (version 1809 and later), the standard, default size for all Windows XAML controls was decreased to increase usability across all usage scenarios.
 
 The following image shows some of the control layout changes that were introduced with the Windows 10 October 2018 Update. Specifically, the margin between a header and the top of a control was decreased from 8epx to 4epx, and the 44epx grid was changed to a 40epx grid.
 

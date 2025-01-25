@@ -16,21 +16,36 @@ Welcome to Windows app development. This guide will take you through the steps n
 > [Microsoft Copilot](https://copilot.microsoft.com) is a great resource if you have questions about getting started writing Windows apps.
 
 
-## 1. Install Visual Studio
+## 1. Enable Developer Mode
+
+Windows has a special mode for developers that adjusts security settings in order to let you run the apps you're working on. You'll need to enable Developer Mode before you can build, deploy, and test your app using Visual Studio.
+
+> [!TIP]
+> If you don't enable it now, you'll be prompted to enable it when you try to build your app in Visual Studio.
+
+To enable Developer Mode:
+
+* Open Windows Settings and navigate to the **[System > For developers](ms-settings:developers)** page.
+* Toggle the Developer Mode switch to **On** and confirm your choice in the confirmation dialog.
+
+For more information about Developer Mode, see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
+
+
+## 2. Install Visual Studio
 
 You'll use [Visual Studio](/visualstudio/ide/), Microsoft's comprehensive integrated development environment (IDE), to create your WinUI app. It's the preferred development tool of many Windows developers and it will help you write, debug, and deploy your apps. The project templates in Visual Studio will quickly get you started with projects for Windows and many other platforms.
 
 > [!TIP]
 > Before installing these tools, make sure your development computer meets the [system requirements for Windows app development](../windows-app-sdk/system-requirements.md).
 
-Use this link to download and install the latest Visual Studio. The installer will walk you through the steps, but if you find you need detailed instructions, see [Install Visual Studio](/visualstudio/install/install-visual-studio).
+Use the link below to download and install the latest Visual Studio. The installer will walk you through the steps, but if you find you need detailed instructions, see [Install Visual Studio](/visualstudio/install/install-visual-studio).
 
 > [!div class="button"]
 > [Download Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
 The free Visual Studio Community Edition includes everything you need to create your apps. If you're working with a development team or enterprise, you might need Visual Studio Professional or Visual Studio Enterprise. See [What is Visual Studio?](/visualstudio/get-started/visual-studio-ide) for more info.
 
-### Required workloads and components
+### 2.2 Required workloads and components
 
 While installing Visual Studio, you need to install the workloads and components required for developing with WinUI and the Windows App SDK. After installation, you can open the Visual Studio Installer app and select **Modify** to add workloads and components.
 
@@ -57,19 +72,6 @@ On the **Workloads** tab of the Visual Studio Installer app, select the followin
 
 ---
 
-## 2. Enable Developer Mode
-
-Windows has a special mode for developers that adjusts security settings in order to let you run the apps you're working on. You'll need to enable Developer Mode before you can build, deploy, and test your app using Visual Studio.
-
-> [!TIP]
-> If you don't enable it now, you'll be prompted to enable it when you try to build your app in Visual Studio.
-
-To enable Developer Mode:
-
-* Open Windows Settings and navigate to the **[System > For developers](ms-settings:developers)** page.
-* Toggle the Developer Mode switch to **On** and confirm your choice in the confirmation dialog.
-
-For more information about Developer Mode, see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 
 ## 3. Create and launch your first WinUI app
 

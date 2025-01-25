@@ -177,7 +177,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [InfoBadge class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.value)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the InfoBadge in action](winui3gallery:/item/InfoBadge).
+> [Open the WinUI 3 Gallery app and see the InfoBadge in action](winui3gallery:/item/InfoBadge)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
