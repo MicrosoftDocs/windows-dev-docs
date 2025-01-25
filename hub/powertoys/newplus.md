@@ -1,7 +1,7 @@
 ---
 title: PowerToys New+ for Windows
 description: A tool that enables you to create files and folders from a personalized set of templates, directly from the File Explorer context menu.
-ms.date: 07/13/2024
+ms.date: 01/25/2025
 ms.topic: article
 no-loc: [PowerToys, Windows, New+, New, NewPlus, Win]
 ---
@@ -34,7 +34,7 @@ Template objects in the "Templates" folder can be files, folders, or shortcuts. 
 
 After the enablement toggle, the New+ Templates location setting is likely the most interesting one. By default, the template location is in your local app data folder, specifically at `%localappdata%\Microsoft\PowerToys\NewPlus\Templates`. However, these templates will not roam with you across devices. If you want a common set of templates across devices, a popular option is to change the template location to a folder that is synced with a cloud drive, such as OneDrive. This way, you can access your templates from any device.
 
-### Display options
+### <a name="display_options"></a>Display options
 
 #### Hide template filename extensions
 
@@ -44,24 +44,26 @@ The option enables you to toggle the display of filename extensions. When this o
 
 The option enables you to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named "1. filename" will be displayed as is. However, when this option is toggled on, the template will be displayed as "filename". This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.
 
-### Filenaming options
+### <a name="behavior"></a>Behavior
 
-#### Expand variables in filenames
+#### <a name="replace_variables"></a>Replace variables in template filename
 
-With this option on (the default) certain variables in filenames will expand when the template file is copied. Any non-valid-filename charactors are replaced with spaces.
+With this option on (the default) supported variables in filenames, including in files within subfolders, will get replaced when the template is copied. 
 
-##### Examples
+Note: Any non-valid-filename characters are replaced with spaces.
+
+##### <a name="replace_variables_examples"></a>Examples
 
 | Example template filename | Would on copy expand to |
 | :---             | :--- |
 |`$YYYY-$MM-%DD, $hh $mm $ss  - $PARENT_FOLDER_NAME by %USERNAME%` | `2024-11-22, 12 08 54 - PowerShell project by cgaarden` |
-|`File where variable value contains invalid charactors %USERPROFILE%` | `File where variable value contains invalid charactors C  Users cgaarden` |
+|`File where variable value contains invalid characters %USERPROFILE%` | `File where variable value contains invalid characters C  Users cgaarden` |
 
 ##### Date and time related variables
 
-Note these variable patterns are the same as for PowerRename and are case-sensitive.
+These date and time related variable patterns are the same as for PowerRename and are case-sensitive.
 
-| Variable pattern | Explanation |
+| Variable | Explanation |
 | :---             | :--- |
 | `$YYYY`          | Year, represented by a full four or five digits, depending on the calendar used. |
 | `$YY`            | Year, represented only by the last two digits. A leading zero is added for single-digit years. |
@@ -86,16 +88,18 @@ Note these variable patterns are the same as for PowerRename and are case-sensit
 
 ##### Special variables
 
-Note these special variables are case-sensitive, so they will only work when written exactly as shown here.
+These special variables are case-sensitive, so they will only work when written exactly as shown here.
 
-| Special variable | Explanation |
+| Variable | Explanation |
 | :---             | :--- |
 | `$PARENT_FOLDER_NAME`          | will expand to the name of the parent folder. |
 
 ##### Environment variables
 
-Note these variables are case-insensitive, so you can write them in upper or lowercase, as you prefer.
+These variables are case-insensitive, meaning you can write them in a mix of uppercase or lowercase.
 
-* `%environment_variable%`, will get replaced by the value of that environment variable.
+Each `%environment_variable%` in the file and folder name, will get replaced by the value of that environment variable.
+
+For instance, %USERNAME% will get replaced with the name of the current Windows user.
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
