@@ -1,10 +1,9 @@
 ---
 title: PowerToys Peek utility for Windows
 description: A system-wide utility for Windows to quickly preview file content.
-ms.date: 11/19/2024
-ms.topic: concept-article
+ms.date: 08/03/2023
+ms.topic: article
 no-loc: [PowerToys, Windows, Peek, Win]
-# Customer intent: Learn how to configure and use the Peek utility in PowerToys.
 ---
 
 # Peek utility
@@ -21,7 +20,8 @@ Using <kbd>Left</kbd> and <kbd>Right</kbd> or <kbd>Up</kbd> and <kbd>Down</kbd>,
 
 ## Pin preview window position and size
 
-The Peek window adjusts its size based on the dimensions of the images being previewed. However, if you prefer to keep the window's size and position, you can use the pinning feature. By selecting the pinning button, the window will preserve the current size and position. Selecting the pinning button again will unpin the window. When unpinned, the Peek window will return to the default position and size when previewing the next file.
+The Peek window adjusts its size based on the dimensions of the images being previewed. However, if you prefer to keep the window's size and position, you can use the pinning feature.
+By selecting the pinning button, the window will preserve the current size and position. Selecting the pinning button again will unpin the window. When unpinned, the Peek window will return to the default position and size when previewing the next file.
 
 ## Open file with the default program
 
@@ -33,7 +33,16 @@ Hover over the preview to see extra information about the file, including its si
 
 ## Delete files
 
-Press the <kbd>Delete</kbd> key to send the current file to the Recycle Bin. Peek will automatically preview the next file. If there are no more files to preview, a message will be displayed.
+Press the <kbd>Delete</kbd> key to move the current file to the Recycle Bin.
+
+By default, a confirmation dialog will appear before deletions. To skip future confirmations, either:
+
+- Check the "Don't ask me again" checkbox in the dialog.
+- Uncheck the "Ask for confirmation before deleting files" option in Peek's settings page.
+
+![Example of Peek's file deletion confirmation dialog](../images/pt-peek-delete-confirmation.png)
+
+After deleting the file, Peek will automatically preview the next file. If there are no more files to preview, a message will be displayed.
 
 > [!TIP]
 > Only files may be deleted. Folders may not be deleted, even if they are empty.
@@ -46,6 +55,7 @@ From the settings page, the following options can be configured:
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to open Peek for the selected file(s). |
 | Always run not elevated, even when PowerToys is elevated | Tries to run Peek without elevated permissions, to fix access to network shares. |
-| Automatically close the Peek window after it loses focus | |
+| Automatically close the Peek window after it loses focus |  |
+| Ask for confirmation before deleting files | When enabled, Peek shows a confirmation dialog before deleting files. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
