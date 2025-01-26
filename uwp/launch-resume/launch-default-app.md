@@ -9,7 +9,6 @@ ms.localizationpriority: medium
 ---
 # Launch the default app for a URI
 
-
 **Important APIs**
 
 - [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)
@@ -24,30 +23,28 @@ This topic describes the following URI schemes built into Windows:
 
 | URI Scheme | Launches |
 | ----------:|----------|
-|[bingmaps:, ms-drive-to:, and ms-walk-to: ](#maps-app-uri-schemes) | Maps app |
-|[http:](#http-uri-scheme) | Default web browser |
-|[mailto:](#email-uri-scheme) | Default email app |
-|[ms-call:](#call-app-uri-scheme) |  Call app |
-|[ms-chat:](#messaging-app-uri-scheme) | Messaging app |
-|[ms-people:](#people-app-uri-scheme) | People app |
-|[ms-photos:](#photos-app-uri-scheme) | Photos app |
-|[ms-settings:](#settings-app-uri-scheme) | Settings app |
-|[ms-store:](#store-app-uri-scheme)  | Store app |
-|[ms-tonepicker:](#tone-picker-uri-scheme) | Tone picker |
-|[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers app |
-|[msnweather:](#weather-app-uri-scheme) | Weather app |
-|[microsoft-edge:](#microsoft-edge-uri-scheme) | Microsoft Edge browser |
+| [bingmaps:, ms-drive-to:, and ms-walk-to:](#maps-app-uri-schemes) | Maps app |
+| [http: and https:](#http-uri-scheme) | Default web browser |
+| [mailto:](#email-uri-scheme) | Default email app |
+| [microsoft-edge:](#microsoft-edge-uri-scheme) | Microsoft Edge browser |
+| [ms-call:](#call-app-uri-scheme) |  Call app |
+| [ms-chat:](#messaging-app-uri-scheme) | Messaging app |
+| [ms-people:](#people-app-uri-scheme) | People app |
+| [ms-photos:](#photos-app-uri-scheme) | Photos app |
+| [ms-recall:](/windows/ai/apis/recall#launch-click-to-do) | Click to do (part of [Recall](/windows/ai/apis/recall)) |
+| [ms-settings:](#settings-app-uri-scheme) | Settings app |
+| [ms-store:](#store-app-uri-scheme)  | Store app |
+| [ms-tonepicker:](#tone-picker-uri-scheme) | Tone picker |
+| [ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers app |
+| [msnweather:](#weather-app-uri-scheme) | Weather app |
 
-<br>
-For example, the following URI opens the default browser and displays the Bing web site.
-
-`https://bing.com`
+For example, the following URI opens the default browser and displays the Microsoft Bing web site: `https://bing.com/`.
 
 You can also launch custom URI schemes too. If there is no app installed to handle that URI, you can recommend an app for the user to install. For more info, see [Recommend an app if one is not available to handle the URI](#recommend-an-app-if-one-is-not-available-to-handle-the-uri).
 
 In general, your app can't select the app that is launched. The user determines which app is launched. More than one app can register to handle the same URI scheme. The exception to this is for reserved URI schemes. Registrations of reserved URI schemes are ignored. For the full list of reserved URI schemes, see [Handle URI activation](handle-uri-activation.md). In cases where more than one app may have registered the same URI scheme, your app can recommend a specific app to be launched. For more info, see [Recommend an app if one is not available to handle the URI](#recommend-an-app-if-one-is-not-available-to-handle-the-uri).
 
-### Call LaunchUriAsync to launch a URI
+## Call LaunchUriAsync to launch a URI
 
 Use the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch a URI. When you call this method, your app must be the foreground app, that is, it must be visible to the user. This requirement helps ensure that the user remains in control. To meet this requirement, make sure that you tie all URI launches directly to the UI of your app. The user must always take some action to initiate a URI launch. If you attempt to launch a URI and your app isn't in the foreground, the launch will fail and your error callback will be invoked.
 
@@ -125,7 +122,7 @@ options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseL
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
 
-## URI Schemes ##
+## URI Schemes
 
 The various URI schemes are described below.
 
@@ -135,24 +132,24 @@ Use the **ms-call:** URI scheme to launch the Call app.
 
 | URI Scheme       | Result                   |
 |------------------|--------------------------|
-| ms-call:settings | Calls app settings page. |
+| `ms-call:settings` | Calls app settings page. |
 
 ### Email URI scheme
 
 Use the **mailto:** URI scheme to launch the default mail app.
 
-| URI Scheme |Results                          |
-|------------|---------------------------------|
-| mailto:    | Launches the default email app. |
-| mailto:\[email address\] | Launches the email app and creates a new message with the specified email address on the To line. Note that the email is not sent until the user taps send. |
+| URI Scheme |Results |
+|------------|--------|
+| `mailto:` | Launches the default email app. |
+| `mailto:\[email address\]` | Launches the email app and creates a new message with the specified email address on the To line. Note that the email is not sent until the user taps send. |
 
 ### HTTP URI scheme
 
 Use the **http:** URI scheme to launch the default web browser.
 
-| URI Scheme | Results                           |
-|------------|-----------------------------------|
-| http:      | Launches the default web browser. |
+| URI Scheme | Results |
+|------------|---------|
+| `http:` | Launches the default web browser. |
 
 ### Maps app URI schemes
 
@@ -170,11 +167,11 @@ Use the **ms-chat:** URI scheme to launch the Windows Messaging app.
 
 | URI scheme |Results |
 |------------|--------|
-| ms-chat:   | Launches the Messaging app. |
-| ms-chat:?ContactID={contacted}  |  Allows the messaging application to be launched with a particular contact’s information.   |
-| ms-chat:?Body={body} | Allows the messaging application to be launched with a string to use as the content of the message.|
-| ms-chat:?Addresses={address}&Body={body} | Allows the messaging application to be launched with a particular addresses' information, and with a string to use as the content of the message. Note: Addresses can be concatenated. |
-| ms-chat:?TransportId={transportId}  | Allows the messaging application to be launched with a particular transport ID. |
+| `ms-chat:` | Launches the Messaging app. |
+| `ms-chat:?ContactID={contacted}` |  Allows the messaging application to be launched with a particular contact’s information.   |
+| `ms-chat:?Body={body}` | Allows the messaging application to be launched with a string to use as the content of the message.|
+| `ms-chat:?Addresses={address}&Body={body}` | Allows the messaging application to be launched with a particular addresses' information, and with a string to use as the content of the message. Note: Addresses can be concatenated. |
+| `ms-chat:?TransportId={transportId}` | Allows the messaging application to be launched with a particular transport ID. |
 
 ### Tone picker URI scheme
 
@@ -182,7 +179,7 @@ Use the **ms-tonepicker:** URI scheme to choose ringtones, alarms, and system to
 
 | URI Scheme | Results |
 |------------|---------|
-| ms-tonepicker: | Pick ringtones, alarms, and system tones. |
+| `ms-tonepicker:` | Pick ringtones, alarms, and system tones. |
 
 Parameters are passed via a [ValueSet](/uwp/api/windows.foundation.collections.valueset) to the LaunchURI API. See [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) for details.
 
@@ -192,7 +189,7 @@ Use the **ms-yellowpage:** URI scheme to launch the Nearby Numbers app.
 
 | URI Scheme | Results |
 |------------|---------|
-| ms-yellowpage:?input=\[keyword\]&method=\[String or T9\] | Launches the Nearby Numbers app.<br>`input` refers to the keyword you want to search.<br>`method` refers to the type of search (string or T9 search).<br>If `method` is `T9` (a type of keyboard) then `keyword` should be a numeric string that maps to the T9 keyboard letters to search for.<br>If `method` is `String` then `keyword` is the keyword to search for. |
+| `ms-yellowpage:?input=\[keyword\]&method=\[String or T9\]` | Launches the Nearby Numbers app.<br>`input` refers to the keyword you want to search.<br>`method` refers to the type of search (string or T9 search).<br>If `method` is `T9` (a type of keyboard) then `keyword` should be a numeric string that maps to the T9 keyboard letters to search for.<br>If `method` is `String` then `keyword` is the keyword to search for. |
 
 ### People app URI scheme
 
@@ -210,10 +207,10 @@ Or to edit a video: `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime
 
 | URI scheme |Results |
 |------------|--------|
-| ms-photos:viewer?fileName={filename} | Launches the Photos app to view the specified image where {filename} is a fully-qualified path name. For example: `c:\users\userName\Pictures\ImageToView.jpg` |
-| ms-photos:videoedit?InputToken={input token} | Launches the Photos app in video editing mode for the file represented by the file token. **InputToken** is required. Use the  [SharedStorageAccessManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) to get a token for a file. |
-| ms-photos:videoedit?Action={action} | A parameter that indicates which video editing mode to open the Photos app in, where {action} is one of: **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. **Action** is required. |
-| ms-photos:videoedit?StartTime={timespan} | An optional parameter that specifies where to start playing the video. `{timespan}` must be in the format `"hh:mm:ss.ffff"`. If not specified, defaults to `00:00:00.0000` |
+| `ms-photos:viewer?fileName={filename}` | Launches the Photos app to view the specified image where {filename} is a fully-qualified path name. For example: `c:\users\userName\Pictures\ImageToView.jpg` |
+| `ms-photos:videoedit?InputToken={input token}` | Launches the Photos app in video editing mode for the file represented by the file token. **InputToken** is required. Use the  [SharedStorageAccessManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) to get a token for a file. |
+| `ms-photos:videoedit?Action={action}` | A parameter that indicates which video editing mode to open the Photos app in, where {action} is one of: **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. **Action** is required. |
+| `ms-photos:videoedit?StartTime={timespan}` | An optional parameter that specifies where to start playing the video. `{timespan}` must be in the format `"hh:mm:ss.ffff"`. If not specified, defaults to `00:00:00.0000` |
 
 ### Settings app URI scheme
 
@@ -239,7 +236,7 @@ Use the **msnweather:** URI scheme to launch the Weather app.
 
 | URI Scheme | Results |
 |------------|---------|
-| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | Launches the Weather app in the Forecast page based on a location geographic coordinates.<br>`latitude` refers to the latitude of the location.<br> `longitude` refers to the longitude of the location.<br> |
+| `msnweather://forecast?la=\[latitude\]&lo=\[longitude\]` | Launches the Weather app in the Forecast page based on a location geographic coordinates.<br>`latitude` refers to the latitude of the location.<br> `longitude` refers to the longitude of the location. |
 
 ### Microsoft Edge URI scheme
 
@@ -247,4 +244,4 @@ Use the **microsoft-edge:** URI scheme to launch the Microsoft Edge browser to a
 
 | URI Scheme | Results |
 |------------|---------|
-| microsoft-edge:https://example.com/] | Opens the Microsoft Edge browser and navigates to https://example.com/<br> |
+| `microsoft-edge:https://example.com/` | Opens the Microsoft Edge browser and navigates to `https://example.com/` |

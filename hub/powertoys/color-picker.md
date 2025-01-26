@@ -1,7 +1,7 @@
 ---
 title: PowerToys Color Picker utility for Windows
-description: A system-wide color picking utility for Windows to pick colors from the screen and copy the default value to the clipboard.
-ms.date: 08/03/2023
+description: A system-wide color picking utility for Windows to pick colors from any screen and copy it to the clipboard in a configurable format.
+ms.date: 11/19/2024
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Color Picker, Color, Picker]
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Color Picker, Color, Picker]
 
 # Color Picker utility
 
-A system-wide color picking utility for Windows to pick colors from any screen and copy it in a configurable format to the clipboard.
+A system-wide color picking utility for Windows to pick colors from any screen and copy it to the clipboard in a configurable format.
 
 ![Color Picker screenshot](../images/pt-colorpicker-hex-editor.png)
 
@@ -17,7 +17,7 @@ A system-wide color picking utility for Windows to pick colors from any screen a
 
 ### Enabling Color Picker
 
-Enable Color Picker in PowerToys Settings.
+You can enable the Color Picker in PowerToys Settings.
 
 ### Activating Color Picker
 
@@ -25,9 +25,9 @@ Choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd
 
 :::image type="content" source="../images/pt-colorpicker-activation.gif" alt-text="Color Picker behaviors.":::
 
-- **Open editor** opens an editor that lets you choose a color from the colors history, fine-tune a selected color, or pick a new color
-- **Pick a color and open editor** activates Color Picker, then opens an editor and copies the selected color to the clipboard after you've picked a color
-- **Only pick a color** activates Color Picker and copies the selected color to the clipboard
+- **Open editor** opens an editor that lets you choose a color from the colors history, fine-tune a selected color, or pick a new color.
+- **Pick a color and open editor** activates Color Picker, then opens an editor and copies the selected color to the clipboard after you've picked a color.
+- **Only pick a color** activates Color Picker and copies the selected color to the clipboard.
 
 ### Picking colors
 
@@ -46,12 +46,12 @@ Color Picker copies the selected color to the clipboard in the **Default color f
 
 ## Using the Color Picker editor
 
-The Color Picker editor stores a history of up to 20 picked colors and lets you copy them to the clipboard. Choose which color formats are visible in the editor in **Color formats** in PowerToys Settings.
+The Color Picker editor stores a history of up to 20 picked colors and lets you copy them to the clipboard. You can choose which color formats are visible in the editor in **Color formats** in PowerToys Settings.
 
 The colored bar at the top of the Color Picker editor lets you:
 
-- fine tune your chosen color
-- pick a similar color
+- Fine tune your chosen color
+- Pick a similar color
 
 To fine tune your chosen color, select the central color in the color bar. The fine-tuning control lets you change the color's **HSV**, **RGB**, and **HEX** values. **Select** adds the new color to the colors history.
 
@@ -70,10 +70,10 @@ Color Picker has the following settings:
 | Setting | Description |
 | :--- | :--- |
 | **Activation shortcut** | The shortcut that activates Color Picker. |
-| **Activation behavior** | Sets what happens when you activate Color Picker. Read more about this setting in [Activating Color Picker](#activating-color-picker). |
-| **Default color format** | The color format that Color Picker copies to the clipboard. |
-| **Show color name** | Shows a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'. |
-| **Color formats** | Enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about color formats in [Managing color formats](#managing-color-formats).
+| **Activation behavior** | Select what happens when you activate Color Picker. Read more about this setting in [Activating Color Picker](#activating-color-picker). |
+| **Default color format** | The color format that Color Picker uses when copying colors to the clipboard. |
+| **Show color name** | Displays a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'. |
+| **Color formats** | Enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about color formats in [Managing color formats](#managing-color-formats). |
 
 ![Color Picker Settings screenshot](../images/pt-colorpicker-settings.png)
 
@@ -81,7 +81,7 @@ Color Picker has the following settings:
 
 You can add, edit, delete, disable, and change the order of color formats in **Color formats**.
 
-To change the order that color formats appear in the Color Picker editor, select the **more** button (•••) next to a color format and select **Move up** or **Move down**.
+To change the order in which color formats appear in the Color Picker editor, select the **more** button (•••) next to a color format and select **Move up** or **Move down**.
 
 To disable a color format, turn off the toggle next to that color format. Color Picker doesn't show disabled color formats in the editor.
 
@@ -93,8 +93,8 @@ To edit a color format, select it from the list. Edit the color format's **Name*
 
 Define color formats with these parameters:
 
-| Parameter | Meaning             |
-|-----------|---------------------|
+| Parameter | Meaning        |
+|-----------|----------------|
 | %Re  | red                 |
 | %Gr  | green               |
 | %Bl  | blue                |
@@ -115,19 +115,19 @@ Define color formats with these parameters:
 | %Va  | value               |
 | %Wh  | whiteness           |
 | %Bn  | blackness           |
-| %Ca  | chromaticity A        |
-| %Cb  | chromaticity B        |
+| %Ca  | chromaticity A      |
+| %Cb  | chromaticity B      |
 | %Xv  | X value             |
 | %Yv  | Y value             |
 | %Zv  | Z value             |
 | %Dv  | decimal value       |
 | %Na  | color name          |
 
-Format the red, green, blue and alpha values to the following formats:
+Format the red, green, blue, and alpha values to the following formats:
 
-| Formatter | Meaning                    |
-|-----------|----------------------------|
-| b    | byte value (default)       |
+| Formatter | Meaning              |
+|-----------|----------------------|
+| b   | byte value (default)       |
 | h   | hex lowercase one digit    |
 | H   | hex uppercase one digit    |
 | x   | hex lowercase two digits   |
@@ -135,14 +135,14 @@ Format the red, green, blue and alpha values to the following formats:
 | f   | float with leading zero    |
 | F   | float without leading zero |
 
-For example `%ReX` means the red value in hex uppercase two digits format.
+For example, `%ReX` means the red value in hex uppercase two digits format.
 
-Color formats can contain any words or characters that you prefer. For example, the default color format, which shows up on color format creation is: `_'new Color (R = %Re, G = %Gr, B = %Bl)'_`.
+Color formats can contain any words or characters you prefer. For example, the default color format that's displayed upon color format creation is: `_'new Color (R = %Re, G = %Gr, B = %Bl)'_`.
 
 ## Limitations
 
 - Color Picker can't display on top of the Start menu or Action Center, but you can still pick a color.
-- If you started the currently focused application with an administrator elevation (**Run as administrator**), the Color Picker activation shortcut won't work, unless you also started PowerToys with administrator elevation.
-- Wide Color Gamut (WCG) and High Dynamic Range (HDR) color formats are currently not supported.
+- If you started the currently focused application with an administrator elevation (**Run as administrator**), the Color Picker activation shortcut won't work unless you also started PowerToys with administrator elevation.
+- Wide Color Gamut (WCG) and High Dynamic Range (HDR) color formats aren't currently supported.
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

@@ -1,15 +1,16 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 08/03/2023
+ms.date: 11/19/2024
 ms.topic: quickstart
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
+# Customer intent: Learn how to install PowerToys on Windows using an executable file or package manager.
 ---
 
 # Installing PowerToys
 
-We recommend installing PowerToys via GitHub or Microsoft Store, but alternative install methods are also listed if you prefer using a package manager.
+We recommend installing PowerToys via [GitHub](https://aka.ms/installpowertoys) or [Microsoft Store](https://aka.ms/getPowertoys), but alternative install methods are also listed if you prefer using a package manager.
 
 ## Requirements
 
@@ -41,7 +42,7 @@ Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys)
 
 ## Installing with Windows Package Manager
 
-To install PowerToys using the [Windows Package Manager](../package-manager/winget/index.md), it is as simple as running the following command from the command line / PowerShell:
+To install PowerToys using the [Windows Package Manager](../package-manager/winget/index.md), it's as simple as running the following command from the command line / PowerShell:
 
 ```powershell
 winget install --id Microsoft.PowerToys --source winget
@@ -53,7 +54,7 @@ PowerToys supports configuring through `winget configure` using [Desired State C
 
 The installer executable accepts the [Microsoft Standard Installer command-line options](/windows/win32/msi/standard-installer-command-line-options).
 
-Here are the common commands you may want:
+Here are some common commands you may want to use:
 
 | Command  | Abbreviation | Function     |
 |----------|--------------| ------------ |
@@ -67,7 +68,7 @@ Here are the common commands you may want:
 
 Make sure to have [WiX Toolset v3](https://wixtoolset.org/docs/wix3) installed. The command doesn't work with WiX Toolset v4.
 
-This PowerShell example assumes the default install location for WiX Toolset and the PowerToys installer downloaded to the desktop.
+This PowerShell example assumes the default install location for WiX Toolset and that the PowerToys installer has been downloaded to the Windows desktop.
 
 ```powershell
 cd $Env:WIX\"bin"
@@ -78,20 +79,20 @@ cd $Env:WIX\"bin"
 
 ### Fixes for uninstalling 0.51 and earlier builds issues
 
-If you have an issue where the MSI is not accessible, you can download the installer that corresponds with the installed version via the [PowerToys release page](https://github.com/microsoft/PowerToys/releases) and then run the following command. You'll need to change EXECUTABLE_INSTALLER_NAME to the actual file name.
+If you have an issue with the MSI being inaccessible, you can download the installer that corresponds with the installed version via the [PowerToys releases page](https://github.com/microsoft/PowerToys/releases) and run the following command. You'll need to change EXECUTABLE_INSTALLER_NAME to the actual file name.
 
 In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will extract the MSI to your desktop.
 
 ### Clean-up scripts
 
-In case there are problems with uninstalling a version, there are cleanup scripts available:
+If there are problems while uninstalling a version, there are cleanup scripts available:
 
 - <github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool>
 - <github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script>
 
 ## Community-driven install tools
 
-These community-driven alternative install methods are not officially supported and the PowerToys team does not update or manage these packages.
+These community-driven alternative install methods aren't officially supported, and the PowerToys team doesn't update or manage these packages.
 
 ### Installing with Chocolatey
 
@@ -118,7 +119,7 @@ scoop bucket add extras
 scoop install powertoys
 ```
 
-To update PowerToys, run the following command from the command line / PowerShell:
+To update PowerToys using Scoop, run the following command from the command line / PowerShell:
 
 ```powershell
 scoop update powertoys
@@ -128,10 +129,18 @@ If you have issues when installing/updating, file an issue in the [Scoop repo on
 
 ## After installation
 
-After successfully installing PowerToys, an overview window will display with introductory guidance on each of the available utilities.
+After successfully installing PowerToys, an overview window will display with introductory guidance for each of the available utilities.
 
 ## Updates
 
-PowerToys uses an auto-updater that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. Updates can also be checked for manually from the PowerToys Settings.
+PowerToys uses an automatic update checker that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. You can also check for updates manually from the PowerToys Settings.
 
 ![PowerToys Update](../images/powertoys-updates.png)
+
+## Related content
+
+[Microsoft PowerToys: Utilities to customize Windows](index.md)
+
+[General settings for PowerToys](general.md)
+
+[PowerToys on GitHub](https://github.com/microsoft/PowerToys)

@@ -52,47 +52,6 @@ These campaigns will run ads in apps published by other developers who also part
     :::column-end:::
 :::row-end:::
 
-## Ad experiences for campaigns
-
-:::row:::
-    :::column:::
-        ![Banner and banner interstitial ads](images/ads-ban-example.png)
-    :::column-end:::
-	:::column span="2":::
-**Banner and banner interstitial ads**
-
-Banner ads use a portion of the app's real estate. Banner interstitial ads are full-screen ads that grab the complete attention of users.
-
-[EXPLORE MORE >](/windows/uwp/monetize/supported-ad-sizes-for-banner-ads)
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![Video ads](images/ads-video-example.png)
-    :::column-end:::
-	:::column span="2":::
-**Video ads**
-
-Video ads are full-screen ads that show users the features of your game in a visually engaging manner. Video ads are currently available for high-budget campaigns. To learn more, email us at aiacare@microsoft.com.
-
-[EXPLORE MORE >](/windows/uwp/monetize/interstitial-ads)
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![Native ads](images/ads-native-example.png)
-    :::column-end:::
-	:::column span="2":::
-**Native ads**
-
-Native ads enable you to send all the individual components of your ad (such as the image, title, and description) to the receiving app. The app stitches these components together to provide a native experience for the user.
-
-[EXPLORE MORE >](/windows/uwp/monetize/native-ads)
-    :::column-end:::
-:::row-end:::
-
 ## Learn more about app promotion campaigns
 
 ![Learn more about app promotion campaigns](images/app-promotion-campaigns.png)

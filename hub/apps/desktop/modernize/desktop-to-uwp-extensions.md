@@ -910,7 +910,7 @@ To register your context menu handler, follow these instructions.
 1. In your desktop application, implement a [context menu handler](/windows/desktop/shell/context-menu-handlers) by implementing the [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) or [IExplorerCommandState](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) interface. For a sample, see the [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) code sample. Make sure that you define a class GUID for each of your implementation objects. For example, the following code defines a class ID for an implementation of [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand).
 
     ```cpp
-    class __declspec(uuid("d0c8bceb-28eb-49ae-bc68-454ae84d6264")) CExplorerCommandVerb;
+    class __declspec(uuid("00001111-aaaa-2222-bbbb-3333cccc4444")) CExplorerCommandVerb;
     ```
 
 2. In your package manifest, specify a [com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) application extension that registers a COM surrogate server with the class ID of your context menu handler implementation.
@@ -918,8 +918,8 @@ To register your context menu handler, follow these instructions.
     ```xml
     <com:Extension Category="windows.comServer">
         <com:ComServer>
-            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler">
-                <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            <com:SurrogateServer AppId="00001111-aaaa-2222-bbbb-3333cccc4444" DisplayName="ContosoHandler">
+                <com:Class Id="00001111-aaaa-2222-bbbb-3333cccc4444" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
             </com:SurrogateServer>
         </com:ComServer>
     </com:Extension>
@@ -931,7 +931,7 @@ To register your context menu handler, follow these instructions.
     <desktop4:Extension Category="windows.fileExplorerContextMenus">
         <desktop4:FileExplorerContextMenus>
             <desktop4:ItemType Type=".rar">
-                <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+                <desktop4:Verb Id="Command1" Clsid="00001111-aaaa-2222-bbbb-3333cccc4444" />
             </desktop4:ItemType>
         </desktop4:FileExplorerContextMenus>
     </desktop4:Extension>
@@ -950,15 +950,15 @@ To register your context menu handler, follow these instructions.
       <Extensions>
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler">
-              <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            <com:SurrogateServer AppId="00001111-aaaa-2222-bbbb-3333cccc4444" DisplayName="ContosoHandler">
+              <com:Class Id="00001111-aaaa-2222-bbbb-3333cccc4444" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
             </com:SurrogateServer>
           </com:ComServer>
         </com:Extension>
         <desktop4:Extension Category="windows.fileExplorerContextMenus">
           <desktop4:FileExplorerContextMenus>
             <desktop4:ItemType Type=".contoso">
-              <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+              <desktop4:Verb Id="Command1" Clsid="00001111-aaaa-2222-bbbb-3333cccc4444" />
             </desktop4:ItemType>
           </desktop4:FileExplorerContextMenus>
         </desktop4:Extension>

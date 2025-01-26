@@ -69,7 +69,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox), [Password property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.password), [PasswordChar property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.passwordchanged)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see PasswordBox in action](winui3gallery:/item/PasswordBox).
+> [Open the WinUI 3 Gallery app and see PasswordBox in action](winui3gallery:/item/PasswordBox)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

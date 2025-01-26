@@ -74,15 +74,15 @@ To create a Microsoft Store page URL for your app with a custom campaign ID:
 
 2.  Get the link for your app's Store listing in HTML or protocol format.
 
-    * Use the HTML URL if you want customers to navigate to your app's web-based Store listing in a browser on any operating system. On Windows devices, the Store app will also launch and display your app's listing. This URL has the format **`https://www.microsoft.com/store/apps/*your app ID*`**. For example, the HTML URL for Skype is `https://www.microsoft.com/store/apps/9wzdncrfj364`. You can find this URL on your [App identity](view-app-identity-details.md#link-to-your-apps-listing) page.
+    * Use the HTML URL if you want customers to navigate to your app's web-based Store listing in a browser on any operating system. On Windows devices, the Store app will also launch and display your app's listing. This URL has the format **`https://apps.microsoft.com/detail/*your app ID*`**. For example, the HTML URL for Skype is `https://apps.microsoft.com/detail/9wzdncrfj364`. You can find this URL on your [App identity](view-app-identity-details.md#link-to-your-apps-listing) page.
 
     * Use the protocol format if you are promoting your app from within other Windows apps that are running on a device or computer with the UWP app installed, or when you know that your customers are on a device which supports the Microsoft Store. This link will go directly to your app's Store listing without opening a browser. This URL has the format **`ms-windows-store://pdp/?PRODUCTID=*your app id*`**. For example, the protocol URL for Skype is `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`.
 
 3.  Append the following string to the end of the URL for your app:
 
-    * For an HTML format URL, append **`?cid=*my custom campaign ID*`**. For example, if Skype introduces a campaign ID with the value **custom\_campaign**, the new URL including the campaign ID would be: `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`.
+    * For an HTML format URL, append **`?cid=*my custom campaign ID*`**. For example, if Skype introduces a campaign ID with the value **custom_campaign**, the new URL including the campaign ID would be: `https://apps.microsoft.com/detail/9wzdncrfj364?cid=custom_campaign`.
 
-    * For a protocol format URL, append **`&cid=*my custom campaign ID*`**. For example, if Skype introduces a campaign ID with the value **custom\_campaign**, the new protocol URL including the campaign ID would be: `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`.
+    * For a protocol format URL, append **`&cid=*my custom campaign ID*`**. For example, if Skype introduces a campaign ID with the value **custom_campaign**, the new protocol URL including the campaign ID would be: `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom_campaign`.
 
 <span id="programmatically"></span>
 

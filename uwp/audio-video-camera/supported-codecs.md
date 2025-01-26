@@ -20,7 +20,8 @@ The following tables show the audio codec and format support for each device fam
 > [!NOTE] 
 > Where AMR-NB support is indicated, this codec is not supported on Server SKUs.
 
- 
+> [!NOTE]
+> On versions of Windows prior to Windows 11, version 24H2, the AC-3 codec is included. Beginning with Windows 11, version 24H2, the AC-3 codec is no longer included with Windows. However, many device manufacturers will pre-install an AC-3 codec. 
 
 ### Desktop
 

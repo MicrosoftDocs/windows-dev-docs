@@ -1,9 +1,10 @@
 ---
 title: PowerToys Awake utility for Windows
 description: A tool for a Windows computer to stay awake.
-ms.date: 08/09/2024
-ms.topic: article
+ms.date: 11/19/2024
+ms.topic: concept-article
 ms.localizationpriority: medium
+# Customer intent: As a Windows power user, I want to learn how to configure and use the PowerToys Awake utility.
 ---
 
 # PowerToys Awake utility
@@ -89,7 +90,7 @@ The `settings.json` configuration file is located in `%HomePath%\AppData\Local\M
 
 **Keep awake temporarily** options in the system tray can be adjusted by modifying the `"customTrayTimes"` property, a dictionary consisting of key-value pairs that contain the name of the shortcut and its duration (in seconds) to stay awake.
 
-For example, here is a `settings.json` file that contains custom tray time shortcut definitions:
+For example, the following `settings.json` file contains custom tray time shortcut definitions:
 
 ```json
 
@@ -103,9 +104,9 @@ For example, here is a `settings.json` file that contains custom tray time short
         "expirationDateTime": "2024-07-29T15:53:00-07:00",
         "customTrayTimes":
         {
-			"8 hours": 28800,
-			"12 hours": 43200
-		}
+            "8 hours": 28800,
+            "12 hours": 43200
+        }
     },
     "name": "Awake",
     "version": "1.0"

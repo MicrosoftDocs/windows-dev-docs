@@ -2,7 +2,7 @@
 description: Z-depth, or relative depth, and shadow are two ways to incorporate depth into your app to help users focus naturally and efficiently.
 title: Z-depth and shadow for Windows apps
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 09/26/2024
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
@@ -30,11 +30,11 @@ Shadow is one way a user perceives elevation. Light above an elevated object cre
 
 In Windows apps, shadows should be used in a purposeful rather than aesthetic manner. Using too many shadows will decrease or eliminate the ability of the shadow to focus the user.
 
-If you use standard controls, shadows are already incorporated into your UI. However, you can manually include shadows in your UI by using either the [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow) or the [DropShadow](/uwp/api/windows.ui.composition.dropshadow) APIs.
+If you use standard controls, shadows are already incorporated into your UI. However, you can manually include shadows in your UI by using either the [ThemeShadow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.themeshadow) or the [DropShadow](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow) APIs.
 
 ## ThemeShadow
 
-The [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow) type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates.
+The [ThemeShadow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.themeshadow) type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates.
 
 - It applies shadows to elements based on z-depth value, emulating depth.
 - It keeps shadows consistent throughout and across applications thanks to built in shadow aesthetics.
@@ -68,7 +68,7 @@ The following common controls will automatically use ThemeShadow to cast shadows
 
 It is often the case that your app's UI uses a popup for scenarios where you need user's attention and quick action. These are great examples when shadow should be used to help create hierarchy in your app's UI.
 
-ThemeShadow automatically casts shadows when applied to any XAML element in a [Popup](/uwp/api/windows.ui.xaml.controls.primitives.popup). It will cast shadows on the app background content behind it and any other open Popups below it.
+ThemeShadow automatically casts shadows when applied to any XAML element in a [Popup](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup). It will cast shadows on the app background content behind it and any other open Popups below it.
 
 To use ThemeShadow with Popups, use the `Shadow` property to apply a ThemeShadow to a XAML element. Then, elevate the element from other elements behind it, for example by using the z component of the `Translation` property.
 For most Popup UI, the recommended default elevation relative to the app background content is 32 effective pixels.
@@ -94,9 +94,9 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 ### Disabling default ThemeShadow on custom Flyout controls
 
-Controls based on [Flyout](/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.menuflyout) or [TimePickerFlyout](/uwp/api/windows.ui.xaml.controls.timepickerflyout) automatically use ThemeShadow to cast a shadow.
+Controls based on [Flyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flyout), [DatePickerFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepickerflyout), [MenuFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout) or [TimePickerFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepickerflyout) automatically use ThemeShadow to cast a shadow.
 
-If the default shadow doesn't look correct on your control's content then you can disable it by setting the [IsDefaultShadowEnabled](/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) property to `false` on the associated FlyoutPresenter:
+If the default shadow doesn't look correct on your control's content then you can disable it by setting the [IsDefaultShadowEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) property to `false` on the associated FlyoutPresenter:
 
 ```xaml
 <Flyout>
@@ -145,9 +145,9 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 
 ## Drop shadow
 
-DropShadow does not provide built in shadow values and you need to specify them yourself. For example implementations, see the [DropShadow](/uwp/api/windows.ui.composition.dropshadow) class.
+DropShadow does not provide built in shadow values and you need to specify them yourself. For example implementations, see the [DropShadow](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow) class.
 
-> [!TIP] 
+> [!TIP]
 > Starting with Windows 11, if the app targets the Windows SDK version 22000 or later, ThemeShadow will behave like a drop shadow. If you are using DropShadow, you might consider using ThemeShadow instead.
 
 ## Which shadow should I use?

@@ -1,8 +1,8 @@
 ---
-description: Customize the title bar of a desktop app to match the personality of the app.
+description: Customize the title bar of a desktop app that uses the Windows App SDK to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 01/15/2024
+ms.date: 11/21/2024
 ms.topic: article
 keywords: windows 11, title bar
 ms.localizationpriority: medium

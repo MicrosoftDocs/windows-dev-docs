@@ -1,7 +1,7 @@
 ---
 title: How emulation works on Arm
 description: Learn how emulation for x86 and x64 apps makes the rich ecosystem of existing Win32 apps available on Arm devices.
-ms.date: 10/23/2023
+ms.date: 12/02/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -35,7 +35,7 @@ Note that emulation only supports user mode code and does not support drivers; a
 ## Detecting emulation
 
 An x86 or x64 app will not know that it is running on a Windows on Arm PC, unless it calls specific APIs that are designed to convey knowledge of the Arm64 host, such as [IsWoW64Process2](/windows/desktop/api/wow64apiset/nf-wow64apiset-iswow64process2).  Apps under emulation that query for processor details including metadata or feature capabilities will receive details corresponding to the emulated virtual processor.  For compatibility reasons, the API [GetNativeSystemInfo](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getnativesysteminfo) will also return emulated processor details when run from an app under emulation. 
- 
+
 For apps looking to detect the emulation capabilities of the operating system, use the API [GetMachineTypeAttributes](/windows/win32/api/processthreadsapi/nf-processthreadsapi-getmachinetypeattributes).
 
 ## Updating to support an Arm version of your app

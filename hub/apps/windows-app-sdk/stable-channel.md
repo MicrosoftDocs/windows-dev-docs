@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 09/04/2024
+ms.date: 01/15/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -30,6 +30,47 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
+
+### Version 1.6.4 (1.6.250108002)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
+- Fixed an issue with text selection highlighting in a multi-line TextBox. For more info, see GitHub issue [#9965](https://github.com/microsoft/microsoft-ui-xaml/issues/9965).
+- Fixed an issue where the DDLM package would sometimes not install, preventing launch of unpackaged apps. For more info, see GitHub issue [#3855](https://github.com/microsoft/WindowsAppSDK/issues/3855).
+- Fixed a potential crash in Detours in some scenarios. For more info, see GitHub issue [#4937](https://github.com/microsoft/WindowsAppSDK/pull/4937).
+- Fixed another potential issue where a menu off a CommandBar may incorrectly open up instead of down when the CommandBar is at the bottom of the window.
+- Fixed a potential crash when running on older graphics hardware.
+- Fixed a potential crash in pointer event handling when closing a window.
+- Fixed a potential crash caused by `CUIAWindow::InitIds` sometimes triggering reentrancy.
+- Fixed a potential crash when using `CompositionCapabilities.Changed` event.
+- Fixed an issue with some Unicode characters displaying as squares in TextBox/RichEditBox.
+- Fixed `PackageDeploymentManager.EnsurePackage*Async()` handling of `options.RegisterNewerIfAvailable`. For more info, see GitHub issue [#4864](https://github.com/microsoft/WindowsAppSDK/issues/4864).
+
+### Version 1.6.3 (1.6.241114003)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
+- Fixed an issue where reading the `AppWindow.ExtendsContentIntoTitleBar` property turns on custom titlebar rendering. For more info, see GitHub issue [#9988](https://github.com/microsoft/microsoft-ui-xaml/issues/9988). 
+- Fixed a potential crash during destruction of a `TextBox`/`RichEditBox`. For more info, see GitHub issue [#9070](https://github.com/microsoft/microsoft-ui-xaml/issues/9070). 
+- Fixed an issue where `PackageDeploymentManager.IsPackageReadyOrNewerAvailable()` failed. For more info, see GitHub issue [#4817](https://github.com/microsoft/WindowsAppSDK/issues/4817). 
+- Fixed an issue where `ScrollViewer` would leak. 
+- Added detection for a rare scenario where the app stops rendering and never recovers. 
+- Fixed an issue where `PackageDeploymentManager.RegisterPackageSetAsync()` requires URI when it should be optional to register by PackageFamilyName. 
+- Fixed an issue that prevented apps from being installed or uninstalled. For more info, see GitHub issue [#4881](https://github.com/microsoft/WindowsAppSDK/issues/4881).
+
+This release includes the following new APIs which allow for providers of Widgets to incorporate web content in their Widgets: 
+
+```C# 
+Microsoft.Windows.Widgets.Providers 
+  IWidgetManager2 
+  IWidgetProviderMessage 
+  IWidgetResourceProvider 
+  WidgetManager 
+     SendMessageToContent 
+
+  WidgetMessageReceivedArgs 
+  WidgetResourceRequest 
+  WidgetResourceRequestedArgs 
+  WidgetResourceResponse 
+``` 
 
 ### Version 1.6.1 (1.6.240923002)
 

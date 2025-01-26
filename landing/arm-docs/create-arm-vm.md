@@ -1,7 +1,7 @@
 ---
 title: Quickstart - Create a Windows on Arm VM in the Azure portal
 description: In this quickstart, you learn how to use the Azure portal to create a Windows on Arm virtual machine
-ms.date: 12/20/2023
+ms.date: 11/13/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -17,6 +17,8 @@ the Azure portal. This method provides a browser-based user interface to create 
 This quickstart shows you how to use the Azure portal to deploy a virtual machine (VM) in Azure that runs Windows 11 Professional on Arm-based processors. To see your VM in action, you then connect to the VM using a Remote Desktop client.
 
 If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+
+If you are interested in creating a local Windows on Arm VM on either an Arm-based Windows or Apple device, see [Windows 11 Arm ISO files: Creating Virtual Machines](/windows/arm/iso#creating-virtual-machines).
 
 ## Sign in to Azure
 

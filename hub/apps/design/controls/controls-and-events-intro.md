@@ -20,7 +20,7 @@ In Windows app development, a *control* is a UI element that displays content or
 
 A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [list/details](list-details.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [NavigationView](navigationview.md) control to implement the tab pattern.
 
-In many cases, you can use a control as-is. But XAML controls separate function from structure and appearance, so you can make various levels of modification to make them fit your needs. In the [Style](../style/index.md) section, you can learn how to use [XAML styles](../style/xaml-styles.md) and [control templates](../style/xaml-control-templates.md) to modify a control.
+In many cases, you can use a control as-is. But XAML controls separate function from structure and appearance, so you can make various levels of modification to make them fit your needs. In the [Style](../style/index.md) section, you can learn how to use [XAML styles](../../develop/platform/xaml/xaml-styles.md) and [control templates](../../develop/platform/xaml/xaml-control-templates.md) to modify a control.
 
 In this section, we provide guidance for each of the XAML controls you can use to build your app UI. To start, this article shows you how to add controls to your app. There are 3 key steps to using controls to your app:
 

@@ -56,7 +56,7 @@ If you are designing for the 10-foot experience, go with the double-row layout. 
 > - **Important APIs**: [MediaPlayerElement class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement), [MediaTransportControls class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the MediaPlayerElement in action](winui3gallery:/item/MediaPlayerElement).
+> [Open the WinUI 3 Gallery app and see the MediaPlayerElement in action](winui3gallery:/item/MediaPlayerElement)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

@@ -1,10 +1,13 @@
 ---
 title: PowerToys PowerRename utility for Windows
 description: A windows shell extension for bulk renaming of files
-ms.date: 08/06/2023
-ms.topic: article
+ms.collection: ce-skilling-ai-copilot
+ms.custom: copilot-scenario-highlight
+ms.date: 01/23/2025
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, regex, Boost]
+# Customer intent: As a Windows power user, I want to learn how to use the PowerToys PowerRename utility to rename multiple files at once.
 ---
 
 # PowerRename utility
@@ -14,12 +17,12 @@ PowerRename is a bulk renaming tool that enables you to:
 - Modify the file names of a large number of files, without giving all of the files the same name.
 - Perform a search and replace on a targeted section of file names.
 - Perform a regular expression rename on multiple files.
-- Check expected rename results in a preview window before finalizing a bulk rename.
+- Check the expected rename results in a preview window before finalizing a bulk rename.
 - Undo a rename operation after it is completed.
 
 ## Demo
 
-In this demo, all instances of the file name "foo" are replaced with "foobar". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command makes it possible to undo the last change.
+In this demo, all instances of the file name "foo" are replaced with "foobar". Since all the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command makes it possible to undo the last change.
 
 ![PowerRename Demo](../images/powerrename-demo.gif)
 
@@ -31,11 +34,11 @@ After selecting files in Windows File Explorer, right-click and select **Rename 
 
 ### Search for
 
-Enter text or a [regular expression](https://wikipedia.org/wiki/Regular_expression) to find the files in your selection that contain the criteria matching your entry. You will see the matching items in the _Preview_ pane.
+Enter text or a [regular expression](https://wikipedia.org/wiki/Regular_expression) to find the files in your selection that contain the criteria matching your entry. You'll see the matching items in the *Preview* pane.
 
 ### Replace with
 
-Enter text to replace the _Search for_ value entered previously. You can see the original file name and renamed file name in the _Preview_ pane.
+Enter text to replace the *Search for* value entered previously. You can see the original file name and renamed file name in the *Preview* pane.
 
 ### Use regular expressions
 
@@ -45,7 +48,7 @@ For more information regarding the **Use Boost library** option in the settings 
 
 ### Match all occurrences
 
-If selected, all matches of text in the _Search_ field will be replaced with the Replace text. Otherwise, only the first instance of the _Search for_ text in the file name will be replaced.
+If selected, all matches of the text in the *Search* field will be replaced with the Replace text. Otherwise, only the first instance of the *Search for* text in the file name will be replaced.
 
 For example, given the file name: `powertoys-powerrename.txt`:
 
@@ -59,7 +62,7 @@ The value of the renamed file would result in:
 
 ### Case sensitive
 
-If selected, the text specified in the _Search_ field will only match text in the items if the text is the same case. Case matching will be insensitive by default.
+If selected, the text specified in the *Search* field will only match text in the items if the text is the same case. Case matching will be insensitive by default.
 
 ### Apply to: Filename only
 
@@ -87,7 +90,7 @@ Choose between four options to either convert items to be all lowercase, all upp
 
 ### Enumerate items
 
-If selected, you can use the following patterns as part of the _Replace with_ text:
+If selected, you can use the following patterns as part of the *Replace with* text:
 
 | Variable pattern | Explanation                                                            |
 |:-----------------|:-----------------------------------------------------------------------|
@@ -98,13 +101,13 @@ If selected, you can use the following patterns as part of the _Replace with_ te
 
 You can also use multiple counters in the same replace string and combine customizations.
 
-For example, given a _Search_ text `a` and a set of files:
+For example, given a *Search* text `a` and a set of files:
 
 - a.jpg
 - ab.jpg
 - abc.jpg
 
-A _Replace with_ text `Image_${padding=4;increment=2;start=10}_` would produce the following:
+A *Replace with* text `Image_${padding=4;increment=2;start=10}_` would produce the following:
 
 - Image_0010_.jpg
 - Image_0012_b.jpg
@@ -112,22 +115,22 @@ A _Replace with_ text `Image_${padding=4;increment=2;start=10}_` would produce t
 
 ### Random string values
 
-If selected, you can use the following patterns as part of the _Replace with_ text:
+If selected, you can use the following patterns as part of the *Replace with* text:
 
 | Variable pattern    | Explanation                                                                                |
 | :------------------ | :----------------------------------------------------------------------------------------- |
 | `${rstringalnum=X}` | Random string with uppercase letters, lowercase letters and 0-9 digits, customized length. |
 | `${rstringalpha=X}` | Random string with uppercase letters and lowercase letters, customized length.             |
 | `${rstringdigit=X}` | Random string with 0-9 digits, customized length.                                          |
-| `${ruuidv4}`      | Random UUID according to v4 specification.                                                 |
+| `${ruuidv4}`        | Random UUID according to v4 specification.                                                 |
 
 By default, random string values created are mixed case. You can adjust the generating behavior with the general [text formatting options that PowerRename provides](#text-formatting).
 
-If you wish to create UUID values with braces, you can add `{` and `}` to the _Replace with_ input in combination with the ruuidv4 pattern accordingly: `{${ruuidv4}}`.
+If you wish to create UUID values with braces, you can add `{` and `}` to the *Replace with* input in combination with the ruuidv4 pattern accordingly: `{${ruuidv4}}`.
 
 ## Replace using file creation date and time
 
-The creation date and time attributes of a file can be used in the _Replace with_ text by entering a variable pattern according to the table below. Selecting the tool-tip in the _Replace with_ field allows you to view and select from the supported patterns.
+The creation date and time attributes of a file can be used in the *Replace with* text by entering a variable pattern according to the table below. Selecting the tooltip in the *Replace with* field allows you to view and select from the supported patterns.
 
 | Variable pattern | Explanation |
 | :---             | :--- |
@@ -154,8 +157,8 @@ The creation date and time attributes of a file can be used in the _Replace with
 
 For example, given the file names:
 
-- `powertoys.png`, created on 11/02/2020 _(november second)_
-- `powertoys-menu.png`, created on 11/03/2020 _(november third)_
+- `powertoys.png`, created on 11/02/2020 *(november second)*
+- `powertoys-menu.png`, created on 11/03/2020 *(november third)*
 
 Enter the criteria to rename the items:
 
@@ -169,11 +172,11 @@ The value of the renamed file would result in:
 
 ## Regular expressions
 
-For most use cases, a simple search and replace is sufficient. There may be occasions, however, in which complicated renaming tasks require more control. [Regular Expressions](https://wikipedia.org/wiki/Regular_expression) can help.
+For most use cases, a simple search and replace is sufficient. However, there may be occasions in which complicated renaming tasks require more control. [Regular Expressions](https://wikipedia.org/wiki/Regular_expression) can help in this scenario.
 
-Regular Expressions define a search pattern for text. They can be used to search, edit and manipulate text. The pattern defined by the regular expression may match once, several times, or not at all for a given string. PowerRename uses the [ECMAScript](https://wikipedia.org/wiki/ECMAScript) grammar, which is common amongst modern programming languages.
+Regular Expressions define a search pattern for text. They can be used to search, edit, and manipulate text. For a given string, the pattern defined by the regular expression may match once, several times, or not at all. PowerRename uses the [ECMAScript](https://wikipedia.org/wiki/ECMAScript) grammar, which is common amongst modern programming languages.
 
-To enable regular expressions, select **Use Regular Expressions**. Note: You will likely want to select **Match all occurrences** while using regular expressions.
+To enable regular expressions, select **Use Regular Expressions**. Note that you'll likely want to select **Match all occurrences** while using regular expressions.
 
 To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) instead of the standard library, select the **Use Boost library** option in the PowerToys settings. It enables extended features, like [lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind), which are not supported by the standard library.
 
@@ -192,8 +195,7 @@ Simple matching examples.
 | `.+?(?=bar)`    | Match everything up to "bar"                           |
 | `foo[\s\S]*bar` | Match everything between and including "foo" and "bar" |
 
-Matching and variable examples. Capturing groups are defined in parentheses `()`. To refer to them, use `$` followed by a number: `$1` will refer to the first group, `$2` to the second etc.
-When using the variables, "Match all occurrences" must be selected.
+Matching and variable examples. Capturing groups are defined in parentheses `()`. To refer to them, use `$` followed by a number: `$1` will refer to the first group, `$2` to the second etc. When using the variables, "Match all occurrences" must be selected.
 
 | Search for                                              | Replace with | Description                                                                          |
 |:--------------------------------------------------------|:-------------|:-------------------------------------------------------------------------------------|
@@ -202,12 +204,30 @@ When using the variables, "Match all occurrences" must be selected.
 | `(.*)`                                                  | `$1.txt`     | Appends ".txt" extension to existing file                                            |
 | `(^\w+\.$)\|(^\w+$)`                                    | `$2.txt`     | Appends ".txt" extension to existing file name only if it does not have an extension |
 | `(\d\d)-(\d\d)-(\d\d\d\d)` or `(\d{2})-(\d{2})-(\d{4})` | `$3-$2-$1`   | Move parts in the filename: "29-03-2020" becomes "2020-03-29"                      |
-| `^(.{n})(.*)` or `(.*)(.{n})$`                          | `$1foo$2`    | Insert "foo" _n_ characters from the beginning or the end, respectively              |
-| `^.{n}` or `.{n}$`                                      | nothing      | Trim _n_ characters from the beginning or the end, respectively                      |
+| `^(.{n})(.*)` or `(.*)(.{n})$`                          | `$1foo$2`    | Insert "foo" *n* characters from the beginning or the end, respectively              |
+| `^.{n}` or `.{n}$`                                      | nothing      | Trim *n* characters from the beginning or the end, respectively                      |
+
+### Ask Microsoft Copilot for help with regular expressions
+
+You can get AI assistance from [Copilot](https://copilot.microsoft.com/) to generate simple or complex regular expressions. You can customize the prompt to generate a string per your requirements.
+
+The following text shows an example prompt for Copilot:
+
+```copilot-prompt
+Generate a regular expression to match a string that starts with "foo" and ends with "bar" and has at least six letters and two numeric characters in between them.
+```
+
+Copilot will generate a regular expression similar to the following:
+
+```
+^foo(?=[A-Za-z0-9]{8,}bar$)(?=(.*\d){2})[A-Za-z0-9]*bar$
+```
+
+Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://www.microsoft.com/microsoft-copilot/learn/).
 
 ### Additional resources for learning regular expressions
 
-There are great examples/cheatsheets available online to help you:
+There are some useful examples/cheatsheets available to help you:
 
 [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html)
 
@@ -215,15 +235,15 @@ There are great examples/cheatsheets available online to help you:
 
 ## File list filters
 
-Filters can be used in PowerRename to narrow the results of the rename. Use the _Preview_ pane to check expected results.
+Filters can be used in PowerRename to narrow the results of the rename. Use the *Preview* pane to check expected results.
 
-- **Original**, the first column in the _Preview_ pane switches between:
+- **Original**, the first column in the *Preview* pane switches between:
   - Selected: The file is selected to be renamed
-  - Cleared: The file is not selected to be renamed (even though it fits the value entered in the search criteria)
+  - Cleared: The file isn't selected to be renamed (even though it fits the value entered in the search criteria)
 
-- **Renamed**, the second column in the _Preview_ pane can be toggled:
-  - The default preview will show all selected files, with only files matching the _Search for_ criteria displaying the updated rename value.
-  - Selecting the _Renamed_ header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
+- **Renamed**, the second column in the *Preview* pane can be toggled:
+  - The default preview will show all selected files, with only files matching the *Search for* criteria displaying the updated rename value.
+  - Selecting the *Renamed* header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
 ![PowerToys PowerRename Filter demo](../images/powerrename-demo2.gif)
 
@@ -233,11 +253,11 @@ Additional options can be configured in the settings, as described below:
 
 | Setting | Description |
 | :--- | :--- |
-| Show PowerRename in | PowerRename appears as one of the default options or only in the extended context menu |
-| Hide icon in context menu | Hides the PowerRename icon in the context menu |
-| Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename |
-| Maximum number of items | The largest number of search and replace suggestions to display |
-| Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used |
-| Use Boost library | Enable extended regex functionality. See [Regular Expressions](#regular-expressions) for more details |
+| Show PowerRename in | PowerRename appears as one of the default options or only in the extended context menu. |
+| Hide icon in context menu | Hides the PowerRename icon in the context menu. |
+| Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename. |
+| Maximum number of items | The largest number of search and replace suggestions to display. |
+| Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used. |
+| Use Boost library | Enable extended regex functionality. See [Regular Expressions](#regular-expressions) for more details. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

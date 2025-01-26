@@ -1,6 +1,6 @@
 ---
-description: How materials and surfaces are arranged to create depth and hierarchy in Windows 11
-title: Layering and elevation in Windows 11
+description: How surfaces are arranged to create depth and hierarchy in Windows
+title: Layering and elevation in Windows
 ms.assetid: E00B6D9A-C8AA-4E6E-ADC4-13303AC290D9
 ms.date: 06/24/2021
 ms.topic: article
@@ -8,30 +8,12 @@ keywords: windows 11, design, ui, uiux, layering, elevation, shadows
 ms.localizationpriority: medium
 ---
 
-# Layering and elevation in Windows 11
+# Elevation in Windows
 
 Windows 11 uses layering and elevation as its foundation for app hierarchy. Hierarchy communicates important information about how to navigate within an app while keeping the user's attention focused on the most important content. Layering and elevation are powerful visual cues that modernize experiences and help them feel coherent within Windows.
 
-## Layering
-
-:::row:::
-    :::column:::
-        ![An application window with a single content area](images/layering_LayeringMain1.svg)
-    :::column-end:::
-    :::column:::
-        ![An application window with multiple content areas](images/layering_LayeringMain2.svg)
-    :::column-end:::
-:::row-end:::
-
-Layering is the concept of overlapping one surface with another, creating two or more visually distinguished areas within the same application.  
-
-> [!NOTE]
-> Layering in Windows 11 is tightly coupled with the use of materials. Please reference the [materials section](materials.md) for specific guidance on how those are applied.
-
-Windows 11 uses a two-layer system for applications. These two layers create hierarchy and provide clarity, keeping users focused on what's most important.
-
-- The **base** layer is an app's foundation. It is the bottommost layer of every app, and contains controls related to app menus, commands, and navigation.
-- The **content** layer focuses the user on the app's central experience. The content layer may be on contiguous element, or separated into cards that segment content.
+> [!TIP]
+> This article describes how the [Fluent Design language](https://fluent2.microsoft.design/) is applied to Windows apps. For more information, see [**Fluent Design - Elevation**](https://fluent2.microsoft.design/elevation).
 
 ## Elevation
 
@@ -134,3 +116,24 @@ Controls in Windows 11 vary their elevation and contour to indicate state. The i
         **Pressed**<br>Elevation value: 1<br>Stroke width: 1
     :::column-end:::
 :::row-end:::
+
+## Layering
+
+:::row:::
+    :::column:::
+        ![An application window with a single content area](images/layering_LayeringMain1.svg)
+    :::column-end:::
+    :::column:::
+        ![An application window with multiple content areas](images/layering_LayeringMain2.svg)
+    :::column-end:::
+:::row-end:::
+
+Layering is the concept of overlapping one surface with another, creating two or more visually distinguished areas within the same application.  
+
+> [!NOTE]
+> Layering in Windows is tightly coupled with the use of materials. Please reference the [materials section](materials.md) for specific guidance on how those are applied.
+
+Windows 11 uses a two-layer system for applications. These two layers create hierarchy and provide clarity, keeping users focused on what's most important.
+
+- The **base** layer is an app's foundation. It is the bottommost layer of every app, and contains controls related to app menus, commands, and navigation.
+- The **content** layer focuses the user on the app's central experience. The content layer may be on contiguous element, or separated into cards that segment content.

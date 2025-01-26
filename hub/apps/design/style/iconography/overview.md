@@ -13,7 +13,8 @@ App icons are the visual indicators we use to help users find and launch an appl
 
 It's the first impression of your app and we want to help make sure it's a great one. This article covers the best practices for Windows app icon design and implementation to provide the best experience in the Windows ecosystem.
 
-This article describes icons that represent your app in Windows and the Windows Store. To learn about icons that you use inside your app UI, see [Icons in Windows apps](../icons.md).
+> [!TIP]
+> This article describes icons that represent your app in Windows and the Windows Store. To learn about icons that you use inside your app UI, see [Icons in Windows apps](../icons.md).
 
 ## Where do app icons appear?
 

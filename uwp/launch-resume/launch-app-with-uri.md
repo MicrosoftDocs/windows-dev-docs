@@ -2,7 +2,7 @@
 title: Launch an app with a URI
 description: This section describes how to use a Uniform Resource Identifier (URI) to launch one app from another app.
 ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
-ms.date: 02/08/2017
+ms.date: 12/06/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -24,5 +24,6 @@ This section describes how to use a Uniform Resource Identifier (URI) to launch 
 | [Launch screen snipping](launch-screen-snipping.md) | Learn how to use URI schemes to open a new snip, or to open the Snip & Sketch app. |
 | [Enable apps for websites using app URI handlers](web-to-app-linking.md) | Drive user engagement with your app by supporting the Apps for Websites feature. |
 
-## Related Topics
-* [Launch an app on a remote device](launch-a-remote-app.md)
+## Related content
+
+- [Launch an app on a remote device](launch-a-remote-app.md)

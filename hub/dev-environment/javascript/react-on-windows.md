@@ -2,7 +2,7 @@
 title: Install React on Windows
 description: Install a React development environment on Windows.
 ms.topic: article
-ms.date: 03/01/2024
+ms.date: 11/25/2024
 ---
 
 # Install React directly on Windows
@@ -12,7 +12,7 @@ This guide will walk through installing React directly on Windows using the [vit
 
 We recommend following these instructions if you are new to React and just interested in learning. If you are creating a single-page app (SPA) that you would like to use Bash commands or tools with and/or plan to deploy to a Linux server, we recommend that you [install with vite on Windows Subsystem for Linux (WSL)](./react-on-wsl.md).
 
-For more general information about React, deciding between React (web apps), React Native (mobile apps), and React Native for Windows (desktop apps), see the [React overview](./react-overview.md).
+For more general information about React, deciding between React (web apps), React Native (mobile apps), and React Native for Desktop (desktop apps), see the [React overview](./react-overview.md).
 
 ## Create your React app
 
@@ -41,7 +41,7 @@ To install Create React App:
 - [Vite](https://vitejs.dev/)
 - [Install Next.js](./nextjs-on-wsl.md)
 - [Install Gatsby](./gatsby-on-wsl.md)
-- [Install React Native for Windows](https://microsoft.github.io/react-native-windows/docs/getting-started)
+- [Install React Native for Desktop](https://microsoft.github.io/react-native-windows/docs/getting-started)
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
 - [Install NodeJS on WSL](./nodejs-on-wsl.md)
 - Try the tutorial: [Using React in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)

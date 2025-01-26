@@ -57,7 +57,7 @@ Here are some important things to keep in mind when choosing to distribute your 
 
 ## Discoverability
 
-The selections in the **Discoverability** section indicate how customers can discover and acquire your app.
+The selections in the **Discoverability** section indicate how customers can discover and acquire your app. Note that Discoverability works together with Schedule. Your product is discoverable after its scheduled date. See [Base schedule and Release](./schedule-pricing-changes.md#base-schedule) for more details
 
 > [!IMPORTANT]
 > If you select **Private audience**, your **Discoverability** selections only apply to people in your private audience. Customers who are not in the groups you specified won’t be able to get the app or even see its listing.

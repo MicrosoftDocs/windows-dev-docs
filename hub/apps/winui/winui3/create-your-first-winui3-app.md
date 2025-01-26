@@ -1,8 +1,8 @@
 ---
 title: Create your first WinUI 3 (Windows App SDK) project
-description: In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a WinUI 3 user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
+description: Learn how to use Visual Studio to create a new project for a C# .NET or C++ app that has a WinUI 3 user interface (UI).
 ms.topic: article
-ms.date: 01/25/2024
+ms.date: 11/21/2024
 keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, app sdk, Windows App SDK, WinUI 3
 ms.localizationpriority: medium
 ---
@@ -30,7 +30,7 @@ Packaging is an important consideration of any Windows App SDK project. For more
 
 1. In Visual Studio, select **File** > **New** > **Project**.
 
-1. In the **New Project** dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **winui**, respectively.
+1. In the **New Project** dialog's drop-down filters, select **C#** or **C++**, **Windows**, and **WinUI**, respectively.
 
 1. Select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**. That template creates a desktop app with a WinUI 3-based user interface. The generated project is configured with the package manifest and other support needed to build the app into an MSIX package (see [What is MSIX?](/windows/msix/overview)). For more information about this project template, see [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix).
 
@@ -38,26 +38,26 @@ Packaging is an important consideration of any Windows App SDK project. For more
 
 1. Enter a project name, choose any other options as desired, and click **Create**.
 
-1. The project that Visual Studio generates contains your app's code. The **App.xaml** file and code-behind file(s) define an **Application**-derived class that represents your running app. The **MainWindow.xaml** file and code-behind file(s) define a **MainWindow** class that represents the main window displayed by your app. Those classes derive from types in the **Microsoft.UI.Xaml** namespace provided by WinUI 3.
+    The project that Visual Studio generates contains your app's code. The **App.xaml** file and code-behind file(s) define an [**Application**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application)-derived class that represents your running app. The **MainWindow.xaml** file and code-behind file(s) define a **MainWindow** class that represents the main window displayed by your app. Those classes derive from types in the [**Microsoft.UI.Xaml**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml) namespace provided by WinUI 3.
 
     The project also includes the package manifest for building the app into an [MSIX package](/windows/msix/overview).
 
     ![Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L dot C S file for single project M S I X.](images/WinUI-csharp-appproject-1.0-later.png)
 
-1. To add a new item to your app, right-click the project node in **Solution Explorer**, and select **Add** > **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [WinUI 3 templates in Visual Studio](/windows/apps/winui/winui3/winui-project-templates-in-visual-studio).
+1. Press F5 or use the **Debug** > **Start Debugging** menu option to build and run your solution on your development computer and confirm that the app runs without errors.
 
-    ![Screenshot of the Add New Item dialog box with the Installed > Visual C sharp Items > Win U I selected and the Blank Page option highlighted.](images/winui3-addnewitem.png)
+The Blank App template creates a simple app with a single window for your content. Apps are typically more complex, and you'll want to add elements as your app progresses, like new windows, pages, or custom user controls. For more details about the available items, and instructions for how to add them, see [WinUI 3 templates in Visual Studio](/windows/apps/winui/winui3/winui-project-templates-in-visual-studio).
 
-1. Build and run your solution on your development computer to confirm that the app runs without errors.
+![Screenshot of the Add New Item dialog box with the Installed > Visual C sharp Items > Win U I selected and the Blank Page option highlighted.](images/winui3-addnewitem.png)
 
 ## Unpackaged: Create a new project for an unpackaged C# or C++ WinUI 3 desktop app
 
 > [!IMPORTANT]
-> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a packaged with external location or unpackaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, continue reading this section. Or, if you have an existing project that's not WinUI 3, then see [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
+> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from an app packaged with external location or an unpackaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, continue reading this section. Or, if you have an existing project that's not WinUI 3, then see [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
 
 1. To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
-1. Download and run the latest *installer* for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). That will install the runtime package dependencies required to run and deploy a packaged with external location or unpackaged app on the target device (see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
+1. Download and run the latest *installer* for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). That will install the runtime package dependencies required to run and deploy an app packaged with external location or an unpackaged app on the target device (see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
 
 1. **C++**. Install the [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist) appropriate for the architecture of the target device.
 
@@ -69,7 +69,7 @@ Packaging is an important consideration of any Windows App SDK project. For more
 
 1. In Visual Studio, select **File** > **New** > **Project**.
 
-1. In the New Project dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **WinUI**, respectively.
+1. In the New Project dialog's drop-down filters, select **C#** or **C++**, **Windows**, and **WinUI**, respectively.
 
 1. You need to start with a packaged project in order to use XAML diagnostics. So select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**.
 

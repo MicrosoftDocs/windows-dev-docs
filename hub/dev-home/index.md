@@ -1,7 +1,7 @@
 ---
 title: Dev Home for Windows Developers
 description: Dev Home is a new control center for Windows providing the ability to track your workflows and coding tasks using customizable widgets, set up your dev environment, connect to your developer accounts and tools (such as GitHub), and install apps and packages all in one place.
-ms.date: 09/12/2024
+ms.date: 11/18/2024
 ms.topic: overview
 ---
 
@@ -86,11 +86,13 @@ The [Dev Home Azure extension](https://apps.microsoft.com/detail/9MV8F79FGXTR) p
 
 Environments in Dev Home can help you to centralize your interactions with virtual or cloud environments in a single place. Quickly launch, start, stop, or sync virtual environments, seamlessly integrating with the Windows OS. Learn more about **[Environments in Dev Home](./environments.md)**.
 
-![Environments in Dev Home](../images/devhome-environment-manage.png)
+![Environments in Dev Home](../images/devhome-environment-manage.png) 
 
-## Dev Diagnostics
+## Experimental features
 
-The Dev Diagnostics utility in Dev Home enables developers to "peek under the hood" of Windows to better understand how your Windows app is working. Learn more about [Dev Diagnostics](./dev-diagnostics.md).  
+Dev Home supports experimenting with developer-focused features. Features that are identified as "Experimental" may be added and removed from release to release.
+
+A few recent Dev Home Experimental features have included "Dev Diagnostics," a way to consolidate diagnostic tools, and "Quickstart Playground," an AI integration for generating app development projects in Visual Studio Code. You can find these Experimental features tracked in the [Dev Home Release Notes]( https://github.com/microsoft/devhome/releases).
 
 ## Dev Home open source repos
 

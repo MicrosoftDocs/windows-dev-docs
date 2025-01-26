@@ -1,7 +1,7 @@
 ---
 title: Windows Dev Kit 2023
 description: Powered by Arm64 and running Windows 11, this desktop device enables you to develop Windows apps for Arm, on Arm. Find device specifications, set up instructions, Arm-native developer tools, Support, and FAQs. 
-ms.date: 08/05/2024
+ms.date: 10/31/2024
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -12,8 +12,6 @@ ms.subservice: arm
 The Windows Dev Kit 2023 (code name “Project Volterra”) offered Windows developers one of the first opportunities to support development and testing on a device with a Neural Processing Unit (NPU) that provides best-in-class AI computing capacity, multiple ports, and a stackable design for desktops and rack deployment. This dev kit was purpose-built to develop, debug, and test native Windows apps for Arm.
 
 Windows Dev Kit 2023 is no longer available to purchase new, but now you can find [Copilot+ PCs](https://www.microsoft.com/windows/copilot-plus-pcs) offering NPUs and the latest in AI features and computing capacity.
-
-Qualcomm also now offers an updated [Snapdragon Dev Kit for Windows](https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Snapdragon-Dev-Kit-for-Windows-Product-Brief.pdf). Learn more on the Qualcomm site: [Windows on Snapdragon](https://www.qualcomm.com/developer/windows-on-snapdragon).
 
 ## Device specifics
 

@@ -87,11 +87,3 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
     - In the Android device emulator, double tap "r" on your keyboard.
     - On a hardware android device, shake the device to bring up the React Native debug menu and select `Reload'.
     ![Screenshot of the React Native debug menu](../../images/react-native-debug-menu.png)
-
-## Additional resources
-
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-
-- [Add Windows Defender exclusions to improve performance](../../android/defender-settings.md)
-
-- [Enable Virtualization support to improve Emulator performance](../../android/emulator.md#enable-virtualization-support)

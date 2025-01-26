@@ -50,6 +50,17 @@ If defined, disables the default C++/WinRT diagnostic that detects that you mist
 
 We strongly recommended that you don't define this symbol, because doing so masks a common source of programming errors.
 
+## WINRT_NO_SOURCE_LOCATION
+If defined, disables the inclusion of source file and line number information
+(and in debug builds, function information),
+when originating errors.
+
+This additional information is not used by C++/WinRT, but it is made available to other libraries which
+wish to interoperate with C++/WinRT exceptions, such as the [Windows Implementation Library](https://github.com/Microsoft/wil).
+
+By default, the information is included when compiled in C++20 mode or higher.
+You may wish to suppress this information to reduce binary size.
+
 ## WINRT_DIAGNOSTICS
 If defined, enables internal statistics to track various operations:
 * The number of times each interface was queried.

@@ -76,7 +76,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [ToolTip class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ToolTip), [ToolTipService class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ToolTip in action](winui3gallery:/item/ToolTip).
+> [Open the WinUI 3 Gallery app and see the ToolTip in action](winui3gallery:/item/ToolTip)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

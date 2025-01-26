@@ -2,8 +2,7 @@
 title: Native Android development on Windows
 description: A step-by-step guide on how to get started developing Android native apps on Windows.
 ms.topic: article
-keywords: android, windows, android studio, visual studio, c++ android game, windows defender, emulator, virtual device, install, java, kotlin
-ms.date: 04/28/2020
+ms.date: 11/21/2024
 ---
 
 # Get started with native Android development on Windows
@@ -111,21 +110,11 @@ Learn more in the [Android design documentation](https://developer.android.com/d
 
 Microsoft also offers design guidance with the goal of providing a seamless experience across the entire portfolio of Microsoft's mobile apps.
 
-[Fluent Design System for Android](https://www.microsoft.com/design/fluent/#/android)
-design and build custom apps that are natively Android while still uniquely Fluent.
+[Fluent 2 Microsoft Design System: Fluent UI for Android](https://developer.microsoft.com/en-us/fluentui#/get-started/android)
+
+[Fluent 2 Microsoft Design System: Android Overview](https://fluent2.microsoft.design/components/android)
 
 - [Sketch toolkit](https://aka.ms/fluenttoolkits/android/sketch)
-- [Figma toolkit](https://aka.ms/fluenttoolkits/android/figma)
 - [Android font](https://fonts.google.com/specimen/Roboto)
 - [Android User Interface Guidelines](https://developer.android.com/design/)
 - [Guidelines for Android app icons](https://developer.android.com/guide/practices/ui_guidelines/icon_design)
-
-## Additional resources
-
-- [Android Application Fundamentals](https://developer.android.com/guide/components/fundamentals)
-
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-
-- [Add Windows Defender exclusions to improve performance](defender-settings.md)
-
-- [Enable Virtualization support to improve emulator performance](emulator.md#enable-virtualization-support)

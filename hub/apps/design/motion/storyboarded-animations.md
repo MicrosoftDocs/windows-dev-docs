@@ -214,7 +214,7 @@ This next example shows how the previous example [**Storyboard**](/uwp/api/Windo
 </Page>
 ```
 
-Defining resources at the XAML root of a XAML file such as page.xaml or app.xaml is a common practice for how to organize keyed resources in your XAML. You also can factor resources into separate files and merge them into apps or pages. For more info, see [ResourceDictionary and XAML resource references](../style/xaml-resource-dictionary.md).
+Defining resources at the XAML root of a XAML file such as page.xaml or app.xaml is a common practice for how to organize keyed resources in your XAML. You also can factor resources into separate files and merge them into apps or pages. For more info, see [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md).
 
 > [!NOTE]
 > Windows Runtime XAML supports identifying resources either using the [x:Key attribute](/windows/uwp/xaml-platform/x-key-attribute) or the [x:Name attribute](/windows/uwp/xaml-platform/x-name-attribute). Using x:Name attribute is more common for a [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard), because you'll want to reference it by variable name eventually, so that you can call its [**Begin**](/uwp/api/windows.ui.xaml.media.animation.storyboard.begin) method and run the animations. If you do use [x:Key attribute](/windows/uwp/xaml-platform/x-key-attribute), you'll need to use [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) methods such as the [**Item**](/uwp/api/windows.ui.xaml.resourcedictionary) indexer to retrieve it as a keyed resource and then cast the retrieved object to **Storyboard** to use the **Storyboard** methods.
@@ -332,7 +332,7 @@ Up to now, we've shown the custom animations that are animating between two valu
 * [Dependency properties overview](/windows/uwp/xaml-platform/dependency-properties-overview)
 * [Key-frame and easing function animations](key-frame-and-easing-function-animations.md)
 * [Storyboarded animations for visual states](/previous-versions/windows/apps/jj819808(v=win.10))
-* [Control templates](../style/xaml-control-templates.md)
+* [Control templates](../../develop/platform/xaml/xaml-control-templates.md)
 * [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
 * [**Storyboard.TargetProperty**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  

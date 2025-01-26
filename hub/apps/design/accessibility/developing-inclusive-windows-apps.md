@@ -50,7 +50,7 @@ XAML
 ```xaml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
-For more information about using system colors and resources, see [XAML theme resources](../style/xaml-theme-resources.md).
+For more information about using system colors and resources, see [XAML theme resources](../../develop/platform/xaml/xaml-theme-resources.md).
 
 As long as you haven’t overridden system colors, a UWP app supports high-contrast themes by default. If a user has chosen that they want the system to use a high-contrast theme from system settings or accessibility tools, the framework automatically uses colors and style settings that produce a high-contrast layout and rendering for controls and components in the UI.   
 

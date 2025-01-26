@@ -1,5 +1,265 @@
 {
   "redirections": [
+    {
+      "source_path": "hub/apps/design/devices/kinect-for-windows.md",
+      "redirect_url": "https://azure.microsoft.com/en-us/products/kinect-dk",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/automate-launching-uwp-apps.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/automate-launching-uwp-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/cpusets-games.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/cpusets-games",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/dev-home.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/dev-home",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-environment-setup.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-environment-setup",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-custom-cpp.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-custom-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-html.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-html",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-landing.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-landing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-unity-versioning.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-unity-versioning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-unity.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-unity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-capture.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-home.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-home",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-live.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-live",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-networking.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-networking",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-performance.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-performance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-settings.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/device-portal-xbox.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/device-portal-xbox",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devkit-activation.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devkit-activation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devkit-deactivation.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devkit-deactivation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/disable-scaling.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/disable-scaling",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/getting-started.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/getting-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/how-to-disable-mouse-mode.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/how-to-disable-mouse-mode",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/index.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/introduction-to-xbox-tools.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/introduction-to-xbox-tools",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/known-issues.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/known-issues",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/multi-user-applications.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/multi-user-applications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/reference.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/reference",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/samples-xaml-dev.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/samples-xaml-dev",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/samples-xaml-media.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/samples-xaml-media",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/samples.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/system-resource-allocation.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/system-resource-allocation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/tailoring-for-xbox.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/tailoring-for-xbox",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/turn-off-overscan.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/turn-off-overscan",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-deployinfo-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-deployinfo-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-fiddler.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-fiddler",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-networkcredentials-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-networkcredentials-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-remoteinput-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-remoteinput-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-remoteinput-controllers-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-remoteinput-controllers-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-sshpins-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-sshpins-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/ves-on-xbox.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/ves-on-xbox",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-fiddler-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-fiddler-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-folder-upload.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-folder-upload",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-httpMonitor-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-httpMonitor-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-loose-folder-register-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-loose-folder-register-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-media-capture-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-media-capture-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-sandbox-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-sandbox-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-smb-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-smb-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-user-management.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-user-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-xboxinfo-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-xboxinfo-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-xboxsettings-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-xboxsettings-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/whats-new.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/xbox-dev-mode-companion.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/xbox-dev-mode-companion",
+      "redirect_document_id": false
+    },
   {
       "source_path": "hub/apps/windows-app-sdk/older-downloads.md",
       "redirect_url": "/windows/apps/windows-app-sdk/downloads-archive",
@@ -1232,13 +1492,13 @@
     },
     {
       "source_path": "uwp/controls-and-patterns/xaml-styles.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-styles",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-styles",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/controls-and-patterns/xaml-theme-resources.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-theme-resources",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-theme-resources",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/controls-and-patterns/tiles-and-notifications/channel-types.md",
@@ -1567,7 +1827,7 @@
     },
     {
       "source_path": "uwp/layout/show-multiple-views.md",
-      "redirect_url": "/windows/uwp/design/layout/show-multiple-views",
+      "redirect_url": "/windows/uwp/ui-input/show-multiple-views",
       "redirect_document_id": true
     },
     {
@@ -1772,7 +2032,7 @@
     },
     {
       "source_path": "uwp/graphics/3-d-perspective-effects.md",
-      "redirect_url": "/windows/uwp/design/layout/3-d-perspective-effects",
+      "redirect_url": "/windows/apps/develop/platform/xaml/3-d-perspective-effects",
       "redirect_document_id": false
     },
     {
@@ -5997,12 +6257,12 @@
     },
     {
       "source_path": "uwp/design/controls-and-patterns/xaml-styles.md",
-      "redirect_url": "/windows/apps/design/style/xaml-styles",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-styles",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/controls-and-patterns/xaml-theme-resources.md",
-      "redirect_url": "/windows/apps/design/style/xaml-theme-resources",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-theme-resources",
       "redirect_document_id": false
     },
     {
@@ -6382,7 +6642,7 @@
     },
     {
       "source_path": "uwp/design/layout/3-d-perspective-effects.md",
-      "redirect_url": "/windows/apps/design/layout/3-d-perspective-effects",
+      "redirect_url": "/windows/apps/develop/platform/xaml/3-d-perspective-effects",
       "redirect_document_id": false
     },
     {
@@ -6392,12 +6652,12 @@
     },
     {
       "source_path": "uwp/design/layout/app-window.md",
-      "redirect_url": "/windows/apps/design/layout/app-window",
+      "redirect_url": "/windows/uwp/ui-input/app-window",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/layout/application-view.md",
-      "redirect_url": "/windows/apps/design/layout/application-view",
+      "redirect_url": "/windows/uwp/ui-input/application-view",
       "redirect_document_id": false
     },
     {
@@ -6457,12 +6717,12 @@
     },
     {
       "source_path": "uwp/design/layout/show-multiple-views.md",
-      "redirect_url": "/windows/apps/design/layout/show-multiple-views",
+      "redirect_url": "/windows/uwp/ui-input/show-multiple-views",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/layout/transforms.md",
-      "redirect_url": "/windows/apps/design/layout/transforms",
+      "redirect_url": "/windows/apps/develop/platform/xaml/transforms",
       "redirect_document_id": false
     },
     {
@@ -6842,7 +7102,7 @@
     },
     {
       "source_path": "uwp/design/style/brushes.md",
-      "redirect_url": "/windows/apps/design/style/brushes",
+      "redirect_url": "/windows/apps/develop/platform/xaml/brushes",
       "redirect_document_id": false
     },
     {
@@ -6862,7 +7122,7 @@
     },
     {
       "source_path": "uwp/design/style/reveal-focus.md",
-      "redirect_url": "/windows/apps/design/style/reveal-focus",
+      "redirect_url": "/windows/uwp/ui-input/reveal-focus",
       "redirect_document_id": false
     },
     {
@@ -8276,12 +8536,194 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/design/style/index.md",
+      "redirect_url": "/windows/apps/design",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/signature-experiences/design-principles.md",
+      "redirect_url": "/windows/apps/design",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/signature-experiences/signature-experiences.md",
+      "redirect_url": "/windows/apps/design",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/color.md",
+      "redirect_url": "/windows/apps/design/signature-experiences/color",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/typography.md",
+      "redirect_url": "/windows/apps/design/signature-experiences/typography",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/index.md",
+      "redirect_url": "/windows/apps/design/signature-experiences/motion",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/dev-home/project-ironsides.md",
-      "redirect_url": "/windows/dev-home/dev-diagnostics",
+      "redirect_url": "/windows/dev-home/#experimental-features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/dev-diagnostics.md",
+      "redirect_url": "/windows/dev-home/#experimental-features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/quickstart-playground.md",
+      "redirect_url": "/windows/dev-home/#experimental-features",
+      "redirect_document_id": false
+    },   
+    {
+      "source_path": "hub/apps/design/style/xaml-control-templates.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-control-templates",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/xaml-resource-dictionary.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-resource-dictionary",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/xaml-styles.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-styles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/xaml-theme-resources.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-theme-resources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/transforms.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/transforms",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/3-d-perspective-effects.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/3-d-perspective-effects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/brushes.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/brushes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/reveal-focus.md",
+      "redirect_url": "/windows/uwp/ui-input/reveal-focus",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/app-window.md",
+      "redirect_url": "/windows/uwp/ui-input/app-window",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/application-view.md",
+      "redirect_url": "/windows/uwp/ui-input/application-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/show-multiple-views.md",
+      "redirect_url": "/windows/uwp/ui-input/show-multiple-views",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/defender-settings.md",
+      "redirect_url": "/defender-endpoint/microsoft-defender-security-center-antivirus",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/client-frameworks-faq.yml",
+      "redirect_url": "/windows/apps/get-started/windows-developer-faq",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/in-app-ads.md",
+      "redirect_url": "/windows/apps/publish/attract-customers-and-promote-your-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md",
+      "redirect_url": "/windows/apps/develop/camera/basic-photo-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/camera-profiles.md",
+      "redirect_url": "/windows/apps/develop/camera/camera-profiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/set-media-encoding-properties.md",
+      "redirect_url": "/windows/apps/develop/camera/set-media-encoding-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/high-dynamic-range-hdr-photo-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/high-dynamic-range-hdr-photo-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/capture-device-controls-for-photo-and-video-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/capture-device-controls-for-photo-and-video-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/capture-device-controls-for-video-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/capture-device-controls-for-video-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/effects-for-video-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/effects-for-video-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/scene-analysis-for-media-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/scene-analysis-for-media-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/variable-photo-sequence.md",
+      "redirect_url": "/windows/apps/develop/camera/variable-photo-sequence",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/process-media-frames-with-mediaframereader.md",
+      "redirect_url": "/windows/apps/develop/camera/process-media-frames-with-mediaframereader",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/process-audio-frames-with-mediaframereader.md",
+      "redirect_url": "/windows/apps/develop/camera/process-audio-frames-with-mediaframereader",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/capture-from-multiple-sources-simultaneously.md",
+      "redirect_url": "/windows/apps/develop/camera/capture-from-multiple-sources-simultaneously",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/connect-to-remote-cameras.md",
+      "redirect_url": "/windows/apps/develop/camera/connect-to-remote-cameras",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/launch-camera-settings.md",
+      "redirect_url": "/windows/apps/develop/camera/launch-camera-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/camera/index.md",
+      "redirect_url": "/windows/apps/develop/camera/camera",
       "redirect_document_id": false
     }
   ]
 }
-
-
-

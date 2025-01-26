@@ -38,7 +38,7 @@ We recommend using the latest [WinUI 2](../../../winui/winui2/index.md) to get t
 > - **Important APIs**: [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout), [Button.Flyout property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button.Flyout)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the Flyout in action](winui3gallery:/item/Flyout).
+> [Open the WinUI 3 Gallery app and see the Flyout in action](winui3gallery:/item/Flyout)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

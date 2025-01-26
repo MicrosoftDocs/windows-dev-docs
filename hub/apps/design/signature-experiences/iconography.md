@@ -1,6 +1,6 @@
 ---
-description: Learn about app and system icons in Windows 11.
-title: Iconography in Windows 11
+description: Learn about app and system icons in Windows
+title: Iconography in Windows
 ms.assetid: EC94D54F-4C24-4E16-B8E0-08F3916C00F0
 ms.date: 07/24/2024
 ms.topic: article
@@ -8,20 +8,22 @@ keywords: windows 11, design, ui, uiux, icons, app icons, system icons, segoe fl
 ms.localizationpriority: medium
 ---
 
-# Iconography in Windows 11
+# Iconography in Windows
 
 Iconography is a set of visual images and symbols that help users understand and move through your app. Icons are used throughout the user interface as visual metaphors that represent a concept, action, or status.
 
 Windows 11 uses three types of icons: application, system, and file type. This article focuses on the first two.
 
-This article describes how the [Fluent Design language](https://fluent2.microsoft.design/) is applied to Windows apps. For more information, see [Fluent Design Iconography](https://fluent2.microsoft.design/iconography).
+> [!TIP]
+> This article describes how the [Fluent Design language](https://fluent2.microsoft.design/) is applied to Windows apps. For more information, see [**Fluent Design - Iconography**](https://fluent2.microsoft.design/iconography).
+
 ## Application icons
 
 ![An abstract application icon for a hypothetical maps app.](images/iconography_hero_1880.png)
 
 Application icons represent your app in the Windows shell. They're primarily used to open your application, but they also represent your app wherever it appears in the Windows shell.
 
-App icons should represent your app's core functionality through a metaphor. For more information about designing and constructing your app's icon, see [App icons](../style/iconography/overview.md).
+App icons should represent your app's core functionality through a metaphor. For more information about designing and constructing your app's icon, see [**App icons**](../style/iconography/overview.md).
 
 ## System icons
 
@@ -37,7 +39,7 @@ Glyphs in Segoe Fluent Icons follow three aesthetic principles:
 - **Harmonious**: Glyphs are based on simple and geometric forms.
 - **Evolved**: Glyphs use modern metaphors that are easily understood.
 
-For more information about using icons in your app UI, see [Icons in Windows apps](../style/icons.md).
+For more information about using icons in your app UI, see [**Icons in Windows apps**](../style/icons.md).
 
 ### Icon size
 

@@ -184,11 +184,3 @@ ionic cordova emulate android --list
 ```
 
 See the [Cordova Emulator](https://ionicframework.com/docs/cli/commands/cordova-emulate) in the Ionic docs for more info.
-
-## Additional resources
-
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-
-- [Add Windows Defender exclusions to improve performance](defender-settings.md)
-
-- [Enable Virtualization support to improve emulator performance](emulator.md#enable-virtualization-support)

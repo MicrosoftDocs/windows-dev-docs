@@ -89,9 +89,3 @@ There are many [Android emulator options](https://www.androidauthority.com/best-
 ### Android emulator with Visual Studio
 
 Learn more about using the latest version of [Visual Studio for Android Development](https://visualstudio.microsoft.com/vs/android/). Open the [latest version of Visual Studio](https://visualstudio.microsoft.com/downloads/), create a new C++ Android project, set the platform configuration, run the project, and the default Android Emulator will appear. It is recommended to use the [.NET Multi-platform App UI (MAUI)](/dotnet/maui/) development workload. You may need to use the Visual Studio Installer to [Modify your workloads](/visualstudio/install/modify-visual-studio#modify-workloads).
-
-## Additional resources
-
-* [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-
-* [Add Windows Defender exclusions to improve performance](defender-settings.md)

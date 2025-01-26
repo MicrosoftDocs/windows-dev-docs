@@ -2,7 +2,7 @@
 title: Define market selection for MSIX app
 description: The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to list your MSIX app.
 ms.topic: article
-ms.date: 10/30/2022
+ms.date: 11/4/2024
 ms.localizationpriority: medium
 ---
 
@@ -26,7 +26,7 @@ Note that your selections here apply only to new acquisitions; if someone alread
 
 > [!IMPORTANT]
 > It is your responsibility to meet any local legal requirements, even if those requirements aren't listed here or in Partner Center.
-> Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](./age-ratings.md) for more info.
+> Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. See [company account verification requirements](/windows/apps/publish/store-business-verification-reqs) for more information. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](./age-ratings.md) for more info.
 
 > [!NOTE]
 > You will also see a checkbox that lets you indicate whether to offer your app in any market that the Store may add in the future. If you leave this box checked, and we later add new markets, the base price and general availability date for your submission will be used for your app in those markets. If you don't want this to happen, you can uncheck this box, in which case we will not list your app in any future markets (though you can always add them later).

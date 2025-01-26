@@ -1,14 +1,14 @@
 ---
-title: React Native for Windows desktop app development
-description: Install React Native for Windows and get started with Windows desktop app development using React Native components.
+title: React Native for Desktop desktop app development
+description: Install React Native for Desktop and get started with Windows desktop app development using React Native components.
 ms.topic: article
-keywords: react native for windows, windows, react native, install react native on windows, install react native for windows, build a desktop app with react, create a windows app with react, react for desktop apps, npx react-native, react-native-windows-init 
+keywords: React Native for Desktop, windows, react native, install react native on windows, install React Native for Desktop, build a desktop app with react, create a windows app with react, react for desktop apps, npx react-native, react-native-windows-init 
 ms.date: 03/30/2021
 ---
 
-# Get started build a desktop app with React Native for Windows
+# Get started build a desktop app with React Native for Desktop
 
-[React Native for Windows](https://microsoft.github.io/react-native-windows) allows you to create a Universal Windows Platform (UWP) app using React.
+[React Native for Desktop](https://microsoft.github.io/react-native-windows) allows you to create a Universal Windows Platform (UWP) app using React.
 
 ## Overview of React Native
 
@@ -18,11 +18,11 @@ For more general information about React, see the [React overview](./react-overv
 
 ## Prerequisites
 
-The setup requirements for using React Native for Windows can be found on the [System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies) page. Ensure Developer Mode is turned ON in Windows Settings App.
+The setup requirements for using React Native for Desktop can be found on the [System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies) page. Ensure Developer Mode is turned ON in Windows Settings App.
 
-## Install React Native for Windows
+## Install React Native for Desktop
 
-You can create a Windows desktop app using React Native for Windows by following these steps.
+You can create a Windows desktop app using React Native for Desktop by following these steps.
 
 1. Open a command line window (terminal) and navigate to the directory where you want to create your Windows desktop app project.
 2. You can use this command with the Node Package Executor (NPX) to create a React Native project without the need to install locally or globally install additional tools. The  command will generate a React Native app in the directory specified by `<projectName>`.
@@ -36,7 +36,7 @@ You can create a Windows desktop app using React Native for Windows by following
     npx react-native@X.XX.X init  <projectName> --version X.XX.X
     ```
 
-4. Switch to the project directory and run the following command to install the React Native for Windows packages:
+4. Switch to the project directory and run the following command to install the React Native for Desktop packages:
 
     ```powershell
     cd projectName
@@ -90,7 +90,7 @@ You can create a Windows desktop app using React Native for Windows by following
 
 ## Additional resources
 
-- [React Native for Windows docs](https://microsoft.github.io/react-native-windows/docs/getting-started)
+- [React Native for Desktop docs](https://microsoft.github.io/react-native-windows/docs/getting-started)
 - [React Native docs](https://reactnative.dev/docs/getting-started)
 - [React docs](https://reactjs.org/)
 - [Install NodeJS on Windows](./nodejs-on-windows.md)

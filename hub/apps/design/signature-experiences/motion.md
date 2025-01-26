@@ -1,17 +1,20 @@
 ---
-description: An overview of where and how motion is used in Windows 11
-title: Motion in Windows 11
+description: An overview of where and how motion is used in Windows
+title: Motion in Windows
 ms.date: 07/24/2024
 ms.topic: article
 keywords: windows 11, design, ui, uiux, motion
 ms.localizationpriority: medium
 ---
 
-# Motion in Windows 11
+# Motion in Windows
 
 Motion describes the way the interface animates and responds to user interaction. Motion in Windows is reactive, direct, and context appropriate. It provides feedback to user input and reinforces spatial paradigms that support way-finding.
 
 :::image type="content" source="images/motion-resourceful.gif" alt-text="An animated image that shows several examples of motion in the Windows UI.":::
+
+> [!TIP]
+> This article describes how the [Fluent Design language](https://fluent2.microsoft.design/) is applied to Windows apps. For more information, see [**Fluent Design - Motion**](https://fluent2.microsoft.design/motion).
 
 ## Motion principles
 
@@ -67,6 +70,13 @@ _Example:_ [Page transitions](../motion/page-transitions.md), [connected animati
 :::image type="content" source="images/motion-resourceful.png" lightbox="images/motion-resourceful.gif" alt-text="An animated image that shows examples of page  transitions, connected animations, and animated icons in the Windows UI.":::
 
 _Click the image to see it animated._
+
+## Examples
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see Motion examples in action](winui3gallery://category/Motion)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Usage
 

@@ -73,7 +73,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [SemanticZoom class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.SemanticZoom), [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see SemanticZoom in action](winui3gallery:/item/SemanticZoom).
+> [Open the WinUI 3 Gallery app and see SemanticZoom in action](winui3gallery:/item/SemanticZoom)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

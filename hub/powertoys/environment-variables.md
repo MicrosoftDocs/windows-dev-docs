@@ -1,16 +1,17 @@
 ---
 title: PowerToys Environment Variables for Windows
 description: Environment Variables is a convenient way to manage environment variables.
-ms.date: 10/24/2023
-ms.topic: article
+ms.date: 11/19/2024
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, Environment Variables, Win]
+# Customer intent: As a Windows power user, I want to learn how to manage environment variables using the PowerToys Environment Variables utility.
 ---
 
 # Environment Variables
 
 Environment Variables offers an easy and convenient way to manage environment variables. It allows you to create profiles for managing a set of variables together. Profile variables have precedence over User and System variables.
-Applying the profile adds variables to User environment variables in the background. When a profile is applied, if there is an existing User variable with the same name, a backup variable is created in User variables which will be reverted to the original value on profile un-apply.
-Applied variables list shows the current state of the environment, respecting the order of evaluation of environment variables (Profile > User > System). Evaluated Path variable value is shown at the top of the list.
+
+Applying the profile adds variables to User environment variables in the background. When a profile is applied, if there is an existing User variable with the same name, a backup variable is created in User variables which will be reverted to the original value on profile un-apply. The Applied variables list shows the current state of the environment, respecting the order of evaluation of environment variables (Profile > User > System). The Evaluated Path variable value is shown at the top of the list.
 
 ![PowerToys Environment Variables screenshot](../images/powertoys-environment-variables.png)
 

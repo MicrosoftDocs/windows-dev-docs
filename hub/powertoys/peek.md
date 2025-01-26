@@ -1,9 +1,10 @@
 ---
 title: PowerToys Peek utility for Windows
 description: A system-wide utility for Windows to quickly preview file content.
-ms.date: 08/03/2023
-ms.topic: article
+ms.date: 11/19/2024
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, Peek, Win]
+# Customer intent: Learn how to configure and use the Peek utility in PowerToys.
 ---
 
 # Peek utility
@@ -20,8 +21,7 @@ Using <kbd>Left</kbd> and <kbd>Right</kbd> or <kbd>Up</kbd> and <kbd>Down</kbd>,
 
 ## Pin preview window position and size
 
-The Peek window adjusts its size based on the dimensions of the images being previewed. However, if you prefer to keep the window's size and position, you can use the pinning feature.
-By selecting the pinning button, the window will preserve the current size and position. Selecting the pinning button again will unpin the window. When unpinned, the Peek window will return to the default position and size when previewing the next file.
+The Peek window adjusts its size based on the dimensions of the images being previewed. However, if you prefer to keep the window's size and position, you can use the pinning feature. By selecting the pinning button, the window will preserve the current size and position. Selecting the pinning button again will unpin the window. When unpinned, the Peek window will return to the default position and size when previewing the next file.
 
 ## Open file with the default program
 
@@ -46,6 +46,6 @@ From the settings page, the following options can be configured:
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to open Peek for the selected file(s). |
 | Always run not elevated, even when PowerToys is elevated | Tries to run Peek without elevated permissions, to fix access to network shares. |
-| Automatically close the Peek window after it loses focus |  |
+| Automatically close the Peek window after it loses focus | |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

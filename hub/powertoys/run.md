@@ -1,20 +1,21 @@
 ---
 title: PowerToys Run utility for Windows
-description: A quick launcher for power users that contains additional features without sacrificing performance.
-ms.date: 08/03/2023
-ms.topic: article
+description: Run is a quick launcher for power users that contains additional features without sacrificing performance.
+ms.date: 11/19/2024
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
+# Customer intent: Learn about the PowerToys Run utility and how to use it.
 ---
 
 # PowerToys Run utility
 
-PowerToys Run is a quick launcher for power users that contains additional features without sacrificing performance. It is open source and modular for additional plugins.
+PowerToys Run is a quick launcher for power users that contains additional features without sacrificing performance. It's open source and modular, supporting additional plugins.
 
-To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(Note that this shortcut can be changed in the settings window.)_
+To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(Note that the keyboard shortcut can be changed in the settings window.)*
 
 > [!IMPORTANT]
-> PowerToys must be running in the background and Run must be enabled for this utility to work.
+> For this utility to work, PowerToys must be running in the background and Run must be enabled.
 
 ![PowerToys Run demo opening apps](../images/pt-powerrun-demo.gif)
 
@@ -24,7 +25,7 @@ PowerToys Run features include:
 
 - Search for applications, folders or files
 - Search for running processes (previously known as [Window Walker](https://github.com/betsegaw/windowwalker/))
-- Clickable buttons with keyboard shortcuts (such as _Open as administrator_ or _Open containing folder_)
+- Clickable buttons with keyboard shortcuts (such as *Open as administrator* or *Open containing folder*)
 - Invoke Shell Plugin using `>` (for example, `> Shell:startup` will open the Windows startup folder)
 - Do a simple calculation using calculator
 - Execute system commands
@@ -40,26 +41,25 @@ The following general options are available on the PowerToys Run settings page.
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | Define the keyboard shortcut to show/hide PowerToys Run |
-| Use centralized keyboard hook | Try this setting if there are issues with the shortcut (PowerToys Run might not get focus when triggered from an elevated window) |
-| Ignore shortcuts in full-screen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
-| Input smoothing | Add a delay to wait for more input before executing a search |
-| Immediate plugins | How many milliseconds a plugin that makes the UI wait should wait before showing results |
-| Background execution plugins | How many milliseconds a plugin that executes in the background should wait before showing results |
-| Maximum number of results before scrolling | Maximum number of results shown without scrolling |
-| Clear the previous query on opening | When opened, previous searches will not be highlighted |
-| Results order tuning | Fine tunes the ordering of the displayed results |
-| Selected item weight | Use a higher number to get selected results to rise faster (Default: 5, 0 to disable) |
-| Wait for slower plugin results before selecting top item in results | Selecting this can help preselect the top, more relevant result, but at the risk of jumpiness |
-| Tab through context buttons | When enabled, you can tab through the context buttons before tabbing to the next result |
-| Generate thumbnails for files | Thumbnails will be generated for files in the results list (this may affect speed and stability) |
-| Preferred monitor position | If multiple displays are in use, PowerToys Run can be opened on:<br />• Primary display<br />• Display with mouse cursor<br />• Display with focused window |
-| App theme | Change the theme used by PowerToys Run |
+| Activation shortcut | Define the keyboard shortcut to show/hide PowerToys Run. |
+| Use centralized keyboard hook | Try this setting if there are issues with the shortcut (PowerToys Run might not get focus when triggered from an elevated window). |
+| Ignore shortcuts in full-screen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut. |
+| Input smoothing | Add a delay to wait for more input before executing a search. |
+| Immediate plugins | How many milliseconds a plugin that makes the UI wait should wait before showing results. |
+| Background execution plugins | How many milliseconds a plugin that executes in the background should wait before showing results. |
+| Maximum number of results before scrolling | The maximum number of results shown without scrolling. |
+| Clear the previous query on opening | When opened, previous searches will not be highlighted. |
+| Results order tuning | Fine tunes the ordering of the displayed results. |
+| Selected item weight | Use a higher number to get selected results to rise faster (Default: 5, 0 to disable). |
+| Wait for slower plugin results before selecting top item in results | Selecting this can help preselect the top, more relevant result, but at the risk of jumpiness. |
+| Tab through context buttons | When enabled, you can tab through the context buttons before tabbing to the next result. |
+| Generate thumbnails for files | Thumbnails will be generated for files in the results list (this may affect speed and stability). |
+| Preferred monitor position | If multiple displays are in use, PowerToys Run can be opened on:<br />• Primary display<br />• Display with mouse cursor<br />• Display with focused window. |
+| App theme | Change the theme used by PowerToys Run. |
 
 ### Plugin manager
 
-PowerToys Run uses a plugin system to provide different types of results. The settings page includes a plugin manager that allows you to enable/disable the various available plugins.
-By selecting and expanding the sections, you can customize the direct activation commands used by each plugin. In addition, you can select whether a plugin appears in global results and set additional plugin options where available.
+PowerToys Run uses a plugin system to provide different types of results. The settings page includes a plugin manager that allows you to enable/disable the available plugins. By selecting and expanding the sections, you can customize the direct activation commands used by each plugin. In addition, you can select whether a plugin appears in global results and set additional plugin options where available.
 
 ![PowerToys Run Plugin Manager](../images/pt-run-plugin-manager.png)
 
@@ -68,7 +68,7 @@ By selecting and expanding the sections, you can customize the direct activation
 The plugins can be activated with a direct activation command so that PowerToys Run will only use the targeted plugin. The following table shows the direct activation commands assigned by default.
 
 > [!TIP]
-> You can change commands to fit your personal needs in the [plugin manager](#plugin-manager).
+> You can change commands to fit your needs in the [plugin manager](#plugin-manager).
 
 > [!IMPORTANT]
 > Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(` breaks global calculation queries starting with an opening parenthesis.
@@ -130,19 +130,19 @@ The Windows System Commands plugin provides a set of system level actions that c
 | `Hibernate` | Hibernates the computer | |
 | `Recycle Bin` | **Result:** Opens the recycle bin<br />**Context menu:** Empties the Recycle Bin | The query `Empty Recycle Bin` shows the result too. |
 | `UEFI Firmware Settings` | Reboots the computer into UEFI Firmware Settings | Only available on systems with UEFI firmware. Requires administrative permissions. |
-| `IP address` * | Shows the ip addresses from the network connections of your computer. | The search query has to start with the word `IP` or the word `address`. |
+| `IP address` * | Shows the IP addresses from the network connections of your computer. | The search query has to start with the word `IP` or the word `address`. |
 | `MAC address` * | Shows the mac addresses from the network adapters in your computer. | The search query has to start with the word `MAC` or the word `address`. |
 
-_*) This command may take some time to provide the results._
+*\*) This command may take some time to provide the results.*
 
 ### Program plugin
 
 The **Program** plugin can open software applications (such as Win32 or packaged programs). The plugin scans common install locations, like the Start menu and desktops that you have access to, looking for executable files (.exe) or shortcut files (such as .lnk or .url).
-On occasion, a program may not be found by the program plugin scan and you may want to manually create a shortcut in the directory containing the program you want to access.
+On occasion, a program may not be found by the program plugin scan, and you may want to manually create a shortcut in the directory containing the program you want to access.
 
 #### Program parameters
 
-The Program plugin allows for program arguments to be added when opening an application. The program arguments must follow the expected format as defined by the program's command line interface.
+The Program plugin allows program arguments to be added when opening an application. The program arguments must follow the expected format as defined by the program's command line interface.
 
 > [!NOTE]
 > To input valid search queries, the first element after the program name has to be one of the following possibilities:
@@ -167,9 +167,9 @@ If the program plugin's option **Include in global result** is not selected, inc
 ### Calculator plugin
 
 > [!IMPORTANT]
-> Please be aware of the different decimal and thousand delimiters in different locals.
+> Please be aware of the different decimal and thousand delimiters supported by different locals.
 > The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
-> If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
+> If your system's number format uses the comma (`,`) as the decimal delimiter, you have to include a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
 > [!TIP]
 > The Calculator plugin can handle some implied multiplications like `2(3+4)` and `(1+2)(3+4)` by inserting the multiplication operator where appropriate.
@@ -218,7 +218,7 @@ The History plugin allows quick access to previously selected results from other
 
 #### History plugin examples
 
-- If you paste in a URL like `https://github.com/microsoft/PowerToys/pull/123333`, then you can later quickly access this with just `!! 123333` or even `!! 333`. This works just as well for file paths, registry paths, and other things where later you can only remember part of the path. Any place you navigate to using PowerToys run can be quickly found in the history.
+- If you paste in a URL like `https://github.com/microsoft/PowerToys/pull/123333`, then you can later quickly access this with just `!! 123333` or even `!! 333`. This works just as well for file paths, registry paths, and other things where later you can only remember part of the path. Any place you navigate to using PowerToys Run can be quickly found in the history.
 - If you recently did some math like `= 1245+6789`, and you need to recall it, it will be in the history. You can find it with `!! 678` or even `!! 8034`.
 - If you can't remember what you searched for to find that app/folder/setting, you can just view them all with just `!!`.
 
@@ -266,12 +266,13 @@ The Value Generator plugin can generate GUIDs/UUIDs, calculate hashes, and encod
 
 #### UUIDs
 
-It supports the following GUID versions:
+The following GUID versions are supported:
 
 - v1 - Time based
 - v3 - Namespace and name based, using MD5
 - v4 - Random value
 - v5 - Namespace and name based, using SHA1
+- v7 - Time-ordered random value
 
 > [!NOTE]
 > For versions 3 and 5 there are some predefined namespaces: DNS, URL, OID and X500. You can use the following predefined namespaces:
@@ -288,13 +289,14 @@ Examples:
 | `# guid` <br />`# uuid` <br />`# uuidv4` | Generate a random GUID. |
 | `# guidv1` <br />`# uuidv1` | Generate a version 1 GUID. |
 | `# guidv3 ns:DNS www.microsoft.com` <br />`# uuidv3 ns:DNS www.microsoft.com` | Generate the GUID version 3 for `www.microsoft.com` using the DNS namespace. <br /> The namespace parameter can be any valid GUID, and the name parameter can be any string. |
+| `# uuid7` <br /> `# guidv7` | Generate a random version 7 GUID with the first 48-bit corresponding to the current timestamp, providing a well-defined order of subsequently generated values. |
 
 > [!TIP]
 > The `guid` and `uuid` keywords are interchangeable and the `v` is optional. I.e. `guid5` and `guidv5` are the same.
 
 #### Hashing
 
-It supports the following hashing algorithms:
+The following hashing algorithms are supported:
 
 - MD5
 - SHA1
@@ -323,7 +325,7 @@ Usage for encoding an URL:
 - `# url https://bing.com/?q=My Test query`
 
 > [!NOTE]
-> The whole URL including the `/` and the protocol identifier gets encoded. If you only like to encode the query part of the URL you should only enter this part.
+> The entire URL including the `/` and the protocol identifier gets encoded. If you only like to encode the query part of the URL, you should only enter this part.
 
 Usage for decoding an URL:
 
@@ -354,11 +356,11 @@ Usage for decoding an URL:
 
 ### Folder plugin
 
-With the folder plugin you can navigate through your directories.
+With the folder plugin, you can navigate through your directories.
 
 #### Search filter
 
-In the Folder plugin you can filter the results by using some special characters.
+In the Folder plugin, you can filter the results by using some special characters.
 
 | Character sequence | Result | Example |
 | :--- | :--- | :--- |
@@ -379,33 +381,32 @@ To search by location you can use the following syntax:
 
 The Service plugin lets you search, start, stop and restart Windows services directly from the PowerToys Run search screen.
 
-To search for Windows services, [enable the plugin](#plugin-manager), open PowerToys Run and enter the name of the service.
-Additionally, you can use the following syntax:
+To search for Windows services, [enable the plugin](#plugin-manager), open PowerToys Run and enter the name of the service. Additionally, you can use the following syntax:
 
 - `!startup:automatic` to list all services with start type 'automatic'.
 - `!status:running` to list all currently running services.
 
 ### Window Walker plugin
 
-With the Window Walker plugin you can switch to other windows, close them or kill the window process.
+With the Window Walker plugin, you can switch to other windows, close them, or kill the window process.
 
 #### Kill a window process
 
-With the Window Walker plugin you can kill the process of a window if it stops responding.
+With the Window Walker plugin, you can kill the process of a window if it stops responding.
 
 > [!NOTE]
 > There are some limitations for the "kill process" feature:
 >
 > - Killing the Explorer process is only allowed if each folder window is running in its own process.
 > - You can only kill elevated processes if you have admin permissions (UAC).
-> - Windows of UWP apps don't know their process until they are searched in non-minimized state.
+> - Windows UWP apps don't know their process until they are searched in non-minimized state.
 
 > [!WARNING]
-> If you kill the process of an UWP app window, you kill all instances of the app. All windows are assigned to the same process.
+> If you kill the process of a UWP app window, you kill all instances of the app. All windows are assigned to the same process.
 
 ##### File Explorer setting
 
-If the File Explorer settings in Windows are not set to open each window in a separate process, you will see the following message when searching for open Explorer windows:
+If the File Explorer settings in Windows are not configured to open each window in a separate process, you'll see the following message when searching for open Explorer windows:
 
 ![Explorer Process Info in PowerToys Run](../images/pt-run-explorer-info.png)
 
@@ -415,11 +416,11 @@ You can turn off the message in the PowerToys Run plugin manager options for Win
 
 ### Windows Search plugin
 
-With the Windows Search plugin you can search for files and folders that are indexed by the **Windows Search Index** service.
+With the Windows Search plugin, you can search for files and folders that are indexed by the **Windows Search Index** service.
 
 #### Windows Search settings
 
-If the indexing settings for Windows Search are not set to cover all drives, you will see the following warning when using the Windows Search plugin:
+If the indexing settings for Windows Search aren't set to cover all drives, you'll see the following warning when using the Windows Search plugin:
 
 ![PowerToys Run Indexer Warning](../images/pt-run-indexer-warning.png)
 

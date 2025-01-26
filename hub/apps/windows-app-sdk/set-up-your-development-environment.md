@@ -1,8 +1,8 @@
 ---
 title: Install tools for the Windows App SDK
-description: Configure your development computer by installing the appropriate tools to develop apps for Windows by using the Windows App SDK.
+description: Configure your development computer with the tools required to build Windows apps with the Windows App SDK] and WinUI 3.
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 12/18/2024
 keywords: windows win32, windows app development, Windows App SDK, stable
 ms.custom:
   - kr2b-contr-experiment
@@ -10,14 +10,16 @@ ms.custom:
 
 # Install tools for the Windows App SDK
 
-Configure your development computer by installing the appropriate tools to develop apps for Windows with the [Windows App SDK](./index.md) and [WinUI 3](/windows/apps/winui/winui3/).
+Configure your development computer with the tools required to build Windows apps using the [Windows App SDK](./index.md) (stable release channel) and [WinUI](/windows/apps/winui/winui3/).
 
-> [!NOTE]
-> This article is for the stable release channel of the Windows App SDK. See [Windows App SDK release channels](./release-channels.md). For other channels, see [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md).
+Before installing any tools, see [System requirements for Windows app development](system-requirements.md).
+
+> [!IMPORTANT]
+> This article applies only to the [stable release channel](./release-channels.md) of the Windows App SDK. For other release channels, see [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md).
 
 ## Install tools with winget
 
-To install the required tools and workloads using the command line, enter one of the following commands in the console. This is supported only with Visual Studio 2022 and later. If you already have Visual Studio 2022 or later installed, then the command will open Visual Studio Installer with any missing workloads selected. You can then select **Modify** in the Visual Studio Installer to install the required workloads.
+**[Visual Studio 2022 and later]** Install the required tools and workloads using the console and one of the following commands. These commands will open Visual Studio Installer with any missing workloads selected, for which you can select **Modify** to install the required workloads.
 
 ### For C# developers
 
@@ -65,14 +67,14 @@ winget install "Visual Studio Professional 2022"  --override "--add  Microsoft.V
 
 ## Install tools manually
 
-To install the required tools and workloads manually, read the following sections.
+The following sections describe how to install the required tools and workloads manually.
 
 ## Install Visual Studio
 
-Use these links to install Visual Studio 2022 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community Edition, Visual Studio Professional, or Visual Studio Enterprise. Before you begin, see [System requirements for Windows app development](system-requirements.md).
+Use the following links to install Visual Studio 2022 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community Edition, Visual Studio Professional, or Visual Studio Enterprise. Before installing either, see [System requirements for Windows app development](system-requirements.md).
 
 > [!IMPORTANT]
-> Visual Studio 2019 supports only Windows App SDK 1.1 and earlier. Visual Studio 2022 is recommended for developing apps with all versions of the Windows App SDK.
+> Visual Studio 2022 is recommended for developing apps using any version of the Windows App SDK (Visual Studio 2019 supports Windows App SDK 1.1 and earlier).
 
 > [!div class="button"]
 > [Download Visual Studio 2022](/visualstudio/releases/2022/release-notes)
@@ -82,37 +84,35 @@ Use these links to install Visual Studio 2022 (recommended) or Visual Studio 201
 
 ### Required workloads and components
 
-While installing Visual Studio, you have the option to install the workloads and components you want. After installation, you can open Visual Studio Installer and select **Modify** to add workloads and components.
-
-While installing, select the following workloads and components:
+During Visual Studio installation, you have the option to install workloads and components (you can also open the Visual Studio Installer and select **Modify** to add workloads and components after installation). We recommend installing the following:
 
 #### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1-a)
 
 From within the Visual Studio Installer app:
 
-* On the **Workloads** tab of the installation dialog box, select as appropriate:
- 
+* On the **Workloads** tab:
+
   * For C# app development using the Windows App SDK, select **.NET Desktop Development**.
     * Then in the **Installation details** pane of the installation dialog box, select **Windows App SDK C# Templates** (at the bottom of the list).
   * For C++ app development using the Windows App SDK, select **Desktop development with C++**
     * Then in the **Installation details** pane of the installation dialog box, select **Windows App SDK C++ Templates** (at the bottom of the list).
- * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
+  * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
     * Then in the **Installation details** pane of the installation dialog box for that workload, make sure **C++ (v143) Universal Windows Platform tools** is selected.
 
-* On the **Individual components** tab of the installation dialog box, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
+* On the **Individual components** tab, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 
 #### [Other Visual Studio versions](#tab/vs-other)
 
 From within the Visual Studio Installer app:
 
-* On the **Workloads** tab of the installation dialog box, select as appropriate:
+* On the **Workloads** tab:
 
   * For C# app development using the Windows App SDK, select **.NET Desktop Development**.
   * For C++ app development using the Windows App SDK, select **Desktop development with C++**.
   * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**.
     * Then in the **Installation details** pane of the installation dialog box for that workload, make sure either **C++ (v143) Universal Windows Platform tools** (for Visual Studio 2022) or **C++ (v142) Universal Windows Platform tools** (for Visual Studio 2019) is selected.
 
-* On the **Individual components** tab of the installation dialog box, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
+* On the **Individual components** tab, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 
 ---
 
@@ -122,7 +122,7 @@ The [Windows App SDK](index.md) includes Visual Studio project and item template
 
 ### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1-b)
 
-If you followed the instructions in [Required workloads and components](#required-workloads-and-components) above, then the templates are already installed.
+If you followed the instructions in [Required workloads and components](#required-workloads-and-components) above, the templates should already be installed.
 
 Select **C#** or **C++** as the language, **Windows** as the platform, and **WinUI** as the Project type to create a new Windows App SDK project.
 
@@ -146,7 +146,7 @@ Download the extension directly, and install it:
 ### [Visual Studio 2019](#tab/vs-2019)
 
 > [!IMPORTANT]
-> Visual Studio 2019 supports only Windows App SDK 1.1 and earlier. Visual Studio 2022 is recommended for developing apps with all versions of the Windows App SDK.
+> Visual Studio 2019 supports only Windows App SDK 1.1 and earlier. Visual Studio 2022 is recommended for developing apps with any version of the Windows App SDK.
 
 The templates are available by installing a Visual Studio extension (VSIX).
 
@@ -154,7 +154,7 @@ The templates are available by installing a Visual Studio extension (VSIX).
 > If you have a Windows App SDK Visual Studio extension (VSIX) already installed, then uninstall it before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
 * You can install the latest stable release VSIX from Visual Studio. Select **Extensions** > **Manage Extensions**, search for *Windows App SDK*, and download the Windows App SDK extension. Close and reopen Visual Studio, and follow the prompts to install the extension.
-* Alternatively, you can download the extension directly from Visual Studio Marketplace, and install it:
+* Alternatively, you can download the extension directly from Visual Studio Marketplace:
 
 > [!div class="button"]
 > [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix-2019-cs)

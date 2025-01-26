@@ -16,9 +16,6 @@ ms.localizationpriority: medium
 
 While it works on all Windows devices, the TwoPaneView control is designed to help you take full advantage of dual-screen devices automatically, with no special coding needed. On a dual-screen device, the two-pane view ensures that the user interface (UI) is split cleanly when it spans the gap between screens, so that your content is presented on either side of the gap.
 
-> [!NOTE]
-> A _dual-screen device_ is a special kind of device with unique capabilities. It's not equivalent to a desktop device with multiple monitors. For more info about dual-screen devices, see [Introduction to dual-screen devices](/dual-screen/introduction). (See [Show multiple views](../layout/show-multiple-views.md) for more info about ways you can optimize your app for multiple monitors.)
-
 **Get WinUI**
 
 :::row:::

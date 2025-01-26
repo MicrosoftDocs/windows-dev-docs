@@ -78,7 +78,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [TeachingTip class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TeachingTip in action](winui3gallery:/item/TeachingTip).
+> [Open the WinUI 3 Gallery app and see the TeachingTip in action](winui3gallery:/item/TeachingTip)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

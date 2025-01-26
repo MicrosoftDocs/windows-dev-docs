@@ -1,13 +1,17 @@
 ---
 title: Windows Package Manager
 description: Windows Package Manager is a comprehensive package manager solution that consists of a command line tool and set of services for installing applications on Windows.
-ms.date: 10/30/2023
+ms.date: 11/21/2024
 ms.topic: overview
 ---
 
 # Windows Package Manager
 
-Windows Package Manager is a comprehensive [package manager solution](#understanding-package-managers) that consists of a command line tool (WinGet) and set of services for installing applications on Windows devices.
+Windows Package Manager is a comprehensive [package manager solution](#understanding-package-managers) that includes:
+
+- [WinGet](./winget/index.md): The command line tool and client interface for the Windows Package Manager service.
+- [Submit packages to Windows Package Manager](./package/index.md): The packaging services for hosting and installing applications on Windows devices.
+- [WinGet Configuration files](./configuration/index.md): Create a set of instructions for Windows Package Manager to consolidate the steps for manually setting up a device and onboarding to a new project to a single command that is reliable and repeatable. WinGet Configuration files utilize PowerShell Desired State Configuration (DSC) in combination with YAML formatted instructions and WinGet packages to handle your machine set up.
 
 Windows Package Manager is a helpful tool for:
 
@@ -31,13 +35,7 @@ For more information, see [Use the winget tool to install and manage application
 
 For a video demo of winget, see [Intro to Windows Package Manager](/shows/open-at-microsoft/intro-to-windows-package-manager).
 
-For the latest announcements and version updates, see the [Windows Command Line Blog](https://devblogs.microsoft.com/commandline/), including:
-
-- [Windows Package Manager 1.4](https://devblogs.microsoft.com/commandline/windows-package-manager-1-4/)
-- [Windows Package Manager 1.3](https://devblogs.microsoft.com/commandline/windows-package-manager-1-3/)
-- [Windows Package Manager 1.2](https://devblogs.microsoft.com/commandline/windows-package-manager-1-2/)
-- [Windows Package Manager 1.1](https://devblogs.microsoft.com/commandline/windows-package-manager-1-1/)
-- [Windows Package Manager 1.0](https://devblogs.microsoft.com/commandline/windows-package-manager-1-0/)
+Find the [latest Windows Package Manager announcements and version updates](https://devblogs.microsoft.com/commandline/author/denelon/) in the [Windows Command Line Blog](https://devblogs.microsoft.com/commandline/).
 
 ## Windows Package Manager for ISV software distribution
 
@@ -62,8 +60,3 @@ For this reason, the Windows Package Manager desktop installer supports a policy
 “Certificate Pinning” ensures that the package manager connection to the Microsoft Store is secure, helping to avoid risks associated with attacks such as Man-in-the-Middle (MITM) attacks involving a third party inserting themselves between a client (user) and server (application) to secretly intercept communication flows to steal sensitive data such as login credentials, etc. Disabling “Certificate Pinning” (enabling the bypass) can expose your organization to risk in this area and should be avoided.
 
 To learn more about setting up Group Policy for your enterprise organization, see the [Microsoft Intune documentation](/mem/intune/).
-
-## Related topics
-
-- [Use the winget tool to install and manage software packages](winget/index.md)
-- [Submit packages to Windows Package Manager](package/index.md)

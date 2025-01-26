@@ -1,16 +1,17 @@
 ---
 title: PowerToys Quick Accent utility for Windows
 description: Quick Accent is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
-ms.date: 08/03/2023
-ms.topic: article
+ms.date: 11/19/2024
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, Quick Accent, Win]
+# Customer intent: As a Windows power user, I want to learn about the Quick Accent utility in PowerToys for Windows.
 ---
 
 # Quick Accent utility
 
 ![Quick Accent utility](../images/pt-quick-accent.gif)
 
-Quick Accent is an alternative way to type accented characters, useful when a keyboard doesn't support that specific accent with a quick key combo. This tool is based on [Damien Leroy's PowerAccent](https://github.com/damienleroy/PowerAccent).
+Quick Accent is an alternative way to type accented characters. It's useful when a keyboard doesn't support that specific accent with a quick key combo. This tool is based on [Damien Leroy's PowerAccent](https://github.com/damienleroy/PowerAccent).
 
 In order to use the Quick Accent utility, open PowerToys Settings, select the **Quick Accent** page, and turn on the **Enable** toggle.
 
@@ -24,7 +25,7 @@ With the dialog enabled, keep pressing your activation key.
 
 ## Character sets
 
-You can limit the available characters by selecting a character set from the settings menu. Available character sets are:
+You can limit the available characters by selecting character sets from the settings menu. Available character sets are:
 
 * Catalan
 * Currency
@@ -56,6 +57,7 @@ You can limit the available characters by selecting a character set from the set
 * Slovenian
 * Spanish
 * Serbian
+* Serbian Cyrillic
 * Swedish
 * Turkish
 * Welsh
@@ -67,7 +69,7 @@ From the Settings menu, the following options can be configured:
 | Setting | Description |
 | :--- | :--- |
 | Activation key | Choose **Left/Right Arrow**, **Space** or **Left, Right or Space**. |
-| Character set | Show only characters that are in the chosen set. |
+| Character set | Show only characters that are in the chosen sets. |
 | Toolbar location | Position of the toolbar. |
 | Show the Unicode code and name of the currently selected character | Shows the Unicode code (in hexadecimal) and name of the currently selected character under the selector. |
 | Sort characters by usage frequency | |

@@ -132,7 +132,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [InfoBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery:/item/InfoBar).
+> [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery:/item/InfoBar)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -298,8 +298,8 @@ XAML content can be added to an InfoBar using the Content property. It will appe
 You can modify the default Style and ControlTemplate to give the control a unique appearance.
 See the [Control Style and Template](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar#control-style-and-template) section of the InfoBar API docs for a list of the available theme resources.
 
-For more info, see the [Light-weight styling section](../style/xaml-styles.md#lightweight-styling)
-of the [Styling controls](../style/xaml-styles.md)
+For more info, see the [Light-weight styling section](../../develop/platform/xaml/xaml-styles.md#lightweight-styling)
+of the [Styling controls](../../develop/platform/xaml/xaml-styles.md)
 article.
 
 For example, the following causes the background color for all informational InfoBars on a page to be blue:

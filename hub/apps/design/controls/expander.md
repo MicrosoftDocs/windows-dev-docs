@@ -46,7 +46,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [Expander class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander), [Header property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the Expander in action](winui3gallery:/item/Expander).
+> [Open the WinUI 3 Gallery app and see the Expander in action](winui3gallery:/item/Expander)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -235,7 +235,7 @@ private void Expander_Collapsed(muxc.Expander sender,
 
 ### Lightweight styling
 
-You can modify the default `Style` and `ControlTemplate` to give the control a unique appearance. See the Control Style and Template section of the Expander API docs for a list of the available theme resources. For more info, see the [Light-weight styling section](../style/xaml-styles.md#lightweight-styling) of the [Styling controls](../style/xaml-styles.md) article.
+You can modify the default `Style` and `ControlTemplate` to give the control a unique appearance. See the Control Style and Template section of the Expander API docs for a list of the available theme resources. For more info, see the [Light-weight styling section](../../develop/platform/xaml/xaml-styles.md#lightweight-styling) of the [Styling controls](../../develop/platform/xaml/xaml-styles.md) article.
 
 ## Recommendations
 

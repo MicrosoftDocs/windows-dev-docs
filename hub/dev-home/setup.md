@@ -1,7 +1,7 @@
 ---
 title: Dev Home Machine Configuration
 description: Set up your Windows development environment with Dev Home by using the integrated set up tool to get your machine to a development-ready state. Use the step-by-step graphical interface to walk through the setup process or use a WinGet Configuration file with pre-defined setup requirements.
-ms.date: 05/07/2024
+ms.date: 11/26/2024
 ms.topic: overview
 ---
 
@@ -21,11 +21,9 @@ When you select **Machine configuration**, Dev Home will provide multiple set up
 
 - **Set up a local machine**: Install applications, clone repositories, and add all of the requirements for a new development project using the built-in graphical configuration interface to enable unattended setup of your environment. The step-by-step tool will walk you through everything you need, including suggestions for popular dev tools or known repositories. At the end of the process you can generate a WinGet Configuration file to make it easy to apply these same steps to any machine. Once you've made all of your choices, sit back and let Dev Home handle the rest. If you've cloned any repositories that contain a WinGet Configuration file, Dev Home will detect that and let you continue to complete your set up.
 
-- **Set up an environment**: *Experimental Feature*. Target an existing environment to configure by selecting applications to install and public repositories to clone in your specified development environment. From Hyper-V to Microsoft Dev Box support, Dev Home makes it easy to set up any other environment as easily as you can your local machine. 
+- **Set up an environment**: Create a new local or cloud environment for development. Once created you can launch it from the environments page, or select it for configuration. You can also target an existing dev environment to configure by selecting applications to install and public repositories to clone. Examples include Hyper-V (local virtual machines), Microsoft Dev Box (cloud-based dev environments)... set up any other environment as easily as you can your local machine.
 
 - **Run a configuration file for an existing setup**: Use a [WinGet Configuration file](../package-manager/configuration/index.md) to consolidate all of your machine setup and project onboarding tasks into a single file, making the process of setting up your development environment reliable and repeatable. WinGet Configuration files use a YAML format with a JSON schema applying Windows Package Manager and PowerShell Desired State Configuration (DSC) Resource modules to handle every aspect of your machine set up. Remove any worry over finding the right software version, packages, tools, frameworks, and settings when onboarding to a new team or project. In this experience you can switch between a summary view or check out the raw contents of the YAML file. Be sure to [check the trustworthiness of a WinGet Configuration file](../package-manager/configuration/check.md) before running it.
-
-- **Create environment**: *Experimental Feature*. Create a new local or cloud environment for development. Once created you can launch it from the environments page, or select it for configuration.
 
 - **Clone repositories**: Once you have connected your credentials using the [Dev Home GitHub extension](extensions.md#dev-home-github-extension) or the [Dev Home Azure extension](extensions.md#dev-home-azure-extension), you can use Dev Home to clone repositories on to your machine.
 

@@ -1,11 +1,12 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 08/03/2023
+ms.date: 11/19/2024
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always On Top]
 adobe-target: true
+# Customer intent: Learn about PowerToys, a set of utilities for customizing Windows.
 ---
 
 # Microsoft PowerToys: Utilities to customize Windows
@@ -64,7 +65,7 @@ The currently available utilities include:
         [![Color Picker screenshot](../images/pt-color-picker.png)](color-picker.md)
     :::column-end:::
     :::column span="2":::
-        [Color Picker](color-picker.md) is a system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from anywhere on the screen, the picker automatically copies the color to your clipboard in a set format.
+        [Color Picker](color-picker.md) is a system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from anywhere on the screen, and the picker automatically copies the color to your clipboard in a specified format.
         Color Picker contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
             :::column-end:::
 :::row-end:::
@@ -79,7 +80,6 @@ The currently available utilities include:
         [Command Not Found](cmd-not-found.md) is a PowerShell 7 module that detects an error thrown by a command and suggests a relevant WinGet package to install, if available.
             :::column-end:::
 :::row-end:::
-
 
 ### Crop And Lock
 
@@ -213,7 +213,7 @@ The currently available utilities include:
         [![Peek screenshot](../images/powertoys-peek.png)](peek.md)
     :::column-end:::
     :::column span="2":::
-        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Select the file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
+        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. Select a file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>)
     :::column-end:::
 :::row-end:::
 
@@ -235,7 +235,7 @@ The currently available utilities include:
         [![PowerToys Run screenshot](../images/pt-run.png)](run.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Run](run.md) can help you search and open your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins.
+        [PowerToys Run](run.md) can help you search and open your app instantly. To open, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It's open source and modular, supporting additional plugins.
     :::column-end:::
 :::row-end:::
 
@@ -246,7 +246,7 @@ The currently available utilities include:
         [![Quick Accent screenshot](../images/pt-keyboard-accent.png)](Quick-accent.md)
     :::column-end:::
     :::column span="2":::
-        [Quick Accent](Quick-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific character with a quick key combo.
+        [Quick Accent](Quick-accent.md) is an alternative way to type accented characters. It's useful when a keyboard doesn't support a specific character with a quick key combo.
     :::column-end:::
 :::row-end:::
 
@@ -268,7 +268,7 @@ The currently available utilities include:
         [![Screen Ruler screenshot](../images/pt-screen-ruler.png)](screen-ruler.md)
     :::column-end:::
     :::column span="2":::
-        Use [Screen Ruler](screen-ruler.md) to quickly measure pixels on your screen based with image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
+        Use [Screen Ruler](screen-ruler.md) to quickly measure pixels on your screen based with image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This tool was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
     :::column-end:::
 :::row-end:::
 
@@ -279,7 +279,7 @@ The currently available utilities include:
         [![Shortcut Guide screenshot](../images/pt-shortcut-guide.png)](shortcut-guide.md)
     :::column-end:::
     :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also use press and hold <kbd>⊞ Win</kbd>.
+        [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also use it by pressing and holding <kbd>⊞ Win</kbd>.
     :::column-end:::
 :::row-end:::
 
@@ -305,19 +305,30 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Workspaces
+
+:::row:::
+    :::column:::
+        [![Workspaces screenshot](../images/powertoys-workspaces/workspaces_editor.png)](workspaces.md)
+    :::column-end:::
+    :::column span="2":::
+        [Workspaces](workspaces.md) is a desktop manager utility for launching a set of applications to custom positions and configurations with a single click. Open the editor by selecting "Launch editor" from settings or by using the shortcut <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>`</kbd>.
+    :::column-end:::
+:::row-end:::
+
 ## Languages
 
-Currently, PowerToys is available in the following languages: Arabic (Saudi Arabia), Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish, Ukrainian.
+PowerToys is currently available in the following languages: Arabic (Saudi Arabia), Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish, Ukrainian.
 
 ## PowerToys video walk-through
 
-In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
+In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available. He aslo shares some tips, information about how to contribute, and more.
 
 > [!VIDEO https://learn.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 
-Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. If you don't find the issue you are experiencing, you can [Report a Bug](https://github.com/microsoft/PowerToys/issues/new/choose) on the PowerToys product repo.
+You can search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. If you don't find the issue you are experiencing, you can [Report a Bug](https://github.com/microsoft/PowerToys/issues/new/choose) on the PowerToys product repo.
 
 ## Contribute to PowerToys (Open Source)
 

@@ -30,7 +30,7 @@ APIs for these shapes exist in the [Windows.UI.Xaml.Shapes](/uwp/api/windows.ui.
 
 ## Fill and Stroke for shapes
 
-For a [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) to render to the app canvas, you must associate a [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.brush) with it. Set the [**Fill**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.fill) property of the **Shape** to the **Brush** you want. For more info about brushes, see [Using brushes](../style/brushes.md).
+For a [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) to render to the app canvas, you must associate a [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.brush) with it. Set the [**Fill**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.fill) property of the **Shape** to the **Brush** you want. For more info about brushes, see [Using brushes](../../develop/platform/xaml/brushes.md).
 
 A [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) can also have a [**Stroke**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.stroke), which is a line that is drawn around the shape's perimeter. A **Stroke** also requires a [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.brush) that defines its appearance, and should have a non-zero value for [**StrokeThickness**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.strokethickness). **StrokeThickness** is a property that defines the perimeter's thickness around the shape edge. If you don't specify a **Brush** value for **Stroke**, or if you set **StrokeThickness** to 0, then the border around the shape is not drawn.
 

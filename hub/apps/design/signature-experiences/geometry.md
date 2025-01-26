@@ -8,19 +8,22 @@ keywords: windows 11, design, ui, uiux, geometry, gutters, margins, corners, rou
 ms.localizationpriority: medium
 ---
 
-# Geometry in Windows 11
+# Geometry in Windows
 
 ![Rounded corners and element spacing in Windows 11](images/geometry_hero_1880.png)
 
 Geometry describes the shape, size and position of UI elements on screen. These fundamental design elements help experiences feel coherent across the entire design system.
 
-Windows 11 geometry has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.
+Windows geometry has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.
+
+> [!TIP]
+> This article describes how the [Fluent Design language](https://fluent2.microsoft.design/) is applied to Windows apps. For more information, see [**Fluent Design - Shapes**](https://fluent2.microsoft.design/shapes).
 
 ## Rounded corners
 
 ![Dialog with rounded corners](images/geometry_rounded_corners_1880.png)
 
-Windows 11 applies rounded corners to all top-level app windows. The same applies to most common controls such as Button and ListView. (For more information, see [Use the latest common controls](../../get-started/make-apps-great-for-windows.md#4-use-the-latest-common-controls).) 
+Windows 11 applies rounded corners to all top-level app windows. The same applies to most common controls such as Button and ListView. (For more information, see [Use the latest common controls](../../get-started/make-apps-great-for-windows.md#4-use-the-latest-common-controls).)
 
 Windows 11 uses three levels of rounding depending on what UI component is being rounded and how that component is arranged relative to neighboring elements.
 

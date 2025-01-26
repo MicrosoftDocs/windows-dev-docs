@@ -3,7 +3,7 @@ title: Windows Subsystem for Android&trade;️
 description: Windows Subsystem for Android&trade;️ enables your Windows 11 device to run Android applications that are available in the Amazon Appstore. Learn more about set up, device requirements, installing and uninstalling, input compatibility, testing and debugging, and using the Amazon Appstore.
 ms.reviewer: mousma
 ms.topic: article
-ms.date: 05/29/2024
+ms.date: 11/21/2024
 ---
 
 # Windows Subsystem for Android&trade;️
@@ -15,29 +15,10 @@ Windows Subsystem for Android&trade;️ enables your Windows 11 device to run An
 > Customers that have installed the Amazon Appstore or Android apps prior to March 5, 2024, will continue to have access to those apps through the deprecation date of March 5, 2025. Please reach out to our support team for further questions at [support.microsoft.com](https://support.microsoft.com).
 > We are grateful for the support of our developer community and remain committed to listening to feedback as we evolve experiences.
 
-To make your Android app available on Windows 11 devices, you must:
-
-- [Submit your app to the Amazon Appstore](https://developer.amazon.com/apps-and-games/appstore-on-windows-11).
-
-For more information or support:
-
-- [Sign up for updates to the Amazon Appstore on Windows program](https://m.amazonappservices.com/developer-interest).
-- [Visit the Amazon developer support portal](https://developer.amazon.com/apps-and-games/appstore-on-windows-11) where you can find articles, forums, FAQs, or reach out for direct support via the Appstore "Contact us" page once you set up an Amazon Developer account.
-
-This guide can help you test and debug your Android app on Windows:
-
-- [Set up your development environment](#set-up-your-development-environment), including [prerequisites](#prerequisites), [installing the Amazon Appstore](#install-the-amazon-appstore), and using the [Settings](#windows-subsystem-for-android-settings).
-- [Test and debug](#test-and-debug) your app on a Windows 11 device.
-- Handle input compatibility considerations for Windows devices, such as: [keyboard input](#keyboard-input), [mouse input](#mouse-input), and [window management and resizing](#window-management-and-resizing).
-- [Troubleshoot and find answers](#troubleshooting-issues).
-
-## Developer GitHub
-
-Want to learn more about Windows Subsystem for Android&trade;️ roadmap, discuss developer issues and file bugs or feature requests with the subsystem team? Visit the [Windows Subsystem for Android&trade;️ Developers GitHub](https://github.com/microsoft/WSA).
-
-## Preview Program
-
-The Windows Subsystem for Android&trade;️ Preview Program is no longer available. 
+- [Amazon Appstore on Windows 11 discontinuation notice](https://developer.amazon.com/apps-and-games/appstore-on-windows-11).
+- [Windows Subsystem for Android&trade;️ repository on GitHub](https://github.com/microsoft/WSA)
+- [Apps from the Amazon Appstore](https://support.microsoft.com/en-us/windows/apps-from-the-amazon-appstore-abed2335-81bf-490a-92e5-fe01b66e5c48)
+- [Accessibility for mobile apps on Windows](https://support.microsoft.com/windows/97b77924-6df9-4597-8394-15b6e34d1658)
 
 ## Set up your development environment
 
@@ -45,7 +26,7 @@ To test your Android app in the Windows desktop environment, a bit of set up wil
 
 ### Prerequisites
 
-Windows Subsystem for Android&trade;️ is available on Windows 11. Your device must meet specific requirements: [Device requirements](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
+[Device requirements](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
 ### Install the Amazon Appstore
 
@@ -272,10 +253,3 @@ If you encounter issues specific to the Amazon Appstore on Windows, try the foll
 7. Relaunch the Amazon Appstore.
 
 For further troubleshooting steps relating to the Windows Subsystem for Android&trade;️ Settings app or to leave feedback using Feedback Hub, see [Troubleshooting and FAQ for mobile apps on Windows](https://support.microsoft.com/windows/d6062afd-98a1-4018-a7c8-6b3b680a2ea5).
-
-For any other developer questions and support, use the [Windows Subsystem for Android&trade;️ tag on Microsoft Q&A](/answers/topics/windows-subsystem-for-android.html).
-
-## Additional resources
-
-- [Apps from the Amazon Appstore](https://support.microsoft.com/en-us/windows/apps-from-the-amazon-appstore-abed2335-81bf-490a-92e5-fe01b66e5c48)
-- [Accessibility on Windows Subsystem for Android&trade;️](https://support.microsoft.com/windows/97b77924-6df9-4597-8394-15b6e34d1658)

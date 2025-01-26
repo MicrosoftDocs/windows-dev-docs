@@ -139,7 +139,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs**: [Slider class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.slider), [Value property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.value), [ValueChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the Slider in action](winui3gallery:/item/Slider).
+> [Open the WinUI 3 Gallery app and see the Slider in action](winui3gallery:/item/Slider)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

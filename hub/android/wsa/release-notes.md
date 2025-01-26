@@ -3,7 +3,7 @@ title: Windows Subsystem for Android&trade;️ Release Notes
 description: Release notes for Windows Subsystem for Android.
 ms.reviewer: mousma
 ms.topic: article
-ms.date: 07/31/2024
+ms.date: 11/21/2024
 ---
 
 # Release Notes for Windows Subsystem for Android&trade;️
@@ -20,6 +20,7 @@ For the latest information on Windows Subsystem for Android™️, see the [WSA 
 ## Build 2304.40000.3.0
 
 June 1, 2023
+
 - Package verification for apps on WSA: Android apps are scanned using anti-virus software installed on Windows prior to app installation.
 - Ability for users to configure how much memory to assign to Android
 - Android apps will be launched when a user opens the supported app link from any app (Android AppLink support)

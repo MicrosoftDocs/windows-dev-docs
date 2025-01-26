@@ -45,7 +45,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [RichTextBlock class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Paragraph), [Typography class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Typography)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the RichTextBlock in action](winui3gallery:/item/RichTextBlock).
+> [Open the WinUI 3 Gallery app and see the RichTextBlock in action](winui3gallery:/item/RichTextBlock)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

@@ -51,7 +51,7 @@ The [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) is 
 - The third section contains the [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) that holds that various MediaTransportControls elements together and defines how the components are laid out.
 
 > [!NOTE]
-> For more info about modifying templates, see [Control templates](../style/xaml-control-templates.md). You can use a text editor or similar editors in your IDE to open the XAML files in \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic. The default style and template for each control is defined in the **generic.xaml** file. You can find the MediaTransportControls template in generic.xaml by searching for "MediaTransportControls".
+> For more info about modifying templates, see [Control templates](../../develop/platform/xaml/xaml-control-templates.md). You can use a text editor or similar editors in your IDE to open the XAML files in \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic. The default style and template for each control is defined in the **generic.xaml** file. You can find the MediaTransportControls template in generic.xaml by searching for "MediaTransportControls".
 
 In the following sections, you learn how to customize several of the main elements of the transport controls:
 - [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider): allows a user to scrub through their media and also displays progress
@@ -85,7 +85,7 @@ If you want to modify only the appearance of the MediaTransportControls, you can
 </MediaPlayerElement>
 ```
 
-For more info about modifying styles and templates, see [Styling controls](../style/xaml-styles.md) and [Control templates](../style/xaml-control-templates.md).
+For more info about modifying styles and templates, see [Styling controls](../../develop/platform/xaml/xaml-styles.md) and [Control templates](../../develop/platform/xaml/xaml-control-templates.md).
 
 ### Create a derived control
 

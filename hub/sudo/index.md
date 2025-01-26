@@ -3,7 +3,7 @@ title: Sudo for Windows
 description: Learn how to use sudo in your command line to run elevated commands (as an administrator) directly from an unelevated console session on Windows.
 ms.reviewer: jordiadoumie
 ms.topic: article
-ms.date: 02/08/2024
+ms.date: 11/21/2024
 no-loc: [Gerardo Grignoli]
 ---
 
@@ -15,14 +15,14 @@ no-loc: [Gerardo Grignoli]
 
 ## Prerequisites
 
-You must be running Windows 11 Insider Preview Build 26052 or higher to use the Sudo for Windows command. ([Check for Windows updates](ms-settings:windowsupdate)). [Join Windows Insider Program](https://www.microsoft.com/windowsinsider/).
+The Sudo for Windows command is available in [Windows 11, version 24H2](https://support.microsoft.com/topic/windows-11-version-24h2-update-history-0929c747-1815-4543-8461-0160d16f15e5) or higher. ([Check for Windows updates](ms-settings:windowsupdate)).
 
 > [!NOTE]
 > Sudo for Windows is not yet available for Windows 10, but may be in the future.
 
 ## How to enable Sudo for Windows
 
-To enable Sudo for Windows, open `Settings > For Developers` and set **Enable sudo** to **On**.
+To enable Sudo for Windows, open `Settings > System > For Developers` and set **Enable sudo** to **On**.
 
 ![Enable Sudo](../images/sudo-enable.png)
 

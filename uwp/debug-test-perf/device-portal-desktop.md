@@ -23,24 +23,28 @@ You can use the WDP for the following:
 
 ## Set up Windows Device Portal on a Desktop device
 
-### Turn on developer mode
+### Turn on Developer Mode
 
-Starting in Windows 10, version 1607, some of the newer features for desktop are only available when developer mode is enabled. For information about how to enable developer mode, see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
+You can enable Developer Mode in the **For developers** section of **Settings** (Settings -> System -> For developers). Starting in Windows 10, version 1607, some newer features for desktop are only available when developer mode is enabled.
+
+:::image type="content" source="images/device-portal/device-portal-desk-settings-developer-mode.PNG" alt-text="Screenshot of the Settings -> System -> For developers window showing Developer Mode enabled.":::
 
 > [!IMPORTANT]
 > Sometimes, due to network or compatibility issues, developer mode won't install correctly on your device. See the [relevant section of Enable your device for development](/windows/apps/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) for help troubleshooting these issues.
 
 ### Turn on Windows Device Portal
 
-You can enable WDP in the **For developers** section of **Settings** (Settings -> Privacy & security -> For developers). When you enable it, you must also create a corresponding username and password. Do not use your Microsoft account or other Windows credentials.
+You can enable WDP in the **For developers** section of **Settings** (Settings -> System -> For developers).
 
-![Windows Device Portal section of the Settings app](images/device-portal/device-portal-desk-settings.png)
+:::image type="content" source="images/device-portal/device-portal-desk-settings-install.PNG" alt-text="Screenshot of the Settings -> System -> For developers window that shows the Install Windows Developer Mode package dialog after enabling Device Portal.":::
 
-Once WDP is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when WDP is enabled but should remain consistent between reboots of the desktop.
+Once WDP is enabled, you will see URIs at the bottom of the Device Portal section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when WDP is enabled but should remain consistent between reboots of the desktop.
 
-These links offer two ways to connect to WDP: over the local network (including VPN) or through the local host. Once you connect, it should look something like this:
+:::image type="content" source="images/device-portal/device-portal-desk-settings.PNG" alt-text="Screenshot of the Settings -> System -> For developers window that shows the Device Portal settings available after being enabled.":::
 
-![Windows Device Portal](images/device-portal/device-portal-example.png)
+These links offer two ways to connect to WDP: over the local network (including VPN) or through the local host.
+
+:::image type="content" source="images/device-portal/device-portal-example.png" alt-text="Screenshot of the Windows Device Portal":::
 
 ### Turn off Windows Device Portal
 

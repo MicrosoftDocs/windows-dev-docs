@@ -1,10 +1,11 @@
 ---
 title: PowerToys Mouse utilities for Windows
 description: A collection of utilities to expand the range of usage for the mouse and cursor.
-ms.date: 08/03/2023
-ms.topic: article
+ms.date: 12/13/2024
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Mouse, jump]
+# Customer intent: Learn how to configure and use the Mouse utilities in PowerToys.
 ---
 
 # Mouse utilities
@@ -13,8 +14,7 @@ Mouse utilities is a collection of features that enhance mouse and cursor functi
 
 ## Find my mouse
 
-Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it.
-If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
+Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
 
 ![Screenshot of Find my mouse](../images/pt-mouse-utilities-find-my-mouse.gif)
 
@@ -66,6 +66,8 @@ Mouse jump allows moving the mouse pointer long distances on a single screen or 
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to activate the mouse jump. |
+| Thumbnail Size | Constrains the thumbnail image to a maximum size. The default size is 1600x1200 pixels. |
+| Appearance | Expand this section to adjust the popup appearance by customizing the colors, borders, spacing, and more. |
 
 ## Mouse pointer Crosshairs
 

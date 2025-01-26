@@ -462,7 +462,7 @@ Reveal focus is off by default. For 10 foot experiences you should opt-in to rev
     }
 ```
 
-For more information see the guidance for [Reveal focus](../style/reveal-focus.md).
+For more information see the guidance for [Reveal focus](/windows/uwp/ui-input/reveal-focus).
 
 ### Customizing the focus visual
 

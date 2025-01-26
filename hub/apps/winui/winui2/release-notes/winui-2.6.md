@@ -118,7 +118,7 @@ Most WinUI controls now support the latest Windows 11 styles.
 
 A new versioning system has also been introduced that lets you revert to the previous control styles. However, we strongly encourage using the new styles, if possible, as they align with the current design direction of Windows.
 
-[XAML styles](../../../design/style/xaml-styles.md)
+[XAML styles](../../../develop/platform/xaml/xaml-styles.md)
 
 ## SplitButton styles for CommandBar
 

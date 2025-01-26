@@ -2,7 +2,7 @@
 
 title: Dynamic lighting
 description: This topic describes how to control device lamp arrays using the Windows.Devices.Lights namespace.
-ms.date: 10/05/2023
+ms.date: 12/05/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -20,7 +20,7 @@ This topic describes how your Windows apps can provide dynamic lighting effects 
 
 ## Overview
 
-Dynamic lighting support in Windows lets both app developers and end users control and synchronize lighting effects across peripherals and other connected devices.
+Dynamic lighting lets both Windows app developers and end users control and synchronize lighting effects across compatible peripherals and other connected devices. These features can be used to deliver cohesive experiences that entertain users, make them more productive, and even make their experiences across Windows more accessible.
 
 **Supported app types and platforms**
 
@@ -47,10 +47,6 @@ Dynamic lighting support in Windows lets both app developers and end users contr
 
 A Windows app can control HID LampArray devices when the app is in the foreground (starting with Windows 10) and when it's in the background (also known as *ambient lighting*, starting with Windows 11).
 
-Users can customize their LampArray device experience (both foreground and background) through the **Settings -> Personalization -> Dynamic lighting** screen, letting them synchronize devices from different manufacturers, control brightness and effects across selected devices and form factors, and prioritize access to devices by ambient background apps. These features enable your apps to entertain users, make them more productive, make their experiences across Windows more accessible, and deliver cohesive experiences across the set of Dynamic Lighting-compatible devices.
-
-:::image type="content" source="images/lighting/settings-dynamic-lighting.png" alt-text="Screenshot of the Dynamic Lighting settings screen.":::
-
 ## Device prioritization
 
 Windows prioritizes dynamic lighting based on app state. By default, a foreground app is always assigned control of a LampArray device unless the user has specified otherwise in Settings. In cases where two or more ambient background apps are trying to control a LampArray device, the system will assign control to the app prioritized in Settings.
@@ -59,13 +55,13 @@ Windows prioritizes dynamic lighting based on app state. By default, a foregroun
 
 The "ambient" APIs in [**Windows.Devices.Lights**](/uwp/api/windows.devices.lights) enable background applications to control LampArray devices while the user is interacting with an unrelated app in the foreground (such as music apps that drive synchronized lighting effects).
 
-Apps can receive [LampArray.AvailabilityChanged](/uwp/api/windows.devices.lights.lamparray.availabilitychanged) events, depending on user settings. In conjunction with the [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) class, apps can track and manage all connected/disconnected LampArray devices and see which the user expects the app to control. One example usage is a UI that renders an icon for each connected device, unavailable ones greyed out, and links to the Dynamic Lighting settings page where the user can make changes to foreground/background app preferences.
+Apps can receive [LampArray.AvailabilityChanged](/uwp/api/windows.devices.lights.lamparray.availabilitychanged) events, depending on user settings. In conjunction with the [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) class, apps can track and manage all connected/disconnected LampArray devices and see which the user expects the app to control. One example usage is a UI that renders an icon for each connected device, unavailable ones greyed out, and links to the **Dynamic Lighting** settings page where the user can make changes to foreground/background app preferences.
 
 ## User settings
 
-Users can control and configure their HID LampArray devices at both the individual and global level through the Dynamic Lighting page in **Settings -> Personalization -> Dynamic Lighting**. This page will appear in Settings when at least one compatible device is connected to the PC.
-
 :::image type="content" source="images/lighting/settings-dynamic-lighting.png" alt-text="Screenshot of the Dynamic Lighting settings screen.":::
+
+Users can customize their LampArray device experience (both foreground and background) through the **Settings -> Personalization -> Dynamic lighting** screen.
 
 1. When connected, compatible devices will show up in the device cards along the top of the page where users can change individual device settings.
 2. Global Dynamic Lighting settings are located below the device cards (changes to these settings affect all connected devices).
@@ -78,7 +74,9 @@ Users can control and configure their HID LampArray devices at both the individu
    :::image type="content" source="images/lighting/settings-dynamic-lighting-effects.png" alt-text="Screenshot of the Dynamic Lighting settings Effects screen.":::
 
 > [!NOTE]
-> When a device is not selected for *Background light control*, it operates in "Autonomous mode", which means that the device reverts to default firmware behavior.
+> When a device is not selected for *Background light control*, it operates in "Autonomous mode".
+>
+> This is defined in the HID spec as a mode where the hardware falls back to default behavior as defined by its firmware. For example, a device might have a preprogrammed visual effect that is the default when the OS is not actively controlling the device or if the user has opted out of OS involvement for the device. The device must respond to the HID command to return from Autonomous mode to ensure smooth interaction with user expectations.
 
 ## Packaging and app identity
 
@@ -86,7 +84,7 @@ Ambient background applications must declare the "com.microsoft.windows.lighting
 
 App identity is required for ambient applications such that user preferences can be determined at runtime. Once an application is installed, if it is using the ambient APIs, the system needs to correlate the running instance of an app with the user's preferences. Furthermore, making your app available to the user in the settings requires a post installation artifact that indicates to the system that your app is a legitimate user of the ambient lighting APIs.
 
-This identity requirement is achieved via [MSIX packaging](/windows/msix/).
+This identity requirement is achieved via [MSIX packaging](/windows/msix/) (a Microsoft deployment and packaging technology formerly known as APPX).
 
 If you are already using MSIX packaging for packaging and installation, there are no further requirements.
 
@@ -97,30 +95,6 @@ You must define an [AppXManifest.xml packaging manifest](/uwp/schemas/appxpackag
 For unpackaged app installations, there is also a [side-by-side application manifest](/windows/win32/sbscs/application-manifests) requirement for your executable.
 
 See the [Deployment overview](/windows/apps/package-and-deploy/) for a more in-depth explanation of packaged and unpackaged apps.
-
-## Glossary
-
-The following terms and concepts are used to describe various ambient lighting system components.
-
-- Autonomous Mode
-
-  Defined in the HID spec as a mode where the hardware falls back to default behavior as defined by its firmware. For example, a device might have a preprogrammed visual effect that is the default when the OS is not actively controlling the device or if the user has opted out of OS involvement for the device. The device must respond to the HID command to return from Autonomous mode to ensure smooth interaction with user expectations.
-
-- Ambient Apps
-
-  [**Windows.Devices.Lights**](/uwp/api/windows.devices.lights) API consumers that also have package identity and support the required app extension. Ambient apps receive notifications from the AmbientLightingClient. The events inform the app of devices they have access to. In this way, an app could show UI enumerating the connected lighting devices, and grey out the devices that are currently inaccessible due to user policy settings. Ambient Apps utilize the [**Windows.Devices.Lights**](/uwp/api/windows.devices.lights) APIs to drive effects across available devices.
-
-- Settings applet
-
-  Stores per device user preferences in the HKEY_CURRENT_USER (HKCU) of the registry. The user can define on a per device basis the prioritized set of ambient apps for the given device. The user can also opt out of dynamic lighting.
-
-- App Identity
-
-  An app model concept. An app that has an app identity can be identified by the system at runtime.
-
-- MSIX
-
-  A Microsoft deployment and packaging technology formerly known as APPX.
 
 ## Examples
 

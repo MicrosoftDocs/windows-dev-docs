@@ -2,8 +2,7 @@
 title: "Choose the right visual tree viewer for your Windows app"
 description: "This topic describes various visual tree viewers, also known as a UI visualizers, which are tools used to inspect and interact with UI components in a Windows app at run time."
 ms.topic: product-comparison
-ms.date: 01/11/2024
-ms.localizationpriority: medium
+ms.date: 11/08/2024
 
 #customer intent: As a developer, I want to test my app UI so that I can improve UX and debug issues.
 
@@ -23,7 +22,7 @@ The following table identifies several UI visualization tools and the UI framewo
 |-------------------------|------------------|-------------|------------------------|---------------------|
 |[WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md)                   | ✅      | ❌           | ✅            | ❌                   |
 |[WPF](/dotnet/desktop/wpf/)                      | ✅      | ❌           | ✅            | ❌                   |
-|[React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows)     | ✅      | ❌           | ✅            | ✅         |
+|[React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows)     | ✅      | ❌           | ✅            | ✅         |
 |[.NET MAUI](/dotnet/maui/)                | ✅      | ❌           | ✅            | ❌                   |
 |[WinForms](/dotnet/desktop/winforms/)                 | ✅      | ✅ | ✅            | ❌                   |
 |[WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/)               | ✅      | ❌           | ✅            | ❌                   |
@@ -37,7 +36,7 @@ The Live Visual Tree and Live Property Explorer features ship with Visual Studio
 
 #### When to use Live Visual Tree
 
-Use these tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows).
+Use these tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows).
 
 - For more information on WinUI in the Windows App SDK, WinUI 2 for UWP, and WPF, see [Inspect XAML properties while debugging](/visualstudio/xaml-tools/inspect-xaml-properties-while-debugging).
 - For more information on .NET MAUI, see [Inspect the visual tree of a .NET MAUI app](/dotnet/maui/user-interface/live-visual-tree).
@@ -132,7 +131,7 @@ For Spy++ documentation, see [Spy++ Help](/visualstudio/debugger/spy-increment-h
 
 #### When to use Accessibility Insights - Live Inspect
 
-Live Inspect is typically used in conjunction with Live Visual Tree, Spy++, and other tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows).
+Live Inspect is typically used in conjunction with Live Visual Tree, Spy++, and other tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](../../winui/winui2/index.md) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows).
 
 #### How to use Accessibility Insights - Live Inspect
 

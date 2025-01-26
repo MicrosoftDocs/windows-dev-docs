@@ -55,7 +55,7 @@ This section describes the design recommendations and behaviors of the parts of 
 - Place the window title 16px from the window icon or back button.
   - If neither an icon nor back button are present, place the window title 16px from the left-most border in LTR, or right-most border in RTL.
 - The window title should use the Segoe UI Variable (if available) or Segoe UI font.
-- The window title should use _caption_ style text (see [XAML type ramp](../style/xaml-theme-resources.md#the-xaml-type-ramp)).
+- The window title should use _caption_ style text (see [XAML type ramp](../../develop/platform/xaml/xaml-theme-resources.md#the-xaml-type-ramp)).
 - The window title can be truncated, and an ellipsis added if the window width is smaller than the length of the title bar elements. The icon and caption buttons (min, max and close) should always be fully visible.
 
 **Behavior**

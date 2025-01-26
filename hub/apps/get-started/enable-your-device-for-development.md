@@ -11,14 +11,12 @@ ms.topic: article
 
 ![Enable your devices for development](./images/developer-poster.png)
 
-> [!IMPORTANT]
-> If you're not creating your own applications on your PC, you don't need to enable Developer Mode. If you're trying to fix an issue with your computer, check out [Windows help](/windows).
+If you're writing software with Visual Studio, you *will* need to enable Developer Mode on both the development PC and on any devices you'll use to test your code.
 
-If you're using your computer for ordinary day-to-day activities (such as gaming, web browsing, email, or Office apps), you *don't* need to activate Developer Mode, and in fact, you shouldn't activate it. The rest of the information on this page won't matter to you, and you can safely get back to whatever you were doing. Thanks for stopping by!
+> [!NOTE]
+> If you're using your computer for ordinary day-to-day activities (such as gaming, web browsing, email, or Office apps), there is no need to activate Developer Mode. If you're trying to fix an issue with your computer, check out [Windows help](/windows).
 
-## Developer Mode
-
-If you're writing software with Visual Studio on a computer for the first time, you *will* need to enable Developer Mode on both the development PC and on any devices you'll use to test your code. Opening a Windows project when Developer Mode *isn't* enabled will either open the **For developers** settings page, or cause the following dialog to appear in Visual Studio:
+Opening a Windows project when Developer Mode *isn't* enabled will either open the **For developers** settings page, or cause the following dialog to appear in Visual Studio:
 
 ![Enable Developer Mode dialog](./images/enable-developer-mode-dialog.jpg)
 
@@ -31,8 +29,10 @@ If you see this dialog, select **settings for developers** to open the **For dev
 
 To enable Developer Mode, or access other settings:
 
-1. Toggle the Developer Mode setting, at the top of the **For developers** page
-2. Read the disclaimer for the setting you choose. Click **Yes** to accept the change.
+1. Open Windows Settings.
+2. Search for **Developer settings** or Go to **Update & Settings** then **For developers**.
+3. Toggle the Developer Mode setting, at the top of the **For developers** page
+4. Read the disclaimer for the setting you choose. Click **Yes** to accept the change.
 
 ![Developer Mode settings entry](./images/developer-mode-dialog.png)
 
@@ -41,7 +41,7 @@ To enable Developer Mode, or access other settings:
 
 ### Developer Mode features
 
-Developer Mode replaces the Windows 8.1 requirements for a developer license. In addition to sideloading, the Developer Mode setting enables debugging and additional deployment options. This includes starting an SSH service to allow deployment to this device. In order to stop this service, you need to disable Developer Mode.
+Developer Mode replaces the requirements for a developer license. In addition to sideloading, the Developer Mode setting enables debugging and additional deployment options. This includes starting an SSH service to allow deployment to this device. In order to stop this service, you need to disable Developer Mode.
 
 When you enable Developer Mode on desktop, a package of features is installed, including:
 

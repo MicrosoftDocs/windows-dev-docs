@@ -31,7 +31,7 @@ The package URL must host your app’s installer packaged as an .exe or .msi fil
 
 ### Malware test
 
-This test checks your app for viruses, malware, and unwanted applications using static and dynamic scanning technologies. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.
+This test checks your app for viruses, malware, and unwanted applications using static and dynamic scanning technologies. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system. For more info on security tests, see [Trust and Security Services Scan](https://aka.ms/securityscan).
 
 We highly recommended that you scan your app with Microsoft Defender or another consumer antivirus software that's compatible with Windows to ensure that it is free from malware and unwanted apps.
 

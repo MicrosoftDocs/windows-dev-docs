@@ -17,6 +17,7 @@ The following table lists the Windows system components that support integration
 | Feature | Description |
 |--|--|
 | [Feed providers](../feeds/feed-providers.md) | Learn how to integrate into the Windows feeds experience. |
+| [Microsoft Copilot hardware key providers](microsoft-copliot-key-provider.md) | Learn how to integrate into the Windows feeds experience. |
 | [Search providers](../search/search-providers.md) | Learn how to integrate into the Windows Search experience. |
 | [Widget providers](../widgets/widget-providers.md) | Learn how to implement a Windows widget service provider to support your app. |
 

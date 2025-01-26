@@ -78,7 +78,7 @@ More information about Acrylic and Mica materials can be found in [Things you ca
 
 #### Dark and Light themes
 
-[Dark and Light themes](./make-apps-great-for-windows.md#7-support-dark-and-light-themes) give users a way to adapt your app to their visual preferences. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](../design/style/xaml-theme-resources.md)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](../desktop/modernize/ui/apply-windows-themes.md). (The title bar in Win32 apps does not automatically adapt to the Dark theme. Be sure to follow the [title bar guidance](../desktop/modernize/ui/apply-windows-themes.md#enable-a-dark-mode-title-bar-for-win32-applications) in the article).
+[Dark and Light themes](./make-apps-great-for-windows.md#7-support-dark-and-light-themes) give users a way to adapt your app to their visual preferences. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](../develop/platform/xaml/xaml-theme-resources.md)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](../desktop/modernize/ui/apply-windows-themes.md). (The title bar in Win32 apps does not automatically adapt to the Dark theme. Be sure to follow the [title bar guidance](../desktop/modernize/ui/apply-windows-themes.md#enable-a-dark-mode-title-bar-for-win32-applications) in the article).
 
 #### Refreshed UI elements
 

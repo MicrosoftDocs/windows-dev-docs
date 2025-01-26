@@ -57,7 +57,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [ColorPicker class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker), [Color property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.Color), [ColorChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ColorPicker in action](winui3gallery:/item/ColorPicker).
+> [Open the WinUI 3 Gallery app and see the ColorPicker in action](winui3gallery:/item/ColorPicker)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

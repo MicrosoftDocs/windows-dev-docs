@@ -24,6 +24,19 @@ The stable channel provides releases of the Windows App SDK that are supported f
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
 
+### Version 1.5.9 (1.5.250108004)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
+- Fixed another potential issue where a menu off a CommandBar may incorrectly open up instead of down when the CommandBar is at the bottom of the window.
+- Fixed a potential crash when running on older graphics hardware.
+
+### Version 1.5.8 (1.5.241107002)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.
+
+- Fixed a potential crash when the input queue on the thread appears to be in a bad state.
+- Fixed some potential crashes when using `{x:Bind}` by checking every component for null. Apps wanting this fix need to recompile with this release.
+
 ### Version 1.5.7 (1.5.241001000)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.5 release.

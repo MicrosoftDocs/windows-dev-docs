@@ -10,8 +10,6 @@ keywords:
 
 This article provides an index of development features that are related to scenarios involving audio, video, and camera in Windows apps.
 
-> [!NOTE]
-> The [Windows App SDK](../windows-app-sdk/index.md) currently does not provide APIs related to audio, video, and camera scenarios.
 
 ## Windows OS features
 
@@ -23,8 +21,7 @@ The following articles provide information about features available via WinRT AP
 
 | Article | Description |
 |---------|-------------|
-| [Audio, video, and camera](/windows/uwp/audio-video-camera/) | Learn about development scenarios that involve photos, videos, or audio in your apps. |
-| [Camera](/windows/uwp/audio-video-camera/camera) | Learn about how to use the camera or microphone to capture photos, video, or audio. |
+| [Camera](./camera/camera.md) | Learn about how to use the camera or microphone to capture photos, video, or audio. |
 | [Media playback](/windows/uwp/audio-video-camera/media-playback/) | Learn about how to play back audio and video in your apps. |
 | [Visual layer](/windows/uwp/composition/visual-layer) | The Visual layer provides a high performance, retained-mode API for graphics, effects and animations, and is the foundation for all UI across Windows devices. |
 | [XAML platform](/windows/uwp/xaml-platform/) |  Describes the XAML language and concepts to apps that use a WinRT XAML-based UI, including XAML UI components provided by Windows 10 and later as well as WinUI. |

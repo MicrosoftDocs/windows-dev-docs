@@ -2,21 +2,23 @@
 title: Install tools for preview and experimental versions of the Windows App SDK
 description: Configure your development computer by installing the appropriate tools to develop apps for Windows by using the preview and experimental channels of the [Windows App SDK](./index.md).
 ms.topic: article
-ms.date: 08/19/2024
+ms.date: 12/18/2024
 keywords: windows win32, windows app development, Windows App SDK, preview, experimental
 ms.localizationpriority: medium
 ---
 
 # Install tools for preview and experimental channels of the Windows App SDK
 
-Configure your development computer by installing the appropriate tools to develop apps for Windows with the preview and experimental channels of the [Windows App SDK](./index.md).
+Configure your development computer with the tools required to build Windows apps using the [Windows App SDK](./index.md) (preview and experimental release channels) and [WinUI](/windows/apps/winui/winui3/).
 
-> [!NOTE]
-> This topic is for the preview and experimental release channels of the Windows App SDK&mdash;see [Windows App SDK release channels](./release-channels.md). For the stable channel, there's also [Install tools for the Windows App SDK](./set-up-your-development-environment.md).
+Before installing any tools, see [System requirements for Windows app development](system-requirements.md).
+
+> [!IMPORTANT]
+> This article applies only to the [preview and experimental release channels](./release-channels.md) of the Windows App SDK. For the stable release channel, see [Install tools for the Windows App SDK](./set-up-your-development-environment.md).
 
 ## Install Visual Studio
 
-Use these links to install Visual Studio 2022 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Also see [System requirements for Windows app development](system-requirements.md).
+Use the following links to install Visual Studio 2022 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community Edition, Visual Studio Professional, or Visual Studio Enterprise.
 
 > [!div class="button"]
 > [Download Visual Studio 2022](/visualstudio/releases/2022/release-notes)
@@ -26,15 +28,17 @@ Use these links to install Visual Studio 2022 (recommended) or Visual Studio 201
 
 ### Required workloads and components
 
-While installing Visual Studio, select these workloads and components.
+During Visual Studio installation, you have the option to install workloads and components (you can also open the Visual Studio Installer and select **Modify** to add workloads and components after installation). We recommend installing the following:
 
-* On the **Workloads** tab of the installation dialog, select as appropriate:
+From within the Visual Studio Installer app:
+
+* On the **Workloads** tab:
   * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
     * Then in the **Installation details** pane of the installation dialog for that workload, make sure either **C++ (v143) Universal Windows Platform tools** (for Visual Studio 2022) or **C++ (v142) Universal Windows Platform tools** (for Visual Studio 2019) is selected.
   * For C# app development, select **.NET Desktop Development**
   * For C++ app development, select **Desktop development with C++**
 
-* On the **Individual components** tab of the installation dialog, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
+* On the **Individual components** tab, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 
 ## Preview release
 
@@ -42,10 +46,10 @@ The [Windows App SDK](index.md) includes Visual Studio project and item template
 
 ### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1)
 
-The templates are available by installing a Visual Studio extension (VSIX).
+The templates are installed through a Visual Studio extension (VSIX).
 
 > [!NOTE]
-> If you installed **Windows App SDK C# Templates** (an installation detail of the **.NET Desktop Development** workload) and/or **Windows App SDK C++ Templates** (an installation detail of the **Desktop development with C++** workload), then run Visual Studio Installer to uninstall them before installing the VSIX.
+> If you installed **Windows App SDK C# Templates** (an installation detail of the **.NET Desktop Development** workload) and/or **Windows App SDK C++ Templates** (an installation detail of the **Desktop development with C++** workload), run the Visual Studio Installer to uninstall them before installing the VSIX.
 
 > [!div class="button"]
 > [C# Visual Studio 2022 extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2022/csharp)
@@ -55,7 +59,7 @@ The templates are available by installing a Visual Studio extension (VSIX).
 
 ### [Visual Studio 2022 version 17.0](#tab/vs-2022-17)
 
-The templates are available by installing a Visual Studio extension (VSIX).
+The templates are installed through a Visual Studio extension (VSIX).
 
 > [!NOTE]
 > If you have a Windows App SDK Visual Studio extension (VSIX) already installed, then uninstall it before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
@@ -68,7 +72,7 @@ The templates are available by installing a Visual Studio extension (VSIX).
 
 ### [Visual Studio 2019](#tab/vs-2019)
 
-The templates are available by installing a Visual Studio extension (VSIX).
+The templates are installed through a Visual Studio extension (VSIX).
 
 > [!NOTE]
 > If you have a Windows App SDK Visual Studio extension (VSIX) already installed, then uninstall it before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
@@ -81,7 +85,7 @@ The templates are available by installing a Visual Studio extension (VSIX).
 
 ---
 
-The extensions from the preview channel are available only from the download locations provided above. These extensions are not available via Visual Studio Marketplace or the **Manage Extensions** dialog box in Visual Studio.
+The extensions from the preview channel are available only from the download locations provided above. These extensions are not available through the Visual Studio Marketplace or the **Manage Extensions** dialog box in Visual Studio.
 
 > [!NOTE]
 > If you install the C# version of the Windows App SDK 1.0 Preview 2 extension for Visual Studio 2019, and you want to use the Single-project MSIX Packaging Tools project template (see [Package your app using single-project MSIX](./single-project-msix.md)), then you must also install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) separately. The **Blank App, Packaged (WinUI 3 in Desktop)** project template has a known issue that results in a build error unless you also install the single-project packaging tools extension. This issue doesn't affect other versions of the Windows App SDK 1.0 Preview 2 extension.
@@ -90,7 +94,7 @@ The extensions from the preview channel are available only from the download loc
 
 For experimental features, install the latest extension from the experimental release channel. For more info, see [Experimental release channel](experimental-channel.md).
 
-Choose one of these options to install the latest experimental release ([Version 1.0 Experimental (1.0.0-experimental1)](release-notes-archive/experimental-channel-1.0.md#version-10-experimental-100-experimental1)):
+Choose one of these options to install the latest experimental release:
 
 * In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Windows App SDK (Experimental)**, and install the latest extension.
 * Alternatively, you can download and install the extension directly from Visual Studio Marketplace:

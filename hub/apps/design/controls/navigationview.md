@@ -59,7 +59,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [NavigationView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the NavigationView in action](winui3gallery:/item/NavigationView).
+> [Open the WinUI 3 Gallery app and see the NavigationView in action](winui3gallery:/item/NavigationView)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
