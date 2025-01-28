@@ -1,9 +1,10 @@
 ---
 title: PowerToys Peek utility for Windows
 description: A system-wide utility for Windows to quickly preview file content.
-ms.date: 08/03/2023
-ms.topic: article
+ms.date: 01/28/2025
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, Peek, Win]
+# Customer intent: Learn how to configure and use the Peek utility in PowerToys.
 ---
 
 # Peek utility
