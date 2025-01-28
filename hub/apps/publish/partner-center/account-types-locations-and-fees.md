@@ -15,7 +15,7 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 
 When you [begin the signup process](https://developer.microsoft.com/microsoft-store/register) you'll need to choose whether to create an individual account or a company account. Both account types will allow you to submit apps, games, add-ins, and services.
 
-Company accounts must be used for organizations and businesses and any person acting in relation to their trade or profession. For company accounts, we require greater [verification](/windows/apps/publish/partner-center/account-types-locations-and-fees#account-verification) to confirm that you’re authorized to set up the account for your company, as well as requiring that you enter a customer contact email, business address, and business phone number if available. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
+Company accounts must be used for organizations and businesses and any person acting in relation to their trade or profession. For company accounts, we require greater [verification](/windows/apps/publish/partner-center/account-types-locations-and-fees#account-verification) to confirm that you’re authorized to set up the account for your company, as well as requiring that you enter a customer contact email, business address, and business phone number if available. Individual accounts are usually appropriate for a single developer working on their own.
 
 > [!IMPORTANT]
 > You can't change the account type once you make your selection, so be sure to choose the right type.
