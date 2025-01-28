@@ -92,7 +92,7 @@ These special variables are case-sensitive, so they will only work when written 
 
 | Variable | Explanation |
 | :---             | :--- |
-| `$PARENT_FOLDER_NAME`          | will expand to the name of the parent folder. |
+| `$PARENT_FOLDER_NAME`          | Expands to the name of the parent folder. |
 
 ##### Environment variables
 
