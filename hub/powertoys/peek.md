@@ -39,7 +39,7 @@ Press the <kbd>Delete</kbd> key to move the current file to the Recycle Bin.
 
 By default, a confirmation dialog will appear before deletions. To skip future confirmations, either:
 
-- Check the "Don't ask me again" checkbox in the dialog.
+- Check the "Don't show this warning again" checkbox in the dialog.
 - Uncheck the "Ask for confirmation before deleting files" option in Peek's settings page.
 
 ![A screenshot of Peek's file deletion confirmation dialog](../images/pt-peek-delete-confirmation.png)
