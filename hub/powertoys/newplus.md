@@ -34,7 +34,7 @@ Template objects in the "Templates" folder can be files, folders, or shortcuts. 
 
 After the enablement toggle, the New+ Templates location setting is likely the most interesting one. By default, the template location is in your local app data folder, specifically at `%localappdata%\Microsoft\PowerToys\NewPlus\Templates`. However, these templates will not roam with you across devices. If you want a common set of templates across devices, a popular option is to change the template location to a folder that is synced with a cloud drive, such as OneDrive. This way, you can access your templates from any device.
 
-### <a name="display_options"></a>Display options
+### Display options
 
 #### Hide template filename extensions
 
@@ -44,15 +44,15 @@ The option enables you to toggle the display of filename extensions. When this o
 
 The option enables you to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named "1. filename" will be displayed as is. However, when this option is toggled on, the template will be displayed as "filename". This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.
 
-### <a name="behavior"></a>Behavior
+### Behavior
 
-#### <a name="replace_variables"></a>Replace variables in template filename
+#### Replace variables in template filename
 
 This setting causes supported variables in filenames, including in files within subfolders, to be replaced when the template is copied. The default setting of this option is enabled.
 
 Note: Any invalid filename characters are replaced with spaces.
 
-##### <a name="replace_variables_examples"></a>Examples
+##### Examples
 
 | Example template filename | Would on copy expand to |
 | :---             | :--- |
