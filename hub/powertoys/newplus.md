@@ -61,7 +61,7 @@ Note: Any invalid filename characters are replaced with spaces.
 
 ##### Date and time related variables
 
-These date and time related variable patterns are the same as for PowerRename and are case-sensitive.
+These date and time related variable patterns are the same as those used by PowerRename and are case-sensitive.
 
 | Variable | Explanation |
 | :---             | :--- |
