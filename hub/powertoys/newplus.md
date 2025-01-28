@@ -98,7 +98,7 @@ These special variables are case-sensitive, so they will only work when written 
 
 These variables are case-insensitive, meaning you can write them in a mix of uppercase or lowercase.
 
-Each `%environment_variable%` in the file and folder name, will get replaced by the value of that environment variable.
+Each `%environment_variable%` in the file and folder names will be replaced with the value of the corresponding environment variable.
 
 For instance, %USERNAME% will get replaced with the name of the current Windows user.
 
