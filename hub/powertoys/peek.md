@@ -21,6 +21,7 @@ Using <kbd>Left</kbd> and <kbd>Right</kbd> or <kbd>Up</kbd> and <kbd>Down</kbd>,
 ## Pin preview window position and size
 
 The Peek window adjusts its size based on the dimensions of the images being previewed. However, if you prefer to keep the window's size and position, you can use the pinning feature.
+
 By selecting the pinning button, the window will preserve the current size and position. Selecting the pinning button again will unpin the window. When unpinned, the Peek window will return to the default position and size when previewing the next file.
 
 ## Open file with the default program
@@ -40,7 +41,7 @@ By default, a confirmation dialog will appear before deletions. To skip future c
 - Check the "Don't ask me again" checkbox in the dialog.
 - Uncheck the "Ask for confirmation before deleting files" option in Peek's settings page.
 
-![Example of Peek's file deletion confirmation dialog](../images/pt-peek-delete-confirmation.png)
+![A screenshot of Peek's file deletion confirmation dialog](../images/pt-peek-delete-confirmation.png)
 
 After deleting the file, Peek will automatically preview the next file. If there are no more files to preview, a message will be displayed.
 
