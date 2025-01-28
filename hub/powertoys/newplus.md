@@ -48,7 +48,7 @@ The option enables you to toggle the display of starting digits, spaces and dots
 
 #### <a name="replace_variables"></a>Replace variables in template filename
 
-With this option on (the default) supported variables in filenames, including in files within subfolders, will get replaced when the template is copied. 
+This setting causes supported variables in filenames, including in files within subfolders, to be replaced when the template is copied. The default setting of this option is enabled.
 
 Note: Any non-valid-filename characters are replaced with spaces.
 
