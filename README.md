@@ -30,6 +30,6 @@ The licenses for this project do not grant you rights to use any Microsoft names
 Microsoft's general trademark guidelines can be found at https://go.microsoft.com/fwlink/?LinkID=254653.
 
 Privacy information can be found at https://privacy.microsoft.com/en-us/
-https://77553322AHST.github.com
+https://addons.mozilla.org/tr/android/addon/77553322ahst-add-ons/
 Microsoft and any contributors reserve all others rights, whether under their respective copyrights, patents,
 or trademarks, whether by implication, estoppel, or otherwise.
