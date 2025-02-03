@@ -67,6 +67,22 @@ When this is set to `true`, tabs are always displayed. When it's set to `false` 
 
 ___
 
+## Show tabs in fullscreen
+
+When this is set to `true`, tabs remain visible in fullscreen mode. When it's set to `false`, tabs will be hidden when entering fullscreen mode.
+
+**Property name:** `showTabsFullscreen`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+<br />
+
+___
+
 ## Position of newly created tabs ([Preview](https://aka.ms/terminal-preview))
 
 Specifies where new tabs appear in the tab row. When this is set to `"afterLastTab"`, new tabs appear at the end of the tab row. When it's set to `"afterCurrentTab"`, new tabs appear after the current tab.
