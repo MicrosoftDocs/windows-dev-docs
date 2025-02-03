@@ -122,7 +122,19 @@ items:
       - name: Command Not Found
         href: ../powertoys/cmd-not-found.md
       - name: Command Palette
-        href: ../powertoys/command-palette.md
+        items:
+        - name: Overview
+          href: ../powertoys/command-palette/overview.md
+        - name: Developer docs
+          items:
+            - name: Extensibility overview
+              href: ../powertoys/command-palette/extensibility.md
+            - name: SDK
+              href: ../powertoys/command-palette/sdk.md
+            - name: Extension samples
+              href: ../powertoys/command-palette/samples.md
+            - name: Publishing your extension
+              href: ../powertoys/command-palette/publish-extension.md
       - name: Crop And Lock
         href: ../powertoys/crop-and-lock.md
       - name: Environment Variables
