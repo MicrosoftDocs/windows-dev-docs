@@ -121,6 +121,8 @@ items:
         href: ../powertoys/color-picker.md
       - name: Command Not Found
         href: ../powertoys/cmd-not-found.md
+      - name: Command Palette
+        href: ../powertoys/command-palette.md
       - name: Crop And Lock
         href: ../powertoys/crop-and-lock.md
       - name: Environment Variables
