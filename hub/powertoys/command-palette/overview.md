@@ -18,6 +18,16 @@ To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd
 
 ## Features
 
+Command Palette features include:
+
+- Search for applications, folders or files
+- Search for running processes (previously known as [Window Walker](https://github.com/betsegaw/windowwalker/))
+- Invoke Shell Plugin using `>` (for example, `> Shell:startup` will open the Windows startup folder)
+- Do a simple calculation using calculator
+- Add bookmarks for frequently visited webpages
+- Execute system commands
+- Open web pages or start a web search
+
 ## Settings
 
 The following general options are available within the Command Palette settings page. You can open the settings page by using the Command Palette.
