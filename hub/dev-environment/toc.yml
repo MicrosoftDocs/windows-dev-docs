@@ -134,11 +134,11 @@ items:
             - name: Microsoft.Windows.Run
               items:
                 - name: Microsoft.Windows.Run
-                  href: ../powertoys/command-palette/microsoft-windows-run.md
+                  href: ../powertoys/command-palette/microsoft-windows-run/microsoft-windows-run.md
             - name: Microsoft.Windows.Run.Extensions
               items:
                 - name: Microsoft.Windows.Run.Extensions
-                  href: ../powertoys/command-palette/microsoft-windows-run-extensions.md
+                  href: ../powertoys/command-palette/microsoft-windows-run-extensions/microsoft-windows-run-extensions.md
             - name: Extension samples
               href: ../powertoys/command-palette/samples.md
             - name: Publishing your extension
