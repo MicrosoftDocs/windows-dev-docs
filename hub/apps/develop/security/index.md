@@ -16,7 +16,11 @@ Windows provides a wide variety of APIs related to security and identity scenari
 
 ### Windows App SDK APIs
 
-The [Windows App SDK](../../windows-app-sdk/index.md) currently does not provide APIs related to security and identity scenarios other than a few helper APIs in the [Microsoft.Windows.Security.AccessControl](/windows/windows-app-sdk/api/winrt/microsoft.windows.security.accesscontrol) namespace. These APIs are related to named object sharing between packaged apps and Win32 applications.
+The [Windows App SDK](../../windows-app-sdk/index.md) provides APIs related to OAuth functionality. There are also a few helper APIs in the [Microsoft.Windows.Security.AccessControl](/windows/windows-app-sdk/api/winrt/microsoft.windows.security.accesscontrol) namespace. These APIs are related to named object sharing between packaged apps and Win32 applications.
+
+| Article | Description |
+|---------|-------------|
+| [Implement OAuth functionality in Windows apps](oauth2.md) | The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth functionality across diverse Windows platforms. This article describes how to implement OAuth functionality in Windows apps with the Windows App SDK. |
 
 ### WinRT APIs
 
