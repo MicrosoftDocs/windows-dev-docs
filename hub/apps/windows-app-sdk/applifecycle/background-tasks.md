@@ -1,7 +1,7 @@
 ---
 title: Using background tasks in Windows apps
 description: This article provides an overview of using background tasks and describes how to create a new background task in a WinUI app with the Windows App SDK BackgroundTaskBuilder APIs.
-ms.date: 01/05/2025
+ms.date: 01/06/2025
 ms.topic: concept-article
 keywords: windows 11, winui, background task, app lifecycle, windows app sdk
 ms.localizationpriority: medium
