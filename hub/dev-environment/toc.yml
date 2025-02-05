@@ -127,10 +127,18 @@ items:
           href: ../powertoys/command-palette/overview.md
         - name: Developer docs
           items:
-            - name: Extensibility overview
-              href: ../powertoys/command-palette/extensibility.md
-            - name: SDK
-              href: ../powertoys/command-palette/sdk.md
+            - name: Creating an extension
+              href: ../powertoys/command-palette/creating-an-extension.md
+            - name: Command Palette SDK namespaces
+              href: ../powertoys/command-palette/sdk-namespaces.md
+            - name: Microsoft.Windows.Run
+              items:
+                - name: Microsoft.Windows.Run
+                  href: ../powertoys/command-palette/microsoft-windows-run.md
+            - name: Microsoft.Windows.Run.Extensions
+              items:
+                - name: Microsoft.Windows.Run.Extensions
+                  href: ../powertoys/command-palette/microsoft-windows-run-extensions.md
             - name: Extension samples
               href: ../powertoys/command-palette/samples.md
             - name: Publishing your extension
