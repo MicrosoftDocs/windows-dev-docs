@@ -13,6 +13,8 @@ Contains the interfaces to create extensions for the Command Palette.
 
 ## Interfaces
 
+| | |
+| :--- | :--- |
 | [ICommand](icommand.md) | Action a user can take within the Command Palette. |
 | ICommandResultArgs | |
 | ICommandResult | |
@@ -21,5 +23,7 @@ Contains the interfaces to create extensions for the Command Palette.
 
 ## Enums
 
+| | |
+| :--- | :--- |
 | [CommandResultKind](commandresultkind.md) | Specifies what kind of command it is. |
 | [NavigationMode](navigationmode.md) | Specifies which navigation direction to take. |
