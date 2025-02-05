@@ -27,6 +27,8 @@ The OAuth2Manager is different than the existing WinRT [WebAuthenticationBroker]
 
 The following example demonstrates how to perform an authorization code request using the OAuth2Manager API in Windows App SDK:
 
+# [C++](#tab/cpp)
+
 ```cpp
 // Get the WindowId for the application window
 Microsoft::UI::WindowId parentWindowId = this->AppWindow().Id();
@@ -51,6 +53,8 @@ else
    NotifyFailure(authFailure.Error(), authFailure.ErrorDescription());
 }
 ```
+
+# [C#](#tab/csharp)
 
 ```csharp
 // Get the WindowId for the application window
@@ -78,9 +82,13 @@ else
 }
 ```
 
+---
+
 ### Exchange authorization code for access token
 
 The following example demonstrates how to exchange an authorization code for an access token using the OAuth2Manager API in Windows App SDK:
+
+# [C++](#tab/cpp)
 
 ```cpp
 AuthResponse authResponse = authRequestResult.Response();
@@ -123,6 +131,8 @@ else
     NotifyFailure(tokenFailure.Error(), tokenFailure.ErrorDescription());
 }
 ```
+
+# [C#](#tab/csharp)
 
 ```csharp
 AuthResponse authResponse = authRequestResult.Response;
@@ -167,9 +177,13 @@ else
 }
 ```
 
+---
+
 ### Refresh an access token
 
 The following example shows how to refresh an access token using the OAuth2Manager API in Windows App SDK:
+
+# [C++](#tab/cpp)
 
 ```cpp
 TokenRequestParams tokenRequestParams = TokenRequestParams::CreateForRefreshToken(refreshToken);
@@ -207,6 +221,8 @@ else
 }
 ```
 
+# [C#](#tab/csharp)
+
 ```csharp
 TokenRequestParams tokenRequestParams = TokenRequestParams.CreateForRefreshToken(refreshToken);
 ClientAuthentication clientAuth = ClientAuthentication.CreateForBasicAuthorization("my_client_id",
@@ -243,9 +259,13 @@ else
 }
 ```
 
+---
+
 ### Complete an authorization request
 
 Finally, to complete an authorization request from a protocol activation, use the following code:
+
+# [C++](#tab/cpp)
 
 ```cpp
 void App::OnActivated(const IActivatedEventArgs& args)
@@ -263,6 +283,8 @@ void App::OnActivated(const IActivatedEventArgs& args)
 }
 ```
 
+# [C#](#tab/csharp)
+
 ```csharp
 protected override void OnActivated(IActivatedEventArgs args)
 {
@@ -278,6 +300,8 @@ protected override void OnActivated(IActivatedEventArgs args)
     }
 }
 ```
+
+---
 
 ## Related content
 
