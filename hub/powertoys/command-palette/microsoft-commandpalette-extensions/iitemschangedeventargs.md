@@ -13,3 +13,7 @@ no-loc: [PowerToys, Windows, Insider]
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
 ## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| TotalItems | Int32 | Gets the number of items changed. |

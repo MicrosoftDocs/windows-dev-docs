@@ -12,4 +12,8 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
-## Properties
+## Events
+
+| Event | Description |
+| :--- | :--- |
+| Windows.Foundation.TypedEventHandler<Object, [IItemsChangedEventArgs](iitemschangedeventargs.md)> ItemsChanged | |

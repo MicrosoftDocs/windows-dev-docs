@@ -12,4 +12,8 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
-## Properties
+## Fields
+
+| Name | Value | Description |
+| :--- | :--- | :--- |
+| Commands | 0 | |

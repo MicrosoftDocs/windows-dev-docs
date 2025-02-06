@@ -13,3 +13,8 @@ no-loc: [PowerToys, Windows, Insider]
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
 ## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Icon | String | Gets the icon. |
+| Data | Windows.Storage.Streams.IRandomAccessStreamReference | Gets the data of the icon. |

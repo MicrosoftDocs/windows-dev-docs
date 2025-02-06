@@ -13,3 +13,8 @@ no-loc: [PowerToys, Windows, Insider]
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
 ## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Light | [IIconData](iicondata.md) | Gets the light mode version of the icon. |
+| Dark | [IIconData](iicondata.md) | Gets the dark mode version of the icon. |

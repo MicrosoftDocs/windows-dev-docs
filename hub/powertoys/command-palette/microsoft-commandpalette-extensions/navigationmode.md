@@ -12,4 +12,10 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
-## Properties
+## Fields
+
+| Field | Description |
+| :--- | :--- |
+| GoBack | Go back one page before navigating to the target page. |
+| GoHome | Go to the home page before navigating to the target page. |
+| Push | Push the target page onto the navigation stack. |
