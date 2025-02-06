@@ -3,10 +3,6 @@
 -api-type: interface
 ---
 
-# ICommand Interface
+# Microsoft.CommandPalette.Extensions.ICommand
 
-## Definition
-
-##### Namespace: Microsoft.CommandPalette.Extensions
-
-### Namespace
+## -description

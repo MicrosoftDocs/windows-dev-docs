@@ -139,7 +139,9 @@ items:
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/microsoft-commandpalette-extensions.md
                 - name: Color
                 - name: CommandResultKind
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/commandresultkind.md
                 - name: ICommand
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommand.md
                 - name: ICommandContextItem
                 - name: ICommandItem
                 - name: ICommandProvider
@@ -193,6 +195,7 @@ items:
                 - name: KeyChord
                 - name: MessageState
                 - name: NavigationMode
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/navigationmode.md
                 - name: OptionalColor
                 - name: ProviderType
             - name: Microsoft.CommandPalette.Extensions.Toolkit
