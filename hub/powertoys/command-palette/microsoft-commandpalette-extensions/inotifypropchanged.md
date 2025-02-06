@@ -1,12 +1,12 @@
 ---
-title: NavigationMMode Enum
+title: INotifyPropChanged Interface
 description: 
 ms.date: 2/6/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# NavigationMode Enum
+# INotifyPropChanged Interface
 
 ## Definition
 

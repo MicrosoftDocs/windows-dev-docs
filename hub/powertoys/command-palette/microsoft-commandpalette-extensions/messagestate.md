@@ -1,12 +1,12 @@
 ---
-title: NavigationMMode Enum
+title: MessageState Enum
 description: 
 ms.date: 2/6/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# NavigationMode Enum
+# MessageState Enum
 
 ## Definition
 

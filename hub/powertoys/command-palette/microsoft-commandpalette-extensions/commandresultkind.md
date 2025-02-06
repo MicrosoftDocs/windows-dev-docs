@@ -1,8 +1,15 @@
 ---
--api-id: T:Microsoft.CommandPalette.Extensions.CommandResultKind
--api-type: enum
+title: CommandResultKind Enum
+description: 
+ms.date: 2/6/2025
+ms.topic: reference
+no-loc: [PowerToys, Windows, Insider]
 ---
 
-# Microsoft.CommandPalette.Extensions.CommandResultKind
+# CommandResultKind Enum
 
-## -description
+## Definition
+
+Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+
+## Properties

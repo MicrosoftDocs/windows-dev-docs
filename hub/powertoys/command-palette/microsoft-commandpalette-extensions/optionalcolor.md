@@ -1,12 +1,12 @@
 ---
-title: NavigationMMode Enum
+title: KeyChord Struct
 description: 
 ms.date: 2/6/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# NavigationMode Enum
+# KeyChord Struct
 
 ## Definition
 
