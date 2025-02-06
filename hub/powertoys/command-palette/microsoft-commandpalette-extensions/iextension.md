@@ -12,4 +12,9 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
-## Properties
+## Methods
+
+| Method | Description |
+| :--- | :--- |
+| [Dispose()](iextension_dispose.md) | |
+| [GetProvider(ProviderType)](iextension_getprovider.md) | Gets the provider type. |
