@@ -129,20 +129,78 @@ items:
           items:
             - name: Creating an extension
               href: ../powertoys/command-palette/creating-an-extension.md
-            - name: Command Palette SDK namespaces
-              href: ../powertoys/command-palette/sdk-namespaces.md
-            - name: Microsoft.Windows.Run
-              items:
-                - name: Microsoft.Windows.Run
-                  href: ../powertoys/command-palette/microsoft-windows-run/microsoft-windows-run.md
-            - name: Microsoft.Windows.Run.Extensions
-              items:
-                - name: Microsoft.Windows.Run.Extensions
-                  href: ../powertoys/command-palette/microsoft-windows-run-extensions/microsoft-windows-run-extensions.md
-            - name: Extension samples
-              href: ../powertoys/command-palette/samples.md
             - name: Publishing your extension
               href: ../powertoys/command-palette/publish-extension.md
+            - name: Command Palette SDK namespaces
+              href: ../powertoys/command-palette/sdk-namespaces.md
+            - name: Microsoft.CommandPalette.Extensions
+              items:
+                - name: Microsoft.CommandPalette.Extensions
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/microsoft-commandpalette-extensions.md
+                - name: Color
+                - name: CommandResultKind
+                - name: ICommand
+                - name: ICommandContextItem
+                - name: ICommandItem
+                - name: ICommandProvider
+                - name: ICommandResult
+                - name: ICommandResultArgs
+                - name: ICommandSettings
+                - name: IConfirmationArgs
+                - name: IContent
+                - name: IContentPage
+                - name: IContextItem
+                - name: IDetails
+                - name: IDetailsCommand
+                - name: IDetailsData
+                - name: IDetailsElement
+                - name: IDetailsLink
+                - name: IDetailsSeparator
+                - name: IDetailsTags
+                - name: IDynamicListPage
+                - name: IExtension
+                - name: IExtensionHost
+                - name: IFallbackCommandItem
+                - name: IFallbackHandler
+                - name: IFilter
+                - name: IFilters
+                - name: IFilterItem
+                - name: IForm
+                - name: IFormContent
+                - name: IFormPage
+                - name: IGoToPageArgs
+                - name: IGridProperties
+                - name: IIconData
+                - name: IIconInfo
+                - name: IInvokableCommand
+                - name: IItemsChangedEventArgs
+                - name: IListItem
+                - name: IListPage
+                - name: ILogMessage
+                - name: IMarkdownContent
+                - name: IMarkdownPage
+                - name: INotifyItemsChanged
+                - name: INotifyPropChanged
+                - name: IPage
+                - name: IProgressState
+                - name: IPropChangedEventArgs
+                - name: ISeparatorContextItem
+                - name: ISeparatorFilterItem
+                - name: IStatusMessage
+                - name: ITag
+                - name: IToastArgs
+                - name: ITreeContent
+                - name: KeyChord
+                - name: MessageState
+                - name: NavigationMode
+                - name: OptionalColor
+                - name: ProviderType
+            - name: Microsoft.CommandPalette.Extensions.Toolkit
+              items:
+                - name: Microsoft.CommandPalette.Extensions.Toolkit
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md
+            - name: Extension samples
+              href: ../powertoys/command-palette/samples.md
       - name: Crop And Lock
         href: ../powertoys/crop-and-lock.md
       - name: Environment Variables
