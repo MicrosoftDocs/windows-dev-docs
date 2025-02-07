@@ -1,7 +1,7 @@
 ---
 title: MessageState Enum
 description: 
-ms.date: 2/6/2025
+ms.date: 2/7/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -12,4 +12,11 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
-## Properties
+## Fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| Error | | |
+| Info | 0 | |
+| Success | | |
+| Warning | | |
