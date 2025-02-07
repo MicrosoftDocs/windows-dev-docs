@@ -180,7 +180,15 @@ items:
                 - name: IDynamicListPage
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idynamiclistpage.md
                 - name: IExtension
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension.md
+                  items:
+                    - name: IExtension
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension.md
+                    - name: Methods
+                      items:
+                        - name: Dispose
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension_dispose.md
+                        - name: GetProvider
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension_getprovider.md
                 - name: IExtensionHost
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost.md
                 - name: IFallbackCommandItem
@@ -190,7 +198,13 @@ items:
                 - name: IFilter
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilter.md
                 - name: IFilters
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters.md
+                  items:
+                    - name: IFilters
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters.md
+                    - name: Methods
+                      items:
+                        - name: Filters
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_filters.md
                 - name: IFilterItem
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilteritem.md
                 - name: IForm
@@ -208,7 +222,13 @@ items:
                 - name: IIconInfo
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iiconinfo.md
                 - name: IInvokableCommand
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iinvokablecommand.md
+                  items:
+                    - name: IInvokableCommand
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iinvokablecommand.md
+                    - name: Methods
+                      items:
+                        - name: Invoke
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iinvokablecommand_invoke.md
                 - name: IItemsChangedEventArgs
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iitemschangedeventargs.md
                 - name: IListItem

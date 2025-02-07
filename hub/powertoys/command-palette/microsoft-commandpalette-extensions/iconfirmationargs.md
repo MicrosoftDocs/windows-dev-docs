@@ -1,7 +1,7 @@
 ---
 title: IConfirmationArgs Interface
 description: 
-ms.date: 2/6/2025
+ms.date: 2/7/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -13,3 +13,10 @@ no-loc: [PowerToys, Windows, Insider]
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
 ## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Description | String | |
+| IsPrimaryCommandCritical | Boolean | |
+| PrimaryCommand | [ICommand](icommand.md) | |
+| Title | String | |
