@@ -1,19 +1,17 @@
 ---
-title: IGridProperties Interface
+title: IForm.TemplateJson() Method
 description: 
 ms.date: 2/7/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# IGridProperties Interface
+# IForm.TemplateJson() Method
 
 ## Definition
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
-## Properties
+## Returns
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| TileSize | Windows.Foundation.Size | |
+String

@@ -148,7 +148,19 @@ items:
                 - name: ICommandItem
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommanditem.md
                 - name: ICommandProvider
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider.md
+                  items:
+                    - name: ICommandProvider
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider.md
+                    - name: Methods
+                      items:
+                        - name: FallbackCommands
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_fallbackcommands.md
+                        - name: GetCommand
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_getcommand.md
+                        - name: InitializeWithHost
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_initializewithhost.md
+                        - name: TopLevelCommands
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_toplevelcommands.md
                 - name: ICommandResult
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandresult.md
                 - name: ICommandResultArgs
@@ -160,7 +172,13 @@ items:
                 - name: IContent
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontent.md
                 - name: IContentPage
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontentpage.md
+                  items:
+                    - name: IContentPage
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontentpage.md
+                    - name: Methods
+                      items:
+                        - name: GetContent
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontentpage_getcontent.md
                 - name: IContextItem
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontextitem.md
                 - name: IDetails
@@ -190,11 +208,27 @@ items:
                         - name: GetProvider
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension_getprovider.md
                 - name: IExtensionHost
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost.md
+                  items:
+                    - name: IExtensionHost
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost.md
+                    - name: Methods
+                      items:
+                        - name: HideStatus
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_hidestatus.md
+                        - name: LogMessage
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_logmessage.md
+                        - name: ShowStatus
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_showstatus.md
                 - name: IFallbackCommandItem
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackcommanditem.md
                 - name: IFallbackHandler
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackhandler.md
+                  items:
+                    - name: IFallbackHandler
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackhandler.md
+                    - name: Methods
+                      items:
+                        - name: UpdateQuery
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackhandler_updatequery.md
                 - name: IFilter
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilter.md
                 - name: IFilters
@@ -208,11 +242,35 @@ items:
                 - name: IFilterItem
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilteritem.md
                 - name: IForm
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform.md
+                  items:
+                    - name: IForm
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform.md
+                    - name: Methods
+                      items:
+                        - name: DataJson
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_datajson.md
+                        - name: StateJson
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_statejson.md
+                        - name: SubmitForm
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_submitform.md
+                        - name: TemplateJson
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_templatejson.md
                 - name: IFormContent
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformcontent.md
+                  items:
+                    - name: IFormContent
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformcontent.md
+                    - name: Methods
+                      items:
+                        - name: SubmitForm
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformcontent_submitform.md
                 - name: IFormPage
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformpage.md
+                  items:
+                    - name: IFormPage
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformpage.md
+                    - name: Methods
+                      items:
+                        - name: Forms
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformpage_forms.md
                 - name: IGoToPageArgs
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/igotopageargs.md
                 - name: IGridProperties
@@ -234,13 +292,29 @@ items:
                 - name: IListItem
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistitem.md
                 - name: IListPage
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage.md
+                  items:
+                    - name: IListPage
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage.md
+                    - name: Methods
+                      items:
+                        - name: GetItems
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage_getitems.md
+                        - name: LoadMore
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage_loadmore.md
                 - name: ILogMessage
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilogmessage.md
                 - name: IMarkdownContent
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdowncontent.md
                 - name: IMarkdownPage
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage.md
+                  items:
+                    - name: IMarkdownPage
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage.md
+                    - name: Methods
+                      items:
+                        - name: Bodies
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage_bodies.md
+                        - name: Details
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage_details.md
                 - name: INotifyItemsChanged
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions/inotifyitemschanged.md
                 - name: INotifyPropChanged

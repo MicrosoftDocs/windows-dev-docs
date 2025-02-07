@@ -1,19 +1,17 @@
 ---
-title: IGridProperties Interface
+title: ICommandProvider.TopLevelCommands() Method
 description: 
 ms.date: 2/7/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# IGridProperties Interface
+# ICommandProvider.TopLevelCommands() Method
 
 ## Definition
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
-## Properties
+## Returns
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| TileSize | Windows.Foundation.Size | |
+[ICommandItem[]](icommanditem.md)

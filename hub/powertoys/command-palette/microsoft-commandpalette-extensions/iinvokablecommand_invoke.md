@@ -15,3 +15,7 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 ## Parameters
 
 `sender` Object
+
+## Returns
+
+[ICommandResult](icommandresult.md)
