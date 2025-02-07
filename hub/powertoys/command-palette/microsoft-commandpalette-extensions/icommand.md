@@ -1,7 +1,7 @@
 ---
 title: ICommand Interface
 description: Action a user can take within the Command Palette.
-ms.date: 2/6/2025
+ms.date: 2/7/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -21,3 +21,7 @@ Action a user can take within the Command Palette.
 | Name | String | Gets the name of the command. |
 | Id | String | Gets the ID of the command. |
 | Icon | [IIconInfo](iiconinfo.md) | Gets the icon of the command. |
+
+## Samples
+
+[Add a command](../samples.md#add-a-command)

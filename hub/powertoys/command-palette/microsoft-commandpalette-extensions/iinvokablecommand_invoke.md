@@ -12,6 +12,8 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
+The method called when a user selects a command.
+
 ## Parameters
 
 `sender` Object
@@ -19,3 +21,7 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 ## Returns
 
 [ICommandResult](icommandresult.md)
+
+## Samples
+
+[Add a command](../samples.md#add-a-command)
