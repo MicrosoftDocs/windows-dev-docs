@@ -17,7 +17,12 @@ The method called when a user selects a command.
 ## Parameters
 
 `sender` Object
-Represents the context of where the command was invoked from.
+Represents the context of where the command was invoked from. This can be different types depending on where the command is being used:
+
+- [TopLevelCommands](icommandprovider_toplevelcommands.md) (and fallbacks): `sender` is the [ICommandItem](icommanditem.md) for the top-level command that was invoked
+- [IListPage.GetItems()](ilistpage_getitems.md): `sender` is the [IListItem](ilistitem.md) for the list item selected for that command
+- [ICommandItem.MoreCommands](icommanditem.md) (context menus): `sender` is either the [IListItem](ilistitem.md) which the command was attached to for a list page or the [ICommandItem](icommanditem.md) of the top-level command (if this is a context item on a top-level command)
+- [IContentPage.Commands](icontentpage.md): `sender` is the [IContentPage](icontentpage.md) itself
 
 ## Returns
 
