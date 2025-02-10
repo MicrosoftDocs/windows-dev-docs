@@ -131,6 +131,8 @@ items:
               href: ../powertoys/command-palette/creating-an-extension.md
             - name: Publishing your extension
               href: ../powertoys/command-palette/publish-extension.md
+            - name: Extension samples
+              href: ../powertoys/command-palette/samples.md
             - name: Command Palette SDK namespaces
               href: ../powertoys/command-palette/sdk-namespaces.md
             - name: Microsoft.CommandPalette.Extensions
@@ -351,8 +353,6 @@ items:
               items:
                 - name: Microsoft.CommandPalette.Extensions.Toolkit
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md
-            - name: Extension samples
-              href: ../powertoys/command-palette/samples.md
       - name: Crop And Lock
         href: ../powertoys/crop-and-lock.md
       - name: Environment Variables

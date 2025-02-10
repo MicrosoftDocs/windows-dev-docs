@@ -17,6 +17,7 @@ The method called when a user selects a command.
 ## Parameters
 
 `sender` Object
+Represents the context of where the command was invoked from.
 
 ## Returns
 
