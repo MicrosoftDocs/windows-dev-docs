@@ -14,7 +14,7 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 
 ## Parameters
 
-`payload` String
+**`payload`** String
 
 ## Returns
 

@@ -14,7 +14,7 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 
 ## Parameters
 
-`providerType` [ProviderType](providertype.md)
+**`providerType`** [ProviderType](providertype.md)
 
 ## Returns
 

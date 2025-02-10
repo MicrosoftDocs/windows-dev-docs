@@ -1,0 +1,30 @@
+---
+title: IconData Class
+description: 
+ms.date: 2/10/2025
+ms.topic: reference
+no-loc: [PowerToys, Windows, Insider]
+---
+
+# IconData Class
+
+## Definition
+
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+
+Implements [IIconData](../microsoft-commandpalette-extensions/iicondata.md)
+
+## Constructors
+
+| Constructor | Description |
+| :--- | :--- |
+| [IconData()]() | Initializes the `Icon` property with an empty string. |
+| [IconData(IRandomAccessStreamReference)]() | Initializes the `Data` property with the provided `IRandomAccessStreamReference`. |
+| [IconData(String?)]() | Initializes the `Icon` property with the provided `String`. |
+
+## Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Data | Windows.Storage.Streams.IRandomAccessStreamReference? | |
+| Icon | String? | |

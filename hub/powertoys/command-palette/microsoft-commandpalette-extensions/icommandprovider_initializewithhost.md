@@ -14,4 +14,4 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 
 ## Parameters
 
-`host` [IExtensionHost](iextensionhost.md)
+**`host`** [IExtensionHost](iextensionhost.md)

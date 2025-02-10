@@ -12,6 +12,8 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
 
+Derived [ConfirmationArgs](../microsoft-commandpalette-extensions-toolkit/confirmationargs.md)
+
 ## Properties
 
 | Property | Type | Description |

@@ -1,7 +1,7 @@
 ---
 title: IToastArgs Interface
 description: 
-ms.date: 2/7/2025
+ms.date: 2/10/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -11,6 +11,8 @@ no-loc: [PowerToys, Windows, Insider]
 ## Definition
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+
+Derived [ToastArgs](../microsoft-commandpalette-extensions-toolkit/toastargs.md)
 
 ## Properties
 

@@ -1,0 +1,28 @@
+---
+title: CopyTextCommand(String) Constructor
+description: 
+ms.date: 2/10/2025
+ms.topic: reference
+no-loc: [PowerToys, Windows, Insider]
+---
+
+# CopyTextCommand(String) Constructor
+
+## Definition
+
+Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+
+Initializes a new instance of the [CopyTextCommand](copytextcommand.md) class with the command text set to the `text` parameter, its name set to "Copy", and an icon added.
+
+```C#
+public CopyTextCommand(string text)
+    {
+        Text = text;
+        Name = "Copy";
+        Icon = new IconInfo("\uE8C8");
+    }
+```
+
+## Parameters
+
+**`text`** String

@@ -14,4 +14,4 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 
 ## Parameters
 
-`query` String
+**`query`** String

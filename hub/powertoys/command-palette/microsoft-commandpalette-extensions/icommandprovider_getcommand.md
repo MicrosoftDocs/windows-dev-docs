@@ -14,7 +14,7 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 
 ## Parameters
 
-`id` String
+**`id`** String
 
 ## Returns
 

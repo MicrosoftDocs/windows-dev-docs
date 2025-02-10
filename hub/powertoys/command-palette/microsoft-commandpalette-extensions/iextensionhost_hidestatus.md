@@ -14,7 +14,7 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 
 ## Parameters
 
-`message` [IStatusMessage](istatusmessage.md)
+**`message`** [IStatusMessage](istatusmessage.md)
 
 ## Returns
 

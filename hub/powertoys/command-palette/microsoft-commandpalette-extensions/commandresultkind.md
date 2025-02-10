@@ -1,7 +1,7 @@
 ---
 title: CommandResultKind Enum
 description: 
-ms.date: 2/6/2025
+ms.date: 2/10/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -16,11 +16,11 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 
 | Field | Description |
 | :--- | :--- |
-| Confirm | Display a confirmation dialog. |
-| Dismiss | Reset the palette to the main page and dismiss. |
-| GoBack | Go back one level. |
-| GoHome | Go back to the main page and keep it open. |
-| GoToPage | Go to another page. [IGoToPageArgs](igotopageargs.md) will define where. |
+| Confirm | Display a confirmation dialog to the user. |
+| Dismiss | Close the Command Palette after the action is executed and dismiss the current state. On the next launch, the Command Palette will start from the main page with a blank query. |
+| GoBack | Navigate to the previous page, and keep it open. |
+| GoHome | Navigate back to the main page of the Command Palette and keep it open. This clears out the current stack of pages, but keeps the palette open. |
+| GoToPage | Navigate to a different page in the palette. The [IGoToPageArgs](igotopageargs.md) will specify which page to navigate to. |
 | Hide | Keep this page open and hide the palette. |
-| KeepOpen | Do nothing. |
-| ShowToast | Display a transient message to the user. |
+| KeepOpen | Do nothing. This leaves the palette in its current state, with the current page stack and query. |
+| ShowToast | Display a transient desktop-level message to the user. This is especially useful for displaying confirmation that an action took place when the palette will be closed. Consider the CopyTextCommand in the helpers - this command will show a toast with the text "Copied to clipboard", then dismiss the palette. |

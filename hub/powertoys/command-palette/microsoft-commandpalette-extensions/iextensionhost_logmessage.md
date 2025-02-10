@@ -14,7 +14,7 @@ Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extens
 
 ## Parameters
 
-`message` [ILogMessage](ilogmessage.md)
+**`message`** [ILogMessage](ilogmessage.md)
 
 ## Returns
 
