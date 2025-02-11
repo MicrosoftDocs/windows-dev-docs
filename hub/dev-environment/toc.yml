@@ -353,6 +353,78 @@ items:
               items:
                 - name: Microsoft.CommandPalette.Extensions.Toolkit
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md
+                - name: BaseObservable
+                  items:
+                    - name: BaseObservable
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/baseobservable.md
+                    - name: Methods
+                      items:
+                        - name: OnPropertyChanged
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/baseobservable_onpropertychanged.md
+                - name: Command
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/command.md
+                - name: CommandResult
+                  items:
+                    - name: CommandResult
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult.md
+                    - name: Methods
+                      items:
+                        - name: Confirm
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_confirm.md
+                        - name: Dismiss
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_dismiss.md
+                        - name: GoBack
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_goback.md
+                        - name: GoHome
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_gohome.md
+                        - name: GoToPage
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_gotopage.md
+                        - name: Hide
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_hide.md
+                        - name: KeepOpen
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_keepopen.md
+                        - name: ShowToast(String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_string.md
+                        - name: ShowToast(ToastArgs)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_toastargs.md
+                - name: ConfirmationArgs
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/confirmationargs.md
+                - name: CopyTextCommand
+                  items:
+                    - name: CopyTextCommand
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand_constructor.md
+                    - name: Methods
+                      items:
+                        - name: Invoke
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand_invoke.md
+                - name: GoToPageArgs
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/gotopageargs.md
+                - name: IconData
+                  items:
+                    - name: IconData
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/icondata.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/icondata_constructor.md
+                - name: IconInfo
+                  items:
+                    - name: IconInfo
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconinfo.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconinfo_constructor.md
+                - name: InvokableCommand
+                  items:
+                    - name: InvokableCommand
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand.md
+                    - name: Methods
+                      items:
+                        - name: Invoke
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand_invoke.md
+                        - name: Invoke(Object?)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand_invoke_object.md
+                - name: ToastArgs
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toastargs.md
       - name: Crop And Lock
         href: ../powertoys/crop-and-lock.md
       - name: Environment Variables
