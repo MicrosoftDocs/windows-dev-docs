@@ -244,6 +244,8 @@ items:
               items:
               - name: Working with background tasks in Windows apps
                 href: develop/launch/create-and-register-a-background-task.md
+              - name: BackgroundTaskBuilder in the Windows App SDK
+                href: windows-app-sdk/applifecycle/background-tasks.md
         - name: Notifications
           items: 
             - name: Push notifications
