@@ -31,6 +31,11 @@ The stable channel provides releases of the Windows App SDK that are supported f
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
 
+### Version 1.6.5 (1.6.250205002)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
+- Fixed several memory leak issues.
+
 ### Version 1.6.4 (1.6.250108002)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.

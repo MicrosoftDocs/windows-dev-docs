@@ -1,7 +1,7 @@
 ---
 title: Windows Dev Kit 2023 update history
 description: History of updates available for the Windows Dev Kit 2023. 
-ms.date: 09/24/2024
+ms.date: 02/10/2025
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -14,6 +14,16 @@ To keep your device performing its best, make sure that you have the latest upda
 [Check for Windows updates](ms-settings:windowsupdate?activationSource=SMC-IA-4027667)
 
 [Check for optional updates](ms-settings:windowsupdate-optionalupdates?activationSource=SMC-IA-4027667)
+
+## February 2025 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update:
+
+- Enhances the overall security posture of the devices, protecting customers from potential threat.
+
+| Driver Version | Device Manager |
+|----|----|
+| 13.42.235.0       | Surface UEFI - Firmware |
 
 ## September 2024 updates
 

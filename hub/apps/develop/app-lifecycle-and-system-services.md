@@ -1,7 +1,7 @@
 ---
 title: App lifecycle, background tasks, and system services in Windows apps
 description: This article provides an index of development features that are related to scenarios involving managing the lifecycle of Windows apps and system-level services.
-ms.date: 01/05/2025
+ms.date: 02/13/2025
 ms.topic: concept-article
 keywords: windows 11, winui, background task, app service, connected devices, remote systems, app lifecycle
 ms.localizationpriority: medium
