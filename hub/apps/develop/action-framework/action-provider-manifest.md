@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Action provider package manifest XML format
 
-This article describes the package manifest XML format for action providers for the Windows Copilot Action Framework. 
+This article describes the package manifest XML format for action providers for the Windows Copilot Action Framework.
 
 ## App extension
 
