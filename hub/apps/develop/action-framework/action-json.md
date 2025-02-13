@@ -1,6 +1,6 @@
 ---
-title: Action JSON schema for Action Framework providers
-description: Describes the format of the action definition JSON file format for Action Framework.
+title: Action JSON schema for Windows Copilot Action Framework providers
+description: Describes the format of the action definition JSON file format for Windows Copilot Action Framework.
 ms.topic: article
 ms.date: 02/04/2025
 ms.localizationpriority: medium
@@ -8,9 +8,9 @@ ms.localizationpriority: medium
 
 
 
-# Action JSON schema for Action Framework providers
+# Action JSON schema for Windows Copilot Action Framework providers
 
-Describes the format of the action definition JSON file format for Action Framework.
+Describes the format of the action definition JSON file format for Action Framework. This file must be included in your project with the **Build Action** set to "Content" and **Copy to Output Directory** set to “Copy if newer”. Specify the package-relative path to the JSON file in your package manifest XML file. For more information, see [Action provider package manifest XML format](action-provider-manifest.md).
 
 ## Example action definition JSON file
 
