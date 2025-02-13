@@ -96,8 +96,6 @@ From within the Visual Studio Installer app:
     * Then in the **Installation details** pane of the installation dialog box, select **Windows App SDK C# Templates** (at the bottom of the list).
   * For C++ app development using the Windows App SDK, select **Desktop development with C++**
     * Then in the **Installation details** pane of the installation dialog box, select **Windows App SDK C++ Templates** (at the bottom of the list).
-  * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
-    * Then in the **Installation details** pane of the installation dialog box for that workload, make sure **C++ (v143) Universal Windows Platform tools** is selected.
 
 * On the **Individual components** tab, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 
@@ -109,8 +107,6 @@ From within the Visual Studio Installer app:
 
   * For C# app development using the Windows App SDK, select **.NET Desktop Development**.
   * For C++ app development using the Windows App SDK, select **Desktop development with C++**.
-  * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**.
-    * Then in the **Installation details** pane of the installation dialog box for that workload, make sure either **C++ (v143) Universal Windows Platform tools** (for Visual Studio 2022) or **C++ (v142) Universal Windows Platform tools** (for Visual Studio 2019) is selected.
 
 * On the **Individual components** tab, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 

@@ -1,9 +1,10 @@
 ---
 title: App lifecycle and system services
 description: This article provides an index of development features that are related to scenarios involving managing the lifecycle of Windows apps and system-level services.
-ms.topic: article
-ms.date: 10/07/2021
+ms.topic: concept-article
+ms.date: 02/12/2025
 ms.localizationpriority: medium
+# customer-intent: As a Windows developer, I want to learn about the features related to Windows app lifecycle and related system services.
 ---
 
 # App lifecycle and system services

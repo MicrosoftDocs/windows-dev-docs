@@ -29,6 +29,182 @@ The experimental channel includes releases of the Windows App SDK with [experime
 - [Experimental channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
 - [Experimental channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
 
+## Version 1.7 Experimental (1.7.0-experimental3)
+### Use on-device AI with Windows Copilot Runtime APIs
+
+> [!IMPORTANT]
+> The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
+
+The Windows Copilot Runtime (WCR) offers several AI-powered features and APIs for you to easily, efficiently, and responsibly use on-device AI models in your Windows apps. In this release we are making available several scenario focused APIs for you to leverage powerful capabilities without the need to find, run, or optimize your own Machine Learning (ML) models. 
+
+Learn more about responsible development practices used during WCR API development that you can also apply as you create AI-assisted features in the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
+
+#### Phi Silica
+
+With [**Phi Silica**](/windows/ai/apis/phi-silica), Microsoft's most powerful NPU-tuned local language model, you can generate text responses to broad user prompts with built in content moderation. You can also specify it to perform common tasks like summarizing a piece of text, rewriting a piece of text for clarity, and converting text to a table format. Phi Silica is optimized for efficiency and performance on Windows Copilot+ PCs devices while still offering many of the capabilities found in Large Language Models (LLMs). 
+
+See [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica) and [API ref for Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica-api-ref) for more information.
+
+#### Text Recognition (OCR)
+
+Text recognition, also known as optical character recognition (OCR), APIs in Windows Copilot Runtime (WCR) can detect and extract text within images and convert it into machine readable character streams. These APIs can identify characters, words, lines, polygonal text boundaries, and provide confidence levels for each match. The set of WCR AI-assisted APIs benefit from NPU-assisted acceleration to perform faster and more accurately than the legacy [Windows.Media.Ocr.OcrEngine](/uwp/api/windows.media.ocr.ocrengine) APIs.
+
+See [Get Started with Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition) and [API ref for AI-backed Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition-api-ref) for more information.
+
+#### Image Super Resolution
+
+Using the 'ImageScaler' APIs you can increase the sharpness and clarity of an image and upscale the image up to 8x its original resolution.
+
+See [What can I do with Image Super Resolution?](/windows/ai/apis/imaging#what-can-i-do-with-image-super-resolution) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref) to get started.
+
+#### Image Description
+
+The Image Description APIs can be used to generate a text description of an image. The APIs are configurable to specify the length and type of the text description. Image descriptions may include a short caption or a long description for users with accessibility needs.
+
+> [!NOTE]
+> When calling ImageDescriptionGenerator.DescribeAsync() in a Debug build, an error may occur that can be mitigated by continuing the build in Visual Studio.
+
+See [What can I do with Image Description?](/windows/ai/apis/imaging#what-can-i-do-with-image-description) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref) to learn more.
+
+#### Image Segmentation
+
+Using Image Segmentation APIs you can identify specific objects within an image. The model takes both an image and a "hints" object and returns a mask of the identified object.
+
+See [What can I do with Image Segmentation?](/windows/ai/apis/imaging#what-can-i-do-with-image-segmentation) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref) to get started.
+
+### New APIs for Windowing
+
+New `AppWindow` APIs make it easier to control your app windows and create a great experience. New capabilities include using `EnablePlacementPersistence` to automatically remember the size and position of your windows, using `SetTaskBarIcon` and `SetTitleBarIcon` to independently set the taskbar and titlebar icons, using `AppWindowTitleBar.PreferredTheme` to set the light/dark theme of the titlebar, and using `OverlappedPresenter.PreferredMinimum/MaximumSize` to set a minimum or maximum size for the window.
+
+### Other notable changes
+
+* The missing C# projections for the new `BadgeNotifications` have been added so these APIs are now usable from C#.
+* A class registration issue which prevented using the new `AppNotificationConferencingConfig` API has been fixed. Note that this enhanced user experience for video or audio calling in notifications is only available on the latest Windows Insider releases of Windows.
+
+### New APIs
+
+This release includes the following new and modified experimental APIs compared to 1.7-experimental2:
+```
+Microsoft.Graphics.Imaging
+
+    ImageBuffer
+    ImageBufferContract
+    ImageObjectExtractor
+    ImageObjectExtractorContract
+    ImageObjectExtractorHint
+    ImageScaler
+    ImageScalerContract
+    PixelFormat
+```
+```
+Microsoft.UI.Content
+
+    ChildSiteLink
+        AutomationOption
+        ProcessKeyboardInput
+        ProcessPointerInput
+
+    ContentAutomationOptions
+    ContentIsland
+        AutomationOption
+        ProcessKeyboardInput
+        ProcessPointerInput
+
+    ContentSite
+        ProcessKeyboardInput
+        ProcessPointerInput
+
+    ContentSiteView
+        AutomationOption
+        ProcessKeyboardInput
+        ProcessPointerInput
+
+    DesktopPopupSiteBridge
+        AutomationOption
+
+    IContentSiteAutomation
+        AutomationOption
+
+    IContentSiteInput
+    ReadOnlyDesktopSiteBridge
+        ProcessKeyboardInput
+        ProcessPointerInput
+```
+```
+Microsoft.UI.Windowing
+
+    AppWindow
+        EnablePlacementPersistence
+        EnablePlacementPersistence
+        GetCurrentPlacement
+        SaveCurrentPlacement
+        SetPlacement
+        SetTaskBarIcon
+        SetTaskBarIcon
+        SetTitleBarIcon
+        SetTitleBarIcon
+
+    AppWindowTitleBar
+        PreferredTheme
+
+    OverlappedPresenter
+        PreferredMaximumSize
+        PreferredMinimumSize
+        SetPreferredBounds
+
+    PlacementPersistenceBehaviorFlags
+    TitleBarTheme
+```
+```
+Microsoft.Windows.AI.ContentModeration
+
+    ContentFilterOptions
+    ContentFilterOptionsContract
+    ImageContentFilterSeverity
+    SeverityLevel
+    TextContentFilterSeverity
+```
+```
+Microsoft.Windows.AI.Generative
+
+    ImageDescriptionContract
+    ImageDescriptionGenerator
+    ImageDescriptionScenario
+    LanguageModel
+    LanguageModelContext
+    LanguageModelContract
+    LanguageModelOptions
+    LanguageModelResponse
+    LanguageModelResponseStatus
+    LanguageModelSkill
+```
+```
+Microsoft.Windows.SemanticSearch
+
+    EmbeddingVector
+    SemanticSearchContract
+```
+```
+Microsoft.Windows.Vision
+
+    BoundingBox
+    DetectedLineStyle
+    OrientationDetectionOptions
+    RecognizedLine
+    RecognizedLineStyle
+    RecognizedText
+    RecognizedWord
+    TextRecognitionContract
+    TextRecognizer
+    TextRecognizerOptions
+```
+```
+Microsoft.Windows.Workloads
+
+    WorkloadPriority
+    WorkloadsContract
+```
+
 ## Version 1.7 Experimental (1.7.0-experimental2)
 ### Background Task Registration
 
