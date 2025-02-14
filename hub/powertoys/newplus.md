@@ -54,7 +54,7 @@ Note: Any invalid filename characters are replaced with spaces.
 
 ##### Examples
 
-| Example template filename | Would on copy expand to |
+| Example template filename | Result |
 | :---             | :--- |
 |`$YYYY-$MM-%DD, $hh $mm $ss  - $PARENT_FOLDER_NAME by %USERNAME%` | `2024-11-22, 12 08 54 - PowerShell project by cgaarden` |
 |`File where variable value contains invalid characters %USERPROFILE%` | `File where variable value contains invalid characters C  Users cgaarden` |
@@ -88,7 +88,7 @@ These date and time related variable patterns are the same as those used by Powe
 
 ##### Special variables
 
-These special variables are case-sensitive, so they will only work when written exactly as shown here.
+These special variables are case-sensitive, so they will only work when used in the filename exactly as shown here.
 
 | Variable | Explanation |
 | :---             | :--- |
@@ -96,7 +96,7 @@ These special variables are case-sensitive, so they will only work when written 
 
 ##### Environment variables
 
-These variables are case-insensitive, meaning you can write them in a mix of uppercase or lowercase.
+These variables are case-insensitive, meaning you use them in the filename in a mix of uppercase or lowercase.
 
 Each `%environment_variable%` in the file and folder names will be replaced with the value of the corresponding environment variable.
 
