@@ -8729,6 +8729,76 @@
       "source_path": "hub/apps/develop/camera/index.md",
       "redirect_url": "/windows/apps/develop/camera/camera",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/handle-uri-activation.md",
+      "redirect_url": "/windows/apps/develop/launch/handle-uri-activation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-app-from-file.md",
+      "redirect_url": "/windows/apps/develop/launch/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-app-with-uri.md",
+      "redirect_url": "/windows/apps/develop/launch/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-default-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-default-apps-settings.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-apps-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-maps-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-maps-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-people-apps.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-people-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-screen-snipping.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-screen-snipping",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-settings-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-settings-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-store-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-store-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-the-default-app-for-a-file.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-the-default-app-for-a-file",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/reserved-uri-scheme-names.md",
+      "redirect_url": "/windows/apps/develop/launch/reserved-uri-scheme-names",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/web-to-app-linking.md",
+      "redirect_url": "/windows/apps/develop/launch/web-to-app-linking",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/handle-file-activation.md",
+      "redirect_url": "/windows/apps/develop/launch/handle-file-activation",
+      "redirect_document_id": false
     }
   ]
 }

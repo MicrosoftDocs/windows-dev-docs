@@ -58,7 +58,7 @@ Get the user's current location and be notified when the location changes in you
 
 ## Launch the Windows Maps app
 
-Your app can launch the Windows Maps app as shown here to display specific maps and turn-by-turn directions. Rather than provide map functionality directly in your own app, consider using the Windows Maps app to provide that functionality. For more info, see [Launch the Windows Maps app](../launch-resume/launch-maps-app.md).
+Your app can launch the Windows Maps app as shown here to display specific maps and turn-by-turn directions. Rather than provide map functionality directly in your own app, consider using the Windows Maps app to provide that functionality. For more info, see [Launch the Windows Maps app](/windows/apps/develop/launch/launch-maps-app).
 
 ![an example of the windows maps app.](images/mapnyc.png)
 

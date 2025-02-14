@@ -22,7 +22,7 @@ ms.localizationpriority: medium
 Request routes and directions, and display them in your app.
 
 > [!NOTE]
-> If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](../launch-resume/launch-maps-app.md).
+> If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](/windows/apps/develop/launch/launch-maps-app).
 
 ## An intro to MapRouteFinder results
 

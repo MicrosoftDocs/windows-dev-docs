@@ -1,7 +1,7 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 10/31/2024
+ms.date: 02/13/2025
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -18,6 +18,8 @@ Arm-powered devices are particularly interesting because the power-frugal nature
 Windows 10 enables existing unmodified x86 apps to run on Arm devices. Windows 11 adds the ability to run unmodified x64 Windows apps on Arm devices! This ability to run x86 & x64 apps on Arm devices gives end-users confidence that the majority of their existing apps & tools will run well even on new Arm-powered devices.
 
 For the best performance, responsiveness, and battery life, users will want and need Arm-native Windows apps, which means that developers will need to build or port Arm-native Windows apps.
+
+Check whether it's supported on Arm: [Windows on Arm Ready Software](https://www.worksonwoa.com/en/) - This site is your source for compatibility information for many apps and games on Windows devices that run on Arm architecture and will be updated over time.
 
 ### Virtual Machines
 
