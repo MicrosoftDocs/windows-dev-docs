@@ -1,7 +1,7 @@
 ---
 title: Windows Package Manager
 description: Windows Package Manager is a comprehensive package manager solution that consists of a command line tool and set of services for installing applications on Windows.
-ms.date: 11/21/2024
+ms.date: 02/13/2025
 ms.topic: overview
 ---
 
@@ -9,7 +9,7 @@ ms.topic: overview
 
 Windows Package Manager is a comprehensive [package manager solution](#understanding-package-managers) that includes:
 
-- [WinGet](./winget/index.md): The command line tool and client interface for the Windows Package Manager service.
+- [WinGet](./winget/index.md): The command line tool and client interface for the Windows Package Manager service. You can view the packages available using the command [`winget list`](./winget/list.md), find more winget commands: [Use the WinGet tool to install and manage applications](.winget/index.md).
 - [Submit packages to Windows Package Manager](./package/index.md): The packaging services for hosting and installing applications on Windows devices.
 - [WinGet Configuration files](./configuration/index.md): Create a set of instructions for Windows Package Manager to consolidate the steps for manually setting up a device and onboarding to a new project to a single command that is reliable and repeatable. WinGet Configuration files utilize PowerShell Desired State Configuration (DSC) in combination with YAML formatted instructions and WinGet packages to handle your machine set up.
 
