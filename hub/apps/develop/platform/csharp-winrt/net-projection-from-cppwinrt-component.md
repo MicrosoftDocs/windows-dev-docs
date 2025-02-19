@@ -126,7 +126,7 @@ Before you can invoke the `cswinrt.exe` tool to generate the projection assembly
 
     ```xml
     <PropertyGroup>
-      <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+      <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
       <!-- Set Platform to AnyCPU to allow consumption of the projection assembly from any architecture. -->
       <Platform>AnyCPU</Platform>
     </PropertyGroup>

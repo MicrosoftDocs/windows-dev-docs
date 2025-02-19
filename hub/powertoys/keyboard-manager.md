@@ -128,6 +128,10 @@ For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arr
 > [!IMPORTANT]
 > Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of key press matters in this scenario as the action is executed during key-down, not key-up. For example: pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
 
+The **Exact Match** option can be selected when creating a shortcut to single key mapping. Without specifying **Exact Match**, if the shortcut is pressed and other keys are also pressed, the single key mapping will still be sent.
+
+For example, when replacing the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> with an `A` key press, if **Exact Match** is enabled, the shortcut will only be replaced if no other keys are pressed.
+
 ### Remap a shortcut to text
 
 For example, to replace the shortcut <kbd>Ctrl</kbd>+<kbd>G</kbd> with `Hello!` text, choose **Text** in the combo box and enter "Hello!":

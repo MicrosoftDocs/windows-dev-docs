@@ -37,8 +37,8 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 
     ```xml
     <PropertyGroup>
-      <!-- You can also target other versions of the Windows SDK and .NET; for example, "net6.0-windows10.0.19041.0" -->
-      <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+      <!-- You can also target other versions of the Windows SDK and .NET; for example, "net8.0-windows10.0.19041.0" -->
+      <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     </PropertyGroup>
     ```
 

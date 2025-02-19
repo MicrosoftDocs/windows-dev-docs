@@ -1,14 +1,14 @@
 ---
 title: Using ms-windows-store URIs in Windows apps
 description: Launch the Microsoft Store app directly to a landing page or your product's page.
-ms.date: 02/11/2025
+ms.date: 02/19/2025
 ms.topic: concept-article
 # customer-intent: As a Windows developer, I want to learn how to use the ms-windows-store URI scheme to launch the Microsoft Store app to specific pages in the store.
 ---
 
 # Using ms-windows-store URIs
 
-This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the store by using the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method on Windows.
+This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the store by using the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method on Windows.
 
 For example, you can open the Store to the Games page using the following code:
 
@@ -24,7 +24,8 @@ You can launch the Store App to a specific page or section using the following o
 |--------------------------------------------------|-------------------------------------------------|-------|
 | ms-windows-store://home                          | Launches the home page of the Store.            |       |
 | ms-windows-store://navigatetopage/?Id=[vertical] | Launches a top-level vertical page of the store | Verticals include: `Home`, `Gaming`, `Entertainment`, `Productivity`, and `LOB`, but note that available verticals can vary by region. |
-| ms-windows-store://downloadsandupdates           | Launches the downloads and updates page.        | Starting with the October 2021 update to the Store app, this will launch the Library page. |
+| ms-windows-store://downloadsandupdates           | Launches the Updates and downloads page.        |       |
+| ms-windows-store://mylibrary                     | Launches the Library page of the Store.         |       |
 | ms-windows-store://settings                      | Launches the Store settings page.               |       |
 
 ## Opening to a specific product

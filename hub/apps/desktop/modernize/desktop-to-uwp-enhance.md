@@ -35,24 +35,24 @@ This option is supported only in projects that use .NET 6 (or later) and target 
     <Project Sdk="Microsoft.NET.Sdk">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
       </PropertyGroup>
     </Project>
     ```
 
 2. Leaving all other settings as they are, replace the value of the **TargetFramework** element with one of the following strings:
 
-    * **net6.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
-    * **net6.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
-    * **net6.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
-    * **net6.0-windows10.0.22000.0**: If your app targets initial release of Windows 11.
-    * **net6.0-windows10.0.22621.0**: If your app targets Windows 11, version 22H2.
-    * **net6.0-windows10.0.26100.0**: If your app targets Windows 11, version 24H2.
+    * **net8.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
+    * **net8.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
+    * **net8.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
+    * **net8.0-windows10.0.22000.0**: If your app targets initial release of Windows 11.
+    * **net8.0-windows10.0.22621.0**: If your app targets Windows 11, version 22H2.
+    * **net8.0-windows10.0.26100.0**: If your app targets Windows 11, version 24H2.
 
     For example, the following element is for a project that targets Windows 10, version 2004.
 
     ```xml
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     ```
     
     In later versions of .NET, you can replace the value with the relevant version, for example **net8.0-windows10.0.19041.0**.
@@ -78,7 +78,7 @@ The **TargetPlatformMinVersion** can be overridden to be less than the **TargetP
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
   </PropertyGroup>
 </Project>
