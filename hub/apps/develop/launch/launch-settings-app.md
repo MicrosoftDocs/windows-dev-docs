@@ -174,6 +174,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Color filters | ms-settings:easeofaccess-colorfilter </br> ms-settings:easeofaccess-colorfilter-adaptivecolorlink </br> ms-settings:easeofaccess-colorfilter-bluelightlink |
 | Display | ms-settings:easeofaccess-display |
 | Eye control | ms-settings:easeofaccess-eyecontrol |
+| Hearing devices | ms-settings:easeofaccess-hearingaids (**Added in Windows 11, Version 24H2**) |
 | High contrast | ms-settings:easeofaccess-highcontrast |
 | Keyboard | ms-settings:easeofaccess-keyboard |
 | Magnifier | ms-settings:easeofaccess-magnifier |

@@ -44,13 +44,13 @@ First we'll edit the project file.
 2. This step enables you to call [Windows Runtime (WinRT) APIs](/uwp/api/) (including [Windows App SDK APIs](/windows/windows-app-sdk/api/winrt/)). Inside the **PropertyGroup** element is the **TargetFramework** element, which is set to a value such as *net6.0*. Append to that target framework value a moniker (specifically, a [Target Framework Moniker](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-6-and-later-use-the-target-framework-moniker-option)). For example, use the following if your app targets Windows 10, version 2004:
 
     ```xml
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     ```
 
 3. Also inside the **PropertyGroup** element, add a [RuntimeIdentifiers](/dotnet/core/project-sdk/msbuild-props#runtimeidentifiers) element, like this:
 
     ```xml
-    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     ```
 
 4. By default, a WinForms app is unpackaged (meaning that it isn't installed by using MSIX). An unpackaged app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK. You can do that automatically when your app starts via *auto-initialization*. You just set (also inside the **PropertyGroup** element) the `WindowsPackageType` project property appropriately, like this:

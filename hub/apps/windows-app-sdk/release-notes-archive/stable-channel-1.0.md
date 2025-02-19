@@ -288,7 +288,7 @@ For more information, see [Manage resources with MRT Core](../mrtcore/mrtcore-ov
 - **Upgrading from .NET 5 to .NET 6**: When upgrading in the Visual Studio UI, you might run into build errors. As a workaround, manually update your project file's `TargetFrameworkPackage` to the below:
 
   ```xml
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework> 
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework> 
   ```
 
 - **C# Single-project MSIX app doesn't compile if C++ UWP Tools aren't installed.** If you have a C# Single-project MSIX project, then you'll need to install the **C++ (v14x) Universal Windows Platform Tools** optional component.
