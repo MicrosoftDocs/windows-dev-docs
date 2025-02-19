@@ -1,12 +1,12 @@
 ---
-title: InvokableCommand.Invoke(Object) Method
+title: ISettingsForm.Update(JsonObject) Method
 description: 
-ms.date: 2/11/2025
+ms.date: 2/19/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# InvokableCommand.Invoke(Object) Method
+# ISettingsForm.Update(JsonObject) Method
 
 ## Definition
 
@@ -14,8 +14,4 @@ Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalett
 
 ## Parameters
 
-**`sender`** Object
-
-## Returns
-
-[InvokableCommand.Invoke()](invokablecommand_invoke.md)
+**`payload`** JsonObject

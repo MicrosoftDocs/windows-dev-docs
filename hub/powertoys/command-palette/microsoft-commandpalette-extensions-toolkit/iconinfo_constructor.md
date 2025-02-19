@@ -1,16 +1,18 @@
 ---
 title: IconInfo Constructors
 description: 
-ms.date: 2/10/2025
+ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# IconInfo() Constructor
+# IconInfo Constructors
 
-## Definition
+## IconInfo() Constructor
 
-Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+### Definition
+
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
 
 Initializes a new instance of the [IconInfo](iconinfo.md) class with an empty icon.
 
@@ -21,11 +23,11 @@ internal IconInfo()
     }
 ```
 
-# IconInfo(IconData, IconData) Constructor
+## IconInfo(IconData, IconData) Constructor
 
-## Definition
+### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
 
 Initializes a new instance of the [IconInfo](iconinfo.md) class with a dark mode and a light mode version of the icon.
 
@@ -37,27 +39,27 @@ public IconInfo(IconData light, IconData dark)
     }
 ```
 
-## Parameters
+### Parameters
 
 **`dark`** [IconData](icondata.md)
 
 **`light`** [IconData](icondata.md)
 
-# IconInfo(String?) Constructor
+## IconInfo(String) Constructor
 
-## Definition
+### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
 
-Initializes a new instance of the [IconInfo](iconinfo.md) class with one version of the icon, used for both light and dark modes..
+Initializes a new instance of the [IconInfo](iconinfo.md) class with one version of the icon, used for both light and dark modes.
 
 ```C#
-public IconInfo(string? icon)
+public IconInfo(string icon)
     {
         Dark = Light = new(icon);
     }
 ```
 
-## Parameters
+### Parameters
 
-**`icon`** String?
+**`icon`** String

@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
 
 Sets the clipboard text to the value of `[Text](copytextcommand.md#properties)` and returns the `[Result](copytextcommand.md#properties)`.
 

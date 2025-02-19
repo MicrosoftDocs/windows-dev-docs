@@ -361,8 +361,64 @@ items:
                       items:
                         - name: OnPropertyChanged
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/baseobservable_onpropertychanged.md
+                - name: Choice
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choice.md
+                - name: ChoiceSetSetting
+                  items:
+                    - name: ChoiceSetSetting
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_constructor.md
+                    - name: Methods
+                      items:
+                        - name: LoadFromJson(JsonObject)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_loadfromjson.md
+                        - name: ToDictionary
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_todictionary.md
+                        - name: ToState
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_tostate.md
+                        - name: Update(JsonObject)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_update.md
+                - name: ClipboardHelper
+                  items:
+                    - name: ClipboardHelper
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper.md
+                    - name: Methods
+                      items:
+                        - name: GetText
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper_gettext.md
+                        - name: SetRtf(String, String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper_setrtf.md
+                        - name: SetText(String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper_settext.md
+                - name: ColorHelpers
+                  items:
+                    - name: ColorHelpers
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers.md
+                    - name: Methods
+                      items:
+                        - name: FromArgb(Byte, Byte, Byte, Byte)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_fromargb.md
+                        - name: FromRgb(Byte, Byte, Byte)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_fromrgb.md
+                        - name: NoColor
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_nocolor.md
+                        - name: Transparent
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_transparent.md
                 - name: Command
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/command.md
+                - name: CommandContextItem
+                  items:
+                    - name: CommandContextItem
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandcontextitem.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandcontextitem_constructor.md
+                - name: CommandItem
+                  items:
+                    - name: CommandItem
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commanditem.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commanditem_constructor.md
                 - name: CommandResult
                   items:
                     - name: CommandResult
@@ -421,8 +477,42 @@ items:
                       items:
                         - name: Invoke
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand_invoke.md
-                        - name: Invoke(Object?)
+                        - name: Invoke(Object)
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand_invoke_object.md
+                - name: ISettingsForm
+                  items:
+                    - name: ISettingsForm
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform.md
+                    - name: Methods
+                      items:
+                        - name: ToDataIdentifier
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_todataidentifier.md
+                        - name: ToDictionary
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_todictionary.md
+                        - name: ToForm
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_toform.md
+                        - name: ToState
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_tostate.md
+                        - name: Update(JsonObject)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_update.md
+                - name: Setting
+                  items:
+                    - name: Setting
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_constructor.md
+                    - name: Methods
+                      items:
+                        - name: ToDataIdentifier
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_todataidentifier.md
+                        - name: ToDictionary
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_todictionary.md
+                        - name: ToForm
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_toform.md
+                        - name: ToState
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_tostate.md
+                        - name: Update(JsonObject)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_update.md
                 - name: ToastArgs
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toastargs.md
       - name: Crop And Lock

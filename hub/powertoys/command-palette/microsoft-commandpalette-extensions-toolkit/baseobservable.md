@@ -1,7 +1,7 @@
 ---
 title: BaseObservable Class
 description: 
-ms.date: 2/10/2025
+ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -18,7 +18,7 @@ Implements [INotifyPropChanged](../microsoft-commandpalette-extensions/inotifypr
 
 | Event | Description |
 | :--- | :--- |
-| Windows.Foundation.TypedEventHandler<object, [IPropChangedEventArgs](../microsoft-commandpalette-extensions/ipropchangedeventargs.md)>? PropChanged | Notifies that a property value has changed. |
+| Windows.Foundation.TypedEventHandler<object, [IPropChangedEventArgs](../microsoft-commandpalette-extensions/ipropchangedeventargs.md)> PropChanged | Notifies that a property value has changed. |
 
 ## Methods
 

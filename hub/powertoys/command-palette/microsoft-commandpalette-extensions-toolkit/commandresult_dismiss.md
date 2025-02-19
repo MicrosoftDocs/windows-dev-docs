@@ -10,7 +10,9 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+
+Close the Command Palette after the action is executed and dismiss the current state. On the next launch, the Command Palette will start from the main page with a blank query.
 
 Creates a new [CommandResult](commandresult.md) instance with its [Kind](commandresult.md#properties) property set to [CommandResultKind.Dismiss](../microsoft-commandpalette-extensions/commandresultkind.md#fields).
 

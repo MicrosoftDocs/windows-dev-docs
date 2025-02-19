@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
 
 Initializes a new instance of the [CopyTextCommand](copytextcommand.md) class with the command text set to the `text` parameter, its name set to "Copy", and an icon added.
 

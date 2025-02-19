@@ -1,16 +1,18 @@
 ---
 title: IconData Constructors
 description: 
-ms.date: 2/10/2025
+ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# IconData() Constructor
+# IconData Constructors
 
-## Definition
+## IconData() Constructor
 
-Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+### Definition
+
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
 
 Initializes a new instance of the [IconData](icondata.md) class with the [Icon](icondata.md#properties) property set to an empty string.
 
@@ -21,11 +23,11 @@ internal IconData()
     }
 ```
 
-# IconData(IRandomAccessStreamReference) Constructor
+## IconData(IRandomAccessStreamReference) Constructor
 
-## Definition
+### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
 
 Initializes a new instance of the [IconData](icondata.md) class with the [Data](icondata.md#properties) property set to `data`.
 
@@ -36,15 +38,15 @@ public IconData(IRandomAccessStreamReference data)
     }
 ```
 
-## Parameters
+### Parameters
 
 **`data`** Windows.Storage.Streams.IRandomAccessStreamReference
 
-# IconData(String?) Constructor
+## IconData(String) Constructor
 
-## Definition
+### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
 
 Initializes a new instance of the [IconData](icondata.md) class with the [Icon](icondata.md#properties) property set to `icon`.
 
@@ -55,6 +57,6 @@ public IconData(string? icon)
     }
 ```
 
-## Parameters
+### Parameters
 
-**`icon`** String?
+**`icon`** String

@@ -1,12 +1,12 @@
 ---
-title: InvokableCommand.Invoke(Object) Method
+title: ClipboardHelper.SetRtf(String, String) Method
 description: 
-ms.date: 2/11/2025
+ms.date: 2/19/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# InvokableCommand.Invoke(Object) Method
+# ClipboardHelper.SetRtf(String, String) Method
 
 ## Definition
 
@@ -14,8 +14,6 @@ Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalett
 
 ## Parameters
 
-**`sender`** Object
+**`plainText`** String
 
-## Returns
-
-[InvokableCommand.Invoke()](invokablecommand_invoke.md)
+**`rtfText`** String

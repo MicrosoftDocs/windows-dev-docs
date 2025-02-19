@@ -1,7 +1,7 @@
 ---
 title: InvokableCommand Class
 description: 
-ms.date: 2/10/2025
+ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -21,4 +21,4 @@ Implements [IInvokableCommand](../microsoft-commandpalette-extensions/iinvokable
 | Method | Description |
 | :--- | :--- |
 | [Invoke()](invokablecommand_invoke.md) | Keeps the command palette open after the command is invoked. |
-| [Invoke(Object?)](invokablecommand_invoke_object.md) | |
+| [Invoke(Object)](invokablecommand_invoke_object.md) | |
