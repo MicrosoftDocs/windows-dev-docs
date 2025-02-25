@@ -23,6 +23,6 @@ public CopyTextCommand(string text)
     }
 ```
 
-## Parameters
+### Parameters
 
 **`text`** String

@@ -23,6 +23,6 @@ public CommandContextItem(ICommand command)
     }
 ```
 
-## Parameters
+### Parameters
 
 **`command`** [ICommand](../microsoft-commandpalette-extensions/icommand.md)

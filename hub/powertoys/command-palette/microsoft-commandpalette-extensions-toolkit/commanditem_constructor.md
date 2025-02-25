@@ -24,7 +24,7 @@ public CommandItem(ICommand command)
     }
 ```
 
-## Parameters
+### Parameters
 
 **`command`** [ICommand](../microsoft-commandpalette-extensions/icommand.md)
 
@@ -47,6 +47,6 @@ public CommandItem(ICommandItem other)
     }
 ```
 
-## Parameters
+### Parameters
 
 **`other`** [ICommandItem](../microsoft-commandpalette-extensions/icommanditem.md)

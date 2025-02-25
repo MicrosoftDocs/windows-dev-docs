@@ -40,7 +40,7 @@ public ChoiceSetSetting(string key, List<Choice> choices)
     }
 ```
 
-## Parameters
+### Parameters
 
 **`key`** String
 
@@ -62,7 +62,7 @@ public ChoiceSetSetting(string key, string label, string description, List<Choic
     }
 ```
 
-## Parameters
+### Parameters
 
 **`key`** String
 

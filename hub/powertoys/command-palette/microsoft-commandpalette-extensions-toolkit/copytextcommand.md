@@ -1,7 +1,7 @@
 ---
 title: CopyTextCommand Class
 description: 
-ms.date: 2/10/2025
+ms.date: 2/25/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
 
-Implements [InvokableCommand](invokablecommand.md)
+Inherits [InvokableCommand](invokablecommand.md)
 
 ## Constructors
 
@@ -24,7 +24,7 @@ Implements [InvokableCommand](invokablecommand.md)
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Result | [CommandResult](commandresult.md) | What happens in the palette after the command is executed. Defaults to [CommandResult.Dismiss()](commandresult_dismiss.md). |
+| Result | [CommandResult](commandresult.md) | What happens in the palette after the command is executed. Defaults to [CommandResult.ShowToast("Copied to clipboard")](commandresult_showtoast_string.md). |
 | Text | String | Gets and sets the text of the command. |
 
 ## Methods

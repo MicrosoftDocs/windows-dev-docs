@@ -419,6 +419,24 @@ items:
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commanditem.md
                     - name: Constructors
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commanditem_constructor.md
+                - name: CommandProvider
+                  items:
+                    - name: CommandProvider
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider.md
+                    - name: Methods
+                      items:
+                        - name: Dispose
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_dispose.md
+                        - name: FallbackCommands
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_fallbackcommands.md
+                        - name: GetCommand(String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_getcommand.md
+                        - name: InitializeWithHost(IExtensionHost)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_initializewithhost.md
+                        - name: RaiseItemsChanged(Int)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_raiseitemschanged.md
+                        - name: TopLevelCommands
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_toplevelcommands.md
                 - name: CommandResult
                   items:
                     - name: CommandResult
@@ -445,6 +463,16 @@ items:
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_toastargs.md
                 - name: ConfirmationArgs
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/confirmationargs.md
+                - name: ContentPage
+                  items:
+                    - name: ContentPage
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/contentpage.md
+                    - name: Methods
+                      items:
+                        - name: GetContent
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/contentpage_getcontent.md
+                        - name: RaiseItemsChanged(Int)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/contentpage_raiseitemschanged.md
                 - name: CopyTextCommand
                   items:
                     - name: CopyTextCommand
@@ -455,6 +483,90 @@ items:
                       items:
                         - name: Invoke
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand_invoke.md
+                - name: Details
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/details.md
+                - name: DetailsCommand
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailscommand.md
+                - name: DetailsElement
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailselement.md
+                - name: DetailsLink
+                  items:
+                    - name: DetailsLink
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailslink.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailslink_constructor.md
+                - name: DetailsSeparator
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailsseparator.md
+                - name: DetailsTags
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailstags.md
+                - name: DynamicListPage
+                  items:
+                    - name: DynamicListPage
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/dynamiclistpage.md
+                    - name: Methods
+                      items:
+                        - name: UpdateSearchText(String, String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/dynamiclistpage_updatesearchtext.md
+                - name: ExtensionHost
+                  items:
+                    - name: ExtensionHost
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost.md
+                    - name: Methods
+                      items:
+                        - name: HideStatus(IStatusMessage)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_hidestatus.md
+                        - name: Initialize(IExtensionHost)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_initialize.md
+                        - name: LogMessage(ILogMessage)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_logmessage_ilogmessage.md
+                        - name: LogMessage(String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_logmessage_string.md
+                        - name: ShowStatus(IStatusMessage)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_showstatus.md
+                - name: FallbackCommandItem
+                  items:
+                    - name: FallbackCommandItem
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem_constructor.md
+                    - name: Methods
+                      items:
+                        - name: UpdateQuery(String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem_updatequery.md
+                - name: Filter
+                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filter.md
+                - name: Form
+                  items:
+                    - name: Form
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form.md
+                    - name: Methods
+                      items:
+                        - name: DataJson
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form_datajson.md
+                        - name: StateJson
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form_statejson.md
+                        - name: SubmitForm(String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form_submitform.md
+                        - name: TemplateJson
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form_templatejson.md
+                - name: FormContent
+                  items:
+                    - name: FormContent
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent.md
+                    - name: Methods
+                      items:
+                        - name: SubmitForm(String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_string.md
+                        - name: SubmitForm(String, String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_stringstring.md
+                - name: FormPage
+                  items:
+                    - name: FormPage
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formpage.md
+                    - name: Methods
+                      items:
+                        - name: Forms
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formpage_forms.md
                 - name: GoToPageArgs
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/gotopageargs.md
                 - name: IconData
@@ -463,6 +575,16 @@ items:
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/icondata.md
                     - name: Constructors
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/icondata_constructor.md
+                - name: IconHelpers
+                  items:
+                    - name: IconHelpers
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconhelpers.md
+                    - name: Methods
+                      items:
+                        - name: FromRelativePath(String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconhelpers_fromrelativepath.md
+                        - name: FromRelativePaths(String, String)
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconhelpers_fromrelativepaths.md
                 - name: IconInfo
                   items:
                     - name: IconInfo
