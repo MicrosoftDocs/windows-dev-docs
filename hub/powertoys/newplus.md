@@ -56,7 +56,7 @@ Note: Any invalid filename characters are replaced with spaces.
 
 | Example template filename | Result |
 | :---             | :--- |
-|`$YYYY-$MM-%DD, $hh $mm $ss  - $PARENT_FOLDER_NAME by %USERNAME%` | `2024-11-22, 12 08 54 - PowerShell project by cgaarden` |
+|`$YYYY-$MM-$DD, $hh $mm $ss  - $PARENT_FOLDER_NAME by %USERNAME%` | `2024-11-22, 12 08 54 - PowerShell project by cgaarden` |
 |`File where variable value contains invalid characters %USERPROFILE%` | `File where variable value contains invalid characters C  Users cgaarden` |
 
 ##### Date and time related variables
