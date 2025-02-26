@@ -8,7 +8,9 @@ ms.localizationpriority: medium
 # customer-intent: As a Windows developer, I want to learn about the ms-screenclip and ms-screensketch URI schemes so that I can use them to launch the Snip & Sketch app or to open a new snip.
 ---
 
-# Launch screen snipping
+# Launch screen snipping (Legacy)
+
+**This is a legacy method for activating the Snipping Tool. It will be deprecated on 05/01/2025. Please refer to the updated documentation: [Launch Snipping Tool](launch-snipping-tool.md).
 
 The **ms-screenclip:** and **ms-screensketch:** URI schemes allows you to initiate snipping or editing screenshots.
 

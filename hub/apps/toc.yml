@@ -208,8 +208,11 @@ items:
                 href: develop/launch/launch-store-app.md
               - name: Launch the Windows Maps app
                 href: develop/launch/launch-maps-app.md
-              - name: Launch screen snipping
-                href: develop/launch/launch-screen-snipping.md
+              - name: Launch Snipping Tool
+                href: develop/launch/launch-snipping-tool.md
+                items:
+                - name: Launch screen snipping (legacy)
+                  href: develop/launch/launch-screen-snipping.md
               - name: Launch the People app
                 href: develop/launch/launch-people-app.md
               - name: Support web-to-app linking with app URI handlers
