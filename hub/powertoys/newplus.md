@@ -48,7 +48,7 @@ The option enables you to toggle the display of starting digits, spaces and dots
 
 #### Replace variables in template filename
 
-This setting causes supported variables in filenames, including in files within subfolders, to be replaced when the template is copied. The default setting of this option is enabled.
+This setting causes supported variables in filenames, including in files within subfolders, to be replaced when the template is copied. The default setting of this option is disabled.
 
 Note: Any invalid filename characters are replaced with spaces.
 
@@ -92,7 +92,7 @@ These special variables are case-sensitive, so they will only work when used in 
 
 | Variable | Explanation |
 | :---             | :--- |
-| `$PARENT_FOLDER_NAME`          | Expands to the name of the parent folder. |
+| `$PARENT_FOLDER_NAME`          | Expands to the name of the parent folder. This only works in template subfolders. |
 
 ##### Environment variables
 
