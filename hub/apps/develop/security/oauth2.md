@@ -108,9 +108,9 @@ if (TokenResponse tokenResponse = tokenRequestResult.Response())
     {
         // ExpiresIn is zero when not present
         DateTime expires = winrt::clock::now();
-        if (String expiresIn = tokenResponse.ExpiresIn(); expiresIn != 0)
+        if (String expiresIn = tokenResponse.ExpiresIn(); std::stoi(expiresIn) != 0)
         {
-            expires += std::chrono::seconds(static_cast<int64_t>(expiresIn));
+            expires += std::chrono::seconds(static_cast<int64_t>(std::stoi(expiresIn)));
         }
         else
         {
