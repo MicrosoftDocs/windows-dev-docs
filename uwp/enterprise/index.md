@@ -76,7 +76,7 @@ See [Use a SQL Server database in a UWP app](../data-access/sql-server-databases
 <a id="MSIX"></a>
 ### MSIX deployment
 
-MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience to all Windows apps. The MSIX package format preserves the functionality of existing app packages and install files in addition to enabling modern packaging and deployment features to Win32, WPF, and Windows Forms apps. 
+MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience to all Windows apps. The MSIX package format preserves the functionality of existing app packages and install files in addition to enabling modern packaging and deployment features to Win32, WPF, and Windows Forms apps.
 
 ![MSIX Icon](images/MSIX-App-Package.ico)
 
@@ -134,7 +134,6 @@ Many users today are bringing their own phone or tablet to work, which have vary
 |-------|-------------|
 | [Guide to UWP apps](../get-started/universal-application-platform-guide.md) | In this introductory guide, you'll get acquainted with the Windows UWP platform, including: what a device family is and how to decide which one to target, new UI controls and panels that allow you to adapt your UI to different device form factors, and how to understand and control the API surface that is available to your app. |
 | [Adaptive XAML UI code sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | This code sample shows all the possible layout options and controls for   your app, regardless of device type, and allows you to interact with the panels to show how to achieve any layout you are looking for. In addition to showing how each control responds to different form factors, the app itself is responsive and shows various methods for achieving adaptive UI. |
-| [Xamarin topic](/xamarin/) | Xamarin for targeting phone |
 
 ## Deployment
 
@@ -156,7 +155,7 @@ You have options for distributing apps to your organization’s users using MSIX
 
 ## Patterns and practices
 
-Code bases for large scale, enterprise-grade apps can become unwieldy. Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Windows 10 UWP, and Xamarin Forms. Prism provides an implementation of a collection of design patterns that are helpful in writing well-structured and maintainable XAML applications, including MVVM, dependency injection, commands, EventAggregator, and others.
+Code bases for large scale, enterprise-grade apps can become unwieldy. Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, and  Windows 10 UWP. Prism provides an implementation of a collection of design patterns that are helpful in writing well-structured and maintainable XAML applications, including MVVM, dependency injection, commands, EventAggregator, and others.
 
 For more information on Prism, see the [GitHub repo](https://github.com/PrismLibrary/Prism).
 
