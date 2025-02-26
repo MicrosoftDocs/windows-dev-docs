@@ -1,15 +1,16 @@
 ---
-title: Launch the People app
-description: This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
-ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
-ms.date: 02/08/2017
-ms.topic: article
-keywords: windows 10, uwp
+title: Launch the People app in Windows
+description: This topic describes the ms-people URI scheme. Your Windows app can use this URI scheme to launch the People app for specific actions.
+ms.date: 02/11/2025
+ms.topic: concept-article
+keywords: windows 10, uwp, windows 11, winui, uri schemes, people app
 ms.localizationpriority: medium
+# customer-intent: As a Windows developer, I want to learn how to use the ms-people URI scheme to launch the People app for specific actions.
 ---
+
 # Launch the People app
 
-This topic describes the **ms-people:** URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
+This topic describes the **ms-people:** URI scheme. Your WinUI, UWP, and other Windows desktop apps can use this URI scheme to launch the People app for specific actions.
 
 ## ms-people: URI scheme reference
 
@@ -363,3 +364,9 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </tr>
 </tbody>
 </table>
+
+## Related content
+
+[Launch a Windows app with a URI](index.md)
+
+[Launch the default app for a URI](launch-default-app.md)

@@ -20,6 +20,9 @@ PowerRename is a bulk renaming tool that enables you to:
 - Check the expected rename results in a preview window before finalizing a bulk rename.
 - Undo a rename operation after it is completed.
 
+> [!TIP]
+> You can use AI assistance to [create regular expressions to use in PowerRename with Copilot](#ask-copilot-for-help-with-regular-expressions).
+
 ## Demo
 
 In this demo, all instances of the file name "foo" are replaced with "foobar". Since all the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command makes it possible to undo the last change.
@@ -207,7 +210,7 @@ Matching and variable examples. Capturing groups are defined in parentheses `()`
 | `^(.{n})(.*)` or `(.*)(.{n})$`                          | `$1foo$2`    | Insert "foo" *n* characters from the beginning or the end, respectively              |
 | `^.{n}` or `.{n}$`                                      | nothing      | Trim *n* characters from the beginning or the end, respectively                      |
 
-### Ask Microsoft Copilot for help with regular expressions
+### Ask Copilot for help with regular expressions
 
 You can get AI assistance from [Copilot](https://copilot.microsoft.com/) to generate simple or complex regular expressions. You can customize the prompt to generate a string per your requirements.
 
@@ -215,12 +218,6 @@ The following text shows an example prompt for Copilot:
 
 ```copilot-prompt
 Generate a regular expression to match a string that starts with "foo" and ends with "bar" and has at least six letters and two numeric characters in between them.
-```
-
-Copilot will generate a regular expression similar to the following:
-
-```
-^foo(?=[A-Za-z0-9]{8,}bar$)(?=(.*\d){2})[A-Za-z0-9]*bar$
 ```
 
 Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://www.microsoft.com/microsoft-copilot/learn/).

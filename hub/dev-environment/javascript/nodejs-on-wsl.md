@@ -122,7 +122,7 @@ A few additional extensions you may want to consider include:
 
 - [JavaScript Debugger](https://marketplace.visualstudio.com/items?itemName=ms-vscode.js-debug): Once you finish developing on the server side with Node.js, you'll need to develop and test the client side. This extension is a DAP-based JavaScript debugger. It debugs Node.js, Chrome, Edge, WebView2, VS Code extensions, and more.
 - [Keymaps from other editors](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): These extensions can help your environment feel right at home if you're transitioning from another text editor (like Atom, Sublime, Vim, eMacs, Notepad++, etc).
-- [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Enables you to synchronize your VS Code settings across different installations using GitHub. If you work on different machines, this helps keep your environment consistent across them.
+- [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Enables you to synchronize your VS Code settings across different installations using GitHub. If you work on different machines, this helps keep your environment consistent across them. Importantly, this extension is now deprecated. For a comparable sync solution, use Visual Studio Code's built-in **Settings Sync**, which you can find by navigating to **File** > **Preferences** > **Settings Sync is On**, indicated by checkmark.
 
 ## Set up Git (optional)
 

@@ -878,42 +878,14 @@
           href: ../launch-resume/add-a-splash-screen.md
         - name: Display a splash screen for more time
           href: ../launch-resume/create-a-customized-splash-screen.md
-    - name: Launch an app with a URI
-      href: ../launch-resume/launch-app-with-uri.md
-      items: 
-        - name: Launch the default app for a URI
-          href: ../launch-resume/launch-default-app.md
-        - name: Handle URI activation
-          href: ../launch-resume/handle-uri-activation.md
-        - name: Launch an app for results
-          href: ../launch-resume/how-to-launch-an-app-for-results.md
-        - name: Choose and save tones using the ms-tonepicker URI scheme
-          href: ../launch-resume/launch-ringtone-picker.md
-        - name: Launch the Windows Settings app
-          href: ../launch-resume/launch-settings-app.md
-        - name: Launch the Default Apps settings page
-          href: ../launch-resume/launch-default-apps-settings.md
-        - name: Launch the Microsoft Store app
-          href: ../launch-resume/launch-store-app.md
-        - name: Launch the Windows Maps app
-          href: ../launch-resume/launch-maps-app.md
-        - name: Launch the People app
-          href: ../launch-resume/launch-people-apps.md
-        - name: Launch screen snipping
-          href: ../launch-resume/launch-screen-snipping.md
-        - name: Support web-to-app linking with app URI handlers
-          href: ../launch-resume/web-to-app-linking.md
-    - name: Launch an app through file activation
-      href: ../launch-resume/launch-app-from-file.md
-      items: 
-        - name: Launch the default app for a file
-          href: ../launch-resume/launch-the-default-app-for-a-file.md
-        - name: Handle file activation
-          href: ../launch-resume/handle-file-activation.md
     - name: Auto-launching with AutoPlay
       href: ../launch-resume/auto-launching-with-autoplay.md
-    - name: Reserved file and URI scheme names
-      href: ../launch-resume/reserved-uri-scheme-names.md
+    - name: Launch an app for results
+      href: ../launch-resume/how-to-launch-an-app-for-results.md
+    - name: Choose and save tones using the ms-tonepicker URI scheme
+      href: ../launch-resume/launch-ringtone-picker.md
+    - name: Reserved file and URI scheme names >>
+      href: /windows/apps/develop/launch/reserved-uri-scheme-names
     - name: Use app services and extensions
       href: ../launch-resume/app-services.md
       items: 

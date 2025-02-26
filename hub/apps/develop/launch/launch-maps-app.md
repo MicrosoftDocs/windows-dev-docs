@@ -1,51 +1,47 @@
 ---
 title: Launch the Windows Maps app
-description: Learn how to launch the Windows Maps app from your app using the bingmaps, ms-drive-to, ms-walk-to, and ms-settings URI schemes.
-ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
-ms.date: 02/08/2017
-ms.topic: article
-keywords: windows 10, uwp
+description: Learn how to launch the Windows Maps app from your Windows app using the bingmaps, ms-drive-to, ms-walk-to, and ms-settings URI schemes.
+ms.date: 02/11/2025
+ms.topic: concept-article
+keywords: windows 10, uwp, winui, windows 11, winrt, windows maps
 ms.localizationpriority: medium
+# customer-intent: As a Windows developer, I want to learn how to launch the Windows Maps app from my app.
 ---
+
 # Launch the Windows Maps app
-
-
-
 
 Learn how to launch the Windows Maps app from your app. This topic describes the **bingmaps:**, **ms-drive-to:**, **ms-walk-to:**, and **ms-settings:** Uniform Resource Identifier (URI) schemes. Use these URI schemes to launch the Windows Maps app to specific maps, directions, and search results or to download Windows Maps offline maps from the Settings app.
 
-**Tip** To learn more about launching the Windows Maps app from your app, download the [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub.
+> [!TIP]
+> To learn more about launching the Windows Maps app from a Universal Windows Platform (UWP) app, download the [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can use the same Windows Runtime (WinRT) APIs for launching URIs in WinUI and other desktop apps to launch the Windows Maps app.
 
 ## Introducing URIs
 
 URI schemes let you open apps by clicking hyperlinks (or programmatically, in your app). Just as you can start a new email using **mailto:** or open a web browser using **http:**, you can open the Windows maps app using **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:**.
 
--   The **bingmaps:** URI provides maps for locations, search results, directions, and traffic.
--   The **ms-drive-to:** URI provides turn-by-turn driving directions from your current location.
--   The **ms-walk-to:** URI provides turn-by-turn walking directions from your current location.
+- The **bingmaps:** URI provides maps for locations, search results, directions, and traffic.
+- The **ms-drive-to:** URI provides turn-by-turn driving directions from your current location.
+- The **ms-walk-to:** URI provides turn-by-turn walking directions from your current location.
 
-For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
+For example, the following URI opens the Windows Maps app and displays a map centered over New York City:
 
-```xml
-<bingmaps:?cp=40.726966~-74.006076>
-```
+`bingmaps:?cp=40.726966~-74.006076`
 
 ![a map centered over new york city.](images/mapnyc.png)
 
 Here is a description of the URI scheme:
 
-**bingmaps:?query**
+`bingmaps:?query`
 
 In this URI scheme, *query* is a series of parameter name/value pairs:
 
-**&param1=value1&param2=value2 …**
+`&param1=value1&param2=value2 …`
 
 For a full list of the available parameters, see the [bingmaps:](#bingmaps-param-reference), [ms-drive-to:](#ms-drive-to-param-reference), and [ms-walk-to:](#ms-walk-to-param-reference) parameter reference. There are also examples later in this topic.
 
 ## Launch a URI from your app
 
-
-To launch the Windows Maps app from your app, call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method with a **bingmaps:**, **ms-drive-to:**, or **ms-walk-to:** URI. The following example launches the same URI from the previous example. For more info about launching apps via URI, see [Launch the default app for a URI](launch-default-app.md).
+To launch the Windows Maps app from your app, call the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method with a **bingmaps:**, **ms-drive-to:**, or **ms-walk-to:** URI. The following example launches the same URI from the previous example. For more info about launching apps via URI, see [Launch the default app for a URI](launch-default-app.md).
 
 ```cs
 // Center on New York City
@@ -57,7 +53,7 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-In this example, the [**LauncherOptions**](/uwp/api/Windows.System.LauncherOptions) class is used to help ensure the Windows Maps app is launched.
+In this example, the [LauncherOptions](/uwp/api/Windows.System.LauncherOptions) class is used to help ensure the Windows Maps app is launched.
 
 ## Display known locations
 
@@ -65,26 +61,23 @@ There are many options to control which part of the map to show. You can use the
 
 To control the type of view, use the *sty* (style) and *ss* (Streetside) parameters. The *sty* parameter lets you switch between road and aerial views. The *ss* parameter puts the map into a Streetside view. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps-param-reference).
 
-
-| Sample URI                                                                 | Results                                                                                                                                                                                        |
-|----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?                                                                 | Opens the Maps app.                                                                                                                                                                            |
-| bingmaps:?cp=40.726966~-74.006076                                          | Displays a map centered over New York City.                                                                                                                                                    |
-| bingmaps:?cp=40.726966~-74.006076&lvl=10                                   | Displays a map centered over New York City with a zoom level of 10.                                                                                                                            |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Displays a map of New York City, which is the area specified in the **bb** argument.                                                                                                           |
+| Sample URI | Results |
+|------------|---------|
+| bingmaps:?                                                                 | Opens the Maps app. |
+| bingmaps:?cp=40.726966~-74.006076                                          | Displays a map centered over New York City. |
+| bingmaps:?cp=40.726966~-74.006076&lvl=10                                   | Displays a map centered over New York City with a zoom level of 10. |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Displays a map of New York City, which is the area specified in the **bb** argument. |
 | bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | Displays a map of New York City, which is the area specified in the bounding box argument. The center point for Seattle specified in the **cp** argument is ignored because *bb* is specified. |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Displays a map with a point named Caesars Palace (in Las Vegas) and sets the zoom level to 16.                                                                                                 |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Displays a map with a point named Some\_Business (in Las Vegas).                                                                                                                               |
-| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | Displays a map of New York City with traffic on and aerial map style.                                                                                                                          |
-| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Displays a 3D view of the Space Needle.                                                                                                                                                        |
-| bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | Displays a 3D view of the Space Needle with a radius of 200m, a pitch of 75 degrees, and a heading of 165 degrees.                                                                             |
-| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | Displays a Streetside view of the Space Needle.                                                                                                                                                |
-
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Displays a map with a point named Caesars Palace (in Las Vegas) and sets the zoom level to 16. |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Displays a map with a point named Some\_Business (in Las Vegas). |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | Displays a map of New York City with traffic on and aerial map style. |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Displays a 3D view of the Space Needle. |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | Displays a 3D view of the Space Needle with a radius of 200m, a pitch of 75 degrees, and a heading of 165 degrees. |
+| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | Displays a Streetside view of the Space Needle. |
 
 ## Display search results
 
 When searching for places using the *q* parameter, we recommend making the terms as specific as possible and using the *cp*, *bb*, or *where* parameters to specify a search location. If you do not specify a search location and the user's current location isn't available, the search may not return meaningful results. Search results are displayed in the most appropriate map view. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps-param-reference).
-
 
 | Sample URI                                                    | Results                                                                            |
 |---------------------------------------------------------------|------------------------------------------------------------------------------------|
@@ -93,31 +86,26 @@ When searching for places using the *q* parameter, we recommend making the terms
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | Searches for New York near the specified center point.                             |
 | bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | Searches for pizza in the specified bounding box (that is, in New York City).      |
 
- 
 ## Display multiple points
-
 
 Use the *collection* parameter to show a custom set of points on the map. If there is more than one point, a list of points is displayed. There can be up to 25 points in a collection and they are listed in the order provided. The collection takes precedence over search and directions requests. For more info about this parameter and others, see the [bingmaps: parameter reference](#bingmaps-param-reference).
 
-| Sample URI | Results                                                                                                                   |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | Searches for Caesar's Palace in Las Vegas and displays the results on a map in the best map view.                         |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16                                                                                         | Displays a pushpin named Caesars Palace in Las Vegas and zooms to level 16.                                               |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669                   | Displays a pushpin named Caesars Palace and a pushpin named The Bellagio in Las Vegas and zooms to level 16.              |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Displays New York with a pushpin named Fake\_Business\_with\_Underscore.                                                  |
+| Sample URI | Results |
+|------------|---------|
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace | Searches for Caesar's Palace in Las Vegas and displays the results on a map in the best map view. |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Displays a pushpin named Caesars Palace in Las Vegas and zooms to level 16. |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669 | Displays a pushpin named Caesars Palace and a pushpin named The Bellagio in Las Vegas and zooms to level 16. |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore | Displays New York with a pushpin named Fake\_Business\_with\_Underscore. |
 | bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669 | Displays a list named Hotel List and two pushpins for Caesars Palace and The Bellagio in Las Vegas and zooms to level 16. |
 
- 
-
 ## Display directions and traffic
-
 
 You can display directions between two points using the *rtp* parameter; those points can be either addresses or latitude and longitude coordinates. Use the *trfc* parameter to show traffic information. To specify the type of directions: driving, walking, or transit, use the *mode* parameter. If *mode* isn't specified, directions will be provided using the user's preferred mode of transportation. For more info about these parameters and others, see the [bingmaps: parameter reference](#bingmaps-param-reference).
 
 ![an example of directions](images/windowsmapgcdirections.png)
 
-| Sample URI                                                                                                              | Results                                                                                                                                                         |
-|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Sample URI | Results |
+|------------|---------|
 | bingmaps:?rtp=pos.44.9160\_-110.4158~pos.45.0475\_-109.4187                                                             | Displays a map with point-to-point directions. Because *mode* is not specified, directions will be provided using the user's mode of transportation preference. |
 | bingmaps:?cp=43.0332~-87.9167&trfc=1                                                                                    | Displays a map centered over Milwaukee, WI with traffic.                                                                                                        |
 | bingmaps:?rtp=adr.One Microsoft Way, Redmond, WA 98052~pos.39.0731\_-108.7238                                           | Displays a map with directions from the specified address to the specified location.                                                                            |
@@ -129,18 +117,16 @@ You can display directions between two points using the *rtp* parameter; those p
 
 ## Display turn-by-turn directions
 
-
 The **ms-drive-to:** and **ms-walk-to:** URI schemes let you launch directly into a turn-by-turn view of a route. These URI schemes can only provide directions from the user's current location. If you must provide directions between points that do not include the user's current location, use the **bingmaps:** URI scheme as described in the previous section. For more info about these URI schemes, see the [ms-drive-to:](#ms-drive-to-param-reference) and [ms-walk-to:](#ms-walk-to-param-reference) parameter reference.
 
 > **Important**  When the **ms-drive-to:** or **ms-walk-to:** URI schemes are launched, the Maps app will check to see if the device has ever had a GPS location fix. If it has, then the Maps app will proceed to turn-by-turn directions. If it hasn't, the app will display the route overview, as described in [Display directions and traffic](#display-directions-and-traffic).
 
 ![an example of turn-by-turn directions](images/windowsmapsappdirections.png)
 
-| Sample URI                                                                                                | Results                                                                                       |
-|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Sample URI | Results |
+|------------|---------|
 | ms-drive-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake | Displays a map with turn-by-turn driving directions to Green Lake from your current location. |
 | ms-walk-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake  | Displays a map with turn-by-turn walking directions to Green Lake from your current location. |
-
 
 ## Download offline maps
 
@@ -241,10 +227,10 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 </ul>
 <p>In Windows 10, the aerial view and 3D view styles are the same.</p>
 <div class="alert">
-<b>Note</b>  Omitting the <b>sty</b> parameter produces the same results as sty=r.
+<b>Note</b>  Omitting the <b>sty</b> parameter produce the same results as sty=r.
 </div>
 <div>
- 
+
 </div></td>
 </tr>
 <tr class="odd">
@@ -282,7 +268,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <b>Note</b>  Street-level imagery is not available in all regions.
 </div>
 <div>
- 
+
 </div></td>
 </tr>
 <tr class="odd">
@@ -296,7 +282,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <b>Note</b>  Traffic data is not available in all regions.
 </div>
 <div>
- 
+
 </div></td>
 </tr>
 <tr class="even">
@@ -310,7 +296,6 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
 <p>title = whereval</p>
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
-
 
 <p>Examples:</p>
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
@@ -355,7 +340,6 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT] </p>
 <p>title = whereval</p>
 
-
 <p>Example:</p>
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
 <td align="left"><p>Collection of points to be added to the map and list. The collection of points can be named using the name parameter. A point is specified using a latitude, longitude, and optional title.</p>
@@ -367,17 +351,14 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 </tbody>
 </table>
 
-  
 <span id="ms-drive-to-param-reference"></span>
 
 ## ms-drive-to: parameter reference
 
-
 The URI to launch a request for turn-by-turn driving directions does not need to be encoded and has the following format.
 
-> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#display-directions-and-traffic).
-
- 
+> [!NOTE]
+> You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#display-directions-and-traffic).
 
 | Parameter | Definition | Example | Details |
 |------------|-----------|---------|---------|
@@ -385,16 +366,14 @@ The URI to launch a request for turn-by-turn driving directions does not need to
 | **destination.longitude** | Destination longitude | Example: destination.longitude=-122.141964733601 | The longitude of the destination. Valid longitude values are between -180 and +180 inclusive. |
 | **destination.name** | Name of the destination | Example: destination.name=Redmond, WA | The name of the destination. You do not have to encode the **destination.name** value. |
 
- 
 <span id="ms-walk-to-param-reference"></span>
 
 ## ms-walk-to: parameter reference
 
-
 The URI to launch a request for turn-by-turn walking directions does not need to be encoded and has the following format.
 
-> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#display-directions-and-traffic).
- 
+> [!NOTE]
+> You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#display-directions-and-traffic).
 
 | Parameter | Definition | Example | Details |
 |-----------|------------|---------|----------|
@@ -404,8 +383,12 @@ The URI to launch a request for turn-by-turn walking directions does not need to
 
 ## ms-settings: parameter reference
 
-The syntax for maps app specific parameters for the **ms-settings:** URI scheme is defined below. **maps-downloadmaps** is specified along with the **ms-settings:** URI in the form of **ms-settings:maps-downloadmaps?** to indicate the offline maps settings page. 
+The syntax for maps app specific parameters for the **ms-settings:** URI scheme is defined below. **maps-downloadmaps** is specified along with the **ms-settings:** URI in the form of **ms-settings:maps-downloadmaps?** to indicate the offline maps settings page.
 
 | Parameter | Definition | Example | Details |
 |-----------|------------|---------|----------|
 | **latlong** | Point defining offline map region. | Example: latlong=47.6,-122.3 | The geopoint is specified by a comma separated latitude and longitude. Valid latitude values are between -90 and +90 inclusive. Valid longitude values are between -180 and +180 inclusive. |
+
+## Related content
+
+[Launch the default app for a URI](launch-default-app.md)

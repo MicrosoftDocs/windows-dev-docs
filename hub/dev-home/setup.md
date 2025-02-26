@@ -1,11 +1,14 @@
 ---
 title: Dev Home Machine Configuration
 description: Set up your Windows development environment with Dev Home by using the integrated set up tool to get your machine to a development-ready state. Use the step-by-step graphical interface to walk through the setup process or use a WinGet Configuration file with pre-defined setup requirements.
-ms.date: 11/26/2024
+ms.date: 01/28/2025
 ms.topic: overview
 ---
 
 # Dev Home Machine Configuration - Set up your Windows development environment
+
+> [!IMPORTANT]
+> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
 
 The Dev Home machine configuration tool brings all of your dev environment set up tasks into one place, enabling you to efficiently set up a new machine or onboard new projects.
 

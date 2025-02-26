@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: Run is a quick launcher for power users that contains additional features without sacrificing performance.
-ms.date: 11/19/2024
+ms.date: 12/25/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -90,7 +90,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | [Windows services](#service-plugin) | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
 | Shell command | `>` | `> ping localhost` to do a ping query. |
 | [Time and date](#time-and-date-plugin) | `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
-| [Unit converter](#unit-converter-plugin) | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
+| [Unit converter](#unit-converter-plugin) | `%%` | `%% 10 ft to m` to calculate the number of meters in 10 feet. Note that you can use `to` and `in` interchangeably in your commands with this converter. |
 | [Value Generator](#value-generator-plugin) | `#` | `# guid3 ns:URL www.microsoft.com` to generate the GUIDv3 for the URL namespace using the URL namespace. <br />`# sha1 abc` to calculate the SHA1 hash for the string 'abc'. <br />`# base64 abc` to encode the string 'abc' to base64.  |
 | URI-handler | `//` | `//` to open your default browser.<br />`// learn.microsoft.com` to have your default browser go to Microsoft Learn.<br />`mailto:` and `ms-settings:` links are supported. |
 | Visual Studio Code | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
@@ -197,7 +197,8 @@ The Calculator plugin supports the following operations:
 | Power of x | pow( x, y ) | Calculate a number (x) raised to the power of some other number (y). |
 | Factorial | x! | |
 | Sign | sign( -x ) | A number that indicates the sign of value:<br />• `-1` if number is less than zero.<br />• `0` if number is zero.<br />• `1` if number is greater than zero. |
-| Random number | rand() | Returns a fractional number between 0 and 1. |
+| Random fractional number | rand() | Returns a fractional number between 0 and 1. |
+| Random integer number | randi( x ) | Returns an integer number between 0 and `x`. |
 | Pi | pi | Returns the number pi. |
 | Sine | sin( x ) | |
 | Cosine | cos( x ) | |

@@ -95,7 +95,7 @@ These additional tools will help you [set up your development environment on Win
 
 :::row:::
    :::column:::
-      [**Dev Home**](/windows/dev-home/)<br/> Introduced with Windows 11, Dev Home is a dashboard that provides quick access to the tools you need to develop apps for Windows.
+      [**Dev Home**](/windows/dev-home/)<br/> Introduced with Windows 11, Dev Home was an experimental dashboard that provided quick access to the tools used to develop apps for Windows. Dev Home will no longer be supported beginning May 2025.
    :::column-end:::
    :::column:::
       [**Dev Drive**](/windows/dev-drive/)<br/>In order to speed up common development tasks, you can create a specially formatted drive (a Dev Drive) that is used to store your projects.

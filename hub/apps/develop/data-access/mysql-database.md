@@ -14,6 +14,9 @@ ms.localizationpriority: medium
 
 This article contains the steps required to enable working with a MySQL database from a Windows app. It also contains a small code snippet showing how you can interact with the database in code.
 
+> [!TIP]
+> You can use AI assistance to [create a MySQL connection string with GitHub Copilot](#building-a-connection-string-with-github-copilot).
+
 ## Set up your solution
 
 This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to a MySQL database. Follow these steps to install the package and try out the example code to read data from an existing MySQL database.

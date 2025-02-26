@@ -47,7 +47,7 @@ Feature | Description
 ## Developer tools
 Feature | Description
 :------ | :------
-[Dev Home Overview](/windows/dev-home/) | Dev Home is a new control center for Windows providing the ability to monitor projects in your dashboard using customizable widgets, set up your dev environment by downloading apps, packages, or repositories, connect to your developer accounts and tools (such as GitHub), and create a Dev Drive for storage all in one place.
+[Dev Home Overview](/windows/dev-home/) | Dev Home was an experimental control center for Windows, but will no longer be supported beginning May 2025. Dev Home  provided the ability to monitor projects in your dashboard using customizable widgets, set up your dev environment by downloading apps, packages, or repositories, connect to your developer accounts and tools (such as GitHub), and create a Dev Drive for storage all in one place.
 [WSL (Windows Subsystem for Linux)](/windows/wsl/) | Windows Subsystem for Linux (WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine, without the need for a separate virtual machine or dual booting.
 
 

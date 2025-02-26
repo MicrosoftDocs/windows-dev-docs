@@ -77,7 +77,7 @@ We recommend ALWAYS validating the integrity of a WinGet Configuration file befo
 
 ### Where can I find sample WinGet Configuration files?
 
-You can find sample WinGet Configuration files in the Windows Dev Home repo: [https://aka.ms/dsc.yaml](https://aka.ms/dsc.yaml).
+You can find sample WinGet Configuration files in the WinGet DSC repository: [https://aka.ms/dsc.yaml](https://aka.ms/dsc.yaml).
 
 ### Where can I find examples of PowerShell modules containing DSC resources?
 
@@ -88,10 +88,6 @@ The [PowerShell Gallery](https://www.powershellgallery.com/packages) hosts hundr
 ### Can I set up a policy to block the use of WinGet Configuration files in my organization?
 
 Yes. [Group Policy Objects](/microsoft-365/compliance/device-onboarding-gp) **EnableWindowsPackageManagerConfiguration** and **EnableWindowsPackageManagerConfigurationExplanation** can be utilized for disabling WinGet Configuration feature in your organization.
-
-### Where can I learn more about using WinGet Configurations with Dev Home and Dev Drives?
-
-Learn more about using the Machine Configuration tool in Windows 11 Dev Home in the article [Set up your Windows development environment with Dev Home](/windows/dev-home/setup). You may also be interested in learning how to use the more performance optimized Dev Drive storage volumes, see [Set up a Dev Drive on Windows 11](/windows/dev-drive/).
 
 ## Troubleshooting WinGet Configurations
 

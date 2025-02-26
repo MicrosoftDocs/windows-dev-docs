@@ -1,14 +1,14 @@
 ---
 title: Launch the Default Apps settings page
 description: Learn how to launch the Windows Settings app to display the Default Apps settings page from your app using the ms-settings URI scheme.
-ms.assetid: a1819f4b-af98-4366-b2de-a7aea26da3a9
-ms.date: 06/21/2024
-ms.topic: article
+ms.date: 01/11/2025
+ms.topic: concept-article
 keywords: windows, windows 11, uwp, default apps, windows app sdk
 ms.localizationpriority: medium
 dev_langs:
   - csharp
   - cppwinrt
+# customer-intent: As a Windows developer, I want to learn how to launch the Windows Settings app to display the Default Apps settings page from my app.
 ---
 
 # Launch the Default Apps settings page
@@ -37,7 +37,7 @@ In the following example, `LaunchUriAsync` is called to launch the Windows S
 ```csharp
 private async void LaunchSettingsPage_Click(object sender, RoutedEventArgs e)
 {
-    bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:defaultapps?registeredAppMachine=" + Uri.EscapeDataString(("Microsoft Edge")));
+    bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:defaultapps?registeredAppMachine=" + Uri.EscapeDataString("Microsoft Edge")));
 }
 ```
 
@@ -45,7 +45,7 @@ private async void LaunchSettingsPage_Click(object sender, RoutedEventArgs e)
 bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Foundation::Uri(L"ms-settings:defaultapps?registeredAppMachine=" + Uri::EscapeDataString(L"Microsoft Edge")));
 ```
 
-## See also
+## Related content
 
 [Launch the Windows Settings app](launch-settings-app.md)
 

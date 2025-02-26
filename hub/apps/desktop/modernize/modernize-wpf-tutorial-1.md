@@ -11,7 +11,7 @@ ms.custom: RS5, 19H1
 # Part 1: Migrate the Contoso Expenses app to .NET Core 3
 
 This is the first part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see [Tutorial: Modernize a WPF app](modernize-wpf-tutorial.md).
-  
+
 In this part of the tutorial, you will migrate the entire Contoso Expenses app from the .NET Framework 4.7.2 to [.NET Core 3](modernize-wpf-tutorial.md#net-core-3). Before you start this part of the tutorial, make sure you [open and build the ContosoExpenses sample](modernize-wpf-tutorial.md#get-the-contoso-expenses-sample-app) in Visual Studio 2019.
 
 > [!NOTE]
@@ -57,7 +57,7 @@ The **ContosoExpenses.Core.csproj** includes the following elements:
 
 ## Migrate the ContosoExpenses.Data project to .NET Standard
 
-The **ContosoExpenses** solution includes a **ContosoExpenses.Data** class library that contains models and interfaces for services and targets .NET 4.7.2. .NET Core 3.0 apps can use .NET Framework libraries, as long as they don't use APIs which aren't available in .NET Core. However, the best modernization path is to move your libraries to .NET Standard. This will make sure that your library is fully supported by your .NET Core 3.0 app. Additionally, you can reuse the library also with other platforms, such as web (through ASP.NET Core) and mobile (through Xamarin).
+The **ContosoExpenses** solution includes a **ContosoExpenses.Data** class library that contains models and interfaces for services and targets .NET 4.7.2. .NET Core 3.0 apps can use .NET Framework libraries, as long as they don't use APIs which aren't available in .NET Core. However, the best modernization path is to move your libraries to .NET Standard. This will make sure that your library is fully supported by your .NET Core 3.0 app. Additionally, you can reuse the library also with other platforms, such as web (through ASP.NET Core).
 
 To migrate the **ContosoExpenses.Data** project to .NET Standard:
 
@@ -221,7 +221,7 @@ If you now try to compile the **ContosoExpenses.Core** and **ContosoExpenses.Dat
 
 These errors are a result of converting the **ContosoExpenses.Data** project from a .NET Framework library (which is specific for Windows) to a .NET Standard library, which can run on multiple platforms including Linux, Android, iOS, and more. The **ContosoExpenses.Data** project contains a class called **RegistryService**, which interacts with the registry, a Windows-only concept.
 
-To resolve these errors, install the [Windows Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) NuGet package. This package provides support for many Windows-specific APIs to be used in a .NET Standard library. The library will no longer be cross-platform after using this package, but it will still target .NET Standard. 
+To resolve these errors, install the [Windows Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) NuGet package. This package provides support for many Windows-specific APIs to be used in a .NET Standard library. The library will no longer be cross-platform after using this package, but it will still target .NET Standard.
 
 1. Right-click on the **ContosoExpenses.Data** project.
 2. Choose **Manage NuGet Packages**.

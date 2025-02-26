@@ -1,11 +1,14 @@
 ---
 title: Dev Home for Windows Developers
 description: Dev Home is a new control center for Windows providing the ability to track your workflows and coding tasks using customizable widgets, set up your dev environment, connect to your developer accounts and tools (such as GitHub), and install apps and packages all in one place.
-ms.date: 11/18/2024
+ms.date: 01/28/2025
 ms.topic: overview
 ---
 
 # What is Dev Home?
+
+> [!IMPORTANT]
+> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
 
 Dev Home is a new control center for Windows providing the ability to monitor projects in your dashboard using customizable widgets, set up your dev environment by downloading apps, packages, or repositories, connect to your developer accounts and tools (such as GitHub), and create a [Dev Drive](../dev-drive/index.md) for storage all in one place.
 

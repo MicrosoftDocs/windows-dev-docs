@@ -1,25 +1,25 @@
 ---
 title: Enable apps for websites using app URI handlers
 description: Drive user engagement with your app by supporting the Apps for Websites feature.
-keywords: Deep Linking Windows
-ms.date: 08/25/2017
-ms.topic: article
-
-
-ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
+keywords: Deep Linking Windows, uwp, winui, windows 11, windows 10
+ms.date: 02/11/2025
+ms.topic: concept-article
 ms.localizationpriority: medium
+# customer-intent: As a Windows developer, I want to learn how to use the Apps for Websites feature to drive user engagement with my app.
 ---
+
 # Enable apps for websites using app URI handlers
 
 Apps for Websites associates your app with a website so that when someone opens a link to your website, your app is launched instead of opening the browser. If your app is not installed, your website opens in the browser as usual. Users can trust this experience because only verified content owners can register for a link. Users will be able to check all of their registered web-to-app links by going to Settings > Apps > Apps for websites.
 
+> [!IMPORTANT]
+> Starting with the Windows 10 Creators update and in all Windows 11 versions, supported links clicked in Microsoft Edge Legacy will launch the corresponding app. Supported links clicked in supported browsers (for example, Microsoft Edge Chromium, Firefox, Internet Explorer, etc.), will keep you in the browsing experience.
+
 To enable web-to-app linking you will need to:
+
 - Identify the URIs your app will handle in the manifest file
 - A JSON file that defines the association between your app and your website. with the app Package Family Name at the same host root as the app manifest declaration.
 - Handle the activation in the app.
-
-> [!Note]
-> Starting with the Windows 10 Creators update, supported links clicked in Microsoft Edge Legacy will launch the corresponding app. Supported links clicked in other browsers (for example, Microsoft Edge Chromium, Internet Explorer, etc.), will keep you in the browsing experience.
 
 ## Register to handle http and https links in the app manifest
 
@@ -48,7 +48,7 @@ The declaration above registers your app to handle links from the specified host
 
 To ensure that only your app can open content on your website, include your app's package family name in a JSON file located in the web server root, or at the well-known directory on the domain. This signifies that your website gives consent for the listed apps to open content on your site. You can find the package family name in the Packages section in the app manifest designer.
 
->[!Important]
+>[!IMPORTANT]
 > The JSON file should not have a .json file suffix.
 
 Create a JSON file (without the .json file extension) named **windows-app-web-link** and provide your app’s package family name. For example:
@@ -144,9 +144,10 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-**Important** Make sure to replace the final `if (rootFrame.Content == null)` logic with `rootFrame.Navigate(deepLinkPageType, e);` as shown in the example above.
+> [!IMPORTANT]
+> Make sure to replace the final `if (rootFrame.Content == null)` logic with `rootFrame.Navigate(deepLinkPageType, e);` as shown in the example above.
 
-## Test it out: Local validation tool
+## Test in a local validation tool
 
 You can test the configuration of your app and website by running the App host registration verifier tool which is available in:
 
@@ -156,9 +157,9 @@ Test the configuration of your app and website by running this tool with the fol
 
 **AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*
 
--   Hostname: Your website (for example, microsoft.com)
--   Package Family Name (PFN): Your app’s PFN
--   File path: The JSON file for local validation (for example, C:\\SomeFolder\\windows-app-web-link)
+- Hostname: Your website (for example, microsoft.com)
+- Package Family Name (PFN): Your app’s PFN
+- File path: The JSON file for local validation (for example, C:\\SomeFolder\\windows-app-web-link)
 
 If the tool does not return anything, validation will work on that file when uploaded. If there is an error code, it will not work.
 
@@ -180,7 +181,9 @@ Additionally, you can test your app by launching it from another app using the [
 
 If you would like to follow the protocol activation logic, set a breakpoint in the **OnActivated** event handler.
 
-## AppUriHandlers tips:
+## AppUriHandlers tips
+
+These tips will help you get the most out of the AppUriHandlers feature:
 
 - Make sure to only specify links that your app can handle.
 - List all of the hosts that you will support.  Note that www\.example.com and example.com are different hosts.
@@ -190,9 +193,10 @@ If you would like to follow the protocol activation logic, set a breakpoint in t
 - All sideloaded apps with AppUriHandlers will have validated links for the host on install. You do not need to have a JSON file uploaded to test the feature.
 - This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) or a Windows desktop app launched with  [ShellExecuteEx](/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
 
-## See also
+## Related content
 
 [Web-to-App example project](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+
 [windows.protocol registration](/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)
+
 [Handle URI Activation](./handle-uri-activation.md)
-[Association Launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustrates how to use the LaunchUriAsync() API.

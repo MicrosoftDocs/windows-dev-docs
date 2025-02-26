@@ -294,17 +294,6 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-### Video Conference Mute
-
-:::row:::
-    :::column:::
-        [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
-    :::column-end:::
-    :::column span="2":::
-        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus.
-    :::column-end:::
-:::row-end:::
-
 ### Workspaces
 
 :::row:::
@@ -313,6 +302,17 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [Workspaces](workspaces.md) is a desktop manager utility for launching a set of applications to custom positions and configurations with a single click. Open the editor by selecting "Launch editor" from settings or by using the shortcut <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>`</kbd>.
+    :::column-end:::
+:::row-end:::
+
+### ZoomIt
+
+:::row:::
+    :::column:::
+        [![ZoomIt by Sysinternals screenshot](../images/powertoys-zoomit.png)](zoomit.md)
+    :::column-end:::
+    :::column span="2":::
+        [ZoomIt](zoomit.md) is a screen zoom, annotation, and recording tool for technical presentations and demos. It's one of the most popular [Sysinternals](/sysinternals/) utilities, and it's now available in PowerToys.
     :::column-end:::
 :::row-end:::
 
@@ -356,3 +356,18 @@ PowerToys is a rapid-incubation, open source team aimed at providing power users
 
 - [New specs for possible PowerToys](https://github.com/microsoft/PowerToys/wiki/Specs)
 - [Backlog priority list](https://github.com/microsoft/PowerToys/wiki/Roadmap#backlog-priority-list-in-order)
+
+## Deprecated PowerToy utilities
+
+These utilities have been deprecated and removed from PowerToys:
+
+### Video Conference Mute (Deprecated and removed on PowerToys 0.88)
+
+:::row:::
+    :::column:::
+        [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
+    :::column-end:::
+    :::column span="2":::
+        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus.
+    :::column-end:::
+:::row-end:::

@@ -1,11 +1,14 @@
 ---
 title: Environments in Dev Home
 description: Learn about interacting with your virtual or cloud environments from Dev Home.
-ms.date: 07/23/2024
+ms.date: 01/28/2025
 ms.topic: overview
 ---
 
 # Environments in Dev Home
+
+> [!IMPORTANT]
+> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
 
 A virtual environment is a self-contained workspace that allows you to maintain separate dependencies and settings for different projects, effectively isolating them from each other. The type of virtual environments supported and maintained by Microsoft currently include:
 

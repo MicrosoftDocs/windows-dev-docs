@@ -7,10 +7,10 @@ ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute, Shift]
 ---
 
-# Video Conference Mute
+# Video Conference Mute (Deprecated)
 
 > [!NOTE]
-> VCM is moving into legacy mode. Please find more about what this means [in our dedicated issue](https://github.com/microsoft/PowerToys/issues/21473).
+> VCM has been deprecated and removed on PowerToys version 0.88.0. This page is being kept for users that are still using it on older versions of PowerToys.
 
 Quickly mute your microphone (audio) and turn off your camera (video) with a single keystroke while on a conference call, regardless of what application has focus on your computer.
 

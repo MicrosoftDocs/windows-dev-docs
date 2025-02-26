@@ -133,7 +133,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
     2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
 
         ```xml
-        <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+        <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
         ```
 
     3. Save and close the project file.
@@ -217,7 +217,7 @@ Follow these instructions to configure a C# project that uses the [1.0 Experimen
     2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
 
         ```xml
-        <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+        <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
         ```
 
     3. Save and close the project file.
