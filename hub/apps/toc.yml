@@ -42,7 +42,7 @@ items:
               href: how-tos/dall-e-winui3.md
             - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
               href: how-tos/copilot-chat-winui3.md
-        - name: Audio, video, and camera2
+        - name: Audio, video, and camera
           items:
             - name: Overview
               href: develop/audio-video-camera.md
