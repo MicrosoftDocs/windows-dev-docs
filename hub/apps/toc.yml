@@ -413,9 +413,9 @@ items:
                   href: develop/widgets/web-widget-providers.md
                 - name: Customize the widget header area
                   href: develop/widgets/widget-header-customization.md
-                - name: Widget provider package manifest XML format
+                - name: Package manifest XML format
                   href: develop/widgets/widget-provider-manifest.md
-                - name: Widget provider ActivateApplication protocol
+                - name: ActivateApplication protocol
                   href: develop/widgets/widget-provider-activateapplication-protocol.md
 
     - name: Package and deploy
@@ -446,7 +446,7 @@ items:
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: Deployment
           items: 
-            - name: Deployment overview
+            - name: Overview
               href: package-and-deploy/index.md
             - name: Windows App SDK deployment guide
               items: 
@@ -478,7 +478,7 @@ items:
                   href: package-and-deploy/ci-for-winui3.md
             - name: Windows app restore
               href: develop/windows-app-restore.md
-    - name: Distribute
+    - name: Microsoft Store
       items: 
         - name: Get started
           href: publish/index.md
@@ -528,9 +528,9 @@ items:
                     href: publish/publish-your-app/msix/app-package-requirements.md
                   - name: Upload app packages
                     href: publish/publish-your-app/msix/upload-app-packages.md
-              - name: Create store listings
+              - name: Create Store listings
                 items:
-                  - name: Create store listings
+                  - name: Create Store listings
                     href: publish/publish-your-app/msix/create-app-store-listing.md
                   - name: Add and edit Store listing info
                     href: publish/publish-your-app/msix/add-and-edit-store-listing-info.md
@@ -542,7 +542,7 @@ items:
                     href: publish/publish-your-app/msix/import-and-export-store-listings.md
                   - name: Write a great app description
                     href: publish/publish-your-app/msix/write-great-app-description.md
-                  - name: Responsible AI FAQ for AI-Generated keywords
+                  - name: Responsible AI FAQ for AI-generated keywords
                     href: publish/publish-your-app/responsible-ai-faq-ai-generated-keywords.md
               - name: Manage Submission options
                 href: publish/publish-your-app/msix/manage-submission-options.md                  
@@ -584,9 +584,9 @@ items:
                     href: publish/publish-your-app/msi/upload-app-packages.md
                   - name: Perform package validation
                     href: publish/publish-your-app/msi/package-validation-pre-check.md
-              - name: Create store listings
+              - name: Create Store listings
                 items:
-                  - name: Create store listings
+                  - name: Create Store listings
                     href: publish/publish-your-app/msi/create-app-store-listing.md
                   - name: Add and edit Store listing info
                     href: publish/publish-your-app/msi/add-and-edit-store-listing-info.md
@@ -636,9 +636,9 @@ items:
                 href: publish/publish-your-app/pwa/age-ratings.md
               - name: Upload package
                 href: publish/publish-your-app/pwa/upload-app-packages.md
-              - name: Create store listings
+              - name: Create Store listings
                 items:
-                  - name: Create store listings
+                  - name: Create Store listings
                     href: publish/publish-your-app/pwa/create-app-store-listing.md
                   - name: Add and edit Store listing info
                     href: publish/publish-your-app/pwa/add-and-edit-store-listing-info.md
@@ -678,7 +678,7 @@ items:
                             href: publish/publish-your-app/add-on/enter-app-properties.md
                           - name: Provide support info
                             href: publish/publish-your-app/add-on/support-info.md
-                  - name: Create store Listings
+                  - name: Create Store Listings
                     items:
                           - name: Overview
                             href: publish/publish-your-app/add-on/create-app-store-listing.md
