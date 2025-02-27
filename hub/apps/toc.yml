@@ -42,6 +42,59 @@ items:
               href: how-tos/dall-e-winui3.md
             - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
               href: how-tos/copilot-chat-winui3.md
+        - name: App launching
+          items:
+            - name: Overview
+              href: develop/launch/index.md
+            - name: App lifecycle and system services
+              items: 
+                - name: Overview
+                  href: develop/app-lifecycle-and-system-services.md
+                - name: Manage app lifecycle
+                  items: 
+                    - name: App lifecycle
+                      href: windows-app-sdk/applifecycle/applifecycle.md
+                    - name: App instancing
+                      href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+                    - name: Create a single-instanced app
+                      href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
+                    - name: Rich activation
+                      href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+                    - name: Power management
+                      href: windows-app-sdk/applifecycle/applifecycle-power.md
+                    - name: Detect Focus session state
+                      href: windows-app-sdk/applifecycle/focus-session.md
+            - name: File activation
+              items:
+              - name: Handle file activation
+                href: develop/launch/handle-file-activation.md
+              - name: Launch the default app for a file
+                href: develop/launch/launch-the-default-app-for-a-file.md
+            - name: URI activation
+              items:
+              - name: Handle URI activation
+                href: develop/launch/handle-uri-activation.md
+              - name: Launch the default app for a URI
+                href: develop/launch/launch-default-app.md
+              - name: Launch the Windows Settings app
+                href: develop/launch/launch-settings-app.md
+              - name: Launch the Default Apps settings page
+                href: develop/launch/launch-default-apps-settings.md
+              - name: Launch the Microsoft Store app
+                href: develop/launch/launch-store-app.md
+              - name: Launch the Windows Maps app
+                href: develop/launch/launch-maps-app.md
+              - name: Launch Snipping Tool
+                href: develop/launch/launch-snipping-tool.md
+                items:
+                - name: Launch screen snipping (legacy)
+                  href: develop/launch/launch-screen-snipping.md
+              - name: Launch the People app
+                href: develop/launch/launch-people-app.md
+              - name: Support web-to-app linking with app URI handlers
+                href: develop/launch/web-to-app-linking.md
+            - name: Reserved file and URI scheme names
+              href: develop/launch/reserved-uri-scheme-names.md
         - name: Audio, video, and camera
           items:
             - name: Overview
@@ -203,59 +256,6 @@ items:
                       href: develop/win2d/avoiding-memory-leaks.md
                     - name: Custom effects
                       href: develop/win2d/custom-effects.md
-        - name: App launching
-          items:
-            - name: Overview
-              href: develop/launch/index.md
-            - name: App lifecycle and system services
-              items: 
-                - name: Overview
-                  href: develop/app-lifecycle-and-system-services.md
-                - name: Manage app lifecycle
-                  items: 
-                    - name: App lifecycle
-                      href: windows-app-sdk/applifecycle/applifecycle.md
-                    - name: App instancing
-                      href: windows-app-sdk/applifecycle/applifecycle-instancing.md
-                    - name: Create a single-instanced app
-                      href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
-                    - name: Rich activation
-                      href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
-                    - name: Power management
-                      href: windows-app-sdk/applifecycle/applifecycle-power.md
-                    - name: Detect Focus session state
-                      href: windows-app-sdk/applifecycle/focus-session.md
-            - name: File activation
-              items:
-              - name: Handle file activation
-                href: develop/launch/handle-file-activation.md
-              - name: Launch the default app for a file
-                href: develop/launch/launch-the-default-app-for-a-file.md
-            - name: URI activation
-              items:
-              - name: Handle URI activation
-                href: develop/launch/handle-uri-activation.md
-              - name: Launch the default app for a URI
-                href: develop/launch/launch-default-app.md
-              - name: Launch the Windows Settings app
-                href: develop/launch/launch-settings-app.md
-              - name: Launch the Default Apps settings page
-                href: develop/launch/launch-default-apps-settings.md
-              - name: Launch the Microsoft Store app
-                href: develop/launch/launch-store-app.md
-              - name: Launch the Windows Maps app
-                href: develop/launch/launch-maps-app.md
-              - name: Launch Snipping Tool
-                href: develop/launch/launch-snipping-tool.md
-                items:
-                - name: Launch screen snipping (legacy)
-                  href: develop/launch/launch-screen-snipping.md
-              - name: Launch the People app
-                href: develop/launch/launch-people-app.md
-              - name: Support web-to-app linking with app URI handlers
-                href: develop/launch/web-to-app-linking.md
-            - name: Reserved file and URI scheme names
-              href: develop/launch/reserved-uri-scheme-names.md
         - name: Notifications
           items: 
             - name: Push notifications
