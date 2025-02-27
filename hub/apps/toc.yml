@@ -300,10 +300,8 @@ items:
                   href: /windows/uwp/app-to-app/share-data
                 - name: Integrate unpackaged apps
                   href: develop/windows-integration/integrate-sharesheet-unpackaged.md
-            - name: Cross Device People API
-              href: develop/windows-integration/cross-device-people-api.md
-            - name: DispatcherQueue
-              href: develop/dispatcherqueue.md
+                - name: Cross Device People API
+                  href: develop/windows-integration/cross-device-people-api.md
             - name: Widgets
               items: 
                 - name: Feed providers
@@ -332,6 +330,8 @@ items:
                     href: develop/widgets/widget-provider-manifest.md
                   - name: ActivateApplication protocol
                     href: develop/widgets/widget-provider-activateapplication-protocol.md
+                                - name: DispatcherQueue
+              href: develop/dispatcherqueue.md
         - name: Performance
           items: 
             - name: Overview
