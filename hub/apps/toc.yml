@@ -42,28 +42,30 @@ items:
               href: how-tos/dall-e-winui3.md
             - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
               href: how-tos/copilot-chat-winui3.md
-        - name: App launching
-          items:
+        - name: App lifecycle and system services
+          items: 
+          - name: App lifecycle
+            items: 
+            - name: Overview
+              href: develop/app-lifecycle-and-system-services.md
+              name: Manage app lifecycle
+              items: 
+              - name: App lifecycle
+                href: windows-app-sdk/applifecycle/applifecycle.md
+              - name: App instancing
+                href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+              - name: Create a single-instanced app
+                href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
+              - name: Rich activation
+                href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+              - name: Power management
+                href: windows-app-sdk/applifecycle/applifecycle-power.md
+              - name: Detect Focus session state
+                href: windows-app-sdk/applifecycle/focus-session.md
+          - name: App launching
+            items:
             - name: Overview
               href: develop/launch/index.md
-            - name: App lifecycle and system services
-              items: 
-                - name: Overview
-                  href: develop/app-lifecycle-and-system-services.md
-                - name: Manage app lifecycle
-                  items: 
-                    - name: App lifecycle
-                      href: windows-app-sdk/applifecycle/applifecycle.md
-                    - name: App instancing
-                      href: windows-app-sdk/applifecycle/applifecycle-instancing.md
-                    - name: Create a single-instanced app
-                      href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
-                    - name: Rich activation
-                      href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
-                    - name: Power management
-                      href: windows-app-sdk/applifecycle/applifecycle-power.md
-                    - name: Detect Focus session state
-                      href: windows-app-sdk/applifecycle/focus-session.md
             - name: File activation
               items:
               - name: Handle file activation
@@ -95,6 +97,10 @@ items:
                 href: develop/launch/web-to-app-linking.md
             - name: Reserved file and URI scheme names
               href: develop/launch/reserved-uri-scheme-names.md
+          - name: Background tasks
+            items:
+            - name: Working with background tasks in Windows apps
+              href: develop/launch/create-and-register-a-background-task.md
         - name: Audio, video, and camera
           items:
             - name: Overview
