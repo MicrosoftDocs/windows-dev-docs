@@ -330,7 +330,7 @@ items:
                     href: develop/widgets/widget-provider-manifest.md
                   - name: ActivateApplication protocol
                     href: develop/widgets/widget-provider-activateapplication-protocol.md
-                                - name: DispatcherQueue
+            - name: DispatcherQueue
               href: develop/dispatcherqueue.md
         - name: Performance
           items: 
