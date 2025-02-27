@@ -484,7 +484,7 @@ items:
               href: develop/windows-app-restore.md
     - name: Distribute
       items: 
-        - name: Get started the Microsoft Store
+        - name: Get started with the Microsoft Store
           href: publish/index.md
         - name: Open a developer account
           items: 
