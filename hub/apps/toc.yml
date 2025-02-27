@@ -225,6 +225,13 @@ items:
                       href: windows-app-sdk/applifecycle/applifecycle-power.md
                     - name: Detect Focus session state
                       href: windows-app-sdk/applifecycle/focus-session.md
+            - name: File activation
+              items:
+              - name: Handle file activation
+                href: develop/launch/handle-file-activation.md
+              - name: Launch the default app for a file
+                href: develop/launch/launch-the-default-app-for-a-file.md
+            - name: URI activation
               items:
               - name: Handle URI activation
                 href: develop/launch/handle-uri-activation.md
@@ -247,13 +254,6 @@ items:
                 href: develop/launch/launch-people-app.md
               - name: Support web-to-app linking with app URI handlers
                 href: develop/launch/web-to-app-linking.md
-            - name: File activation
-            - name: URI activation
-              items:
-              - name: Handle file activation
-                href: develop/launch/handle-file-activation.md
-              - name: Launch the default app for a file
-                href: develop/launch/launch-the-default-app-for-a-file.md
             - name: Reserved file and URI scheme names
               href: develop/launch/reserved-uri-scheme-names.md
         - name: Notifications
