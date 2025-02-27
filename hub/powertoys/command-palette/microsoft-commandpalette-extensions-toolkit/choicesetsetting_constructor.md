@@ -1,28 +1,12 @@
 ---
 title: ChoiceSetSetting Constructors
 description: 
-ms.date: 2/19/2025
+ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
 # ChoiceSetSetting Constructors
-
-## ChoiceSetSetting() Constructor
-
-### Definition
-
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
-
-Initializes a new instance of the [ChoiceSetSetting](choicesetsetting.md) class with [Choices](choicesetsetting.md#properties) set to an empty list.
-
-```C#
-private ChoiceSetSetting()
-        : base()
-    {
-        Choices = [];
-    }
-```
 
 ## ChoiceSetSetting(String, List<Choice>) Constructor
 

@@ -1,7 +1,7 @@
 ---
 title: CommandContextItem Class
 description: 
-ms.date: 2/19/2025
+ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -20,7 +20,8 @@ Implements [ICommandContextItem](../microsoft-commandpalette-extensions/icommand
 
 | Constructor | Description |
 | :--- | :--- |
-| [CommandContextItem(ICommand)](commandcontextitem_constructor.md) | |
+| [CommandContextItem(ICommand)](commandcontextitem_constructor.md#commandcontextitemicommand-constructor) | |
+| [CommandContextItem(String, String, String, Action, ICommandResult)](commandcontextitem_constructor.md#commandcontextitemstring-string-string-action-icommandresult-constructor) | |
 
 ## Properties
 

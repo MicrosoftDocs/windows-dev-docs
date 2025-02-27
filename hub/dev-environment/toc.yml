@@ -353,6 +353,16 @@ items:
               items:
                 - name: Microsoft.CommandPalette.Extensions.Toolkit
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md
+                - name: AnonymousCommand
+                  items:
+                    - name: AnonymousCommand
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/anonymouscommand.md
+                    - name: Constructors
+                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/anonymouscommand_constructor.md
+                    - name: Methods
+                      items:
+                        - name: Invoke
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/anonymouscommand_invoke.md
                 - name: BaseObservable
                   items:
                     - name: BaseObservable
@@ -361,14 +371,16 @@ items:
                       items:
                         - name: OnPropertyChanged
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/baseobservable_onpropertychanged.md
-                - name: Choice
-                  href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choice.md
                 - name: ChoiceSetSetting
                   items:
                     - name: ChoiceSetSetting
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting.md
                     - name: Constructors
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_constructor.md
+                    - name: Nested classes
+                      items:
+                        - name: Choice
+                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choice.md
                     - name: Methods
                       items:
                         - name: LoadFromJson
@@ -535,20 +547,6 @@ items:
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem_updatequery.md
                 - name: Filter
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filter.md
-                - name: Form
-                  items:
-                    - name: Form
-                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form.md
-                    - name: Methods
-                      items:
-                        - name: DataJson
-                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form_datajson.md
-                        - name: StateJson
-                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form_statejson.md
-                        - name: SubmitForm
-                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form_submitform.md
-                        - name: TemplateJson
-                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/form_templatejson.md
                 - name: FormContent
                   items:
                     - name: FormContent
@@ -559,14 +557,6 @@ items:
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_string.md
                         - name: SubmitForm(String, String)
                           href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_stringstring.md
-                - name: FormPage
-                  items:
-                    - name: FormPage
-                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formpage.md
-                    - name: Methods
-                      items:
-                        - name: Forms
-                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formpage_forms.md
                 - name: GoToPageArgs
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/gotopageargs.md
                 - name: IconData
@@ -687,14 +677,6 @@ items:
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/logmessage_constructor.md
                 - name: MarkdownContent
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/markdowncontent.md
-                - name: MarkdownPage
-                  items:
-                    - name: Markdown Page
-                      href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/markdownpage.md
-                    - name: Methods
-                      items:
-                        - name: Bodies
-                          href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/markdownpage_bodies.md
                 - name: MatchOption
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/matchoption.md
                 - name: MatchResult

@@ -1,7 +1,7 @@
 ---
 title: ChoiceSetSetting Class
 description: 
-ms.date: 2/19/2025
+ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -18,7 +18,6 @@ Inherits [Setting<String>](setting.md)
 
 | Constructor | Description |
 | :--- | :--- |
-| [ChoiceSetSetting()](choicesetsetting_constructor.md#choicesetsetting-constructor) | Initializes `Choices` to an empty list. |
 | [ChoiceSetSetting(String, List<Choice>)](choicesetsetting_constructor.md#choicesetsettingstring-list-constructor) | |
 | [ChoiceSetSetting(String, String, String, List<Choice>)](choicesetsetting_constructor.md#choicesetsettingstring-string-string-list-constructor) | |
 

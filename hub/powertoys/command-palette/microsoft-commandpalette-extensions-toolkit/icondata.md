@@ -1,7 +1,7 @@
 ---
 title: IconData Class
 description: 
-ms.date: 2/11/2025
+ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -18,7 +18,6 @@ Implements [IIconData](../microsoft-commandpalette-extensions/iicondata.md)
 
 | Constructor | Description |
 | :--- | :--- |
-| [IconData()](icondata_constructor.md#icondata-constructor) | Initializes the `Icon` property with an empty string. |
 | [IconData(IRandomAccessStreamReference)](icondata_constructor.md#icondatairandomaccessstreamreference-constructor) | Initializes the `Data` property with the provided `IRandomAccessStreamReference`. |
 | [IconData(String)](icondata_constructor.md#icondatastring-constructor) | Initializes the `Icon` property with the provided `String`. |
 

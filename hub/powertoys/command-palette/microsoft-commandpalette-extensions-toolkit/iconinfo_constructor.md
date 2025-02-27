@@ -1,27 +1,12 @@
 ---
 title: IconInfo Constructors
 description: 
-ms.date: 2/11/2025
+ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
 # IconInfo Constructors
-
-## IconInfo() Constructor
-
-### Definition
-
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
-
-Initializes a new instance of the [IconInfo](iconinfo.md) class with an empty icon.
-
-```C#
-internal IconInfo()
-        : this(string.Empty)
-    {
-    }
-```
 
 ## IconInfo(IconData, IconData) Constructor
 

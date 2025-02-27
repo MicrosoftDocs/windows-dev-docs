@@ -1,27 +1,12 @@
 ---
 title: IconData Constructors
 description: 
-ms.date: 2/11/2025
+ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
 # IconData Constructors
-
-## IconData() Constructor
-
-### Definition
-
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
-
-Initializes a new instance of the [IconData](icondata.md) class with the [Icon](icondata.md#properties) property set to an empty string.
-
-```C#
-internal IconData()
-        : this(string.Empty)
-    {
-    }
-```
 
 ## IconData(IRandomAccessStreamReference) Constructor
 
