@@ -12,7 +12,7 @@ items:
       items: 
         - name: Overview of framework options
           href: get-started/index.md
-        - name: Start developing Windows apps
+        - name: Setup and tooling
           href: get-started/start-here.md
         - name: Build your first app
           href: how-tos/hello-world-winui3.md
@@ -32,10 +32,21 @@ items:
           href: develop/index.md
         - name: Accessibility
           href: develop/accessibility.md
+        - name: AI and machine learning
+          items: 
+            - name: Windows AI >>
+              href: /windows/ai/
+            - name: Add OpenAI chat completions to your WinUI 3 desktop app
+              href: how-tos/chatgpt-openai-winui3.md
+            - name: Add DALL-E image generation to your WinUI 3 desktop app
+              href: how-tos/dall-e-winui3.md
+            - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
+              href: how-tos/copilot-chat-winui3.md
         - name: Audio, video, and camera
           href: develop/audio-video-camera.md
+        - name: Camera
           items:
-            - name: Camera
+            - name: Overview
               href: develop\camera\camera.md
               items:
               - name: Show the camera preview in a WinUI 3 app
@@ -74,6 +85,8 @@ items:
           href: develop/communication.md
         - name: Data and files
           items: 
+            - name: Overview
+              href: develop/data-and-files.md
             - name: App resources
               items: 
                 - name: Manage resources with MRT Core
@@ -120,8 +133,6 @@ items:
                   href: develop/files/winrt-files.md
                 - name: Access files and folders with .NET
                   href: develop/files/dotnet-files.md
-            - name: Data and files overview
-              href: develop/data-and-files.md
             - name: Windows Settings access
               items: 
                 - name: Reference for Windows 11 settings
@@ -131,8 +142,9 @@ items:
                 - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
                   href: develop/settings/readclouddatasettings-exe.md
         - name: Devices and sensors
-          href: develop/devices-and-sensors.md
           items:
+            - name: Overview
+              href: develop/devices-and-sensors.md
             - name: Printing and scanning
               href: develop/devices-sensors/printing-and-scanning.md
               items: 
@@ -264,49 +276,49 @@ items:
                 - name: Quickstart
                   href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
         - name: Security and identity
-          href: develop/security/index.md
           items:
+            - name: Overview
+              href: develop/security/index.md
             - name: Credential locker
               href: develop/security/credential-locker.md
             - name: Fingerprint biometrics
               href: develop/security/fingerprint-biometrics.md
+            - name: Passkeys
+              items:
+              - name: Overview
+                href: develop/security/intro.md
+              - name: Implementation
+                href: develop/security/implement.md
+              - name: Design guidelines
+                href: develop/security/design.md
+              - name: Use cases
+                href: develop/security/use-cases.md
+              - name: Tools and libraries
+                href: develop/security/tools-libraries.md
+              - name: Reference
+                href: develop/security/reference.md
+              - name: Third-party passkey manager support
+                href: develop/security/third-party.md
             - name: Share certificates between apps
               href: develop/security/share-certificates.md
             - name: Smart cards
               href: develop/security/smart-cards.md
             - name: Windows Hello
-              href: develop/security/windows-hello.md
               items:
+              - name: Overview
+                href: develop/security/windows-hello-login.md
               - name: Create a Windows Hello login app
                 href: develop/security/windows-hello-login.md
               - name: Create a Windows Hello login service
                 href: develop/security/windows-hello-auth-service.md
-            - name: Intro to passkeys
-              href: develop/security/intro.md
-            - name: Implement passkeys
-              href: develop/security/implement.md
-            - name: Design guidelines for passkeys
-              href: develop/security/design.md
-            - name: Use cases for passkeys
-              href: develop/security/use-cases.md
-            - name: Tools and libraries for passkeys
-              href: develop/security/tools-libraries.md
-            - name: Reference for passkeys
-              href: develop/security/reference.md
-            - name: Third-party passkey manager support
-              href: develop/security/third-party.md
         - name: Speech
           href: develop/speech.md
         - name: User interface
           items: 
             - name: Overview
               href: develop/user-interface.md
-            - name: Title bar
-              href: develop/title-bar.md
-            - name: Apply Mica or Acrylic
+            - name: Materials (Acrylic / Mica)
               href: windows-app-sdk/system-backdrop-controller.md
-            - name: Manage app windows
-              href: windows-app-sdk/windowing/windowing-overview.md
             - name: Layout
               items:
               - name: Custom panels
@@ -319,11 +331,17 @@ items:
                 href: develop/platform/xaml/transforms.md
               - name: 3-D perspective effects
                 href: develop/platform/xaml/3-d-perspective-effects.md
-            - name: Retrieve a window handle (HWND)
-              href: develop/ui-input/retrieve-hwnd.md
-            - name: Display WinRT UI objects that depend on CoreWindow
+            - name: Windowing
+              items:
+              - name: Overview
+                href: windows-app-sdk/windowing/windowing-overview.md
+              - name: Retrieve a window handle (HWND)
+                href: develop/ui-input/retrieve-hwnd.md
+              - name: Title bar
+                href: develop/title-bar.md
+            - name: CoreWindow interop
               href: develop/ui-input/display-ui-objects.md
-            - name: Choose the right visual tree viewer for your Windows app
+            - name: Choose the right visual tree viewer
               href: develop/ui-input/visual-tree.md
         - name: Performance
           items: 
@@ -341,9 +359,10 @@ items:
               href: performance/responsive.md
             - name: WinUI performance optimization
               href: performance/winui-perf.md
-        - name: Integrate with Windows
-          href: develop/windows-integration/index.md
-          items: 
+        - name: OS integration
+          items:
+            - name: Overview
+              href: develop/windows-integration/index.md
             - name: Feed providers
               items: 
                 - name: Overview
@@ -354,13 +373,35 @@ items:
                   href: develop/feeds/implement-feed-provider-win32.md
                 - name: Feed provider package manifest XML format
                   href: develop/feeds/feed-provider-manifest.md
-            - name: Microsoft Copilot hardware key providers
+            - name: Copilot hardware key
               href: develop/windows-integration/microsoft-copliot-key-provider.md
-            - name: Search providers
+            - name: Smart App Control
               items: 
                 - name: Overview
-                  href: develop/search/search-providers.md
-            - name: Widget providers
+                  href: develop/smart-app-control/overview.md
+                - name: Sign your app for Smart App Control compliance
+                  href: develop/smart-app-control/code-signing-for-smart-app-control.md
+                - name: Test your app's signature with Smart App Control
+                  href: develop/smart-app-control/test-your-app-with-smart-app-control.md
+            - name: Windows Search
+              href: develop/search/search-providers.md
+            - name: Windows Share
+              items:
+                - name: Overview
+                  href: develop/windows-integration/integrate-sharesheet-overview.md
+                - name: Integrate packaged apps
+                  href: develop/windows-integration/integrate-sharesheet-packaged.md
+                - name: Integrate PWAs 
+                  href: develop/windows-integration/integrate-sharesheet-pwa.md
+                - name: Integrate UWP apps >>
+                  href: /windows/uwp/app-to-app/share-data
+                - name: Integrate unpackaged apps
+                  href: develop/windows-integration/integrate-sharesheet-unpackaged.md
+            - name: Cross Device People API
+              href: develop/windows-integration/cross-device-people-api.md
+            - name: DispatcherQueue
+              href: develop/dispatcherqueue.md
+            - name: Widgets
               items: 
                 - name: Overview
                   href: develop/widgets/widget-providers.md
@@ -376,44 +417,7 @@ items:
                   href: develop/widgets/widget-provider-manifest.md
                 - name: Widget provider ActivateApplication protocol
                   href: develop/widgets/widget-provider-activateapplication-protocol.md
-            - name: Smart App Control
-              items: 
-                - name: Smart App Control
-                  href: develop/smart-app-control/overview.md
-                - name: Sign your app for Smart App Control compliance
-                  href: develop/smart-app-control/code-signing-for-smart-app-control.md
-                - name: Test your app's signature with Smart App Control
-                  href: develop/smart-app-control/test-your-app-with-smart-app-control.md
-            - name: Cross Device Share API
-              items:
-                - name: Windows Share overview
-                  href: develop/windows-integration/integrate-sharesheet-overview.md
-                - name: Packaged apps
-                  items:
-                    - name: Integrate packaged apps with Windows Share
-                      href: develop/windows-integration/integrate-sharesheet-packaged.md
-                    - name: Integrate PWAs with Windows Share
-                      href: develop/windows-integration/integrate-sharesheet-pwa.md
-                    - name: Share data in UWP apps >>
-                      href: /windows/uwp/app-to-app/share-data
-                - name: Unpackaged apps
-                  items:
-                    - name: Integrate unpackaged apps with Windows Share Sheet
-                      href: develop/windows-integration/integrate-sharesheet-unpackaged.md
-            - name: Cross Device People API
-              href: develop/windows-integration/cross-device-people-api.md
-        - name: Windows AI and machine learning
-          items: 
-            - name: Windows AI >>
-              href: /windows/ai/
-            - name: Add OpenAI chat completions to your WinUI 3 desktop app
-              href: how-tos/chatgpt-openai-winui3.md
-            - name: Add DALL-E image generation to your WinUI 3 desktop app
-              href: how-tos/dall-e-winui3.md
-            - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
-              href: how-tos/copilot-chat-winui3.md
-        - name: DispatcherQueue
-          href: develop/dispatcherqueue.md
+
     - name: Package and deploy
       items: 
         - name: App packaging
