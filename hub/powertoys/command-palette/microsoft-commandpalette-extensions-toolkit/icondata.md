@@ -18,9 +18,9 @@ Implements [IIconData](../microsoft-commandpalette-extensions/iicondata.md)
 
 | Constructor | Description |
 | :--- | :--- |
-| [IconData()]() | Initializes the `Icon` property with an empty string. |
-| [IconData(IRandomAccessStreamReference)]() | Initializes the `Data` property with the provided `IRandomAccessStreamReference`. |
-| [IconData(String)]() | Initializes the `Icon` property with the provided `String`. |
+| [IconData()](icondata_constructor.md#icondata-constructor) | Initializes the `Icon` property with an empty string. |
+| [IconData(IRandomAccessStreamReference)](icondata_constructor.md#icondatairandomaccessstreamreference-constructor) | Initializes the `Data` property with the provided `IRandomAccessStreamReference`. |
+| [IconData(String)](icondata_constructor.md#icondatastring-constructor) | Initializes the `Icon` property with the provided `String`. |
 
 ## Properties
 

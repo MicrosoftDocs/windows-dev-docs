@@ -18,9 +18,9 @@ Implements [IDetailsLink](../microsoft-commandpalette-extensions/idetailslink.md
 
 | Constructor | Description |
 | :--- | :--- |
-| [DetailsLink()](detailslink_constructor.md) | |
-| [DetailsLink(String)](detailslink_constructor.md) | |
-| [DetailsLink(String, String)](detailslink_constructor.md) | |
+| [DetailsLink()](detailslink_constructor.md#detailslink-constructor) | |
+| [DetailsLink(String)](detailslink_constructor.md#detailslinkstring-constructor) | |
+| [DetailsLink(String, String)](detailslink_constructor.md#detailslinkstring-string-constructor) | |
 
 ## Properties
 

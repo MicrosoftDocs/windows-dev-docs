@@ -20,8 +20,8 @@ Implements [ICommandItem](../microsoft-commandpalette-extensions/icommanditem.md
 
 | Constructor | Description |
 | :--- | :--- |
-| [CommandItem(ICommand)](commanditem_constructor.md) | |
-| [CommandItem(ICommandItem)](commanditem_constructor.md) | |
+| [CommandItem(ICommand)](commanditem_constructor.md#commanditemicommand-constructor) | |
+| [CommandItem(ICommandItem)](commanditem_constructor.md#commanditemicommanditem-constructor) | |
 
 ## Properties
 
