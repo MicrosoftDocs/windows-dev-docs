@@ -32,7 +32,7 @@ items:
           href: develop/index.md
         - name: Accessibility
           href: develop/accessibility.md
-        - name: AI and machine learning
+        - name: AI and machine learning ↗
           items: 
             - name: Windows AI >>
               href: /windows/ai/
