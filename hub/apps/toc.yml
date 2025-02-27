@@ -50,39 +50,38 @@ items:
           items:
             - name: Overview
               href: develop\camera\camera.md
-              items:
-              - name: Show the camera preview in a WinUI 3 app
-                href: develop\camera\camera-quickstart-winui3.md
-              - name: Basic photo, video, and audio capture with MediaCapture
-                href: develop\camera\basic-photo-capture.md
-              - name: Discover and select camera capabilities with camera profiles
-                href: develop\camera\camera-profiles.md
-              - name: Set format, resolution, and frame rate for MediaCapture
-                href: develop\camera\set-media-encoding-properties.md
-              - name: HDR and low-light photo capture
-                href: develop\camera\hdr-low-light-photo-capture.md
-              - name: Manual camera controls for photo and video capture
-                href: develop\camera\capture-device-controls-for-photo-and-video-capture.md
-              - name: Manual camera controls for video capture
-                href: develop\camera\capture-device-controls-for-video-capture.md
-              - name: Video stabilization effect for video capture
-                href: develop\camera\effects-for-video-capture.md
-              - name: Scene analysis for MediaCapture
-                href: develop\camera\scene-analysis-for-media-capture.md
-              - name: Capture a photo sequence with VariablePhotoSequence
-                href: develop\camera\variable-photo-sequence.md
-              - name: Process media frames with MediaFrameReader
-                href: develop\camera\process-media-frames-with-mediaframereader.md
-              - name: Process audio frames with MediaFrameReader
-                href: develop\camera\process-audio-frames-with-mediaframereader.md
-              - name: Detect and respond to audio level changes by the system
-                href: develop\camera\detect-audio-level-changes.md
-              - name: Launch the camera settings page
-                href: develop\camera\launch-camera-settings.md
-              - name: Handle the Windows camera privacy setting
-                href: develop\camera\camera-privacy-setting.md
-              - name: Connect to remote cameras
-                href: develop\camera\connect-to-remote-cameras.md
+            - name: Show the camera preview in a WinUI 3 app
+              href: develop\camera\camera-quickstart-winui3.md
+            - name: Basic photo, video, and audio capture with MediaCapture
+              href: develop\camera\basic-photo-capture.md
+            - name: Discover and select camera capabilities with camera profiles
+              href: develop\camera\camera-profiles.md
+            - name: Set format, resolution, and frame rate for MediaCapture
+              href: develop\camera\set-media-encoding-properties.md
+            - name: HDR and low-light photo capture
+              href: develop\camera\hdr-low-light-photo-capture.md
+            - name: Manual camera controls for photo and video capture
+              href: develop\camera\capture-device-controls-for-photo-and-video-capture.md
+            - name: Manual camera controls for video capture
+              href: develop\camera\capture-device-controls-for-video-capture.md
+            - name: Video stabilization effect for video capture
+              href: develop\camera\effects-for-video-capture.md
+            - name: Scene analysis for MediaCapture
+              href: develop\camera\scene-analysis-for-media-capture.md
+            - name: Capture a photo sequence with VariablePhotoSequence
+              href: develop\camera\variable-photo-sequence.md
+            - name: Process media frames with MediaFrameReader
+              href: develop\camera\process-media-frames-with-mediaframereader.md
+            - name: Process audio frames with MediaFrameReader
+              href: develop\camera\process-audio-frames-with-mediaframereader.md
+            - name: Detect and respond to audio level changes by the system
+              href: develop\camera\detect-audio-level-changes.md
+            - name: Launch the camera settings page
+              href: develop\camera\launch-camera-settings.md
+            - name: Handle the Windows camera privacy setting
+              href: develop\camera\camera-privacy-setting.md
+            - name: Connect to remote cameras
+              href: develop\camera\connect-to-remote-cameras.md
         - name: Communication
           href: develop/communication.md
         - name: Data and files
