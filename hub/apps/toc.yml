@@ -44,6 +44,8 @@ items:
               href: how-tos/copilot-chat-winui3.md
         - name: Audio, video, and camera
           href: develop/audio-video-camera.md
+        - name: Background tasks
+          href: develop/launch/create-and-register-a-background-task.md
         - name: Camera
           items:
             - name: Overview
@@ -202,11 +204,28 @@ items:
                       href: develop/win2d/avoiding-memory-leaks.md
                     - name: Custom effects
                       href: develop/win2d/custom-effects.md
-        - name: Launching apps and background tasks
+        - name: Launching apps
           items:
             - name: Overview
               href: develop/launch/index.md
-            - name: URI activation
+            - name: App lifecycle and system services
+              items: 
+                - name: Overview
+                  href: develop/app-lifecycle-and-system-services.md
+                - name: Manage app lifecycle
+                  items: 
+                    - name: App lifecycle
+                      href: windows-app-sdk/applifecycle/applifecycle.md
+                    - name: App instancing
+                      href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+                    - name: Create a single-instanced app
+                      href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
+                    - name: Rich activation
+                      href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+                    - name: Power management
+                      href: windows-app-sdk/applifecycle/applifecycle-power.md
+                    - name: Detect Focus session state
+                      href: windows-app-sdk/applifecycle/focus-session.md
               items:
               - name: Handle URI activation
                 href: develop/launch/handle-uri-activation.md
@@ -230,6 +249,7 @@ items:
               - name: Support web-to-app linking with app URI handlers
                 href: develop/launch/web-to-app-linking.md
             - name: File activation
+            - name: URI activation
               items:
               - name: Handle file activation
                 href: develop/launch/handle-file-activation.md
@@ -237,28 +257,6 @@ items:
                 href: develop/launch/launch-the-default-app-for-a-file.md
             - name: Reserved file and URI scheme names
               href: develop/launch/reserved-uri-scheme-names.md
-            - name: App lifecycle and system services
-              items: 
-                - name: Overview
-                  href: develop/app-lifecycle-and-system-services.md
-                - name: Manage app lifecycle
-                  items: 
-                    - name: App lifecycle
-                      href: windows-app-sdk/applifecycle/applifecycle.md
-                    - name: App instancing
-                      href: windows-app-sdk/applifecycle/applifecycle-instancing.md
-                    - name: Create a single-instanced app
-                      href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
-                    - name: Rich activation
-                      href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
-                    - name: Power management
-                      href: windows-app-sdk/applifecycle/applifecycle-power.md
-                    - name: Detect Focus session state
-                      href: windows-app-sdk/applifecycle/focus-session.md
-            - name: Background tasks
-              items:
-              - name: Working with background tasks in Windows apps
-                href: develop/launch/create-and-register-a-background-task.md
         - name: Notifications
           items: 
             - name: Push notifications
@@ -275,6 +273,80 @@ items:
                   href: windows-app-sdk/notifications/app-notifications/index.md
                 - name: Quickstart
                   href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
+        - name: OS integration
+          items:
+            - name: Overview
+              href: develop/windows-integration/index.md
+            - name: Feed providers
+              items: 
+                - name: Overview
+                  href: develop/feeds/feed-providers.md
+                - name: Implement a feed provider in a win32 app (C#)
+                  href: develop/feeds/implement-feed-provider-cs.md
+                - name: Implement a feed provider in a win32 app (C++/WinRT)
+                  href: develop/feeds/implement-feed-provider-win32.md
+                - name: Feed provider package manifest XML format
+                  href: develop/feeds/feed-provider-manifest.md
+            - name: Copilot hardware key
+              href: develop/windows-integration/microsoft-copliot-key-provider.md
+            - name: Smart App Control
+              items: 
+                - name: Overview
+                  href: develop/smart-app-control/overview.md
+                - name: Sign your app for Smart App Control compliance
+                  href: develop/smart-app-control/code-signing-for-smart-app-control.md
+                - name: Test your app's signature with Smart App Control
+                  href: develop/smart-app-control/test-your-app-with-smart-app-control.md
+            - name: Windows Search
+              href: develop/search/search-providers.md
+            - name: Windows Share
+              items:
+                - name: Overview
+                  href: develop/windows-integration/integrate-sharesheet-overview.md
+                - name: Integrate packaged apps
+                  href: develop/windows-integration/integrate-sharesheet-packaged.md
+                - name: Integrate PWAs 
+                  href: develop/windows-integration/integrate-sharesheet-pwa.md
+                - name: Integrate UWP apps >>
+                  href: /windows/uwp/app-to-app/share-data
+                - name: Integrate unpackaged apps
+                  href: develop/windows-integration/integrate-sharesheet-unpackaged.md
+            - name: Cross Device People API
+              href: develop/windows-integration/cross-device-people-api.md
+            - name: DispatcherQueue
+              href: develop/dispatcherqueue.md
+            - name: Widgets
+              items: 
+                - name: Overview
+                  href: develop/widgets/widget-providers.md
+                - name: Implement a widget provider in a win32 app (C#)
+                  href: develop/widgets/implement-widget-provider-cs.md
+                - name: Implement a widget provider in a win32 app (C++/WinRT)
+                  href: develop/widgets/implement-widget-provider-win32.md
+                - name: Web widget providers
+                  href: develop/widgets/web-widget-providers.md
+                - name: Customize the widget header area
+                  href: develop/widgets/widget-header-customization.md
+                - name: Package manifest XML format
+                  href: develop/widgets/widget-provider-manifest.md
+                - name: ActivateApplication protocol
+                  href: develop/widgets/widget-provider-activateapplication-protocol.md
+        - name: Performance
+          items: 
+            - name: Overview
+              href: performance/index.md
+            - name: Introduction to performance
+              href: performance/introduction.md
+            - name: Choosing performance tools
+              href: performance/choose-between-tools.md
+            - name: Improve disk and memory use
+              href: performance/disk-memory.md
+            - name: Improve power consumption
+              href: performance/power.md
+            - name: Improve responsiveness
+              href: performance/responsive.md
+            - name: WinUI performance optimization
+              href: performance/winui-perf.md
         - name: Security and identity
           items:
             - name: Overview
@@ -343,81 +415,6 @@ items:
               href: develop/ui-input/display-ui-objects.md
             - name: Choose the right visual tree viewer
               href: develop/ui-input/visual-tree.md
-        - name: Performance
-          items: 
-            - name: Overview
-              href: performance/index.md
-            - name: Introduction to performance
-              href: performance/introduction.md
-            - name: Choosing performance tools
-              href: performance/choose-between-tools.md
-            - name: Improve disk and memory use
-              href: performance/disk-memory.md
-            - name: Improve power consumption
-              href: performance/power.md
-            - name: Improve responsiveness
-              href: performance/responsive.md
-            - name: WinUI performance optimization
-              href: performance/winui-perf.md
-        - name: OS integration
-          items:
-            - name: Overview
-              href: develop/windows-integration/index.md
-            - name: Feed providers
-              items: 
-                - name: Overview
-                  href: develop/feeds/feed-providers.md
-                - name: Implement a feed provider in a win32 app (C#)
-                  href: develop/feeds/implement-feed-provider-cs.md
-                - name: Implement a feed provider in a win32 app (C++/WinRT)
-                  href: develop/feeds/implement-feed-provider-win32.md
-                - name: Feed provider package manifest XML format
-                  href: develop/feeds/feed-provider-manifest.md
-            - name: Copilot hardware key
-              href: develop/windows-integration/microsoft-copliot-key-provider.md
-            - name: Smart App Control
-              items: 
-                - name: Overview
-                  href: develop/smart-app-control/overview.md
-                - name: Sign your app for Smart App Control compliance
-                  href: develop/smart-app-control/code-signing-for-smart-app-control.md
-                - name: Test your app's signature with Smart App Control
-                  href: develop/smart-app-control/test-your-app-with-smart-app-control.md
-            - name: Windows Search
-              href: develop/search/search-providers.md
-            - name: Windows Share
-              items:
-                - name: Overview
-                  href: develop/windows-integration/integrate-sharesheet-overview.md
-                - name: Integrate packaged apps
-                  href: develop/windows-integration/integrate-sharesheet-packaged.md
-                - name: Integrate PWAs 
-                  href: develop/windows-integration/integrate-sharesheet-pwa.md
-                - name: Integrate UWP apps >>
-                  href: /windows/uwp/app-to-app/share-data
-                - name: Integrate unpackaged apps
-                  href: develop/windows-integration/integrate-sharesheet-unpackaged.md
-            - name: Cross Device People API
-              href: develop/windows-integration/cross-device-people-api.md
-            - name: DispatcherQueue
-              href: develop/dispatcherqueue.md
-            - name: Widgets
-              items: 
-                - name: Overview
-                  href: develop/widgets/widget-providers.md
-                - name: Implement a widget provider in a win32 app (C#)
-                  href: develop/widgets/implement-widget-provider-cs.md
-                - name: Implement a widget provider in a win32 app (C++/WinRT)
-                  href: develop/widgets/implement-widget-provider-win32.md
-                - name: Web widget providers
-                  href: develop/widgets/web-widget-providers.md
-                - name: Customize the widget header area
-                  href: develop/widgets/widget-header-customization.md
-                - name: Package manifest XML format
-                  href: develop/widgets/widget-provider-manifest.md
-                - name: ActivateApplication protocol
-                  href: develop/widgets/widget-provider-activateapplication-protocol.md
-
     - name: Package and deploy
       items: 
         - name: App packaging
