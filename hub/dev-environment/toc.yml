@@ -719,9 +719,9 @@ items:
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/propchangedeventargs_constructor.md
                 - name: SearchPrecisionScore
                   href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/searchprecisionscore.md
-                - name: Setting<T>
+                - name: Setting
                   items:
-                    - name: Setting<T>
+                    - name: Setting
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting.md
                     - name: Constructors
                       href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_constructor.md

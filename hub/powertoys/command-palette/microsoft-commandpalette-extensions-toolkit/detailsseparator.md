@@ -1,12 +1,12 @@
 ---
 title: DetailsSeparator Class
 description: 
-ms.date: 2/25/2025
+ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# DetailsLink Class
+# DetailsSeparator Class
 
 ## Definition
 
