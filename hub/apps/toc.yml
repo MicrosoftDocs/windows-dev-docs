@@ -43,45 +43,45 @@ items:
             - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
               href: how-tos/copilot-chat-winui3.md
         - name: Audio, video, and camera
-          href: develop/audio-video-camera.md
-        - name: Background tasks
-          href: develop/launch/create-and-register-a-background-task.md
-        - name: Camera
           items:
             - name: Overview
-              href: develop\camera\camera.md
-            - name: Show the camera preview in a WinUI 3 app
-              href: develop\camera\camera-quickstart-winui3.md
-            - name: Basic photo, video, and audio capture with MediaCapture
-              href: develop\camera\basic-photo-capture.md
-            - name: Discover and select camera capabilities with camera profiles
-              href: develop\camera\camera-profiles.md
-            - name: Set format, resolution, and frame rate for MediaCapture
-              href: develop\camera\set-media-encoding-properties.md
-            - name: HDR and low-light photo capture
-              href: develop\camera\hdr-low-light-photo-capture.md
-            - name: Manual camera controls for photo and video capture
-              href: develop\camera\capture-device-controls-for-photo-and-video-capture.md
-            - name: Manual camera controls for video capture
-              href: develop\camera\capture-device-controls-for-video-capture.md
-            - name: Video stabilization effect for video capture
-              href: develop\camera\effects-for-video-capture.md
-            - name: Scene analysis for MediaCapture
-              href: develop\camera\scene-analysis-for-media-capture.md
-            - name: Capture a photo sequence with VariablePhotoSequence
-              href: develop\camera\variable-photo-sequence.md
-            - name: Process media frames with MediaFrameReader
-              href: develop\camera\process-media-frames-with-mediaframereader.md
-            - name: Process audio frames with MediaFrameReader
-              href: develop\camera\process-audio-frames-with-mediaframereader.md
-            - name: Detect and respond to audio level changes by the system
-              href: develop\camera\detect-audio-level-changes.md
-            - name: Launch the camera settings page
-              href: develop\camera\launch-camera-settings.md
-            - name: Handle the Windows camera privacy setting
-              href: develop\camera\camera-privacy-setting.md
-            - name: Connect to remote cameras
-              href: develop\camera\connect-to-remote-cameras.md
+              href: develop/audio-video-camera.md
+            - name: Camera
+              items:
+                - name: Overview
+                  href: develop\camera\camera.md
+                - name: Show the camera preview in a WinUI 3 app
+                  href: develop\camera\camera-quickstart-winui3.md
+                - name: Basic photo, video, and audio capture with MediaCapture
+                  href: develop\camera\basic-photo-capture.md
+                - name: Discover and select camera capabilities with camera profiles
+                  href: develop\camera\camera-profiles.md
+                - name: Set format, resolution, and frame rate for MediaCapture
+                  href: develop\camera\set-media-encoding-properties.md
+                - name: HDR and low-light photo capture
+                  href: develop\camera\hdr-low-light-photo-capture.md
+                - name: Manual camera controls for photo and video capture
+                  href: develop\camera\capture-device-controls-for-photo-and-video-capture.md
+                - name: Manual camera controls for video capture
+                  href: develop\camera\capture-device-controls-for-video-capture.md
+                - name: Video stabilization effect for video capture
+                  href: develop\camera\effects-for-video-capture.md
+                - name: Scene analysis for MediaCapture
+                  href: develop\camera\scene-analysis-for-media-capture.md
+                - name: Capture a photo sequence with VariablePhotoSequence
+                  href: develop\camera\variable-photo-sequence.md
+                - name: Process media frames with MediaFrameReader
+                  href: develop\camera\process-media-frames-with-mediaframereader.md
+                - name: Process audio frames with MediaFrameReader
+                  href: develop\camera\process-audio-frames-with-mediaframereader.md
+                - name: Detect and respond to audio level changes by the system
+                  href: develop\camera\detect-audio-level-changes.md
+                - name: Launch the camera settings page
+                  href: develop\camera\launch-camera-settings.md
+                - name: Handle the Windows camera privacy setting
+                  href: develop\camera\camera-privacy-setting.md
+                - name: Connect to remote cameras
+                  href: develop\camera\connect-to-remote-cameras.md
         - name: Communication
           href: develop/communication.md
         - name: Data and files
@@ -203,7 +203,7 @@ items:
                       href: develop/win2d/avoiding-memory-leaks.md
                     - name: Custom effects
                       href: develop/win2d/custom-effects.md
-        - name: Launching apps
+        - name: App launching
           items:
             - name: Overview
               href: develop/launch/index.md
@@ -276,16 +276,6 @@ items:
           items:
             - name: Overview
               href: develop/windows-integration/index.md
-            - name: Feed providers
-              items: 
-                - name: Overview
-                  href: develop/feeds/feed-providers.md
-                - name: Implement a feed provider in a win32 app (C#)
-                  href: develop/feeds/implement-feed-provider-cs.md
-                - name: Implement a feed provider in a win32 app (C++/WinRT)
-                  href: develop/feeds/implement-feed-provider-win32.md
-                - name: Feed provider package manifest XML format
-                  href: develop/feeds/feed-provider-manifest.md
             - name: Copilot hardware key
               href: develop/windows-integration/microsoft-copliot-key-provider.md
             - name: Smart App Control
@@ -316,20 +306,32 @@ items:
               href: develop/dispatcherqueue.md
             - name: Widgets
               items: 
-                - name: Overview
-                  href: develop/widgets/widget-providers.md
-                - name: Implement a widget provider in a win32 app (C#)
-                  href: develop/widgets/implement-widget-provider-cs.md
-                - name: Implement a widget provider in a win32 app (C++/WinRT)
-                  href: develop/widgets/implement-widget-provider-win32.md
-                - name: Web widget providers
-                  href: develop/widgets/web-widget-providers.md
-                - name: Customize the widget header area
-                  href: develop/widgets/widget-header-customization.md
-                - name: Package manifest XML format
-                  href: develop/widgets/widget-provider-manifest.md
-                - name: ActivateApplication protocol
-                  href: develop/widgets/widget-provider-activateapplication-protocol.md
+                - name: Feed providers
+                  items: 
+                  - name: Overview
+                    href: develop/feeds/feed-providers.md
+                  - name: Implement a feed provider in a win32 app (C#)
+                    href: develop/feeds/implement-feed-provider-cs.md
+                  - name: Implement a feed provider in a win32 app (C++/WinRT)
+                    href: develop/feeds/implement-feed-provider-win32.md
+                  - name: Feed provider package manifest XML format
+                    href: develop/feeds/feed-provider-manifest.md
+                - name: Widget providers
+                  items: 
+                  - name: Overview
+                    href: develop/widgets/widget-providers.md
+                  - name: Implement a widget provider in a win32 app (C#)
+                    href: develop/widgets/implement-widget-provider-cs.md
+                  - name: Implement a widget provider in a win32 app (C++/WinRT)
+                    href: develop/widgets/implement-widget-provider-win32.md
+                  - name: Web widget providers
+                    href: develop/widgets/web-widget-providers.md
+                  - name: Customize the widget header area
+                    href: develop/widgets/widget-header-customization.md
+                  - name: Package manifest XML format
+                    href: develop/widgets/widget-provider-manifest.md
+                  - name: ActivateApplication protocol
+                    href: develop/widgets/widget-provider-activateapplication-protocol.md
         - name: Performance
           items: 
             - name: Overview
@@ -474,9 +476,9 @@ items:
                   href: package-and-deploy/ci-for-winui3.md
             - name: Windows app restore
               href: develop/windows-app-restore.md
-    - name: Microsoft Store
+    - name: Distribute
       items: 
-        - name: Get started
+        - name: Get started the Microsoft Store
           href: publish/index.md
         - name: Open a developer account
           items: 
