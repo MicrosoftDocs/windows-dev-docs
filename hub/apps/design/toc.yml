@@ -77,7 +77,7 @@
           href: motion/storyboarded-animations.md
         - name: Key-frame and easing function animations
           href: motion/key-frame-and-easing-function-animations.md
-- name: Shapes and geometry
+- name: Geometry
   href: signature-experiences/geometry.md
   items: 
     - name: Corner radius
