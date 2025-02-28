@@ -677,7 +677,6 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 <muxc:TabView />
 ```
 
-
 ## Related articles
 
 - [List/Details](./list-details.md)

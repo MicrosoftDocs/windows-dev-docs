@@ -3,7 +3,7 @@ title: Pull-to-refresh
 description: Learn how to implement a pull-to-refresh control that lets a user pull down on a list of data using touch in order to retrieve more data.
 label: Pull-to-refresh
 template: detail.hbs
-ms.date: 03/07/2018
+ms.date: 02/26/2025
 ms.topic: article
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 doc-status: Published
@@ -92,28 +92,6 @@ By default, the user pulls a list from top to bottom to initiate a refresh. If y
 The [PullDirection](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer.PullDirection) property takes one of these [RefreshPullDirection](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshpulldirection) values: **BottomToTop**, **TopToBottom**, **RightToLeft**, or **LeftToRight**.
 
 When you change the pull direction, the starting position of the visualizer's progress spinner automatically rotates so the arrow starts in the appropriate position for the pull direction. If needed, you can change the [RefreshVisualizer.Orientation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.Orientation) property to override the automatic behavior. In most cases, we recommend leaving the default value of **Auto**.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The refresh controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
-> - **WinUI 2 Apis:** [RefreshContainer](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer)
-> - [Open the WinUI 2 Gallery app and see PullToRefresh in action](winui2gallery:/item/PullToRefresh). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:RefreshContainer />
-```
 
 ## Implement pull-to-refresh
 
@@ -351,9 +329,27 @@ public class ListItemData
 }
 ```
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The refresh controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
+> - **WinUI 2 Apis:** [RefreshContainer](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer)
+> - [Open the WinUI 2 Gallery app and see PullToRefresh in action](winui2gallery:/item/PullToRefresh). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:RefreshContainer />
+```
 
 ## Related articles
 

@@ -3,7 +3,7 @@ title: Buttons
 description: Learn how to use a button to give users a way to trigger immediate actions, and learn about specialized buttons for particular tasks.
 label: Buttons
 template: detail.hbs
-ms.date: 03/04/2022
+ms.date: 02/26/2025
 ms.topic: article
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
 doc-status: Published
@@ -112,30 +112,6 @@ The back button is a system-provided UI element that enables backward navigation
 This example uses three buttons, **Save**, **Don't Save**, and **Cancel**, in a dialog that asks users if they want to save their work.
 
 ![Example of buttons, used in a dialog](images/button-dialog-example.png)
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The DropDownButton, SplitButton, and ToggleSplitButton controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Button class](/uwp/api/windows.ui.xaml.controls.button), [RepeatButton class](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton), [HyperlinkButton class](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton), [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton), [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton), [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton), [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command), [Content property](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)
-> - **WinUI 2 Apis:** [DropDownButton](/windows/winui/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton](/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton)
-> - [Open the WinUI 2 Gallery app and see the Button in action](winui2gallery:/item/Button). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:DropDownButton />
-<muxc:SplitButton />
-<muxc:ToggleSplitButton />
-```
 
 ## Create a button
 
@@ -572,9 +548,29 @@ private void ApplyListStyle(string listStyle)
 }
 ```
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery): This sample shows all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The DropDownButton, SplitButton, and ToggleSplitButton controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [Button class](/uwp/api/windows.ui.xaml.controls.button), [RepeatButton class](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton), [HyperlinkButton class](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton), [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton), [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton), [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton), [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command), [Content property](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)
+> - **WinUI 2 Apis:** [DropDownButton](/windows/winui/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton](/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton)
+> - [Open the WinUI 2 Gallery app and see the Button in action](winui2gallery:/item/Button). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:DropDownButton />
+<muxc:SplitButton />
+<muxc:ToggleSplitButton />
+```
 
 ## Related articles
 

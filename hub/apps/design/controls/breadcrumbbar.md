@@ -2,7 +2,7 @@
 description: The BreadcrumbBar control provides the direct path of pages or folders to the current location. It adapts to a variety of screen sizes.
 title: BreadcrumbBar
 template: detail.hbs
-ms.date: 04/29/2021
+ms.date: 02/26/2025
 ms.topic: article
 ms.custom: 21H1
 ms.localizationpriority: medium
@@ -41,25 +41,6 @@ The image below shows the parts of the `BreadcrumbBar` control. You can modify t
 - Use a breadcrumb bar when you have many levels of navigation and expect users to be able to return to any previous level.
 - Don't use a breadcrumb bar if you only have 2 possible levels of navigation. Simple [back navigation](../basics/navigation-history-and-backwards-navigation.md) is sufficient.
 - Show the current location as the last item in the breadcrumb bar. However, you typically don't want to perform any navigation if the user clicks the current item. (If you want to let the user reload the current page or data, consider providing a dedicated 'reload' option.)
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The BreadcrumbBar for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
-> - [Open the WinUI 2 Gallery app and see the BreadcrumbBar in action](winui2gallery:/item/BreadcrumbBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:BreadcrumbBar />
-```
 
 ## Create a breadcrumb bar
 
@@ -258,6 +239,25 @@ public readonly struct Crumb
     public object Data { get; }
     public override string ToString() => Label;
 }
+```
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The BreadcrumbBar for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI 2 Apis:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
+> - [Open the WinUI 2 Gallery app and see the BreadcrumbBar in action](winui2gallery:/item/BreadcrumbBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:BreadcrumbBar />
 ```
 
 ## Related articles

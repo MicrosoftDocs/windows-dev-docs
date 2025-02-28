@@ -1,7 +1,9 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 11/19/2024
+ms.collection: ce-skilling-ai-copilot
+ms.custom: copilot-scenario-highlight
+ms.date: 02/26/2025
 ms.topic: quickstart
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -23,6 +25,9 @@ We recommend installing PowerToys via [GitHub](https://aka.ms/installpowertoys) 
   - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (this will always install the latest version available)
 
 To see if your machine meets these requirements, check your Windows version and build number by opening a Run dialog (Win+R), then type `winver` and select <kbd>OK</kbd> or <kbd>Enter</kbd>. Alternatively, enter the `ver` command in Windows Command Prompt. You may be able to [update to the latest Windows version](ms-settings:windowsupdate) in **Windows Update**.
+
+> [!TIP]
+> You can use AI assistance to [create Windows Package Manager install commands for PowerToys with Copilot](#ask-copilot-for-help-with-command-line-arguments).
 
 ## Installing with Windows executable file from GitHub
 
@@ -63,6 +68,18 @@ Here are some common commands you may want to use:
 | /passive |              | progress bar only install |
 | /layout  |              | create a local image of the bootstrapper |
 | /log     | /l           | log to a specific file |
+
+### Ask Copilot for help with command-line arguments
+
+You can get AI assistance from [Copilot](https://copilot.microsoft.com/) to generate a `winget` command with the arguments you need. You can customize the prompt to generate a string per your requirements.
+
+The following text shows an example prompt for Copilot:
+
+```copilot-prompt
+Generate a `winget` command to install Microsoft PowerToys with arguments to install silently and log the output to a file at the following path: C:\temp\install.log
+```
+
+Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://www.microsoft.com/microsoft-copilot/learn/).
 
 ### Extracting the MSI from the bundle
 

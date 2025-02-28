@@ -52,25 +52,6 @@ Defining a color property in your Lottie animation named "Foreground" lets you t
 - Please view the UX guidance for [Icons for Windows Apps](/windows/uwp/design/style/icons) to ensure your icons match the design principles.
 - Limit the number of animated icons on a single screen or view. Only animate icons to draw the user's attention to where they need to take action or when they are performing an action.
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The AnimatedIcon for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
-> - [Open the WinUI 2 Gallery app and see the AnimatedIcon in action](winui2gallery:/item/AnimatedIcon). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:AnimatedIcon />
-```
-
 ## Create an animated icon
 
 > [!div class="checklist"]
@@ -232,6 +213,25 @@ private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
 {
     AnimatedIcon.SetState(this.StackPaAnimatedIcon1nel1, "Normal");
 }
+```
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The AnimatedIcon for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI 2 Apis:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
+> - [Open the WinUI 2 Gallery app and see the AnimatedIcon in action](winui2gallery:/item/AnimatedIcon). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:AnimatedIcon />
 ```
 
 ## Related articles
