@@ -1,7 +1,7 @@
 ---
 title: Command Class
 description: 
-ms.date: 2/10/2025
+ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
@@ -15,6 +15,8 @@ Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalett
 Inherits [BaseObservable](baseobservable.md) 
 
 Implements [ICommand](../microsoft-commandpalette-extensions/icommand.md)
+
+`Command`s are the primary unit of functionality in the Command Palette SDK. They represent "a thing that a user can do". These can be something simple like open a URL in a web browser. Or they can be more complex, with nested commands, custom arguments, and more.
 
 ## Properties
 

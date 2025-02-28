@@ -16,6 +16,8 @@ Inherits [Command](command.md)
 
 Implements [IPage](../microsoft-commandpalette-extensions/ipage.md)
 
+Represent additional "nested" pages within the Command Palette.
+
 ## Properties
 
 | Property | Type | Description |
