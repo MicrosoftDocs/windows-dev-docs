@@ -16,9 +16,9 @@ Background tasks offered in the UWP app model can either be out-of-proc or in-pr
 
 ## Out-of-proc background tasks
 
-In the case of out-of-proc background tasks in UWP, background tasks will be written in a Windows Runtime (WinRT) component and the component would be given to [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) as a [TaskEntryPoint](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.taskentrypoint) during registration. While migrating to Windows App SDK, developers can keep this as-is and package the WinRT component together with the desktop project. In this case, the broker infrastructure will be launching `backgroundtaskhost` process when the trigger is invoked, and the WinRT component background task would be executed in the process. In this approach, the background task would be running in a Low Integrity Level (IL) process (`backgroundtaskhost.exe`) while the main desktop project would be running in a Medium IL process.
+In the case of out-of-proc background tasks in UWP, background tasks will be written as a Windows Runtime (WinRT) component, and the component is set as the [TaskEntryPoint](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.taskentrypoint) on [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) during registration. While migrating to Windows App SDK, developers can keep this as-is and package the WinRT component together with the desktop project. In this case, the broker infrastructure will be launching `backgroundtaskhost` process when the trigger is invoked, and the WinRT component background task would be executed in the process. In this approach, the background task would be running in a Low Integrity Level (IL) process (`backgroundtaskhost.exe`) while the main desktop project would be running in a Medium IL process.
 
-If the application needs both to run in a medium IL process, then full trust COM component needs to be used for background task. In that scenario, developers must go with [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) API for successful registration of the full trust COM component. Note that the [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API from the **Windows.ApplicationModel.Background** namespace will throw exceptions while registering of some of the triggers.
+If the application needs to to run a background task in a medium IL process itself, then full trust COM component needs to be used for background task. In that scenario, developers must go with [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) API for successful registration of the full trust COM component. Note that the [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API from the **Windows.ApplicationModel.Background** namespace will throw exceptions while registering of some of the triggers.
 
 A background task registration sample can be found [here](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/BackgroundTask).
 
@@ -88,7 +88,7 @@ For C# applications, an **ActivatableClass** registration may also need to be ad
 
 ## Leveraging TaskScheduler for background task migration
 
-[Task Scheduler](/windows/win32/api/_taskschd/) helps in achieving the same functionality that is provided by [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) in UWP apps. More details on implementations using **TaskScheduler** are available [here](/windows/win32/api/taskschd/).
+[Task Scheduler](/windows/win32/api/_taskschd/) helps desktop apps in achieving the same functionality that is provided by [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) in UWP apps. More details on implementations using **TaskScheduler** are available [here](/windows/win32/api/taskschd/).
 
 ## ApplicationTrigger use in Windows App SDK applications
 

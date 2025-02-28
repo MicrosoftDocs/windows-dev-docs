@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Using background tasks in Windows apps
 
-This article provides an overview of using background tasks and describes how to create a new background task in a WinUI app. For information about migrating your UWP apps with background tasks to WinUI, see the Windows App SDK [Background task migration strategy](../migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md).
+This article provides an overview of using background tasks and describes how to create a new background task in a WinUI 3 app. For information about migrating your UWP apps with background tasks to WinUI, see the Windows App SDK [Background task migration strategy](../migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md).
 
 ## BackgroundTaskBuilder in the Windows App SDK
 
