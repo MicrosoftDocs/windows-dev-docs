@@ -4,7 +4,7 @@ title: Hyperlinks
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -31,17 +31,6 @@ Choose the right type of hyperlink based on your needs:
 - Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows type ramp](../style/typography.md).
 - Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.
 - Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Hyperlink text element](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [HyperlinkButton control](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
-> - [Open the WinUI 2 Gallery app and see Hyperlinks in action](winui2gallery:/item/HyperlinkButton). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 ## Create a Hyperlink text element
 
@@ -168,9 +157,16 @@ Hyperlink doesn't inherit from [Control](/windows/windows-app-sdk/api/winrt/micr
 
 The default color of the hyperlink is the accent color of the system. You can set the [Foreground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.foreground) property to override this.
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [Hyperlink text element](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [HyperlinkButton control](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> - [Open the WinUI 2 Gallery app and see Hyperlinks in action](winui2gallery:/item/HyperlinkButton). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 ## Related articles
 

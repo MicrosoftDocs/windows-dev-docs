@@ -3,7 +3,7 @@ description: Learn how to use Swipe commanding as a touch accelerator for contex
 title: Swipe
 label: Swipe
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -69,29 +69,6 @@ For example, you cannot have two [LeftItems](/windows/windows-app-sdk/api/winrt/
 - Do use swipe on items where the same action is repeated many times.
 - Do use horizontal swiping on wider items, and vertical swiping on taller items.
 - Do use short, concise text labels.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The SwipeControl for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/windows.UI.Xaml.Controls.ListView)
-> - **WinUI 2 Apis:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
-> - [Open the WinUI 2 Gallery app and see SwipeControl in action](winui2gallery:/item/SwipeControl). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:SwipeControl />
-<muxc:SwipeItem />
-```
 
 ## Create a swipe command
 
@@ -235,9 +212,28 @@ Here, a _reply_ swipe item is set to close after its invoked.
            BehaviorOnInvoked = "Close"/>
 ```
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The SwipeControl for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/windows.UI.Xaml.Controls.ListView)
+> - **WinUI 2 Apis:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
+> - [Open the WinUI 2 Gallery app and see SwipeControl in action](winui2gallery:/item/SwipeControl). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:SwipeControl />
+<muxc:SwipeItem />
+```
 
 ## Related articles
 

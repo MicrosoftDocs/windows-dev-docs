@@ -5,7 +5,7 @@ ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -48,19 +48,6 @@ When the user types in a password box, the default behavior is to show bullets t
 Pressing the "reveal" button on the right gives a peek at the password text being entered:
 
 ![Password box text revealed](images/passwordbox-text-reveal.png)
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [PasswordBox class](/uwp/api/windows.ui.xaml.controls.passwordbox), [Password property](/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar property](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode property](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged event](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
-> - [Open the WinUI 2 Gallery app and see PasswordBox in action](winui2gallery:/item/PasswordBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Create a password box
 
@@ -183,9 +170,18 @@ To help users to enter data using the touch keyboard, or Soft Input Panel (SIP),
 
 For more info about how to use input scopes, see [Use input scope to change the touch keyboard](../input/use-input-scope-to-change-the-touch-keyboard.md).
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [PasswordBox class](/uwp/api/windows.ui.xaml.controls.passwordbox), [Password property](/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar property](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode property](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged event](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+> - [Open the WinUI 2 Gallery app and see PasswordBox in action](winui2gallery:/item/PasswordBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 

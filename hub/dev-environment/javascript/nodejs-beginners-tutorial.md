@@ -25,11 +25,11 @@ If you have not yet installed Visual Studio Code, return to the prerequisite sec
 
 1. Open your command line and create a new directory: `mkdir HelloNode`, then enter the directory: `cd HelloNode`
 
-2. Create a JavaScript file named "app.js" with a variable named "msg" inside: `echo var msg > app.js`
+2. Open the directory in VS Code using the command: `code .`
 
-3. Open the directory and your app.js file in VS Code using the command: `code .`
+3. Create a file named "app.js"
 
-4. Add a simple string variable ("Hello World"), then send the contents of the string to your console by entering this in your "app.js" file:
+4. Add a simple string "Hello World" to a variable named `msg`, then send the contents of the string to your console by entering this in your "app.js" file:
 
     ```js
     var msg = 'Hello World';

@@ -35,7 +35,7 @@ To filter host file entries, select the filter icon and enter data in either the
 
 ## Back up Hosts file
 
-Hosts File Editor creates a backup of the hosts file before editing session. The backup files are located near the hosts file in `%SystemRoot%\System32\drivers\etc` named `hosts_PowerToysBackup_YYYYMMDDHHMMSS`.
+Hosts File Editor creates a backup of the hosts file before editing session. The backup files are located near the hosts file in `%SystemRoot%\System32\drivers\etc` named `hosts_PowerToysBackup_YYYYMMDDHHMMSS` and are deleted after 15 days.
 
 ## Settings
 

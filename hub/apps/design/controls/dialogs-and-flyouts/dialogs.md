@@ -3,7 +3,7 @@ description: Dialogs display transient UI elements that appear when the user req
 title: Dialog controls
 label: Dialogs
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 02/26/2025
 ms.topic: article
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 doc-status: Published
@@ -40,19 +40,6 @@ For recommendations on when to use a dialog vs. when to use a flyout (a similar 
   - You may optionally choose to differentiate one of the three buttons as the dialog's default button. Use the DefaultButton API to differentiate one of the buttons.
 - Don't use dialogs for errors that are contextual to a specific place on the page, such as validation errors (in password fields, for example), use the app's canvas itself to show inline errors.
 - Use the [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog) to build your dialog experience. Don't use the deprecated MessageDialog API.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
-> - [Open the WinUI 2 Gallery app and see the ContentDialog in action](winui2gallery:/item/ContentDialog). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md).
 
 ## Create a dialog
 
@@ -282,9 +269,18 @@ private async void DisplayNoWifiDialog()
 > [!WARNING]
 > There can only be one ContentDialog open per thread at a time. Attempting to open two ContentDialogs will throw an exception, even if they are attempting to open in separate AppWindows.
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> - [Open the WinUI 2 Gallery app and see the ContentDialog in action](winui2gallery:/item/ContentDialog). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md).
 
 ## Related articles
 

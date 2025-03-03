@@ -3,7 +3,7 @@ description: Learn how to use list boxes and combo boxes, also called drop-down 
 title: Combo box and list box
 label: Combo box and list box
 template: detail.hbs
-ms.date: 05/25/2022
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -67,19 +67,6 @@ A list box allows the user to choose either a single item or multiple items from
 - Limit the list box item's text content to a single line. If the items are visuals, you can customize the size. If an item contains multiple lines of text or images, instead use a grid view or list view.
 - Use the default font unless your brand guidelines indicate to use another.
 - Don't use a list box to perform commands or to dynamically show or hide other controls.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ComboBox class](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable property](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text property](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [ListBox class](/uwp/api/Windows.UI.Xaml.Controls.ListBox)
-> - [Open the WinUI 2 Gallery app and see the ComboBox in action](winui2gallery:/item/ComboBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-[WinUI 2.2](../../winui/winui2/index.md) or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Create a combo box
 
@@ -211,9 +198,6 @@ You can set the [IsTextSearchEnabled](/windows/windows-app-sdk/api/winrt/microso
 
 ## Make a combo box editable
 
-> [!IMPORTANT]
-> This feature requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
-
 By default, a combo box lets the user select from a pre-defined list of options. However, there are cases where the list contains only a subset of valid values, and the user should be able to enter other values that aren't listed. To support this, you can make the combo box editable.
 
 To make a combo box editable, set the [IsEditable](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.iseditable) property to **true**. Then, handle the [TextSubmitted](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox) event to work with the value entered by the user.
@@ -312,9 +296,21 @@ bool IsValid(string Text)
 }
 ```
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [ComboBox class](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable property](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text property](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [ListBox class](/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+> - [Open the WinUI 2 Gallery app and see the ComboBox in action](winui2gallery:/item/ComboBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+> [!NOTE]
+> The [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable) property requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
+
+[WinUI 2.2](../../winui/winui2/index.md) or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 

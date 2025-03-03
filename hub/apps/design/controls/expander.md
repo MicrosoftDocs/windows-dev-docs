@@ -2,7 +2,7 @@
 description: The WinUI Expander control provides a standard interaction for showing more content in a container that pushes adjacent content while expanding and collapsing.
 title: Expander
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 02/26/2025
 ms.topic: article
 ms.custom: 21H1
 ms.localizationpriority: medium
@@ -19,25 +19,6 @@ Both the `Header` and `Content` areas can contain any content, from simple text 
 ## Is this the right control?
 
 Use an `Expander` when some primary content should always be visible, but related secondary content may be hidden until needed. This UI is commonly used when display space is limited and when information or options can be grouped together. Hiding the secondary content until it's needed can also help to focus the user on the most important parts of your app.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The Expander for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander), [Header property](/windows/winui/api/microsoft.ui.xaml.controls.expander.header), [Content property](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)
-> - [Open the WinUI 2 Gallery app and see the Expander in action](winui2gallery:/item/Expander). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:Expander />
-```
 
 ## Create an Expander
 
@@ -339,6 +320,25 @@ This XAML creates the group of `Expander` controls shown in other parts of this 
         </StackPanel>
     </Expander>
 </StackPanel>
+```
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The Expander for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI 2 Apis:** [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander), [Header property](/windows/winui/api/microsoft.ui.xaml.controls.expander.header), [Content property](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)
+> - [Open the WinUI 2 Gallery app and see the Expander in action](winui2gallery:/item/Expander). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:Expander />
 ```
 
 ## Related articles

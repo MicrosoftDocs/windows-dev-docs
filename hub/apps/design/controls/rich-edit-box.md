@@ -4,7 +4,7 @@ title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -37,19 +37,6 @@ For more info about choosing the right text control, see the [Text controls](tex
 This rich edit box has a rich text document open in it. The formatting and file buttons aren't part of the rich edit box, but you should provide at least a minimal set of styling buttons and implement their actions.
 
 ![A rich text box with an open document](images/rich-edit-box.png)
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [RichEditBox class](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [Document property](/uwp/api/windows.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
-> - [Open the WinUI 2 Gallery app and see the RichEditBox in action](winui2gallery:/item/RichEditBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Create a rich edit box
 
@@ -210,9 +197,18 @@ To help users to enter data using the touch keyboard, or Soft Input Panel (SIP),
 
 For more info about how to use input scopes, see [Use input scope to change the touch keyboard](../input/use-input-scope-to-change-the-touch-keyboard.md).
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [RichEditBox class](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [Document property](/uwp/api/windows.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
+> - [Open the WinUI 2 Gallery app and see the RichEditBox in action](winui2gallery:/item/RichEditBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 
