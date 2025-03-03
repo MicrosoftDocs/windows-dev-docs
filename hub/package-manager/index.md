@@ -49,7 +49,7 @@ The WinGet client can be used in the command line to install and manage applicat
 
 To maintain ongoing security updates, the WinGet client is released using the Microsoft Store and installs applications from the Microsoft Store using the [“msstore” source](./winget/source.md) and applying  “certificate pinning” to ensure that the connection is secure and established with the proper endpoint.
 
-The Group Policy applied by your enterprise organization may be using SSL inspection via a firewall between the WinGet client and the Microsoft Store source that causes a connection error to appear in the WinGet client. 
+The Group Policy applied by your enterprise organization may be using SSL inspection via a firewall between the WinGet client and the Microsoft Store source that causes a connection error to appear in the WinGet client.
 
 For this reason, the Windows Package Manager desktop installer supports a policy setting called: “BypassCertificatePinningForMicrosoftStore”.  This policy controls whether the Windows Package Manager will validate the Microsoft Store certificate hash matches to a known Microsoft Store certificate when initiating a connection to the Microsoft Store Source. The options for this policy include:
 
@@ -60,3 +60,34 @@ For this reason, the Windows Package Manager desktop installer supports a policy
 “Certificate Pinning” ensures that the package manager connection to the Microsoft Store is secure, helping to avoid risks associated with attacks such as Man-in-the-Middle (MITM) attacks involving a third party inserting themselves between a client (user) and server (application) to secretly intercept communication flows to steal sensitive data such as login credentials, etc. Disabling “Certificate Pinning” (enabling the bypass) can expose your organization to risk in this area and should be avoided.
 
 To learn more about setting up Group Policy for your enterprise organization, see the [Microsoft Intune documentation](/mem/intune/).
+
+## Additional Group Policy settings for Windows Package Manager
+
+Windows Package Manager provides additional configuration options through Group Policy, allowing IT administrators to manage and control functionality across multiple devices. These settings are particularly beneficial for enterprise environments where compliance and consistency are critical.
+
+Beginning in Windows 11, additional Group Policy templates for Windows Package Manager are included with each release. These templates are divided into several subcategories, enabling IT administrators to configure key aspects of the tool's behavior, such as:
+
+- **Source Control**: Specify which sources are allowed or blocked.
+- **Local Development**: Control whether users are allowed to enable experimental features or local manifest installations.
+- **Execution Policies**: Set policies for the command line interface and proxy options.
+
+To download the Group Policy templates:
+
+1. Visit [Windows Package Manage GitHub releases](https://github.com/microsoft/winget-cli/releases).
+2. Locate the release version you wish to use.
+3. Download the `DesktopAppInstallerPolicies.zip` file included in the release assets.
+
+The ZIP file contains the necessary `.admx` and `.adml` files for deploying the policies. Once you've downloaded the `DesktopAppInstallerPolicies.zip` file:
+
+1. Extract the contents of the ZIP file on your local machine.
+2. Copy the `.admx` file to the `C:\Windows\PolicyDefinitions` folder on the target device.
+3. Copy the corresponding language-specific `.adml` file to the appropriate subdirectory, such as `C:\Windows\PolicyDefinitions\en-US`.
+4. Open the Group Policy Management Console (GPMC) to configure the policies.
+
+> [!NOTE]
+> When working on a Windows Domain Controller, you can store the Group Policy templates in the Central Store. For detailed instructions, see [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](/troubleshoot/windows-client/group-policy/create-and-manage-central-store).
+
+New Group Policy settings may be introduced with each release of Windows Package Manager. To ensure your environment is always up to date:
+
+- Regularly check for updates on the [Windows Package Manager GitHub repository](https://github.com/microsoft/winget-cli/releases) page.
+- Review the release notes for changes or additions to the policy templates.
