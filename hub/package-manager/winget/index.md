@@ -1,10 +1,9 @@
----
+
 title: Use WinGet to install and manage applications
 description: The WinGet command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
 ms.date: 08/05/2024
-ms.topic: overview
+ms.topic: override
 ms.localizationpriority: medium
----
 
 # Use the WinGet tool to install and manage applications
 
