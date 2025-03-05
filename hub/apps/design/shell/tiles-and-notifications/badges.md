@@ -4,7 +4,7 @@ title: Badge notifications for Windows apps
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 02/27/2025
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -32,18 +32,18 @@ Instead of a number, a badge can display one of a non-extensible set of status g
 Status | Glyph | XML
 --|--|--
 none | (No badge shown.) | `<badge value="none"/>`
-activity | :::image type="icon" source="images/badges/badge-activity.png"::: | `<badge value="activity"/>`
-alarm | :::image type="icon" source="images/badges/badge-alarm.png"::: | `<badge value="alarm"/>`
-alert | :::image type="icon" source="images/badges/badge-alert.png"::: | `<badge value="alert"/>`
-attention | :::image type="icon" source="images/badges/badge-attention.png"::: | `<badge value="attention"/>`
-available | :::image type="icon" source="images/badges/badge-available.png"::: | `<badge value="available"/>`
-away | :::image type="icon" source="images/badges/badge-away.png"::: | `<badge value="away"/>`
-busy | :::image type="icon" source="images/badges/badge-busy.png"::: | `<badge value="busy"/>`
-error | :::image type="icon" source="images/badges/badge-error.png"::: | `<badge value="error"/>`
-newMessage | :::image type="icon" source="images/badges/badge-newMessage.png"::: | `<badge value="newMessage"/>`
-paused | :::image type="icon" source="images/badges/badge-paused.png"::: | `<badge value="paused"/>`
-playing | :::image type="icon" source="images/badges/badge-playing.png"::: | `<badge value="playing"/>`
-unavailable | :::image type="icon" source="images/badges/badge-unavailable.png"::: | `<badge value="unavailable"/>`</td>
+activity | :::image source="images/badges/badge-activity.png" alt-text="A glyph badge denoting the 'activity' status."::: | `<badge value="activity"/>`
+alarm | :::image source="images/badges/badge-alarm.png" alt-text="A glyph badge denoting the 'alarm' status."::: | `<badge value="alarm"/>`
+alert | :::image source="images/badges/badge-alert.png" alt-text="A glyph badge denoting the 'alert' status."::: | `<badge value="alert"/>`
+attention | :::image source="images/badges/badge-attention.png" alt-text="A glyph badge denoting the 'attention' status."::: | `<badge value="attention"/>`
+available | :::image source="images/badges/badge-available.png" alt-text="A glyph badge denoting the 'available' status."::: | `<badge value="available"/>`
+away | :::image source="images/badges/badge-away.png" alt-text="A glyph badge denoting the 'away' status."::: | `<badge value="away"/>`
+busy | :::image source="images/badges/badge-busy.png" alt-text="A glyph badge denoting the 'busy' status."::: | `<badge value="busy"/>`
+error | :::image source="images/badges/badge-error.png" alt-text="A glyph badge denoting the 'error' status."::: | `<badge value="error"/>`
+newMessage | :::image source="images/badges/badge-newMessage.png" alt-text="A glyph badge denoting the 'newMessage' status."::: | `<badge value="newMessage"/>`
+paused | :::image source="images/badges/badge-paused.png" alt-text="A glyph badge denoting the 'paused' status."::: | `<badge value="paused"/>`
+playing | :::image source="images/badges/badge-playing.png" alt-text="A glyph badge denoting the 'playing' status."::: | `<badge value="playing"/>`
+unavailable | :::image source="images/badges/badge-unavailable.png" alt-text="A glyph badge denoting the 'unavailable' status."::: | `<badge value="unavailable"/>`</td>
 
 ## Create a badge
 

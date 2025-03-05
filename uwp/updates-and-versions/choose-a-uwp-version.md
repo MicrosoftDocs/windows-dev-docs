@@ -1,7 +1,7 @@
 ---
 title: Choose a UWP version
 description: When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Learn about the difference between different UWP versions, and how to configure your choices in new and existing projects.
-ms.date: 5/12/2019
+ms.date: 02/20/2025
 ms.topic: article
 keywords: windows 10, uwp, version, build, versions, windows, choose, update, updates
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
