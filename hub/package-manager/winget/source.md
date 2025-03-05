@@ -106,11 +106,12 @@ For example,  `winget source add --name Contoso https://www.contoso.com/cache` a
 
 #### Optional type parameter
 
-The **add** subcommand supports the optional **type** parameter, which tells the client what type of repository it is connecting to. The following type is supported.
+The **add** subcommand supports the optional **type** parameter, which tells the client what type of repository it is connecting to. The following types are supported.
 
 | Type  | Description |
 |--------------|-------------|
 | **Microsoft.PreIndexed.Package** | The default source type. |
+| **Microsoft.Rest** | A Microsoft REST API source. |
 
 ### list
 

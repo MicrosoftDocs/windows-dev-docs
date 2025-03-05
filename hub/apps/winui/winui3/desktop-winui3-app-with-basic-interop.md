@@ -1,16 +1,16 @@
 ---
-description: Build a C# .NET and C++ desktop (Win32) application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
 title: Build a C# .NET app with WinUI 3 and Win32 interop
-ms.date: 07/09/2024
+description: Build a C# .NET application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
+ms.date: 03/04/2025
 ms.topic: article
-keywords: windows 10, windows 11, uwp, COM, win32, winui, interop
+keywords: windows 11, windows 10, uwp, COM, win32, winui, interop
 ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
 # Build a C# .NET app with WinUI 3 and Win32 interop
 
-In this article, we step through how to build a basic **C# .NET** application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
+In this topic, we step through how to build a basic **C# .NET** application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ In this article, we step through how to build a basic **C# .NET** application wi
 
 ## Basic managed C#/.NET app
 
-For this example, we'll specify the location and size of the app window, convert and scale it for the appropriate DPI, disable the window minimize and maximize buttons, and finally query the current process to show a list of modules loaded in the current process.
+For this example, we'll specify the location and size of the app window, convert and scale it for the appropriate DPI, disable the window minimize and maximize buttons, and finally query the current process to show a list of the modules that are loaded into the current process.
 
 We're going to build our example app from the initial template application (see [Prerequisites](#prerequisites)). Also see [WinUI 3 templates in Visual Studio](winui-project-templates-in-visual-studio.md).
 
@@ -48,39 +48,35 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
 ### Configuration
 
-1. To call Win32 APIs exposed in User32.dll, add the open source [**PInvoke.User32** NuGet package](https://github.com/dotnet/pinvoke) to the VS project (from the Visual Studio menus, select **Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution...** and search for "Pinvoke.User32"). For more details, see [Calling Native Functions from Managed Code](/cpp/dotnet/calling-native-functions-from-managed-code).
+1. To call Win32 APIs exported from `User32.dll`, you can use the [**C#/Win32 P/Invoke Source Generator**](https://github.com/microsoft/CsWin32) in your Visual Studio project. Click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**, and (on the **Browse** tab) search for *Microsoft.Windows.CsWin32*. For more details, see [Calling Native Functions from Managed Code](/cpp/dotnet/calling-native-functions-from-managed-code).
 
-   :::image type="content" source="images/build-basic/nuget-pkg-manager-pinvoke.png" alt-text="Screenshot of the Visual Studio NuGet Package Manager with PInvoke.User32 selected.":::<br/>*NuGet Package Manager with PInvoke.User32 selected.*
+   You can optionally confirm that installation was successful by confirming that *Microsoft.Windows.CsWin32* is listed under the **Dependencies** > **Packages** node in Solution Explorer.
 
-   Confirm installation was successful by checking the **Packages** folder in the VS project.
+   You can also optionally double-click the application project file (or right click and select **Edit project file**) to open the file in a text editor, and confirm that the project file now includes a NuGet `PackageReference` for "Microsoft.Windows.CsWin32".
 
-   :::image type="content" source="images/build-basic/solution-explorer-packages-pinvoke.png" alt-text="Screenshot of the Visual Studio Solution Explorer Packages with PInvoke.User32.":::<br/>*Solution Explorer Packages with PInvoke.User32.*
-
-   Next, double-click the application project file (or right click and select "Edit project file") to open the file in a text editor and confirm the project file now includes the NuGet `PackageReference` for "PInvoke.User32".
-
-   :::code language="xml" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop.csproj" highlight="17":::
+   :::code language="xml" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop.csproj" highlight="39":::
 
 ### Code
 
-1. In the `App.xaml.cs` code-behind file, we get a handle to the [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) using the **WindowNative.GetWindowHandle** WinRT COM interop method (see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md)).
+1. In the `App.xaml.cs` code-behind file, we get a handle to the [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) by using the **WindowNative.GetWindowHandle** WinRT COM interop method (see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md)).
 
-   This method is called from the app's [**OnLaunched**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched) handler, as shown here:
+   That method is called from the app's [**OnLaunched**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched) handler, as shown here:
 
-   :::code language="csharp" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/app.xaml.cs" id="OnLaunched":::
+   :::code language="csharp" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/App.xaml.cs" id="OnLaunched":::
 
-1. We then call a `SetWindowDetails` method, passing the Window handle and preferred dimensions. Remember to add the `using static PInvoke.User32;` directive.
+1. We then call a `SetWindowDetails` method, passing the Window handle and preferred dimensions.
 
    In this method:
 
-   - We call [GetDpiForWindow](/windows/win32/api/winuser/nf-winuser-getdpiforwindow) to get the dots per inch (dpi) value for the window (Win32 uses actual pixels while WinUI 3 uses effective pixels). This dpi value is used to calculate the scale factor and apply it to the width and height specified for the window.
+   - We call [GetDpiForWindow](/windows/win32/api/winuser/nf-winuser-getdpiforwindow) to get the dots per inch (dpi) value for the window (Win32 uses physical pixels, while WinUI 3 uses effective pixels). This dpi value is used to calculate the scale factor, and apply it to the width and height specified for the window.
    - We then call [SetWindowPos](/windows/win32/api/winuser/nf-winuser-setwindowpos) to specify the desired location of the window.
    - Finally, we call [SetWindowLong](/windows/win32/api/winuser/nf-winuser-setwindowlongw) to disable the *Minimize* and *Maximize* buttons.
 
-   :::code language="csharp" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/app.xaml.cs" id="SetWindowDetails" highlight="3,8,11":::
+   :::code language="csharp" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/App.xaml.cs" id="SetWindowDetails" highlight="3,8,18":::
 
 1. In the MainWindow.xaml file, we use a [ContentDialog](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) with a [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) to display a list of all the modules loaded for the current process.
 
-   :::code language="xaml" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/MainWindow.xaml" range="10-19":::
+   :::code language="xaml" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/MainWindow.xaml" range="12-21":::
 
 1. We then replace the `MyButton_Click` event handler with the following code.
 
