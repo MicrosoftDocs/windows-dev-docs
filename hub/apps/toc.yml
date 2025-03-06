@@ -879,7 +879,7 @@ items:
                 items:
                   - name: App Quality
                     href: publish/store-app-quality.md
-                  - name: Upcoming company account verification requirements
+                  - name: EU Digital Services Act requirements
                     href: publish/store-business-verification-reqs.md
                   - name: Microsoft Edge Add-ons store developer policies
                     href: /microsoft-edge/extensions-chromium/store-policies/developer-policies
