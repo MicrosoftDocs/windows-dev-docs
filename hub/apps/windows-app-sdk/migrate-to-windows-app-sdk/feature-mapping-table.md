@@ -25,6 +25,7 @@ This topic compares major feature areas in the different forms in which they app
 | Resources | MRT | MRTCore | For more info, see [MRT to MRTCore migration](guides/mrtcore.md). |
 | .NET Runtime | .NET Native / C# 7 | .NET 6+/C# 9 | The Windows App SDK provides access to the modern .NET runtime, and access to new language features. However, .NET [ReadyToRun compilation](/dotnet/core/deploying/ready-to-run) is not the same as .NET Native, so you should evaluate performance tradeoffs. |
 | 2D Graphics | Win2D | Win2D for WinUI 3 | We're currently working on a version of Win2D that works with the Windows App SDK, in progress. See the [documentation](https://microsoft.github.io/Win2D/WinUI3/html/Introduction.htm) for more information. |
+| Web authentication | WebAuthenticationBroker | OAuth2Manager | The Windows App SDK provides a new API for OAuth functionality. See [Implement OAuth functionality in Windows apps](../../develop/security/oauth2.md) for more information. |
 | Windows Runtime components | Windows Runtime component project templates for UWP |-  C++: Use the **Windows Runtime Component (WinUI 3)** project template. <br> - C#: Use C#/WinRT to author Windows Runtime Components in a .NET Class Library. | We're currently working on support to [Author Windows Runtime Components using C#/WinRT](../../develop/platform/csharp-winrt/authoring.md) for use in the Windows App SDK and WinUI 3. |
 
 ## See Also
