@@ -182,7 +182,7 @@ People run Windows across conventional devices as well as an increasingly divers
 
 ### Enhanced security features in Windows
 
-Windows 11 is built on a foundation of security and privacy. Windows 11 is designed to be the most secure version of Windows yet, and we are committed to helping you build secure apps that take advantage of the latest security features in Windows.
+Windows 11 is built on a foundation of security and privacy. Windows 11 is designed to be the most secure version of Windows yet, and we're committed to helping you build secure apps that take advantage of the latest security features in Windows.
 
 - Protect your Windows apps and backend services with Windows Hello biometric sign-in - [Windows Hello overview](/windows/apps/develop/security/windows-hello).
 - Implement passkey sign-ins across online, enterprise, and government applications, and for payments - [Intro to passkeys](/windows/apps/develop/security/intro).
