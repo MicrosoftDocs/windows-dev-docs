@@ -1,7 +1,7 @@
 ---
 title: Company account verification requirements
 description: Company account verification requirements related to the European Union Digital Services Act
-ms.date: 2/17/2025
+ms.date: 2/27/2025
 ms.topic: article
 keywords: store policies agreement archive DSA
 ms.localizationpriority: high
@@ -91,23 +91,34 @@ Then, expand and edit the **Contact Info** section. Select **Update**.
 ![Upload Document location in Partner Center](images\account-verify-upload.png)
 
 > [!NOTE]
-> Uploaded documents must go through a review process. As a result, it may take significantly longer to veritfy your account, compared to entering a valid DUNS ID.
+> Uploaded documents must go through a review process. As a result, it may take significantly longer to verify your account, compared to entering a valid DUNS ID.
 
 6. Expand the **Contact Information for Customers** tab. Fill out all required fields, then **Save**.
 
 ![Contact Information tab location in Partner Center](images\account-verify-save-info.png)
+
+## Check compliance status as per EU Digital Services Act
+
+To check your compliance status, visit the **Partner Center > Account Settings > Legal Info** page and select the **Developer** tab, as per the instructions above.
+
+The **EU Digital Service Act compliance status** field displays the compliance status of your account.
+
+> [!NOTE]
+> The **Vetting status** field reflects the status of all verification checks. Some of these checks may be unrelated to the EU Digital Services Act. The **EU Digital Service Act compliance status** field is scoped to the specific verification checks detailed in this article.
+
+![Expanded Vetting Status information](images\account-verify-vetting-status.png)
+
 
 ### Common issues when submitting information
 
 Submitted information should be checked for accuracy. Keep the following tips in mind with providing your information.
 
 * We recommend using the **Edge** browser while making these updates, as it may reduce possible errors. 
-* Some users experience the **Save** button being greyed out. This usually indicates a formatting error with the provided information.  Possible reasons include: 
-	- The phone number you provide requires “+” and the country code. For example, a United States phone number starts with “+1”. 
-	- Submitted zip codes must included spaces when necessary.
+* Some users experience the **Save** button being greyed out. This usually indicates a formatting error with the provided information.  Possible reasons include:
+	- Submitted zip codes must include spaces when necessary.
 	- Submitted Website URLs are required to start with `https://`.
-	- The primary contact (aka seller contact email provided should not be a generic email or a group aliass. An an OTP (one time password) will be sent to verify the email is valid. We do not allow plus addressing (abc+xyz@m.com) 
-	- If a primary contact email is updated, make sure to vertify the email with OTP using ‘Verify email’ button. 
+	- The primary contact (aka seller contact email provided should not be a generic email or a group aliass. An OTP (one time password) will be sent to verify the email is valid. We do not allow plus addressing (abc+xyz@m.com) 
+	- If a primary contact email is updated, make sure to verify the email with OTP using ‘Verify email’ button. 
 	- If a new address is provided for customer contact information, it will likely need to be validated. Validate by clicking on the **Validate address** button that appears. If the button is not present, no action is required.  
 
 
