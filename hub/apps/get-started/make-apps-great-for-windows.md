@@ -1,23 +1,25 @@
 ---
 description: The top 11 things you can do to make your app great on Windows 11.
 title: Top 11 things you can do to make your app great on Windows 11
-ms.topic: article
-ms.date: 02/27/2025
+ms.topic: concept-article
+ms.date: 03/06/2025
 keywords: windows win32, desktop development
 ms.localizationpriority: medium
 ms.collection: windows11
+# customer intent: As a Windows developer, I want to know how to make my app great on Windows 11 so that I can provide a better, more secure experience for my users.
 ---
 
 # Top 11 things you can do to make your app great on Windows 11
 
-Windows 11 marks a visual evolution of the Windows operating system. As Windows moves forward, customers continue to set a higher bar for app experiences, too. We see these customer expectations manifest primarily in two areas: *app fundamentals* and *user experience*.
+Windows 11 marks a visual evolution of the Windows operating system. As Windows moves forward, customers continue to set a higher bar for app experiences, too. We see these customer expectations manifest primarily in three areas: *app fundamentals*, *user experience*, and *added security*.
 
 - *App fundamentals* - good performance on low-cost, highly mobile device form factors, and hassle-free app lifecycle and state rehydration/roaming.
 - *User experience* - the ability to work naturally with a complete range of inputs, design and interaction patterns that look and feel at home on current and future devices, and support for modern windowing workflows and shell integration points.
+- *Added security* - deploying apps on a secure platform that protects user data and privacy, and the ability to integrate features like Windows Hello and Passkeys to provide a more secure experience for users.
 
 With entirely new visuals signaling change, [signature experiences](../design/signature-experiences/signature-experiences.md) that showcase the best of Windows and Microsoft together, and a completely new [Store](/windows/uwp/publish) with more apps, Windows 11 is positioned as the Windows for "what's next".
 
-Great apps on Windows meet these customer expectations for app fundamentals and modern user experience, and we are investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](../winui/index.md), [MSIX](/windows/msix), and the [Windows App SDK](../windows-app-sdk/index.md) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
+Great apps on Windows meet these customer expectations for app fundamentals, modern user experience, and added security, and we're investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](../winui/index.md), [MSIX](/windows/msix), and the [Windows App SDK](../windows-app-sdk/index.md) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
 
 Here are the top ~~10~~ 11 things you can do to make your app shine on Windows 11.
 
@@ -66,7 +68,8 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 ![An image of common UI controls](images/great-apps/controls.png)
 
 ### Desktop apps (Win32)
-- Use [WinUI 3](../winui/winui3/index.md) in [Windows App SDK](../windows-app-sdk/index.md) 1.1 or greater to create a Win32 application that can leverage the modern common controls. 
+
+- Use [WinUI 3](../winui/winui3/index.md) in [Windows App SDK](../windows-app-sdk/index.md) 1.1 or greater to create a Win32 application that can leverage the modern common controls.
 - To evaluate the controls, check out the [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*main branch*).
 - Win32 controls that use [UXTheme](/windows/win32/api/uxtheme/) will automatically get a "repaint" of the Light theme for select rejuvenated control visuals. Be sure to test for any issues. For those surfaces that do not get updated automatically, manually update the visuals so that they look coherent with the rest of the update, if possible.
 
@@ -106,9 +109,9 @@ Snap layouts are a new Windows 11 feature to help introduce users to the power o
 
 - Most apps will automatically receive rounded corners and support for the menu with snap layouts, but in some cases you might need to do a little work to get them:
   - Allow the system to draw your border and shadow.
-  -  If you need to draw your own border and shadow:
-     - Call our rounding API to opt in. See [Apply rounded corners in desktop apps for Windows 11](../desktop/modernize/ui/apply-rounded-corners.md).
-     - Use our APIs to have the platform draw and implement the caption buttons. See [Support snap layouts for desktop apps on Windows 11](../desktop/modernize/ui/apply-snap-layout-menu.md).
+  - If you need to draw your own border and shadow:
+    - Call our rounding API to opt in. See [Apply rounded corners in desktop apps for Windows 11](../desktop/modernize/ui/apply-rounded-corners.md).
+    - Use our APIs to have the platform draw and implement the caption buttons. See [Support snap layouts for desktop apps on Windows 11](../desktop/modernize/ui/apply-snap-layout-menu.md).
 - You will get these features automatically if you use UWP or you adopt Windows App SDK windowing to:
   - Configure the style of your window using the pre-defined templates.
   - Customize the title bar of your windows.
@@ -126,7 +129,7 @@ We support Light and Dark themes, which is a great way to let the user express t
 
 Windows 11 refines the behavior of the contextual file operations in the right-click context menu of File Explorer and the Share dialog. If your app creates context menus or defines share targets, you may need to make some changes to ensure that these work well with Windows 11.
 
-#### Context menus
+### Context menus
 
 For Windows 11, we improved the behavior of the context menu in File Explorer in several ways:
 
@@ -143,7 +146,7 @@ If your app defines a context menu extension, the following requirements must be
 - Your context menu extension must be implemented by using the [**IExplorerCommand**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) interface. Context menu extensions that implement [**IContextMenu**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-icontextmenu) will appear in the older context menu instead.
 - Your app must be a *packaged app* so that it has package identity at runtime. See [Features that require package identity](../desktop/modernize/modernize-packaged-apps.md) for some options for packaging your app.
 
-#### Share dialog
+### Share dialog
 
 For Windows 11, we improved the behavior of the Share dialog in several ways.  
 
@@ -169,12 +172,21 @@ We have updated icons and a new UI font called "Segoe UI Variable". We recommend
 > [!NOTE]
 > When an app that uses the new font runs in Windows 10 or down-level, it will fallback to use the old font and degrade gracefully.
 
-## 10. Make use of the innovative features available in Windows
+## 10. Make use of the innovative, secure features available in Windows
 
-People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also Arm-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
+People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also Arm-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics and neural processing chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
 
 - Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/windows-ml/).
+- Use AI models that power Windows Copilot Runtime on Copilot+ PCs and run locally - [Windows Copilot Runtime overview](/windows/ai/apis/).
 - Utilize best practices for Notifications and content sharing - [Notifications (Design basics)](/windows/win32/uxguide/mess-notif).
+
+### Enhanced security features in Windows
+
+Windows 11 is built on a foundation of security and privacy. Windows 11 is designed to be the most secure version of Windows yet, and we are committed to helping you build secure apps that take advantage of the latest security features in Windows.
+
+- Protect your Windows apps and backend services with Windows Hello biometric sign-in - [Windows Hello overview](/windows/apps/develop/security/windows-hello).
+- Implement passkey sign-ins across online, enterprise, and government applications, and for payments - [Intro to passkeys](/windows/apps/develop/security/intro).
+- Sign your apps with a digital certificate to ensure that [Smart App Control](https://support.microsoft.com/windows/app-browser-control-in-the-windows-security-app-8f68fb65-ebb4-3cfb-4bd7-ef0f376f3dc3#bkmk_smart-app-control) can verify the integrity of your app - [Introduction to code signing](/windows/win32/seccrypto/cryptography-tools#introduction-to-code-signing) and [Microsoft Trusted Root Program requirements](/security/trusted-root/program-requirements).
 
 ## 11. Utilize the power of MSIX and Windows Store to package and distribute your application
 
@@ -190,7 +202,7 @@ Distribute your app wherever it makes sense for your business. Windows lets you 
 
   [What is MSIX?](/windows/msix/overview)
 
-## Related articles
+## Related content
 
 - [Windows Dev Center](https://developer.microsoft.com/windows/)
 - [What's cool in Windows 11](https://developer.microsoft.com/windows/windows-for-developers/)
