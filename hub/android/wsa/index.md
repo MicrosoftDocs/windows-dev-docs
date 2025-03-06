@@ -1,9 +1,9 @@
 ---
 title: Windows Subsystem for Android&trade;️
 description: Windows Subsystem for Android&trade;️ enables your Windows 11 device to run Android applications that are available in the Amazon Appstore. Learn more about set up, device requirements, installing and uninstalling, input compatibility, testing and debugging, and using the Amazon Appstore.
-ms.reviewer: mousma
+ms.reviewer: andreww-msft
 ms.topic: article
-ms.date: 11/21/2024
+ms.date: 03/05/2025
 ---
 
 # Windows Subsystem for Android&trade;️
@@ -11,9 +11,7 @@ ms.date: 11/21/2024
 Windows Subsystem for Android&trade;️ enables your Windows 11 device to run Android applications that are available in the Amazon Appstore. Android is a trademark of Google LLC. If you're a developer interested in targeting Windows desktop devices and optimizing for the Windows operating system, this guide is for you.
 
 > [!IMPORTANT]
-> Microsoft is ending support for the Windows Subsystem for Android&trade;️ (WSA). As a result, the Amazon Appstore on Windows and all applications and games dependent on WSA will no longer be supported beginning **March 5, 2025**. Until then, technical support will remain available to customers.  
-> Customers that have installed the Amazon Appstore or Android apps prior to March 5, 2024, will continue to have access to those apps through the deprecation date of March 5, 2025. Please reach out to our support team for further questions at [support.microsoft.com](https://support.microsoft.com).
-> We are grateful for the support of our developer community and remain committed to listening to feedback as we evolve experiences.
+> Starting March 5, 2025, Windows Subsystem for Android&trade; and the Amazon Appstore are no longer available in the Microsoft Store.
 
 - [Amazon Appstore on Windows 11 discontinuation notice](https://developer.amazon.com/apps-and-games/appstore-on-windows-11).
 - [Windows Subsystem for Android&trade;️ repository on GitHub](https://github.com/microsoft/WSA)
