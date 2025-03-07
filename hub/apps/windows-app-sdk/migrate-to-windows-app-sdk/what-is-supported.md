@@ -33,9 +33,10 @@ WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, 
 | CoreTextServicesManager | ⚠️ Supported only on Windows 11 |
 | [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | ⚠️ Supported on Windows 11 (not yet available on Windows 10) |
 | [CoreWindow](/uwp/api/windows.ui.core.corewindow) and related APIs | ❌ Not supported in 1.7. For alternative APIs with some of the same functionality, see [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow), and [HWND](/windows/apps/develop/ui-input/retrieve-hwnd)-based APIs. |
+| [Gaming input](/uwp/api/windows.gaming.input) | ❌ Not supported in 1.7 |
 | [InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) | ❌ Not supported in 1.7 |
 | [Single-app kiosk](https://github.com/microsoft/WindowsAppSDK/issues/3642) | ❌ Not supported in 1.7 |
-| [Xbox](/windows/uwp/xbox-apps/) and HoloLens support | ❌ Not supported in 1.7 |
+| [Xbox](/windows/uwp/xbox-apps/) and HoloLens | ❌ Not supported in 1.7 |
 
 ## Performance considerations
 
