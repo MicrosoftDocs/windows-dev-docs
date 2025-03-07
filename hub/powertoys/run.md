@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: Run is a quick launcher for power users that contains additional features without sacrificing performance.
-ms.date: 12/25/2024
+ms.date: 03/07/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -239,6 +239,21 @@ Examples:
 - `) 3/27/2022` to show all available formats for a date value.
 - `) calendar week::3/27/2022` to show the calendar week for a date value.
 - `) unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
+
+#### Custom formats
+The plugin has a setting were you can define custom formats. The setting is a multiline text box were you have ta add one format per line.
+The syntax is `<format name>=<format pattern>` for using the local time and `<format name>=UTC:<format pattern>` for using the Universal Time Convention (UTC).
+Supported are all [standard patterns](https://learn.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) and the following ones:
+- `DOW`: Number of the day in the week.
+- `WOM`: Number of week in the month.
+- `WOY`: Number of the week in the year.
+- `EAB`: Era abbreviation.
+- `WFT`: Windows file time.
+- `UXT`: Unix time stamp.
+- `UMS`: Unix time stamp in milliseconds.
+- `OAD`: OLE Automation date.
+- `EXC`: Excel's 1900 based date value.
+- `EXF`: Excel's 1904 based date value.
 
 ### Unit converter plugin
 
