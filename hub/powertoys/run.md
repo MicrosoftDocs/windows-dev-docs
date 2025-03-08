@@ -243,7 +243,8 @@ Examples:
 #### Custom formats
 The plugin includes a setting where custom formats can be defined. Custom formats are entered in a multiline text box which accepts one format per line.
 The syntax is `<format name>=<format pattern>` for using the local time and `<format name>=UTC:<format pattern>` for using the Universal Time Convention (UTC).
-Supported are all [standard patterns](https://learn.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) and the following ones:
+The supported formats include all [standard patterns](https://learn.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) and the following:
+
 - `DOW`: Number of the day in the week.
 - `WOM`: Number of week in the month.
 - `WOY`: Number of the week in the year.
