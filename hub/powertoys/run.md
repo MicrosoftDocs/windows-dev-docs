@@ -241,7 +241,7 @@ Examples:
 - `) unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
 #### Custom formats
-The plugin has a setting were you can define custom formats. The setting is a multiline text box were you have ta add one format per line.
+The plugin includes a setting where custom formats can be defined. Custom formats are entered in a multiline text box which accepts one format per line.
 The syntax is `<format name>=<format pattern>` for using the local time and `<format name>=UTC:<format pattern>` for using the Universal Time Convention (UTC).
 Supported are all [standard patterns](https://learn.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) and the following ones:
 - `DOW`: Number of the day in the week.
