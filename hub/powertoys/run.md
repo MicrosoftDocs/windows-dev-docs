@@ -271,7 +271,7 @@ The plugin includes a setting where custom formats can be defined. Custom format
 | `WFT`| Windows file time as number. |
 | `UXT`| Unix time stamp as number. |
 | `UMS`| Unix time stamp in milliseconds  as number. |
-| `OAD`| OLE Automation date number. |
+| `OAD`| OLE Automation date as number. |
 | `EXC`| Excel's 1900 based date value as number. |
 | `EXF`| Excel's 1904 based date value as number. |
 
