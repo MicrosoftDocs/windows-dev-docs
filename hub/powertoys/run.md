@@ -242,19 +242,39 @@ Examples:
 
 #### Custom formats
 The plugin includes a setting where custom formats can be defined. Custom formats are entered in a multiline text box which accepts one format per line.
-The syntax is `<format name>=<format pattern>` for using the local time and `<format name>=UTC:<format pattern>` for using the Universal Time Convention (UTC).
-The supported formats include all [standard patterns](https://learn.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) and the following:
 
-- `DOW`: Number of the day in the week.
-- `WOM`: Number of week in the month.
-- `WOY`: Number of the week in the year.
-- `EAB`: Era abbreviation.
-- `WFT`: Windows file time.
-- `UXT`: Unix time stamp.
-- `UMS`: Unix time stamp in milliseconds.
-- `OAD`: OLE Automation date.
-- `EXC`: Excel's 1900 based date value.
-- `EXF`: Excel's 1904 based date value.
+**Please use the following syntax:**
+
+- `<Format name>=<Format pattern>` for using the local time.
+- `<Format name>=UTC:<Format pattern>` for using the Universal Time Convention (UTC).
+
+> [!NOTE]
+> - `Format name`: Every charter except the equal sign is supported.
+> - `Format pattern`: You can escape the pattern and the backslash itself as text by using a backslash as prefix.
+
+**Examples:**
+
+- `MyFormat=dd-MMMM-yyyy`
+- `MySecondFormat=dddd (Da\y nu\mber: DOW)`
+- `MyUtcFormat=UTC:hh:mm:ss`
+
+
+**Supported format pattern:**
+
+| Format pattern | Description |
+| :--- | :--- |
+| Standard pattern like `hh:mm:ss`. |  Please see this [page](https://learn.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) for more information.
+| `DOW`| Number of the day in the week. |
+| `WOM`| Number of week in the month. |
+| `WOY`| Number of the week in the year. |
+| `EAB`| Era abbreviation. |
+| `WFT`| Windows file time as number. |
+| `UXT`| Unix time stamp as number. |
+| `UMS`| Unix time stamp in milliseconds  as number. |
+| `OAD`| OLE Automation date number. |
+| `EXC`| Excel's 1900 based date value as number. |
+| `EXF`| Excel's 1904 based date value as number. |
+
 
 ### Unit converter plugin
 
