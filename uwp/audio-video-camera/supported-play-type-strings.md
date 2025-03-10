@@ -25,7 +25,9 @@ The content type string format described in this article are used by the followi
 **WinRT APIs**
 
 - [ProtectionCapabilities.IsTypeSupported](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported)
-- [:Windows.UI.Xaml.Controls.MediaElement.CanPlayType(System.String)](/uwp/api/windows.ui.xaml.controls.mediaelement.canplaytype)
+- [Windows.UI.Xaml.Controls.MediaElement.CanPlayType(System.String)](/uwp/api/windows.ui.xaml.controls.mediaelement.canplaytype)
+
+https://learn.microsoft.com/en-us/uwp/api/windows.media.protection.protectioncapabilityresult?view=winrt-26100
 
 **Microsoft Media Foundation APIs**
 
@@ -35,6 +37,8 @@ The content type string format described in this article are used by the followi
 - [IMFMediaSourceExtension::IsTypeSupported](/windows/win32/api/mfmediaengine/nf-mfmediaengine-imfmediasourceextension-istypesupported)
 - [IMFMediaEngine::CanPlayType](/windows/win32/api/mfmediaengine/nf-mfmediaengine-imfmediaengine-canplaytype)
 - [IMFMediaEngineExtension::CanPlayType](/windows/win32/api/mfmediaengine/nf-mfmediaengine-imfmediaengineextension-canplaytype)
+
+Many of these APIs return enumeration values that express the result as "NotSupported", "Maybe", or "Probably". For WinRT APIs there are the[ProtectionCapabilityResult](/uwp/api/windows.media.protection.protectioncapabilityresult) and [MediaCanPlayResponse](/uwp/api/windows.ui.xaml.media.mediacanplayresponse) enumerations. For Media Foundation there is the [MF_MEDIA_ENGINE_CANPLAY](/windows/win32/api/mfmediaengine/ne-mfmediaengine-mf_media_engine_canplay) enumeration. Some Media Foundation APIs simply return a boolean value indicating a binary supported or unsupported result.
 
 
 ## Media type and subtype
@@ -46,15 +50,21 @@ Windows APIs only support content type strings with the media type `"video"` and
 |-------|-------------|----------------|--------------------|
 | "video/mp4" | Video media type and MPEG-4 subtype/container. | |
 
-## Video codec
+
+
+## Video codecs
 
 | Value | Description | Remarks |
 |-------|-------------|----------------|--------------------|
 | "avc1" | H.264 | |
 | "hvc1" | HEVC  | |
 | "hev1" | HEVC  | |
-| "vp9" | VP9 | Support introduced in Windows 10, version 1709 |
-| "vp09" | VP9 | Support introduced in Windows 10, version 1709 |
+| "vp9" | VP9 | |
+| "vp09" | VP9 | |
+| "avc3" | H.264 | |
+| "av1" | AOMedia Video 1 | |
+| "av01" | AOMedia Video 1 | |
+
 
 ## Features
 
@@ -93,21 +103,44 @@ The intersection algorithm is:
 
 It is up to the content provider to choose the resolution limit to use when this policy is on. A 1080p limit is recommended, but 720p may be used.  Note that the input for this policy comes from the Video Settings user interface page added in Windows 10, version 1709. 
 
+## Audio codecs
+
+| Value | Description | Remarks |
+|-------|-------------|---------|
+| "mp4a" | MPEG-4 Audio | |
+| "ac-3" | Dolby Digital | |
+| "ec-3" | Dolby Digital Plus | |
+| "ac-4" | Dolby AC-4 | |
+| "flac" | FLAC | |
+| "mp3" | MP3 | |
+
 ### Supported audio endpoint codecs
 
-Some audio encoding features require the audio endpoint to support the feature natively. The *audio-endpoint-codec* extension is useful for applications and streaming services, allowing them to figure out dynamically whether they should send stereo audio or 5.1 (because the device supports 5.1), and therefore control used bandwidth while maximizing audio quality. Support for *audio-endpoint-codec* was introduced in TBD Windows version.
+Some audio encoding features require the audio endpoint to support the feature natively. The *audio-endpoint-codec* extension is useful for applications and streaming services, allowing them to figure out dynamically whether they should send stereo audio or 5.1 (because the device supports 5.1), and therefore control used bandwidth while maximizing audio quality. 
+
+The `audio-endpoint-codec` query differs from the `codecs` query because it determines whether the audio endpoint device connected to the PC supports the specified format. So, for example, if a PC has the software decoder for the AC3 codec, the `codecs=ac-3` query will succeed. If the PC is using basic headphones as the audio endpoint, the `audio-endpoint-codec=ac-3` query will fail. But if the PC is connected to an audio/video receiver that can decode AC3 format, the `audio-endpoint-codec=ac-3` query will pass.
+
+Support for *audio-endpoint-codec* was introduced in Windows 10, build 1803.
 
 The following is an example content type string using *audio-endpoint-codec*.
 
 `'video/mp4; codecs="avc1,mp4a"; features="audio-endpoint-codec=DD"'`
 
+The following is an example content type string for uncompressed PCM audio.
+
+`'video/mp4; features="audio-endpoint-codec=PCM2.0"'`
+
+Note that if the endpoint supports more or the same number of channels as specified, the check will succeed. So, if the system is configured for 5.1 audio, then checks for "PCM2.0" and "PCM5.1" will pass, but a check for "PCM7.1" will fail.
+
+
 | Codec string | Description | Remarks |
 |--------------|-------------|---------|
 | DD             | Dolby Digital            |        |
-| DD+JOC             | Colby Digital + Joint Object Coding            |         |
-| DTS |   Digital Theater Sound          |        |
-| DTSHD |   Digital Theater Sound HD          |         |
-| PCM2.0 |  Pulse Code Modulation 2.0 channel           |         |
-| PCM5.1 |  Pulse Code Modulation 5.1 channel           |         |
-| PCM7.1 |  Pulse Code Modulation 7.1 channel           |         |
+| DD+ | Dolby Digital Plus | | 
+| DD+JOC             | Dolby Digital + JOC compressed spatial audio            |         |
+| DTS |   DTS compressed audio          |        |
+| DTSHD |   DTS-HD compressed audio          |         |
+| PCM2.0 |  Uncompressed 2-channel audio           |         |
+| PCM5.1 |  Uncompressed 5.1 channel audio           |         |
+| PCM7.1 |  Uncompressed 7.1 channel audio          |         |
 
