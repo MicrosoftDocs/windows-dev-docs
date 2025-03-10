@@ -33,7 +33,7 @@ As a further step in assisting you to migrate your UWP apps to the Windows App S
 
 ## Containerization benefits
 
-When transitioning to the Windows App SDK, UWP applications might lose the inherent containerization benefits of their original platform. However, those benefits can be restored by using Win32 App Isolation&mdash;a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more info, and to begin using Win32 App Isolation, visit [Welcome to the Win32 app isolation repo](https://github.com/microsoft/win32-app-isolation) on GitHub.
+When transitioning to the Windows App SDK, UWP applications might lose the inherent containerization benefits of their original platform. However, those benefits can be restored by using Win32 App Isolation&mdash;a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more info, and to begin using Win32 App Isolation, visit [Win32 app isolation documentation](https://learn.microsoft.com/windows/win32/secauthz/app-isolation-overview) on GitHub.
 
 ## Topics in this section
 
