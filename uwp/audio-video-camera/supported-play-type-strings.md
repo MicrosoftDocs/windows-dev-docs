@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Supported media type strings for querying media feature support
 
-This article lists the MIME type strings supported for the Windows APIs that query for supported media playback types. The terms "content type" and "type" are well known historically as MIME typeThese base strings are consistent with those used in the HTML5 [HTMLMediaElement.canPlayType](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType) method. These strings allow developers to query for whether specified media content, codecs, and features are supported.
+This article lists the MIME type strings supported for the Windows APIs that query for supported media playback types. The terms "content type" and "type" are well known historically as MIME typeThese base strings are consistent with those used in the HTML5 [HTMLMediaElement.canPlayType](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canPlayType) method. These strings allow developers to query for whether specified media content, codecs, and features are supported.
 
 The content type strings are defined in the following specifications.
 
@@ -27,7 +27,6 @@ The content type string format described in this article are used by the followi
 - [ProtectionCapabilities.IsTypeSupported](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported)
 - [Windows.UI.Xaml.Controls.MediaElement.CanPlayType(System.String)](/uwp/api/windows.ui.xaml.controls.mediaelement.canplaytype)
 
-https://learn.microsoft.com/en-us/uwp/api/windows.media.protection.protectioncapabilityresult?view=winrt-26100
 
 **Microsoft Media Foundation APIs**
 
@@ -38,7 +37,7 @@ https://learn.microsoft.com/en-us/uwp/api/windows.media.protection.protectioncap
 - [IMFMediaEngine::CanPlayType](/windows/win32/api/mfmediaengine/nf-mfmediaengine-imfmediaengine-canplaytype)
 - [IMFMediaEngineExtension::CanPlayType](/windows/win32/api/mfmediaengine/nf-mfmediaengine-imfmediaengineextension-canplaytype)
 
-Many of these APIs return enumeration values that express the result as "NotSupported", "Maybe", or "Probably". For WinRT APIs there are the[ProtectionCapabilityResult](/uwp/api/windows.media.protection.protectioncapabilityresult) and [MediaCanPlayResponse](/uwp/api/windows.ui.xaml.media.mediacanplayresponse) enumerations. For Media Foundation there is the [MF_MEDIA_ENGINE_CANPLAY](/windows/win32/api/mfmediaengine/ne-mfmediaengine-mf_media_engine_canplay) enumeration. Some Media Foundation APIs simply return a boolean value indicating a binary supported or unsupported result.
+Many of these APIs return enumeration values that express the result as "NotSupported", "Maybe", or "Probably". For WinRT APIs there are the [ProtectionCapabilityResult](/uwp/api/windows.media.protection.protectioncapabilityresult) and [MediaCanPlayResponse](/uwp/api/windows.ui.xaml.media.mediacanplayresponse) enumerations. For Media Foundation there is the [MF_MEDIA_ENGINE_CANPLAY](/windows/win32/api/mfmediaengine/ne-mfmediaengine-mf_media_engine_canplay) enumeration. Some Media Foundation APIs simply return a boolean value indicating a binary supported or unsupported result.
 
 
 ## Media type and subtype
