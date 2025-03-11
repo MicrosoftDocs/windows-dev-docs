@@ -55,7 +55,6 @@ From the Settings menu, the following options can be configured:
 | Backup count | When **Automatically delete backups** is **Based on Count**, determine the number of backups to keep. Older backups will be deleted once the limit is reached. |
 | Days | When **Automatically delete backups** is **Based on age and count**, determine the number of days to keep backups. Older backups will be deleted once the limit is reached. An optional count of backups can be configured to always keep a fixed number of backups despite their age. |
 
-
 ## Troubleshooting
 
 A "Failed to save hosts file" message appears if a change is made without administrator permissions:
