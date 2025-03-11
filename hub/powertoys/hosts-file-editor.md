@@ -51,8 +51,8 @@ From the Settings menu, the following options can be configured:
 | Encoding | Choose the encoding used to save the hosts file between **UTF8** and **UTF8 with BOM**. |
 | Backups hosts file | If enabled, a backup of the hosts file is created when you save for the first time in a session. |
 | Location | Specify where backups are created. Default `%SystemRoot%\System32\drivers\etc`. |
-| Automatically delete backups | Choose **Never**, **Based on Count** or **Based on age and count**. |
-| Backup count | When **Automatically delete backups** is **Based on Count**, determine the number of backups to keep. Older backups will be deleted once the limit is reached. |
+| Automatically delete backups | Choose **Never**, **Based on count** or **Based on age and count**. |
+| Backup count | When **Automatically delete backups** is **Based on count**, determine the number of backups to keep. Older backups will be deleted once the limit is reached. |
 | Days | When **Automatically delete backups** is **Based on age and count**, determine the number of days to keep backups. Older backups will be deleted once the limit is reached. An optional count of backups can be configured to always keep a fixed number of backups despite their age. |
 
 ## Troubleshooting
