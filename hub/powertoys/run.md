@@ -241,6 +241,7 @@ Examples:
 - `) unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
 #### Custom formats
+
 The plugin includes a setting where custom formats can be defined. Custom formats are entered in a multiline text box which accepts one format per line.
 
 **Please use the following syntax:**
@@ -258,12 +259,11 @@ The plugin includes a setting where custom formats can be defined. Custom format
 - `MySecondFormat=dddd (Da\y nu\mber: DOW)`
 - `MyUtcFormat=UTC:hh:mm:ss`
 
-
 **Supported format pattern:**
 
 | Format pattern | Description |
 | :--- | :--- |
-| Standard pattern like `hh:mm:ss`. |  Please see this [page](https://learn.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) for more information.
+| Standard pattern like `hh:mm:ss`. |  Please see this [page](/dotnet/standard/base-types/custom-date-and-time-format-strings) for more information.
 | `DOW`| Number of the day in the week. |
 | `WOM`| Number of week in the month. |
 | `WOY`| Number of the week in the year. |
@@ -274,7 +274,6 @@ The plugin includes a setting where custom formats can be defined. Custom format
 | `OAD`| OLE Automation date as number. |
 | `EXC`| Excel's 1900 based date value as number. |
 | `EXF`| Excel's 1904 based date value as number. |
-
 
 ### Unit converter plugin
 
