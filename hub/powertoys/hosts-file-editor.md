@@ -35,7 +35,8 @@ To filter host file entries, select the filter icon and enter data in either the
 
 ## Back up Hosts file
 
-Hosts File Editor creates a backup of the hosts file before editing session. The backup files are located near the hosts file in `%SystemRoot%\System32\drivers\etc` named `hosts_PowerToysBackup_YYYYMMDDHHMMSS` and are deleted after 15 days.
+Hosts File Editor creates a backup of the hosts file before editing session. By default backup files are located near the hosts file in `%SystemRoot%\System32\drivers\etc` named `hosts_PowerToysBackup_YYYYMMDDHHMMSS`.  
+Backups are deleted after 15 days, but the most recent 5 are always kept. This behavior can be configured in the PowerToys Settings.
 
 ## Settings
 
@@ -47,6 +48,13 @@ From the Settings menu, the following options can be configured:
 | Show a warning at startup | Warns that editing hosts can change DNS names resolution. Enabled by default. |
 | Additional lines position | Default value is **Top**. If **Bottom** is selected, the file header is moved below hosts settings to the bottom. |
 | Consider loopback addresses as duplicates | Loopback addresses (like 127.0.0.1 and ::1) are considered as duplicates. |
+| Encoding | Choose the encoding used to save the hosts file between **UTF8** and **UTF8 with BOM**. |
+| Backups hosts file | If enabled, a backup of the hosts file is created when you save for the first time in a session. |
+| Location | Specify where backups are created. Default `%SystemRoot%\System32\drivers\etc`. |
+| Automatically delete backups | Choose **Never**, **Based on Count** or **Based on age and count**. |
+| Backup count | When **Automatically delete backups** is **Based on Count**, determine the number of backups to keep. Older backups will be deleted once the limit is reached. |
+| Days | When **Automatically delete backups** is **Based on age and count**, determine the number of days to keep backups. Older backups will be deleted once the limit is reached. An optional count of backups can be configured to always keep a fixed number of backups despite their age. |
+
 
 ## Troubleshooting
 
