@@ -142,4 +142,5 @@ Note that if the endpoint supports more or the same number of channels as specif
 | PCM2.0 |  Uncompressed 2-channel audio           |         |
 | PCM5.1 |  Uncompressed 5.1 channel audio           |         |
 | PCM7.1 |  Uncompressed 7.1 channel audio          |         |
+| AC3 | Dolby Digital | |
 
