@@ -86,7 +86,7 @@ Windows APIs only support content type strings with the media type `"video"` and
 |5     |Video General: Efficiency</sup>|efficiency-setting         |0 (off = no restriction), 1 (on = limit resolution when on battery power)         |Does the user want battery life, streaming overhead, and/or download speed in preference to highest resolution?        |Y       | Support introduced in Windows 10, version 1709. See [Resolution with efficiency setting enabled](#resolution-with-efficiency-setting-enabled). |
 |6a     |Video Decryption|encryption-type         |“cenc” or “cbcs”        |Is this encryption type supported for decryption with the specified codec / key-system? If value is unspecified, default value of "cenc" is used.        |N       | |
 |6b     |Video Decryption|encryption-iv-size         |8 or 16 |Is this Initialization Vector (IV) size (in bytes) supported for decryption with the specified codec / key-system? If value is unspecified, default value of 8 is used.        |N       | |
-| 7 | Audio Render | audio-endpoint-codec | A audio codec string. See [Supported audio endpoint codecs] (#supported-audio-endpoint-codecs) | N | Support introduced in **TBD version**. Only supported for Microsoft Media Foundation APIs. Unsupported for WinRT APIs. |
+| 7 | Audio Render | audio-endpoint-codec | An audio codec string. See [Supported audio endpoint codecs] (#supported-audio-endpoint-codecs) | Is this audio codec supported natively by the audio endpoint? | N | Support introduced in Windows 10, build 1803.. Only supported for Microsoft Media Foundation APIs. Unsupported for WinRT APIs. |
 
 
 
