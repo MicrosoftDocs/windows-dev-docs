@@ -30,7 +30,7 @@ sections:
           For a great review of today's options for Windows developers, watch the most recent [Windows Dev Chat](https://youtube.com/playlist?list=PLI_J2v67C23bxTffW4XewbUEAOfSVZkrk&si=uARk7gCetDMnrxkJ) episode, [Choosing your ideal dev platform](https://www.youtube.com/live/4PJBJ8GICjM?si=T1uu4Dm8UKdf6lGn), where they discuss WinUI, .NET MAUI, React Native, Blazor, and Progressive Web Apps (PWAs).
 
           You can also refer to the [overview of app development options](./index.md) for Windows developers.
-      - question: Why is client app development still crucial for modern digital transformation in the era of cloud services?
+      - question: Why is client application development still crucial for modern digital transformation in the era of cloud services?
         answer: |
           In the age of cloud services, client app development remains a critical component of modern digital transformation. For developers, building client applications is essential not just for reach but for delivering responsive, meaningful interactions on user devices.
 
