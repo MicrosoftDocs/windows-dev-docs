@@ -27,6 +27,7 @@ The system launches Microsoft Copilot hardware key providers that implement Pres
 The following example shows the **uap:Extension** registering the URI scheme "myapp-copilothotkey".
 
 ```xml
+<!-- Package.appxmanifest -->
 ...
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
 ...
@@ -50,6 +51,8 @@ Inside of the **uap3:AppExtension** element, add a [uap3:Properties](/uwp/schema
 The following example shows a Copilot hot key provider registration with support for PressAndHoldAndRelease.
 
 ```xml
+<!-- Package.appxmanifest -->
+
 <Extensions> 
   ...
   <uap3:Extension Category="windows.appExtension"> 
@@ -67,5 +70,129 @@ The following example shows a Copilot hot key provider registration with support
   ...
 ```
 
-## Handle app activation
+## Handle URI activation
+
+```csharp
+// App.xaml.cs
+
+private void OnActivated()
+{
+
+    AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
+    if (args.Kind == ExtendedActivationKind.Launch)
+    {
+        // launched by other means (possibly by copilot button press) 
+        // implement primary UI 
+
+    }
+    else if (args.Kind == ExtendedActivationKind.Protocol)
+    {
+        var protocolArgs = (Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)args.Data;
+        WwwFormUrlDecoder decoderEntries = new WwwFormUrlDecoder(protocolArgs.Uri.Query);
+        string state = Uri.UnescapeDataString(decoderEntries.GetFirstValueByName("state"));
+
+        if (state == "Down")
+        {
+            // Implement press and hold begin activation logic: 
+            //  Start microphone capture 
+            //  Show no activate a window indicating audio capture is happening 
+        }
+        else if (state == "Up")
+        {
+            // Implemented press and hold finished logic 
+            //  Stop microphone capture 
+            //  Indicate audio capture has stopped 
+            //  Send the audio to the LLM 
+        }
+
+    }
+}
+```
+
+## Handle fast path invocation
+
+```xml
+<!-- Package.appxmanifest -->
+
+<uap3:Extension Category="windows.appExtension">
+  <uap3:AppExtension Name="com.microsoft.windows.copilotkeyprovider"
+    Id="MyAppId"
+    DisplayName="App display name"
+    Description="App description"
+    PublicFolder="Public">
+    <uap3:Properties>
+      <SingleTap FastPathValue="0"/>
+      <PressAndHoldStart FastPathValue="1">myapp-copilothotkey://?state=Down</PressAndHoldStart>
+      <PressAndHoldStop FastPathValue="2">myapp-copilothotkey://?state=Up</PressAndHoldStop>
+    </uap3:Properties>
+  </uap3:AppExtension>
+</uap3:Extension>
+```
+
+```csharp
+// App.xaml.cs
+
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+{   
+    ...
+    var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
+
+    IPropertyStore propertyStore;
+    int hr = SHGetPropertyStoreForWindow(hwnd, ref IID_IPropertyStore, out propertyStore);
+    PropVariant propVar = new PropVariant();
+    propVar.vt = (ushort)VarEnum.VT_UI4;
+    propVar.ulVal = MainWindow.CopilotHotKeyFastpathMessage;
+    propertyStore.SetValue(PKEY_Shell_CopilotKeyProviderFastPathMessage, ref propVar);
+    propertyStore.Commit();
+    ...
+}
+```
+
+```csharp
+// MainWindow.xaml.cs
+
+public MainWindow()
+{
+    ...
+    var hWndMain = WinRT.Interop.WindowNative.GetWindowHandle(this);
+    Microsoft.UI.Windowing.AppWindow appWindow = AppWindow;
+    
+    SubClassDelegate = new SUBCLASSPROC(WindowSubClass);
+    bool bRet = SetWindowSubclass((int)appWindow.Id.Value, SubClassDelegate, 0, 0);
+    ...
+}
+```
+
+```csharp
+private int WindowSubClass(IntPtr hWnd, uint uMsg, IntPtr wParam,
+           IntPtr lParam, IntPtr uIdSubclass, uint dwRefData)
+{
+    switch (uMsg)
+    {
+        case CopilotHotKeyFastpathMessage:
+        {
+            switch (lParam)
+            {
+                case 0:
+                    // Copilot key press, show our window 
+                    PInvoke.ShowWindow((HWND)hWnd, SHOW_WINDOW_CMD.SW_SHOW);
+                    break;
+                case 1:
+                    // Copilot key press and hold start, show our window without activation 
+                    // and start listening 
+                    PInvoke.ShowWindow((HWND)hWnd, SHOW_WINDOW_CMD.SW_SHOWNA);
+                    // Start microphone recording 
+                    break;
+                case 2:
+                    // Copilot key press and hold stop, stop listening and send query 
+                    break;
+            }
+        }
+        return 0;
+    }
+
+    return PInvoke.DefSubclassProc((HWND)hWnd, uMsg, wParam, lParam);
+
+}
+```
 
