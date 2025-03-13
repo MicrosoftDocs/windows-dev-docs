@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [IconInfo](iconinfo.md) class with a dark mode and a light mode version of the icon.
 
@@ -34,7 +34,7 @@ public IconInfo(IconData light, IconData dark)
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [IconInfo](iconinfo.md) class with one version of the icon, used for both light and dark modes.
 

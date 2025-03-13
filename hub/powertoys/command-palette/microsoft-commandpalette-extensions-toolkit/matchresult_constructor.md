@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [MatchResult](matchresult.md) class with its [Success](matchresult.md#properties) property set to `success` and [SearchPrecision](matchresult.md#properties) set to `searchPrecision`.
 
@@ -34,7 +34,7 @@ public MatchResult(bool success, SearchPrecisionScore searchPrecision)
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [MatchResult](matchresult.md) class with its [Success](matchresult.md#properties) property set to `success`, [SearchPrecision](matchresult.md#properties) set to `searchPrecision`, [MatchData](matchresult.md#properties) set to `matchData`, and [RawScore](matchresult.md#properties) set to `rawScore`.
 

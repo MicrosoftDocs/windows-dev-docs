@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [PropChangedEventArgs](propchangedeventargs.md) class with the [PropertyName](propchangedeventargs.md#properties) property set to `propertyName`.
 

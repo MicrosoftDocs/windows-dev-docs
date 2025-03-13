@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [OpenUrlCommand](openurlcommand.md) class with the URL target set to `target`, its name set to "Open", and an icon added.
 

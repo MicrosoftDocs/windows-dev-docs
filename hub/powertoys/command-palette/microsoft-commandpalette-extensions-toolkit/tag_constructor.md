@@ -1,6 +1,6 @@
 ---
-title: Tag Constructors
-description: 
+title: Tag Constructors definition
+description: The Tag class has two constructors for creating new tag instances with or without text initialization.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [Tag](tag.md) class.
 
@@ -26,7 +26,7 @@ public Tag()
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [Tag](tag.md) class with its `_text` set to `text`.
 

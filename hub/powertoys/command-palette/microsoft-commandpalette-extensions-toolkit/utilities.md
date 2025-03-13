@@ -1,6 +1,6 @@
 ---
-title: Utilities Class
-description: 
+title: Utilities Class (Command Palette Extensions Toolkit)
+description: The Utilities Command Palette class provides utility methods for the Command Palette Extensions Toolkit.
 ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -10,7 +10,9 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
+
+The **Utilities** class provides utility methods for the Command Palette Extensions Toolkit.
 
 ## Methods
 

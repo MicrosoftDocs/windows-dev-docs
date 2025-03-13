@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [Setting](setting.md) class with [Value](setting.md#properties) property set to its default value and [Key](setting.md#properties) set to an empty string.
 
@@ -28,7 +28,7 @@ protected Setting()
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [Setting](setting.md) class with its [Key](setting.md#properties) property set to `key` and its [Value](setting.md#properties) set to `defaultValue`.
 
@@ -50,7 +50,7 @@ public Setting(string key, T defaultValue)
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [Setting](setting.md) class with its [Key](setting.md#properties) property set to `key`, its [Value](setting.md#properties) set to `defaultValue`, its [Label](setting.md#properties) set to `label`, and its [Description](setting.md#properties) set to `description`.
 

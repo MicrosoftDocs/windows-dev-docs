@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [DetailsLink](detailslink.md) class. 
 
@@ -26,7 +26,7 @@ public DetailsLink()
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [DetailsLink](detailslink.md) class, setting its [Link](detailslink.md#properties) and [Text](detailslink.md#properties) properties to `url`.
 
@@ -45,7 +45,7 @@ public DetailsLink(string url)
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [DetailsLink](detailslink.md) class, setting its [Link](detailslink.md#properties) property to `url` and [Text](detailslink.md#properties) to `text`.
 

@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [CommandItem](commanditem.md) class. 
 
@@ -27,7 +27,7 @@ public CommandItem()
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [CommandItem](commanditem.md) class, setting its [Command](commanditem.md#properties) property to `command` and its [Title](commanditem.md#properties) to the `command`'s [Name](../microsoft-commandpalette-extensions/icommand.md#properties). 
 
@@ -47,7 +47,7 @@ public CommandItem(ICommand command)
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [CommandItem](commanditem.md) class, setting its [Command](commanditem.md#properties) property to `other`'s [Command](../microsoft-commandpalette-extensions/icommanditem.md#properties), its [Title](commanditem.md#properties) to `other`'s [Title](../microsoft-commandpalette-extensions/icommand.md#properties), its [Subtitle](commanditem.md#properties) to `other`'s [Subtitle](../microsoft-commandpalette-extensions/icommand.md#properties), its [Icon](commanditem.md#properties) to `other`'s [Icon](../microsoft-commandpalette-extensions/icommand.md#properties), and its [MoreCommands](commanditem.md#properties) to `other`'s [MoreCommands](../microsoft-commandpalette-extensions/icommand.md#properties). 
 
@@ -70,7 +70,7 @@ public CommandItem(ICommandItem other)
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [CommandItem](commanditem.md) class, setting its [Title](commanditem.md#properties) property to `title`, its [Subtitle](commanditem.md#properties) to `subtitle`, and creates a new [AnonymousCommand](anonymouscommand.md) object with a `name`, `action`, and `result`. 
 

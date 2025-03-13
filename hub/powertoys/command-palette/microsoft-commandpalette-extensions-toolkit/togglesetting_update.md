@@ -1,6 +1,6 @@
 ---
 title: ToggleSetting.Update(JsonObject) Method
-description: 
+description: The ToggleSetting.Update method updates the value of a toggle setting in the command palette extension.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -10,8 +10,12 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
+
+The `Update` method updates the value of a toggle setting in the command palette extension.
 
 ## Parameters
 
 **`payload`** JsonObject
+
+The JSON object containing the new value for the setting.

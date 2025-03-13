@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [CommandContextItem](commandcontextitem.md) class from the base [CommandItem](commanditem.md) class, setting its [Command](commanditem.md#properties) property to `command`. 
 
@@ -31,7 +31,7 @@ public CommandContextItem(ICommand command)
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [CommandContextItem](commandcontextitem.md) class from the base [CommandItem](commanditem.md) class, setting its [Title](commanditem.md#properties) property to `title`, its [Subtitle](commanditem.md#properties) to `subtitle`, and creates a new [AnonymousCommand](anonymouscommand.md) object with a `name`, `action`, and `result`. 
 

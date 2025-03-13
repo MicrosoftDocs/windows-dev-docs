@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Display a confirmation dialog to the user. The [ConfirmationArgs](confirmationargs.md) will specify the title, and description for the dialog. The primary button of the dialog will activate the [Command](command.md). If [IsPrimaryCommandCritical](confirmationargs.md#properties) is `true`, the primary button will be red, indicating that it is a destructive action.
 

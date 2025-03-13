@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [ChoiceSetSetting](choicesetsetting.md) class from the base [Setting](setting.md) class, setting its [Key](setting.md#properties) property to `key` and its [Choices](choicesetsetting.md#properties) set to `choices`. 
 
@@ -34,7 +34,7 @@ public ChoiceSetSetting(string key, List<Choice> choices)
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Initializes a new instance of the [ChoiceSetSetting](choicesetsetting.md) class from the base [Setting](setting.md) class, setting its [Key](setting.md#properties) property to `key`, its [Label](setting.md#properties) to `label`, its [Description](setting.md#properties) to `description`, and its [Choices](choicesetsetting.md#properties) to `choices`. 
 

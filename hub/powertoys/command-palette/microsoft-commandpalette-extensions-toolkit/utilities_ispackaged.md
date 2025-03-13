@@ -1,6 +1,6 @@
 ---
 title: Utilities.IsPackaged() Method
-description: 
+description: The IsPackaged utility method is used to determine if the current process is running with package identity.
 ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -10,10 +10,10 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Can be used to quickly determine if this process is running with package identity (returns `true`).
 
 ## Returns
 
-Boolean
+A **Boolean** value indicating whether the current process is running with package identity. Returns `true` if the process is running with package identity; otherwise, returns `false`.
