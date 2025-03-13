@@ -1,6 +1,6 @@
 ---
 title: OpenUrlCommand Constructors
-description: 
+description: Initializes a new instance of the OpenUrlCommand class with the URL target set to target, its name set to "Open", and an icon added.
 ms.date: 2/25/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -28,3 +28,5 @@ public OpenUrlCommand(string target)
 ### Parameters
 
 **`target`** String
+
+The URL to be opened by the command.

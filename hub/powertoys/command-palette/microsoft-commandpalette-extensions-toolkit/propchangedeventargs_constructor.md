@@ -1,6 +1,6 @@
 ---
 title: PropChangedEventArgs Constructors
-description: 
+description: Initializes a new instance of the PropChangedEventArgs class with the specified property name.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -26,3 +26,5 @@ public PropChangedEventArgs(string propertyName)
 ### Parameters
 
 **`propertyName`** String
+
+The name of the property that has changed. This value is used to set the [PropertyName](propchangedeventargs.md#properties) property of the **PropChangedEventArgs** class.

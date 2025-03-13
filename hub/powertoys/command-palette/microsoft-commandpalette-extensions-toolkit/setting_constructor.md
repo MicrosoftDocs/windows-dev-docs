@@ -1,6 +1,6 @@
 ---
 title: Setting Constructors
-description: 
+description: The Setting class provides several constructors for creating instances of the Setting class.
 ms.date: 2/19/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -44,7 +44,11 @@ public Setting(string key, T defaultValue)
 
 **`key`** String
 
+The key of the setting. This is a unique identifier for the setting.
+
 **`defaultValue`** T
+
+The default value of the setting. This is the value that will be used if no value is provided for the setting.
 
 ## Setting(String, String, String, T) Constructor
 
@@ -68,8 +72,16 @@ public Setting(string key, string label, string description, T defaultValue)
 
 **`key`** String
 
+The key of the setting. This is a unique identifier for the setting.
+
 **`label`** String
+
+The label of the setting. This is a user-friendly name for the setting that will be displayed in the UI.
 
 **`description`** String
 
+The description of the setting. This is a brief explanation of what the setting does and how it should be used.
+
 **`defaultValue`** T
+
+The default value of the setting. This is the value that will be used if no value is provided for the setting.

@@ -1,6 +1,6 @@
 ---
 title: LogMessage Constructors
-description: 
+description: Initializes a new instance of the LogMessage class with the specified message.
 ms.date: 2/25/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -26,3 +26,5 @@ public LogMessage(string message = "")
 ### Parameters
 
 **`message`** String
+
+The content of the log message. This parameter is optional and defaults to an empty string if not provided.

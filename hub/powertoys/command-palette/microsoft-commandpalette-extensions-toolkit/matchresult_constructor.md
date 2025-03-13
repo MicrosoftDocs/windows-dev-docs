@@ -1,6 +1,6 @@
 ---
 title: MatchResult Constructors
-description: 
+description: Initializes a new instance of the MatchResult class with specified parameters.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -28,9 +28,13 @@ public MatchResult(bool success, SearchPrecisionScore searchPrecision)
 
 **`success`** Boolean
 
+Indicates whether the match was successful.
+
 **`searchPrecision`** [SearchPrecisionScore](searchprecisionscore.md)
 
-## MatchResult(Boolean, [SearchPrecisionScore](searchprecisionscore.md), List<Integer>, Integer) Constructor
+The search precision score for the match. This score is used to determine how closely the match aligns with the search criteria.
+
+## MatchResult(Boolean, [SearchPrecisionScore](searchprecisionscore.md), List\<Integer\>, Integer) Constructor
 
 ### Definition
 
@@ -52,8 +56,16 @@ public MatchResult(bool success, SearchPrecisionScore searchPrecision, List<int>
 
 **`success`** Boolean
 
+Indicates whether the match was successful.
+
 **`searchPrecision`** [SearchPrecisionScore](searchprecisionscore.md)
 
-**`matchData`** List<Integer>
+The search precision score for the match. This score is used to determine how closely the match aligns with the search criteria.
+
+**`matchData`** List\<Integer\>
+
+The list of match data. This data can be used to provide additional context or information about the match.
 
 **`rawScore`** Integer
+
+The raw score for the match. This score is used to quantify the quality of the match based on the search criteria.
