@@ -1,5 +1,5 @@
 ---
-title: Enable the HEVC playback flag for UWP apps on Xbox
+title: 4K video playback for UWP apps on Xbox
 description: This topic describes how to enable and implement 4K high-efficiency video coding (HEVC) content in your UWP app on Xbox.
 ms.date: 03/13/2025
 ms.topic: article
@@ -7,7 +7,7 @@ keywords: xbox, uwp
 ms.localizationpriority: medium
 ---
 
-# Enable the HEVC playback flag for UWP apps on Xbox
+# 4K video playback for UWP apps on Xbox
 
 This topic describes how to enable and implement 4K high-efficiency video coding (HEVC) content in your UWP app on Xbox.
 
