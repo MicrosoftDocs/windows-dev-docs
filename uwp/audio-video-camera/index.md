@@ -32,7 +32,7 @@ This section provides information about creating Universal Windows Platform (UWP
 | [Supported codecs](supported-codecs.md) | Lists the audio, video, and image codec and format support for UWP apps. |
 | [Query for installed codecs](codec-query.md) | Shows you how to query for audio and video encoders and decoders that are installed on a device. |
 | [Screen capture](screen-capture.md) | Describes how to use the [Windows.Graphics.Capture namespace](/uwp/api/windows.graphics.capture) to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences. |
-| [Enable the HEVC playback flag for UWP apps on Xbox](hevc-xbox.md) | This topic describes how to enable and implement 4K high-efficiency video coding (HEVC) content in your UWP app on Xbox. |
+| [4K video playback for UWP apps on Xbox](hevc-xbox.md) | This topic describes how to enable and implement 4K high-efficiency video coding (HEVC) content in your UWP app on Xbox. |
 
 ## See also
 
