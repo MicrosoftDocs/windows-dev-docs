@@ -1,12 +1,12 @@
 ---
 title: Settings.TryGetSetting<T>(String, T) Method
-description: 
+description: The TryGetSetting method attempts to retrieve a setting value from the command palette extension's settings.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# Settings.TryGetSetting<T>(String, T) Method
+# Settings.TryGetSetting\<T\>(String, T) Method
 
 ## Definition
 
