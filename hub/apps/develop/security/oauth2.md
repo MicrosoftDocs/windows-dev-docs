@@ -267,7 +267,9 @@ else
 
 ### Complete an authorization request
 
-Finally, to complete an authorization request from a protocol activation, use the following code:
+Finally, to complete an authorization request from a protocol activation, your app should handle the [AppInstance.Activated](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.activated) event. This is required when having custom redirect logic. A full example is available on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/OAuth2Manager).
+
+Use the following code:
 
 # [C++](#tab/cpp)
 
