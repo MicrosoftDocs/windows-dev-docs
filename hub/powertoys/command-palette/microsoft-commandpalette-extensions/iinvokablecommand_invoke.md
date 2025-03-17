@@ -1,6 +1,6 @@
 ---
 title: IInvokableCommand.Invoke(Object) Method
-description: 
+description: The method called when a user selects a command.
 ms.date: 2/10/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -29,8 +29,8 @@ Using the `sender` parameter can be useful for big lists of items where the acti
 
 ## Returns
 
-[ICommandResult](icommandresult.md)
+An [ICommandResult](icommandresult.md) object that represents the result of the command invocation. This object can contain information about the success or failure of the command, as well as any additional data that may be relevant to the command's execution.
 
-## Samples
+## Example
 
-[Add a command](../samples.md#add-a-command)
+See [Add a command](../samples.md#add-a-command) for a sample of how to implement this method.

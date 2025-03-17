@@ -1,6 +1,6 @@
 ---
 title: ICommandResult Interface
-description: 
+description: The ICommandResult interface indicates what the Command Palette should do after the command is executed.
 ms.date: 2/10/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -20,5 +20,5 @@ Derived [CommandResult](../microsoft-commandpalette-extensions-toolkit/commandre
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Args | [ICommandResultArgs](icommandresultargs.md) | |
-| Kind | [CommandResultKind](commandresultkind.md) | |
+| Args | [ICommandResultArgs](icommandresultargs.md) | The arguments for the command result. |
+| Kind | [CommandResultKind](commandresultkind.md) | The kind of command result. |
