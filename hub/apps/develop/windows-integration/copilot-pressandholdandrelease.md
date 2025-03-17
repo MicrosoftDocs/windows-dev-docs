@@ -92,6 +92,43 @@ protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs ar
 }
 ```
 
+### Implement a helper property for tracking the Copilot Key pressed state
+
+```csharp
+public event PropertyChangedEventHandler? PropertyChanged;
+
+private void OnPropertyChanged([CallerMemberName] string propertyName = "State")
+{
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+}
+
+
+public void SetState(string state)
+{
+    State = state;
+}
+
+private string _state;
+public string State
+{
+    get => _state;
+    set
+    {
+        if (_state != value)
+        {
+            _state = value;
+            OnPropertyChanged();
+        }
+    }
+}
+```
+
+```xaml
+<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+  <TextBlock Name="KeyStateText" Text="{x:Bind State, Mode=OneWay}" />
+</StackPanel>
+```
+
 ## Handle fast path invocation
 
 ```xml
@@ -403,42 +440,6 @@ ref Guid riid,
  [Out(), MarshalAs(UnmanagedType.Interface)] out IPropertyStore propertyStore);
 ```
 
-### Implement a helper property for tracking the Copilot Key pressed state
-
-```csharp
-public event PropertyChangedEventHandler? PropertyChanged;
-
-private void OnPropertyChanged([CallerMemberName] string propertyName = "State")
-{
-    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-}
-
-
-public void SetState(string state)
-{
-    State = state;
-}
-
-private string _state;
-public string State
-{
-    get => _state;
-    set
-    {
-        if (_state != value)
-        {
-            _state = value;
-            OnPropertyChanged();
-        }
-    }
-}
-```
-
-```xaml
-<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-  <TextBlock Name="KeyStateText" Text="{x:Bind State, Mode=OneWay}" />
-</StackPanel>
-```
 
 ### Register a Window to receive callbacks
 
