@@ -75,37 +75,20 @@ The following example shows a Copilot hot key provider registration with support
 ```csharp
 // App.xaml.cs
 
-private void OnActivated()
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
 {
-
-    AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
-    if (args.Kind == ExtendedActivationKind.Launch)
+    var eventargs = AppInstance.GetCurrent().GetActivatedEventArgs();
+    string state = "";
+    if ((eventargs != null) && (eventargs.Kind == ExtendedActivationKind.Protocol))
     {
-        // launched by other means (possibly by copilot button press) 
-        // implement primary UI 
-
-    }
-    else if (args.Kind == ExtendedActivationKind.Protocol)
-    {
-        var protocolArgs = (Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)args.Data;
+        var protocolArgs = (Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)eventargs.Data;
         WwwFormUrlDecoder decoderEntries = new WwwFormUrlDecoder(protocolArgs.Uri.Query);
-        string state = Uri.UnescapeDataString(decoderEntries.GetFirstValueByName("state"));
-
-        if (state == "Down")
-        {
-            // Implement press and hold begin activation logic: 
-            //  Start microphone capture 
-            //  Show no activate a window indicating audio capture is happening 
-        }
-        else if (state == "Up")
-        {
-            // Implemented press and hold finished logic 
-            //  Stop microphone capture 
-            //  Indicate audio capture has stopped 
-            //  Send the audio to the LLM 
-        }
-
+        state = Uri.UnescapeDataString(decoderEntries.GetFirstValueByName("state"));
     }
+    state = (state == "") ? "Launched" : state;
+
+    m_window = new MainWindow(state);
+    m_window.Activate();
 }
 ```
 
@@ -129,70 +112,387 @@ private void OnActivated()
 </uap3:Extension>
 ```
 
-```csharp
-// App.xaml.cs
-
-protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
-{   
-    ...
-    var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
-
-    IPropertyStore propertyStore;
-    int hr = SHGetPropertyStoreForWindow(hwnd, ref IID_IPropertyStore, out propertyStore);
-    PropVariant propVar = new PropVariant();
-    propVar.vt = (ushort)VarEnum.VT_UI4;
-    propVar.ulVal = MainWindow.CopilotHotKeyFastpathMessage;
-    propertyStore.SetValue(PKEY_Shell_CopilotKeyProviderFastPathMessage, ref propVar);
-    propertyStore.Commit();
-    ...
-}
-```
+### Use DllImport to access win32 APIs
 
 ```csharp
 // MainWindow.xaml.cs
+public delegate int SUBCLASSPROC(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam, IntPtr uIdSubclass, uint dwRefData);
+[DllImport("Comctl32.dll", SetLastError = true)]
+public static extern bool SetWindowSubclass(IntPtr hWnd, SUBCLASSPROC pfnSubclass, uint uIdSubclass, uint dwRefData);
 
-public MainWindow()
+[DllImport("Comctl32.dll", SetLastError = true)]
+public static extern int DefSubclassProc(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam);
+
+[DllImport("kernel32.dll")]
+public static extern bool QueryPerformanceCounter(out System.Int64 lpPerformanceCount);
+
+[DllImport("kernel32.dll")]
+public static extern bool QueryPerformanceFrequency(out System.Int64 lpFrequency);
+
+// Borrowed from https://github.com/devMashHub/GetDuration/blob/master/PropVariant.cs
+// Renamed to avoid collision with the PropVariant class in the WindowsAPICodePack
+[StructLayout(LayoutKind.Sequential)]
+public struct MyPropVariant
+{
+
+    #region Struct fields
+
+    // The layout of these elements needs to be maintained.
+    //
+    // NOTE: We could use LayoutKind.Explicit, but we want
+    //       to maintain that the IntPtr may be 8 bytes on
+    //       64-bit architectures, so we'll let the CLR keep
+    //       us aligned.
+    //
+    // NOTE: In order to allow x64 compat, we need to allow for
+    //       expansion of the IntPtr. However, the BLOB struct
+    //       uses a 4-byte int, followed by an IntPtr, so
+    //       although the p field catches most pointer values,
+    //       we need an additional 4-bytes to get the BLOB
+    //       pointer. The p2 field provides this, as well as
+    //       the last 4-bytes of an 8-byte value on 32-bit
+    //       architectures.
+
+    // This is actually a VarEnum value, but the VarEnum type
+    // shifts the layout of the struct by 4 bytes instead of the
+    // expected 2.
+    ushort vt;
+
+    ushort wReserved1;
+    ushort wReserved2;
+    ushort wReserved3;
+
+    IntPtr p;
+    int p2;
+
+    #endregion
+
+    #region union members
+
+    sbyte cVal // CHAR cVal;
+    {
+        get { return (sbyte)GetDataBytes()[0]; }
+    }
+
+    byte bVal // UCHAR bVal;
+    {
+        get { return GetDataBytes()[0]; }
+    }
+
+    short iVal // SHORT iVal;
+    {
+        get { return BitConverter.ToInt16(GetDataBytes(), 0); }
+    }
+
+    ushort uiVal // USHORT uiVal;
+    {
+        get { return BitConverter.ToUInt16(GetDataBytes(), 0); }
+    }
+
+    int lVal // LONG lVal;
+    {
+        get { return BitConverter.ToInt32(GetDataBytes(), 0); }
+    }
+
+    uint ulVal // ULONG ulVal;
+    {
+        get { return BitConverter.ToUInt32(GetDataBytes(), 0); }
+    }
+
+    long hVal // LARGE_INTEGER hVal;
+    {
+        get { return BitConverter.ToInt64(GetDataBytes(), 0); }
+    }
+
+    ulong uhVal // ULARGE_INTEGER uhVal;
+    {
+        get { return BitConverter.ToUInt64(GetDataBytes(), 0); }
+    }
+
+    float fltVal // FLOAT fltVal;
+    {
+        get { return BitConverter.ToSingle(GetDataBytes(), 0); }
+    }
+
+    double dblVal // DOUBLE dblVal;
+    {
+        get { return BitConverter.ToDouble(GetDataBytes(), 0); }
+    }
+
+    bool boolVal // VARIANT_BOOL boolVal;
+    {
+        get { return (iVal == 0 ? false : true); }
+    }
+
+    int scode // SCODE scode;
+    {
+        get { return lVal; }
+    }
+
+    decimal cyVal // CY cyVal;
+    {
+        get { return decimal.FromOACurrency(hVal); }
+    }
+
+    DateTime date // DATE date;
+    {
+        get { return DateTime.FromOADate(dblVal); }
+    }
+
+    #endregion
+
+    /// <summary>
+    /// Gets a byte array containing the data bits of the struct.
+    /// </summary>
+    /// <returns>A byte array that is the combined size of the data bits.</returns>
+    private byte[] GetDataBytes()
+    {
+        byte[] ret = new byte[IntPtr.Size + sizeof(int)];
+        if (IntPtr.Size == 4)
+            BitConverter.GetBytes(p.ToInt32()).CopyTo(ret, 0);
+        else if (IntPtr.Size == 8)
+            BitConverter.GetBytes(p.ToInt64()).CopyTo(ret, 0);
+        BitConverter.GetBytes(p2).CopyTo(ret, IntPtr.Size);
+        return ret;
+    }
+
+    /// <summary>
+    /// Called to properly clean up the memory referenced by a PropVariant instance.
+    /// </summary>
+    [DllImport("ole32.dll")]
+    private extern static int PropVariantClear(ref MyPropVariant pvar);
+
+    /// <summary>
+    /// Called to clear the PropVariant's referenced and local memory.
+    /// </summary>
+    /// <remarks>
+    /// You must call Clear to avoid memory leaks.
+    /// </remarks>
+    public void Clear()
+    {
+        // Can't pass "this" by ref, so make a copy to call PropVariantClear with
+        MyPropVariant var = this;
+        PropVariantClear(ref var);
+
+        // Since we couldn't pass "this" by ref, we need to clear the member fields manually
+        // NOTE: PropVariantClear already freed heap data for us, so we are just setting
+        //       our references to null.
+        vt = (ushort)VarEnum.VT_EMPTY;
+        wReserved1 = wReserved2 = wReserved3 = 0;
+        p = IntPtr.Zero;
+        p2 = 0;
+    }
+
+    /// <summary>
+    /// Gets the variant type.
+    /// </summary>
+    public VarEnum Type
+    {
+        get { return (VarEnum)vt; }
+    }
+
+    public void Init(VarEnum t, uint val)
+    {
+        vt = (ushort)t;
+        p = (IntPtr)val;
+    }
+
+    /// <summary>
+    /// Gets the variant value.
+    /// </summary>
+    public object Value
+    {
+        get
+        {
+            // TODO: Add support for reference types (ie. VT_REF | VT_I1)
+            // TODO: Add support for safe arrays
+
+            switch ((VarEnum)vt)
+            {
+                case VarEnum.VT_I1:
+                    return cVal;
+                case VarEnum.VT_UI1:
+                    return bVal;
+                case VarEnum.VT_I2:
+                    return iVal;
+                case VarEnum.VT_UI2:
+                    return uiVal;
+                case VarEnum.VT_I4:
+                case VarEnum.VT_INT:
+                    return lVal;
+                case VarEnum.VT_UI4:
+                case VarEnum.VT_UINT:
+                    return ulVal;
+                case VarEnum.VT_I8:
+                    return hVal;
+                case VarEnum.VT_UI8:
+                    return uhVal;
+                case VarEnum.VT_R4:
+                    return fltVal;
+                case VarEnum.VT_R8:
+                    return dblVal;
+                case VarEnum.VT_BOOL:
+                    return boolVal;
+                case VarEnum.VT_ERROR:
+                    return scode;
+                case VarEnum.VT_CY:
+                    return cyVal;
+                case VarEnum.VT_DATE:
+                    return date;
+                case VarEnum.VT_FILETIME:
+                    return DateTime.FromFileTime(hVal);
+                case VarEnum.VT_BSTR:
+                    return Marshal.PtrToStringBSTR(p);
+                case VarEnum.VT_BLOB:
+                    byte[] blobData = new byte[lVal];
+                    IntPtr pBlobData;
+                    if (IntPtr.Size == 4)
+                    {
+                        pBlobData = new IntPtr(p2);
+                    }
+                    else if (IntPtr.Size == 8)
+                    {
+                        // In this case, we need to derive a pointer at offset 12,
+                        // because the size of the blob is represented as a 4-byte int
+                        // but the pointer is immediately after that.
+                        pBlobData = new IntPtr(BitConverter.ToInt64(GetDataBytes(), sizeof(int)));
+                    }
+                    else
+                        throw new NotSupportedException();
+                    Marshal.Copy(pBlobData, blobData, 0, lVal);
+                    return blobData;
+                case VarEnum.VT_LPSTR:
+                    return Marshal.PtrToStringAnsi(p);
+                case VarEnum.VT_LPWSTR:
+                    return Marshal.PtrToStringUni(p);
+                case VarEnum.VT_UNKNOWN:
+                    return Marshal.GetObjectForIUnknown(p);
+                case VarEnum.VT_DISPATCH:
+                    return p;
+                default:
+                    throw new NotSupportedException("The type of this variable is not support ('" + vt.ToString() + "')");
+            }
+        }
+    }
+}
+
+[ComImport, Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+interface IPropertyStore
+{
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    void GetCount([Out] out uint cProps);
+
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    void GetAt([In] uint iProp, out PropertyKey pkey);
+
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    void GetValue([In] ref PropertyKey key, out object pv);
+
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    int SetValue([In] ref PropertyKey key, [In] ref MyPropVariant pv);
+
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    void Commit();
+}
+
+
+[DllImport("shell32.dll", SetLastError = true)]
+static extern int SHGetPropertyStoreForWindow(
+IntPtr handle,
+ref Guid riid,
+ [Out(), MarshalAs(UnmanagedType.Interface)] out IPropertyStore propertyStore);
+```
+
+### Implement a helper property for tracking the Copilot Key pressed state
+
+```csharp
+public event PropertyChangedEventHandler? PropertyChanged;
+
+private void OnPropertyChanged([CallerMemberName] string propertyName = "State")
+{
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+}
+
+
+public void SetState(string state)
+{
+    State = state;
+}
+
+private string _state;
+public string State
+{
+    get => _state;
+    set
+    {
+        if (_state != value)
+        {
+            _state = value;
+            OnPropertyChanged();
+        }
+    }
+}
+```
+
+```xaml
+<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+  <TextBlock Name="KeyStateText" Text="{x:Bind State, Mode=OneWay}" />
+</StackPanel>
+```
+
+### Register a Window to receive callbacks
+
+```csharp
+// MainWindow.xaml.cs
+private SUBCLASSPROC SubClassDelegate;
+private nint hWndMain;
+
+public MainWindow(string state)
 {
     ...
-    var hWndMain = WinRT.Interop.WindowNative.GetWindowHandle(this);
+    hWndMain = (nint)WinRT.Interop.WindowNative.GetWindowHandle(this);
     Microsoft.UI.Windowing.AppWindow appWindow = AppWindow;
+    
+    var key = new PropertyKey(new Guid("38652BCA-4329-4E74-86F9-39CF29345EEA"), 0x00000002);
+    var value = new MyPropVariant();
+    value.Init(VarEnum.VT_UINT, WM_COPILOT);
+    propertyStore.SetValue(ref key, ref value);
     
     SubClassDelegate = new SUBCLASSPROC(WindowSubClass);
     bool bRet = SetWindowSubclass((int)appWindow.Id.Value, SubClassDelegate, 0, 0);
+
+    _state = state;
     ...
 }
 ```
 
 ```csharp
-private int WindowSubClass(IntPtr hWnd, uint uMsg, IntPtr wParam,
-           IntPtr lParam, IntPtr uIdSubclass, uint dwRefData)
+private int WindowSubClass(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam, IntPtr uIdSubclass, uint dwRefData)
 {
     switch (uMsg)
     {
-        case CopilotHotKeyFastpathMessage:
-        {
-            switch (lParam)
+        case WM_COPILOT:
             {
-                case 0:
-                    // Copilot key press, show our window 
-                    PInvoke.ShowWindow((HWND)hWnd, SHOW_WINDOW_CMD.SW_SHOW);
-                    break;
-                case 1:
-                    // Copilot key press and hold start, show our window without activation 
-                    // and start listening 
-                    PInvoke.ShowWindow((HWND)hWnd, SHOW_WINDOW_CMD.SW_SHOWNA);
-                    // Start microphone recording 
-                    break;
-                case 2:
-                    // Copilot key press and hold stop, stop listening and send query 
-                    break;
+                switch (wParam)
+                {
+                    case 0:
+                        // Show window
+                        SetState("SingleTap");
+                        break;
+                    case 1:
+                        // Start recording audio and update UI to indicate recording is occurring.
+                        SetState("PressAndHold START");
+                        break;
+                    case 2:
+                        // End recording audio, process recorded audio
+                        SetState("PressAndHold END");
+                        break;
+                }
             }
-        }
-        return 0;
+            break;
+
     }
-
-    return PInvoke.DefSubclassProc((HWND)hWnd, uMsg, wParam, lParam);
-
+    return DefSubclassProc(hWnd, uMsg, wParam, lParam);
 }
 ```
 
