@@ -20,8 +20,8 @@ The **ChoiceSetSetting** class represents a setting that allows users to select 
 
 | Constructor | Description |
 | :--- | :--- |
-| [ChoiceSetSetting(String, List\<Choice\>)](choicesetsetting_constructor.md#choicesetsettingstring-list-constructor) | Initializes a new instance of the **ChoiceSetSetting** class with a specified name and a list of choices. |
-| [ChoiceSetSetting(String, String, String, List\<Choice\>)](choicesetsetting_constructor.md#choicesetsettingstring-string-string-list-constructor) | Initializes a new instance of the **ChoiceSetSetting** class with a specified name, description, default value, and a list of choices. |
+| [ChoiceSetSetting(String, List\<Choice\>)](choicesetsetting_constructor.md#choicesetsettingstring-listchoice-constructor) | Initializes a new instance of the **ChoiceSetSetting** class with a specified name and a list of choices. |
+| [ChoiceSetSetting(String, String, String, List\<Choice\>)](choicesetsetting_constructor.md#choicesetsettingstring-string-string-listchoice-constructor) | Initializes a new instance of the **ChoiceSetSetting** class with a specified name, description, default value, and a list of choices. |
 
 ## Nested classes
 
