@@ -1,7 +1,7 @@
 ---
 title: 4K video playback for UWP apps on Xbox
-description: This topic describes how to enable and implement 4K high-efficiency video coding (HEVC) content in your UWP app on Xbox.
-ms.date: 03/13/2025
+description: This topic describes how to enable and implement the playback of 4K video content in your UWP app on Xbox.
+ms.date: 03/14/2025
 ms.topic: article
 keywords: xbox, uwp
 ms.localizationpriority: medium
@@ -9,19 +9,19 @@ ms.localizationpriority: medium
 
 # 4K video playback for UWP apps on Xbox
 
-This topic describes how to enable and implement 4K high-efficiency video coding (HEVC) content in your UWP app on Xbox.
+This topic describes how to enable and implement the playback of 4K video content in your UWP app on Xbox. The info applies to any supported 4K video playback format. But for the current generation of consoles, the preferred video codec for 4K playback is High Efficiency Video Coding (HEVC).
 
-With HEVC, you can deliver high-quality video with improved compression efficiency and reduced bandwidth usage while supporting superior visual fidelity. By leveraging HEVC, media apps can stream 4K content with lower bitrate requirements. This will ensure smoother playback and a better user experience&mdash;even in bandwidth-constrained environments. In this topic we cover the necessary steps to enable the HEVC playback flag, along with best practices for refining playback performance on Xbox.
+With HEVC, you can deliver high-quality video with improved compression efficiency and reduced bandwidth usage while supporting superior visual fidelity. By leveraging HEVC, media apps can stream 4K content with lower bitrate requirements. This will ensure smoother playback and a better user experience&mdash;even in bandwidth-constrained environments. In this topic we cover the necessary steps to enable the 4K (including HEVC) playback flag, along with best practices for refining playback performance on Xbox.
 
 ## Behavior differences when enabled
 
-Enabling 4K HEVC playback in your application changes the way your application is treated by the Xbox operating system. On Xbox Series S and Series X consoles, in addition to allowing playback of 4K video, your application will be allocated an additional 3.25GB of graphics memory. This memory is separate from the normal memory the system allocates to UWP applications.
+Enabling 4K playback in your application changes the way your application is treated by the Xbox operating system. On Xbox Series S and Series X consoles, in addition to allowing playback of 4K video, your application will be allocated an additional 3.25GB of graphics memory. This memory is separate from the normal memory the system allocates to UWP applications.
 
 Additionally, your application will no longer be able to run simultaneously with games on the Xbox console&mdash;when the user launches a game, your app will be suspended and closed. Similarly, when your app is launched, the user will have to wait for any game that they were playing to fully close. A consequence of this is that apps will need to choose between being able to play background music and being able to play 4K video content.
 
 ## Enabling 4K playback in your appxmanifest
 
-4K and HDR10 video playback is supported on the Xbox One S onwards (the original Xbox One is restricted to 1080p). All these capabilities are enabled using the special `hevcPlayback` capability in the app manifest. The preferred video codec for 4K playback is HEVC for the current generation of consoles.
+4K and HDR10 video playback is supported on the Xbox One S onwards (the original Xbox One is restricted to 1080p). All these capabilities are enabled using the special `hevcPlayback` capability in the app manifest. Again, the flag enables 4K playback video in any supported format (but HEVC is recommended).
 
 ### Code example
 
