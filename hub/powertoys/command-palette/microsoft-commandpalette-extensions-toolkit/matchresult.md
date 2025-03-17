@@ -19,7 +19,7 @@ The **MatchResult** class is used to represent the result of a match operation i
 | Constructor | Description |
 | :--- | :--- |
 | [MatchResult(Boolean, SearchPrecisionScore)](matchresult_constructor.md#matchresultboolean-searchprecisionscore-constructor) | Initializes a new instance of the MatchResult class with a success flag and a search precision score. |
-| [MatchResult(Boolean, SearchPrecisionScore, List\<Integer\>, Integer)](matchresult_constructor.md#matchresultboolean-searchprecisionscore-list-integer-constructor) | Initializes a new instance of the MatchResult class with a success flag, a search precision score, match data, and a raw score. |
+| [MatchResult(Boolean, SearchPrecisionScore, List\<Integer\>, Integer)](matchresult_constructor.md#matchresultboolean-searchprecisionscore-listinteger-integer-constructor) | Initializes a new instance of the MatchResult class with a success flag, a search precision score, match data, and a raw score. |
 
 ## Properties
 

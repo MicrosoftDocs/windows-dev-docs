@@ -6,7 +6,7 @@ ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
 ---
 
-# Settings.GetSetting<T>(String) Method
+# Settings.GetSetting\<T\>(String) Method
 
 ## Definition
 
