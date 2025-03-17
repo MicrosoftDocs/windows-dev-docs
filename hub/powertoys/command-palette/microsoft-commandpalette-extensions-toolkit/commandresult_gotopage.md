@@ -1,6 +1,6 @@
 ---
 title: CommandResult.GoToPage(GoToPageArgs) Method
-description: 
+description: The GoToPage method creates a new CommandResult instance with its Kind property set to CommandResultKind.GoToPage and its Args set to args.
 ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -20,6 +20,8 @@ Creates a new [CommandResult](commandresult.md) instance with its [Kind](command
 
 **`args`** [GoToPageArgs](gotopageargs.md)
 
+The arguments for the command. This should be an instance of [GoToPageArgs](gotopageargs.md) that specifies the page to navigate to.
+
 ## Returns
 
-[CommandResult](commandresult.md)
+A [CommandResult](commandresult.md) instance.

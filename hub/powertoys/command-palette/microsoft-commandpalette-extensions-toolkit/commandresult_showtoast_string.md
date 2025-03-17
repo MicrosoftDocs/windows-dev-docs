@@ -1,6 +1,6 @@
 ---
 title: CommandResult.ShowToast(String) Method
-description: 
+description: The ShowToast method displays a transient desktop-level message to the user.
 ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -20,6 +20,8 @@ Creates a new [CommandResult](commandresult.md) instance with its [Kind](command
 
 **`message`** String
 
+The message to be displayed in the toast. This should be a brief and informative message that conveys the result of the action taken by the user.
+
 ## Returns
 
-[CommandResult](commandresult.md)
+A [CommandResult](commandresult.md) instance.

@@ -1,6 +1,6 @@
 ---
 title: GoToPageArgs Class
-description: 
+description: The GoToPageArgs class is used to represent the arguments for navigating to a page in the Command Palette Extensions Toolkit.
 ms.date: 2/10/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -13,6 +13,8 @@ no-loc: [PowerToys, Windows, Insider]
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Implements [IGoToPageArgs](../microsoft-commandpalette-extensions/igotopageargs.md)
+
+The **GoToPageArgs** class is used to represent the arguments for navigating to a page in the Command Palette Extensions Toolkit. It provides properties to access the navigation mode and the ID of the page to navigate to.
 
 ## Properties
 

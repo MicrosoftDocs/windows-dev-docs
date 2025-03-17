@@ -1,6 +1,6 @@
 ---
 title: CommandResult Class
-description: 
+description: The CommandResult class indicates what the Command Palette should do after a command is executed. This allows commands to control the flow of the palette.
 ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -16,11 +16,13 @@ Indicates what the Command Palette should do after a command is executed. This a
 
 Implements [ICommandResult](../microsoft-commandpalette-extensions/icommandresult.md)
 
+The **CommandResult** class is used to specify the result of a command execution in the Command Palette. It provides various methods to control the behavior of the Command Palette after a command is executed. This class is useful for managing navigation, displaying messages, and controlling the state of the Command Palette.
+
 ## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Args | [ICommandResultArgs](../microsoft-commandpalette-extensions/icommandresultargs.md) | |
+| Args | [ICommandResultArgs](../microsoft-commandpalette-extensions/icommandresultargs.md) | Gets or sets the arguments associated with the command result. This can include additional data needed for the command result. |
 | Kind | [CommandResultKind](../microsoft-commandpalette-extensions/commandresultkind.md) | Gets or sets the result of the command. Defaults to [CommandResultKind.Dismiss](../microsoft-commandpalette-extensions/commandresultkind.md#fields). |
 
 ## Methods

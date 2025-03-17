@@ -1,6 +1,6 @@
 ---
 title: FallbackCommandItem Constructors
-description: 
+description: Initializes a new instance of the FallbackCommandItem class with the provided command and sets its fallbackHandler property if command implements IFallbackHandler.
 ms.date: 2/25/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -30,3 +30,5 @@ public FallbackCommandItem(ICommand command)
 ### Parameters
 
 **`command`** [ICommand](../microsoft-commandpalette-extensions/icommand.md)
+
+The command that will be used to create the fallback command item. This command must implement the [ICommand](../microsoft-commandpalette-extensions/icommand.md) interface.

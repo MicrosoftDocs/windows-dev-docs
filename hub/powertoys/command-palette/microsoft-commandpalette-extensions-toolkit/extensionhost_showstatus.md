@@ -1,6 +1,6 @@
 ---
 title: ExtensionHost.ShowStatus(IStatusMessage) Method
-description: 
+description: The ShowStatus method displays a status message in the command palette.
 ms.date: 2/25/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -12,6 +12,10 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
+The **ShowStatus** method displays a status message in the command palette. This method is typically used to provide feedback to the user about the current state of the extension or to indicate that a long-running operation is in progress.
+
 ## Parameters
 
 **`message`** [IStatusMessage](../microsoft-commandpalette-extensions/istatusmessage.md)
+
+The status message to be displayed in the command palette. This message should provide relevant information to the user about the current state of the extension or operation.

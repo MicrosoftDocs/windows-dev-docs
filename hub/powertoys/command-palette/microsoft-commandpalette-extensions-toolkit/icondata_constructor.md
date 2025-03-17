@@ -1,6 +1,6 @@
 ---
 title: IconData Constructors
-description: 
+description: Initializes a new instance of the IconData class with the specified parameters.
 ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -27,6 +27,8 @@ public IconData(IRandomAccessStreamReference data)
 
 **`data`** Windows.Storage.Streams.IRandomAccessStreamReference
 
+The icon data as a stream reference. This property is used to load the icon data from a stream.
+
 ## IconData(String) Constructor
 
 ### Definition
@@ -45,3 +47,5 @@ public IconData(string? icon)
 ### Parameters
 
 **`icon`** String
+
+The icon URI. This property is used to load the icon from a URI.
