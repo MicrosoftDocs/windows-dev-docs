@@ -44,7 +44,7 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./down
 ### Version 1.7.0 (1.7.250310001)
 #### New Badge Notifications Feature
 
-This new functionality provides an easy way for apps to show status, such as number of unread mails in a mail app or number of new posts in a social media app.
+The notification badge conveys a summary or status information specific to an app. This can be numeric (1-99) or a glyph from one of the system-provided glyphs. This new functionality provides an easy way for apps to show status, such as number of unread mails in a mail app or number of new posts in a social media app.
 
 For more info, see GitHub [#4926](https://github.com/microsoft/WindowsAppSDK/issues/4926).
 
@@ -62,7 +62,7 @@ For more info, see GitHub issue [#4772](https://github.com/microsoft/WindowsAppS
 
 #### New Background Task support
 
-Background tasks are app components that run in the background without a user interface, performing actions like download files, syncing data, sending notifications or updating files. The new `BackgroundTaskBuilder` API provides WinAppSDK dependent apps the ability to directly register the full trust COM components with background tasks, removing the need to implement workaround.
+Background tasks are app components that run in the background without a user interface, performing actions like download files, syncing data, sending notifications or updating files. The new `BackgroundTaskBuilder` API provides WinAppSDK dependent apps the ability to directly register the full trust COM components with background tasks, removing the need to implement a workaround.
 
 For more info, see GitHub [#4831](https://github.com/microsoft/WindowsAppSDK/issues/4831).
 
