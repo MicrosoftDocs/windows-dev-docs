@@ -37,7 +37,7 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 The following sections describe new and updated features and known issues for version 1.7.
 
-In an existing Windows App SDK 1.7 app, you can update your Nuget package to 1.7.250310001 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+In an existing Windows App SDK app, you can update your Nuget package to 1.7.250310001 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
