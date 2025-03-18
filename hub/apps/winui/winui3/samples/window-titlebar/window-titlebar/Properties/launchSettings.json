@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "window-titlebar (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "window-titlebar (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
