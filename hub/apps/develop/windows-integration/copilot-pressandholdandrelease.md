@@ -20,6 +20,67 @@ This article describes how apps can register to be activated and receive notific
 
 This feature extends the features of a basic Microsoft Copilot hardware key provider, which simply registers to be launched when the hardware key is pressed. For more information, see [Microsoft Copilot hardware key providers](microsoft-copliot-key-provider.md).
 
+The rest of this article will walk through creating a simple C# WinUI 3 app that responds to activation initiated by a single press or a press and hold and release of the Microsoft Copilot button.
+
+## Create a new project
+
+In Visual Studio, create a new project. For this example, in the **Create a new project** dialog, set the language filter to C# and the project type to WinUI 3 and then select the "Blank App, Packaged (WinUI 3 in Desktop).
+
+## Add a property to track the Microsoft Copilot key pressed state
+
+In this example, we will create a property called **State** that we will use to display the current activation state in the UI. In `MainWindow.xaml.cs`, inside the definition of **MainWindow** add the following code to create a string property that we can bind to in our XAML file.
+
+```csharp
+// MainWindow.xaml.cs
+public event PropertyChangedEventHandler? PropertyChanged;
+
+private void OnPropertyChanged([CallerMemberName] string propertyName = "State")
+{
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+}
+
+public void SetState(string state)
+{
+    State = state;
+}
+
+private string _state;
+public string State
+{
+    get => _state;
+    set
+    {
+        if (_state != value)
+        {
+            _state = value;
+            OnPropertyChanged();
+        }
+    }
+}
+```
+
+Add a **TextBox** control to the UI to show the current activation state of the app. Replace the default **StackPanel** element in MainPage.xaml with the following code.
+
+```xaml
+<!-- MainWindow.xaml -->
+<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <TextBlock Name="KeyStateText" Text="{x:Bind State, Mode=OneWay}" />
+</StackPanel>
+```
+
+Finally, update the **MainWindow** constructor to take an argument that will set the **State** property when the window is created.
+
+```csharp
+// MainWindow.xaml.cs
+public MainWindow(string state)
+{
+    this.InitializeComponent();
+
+    _state = state;
+}
+```
+
+
 ## Register for URI activation
 
 The system launches Microsoft Copilot hardware key providers that implement PressAndHoldAndRelease using URI activation. Register a launch protocol by adding the [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol) element to your app manifest. For more information about how to register as the default handler for a URI scheme, see [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation).
@@ -48,8 +109,6 @@ An app must be packaged in order to register as a Microsoft Copilot hardware key
 
 Inside of the **uap3:AppExtension** element, add a [uap3:Properties](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-properties-manual) element with child elements **PressAndHoldStart** and **PressAndHoldStart**. The contents of these elements should be the URI of the protocol scheme registered in the manifest in the previous step. The query string arguments specify whether the URI is being launched because the user pressed and held the hot key or because the user released the hot key. The app uses these query string values during app activation to determine the correct action to take.
 
-The following example shows a Copilot hot key provider registration with support for PressAndHoldAndRelease.
-
 ```xml
 <!-- Package.appxmanifest -->
 
@@ -72,6 +131,8 @@ The following example shows a Copilot hot key provider registration with support
 
 ## Handle URI activation
 
+To detect whether the app was activated via URI activation, call [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) and check to see if the value of the [AppActivationArguments.Kind](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments.kind) property is [Protocol](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind). If the app was launched via protocol activation, check to see if the URI scheme is the same as the protocol name you specified in your app manifest. If all of these tests pass, then you know that your app was activated by the user pressing the Copilot hardware key. At this point you can parse the URI query string and get the *state* parameter, which will have a value of "Down", "Up", or **TBD - What is the state query string for single press?
+
 ```csharp
 // App.xaml.cs
 
@@ -92,44 +153,16 @@ protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs ar
 }
 ```
 
-### Implement a helper property for tracking the Copilot Key pressed state
-
-```csharp
-public event PropertyChangedEventHandler? PropertyChanged;
-
-private void OnPropertyChanged([CallerMemberName] string propertyName = "State")
-{
-    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-}
-
-
-public void SetState(string state)
-{
-    State = state;
-}
-
-private string _state;
-public string State
-{
-    get => _state;
-    set
-    {
-        if (_state != value)
-        {
-            _state = value;
-            OnPropertyChanged();
-        }
-    }
-}
-```
-
-```xaml
-<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-  <TextBlock Name="KeyStateText" Text="{x:Bind State, Mode=OneWay}" />
-</StackPanel>
-```
+> [!IMPORTANT]
+> Note that, by default, WinUI 3 apps are multi-instanced, which means that a new instance will be launched whenever the Microsoft Copilot hot key is pressed or released. This may be the desired behavior for many providers, but if you would prefer, you can update you app to use a single instance. For more information, see [Create a single-instanced WinUI app with C#](/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance).
 
 ## Handle fast path invocation
+
+In addition to URI activation, apps can register to support fast path invocation in which a running app receives messages about Copilot hardware app through window messages. For a currently-running app, this invocation method is faster than URI activation and will provide a better user experience, since the app can begin listening for speech more quickly after the key is pressed and held.
+
+### Update the app manifest file to support fast path invocation
+
+To add support for fast path invocation, update the "com.microsoft.windows.copilotkeyprovider" extension to add the *MessageWParam* attribute to the **SingleTap**, **PressAndHoldStart**, and **PressAndHoldStop** elements. Each *MessageWParam* value must be a unique 32-bit integer, but the values used are chosen by the app. This example uses values of 0, 1, and 2, respectively. These values will be used later in the example to determine the current pressed state of the Windows Copilot hardware key. 
 
 ```xml
 <!-- Package.appxmanifest -->
@@ -142,358 +175,111 @@ public string State
     PublicFolder="Public">
     <uap3:Properties>
       <SingleTap FastPathValue="0"/>
-      <PressAndHoldStart FastPathValue="1">myapp-copilothotkey://?state=Down</PressAndHoldStart>
-      <PressAndHoldStop FastPathValue="2">myapp-copilothotkey://?state=Up</PressAndHoldStop>
+      <PressAndHoldStart MessageWParam="1">myapp-copilothotkey://?state=Down</PressAndHoldStart>
+      <PressAndHoldStop MessageWParam="2">myapp-copilothotkey://?state=Up</PressAndHoldStop>
     </uap3:Properties>
   </uap3:AppExtension>
 </uap3:Extension>
 ```
 
-### Use DllImport to access win32 APIs
+### Access win32 APIs for window registration
+
+Fast path activation is enabled by setting a property on the [IPropertyStore](/windows/win32/api/propsys/nn-propsys-ipropertystore) associated with one of the app's windows. To do this requires access to some native Win32 APIs. This walkthrough will use the CsWin32 library, which automates the generation of C# bindings and is available as a NuGet package.
+
+In Visual Studio, in **Solution Explorer**, right-click on your project file and select **Manage NuGet packages...**. On the **Browse** tab of the NuGet package manager, search for "cswin32" and select the "Microsoft.Windows.CsWin32" package and click **Install*.
+
+After the package is installed, add a new text file in your project directory and name it "NativeMethods.txt". The CsWin32 tool will look in this file for a list of the Win32 APIs that it will generate bindings for. Put the following API names in "NativeMethods.txt".
+
+`SUBCLASSPROC`
+`SHGetPropertyStoreForWindow`
+`IPropertyStore`
+`SetWindowSubclass`
+`DefSubclassProc`
+
+### Register the window for Microsoft Copilot fastpath invocation
+
+Next we will update the **MainWindow** class to register the window to receive fastpath invocations from the Copilot hardware key. 
+
+First, call [GetWindowHandle](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle) to get an [HWND](/windows/win32/winprog/windows-data-types) handle to the **MainWindow**. Call [SHGetPropertyStoreForWindow](/windows/win32/api/shellapi/nf-shellapi-shgetpropertystoreforwindow) to get the **IPropertyStore** for the window. Create a new [PROPERTYKEY](/windows/win32/api/wtypes/ns-wtypes-propertykey) and set the *fmtid* member to the GUID for Windows Copilot fastpath activation. Set the value of the property to an app-defined value, that will be passed back to the app from the system when the hardware key state changes. Call [SetValue](/windows/win32/api/propsys/nf-propsys-ipropertystore-setvalue). **TBD - is commit needed? This isn't currently working**
+
+Finally, create a [SUBCLASSPROC](/windows/win32/api/commctrl/nc-commctrl-subclassproc) callback that will be called when the hardware key state changes. **WindowSubClass** is the callback implementation that will be shown in the next step. Call [SetWindowSubclass](/windows/win32/api/commctrl/nf-commctrl-setwindowsubclass) to register the callback.
 
 ```csharp
-// MainWindow.xaml.cs
-public delegate int SUBCLASSPROC(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam, IntPtr uIdSubclass, uint dwRefData);
-[DllImport("Comctl32.dll", SetLastError = true)]
-public static extern bool SetWindowSubclass(IntPtr hWnd, SUBCLASSPROC pfnSubclass, uint uIdSubclass, uint dwRefData);
-
-[DllImport("Comctl32.dll", SetLastError = true)]
-public static extern int DefSubclassProc(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam);
-
-[DllImport("kernel32.dll")]
-public static extern bool QueryPerformanceCounter(out System.Int64 lpPerformanceCount);
-
-[DllImport("kernel32.dll")]
-public static extern bool QueryPerformanceFrequency(out System.Int64 lpFrequency);
-
-// Borrowed from https://github.com/devMashHub/GetDuration/blob/master/PropVariant.cs
-// Renamed to avoid collision with the PropVariant class in the WindowsAPICodePack
-[StructLayout(LayoutKind.Sequential)]
-public struct MyPropVariant
-{
-
-    #region Struct fields
-
-    // The layout of these elements needs to be maintained.
-    //
-    // NOTE: We could use LayoutKind.Explicit, but we want
-    //       to maintain that the IntPtr may be 8 bytes on
-    //       64-bit architectures, so we'll let the CLR keep
-    //       us aligned.
-    //
-    // NOTE: In order to allow x64 compat, we need to allow for
-    //       expansion of the IntPtr. However, the BLOB struct
-    //       uses a 4-byte int, followed by an IntPtr, so
-    //       although the p field catches most pointer values,
-    //       we need an additional 4-bytes to get the BLOB
-    //       pointer. The p2 field provides this, as well as
-    //       the last 4-bytes of an 8-byte value on 32-bit
-    //       architectures.
-
-    // This is actually a VarEnum value, but the VarEnum type
-    // shifts the layout of the struct by 4 bytes instead of the
-    // expected 2.
-    ushort vt;
-
-    ushort wReserved1;
-    ushort wReserved2;
-    ushort wReserved3;
-
-    IntPtr p;
-    int p2;
-
-    #endregion
-
-    #region union members
-
-    sbyte cVal // CHAR cVal;
-    {
-        get { return (sbyte)GetDataBytes()[0]; }
-    }
-
-    byte bVal // UCHAR bVal;
-    {
-        get { return GetDataBytes()[0]; }
-    }
-
-    short iVal // SHORT iVal;
-    {
-        get { return BitConverter.ToInt16(GetDataBytes(), 0); }
-    }
-
-    ushort uiVal // USHORT uiVal;
-    {
-        get { return BitConverter.ToUInt16(GetDataBytes(), 0); }
-    }
-
-    int lVal // LONG lVal;
-    {
-        get { return BitConverter.ToInt32(GetDataBytes(), 0); }
-    }
-
-    uint ulVal // ULONG ulVal;
-    {
-        get { return BitConverter.ToUInt32(GetDataBytes(), 0); }
-    }
-
-    long hVal // LARGE_INTEGER hVal;
-    {
-        get { return BitConverter.ToInt64(GetDataBytes(), 0); }
-    }
-
-    ulong uhVal // ULARGE_INTEGER uhVal;
-    {
-        get { return BitConverter.ToUInt64(GetDataBytes(), 0); }
-    }
-
-    float fltVal // FLOAT fltVal;
-    {
-        get { return BitConverter.ToSingle(GetDataBytes(), 0); }
-    }
-
-    double dblVal // DOUBLE dblVal;
-    {
-        get { return BitConverter.ToDouble(GetDataBytes(), 0); }
-    }
-
-    bool boolVal // VARIANT_BOOL boolVal;
-    {
-        get { return (iVal == 0 ? false : true); }
-    }
-
-    int scode // SCODE scode;
-    {
-        get { return lVal; }
-    }
-
-    decimal cyVal // CY cyVal;
-    {
-        get { return decimal.FromOACurrency(hVal); }
-    }
-
-    DateTime date // DATE date;
-    {
-        get { return DateTime.FromOADate(dblVal); }
-    }
-
-    #endregion
-
-    /// <summary>
-    /// Gets a byte array containing the data bits of the struct.
-    /// </summary>
-    /// <returns>A byte array that is the combined size of the data bits.</returns>
-    private byte[] GetDataBytes()
-    {
-        byte[] ret = new byte[IntPtr.Size + sizeof(int)];
-        if (IntPtr.Size == 4)
-            BitConverter.GetBytes(p.ToInt32()).CopyTo(ret, 0);
-        else if (IntPtr.Size == 8)
-            BitConverter.GetBytes(p.ToInt64()).CopyTo(ret, 0);
-        BitConverter.GetBytes(p2).CopyTo(ret, IntPtr.Size);
-        return ret;
-    }
-
-    /// <summary>
-    /// Called to properly clean up the memory referenced by a PropVariant instance.
-    /// </summary>
-    [DllImport("ole32.dll")]
-    private extern static int PropVariantClear(ref MyPropVariant pvar);
-
-    /// <summary>
-    /// Called to clear the PropVariant's referenced and local memory.
-    /// </summary>
-    /// <remarks>
-    /// You must call Clear to avoid memory leaks.
-    /// </remarks>
-    public void Clear()
-    {
-        // Can't pass "this" by ref, so make a copy to call PropVariantClear with
-        MyPropVariant var = this;
-        PropVariantClear(ref var);
-
-        // Since we couldn't pass "this" by ref, we need to clear the member fields manually
-        // NOTE: PropVariantClear already freed heap data for us, so we are just setting
-        //       our references to null.
-        vt = (ushort)VarEnum.VT_EMPTY;
-        wReserved1 = wReserved2 = wReserved3 = 0;
-        p = IntPtr.Zero;
-        p2 = 0;
-    }
-
-    /// <summary>
-    /// Gets the variant type.
-    /// </summary>
-    public VarEnum Type
-    {
-        get { return (VarEnum)vt; }
-    }
-
-    public void Init(VarEnum t, uint val)
-    {
-        vt = (ushort)t;
-        p = (IntPtr)val;
-    }
-
-    /// <summary>
-    /// Gets the variant value.
-    /// </summary>
-    public object Value
-    {
-        get
-        {
-            // TODO: Add support for reference types (ie. VT_REF | VT_I1)
-            // TODO: Add support for safe arrays
-
-            switch ((VarEnum)vt)
-            {
-                case VarEnum.VT_I1:
-                    return cVal;
-                case VarEnum.VT_UI1:
-                    return bVal;
-                case VarEnum.VT_I2:
-                    return iVal;
-                case VarEnum.VT_UI2:
-                    return uiVal;
-                case VarEnum.VT_I4:
-                case VarEnum.VT_INT:
-                    return lVal;
-                case VarEnum.VT_UI4:
-                case VarEnum.VT_UINT:
-                    return ulVal;
-                case VarEnum.VT_I8:
-                    return hVal;
-                case VarEnum.VT_UI8:
-                    return uhVal;
-                case VarEnum.VT_R4:
-                    return fltVal;
-                case VarEnum.VT_R8:
-                    return dblVal;
-                case VarEnum.VT_BOOL:
-                    return boolVal;
-                case VarEnum.VT_ERROR:
-                    return scode;
-                case VarEnum.VT_CY:
-                    return cyVal;
-                case VarEnum.VT_DATE:
-                    return date;
-                case VarEnum.VT_FILETIME:
-                    return DateTime.FromFileTime(hVal);
-                case VarEnum.VT_BSTR:
-                    return Marshal.PtrToStringBSTR(p);
-                case VarEnum.VT_BLOB:
-                    byte[] blobData = new byte[lVal];
-                    IntPtr pBlobData;
-                    if (IntPtr.Size == 4)
-                    {
-                        pBlobData = new IntPtr(p2);
-                    }
-                    else if (IntPtr.Size == 8)
-                    {
-                        // In this case, we need to derive a pointer at offset 12,
-                        // because the size of the blob is represented as a 4-byte int
-                        // but the pointer is immediately after that.
-                        pBlobData = new IntPtr(BitConverter.ToInt64(GetDataBytes(), sizeof(int)));
-                    }
-                    else
-                        throw new NotSupportedException();
-                    Marshal.Copy(pBlobData, blobData, 0, lVal);
-                    return blobData;
-                case VarEnum.VT_LPSTR:
-                    return Marshal.PtrToStringAnsi(p);
-                case VarEnum.VT_LPWSTR:
-                    return Marshal.PtrToStringUni(p);
-                case VarEnum.VT_UNKNOWN:
-                    return Marshal.GetObjectForIUnknown(p);
-                case VarEnum.VT_DISPATCH:
-                    return p;
-                default:
-                    throw new NotSupportedException("The type of this variable is not support ('" + vt.ToString() + "')");
-            }
-        }
-    }
-}
-
-[ComImport, Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-interface IPropertyStore
-{
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetCount([Out] out uint cProps);
-
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetAt([In] uint iProp, out PropertyKey pkey);
-
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetValue([In] ref PropertyKey key, out object pv);
-
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    int SetValue([In] ref PropertyKey key, [In] ref MyPropVariant pv);
-
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void Commit();
-}
-
-
-[DllImport("shell32.dll", SetLastError = true)]
-static extern int SHGetPropertyStoreForWindow(
-IntPtr handle,
-ref Guid riid,
- [Out(), MarshalAs(UnmanagedType.Interface)] out IPropertyStore propertyStore);
-```
-
-
-### Register a Window to receive callbacks
-
-```csharp
-// MainWindow.xaml.cs
-private SUBCLASSPROC SubClassDelegate;
-private nint hWndMain;
+private HWND hWndMain;
+private Windows.Win32.UI.Shell.SUBCLASSPROC SubClassDelegate;
+public const int WM_COPILOT = 0x8000 + 0x0001;
 
 public MainWindow(string state)
 {
-    ...
-    hWndMain = (nint)WinRT.Interop.WindowNative.GetWindowHandle(this);
+    this.InitializeComponent();
+
+    hWndMain = (HWND)WinRT.Interop.WindowNative.GetWindowHandle(this);
     Microsoft.UI.Windowing.AppWindow appWindow = AppWindow;
-    
-    var key = new PropertyKey(new Guid("38652BCA-4329-4E74-86F9-39CF29345EEA"), 0x00000002);
-    var value = new MyPropVariant();
-    value.Init(VarEnum.VT_UINT, WM_COPILOT);
-    propertyStore.SetValue(ref key, ref value);
-    
-    SubClassDelegate = new SUBCLASSPROC(WindowSubClass);
-    bool bRet = SetWindowSubclass((int)appWindow.Id.Value, SubClassDelegate, 0, 0);
+
+
+    var propertyStoreGUID = new Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99");
+    var hr = PInvoke.SHGetPropertyStoreForWindow((HWND)this.AppWindow.Id.Value, in propertyStoreGUID, out var propertyStore);
+    var key = new PROPERTYKEY();
+    var copilotFastpathGUID = new Guid("38652BCA-4329-4E74-86F9-39CF29345EEA");
+    key.fmtid = copilotFastpathGUID;
+    key.pid = 0x00000002;
+    var value = new PROPVARIANT();
+    value.Anonymous.Anonymous.vt = VARENUM.VT_UINT;
+    value.Anonymous.decVal = WM_COPILOT;
+    ((IPropertyStore)propertyStore).SetValue(in key, in value);
+    ((IPropertyStore)propertyStore).Commit();
+
+    SubClassDelegate = new Windows.Win32.UI.Shell.SUBCLASSPROC(WindowSubClass);
+    bool bRet = PInvoke.SetWindowSubclass((HWND)appWindow.Id.Value, SubClassDelegate, 0, 0);
 
     _state = state;
-    ...
 }
 ```
 
+### Implemnent the window subclass callback
+
+The last step in this example is implementing the window subclass callback that will be called whenever the app is running and the state of the Windows Copilot hardware key changes. In this example, we check that the window message is the **WM_COPILOT** value that we specified when setting the property store value in the previous step. Then we check the value of the *wParam* argument to see which of the values we specified with the **MessageWParam** attributes in the app manifest has been passed in. **SetState** is called to update the UI with the current state.
+
 ```csharp
-private int WindowSubClass(IntPtr hWnd, uint uMsg, IntPtr wParam, IntPtr lParam, IntPtr uIdSubclass, uint dwRefData)
+private LRESULT WindowSubClass(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam, nuint uIdSubclass, nuint dwRefData)
 {
     switch (uMsg)
     {
         case WM_COPILOT:
+        {
+            switch (wParam.Value)
             {
-                switch (wParam)
-                {
-                    case 0:
-                        // Show window
-                        SetState("SingleTap");
-                        break;
-                    case 1:
-                        // Start recording audio and update UI to indicate recording is occurring.
-                        SetState("PressAndHold START");
-                        break;
-                    case 2:
-                        // End recording audio, process recorded audio
-                        SetState("PressAndHold END");
-                        break;
-                }
+                case 0:
+                    SetState("SingleTap");
+                    break;
+                case 1:
+                    SetState("PressAndHold START");
+                    break;
+                case 2:
+                    SetState("PressAndHold END");
+                    break;
             }
-            break;
+        }
+        break;
 
     }
-    return DefSubclassProc(hWnd, uMsg, wParam, lParam);
+    return PInvoke.DefSubclassProc((HWND)hWnd, uMsg, wParam, lParam);
+
 }
 ```
 
+## Next steps
+
+This example shown in this walkthrough only demonstrates handling activation based on a change in the Windows Copilot hardware key pressed state. Since the purpose of the PressAndHoldAndRelease is to provide a voice chat-style interface, your app needs to implement some more sophisticated behavior.
+
+### Recording audio
+
+Apps will typically begin recording audio when the button state changes to *PressAndHoldStart* and stop recording when the state changes to *PressAndHoldEnd*. For information about recording audio in a Windows app, see [Basic photo, video, and audio capture with MediaCapture in a WinUI 3 app](/windows/apps/develop/camera/basic-photo-capture) or [Audio/Video Capture in Media Foundation](/windows/win32/medfound/audio-video-capture-in-media-foundation).
+
+### Processing speech
+
+To determine the user intent from the recorded audio, apps may need to use a speech to text processing. There are many ways to do this from a Windows app, including using local AI models or using a web service such as [Azure AI Speech service](/azure/ai-services/speech-service). For more information, see [Speech to text documentation](/azure/ai-services/speech-service/index-speech-to-text).
+
+### Status UI
+
+**TBD - I'm not sure of the requirements around UI for PressAndHoldAndRelease. It would be nice to provide some UI guidance and/or link to docs for the best practices for the relevant UI features (e.g. showing and hiding a window)**
