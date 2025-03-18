@@ -31,6 +31,30 @@ The stable channel provides releases of the Windows App SDK that are supported f
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
 
+### Version 1.6.6 (1.6.250228001)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
+
+- Fixed an issue where a child window posting WM_NCMOUSELEAVE to the parent window would result in a loop that blocks new mouse input events.
+- Fixed a crash which would occur on the next AppWindow.Changed event after a WebView2 process failure.
+- Fixed a potential crash when using an Accessibility tool and closing a window.
+- Fixed an issue where a textbox would not accept key input if given focus by clicking in the area of the clear button of the textbox. For more info, see GitHub issue [#7703](https://github.com/microsoft/microsoft-ui-xaml/issues/7703).
+- Fixed an issue where a tooltip is not shown for the Minimize button in the titlebar when using `ExtendsContentIntoTitleBar=true`. For more info, see GitHub issue [#9149](https://github.com/microsoft/microsoft-ui-xaml/issues/9149).
+
+This release includes the following new APIs: 
+
+A new `IsPlaceholderContent` property on `WidgetInfo` and `WidgetUpdateRequestOptions` enables a Widget provider to indicate that it would display placeholder content if rendered. For example, a Widget that shows weather information should set IsPlaceholderContent to true if the user has not yet specified a weather location and the Widget is merely showing weather information for a default location like Seattle. When a Widget is marked as placeholder, certain hosts may decide to hide the Widget or prioritize other Widgets.
+
+```
+Microsoft.Windows.Widgets.Providers
+
+    WidgetInfo
+        IsPlaceholderContent
+
+    WidgetUpdateRequestOptions
+        IsPlaceholderContent
+```
+
 ### Version 1.6.5 (1.6.250205002)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
