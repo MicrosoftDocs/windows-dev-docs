@@ -1,6 +1,6 @@
 ---
 title: Stable channel release notes for the Windows App SDK 1.6
-description: Provides information about the stable release channel for the Windows App SDK.
+description: Provides information about the stable release channel for the Windows App SDK 1.6.
 ms.topic: article
 ms.date: 03/18/2025
 keywords: windows win32, windows app development, Windows App SDK 
