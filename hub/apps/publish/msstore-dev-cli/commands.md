@@ -385,6 +385,340 @@ Deletes the pending submission from the store.
 msstore submission delete --help
 ```
 
+## Flights Command
+
+| Sub-Command                                 | Description                                                  |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| [list](#flights---list-command-usage)       | Retrieves all the Flights for the specified Application.     |
+| [get](#flights---get-command-usage)         | Retrieves a flight for the specified Application and flight. |
+| [delete](#flights---delete-command-usage)   | Deletes a flight for the specified Application and flight.   |
+| [create](#flights---create-command-usage)   | Creates a flight for the specified Application and flight.   |
+| [submission](#flights---submission-command) | Execute flight submissions related tasks.                    |
+
+### Flights - List Command Usage
+
+```console
+msstore flights list <productId>
+```
+
+#### Flights - List Command Arguments
+
+| Argument    | Description     |
+| ----------- | --------------- |
+| `productId` | The product ID. |
+
+#### Flights - List Command Help
+
+```console
+msstore flights list --help
+```
+### Flights - Get Command Usage
+
+```console
+msstore flights get <productId> <flightId>
+```
+
+#### Flights - Get Command Arguments
+
+| Argument    | Description     |
+| ----------- | --------------- |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Get Command Help
+
+```console
+msstore flights get --help
+```
+
+### Flights - Delete Command Usage
+
+```console
+msstore flights delete <productId> <flightId>
+```
+
+#### Flights - Delete Command Arguments
+
+| Argument    | Description     |
+| ----------- | --------------- |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Delete Command Help
+
+```console
+msstore flights delete --help
+```
+
+### Flights - Create Command Usage
+
+```console
+msstore flights create <productId> <friendlyName> --group-ids <group-ids>
+```
+
+#### Flights - Create Command Arguments
+
+| Argument       | Description                      |
+| -------------- | -------------------------------- |
+| `productId`    | The product ID.                  |
+| `friendlyName` | The friendly name of the flight. |
+
+#### Flights - Create Command Options
+
+| Option | Description |
+|--------|-------------|
+| -g, --group-ids | The group IDs to associate with the flight. |
+  -r, --rank-higher-than | The flight ID to rank higher than. |
+
+#### Flights - Create Command Help
+
+```console
+msstore flights create --help
+```
+
+## Flights - Submission Command
+
+| Sub-Command                                            | Description                                                                                            |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| [get](#flights---submission-get-command-usage)         | Retrieves the existing package flight submission, either the existing draft or the last published one. |
+| [delete](#flights---submission-delete-command-usage)   | Deletes the pending package flight submission from the store.                                          |
+| [update](#flights---submission-update-command-usage)   | Updates the existing flight draft with the provided JSON.                                              |
+| [publish](#flights---submission-publish-command-usage) | Starts the flight submission process for the existing Draft.                                           |
+| [poll](#flights---submission-poll-command-usage)       | Polls until the existing flight submission is PUBLISHED or FAILED.                                     |
+| [status](#flights---submission-status-command-usage)   | Retrieves the current status of the store flight submission.                                           |
+| [rollout](#flights---submission---rollout-command)       | Execute flight rollout related operations.                                                             |
+
+### Flights - Submission Get Command Usage
+
+```console
+msstore flights submission get <productId> <flightId>
+```
+
+#### Flights - Submission Get Command Arguments
+
+| Argument    | Description     |
+| ----------- | --------------- |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Submission Get Command Help
+
+```console
+msstore flights submission get --help
+```
+
+### Flights - Submission Delete Command Usage
+
+```console
+msstore flights submission delete <productId> <flightId>
+```
+
+#### Flights - Submission Delete Command Arguments
+
+| Argument    | Description     |
+| ----------- | --------------- |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Submission Delete Command Help
+
+```console
+msstore flights submission delete --help
+```
+
+### Flights - Submission Update Command Usage
+
+```console
+msstore flights submission update <productId> <flightId> <product>
+```
+
+#### Flights - Submission Update Command Arguments
+
+| Argument    | Description                              |
+| ----------- | ---------------------------------------- |
+| `productId` | The product ID.                          |
+| `flightId`  | The flight ID.                           |
+| `product`   | The updated JSON product representation. |
+
+#### Flights - Submission Update Command Options
+
+| Option                   | Description                                                            |
+| ------------------------ | ---------------------------------------------------------------------- |
+| -s, --skipInitialPolling | Skip the initial polling before executing the action. [default: False] |
+
+#### Flights - Submission Update Command Help
+
+```console
+msstore flights submission update --help
+```
+
+### Flights - Submission Publish Command Usage
+
+```console
+msstore flights submission publish <productId> <flightId>
+```
+
+#### Flights - Submission Publish Command Arguments
+
+| Argument    | Description     |
+| ----------- | --------------- |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Submission Publish Command Help
+
+```console
+msstore flights submission publish --help
+```
+
+### Flights - Submission Poll Command Usage
+
+```console
+msstore flights submission poll <productId> <flightId>
+```
+
+#### Flights - Submission Poll Command Arguments
+
+| Argument    | Description     |
+| ----------- | --------------- |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Submission Poll Command Help
+
+```console
+msstore flights submission poll --help
+```
+
+### Flights - Submission Status Command Usage
+
+```console
+msstore flights submission status <productId> <flightId>
+```
+
+#### Flights - Submission Status Command Arguments
+
+| Argument    | Description     |
+| ----------- |---------------- |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Submission Status Command Help
+
+```console
+msstore flights submission status --help
+```
+
+## Flights - Submission - Rollout Command
+
+| Sub-Command                                                        | Description                                           |
+| ------------------------------------------------------------------ | ----------------------------------------------------- |
+| [get](#flights---submission---rollout-get-command-usage)           | Retrieves the flight rollout status of a submission.  |
+| [update](#flights---submission---rollout-update-command-usage)     | Update the flight rollout percentage of a submission. |
+| [halt](#flights---submission---rollout-halt-command-usage)         | Halts the flight rollout of a submission.             |
+| [finalize](#flights---submission---rollout-finalize-command-usage) | Finalizes the flight rollout of a submission.         |
+
+### Flights - Submission - Rollout Get Command Usage
+
+```console
+msstore flights submission rollout get <productId> <flightId>
+```
+
+#### Flights - Submission - Rollout Get Command Arguments
+
+| Argument    | Description     |
+| ----------- | -------------   |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Submission - Rollout Get Command Options
+
+| Option             | Description        |
+| ------------------ | ------------------ |
+| -s, --submissionId | The submission ID. |
+
+#### Flights - Submission - Rollout Get Command Help
+
+```console
+msstore flights submission rollout get --help
+```
+
+### Flights - Submission - Rollout Update Command Usage
+
+```console
+msstore flights submission rollout update <productId> <flightId> <percentage>
+```
+
+#### Flights - Submission - Rollout Update Command Arguments
+
+| Argument     | Description                                                       |
+| ------------ | ----------------------------------------------------------------- |
+| `productId`  | The product ID.                                                   |
+| `flightId`   | The flight ID.                                                    |
+| `percentage` | The percentage of users that will receive the submission rollout. |
+
+#### Flights - Submission - Rollout Update Command Options
+
+| Option             | Description        |
+| ------------------ | ------------------ |
+| -s, --submissionId | The submission ID. |
+
+#### Flights - Submission - Rollout Update Command Help
+
+```console
+msstore flights submission rollout update --help
+```
+
+### Flights - Submission - Rollout Halt Command Usage
+
+```console
+msstore flights submission rollout halt <productId> <flightId>
+```
+
+#### Flights - Submission - Rollout Halt Command Arguments
+
+| Argument    | Description     |
+| ----------- | --------------- |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Submission - Rollout Halt Command Options
+
+| Option             | Description        |
+| ------------------ | ------------------ |
+| -s, --submissionId | The submission ID. |
+
+#### Flights - Submission - Rollout Halt Command Help
+
+```console
+msstore flights submission rollout halt --help
+```
+
+### Flights - Submission - Rollout Finalize Command Usage
+
+```console
+msstore flights submission rollout finalize <productId> <flightId>
+```
+
+#### Flights - Submission - Rollout Finalize Command Arguments
+
+| Argument    | Description     |
+| ----------- | --------------- |
+| `productId` | The product ID. |
+| `flightId`  | The flight ID.  |
+
+#### Flights - Submission - Rollout Finalize Command Options
+
+| Option             | Description        |
+| ------------------ | ------------------ |
+| -s, --submissionId | The submission ID. |
+
+#### Flights - Submission - Rollout Finalize Command Help
+
+```console
+msstore flights submission rollout finalize --help
+```
+
 ## Init Command
 
 The `init` command helps you setup your application to publish to the Microsoft Store. It currently supports the following application types:
