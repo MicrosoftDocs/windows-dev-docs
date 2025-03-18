@@ -44,31 +44,33 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./down
 ### Version 1.7.0 (1.7.250310001)
 #### New Badge Notifications Feature
 
-The notification badge conveys a summary or status information specific to an app. This can be numeric (1-99) or a glyph from one of the system-provided glyphs. This new functionality has been introduced to unblock apps like WhatsApp who depend on these visual indicators to portray user indicators.
+This new functionality provides an easy way for apps to show status, such as number of unread mails in a mail app or number of new posts in a social media app.
 
 For more info, see GitHub [#4926](https://github.com/microsoft/WindowsAppSDK/issues/4926).
 
 #### New CameraCaptureUI API
 
-Developers have encountered challenges in the desktop environments due to the reliance on WinRT CameraCaptureUI being dependent on CoreWIndows, and lack of InitializeWithWindows support. The team has released this new CameraCaptureUI API to WinAppSDK to provide a streamlined solution with feature parity, now supporting WindowID in the constructor for enhanced desktop compatibility.
+Developers have encountered challenges in the desktop environments due to WinRT CameraCaptureUI being dependent on CoreWindows, and lack of InitializeWithWindow support. The team has released this new `Microsoft.Windows.Media.Capture.CameraCaptureUI` API to WinAppSDK to provide a streamlined solution with feature parity, now supporting WindowID in the constructor for enhanced desktop compatibility.
 
 For more info, see GitHub issue [#4721](https://github.com/microsoft/WindowsAppSDK/issues/4721).
 
 #### New Authentication API
 
-A new `OAuth2Manager` API provides a streamlined solution for web authentication, offering OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. This new Authentication Manager is ifferent from the public WebAuthentication Broker API. As it better aligns with OAuth best practices, for more information visit:  RFC 6749, RFC 7636, RFC 8252.
+A new `OAuth2Manager` API provides a streamlined solution for web authentication, offering OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. This new Authentication Manager is different from the public WebAuthentication Broker API, as it better aligns with OAuth best practices.
 
 For more info, see GitHub issue [#4772](https://github.com/microsoft/WindowsAppSDK/issues/4772).
 
 #### New Background Task support
 
-Background tasks are app component that run in the background without a user interface, performing actions like download files, syncing data, sending notifications or updating tiles. The new `BackgroundTaskBuilder` API provides WinAppSDK dependent apps the ability to directly register the full trust COM components with the background tasks. Removing the need to implement workaround.
+Background tasks are app components that run in the background without a user interface, performing actions like download files, syncing data, sending notifications or updating files. The new `BackgroundTaskBuilder` API provides WinAppSDK dependent apps the ability to directly register the full trust COM components with background tasks, removing the need to implement workaround.
 
 For more info, see GitHub [#4831](https://github.com/microsoft/WindowsAppSDK/issues/4831).
 
 #### New TitleBar control
 
-A new `TitleBar` control makes it much easier to create a great, customizable titlebar for your app. Configure properties such as the titlebar icon, Title, and Subtitle, include an integrated back button, or even add a custom control like a search box! The control includes robust titlebar capabilities like empty-space draggable regions, theme responsiveness, caption buttons, and built-in accessibility support so you can focus on your personalized design and still get the same reliable titlebar as the default experience. For more info, see GitHub [#10056](https://github.com/microsoft/microsoft-ui-xaml/issues/10056).
+A new `TitleBar` control makes it much easier to create a great, customizable titlebar for your app. Configure properties such as the titlebar icon, Title, and Subtitle, include an integrated back button, or even add a custom control like a search box! The control includes robust titlebar capabilities like empty-space draggable regions, theme responsiveness, caption buttons, and built-in accessibility support so you can focus on your personalized design and still get the same reliable titlebar as the default experience. 
+
+For more info, see GitHub [#10056](https://github.com/microsoft/microsoft-ui-xaml/issues/10056).
 
 #### Support for MathML
 
@@ -78,9 +80,9 @@ For more info, see GitHub [#4196](https://github.com/microsoft/microsoft-ui-xaml
 
 #### Enhanced Runtime
 
-* Windows App SDK's [Dynamic Dependencies APIs](https://learn.microsoft.com/windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api) delegate all calls to Windows 11's implementation when running on \>= Windows 11 24H2 (10.0.26100.0) providing improved performance and robustness. This holds true for all C/C++ (Mdd*()) and WinRT (namespace Microsoft.Windows.ApplicationModel.DynamicDependency) APIs.
+* Windows App SDK's [Dynamic Dependencies APIs](/windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api) delegate all calls to Windows 11's implementation when running on \>= Windows 11 24H2 (10.0.26100.0) providing improved performance and robustness. This holds true for all C/C++ (Mdd*()) and WinRT (namespace Microsoft.Windows.ApplicationModel.DynamicDependency) APIs.
     * Packaged processes calling Windows App SDK's Dynamic Dependencies APIs is now supported on \>= Windows 11 24H2 (10.0.26100.0). This is still unsupported on older systems (WinAppSDK's implementation doesn't support packaged apps).
-    * This has no impact to the developer experience. Callers can continue using the [Bootstrapper API](https://learn.microsoft.com/windows/windows-app-sdk/api/win32/_bootstrap/) to add the WinAppSDK framework package to the calling process' package graph.
+    * This has no impact to the developer experience. Callers can continue using the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) to add the WinAppSDK framework package to the calling process' package graph.
     * For more info, see GitHub PR [#4949](https://github.com/microsoft/WindowsAppSDK/pull/4949).
 * Undocked Registration-free WinRT (URFW) is not enabled on \>= Windows 11 24H2 (10.0.26100.0). The OS' implementation handles all [Registration-free WinRT](https://blogs.windows.com/windowsdeveloper/2019/04/30/enhancing-non-packaged-desktop-apps-using-windows-runtime-components/) activity on these systems providing improved performance and robustness. For more info, see GitHub PR [#4949](https://github.com/microsoft/WindowsAppSDK/pull/4949).
 * Detours is not used on \>= Windows 11 24H2 (10.0.26100.0). Detours was only used by Windows App SDK's implementations of Dynamic Dependencies and Registration-free WinRT, but as those features are now handled by the OS' implementations there's no need for them to initialize or otherwise wire up Detours. This provides a small performance gain when loading Microsoft.WindowsAppRuntime.dll. For more info, see GitHub PR [#4949](https://github.com/microsoft/WindowsAppSDK/pull/4949).
