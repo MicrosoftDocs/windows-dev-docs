@@ -41,7 +41,7 @@ In an existing Windows App SDK 1.7 app, you can update your Nuget package to 1.7
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
-### 1.7.0 (1.7.250310001)
+### Version 1.7.0 (1.7.250310001)
 #### New Badge Notifications Feature
 
 The notification badge conveys a summary or status information specific to an app. This can be numeric (1-99) or a glyph from one of the system-provided glyphs. This new functionality has been introduced to unblock apps like WhatsApp who depend on these visual indicators to portray user indicators.

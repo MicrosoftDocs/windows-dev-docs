@@ -1,8 +1,8 @@
 ---
-title: Stable channel release notes for the Windows App SDK 
+title: Stable channel release notes for the Windows App SDK 1.6
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 01/15/2025
+ms.date: 03/18/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -111,7 +111,7 @@ The following sections describe new and updated features and known issues for ve
 
 In an existing Windows App SDK 1.5 app, you can update your Nuget package to 1.6.240829007 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
-For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
+For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../downloads.md).
 
 ### Required project changes for 1.6
 
@@ -141,7 +141,7 @@ In addition, Windows App SDK managed apps should update to [Microsoft.Windows.Cs
 
 ### Native AOT support
 
-![Native AOT support in 1.6](images/1.6-aot.gif)
+![Native AOT support in 1.6](../images/1.6-aot.gif)
 
 The .NET `PublishAot` project property is now supported for native Ahead-Of-Time compilation. For details on Native AOT, see [Native AOT Deployment](/dotnet/core/deploying/native-aot/?tabs=net8plus%2Cwindows). Because AOT builds on Trimming support, much of the following trimming-related guidance applies to AOT as well.
 
@@ -215,7 +215,7 @@ The Package Management API has received several enhancements including Is\*Ready
 
 ### Improved TabView tab tear-out
 
-![Improved TabView tear-out in 1.6](images/1.6-TabView-tear-out.gif)
+![Improved TabView tear-out in 1.6](../images/1.6-TabView-tear-out.gif)
 
 `TabView` supports a new `CanTearOutTabs` mode which provides an enhanced experience for dragging tabs and dragging out to a new window. When this new option is enabled, tab dragging is very much like the tab drag experience in Edge and Chrome where a new window is immediately created during the drag, allowing the user to drag it to the edge of the screen to maximize or snap the window in one smooth motion. This implementation also doesn't use drag-and-drop APIs, so it isn't impacted by any limitations in those APIs. Notably, tab tear-out is supported in processes running elevated as Administrator.
 
@@ -226,11 +226,11 @@ The Package Management API has received several enhancements including Is\*Ready
 - Unsealed `ItemsWrapGrid`. This should be a backward-compatible change.
 - `PipsPager` supports a new mode where it can wrap between the first and last items.
 
-![New PipsPager wrapping mode in 1.6](images/1.6-PipsPager.gif)
+![New PipsPager wrapping mode in 1.6](../images/1.6-PipsPager.gif)
 
 - `RatingControl` is now more customizable, by moving some hard-coded style properties to theme resources. This allows apps to override these values to better customize the appearance of RatingControl.
 
-<img src="images/1.6-RatingControl.png" alt="New RatingControl customization in 1.6" width="200"/>
+<img src="../images/1.6-RatingControl.png" alt="New RatingControl customization in 1.6" width="200"/>
 
 - WinUI 3 has changed to the typographic model for font selection rather than the legacy weight/stretch/style model. The typographic model is required for some newer fonts, including Segoe UI Variable, and enables enhanced font capabilities. Some older fonts which rely on the weight/stretch/style model for selection may not be found with the typographic model.
 
@@ -403,9 +403,9 @@ Microsoft.Windows.Storage
 
 ## Related topics
 
-- [Preview channel](preview-channel.md)
-- [Experimental channel](experimental-channel.md)
-- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
-- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
+- [Preview channel](../preview-channel.md)
+- [Experimental channel](../experimental-channel.md)
+- [Install tools for the Windows App SDK](../set-up-your-development-environment.md)
+- [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)
+- [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md)
+- [Deploy apps that use the Windows App SDK](../../package-and-deploy/index.md#use-the-windows-app-sdk)
