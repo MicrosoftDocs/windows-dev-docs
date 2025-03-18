@@ -14,12 +14,12 @@ zone_pivot_groups: msstoredevcli-installer-packaging
 
 ### Step 1: Install .NET Windows Runtime
 
-If you haven't done so already, install the latest version of the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0). This is a requirement to run the Microsoft Store Developer CLI.
+If you haven't done so already, install the latest version of the [.NET 9 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/9.0). This is a requirement to run the Microsoft Store Developer CLI.
 
 The easiest way to install it is to use _winget_:
 
 ```console
-winget install Microsoft.DotNet.DesktopRuntime.8
+winget install Microsoft.DotNet.DesktopRuntime.9
 ```
 
 ### Step 2: Install the Microsoft Store Developer CLI on Windows
@@ -35,7 +35,7 @@ winget install "Microsoft Store Developer CLI"
 
 ### Step 1: Install .NET macOS Runtime
 
-If you haven't done so already, install the latest version of the [.NET 8 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0). This is a requirement to run the Microsoft Store Developer CLI.
+If you haven't done so already, install the latest version of the [.NET 9 Runtime](https://dotnet.microsoft.com/download/dotnet/9.0). This is a requirement to run the Microsoft Store Developer CLI.
 
 ### Step 2: Install the Microsoft Store Developer CLI on macOS
 
@@ -59,7 +59,7 @@ brew install microsoft/msstore-cli/msstore-cli
 
 ### Step 1: Install .NET Linux Runtime
 
-If you haven't done so already, install the latest version of the [.NET 8 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0). This is a requirement to run the Microsoft Store Developer CLI.
+If you haven't done so already, install the latest version of the [.NET 9 Runtime](https://dotnet.microsoft.com/download/dotnet/9.0). This is a requirement to run the Microsoft Store Developer CLI.
 
 ### Step 2: Install the Microsoft Store Developer CLI on Linux
 
