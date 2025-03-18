@@ -40,3 +40,9 @@ The following general options are available within the Command Palette settings 
 | Show app details | App details are automatically expanded when displaying an app as a result. |
 | Backspace goes back | Typing <kbd>Backspace</kbd> will take you back to the previous page. |
 | Single-click activates | Activate list items with a single click. When disabled, single clicking selects the item and double clicking activates it. |
+
+## Related content
+
+- [PowerToys Run](../run.md)
+- [Extensibility overview](creating-an-extension.md)
+- [Extension samples](samples.md)
