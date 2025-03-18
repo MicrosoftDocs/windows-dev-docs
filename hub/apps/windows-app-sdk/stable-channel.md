@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 01/15/2025
+ms.date: 03/18/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -11,12 +11,13 @@ ms.localizationpriority: medium
 
 The stable channel provides releases of the Windows App SDK that are supported for use by apps in production environments. Apps that use the stable release of the Windows App SDK can also be published to the Microsoft Store.
 
-**Important links**:
+**Important links:**
 
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 
 **Stable channel release note archive:**
 
+- [Stable channel release notes for the Windows App SDK 1.6](release-notes-archive/stable-channel-1.6.md)
 - [Stable channel release notes for the Windows App SDK 1.5](release-notes-archive/stable-channel-1.5.md)
 - [Stable channel release notes for the Windows App SDK 1.4](release-notes-archive/stable-channel-1.4.md)
 - [Stable channel release notes for the Windows App SDK 1.3](release-notes-archive/stable-channel-1.3.md)
@@ -31,382 +32,272 @@ The stable channel provides releases of the Windows App SDK that are supported f
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
 
-### Version 1.6.6 (1.6.250228001)
 
-This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
+## Version 1.7
 
-- Fixed an issue where a child window posting WM_NCMOUSELEAVE to the parent window would result in a loop that blocks new mouse input events.
-- Fixed a crash which would occur on the next AppWindow.Changed event after a WebView2 process failure.
-- Fixed a potential crash when using an Accessibility tool and closing a window.
-- Fixed an issue where a textbox would not accept key input if given focus by clicking in the area of the clear button of the textbox. For more info, see GitHub issue [#7703](https://github.com/microsoft/microsoft-ui-xaml/issues/7703).
-- Fixed an issue where a tooltip is not shown for the Minimize button in the titlebar when using `ExtendsContentIntoTitleBar=true`. For more info, see GitHub issue [#9149](https://github.com/microsoft/microsoft-ui-xaml/issues/9149).
+The following sections describe new and updated features and known issues for version 1.7.
 
-This release includes the following new APIs: 
-
-A new `IsPlaceholderContent` property on `WidgetInfo` and `WidgetUpdateRequestOptions` enables a Widget provider to indicate that it would display placeholder content if rendered. For example, a Widget that shows weather information should set IsPlaceholderContent to true if the user has not yet specified a weather location and the Widget is merely showing weather information for a default location like Seattle. When a Widget is marked as placeholder, certain hosts may decide to hide the Widget or prioritize other Widgets.
-
-```
-Microsoft.Windows.Widgets.Providers
-
-    WidgetInfo
-        IsPlaceholderContent
-
-    WidgetUpdateRequestOptions
-        IsPlaceholderContent
-```
-
-### Version 1.6.5 (1.6.250205002)
-
-This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
-- Fixed several memory leak issues.
-
-### Version 1.6.4 (1.6.250108002)
-
-This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
-- Fixed an issue with text selection highlighting in a multi-line TextBox. For more info, see GitHub issue [#9965](https://github.com/microsoft/microsoft-ui-xaml/issues/9965).
-- Fixed an issue where the DDLM package would sometimes not install, preventing launch of unpackaged apps. For more info, see GitHub issue [#3855](https://github.com/microsoft/WindowsAppSDK/issues/3855).
-- Fixed a potential crash in Detours in some scenarios. For more info, see GitHub issue [#4937](https://github.com/microsoft/WindowsAppSDK/pull/4937).
-- Fixed another potential issue where a menu off a CommandBar may incorrectly open up instead of down when the CommandBar is at the bottom of the window.
-- Fixed a potential crash when running on older graphics hardware.
-- Fixed a potential crash in pointer event handling when closing a window.
-- Fixed a potential crash caused by `CUIAWindow::InitIds` sometimes triggering reentrancy.
-- Fixed a potential crash when using `CompositionCapabilities.Changed` event.
-- Fixed an issue with some Unicode characters displaying as squares in TextBox/RichEditBox.
-- Fixed `PackageDeploymentManager.EnsurePackage*Async()` handling of `options.RegisterNewerIfAvailable`. For more info, see GitHub issue [#4864](https://github.com/microsoft/WindowsAppSDK/issues/4864).
-
-### Version 1.6.3 (1.6.241114003)
-
-This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
-- Fixed an issue where reading the `AppWindow.ExtendsContentIntoTitleBar` property turns on custom titlebar rendering. For more info, see GitHub issue [#9988](https://github.com/microsoft/microsoft-ui-xaml/issues/9988). 
-- Fixed a potential crash during destruction of a `TextBox`/`RichEditBox`. For more info, see GitHub issue [#9070](https://github.com/microsoft/microsoft-ui-xaml/issues/9070). 
-- Fixed an issue where `PackageDeploymentManager.IsPackageReadyOrNewerAvailable()` failed. For more info, see GitHub issue [#4817](https://github.com/microsoft/WindowsAppSDK/issues/4817). 
-- Fixed an issue where `ScrollViewer` would leak. 
-- Added detection for a rare scenario where the app stops rendering and never recovers. 
-- Fixed an issue where `PackageDeploymentManager.RegisterPackageSetAsync()` requires URI when it should be optional to register by PackageFamilyName. 
-- Fixed an issue that prevented apps from being installed or uninstalled. For more info, see GitHub issue [#4881](https://github.com/microsoft/WindowsAppSDK/issues/4881).
-
-This release includes the following new APIs which allow for providers of Widgets to incorporate web content in their Widgets: 
-
-```C# 
-Microsoft.Windows.Widgets.Providers 
-  IWidgetManager2 
-  IWidgetProviderMessage 
-  IWidgetResourceProvider 
-  WidgetManager 
-     SendMessageToContent 
-
-  WidgetMessageReceivedArgs 
-  WidgetResourceRequest 
-  WidgetResourceRequestedArgs 
-  WidgetResourceResponse 
-``` 
-
-### Version 1.6.1 (1.6.240923002)
-
-This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
-
-- Fixed a crash when using FocusVisualKind.Reveal(). For more info, see GitHub issue [#9966](https://github.com/microsoft/microsoft-ui-xaml/issues/9966).
-- Fixed noisy C++ exceptions from Bcp47Langs.dll. For more info, see GitHub issue [#4691](https://github.com/microsoft/WindowsAppSDK/issues/4691). Note that this fix removes the synchronization with `Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride`.
-- Fixed an issue where an extra `Unloaded` event was raised immediately after showing a `ContentDialog`. For more info, see GitHub issue [#8402](https://github.com/microsoft/microsoft-ui-xaml/issues/8402).
-- Fixed an issue where a CommandBar menu might have incorrectly opened up even when there was room for it to open down.
-- Fixed some issues where input to `InputNonClientPointerSource` regions was not handled correctly when the top-level window was running in right-to-left mode.
-- Fixed the compile-time check for the Windows SDK framework version to handle the slightly different framework name used for .NET 9.
-
-## Version 1.6
-
-The following sections describe new and updated features and known issues for version 1.6.
-
-In an existing Windows App SDK 1.5 app, you can update your Nuget package to 1.6.240829007 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+In an existing Windows App SDK 1.7 app, you can update your Nuget package to 1.7.250310001 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
-### Required project changes for 1.6
+### 1.7.0 (1.7.250310001)
+#### New Badge Notifications Feature
 
-#### C++ project changes
+The notification badge conveys a summary or status information specific to an app. This can be numeric (1-99) or a glyph from one of the system-provided glyphs. This new functionality has been introduced to unblock apps like WhatsApp who depend on these visual indicators to portray user indicators.
 
-When updating a C++ project to 1.6, you'll need to add a project reference to the `Microsoft.Web.WebView2` package. If you update via NuGet Package Manager in Visual Studio, this dependency will be added for you.
+For more info, see GitHub [#4926](https://github.com/microsoft/WindowsAppSDK/issues/4926).
 
-####  C# project changes
+#### New CameraCaptureUI API
 
-In 1.6, Windows App SDK managed apps require [Microsoft.Windows.SDK.NET.Ref](https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref) `*.*.*.38` or later, which can be specified via [WindowsSdkPackageVersion](/dotnet/core/compatibility/sdk/5.0/override-windows-sdk-package-version) in your `csproj` file. For example:
+Developers have encountered challenges in the desktop environments due to the reliance on WinRT CameraCaptureUI being dependent on CoreWIndows, and lack of InitializeWithWindows support. The team has released this new CameraCaptureUI API to WinAppSDK to provide a streamlined solution with feature parity, now supporting WindowID in the constructor for enhanced desktop compatibility.
 
-```XML
-<Project Sdk="Microsoft.NET.Sdk">
-   <PropertyGroup>
-       <OutputType>WinExe</OutputType>
-       <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
-       <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-       <WindowsSdkPackageVersion>10.0.22621.38</WindowsSdkPackageVersion>
-   <PropertyGroup>
-   ...
+For more info, see GitHub issue [#4721](https://github.com/microsoft/WindowsAppSDK/issues/4721).
+
+#### New Authentication API
+
+A new `OAuth2Manager` API provides a streamlined solution for web authentication, offering OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. This new Authentication Manager is ifferent from the public WebAuthentication Broker API. As it better aligns with OAuth best practices, for more information visit:  RFC 6749, RFC 7636, RFC 8252.
+
+For more info, see GitHub issue [#4772](https://github.com/microsoft/WindowsAppSDK/issues/4772).
+
+#### New Background Task support
+
+Background tasks are app component that run in the background without a user interface, performing actions like download files, syncing data, sending notifications or updating tiles. The new `BackgroundTaskBuilder` API provides WinAppSDK dependent apps the ability to directly register the full trust COM components with the background tasks. Removing the need to implement workaround.
+
+For more info, see GitHub [#4831](https://github.com/microsoft/WindowsAppSDK/issues/4831).
+
+#### New TitleBar control
+
+A new `TitleBar` control makes it much easier to create a great, customizable titlebar for your app. Configure properties such as the titlebar icon, Title, and Subtitle, include an integrated back button, or even add a custom control like a search box! The control includes robust titlebar capabilities like empty-space draggable regions, theme responsiveness, caption buttons, and built-in accessibility support so you can focus on your personalized design and still get the same reliable titlebar as the default experience. For more info, see GitHub [#10056](https://github.com/microsoft/microsoft-ui-xaml/issues/10056).
+
+#### Support for MathML
+
+`RichEditBox` now supports MathML, via `RichEditTextDocument.SetMathMode` and `RichEditTextDocument.SetMathML`. 
+
+For more info, see GitHub [#4196](https://github.com/microsoft/microsoft-ui-xaml/issues/4196).
+
+#### Enhanced Runtime
+
+* Windows App SDK's [Dynamic Dependencies APIs](https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api) delegate all calls to Windows 11's implementation when running on \>= Windows 11 24H2 (10.0.26100.0) providing improved performance and robustness. This holds true for all C/C++ (Mdd*()) and WinRT (namespace Microsoft.Windows.ApplicationModel.DynamicDependency) APIs.
+    * Packaged processes calling Windows App SDK's Dynamic Dependencies APIs is now supported on \>= Windows 11 24H2 (10.0.26100.0). This is still unsupported on older systems (WinAppSDK's implementation doesn't support packaged apps).
+    * This has no impact to the developer experience. Callers can continue using the [Bootstrapper API](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/win32/_bootstrap/) to add the WinAppSDK framework package to the calling process' package graph.
+    * For more info, see GitHub PR [#4949](https://github.com/microsoft/WindowsAppSDK/pull/4949).
+* Undocked Registration-free WinRT (URFW) is not enabled on \>= Windows 11 24H2 (10.0.26100.0). The OS' implementation handles all [Registration-free WinRT](https://blogs.windows.com/windowsdeveloper/2019/04/30/enhancing-non-packaged-desktop-apps-using-windows-runtime-components/) activity on these systems providing improved performance and robustness. For more info, see GitHub PR [#4949](https://github.com/microsoft/WindowsAppSDK/pull/4949).
+* Detours is not used on \>= Windows 11 24H2 (10.0.26100.0). Detours was only used by Windows App SDK's implementations of Dynamic Dependencies and Registration-free WinRT, but as those features are now handled by the OS' implementations there's no need for them to initialize or otherwise wire up Detours. This provides a small performance gain when loading Microsoft.WindowsAppRuntime.dll. For more info, see GitHub PR [#4949](https://github.com/microsoft/WindowsAppSDK/pull/4949).
+
+### New AppWindow APIs
+
+New `AppWindow` APIs make it easier to control your app windows to create a great experience. New capabilities include using `SetTaskBarIcon` and `SetTitleBarIcon` to independently set the taskbar and titlebar icons, using `AppWindowTitleBar.PreferredTheme` to set the light/dark theme of the titlebar, and using new properties like `OverlappedPresenter.PreferredMinimumWidth` and `OverlappedPresenter.PreferredMaximumHeight` to set a minimum or maximum width or height for the window.
+
+### New Island APIs
+
+The updates in the Microsoft.UI.Content namespace introduce several significant enhancements and new features aimed at improving the functionality and interoperability of the ContentIsland APIs. These changes are designed to support new hosting scenarios, enhance rendering capabilities, and ensure better synchronization of input and accessibility states. Key updates include:
+1. New primitives for hosting ContentIslands:
+     * `DesktopPopupSiteBridge`: Enables hosting a `ContentIsland` in the environment of a Win32 window with WS_POPUP style, facilitating scenarios where applications use popup windows for dialog boxes and message boxes.
+     * `ChildSiteLink`: Allows a parent `ContentIsland` to host a nested child `ContentIsland`, providing a seamless partitioning of the rendering surface without user experience seams.
+     * `DesktopAttachedSiteBridge`: Attaches to an existing Win32 window instead of creating a new one, designed to host a `ContentIsland` with Windows.UI.Composition.Visuals at the root of the Win32 window hierarchy, ensuring full control over Win32-based input processing and accessibility.
+2. Enhanced rendering and input synchronization:
+     * The `LocalToParentTransformMatrix` and `ActualSize` properties of a `ChildSiteLink` are updated relative to the parent `ContentIsland` before rendering, avoiding latency and ensuring synchronized input and accessibility states.
+3. ContentIslands with Windows.UI.Composition.Visuals:
+     * `ContentIsland` can use Windows.UI.Composition.Visuals for rendering and Win32 window APIs for input processing, enabling interoperability with applications that use legacy UX frameworks. This allows for a gradual adoption of newer UX frameworks layered on top of the Windows App SDK Scene Graph, such as WinUI and React Native for Windows on Fabric.
+These updates collectively enhance the flexibility, performance, and interoperability of the ContentIsland APIs, enabling developers to create more sophisticated and responsive applications.
+
+Additionally, the updates in the Microsoft.UI.Xaml namespace introduce a new `XamlIsland` API, which allows for the hosting of Xaml content within a SiteBridge or a `ChildSiteLink`. The `XamlIsland` offers greater flexibility compared to the `DesktopWindowXamlSource` API. While `DesktopWindowXamlSource` requires hosting within an existing Win32 window, the `XamlIsland` exposes a `ContentIsland`, enabling more options for hosting Xaml content.
+
+#### Other notable changes
+ 
+* New `RuntimeCompatibilityOptions` support will allow more control over how servicing changes affect apps. For more info, see GitHub [#4966](https://github.com/microsoft/WindowsAppSDK/issues/4966).
+* A new `ReleaseInfo` API provides easy access to the version of the Windows App SDK Runtime in use. For more info, see GitHub [#2893](https://github.com/microsoft/WindowsAppSDK/issues/2893).
+* Note: Windows Copilot Runtime APIs are not included this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!
+ 
+#### New APIs for 1.7.0
+ 
+This release includes the following new APIs compared to the stable 1.6 release:
+
 ```
+Microsoft.Security.Authentication.OAuth
 
-In addition, Windows App SDK managed apps should update to [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT) `2.1.1` (or later).
-
->[!NOTE]
-> These manual references will no longer be needed once the next .NET SDK servicing update is released.
-
-### Native AOT support
-
-![Native AOT support in 1.6](images/1.6-aot.gif)
-
-The .NET `PublishAot` project property is now supported for native Ahead-Of-Time compilation. For details on Native AOT, see [Native AOT Deployment](/dotnet/core/deploying/native-aot/?tabs=net8plus%2Cwindows). Because AOT builds on Trimming support, much of the following trimming-related guidance applies to AOT as well.
-
-For `PublishAot` support and trimming support, in addition to the C# project changes described in the previous section you'll also need a package reference to [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT) `2.1.1` (or later) to enable the source generator from that package until the next .NET SDK servicing update is released when it will no longer be required. 
-
-For more info, see the [CsWinRT Trimming / AOT support doc](https://github.com/microsoft/CsWinRT/blob/master/docs/aot-trimming.md) and the [CsWinRT 2.1.1 Release Notes](https://github.com/microsoft/CsWinRT/releases/tag/2.1.1.240807.2).
-
-Because the Windows App SDK invokes publishing targets when F5 deploying, we recommend enabling `PublishAot` at NuGet restore time by adding this to your `csproj` file:
-
-```XML
-<PublishAot>true</PublishAot>
+    AuthFailure
+    AuthRequestParams
+    AuthRequestResult
+    AuthResponse
+    ClientAuthentication
+    CodeChallengeMethodKind
+    OAuth2Manager
+    TokenFailure
+    TokenFailureKind
+    TokenRequestParams
+    TokenRequestResult
+    TokenResponse
 ```
-
-#### Resolving AOT Issues
-
-In this release, the developer is responsible for ensuring that all types are properly rooted to avoid trimming (such as with reflection-based `{Binding}` targets). Later releases will enhance both C#/WinRT and the XAML Compiler to automate rooting where possible, alert developers to trimming risks, and provide mechanisms to resolve.
-
-##### Partial Classes
-
-C#/WinRT also includes `PublishAot` support in version 2.1.1. To enable a class for AOT publishing with C#/WinRT, it must first be marked `partial`. This allows the C#/WinRT AOT source analyzer to attribute the classes for static analysis. Only classes (which contain methods, the targets of trimming) require this attribute.
-
-##### Unsafe Code Error
-
-The CsWinRT source generator might generate code that makes use of `unsafe`. If you hit such an error during compilation or a diagnostic warning for it ([CS0227](/dotnet/csharp/misc/cs0227) for "Unsafe code may only appear if compiling with /unsafe"), you should set EnableUnsafeBlocks to true. For more info, see GitHub issue [CsWinRT #1721](https://github.com/microsoft/CsWinRT/issues/1721).
-
-##### WebView2 not yet AOT compatible
-
-The WebView2 projections in `Microsoft.Web.WebView2` package version 1.0.2651.64 are not yet AOT compatible. This will be fixed in an upcoming release of the `Microsoft.Web.WebView2` package, which you can then reference in your project.
-
-##### Reflection-Free Techniques
-
-To enable AOT compatibility, reflection-based techniques should be replaced with statically typed serialization, AppContext.BaseDirectory, typeof(), etc. For details, see [Introduction to trim warnings](/dotnet/core/deploying/trimming/fixing-warnings).
-
-##### Rooting Types
-
-Until full support for `{Binding}` is implemented, types may be preserved from trimming as follows:
-
-Given project `P` consuming assembly `A` with type `T` in namespace `N`, which is only dynamically referenced (so normally trimmed), `T` can be preserved via:
-
-`P.csproj`:
-
-```xml
-<ItemGroup>
-    <TrimmerRootDescriptor Include="ILLink.Descriptors.xml" />
-</ItemGroup>
 ```
+Microsoft.UI.Content
 
-`ILLink.Descriptors.xml`:
+    ChildSiteLink
+    ContentAutomationOptions
+    ContentEnvironmentStateChangedEventArgs
+        DidDisplayScaleChange
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<linker>
-    <assembly fullname="A">
-        <type fullname="N.T" preserve="all" />
-    </assembly>
-</linker>
+    ContentIsland
+        AutomationOption
+        Children
+        CreateForSystemVisual
+        FindAllForSystemCompositor
+        FragmentRootAutomationProvider
+        GetBySystemVisual
+        LocalToClientTransformMatrix
+        LocalToParentTransformMatrix
+        NextSiblingAutomationProvider
+        ParentAutomationProvider
+        Popups
+        PreviousSiblingAutomationProvider
+        ProcessesKeyboardInput
+        ProcessesPointerInput
+
+    ContentIslandEnvironment
+        DisplayScale
+
+    ContentIslandStateChangedEventArgs
+        DidLocalToClientTransformMatrixChange
+        DidLocalToParentTransformMatrixChange
+
+    ContentSite
+        LocalToClientTransformMatrix
+        LocalToParentTransformMatrix
+        ProcessesKeyboardInput
+        ProcessesPointerInput
+
+    ContentSiteAutomationProviderRequestedEventArgs
+    ContentSiteEnvironment
+        DisplayScale
+
+    ContentSiteEnvironmentView
+        DisplayScale
+
+    ContentSiteView
+        AutomationOption
+        LocalToClientTransformMatrix
+        LocalToParentTransformMatrix
+        ProcessesKeyboardInput
+        ProcessesPointerInput
+
+    DesktopAttachedSiteBridge
+    DesktopChildSiteBridge
+        CreateWithDispatcherQueue
+
+    DesktopPopupSiteBridge
+    IContentSiteAutomation
+    IContentSiteInput
+    IContentSiteLink
 ```
-
-For complete root descriptor XML expression syntax, see [Root Descriptors](/dotnet/core/deploying/trimming/trimming-options?pivots=dotnet-8-0#root-descriptors).
-
-> [!NOTE]
-> Dependency packages that have not yet adopted AOT support may exhibit runtime issues.
-
-### Decoupled WebView2 versioning
-
-The Windows App SDK now consumes the Edge WebView2 SDK as a NuGet reference rather than embedding a hardcoded version of the Edge WebView2 SDK. The new model allows apps to choose a newer version of the `Microsoft.Web.WebView2` package instead of being limited to the version with which the Windows App SDK was built. The new model also allows apps to reference NuGet packages which also reference the Edge WebView2 SDK. For more info, see GitHub issue [#5689](https://github.com/microsoft/microsoft-ui-xaml/issues/5689).
-
-### New Package Deployment APIs
-
-The Package Management API has received several enhancements including Is\*ReadyOrNewerAvailable\*(), EnsureReadyOptions.RegisterNewerIfAvailable, Is\*Provisioned\*(), IsPackageRegistrationPending(), and several bug fixes. See [PackageManagement.md](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/packagemanager/PackageManagement.md) and [Pull Request #4453](https://github.com/microsoft/WindowsAppSDK/pull/4453) for more details. 
-
-### Improved TabView tab tear-out
-
-![Improved TabView tear-out in 1.6](images/1.6-TabView-tear-out.gif)
-
-`TabView` supports a new `CanTearOutTabs` mode which provides an enhanced experience for dragging tabs and dragging out to a new window. When this new option is enabled, tab dragging is very much like the tab drag experience in Edge and Chrome where a new window is immediately created during the drag, allowing the user to drag it to the edge of the screen to maximize or snap the window in one smooth motion. This implementation also doesn't use drag-and-drop APIs, so it isn't impacted by any limitations in those APIs. Notably, tab tear-out is supported in processes running elevated as Administrator.
-
-### Other notable changes
-
-- Added a new `ColorHelper.ToDisplayName()` API, filling that gap from UWP.
-- Added a new `Microsoft.Windows.Globalization.ApplicationLanguages` class, which notably includes a new `PrimaryLanguageOverride` feature. For more info, see GitHub issue [#4523](https://github.com/microsoft/WindowsAppSDK/pull/4523).
-- Unsealed `ItemsWrapGrid`. This should be a backward-compatible change.
-- `PipsPager` supports a new mode where it can wrap between the first and last items.
-
-![New PipsPager wrapping mode in 1.6](images/1.6-PipsPager.gif)
-
-- `RatingControl` is now more customizable, by moving some hard-coded style properties to theme resources. This allows apps to override these values to better customize the appearance of RatingControl.
-
-<img src="images/1.6-RatingControl.png" alt="New RatingControl customization in 1.6" width="200"/>
-
-- WinUI 3 has changed to the typographic model for font selection rather than the legacy weight/stretch/style model. The typographic model is required for some newer fonts, including Segoe UI Variable, and enables enhanced font capabilities. Some older fonts which rely on the weight/stretch/style model for selection may not be found with the typographic model.
-
-### Known Issues
-
-- If the debugger is set to break on all C++ exceptions, it will break on some noisy exceptions on start-up in the BCP47 (Windows Globalization) code. For more info, see GitHub issue [#4691](https://github.com/microsoft/WindowsAppSDK/issues/4691).
-- Component library packages which reference the WinAppSDK 1.6 package will not correctly get the referenced WebView2 package contents. For more info, see [WebView2Feedback #4743](https://github.com/MicrosoftEdge/WebView2Feedback/issues/4743). A workaround is to add a direct reference to the `Microsoft.Web.WebView2` package where needed.
-- Apps compiled with Native AOT might sometimes experience a hanging issue after page navigation due to a race condition in the .NET runtime's GC thread. For more info, see [.NET issue #104582](https://github.com/dotnet/runtime/issues/104582).
-- The initial release of 1.6.0 introduced an issue with one of our dependencies that we expect will be resolved in an upcoming release of the .NET SDK. If you experience an error with the version of your Microsoft.Windows.SDK.NET reference, you’ll need to explicitly reference the version of the .NET SDK that is specified by your error message. For example, if the error says you need version 10.0.19041.38, add the following to your `.csproj` file:
-    - `<WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>`.
-
-### Bug Fixes
-
-- Fixed a crash when setting `InfoBar.IsOpen` in .xaml. For more info, see GitHub issue [#8391](https://github.com/microsoft/microsoft-ui-xaml/issues/8391).
-- Fixed an issue where HTML elements would lose pointer capture when the mouse moved outside of the `WebView2` bounds. For more info, see GitHub issue [#8677](https://github.com/microsoft/microsoft-ui-xaml/issues/8677).
-- Fixed an issue where drag and drop into a flyout with `ShouldConstrainToRootBounds=false` did not work. For more info, see GitHub issue [#9276](https://github.com/microsoft/microsoft-ui-xaml/issues/9276).
-- Fixed an issue where `ms-appx://` references did not work when `PublishSingleFile` is enabled. For more info, see GitHub issue [#9468](https://github.com/microsoft/microsoft-ui-xaml/issues/9468).
-- Fixed an issue where debugger symbols weren't working correctly for some binaries. For more info, see GitHub issue [#4633](https://github.com/microsoft/windowsappsdk/issues/4633).
-- Fixed a potential crash when subclassing `NavigationView`.
-- Fixed an issue where table borders in a `RichEditBox` would not correctly erase when scrolling or reducing the size of the table.
-- Fixed an issue where flyouts from `MediaTransportControls` had a fully transparent background.
-- Fixed an issue where dragging into a WebView2 would fail or drop in the wrong location on display scale factors other than 100% or when system text scaling is enabled.
-- Fixed an issue where `TextBox`/`RichEditBox` would not announce to Accessibility tools when input is blocked due to being at the `MaxLength` limit.
-- Fixed a few issues around handling of custom titlebar scenarios. For more info, see GitHub issues [#7629](https://github.com/microsoft/microsoft-ui-xaml/issues/7629), [#9670](https://github.com/microsoft/microsoft-ui-xaml/issues/9670), [#9709](https://github.com/microsoft/microsoft-ui-xaml/issues/9709) and [#8431](https://github.com/microsoft/microsoft-ui-xaml/issues/8431).
-- Fixed an issue where `InfoBadge` icon was not visible. For more info, see GitHub issue [#8176](https://github.com/microsoft/microsoft-ui-xaml/issues/8176).
-- Fixed an issue with icons sometimes showing in the wrong position in `CommandBarFlyout`. For more info, see GitHub issue [#9409](https://github.com/microsoft/microsoft-ui-xaml/issues/9409).
-- Fixed an issue with keyboard focus in menus when opening or closing a sub menu. For more info, see GitHub issue [#9519](https://github.com/microsoft/microsoft-ui-xaml/issues/9519).
-- Fixed an issue with `TreeView` using the incorrect `IsExpanded` state when recycling items. For more info, see GitHub issue [#9549](https://github.com/microsoft/microsoft-ui-xaml/issues/9549).
-- Fixed an issue when using an ElementName binding in an `ItemsRepeater.ItemTemplate`. For more info, see GitHub issue [#9715](https://github.com/microsoft/microsoft-ui-xaml/issues/9715).
-- Fixed an issue with the first item in an `ItemsRepeater` sometimes having an incorrect position. For more info, see GitHub issue [#9743](https://github.com/microsoft/microsoft-ui-xaml/issues/9743).
-- Fixed an issue with `InputNonClientPointerSource` sometimes breaking input to the min/max/close buttons. For more info, see GitHub issue [#9749](https://github.com/microsoft/microsoft-ui-xaml/issues/9749).
-- Fixed a compile error when using Microsoft.UI.Interop.h with clang-cl. For more info, see GitHub issue [#9771](https://github.com/microsoft/microsoft-ui-xaml/issues/9771).
-- Fixed an issue where the `CharacterReceived` event was not working in `ComboBox`/`TextBox`. For more info, see GitHub issue [#9786](https://github.com/microsoft/microsoft-ui-xaml/issues/9786).
-- Fixed an issue where duplicate `KeyUp` events were raised for arrow and tab keys. For more info, see GitHub issue [#9399](https://github.com/microsoft/microsoft-ui-xaml/issues/9399).
-- Fixed an issue where the `PowerManager.SystemSuspendStatusChanged` event was unusable to get the `SystemSuspendStatus`. For more info, see GitHub issue [#2833](https://github.com/microsoft/WindowsAppSDK/issues/2833).
-- Fixed an issue where initial keyboard focus was not correctly given to a `WebView2` when that was the only control in the window.
-- Fixed an issue when using `ExtendsContentIntoTitleBar=true` where the Min/Max/Close buttons did not correctly appear in the UI Automation, which prevented Voice Access from showing numbers for those buttons.
-- Fixed an issue where an app might crash in a lock check due to unexpected reentrancy.
-- Fixed an issue where `Hyperlink` colors did not correctly update when switching into a high contrast theme.
-- Fixed an issue where changing the collection of a `ListView` in a background window may incorrectly move that window to the foreground and take focus.
-- Fixed an issue where calling `ItemsRepeater.StartBringIntoView` could sometimes cause items to disappear.
-- Fixed an issue where touching and dragging on a `Button` in a `ScrollViewer` would leave it in a pressed state.
-- Updated IntelliSense, which was missing information for many newer types and members.
-- Fixed an issue where clicking in an empty area of a `ScrollViewer` would always move focus to the first focusable control in the `ScrollViewer` and scroll that control into view. For more info, see GitHub issue [#597](https://github.com/microsoft/microsoft-ui-xaml/issues/597).
-- Fixed an issue where the `Window.Activated` event sometimes fired multiple times. For more info, see GitHub issue [#7343](https://github.com/microsoft/microsoft-ui-xaml/issues/7343).
-- Fixed an issue where setting the `NavigationViewItem.IsSelected` property to `true` prevented its children from showing when expanded. For more info, see GitHub issue [#7930](https://github.com/microsoft/microsoft-ui-xaml/issues/7930).
-- Fixed an issue where `MediaPlayerElement` would not properly display captions with `None` or `DropShadow` edge effects. For more info, see GitHub issue [#7981](https://github.com/microsoft/microsoft-ui-xaml/issues/7981).
-- Fixed an issue where the `Flyout.ShowMode` property was not used when showing the flyout. For more info, see GitHub issue [#7987](https://github.com/microsoft/microsoft-ui-xaml/issues/7987).
-- Fixed an issue where `NumberBox` would sometimes have rounding errors. For more info, see GitHub issue [#8780](https://github.com/microsoft/microsoft-ui-xaml/issues/8780).
-- Fixed an issue where using a library compiled against an older version of WinAppSDK could hit an error trying to find a type or property. 
-For more info, see GitHub issue [#8810](https://github.com/microsoft/microsoft-ui-xaml/issues/8810).
-- Fixed an issue where initial keyboard focus was not set when launching a window. For more info, see GitHub issue [#8816](https://github.com/microsoft/microsoft-ui-xaml/issues/8816).
-- Fixed an issue where `FlyoutShowMode.TransientWithDismissOnPointerMoveAway` didn't work after the first time it was shown. 
-For more info, see GitHub issue [#8896](https://github.com/microsoft/microsoft-ui-xaml/issues/8896).
-- Fixed an issue where some controls did not correctly template bind `Foreground` and `Background` properties. For more info, see GitHub issue [#7070](https://github.com/microsoft/microsoft-ui-xaml/issues/7070), [#9020](https://github.com/microsoft/microsoft-ui-xaml/issues/9020), [#9029](https://github.com/microsoft/microsoft-ui-xaml/issues/9029), [#9083](https://github.com/microsoft/microsoft-ui-xaml/issues/9083) and [#9102](https://github.com/microsoft/microsoft-ui-xaml/issues/9102).
-- Fixed an issue where `ThemeResource`s used in `VisualStateManager` setters wouldn't update on theme change. This commonly affected controls in flyouts. For more info, see GitHub issue [#9198](https://github.com/microsoft/microsoft-ui-xaml/issues/9198).
-- Fixed an issue where `WebView` would lose key focus, resulting in extra blur/focus events and other issues. 
-For more info, see GitHub issue [#9288](https://github.com/microsoft/microsoft-ui-xaml/issues/9288).
-- Fixed an issue where `NavigationView` could show a binding error in debug output. For more info, see GitHub issue [#9384](https://github.com/microsoft/microsoft-ui-xaml/issues/9384).
-- Fixed an issue where SVG files defining a negative viewbox no longer rendered. For more info, see GitHub issue [#9415](https://github.com/microsoft/microsoft-ui-xaml/issues/9415).
-- Fixed an issue where changing `ItemsView.Layout` orientation caused an item to be removed. For more info, see GitHub issue [#9422](https://github.com/microsoft/microsoft-ui-xaml/issues/9422).
-- Fixed an issue where scrolling a `ScrollView` generated a lot of debug output. For more info, see GitHub issue [#9434](https://github.com/microsoft/microsoft-ui-xaml/issues/9434).
-- Fixed an issue where `MapContorl.InteractiveControlsVisible` did not work properly. For more info, see GitHub issue [#9486](https://github.com/microsoft/microsoft-ui-xaml/issues/9486).
-- Fixed an issue where `MapControl.MapElementClick` event didn't properly fire. For more info, see GitHub issue [#9487](https://github.com/microsoft/microsoft-ui-xaml/issues/9487).
-- Fixed an issue where x:Bind didn't check for null before using a weak reference, which could result in a crash. For more info, see GitHub issue [#9551](https://github.com/microsoft/microsoft-ui-xaml/issues/9551).
-- Fixed an issue where changing the `TeachingTip.Target` property didn't correctly update its position. For more info, see GitHub issue [#9553](https://github.com/microsoft/microsoft-ui-xaml/issues/9553).
-- Fixed an issue where dropdowns did not respond in WebView2. For more info, see GitHub issue [#9566](https://github.com/microsoft/microsoft-ui-xaml/issues/9566).
-- Fixed a memory leak when using `GeometryGroup`. For more info, see GitHub issue [#9578](https://github.com/microsoft/microsoft-ui-xaml/issues/9578).
-- Fixed an issue where scrolling through a very large number of items from an `ItemRepeater` in a `ScrollView` could cause blank render frames. For more info, see GitHub issue [#9643](https://github.com/microsoft/microsoft-ui-xaml/issues/9643).
-- Fixed an issue where `SceneVisual` wasn't working.
-
-### New APIs in 1.6.0
-
-Version 1.6.0 includes the following new APIs compared to the stable 1.5 release:
-
-```C#
-Microsoft.UI
-
-    ColorHelper
-        ToDisplayName
 ```
-
-```C#
 Microsoft.UI.Input
 
-    EnteredMoveSizeEventArgs
-    EnteringMoveSizeEventArgs
-    ExitedMoveSizeEventArgs
-    InputNonClientPointerSource
-        EnteredMoveSize
-        EnteringMoveSize
-        ExitedMoveSize
-        WindowRectChanged
-        WindowRectChanging
-
-    MoveSizeOperation
-    WindowRectChangedEventArgs
-    WindowRectChangingEventArgs
+    InputFocusNavigationHost
+        GetForSiteLink
 ```
+```
+Microsoft.UI.Text
 
-```C#
+    RichEditTextDocument
+        GetMathML
+        GetMathMode
+        SetMathML
+        SetMathMode
+```
+```
+Microsoft.UI.Windowing
+
+    AppWindow
+        SetTaskbarIcon
+        SetTaskbarIcon
+        SetTitleBarIcon
+        SetTitleBarIcon
+
+    AppWindowTitleBar
+        PreferredTheme
+
+    OverlappedPresenter
+        PreferredMaximumHeight
+        PreferredMaximumWidth
+        PreferredMinimumHeight
+        PreferredMinimumWidth
+
+    TitleBarTheme
+```
+```
 Microsoft.UI.Xaml
 
+    XamlIsland
     XamlRoot
-        CoordinateConverter
+        ContentIsland
 ```
-
-```C#
-Microsoft.UI.Xaml.Automation.Peers
-
-    ScrollPresenterAutomationPeer
 ```
-
-```C#
 Microsoft.UI.Xaml.Controls
 
-    PipsPager
-        WrapMode
-        WrapModeProperty
+    TitleBar
+    TitleBarAutomationPeer
+    TitleBarTemplateSettings
+```
+```
+Microsoft.Windows.ApplicationModel.Background
 
-    PipsPagerWrapMode
-    TabView
-        CanTearOutTabs
-        CanTearOutTabsProperty
-        ExternalTornOutTabsDropped
-        ExternalTornOutTabsDropping
-        TabTearOutRequested
-        TabTearOutWindowRequested
+    BackgroundTaskBuilder
+```
+```
+Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
 
-    TabViewExternalTornOutTabsDroppedEventArgs
-    TabViewExternalTornOutTabsDroppingEventArgs
-    TabViewTabTearOutRequestedEventArgs
-    TabViewTabTearOutWindowRequestedEventArgs
+    Task
+```
+```
+Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+
+    ReleaseInfo
+    RuntimeCompatibilityChange
+    RuntimeCompatibilityOptions
+    RuntimeInfo
+    WindowsAppRuntimeVersion
+```
+```
+Microsoft.Windows.BadgeNotifications
+
+    BadgeNotificationGlyph
+    BadgeNotificationManager
+```
+```
+Microsoft.Windows.Media.Capture
+
+    CameraCaptureUI
+    CameraCaptureUIMaxPhotoResolution
+    CameraCaptureUIMaxVideoResolution
+    CameraCaptureUIMode
+    CameraCaptureUIPhotoCaptureSettings
+    CameraCaptureUIPhotoFormat
+    CameraCaptureUIVideoCaptureSettings
+    CameraCaptureUIVideoFormat
 ```
 
-```C#
-Microsoft.Windows.Globalization
+### Bug fixes
 
-    ApplicationLanguages
-```
+This release includes the following bug fixes:
 
-```C#
-Microsoft.Windows.Management.Deployment
-
-    EnsureReadyOptions
-        RegisterNewerIfAvailable
-
-    PackageDeploymentFeature
-    PackageDeploymentManager
-        IsPackageDeploymentFeatureSupported
-        IsPackageProvisioned
-        IsPackageProvisionedByUri
-        IsPackageReadyOrNewerAvailable
-        IsPackageReadyOrNewerAvailableByUri
-        IsPackageSetProvisioned
-        IsPackageSetReadyOrNewerAvailable
-
-    PackageReadyOrNewerAvailableStatus
-```
-
-```C#
-Microsoft.Windows.Storage
-
-    ApplicationData
-    ApplicationDataContainer
-    ApplicationDataContract
-    ApplicationDataCreateDisposition
-    ApplicationDataLocality
-```
+- Changed `SplitButton` so touch input now matches the behavior of mouse input. For more info, see GitHub issue [#178](https://github.com/microsoft/microsoft-ui-xaml/issues/178).
+- Changed cascading menus so sub menus now open immediately if clicked. For more info, see GitHub issue [#939](https://github.com/microsoft/microsoft-ui-xaml/issues/939).
+- Fixed an issue where opening a `ComboBox` which is in a flyout closes all flyouts. For more info, see GitHub issue [#1467](https://github.com/microsoft/microsoft-ui-xaml/issues/1467).
+- Fixed an issue where `SwipeControl` would randomly crash in a `ListView`. For more info, see GitHub issue [#2527](https://github.com/microsoft/microsoft-ui-xaml/issues/2527).
+- Fixed an issue where drag-and-drop only a `ListViewItem` would leave it in the wrong visual state. For more info, see GitHub issue [#3458](https://github.com/microsoft/microsoft-ui-xaml/issues/3458).
+- Fixed an issue in `StackLayout` so that it respects the ItemsRepeater.HorizontalAlignment and ItemsRepeater.VerticalAlignment properties (when StackLayout.Orientation is Vertical and Horizontal respectively). The old layout behaved as if the ItemsRepeater alignment was Stretch. With the fix, the layout results in items aligned to the right when the Right alignment is used, for example. For more info, see GitHub issue [#3842](https://github.com/microsoft/microsoft-ui-xaml/issues/3842).
+- Fixed a potential crash when using a resource which contains an `x:Bind`. For more info, see GitHub issue [#5786](https://github.com/microsoft/microsoft-ui-xaml/issues/5786).
+- Fixed an issue where deleting items in the `ItemsRepeater`'s source would not generate items which moved up into view. For more info, see GitHub issue [#6661](https://github.com/microsoft/microsoft-ui-xaml/issues/6661).
+- Fixed an issue where the right Alt key would not show keytips for Access Keys. For more info, see GitHub issue [#8447](https://github.com/microsoft/microsoft-ui-xaml/issues/8447). **Note:** This may result in key events for the right Alt key no longer being delivered to handles in the app or controls.
+- Fixed an issue where using a ResourceDictionary containing only a single resource would fail to find that resource and likely cause a crash. For more info, see GitHub issue [#8832](https://github.com/microsoft/microsoft-ui-xaml/issues/8832).
+- Fixed a crash where `UniformGridLayout` would sometimes pick a wrong layout anchor and cause infinite layout passes when scrolling backwards. For more info, see GitHub issue [#9199](https://github.com/microsoft/microsoft-ui-xaml/issues/9199).
+- Fixed an issue where setting `NavigationFailedEventArgs.Handled` to True would still throw an exception. For more info, see GitHub issue [#9632](https://github.com/microsoft/microsoft-ui-xaml/issues/9632).
+- Fixed an issue where `TabView` would not apply any specified `CornerRadius`. For more info, see GitHub issue [#9846](https://github.com/microsoft/microsoft-ui-xaml/issues/9846).
+- Fixed a potential layout cycle crash in `StackLayout`. For more info, see GitHub issue [#9852](https://github.com/microsoft/microsoft-ui-xaml/issues/9852).
+- Fixed a potential crash in `ItemsView` when removing items. For more info, see GitHub issue [#9868](https://github.com/microsoft/microsoft-ui-xaml/issues/9868).
+- Fixed an issue in 1.7-preview1 where popups no longer correctly moved with their parent window. For more info, see GitHub issue [#10386](https://github.com/microsoft/microsoft-ui-xaml/issues/10386).
+- Based on feedback from 1.7-preview1, renamed some properties on the new `TitleBar` control.
 
 ## Related topics
 
