@@ -17,15 +17,15 @@ The current WinRT [WebAuthenticationBroker](/uwp/api/windows.security.authentica
 
 ## OAuth2Manager API in Windows App SDK
 
-The OAuth2Manager API for Windows App SDK aims to provide a streamlined solution that meets the expectations of developers. It offers seamless OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. The new API eliminates the need for cumbersome workarounds and simplifies the process of incorporating OAuth 2.0 functionality into desktop apps.
+The **OAuth2Manager** API for Windows App SDK aims to provide a streamlined solution that meets the expectations of developers. It offers seamless OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. The new API eliminates the need for cumbersome workarounds and simplifies the process of incorporating OAuth 2.0 functionality into desktop apps.
 
-The OAuth2Manager is different than the existing WinRT [WebAuthenticationBroker](/uwp/api/windows.security.authentication.web.webauthenticationbroker). It follows OAuth best practices more closely - e.g. using the user's default browser. The best practices for the API are taken from the IETF (Internet Engineering Task Force) OAuth 2.0 Authorization Framework [RFC 6749](https://tools.ietf.org/html/rfc6749), PKCE [RFC 7636](https://tools.ietf.org/html/rfc7636), and OAuth 2.0 for Native Apps [RFC 8252](https://tools.ietf.org/html/rfc8252).
+The **OAuth2Manager** is different than the existing WinRT **WebAuthenticationBroker**. It follows OAuth 2.0 best practices more closely - e.g. using the user's default browser. The best practices for the API are taken from the IETF (Internet Engineering Task Force) OAuth 2.0 Authorization Framework [RFC 6749](https://tools.ietf.org/html/rfc6749), PKCE [RFC 7636](https://tools.ietf.org/html/rfc7636), and OAuth 2.0 for Native Apps [RFC 8252](https://tools.ietf.org/html/rfc8252).
 
 ## Perform OAuth 2.0 examples
 
 ### Authorization code request
 
-The following example demonstrates how to perform an authorization code request using the OAuth2Manager API in Windows App SDK:
+The following example demonstrates how to perform an authorization code request using the **OAuth2Manager** in Windows App SDK:
 
 # [C++](#tab/cpp)
 
@@ -86,7 +86,7 @@ else
 
 ### Exchange authorization code for access token
 
-The following example demonstrates how to exchange an authorization code for an access token using the OAuth2Manager API in Windows App SDK:
+The following example demonstrates how to exchange an authorization code for an access token using the **OAuth2Manager**:
 
 # [C++](#tab/cpp)
 
@@ -181,7 +181,7 @@ else
 
 ### Refresh an access token
 
-The following example shows how to refresh an access token using the OAuth2Manager API in Windows App SDK:
+The following example shows how to refresh an access token using the **OAuth2Manager**'s [RefreshTokenAsync](/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager.requesttokenasync) method:
 
 # [C++](#tab/cpp)
 
