@@ -23,6 +23,8 @@ The **OAuth2Manager** is different than the **WebAuthenticationBroker** in WinRT
 
 ## Perform OAuth 2.0 examples
 
+A full WinUI 3 sample app is available on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/OAuth2Manager). The following sections provide code snippets for the most common OAuth 2.0 flows using the **OAuth2Manager** API.
+
 ### Authorization code request
 
 The following example demonstrates how to perform an authorization code request using the **OAuth2Manager** in Windows App SDK:
