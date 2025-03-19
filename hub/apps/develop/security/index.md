@@ -2,7 +2,7 @@
 title: Security and identity
 description: This article provides an index of development features that are related to security and identity scenarios in Windows apps.
 ms.topic: overview
-ms.date: 09/09/2024
+ms.date: 03/19/2025
 #customer intent: As a Windows developer, I want to learn to use security and identity features available to Windows apps so that I can build more secure apps.
 ---
 
@@ -16,11 +16,11 @@ Windows provides a wide variety of APIs related to security and identity scenari
 
 ### Windows App SDK APIs
 
-The [Windows App SDK](../../windows-app-sdk/index.md) provides APIs related to OAuth functionality. There are also a few helper APIs in the [Microsoft.Windows.Security.AccessControl](/windows/windows-app-sdk/api/winrt/microsoft.windows.security.accesscontrol) namespace. These APIs are related to named object sharing between packaged apps and Win32 applications.
+The [Windows App SDK](../../windows-app-sdk/index.md) provides APIs related to OAuth 2.0 authorization flows. There are also a few helper APIs in the [Microsoft.Windows.Security.AccessControl](/windows/windows-app-sdk/api/winrt/microsoft.windows.security.accesscontrol) namespace. These APIs are related to named object sharing between packaged apps and Win32 applications.
 
 | Article | Description |
 |---------|-------------|
-| [Implement OAuth functionality in Windows apps](oauth2.md) | The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth functionality across diverse Windows platforms. This article describes how to implement OAuth functionality in Windows apps with the Windows App SDK. |
+| [Implement OAuth 2.0 functionality in Windows apps](oauth2.md) | The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth 2.0 authentication in Windows apps. This article describes how to implement OAuth 2.0 with the Windows App SDK. |
 
 ### WinRT APIs
 
@@ -60,6 +60,8 @@ The .NET SDK also provides APIs related to security and identity scenarios for W
 | [Windows Forms Security](/dotnet/desktop/winforms/windows-forms-security) | Learn about security concepts and features for Windows Forms apps. |
 
 ## Other features
+
+The following articles provide information about features related to security and identity scenarios with passkeys for Windows apps.
 
 | Topic | Description |
 |---------|-------------|

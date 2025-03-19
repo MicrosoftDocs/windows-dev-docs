@@ -1,15 +1,15 @@
 ---
-title: Implement OAuth functionality in Windows apps
-description: Learn how to implement OAuth functionality in Windows apps using the Windows App SDK's OAuth2Manager.
+title: Implement OAuth 2.0 functionality in Windows apps
+description: Learn how to implement OAuth 2.0 functionality in Windows apps using the Windows App SDK's OAuth2Manager.
 ms.date: 01/05/2025
 ms.topic: concept-article
 keywords: windows, winui, winrt, dotnet, security
-#customer intent: As a Windows app developer, I want to learn how to implement OAuth functionality in my app so that I can securely authenticate users and access protected resources.
+#customer intent: As a Windows app developer, I want to learn how to implement OAuth 2.0 functionality in my app so that I can securely authenticate users and access protected resources.
 ---
 
-# Implement OAuth functionality in Windows apps
+# Implement OAuth 2.0 functionality in Windows apps
 
-The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth functionality across diverse Windows platforms. **OAuth2Manager** API intentionally doesn't provide APIs for the implicit request and resource owner password credential because of the security concerns that entails. It's recommended to use the authorization code grant type using Proof Key for Code Exchange (PKCE).
+The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth 2.0 authorization across diverse Windows platforms. **OAuth2Manager** API intentionally doesn't provide APIs for the implicit request and resource owner password credential because of the security concerns that entails. It's recommended to use the authorization code grant type using Proof Key for Code Exchange (PKCE).
 
 ## OAuth background
 
