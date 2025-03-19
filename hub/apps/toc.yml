@@ -247,6 +247,8 @@ items:
               items:
               - name: Working with background tasks in Windows apps
                 href: develop/launch/create-and-register-a-background-task.md
+              - name: BackgroundTaskBuilder in the Windows App SDK
+                href: windows-app-sdk/applifecycle/background-tasks.md
         - name: Notifications
           items: 
             - name: Push notifications
@@ -1111,6 +1113,8 @@ items:
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
                 - name: MRT to MRTCore migration
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md
+                - name: Background task migration strategy
+                  href: windows-app-sdk/migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md
                 - name: Threading functionality migration
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md
                 - name: Case study 1—PhotoLab (C#)

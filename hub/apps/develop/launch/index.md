@@ -44,6 +44,7 @@ This section describes how to manage background tasks in your app.
 | Topic | Description |
 |-------|-------------|
 | [Working with background tasks in Windows apps](create-and-register-a-background-task.md) | Learn how to create and register a background task in your app with the Windows Runtime (WinRT) [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) class. |
+| [BackgroundTaskBuilder in the Windows App SDK](../../windows-app-sdk/applifecycle/background-tasks.md) | Learn how to create and register a background task in a WinUI app with the Windows App SDK BackgroundTaskBuilder APIs. |
 
 ## Related content
 
