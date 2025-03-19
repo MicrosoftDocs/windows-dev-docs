@@ -2,7 +2,7 @@
 description: The Pivot control enables touch-swiping between a small set of content sections.
 title: Pivot
 template: detail.hbs
-ms.date: 03/29/2024
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -33,19 +33,6 @@ Some key differences between the NavigationView and Pivot are listed here:
 - Pivot supports touch-swiping to switch between items.
 - Overflow items in a Pivot carousel, while NavigationView uses a menu dropdown overflow so that users can see all items.
 - Pivot handles navigation between content sections, while NavigationView allows for more control over navigation behavior.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Pivot class](/uwp/api/windows.ui.xaml.controls.pivot)
-> - [Open the WinUI 2 Gallery app and see the Pivot in action](winui2gallery:/item/Pivot). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
 
 ## Use NavigationView instead of Pivot
 
@@ -187,6 +174,19 @@ The control comes in two modes:
 >
 > - Avoid using more than 5 headers when using carousel mode, as looping more than 5 can become confusing.
 > - Pivot headers should not carousel in a [10ft environment](../devices/designing-for-tv.md). Set the [IsHeaderItemsCarouselEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.IsHeaderItemsCarouselEnabled) property to `false` if your app will run on Xbox.
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [Pivot class](/uwp/api/windows.ui.xaml.controls.pivot)
+> - [Open the WinUI 2 Gallery app and see the Pivot in action](winui2gallery:/item/Pivot). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
 
 ## Related topics
 

@@ -215,6 +215,10 @@ The controller reacts to the system Light and Dark themes by default. To overrid
 - [TintColor](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintcolor)
 - [TintOpacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintopacity)
 
+> [!NOTE]
+>
+> After customizing any of the controller’s four properties, it no longer applies default Light or Dark values when the associated [SystemBackdropConfiguration.Theme](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration.theme) changes. You need to manually update those properties to match the new theme.
+
 In order to use the backdrop material in your app, the following items are required:
 
 - **System support**

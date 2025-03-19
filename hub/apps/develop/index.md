@@ -39,6 +39,7 @@ The following articles provide information to help you get started using feature
 * [Modernize your existing desktop apps](../desktop/modernize/index.md)
 * [User interface and input](user-interface.md)
 * [App lifecycle and system services](app-lifecycle-and-system-services.md)
+* [Launching Windows apps and managing background tasks](launch/index.md)
 * [Communication](communication.md)
 * [Accessibility](accessibility.md)
 * [Audio, video, and camera](audio-video-camera.md)

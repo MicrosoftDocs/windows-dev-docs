@@ -261,11 +261,6 @@
       "redirect_document_id": false
     },
   {
-      "source_path": "hub/apps/windows-app-sdk/older-downloads.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/downloads-archive",
-      "redirect_document_id": false
-  },
-  {
       "source_path": "uwp/whats-new/windows-docs-august-2017.md",
       "redirect_url": "/windows/uwp/",
       "redirect_document_id": false
@@ -478,16 +473,6 @@
     {
       "source_path": "uwp/get-started/enable-your-device-for-development.md",
       "redirect_url": "/windows/apps/get-started/enable-your-device-for-development",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "uwp/get-started/get-set-up.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/get-started/get-set-up.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
       "redirect_document_id": false
     },
     {
@@ -5551,6 +5536,21 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "hub/apps/windows-app-sdk/older-downloads.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/downloads-archive",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/get-started/get-set-up.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/get-set-up.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/project-reunion/index.md",
       "redirect_url": "/windows/apps/windows-app-sdk/index",
       "redirect_document_id": false
@@ -5651,6 +5651,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/reference/iwindownative.md",
+      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/reference/iwindownative-windowhandle.md",
+      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/samples.md",
+      "redirect_url": "/windows/apps/get-started/samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/preview-experimental-install.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/apps/get-started/build-apps-for-windows.md",
       "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
       "redirect_document_id": false
@@ -5663,16 +5683,6 @@
     {
       "source_path": "hub/apps/winui/winui3/desktop-build-basic-winui3-app.md",
       "redirect_url": "/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/winui/reference/iwindownative.md",
-      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/winui/reference/iwindownative-windowhandle.md",
-      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle",
       "redirect_document_id": false
     },
     {
@@ -7192,11 +7202,6 @@
     },
     {
       "source_path": "uwp/get-started/get-app-samples.md",
-      "redirect_url": "/windows/apps/get-started/samples",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/windows-app-sdk/samples.md",
       "redirect_url": "/windows/apps/get-started/samples",
       "redirect_document_id": false
     },
@@ -8723,6 +8728,76 @@
     {
       "source_path": "hub/apps/develop/camera/index.md",
       "redirect_url": "/windows/apps/develop/camera/camera",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/handle-uri-activation.md",
+      "redirect_url": "/windows/apps/develop/launch/handle-uri-activation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-app-from-file.md",
+      "redirect_url": "/windows/apps/develop/launch/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-app-with-uri.md",
+      "redirect_url": "/windows/apps/develop/launch/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-default-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-default-apps-settings.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-apps-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-maps-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-maps-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-people-apps.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-people-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-screen-snipping.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-screen-snipping",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-settings-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-settings-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-store-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-store-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-the-default-app-for-a-file.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-the-default-app-for-a-file",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/reserved-uri-scheme-names.md",
+      "redirect_url": "/windows/apps/develop/launch/reserved-uri-scheme-names",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/web-to-app-linking.md",
+      "redirect_url": "/windows/apps/develop/launch/web-to-app-linking",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/handle-file-activation.md",
+      "redirect_url": "/windows/apps/develop/launch/handle-file-activation",
       "redirect_document_id": false
     }
   ]

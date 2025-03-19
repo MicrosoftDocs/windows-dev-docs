@@ -2,7 +2,7 @@
 description: An overview of Windows app development frameworks
 title: Overview of framework options
 ms.topic: overview
-ms.date: 11/06/2024
+ms.date: 02/27/2025
 keywords: windows, desktop development
 ms.localizationpriority: medium
 #customer intent: To understand the client app development framework choices available for Windows developers and how to choose the right one for their project.
@@ -16,7 +16,7 @@ Windows offers a wide range of languages, frameworks, and tools for building app
 
 ## WinUI
 
-:::image type="content" source="images/winui-header.png" alt-text=".":::
+:::image type="content" source="images/winui-header.png" alt-text="WinUI logo.":::
 
 We recommend WinUI and the Windows App SDK to create apps that look great and take advantage of the latest Windows releases. If you're new to Windows development, or starting work on a new Windows app, WinUI provides the resources you need to create great [apps for Windows 11](https://www.microsoft.com/en-us/windows/windows-11-apps).
 <!-- The en-us is needed in this link. Please leave it there.  -->
@@ -191,17 +191,17 @@ There is a wide range of options for developing applications for Windows. The be
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Language** | C# | C# | JavaScript, TypeScript | C#, C++, Visual Basic | C++, Rust | C#, Visual Basic | C#, C++ | C#, Visual Basic |
 | **UI language** | XAML/Code | Razor | JSX | XAML | Code | Code | XAML | XAML |
-| **UI designer**<br/>(drag & drop) | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ✅ |
+| **UI designer**<br/>(drag & drop) | Not supported | Not supported | Not supported | **Supported** | Not supported | **Supported** | Not supported | **Supported** |
 | **UI debugging** | [Hot Reload](/dotnet/maui/xaml/hot-reload) | [Hot Reload](/aspnet/core/test/hot-reload) | [Fast Refresh](https://reactnative.dev/docs/fast-refresh) | [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) | - | [Hot Reload](/visualstudio/debugger/hot-reload) | [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) | [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) |
-| **Fluent Design** | ✅ | ✅ | ✅ | ✅ (via [WinUI 2](/windows/apps/winui/winui2)) | ❌ | ❌ | ✅ | ❌ |
+| **Fluent Design** | **Supported** | **Supported** | **Supported** | **Supported** (via [WinUI 2](/windows/apps/winui/winui2)) | Not supported | Not supported | **Supported** | Not supported |
 | **.NET** | .NET | .NET | N/A | .NET Core & .NET Native | N/A | .NET & .NET Framework | .NET | .NET & .NET Framework |
-| **Windows App SDK** | ✅ ([more info](/dotnet/maui/platform-integration/invoke-platform-code)) | ✅ [via MAUI](/dotnet/maui/platform-integration/invoke-platform-code) | ✅ ([more info](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | ❌ | ✅ | ✅ ([more info](../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md)) | ✅ | ✅ ([more info](../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md)) |
-| **Great for touch** | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
-| **Cross-platform** | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Xbox/HoloLens apps** | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Sandboxing (AppContainer)** | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Currently supported** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Receiving updates** | ✅ | ✅ | ✅ | ✅ (security & bugfix) | ✅ | ✅ | ✅ | ✅ |
+| **Windows App SDK** | **Supported** ([more info](/dotnet/maui/platform-integration/invoke-platform-code)) | **Supported** [via MAUI](/dotnet/maui/platform-integration/invoke-platform-code) | **Supported** ([more info](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | Not supported | **Supported** | **Supported** ([more info](../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md)) | **Supported** | **Supported** ([more info](../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md)) |
+| **Great for touch** | **Supported** | **Supported** | **Supported** | **Supported** | Not supported | Not supported | **Supported** | Not supported |
+| **Cross-platform** | **Supported** | **Supported** | **Supported** | Not supported | Not supported | Not supported | Not supported | Not supported |
+| **Xbox/HoloLens apps** | Not supported | Not supported | **Supported** | **Supported** | Not supported | Not supported | Not supported | Not supported |
+| **Sandboxing (AppContainer)** | Not supported | Not supported | **Supported** | **Supported** | Not supported | Not supported | Not supported | Not supported |
+| **Currently supported** | **Supported** | **Supported** | **Supported** | **Supported** | **Supported** | **Supported** | **Supported** | **Supported** |
+| **Receiving updates** | **Supported** | **Supported** | **Supported** | **Supported** (security & bugfix) | **Supported** | **Supported** | **Supported** | **Supported** |
 | **Roadmap** | [GitHub](https://github.com/dotnet/maui/wiki/Roadmap) | [GitHub](https://aka.ms/aspnet/roadmap) | [GitHub](https://aka.ms/rnw-roadmap) | n/a | n/a | [GitHub](https://github.com/dotnet/winforms/blob/main/docs/roadmap.md) | [GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md) | [GitHub](https://github.com/dotnet/wpf/blob/main/roadmap.md) |
 
 Learn more about each of these options:

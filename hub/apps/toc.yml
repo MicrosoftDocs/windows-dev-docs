@@ -32,24 +32,6 @@ items:
           href: develop/index.md
         - name: Accessibility
           href: develop/accessibility.md
-        - name: App lifecycle and system services
-          items: 
-            - name: Overview
-              href: develop/app-lifecycle-and-system-services.md
-            - name: Manage app lifecycle
-              items: 
-                - name: App lifecycle
-                  href: windows-app-sdk/applifecycle/applifecycle.md
-                - name: App instancing
-                  href: windows-app-sdk/applifecycle/applifecycle-instancing.md
-                - name: Create a single-instanced app
-                  href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
-                - name: Rich activation
-                  href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
-                - name: Power management
-                  href: windows-app-sdk/applifecycle/applifecycle-power.md
-                - name: Detect Focus session state
-                  href: windows-app-sdk/applifecycle/focus-session.md
         - name: Audio, video, and camera
           href: develop/audio-video-camera.md
           items:
@@ -208,6 +190,65 @@ items:
                       href: develop/win2d/avoiding-memory-leaks.md
                     - name: Custom effects
                       href: develop/win2d/custom-effects.md
+        - name: Launching apps and background tasks
+          items:
+            - name: Overview
+              href: develop/launch/index.md
+            - name: URI activation
+              items:
+              - name: Handle URI activation
+                href: develop/launch/handle-uri-activation.md
+              - name: Launch the default app for a URI
+                href: develop/launch/launch-default-app.md
+              - name: Launch the Windows Settings app
+                href: develop/launch/launch-settings-app.md
+              - name: Launch the Default Apps settings page
+                href: develop/launch/launch-default-apps-settings.md
+              - name: Launch the Microsoft Store app
+                href: develop/launch/launch-store-app.md
+              - name: Launch the Windows Maps app
+                href: develop/launch/launch-maps-app.md
+              - name: Launch Snipping Tool
+                href: develop/launch/launch-snipping-tool.md
+                items:
+                - name: Launch screen snipping (legacy)
+                  href: develop/launch/launch-screen-snipping.md
+              - name: Launch the People app
+                href: develop/launch/launch-people-app.md
+              - name: Support web-to-app linking with app URI handlers
+                href: develop/launch/web-to-app-linking.md
+            - name: File activation
+              items:
+              - name: Handle file activation
+                href: develop/launch/handle-file-activation.md
+              - name: Launch the default app for a file
+                href: develop/launch/launch-the-default-app-for-a-file.md
+            - name: Reserved file and URI scheme names
+              href: develop/launch/reserved-uri-scheme-names.md
+            - name: App lifecycle and system services
+              items: 
+                - name: Overview
+                  href: develop/app-lifecycle-and-system-services.md
+                - name: Manage app lifecycle
+                  items: 
+                    - name: App lifecycle
+                      href: windows-app-sdk/applifecycle/applifecycle.md
+                    - name: App instancing
+                      href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+                    - name: Create a single-instanced app
+                      href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
+                    - name: Rich activation
+                      href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+                    - name: Power management
+                      href: windows-app-sdk/applifecycle/applifecycle-power.md
+                    - name: Detect Focus session state
+                      href: windows-app-sdk/applifecycle/focus-session.md
+            - name: Background tasks
+              items:
+              - name: Working with background tasks in Windows apps
+                href: develop/launch/create-and-register-a-background-task.md
+              - name: BackgroundTaskBuilder in the Windows App SDK
+                href: windows-app-sdk/applifecycle/background-tasks.md
         - name: Notifications
           items: 
             - name: Push notifications
@@ -231,6 +272,8 @@ items:
               href: develop/security/credential-locker.md
             - name: Fingerprint biometrics
               href: develop/security/fingerprint-biometrics.md
+            - name: Implement OAuth 2.0 functionality
+              href: develop/security/oauth2.md
             - name: Share certificates between apps
               href: develop/security/share-certificates.md
             - name: Smart cards
@@ -840,7 +883,7 @@ items:
                 items:
                   - name: App Quality
                     href: publish/store-app-quality.md
-                  - name: Upcoming company account verification requirements
+                  - name: EU Digital Services Act requirements
                     href: publish/store-business-verification-reqs.md
                   - name: Microsoft Edge Add-ons store developer policies
                     href: /microsoft-edge/extensions-chromium/store-policies/developer-policies
@@ -869,6 +912,8 @@ items:
                   items: 
                     - name: Stable channel release notes
                       items: 
+                        - name: Windows App SDK 1.6
+                          href: windows-app-sdk/release-notes-archive/stable-channel-1.6.md
                         - name: Windows App SDK 1.5
                           href: windows-app-sdk/release-notes-archive/stable-channel-1.5.md
                         - name: Windows App SDK 1.4
@@ -937,8 +982,6 @@ items:
                   href: get-started/sign-up.md
                 - name: Install tools for the Windows App SDK
                   href: windows-app-sdk/set-up-your-development-environment.md
-                - name: Install tools for preview and experimental channels of the Windows App SDK
-                  href: windows-app-sdk/preview-experimental-install.md
                 - name: Latest Windows App SDK downloads
                   href: windows-app-sdk/downloads.md
                 - name: Archive of Windows App SDK downloads
@@ -1070,6 +1113,8 @@ items:
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
                 - name: MRT to MRTCore migration
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md
+                - name: Background task migration strategy
+                  href: windows-app-sdk/migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md
                 - name: Threading functionality migration
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md
                 - name: Case study 1—PhotoLab (C#)

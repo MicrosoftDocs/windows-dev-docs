@@ -29,7 +29,7 @@ Here's an excerpt from a typical `.csproj` file for a C# WinUI 3 project showing
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     ...
     <UseWinUI>true</UseWinUI>
