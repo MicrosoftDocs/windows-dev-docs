@@ -9,7 +9,7 @@ keywords: windows, winui, winrt, dotnet, security
 
 # Implement OAuth 2.0 functionality in Windows apps
 
-The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth 2.0 authorization across diverse Windows platforms. **OAuth2Manager** API intentionally doesn't provide APIs for the implicit request and resource owner password credential because of the security concerns that entails. It's recommended to use the authorization code grant type using Proof Key for Code Exchange (PKCE).
+The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth 2.0 authorization across diverse Windows platforms. **OAuth2Manager** API intentionally doesn't provide APIs for the implicit request and resource owner password credential because of the security concerns that entails. It's recommended to use the authorization code grant type using Proof Key for Code Exchange (PKCE). For more information, see the [PKCE RFC](https://tools.ietf.org/html/rfc7636).
 
 ## OAuth background
 
