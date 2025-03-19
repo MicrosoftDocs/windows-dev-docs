@@ -19,7 +19,7 @@ The current WinRT [WebAuthenticationBroker](/uwp/api/windows.security.authentica
 
 The OAuth2Manager API for Windows App SDK aims to provide a streamlined solution that meets the expectations of developers. It offers seamless OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. The new API eliminates the need for cumbersome workarounds and simplifies the process of incorporating OAuth 2.0 functionality into desktop applications.
 
-The OAuth2Manager is different than the existing WinRT [WebAuthenticationBroker](/uwp/api/windows.security.authentication.web.webauthenticationbroker). It follows OAuth best practices more closely - e.g. using the user's default browser. The best practices for the API are taken from the IETF (Internet Engineering Task Force) OAuth 2.0 Authorization Framework [RFC 6749](https://tools.ietf.org/html/rfc6749), Proof Key for Code Exchange (PKCE) [RFC 7636](https://tools.ietf.org/html/rfc7636), and OAuth 2.0 for Native Apps [RFC 8252](https://tools.ietf.org/html/rfc8252).
+The OAuth2Manager is different than the existing WinRT [WebAuthenticationBroker](/uwp/api/windows.security.authentication.web.webauthenticationbroker). It follows OAuth best practices more closely - e.g. using the user's default browser. The best practices for the API are taken from the IETF (Internet Engineering Task Force) OAuth 2.0 Authorization Framework [RFC 6749](https://tools.ietf.org/html/rfc6749), PKCE [RFC 7636](https://tools.ietf.org/html/rfc7636), and OAuth 2.0 for Native Apps [RFC 8252](https://tools.ietf.org/html/rfc8252).
 
 ## Perform OAuth 2.0 examples
 
