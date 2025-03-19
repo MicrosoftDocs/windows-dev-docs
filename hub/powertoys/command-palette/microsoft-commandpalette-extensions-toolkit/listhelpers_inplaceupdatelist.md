@@ -16,10 +16,10 @@ The **InPlaceUpdateList\<T\>** method updates the contents of an existing list i
 
 ## Parameters
 
-**`original`** IList\<T\>
+*original* **IList\<T\>**
 
 The original list to be updated. This list will be modified in place.
 
-**`newContents`** IEnumerable\<T\>
+*newContents* **IEnumerable\<T\>**
 
-The new contents to be added to the original list. This can be any collection of items that implement the `IEnumerable<T>` interface.
+The new contents to be added to the original list. This can be any collection of items that implement the **IEnumerable\<T\>** interface.

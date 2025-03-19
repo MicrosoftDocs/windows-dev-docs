@@ -16,6 +16,6 @@ The **Update** method updates the settings form with the specified JSON object. 
 
 ## Parameters
 
-**`payload`** JsonObject
+*payload* **JsonObject**
 
-The JSON object containing the data to update the settings form. This parameter is required and cannot be null.
+The **JsonObject** containing the data to update the settings form. This parameter is required and cannot be null.

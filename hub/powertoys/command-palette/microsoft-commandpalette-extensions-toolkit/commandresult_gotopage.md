@@ -14,11 +14,11 @@ Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalett
 
 Navigate to a different page in the palette. The [GoToPageArgs](gotopageargs.md) will specify which page to navigate to.
 
-Creates a new [CommandResult](commandresult.md) instance with its [Kind](commandresult.md#properties) property set to [CommandResultKind.GoToPage](../microsoft-commandpalette-extensions/commandresultkind.md#fields) and its [Args](commandresult.md#properties) set to `args`.
+Creates a new [CommandResult](commandresult.md) instance with its [Kind](commandresult.md#properties) property set to [CommandResultKind.GoToPage](../microsoft-commandpalette-extensions/commandresultkind.md#fields) and its [Args](commandresult.md#properties) set to *args*.
 
 ## Parameters
 
-**`args`** [GoToPageArgs](gotopageargs.md)
+*args* [GoToPageArgs](gotopageargs.md)
 
 The arguments for the command. This should be an instance of [GoToPageArgs](gotopageargs.md) that specifies the page to navigate to.
 

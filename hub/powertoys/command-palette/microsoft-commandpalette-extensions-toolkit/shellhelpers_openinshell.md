@@ -16,25 +16,25 @@ The **OpenInShell** method opens a shell with the specified command and paramete
 
 ## Parameters
 
-**`path`** String
+*path* **String**
 
 The path to the shell executable. This can be a full path or a relative path.
 
-**`arguments`** String
+*arguments* **String**
 
 The arguments to pass to the shell executable. This can include command-line options and parameters.
 
-**`workingDir`** String
+*workingDir* **String**
 
 The working directory for the shell. This is the directory in which the shell will start executing commands.
 
-**`runAs`** [ShellRunAsType](shellrunastype.md)
+*runAs* [ShellRunAsType](shellrunastype.md)
 
 The user context in which to run the shell.
 
-**`runWithHiddenWindow`** Boolean
+*runWithHiddenWindow* **Boolean**
 
-The flag indicating whether to run the shell with a hidden window. If set to **true**, the shell will not be visible to the user. This is useful for background tasks or when you don't want to interrupt the user's workflow.
+The flag indicating whether to run the shell with a hidden window. If set to `true`, the shell will not be visible to the user. This is useful for background tasks or when you don't want to interrupt the user's workflow.
 
 ## Returns
 

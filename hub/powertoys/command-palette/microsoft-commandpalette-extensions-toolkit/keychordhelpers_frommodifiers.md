@@ -16,29 +16,29 @@ The **FromModifiers** method creates a new [KeyChord](../microsoft-commandpalett
 
 ## Parameters
 
-**`ctrl`** Boolean
+*ctrl* **Boolean**
 
-Indicates whether the Control key is pressed.
+Indicates whether the `Control` key is pressed.
 
-**`alt`** Boolean
+*alt* **Boolean**
 
 The `Alt` key is pressed.
 
-**`shift`** Boolean
+*shift* **Boolean**
 
 The `Shift` key is pressed.
 
-**`win`** Boolean
+*win* **Boolean**
 
 The `Windows` key is pressed.
 
-**`vkey`** Integer
+*vkey* **Integer**
 
-The virtual key code of the key that is pressed. This value is typically obtained from the `KeyInterop` class.
+The virtual key code of the key that is pressed. This value is typically obtained from the **KeyInterop** class.
 
-**`scanCode`** Integer
+*scanCode* **Integer**
 
-The scan code of the key that is pressed. This value is typically obtained from the `KeyInterop` class.
+The scan code of the key that is pressed. This value is typically obtained from the **KeyInterop** class.
 
 ## Returns
 

@@ -18,4 +18,4 @@ The **ProviderType** enum defines the types of providers that can be used in the
 
 | Name | Value | Description |
 | :--- | :--- | :--- |
-| Commands | 0 | Represents a provider that offers commands. Commands are actions that can be executed directly from the Command Palette. |
+| Commands | `0` | Represents a provider that offers commands. Commands are actions that can be executed directly from the Command Palette. |

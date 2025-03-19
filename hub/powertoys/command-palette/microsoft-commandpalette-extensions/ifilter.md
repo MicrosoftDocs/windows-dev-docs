@@ -19,5 +19,5 @@ The **IFilter** interface represents a filter in the Command Palette. It is used
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Icon | [IIconInfo](iiconinfo.md) | The icon associated with the filter. This property is used to define the visual representation of the filter in the Command Palette. |
-| Id | String | The unique identifier for the filter. This property is used to identify the filter in the Command Palette. |
-| Name | String | The name of the filter. This property is used to define the display name of the filter in the Command Palette. |
+| Id | **String** | The unique identifier for the filter. This property is used to identify the filter in the Command Palette. |
+| Name | **String** | The name of the filter. This property is used to define the display name of the filter in the Command Palette. |

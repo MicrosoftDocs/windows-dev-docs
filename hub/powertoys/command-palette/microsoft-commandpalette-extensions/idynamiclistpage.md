@@ -20,4 +20,4 @@ A dynamic list leaves the extension in charge of filtering the list of items.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| SearchText | String | The search text used to filter the list of items. This property is used to define the text that is used to filter the items in the dynamic list. |
+| SearchText | **String** | The search text used to filter the list of items. This property is used to define the text that is used to filter the items in the dynamic list. |

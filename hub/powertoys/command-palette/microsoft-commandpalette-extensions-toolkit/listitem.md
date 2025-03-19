@@ -30,6 +30,6 @@ The **ListItem** class represents an item in a list. It is used to display items
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Details | [IDetails](../microsoft-commandpalette-extensions/idetails.md) | Provides additional details about the item. |
-| Section | String | The section to which the item belongs. This property is used to group items in the list. |
+| Section | **String** | The section to which the item belongs. This property is used to group items in the list. |
 | Tags | [ITag[]](../microsoft-commandpalette-extensions/itag.md) | The tags associated with the item. Tags are used to categorize items and can be used for filtering. |
-| TextToSuggest | String | The text to suggest for the item. This property is used to provide suggestions for the item when the user types in the command palette. |
+| TextToSuggest | **String** | The text to suggest for the item. This property is used to provide suggestions for the item when the user types in the command palette. |

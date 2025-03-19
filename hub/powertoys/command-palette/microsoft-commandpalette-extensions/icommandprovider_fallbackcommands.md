@@ -1,6 +1,6 @@
 ---
 title: ICommandProvider.FallbackCommands() Method
-description: The FallbackCommands are special top-level items which allow extensions to have dynamic top-level items which respond to the text the user types on the main list page.
+description: The FallbackCommands are special items that allow extensions to have dynamic top-level items which respond to the text the user enters on the main page.
 ms.date: 2/7/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]

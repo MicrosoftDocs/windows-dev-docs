@@ -20,5 +20,5 @@ The **DetailsElement** class is used to define a details element that can be dis
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Key | String | The key of the details element. This is used to identify the element in the Command Palette. |
+| Key | **String** | The key of the details element. This is used to identify the element in the Command Palette. |
 | Data | [IDetailsData](../microsoft-commandpalette-extensions/idetailsdata.md) | The data associated with the details element. |

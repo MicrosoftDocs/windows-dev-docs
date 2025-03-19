@@ -16,6 +16,6 @@ The **Initialize** method is called when the extension host is initialized. This
 
 ## Parameters
 
-**`host`** [IExtensionHost](../microsoft-commandpalette-extensions/iextensionhost.md)
+*host* [IExtensionHost](../microsoft-commandpalette-extensions/iextensionhost.md)
 
 The extension host instance that is being initialized. This parameter provides access to the extension host's functionality and services, allowing the extension to interact with the command palette and other components of the system.

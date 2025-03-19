@@ -16,11 +16,11 @@ This method creates an [IconInfo](iconinfo.md) object from two relative paths, o
 
 ## Parameters
 
-**`lightIcon`** String
+*lightIcon* **String**
 
 The relative path to the icon for light mode. This path should point to an image file that represents the icon in a light theme.
 
-**`darkIcon`** String
+*darkIcon* **String**
 
 The relative path to the icon for dark mode. This path should point to an image file that represents the icon in a dark theme.
 

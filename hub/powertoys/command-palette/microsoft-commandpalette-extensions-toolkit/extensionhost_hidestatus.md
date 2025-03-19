@@ -16,6 +16,6 @@ The **HideStatus** method is used to hide a status message that was previously d
 
 ## Parameters
 
-**`message`** [IStatusMessage](../microsoft-commandpalette-extensions/istatusmessage.md)
+*message* [IStatusMessage](../microsoft-commandpalette-extensions/istatusmessage.md)
 
 The status message to be hidden, provided as an object implementing **IStatusMessage**. This parameter identifies the specific status message that should be removed from the command palette's status area.

@@ -19,4 +19,4 @@ The **IDetailsElement** interface is used to define an element in the Command Pa
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Data | [IDetailsData](idetailsdata.md) | The data associated with the element. |
-| Key | String | The key of the element. |
+| Key | **String** | The key of the element. |

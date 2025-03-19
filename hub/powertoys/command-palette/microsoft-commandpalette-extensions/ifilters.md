@@ -18,7 +18,7 @@ The **IFilters** interface is used to manage the filters in the Command Palette.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| CurrentFilterId | String | The ID of the currently selected filter. This property is used to identify which filter is currently active in the Command Palette. |
+| CurrentFilterId | **String** | The ID of the currently selected filter. This property is used to identify which filter is currently active in the Command Palette. |
 
 ## Methods
 

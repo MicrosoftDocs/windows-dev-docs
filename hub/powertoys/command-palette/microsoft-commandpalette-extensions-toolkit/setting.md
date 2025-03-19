@@ -28,12 +28,12 @@ The **Setting\<T\>** class represents a setting in the command palette extension
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Description | String | Gets or sets the description of the setting. |
-| ErrorMessage | String | Gets or sets the text of the error message. |
-| IsRequired | Boolean | Gets or sets whether the setting is required. |
-| Key | String | Gets the key of the setting. |
-| Label | String | Gets or sets the label of the setting. |
-| Value | T | Gets or sets the value of the setting. |
+| Description | **String** | Gets or sets the description of the setting. |
+| ErrorMessage | **String** | Gets or sets the text of the error message. |
+| IsRequired | **Boolean** | Gets or sets whether the setting is required. |
+| Key | **String** | Gets the key of the setting. |
+| Label | **String** | Gets or sets the label of the setting. |
+| Value | **T** | Gets or sets the value of the setting. |
 
 ## Methods
 

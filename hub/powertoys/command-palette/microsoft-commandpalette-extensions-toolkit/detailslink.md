@@ -28,5 +28,5 @@ The **DetailsLink** class is used to define a link that can be displayed in the 
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Link | Uri | The URI of the link. |
-| Text | String | The text to display for the link. |
+| Link | **Uri** | The URI of the link. |
+| Text | **String** | The text to display for the link. |

@@ -25,6 +25,6 @@ public CopyTextCommand(string text)
 
 ### Parameters
 
-**`text`** String
+*text* **String**
 
 The text to be copied to the clipboard. This parameter is used to set the **Text** property of the command.

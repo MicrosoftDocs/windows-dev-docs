@@ -16,11 +16,11 @@ The **ScoreListItem** method is a static method that scores a list item based on
 
 ## Parameters
 
-**`query`** String
+*query* **String**
 
 The search string used to score the list item. This string is typically the text entered by the user in the command palette.
 
-**`listItem`** [ICommandItem](../microsoft-commandpalette-extensions/icommanditem.md)
+*listItem* [ICommandItem](../microsoft-commandpalette-extensions/icommanditem.md)
 
 The command item to be scored. This item represents a command or action that can be executed in the command palette.
 

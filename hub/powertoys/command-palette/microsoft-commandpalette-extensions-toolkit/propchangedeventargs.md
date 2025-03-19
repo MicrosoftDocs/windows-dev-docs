@@ -26,4 +26,4 @@ The **PropChangedEventArgs** class is used to provide data for the property chan
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| PropertyName | String | Gets the name of the property that has changed. |
+| PropertyName | **String** | Gets the name of the property that has changed. |

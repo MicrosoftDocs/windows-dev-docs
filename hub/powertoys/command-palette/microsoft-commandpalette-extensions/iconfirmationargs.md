@@ -20,7 +20,7 @@ The **IConfirmationArgs** interface is used to define the arguments for a confir
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Description | String | The description of the confirmation dialog. |
-| IsPrimaryCommandCritical | Boolean | Indicates whether the primary command is critical. |
+| Description | **String** | The description of the confirmation dialog. |
+| IsPrimaryCommandCritical | **Boolean** | Indicates whether the primary command is critical. |
 | PrimaryCommand | [ICommand](icommand.md) | The primary command associated with the confirmation dialog. |
-| Title | String | The title of the confirmation dialog. |
+| Title | **String** | The title of the confirmation dialog. |

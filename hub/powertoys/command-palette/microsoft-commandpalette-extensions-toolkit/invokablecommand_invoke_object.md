@@ -12,9 +12,11 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
+This method executes the command associated with the [InvokableCommand](invokablecommand.md) instance and keeps the command palette open.
+
 ## Parameters
 
-**`sender`** Object
+*sender* **Object**
 
 The object that is invoking the command. This parameter can be used to pass additional context or data to the command being executed. It can be any object type, depending on the specific implementation of the command.
 

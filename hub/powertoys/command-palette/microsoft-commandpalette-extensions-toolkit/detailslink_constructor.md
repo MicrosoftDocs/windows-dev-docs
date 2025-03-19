@@ -28,7 +28,7 @@ public DetailsLink()
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [DetailsLink](detailslink.md) class, setting its [Link](detailslink.md#properties) and [Text](detailslink.md#properties) properties to `url`.
+Initializes a new instance of the [DetailsLink](detailslink.md) class, setting its [Link](detailslink.md#properties) and [Text](detailslink.md#properties) properties to *url*.
 
 ```C#
 public DetailsLink(string url)
@@ -39,7 +39,7 @@ public DetailsLink(string url)
 
 ### Parameters
 
-**`url`** String
+*url* **String**
 
 The URL to be set as both the link and text for the [DetailsLink](detailslink.md) instance.
 
@@ -49,7 +49,7 @@ The URL to be set as both the link and text for the [DetailsLink](detailslink.md
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [DetailsLink](detailslink.md) class, setting its [Link](detailslink.md#properties) property to `url` and [Text](detailslink.md#properties) to `text`.
+Initializes a new instance of the [DetailsLink](detailslink.md) class, setting its [Link](detailslink.md#properties) property to *url* and [Text](detailslink.md#properties) to *text*.
 
 ```C#
 public DetailsLink(string url, string text)
@@ -65,10 +65,10 @@ public DetailsLink(string url, string text)
 
 ### Parameters
 
-**`url`** String
+*url* *String*
 
 The URL to be set as the link for the [DetailsLink](detailslink.md) instance.
 
-**`text`** String
+*text* *String*
 
 The text to be displayed for the link in the Command Palette. This text is what users will see and click on to access the link.

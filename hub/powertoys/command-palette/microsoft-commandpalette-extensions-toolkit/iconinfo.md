@@ -14,7 +14,7 @@ Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalett
 
 Implements [IIconInfo](../microsoft-commandpalette-extensions/iiconinfo.md)
 
-The `IconInfo` class is used to define icons for commands in the Command Palette. It allows you to specify different icons for light and dark modes, ensuring that your icons are visually appealing and consistent with the user's theme preferences.
+The **IconInfo** class is used to define icons for commands in the Command Palette. It allows you to specify different icons for light and dark modes, ensuring that your icons are visually appealing and consistent with the user's theme preferences.
 
 ## Constructors
 

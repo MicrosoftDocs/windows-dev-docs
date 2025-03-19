@@ -16,6 +16,6 @@ The **RaiseItemsChanged** method is used to notify the Command Palette that the 
 
 ## Parameters
 
-**`totalItems`** Integer
+*totalItems* **Integer**
 
 An integer representing the total number of items in the tree content. This value is used to update the Command Palette with the new item count.

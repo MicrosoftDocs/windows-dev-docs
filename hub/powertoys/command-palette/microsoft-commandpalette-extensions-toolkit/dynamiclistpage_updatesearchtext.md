@@ -16,10 +16,10 @@ The **UpdateSearchText** method is used to update the search text for the dynami
 
 ## Parameters
 
-**`oldSearch`** String
+*oldSearch* **String**
 
 The previous search text that was used for filtering the list items. This parameter is useful for determining what has changed in the search criteria.
 
-**`newSearch`** String
+*newSearch* **String**
 
 The new search text that will be used for filtering the list items. This parameter represents the updated search criteria that should be applied to the list of items displayed in the command palette.

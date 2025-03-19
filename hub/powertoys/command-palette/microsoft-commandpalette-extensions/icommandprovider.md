@@ -18,10 +18,10 @@ This is the interface that an extension must implement to provide commands to th
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| DisplayName | String | The display name of the command provider. This is used to identify the provider in the Command Palette. |
-| Frozen | Boolean | Indicates whether the command provider is frozen. A frozen command provider will not be updated or refreshed. |
+| DisplayName | **String** | The display name of the command provider. This is used to identify the provider in the Command Palette. |
+| Frozen | **Boolean** | Indicates whether the command provider is frozen. A frozen command provider will not be updated or refreshed. |
 | Icon | [IIconInfo](iiconinfo.md) | The icon associated with the command provider. This is used to display an icon in the Command Palette. |
-| Id | String | The unique identifier of the command provider. This is used to identify the provider in the Command Palette. |
+| Id | **String** | The unique identifier of the command provider. This is used to identify the provider in the Command Palette. |
 | Settings | [ICommandSettings](icommandsettings.md) | The settings associated with the command provider. This is used to provide additional information or resources related to the item being displayed in the Command Palette. |
 
 ## Methods

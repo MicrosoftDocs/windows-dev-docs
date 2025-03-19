@@ -21,4 +21,4 @@ The **IGoToPageArgs** interface represents the arguments for navigating to a spe
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | NavigationMode | [NavigationMode](navigationmode.md) | Gets or sets the navigation mode. |
-| PageId | String | Gets or sets the ID of the page to navigate to. |
+| PageId | **String** | Gets or sets the ID of the page to navigate to. |

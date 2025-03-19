@@ -14,7 +14,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [MatchResult](matchresult.md) class with its [Success](matchresult.md#properties) property set to `success` and [SearchPrecision](matchresult.md#properties) set to `searchPrecision`.
+Initializes a new instance of the [MatchResult](matchresult.md) class with its [Success](matchresult.md#properties) property set to *success* and [SearchPrecision](matchresult.md#properties) set to *searchPrecision*.
 
 ```C#
 public MatchResult(bool success, SearchPrecisionScore searchPrecision)
@@ -26,11 +26,11 @@ public MatchResult(bool success, SearchPrecisionScore searchPrecision)
 
 ### Parameters
 
-**`success`** Boolean
+*success* **Boolean**
 
 Indicates whether the match was successful.
 
-**`searchPrecision`** [SearchPrecisionScore](searchprecisionscore.md)
+*searchPrecision* [SearchPrecisionScore](searchprecisionscore.md)
 
 The search precision score for the match. This score is used to determine how closely the match aligns with the search criteria.
 
@@ -40,7 +40,7 @@ The search precision score for the match. This score is used to determine how cl
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [MatchResult](matchresult.md) class with its [Success](matchresult.md#properties) property set to `success`, [SearchPrecision](matchresult.md#properties) set to `searchPrecision`, [MatchData](matchresult.md#properties) set to `matchData`, and [RawScore](matchresult.md#properties) set to `rawScore`.
+Initializes a new instance of the [MatchResult](matchresult.md) class with its [Success](matchresult.md#properties) property set to *success*, [SearchPrecision](matchresult.md#properties) set to *searchPrecision*, [MatchData](matchresult.md#properties) set to *matchData*, and [RawScore](matchresult.md#properties) set to *rawScore*.
 
 ```C#
 public MatchResult(bool success, SearchPrecisionScore searchPrecision, List<int> matchData, int rawScore)
@@ -54,18 +54,18 @@ public MatchResult(bool success, SearchPrecisionScore searchPrecision, List<int>
 
 ### Parameters
 
-**`success`** Boolean
+*success* **Boolean**
 
 Indicates whether the match was successful.
 
-**`searchPrecision`** [SearchPrecisionScore](searchprecisionscore.md)
+*searchPrecision* [SearchPrecisionScore](searchprecisionscore.md)
 
 The search precision score for the match. This score is used to determine how closely the match aligns with the search criteria.
 
-**`matchData`** List\<Integer\>
+*matchData* **List\<Integer\>**
 
 The list of match data. This data can be used to provide additional context or information about the match.
 
-**`rawScore`** Integer
+*rawScore* **Integer**
 
 The raw score for the match. This score is used to quantify the quality of the match based on the search criteria.

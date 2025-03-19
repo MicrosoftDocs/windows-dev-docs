@@ -25,11 +25,11 @@ The **MatchResult** class is used to represent the result of a match operation i
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| MatchData | List\<Integer\> | A list of integers representing the match data. |
-| RawScore | Integer | The raw score of the match. |
-| Score | Integer | The score of the match. |
+| MatchData | **List\<Integer\>** | A list of integers representing the match data. |
+| RawScore | **Integer** | The raw score of the match. |
+| Score | **Integer** | The score of the match. |
 | SearchPrecision | [SearchPrecisionScore](searchprecisionscore.md) | The precision score of the match. |
-| Success | Boolean | A boolean value indicating whether the match was successful. |
+| Success | **Boolean** | A boolean value indicating whether the match was successful. |
 
 ## Methods
 

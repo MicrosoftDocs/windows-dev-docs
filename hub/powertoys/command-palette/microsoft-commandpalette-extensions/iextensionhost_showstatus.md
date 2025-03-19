@@ -16,7 +16,7 @@ The **ShowStatus** method is used to display a status message in the Command Pal
 
 ## Parameters
 
-**`message`** [IStatusMessage](istatusmessage.md)
+*message* [IStatusMessage](istatusmessage.md)
 
 The status message to be displayed in the Command Palette. This parameter is used to define the content of the status message.
 

@@ -25,7 +25,7 @@ public ListItem(ICommand command)
 
 ### Parameters
 
-**`command`** [ICommand](../microsoft-commandpalette-extensions/icommand.md)
+*command* [ICommand](../microsoft-commandpalette-extensions/icommand.md)
 
 The command associated with the list item. This command is executed when the item is selected in the command palette.
 
@@ -46,6 +46,6 @@ public ListItem(ICommandItem command)
 
 ### Parameters
 
-**`command`** [ICommandItem](../microsoft-commandpalette-extensions/icommanditem.md)
+*command* [ICommandItem](../microsoft-commandpalette-extensions/icommanditem.md)
 
 The command item associated with the list item. This command item is executed when the item is selected in the command palette.

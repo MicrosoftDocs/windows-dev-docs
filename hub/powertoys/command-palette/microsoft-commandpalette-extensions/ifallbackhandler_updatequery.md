@@ -16,6 +16,6 @@ The **UpdateQuery** method is used to update the query string used for fallback 
 
 ## Parameters
 
-**`query`** String
+*query* **String**
 
 The query string that is used for fallback handling. This is the text that the user has typed into the Command Palette.

@@ -16,4 +16,4 @@ Can be used to quickly determine if this process is running with package identit
 
 ## Returns
 
-A **Boolean** value indicating whether the current process is running with package identity. Returns `true` if the process is running with package identity; otherwise, returns `false`.
+A **Boolean** value indicating whether the current process is running with package identity. It returns `true` if the process is running with package identity; otherwise, it returns `false`.

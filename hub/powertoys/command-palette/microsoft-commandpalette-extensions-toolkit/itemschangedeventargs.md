@@ -26,4 +26,4 @@ The **ItemsChangedEventArgs** class is used to represent the event arguments for
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| TotalItems | Integer | Gets the total number of items that have changed. This property is read-only. |
+| TotalItems | **Integer** | Gets the total number of items that have changed. This property is read-only. |

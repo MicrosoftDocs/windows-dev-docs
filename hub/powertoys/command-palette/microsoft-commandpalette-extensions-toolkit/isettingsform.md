@@ -1,6 +1,6 @@
 ---
 title: ISettingsForm Interface
-description: The ISettingsForm interface is used to represent a settings form in the Command Palette Extensions Toolkit.
+description: The ISettingsForm interface is used to represent a form in the Command Palette settings.
 ms.date: 2/19/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-The **ISettingsForm** interface is used to represent a settings form in the Command Palette Extensions Toolkit. It provides methods for converting the form to different representations, such as a data identifier, dictionary, or state.
+The **ISettingsForm** interface is used to represent a form in the Command Palette settings. It provides methods for converting the form to different representations, such as a data identifier, dictionary, or state.
 
 ## Methods
 

@@ -24,7 +24,7 @@ The **StringMatcher** class provides methods for performing fuzzy matching and s
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Instance | StringMatcher | Gets the singleton instance of the **StringMatcher** class. |
+| Instance | **StringMatcher** | Gets the singleton instance of the **StringMatcher** class. |
 | UserSettingSearchPrecision | [SearchPrecisionScore](searchprecisionscore.md) | Gets or sets the precision score used for fuzzy matching. |
 
 ## Methods

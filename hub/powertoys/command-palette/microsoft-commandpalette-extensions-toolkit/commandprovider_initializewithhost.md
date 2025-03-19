@@ -16,6 +16,6 @@ The **InitializeWithHost** method initializes the command provider with the spec
 
 ## Parameters
 
-**`host`** [IExtensionHost](../microsoft-commandpalette-extensions/iextensionhost.md)
+*host* [IExtensionHost](../microsoft-commandpalette-extensions/iextensionhost.md)
 
 The host instance that provides access to the command palette's functionality. This parameter is used to initialize the command provider with the host's capabilities and services.

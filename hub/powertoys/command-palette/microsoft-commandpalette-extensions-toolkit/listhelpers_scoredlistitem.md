@@ -19,4 +19,4 @@ The **ScoredListItem** struct represents a scored list item. It's used to encaps
 | Field | Type | Description |
 | :--- | :--- | :--- |
 | ListItem | [IListItem](../microsoft-commandpalette-extensions/ilistitem.md) | The list item being scored. |
-| Score | Integer | The score of the list item. A higher score indicates a better match to the search query. |
+| Score | **Integer** | The score of the list item. A higher score indicates a better match to the search query. |

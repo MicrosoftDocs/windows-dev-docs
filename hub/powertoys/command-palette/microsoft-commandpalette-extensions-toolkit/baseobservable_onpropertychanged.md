@@ -16,6 +16,6 @@ Raises the [PropChanged](baseobservable.md#events) event to notify that a proper
 
 ## Parameters
 
-**`propertyName`** String
+*propertyName* **String**
 
 The name of the property that has changed.

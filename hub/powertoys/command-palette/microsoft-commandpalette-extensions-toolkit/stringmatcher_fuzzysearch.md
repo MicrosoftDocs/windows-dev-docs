@@ -16,11 +16,11 @@ The **FuzzySearch** method performs a fuzzy search between two strings to determ
 
 ## Parameters
 
-**`query`** String
+*query* **String**
 
 The string to be compared against the *stringToCompare* string.
 
-**`stringToCompare`** String
+*stringToCompare* **String**
 
 The string to be compared with the *query* string.
 

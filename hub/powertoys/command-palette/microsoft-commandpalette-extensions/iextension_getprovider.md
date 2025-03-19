@@ -16,7 +16,7 @@ The **GetProvider** method is used to retrieve a provider of a specified type. T
 
 ## Parameters
 
-**`providerType`** [ProviderType](providertype.md)
+*providerType* [ProviderType](providertype.md)
 
 The type of provider to be retrieved. This parameter is used to specify the type of provider that the extension wants to access.
 

@@ -22,8 +22,8 @@ The **Tag** class represents a tag that can be used in the command palette. It p
 
 | Constructor | Description |
 | :--- | :--- |
-| [Tag()](tag_constructor.md#tag-constructor) | Initializes a new instance of the Tag class with default values. |
-| [Tag(String)](tag_constructor.md#tagstring-constructor) | Initializes a new instance of the Tag class with a specified text. |
+| [Tag()](tag_constructor.md#tag-constructor) | Initializes a new instance of the **Tag** class with default values. |
+| [Tag(String)](tag_constructor.md#tagstring-constructor) | Initializes a new instance of the **Tag** class with a specified text. |
 
 ## Properties
 
@@ -32,5 +32,5 @@ The **Tag** class represents a tag that can be used in the command palette. It p
 | Background | [OptionalColor](../microsoft-commandpalette-extensions/optionalcolor.md) | The background color of the tag. |
 | Foreground | [OptionalColor](../microsoft-commandpalette-extensions/optionalcolor.md) | The foreground color of the tag. |
 | Icon | [IIconInfo](../microsoft-commandpalette-extensions/iiconinfo.md) | The icon associated with the tag. |
-| Text | String | The text displayed on the tag. |
-| ToolTip | String | The tooltip text displayed when hovering over the tag. |
+| Text | **String** | The text displayed on the tag. |
+| ToolTip | **String** | The tooltip text displayed when hovering over the tag. |

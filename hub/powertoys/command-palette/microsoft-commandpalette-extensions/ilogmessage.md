@@ -18,5 +18,5 @@ The **ILogMessage** interface represents a log message in the Command Palette. I
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Message | String | The message text that describes the log entry. |
+| Message | **String** | The message text that describes the log entry. |
 | State | [MessageState](messagestate.md) | The state of the log message. This property indicates the severity or type of the log message, such as informational, warning, or error. |

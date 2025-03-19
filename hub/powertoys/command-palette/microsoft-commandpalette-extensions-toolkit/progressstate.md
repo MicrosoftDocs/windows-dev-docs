@@ -22,5 +22,5 @@ The **ProgressState** class is used to represent the state of a progress indicat
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| IsIndeterminate | Boolean | Gets or sets a value indicating whether the progress is indeterminate. |
-| ProgressPercent | UInt | Gets or sets the progress percentage. This value is between 0 and 100. |
+| IsIndeterminate | **Boolean** | Gets or sets a value indicating whether the progress is indeterminate. |
+| ProgressPercent | **UInt** | Gets or sets the progress percentage. This value is between `0` and `100`. |

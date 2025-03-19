@@ -26,11 +26,11 @@ public IconInfo(IconData light, IconData dark)
 
 ### Parameters
 
-**`dark`** [IconData](icondata.md)
+*dark* [IconData](icondata.md)
 
 The dark mode version of the icon. This parameter is used to specify the icon that will be displayed when the application is in dark mode.
 
-**`light`** [IconData](icondata.md)
+*light* [IconData](icondata.md)
 
 The light mode version of the icon. This parameter is used to specify the icon that will be displayed when the application is in light mode.
 
@@ -51,6 +51,6 @@ public IconInfo(string icon)
 
 ### Parameters
 
-**`icon`** String
+*icon* **String**
 
 The icon that will be displayed in both light and dark modes. This parameter is used to specify a single icon that will be used regardless of the application's theme.

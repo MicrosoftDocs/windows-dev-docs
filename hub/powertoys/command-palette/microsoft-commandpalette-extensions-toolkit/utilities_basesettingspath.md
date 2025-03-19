@@ -16,8 +16,10 @@ Used to produce a path to a settings folder which your app can use. This is usef
 
 ## Parameters
 
-**`settingsFolderName`** String
+*settingsFolderName* **String**
+
+A **String** representing the name of the settings folder. This is the name of the folder that will be created in the settings path. The folder will be created if it does not already exist.
 
 ## Returns
 
-A **String** representing the path to the settings folder. If your app is running packaged, this will return the redirected local app data path (Packages/{your_pfn}/LocalState). If not, it'll return %LOCALAPPDATA%\\{`settingsFolderName`}.
+A **String** representing the path to the settings folder. If your app is running packaged, this will return the redirected local app data path (`Packages/{your_pfn}/LocalState`). If not, it'll return `%LOCALAPPDATA%\{settingsFolderName}`.

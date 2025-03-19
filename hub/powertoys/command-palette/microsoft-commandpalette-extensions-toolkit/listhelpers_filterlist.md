@@ -16,11 +16,11 @@ The **FilterList** method filters a list of items based on a query string. It re
 
 ## Parameters
 
-**`items`** IEnumerable\<[IListItem](../microsoft-commandpalette-extensions/ilistitem.md)\>
+*items* IEnumerable\<[IListItem](../microsoft-commandpalette-extensions/ilistitem.md)\>
 
 The list of items to filter.
 
-**`query`** String
+*query* **String**
 
 The query string used to filter the items. The filtering is case-insensitive and checks if the query is contained within the item's name or description.
 

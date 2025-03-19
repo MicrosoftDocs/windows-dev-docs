@@ -23,5 +23,5 @@ Implements [ICommand](../microsoft-commandpalette-extensions/icommand.md)
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Icon | [IconInfo](iconinfo.md) | Gets or sets the icon for the command. |
-| Id | String | Gets or sets the ID of the command. |
-| Name | String | Gets or sets the name of the command. |
+| Id | **String** | Gets or sets the ID of the command. |
+| Name | **String** | Gets or sets the name of the command. |

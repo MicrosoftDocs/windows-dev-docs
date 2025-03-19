@@ -29,7 +29,7 @@ public CommandItem()
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [CommandItem](commanditem.md) class, setting its [Command](commanditem.md#properties) property to `command` and its [Title](commanditem.md#properties) to the `command`'s [Name](../microsoft-commandpalette-extensions/icommand.md#properties).
+Initializes a new instance of the [CommandItem](commanditem.md) class, setting its [Command](commanditem.md#properties) property to *command* and its [Title](commanditem.md#properties) to the *command*'s [Name](../microsoft-commandpalette-extensions/icommand.md#properties).
 
 ```C#
 public CommandItem(ICommand command)
@@ -41,7 +41,7 @@ public CommandItem(ICommand command)
 
 ### Parameters
 
-**`command`** [ICommand](../microsoft-commandpalette-extensions/icommand.md)
+*command* [ICommand](../microsoft-commandpalette-extensions/icommand.md)
 
 The command associated with the command item. This property allows access to the command's logic and execution behavior.
 
@@ -51,7 +51,7 @@ The command associated with the command item. This property allows access to the
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [CommandItem](commanditem.md) class, setting its [Command](commanditem.md#properties) property to `other`'s [Command](../microsoft-commandpalette-extensions/icommanditem.md#properties), its [Title](commanditem.md#properties) to `other`'s [Title](../microsoft-commandpalette-extensions/icommand.md#properties), its [Subtitle](commanditem.md#properties) to `other`'s [Subtitle](../microsoft-commandpalette-extensions/icommand.md#properties), its [Icon](commanditem.md#properties) to `other`'s [Icon](../microsoft-commandpalette-extensions/icommand.md#properties), and its [MoreCommands](commanditem.md#properties) to `other`'s [MoreCommands](../microsoft-commandpalette-extensions/icommand.md#properties). 
+Initializes a new instance of the [CommandItem](commanditem.md) class, setting its [Command](commanditem.md#properties) property to *other*'s [Command](../microsoft-commandpalette-extensions/icommanditem.md#properties), its [Title](commanditem.md#properties) to *other*'s [Title](../microsoft-commandpalette-extensions/icommand.md#properties), its [Subtitle](commanditem.md#properties) to *other*'s [Subtitle](../microsoft-commandpalette-extensions/icommand.md#properties), its [Icon](commanditem.md#properties) to *other*'s [Icon](../microsoft-commandpalette-extensions/icommand.md#properties), and its [MoreCommands](commanditem.md#properties) to *other*'s [MoreCommands](../microsoft-commandpalette-extensions/icommand.md#properties). 
 
 ```C#
 public CommandItem(ICommandItem other)
@@ -66,7 +66,7 @@ public CommandItem(ICommandItem other)
 
 ### Parameters
 
-**`other`** [ICommandItem](../microsoft-commandpalette-extensions/icommanditem.md)
+*other* [ICommandItem](../microsoft-commandpalette-extensions/icommanditem.md)
 
 The command item to copy. This parameter is used to initialize the new command item with the properties of an existing command item.
 
@@ -76,7 +76,7 @@ The command item to copy. This parameter is used to initialize the new command i
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [CommandItem](commanditem.md) class, setting its [Title](commanditem.md#properties) property to `title`, its [Subtitle](commanditem.md#properties) to `subtitle`, and creates a new [AnonymousCommand](anonymouscommand.md) object with a `name`, `action`, and `result`. 
+Initializes a new instance of the [CommandItem](commanditem.md) class, setting its [Title](commanditem.md#properties) property to *title*, its [Subtitle](commanditem.md#properties) to *subtitle*, and creates a new [AnonymousCommand](anonymouscommand.md) object with a *name*, *action*, and *result*. 
 
 ```C#
  public CommandItem(
@@ -106,22 +106,22 @@ Initializes a new instance of the [CommandItem](commanditem.md) class, setting i
 
 ### Parameters
 
-**`title`** String
+*title* **String**
 
 The title of the command item. This property represents the primary label or name of the command, displayed in the command palette.
 
-**`subtitle`** String
+*subtitle* **String**
 
 The subtitle of the command item. This property provides additional context or information about the command, enhancing the user experience.
 
-**`name`** String
+*name* **String**
 
 The name of the command. This property is used to identify the command within the command palette.
 
-**`action`** Action
+*action* **Action**
 
 The action to be performed when the command is executed. This property defines the logic or behavior associated with the command.
 
-**`result`** [ICommandResult](../microsoft-commandpalette-extensions/icommandresult.md)
+*result* [ICommandResult](../microsoft-commandpalette-extensions/icommandresult.md)
 
 The result of the command execution. This property provides information about the outcome of the command, such as success or failure, and any relevant data returned by the command.

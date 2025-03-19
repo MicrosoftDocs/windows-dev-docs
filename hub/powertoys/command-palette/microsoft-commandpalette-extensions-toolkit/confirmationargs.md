@@ -20,7 +20,7 @@ The **ConfirmationArgs** class is used to create a confirmation dialog in the Co
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Description | String | Gets or sets the description of the confirmation dialog. |
-| IsPrimaryCommandCritical | Boolean | Gets or sets if the primary command is critical. |
+| Description | **String** | Gets or sets the description of the confirmation dialog. |
+| IsPrimaryCommandCritical | **Boolean** | Gets or sets if the primary command is critical. |
 | PrimaryCommand | [ICommand](../microsoft-commandpalette-extensions/icommand.md) | Gets or sets the primary action command to be executed when the user confirms the dialog. |
-| Title | String | Gets or sets the title of the confirmation dialog. |
+| Title | **String** | Gets or sets the title of the confirmation dialog. |

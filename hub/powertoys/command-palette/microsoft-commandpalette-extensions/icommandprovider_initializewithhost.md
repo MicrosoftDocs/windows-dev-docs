@@ -16,6 +16,6 @@ The **InitializeWithHost** method is called when the extension is loaded. This m
 
 ## Parameters
 
-**`host`** [IExtensionHost](iextensionhost.md)
+*host* [IExtensionHost](iextensionhost.md)
 
 The host application that is loading the extension. The host application provides the extension with a reference to the [IExtensionHost](iextensionhost.md) interface, which allows the extension to interact with the host application.

@@ -16,10 +16,10 @@ The **GetSetting** method retrieves the value of a specific setting from the com
 
 ## Parameters
 
-**`key`** String
+*key* **String**
 
 The key of the setting to retrieve. This should match the key used when the setting was defined in the command palette extension.
 
 ## Returns
 
-A `T` representing the value of the setting. The type `T` should match the type of the setting defined in the command palette extension's configuration. If the setting does not exist or cannot be converted to the specified type, an exception may be thrown.
+An object of type **T** representing the value of the setting. The type **T** should match the type of the setting defined in the command palette extension's configuration. If the setting does not exist or cannot be converted to the specified type, an exception may be thrown.

@@ -16,9 +16,9 @@ The **LoadFromJson** method loads the setting from a JSON object. This is useful
 
 ## Parameters
 
-**`jsonObject`** JsonObject
+*jsonObject* **JsonObject**
 
-The JSON object that contains the values for the setting. This object should include the properties that need to be set, such as the name, description, default value, and list of choices.
+The **JsonObject** that contains the values for the setting. This object should include the properties that need to be set, such as the name, description, default value, and list of choices.
 
 ## Returns
 

@@ -16,21 +16,21 @@ The **FromArgb** method creates a color from the specified ARGB values. This is 
 
 ## Parameters
 
-**`a`** Byte
+*a* **Byte**
 
-The alpha component of the color. This value should be between 0 and 255, where 0 is fully transparent and 255 is fully opaque.
+The alpha component of the color. This value should be between `0` and `255`, where `0` is fully transparent and `255` is fully opaque.
 
-**`r`** Byte
+*r* **Byte**
 
-The red component of the color. This value should be between 0 and 255.
+The red component of the color. This value should be between `0` and `255`.
 
-**`g`** Byte
+*g* **Byte**
 
-The green component of the color. This value should be between 0 and 255.
+The green component of the color. This value should be between `0` and `255`.
 
-**`b`** Byte
+*b* **Byte**
 
-The blue component of the color. This value should be between 0 and 255.
+The blue component of the color. This value should be between `0` and `255`.
 
 ## Returns
 

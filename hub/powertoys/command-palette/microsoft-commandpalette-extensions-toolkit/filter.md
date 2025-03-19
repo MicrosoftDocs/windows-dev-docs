@@ -21,5 +21,5 @@ The **Filter** class is used to filter a list of items based on a specified crit
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Icon | [IIconInfo](../microsoft-commandpalette-extensions/iiconinfo.md) | Not yet implemented. |
-| Id | String | Not yet implemented. |
-| Name | String | Not yet implemented. |
+| Id | **String** | Not yet implemented. |
+| Name | **String** | Not yet implemented. |

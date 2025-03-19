@@ -12,31 +12,31 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-The `OpenCommandInShell` method opens a command in the shell with the specified parameters.
+The **OpenCommandInShell** method opens a command in the shell with the specified parameters.
 
 ## Parameters
 
-**`path`** String
+*path* **String**
 
 The path to the shell executable. This can be a full path or a relative path.
 
-**`pattern`** String
+*pattern* **String**
 
 The pattern to match the command. This can be a wildcard pattern or a regular expression.
 
-**`arguments`** String
+*arguments* **String**
 
 The arguments to pass to the shell. This can include options, flags, and other parameters.
 
-**`workingDir`** String
+*workingDir* **String**
 
 The working directory for the shell. This is the directory where the command will be executed.
 
-**`runAs`** [ShellRunAsType](shellrunastype.md)
+*runAs* [ShellRunAsType](shellrunastype.md)
 
-The type of shell to run the command in.
+The user context in which to run the shell.
 
-**`runWithHiddenWindow`** Boolean
+*runWithHiddenWindow* **Boolean**
 
 The flag indicating whether to run the command in a hidden window.
 

@@ -16,11 +16,11 @@ The **SubmitForm** method is used to submit the form data to a specified URL usi
 
 ## Parameters
 
-**`inputs`** String
+*inputs* **String**
 
 The inputs to be submitted with the form. This can include user-entered data, selections, or any other relevant information that needs to be sent to the destination.
 
-**`data`** String
+*data* **String**
 
 The data to be submitted with the form. This can include additional information or parameters that are required for the submission process.
 

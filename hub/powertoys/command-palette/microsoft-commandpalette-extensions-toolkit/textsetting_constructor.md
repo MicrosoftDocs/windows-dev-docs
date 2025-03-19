@@ -16,7 +16,7 @@ The [TextSetting](textsetting.md) class has constructors that allow you to creat
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [TextSetting](textsetting.md) class with a `key` and a `defaultValue`.
+Initializes a new instance of the [TextSetting](textsetting.md) class with a *key* and a *defaultValue*.
 
 ```C#
 public TextSetting(string key, string defaultValue)
@@ -27,11 +27,11 @@ public TextSetting(string key, string defaultValue)
 
 ### Parameters
 
-**`key`** String
+*key* **String**
 
 The unique identifier for the setting.
 
-**`defaultValue`** String
+*defaultValue* **String**
 
 The default value for the setting.
 
@@ -41,7 +41,7 @@ The default value for the setting.
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [TextSetting](textsetting.md) class with a `key`, `label`, `description`, and `defaultValue`.
+Initializes a new instance of the [TextSetting](textsetting.md) class with a *key*, *label*, *description*, and *defaultValue*.
 
 ```C#
 public TextSetting(string key, string label, string description, string defaultValue)
@@ -52,18 +52,18 @@ public TextSetting(string key, string label, string description, string defaultV
 
 ### Parameters
 
-**`key`** String
+*key* **String**
 
 The unique identifier for the setting.
 
-**`label`** String
+*label* **String**
 
 The display name of the setting.
 
-**`description`** String
+*description* **String**
 
 The description of the setting.
 
-**`defaultValue`** String
+*defaultValue* **String**
 
 The default value for the setting.

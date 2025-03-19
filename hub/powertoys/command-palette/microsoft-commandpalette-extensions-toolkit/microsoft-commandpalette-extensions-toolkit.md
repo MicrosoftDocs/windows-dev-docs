@@ -27,7 +27,7 @@ Contains helper classes that make creating extensions easier.
 | [ClipboardHelper](clipboardhelper.md) | Helper class for clipboard operations. |
 | [ColorHelpers](colorhelpers.md) | Helper class for color operations. |
 | [Command](command.md) | Base class for commands. |
-| [CommandContextItem](commandcontextitem.md) | Represents an item in the command context. |
+| [CommandContextItem](commandcontextitem.md) | Represents an item in the command's context menu. |
 | [CommandItem](commanditem.md) | Represents an item in the command palette. |
 | [CommandProvider](commandprovider.md) | Base class for command providers. |
 | [CommandResult](commandresult.md) | Represents the result of a command invocation. |
@@ -44,7 +44,7 @@ Contains helper classes that make creating extensions easier.
 | [ExtensionHost](extensionhost.md) | Represents the host for an extension. |
 | [FallbackCommandItem](fallbackcommanditem.md) | Represents a fallback command item in the command palette. |
 | [Filter](filter.md) | Represents a filter for command items. |
-| [FormContent](formcontent.md) | Represents a form content in the command palette. |
+| [FormContent](formcontent.md) | Represents a form in the command palette. |
 | [GoToPageArgs](gotopageargs.md) | Represents the arguments for navigating to a page. |
 | [IconData](icondata.md) | Represents icon data for command items. |
 | [IconHelpers](iconhelpers.md) | Helper class for icon operations. |

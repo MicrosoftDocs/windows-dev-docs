@@ -28,4 +28,4 @@ The **ListHelpers** class provides static methods for working with lists of item
 | Struct | Description |
 | :--- | :--- |
 | [ScoredListItem](listhelpers_scoredlistitem.md) | Represents a scored list item. |
-| [Scored\<T\>](listhelpers_scored.md) | Represents a scored item of type `T`. |
+| [Scored\<T\>](listhelpers_scored.md) | Represents a scored item of type **T**. |

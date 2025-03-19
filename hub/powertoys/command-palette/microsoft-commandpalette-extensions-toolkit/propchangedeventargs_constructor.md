@@ -14,7 +14,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [PropChangedEventArgs](propchangedeventargs.md) class with the [PropertyName](propchangedeventargs.md#properties) property set to `propertyName`.
+Initializes a new instance of the [PropChangedEventArgs](propchangedeventargs.md) class with the [PropertyName](propchangedeventargs.md#properties) property set to *propertyName*.
 
 ```C#
 public PropChangedEventArgs(string propertyName)
@@ -25,6 +25,6 @@ public PropChangedEventArgs(string propertyName)
 
 ### Parameters
 
-**`propertyName`** String
+*propertyName* **String**
 
-The name of the property that has changed. This value is used to set the [PropertyName](propchangedeventargs.md#properties) property of the **PropChangedEventArgs** class.
+The name of the property that has changed. This value is used to set the [PropertyName](propchangedeventargs.md#properties) property of the [PropChangedEventArgs](propchangedeventargs.md) class.

@@ -16,6 +16,6 @@ The **LogMessage** method logs a message to the command palette's output window.
 
 ## Parameters
 
-**`message`** [ILogMessage](../microsoft-commandpalette-extensions/ilogmessage.md)
+*message* [ILogMessage](../microsoft-commandpalette-extensions/ilogmessage.md)
 
 The message to be logged, provided as an object implementing **ILogMessage**. This message can contain any relevant information that the developer wants to provide to the user or for debugging purposes.

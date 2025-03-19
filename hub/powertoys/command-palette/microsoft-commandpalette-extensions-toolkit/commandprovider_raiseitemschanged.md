@@ -16,6 +16,6 @@ The **RaiseItemsChanged** method raises the **ItemsChanged** event with the spec
 
 ## Parameters
 
-**`totalItems`** Int
+*totalItems* **Int**
 
 The total number of items in the command provider. This value is used to update the command palette with the current state of the command provider's items.

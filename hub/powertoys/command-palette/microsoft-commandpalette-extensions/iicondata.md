@@ -18,5 +18,5 @@ The **IIconData** interface represents the data for an icon that can be used in 
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Icon | String | Gets the icon. |
-| Data | Windows.Storage.Streams.IRandomAccessStreamReference | Gets the data of the icon. |
+| Icon | **String** | Gets the icon. |
+| Data | **Windows.Storage.Streams.IRandomAccessStreamReference** | Gets the data of the icon. |

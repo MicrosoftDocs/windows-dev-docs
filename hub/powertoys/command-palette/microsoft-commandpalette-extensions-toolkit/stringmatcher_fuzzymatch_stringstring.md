@@ -16,11 +16,11 @@ The **FuzzyMatch** method performs a fuzzy match between two strings to determin
 
 ## Parameters
 
-**`query`** String
+*query* **String**
 
 The query to compare against.
 
-**`stringToCompare`** String
+*stringToCompare* **String**
 
 The string to compare with the query.
 

@@ -20,5 +20,5 @@ The **IToastArgs** interface is used to define the arguments for a toast notific
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Message | String | The message to be displayed in the toast notification. |
+| Message | **String** | The message to be displayed in the toast notification. |
 | Result | [ICommandResult](icommandresult.md) | The result of the command associated with the toast notification. This property is used to provide additional information about the command's execution. |

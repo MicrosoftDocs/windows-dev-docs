@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-The `ToState` method retrieves the current state of a toggle setting in the command palette extension.
+The **ToState** method retrieves the current state of a toggle setting in the command palette extension.
 
 ## Returns
 

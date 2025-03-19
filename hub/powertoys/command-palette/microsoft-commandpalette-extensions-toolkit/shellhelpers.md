@@ -25,4 +25,4 @@ The **ShellHelpers** class provides methods for opening commands in a shell envi
 
 | Enum | Description |
 | :--- | :--- |
-| [ShellRunAsType](shellrunastype.md) | The ShellRunAsType enumeration defines the different types of user contexts in which a command can be executed in the Command Palette. This enumeration is used to specify how a command should be run. |
+| [ShellRunAsType](shellrunastype.md) | The **ShellRunAsType** enumeration defines the different types of user contexts in which a command can be executed in the Command Palette. This enumeration is used to specify how a command should be run. |

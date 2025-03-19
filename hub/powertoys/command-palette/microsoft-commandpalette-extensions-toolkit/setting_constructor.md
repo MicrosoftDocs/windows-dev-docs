@@ -30,7 +30,7 @@ protected Setting()
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [Setting](setting.md) class with its [Key](setting.md#properties) property set to `key` and its [Value](setting.md#properties) set to `defaultValue`.
+Initializes a new instance of the [Setting](setting.md) class with its [Key](setting.md#properties) property set to *key* and its [Value](setting.md#properties) set to *defaultValue*.
 
 ```C#
 public Setting(string key, T defaultValue)
@@ -42,11 +42,11 @@ public Setting(string key, T defaultValue)
 
 ### Parameters
 
-**`key`** String
+*key* **String**
 
 The key of the setting. This is a unique identifier for the setting.
 
-**`defaultValue`** T
+*defaultValue* **T**
 
 The default value of the setting. This is the value that will be used if no value is provided for the setting.
 
@@ -56,7 +56,7 @@ The default value of the setting. This is the value that will be used if no valu
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [Setting](setting.md) class with its [Key](setting.md#properties) property set to `key`, its [Value](setting.md#properties) set to `defaultValue`, its [Label](setting.md#properties) set to `label`, and its [Description](setting.md#properties) set to `description`.
+Initializes a new instance of the [Setting](setting.md) class with its [Key](setting.md#properties) property set to *key*, its [Value](setting.md#properties) set to *defaultValue*, its [Label](setting.md#properties) set to *label*, and its [Description](setting.md#properties) set to *description*.
 
 ```C#
 public Setting(string key, string label, string description, T defaultValue)
@@ -70,18 +70,18 @@ public Setting(string key, string label, string description, T defaultValue)
 
 ### Parameters
 
-**`key`** String
+*key* **String**
 
 The key of the setting. This is a unique identifier for the setting.
 
-**`label`** String
+*label* **String**
 
 The label of the setting. This is a user-friendly name for the setting that will be displayed in the UI.
 
-**`description`** String
+*description* **String**
 
 The description of the setting. This is a brief explanation of what the setting does and how it should be used.
 
-**`defaultValue`** T
+*defaultValue* **T**
 
 The default value of the setting. This is the value that will be used if no value is provided for the setting.

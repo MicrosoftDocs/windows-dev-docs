@@ -27,8 +27,8 @@ The **TextSetting** class represents a setting that allows users to input text. 
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Multiline | Boolean | Indicates whether the text input should support multiple lines. |
-| Placeholder | String | The placeholder text that is displayed when the input field is empty. |
+| Multiline | **Boolean** | Indicates whether the text input should support multiple lines. |
+| Placeholder | **String** | The placeholder text that is displayed when the input field is empty. |
 
 ## Methods
 

@@ -16,14 +16,14 @@ The **SubmitForm** method submits the form with the specified JSON data and stat
 
 ## Parameters
 
-**`inputs`** String
+*inputs* **String**
 
 The JSON representation of the form's inputs.
 
-**`data`** String
+*data* **String**
 
 The JSON representation of the form's state data.
 
 ## Returns
 
-An [ICommandResult](../microsoft-commandpalette-extensions/icommandresult.md) object that contains the result of the command execution.
+An [ICommandResult](../microsoft-commandpalette-extensions/icommandresult.md) object that contains the result of the form submission.

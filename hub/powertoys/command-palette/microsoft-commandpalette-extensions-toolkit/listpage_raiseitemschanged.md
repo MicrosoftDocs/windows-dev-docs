@@ -16,6 +16,6 @@ The **RaiseItemsChanged** method raises the **ItemsChanged** event, indicating t
 
 ## Parameters
 
-**`totalItems`** Integer
+*totalItems* **Integer**
 
 The total number of items in the list after the change.

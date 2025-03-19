@@ -18,4 +18,4 @@ The **IItemsChangedEventArgs** interface represents the arguments for the event 
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| TotalItems | Int32 | Gets the number of items changed. |
+| TotalItems | **Int32** | Gets the number of items changed. |

@@ -16,10 +16,10 @@ The **ThumbnailHelper.GetThumbnail(String)** method retrieves the thumbnail imag
 
 ## Parameters
 
-**`path`** String
+*path* **String**
 
 The path to the command for which the thumbnail is requested.
 
 ## Returns
 
-A **Task\<IRandomAccessStream\>** that represents the thumbnail image for the specified command. If no thumbnail is found, the task will return null.
+A **Task\<IRandomAccessStream\>** that represents the thumbnail image for the specified command. If no thumbnail is found, the task will return `null`.

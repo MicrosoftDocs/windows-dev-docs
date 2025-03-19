@@ -16,15 +16,15 @@ The **FilterList** method filters a list of items based on a query string and a 
 
 ## Parameters
 
-**`items`** IEnumerable\<T\>
+*items* **IEnumerable\<T\>**
 
 The list of items to filter.
 
-**`query`** String
+*query* **String**
 
 The query string used to filter the items. The filtering is case-insensitive and checks if the query is contained within the item's name or description.
 
-**`scoreFunction`** Func\<String, T, Integer\>
+*scoreFunction* **Func\<String, T, Integer\>**
 
 The function used to calculate the score of each item based on the query. The score is used to sort the filtered items.
 

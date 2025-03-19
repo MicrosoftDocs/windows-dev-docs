@@ -16,6 +16,6 @@ Adds a new setting to the command palette extension's configuration. This method
 
 ## Parameters
 
-**`s`** [Setting\<T\>](setting.md)
+*s* [Setting\<T\>](setting.md)
 
-The setting to add. This should be an instance of the `Setting<T>` class, which contains the key, value, and other metadata for the setting.
+The setting to add. This should be an instance of the **Setting\<T\>** class, which contains the key, value, and other metadata for the setting.

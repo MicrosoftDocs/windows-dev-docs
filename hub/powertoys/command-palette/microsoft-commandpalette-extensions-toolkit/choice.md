@@ -30,11 +30,11 @@ public Choice(string title, string value)
 
 ### Parameters
 
-**`title`** String
+*title* **String**
 
 The display text for the choice. This is the text that will be shown to the user in the UI.
 
-**`value`** String
+*value* **String**
 
 The value for the choice. This is the value that will be returned when the choice is selected. It can be any string that represents the choice in a meaningful way.
 

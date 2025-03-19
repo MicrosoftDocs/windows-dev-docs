@@ -1,6 +1,6 @@
 ---
 title: ContentPage.RaiseItemsChanged(Int) Method
-description: The ContentPage.RaiseItemsChanged(Int) method raises the ItemsChanged event and specifies the number of changed items.
+description: The ContentPage.RaiseItemsChanged(Int) method raises the ItemsChanged event and specifies the new number of items on the page.
 ms.date: 2/25/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -12,10 +12,10 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Raises the **ItemsChanged** event with the specified change type. This method can be used to notify subscribers about changes in the items displayed on the page.
+Raises the **ItemsChanged** event with the new total number of items. This method can be used to notify subscribers about changes in the items displayed on the page.
 
 ## Parameters
 
-**`totalItems`** Int
+*totalItems* **Int**
 
-The total number of items in the collection. This parameter is used to indicate the current state of the items and can be used for UI updates or other actions.
+The new total number of items in the collection. This parameter is used to indicate the current number of items following a change.

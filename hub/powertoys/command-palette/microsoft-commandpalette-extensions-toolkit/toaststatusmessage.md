@@ -1,6 +1,6 @@
 ---
 title: ToastStatusMessage Class
-description: The ToastStatusMessage class is used to create and display toast notifications in the Windows notification center .
+description: The ToastStatusMessage class is used to create and display toast notifications in the Windows notification center.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -25,7 +25,7 @@ The **ToastStatusMessage** class is used to create and display toast notificatio
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Duration | Integer | The duration for which the toast message will be displayed. |
+| Duration | **Integer** | The duration for which the toast message will be displayed. |
 | Message | [StatusMessage](statusmessage.md) | The status message to be displayed in the toast notification. |
 
 ## Methods

@@ -16,17 +16,17 @@ The **FromRgb** method creates a color from the specified RGB values. This is us
 
 ## Parameters
 
-**`r`** Byte
+*r* **Byte**
 
-The red component of the color. This value should be between 0 and 255.
+The red component of the color. This value should be between `0` and `255`.
 
-**`g`** Byte
+*g* **Byte**
 
-The green component of the color. This value should be between 0 and 255.
+The green component of the color. This value should be between `0` and `255`.
 
-**`b`** Byte
+*b* **Byte**
 
-The blue component of the color. This value should be between 0 and 255.
+The blue component of the color. This value should be between `0` and `255`.
 
 ## Returns
 

@@ -23,10 +23,10 @@ The **ListPage** class defines a page that displays a list of items. It provides
 | EmptyContent | [ICommandItem](../microsoft-commandpalette-extensions/icommanditem.md) | The content to display when the list is empty. |
 | Filters | [IFilters](../microsoft-commandpalette-extensions/ifilters.md) | The filters to apply to the list of items. |
 | GridProperties | [IGridProperties](../microsoft-commandpalette-extensions/igridproperties.md) | The properties for the grid layout of the list. |
-| HasMoreItems | Boolean | Indicates if there are more items to load. |
-| PlaceholderText | String | The text to display when the list is empty. |
-| SearchText | String | The text to filter the list of items. |
-| ShowDetails | Boolean | Indicates if the details of the items should be shown. |
+| HasMoreItems | **Boolean** | Indicates if there are more items to load. |
+| PlaceholderText | **String** | The placeholder for the filter on the page. |
+| SearchText | **String** | The text to filter the list of items. |
+| ShowDetails | **Boolean** | Indicates if the details of the items should be shown. |
 
 ## Events
 

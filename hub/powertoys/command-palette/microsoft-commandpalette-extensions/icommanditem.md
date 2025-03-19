@@ -21,8 +21,8 @@ The **ICommandItem** interface is used to represent a command item in the Comman
 | Command | [ICommand](icommand.md) | The command associated with this item. This is the command that will be executed when the item is activated. |
 | Icon | [IIconInfo](iiconinfo.md) | The icon associated with this item. This icon will be displayed next to the item in the Command Palette. |
 | MoreCommands | [IContextItem[]](icontextitem.md) | An array of additional commands that can be displayed in a submenu. This property is used to define a list of related commands that can be executed from the Command Palette. |
-| Subtitle | String | The subtitle associated with this item. This subtitle will be displayed below the item in the Command Palette. |
-| Title | String | The title associated with this item. This title will be displayed as the main text of the item in the Command Palette. |
+| Subtitle | **String** | The subtitle associated with this item. This subtitle will be displayed below the item in the Command Palette. |
+| Title | **String** | The title associated with this item. This title will be displayed as the main text of the item in the Command Palette. |
 
 ## Remarks
 

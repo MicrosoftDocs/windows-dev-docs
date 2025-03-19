@@ -16,15 +16,15 @@ The **FuzzyMatch** method performs a fuzzy match between two strings to determin
 
 ## Parameters
 
-**`query`** String
+*query* **String**
 
 The string to be compared against the *stringToCompare* parameter.
 
-**`stringToCompare`** String
+*stringToCompare* **String**
 
 The string to be compared with the *query* parameter.
 
-**`opt`** [MatchOption](matchoption.md)
+*opt* [MatchOption](matchoption.md)
 
 The options that control the fuzzy matching behavior. This parameter allows you to specify how the fuzzy match should be performed, such as case sensitivity or other matching criteria.
 

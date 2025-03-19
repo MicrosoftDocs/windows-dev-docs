@@ -16,6 +16,6 @@ The **UpdateQuery** method updates the query string for the command item. This m
 
 ## Parameters
 
-**`query`** String
+*query* *String*
 
-The query string that will be used to filter the command items. This string is used to match against the command item's name and other properties to determine if it should be displayed in the command palette.
+The query string that will be used to filter the command items. The *query* parameter is used to match against the command item's name and other properties to determine if it should be displayed in the command palette.

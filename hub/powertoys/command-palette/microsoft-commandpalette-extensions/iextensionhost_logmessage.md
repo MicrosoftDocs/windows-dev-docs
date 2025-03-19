@@ -16,7 +16,7 @@ The **LogMessage** method is used to log a message to the Command Palette. This 
 
 ## Parameters
 
-**`message`** [ILogMessage](ilogmessage.md)
+*message* [ILogMessage](ilogmessage.md)
 
 The message to be logged in the Command Palette. This parameter is used to define the content of the log message.
 

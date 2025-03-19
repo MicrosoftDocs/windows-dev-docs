@@ -16,6 +16,6 @@ The **Update** method updates the setting from a JSON object. This is useful for
 
 ## Parameters
 
-**`payload`** JsonObject
+*payload* **JsonObject**
 
-The JSON object that contains the updated values for the setting. This object should include the properties that need to be updated, such as the name, description, default value, and list of choices.
+The **JsonObject** that contains the updated values for the setting. This object should include the properties that need to be updated, such as the name, description, default value, and list of choices.

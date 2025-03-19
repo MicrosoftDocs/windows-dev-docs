@@ -16,7 +16,7 @@ The **GetCommand** method is used to retrieve a command by its ID. This method i
 
 ## Parameters
 
-**`id`** String
+*id* **String**
 
 The ID of the command to retrieve. The ID is a unique identifier for the command and is used to identify the command in the Command Palette.
 

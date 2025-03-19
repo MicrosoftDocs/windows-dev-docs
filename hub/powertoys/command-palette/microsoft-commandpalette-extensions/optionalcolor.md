@@ -19,4 +19,4 @@ The **OptionalColor** struct represents an optional color value that can be used
 | Field | Type | Description |
 | :--- | :--- | :--- |
 | Color | [Microsoft.CommandPalette.Extensions.Color](color.md) | The color value. This field is used to store the actual color when it is specified. |
-| HasValue | Boolean | Indicates whether the color value is present or not. |
+| HasValue | **Boolean** | Indicates whether the color value is present or not. |

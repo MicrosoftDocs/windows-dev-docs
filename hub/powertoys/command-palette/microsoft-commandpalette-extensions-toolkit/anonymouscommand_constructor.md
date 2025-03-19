@@ -26,6 +26,6 @@ public AnonymousCommand(Action? action)
 
 ### Parameters
 
-**`action`** Action
+*action* **Action**
 
 The action to be executed when the command is invoked. This parameter is optional and can be null.

@@ -16,6 +16,6 @@ The **SetText** method sets the text data on the clipboard. This is useful for a
 
 ## Parameters
 
-**`text`** String
+*text* **String**
 
 The text to set on the clipboard. This can be any string value, including plain text or formatted text.

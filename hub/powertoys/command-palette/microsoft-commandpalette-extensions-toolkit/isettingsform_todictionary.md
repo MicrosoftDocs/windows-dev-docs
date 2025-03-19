@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-The `ToDictionary` method returns a dictionary containing a representation of the settings form's data.
+The **ToDictionary** method returns a dictionary containing a representation of the settings form's data.
 
 ## Returns
 

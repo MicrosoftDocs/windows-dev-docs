@@ -18,6 +18,6 @@ The **SearchPrecisionScore** enum is used to specify the precision score of a se
 
 | Name | Value | Description |
 | :--- | :--- | :--- |
-| Low | 20 | Considered a low precision score. |
-| None | 0 | No precision score. |
-| Regular | 50 | Considered a regular precision score. |
+| None | `0` | No precision score. |
+| Low | `20` | Considered a low precision score. |
+| Regular | `50` | Considered a regular precision score. |

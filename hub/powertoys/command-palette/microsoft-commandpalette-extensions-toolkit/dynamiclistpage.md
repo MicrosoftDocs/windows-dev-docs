@@ -22,7 +22,7 @@ The **DynamicListPage** class is a specialized version of the [ListPage](listpag
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| SearchText | String | Overrides the [SearchText](listpage.md#properties) property of the [ListPage](listpage.md) class. |
+| SearchText | **String** | Overrides the [SearchText](listpage.md#properties) property of the [ListPage](listpage.md) class. |
 
 ## Methods
 

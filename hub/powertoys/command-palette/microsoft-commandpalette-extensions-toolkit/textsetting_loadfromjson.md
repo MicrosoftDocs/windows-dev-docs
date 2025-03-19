@@ -12,14 +12,14 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-The **LoadFromJson** method loads the settings from a JSON object into the current [TextSetting](textsetting.md) instance.
+The **LoadFromJson** method loads the settings from a *jsonObject* parameter into the current [TextSetting](textsetting.md) instance.
 
 ## Parameters
 
-**`jsonObject`** JsonObject
+*jsonObject* **JsonObject**
 
-The JSON object that contains the settings to be loaded.
+The **JsonObject** that contains the settings to be loaded.
 
 ## Returns
 
-A [TextSetting](textsetting.md) instance with the settings loaded from the provided JSON object.
+A [TextSetting](textsetting.md) instance with the settings loaded from the provided **JsonObject**.

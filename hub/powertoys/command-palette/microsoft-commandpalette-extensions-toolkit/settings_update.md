@@ -16,6 +16,6 @@ The **Update** method updates the settings of the command palette extension with
 
 ## Parameters
 
-**`data`** String
+*data* **String**
 
 The JSON string containing the settings data to be updated.

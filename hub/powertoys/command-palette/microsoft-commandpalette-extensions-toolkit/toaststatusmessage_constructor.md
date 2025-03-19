@@ -14,7 +14,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [ToastStatusMessage](toaststatusmessage.md) class with its [Message](toaststatusmessage.md#properties) property set to `message`.
+Initializes a new instance of the [ToastStatusMessage](toaststatusmessage.md) class with its [Message](toaststatusmessage.md#properties) property set to *message*.
 
 ```C#
 public ToastStatusMessage(StatusMessage message)
@@ -25,7 +25,7 @@ public ToastStatusMessage(StatusMessage message)
 
 ### Parameters
 
-**`message`** [StatusMessage](statusmessage.md)
+*message* [StatusMessage](statusmessage.md)
 
 The **StatusMessage** to be displayed in the toast notification.
 
@@ -35,7 +35,7 @@ The **StatusMessage** to be displayed in the toast notification.
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [ToastStatusMessage](toaststatusmessage.md) class with its [Message](toaststatusmessage.md#properties) property set to `text`.
+Initializes a new instance of the [ToastStatusMessage](toaststatusmessage.md) class with its [Message](toaststatusmessage.md#properties) property set to *text*.
 
 ```C#
 public ToastStatusMessage(string text)
@@ -46,6 +46,6 @@ public ToastStatusMessage(string text)
 
 ### Parameters
 
-**`text`** String
+*text* **String**
 
 The message to be displayed in the toast notification.

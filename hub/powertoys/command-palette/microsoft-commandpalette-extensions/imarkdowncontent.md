@@ -18,4 +18,4 @@ The **IMarkdownContent** interface represents a content element in the Command P
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Body | String | The body of the content, formatted using Markdown. This property contains the main text content that will be displayed in the Command Palette. |
+| Body | **String** | The body of the content, formatted using Markdown. This property contains the main text content that will be displayed in the Command Palette. |

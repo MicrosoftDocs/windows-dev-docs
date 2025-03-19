@@ -1,6 +1,6 @@
 ---
 title: DetailsSeparator Class
-description: The DetailsTags class is used to define a set of tags that can be associated with items in the Command Palette.
+description: The DetailsSeparator class is used to define a separator that can be displayed in the details section of an item in the Command Palette.
 ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]

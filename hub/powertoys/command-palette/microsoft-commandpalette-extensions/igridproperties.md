@@ -18,4 +18,4 @@ The **IGridProperties** interface represents the properties of a grid in the Com
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| TileSize | Windows.Foundation.Size | Gets or sets the size of the tiles in the grid. |
+| TileSize | **Windows.Foundation.Size** | Gets or sets the size of the tiles in the grid. |

@@ -16,10 +16,10 @@ The **SetRtf** method sets the RTF (Rich Text Format) data on the clipboard. Thi
 
 ## Parameters
 
-**`plainText`** String
+*plainText* **String**
 
 The plain text representation of the RTF data. This is the text that will be displayed when the RTF data is pasted into applications that do not support RTF.
 
-**`rtfText`** String
+*rtfText* **String**
 
 The RTF data to set on the clipboard. This is the formatted text that will be pasted into applications that support RTF. The RTF data should be a valid RTF string, including formatting information such as font styles, colors, and sizes.

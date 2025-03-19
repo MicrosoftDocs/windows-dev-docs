@@ -17,7 +17,7 @@ There is a "Sample Project" template included with the Command Palette. This can
 
 The following tools are required to build and publish your extension:
 
-??
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) (Community, Professional, or Enterprise edition)
 
 ## Microsoft Store
 

@@ -14,7 +14,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [FallbackCommandItem](fallbackcommanditem.md) class with the provided `command` and sets its [_fallbackHandler](fallbackcommanditem.md#properties) property if `command` implements [IFallbackHandler](../microsoft-commandpalette-extensions/ifallbackhandler.md).
+Initializes a new instance of the [FallbackCommandItem](fallbackcommanditem.md) class with the provided *command* and sets its [_fallbackHandler](fallbackcommanditem.md#properties) property if *command* implements [IFallbackHandler](../microsoft-commandpalette-extensions/ifallbackhandler.md).
 
 ```C#
 public FallbackCommandItem(ICommand command)
@@ -29,6 +29,6 @@ public FallbackCommandItem(ICommand command)
 
 ### Parameters
 
-**`command`** [ICommand](../microsoft-commandpalette-extensions/icommand.md)
+*command* [ICommand](../microsoft-commandpalette-extensions/icommand.md)
 
-The command that will be used to create the fallback command item. This command must implement the [ICommand](../microsoft-commandpalette-extensions/icommand.md) interface.
+The command that will be used to create the fallback command item. The *command* parameter must implement the [ICommand](../microsoft-commandpalette-extensions/icommand.md) interface.

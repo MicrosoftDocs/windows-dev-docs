@@ -12,13 +12,13 @@ no-loc: [PowerToys, Windows, Insider]
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-The `LoadFromJson` method loads a toggle setting from a JSON object. This is used to initializing the toggle setting with data that has been serialized in JSON format.
+The **LoadFromJson** method loads a toggle setting from a *jsonObject* parameter. This is used to initializing the toggle setting with data that has been serialized in JSON format.
 
 ## Parameters
 
-**`jsonObject`** JsonObject
+*jsonObject* **JsonObject**
 
-The JSON object that contains the toggle setting data. This object is typically loaded from a JSON file or string.
+The **JsonObject** that contains the toggle setting data. This object is typically loaded from a JSON file or string.
 
 ## Returns
 

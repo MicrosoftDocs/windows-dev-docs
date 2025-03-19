@@ -18,5 +18,5 @@ The **IProgressState** interface represents the state of a progress indicator in
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| IsIndeterminate | Boolean | Indicates whether the progress is indeterminate (true) or determinate (false). |
-| ProgressPercent | UInt32 | Gets the progress percentage (0-100) if the progress is determinate. |
+| IsIndeterminate | **Boolean** | Indicates whether the progress is indeterminate (true) or determinate (false). |
+| ProgressPercent | **UInt32** | Gets the progress percentage (`0`-`100`) if the progress is determinate. |

@@ -16,16 +16,16 @@ The method called when a user selects a command.
 
 ## Parameters
 
-**`sender`** Object
+*sender* **Object**
 
 Represents the context of where the command was invoked from. This can be different types depending on where the command is being used:
 
-- [TopLevelCommands](icommandprovider_toplevelcommands.md) (and fallbacks): `sender` is the [ICommandItem](icommanditem.md) for the top-level command that was invoked.
-- [IListPage.GetItems()](ilistpage_getitems.md): `sender` is the [IListItem](ilistitem.md) for the list item selected for that command.
-- [ICommandItem.MoreCommands](icommanditem.md) (context menus): `sender` is either the [IListItem](ilistitem.md) which the command was attached to for a list page or the [ICommandItem](icommanditem.md) of the top-level command (if this is a context item on a top-level command).
-- [IContentPage.Commands](icontentpage.md): `sender` is the [IContentPage](icontentpage.md) itself.
+- [TopLevelCommands](icommandprovider_toplevelcommands.md) (and fallbacks): *sender* is the [ICommandItem](icommanditem.md) for the top-level command that was invoked.
+- [IListPage.GetItems()](ilistpage_getitems.md): *sender* is the [IListItem](ilistitem.md) for the list item selected for that command.
+- [ICommandItem.MoreCommands](icommanditem.md) (context menus): *sender* is either the [IListItem](ilistitem.md) which the command was attached to for a list page or the [ICommandItem](icommanditem.md) of the top-level command (if this is a context item on a top-level command).
+- [IContentPage.Commands](icontentpage.md): *sender* is the [IContentPage](icontentpage.md) itself.
 
-Using the `sender` parameter can be useful for big lists of items where the actionable information for each item is somewhat the same. One example would be a long list of links. You can implement this as a single [IInvokableCommand](iinvokablecommand.md) that opens a URL based on the `sender` object passed in. Then, each list item would store the URL to open and the title of the link. This creates less overhead for the extension and host to communicate.
+Using the *sender* parameter can be useful for big lists of items where the actionable information for each item is somewhat the same. One example would be a long list of links. You can implement this as a single [IInvokableCommand](iinvokablecommand.md) that opens a URL based on the *sender* object passed in. Then, each list item would store the URL to open and the title of the link. This creates less overhead for the extension and host to communicate.
 
 ## Returns
 

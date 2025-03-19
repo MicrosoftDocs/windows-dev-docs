@@ -16,7 +16,7 @@ The **HideStatus** method is used to hide a status message in the Command Palett
 
 ## Parameters
 
-**`message`** [IStatusMessage](istatusmessage.md)
+*message* [IStatusMessage](istatusmessage.md)
 
 The status message to be hidden in the Command Palette. This parameter is used to define the content of the status message that should be removed.
 

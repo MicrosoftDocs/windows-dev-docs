@@ -18,7 +18,7 @@ The **Color** struct represents a color value in the Command Palette. It is used
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
-| A | UInt8 | Alpha value (transparency) |
-| B | UInt8 | Blue value |
-| G | UInt8 | Green value |
-| R | UInt8 | Red value |
+| A | **UInt8** | Alpha value (transparency) |
+| B | **UInt8** | Blue value |
+| G | **UInt8** | Green value |
+| R | **UInt8** | Red value |

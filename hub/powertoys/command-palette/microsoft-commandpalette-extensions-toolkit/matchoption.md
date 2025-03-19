@@ -18,6 +18,6 @@ The **MatchOption** class is used to define the options for matching in the comm
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| IgnoreCase | Boolean | Indicates whether the match should ignore case sensitivity. |
-| Prefix | String | Indicates whether the match should be a prefix match. |
-| Suffix | String | Indicates whether the match should be a suffix match. |
+| IgnoreCase | **Boolean** | Indicates whether the match should ignore case sensitivity. |
+| Prefix | **String** | Indicates whether the match should be a prefix match. |
+| Suffix | **String** | Indicates whether the match should be a suffix match. |

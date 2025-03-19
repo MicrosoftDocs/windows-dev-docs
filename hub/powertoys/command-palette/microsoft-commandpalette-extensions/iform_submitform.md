@@ -16,7 +16,7 @@ The **SubmitForm** method submits the form data. It is used to send the data ent
 
 ## Parameters
 
-**`payload`** String
+*payload* **String**
 
 The JSON representation of the data to be submitted. This data is typically collected from user input in the form fields.
 

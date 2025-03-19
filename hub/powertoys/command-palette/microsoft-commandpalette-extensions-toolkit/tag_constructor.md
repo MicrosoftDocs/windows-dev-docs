@@ -28,7 +28,7 @@ public Tag()
 
 Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [Tag](tag.md) class with its `_text` set to `text`.
+Initializes a new instance of the [Tag](tag.md) class with its **_text** set to *text*.
 
 ```C#
 public Tag(string text)
@@ -39,4 +39,6 @@ public Tag(string text)
 
 ### Parameters
 
-**`text`** String
+*text* **String**
+
+The text to be set for the tag. This parameter allows you to initialize the tag with a specific string value at the time of its creation.

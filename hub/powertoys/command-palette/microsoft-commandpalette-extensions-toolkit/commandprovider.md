@@ -20,11 +20,11 @@ The **CommandProvider** class is a base class for creating command providers in 
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| DisplayName | String | The display name of the command provider. |
-| Frozen | Boolean | Indicates whether the command provider is frozen. A frozen provider cannot be modified. |
+| DisplayName | **String** | The display name of the command provider. |
+| Frozen | **Boolean** | Indicates whether the command provider is frozen. A frozen provider cannot be modified. |
 | [ICommandProvider.Icon](../microsoft-commandpalette-extensions/icommandprovider.md#properties) | [IIconInfo](../microsoft-commandpalette-extensions/iiconinfo.md) | The icon associated with the command provider. |
 | Icon | [IconInfo](iconinfo.md) | The icon associated with the command provider. |
-| Id | String | The unique identifier of the command provider. |
+| Id | **String** | The unique identifier of the command provider. |
 | Settings | [ICommandSettings](../microsoft-commandpalette-extensions/icommandsettings.md) | The settings associated with the command provider. |
 
 ## Events

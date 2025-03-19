@@ -18,9 +18,9 @@ The **IFormContent** interface represents the content of a form in the Command P
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| DataJson | String | The JSON representation of the data associated with the form content. |
-| StateJson | String | The JSON representation of the state associated with the form content. |
-| TemplateJson | String | The JSON representation of the template associated with the form content. |
+| DataJson | **String** | The JSON representation of the data associated with the form content. |
+| StateJson | **String** | The JSON representation of the state associated with the form content. |
+| TemplateJson | **String** | The JSON representation of the template associated with the form content. |
 
 ## Methods
 

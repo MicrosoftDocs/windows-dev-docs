@@ -29,7 +29,7 @@ The **TreeContent** class provides a way to manage tree-like structures in the C
 
 | Event | Description |
 | :--- | :--- |
-| Windows.Foundation.TypedEventHandler<object, [IItemsChangedEventArgs](../microsoft-commandpalette-extensions/iitemschangedeventargs.md)> ItemsChanged | Occurs when the items in the tree content change. This event is used to notify subscribers about changes in the tree structure, such as additions or removals of child items. |
+| Windows.Foundation.TypedEventHandler\<object, [IItemsChangedEventArgs](../microsoft-commandpalette-extensions/iitemschangedeventargs.md)\> ItemsChanged | Occurs when the items in the tree content change. This event is used to notify subscribers about changes in the tree structure, such as additions or removals of child items. |
 
 ## Methods
 

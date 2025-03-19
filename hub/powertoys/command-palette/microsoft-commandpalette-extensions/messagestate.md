@@ -18,7 +18,7 @@ The **MessageState** enum defines the different states of a message that can be 
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| Error | 3 | Indicates an error message. |
-| Info | 0 | Indicates an informational message. |
-| Success | 1 | Indicates a success message. |
-| Warning | 2 | Indicates a warning message. |
+| Info | `0` | Indicates an informational message. |
+| Success | `1` | Indicates a success message. |
+| Warning | `2` | Indicates a warning message. |
+| Error | `3` | Indicates an error message. |

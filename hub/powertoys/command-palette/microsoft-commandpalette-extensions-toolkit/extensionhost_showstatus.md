@@ -16,6 +16,4 @@ The **ShowStatus** method displays a status message in the command palette. This
 
 ## Parameters
 
-**`message`** [IStatusMessage](../microsoft-commandpalette-extensions/istatusmessage.md)
-
-The status message to be displayed in the command palette. This message should provide relevant information to the user about the current state of the extension or operation.
+*message* [IStatusMessage](../microsoft-commandpalette-extensions/istatusmessage.md)

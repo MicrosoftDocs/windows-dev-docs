@@ -18,6 +18,6 @@ The **IStatusMessage** interface is used to define a status message in the Comma
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Message | String | The message text to be displayed in the Command Palette. This property is used to provide information or feedback to the user. |
+| Message | **String** | The message text to be displayed in the Command Palette. This property is used to provide information or feedback to the user. |
 | Progress | [IProgressState](iprogressstate.md) | The progress state of the message. This property is used to indicate the progress of an operation or task associated with the message. |
 | State | [MessageState](messagestate.md) | The overall state of the message. This property is used to categorize the message, such as success, error, or warning. |

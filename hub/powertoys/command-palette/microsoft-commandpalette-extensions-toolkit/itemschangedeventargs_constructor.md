@@ -25,6 +25,6 @@ Initializes a new instance of the [ItemsChangedEventArgs](itemschangedeventargs.
 
 ### Parameters
 
-**`totalItems`** Integer
+*totalItems* **Integer**
 
-The total number of items that have changed. This parameter is optional and defaults to -1 if not provided.
+The total number of items that have changed. This parameter is optional and defaults to `-1` if not provided.

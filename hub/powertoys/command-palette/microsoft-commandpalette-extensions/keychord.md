@@ -18,6 +18,6 @@ The **KeyChord** struct represents a combination of key modifiers and a virtual 
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
-| Modifiers | Windows.System.VirtualKeyModifiers | The key modifiers (e.g., Control, Shift, Alt) that are part of the key chord. |
-| Vkey | Int32 | The virtual key code that represents the main key in the key chord. |
-| ScanCode | Int32 | The scan code that represents the physical key on the keyboard. This is used for low-level keyboard input handling. |
+| Modifiers | **Windows.System.VirtualKeyModifiers** | The key modifiers (e.g., Control, Shift, Alt) that are part of the key chord. |
+| Vkey | **Int32** | The virtual key code that represents the main key in the key chord. |
+| ScanCode | **Int32** | The scan code that represents the physical key on the keyboard. This is used for low-level keyboard input handling. |

@@ -19,8 +19,8 @@ Action a user can take within the Command Palette.
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Icon | [IIconInfo](iiconinfo.md) | Gets the icon of the command. |
-| Id | String | Gets the ID of the command. This is optional but can help support more efficient command lookup in [ICommandProvider.GetCommand()](icommandprovider_getcommand.md). |
-| Name | String | Gets the name of the command. |
+| Id | **String** | Gets the ID of the command. This is optional but can help support more efficient command lookup in [ICommandProvider.GetCommand()](icommandprovider_getcommand.md). |
+| Name | **String** | Gets the name of the command. |
 
 ## Example
 

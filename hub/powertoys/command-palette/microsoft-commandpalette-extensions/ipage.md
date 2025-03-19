@@ -19,5 +19,5 @@ Represents individual views in the application and are the primary unit of navig
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | AccentColor | [OptionalColor](optionalcolor.md) | The accent color of the page. |
-| IsLoading | Boolean | Indicates whether the page is currently loading. |
-| Title | String | The title of the page. |
+| IsLoading | **Boolean** | Indicates whether the page is currently loading. |
+| Title | **String** | The title of the page. |

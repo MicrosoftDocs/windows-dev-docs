@@ -20,5 +20,5 @@ The **ToastArgs** class implements the **IToastArgs** interface and is used to d
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Message | String | Gets or sets the text of the toast. |
+| Message | **String** | Gets or sets the text of the toast. |
 | Result | [ICommandResult](../microsoft-commandpalette-extensions/icommandresult.md) | Gets or sets the result of the command. Defaults to [CommandResult.Dismiss()](commandresult_dismiss.md). |

@@ -28,5 +28,5 @@ The **LogMessage** class is used to define a log message in the command palette.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Message | String | The content of the log message. |
+| Message | **String** | The content of the log message. |
 | State | [MessageState](../microsoft-commandpalette-extensions/messagestate.md) | The state of the log message. |

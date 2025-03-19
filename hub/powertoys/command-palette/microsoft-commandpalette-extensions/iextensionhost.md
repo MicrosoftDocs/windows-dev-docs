@@ -20,8 +20,8 @@ This is an object which extensions shouldn't implement themselves. Rather, this 
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| HostingHwnd | UInt64 | The handle to the hosting window. This property is used to provide access to the window that hosts the Command Palette. |
-| LanguageOverride | String | The language override for the Command Palette. This property is used to define the language used for localization in the Command Palette. |
+| HostingHwnd | **UInt64** | The handle to the hosting window. This property is used to provide access to the window that hosts the Command Palette. |
+| LanguageOverride | **String** | The language override for the Command Palette. This property is used to define the language used for localization in the Command Palette. |
 
 ## Methods
 

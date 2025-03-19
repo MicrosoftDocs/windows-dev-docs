@@ -18,4 +18,4 @@ The **IPropChangedEventArgs** interface represents the arguments for property ch
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| PropertyName | String | Gets the property name. |
+| PropertyName | **String** | Gets the property name. |

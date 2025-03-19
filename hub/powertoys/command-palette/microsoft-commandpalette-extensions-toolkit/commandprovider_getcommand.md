@@ -16,7 +16,7 @@ The **GetCommand** method retrieves a command by its unique identifier. This met
 
 ## Parameters
 
-**`id`** String
+*id* **String**
 
 The unique identifier of the command to retrieve. This identifier is used to locate the specific command within the command provider's collection of commands.
 

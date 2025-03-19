@@ -18,7 +18,7 @@ The **JsonSettingsManager** class provides functionality for managing settings i
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| FilePath | String | The file path where the settings are stored. |
+| FilePath | **String** | The file path where the settings are stored. |
 | Settings | [Settings](settings.md) | The settings object that contains the configuration data. |
 
 ## Methods

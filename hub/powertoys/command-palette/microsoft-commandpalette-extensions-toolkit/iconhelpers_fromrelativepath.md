@@ -16,9 +16,9 @@ This method creates an [IconInfo](iconinfo.md) object from a relative path. This
 
 ## Parameters
 
-**`path`** String
+*path* **String**
 
-The relative path to the icon. This path should point to an image file that represents the icon in a light theme.
+The relative path to the icon. This path should point to an image file can be used for both light and dark themes.
 
 ## Returns
 

@@ -16,6 +16,6 @@ The **LogMessage** method logs a message to the command palette's output window.
 
 ## Parameters
 
-**`message`** String
+*message* String
 
 The message to be logged, provided as a string. This message can contain any relevant information that the developer wants to provide to the user or for debugging purposes.

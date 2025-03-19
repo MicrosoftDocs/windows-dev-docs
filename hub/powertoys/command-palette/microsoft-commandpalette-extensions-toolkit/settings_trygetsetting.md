@@ -16,11 +16,11 @@ The **TryGetSetting** method attempts to retrieve a setting value from the comma
 
 ## Parameters
 
-**`key`** String
+*key* **String**
 
 The key of the setting to retrieve. This should be the name of the setting as defined in the extension's settings schema.
 
-**`val`** T
+*val* **T**
 
 The default value to return if the setting is not found. This value is used as a fallback in case the specified setting does not exist in the settings store.
 

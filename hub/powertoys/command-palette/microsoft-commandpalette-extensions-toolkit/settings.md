@@ -26,7 +26,7 @@ The **Settings** class is used to manage the settings of a command palette exten
 
 | Event | Description |
 | :--- | :--- |
-| Windows.Foundation.TypedEventHandler<object, Settings> SettingsChanged | Occurs when the settings of the command palette extension are changed. |
+| Windows.Foundation.TypedEventHandler\<object, Settings\> SettingsChanged | Occurs when the settings of the command palette extension are changed. |
 
 ## Methods
 
