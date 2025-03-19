@@ -380,7 +380,7 @@ PowerLaucher is the internal name for PowerToys Run.
 
 #### PowerToys Run plugins
 
-PowerToys Run plugins can be configured in the Plugins property. [A sample](https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/configureLauncherPlugins.dsc.yaml) can be found in the PowerToys repository.
+PowerToys Run plugins can be configured in the Plugins property. [A sample](https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/configureLauncherPlugins.winget) can be found in the PowerToys repository.
 
 These are the available properties to configure each plugin:
 
