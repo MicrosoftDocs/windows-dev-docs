@@ -1,6 +1,6 @@
 ---
 title: Command Palette Extension Samples
-description: The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette. Find available samples to get started with creating an extension.
+description: The Command Palette provides a full extension model, allowing you to create custom experiences for the palette. Find samples to start creating an extension.
 ms.date: 2/7/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
@@ -9,11 +9,13 @@ no-loc: [PowerToys, Windows, Insider]
 
 # Extension samples
 
+The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette. This document provides information about how to create an extension and publish it. It also includes a sample extension that demonstrates the extensibility model.
+
 ## Add a command
 
 Create a class that implements [ICommand](./microsoft-commandpalette-extensions/icommand.md) and implement the [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand_invoke.md) method. This method will be called whtn the user selects the command in the Command Palette.
 
-```C#
+```csharp
 class MyPage : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
     public class MyPage()
     {
@@ -28,3 +30,8 @@ class MyPage : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
     }
 }
 ```
+
+## Related content
+
+- [PowerToys Command Palette utility](overview.md)
+- [Extensibility overview](creating-an-extension.md)

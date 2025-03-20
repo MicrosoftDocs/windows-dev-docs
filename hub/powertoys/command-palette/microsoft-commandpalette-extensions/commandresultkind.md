@@ -1,6 +1,6 @@
 ---
 title: CommandResultKind Enum
-description: 
+description: The CommandResultKind enum is used to specify the result of a command execution in the Command Palette.
 ms.date: 2/10/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -11,6 +11,8 @@ no-loc: [PowerToys, Windows, Insider]
 ## Definition
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+
+The **CommandResultKind** enum is used to specify the result of a command execution in the Command Palette. It defines the different actions that can be taken after a command is executed.
 
 ## Fields
 

@@ -1,6 +1,6 @@
 ---
 title: Command Class
-description: 
+description: The Command class represents a command in the Command Palette SDK and is the primary unit of functionality.
 ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -10,9 +10,9 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Inherits [BaseObservable](baseobservable.md) 
+Inherits [BaseObservable](baseobservable.md)
 
 Implements [ICommand](../microsoft-commandpalette-extensions/icommand.md)
 
@@ -23,5 +23,5 @@ Implements [ICommand](../microsoft-commandpalette-extensions/icommand.md)
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Icon | [IconInfo](iconinfo.md) | Gets or sets the icon for the command. |
-| Id | String | Gets or sets the ID of the command. |
-| Name | String | Gets or sets the name of the command. |
+| Id | **String** | Gets or sets the ID of the command. |
+| Name | **String** | Gets or sets the name of the command. |

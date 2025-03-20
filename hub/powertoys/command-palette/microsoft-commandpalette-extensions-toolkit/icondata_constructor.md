@@ -1,6 +1,6 @@
 ---
 title: IconData Constructors
-description: 
+description: Initializes a new instance of the IconData class with the specified parameters.
 ms.date: 2/27/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -12,9 +12,9 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [IconData](icondata.md) class with the [Data](icondata.md#properties) property set to `data`.
+Initializes a new instance of the [IconData](icondata.md) class with the [Data](icondata.md#properties) property set to *data*.
 
 ```C#
 public IconData(IRandomAccessStreamReference data)
@@ -25,15 +25,17 @@ public IconData(IRandomAccessStreamReference data)
 
 ### Parameters
 
-**`data`** Windows.Storage.Streams.IRandomAccessStreamReference
+*data* **Windows.Storage.Streams.IRandomAccessStreamReference**
+
+The icon data as a stream reference. This property is used to load the icon data from a stream.
 
 ## IconData(String) Constructor
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [IconData](icondata.md) class with the [Icon](icondata.md#properties) property set to `icon`.
+Initializes a new instance of the [IconData](icondata.md) class with the [Icon](icondata.md#properties) property set to *icon*.
 
 ```C#
 public IconData(string? icon)
@@ -44,4 +46,6 @@ public IconData(string? icon)
 
 ### Parameters
 
-**`icon`** String
+*icon* **String**
+
+The icon URI. This property is used to load the icon from a URI.

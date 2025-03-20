@@ -1,6 +1,6 @@
 ---
 title: CommandResult.GoBack() Method
-description: 
+description: The GoBack method creates a new CommandResult instance with its Kind property set to CommandResultKind.GoBack and its Args set to null.
 ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Navigate to the previous page, and keep it open.
 
@@ -18,4 +18,4 @@ Creates a new [CommandResult](commandresult.md) instance with its [Kind](command
 
 ## Returns
 
-[CommandResult](commandresult.md)
+A [CommandResult](commandresult.md) instance.

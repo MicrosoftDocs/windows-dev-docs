@@ -1,6 +1,6 @@
 ---
 title: BaseObservable.OnPropertyChanged(String) Method
-description: 
+description: The BaseObservable.OnPropertyChanged method raises the PropChanged event to notify that a property value has changed.
 ms.date: 2/10/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -10,10 +10,12 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Raises the [PropChanged](baseobservable.md#events) event to notify that a property value has changed.
 
 ## Parameters
 
-**`propertyName`** String
+*propertyName* **String**
+
+The name of the property that has changed.

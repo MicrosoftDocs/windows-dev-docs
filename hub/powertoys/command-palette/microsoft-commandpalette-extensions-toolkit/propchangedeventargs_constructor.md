@@ -1,6 +1,6 @@
 ---
 title: PropChangedEventArgs Constructors
-description: 
+description: Initializes a new instance of the PropChangedEventArgs class with the specified property name.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -12,9 +12,9 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [PropChangedEventArgs](propchangedeventargs.md) class with the [PropertyName](propchangedeventargs.md#properties) property set to `propertyName`.
+Initializes a new instance of the [PropChangedEventArgs](propchangedeventargs.md) class with the [PropertyName](propchangedeventargs.md#properties) property set to *propertyName*.
 
 ```C#
 public PropChangedEventArgs(string propertyName)
@@ -25,4 +25,6 @@ public PropChangedEventArgs(string propertyName)
 
 ### Parameters
 
-**`propertyName`** String
+*propertyName* **String**
+
+The name of the property that has changed. This value is used to set the [PropertyName](propchangedeventargs.md#properties) property of the [PropChangedEventArgs](propchangedeventargs.md) class.

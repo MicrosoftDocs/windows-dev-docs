@@ -1,6 +1,6 @@
 ---
 title: CommandResult.Dismiss() Method
-description: 
+description: The Dismiss method creates a new CommandResult instance with its Kind property set to CommandResultKind.Dismiss and its Args set to null.
 ms.date: 2/10/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
 Close the Command Palette after the action is executed and dismiss the current state. On the next launch, the Command Palette will start from the main page with a blank query.
 
@@ -18,4 +18,4 @@ Creates a new [CommandResult](commandresult.md) instance with its [Kind](command
 
 ## Returns
 
-[CommandResult](commandresult.md)
+A [CommandResult](commandresult.md) instance.

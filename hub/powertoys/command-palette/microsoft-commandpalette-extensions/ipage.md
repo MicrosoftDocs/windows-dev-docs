@@ -1,6 +1,6 @@
 ---
 title: IPage Interface
-description: 
+description: The IPage interface represents individual views in the application and are the primary unit of navigation and interaction.
 ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -18,6 +18,6 @@ Represents individual views in the application and are the primary unit of navig
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| AccentColor | [OptionalColor](optionalcolor.md) | |
-| IsLoading | Boolean | |
-| Title | String | |
+| AccentColor | [OptionalColor](optionalcolor.md) | The accent color of the page. |
+| IsLoading | **Boolean** | Indicates whether the page is currently loading. |
+| Title | **String** | The title of the page. |

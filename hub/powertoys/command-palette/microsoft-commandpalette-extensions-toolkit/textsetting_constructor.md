@@ -1,6 +1,6 @@
 ---
 title: TextSetting Constructors
-description: 
+description: The TextSetting class constructors allow you to create instances of the class with different parameters.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -8,13 +8,15 @@ no-loc: [PowerToys, Windows, Insider]
 
 # TextSetting Constructors
 
+The [TextSetting](textsetting.md) class has constructors that allow you to create instances of the class with different parameters.
+
 ## TextSetting(String, String) Constructor
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [TextSetting](textsetting.md) class with a `key` and a `defaultValue`.
+Initializes a new instance of the [TextSetting](textsetting.md) class with a *key* and a *defaultValue*.
 
 ```C#
 public TextSetting(string key, string defaultValue)
@@ -25,17 +27,21 @@ public TextSetting(string key, string defaultValue)
 
 ### Parameters
 
-**`key`** String
+*key* **String**
 
-**`defaultValue`** String
+The unique identifier for the setting.
+
+*defaultValue* **String**
+
+The default value for the setting.
 
 ## TextSetting(String, String, String, String) Constructor
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [TextSetting](textsetting.md) class with a `key`, `label`, `description`, and `defaultValue`.
+Initializes a new instance of the [TextSetting](textsetting.md) class with a *key*, *label*, *description*, and *defaultValue*.
 
 ```C#
 public TextSetting(string key, string label, string description, string defaultValue)
@@ -46,10 +52,18 @@ public TextSetting(string key, string label, string description, string defaultV
 
 ### Parameters
 
-**`key`** String
+*key* **String**
 
-**`label`** String
+The unique identifier for the setting.
 
-**`description`** String
+*label* **String**
 
-**`defaultValue`** String
+The display name of the setting.
+
+*description* **String**
+
+The description of the setting.
+
+*defaultValue* **String**
+
+The default value for the setting.

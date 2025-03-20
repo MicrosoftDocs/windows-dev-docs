@@ -1,6 +1,6 @@
 ---
 title: TextSetting.ToDictionary() Method
-description: 
+description: The TextSetting.ToDictionary method converts the current TextSetting instance into a dictionary representation.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -10,8 +10,10 @@ no-loc: [PowerToys, Windows, Insider]
 
 ## Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
+
+The **ToDictionary** method converts the current [TextSetting](textsetting.md) instance into a dictionary representation.
 
 ## Returns
 
-Dictionary<String, Object>
+A **Dictionary\<String, Object\>** that contains the settings in the current **TextSetting** instance.

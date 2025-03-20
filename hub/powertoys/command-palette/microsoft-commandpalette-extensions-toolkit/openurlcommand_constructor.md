@@ -1,6 +1,6 @@
 ---
 title: OpenUrlCommand Constructors
-description: 
+description: Initializes a new instance of the OpenUrlCommand class with the URL target set to target, its name set to "Open", and an icon added.
 ms.date: 2/25/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -12,9 +12,9 @@ no-loc: [PowerToys, Windows, Insider]
 
 ### Definition
 
-Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions.toolkit.md)
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
 
-Initializes a new instance of the [OpenUrlCommand](openurlcommand.md) class with the URL target set to `target`, its name set to "Open", and an icon added.
+Initializes a new instance of the [OpenUrlCommand](openurlcommand.md) class with the URL target set to *target*, its name set to `Open`, and an icon added.
 
 ```C#
 public OpenUrlCommand(string target)
@@ -27,4 +27,6 @@ public OpenUrlCommand(string target)
 
 ### Parameters
 
-**`target`** String
+*target* **String**
+
+The URL to be opened by the command.

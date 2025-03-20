@@ -1,6 +1,6 @@
 ---
 title: NavigationMMode Enum
-description: 
+description: The NavigationMode enum defines the different modes of navigation that can be used in the Command Palette.
 ms.date: 2/10/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
@@ -11,6 +11,8 @@ no-loc: [PowerToys, Windows, Insider]
 ## Definition
 
 Namespace: [Microsoft.CommandPalette.Extensions](microsoft-commandpalette-extensions.md)
+
+The **NavigationMode** enum defines the different modes of navigation that can be used in the Command Palette. Each mode specifies how the navigation stack should be managed when navigating to a new page. This is useful for controlling the behavior of the navigation experience in your application.
 
 ## Fields
 
