@@ -356,6 +356,9 @@ items:
                   href: develop/feeds/feed-provider-manifest.md
             - name: Microsoft Copilot hardware key providers
               href: develop/windows-integration/microsoft-copliot-key-provider.md
+              items:
+                - name: Microsoft Copilot hardware key PressAndHoldAndRelease
+                  href: develop/windows-integration/copilot-pressandholdandrelease.md
             - name: Search providers
               items: 
                 - name: Overview
