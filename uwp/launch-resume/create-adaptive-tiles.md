@@ -21,7 +21,7 @@ Adaptive tile templates are a new feature in Windows 10, allowing you to design
 
 **Install Notifications library.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (search for "notifications uwp"). The C# samples provided in this article use version 1.0.0 of the NuGet package.
 
-**Install Notifications Visualizer.** This free Windows app helps you design adaptive live tiles by providing an instant visual preview of your tile as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](/windows/apps/design/shell/tiles-and-notifications/notifications-visualizer) for more information, or [download Notifications Visualizer from the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
+**Install Notifications Visualizer.** This free Windows app helps you design adaptive live tiles by providing an instant visual preview of your tile as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](/windows/apps/design/shell/tiles-and-notifications/notifications-visualizer) for more information, or [download Notifications Visualizer from the Store](https://apps.microsoft.com/detail/9nblggh5xsl1).
 
 ## How to send a tile notification
 
