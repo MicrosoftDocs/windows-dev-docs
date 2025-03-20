@@ -1,14 +1,16 @@
 ---
-description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
+description: Adaptive tile templates allow you to design tile notification content using a simple, flexible markup language that adapts to different screen densities.
 title: Create adaptive tiles
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 ms.date: 08/08/2024
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+# customer intent: As a Windows developer, I want to create adaptive tiles for my app so that I can provide a better user experience.
 ---
+
 # Create adaptive tiles
 
 [!INCLUDE [notes](includes/live-tiles-note.md)]
@@ -218,7 +220,7 @@ new TileVisual()
 Branding can be applied for specific tile sizes one of two ways:
 
 1. By applying the attribute on the [TileBinding](tile-schema.md#tilebinding) element.
-2. By applying the attribute on the [TileVisual](tile-schema.md#tilevisual) element, which affects the entire notification payload.
+1. By applying the attribute on the [TileVisual](tile-schema.md#tilevisual) element, which affects the entire notification payload.
 
 If you don't specify branding for a binding, it will use the branding that's provided on the visual element.
 
@@ -1334,7 +1336,7 @@ TileWide = new TileBinding()
 }
 ```
 
-## Related topics
+## Related content
 
 - [Tile content schema](tile-schema.md)
 - [Send a local tile notification](sending-a-local-tile-notification.md)
