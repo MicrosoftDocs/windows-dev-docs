@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Handle Microsoft Copilot hardware key state changes
 
-This article describes how apps can register to be activated and receive notifications when the Microsoft Copilot hardware key or Windows key + C is pressed, pressed and held, and released. This feature enables apps to perform different actions depending on which key state change is detected. For example, and app may perform normal activation when the key is single-pressed, but record audio or take a screenshot when the key is pressed and held..
+This article describes how apps can register to be activated and receive notifications when the Microsoft Copilot hardware key or Windows key + C is pressed, pressed and held, and released. This feature enables apps to perform different actions depending on which key state change is detected. For example, and app may perform normal activation when the key is single-pressed, but take a screenshot when the key is pressed and held. Or, an app may begin recording audio and show a status indicator that audio is being recorded, when the key is pressed and held, and then stop recording audio when the key is released.
 
 This feature extends the features of a basic Microsoft Copilot hardware key provider, which simply registers to be launched when the hardware key is pressed. For more information, see [Microsoft Copilot hardware key providers](microsoft-copliot-key-provider.md).
 
