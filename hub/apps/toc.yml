@@ -357,8 +357,8 @@ items:
             - name: Microsoft Copilot hardware key providers
               href: develop/windows-integration/microsoft-copliot-key-provider.md
               items:
-                - name: Microsoft Copilot hardware key PressAndHoldAndRelease
-                  href: develop/windows-integration/copilot-pressandholdandrelease.md
+                - name: Handle Microsoft Copilot hardware key state changes
+                  href: develop/windows-integration/copilot-key-state.md
             - name: Search providers
               items: 
                 - name: Overview
