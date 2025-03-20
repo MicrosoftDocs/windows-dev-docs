@@ -230,7 +230,7 @@ public MainWindow(string state)
 }
 ```
 
-### Implemnent the window subclass callback
+### Implement the window subclass callback
 
 The last step in this example is implementing the window subclass callback that will be called whenever the app is running and the state of the Windows Copilot hardware key changes. In this example, we check that the window message is the **WM_COPILOT** value that we specified when setting the property store value in the previous step. Then we check the value of the *wParam* argument to see which of the values we specified with the **MessageWParam** attributes in the app manifest has been passed in. **SetState** is called to update the UI with the current state.
 
