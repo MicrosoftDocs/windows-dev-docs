@@ -115,7 +115,7 @@ The tables below describe the properties of the action definition JSON file.
 | Property | Type | Description | Required |
 |----------|------|-------------|----------|
 | name | string | The variable name of the entity. This value is not localizable. | Yes |
-| kind | string | A field name from the **ActionEntityKind** specifying the entity type. This value is not localizable. The allowed values are "None", "Document", "File", "Photo", "Text". | Yes |
+| kind | string | A field name from the **ActionEntityKind** enumeration specifying the entity type. This value is not localizable. The allowed values are "None", "Document", "File", "Photo", "Text". | Yes |
 
 ### InputCombination
 
@@ -134,6 +134,109 @@ The tables below describe the properties of the action definition JSON file.
 | clsid | string | The class ID for the COM class that implements **IActionProvider**. | Yes, for COM actions |
 | inputData | A list of name/value pairs specifying additional data for URI actions. | No. Only valid for URI actions. |
 
+
+## ActionEntityKind enumeration
+
+The **ActionEntityKind** enumeration specifies the types of entities that are supported by the Action Framework. In the context of a JSON action definition, the entity kinds are string literals that are case-sensitive.
+
+| Entity kind string | Description |
+|-------|------------|-------------|
+| "File"  | Includes all file types that are not supported by photo or document entity types. |
+| "Photo" | Image file types. Supported image file extensions are ".jpg", ".jpeg", and ".png" |
+| "Document" | Document file types. Supported document file extensions are ".doc", ".docx", ".pdf", ".txt" |
+
+## Entity properties
+
+Each entity type supports one or more properties that provide instance data for the entity. Entity property names are case sensitive.
+
+The following example illustrates how entities are referenced in the query string for actions that are launched via URI activation:
+
+`...?param1=${entityName.property1}&param2=${entityName.property2}`
+
+For information on using entity properties to create conditional sections in the action definition JSON, see [Where clauses](#where-clauses).
+
+### File entity properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| "FileName" | string | The name of the file. |
+| "Path" | string | The path of the file. |
+| "Extension" | string | The extension of the file. |
+
+### Document entity properties
+
+The *Document* entity supports the same properties as *File*.
+
+### Photo entity properties
+
+The *Photo* entity supports all of the properties of *File* in addition to the following properties.
+
+| Property | Type | Description |
+|----------|------|-------------|
+| "IsTemporaryPath" | boolean | A value specifying whether the photo is stored in a temporary path. For example, this property is true for photos that are stored in memory from a bitmap, not stored permanently in a file. |
+
+### Text entity properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| "Text" | string | The full text. |
+| "TextFormat" | ActionEntityTextFormat | The format of the text. |
+| "ShortText" | string | A shortened version of the text, suitable for UI display. |
+| "Title" | string | The title of the text. |
+| "Description" | string | A description of the text. |
+| "Length" | double | The length of the text in characters. |
+| "WordCount" | double | The number of words in the text. |  
+
+## ActionEntityKind enumeration
+
+The **ActionEntityTextFormat** enumeration specifies the types text formatting recognized by the "Text.TextFormat" entity property.
+
+| Entity kind string | Description |
+|-------|------------|-------------|
+| "Plain"  | Plain text. |
+| "Markdown" | Markdown formatted text. |
+
+## Where clauses
+
+The action definition JSON format supports *where* clauses that can be used to implement conditional logic, such as specifying that an action should be invoked only when an entity property has a specified value.
+
+The following operators can be used with *where* clauses.
+
+| Operator | Description |
+|----------|-------------|
+| == | Equality |
+| ~= | Case-insensitive equality |
+| != | Inequality |
+| < | Less than |
+| <= | Less than or equal to |
+| > | Greater than |
+| >= | Greater than or equal to |
+| \|\| | Logical OR |
+| && | Logical AND |
+
+*Where* clauses use the following format:
+
+```json
+"where": [ 
+    "${<property_accessor>} <operator> <value>" 
+] 
+```
+
+The following example shows a *where* clause that evaluates to true if a **File** entity has the file extension ".txt".
+
+```json
+"where": [ 
+    "${File.Extension} ~= \".txt\"" 
+] 
+```
+
+Multiple *where* clauses can be combined using the logical AND and logical OR operators.
+
+```json
+where": [ 
+  "${File.Extension} ~= \".txt\" || ${File.Extension} ~= \".md\"" 
+] 
+```
 
 ## Related articles
 
