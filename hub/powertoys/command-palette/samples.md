@@ -9,29 +9,37 @@ no-loc: [PowerToys, Windows, Insider]
 
 # Extension samples
 
-The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette. This document provides information about how to create an extension and publish it. It also includes a sample extension that demonstrates the extensibility model.
+The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette. 
 
-## Add a command
+For the most up-to-date samples, check out [the samples project on GitHub](https://github.com/microsoft/PowerToys/tree/main/src/modules/cmdpal/Exts/SamplePagesExtension). This contains up-to-date samples of everything that's possible with Command Palette.
 
-Create a class that implements [ICommand](./microsoft-commandpalette-extensions/icommand.md) and implement the [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand_invoke.md) method. This method will be called whtn the user selects the command in the Command Palette.
+## Create a command to do something
+
+Create a class that implements [IInvokableCommand](./microsoft-commandpalette-extensions/icommand.md) and implement the [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand_invoke.md) method. This method will be called whtn the user selects the command in the Command Palette.
 
 ```csharp
-class MyPage : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
-    public class MyPage()
+class MyCommand : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
+    public class MyCommand()
     {
-        Name = "My Page Name";
-        Icon = "PATH_TO_ICO";
+        Name = "Do it"; // A short name for the command
+        Icon = new("\uE945"); // Segoe UI LightningBolt
     }
     
     // Open MY_WEBSITE_URL in the user's default web browser
     public ICommandResult Invoke() {
         Process.Start(new ProcessStartInfo("MY_WEBSITE_URL") { UseShellExecute = true });
+
+        // Hides the Command Palette window, without changing the page that's open
         return CommandResult.Hide();
     }
 }
 ```
 
+## Create a page of commands
+
+TODO!
+
 ## Related content
 
 - [PowerToys Command Palette utility](overview.md)
-- [Extensibility overview](creating-an-extension.md)
+- [Extensibility overview](extensibility-overview.md)

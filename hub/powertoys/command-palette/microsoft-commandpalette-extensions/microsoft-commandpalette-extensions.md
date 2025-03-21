@@ -10,6 +10,8 @@ no-loc: [PowerToys, Windows, Insider]
 
 Contains the interfaces to create extensions for the Command Palette.
 
+These are the raw WinRT interfaces that Command Palette uses to communicate with your extension. These can be implemented however you'd like, in any language that supports implementing WinRT interfaces. For simplicity, there's a reference C# implementation of these interfaces in the [`Microsoft.CommandPalette.Extensions.Toolkit`](../microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md) namespace.
+
 ## Structs
 
 | Struct | Description |
