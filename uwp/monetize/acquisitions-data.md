@@ -83,7 +83,7 @@ Elements in the *Value* array contain the following values.
 | acquisitionQuantity | number | The number of acquisitions that occurred during the specified aggregation level. |
 | purchasePriceUSDAmount | number | The amount paid by the customer for the acquisition, converted to USD, using the monthly exchange rate. |
 | purchaseTaxUSDAmount | number | The tax amount applied to the acquisition, converted to USD. |
-| localCurrencyCode | string | Local Currency code based on the country of the Partner Center account.  |
+| localCurrencyCode | string | Local Currency code based on the country/region of the Partner Center account.  |
 | xboxProductId | string | Xbox Product ID of the product from XDP, if applicable.  |
 | availabilityId | string | Availability ID of the product from XDP, if applicable.  |
 | skuId | string | SKU ID of the product from XDP, if applicable.  |
