@@ -81,6 +81,17 @@ The currently available utilities include:
             :::column-end:::
 :::row-end:::
 
+### Command Palette
+
+:::row:::
+    :::column:::
+        [![Command Palette screenshot](../images/pt-cmdpal.png)](command-palette/overview.md)
+    :::column-end:::
+    :::column span="2":::
+        [Command Palette](command-palette/overview.md) allows you to easily access all of your most frequently used commands, apps, and development tools - all from a single solution that is fast, customizable to your unique preferences, and extensible to include your favorite apps. The Command Palette is intended to be the successor of [PowerToys Run](run.md).
+            :::column-end:::
+:::row-end:::
+
 ### Crop And Lock
 
 :::row:::

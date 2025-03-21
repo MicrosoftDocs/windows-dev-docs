@@ -16,6 +16,8 @@ To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd
 > [!IMPORTANT]
 > For this utility to work, the Command Palette must be enabled and running in the background.
 
+![PowerToys Command Palette demo opening web searches and git information](../../images/pt-cmdpal-overview1.gif)
+
 ## Features
 
 Command Palette features include:
