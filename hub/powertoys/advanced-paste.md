@@ -1,7 +1,7 @@
 ---
 title: PowerToys Advanced Paste for Windows
 description: A tool that enables you to paste the text from your clipboard into any format needed. It can be enhanced with an AI-powered option that is 100% opt-in and requires an OpenAI key.
-ms.date: 12/13/2024
+ms.date: 02/28/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 # Customer intent: Learn how to use the Advanced Paste feature in PowerToys to paste text from your clipboard into any format needed.
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 
 # Advanced Paste
 
-PowerToys **Advanced Paste** is a tool that enables you to paste the content from your clipboard into any format needed. It can paste as plain text, markdown, JSON, .txt file, .html file, or .png file directly with the UX or with a direct keystroke invoke. It can also extract and paste the text directly from an image in your clipboard. These actions are executed entirely on your local machine. Additionally, the tool has an AI-powered option that is 100% opt-in and requires entering an OpenAI key in settings.
+PowerToys **Advanced Paste** is a tool that enables you to paste the content from your clipboard into any format needed. It can paste as plain text, markdown, JSON, .txt file, .html file, or .png file directly with the UX or with a direct keystroke invoke. It can also extract and paste the text directly from an image in your clipboard or transcode audio or video from your clipboard to an .mp3 or .mp4 file. These actions are executed entirely on your local machine. Additionally, the tool has an AI-powered option that is 100% opt-in and requires entering an OpenAI key in settings.
 
 ## Getting started
 
@@ -37,8 +37,11 @@ From the Settings menu, the following options can be configured:
 | Paste as plain text directly shortcut | The customizable keyboard command to paste as plain text without opening the **Advanced Paste** window. |
 | Paste as Markdown directly shortcut | The customizable keyboard command to paste as Markdown without opening the **Advanced Paste** window. |
 | Paste as JSON directly shortcut | The customizable keyboard command to paste as JSON without opening the **Advanced Paste** window. |
-| Additional actions: Image to Text | Turn on/off the Image to text paste action and configure the customizable keyboard command. |
-| Additional actions: Paste as file | Turn on/off the set of Paste as File actions which include Paste as .txt file, Paste as .png file, Paste as .html file. Optionally configure the customizable keyboard command for each of these actions. |
+| Additional actions \| Image to Text | Turn on/off the Image to text paste action and configure the customizable keyboard command. |
+| Additional actions \| Paste as file | Turn on/off the set of Paste as File actions which include Paste as .txt file, Paste as .png file, Paste as .html file. Optionally configure the customizable keyboard command for each of these actions. |
+| Additional actions \| Transcode audio / video | Turn on/off both the Transcode audio and video paste actions. The transcode settings are all enabled by default. |
+| Additional actions \| Transcode to .mp3 | Turn on/off the Transcode to .mp3 paste action and configure the customizable keyboard command to transcode audio or video on the clipboard without opening the **Advanced Paste** window. |
+| Additional actions \| Transcode to .mp4 (H.264/AAC) | Turn on/off the Transcode to .mp4 (H.264/AAC) paste action and configure the customizable keyboard command to transcode video on the clipboard without opening the **Advanced Paste** window. |
 
 > [!IMPORTANT]
 > It's possible to set <kbd>Ctrl</kbd>+<kbd>V</kbd> as an activation shortcut. This is not recommended, as overriding this shortcut may have unintended consequences.
@@ -198,5 +201,34 @@ Advanced Paste includes several image-based paste options. These options are ava
 
 > [!NOTE]
 > Paste as .png file is a feature that runs locally and doesn't use AI.
+
+## Transcode to audio / video
+
+Two paste options that work with media files are available in the **Advanced Paste** window. These options are available in the **Advanced Paste** window, which can be opened using the activation shortcut. You can also use the customizable keyboard commands to directly invoke a paste action with quick keys. To the extent possible, quality settings (e.g. video dimensions, audio bitrate) from the source file are maintained, as is any container metadata (e.g. title, album).
+
+Paste actions are also cancellable via a cancel (**X**) button:
+
+:::image type="content" source="../images/pt-advanced-paste-cancel.png" alt-text="A screenshot of the PowerToys Advanced Paste window processing a transcode operation with an available cancel button.":::
+
+This is useful for media transcoding but also for other potentially long-running actions such as the Paste with AI operations.
+
+Paste actions for transcoding display their fractional progress via a progress-ring - this may be useful for other paste actions in future, but is for now only used by media transcoding.
+
+The [Windows.Media.Transcoding](/uwp/api/windows.media.transcoding) APIs are used in transcoding the audio and video files. The list of supported codecs can be found [here](/windows/uwp/audio-video-camera/supported-codecs).
+
+> [!NOTE]
+> The Transcode to audio / video features run locally and don't use AI.
+
+### Transcode to .mp3
+
+The Transcode to .mp3 feature works with both audio and video files. It extracts the audio channel from the media on the clipboard and saves it as an .mp3 file.
+
+:::image type="content" source="../images/pt-advanced-paste-transcode.png" alt-text="A screenshot of the PowerToys Advanced Paste window with the Transcode to .mp3 and Transcode to .mp4 (H.264/AAC) options enabled.":::
+
+This feature could be used to extract audio from combined audio/video files to save disk space and to work with audio-only apps and devices.
+
+### Transcode to .mp4 (H.264/AAC)
+
+The Transcode to .mp4 (H.264/AAC) feature transcodes video files to use the H.264 video codec and AAC audio codec (if audio is present) and saves the streams to an .mp4 file. This feature is useful for transcoding existing video files to a more widely supported format.
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

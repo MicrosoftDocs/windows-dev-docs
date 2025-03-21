@@ -93,6 +93,8 @@ items:
             items:
             - name: Working with background tasks in Windows apps
               href: develop/launch/create-and-register-a-background-task.md
+            - name: BackgroundTaskBuilder in the Windows App SDK
+              href: windows-app-sdk/applifecycle/background-tasks.md
         - name: Audio, video, and camera
           items:
             - name: Overview
@@ -370,6 +372,8 @@ items:
                 href: develop/security/reference.md
               - name: Third-party passkey manager support
                 href: develop/security/third-party.md
+            - name: Implement OAuth 2.0 functionality
+              href: develop/security/oauth2.md
             - name: Share certificates between apps
               href: develop/security/share-certificates.md
             - name: Smart cards
@@ -879,7 +883,7 @@ items:
                 items:
                   - name: App Quality
                     href: publish/store-app-quality.md
-                  - name: Upcoming company account verification requirements
+                  - name: EU Digital Services Act requirements
                     href: publish/store-business-verification-reqs.md
                   - name: Microsoft Edge Add-ons store developer policies
                     href: /microsoft-edge/extensions-chromium/store-policies/developer-policies
@@ -908,6 +912,8 @@ items:
                   items: 
                     - name: Stable channel release notes
                       items: 
+                        - name: Windows App SDK 1.6
+                          href: windows-app-sdk/release-notes-archive/stable-channel-1.6.md
                         - name: Windows App SDK 1.5
                           href: windows-app-sdk/release-notes-archive/stable-channel-1.5.md
                         - name: Windows App SDK 1.4
@@ -1107,6 +1113,8 @@ items:
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
                 - name: MRT to MRTCore migration
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md
+                - name: Background task migration strategy
+                  href: windows-app-sdk/migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md
                 - name: Threading functionality migration
                   href: windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md
                 - name: Case study 1—PhotoLab (C#)

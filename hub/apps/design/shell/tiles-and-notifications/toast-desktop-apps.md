@@ -3,7 +3,7 @@ description: Discover the different options desktop apps have for sending toast 
 title: Activating toast notifications from desktop apps
 label: Activating toast notifications from desktop apps
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 02/27/2025
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, msix, external location, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast
 ms.localizationpriority: medium
@@ -27,8 +27,8 @@ The table below illustrates your options for supporting toasts within your deskt
 
 | Option | Visuals | Actions | Inputs | Activates in-process |
 | -- | -- | -- | -- | -- |
-| [COM activator](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
-| [No COM / Stub CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
+| [COM activator](#preferred-option---com-activator) | **Supported** | **Supported** | **Supported** | **Supported** |
+| [No COM / Stub CLSID](#alternative-option---no-com--stub-clsid) | **Supported** | **Supported** | Not supported | Not supported |
 
 ## Preferred option - COM activator
 
@@ -36,16 +36,16 @@ This is the preferred option that works for desktop apps, and supports all notif
 
 | Visuals | Actions | Inputs | Activates in-process |
 | -- | -- | -- | -- |
-| ✔️ | ✔️ | ✔️ | ✔️ |
+| **Supported** | **Supported** | **Supported** | **Supported** |
 
 With the COM activator option, you can use the following notification templates and activation types in your app.<br/><br/>
 
 | Template and activation type | Packaged | Unpackaged |
 | -- | -- | -- |
-| ToastGeneric Foreground | ✔️ | ✔️ |
-| ToastGeneric Background | ✔️ | ✔️ |
-| ToastGeneric Protocol | ✔️ | ✔️ |
-| Legacy templates | ✔️ | ❌ |
+| ToastGeneric Foreground | **Supported** | **Supported** |
+| ToastGeneric Background | **Supported** | **Supported** |
+| ToastGeneric Protocol | **Supported** | **Supported** |
+| Legacy templates | **Supported** | Not supported |
 
 > [!NOTE]
 > If you add the COM activator to your existing packaged app, then Foreground/Background and Legacy notification activations will activate your COM activator instead of your command line.
@@ -58,16 +58,16 @@ This is an alternative option if you can't implement a COM activator. However, y
 
 | Visuals | Actions | Inputs | Activates in-process |
 | -- | -- | -- | -- |
-| ✔️ | ✔️ | ❌ | ❌ |
+| **Supported** | **Supported** | Not supported | Not supported |
 
 With this option, if you support desktop, then you're much more limited in the notification templates and activation types that you can use, as seen below.<br/><br/>
 
 | Template and activation type | Packaged | Unpackaged |
 | -- | -- | -- |
-| ToastGeneric Foreground | ✔️ | ❌ |
-| ToastGeneric Background | ✔️ | ❌ |
-| ToastGeneric Protocol | ✔️ | ✔️ |
-| Legacy templates | ✔️ | ❌ |
+| ToastGeneric Foreground | **Supported** | Not supported |
+| ToastGeneric Background | **Supported** | Not supported |
+| ToastGeneric Protocol | **Supported** | **Supported** |
+| Legacy templates | **Supported** | Not supported |
 
 For packaged apps, just send toast notifications like a UWP app would. When the user clicks on your toast, your app will be command-line launched with the launch args that you specified in the toast.
 

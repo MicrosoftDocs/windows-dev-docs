@@ -3,7 +3,7 @@ ms.assetid:
 title: Support ink in your Windows app
 description: Learn how to support writing and drawing with Windows Ink in a basic Universal Windows Platform (UWP) app by following this step by step tutorial.
 keywords: ink, inking, tutorial
-ms.date: 07/19/2021
+ms.date: 02/27/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -76,11 +76,11 @@ After you've downloaded the RadialController sample app, verify that it runs:
    > Alternatively, you can select **Debug** > **Start debugging** menu item, or select the **Local Machine** Run button shown here.
    > ![Visual Studio Build project button.](images/ink/ink-vsrun-small.png)
 
-The app window opens, and after a splash screen appears for a few seconds, you’ll see this initial screen.
+The app window opens, and after a splash screen appears for a few seconds, you'll see this initial screen.
 
 ![Screenshot of the empty app.](images/ink/ink-app-step1-empty-small.png)
 
-Okay, we now have the basic Windows app that we’ll use throughout the rest of this tutorial. In the following steps, we add our ink functionality.
+Okay, we now have the basic Windows app that we'll use throughout the rest of this tutorial. In the following steps, we add our ink functionality.
 
 ## Step 2: Use InkCanvas to support basic inking
 
@@ -123,7 +123,7 @@ Now run the app again. Go ahead and scribble, write your name, or (if you're hol
 
 You'll notice that, by default, ink is supported for pen input only. If you try to write or draw with your finger, your mouse, or your touchpad, you'll be disappointed.
 
-To turn that frown upside down , you need to add a second line of code. This time it’s in the code-behind for the XAML file in which you declared your [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas). 
+To turn that frown upside down , you need to add a second line of code. This time it's in the code-behind for the XAML file in which you declared your [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas). 
 
 In this step, we introduce the [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter) object, which provides finer-grained management of the input, processing, and rendering of ink input (standard and modified) on your [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas).
 
@@ -178,24 +178,12 @@ Now run the app again to see the [**InkToolbar**](/uwp/api/windows.ui.xaml.contr
 ![Screenshot of the Basic Ink Sample app highlighted in this topic with the default InkToolbar.](images/ink/ink-inktoolbar-default-small.png)
 
 ### Challenge: Add a custom button
-<table class="wdg-noborder">
-<tr>
-<td>
-
-:::image type="icon" source="images/challenge-icon.png":::
-
-</td>
-<td>
 
 Here's an example of a custom **[InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)** (from Sketchpad in the Windows Ink Workspace).
 
 ![Screenshot of the Ink Toolbar from Sketchpad in the Ink Workspace.](images/ink/ink-inktoolbar-sketchpad-small.png)
 
 For more details about customizing an [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Windows app inking app](ink-toolbar.md).
-
-</td>
-</tr>
-</table>
 
 ## Step 5: Support handwriting recognition
 
@@ -276,14 +264,6 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
 8. The results of the recognition are displayed beside the button
 
 ### Challenge 1: International recognition
-<table class="wdg-noborder">
-<tr>
-<td>
-
-:::image type="icon" source="images/challenge-icon.png":::
-
-</td>
-<td>
 
 Windows Ink supports text recognition for many of the of the languages supported by Windows. Each language pack includes a handwriting recognition engine that can be installed with the language pack.
 
@@ -291,27 +271,11 @@ Target a specific language by querying the installed handwriting recognition eng
 
 For more details about international handwriting recognition, see [Recognize Windows Ink strokes as text](convert-ink-to-text.md).
 
-</td>
-</tr>
-</table>
-
 ### Challenge 2: Dynamic recognition
-<table class="wdg-noborder">
-<tr>
-<td>
-
-:::image type="icon" source="images/challenge-icon.png":::
-
-</td>
-<td>
 
 For this tutorial, we require that a button be pressed to initiate recognition. You can also perform dynamic recognition by using a basic timing function.
 
 For more details about dynamic recognition, see [Recognize Windows Ink strokes as text](convert-ink-to-text.md).
-
-</td>
-</tr>
-</table>
 
 ## Step 6: Recognize shapes
 
@@ -437,23 +401,10 @@ In this step, we hook up the **Save** and **Load** buttons located beside the in
 10. Select the **Load** button and open the ink file you just saved.
 
 ### Challenge: Use the clipboard to copy and paste ink strokes 
-<table class="wdg-noborder">
-<tr>
-<td>
-
-:::image type="icon" source="images/challenge-icon.png":::
-
-</td>
-
-<td>
 
 Windows ink also supports copying and pasting ink strokes to and from the clipboard.
 
 For more details about using the clipboard with ink, see [Store and retrieve Windows Ink stroke data](save-and-load-ink.md).
-
-</td>
-</tr>
-</table>
 
 ## Summary
 
