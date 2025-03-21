@@ -256,7 +256,7 @@ Below is a table that shows what specific time zones are used in each market, so
 | Kiribati                                     | (UTC+14:00) Kiritimati Island                                 |
 | Korea                                        | (UTC+09:00) Seoul                                             |
 | Kuwait                                       | (UTC+04:00) Abu Dhabi, Muscat                                 |
-| Kyrgyzstan                                   | (UTC+06:00) Nur-Sultan                                        |
+| Kyrgyzstan                                   | (UTC+06:00) Astana                                         |
 | Laos                                         | (UTC+07:00) Bangkok, Hanoi, Jakarta                           |
 | Latvia                                       | (UTC+02:00) Chisinau                                          |
 | Lesotho                                      | (UTC+02:00) Harare, Pretoria                                  |
