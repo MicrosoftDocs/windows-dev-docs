@@ -1,7 +1,7 @@
 ---
-title: Command Palette Extensibility
-description: The Command Palette provides a full extension model, allowing you to create custom experiences for the palette. Learn how to create an extension and publish it.
-ms.date: 2/28/2025
+title: Creating an extension
+description: The Command Palette provides a full extension model, allowing you to create custom experiences for the palette. Learn how to create an extension
+ms.date: 3/23/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
@@ -55,6 +55,12 @@ From here, you can immediately build the project and run it. Once your package i
 
 > [!WARNING]
 > Running "ExtensionName (Unpackaged)" from Visual Studio will not **deploy** your app package.
+> 
+> If you're using `git` for source control, and you used the standard `.gitignore` file for C#, you'll want to remove the 
+> ```
+> **/Properties/launchSettings.json
+> ```
+> line from your `.gitignore` file. This file is used by WinAppSdk to deploy your app as a package. Without it, anyone who clones your repo won't be able to deploy your extension.
 
 You should be able to see your extension in the Command Palette at the end of the list of commands. Entering that command should take you to the page for your command, and you should see a single command that says "TODO: Implement your extension here".
 
@@ -64,31 +70,10 @@ Congrats! You've made your first extension! Now let's go ahead and actually add 
 
 When you make changes to your extension, you can rebuild your project and deploy it again. Command Palette will **not** notice changes to packages that are re-ran through Visual Studio, so you'll need to manually run the "**Reload**" command to force Command Palette to re-instantiate your extension.
 
-Let's make that command do something.
-
-We can start by navigating to the `ExtensionNamePage.cs` file. This file is the [`ListPage`](./microsoft-commandpalette-extensions-toolkit/listpage.md) that will be displayed when the user selects your extension. In there you should see:
-
-```csharp   
-    public DocsSamplePage()
-    {
-        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
-        Title = "My sample extension";
-        Name = "Open";
-    }
-    public override IListItem[] GetItems()
-    {
-        return [
-            new ListItem(new NoOpCommand()) { Title = "TODO: Implement your extension here" }
-        ];
-    }
-```
-
-https://learn.microsoft.com/windows/powertoys/command-palette/overview
-
-
-### Next up: [Update a list of commands](update-a-list-of-commands.md)
+### Next up: [Add commands to your extension](adding-commands.md)
 
 ## Related content
 
 - [PowerToys Command Palette utility](overview.md)
+- [Extensibility overview](extensibility-overview.md)
 - [Extension samples](samples.md)
