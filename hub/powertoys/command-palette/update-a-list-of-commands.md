@@ -1,6 +1,6 @@
 ---
 title: Update a list of commands
-description: Learn how to add new commands to your Command Palette extension.
+description: Learn how to update the elements in your Command Palette extension.
 ms.date: 3/23/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]

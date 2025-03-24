@@ -24,4 +24,4 @@ Action a user can take within the Command Palette.
 
 ## Example
 
-See the [Add a command](../samples.md#add-a-command) section for an example of how to use this interface.
+See the [Add a command](../adding-commands.md) page for an example of how to use this interface.

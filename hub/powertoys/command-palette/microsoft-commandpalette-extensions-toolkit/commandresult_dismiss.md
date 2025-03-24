@@ -19,3 +19,7 @@ Creates a new [CommandResult](commandresult.md) instance with its [Kind](command
 ## Returns
 
 A [CommandResult](commandresult.md) instance.
+
+## Example
+
+See [Command Results](../command-results.md) for an example of how to use this.

@@ -33,4 +33,4 @@ An [ICommandResult](icommandresult.md) object that represents the result of the 
 
 ## Example
 
-See [Add a command](../samples.md#add-a-command) for a sample of how to implement this method.
+See [Add a command](../adding-commands.md) for a sample of how to implement this method.

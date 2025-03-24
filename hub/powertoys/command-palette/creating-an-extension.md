@@ -18,7 +18,7 @@ The form will ask you for the following information:
   * The project will be created in a subdirectory of the path you provided. 
   * If this path doesn't exist, it will be created for you.
 
-![](../../images/command-palette/create-extension-page.png)
+![The "Create a new extension" page of the Windows Command Palette](../../images/command-palette/create-extension-page.png)
 
 Once you submit the form, Command Palette will automatically generate the project for you. At this point, your projects structure should look like the following:
 
@@ -64,7 +64,7 @@ From here, you can immediately build the project and run it. Once your package i
 
 You should be able to see your extension in the Command Palette at the end of the list of commands. Entering that command should take you to the page for your command, and you should see a single command that says "TODO: Implement your extension here".
 
-![](../../images/command-palette/initial-created-extension-list.png)
+![A screenshot of the empty extension template, running in the command palette](../../images/command-palette/initial-created-extension-list.png)
 
 Congrats! You've made your first extension! Now let's go ahead and actually add some commands to it.
 

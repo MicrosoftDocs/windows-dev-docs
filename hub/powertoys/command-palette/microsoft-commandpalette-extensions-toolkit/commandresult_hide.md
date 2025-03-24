@@ -20,4 +20,4 @@ A [CommandResult](commandresult.md) instance.
 
 ## Example
 
-See [Add a command](../samples.md#add-a-command) for an example of how to use this method in a command.
+See [Command Results](../command-results.md) for an example of how to use this.

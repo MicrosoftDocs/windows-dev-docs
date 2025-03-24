@@ -15,14 +15,15 @@ The fastest way to get started writing extensions is from the Command Palette it
 
 For more detailed instructions, you can follow these pages:
 
-* [Creating an extension](../powertoys/command-palette/creating-an-extension.md)
-* [Update a list of commands](../powertoys/command-palette/update-a-list-of-commands.md)
-* [Command results](../powertoys/command-palette/command-results.md)
-* [Add top-level commands to your extension](../powertoys/command-palette/add-top-level-commands-to-your-extension.md)
-* [Display markdown content](../powertoys/command-palette/using-markdown-content.md)
-* [Get user input with forms](../powertoys/command-palette/using-form-pages.md)
-* [Handle the search text](../powertoys/command-palette/dynamic-lists.md)
-* [Advanced: Adding an extension to your package](../powertoys/command-palette/adding-an-extension-to-your-package.md)
+* [Creating an extension](../command-palette/creating-an-extension.md)
+* [Adding commands](../command-palette/adding-commands.md)
+* [Update a list of commands](../command-palette/update-a-list-of-commands.md)
+* [Add top-level commands to your extension](../command-palette/add-top-level-commands-to-your-extension.md)
+* [Command results](../command-palette/command-results.md)
+* [Display markdown content](../command-palette/using-markdown-content.md)
+* [Get user input with forms](../command-palette/using-form-pages.md)
+<!-- * [Handle the search text](../command-palette/dynamic-lists.md) -->
+<!-- * [Advanced: Adding an extension to your package](../command-palette/adding-an-extension-to-your-package.md) -->
 
 
 ## Extension details

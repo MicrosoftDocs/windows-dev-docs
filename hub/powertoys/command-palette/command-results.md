@@ -1,6 +1,6 @@
 ---
 title: Command results
-description: Learn how to add new commands to your Command Palette extension.
+description: Learn what the different kinds of Command Palette command results do.
 ms.date: 3/23/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]

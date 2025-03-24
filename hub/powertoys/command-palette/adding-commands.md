@@ -14,7 +14,7 @@ no-loc: [PowerToys, Windows, Insider]
 Now that you've created your extension, it's time to add some commands to it. We can start by navigating to the `ExtensionNamePage.cs` file. This file is the [`ListPage`](./microsoft-commandpalette-extensions-toolkit/listpage.md) that will be displayed when the user selects your extension. In there you should see:
 
 ```csharp   
-    public DocsSamplePage()
+    public ExtensionNamePage()
     {
         Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
         Title = "My sample extension";
@@ -108,7 +108,7 @@ There are two different kinds of pages you can show:
 * [`ListPage`](./microsoft-commandpalette-extensions-toolkit/listpage.md) - This is a page that shows a list of commands. This is what we've been working with so far.
 * [`ContentPage`](./microsoft-commandpalette-extensions-toolkit/contentpage.md) - This is a page that shows rich content to the user. This allows you to specify abstract content, and let Command Palette worry about rendering the content in a native experience. There are two different types of content supported so far:
   * [Markdown content](./using-markdown-content.md) - This is content that's written in Markdown, and is rendered in the Command Palette. See [`MarkdownContent`](./microsoft-commandpalette-extensions-toolkit/markdowncontent.md) for details.
-  * [Form content](./using-form-pages.md) - This is content that shows a form to the user, and then returns the results of that form to the extension. These are powered by [Adaptive Cards](aka.ms/adaptive-cards) This is useful for getting user input, or displaying more complex layouts of information. See [`FormContent`](./microsoft-commandpalette-extensions-toolkit/formcontent.md) for details.
+  * [Form content](./using-form-pages.md) - This is content that shows a form to the user, and then returns the results of that form to the extension. These are powered by [Adaptive Cards](https://aka.ms/adaptive-cards) This is useful for getting user input, or displaying more complex layouts of information. See [`FormContent`](./microsoft-commandpalette-extensions-toolkit/formcontent.md) for details.
 
 
 We'll start by adding a new page that shows a list of commands. We can create a new class that implements `ListPage`:
