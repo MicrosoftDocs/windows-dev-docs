@@ -23,15 +23,28 @@ The following tools are required to build and publish your extension:
 
 Publishing packages to WinGet is the recommended way to share your extensions with users. Extension packages which are listed on WinGet can be discovered and installed directly from the Command Palette.
 
-For the most part, following the steps on [Submit packages to Windows Package Manager](https://learn.microsoft.com/en-us/windows/package-manager/package/) will get your extension onto WinGet itself.
+For the most part, following the steps on [Submit packages to Windows Package Manager](../../package-manager/package/manifest.md) will get your extension onto WinGet itself.
 
 Before submitting your manifest to WinGet, you'll need to check two things:
 
 ### Add `windows-commandpalette-extension` tag
 
+Command Palette uses the special `windows-commandpalette-extension` tag to discover extensions. Make sure that your manifest includes this tag, so that Command Palette can discover your extension. Add the following to each `.locale.*.yaml` file in your manifest:
+
+```yaml
+Tags:
+- windows-commandpalette-extension
+```
+
 ### Ensure WindowsAppSdk is listed as a dependency
 
-If you're using Windows App SDK, then you'll need to make sure that it is listed as a dependency of your package
+If you're using Windows App SDK, then you'll need to make sure that it is listed as a dependency of your package. Add the following to your `.installer.yaml` manifest:
+
+```yaml
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.WindowsAppRuntime.1.6
+```
 
 If you're not using the template project, then this may not apply to you. 
 

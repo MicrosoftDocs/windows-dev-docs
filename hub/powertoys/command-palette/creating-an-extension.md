@@ -51,16 +51,17 @@ ExtensionName/
 From here, you can immediately build the project and run it. Once your package is deployed and running, Command Palette will automatically discover your extension and load it into the palette. 
 
 > [!TIP]
-> Make sure you deploy your app! Just **build**ing your application won't update the package in the same way that deploying it will.
+> Make sure you _deploy_ your app! Just **build**ing your application won't update the package in the same way that deploying it will.
 
 > [!WARNING]
 > Running "ExtensionName (Unpackaged)" from Visual Studio will not **deploy** your app package.
 > 
-> If you're using `git` for source control, and you used the standard `.gitignore` file for C#, you'll want to remove the 
+> If you're using `git` for source control, and you used the standard `.gitignore` file for C#, you'll want to remove the following two lines from your `.gitignore` file:
 > ```
 > **/Properties/launchSettings.json
+> *.pubxml
 > ```
-> line from your `.gitignore` file. This file is used by WinAppSdk to deploy your app as a package. Without it, anyone who clones your repo won't be able to deploy your extension.
+> These files are used by WinAppSdk to deploy your app as a package. Without it, anyone who clones your repo won't be able to deploy your extension.
 
 You should be able to see your extension in the Command Palette at the end of the list of commands. Entering that command should take you to the page for your command, and you should see a single command that says "TODO: Implement your extension here".
 

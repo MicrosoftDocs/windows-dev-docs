@@ -25,9 +25,9 @@ class MyCommand : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
         Icon = new("\uE945"); // Segoe UI LightningBolt
     }
     
-    // Open MY_WEBSITE_URL in the user's default web browser
+    // Open GitHub in the user's default web browser
     public ICommandResult Invoke() {
-        Process.Start(new ProcessStartInfo("MY_WEBSITE_URL") { UseShellExecute = true });
+        Process.Start(new ProcessStartInfo("https://github.com") { UseShellExecute = true });
 
         // Hides the Command Palette window, without changing the page that's open
         return CommandResult.Hide();
@@ -37,7 +37,69 @@ class MyCommand : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
 
 ## Create a page of commands
 
-TODO!
+```csharp
+using Microsoft.CommandPalette.Extensions.Toolkit;
+
+class MyPage : ListPage {
+    public MyPage()
+    {
+        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Title = "My sample extension";
+        Name = "Open";
+    }
+    
+    public override IListItem[] GetItems()
+    {
+        return [
+            new ListItem(new OpenUrlCommand("https://github.com"))
+            {
+                Title = "Open GitHub",
+            },
+            new ListItem(new OpenUrlCommand("https://learn.microsoft.com"))
+            {
+                Title = "Open Microsoft Learn",
+            },
+            new ListItem(new OpenUrlCommand("https://github.com/microsoft/PowerToys"))
+            {
+                Title = "Open PowerToys on GitHub",
+            },
+            new ListItem(new CopyTextCommand("Foo bar"))
+            {
+                Title = "Copy 'Foo bar' to the clipboard",
+            },
+        ];
+    }
+}
+```
+
+## Icons
+
+Icons using the [`IIconInfo`](./microsoft-commandpalette-extensions/iiconinfo.md) class can be specified in a number of ways. Here are some examples:
+
+```csharp
+
+using Microsoft.CommandPalette.Extensions.Toolkit;
+
+namespace ExtensionName;
+
+internal sealed class Icons
+{
+    // Icons can be specified as a Segoe Fluent icon, ...
+    internal static IconInfo OpenFile { get; } = new("\uE8E5"); // OpenFile
+
+    // ... or as an emoji, ...
+    internal static IconInfo OpenFileEmoji { get; } = new("📂");
+
+    // ... Or as a path to an image file, ...
+    internal static IconInfo FileExplorer { get; } = IconHelpers.FromRelativePath("Assets\\FileExplorer.png");
+
+    // ... which can be on a remote server, or svg's, or ...
+    internal static IconInfo FileExplorerSvg { get; } = new("https://raw.githubusercontent.com/microsoft/PowerToys/refs/heads/main/src/modules/cmdpal/Exts/Microsoft.CmdPal.Ext.Indexer/Assets/FileExplorer.svg");
+
+    // Or they can be embedded in a exe / dll:
+    internal static IconInfo FolderIcon { get; } =  new("%systemroot%\\system32\\system32\\shell32.dll,3");
+}
+```
 
 ## Related content
 

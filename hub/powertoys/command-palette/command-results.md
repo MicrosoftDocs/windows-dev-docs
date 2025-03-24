@@ -47,7 +47,7 @@ If you don't know what else to use, this should be your default. Ideally, users 
 
 This result displays a transient desktop-level message to the user. This is especially useful for displaying confirmation that an action took place when the palette will be closed. 
 
-Consider the [CopyTextCommand](../microsoft-commandpalette-extensions-toolkit/copytextcommand.md) in the helpers - this command will show a toast with the text "Copied to clipboard", then dismiss the palette. 
+Consider the [CopyTextCommand](./microsoft-commandpalette-extensions-toolkit/copytextcommand.md) in the helpers - this command will show a toast with the text "Copied to clipboard", then dismiss the palette. 
 
 By default, [`CommandResult.ShowToast(string)`](./microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_string.md) helper will have a `Result` of `CommandResult.Dismiss`. However, you can instead change the result to any of the other results if you want. This allows you to display a toast and keep the palette open, if you'd like. 
 
