@@ -14,6 +14,7 @@ Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalett
 
 The **RaiseItemsChanged** method raises the **ItemsChanged** event with the specified change type. This method is typically used to notify the Command Palette of changes in the command provider's items, such as when new commands are added or existing commands are removed.
 
+
 <!-- ## Parameters
 
 *totalItems* **Int**

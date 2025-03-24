@@ -143,7 +143,7 @@ internal void Increment()
 
 Best practice is to set `IsLoading` to `true` before starting the work. Then do all the work to build all the new `ListItems` you need to display to the user. Then, once the items are ready, call `RaiseItemsChanged` and set `IsLoading` back to `false`. This will ensure that the loading spinner is shown for the entire duration of the work, and that the UI is updated as soon as the work is done (without waiting for your extension to construct new `ListItem` objects).
 
-### Next up: [Command results](command-results.md)
+### Next up: [Add top-level commands to your extension](add-top-level-commands-to-your-extension.md)
 
 ## Related content
 

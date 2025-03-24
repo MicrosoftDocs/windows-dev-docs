@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 # Adding top-level commands
 
-**Previous**: [Command Results](command-results.md)
+**Previous**: [Update a list of commands](update-a-list-of-commands.md).
 
 So far, we've only added commands to a single page, within your extension. You can also add more commands directly to the top-level list of commands too. 
 
@@ -57,7 +57,7 @@ Once you've determined that you need to change the top level list, call [`RaiseI
 > [!TIP]
 > Create the `CommandItem`s for the top-level commands before calling `RaiseItemsChanged()`. This will ensure that the new commands are available when Command Palette asks for the top-level commands. This will help keep the work being done in call to `TopLevelCommands()` method to a minimum.
 
-### Next up: [Display markdown content](using-markdown-content.md)
+### Next up: [Command Results](command-results.md)
 
 ## Related content
 
