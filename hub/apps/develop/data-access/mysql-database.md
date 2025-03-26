@@ -2,7 +2,6 @@
 title: Use a MySQL database in a Windows app
 description: Learn how to connect to a MySQL database from your Windows app, and test your connection using sample code.
 ms.date: 01/23/2025
-ms.collection: ce-skilling-ai-copilot
 ms.custom: copilot-scenario-highlight
 ms.topic: how-to
 keywords: windows, windows app sdk, MySQL, database, uwp, wpf, winforms, windows forms, winui
