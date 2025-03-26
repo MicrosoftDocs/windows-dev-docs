@@ -1,7 +1,6 @@
 ---
 title: PowerToys PowerRename utility for Windows
 description: A windows shell extension for bulk renaming of files
-ms.collection: ce-skilling-ai-copilot
 ms.custom: copilot-scenario-highlight
 ms.date: 01/23/2025
 ms.topic: concept-article
