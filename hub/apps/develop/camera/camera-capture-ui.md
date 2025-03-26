@@ -21,25 +21,35 @@ Create a new instance of **CameraCaptureUI**, passing in the [AppWindow.Id](/win
 
 Call [CaptureFileAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureui.capturefileasync) to launch the camera capture UI asynchronously. Use one of the values from the [CameraCaptureUIMode](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureuimode) to specify whether the UI should allow photo capture, video capture, or both. When **CaptureFileAsync** completes, it will return a [StorageFile](/uwp/api/windows.storage.storagefile) file object containing the captured photo or video. If the returned object is null it means that either the user cancelled the capture operation or an error occurred.
 
+The following example demonstrates launching the **CameraCaptureUI** for photo capture specifying the image format as PNG and disabling cropping. In this example the captured photo is set as the source for an [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control.
+
 ### [C#](#tab/csharp)
 
 ```csharp
-    var cameraCaptureUI = new CameraCaptureUI(this.AppWindow.Id);
-    cameraCaptureUI.PhotoSettings.Format = CameraCaptureUIPhotoFormat.Png;
-    cameraCaptureUI.PhotoSettings.AllowCropping = false;
+var cameraCaptureUI = new CameraCaptureUI(this.AppWindow.Id);
+cameraCaptureUI.PhotoSettings.Format = CameraCaptureUIPhotoFormat.Png;
+cameraCaptureUI.PhotoSettings.AllowCropping = false;
 
-    // Capture a photo asynchronously
-    StorageFile photo = await cameraCaptureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
+// Capture a photo asynchronously
+StorageFile photo = await cameraCaptureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
 
-    if (photo != null)
+if (photo != null)
+{
+    // Photo capture was successful
+
+    // Show the captured photo in a XAML Image control  
+    using (IRandomAccessStream fileStream = await photo.OpenAsync(Windows.Storage.FileAccessMode.Read))
     {
-        // Photo capture was successful
-    } else
-    {
-        // Photo capture failed or was cancelled
+        // Set the image source to the selected bitmap 
+        BitmapImage bitmapImage = new BitmapImage();
+        await bitmapImage.SetSourceAsync(fileStream);
+        iCapturedImage.Source = bitmapImage;
     }
-    CaptureVideo();
+} else
+{
+    // Photo capture failed or was cancelled
 }
+
 ```
 
 ### [C++/WinRT](#tab/cpp)
@@ -62,6 +72,13 @@ auto photo = co_await cameraUI.CaptureFileAsync(CameraCaptureUIMode::Photo);
 if (photo != nullptr)
 {
     // Photo capture was successful
+
+    // Show the captured photo in a XAML Image control  
+    IRandomAccessStream fileStream = co_await photo.OpenAsync(Windows::Storage::FileAccessMode::Read);
+    BitmapImage bitmapImage = BitmapImage();
+    co_await bitmapImage.SetSourceAsync(fileStream);
+    iCapturedImage().Source(bitmapImage);
+
 }
 else
 {
@@ -71,4 +88,93 @@ else
 
 ---
 
+The following example demonstrates launching the **CameraCaptureUI** for video capture specifying the maximum resolution as standard definition and disabling trimming. In this example the captured photo is set as the source for an [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control.
 
+### [C#](#tab/csharp)
+
+```csharp
+var cameraCaptureUI = new CameraCaptureUI(this.AppWindow.Id);
+cameraCaptureUI.VideoSettings.MaxResolution = CameraCaptureUIMaxVideoResolution.StandardDefinition;
+cameraCaptureUI.VideoSettings.AllowTrimming = true;
+StorageFile videoFile = await cameraCaptureUI.CaptureFileAsync(CameraCaptureUIMode.Video);
+
+if (videoFile != null)
+{
+    // Video capture was successful
+
+    // Show the captured video in a MediaPlayerElement control
+    mediaPlayerElement.Source = MediaSource.CreateFromStorageFile(videoFile);
+    mediaPlayerElement.MediaPlayer.Play();
+}
+else
+{
+    // Photo capture failed or was cancelled
+}
+```
+
+### [C++/WinRT](#tab/cpp)
+
+```cpp
+Microsoft::UI::WindowId windowId = this->AppWindow().Id();
+
+winrt::Microsoft::Windows::Media::Capture::CameraCaptureUI cameraUI(windowId);
+
+cameraUI.VideoSettings().MaxResolution(CameraCaptureUIMaxVideoResolution::StandardDefinition);
+cameraUI.VideoSettings().AllowTrimming(true);
+StorageFile videoFile = co_await cameraUI.CaptureFileAsync(CameraCaptureUIMode::Video);
+
+if (videoFile != nullptr)
+{
+    // Video capture was successful
+
+    // Show the captured video in a MediaPlayerElement control  
+    auto source = winrt::Windows::Media::Core::MediaSource::CreateFromStorageFile(videoFile);
+    mediaPlayerElement().Source(MediaSource::CreateFromStorageFile(videoFile));
+
+}
+else
+{
+    // Photo capture failed or was cancelled
+}
+```
+
+---
+
+The **CameraCaptureUI** creates randomized names for captured media files, so you may want to rename and move captured files to keep them organized. THe following example moves and renames a captured file.
+
+
+### [C#](#tab/csharp)
+
+```csharp
+StorageFile photo = await cameraCaptureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
+
+if (photo != null)
+{
+    // Move and rename captured photo
+    StorageFolder destinationFolder =
+    await ApplicationData.Current.LocalFolder.CreateFolderAsync("ProfilePhotoFolder",
+        CreationCollisionOption.OpenIfExists);
+
+    await photo.CopyAsync(destinationFolder, "ProfilePhoto.jpg", NameCollisionOption.ReplaceExisting);
+    await photo.DeleteAsync();
+}
+```
+
+### [C++/WinRT](#tab/cpp)
+
+```cpp
+auto photo = co_await cameraUI.CaptureFileAsync(CameraCaptureUIMode::Photo);
+
+
+if (photo != nullptr)
+{
+    // Move and rename captured photo
+    StorageFolder destinationFolder = co_await ApplicationData::Current().LocalFolder()
+        .CreateFolderAsync(L"ProfilePhotoFolder", CreationCollisionOption::OpenIfExists);
+
+    co_await photo.CopyAsync(destinationFolder, L"ProfilePhoto.jpg", NameCollisionOption::ReplaceExisting);
+    co_await photo.DeleteAsync();
+}
+```
+
+---
