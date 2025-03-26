@@ -23,12 +23,13 @@ To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd
 Command Palette features include:
 
 - Search for applications, folders or files
-- Search for running processes (previously known as [Window Walker](https://github.com/betsegaw/windowwalker/))
-- Invoke Shell Plugin using `>` (for example, `> Shell:startup` will open the Windows startup folder)
+- Run commands using `>` (for example, `> cmd` will launch Command prompt, or `> Shell:startup` will open the Windows startup folder)
+- Switch between open windows (previously known as [Window Walker](https://github.com/betsegaw/windowwalker/))
 - Do a simple calculation using calculator
 - Add bookmarks for frequently visited webpages
 - Execute system commands
 - Open web pages or start a web search
+- Rich extensions to add additional commands and features easily
 
 ## Settings
 
@@ -46,5 +47,5 @@ The following general options are available within the Command Palette settings 
 ## Related content
 
 - [PowerToys Run](../run.md)
-- [Extensibility overview](creating-an-extension.md)
+- [Extensibility overview](extensibility-overview.md)
 - [Extension samples](samples.md)

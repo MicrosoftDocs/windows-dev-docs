@@ -25,3 +25,7 @@ The arguments for the command. This should be an instance of [GoToPageArgs](goto
 ## Returns
 
 A [CommandResult](commandresult.md) instance.
+
+## Example
+
+See [Command Results](../command-results.md) for an example of how to use this.

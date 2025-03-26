@@ -1,62 +1,80 @@
 ---
-title: Command Palette Extensibility
-description: The Command Palette provides a full extension model, allowing you to create custom experiences for the palette. Learn how to create an extension and publish it.
-ms.date: 2/28/2025
+title: Creating an extension
+description: The Command Palette provides a full extension model, allowing you to create custom experiences for the palette. Learn how to create an extension
+ms.date: 3/23/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
 ---
 
-# Extensibility overview
+# Creating an extension
 
-The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette. This document provides information about how to create an extension and publish it. It also includes a sample extension that demonstrates the extensibility model.
+The fastest way to get started writing extensions is from the Command Palette itself. Just run the "Create a new extension" command, fill out the fields to populate the template project, and you should be ready to start.
 
-## Registering your extension
+The form will ask you for the following information:
+* **ExtensionName**: The name of your extension. This will be used as the name of the project and the name of the class that implements your commands. Make sure it's a valid C# class name - it shouldn't have any spaces or special characters, and should start with a capital letter.
+* **Extension Display Name**: The name of your extension as it will appear in the Command Palette. This can be a more human-readable name. 
+* **Output Path**: The folder where the project will be created. 
+  * The project will be created in a subdirectory of the path you provided. 
+  * If this path doesn't exist, it will be created for you.
 
-Extensions can register themselves with the Command Palette using their `.appxmanifest`. As an example:
+![The "Create a new extension" page of the Windows Command Palette](../../images/command-palette/create-extension-page.png)
 
-```xml
-<Extensions>
-    <com:Extension Category="windows.comServer">
-        <com:ComServer>
-            <com:ExeServer Executable="ExtensionName.exe" Arguments="-RegisterProcessAsComServer" DisplayName="Sample Extension">
-                <com:Class Id="<Extension CLSID Here>" DisplayName="Sample Extension" />
-            </com:ExeServer>
-        </com:ComServer>
-    </com:Extension>
-    <uap3:Extension Category="windows.appExtension">
-        <uap3:AppExtension Name="com.microsoft.commandpalette"
-                           Id="YourApplicationUniqueId"
-                           PublicFolder="Public"
-                           DisplayName="Sample Extension"
-                           Description="Sample Extension for Run">
-            <uap3:Properties>
-                <CmdPalProvider>
-                    <Activation>
-                        <CreateInstance ClassId="<Extension CLSID Here>" />
-                    </Activation>
-                    <SupportedInterfaces>
-                        <Commands />
-                    </SupportedInterfaces>
-                </CmdPalProvider>
-            </uap3:Properties>
-        </uap3:AppExtension>
-    </uap3:Extension>
-</Extensions>
+Once you submit the form, Command Palette will automatically generate the project for you. At this point, your projects structure should look like the following:
+
+```plaintext
+ExtensionName/
+│   Directory.Build.props
+│   Directory.Packages.props
+│   nuget.config
+│   ExtensionName.sln
+└───ExtensionName
+    │   app.manifest
+    │   Package.appxmanifest
+    │   Program.cs
+    │   ExtensionName.cs
+    │   ExtensionName.csproj
+    │   ExtensionNameCommandsProvider.cs
+    ├───Assets
+    │   <A bunch of placeholder images>
+    ├───Pages
+    │   ExtensionNamePage.cs
+    └───Properties
+        │   launchSettings.json
+        └───PublishProfiles
+                win-arm64.pubxml
+                win-x64.pubxml
 ```
 
-### Important notes
+(with `ExtensionName` replaced with the name you provided)
 
-Some notable elements about the manifest example:
+From here, you can immediately build the project and run it. Once your package is deployed and running, Command Palette will automatically discover your extension and load it into the palette. 
 
-- The application must specify a `Extensions.comExtension.ComServer` to host their COM class. This allows for the OS to register that GUID as a COM class we can instantiate.
-  - Make sure that this CLSID is unique, and matches the one in your application
-- The application must specify a `Extensions.uap3Extension.AppExtension` with the Name set to `com.microsoft.commandpalette`. This is the unique identifier which DevPal can use to find it's extensions.
-- In the `Properties` of your `AppExtension`, you must specify a `CmdPalProvider` element. This is where you specify the CLSID of the COM class that DevPal will instantiate to interact with your extension. Also, you specify which interfaces you support.
+> [!TIP]
+> Make sure you _deploy_ your app! Just **build**ing your application won't update the package in the same way that deploying it will.
 
-Currently, only `Commands` is supported. If we need to add more in the future, they will be added to the `SupportedInterfaces` element.
+> [!WARNING]
+> Running "ExtensionName (Unpackaged)" from Visual Studio will not **deploy** your app package.
+> 
+> If you're using `git` for source control, and you used the standard `.gitignore` file for C#, you'll want to remove the following two lines from your `.gitignore` file:
+> ```
+> **/Properties/launchSettings.json
+> *.pubxml
+> ```
+> These files are used by WinAppSdk to deploy your app as a package. Without it, anyone who clones your repo won't be able to deploy your extension.
+
+You should be able to see your extension in the Command Palette at the end of the list of commands. Entering that command should take you to the page for your command, and you should see a single command that says "TODO: Implement your extension here".
+
+![A screenshot of the empty extension template, running in the command palette](../../images/command-palette/initial-created-extension-list.png)
+
+Congrats! You've made your first extension! Now let's go ahead and actually add some commands to it.
+
+When you make changes to your extension, you can rebuild your project and deploy it again. Command Palette will **not** notice changes to packages that are re-ran through Visual Studio, so you'll need to manually run the "**Reload**" command to force Command Palette to re-instantiate your extension.
+
+### Next up: [Add commands to your extension](adding-commands.md)
 
 ## Related content
 
 - [PowerToys Command Palette utility](overview.md)
+- [Extensibility overview](extensibility-overview.md)
 - [Extension samples](samples.md)

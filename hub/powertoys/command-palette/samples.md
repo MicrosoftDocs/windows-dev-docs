@@ -9,29 +9,99 @@ no-loc: [PowerToys, Windows, Insider]
 
 # Extension samples
 
-The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette. This document provides information about how to create an extension and publish it. It also includes a sample extension that demonstrates the extensibility model.
+The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette. 
 
-## Add a command
+For the most up-to-date samples, check out [the samples project on GitHub](https://github.com/microsoft/PowerToys/tree/main/src/modules/cmdpal/Exts/SamplePagesExtension). This contains up-to-date samples of everything that's possible with Command Palette.
 
-Create a class that implements [ICommand](./microsoft-commandpalette-extensions/icommand.md) and implement the [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand_invoke.md) method. This method will be called whtn the user selects the command in the Command Palette.
+## Create a command to do something
+
+Create a class that implements [IInvokableCommand](./microsoft-commandpalette-extensions/icommand.md) and implement the [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand_invoke.md) method. This method will be called whtn the user selects the command in the Command Palette.
 
 ```csharp
-class MyPage : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
-    public class MyPage()
+class MyCommand : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
+    public class MyCommand()
     {
-        Name = "My Page Name";
-        Icon = "PATH_TO_ICO";
+        Name = "Do it"; // A short name for the command
+        Icon = new("\uE945"); // Segoe UI LightningBolt
     }
     
-    // Open MY_WEBSITE_URL in the user's default web browser
+    // Open GitHub in the user's default web browser
     public ICommandResult Invoke() {
-        Process.Start(new ProcessStartInfo("MY_WEBSITE_URL") { UseShellExecute = true });
+        Process.Start(new ProcessStartInfo("https://github.com") { UseShellExecute = true });
+
+        // Hides the Command Palette window, without changing the page that's open
         return CommandResult.Hide();
     }
+}
+```
+
+## Create a page of commands
+
+```csharp
+using Microsoft.CommandPalette.Extensions.Toolkit;
+
+class MyPage : ListPage {
+    public MyPage()
+    {
+        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Title = "My sample extension";
+        Name = "Open";
+    }
+    
+    public override IListItem[] GetItems()
+    {
+        return [
+            new ListItem(new OpenUrlCommand("https://github.com"))
+            {
+                Title = "Open GitHub",
+            },
+            new ListItem(new OpenUrlCommand("https://learn.microsoft.com"))
+            {
+                Title = "Open Microsoft Learn",
+            },
+            new ListItem(new OpenUrlCommand("https://github.com/microsoft/PowerToys"))
+            {
+                Title = "Open PowerToys on GitHub",
+            },
+            new ListItem(new CopyTextCommand("Foo bar"))
+            {
+                Title = "Copy 'Foo bar' to the clipboard",
+            },
+        ];
+    }
+}
+```
+
+## Icons
+
+Icons using the [`IIconInfo`](./microsoft-commandpalette-extensions/iiconinfo.md) class can be specified in a number of ways. Here are some examples:
+
+```csharp
+
+using Microsoft.CommandPalette.Extensions.Toolkit;
+
+namespace ExtensionName;
+
+internal sealed class Icons
+{
+    // Icons can be specified as a Segoe Fluent icon, ...
+    internal static IconInfo OpenFile { get; } = new("\uE8E5"); // OpenFile
+
+    // ... or as an emoji, ...
+    internal static IconInfo OpenFileEmoji { get; } = new("📂");
+
+    // ... Or as a path to an image file, ...
+    internal static IconInfo FileExplorer { get; } = IconHelpers.FromRelativePath("Assets\\FileExplorer.png");
+
+    // ... which can be on a remote server, or svg's, or ...
+    internal static IconInfo FileExplorerSvg { get; } = new("https://raw.githubusercontent.com/microsoft/PowerToys/refs/heads/main/src/modules/cmdpal/Exts/Microsoft.CmdPal.Ext.Indexer/Assets/FileExplorer.svg");
+
+    // Or they can be embedded in a exe / dll:
+    internal static IconInfo FolderIcon { get; } =  new("%systemroot%\\system32\\system32\\shell32.dll,3");
 }
 ```
 
 ## Related content
 
 - [PowerToys Command Palette utility](overview.md)
-- [Extensibility overview](creating-an-extension.md)
+- [Extensibility overview](extensibility-overview.md)

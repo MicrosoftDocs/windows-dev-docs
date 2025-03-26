@@ -38,3 +38,7 @@ The **CommandResult** class is used to specify the result of a command execution
 | [KeepOpen()](commandresult_keepopen.md) | Do nothing. This leaves the palette in its current state, with the current page stack and query. |
 | [ShowToast(String)](commandresult_showtoast_string.md) | Display a transient desktop-level message to the user. Creates a new [CommandResult](commandresult.md) with **Args** set to a new [ToastArgs](toastargs.md) object with its [Message](toastargs.md#properties) set to **String**. |
 | [ShowToast(ToastArgs)](commandresult_showtoast_toastargs.md) | Display a transient desktop-level message to the user. Creates a new `CommandResult` instance with **Args** set to [ToastArgs](toastargs.md). |
+
+## Example
+
+See [Command Results](../command-results.md) for an example of how to use this.

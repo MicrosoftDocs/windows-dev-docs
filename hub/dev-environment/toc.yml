@@ -127,8 +127,32 @@ items:
           href: ../powertoys/command-palette/overview.md
         - name: Developer docs
           items:
-            - name: Creating an extension
-              href: ../powertoys/command-palette/creating-an-extension.md
+            - name: Extensibility overview  
+              href: ../powertoys/command-palette/extensibility-overview.md
+            - name: Authoring extensions
+              items:
+                - name: Creating an extension  
+                  href: ../powertoys/command-palette/creating-an-extension.md
+                - name: Adding commands  
+                  href: ../powertoys/command-palette/adding-commands.md
+                - name: Update a list of commands
+                  href: ../powertoys/command-palette/update-a-list-of-commands.md
+                - name: Add top-level commands to your extension
+                  href: ../powertoys/command-palette/add-top-level-commands-to-your-extension.md
+                - name: Command results
+                  href: ../powertoys/command-palette/command-results.md
+                - name: Display markdown content
+                  href: ../powertoys/command-palette/using-markdown-content.md
+                - name: Get user input with forms
+                  href: ../powertoys/command-palette/using-form-pages.md
+                # - name: Handle the search text
+                #   href: ../powertoys/command-palette/dynamic-lists.md
+                # - name: Adding details
+                #   href: ../powertoys/command-palette/add-details.md
+                # - name: Tags
+                #   href: ../powertoys/command-palette/tags.md
+                # - name: "Advanced: Adding an extension to your package" 
+                #   href: ../powertoys/command-palette/adding-an-extension-to-your-package.md
             - name: Publishing your extension
               href: ../powertoys/command-palette/publish-extension.md
             - name: Extension samples
