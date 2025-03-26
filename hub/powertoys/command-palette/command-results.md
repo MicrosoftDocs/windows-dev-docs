@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 **Previous**: [Add top-level commands to your extension](add-top-level-commands-to-your-extension.md)
 
-[IInvokableCommand](./microsoft-commandpalette-extensions/iinvokablecommand.md)s are the fundamental units of "do something" in the Command Palette. The [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand.md) method is called when the user selects the command, and it's where you _do something_ in your extension. The **Invoke** method returns an **ICommandResult**, which tells the Command Palette what to do after the command has been invoked. This page details what's possible with each type of command result.
+An [IInvokableCommand](./microsoft-commandpalette-extensions/iinvokablecommand.md) is a fundamental unit of *do something* in the Command Palette. The [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand.md) method is called when the user selects the command, and it's where you *do something* in your extension. The **Invoke** method returns an **ICommandResult**, which tells the Command Palette what to do after the command has been invoked. This page details what's possible with each type of command result.
 
 The toolkit provides a number of helper methods to create command results. These are all static methods on the **CommandResult** class. Calling these methods on their own won't do anything. You must return those objects as the result of a **Invoke** method, for Command Palette to handle them. 
 
