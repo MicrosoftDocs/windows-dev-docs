@@ -42,7 +42,7 @@ Call [CaptureFileAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.med
 }
 ```
 
-### [C++/WinRT](#tab/csharp)
+### [C++/WinRT](#tab/cpp)
 
 ```cpp
 // Get the WindowId for the window
