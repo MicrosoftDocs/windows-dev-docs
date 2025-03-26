@@ -2,7 +2,7 @@
 title: Display markdown content
 description: Learn how to display markdown in your Command Palette extension.
 ms.date: 3/23/2025
-ms.topic: concept-article
+ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
 ---
@@ -11,9 +11,11 @@ no-loc: [PowerToys, Windows, Insider]
 
 **Previous**: [Command Results](command-results.md)
 
-So far, we've only shown how to display a list of commands in a `ListPage`. However, you can also display rich content in your extension, such as markdown. This can be useful for showing documentation, or a preview of a document.
+So far, we've only shown how to display a list of commands in a **ListPage**. However, you can also display rich content in your extension, such as markdown. This can be useful for showing documentation, or a preview of a document.
 
-[`IContentPage`](./microsoft-commandpalette-extensions/icontentpage.md) (and its toolkit implementation, [`ContentPage`](./microsoft-commandpalette-extensions-toolkit/contentpage.md)) is the base for displaying all types of rich content in the Command Palette. To display markdown content, you can use the [`MarkdownContent`](./microsoft-commandpalette-extensions-toolkit/markdowncontent.md) class.
+## Working with markdown content
+
+[IContentPage](./microsoft-commandpalette-extensions/icontentpage.md) (and its toolkit implementation, [ContentPage](microsoft-commandpalette-extensions-toolkit/contentpage.md)) is the base for displaying all types of rich content in the Command Palette. To display markdown content, you can use the [MarkdownContent](microsoft-commandpalette-extensions-toolkit/markdowncontent.md) class.
 
 As a simple example, we can create the following page:
 
@@ -35,7 +37,7 @@ public class MarkdownPage : ContentPage
 }
 ```
 
-Here, we're creating a new `MarkdownPage` that displays a simple markdown string. The `MarkdownContent` class takes a string of markdown content, and renders it in the Command Palette. 
+In this example, a new **MarkdownPage** that displays a simple markdown string is created. The **MarkdownContent** class takes a string of markdown content and renders it in the Command Palette. 
 
 You can also add multiple blocks of content to a page. For example, you can add two blocks of markdown content:
 
@@ -53,7 +55,7 @@ This allows you to mix-and-match different types of content on a single page.
 
 ## Adding commands
 
-You can also add commands to a `ContentPage`. This allows you to add additional commands to be invoked by the user, while in the context of the content. For example, if you had a page that displayed a document, you could add a command to open the document in File Explorer:
+You can also add commands to a **ContentPage**. This allows you to add additional commands to be invoked by the user, while in the context of the content. For example, if you had a page that displayed a document, you could add a command to open the document in File Explorer:
 
 ```csharp 
 
@@ -76,7 +78,6 @@ public class MarkdownExamplePage : ContentPage
         ];
     }
 }
-
 ```
 
 ### Next up: [Get user input with forms](using-form-pages.md)

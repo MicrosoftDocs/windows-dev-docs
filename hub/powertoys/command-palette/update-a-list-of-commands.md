@@ -2,7 +2,7 @@
 title: Update a list of commands
 description: Learn how to update the elements in your Command Palette extension.
 ms.date: 3/23/2025
-ms.topic: concept-article
+ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
 ---
@@ -15,7 +15,7 @@ So far we've shown how to return a list of static items in your extension. Howev
 
 ## Updating a command
 
-Almost all extension objects in the Command Palette implement the `IPropChanged` interface. This allows them to notify the Command Palette when they've changed, and the Command Palette will update the UI to reflect those changes. If you're using the toolkit implementations, this interface has already been implemented for you for properties that support it.
+Almost all extension objects in the Command Palette implement the **IPropChanged** interface. This allows them to notify the Command Palette when they've changed, and the Command Palette will update the UI to reflect those changes. If you're using the toolkit implementations, this interface has already been implemented for you for properties that support it.
 
 As a simple example, you can update the title of the page. To do this, you can add a command which will simply update the title of the page.
 
@@ -36,9 +36,9 @@ public override IListItem[] GetItems()
 }
 ```
 
-Here, we're using `AnonymousCommand` to create a command that will update the title of the page. `AnonymousCommand` is a helper that's useful for creating simple, lightweight commands that don't need to be reused.
+Here, we're using **AnonymousCommand** to create a command that will update the title of the page. **AnonymousCommand** is a helper that's useful for creating simple, lightweight commands that don't need to be reused.
 
-You can of course create custom `ListItem`s too:
+You can of course create custom **ListItem** objects too:
 
 ```csharp
 internal sealed partial class IncrementingListItem : ListItem
@@ -80,9 +80,10 @@ You're on your way to creating your own idle clicker game, as a Command Palette 
 
 You can also change the list of items on the page. This can be useful for pages that load results asynchronously, or for pages that show different commands based on the state of the app.
 
-To do this, you can use the `RaiseItemsChanged` method on the `ListPage` object. This will notify the Command Palette that the list of items has changed, and it should re-fetch the list of items. As an example, let's make the `IncrementingListItem` from above update the list of items on the page.
+To do this, you can use the **RaiseItemsChanged** method on the **ListPage** object. This will notify the Command Palette that the list of items has changed, and it should re-fetch the list of items. As an example, let's make the **IncrementingListItem** from above update the list of items on the page.
 
 Update your list item to take a reference to the page, and add a method to increment the count:
+
 ```csharp
 internal sealed partial class IncrementingListItem : ListItem
 {
@@ -121,11 +122,11 @@ internal void Increment()
 private List<ListItem> _items;
 ```
 
-Now, every time you perform one of the `IncrementingListItem` commands, the list of items on the page will update to add another item. We're using a single `List` owned by the page to own all the items. Notably, we're creating the new items in the `Increment` method, before calling `RaiseItemsChanged`. The `Invoke` of a `IInvokableCommand` can take as long as you'd like. All your code is running in a separate process from the Command Palette, so you won't block the UI. But constructing the items before calling `RaiseItemsChanged` will help keep your extension _feeling_ more responsive.
+Now, every time you perform one of the **IncrementingListItem** commands, the list of items on the page will update to add another item. We're using a single **List** owned by the page to own all the items. Notably, we're creating the new items in the **Increment** method, before calling **RaiseItemsChanged**. The **Invoke** of a **IInvokableCommand** can take as long as you'd like. All your code is running in a separate process from the Command Palette, so you won't block the UI. But constructing the items before calling **RaiseItemsChanged** will help keep your extension *feeling* more responsive.
 
 ## Showing a loading spinner
 
-Everything so far has been pretty instantaneous. Many extensions however may need to do some work that takes a lot longer. In that case, you can set `Page.IsLoading` to `true` to show a loading spinner. This will help indicate that the extension is doing something in the background.
+Everything so far has been pretty instantaneous. Many extensions however may need to do some work that takes a lot longer. In that case, you can set **Page.IsLoading** to `true` to show a loading spinner. This will help indicate that the extension is doing something in the background.
 
 ```csharp
 internal void Increment()
@@ -141,7 +142,7 @@ internal void Increment()
 }
 ```
 
-Best practice is to set `IsLoading` to `true` before starting the work. Then do all the work to build all the new `ListItems` you need to display to the user. Then, once the items are ready, call `RaiseItemsChanged` and set `IsLoading` back to `false`. This will ensure that the loading spinner is shown for the entire duration of the work, and that the UI is updated as soon as the work is done (without waiting for your extension to construct new `ListItem` objects).
+Best practice is to set **IsLoading** to `true` before starting the work. Then do all the work to build all the new **ListItems** you need to display to the user. Then, once the items are ready, call **RaiseItemsChanged** and set **IsLoading** back to `false`. This will ensure that the loading spinner is shown for the entire duration of the work, and that the UI is updated as soon as the work is done (without waiting for your extension to construct new **ListItem** objects).
 
 ### Next up: [Add top-level commands to your extension](add-top-level-commands-to-your-extension.md)
 

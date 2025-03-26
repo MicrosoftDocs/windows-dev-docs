@@ -28,7 +28,7 @@ For more detailed instructions, you can follow these pages:
 
 ## Extension details
 
-Command Palette defines a WinRT API ([`Microsoft.CommandPalette.Extensions`](./microsoft-commandpalette-extensions/microsoft-commandpalette-extensions.md)), which is how extensions can communicate with Command Palette. 
+Command Palette defines a WinRT API ([Microsoft.CommandPalette.Extensions](./microsoft-commandpalette-extensions/microsoft-commandpalette-extensions.md)), which is how extensions can communicate with Command Palette. 
 
 Command Palette will use the Package Catalog to find apps that list themselves as an `windows.appExtension` for `com.microsoft.commandpalette`.
 

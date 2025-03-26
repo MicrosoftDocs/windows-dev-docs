@@ -15,7 +15,7 @@ For the most up-to-date samples, check out [the samples project on GitHub](https
 
 ## Create a command to do something
 
-Create a class that implements [IInvokableCommand](./microsoft-commandpalette-extensions/icommand.md) and implement the [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand_invoke.md) method. This method will be called whtn the user selects the command in the Command Palette.
+Create a class that implements [IInvokableCommand](microsoft-commandpalette-extensions/icommand.md) and implement the [Invoke](microsoft-commandpalette-extensions/iinvokablecommand_invoke.md) method. This method will be called whtn the user selects the command in the Command Palette.
 
 ```csharp
 class MyCommand : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
@@ -36,6 +36,8 @@ class MyCommand : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
 ```
 
 ## Create a page of commands
+
+The following example shows how to create a page of commands. This page will be shown when the user selects the "Open" command in the Command Palette:
 
 ```csharp
 using Microsoft.CommandPalette.Extensions.Toolkit;
@@ -74,7 +76,7 @@ class MyPage : ListPage {
 
 ## Icons
 
-Icons using the [`IIconInfo`](./microsoft-commandpalette-extensions/iiconinfo.md) class can be specified in a number of ways. Here are some examples:
+Icons using the [IIconInfo](./microsoft-commandpalette-extensions/iiconinfo.md) class can be specified in a number of ways. Here are some examples:
 
 ```csharp
 

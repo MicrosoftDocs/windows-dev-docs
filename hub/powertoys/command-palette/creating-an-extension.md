@@ -11,12 +11,15 @@ no-loc: [PowerToys, Windows, Insider]
 
 The fastest way to get started writing extensions is from the Command Palette itself. Just run the "Create a new extension" command, fill out the fields to populate the template project, and you should be ready to start.
 
+## Create a new extension
+
 The form will ask you for the following information:
-* **ExtensionName**: The name of your extension. This will be used as the name of the project and the name of the class that implements your commands. Make sure it's a valid C# class name - it shouldn't have any spaces or special characters, and should start with a capital letter.
-* **Extension Display Name**: The name of your extension as it will appear in the Command Palette. This can be a more human-readable name. 
-* **Output Path**: The folder where the project will be created. 
-  * The project will be created in a subdirectory of the path you provided. 
-  * If this path doesn't exist, it will be created for you.
+
+- **ExtensionName**: The name of your extension. This will be used as the name of the project and the name of the class that implements your commands. Make sure it's a valid C# class name - it shouldn't have any spaces or special characters, and should start with a capital letter.
+- **Extension Display Name**: The name of your extension as it will appear in the Command Palette. This can be a more human-readable name. 
+- **Output Path**: The folder where the project will be created. 
+  - The project will be created in a subdirectory of the path you provided. 
+  - If this path doesn't exist, it will be created for you.
 
 ![The "Create a new extension" page of the Windows Command Palette](../../images/command-palette/create-extension-page.png)
 
@@ -63,7 +66,7 @@ From here, you can immediately build the project and run it. Once your package i
 > ```
 > These files are used by WinAppSdk to deploy your app as a package. Without it, anyone who clones your repo won't be able to deploy your extension.
 
-You should be able to see your extension in the Command Palette at the end of the list of commands. Entering that command should take you to the page for your command, and you should see a single command that says "TODO: Implement your extension here".
+You should be able to see your extension in the Command Palette at the end of the list of commands. Entering that command should take you to the page for your command, and you should see a single command that says `TODO: Implement your extension here`.
 
 ![A screenshot of the empty extension template, running in the command palette](../../images/command-palette/initial-created-extension-list.png)
 
