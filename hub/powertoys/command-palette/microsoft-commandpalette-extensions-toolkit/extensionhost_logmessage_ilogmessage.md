@@ -1,6 +1,6 @@
 ---
 title: ExtensionHost.LogMessage(ILogMessage) Method
-description: The LogMessage method logs a message to the command palette's output window.
+description: The LogMessage method logs a message to the command palette's output window, accepting an ILogMessage object.
 ms.date: 2/25/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]

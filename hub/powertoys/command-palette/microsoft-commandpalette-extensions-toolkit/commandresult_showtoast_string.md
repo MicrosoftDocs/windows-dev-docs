@@ -1,6 +1,6 @@
 ---
 title: CommandResult.ShowToast(String) Method
-description: The ShowToast method displays a transient desktop-level message to the user.
+description: The ShowToast method displays a transient desktop-level message to the user, accepting a string message.
 ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]

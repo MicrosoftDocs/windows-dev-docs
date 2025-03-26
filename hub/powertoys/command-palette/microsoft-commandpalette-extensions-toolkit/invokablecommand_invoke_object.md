@@ -1,6 +1,6 @@
 ---
 title: InvokableCommand.Invoke(Object) Method
-description: The Invoke method executes the command associated with the InvokableCommand instance and keeps the command palette open.
+description: The Invoke method executes the command associated with the InvokableCommand instance and keeps the command palette open, accepting an object as a parameter.
 ms.date: 2/11/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]

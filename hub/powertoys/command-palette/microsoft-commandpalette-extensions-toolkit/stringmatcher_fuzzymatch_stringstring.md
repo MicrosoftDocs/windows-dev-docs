@@ -1,6 +1,6 @@
 ---
 title: StringMatcher.FuzzyMatch(String, String) Method
-description: The StringMatcher.FuzzyMatch method performs a fuzzy match between two strings to determine their similarity.
+description: The StringMatcher.FuzzyMatch method performs a fuzzy match between two strings to determine their similarity, accepting parameters of strings to compare.
 ms.date: 2/26/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]

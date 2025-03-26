@@ -1,6 +1,6 @@
 ---
 title: ExtensionHost.LogMessage(String) Method
-description: The LogMessage method logs a message to the command palette's output window.
+description: The LogMessage method logs a message to the command palette's output window, accepting a string message.
 ms.date: 2/25/2025
 ms.topic: reference
 no-loc: [PowerToys, Windows, Insider]
