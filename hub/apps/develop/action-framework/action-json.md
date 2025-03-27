@@ -19,7 +19,7 @@ Describes the format of the action definition JSON file format for Action Framew
   "actions": [ 
     { 
       "id": "Contoso.SampleGreeting", 
-      "description": "A simple greeting action.", 
+      "description": "Send greeting with Contoso", 
       "icon": "ms-resource//...", 
       "inputs": [ 
         { 
@@ -50,13 +50,13 @@ Describes the format of the action definition JSON file format for Action Framew
           "uri": "contoso://greetUser? userName=${UserFriendlyName.Text}&petName=${PetName.Text}", 
         }, 
         "where": [ 
-          "${UserFriendlyName.Text.Length > 3}" 
+          "${UserFriendlyName.Length > 3}" 
         ] 
       } 
     }, 
     { 
       "id": "Contoso.SampleGetText", 
-      "description": "Summarize a file", 
+      "description": "Summarize file with Contoso", 
       "icon": "ms-resource://...", 
       "inputs": [ 
         { 
@@ -144,6 +144,7 @@ The **ActionEntityKind** enumeration specifies the types of entities that are su
 | "File"  | Includes all file types that are not supported by photo or document entity types. |
 | "Photo" | Image file types. Supported image file extensions are ".jpg", ".jpeg", and ".png" |
 | "Document" | Document file types. Supported document file extensions are ".doc", ".docx", ".pdf", ".txt" |
+| "Text" | Supports strings of text |
 
 ## Entity properties
 
@@ -180,21 +181,11 @@ The *Photo* entity supports all of the properties of *File* in addition to the f
 | Property | Type | Description |
 |----------|------|-------------|
 | "Text" | string | The full text. |
-| "TextFormat" | ActionEntityTextFormat | The format of the text. |
 | "ShortText" | string | A shortened version of the text, suitable for UI display. |
 | "Title" | string | The title of the text. |
 | "Description" | string | A description of the text. |
 | "Length" | double | The length of the text in characters. |
-| "WordCount" | double | The number of words in the text. |  
-
-## ActionEntityKind enumeration
-
-The **ActionEntityTextFormat** enumeration specifies the types text formatting recognized by the "Text.TextFormat" entity property.
-
-| Entity kind string | Description |
-|-------|------------|-------------|
-| "Plain"  | Plain text. |
-| "Markdown" | Markdown formatted text. |
+| "WordCount" | double | The number of words in the text. | 
 
 ## Where clauses
 
