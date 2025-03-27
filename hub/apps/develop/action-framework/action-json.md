@@ -1,6 +1,6 @@
 ---
-title: Action JSON schema for Windows Copilot Action Framework providers
-description: Describes the format of the action definition JSON file format for Windows Copilot Action Framework.
+title: Action definition JSON schema for Windows Copilot Runtime Action providers
+description: Describes the format of the action definition JSON file format for Windows Copilot Runtime Action providers.
 ms.topic: article
 ms.date: 02/04/2025
 ms.localizationpriority: medium
@@ -8,9 +8,9 @@ ms.localizationpriority: medium
 
 
 
-# Action JSON schema for Windows Copilot Action Framework providers
+# Action definition JSON schema for Windows Copilot Runtime Action providers
 
-Describes the format of the action definition JSON file format for Action Framework. This file must be included in your project with the **Build Action** set to "Content" and **Copy to Output Directory** set to “Copy if newer”. Specify the package-relative path to the JSON file in your package manifest XML file. For more information, see [Action provider package manifest XML format](action-provider-manifest.md).
+Describes the format of the action definition JSON file format for Windows Copilot Runtime Actions. This file must be included in your project with the **Build Action** set to "Content" and **Copy to Output Directory** set to “Copy if newer”. Specify the package-relative path to the JSON file in your package manifest XML file. For more information, see [Action provider package manifest XML format](action-provider-manifest.md).
 
 ## Example action definition JSON file
 
@@ -137,7 +137,7 @@ The tables below describe the properties of the action definition JSON file.
 
 ## ActionEntityKind enumeration
 
-The **ActionEntityKind** enumeration specifies the types of entities that are supported by the Action Framework. In the context of a JSON action definition, the entity kinds are string literals that are case-sensitive.
+The **ActionEntityKind** enumeration specifies the types of entities that are supported by the Windows Copilot Runtime Actions. In the context of a JSON action definition, the entity kinds are string literals that are case-sensitive.
 
 | Entity kind string | Description |
 |-------|------------|-------------|

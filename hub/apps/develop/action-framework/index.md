@@ -1,12 +1,12 @@
 ---
-title: Action Framework providers
-description: Learn about Action Framework providers for Windows apps. 
+title: Windows Copilot Runtime Actions providers
+description: Learn about Windows Copilot Runtime Actions providers for Windows apps. 
 ms.topic: article
 ms.date: 02/05/2025
 ms.localizationpriority: medium
 ---
 
-# Action Framework providers
+# Windows Copilot Runtime Actions providers
 
 TBD - Overview content
 
@@ -20,5 +20,5 @@ When building AI backed actions, it is your responsibility as the Action author 
 
 ## Related articles
 
-[Action JSON schema for Action Framework providers](action-json.md)
-
+[Action definition JSON schema for Windows Copilot Runtime Actions providers](action-json.md)
+[Windows Copilot Runtime Actions provider package manifest XML format](action-provider-manifest.md)

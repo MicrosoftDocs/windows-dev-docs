@@ -1,14 +1,14 @@
 ---
-title: Action provider package manifest XML format
-description: Describes the package manifest XML format for action providers. 
+title: Windows Copilot Runtime Action provider package manifest XML format
+description: Describes the package manifest XML format for Windows Copilot Runtime Actions providers. 
 ms.topic: article
 ms.date: 02/05/2024
 ms.localizationpriority: medium
 ---
 
-# Action provider package manifest XML format
+# Windows Copilot Runtime Action provider package manifest XML format
 
-This article describes the package manifest XML format for action providers for the Windows Copilot Action Framework.
+This article describes the package manifest XML format for Windows Copilot Runtime Actions.
 
 ## App extension
 
@@ -16,7 +16,7 @@ The app package manifest file supports many different extensions and features fo
 
 Action providers should include the [uap3:Properties](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-properties-manual) as the child of **uap3:AppExtension**. The package manifest schema does not enforce the structure of the **uap3:Properties** element other than requiring well-formed XML. 
 
-Action providers must provide a **Registration** element which specifies the path to the action definition JSON file. For more information, see [Action JSON schema for Action Framework providers](action-json.md).
+Action providers must provide a **Registration** element which specifies the path to the action definition JSON file. For more information, see [Action JSON schema for Windows Copilot Action providers](action-json.md).
 
 ```xml
 <uap3:Extension Category="windows.appExtension"> 
