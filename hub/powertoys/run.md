@@ -264,16 +264,17 @@ The plugin includes a setting where custom formats can be defined. Custom format
 | Format pattern | Description |
 | :--- | :--- |
 | Standard pattern like `hh:mm:ss`. |  Please see this [page](/dotnet/standard/base-types/custom-date-and-time-format-strings) for more information.
-| `DOW`| Number of the day in the week. |
-| `WOM`| Number of week in the month. |
-| `WOY`| Number of the week in the year. |
-| `EAB`| Era abbreviation. |
-| `WFT`| Windows file time as number. |
-| `UXT`| Unix time stamp as number. |
-| `UMS`| Unix time stamp in milliseconds  as number. |
-| `OAD`| OLE Automation date as number. |
-| `EXC`| Excel's 1900 based date value as number. |
-| `EXF`| Excel's 1904 based date value as number. |
+| `DOW` | Number of the day in the week. |
+| `DIM` | Days in the month. |
+| `WOM` | Number of week in the month. |
+| `WOY` | Number of the week in the year. |
+| `EAB` | Era abbreviation. |
+| `WFT` | Windows file time as number. |
+| `UXT` | Unix time stamp as number. |
+| `UMS` | Unix time stamp in milliseconds  as number. |
+| `OAD` | OLE Automation date as number. |
+| `EXC` | Excel's 1900 based date value as number. |
+| `EXF` | Excel's 1904 based date value as number. |
 
 ### Unit converter plugin
 
