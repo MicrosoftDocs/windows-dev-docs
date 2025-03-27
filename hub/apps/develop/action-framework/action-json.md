@@ -47,7 +47,7 @@ Describes the format of the action definition JSON file format for Windows Copil
       {
         { 
           "type": "Uri", 
-          "uri": "contoso://greetUser? userName=${UserFriendlyName.Text}&petName=${PetName.Text}", 
+          "uri": "contoso://greetUser?userName=${UserFriendlyName.Text}&petName=${PetName.Text}", 
         }, 
         "where": [ 
           "${UserFriendlyName.Length > 3}" 

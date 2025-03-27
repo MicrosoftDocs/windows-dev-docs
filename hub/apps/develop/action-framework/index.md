@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Windows Copilot Runtime Actions providers
 
-TBD - Overview content
+Actions are atomic units of functionality that can be invoked by the Windows Copilot Runtime. Developers can register actions with the system by implementing an action provider app.
 
 
 ## Responsible AI Notes
@@ -20,5 +20,5 @@ When building AI backed actions, it is your responsibility as the Action author 
 
 ## Related articles
 
-[Action definition JSON schema for Windows Copilot Runtime Actions providers](action-json.md)
-[Windows Copilot Runtime Actions provider package manifest XML format](action-provider-manifest.md)
+- [Action definition JSON schema for Windows Copilot Runtime Actions providers](action-json.md)
+- [Windows Copilot Runtime Actions provider package manifest XML format](action-provider-manifest.md)
