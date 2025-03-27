@@ -33,7 +33,7 @@ Here are some important concepts regarding the pricing of your game in the Store
 ### Base price
 
 The base price of the game is what determines whether your game is categorized as _paid_ or _free_. You can use [Partner Center](https://partner.microsoft.com/dashboard) to configure the base price based on country and region.
-The process of determining the price may include your [tax responsibilities when selling to different countries](/partner-center/tax-details-marketplace)
+The process of determining the price may include your [tax responsibilities when selling to different countries/regions](/partner-center/tax-details-marketplace)
 and [cost considerations for specific markets](/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix). You can also [set custom prices for specific markets](/windows/apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix#override-base-price-for-specific-markets).
 
 ### Sale price

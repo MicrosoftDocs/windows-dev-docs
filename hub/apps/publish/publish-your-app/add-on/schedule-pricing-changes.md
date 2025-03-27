@@ -21,7 +21,7 @@ The **Pricing** section of the [Pricing and availability](./price-and-availabili
 
 When you select your app's **Base price**, that price will be used in every market where your app is sold, unless you override the base price in any market(s).
 
-You can set the **Base price** to **Free**, or you can choose an available price tier, which sets the price in all the countries where you choose to distribute your app. Price tiers start at 0.99 USD, with additional tiers available at increasing increments (1.09 USD, 1.19 USD, and so on). The increments generally increase as the price gets higher.
+You can set the **Base price** to **Free**, or you can choose an available price tier, which sets the price in all the countries/regions where you choose to distribute your app. Price tiers start at 0.99 USD, with additional tiers available at increasing increments (1.09 USD, 1.19 USD, and so on). The increments generally increase as the price gets higher.
 
 > [!NOTE]
 > These price tiers also apply to add-ons.
@@ -258,7 +258,7 @@ Below is a table that shows what specific time zones are used in each market, so
 | Kiribati                                     | (UTC+14:00) Kiritimati Island                                 |
 | Korea                                        | (UTC+09:00) Seoul                                             |
 | Kuwait                                       | (UTC+04:00) Abu Dhabi, Muscat                                 |
-| Kyrgyzstan                                   | (UTC+06:00) Nur-Sultan                                        |
+| Kyrgyzstan                                   | (UTC+06:00) Astana                                         |
 | Laos                                         | (UTC+07:00) Bangkok, Hanoi, Jakarta                           |
 | Latvia                                       | (UTC+02:00) Chisinau                                          |
 | Lesotho                                      | (UTC+02:00) Harare, Pretoria                                  |
