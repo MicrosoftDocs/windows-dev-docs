@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Action definition JSON schema for Windows Copilot Runtime Action providers
 
-Describes the format of the action definition JSON file format for Windows Copilot Runtime Actions. This file must be included in your project with the **Build Action** set to "Content" and **Copy to Output Directory** set to “Copy if newer”. Specify the package-relative path to the JSON file in your package manifest XML file. For more information, see [Action provider package manifest XML format](action-provider-manifest.md).
+This article describes the format of the action definition JSON file format for Windows Copilot Runtime Actions. This file must be included in your project with the **Build Action** set to "Content" and **Copy to Output Directory** set to “Copy if newer”. Specify the package-relative path to the JSON file in your package manifest XML file. For more information, see [Action provider package manifest XML format](action-provider-manifest.md).
 
 ## Example action definition JSON file
 
