@@ -348,6 +348,14 @@ items:
         - name: Integrate with Windows
           href: develop/windows-integration/index.md
           items: 
+            - name: Windows Copilot Runtime Actions providers
+              items: 
+                - name: Overview
+                  href: develop/action-framework/index.md
+                - name: Action definition JSON schema
+                  href: develop/action-framework/action-json.md
+                - name: Action provider package manifest XML format
+                  href: develop/action-framework/action-provider-manifest.md
             - name: Feed providers
               items: 
                 - name: Overview
