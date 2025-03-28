@@ -360,6 +360,9 @@ items:
                   href: develop/feeds/feed-provider-manifest.md
             - name: Microsoft Copilot hardware key providers
               href: develop/windows-integration/microsoft-copliot-key-provider.md
+              items:
+                - name: Handle Microsoft Copilot hardware key state changes
+                  href: develop/windows-integration/copilot-key-state.md
             - name: Search providers
               items: 
                 - name: Overview
