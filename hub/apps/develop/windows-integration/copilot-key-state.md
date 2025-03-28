@@ -266,3 +266,6 @@ private LRESULT WindowSubClass(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lPara
 }
 ```
 
+## Test your hardware key provider
+
+Microsoft hardware key providers must be signed in order to be 
