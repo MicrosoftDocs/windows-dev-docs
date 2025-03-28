@@ -185,9 +185,13 @@ In Visual Studio, in **Solution Explorer**, right-click on your project file and
 After the package is installed, add a new text file in your project directory and name it "NativeMethods.txt". The CsWin32 tool will look in this file for a list of the Win32 APIs that it will generate bindings for. Put the following API names in "NativeMethods.txt".
 
 `SUBCLASSPROC`
+
 `SHGetPropertyStoreForWindow`
+
 `IPropertyStore`
+
 `SetWindowSubclass`
+
 `DefSubclassProc`
 
 ### Register the window for Microsoft Copilot fastpath invocation
