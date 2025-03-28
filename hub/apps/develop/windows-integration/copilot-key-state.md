@@ -266,6 +266,6 @@ private LRESULT WindowSubClass(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lPara
 }
 ```
 
-## Test your hardware key provider
+## Sign your Windows Copilot hardware key provider.
 
-Microsoft hardware key providers must be signed in order to be 
+Provider apps must be signed in order to be enabled as a target of the Microsoft Copilot hardware key. For information on packaging and signing your app, see [Package a desktop or UWP app in Visual Studio](https://learn.microsoft.com/en-us/windows/msix/package/packaging-uwp-apps).
