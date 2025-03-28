@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Microsoft Copilot hardware key providers
 
-Starting with Windows Build 22621, apps can register to be included in the picker UI that allows users to select the app that is launched when the Microsoft Copilot hardware key is pressed.
+Starting with Windows Build 22621, apps can register to be included in the picker UI that allows users to select the app that is launched when the Microsoft Copilot hardware key or the Windows key + C is pressed.
 
 > [!NOTE]
 > It is recommended that apps that register to be a Microsoft Copilot hardware key provider be implemented as single-window apps.

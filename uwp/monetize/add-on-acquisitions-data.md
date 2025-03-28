@@ -92,7 +92,7 @@ Elements in the Value array contain the following values.
 | paymentInstrumentType | string | Payment instrument type used for the acquisition.  |
 | sandboxId | string | The Sandbox ID created for the game. This can be the value **RETAIL** or a private sandbox ID.  |
 | xboxTitleId | string | Xbox Title ID of the product from XDP, if applicable.  |
-| localCurrencyCode | string | Local Currency code based on the country of the Partner Center account.  |
+| localCurrencyCode | string | Local Currency code based on the country/region of the Partner Center account.  |
 | xboxProductId | string | Xbox Product ID of the product from XDP, if applicable.  |
 | availabilityId | string | Availability ID of the product from XDP, if applicable.  |
 | skuId | string | SKU ID of the product from XDP, if applicable.  |
