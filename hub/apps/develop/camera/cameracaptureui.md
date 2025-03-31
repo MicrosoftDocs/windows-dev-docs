@@ -17,6 +17,8 @@ If you want to provide your own camera UI, or if your scenario requires more rob
 
 Note that the **CameraCaptureUI** class in the [Microsoft.Windows.Media.Capture](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture) namespace is not supported for UWP apps. For information on using the UWP version of this feature, see [Capture photos and video in a UWP app with the Windows built-in camera UI](/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)
 
+## Use the CameraCaptureUI class to capture photos
+
 Create a new instance of **CameraCaptureUI**, passing in the [AppWindow.Id](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.id) property of your app window. The [PhotoSettings](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureui.photosettings) property allows you to specify some constraints on the captured photo, including the file format and maximum resolution and whether UI allows the user to crop the photo after it's captured. The [VideoSettings](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureui.videosettings) property provides similar properties for video capture, such as the maximum resolution and duration and whether the UI allows the user to trip the video after it's captured.
 
 Call [CaptureFileAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureui.capturefileasync) to launch the camera capture UI asynchronously. Use one of the values from the [CameraCaptureUIMode](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureuimode) to specify whether the UI should allow photo capture, video capture, or both. When **CaptureFileAsync** completes, it will return a [StorageFile](/uwp/api/windows.storage.storagefile) file object containing the captured photo or video. If the returned object is null it means that either the user cancelled the capture operation or an error occurred.
@@ -88,6 +90,8 @@ else
 
 ---
 
+## Use the CameraCaptureUI class to capture videos
+
 The following example demonstrates launching the **CameraCaptureUI** for video capture specifying the maximum video as standard definition and disabling trimming. In this example the captured photo is set as the source for an [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control.
 
 ### [C#](#tab/csharp)
@@ -139,6 +143,8 @@ else
 ```
 
 ---
+
+## Move and rename captured media files
 
 The **CameraCaptureUI** creates randomized names for captured media files, so you may want to rename and move captured files to keep them organized. THe following example moves and renames a captured file.
 
