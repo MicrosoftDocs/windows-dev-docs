@@ -16,7 +16,7 @@ Actions are atomic units of functionality that can be invoked by the Windows Cop
 When building AI backed actions, it is your responsibility as the Action author to perform content moderation and abuse monitoring when it comes to entities returned to the user. For more information about Microsoft Responsible AI policies for more information, see [Microsoft Responsible AI: Principles and approach](https://www.microsoft.com/en-us/ai/principles-and-approach)
 
 > [!NOTE]
-> Consider if children should have access to the action using the ‘age-rating’ property in the action definition.
+> Consider if children should have access to the action using the ‘contentAgeRating’ property in the action definition JSON.
 
 ## Related articles
 
