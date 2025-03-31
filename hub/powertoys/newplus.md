@@ -1,7 +1,7 @@
 ---
 title: PowerToys New+ for Windows
 description: A tool that enables you to create files and folders from a personalized set of templates, directly from the File Explorer context menu.
-ms.date: 07/13/2024
+ms.date: 01/25/2025
 ms.topic: article
 no-loc: [PowerToys, Windows, New+, New, NewPlus, Win]
 ---
@@ -43,5 +43,63 @@ The option enables you to toggle the display of filename extensions. When this o
 #### Hide template filename starting digits, spaces and dots
 
 The option enables you to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named "1. filename" will be displayed as is. However, when this option is toggled on, the template will be displayed as "filename". This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.
+
+### Behavior
+
+#### Replace variables in template filename
+
+This setting causes supported variables in filenames, including in files within subfolders, to be replaced when the template is copied. The default setting of this option is disabled.
+
+Note: Any invalid filename characters are replaced with spaces.
+
+##### Examples
+
+| Example template filename | Result |
+| :---             | :--- |
+|`$YYYY-$MM-$DD, $hh $mm $ss  - $PARENT_FOLDER_NAME by %USERNAME%` | `2024-11-22, 12 08 54 - PowerShell project by cgaarden` |
+|`File where variable value contains invalid characters %USERPROFILE%` | `File where variable value contains invalid characters C  Users cgaarden` |
+
+##### Date and time related variables
+
+These date and time related variable patterns are the same as those used by PowerRename and are case-sensitive.
+
+| Variable | Explanation |
+| :---             | :--- |
+| `$YYYY`          | Year, represented by a full four or five digits, depending on the calendar used. |
+| `$YY`            | Year, represented only by the last two digits. A leading zero is added for single-digit years. |
+| `$Y`             | Year, represented only by the last digit. |
+| `$MMMM`          | Name of the month. |
+| `$MMM`           | Abbreviated name of the month. |
+| `$MM`            | Month, as digits with leading zeros for single-digit months. |
+| `$M`             | Month, as digits without leading zeros for single-digit months. |
+| `$DDDD`          | Name of the day of the week. |
+| `$DDD`           | Abbreviated name of the day of the week. |
+| `$DD`            | Day of the month, as digits with leading zeros for single-digit days. |
+| `$D`             | Day of the month, as digits without leading zeros for single-digit days. |
+| `$hh`            | Hours, with leading zeros for single-digit hours. |
+| `$h`             | Hours, without leading zeros for single-digit hours. |
+| `$mm`            | Minutes, with leading zeros for single-digit minutes. |
+| `$m`             | Minutes, without leading zeros for single-digit minutes. |
+| `$ss`            | Seconds, with leading zeros for single-digit seconds. |
+| `$s`             | Seconds, without leading zeros for single-digit seconds. |
+| `$fff`           | Milliseconds, represented by full three digits. |
+| `$ff`            | Milliseconds, represented only by the first two digits. |
+| `$f`             | Milliseconds, represented only by the first digit. |
+
+##### Special variables
+
+These special variables are case-sensitive, so they will only work when used in the filename exactly as shown here.
+
+| Variable | Explanation |
+| :---             | :--- |
+| `$PARENT_FOLDER_NAME`          | Expands to the name of the parent folder. This only works in template subfolders. |
+
+##### Environment variables
+
+These variables are case-insensitive, meaning you use them in the filename in a mix of uppercase or lowercase.
+
+Each `%environment_variable%` in the file and folder names will be replaced with the value of the corresponding environment variable.
+
+For instance, %USERNAME% will be replaced with the name of the current Windows user.
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

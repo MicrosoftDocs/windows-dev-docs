@@ -26,7 +26,7 @@ Action providers must provide a **Registration** element which specifies the pat
         Id="..." 
         PublicFolder="Assets"> 
       <uap3:Properties> 
-        <Registration>path\to\registration.json</Registration> 
+        <Registration>path\to\registration.json</Registration> <!-- path relative to the PublicFolder above -->
       </uap3:Properties> 
     </uap3:AppExtension> 
 </uap3:Extension> 
@@ -35,8 +35,8 @@ Action providers must provide a **Registration** element which specifies the pat
 
 ## Additional requirements
 
-Both COM and URI-launched action providers must have package identity. Package identity is declare in the app package manifest file using the [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element. For more information, see [An overview of Package Identity in Windows apps](/windows/apps/desktop/modernize/package-identity-overview).
+Both COM and URI-launched action providers must have package identity. Package identity is declared in the app package manifest file using the [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element. For more information, see [An overview of Package Identity in Windows apps](/windows/apps/desktop/modernize/package-identity-overview).
 
-COM-based action providers must have be *full trust apps* which have an integrity level of *mediumIL*. This is declared in the app package manifest file by setting the [*uap10:TrustLevel](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-extension) attribute to "mediumIL".
+COM-based action providers must be *full trust apps* which have an integrity level of *mediumIL*. This is declared in the app package manifest file by setting the [*uap10:TrustLevel](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-extension) attribute to "mediumIL".
 
 URI-launched action providers must also have a trust level of *mediumIL*. If a URI-launched action provider will return outputs, the app must implement the ability to be launched for results. For more information, see [Launch an app for results](/windows/uwp/launch-resume/how-to-launch-an-app-for-results). URI-launched action providers that return outputs must also instantiate the runtime.
