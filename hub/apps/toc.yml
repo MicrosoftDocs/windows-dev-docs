@@ -38,6 +38,8 @@ items:
             - name: Camera
               href: develop\camera\camera.md
               items:
+              - name: Capture photos and video with Windows built-in camera UI
+                href: develop\camera\cameracaptureui.md
               - name: Show the camera preview in a WinUI 3 app
                 href: develop\camera\camera-quickstart-winui3.md
               - name: Basic photo, video, and audio capture with MediaCapture
