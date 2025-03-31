@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-# Title bar
+# Title bar design
 
 The title bar sits at the top of an app on the [base layer](../signature-experiences/layering.md). Its main purpose is to allow users to be able to identify the app via its title, move the app window, and minimize, maximize, or close the app.
 
