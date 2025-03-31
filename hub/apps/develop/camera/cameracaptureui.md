@@ -23,7 +23,7 @@ Create a new instance of **CameraCaptureUI**, passing in the [AppWindow.Id](/win
 
 Call [CaptureFileAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureui.capturefileasync) to launch the camera capture UI asynchronously. Use one of the values from the [CameraCaptureUIMode](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureuimode) to specify whether the UI should allow photo capture, video capture, or both. When **CaptureFileAsync** completes, it will return a [StorageFile](/uwp/api/windows.storage.storagefile) file object containing the captured photo or video. If the returned object is null it means that either the user cancelled the capture operation or an error occurred.
 
-The following example demonstrates launching the **CameraCaptureUI** for photo capture specifying the image format as PNG and disabling cropping. In this example the captured photo is set as the source for an [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control.
+The following example demonstrates launching the **CameraCaptureUI** for photo capture, specifying the image format as PNG and disabling cropping. In this example the captured photo is set as the source for an [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control.
 
 ### [C#](#tab/csharp)
 
@@ -92,7 +92,7 @@ else
 
 ## Use the CameraCaptureUI class to capture videos
 
-The following example demonstrates launching the **CameraCaptureUI** for video capture specifying the maximum video as standard definition and disabling trimming. In this example the captured photo is set as the source for an [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control.
+The following example demonstrates launching the **CameraCaptureUI** for video capture, specifying the maximum video as standard definition and disabling trimming. In this example the captured photo is set as the source for an [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control.
 
 ### [C#](#tab/csharp)
 
@@ -112,7 +112,7 @@ if (videoFile != null)
 }
 else
 {
-    // Photo capture failed or was cancelled
+    // Video capture failed or was cancelled
 }
 ```
 
