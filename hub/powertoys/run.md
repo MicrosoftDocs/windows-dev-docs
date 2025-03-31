@@ -261,6 +261,9 @@ The Unit Converter plugin supports the following unit types:
 - Temperature
 - Volume
 
+> [!TIP]
+> You can use the `sq` prefix for square units, such as `sqm` instead of `m²`.
+
 ### Value Generator plugin
 
 The Value Generator plugin can generate GUIDs/UUIDs, calculate hashes, and encode/decode strings to base64.
