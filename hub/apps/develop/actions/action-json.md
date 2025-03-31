@@ -224,7 +224,7 @@ The following example shows a *where* clause that evaluates to true if a **File*
 Multiple *where* clauses can be combined using the logical AND and logical OR operators.
 
 ```json
-where": [ 
+"where": [ 
   "${File.Extension} ~= \".txt\" || ${File.Extension} ~= \".md\"" 
 ] 
 ```
