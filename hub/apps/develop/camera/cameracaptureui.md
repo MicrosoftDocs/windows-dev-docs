@@ -146,7 +146,7 @@ else
 
 ## Move and rename captured media files
 
-The **CameraCaptureUI** creates randomized names for captured media files, so you may want to rename and move captured files to keep them organized. THe following example moves and renames a captured file.
+The **CameraCaptureUI** creates randomized names for captured media files, so you may want to rename and move captured files to keep them organized. The following example moves and renames a captured file.
 
 
 ### [C#](#tab/csharp)
