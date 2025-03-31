@@ -108,7 +108,7 @@ The tables below describe the properties of the action definition JSON file.
 | inputCombinations | InputCombination[] | Provides descriptions for different combinations of inputs. | Yes |
 | outputs | Output[] | If specified, must be an empty string in the current release. | No |
 | invocation | Invocation | Provides information about how the action is invoked. | Yes |
-| contentAgeRating | string | A field name from the [UserAgeConsentGroup](/uwp/api/windows.system.userageconsentgroup)that specifies the appropriate age rating for the action. The allowed values are "Child", "Minor", "Adult". If no value is specified, the default behavior allows access to all ages. | No |
+| contentAgeRating | string | A field name from the [UserAgeConsentGroup](/uwp/api/windows.system.userageconsentgroup) that specifies the appropriate age rating for the action. The allowed values are "Child", "Minor", "Adult". If no value is specified, the default behavior allows access to all ages. | No |
 
 ### Output
 
