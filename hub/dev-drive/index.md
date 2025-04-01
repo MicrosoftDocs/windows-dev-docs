@@ -17,7 +17,7 @@ See the blog post: [Dev Drive for Performance Improvements in Visual Studio and 
 
 To set up a new Dev Drive, open Windows **Settings** and navigate to **System** > **Storage** > **Advanced Storage Settings** > **Disks & volumes**. Select **Create dev drive**. Existing storage volumes cannot be converted to be a Dev Drive. The Dev Drive designation happens only at the original format time.
 
-Before setting up a Dev Drive, **ensure that the prerequisites are met.** You can also set up a Dev Drive using **[Dev Home's Machine configuration](../dev-home/setup.md)**.
+Before setting up a Dev Drive, **ensure that the prerequisites are met.**
 
 ![Screenshot of System > Storage > Disks & volumes](../images/dev-drive-create.png)
 
@@ -393,8 +393,6 @@ Yes, using a Dev Drive can enhance efficiency and reduce build times when workin
 ### How can I find a Dev Drive that I created and lost track of?
 
 When a dev drive is mounted but you forgot where its located, the following methods can be used to find it:
-
-- Use [**Dev Drive Insights** in the Windows Customization](/windows/dev-home/windows-customization#dev-drive-insights) feature of Dev Home.
 
 - Use [DiskPart](/windows-server/administration/windows-commands/diskpart) and the ["list vdisk" command](/windows-server/administration/windows-commands/list) to show the full path to the vhdx: 1) Open a command line and enter `diskpart`, 2) Once DiskPart opens, enter `list vdisk`.
 
