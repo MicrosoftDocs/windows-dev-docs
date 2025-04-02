@@ -55,6 +55,6 @@ The following table *uap3:AppExtension* describes the attributes of the **uap3:A
 | PublicFolder|  The folder that the instance declares as the location where a host can have read access to files through a broker. | Yes | 
 
 
-## Sign your Windows Copilot hardware key provider.
+## Sign your Windows Copilot hardware key provider
 
-Provider apps must be signed in order to be enabled as a target of the Microsoft Copilot hardware key. For information on packaging and signing your app, see [Package a desktop or UWP app in Visual Studio](https://learn.microsoft.com/en-us/windows/msix/package/packaging-uwp-apps).
+Provider apps must be signed in order to be enabled as a target of the Microsoft Copilot hardware key. For information on packaging and signing your app, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps).
