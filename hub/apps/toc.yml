@@ -15,7 +15,7 @@ items:
         - name: Start developing Windows apps
           href: get-started/start-here.md
         - name: Build your first app
-          href: how-tos/hello-world-winui3.md
+          href: tutorials/winui-notes/index.yml
         - name: Samples and resources
           href: get-started/samples.md
         - name: Best practices
