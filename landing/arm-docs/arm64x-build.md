@@ -97,7 +97,7 @@ To build your CMake project binaries as Arm64X, you can use any version of [CMak
 
 3. Add a new .cmake file to your CMake project called `arm64x.cmake`. Copy the snippet below into the new .cmake file.
 
-	```JSON
+	```cmake
 	# directory where the link.rsp file generated during arm64 build will be stored
 	set(arm64ReproDir "${CMAKE_CURRENT_SOURCE_DIR}/repros")
 	
@@ -139,7 +139,7 @@ To build your CMake project binaries as Arm64X, you can use any version of [CMak
 
 If you need to use an older linker, copy the below snippet instead. This route uses an older flag [/LINK_REPRO](/cpp/build/reference/linkrepro). Using the /LINK_REPRO route will result in a slower overall build time due to the copying of files and has known issues when using Ninja generator.
 
-```JSON
+```cmake
 # directory where the link_repro directories for each arm64x target will be created during arm64 build.
 set(arm64ReproDir "${CMAKE_CURRENT_SOURCE_DIR}/repros")
 
@@ -185,7 +185,7 @@ endif()
 
 4. In the bottom of the top level `CMakeLists.txt` file in your project, add the snippet below. Be sure to substitute the contents of the angle brackets with actual values. This will consume the `arm64x.cmake` file you just created above.
 
-	```JSON
+	```cmake
 	if(DEFINED BUILD_AS_ARM64X)
 		set(ARM64X_TARGETS <Targets you want to Build as ARM64X>)
 		include("<directory location of the arm64x.cmake file>/arm64x.cmake")
@@ -210,7 +210,7 @@ You can build an Arm64X pure forwarder from the Arm64 developer command prompt f
 
 1. Create empty `OBJ` files that will later be used by the linker to create the pure forwarder. These are empty as the pure forwarder has no code in it. To do this, create an empty file. For the example below, we named the file **empty.cpp**. Empty `OBJ` files are then created using `cl`, with one for Arm64 (`empty_arm64.obj`) and one for Arm64EC (`empty_x64.obj`):
 
-    ```cpp
+    ```batch
     cl /c /Foempty_arm64.obj empty.cpp
     cl /c /arm64EC /Foempty_x64.obj empty.cpp
     ```
@@ -237,7 +237,7 @@ You can build an Arm64X pure forwarder from the Arm64 developer command prompt f
 
 3. You can then use `link` to create `LIB` import files for both x64 and Arm64:
 
-    ```cpp
+    ```batch
     link /lib /machine:x64 /def:foo_x64.def /out:foo_x64.lib
     link /lib /machine:arm64 /def:foo_arm64.def /out:foo_arm64.lib
     ```

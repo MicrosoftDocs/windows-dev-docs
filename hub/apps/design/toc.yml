@@ -296,6 +296,8 @@
           href: controls/content-links.md
         - name: Handwriting view
           href: controls/text-handwriting-view.md
+    - name: Title bar
+      href: controls/title-bar.md
 - name: Shell
   items:
     - name: Overview

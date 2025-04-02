@@ -15,7 +15,7 @@ items:
         - name: Setup and tooling
           href: get-started/start-here.md
         - name: Build your first app
-          href: how-tos/hello-world-winui3.md
+          href: tutorials/winui-notes/index.yml
         - name: Samples and resources
           href: get-started/samples.md
         - name: Best practices
@@ -103,6 +103,8 @@ items:
               items:
                 - name: Overview
                   href: develop\camera\camera.md
+                - name: Capture photos and video with Windows built-in camera UI
+                  href: develop\camera\cameracaptureui.md
                 - name: Show the camera preview in a WinUI 3 app
                   href: develop\camera\camera-quickstart-winui3.md
                 - name: Basic photo, video, and audio capture with MediaCapture
@@ -330,6 +332,14 @@ items:
                     href: develop/widgets/widget-provider-manifest.md
                   - name: ActivateApplication protocol
                     href: develop/widgets/widget-provider-activateapplication-protocol.md
+            - name: Windows Copilot Runtime Actions
+              items: 
+                - name: Overview
+                  href: develop/actions/index.md
+                - name: Action definition JSON schema
+                  href: develop/actions/action-json.md
+                - name: Action provider package manifest XML format
+                  href: develop/actions/action-provider-manifest.md
             - name: DispatcherQueue
               href: develop/dispatcherqueue.md
         - name: Performance

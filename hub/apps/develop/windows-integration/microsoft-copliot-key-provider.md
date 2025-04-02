@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Microsoft Copilot hardware key providers
 
-Starting with Windows Build 22621, apps can register to be included in the picker UI that allows users to select the app that is launched when the Microsoft Copilot hardware key is pressed.
+Starting with Windows Build 22621, apps can register to be included in the picker UI that allows users to select the app that is launched when the Microsoft Copilot hardware key or the Windows key + C is pressed.
 
 > [!NOTE]
 > It is recommended that apps that register to be a Microsoft Copilot hardware key provider be implemented as single-window apps.
@@ -53,3 +53,8 @@ The following table *uap3:AppExtension* describes the attributes of the **uap3:A
 | DisplayName | The app name displayed in the Windows Copilot hardware button picker UI.  | Yes |
 | Description | The app description displayed in the Windows Copilot hardware button picker UI. | Yes |
 | PublicFolder|  The folder that the instance declares as the location where a host can have read access to files through a broker. | Yes | 
+
+
+## Sign your Windows Copilot hardware key provider.
+
+Provider apps must be signed in order to be enabled as a target of the Microsoft Copilot hardware key. For information on packaging and signing your app, see [Package a desktop or UWP app in Visual Studio](https://learn.microsoft.com/en-us/windows/msix/package/packaging-uwp-apps).
