@@ -58,3 +58,14 @@ The following table *uap3:AppExtension* describes the attributes of the **uap3:A
 ## Sign your Windows Copilot hardware key provider
 
 Provider apps must be signed in order to be enabled as a target of the Microsoft Copilot hardware key. For information on packaging and signing your app, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps).
+
+## Query for the current Copilot hardware key provider
+
+Check if your app is the user's target for the Copilot hardware key & Windows key + C keyboard shortcut by querying the value of the following registry keys. For more information, see [Retrieving Data from the Registry](/windows/win32/sysinfo/retrieving-data-from-the-registry).
+
+| Registry key | Description | Value |
+|--------------|-------------|-------|
+| HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\BrandedKey\BrandedKeyChoiceType | Identifies if the user has selected either Search or an app as the target of the Copilot key. | "Search" or "App" |
+| HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\BrandedKey\AppAumid | Identifies the Application User Model Id (AUMID, also known as AppId) of the Copilot hardware key provider that was last configured, even if the key is currently configured to Search. | An AUMID. |
+
+To provide a good user experience, apps should be respectful of the user's selection for the Copilot hardware key provider app and should not display persistent or noisy requests for the user to change their selection.
