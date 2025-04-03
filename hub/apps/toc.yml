@@ -12,7 +12,7 @@ items:
       items: 
         - name: Overview of framework options
           href: get-started/index.md
-        - name: Start developing Windows apps
+        - name: Setup and tooling
           href: get-started/start-here.md
         - name: Build your first app
           href: tutorials/winui-notes/index.yml
@@ -32,50 +32,117 @@ items:
           href: develop/index.md
         - name: Accessibility
           href: develop/accessibility.md
-        - name: Audio, video, and camera
-          href: develop/audio-video-camera.md
-          items:
-            - name: Camera
-              href: develop\camera\camera.md
+        - name: AI and machine learning >>
+          href: /windows/ai/   
+        - name: App lifecycle and system services
+          items: 
+          - name: App lifecycle
+            items: 
+            - name: Overview
+              href: develop/app-lifecycle-and-system-services.md
+            - name: Manage app lifecycle
+              items: 
+              - name: App lifecycle
+                href: windows-app-sdk/applifecycle/applifecycle.md
+              - name: App instancing
+                href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+              - name: Create a single-instanced app
+                href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
+              - name: Rich activation
+                href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+              - name: Power management
+                href: windows-app-sdk/applifecycle/applifecycle-power.md
+              - name: Detect Focus session state
+                href: windows-app-sdk/applifecycle/focus-session.md
+          - name: App launching
+            items:
+            - name: Overview
+              href: develop/launch/index.md
+            - name: File activation
               items:
-              - name: Capture photos and video with Windows built-in camera UI
-                href: develop\camera\cameracaptureui.md
-              - name: Show the camera preview in a WinUI 3 app
-                href: develop\camera\camera-quickstart-winui3.md
-              - name: Basic photo, video, and audio capture with MediaCapture
-                href: develop\camera\basic-photo-capture.md
-              - name: Discover and select camera capabilities with camera profiles
-                href: develop\camera\camera-profiles.md
-              - name: Set format, resolution, and frame rate for MediaCapture
-                href: develop\camera\set-media-encoding-properties.md
-              - name: HDR and low-light photo capture
-                href: develop\camera\hdr-low-light-photo-capture.md
-              - name: Manual camera controls for photo and video capture
-                href: develop\camera\capture-device-controls-for-photo-and-video-capture.md
-              - name: Manual camera controls for video capture
-                href: develop\camera\capture-device-controls-for-video-capture.md
-              - name: Video stabilization effect for video capture
-                href: develop\camera\effects-for-video-capture.md
-              - name: Scene analysis for MediaCapture
-                href: develop\camera\scene-analysis-for-media-capture.md
-              - name: Capture a photo sequence with VariablePhotoSequence
-                href: develop\camera\variable-photo-sequence.md
-              - name: Process media frames with MediaFrameReader
-                href: develop\camera\process-media-frames-with-mediaframereader.md
-              - name: Process audio frames with MediaFrameReader
-                href: develop\camera\process-audio-frames-with-mediaframereader.md
-              - name: Detect and respond to audio level changes by the system
-                href: develop\camera\detect-audio-level-changes.md
-              - name: Launch the camera settings page
-                href: develop\camera\launch-camera-settings.md
-              - name: Handle the Windows camera privacy setting
-                href: develop\camera\camera-privacy-setting.md
-              - name: Connect to remote cameras
-                href: develop\camera\connect-to-remote-cameras.md
+              - name: Handle file activation
+                href: develop/launch/handle-file-activation.md
+              - name: Launch the default app for a file
+                href: develop/launch/launch-the-default-app-for-a-file.md
+            - name: URI activation
+              items:
+              - name: Handle URI activation
+                href: develop/launch/handle-uri-activation.md
+              - name: Launch the default app for a URI
+                href: develop/launch/launch-default-app.md
+              - name: Launch the Windows Settings app
+                href: develop/launch/launch-settings-app.md
+              - name: Launch the Default Apps settings page
+                href: develop/launch/launch-default-apps-settings.md
+              - name: Launch the Microsoft Store app
+                href: develop/launch/launch-store-app.md
+              - name: Launch the Windows Maps app
+                href: develop/launch/launch-maps-app.md
+              - name: Launch Snipping Tool
+                href: develop/launch/launch-snipping-tool.md
+                items:
+                - name: Launch screen snipping (legacy)
+                  href: develop/launch/launch-screen-snipping.md
+              - name: Launch the People app
+                href: develop/launch/launch-people-app.md
+              - name: Support web-to-app linking with app URI handlers
+                href: develop/launch/web-to-app-linking.md
+            - name: Reserved file and URI scheme names
+              href: develop/launch/reserved-uri-scheme-names.md
+          - name: Background tasks
+            items:
+            - name: Working with background tasks in Windows apps
+              href: develop/launch/create-and-register-a-background-task.md
+            - name: BackgroundTaskBuilder in the Windows App SDK
+              href: windows-app-sdk/applifecycle/background-tasks.md
+        - name: Audio, video, and camera
+          items:
+            - name: Overview
+              href: develop/audio-video-camera.md
+            - name: Camera
+              items:
+                - name: Overview
+                  href: develop\camera\camera.md
+                - name: Capture photos and video with Windows built-in camera UI
+                  href: develop\camera\cameracaptureui.md
+                - name: Show the camera preview in a WinUI 3 app
+                  href: develop\camera\camera-quickstart-winui3.md
+                - name: Basic photo, video, and audio capture with MediaCapture
+                  href: develop\camera\basic-photo-capture.md
+                - name: Discover and select camera capabilities with camera profiles
+                  href: develop\camera\camera-profiles.md
+                - name: Set format, resolution, and frame rate for MediaCapture
+                  href: develop\camera\set-media-encoding-properties.md
+                - name: HDR and low-light photo capture
+                  href: develop\camera\hdr-low-light-photo-capture.md
+                - name: Manual camera controls for photo and video capture
+                  href: develop\camera\capture-device-controls-for-photo-and-video-capture.md
+                - name: Manual camera controls for video capture
+                  href: develop\camera\capture-device-controls-for-video-capture.md
+                - name: Video stabilization effect for video capture
+                  href: develop\camera\effects-for-video-capture.md
+                - name: Scene analysis for MediaCapture
+                  href: develop\camera\scene-analysis-for-media-capture.md
+                - name: Capture a photo sequence with VariablePhotoSequence
+                  href: develop\camera\variable-photo-sequence.md
+                - name: Process media frames with MediaFrameReader
+                  href: develop\camera\process-media-frames-with-mediaframereader.md
+                - name: Process audio frames with MediaFrameReader
+                  href: develop\camera\process-audio-frames-with-mediaframereader.md
+                - name: Detect and respond to audio level changes by the system
+                  href: develop\camera\detect-audio-level-changes.md
+                - name: Launch the camera settings page
+                  href: develop\camera\launch-camera-settings.md
+                - name: Handle the Windows camera privacy setting
+                  href: develop\camera\camera-privacy-setting.md
+                - name: Connect to remote cameras
+                  href: develop\camera\connect-to-remote-cameras.md
         - name: Communication
           href: develop/communication.md
         - name: Data and files
           items: 
+            - name: Overview
+              href: develop/data-and-files.md
             - name: App resources
               items: 
                 - name: Manage resources with MRT Core
@@ -122,8 +189,6 @@ items:
                   href: develop/files/winrt-files.md
                 - name: Access files and folders with .NET
                   href: develop/files/dotnet-files.md
-            - name: Data and files overview
-              href: develop/data-and-files.md
             - name: Windows Settings access
               items: 
                 - name: Reference for Windows 11 settings
@@ -133,8 +198,9 @@ items:
                 - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
                   href: develop/settings/readclouddatasettings-exe.md
         - name: Devices and sensors
-          href: develop/devices-and-sensors.md
           items:
+            - name: Overview
+              href: develop/devices-and-sensors.md
             - name: Printing and scanning
               href: develop/devices-sensors/printing-and-scanning.md
               items: 
@@ -192,65 +258,6 @@ items:
                       href: develop/win2d/avoiding-memory-leaks.md
                     - name: Custom effects
                       href: develop/win2d/custom-effects.md
-        - name: Launching apps and background tasks
-          items:
-            - name: Overview
-              href: develop/launch/index.md
-            - name: URI activation
-              items:
-              - name: Handle URI activation
-                href: develop/launch/handle-uri-activation.md
-              - name: Launch the default app for a URI
-                href: develop/launch/launch-default-app.md
-              - name: Launch the Windows Settings app
-                href: develop/launch/launch-settings-app.md
-              - name: Launch the Default Apps settings page
-                href: develop/launch/launch-default-apps-settings.md
-              - name: Launch the Microsoft Store app
-                href: develop/launch/launch-store-app.md
-              - name: Launch the Windows Maps app
-                href: develop/launch/launch-maps-app.md
-              - name: Launch Snipping Tool
-                href: develop/launch/launch-snipping-tool.md
-                items:
-                - name: Launch screen snipping (legacy)
-                  href: develop/launch/launch-screen-snipping.md
-              - name: Launch the People app
-                href: develop/launch/launch-people-app.md
-              - name: Support web-to-app linking with app URI handlers
-                href: develop/launch/web-to-app-linking.md
-            - name: File activation
-              items:
-              - name: Handle file activation
-                href: develop/launch/handle-file-activation.md
-              - name: Launch the default app for a file
-                href: develop/launch/launch-the-default-app-for-a-file.md
-            - name: Reserved file and URI scheme names
-              href: develop/launch/reserved-uri-scheme-names.md
-            - name: App lifecycle and system services
-              items: 
-                - name: Overview
-                  href: develop/app-lifecycle-and-system-services.md
-                - name: Manage app lifecycle
-                  items: 
-                    - name: App lifecycle
-                      href: windows-app-sdk/applifecycle/applifecycle.md
-                    - name: App instancing
-                      href: windows-app-sdk/applifecycle/applifecycle-instancing.md
-                    - name: Create a single-instanced app
-                      href: windows-app-sdk/applifecycle/applifecycle-single-instance.md
-                    - name: Rich activation
-                      href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
-                    - name: Power management
-                      href: windows-app-sdk/applifecycle/applifecycle-power.md
-                    - name: Detect Focus session state
-                      href: windows-app-sdk/applifecycle/focus-session.md
-            - name: Background tasks
-              items:
-              - name: Working with background tasks in Windows apps
-                href: develop/launch/create-and-register-a-background-task.md
-              - name: BackgroundTaskBuilder in the Windows App SDK
-                href: windows-app-sdk/applifecycle/background-tasks.md
         - name: Notifications
           items: 
             - name: Push notifications
@@ -267,70 +274,74 @@ items:
                   href: windows-app-sdk/notifications/app-notifications/index.md
                 - name: Quickstart
                   href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
-        - name: Security and identity
-          href: develop/security/index.md
+        - name: OS integration
           items:
-            - name: Credential locker
-              href: develop/security/credential-locker.md
-            - name: Fingerprint biometrics
-              href: develop/security/fingerprint-biometrics.md
-            - name: Implement OAuth 2.0 functionality
-              href: develop/security/oauth2.md
-            - name: Share certificates between apps
-              href: develop/security/share-certificates.md
-            - name: Smart cards
-              href: develop/security/smart-cards.md
-            - name: Windows Hello
-              href: develop/security/windows-hello.md
-              items:
-              - name: Create a Windows Hello login app
-                href: develop/security/windows-hello-login.md
-              - name: Create a Windows Hello login service
-                href: develop/security/windows-hello-auth-service.md
-            - name: Intro to passkeys
-              href: develop/security/intro.md
-            - name: Implement passkeys
-              href: develop/security/implement.md
-            - name: Design guidelines for passkeys
-              href: develop/security/design.md
-            - name: Use cases for passkeys
-              href: develop/security/use-cases.md
-            - name: Tools and libraries for passkeys
-              href: develop/security/tools-libraries.md
-            - name: Reference for passkeys
-              href: develop/security/reference.md
-            - name: Third-party passkey manager support
-              href: develop/security/third-party.md
-        - name: Speech
-          href: develop/speech.md
-        - name: User interface
-          items: 
             - name: Overview
-              href: develop/user-interface.md
-            - name: Title bar
-              href: develop/title-bar.md
-            - name: Apply Mica or Acrylic
-              href: windows-app-sdk/system-backdrop-controller.md
-            - name: Manage app windows
-              href: windows-app-sdk/windowing/windowing-overview.md
-            - name: Layout
+              href: develop/windows-integration/index.md
+            - name: Copilot hardware key
+              href: develop/windows-integration/microsoft-copliot-key-provider.md
+            - name: Smart App Control
+              items: 
+                - name: Overview
+                  href: develop/smart-app-control/overview.md
+                - name: Sign your app for Smart App Control compliance
+                  href: develop/smart-app-control/code-signing-for-smart-app-control.md
+                - name: Test your app's signature with Smart App Control
+                  href: develop/smart-app-control/test-your-app-with-smart-app-control.md
+            - name: Windows Search
+              href: develop/search/search-providers.md
+            - name: Windows Share
               items:
-              - name: Custom panels
-                href: design/layout/custom-panels-overview.md
-              - name: "Custom panel example: BoxPanel"
-                href: design/layout/boxpanel-example-custom-panel.md
-              - name: Attached Layout
-                href: design/layout/attached-layouts.md
-              - name: Transforms
-                href: develop/platform/xaml/transforms.md
-              - name: 3-D perspective effects
-                href: develop/platform/xaml/3-d-perspective-effects.md
-            - name: Retrieve a window handle (HWND)
-              href: develop/ui-input/retrieve-hwnd.md
-            - name: Display WinRT UI objects that depend on CoreWindow
-              href: develop/ui-input/display-ui-objects.md
-            - name: Choose the right visual tree viewer for your Windows app
-              href: develop/ui-input/visual-tree.md
+                - name: Overview
+                  href: develop/windows-integration/integrate-sharesheet-overview.md
+                - name: Integrate packaged apps
+                  href: develop/windows-integration/integrate-sharesheet-packaged.md
+                - name: Integrate PWAs 
+                  href: develop/windows-integration/integrate-sharesheet-pwa.md
+                - name: Integrate UWP apps >>
+                  href: /windows/uwp/app-to-app/share-data
+                - name: Integrate unpackaged apps
+                  href: develop/windows-integration/integrate-sharesheet-unpackaged.md
+                - name: Cross Device People API
+                  href: develop/windows-integration/cross-device-people-api.md
+            - name: Widgets
+              items: 
+                - name: Feed providers
+                  items: 
+                  - name: Overview
+                    href: develop/feeds/feed-providers.md
+                  - name: Implement a feed provider in a win32 app (C#)
+                    href: develop/feeds/implement-feed-provider-cs.md
+                  - name: Implement a feed provider in a win32 app (C++/WinRT)
+                    href: develop/feeds/implement-feed-provider-win32.md
+                  - name: Feed provider package manifest XML format
+                    href: develop/feeds/feed-provider-manifest.md
+                - name: Widget providers
+                  items: 
+                  - name: Overview
+                    href: develop/widgets/widget-providers.md
+                  - name: Implement a widget provider in a win32 app (C#)
+                    href: develop/widgets/implement-widget-provider-cs.md
+                  - name: Implement a widget provider in a win32 app (C++/WinRT)
+                    href: develop/widgets/implement-widget-provider-win32.md
+                  - name: Web widget providers
+                    href: develop/widgets/web-widget-providers.md
+                  - name: Customize the widget header area
+                    href: develop/widgets/widget-header-customization.md
+                  - name: Package manifest XML format
+                    href: develop/widgets/widget-provider-manifest.md
+                  - name: ActivateApplication protocol
+                    href: develop/widgets/widget-provider-activateapplication-protocol.md
+            - name: Windows Copilot Runtime Actions
+              items: 
+                - name: Overview
+                  href: develop/actions/index.md
+                - name: Action definition JSON schema
+                  href: develop/actions/action-json.md
+                - name: Action provider package manifest XML format
+                  href: develop/actions/action-provider-manifest.md
+            - name: DispatcherQueue
+              href: develop/dispatcherqueue.md
         - name: Performance
           items: 
             - name: Overview
@@ -347,90 +358,76 @@ items:
               href: performance/responsive.md
             - name: WinUI performance optimization
               href: performance/winui-perf.md
-        - name: Integrate with Windows
-          href: develop/windows-integration/index.md
-          items: 
-            - name: Windows Copilot Runtime Actions providers
-              items: 
-                - name: Overview
-                  href: develop/actions/index.md
-                - name: Action definition JSON schema
-                  href: develop/actions/action-json.md
-                - name: Action provider package manifest XML format
-                  href: develop/actions/action-provider-manifest.md
-            - name: Feed providers
-              items: 
-                - name: Overview
-                  href: develop/feeds/feed-providers.md
-                - name: Implement a feed provider in a win32 app (C#)
-                  href: develop/feeds/implement-feed-provider-cs.md
-                - name: Implement a feed provider in a win32 app (C++/WinRT)
-                  href: develop/feeds/implement-feed-provider-win32.md
-                - name: Feed provider package manifest XML format
-                  href: develop/feeds/feed-provider-manifest.md
-            - name: Microsoft Copilot hardware key providers
-              href: develop/windows-integration/microsoft-copliot-key-provider.md
+        - name: Security and identity
+          items:
+            - name: Overview
+              href: develop/security/index.md
+            - name: Credential locker
+              href: develop/security/credential-locker.md
+            - name: Fingerprint biometrics
+              href: develop/security/fingerprint-biometrics.md
+            - name: Passkeys
               items:
-                - name: Handle Microsoft Copilot hardware key state changes
-                  href: develop/windows-integration/copilot-key-state.md
-            - name: Search providers
-              items: 
-                - name: Overview
-                  href: develop/search/search-providers.md
-            - name: Widget providers
-              items: 
-                - name: Overview
-                  href: develop/widgets/widget-providers.md
-                - name: Implement a widget provider in a win32 app (C#)
-                  href: develop/widgets/implement-widget-provider-cs.md
-                - name: Implement a widget provider in a win32 app (C++/WinRT)
-                  href: develop/widgets/implement-widget-provider-win32.md
-                - name: Web widget providers
-                  href: develop/widgets/web-widget-providers.md
-                - name: Customize the widget header area
-                  href: develop/widgets/widget-header-customization.md
-                - name: Widget provider package manifest XML format
-                  href: develop/widgets/widget-provider-manifest.md
-                - name: Widget provider ActivateApplication protocol
-                  href: develop/widgets/widget-provider-activateapplication-protocol.md
-            - name: Smart App Control
-              items: 
-                - name: Smart App Control
-                  href: develop/smart-app-control/overview.md
-                - name: Sign your app for Smart App Control compliance
-                  href: develop/smart-app-control/code-signing-for-smart-app-control.md
-                - name: Test your app's signature with Smart App Control
-                  href: develop/smart-app-control/test-your-app-with-smart-app-control.md
-            - name: Cross Device Share API
+              - name: Overview
+                href: develop/security/intro.md
+              - name: Implementation
+                href: develop/security/implement.md
+              - name: Design guidelines
+                href: develop/security/design.md
+              - name: Use cases
+                href: develop/security/use-cases.md
+              - name: Tools and libraries
+                href: develop/security/tools-libraries.md
+              - name: Reference
+                href: develop/security/reference.md
+              - name: Third-party passkey manager support
+                href: develop/security/third-party.md
+            - name: Implement OAuth 2.0 functionality
+              href: develop/security/oauth2.md
+            - name: Share certificates between apps
+              href: develop/security/share-certificates.md
+            - name: Smart cards
+              href: develop/security/smart-cards.md
+            - name: Windows Hello
               items:
-                - name: Windows Share overview
-                  href: develop/windows-integration/integrate-sharesheet-overview.md
-                - name: Packaged apps
-                  items:
-                    - name: Integrate packaged apps with Windows Share
-                      href: develop/windows-integration/integrate-sharesheet-packaged.md
-                    - name: Integrate PWAs with Windows Share
-                      href: develop/windows-integration/integrate-sharesheet-pwa.md
-                    - name: Share data in UWP apps >>
-                      href: /windows/uwp/app-to-app/share-data
-                - name: Unpackaged apps
-                  items:
-                    - name: Integrate unpackaged apps with Windows Share Sheet
-                      href: develop/windows-integration/integrate-sharesheet-unpackaged.md
-            - name: Cross Device People API
-              href: develop/windows-integration/cross-device-people-api.md
-        - name: Windows AI and machine learning
+              - name: Overview
+                href: develop/security/windows-hello-login.md
+              - name: Create a Windows Hello login app
+                href: develop/security/windows-hello-login.md
+              - name: Create a Windows Hello login service
+                href: develop/security/windows-hello-auth-service.md
+        - name: Speech
+          href: develop/speech.md
+        - name: User interface
           items: 
-            - name: Windows AI >>
-              href: /windows/ai/
-            - name: Add OpenAI chat completions to your WinUI 3 desktop app
-              href: how-tos/chatgpt-openai-winui3.md
-            - name: Add DALL-E image generation to your WinUI 3 desktop app
-              href: how-tos/dall-e-winui3.md
-            - name: Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
-              href: how-tos/copilot-chat-winui3.md
-        - name: DispatcherQueue
-          href: develop/dispatcherqueue.md
+            - name: Overview
+              href: develop/user-interface.md
+            - name: Materials (Acrylic / Mica)
+              href: windows-app-sdk/system-backdrop-controller.md
+            - name: Layout
+              items:
+              - name: Custom panels
+                href: design/layout/custom-panels-overview.md
+              - name: "Custom panel example: BoxPanel"
+                href: design/layout/boxpanel-example-custom-panel.md
+              - name: Attached Layout
+                href: design/layout/attached-layouts.md
+              - name: Transforms
+                href: develop/platform/xaml/transforms.md
+              - name: 3-D perspective effects
+                href: develop/platform/xaml/3-d-perspective-effects.md
+            - name: Windowing
+              items:
+              - name: Overview
+                href: windows-app-sdk/windowing/windowing-overview.md
+              - name: Retrieve a window handle (HWND)
+                href: develop/ui-input/retrieve-hwnd.md
+              - name: Title bar
+                href: develop/title-bar.md
+            - name: CoreWindow interop
+              href: develop/ui-input/display-ui-objects.md
+            - name: Choose the right visual tree viewer
+              href: develop/ui-input/visual-tree.md
     - name: Package and deploy
       items: 
         - name: App packaging
@@ -459,7 +456,7 @@ items:
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: Deployment
           items: 
-            - name: Deployment overview
+            - name: Overview
               href: package-and-deploy/index.md
             - name: Windows App SDK deployment guide
               items: 
@@ -493,7 +490,7 @@ items:
               href: develop/windows-app-restore.md
     - name: Distribute
       items: 
-        - name: Get started
+        - name: Get started with the Microsoft Store
           href: publish/index.md
         - name: Open a developer account
           items: 
@@ -541,9 +538,9 @@ items:
                     href: publish/publish-your-app/msix/app-package-requirements.md
                   - name: Upload app packages
                     href: publish/publish-your-app/msix/upload-app-packages.md
-              - name: Create store listings
+              - name: Create Store listings
                 items:
-                  - name: Create store listings
+                  - name: Create Store listings
                     href: publish/publish-your-app/msix/create-app-store-listing.md
                   - name: Add and edit Store listing info
                     href: publish/publish-your-app/msix/add-and-edit-store-listing-info.md
@@ -555,7 +552,7 @@ items:
                     href: publish/publish-your-app/msix/import-and-export-store-listings.md
                   - name: Write a great app description
                     href: publish/publish-your-app/msix/write-great-app-description.md
-                  - name: Responsible AI FAQ for AI-Generated keywords
+                  - name: Responsible AI FAQ for AI-generated keywords
                     href: publish/publish-your-app/responsible-ai-faq-ai-generated-keywords.md
               - name: Manage Submission options
                 href: publish/publish-your-app/msix/manage-submission-options.md                  
@@ -597,9 +594,9 @@ items:
                     href: publish/publish-your-app/msi/upload-app-packages.md
                   - name: Perform package validation
                     href: publish/publish-your-app/msi/package-validation-pre-check.md
-              - name: Create store listings
+              - name: Create Store listings
                 items:
-                  - name: Create store listings
+                  - name: Create Store listings
                     href: publish/publish-your-app/msi/create-app-store-listing.md
                   - name: Add and edit Store listing info
                     href: publish/publish-your-app/msi/add-and-edit-store-listing-info.md
@@ -649,9 +646,9 @@ items:
                 href: publish/publish-your-app/pwa/age-ratings.md
               - name: Upload package
                 href: publish/publish-your-app/pwa/upload-app-packages.md
-              - name: Create store listings
+              - name: Create Store listings
                 items:
-                  - name: Create store listings
+                  - name: Create Store listings
                     href: publish/publish-your-app/pwa/create-app-store-listing.md
                   - name: Add and edit Store listing info
                     href: publish/publish-your-app/pwa/add-and-edit-store-listing-info.md
@@ -691,7 +688,7 @@ items:
                             href: publish/publish-your-app/add-on/enter-app-properties.md
                           - name: Provide support info
                             href: publish/publish-your-app/add-on/support-info.md
-                  - name: Create store Listings
+                  - name: Create Store Listings
                     items:
                           - name: Overview
                             href: publish/publish-your-app/add-on/create-app-store-listing.md
