@@ -104,7 +104,7 @@ We make this class a singleton to avoid threading issues. For example, you can o
 1. Add a new class file to your project.
     - In **Solution Explorer**, right click the _HelloComposition_ project.
     - In the context menu, select **Add** > **Class...**.
-    - In the **Add Class** dialog, name the class _CompositionHost.cs_, then click **Add**.
+    - In the **Add Class** dialog, name the class _CompositionHost_, then click **Add**.
 
 1. Include headers and _usings_ required for composition interop.
     - In CompositionHost.h, add these _includes_ at the top of the file.
