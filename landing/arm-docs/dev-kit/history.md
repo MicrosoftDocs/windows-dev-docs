@@ -15,6 +15,22 @@ To keep your device performing its best, make sure that you have the latest upda
 
 [Check for optional updates](ms-settings:windowsupdate-optionalupdates?activationSource=SMC-IA-4027667)
 
+## April 2025 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update:
+
+- Ensures a more stable and faster internet connection by making enhancements to the Wi-Fi module.
+- Ensure better performance through improvements in the graphic driver.
+
+| Driver Version | Device Manager |
+|----|----|
+| .200.6.0 | Microsoft Devices Telemetry Service - Extensions |
+|  1153.16.20.0830 |  Surface Ethernet Adapter - Network adapters |
+| 30.0.4122.4000 | Qualcomm(R) Adreno(TM) 8cx Gen 3 - Display adapters |
+| 1.0.4122.4000 | Qualcomm WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter - Network adapters |
+| 1.0.4122.4000 | Qualcomm(R) Wlan Thermal Mitigation Device - Extensions |
+| 1.0.4122.4000 | Qualcomm(R) Slimbus Device - System devices |
+
 ## February 2025 updates
 
 The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update:
