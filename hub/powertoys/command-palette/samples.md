@@ -15,7 +15,7 @@ For the most up-to-date samples, check out [the samples project on GitHub](https
 
 ## Create a command to do something
 
-Create a class that implements [IInvokableCommand](microsoft-commandpalette-extensions/icommand.md) and implement the [Invoke](microsoft-commandpalette-extensions/iinvokablecommand_invoke.md) method. This method will be called whtn the user selects the command in the Command Palette.
+Create a class that implements [IInvokableCommand](microsoft-commandpalette-extensions/icommand.md) and implement the [Invoke](microsoft-commandpalette-extensions/iinvokablecommand_invoke.md) method. This method will be called when the user selects the command in the Command Palette.
 
 ```csharp
 class MyCommand : Microsoft.CommandPalette.Extensions.Toolkit.InvokableCommand {
