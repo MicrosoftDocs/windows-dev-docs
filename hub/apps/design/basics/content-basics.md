@@ -105,7 +105,7 @@ Our type ramp (link) is designed to provide an array of sizes that can help comm
 
 ## Lists and grids
 
-There are a variety of list and grid styles that can be created. Below are a a variety of compositions used in Windows.
+There are a variety of list and grid styles that can be created. Below are a variety of compositions used in Windows.
 
 :::row:::
     :::column:::

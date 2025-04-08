@@ -2,20 +2,24 @@
 title: Perform geocoding and reverse geocoding
 description: This guide shows you how to convert street addresses to geographic locations (geocoding) and convert geographic locations to street addresses (reverse geocoding) by calling the methods of the MapLocationFinder class in the Windows.Services.Maps namespace.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-ms.date: 10/20/2020
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, geocoding, map, location
 ms.localizationpriority: medium
 ---
 # Perform geocoding and reverse geocoding
 
+> [!IMPORTANT]
+> **Bing Maps for Enterprise service retirement**
+>
+> The UWP [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services from the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+>
+> For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
+
 > [!NOTE]
-> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services requite a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services require a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
 This guide shows you how to convert street addresses to geographic locations (geocoding) and convert geographic locations to street addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) class in the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace.
-
-> [!TIP]
-> To learn more about using maps in your app, download the [MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) sample from the [Windows universal samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub.
 
 The classes involved in geocoding and reverse geocoding are organized as follows.
 
@@ -71,7 +75,7 @@ private async void geocodeButton_Click(object sender, RoutedEventArgs e)
 
 This code displays the following results to the `tbOutputText` textbox.
 
-``` syntax
+```output
 result = (47.6406099647284,-122.129339994863)
 ```
 
@@ -119,9 +123,7 @@ town = Redmond
 ## Related topics
 
 * [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
-* [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [Design guidelines for maps](./display-maps.md)
-* Video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [**MapLocationFinder** class](/uwp/api/Windows.Services.Maps.MapLocationFinder)
 * [**FindLocationsAsync** method](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)

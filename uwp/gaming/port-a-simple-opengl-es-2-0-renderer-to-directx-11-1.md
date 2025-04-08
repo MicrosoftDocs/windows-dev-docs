@@ -39,7 +39,7 @@ Upon completing this walkthrough, you should be familiar with the following basi
 -   Shading languages, and the inputs and outputs to shader objects.
 -   Screen drawing behaviors.
 
-In this walkthrough, we refer to an simple and generic OpenGL renderer structure, which is defined like this:
+In this walkthrough, we refer to a simple and generic OpenGL renderer structure, which is defined like this:
 
 ``` syntax
 typedef struct 

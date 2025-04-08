@@ -19,7 +19,7 @@ In this quickstart, you will create a desktop Windows application that sends and
 
 ## Prerequisites
 
-- [Set up your development environment](../../set-up-your-development-environment.md)
+- [Get started with WinUI](../../../get-started/start-here.md)
 - Either [Create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) OR [Use the Windows App SDK in an existing project](../../use-windows-app-sdk-in-existing-project.md)
 
 ## Sample app
@@ -147,7 +147,7 @@ namespace CsUnpackagedAppNotifications
     {
         private bool m_isRegistered;
 
-        private Dictionary<string, Action<AppNotificationActivatedEventArgs>> c_map;
+        private Dictionary<int, Action<AppNotificationActivatedEventArgs>> c_map;
 
         public NotificationManager()
         {
@@ -609,5 +609,5 @@ winrt::Windows::Foundation::IAsyncAction UpdateProgressAsync()
 - [Microsoft.Windows.AppNotifications API details](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md#api-details)
 - [Notifications code sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/)
 - [App notifications spec on GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md)
-- [Toast content](/hub/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts)
+- [Toast content](../../../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 - [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root)

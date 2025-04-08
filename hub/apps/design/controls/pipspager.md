@@ -2,7 +2,7 @@
 description: A PipsPager is a control to let the user navigate through a paginated collection when the page numbers do not need to be visually known.
 title: PipsPager
 template: detail.hbs
-ms.date: 3/8/2021
+ms.date: 02/26/2025
 ms.topic: article
 ms.custom: 21H1
 ms.localizationpriority: medium
@@ -30,25 +30,6 @@ This UI is commonly used in apps such as photo viewers and app lists, where disp
 - For experiences optimized for gamepad input, we recommend against placing UI directly to the left or right of a horizontal PipsPager, and above or below a vertically oriented PipsPager.
 - For experiences optimized for touch input, we recommend integrating the PipsPager with a view control, such as a [FlipView](flipview.md), to take advantage of on-content pagination with touch (the user can also use touch to select individual pips).
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The PipsPager for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
-> - [Open the WinUI 2 Gallery app and see the PipsPager in action](winui2gallery:/item/PipsPager). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:PipsPager />
-```
-
 ## Create a PipsPager
 
 > [!div class="checklist"]
@@ -56,7 +37,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs**: [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the PipsPager in action](winui3gallery:/item/PipsPager).
+> [Open the WinUI 3 Gallery app and see the PipsPager in action](winui3gallery:/item/PipsPager)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -101,7 +82,7 @@ The top button corresponds to the first button and the bottom button corresponds
 
 The following example demonstrates the [VisibleOnPointerOver](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility) setting for the navigation buttons.
 
-:::image type="content" source="images/pipspager-visible-on-pointer-over.gif" alt-text="A PipsPager with five vertical dots and navigation buttons visiblility based on pointer over and current page.":::
+:::image type="content" source="images/pipspager-visible-on-pointer-over.gif" alt-text="A PipsPager with five vertical dots and navigation buttons visibility based on pointer over and current page.":::
 
 ```xaml
 <PipsPager x:Name="VerticalPipsPager"
@@ -189,6 +170,25 @@ If you set visibility through the PreviousButtonStyle or NextButtonStyle propert
     NextButtonStyle="{StaticResource NextButtonStyle}"
     PreviousButtonVisibility="VisibleOnPointerOver" 
     NextButtonVisibility="VisibleOnPointerOver" />
+```
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The PipsPager for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI 2 Apis:** [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
+> - [Open the WinUI 2 Gallery app and see the PipsPager in action](winui2gallery:/item/PipsPager). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:PipsPager />
 ```
 
 ## Related articles

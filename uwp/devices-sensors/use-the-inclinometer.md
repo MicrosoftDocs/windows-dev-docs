@@ -21,7 +21,7 @@ Learn how to use the inclinometer to determine pitch, roll, and yaw.
 
 You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-The device or emulator that you're using must support a inclinometer.
+The device or emulator that you're using must support an inclinometer.
 
 ## Create a simple inclinometer app
 

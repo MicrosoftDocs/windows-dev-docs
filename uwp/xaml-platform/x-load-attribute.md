@@ -41,7 +41,7 @@ Once a deferred element is created in any of the ways listed previously, several
 
 - The [**Loaded**](/uwp/api/windows.ui.xaml.frameworkelement.loaded) event on the element is raised.
 - The field for x:Name is set.
-- Any x:Bind bindings on the element are evaluated.
+- Any x:Bind bindings on the element are applied.
 - If you have registered to receive property change notifications on the property containing the deferred element(s), the notification is raised.
 
 ## Unloading elements
@@ -78,6 +78,14 @@ Be wary of deferring elements in a [**ListView**](/uwp/api/Windows.UI.Xaml.Contr
 If the [x:Phase attribute](x-phase-attribute.md) is used in conjunction with **x:Load** then, when an element or an element tree is realized, the bindings are applied up to and including the current phase. The phase specified for **x:Phase** does affect or control the loading state of the element. When a list item is recycled as part of panning, realized elements will behave in the same way as other active elements, and compiled bindings (**{x:Bind}** bindings) are processed using the same rules, including phasing.
 
 A general guideline is to measure the performance of your app before and after to make sure you are getting the performance that you want.
+
+To minimize changes in behavior (aside from performance) when adding **x:Load** to an element,
+**x:Bind** bindings are calculated at their normal times, as if no elements used **x:Load**.
+For example, OneTime **x:Bind** bindings are calculated when the root element loads.
+If the element is not realized at the time the **x:Bind** binding is calculated,
+then the calculated value is saved and applied to the element when it loads.
+This behavior may be surprising if you expected **x:Bind** bindings to be calculated when
+the element is realized.
 
 ## Example
 

@@ -1,11 +1,9 @@
 ---
 description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 title: Localize strings in your UI and app package manifest
-ms.date: 03/08/2023
+ms.date: 08/19/2024
 ms.topic: article
 keywords: windows 10, windows 11, winui, windows app sdk, resource, image, asset, MRT, qualifier
-ms.author: aashcraft
-author: alvinashcraft
 ms.localizationpriority: medium
 ---
 
@@ -222,7 +220,7 @@ To use resources in unpackaged applications, you should do a few things:
     - Run `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
     - The &lt;PRICONFIG&gt; must omit the "&lt;packaging&gt;" section so that all resources are bundled in a single resources.pri file. If using the default [MakePri.exe configuration file](/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](/windows/uwp/app-resources/makepri-exe-command-options), you need to delete the "&lt;packaging&gt;" section manually after it is created.
     - The &lt;PRICONFIG&gt; must contain all relevant indexers required to merge all resources in your project into a single resources.pri file. The default [MakePri.exe configuration file](/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](/windows/uwp/app-resources/makepri-exe-command-options) includes all indexers.
-    - If you don’t use the default config, make sure the PRI indexer is enabled (review the default config for how to do this) to merge PRIs found from project references, NuGet references, and so on, that are located within the project root.
+    - If you don't use the default config, make sure the PRI indexer is enabled (review the default config for how to do this) to merge PRIs found from project references, NuGet references, and so on, that are located within the project root.
         > [!NOTE]
         > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set to *Application*, which the runtime understands for unpackaged apps (this removes the previous hard dependency on package ID). When specifying resource URIs, ms-resource:/// references that omit the root namespace infer *Application* as the root namespace for unpackaged apps (or you can specify *Application* explicitly as in ms-resource://Application/).
 1. Copy the PRI file to the build output directory of the .exe

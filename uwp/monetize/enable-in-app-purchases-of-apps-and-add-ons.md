@@ -44,11 +44,7 @@ This example demonstrates how to use the [RequestPurchaseAsync](/uwp/api/windows
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs" id="PurchaseAddOn":::
 
-## Video
 
-Watch the following video for an overview of how to implement in-app purchases in your app.
-<br/>
-<br/>
 
 ## Related topics
 

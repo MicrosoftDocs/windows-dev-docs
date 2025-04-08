@@ -1,8 +1,6 @@
 ---
 title: Enable or disable the software decoder for the Camera Barcode Scanner
 description: Learn how to set a system registry key in Windows 10 to enable or disable the software decoder for the Camera Barcode Scanner.
-author: twarwick
-ms.author: twarwick
 ms.date: 05/04/2023
 ms.topic: article
 

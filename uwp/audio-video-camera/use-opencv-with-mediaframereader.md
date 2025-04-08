@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Use the Open Source Computer Vision Library (OpenCV) with MediaFrameReader
 
-This article shows you how to use the Open Source Computer Vision Library (OpenCV), a native code library that provides a wide variety of image processing algorithms, with the [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) class that can read media frames from multiple sources simulataneously. The example code in this article walks you through creating a simple app that obtains frames from a color sensor, blurs each frame using the OpenCV library, and then displays the processed image in a XAML **Image** control. 
+This article shows you how to use the Open Source Computer Vision Library (OpenCV), a native code library that provides a wide variety of image processing algorithms, with the [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) class that can read media frames from multiple sources simultaneously. The example code in this article walks you through creating a simple app that obtains frames from a color sensor, blurs each frame using the OpenCV library, and then displays the processed image in a XAML **Image** control. 
 
 >[!NOTE]
 >OpenCV.Win.Core and OpenCV.Win.ImgProc are not regularly updated and do not pass the Store compliance checks, therefore these packages are intended for experimentation only.
@@ -22,7 +22,7 @@ This article builds on the content of two other articles:
 
 In addition to these articles, to view and download a full, end-to-end working sample of the scenario described in this article, see the [Camera Frames + OpenCV Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV) in the Windows Universal Samples GitHub repo.
 
-To get started developing quickly, you can include the OpenCV library in a UWP app project by using NuGet packages, but these packages may not pass the app certficication process when you submit your app to the Store, so it is recommended that you download the OpenCV library source code and build the binaries yourself before submitting your app. Information developing with OpenCV can be found at [https://opencv.org](https://opencv.org)
+To get started developing quickly, you can include the OpenCV library in a UWP app project by using NuGet packages, but these packages may not pass the app certification process when you submit your app to the Store, so it is recommended that you download the OpenCV library source code and build the binaries yourself before submitting your app. Information developing with OpenCV can be found at [https://opencv.org](https://opencv.org)
 
 
 ## Implement the OpenCVHelper native Windows Runtime component
@@ -39,7 +39,7 @@ Next, you need to initialize the **MediaCapture** object to use the frame source
 > [!NOTE] 
 > The technique used by the OpenCVHelper component, described in detail in [Process software bitmaps with OpenCV](process-software-bitmaps-with-opencv.md), requires that the image data resides in CPU memory, not GPU memory. So, you should specify **MemoryPreference.CPU** for the **[MemoryPreference](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.MemoryPreference)** field of the **MediaCaptureInitializationSettings**.
 
-After the **MediaCapture** objet has been initialized, get a reference to the RGB frame source by accessing the **[MediaCapture.FrameSources](/uwp/api/windows.media.capture.mediacapture.FrameSources)** property.
+After the **MediaCapture** object has been initialized, get a reference to the RGB frame source by accessing the **[MediaCapture.FrameSources](/uwp/api/windows.media.capture.mediacapture.FrameSources)** property.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.OpenCV.xaml.cs" id="SnippetOpenCVInitMediaCapture":::
 

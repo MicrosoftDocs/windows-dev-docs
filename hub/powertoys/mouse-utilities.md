@@ -1,10 +1,11 @@
 ---
 title: PowerToys Mouse utilities for Windows
 description: A collection of utilities to expand the range of usage for the mouse and cursor.
-ms.date: 08/03/2023
-ms.topic: article
+ms.date: 12/13/2024
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Mouse, jump]
+# Customer intent: Learn how to configure and use the Mouse utilities in PowerToys.
 ---
 
 # Mouse utilities
@@ -13,9 +14,9 @@ Mouse utilities is a collection of features that enhance mouse and cursor functi
 
 ## Find my mouse
 
-Double press the left <kbd>Ctrl</kbd> key or shake the mouse to activate a spotlight that focuses on the cursor's position. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
+Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
 
-![Screenshot of Find my mouse.](../images/pt-mouse-utilities-find-my-mouse.gif)
+![Screenshot of Find my mouse](../images/pt-mouse-utilities-find-my-mouse.gif)
 
 ### Settings
 
@@ -23,8 +24,9 @@ From the settings page, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation method | Choose between **Press left Ctrl twice** or **Shake mouse**. |
+| Activation method | Choose between **Press Left Ctrl twice**, **Press Right Ctrl twice**, **Shake mouse** or **Custom shortcut**. |
 | Minimum distance to shake | Adjust sensitivity. |
+| Activation shortcut | The custom shortcut used to activate the spotlight. |
 | Do not activate when Game Mode is on | Prevents the spotlight from being used when actively playing a game on the system. |
 | Overlay opacity | The opacity of the spotlight backdrop. (default: 50%) |
 | Background color | The color of the spotlight backdrop. (default: #000000) |
@@ -40,7 +42,7 @@ Display visual indicators when the left or right mouse buttons are clicked. By d
 
 ### Settings
 
-![Screenshot of Mouse highlighter.](../images/pt-mouse-highlighter.gif)
+![Screenshot of Mouse highlighter](../images/pt-mouse-highlighter.gif)
 
 From the settings page, the following options can be configured:
 
@@ -57,17 +59,19 @@ From the settings page, the following options can be configured:
 
 ## Mouse jump
 
-![Screenshot of Mouse jump.](../images/pt-mouse-jump.gif)
+![Screenshot of Mouse jump](../images/pt-mouse-jump.gif)
 
 Mouse jump allows moving the mouse pointer long distances on a single screen or across multiple screens.
 
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to activate the mouse jump. |
+| Thumbnail Size | Constrains the thumbnail image to a maximum size. The default size is 1600x1200 pixels. |
+| Appearance | Expand this section to adjust the popup appearance by customizing the colors, borders, spacing, and more. |
 
 ## Mouse pointer Crosshairs
 
-![Screenshot of Crosshairs.](../images/pt-mouseutilities-crosshairs.png)
+![Screenshot of Crosshairs](../images/pt-mouseutilities-crosshairs.png)
 
 Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 
@@ -83,3 +87,5 @@ Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 | Automatically hide crosshairs when the mouse pointer is hidden | |
 | Fix crosshairs length | |
 | Crosshairs fixed length (px) | |
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

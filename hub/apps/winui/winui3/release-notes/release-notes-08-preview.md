@@ -1,14 +1,14 @@
 ---
 title: WinUI 3 Project Reunion 0.8 Preview (April 2021)
 description: Overview of WinUI 3 Project Reunion 0.8 Preview.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 05/25/2021
 ms.topic: article
 ---
 
-# Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview (May 2021)
+# Overview and release notes: WinUI 3 - Project Reunion 0.8 Preview (May 2021)
 
-Windows UI Library (WinUI) 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../../windows-app-sdk/index.md) (now called the **Windows App SDK**). The 0.8 Preview release provides [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to help you start building apps with a WinUI 3-based user interface.
+WinUI 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../../windows-app-sdk/index.md) (now called the **Windows App SDK**). The 0.8 Preview release provides [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to help you start building apps with a WinUI 3-based user interface.
 
 **WinUI 3 - Project Reunion 0.8 Preview** is a pre-release version of WinUI 3 that includes bug fixes, general improvements, and experimental features - some of which will be stabilized for the Windows App SDK 0.8 stable release in June 2021.
 
@@ -96,12 +96,12 @@ If you created an app with an earlier preview or stable version of WinUI 3, you 
 - WinUI 3 error message needs rewording: "Cannot resolve 'Windows.metadata'. Please install the Windows Software Development Kit. The Windows SDK is installed with Visual Studio."
 
 - VSM Setter quirk for raising exception has backwards logic
-  - Thanks to @HppZ for filiing this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/1048)!
+  - Thanks to @HppZ for filling this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/1048)!
 
 - Move focus off the WebView2 (if necessary) when browser process crashes
 
 - ProgressBar doesn't show difference between Paused and Error option
-  - Thansk to @j0shuams for filing this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/3694)!
+  - Thanks to @j0shuams for filing this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/3694)!
 
 - PointerReplay constantly running
 
@@ -219,7 +219,7 @@ For more information on affected APIs as well as workarounds and replacements fo
 
 ### Known issues
 
-- You may recieve a build error due to mismatched versions of the .NET SDK and the winrt.runtime.dll. As a workaround, you can try the following:
+- You may receive a build error due to mismatched versions of the .NET SDK and the winrt.runtime.dll. As a workaround, you can try the following:
 
   Explicitly set your .NET SDK to the correct version. To determine the correct version for your app, locate the `<TargetFramework>` tag in your project file. Using the Windows SDK build number that your app is targeting in the `<TargetFramework>` tag (such as 18362 or 19041), add the following item to your project file, then save your project: 
 

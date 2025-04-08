@@ -2,7 +2,7 @@
 description: Flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
 title: Flyout controls
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 02/26/2025
 ms.topic: article
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 doc-status: Published
@@ -18,19 +18,6 @@ A flyout is a light dismiss container that can show arbitrary UI as its content.
 
 For recommendations on when to use a flyout vs. when to use a dialog (a similar control), see [Dialogs and flyouts](index.md).
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout), [Button.Flyout property](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout)
-> - [Open the WinUI 2 Gallery app and see the Flyout in action](winui2gallery:/item/Flyout). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md).
-
 ## Create a flyout
 
 > [!div class="checklist"]
@@ -38,7 +25,7 @@ We recommend using the latest [WinUI 2](../../../winui/winui2/index.md) to get t
 > - **Important APIs**: [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout), [Button.Flyout property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button.Flyout)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the Flyout in action](winui3gallery:/item/Flyout).
+> [Open the WinUI 3 Gallery app and see the Flyout in action](winui3gallery:/item/Flyout)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -205,9 +192,18 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 {
 ```
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout), [Button.Flyout property](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout)
+> - [Open the WinUI 2 Gallery app and see the Flyout in action](winui2gallery:/item/Flyout). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md).
 
 ## Related articles
 

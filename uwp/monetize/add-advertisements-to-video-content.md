@@ -98,7 +98,7 @@ This section provides some details about the members of the **AdScheduler** obje
 
 This method requests an ad schedule from the Microsoft ad server and inserts it into the timeline of the **MediaPlayer** that was passed to the **AdScheduler** constructor.
 
-The optional third paramter (*adTags*) is a JSON collection of name/value pairs that can be used for apps that have advanced targeting. For example, an app that plays a variety of auto-related videos might supplement the ad unit ID with the make and model of the car being shown. This parameter is intended to be used only by partners who receive approval from Microsoft to use ad tags.
+The optional third parameter (*adTags*) is a JSON collection of name/value pairs that can be used for apps that have advanced targeting. For example, an app that plays a variety of auto-related videos might supplement the ad unit ID with the make and model of the car being shown. This parameter is intended to be used only by partners who receive approval from Microsoft to use ad tags.
 
 The following items should be noted when referring to *adTags*:
 

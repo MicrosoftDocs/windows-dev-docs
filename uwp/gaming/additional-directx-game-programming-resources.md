@@ -7,10 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, games, programming
 ms.localizationpriority: medium
 ---
+
 # Game programming resources
-
-
-
 
 For more info about game programming on Windows, check out the following resources.
 
@@ -30,7 +28,7 @@ For more info about game programming on Windows, check out the following resourc
 
 -   [Games for Windows and the DirectX SDK]( https://blogs.msdn.com/b/chuckw/)
 -   [DirectX Developer Blog]( https://blogs.msdn.com/b/directx/)
--   [Shawn Hargreaves Blog]( https://blogs.msdn.com/b/shawnhar/) (XNA game info).
+-   [Shawn Hargreaves' blog](https://shawnhargreaves.com/blogindex.html) (XNA game info).
 
 ## Toolkits
 

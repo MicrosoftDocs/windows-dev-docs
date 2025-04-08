@@ -3,9 +3,7 @@ title: Win32Interop class
 description: The **Win32Interop** class is available in .NET as part of the [Windows App SDK](../../../windows-app-sdk/index.md).
 ms.topic: article
 ms.date: 02/08/2022
-keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, Windows UI Library, app sdk, C#, interop
-ms.author: stwhi
-author: stevewhims
+keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, app sdk, C#, interop
 ms.localizationpriority: low
 ---
 

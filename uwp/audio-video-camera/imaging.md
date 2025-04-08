@@ -75,7 +75,7 @@ You can create a **SoftwareBitmap** from an existing **WriteableBitmap** by call
 
 ## Create or edit a SoftwareBitmap programmatically
 
-So far this topic has addressed working with image files. You can also create a new **SoftwareBitmap** programatically in code and use the same technique to access and modify the **SoftwareBitmap**'s pixel data.
+So far this topic has addressed working with image files. You can also create a new **SoftwareBitmap** programmatically in code and use the same technique to access and modify the **SoftwareBitmap**'s pixel data.
 
 **SoftwareBitmap** uses COM interop to expose the raw buffer containing the pixel data.
 

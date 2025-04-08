@@ -2,7 +2,7 @@
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: Use this method in the Microsoft Store submission API to update an existing package flight submission.
 title: Update a package flight submission
-ms.date: 04/17/2018
+ms.date: 10/17/2024
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store submission API, flight submission, update
 ms.localizationpriority: medium
@@ -30,13 +30,11 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` |
 
-
 ### Request header
 
 | Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
-
 
 ### Request parameters
 
@@ -45,7 +43,7 @@ This method has the following syntax. See the following sections for usage examp
 | applicationId | string | Required. The Store ID of the app for which you want to update a package flight submission. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).  |
 | flightId | string | Required. The ID of the package flight for which you want to update a submission. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md). For a flight that was created in Partner Center, this ID is also available in the URL for the flight page in Partner Center.  |
 | submissionId | string | Required. The ID of the submission to update. This ID is available in the response data for requests to [create a package flight submission](create-a-flight-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
-
+| packageId | string | Required. The ID of the existing Package. |
 
 ### Request body
 
@@ -71,6 +69,7 @@ Content-Type: application/json
 {
   "flightPackages": [
     {
+      "id": "existingPackage.Id",
       "fileName": "newPackage.appx",
       "fileStatus": "PendingUpload",
       "minimumDirectXVersion": "None",

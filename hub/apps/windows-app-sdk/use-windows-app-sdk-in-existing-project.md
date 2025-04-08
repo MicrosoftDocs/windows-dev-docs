@@ -4,8 +4,6 @@ description: This article provides instructions for using the Windows App SDK in
 ms.topic: article
 ms.date: 02/03/2023
 keywords: windows win32, desktop development, Windows App SDK
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -28,7 +26,7 @@ If you have a desktop project in which you want to use the Windows App SDK, then
 1. Open an existing project in Visual Studio.
 
     > [!NOTE]
-    > If you have a C# desktop project, then make sure that the **TargetFramework** element in the project file is set to a Windows 10-specific moniker (such as **net6.0-windows10.0.19041.0**) so that you can call Windows Runtime APIs. For more info, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). Additionally, you must be targeting **18362** or later, since there's a known issue blocking apps that target **17763** (see [Build errors when using TFM of 17763](https://github.com/microsoft/WindowsAppSDK/issues/921) on GitHub).
+    > If you have a C# desktop project, then make sure that the **TargetFramework** element in the project file is set to a Windows 10-specific moniker (such as **net6.0-windows10.0.19041.0**) so that you can call Windows Runtime APIs. For more info, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option).
 
 2. Make sure that [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
@@ -59,9 +57,10 @@ If your existing project is a C++ project, and you want to call Windows Runtime 
 
 If you encounter a *Class not registered* error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md).
 
-## Related topics
+## See Also
 
 - [Windows App SDK](index.md)
 - [Release channels and release notes](release-channels.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
+- [Windows App SDK and supported Windows releases](support.md)

@@ -26,7 +26,7 @@ The following articles provide information about features available via WinRT AP
 | [App-to-app communication](/windows/uwp/app-to-app/) | Learn how to share data between apps, including how to use the Share contract, copy and paste, drag and drop, and app services. |
 | [Interprocess communication](/windows/uwp/communication/interprocess-communication) | Learn about ways to perform interprocess communication (IPC) between UWP apps, packaged desktop apps, and unpackaged desktop apps. |
 | [Networking and web services](/windows/uwp/networking/) | Learn about networking and web services technologies that are available to apps. |
-| [Sharing named objects](/windows/uwp/communication/sharing-named-objects) | Learn how to share named objects between between UWP apps, packaged desktop apps, and unpackaged desktop apps. |
+| [Sharing named objects](/windows/uwp/communication/sharing-named-objects) | Learn how to share named objects between UWP apps, packaged desktop apps, and unpackaged desktop apps. |
 
 #### Win32 (C++ and COM) APIs
 

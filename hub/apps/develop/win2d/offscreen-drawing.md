@@ -47,7 +47,7 @@ GaussianBlurEffect blurEffect = new GaussianBlurEffect()
 };
 ```
 
-An app can close, and re-open drawing sessions on a `CanvasRenderTarget` abitrarily many times.
+An app can close, and re-open drawing sessions on a `CanvasRenderTarget` arbitrarily many times.
 
 Drawing operations are not committed to the `CanvasRenderTarget` until the drawing session object is disposed. In C#, a `using` block can organize this.
 

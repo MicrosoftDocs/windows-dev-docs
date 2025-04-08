@@ -4,7 +4,7 @@ title: Images and image brushes
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 02/26/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -18,24 +18,6 @@ Use an **Image** element to display a stand-alone image in your app.
 
 Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrush include decorative effects for text, or backgrounds for controls or layout containers.
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Image class](/uwp/api/Windows.UI.Xaml.Controls.Image), [Source property](/uwp/api/windows.ui.xaml.controls.image.source), [ImageBrush class](/uwp/api/Windows.UI.Xaml.Media.ImageBrush), [ImageSource property](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
-> - [Open the WinUI 2 Gallery app and see ImageBrushes in action](winui2gallery:/item/Image). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
-
-Starting in Windows 10, version 1607, the **Image** element supports animated GIF images. When you use a **BitmapImage** as the image **Source**, you can access BitmapImage APIs to control playback of the animated GIF image. For more info, see the Remarks on the [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.Imaging.BitmapImage) class page.
-
-> [!NOTE]
-> Animated GIF support is available when your app is compiled for Windows 10, version 1607 and running on version 1607 (or later). When your app is compiled for or runs on previous versions, the first frame of the GIF is shown, but it is not animated.
-
 ## Create an image
 
 > [!div class="checklist"]
@@ -43,7 +25,7 @@ Starting in Windows 10, version 1607, the **Image** element supports animated GI
 > - **Important APIs:** [Image class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Image), [Source property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image.source), [ImageBrush class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.ImageBrush), [ImageSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush.imagesource)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see ImageBrushes in action](winui3gallery:/item/Image).
+> [Open the WinUI 3 Gallery app and see ImageBrushes in action](winui3gallery:/item/Image)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -159,9 +141,23 @@ If you define an Image or ImageBrush using code, use the default constructors, t
 > [!NOTE]
 > If you establish images using code, you can use automatic handling for accessing unqualified resources with current scale and culture qualifiers, or you can use [ResourceManager](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) and [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) with qualifiers for culture and scale to obtain the resources directly. For more info see [Resource management system](/windows/uwp/app-resources/resource-management-system).
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media) namespaces.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [Image class](/uwp/api/Windows.UI.Xaml.Controls.Image), [Source property](/uwp/api/windows.ui.xaml.controls.image.source), [ImageBrush class](/uwp/api/Windows.UI.Xaml.Media.ImageBrush), [ImageSource property](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
+> - [Open the WinUI 2 Gallery app and see ImageBrushes in action](winui2gallery:/item/Image). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
+
+Starting in Windows 10, version 1607, the **Image** element supports animated GIF images. When you use a **BitmapImage** as the image **Source**, you can access BitmapImage APIs to control playback of the animated GIF image. For more info, see the Remarks on the [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.Imaging.BitmapImage) class page.
+
+> [!NOTE]
+> Animated GIF support is available when your app is compiled for Windows 10, version 1607 and running on version 1607 (or later). When your app is compiled for or runs on previous versions, the first frame of the GIF is shown, but it is not animated.
 
 ## Related articles
 

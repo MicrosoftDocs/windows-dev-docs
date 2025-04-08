@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 This article provides guidelines for providing great experiences with banner ads, interstitial ads, and native ads in your apps. For general guidance about how to design the look and feel for apps, see [Design & UI](https://developer.microsoft.com/windows/apps/design).
 
 > [!IMPORTANT]
-> Any use of advertising in your app must comply with the Microsoft Store Policies – including, without limitation, [policy 10.10](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) (Advertising Conduct and Content). In particular, your app's implementation of banner ads or interstitial ads must meet the requirements in Microsoft Store policy [policy 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content). This article includes examples of implementations that would violate this policy. These examples are provided for informational purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate the Microsoft Store Policies that are not listed in this article.
+> Any use of advertising in your app must comply with the Microsoft Store Policies – including, without limitation, [policy 10.10](/windows/apps/publish/store-policies-and-code-of-conduct#1010-advertising-conduct-and-content) (Advertising Conduct and Content). In particular, your app's implementation of banner ads or interstitial ads must meet the requirements in Microsoft Store [policy 10.10.1](/windows/apps/publish/store-policies-and-code-of-conduct#1010-advertising-conduct-and-content). This article includes examples of implementations that would violate this policy. These examples are provided for informational purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate the Microsoft Store Policies that are not listed in this article.
 
 ## General best practices
 
@@ -30,7 +30,7 @@ Before reviewing our guidelines for different types of ads in this article, firs
 
 ## Guidelines for banner ads
 
-The following sections provide recommendations for how to implement [banner ads](banner-ads.md) in your app using [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) and examples of implementations that violate [policy 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) of the Microsoft Store Policies.
+The following sections provide recommendations for how to implement [banner ads](banner-ads.md) in your app using [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) and examples of implementations that violate [policy 10.10.1](/windows/apps/publish/store-policies-and-code-of-conduct#1010-advertising-conduct-and-content) of the Microsoft Store Policies.
 
 ### Best practices
 
@@ -60,7 +60,7 @@ We recommend that you avoid these practices when you implement banner ads in you
 
 ### Examples of policy violations
 
-This section provides examples of banner ad scenarios that violate [policy 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) of the Microsoft Store Policies. These examples are provided for instructional purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate policy 10.10.1 that are not listed here.
+This section provides examples of banner ad scenarios that violate [policy 10.10.1](/windows/apps/publish/store-policies-and-code-of-conduct#1010-advertising-conduct-and-content) of the Microsoft Store Policies. These examples are provided for instructional purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate policy 10.10.1 that are not listed here.
 
 * Doing anything to interfere with the user’s ability to view the banner ad, such as changing the opacity of the [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) or placing another control on top of the **AdControl** (without first calling [AdControl.Suspend](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend)).
 
@@ -82,7 +82,7 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 
 When used elegantly, [interstitial ads](interstitial-ads.md) can vastly increase your app revenue, without negatively impacting user satisfaction. When used improperly, such ads can have the exact opposite effect.
 
-The following sections provide recommendations for how to implement interstitial video ads and interstitial banner ads in your app using [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad), and examples of implementations that violate [policy 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) of the Microsoft Store Policies. Since you know your app better than anyone, except where policy is concerned, we leave it up to you to make the best final decision. What’s most important to keep in mind is that your app ratings and revenue are tightly coupled.
+The following sections provide recommendations for how to implement interstitial video ads and interstitial banner ads in your app using [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad), and examples of implementations that violate [policy 10.10.1](/windows/apps/publish/store-policies-and-code-of-conduct#1010-advertising-conduct-and-content) of the Microsoft Store Policies. Since you know your app better than anyone, except where policy is concerned, we leave it up to you to make the best final decision. What’s most important to keep in mind is that your app ratings and revenue are tightly coupled.
 
 ### Best practices
 
@@ -142,7 +142,7 @@ We recommend that you avoid these practices when you implement interstitial ads 
 
 ### Examples of policy violations
 
-This section provides examples of interstitial ad scenarios that violate [policy 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) of the Microsoft Store Policies. These examples are provided for instructional purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate policy 10.10.1 that are not listed here.
+This section provides examples of interstitial ad scenarios that violate [policy 10.10.1](/windows/apps/publish/store-policies-and-code-of-conduct#1010-advertising-conduct-and-content) of the Microsoft Store Policies. These examples are provided for instructional purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate policy 10.10.1 that are not listed here.
 
 * Placing a UI element over the interstitial ad container.
 

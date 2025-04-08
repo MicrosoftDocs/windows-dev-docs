@@ -1,14 +1,11 @@
 ---
-description: Learn how Fluent motion fundamentals like timing, easing, directionality, and gravity come together in your app.
 title: Motion in practice - animation in Windows apps
+description: Learn how Fluent motion fundamentals like timing, easing, directionality, and gravity come together in your app.
 label: Motion in practice
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 09/18/2024
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: stmoy
-design-contact: jeffarn
-doc-status: Draft
+doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -18,22 +15,14 @@ Timing, easing, directionality, and gravity work together to form the foundation
 
 Here are 3 ways to apply Fluent motion fundamentals in your app.
 
-:::row:::
-    :::column:::
-**Implicit animation**
+- **Implicit animation**<br/>
 Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.
-    :::column-end:::
-    :::column:::
-**Built-in animation**
+- **Built-in animation**<br/>
 System components, such as common controls and shared motion, are "Fluent by default". Fundamentals have been applied in a manner consistent with their implied usage.
-    :::column-end:::
-    :::column:::
-**Custom animation following guidance recommendations**
+- **Custom animation following guidance recommendations**<br/>
 There may be times when the system does not yet provide an exact motion solution for your scenario. In those cases, use the baseline fundamental recommendations as a starting point for your experiences.
-    :::column-end:::
-:::row-end:::
 
-**Transition example**
+**_Transition example_**
 
 ![functional animation](images/page-refresh.gif)
 
@@ -52,7 +41,7 @@ Fade in: 300ms; Easing: Default Decelerate
     :::column-end:::
 :::row-end:::
 
-**Object example**
+**_Object example_**
 
  ![300ms motion](images/control.gif)
 
@@ -67,24 +56,14 @@ Grow: 150ms; Easing: Default Accelerate
     :::column-end:::
 :::row-end:::
 
-## Examples
+### Examples
 
-<table>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon.png" alt="WinUI Gallery" width="168"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/ImplicitTransition">open the app and see Implicit Transitions in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Implicit Animations
-
-> Implicit animations require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
 
 Implicit animations are a simple way to achieve Fluent motion by automatically interpolating between the old and new values during a parameter change.
 
@@ -129,6 +108,18 @@ public double OpaqueIfEnabled(bool IsEnabled)
     return IsEnabled ? 1.0 : 0.2;
 }
 ```
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [Windows.UI.Xaml.Media.Animation Namespace](/uwp/api/windows.ui.xaml.media.animation), [Windows.UI.Xaml.Controls namespace](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> - **WinUI 2 Apis:** [Microsoft.UI.Xaml.Controls namespace](/windows/winui/api/microsoft.ui.xaml.controls)
+> - [Open the WinUI 2 Gallery app and see Implicit Transitions in action](winui2gallery://item/ImplicitTransition). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+Implicit animations require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
 
 ## Related articles
 

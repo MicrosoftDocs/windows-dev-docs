@@ -4,7 +4,7 @@ ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Accessible text requirements
 label: Accessible text requirements
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 11/27/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -175,11 +175,10 @@ These types have an **IsTextScaleFactorEnabled** property:
 
 ## Examples
 
-> [!TIP]
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see text accessibility support in action](winui3gallery://item/AccessibilityScreenReader).
+> [Open the WinUI 3 Gallery app and see text accessibility support in action](winui3gallery://item/AccessibilityScreenReader)
 
-> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Related topics  
 

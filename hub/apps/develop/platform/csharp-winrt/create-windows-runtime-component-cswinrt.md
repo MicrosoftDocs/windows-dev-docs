@@ -30,7 +30,7 @@ Begin by creating a new project in Visual Studio. Select the **Class Library** p
 
     ```xml
     <PropertyGroup>
-        <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+        <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
         <Platforms>x64</Platforms>
     </PropertyGroup>
     ```

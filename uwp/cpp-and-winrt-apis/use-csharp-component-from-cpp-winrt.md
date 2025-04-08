@@ -137,21 +137,21 @@ Copy and paste the following XML to the first `PropertyGroup` in `CPPWinRTCSharp
 
 ```xml
    <!-- Start Custom .NET Native properties -->
-   <DotNetNativeVersion>2.2.9-rel-29512-01</DotNetNativeVersion>
-   <DotNetNativeSharedLibrary>2.2.8-rel-29512-01</DotNetNativeSharedLibrary>
-   <UWPCoreRuntimeSdkVersion>2.2.11</UWPCoreRuntimeSdkVersion>
+   <DotNetNativeVersion>2.2.12-rel-31116-00</DotNetNativeVersion>
+   <DotNetNativeSharedLibrary>2.2.8-rel-31116-00</DotNetNativeSharedLibrary>
+   <UWPCoreRuntimeSdkVersion>2.2.14</UWPCoreRuntimeSdkVersion>
    <!--<NugetPath>$(USERPROFILE)\.nuget\packages</NugetPath>-->
    <NugetPath>$(ProgramFiles)\Microsoft SDKs\UWPNuGetPackages</NugetPath>
    <!-- End Custom .NET Native properties -->
 ```
 
-The values for `DotNetNativeVersion`, `DotNetNativeSharedLibrary`, and `UWPCoreRuntimeSdkVersion` may vary depending on the version of Visual Studio.  To set them to the correct values, open the `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages` and look at the sub-directory for each value in the table below.  The  `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages\Microsoft.Net.Native.Compiler` directory will have a sub-directory that contains an installed version of .NET native that starts with `2.2`.  In the example below, it is `2.2.9-rel-29512-01`.
+The values for `DotNetNativeVersion`, `DotNetNativeSharedLibrary`, and `UWPCoreRuntimeSdkVersion` may vary depending on the version of Visual Studio.  To set them to the correct values, open the `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages` and look at the sub-directory for each value in the table below.  The  `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages\Microsoft.Net.Native.Compiler` directory will have a sub-directory that contains an installed version of .NET native that starts with `2.2`.  In the example below, it is `2.2.12-rel-31116-00`.
 
 > | MSBuild Variable | Directory | Example
 > |-| - | -
-> | DotNetNativeVersion | `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages\Microsoft.Net.Native.Compiler` | `2.2.9-rel-29512-01`
-> | DotNetNativeSharedLibrary | `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.native.sharedlibrary` | `2.2.8-rel-29512-01`
-> | UWPCoreRuntimeSdkVersion | `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages\Microsoft.Net.UWPCoreRuntimeSdk` | `2.2.11`
+> | DotNetNativeVersion | `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages\Microsoft.Net.Native.Compiler` | `2.2.12-rel-31116-00`
+> | DotNetNativeSharedLibrary | `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.native.sharedlibrary` | `2.2.8-rel-31116-00`
+> | UWPCoreRuntimeSdkVersion | `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages\Microsoft.Net.UWPCoreRuntimeSdk` | `2.2.14`
 
 > [!NOTE]
 > There are multiple supported architectures for Microsoft.Net.Native.SharedLibrary.  Replace `x64` with the appropriate architecture.  For example, the `arm64` architecture would be in the `%ProgramFiles(x86)%\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm64.microsoft.net.native.sharedlibrary` directory.

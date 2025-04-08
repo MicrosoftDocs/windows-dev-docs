@@ -17,7 +17,7 @@ While the [Customer database tutorial](customer-database-tutorial.md) presents a
 * Views are the UI of any given page.
 * ViewModels provide the application logic. This can include handling user actions from the View and/or managing interactions with the Models.
 
-While this app isn't a perfect and architypical example of MVVM, it does show the main principles of separation of concerns in action. [Check out the app here.](https://github.com/Microsoft/windows-tutorials-customer-database)
+While this app isn't a perfect and archetypical example of MVVM, it does show the main principles of separation of concerns in action. [Check out the app here.](https://github.com/Microsoft/windows-tutorials-customer-database)
 
 ## Application structure
 
@@ -65,7 +65,7 @@ As is usual for UWP apps, the application launch behavior is defined in the **Ap
 * We've created a Repository object, which will hold the data source we're using.
 * We've added a **SQLiteDatabase** method, which initializes the local database and sets it as the specified Repository.
 
-If you try the "Going further" section, you'll add a similar method to initialize a REST Respository object. Because we've separated our concerns and are using the same defined interface for both SQLite and REST operations, this will be the only existing code you'll need to change to use REST instead of SQLite in your app.
+If you try the "Going further" section, you'll add a similar method to initialize a REST Repository object. Because we've separated our concerns and are using the same defined interface for both SQLite and REST operations, this will be the only existing code you'll need to change to use REST instead of SQLite in your app.
 
 ## Next steps
 

@@ -1,8 +1,6 @@
 ---
 title: Camera barcode scanner symbologies
 description: Provides sample barcodes for each of the symbologies supported by the software barcode decoder that ships with Windows 10 Version 1803 or later.
-author: twarwick
-ms.author: twarwick
 ms.date: 05/04/2023
 ms.topic: article
 

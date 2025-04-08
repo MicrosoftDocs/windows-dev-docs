@@ -96,6 +96,7 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
     template <typename L> RoutedEventHandler(L lambda);
     template <typename F> RoutedEventHandler(F* function);
     template <typename O, typename M> RoutedEventHandler(O* object, M method);
+    /* ... other constructors ... */
     void operator()(winrt::Windows::Foundation::IInspectable const& sender,
         winrt::Windows::UI::Xaml::RoutedEventArgs const& e) const;
 };

@@ -2,7 +2,7 @@
 description: You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
 title: Send requests to the Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
-ms.date: 03/22/2018
+ms.date: 07/16/2024
 ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
@@ -50,12 +50,13 @@ You can programmatically launch a dialog from your app that asks your customer t
 > [!IMPORTANT]
 > All of the flight group requests described in this section are currently not available to most developer accounts. These requests will fail unless your developer account is specially provisioned by Microsoft.
 
-The **SendRequestAsync** method supports a set of requests for flight group scenarios, such as adding a user or device to a flight group. To submit these requests, pass the value 7 or 8 to the *requestKind* parameter along with a JSON-formatted string to the *parametersAsJson* parameter that indicates the request you want to submit along with any related arguments. These *requestKind* values differ in the following ways.
+The **SendRequestAsync** method supports a set of requests for flight group scenarios, such as adding a user or device to a flight group. To submit these requests, pass the value 7 or 8 to the *requestKind* parameter along with a JSON-formatted string to the *parametersAsJson* parameter that indicates the request you want to submit along with any related arguments. The method also supports requests to map a PFN with a BigID (ProductID from Display Catalog). To submit this request, pass the value 9 to the requestKind parameter. These *requestKind* values differ in the following ways.
 
 |  Request kind value  |  Description  |
 |----------------------|---------------|
 |  7                   |  The requests are performed in the context of the current device. This value can only be used on Windows 10, version 1703, or later.  |
 |  8                   |  The requests are performed in the context of the user who is currently signed in to the Store. This value can be used on Windows 10, version 1607, or later.  |
+|  9                   |  The requests return the BigID (ProductId) by PackageFamilyName via an HTTP request to the Display Catalog with anonymous authentication. |
 
 The following flight group requests are currently implemented.
 

@@ -4,8 +4,6 @@ description: The following constants are for use with the Bootstrapper C# APIs.
 ms.topic: article
 ms.date: 07/25/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, C#, interop, Bootstrapper, Bootstrapper API, constants
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: low
 ---
 

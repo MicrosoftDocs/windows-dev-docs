@@ -35,7 +35,7 @@ Note that periodic updates cannot be used with toast notifications. Toast is bes
 
 Any valid HTTP or HTTPS web address can be used as the URI to be polled.
 
-The cloud server's response includes the downloaded content. The content returned from the URI must conform to the [Tile](adaptive-tiles-schema.md) or [Badge](/uwp/schemas/tiles/badgeschema/schema-root) XML schema specification, and must be UTF-8 encoded. You can use defined HTTP headers to specify the [expiration time](#expiration-of-tile-and-badge-notifications) or tag for the notification.
+The cloud server's response includes the downloaded content. The content returned from the URI must conform to the [Tile](/uwp/schemas/tiles/tilesschema/schema-root) or [Badge](/uwp/schemas/tiles/badgeschema/schema-root) XML schema specification, and must be UTF-8 encoded. You can use defined HTTP headers to specify the [expiration time](#expiration-of-tile-and-badge-notifications) or tag for the notification.
 
 ## Polling Behavior
 

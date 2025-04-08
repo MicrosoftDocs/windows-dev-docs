@@ -1,11 +1,11 @@
 ---
-ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
-description: Use the Microsoft Store submission API to programmatically create and manage submissions for apps that are registered to your Partner Center account.
 title: Create and manage submissions
-ms.date: 06/04/2018
+description: Use the Microsoft Store submission API to programmatically create and manage submissions for apps that are registered to your Partner Center account.
+ms.date: 07/22/2024
 ms.topic: article
-keywords: windows 10, uwp, Microsoft Store submission API
+keywords: windows 10, windows 11, Microsoft Store submission API
 ms.localizationpriority: medium
+ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 ---
 
 # Create and manage submissions
@@ -28,6 +28,9 @@ The following steps describe the end-to-end process of using the Microsoft Store
 
 > [!NOTE]
 > This API cannot be used with apps or add-ons that use mandatory app updates and Store-managed consumable add-ons. If you use the Microsoft Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use Partner Center to manage the submissions for the app or add-on.
+
+> [!NOTE]
+> You can't use this API with apps or add-ons that are on Pricing Version 2. A product is on Pricing Version 2 if there's a **Review price per market** button in the **Pricing** section of the **Pricing and availability** page. If you use the Microsoft Store submission API with an app or add-on that's on Pricing Version 2, then the API will return an unknown tier for the pricing part. You can continue using this API to update modules other than **Pricing and availability**.
 
 <span id="prerequisites"></span>
 

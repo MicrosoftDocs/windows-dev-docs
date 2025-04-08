@@ -35,7 +35,7 @@ To upload a certificate for your automated build:
 1. **Encode your certificate as a Base 64 string**: Open PowerShell to the directory that contains your certificate, and execute the following command, replacing the pfx file name with your certificate's file name.
 
 ```powershell
-$pfx_cert = Get-Content 'App1_TemporaryKey.pfx' -Encoding Byte
+$pfx_cert = Get-Content 'App1_TemporaryKey.pfx' -AsByteStream
 
 [System.Convert]::ToBase64String($pfx_cert) | Out-File 'App1_TemporaryKey_Base64.txt'
 ```

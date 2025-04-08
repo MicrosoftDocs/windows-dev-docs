@@ -1,7 +1,5 @@
 ---
 ms.topic: include
-author: jwmsft
-ms.author: jimwalk
 ms.date: 06/01/2022
 ---
 > [!IMPORTANT]

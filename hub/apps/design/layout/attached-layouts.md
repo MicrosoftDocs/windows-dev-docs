@@ -14,9 +14,9 @@ A container (for example, Panel) that delegates its layout logic to another obje
 
 In this topic, we cover what's involved in creating an attached layout (virtualizing and non-virtualizing), the concepts and classes you'll need to understand, and the trade-offs you'll need to consider when deciding between them.
 
-| **Get the Windows UI Library** |
+| **Get WinUI** |
 | - |
-| This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/). |
+| This control is included as part of WinUI, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [WinUI overview](/uwp/toolkits/winui/). |
 
 > **Important APIs**:
 

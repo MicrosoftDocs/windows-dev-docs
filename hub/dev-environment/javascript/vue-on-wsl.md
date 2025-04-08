@@ -1,9 +1,6 @@
 ---
 title: Install Vue.js on WSL
 description: A guide to help you get started using the Vue.js web frameworks on Windows Subsystem for Linux.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: Vue, Vue.js, windows 10, install vue, install vue on windows, install vue with windows, install vue for windows, web app with vue, vue dev environment, install vue on windows subsystem for linux, install vue with wsl, install vue on wsl, install vue on ubuntu on windows
 ms.localizationpriority: medium
@@ -14,7 +11,7 @@ ms.date: 08/18/2021
 
 A guide to help you set up a Vue.js development environment on Windows by installing the Vue.js web framework on Windows Subsystem for Linux (WSL). Learn more on the [Vue.js overview](./vue-overview.md) page.
 
-Vue can be installed [directly on Windows](./vue-on-windows.md) or on WSL. We generally recommend installing on WSL if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands. For more info, see [Should I install on Windows or Windows Subsystem for Linux?](./windows-or-wsl.md).
+Vue can be installed [directly on Windows](./vue-on-windows.md) or on WSL. We generally recommend installing on WSL if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands. You may also want to consider [Vite](https://vitejs.dev/guide/why.html) as an alternative to Vue.js.
 
 ## Prerequisites
 
@@ -59,7 +56,6 @@ To learn more about additional plugins that can be added (such as linting or Apo
 
 - [Vue docs](https://vuejs.org/)
 - [Vue.js overview](./vue-overview.md)
-- [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install Vue.js on Windows](./vue-on-windows.md)
 - [Install Nuxt.js](./nuxtjs-on-wsl.md)
 - Microsoft Learn online course: [Take your first steps with Vue.js](/training/paths/vue-first-steps/)

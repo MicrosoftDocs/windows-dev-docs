@@ -1,10 +1,11 @@
 ---
 title: PowerToys administrator mode for Windows
 description: For PowerToys to work with an app running in elevated admin mode, PowerToys must be running in administrator mode as well.
-ms.date: 08/03/2023
-ms.topic: article
+ms.date: 11/19/2024
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
+# Customer intent: Learn how to run PowerToys in administrator mode to work with apps running in elevated admin mode.
 ---
 
 # PowerToys running with administrator permissions
@@ -15,14 +16,17 @@ When running any application as an administrator (also referred to as elevated p
 
 There are two options for PowerToys to support applications running as administrator (with elevated permissions):
 
-1. **Recommended**: PowerToys will display a notification when an elevated process is detected. Open PowerToys Settings. On the General tab, select **Restart as administrator**.
-2. Enable **Always run as administrator** in the PowerToys Settings.
+- **Recommended**: PowerToys will display a notification when an elevated process is detected. Open PowerToys Settings. On the General tab, select **Restart as administrator**.
+- Enable **Always run as administrator** in the PowerToys Settings.
+
+> [!NOTE]
+> It's not recommended to always run an application as administrator unless absolutely necessary. Running apps as administrator may expose your system to security risks. One of our principles at Microsoft is to be **secure by default**. Read more about our **Secure Future Initiative (SFI)** [here](https://www.microsoft.com/trust-center/security/secure-future-initiative).
 
 ## Support for admin mode with PowerToys
 
-PowerToys needs elevated administrator permission when writing protected system settings or when interacting with other applications that are running in administrator mode. If those applications are in focus, PowerToys may not function unless it is elevated as well.
+PowerToys needs elevated administrator permission when writing protected system settings or when interacting with other applications that are running in administrator mode. If those applications are in focus, PowerToys may not function unless it's elevated as well.
 
-These are the two scenarios PowerToys will not work in:
+These are the two scenarios where PowerToys will not work:
 
 - Intercepting certain types of keyboard strokes
 - Resizing / moving windows
@@ -33,34 +37,39 @@ Admin mode permissions may be required in the following scenarios:
 
 - Always On Top
   - Pin windows that are elevated
-- File Locksmith
-  - End elevated processes
 - FancyZones
   - Snapping an elevated window (e.g. Task Manager) into a Fancy Zone
   - Moving the elevated window to a different zone
+- File Locksmith
+  - End elevated processes
 - Hosts file editor
-- Shortcut guide
-  - Display shortcut
 - Keyboard remapper
   - Key to key remapping
   - Global level shortcuts remapping
   - App-targeted shortcuts remapping
+- Mouse without Borders
+  - Use Service
 - PowerToys Run
   - Use shortcut
 - Registry Preview
   - Write keys to the registry
+- Shortcut guide
+  - Display shortcut
 - Video Conference Mute
+
+> [!NOTE]
+> Each PowerToys utility has information in its Settings page about whether it requires admin mode and when it's required.
 
 ## Run as administrator: elevated processes explained
 
-Windows applications run in _User mode_ by default. To run an application in _Administrative mode_ or as an _elevated process_ means that app will run with additional access to the operating system. Most apps do not need to run with elevated permission. A common scenario, however, for requiring administrator permission would be to run certain PowerShell commands or edit the registry.
+Windows applications run in _User mode_ by default. To run an application in _Administrative mode_ or as an _elevated process_ means that app will run with additional access to the operating system. Most apps don't need to run with elevated permission. However, a common scenario for requiring administrator permission would be to run certain PowerShell commands or edit the registry.
 
-The simplest way to run an app or program in administrative mode is to right-click the program and select **Run as administrator**. If the current user is not an administrator, Windows will ask for the administrator username and password.
+The simplest way to run an app or program in administrative mode is to right-click the program and select **Run as administrator**. If the current user isn't an administrator, Windows will ask for the administrator username and password.
 
 If you see this User Account Control prompt, the application is requesting administrator level elevated permission:
 
-![Windows UAC elevated permission prompt screenshot.](../images/pt-admin-prompt.png)
+![Windows UAC elevated permission prompt screenshot](../images/pt-admin-prompt.png)
 
 In the case of an elevated command line, typically the text "Administrator" will be included in the title bar.
 
-![Windows Powershell and Command Line with elevated permissions screenshot.](../images/pt-admin-terminal.png)
+![Windows Powershell and Command Line with elevated permissions screenshot](../images/pt-admin-terminal.png)

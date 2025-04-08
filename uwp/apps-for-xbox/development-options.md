@@ -4,8 +4,6 @@ description: This section describes possible architectures and development envir
 ms.date: 04/21/2022
 ms.topic: article
 keywords: Xbox
-ms.author: HiHaile
-author: Hilina-H
 ---
 # Xbox Media App Development Options 
 
@@ -21,11 +19,11 @@ If you are developing your UI primarily in XAML or using technologies like Media
 
 [Download Visual Studio tools](https://visualstudio.microsoft.com/downloads/) 
 
-NOTE: It can be tricky to fully downgrade your development environment after using a later version, so it’s recommended that you only install the version you need. 
+NOTE: It can be tricky to fully downgrade your development environment after using a later version, so it's recommended that you only install the version you need. 
 
 ### Installing the right components 
 
-Once you’ve chosen a Visual Studio version, follow these instructions to get it set up: 
+Once you've chosen a Visual Studio version, follow these instructions to get it set up: 
 
 [Getting started with UWP app development on Xbox One - UWP application](../xbox-apps/getting-started.md)
 

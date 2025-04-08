@@ -82,7 +82,7 @@ Under **Manage**, select **Authentication**.
 
 Select **Add a platform > Mobile and desktop applications**.
 
-In the **Redirect URIs** section, select `https://login.microsoftonline.com/common/oauth2/nativeclient` and in **Custom redirect URIs** add `https://localhost`.
+In the **Redirect URIs** section, select `https://login.microsoftonline.com/common/oauth2/nativeclient` and in **Custom redirect URIs** add `http://localhost`.
 
 Select **Configure**.
 
@@ -143,7 +143,7 @@ private void Initialize()
             TenantId = TenantId,
             ClientId = ClientId,
             AuthorityHost = AzureAuthorityHosts.AzurePublicCloud,
-            RedirectUri = new Uri("https://localhost"),
+            RedirectUri = new Uri("http://localhost"),
         };
 
         InteractiveBrowserCredential interactiveCredential = new(options);

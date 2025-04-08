@@ -25,7 +25,7 @@ For more information, see [Use Windows Runtime APIs in desktop apps](/windows/ap
 
 ## Migrate a .NET Framework app to a UWP app
 
-If your application runs on the .NET Framework, you can migrate it to a UWP app by leveraging .NET Standard 2.0. Move as much code as you can into .NET Standard 2.0 class libraries, and then create a UWP app that references your .NET Standard 2.0 libraries. 
+If your application runs on the .NET Framework, you can migrate it to a UWP app by leveraging .NET Standard 2.0. Move as much code as you can into .NET Standard 2.0 class libraries, and then create a UWP app that references your .NET Standard 2.0 libraries.
 
 ### Share code in a .NET Standard 2.0 library
 
@@ -86,9 +86,7 @@ public static ArrayList GetCustomerNames()
 
     using (SqlConnection conn = new SqlConnection())
     {
-        conn.ConnectionString =
-            @"Data Source=" +
-            @"<Your Server Name>\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+        conn.ConnectionString = ...; // Your connection string goes here.
 
         conn.Open();
 
@@ -118,8 +116,7 @@ public static ArrayList GetCustomerNames(DbProviderFactory factory)
 
     using (DbConnection conn = factory.CreateConnection())
     {
-        conn.ConnectionString = @"Data Source=" +
-                        @"<Your Server Name>\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+        conn.ConnectionString = ...; // Your connection string goes here.
 
         conn.Open();
 
@@ -212,71 +209,6 @@ public sealed partial class MainPage : Page
 ```
 
 To get started with UWP, see [What's a UWP app](../get-started/universal-application-platform-guide.md).
-
-### Reach iOS and Android devices
-
-You can reach Android and iOS devices by adding Xamarin projects.
-
-> [!NOTE]
->For new cross-platform projects, please consider using .NET MAUI.
-
-![An image that shows an Android device and a i O S device displaying Xamarin apps.](images/desktop-to-uwp/xamarin-apps.png)
-
-These projects let you use C# to build Android and iOS apps with full access to platform-specific and device-specific APIs. These apps leverage platform-specific hardware acceleration, and are compiled for native performance.
-
-They have access to the full spectrum of functionality exposed by the underlying platform and device, including platform-specific capabilities like iBeacons and Android Fragments and you'll use standard native user interface controls to build UIs that look and feel the way that users expect them to.
-
-Just like UWPs, the cost to add an Android or iOS app is lower because you can reuse business logic in a .NET Standard 2.0 class library. You'll have to design your UI pages in XAML and write any device or platform-specific code.
-
-#### Add a Xamarin project
-
-First, add an **Android**, **iOS**, or **Cross-Platform** project to your solution.
-
-You can find these templates in the **Add New Project** dialog box under the **Visual C#** group.
-
-![Screenshot of the Add New Project dialog box showing Installed > Visual C sharp selected and Android, Cross Platform, and i O S options called out.](images/desktop-to-uwp/xamarin-projects.png)
-
->[!NOTE]
->Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](/xamarin/xamarin-forms/).
-
-Then, from your Android, iOS, or cross-platform project, add a reference the class library project.
-
-![Screenshot of the Solution Explorer pane that calls out the reference to the Class library reference for the  Android, i O S, or cross-platform project.](images/desktop-to-uwp/class-library-reference3.png)
-
-#### Build your pages
-
-Our example shows a list of customers in an Android app.
-
-![Android app](images/desktop-to-uwp/android-app.png)
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="10dp" android:textSize="16sp"
-    android:id="@android:id/list">
-</TextView>
-```
-
-```csharp
-[Activity(Label = "MyAndroidApp", MainLauncher = true)]
-public class MainActivity : ListActivity
-{
-    protected override void OnCreate(Bundle savedInstanceState)
-    {
-        base.OnCreate(savedInstanceState);
-
-        SqlClientFactory factory = SqlClientFactory.Instance;
-
-        var customers = (string[])Northwind.GetCustomerNames(factory).ToArray(typeof(string));
-
-        ListAdapter = new ArrayAdapter<string>(this, Resource.Layout.list_item, customers);
-    }
-}
-```
-
-To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](/xamarin).
 
 ## Next steps
 

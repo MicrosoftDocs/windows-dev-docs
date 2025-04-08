@@ -91,7 +91,7 @@ Property | Description
 Property | Description
 --- | ---
 **Intensity** | Controls the brightness of the light.
-**Attenuation** | Attenuation controls how a light's intensity decreases toward the maximum distance specified by the range property.  Constant, Quadradic and Linear attenuation properties can be used.
+**Attenuation** | Attenuation controls how a light's intensity decreases toward the maximum distance specified by the range property.  Constant, Quadratic and Linear attenuation properties can be used.
 
 ## Getting Started with Lighting
 

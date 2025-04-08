@@ -1,11 +1,14 @@
 ---
-title: Dev Home extensions
+title: Dev Home Extensions
 description: Dev Home supports both default and custom-built extensions. Learn more about the Dev Home GitHub extension, how to customize Git widgets and notifications in the Dev Home dashboard, and how to build your own Dev Home extension.
-ms.date: 05/23/2023
+ms.date: 01/28/2025
 ms.topic: overview
 ---
 
 # Dev Home extensions
+
+> [!IMPORTANT]
+> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
 
 Dev Home supports both default and custom-built extensions. Learn more about the Dev Home GitHub extension, how to customize Git widgets and notifications in the Dev Home dashboard, and how to build your own Dev Home extension.
 
@@ -15,7 +18,13 @@ The GitHub extension is currently the only extension included with Dev Home by d
 
 The Dev Home GitHub extension provides GitHub integration into the existing features of Dev Home. These features include the ability to recommend repositories to add when using the [Machine Configuration](setup.md#machine-configuration) and the ability to add Dev Home widgets customized to display your GitHub content.
 
-When signing into GitHub using the Dev Home GitHub Extension, your GitHub credentials are added to the [Credential Manager](https://support.microsoft.com/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0). This is how Dev Home is able to access information relevant to your GitHub account.
+To add the GitHub extension, select the Extensions tab in Dev Home, then select **Get** on the GitHub extension from the list of Dev Home extensions **Available in the Microsoft Store**.
+
+![Screenshot of Windows Dev Home Extensions tab showing the Get GitHub Extension button](../images/devhome-extensions.png)
+
+When signing into GitHub using the Dev Home GitHub Extension, your GitHub credentials are added to the [Credential Manager](https://support.microsoft.com/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0). This is how Dev Home is able to access information relevant to your GitHub account. Currently DevHome supports only a single GitHub account. (See the [DevHome Extension repo on GitHub](https://github.com/microsoft/devhomegithubextension/issues/276) for updates on adding support for multiple accounts.)
+
+Want to contribute to or file an issue on this extension? See the open source [GitHub extension repository for Dev Home](https://github.com/microsoft/devhomegithubextension).
 
 ### Dev Home widgets customized using the GitHub extension
 
@@ -35,6 +44,24 @@ The Dev Home GitHub extension has the ability to send Windows notifications base
 
 ![Screenshot of Windows notification of check failure driven by Dev Home GitHub extention](../images/devhome-github-notification.png)
 
+## Dev Home Azure extension
+
+The Dev Home Azure extension provides Azure DevOps (ADO) integration into Dev Home's dashboard and [machine configuration tool](setup.md). The extension provides recommended repositories to clone and also adds ADO widgets for queries and pull requests.
+
+To add the Azure extension, select the **Extensions** tab in Dev Home, then select **Get** on the Azure extension from the list of Dev Home extensions **Available in the Microsoft Store**.
+
+If you're logged into Windows with an Azure work account, the extension will automatically detect your account after installation.
+
+Want to contribute to or file an issue on this extension? See the open source [Azure extension repository for Dev Home](https://github.com/microsoft/devhomeazureextension).
+
+### Customize Azure extension widgets in Dev Home
+
+The Dev Home Azure extension provides customizable widgets for the Dev Home dashboard. These widgets display:
+
+- Query results
+- Query tiles with counts of items per query
+- Pull requests for a specific ADO repo that are created by you, assigned to you, or assigned to your team
+
 ## Build your own custom Dev Home extension
 
-If you are interested in building your own extension to use with Dev Home, visit the [Dev Home repo on GitHub](https://github.com/microsoft/devhome/blob/main/docs/extensions.md) to find documentation on how to get started.
+If you are interested in building your own extension to use with Dev Home, visit the [Dev Home repo on GitHub](https://github.com/microsoft/devhome/blob/main/docs/extensions/readme.md) to find documentation on how to get started.

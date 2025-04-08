@@ -1,9 +1,6 @@
 ---
 title: Install Gatsby.js on Windows
 description: A guide to help you get started using the Gatsby.js web frameworks on Windows Subsystem for Linux.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 03/30/2021
@@ -34,7 +31,7 @@ We recommend using the Windows Subsystem for Linux when working with NodeJS apps
 
 To create a Gatsby.js project:
 
-1. Open your WSL terminal (ie. Ubuntu 18.04).
+1. Open your WSL terminal (ie. Ubuntu).
 2. Create a new project folder: `mkdir GatsbyProjects` and enter that directory: `cd GatsbyProjects`
 3. Use npm to install the Gatsby CLI: `npm install -g gatsby-cli`. Once installed, check the version with `gatsby --version`.
 4. Create your Gatsby.js project: `gatsby new my-gatsby-app`
@@ -50,19 +47,17 @@ To create a Gatsby.js project:
 
     Open the WSL terminal integrated in VS Code (**View > Terminal**). Make sure that the terminal path is pointed to your project directory (ie. `~/GatsbyProjects/my-gatsby-app$`). Then try running a development instance of your new app using: `gatsby develop`
 
-7. Once your new Gatsby project finishes compiling, your terminal will display that "You can now view gatsby-starter-default in the browser. `http://localhost:8000/`." Select this localhost link to view your new project built in a web browser.
+7. Once your new Gatsby project finishes compiling, your terminal will display.`You can now view gatsby-starter-default in the browser. http://localhost:8000/`. Select this localhost link to view your new project built in a web browser.
 
 > [!NOTE]
-> You'll notice that your terminal output also let's you know that you can "View GraphiQL, an in-browser IDE, to explore your site's data and schema: `http://localhost:8000/___graphql`." GraphQL consolidates your APIs into a self-documenting IDE (GraphiQL) built into Gatsby. In addition to exploring your site's data and schema, you can perform GraphQL operations such as queries, mutations, and subscriptions. For more info, see [Introducing GraphiQL](https://www.gatsbyjs.org/docs/running-queries-with-graphiql/).
+> You'll notice that your terminal output also let's you know that you can "View GraphiQL, an in-browser IDE, to explore your site's data and schema: `http://localhost:8000/___graphql`." GraphQL consolidates your APIs into a self-documenting IDE (GraphiQL) built into Gatsby. In addition to exploring your site's data and schema, you can perform GraphQL operations such as queries, mutations, and subscriptions. For more info, see [Introducing GraphiQL](https://www.gatsbyjs.com/docs/how-to/querying-data/running-queries-with-graphiql/).
 
-8. Open the `src/pages/index.js` file in your VS Code editor. Find the page title `<h1 >Hi people</h1>` and change it to `<h1 >Hi (Your Name)!</h1>`. With your web browser still open to localhost:8000, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.
+8. Open the `src/pages/index.js` file in your VS Code editor. Find the page title `<h1>Welcome to <b>Gatsby!</b></h1>` and change it to `<h1>Hello <b>World!</b></h1>`. With your web browser still open to `http://localhost:8000`, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.
 
     ![Your Gatsby.js app running in localhost:3000](../../images/gatsby-app.png)
 
-9. Let's see how Next.js handles errors. Remove the `</h1>` closing tag so that your title code now looks like this: `<h1>Hi (Your Name)!`. Save this change and notice that a "Failed to compile" error will display in your browser, and in your terminal, letting your know that a closing tag for `<h1>` is expected. Replace the `</h1>` closing tag, save, and the page will reload.
-
-You can use VS Code's debugger with your Next.js app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
+You can use VS Code's debugger with your Gatsby app by selecting the F5 key, or by going to **View > Debug** (Ctrl+Shift+D) and **View > Debug Console** (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (`launch.json`) file will be created for you to save debugging setup details. To learn more, see [VS Code Debugging](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 
 ![VS Code debug window and launch.json config icon](../../images/vscode-debug-launch-configuration.png)
 
-To learn more about Gatsby, see the  [Gatsby.js docs](https://www.gatsbyjs.org/docs/).
+To learn more about Gatsby, see the [Gatsby.js docs](https://www.gatsbyjs.com/docs/).

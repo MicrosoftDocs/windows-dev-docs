@@ -2,7 +2,7 @@
 title: Build desktop Windows apps with the Windows App SDK 
 description: Learn about the Windows App SDK, benefits it provides to developers, what is ready for developers now, and how to give feedback.
 ms.topic: article
-ms.date: 07/29/2022
+ms.date: 07/15/2024
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -10,10 +10,6 @@ ms.localizationpriority: medium
 # Windows App SDK
 
 The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and downlevel to Windows 10, version 1809.
-
-&nbsp;
-
-> [!VIDEO ff5c6036-2911-4ea8-80da-89befb39267b]
 
 The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, the Windows App SDK complements those existing tools and app types with a common set of APIs that developers can rely on across these platforms. For more details, see [Benefits of the Windows App SDK](#benefits-of-the-windows-app-sdk-for-windows-developers).
 
@@ -23,8 +19,7 @@ The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows 
 
 The Windows App SDK provides extensions for Visual Studio 2022 and Visual Studio 2019. Those extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
 
-> [!IMPORTANT]
-> To learn about configuring Visual Studio for creating new Windows App SDK projects, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment); in particular the section that lists the [Required workloads and components](/windows/apps/windows-app-sdk/set-up-your-development-environment#required-workloads-and-components) for Visual Studio.
+To learn about configuring Visual Studio for creating new Windows App SDK projects, including the required workloads and components, see [Getting Started with WinUI](../get-started/start-here.md).
 
 If you've already installed the required developer tools, then you're ready to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
@@ -67,7 +62,7 @@ The Windows App SDK provides a broad set of Windows APIs with implementations th
 
 Developers who want to create desktop Windows apps must choose between several app platforms and frameworks. Although each platform provides many features and APIs that can be used by apps that are built using other platforms, some features and APIs can only be used by specific platforms. The Windows App SDK unifies access to Windows APIs for desktop Windows 11 and Windows 10 apps. No matter which app model you choose, you will have access to the same set of Windows APIs that are available in the Windows App SDK.
 
-Over time, we plan to make further investments in the Windows App SDK that remove more distinctions between the different app models. The Windows App SDK will include both WinRT APIs and native C APIs.
+Over time, we plan to make further investments in the Windows App SDK that remove more distinctions between the different app models. For example, your app might use the WinUI Desktop model, it might use the XAML Islands model, it might use WPF, or it could be a non-XAML app that uses Composition Islands or other aspects of the Windows App SDK. In any of these cases, we aim to make access to the Windows APIs in the Windows App SDK the same easy experience. The Windows App SDK will include both WinRT APIs and native C APIs.
 
 ### Consistent experience across Windows versions
 
@@ -81,7 +76,7 @@ New Windows APIs and features are usually shipped within major Windows OS update
 
 ## Give feedback and contribute
 
-We are building the Windows App SDK as an open source project. We have a lot more information on our [Github page](https://github.com/microsoft/WindowsAppSDK) about how we're building the Windows App SDK, and how you can be a part of the development process. Check out our [contributor guide](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/contributor-guide.md) to ask questions, start discussions, or make feature proposals. We want to make sure that the Windows App SDK brings the biggest benefits to developers like you.
+We are building the Windows App SDK as an open source project. We have a lot more information on our [Github page](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/README.md) about how we're building the Windows App SDK, and how you can be a part of the development process. Check out our [contributor guide](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/contributor-guide.md) to ask questions, start discussions, or make feature proposals. We want to make sure that the Windows App SDK brings the biggest benefits to developers like you.
 
 ## Related topics
 

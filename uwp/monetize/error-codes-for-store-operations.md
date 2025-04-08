@@ -1,7 +1,7 @@
 ---
 description: This article describes common error codes for Store operations for apps and add-ons, including in-app purchasing, licensing, and self-install app updates.
 title: Error codes for Store operations
-ms.date: 08/24/2017
+ms.date: 03/07/2024
 ms.topic: article
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, error codes
 ms.localizationpriority: medium
@@ -20,7 +20,7 @@ The following error codes are related to in-app purchase operations.
 |--------------|---------------|
 | 0x803F6100   | The in-app purchase could not be completed because Kid's Corner is active. To complete the purchase, sign in to the device with your Microsoft account and run the application again.               |
 | 0x803F6101   | The specified app could not be found. The app may no longer be available in the Store, or you might have provided the wrong Store ID for the app.     |
-| 0x803F6102   | The specified add-on could not be found. The add-on may no longer be available in the Store, or your  might have provided the wrong Store ID for the add-on.                                               |
+| 0x803F6102   | The specified add-on could not be found. The add-on may no longer be available in the Store, or you  might have provided the wrong Store ID for the add-on.                                               |
 | 0x803F6103   | The specified product could not be found. The product may no longer be available in the Store, or you might have provided the wrong Store ID for the product.                                          |
 | 0x803F6104   | The in-app purchase could not be completed because you are running a trial version of the app. To complete in-app purchases, install the full version of the app.               |
 | 0x803F6105   | The in-app purchase could not be completed because you are not signed in with your Microsoft account.                                              |

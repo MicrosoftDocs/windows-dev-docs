@@ -9,17 +9,18 @@ ms.localizationpriority: medium
 # Request ratings and reviews for your app
 
 You can add code to your Universal Windows Platform (UWP) app to programmatically prompt your customers to rate or review your app. There are several ways you can do this:
+
 * You can show a rating and review dialog directly in the context of your app.
 * You can programmatically open the rating and review page for your app in the Microsoft Store.
 
 When you are ready to analyze your ratings and reviews data, you can view the data in Partner Center or use the Microsoft Store analytics API to retrieve this data programmatically.
 
 > [!IMPORTANT]
-> When adding a rating function within your app, all reviews must send the user to the Store's rating mechanisms, regardless of star rating chosen. If you collect feedback or comments from users, it must be clear that it is not related to the app rating or reviews in the Store but is sent directly to the app developer. See the Developer Code of Conduct for more information related to [Fraudulent or Dishonest Activities](/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
+> When adding a rating function within your app, all reviews must send the user to the Store's rating mechanisms, regardless of star rating chosen. If you collect feedback or comments from users, it must be clear that it is not related to the app rating or reviews in the Store but is sent directly to the app developer. See the Developer Code of Conduct for more information related to [Fraudulent or Dishonest Activities](/windows/apps/publish/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## Show a rating and review dialog in your app
 
-To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [RequestRateAndReviewAppAsync](/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) method in the [Windows.Services.Store](/uwp/api/windows.services.store) namespace. 
+To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [RequestRateAndReviewAppAsync](/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) method in the [Windows.Services.Store](/uwp/api/windows.services.store) namespace.
 
 > [!IMPORTANT]
 > The request to show the rating and review dialog must be called on the UI thread in your app.
@@ -138,16 +139,17 @@ If you want to programmatically open the rating and review page for your app in 
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9WZDNCRFHVJL"));
 ```
 
-For more information, see [Launch the Microsoft Store app](../launch-resume/launch-store-app.md).
+For more information, see [Launch the Microsoft Store app](/windows/apps/develop/launch/launch-store-app).
 
 ## Analyze your ratings and reviews data
 
 To analyze the ratings and reviews data from your customers, you have several options:
+
 * You can use the [Reviews](/windows/apps/publish/reviews-report) report in Partner Center to see the ratings and reviews from your customers. You can also download this report to view it offline.
 * You can use the [Get app ratings](get-app-ratings.md) and [Get app reviews](get-app-reviews.md) methods in the Store analytics API to programmatically retrieve the ratings and reviews from your customers in JSON format.
 
 ## Related topics
 
 * [Send requests to the Store](send-requests-to-the-store.md)
-* [Launch the Microsoft Store app](../launch-resume/launch-store-app.md)
+* [Launch the Microsoft Store app](/windows/apps/develop/launch/launch-store-app)
 * [Reviews report](/windows/apps/publish/reviews-report)

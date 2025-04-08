@@ -2,8 +2,6 @@
 title: Construction guidelines for Windows 10 icons
 description: Additional considerations for Windows app icons on platforms that support Live Tiles
 keywords: windows 10, uwp
-author: hickeys
-ms.author: hickeys
 design-contact: judysa
 ms.date: 10/29/2021
 ms.topic: article

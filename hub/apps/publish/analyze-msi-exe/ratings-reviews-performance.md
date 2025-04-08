@@ -21,7 +21,7 @@ The total count of ratings and rating score are specific to a user’s country a
 
 ## Analyzing ratings and reviews
 
-Analyze ratings and reviews with the Ratings and reviews report in Partner Center. This helps developers monitor the performance of their products over time. For more details, developers can also analyze ratings and reviews by country, device type, OS, and more.
+Analyze ratings and reviews with the Ratings and reviews report in Partner Center. This helps developers monitor the performance of their products over time. For more details, developers can also analyze ratings and reviews by country/region, device type, OS, and more.
 
 ## Ratings and reviews report
 

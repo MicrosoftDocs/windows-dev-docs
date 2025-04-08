@@ -58,7 +58,7 @@ In the dropdown menus at the top of Visual Studio, to the left of the green play
 
 ###  Controlling the game
 
-You can use touch, the accelerometer, the Xbox One controller, or the mouse to control Marble Maze.
+You can use touch, the accelerometer, a game controller, or the mouse to control Marble Maze.
 
 -   Use the directional pad on the controller to change the active menu item.
 -   Use touch, the A or Start button on the controller, or the mouse to pick a menu item.

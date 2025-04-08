@@ -1,7 +1,7 @@
 ---
 title: Choose a UWP version
 description: When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Learn about the difference between different UWP versions, and how to configure your choices in new and existing projects.
-ms.date: 5/12/2019
+ms.date: 02/20/2025
 ms.topic: article
 keywords: windows 10, uwp, version, build, versions, windows, choose, update, updates
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
@@ -58,7 +58,7 @@ In the **New Universal Windows Project** dialog in Visual Studio, you can choose
 * **Target Version**. The version of Windows 10 or Windows 11 that your app is intended to run on. This sets the *TargetPlatformVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MaxVersionTested* attribute in your app package manifest. The value you choose specifies the version of the UWP platform that your project is targeting—and therefore the set of APIs available to your app—so we recommend that you choose the most recent version possible. For more info about your app package manifest, and some guidelines around configuring TargetDeviceFamily manually, see [TargetDeviceFamily](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
 * **Minimum Version**. The earliest version of Windows 10 or Windows 11 needed to support the basic functions of your app. This sets the *TargetPlatformMinVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MinVersion* attribute in your app package manifest. The value you choose specifies the minimum version of the UWP platform that your project can work with.
 
-Be aware that you're declaring that your app works on any version of Windows in the range from **Minimum Version** to **Target Version**. If those two are the same version then you don't need to do anything special. If they're different then here are some things to be aware of.
+Be aware that you're declaring that your app works on any version of Windows in the range from **Minimum Version** to **Target Version**. If those two are the same version then you don't need to do anything special. If they're different, then here are some things to be aware of.
 
 * In your code, you can freely (that is, without conditional checks) call any API that exists in the version specified by **Minimum Version**.
 * Ensure that you test your code on a device running the **Minimum Version**, to be sure that it works without requiring APIs only present in the **Target Version**.

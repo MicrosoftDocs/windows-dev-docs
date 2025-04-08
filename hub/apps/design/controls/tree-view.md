@@ -3,13 +3,13 @@ description: Tree view and data binding.
 title: Tree view
 label: Tree view
 template: detail.hbs
-ms.date: 01/11/2022
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.custom: RS5, 19H1, seo-windows-dev
+ms.custom: RS5, 19H1
 ---
 
 # Tree view
@@ -39,36 +39,6 @@ The **TreeView** APIs support the following features:
 
 - Avoid using **TreeView** if highlighting the nested relationship of an item is not a priority. For most drill-in scenarios, a regular list view is appropriate.
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The TreeView for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
-> - **WinUI 2 Apis:** [TreeView class](/windows/winui/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource)
-> - [Open the WinUI 2 Gallery app and see the TreeView in action](winui2gallery:/item/TreeView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:TreeView>
-    <muxc:TreeView.RootNodes>
-        <muxc:TreeViewNode Content="Flavors">
-            <muxc:TreeViewNode.Children>
-                <muxc:TreeViewNode Content="Vanilla"/>
-            </muxc:TreeViewNode.Children>
-        </muxc:TreeViewNode>
-    </muxc:TreeView.RootNodes>
-</muxc:TreeView>
-```
-
 ## Create a tree view
 
 You can create a tree view by binding the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemssource) to a hierarchical data source, or you can create and manage **TreeViewNode** objects yourself.
@@ -78,7 +48,7 @@ To create a tree view, you use a [TreeView](/windows/windows-app-sdk/api/winrt/m
 You can bind a hierarchical data source to the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)'s **ItemsSource**. Similarly, use [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate)) to provide a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) that renders the item.
 
 > [!IMPORTANT]
-> **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-sdk)) or later, or the [Windows UI Library](/uwp/toolkits/winui/).
+> **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-sdk)) or later, or [WinUI 2](../../winui/winui2/index.md).
 >
 > **ItemsSource** is an alternative mechanism to **TreeView.RootNodes** for putting content into the **TreeView** control. You cannot set both **ItemsSource** and **RootNodes** at the same time. When you use **ItemsSource**, nodes are created for you, and you can access them from the **TreeView.RootNodes** property.
 
@@ -479,7 +449,32 @@ If your tree view has unrealized nodes, they are not taken into account for sele
 
 #### SelectedItem/SelectedItems
 
-Starting in WinUI 2.2, TreeView has the [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditem) and [SelectedItems](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditems) properties. You can use these properties to get the content of selected nodes directly. If multiple selection is enabled, SelectedItem contains the first item in the SelectedItems collection.
+TreeView has the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selecteditem) and [SelectedItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selecteditems) properties. You can use these properties to get the content of selected nodes directly. If multiple selection is enabled, SelectedItem contains the first item in the SelectedItems collection.
+
+#### SelectionChanged
+
+You can handle the [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selectionchanged) event to respond when the collection of selected items changes, either programmatically or through user interaction.
+
+```xaml
+<TreeView ItemsSource="{x:Bind Folders}"
+          SelectionMode="Multiple"
+          SelectionChanged="TreeView_SelectionChanged"/>
+```
+
+```csharp
+public void TreeView_SelectionChanged(TreeView sender, TreeViewSelectionChangedEventArgs args)
+{
+    foreach (object item in args.RemovedItems)
+    {
+        this.SelectedFolders.Remove((Folder)item);
+    }
+
+    foreach (object item in args.AddedItems)
+    {
+        this.SelectedFolders.Add((Folder)item);
+    }
+}
+```
 
 ## Code examples
 
@@ -1333,6 +1328,36 @@ namespace TreeViewTest
         }
     }
 }
+```
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The TreeView for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
+> - **WinUI 2 Apis:** [TreeView class](/windows/winui/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource)
+> - [Open the WinUI 2 Gallery app and see the TreeView in action](winui2gallery:/item/TreeView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:TreeView>
+    <muxc:TreeView.RootNodes>
+        <muxc:TreeViewNode Content="Flavors">
+            <muxc:TreeViewNode.Children>
+                <muxc:TreeViewNode Content="Vanilla"/>
+            </muxc:TreeViewNode.Children>
+        </muxc:TreeViewNode>
+    </muxc:TreeView.RootNodes>
+</muxc:TreeView>
 ```
 
 ## Related articles

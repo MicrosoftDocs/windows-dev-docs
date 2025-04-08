@@ -9,6 +9,9 @@ ms.localizationpriority: medium
 ---
 # Send notifications to your app's customers
 
+> [!IMPORTANT]
+> Push Notifications in Partner Center were formally deprecated at the end of December 2024. For an alternative notification experience, see [Microsoft Azure Notification Hubs](/azure/notification-hubs).
+
 Engaging with your customers at the right time and with the right message is key to your success as an app developer. Notifications can encourage your customers to take an action, such as rating an app, buying an add-on, trying a new feature, or downloading another app (perhaps for free with a [promotional code](generate-promotional-codes.md) that you provide).
 
 [Partner Center](https://partner.microsoft.com/dashboard) provides a data-driven customer engagement platform you can use to send notifications to all of your app's customers, or only targeted to a subset of your app's Windows 10 or Windows 11 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md). You can also create a notification to be sent to customers of more than one of your apps.
@@ -17,7 +20,7 @@ Engaging with your customers at the right time and with the right message is key
 > These notifications can only be used with UWP apps.
 
 When considering the content of your notifications, keep in mind:
-- The content in your notifications must comply with the Store [Content Policies](/legal/windows/agreements/store-policies#content_policies).
+- The content in your notifications must comply with the Store [Content Policies](/windows/apps/publish/store-policies-and-code-of-conduct#content_policies).
 - Your notification content should not include confidential or potentially sensitive info.
 - While we’ll make every effort to deliver your notification as scheduled, there may occasionally be latency issues that impact delivery.
 - Be sure not to send notifications too often. More than once every 30 minutes can seem intrusive (and for many scenarios, less frequently than that is preferable).

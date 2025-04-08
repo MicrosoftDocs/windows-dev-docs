@@ -4,8 +4,6 @@ description: As a C# desktop application developer, in .NET you can make use of 
 ms.topic: article
 ms.date: 04/05/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, C#, interop, Bootstrapper, Bootstrapper API
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: low
 ---
 

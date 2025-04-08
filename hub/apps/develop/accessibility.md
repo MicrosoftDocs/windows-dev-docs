@@ -2,10 +2,8 @@
 title: Accessibility in Windows 11 and Windows 10
 description: This page provides the information for you to get started developing accessible Windows apps.
 ms.topic: article
-ms.date: 09/12/2019
+ms.date: 11/28/2023
 keywords: Accessibility in Windows 10, Accessibility, building accessible win32 apps, building accessible UWP apps, building accessible WPF apps, building accessible WinForms apps
-ms.author: kbridge
-author: Karl-Bridge-Microsoft
 ---
 
 # Accessibility in Windows 11 and Windows 10
@@ -30,7 +28,7 @@ This page provides information on how the various Windows development frameworks
 
       **Universal Windows Platform (UWP)**
 
-      Develop accessible apps and tools on the modern platform for Windows applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      Develop accessible apps and tools on the modern platform for Windows applications and games on any Windows device (including PCs, phones, Xbox, HoloLens, and more), and publish them to the Microsoft Store.
 
       [Designing inclusive software](/windows/uwp/accessibility/designing-inclusive-software)
 
@@ -237,10 +235,15 @@ Various videos covering how to build accessible Windows applications to general 
 :::row-end:::
 :::row:::
    :::column:::
-      [Windows community - Accessibility](https://community.windows.com/search?q=accessibility)
+      [Windows community - Accessibility](https://answers.microsoft.com/en-us/search/search?SearchTerm=windows%20accessibility)
    :::column-end:::
    :::column:::
       [Windows Accessibility and Automation Development Forum](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Stack Overflow](https://stackoverflow.com/questions/tagged/windows+accessibility)
    :::column-end:::
    :::column:::
       [Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk)

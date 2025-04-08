@@ -87,7 +87,7 @@ To optimize your UI:
 
 - **Desktop/Hub**: Draw the in-app back button on the top left corner of your app's UI.
 - **[Tablet Mode](/windows-hardware/design/device-experiences/continuum)**: A hardware or software back button might be present on tablets, but we recommend drawing an in-app back button for clarity.
-- **Xbox/TV**: Do not draw a back button; it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards.
+- **Xbox/TV**: Do not draw a back button; it will add unnecessary UI clutter. Instead, rely on the game pad B button to navigate backwards.
 
 If your app will run on Xbox, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of the button. If you use a [NavigationView](../controls/navigationview.md) control, it will automatically toggle the back button's visibility when your app is running on Xbox.
 

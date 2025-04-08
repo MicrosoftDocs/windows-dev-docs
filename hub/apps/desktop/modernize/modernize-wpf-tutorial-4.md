@@ -387,7 +387,7 @@ To add a notification to the app:
     }
     ```
 
-    Toast notifications are represented by an XML payload, which can include text, images, actions, and more. You can find all the supported elements [here](/windows/uwp/design/shell/tiles-and-notifications/toast-schema). This code uses a very simple schema with two lines of text: the title and the body. After the code defines the XML payload and loads it in a **XmlDocument** object, it wraps the XML in a **ToastNotification** object and shows it by using a the **ToastNotificationManager** class.
+    Toast notifications are represented by an XML payload, which can include text, images, actions, and more. You can find all the supported elements [here](/windows/uwp/design/shell/tiles-and-notifications/toast-schema). This code uses a very simple schema with two lines of text: the title and the body. After the code defines the XML payload and loads it in an **XmlDocument** object, it wraps the XML in a **ToastNotification** object and shows it by using the **ToastNotificationManager** class.
 
 5. In the **ContosoExpenses.Core** project, expand the **ViewModels** folder and open the **AddNewExpenseViewModel.cs** file. 
 

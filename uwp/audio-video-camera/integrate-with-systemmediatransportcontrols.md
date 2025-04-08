@@ -16,7 +16,7 @@ The System Media Transport Controls enable media application developers integrat
 <img alt="System Media Transtport Controls" src="images/smtc.png" />
 
 
-For a complete sample that demonstrates integration with the SMTC, see [System Media Tranport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
+For a complete sample that demonstrates integration with the SMTC, see [System Media Transport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
                     
 ## Automatic integration with SMTC
 Starting with Windows 10, version 1607, UWP apps that use the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) class to play media are automatically integrated with the SMTC by default. Simply instantiate a new instance of **MediaPlayer** and assign a [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource), [**MediaPlaybackItem**](/uwp/api/Windows.Media.Playback.MediaPlaybackItem), or [**MediaPlaybackList**](/uwp/api/Windows.Media.Playback.MediaPlaybackList) to the player's [**Source**](/uwp/api/windows.media.playback.mediaplayer.source) property and the user will see your app name in the SMTC and can play, pause, and move through your playback lists by using the SMTC controls. 
@@ -67,7 +67,7 @@ In some cases, you may want to completely override the behavior of an SMTC comma
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetAddPreviousHandler":::
 
-In the **PreviousReceived** handler, first a [**Deferral**](/uwp/api/Windows.Foundation.Deferral) is obtained by calling the  [**GetDeferral**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs.getdeferral) of the [**MediaPlaybackCommandManagerPreviousReceivedEventArgs**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs) passed into the handler. This tells the system to wait for until the deferall is complete before executing the command. This is extremely important if you are going to make asynchronous calls in the handler. At this point, the example calls a custom method that returns a **MediaPlaybackItem** representing the previous radio station.
+In the **PreviousReceived** handler, first a [**Deferral**](/uwp/api/Windows.Foundation.Deferral) is obtained by calling the  [**GetDeferral**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs.getdeferral) of the [**MediaPlaybackCommandManagerPreviousReceivedEventArgs**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs) passed into the handler. This tells the system to wait for until the deferral is complete before executing the command. This is extremely important if you are going to make asynchronous calls in the handler. At this point, the example calls a custom method that returns a **MediaPlaybackItem** representing the previous radio station.
 
 Next, the [**Handled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs.handled) property is checked to make sure that the event wasn't already handled by another handler. If not, the **Handled** property is set to true. This lets the SMTC, and any other subscribed handlers, know that they should take no action to execute this command because it has already been handled. The code then sets the new source for the media player and starts the player.
 
@@ -84,7 +84,7 @@ As mentioned previously in this article, the SMTC will automatically detect and 
 * [Media playback](media-playback.md)
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Manual control of the System Media Transport Controls](system-media-transport-controls.md)
-* [System Media Tranport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [System Media Transport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
  
 
  

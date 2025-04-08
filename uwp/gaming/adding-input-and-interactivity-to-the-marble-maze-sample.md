@@ -22,20 +22,20 @@ Here are some of the key points that this document discusses for when you work w
 
 -   When possible, support multiple input devices to enable your game to accommodate a wider range of preferences and abilities among your customers. Although game controller and sensor usage is optional, we strongly recommend it to enhance the player experience. We designed the game controller and sensor APIs to help you more easily integrate these input devices.
 
--   To initialize touch, you must register for window events such as when the pointer is activated, released, and moved. To initialize the accelerometer, create a [Windows::Devices::Sensors::Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer) object when you initialize the application. The Xbox controller doesn't require initialization.
+-   To initialize touch, you must register for window events such as when the pointer is activated, released, and moved. To initialize the accelerometer, create a [Windows::Devices::Sensors::Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer) object when you initialize the application. A game controller doesn't require initialization.
 
--   For single-player games, consider whether to combine input from all possible Xbox controllers. This way, you don’t have to track what input comes from which controller. Or, simply track input only from the most recently added controller, as we do in this sample.
+-   For single-player games, consider whether to combine input from all possible controllers. This way, you don’t have to track what input comes from which controller. Or, simply track input only from the most recently added controller, as we do in this sample.
 
 -   Process Windows events before you process input devices.
 
--   The Xbox controller and the accelerometer support polling. That is, you can poll for data when you need it. For touch, record touch events in data structures that are available to your input processing code.
+-   Game controller and accelerometer support polling. That is, you can poll for data when you need it. For touch, record touch events in data structures that are available to your input processing code.
 
 -   Consider whether to normalize input values to a common format. Doing so can simplify how input is interpreted by other components of your game, such as physics simulation, and can make it easier to write games that work on different screen resolutions.
 
 ## Input devices supported by Marble Maze
 
 
-Marble Maze supports the Xbox controller, mouse, and touch to select menu items, and the Xbox controller, mouse, touch, and the accelerometer to control game play. Marble Maze uses the [Windows::Gaming::Input](/uwp/api/windows.gaming.input) APIs to poll the controller for input. Touch enables applications to track and respond to fingertip input. An accelerometer is a sensor that measures the force that is applied along the X, Y, and Z axes. By using the Windows Runtime, you can poll the current state of the accelerometer device, as well as receive touch events through the Windows Runtime event-handling mechanism.
+Marble Maze supports the game controller, mouse, and touch to select menu items, and the game controller, mouse, touch, and the accelerometer to control game play. Marble Maze uses the [Windows::Gaming::Input](/uwp/api/windows.gaming.input) APIs to poll the controller for input. Touch enables applications to track and respond to fingertip input. An accelerometer is a sensor that measures the force that is applied along the X, Y, and Z axes. By using the Windows Runtime, you can poll the current state of the accelerometer device, as well as receive touch events through the Windows Runtime event-handling mechanism.
 
 > [!NOTE]
 > This document uses touch to refer to both touch and mouse input and pointer to refer to any device that uses pointer events. Because touch and the mouse use standard pointer events, you can use either device to select menu items and control game play.
@@ -49,8 +49,7 @@ Marble Maze supports the Xbox controller, mouse, and touch to select menu items,
 
 ## Initializing input devices
 
-
-The Xbox controller does not require initialization. To initialize touch, you must register for windowing events such as when the pointer is activated (for example, the player presses the mouse button or touches the screen), released, and moved. To initialize the accelerometer, you have to create a [Windows::Devices::Sensors::Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer) object when you initialize the application.
+The game controller does not require initialization. To initialize touch, you must register for windowing events such as when the pointer is activated (for example, the player presses the mouse button or touches the screen), released, and moved. To initialize the accelerometer, you have to create a [Windows::Devices::Sensors::Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer) object when you initialize the application.
 
 The following example shows how the **App::SetWindow** method registers for the [Windows::UI::Core::CoreWindow::PointerPressed](/uwp/api/windows.ui.core.corewindow.PointerPressed), [Windows::UI::Core::CoreWindow::PointerReleased](/uwp/api/windows.ui.core.corewindow.PointerReleased), and [Windows::UI::Core::CoreWindow::PointerMoved](/uwp/api/windows.ui.core.corewindow.PointerMoved) pointer events. These events are registered during application initialization and before the game loop.
 
@@ -94,14 +93,14 @@ m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 
 ##  Navigating the menus
 
-You can use the mouse, touch, or the Xbox controller to navigate the menus, as follows:
+You can use the mouse, touch, or a game controller to navigate the menus, as follows:
 
 -   Use the directional pad to change the active menu item.
 -   Use touch, the A button, or the Menu button to pick a menu item or close the current menu, such as the high-score table.
 -   Use the Menu button to pause or resume the game.
 -   Click on a menu item with the mouse to choose that action.
 
-###  Tracking Xbox controller input
+###  Tracking game controller input
 
 To keep track of the gamepads currently connected to the device, **MarbleMazeMain** defines a member variable, **m_myGamepads**, which is a collection of [Windows::Gaming::Input::Gamepad](/uwp/api/windows.gaming.input.gamepad) objects. This is initialized in the constructor like so:
 
@@ -180,7 +179,7 @@ Gamepad^ MarbleMaze::MarbleMazeMain::GetLastGamepad()
 
 This method simply returns the last gamepad in **m_myGamepads**.
 
-You can connect up to four Xbox controllers to a Windows 10 device. To avoid having to figure out which controller is the active one, we simply only track the most recently added gamepad. If your game supports more than one player, you have to track input for each player separately.
+You can connect up to four game controllers to a Windows 10 device. To avoid having to figure out which controller is the active one, we simply only track the most recently added gamepad. If your game supports more than one player, you have to track input for each player separately.
 
 The **MarbleMazeMain::Update** method polls the gamepad for input:
 
@@ -378,7 +377,7 @@ float combinedTiltX = 0.0f;
 float combinedTiltY = 0.0f;
 ```
 
-The input mechanism can vary from one input device to another. For example, pointer input is handled by using the Windows Runtime event-handling model. Conversely, you poll for input data from the Xbox controller when you need it. We recommend that you always follow the input mechanism that is prescribed for a given device. This section describes how Marble Maze reads input from each device, how it updates the combined input values, and how it uses the combined input values to update the state of the game.
+The input mechanism can vary from one input device to another. For example, pointer input is handled by using the Windows Runtime event-handling model. Conversely, you poll for input data from the game controller when you need it. We recommend that you always follow the input mechanism that is prescribed for a given device. This section describes how Marble Maze reads input from each device, how it updates the combined input values, and how it uses the combined input values to update the state of the game.
 
 ###  Processing pointer input
 
@@ -508,7 +507,7 @@ if (m_accelerometer != nullptr)
 
 Because you can't be sure that an accelerometer is present on the user’s computer, always ensure that you have a valid [Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer) object before you poll the accelerometer.
 
-### Processing Xbox controller input
+### Processing game controller input
 
 In the **MarbleMazeMain::Update** method, we use **m_newReading** to process input from the left analog stick:
 
@@ -529,7 +528,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 We check if the input from the left analog stick is outside of the dead zone, and if it is, we add it to **combinedTiltX** and **combinedTiltY** (multiplied by a scale factor) to tilt the stage.
 
 > [!IMPORTANT]
-> When you work with the Xbox controller, always account for the dead zone. The dead zone refers to the variance among gamepads in their sensitivity to initial movement. In some controllers, a small movement may generate no reading, but in others it may generate a measurable reading. To account for this in your game, create a zone of non-movement for initial thumbstick movement. For more information about the dead zone, see [Reading the thumbsticks](gamepad-and-vibration.md#reading-the-thumbsticks).
+> When you work with a game controller, always account for the dead zone. The dead zone refers to the variance among gamepads in their sensitivity to initial movement. In some controllers, a small movement may generate no reading, but in others it may generate a measurable reading. To account for this in your game, create a zone of non-movement for initial thumbstick movement. For more information about the dead zone, see [Reading the thumbsticks](gamepad-and-vibration.md#reading-the-thumbsticks).
 
  
 

@@ -80,7 +80,7 @@ Here's the XAML that creates this item. We explain the templates later.
 ## Prerequisites
 
 - We assume that you know how to use a list view control. For more info, see the [ListView and GridView](listview-and-gridview.md) article.
-- We also assume that you understand control styles and templates, including how to use a style inline or as a resource. For more info, see [Styling controls](../style/xaml-styles.md) and [Control templates](../style/xaml-control-templates.md).
+- We also assume that you understand control styles and templates, including how to use a style inline or as a resource. For more info, see [Styling controls](../../develop/platform/xaml/xaml-styles.md) and [Control templates](../../develop/platform/xaml/xaml-control-templates.md).
 
 ## The data
 

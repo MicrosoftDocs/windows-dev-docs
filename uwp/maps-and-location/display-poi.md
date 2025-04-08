@@ -2,23 +2,28 @@
 title: Display points of interest (POI) on a map
 description: Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-ms.date: 10/20/2020
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, map, location, pushpins
 ms.localizationpriority: medium
 ---
 # Display points of interest on a map
 
+> [!IMPORTANT]
+> **Bing Maps for Enterprise service retirement**
+>
+> The UWP [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services from the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+>
+> For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
+
 > [!NOTE]
-> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services requite a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services require a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
 Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements. A POI is a specific point on the map that represents something of interest. For example, the location of a business, city, or friend.
 
-To learn more about displaying POI on your app, download the following sample from the [Windows-universal-samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub: [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
+Display pushpins, images, and shapes on the map by adding [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon), and [**MapPolyline**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) objects to a [**MapElements**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) collection of a [**MapElementsLayer**](/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) object. Then, add that layer object to the **Layers** collection of a map control.
 
-Display pushpins, images, and shapes on the map by adding [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon), and [**MapPolyline**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) objects to a **MapElements** collection of a [**MapElementsLayer**](/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) object. Then, add that layer object to the **Layers** collection of a map control.
-
->[!NOTE]
+> [!NOTE]
 > In previous releases, this guide showed you how to add map elements to the [**MapElements**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) collection. While you can still use this approach, you'll miss out on some of the advantages of the new map layer model. To learn more, see the [Working with layers](#layers) section of this guide.
 
 You can also display XAML user interface elements such as a [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button), a [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton), or a [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) on the map by adding them to the [**MapItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl) or as [**Children**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) of the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
@@ -71,8 +76,8 @@ This example displays the following POI on the map (the default image in the cen
 
 The following line of code displays the [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) with a custom image saved in the Assets folder of the project. The [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) property of the **MapIcon** expects a value of type [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). This type requires a **using** statement for the [**Windows.Storage.Streams**](/uwp/api/Windows.Storage.Streams) namespace.
 
->[!NOTE]
->If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) at the page or app level for the best performance.
+> [!NOTE]
+> If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) at the page or app level for the best performance.
 
 ```csharp
     MapIcon1.Image =
@@ -89,7 +94,7 @@ Keep these considerations in mind when working with the [**MapIcon**](/uwp/api/W
 
 ## Add a 3D pushpin
 
-You can add three-dimensional objects to a map. Use the [MapModel3D](/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) class to import a 3D object from a [3D Manufacturing Format (3MF)](https://3mf.io/3mf-specification/) file.
+You can add three-dimensional objects to a map. Use the [MapModel3D](/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) class to import a 3D object from a [3D Manufacturing Format (3MF)](https://3mf.io/spec/) file.
 
 This image uses 3D coffee cups to mark the locations of coffee shops in a neighborhood.
 
@@ -166,8 +171,8 @@ There's three parts of this code worth examining a little closer: The image, the
 
 This example shows a custom image saved in the **Assets** folder of the project. The [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) property of the [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) expects a value of type [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). This type requires a **using** statement for the [**Windows.Storage.Streams**](/uwp/api/Windows.Storage.Streams) namespace.
 
->[!NOTE]
->If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) at the page or app level for the best performance.
+> [!NOTE]
+> If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) at the page or app level for the best performance.
 
 ### Reference camera
 
@@ -224,7 +229,6 @@ public void HighlightArea()
 ```
 
 ## Add a line
-
 
 Display a line on the map by using the [**MapPolyline**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) class. The following example, from the [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl), displays a dashed line on the map.
 
@@ -307,7 +311,7 @@ The next examples show how to add XAML UI elements directly in the XAML markup o
 
 This example shows how to display two XAML controls as implicit children of the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl). These controls appear on the map at the data bound locations.
 
-```xml
+```xaml
 <maps:MapControl>
     <TextBox Text="Seattle" maps:MapControl.Location="{x:Bind SeattleLocation}"/>
     <TextBox Text="Bellevue" maps:MapControl.Location="{x:Bind BellevueLocation}"/>
@@ -323,7 +327,7 @@ public Geopoint BellevueLocation { get; set; }
 
 This example shows how to display two XAML controls contained within a [**MapItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl).These controls appear on the map at the data bound locations.
 
-```xml
+```xaml
 <maps:MapControl>
   <maps:MapItemsControl>
     <TextBox Text="Seattle" maps:MapControl.Location="{x:Bind SeattleLocation}"/>
@@ -334,7 +338,7 @@ This example shows how to display two XAML controls contained within a [**MapIte
 
 This example displays a collection of XAML elements bound to a [**MapItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl).
 
-```xml
+```xaml
 <maps:MapControl x:Name="MapControl" MapTapped="MapTapped" MapDoubleTapped="MapTapped" MapHolding="MapTapped">
   <maps:MapItemsControl ItemsSource="{x:Bind LandmarkOverlays}">
       <maps:MapItemsControl.ItemTemplate>
@@ -387,11 +391,11 @@ public sealed partial class Scenario1 : Page
 }
 ```
 
-<a id="layers" />
+<a id="layers"></a>
 
 ## Working with layers
 
-The examples in this guide add elements to a [MapElementLayers](/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) collection. Then they show how to add that collection to the **Layers** property of the map control. In previous releases, this guide showed you how to add map elements to the [**MapElements**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) collection as follows:
+The examples in this guide add elements to a [MapElementsLayer](/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) collection. Then they show how to add that collection to the **Layers** property of the map control. In previous releases, this guide showed you how to add map elements to the [**MapElements**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) collection as follows:
 
 ```csharp
 var pikePlaceIcon = new MapIcon
@@ -462,7 +466,7 @@ public myMapPage()
 
 In your XAML page, bind to the property in your view model class that returns the layer.
 
-```XML
+```xaml
 <maps:MapControl
     x:Name="myMap" TransitFeaturesVisible="False" Loaded="MyMap_Loaded" Grid.Row="2"
     MapServiceToken="Your token" Layers="{x:Bind ViewModel.LandmarkLayer}"/>

@@ -75,11 +75,7 @@ This section provides an overview of important tasks and concepts for the [Windo
 
 <span id="video"></span>
 
-### Video
 
-Watch the following video for an overview of how to implement in-app purchases in your app using the [Windows.Services.Store](/uwp/api/windows.services.store) namespace.
-<br/>
-<br/>
 
 <span id="get-started-storecontext"></span>
 
@@ -211,7 +207,7 @@ If your application is written in C# with .NET 6 or later, then follow these ste
       StoreContext context = StoreContext.GetDefault();
       // Obtain window handle by passing in pointer to the window object
       var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(windowObject);
-      // Initialize the dialog using wrapper funcion for IInitializeWithWindow
+      // Initialize the dialog using wrapper function for IInitializeWithWindow
       WinRT.Interop.InitializeWithWindow.Initialize(context, hwnd); 
       ```
 

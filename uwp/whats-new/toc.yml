@@ -1,65 +1,44 @@
-- name: What's new in Windows 10 for developers, build 19041
-  href: ../whats-new/windows-10-build-19041.md
+
+- name: Builds
   items:
-    - name: API additions in Windows 10, build 19041
-      href: ../whats-new/windows-10-build-19041-api-diff.md
-- name: Previous versions of Windows 10
-  items:
-    - name: What's new in Windows 10 for developers, build 18362
+    - name: Build 19041
+      href: ../whats-new/windows-10-build-19041.md
+      items:
+        - name: API additions in Windows 10, build 19041
+          href: ../whats-new/windows-10-build-19041-api-diff.md
+    - name: Build 18362
       href: ../whats-new/windows-10-build-18362.md
       items:
         - name: API additions in Windows 10, build 18362
           href: ../whats-new/windows-10-build-18362-api-diff.md
-    - name: What's new in Windows 10 for developers, build 17763
+    - name: Build 17763
       href: ../whats-new/windows-10-build-17763.md
       items:
         - name: API additions in Windows 10, build 17763
           href: ../whats-new/windows-10-build-17763-api-diff.md
-    - name: What's new in Windows 10 for developers, build 17134
+    - name: Build 17134
       href: ../whats-new/windows-10-build-17134.md
       items:
         - name: API additions in Windows 10, build 17134
           href: ../whats-new/windows-10-build-17134-api-diff.md
-    - name: What's new in Windows 10 for developers, build 16299
+    - name: Build 16299
       href: ../whats-new/windows-10-build-16299.md
       items:
         - name: API additions in Windows 10, build 16299
           href: ../whats-new/windows-10-build-16299-api-diff.md
-    - name: What's new in Windows 10, build 15063
+    - name: Build 15063
       href: ../whats-new/windows-10-build-15063.md
       items:
         - name: API additions in Windows 10, build 15063
           href: ../whats-new/windows-10-build-15063-api-diff.md
-    - name: What's new in Windows 10, build 14393
+    - name: Build 14393
       href: ../whats-new/windows-10-build-14393.md
       items:
         - name: API additions in Windows 10, build 14393
           href: ../whats-new/windows-10-build-14393-api-diff.md
-    - name: What's new in Windows 10, build 10586
+    - name: Build 10586
       href: ../whats-new/windows-10-build-10586.md
-    - name: What's new in Windows 10, build 10240
+    - name: Build 10240
       href: ../whats-new/windows-10-build-10240.md
-- name: Previous doc update summaries
-  items:
-    - name: What's new in the Windows docs, January 2019
-      href: ../whats-new/windows-docs-january-2019.md
-    - name: What's new in the Windows docs, September 2018
-      href: ../whats-new/windows-docs-september-2018.md
-    - name: What's new in the Windows docs, August 2018
-      href: ../whats-new/windows-docs-august-2018.md
-    - name: What's new in the Windows docs, July 2018
-      href: ../whats-new/windows-docs-july-2018.md
-    - name: What's new in the Windows docs, May 2018
-      href: ../whats-new/windows-docs-may-2018.md
-    - name: What's new in the Windows docs, February 2018
-      href: ../whats-new/windows-docs-february-2018.md
-    - name: What's new in the Windows docs, December 2017
-      href: ../whats-new/windows-docs-december-2017.md
-    - name: What's new in the Windows docs, September 2017
-      href: ../whats-new/windows-docs-september-2017.md
-    - name: What's new in the Windows docs, August 2017
-      href: ../whats-new/windows-docs-august-2017.md
-    - name: What's new in the Windows docs, July 2017
-      href: ../whats-new/windows-docs-july-2017.md
 - name: Experimental APIs
   href: ../whats-new/experimental-apis.md

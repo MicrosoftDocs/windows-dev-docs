@@ -1,12 +1,8 @@
 ---
 title: Native Android development on Windows
 description: A step-by-step guide on how to get started developing Android native apps on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
-keywords: android, windows, android studio, visual studio, c++ android game, windows defender, emulator, virtual device, install, java, kotlin
-ms.date: 04/28/2020
+ms.date: 11/21/2024
 ---
 
 # Get started with native Android development on Windows
@@ -51,7 +47,7 @@ Java is more widely used for a broader range of applications and offers some fea
 
 ### Minimum API Level
 
-You will need to decide the minimum API level for your application. This determines which version of Android your application will support. Lower API levels are older and therefore generally support more devices, but higher API levels are newer and therefor provide more features.
+You will need to decide the minimum API level for your application. This determines which version of Android your application will support. Lower API levels are older and therefore generally support more devices, but higher API levels are newer and therefore provide more features.
 
 ![Android Studio Minimum API selection screen](../images/android-minimum-api-selection.png)
 
@@ -68,7 +64,7 @@ Google Play **Instant apps** provide a way for people to try an app or game with
 **AndroidX artifacts** represents the new version of the Android support library and provides backwards-compatibility across Android releases. AndroidX provides a consistent namespace starting with the string androidx for all available packages.
 
 > [!NOTE]
-> AndroidX is now the default library. To uncheck this box and use the previous support library requires removing the lastest Android Q SDK. See [Uncheck use Androidx artifacts](https://stackoverflow.com/questions/56580980/uncheck-use-androidx-artifacts) on StackOverflow for instructions, but first note that the former Support Library packages have been mapped into corresponding androidx.* packages. For a full mapping of all the old classes and build artifacts to the new ones, see [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).
+> AndroidX is now the default library. To uncheck this box and use the previous support library requires removing the latest Android Q SDK. See [Uncheck use Androidx artifacts](https://stackoverflow.com/questions/56580980/uncheck-use-androidx-artifacts) on StackOverflow for instructions, but first note that the former Support Library packages have been mapped into corresponding androidx.* packages. For a full mapping of all the old classes and build artifacts to the new ones, see [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).
 
 ## Project files
 
@@ -114,21 +110,11 @@ Learn more in the [Android design documentation](https://developer.android.com/d
 
 Microsoft also offers design guidance with the goal of providing a seamless experience across the entire portfolio of Microsoft's mobile apps.
 
-[Fluent Design System for Android](https://www.microsoft.com/design/fluent/#/android)
-design and build custom apps that are natively Android while still uniquely Fluent.
+[Fluent 2 Microsoft Design System: Fluent UI for Android](https://developer.microsoft.com/en-us/fluentui#/get-started/android)
+
+[Fluent 2 Microsoft Design System: Android Overview](https://fluent2.microsoft.design/components/android)
 
 - [Sketch toolkit](https://aka.ms/fluenttoolkits/android/sketch)
-- [Figma toolkit](https://aka.ms/fluenttoolkits/android/figma)
 - [Android font](https://fonts.google.com/specimen/Roboto)
 - [Android User Interface Guidelines](https://developer.android.com/design/)
 - [Guidelines for Android app icons](https://developer.android.com/guide/practices/ui_guidelines/icon_design)
-
-## Additional resources
-
-- [Android Application Fundamentals](https://developer.android.com/guide/components/fundamentals)
-
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-
-- [Add Windows Defender exclusions to improve performance](defender-settings.md)
-
-- [Enable Virtualization support to improve emulator performance](emulator.md#enable-virtualization-support)

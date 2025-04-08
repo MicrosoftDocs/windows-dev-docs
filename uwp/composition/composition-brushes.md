@@ -144,7 +144,7 @@ _compositor = Window.Current.Compositor;
 
 _imageBrush = _compositor.CreateSurfaceBrush();
 
-// The loadedSurface has a size of 0x0 till the image has been been downloaded, decoded and loaded to the surface. We can assign the surface to the CompositionSurfaceBrush and it will show up once the image is loaded to the surface.
+// The loadedSurface has a size of 0x0 till the image has been downloaded, decoded and loaded to the surface. We can assign the surface to the CompositionSurfaceBrush and it will show up once the image is loaded to the surface.
 LoadedImageSurface _loadedSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/licorice.jpg"));
 _imageBrush.Surface = _loadedSurface;
 

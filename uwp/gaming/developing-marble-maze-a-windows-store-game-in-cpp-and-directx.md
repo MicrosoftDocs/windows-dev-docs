@@ -24,7 +24,7 @@ We chose *Marble Maze* because it is relatively basic, but still demonstrates th
 
 *Marble Maze* resembles the table-top labyrinth game that is typically constructed from a box that contains holes and a steel or glass marble. The goal of *Marble Maze* is the same as the table-top version: tilt the maze to guide the marble from the start to the end of the maze in as little time as possible, without letting the marble fall into any of the holes. *Marble Maze* adds the concept of checkpoints. If the marble falls into a hole, the game is restarted at the last checkpoint location that the marble passed over.
 
-*Marble Maze* offers multiple ways for a user to interact with the game board. If you have a touch-enabled or accelerometer-enabled device, you can use those devices to move the game board. You can also use an Xbox One controller or a mouse to control game play.
+*Marble Maze* offers multiple ways for a user to interact with the game board. If you have a touch-enabled or accelerometer-enabled device, you can use those devices to move the game board. You can also use a controller or a mouse to control game play.
 
 ![screen shot of the marble maze game.](images/marblemaze-2.png)
 
@@ -48,7 +48,7 @@ This documentation teaches how to:
 
 -   Use the Windows Runtime API and DirectX to create a UWP game.
 -   Use [Direct3D](/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) and [Direct2D](/windows/desktop/Direct2D/direct2d-portal) to work with visual content such as models, textures, vertex and pixel shaders, and 2D overlays.
--   Integrate input mechanisms such as touch, accelerometer, and the Xbox One controller.
+-   Integrate input mechanisms such as touch, accelerometer, and game controller.
 -   Use [XAudio2](/windows/desktop/xaudio2/xaudio2-apis-portal) to incorporate music and sound effects.
 
 ## What this documentation does not cover
@@ -77,5 +77,5 @@ We recommend that you start with [Marble Maze sample fundamentals](marble-maze-s
 | [Marble Maze sample fundamentals](marble-maze-sample-fundamentals.md)                                                   | Provides an overview of the game structure and some of the code and style guidelines that the source code follows.                                                                                                                                 |
 | [Marble Maze application structure](marble-maze-application-structure.md)                                               | Describes how the *Marble Maze* application code is structured and how the structure of a DirectX UWP app differs from that of a traditional desktop application.                                                                                    |
 | [Adding visual content to the Marble Maze sample](adding-visual-content-to-the-marble-maze-sample.md)                   | Describes some of the key practices to keep in mind when you work with Direct3D and Direct2D. Also describes how *Marble Maze* applies these practices for visual content.                                                                           |
-| [Adding input and interactivity to the Marble Maze sample](adding-input-and-interactivity-to-the-marble-maze-sample.md) | Describes how *Marble Maze* works with accelerometer, touch, and Xbox One controller inputs to enable users to navigate menus and interact with the game board. Also describes some of the best practices to keep in mind when you work with input. |
+| [Adding input and interactivity to the Marble Maze sample](adding-input-and-interactivity-to-the-marble-maze-sample.md) | Describes how *Marble Maze* works with accelerometer, touch, and game controller inputs to enable users to navigate menus and interact with the game board. Also describes some of the best practices to keep in mind when you work with input. |
 | [Adding audio to the Marble Maze sample](adding-audio-to-the-marble-maze-sample.md)                                     | Describes how *Marble Maze* works with audio to add music and sound effects to the game experience.                                                                                                                                                  |

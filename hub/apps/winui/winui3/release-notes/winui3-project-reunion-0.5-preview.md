@@ -1,14 +1,14 @@
 ---
-title: Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release notes
-description: Release notes for the Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+title: WinUI 3 - Project Reunion 0.5 Preview (March 2021) release notes
+description: Release notes for WinUI 3 - Project Reunion 0.5 Preview (March 2021) release.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 03/19/2021
 ms.topic: article
 ---
 
-# Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release notes
+# WinUI 3 - Project Reunion 0.5 Preview (March 2021) release notes
 
-Windows UI Library (WinUI) 3 is a native user experience (UX) platform for building modern Windows apps. This preview of WinUI 3 works with both desktop/Win32 and UWP apps, and includes Visual Studio project templates to help get started building apps with a WinUI-based user interface as well as a NuGet package that contains the WinUI libraries.
+WinUI 3 is a native user experience (UX) platform for building modern Windows apps. This preview of WinUI 3 works with both desktop/Win32 and UWP apps, and includes Visual Studio project templates to help get started building apps with a WinUI-based user interface as well as a NuGet package that contains the WinUI libraries.
 
 **WinUI 3 - Project Reunion 0.5 Preview** is the first release of WinUI 3 where it is provided as a part of the Project Reunion package (now called the **Windows App SDK**). Alongside that change, this preview release contains critical bug fixes, increased stability, and a few other general improvements (see **[Capabilities introduced in WinUI 3  - Project Reunion 0.5 Preview](#major-changes-introduced-in-this-release)**).
 
@@ -44,7 +44,7 @@ Aside from the [limitations and known issues](#limitations-and-known-issues), bu
 
 WinUI 3 API reference documentation is available here: [WinUI 3 API Reference](/windows/winui/api)
 
-If you created a project using WinUI 3 Preview 4, you can upgrade your project to use Project Reunion 0.5 Preview. See the [WinUI GitHub repository](https://aka.ms/winui3/upgrade-instructions) for detailed instructions.
+If you created a project using WinUI 3 Preview 4, you can upgrade your project to use Project Reunion 0.5 Preview.
 
 ### WebView2
 To use WebView2 with this WinUI 3 preview, please download the Evergreen Bootstrapper or Evergreen Standalone Installer found on [this page](https://developer.microsoft.com/microsoft-edge/webview2/) if you don't already have the WebView2 Runtime installed. 
@@ -190,7 +190,7 @@ and one of the features of WinUI3 is to enable multiple.
 
 There are APIs that internally depend on existence of these APIs, which consequently aren't supported in a desktop app. These APIs generally have a static `GetForCurrentView` method. For example [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView).
 
-For more information on affected APIs as well as workarounds and replacements for these APIs, please see [WinRT API changes for desktop apps](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/winrt-apis-for-desktop.md)
+For more information on affected APIs as well as workarounds and replacements for these APIs, please see [WinRT API changes for desktop apps](https://github.com/microsoft/microsoft-ui-xaml/blob/winui2/main/docs/winrt-apis-for-desktop.md)
 
 ### Known issues
 

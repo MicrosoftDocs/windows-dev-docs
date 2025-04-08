@@ -2,13 +2,13 @@
 title: Launching, resuming, and background tasks
 description: This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated.
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
-ms.date: 05/16/2022
-ms.topic: article
+ms.date: 02/13/2025
+ms.topic: concept-article
 keywords: windows 10, uwp, background task, app service, connected devices, remote systems
 ms.localizationpriority: medium
 ---
-# Launching, resuming, and background tasks
 
+# Launching, resuming, and background tasks
 
 This section includes information on the following:
 
@@ -42,26 +42,26 @@ This section details the lifecycle of a Windows 10 Universal Windows Platform (U
 | [Create a Universal Windows Platform console app](console-uwp.md) | Learn how to write a Universal Windows Platform app that runs in a console window. |
 | [Create a Multi-instance UWP app](multi-instance-uwp.md) | Learn how to write a multi-instance Universal Windows Platform app. |
 
-The [Launch an app with a URI](launch-app-with-uri.md) section details how to use a Uniform Resource Identifier (URI) to launch an app.
+The **Launch an app with a URI** section details how to use a Uniform Resource Identifier (URI) to launch an app.
 
 | Topic | Description |
 |-------|-------------|
-| [Launch the default app for a URI](launch-default-app.md) | Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows. |
-| [Handle URI activation](handle-uri-activation.md) | Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. |
+| [Launch the default app for a URI](/windows/apps/develop/launch/launch-default-app) | Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows. |
+| [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation) | Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. |
 | [Launch an app for results](how-to-launch-an-app-for-results.md) | Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results. |
 | [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) | This topic describes the ms-tonepicker URI scheme and how to use it to display a tone picker to select a tone, save a tone, and get the friendly name for a tone. |
-| [Launch the Windows Settings app](launch-settings-app.md) | Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages. |
-| [Launch the Microsoft Store app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the UWP app to specific pages in the Store. |
-| [Launch the Windows Maps app](launch-maps-app.md) | Learn how to launch the Windows Maps app from your app. |
-| [Launch the People app](launch-people-apps.md) | This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions. |
-| [Support web-to-app linking with app URI handlers](web-to-app-linking.md) | Drive user engagement with your app by using app URI handlers. |
+| [Launch the Windows Settings app](/windows/apps/develop/launch/launch-settings-app) | Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages. |
+| [Launch the Microsoft Store app](/windows/apps/develop/launch/launch-store-app) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the UWP app to specific pages in the Store. |
+| [Launch the Windows Maps app](/windows/apps/develop/launch/launch-maps-app) | Learn how to launch the Windows Maps app from your app. |
+| [Launch the People app](/windows/apps/develop/launch/launch-people-app) | This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions. |
+| [Support web-to-app linking with app URI handlers](/windows/apps/develop/launch/web-to-app-linking) | Drive user engagement with your app by using app URI handlers. |
 
-The [Launch an app through file activation](launch-app-from-file.md) section details how to set up your app to launch when a file of a certain type is opened.
+The **Launch an app through file activation** section details how to set up your app to launch when a file of a certain type is opened.
 
 | Topic | Description |
 |-------|-------------|
-| [Launch the default app for a file](launch-the-default-app-for-a-file.md) | Learn how to launch the default app for a file. |
-| [Handle file activation](handle-file-activation.md) | Learn how to register your app to become the default handler for a certain file type. |
+| [Launch the default app for a file](/windows/apps/develop/launch/launch-the-default-app-for-a-file) | Learn how to launch the default app for a file. |
+| [Handle file activation](/windows/apps/develop/launch/handle-file-activation) | Learn how to register your app to become the default handler for a certain file type. |
 
 See other topics related to launching an app below.
 
@@ -69,7 +69,7 @@ See other topics related to launching an app below.
 |-------|-------------|
 | [Continue user activity, even across devices](useractivities.md) | Reengage users with your app, even across devices, by launching your app where the user left off. |
 | [Auto-launching with AutoPlay](auto-launching-with-autoplay.md) | You can use AutoPlay to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. |
-| [Reserved file and URI scheme names](reserved-uri-scheme-names.md) | This topic lists the reserved file and URI scheme names that are not available to your app. |
+| [Reserved file and URI scheme names](/windows/apps/develop/launch/reserved-uri-scheme-names) | This topic lists the reserved file and URI scheme names that are not available to your app. |
 
 ## App services and extensions
 
@@ -129,3 +129,7 @@ The [Splash screens](splash-screens.md) section describes how to set and configu
 |-------|-------------|
 | [Add a splash screen](add-a-splash-screen.md) | Set your app's splash screen image and background color. |
 | [Display a splash screen for more time](create-a-customized-splash-screen.md) | Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, and can be customized. |
+
+## Related content
+
+[Launching Windows apps and managing background tasks](/windows/apps/develop/launch/)

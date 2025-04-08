@@ -19,7 +19,7 @@ Learn how to tailor the UI of your app when showing or hiding the touch keyboard
 - [AutomationPeer](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)
 - [InputPane](/uwp/api/Windows.UI.ViewManagement.InputPane)
 
-![the touch keyboard in default layout mode](images/keyboard/default.png)
+:::image type="content" source="images/keyboard/default.png" alt-text="The touch keyboard in default layout mode.":::
 
 <sup>The touch keyboard in default layout mode</sup>
 

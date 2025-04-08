@@ -1,7 +1,7 @@
 ---
 title: Adding My People support to an application
 description: Explains how to add My People support to an application, and how to pin and unpin contacts
-ms.date: 06/28/2017
+ms.date: 01/04/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -9,9 +9,9 @@ ms.localizationpriority: medium
 # Adding My People support to an application
 
 > [!IMPORTANT]
-> My people is no longer supported in Windows 11.
+> My people is no longer supported in Windows 11 and Windows 10 versions with KB5034203 applied.
 
-> [!Note]
+> [!NOTE]
 > As of the Windows 10 May 2019 Update (version 1903), new Windows 10 installations will no longer show ‘People in the taskbar’ by default. Customers can enable the feature by right-clicking on the taskbar and pressing “Show People on the taskbar.” Developers are discouraged from adding My People support to their applications, and should visit the [Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/) for more information about optimizing apps for Windows 10.
 
 The My People feature allows users to pin contacts from an application directly to their taskbar, which creates a new contact object that they can interact with in several ways. This article shows how you can add support for this feature, allowing users to pin contacts directly from your app. When contacts are pinned, new types of user interaction become available, such as [My People sharing](my-people-sharing.md) and [notifications](my-people-notifications.md).
@@ -250,7 +250,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 ## See also
 + [My People sharing](my-people-sharing.md)
-+ [My People notificatons](my-people-notifications.md)
++ [My People notifications](my-people-notifications.md)
 + [My People integration sample](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [Contact Card sample](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager class documentation](/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)

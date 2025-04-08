@@ -225,7 +225,7 @@ When the user clicks on your toast, or buttons in the toast, the **Activate** me
 Inside the Activate method, you can parse the args that you specified in the toast and obtain the user input that the user typed or selected, and then activate your app accordingly.
 
 > [!NOTE]
-> The **Activate** method is called on a separte thread from your main thread.
+> The **Activate** method is called on a separate thread from your main thread.
 
 ```cpp
 // The GUID must be unique to your app. Create a new GUID if copying this code.

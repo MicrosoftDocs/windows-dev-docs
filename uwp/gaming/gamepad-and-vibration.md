@@ -9,19 +9,19 @@ ms.localizationpriority: medium
 ---
 # Gamepad and vibration
 
-This page describes the basics of programming for Xbox One gamepads using [Windows.Gaming.Input.Gamepad][gamepad] and related APIs for the Universal Windows Platform (UWP).
+This page describes the basics of programming for game pads using [Windows.Gaming.Input.Gamepad][game pad] and related APIs for the Universal Windows Platform (UWP).
 
 By reading this page, you'll learn:
 
-* how to gather a list of connected gamepads and their users
-* how to detect that a gamepad has been added or removed
-* how to read input from one or more gamepads
+* how to gather a list of connected game pads and their users
+* how to detect that a game pad has been added or removed
+* how to read input from one or more game pads
 * how to send vibration and impulse commands
-* how gamepads behave as UI navigation devices
+* how game pads behave as UI navigation devices
 
 ## Gamepad overview
 
-Gamepads like the Xbox Wireless Controller and Xbox Wireless Controller S are general-purpose gaming input devices. They're the standard input device on Xbox One and a common choice for Windows gamers when they don't favor a keyboard and mouse. Gamepads are supported in Windows 10 and Xbox UWP apps by the [Windows.Gaming.Input][] namespace.
+Gamepads like the Xbox Wireless Controller and Xbox Wireless Controller S are general-purpose gaming input devices. They're the standard input device on Xbox One and a common choice for Windows gamers when they don't favor a keyboard and mouse. Gamepads are supported in Windows 10 or Windows 11 and Xbox UWP apps through the [Windows.Gaming.Input][] namespace.
 
 Xbox One gamepads are equipped with a directional pad (or D-pad); **A**, **B**, **X**, **Y**, **View**, and **Menu** buttons; left and right thumbsticks, bumpers, and triggers; and a total of four vibration motors. Both thumbsticks provide dual analog readings in the X and Y axes, and also act as a button when pressed inward. Each trigger provides an analog reading that represents how far it's pulled back.
 

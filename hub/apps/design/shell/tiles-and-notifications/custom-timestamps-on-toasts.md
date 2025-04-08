@@ -32,7 +32,7 @@ var builder = new AppNotificationBuilder()
     .SetTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
 ```
 
-### [Community Tookit](#tab/toolkit)
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var builder = new ToastContentBuilder()

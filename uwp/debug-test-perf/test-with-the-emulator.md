@@ -224,11 +224,6 @@ In Host Card Emulation (HCE) mode you can test your HCE-based card emulation app
 - Delete your scripts by selecting the script in the dropdown menu and hitting **Delete** button.
 - The emulator tool does not check for the syntax of your scripts until you run the script using the **Play** button. The messages sent by your script are dependent on your implementation of your card emulation app.
 
-You can also use the terminal simulator tool from MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) for payments app testing.
-
-- Check the **Enable MasterCard** listener checkbox below the script editor windows and launch the simulator from MasterCard.
-- Using the tool, you can generate commands that are relayed to your application running on the emulator through the NFC tool.
-
 To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](https://blogs.msdn.com/b/nfc/).
 
 ### How to Create Scripts for HCE Testing

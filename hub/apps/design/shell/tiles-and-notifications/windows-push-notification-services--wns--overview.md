@@ -3,9 +3,8 @@ description: The Windows Push Notification Services (WNS) enables third-party de
 title: Windows Push Notification Services (WNS) overview
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 09/28/2020
+ms.date: 11/27/2024
 ms.topic: article
-ms.custom: contperfq1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -128,7 +127,7 @@ This diagram illustrates the data flow:
 ### Important notes
 
 -   WNS does not guarantee the reliability or latency of a notification.
--   Notifications should never include confidential or sensitive data.
+-   Notifications should never include confidential, sensitive, or personal data.
 -   To send a notification, the cloud service must first authenticate with WNS and receive an access token.
 -   An access token only allows a cloud service to send notifications to the single app for which the token was created. One access token cannot be used to send notifications across multiple apps. Therefore, if your cloud service supports multiple apps, it must provide the correct access token for the app when pushing a notification to each channel URI.
 -   When the device is offline, by default WNS will store one of each notification type (tile, badge, toast) for each channel URI and no raw notifications.  

@@ -128,7 +128,7 @@ The CollectionItemContractV6 object contains the following parameters.
 | devOfferId           | string             | The offer ID from an in-app purchase.              | No       |
 | endDate              | datetime           | The end date of the item.              | Yes      |
 | fulfillmentData      | list\<string>       | N/A         | No       |
-| inAppOfferToken      | string             | The developer-specified product ID string that is assigned to the item in Partner Center. A example product ID is *product123*. | No       |
+| inAppOfferToken      | string             | The developer-specified product ID string that is assigned to the item in Partner Center. An example product ID is *product123*. | No       |
 | itemId               | string             | An ID that identifies this collection item from other items the user owns. This ID is unique per product.   | Yes      |
 | localTicketReference | string             | The ID of the previously supplied *localTicketReference* in the request body.                  | Yes      |
 | modifiedDate         | datetime           | The date this item was last modified.              | Yes      |
@@ -162,7 +162,7 @@ The IdentityContractV6 object contains the following parameters.
 HTTP/1.1 200 OK
 Content-Length: 7241
 Content-Type: application/json
-MS-CorrelationId: 699681ce-662c-4841-920a-f2269b2b4e6c
+MS-CorrelationId: aaaa0000-bb11-2222-33cc-444444dddddd
 MS-RequestId: a9988cf9-652b-4791-beba-b0e732121a12
 MS-CV: xu2HW6SrSkyfHyFh.0.1
 MS-ServerId: 020022359

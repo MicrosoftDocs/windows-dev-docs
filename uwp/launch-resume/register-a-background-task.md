@@ -34,7 +34,7 @@ This method takes in the task entry point, task name, a pre-constructed backgrou
 
 > [!Important]
 > `taskEntryPoint` - for background tasks that run in out of process, this must be constructed as the namespace name, '.', and the name of the class containing your background class. The string is case-sensitive.  For example, if you had a namespace "MyBackgroundTasks" and a class "BackgroundTask1" that contained your background class code, the string for `taskEntryPoint` would be "MyBackgroundTasks.BackgroundTask1".
-> If your background task runs in the same process as your app (i.e. a in-process background task) `taskEntryPoint` should not be set.
+> If your background task runs in the same process as your app (i.e., an in-process background task) `taskEntryPoint` should not be set.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp

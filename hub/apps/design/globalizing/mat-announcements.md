@@ -15,7 +15,7 @@ The Multilingual App Toolkit 4.1 update released.
 
 ### MAT 4.1 audience
 
-This extension is provided free to any Visual Studio developers interested in localizing their supported project types (such as UWP, WPF, VSIX, Xamarin for iOS/Android, and others).
+This extension is provided free to any Visual Studio developers interested in localizing their supported project types (such as UWP, WPF, VSIX, .NET for iOS/Mac/Android, and others).
 
 ### What's new in MAT 4.1
 

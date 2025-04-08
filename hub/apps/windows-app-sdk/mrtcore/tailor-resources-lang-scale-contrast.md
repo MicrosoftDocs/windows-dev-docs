@@ -1,11 +1,9 @@
 ---
 description: This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each qualifier name.
 title: Tailor your resources for language, scale, high contrast and other qualifiers
-ms.date: 03/08/2023
+ms.date: 08/19/2024
 ms.topic: article
 keywords: windows 10, windows 11, windows app sdk, winui, resource, image, asset, MRT, qualifier
-ms.author: aashcraft
-author: alvinashcraft
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +11,7 @@ ms.localizationpriority: medium
 
 This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [**ResourceContext.QualifierValues**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext.qualifiervalues) for a reference table of all the possible qualifier values.
 
-Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, [display scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor), and many others. The way you do this is to name your resources’ folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.
+Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, [display scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor), and many others. The way you do this is to name your resources' folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.
 
 For more info about the value proposition of localizing your app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
 
@@ -44,7 +42,7 @@ If you name your folders as in the example above, then your app uses the high co
 
 ## Use qualifiers in file names
 
-Instead of creating and naming folders, you can use a qualifier to name the resource files themselves. You might prefer to do this if you only have one resource file per qualifier. Here’s an example.
+Instead of creating and naming folders, you can use a qualifier to name the resource files themselves. You might prefer to do this if you only have one resource file per qualifier. Here's an example.
 
 ```console
 \Assets\Images\logo.contrast-standard.png
@@ -65,18 +63,18 @@ See the following topics for more info about how to reference a string or image 
 
 ## Actual and neutral qualifier matches
 
-You don’t need to provide a resource file for *every* qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.
+You don't need to provide a resource file for *every* qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.
 
 ```console
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.png
 ```
 
-The first file name contains the `contrast-high` qualifier. That qualifier is an *actual* match for any high contrast setting when high contrast is *on*. In other words, it's a close match so it’s preferred. An *actual* match can only occur if the qualifier contains an *actual* value, as this one does. In this case, `high` is an *actual* value for `contrast`.
+The first file name contains the `contrast-high` qualifier. That qualifier is an *actual* match for any high contrast setting when high contrast is *on*. In other words, it's a close match so it's preferred. An *actual* match can only occur if the qualifier contains an *actual* value, as this one does. In this case, `high` is an *actual* value for `contrast`.
 
 The file named `logo.png` has no contrast qualifier on it at all. The absence of a qualifier is a *neutral* value. If no preferred match can be found, then the neutral value serves as a fallback match. In this example, if high contrast is *off*, then there is no actual match. The *neutral* match is the best match that can be found, and so the asset `logo.png` is loaded.
 
-If you were to change the name of `logo.png` to `logo.contrast-standard.png`, then the file name would contain an actual qualifier value. With high contrast off, there would be an actual match with `logo.contrast-standard.png`, and that’s the asset file that would be loaded. So, the same files would be loaded, under the same conditions, but because of different matches.
+If you were to change the name of `logo.png` to `logo.contrast-standard.png`, then the file name would contain an actual qualifier value. With high contrast off, there would be an actual match with `logo.contrast-standard.png`, and that's the asset file that would be loaded. So, the same files would be loaded, under the same conditions, but because of different matches.
 
 If you only need one set of assets for high contrast and one set for standard contrast, then you can use folder names instead of file names. In this case, omitting the folder name entirely gives you the neutral match.
 
@@ -115,13 +113,13 @@ Depending on the tools and workflow you use for asset-creation, or on what you f
 
 ## AlternateForm
 
-The `alternateform` qualifier is used to provide an alternate form of a resource for some special purpose. This is typically used only by Japanese app developers to provide a furigana string for which the value `msft-phonetic` is reserved (see the section “Support Furigana for Japanese strings that can be sorted” in [How to prepare for localization](/previous-versions/windows/apps/hh967762(v=win.10))).
+The `alternateform` qualifier is used to provide an alternate form of a resource for some special purpose. This is typically used only by Japanese app developers to provide a furigana string for which the value `msft-phonetic` is reserved (see the section "Support Furigana for Japanese strings that can be sorted" in [How to prepare for localization](/previous-versions/windows/apps/hh967762(v=win.10))).
 
 Either your target system or your app must provide a value against which `alternateform` qualifiers are matched. Do not use the `msft-` prefix for your own custom `alternateform` qualifier values.
 
 ## Configuration
 
-It’s unlikely that you’ll need the `configuration` qualifier name. It can be used to specify resources that are applicable only to a given authoring-time environment, such as test-only resources.
+It's unlikely that you'll need the `configuration` qualifier name. It can be used to specify resources that are applicable only to a given authoring-time environment, such as test-only resources.
 
 The `configuration` qualifier is used to load a resource that best matches the value of the `MS_CONFIGURATION_ATTRIBUTE_VALUE` environment variable. So, you can set the variable to the string value that has been assigned to the relevant resources, for example `designer`, or `test`.
 
@@ -131,11 +129,11 @@ The `contrast` qualifier is used to provide resources that best match high contr
 
 ## DXFeatureLevel
 
-It’s unlikely that you’ll need the `dxfeaturelevel` qualifier name. It was designed to be used with Direct3D game assets, to cause downlevel resources to be loaded to match a particular downlevel hardware configuration of the time. But the prevalence of that hardware configuration is now so low that we recommend you don’t use this qualifier.
+It's unlikely that you'll need the `dxfeaturelevel` qualifier name. It was designed to be used with Direct3D game assets, to cause downlevel resources to be loaded to match a particular downlevel hardware configuration of the time. But the prevalence of that hardware configuration is now so low that we recommend you don't use this qualifier.
 
 ## HomeRegion
 
-The `homeregion` qualifier corresponds to the user’s setting for country or region. It represents the home location of the user. Values include any valid [BCP-47 region tag](https://tools.ietf.org/html/bcp47). That is, any **ISO 3166-1 alpha-2** two-letter region code, plus the set of **ISO 3166-1 numeric** three-digit geographic codes for composed regions (see [United Nations Statistic Division M49 composition of region codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)). Codes for "Selected economic and other groupings" are not valid.
+The `homeregion` qualifier corresponds to the user's setting for country or region. It represents the home location of the user. Values include any valid [BCP-47 region tag](https://tools.ietf.org/html/bcp47). That is, any **ISO 3166-1 alpha-2** two-letter region code, plus the set of **ISO 3166-1 numeric** three-digit geographic codes for composed regions (see [United Nations Statistic Division M49 composition of region codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)). Codes for "Selected economic and other groupings" are not valid.
 
 ## Language
 
@@ -150,7 +148,7 @@ You typically use a `language` qualifier to name the folders that contain your R
 \Strings\language-ja\Resources.resw
 ```
 
-You can omit the `language-` part of a `language` qualifier (that is, the qualifier name). You can’t do this with the other kinds of qualifiers; and you can only do it in a folder name.
+You can omit the `language-` part of a `language` qualifier (that is, the qualifier name). You can't do this with the other kinds of qualifiers; and you can only do it in a folder name.
 
 ```console
 \Strings\en\Resources.resw
@@ -174,7 +172,7 @@ A `layoutdirection` qualifier corresponds to the layout direction of the display
 
 Windows automatically selects a scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. See [Effective pixels and scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor). You should create your images at several recommended sizes (at least 100, 200, and 400) so that Windows can either choose the perfect size or can use the nearest size and scale it. So that Windows can identify which physical file contains the correct size of image for the display scale factor, you use a `scale` qualifier. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale), or the next-largest-scaled resource.
 
-Here’s an example of setting the qualifier at the folder level.
+Here's an example of setting the qualifier at the folder level.
 
 ```console
 \Assets\Images\scale-100\<logo.png, and other image files>
@@ -202,7 +200,7 @@ For info about qualifying a resource for both `scale` and `targetsize`, see [Qua
 
 ## Theme
 
-The `theme` qualifier is used to provide resources that best match the default app mode setting, or your app’s override using [Application.RequestedTheme](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.requestedtheme).
+The `theme` qualifier is used to provide resources that best match the default app mode setting, or your app's override using [Application.RequestedTheme](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.requestedtheme).
 
 ## Shell light theme and unplated resources
 
@@ -218,7 +216,7 @@ Apps should not use the `theme-light` qualifier with the `altform-unplated` qual
 
 ### Compatibility behavior
 
-For backwards compatibility, Windows includes logic to detect a monochromatic icons and check whether it contrasts with the intended background. If the icon fails to meet contrast requirements, Windows will look for a contrast-white version of the asset. If that’s not available, Windows will fall back to using the plated version of the asset.
+For backwards compatibility, Windows includes logic to detect a monochromatic icons and check whether it contrasts with the intended background. If the icon fails to meet contrast requirements, Windows will look for a contrast-white version of the asset. If that's not available, Windows will fall back to using the plated version of the asset.
 
 ## Important APIs
 

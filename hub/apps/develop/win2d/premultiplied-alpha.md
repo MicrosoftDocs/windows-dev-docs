@@ -39,9 +39,9 @@ To perform a source-over blend between two colors that use premultiplied alpha f
 result = source.RGB + (dest.RGB * (1 - source.A))
 ```
 
-Premultiplied alpha is used in graphics rendering because it gives better results than straight alpha when filtering images or composing different layers. For more information see the articles:
-- [Premultiplied alpha](https://blogs.msdn.com/b/shawnhar/archive/2009/11/06/premultiplied-alpha.aspx)
-- [Premultiplied alpha and image composition](https://blogs.msdn.com/b/shawnhar/archive/2009/11/07/premultiplied-alpha-and-image-composition.aspx)
+Premultiplied alpha is used in graphics rendering because it gives better results than straight alpha when filtering images or composing different layers. For more information see these blog posts:
+- [Premultiplied alpha](https://shawnhargreaves.com/blog/premultiplied-alpha.html)
+- [Premultiplied alpha and image composition](https://shawnhargreaves.com/blog/premultiplied-alpha-and-image-composition.html)
 
 ## Alpha in Win2D
 

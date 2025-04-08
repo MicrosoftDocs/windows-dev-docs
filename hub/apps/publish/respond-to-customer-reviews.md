@@ -29,7 +29,7 @@ When responding to a customer's review, you must follow these guidelines. These 
 > You won’t be able to change the responses you post to the Store (unless the customer revises their original review), so review your response carefully. If a customer revises the original review, your response will be removed from the app's  Store listing page. You then have the option to submit a new response to the revised review by selecting **Update your response**.
 
 -   Responses can't be longer than 1000 characters.
--   You may not offer any type of compensation, including digital app items, to users for changing the app rating. Remember, attempts to manipulate ratings are not permitted under the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
+-   You may not offer any type of compensation, including digital app items, to users for changing the app rating. Remember, attempts to manipulate ratings are not permitted under the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
 -   Don’t include any marketing content or ads in your response. Remember, your reviewer is already your customer.
 -   Don’t promote other apps or services in your response.
 -   Your response must be directly related to the specific app and review. Duplicating the same response to a large number of users isn’t allowed if the canned response doesn’t address the same question.

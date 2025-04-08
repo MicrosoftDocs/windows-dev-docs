@@ -3,12 +3,9 @@ title: Directionality and gravity - animation in Windows apps
 description: Learn about using direction of movement, direction of navigation, and gravity in animated scenes by viewing examples.
 label: Directionality and gravity
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 09/18/2024
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: stmoy
-design-contact: jeffarn
-doc-status: Draft
+doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -18,27 +15,12 @@ Directional signals help to solidify the mental model of the journey a user take
 
 ​Directional movement is subject to forces like gravity. Applying forces to movement reinforces the natural feel of the motion.​
 
-## Examples
-
-<table>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon.png" alt="WinUI Gallery" width="168"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/category/Motion">open the app and see Motion in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
 ## Direction of movement​
 
 :::row:::
     :::column:::
 Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
-When you move objects, avoid unnatural collisions. ​Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.​
+When you move objects, avoid unnatural collisions. ​Keep in mind where objects come from and go to, and always support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.​
     :::column-end:::
     :::column:::
         ![Short video showing a circle and then the addition of an X axis, a Y axis, and a Z axis.](images/direction.gif)
@@ -116,5 +98,5 @@ Here, an element in the top row of the grid is affected by gravity, causing it t
 
 ## Related articles
 
-- [Motion overview](index.md)
+- [Motion overview](../signature-experiences/motion.md)
 - [Timing and easing](timing-and-easing.md)

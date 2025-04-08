@@ -1,7 +1,7 @@
 ---
 title: show Command
 description: Displays details for the specified application, including details on the source of the application as well as the metadata associated with the application.
-ms.date: 04/28/2020
+ms.date: 07/11/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -20,7 +20,7 @@ The following aliases are available for this command:
 
 ## Usage
 
-`winget show [[-q] \<query>] [\<options>]`
+`winget show [[-q] <query>] [<options>]`
 
 ![show command](./images/show.png)
 
@@ -41,7 +41,7 @@ The following options are available.
 
 | Option  | Description |
 |--------------|-------------|
-| **-m,--manifest** | The path to the manifest of the application to install. |
+| **-m,--manifest** | The path to the manifest of the application to show. |
 | **--id**         |  Filter results by ID. |
 | **--name**   |      Filter results by name. |
 | **--moniker**   |  Filter results by application moniker. |
@@ -49,16 +49,22 @@ The following options are available.
 | **-s,--source** |   Find the application using the specified [source](source.md). |
 | **-e,--exact**     | Find the application using exact match. |
 | **--scope**     | Select install scope (user or machine). |
-| **-a,--architecture**     | Select the architecture to install. |
+| **-a,--architecture**     | Select the architecture to show. |
+| **--installer-type**   |  Select the installer type to show. See [supported installer types for WinGet client](./index.md#supported-installer-formats). |
 | **--locale**     | Locale to use (BCP47 format). |
 | **--versions**    | Show available versions of the application. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
+| **--authentication-account** | Specify the account to be used for authentication. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **-?,--help** | Shows help about the selected command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ## Multiple selections
 

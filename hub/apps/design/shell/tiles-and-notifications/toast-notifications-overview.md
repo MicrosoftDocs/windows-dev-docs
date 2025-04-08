@@ -1,7 +1,7 @@
 ---
 description: This section provides design and implementation guidance for toast notifications, which are messages that your app can construct and deliver to your user while they are not currently inside your app. 
 title: Toast notifications
-ms.date: 04/08/2022
+ms.date: 11/26/2024
 ms.topic: article
 ms.custom: 
 keywords: windows 10, uwp

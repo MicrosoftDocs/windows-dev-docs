@@ -80,7 +80,7 @@ This walkthrough shows how to use the [AdControl](/uwp/api/microsoft.advertising
 
     ``` xml
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <UI:AdControl ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
+        <UI:AdControl ApplicationId="00001111-aaaa-2222-bbbb-3333cccc4444"
             AdUnitId="test"
             HorizontalAlignment="Left"
             Height="250"
@@ -102,7 +102,7 @@ This walkthrough shows how to use the [AdControl](/uwp/api/microsoft.advertising
       xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
       mc:Ignorable="d">
       <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-            <UI:AdControl ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
+            <UI:AdControl ApplicationId="00001111-aaaa-2222-bbbb-3333cccc4444"
                   AdUnitId="test"
                   HorizontalAlignment="Left"
                   Height="250"

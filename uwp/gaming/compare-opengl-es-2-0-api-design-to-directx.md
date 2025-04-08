@@ -105,7 +105,7 @@ However, Direct3D can support a right-handed coordinate system. DirectXMath prov
 
 
 -   Question: "In general, can I search for certain strings or patterns in my OpenGL code and replace them with the Direct3D equivalents?"
--   Answer: No. OpenGL ES 2.0 and Direct3D 11 come from different generations of graphics pipeline modeling. While there are some surface similarities between concepts and APIs, such as the rendering context and the instancing of shaders, you should review this guidance as well as the Direct3D 11 reference so you can make the best choices when recreating your pipeline instead of attempting a 1-to-1 mapping. However, if you are porting from GLSL to HLSL, creating a set of common aliases for GLSL variables, intrinsincs, and functions can not only make porting easier, it allows you to maintain only one set of shader code files.
+-   Answer: No. OpenGL ES 2.0 and Direct3D 11 come from different generations of graphics pipeline modeling. While there are some surface similarities between concepts and APIs, such as the rendering context and the instancing of shaders, you should review this guidance as well as the Direct3D 11 reference so you can make the best choices when recreating your pipeline instead of attempting a 1-to-1 mapping. However, if you are porting from GLSL to HLSL, creating a set of common aliases for GLSL variables, intrinsics, and functions can not only make porting easier, it allows you to maintain only one set of shader code files.
 
  
 

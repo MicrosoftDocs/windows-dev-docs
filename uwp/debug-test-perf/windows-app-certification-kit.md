@@ -102,13 +102,13 @@ For Desktop Bridge Apps using Windows SDK Version 10.0.15063 please ignore any f
 
 The performance test thresholds of the Windows App Certification Kit are based on the performance of a low-power computer.
 
-The characteristics of the computer on which the test is performed can influence the test results. To determine if your app's performance meets the [Microsoft Store Policies](/legal/windows/agreements/store-policies), we recommend that you test your app on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
+The characteristics of the computer on which the test is performed can influence the test results. To determine if your app's performance meets the [Microsoft Store Policies](/windows/apps/publish/store-policies-and-code-of-conduct), we recommend that you test your app on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
 
-As low-power computers evolve, their performance characteristics might change over time. Refer to the most current [Microsoft Store Policies](/legal/windows/agreements/store-policies) and test your app with the most current version of the Windows App Certification Kit to make sure that your app complies with the latest performance requirements.
+As low-power computers evolve, their performance characteristics might change over time. Refer to the most current [Microsoft Store Policies](/windows/apps/publish/store-policies-and-code-of-conduct) and test your app with the most current version of the Windows App Certification Kit to make sure that your app complies with the latest performance requirements.
 
 ## Related topics
 
 - [Using the Windows App Certification Kit](/windows/win32/win_cert/using-the-windows-app-certification-kit)
 - [Certification requirements for Windows Desktop Apps](/windows/win32/win_cert/certification-requirements-for-windows-desktop-apps)
 - [Windows App Certification Kit tests](windows-app-certification-kit-tests.md)
-- [Microsoft Store Policies](/legal/windows/agreements/store-policies)
+- [Microsoft Store Policies](/windows/apps/publish/store-policies-and-code-of-conduct)

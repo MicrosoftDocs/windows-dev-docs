@@ -22,7 +22,7 @@ Speech recognition converts words spoken by the user into text for form input, f
 TTS uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.
 
 **Other speech-related components:**
-**Cortana** in Windows applications uses customized voice commands (spoken or typed) to launch your app to the foreground (the app takes focus, just as if it was launched from the Start menu) or activate as a background service (**Cortana** retains focus but provides results from the app). See the [Cortana voice command (VCD) guidelines](/cortana/voice-commands/vcd) if you are exposing app functionality in the **Cortana** UI.
+**Cortana** in Windows applications uses customized voice commands (spoken or typed) to launch your app to the foreground (the app takes focus, just as if it was launched from the Start menu) or activate as a background service (**Cortana** retains focus but provides results from the app). See [Cortana interactions in Windows apps](cortana-interactions.md).
 
 ## Speech interaction design
 

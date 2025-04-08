@@ -45,7 +45,7 @@ The XAML language specifies certain language elements, and each of these should 
 
 ## Code namespaces that map to the default XAML namespace
 
-The folowing is a list of code namespaces that are currently mapped to the default XAML namespace.
+The following is a list of code namespaces that are currently mapped to the default XAML namespace.
 
 * Windows.UI
 * Windows.UI.Xaml

@@ -4,8 +4,6 @@ description: Considerations and strategies for approaching the migration process
 ms.topic: article
 ms.date: 10/01/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -22,14 +20,14 @@ Most [Windows Runtime (WinRT)](/uwp/api/) APIs can be used by Windows App SDK ap
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
 * APIs that require package identity. These APIs are supported only in desktop apps that are packaged using MSIX.
 
-For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in the [Windows UI Library (WinUI)](../../winui/index.md), or via WinRT COM interfaces that are available in the Windows App SDK.
+For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in [WinUI](../../winui/index.md), or via WinRT COM interfaces that are available in the Windows App SDK.
 
 For example, we'll see certain UI scenarios where you'll need to track your main window object, and use various **HWND**-based APIs and interoperation patterns, such as [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
 > [!NOTE]
 > Also see [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md). Windows App SDK apps are *one* kind of desktop app. Other kinds of desktop app include .NET desktop apps, and C/C++ Win32 desktop apps. The audience of that topic is developers wishing to migrate to anything in the union of those different kinds of desktop app, including (but not limited to) Windows App SDK apps.
 
-We'd love to hear your feeback about this migration guide, and about your own migration experience. Use the **Feedback** section right at the foot of this page like this:
+We'd love to hear your feedback about this migration guide, and about your own migration experience. Use the **Feedback** section right at the foot of this page like this:
 * For questions and feedback about the Windows App SDK, or just to start a discussion, use the **This product** button. You can also start a discussion on the [Discussions tab](https://github.com/microsoft/WindowsAppSDK/discussions) of the **WindowsAppSDK** GitHub repo. Using those channels, you could also tell us what problem you're trying to solve, how you've tried to solve it so far, and what would be the ideal solution for your app.
 * For feedback about missing or incorrect information in this migration guide, use the **This page** button.
 
@@ -41,7 +39,7 @@ In addition, the Windows App SDK is backward compatible; it supports apps down t
 
 The value proposition of moving the Windows App SDK is manifold. Here are some considerations:
 
-* Latest user interface (UI) platform and controls such as [Windows UI Library (WinUI)](../../winui/index.md) 3 and [WebView2](/microsoft-edge/webview2/).
+* Latest user interface (UI) platform and controls such as [WinUI](../../winui/index.md) 3 and [WebView2](/microsoft-edge/webview2/).
 * A single API surface across desktop app platforms.
 * More frequent release cadence that releases separately from Windows.
 * A consistent experience across Windows versions.
@@ -111,8 +109,9 @@ For example, in the case study [A Windows App SDK migration of the UWP PhotoLab 
 
 ## Related topics
 
+* [Windows App SDK and supported Windows releases](../support.md)
 * [Windows Runtime (WinRT)](/uwp/api/) APIs
-* [Windows UI Library (WinUI)](../../winui/index.md)
+* [WinUI](../../winui/index.md)
 * [Stable release channel for the Windows App SDK](../stable-channel.md)
 * [PhotoLab case study](case-study-1.md)
 * [Photo Editor case study](case-study-2.md)

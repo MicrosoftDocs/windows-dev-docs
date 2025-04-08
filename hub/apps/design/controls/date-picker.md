@@ -5,7 +5,7 @@ ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -30,19 +30,6 @@ The entry point displays the chosen date, and when the user selects the entry po
 
 ![Example of the date picker expanding](images/controls-datepicker-expand.gif)
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [SelectedDate property](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate)
-> - [Open the WinUI 2 Gallery app and see the DatePicker in action](winui2gallery:/item/DatePicker). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
-
 ## Create a date picker
 
 > [!div class="checklist"]
@@ -50,7 +37,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [DatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.DatePicker), [SelectedDate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddate)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the DatePicker in action](winui3gallery:/item/DatePicker).
+> [Open the WinUI 3 Gallery app and see the DatePicker in action](winui3gallery:/item/DatePicker)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -189,9 +176,18 @@ public sealed partial class MainPage : Page
 }
 ```
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [SelectedDate property](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate)
+> - [Open the WinUI 2 Gallery app and see the DatePicker in action](winui2gallery:/item/DatePicker). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 

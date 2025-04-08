@@ -78,7 +78,7 @@ New to version control systems? Intro to Git and Git Virtual File System (GVFS):
 
 * [Looking Bright. 2017’s Game Accessibility Advances](/shows/Level-Up/GAConf-2018-Looking-Bright-2017s-Game-Accessibility-Advances) - Ian Hamilton, Accessibility industry expert
 * [The CVAA and What it Means for Gaming Access](/shows/Level-Up/GAConf-2018-The-CVAA-and-What-it-Means-for-Gaming-Access) - Karen Petlz Strauss from the Federal Communications Commission
-* [I Made My Game Blind Accessible – You Wont Believe What Happened Next…](/shows/Level-Up/GAConf-2018-I-Made-My-Game-Blind-Accessible--You-Wont-Believe-What-Happened-Next) - Michelle Martin from MetalPop Games
+* [I Made My Game Blind Accessible – You Won't Believe What Happened Next…](/shows/Level-Up/GAConf-2018-I-Made-My-Game-Blind-Accessible--You-Wont-Believe-What-Happened-Next) - Michelle Martin from MetalPop Games
 * [Cognitive Accessibility Design Choices and Music Education for Autism](/shows/Level-Up/GAConf-2018-Cognitive-Accessibility-Design-Choices-and-Music-Education-for-Autism) - Lori Landay from the Berklee College of Music
 * [Ramping up accessibility](/shows/Level-Up/GAConf-2018-Ramping-Up-Accessibility) - Karen Stevens from EA Sports
 * [Modern Game Accessibility. Changing Sympathy to Solution](/shows/Level-Up/GAConf-2018-Modern-Game-Accessibility-Changing-Sympathy-to-Solution) - Kevin Keeker from Playstation and Sam Thompson from Sony World Wide Studios

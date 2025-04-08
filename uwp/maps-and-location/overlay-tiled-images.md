@@ -2,27 +2,31 @@
 title: Overlay tiled images on a map
 description: Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
-ms.date: 10/20/2020
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, map, location, images, overlay
 ms.localizationpriority: medium
 ---
 # Overlay tiled images on a map
 
+> [!IMPORTANT]
+> **Bing Maps for Enterprise service retirement**
+>
+> The UWP [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services from the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+>
+> For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
+
 > [!NOTE]
-> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services requite a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services require a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
 Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
 
-**Tip** To learn more about using maps in your app, download the [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) on Github.
-
-<a id="tileintro" />
+<a id="tileintro"></a>
 
 ## Tiled image overview
 
-Map services such as Nokia Maps and Bing Maps cut maps into square tiles for quick retrieval and display. These tiles are 256 pixels by 256 pixels in size, and are pre-rendered at multiple levels of detail. Many third-party services also provide map-based data that's cut into tiles. Use tile sources to retrieve third-party tiles, or to create your own custom tiles, and overlay them on the map displayed in the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
+Map services like Bing Maps cut maps into square tiles for quick retrieval and display. These tiles are 256 pixels by 256 pixels in size, and are pre-rendered at multiple levels of detail. Many third-party services also provide map-based data that's cut into tiles. Use tile sources to retrieve third-party tiles, or to create your own custom tiles, and overlay them on the map displayed in the [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
-**Important**  
 When you use tile sources, you don't have to write code to request or to position individual tiles. The [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) requests tiles as it needs them. Each request specifies the X and Y coordinates and the zoom level for the individual tile. You simply specify the format of the Uri or filename to use to retrieve the tiles in the **UriFormatString** property. That is, you insert replaceable parameters in the base Uri or filename to indicate where to pass the X and Y coordinates and the zoom level for each tile.
 
 Here's an example of the [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) property for an [**HttpMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) that shows the replaceable parameters for the X and Y coordinates and the zoom level.
@@ -76,7 +80,6 @@ Overlay tiled images from a tile source on a map by using the [**MapTileDataSour
     ```
 
 ## Overlay tiles from a web service
-
 
 Overlay tiled images retrieved from a web service by using the [**HttpMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource).
 
@@ -164,7 +167,6 @@ void MainPage::AddHttpMapTileSource()
 
 ## Overlay tiles from local storage
 
-
 Overlay tiled images stored as files in local storage by using the [**LocalMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource). Typically, you package and distribute these files with your app.
 
 1.  Instantiate a [**LocalMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource).
@@ -189,31 +191,29 @@ You can use the following protocols and locations to load tiles from local stora
 | ms-appdata:///temp | Points to the app's temp folder. |
 |  | This is the location referenced by the [ApplicationData.TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) property. |
 
- 
-
 The following example loads tiles that are stored as files in the app's installation folder by using the `ms-appx:///` protocol. The value for the [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) is specified in the constructor of the [**LocalMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource). In this example, tiles are only displayed when the zoom level of the map is within the range specified by the optional [**ZoomLevelRange**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.zoomlevelrange) property.
 
 ```csharp
-        void AddLocalMapTileSource()
-        {
-            // Specify the range of zoom levels
-            // at which the overlaid tiles are displayed.
-            MapZoomLevelRange range;
-            range.Min = 11;
-            range.Max = 20;
+void AddLocalMapTileSource()
+{
+    // Specify the range of zoom levels
+    // at which the overlaid tiles are displayed.
+    MapZoomLevelRange range;
+    range.Min = 11;
+    range.Max = 20;
 
-            // Create a local data source.
-            LocalMapTileDataSource dataSource = new LocalMapTileDataSource(
-                "ms-appx:///TileSourceAssets/Tile_{zoomlevel}_{x}_{y}.png");
+    // Create a local data source.
+    LocalMapTileDataSource dataSource = new LocalMapTileDataSource(
+        "ms-appx:///TileSourceAssets/Tile_{zoomlevel}_{x}_{y}.png");
 
-            // Create a tile source and add it to the Map control.
-            MapTileSource tileSource = new MapTileSource(dataSource);
-            tileSource.ZoomLevelRange = range;
-            MapControl1.TileSources.Add(tileSource);
-        }
+    // Create a tile source and add it to the Map control.
+    MapTileSource tileSource = new MapTileSource(dataSource);
+    tileSource.ZoomLevelRange = range;
+    MapControl1.TileSources.Add(tileSource);
+}
 ```
 
-<a id="customuri" />
+<a id="customuri" ></a>
 
 ## Provide a custom URI
 
@@ -421,5 +421,3 @@ To replace the default map entirely with third-party or custom tiles:
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Design guidelines for maps](./display-maps.md)
-* Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
-* [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)

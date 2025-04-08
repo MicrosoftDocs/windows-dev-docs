@@ -1,7 +1,7 @@
 ---
 title: PowerToys File Explorer add-ons utility for Windows
 description: A File Explorer add-on that enables different preview pane and thumbnail renderers for different file types.
-ms.date: 04/19/2023
+ms.date: 07/16/2024
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Monaco]
@@ -14,15 +14,16 @@ no-loc: [PowerToys, Windows, File Explorer, Monaco]
 
 ## Preview Pane previewers
 
-Preview Pane is an existing feature in the Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, and G-code. In addition to those, PowerToys also adds support for source code files for more than 150 file extensions.
+Preview Pane is an existing feature in Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, G-code and QOI. In addition to those, PowerToys also adds support for source code files for more than 150 file extensions.
 
 Preview Pane supports:
 
-- SVG icons (.svg)
+- SVG images (.svg)
 - Markdown files (.md)
-- Source code files (.cs, .cpp, .rs, ...)
+- Source code files (.cs, .cpp, .rs, …)
 - PDF files (.pdf)
 - G-code files (.gcode)
+- QOI images (.qoi)
 
 ### Settings for Source code files previewer
 
@@ -38,24 +39,24 @@ Expand the **Source code files (Monaco)** section to change the following settin
 
 To enable preview support, set the extension to **On**.
 
-![PowerToys Settings Enable File Explorer screenshot.](../images/powertoys-settings-fileexplorer.png)
+![PowerToys Settings Enable File Explorer screenshot](../images/powertoys-settings-fileexplorer.png)
 
-If the preview pane does not appear to work after setting the extension to **On**, there is an advanced setting in Windows that may be blocking the preview handler. Open the **Options** menu in Windows File Explorer and select the **View** tab. Under the **View** tab, you will see a list of **Advanced settings**. Ensure that **Show preview handlers in preview pane** has a check next to it in order for the preview pane to display.
+If the preview pane does not appear to work after setting the extension to **On**, there is an advanced setting in Windows that may be blocking the preview handler. Go to **Options** in Windows File Explorer and under the **View** tab, you will see a list of **Advanced settings**. Ensure that **Show preview handlers in preview pane** is selected in order for the preview pane to display.
 
 ### Enabling the Explorer pane in Windows 11
 
-Open Windows File Explorer, select the **View** menu in the Explorer ribbon. Hover over **Show**, and then select **Preview pane**.
+Open Windows File Explorer, go to **View** in the Explorer ribbon and select **Preview pane**.
 
-![PowerToys Preview Pane demo for Windows 11.](../images/powertoys-fileexplorer-win11.gif)
+![PowerToys Preview Pane demo for Windows 11](../images/powertoys-fileexplorer-win11.gif)
 
 ### Enabling the Explorer pane in Windows 10
 
-Open Windows File Explorer, select the **View** tab in the Explorer ribbon, and then select **Preview Pane**.
+Open Windows File Explorer, go to **View** in the Explorer ribbon and select **Preview Pane**.
 
-![PowerToys Preview Pane demo for Windows 10.](../images/powertoys-fileexplorer.gif)
+![PowerToys Preview Pane demo for Windows 10](../images/powertoys-fileexplorer.gif)
 
 > [!NOTE]
-> It is not possible to change the background color of the preview pane, so if you are working with transparent images with white shapes, you may not be able to see them in the preview.
+> It isn't possible to change the background color of the preview pane, so if you're working with transparent images with white shapes, you may not be able to see them in the preview.
 
 ## Thumbnail Previews
 
@@ -63,10 +64,11 @@ To enable thumbnail preview support, set the extension to **On**.
 
 Thumbnail preview supports:
 
-- SVG icons (.svg)
+- SVG images (.svg)
 - PDF files (.pdf)
 - G-code files (.gcode)
 - STL files (.stl)
+- QOI images (.qoi)
 
 > [!NOTE]
 > A reboot may be required after enabling the thumbnail previewer for the settings to take effect. Thumbnails might not appear on paths managed by cloud storage solutions like OneDrive, since these solutions may get their thumbnails from the cloud instead of generating them locally.
@@ -74,3 +76,5 @@ Thumbnail preview supports:
 ### Settings for Stereolithography (.stl) files
 
 Expand the **Stereolithography** section to change the background color.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

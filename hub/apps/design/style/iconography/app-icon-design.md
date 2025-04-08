@@ -2,8 +2,6 @@
 title: Design guidelines for Windows app icons
 description: How to design a beautiful app icon that perfectly and clearly represents your app.
 keywords: windows 10, uwp
-author: hickeys
-ms.author: hickeys
 design-contact: judysa
 ms.date: 10/29/2021
 ms.topic: article

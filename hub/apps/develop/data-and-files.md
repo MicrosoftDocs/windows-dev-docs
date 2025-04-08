@@ -47,8 +47,8 @@ The .NET SDK also provides APIs related to data and files scenarios for WPF and 
 
 | Article | Description |
 |---------|-------------|
-| [Resources in .NET apps](/dotnet/framework/resources/) | Learn general strategies for managing app resouces in .NET apps. |
-| [Application resource, content, and data files (WPF)](/dotnet/framework/wpf/app-development/wpf-application-resource-content-and-data-files) | Learn how to manage app resouces in WPF apps. |
+| [Resources in .NET apps](/dotnet/framework/resources/) | Learn general strategies for managing app resources in .NET apps. |
+| [Application resource, content, and data files (WPF)](/dotnet/framework/wpf/app-development/wpf-application-resource-content-and-data-files) | Learn how to manage app resources in WPF apps. |
 | [Application settings (Windows Forms)](/dotnet/framework/winforms/advanced/application-settings-for-windows-forms) | Learn how to create, store, and maintain custom application and user preferences in Windows Forms apps. |
 | [LINQ](/dotnet/standard/linq/)  | Learn how to use Language-Integrated Query (LINQ) to perform language-level data queries in .NET apps.  |
 | [XML documents and data](/dotnet/standard/data/xml/)  | Learn how to parse and write XML, edit XML data in memory, validate XML data, and perform XSLT transformations in .NET apps.  |

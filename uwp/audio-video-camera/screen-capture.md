@@ -2,7 +2,7 @@
 title: Screen capture
 description: The Windows.Graphics.Capture namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.date: 06/14/2019
+ms.date: 10/18/2023
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,7 +17,7 @@ Starting in Windows 10, version 1803, the [Windows.Graphics.Capture](/uwp/api/wi
 With screen capture, developers invoke secure system UI for end users to pick the display or application window to be captured, and a yellow notification border is drawn by the system around the actively captured item. In the case of multiple simultaneous capture sessions, a yellow border is drawn around each item being captured.
 
 > [!NOTE]
-> The screen capture APIs are only supported on desktop and Windows Mixed Reality immersive headsets.
+> The screen capture APIs are only supported on Windows devices and Windows Mixed Reality immersive headsets.
 
 This article describes capturing a single image of the display or application window. For information on encoding frames captured from the screen to a video file, see [Screen capture to video](screen-capture-video.md)
 
@@ -685,7 +685,7 @@ End Class
 
 ## Record a video
 
-If you want to record a video of your application, you can follow the walkthrough presented in the article [Screen capture to video](screen-capture-video.md). Or, you can use [Windows.Media.AppRecording namespace](/uwp/api/windows.media.apprecording). This is part of the Desktop extension SDK, so it only works on desktop and requires that you add a reference to it from your project. See [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview) for more information.
+If you want to record a video of your application, you can follow the walkthrough presented in the article [Screen capture to video](screen-capture-video.md). Or, you can use [Windows.Media.AppRecording namespace](/uwp/api/windows.media.apprecording). This is part of the Desktop extension SDK, so it only works on Windows desktops and requires that you add a reference to it from your project. See [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview) for more information.
 
 ## See also
 

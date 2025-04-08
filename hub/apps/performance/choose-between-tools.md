@@ -2,9 +2,7 @@
 title: Choosing between Visual Studio Performance Profiler and Windows Performance Toolkit
 description: Learn how to select between Visual Studio Performance Profiler and Windows Performance Toolkit for general purpose performance analysis activities on Windows
 ms.topic: article
-ms.date: 11/05/2021
-ms.author: miniksa
-author: miniksa
+ms.date: 02/27/2025
 ms.localizationpriority: medium
 ---
 
@@ -48,46 +46,46 @@ PerfView is similarly based on the .NET [TraceEvent](https://www.nuget.org/packa
 
 ## Considerations for choosing a tool
 
-The tool to choose depends on the performance scenario that you are attempting to explore. A comparison of functionalities and traits among the tools is in the table below:
+The tool to choose depends on the performance scenario that you are attempting to explore. A comparison of functionalities and traits among the tools is provided in the following table where:
+
+- **Well supported** means the tool is designed for the intended task and achieves robust and detailed results.
+- **Supported** means the tool may require additional configuration or steps to achieve the desired results. May contain a limited scope of action within the category.
+- **Not supported** means the tool is not designed for this use.
 
 > [!TIP]
 > For a general rule, start with *Visual Studio Profiling* when possible. Move on to *Windows Performance Toolkit* or *PerfView* when reaching the limits of what the Visual Studio tools can do.
 
-|*Situation*|Visual Studio Performance Profiler|Windows Performance Toolkit|PerfView|
-|--|--|--|--|
-|[**General use considerations**](#general-use-considerations)|||
-|Trace File Size|✔️|🆗|🆗|
-|Acquisition of Tooling|✔️|✔️|✔️|
-|Extensibility Kits|❌|✔️|✔️|
-|[**Scope of work considerations**](#scope-of-work-considerations)|||
-|Single Process or Project|✔️|🆗|🆗|
-|Multiple Processes|❌|✔️|✔️|
-|[**Hardware considerations**](#hardware-considerations)|||
-|CPU Usage|✔️|✔️|✔️|
-|GPU Usage|✔️|✔️|❌|
-|Memory Usage|✔️|✔️|✔️|
-|Device Input/Output|❌|✔️|✔️|
-|Power Usage|❌|✔️|❌|
-|System Handles|❌|✔️|✔️|
-|[**Code language support considerations**](#code-language-support-considerations)|||
-|Support for C/C++|✔️|✔️|✔️|
-|Support for .NET|✔️|✔️|✔️|
-|Support for JavaScript|🆗|🆗|🆗|
-|[**Scenario considerations**](#scenario-considerations)|||
-|Event Tracing for Windows|🆗|✔️|✔️|
-|Composition|❌|✔️|❌|
-|HTML/Edge/Internet Explorer/Webview|❌|✔️|❌|
-|XAML/WinUI|🆗|✔️|✔️|
-|Audio/Video pipelines and glitches|❌|✔️|❌|
-|Database timing|✔️|❌|❌|
-|Managed object allocation and garbage collection|✔️|❌|✔️|
-|Custom Scenarios|❌|✔️|✔️|
 
-### Key
 
-- ✔️ Well supported: Designed for the intended task and achieves robust and detailed results.
-- 🆗 Supported: May require additional configuration or steps to achieve the desired results. May contain a limited scope of action within the category.
-- ❌ Not supported: Not designed for this use.
+| Situation                                                                    | Visual Studio Performance Profiler | Windows Performance Toolkit | PerfView |
+|-----------------------------------------------------------------------------------|------------------------------------|-----------------------------|----------|
+| [**General use considerations**](#general-use-considerations)                     |                                    |                             |
+| Trace File Size                                                                   | **Well supported**                                | **Supported**                          | **Supported**      |
+| Acquisition of Tooling                                                            | **Well supported**                                | **Well supported**                          | **Well supported**      |
+| Extensibility Kits                                                                | Not supported                                 | **Well supported**                          | **Well supported**      |
+| [**Scope of work considerations**](#scope-of-work-considerations)                 |                                    |                             |
+| Single Process or Project                                                         | **Well supported**                                | **Supported**                          | **Supported**      |
+| Multiple Processes                                                                | Not supported                                 | **Well supported**                          | **Well supported**      |
+| [**Hardware considerations**](#hardware-considerations)                           |                                    |                             |
+| CPU Usage                                                                         | **Well supported**                                | **Well supported**                          | **Well supported**      |
+| GPU Usage                                                                         | **Well supported**                                | **Well supported**                          | Not supported       |
+| Memory Usage                                                                      | **Well supported**                                | **Well supported**                          | **Well supported**      |
+| Device Input/Output                                                               | Not supported                                 | **Well supported**                          | **Well supported**      |
+| Power Usage                                                                       | Not supported                                 | **Well supported**                          | Not supported       |
+| System Handles                                                                    | Not supported                                 | **Well supported**                          | **Well supported**      |
+| [**Code language support considerations**](#code-language-support-considerations) |                                    |                             |
+| Support for C/C++                                                                 | **Well supported**                                | **Well supported**                          | **Well supported**      |
+| Support for .NET                                                                  | **Well supported**                                | **Well supported**                          | **Well supported**      |
+| Support for JavaScript                                                            | **Supported**                                | **Supported**                          | **Supported**      |
+| [**Scenario considerations**](#scenario-considerations)                           |                                    |                             |
+| Event Tracing for Windows                                                         | **Supported**                                | **Well supported**                          | **Well supported**      |
+| Composition                                                                       | Not supported                                 | **Well supported**                          | Not supported       |
+| HTML/Edge/Internet Explorer/Webview                                               | Not supported                                 | **Well supported**                          | Not supported       |
+| XAML/WinUI                                                                        | **Supported**                                | **Well supported**                          | **Well supported**      |
+| Audio/Video pipelines and glitches                                                | Not supported                                 | **Well supported**                          | Not supported       |
+| Database timing                                                                   | **Well supported**                                | Not supported                           | Not supported       |
+| Managed object allocation and garbage collection                                  | **Well supported**                                | Not supported                           | **Well supported**      |
+| Custom Scenarios                                                                  | Not supported                                 | **Well supported**                          | **Well supported**      |
 
 ## General use considerations
 
@@ -126,7 +124,7 @@ A few of the benefits that PerfView offers include:
 
 For analyses surrounding a **single application** and especially a **single process**, all of the tools are very capable for collecting and understanding performance. The advantage, however, would side with Visual Studio Performance Profiler, especially when the application source and project system is already available. The Visual Studio Performance Profiler engine is designed to collect CPU, GPU, and memory information from a binary in a similar streamlined fashion to the F5 debugging capability. While only focusing on the one application at hand, this collection mechanism offers a tighter turn around and developer loop.
 
-Choose PerfView if Visual Studio doesn’t have the necessary capabilities, can’t be run due to collection requirements (common in production environments), or more detailed .NET diagnostic capabilities are needed.
+Choose PerfView if Visual Studio doesn't have the necessary capabilities, can't be run due to collection requirements (common in production environments), or more detailed .NET diagnostic capabilities are needed.
 
 For situations with **larger complexity** that include **multiple cross-process requests**, **hardware devices** and their **drivers**, or deep dives into **Windows platform technologies**, the Windows Performance Toolkit is the optimal choice.
 

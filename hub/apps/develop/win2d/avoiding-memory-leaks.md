@@ -42,7 +42,7 @@ void page_Unloaded(object sender, RoutedEventArgs e)
 }
 ```
 
-For working examples, see any of the [Example Gallery](https://github.com/Microsoft/Win2D-Samples/tree/master/ExampleGallery/Shared) demo pages.
+For working examples, see any of the [Example Gallery](https://github.com/microsoft/Win2D-Samples/tree/master/ExampleGallery/) demo pages.
 
 ## How to test for cycle leaks
 
@@ -66,7 +66,7 @@ gcTimer.Start();
 
 Navigate to the page, then away from it to some other page. If all cycles have been broken, you will see `Debug.WriteLine` output in the Visual Studio output pane within a second or two.
 
-Note that calling `GC.Collect` is disruptive and hurts performace, so you should remove this test code as soon as you finish testing for leaks!
+Note that calling `GC.Collect` is disruptive and hurts performance, so you should remove this test code as soon as you finish testing for leaks!
 
 ## The gory details
 

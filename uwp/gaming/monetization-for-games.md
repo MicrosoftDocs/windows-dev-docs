@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, games, monetization
 ms.localizationpriority: medium
 ---
+
 #  Monetization for games
 
 As a game developer, you need to know your monetization options so you can sustain your business and keep doing what you're passionate about: creating great games. This article provides an overview of the monetization methods for a Universal Windows Platform (UWP) game and how to implement them.
@@ -32,7 +33,7 @@ Here are some important concepts regarding the pricing of your game in the Store
 ### Base price
 
 The base price of the game is what determines whether your game is categorized as _paid_ or _free_. You can use [Partner Center](https://partner.microsoft.com/dashboard) to configure the base price based on country and region.
-The process of determining the price may include your [tax responsibilities when selling to different countries](/partner-center/tax-details-marketplace)
+The process of determining the price may include your [tax responsibilities when selling to different countries/regions](/partner-center/tax-details-marketplace)
 and [cost considerations for specific markets](/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix). You can also [set custom prices for specific markets](/windows/apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix#override-base-price-for-specific-markets).
 
 ### Sale price
@@ -191,7 +192,7 @@ These are other ad networks that provide SDKs for serving ads to UWP apps and ga
 
 #### Vungle
 
-The Vungle SDK for Windows offer video ads in apps and games. To download the SDK, go to [Vungle SDK](https://publisher.vungle.com/sdk/).
+The Vungle SDK for Windows offer video ads in apps and games. To download the SDK, go to [Vungle SDK](https://support.vungle.com/hc/en-us/articles/15733752671131).
 
 #### Smaato
 
@@ -202,10 +203,10 @@ Smaato enables banner ads to be incorporated into UWP apps and games. Download t
 You can use AdDuplex to implement banner or interstitial ads in your game.
 
 To learn more about integrating AdDuplex directly into a Windows 10 XAML project, go to the AdDuplex website:
-* Banner ads: [Windows 10 SDK for XAML](https://adduplex.zendesk.com/hc/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
-* Interstitial ads: [Windows 10 XAML AdDuplex Interstitial Ad Installation and Usage](https://adduplex.zendesk.com/hc/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
+* Banner ads: [Windows 10 SDK for XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
+* Interstitial ads: [Windows 10 XAML AdDuplex Interstitial Ad Installation and Usage](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
 
-For info about integrating the AdDuplex SDK into Windows 10 UWP games created using Unity, see [Windows 10 SDK for Unity apps installation and usage](https://adduplex.zendesk.com/hc/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage).
+For info about integrating the AdDuplex SDK into Windows 10 UWP games created using Unity, see [Windows 10 SDK for Unity apps installation and usage](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage).
 
 ## Maximize your game's potential through ad campaigns
 

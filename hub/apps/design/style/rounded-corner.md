@@ -8,7 +8,7 @@ keywords: windows 10, uwp, corner radius, rounded
 
 # Corner radius
 
-Starting with version 2.2 of the [Windows UI Library](/uwp/toolkits/winui/) (WinUI), the default style for many controls has been updated to use rounded corners. These new styles are intended to evoke warmth and trust, and make the UI easier for users to visually process.
+Starting with version 2.2 of [WinUI](../../winui/winui2/index.md), the default style for many controls has been updated to use rounded corners. These new styles are intended to evoke warmth and trust, and make the UI easier for users to visually process.
 
 Here are two Button controls, the first without rounded corners and the second using a rounded corner style.
 

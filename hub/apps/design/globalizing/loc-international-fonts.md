@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 This topic lists the fonts available for Windows apps that are localized into languages other than U.S. English.
 
-In the following table, the "Language tag" column lists the [BCP-47 language tag](https://tools.ietf.org/html/bcp47) of the language. To see a list of the language tags specifically supported by the Microsoft Store, see [Supported languages](../../publish/publish-your-app/supported-languages.md).
+In the following table, the "Language tag" column lists the [BCP-47 language tag](https://tools.ietf.org/html/bcp47) of the language. To see a list of the language tags specifically supported by the Microsoft Store, see [Supported languages](../../publish/publish-your-app/msix/app-package-requirements.md#supported-languages).
 
 | Language | Language tag | Font used in Windows |
 | --------- | ----------- | -------------------- |
@@ -126,4 +126,4 @@ In the following table, the "Language tag" column lists the [BCP-47 language tag
 ## Related topics
 
 * [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
-* [Supported languages](../../publish//publish-your-app/supported-languages.md)
+* [Supported languages](../../publish/publish-your-app/msix/app-package-requirements.md#supported-languages)

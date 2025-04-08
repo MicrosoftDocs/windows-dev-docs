@@ -2,12 +2,9 @@
 description: An info badge is a small circle that represents a notification or alert within an app.
 title: Info badge
 template: detail.hbs
-ms.date: 09/22/2022
+ms.date: 02/26/2025
 ms.topic: article
 keywords: windows 10, winui, uwp
-pm-contact: gabilka
-design-contact: shurd
-dev-contact: stpete
 ms.custom: 20H2
 ms.localizationpriority: medium
 no-loc: [info badge, navigation view, content dialog, info bar]
@@ -148,25 +145,6 @@ To send UIA notifications upon the info badge's appearance or dismissal, you can
 
 The info badge comes at a default size that meets accessibility requirements. You can customize many aspects of the info badge including its height/width/color, etc., but it's important that the default info badge adheres to our accessibility guidelines for size and color.
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The InfoBadge for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [InfoBadge class](/windows/winui/api/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.value)
-> - [Open the WinUI 2 Gallery app and see InfoBadge in action](winui2gallery:/item/InfoBadge). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:InfoBadge/>
-```
-
 ## Create an InfoBadge
 
 > [!IMPORTANT]
@@ -177,7 +155,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [InfoBadge class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.value)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the InfoBadge in action](winui3gallery:/item/InfoBadge).
+> [Open the WinUI 3 Gallery app and see the InfoBadge in action](winui3gallery:/item/InfoBadge)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -402,6 +380,25 @@ If neither `InfoBadge.Value` nor `InfoBadge.IconSource` are set, the InfoBadge d
 You can also change the InfoBadge's type while it is being shown. To change the type of InfoBadge, be sure that the current type's corresponding property (`Value` or `IconSource`) is set to its default value (`-1` or `null`), and set the new type's property equal to an appropriate value. To change the type of InfoBadge from numeric or icon to a dot type InfoBadge, make sure that `InfoBadge.Value` is set to `-1` and `InfoBadge.IconSource` is set to `null`.
 
 Depending on how you've positioned your InfoBadge, be aware that this may cause items to shift as the size and shape of the InfoBadge may change.
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The InfoBadge for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI 2 Apis:** [InfoBadge class](/windows/winui/api/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.value)
+> - [Open the WinUI 2 Gallery app and see InfoBadge in action](winui2gallery:/item/InfoBadge). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:InfoBadge/>
+```
 
 ## Related articles
 

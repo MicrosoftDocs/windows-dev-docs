@@ -41,7 +41,7 @@ Avoid inconveniencing the user with your instructional UI. Do not:
 
 -   **Obscure important information:** Instructional UI should never get in the way of other features of your app.
 -   **Force users to participate:** Users should be able to ignore instructional UI and still progress through the app.
--   **Displaying repeat information:** Don't harass the user with instructional UI, even if they ignore it the first time. Adding an setting to display instructional UI again is a better solution.
+-   **Displaying repeat information:** Don't harass the user with instructional UI, even if they ignore it the first time. Adding a setting to display instructional UI again is a better solution.
 
 ## Examples of instructional UI
 

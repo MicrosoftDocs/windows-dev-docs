@@ -63,7 +63,7 @@ To learn more about spatial audio and how XAML handles it see [AudioGraph - Spat
 ### Sound for TV and Xbox
 
 Sound is a key part of the 10-foot experience, and by default, the **ElementSoundPlayer**'s state is **Auto**, meaning that you will only get sound when your app is running on Xbox.
-To understand more about designing for Xbox and TV, please see [Designing for Xbox and TV](../devices/designing-for-tv.md).
+Please see [Designing for Xbox and TV](../devices/designing-for-tv.md) for more details.
 
 ## Sound Volume Override
 

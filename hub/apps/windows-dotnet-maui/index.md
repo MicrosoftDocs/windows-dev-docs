@@ -1,10 +1,11 @@
 ---
 title: Build Windows apps with .NET MAUI
 description: Learn about .NET MAUI, benefits it provides to Windows developers, and how take your Windows apps cross-platform.
-ms.topic: article
-ms.date: 11/02/2022
+ms.topic: concept-article
+ms.date: 01/23/2025
 keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium
+#Customer intent: As a Windows developer, I want to learn about .NET MAUI, the benefits it provides to Windows developers, and how to take my Windows apps cross-platform.
 ---
 
 # Build Windows apps with .NET MAUI
@@ -28,6 +29,9 @@ If you are planning to build a new app for Windows and want to target additional
 - **Native Controls**: .NET MAUI does not currently support using Windows App SDK controls. If you have existing controls from other Windows App SDK projects you intend to re-use or rely on 3rd Party or open source controls, you will need to find alternatives for .NET MAUI projects.
 - **Closer to Windows**: When writing .NET MAUI apps, it outputs a Windows App SDK app, but there is some translation to get from your code to the native Windows app. With Windows App SDK, you are eliminating that translation step and are less likely to encounter issues with styles, API compatibility, or layout.
 
+> [!TIP]
+> Are you still deciding between .NET MAUI, WinUI, and other UI framework options? Check out the [Windows developer FAQ](../get-started/windows-developer-faq.yml) to learn about the different options for building native Windows apps. Then go watch the **Windows Dev Chat** episode on **Choosing your ideal dev platform**. The segment about [.NET MAUI](https://www.youtube.com/watch?v=4PJBJ8GICjM&list=PLI_J2v67C23bxTffW4XewbUEAOfSVZkrk&index=2&t=2193s) hosted by Beth Massi walks through examples and reasons for choosing .NET MAUI for your next app.
+
 ## .NET MAUI resources for Windows developers
 
 ### .NET MAUI documentation
@@ -36,7 +40,7 @@ The [.NET MAUI docs](/dotnet/maui/) include resources for learning about .NET MA
 
 ### WinUI documentation
 
-Explore the [WinUI docs](../winui/winui3/index.md) to learn about the features of the Windows UI library.
+Explore the [WinUI docs](../winui/winui3/index.md) to learn about the features of WinUI.
 
 ### .NET Conf: Focus on MAUI
 
@@ -45,7 +49,7 @@ This [one-day live stream](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWeP
 ### .NET MAUI blog posts
 
 - [5 .NET MAUI Features for Building Great Desktop Apps](https://devblogs.microsoft.com/dotnet/5-dotnet-maui-desktop-features/)
-- [Build Your Own Podcast App with .NET 7, Blazor, and .NET MAUI](https://devblogs.microsoft.com/dotnet/build-your-own-podcast-app-with-dotnet-blazor-and-dotnet-maui/)
+- [Build Your Own Podcast App with .NET, Blazor, and .NET MAUI](https://devblogs.microsoft.com/dotnet/build-your-own-podcast-app-with-dotnet-blazor-and-dotnet-maui/)
 
 ### GitHub
 
@@ -53,7 +57,18 @@ This [one-day live stream](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWeP
 
 ### Code samples
 
-Explore the .NET MAUI code samples in the [samples browser](/samples/browse/?expanded=dotnet&products=dotnet-maui) or on [GitHub](https://github.com/dotnet/maui-samples).
+Explore the .NET MAUI code samples in the [samples browser](/samples/browse/?expanded=dotnet&products=dotnet-maui) or on GitHub at [dotnet/maui-samples](https://github.com/dotnet/maui-samples).
+
+#### Samples that demonstrate specific tasks
+
+| Sample Name/Link | Task |
+|--|--|
+| [Animations](https://github.com/dotnet/maui-samples/tree/main/8.0/Animations) | **Use animations** to bring your app to life. |
+| [Behaviors](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/BehaviorsDemos) | **Add functionality without subclassing** using behaviors, instead attaching behavior classes to your controls. |
+| [Control Templates](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/ControlTemplateDemos) | **Define the visual structure** of `ContentView` derived custom controls, and `ContentPage` derived pages. |
+| [Data Binding](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/DataBindingDemos) | **Bind objects** to the actual UI elements, responsively updating one another when one changes. |
+| [Shell App](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/Shell) | **Use a .NET Shell app** to reduce complexity, reuse code, and integrate existing Windows functionality (such as URI navigation and integrated search bars) into your app. |
+| [Triggers](https://github.com/dotnet/maui-samples/tree/main/8.0/Fundamentals/TriggersDemos) | **Use triggers** to selectively update, hide, or display specific controls when an event or data changes. |
 
 ## Get started with .NET MAUI on Windows
 
@@ -71,12 +86,10 @@ If you haven't enabled development mode on your PC, see [Enable your device for 
 
 Check out a walk-through of [creating your first .NET MAUI app on Windows](./walkthrough-first-app.md).
 
-## Related topics
+## Related content
 
 [What is .NET MAUI](/dotnet/maui/what-is-maui)
 
-[.NET MAUI supported platforms](/dotnet/maui/supported-platforms)
-
-[WinUI overview](../winui/winui3/index.md)
+[Windows developer FAQ](../get-started/windows-developer-faq.yml)
 
 [.NET MAUI Community Toolkit documentation](/dotnet/communitytoolkit/maui/)

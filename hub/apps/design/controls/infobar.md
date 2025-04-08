@@ -2,7 +2,7 @@
 description: An InfoBar is an inline notification for essential app-wide messages.
 title: InfoBar
 template: detail.hbs
-ms.date: 11/30/2020
+ms.date: 02/26/2025
 ms.topic: article
 ms.custom: 20H2
 ms.localizationpriority: medium
@@ -106,25 +106,6 @@ The notification will follow standard mirroring behavior when localized to/from 
 
 Please view the guidance for [Adjust layout and fonts, and support RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md) for more information about text localization in your notification.
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The InfoBar for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [InfoBar class](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
-> - [Open the WinUI 2 Gallery app and see InfoBar in action](winui2gallery:/item/InfoBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:InfoBar />
-```
-
 ### Create an InfoBar
 
 > [!div class="checklist"]
@@ -132,7 +113,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [InfoBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery:/item/InfoBar).
+> [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery:/item/InfoBar)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -298,8 +279,8 @@ XAML content can be added to an InfoBar using the Content property. It will appe
 You can modify the default Style and ControlTemplate to give the control a unique appearance.
 See the [Control Style and Template](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar#control-style-and-template) section of the InfoBar API docs for a list of the available theme resources.
 
-For more info, see the [Light-weight styling section](../style/xaml-styles.md#lightweight-styling)
-of the [Styling controls](../style/xaml-styles.md)
+For more info, see the [Light-weight styling section](../../develop/platform/xaml/xaml-styles.md#lightweight-styling)
+of the [Styling controls](../../develop/platform/xaml/xaml-styles.md)
 article.
 
 For example, the following causes the background color for all informational InfoBars on a page to be blue:
@@ -334,6 +315,25 @@ public void InfoBar_Closing(InfoBar sender, InfoBarClosingEventArgs args)
         }
     }
 }
+```
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The InfoBar for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI 2 Apis:** [InfoBar class](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
+> - [Open the WinUI 2 Gallery app and see InfoBar in action](winui2gallery:/item/InfoBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:InfoBar />
 ```
 
 ## Related articles

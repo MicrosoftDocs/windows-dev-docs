@@ -271,7 +271,7 @@ You can add a reference to ComputeSharp in your project through NuGet:
   * On WinAppSDK, select the [**ComputeSharp.D2D1.WinUI**](https://www.nuget.org/packages/ComputeSharp.D2D1.WinUI/) package.
 
 > [!NOTE]
-> Similarly to Win2D, almost all APIs in ComputeSharp.D2D1.\* are identical across the UWP and WinAppSDK targets, the only difference being the namespace (ending in either `.Uwp` or `.WinUI`). Like with the rest of the docs, the following code samples will use the `.WinUI` namespace, but the same code will also work on UWP after adjusting the `using` directives in the file.
+> Many APIs in ComputeSharp.D2D1.\* are identical across the UWP and WinAppSDK targets, the only difference being the namespace (ending in either `.Uwp` or `.WinUI`). However, the UWP target is in sustained maintenance and not receiving new features. As such, some code changes might be needed compared to the samples shown here for WinUI. The snippets in this document reflect the API surface as of ComputeSharp.D2D1.WinUI 3.0.0 (the last release for the UWP target is instead 2.1.0).
 
 There are two main components in ComputeSharp to interop with Win2D:
 - `PixelShaderEffect<T>`: a Win2D effect that is powered by a D2D1 pixel shader. The shader itself is written in C# using the APIs provided by ComputeSharp. This class also provides properties to set effect sources, constant values, and more.
@@ -309,11 +309,9 @@ using ComputeSharp.D2D1;
 [D2DInputCount(0)]
 [D2DRequiresScenePosition]
 [D2DShaderProfile(D2D1ShaderProfile.PixelShader40)]
-[AutoConstructor]
-public readonly partial struct NoiseShader : ID2D1PixelShader
+[D2DGeneratedPixelShaderDescriptor]
+public readonly partial struct NoiseShader(float amount) : ID2D1PixelShader
 {
-    private readonly float _amount;
-
     /// <inheritdoc/>
     public float4 Execute()
     {
@@ -326,7 +324,7 @@ public readonly partial struct NoiseShader : ID2D1PixelShader
         float hash = Hlsl.Frac(Hlsl.Sin(Hlsl.Dot(position, new float2(41, 289))) * 45758.5453f);
 
         // Map the random value in the [0, amount] range, to control the strength of the noise
-        float alpha = Hlsl.Lerp(0, _amount, hash);
+        float alpha = Hlsl.Lerp(0, amount, hash);
 
         // Return a white pixel with the random value modulating the opacity
         return new(1, 1, 1, alpha);
@@ -341,14 +339,15 @@ Let's go over this shader in detail:
 - The shader has no inputs, it just produces an infinite image with random grayscale noise.
 - The shader requires access to the current pixel coordinate.
 - The shader is precompiled at build time (using the `PixelShader40` profile, which is guaranteed to be available on any GPU where the application could be running).
-- The `[AutoConstructor]` attribute is part of ComputeSharp, and it will just generate a constructor automatically for us to set that `_amount_` field.
+- The `[D2DGeneratedPixelShaderDescriptor]` attribute is needed to trigger the source generator bundled with ComputeSharp, which will analyze the C# code, transpile it to HLSL, compile the shader to bytecode, etc.
+- The shader captures a `float amount` parameter, via its [primary constructor](/dotnet/csharp/whats-new/tutorials/primary-constructors). The source generator in ComputeSharp will automatically take care of extracting all captured values in a shader and preparing the constant buffer that D2D needs to initialize the shader state.
 
 And this part is done! This shader will generate our custom noise texture whenever needed. Next, we need to create our packaged effect with the effect graph connecting all our effects together.
 
 ### Creating a custom effect
 
 For our easy to use, packaged effect, we can use the `CanvasEffect` type from ComputeSharp. This type provides a straightforward way to setup all the necessary logic to create an effect graph and update it via public properties that users of the effect can interact with. There are two main methods we'll need to implement:
-- `BuildEffectGraph`: this method is responsible for building the effect graph that we want to draw. That is, it needs to create all effects we need, and register the output node for the graph. For effects that can be updated at a later time, the registration is done with an associated `EffectNode<T>` value, which acts as lookup key to retrieve the effects from the graph when needed.
+- `BuildEffectGraph`: this method is responsible for building the effect graph that we want to draw. That is, it needs to create all effects we need, and register the output node for the graph. For effects that can be updated at a later time, the registration is done with an associated `CanvasEffectNode<T>` value, which acts as lookup key to retrieve the effects from the graph when needed.
 - `ConfigureEffectGraph`: this method refreshes the effect graph by applying the settings that the user has configured. This method is automatically invoked when needed, right before drawing the effect, and only if at least one effect property has been modified since the last time the effect was used.
 
 Our custom effect can be defined as follows:
@@ -360,8 +359,8 @@ using Microsoft.Graphics.Canvas.Effects;
 
 public sealed class FrostedGlassEffect : CanvasEffect
 {
-    private static readonly EffectNode<GaussianBlurEffect> BlurNode = new();
-    private static readonly EffectNode<PixelShaderEffect<NoiseShader>> NoiseNode = new();
+    private static readonly CanvasEffectNode<GaussianBlurEffect> BlurNode = new();
+    private static readonly CanvasEffectNode<PixelShaderEffect<NoiseShader>> NoiseNode = new();
 
     private ICanvasImage? _source;
     private double _blurAmount;
@@ -386,7 +385,7 @@ public sealed class FrostedGlassEffect : CanvasEffect
     }
 
     /// <inheritdoc/>
-    protected override void BuildEffectGraph(EffectGraph effectGraph)
+    protected override void BuildEffectGraph(CanvasEffectGraph effectGraph)
     {
         // Create the effect graph as follows:
         //
@@ -421,7 +420,7 @@ public sealed class FrostedGlassEffect : CanvasEffect
     }
 
     /// <inheritdoc/>
-    protected override void ConfigureEffectGraph(EffectGraph effectGraph)
+    protected override void ConfigureEffectGraph(CanvasEffectGraph effectGraph)
     {
         // Set the effect source
         effectGraph.GetNode(BlurNode).Source = Source;

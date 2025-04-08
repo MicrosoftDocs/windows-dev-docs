@@ -1,14 +1,14 @@
 ---
 title: WinUI 3 templates in Visual Studio
-description: Once you've set up your development computer (see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)), you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates.
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
-ms.date: 03/10/2022
+description: Once you've set up your development computer, you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
+ms.date: 07/09/2024
 ms.topic: article
 ---
 
 # WinUI 3 templates in Visual Studio
 
-Once you've set up your development computer (see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)), you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates. And [Create your first WinUI 3 project](./create-your-first-winui3-app.md) walks you through creating a project.
+Once you've set up your development computer (see [Start developing Windows apps](../../get-started/start-here.md)), you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates.
 
 To access the WinUI 3 project templates, in the **New Project** dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **WinUI**, respectively. Alternatively, you can search for *WinUI*, and select one of the available C# or C++ templates.
 
@@ -66,14 +66,14 @@ The following item templates are available for use in a WinUI 3 project. To acce
 | Blank Page (WinUI 3) | C# and C++ | Adds a XAML file and code file that defines a new page derived from the **Microsoft.UI.Xaml.Controls.Page** class in the WinUI 3 library. |
 | Blank Window (WinUI 3 in Desktop) | C# and C++ | Adds a XAML file and code file that defines a new window derived from the **Microsoft.UI.Xaml.Window** class in the WinUI 3 library. |
 | Custom Control (WinUI 3) | C# and C++ | Adds a code file for creating a templated control with a default style. The templated control is derived from the **Microsoft.UI.Xaml.Controls.Control** class in the WinUI 3 library.<p></p>For a walkthrough that demonstrates how to use this item template, see [Templated XAML controls for UWP and WinUI 3 apps with C++/WinRT](xaml-templated-controls-cppwinrt-winui-3.md) and [Templated XAML controls for UWP and WinUI 3 apps with C#](xaml-templated-controls-csharp-winui-3.md). For more information about templated controls, see [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
-| Resource Dictionary (WinUI 3) | C# and C++ | Adds an empty, keyed collection of XAML resources. For more information, see [ResourceDictionary and XAML resource references](../../design/style/xaml-resource-dictionary.md). |
+| Resource Dictionary (WinUI 3) | C# and C++ | Adds an empty, keyed collection of XAML resources. For more information, see [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md). |
 | Resources File (WinUI 3) | C# and C++ | Adds a file for storing string and conditional resources for your app. You can use this item to help localize your app. For more info, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest). |
 | User Control (WinUI 3) | C# and C++ | Adds a XAML file and code file for creating a user control that derives from the **Microsoft.UI.Xaml.Controls.UserControl** class in the WinUI 3 library. Typically, a user control encapsulates related existing controls and provide its own logic.<p></p>For more information about user controls, see [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
 
 ## See also
 
 * [Windows App SDK](../../windows-app-sdk/index.md)
-* [Create your first WinUI 3 project](./create-your-first-winui3-app.md)
+* [Start developing Windows apps](../../get-started/start-here.md)
 * [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 * [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
 * [Windows App SDK Sample Templates](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Templates)

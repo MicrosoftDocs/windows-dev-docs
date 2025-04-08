@@ -1,12 +1,10 @@
 ---
 title: Add support Arm devices to your Windows app
 description: Guidance for adding Arm64 support to your app. Optimize your x64 app to perform better on Windows devices powered by Arm processors so that CPU, GPU, and NPU performance is accelerated, less power is consumed to preserve battery life, and wi-fi and mobile data network connections are supported.
-ms.date: 05/23/2023
+ms.date: 05/21/2024
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
-author: mattwojo
-ms.author: mattwoj
+ms.service: windows
+ms.subservice: arm
 ms.reviewer: marcs
 ---
 
@@ -34,13 +32,14 @@ Additionally, [Kernel drivers](/windows-hardware/drivers/kernel/) are required t
 
 If you are updating your app using an Arm-based device (native compiling - generating the code for the same platform on which you're running), you can use:
 
-- [Visual Studio 2022 v17.4](https://devblogs.microsoft.com/visualstudio/visual-studio-2022-17-4/#arm64) or later. This is the first GA release of Visual Studio that natively supports building and debugging Arm64 apps on Arm-based processors. Both Visual Studio 2022 17.4 and and Microsoft Visual C++ (MSVC) native Arm64 versions provide significantly better performance  compared with previous emulated versions.
+- [Introducing Visual Studio 17.10 – Preview 1 (Feb 2024)](https://devblogs.microsoft.com/visualstudio/introducing-visual-studio-17-10-preview-1-is-here/)
+- [Visual Studio 2022 v17.4](https://devblogs.microsoft.com/visualstudio/visual-studio-2022-17-4/#arm64) or later. This is the first GA release of Visual Studio that natively supports building and debugging Arm64 apps on Arm-based processors. Both Visual Studio 2022 17.4 and Microsoft Visual C++ (MSVC) native Arm64 versions provide significantly better performance  compared with previous emulated versions.
 
 - (Optional) [LLVM (Clang) v12+](https://releases.llvm.org/12.0.0/tools/clang/docs/ReleaseNotes.html#windows-support) or later. LLVM 12 adds official binary release hosted on Windows on Arm64, including a Clang compiler, LLD Linker, and compiler-rt runtime libraries.
 
 If you are updating your Windows app to support Arm using an x64 or x86 Intel-based device (cross compiling), you can use:
 
-- [Visual Studio 2022 v17.x​](/visualstudio/releases/2022/release-notes-v17.4#summary-of-whats-new-in-this-release-of-visual-studio-2022-version-174) (Recommended)
+- [Visual Studio 2022 v17.10​](/visualstudio/releases/2022/release-notes-v17.0) (Recommended)
 - [Visual Studio 2019 v16.x​](/visualstudio/releases/2019/history#prior-release-notes)
 - [Visual Studio 2017 v15.9 onwards (UWP, Desktop bridge, win32 C++)​](/visualstudio/releasenotes/vs2017-relnotes)
 - [LLVM (Clang) v12+](https://releases.llvm.org/12.0.0/tools/clang/docs/ReleaseNotes.html#windows-support)
@@ -96,15 +95,16 @@ If you are doing development on a Windows on Arm device, then you have an easy s
 If you are looking for hardware to use for Continuous Integration (CI) and testing, these are a few of the Windows devices with an Arm64-based processor:
 
 - [Windows Dev Kit 2023](/windows/arm/dev-kit)
-- [Surface Pro 9 5G](https://www.microsoft.com/d/surface-pro-9/93vkd8np4fvk?activetab=pivot:overviewtab&rtc=1)
+- [Surface Pro 9 5G](https://www.microsoft.com/en-us/d/surface-pro-9/93vkd8np4fvk)
 - [Lenovo x13s](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx/thinkpad--x13s-(13-inch-snapdragon)/len101t0019)
-- [Surface Pro X](https://www.microsoft.com/d/surface-pro-x/8xtmb6c575md)
 
-If you are looking to set up virtual machines (VMs) running Windows on Arm to support CI and testing, consider:
+For help setting up a virtual machine (VM) running Windows on Arm to support CI and testing, see [Quickstart: Create a Windows on Arm virtual machine in the Azure portal](./create-arm-vm.md).
 
-- [Windows 11 on Arm Insider Preview (VHDX)](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64): With Windows 11 on Arm, you can create local Windows on Arm VMs using Hyper-V and the Windows Insider VHDX. *Arm64 VMs are only supported on devices that meet the prerequisites.
+- Read the Azure blog announcement of general availability for [Azure Virtual Machines with Ampere Altra Arm-based processors](https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/) with the ability to run Arm64-based versions of Windows 11 Pro and Enterprise.
 
-- [Azure Virtual Machines with Ampere Altra Arm-based processors](https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/):  Arm64-based versions of Windows 11 Pro an Enterprise are now available to run on these Azure VMs and have been designed to run tests for CI/CD in the cloud. To create a Windows on Arm VM, you will need to [login to the Azure Portal](https://ms.portal.azure.com/#create/Microsoft.VirtualMachine). Learn more in this video ["Ask the Expert: Create Apps with Ampere-based Azure VMs"](/shows/ask-the-expert/ask-the-expert-create-apps-with-ampere-based-azure-vms).
+- Learn more about the [Windows 11 on Arm Insider Preview (VHDX)](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64) for creating a local Windows on Arm VM using Hyper-V and the Windows Insider VHDX. *Arm64 VMs are only supported on devices that meet the prerequisites. Creating Arm64 VMs is not supported on x64 hardware - you will need to host the VM in the cloud, see the quickstart link above.
+
+-  Check out the video ["Ask the Expert: Create Apps with Ampere-based Azure VMs"](/shows/ask-the-expert/ask-the-expert-create-apps-with-ampere-based-azure-vms).
 
 ## Step 3 - Build and test your app on Arm devices
 
@@ -133,7 +133,7 @@ Common issues that may interfere with or block you from adding an Arm64 version 
 - [A dependency not compiled for ARM64 is blocking you from a successful build.](#a-dependency-not-compiled-for-arm64-is-blocking-you-from-a-successful-build)
 - [Code is written for a specific architecture other than Arm64.](#code-is-written-for-a-specific-architecture-other-than-arm64)
 - [Your app relies on a kernel driver.](#your-app-relies-on-a-kernel-driver)
-<!-- - [You're stuck and need assistance.](#need-assistance-leverage-our-app-assure-service) -->
+- [You're stuck and need assistance.](#need-assistance-leverage-our-app-assure-service)
 
 ### A dependency not compiled for ARM64 is blocking you from a successful build
 
@@ -159,7 +159,7 @@ If you can’t build due to a dependency, whether internal, from a 3rd party, or
 
 [Kernel drivers](/windows-hardware/drivers/kernel/) are required to be built as native Arm64. There is no emulation present in the kernel. This primarily impacts virtualization scenarios. For apps that utilize device drivers requiring direct access to the internals of the OS or hardware running in kernel mode, rather than user mode, and that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
-Additionally, [drivers on Windows](/windows-hardware/drivers/gettingstarted/) are required to be built as Arm64 and can not be emulated.  For apps that rely on software drivers that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
+Additionally, [drivers on Windows](/windows-hardware/drivers/gettingstarted/) are required to be built as Arm64 and can't be emulated.  For apps that rely on software drivers that have not yet been updated to support Arm64 processors, see [Building Arm64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
 <!-- ### When to rebuild as Arm64EC
 
@@ -198,3 +198,9 @@ As well as 3rd-party frameworks, including:
 - [Qt for Windows](https://doc.qt.io/qt-6/windows.html), [Boost C++ Library](https://www.boost.org/doc/libs/1_81_0/more/getting_started/windows.html), [Bazel, an open-source build and test tool](https://bazel.build/configure/windows).
 - Support for GCC and Mingw / GNU Toolchain for Windows on Arm is [in-progress over at Linaro](https://linaro.atlassian.net/wiki/spaces/WOAR/pages/28802842658/GNU+Toolchain+for+Windows+on+Arm).
 - For a more complete list, see [Windows On Arm (WOA) - Confluence (atlassian.net)](https://linaro.atlassian.net/wiki/spaces/WOAR/overview).
+
+## Need assistance? Leverage our App Assure service
+
+The App Assure Arm Advisory Service is available to help developers build Arm-optimized apps. This service is in addition to our existing promise: your apps will run on Windows on Arm, and if you encounter any issues, Microsoft will help you remediate them. [Learn more](https://blogs.windows.com/windowsdeveloper/2023/10/16/windows-launching-arm-advisory-service-for-developers/).
+
+[Sign up for Windows Arm Advisory Services](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0hAZezl6y5Om22d_0SBAstUOU9OSlBDQ0dBNkUwTU0ySlNZRklSMFJMViQlQCN0PWcu).

@@ -1,8 +1,6 @@
 ---
-author: drewbatgit
 description: Learn about the design elements required for integrating into the widget picker on the Widgets Board.
 title: Integrate with the widget picker
-ms.author: drewbat
 ms.date: 01/19/2023
 ms.topic: article
 keywords: windows 11, widgets
@@ -40,7 +38,7 @@ You may provide widget screenshots for multiple locales. The locale for each scr
   * "English (United States)" assets should be placed in a subdirectory named "en-us": "Assets/en-us/Screenshot.png"
   * "French (France)" assets should be placed in a subdirectory named "fr-fr": "Assets/fr-fr/Screenshot.png"
 * Reference these images in the appxmanifest using the ms-appx: URI scheme. For example: Screenshot="ms-appx:Assets\Screenshot.png"
-* If you don’t include an image for a specific locale, then the fallback image in the root directory will be used. 
+* If you don't include an image for a specific locale, then the fallback image in the root directory will be used. 
 
 The resource loader will automatically choose the language-appropriate asset to display. For more information, see: [Load images and assets tailored for scale, theme, high contrast, and others](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast#refer-to-an-image-file-from-your-app-package-manifest).
 

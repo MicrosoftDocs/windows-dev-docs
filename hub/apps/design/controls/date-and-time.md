@@ -15,10 +15,10 @@ Date and time controls give you standard, localized ways to let a user view and 
 
 > [!div class="checklist"]
 >
-> - [Open the WinUI 2 Gallery app and see DateAndTime in action](winui2gallery:/item/DateAndTime). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI 2 Gallery app and see Date and Time controls in action](winui2gallery:/category/DateAndTime). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see DateAndTime in action](winui3gallery:/item/DateAndTime).
+> [Open the WinUI 3 Gallery app and see Date and Time controls in action](winui3gallery:/category/DateAndTime)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

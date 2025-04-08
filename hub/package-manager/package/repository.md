@@ -1,7 +1,7 @@
 ---
 title: Submit your manifest to the repository
 description: After you create a package manifest that describes your application, you're ready to submit your manifest to the Windows Package Manager repository.
-ms.date: 02/02/2023
+ms.date: 11/21/2024
 ms.topic: article
 ---
 
@@ -208,7 +208,7 @@ The following table lists internal error labels. When internal errors are encoun
 |**Internal-Error-Dynamic-Scan**| An error occurred during the validation of the installed binaries. |
 |**Internal-Error-Keyword-Policy**| An error occurred during the validation of the manifest. |
 |**Internal-Error-Manifest**| An error occurred during the validation of the manifest. |
-|**Internal-Error-NoArchitectures**| An error occurred because the test could not determine the architecture if the application.|
+|**Internal-Error-NoArchitectures**| An error occurred because the test could not determine the architecture of the application.|
 |**Internal-Error-NoSupportedArchitectures**| An error occurred because the current architecture is not supported. |
 |**Internal-Error-PR**| An error occurred during the processing of the pull request. |
 |**Internal-Error-Static-Scan**| An error occurred during static analysis of the installers. |

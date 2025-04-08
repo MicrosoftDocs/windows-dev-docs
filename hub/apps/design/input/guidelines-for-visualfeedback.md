@@ -19,8 +19,8 @@ Use visual feedback to show users when their interactions are detected, interpre
 
 ## Recommendations
 
-- Try to limit modifcations of a control template to those directly related to your design intent, as extensive changes can impact the performance and accessibility of both the control and your application. 
-    - See [XAML styles](../style/xaml-styles.md) for more info on customizing the properties of a control, including visual state properties.
+- Try to limit modifications of a control template to those directly related to your design intent, as extensive changes can impact the performance and accessibility of both the control and your application. 
+    - See [XAML styles](../../develop/platform/xaml/xaml-styles.md) for more info on customizing the properties of a control, including visual state properties.
     - See the [UserControl Class](/uwp/api/windows.ui.xaml.controls.usercontrol) for details on making changes to a control template
     - Consider creating your own custom templated control if you need to make significant changes to a control template. For an example of a custom templated control, see the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
 - Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback).
@@ -89,7 +89,7 @@ The thickness, margin, or whether or not the app-developer wishes to have the fo
 
 ### Color Properties
 
-There are only two color properties for the focus visuals: the primary border color, and the secondary border color. These focus visual border colors can be changed per-control on an page level, and globally on an app-wide level:
+There are only two color properties for the focus visuals: the primary border color, and the secondary border color. These focus visual border colors can be changed per-control on a page level, and globally on an app-wide level:
 
 To brand focus visuals app-wide, override the system brushes:
 ```XAML

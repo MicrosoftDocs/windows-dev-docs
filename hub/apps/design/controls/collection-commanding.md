@@ -452,4 +452,4 @@ To optimize your app for pen input, see the [pen and stylus interaction](../inpu
 * [Swipe](swipe.md)
 * [Pull to refresh](pull-to-refresh.md)
 * [Pen and stylus interaction](../input/pen-and-stylus-interactions.md)
-* [Tailor your app for gamepad and Xbox](../devices/designing-for-tv.md)
+* [Designing for Xbox and TV](../devices/designing-for-tv.md)

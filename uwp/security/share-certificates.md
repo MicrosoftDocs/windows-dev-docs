@@ -152,7 +152,7 @@ If there are no client certificates available, then the user will need to add a 
                 InstallOptions.DeleteExpired,
                 "Import Pfx");
 
-            Result.Text = "Certificate import succeded";
+            Result.Text = "Certificate import succeeded";
         }
         catch (Exception ex)
         {

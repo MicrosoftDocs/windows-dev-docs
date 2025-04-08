@@ -3,7 +3,7 @@ description: Displays the avatar image for a person, if one is available; if not
 title: Person picture control
 template: detail.hbs
 label: Person picture
-ms.date: 09/24/2020
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -28,28 +28,6 @@ Use the person picture when you want to represent a person and their contact inf
 The illustration shows the person picture control in a list of contacts:
 ![Screenshot that shows the Person Picture control in a list of contacts.](images/person-picture/person-picture-control.png)
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-The PersonPicture control for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [PersonPicture class](/uwp/api/windows.ui.xaml.controls.personpicture), [Contact class](/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager class](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
-> - **WinUI 2 Apis:** [PersonPicture class](/windows/winui/api/microsoft.ui.xaml.controls.personpicture)
-> - [Open the WinUI 2 Gallery app and see PersonPicture in action](winui2gallery:/item/PersonPicture). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
-
-[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:PersonPicture />
-```
-
 ## Create a person picture
 
 > [!div class="checklist"]
@@ -57,7 +35,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > - **Important APIs:** [PersonPicture class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.personpicture)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see PersonPicture in action](winui3gallery:/item/PersonPicture).
+> [Open the WinUI 3 Gallery app and see PersonPicture in action](winui3gallery:/item/PersonPicture)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -176,9 +154,27 @@ You can change which image is chosen by setting the PreferSmallImage property to
 
 If there isn't an image, the control displays the contact's name or initials; if there's isn't any name data, the control displays contact data, such as an email address or phone number.
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The PersonPicture control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [PersonPicture class](/uwp/api/windows.ui.xaml.controls.personpicture), [Contact class](/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager class](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> - **WinUI 2 Apis:** [PersonPicture class](/windows/winui/api/microsoft.ui.xaml.controls.personpicture)
+> - [Open the WinUI 2 Gallery app and see PersonPicture in action](winui2gallery:/item/PersonPicture). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:PersonPicture />
+```
 
 ## Related articles
 

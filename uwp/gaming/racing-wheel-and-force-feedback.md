@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Racing wheel and force feedback
 
-This page describes the basics of programming for Xbox One racing wheels using [Windows.Gaming.Input.RacingWheel][racingwheel] and related APIs for the Universal Windows Platform (UWP).
+This page describes the basics of programming for racing wheels on Xbox One using [Windows.Gaming.Input.RacingWheel][racingwheel] and related APIs for the Universal Windows Platform (UWP).
 
 By reading this page, you'll learn:
 
@@ -22,19 +22,19 @@ By reading this page, you'll learn:
 
 ## Racing wheel overview
 
-Racing wheels are input devices that resemble the feel of a real racecar cockpit. Racing wheels are the perfect input device for both arcade-style and simulation-style racing games that feature cars or trucks. Racing wheels are supported in Windows 10 and Xbox One UWP apps by the [Windows.Gaming.Input](/uwp/api/windows.gaming.input) namespace.
+Racing wheels are input devices that resemble the feel of a real racecar cockpit. Racing wheels are the perfect input device for both arcade-style and simulation-style racing games that feature cars or trucks. Racing wheels are supported in Windows 10 or Windows 11 and Xbox One UWP apps by the [Windows.Gaming.Input](/uwp/api/windows.gaming.input) namespace.
 
-Xbox One racing wheels are offered at a variety of price points, generally having more and better input and force feedback capabilities as their price points rise. All racing wheels are equipped with an analog steering wheel, analog throttle and brake controls, and some on-wheel buttons. Some racing wheels are additionally equipped with analog clutch and handbrake controls, pattern shifters, and force feedback capabilities. Not all racing wheels are equipped with the same sets of features, and may also vary in their support for certain features&mdash;for example, steering wheels might support different ranges of rotation and pattern shifters might support different numbers of gears.
+Racing wheels are offered at a variety of price points, generally having more and better input and force feedback capabilities as their price points rise. All racing wheels are equipped with an analog steering wheel, analog throttle and brake controls, and some on-wheel buttons. Some racing wheels are additionally equipped with analog clutch and handbrake controls, pattern shifters, and force feedback capabilities. Not all racing wheels are equipped with the same sets of features, and may also vary in their support for certain features&mdash;for example, steering wheels might support different ranges of rotation and pattern shifters might support different numbers of gears.
 
 ### Device capabilities
 
-Different Xbox One racing wheels offer different sets of optional device capabilities and varying levels of support for those capabilities; this level of variation between a single kind of input device is unique among the devices supported by the [Windows.Gaming.Input](/uwp/api/windows.gaming.input) API. Furthermore, most devices you'll encounter will support at least some optional capabilities or other variations. Because of this, it's important to determine the capabilities of each connected racing wheel individually and to support the full variation of capabilities that makes sense for your game.
+Different racing wheels offer different sets of optional device capabilities and varying levels of support for those capabilities; this level of variation between a single kind of input device is unique among the devices supported by the [Windows.Gaming.Input](/uwp/api/windows.gaming.input) API. Furthermore, most devices you'll encounter will support at least some optional capabilities or other variations. Because of this, it's important to determine the capabilities of each connected racing wheel individually and to support the full variation of capabilities that makes sense for your game.
 
 For more information, see [Determining racing wheel capabilities](#determining-racing-wheel-capabilities).
 
 ### Force feedback
 
-Some Xbox One racing wheels offer true force feedback&mdash;that is, they can apply actual forces on an axis of control such as their steering wheel&mdash;not just simple vibration. Games use this ability to create a greater sense of immersion (_simulated crash damage_, "road feel") and to increase the challenge of driving well.
+Some racing wheels offer true force feedback&mdash;that is, they can apply actual forces on an axis of control such as their steering wheel&mdash;not just simple vibration. Games use this ability to create a greater sense of immersion (_simulated crash damage_, "road feel") and to increase the challenge of driving well.
 
 For more information, see [Force feedback overview](#force-feedback-overview).
 
@@ -273,14 +273,14 @@ The [InputInterfacingUWP](https://github.com/microsoft/Xbox-ATG-Samples/tree/mai
 
 ## Force feedback overview
 
-Many racing wheels have force feedback capability to provide a more immersive and challenging driving experience. Racing wheels that support force feedback are typically equipped with a single motor that applies force to the steering wheel along a single axis, the axis of wheel rotation. Force feedback is supported in Windows 10 and Xbox One UWP apps by the [Windows.Gaming.Input.ForceFeedback](/uwp/api/windows.gaming.input.forcefeedback) namespace.
+Many racing wheels have force feedback capability to provide a more immersive and challenging driving experience. Racing wheels that support force feedback are typically equipped with a single motor that applies force to the steering wheel along a single axis, the axis of wheel rotation. Force feedback is supported in Windows 10 or Windows 11 and Xbox One UWP apps through the [Windows.Gaming.Input.ForceFeedback](/uwp/api/windows.gaming.input.forcefeedback) namespace.
 
 > [!NOTE]
-> The force feedback APIs are capable of supporting several axes of force, but no Xbox One racing wheel currently supports any feedback axis other than that of wheel rotation.
+> The force feedback APIs are capable of supporting several axes of force, but no racing wheel currently supports any feedback axis other than that of wheel rotation.
 
 ## Using force feedback
 
-These sections describe the basics of programming force feedback effects for Xbox One racing wheels. Feedback is applied using effects, which are first loaded onto the force feedback device and then can be started, paused, resumed, and stopped in a manner similar to sound effects; however, you must first determine the feedback capabilities of the racing wheel.
+These sections describe the basics of programming force feedback effects for racing wheels. Feedback is applied using effects, which are first loaded onto the force feedback device and then can be started, paused, resumed, and stopped in a manner similar to sound effects; however, you must first determine the feedback capabilities of the racing wheel.
 
 ### Determining force feedback capabilities
 

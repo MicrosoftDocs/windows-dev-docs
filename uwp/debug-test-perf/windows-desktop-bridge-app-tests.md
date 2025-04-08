@@ -280,4 +280,4 @@ Remove any private code signing keys (such as .pfx and .snk files) from the pack
 
 ## Related topics
 
-* [Microsoft Store Policies](/legal/windows/agreements/store-policies)
+* [Microsoft Store Policies](/windows/apps/publish/store-policies-and-code-of-conduct)

@@ -1,9 +1,6 @@
 ---
 title: Create a PWA or Hybrid web app for Android
 description: Get started developing Android apps using the PWA approach on Windows.
-author: mattwojo
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: android on windows, pwa, android, cordova, ionic, phonegap, hybrid web app
 ms.date: 04/28/2020
@@ -187,11 +184,3 @@ ionic cordova emulate android --list
 ```
 
 See the [Cordova Emulator](https://ionicframework.com/docs/cli/commands/cordova-emulate) in the Ionic docs for more info.
-
-## Additional resources
-
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-
-- [Add Windows Defender exclusions to improve performance](defender-settings.md)
-
-- [Enable Virtualization support to improve emulator performance](emulator.md#enable-virtualization-support)

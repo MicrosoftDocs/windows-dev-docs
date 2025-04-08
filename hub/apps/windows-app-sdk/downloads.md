@@ -2,41 +2,45 @@
 title: Latest downloads for the Windows App SDK
 description: Latest downloads for the Windows App SDK, including the installer and MSIX packages
 ms.topic: article
-ms.date: 04/05/2023
+ms.date: 01/15/2025
 keywords: windows win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
 
-# Latest downloads for the Windows App SDK
+# Latest Windows App SDK downloads
 
-This page provides download links to the *latest* releases of the [Windows App SDK](index.md) in the three release channels (stable, preview, and experimental). To get started quickly, download the latest x64 installer below. Or, for older releases, see [Older downloads for the Windows App SDK](./older-downloads.md).
+This page provides download links to the *latest* releases of the [Windows App SDK](index.md) in the three release channels (stable, preview, and experimental). To get started quickly, download the latest x64 installer below. Or, for older releases, see [Archive of Windows App SDK downloads](downloads-archive.md).
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download the latest x64 stable installer (1.4.0)](https://aka.ms/windowsappsdk/1.4/latest/windowsappruntimeinstall-x64.exe)
+> [Download the latest x64 stable installer (1.7.0)](https://aka.ms/windowsappsdk/1.7/latest/windowsappruntimeinstall-x64.exe)
 
 For all the latest Windows App SDK downloads, refer to the tables and links below. To learn more, see [Windows App SDK release channels](release-channels.md) and the release notes provided below for each version.
 
 ## Stable release
-### Windows App SDK 1.4
+
+### Windows App SDK 1.7
 
 | Version | Runtime downloads |
 |---|---|
-| [1.4.0 (1.4.230822000)](stable-channel.md#version-14) <br> 08/29/2023 <br> [Release notes](stable-channel.md#version-14) | [Installer (x64)](https://aka.ms/windowsappsdk/1.4/1.4.230822000/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.4/1.4.230822000/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.4/1.4.230822000/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.4/1.4.230822000/Microsoft.WindowsAppRuntime.Redist.1.4.zip) |
+| [1.7.0 (1.7.250310001)](stable-channel.md#version-17) <br/> 03/18/2025 <br/> [Release notes](stable-channel.md#version-17) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.7.0) | [Installer (x64)](https://aka.ms/windowsappsdk/1.7/1.7.250310001/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.7/1.7.250310001/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.7/1.7.250310001/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.7/1.7.250310001/Microsoft.WindowsAppRuntime.Redist.1.7.zip) |
 
 ## Preview release
-### Windows App SDK 1.4 Preview2
+
+### Windows App SDK 1.7 Preview
 
 | Version | Runtime downloads |
 |---|---|
-| [1.4 Preview2 (1.4.230811000-preview2) ](/windows/apps/windows-app-sdk/preview-channel#version-14-preview-2-140-preview2) <br> 08/15/2023 <br> [Release notes](/windows/apps/windows-app-sdk/preview-channel#version-14-preview-2-140-preview2) | [Installer (x64)](https://aka.ms/windowsappsdk/1.4/1.4.230811000-preview2/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.4/1.4.230811000-preview2/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.4/1.4.230811000-preview2/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.4/1.4.230811000-preview2/Microsoft.WindowsAppRuntime.Redist.1.4.zip) |
-| [1.4 Preview1 (1.4.230628000-preview1) ](/windows/apps/windows-app-sdk/preview-channel#version-14-preview-1-140-preview1) <br> 07/06/2023 <br> [Release notes](/windows/apps/windows-app-sdk/preview-channel#version-14-preview-1-140-preview1) | [Installer (x64)](https://aka.ms/windowsappsdk/1.4/1.4.230628000-preview1/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.4/1.4.230628000-preview1/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.4/1.4.230628000-preview1/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.4/1.4.230628000-preview1/Microsoft.WindowsAppRuntime.Redist.1.4.zip) |
+| [1.7 Preview1 (1.7.250208002-preview1) ](/windows/apps/windows-app-sdk/preview-channel#version-17-preview-1-170-preview1) <br/> 02/11/2025 <br/> [Release notes](/windows/apps/windows-app-sdk/preview-channel#version-17-preview-1-170-preview1) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.7-preview1) | [Installer (x64)](https://aka.ms/windowsappsdk/1.7/1.7.250208002-preview1/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.7/1.7.250208002-preview1/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.7/1.7.250208002-preview1/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.7/1.7.250208002-preview1/Microsoft.WindowsAppRuntime.Redist.1.7.zip) |
 
 ## Experimental release
-###  Windows App SDK 1.4 Experimental1
+
+###  Windows App SDK 1.7 Experimental
 
 | Version | Runtime downloads |
 |---|---|
-| [1.4 Experimental1 (1.4.230518007-experimental1) ](/windows/apps/windows-app-sdk/experimental-channel#version-14-experimental-140-experimental1) <br> 05/23/2023 <br> [Release notes](/windows/apps/windows-app-sdk/experimental-channel#version-14-experimental-140-experimental1) | [Installer (x64)](https://aka.ms/windowsappsdk/1.4/1.4.230518007-experimental1/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.4/1.4.230518007-experimental1/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.4/1.4.230518007-experimental1/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.4/1.4.230518007-experimental1/Microsoft.WindowsAppRuntime.Redist.1.4.zip) |
+| [1.7 Experimental3 (1.7.250127003-experimental3) ](/windows/apps/windows-app-sdk/experimental-channel#version-17-experimental-170-experimental3) <br/> 02/06/2025 <br/> [Release notes](/windows/apps/windows-app-sdk/experimental-channel#version-17-experimental-170-experimental3) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.7-experimental3) | [Installer (x64)](https://aka.ms/windowsappsdk/1.7/1.7.250127003-experimental3/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.7/1.7.250127003-experimental3/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.7/1.7.250127003-experimental3/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.7/1.7.250127003-experimental3/Microsoft.WindowsAppRuntime.Redist.1.7.zip) |
+| [1.7 Experimental2 (1.7.250109001-experimental2) ](/windows/apps/windows-app-sdk/experimental-channel#version-17-experimental-170-experimental2) <br/> 01/09/2025 <br/> [Release notes](/windows/apps/windows-app-sdk/experimental-channel#version-17-experimental-170-experimental2) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.7-experimental2) | [Installer (x64)](https://aka.ms/windowsappsdk/1.7/1.7.250109001-experimental2/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.7/1.7.250109001-experimental2/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.7/1.7.250109001-experimental2/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.7/1.7.250109001-experimental2/Microsoft.WindowsAppRuntime.Redist.1.7.zip) |
+| [1.7 Experimental1 (1.7.241114004-experimental1) ](/windows/apps/windows-app-sdk/experimental-channel#version-17-experimental-170-experimental1) <br/> 11/20/2024 <br/> [Release notes](/windows/apps/windows-app-sdk/experimental-channel#version-17-experimental-170-experimental1) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.7-experimental1) | [Installer (x64)](https://aka.ms/windowsappsdk/1.7/1.7.241114004-experimental1/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.7/1.7.241114004-experimental1/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.7/1.7.241114004-experimental1/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.7/1.7.241114004-experimental1/Microsoft.WindowsAppRuntime.Redist.1.7.zip) |
 
 Depending on your development scenario, you might require the following:
 

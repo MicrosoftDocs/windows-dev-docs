@@ -269,7 +269,7 @@ D3D11CreateDevice(
   nullptr, // Specify nullptr to use the default adapter.
   D3D_DRIVER_TYPE_HARDWARE,
   nullptr,
-  creationFlags, // Set set debug and Direct2D compatibility flags.
+  creationFlags, // Set debug and Direct2D compatibility flags.
   featureLevels, // List of feature levels this app can support.
   ARRAYSIZE(featureLevels),
   D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for UWP apps.

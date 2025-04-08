@@ -354,6 +354,8 @@ Users have to memorize keyboard accelerators and expect the same (or similar) re
 | **Navigation** | |
 | Find content in a focused control or Window | Ctrl + F |
 | Go to the next search result | F3 |
+| Go to the next UI pane | F6 |
+| Go to the previous UI pane | Shift + F6 |
 | **Other Actions** | |
 | Add favorites | Ctrl + D |
 | Refresh | F5 or Ctrl + R |
@@ -585,6 +587,9 @@ We recommend localizing all keyboard accelerators. You can do this with the stan
   </Button.KeyboardAccelerators>
 </Button>
 ```
+
+> [!NOTE]
+> Keyboard accelerators are implemented as virtual-keys. Localized accelerators must be chosen from the predefined collection of [Virtual-Key codes](/windows/win32/inputdev/virtual-key-codes) (otherwise, a XAML parser error will occur).
 
 ### Setup an accelerator programmatically
 

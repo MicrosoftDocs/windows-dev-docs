@@ -1,7 +1,7 @@
 ---
 title: Localize your WinUI 3 app
 description: This guide shows you how to localize your WinUI 3 application 
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, localize, localization
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, localize, localization
 ms.date: 11/12/2021
 ms.topic: article
 ---

@@ -4,7 +4,7 @@ title: Check boxes
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.date: 03/10/2022
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -56,19 +56,6 @@ Both **check box** and **radio button** controls let the user select from a list
 
     ![Radio button group with three options: Not spicy, Spicy, and Extra spicy](images/spicyoptions.png)
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [CheckBox class](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked event](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked property](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), [Content property](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)
-> - [Open the WinUI 2 Gallery app and see the CheckBox in action](winui2gallery:/item/CheckBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
-
 ## Create a checkbox
 
 > [!div class="checklist"]
@@ -76,7 +63,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs**: [CheckBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.checkbox), [Checked event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked), [Content property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the CheckBox in action](winui3gallery:/item/CheckBox).
+> [Open the WinUI 3 Gallery app and see the CheckBox in action](winui3gallery:/item/CheckBox)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -277,8 +264,8 @@ private void SelectAll_Indeterminate(object sender, RoutedEventArgs e)
     // If the SelectAll box is checked (all options are selected),
     // clicking the box will change it to its indeterminate state.
     // Instead, we want to uncheck all the boxes,
-    // so we do this programatically. The indeterminate state should
-    // only be set programatically, not by the user.
+    // so we do this programmatically. The indeterminate state should
+    // only be set programmatically, not by the user.
 
     if (Option1CheckBox.IsChecked == true &&
         Option2CheckBox.IsChecked == true &&
@@ -317,13 +304,21 @@ private void SetCheckedState()
 }
 ```
 
+## UWP and WinUI 2
 
-## Get the sample code
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [CheckBox class](/uwp/api/Windows.ui.xaml.controls.checkbox), [Checked event](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked property](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), [Content property](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)
+> - [Open the WinUI 2 Gallery app and see the CheckBox in action](winui2gallery:/item/CheckBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 
-- [CheckBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CheckBox)
+- [CheckBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.checkbox)
 - [Radio buttons](radio-button.md)
 - [Toggle switch](toggles.md)

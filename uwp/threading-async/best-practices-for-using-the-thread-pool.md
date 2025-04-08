@@ -39,7 +39,7 @@ This topic describes best practices for working with the thread pool.
 
 -   Don't try to send UI updates (other than toasts and notifications) from a work item dispatched from a background task. Instead, use background task progress and completion handlers - for example, [**IBackgroundTaskInstance.Progress**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress).
 
--   When you use work-item handlers that use the **async** keyword, be aware that the thread pool work item may be set to the complete state before all of the code in the handler has executed. Code following an **await** keyword within the handler may execute after the work item has been set to the complete state.
+-   When you use work-item handlers that use the **async** keyword, don't assume that all code in the handler has executed when the complete state has been set on the work item. The thread pool work item may be set to the complete state before all of the code in the handler has executed. Code following an **await** keyword within the handler may execute after the work item has been set to the complete state.
 
 -   Don't try to run a pre-allocated work item more than once without reinitializing it. [Create a periodic work item](create-a-periodic-work-item.md)
 

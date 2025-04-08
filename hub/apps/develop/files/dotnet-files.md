@@ -145,7 +145,7 @@ private async Task EncodeDecodeStringAsync(string inputData)
 ```
 
 > [!NOTE]
-> For informatio about converting between .NET streams and WinRT streams, see [How to: Convert between .NET and Windows Runtime streams](/dotnet/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams).
+> For information about converting between .NET streams and WinRT streams, see [How to: Convert between .NET and Windows Runtime streams](/dotnet/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams).
 
 ## See also
 

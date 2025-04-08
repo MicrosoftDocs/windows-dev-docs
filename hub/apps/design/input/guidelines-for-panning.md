@@ -93,7 +93,7 @@ Sliding involves moving the fingers slowly in the panning direction. This result
 
 **Types of panning**
 
-Windows 8 supports three types of panning:
+Windows supports three types of panning:
 
 -   Single axis - panning is supported in one direction only (horizontal or vertical).
 -   Rails - panning is supported in all directions. However, once the user crosses a distance threshold in a specific direction, then panning is restricted to that axis.
@@ -102,9 +102,6 @@ Windows 8 supports three types of panning:
 **Panning UI**
 
 The interaction experience for panning is unique to the input device while still providing similar functionality.
-
-**Pannable regions**
-Pannable region behaviors are exposed to Windows app using JavaScript developers at design time through Cascading Style Sheets (CSS).
 
 There are two panning display modes based on the input device detected:
 

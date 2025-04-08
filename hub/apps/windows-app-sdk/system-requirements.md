@@ -4,8 +4,6 @@ description: The minimum system requirements for the tools required to develop W
 ms.topic: article
 ms.date: 10/12/2022
 keywords: windows win32, windows app development, Windows App SDK
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +15,7 @@ To develop apps for Windows 10 and 11, you'll need *Visual Studio*, the *Windows
 
 ## Visual Studio
 
-Visual Studio is a comprehensive *Integrated Development Envrionment (IDE)* that's used to *edit*, *debug*, *build*, and *publish* apps.
+Visual Studio is a comprehensive *Integrated Development Environment (IDE)* that's used to *edit*, *debug*, *build*, and *publish* apps.
 
 For the minimum system requirements, see:
 
@@ -55,3 +53,7 @@ You can build, run, and deploy apps built with stable versions of the Windows Ap
 | **Windows App SDK 0.8** | Tools unavailable | Tools unavailable | Tools available (starting with Visual Studio 2019 16.11 Preview). | Tools available (starting with Visual Studio 2022 17.0 Preview 2). *Requires Windows App SDK v0.8.2 or later*. |
 | **Windows App SDK 1.0 Experimental** | Tools unavailable | Tools unavailable | Tools available (starting with Visual Studio 2019 16.11 Preview 3). | Tools available (starting with Visual Studio 2022 17.0 Preview 2). |
 | **Windows App SDK 1.0 Preview 2** | Tools unavailable | Tools unavailable | Tools available (starting with Visual Studio 2019 16.11 Preview 3). | Tools available (starting with Visual Studio 2022 17.0 Preview 2). |
+
+## See Also
+
+- [Windows App SDK and supported Windows releases](support.md)

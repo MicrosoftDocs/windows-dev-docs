@@ -22,7 +22,7 @@ Speech recognition requires at least one constraint to define a recognizable voc
 
 Use the [**SpeechRecognizer.Constraints**](/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) property to add constraints to a speech recognizer.
 
-Here, we cover the three kinds of speech recognition constraints used from within an app. (For Cortana voice command constraints, see [Launch a foreground app with voice commands in Cortana](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).)
+Here, we cover the three kinds of speech recognition constraints used from within an app. (For Cortana voice command constraints, see [Activate a foreground app with voice commands through Cortana](cortana-launch-a-foreground-app-with-voice-commands.md).)
 
 - [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)—A constraint based on a predefined grammar (dictation or web search).
 - [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)—A constraint based on a list of words or phrases.

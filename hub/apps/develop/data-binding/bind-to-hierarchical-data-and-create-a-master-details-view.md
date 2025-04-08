@@ -34,11 +34,8 @@ Create a new **Blank App, Packaged (WinUI 3 in Desktop)** project. Name it "Mast
 Add a new class to your project, name it **ViewModel.cs**, and add this code to it. This will be your binding source class.
 
 ```cs
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MasterDetailsBinding
 {
@@ -83,7 +80,7 @@ namespace MasterDetailsBinding
             return from y in Enumerable.Range(1, 3)
                    select new Division
                    {
-                       Name = String.Format("Division {0}-{1}", x, y),
+                       Name = string.Format("Division {0}-{1}", x, y),
                        Teams = GetTeams(x, y).ToList()
                    };
         }
@@ -93,7 +90,7 @@ namespace MasterDetailsBinding
             return from z in Enumerable.Range(1, 4)
                    select new Team
                    {
-                       Name = String.Format("Team {0}-{1}-{2}", x, y, z),
+                       Name = string.Format("Team {0}-{1}-{2}", x, y, z),
                        Wins = 25 - (x * y * z),
                        Losses = x * y * z
                    };
@@ -113,7 +110,7 @@ namespace MasterDetailsBinding
     {
         public MainWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             ViewModel = new LeagueList();
         }
         public LeagueList ViewModel { get; set; }
@@ -133,27 +130,27 @@ Finally, replace the contents of the **MainWindow.xaml** file with the following
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Window.Resources>
-        <CollectionViewSource x:Name="Leagues"
-            Source="{x:Bind ViewModel}"/>
-        <CollectionViewSource x:Name="Divisions"
-            Source="{Binding Divisions, Source={StaticResource Leagues}}"/>
-        <CollectionViewSource x:Name="Teams"
-            Source="{Binding Teams, Source={StaticResource Divisions}}"/>
-
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-        <Style TargetType="ListBox">
-            <Setter Property="FontSize" Value="15"/>
-        </Style>
-        <Style TargetType="ContentControl">
-            <Setter Property="FontSize" Value="15"/>
-        </Style>
-    </Window.Resources>
-
     <Grid>
+        <Grid.Resources>
+            <CollectionViewSource x:Name="Leagues"
+                Source="{x:Bind ViewModel}"/>
+            <CollectionViewSource x:Name="Divisions"
+                Source="{Binding Divisions, Source={StaticResource Leagues}}"/>
+            <CollectionViewSource x:Name="Teams"
+                Source="{Binding Teams, Source={StaticResource Divisions}}"/>
+    
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Style>
+            <Style TargetType="ListBox">
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style TargetType="ContentControl">
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+        </Grid.Resources>
+
         <StackPanel Orientation="Horizontal">
 
             <!-- All Leagues view -->

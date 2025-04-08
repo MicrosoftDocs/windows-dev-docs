@@ -20,7 +20,8 @@ The following tables show the audio codec and format support for each device fam
 > [!NOTE] 
 > Where AMR-NB support is indicated, this codec is not supported on Server SKUs.
 
- 
+> [!NOTE]
+> On versions of Windows prior to Windows 11, version 24H2, the AC-3 codec is included. Beginning with Windows 11, version 24H2, the AC-3 codec is no longer included with Windows. However, many device manufacturers will pre-install an AC-3 codec. 
 
 ### Desktop
 
@@ -1475,7 +1476,7 @@ The following tables show the video codec and format support for each device fam
 
 <sup>*</sup> MPEG-2/MPEG-1 codec is available with install of optional Microsoft UWP DVD application.
 
-<sup>**</sup> H.265 and AV1 are avaliable with the install of the corresponding optional codec pack.
+<sup>**</sup> H.265 and AV1 are available with the install of the corresponding optional codec pack.
 
 ### Mobile
 
@@ -1842,7 +1843,7 @@ The following tables show the video codec and format support for each device fam
 
 <sup>*</sup> MPEG-2/MPEG-1 codec is available with install of optional Microsoft UWP DVD application.
 
-<sup>**</sup> H.265 and AV1 are avaliable with the install of the corresponding optional codec pack.
+<sup>**</sup> H.265 and AV1 are available with the install of the corresponding optional codec pack.
  
 
 
@@ -2128,3 +2129,15 @@ The following tables show the video codec and format support for each device fam
 <sup>3</sup> Only certain camera RAW formats are supported.  
 
 For more information on image codecs, see [Native WIC Codecs](/windows/desktop/wic/native-wic-codecs).
+
+
+## Timed text format support
+
+Windows has native support for the following formats for timed text. For more information on implementing timed text, see [Add external timed text with TimedTextSource](/windows/uwp/audio-video-camera/media-playback-with-mediasource#add-external-timed-text-with-timedtextsource), [TimedTextSource Class](/uwp/api/windows.media.core.timedtextsource), [IMFTimedText interface](/windows/win32/api/mfmediaengine/nn-mfmediaengine-imftimedtext).
+
+* [TTML (Timed Text Markup Language)](https://en.wikipedia.org/wiki/Timed_Text_Markup_Language)
+* [WebVTT (Web Video Text Tracks)](https://en.wikipedia.org/wiki/WebVTT)
+* [SubRip](https://en.wikipedia.org/wiki/SubRip)
+* [Substation Alpha](https://en.wikipedia.org/wiki/Subtitles#Subtitle_formats)
+* [VobSub](https://en.wikipedia.org/wiki/DirectVobSub)
+* [PGS (Presentation Graphics Stream)](https://en.wikipedia.org/wiki/Presentation_Graphic_Stream)

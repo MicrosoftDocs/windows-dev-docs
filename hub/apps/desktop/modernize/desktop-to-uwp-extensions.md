@@ -1,14 +1,14 @@
 ---
 description: You can use extensions to integrate your packaged desktop app with Windows 10 and later releases in predefined ways.
 title: Integrate your desktop app with Windows using packaging extensions
-ms.date: 09/11/2020
+ms.date: 05/07/2024
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 11, windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ---
 
-# Integrate your desktop app with Windows using packaging extensions
+# Integrate your desktop app with Windows by using packaging extensions
 
 If your desktop app is packaged (has package identity at runtime), then you can use extensions to integrate your app with Windows by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions). Also see [Features that require package identity](./modernize-packaged-apps.md).
 
@@ -670,9 +670,9 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="myfiletypes">
-            <uap2:SupportedFileTypes>
+            <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
-            </uap2:SupportedFileTypes>
+            </uap:SupportedFileTypes>
             <desktop2:ThumbnailHandler
               Clsid  ="20000000-0000-0000-0000-000000000001"  />
             </uap3:FileTypeAssociation>
@@ -732,9 +732,9 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="myfiletypes">
-            <uap2SupportedFileTypes>
+            <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
-                </uap2SupportedFileTypes>
+                </uap:SupportedFileTypes>
               <desktop2:DesktopPreviewHandler Clsid ="20000000-0000-0000-0000-000000000001" />
            </uap3:FileTypeAssociation>
         </uap:Extension>
@@ -910,7 +910,7 @@ To register your context menu handler, follow these instructions.
 1. In your desktop application, implement a [context menu handler](/windows/desktop/shell/context-menu-handlers) by implementing the [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) or [IExplorerCommandState](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) interface. For a sample, see the [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) code sample. Make sure that you define a class GUID for each of your implementation objects. For example, the following code defines a class ID for an implementation of [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand).
 
     ```cpp
-    class __declspec(uuid("d0c8bceb-28eb-49ae-bc68-454ae84d6264")) CExplorerCommandVerb;
+    class __declspec(uuid("00001111-aaaa-2222-bbbb-3333cccc4444")) CExplorerCommandVerb;
     ```
 
 2. In your package manifest, specify a [com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) application extension that registers a COM surrogate server with the class ID of your context menu handler implementation.
@@ -918,8 +918,8 @@ To register your context menu handler, follow these instructions.
     ```xml
     <com:Extension Category="windows.comServer">
         <com:ComServer>
-            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler">
-                <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            <com:SurrogateServer AppId="00001111-aaaa-2222-bbbb-3333cccc4444" DisplayName="ContosoHandler">
+                <com:Class Id="00001111-aaaa-2222-bbbb-3333cccc4444" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
             </com:SurrogateServer>
         </com:ComServer>
     </com:Extension>
@@ -931,7 +931,7 @@ To register your context menu handler, follow these instructions.
     <desktop4:Extension Category="windows.fileExplorerContextMenus">
         <desktop4:FileExplorerContextMenus>
             <desktop4:ItemType Type=".rar">
-                <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+                <desktop4:Verb Id="Command1" Clsid="00001111-aaaa-2222-bbbb-3333cccc4444" />
             </desktop4:ItemType>
         </desktop4:FileExplorerContextMenus>
     </desktop4:Extension>
@@ -950,15 +950,15 @@ To register your context menu handler, follow these instructions.
       <Extensions>
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler">
-              <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            <com:SurrogateServer AppId="00001111-aaaa-2222-bbbb-3333cccc4444" DisplayName="ContosoHandler">
+              <com:Class Id="00001111-aaaa-2222-bbbb-3333cccc4444" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
             </com:SurrogateServer>
           </com:ComServer>
         </com:Extension>
         <desktop4:Extension Category="windows.fileExplorerContextMenus">
           <desktop4:FileExplorerContextMenus>
             <desktop4:ItemType Type=".contoso">
-              <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+              <desktop4:Verb Id="Command1" Clsid="00001111-aaaa-2222-bbbb-3333cccc4444" />
             </desktop4:ItemType>
           </desktop4:FileExplorerContextMenus>
         </desktop4:Extension>

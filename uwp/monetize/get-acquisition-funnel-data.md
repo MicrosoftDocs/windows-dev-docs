@@ -114,7 +114,7 @@ Authorization: Bearer <your access token>
             "UserCount": 6214
         },
         {
-            "MetricType": "Acqusition",
+            "MetricType": "Acquisition",
             "UserCount": 1502
         },
         {
@@ -147,7 +147,7 @@ Authorization: Bearer <your access token>
             "UserCount": 10
         },
         {
-            "MetricType": "Acqusition",
+            "MetricType": "Acquisition",
             "UserCount": 8
         },
         {

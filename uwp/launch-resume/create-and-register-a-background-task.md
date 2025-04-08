@@ -418,7 +418,7 @@ Before your app can run background tasks, you must declare each background task 
 3.  From the **Available Declarations** drop-down, select **Background Tasks** and click **Add**.
 4.  Select the **System event** checkbox.
 5.  In the **Entry point:** textbox, enter the namespace and name of your background class which is for this example is Tasks.ExampleBackgroundTask.
-6.  Close the manfiest designer.
+6.  Close the manifest designer.
 
 The following Extensions element is added to your Package.appxmanifest file to register the background task:
 

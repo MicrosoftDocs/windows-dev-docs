@@ -5,18 +5,19 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.date: 09/24/2020
+ms.date: 06/11/2024
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ---
+
 # Keyboard interactions
 
 ![keyboard hero image](images/keyboard/keyboard-hero.jpg)
 
-Learn how to design and optimize your Windows apps so they provide the best experience possible for both keyboard power users and those with disabilities and other accessibility requirements.
+Learn how to design and optimize your Windows apps so they provide the best experiences for both keyboard power users and those with disabilities and other accessibility requirements.
 
 Across devices, keyboard input is an important part of the overall Windows app interaction experience. A well-designed keyboard experience lets users efficiently navigate the UI of your app and access its full functionality without ever lifting their hands from the keyboard.
 
@@ -24,7 +25,7 @@ Across devices, keyboard input is an important part of the overall Windows app i
 
 ***Common interaction patterns are shared between keyboard and gamepad***
 
-In this topic, we focus specifically on Windows app design for keyboard input on PCs. However, a well-designed keyboard experience is important for supporting accessibility tools such as Windows Narrator, using [software keyboards](#software-keyboard) such as the touch keyboard and the On-Screen Keyboard (OSK), and for handling other input device types, such as the Xbox gamepad and remote control.
+In this topic, we focus specifically on Windows app design for keyboard input on PCs. However, a well-designed keyboard experience is important for supporting accessibility tools such as Windows Narrator, using [software keyboards](#software-keyboard) such as the touch keyboard and the On-Screen Keyboard (OSK), and for handling other input device types, such as a game pad or remote control.
 
 Many of the guidelines and recommendations discussed here, including [focus visuals](#focus-visuals), [access keys](#access-keys), and [UI navigation](#navigation), are also applicable to these other scenarios.
 
@@ -43,7 +44,7 @@ All UWP controls include built-in support for rich keyboard experiences and user
 ## Basic experiences
 ![Focus based devices](images/keyboard/focus-based-devices.jpg)
 
-As mentioned previously, input devices such as the Xbox gamepad and remote control, and accessibility tools such as Narrator, share much of the keyboard input experience for navigation and commanding. This common experience across input types and tools minimizes additional work from you and contributes to the "build once, run anywhere" goal of the Universal Windows Platform.
+As mentioned previously, input devices such as a game pad and remote control, and accessibility tools such as Narrator, share much of the keyboard input experience for navigation and commanding. This common experience across input types and tools minimizes additional work from you and contributes to the "build once, run anywhere" goal of the Universal Windows Platform.
 
 Where necessary, we'll identify key differences you should be aware of and describe any mitigations you should consider.
 
@@ -52,18 +53,18 @@ Here are the devices and tools discussed in this topic:
 | Device/tool                       | Description     |
 |-----------------------------------|-----------------|
 |Keyboard (hardware and software)   |In addition to the standard hardware keyboard, Windows applications support two software keyboards: the [touch (or software) keyboard](#software-keyboard) and the [On-Screen Keyboard](#on-screen-keyboard).|
-|Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](../devices/designing-for-tv.md). For specific details on Windows support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).|
+|Game pad and remote control         |A game pad and remote control are fundamental input devices in the [10-foot experience](../devices/designing-for-tv.md). For specific details on Windows support for game pad and remote control, see [Game pad and remote control interactions](gamepad-and-remote-interactions.md).|
 |Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input. For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator).|
 
 ## Custom experiences and efficient keyboarding
 As mentioned, keyboard support is integral to ensuring your applications work great for users with different skills, abilities, and expectations. We recommend that you prioritize the following.
 - Support keyboard navigation and interaction
-	- Ensure actionable items are identified as tab stops (and non-actionable items are not), and navigation order is logical and predictable (see [Tab stops](#tab-stops))
-	- Set initial focus on the most logical element (see [Initial focus](#initial-focus))
-	- Provide arrow key navigation for "inner navigations" (see [Navigation](#navigation))
+    - Ensure actionable items are identified as tab stops (and non-actionable items are not), and navigation order is logical and predictable (see [Tab stops](#tab-stops))
+    - Set initial focus on the most logical element (see [Initial focus](#initial-focus))
+    - Provide arrow key navigation for "inner navigations" (see [Navigation](#navigation))
 - Support keyboard shortcuts
-	- Provide accelerator keys for quick actions (see [Accelerators](#accelerators))
-	- Provide access keys to navigate your application's UI (see [Access keys](access-keys.md))
+    - Provide accelerator keys for quick actions (see [Accelerators](#accelerators))
+    - Provide access keys to navigate your application's UI (see [Access keys](access-keys.md))
 
 ### Focus visuals
 
@@ -229,15 +230,32 @@ For example, for `ListView` and `GridView` controls, the **Page up** key scrolls
 
 ![page up and down keys](images/keyboard/page-up-and-down.png)
 
+#### F6 key
+
+The **F6** key lets a user cycle between panes or important sections of your app or UI. **Shift-F6** typically cycles backwards (see [Keyboard accessibility](../accessibility/keyboard-accessibility.md)).
+
+These are often related to [landmarks and headings](../accessibility/landmarks-and-headings.md), but do not need to correspond directly.
+
+For example:
+
+- In Edge, pressing F6 will cycle between the tab bar, the address bar/app bar, and the page content.
+- In File Explorer, pressing F6 will cycle between the sections of the app.
+- On the desktop, pressing F6 will cycle between parts of the taskbar and the desktop.
+
+![f6 key](images/keyboard/f6.png)
+
 ### Keyboard shortcuts
+
+In addition to implementing keyboard navigation and activation, it is also good practice to implement keyboard shortcuts such as [keyboard accelerators](../input/keyboard-accelerators.md) and [access keys](../input/access-keys.md) for important or frequently used functionality.
 
 Keyboard shortcuts can make your app easier to use by providing both enhanced support for accessibility and improved efficiency for keyboard users.
 
-In addition to supporting keyboard navigation and activation in your app, it is also good practice to provide shortcuts for your application's functionality. Tab navigation provides a good, basic level of keyboard support, but with more complex UI you might want to add support for shortcut keys as well. 
-
 A shortcut is a keyboard combination that enhances productivity by providing an efficient way for the user to access app functionality. There are two kinds of shortcut:
--   [Accelerators](#accelerators) are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.
--   [Access keys](#access-keys) are shortcuts that set focus to specific UI in your application. Access keys typicaly consist of the Alt key plus a letter key.
+
+
+- [Accelerators](#accelerators) are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.
+- [Access keys](#access-keys) are shortcuts that set focus to specific UI in your application. Access keys typically consist of the Alt key plus a letter key.
+
 
 Providing consistent keyboard shortcuts that support similar tasks across applications makes them much more useful and powerful and helps users remember them.
 
@@ -391,15 +409,15 @@ The search button for the `AutoSuggestBox` is not accessible to standard keyboar
   </tr>
 </table>
 
-### Keyboard and the Xbox gamepad and remote control
+### Keyboard, game pad, and remote control
 
-Xbox gamepads and remote controls support many UWP keyboard behaviors and experiences. However, due to the lack of various key options available on a keyboard, gamepad and remote control lack many keyboard optimizations (remote control is even more limited than gamepad).
+Game pads and remote controls support many UWP keyboard behaviors and experiences. However, due to the lack of various key options available on a keyboard, game pad and remote control lack many keyboard optimizations (remote control is even more limited than game pad).
 
-See [Gamepad and remote control interactions](gamepad-and-remote-interactions.md) for more detail on UWP support for gamepad and remote control input.
+See [Game pad and remote control interactions](gamepad-and-remote-interactions.md) for more detail on UWP support for game pad and remote control input.
 
-The following shows some key mappings between keyboard, gamepad, and remote control.
+The following shows some key mappings between keyboard, game pad, and remote control.
 
-| **Keyboard**  | **Gamepad**                         | **Remote control**  |
+| **Keyboard**  | **Game pad**                         | **Remote control**  |
 |---------------|-------------------------------------|---------------------|
 | Space         | A button                            | Select button       |
 | Enter         | A button                            | Select button       |
@@ -407,7 +425,7 @@ The following shows some key mappings between keyboard, gamepad, and remote cont
 | Home/End      | N/A                                 | N/A                 |
 | Page Up/Down  | Trigger button for vertical scroll, Bumper button for horizontal scroll   | N/A                 |
 
-Some key differences you should be aware of when designing your UWP app for use with gamepad and remote control usage include:
+Some key differences you should be aware of when designing your UWP app for use with game pad and remote control usage include:
 -   Text entry requires the user to press A to activate a text control.
 -   Focus navigation is not limited to control groups, users can navigate freely to any focusable UI element in the app.
 
@@ -521,7 +539,7 @@ Test your app with all supported input devices to ensure UI elements can be navi
 
 ### Software keyboard
 
-A software keyboard is displayed on screen and used instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device. On Xbox One devices, individual keys need to be selected by moving focus visual or using shortcut keys on the gamepad or remote control.
+A software keyboard is displayed on screen and used instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device. On gaming devices, individual keys need to be selected by moving focus visual or using shortcut keys on a game pad or remote control.
 
 #### Touch keyboard
 
@@ -531,7 +549,7 @@ A software keyboard is displayed on screen and used instead of the physical keyb
 
 Depending on the device, the touch keyboard appears when a text field or other editable text control gets focus, or when the user manually enables it through the **Notification Center**:
 
-![touch keyboard icon in the notification center](images/keyboard/touch-keyboard-notificationcenter.png)
+![Screenshot of the touch keyboard icon in the notification center.](images/keyboard/touch-keyboard-notificationcenter.png)
 
 If your app sets focus programmatically to a text input control, the touch keyboard is not invoked. This eliminates unexpected behaviors not instigated directly by the user. However, the keyboard does automatically hide when focus is moved programmatically to a non-text input control.
 
@@ -554,11 +572,11 @@ The following is a list of non-edit controls that can receive focus during a tex
 
 Here are examples of different modes for the touch keyboard. The first image is the default layout, the second is the expanded layout (which might not be available in all languages).
 
-![the touch keyboard in default layout mode](images/keyboard/default.png)
+![Screenshot of the touch keyboard in default layout mode.](images/keyboard/default.png)
 
 ***The touch keyboard in default layout mode***
 
-![the touch keyboard in expanded layout mode](images/keyboard/extendedview.png)
+![Screenshot of the touch keyboard in expanded layout mode.](images/keyboard/extendedview.png)
 
 ***The touch keyboard in expanded layout mode***
 
@@ -572,12 +590,12 @@ The OSK can be turned on from the Keyboard page in Settings > Ease of access.
 
 **NOTE** The OSK has priority over the touch keyboard, which won't be shown if the OSK is present.
 
-![the on-screen keyboard](images/keyboard/osk.png)
+![Screenshot of the On-Screen Keyboard.](images/keyboard/osk.png)
 
 ***On-Screen Keyboard***
 
-![Xbox one onscreen keyboard](images/keyboard/xbox-onscreen-keyboard.png)
+![Screenshot of the Xbox One On-Screen Keyboard.](images/keyboard/xbox-onscreen-keyboard.png)
 
-***Xbox One Onscreen Keyboard***
+***Xbox One On-Screen Keyboard***
 
-For more details, see [On-Screen keyboard](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard).
+For more details, see [Use the On-Screen Keyboard to type](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard).

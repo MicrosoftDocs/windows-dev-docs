@@ -1,8 +1,6 @@
 ---
-author: drewbatgit
 description: Learn about the different states of a widget and the UI components that are built into the Windows widgets experience.
 title: Widget states and built-in UI components
-ms.author: drewbat
 ms.date: 01/19/2022
 ms.topic: article
 keywords: windows 11, widgets
@@ -66,7 +64,9 @@ If there is cached content available to be displayed, the widget header will sho
 Long widget partner names will get truncated while showing a cached message at 15 characters max.
 
 
+### Customization state
 
+Starting with Windows App SDK 1.4, widgets can provide a customization template that provides controls for the user to customize the widget's appearance or the data displayed by the widget. The customization UI is defined in a JSON template. 
 
 ## Built-in widget UI components
 

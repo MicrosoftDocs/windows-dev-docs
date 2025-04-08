@@ -55,7 +55,7 @@ If you're using a hub layout, the entry point for app settings should be placed 
 
 **Tabs/pivots**
 
-For a tabs or pivots layout, we don't recommended placing the app settings entry point as one of the top items within the navigation. Instead, the entry point for app settings should be placed inside the "More" overflow menu of a command bar.
+For a tabs or pivots layout, we don't recommend placing the app settings entry point as one of the top items within the navigation. Instead, the entry point for app settings should be placed inside the "More" overflow menu of a command bar.
 
 **List-details**
 

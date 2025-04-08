@@ -16,6 +16,17 @@ These articles help you create a flexible UI that looks great on different scree
 
 :::row:::
     :::column:::
+### [App silhouettes](../basics/app-silhouette.md)
+Learn about common layout patterns.
+    :::column-end:::
+    :::column:::
+### [App title bar](../basics/titlebar-design.md)
+Learn about design recommendations and behaviors of the parts of a standard title bar.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
 ### [Screen sizes and breakpoints](screen-sizes-and-breakpoints-for-responsive-design.md)
 Learn about screen sizes across the Windows ecosystem and how to design for breakpoints.
     :::column-end:::
@@ -31,8 +42,8 @@ Learn about responsive design techniques that optimize your app's layout for bre
 Implement responsive UI in XAML with adaptive or tailored layouts.
     :::column-end:::
     :::column:::
-### [Multiple views](show-multiple-views.md)
-Show independent parts of your app in separate windows.
+### [Layout panels](layout-panels.md)
+Learn about each type of layout panel and how to use them to arrange UI elements.
     :::column-end:::
 :::row-end:::
 
@@ -42,18 +53,8 @@ Show independent parts of your app in separate windows.
 Use alignment, margin, and padding to influence layout behavior.
     :::column-end:::
     :::column:::
-### [Layout panels](layout-panels.md)
-Learn about each type of layout panel an how to use them to arrange UI elements.
+### [Spacing](../style/spacing.md)
+Use sizing to provide a balance between information density and user comfort.
     :::column-end:::
-:::row-end:::
 
-:::row:::
-    :::column:::
-### [Transforms](transforms.md)
-Use transforms to rotate, skew, and scale elements.
-    :::column-end:::
-    :::column:::
-### [Attached layouts](attached-layouts.md)
-Learn advanced layout concepts in XAML and how to create a custom virtualizing layout.
-    :::column-end:::
 :::row-end:::

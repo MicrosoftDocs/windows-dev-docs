@@ -117,7 +117,7 @@ As you can see, the actual work is delegated to the constructor of the **GameMai
 
 The **GameMain** constructor (and the other member functions that it calls) begins a set of asynchronous loading operations to create the game objects, load graphics resources, and initialize the game's state machine. We also do any necessary preparations before the game begins, such as setting any starting states or global values.
 
-Windows imposes a limit on the time your game can take before it begins processing input. So using asyc, as we do here, means that **Load** can return quickly while the work that it has begun continues in the background. If loading takes a long time, or if there are lots of resources, then providing your users with a frequently updated progress bar is a good idea. 
+Windows imposes a limit on the time your game can take before it begins processing input. So using async, as we do here, means that **Load** can return quickly while the work that it has begun continues in the background. If loading takes a long time, or if there are lots of resources, then providing your users with a frequently updated progress bar is a good idea. 
 
 If you're new to asynchronous programming, then see [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
 
@@ -231,7 +231,7 @@ Here's an outline of the sequence of work that's kicked off by the constructor.
 - Create and initialize an object of type **GameRenderer**. For more information, see [Rendering framework I: Intro to rendering](tutorial--assembling-the-rendering-pipeline.md).
 - Create and initialize an object of type **Simple3DGame**. For more information, see [Define the main game object](tutorial--defining-the-main-game-loop.md).
 - Create the game UI control object, and display game info overlay to show a progress bar as the resource files load. For more information, see [Adding a user interface](tutorial--adding-a-user-interface.md).
-- Create a controller object to read input from the controller (touch, mouse, or Xbox wireless controller). For more information, see [Adding controls](tutorial--adding-controls.md).
+- Create a controller object to read input from the controller (touch, mouse, or game controller). For more information, see [Adding controls](tutorial--adding-controls.md).
 - Define two rectangular areas in the lower-left and lower-right corners of the screen for the move and camera touch controls, respectively. The player uses the lower-left rectangle (defined in the call to **SetMoveRect**) as a virtual control pad for moving the camera forward and backward, and side to side. The lower-right rectangle (defined by the **SetFireRect** method) is used as a virtual button to fire the ammo.
 - Use coroutines to break resource loading into separate stages. Access to the Direct3D device context is restricted to the thread on which the device context was created; while access to the Direct3D device for object creation is free-threaded. Consequently, the **GameRenderer::CreateGameDeviceResourcesAsync** coroutine can run on a separate thread from the completion task (**GameRenderer::FinalizeCreateGameDeviceResources**), which runs on the original thread.
 - We use a similar pattern for loading level resources with **Simple3DGame::LoadLevelAsync** and **Simple3DGame::FinalizeLoadLevel**.
