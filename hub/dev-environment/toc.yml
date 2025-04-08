@@ -1051,6 +1051,10 @@ items:
           href: https://code.visualstudio.com/docs/languages/rust
 - name: More tools and resources
   items:
+  - name: .NET docs
+    href: /dotnet/
+  - name: Azure docs
+    href: /azure/?product=featured
   - name: Dev Home
     items:
       - name: Overview
@@ -1065,15 +1069,12 @@ items:
         href: ../dev-home/environments.md
       - name: Windows customization
         href: ../dev-home/windows-customization.md
-  - name: .NET docs
-    href: /dotnet/
-  - name: Azure docs
-    href: /azure/?product=featured
-  - name: VS Code docs
-    href: https://code.visualstudio.com/docs
-  - name: Visual Studio docs
-    href: /visualstudio/windows/
   - name: Mac to Windows guide
     href: mac-to-windows.md
-  - name: Keyboard shortcuts
-    href: mac-to-windows.md#keyboard-shortcuts
+    items:
+    - name: Keyboard shortcuts
+      href: mac-to-windows.md#keyboard-shortcuts
+  - name: Visual Studio docs
+    href: /visualstudio/windows/
+  - name: VS Code docs
+    href: https://code.visualstudio.com/docs
