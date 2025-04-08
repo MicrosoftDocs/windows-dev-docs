@@ -62,6 +62,7 @@ As an example, here's a page with one command for each kind of command result:
 
 ```csharp
 
+using Microsoft.CommandPalette.Extensions;
 using Microsoft.CommandPalette.Extensions.Toolkit;
 
 internal sealed partial class CommandResultsPage : ListPage
