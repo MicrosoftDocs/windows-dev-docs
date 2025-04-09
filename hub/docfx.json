@@ -93,6 +93,7 @@
         "python/**": "windows-python"
       },
       "ms.service": {
+        "advanced-settings/**": "dev-environment",
         "apps/trace-processing/**": "traceprocessor",
         "apps/**": "windows-app-sdk",
         "apps/windows-dotnet-maui/**": "windows-dev-apps",
@@ -112,6 +113,7 @@
       },	 
       "feedback_product_url": 
       {
+        "advanced-settings/**": "https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb",
         "android/**": "https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb",
         "apps/**": "https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb",
         "apps/package-and-deploy/**": "https://github.com/microsoft/msix-packaging/issues",
@@ -131,6 +133,7 @@
       },
       "author":
       {
+        "advanced-settings/**": "alvinashcraft",
         "android/**": "mattwojo",
         "apps/**": "Karl-Bridge-Microsoft",
         "apps/api-reference/**": "Karl-Bridge-Microsoft",
@@ -229,6 +232,7 @@
       },
       "ms.author":
       {
+        "advanced-settings/**": "aashcraft",
         "android/**": "mattwoj",
         "apps/**": "kbridge",
         "apps/api-reference/**": "kbridge",

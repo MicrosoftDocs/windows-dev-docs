@@ -1,6 +1,6 @@
 items:
 - name: Windows developer tools
-  href: ./index.md
+  href: ./index.yml
 - name: Advanced Windows Settings
   items:
     - name: Overview

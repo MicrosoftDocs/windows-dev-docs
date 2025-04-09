@@ -1,0 +1,147 @@
+### YamlMime:Landing
+
+title: Windows developer tools
+summary: Windows invites you to code as you are. Use whatever coding language or framework you prefer - whether developing with tools on Windows or with Linux tools on the Windows Subsystem for Linux, this guide will help you get set up and install what you need to start coding, debugging, and accessing services to put your work into production.
+
+metadata:
+  title: Windows developer tools
+  description: Learn how to setup your development environment on Windows and install your preferred tools and code languages.
+  ms.service: windows 
+  ms.topic: landing-page
+  ms.collection: collection
+  author: alvinashcraft
+  ms.author: aashcraft
+  ms.date: 04/08/2025
+
+
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+
+landingContent:
+  - title: Windows Subsystem for Linux (WSL)
+    linkLists:
+      - linkListType: concept
+        links:
+        - text: WSL documentation home
+          url: /windows/wsl/
+        - text: What is WSL?
+          url: /windows/wsl/about
+        - text: How to install Linux on Windows with WSL
+          url: /windows/wsl/install
+        - text: Get started using VS Code with WSL
+          url: /windows/wsl/tutorials/wsl-vscode
+        - text: WSL FAQs
+          url: /windows/wsl/faq
+          
+  - title: Microsoft PowerToys
+    linkLists:
+      - linkListType: concept
+        links:
+        - text: About PowerToys - Utilities to customize Windows
+          url: /windows/powertoys/
+        - text: Installing PowerToys
+          url: /windows/powertoys/install
+        - text: General settings
+          url: /windows/powertoys/general
+        - text: Configure PowerToys using Group Policies
+          url: /windows/powertoys/grouppolicy
+        - text: PowerToys Command Palette utility
+          url: /windows/powertoys/command-palette/overview
+
+  - title: Windows Package Manager (winget)
+    linkLists:
+      - linkListType: concept
+        links:
+        - text: Package Manager overview
+          url: /windows/package-manager/
+        - text: Use the WinGet tool to install and manage apps
+          url: /windows/package-manager/winget/
+        - text: WinGet configuration
+          url: /windows/package-manager/configuration/
+        - text: Submit packages to Windows Package Manager
+          url: /windows/package-manager/package/
+        - text: Debugging and troubleshooting issues with the WinGet tool
+          url: /windows/package-manager/winget/troubleshooting
+
+  - title: Windows Dev Drive
+    linkLists:
+      - linkListType: concept
+        links:
+        - text: Set up a Dev Drive on Windows
+          url: /windows/dev-drive/
+        - text: Dev Drive for Performance Improvements in Visual Studio and Dev Boxes
+          url: https://devblogs.microsoft.com/visualstudio/devdrive/
+        - text: Resilient File System (ReFS) overview
+          url: /windows-server/storage/refs/refs-overview
+        - text: Configure Dev Drive security policy for the enterprise
+          url: /windows/dev-drive/group-policy
+
+  - title: Windows Terminal
+    linkLists:
+      - linkListType: concept
+        links:
+        - text: What is Windows Terminal?
+          url: /windows/terminal/
+        - text: Install and set up Terminal
+          url: /windows/terminal/install
+        - text: Appearance settings in Windows Terminal
+          url: /windows/terminal/customize-settings/appearance
+        - text: Terminal Chat (Experimental)
+          url: /windows/terminal/terminal-chat
+        - text: Windows Terminal tips and tricks
+          url: /windows/terminal/tips-and-tricks
+
+  - title: More tools for Windows developers
+    linkLists:
+      - linkListType: overview
+        links:
+        - text: Advanced Windows Settings
+          url: /windows/advanced-settings/
+        - text: Sudo for Windows
+          url: /windows/sudo/
+        - text: Guide for changing your dev environment from Mac to Windows
+          url: /windows/dev-environment/mac-to-windows
+        - text: Windows AI hub
+          url: /windows/ai
+
+  - title: Development paths
+    linkLists:
+      - linkListType: get-started
+        links:
+        - text: Get started with JavaScript
+          url: /windows/dev-environment/javascript/
+        - text: Get started with Python
+          url: /windows/dev-environment/python/
+        - text: Get started with Android
+          url: /windows/android
+        - text: Get started building Windows apps
+          url: /windows/apps/
+        - text: Get started with C++ and C
+          url: /cpp/
+        - text: Get started with C#
+          url: /dotnet/csharp/
+        - text: Get started with F#
+          url: /dotnet/fsharp/
+        - text: Get started with Rust
+          url: /windows/dev-environment/rust/
+        - text: Get started with PowerShell
+          url: /powershell/
+        - text: Get started with Docker Desktop for Windows
+          url: /windows/dev-environment/docker/overview
+        - text: Get started with Blazor
+          url: /apps/aspnet/web-apps/blazor
+
+  - title: More resources for developers
+    linkLists:
+      - linkListType: concept
+        links:
+        - text: Visual Studio Code documentation
+          url: https://code.visualstudio.com/docs
+        - text: Visual Studio documentation
+          url: /visualstudio/windows/
+        - text: Azure developer documentation
+          url: /azure/developer/
+        - text: Tutorials for getting started with .NET
+          url: /dotnet/standard/get-started
+        - text: Game development documentation
+          url: /gaming/
