@@ -120,8 +120,6 @@ landingContent:
           url: /cpp/
         - text: Get started with C#
           url: /dotnet/csharp/
-        - text: Get started with F#
-          url: /dotnet/fsharp/
         - text: Get started with Rust
           url: /windows/dev-environment/rust/
         - text: Get started with PowerShell
