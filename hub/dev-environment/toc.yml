@@ -1,5 +1,5 @@
 items:
-- name: Windows developer tools
+- name: Developer tools
   href: index.yml
 - name: Advanced Windows Settings
   items:
