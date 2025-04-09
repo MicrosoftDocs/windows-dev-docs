@@ -98,7 +98,7 @@ landingContent:
         - text: Get started with JavaScript
           url: /windows/dev-environment/javascript/
         - text: Get started with Python
-          url: /windows/dev-environment/python/
+          url: /windows/python/
         - text: Get started with Android
           url: /windows/android
         - text: Get started building Windows apps
@@ -114,7 +114,7 @@ landingContent:
         - text: Get started with Docker Desktop for Windows
           url: /windows/dev-environment/docker/overview
         - text: Get started with Blazor
-          url: /apps/aspnet/web-apps/blazor
+          url: /aspnet/core/blazor/
 
   - title: More tools for developers
     linkLists:
