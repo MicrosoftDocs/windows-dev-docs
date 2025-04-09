@@ -8799,11 +8799,6 @@
       "source_path": "uwp/launch-resume/handle-file-activation.md",
       "redirect_url": "/windows/apps/develop/launch/handle-file-activation",
       "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/dev-environment/index.md",
-      "redirect_url": "/windows/dev-environment/",
-      "redirect_document_id": false
     }
   ]
 }
