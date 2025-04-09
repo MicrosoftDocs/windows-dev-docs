@@ -1,12 +1,6 @@
 items:
 - name: Developer tools
-  href: index.yml
-- name: Advanced Windows Settings
-  items:
-    - name: Overview
-      href: ../advanced-settings/index.md
-    - name: File Explorer source control integration
-      href: ../advanced-settings/source-control-integration.md
+  href: index.md
 - name: Dev Drive
   items:
     - name: Overview
@@ -948,7 +942,6 @@ items:
 - name: Windows Terminal
   href: /windows/terminal/
 - name: Development paths
-  href: dev-paths.md
   items:
   - name: Get started with JavaScript
     items:
@@ -1051,12 +1044,11 @@ items:
         - name: Rust in Visual Studio Code
           href: https://code.visualstudio.com/docs/languages/rust
 - name: More tools and resources
-  href: more-tools.md
   items:
   - name: .NET docs
     href: /dotnet/
   - name: Azure docs
-    href: /azure/?product=featured
+    href: /azure/developer/
   - name: Dev Home
     items:
       - name: Overview
