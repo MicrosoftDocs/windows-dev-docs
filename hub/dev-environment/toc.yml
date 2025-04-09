@@ -1,10 +1,10 @@
 items:
 - name: Windows developer tools
-  href: ./index.yml
+  href: index.yml
 - name: Advanced Windows Settings
   items:
     - name: Overview
-      href: ../advanced-settings/index.md
+      href: ../advanced-settings/
     - name: File Explorer source control integration
       href: ../advanced-settings/source-control-integration.md
 - name: Dev Drive
