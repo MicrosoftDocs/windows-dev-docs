@@ -70,7 +70,7 @@ Note the below important details about this manifest:
   * Set `MinVersion` to `10.0.26100.0` to restrict the identity package to Windows 11, version 24H2 and above
   * Set `MaxVersionTested` to `10.0.26100.0` as shown
 * Ensure the `runFullTrust` and `unvirtualizedResources` capabilities are declared as shown for Win32 compatibility
-* Add an `Application` element as shown for each binary associated with your application
+* Add an `Application` element as shown for each executable associated with your application
   * Ensure `TrustLevel` is `mediumIL` and `RuntimeBehavior` is `win32App` as shown for Win32 compatibility
 * The `VisualElements` child element is required, but the `AppListEntry="none"` attribute ensures the identity package isn't shown among installed apps
   * Update the `DisplayName` and `Description` attributes with relevant details and leave the other attributes as shown (the referenced image paths do not need to resolve)
