@@ -18,6 +18,21 @@ metadata:
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
 landingContent:
+  - title: Windows Terminal
+    linkLists:
+      - linkListType: concept
+        links:
+        - text: What is Windows Terminal?
+          url: /windows/terminal/
+        - text: Install and set up Terminal
+          url: /windows/terminal/install
+        - text: Appearance settings in Windows Terminal
+          url: /windows/terminal/customize-settings/appearance
+        - text: Terminal Chat (Experimental)
+          url: /windows/terminal/terminal-chat
+        - text: Windows Terminal tips and tricks
+          url: /windows/terminal/tips-and-tricks
+
   - title: Windows Subsystem for Linux (WSL)
     linkLists:
       - linkListType: concept
@@ -76,34 +91,6 @@ landingContent:
         - text: Configure Dev Drive security policy for the enterprise
           url: /windows/dev-drive/group-policy
 
-  - title: Windows Terminal
-    linkLists:
-      - linkListType: concept
-        links:
-        - text: What is Windows Terminal?
-          url: /windows/terminal/
-        - text: Install and set up Terminal
-          url: /windows/terminal/install
-        - text: Appearance settings in Windows Terminal
-          url: /windows/terminal/customize-settings/appearance
-        - text: Terminal Chat (Experimental)
-          url: /windows/terminal/terminal-chat
-        - text: Windows Terminal tips and tricks
-          url: /windows/terminal/tips-and-tricks
-
-  - title: More tools for Windows developers
-    linkLists:
-      - linkListType: overview
-        links:
-        - text: Advanced Windows Settings
-          url: /windows/advanced-settings/
-        - text: Sudo for Windows
-          url: /windows/sudo/
-        - text: Guide for changing your dev environment from Mac to Windows
-          url: /windows/dev-environment/mac-to-windows
-        - text: Windows AI hub
-          url: /windows/ai
-
   - title: Development paths
     linkLists:
       - linkListType: get-started
@@ -129,7 +116,20 @@ landingContent:
         - text: Get started with Blazor
           url: /apps/aspnet/web-apps/blazor
 
-  - title: More resources for developers
+  - title: More tools for developers
+    linkLists:
+      - linkListType: overview
+        links:
+        - text: Advanced Windows Settings
+          url: /windows/advanced-settings/
+        - text: Sudo for Windows
+          url: /windows/sudo/
+        - text: Guide for changing your dev environment from Mac to Windows
+          url: /windows/dev-environment/mac-to-windows
+        - text: Windows AI hub
+          url: /windows/ai
+
+  - title: Resources for developers
     linkLists:
       - linkListType: concept
         links:
