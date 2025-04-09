@@ -948,6 +948,7 @@ items:
 - name: Windows Terminal
   href: /windows/terminal/
 - name: Development paths
+  href: dev-paths.md
   items:
   - name: Get started with JavaScript
     items:
@@ -1050,6 +1051,7 @@ items:
         - name: Rust in Visual Studio Code
           href: https://code.visualstudio.com/docs/languages/rust
 - name: More tools and resources
+  href: more-tools.md
   items:
   - name: .NET docs
     href: /dotnet/
