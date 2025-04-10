@@ -95,9 +95,6 @@ These additional tools will help you [set up your development environment on Win
 
 :::row:::
    :::column:::
-      [**Dev Home**](/windows/dev-home/)<br/> Introduced with Windows 11, Dev Home was an experimental dashboard that provided quick access to the tools used to develop apps for Windows. Dev Home will no longer be supported beginning May 2025.
-   :::column-end:::
-   :::column:::
       [**Dev Drive**](/windows/dev-drive/)<br/>In order to speed up common development tasks, you can create a specially formatted drive (a Dev Drive) that is used to store your projects.
    :::column-end:::
 :::row-end:::
@@ -117,7 +114,6 @@ Most WinUI apps are written in C# or C++. These guides contain articles, tutoria
 - [C# language documentation](/dotnet/csharp/)
 - [C++ language documentation](/cpp/)
 - [C++/WinRT language documentation](/windows/uwp/cpp-and-winrt-apis/)
-
 
 ## Next steps
 

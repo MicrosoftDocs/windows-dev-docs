@@ -2,66 +2,66 @@
 title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
 ms.topic: article
-keywords: python, windows 10, microsoft, learning python, python on windows for beginners, install python with microsoft store, python with vs code, pygame on windows
-ms.localizationpriority: medium
-ms.date: 10/01/2024
+ms.date: 03/25/2025
 ---
 
 # Get started using Python on Windows for beginners
 
-The following is a step-by-step guide for beginners interested in learning Python using Windows.
+For beginners interested in learning Python using Windows, we recommend choosing between these two setup paths:
 
-## Set up your development environment
+1. [Set up your Python development environment using a winget configuration file](#set-up-your-python-development-environment-using-a-winget-configuration-file)
+2. [Manually set up your Python development environment](#manually-set-up-your-python-development-environment)
 
-There are multiple ways to install Python on Windows:
+## Set up your Python development environment using a WinGet Configuration file
 
-- **[Install using Microsoft Store](https://apps.microsoft.com/search?query=python)**: Installing Python via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates. We especially recommend installing Python on Windows via the Microsoft Store if you are a beginner or if you are in an educational environment or part of a business organization that may restrict permissions or administrative access on your machine. You will need to determine which version of Python you need. You can reference the what versions of Python are currently supported at [Status of Python versions | Python Developer's Guide](https://devguide.python.org/versions/#versions). We recommend either using a modern, supported version, or matching the version of the whatever Python project that you hope to contribute to.
+[Winget Configuration files](../package-manager/configuration/index.md) include all of the instructions needed to install requirements and setup your machine for a specific project. To use Microsoft's Beginner Python project WinGet Configuration setup file, follow the steps below:
 
-If you are using Python on Windows for **web development**, we recommend a different set up for your development environment. Rather than installing directly on Windows, we recommend installing and using Python via the Windows Subsystem for Linux. For help, see: [Get started using Python for web development on Windows](./web-frameworks.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./scripting.md). For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
+1. Download the configuration file by opening this link and selecting "Raw file content > Download" (three dots menu on top-right):  [Winget Configuration: learn_python.winget](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/Python%203.13/learn_python.winget).
+2. To run the file, double-click the downloaded configuration file (the first time you will need to select the "Windows Package Manager Client" app to open and run the file) or you can open Powershell in Windows Terminal and enter the following command:
 
-## Install Python
+    ```powershell
+    winget configure -f <path to learn_python.winget file>
+    ```
 
-To install Python using the Microsoft Store:
+    The file path will look something like `winget configure -f C:\Users\<your-name>\Downloads\learn_python.winget`.
 
-1. Go to your **Start** menu (lower left Windows icon), type "Microsoft Store", select the link to open the store.
+3. Once the configuration file begins running, you will see the setup steps listed in a terminal window, including the project requirements that will be installed. You will then need to confirm that you have reviewed these configuration updates and confirm that you would like to proceed by selecting [Y] Yes or [N] No.
 
-2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Select which version of Python you would like to use from the results under Apps. We recommend using the most recent unless you have a reason not to (such as aligning with the version used on a pre-existing project that you plan to work on). Once you've determined which version you would like to install, select **Get**.
+4. Once you proceed, the project requirements will be installed and report whether the configuration has been successfully applied.
 
-3. Once Python has completed the downloading and installation process, open Windows PowerShell using the **Start** menu (lower left Windows icon). Once PowerShell is open, enter `Python --version` to confirm that Python3 has installed on your machine.
+**Your machine is now setup to Learn Python!**
 
-4. The Microsoft Store installation of Python includes **pip**, the standard package manager. Pip allows you to install and manage additional packages that are not part of the Python standard library. To confirm that you also have pip available to install and manage packages, enter `pip --version`.
+To confirm, check what version of Python is installed on your machine now by entering the command: `python --version`.
 
-## Install Visual Studio Code
+## Manually set up your Python development environment
 
-By using VS Code as your text editor / integrated development environment (IDE), you can take advantage of [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) (a code completion aid), [Linting](https://code.visualstudio.com/docs/python/linting) (helps avoid making errors in your code), [Debug support](https://code.visualstudio.com/docs/python/debugging) (helps you find errors in your code after you run it), [Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) (templates for small reusable code blocks), and [Unit testing](https://code.visualstudio.com/docs/python/unit-testing) (testing your code's interface with different types of input).
+To setup your Python development environment manually, rather than using a winget configuration file, you will need to:
 
-VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) that enables you to open a Python command line with Windows Command prompt, PowerShell, or whatever you prefer, establishing a seamless workflow between your code editor and command line.
+- Install Python
+- Install Visual Studio Code
+- Install the Visual Studio Code extension for Python
 
-1. To install VS Code, download VS Code for Windows: [https://code.visualstudio.com](https://code.visualstudio.com).
+**Install Python**: There are multiple versions of Python available to install (based on updates that have been made to the coding language over time). You will first need to determine which version of Python you need. You can reference the versions of Python currently supported at [Status of Python versions | Python Developer's Guide](https://devguide.python.org/versions/#versions). We recommend either using a modern, supported version, or matching the version of the whatever Python project that you plan to contribute to. For this tutorial, we recommend that you use the Microsoft Store to install Python.
 
-2. Once VS Code has been installed, you must also install the Python extension. To install the Python extension, you can select the [VS Code Marketplace link](https://marketplace.visualstudio.com/items?itemName=ms-python.python) or open VS Code and search for **Python** in the extensions menu (Ctrl+Shift+X).
+- **[Install Python 3 using Microsoft Store](https://apps.microsoft.com/search?query=python)** - select the most recent version available and then "Download". Installing Python via the Microsoft Store uses Python 3 and handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates. Once Python has completed the downloading and installation process, open PowerShell in Windows Terminal and enter the command: `python --version` to confirm the Python version that has been installed on your machine.
 
-3. Python is an interpreted language, and in order to run Python code, you must tell VS Code which interpreter to use. We recommend using the most recent version of Python unless you have a specific reason for choosing something different. Once you've installed the Python extension, select a Python 3 interpreter by opening the **Command Palette** (Ctrl+Shift+P), start typing the command **Python: Select Interpreter** to search, then select the command. You can also use the **Select Python Environment** option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters that VS Code can find automatically, including virtual environments. If you don't see the desired interpreter, see [Configuring Python environments](https://code.visualstudio.com/docs/python/environments).
+If you are using Python on Windows for **web development**, we recommend a different set up for your development environment. Rather than installing directly on Windows, we recommend installing and using Python via the Windows Subsystem for Linux.
 
-    ![Select Python interpreter in VS Code](../images/interpreterselection.gif)
+- [Get started using Python for web development on Windows](./web-frameworks.md).
 
-4. To open the terminal in VS Code, select **View** > **Terminal**, or alternatively use the shortcut **Ctrl+`** (using the backtick character). The default terminal is PowerShell.
+If you're interested in automating common tasks on your operating system, see our guide: 
 
-5. Inside your VS Code terminal, open Python by simply entering the command: `python`
+- [Get started using Python on Windows for scripting and automation](./scripting.md).
 
-6. Try the Python interpreter out by entering: `print("Hello World")`. Python will return your statement "Hello World".
+For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
-    ![Python command line in VS Code](../images/python-in-vscode.png)
+**Install Visual Studio Code**: Visual Studio Code is a code editing tool, sometimes called an Integrated Development Environment, or IDE. Visual Studio Code provides features such as [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) (an AI-powered tool that provides coding suggestions), [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) (a code completion aid), [Linting](https://code.visualstudio.com/docs/python/linting) (helps avoid making errors in your code), [Debug support](https://code.visualstudio.com/docs/python/debugging) (helps you find errors in your code after you run it), [Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) (templates for small reusable code blocks), and [Unit testing](https://code.visualstudio.com/docs/python/unit-testing) (testing your code's interface with different types of input).
 
-## Install Git (optional)
+- [Install Visual Studio Code on Windows](https://code.visualstudio.com)
 
-If you plan to collaborate with others on your Python code, or host your project on an open-source site (like GitHub), VS Code supports [version control with Git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). The Source Control tab in VS Code tracks all of your changes and has common Git commands (add, commit, push, pull) built right into the UI. You first need to install Git to power the Source Control panel.
+**Install the Visual Studio Code extension for Python**: Visual Studio Code offers "extensions" allowing you to add on support features which *extend* support for whatever language or tools you are working with. In this case, the Python extension adds Python-specific support for code formatting, IntelliSense code completion suggestions, debugging, linting, refactoring, etc.
 
-1. Download and install Git for Windows from [the git-scm website](https://git-scm.com/download/win).
-
-2. An Install Wizard is included that will ask you a series of questions about settings for your Git installation. We recommend using all of the default settings, unless you have a specific reason for changing something.
-
-3. If you've never worked with Git before, [GitHub Guides](https://guides.github.com/) can help you get started.
+- [Install the Python extension from Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
 ## Hello World tutorial for some Python basics
 
@@ -89,13 +89,27 @@ Python is an interpreted language. In contrast to compiled languages, in which t
 
 ![PowerShell screenshot of this tutorial](../images/hello-world-basics.png)
 
-Hope you had fun using some of Python's built-in string modification methods. Now try creating a Python program file and running it with VS Code.
+Hope you had fun using some of Python's built-in string modification methods. Now try creating a Python program file and running it with Visual Studio Code.
 
 ## Hello World tutorial for using Python with VS Code
 
 The VS Code team has put together a great [Getting Started with Python](https://code.visualstudio.com/docs/python/python-tutorial#_start-vs-code-in-a-project-workspace-folder) tutorial walking through how to create a Hello World program with Python, run the program file, configure and run the debugger, and install packages like *matplotlib* and *numpy* to create a graphical plot inside a virtual environment.
 
-1. Open PowerShell and create an empty folder called "hello", navigate into this folder, and open it in VS Code:
+To run Python code, you must tell VS Code which interpreter to use. Because you've already installed the Python extension, you can select a Python interpreter by opening the **Command Palette** (Ctrl+Shift+P), start typing the command **Python: Select Interpreter** to search, then select the command. You can also use the **Select Python Environment** option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters, including virtual environments. Just choose the first on the list unless you have a reason for a different desired interpreter, see [Configuring Python environments](https://code.visualstudio.com/docs/python/environments).
+
+![Select Python interpreter in VS Code](../images/interpreterselection.gif)
+
+Once you've chosen the interpreter, let's try using it with the VS Code built-in terminal:
+
+1. To open the terminal in VS Code, select **View** > **Terminal**, or alternatively use the shortcut **Ctrl+`** (using the backtick character). The default command line is PowerShell.
+
+2. Inside your VS Code terminal, open Python by simply entering the command: `python`
+
+3. Try the Python interpreter out by entering: `print("Hello World")`. Python will return your statement "Hello World".
+
+    ![Python command line in VS Code](../images/python-in-vscode.png)
+
+4. In the terminal, create an empty folder called "hello", navigate into this folder, and open it in VS Code using the code below:
 
     ```console
     mkdir hello
@@ -103,9 +117,23 @@ The VS Code team has put together a great [Getting Started with Python](https://
     code .
     ```
 
-2. Once VS Code opens, displaying your new *hello* folder in the left-side **Explorer** window, open a command line window in the bottom panel of VS Code by pressing **Ctrl+`** (using the backtick character) or selecting  **View** > **Terminal**. By starting VS Code in a folder, that folder becomes your "workspace". VS Code stores settings that are specific to that workspace in .vscode/settings.json, which are separate from user settings that are stored globally.
+5. Once VS Code opens, displaying your new *hello* folder in the left-side **Explorer** window, open a command line window in the bottom panel of VS Code by pressing **Ctrl+`** (using the backtick character) or selecting  **View** > **Terminal**. By starting VS Code in a folder, that folder becomes your "workspace". VS Code stores settings that are specific to that workspace in .vscode/settings.json, which are separate from user settings that are stored globally.
 
-3. Continue the tutorial in the VS Code docs: [Create a Python Hello World source code file](https://code.visualstudio.com/docs/python/python-tutorial#_create-a-python-hello-world-source-code-file).
+6. Continue the tutorial in the VS Code docs: [Create a Python Hello World source code file](https://code.visualstudio.com/docs/python/python-tutorial#_create-a-python-hello-world-source-code-file).
+
+## What is PIP?
+
+A package manager is a tool that automates the process of installing, upgrading, configuring, and removing software packages. Python's ecosystem is rich, with thousands of packages available on the Python Package Index (PyPI). Pip is the standard package manager program that is included with Python. Pip allows you to install and manage additional packages that are not part of the Python standard library. To confirm that you also have pip available to install and manage packages, enter `pip --version`
+
+To install a package using pip, you can use the command:
+
+```powershell
+pip install <package_name>
+```
+
+Try replacing `<package_name>` with the name of a package from [https://pypi.org/](https://pypi.org/). For example, you can try installing pip upgrades with the command: `pip install --upgrade pip`
+
+One of the strengths of pip is its ability to create a requirements.txt file, which lists all the dependencies of a project. This file can be used to replicate the environment on another machine. Use the command `pip freeze > requirements.txt` to create a file that will list all the installed packages in your current development environment and their versions. To run this requirements file in order to set up a new machine with the same environment, you would run `pip install -r requirements.txt`.
 
 ## Create a simple game with Pygame
 

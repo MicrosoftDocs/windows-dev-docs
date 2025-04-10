@@ -15,6 +15,7 @@ This section provides guidance for creating WinUI 3 apps that use the camera or 
 
 | Topic | Description |
 |---------------------------|-----------------------------|
+| [Capture photos and video in a desktop app with the Windows built-in camera UI](cameracaptureui.md) | Describes how to use the [CameraCaptureUI](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture) class to capture photos or videos by using the camera UI built into Windows. This feature allows your app to get a user-captured photo or video with just a few lines of code. |
 | [Show the camera preview in a WinUI 3 app](camera-quickstart-winui3.md) | Shows how to quickly display the camera preview stream within a XAML page in a WinUI 3 app. |
 | [Basic photo, video, and audio capture with MediaCapture](basic-photo-capture.md) | Shows the simplest way to capture photos and video using the [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) class. The **MediaCapture** class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily. |
 

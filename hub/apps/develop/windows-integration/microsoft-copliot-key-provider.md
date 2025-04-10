@@ -53,3 +53,8 @@ The following table *uap3:AppExtension* describes the attributes of the **uap3:A
 | DisplayName | The app name displayed in the Windows Copilot hardware button picker UI.  | Yes |
 | Description | The app description displayed in the Windows Copilot hardware button picker UI. | Yes |
 | PublicFolder|  The folder that the instance declares as the location where a host can have read access to files through a broker. | Yes | 
+
+
+## Sign your Windows Copilot hardware key provider
+
+Provider apps must be signed in order to be enabled as a target of the Microsoft Copilot hardware key. For information on packaging and signing your app, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps).
