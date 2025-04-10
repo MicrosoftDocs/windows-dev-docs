@@ -1,19 +1,14 @@
 ---
 title: Cross Device People API
 description: Learn how third party apps can integrate with Windows People experiences with APIs to store all their contacts.
-ms.date: 06/18/2024
-ms.topic: article
+ms.date: 04/10/2025
+ms.topic: how-to
+# customer intent: As a Windows developer, I want to learn how to integrate my app with Windows People experiences so that I can provide a seamless experience for my users.
 ---
 
 # Cross Device People API
 
 Windows is an ideal platform for third party apps to integrate their top people contacts. This integration enables users to interact with the personas for various people experiences. Windows now provides third party WinUI 3, UWP, and other apps with [package identity](/windows/apps/desktop/modernize/package-identity-overview) with APIs to store all their contacts.
-
-> [!IMPORTANT]
-> Some information relates to a prerelease product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
-
-> [!NOTE]
-> Apps can try this feature as soon as it is released to the [Windows Insider Program](https://www.microsoft.com/windowsinsider/) (Beta Channel) in Windows Update settings (see [Get started with the Windows Insider Program](/windows-insider/get-started) for more information).
 
 Once your apps store their contacts in Windows, users will be able to see these contact suggestions on the **Share** panel in Windows to seamlessly share with their top contacts. See [How to share files in File Explorer on Windows](https://support.microsoft.com/windows/how-to-share-files-in-file-explorer-on-windows-dcf7d3dc-40f7-111a-0c9e-a8981c4bbc32) for more information about the **Share** panel.
 
@@ -120,7 +115,7 @@ It's at the discretion of apps when to update the ranks of the contacts stored i
 
 1. Create a new `ContactAnnotationList`. Follow the steps in the [Storing ranks for contacts](#storing-ranks-for-contacts) section to create a new annotation list and store ranks for your top contacts.
 
-## See also
+## Related content
 
 - [UserDataAccount](/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccount)
 - [ContactStore](/uwp/api/windows.applicationmodel.contacts.contactstore)
