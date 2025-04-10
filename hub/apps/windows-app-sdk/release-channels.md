@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Experimental, Preview, and Stable release channels used to ship the latest version of the Windows App SDK.
 ms.topic: article
-ms.date: 01/15/2025
+ms.date: 04/10/2025
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.localizationpriority: medium
 ---
