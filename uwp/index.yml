@@ -8,8 +8,6 @@ metadata:
   description: The Universal Windows Platform (UWP) lets you build apps for any Windows device—PCs, Xbox One, HoloLens, and more—and publish them to the Store.
   ms.topic: landing-page
   ms.collection: collection
-  ms.author: quradic
-  author: QuinnRadich
   ms.date: 09/24/2019
   ms.subservice: uwp-conceptual-docs
   keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp

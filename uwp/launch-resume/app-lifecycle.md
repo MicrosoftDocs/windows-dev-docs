@@ -189,7 +189,7 @@ We recommend that apps not close themselves programmatically unless absolutely n
 
 The system crash experience is designed to get users back to what they were doing as quickly as possible. You shouldn't provide a warning dialog or other notification because that will delay the user.
 
-If your app crashes, stops responding, or generates an exception, a problem report is sent to Microsoft per the user's [feedback and diagnostics settings](https://support.microsoft.com/help/4468236/diagnostics-feedback-and-privacy-in-windows-10-microsoft-privacy). Microsoft provides a subset of the error data in the problem report to you so that you can use it to improve your app. You'll be able to see this data in your app's Quality page in your Dashboard.
+If your app crashes, stops responding, or generates an exception, a problem report is sent to Microsoft per the user's feedback and diagnostics settings. See [Diagnostics, feedback, and privacy in Windows](https://support.microsoft.com/windows/diagnostics-feedback-and-privacy-in-windows-28808a2b-a31b-dd73-dcd3-4559a5199319) for more information. Microsoft provides a subset of the error data in the problem report to you so that you can use it to improve your app. You'll be able to see this data in your app's Quality page in your Dashboard.
 
 When the user activates an app after it crashes, its activation event handler receives an [**ApplicationExecutionState**](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState) value of **NotRunning**, and should display its initial UI and data. After a crash, don't routinely use the app data you would have used for **Resuming** with **Suspended** because that data could be corrupt; see [Guidelines for app suspend and resume](./index.md).
 

@@ -1,13 +1,11 @@
 ---
-description: Customize the title bar of a desktop app to match the personality of the app.
+description: Customize the title bar of a desktop app that uses the Windows App SDK to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 01/15/2024
+ms.date: 11/21/2024
 ms.topic: article
 keywords: windows 11, title bar
 ms.localizationpriority: medium
-ms.author: jimwalk
-author: jwmsft
 ---
 # Title bar customization
 
@@ -237,7 +235,7 @@ public MainWindow()
 > [!CAUTION]
 > `ExtendsContentIntoTitleBar` shows in the XAML IntelliSense for `Window`, but setting it in XAML causes an error. Set this property in code instead.
 
-This example shows how to get the [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) and set the [AppWindow.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property to `true`. This example shows how to use interop APIs to get the AppWindow, which is needed if your app does not use WinUI 3 1.3 or later.
+This example shows how to get the [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) and set the [AppWindowTitleBar.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property to `true`. This example shows how to use interop APIs to get the AppWindow, which is needed if your app does not use WinUI 3 1.3 or later.
 
 ```csharp
 using Microsoft.UI;           // Needed for WindowId.

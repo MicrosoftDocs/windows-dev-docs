@@ -2,7 +2,7 @@
 title: Windows game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.date: 01/28/2022
+ms.date: 08/21/2024
 ms.topic: article
 keywords: windows 11, windows 10, windows, uwp, games, game development
 ms.localizationpriority: medium
@@ -12,22 +12,24 @@ ms.localizationpriority: medium
 
 Welcome to the Windows game development guide!
 
+> [!NOTE]
+> Before investing time developing a game based on the UWP framework, please note that UWP is no longer under active development. Further, UWP based games are no longer accepted in the Xbox Store.
+
 This guide provides an end-to-end collection of the resources and information you'll need to develop a Universal Windows Platform (UWP) game. An English (US) version of this guide is available in [PDF](https://download.microsoft.com/download/9/C/9/9C9D344F-611F-412E-BB01-259E5C76B17F/Windev_Game_Dev_Guide_Oct_2017.pdf) format.
 
 ## Introduction to game development for the Universal Windows Platform (UWP)
 
-When you create a Windows game, you have the opportunity to reach millions of players worldwide across PC and Xbox One. With Xbox on Windows, Xbox Live, cross-device multiplayer, an amazing gaming community, and powerful new features like the Universal Windows Platform (UWP) and DirectX 12, Windows games thrill players of all ages and genres. The Universal Windows Platform (UWP) delivers compatibility for your game across Windows devices with a common API for PC and and Xbox One, along with tools and options to tailor your game to each device experience.
 
 This guide provides an end-to-end collection of information and resources that will help you as you develop your game. The sections are organized according to the stages of game development, so you'll know where to look for information when you need it.
 
-If you're new to developing games on Windows or Xbox, the [Getting started](getting-started.md) guide might be where you want to start off. The [Game development resources](#game-development-resources) section also provides a high-level survey of documentation, programs, and other resources that are helpful when creating a game. If you want to start by looking at some UWP code instead, see [Game samples](#game-samples).
+If you're new to developing games on Windows, the [Getting started](getting-started.md) guide might be where you want to start off. The [Game development resources](#game-development-resources) section also provides a high-level survey of documentation, programs, and other resources that are helpful when creating a game. If you want to start by looking at some UWP code instead, see [Game samples](#game-samples).
 
 ## Game development resources
 
 From documentation to developer programs, forums, blogs, and samples, there are many resources available to help you on your game development journey. Here's a roundup of resources to know about as you begin developing your Windows game.
 
 > [!NOTE]
-> Some features are managed through various programs. This guide covers a broad range of resources, so you might find that some resources are inaccessible depending on the program you're in, or your specific development role. Examples are links that resolve to `developer.xboxlive.com`, `forums.xboxlive.com`, `xdi.xboxlive.com`, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer programs](#developer-programs).
+> Some features are managed through various programs. This guide covers a broad range of resources, so you might find that some resources are inaccessible depending on the program you're in, or your specific development role. For information about partnering with Microsoft, see [Developer programs](#developer-programs).
 
 ### Game development documentation
 
@@ -67,26 +69,6 @@ Throughout this guide, you'll find deep links to relevant documentation&mdash;or
         <td><a href="https://playfab.com">Complete backend solution for live games</a></td>
     </tr>
     <tr>
-        <td>UWP on Xbox One</td>
-        <td><a href="/windows/uwp/xbox-apps/index">Building UWP apps on Xbox One</a></td>
-    </tr>
-    <tr>
-        <td>UWP on HoloLens</td>
-        <td><a href="https://developer.microsoft.com/windows/mixed-reality/development_overview">Building UWP apps on HoloLens</a></td>
-    </tr>
-    <tr>
-        <td>Xbox Live documentation</td>
-        <td><a href="/gaming/xbox-live/">Xbox Live developer guide</a></td>
-    </tr>
-    <tr>
-        <td>Xbox One development documentation (XGD)</td>
-        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-home">Xbox One Development</a></td>
-    </tr>
-    <tr>
-        <td>Xbox One development whitepapers (XGD)</td>
-        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-whitepapers">White Papers</a></td>
-    </tr>
-    <tr>
         <td>Mixer Interactive documentation</td>
         <td>Add interactivity to your game</td>
     </tr>
@@ -100,45 +82,7 @@ Microsoft also offers several developer programs to help you develop and publish
 
 ### Developer programs
 
-Microsoft offers several developer programs to help you develop and publish Windows games. Consider joining a developer program if you want to develop games for Xbox One, and integrate Xbox Live features in your game. To publish a game in the Microsoft Store, you'll also need to create a developer account in [Partner Center](https://partner.microsoft.com/dashboard) .
-
-#### Xbox Live Creators Program
-
-The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title, and publish to Xbox One and Windows. There's a simplified certification process, and no concept approval is required outside of the standard [Microsoft Store policies](/windows/apps/publish/store-policies-and-code-of-conduct).
-
-You can deploy, design, and publish your game in the Creators Program without a dedicated dev kit, using only retail hardware. To get started, download the [Dev Mode Activation app](../xbox-apps/devkit-activation.md) on your Xbox One.
-
-If you want access to even more Xbox Live capabilities, dedicated marketing and development support, and the chance to be featured in the main Xbox One store, then apply to the [ID@Xbox](https://www.xbox.com/Developers/id) program.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Xbox Live Creators Program</td>
-        <td><a href="https://developer.microsoft.com/games/publish/">Learn more about the Xbox Live Creators Program</a></td>
-    </tr>
-</table>
-
-#### ID@Xbox
-
-The ID@Xbox program helps qualified game developers self-publish on Windows and Xbox One. If you want to develop for Xbox One, or add Xbox Live features like Gamerscore, achievements, and leaderboards to your Windows game, then sign up with `ID@Xbox`. Become an `ID@Xbox` developer to get the tools and support you need to unleash your creativity and maximize your success. We recommend that you apply to `ID@Xbox` before registering for a developer account in Partner Center.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>ID@Xbox developer program</td>
-        <td><a href="https://www.xbox.com/Developers/id">Independent Developer Program for Xbox One</a></td>
-    </tr>
-    <tr>
-        <td>ID@Xbox consumer site</td>
-        <td><a href="https://www.xbox.com/games/id">ID@Xbox</a></td>
-    </tr>
-</table>
+ To publish a game in the Microsoft Store, you'll also need to create a developer account in [Partner Center](https://partner.microsoft.com/dashboard) .
 
 ### Game samples
 
@@ -178,18 +122,6 @@ There are many Windows game and app samples available to help you understand Win
         <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DPhotoAdjustment">D2DPhotoAdjustment</a></td>
     </tr>
     <tr>
-        <td>Xbox Advanced Technology Group public samples</td>
-        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples">Xbox-ATG-Samples</a></td>
-    </tr>
-    <tr>
-        <td>Xbox Live samples</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
-    </tr>
-    <tr>
-        <td>Xbox One game samples (XGD)</td>
-        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-samples">Samples</a></td>
-    </tr>
-    <tr>
         <td>Windows game samples (MSDN Code Gallery)</td>
         <td><a href="/samples/browse/?term=games">Microsoft Store game samples</a></td>
     </tr>
@@ -200,10 +132,6 @@ There are many Windows game and app samples available to help you understand Win
     <tr>
         <td>JavaScript 3D game sample</td>
         <td><a href="/windows/uwp/get-started/">Creating a 3D JavaScript game using three.js</a></td>
-    </tr>
-    <tr>
-        <td>MonoGame 2D UWP game sample</td>
-        <td><a href="/windows/uwp/get-started/">Create a UWP game in MonoGame 2D</a></td>
     </tr>
 </table>
 
@@ -235,10 +163,6 @@ Developer forums are a great place to ask and answer game development questions,
     <tr>
         <td>Windows 10 managed partner developer forums</td>
         <td><a href="https://forums.xboxlive.com/users/login.html">XBOX Developer Forums: Windows 10</a></td>
-    </tr>
-    <tr>
-        <td>Xbox Live forum</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en/home?forum=xboxlivedev">Xbox Live development forum</a></td>
     </tr>
     <tr>
         <td>PlayFab forums</td>
@@ -615,55 +539,7 @@ Havok's modular suite of tools and technologies help game creators reach new lev
     </tr>
 </table>
 
-#### MonoGame
 
-MonoGame is an open source, cross-platform game development framework originally based on Microsoft's XNA Framework 4.0. Monogame currently supports Windows and Xbox, as well as Linux, macOS, iOS, Android, and several other platforms.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>MonoGame</td>
-        <td><a href="https://www.monogame.net">Visit the website</a></td>
-    </tr>
-    <tr>
-        <td>MonoGame documentation</td>
-        <td><a href="https://www.monogame.net/articles/">Visit the documentation</a></td>
-    </tr>
-    <tr>
-        <td>Monogame releases</td>
-        <td><a href="https://www.nuget.org/profiles/MonoGame">Get the latest release via NuGet</a>
-    </tr>
-</table>
-
-#### Cocos2d
-
-Cocos2d-x is a cross-platform open source game development engine and tools suite that supports building UWP games. Beginning with version 3, 3D features are being added as well.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Cocos2d-x</td>
-        <td><a href="https://www.cocos2d-x.org/">What is Cocos2d-x?</a></td>
-    </tr>
-    <tr>
-        <td>Cocos2d-x programmer's guide</td>
-        <td><a href="https://www.cocos2d-x.org/programmersguide/">Cocos2d-x Programmers Guide</a></td>
-    </tr>
-    <tr>
-        <td>Cocos2d-x on Windows 10 (blog post)</td>
-        <td><a href="https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/">Running Cocos2d-x on Windows 10</a></td>
-    </tr>
-    <tr>
-        <td>Add LiveOps using PlayFab</td>
-        <td><a href="/gaming/playfab/sdks/cocos2d-x/quickstart">Cocos2D-x quickstart</a></td>
-    </tr>
-</table>
 
 #### Unreal Engine
 
@@ -699,60 +575,7 @@ BabylonJS is a complete JavaScript framework for building 3D games with HTML5, W
     </tr>
 </table>
 
-### Porting your game
 
-If you have an existing game, there are many resources and guides available to help you quickly bring your game to the UWP.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Porting a Windows 8 app to a Universal Windows Platform app</td>
-        <td><a href="/windows/uwp/porting/w8x-to-uwp-root">Move from Windows Runtime 8.x to UWP</a></td>
-    </tr>
-    <tr>
-        <td>Porting a Windows 8 app to a Universal Windows Platform app (video)</td>
-        <td>Porting 8.1 Apps to Windows 10</td>
-    </tr>
-    <tr>
-        <td>Porting an iOS app to a Universal Windows Platform app</td>
-        <td><a href="/windows/uwp/porting/ios-to-uwp-root">Move from iOS to UWP</a></td>
-    </tr>
-    <tr>
-        <td>Porting a Silverlight app to a Universal Windows Platform app</td>
-        <td><a href="/windows/uwp/porting/wpsl-to-uwp-root">Move from Windows Phone Silverlight to UWP</a></td>
-    </tr>
-    <tr>
-        <td>Porting from XAML or Silverlight to a Universal Windows Platform app (video)</td>
-        <td>Porting an App from XAML or Silverlight to Windows 10</td>
-    </tr>
-    <tr>
-        <td>Porting an Xbox game to a Universal Windows Platform app</td>
-        <td><a href="/windows/uwp/xbox-apps/">UWP on Xbox One</a></td>
-    </tr>
-    <tr>
-        <td>Porting from DirectX 9 to DirectX 11</td>
-        <td><a href="porting-your-directx-9-game-to-windows-store.md">Port from DirectX 9 to Universal Windows Platform (UWP)</a></td>
-    </tr>
-    <tr>
-        <td>Porting from Direct3D 11 to Direct3D 12</td>
-        <td><a href="/windows/win32/direct3d12/porting-from-direct3d-11-to-direct3d-12">Porting from Direct3D 11 to Direct3D 12</a></td>
-    </tr>
-    <tr>
-        <td>Porting from OpenGL ES to Direct3D 11</td>
-        <td><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Port from OpenGL ES 2.0 to Direct3D 11</a></td>
-    </tr>
-    <tr>
-        <td>OpenGL ES to Direct3D 11 using ANGLE</td>
-        <td><a href="https://github.com/microsoft/angle/wiki">ANGLE</a></td>
-    </tr>
-    <tr>
-        <td>Classic Windows API equivalents in the UWP</td>
-        <td><a href="/uwp/win32-and-com/win32-and-com-for-uwp-apps">Alternatives to Windows APIs in Universal Windows Platform (UWP) apps</a></td>
-    </tr>
-</table>
 
 ## Prototype and design
 
@@ -760,7 +583,7 @@ Now that you've decided the type of game you want to create, and the tools and g
 
 ### Introduction to the Universal Windows Platform (UWP)
 
-Windows is the home of the Universal Windows Platform (UWP), which provides a common API platform across Windows devices. UWP evolves and expands the Windows Runtime (WinRT) model, and hones it into a cohesive, unified core. Games that target the UWP can call WinRT APIs that are common to all devices. Because the UWP provides guaranteed API layers, you can choose to create a single app package that will install across Windows devices. And if you want to, your game can still call APIs (including some classic Windows APIs from Win32 and .NET) that are specific to the devices your game runs on.
+The Universal Windows Platform (UWP) provides a common API platform across Windows devices. Games that target the UWP can call WinRT APIs that are common to all devices. Because the UWP provides guaranteed API layers, you can choose to create a single app package that will install across Windows devices. And if you want to, your game can still call APIs (including some classic Windows APIs from Win32 and .NET) that are specific to the devices your game runs on.
 
 The following are excellent guides that discuss the Universal Windows Platform apps in detail, and are recommended reading to help you understand the platform.
 
@@ -899,10 +722,7 @@ Separately from UX design, gameplay design such as level design, pacing, world d
         <td>Designing for app lifecycle states</td>
         <td><a href="/windows/uwp/launch-resume/index">UX guidelines for launch, suspend, and resume</a></td>
     </tr>
-    <tr>
-        <td>Design your UWP app for Xbox One and television screens</td>
-        <td><a href="/windows/uwp/design/devices/designing-for-tv">Designing for Xbox and TV</a></td>
-    </tr>
+
 </table>
 
 #### Color guideline and palette
@@ -975,10 +795,7 @@ Here are guides and references for implementing audio in games using XAudio2, XA
         <td>Windows Sonic overview</td>
         <td><a href="/windows/win32/CoreAudio/spatial-sound">Spatial sound</a></td>
     </tr>
-    <tr>
-        <td>Windows Sonic spatial sound samples</td>
-        <td><a href="https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/Audio">Xbox Advanced Technology Group audio samples</a></td>
-    </tr>
+
 </table>
 
 #### Direct3D 12
@@ -1202,10 +1019,7 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
         <td>Performance test your code</td>
         <td><a href="https://azure.microsoft.com/services/devops/test-plans/">Azure Test Plans</a></td>
     </tr>
-    <tr>
-        <td>Get Xbox console type using Gaming Device Information</td>
-        <td><a href="/previous-versions/windows/desktop/gamingdvcinfo/gaming-device-information-portal">Gaming Device Information</a></td>
-    </tr>
+ 
     <tr>
         <td>Improve performance by getting exclusive or priority access to hardware resources using Game Mode APIs</td>
         <td><a href="/previous-versions/windows/desktop/gamemode/game-mode-portal">Game Mode</a></td>
@@ -1401,10 +1215,6 @@ After you've finished development and shipped your game, it's not *game over*. Y
     <tr>
         <td>Partner Center analytics</td>
         <td><a href="/windows/apps/publish/analytics">Analyze app performance</a></td>
-    </tr>
-    <tr>
-        <td>Learn how your customers are engaging with the Xbox features in your game</td>
-        <td><a href="/windows/apps/publish/xbox-analytics-report">Xbox analytics report</a></td>
     </tr>
     <tr>
         <td>Responding to customer reviews</td>

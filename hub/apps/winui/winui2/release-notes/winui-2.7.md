@@ -7,7 +7,7 @@ ms.topic: article
 
 # WinUI 2.7
 
-WinUI 2.7 is the September 2021 release of WinUI for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands.md)).
+WinUI 2.7 is the September 2021 release of WinUI for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands/xaml-islands.md)).
 
 > [!NOTE]
 > For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [WinUI 3](../../index.md).

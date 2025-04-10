@@ -4,7 +4,7 @@ title: Scroll viewer controls
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
-ms.date: 10/17/2023
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -67,22 +67,6 @@ Various APIs are available that let you get the height and width of these region
 - Use a scroll viewer to contain one object only. Note that the one object can be a layout panel, in turn containing any number of objects of its own.
 - If you need to handle pointer events for a [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectManipulation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.trystartdirectmanipulation).
 
-## UWP and WinUI 2
-
-> [!NOTE]
-> The `ScrollView` control is available only in WinUI 3. For UWP and WinUI 2, use the `ScrollViewer` control.
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer), [ScrollBar class](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
-> - [Open the WinUI 2 Gallery app and see the ScrollViewer in action](winui2gallery:/item/ScrollViewer). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
-
 ## Create a scroll viewer
 
 > [!div class="checklist"]
@@ -90,8 +74,9 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [ScrollView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview), [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer), [ScrollBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.scrollbar)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ScrollView in action](winui3gallery:/item/ScrollView).
-> [Open the WinUI 3 Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer).
+> [Open the WinUI 3 Gallery app and see the ScrollView in action](winui3gallery:/item/ScrollView)
+>
+> [Open the WinUI 3 Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -543,10 +528,22 @@ private void ZoomSlider_ValueChanged(object sender, RangeBaseValueChangedEventAr
 
 ---
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+> [!NOTE]
+> The `ScrollView` control is available only in WinUI 3. For UWP and WinUI 2, use the `ScrollViewer` control.
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer), [ScrollBar class](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
+> - [Open the WinUI 2 Gallery app and see the ScrollViewer in action](winui2gallery:/item/ScrollViewer). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related topics
 
-* [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ScrollViewer)
+- [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ScrollViewer)

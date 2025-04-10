@@ -120,7 +120,7 @@ No content will be returned if the consumption was executed successfully.
 ```syntax
 HTTP/1.1 204 No Content
 Content-Length: 0
-MS-CorrelationId: 386f733d-bc66-4bf9-9b6f-a1ad417f97f0
+MS-CorrelationId: aaaa0000-bb11-2222-33cc-444444dddddd
 MS-RequestId: e488cd0a-9fb6-4c2c-bb77-e5100d3c15b1
 MS-CV: 5.1
 MS-ServerId: 030011326

@@ -4,8 +4,6 @@ description: The minimum system requirements for the tools required to develop W
 ms.topic: article
 ms.date: 10/12/2022
 keywords: windows win32, windows app development, Windows App SDK
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

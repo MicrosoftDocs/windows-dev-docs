@@ -2,7 +2,7 @@
 title: Preview release channel for the Windows App SDK 
 description: Provides info about the preview release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 04/25/2024
+ms.date: 08/07/2024
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -21,222 +21,165 @@ The preview channel includes releases of the Windows App SDK with [preview chann
 
 **Preview channel release note archive:**
 
-- [Preview channel release notes for the Windows App SDK 1.4](release-notes-archive/experimental-channel-1.4.md)
-- [Preview channel release notes for the Windows App SDK 1.3](release-notes-archive/experimental-channel-1.3.md)
-- [Preview channel release notes for the Windows App SDK 1.2](release-notes-archive/experimental-channel-1.2.md)
-- [Preview channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
-- [Preview channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
+- [Preview channel release notes for the Windows App SDK 1.6](release-notes-archive/preview-channel-1.6.md)
+- [Preview channel release notes for the Windows App SDK 1.5](release-notes-archive/preview-channel-1.5.md)
+- [Preview channel release notes for the Windows App SDK 1.4](release-notes-archive/preview-channel-1.4.md)
+- [Preview channel release notes for the Windows App SDK 1.3](release-notes-archive/preview-channel-1.3.md)
+- [Preview channel release notes for the Windows App SDK 1.2](release-notes-archive/preview-channel-1.2.md)
+- [Preview channel release notes for the Windows App SDK 1.1](release-notes-archive/preview-channel-1.1.md)
+- [Preview channel release notes for the Windows App SDK 1.0](release-notes-archive/preview-channel-1.0.md)
 
-## Version 1.5 Preview 1 (1.5.0-preview1)
 
-This is the latest release of the preview channel for version 1.5.
 
-In an existing Windows App SDK 1.4 (from the stable channel) app, you can update your Nuget package to 1.5.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+
+## Version 1.7 Preview 1 (1.7-preview1)
+
+This is the latest release of the preview channel for version 1.7.
+
+In an existing Windows App SDK 1.6 (from the stable channel) app, you can update your Nuget package to 1.7.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
-### XAML Islands runtime and shutdown updates
+### New features
+ 
+#### New Badge Notifications Feature
 
-- There is a behavioral difference between WinAppSDK 1.4 and WinAppSDK 1.5 for Xaml Islands-based apps when the last Xaml Window on any thread is closed.
-    - In WinAppSDK 1.4, the Xaml runtime always exits the thread's event loop when the last Xaml window on a thread is closed.
-    - In WinAppSDK 1.5:
-        - If your app is a WinUI Desktop app, the default behavior is still the same as in WinAppSDK 1.4.
-        - If you're using Xaml for the DesktopWindowXamlSource ("Xaml Islands") API, the default behavior is now that Xaml does not automatically exit the thread's event loop.
-        - In both modes, you can change this behavior by setting the `Application.DispatcherShutdownMode` property.
-    - For more information, see the documentation for the `Application.DispatcherShutdownMode` property when available.
-- There is a behavioral difference between WinAppSDK 1.4 and WinAppSDK 1.5 for Xaml Islands-based apps in the lifetime of the Xaml runtime:
-    - In WinAppSDK 1.4, the Xaml runtime shuts down on a thread if either all `WindowsXamlManager` and `DesktopWindowXamlSource` objects on a given thread are closed or shut down, or the `DispatcherQueue` running on that thread is shut down (the Xaml runtime shuts down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
-    - In WinAppSDK 1.5, the Xaml runtime shuts down on a thread only when the DispatcherQueue running on that thread is shut down (the Xaml runtime shuts   down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
-    - For more information, see the documentation for the `WindowsXamlManager` class when available.
+New badge notification support allows showing a number or glyph badge on your app in the taskbar. For more info, see GitHub [#4926](https://github.com/microsoft/WindowsAppSDK/issues/4926).
 
-### WinUI Maps control
+#### New CameraCaptureUI API
 
-The initial release of the WinUI `Maps` control is now available! This control is powered by WebView2 and Azure Maps, providing the following features:
+A new CameraCaptureUI API makes it easier to capture photos and videos in your Windows App SDK app. For more info, see GitHub issue [#4721](https://github.com/microsoft/WindowsAppSDK/issues/4721).
 
-- Panning and zooming with either the map buttons or touch.
-- Changing the style of the map to satellite, terrain, or street view. 
-- Programatically adding interactable pins with developer-customizable icons to the map. 
-- Developer customization for where the map is centered on initial load.
-- Control for developers over hiding or showing the buttons for panning, zooming, and map styles.
+#### New Authentication API
 
-> [!NOTE]
-> To use the `Maps` control, you'll need an Azure Maps key. To create the key, see the [Azure Maps documentation page for creating a web app](/azure/azure-maps/quick-demo-map-app#get-the-subscription-key-for-your-account).
+A new `OAuth2Manager` API provides a streamlined solution for web authentication, offering OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. For more info, see GitHub issue [#4772](https://github.com/microsoft/WindowsAppSDK/issues/4772).
 
-The `Maps` control is entirely new and we welcome your feedback to evaluate its future direction!
+#### New Background Task support
 
-### Other new features from across the WinAppSDK
+A new `BackgroundTaskBuilder` API enables registering background tasks for Windows App SDK apps. For more info, see GitHub [#4831](https://github.com/microsoft/WindowsAppSDK/issues/4831).
 
-- Added support for the PublishSingleFile deployment model. For more info about PublishSingleFile, see the [Single-file deployment documentation](/dotnet/core/deploying/single-file/overview).
+#### New TitleBar control
+
+A new `TitleBar` control makes it much easier to create a great, customizable titlebar for your app. Configure properties such as the titlebar icon, Title, and Subtitle, include an integrated back button, or even add a custom control like a search box! The control includes robust titlebar capabilities like empty-space draggable regions, theme responsiveness, caption buttons, and built-in accessibility support so you can focus on your personalized design and still get the same reliable titlebar as the default experience. For more info, see GitHub [#10056](https://github.com/microsoft/microsoft-ui-xaml/issues/10056).
+
+#### Support for MathML
+
+`RichEditBox` now supports MathML, via `RichEditTextDocument.SetMathMode` and `RichEditTextDocument.SetMathML`. For more info, see GitHub [#4196](https://github.com/microsoft/microsoft-ui-xaml/issues/4196).
+
+#### Other notable changes
+ 
+* New `RuntimeCompatibilityOptions` support will allow more control over how servicing changes affect apps. For more info, see GitHub [#4966](https://github.com/microsoft/WindowsAppSDK/issues/4966).
+* A new `ReleaseInfo` API provides easy access to the version of the Windows App SDK Runtime in use. For more info, see GitHub [#2893](https://github.com/microsoft/WindowsAppSDK/issues/2893).
+* Note: Windows Copilot Runtime APIs are not included this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!
+* Note: New APIs for windowing on `AppWindow` are not included in this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!
+ 
+### New APIs
+ 
+This release includes the following new APIs compared to the stable 1.6 release:
+ 
+```
+Microsoft.Security.Authentication.OAuth
+ 
+    AuthFailure
+    AuthRequestParams
+    AuthRequestResult
+    AuthResponse
+    ClientAuthentication
+    CodeChallengeMethodKind
+    OAuth2Manager
+    OAuthContract
+    TokenFailure
+    TokenFailureKind
+    TokenRequestParams
+    TokenRequestResult
+    TokenResponse
+```
+```
+Microsoft.UI.Text
+ 
+    RichEditTextDocument
+        GetMathML
+        GetMathMode
+        SetMathML
+        SetMathMode
+ 
+    TextApiContract
+```
+```
+Microsoft.UI.Xaml
+ 
+    XamlIsland
+    XamlRoot
+        ContentIsland
+```
+```
+Microsoft.UI.Xaml.Controls
+ 
+    TitleBar
+    TitleBarAutomationPeer
+    TitleBarTemplateSettings
+```
+```
+Microsoft.Windows.ApplicationModel.Background
+ 
+    BackgroundTaskBuilder
+    BackgroundTaskContract
+```
+```
+Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+ 
+    Task
+    UniversalBackgroundTaskContract
+```
+```
+Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+ 
+    ReleaseInfo
+    RuntimeCompatibilityChange
+    RuntimeCompatibilityContract
+    RuntimeCompatibilityOptions
+    RuntimeInfo
+    VersionInfoContract
+    WindowsAppRuntimeVersion
+```
+```
+Microsoft.Windows.BadgeNotifications
+ 
+    BadgeNotificationGlyph
+    BadgeNotificationManager
+    BadgeNotificationsContract
+```
+```
+Microsoft.Windows.Media.Capture
+ 
+    CameraCaptureUI
+    CameraCaptureUIContract
+    CameraCaptureUIMaxPhotoResolution
+    CameraCaptureUIMaxVideoResolution
+    CameraCaptureUIMode
+    CameraCaptureUIPhotoCaptureSettings
+    CameraCaptureUIPhotoFormat
+    CameraCaptureUIVideoCaptureSettings
+    CameraCaptureUIVideoFormat
+```
 
 ### Bug fixes
 
-- Fixed an issue from the 1.5-experimental2 release where the projection DLL was not generated. For more info, see GitHub issue [#4152](https://github.com/microsoft/WindowsAppSDK/issues/4152).
-- Fixed an issue where the ellipsis button on the text formatting popup of the `RichEditBox` was not displaying the list of actions properly. For more info, see GitHub issue [#9140](https://github.com/microsoft/microsoft-ui-xaml/issues/9140).
-- Fixed an issue where `ListView` didn't handle keyboard accelerators properly. For more info, see GitHub issue [#8063](https://github.com/microsoft/microsoft-ui-xaml/issues/8063).
-- Fixed an access violation issue with using `AccessKey` to close a window. For more info, see GitHub issue [#8648](https://github.com/microsoft/microsoft-ui-xaml/issues/8648).
-- Fixed an issue affecting text alignment in a `MenuFlyoutItem` within a `MenuBar`. For more info, see GitHub issue [#8755](https://github.com/microsoft/microsoft-ui-xaml/issues/8755).
-- Fixed an issue where highlighted text would not remain highlighted upon right-click. For more info, see GitHub issue [#1801](https://github.com/microsoft/microsoft-ui-xaml/issues/1801).
-- Fixed an issue causing inactive windows to crash the app when closed. For more info, see GitHub issue [#8913](https://github.com/microsoft/microsoft-ui-xaml/issues/8913).
-- Fixed an issue that could hang applications when scrolling with the middle mouse button and left-clicking immediately afterwards. For more info, see GitHub issue [#9233](https://github.com/microsoft/microsoft-ui-xaml/issues/9233).
+This release includes the following bug fixes:
 
-### New APIs in 1.5.0-preview1
-
-Version 1.5-preview1 includes the following new APIs compared to the stable 1.4 release:
-
-```C#
-Microsoft.Graphics.DirectX
- 
-    DirectXPixelFormat
-        A4B4G4R4
-```
-
-```C#
-Microsoft.UI.Input
- 
-    FocusNavigationReason
-    FocusNavigationRequest
-    FocusNavigationRequestEventArgs
-    FocusNavigationResult
-    InputFocusController
-        DepartFocus
-        NavigateFocusRequested
- 
-    InputFocusNavigationHost
-```
-
-```C#
-Microsoft.UI.Xaml
- 
-    Application
-        DispatcherShutdownMode
-
-    DebugSettings
-        LayoutCycleDebugBreakLevel
-        LayoutCycleTracingLevel
-
-    DispatcherShutdownMode
-    LayoutCycleDebugBreakLevel
-    LayoutCycleTracingLevel
-```
-
-```C# 
-Microsoft.UI.Xaml.Controls
- 
-    MapControl
-    MapControlMapServiceErrorOccurredEventArgs
-    MapElement
-    MapElementClickEventArgs
-    MapElementsLayer
-    MapIcon
-    MapLayer
-    SelectorBar
-    SelectorBarItem
-    SelectorBarSelectionChangedEventArgs
-    WebView2
-        EnsureCoreWebView2Async
-        EnsureCoreWebView2Async
-```
-
-```C#
-Microsoft.UI.Xaml.Hosting
- 
-    WindowsXamlManager
-        GetForCurrentThread
-        XamlShutdownCompletedOnThread
- 
-    XamlShutdownCompletedOnThreadEventArgs
-```
-
-```C#
-Microsoft.Web.WebView2.Core
- 
-    CoreWebView2
-        FrameId
-
-    CoreWebView2AcceleratorKeyPressedEventArgs
-        IsBrowserAcceleratorKeyEnabled
-
-    CoreWebView2BrowserExtension
-    CoreWebView2BrowsingDataKinds
-        ServiceWorkers
-
-    CoreWebView2CustomSchemeRegistration
-        CoreWebView2CustomSchemeRegistration (String)
-        AllowedOrigins
-        SchemeName
-
-    CoreWebView2Environment
-        GetProcessExtendedInfosAsync
-
-    CoreWebView2EnvironmentOptions
-        AreBrowserExtensionsEnabled
-        CustomSchemeRegistrations
-
-    CoreWebView2Frame
-        FrameId
-
-    CoreWebView2FrameInfo
-        FrameId
-        FrameKind
-        ParentFrameInfo
-
-    CoreWebView2FrameKind
-    CoreWebView2MouseEventKind
-        NonClientRightButtonDown
-        NonClientRightButtonUp
-
-    CoreWebView2NavigationKind
-    CoreWebView2NavigationStartingEventArgs
-        NavigationKind
-
-    CoreWebView2NewWindowRequestedEventArgs
-        OriginalSourceFrameInfo
-
-    CoreWebView2ProcessExtendedInfo
-    CoreWebView2Profile
-        AddBrowserExtensionAsync
-        Delete
-        Deleted
-```
-
-```C#
-Microsoft.Windows.Management.Deployment
- 
-    AddPackageOptions
-    EnsureReadyOptions
-    PackageDeploymentContract
-    PackageDeploymentManager
-    PackageDeploymentProgress
-    PackageDeploymentProgressStatus
-    PackageDeploymentResult
-    PackageDeploymentStatus
-    PackageRuntimeManager
-    PackageSet
-    PackageSetItem
-    PackageSetItemRuntimeDisposition
-    PackageSetRuntimeDisposition
-    PackageVolume
-    ProvisionPackageOptions
-    RegisterPackageOptions
-    RemovePackageOptions
-    StagePackageOptions
-    StubPackageOption
-```
-
-```C#
-Microsoft.Windows.Widgets.Feeds.Providers
- 
-    CustomQueryParametersRequestedArgs
-    CustomQueryParametersUpdateOptions
-    FeedDisabledArgs
-    FeedEnabledArgs
-    FeedManager
-    FeedProviderDisabledArgs
-    FeedProviderEnabledArgs
-    FeedProviderInfo
-    IFeedManager
-    IFeedProvider
-```
+- Changed `SplitButton` so touch input now matches the behavior of mouse input. For more info, see GitHub issue [#178](https://github.com/microsoft/microsoft-ui-xaml/issues/178).
+- Changed cascading menus so sub menus now open immediately if clicked. For more info, see GitHub issue [#939](https://github.com/microsoft/microsoft-ui-xaml/issues/939).
+- Fixed an issue where opening a `ComboBox` which is in a flyout closes all flyouts. For more info, see GitHub issue [#1467](https://github.com/microsoft/microsoft-ui-xaml/issues/1467).
+- Fixed an issue where `SwipeControl` would randomly crash in a `ListView`. For more info, see GitHub issue [#2527](https://github.com/microsoft/microsoft-ui-xaml/issues/2527).
+- Fixed an issue where drag-and-drop only a `ListViewItem` would leave it in the wrong visual state. For more info, see GitHub issue [#3458](https://github.com/microsoft/microsoft-ui-xaml/issues/3458).
+- Fixed an issue in `StackLayout` so that it respects the ItemsRepeater.HorizontalAlignment and ItemsRepeater.VerticalAlignment properties (when StackLayout.Orientation is Vertical and Horizontal respectively). The old layout behaved as if the ItemsRepeater alignment was Stretch. With the fix, the layout results in items aligned to the right when the Right alignment is used, for example. For more info, see GitHub issue [#3842](https://github.com/microsoft/microsoft-ui-xaml/issues/3842).
+- Fixed an issue where deleting items in the `ItemsRepeater`'s source would not generate items which moved up into view. For more info, see GitHub issue [#6661](https://github.com/microsoft/microsoft-ui-xaml/issues/6661).
+- Fixed an issue where the right Alt key would not show keytips for Access Keys. For more info, see GitHub issue [#8447](https://github.com/microsoft/microsoft-ui-xaml/issues/8447). **Note:** This may result in key events for the right Alt key no longer being delivered to handles in the app or controls. 
+- Fixed a crash where `UniformGridLayout` would sometimes pick a wrong layout anchor and cause infinite layout passes when scrolling backwards. For more info, see GitHub issue [#9199](https://github.com/microsoft/microsoft-ui-xaml/issues/9199).
+- Fixed an issue where setting `NavigationFailedEventArgs.Handled` to True would still throw an exception. For more info, see GitHub issue [#9632](https://github.com/microsoft/microsoft-ui-xaml/issues/9632).
+- Fixed an issue where `TabView` would not apply any specified `CornerRadius`. For more info, see GitHub issue [#9846](https://github.com/microsoft/microsoft-ui-xaml/issues/9846).
+- Fixed a potential layout cycle crash in `StackLayout`. For more info, see GitHub issue [#9852](https://github.com/microsoft/microsoft-ui-xaml/issues/9852).
+- Fixed a potential crash in `ItemsView` when removing items. For more info, see GitHub issue [#9868](https://github.com/microsoft/microsoft-ui-xaml/issues/9868).
 
 ## Related topics
 

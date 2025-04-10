@@ -4,7 +4,7 @@ title: Calendar date picker
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -27,19 +27,6 @@ The entry point displays placeholder text if a date has not been set; otherwise,
 
 ![Screenshot of a Calendar Date Picker showing an empty select a date text box and then one populated with a calendar beneath it.](images/calendar-date-picker-2-views.png)
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [CalendarDatePicker class](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [Date property](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [DateChanged event](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
-> - [Open the WinUI 2 Gallery app and see the CalendarDatePicker in action](winui2gallery:/item/CalendarDatePicker). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
-
 ## Create a calendar date picker
 
 > [!div class="checklist"]
@@ -47,7 +34,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [CalendarDatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarDatePicker), [Date property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.date), [DateChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.datechanged)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the CalendarDatePicker in action](winui3gallery:/item/CalendarDatePicker).
+> [Open the WinUI 3 Gallery app and see the CalendarDatePicker in action](winui3gallery:/item/CalendarDatePicker)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -99,9 +86,18 @@ The default placeholder text is "select a date". You can remove this by setting 
                     PlaceholderText="Choose your arrival date"/>
 ```
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [CalendarDatePicker class](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [Date property](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [DateChanged event](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
+> - [Open the WinUI 2 Gallery app and see the CalendarDatePicker in action](winui2gallery:/item/CalendarDatePicker). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 

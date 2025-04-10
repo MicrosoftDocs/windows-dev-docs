@@ -3,8 +3,6 @@ title: Windows Search providers
 description: Learn how to integrate into the Windows Search experience. 
 ms.topic: article
 ms.date: 09/07/2023
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 

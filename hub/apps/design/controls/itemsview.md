@@ -36,7 +36,7 @@ Use an items view to:
 > - Important APIs: [ItemsView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview), [ItemsSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemssource), [ItemTemplate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemtemplate), [LinedFlowLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout), [StackLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout), [UniformGridLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ItemsView in action](winui3gallery:/item/ItemsView).
+> [Open the WinUI 3 Gallery app and see the ItemsView in action](winui3gallery:/item/ItemsView)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

@@ -70,7 +70,7 @@ We couldn't upload the picture. If this happens again, try restarting the app. B
     :::column-end:::
     :::column:::
 ![Don't](images/dont.svg)
-An error occured, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
+An error occurred, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
     :::column-end:::
 :::row-end:::
 
@@ -244,7 +244,7 @@ You don't need to be a trained or experienced writer to provide your users with 
 
 * Imagine that you're talking to a friend about your app. How would you explain the app to them? How would you talk about its features or give them instructions? Better yet, explain the app to an actual person who hasn't used it yet. 
 
-* Imagine how you would describe a completely different app. For instance, if you're making a game, think of what you'd say or write to describe a financial or a news app. The contrast in the language and stucture you use can give you more insight into the right words for what you're actually writing about.
+* Imagine how you would describe a completely different app. For instance, if you're making a game, think of what you'd say or write to describe a financial or a news app. The contrast in the language and structure you use can give you more insight into the right words for what you're actually writing about.
 
 * Take a look at similar apps for inspiration. 
 

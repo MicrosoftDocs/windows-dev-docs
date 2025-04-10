@@ -20,7 +20,7 @@ This option is especially useful if you want to create or update Store listings 
 
 On the app overview page for an app, click **Export listing** (in the **Store listings** section) to generate a .csv file encoded in UTF-8. Save this file to a location on your computer.
 
-You can use Microsoft Excel or another editor to edit this file. Note that Microsoft 365 versions of Excel will let you save a .csv file as **CSV UTF-8 (Comma-delimited) (\*.csv)**, but other versions may not support this. You can find details about which versions of Excel support this feature at the [Excel 2016 New features bulletin](https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&rs=en-001&ad=US), and more info about encoding as UTF-8 in various editors [here](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
+You can use Microsoft Excel or another editor to edit this file. Note that Microsoft 365 versions of Excel will let you save a .csv file as **CSV UTF-8 (Comma-delimited) (\*.csv)**, but other versions may not support this.
 
 If you haven’t created any listings for your product yet, the .csv file you exported will not contain any custom data. You’ll see columns for **Field**, **ID**, **Type**, and **default**, and rows which correspond to every item that can appear in a Store listing.
 
@@ -65,11 +65,10 @@ If you’ve already uploaded assets for your Store listings, these assets will t
 
 > [!TIP]
 > To confirm which asset corresponds to a URL, you can enter the URL into a browser to view the image (or download the trailer video). You must be signed in to your Partner Center account in order for this URL to work.
-> If you want to use a new asset that you haven’t previously added to Partner Center, you can do so by importing your listings as a folder, rather than as a single .csv file. You’ll need to create a folder that contains your .csv file. Then, add your images that same folder, either in the root folder or in a subfolder. You’ll need to enter the full path, including the root folder name, in the field.
 
-> [!TIP]
-> For best results when importing your listings as a folder, be sure you are using the latest version of either Microsoft Edge, Chrome, or Firefox.
-> For example, if your root folder is named **my_folder**, and you want to use an image called **screenshot1.png** for **DesktopScreenshot1**, you could add screenshot1.png to the root of that folder, then enter **my_folder/screenshot1.png** in the **DesktopScreenshot1** field. If you created an images folder within your root folder and then placed screenshot1.jpg there, you would enter **my_folder/images/screenshot1.png**. Note that after you import your listings using a folder, paths to your images will be converted to URLs to the files in Partner Center the next time you export your listings. You can copy and paste these URLs to use them again (for example, to use the same assets in several listing languages).
+If you want to use a new asset that you haven’t previously added to Partner Center, you can do so by importing your listings as a folder, rather than as a single .csv file. You’ll need to create a folder that contains your .csv file. Then, add your images that same folder, either in the root folder or in a subfolder. You’ll need to enter the full path, including the root folder name, in the field.
+
+If your root folder is named **my_folder**, and you want to use an image called **screenshot1.png** for **DesktopScreenshot1**, you could add screenshot1.png to the root of that folder, then enter **my_folder/screenshot1.png** in the **DesktopScreenshot1** field. If you created an images folder within your root folder and then placed screenshot1.jpg there, you would enter **my_folder/images/screenshot1.png**. Note that after you import your listings using a folder, paths to your images will be converted to URLs to the files in Partner Center the next time you export your listings. You can copy and paste these URLs to use them again (for example, to use the same assets in several listing languages).
 
 > [!IMPORTANT]
 > If your exported listing includes trailers, be aware that deleting the URL to the trailer or its thumbnail image from your .csv file will completely remove the deleted file from Partner Center, and you will no longer be able to access it there (unless it is also used in another listing where it hasn’t been deleted).
@@ -78,7 +77,7 @@ If you’ve already uploaded assets for your Store listings, these assets will t
 
 Once you have entered all of your changes into the .csv file (and included any assets you want to upload), you’ll need to save your file before uploading it. If you're using a version of Microsoft Excel that supports UTF-8 encoding, be sure to select **Save as** and use the **CSV UTF-8 (Comma-delimited) (\*.csv)** format. If you use a different editor to view and edit your .csv file, make sure the .csv file is encoded in UTF-8 before you upload.
 
-When you’re ready to upload the updated .csv file and import your listing data, select **Import listings** on your app overview page. If you’re only importing a .csv file, choose **Import .csv**, browse to your file, and click **Open**. If you’re importing a folder with image files, choose Import folder, browse to your folder, and click **Select folder**. Make sure there is only one .csv file in your folder, along with any assets you’re uploading.
+When you’re ready to upload the updated .csv file and import your listing data, select **Import listings** on your app overview page. If you’re only importing a .csv file, choose **Import .csv**, browse to your file, and click **Open**. If you’re importing a folder with image files, choose Import folder, browse to your folder, and click **Select folder**. Make sure there is only one .csv file in your folder, along with any assets you’re uploading. For images, you’ll need to enter the full path, including the root folder name, in the field.
 
 As we process your imported .csv file, you’ll see a progress bar reflecting the import and validation status. This can take some time, especially if you have a lot of listings and/or image files.
 

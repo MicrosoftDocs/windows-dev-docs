@@ -16,7 +16,7 @@ Before you begin, you should read the [Windows Hello](windows-hello.md) overview
 
 ## Get started
 
-In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2022 on a Windows 10 or Windows 11 machine. See [Get started with WinUI](/windows/apps/get-started/start-here) for complete instructions on setting up your development environment.
+In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2022 on a Windows 10 or Windows 11 machine. See [Start developing Windows apps](/windows/apps/get-started/start-here) for complete instructions on setting up your development environment.
 
 - In Visual Studio, select **File** > **New** > **Project**.
 - In the **New Project** dialog's drop-down filters, select **C#/C++**, **Windows**, and **WinUI**, respectively.

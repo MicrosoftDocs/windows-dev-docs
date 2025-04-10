@@ -11,8 +11,6 @@ keywords: cortana
 
 >[!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
->
-> See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
 
 Provide deep links from a background app in **Cortana** that launch the app to the foreground in a specific state or context.
 
@@ -72,19 +70,19 @@ Finally, we call the [**ReportSuccessAsync**](/uwp/api/Windows.ApplicationModel.
 private async Task SendCompletionMessageForDestination(string destination)
 {
 ...
-	IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
 
-	var userMessage = new VoiceCommandUserMessage();
-	var destinationsContentTiles = new List<VoiceCommandContentTile>();
+    var userMessage = new VoiceCommandUserMessage();
+    var destinationsContentTiles = new List<VoiceCommandContentTile>();
 ...
-	var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+    var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
 
-	if (trips.Count() > 0)
-	{
-		response.AppLaunchArgument = destination;
-	}
+    if (trips.Count() > 0)
+    {
+        response.AppLaunchArgument = destination;
+    }
 
-	await voiceServiceConnection.ReportSuccessAsync(response);
+    await voiceServiceConnection.ReportSuccessAsync(response);
 }
 ```
 
@@ -113,80 +111,80 @@ Here, we add two content tiles with different [**AppLaunchArgument**](/uwp/api/W
 /// <param name="destination">The destination specified in the voice command.</param>
 private async Task SendCompletionMessageForDestination(string destination)
 {
-	// If this operation is expected to take longer than 0.5 seconds, the task must
-	// supply a progress response to Cortana before starting the operation, and
-	// updates must be provided at least every 5 seconds.
-	string loadingTripToDestination = string.Format(
-			   cortanaResourceMap.GetValue("LoadingTripToDestination", cortanaContext).ValueAsString,
-			   destination);
-	await ShowProgressScreen(loadingTripToDestination);
-	Model.TripStore store = new Model.TripStore();
-	await store.LoadTrips();
+    // If this operation is expected to take longer than 0.5 seconds, the task must
+    // supply a progress response to Cortana before starting the operation, and
+    // updates must be provided at least every 5 seconds.
+    string loadingTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("LoadingTripToDestination", cortanaContext).ValueAsString,
+               destination);
+    await ShowProgressScreen(loadingTripToDestination);
+    Model.TripStore store = new Model.TripStore();
+    await store.LoadTrips();
 
-	// Query for the specified trip. 
+    // Query for the specified trip. 
     // The destination should be in the phrase list. However, there might be  
     // multiple trips to the destination. We pick the first.
-	IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
 
-	var userMessage = new VoiceCommandUserMessage();
-	var destinationsContentTiles = new List<VoiceCommandContentTile>();
-	if (trips.Count() == 0)
-	{
-		string foundNoTripToDestination = string.Format(
-			   cortanaResourceMap.GetValue("FoundNoTripToDestination", cortanaContext).ValueAsString,
-			   destination);
-		userMessage.DisplayMessage = foundNoTripToDestination;
-		userMessage.SpokenMessage = foundNoTripToDestination;
-	}
-	else
-	{
-		// Set plural or singular title.
-		string message = "";
-		if (trips.Count() > 1)
-		{
-			message = cortanaResourceMap.GetValue("PluralUpcomingTrips", cortanaContext).ValueAsString;
-		}
-		else
-		{
-			message = cortanaResourceMap.GetValue("SingularUpcomingTrip", cortanaContext).ValueAsString;
-		}
-		userMessage.DisplayMessage = message;
-		userMessage.SpokenMessage = message;
+    var userMessage = new VoiceCommandUserMessage();
+    var destinationsContentTiles = new List<VoiceCommandContentTile>();
+    if (trips.Count() == 0)
+    {
+        string foundNoTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("FoundNoTripToDestination", cortanaContext).ValueAsString,
+               destination);
+        userMessage.DisplayMessage = foundNoTripToDestination;
+        userMessage.SpokenMessage = foundNoTripToDestination;
+    }
+    else
+    {
+        // Set plural or singular title.
+        string message = "";
+        if (trips.Count() > 1)
+        {
+            message = cortanaResourceMap.GetValue("PluralUpcomingTrips", cortanaContext).ValueAsString;
+        }
+        else
+        {
+            message = cortanaResourceMap.GetValue("SingularUpcomingTrip", cortanaContext).ValueAsString;
+        }
+        userMessage.DisplayMessage = message;
+        userMessage.SpokenMessage = message;
 
-		// Define a tile for each destination.
-		foreach (Model.Trip trip in trips)
-		{
-			int i = 1;
-			
-			var destinationTile = new VoiceCommandContentTile();
+        // Define a tile for each destination.
+        foreach (Model.Trip trip in trips)
+        {
+            int i = 1;
+            
+            var destinationTile = new VoiceCommandContentTile();
 
-			destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
-			destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
+            destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
+            destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
 
-			destinationTile.AppLaunchArgument = trip.Destination;
-			destinationTile.Title = trip.Destination;
-			if (trip.StartDate != null)
-			{
-				destinationTile.TextLine1 = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
-			}
-			else
-			{
-				destinationTile.TextLine1 = trip.Destination + " " + i;
-			}
+            destinationTile.AppLaunchArgument = trip.Destination;
+            destinationTile.Title = trip.Destination;
+            if (trip.StartDate != null)
+            {
+                destinationTile.TextLine1 = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
+            }
+            else
+            {
+                destinationTile.TextLine1 = trip.Destination + " " + i;
+            }
 
-			destinationsContentTiles.Add(destinationTile);
-			i++;
-		}
-	}
+            destinationsContentTiles.Add(destinationTile);
+            i++;
+        }
+    }
 
-	var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+    var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
 
-	if (trips.Count() > 0)
-	{
-		response.AppLaunchArgument = destination;
-	}
+    if (trips.Count() > 0)
+    {
+        response.AppLaunchArgument = destination;
+    }
 
-	await voiceServiceConnection.ReportSuccessAsync(response);
+    await voiceServiceConnection.ReportSuccessAsync(response);
 }
 ```
 
@@ -203,7 +201,7 @@ userMessage.SpokenMessage =
   "You have one trip to Vegas coming up.";
 
 response = VoiceCommandResponse.CreateResponse(userMessage);
-response.AppLaunchArgument = “Las Vegas”;
+response.AppLaunchArgument = "Las Vegas";
 await  VoiceCommandServiceConnection.RequestAppLaunchAsync(response);
 ```
 

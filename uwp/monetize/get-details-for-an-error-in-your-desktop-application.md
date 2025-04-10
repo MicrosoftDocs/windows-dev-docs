@@ -57,10 +57,10 @@ To use this method, you need to first do the following:
 The following examples demonstrate several requests for getting detailed error data. Replace the *applicationId* value with the product ID for your desktop application.
 
 ```syntax
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/failuredetails?applicationId=10238467886765136388&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/failuredetails?applicationId=10238467886765136388&failureHash=00001111-aaaa-2222-bbbb-3333cccc4444&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/failuredetails?applicationId=10238467886765136388&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0&filter=market eq 'US' and deviceType eq 'PC' HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/failuredetails?applicationId=10238467886765136388&failureHash=00001111-aaaa-2222-bbbb-3333cccc4444&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0&filter=market eq 'US' and deviceType eq 'PC' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 

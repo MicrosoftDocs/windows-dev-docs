@@ -1,31 +1,27 @@
 ---
-title: How to streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
-description: Get started with GitHub Copilot Chat by learning how to streamline your WinUI 3 / Windows App SDK development workflow with context-aware prompts
-ms.topic: article
-ms.date: 5/8/2024
-keywords: windows app sdk, winappsdk, winui3, openai, chatgpt, copilot
-ms.author: mikben
-author: matchamatch
+title: How to streamline your WinUI 3 development workflow with GitHub Copilot Chat
+description: Get started with GitHub Copilot Chat by learning how to streamline your WinUI 3 / Windows App SDK development workflow with context-aware prompts.
+ms.topic: how-to
+ms.date: 11/26/2024
+keywords: windows app sdk, winappsdk, winui3, openai, chatgpt, copilot, github copilot
 ms.localizationpriority: medium
-ms.custom: template-quickstart
 audience: new-desktop-app-developers
-content-type: how-to
+#Customer intent: As a Windows developer, I want to learn how to streamline my WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat in Visual Studio, so that I can build apps more efficiently.
 ---
 
 # Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
 
 This how-to is targeted at desktop application developers who want to streamline their WinUI 3 / Windows App SDK application development workflow with Github Copilot Chat in Visual Studio.
 
-We'll start by using GitHub Copilot Chat to build a "Hello world" app with a single prompt, and then we'll demonstrate how GitHub Copilot Chat can be used to add a chat interface that displays responses from a mocked serverside component.
+We'll start by using GitHub Copilot Chat to build a "Hello world" app with a single prompt, and then we'll demonstrate how GitHub Copilot Chat can be used to add a chat interface that displays responses from a mocked server-side component.
 
 ## Prerequisites
 
 - Visual Studio 2022 [version 17.8](/visualstudio/releases/2022/release-history) or later
 - An active [subscription](https://docs.github.com/en/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot) to [GitHub Copilot for Individuals](https://docs.github.com/copilot/overview-of-github-copilot/about-github-copilot-for-individuals) or [GitHub Copilot for Business](https://docs.github.com/copilot/overview-of-github-copilot/about-github-copilot-for-business) associated with the GitHub account that you sign in to Visual Studio with.
 - [**GitHub Copilot Chat**](/visualstudio/ide/visual-studio-github-copilot-chat) in Visual Studio.
-  - If you're using [Visual Studio version 17.10 Preview 3](/visualstudio/releases/2022/release-notes-preview) or later, GitHub Copilot Chat is included in the built-in, unified GitHub Copilot extension available as a recommended component in the Visual Studio Installer. It is installed by default with all workloads, unless you choose to exclude it during installation.
-- Familiarity with C# and WinUI 3 / Windows App SDK.
-
+  - If you're using Visual Studio version 17.10 or later, GitHub Copilot Chat is included in the built-in, unified GitHub Copilot extension available as a recommended component in the Visual Studio Installer. It is installed by default with all workloads, unless you choose to exclude it during installation.
+- Familiarity with C#, WinUI 3, and Windows App SDK.
 
 ## Prompting techniques
 
@@ -35,9 +31,9 @@ The goal of this how-to is to equip you with **vocabulary** and **prompting tech
 
 In Visual Studio, select **View > GitHub Copilot Chat**.
 
-:::image type="content" source="images/copilot-chat/0-view-github-copilot-chat.png" alt-text="Screenshot of Copilot Chat being selected":::
+:::image type="content" source="images/copilot-chat/0-view-github-copilot-chat.png" alt-text="A screenshot of GitHub Copilot Chat being selected from Visual Studio's View menu.":::
 
-This opens the **GitHub Copilot Chat pane** on the left side of the Visual Studio window. You can use this chat window to ask Copilot for help with your code. This technique is useful when you're working across multiple files and don't mind explicitly specifying the files that need to change, and it's the technique we'll focus on in this how-to.
+This opens the **GitHub Copilot Chat pane** on right side of the Visual Studio window, depending on your configuration. You can use this chat window to ask Copilot for help with your code. This technique is useful when you're working across multiple files and don't mind explicitly specifying the files that need to change, and it's the technique we'll focus on in this how-to.
 
 ### Prompting through inline Copilot Chat
 
@@ -46,7 +42,6 @@ From any file's editor window, right click and select Ask Copilot to bring up th
 :::image type="content" source="images/copilot-chat/1-right-click.png" alt-text="Screenshot of displaying inline Copilot Chat via right-click":::
 
 This will reveal an inline chat window where you can prompt Copilot to assist you with the file you're currently working on. Use this when you're working within the context of a single file.
-
 
 ## Create a new WinUI 3 project
 
@@ -61,7 +56,6 @@ You should see instructions appear:
 :::image type="content" source="images/copilot-chat/2-get-me-started-winui3.png" alt-text="Screenshot of response to 'Get me started with a blank WinUI 3 / WinAppSDK project'":::
 
 This highlights a limitation that you should be aware of: at the time of this writing, the Chat extension can't create a new project or file structure for you, but it *can* provide you with step-by-step instructions. Follow the instructions to create a new project.
-
 
 ## Display a "Hello, world!" message
 
@@ -87,7 +81,7 @@ Update #MainWindow.xaml and #MainWindow.xaml.cs to display "Hello, world!" when 
 
 You should see Copilot generate the necessary code within code blocks labeled `MainWindow.xaml` and `MainWindow.xaml.cs`. These code blocks should each display two options: `Insert in new file` and `Preview`. Click `Preview` **while your cursor is active in the target file** to stage and accept the changes:
 
-:::image type="content" source="images/copilot-chat/4-preview-codebehind.png" alt-text="Screenshot of the Preview button when working with the codebehind file":::
+:::image type="content" source="images/copilot-chat/4-preview-codebehind.png" alt-text="Screenshot of the Preview button when working with the code-behind file":::
 
 :::image type="content" source="images/copilot-chat/5-preview-markup.png" alt-text="Screenshot of the Preview button when working with the markup file":::
 
@@ -106,13 +100,12 @@ What files should I change in my #Solution in order to achieve <desired outcome>
 Type the following into the Chat window:
 
 ```
-Update #MainWindow.xaml and #MainWindow.xaml.cs to display ONLY "Hello, world!" when the app starts, removing extraneous buttons and their codebehind functionality as-needed. Directly modify the existing files. Do not explain yourself. Do not generate new files.
+Update #MainWindow.xaml and #MainWindow.xaml.cs to display ONLY "Hello, world!" when the app starts, removing extraneous buttons and their code-behind functionality as-needed. Directly modify the existing files. Do not explain yourself. Do not generate new files.
 ```
 
-Accept the suggested changes. You should see the button removed from the UI and the corresponding code removed from the codebehind file. Run the application to verify that only the "Hello, world!" message is displayed:
+Accept the suggested changes. You should see the button removed from the UI and the corresponding code removed from the code-behind file. Run the application to verify that only the "Hello, world!" message is displayed:
 
 :::image type="content" source="images/copilot-chat/6-results-hello-world.png" alt-text="Screenshot of the hello world results":::
-
 
 ## Build the chat interface
 
@@ -128,7 +121,7 @@ Update #MainWindow.xaml and #MainWindow.xaml.cs to build a chat interface with t
  5. When I click the Send button, display the input text in a TextBlock, and update the ProgressBar to indicate that the app is waiting for a response. Mock the code that generates a response with a delay of 2 seconds, and then display a response that echoes the input text above the input.
  6. Ensure that **TextBlock** text wraps to the next line when it reaches the edge of the window.
 
-Remove extraneous code as-needed. Directly modify the existing files. Do not explain yourself. Do not generate new files. Ensure that every single numbered requirement is accounted for in the end result. Ensure that both the markup and codebehind files are updated to produce a fully functional chat interface that builds and meets the above-stated requirements. Take your time. Reveal only two code blocks representing the end result, one for each file.
+Remove extraneous code as-needed. Directly modify the existing files. Do not explain yourself. Do not generate new files. Ensure that every single numbered requirement is accounted for in the end result. Ensure that both the markup and code-behind files are updated to produce a fully functional chat interface that builds and meets the above-stated requirements. Take your time. Reveal only two code blocks representing the end result, one for each file.
 ```
 
 This is an example of **one-shot prompting**, where you're providing all requirements in a single prompt. This can be useful when you have a clear idea of what you want to build and you want to see Copilot generate the code to meet those requirements, but it also increases the likelihood that Copilot will generate code that doesn't quite satisfy your requirements.
@@ -137,7 +130,7 @@ This highlights an important consideration: If you provide Copilot with **precis
 
 At the time of this writing, the above input generated the below output:
 
-```MainWindow.xaml.cs
+```csharp MainWindow.xaml.cs
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
@@ -186,7 +179,7 @@ namespace ImageGenerator
 }
 ```
 
-```MainWindow.xaml
+```xml MainWindow.xaml
 <Window
     x:Class="ImageGenerator.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -230,7 +223,6 @@ Which yielded the following UI:
 
 :::image type="content" source="images/copilot-chat/7-working-example.png" alt-text="Screenshot of the working example's UI":::
 
-
 ## Fix and iterate upon the generated code
 
 If the output that you receive from Copilot doesn't satisfy the stated requirements, one option is to reiterate your original instructions with more precise instructions, and instruct Copilot to "Continue updating" the code to meet the unmet requirements:
@@ -245,26 +237,22 @@ Continue updating #MainWindow.xaml and #MainWindow.xaml.cs to build a chat inter
  5. When I click the Send button, display the input text in a TextBlock, and update the ProgressBar to indicate that the app is waiting for a response. Mock the code that generates a response with a delay of 2 seconds, and then display a response that echoes the input text above the input.
  6. Ensure that **TextBlock** text wraps to the next line when it reaches the edge of the window.
 
-Remove extraneous code as-needed. Directly modify the existing files. Do not explain yourself. Do not generate new files. Ensure that every single numbered requirement is accounted for in the end result. Ensure that both the markup and codebehind files are updated to produce a fully functional chat interface that builds and meets the above-stated requirements. Take your time. Reveal only two code blocks representing the end result, one for each file.
+Remove extraneous code as-needed. Directly modify the existing files. Do not explain yourself. Do not generate new files. Ensure that every single numbered requirement is accounted for in the end result. Ensure that both the markup and code-behind files are updated to produce a fully functional chat interface that builds and meets the above-stated requirements. Take your time. Reveal only two code blocks representing the end result, one for each file.
 ```
 
-Alternatively, you can use **multi-shot prompting** to break your problem down into smaller requirements, and then work on one at a time, incrementally building towards your desired outcome. This approach can be useful when you're not sure how to articulate your requirements with a high degree of technical precision, or when Copilot is struggling to generate the code you're looking for.
-
+Alternatively, you can use **multi-shot prompting** to break your problem down into smaller requirements, and then work on one at a time, incrementally building towards your desired outcome. This approach can be useful when you're not sure how to articulate your requirements with a high degree of technical precision, or when Copilot is struggling to generate the code you want.
 
 ## Recap
 
 In this how-to, we:
 
- - Demonstrated how to streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat in Visual Studio
- - Prompted Copilot to generate code that meets your requirements
- - Highlighted the importance of providing Copilot with precise requirements to generate the code you're looking for
- - Identified a variety of prompting techniques and use-cases for each
+- Demonstrated how to streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat in Visual Studio
+- Prompted Copilot to generate code that meets your requirements
+- Highlighted the importance of providing Copilot with precise requirements to generate the code you want
+- Identified a variety of prompting techniques and use-cases for each
 
-
-## Related
+## Related content
 
 - [Sample applications for Windows development](../get-started/samples.md)
 - [Windows developer FAQ](../get-started/windows-developer-faq.yml)
-- [Windows developer glossary](../get-started/windows-developer-glossary.md)
 - [Windows development best practices](../get-started/best-practices.md)
-- [How to target multiple platforms with your WinUI 3 app](uno-multiplatform.md)

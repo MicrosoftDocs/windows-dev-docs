@@ -3,8 +3,6 @@ title: IAccessKeyManagerStaticsDisplayMode.EnterDisplayMode method
 description: Specifies that keytips for currently valid access keys should be displayed and the access keys enabled.
 ms.topic: article
 ms.date: 07/28/2023
-ms.author: jimwalk
-author: jwmsft
 ms.localizationpriority: low
 ---
 

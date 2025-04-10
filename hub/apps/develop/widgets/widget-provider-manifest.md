@@ -3,8 +3,6 @@ title: Widget provider package manifest XML format
 description: Describes the package manifest XML format for Windows widget providers. 
 ms.topic: article
 ms.date: 08/12/2022
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 
@@ -107,7 +105,7 @@ Specifies activation information for the widget provider. If both **CreateInstan
 
 ## ActivateApplication
 
-When **ActivateApplication** is specified, the widget provider is activated via the command line, with the arguments provided as [base64url encoded](https://datatracker.ietf.org/doc/html/rfc4648#section-5) JSON strings. It is recommended that widget providers use the **CreateInstance** activiation type. For information on the **ActivateApplication** command line format, see [Widget provider ActivateApplication protocol](widget-provider-activateapplication-protocol.md).
+When **ActivateApplication** is specified, the widget provider is activated via the command line, with the arguments provided as [base64url encoded](https://datatracker.ietf.org/doc/html/rfc4648#section-5) JSON strings. It is recommended that widget providers use the **CreateInstance** activation type. For information on the **ActivateApplication** command line format, see [Widget provider ActivateApplication protocol](widget-provider-activateapplication-protocol.md).
 
 ## Definitions
 
@@ -124,8 +122,12 @@ Represents the registration for a single widget.
 | **Description** | string | Yes | Short description of the widget. | N/A |
 | **AllowMultiple** | boolean | No | Set to false if only one instance of this widget is supported. This attribute is optional and the default value is true. | true |
 | **IsCustomizable** | boolean | No | Introduced in Windows App SDK 1.4. Set to true if your app supports widget customization. This causes the **Customize widget** button to be displayed in the widget's ellipsis menu. | false |
+| **AdditionalInfoUri** | string | No | A URI that can be associated with the widget to be used when the user clicks on the title bar of the widget frame or when clicking the **Powered by** element of its context menu.|  N/A |
+| **ExcludedRegions** | string | No | A list of regions where the widget should not be available. Widgets can specify **ExcludedRegions** or **ExclusiveRegions** but must not specify both in a single widget definition. The value of the attribute is a comma separated list of two character region codes.| N/A |
+| **ExclusiveRegions** | string | No | A list of the only regions where the widget should be available. Widgets can specify **ExcludedRegions** or **ExclusiveRegions** but must not specify both in single widget definition. The value of the attribute is a comma separated list of two character region codes.| N/A |
+| **WebRequestFilter** | string | No |  Specifies the filter that specifies the resource request URLs for which the request will be intercepted and redirected to the widget provider's implementation of [IWidgetResourceProvider.OnResourceRequested](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetresourceprovider.onresourcerequested). The filter pattern is expressed using the format described in [Match Patterns](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns). The filter string in the registration must use [Punycode](https://en.wikipedia.org/wiki/Punycode) where necessary. The filter string must match the origin of the widget registration, which is specified in the *webUrl* field of the adaptive card content. | N/A |
 
-## Capablities
+## Capabilities
 
 Optional. Specifies capabilities for a single widget. If no capabilities are declared, one capability specifying a "large" size is added by default.
 
@@ -202,6 +204,8 @@ The following code example illustrates the usage of the widget package manifest 
             Id="Weather_Widget"
             DisplayName="Microsoft Weather Widget"
             Description="Weather Widget Description"
+            AdditionalInfoUri="https://contoso.com/widgets/Weather"
+            ExclusiveRegions="US,UK"
             AllowMultiple="true">
             <Capabilities>
               <Capability>

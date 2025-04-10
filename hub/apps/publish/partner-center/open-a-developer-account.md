@@ -40,14 +40,14 @@ For more details, you can refer to the steps below:
 1. Enter the **publisher display name** that you want to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name. 
 
    > [!NOTE]
-   > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [app developer agreement](/legal/windows/agreements/app-developer-agreement) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).
+   > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).
 
 1. Enter the **contact info** you want to use for your developer account.
 
    > [!NOTE]
    > We'll use this info to contact you about account-related matters. For example, you'll receive an email confirmation after you complete your registration. After that, we'll send messages when we pay you or if you need to fix something with your account. We may also send informational emails as described earlier, unless you opt out of receiving non-transactional emails.
    
-1. Then, read and accept the terms and conditions of the [app developer agreement](/legal/windows/agreements/app-developer-agreement). 
+1. Then, read and accept the terms and conditions of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905). 
 
 1. Select **Accept and Continue** to move on to the **Payment** section.
 
@@ -96,11 +96,11 @@ For more details, you can refer to the steps below:
 1. Enter the **publisher display name** that you want to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name. Be sure to use your organization's registered business name or trade name. If you enter a name that someone else has already selected, or if someone else has the rights to use that name, we won't permit you to use it.
 
    > [!NOTE]
-   > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [app developer agreement](/legal/windows/agreements/app-developer-agreement) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).
+   > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).
 
 1. Upload **a legal document** with your company address and name details such as formation documents, government issued letter/license etc.   
 
-1. Then, read and accept the terms and conditions of the [app developer agreement](/legal/windows/agreements/app-developer-agreement). 
+1. Then, read and accept the terms and conditions of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905). 
 
 1. Select **Accept and Continue** to move on to the **Payment** section.
 

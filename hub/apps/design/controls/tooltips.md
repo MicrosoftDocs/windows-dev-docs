@@ -4,7 +4,7 @@ title: Tooltips
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
-ms.date: 05/03/2022
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -56,19 +56,6 @@ When should you use a tooltip? To decide, consider these questions:
 - Don't put interactive controls inside the tooltip.
 - Don't put images that look like they are interactive inside the tooltip.
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ToolTip class](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService class](/uwp/api/windows.ui.xaml.controls.tooltipservice)
-> - [Open the WinUI 2 Gallery app and see the ToolTip in action](winui2gallery:/item/ToolTip). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
-
 ## Create a tooltip
 
 > [!div class="checklist"]
@@ -76,7 +63,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [ToolTip class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ToolTip), [ToolTipService class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ToolTip in action](winui3gallery:/item/ToolTip).
+> [Open the WinUI 3 Gallery app and see the ToolTip in action](winui3gallery:/item/ToolTip)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -141,9 +128,18 @@ If a ToolTip obscures the content it is referring to, you can adjust its placeme
 </Image>
 ```
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [ToolTip class](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService class](/uwp/api/windows.ui.xaml.controls.tooltipservice)
+> - [Open the WinUI 2 Gallery app and see the ToolTip in action](winui2gallery:/item/ToolTip). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 

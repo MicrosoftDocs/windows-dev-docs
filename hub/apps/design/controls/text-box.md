@@ -4,7 +4,7 @@ description: The TextBox control lets a user enter text into an app.
 title: Text box
 label: Text box
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 02/26/2025
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -76,19 +76,6 @@ For more info about choosing the right text control, see the [Text controls](tex
 - Don't use a multi-line text box when users only need a single line.
 - Don't use a rich text control if a plain text control is adequate.
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox), [Text property](/uwp/api/windows.ui.xaml.controls.textbox.text)
-> - [Open the WinUI 2 Gallery app and see the TextBox in action](winui2gallery:/item/TextBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
-
 ## Create a text box
 
 > [!div class="checklist"]
@@ -96,7 +83,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TextBox in action](winui3gallery:/item/TextBox).
+> [Open the WinUI 3 Gallery app and see the TextBox in action](winui3gallery:/item/TextBox)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -306,9 +293,18 @@ Other properties that affect the touch keyboard are [IsSpellCheckEnabled](/windo
 
 For more info and examples, see [Use input scope to change the touch keyboard](../input/use-input-scope-to-change-the-touch-keyboard.md) and the property documentation.
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox), [Text property](/uwp/api/windows.ui.xaml.controls.textbox.text)
+> - [Open the WinUI 2 Gallery app and see the TextBox in action](winui2gallery:/item/TextBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 

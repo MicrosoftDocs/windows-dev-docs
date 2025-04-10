@@ -265,7 +265,7 @@ All pricing, including sales or discounting, for your digital products or servic
 
 ### 10.9 Notifications
 
-Your product must respect system settings for notifications and remain functional when they are disabled. This includes the presentation of ads and notifications to the customer, which must also be consistent with the customer’s preferences, whether the notifications are provided by the Microsoft Push Notification Service (MPNS), Windows Push Notification Service (WNS) or any other service. If the customer disables notifications, either on an product-specific or system-wide basis, your product must remain functional.
+Your product must respect system settings for notifications and remain functional when they are disabled. This includes the presentation of ads and notifications to the customer, which must also be consistent with the customer’s preferences, whether the notifications are provided by the Microsoft Push Notification Service (MPNS), Windows Push Notification Service (WNS) or any other service. If the customer disables notifications, either on a product-specific or system-wide basis, your product must remain functional.
 
 If your product uses MPNS or WNS to transmit notifications, it must comply with the following requirements:
 
@@ -304,7 +304,7 @@ If you purchase or create promotional ad campaigns to promote your products thro
 **10.10.3**
 
 Any advertising content your product displays must adhere to Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
-If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
+If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
 
 **10.10.4**
 
@@ -485,4 +485,4 @@ User generated content is content that users contribute to an app or product and
 
 - [Change history for Microsoft Store Policies](../store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

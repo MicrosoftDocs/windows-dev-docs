@@ -1,11 +1,9 @@
 ---
 title: Migrate from UWP to the Windows App SDK
 description: A collection of topics describing and demonstrating how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
-ms.date: 06/21/2024
+ms.date: 09/10/2024
 ms.topic: article
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +12,7 @@ ms.localizationpriority: medium
 To migrate your app from the [Universal Windows Platform](/windows/uwp/) (UWP) to the Windows App SDK, your UI code likely needs just a few namespace changes, while much of your platform code can stay the same. You'll need to adjust some code due to differences between UWP apps and desktop apps. But we expect that for most apps (depending on codebase size, of course), migration will take on the order of days rather than weeks.
 
 > [!NOTE]
-> If you're happy with the current functionality of the UWP platform and your UWP app, then there's no need to migrate your project. [WinUI 2](../../winui/winui2/index.md) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/) continue to support UWP project types.
+> Your existing UWP app will continue to function as expected. However, to take advantage of modern features in [WinUI 3](../../winui/winui3/index.md) and the [Windows App SDK](/windows/apps/windows-app-sdk) we recommend migrating your app.
 
 Below are the steps, at a high level, for migrating manually. But see the following section for info about using the [.NET Upgrade Assistant tool](#migrating-by-using-the-net-upgrade-assistant-tool)).
 
@@ -35,8 +33,7 @@ As a further step in assisting you to migrate your UWP apps to the Windows App S
 
 ## Containerization benefits
 
-When transitioning to the Windows App SDK, UWP applications might lose the inherent containerization benefits of their original platform. However, those benefits can be restored by using Win32 App Isolation&mdash;a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more info, and to begin using Win32 App Isolation, visit [Welcome to the Win32 app isolation repo](https://github.com/microsoft/win32-app-isolation) on GitHub.
-
+When transitioning to the Windows App SDK, UWP applications might lose the inherent containerization benefits of their original platform. However, those benefits can be restored by using Win32 App Isolation&mdash;a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more info, and to begin using Win32 App Isolation, see [Win32 app isolation overview](/windows/win32/secauthz/app-isolation-overview).
 ## Topics in this section
 
 | Topic | Description |

@@ -1,12 +1,10 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 05/21/2024
+ms.date: 02/13/2025
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
-author: mattwojo
-ms.author: mattwoj
 ---
 
 # Windows on Arm
@@ -21,6 +19,8 @@ Windows 10 enables existing unmodified x86 apps to run on Arm devices. Windows 1
 
 For the best performance, responsiveness, and battery life, users will want and need Arm-native Windows apps, which means that developers will need to build or port Arm-native Windows apps.
 
+Check whether it's supported on Arm: [Windows on Arm Ready Software](https://www.worksonwoa.com/en/) - This site is your source for compatibility information for many apps and games on Windows devices that run on Arm architecture and will be updated over time.
+
 ### Virtual Machines
 
 You can create and deploy Windows 11 Arm64 VMs with Ampere Altra Arm–based processors on Azure. Learn how in this [Quickstart article](./create-arm-vm.md).
@@ -34,9 +34,11 @@ Learn more about using Windows on Arm Virtual Machines:
 
 ### Arm developer devices
 
-Developers need Arm devices upon which to build and test Arm-native Windows apps. Several Arm-powered devices are already available from Microsoft partners. These portable devices, whether a laptop form-factor device or convertible-tablet, offer great performance, battery life, and run the growing array of Arm-native developer tools.
+The number of options available to developers who want to build and test Arm-native apps on Windows has been growing.
 
-[Windows Dev Kit 2023](./dev-kit/index.md) (code name “Project Volterra”) is the latest Arm device built to support Windows developers, AI researchers, and developers looking to integrate AI into their apps and experiences.
+- [Copilot+ PCs](https://www.microsoft.com/windows/copilot-plus-pcs) offer a Neural Processing Unit (NPU) and the latest in AI features and computing capacity via a variety of device manufacturers. Many of which are powered by the Arm-based Snapdragon® X Series processor, offering 45 trillion operations per second (TOPS) to work with.
+
+- [Windows Dev Kit 2023](./dev-kit/index.md) (code name “Project Volterra”) is no longer available to purchase new, but remains viable as an Arm-based device built to support Windows development, AI research, and testing for the integration of AI into apps and experiences.
 
 ## Support for existing Windows apps on Arm
 

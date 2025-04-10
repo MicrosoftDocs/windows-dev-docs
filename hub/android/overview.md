@@ -1,11 +1,8 @@
 ---
 title: Android development on Windows
 description: A guide to help you get started developing for Android on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
-ms.date: 09/28/2023
+ms.date: 11/21/2024
 ---
 
 # Overview of Android development on Windows
@@ -29,7 +26,6 @@ There are multiple paths for developing an Android device app using the Windows 
 In addition, this guide will provide tips on using Windows to:
 
 - [Test on an Android device or emulator](emulator.md)
-- [Update Windows Defender settings to improve performance](defender-settings.md)
 - [Develop dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
 
 ### Native Android

@@ -1,9 +1,6 @@
 ---
 title: Rust for Windows, and the windows crate
 description: Using the *windows* crate, and calling Windows APIs.
-author: stevewhims
-ms.author: stwhi
-manager: jken
 ms.topic: article
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code, rust for windows
 ms.localizationpriority: medium

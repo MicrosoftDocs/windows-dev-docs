@@ -4,7 +4,7 @@ title: Semantic zoom
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.date: 08/07/2020
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -53,19 +53,6 @@ Here's a semantic zoom used in the Photos app. Photos are grouped by month. Sele
 
 ![A semantic zoom used in the Photos app](images/control-examples/semantic-zoom-photos.png)
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [SemanticZoom class](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
-> - [Open the WinUI 2 Gallery app and see the SemanticZoom in action](winui2gallery:/item/SemanticZoom). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
-
 ## Create a semantic zoom
 
 > [!div class="checklist"]
@@ -73,7 +60,7 @@ We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the 
 > - **Important APIs:** [SemanticZoom class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.SemanticZoom), [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see SemanticZoom in action](winui3gallery:/item/SemanticZoom).
+> [Open the WinUI 3 Gallery app and see SemanticZoom in action](winui3gallery:/item/SemanticZoom)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -189,9 +176,18 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 }
 ```
 
-## Get the sample code
+## UWP and WinUI 2
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [SemanticZoom class](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
+> - [Open the WinUI 2 Gallery app and see the SemanticZoom in action](winui2gallery:/item/SemanticZoom). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
 
 ## Related articles
 

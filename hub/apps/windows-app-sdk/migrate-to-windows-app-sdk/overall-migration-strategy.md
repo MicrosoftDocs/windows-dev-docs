@@ -4,8 +4,6 @@ description: Considerations and strategies for approaching the migration process
 ms.topic: article
 ms.date: 10/01/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

@@ -4,8 +4,6 @@ description: Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/m
 ms.topic: article
 ms.date: 03/23/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, app sdk, bootstrapper, bootstrapper api
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: low
 ---
 

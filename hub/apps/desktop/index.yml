@@ -8,9 +8,7 @@ metadata:
   description: This documentation provides the latest guidance about building desktop apps for Windows 11 and Windows 10.
   ms.topic: landing-page
   ms.collection: collection
-  ms.author: jken
-  author: GrantMeStrength
-  ms.date: 09/26/2023
+  ms.date: 12/13/2024
   keywords: windows win32, desktop development
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -43,7 +41,7 @@ landingContent:
           - text: Windows developer FAQ
             url: ../get-started/windows-developer-faq.yml
 
-  - title: Deploy and Publish
+  - title: Deploy and publish
     linkLists:
       - linkListType: overview
         links:
@@ -56,7 +54,7 @@ landingContent:
           - text: Publish Windows apps and games
             url: ../publish/index.md
 
-  - title: Artificial Intelligence and Machine Learning
+  - title: Artificial intelligence and machine learning
     linkLists:
       - linkListType: concept
         links:
@@ -113,6 +111,5 @@ landingContent:
             url: /windows/windows-app-sdk/api/winrt/
           - text: Win32 API for the Windows App SDK
             url: /windows/windows-app-sdk/api/win32/
-          - text: WinUI API reference
+          - text: WinUI 3 API reference
             url: /windows/winui/api/
-

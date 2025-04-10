@@ -1,7 +1,5 @@
 ---
 ms.topic: include
-author: alvinashcraft
-ms.author: aashcraft
 ms.date: 06/14/2023
 ---
 ## Finalize your environment

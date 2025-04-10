@@ -4,8 +4,6 @@ description: Sample code for applying Mica in a WinUI 3 application.
 ms.topic: article
 ms.date: 07/15/2024
 keywords: windows, windows app development, Windows App SDK, Mica
-ms.author: jimwalk
-author: jwmsft
 ms.localizationpriority: medium
 dev_langs: 
 - csharp
@@ -25,7 +23,7 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 > [!NOTE]
 >
 > - To use an in-app AcrylicBrush, see [Acrylic material](../design/style/acrylic.md).
-> - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/apply-mica-win32.md).
+> - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/ui/apply-mica-win32.md).
 > - To use backdrop materials in a UWP/WinUI 2 app, see [Apply Mica with WinUI 2 for UWP](/windows/uwp/ui-input/mica-uwp) or [Acrylic material](../design/style/acrylic.md).
 
 ## How to use a backdrop material
@@ -35,7 +33,7 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 > - **Important APIs**: [Window.SystemBackdrop property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop), [MicaBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop), [DesktopAcrylicBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop), [SystemBackdropConfiguration class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the System Backdrops in action](winui3gallery://item/SystemBackdrops).
+> [Open the WinUI 3 Gallery app and see the System Backdrops in action](winui3gallery://item/SystemBackdrops)
 
 [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
 
@@ -216,6 +214,10 @@ The controller reacts to the system Light and Dark themes by default. To overrid
 - [LuminosityOpacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.luminosityopacity)
 - [TintColor](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintcolor)
 - [TintOpacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintopacity)
+
+> [!NOTE]
+>
+> After customizing any of the controller’s four properties, it no longer applies default Light or Dark values when the associated [SystemBackdropConfiguration.Theme](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration.theme) changes. You need to manually update those properties to match the new theme.
 
 In order to use the backdrop material in your app, the following items are required:
 
@@ -511,4 +513,4 @@ struct MainWindow : MainWindowT<MainWindow>
 - [Materials in Windows 11](../design/signature-experiences/materials.md)
 - [Mica](../design/style/mica.md)
 - [Acrylic](../design/style/acrylic.md)
-- [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/apply-mica-win32.md)
+- [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/ui/apply-mica-win32.md)

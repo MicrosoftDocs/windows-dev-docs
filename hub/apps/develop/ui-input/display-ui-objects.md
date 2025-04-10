@@ -4,8 +4,6 @@ description: You can use certain pickers, popups, dialogs, and other Windows Run
 ms.topic: article
 ms.date: 02/28/2023
 keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, WinUI, interop, IInitializeWithWindow, IInitializeWithWindow::Initialize, WinRT.Interop.InitializeWithWindow, IDataTransferManagerInterop, IUserConsentVerifierInterop
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

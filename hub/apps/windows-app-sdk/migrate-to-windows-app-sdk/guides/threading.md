@@ -4,8 +4,6 @@ description: This topic describes how to migrate the threading code in a Univers
 ms.topic: article
 ms.date: 03/29/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing, reentrancy
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 dev_langs:
   - csharp

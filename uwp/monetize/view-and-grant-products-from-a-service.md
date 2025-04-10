@@ -2,7 +2,7 @@
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: If you have a catalog of apps and add-ons, you can use the Microsoft Store collection API and Microsoft Store purchase API to access ownership information for these products from your services.
 title: Manage product entitlements from a service
-ms.date: 04/22/2021
+ms.date: 12/05/2024
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, view products, grant products, Microsoft.StoreServices
 ms.localizationpriority: medium
@@ -17,7 +17,7 @@ These APIs consist of REST methods that are designed to be used by developers wi
 -   Microsoft Store purchase API: [Grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), and [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).
 
 > [!NOTE]
-> The Microsoft Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. To use these APIs, you (or your organization) must have an Azure AD directory and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory.
+> The Microsoft Store collection API and purchase API use The Microsoft identity platform (Entra ID) authentication to access customer ownership information. To use these APIs, you (or your organization) must have an Entra ID tenant and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the tenant. If you already use Microsoft 365 or other business services from Microsoft, you already have Entra ID tenant.
 
 ## The Microsoft.StoreServices library
 
@@ -31,50 +31,50 @@ To help streamline the authentication flow and calling the Microsoft Store Servi
 
 The following steps describe the end-to-end process for using the Microsoft Store collection API and purchase API:
 
-1.  [Configure an application in Azure AD](#step-1).
-2.  [Associate your Azure AD application ID with your app in Partner Center](#step-2).
-3.  In your service, [create Azure AD access tokens](#step-3) that represent your publisher identity.
+1.  [Configure an application in Entra ID](#step-1).
+2.  [Associate your Entra ID application ID with your app in Partner Center](#step-2).
+3.  In your service, [create Entra ID access tokens](#step-3) that represent your publisher identity.
 4.  In your client Windows app, [create a Microsoft Store ID key](#step-4) that represents the identity of the current user, and pass this key back to your service.
 
 This end-to-end process involves two software components that perform different tasks:
 
-* **Your service**. This is an application that runs securely in the context of your business environment, and it can be implemented using any development platform you choose. Your service is responsible for creating the Azure AD access tokens needed for the scenario and for calling the REST URIs for the Microsoft Store collection API and purchase API.
+* **Your service**. This is an application that runs securely in the context of your business environment, and it can be implemented using any development platform you choose. Your service is responsible for creating the Entra ID access tokens needed for the scenario and for calling the REST URIs for the Microsoft Store collection API and purchase API.
 * **Your client Windows app**. This is the app for which you want to access and manage customer entitlement information (including add-ons for the app). This app is responsible for creating the Microsoft Store ID keys you need to call the Microsoft Store collection API and purchase API from your service.
 
 <span id="step-1"></span>
 
-## Step 1: Configure an application in Azure AD
+## Step 1: Configure an application in Entra ID
 
-Before you can use the Microsoft Store collection API or purchase API, you must create an Azure AD Web application, retrieve the tenant ID and application ID for the application, and generate a key. The Azure AD Web application represents the service from which you want to call the Microsoft Store collection API or purchase API. You need the tenant ID, application ID and key to generate Azure AD access tokens that you need to call the API.
+Before you can use the Microsoft Store collection API or purchase API, you must create an Entra ID Web application, retrieve the tenant ID and application ID for the application, and generate a key. The Entra ID Web application represents the service from which you want to call the Microsoft Store collection API or purchase API. You need the tenant ID, application ID and key to generate Entra ID access tokens that you need to call the API.
 
-1.  If you haven't done so already, follow the instructions in [Integrating Applications with Azure Active Directory](/azure/active-directory/develop/active-directory-integrating-applications) to register a **Web app / API** application with Azure AD.
+1.  If you haven't done so already, follow the instructions in [Quickstart: Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app) to register a **Web app / API** application with Entra ID.
     > [!NOTE]
-    > When you register your application, you must choose **Web app / API** as the application type so that you can retrieve a key (also called a *client secret*) for your application. In order to call the Microsoft Store collection API or purchase API, you must provide a client secret when you request an access token from Azure AD in a later step.
+    > When you register your application, you must choose **Web app / API** as the application type so that you can retrieve a key (also called a *client secret*) for your application. In order to call the Microsoft Store collection API or purchase API, you must provide a client secret when you request an access token from Entra ID in a later step.
 
-2.  In the [Azure Management Portal](https://portal.azure.com/), navigate to **Azure Active Directory**. Select your directory, click **App registrations** in the left navigation pane, and then select your application.
+2.  In the [Azure Management Portal](https://portal.azure.com/), navigate to **Microsoft Entra ID**. Select your tenant, click **App registrations** in the left navigation pane under Manage, and then select your application.
 3.  You are taken to the application's main registration page. On this page, copy the **Application ID** value for use later.
-4.  Create a key that you will need later (this is all called a *client secret*). In the left pane, click **Settings** and then **Keys**. On this page, complete the steps to [create a key](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copy this key for later use.
+4.  Create a key that you will need later (this is all called a *client secret*). In the left pane, click **Settings** and then **Keys**. On this page, complete the steps to [create a key](/entra/identity-platform/quickstart-register-app?tabs=client-secret#to-add-application-credentials-or-permissions-to-access-web-apis). Copy this key for later use.
 
 <span id="step-2"></span>
 
-## Step 2: Associate your Azure AD application ID with your client app in Partner Center
+## Step 2: Associate your Entra ID application ID with your client app in Partner Center
 
-Before you can use the Microsoft Store collection API or purchase API to configure the ownership and purchases for your app or add-on, you must associate your Azure AD application ID with the app (or the app that contains the add-on) in Partner Center.
+Before you can use the Microsoft Store collection API or purchase API to configure the ownership and purchases for your app or add-on, you must associate your Entra application ID with the app (or the app that contains the add-on) in Partner Center.
 
 > [!NOTE]
-> You only need to perform this task one time. After you have your tenant ID, application ID and client secret, you can reuse these values any time you need to create a new Azure AD access token.
+> You only need to perform this task one time. After you have your tenant ID, application ID and client secret, you can reuse these values any time you need to create a new Entra ID access token.
 
 1.  Sign in to [Partner Center](https://partner.microsoft.com/dashboard) and select your app.
-2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD application ID into one of the available **Client ID** fields.
+2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Entra application ID into one of the available **Client ID** fields.
 
 <span id="step-3"></span>
 
-## Step 3: Create Azure AD access tokens
+## Step 3: Create Entra ID access tokens
 
-Before you can retrieve a Microsoft Store ID key or call the Microsoft Store collection API or purchase API, your service must create several different Azure AD access tokens that represent your publisher identity. Each token will be used with a different API. The lifetime of each token is 60 minutes, and you can refresh them after they expire.
+Before you can retrieve a Microsoft Store ID key or call the Microsoft Store collection API or purchase API, your service must create several different Entra ID access tokens that represent your publisher identity. Each token will be used with a different API. The lifetime of each token is 60 minutes, and you can refresh them after they expire.
 
 > [!IMPORTANT]
-> Create Azure AD access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
+> Create Entra ID access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
 
 <span id="access-tokens"></span>
 
@@ -113,7 +113,7 @@ For each token, specify the following parameter data:
 
 * For the *resource* parameter, specify one of the audience URIs listed in the [previous section](#access-tokens), depending on the type of access token you are creating.
 
-After your access token expires, you can refresh it by following the instructions [here](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](/azure/active-directory/develop/id-tokens).
+After your access token expires, you can refresh it by following the instructions [here](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](/entra/identity-platform/id-tokens).
 
 <span id="step-4"></span>
 
@@ -124,7 +124,7 @@ Before you can call any method in the Microsoft Store collection API or purchase
 Currently, the only way to create a Microsoft Store ID key is by calling a Universal Windows Platform (UWP) API from client code in your app. The generated key represents the identity of the user who is currently signed in to the Microsoft Store on the device.
 
 > [!NOTE]
-> Each Microsoft Store ID key is valid for 90 days. After a key expires, you can [renew the key](renew-a-windows-store-id-key.md). We recommend that you renew your Microsoft Store ID keys rather than creating new ones.
+> Each Microsoft Store ID key is valid for 30 days. Before the key expires, you can [renew the key](renew-a-windows-store-id-key.md). We recommend that you renew your Microsoft Store ID keys rather than creating new ones.
 
 <span />
 
@@ -132,7 +132,7 @@ Currently, the only way to create a Microsoft Store ID key is by calling a Unive
 
 Follow these steps to create a Microsoft Store ID key that you can use with the Microsoft Store collection API to [query for products owned by a user](query-for-products.md) or [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md).
 
-1.  Pass the Azure AD access token that has the audience URI value `https://onestore.microsoft.com/b2b/keys/create/collections` from your service to your client app. This is one of the tokens you created [earlier in step 3](#step-3).
+1.  Pass the Entra ID access token that has the audience URI value `https://onestore.microsoft.com/b2b/keys/create/collections` from your service to your client app. This is one of the tokens you created [earlier in step 3](#step-3).
 
 2.  In your app code, call one of these methods to retrieve a Microsoft Store ID key:
 
@@ -140,7 +140,7 @@ Follow these steps to create a Microsoft Store ID key that you can use with the 
 
   * If your app uses the [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) class in the [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) namespace to manage in-app purchases, use the [CurrentApp.GetCustomerCollectionsIdAsync](/uwp/api/windows.applicationmodel.store.currentapp.getcustomercollectionsidasync) method.
 
-    Pass your Azure AD access token to the *serviceTicket* parameter of the method. If you maintain anonymous user IDs in the context of services that you manage as the publisher of the current app, you can also pass a user ID to the *publisherUserId* parameter to associate the current user with the new Microsoft Store ID key (the user ID will be embedded in the key). Otherwise, if you don't need to associate a user ID with the Microsoft Store ID key, you can pass any string value to the *publisherUserId* parameter.
+    Pass your Entra ID access token to the *serviceTicket* parameter of the method. If you maintain anonymous user IDs in the context of services that you manage as the publisher of the current app, you can also pass a user ID to the *publisherUserId* parameter to associate the current user with the new Microsoft Store ID key (the user ID will be embedded in the key). Otherwise, if you don't need to associate a user ID with the Microsoft Store ID key, you can pass any string value to the *publisherUserId* parameter.
 
 3.  After your app successfully creates a Microsoft Store ID key, pass the key back to your service.
 
@@ -150,7 +150,7 @@ Follow these steps to create a Microsoft Store ID key that you can use with the 
 
 Follow these steps to create a Microsoft Store ID key that you can use with the Microsoft Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).
 
-1.  Pass the Azure AD access token that has the audience URI value `https://onestore.microsoft.com/b2b/keys/create/purchase` from your service to your client app. This is one of the tokens you created [earlier in step 3](#step-3).
+1.  Pass the Entra ID access token that has the audience URI value `https://onestore.microsoft.com/b2b/keys/create/purchase` from your service to your client app. This is one of the tokens you created [earlier in step 3](#step-3).
 
 2.  In your app code, call one of these methods to retrieve a Microsoft Store ID key:
 
@@ -158,7 +158,7 @@ Follow these steps to create a Microsoft Store ID key that you can use with the 
 
   * If your app uses the [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) class in the [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) namespace to manage in-app purchases, use the [CurrentApp.GetCustomerPurchaseIdAsync](/uwp/api/windows.applicationmodel.store.currentapp.getcustomerpurchaseidasync) method.
 
-    Pass your Azure AD access token to the *serviceTicket* parameter of the method. If you maintain anonymous user IDs in the context of services that you manage as the publisher of the current app, you can also pass a user ID to the *publisherUserId* parameter to associate the current user with the new Microsoft Store ID key (the user ID will be embedded in the key). Otherwise, if you don't need to associate a user ID with the Microsoft Store ID key, you can pass any string value to the *publisherUserId* parameter.
+    Pass your Entra ID access token to the *serviceTicket* parameter of the method. If you maintain anonymous user IDs in the context of services that you manage as the publisher of the current app, you can also pass a user ID to the *publisherUserId* parameter to associate the current user with the new Microsoft Store ID key (the user ID will be embedded in the key). Otherwise, if you don't need to associate a user ID with the Microsoft Store ID key, you can pass any string value to the *publisherUserId* parameter.
 
 3.  After your app successfully creates a Microsoft Store ID key, pass the key back to your service.
 
@@ -200,11 +200,11 @@ Here is an example of a decoded Microsoft Store ID key claim set.
     "http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload": "ZdcOq0/N2rjytCRzCHSqnfczv3f0343wfSydx7hghfu0snWzMqyoAGy5DSJ5rMSsKoQFAccs1iNlwlGrX+/eIwh/VlUhLrncyP8c18mNAzAGK+lTAd2oiMQWRRAZxPwGrJrwiq2fTq5NOVDnQS9Za6/GdRjeiQrv6c0x+WNKxSQ7LV/uH1x+IEhYVtDu53GiXIwekltwaV6EkQGphYy7tbNsW2GqxgcoLLMUVOsQjI+FYBA3MdQpalV/aFN4UrJDkMWJBnmz3vrxBNGEApLWTS4Bd3cMswXsV9m+VhOEfnv+6PrL2jq8OZFoF3FUUpY8Fet2DfFr6xjZs3CBS1095J2yyNFWKBZxAXXNjn+zkvqqiVRjjkjNajhuaNKJk4MGHfk2rZiMy/aosyaEpCyncdisHVSx/S4JwIuxTnfnlY24vS0OXy7mFiZjjB8qL03cLsBXM4utCyXSIggb90GAx0+EFlVoJD7+ZKlm1M90xO/QSMDlrzFyuqcXXDBOnt7rPynPTrOZLVF+ODI5HhWEqArkVnc5MYnrZD06YEwClmTDkHQcxCvU+XUEvTbEk69qR2sfnuXV4cJRRWseUTfYoGyuxkQ2eWAAI1BXGxYECIaAnWF0W6ThweL5ZZDdadW9Ug5U3fZd4WxiDlB/EZ3aTy8kYXTW4Uo0adTkCmdLibw=",
     "http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId": "infusQMLaYCrgtC0d/SZWoPB4FqLEwHXgZFuMJ6TuTY=",
     "http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri": "https://collections.mp.microsoft.com/v6.0/b2b/keys/renew",
-    "iat": 1442395542,
+    "iat": 1733526889,
     "iss": "https://collections.mp.microsoft.com/v6.0/keys",
     "aud": "https://collections.mp.microsoft.com/v6.0/keys",
-    "exp": 1450171541,
-    "nbf": 1442391941
+    "exp": 1733523289,
+    "nbf": 1736118889
 }
 ```
 
@@ -216,7 +216,6 @@ Here is an example of a decoded Microsoft Store ID key claim set.
 * [Get subscriptions for a user](get-subscriptions-for-a-user.md)
 * [Change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)
-* [Integrating Applications with Azure Active Directory](/azure/active-directory/develop/quickstart-register-app)
-* [Understanding the Azure Active Directory application manifest]( https://go.microsoft.com/fwlink/?LinkId=722500)
-* [Supported Token and Claim Types](/azure/active-directory/develop/id-tokens)
-* [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services) 
+* [Integrating Applications with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app)
+* [ID tokens in the Microsoft identity platform](/entra/identity-platform/id-tokens)
+* [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services)

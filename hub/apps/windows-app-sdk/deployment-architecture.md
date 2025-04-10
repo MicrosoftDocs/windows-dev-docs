@@ -4,8 +4,6 @@ description: This article provides a high level explanation of the Windows App S
 ms.topic: article
 ms.date: 11/16/2021
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 

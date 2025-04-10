@@ -13,8 +13,6 @@ keywords: cortana
 
 >[!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
->
-> See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
 
 In addition to using voice commands within **Cortana** to access system features, you may also extend **Cortana** with features and functionality from your app (as a background task) using voice commands that specify an action or command to run. When an app handles a voice command in the background, it does not take focus. Instead, it returns all feedback and results through the **Cortana** canvas and the **Cortana** voice.  
 

@@ -2,8 +2,6 @@
 description: This section describes how you can use the Microsoft Store Web installer to improve distribution of your app on the web
 title: How to use the Microsoft Store Web Installer to distribute your apps on the web.
 ms.topic: article
-author: desigrit
-ms.author: raober
 ms.date: 05/07/2024
 keywords: uwp, microsoft store installer, store installer, web installer
 ms.localizationpriority: medium

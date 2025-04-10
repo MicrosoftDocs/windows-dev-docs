@@ -2,7 +2,7 @@
 title: Define markets for PWA
 description: The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to list your PWA app.
 ms.topic: article
-ms.date: 10/30/2022
+ms.date: 11/4/2024
 ms.localizationpriority: medium
 ---
 
@@ -26,7 +26,7 @@ Note that your selections here apply only to new acquisitions; if someone alread
 
 > [!IMPORTANT]
 > It is your responsibility to meet any local legal requirements, even if those requirements aren't listed here or in Partner Center.
-> Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](./age-ratings.md) for more info.
+> Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. See [company account verification requirements](/windows/apps/publish/store-business-verification-reqs) for more information. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](./age-ratings.md) for more info.
 
 > [!NOTE]
 > You will also see a checkbox that lets you indicate whether to offer your app in any market that the Store may add in the future. If you leave this box checked, and we later add new markets, the base price and general availability date for your submission will be used for your app in those markets. If you don't want this to happen, you can uncheck this box, in which case we will not list your app in any future markets (though you can always add them later).
@@ -401,7 +401,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
 
 ## Price considerations for specific markets
 
-Payment methods such as gift cards and mobile operator billing can help increase sales of paid apps and in-app purchase items. Due to the higher costs to enable such payment methods, a Commerce Expansion Adjustment is added to the Store Fee deducted from Net Receipts to calculate the App Proceeds payable for paid apps and in-app purchase transactions in the countries/regions and using the payment methods in the tables below. You may want to consider if the Commerce Expansion Adjustment applies in a country/region where your app is available and factor that into your market pricing strategy. Details about the Commerce Expansion Adjustment can be found in the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
+Payment methods such as gift cards and mobile operator billing can help increase sales of paid apps and in-app purchase items. Due to the higher costs to enable such payment methods, a Commerce Expansion Adjustment is added to the Store Fee deducted from Net Receipts to calculate the App Proceeds payable for paid apps and in-app purchase transactions in the countries/regions and using the payment methods in the tables below. You may want to consider if the Commerce Expansion Adjustment applies in a country/region where your app is available and factor that into your market pricing strategy. Details about the Commerce Expansion Adjustment can be found in the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
 
 The Commerce Expansion Adjustment will be applied to all transactions processed for the specified Country/Region and Payment Methods as of the Effective Date. This information will be updated monthly; new countries/regions and payment methods will be listed within thirty (30) days after the Commerce Expansion Adjustment takes effect for that country/region and payment method.
 

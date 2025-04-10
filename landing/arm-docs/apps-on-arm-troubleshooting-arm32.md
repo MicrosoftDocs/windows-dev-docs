@@ -5,8 +5,6 @@ ms.date: 06/25/2021
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
-author: mattwojo
-ms.author: mattwoj
 ms.reviewer: marcs
 ---
 

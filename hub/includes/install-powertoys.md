@@ -1,7 +1,5 @@
 ---
 ms.topic: include
-author: alvinashcraft
-ms.author: aashcraft
 ms.date: 07/12/2024
 ---
 ## Install PowerToys

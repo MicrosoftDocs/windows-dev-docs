@@ -1,7 +1,7 @@
 ---
 title: install Command
 description: Installs the specified application.
-ms.date: 11/15/2023
+ms.date: 07/11/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -14,7 +14,7 @@ The **install** command requires that you specify the exact string to install. I
 
 ## Usage
 
-`winget install [[-q] \<query> ...] [\<options>]`
+`winget install [[-q] <query> ...] [<options>]`
 
 ![install command](./images/install.png)
 
@@ -59,20 +59,27 @@ The options allow you to customize the install experience to meet your needs.
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to install to (if supported). |
 | **--ignore-security-hash** |    Ignore the installer hash check failure. Not recommended. |
+| **--allow-reboot** | Allows a reboot if applicable. |
+| **--skip-dependencies** | Skips processing package dependencies and Windows features. |
 | **--ignore-local-archive-malware-scan** |    Ignore the malware scan performed as part of installing an archive type package from local manifest. |
 | **--dependency-source** |    Find package dependencies using the specified source. |
 | **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--no-upgrade** |    Skips upgrade if an installed version already exists. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **-r, --rename** | The value to rename the executable file (portable) |
-| **--uninstall-previous** | Uninstall the previous version of the package during upgrade |
+| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
+| **--authentication-account** | Specify the account to be used for authentication. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **-r, --rename** | The value to rename the executable file (portable). |
+| **--uninstall-previous** | Uninstall the previous version of the package during upgrade. |
 | **--force** | Direct run the command and continue with non security related issues. |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ### Example queries
 

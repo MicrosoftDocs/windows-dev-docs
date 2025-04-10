@@ -34,7 +34,7 @@ WinUI is a native user experience framework for both Windows desktop and UWP app
 You can use WinUI in the following ways in desktop apps:
 
 * Use [WinUI 3](../../winui/index.md) to create desktop apps (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)) with an entirely WinUI 3-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
-* You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands.md) and host WinUI 2 controls.
+* You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands/xaml-islands.md) and host WinUI 2 controls.
 
 For more information, see [WinUI](../../winui/index.md).
 
@@ -68,13 +68,13 @@ For more information, see [What's new in .NET 6](/dotnet/core/whats-new/dotnet-6
 
 Starting with the Windows 10, version 1903, you can add [UWP XAML controls](/windows/uwp/design/controls-and-patterns/controls-by-function) directly to any UI element in a WPF, Windows Forms, or C++ desktop app that is associated with a window handle (HWND). This means that you can fully integrate the latest UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) into windows and other display surfaces in your desktop apps. This developer scenario is sometimes called *XAML islands*.
 
-For more information, see [WinRT XAML controls in desktop apps](xaml-islands.md)
+For more information, see [WinRT XAML controls in desktop apps](xaml-islands/xaml-islands.md)
 
 ## Use the Visual layer in desktop apps
 
 You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
 
-For more information, see [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md).
+For more information, see [Modernize your desktop app using the Visual layer](ui/visual-layer-in-desktop-apps.md).
 
 ## Additional features available to apps with package identity
 

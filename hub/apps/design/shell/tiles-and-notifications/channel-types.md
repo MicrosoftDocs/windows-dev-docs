@@ -163,7 +163,7 @@ In general, we recommend using the primary channel in your app, with a few excep
 
 ## Related articles
 
-* [Send a local tile notification](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [Send a local tile notification](/windows/uwp/launch-resume/sending-a-local-tile-notification)
 * [Adaptive and interactive toast notifications](../tiles-and-notifications/adaptive-interactive-toasts.md)
 * [Quickstart: Sending a push notification](/previous-versions/windows/apps/hh868252(v=win.10))
 * [How to update a badge through push notifications](/previous-versions/windows/apps/hh465450(v=win.10))

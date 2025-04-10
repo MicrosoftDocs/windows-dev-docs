@@ -12,6 +12,10 @@ ms.localizationpriority: medium
 
 Welcome to the [UWP platform](universal-application-platform-guide.md)! These tutorials will help you create your first UWP app in the language of your choice.
 
+> [!NOTE]
+> If you are starting to develop Windows apps, we recommend you consider using the [Windows App SDK](/windows/apps/windows-app-sdk/), and [WinUI](/windows/apps/develop/) rather than UWP. Although still supported, UWP is not under active development. Please see [Start developing Windows apps](/windows/apps/get-started/start-here) for more information.
+
+
 To get started, choose your favorite language.
 
 ## C# and XAML

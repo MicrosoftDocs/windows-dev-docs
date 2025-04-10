@@ -1,7 +1,7 @@
 ---
 description: The Age ratings page of the app submission process lets you provide information about your MSIX app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
 title: Age ratings for MSIX app
-ms.date: 10/30/2022
+ms.date: 12/5/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---

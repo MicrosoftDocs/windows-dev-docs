@@ -2,10 +2,8 @@
 title: Samples and tools for Windows development
 description: Use these Github repositories to learn about Windows development. Sample apps demonstrate Windows features, API usage patterns, and end-to-end scenarios.
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 08/19/2024
 keywords: windows, win32, desktop development
-ms.author: mikben
-author: matchamatch
 ms.localizationpriority: medium
 ms.collection: windows11
 ms.custom: kr2b-contr-experiment
@@ -97,9 +95,6 @@ These additional tools will help you [set up your development environment on Win
 
 :::row:::
    :::column:::
-      [**Dev Home**](/windows/dev-home/)<br/> Introduced with Windows 11, Dev Home is a dashboard that provides quick access to the tools you need to develop apps for Windows.
-   :::column-end:::
-   :::column:::
       [**Dev Drive**](/windows/dev-drive/)<br/>In order to speed up common development tasks, you can create a specially formatted drive (a Dev Drive) that is used to store your projects.
    :::column-end:::
 :::row-end:::
@@ -119,7 +114,6 @@ Most WinUI apps are written in C# or C++. These guides contain articles, tutoria
 - [C# language documentation](/dotnet/csharp/)
 - [C++ language documentation](/cpp/)
 - [C++/WinRT language documentation](/windows/uwp/cpp-and-winrt-apis/)
-
 
 ## Next steps
 

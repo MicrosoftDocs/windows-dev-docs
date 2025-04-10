@@ -4,8 +4,6 @@ description: Get started with WinUI 3 / Windows App SDK by building a simple Win
 ms.topic: article
 ms.date: 2/20/2023
 keywords: windows app sdk, winappsdk, winui3
-ms.author: mikben
-author: matchamatch
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers
@@ -49,7 +47,10 @@ This separation of **business logic** and **presentation** concerns lets you bin
 
 ### The project's file structure
 
-Let's review the project's file structure before making code changes.
+Let's review the project's file structure before making code changes. This is located in the [Solution Explorer](/visualstudio/ide/use-solution-explorer).
+
+> [!TIP]
+> To locate features like the Solution Explorer, click on Search on navigation bar and use the Feature Search option.  :::image type="content" source="images/hello-world/feature-search.png" alt-text="Feature Search":::
 
 The project's file structure currently looks like this:
 
@@ -57,21 +58,21 @@ The project's file structure currently looks like this:
 
 This table describes the files, starting from the top and working down:
 
-| Item | Description |
+| File Name and <br> Image Reference Number | Description |
 |--|--|
-| `Solution 'Hello World'` | This is a **solution file**, a logical container for your **projects**. Projects are often apps, but they can also be supporting class libraries. |
-| `Hello World` | This is a **project file**, a logical container for your app's files. |
-| `Dependencies` | Your app depends on **frameworks** (like [.NET](/dotnet/fundamentals/) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)) and **packages** (like [Windows App SDK](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab)). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here. |
-| `Properties` | By convention, WinUI 3 projects place publish profiles and launch configuration files in this folder. |
-| `PublishProfiles` | Your **publish profiles** specify your app's publishing configuration across a variety of platforms. |
-| `launchSettings.json` | This file lets you configure **launch profiles** that can be used when running your app via `dotnet run`. |
-| `Assets` | This folder contains your app's logo, images, and other media assets. |
-| `app.manifest` | This app manifest file contains configuration related to the way that Windows displays your app when installed on user devices. |
-| `App.xaml` | This markup file specifies the shared, globally accessible resources that your app depends on. |
-| `App.xaml.cs` | This code-behind file represents the entry point to your app's business logic. It's responsible for creating and activating an instance of your `MainWindow`. |
-| `MainWindow.xaml` | This markup file contains the presentation concerns for your app's main window. |
-| `MainWindow.xaml.cs` | This code-behind file contains the business logic concerns associated with your app's main window. |
-| `Package.appxmanifest` | This [package manifest file](/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) lets you configure publisher information, logos, processor architectures, and other details that determine how your app appears in the Windows Store. |
+| `Solution 'Hello World'`<br> 1. | This is a **solution file**, a logical container for your **projects**. Projects are often apps, but they can also be supporting class libraries. |
+| `Hello World` <br> 2. | This is a **project file**, a logical container for your app's files. |
+| `Dependencies` <br> 3. | Your app depends on **frameworks** (like [.NET](/dotnet/fundamentals/) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)) and **packages** (like [Windows App SDK](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab)). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here. |
+| `Properties` <br> 4. | By convention, WinUI 3 projects place publish profiles and launch configuration files in this folder. |
+| `PublishProfiles` <br> 5. | Your **publish profiles** specify your app's publishing configuration across a variety of platforms. |
+| `launchSettings.json` <br> 6. | This file lets you configure **launch profiles** that can be used when running your app via `dotnet run`. |
+| `Assets` <br> 7. | This folder contains your app's logo, images, and other media assets. |
+| `app.manifest` <br> 8. | This app manifest file contains configuration related to the way that Windows displays your app when installed on user devices. |
+| `App.xaml` <br> 9. | This markup file specifies the shared, globally accessible resources that your app depends on. |
+| `App.xaml.cs` <br> 10. | This code-behind file represents the entry point to your app's business logic. It's responsible for creating and activating an instance of your `MainWindow`. |
+| `MainWindow.xaml` <br> 11. | This markup file contains the presentation concerns for your app's main window. |
+| `MainWindow.xaml.cs` <br> 12. | This code-behind file contains the business logic concerns associated with your app's main window. |
+| `Package.appxmanifest` <br> 13. | This [package manifest file](/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) lets you configure publisher information, logos, processor architectures, and other details that determine how your app appears in the Windows Store. |
 
 ## Display "Hello world!"
 
@@ -114,7 +115,9 @@ public sealed partial class MainWindow : Window
 }
 ```
 
-If you restart your app, you should see a red `Hello world!`:
+Reset your app by selecting Build > Rebuild Solution from the menu or pressing Ctrl + Shift + B. Then Start your app again by clicking the "Start" button in the Visual Studio toolbar or by pressing F5.
+
+The app will update and you should see a red `Hello world!`:
 
 :::image type="content" source="images/hello-world/red-hello.png" alt-text="A red 'Hello world!'":::
 
@@ -260,15 +263,16 @@ namespace Hello_World
 
 **Q: What does "packaged" mean?**
 
-Windows apps can be delivered to end-users using a variety of application packaging formats. When working with WinUI 3 / Windows App SDK, **packaged apps** use MSIX to bundle your app in a way that offers convenient installation and updates to end-users. Visit [Deployment architecture and overview for framework-dependent apps](../windows-app-sdk/deployment-architecture.md) to learn more.
+Windows apps can be delivered to end-users using a variety of application packaging formats. When working with WinUI and Windows App SDK, **packaged apps** use MSIX to bundle your app in a way that offers convenient installation and updates to end-users. Visit [Deployment architecture and overview for framework-dependent apps](../windows-app-sdk/deployment-architecture.md) to learn more.
 
-**Q: Can I use VS Code to build WinUI 3 apps?**
+**Q: Can I use VS Code to build WinUI apps?**
 
-Although technically possible, we strongly recommend using Visual Studio 2019 / 2022 to build desktop apps with WinUI 3 / Windows App SDK. See [the Windows developer FAQ](../get-started/windows-developer-faq.yml#do-i-need-to-use-visual-studio-to-build-winui-3-apps) for more information.
+Although technically possible, we strongly recommend using Visual Studio 2022 to build desktop apps with WinUI and Windows App SDK. See [the Windows developer FAQ](../get-started/windows-developer-faq.yml#do-i-need-to-use-visual-studio-to-build-winui-apps) for more information.
 
-**Q: Can I use C++ to build WinUI 3 apps?**
+**Q: Can I use C++ to build WinUI apps?**
 
 Yes! For more information, see [Introduction to C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+
 ## Related
 
 - [Sample applications for Windows development](../get-started/samples.md)

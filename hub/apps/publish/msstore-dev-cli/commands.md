@@ -1,9 +1,8 @@
 ---
 description: How to run the Microsoft Store Developer CLI (preview) commands.
 title: Microsoft Store Developer CLI (preview) Commands
-ms.date: 12/02/2022
+ms.date: 11/08/2024
 ms.topic: article
-ms.localizationpriority: medium
 zone_pivot_groups: msstoredevcli-installer-packaging
 ---
 
@@ -395,7 +394,7 @@ The `init` command helps you setup your application to publish to the Microsoft 
 - .NET MAUI
 - Flutter
 - Electron
-- React Native for Windows
+- React Native for Desktop
 - PWA
 
 ### Init Command - Usage Examples
@@ -430,14 +429,14 @@ msstore init "C:\path\to\flutter_app"
 msstore init "C:\path\to\electron_app"
 ```
 
-#### Init Command - React Native for Windows
+#### Init Command - React Native for Desktop
 
 ```console
 msstore init "C:\path\to\react_native_app"
 ```
 
 > [!Note]
-> For Electron, as well as React Native for Windows projects, both `Npm` and `Yarn` are supported. The presence of the `Yarn` lock file (`yarn.lock`) will be used to determine which package manager to use, so make sure that you check in your lock file into your source control system.
+> For Electron, as well as React Native for Desktop projects, both `Npm` and `Yarn` are supported. The presence of the `Yarn` lock file (`yarn.lock`) will be used to determine which package manager to use, so make sure that you check in your lock file into your source control system.
 
 #### Init Command - PWA
 
@@ -500,7 +499,7 @@ msstore package "C:\path\to\flutter_app"
 msstore package "C:\path\to\electron_app"
 ```
 
-#### Package Command - React Native for Windows
+#### Package Command - React Native for Desktop
 
 ```console
 msstore package "C:\path\to\react_native_app"
@@ -562,7 +561,7 @@ msstore publish "C:\path\to\flutter_app"
 msstore publish "C:\path\to\electron_app"
 ```
 
-#### Publish Command - React Native for Windows
+#### Publish Command - React Native for Desktop
 
 ```console
 msstore publish "C:\path\to\react_native_app"

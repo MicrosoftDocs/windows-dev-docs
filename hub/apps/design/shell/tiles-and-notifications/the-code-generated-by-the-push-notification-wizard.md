@@ -216,7 +216,7 @@ Because Windows responds to push notifications, it can handle most of these noti
 
 You should use push notifications according to the guidelines for Windows apps, because those notifications use up a user's resources and can be distracting if overused. See [Guidelines and checklist for push notifications](./windows-push-notification-services--wns--overview.md).
 
-If you're updating live tiles with push notifications, you should also follow the guidelines in [Guidelines and checklist for tiles and badges](./creating-tiles.md).
+If you're updating live tiles with push notifications, you should also follow the guidelines in [Guidelines and checklist for tiles and badges](/windows/uwp/launch-resume/creating-tiles).
 
 ## Next steps
 

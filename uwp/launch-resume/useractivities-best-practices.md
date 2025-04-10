@@ -46,7 +46,8 @@ While every app is different, most apps will fall into one of the following inte
 ## User Activity design
 
 User Activities consist of three components: an activation URI, visual data, and content metadata.
-* The activation URI is a URI that can be passed to an application or experience in order to resume the application with a specific context. Typically, these links take the form of protocol handler for a scheme (for example, "my-app://page2?action=edit"). It is up to the developer to determine how URI parameters will be handled by their app. See [Handle URI activation](./handle-uri-activation.md) for more information.
+
+* The activation URI is a URI that can be passed to an application or experience in order to resume the application with a specific context. Typically, these links take the form of protocol handler for a scheme (for example, "my-app://page2?action=edit"). It is up to the developer to determine how URI parameters will be handled by their app. See [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation) for more information.
 * The visual data, consisting of a set of required and optional properties (for example: title, description, or Adaptive Card elements), allow users to visually identify an Activity. See below for guidelines on creating Adaptive Card visuals for your Activity.
 * The content metadata is JSON data that can be used to group and retrieve activities under a specific context. Typically, this takes the form of http://schema.org data. See below for guidelines on filling out this data.
 
@@ -104,5 +105,5 @@ In the following example, the content metadata JSON, following the standards of 
 * [User Activities (Project Rome docs)](/windows/project-rome/user-activities/)
 * [Adaptive cards](/adaptive-cards/)
 * [Adaptive cards visualizer, samples](https://adaptivecards.io/)
-* [Handle URI activation](./handle-uri-activation.md)
+* [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation)
 * [Microsoft Graph](https://developer.microsoft.com/graph)

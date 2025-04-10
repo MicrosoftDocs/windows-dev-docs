@@ -26,7 +26,7 @@ Your PWA Report Card contains your website's score, out of a maximum score of 10
 
 ### Manifest
 
-PWA evaluates your website's [Web Application Manifest](https://www.w3.org/TR/appmanifest/) if one is available, and identifies fields or values tht are required, recommended, and optional. You can improve your score by adding missing values, either by editing and re-publishing your manifest file, or by using the online manifest editor.
+PWA evaluates your website's [Web Application Manifest](https://www.w3.org/TR/appmanifest/) if one is available, and identifies fields or values that are required, recommended, and optional. You can improve your score by adding missing values, either by editing and re-publishing your manifest file, or by using the online manifest editor.
 
 > [!WARNING]
 > Changes made in the online manifest editor will not be published to your website. The changes you make will only be used by PWA Builder when creating your PWA.

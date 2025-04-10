@@ -20,7 +20,7 @@ You are responsible for ensuring your app complies with applicable privacy laws 
 
 In this section, you must indicate whether your app accesses, collects, or transmits any [personal information](../../store-policies.md#105-personal-information). If you answer Yes, a privacy policy URL is required. Otherwise, it is optional (though if we determine that your app requires a privacy policy, and you have not provided one, your submission may fail certification).
 
-To help you determine if your app requires a privacy policy, review the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](../../store-policies.md#105-personal-information).
+To help you determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md#105-personal-information).
 
 > [!NOTE]
 > Microsoft does not provide a default privacy policy for your app, and your app is not covered by any Microsoft privacy policy.

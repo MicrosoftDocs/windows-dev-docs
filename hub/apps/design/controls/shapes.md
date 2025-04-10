@@ -2,7 +2,7 @@
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: Draw shapes
 description: Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The Path class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves.
-ms.date: 11/16/2017
+ms.date: 02/26/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -18,19 +18,9 @@ Two sets of classes define a region of space in XAML UI: [**Shape**](/windows/wi
 
 The [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) classes are [**Line**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.line), [**Ellipse**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.ellipse), [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.rectangle), [**Polygon**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.polygon), [**Polyline**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.polyline), and [**Path**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path). **Path** is interesting because it can define an arbitrary geometry, and the [**Geometry**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.geometry) class is involved here because that's one way to define the parts of a **Path**.
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-APIs for these shapes exist in the [Windows.UI.Xaml.Shapes](/uwp/api/windows.ui.xaml.shapes) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Path class](/uwp/api/windows.ui.xaml.shapes.path), [Windows.UI.Xaml.Shapes namespace](/uwp/api/windows.ui.xaml.shapes), [Windows.UI.Xaml.Media namespace](/uwp/api/windows.ui.xaml.media)
-
 ## Fill and Stroke for shapes
 
-For a [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) to render to the app canvas, you must associate a [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.brush) with it. Set the [**Fill**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.fill) property of the **Shape** to the **Brush** you want. For more info about brushes, see [Using brushes](../style/brushes.md).
+For a [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) to render to the app canvas, you must associate a [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.brush) with it. Set the [**Fill**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.fill) property of the **Shape** to the **Brush** you want. For more info about brushes, see [Using brushes](../../develop/platform/xaml/brushes.md).
 
 A [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) can also have a [**Stroke**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.stroke), which is a line that is drawn around the shape's perimeter. A **Stroke** also requires a [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.brush) that defines its appearance, and should have a non-zero value for [**StrokeThickness**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.strokethickness). **StrokeThickness** is a property that defines the perimeter's thickness around the shape edge. If you don't specify a **Brush** value for **Stroke**, or if you set **StrokeThickness** to 0, then the border around the shape is not drawn.
 
@@ -325,3 +315,13 @@ Here's the rendered [**Path**](/windows/windows-app-sdk/api/winrt/microsoft.ui.x
 ![Screenshot of a complex rendered path.](images/shapes-path-2.png)
 
 Using [**PathGeometry**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.PathGeometry) may be more readable than populating a [**Path.Data**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path.data) string. On the other hand, [**Path.Data**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path.data) uses a syntax compatible with Scalable Vector Graphics (SVG) image path definitions so it may be useful for porting graphics from SVG, or as output from a tool like Blend.
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for these shapes exist in the [Windows.UI.Xaml.Shapes](/uwp/api/windows.ui.xaml.shapes) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [Path class](/uwp/api/windows.ui.xaml.shapes.path), [Windows.UI.Xaml.Shapes namespace](/uwp/api/windows.ui.xaml.shapes), [Windows.UI.Xaml.Media namespace](/uwp/api/windows.ui.xaml.media)

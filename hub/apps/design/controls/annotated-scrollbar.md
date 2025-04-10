@@ -50,7 +50,7 @@ For collections that only have a few items or that only require a small amount o
 > - **Important APIs:** [AnnotatedScrollBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar), [ScrollView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview), [IScrollController interface](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollcontroller)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the AnnotatedScrollBar in action](winui3gallery:/item/AnnotatedScrollBar).
+> [Open the WinUI 3 Gallery app and see the AnnotatedScrollBar in action](winui3gallery:/item/AnnotatedScrollBar)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

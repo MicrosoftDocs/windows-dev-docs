@@ -1,6 +1,6 @@
 ---
 title: Develop apps for education.
-description: This section describes the Universal Windows Apps resources that are available to you to write Education apps for the Windows 10 and Windows 11 platforms.
+description: This section describes the Universal Windows Apps resources that are available to write Education apps for the Windows 10 and Windows 11 platforms.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, education

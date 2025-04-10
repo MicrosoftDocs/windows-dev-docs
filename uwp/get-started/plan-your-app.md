@@ -11,6 +11,9 @@ ms.localizationpriority: medium
 
 On Microsoft design teams, our process for creating apps consists of five distinct stages: concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
 
+> [!NOTE]
+> It is recommended that developers who are creating new projects consider using the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI](/windows/apps/winui/) rather than UWP. Please see [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw) for more details.
+
 ## Concept
 
 **Focus your app**

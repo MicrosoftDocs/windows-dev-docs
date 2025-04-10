@@ -1,15 +1,11 @@
 ---
 title: Use parallax to add depth and movement to your app.
-description: Learn how to use the ParallaxView control in a UWP app to create a visual effect where items closer to the viewer move faster than items in the background.
+description: Learn how to use the ParallaxView control to create a visual effect where items closer to the viewer move faster than items in the background.
 ms.assetid: 
 label: Parallax View
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: abarlow
-design-contact: conrwi
-dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ---

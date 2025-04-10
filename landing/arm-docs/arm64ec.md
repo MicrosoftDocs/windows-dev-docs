@@ -1,17 +1,15 @@
 ---
 title: Arm64EC for Windows 11 apps on Arm
 description: Learn how Arm64EC empowers you to build and incrementally update apps that benefit from native performance on Arm devices, without interrupting your current x64 functionality.
-ms.date: 08/08/2022
+ms.date: 02/27/2025
 ms.topic: overview
 ms.service: windows
 ms.subservice: arm
-author: marswe
-ms.author: marcs
 ---
 
 # Arm64EC - Build and port apps for native performance on Arm
 
-Arm64EC (“Emulation Compatible”) enables you to build new native apps or incrementally transition existing x64 apps to take advantage of the native speed and performance possible with Arm-powered devices, including better power consumption, battery life, and accelerated AI & ML workloads.
+Arm64EC ("Emulation Compatible") enables you to build new native apps or incrementally transition existing x64 apps to take advantage of the native speed and performance possible with Arm-powered devices, including better power consumption, battery life, and accelerated AI & ML workloads.
 
 Arm64EC is a new application binary interface (ABI) for apps running on Arm devices with Windows 11. It is a Windows 11 feature that requires the use of the Windows 11 SDK and is not available on Windows 10 on Arm.
 
@@ -27,21 +25,15 @@ An x64 or Arm64EC process can load and call into both x64 and Arm64EC binaries, 
 
 |Process architecture |x64 binary |Arm64EC binary |Arm64 binary |
 |---|---|---|---|
-|**x64/Arm64EC** |✔ |✔ |❌ |
-|**Arm64** |❌ |❌ |✔ |
-
-✔ = Supported,
-❌ = Not supported
+|**x64/Arm64EC** |**Supported** |**Supported** |Not supported |
+|**Arm64** |Not supported |Not supported |**Supported** |
 
 Similarly, at build time, Arm64EC binaries can link in both x64 and Arm64EC libs, while Arm64 binaries can only link in Arm64 libs. 
 
 |PE architecture |x64 lib |Arm64EC lib |Arm64 lib |
 |---|---|---|---|
-|**Arm64EC** |✔ |✔ |❌ |
-|**Arm64** |❌ |❌ |✔ |
-
-✔ = Supported,
-❌ = Not supported
+|**Arm64EC** |**Supported** |**Supported** |Not supported |
+|**Arm64** |Not supported |Not supported |**Supported** |
 
 For more detail about how the Arm64EC ABI enables interoperability, see [Understanding Arm64EC ABI and assembly code](./arm64ec-abi.md).
 

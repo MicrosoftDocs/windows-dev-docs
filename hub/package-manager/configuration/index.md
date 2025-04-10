@@ -1,7 +1,7 @@
 ---
 title: WinGet Configuration
 description: WinGet Configuration uses the winget configure command, PowerShell, and a YAML-formatted configuration file listing all of the software versions, packages, tools, and settings required to achieve the set up the desired state of the development environment on your Windows machine. Minimizing manual project setup and onboarding to a single command that is reliable and repeatable.
-ms.date: 10/23/2023
+ms.date: 11/21/2024
 ms.topic: overview
 ---
 
@@ -26,11 +26,7 @@ The benefits of using a WinGet Configuration file include:
 
 ## Use a WinGet Configuration file to configure your machine
 
-To set up your machine using a WinGet Configuration file, you can:
-
-1. [Install Dev Home](../../dev-home/index.md), go to **Machine configuration**, select **Configuration file**, and choose the WinGet configuration file that you would like to use. (To create a configuration file, see [How to author a WinGet Configuration file](create.md)).
-
-2. Use [winget configure](../winget/configure.md) in the command line. To use the `winget configure` command, you must be running WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
+To set up your machine using a WinGet Configuration file, use [winget configure](../winget/configure.md) in the command line. To use the `winget configure` command, you must be running WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
 
 ## WinGet Configuration FAQs
 
@@ -77,7 +73,7 @@ We recommend ALWAYS validating the integrity of a WinGet Configuration file befo
 
 ### Where can I find sample WinGet Configuration files?
 
-You can find sample WinGet Configuration files in the Windows Dev Home repo: [https://aka.ms/dsc.yaml](https://aka.ms/dsc.yaml).
+You can find sample WinGet Configuration files in the WinGet DSC repository: [https://aka.ms/dsc.yaml](https://aka.ms/dsc.yaml).
 
 ### Where can I find examples of PowerShell modules containing DSC resources?
 
@@ -88,10 +84,6 @@ The [PowerShell Gallery](https://www.powershellgallery.com/packages) hosts hundr
 ### Can I set up a policy to block the use of WinGet Configuration files in my organization?
 
 Yes. [Group Policy Objects](/microsoft-365/compliance/device-onboarding-gp) **EnableWindowsPackageManagerConfiguration** and **EnableWindowsPackageManagerConfigurationExplanation** can be utilized for disabling WinGet Configuration feature in your organization.
-
-### Where can I learn more about using WinGet Configurations with Dev Home and Dev Drives?
-
-Learn more about using the Machine Configuration tool in Windows 11 Dev Home in the article [Set up your Windows development environment with Dev Home](/windows/dev-home/setup). You may also be interested in learning how to use the more performance optimized Dev Drive storage volumes, see [Set up a Dev Drive on Windows 11](/windows/dev-drive/).
 
 ## Troubleshooting WinGet Configurations
 

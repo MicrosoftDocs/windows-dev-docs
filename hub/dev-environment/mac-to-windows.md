@@ -1,9 +1,6 @@
 ---
 title: Moving from Mac (Unix) to Windows
 description: A guide to help you transition from a Mac (Unix) to a Windows development environment, including shortcut key mapping and a brief overview of concepts that differ between Mac and Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.subservice: windows-nodejs
 keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC 

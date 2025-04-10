@@ -1,36 +1,34 @@
 ---
 title: Set up Node.js on WSL 2
 description: A guide to help you get your Node.js development environment set up on Windows Subsystem for Linux (WSL).
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 ms.localizationpriority: medium
-ms.date: 03/01/2024
+ms.date: 11/26/2024
 ---
 
 # Install Node.js on Windows Subsystem for Linux (WSL2)
 
-If you prefer using Node.js in a Linux environment, find performance speed and system call compatibility important, want to run [Docker containers](/windows/wsl/tutorials/wsl-containers) that leverage Linux workspaces and avoid having to maintain both Linux and Windows build scripts, or just prefer using a Bash command line, then you want to install Node.js on the Windows Subsystem for Linux (more specifically, WSL 2).
+For those who prefer using Node.js in a Linux environment, this guide will help you to install Node.js on the Windows Subsystem for Linux (WSL 2 is the recommended version).
 
-Using Windows Subsystem for Linux (WSL), might also enable you to install your preferred Linux distribution (Ubuntu is our default) so that you can have consistency between your development environment (where you write code) and production environment (the server where your code is deployed).
+Consider the following when deciding where to install and whether to develop with Node.js in a native Windows versus a Linux (WSL 2) environment:
 
-> [!NOTE]
-> If you are new to developing with Node.js and want to get up and running quickly so that you can learn, [install Node.js on Windows](./nodejs-on-windows.md). This recommendation also applies if you plan to use a Windows Server production environment.
+- **Skill level**: If you are new to developing with Node.js and want to get up and running quickly so that you can learn, [install Node.js on Windows](./nodejs-on-windows.md). Installing and using Node.js on Windows will provide a less complex environment for beginners than using WSL.
+- **Command line client tool**: If you prefer PowerShell, use Node.js on Windows. If you prefer Bash, use Node.js on Linux (WSL 2).
+- **Production server**: If you plan to deploy your Node.js app on Windows Server, use Node.js on Windows. If you plan to deploy on a Linux Server, use Node.js on Linux (WSL 2). WSL allows you to install your preferred Linux distribution (with Ubuntu as the default), ensuring consistency between your development environment (where you write code) and your production environment (the server where your code is deployed).
+- **Performance speed and system call compatibility**: There is continuous debate and development on Linux vs Windows performance, but the key when using a Windows machine is to keep your development project files in the same file system where you have installed Node.js. If you install Node.js on the Windows file system, keep your files on a Windows drive (for example, C:/). If you install Node.js on a Linux distribution (like Ubuntu), keep your project files in the Linux file system directory associated with the distribution that you are using. (Enter `explorer.exe .` from your WSL distribution command line to browse the directory using Windows File Explorer.)
+- **Docker containers**: If you want to use Docker containers to develop your project on Windows, we recommend that you [Install Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install/). To use Docker in a Linux workspace, see [set up Docker Desktop for Windows with WSL 2](/windows/wsl/tutorials/wsl-containers) to avoid having to maintain both Linux and Windows build scripts.
 
-## Install WSL 2
+## Install Windows Subsystem for Linux
 
-WSL 2 is the most recent version available for Windows and we recommend it for professional Node.js development workflows. To enable and install WSL 2, follow the steps in the [WSL install documentation](/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
+See the [WSL install documentation](/windows/wsl/install) if you plan to use a Linux development environment with Node.js. These steps will include choosing a Linux distribution (Ubuntu is the default) and the version of Windows Subsystem for Linux (WSL 2 is the default and recommended version). You can install multiple Linux distributions if you wish.
 
-Once you have installed WSL 2 and a Linux distribution, open the Linux distribution (it can be found in your Windows start menu) and check the version and codename using the command: `lsb_release -dc`.
+Once you have installed WSL 2 and a Linux distribution, open the Linux distribution (it can be found in your Windows Terminal list or Windows start menu) and check the version and codename using the command: `lsb_release -dc`.
 
 We recommend updating your Linux distribution regularly, including immediately after you install, to ensure you have the most recent packages. Windows doesn't automatically handle this update. To update your distribution, use the command: `sudo apt update && sudo apt upgrade`.  
 
-## Install Windows Terminal (optional)
+## Windows Terminal
 
 Windows Terminal is an improved command line shell that allows you to run multiple tabs so that you can quickly switch between Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, or whatever you prefer to use. You can also create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, customize your terminal with themes (color schemes, font styles and sizes, background image/blur/transparency), and more. [Learn more in the Windows Terminal docs](/windows/terminal).
-
-[Install Windows Terminal using the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): By installing via the store, updates are handled automatically.
 
 ## Install nvm, node.js, and npm
 
@@ -124,7 +122,7 @@ A few additional extensions you may want to consider include:
 
 - [JavaScript Debugger](https://marketplace.visualstudio.com/items?itemName=ms-vscode.js-debug): Once you finish developing on the server side with Node.js, you'll need to develop and test the client side. This extension is a DAP-based JavaScript debugger. It debugs Node.js, Chrome, Edge, WebView2, VS Code extensions, and more.
 - [Keymaps from other editors](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): These extensions can help your environment feel right at home if you're transitioning from another text editor (like Atom, Sublime, Vim, eMacs, Notepad++, etc).
-- [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Enables you to synchronize your VS Code settings across different installations using GitHub. If you work on different machines, this helps keep your environment consistent across them.
+- [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Enables you to synchronize your VS Code settings across different installations using GitHub. If you work on different machines, this helps keep your environment consistent across them. Importantly, this extension is now deprecated. For a comparable sync solution, use Visual Studio Code's built-in **Settings Sync**, which you can find by navigating to **File** > **Preferences** > **Settings Sync is On**, indicated by checkmark.
 
 ## Set up Git (optional)
 

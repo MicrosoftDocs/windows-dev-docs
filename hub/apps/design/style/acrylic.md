@@ -205,10 +205,9 @@ We fine-tuned acrylic's key components to arrive at its unique appearance and pr
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see background Acrylic in action](winui3gallery://item/SystemBackdrops).
-
-> [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the in-app AcrylicBrush in action](winui3gallery://item/Acrylic).
+> [Open the WinUI 3 Gallery app and see background Acrylic in action](winui3gallery://item/SystemBackdrops)
+>
+> [Open the WinUI 3 Gallery app and see the in-app AcrylicBrush in action](winui3gallery://item/Acrylic)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

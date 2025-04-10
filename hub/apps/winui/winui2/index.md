@@ -12,7 +12,7 @@ ms.date: 11/10/2021
 
 ![WinUI controls](images/winui-hero1.png)
 
-WinUI 2 is tightly integrated with [Windows SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
+WinUI 2 is tightly integrated with [Windows SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands/xaml-islands.md)).
 
 ![WinUI 2 platform support](../../images/platforms-winui2.png)
 

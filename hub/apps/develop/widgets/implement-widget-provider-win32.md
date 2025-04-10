@@ -3,8 +3,6 @@ title: Implement a widget provider in a win32 app (C++/WinRT)
 description: This article walks you through the process of creating widget provider, implemented in C++/WinRT that provides widget content and responds to widget actions. 
 ms.topic: article
 ms.date: 07/06/2022
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 
@@ -161,6 +159,11 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
 ## Declare widget template JSON strings
 
 This example will declare some static strings to define the JSON templates for each widget. For convenience, these templates are stored in the local variables declared outside of the **WidgetProvider** class definition. If you need a general storage for the templates - they can be included as part of the application package: [Accessing Package Files](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web). For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Card Designer](../../design/widgets/widgets-create-a-template.md).
+
+In the latest release, apps that implement Windows widgets can customize the header that is displayed for their widget in the Widgets Board, overriding the default presentation. For more information, see [Customize the widget header area](widget-header-customization.md).
+
+> [!NOTE]
+> Starting with Windows Build [TBD - Build number], apps that implement Windows widgets can choose to populate the widget content with HTML served from a specified URL instead of supplying content in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Widget providers must still provide an Adaptive Card JSON payload, so the implementation steps in this walkthrough are applicable to web widgets. For more information, see [Web widget providers](web-widget-providers.md).
 
 ```cpp
 // WidgetProvider.h

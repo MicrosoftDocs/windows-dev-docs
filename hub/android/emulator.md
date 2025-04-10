@@ -1,9 +1,6 @@
 ---
 title: Test on an Android device or emulator 
 description: Test your app on an Android device or emulator from Windows and enable virtualization with hyper-v and Windows Hypervisor Platform (WHPX).
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: android, windows, emulator, virtual device, device setup, enable device, developer, configuration, virtualization, visual studio, hyper-v, intel, haxm, amd, Windows Hypervisor Platform, WHPX 
 ms.date: 04/28/2020
@@ -92,9 +89,3 @@ There are many [Android emulator options](https://www.androidauthority.com/best-
 ### Android emulator with Visual Studio
 
 Learn more about using the latest version of [Visual Studio for Android Development](https://visualstudio.microsoft.com/vs/android/). Open the [latest version of Visual Studio](https://visualstudio.microsoft.com/downloads/), create a new C++ Android project, set the platform configuration, run the project, and the default Android Emulator will appear. It is recommended to use the [.NET Multi-platform App UI (MAUI)](/dotnet/maui/) development workload. You may need to use the Visual Studio Installer to [Modify your workloads](/visualstudio/install/modify-visual-studio#modify-workloads).
-
-## Additional resources
-
-* [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
-
-* [Add Windows Defender exclusions to improve performance](defender-settings.md)

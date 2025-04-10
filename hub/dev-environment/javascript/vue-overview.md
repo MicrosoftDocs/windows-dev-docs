@@ -1,9 +1,6 @@
 ---
 title: Vue on Windows
 description: A guide to help you set up a Vue development environment on Windows 10.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: Vue, Vue.js, vue on windows 10, vue on windows, vue overview, what is vue, vue with windows, set up vue on windows, vue dev environment, set up a vue development environment 
 ms.localizationpriority: medium

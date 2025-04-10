@@ -76,7 +76,7 @@ This setting controls settings related to gaming and controls such as Game bar a
 | UseNexusForGameBarEnabled | REG_DWORD | 0 or 1 | Key associated with toggle Gaming -> Game Bar -> "Allow your controller to open Game Bar" |
 | AutoGameModeEnabled | REG_DWORD | 0 or 1 | Key associated with toggle Gaming -> Game Mode -> Game Mode. |
 
-## Personalization - Start - Layout - Pins and recomendations
+## Personalization - Start - Layout - Pins and recommendations
 
 Specifies the start layout type.
 
@@ -236,7 +236,7 @@ This setting contains toggles and other settings related to touch keyboard, text
 | EnableDoubleTapSpace | REG_DWORD | 1 or 0 | Enables double-tap space. |
 | EnableAutocorrection | REG_DWORD | 1 or 0 | Enables auto-correction. |
 | IsVoiceTypingKeyEnabled | REG_DWORD | 1 or 0 | Indicates if voice typing key is enabled. |
-| MultilingualEnabled | REG_DWORD | 1 or 0 | Indicates in multingual is enabled. |
+| MultilingualEnabled | REG_DWORD | 1 or 0 | Indicates in multilingual is enabled. |
 | EnableHwkbTextPrediction | REG_DWORD | An integer. | ASCII Value for keys. |
 
 ## VPN

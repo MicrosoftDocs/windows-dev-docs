@@ -5,8 +5,6 @@ ms.date: 08/08/2022
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
-author: marswe
-ms.author: marcs
 ---
 
 # Arm64X PE files

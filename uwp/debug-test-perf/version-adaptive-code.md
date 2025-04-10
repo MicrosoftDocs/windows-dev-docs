@@ -71,7 +71,7 @@ In this section, we show several examples of adaptive code that use APIs that ar
 
 Windows 10, version 1607 adds a new value to the [InputScopeNameValue](/uwp/api/windows.ui.xaml.input.inputscopenamevalue) enumeration: **ChatWithoutEmoji**. This new input scope has the same input behavior as the **Chat** input scope (spellchecking, auto-complete, auto-capitalization), but it maps to a touch keyboard without an emoji button. This is useful if you create your own emoji picker and want to disable the built-in emoji button in the touch keyboard. 
 
-This example shows how to check if the **ChatWithoutEmoji** enum value is present and sets the [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) property of a **TextBox** if it is. If it’s not present on the system the app is run on, the **InputScope** is set to **Chat** instead. The code shown could be placed in a Page consructor or Page.Loaded event handler.
+This example shows how to check if the **ChatWithoutEmoji** enum value is present and sets the [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) property of a **TextBox** if it is. If it’s not present on the system the app is run on, the **InputScope** is set to **Chat** instead. The code shown could be placed in a Page constructor or Page.Loaded event handler.
 
 > [!TIP]
 > When you check an API, use static strings instead of relying on .NET language features, otherwise your app might try to access a type that isn’t defined and crash at runtime.
@@ -166,7 +166,7 @@ In this code, you use the [UserControl](/uwp/api/windows.ui.xaml.controls.userco
 The `MediaPlayerUserControl` encapsulates a **MediaPlayerElement** and several buttons that are used to skip through the media frame by frame. The UserControl lets you treat these controls as a single entity and makes it easier to switch with a MediaElement on older systems. This user control should be used only on systems where MediaPlayerElement is present, so you don’t use ApiInformation checks in the code inside this user control.
 
 > [!NOTE]
-> To keep this example simple and focused, the frame step buttons are placed outside of the media player. For a better user experiance, you should customize the MediaTransportControls to include your custom buttons. See [Custom transport controls](/windows/apps/design/controls/custom-transport-controls) for more info. 
+> To keep this example simple and focused, the frame step buttons are placed outside of the media player. For a better user experience, you should customize the MediaTransportControls to include your custom buttons. See [Custom transport controls](/windows/apps/design/controls/custom-transport-controls) for more info. 
 
 **XAML**
 ```xaml

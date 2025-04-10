@@ -3,7 +3,6 @@ title: DWriteCore (Windows App SDK)
 description: DWriteCore is the Windows App SDK implementation of DirectWrite.
 ms.topic: article
 ms.date: 03/09/2021
-keywords: 
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +18,7 @@ For more details about DWriteCore&mdash;including guidance for setting up your d
 
 To use DWriteCore APIs in the Windows App SDK:
 
-1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../get-started/start-here.md).
-2. Create a new project as described in Get started with WinUI, or follow the instructions to [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
+1. Download and install the latest release of the Windows App SDK. For more information, see [Start developing Windows apps](../get-started/start-here.md).
+2. Create a new project as described in Start developing Windows apps, or follow the instructions to [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
 To learn more about the availability of DWriteCore in the Windows App SDK, see [release channels](release-channels.md).

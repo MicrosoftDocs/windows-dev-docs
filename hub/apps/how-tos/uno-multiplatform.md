@@ -4,8 +4,6 @@ description: Reach more users with a single WinUI 3 / .NET codebase using Uno Pl
 ms.topic: article
 ms.date: 3/31/2023
 keywords: uno platform, winui
-ms.author: aashcraft
-author: alvinashcraft
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers

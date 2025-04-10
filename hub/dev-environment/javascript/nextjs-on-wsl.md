@@ -1,9 +1,6 @@
 ---
 title: Install Next.js on Windows
 description: A guide to help you get started using the Next.js web frameworks on Windows Subsystem for Linux.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: Next.js, NextJS, Node.js, windows 10, microsoft, learning nodejs, node on windows, node on wsl, node on linux on windows, install node on windows, nodejs with vs code, develop with node on windows, develop with nodejs on windows, install node on WSL, NodeJS on Windows Subsystem for Linux
 ms.localizationpriority: medium

@@ -1,8 +1,6 @@
 ---
-author: drewbatgit
 description: This article walks you through the creation of a widget template using the Adaptive Cards Designer.
 title: Create a widget template with the Adaptive Cards Designer
-ms.author: drewbat
 ms.date: 01/19/2022
 ms.topic: article
 keywords: windows 11, widgets
@@ -34,7 +32,20 @@ At the top of the page, from the **Select host app** dropdown, choose Widgets Bo
 
 There are three text editors at the bottom of the page. The one labeled **Card Payload Editor** contains the JSON definition of your widget's UI. The editor labeled **Sample Data Editor** contains JSON that defines an optional data context for your widget. The data context is bound dynamically to the Adaptive Card when the widget is rendered. For more information about data binding in Adaptive Cards, see [Adaptive Cards Template Language](/adaptive-cards/templating/language).
 
-The third text editor is labeled **Sample Host Data Editor**. Note that this editor may collapse below the page's other two editors. If so, click the + to expand the editor. Widget host apps such as the Widgets Board have two properties that indicate the size and theme of your widget. These properties are named *host.widgetSize* and *host.hostTheme*. The supported sizes are "small", "medium", and "large". The supported themes are "light" and "dark". Your widget template can dynamically display different content based on the current value of these properties. To see how your widget responds to changes in size and theme, you can adjust the values for these properties in the editor, or you can also set these values in the **Container size** and **Theme** dropdowns next to the **Select host app** dropdown at the top of the page. 
+The third text editor is labeled **Sample Host Data Editor**. Note that this editor may collapse below the page's other two editors. If so, click the + to expand the editor. Widget host apps can specify host properties that you can use in your widget template to dynamically display different content based on the current property values. The Widgets Board supports the following host properties.
+
+| Property | Value | Description |
+|----------|-------|-------------|
+| host.widgetSize | "small", "medium", or "large" | The size of the pinned widget. |
+| host.hostTheme | "light" or "dark" | The current theme of the device on which the Widgets Board is displayed. |
+| host.isSettingsPayload | true or false | When this value is true, the user has clicked on the **Customize widget** button in the widget context menu. You can use this property value to display customization settings UI elements. This is an alternative method to using [IWidgetProvider2.OnCustomizationRequested](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider2.oncustomizationrequested) to alter the JSON payload in the widget provider app. For more information, see [Implementing widget customization](/windows/apps/develop/widgets/implement-widget-provider-cs#implementing-widget-customization). |
+| host.isHeaderSupported | true or false | When this value is true, header customization is supported. For more information, see [isHeaderSupported](/windows/apps/develop/widgets/widget-header-customization). |
+| host.isHeader | true or false | When this value is true, the host is requesting a payload specifically for rendering of the widget header. |
+| host.isWebSupported | true or false | When this value is false, the host does not currently support loading a widget's web content. When this occurs, web widgets will display the fallback JSON payload supplied by the widget provider, but this value can be use to further customize the content. For more information, see [Web widget providers](/windows/apps/develop/widgets/web-widget-providers)  |
+| host.isUserContextAuthenticated | true or false | When this value is false, the only action that is supported is [Action.OpenUrl](https://adaptivecards.io/explorer/Action.OpenUrl.html). The value of *isUserContextAuthenticated* can be used to adjust widget content appropriately, given the interactivity limitations. |
+
+
+The **Container size** and **Theme** dropdowns next to the **Select host app** dropdown at the top of the page allow you to set these properties without manually editing the sample host JSON in the editor.
 
 ## Create a new card
 
@@ -157,5 +168,54 @@ The following code listing shows the final version of the JSON payload.
       "verb": "inc"
     }
   ]
+}
+```
+
+## Settings payload example
+
+The following code listing shows a simple example of a JSON payload that uses the **host.isSettingsPayload** property to display different 
+content when the user has clicked the **Customize widget** button. 
+
+```json
+{
+    "type": "AdaptiveCard",
+    "body": [
+    {
+        "type": "Container",
+        "items":[
+            {
+                "type": "TextBlock",
+                "text": "Content payload",
+                "$when": "${!$host.isSettingsPayload}"
+            }
+        ]
+    },
+    {
+        "type": "Container",
+        "items":[
+            {
+                "type": "TextBlock",
+                "text": "Settings payload",
+                "$when": "${$host.isSettingsPayload}"
+            }
+        ]
+    }
+],
+"actions": [
+    {
+    "type": "Action.Submit",
+    "title": "Increment",
+    "verb": "inc",
+    "$when": "${!$host.isSettingsPayload}"
+    },
+    {
+    "type": "Action.Submit",
+    "title": "Update Setting",
+    "verb": "setting",
+    "$when": "${$host.isSettingsPayload}"
+    }
+],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.6"
 }
 ```

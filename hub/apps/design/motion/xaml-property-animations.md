@@ -141,4 +141,4 @@ destinationButton.StartAnimation(animation);
 
 - [Storyboarded animations](storyboarded-animations.md)
 - [Using the Visual Layer with XAML](/windows/uwp/composition/using-the-visual-layer-with-xaml)
-- [Transforms overview](../layout/transforms.md)
+- [Transforms overview](../../develop/platform/xaml/transforms.md)

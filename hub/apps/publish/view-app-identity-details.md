@@ -39,7 +39,7 @@ The following values are additional values that refer to your app's package fami
 
 ## Link to your app's listing
 
-The direct link to your app's page can be shared to help your customers find the app in the Store. This link is in the format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**. When a customer clicks this link, it opens the web-based listing page for your app. On Windows devices, the Store app will also launch and display your app's listing.
+The direct link to your app's page can be shared to help your customers find the app in the Store. This link is in the format **`https://apps.microsoft.com/detail/<your app's Store ID>`**. When a customer clicks this link, it opens the web-based listing page for your app. On Windows devices, the Store app will also launch and display your app's listing.
 
 Your app's **Store ID** is also shown in this section. This Store ID can be used to [generate Store badges](https://developer.microsoft.com/store/badges) or otherwise identify your app.
 

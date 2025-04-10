@@ -1,13 +1,14 @@
 ---
 ms.assetid: 02a08657-285d-4804-a006-168c22aa4904
-title: Windows data binding overview
-description: This topic shows you how to bind a control (or other UI element) to a single item or bind an item's control to a collection of items in a Windows App SDK app.
-ms.date: 12/12/2022
-ms.topic: article
+title: Windows data binding overview for developers
+description: This topic shows you how to bind a control (or other UI element) to a single item or bind an item's control to a collection of items in a WinUI app with Windows App SDK.
+ms.date: 01/10/2025
+ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
 dev_langs:
   - csharp
+# Customer intent: As a Windows developer, I want to learn how to bind a control to a single item or bind an item's control to a collection of items in a WinUI app.
 ---
 
 # Windows data binding overview
@@ -94,9 +95,9 @@ Here's the result.
 
 ## Binding to a collection of items
 
-A common scenario is to bind to a collection of business objects. In C#, the generic [**ObservableCollection&lt;T&gt;**](/dotnet/api/system.collections.objectmodel.observablecollection-1) class is a good collection choice for data binding, because it implements the [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged) and [**INotifyCollectionChanged**](/dotnet/api/system.collections.specialized.inotifycollectionchanged) interfaces. These interfaces provide change notification to bindings when items are added or removed or a property of the list itself changes. If you want your bound controls to update with changes to properties of objects in the collection, the business object should also implement `INotifyPropertyChanged`. For more info, see [Data binding in depth](data-binding-in-depth.md).
+A common scenario is to bind to a collection of business objects. In C#, the generic [ObservableCollection&lt;T&gt;](/dotnet/api/system.collections.objectmodel.observablecollection-1) class is a good collection choice for data binding, because it implements the [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) and [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) interfaces. These interfaces provide change notification to bindings when items are added or removed or a property of the list itself changes. If you want your bound controls to update with changes to properties of objects in the collection, the business object should also implement `INotifyPropertyChanged`. For more info, see [Data binding in depth](data-binding-in-depth.md).
 
-This next example binds a [**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) to a collection of `Recording` objects. Let's start by adding the collection to our view model. Just add these new members to the `RecordingViewModel` class.
+This next example binds a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) to a collection of `Recording` objects. Let's start by adding the collection to our view model. Just add these new members to the `RecordingViewModel` class.
 
 ``` csharp
 public class RecordingViewModel
@@ -116,7 +117,7 @@ public class RecordingViewModel
 }
 ```
 
-And then bind a [**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) to the `ViewModel.Recordings` property.
+And then bind a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) to the `ViewModel.Recordings` property.
 
 ``` xaml
 <Window x:Class="Quickstart.MainWindow" ... >
@@ -127,11 +128,11 @@ And then bind a [**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.x
 </Window>
 ```
 
-We haven't yet provided a data template for the `Recording` class, so the best the UI framework can do is to call [**ToString**](/dotnet/api/system.object.tostring#System_Object_ToString) for each item in the [**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview). The default implementation of `ToString` is to return the type name.
+We haven't yet provided a data template for the `Recording` class, so the best the UI framework can do is to call [ToString](/dotnet/api/system.object.tostring#System_Object_ToString) for each item in the [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview). The default implementation of `ToString` is to return the type name.
 
 ![Binding a list view 1](images/xaml-databinding1.png)
 
-To remedy this, we can either override [**ToString**](/dotnet/api/system.object.tostring#System_Object_ToString) to return the value of `OneLineSummary`, or we can provide a data template. The data template option is a more usual solution, and a more flexible one. You specify a data template by using the [**ContentTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.contenttemplate) property of a content control or the [**ItemTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of an items control. Here are two ways we could design a data template for `Recording` together with an illustration of the result.
+To remedy this, we can either override [ToString](/dotnet/api/system.object.tostring#System_Object_ToString) to return the value of `OneLineSummary`, or we can provide a data template. The data template option is a more usual solution, and a more flexible one. You specify a data template by using the [ContentTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.contenttemplate) property of a content control or the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of an items control. Here are two ways we could design a data template for `Recording` together with an illustration of the result.
 
 ``` xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -169,14 +170,14 @@ For more information about XAML syntax, see [Create a UI with XAML](/visualstudi
 
 ## Adding a details view
 
-You can choose to display all the details of `Recording` objects in [**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) items. But that takes up a lot of space. Instead, you can show just enough data in the item to identify it and then, when the user makes a selection, you can display all the details of the selected item in a separate piece of UI known as the details view. This arrangement is also known as a master/details view, or a list/details view.
+You can choose to display all the details of `Recording` objects in [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) items. But that takes up a lot of space. Instead, you can show just enough data in the item to identify it and then, when the user makes a selection, you can display all the details of the selected item in a separate piece of UI known as the details view. This arrangement is also known as a master/details view, or a list/details view.
 
-There are two ways to go about this. You can bind the details view to the [**SelectedItem**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem) property of the [**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview). Or you can use a [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource), in which case you bind both the `ListView` and the details view to the `CollectionViewSource` (doing so takes care of the currently-selected item for you). Both techniques are shown below, and they both give the same results (shown in the illustration).
+There are two ways to go about this. You can bind the details view to the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem) property of the [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview). Or you can use a [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource), in which case you bind both the `ListView` and the details view to the `CollectionViewSource` (doing so takes care of the currently-selected item for you). Both techniques are shown below, and they both give the same results (shown in the illustration).
 
 > [!NOTE]
 > So far in this topic we've only used the [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension), but both of the techniques we'll show below require the more flexible (but less performant) [{Binding} markup extension](/windows/uwp/xaml-platform/binding-markup-extension).
 
-First, here's the [**SelectedItem**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem) technique. For a C# application, the only change necessary is to the markup.
+First, here's the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem) technique. For a C# application, the only change necessary is to the markup.
 
 ``` xaml
 <Window x:Class="Quickstart.MainWindow" ... >
@@ -205,15 +206,18 @@ First, here's the [**SelectedItem**](/windows/windows-app-sdk/api/winrt/microsof
 </Window>
 ```
 
-For the [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) technique, first add a `CollectionViewSource` as a window resource.
+For the [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) technique, first add a `CollectionViewSource` as a resource of the top-level `Grid`.
 
 ``` xaml
-<Window.Resources>
+<Grid.Resources>
     <CollectionViewSource x:Name="RecordingsCollection" Source="{x:Bind ViewModel.Recordings}"/>
-</Window.Resources>
+</Grid.Resources>
 ```
 
-And then adjust the bindings on the [**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) (which no longer needs to be named) and on the details view to use the [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource). Note that by binding the details view directly to the `CollectionViewSource`, you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the `CurrentItem` property as the path for the binding, although you can do that if there's any ambiguity).
+> [!NOTE]
+> The Window class in WinUI doesn't have a `Resources` property. You can add the `CollectionViewSource` to the top-level `Grid` (or other parent UI element like `StackPanel`) element instead. If you're working within a `Page`, you can add the `CollectionViewSource` to the `Page.Resources`.
+
+And then adjust the bindings on the [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) (which no longer needs to be named) and on the details view to use the [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource). Note that by binding the details view directly to the `CollectionViewSource`, you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the `CurrentItem` property as the path for the binding, although you can do that if there's any ambiguity.
 
 ``` xaml
 ...
@@ -229,7 +233,7 @@ And here's the identical result in each case.
 
 ## Formatting or converting data values for display
 
-There is an issue with the rendering above. The `ReleaseDateTime` property is not just a date, it's a [**DateTime**](/uwp/api/windows.foundation.datetime). So, it's being displayed with more precision than we need. One solution is to add a string property to the `Recording` class that returns the equivalent of `ReleaseDateTime.ToString("d")`. Naming that property `ReleaseDate` would indicate that it returns a date, and not a date-and-time. Naming it `ReleaseDateAsString` would further indicate that it returns a string.
+There is an issue with the rendering above. The `ReleaseDateTime` property is not just a date, it's a [DateTime](/uwp/api/windows.foundation.datetime). So, it's being displayed with more precision than we need. One solution is to add a string property to the `Recording` class that returns the equivalent of `ReleaseDateTime.ToString("d")`. Naming that property `ReleaseDate` would indicate that it returns a date, and not a date-and-time. Naming it `ReleaseDateAsString` would further indicate that it returns a string.
 
 A more flexible solution is to use something known as a value converter. Here's an example of how to author your own value converter. Add the code below to your **Recording.cs** source code file.
 
@@ -262,12 +266,13 @@ public class StringFormatter : Microsoft.UI.Xaml.Data.IValueConverter
 }
 ```
 
-Now we can add an instance of `StringFormatter` as a page resource and use it in the binding of the `TextBlock` that displays the `ReleaseDateTime` property.
+Now we can add an instance of `StringFormatter` as a resource and use it in the binding of the `TextBlock` that displays the `ReleaseDateTime` property.
 
 ``` xaml
-<Window.Resources>
+<Grid.Resources>
+    ...
     <local:StringFormatter x:Key="StringFormatterValueConverter"/>
-</Window.Resources>
+</Grid.Resources>
 ...
 <TextBlock Text="{Binding ReleaseDateTime,
     Converter={StaticResource StringFormatterValueConverter},
@@ -281,6 +286,6 @@ Here's the result.
 
 ![displaying a date with custom formatting](images/xaml-databinding5.png)
 
-## See also
+## Related content
 
-* [Data binding](index.md)
+- [Data binding](index.md)

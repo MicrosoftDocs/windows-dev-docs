@@ -8,9 +8,6 @@ ms.localizationpriority: medium
 ---
 # Product page experiments
 
-> [!IMPORTANT] 
-> Product page experiments will be coming soon to developers and customers of Microsoft Store on Windows.
-
 Icons and screenshots occupy up to 50% of the surface area on a Microsoft Store product page, making them the first things customers notice. To maximize your impact, consider conducting A/B testing with different product page variations and then choosing the version that performs best to showcase on Microsoft Store.
 
 To conduct a product page experiment, start by signing in to Partner Center and selecting your app. This new overview page in Partner Center consolidates all app actions and information in one place. The console also contextually prioritizes information cards based on your app's status.

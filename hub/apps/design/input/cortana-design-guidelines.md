@@ -14,12 +14,10 @@ ms.localizationpriority: medium
 
 >[!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
->
-> See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
 
 These guidelines and recommendations describe how your app can best use **Cortana** to interact with the user, help them accomplish a task, and communicate clearly how it's all happening.
 
-**Cortana** enables applications running in the background to prompt the user for confirmation or disambiguation, and in return provide the user with feedback on the status of the voice command. The process is lightweight, quick, and doesn’t force the user to leave the **Cortana** experience or switch context to the application.
+**Cortana** enables applications running in the background to prompt the user for confirmation or disambiguation, and in return provide the user with feedback on the status of the voice command. The process is lightweight, quick, and doesn't force the user to leave the **Cortana** experience or switch context to the application.
 
 While the user should feel that **Cortana** is helping to make the process as light and easy as possible, you probably want **Cortana** to also be explicit that it's your app accomplishing the task.
 
@@ -62,8 +60,8 @@ Successful **Cortana** interactions require you to follow some fundamental princ
 <dd><p>Provide information pertinent only to the task, content, and context.</p>
 </dd>
 </dl></td>
-<td align="left"><p>I’ve added this to your playlist. Just so you know, your battery is getting low.</p></td>
-<td align="left"><p>I’ve added this to your playlist.</p></td>
+<td align="left"><p>I've added this to your playlist. Just so you know, your battery is getting low.</p></td>
+<td align="left"><p>I've added this to your playlist.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
@@ -73,33 +71,33 @@ Successful **Cortana** interactions require you to follow some fundamental princ
 </dd>
 </dl></td>
 <td align="left"><p>No results for query &quot;Trips to Las Vegas&quot;.</p></td>
-<td align="left"><p>I couldn’t find any trips to Las Vegas.</p></td>
+<td align="left"><p>I couldn't find any trips to Las Vegas.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p></p>
 <dl>
 <dt>Trustworthy </dt>
-<dd><p>Be as accurate as possible. Be transparent about what’s going on in the background—if a task hasn’t finished yet, don’t say that it has. Respect privacy—don’t read private information out loud.</p>
+<dd><p>Be as accurate as possible. Be transparent about what's going on in the background—if a task hasn't finished yet, don't say that it has. Respect privacy—don't read private information out loud.</p>
 </dd>
 </dl></td>
-<td align="left"><p>I couldn’t find that movie, it must not have been released yet.</p></td>
-<td align="left"><p>I couldn’t find that movie in our catalogue.</p></td>
+<td align="left"><p>I couldn't find that movie, it must not have been released yet.</p></td>
+<td align="left"><p>I couldn't find that movie in our catalogue.</p></td>
 </tr>
 </tbody>
 </table>
 
-Write how people speak. Don’t emphasize grammatical accuracy over sounding natural. For example, ear-friendly verbal shortcuts like "wanna" or "gotta" are fine for TTS read out.
+Write how people speak. Don't emphasize grammatical accuracy over sounding natural. For example, ear-friendly verbal shortcuts like "wanna" or "gotta" are fine for TTS read out.
 
 Use the implied first-person tense where possible and natural. For example, "Looking for your next Adventure Works trip" implies that someone is doing the looking, but does not use the word "I" to specify.
 
-Use some variation to help make your app sound more natural. Provide different versions of your TTS and GUI strings to effectively say the same thing. For example, "What movie do you wanna see?" could have alternatives like "What movie would you like to watch?". People don’t say the same thing the exact same way every time. Just make sure to keep your TTS and GUI versions in sync.
+Use some variation to help make your app sound more natural. Provide different versions of your TTS and GUI strings to effectively say the same thing. For example, "What movie do you wanna see?" could have alternatives like "What movie would you like to watch?". People don't say the same thing the exact same way every time. Just make sure to keep your TTS and GUI versions in sync.
 
 Use phrases like "OK" and "Alright" in your responses judiciously. While they can provide acknowledgment and a sense of progress, they can also get repetitive if used too often and without variation.
 
 > [!NOTE]
 > Use acknowledgment phrases in TTS only. Due to the limited space on the **Cortana** canvas, don't repeat them in the corresponding GUI strings.
 
-Use contractions in your responses for more natural interactions and additional space saving on the **Cortana** canvas. For example," I can’t find that movie" instead of "I was unable to find that movie". Write for the ear, not the eye.
+Use contractions in your responses for more natural interactions and additional space saving on the **Cortana** canvas. For example," I can't find that movie" instead of "I was unable to find that movie". Write for the ear, not the eye.
 
 Use language that the system understands. Users tend to repeat the terms they are presented with. Know what you display.
 
@@ -166,7 +164,7 @@ Here are the steps outlined in this image:
 1. The user taps the microphone to initiate **Cortana**.
 2. The user says "Cancel my Adventure Works trip to Vegas" to launch the **Adventure Works** app in the background. The app uses both **Cortana** speech and canvas to interact with the user.
 3. **Cortana** transitions to a handoff screen that gives the user acknowledgment feedback ("I'll get Adventure Works on that."), a status bar, and a cancel button.
-4. In this case, the user has multiple trips that match the query, so the app provides a disambiguation screen that lists all the matching results and asks, “Which one do you wanna cancel?”
+4. In this case, the user has multiple trips that match the query, so the app provides a disambiguation screen that lists all the matching results and asks, "Which one do you wanna cancel?"
 5. The user specifies the "Vegas Tech Conference" item.
 6. As the cancellation cannot be undone, the app provides a confirmation screen that asks the user to confirm their intent.
 7. The user says "Yes".
@@ -192,11 +190,11 @@ Use present tense.
 
 Use an action verb that confirms what task is initiating and reference the specific entity.
 
-Use a generic verb that doesn't commit to the requested, incomplete action. For example, "Looking for your trip" instead of "Canceling your trip". In this case, if no results are returned the user doesn't hear something like "Cancelling your trip to Las Vegas… I couldn’t find a trip to Las Vegas".
+Use a generic verb that doesn't commit to the requested, incomplete action. For example, "Looking for your trip" instead of "Canceling your trip". In this case, if no results are returned the user doesn't hear something like "Cancelling your trip to Las Vegas… I couldn't find a trip to Las Vegas".
 
-Be clear that the task hasn’t already taken place if the app still needs to resolve the entity requested. For example, notice how we say “Looking for your trip” instead of “Cancelling your trip” because zero or more trips can be matched, and we don’t know the result yet.
+Be clear that the task hasn't already taken place if the app still needs to resolve the entity requested. For example, notice how we say "Looking for your trip" instead of "Cancelling your trip" because zero or more trips can be matched, and we don't know the result yet.
 
-The GUI and TTS strings can be the same, but don’t need to be. Try to keep the GUI string short to avoid truncation and duplication of other visual assets.
+The GUI and TTS strings can be the same, but don't need to be. Try to keep the GUI string short to avoid truncation and duplication of other visual assets.
 
 | TTS | GUI |
 | --- | --- |
@@ -207,7 +205,7 @@ The GUI and TTS strings can be the same, but don’t need to be. Try to keep the
 
 :::image type="content" source="images/cortana/e2e-canceltrip-progress.png" alt-text="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks cancel trip progress":::*AdventureWorks "Cancel trip" progress*
 
-When a task takes a while between steps, your app needs to step in and update the user on what’s happening on a progress screen. The app icon is displayed, and you must provide both GUI and TTS progress strings to indicate that the task is underway.
+When a task takes a while between steps, your app needs to step in and update the user on what's happening on a progress screen. The app icon is displayed, and you must provide both GUI and TTS progress strings to indicate that the task is underway.
 
 You should provide a link to your app with launch parameters to start the app in the appropriate state. This lets the user view or complete the task themselves. **Cortana** provides the link text (such as, "Go to Adventure Works").
 
@@ -240,7 +238,7 @@ Use an action verb that confirms the task is underway.
 
 :::image type="content" source="images/cortana/e2e-canceltrip-confirmation.png" alt-text="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks cancel trip confirmation":::*AdventureWorks "Cancel trip" confirmation*
 
-Some tasks can be implicitly confirmed by the nature of the user’s command; others are potentially more sensitive and require explicit confirmation. Here are some guidelines for when to use explicit vs. implicit confirmation.
+Some tasks can be implicitly confirmed by the nature of the user's command; others are potentially more sensitive and require explicit confirmation. Here are some guidelines for when to use explicit vs. implicit confirmation.
 
 Both GUI and TTS strings on the confirmation screen are specified by your app, and the app icon, if provided, is shown instead of the **Cortana** avatar.
 
@@ -249,14 +247,14 @@ After the customer responds to the confirmation, your application must provide t
 Use explicit when...
 
 - Content is leaving the user (such as, a text message, email, or social post)
-- An action can’t be undone (such as, making a purchase or deleting something)
+- An action can't be undone (such as, making a purchase or deleting something)
 - The result could be embarrassing (such as, calling the wrong person)
 - More complex recognition is required (such as, open-ended transcription)
 
 Use implicit when...
 
 - Content is saved for the user only (such as, a note-to-self)
-- There’s an easy way to back out (such as, turning an alarm on or off)
+- There's an easy way to back out (such as, turning an alarm on or off)
 - The task needs to be quick (such as, quickly capturing an idea before forgetting)
 - Accuracy is high (such as, a simple menu)
 
@@ -332,8 +330,8 @@ If the entity is shown, or it has been referenced on prior turn, only reference 
 
 | Conditions                                       | TTS                                             | GUI                                |
 |--------------------------------------------------|-------------------------------------------------|------------------------------------|
-| ENTITY SHOWN / ENTITY READ ON PRIOR TURN         | I’ve cancelled this trip.                       | Cancelled this trip.               |
-| ENTITY NOT SHOWN / ENTITY NOT READ ON PRIOR TURN | I’ve cancelled your Vegas Tech Conference trip. | Cancelled "Vegas Tech Conference." |
+| ENTITY SHOWN / ENTITY READ ON PRIOR TURN         | I've cancelled this trip.                       | Cancelled this trip.               |
+| ENTITY NOT SHOWN / ENTITY NOT READ ON PRIOR TURN | I've cancelled your Vegas Tech Conference trip. | Cancelled "Vegas Tech Conference." |
 
 ### Error
 

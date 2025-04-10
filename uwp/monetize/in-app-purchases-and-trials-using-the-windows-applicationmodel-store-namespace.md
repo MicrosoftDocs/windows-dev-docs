@@ -60,8 +60,8 @@ This example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes an 
 <CurrentApp>
   <ListingInformation>
     <App>
-      <AppId>2B14D306-D8F8-4066-A45B-0FB3464C67F2</AppId>
-      <LinkUri>http://apps.windows.microsoft.com/app/2B14D306-D8F8-4066-A45B-0FB3464C67F2</LinkUri>
+      <AppId>00001111-aaaa-2222-bbbb-3333cccc4444</AppId>
+      <LinkUri>http://apps.windows.microsoft.com/app/00001111-aaaa-2222-bbbb-3333cccc4444</LinkUri>
       <CurrentMarket>en-US</CurrentMarket>
       <AgeRating>3</AgeRating>
       <MarketData xml:lang="en-us">
@@ -93,8 +93,8 @@ The next example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes
 <CurrentApp>
   <ListingInformation>
     <App>
-      <AppId>988b90e4-5d4d-4dea-99d0-e423e414ffbc</AppId>
-      <LinkUri>http://apps.windows.microsoft.com/app/988b90e4-5d4d-4dea-99d0-e423e414ffbc</LinkUri>
+      <AppId>11112222-bbbb-3333-cccc-4444dddd5555</AppId>
+      <LinkUri>http://apps.windows.microsoft.com/app/11112222-bbbb-3333-cccc-4444dddd5555</LinkUri>
       <CurrentMarket>en-us</CurrentMarket>
       <AgeRating>3</AgeRating>
       <MarketData xml:lang="en-us">

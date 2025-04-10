@@ -121,7 +121,7 @@ You must also follow the requirements listed below.
 
 **To add trailers to your listing:**
 
-1. Upload your trailer **video file** in the indicated box. A drop-down box is also shown in case you want to reuse a trailer you have alread uploaded (perhaps for a Store listing in a different language).
+1. Upload your trailer **video file** in the indicated box. A drop-down box is also shown in case you want to reuse a trailer you have already uploaded (perhaps for a Store listing in a different language).
 2. After you have uploaded the trailer, you'll need to upload a **thumbnail image** to go along with it. This must be a .png file that is 1920 x 1080 pixels, and is typically a still image taken from the trailer.
 3. Click the pencil icon to add a **title** for your trailer (255 characters or fewer).
 4. If you want to add more trailers to the listing, click **Add trailer** and repeat the steps listed above.

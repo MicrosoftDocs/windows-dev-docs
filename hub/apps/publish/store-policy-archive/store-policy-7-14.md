@@ -308,7 +308,7 @@ If you purchase or create promotional ad campaigns to promote your products thro
 **10.10.3**
 
 Any advertising content your product displays must adhere to Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
-If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
+If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
 
 **10.10.4**
 
@@ -497,4 +497,4 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 - [Change history for Microsoft Store Policies](../store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

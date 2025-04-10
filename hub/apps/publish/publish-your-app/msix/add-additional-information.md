@@ -26,7 +26,7 @@ If you'd like to provide additional copyright and/or trademark info, enter it he
 
 ## Additional license terms
 
-Leave this field blank if you want your app to be licensed to customers under the terms of the **Standard Application License Terms** (which are linked to from the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)).
+Leave this field blank if you want your app to be licensed to customers under the terms of the **Standard Application License Terms** (which are linked to from the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)).
 
 If your license terms are different from the **Standard Application License Terms**, enter them here.
 

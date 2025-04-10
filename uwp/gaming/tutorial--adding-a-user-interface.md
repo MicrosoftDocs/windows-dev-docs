@@ -277,7 +277,7 @@ The [**GameInfoOverlay::GameInfoOverlay**](https://github.com/Microsoft/Windows-
 
 
 #### GameInfoOverlay::CreateDeviceDependentResources
-[**GameInfoOverlay::CreateDeviceDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) is our method for creating brushes that will be used to draw our text. To do this, we obtain a [**ID2D1DeviceContext2**](/windows/desktop/api/d2d1_3/nn-d2d1_3-id2d1devicecontext2) object which enables the creation and drawing of geometry, plus functionality such as ink and gradient mesh rendering. We then create a series of colored brushes using [**ID2D1SolidColorBrush**](/windows/desktop/api/d2d1/nn-d2d1-id2d1solidcolorbrush) to draw the following UI elements.
+[**GameInfoOverlay::CreateDeviceDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) is our method for creating brushes that will be used to draw our text. To do this, we obtain an [**ID2D1DeviceContext2**](/windows/desktop/api/d2d1_3/nn-d2d1_3-id2d1devicecontext2) object which enables the creation and drawing of geometry, plus functionality such as ink and gradient mesh rendering. We then create a series of colored brushes using [**ID2D1SolidColorBrush**](/windows/desktop/api/d2d1/nn-d2d1-id2d1solidcolorbrush) to draw the following UI elements.
 - Black brush for rectangle backgrounds
 - White brush for status text
 - Orange brush for action text

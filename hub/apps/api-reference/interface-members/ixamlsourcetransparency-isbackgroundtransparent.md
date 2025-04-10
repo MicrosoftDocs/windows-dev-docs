@@ -3,8 +3,6 @@ title: IXamlSourceTransparency.IsBackgroundTransparent property
 description: Gets or sets the background transparency of all DesktopWindowXamlSource objects on the current thread.
 ms.topic: article
 ms.date: 07/28/2023
-ms.author: jimwalk
-author: jwmsft
 ms.localizationpriority: low
 ---
 

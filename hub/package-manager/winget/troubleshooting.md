@@ -1,14 +1,21 @@
 ---
-title: Debugging and troubleshooting issues with the winget tool
-description: Provides information on logging and winget diagnostics.
-ms.date: 08/31/2023
+title: Debugging and troubleshooting issues with WinGet
+description: Provides information on logging and WinGet diagnostics.
+ms.date: 11/15/2024
 ms.topic: article
-ms.localizationpriority: medium
 ---
 
-# Debugging and troubleshooting issues with the winget tool
+# Debugging and troubleshooting issues with the WinGet tool
 
-When Windows Package Manager is installing, searching or listing applications, sometimes it is necessary to look at the log files to better understand the behavior.
+If WinGet does not appear to be installed correctly, follow these steps from a PowerShell command prompt: 
+
+```PowerShell
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Repair-WinGetPackageManager -Force -Latest
+```
+
+When WinGet commands are failing, sometimes it is necessary to look at the log files to better understand the behavior.
 
 ## WinGet Logs
 
@@ -39,11 +46,11 @@ If you need more comprehensive log files, that provide the complete communicatio
 
 ## Known issues
 
-A list of known issues with sources and behaviors is kept up to date in the [Windows Package Manager Client repository](https://www.github.com/microsoft/winget-cli).  If you encounter issues when using the winget tool, go [here](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting) for troubleshooting.
+A list of known issues with sources and behaviors is kept up to date in the [Windows Package Manager Client repository](https://www.github.com/microsoft/winget-cli).  If you encounter issues when using the WinGet tool, go [here](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting) for troubleshooting.
 
 ## Exit codes
 
-The winget tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the ["Return codes" file of the Windows Package Manager Client repository](https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md).
+The WinGet tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the ["Return codes" file of the Windows Package Manager Client repository](https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md).
 
 ### Scope for specific user vs machine-wide
 
@@ -54,3 +61,17 @@ Not all installers support installing in “user” scope vs. “machine” scop
 - [EXE-based installers](https://stackoverflow.com/questions/3886455/whats-the-difference-between-an-exe-and-a-msi-installer) behavior around scope is not necessarily deterministic. In some cases the arguments to specify scope are not available, and in other cases the installer may make the determination based on whether the user is a member of the local administrators group. Packages installed in user scope may still require UAC (User Account Control) authorization from an administrator.
 
 See more details on [scope-related issues](https://github.com/microsoft/winget-cli/issues?q=is%3Aissue+is%3Aopen+label%3Aarea-scope) in the WinGet product repository on GitHub.
+
+### 403 Forbidden error
+
+A 403 Forbidden error may occur when attempting to download a package using the WinGet tool. This issue can arise if an Independent Software Vendor (ISV) opts not have their product distributed by a package manager service like WinGet.
+
+The server reponsible for initiating the download typically checks for a user agent string included with the download request to identify the device or client (e.g., browser, WinGet). If you can download the installer using your browser, but encounter issues with WinGet, it is possible that the ISV has blocked the WinGet user agent string.
+
+The user agent string for WinGet has the following format:
+
+`winget-cli WindowsPackageManager/{Client Version} DesktopAppInstaller/Microsoft.DesktopAppInstaller {AppInstaller Version}`
+
+Example: 
+
+`winget-cli WindowsPackageManager/1.9.25200 DesktopAppInstaller/Microsoft.DesktopAppInstaller v1.24.25200.0`

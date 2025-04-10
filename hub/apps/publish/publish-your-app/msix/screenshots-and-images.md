@@ -1,7 +1,7 @@
 ---
 description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your MSIX app's Store listing.
 title: App screenshots, images, and trailers for MSIX app
-ms.date: 10/30/2022
+ms.date: 1/24/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -40,7 +40,7 @@ The size requirements vary depending on the device family:
 
 For the best display, keep the following guidelines in mind when creating your screenshots:
 
-- Keep critical visuals and text in the top 3/4 of the image. Text overlays may appear on the bottom 1/4.
+- Keep critical visuals and text in the top two-thirds of the image. Text overlays may appear on the bottom third.
 - Don’t add additional logos, icons, or marketing messages to your screenshots.
 - Don’t use extremely light or dark colors or highly-contrasting stripes that may interfere with readability of text overlays.
 
@@ -62,19 +62,19 @@ For games, this is used as the main logo image for customers on Windows 10, Wind
 
 Your listing may not look good if you don't include it, and it won't be consistent with other listings that customers see while browsing the Store. This image may also be used in search results or in editorially curated collections.
 
-This image can include your app’s name. If you have added the app name on the image, it should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom quarter of this image, so make sure you don't include text or key imagery there.
+This image can include your app’s name. If you have added the app name on the image, it should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom third of this image, so make sure you don't include text or key imagery there.
 
 > [!NOTE]
-> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
+> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top two-thirds of the image, since text overlays may appear on the bottom third of the image.
 
 #### 1:1 box art (1080 x 1080 or 2160 x 2160 pixels)
 
 For games, this image may appear in various Store pages for Windows 10, Windows 11, and Xbox devices, and if you don't provide the **2:3 Poster art** image it will be used as your main logo. This does not apply to apps. For information related to app icons, please refer to the section below on [1:1 App tile icon (300 x 300 pixels)](#11-app-tile-icon-300-x-300-pixels).
 
-This image can also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there.
+This image can also include your app’s name. Text overlays may appear on the bottom third of this image, so don't include text or key imagery there.
 
 > [!NOTE]
-> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
+> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top two-thirds of the image, since text overlays may appear on the bottom third of the image.
 
 #### 1:1 App tile icon (300 x 300 pixels)
 
@@ -121,7 +121,7 @@ You must also follow the requirements listed below.
 
 **To add trailers to your listing:**
 
-1. Upload your trailer **video file** in the indicated box. A drop-down box is also shown in case you want to reuse a trailer you have alread uploaded (perhaps for a Store listing in a different language).
+1. Upload your trailer **video file** in the indicated box. A drop-down box is also shown in case you want to reuse a trailer you have already uploaded (perhaps for a Store listing in a different language).
 2. After you have uploaded the trailer, you'll need to upload a **thumbnail image** to go along with it. This must be a .png file that is 1920 x 1080 pixels, and is typically a still image taken from the trailer.
 3. Click the pencil icon to add a **title** for your trailer (255 characters or fewer).
 4. If you want to add more trailers to the listing, click **Add trailer** and repeat the steps listed above.
@@ -206,12 +206,12 @@ These images are required for proper display if you publish your app to Xbox.
 
 There are 3 different sizes that you can upload:
 
-- **Branded key art, 584 x 800 pixels**: Must include the product’s title. A Branding Bar is required on this image. Keep the title and all key imagery in the top three-quarters of the image, as an overlay may appear over the bottom quarter.
-- **Titled hero art, 1920 x 1080 pixels**: Must include the product’s title. Keep the title and all key imagery in the top three-quarters of the image, as an overlay may appear over the bottom quarter.
+- **Branded key art, 584 x 800 pixels**: Must include the product’s title. A Branding Bar is required on this image. Keep the title and all key imagery in the top two-thirds of the image, as an overlay may appear over the bottom third.
+- **Titled hero art, 1920 x 1080 pixels**: Must include the product’s title. Keep the title and all key imagery in the top two-thirds of the image, as an overlay may appear over the bottom third.
 - **Featured Promotional Square art, 1080 x 1080 pixels**: Must _not_ include the product’s title.
 
 > [!NOTE]
-> For the best display on Xbox, you must also provide a **9:16 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
+> For the best display on Xbox, you must also provide a **2:3 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
 
 #### Holographic image
 

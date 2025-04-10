@@ -3,8 +3,6 @@ title: Widget providers
 description: Learn how to implement a Windows widget service provider to support your app. 
 ms.topic: article
 ms.date: 07/06/2022
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 

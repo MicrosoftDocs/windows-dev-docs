@@ -1,7 +1,7 @@
 ---
 title: PowerToys Group Policy
 description: Group policy documentation for PowerToys
-ms.date: 01/28/2024
+ms.date: 07/06/2024
 ms.topic: article
 no-loc: [PowerToys, Windows, Group Policy, Win]
 ---
@@ -56,7 +56,7 @@ The individual enabled state policies for the utilities will override this polic
 
 #### Group Policy (ADMX) information
 
-- GP unique name: ConfigureGlobalUtilityEnabledState
+- GP unique name: ConfigureAllUtilityGlobalEnabledState
 - GP name: Configure global utility enabled state
 - GP path: Administrative Templates/Microsoft PowerToys
 - GP scope: Computer and user
@@ -71,7 +71,7 @@ The individual enabled state policies for the utilities will override this polic
 
 #### Intune information
 
-- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureGlobalUtilityEnabledState`
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureAllUtilityGlobalEnabledState`
 - Example value: `<disabled/>`
 
 ### Configure enabled state for individual utilities
@@ -121,6 +121,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump|
 |Mouse Pointer Crosshairs|Mouse Pointer Crosshairs: Configure enabled state|ConfigureEnabledUtilityMousePointerCrosshairs|
 |Mouse Without Borders|Mouse Without Borders: Configure enabled state|ConfigureEnabledUtilityMouseWithoutBorders|
+|New+|New+: Configure enabled state|ConfigureEnabledUtilityNewPlus|
 |Peek|Peek: Configure enabled state|ConfigureEnabledUtilityPeek|
 |Power Rename|Power Rename: Configure enabled state|ConfigureEnabledUtilityPowerRename|
 |PowerToys Run|PowerToys Run: Configure enabled state|ConfigureEnabledUtilityPowerLauncher|
@@ -130,6 +131,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Shortcut Guide|Shortcut Guide: Configure enabled state|ConfigureEnabledUtilityShortcutGuide|
 |Text Extractor|Text Extractor: Configure enabled state|ConfigureEnabledUtilityTextExtractor|
 |Video Conference Mute|Video Conference Mute: Configure enabled state|ConfigureEnabledUtilityVideoConferenceMute|
+|Workspaces|Workspaces: Configure enabled state|ConfigureEnabledUtilityWorkspaces|
 
 #### Group Policy (ADMX) information
 
@@ -155,7 +157,9 @@ These policies have a higher priority than, and will override, the policy "Confi
 
 - Example value: `<disabled/>`
 
-### Allow experimentation
+### General settings
+
+#### Allow experimentation
 
 Supported on PowerToys 0.68.0 or later.
 
@@ -164,24 +168,24 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 - If this setting is enabled or not configured, the user can control experimentation in the PowerToys settings menu.
 - If this setting is disabled, experimentation is not allowed.
 
-#### Group Policy (ADMX) information
+##### Group Policy (ADMX) information
 
 - GP unique name: AllowExperimentation
 - GP name: Allow experimentation
-- GP path: Administrative Templates/Microsoft PowerToys
+- GP path: Administrative Templates/Microsoft PowerToys/General settings
 - GP scope: Computer and user
 - ADMX file name: _PowerToys.admx_
 
-#### Registry information
+##### Registry information
 
 - Path: Software\Policies\PowerToys
 - Name: AllowExperimentation
 - Type: DWORD
 - Example value: `0x00000000`
 
-#### Intune information
+##### Intune information
 
-- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/AllowExperimentation`
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~GeneralSettings/AllowExperimentation`
 - Example value: `<disabled/>`
 
 ### Installer and Updates
@@ -343,7 +347,7 @@ This policy allows you to configure if the window with the release notes is show
 
 Supported on PowerToys 0.81.1 or later.
 
-This policy configures the enabled disable state for using Advanced Paste online AI models.
+This policy allows you to disable Advanced Paste online AI models.
 
 If you enable or don't configure this policy, the user takes control over the enabled state of the Enable paste with AI Advanced Paste setting.
 
@@ -355,7 +359,7 @@ If you disable this policy, the user won't be able to enable Enable paste with A
 ##### Group Policy (ADMX) information
 
 - GP unique name: AllowPowerToysAdvancedPasteOnlineAIModels
-- GP name: Advanced Paste: Allow using online AI models
+- GP name: Allow using online AI models
 - GP path: Administrative Templates/Microsoft PowerToys/Advanced Paste
 - GP scope: Computer and user
 - ADMX file name: _PowerToys.admx_
@@ -370,6 +374,305 @@ If you disable this policy, the user won't be able to enable Enable paste with A
 ##### Intune information
 
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~AdvancedPaste/AllowPowerToysAdvancedPasteOnlineAIModels`
+- Example value: `<disabled/>`
+
+### Mouse Without Borders
+
+#### Clipboard sharing enabled
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user can share the clipboard between machines.
+
+If you enable or don't configure this policy, the user takes control over the clipboard sharing setting.
+
+If you disable this policy, the user won't be able to enable the clipboard sharing setting.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbClipboardSharingEnabled
+- GP name: Clipboard sharing enabled
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbClipboardSharingEnabled
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbClipboardSharingEnabled`
+- Example value: `<disabled/>`
+
+#### Connect only in same subnet
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if connections are only allowed in the same subnet.
+
+If you enable this policy, the setting is enabled and only connections in the same subnet are allowed.
+
+If you disable this policy, the setting is disabled and all connections are allowed.
+
+If you don't configure this policy, the user takes control over the setting and can enable or disable it.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbSameSubnetOnly
+- GP name: Connect only in same subnet
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbSameSubnetOnly
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbSameSubnetOnly`
+- Example value: `<enabled/>`
+
+#### Disable user defined IP Address mapping rules
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user can define IP Address mapping rules.
+
+If you enable this policy, the setting is disabled and the user can't define rules or use existing ones.
+
+If you disable or don't configure this policy, the user takes control over the setting.
+
+Note: Enabling this policy does not prevent policy defined mapping rules from working.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbDisableUserDefinedIpMappingRules
+- GP name: Disable user defined IP Address mapping rules
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbDisableUserDefinedIpMappingRules
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbDisableUserDefinedIpMappingRules`
+- Example value: `<enabled/>`
+
+#### Disallow blocking screensaver on other machines
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user is allowed to disable the screensaver on the remote machines.
+
+If you enable this policy, the user won't be able to enable the "block screensaver" screensaver setting and the screensaver is not blocked.
+
+If you disable or don't configure this policy, the user takes control over the setting and can block the screensaver.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbDisallowBlockingScreensaver
+- GP name: Disallow blocking screensaver on other machines
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbDisallowBlockingScreensaver
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbDisallowBlockingScreensaver`
+- Example value: `<enabled/>`
+
+#### File transfer enabled
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user can transfer files between machines.
+
+If you enable or don't configure this policy, the user takes control over the file sharing setting.
+
+If you disable this policy, the user won't be able to enable the file sharing Settings.
+
+Note: The file sharing feature depends on the clipboard sharing feature. Disabling clipboard sharing automatically disables file sharing too.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbFileTransferEnabled
+- GP name: File transfer enabled
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbFileTransferEnabled
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbFileTransferEnabled`
+- Example value: `<disabled/>`
+
+#### Original user interface is available
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if the user can use the old Mouse Without Borders user interface.
+
+If you enable or don't configure this policy, the user takes control over the setting and can enable or disable the old user interface.
+
+If you disable this policy, the user won't be able to enable the old user interface.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbUseOriginalUserInterface
+- GP name: Original user interface is available
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbUseOriginalUserInterface
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbUseOriginalUserInterface`
+- Example value: `<disabled/>`
+
+#### Validate remote machine IP Address
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy configures if reverse DNS lookup is used to validate the remote machine IP Address.
+
+If you enable this policy, the setting is enabled and the IP Address is validated.
+
+If you disable this policy, the setting is disabled and the IP Address is not validated.
+
+If you don't configure this policy, the user takes control over the setting and can enable or disable it.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbValidateRemoteIp
+- GP name: Validate remote machine IP Address
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbValidateRemoteIp
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbValidateRemoteIp`
+- Example value: `<enabled/>`
+
+#### Predefined IP Address mapping rules
+
+Supported on PowerToys 0.83.0 or later.
+
+This policy allows you to define IP Address mapping rules.
+
+If you enable this policy, you can define IP Address mapping rules that the user can't change or disable.
+Please enter one mapping per line in the format: "hostname IP"
+
+If you disable or don't configure this policy, no predefined rules are applied.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MwbPolicyDefinedIpMappingRules
+- GP name: Predefined IP Address mapping rules
+- GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MwbPolicyDefinedIpMappingRules
+- Type: MULTI_SZ
+- Example value:
+
+    ```
+    Host1 192.0.2.1
+    Host2 192.0.2.2
+    Host3 192.0.2.3
+    ```
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbPolicyDefinedIpMappingRules`
+- Example value:
+
+    ```
+    <enabled/>
+    <data id="MwbPolicyDefinedIpMappingsList" value="Host1 192.0.2.1&#xF000Host2 192.0.2.2&#xF000Host3 192.0.2.3"/>
+    ```
+    > [!NOTE]
+    > Syntax for the :::no-loc text="value"::: property from the :::no-loc text="data"::: element:
+    > `<Hostname> <IP Address>&#xF000;<Hostname 2> <IP Address 2>&#xF000;<Hostname 3> <IP Address 3>`
+
+### New+
+
+#### Hide template filename extension
+
+Supported on PowerToys 0.85.0 or later.
+
+This policy configures if the template filenames are shown with extension or not.
+
+If you enable this policy, the setting is enabled and the extension is hidden.
+
+If you disable this policy, the setting is disabled and the extension is shown.
+
+If you don't configure this policy, the user takes control over the setting and can enable or disable it.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: NewPlusHideTemplateFilenameExtension
+- GP name: Hide template filename extension
+- GP path: Administrative Templates/Microsoft PowerToys/New+
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: NewPlusHideTemplateFilenameExtension
+- Type: DWORD
+- Example value: `0x00000000`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~NewPlus/NewPlusHideTemplateFilenameExtension`
 - Example value: `<disabled/>`
 
 ### PowerToys Run

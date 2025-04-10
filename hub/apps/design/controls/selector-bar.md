@@ -2,7 +2,7 @@
 description: The SelectorBar control enables switching between a small set of content sections.
 title: SelectorBar
 template: detail.hbs
-ms.date: 03/29/2024
+ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -39,11 +39,6 @@ There are some scenarios where another control may be more appropriate to use.
 - Use [PipsPager](pipspager.md) when you need regular pagination of a single data view.
 - Use [RadioButtons](radio-button.md) when an option is not selected by default, and context is unrelated to page navigation.
 
-## UWP and WinUI 2
-
-> [!IMPORTANT]
-> The SelectorBar control is not available for UWP and WinUI 2. For alternatives, see [NavigationView](navigationview.md) or [TabView](tab-view.md).
-
 ## Create a SelectorBar control
 
 > [!div class="checklist"]
@@ -51,7 +46,7 @@ There are some scenarios where another control may be more appropriate to use.
 > - **Important APIs**: [SelectorBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar), [Items property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.items), [SelectionChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selectionchanged),  [SelectorBarItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbaritem)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the SelectorBar in action](winui3gallery:/item/SelectorBar).
+> [Open the WinUI 3 Gallery app and see the SelectorBar in action](winui3gallery:/item/SelectorBar)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -132,7 +127,7 @@ When a user selects an item, you typically change the view by either navigating 
 ### Navigate with transition animations
 
 > [!TIP]
-> You can find these examples in the SelectorBar page of the [WinUI Gallery app](#get-the-sample-code). Use the WinUI Gallery app to run and view the full code.
+> You can find these examples in the [SelectorBar page of the WinUI Gallery app](winui3gallery:/item/SelectorBar). Use the WinUI Gallery app to run and view the full code.
 
 This example demonstrates handling the [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selectionchanged) event to navigate between different pages. The navigation uses the [SlideNavigationTransitionEffect](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.slidenavigationtransitioneffect) to slide the pages in from the left or right, as appropriate.
 
@@ -231,10 +226,10 @@ private void SelectorBar3_SelectionChanged
 }
 ```
 
+## UWP and WinUI 2
 
-## Get the sample code
-
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+> [!IMPORTANT]
+> The SelectorBar control is not available for UWP and WinUI 2. For alternatives, see [NavigationView](navigationview.md) or [TabView](tab-view.md).
 
 ## Related topics
 

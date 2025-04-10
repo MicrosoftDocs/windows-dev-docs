@@ -3,8 +3,6 @@ title: Feed providers
 description: Introduction to the feed providers feature in the Windows App SDK, a new integration point for third-party applications.
 ms.topic: article
 ms.date: 11/06/2023
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 
@@ -15,11 +13,19 @@ ms.localizationpriority: medium
 
 The feed providers feature in the Windows App SDK is a new integration point for third-party applications. It enables these applications to register their content feeds to be directly available within the Windows Widgets Board, enhancing the user experience by providing quick access to a variety of content directly from the desktop.
 
-This article introduces the concept of feed providers and provides a high-level explanation the feature. Detailed implementation guidance will be published in a future update.
+This article introduces the concept of feed providers and provides a high-level explanation the feature. 
+
+For detailed guidance on how to implement a feed provider, see these articles below: 
+
+- [Implement a feed provider in a C# Windows App](/windows/apps/develop/feeds/implement-feed-provider-cs)
+
+- [Implement a feed provider in a win32 app (C++/WinRT)](/windows/apps/develop/feeds/implement-feed-provider-win32)
+
+- [Feed provider package manifest XML format](/windows/apps/develop/feeds/feed-provider-manifest)
 
 Feeds in the Widgets Board helps users stay on top of what matters, enabling them to easily discover useful information and empowering them to act on it. Feed providers enable users to see content from multiple apps and services at the same time. Users can access content from various apps directly on their Widgets Board without the need to open individual apps, ensuring they have the latest information at their fingertips. Users also have the control to enable or disable feeds from the Widgets Board settings, tailoring the content to their preferences.
 
-![A screenshot showing the Windows Widgets Board showing feeds.](./images/feeds-screenshot.png)
+![hidedashboard-screenshot](media/feed-providers/hidedashboard-screenshot.png)
 
 ## Getting started with feed providers
 
@@ -38,4 +44,11 @@ The following lists the high-level steps for developing a feed provider:
 
 ## Next steps
 
-Detailed implementation guidance will be provided in a future documentation update. 
+For detailed guidance on how to implement a feed provider, see these articles below: 
+
+- [Implement a feed provider in a C# Windows App](/windows/apps/develop/feeds/implement-feed-provider-cs)
+
+- [Implement a feed provider in a win32 app (C++/WinRT)](/windows/apps/develop/feeds/implement-feed-provider-win32)
+
+- [Feed provider package manifest XML format](/windows/apps/develop/feeds/feed-provider-manifest)
+

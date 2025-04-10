@@ -1,11 +1,14 @@
 ---
 title: Dev Home Windows Customization
 description: Learn how to optimize your workflows by customizing Windows File Explorer, Dev Drive insights, and developer settings using Dev Home.
-ms.date: 05/07/2024 
+ms.date: 01/28/2025
 ms.topic: overview
 ---
 
 # Dev Home Windows Customization
+
+> [!IMPORTANT]
+> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
 
 Windows Customization in Dev Home enables you to configure your Windows environment to suit your development needs.
 

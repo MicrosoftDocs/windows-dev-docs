@@ -146,7 +146,7 @@ void BgTask::HandleHceActivation()
  {
         auto lock = m_srwLock.LockShared();
         // Take a deferral to keep this background task alive even after this "Run" method returns
-        // You must complete this deferal immediately after you have done processing the current transaction
+        // You must complete this deferral immediately after you have done processing the current transaction
         m_deferral = m_taskInstance->GetDeferral();
 
         DebugLog(L"*** HCE Activation Background Task Started ***");

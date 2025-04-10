@@ -5,17 +5,15 @@ brand: windows
 metadata:
    title: Windows app development documentation
    description: Design, develop, and deploy apps and solutions for Windows PCs and other devices.
-   ms.author: jken
-   author: GrantMeStrength
    ms.topic: hub-page
-   ms.date: 7/17/2024
+   ms.date: 10/10/2024
    ms.localizationpriority: medium
    uhfHeaderId: "MSDocsHeader-Windows"
    
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
-   - title: Get started with WinUI
+   - title: Start developing Windows apps
      itemType: quickstart
      url: ./get-started/start-here.md
    - title: App framework options
@@ -91,14 +89,17 @@ productDirectory:
 
 
 tools:
-  title: Develop for other Windows device platforms
+  title: More development options
   items:
-    - title: HoloLens
-      imageSrc: /media/hubs/windows/win_developer-5.svg
-      url: /windows/mixed-reality/
-    - title: Windows for IoT
+    - title: Windows Application SDK
       imageSrc: /media/hubs/windows/win_developer-4.svg
-      url: /windows/iot-core/
+      url: /windows/apps/windows-app-sdk
+    - title: .NET
+      imageSrc: /media/hubs/windows/win_developer-1.svg
+      url: /dotnet/
+    - title: UWP
+      imageSrc: /media/hubs/windows/win_developer-2.svg
+      url: /windows/uwp/
     - title: Games
       imageSrc: /media/hubs/windows/win_developer-3.svg
       url: https://developer.microsoft.com/games/

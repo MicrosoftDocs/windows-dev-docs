@@ -1,9 +1,6 @@
 ---
 title: Phone Link Task Continuity
 description: Phone Link enables synchronization between your Windows PC and mobile device. Learn how to integrate your Windows app with Phone Link for task continuity.
-author: mattwojo
-ms.author: mattwoj
-manager: jken
 ms.topic: article
 ms.date: 02/20/2024
 ---
@@ -49,7 +46,7 @@ If the request is approved, you will receive instructions on how to unlock the f
 
 ## Data Handling
 
-By using the Phone Link Task Continuity API, Microsoft will process and transfer your data in accordance with the [Microsoft Services Agreement](https://www.microsoft.com/servicesagreement) and the [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement). Data that is transferred to the user’s linked devices may be processed through Microsoft’s cloud services to ensure reliable data transfer between devices. The data handled by this API is not retained by Microsoft's cloud services subject to end user control.
+By using the Phone Link Task Continuity API, Microsoft will process and transfer your data in accordance with the [Microsoft Services Agreement](https://www.microsoft.com/servicesagreement) and the [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement). Data that is transferred to the user's linked devices may be processed through Microsoft's cloud services to ensure reliable data transfer between devices. The data handled by this API is not retained by Microsoft's cloud services subject to end user control.
 
 The Cross-Device SDK that you will integrate in your package ensures that data provided to the API is only handled by trusted Microsoft packages.
 

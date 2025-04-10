@@ -1,10 +1,11 @@
 ---
 title: PowerToys Crop And Lock for Windows
 description: Crop And Lock to crop a current application into a smaller window or just create a thumbnail.
-ms.date: 09/08/2023
-ms.topic: article
+ms.date: 11/19/2024
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Crop And Lock, Win]
+# Customer intent: Learn about the Crop And Lock feature in PowerToys for Windows.
 ---
 
 # Crop And Lock
@@ -37,9 +38,12 @@ Creates a window that shows the selected area of the original window. Any change
 ### Reparent
 
 Creates a window that replaces the original window, showing only the selected area. The application will now be controlled through the cropped window. Closing the cropped window will restore the original window.
-Not every window will react well to being contained in another application so this mode has many compatibility issues. It's advisable to use the "Thumbnail" mode instead if you find that a windows isn't reacting well to being cropped with the "Reparent" mode.
+
+Not every window will react well to being contained in another application so this mode has many compatibility issues. It's advisable to use the "Thumbnail" mode instead if you find that a window isn't responding well to being cropped with the "Reparent" mode.
 
 ## Known issues
+
+Crop And Lock currently has the following known issues:
 
 - Cropping maximized or full-screen windows in "Reparent" mode might not work. It's recommended to resize the window to fill the screen corners instead.
 - Some UWP apps won't react well to being cropped in "Reparent" mode. Windows Calculator is a notable example of this.

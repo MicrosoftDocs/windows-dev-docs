@@ -24,7 +24,7 @@ Windows Package Manager uses manifests (YAML files) to locate and install packag
 
 ### File naming convention
 
-The convention for naming a WinGet Configuration file is `configuration.dsc.yaml`. For Git-based projects the default configuration should be stored in a "configurations" directory at: `./configurations/configuration.dsc.yaml`.
+The convention for naming a WinGet Configuration file is using the ".winget" file extension (like `configuration.winget`). For Git-based projects the default configuration should be stored in a ".config" directory at: `./config/configuration.winget`. In some cases, more than one configuration file may be appropriate given different toolchains or user preferences. Those additional configuration files should also be located in the ".config" directory.
 
 ### Sections of a WinGet Configuration file
 
@@ -49,7 +49,7 @@ The list of Resources covers all of the software, tools, packages, etc. that nee
 
 ## Example WinGet Configuration file
 
-The following is an example WinGet Configuration `configuration.dsc.yaml` formatted file:
+The following is an example WinGet Configuration `configuration.winget` formatted file:
 
 ```yml
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
@@ -72,7 +72,6 @@ properties:
       id: vsPackage
       directives:
         description: Install Visual Studio 2022 Community
-        allowPrerelease: true
       settings:
         id: Microsoft.VisualStudio.2022.Community
         source: winget

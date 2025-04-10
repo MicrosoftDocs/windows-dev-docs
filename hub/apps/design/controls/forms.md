@@ -121,9 +121,9 @@ Control | Use | Example
 ### Lists
 Control | Use | Example
 - | - | -
-[ComboBox](combo-box.md) | Start in compact state and expand to show list of selectable items | Select from a long list of items, such as states or countries
-[ListView](./lists.md#list-views) | Categorize items and assign group headers, drag and drop items, curate content, and reorder items | Rank options
-[GridView](./lists.md#grid-views) | Arrange and browse image-based collections | Pick a photo, color, display theme
+[ComboBox](combo-box.md) | Start in compact state and expand to show list of selectable items | Select from a long list of items, such as states or countries/regions
+[ListView](./lists.md#list-view) | Categorize items and assign group headers, drag and drop items, curate content, and reorder items | Rank options
+[GridView](./lists.md#grid-view) | Arrange and browse image-based collections | Pick a photo, color, display theme
 
 ### Numeric input
 Control | Use | Example

@@ -1,37 +1,101 @@
 - name: Overview
   href: index.md
-- name: Design in Windows 11
-  items:
-    - name: Windows 11 design principles
-      href: signature-experiences/design-principles.md
-    - name: Windows 11 signature experiences
-      href: signature-experiences/signature-experiences.md
-    - name: Geometry
-      href: signature-experiences/geometry.md
-    - name: Color
-      href: signature-experiences/color.md
-    - name: Layering and elevation
-      href: signature-experiences/layering.md
-    - name: Materials
-      href: signature-experiences/materials.md
-    - name: Iconography
-      href: signature-experiences/iconography.md
-    - name: Typography
-      href: signature-experiences/typography.md
-    - name: Motion
-      href: signature-experiences/motion.md
-- name: Design basics
-  items:
+- name: Color
+  href: signature-experiences/color.md
+- name: Elevation
+  href: signature-experiences/layering.md
+  items: 
+    - name: Z-depth and shadow
+      href: layout/depth-shadow.md
+- name: Iconography
+  href: signature-experiences/iconography.md
+  items: 
+    - name: App icons
+      items: 
+        - name: Overview
+          href: style/iconography/overview.md
+        - name: Design guidelines
+          href: style/iconography/app-icon-design.md
+        - name: Construct your app icon
+          href: style/iconography/app-icon-construction.md
+        - name: Construction guidelines for Windows 10 icons
+          href: style/iconography/live-tile-icons.md
+        - name: Generate app icons using Visual Studio
+          href: style/iconography/visual-studio-asset-generation.md
+    - name: Segoe MDL2 icons
+      href: style/segoe-ui-symbol-font.md
+    - name: Segoe Fluent Icons
+      href: style/segoe-fluent-icons-font.md
+- name: Layout
+  items: 
     - name: Overview
-      href: basics/index.md
+      href: layout/index.md
     - name: App Silhouette
       href: basics/app-silhouette.md
     - name: App title bar
       href: basics/titlebar-design.md
+    - name: Spacing
+      href: style/spacing.md
+    - name: Screen sizes and breakpoints
+      href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
+    - name: Responsive design techniques
+      href: layout/responsive-design.md
+    - name: Alignment, margin, and padding
+      href: layout/alignment-margin-padding.md
+    - name: Layouts with XAML
+      href: layout/layouts-with-xaml.md
+    - name: Layout panels
+      href: layout/layout-panels.md
+- name: Materials
+  href: signature-experiences/materials.md
+  items: 
+    - name: Acrylic
+      href: style/acrylic.md
+    - name: Mica
+      href: style/mica.md
+- name: Motion
+  href: signature-experiences/motion.md
+  items: 
+    - name: Timing and easing
+      href: motion/timing-and-easing.md
+    - name: Directionality and gravity
+      href: motion/directionality-and-gravity.md
+    - name: Motion in practice
+      href: motion/motion-in-practice.md
+    - name: Page transitions
+      href: motion/page-transitions.md
+    - name: Connected animation
+      href: motion/connected-animation.md
+    - name: Parallax
+      href: motion/parallax.md
+    - name: Animations in XAML
+      href: motion/xaml-animation.md
+      items: 
+        - name: Property animations
+          href: motion/xaml-property-animations.md
+        - name: Storyboarded animations
+          href: motion/storyboarded-animations.md
+        - name: Key-frame and easing function animations
+          href: motion/key-frame-and-easing-function-animations.md
+- name: Geometry
+  href: signature-experiences/geometry.md
+  items: 
+    - name: Corner radius
+      href: style/rounded-corner.md
+- name: Typography
+  href: signature-experiences/typography.md
+- name: Content design
+  items: 
+    - name: Overview
+      href: basics/index.md
     - name: Content basics
       href: basics/content-basics.md
+    - name: Writing style
+      href: style/writing-style.md
     - name: Commanding Basics
       href: basics/commanding-basics.md
+    - name: Sound
+      href: style/sound.md
     - name: Navigation basics
       items:
         - name: Overview
@@ -40,56 +104,13 @@
           href: basics/navigate-between-two-pages.md
         - name: Navigation history and backwards navigation
           href: basics/navigation-history-and-backwards-navigation.md
-
-- name: Layout
-  items:
-    - name: Overview
-      href: layout/index.md
-    - name: Screen sizes and breakpoints
-      href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
-    - name: Responsive design techniques
-      href: layout/responsive-design.md
-    - name: Layouts with XAML
-      href: layout/layouts-with-xaml.md
-    - name: Show multiple views
-      items:
-        - name: Show multiple views
-          href: layout/show-multiple-views.md
-        - name: Use AppWindow
-          href: layout/app-window.md
-        - name: Use ApplicationView
-          href: layout/application-view.md
-    - name: Alignment, margin, and padding
-      href: layout/alignment-margin-padding.md
-    - name: Panels
-      items:
-        - name: Overview
-          href: layout/layout-panels.md
-        - name: "Tutorial: Use layout panels"
-          href: layout/grid-tutorial.md
-        - name: Split view
-          href: controls/split-view.md
-        - name: Custom panels
-          href: layout/custom-panels-overview.md
-        - name: "Custom panel example: BoxPanel"
-          href: layout/boxpanel-example-custom-panel.md
-    - name: Attached Layout
-      href: layout/attached-layouts.md
-    - name: Transforms
-      items:
-        - name: Overview
-          href: layout/transforms.md
-        - name: 3-D perspective effects
-          href: layout/3-d-perspective-effects.md
-    - name: Z-depth and shadow
-      href: layout/depth-shadow.md
 - name: Controls
   items:
     - name: Overview
       href: controls/index.md
     - name: Intro to controls and events
       href: controls/controls-and-events-intro.md
-    - name: Commanding in Windows apps using StandardUICommand, XamlUICommand, and ICommand
+    - name: Commanding using StandardUICommand, XamlUICommand, and ICommand
       href: controls/commanding.md
     - name: Basic input
       items:
@@ -167,6 +188,8 @@
       href: controls/forms.md
     - name: Media, graphics, and shapes
       items:
+        - name: Icons
+          href: style/icons.md
         - name: Animated icons
           href: controls/animated-icon.md
         - name: Images and image brushes
@@ -235,6 +258,8 @@
           href: controls/annotated-scrollbar.md
         - name: Semantic zoom
           href: controls/semantic-zoom.md
+        - name: Split view
+          href: controls/split-view.md
         - name: Two-pane view
           href: controls/two-pane-view.md
     - name: Status and information
@@ -271,80 +296,8 @@
           href: controls/content-links.md
         - name: Handwriting view
           href: controls/text-handwriting-view.md
-- name: Style
-  items:
-    - name: Overview
-      href: style/index.md
-    - name: Color
-      href: style/color.md
-    - name: Typography
-      href: style/typography.md
-    - name: Icons
-      items:
-        - name: Overview
-          href: style/iconography/overview.md
-        - name: Design guidelines for Windows app icons
-          href: style/iconography/app-icon-design.md
-        - name: Construct your Windows app's icon
-          href: style/iconography/app-icon-construction.md
-        - name: Construction guidelines for Windows 10 icons
-          href: style/iconography/live-tile-icons.md  
-        - name: Create icons using Visual Studio's asset generation tool
-          href: style/iconography/visual-studio-asset-generation.md  
-        - name: Segoe MDL2 icons
-          href: style/segoe-ui-symbol-font.md
-        - name: Segoe Fluent Icons
-          href: style/segoe-fluent-icons-font.md
-    - name: Acrylic
-      href: style/acrylic.md
-    - name: Mica
-      href: style/mica.md
-    - name: Reveal focus
-      href: style/reveal-focus.md
-    - name: Sound
-      href: style/sound.md
-    - name: Writing style
-      href: style/writing-style.md
-    - name: XAML brushes
-      href: style/brushes.md
-    - name: XAML styles
-      href: style/xaml-styles.md
-      items:
-        - name: XAML Control templates
-          href: style/xaml-control-templates.md
-        - name: ResourceDictionary and XAML resource references
-          href: style/xaml-resource-dictionary.md
-        - name: XAML theme resources
-          href: style/xaml-theme-resources.md
-    - name: Spacing
-      href: style/spacing.md
-    - name: Corner radius
-      href: style/rounded-corner.md
-- name: Motion
-  items:
-    - name: Overview
-      href: motion/index.md
-    - name: Timing and easing
-      href: motion/timing-and-easing.md
-    - name: Directionality and gravity
-      href: motion/directionality-and-gravity.md
-    - name: Motion in practice
-      href: motion/motion-in-practice.md
-    - name: Page transitions
-      href: motion/page-transitions.md
-    - name: Connected animation
-      href: motion/connected-animation.md
-    - name: Parallax
-      href: motion/parallax.md
-    - name: Animations in XAML
-      href: motion/xaml-animation.md
-      items:
-        - name: Property animations
-          href: motion/xaml-property-animations.md
-        - name: Storyboarded animations
-          href: motion/storyboarded-animations.md
-        - name: Key-frame and easing function animations
-          href: motion/key-frame-and-easing-function-animations.md
+    - name: Title bar
+      href: controls/title-bar.md
 - name: Shell
   items:
     - name: Overview
@@ -423,34 +376,6 @@
       items:
         - name: Pin your app to the taskbar
           href: shell/pin-to-taskbar.md
-    - name: Live Tiles
-      href: shell/tiles-and-notifications/creating-tiles.md
-      items:
-        - name: Secondary tiles
-          href: shell/tiles-and-notifications/secondary-tiles.md
-          items:
-            - name: Guidance
-              href: shell/tiles-and-notifications/secondary-tiles-guidance.md
-            - name: Pin to Start
-              href: shell/tiles-and-notifications/secondary-tiles-pinning.md
-            - name: Pin to taskbar
-              href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
-            - name: Desktop applications
-              href: shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md
-        - name: Tile content
-          href: shell/tiles-and-notifications/create-adaptive-tiles.md
-        - name: Tile content schema
-          href: shell/tiles-and-notifications/tile-schema.md
-        - name: Special tile templates
-          href: shell/tiles-and-notifications/special-tile-templates-catalog.md
-        - name: Send local tile notification
-          href: shell/tiles-and-notifications/sending-a-local-tile-notification.md
-        - name: Chaseable tile notifications
-          href: shell/tiles-and-notifications/chaseable-tile-notifications.md
-        - name: Primary tile APIs
-          href: shell/tiles-and-notifications/primary-tile-apis.md
-        - name: Tile, toast notification support for language, scale, contrast
-          href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
     - name: Misc
       items:
         - name: Notifications Visualizer
@@ -581,16 +506,6 @@
       href: input/guidelines-for-targeting.md
     - name: Visual feedback
       href: input/guidelines-for-visualfeedback.md
-- name: Devices
-  items:
-    - name: Overview
-      href: devices/index.md
-    - name: Kinect for Windows
-      href: devices/kinect-for-windows.md
-    - name: Designing for Xbox and TV
-      href: devices/designing-for-tv.md
-    - name: Mixed Reality
-      href: devices/designing-for-MR.md
 - name: Usability
   items:
     - name: Overview
@@ -679,19 +594,19 @@
           href: in-app-help/in-app-help.md
         - name: External help
           href: in-app-help/external-help.md
-- name: Windows widgets
+- name: Widgets
   items:
   - name: Overview
     href: widgets/index.md
-  - name: Widgets design fundamentals
+  - name: Design fundamentals
     href: widgets/widgets-design-fundamentals.md
-  - name: Widget states and built-in UI components
+  - name: States and built-in UI components
     href: widgets/widgets-states-and-ui.md
-  - name: Widget interaction design guidance
+  - name: Interaction design guidance
     href: widgets/widgets-interaction-design.md
-  - name: Create a widget template with the Adaptive Card Designer
+  - name: Create a template with the Adaptive Card Designer
     href: widgets/widgets-create-a-template.md
   - name: Integrate with the widget picker
     href: widgets/widgets-picker-integration.md
-- name: Design toolkits and samples for Windows apps
+- name: Design resources
   href: downloads/index.md

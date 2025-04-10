@@ -58,7 +58,7 @@ The following code shows how to load a single file into app memory using the [**
 
 3D geometry data can come in many different formats, and not all are efficient for 3D printing. Windows uses the 3D Manufacturing Format (.3mf) file type for all 3D printing tasks.
 
-See the [3MF Specification](https://3mf.io/3mf-specification/) to learn more about 3MF and the supported features for producers and consumers of 3D product. To learn how to utilize these features with Windows APIs, see the [Generate a 3MF package](./3d-generate-3mf.md) tutorial.
+See the [3MF Specification](https://3mf.io/spec/) to learn more about 3MF and the supported features for producers and consumers of 3D product. To learn how to utilize these features with Windows APIs, see the [Generate a 3MF package](./3d-generate-3mf.md) tutorial.
 
 > [!NOTE]  
 > The [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) app can open files of most popular 3D formats and save them as .3mf files. It also provides tools to edit your models, add color data, and perform other print-specific operations.

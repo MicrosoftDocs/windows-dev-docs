@@ -4,8 +4,6 @@ title: Detect and react to focus session state
 ms.topic: article
 ms.date: 07/18/2022
 keywords: AppLifecycle, Windows, ApplicationModel, focus
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 

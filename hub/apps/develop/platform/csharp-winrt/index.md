@@ -81,7 +81,7 @@ C#/WinRT uses the [LoadLibrary alternate search order](/windows/win32/dlls/dynam
 
   To address this error, edit your `<TargetFramework>` property to target a specific Windows version, for example:
   ```xml
-  <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+  <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
   ```
   Refer to the docs on [Calling Windows Runtime APIs](../../../desktop/modernize/desktop-to-uwp-enhance.md) for more details on specifying the `<TargetFramework>` property.
   

@@ -3,8 +3,6 @@ title: Implement a widget provider in a C# Windows App
 description: This article walks you through the process of creating a widget provider, implemented in C#, that provides widget content and responds to widget actions. 
 ms.topic: article
 ms.date: 07/06/2022
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 
@@ -81,6 +79,11 @@ public static Dictionary<string, CompactWidgetInfo> RunningWidgets = new Diction
 ## Declare widget template JSON strings
 
 This example will declare some static strings to define the JSON templates for each widget. For convenience, these templates are stored in the member variables of the **WidgetProvider** class. If you need a general storage for the templates - they can be included as part of the application package: [Accessing Package Files](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web). For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Card Designer](../../design/widgets/widgets-create-a-template.md).
+
+In the latest release, apps that implement Windows widgets can customize the header that is displayed for their widget in the Widgets Board, overriding the default presentation. For more information, see [Customize the widget header area](widget-header-customization.md).
+
+> [!NOTE]
+> In the latest release, apps that implement Windows widgets can choose to populate the widget content with HTML served from a specified URL instead of supplying content in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Widget providers must still provide an Adaptive Card JSON payload, so the implementation steps in this walkthrough are applicable to web widgets. For more information, see [Web widget providers](web-widget-providers.md).
 
 ```csharp
 // WidgetProvider.cs
@@ -423,7 +426,7 @@ public WidgetProvider()
         var customState = widgetInfo.CustomState;
         if (!RunningWidgets.ContainsKey(widgetId))
         {
-            CompactWidgetInfo runningWidgetInfo = new CompactWidgetInfo() { widgetId = widgetName, widgetName = widgetId };
+            CompactWidgetInfo runningWidgetInfo = new CompactWidgetInfo() { widgetId = widgetId, widgetName = widgetName };
             try
             {
                 // If we had any save state (in this case we might have some state saved for Counting widget)
@@ -795,7 +798,7 @@ The following steps summarize the process for widget customization.
 1. The widget raises the **OnCustomizationRequested** event on the widget provider to indicate that the user has requested the widget customization experience.
 1. The widget provider sets an internal flag to indicate that the widget is in customization mode. While in customization mode, the widget provider sends the JSON templates for the widget customization UI instead of the regular widget UI.
 1. While in customization mode, the widget provider receives **OnActionInvoked** events as the user interacts with the customization UI and adjusts its internal configuration and behavior based on the user's actions.
-1. When the action associated with the **OnActionInvoked** event is the app-defined "exit customization" action, the widget provider resets it's internal flag to indicate that it is no longer in customization mode and resumes sending the visual and data JSON templates for the regular widget experience, reflecting the changes requested during customization. 
+1. When the action associated with the **OnActionInvoked** event is the app-defined "exit customization" action, the widget provider resets its internal flag to indicate that it is no longer in customization mode and resumes sending the visual and data JSON templates for the regular widget experience, reflecting the changes requested during customization. It's possible for the user to close out of the customization experience without clicking the app-defined exit customization action. In this case, the [IWidgetProviderAnalytics.OnAnalyticsInfoReported](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovideranalytics.onanalyticsinforeported) will be raised, and the [WidgetAnalyticsInfoReportedArgs.AnalyticsJson](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetanalyticsinforeportedargs.analyticsjson) will have an *interactionKind* of "exitCustomization".
 1. The widget provider persists the customization options to disk or the cloud so that the changes are preserved between invocations of the widget provider.
 
 > [!NOTE]

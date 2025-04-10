@@ -36,6 +36,8 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "author": "mattwojo",
+      "ms.author": "mattwoj",
       "recommendations": true,
       "breadcrumb_path": "/windows/arm/breadcrumb/toc.json",
       "extendBreadcrumb": true,

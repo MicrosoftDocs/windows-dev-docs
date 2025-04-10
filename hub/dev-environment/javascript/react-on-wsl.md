@@ -1,9 +1,6 @@
 ---
 title: Install React on Windows Subsystem for Linux
-description: Install React on Windows Subsystem for Linux (WSL) and start developing web apps with React components and the create-react-app toolchain.
-author: mattwojo
-ms.author: mattwoj 
-manager: jken
+description: Install React on Windows Subsystem for Linux (WSL) and start developing web apps with React components and the Vite front-end build toolchain.
 ms.topic: article
 keywords: react, install react on wsl, install react on linux on windows, react and windows, react development with windows, react with windows 10, react on windows, react with wsl
 ms.date: 03/30/2021
@@ -15,7 +12,7 @@ This guide will walk through installing React on a Linux distribution (ie. Ubunt
 
 We recommend following these instructions if you are creating a single-page app (SPA) that you would like to use Bash commands or tools with and/or plan to deploy to a Linux server or use Docker containers. If you are brand new to React and just interested in learning, you may want to consider [installing with vite directly on Windows](./react-on-windows.md).
 
-For more general information about React, deciding between React (web apps), React Native (mobile apps), and React Native for Windows (desktop apps), see the [React overview](./react-overview.md).
+For more general information about React, deciding between React (web apps), React Native (mobile apps), and React Native for Desktop (desktop apps), see the [React overview](./react-overview.md).
 
 ## Prerequisites
 
@@ -55,7 +52,7 @@ To install the full React toolchain on WSL, we recommend using vite.
 - [Vite](https://vitejs.dev/)
 - [Install Next.js](./nextjs-on-wsl.md)
 - [Install Gatsby](./gatsby-on-wsl.md)
-- [Install React Native for Windows](https://microsoft.github.io/react-native-windows/docs/getting-started)
+- [Install React Native for Desktop](https://microsoft.github.io/react-native-windows/docs/getting-started)
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
 - [Install NodeJS on WSL](./nodejs-on-wsl.md)
 - Try the tutorial: [Using React in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)

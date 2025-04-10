@@ -140,6 +140,7 @@ Because the UI elements are going to be defined in the C# code, the `InitializeC
 ```csharp
 public MainPage()
 {
+    BindingContext = ViewModel;
     Content = new Grid
     {
         RowDefinitions = Rows.Define(

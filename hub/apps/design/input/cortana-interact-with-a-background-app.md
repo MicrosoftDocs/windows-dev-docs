@@ -10,8 +10,6 @@ keywords: cortana
 
 >[!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
->
-> See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
 
 Enable user interaction with a background app, through speech and text input in the **Cortana** canvas, while executing a voice command.
 
@@ -97,80 +95,80 @@ AdventureWorksVoiceCommandService.cs contains the completion message method:
 /// <param name="destination">The destination, expected to be in the phrase list.</param>
 private async Task SendCompletionMessageForDestination(string destination)
 {
-	// If this operation is expected to take longer than 0.5 seconds, the task must
-	// supply a progress response to Cortana before starting the operation, and
-	// updates must be provided at least every 5 seconds.
-	string loadingTripToDestination = string.Format(
-			   cortanaResourceMap.GetValue("LoadingTripToDestination", cortanaContext).ValueAsString,
-			   destination);
-	await ShowProgressScreen(loadingTripToDestination);
-	Model.TripStore store = new Model.TripStore();
-	await store.LoadTrips();
+    // If this operation is expected to take longer than 0.5 seconds, the task must
+    // supply a progress response to Cortana before starting the operation, and
+    // updates must be provided at least every 5 seconds.
+    string loadingTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("LoadingTripToDestination", cortanaContext).ValueAsString,
+               destination);
+    await ShowProgressScreen(loadingTripToDestination);
+    Model.TripStore store = new Model.TripStore();
+    await store.LoadTrips();
 
-	// Query for the specified trip. 
+    // Query for the specified trip. 
     // The destination should be in the phrase list. However, there might be  
     // multiple trips to the destination. We pick the first.
-	IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
 
-	var userMessage = new VoiceCommandUserMessage();
-	var destinationsContentTiles = new List<VoiceCommandContentTile>();
-	if (trips.Count() == 0)
-	{
-		string foundNoTripToDestination = string.Format(
-			   cortanaResourceMap.GetValue("FoundNoTripToDestination", cortanaContext).ValueAsString,
-			   destination);
-		userMessage.DisplayMessage = foundNoTripToDestination;
-		userMessage.SpokenMessage = foundNoTripToDestination;
-	}
-	else
-	{
-		// Set plural or singular title.
-		string message = "";
-		if (trips.Count() > 1)
-		{
-			message = cortanaResourceMap.GetValue("PluralUpcomingTrips", cortanaContext).ValueAsString;
-		}
-		else
-		{
-			message = cortanaResourceMap.GetValue("SingularUpcomingTrip", cortanaContext).ValueAsString;
-		}
-		userMessage.DisplayMessage = message;
-		userMessage.SpokenMessage = message;
+    var userMessage = new VoiceCommandUserMessage();
+    var destinationsContentTiles = new List<VoiceCommandContentTile>();
+    if (trips.Count() == 0)
+    {
+        string foundNoTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("FoundNoTripToDestination", cortanaContext).ValueAsString,
+               destination);
+        userMessage.DisplayMessage = foundNoTripToDestination;
+        userMessage.SpokenMessage = foundNoTripToDestination;
+    }
+    else
+    {
+        // Set plural or singular title.
+        string message = "";
+        if (trips.Count() > 1)
+        {
+            message = cortanaResourceMap.GetValue("PluralUpcomingTrips", cortanaContext).ValueAsString;
+        }
+        else
+        {
+            message = cortanaResourceMap.GetValue("SingularUpcomingTrip", cortanaContext).ValueAsString;
+        }
+        userMessage.DisplayMessage = message;
+        userMessage.SpokenMessage = message;
 
-		// Define a tile for each destination.
-		foreach (Model.Trip trip in trips)
-		{
-			int i = 1;
-			
-			var destinationTile = new VoiceCommandContentTile();
+        // Define a tile for each destination.
+        foreach (Model.Trip trip in trips)
+        {
+            int i = 1;
+            
+            var destinationTile = new VoiceCommandContentTile();
 
-			destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
-			destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
+            destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
+            destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
 
-			destinationTile.AppLaunchArgument = trip.Destination;
-			destinationTile.Title = trip.Destination;
-			if (trip.StartDate != null)
-			{
-				destinationTile.TextLine1 = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
-			}
-			else
-			{
-				destinationTile.TextLine1 = trip.Destination + " " + i;
-			}
+            destinationTile.AppLaunchArgument = trip.Destination;
+            destinationTile.Title = trip.Destination;
+            if (trip.StartDate != null)
+            {
+                destinationTile.TextLine1 = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
+            }
+            else
+            {
+                destinationTile.TextLine1 = trip.Destination + " " + i;
+            }
 
-			destinationsContentTiles.Add(destinationTile);
-			i++;
-		}
-	}
+            destinationsContentTiles.Add(destinationTile);
+            i++;
+        }
+    }
 
-	var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+    var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
 
-	if (trips.Count() > 0)
-	{
-		response.AppLaunchArgument = destination;
-	}
+    if (trips.Count() > 0)
+    {
+        response.AppLaunchArgument = destination;
+    }
 
-	await voiceServiceConnection.ReportSuccessAsync(response);
+    await voiceServiceConnection.ReportSuccessAsync(response);
 }
 ```
 
@@ -178,7 +176,7 @@ private async Task SendCompletionMessageForDestination(string destination)
 
 Once a voice command is recognized, **Cortana** must call ReportSuccessAsync and present feedback within approximately 500If the app service cannot complete the action specified by the voice command within 500ms, **Cortana** presents a hand-off screen that is shown until your app calls ReportSuccessAsync, or for up to 5 seconds.
 
-If the app service doesn’t call ReportSuccessAsync, or any other VoiceCommandServiceConnection method, the user receives an error message and the app service call is cancelled.
+If the app service doesn't call ReportSuccessAsync, or any other VoiceCommandServiceConnection method, the user receives an error message and the app service call is cancelled.
 
 Here's an example of a hand-off screen for the **Adventure Works** app. In this example, a user has queried **Cortana** for upcoming trips. The hand-off screen includes a message customized with the app service name, an icon, and a **Feedback** string. 
 
@@ -207,11 +205,11 @@ AdventureWorksVoiceCommandService.cs contains the following progress message met
 /// <returns></returns>
 private async Task ShowProgressScreen(string message)
 {
-	var userProgressMessage = new VoiceCommandUserMessage();
-	userProgressMessage.DisplayMessage = userProgressMessage.SpokenMessage = message;
+    var userProgressMessage = new VoiceCommandUserMessage();
+    userProgressMessage.DisplayMessage = userProgressMessage.SpokenMessage = message;
 
-	VoiceCommandResponse response = VoiceCommandResponse.CreateResponse(userProgressMessage);
-	await voiceServiceConnection.ReportProgressAsync(response);
+    VoiceCommandResponse response = VoiceCommandResponse.CreateResponse(userProgressMessage);
+    await voiceServiceConnection.ReportProgressAsync(response);
 }
 ```
 
@@ -223,7 +221,7 @@ Here's an example of a confirmation screen for the **Adventure Works** app. In t
 
 If the user says something other than "Yes" or "No", **Cortana** cannot determine the answer to the question. In this case, **Cortana** prompts the user with a similar question provided by the app service.
 
-On the second prompt, if the user still doesn’t say "Yes" or "No", **Cortana** prompts the user a third time with the same question prefixed with an apology. If the user still doesn’t say "Yes" or "No", **Cortana** stops listening for voice input and asks the user to tap one of the buttons instead.
+On the second prompt, if the user still doesn't say "Yes" or "No", **Cortana** prompts the user a third time with the same question prefixed with an apology. If the user still doesn't say "Yes" or "No", **Cortana** stops listening for voice input and asks the user to tap one of the buttons instead.
 
 The confirmation screen includes a message customized for the action, an icon, and a content tile with information about the trip being canceled.
 
@@ -241,103 +239,103 @@ AdventureWorksVoiceCommandService.cs contains the following trip cancellation me
 /// <returns></returns>
 private async Task SendCompletionMessageForCancellation(string destination)
 {
-	// Begin loading data to search for the target store. 
+    // Begin loading data to search for the target store. 
     // Consider inserting a progress screen here, in order to prevent Cortana from timing out. 
-	string progressScreenString = string.Format(
-		cortanaResourceMap.GetValue("ProgressLookingForTripToDest", cortanaContext).ValueAsString,
-		destination);
-	await ShowProgressScreen(progressScreenString);
+    string progressScreenString = string.Format(
+        cortanaResourceMap.GetValue("ProgressLookingForTripToDest", cortanaContext).ValueAsString,
+        destination);
+    await ShowProgressScreen(progressScreenString);
 
-	Model.TripStore store = new Model.TripStore();
-	await store.LoadTrips();
+    Model.TripStore store = new Model.TripStore();
+    await store.LoadTrips();
 
-	IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
-	Model.Trip trip = null;
-	if (trips.Count() > 1)
-	{
-		// If there is more than one trip, provide a disambiguation screen.
-		// However, if a significant number of items are returned, you might want to 
-		// just display a link to your app and provide a deeper search experience.
-		string disambiguationDestinationString = string.Format(
-			cortanaResourceMap.GetValue("DisambiguationWhichTripToDest", cortanaContext).ValueAsString,
-			destination);
-		string disambiguationRepeatString = cortanaResourceMap.GetValue("DisambiguationRepeat", cortanaContext).ValueAsString;
-		trip = await DisambiguateTrips(trips, disambiguationDestinationString, disambiguationRepeatString);
-	}
-	else
-	{
-		trip = trips.FirstOrDefault();
-	}
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
+    Model.Trip trip = null;
+    if (trips.Count() > 1)
+    {
+        // If there is more than one trip, provide a disambiguation screen.
+        // However, if a significant number of items are returned, you might want to 
+        // just display a link to your app and provide a deeper search experience.
+        string disambiguationDestinationString = string.Format(
+            cortanaResourceMap.GetValue("DisambiguationWhichTripToDest", cortanaContext).ValueAsString,
+            destination);
+        string disambiguationRepeatString = cortanaResourceMap.GetValue("DisambiguationRepeat", cortanaContext).ValueAsString;
+        trip = await DisambiguateTrips(trips, disambiguationDestinationString, disambiguationRepeatString);
+    }
+    else
+    {
+        trip = trips.FirstOrDefault();
+    }
 
-	var userPrompt = new VoiceCommandUserMessage();
-	
-	VoiceCommandResponse response;
-	if (trip == null)
-	{
-		var userMessage = new VoiceCommandUserMessage();
-		string noSuchTripToDestination = string.Format(
-			cortanaResourceMap.GetValue("NoSuchTripToDestination", cortanaContext).ValueAsString,
-			destination);
-		userMessage.DisplayMessage = userMessage.SpokenMessage = noSuchTripToDestination;
+    var userPrompt = new VoiceCommandUserMessage();
+    
+    VoiceCommandResponse response;
+    if (trip == null)
+    {
+        var userMessage = new VoiceCommandUserMessage();
+        string noSuchTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("NoSuchTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userMessage.DisplayMessage = userMessage.SpokenMessage = noSuchTripToDestination;
 
-		response = VoiceCommandResponse.CreateResponse(userMessage);
-		await voiceServiceConnection.ReportSuccessAsync(response);
-	}
-	else
-	{
-		// Prompt the user for confirmation that this is the correct trip to cancel.
-		string cancelTripToDestination = string.Format(
-			cortanaResourceMap.GetValue("CancelTripToDestination", cortanaContext).ValueAsString,
-			destination);
-		userPrompt.DisplayMessage = userPrompt.SpokenMessage = cancelTripToDestination;
-		var userReprompt = new VoiceCommandUserMessage();
-		string confirmCancelTripToDestination = string.Format(
-			cortanaResourceMap.GetValue("ConfirmCancelTripToDestination", cortanaContext).ValueAsString,
-			destination);
-		userReprompt.DisplayMessage = userReprompt.SpokenMessage = confirmCancelTripToDestination;
-		
-		response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt);
+        response = VoiceCommandResponse.CreateResponse(userMessage);
+        await voiceServiceConnection.ReportSuccessAsync(response);
+    }
+    else
+    {
+        // Prompt the user for confirmation that this is the correct trip to cancel.
+        string cancelTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("CancelTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userPrompt.DisplayMessage = userPrompt.SpokenMessage = cancelTripToDestination;
+        var userReprompt = new VoiceCommandUserMessage();
+        string confirmCancelTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("ConfirmCancelTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userReprompt.DisplayMessage = userReprompt.SpokenMessage = confirmCancelTripToDestination;
+        
+        response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt);
 
-		var voiceCommandConfirmation = await voiceServiceConnection.RequestConfirmationAsync(response);
+        var voiceCommandConfirmation = await voiceServiceConnection.RequestConfirmationAsync(response);
 
-		// If RequestConfirmationAsync returns null, Cortana has likely been dismissed.
-		if (voiceCommandConfirmation != null)
-		{
-			if (voiceCommandConfirmation.Confirmed == true)
-			{
-				string cancellingTripToDestination = string.Format(
-			   cortanaResourceMap.GetValue("CancellingTripToDestination", cortanaContext).ValueAsString,
-			   destination);
-				await ShowProgressScreen(cancellingTripToDestination);
+        // If RequestConfirmationAsync returns null, Cortana has likely been dismissed.
+        if (voiceCommandConfirmation != null)
+        {
+            if (voiceCommandConfirmation.Confirmed == true)
+            {
+                string cancellingTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("CancellingTripToDestination", cortanaContext).ValueAsString,
+               destination);
+                await ShowProgressScreen(cancellingTripToDestination);
 
-				// Perform the operation to remove the trip from app data. 
-				// As the background task runs within the app package of the installed app,
-				// we can access local files belonging to the app without issue.
-				await store.DeleteTrip(trip);
+                // Perform the operation to remove the trip from app data. 
+                // As the background task runs within the app package of the installed app,
+                // we can access local files belonging to the app without issue.
+                await store.DeleteTrip(trip);
 
-				// Provide a completion message to the user.
-				var userMessage = new VoiceCommandUserMessage();
-				string cancelledTripToDestination = string.Format(
-					cortanaResourceMap.GetValue("CancelledTripToDestination", cortanaContext).ValueAsString,
-					destination);
-				userMessage.DisplayMessage = userMessage.SpokenMessage = cancelledTripToDestination;
-				response = VoiceCommandResponse.CreateResponse(userMessage);
-				await voiceServiceConnection.ReportSuccessAsync(response);
-			}
-			else
-			{
-				// Confirm no action for the user.
-				var userMessage = new VoiceCommandUserMessage();
-				string keepingTripToDestination = string.Format(
-					cortanaResourceMap.GetValue("KeepingTripToDestination", cortanaContext).ValueAsString,
-					destination);
-				userMessage.DisplayMessage = userMessage.SpokenMessage = keepingTripToDestination;
+                // Provide a completion message to the user.
+                var userMessage = new VoiceCommandUserMessage();
+                string cancelledTripToDestination = string.Format(
+                    cortanaResourceMap.GetValue("CancelledTripToDestination", cortanaContext).ValueAsString,
+                    destination);
+                userMessage.DisplayMessage = userMessage.SpokenMessage = cancelledTripToDestination;
+                response = VoiceCommandResponse.CreateResponse(userMessage);
+                await voiceServiceConnection.ReportSuccessAsync(response);
+            }
+            else
+            {
+                // Confirm no action for the user.
+                var userMessage = new VoiceCommandUserMessage();
+                string keepingTripToDestination = string.Format(
+                    cortanaResourceMap.GetValue("KeepingTripToDestination", cortanaContext).ValueAsString,
+                    destination);
+                userMessage.DisplayMessage = userMessage.SpokenMessage = keepingTripToDestination;
 
-				response = VoiceCommandResponse.CreateResponse(userMessage);
-				await voiceServiceConnection.ReportSuccessAsync(response);
-			}
-		}
-	}
+                response = VoiceCommandResponse.CreateResponse(userMessage);
+                await voiceServiceConnection.ReportSuccessAsync(response);
+            }
+        }
+    }
 }
 ```
 
@@ -351,7 +349,7 @@ The app service provides **Cortana** with a disambiguation screen that prompts t
 
 In this case, **Cortana** prompts the user with a similar question provided by the app service.
 
-On the second prompt, if the user still doesn’t say something that can be used to identify the selection, **Cortana** prompts the user a third time with the same question prefixed with an apology. If the user still doesn’t say something that can be used to identify the selection, **Cortana** stops listening for voice input and asks the user to tap one of the buttons instead.
+On the second prompt, if the user still doesn't say something that can be used to identify the selection, **Cortana** prompts the user a third time with the same question prefixed with an apology. If the user still doesn't say something that can be used to identify the selection, **Cortana** stops listening for voice input and asks the user to tap one of the buttons instead.
 
 The disambiguation screen includes a message customized for the action, an icon, and a content tile with information about the trip being canceled.
 
@@ -368,60 +366,60 @@ AdventureWorksVoiceCommandService.cs contains the following trip cancellation me
 /// <param name="secondDisambiguationMessage">Repeat prompt retry message</param>
 private async Task<Model.Trip> DisambiguateTrips(IEnumerable<Model.Trip> trips, string disambiguationMessage, string secondDisambiguationMessage)
 {
-	// Create the first prompt message.
-	var userPrompt = new VoiceCommandUserMessage();
-	userPrompt.DisplayMessage =
-		userPrompt.SpokenMessage = disambiguationMessage;
+    // Create the first prompt message.
+    var userPrompt = new VoiceCommandUserMessage();
+    userPrompt.DisplayMessage =
+        userPrompt.SpokenMessage = disambiguationMessage;
 
-	// Create a re-prompt message if the user responds with an out-of-grammar response.
-	var userReprompt = new VoiceCommandUserMessage();
-	userReprompt.DisplayMessage =
-		userReprompt.SpokenMessage = secondDisambiguationMessage;
+    // Create a re-prompt message if the user responds with an out-of-grammar response.
+    var userReprompt = new VoiceCommandUserMessage();
+    userReprompt.DisplayMessage =
+        userReprompt.SpokenMessage = secondDisambiguationMessage;
 
-	// Create card for each item. 
-	var destinationContentTiles = new List<VoiceCommandContentTile>();
-	int i = 1;
-	foreach (Model.Trip trip in trips)
-	{
-		var destinationTile = new VoiceCommandContentTile();
+    // Create card for each item. 
+    var destinationContentTiles = new List<VoiceCommandContentTile>();
+    int i = 1;
+    foreach (Model.Trip trip in trips)
+    {
+        var destinationTile = new VoiceCommandContentTile();
 
-		destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
-		destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
-		
-		// The AppContext can be any arbitrary object.
-		destinationTile.AppContext = trip;
-		string dateFormat = "";
-		if (trip.StartDate != null)
-		{
-			dateFormat = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
-		}
-		else
-		{
-			// The app allows a trip to have no date.
+        destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
+        destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
+        
+        // The AppContext can be any arbitrary object.
+        destinationTile.AppContext = trip;
+        string dateFormat = "";
+        if (trip.StartDate != null)
+        {
+            dateFormat = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
+        }
+        else
+        {
+            // The app allows a trip to have no date.
             // However, the choices must be unique so they can be distinguished.
             // Here, we add a number to identify them.
-			dateFormat = string.Format("{0}", i);
-		} 
+            dateFormat = string.Format("{0}", i);
+        } 
 
-		destinationTile.Title = trip.Destination + " " + dateFormat;
-		destinationTile.TextLine1 = trip.Description;
+        destinationTile.Title = trip.Destination + " " + dateFormat;
+        destinationTile.TextLine1 = trip.Description;
 
-		destinationContentTiles.Add(destinationTile);
-		i++;
-	}
+        destinationContentTiles.Add(destinationTile);
+        i++;
+    }
 
-	// Cortana handles re-prompting if no valid response.
-	var response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt, destinationContentTiles);
+    // Cortana handles re-prompting if no valid response.
+    var response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt, destinationContentTiles);
 
-	// If cortana is dismissed in this operation, null is returned.
-	var voiceCommandDisambiguationResult = await
-		voiceServiceConnection.RequestDisambiguationAsync(response);
-	if (voiceCommandDisambiguationResult != null)
-	{
-		return (Model.Trip)voiceCommandDisambiguationResult.SelectedItem.AppContext;
-	}
+    // If cortana is dismissed in this operation, null is returned.
+    var voiceCommandDisambiguationResult = await
+        voiceServiceConnection.RequestDisambiguationAsync(response);
+    if (voiceCommandDisambiguationResult != null)
+    {
+        return (Model.Trip)voiceCommandDisambiguationResult.SelectedItem.AppContext;
+    }
 
-	return null;
+    return null;
 }
 ```
 

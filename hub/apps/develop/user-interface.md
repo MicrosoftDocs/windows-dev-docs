@@ -217,7 +217,7 @@ For more information on these UI frameworks, see the following documentation:
 For information about the fundamentals of building user interfaces for Windows apps, see the following articles.
 
 * WinRT APIs: [Layout](/windows/uwp/design/layout/), [Style](/windows/uwp/design/style/), [Motion](/windows/uwp/design/motion/), [Visual layer](/windows/uwp/composition/visual-layer), [XAML platform](/windows/uwp/xaml-platform/)
-* Win32 APIs: [Desktop user interface](/windows/win32/windows-application-ui-development), [Desktop environment and shell](/windows/win32/user-interface), [UWP Visual layer in desktop apps](../desktop/modernize/visual-layer-in-desktop-apps.md), [Windows and messages](/windows/win32/winmsg/windowing), [Menus and other resources](/windows/win32/menurc/resources), [High DPI](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows)
+* Win32 APIs: [Desktop user interface](/windows/win32/windows-application-ui-development), [Desktop environment and shell](/windows/win32/user-interface), [UWP Visual layer in desktop apps](../desktop/modernize/ui/visual-layer-in-desktop-apps.md), [Windows and messages](/windows/win32/winmsg/windowing), [Menus and other resources](/windows/win32/menurc/resources), [High DPI](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows)
 * .NET APIs: [Windows in WPF](/dotnet/framework/wpf/app-development/windows-in-wpf-applications), [Create a Windows Form](/dotnet/framework/winforms/creating-a-new-windows-form), [Navigation overview](/dotnet/framework/wpf/app-development/navigation-overview), [XAML in WPF](/dotnet/framework/wpf/advanced/xaml-in-wpf), [Visual layer programming](/dotnet/framework/wpf/graphics-multimedia/visual-layer-programming)
 
 ## Controls
@@ -225,7 +225,7 @@ For information about the fundamentals of building user interfaces for Windows a
 For information about using controls in Windows apps, see the following articles.
 
 * WinRT APIs: [Controls](/windows/uwp/design/controls-and-patterns/), [Intro to controls and patterns](/windows/uwp/design/controls-and-patterns/controls-and-events-intro), [Forms](/windows/uwp/design/controls-and-patterns/forms)
-* Win32 APIs: [Windows controls](/windows/win32/controls/window-controls), [UWP controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands.md)
+* Win32 APIs: [Windows controls](/windows/win32/controls/window-controls), [UWP controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands/xaml-islands.md)
 * .NET APIs: [Controls (WPF)](/dotnet/framework/wpf/controls/), [Controls (Windows Forms)](/dotnet/framework/winforms/controls/)
 
 ## Input

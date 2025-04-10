@@ -8,7 +8,7 @@ ms.topic: article
 
 # WinUI 2.6
 
-WinUI 2.6 is the June 2021 release of WinUI for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands.md)).
+WinUI 2.6 is the June 2021 release of WinUI for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands/xaml-islands.md)).
 
 > [!NOTE]
 > For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [WinUI 3](../../index.md).
@@ -118,7 +118,7 @@ Most WinUI controls now support the latest Windows 11 styles.
 
 A new versioning system has also been introduced that lets you revert to the previous control styles. However, we strongly encourage using the new styles, if possible, as they align with the current design direction of Windows.
 
-[XAML styles](../../../design/style/xaml-styles.md)
+[XAML styles](../../../develop/platform/xaml/xaml-styles.md)
 
 ## SplitButton styles for CommandBar
 

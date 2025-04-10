@@ -1,9 +1,6 @@
 ---
 title: Tutorial on React for beginners
 description: A guide to help beginners get started with React development on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
 ms.topic: article
 keywords: React for beginners, Using React on Windows for beginners, react tutorial, react on windows tutorial, react with windows set up
 ms.localizationpriority: medium
@@ -78,7 +75,7 @@ There are many ways to create an application with React (see the [React Overview
 
 ## Application file structure
 
-The intial file structure looks like
+The initial file structure looks like
 
 ```markdown
 hello-world

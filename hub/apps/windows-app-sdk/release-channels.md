@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Experimental, Preview, and Stable release channels used to ship the latest version of the Windows App SDK.
 ms.topic: article
-ms.date: 09/06/2022
+ms.date: 01/15/2025
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.localizationpriority: medium
 ---
@@ -14,11 +14,11 @@ The latest version of the Windows App SDK ships via three release channels: Expe
 > [!NOTE]
 > When you [Install tools for the Windows App SDK](set-up-your-development-environment.md), install the release channel that best serves your development scenario.
 
-|         | Channel                                                 | Description                                                                                                                                                                | Release cadence                                                                    | Supported? | Latest release                                                                                      |
-|---------|---------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------------------------------------------|
-| **✅**   | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                                   | Yes        | [1.5.5 (1.5.240627000)](stable-channel.md#version-155-15240627000) (07/09/2024)                                                 |
-| **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least one preview per stable version                                           | No         | [1.5.0-preview1](preview-channel.md#version-15-preview-1-150-preview1) (02/06/2024)                 |
-| **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.6.0-experimental2](experimental-channel.md#version-16-experimental-160-experimental2) (07/02/2024) |
+|           | Channel                                                 | Description                                                                                                                                                                | Release cadence                                                                    | Supported? | Latest release                                                                                        |
+| --------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------- |
+| **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least one preview per stable version                                            | No         | [1.7.0-preview1](preview-channel.md#version-17-preview-1-17-preview1) (02/11/2025)                    |
+| **✅**    | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                            | Yes        | [1.7.1 (1.7.250401001)](stable-channel.md#version-171-17250401001) (04/08/2025)                       |
+| **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.7.0-experimental3](experimental-channel.md#version-17-experimental-170-experimental3) (02/06/2025) |
 
 For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).
 
@@ -26,20 +26,20 @@ For a comprehensive list of all current and previous releases of the Windows App
 
 The following table shows which features are currently available in each release channel.
 
-| Feature | ✅&nbsp;&nbsp;[Stable](stable-channel.md) | ❇️&nbsp;&nbsp;[Preview](preview-channel.md) |🔄️&nbsp;&nbsp;[Experimental](experimental-channel.md) |
-|-|-|-|-|
-| [Deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [Deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [WinUI 3](../winui/winui3/index.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [Text rendering](dwritecore.md) | :heavy_check_mark: Available| :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [Manage resources](mrtcore/mrtcore-overview.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [App lifecycle: Rich activation](applifecycle/applifecycle-rich-activation.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [App lifecycle: Power management](applifecycle/applifecycle-power.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [Manage app windows](windowing/windowing-overview.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [Push notifications](notifications/push-notifications/index.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [App notifications](notifications/app-notifications/index.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [Windows Widgets](../design/widgets/index.md)   | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available   |
+| Feature                                                                                                                  | ✅&nbsp;&nbsp;[Stable](stable-channel.md) | ❇️&nbsp;&nbsp;[Preview](preview-channel.md) | 🔄️&nbsp;&nbsp;[Experimental](experimental-channel.md) |
+| ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- | --------------------------------------------- | -------------------------------------------------------- |
+| [Deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)                                        | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [Deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [WinUI 3](../winui/winui3/index.md)                                                                                      | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [Text rendering](dwritecore.md)                                                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [Manage resources](mrtcore/mrtcore-overview.md)                                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md)                                                 | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [App lifecycle: Rich activation](applifecycle/applifecycle-rich-activation.md)                                           | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [App lifecycle: Power management](applifecycle/applifecycle-power.md)                                                    | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [Manage app windows](windowing/windowing-overview.md)                                                                    | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [Push notifications](notifications/push-notifications/index.md)                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [App notifications](notifications/app-notifications/index.md)                                                            | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [Windows Widgets](../design/widgets/index.md)                                                                            | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 
 ## Windows App SDK release servicing policy
 
@@ -49,16 +49,18 @@ The following policies define the servicing you can expect when you use a given 
 
 The Windows App SDK has a lifecycle. A lifecycle begins when a version or service is released and ends when it's no longer supported. Knowing key dates in this release lifecycle helps you make informed decisions about when to upgrade or make other changes to your software.
 
-| Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level | End of servicing |
-|-------------------------|-----------------------|----------------------|--------------------|---------------|----------------  |
-| 1.5                     | 02/29/2024            | 1.5.240627000        | 07/09/2024         | Current       | 02/28/2025       |
-| 1.4                     | 08/29/2023            | 1.4.240512000        | 05/14/2024         | Maintenance   | 08/29/2024       |
-| 1.3                     | 04/12/2023            | 1.3.230724000        | 07/25/2023         | Out of Support| 04/12/2024       |
-| 1.2                     | 11/10/2022            | 1.2.230313.1         | 03/15/2023         | Out of Support| 11/10/2023       |
-| 1.1                     | 05/24/2022            | 1.1.5                | 09/14/2022         | Out of Support| 05/24/2023       |
-| 1.0                     | 11/16/2021            | 1.0.4                | 06/14/2022         | Out of Support| 11/16/2022       |
-| 0.8                     | 6/24/2021             | 0.8.12               | 08/03/2022         | Out of Support| 6/24/2022        |
-| 0.5                     | 3/29/2021             | 0.5.9                | 8/10/2021          | Out of Support| 11/1/2021        |
+| Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level  | End of servicing |
+| ----------------------- | --------------------- | -------------------- | ------------------ | -------------- | ---------------- |
+| 1.7                     | 03/18/2025            | 1.7.250310001        | 03/18/2025         | Current        | 03/18/2026       |
+| 1.6                     | 09/04/2024            | 1.6.250402001        | 04/08/2025         | Maintenance    | 09/04/2025       |
+| 1.5                     | 02/29/2024            | 1.5.250108004        | 01/15/2025         | Out of Support | 02/28/2025       |
+| 1.4                     | 08/29/2023            | 1.4.240802001        | 08/13/2024         | Out of Support | 08/29/2024       |
+| 1.3                     | 04/12/2023            | 1.3.230724000        | 07/25/2023         | Out of Support | 04/12/2024       |
+| 1.2                     | 11/10/2022            | 1.2.230313.1         | 03/15/2023         | Out of Support | 11/10/2023       |
+| 1.1                     | 05/24/2022            | 1.1.5                | 09/14/2022         | Out of Support | 05/24/2023       |
+| 1.0                     | 11/16/2021            | 1.0.4                | 06/14/2022         | Out of Support | 11/16/2022       |
+| 0.8                     | 6/24/2021             | 0.8.12               | 08/03/2022         | Out of Support | 6/24/2022        |
+| 0.5                     | 3/29/2021             | 0.5.9                | 8/10/2021          | Out of Support | 11/1/2021        |
 
 ### Servicing  
 
@@ -75,7 +77,7 @@ Functional improvements are typically very targeted, and may address the followi
 - Resolve reported crashes.
 - Resolve severe performance issues.
 - Resolve functional bugs in key scenarios.
-- Add support for a new operating system versions
+- Add support for a new operating system versions.
 
 #### Servicing for Maintenance releases
 
