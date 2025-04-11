@@ -10,6 +10,9 @@ ms.date: 04/11/2025
 
 **File Explorer Version Control Integration** provides version control information directly in File Explorer. This includes information such as the branch name, last commit author, last commit message, and more.
 
+> [!NOTE]
+> As of right now, File Explorer Version Control integration only supports Git. The Advanced Settings system component is extensible to allow for additional version control types.
+
 ![File Explorer Version Control Integration](../images/fe-source.png)
 
 ## How to identify repositories
