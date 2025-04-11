@@ -3,6 +3,14 @@ items:
   href: ./index.md
 - name: Developer tools
   items:
+  - name: Advanced Windows settings
+    items:
+      - name: Overview
+        href: ../advanced-settings/index.md
+      - name: File Explorer + Version Control
+        href: ../advanced-settings/fe-version-control.md
+      - name: Sudo for Windows
+        href: ../advanced-settings/sudo/index.md
   - name: Dev Home
     items:
       - name: Overview
@@ -943,10 +951,6 @@ items:
     href: /windows/wsl/
   - name: Windows Terminal
     href: /windows/terminal/
-  - name: Sudo for Windows
-    items:
-      - name: Overview
-        href: ../sudo/index.md
   - name: Mac to Windows guide
     href: mac-to-windows.md
   - name: Keyboard shortcuts
