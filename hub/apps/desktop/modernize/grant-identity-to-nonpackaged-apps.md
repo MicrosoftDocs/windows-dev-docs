@@ -18,7 +18,7 @@ To build and register an identity package, follow these steps:
 
 1. [Create a package manifest for the identity package](#create-a-package-manifest-for-the-identity-package)
 2. [Build and sign the identity package](#build-and-sign-the-identity-package)
-3. [Add identity metadata to your desktop application manifest](#add-identity-metadata-to-your-desktop-application-manifest)
+3. [Add identity metadata to your desktop application manifests](#add-identity-metadata-to-your-desktop-application-manifests)
 4. [Register the identity package in your installer](#register-the-identity-package-in-your-installer)
 
 ## Create a package manifest for the identity package
@@ -95,9 +95,11 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 Note: For how to build and sign the identity package within a CI/CD pipeline with production certificates, see the [MSIX and CI/CD Pipeline Overview](/windows/msix/desktop/cicd-overview) for examples.
 
-### Add identity metadata to your desktop application manifest
+### Add identity metadata to your desktop application manifests
 
 You connect the identity package with your application executables by including [application manifests](/windows/win32/sbscs/application-manifests) (a.k.a side-by-side or fusion manifests) with metadata that matches metadata from the identity package manifest.
+
+In Visual Studio, you can add an [application manifest](/windows/win32/sbscs/application-manifests) to an executable project by opening the Project context menu and selecting Add -> New Item -> Application Manifest File.
 
 Below is an example [application manifest](/windows/win32/sbscs/application-manifests) snippet demonstrating the `msix` element required to connect your binaries with metadata from your identity package.
 
