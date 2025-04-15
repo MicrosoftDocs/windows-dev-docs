@@ -95,7 +95,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 Note: For how to build and sign the identity package within a CI/CD pipeline with production certificates, see the [MSIX and CI/CD Pipeline Overview](/windows/msix/desktop/cicd-overview) for examples.
 
-### Add identity metadata to your desktop application manifest
+## Add identity metadata to your desktop application manifest
 
 You connect the identity package with your application executables by including [application manifests](/windows/win32/sbscs/application-manifests) (a.k.a side-by-side or fusion manifests) with metadata that matches metadata from the identity package manifest.
 
