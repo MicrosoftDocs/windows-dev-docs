@@ -2,7 +2,7 @@
 description: The Multilingual App Toolkit (MAT) integrates with Microsoft Visual Studio 2019 to provide Windows apps with translation support, translation file management, and editor tools.
 title: Use the Multilingual App Toolkit
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 04/11/2025
 ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
@@ -10,13 +10,15 @@ ms.localizationpriority: medium
 
 # Use the Multilingual App Toolkit
 
+> [!IMPORTANT]
+> We are announcing the deprecation of the Multilingual App Toolkit (MAT). This toolkit will reach end-of-support on October 15, 2025, and will no longer be updated after this date. For more information, see [Announcements](mat-announcements.md).
+
 The Multilingual App Toolkit (MAT) integrates with Microsoft Visual Studio to provide Windows apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
 
 - Helps you manage resource changes and translation status during development.
 - Provides a UI for choosing languages based on configured translation providers.
 - Supports the localization industry-standard XLIFF file format.
 - Provides a pseudo-language engine to help identify translation issues during development.
-- Connects with the Microsoft Language Portal to easily access translated strings and terminology.
 - Connects with the Microsoft Translator for quick translation suggestions.
 
 ## How to use the toolkit
@@ -65,7 +67,7 @@ The toolkit does these things in response.
 
 Whenever you add/remove a default language Resources File (.resw), or you add/remove a string inside a default language Resources File (.resw), rebuild the project to re-synchronize the .xlf files. This ensures that the .xlf files contain the union of the strings in the default language.
 
-Installed Translation Providers&mdash;such as the [Microsoft Language Portal](https://www.microsoft.com/Language/) and [Microsoft Translator](https://www.microsofttranslator.com/)&mdash;can be used to translate your app's resources. When a provider supports a specific language, the provider's icon is displayed next to the language name in the Translation Languages dialog.
+Installed Translation Providers&mdash;such as the [Microsoft language resources](/globalization/reference/microsoft-language-resources) and [Microsoft Translator](https://www.microsofttranslator.com/)&mdash;can be used to translate your app's resources. When a provider supports a specific language, the provider's icon is displayed next to the language name in the Translation Languages dialog.
 
 In the Translation Languages dialog, any existing .xlf-based languages that are discovered by the toolkit have their selection box pre-checked to indicate that the language is already included the project.
 
@@ -143,7 +145,7 @@ The Multilingual Editor provides the same translation support, as well as adding
 
 Two providers are shipped with the Multilingual App Toolkit.
 
-- The [Microsoft Language Portal](https://www.microsoft.com/Language/) provider enables translation-recycling and terminology-matching support based on translations of the user interface text for Microsoft products and services.
+- The [Microsoft language resources](/globalization/reference/microsoft-language-resources) provider enables translation-recycling and terminology-matching support based on translations of the user interface text for Microsoft products and services.
 - The [Microsoft Translator](https://www.microsofttranslator.com/) provider enables on-demand machine translation services.
 
 You and your translator(s) can manage the status of translations in the Multilingual Editor to review uncertain translations later. You can set the status of each string in the **Properties** tab. Status values are: **New**, **Needs review**, **Translated**, **Final**, and **Signed off**. The indicator at the left of the row shows the status. When all rows show green in the Multilingual Editor, then your translation work is done.
@@ -174,5 +176,5 @@ The Multilingual App Toolkit Visual Studio (MAT VS) extension collects anonymous
 
 ## Translation services
 
-- [Microsoft Language Portal](https://www.microsoft.com/Language/)
+- [Microsoft language resources](/globalization/reference/microsoft-language-resources)
 - [Microsoft Translator](https://www.microsofttranslator.com/)
