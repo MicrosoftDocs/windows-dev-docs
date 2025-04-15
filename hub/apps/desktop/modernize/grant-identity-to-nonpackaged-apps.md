@@ -99,9 +99,9 @@ Note: For how to build and sign the identity package within a CI/CD pipeline wit
 
 You connect the identity package with your application executables by including [application manifests](/windows/win32/sbscs/application-manifests) (a.k.a side-by-side or fusion manifests) with metadata that matches metadata from the identity package manifest.
 
-In Visual Studio, you can add an [application manifest](/windows/win32/sbscs/application-manifests) to an executable project by opening the Project context menu and selecting Add -> New Item -> Application Manifest File.
+In Visual Studio, you can add an [application manifest](/windows/win32/sbscs/application-manifests) to an executable project by opening the **Project** context menu, and selecting **Add** > **New Item** > **Application Manifest File**.
 
-Below is an example [application manifest](/windows/win32/sbscs/application-manifests) snippet demonstrating the `msix` element required to connect your binaries with metadata from your identity package.
+Below is an example application manifest snippet demonstrating the `msix` element required to connect your binaries with metadata from your identity package.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
