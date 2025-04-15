@@ -2,10 +2,13 @@
 title: Multilingual App Toolkit Editor - Windows app development
 description: Download the Multilingual App Toolkit Editor to help you localize your apps with localization file management, translation support, and editing tools.
 ms.topic: article
-ms.date: 10/18/2021
+ms.date: 04/11/2025
 ---
 
 # Multilingual App Toolkit Editor
+
+> [!IMPORTANT]
+> We are announcing the deprecation of the Multilingual App Toolkit (MAT). This toolkit will reach end-of-support on October 15, 2025, and will no longer be updated after this date. For more information, see [Announcements](mat-announcements.md).
 
 Use the standalone [**Multilingual App Toolkit Editor**](use-mat.md) to help you localize your apps with localization file management, translation support, and editing tools.
 

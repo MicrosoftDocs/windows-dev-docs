@@ -3,18 +3,21 @@ metadata:
   description: This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT).
   title: Multilingual App Toolkit FAQ & troubleshooting
   template: detail.hbs
-  ms.date: 11/13/2017
+  ms.date: 04/11/2025
   ms.topic: article
   keywords: windows 10, uwp, globalization, localizability, localization
   ms.localizationpriority: medium
     
 title: Multilingual App Toolkit FAQ & troubleshooting
 summary: |
+  **IMPORTANT** We are announcing the deprecation of the Multilingual App Toolkit (MAT). This toolkit will reach end-of-support on October 15, 2025, and will no longer be updated after this date. For more information, see [Announcements](mat-announcements.md).
+
+
   This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT).
   
-  Also see [Use the Multilingual App Toolkit](use-mat.md).
-  
   **Note** The toolkit supports both .resw (XAML) and .resjson (JavaScript) files. But in this topic we'll refer only to .resw files. A .resw file is known as a Resources File. It contains strings, either in the default language or translated into another language. The folder that contains a .resw file is typically named for the value of a language tag.
+  
+  Also see [Use the Multilingual App Toolkit](use-mat.md).
   
 
 sections:
