@@ -20,23 +20,24 @@ The latest news, blogs, development videos and social media handles of interest 
 
 ## Social media - X
 
-* [Microsoft Developer](https://x.com/msdev)
+
 * [Windows Developer](https://x.com/windowsdev)
 * [Windows Developer Docs](https://x.com/windowsdocs)
+* [Windows](https://x.com/Windows)
+* [Microsoft Developer](https://x.com/msdev)
 * [Microsoft Docs](https://x.com/docsmsft)
-* [Windows developer](https://x.com/windowsdev)
 * [Visual Studio Code](https://x.com/code)
 * [XAML Llama](https://x.com/XAMLLlama)
-* [Windows](https://x.com/Windows)
 * [Microsoft for Startups](https://x.com/msft4startups)
 * [dotnet](https://x.com/dotnet)
 
 ## Social media - Bluesky
 
-* [DotNetBot](https://bsky.app/profile/dotnetbot.bsky.social)
 * [Windows Developer Docs](https://bsky.app/profile/microsoftdevdocs.bsky.social)
-* [Microsoft Developer](https://bsky.app/profile/developer.microsoft.com)
 * [Windows Insider Program](https://bsky.app/profile/windowsinsider.bsky.social)
+* [Microsoft Developer](https://bsky.app/profile/developer.microsoft.com)
+* [Dotnet](https://bsky.app/profile/dot.net)
+* [DotNetBot](https://bsky.app/profile/dotnetbot.bsky.social)
 
 ## Social media - LinkedIn
 
@@ -53,6 +54,7 @@ The latest news, blogs, development videos and social media handles of interest 
 
 * [Windows developer blog](https://blogs.windows.com/windowsdeveloper/)
 * [Scott Hanselman](https://www.hanselman.com)
+* [Alvin Ashcraft](https://bsky.app/profile/alvinashcraft.com)
 
 ## Other links and sources of information
 
