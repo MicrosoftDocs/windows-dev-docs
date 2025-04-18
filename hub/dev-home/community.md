@@ -9,7 +9,10 @@ ms.topic: overview
 
 The latest news, blogs, development videos and social media handles of interest to Windows developers.
 
-:::image source="images/CLO17_azure_018.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
+:::image source="images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
+
+:::image source="images/community.png" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
+
 
 ## Videos
 
