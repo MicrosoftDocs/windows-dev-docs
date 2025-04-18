@@ -9,10 +9,9 @@ ms.topic: overview
 
 The latest news, blogs, development videos and social media handles of interest to Windows developers.
 
-<img src="CLO17_azure_018.jpg" alt="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog." />
+:::image source="images/CLO17_azure_018.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
 
 ## Videos
-
 
 * [Windows Developer](https://www.youtube.com/@WindowsDevelopers)
 * [Visual Studio Code - Shorts](https://www.youtube.com/@code/shorts)
