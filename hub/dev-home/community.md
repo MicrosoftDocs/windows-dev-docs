@@ -9,6 +9,8 @@ ms.topic: overview
 
 The latest news, blogs, development videos and social media handles of interest to Windows developers.
 
+<img src="CLO17_azure_018.jpg" alt="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog." />
+
 ## Videos
 
 
@@ -21,7 +23,7 @@ The latest news, blogs, development videos and social media handles of interest 
 * [Microsoft Developer (X)](https://x.com/msdev)
 * [Windows Developer (X)](https://x.com/windowsdev)
 * [Windows Developer Docs (X)](https://x.com/windowsdocs)
-* [Microsoft Docs (X)][https://x.com/docsmsft]
+* [Microsoft Docs (X)](https://x.com/docsmsft)
 * [Windows developer (X)](https://x.com/windowsdev)
 * [Visual Studio Code (X)](https://x.com/code)
 * [XAML Llama (x)](https://x.com/XAMLLlama)
