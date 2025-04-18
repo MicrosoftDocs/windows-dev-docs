@@ -256,7 +256,7 @@ items:
           - name: Product page experiments
             href: product-page-experiments.md
           - name: Use Microsoft Store Web Installer to distribute apps
-            href: distribute-through-store/how-to-use-store-web-installer-for-distribution.md  
+            href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md  
           - name: App management and services
             href: app-management-and-services.md
             items: 
