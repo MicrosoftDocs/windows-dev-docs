@@ -11,37 +11,48 @@ The latest news, blogs, development videos and social media handles of interest 
 
 :::image source="../images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
 
-## Videos
+## Videos - YouTube
 
 * [Windows Developer](https://www.youtube.com/@WindowsDevelopers)
+* [Featured Windows Deveoper Content](https://www.youtube.com/@MicrosoftDeveloper/featured)
 * [Visual Studio Code - Shorts](https://www.youtube.com/@code/shorts)
+* [dotnet](https://www.youtube.com/c/dotNET/videos)
 
+## Social media - X
 
-## Social media
+* [Microsoft Developer](https://x.com/msdev)
+* [Windows Developer](https://x.com/windowsdev)
+* [Windows Developer Docs](https://x.com/windowsdocs)
+* [Microsoft Docs](https://x.com/docsmsft)
+* [Windows developer](https://x.com/windowsdev)
+* [Visual Studio Code](https://x.com/code)
+* [XAML Llama](https://x.com/XAMLLlama)
+* [Windows](https://x.com/Windows)
+* [Microsoft for Startups](https://x.com/msft4startups)
+* [dotnet](https://x.com/dotnet)
 
-* [Microsoft Developer (X)](https://x.com/msdev)
-* [Windows Developer (X)](https://x.com/windowsdev)
-* [Windows Developer Docs (X)](https://x.com/windowsdocs)
-* [Microsoft Docs (X)](https://x.com/docsmsft)
-* [Windows developer (X)](https://x.com/windowsdev)
-* [Visual Studio Code (X)](https://x.com/code)
-* [XAML Llama (x)](https://x.com/XAMLLlama)
-* [Windows (X)](https://x.com/Windows)
-* [Microsoft for Startups (X)](https://x.com/msft4startups)
+## Social media - Bluesky
 
-* [DotNetBot (Bluesky)](https://bsky.app/profile/dotnetbot.bsky.social)
-* [Windows Devloper Docs (Bluesky)](https://bsky.app/profile/microsoftdevdocs.bsky.social)
-* [Microsoft Developer (Bluesky)](https://bsky.app/profile/developer.microsoft.com)
-* [Windows Insider Program (Bluesky)](https://bsky.app/profile/windowsinsider.bsky.social)
+* [DotNetBot](https://bsky.app/profile/dotnetbot.bsky.social)
+* [Windows Developer Docs](https://bsky.app/profile/microsoftdevdocs.bsky.social)
+* [Microsoft Developer](https://bsky.app/profile/developer.microsoft.com)
+* [Windows Insider Program](https://bsky.app/profile/windowsinsider.bsky.social)
 
-* [Windows Developer (LinkedIn)](https://www.linkedin.com/showcase/windows-developers)
+## Social media - LinkedIn
 
+* [Windows Developer](https://www.linkedin.com/showcase/windows-developers)
+* [Microsoft Developer](https://www.linkedin.com/showcase/microsoft-developers/posts/?feedView=all)
 
+## Social media - Instagram
 
-## Blogs
+* [Windows Developer](https://www.instagram.com/windowsdeveloper/)
+* [Microsoft Developer](https://www.instagram.com/microsoftdeveloper/)
+* [dotnet.developers](https://www.instagram.com/dotnet.developers/)
+
+## Blogs and personalities
 
 * [Windows developer blog](https://blogs.windows.com/windowsdeveloper/)
-
+* [Scott Hanselman](https://www.hanselman.com)
 
 ## Other links and sources of information
 
