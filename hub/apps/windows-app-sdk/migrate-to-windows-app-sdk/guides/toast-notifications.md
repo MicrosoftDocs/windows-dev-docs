@@ -211,31 +211,37 @@ private void HandleNotification(AppNotificationActivatedEventArgs args)
 
   dispatcherQueue.TryEnqueue(async delegate
   {
-
-      switch (args.Arguments["action"])
+      if (args.Argument.Contains("action"))
       {
-          // Send a background message
-          case "sendMessage":
-              string message = args.UserInput["textBox"].ToString();
-              // TODO: Send it
-
-              // If the UI app isn't open
-              if (m_window == null)
-              {
-                  // Close since we're done
-                  Process.GetCurrentProcess().Kill();
-              }
-
-              break;
-
-          // View a message
-          case "viewMessage":
-
-              // Launch/bring window to foreground
-              LaunchAndBringToForegroundIfNeeded();
-
-              // TODO: Open the message
-              break;
+          switch (args.Arguments["action"])
+          {
+              // Send a background message
+              case "sendMessage":
+                  string message = args.UserInput["textBox"].ToString();
+                  // TODO: Send it
+    
+                  // If the UI app isn't open
+                  if (m_window == null)
+                  {
+                      // Close since we're done
+                      Process.GetCurrentProcess().Kill();
+                  }
+    
+                  break;
+    
+              // View a message
+              case "viewMessage":
+    
+                  // Launch/bring window to foreground
+                  LaunchAndBringToForegroundIfNeeded();
+    
+                  // TODO: Open the message
+                  break;
+          }
+      }
+      else
+      {
+          Debug.Print("Notification args is null");
       }
   });
 }
