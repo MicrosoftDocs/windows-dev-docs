@@ -17,7 +17,7 @@ In this how-to, we'll demonstrate how [GitHub Copilot](https://github.com/featur
 
 ## Prerequisites
 
-- Visual Studio 2022 (v17.10+) with the Windows application development workload applied (see [Get started with WinUI](../get-started/start-here.md) for additional configuration details). GitHub Copilot is included in Visual Studio 2022 v17.10 and later by default.
+- Visual Studio 2022 (v17.10+) with the **WinUI application development** workload applied (see [Get started with WinUI](../get-started/start-here.md) for additional configuration details). GitHub Copilot is included in Visual Studio 2022 v17.10 and later by default.
 - An active subscription to [GitHub Copilot](https://github.com/features/copilot/plans) associated with the GitHub account that you sign in to Visual Studio with.
 - Familiarity with C#, WinUI, and Windows App SDK.
 
