@@ -189,7 +189,7 @@ private void LaunchAndBringToForegroundIfNeeded()
         m_window.Activate();
 
         // Additionally we show using our helper, since if activated via a app notification, it doesn't
-        // activate the window correctly
+        // activate the window correctly.
         WindowHelper.ShowWindow(m_window);
     }
     else
@@ -205,37 +205,43 @@ private void NotificationManager_NotificationInvoked(AppNotificationManager send
 
 private void HandleNotification(AppNotificationActivatedEventArgs args)
 {
-  // Use the dispatcher from the window if present, otherwise the app dispatcher
+  // Use the dispatcher from the window if present, otherwise the app dispatcher.
   var dispatcherQueue = m_window?.DispatcherQueue ?? DispatcherQueue.GetForCurrentThread();
 
 
   dispatcherQueue.TryEnqueue(async delegate
   {
-
-      switch (args.Arguments["action"])
+      if (args.Argument.Contains("action"))
       {
-          // Send a background message
-          case "sendMessage":
-              string message = args.UserInput["textBox"].ToString();
-              // TODO: Send it
-
-              // If the UI app isn't open
-              if (m_window == null)
-              {
-                  // Close since we're done
-                  Process.GetCurrentProcess().Kill();
-              }
-
-              break;
-
-          // View a message
-          case "viewMessage":
-
-              // Launch/bring window to foreground
-              LaunchAndBringToForegroundIfNeeded();
-
-              // TODO: Open the message
-              break;
+          switch (args.Arguments["action"])
+          {
+              // Send a background message.
+              case "sendMessage":
+                  string message = args.UserInput["textBox"].ToString();
+                  // TODO: Send it.
+    
+                  // If the UI app isn't open.
+                  if (m_window == null)
+                  {
+                      // Close since we're done.
+                      Process.GetCurrentProcess().Kill();
+                  }
+    
+                  break;
+    
+              // View a message.
+              case "viewMessage":
+    
+                  // Launch/bring window to foreground.
+                  LaunchAndBringToForegroundIfNeeded();
+    
+                  // TODO: Open the message.
+                  break;
+          }
+      }
+      else
+      {
+          Debug.Print("Notification args is null");
       }
   });
 }
@@ -281,14 +287,14 @@ public static DispatcherQueue DispatcherQueue { get; private set; }
 
 protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
 {
-    // Get the app-level dispatcher
+    // Get the app-level dispatcher.
     DispatcherQueue = global::Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
 
-    // Register for toast activation. Requires Microsoft.Toolkit.Uwp.Notifications NuGet package version 7.0 or greater
+    // Register for toast activation. Requires Microsoft.Toolkit.Uwp.Notifications NuGet package version 7.0 or greater.
     ToastNotificationManagerCompat.OnActivated += ToastNotificationManagerCompat_OnActivated;
 
     // If we weren't launched by an app, launch our window like normal.
-    // Otherwise if launched by a toast, our OnActivated callback will be triggered
+    // Otherwise if launched by a toast, our OnActivated callback will be triggered.
     if (!ToastNotificationManagerCompat.WasCurrentProcessToastActivated())
     {
         LaunchAndBringToForegroundIfNeeded();
@@ -303,7 +309,7 @@ private void LaunchAndBringToForegroundIfNeeded()
         m_window.Activate();
 
         // Additionally we show using our helper, since if activated via a toast, it doesn't
-        // activate the window correctly
+        // activate the window correctly.
         WindowHelper.ShowWindow(m_window);
     }
     else
@@ -314,7 +320,7 @@ private void LaunchAndBringToForegroundIfNeeded()
 
 private void ToastNotificationManagerCompat_OnActivated(ToastNotificationActivatedEventArgsCompat e)
 {
-    // Use the dispatcher from the window if present, otherwise the app dispatcher
+    // Use the dispatcher from the window if present, otherwise the app dispatcher.
     var dispatcherQueue = m_window?.DispatcherQueue ?? App.DispatcherQueue;
 
     dispatcherQueue.TryEnqueue(delegate
@@ -323,27 +329,27 @@ private void ToastNotificationManagerCompat_OnActivated(ToastNotificationActivat
 
         switch (args["action"])
         {
-            // Send a background message
+            // Send a background message.
             case "sendMessage":
                 string message = e.UserInput["textBox"].ToString();
-                // TODO: Send it
+                // TODO: Send it.
 
-                // If the UI app isn't open
+                // If the UI app isn't open.
                 if (m_window == null)
                 {
-                    // Close since we're done
+                    // Close since we're done.
                     Process.GetCurrentProcess().Kill();
                 }
 
                 break;
 
-            // View a message
+            // View a message.
             case "viewMessage":
 
-                // Launch/bring window to foreground
+                // Launch/bring window to foreground.
                 LaunchAndBringToForegroundIfNeeded();
 
-                // TODO: Open the message
+                // TODO: Open the message.
                 break;
         }
     });
