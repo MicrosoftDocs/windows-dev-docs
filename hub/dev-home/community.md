@@ -14,7 +14,7 @@ The latest news, blogs, development videos and social media handles of interest 
 ## Videos - YouTube
 
 * [Windows Developer](https://www.youtube.com/@WindowsDevelopers)
-* [Featured Windows Deveoper Content](https://www.youtube.com/@MicrosoftDeveloper/featured)
+* [Featured Windows Developer Content](https://www.youtube.com/@MicrosoftDeveloper/featured)
 * [Visual Studio Code - Shorts](https://www.youtube.com/@code/shorts)
 * [dotnet](https://www.youtube.com/c/dotNET/videos)
 
