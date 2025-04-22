@@ -1,7 +1,7 @@
 ---
 title: Windows Developer Community
 description: The latest news, blogs, development videos and social media handles of interest to Windows developers.
-ms.date: 04/17/2025
+ms.date: 04/22/2025
 ms.topic: overview
 ---
 
@@ -11,27 +11,20 @@ The latest news, blogs, development videos and social media handles of interest 
 
 :::image source="../images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
 
-## Videos - YouTube
+## Latest news
 
-* [Windows Developer](https://www.youtube.com/@WindowsDevelopers)
-* [Featured Windows Developer Content](https://www.youtube.com/@MicrosoftDeveloper/featured)
-* [Visual Studio Code - Shorts](https://www.youtube.com/@code/shorts)
-* [dotnet](https://www.youtube.com/c/dotNET/videos)
-
-## Social media - X
-
+X
 
 * [Windows Developer](https://x.com/windowsdev)
 * [Windows Developer Docs](https://x.com/windowsdocs)
 * [Windows](https://x.com/Windows)
 * [Microsoft Developer](https://x.com/msdev)
 * [Microsoft Docs](https://x.com/docsmsft)
-* [Visual Studio Code](https://x.com/code)
 * [XAML Llama](https://x.com/XAMLLlama)
 * [Microsoft for Startups](https://x.com/msft4startups)
 * [dotnet](https://x.com/dotnet)
 
-## Social media - Bluesky
+Bluesky
 
 * [Windows Developer Docs](https://bsky.app/profile/microsoftdevdocs.bsky.social)
 * [Windows Insider Program](https://bsky.app/profile/windowsinsider.bsky.social)
@@ -39,22 +32,30 @@ The latest news, blogs, development videos and social media handles of interest 
 * [Dotnet](https://bsky.app/profile/dot.net)
 * [DotNetBot](https://bsky.app/profile/dotnetbot.bsky.social)
 
-## Social media - LinkedIn
+LinkedIn
 
 * [Windows Developer](https://www.linkedin.com/showcase/windows-developers)
 * [Microsoft Developer](https://www.linkedin.com/showcase/microsoft-developers/posts/?feedView=all)
 
-## Social media - Instagram
+Instagram
 
 * [Windows Developer](https://www.instagram.com/windowsdeveloper/)
 * [Microsoft Developer](https://www.instagram.com/microsoftdeveloper/)
 * [dotnet.developers](https://www.instagram.com/dotnet.developers/)
 
-## Blogs and personalities
+## Keep in touch
+
+* [Windows App Development Discord](https://discord.gg/QNr3956t)
+
+## Videos and tutorials
+
+* [Windows Developer](https://www.youtube.com/@WindowsDevelopers)
+* [Featured Windows Developer Content](https://www.youtube.com/@MicrosoftDeveloper/featured)
+* [dotnet](https://www.youtube.com/c/dotNET/videos)
+
+## Blogs
 
 * [Windows developer blog](https://blogs.windows.com/windowsdeveloper/)
-* [Scott Hanselman](https://www.hanselman.com)
-* [Alvin Ashcraft](https://bsky.app/profile/alvinashcraft.com)
 
-## Other links and sources of information
+
 
