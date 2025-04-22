@@ -7,55 +7,72 @@ ms.topic: overview
 
 # Windows Developer Community
 
-The latest news, blogs, development videos and social media handles of interest to Windows developers.
+Stay connected with the latest news, blogs, tutorials, and social channels that matter to Windows developers.
 
 :::image source="../images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
 
-## Latest news
+---
 
-X
+## 📣 Social Media Channels
 
-* [Windows Developer](https://x.com/windowsdev)
-* [Windows Developer Docs](https://x.com/windowsdocs)
-* [Windows](https://x.com/Windows)
-* [Microsoft Developer](https://x.com/msdev)
-* [Microsoft Docs](https://x.com/docsmsft)
-* [XAML Llama](https://x.com/XAMLLlama)
-* [Microsoft for Startups](https://x.com/msft4startups)
-* [dotnet](https://x.com/dotnet)
+### X (formerly Twitter)
 
-Bluesky
+| Account | Link |
+|--------|------|
+| Windows Developer | [@windowsdev](https://x.com/windowsdev) |
+| Windows Developer Docs | [@windowsdocs](https://x.com/windowsdocs) |
+| Windows | [@Windows](https://x.com/Windows) |
+| Microsoft Developer | [@msdev](https://x.com/msdev) |
+| Microsoft Docs | [@docsmsft](https://x.com/docsmsft) |
+| XAML Llama | [@XAMLLlama](https://x.com/XAMLLlama) |
+| Microsoft for Startups | [@msft4startups](https://x.com/msft4startups) |
+| .NET | [@dotnet](https://x.com/dotnet) |
 
-* [Windows Developer Docs](https://bsky.app/profile/microsoftdevdocs.bsky.social)
-* [Windows Insider Program](https://bsky.app/profile/windowsinsider.bsky.social)
-* [Microsoft Developer](https://bsky.app/profile/developer.microsoft.com)
-* [Dotnet](https://bsky.app/profile/dot.net)
-* [DotNetBot](https://bsky.app/profile/dotnetbot.bsky.social)
+### Bluesky
 
-LinkedIn
+| Account | Link |
+|--------|------|
+| Windows Developer Docs | [microsoftdevdocs.bsky.social](https://bsky.app/profile/microsoftdevdocs.bsky.social) |
+| Windows Insider Program | [windowsinsider.bsky.social](https://bsky.app/profile/windowsinsider.bsky.social) |
+| Microsoft Developer | [developer.microsoft.com](https://bsky.app/profile/developer.microsoft.com) |
+| .NET | [dot.net](https://bsky.app/profile/dot.net) |
+| DotNetBot | [dotnetbot.bsky.social](https://bsky.app/profile/dotnetbot.bsky.social) |
 
-* [Windows Developer](https://www.linkedin.com/showcase/windows-developers)
-* [Microsoft Developer](https://www.linkedin.com/showcase/microsoft-developers/posts/?feedView=all)
+### LinkedIn
 
-Instagram
+| Account | Link |
+|--------|------|
+| Windows Developers Showcase | [View](https://www.linkedin.com/showcase/windows-developers) |
+| Microsoft Developers Showcase | [View](https://www.linkedin.com/showcase/microsoft-developers/posts/?feedView=all) |
 
-* [Windows Developer](https://www.instagram.com/windowsdeveloper/)
-* [Microsoft Developer](https://www.instagram.com/microsoftdeveloper/)
-* [dotnet.developers](https://www.instagram.com/dotnet.developers/)
+### Instagram
 
-## Keep in touch
+| Account | Link |
+|--------|------|
+| @windowsdeveloper | [View](https://www.instagram.com/windowsdeveloper/) |
+| @microsoftdeveloper | [View](https://www.instagram.com/microsoftdeveloper/) |
+| @dotnet.developers | [View](https://www.instagram.com/dotnet.developers/) |
 
-* [Windows App Development Discord](https://discord.gg/QNr3956t)
+---
 
-## Videos and tutorials
+## 🎥 Videos and Tutorials
 
-* [Windows Developer](https://www.youtube.com/@WindowsDevelopers)
-* [Featured Windows Developer Content](https://www.youtube.com/@MicrosoftDeveloper/featured)
-* [dotnet](https://www.youtube.com/c/dotNET/videos)
+| Channel | Link |
+|--------|------|
+| Windows Developer | [YouTube](https://www.youtube.com/@WindowsDevelopers) |
+| Microsoft Developer | [Featured Content](https://www.youtube.com/@MicrosoftDeveloper/featured) |
+| .NET | [YouTube](https://www.youtube.com/c/dotNET/videos) |
 
-## Blogs
+---
 
-* [Windows developer blog](https://blogs.windows.com/windowsdeveloper/)
+## 📰 Blogs
 
+- [Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/)
 
+---
 
+## 💬 Keep in Touch
+
+- [Windows App Development Discord](https://discord.gg/QNr3956t)
+
+---
