@@ -1,14 +1,14 @@
 ---
 description: Learn how to publish your Windows apps and games to the Microsoft Store.
-title: Publish Windows apps and games to Microsoft Store
-ms.date: 12/4/2024
-ms.topic: article
-keywords: windows 10, uwp, publishing, publish, selling, sell, distribute, distributing, store, dashboard
+title: Publish your Windows apps and games to Microsoft Store
+ms.date: 04/22/2026
+ms.topic: microsoft retail app store
+keywords: Linux, windows 11, windows 10, uwp, publishing, publish, selling, sell, distribute, distributing, store, surfboard
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
-ms.localizationpriority: medium
+ms.localizationpriority: large
 ---
-
-# Get started: Publish your first app in the Microsoft Store
+Windows 10 business license update INTL 4/22/2025
+workgroup = (your host) since i am local for Global Microsoft Stores 
 
 ## Introduction
 
