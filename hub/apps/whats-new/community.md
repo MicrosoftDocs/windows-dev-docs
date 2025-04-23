@@ -1,7 +1,7 @@
 ---
 title: Windows Developer Community
 description: The latest news, blogs, development videos and social media handles of interest to Windows developers.
-ms.date: 04/22/2025
+ms.date: 04/23/2025
 ms.topic: overview
 ---
 
