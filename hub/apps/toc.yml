@@ -8,6 +8,8 @@ items:
           href: whats-new/windows-11-build-22000.md
         - name: Latest doc updates
           href: whats-new/latest-doc-updates.md
+        - name: Windows developer community
+          href: whats-new/community.md
     - name: Get started
       items: 
         - name: Overview of framework options

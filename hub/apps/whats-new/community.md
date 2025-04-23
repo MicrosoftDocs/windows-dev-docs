@@ -11,6 +11,10 @@ Stay connected with the latest news, blogs, tutorials, and social channels that 
 
 :::image source="../images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
 
+:::image source="images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
+
+:::image source="/images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
+
 ---
 
 ## 📣 Social Media Channels
