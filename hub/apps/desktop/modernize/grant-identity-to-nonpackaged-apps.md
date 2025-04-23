@@ -95,13 +95,15 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 Note: For how to build and sign the identity package within a CI/CD pipeline with production certificates, see the [MSIX and CI/CD Pipeline Overview](/windows/msix/desktop/cicd-overview) for examples.
 
-### Add identity metadata to your desktop application manifests
+## Add identity metadata to your desktop application manifests
 
 You connect the identity package with your application executables by including [application manifests](/windows/win32/sbscs/application-manifests) (a.k.a side-by-side or fusion manifests) with metadata that matches metadata from the identity package manifest.
 
-In Visual Studio, you can add an [application manifest](/windows/win32/sbscs/application-manifests) to an executable project by opening the **Project** context menu, and selecting **Add** > **New Item** > **Application Manifest File**.
+In Visual Studio, you can add an [application manifest](/windows/win32/sbscs/application-manifests) to an executable project by opening the **Project** context menu, and selecting **Add** > **New Item** > **Application Manifest File**.
 
-Below is an example application manifest snippet demonstrating the `msix` element required to connect your binaries with metadata from your identity package.
+
+Below is an example application manifest snippet demonstrating the `msix` element required to connect your binaries with metadata from your identity package.
+
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -147,8 +149,8 @@ Note the below important details about this code:
 * Set `externalLocation` to the absolute path of your application's installation directory (without any executable names)
 * Set `packagePath` to the absolute path of the identity package produced in the previous step (with the file name)
 
-For a complete example including unregistering the package on uninstall, see [`StartUp.cs`](https://github.com/microsoft/AppModelSamples/blob/0c019d835d194dfc65ee0c0663086582d48165a9/Samples/SparsePackages/PhotoStoreDemo/StartUp.cs#L146-L220).
+For production-ready code in C# and C++, see [Sample apps](#sample-apps) below. The samples also demonstrate how to unregister the identity package on uninstall.
 
-## Sample app
+## Sample apps
 
-See the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app by registering an identity package.
+See the [PackageWithExternalLocation](https://aka.ms/sparsepkgsample) samples for fully functional C# and C++ apps that demonstrate how to register an identity package.

@@ -2,7 +2,7 @@
 title: Get started with Windows development using WinUI
 description: List of steps to get started developing Windows apps with WinUI and the Windows App SDK.
 ms.topic: how-to
-ms.date: 03/24/2025
+ms.date: 04/18/2025
 keywords: windows, desktop development
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -53,14 +53,17 @@ On the **Workloads** tab of the Visual Studio Installer app, select the followin
 
 #### [Visual Studio 2022 version 17.10 and later](#tab/vs-2022-17-10)
 
-* For **C#** app development using the Windows App SDK, select **Windows application development**.
+* For **C#** app development using the Windows App SDK, select **WinUI application development**.
 
-:::image type="content" source="images/hello-world/vs-workload-winui.png" alt-text="A screenshot of the Visual Studio installer UI with the Windows application development workload selected.":::
+:::image type="content" source="images/hello-world/vs-workload-winui.png" alt-text="A screenshot of the Visual Studio installer UI with the WinUI application development workload selected.":::
 
-* For **C++** app development using the Windows App SDK, select **Windows application development**.
-  * Then in the **Installation details** pane, under the **Windows application development** node, select **C++ WinUI app development tools**. (This will also select any additional required components.)
+* For **C++** app development using the Windows App SDK, select **WinUI application development**.
+  * Then in the **Installation details** pane, under the **WinUI application development** node, select **C++ WinUI app development tools**. (This will also select any additional required components.)
 
 :::image type="content" source="images/hello-world/vs-workload-winui-cpp.png" alt-text="A screenshot of the Visual Studio installer UI with the C++ WinUI app development tools selected.":::
+
+> [!NOTE]
+> _In Visual Studio 17.10 - 17.12, this workload is called **Windows application development**._
 
 #### [Visual Studio 2022 version 17.1 - 17.9](#tab/vs-2022-17-1)
 
