@@ -18,7 +18,7 @@ Apps can authenticate to a web service using a certificate, and multiple apps ca
 
 ## Prerequisites
 
-- [Visual Studio](https://visualstudio.microsoft.com/) with the **ASP.NET and web development** and **Windows application development** workloads installed.
+- [Visual Studio](https://visualstudio.microsoft.com/) with the **ASP.NET and web development** and **WinUI application development** workloads installed.
 - The latest [Windows Software Development Kit (SDK)](https://developer.microsoft.com/windows/downloads/windows-sdk/) to use the Windows Runtime (WinRT) APIs in your WinUI app.
 - [PowerShell](/powershell/scripting/install/installing-powershell-on-windows) for working with self-signed certificates.
 

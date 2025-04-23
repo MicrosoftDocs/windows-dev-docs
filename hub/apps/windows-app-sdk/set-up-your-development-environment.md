@@ -86,7 +86,20 @@ Use the following links to install Visual Studio 2022 (recommended) or Visual St
 
 During Visual Studio installation, you have the option to install workloads and components (you can also open the Visual Studio Installer and select **Modify** to add workloads and components after installation). We recommend installing the following:
 
-#### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1-a)
+#### [Visual Studio 2022 version 17.10 and later](#tab/vs-2022-17-10)
+
+From within the Visual Studio Installer app:
+
+* On the **Workloads** tab:
+
+  * For C# app development using the Windows App SDK, select **WinUI application development**.
+  * For C++ app development using the Windows App SDK, select **WinUI application development**
+    * Then in the **Installation details** pane of the installation dialog box, under the **WinUI application development** node, select **C++ WinUI app development tools**. (This will also select any additional required components.)
+
+> [!NOTE]
+> _In Visual Studio 17.10 - 17.12, this workload is called **Windows application development**._
+
+#### [Visual Studio 2022 version 17.1 and 17.9](#tab/vs-2022-17-1-a)
 
 From within the Visual Studio Installer app:
 

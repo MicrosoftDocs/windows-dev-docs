@@ -28,11 +28,11 @@ Once installation is done, the installer will automatically launch the applicati
 This functionality is available for the following web-hosted content types:
 
 - Free packaged MSIX content published on the Microsoft Store
+- Win32 apps published on the Microsoft Store
 
 This functionality isn't currently available for the following content types:
 
 - MSIXVC apps published on the Microsoft Store
-- Win32 apps published on the Microsoft Store
 - Paid content published on the Microsoft Store
 - Content rated above Everyone/ESRB (or equivalent) while signed in to Windows using an Enterprise account 
 
