@@ -871,7 +871,7 @@ items:
   items:
     - name: Overview
       href: ../package-manager/index.md
-    - name: Use the winget tool
+    - name: Using WinGet
       items:
         - name: Overview
           href: ../package-manager/winget/index.md
