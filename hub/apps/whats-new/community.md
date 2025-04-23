@@ -1,23 +1,19 @@
 ---
-title: Windows Developer Community
+title: Windows developer community
 description: The latest news, blogs, development videos and social media handles of interest to Windows developers.
 ms.date: 04/23/2025
 ms.topic: overview
 ---
 
-# Windows Developer Community
+# Windows developer community
 
-Stay connected with the latest news, blogs, tutorials, and social channels that matter to Windows developers.
-
-:::image source="../images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
+Stay updated with news, blogs, tutorials, and social channels relevant to Windows developers.
 
 :::image source="images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
 
-:::image source="/images/community.jpg" alt-text="A composite of multiple images, showing a diverse group of developers in various situations - office, home, industry. And a dog.":::
-
 ---
 
-## 📣 Social Media Channels
+## 📣 Social media channels
 
 ### X (formerly Twitter)
 
@@ -29,7 +25,6 @@ Stay connected with the latest news, blogs, tutorials, and social channels that 
 | Microsoft Developer | [@msdev](https://x.com/msdev) |
 | Microsoft Docs | [@docsmsft](https://x.com/docsmsft) |
 | XAML Llama | [@XAMLLlama](https://x.com/XAMLLlama) |
-| Microsoft for Startups | [@msft4startups](https://x.com/msft4startups) |
 | .NET | [@dotnet](https://x.com/dotnet) |
 
 ### Bluesky
@@ -59,7 +54,7 @@ Stay connected with the latest news, blogs, tutorials, and social channels that 
 
 ---
 
-## 🎥 Videos and Tutorials
+## 🎥 Videos and tutorials
 
 | Channel | Link |
 |--------|------|
@@ -75,7 +70,7 @@ Stay connected with the latest news, blogs, tutorials, and social channels that 
 
 ---
 
-## 💬 Keep in Touch
+## 💬 Keep in touch
 
 - [Windows App Development Discord](https://discord.gg/QNr3956t)
 
