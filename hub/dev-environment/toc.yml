@@ -23,7 +23,7 @@ items:
           href: ../powertoys/dsc-configure.md
         - name: Group Policy
           href: ../powertoys/grouppolicy.md
-        - name: Report a Bug
+        - name: Report a bug
           href: https://github.com/microsoft/PowerToys/issues/new/choose
     - name: System Tools
       items:
