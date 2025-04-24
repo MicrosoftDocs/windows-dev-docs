@@ -8,6 +8,8 @@ items:
           href: whats-new/windows-11-build-22000.md
         - name: Latest doc updates
           href: whats-new/latest-doc-updates.md
+        - name: Windows developer community
+          href: whats-new/community.md
     - name: Get started
       items: 
         - name: Overview of framework options
@@ -280,6 +282,9 @@ items:
               href: develop/windows-integration/index.md
             - name: Copilot hardware key
               href: develop/windows-integration/microsoft-copliot-key-provider.md
+              items:
+              - name: Handle Microsoft Copilot hardware key state changes
+                href: develop/windows-integration/copilot-key-state.md
             - name: Cross Device People API
               href: develop/windows-integration/cross-device-people-api.md
             - name: Smart App Control
@@ -545,6 +550,8 @@ items:
                           href: windows-app-sdk/release-notes-archive/preview-channel-1.0.md
                     - name: Experimental channel release notes
                       items: 
+                        - name: Windows App SDK 1.7
+                          href: windows-app-sdk/release-notes-archive/experimental-channel-1.7.md
                         - name: Windows App SDK 1.6
                           href: windows-app-sdk/release-notes-archive/experimental-channel-1.6.md
                         - name: Windows App SDK 1.5
