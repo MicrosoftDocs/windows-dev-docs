@@ -282,6 +282,9 @@ items:
               href: develop/windows-integration/index.md
             - name: Copilot hardware key
               href: develop/windows-integration/microsoft-copliot-key-provider.md
+              items:
+              - name: Handle Microsoft Copilot hardware key state changes
+                href: develop/windows-integration/copilot-key-state.md
             - name: Cross Device People API
               href: develop/windows-integration/cross-device-people-api.md
             - name: Smart App Control
