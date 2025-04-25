@@ -303,13 +303,13 @@ ___
 
 ## Path translation
 
-Controls how file and directory paths are translated during drag-and-drop operations. `"wsl"` will convert paths like `C:\` to `/mnt/c`. `"cygwin"` will convert paths like `C:\` to `/cygdrive/c`. `"msys2"` will convert paths like `C:\` to `/c`.
+Controls how file and directory paths are translated during drag-and-drop operations. `"wsl"` will convert paths like `C:\` to `/mnt/c`. `"cygwin"` will convert paths like `C:\` to `/cygdrive/c`. `"msys2"` will convert paths like `C:\` to `/c`. `"mingw"` will convert paths like `C:\` to `C:/`.
 
 **Property name:** `pathTranslationStyle`
 
 **Necessity:** Optional
 
-**Accepts:** `"none"`, `"wsl"`, `"cygwin"`, `"msys2"`
+**Accepts:** `"none"`, `"wsl"`, `"cygwin"`, `"msys2"`, `"mingw"`
 
 **Default value:** `"none"`
 
