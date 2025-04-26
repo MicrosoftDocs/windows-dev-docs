@@ -1,8 +1,0 @@
-
-- name: Windows
-  tocHref: /windows/
-  topicHref: /windows/index
-  items:
-    - name: App development
-      tocHref: /windows/apps/
-      topicHref: /windows/apps/index
