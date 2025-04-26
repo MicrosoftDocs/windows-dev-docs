@@ -1,7 +1,7 @@
 ---
 title: Group Policy for Windows Terminal
 description: Learn how to set Group Policy for Windows Terminal.
-ms.date: 10/24/2024
+ms.date: 04/25/2025
 ms.topic: how-to 
 ---
 
@@ -99,3 +99,52 @@ Enabling this policy but leaving the list empty disallows all providers and disa
 - Name: EnabledLMProviders
 - Type: MULTI_SZ
 - Example value: `AzureOpenAI`
+
+### Default terminal application
+
+Supported on Windows 11 22H2 or Windows 10 22H2 (Build 19045.3031, KB5026435) with Windows Terminal 1.17 or later, this policy allows you to select the default terminal application used in Windows.
+
+The possible selections are:
+- Automatic selection (Windows Terminal, if available)
+- Windows Console Host (legacy)
+- Windows Terminal
+- Windows Terminal Preview (if available)
+
+> [!Note]
+> If you select Windows Terminal Preview and it is not installed, the system will fallback to the legacy Windows Console Host. (Please note that the settings interfaces showing "Let windows decide" in this case as configuration.)
+
+> [!Important]
+> This policy is implemented as and acts like a preference. This means it's value won't be deleted when you change it from configured to not configured.
+
+_For more details on how to configure the default terminal application please see [Command Prompt and Windows Powershell on Microsoft Support](https://support.microsoft.com/windows/command-prompt-and-windows-powershell-for-windows-11-6453ce98-da91-476f-8651-5c14d5777c20)._
+
+#### Group Policy (ADMX) information
+
+- GP unique name: DefaultTerminalApplication
+- GP name: Default terminal application
+- GP path: Administrative Templates/Windows Components/Windows Terminal/
+- GP scope: User only
+- ADMX file name: WindowsTerminal.admx
+
+#### Registry information
+
+- Path: `Console\%%Startup`
+- Name: DelegationTerminal, DelegationConsole
+- Type: REG_SZ
+- Example value: `{00000000-0000-0000-0000-000000000000}`
+
+**Values for "automatic"**
+- DelegationTerminal: `{00000000-0000-0000-0000-000000000000}`
+- DelegationConsole: `{00000000-0000-0000-0000-000000000000}`
+
+**Values for "Windows Console Host"**
+- DelegationTerminal: `{B23D10C0-E52E-411E-9D5B-C09FDF709C7D}`
+- DelegationConsole: `{B23D10C0-E52E-411E-9D5B-C09FDF709C7D}`
+
+**Values for "Windows Terminal"**
+- DelegationTerminal: `{E12CFF52-A866-4C77-9A90-F570A7AA2C6B}`
+- DelegationConsole: `{2EACA947-7F5F-4CFA-BA87-8F7FBEEFBE69}`
+
+**Values for "Windows Terminal Preview"**
+- DelegationTerminal: `{86633F1F-6454-40EC-89CE-DA4EBA977EE2}`
+- DelegationConsole: `{06EC847C-C0A5-46B8-92CB-7C92F6E35CD5}`
