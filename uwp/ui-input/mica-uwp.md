@@ -14,11 +14,11 @@ This article describes how to apply Mica as the base layer of your UWP app using
 
 _Mica_ is an opaque material that incorporates the user's theme and desktop wallpaper to create a highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
 
-Mica is available for UWP apps that use [WinUI 2](/windows/apps/winui/winui2/) while running on Windows 11 version 22000 or later. On Windows 10, the background falls back to a solid color.
+Mica is available for UWP apps that use [WinUI 2](/windows/uwp/get-started/winui2/) while running on Windows 11 version 22000 or later. On Windows 10, the background falls back to a solid color.
 
 ## Prerequisites
 
-- The WinUI 2 NuGet package (see [Getting started with WinUI 2](/windows/apps/winui/winui2/getting-started))
+- The WinUI 2 NuGet package (see [Get started with WinUI 2](/windows/uwp/get-started/winui2/getting-started))
 - Familiarity with [Mica material](/windows/apps/design/style/mica).
 - Familiarity with [Title bar customization](title-bar.md)
 

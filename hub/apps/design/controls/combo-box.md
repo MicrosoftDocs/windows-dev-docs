@@ -310,7 +310,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!NOTE]
 > The [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable) property requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
 
-[WinUI 2.2](../../winui/winui2/index.md) or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+[WinUI 2.2](/windows/uwp/get-started/winui2/) or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 
