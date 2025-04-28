@@ -79,7 +79,7 @@ sections:
           See [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project) for more information.
       - question: Do I need to use Visual Studio to build WinUI apps?
         answer: |
-          We strongly recommend using Visual Studio 2022 versions 17.10 and above to develop WinUI apps. Using the latest version of Visual Studio will give you access to rich development features like Hot Reload. The latest Visual Studio installers include a **Windows application development** workload, making it easy to get started with WinUI development.
+          We strongly recommend using Visual Studio 2022 versions 17.10 and above to develop WinUI apps. Using the latest version of Visual Studio will give you access to rich development features like Hot Reload. The latest Visual Studio installers include a **WinUI application development** workload, making it easy to get started with WinUI development.
 
           You may be able to use other IDEs and development workflows, but [Visual Studio](/visualstudio/windows/) is currently the only officially supported IDE for WinUI. Note that [MSBuild](/visualstudio/msbuild/msbuild) is required to compile projects that use XAML or WinUI.
       - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI app"?
