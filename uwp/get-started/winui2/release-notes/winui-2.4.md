@@ -2,7 +2,7 @@
 title: WinUI 2.4 Release Notes
 description: Release notes for WinUI 2.4 including new features and bug fixes.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
-ms.date: 07/15/2020
+ms.date: 04/22/2025
 ms.topic: article
 ---
 
@@ -10,11 +10,11 @@ ms.topic: article
 
 WinUI 2.4 is the May 2020 release of WinUI.
 
-WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
+WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports.
 
 WinUI Releases: [GitHub release page](https://github.com/microsoft/microsoft-ui-xaml/releases)
 
-WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Getting Started with WinUI](../getting-started.md).
+WinUI packages can be added to Visual Studio projects through the NuGet package manager. For more information, see [Get Started with WinUI 2 for UWP](../getting-started.md).
 
 NuGet package download: [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)
 
@@ -27,9 +27,9 @@ A RadialGradientBrush is drawn within an ellipse defined by Center, RadiusX, and
 ![Short video showing the behavior of the Radial gradient brush.](../images/radialgradientbrush.gif)<br>
 *Radial gradient brush*
 
-[Usage guidelines](/windows/uwp/design/style/brushes#radial-gradient-brushes)
+[Usage guidelines](/windows/apps/develop/platform/xaml/brushes#radial-gradient-brushes)
 
-[API reference](/uwp/api/microsoft.ui.xaml.media.radialgradientbrush)
+[API reference](/windows/winui/api/microsoft.ui.xaml.media.radialgradientbrush)
 
 ### ProgressRing
 
@@ -38,9 +38,9 @@ The ProgressRing control is used for modal interactions where the user is blocke
 ![Short video showing the behavior of the Progress Ring control.](../images/progressring.gif)<br>
 *ProgressRing control*
 
-[Usage guidelines](/windows/uwp/design/controls-and-patterns/progress-controls)
+[Usage guidelines](/windows/apps/design/controls/progress-controls)
 
-[API reference](/uwp/api/microsoft.ui.xaml.controls.progressring)
+[API reference](/windows/winui/api/microsoft.ui.xaml.controls.progressring)
 
 ### TabView updates
 
@@ -56,9 +56,9 @@ You can also hide the close button on unselected tabs until the user hovers over
 ![TabView control hover to close](..\images\tabview-closebuttononhover.gif)<br>
 *TabView control hover to close*
 
-[Usage guidelines](/windows/uwp/design/controls-and-patterns/tab-view)
+[Usage guidelines](/windows/apps/design/controls/tab-view)
 
-[API reference](/uwp/api/microsoft.ui.xaml.controls.tabview)
+[API reference](/windows/winui/api/microsoft.ui.xaml.controls.tabview)
 
 ### Dark theme updates to TextBox family of controls
 
@@ -79,24 +79,23 @@ The following are some of the controls included in the TextBox family of control
 
 ### Hierarchical navigation
 
-The [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true) control now supports hierarchical navigation and includes Left, Top, and LeftCompact display modes. A hierarchical NavigationView is useful for displaying categories of pages, identifying pages with related child-pages, or using within apps that have hub-style pages linking to many other pages.
+The [NavigationView](/windows/winui/api/microsoft.ui.xaml.controls.navigationview) control now supports hierarchical navigation and includes Left, Top, and LeftCompact display modes. A hierarchical NavigationView is useful for displaying categories of pages, identifying pages with related child-pages, or using within apps that have hub-style pages linking to many other pages.
 
 ![Hierarchical NavigationView control](..\images\HierarchicalNavView.gif)<br>*Hierarchical NavigationView control*
 
-[Usage guidelines](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation)
+[Usage guidelines](/windows/apps/design/controls/navigationview#hierarchical-navigation)
 
-[API reference](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true)
+[API reference](/windows/winui/api/microsoft.ui.xaml.controls.navigationview)
 
 ## Samples
 
 > [!TIP]
-> For more info, design guidance, and code examples, see [Design and code Windows apps](../../../design/index.md).
+> For more info, design guidance, and code examples, see [Design for Windows apps](/windows/apps/design/).
 >
-> The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality.
+> The **WinUI 2 Gallery** app includes interactive examples of most WinUI 2 controls, features, and functionality.
 >
-> If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:/item/AnimatedIcon) or [**WinUI 2 Gallery**](winui2gallery:/item/AnimatedIcon).
+> If the gallery app is installed already, click [**WinUI 2 Gallery**](winui2gallery:) to open it.
 >
-> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+> If it's not installed, download the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
 >
-> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
-
+> You can also get the source code from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (select the *winui2* branch).

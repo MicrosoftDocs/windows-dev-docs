@@ -267,7 +267,7 @@ Its required that you use a `ThemeDictionary` that is duplicated three times in 
 
 ## Avoid restyling controls
 
-The [WinUI](../../../winui/winui2/index.md) 2.2 or later includes new styles and templates for both WinUI and system controls. 
+The [WinUI](/windows/uwp/get-started/winui2/) 2.2 or later includes new styles and templates for both WinUI and system controls. 
 
 The best way to stay current with our latest visual styles is to use the latest WinUI 2 package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
 

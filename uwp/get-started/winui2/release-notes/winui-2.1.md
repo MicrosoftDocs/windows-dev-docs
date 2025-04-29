@@ -2,7 +2,7 @@
 title: WinUI 2.1 Release Notes
 description: Release notes for WinUI 2.1 including new features and bugfixes.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
-ms.date: 07/15/2020
+ms.date: 04/22/2025
 ms.topic: article
 ---
 
@@ -10,13 +10,13 @@ ms.topic: article
 
 The first open-source version of WinUI – WinUI 2.1 (released April 2019).
 
-WinUI gives you many of the latest Windows UX platform features, including up-to-date Fluent controls and styles, available in a way you can use right away, backward-compatible to Windows 10 Anniversary Update (14393). The [WinUI 2 Gallery](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) gives you samples to explore all the cool new features added to the library.
+WinUI gives you many of the latest Windows UX platform features, including up-to-date Fluent controls and styles, available in a way you can use right away, backward-compatible to Windows 10 Anniversary Update (14393). The [WinUI 2 Gallery](https://www.microsoft.com/store/productId/9MSVH128X2ZT) gives you samples to explore all the cool new features added to the library.
 
 Download the [WinUI 2.1 NuGet package](https://www.nuget.org/packages/Microsoft.UI.Xaml/2.1.190405004)
 
-You can choose to use the WinUI packages in your app using the NuGet package manager: see [Getting Started with WinUI](/uwp/toolkits/winui/getting-started) for more information.
+You can choose to use the WinUI packages in your app using the NuGet package manager: see [Get Started with WinUI 2 for UWP](../getting-started.md) for more information.
 
-WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports, feature requests and community code contributions.
+WinUI is hosted on [GitHub](https://github.com/microsoft/microsoft-ui-xaml) where we encourage you to file bug reports.
 
 ## What's new in this release
 
@@ -27,7 +27,7 @@ Unlike ListView, ItemsRepeater does not provide a comprehensive end-user experie
 
 ![Short video showing the behavior of the Items Repeater control.](../images/ItemsRepeater%20-%20MSN%20News.gif)
 
-[Documentation](/windows/uwp/design/controls-and-patterns/items-repeater)
+[Documentation](/windows/apps/design/controls/items-repeater)
 
 ### AnimatedVisualPlayer
 
@@ -43,7 +43,7 @@ TeachingTip provides an engaging and Fluent way for applications to guide and in
 
 ![Short video showing the behavior of the Teaching Tip control.](../images/TeachingTipUpdated.gif)
 
-[Documentation](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
+[Documentation](/windows/apps/design/controls/dialogs-and-flyouts/teaching-tip)
 
 ### RadioMenuFlyoutItem
 
@@ -51,7 +51,7 @@ Includes the ability to have 'Radio Button' style options in a MenuBar. This ena
 
 ![Screenshot showing the behavior of the Radio Menu Fly out Item control.](../images/RadioMenuFlyoutItem1.png)
 
-[Documentation](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
+[Documentation](/windows/apps/design/controls/menus#create-a-menu-flyout-or-a-context-menu)
 
 ### CompactDensity
 
@@ -59,32 +59,32 @@ Compact mode enables developers to create comfortable experiences for any number
 
 ![Screenshot showing the behavior of the Compact Density control.](../images/CompactDensityUpdated.png)
 
-[Documentation](/windows/uwp/design/style/spacing)
+[Documentation](/windows/apps/design/style/spacing)
 
 ### Shadows
 
 ![Example](../images/shadow.gif)
 
-Creating a visual hierarchy of elements in your UI makes the UI easy to scan and conveys what is important to focus on. Elevation, the act of bringing select elements of your UI forward, is often used to achieve such a hierarchy in software. 
+Creating a visual hierarchy of elements in your UI makes the UI easy to scan and conveys what is important to focus on. Elevation, the act of bringing select elements of your UI forward, is often used to achieve such a hierarchy in software.
 
-With Windows 10 May 2019 Update, many of our common controls add elevation by using z-depth and shadow by default. The NavigationView and TeachingTip controls in WinUI 2.1 will also have default shadows when running on an OS with Windows 10 May 2019 Update. The full list of controls that have default shadows and how to use additional APIs will be available once the Windows 10 May 2019 Update is released and the link will be posted here.
+With Windows 10 May 2019 Update, many of our common controls add elevation by using z-depth and shadow by default. The NavigationView and TeachingTip controls in WinUI 2.1 will also have default shadows when running on an OS with Windows 10 May 2019 Update. For the list of controls that have default shadows and how to use additional APIs, see [Z-depth and shadow](/windows/apps/design/layout/depth-shadow).
 
 ## Examples
 
 > [!TIP]
-> For more info, design guidance, and code examples, see [Design and code Windows apps](../../../design/index.md).
+> For more info, design guidance, and code examples, see [Design for Windows apps](/windows/apps/design/).
 >
-> The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality.
+> The **WinUI 2 Gallery** app includes interactive examples of most WinUI 2 controls, features, and functionality.
 >
-> If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:/item/AnimatedIcon) or [**WinUI 2 Gallery**](winui2gallery:/item/AnimatedIcon).
+> If the gallery app is installed already, click [**WinUI 2 Gallery**](winui2gallery:) to open it.
 >
-> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+> If it's not installed, download the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
 >
-> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
+> You can also get the source code from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (select the *winui2* branch).
 
 ## Documentation
 
-How-to articles for WinUI controls are included with the [Universal Windows Platform controls documentation](/windows/uwp/design/controls-and-patterns/).
+How-to articles for WinUI controls are included with the [Controls for Windows apps](/windows/apps/design/controls/) documentation.
 
 API reference docs are located here: [WinUI APIs](/windows/winui/api/).
 
@@ -100,7 +100,7 @@ April 2019
 
 #### New feature (not included in earlier pre-releases)
 
-* [CompactDensity](/windows/uwp/design/style/spacing):
+* [CompactDensity](/windows/apps/design/style/spacing):
 Compact mode enable developers to create comfortable experiences for any number of scenarios. Simply by adding a resource dictionary your application can fit on average ~33% more UI.
 
 * Shadows:
@@ -129,7 +129,7 @@ February 2019
 
 New experimental features:
 
-* [AnimatedVisualPlayer](/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer)  
+* [AnimatedVisualPlayer](/windows/winui/api/microsoft.ui.xaml.controls.animatedvisualplayer)  
   This new control enables playing complex high performance vector animations, including [Lottie](https://github.com/airbnb/lottie) animations created using [Lottie-Windows](/windows/communitytoolkit/animations/lottie).
 
 ### Microsoft.UI.Xaml 2.1.181217001-prerelease
@@ -142,8 +142,8 @@ December 2018
 
 New experimental features:
 
-* [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+* [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater)
 
-* [RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
+* [RadioButtons](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons)
 
-* [RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)
+* [RadioMenuFlyoutItem](/windows/winui/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)
