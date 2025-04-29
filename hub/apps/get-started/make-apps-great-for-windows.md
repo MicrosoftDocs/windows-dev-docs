@@ -75,7 +75,7 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 ### UWP apps
 
-- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation by default.
+- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](/windows/uwp/get-started/winui2/) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation by default.
 - See the documentation for a [list of supported controls](../design/controls/index.md#index-of-controls).
 - Use the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*winui 2 branch*) to evaluate the controls.
 
