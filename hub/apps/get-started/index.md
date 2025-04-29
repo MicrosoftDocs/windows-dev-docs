@@ -127,9 +127,9 @@ You will not have access to the APIs provided by the **Windows App SDK** or .NET
 
 ## Other cross-platform options
 
-If you need your app to be cross-platform, in addition to React Native for Desktop, you should consider [.NET MAUI](/dotnet/maui/what-is-maui) or a [Progressive Web App (PWA)](/microsoft-edge/progressive-web-apps-chromium/). There are many other choices available ([here's a list of popular options](../../dev-environment/index.md)), but these are some good starting points.
+If you need your app to be cross-platform, in addition to React Native for Desktop, you should consider [.NET MAUI](/dotnet/maui/what-is-maui), [Blazor Hybrid](/aspnet/core/blazor/hybrid/), or a [Progressive Web App (PWA)](/microsoft-edge/progressive-web-apps-chromium/). There are many other choices available ([here's a list of popular options](../../dev-environment/index.md)), but these are some good starting points.
 
-.NET MAUI harnesses the power of WinUI on Windows, while also enabling execution on other operating systems. Another cross-platform option, Progressive Web Apps (PWAs), are websites that function like installed, native apps on Windows and other supported platforms, while functioning like regular websites on browsers.
+.NET MAUI harnesses the power of WinUI on Windows, while also enabling execution on other operating systems. Blazor Hybrid blends desktop and mobile native client frameworks with .NET and Blazor. Another cross-platform option, Progressive Web Apps (PWAs), are websites that function like installed, native apps on Windows and other supported platforms, while functioning like regular websites on browsers.
 
 For more information, see the following tabs.
 
@@ -156,6 +156,29 @@ For more information about .NET MAUI, see the following links:
 - [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources/)
 - [Video Series - .NET MAUI for Beginners](/shows/dotnet-maui-for-beginners/)
 - [Build 2022: Build native apps for any device with .NET and Visual Studio](https://www.youtube.com/watch?v=IbwgHJPoE-M)
+
+### [Blazor Hybrid](#tab/blazor-hybrid)
+
+In an ASP.NET Core Blazor Hybrid app, [Razor components](/aspnet/core/blazor/components/) run natively on the desktop or mobile device. Components render to a custom embedded Web View control through a local interop channel. The components don't run in the browser, and WebAssembly isn't used. Components have full access to the native capabilities of the device through the .NET platform. All component styles rendered in a Web View are platform dependent. If you're planning to deploy across multiple platforms, you may have to account for rendering differences across the platforms using custom stylesheets.
+
+Blazor Hybrid apps can be built using .NET MAUI, WPF, or Windows Forms. Visual Studio provides a template for creating a Blazor Hybrid app using .NET MAUI. You can also create a Blazor Hybrid app using WPF or Windows Forms by adding a BlazorWebView control to your existing WPF or Windows Forms app. See the links below for more information.
+
+Blazor Hybrid is a great choice if:
+
+- Your team is already familiar with ASP.NET Core, Razor components, and CSS.
+- You want to use C# and/or Razor components for building cross-platform apps.
+- You want to share as much .NET code (and Razor components) as possible across applications.
+- You want to ship your application beyond Windows to other desktop and mobile targets with native platform experiences.
+- You have existing .NET MAUI, WPF, or Windows Forms apps and want to add Blazor components to them.
+
+For more information about Blazor Hybrid, see the following links:
+
+- [ASP.NET Core Blazor Hybrid documentation](/aspnet/core/blazor/hybrid/)
+- [Build a .NET MAUI Blazor Hybrid app](/aspnet/core/blazor/hybrid/tutorials/maui)
+- [Build a Windows Presentation Foundation (WPF) Blazor app](/aspnet/core/blazor/hybrid/tutorials/wpf)
+- [Build a Windows Forms Blazor app](/aspnet/core/blazor/hybrid/tutorials/windows-forms)
+- [Troubleshoot ASP.NET Core Blazor Hybrid](/aspnet/core/blazor/hybrid/troubleshoot)
+- [BlazorWebView Class](/dotnet/api/microsoft.aspnetcore.components.webview.maui.blazorwebview)
 
 ### [Progressive Web Apps (PWAs)](#tab/pwa)
 
