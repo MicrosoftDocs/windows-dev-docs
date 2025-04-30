@@ -12,7 +12,7 @@ ms.date: 04/10/2025
 
 ## Prerequisites
 
-Advanced settings is available in the [Windows Beta channel](https://aka.ms/BetaLatest). ([Check for Windows updates](ms-settings:windowsupdate)).
+Advanced settings is available in the [Windows Beta channel](https://aka.ms/BetaLatest). See [Get started with the Windows Insider Program](/windows-insider/get-started) for more information about joining the program and selecting a channel. After you've joined the Beta channel, you can ([check for Windows updates](ms-settings:windowsupdate)).
 
 ## FAQ
 
