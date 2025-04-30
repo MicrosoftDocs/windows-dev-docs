@@ -1,7 +1,7 @@
 ---
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: Learn how to create a "Hello, World!" UWP app (XAML)
-description: Use Extensible Application Markup Language (XAML) with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) on Windows.
+description: Use XAML with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) and .NET 9 on Windows.
 ms.date: 04/30/2025
 ms.topic: how-to
 keywords: windows 10, uwp, first app, hello world, windows 11, xaml, c#, universal windows platform, uwp app, uwp tutorial
@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 
 # Create a "Hello, World!" UWP app (XAML)
 
-This tutorial teaches you how to use XAML and C# to create a simple "Hello, World!" app for the Universal Windows Platform (UWP) on Windows. With a single project in Microsoft Visual Studio, you can build an app that runs on all supported versions of Windows 10 and Windows 11.
+This tutorial teaches you how to use XAML, C#, and .NET 9 to create a simple "Hello, World!" app for the Universal Windows Platform (UWP) on Windows. With a single project in Microsoft Visual Studio, you can build an app that runs on all supported versions of Windows 10 and Windows 11.
 
 Here you'll learn how to:
 
--   Create a new **UWP** project in **Visual Studio**.
+-   Create a new **UWP** project targeting .NET 9 in **Visual Studio**.
 -   Write XAML to change the UI on your start page.
 -   Run the project on the local desktop in Visual Studio.
 -   Use a [SpeechSynthesizer](/uwp/api/windows.media.speechsynthesis.speechsynthesizer) to make the app talk when you press a button.
@@ -44,6 +44,9 @@ Here you'll learn how to:
 1. Choose the **UWP Blank App** template, select **Next*, and enter "HelloWorld" as the **Project name**. Select **Create**.
 
    ![A screenshot of the Configure your new project screen](images/cs-xaml-hw-app1.png)
+
+   > [!IMPORTANT]
+   > Make sure to select the **UWP Blank App** template. If you select the **UWP Blank App (.NET Native)** template, it will target the .NET Native runtime, not .NET 9. Apps targing .NET Native do not have access to the latest .NET and C# features or security and performance improvements. For more information about the differences between the two project types, see [Modernize your UWP app with preview UWP support for .NET 9 and Native AOT](https://devblogs.microsoft.com/ifdef-windows/preview-uwp-support-for-dotnet-9-native-aot/).
 
    > [!NOTE]
    > If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
@@ -105,7 +108,7 @@ Let's add a button to our page. In this tutorial, you work with just a few of th
    ![A screenshot of Visual Studio showing the Main Page in the X A M L editor](images/cs-xaml-hw-app4.png)
 
    > [!NOTE]
-   > You won't see a design view when working with the **UWP Blank App** template that uses .NET 9. If you want to work with a UWP project with a XAML design view, you can use the **UWP Blank App (.NET Native)** template instead. The UWP Blank App (.NET Native) template is a little different from the UWP Blank App template, but it has the same basic structure. The main difference is that the UWP Blank App (.NET Native) template uses .NET Native to compile your app. See [Modernize your UWP app with preview UWP support for .NET 9 and Native AOT](https://devblogs.microsoft.com/ifdef-windows/preview-uwp-support-for-dotnet-9-native-aot/) for information about the advantages of using the new .NET 9 template.
+   > You won't see a design view when working with the **UWP Blank App** template that uses .NET 9. If you want to work with a UWP project with a XAML design view, you can use the **UWP Blank App (.NET Native)** template instead. As previously noted, the **UWP Blank App (.NET Native)** template is a little different from the **UWP Blank App** template, but it has the same basic structure. The main difference is that the **UWP Blank App (.NET Native)** template uses .NET Native to compile your app. See [Modernize your UWP app with preview UWP support for .NET 9 and Native AOT](https://devblogs.microsoft.com/ifdef-windows/preview-uwp-support-for-dotnet-9-native-aot/) for information about the advantages of using the new .NET 9 template.
 
 1. Add the following XAML code to the `<Grid>` element in MainPage.xaml. You can type it in, or copy and paste it from here:
 
