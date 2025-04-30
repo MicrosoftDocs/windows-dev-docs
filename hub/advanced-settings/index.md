@@ -18,7 +18,7 @@ Advanced settings is available in the [Windows Beta channel](https://aka.ms/Beta
 
 ### Why was For Developers renamed to Advanced?
 
-Majority of the settings available within the For Developers page are useful to folks outside of the developer audience. In order to help users wayfind and discover useful settings, the page was reformatted and renamed to Advanced.
+Most of the settings available within the For Developers page are useful for other advanced Windows users as well. In order to help all users discover these settings, the page was redesigned and renamed to Advanced.
 
 ## Windows Advanced Settings system component open source repository
 
