@@ -1,6 +1,6 @@
 ---
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: Learn to create a Hello World UWP app (XAML) with .NET 9
+title: Learn to create a Hello World UWP app with XAML and .NET 9
 description: Use XAML with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) and .NET 9 on Windows.
 ms.date: 04/30/2025
 ms.topic: how-to
