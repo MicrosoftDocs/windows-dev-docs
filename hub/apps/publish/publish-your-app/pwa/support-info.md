@@ -19,7 +19,7 @@ In this section, you must indicate whether or not your app accesses, collects, o
 
 If you already have a privacy policy hosted on your domain, you can directly provide that link. Otherwise, you can also provide the privacy policy text directly. The Store will use show the privacy policy contents for all the markets where your product is published.
 
-:::image type="content" source="images/msix-privacy-policy.png" lightbox="images/msix-privacy-policy.png" alt-text="A screenshot showing the privacy policy options for a developer.":::
+:::image type="content" source="../msix/images/msix-privacy-policy.png" lightbox="../msix/images/msix-privacy-policy.png" alt-text="A screenshot showing the privacy policy options for a developer.":::
 
 To help you determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md#105-personal-information).
 
@@ -30,7 +30,7 @@ To help you determine if your app requires a privacy policy, review the [App Dev
 
 This section lets you provide info to help customers understand more about your app and how to get support.
 
-:::image type="content" source="images/msix-support-info.png" lightbox="images/msix-support-info.png" alt-text="A screenshot showing the support info section.":::
+:::image type="content" source="../msix/images/msix-support-info.png" lightbox="../msix/images/msix-support-info.png" alt-text="A screenshot showing the support info section.":::
 
 ### Website
 
