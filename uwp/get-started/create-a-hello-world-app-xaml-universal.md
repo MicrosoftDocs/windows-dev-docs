@@ -41,12 +41,14 @@ Here you'll learn how to:
 
    (If you don't see any UWP templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by opening the **Visual Studio Installer** from your Windows Start menu. See [Get set up](/windows/apps/get-started/get-set-up).)
 
-1. Choose the **UWP Blank App** template, select **Next*, and enter "HelloWorld" as the **Project name**. Select **Create**.
-
-   ![A screenshot of the Configure your new project screen](images/cs-xaml-hw-app1.png)
+1. Choose the **UWP Blank App** template.
 
    > [!IMPORTANT]
    > Make sure to select the **UWP Blank App** template. If you select the **UWP Blank App (.NET Native)** template, it will target the .NET Native runtime, not .NET 9. Apps targing .NET Native do not have access to the latest .NET and C# features or security and performance improvements. For more information about the differences between the two project types, see [Modernize your UWP app with preview UWP support for .NET 9 and Native AOT](https://devblogs.microsoft.com/ifdef-windows/preview-uwp-support-for-dotnet-9-native-aot/).
+
+1. Select **Next*, and enter "HelloWorld" as the **Project name**. Select **Create**.
+
+   ![A screenshot of the Configure your new project screen](images/cs-xaml-hw-app1.png)
 
    > [!NOTE]
    > If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
