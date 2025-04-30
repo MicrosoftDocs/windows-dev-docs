@@ -22,4 +22,4 @@ Most of the settings available within the For Developers page are useful for oth
 
 ## Windows Advanced Settings system component open source repository
 
-In order to provide enhanced functionality to the Advanced settings page, there is an open source system component that lights up features such as [File Explorer version control integration](fe-version-control.md). We welcome your contributions and feedback and you can find the source code for the Windows Advanced Settings system component on [GitHub](https://github.com/microsoft/sudo).
+To provide enhanced functionality to the Advanced settings page, there is an open-source system component that enables features like [File Explorer version control integration](fe-version-control.md). We welcome your contributions and feedback, and the source code for the Windows Advanced Settings system component is available on [GitHub](https://github.com/microsoft/windowsAdvancedSettings/).
