@@ -8,7 +8,7 @@ ms.date: 04/10/2025
 
 # Advanced Windows Settings
 
-**Advanced Windows settings** is a redesign of the original For Developers page in Windows settings with additional settings to help you be more productive.
+**Advanced Windows settings** is a redesign of the original **For Developers** page in Windows settings with additional settings to help you be more productive.
 
 ## Prerequisites
 
