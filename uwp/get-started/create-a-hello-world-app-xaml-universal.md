@@ -44,7 +44,7 @@ Here you'll learn how to:
 1. Choose the **UWP Blank App** template.
 
    > [!IMPORTANT]
-   > Make sure to select the **UWP Blank App** template. If you select the **UWP Blank App (.NET Native)** template, it will target the .NET Native runtime, not .NET 9. Apps targing .NET Native do not have access to the latest .NET and C# features or security and performance improvements. For more information about the differences between the two project types, see [Modernize your UWP app with preview UWP support for .NET 9 and Native AOT](https://devblogs.microsoft.com/ifdef-windows/preview-uwp-support-for-dotnet-9-native-aot/).
+   > Make sure to select the **UWP Blank App** template. If you select the **UWP Blank App (.NET Native)** template, it will target the .NET Native runtime, not .NET 9. Apps targeting .NET Native do not have access to the latest .NET and C# features or security and performance improvements. For more information about the differences between the two project types, see [Modernize your UWP app with preview UWP support for .NET 9 and Native AOT](https://devblogs.microsoft.com/ifdef-windows/preview-uwp-support-for-dotnet-9-native-aot/).
 
 1. Select **Next*, and enter "HelloWorld" as the **Project name**. Select **Create**.
 
