@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Create a "Hello, World!" UWP app (XAML) with .NET 9
 
-This tutorial teaches you how to use XAML, C#, and .NET 9 to create a simple "Hello, World!" app for the Universal Windows Platform (UWP) on Windows. With a single project in Microsoft Visual Studio, you can build an app that runs on all supported versions of Windows 10 and Windows 11.
+This tutorial teaches you how to use XAML, C#, and .NET 9 with [Native AOT](/dotnet/core/deploying/native-aot/) (Ahead-of-Time) to create a simple "Hello, World!" app for the Universal Windows Platform (UWP) on Windows. With a single project in Microsoft Visual Studio, you can build an app that runs on all supported versions of Windows 10 and Windows 11.
 
 Here you'll learn how to:
 
