@@ -33,7 +33,7 @@ items:
             href: publish-your-app/msix/enter-app-properties.md
           - name: Set category and subcategory
             href: publish-your-app/msix/categories-and-subcategories.md
-          - name: Provide support info
+          - name: Provide privacy policy and support info
             href: publish-your-app/msix/support-info.md
           - name: Product declarations
             href: publish-your-app/msix/product-declarations.md
@@ -145,7 +145,7 @@ items:
             href: publish-your-app/pwa/enter-app-properties.md
           - name: Set category and subcategory
             href: publish-your-app/pwa/categories-and-subcategories.md
-          - name: Provide support info
+          - name: Provide privacy policy and support info
             href: publish-your-app/pwa/support-info.md
           - name: Product declarations
             href: publish-your-app/pwa/product-declarations.md
