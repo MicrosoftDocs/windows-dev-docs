@@ -167,7 +167,7 @@ An "event handler" sounds complicated, but it's just another name for the code t
 
 1. Next, select `<New Event Handler>` from the list. This creates a new event handler method in the code-behind file (MainPage.xaml.cs) and adds the `Click` event to the button element in your XAML code.
 
-   ![A screenshot of the XAML editor showing the Click event in the properties pane](images/cs-xaml-hw-app8.png)
+   ![A screenshot of the XAML editor showing the prompt to create a new event handler in the properties pane](images/cs-xaml-hw-app8.png)
 
    The XAML editor automatically adds the `Click` event to the button element in your XAML code:
 
