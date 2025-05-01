@@ -50,7 +50,7 @@ This article describes the format of the action definition JSON file format for 
           "uri": "contoso://greetUser?userName=${UserFriendlyName.Text}&petName=${PetName.Text}", 
         }, 
         "where": [ 
-          "${UserFriendlyName.Length > 3}" 
+          "${UserFriendlyName.Length} > 3" 
         ] 
       } 
     }, 
