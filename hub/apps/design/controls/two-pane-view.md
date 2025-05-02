@@ -2,98 +2,84 @@
 description: TwoPaneView is a layout control that helps you manage the display of apps that have 2 distinct areas of content.
 title: Two-pane view
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 04/29/2025
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Two-pane view
 
-[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) is a layout control that helps you manage the display of apps that have 2 distinct areas of content, like a list/detail view.
-
-> [!IMPORTANT]
-> This article describes functionality and guidance that is in public preview and may be substantially modified before it's generally available. Microsoft makes no warranties, express or implied, with respect to the information provided here.
-
-While it works on all Windows devices, the TwoPaneView control is designed to help you take full advantage of dual-screen devices automatically, with no special coding needed. On a dual-screen device, the two-pane view ensures that the user interface (UI) is split cleanly when it spans the gap between screens, so that your content is presented on either side of the gap.
-
-**Get WinUI**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      The **TwoPaneView** control is included as part of WinUI, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [WinUI](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
-:::row-end:::
-
-> **WinUI APIs:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
-
-> [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent WinUI APIs that we have included in our project. We have added this to our [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
->
->In the code-behind, we also use the **muxc** alias in C# to represent WinUI APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
+Two-pane view is a layout control that helps you manage the display of apps that have 2 distinct areas of content, like a list/detail view.
 
 ## Is this the right control?
 
-Use the two-pane view when you have 2 distinct areas of content and:
+Use the two-pane view when you have two distinct but related areas of content and:
 
 - The content should automatically rearrange and resize to best fit the window.
 - The secondary area of content should show/hide based on available space.
-- The content should split cleanly between the 2 screens of a dual-screen device.
 
-## Examples
+If you need to display two areas of content but don't need the resizing and rearranging provided by the two-pane view, consider using a [Split view](split-view.md) instead.
 
-These images show an app running on a single-screen and spanned across dual-screens. The two-pane view adapts the app UI to the various screen configurations.
+For navigation options, use a [Navigation view](navigationview.md).
 
-![Two-pane view app on a single screen](images/two-pane-view/tpv-single.png)
-
-> _App on a single-screen._
-
-![Two-pane view app on dual-screens in wide mode](images/two-pane-view/tpv-dual-wide.png)
-
-> _App spanning a dual-screen device in wide mode._
-
-![Two-pane view app on dual-screens in tall mode](images/two-pane-view/tpv-dual-tall.png)
-
-> _App spanning a dual-screen device in tall mode._
 
 ## How it works
 
-The two-pane view has two panes where you place your content. It adjusts the size and arrangement of the panes depending on the space available to the window. The possible pane layouts are defined by the [TwoPaneViewMode](/uwp/api/microsoft.ui.xaml.controls.twopaneviewmode) enumeration:
+The two-pane view has two panes where you place your content. It adjusts the size and arrangement of the panes depending on the space available to the window. The possible pane layouts are defined by the [TwoPaneViewMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneviewmode) enumeration:
 
 | Enum&nbsp;value | Description |
 | - | - |
-| `SinglePane` | Only one pane is shown, as specified by the [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) property. |
-| `Wide` | Panes are shown side-by-side, or a single pane is shown, as specified by the [WideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration) property. |
-| `Tall` | Panes are shown top-bottom, or a single pane is shown, as specified by the [TallModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration) property. |
+| `SinglePane` | Only one pane is shown, as specified by the [PanePriority](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.panepriority) property. |
+| `Wide` | Panes are shown side-by-side, or a single pane is shown, as specified by the [WideModeConfiguration](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration) property. |
+| `Tall` | Panes are shown top-bottom, or a single pane is shown, as specified by the [TallModeConfiguration](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration) property. |
 
-You configure the two-pane view by setting the [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) to specify which pane is shown when there is space for only one pane. Then, you specify whether `Pane1` is shown on the top or bottom for tall windows, or on the left or right for wide windows.
+:::image type="content" source="images/two-pane-view/tpv-dual-wide.png" alt-text="Two-pane view app in wide mode, with a photo of a mountain on the left and information about the photo on the right.":::
+
+> _App in wide mode._
+
+:::image type="content" source="images/two-pane-view/tpv-dual-tall.png" alt-text="Two-pane view app in tall mode, with a photo of a mountain on the top and information about the photo on the bottom.":::
+
+> _App in tall mode._
+
+You configure the two-pane view by setting the [PanePriority](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.panepriority) to specify which pane is shown when there is space for only one pane. Then, you specify whether `Pane1` is shown on the top or bottom for tall windows, or on the left or right for wide windows.
 
 The two-pane view handles the size and arrangement of the panes, but you still need to make the content inside the pane adapt to the changes in size and orientation. See [Responsive layouts with XAML](../layout/layouts-with-xaml.md) and [Layout panels](../layout/layout-panels.md) for more info about creating an adaptive UI.
 
-The [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) manages the display of the panes based on the spanning state of the app.
+## Create a two-pane view
 
-- On a single-screen
+> [!div class="checklist"]
+>
+> - **Important APIs:** [TwoPaneView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview)
 
-    When your app is on only a single screen, the `TwoPaneView` adjusts the size and position of its panes based on property settings you specify. We explain these properties in more detail in the next section. The only difference between devices is that some devices, like desktop PCs, allow re-sizable windows, while other devices don't.
+This XAML shows how to create a basic `TwoPaneView`.
 
-- Spanned across dual-screens
+```xaml
+<TwoPaneView>
+    <TwoPaneView.Pane1>
+        <Grid Background="{ThemeResource LayerFillColorDefaultBrush}">
+            <TextBlock Text="Pane 1" Margin="24"
+                       Style="{ThemeResource HeaderTextBlockStyle}"/>
+        </Grid>
+    </TwoPaneView.Pane1>
 
-    The `TwoPaneView` is designed to make it easy to optimize your UI for spanning on dual-screen devices. The window sizes itself to use all the available space on the screens. When your app spans both screens of a dual-screen device, each screen displays the content of one of the panes and properly spans content across the gap. Spanning-awareness is built-in when you use two-pane view. You only need to set the tall/wide configuration to specify which pane is shown on which screen. The two-pane view takes care of the rest.
+    <TwoPaneView.Pane2>
+        <Grid Background="{ThemeResource LayerFillColorAltBrush}">
+            <TextBlock Text="Pane 2" Margin="24"
+                       Style="{ThemeResource HeaderTextBlockStyle}"/>
+        </Grid>
+    </TwoPaneView.Pane2>
+</TwoPaneView>
+```
 
-## How to use the two-pane view control
+![Two-pane view with panes set to default sizes](images/two-pane-view/tpv-size-default.png)
 
-The [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) doesn't have to be the root element of your page layout. In fact, you'll often use it inside a [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview) control that provides the overall navigation for your app. The `TwoPaneView` adapts appropriately regardless of where it is in the XAML tree; however, we do recommend that you not nest a `TwoPaneView` inside another `TwoPaneView`. (If you do, only the outer `TwoPaneView` is spanning-aware.)
+The [TwoPaneView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview) doesn't have to be the root element of your page layout. In fact, you'll often use it inside a [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview) control that provides the overall navigation for your app. The `TwoPaneView` adapts appropriately regardless of where it is in the XAML tree.
 
 ### Add content to the panes
 
 Each pane of a two-pane view can hold a single XAML `UIElement`. To add content, you typically place a XAML layout panel in each pane, and then add other controls and content to the panel. The panes can change size and switch between wide and tall modes, so you need to make sure the content in each pane can adapt to these changes. See [Responsive layouts with XAML](../layout/layouts-with-xaml.md) and [Layout panels](../layout/layout-panels.md) for more info about creating an adaptive UI.
 
-This example creates the simple picture/info app UI shown previously in the _Examples_ section. When the app is spanned across dual-screens, the picture and the info are shown on separate screens. On a single screen, the content can be shown in two panes, or combined into a single pane, depending on how much space is available. (When there's only space for one pane, you move the content of Pane2 into Pane1, and let the user scroll to see any hidden content. You'll see the code for this later in the _Responding to mode changes_ section.)
+This example creates the simple picture/info app UI shown previously. The content can be shown in two panes, or combined into a single pane, depending on how much space is available. (When there's only space for one pane, you move the content of Pane2 into Pane1, and let the user scroll to see any hidden content. You'll see the code for this later in the _Responding to mode changes_ section.)
 
 ![Small image of example app spanned on dual-screens](images/two-pane-view/tpv-left-right.png)
 
@@ -109,14 +95,14 @@ This example creates the simple picture/info app UI shown previously in the _Exa
         <AppBarButton x:Name="Print" Icon="Print" Label="Print" Click="Print_Click"/>
     </CommandBar>
 
-    <muxc:TwoPaneView
+    <TwoPaneView
         x:Name="MyTwoPaneView"
         Grid.Row="1"
         MinWideModeWidth="959"
         MinTallModeHeight="863"
         ModeChanged="TwoPaneView_ModeChanged">
 
-        <muxc:TwoPaneView.Pane1>
+        <TwoPaneView.Pane1>
             <Grid x:Name="Pane1Root">
                 <ScrollViewer>
                     <StackPanel x:Name="Pane1StackPanel">
@@ -126,9 +112,9 @@ This example creates the simple picture/info app UI shown previously in the _Exa
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
-        </muxc:TwoPaneView.Pane1>
+        </TwoPaneView.Pane1>
 
-        <muxc:TwoPaneView.Pane2>
+        <TwoPaneView.Pane2
             <Grid x:Name="Pane2Root">
                 <ScrollViewer x:Name="DetailsContent">
                     <StackPanel Padding="16">
@@ -158,8 +144,8 @@ This example creates the simple picture/info app UI shown previously in the _Exa
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
-        </muxc:TwoPaneView.Pane2>
-    </muxc:TwoPaneView>
+        </TwoPaneView.Pane2>
+    </TwoPaneView>
 
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="TwoPaneViewStates">
@@ -177,19 +163,19 @@ This example creates the simple picture/info app UI shown previously in the _Exa
 
 ### Specify which pane to display
 
-When the two-pane view can only display a single pane, it uses the [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) property to determine which pane to display. By default, PanePriority is set to **Pane1**. Here's how you can set this property in XAML or in code.
+When the two-pane view can only display a single pane, it uses the [PanePriority](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.panepriority) property to determine which pane to display. By default, PanePriority is set to **Pane1**. Here's how you can set this property in XAML or in code.
 
 ```xaml
-<muxc:TwoPaneView x:Name="MyTwoPaneView" PanePriority="Pane2">
+<TwoPaneView x:Name="MyTwoPaneView" PanePriority="Pane2">
 ```
 
 ```csharp
-MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane2;
+MyTwoPaneView.PanePriority = TwoPaneViewPriority.Pane2;
 ```
 
 ### Pane sizing
 
-On a single screen, the size of the panes is determined by the [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) and [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) properties. These use [GridLength](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.gridlength) values that support _auto_ and _star_(\*) sizing. See the _Layout properties_ section of [Responsive layouts with XAML](../layout/layouts-with-xaml.md#layout-properties) for an explanation of auto and star sizing.
+The size of the panes is determined by the [Pane1Length](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.pane1length) and [Pane2Length](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.pane2length) properties. These use [GridLength](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.gridlength) values that support _auto_ and _star_(\*) sizing. See the _Layout properties_ section of [Responsive layouts with XAML](../layout/layouts-with-xaml.md#layout-properties) for an explanation of auto and star sizing.
 
 By default, `Pane1Length` is set to `Auto` and it sizes itself to fit its content. `Pane2Length` is set to `*` and it uses all the remaining space.
 
@@ -200,23 +186,20 @@ By default, `Pane1Length` is set to `Auto` and it sizes itself to fit its conten
 The default values are useful for a typical list/detail layout, where you have a list of items in `Pane1`, and a lot of details in `Pane2`. However, depending on your content, you might prefer to divide the space differently. Here, `Pane1Length` is set to `2*` so it gets twice as much space as `Pane2`.
 
 ```xaml
-<muxc:TwoPaneView x:Name="MyTwoPaneView" Pane1Length="2*">
+<TwoPaneView x:Name="MyTwoPaneView" Pane1Length="2*">
 ```
 
 ![Two-pane view with pane 1 using two-thirds of screen, and pane 2 using one-third](images/two-pane-view/tpv-size-2.png)
 
 > _Panes sized 2* and *_
 
-> [!NOTE]
-> As mentioned previously, when the app is spanned across dual-screens, these properties are ignored and each pane fills one of the screens.
-
-If you set a pane to use auto sizing, you can control the size by setting the height and width of the Panel that holds the pane's content. In this case, you might need to handle the ModeChanged event and set the height and width constraints of the content as appropriate for the current mode.
+If you set a pane to use auto sizing, you can control the size by setting the height and width of the `Panel` that holds the pane's content. In this case, you might need to handle the `ModeChanged` event and set the height and width constraints of the content as appropriate for the current mode.
 
 ### Display in wide or tall mode
 
-On a single screen, the two-pane view's display [Mode](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mode) is determined by the [MinWideModeWidth](/uwp/api/microsoft.ui.xaml.controls.twopaneview.minwidemodewidth) and [MinTallModeHeight](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mintallmodeheight) properties. Both properties have a default value of 641px, the same as [NavigationView.CompactThresholdWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.compactmodethresholdwidth).
+On a single screen, the two-pane view's display [Mode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.mode) is determined by the [MinWideModeWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.minwidemodewidth) and [MinTallModeHeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.mintallmodeheight) properties. Both properties have a default value of 641px, the same as [NavigationView.CompactThresholdWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.compactmodethresholdwidth).
 
-This table shows how the Height and Width of the TwoPaneView determine which display mode is used.
+This table shows how the `Height` and `Width` of the `TwoPaneView` determine which display mode is used.
 
 | TwoPaneView condition  | Mode |
 |---------|---------|
@@ -224,17 +207,13 @@ This table shows how the Height and Width of the TwoPaneView determine which dis
 | `Width` <= `MinWideModeWidth`, and `Height` > `MinTallModeHeight` | `Tall` mode is used |
 | `Width` <= `MinWideModeWidth`, and `Height` <= `MinTallModeHeight` | `SinglePane` mode is used |
 
-
-> [!NOTE]
-> As mentioned previously, when the app is spanned across dual-screens, these properties are ignored and display mode is determined based on the device _posture_.
-
 #### Wide configuration options
 
-The two-pane view enters `Wide` mode when there's a single display that's wider than the `MinWideModeWidth` property. `MinWideModeWidth` controls when the two-pane view enters wide mode. The default value is 641px, but you can change it to whatever you want. In general, you should set this property to whatever you want the minimum width of your pane to be.
+`MinWideModeWidth` controls when the two-pane view enters wide mode. The two-pane view enters `Wide` mode when the available space is wider than the `MinWideModeWidth` property. The default value is 641px, but you can change it to whatever you want. In general, you should set this property to whatever you want the minimum width of your pane to be.
 
-When the two-pane view is in wide mode, the [WideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration) property determines what to show:
+When the two-pane view is in wide mode, the [WideModeConfiguration](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration) property determines what to show:
 
-| [Enum&nbsp;value](/uwp/api/microsoft.ui.xaml.controls.twopaneviewwidemodeconfiguration) | Description |
+| [Enum&nbsp;value](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneviewwidemodeconfiguration) | Description |
 |---------|---------|
 | `SinglePane` | A single pane (as determined by `PanePriority`). The pane takes up the full size of the `TwoPaneView` (ie, it's star sized in both directions). |
 | `LeftRight` | `Pane1` on the left/`Pane2` on the right. Both panes are star sized vertically, `Pane1`'s width is autosized, and `Pane2`'s width is star sized. |
@@ -246,15 +225,16 @@ The default setting is `LeftRight`.
 | - | - |
 | ![Two-pane view configured left-right](images/two-pane-view/tpv-left-right.png)  | ![Two-pane view configured right-left](images/two-pane-view/tpv-right-left.png)  |
 
-> **TIP:** When the device uses a right-to-left (RTL) language, the two-pane view automatically swaps the order: `RightLeft` renders as `LeftRight`, and `LeftRight` renders as `RightLeft`.
+> [!NOTE]
+> When the device uses a right-to-left (RTL) language, the two-pane view automatically swaps the order: `RightLeft` renders as `LeftRight`, and `LeftRight` renders as `RightLeft`.
 
 #### Tall configuration options
 
-The two-pane view enters `Tall` mode when there's a single display that's narrower than `MinWideModeWidth`, and taller than `MinTallModeHeight`. The default value is 641px, but you can change it to whatever you want. In general, you should set this property to whatever you want the minimum height of your pane to be.
+The two-pane view enters `Tall` mode when the available space is narrower than `MinWideModeWidth`, and taller than `MinTallModeHeight`. The default value is 641px, but you can change it to whatever you want. In general, you should set this property to whatever you want the minimum height of your pane to be.
 
-When the two-pane view is in tall mode, the [TallModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration) property determines what to show:
+When the two-pane view is in tall mode, the [TallModeConfiguration](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration) property determines what to show:
 
-| [Enum&nbsp;value](/uwp/api/microsoft.ui.xaml.controls.twopaneviewtallmodeconfiguration) | Description |
+| [Enum&nbsp;value](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneviewtallmodeconfiguration) | Description |
 |---------|---------|
 | `SinglePane` | A single pane (as determined by `PanePriority`). The pane takes up the full size of the `TwoPaneView` (ie, it's star sized in both directions). |
 | `TopBottom` | `Pane1` on the top/`Pane2` on the bottom. Both panes are star sized horizontally, `Pane1`'s height is autosized, and `Pane2`'s height is star sized. |
@@ -268,17 +248,17 @@ The default is `TopBottom`.
 
 #### Special values for MinWideModeWidth and MinTallModeHeight
 
-You can use the `MinWideModeWidth` property to prevent the two-pane view from entering Wide mode - just set `MinWideModeWidth` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&preserve-view=true).
+You can use the `MinWideModeWidth` property to prevent the two-pane view from entering `Wide` mode - just set `MinWideModeWidth` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&preserve-view=true).
 
-If you set `MinTallModeHeight` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&preserve-view=true), it prevents the two-pane view from entering Tall mode.
+If you set `MinTallModeHeight` to [Double.PositiveInfinity](/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&preserve-view=true), it prevents the two-pane view from entering `Tall` mode.
 
 If you set `MinTallModeHeight` to 0, it prevents the two-pane view from entering `SinglePane` mode.
 
 #### Responding to mode changes
 
-You can use the read-only [Mode](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mode) property to get the current display mode. Whenever the two-pane view changes which pane or panes it's displaying, the [ModeChanged](/uwp/api/microsoft.ui.xaml.controls.twopaneview.modechanged) event occurs before it renders the updated content. You can handle the event to respond to changes in the display mode.
+You can use the read-only [Mode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.mode) property to get the current display mode. Whenever the two-pane view changes which pane or panes it's displaying, the [ModeChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.modechanged) event occurs before it renders the updated content. You can handle the event to respond to changes in the display mode.
 
-> [!TIP]
+> [!IMPORTANT]
 > The `ModeChanged` event does not occur when the page is initially loaded, so your default XAML should represent the UI as it should appear when first loaded.
 
 One way you can use this event is to update your app's UI so users can view all the content in `SinglePane` mode. For example, the example app has a primary pane (the image) and an info pane.
@@ -295,18 +275,18 @@ When there's only enough space to display one pane, you can move the content of 
 
 Remember that the `MinWideModeWidth` and `MinTallModeHeight` properties determine when the display mode changes, so you can change when the content is moved between panes by adjusting the values of these properties.
 
-Here's the `ModeChanged` event handler code that moves the content between `Pane1` and `Pane2`. It also sets a [VisualState](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstate) to constrain the width of the image in Wide mode.
+Here's the `ModeChanged` event handler code that moves the content between `Pane1` and `Pane2`. It also sets a [VisualState](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstate) to constrain the width of the image in `Wide` mode.
 
 ```csharp
-private void TwoPaneView_ModeChanged(Microsoft.UI.Xaml.Controls.TwoPaneView sender, object args)
+private void TwoPaneView_ModeChanged(TwoPaneView sender, object args)
 {
     // Remove details content from it's parent panel.
     ((Panel)DetailsContent.Parent).Children.Remove(DetailsContent);
     // Set Normal visual state.
-    Windows.UI.Xaml.VisualStateManager.GoToState(this, "Normal", true);
+    VisualStateManager.GoToState(this, "Normal", true);
 
     // Single pane
-    if (sender.Mode == Microsoft.UI.Xaml.Controls.TwoPaneViewMode.SinglePane)
+    if (sender.Mode == TwoPaneViewMode.SinglePane)
     {
         // Add the details content to Pane1.
         Pane1StackPanel.Children.Add(DetailsContent);
@@ -319,21 +299,33 @@ private void TwoPaneView_ModeChanged(Microsoft.UI.Xaml.Controls.TwoPaneView send
 
         // If also in Wide mode, set Wide visual state
         // to constrain the width of the image to 2*.
-        if (sender.Mode == Microsoft.UI.Xaml.Controls.TwoPaneViewMode.Wide)
+        if (sender.Mode == TwoPaneViewMode.Wide)
         {
-            Windows.UI.Xaml.VisualStateManager.GoToState(this, "Wide", true);
+            VisualStateManager.GoToState(this, "Wide", true);
         }
     }
 }
 ```
 
-## Dos and don'ts
+## UWP and WinUI 2
 
-- Do use the two-pane view whenever you can so that your app can take advantage of dual-screens and large screens.
-- Don't put a two-pane view inside another two-pane view.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+The [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI 2 Apis:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
+
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:TwoPaneView />
+```
 
 ## Related articles
 
 - [Layout overview](../layout/index.md)
-- [Dual-screen development](/dual-screen)
-- [Introduction to dual-screen devices](/dual-screen/introduction)
+- [Split view](split-view.md)
