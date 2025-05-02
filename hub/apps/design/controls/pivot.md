@@ -186,7 +186,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/windows.u
 > - **UWP APIs:** [Pivot class](/uwp/api/windows.ui.xaml.controls.pivot)
 > - [Open the WinUI 2 Gallery app and see the Pivot in action](winui2gallery:/item/Pivot). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
 
 ## Related topics
 

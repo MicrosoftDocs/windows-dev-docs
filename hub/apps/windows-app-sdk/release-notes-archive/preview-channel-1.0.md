@@ -191,7 +191,7 @@ The following sections describe new and updated features, limitations, and known
 
 **New updates**:
 
-- Controls have been updated to reflect the latest Windows styles from [WinUI 2.6](../../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
+- Controls have been updated to reflect the latest Windows styles from [WinUI 2.6](/windows/uwp/get-started/winui2/release-notes/winui-2.6#visual-style-updates).
 - Single-project MSIX is supported.
 - WinUI 3 package can now target build 17763 and later. See [issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921) for more info.
 - In-app toolbar is supported. However, the in-app toolbar and existing Hot Reload/Live Visual Tree support require the upcoming Visual Studio 17.0 Preview 5 release, available later in October.

@@ -133,8 +133,8 @@ WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals
 
 #### Helpful documentation for WinUI 2
 
-- Overview: [WinUI 2](../winui/winui2/index.md)
-- Get started: [Getting started with the Windows UI 2.x Library](../winui/winui2/getting-started.md)
+- Overview: [WinUI 2](/windows/uwp/get-started/winui2/)
+- Get started: [Get started with WinUI 2 for UWP](/windows/uwp/get-started/winui2/getting-started)
 - Writing XAML: [XAML Platform](/windows/uwp/xaml-platform)
 - API Reference: [WinUI API Reference](/windows/winui/api)
 - Controls: [Controls overview](../design/controls/index.md)

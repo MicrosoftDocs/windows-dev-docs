@@ -1,44 +1,65 @@
 ---
-title: Getting started with WinUI
-description: How to install and use WinUI. 
+title: Get started with WinUI 2 for UWP
+description: How to install and use WinUI 2 for UWP. 
 ms.topic: article
-ms.date: 09/14/2021
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
+ms.date: 04/21/2025
+keywords: windows 10, windows 11, Windows app development platform, desktop development, WinRT, uwp, toolkit sdk, winui
 ---
 
-# Getting started with WinUI 2
+# Get started with WinUI 2 for UWP
 
-[WinUI 2.8](release-notes/winui-2.8.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands/xaml-islands.md)).
+[WinUI 2.8](release-notes/winui-2.8.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](/windows/apps/desktop/modernize/xaml-islands/xaml-islands)).
 
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
 > [!NOTE]
-> For more information on building Windows desktop apps with the latest version of **WinUI 3**, see [WinUI 3](../index.md).
+> For more information on building Windows desktop apps with the latest version of **WinUI 3**, see [WinUI 3](/windows/apps/winui/winui3/).
+
+## Set up Visual Studio for UWP development
+
+Download [Visual Studio 2022](https://developer.microsoft.com/windows/downloads) and install the tools for UWP development. For more detailed instructions, see [Create a UWP app](/visualstudio/get-started/csharp/tutorial-uwp) in the Visual Studio docs.
+
+On the **Workloads** tab of the Visual Studio Installer app, select the following workloads and components:
+
+### [Visual Studio 2022 version 17.10 and later](#tab/vs-2022-17-10)
+
+* Select the **WinUI application development** workload. Then, in the **Installation details** pane, under the **WinUI application development** node, select the UWP option you need (this will also select any additional required components.):
+
+  * For C#, select **Universal Windows Platform tools**.
+  * For C++, select **C++ (v14x) Universal Windows Platform tools** (choose the latest version unless you have a specific reason to use an earlier version).
+
+> [!NOTE]
+> _In Visual Studio 17.10 - 17.12, this workload is called **Windows application development**._
+
+### [Earlier versions of Visual Studio](#tab/vs-earlier)
+
+* Select the **Universal Windows Platform development** workload.
+  * For C++, in the **Installation details** pane select **C++ (v14x) Universal Windows Platform tools** (choose the latest version unless you have a specific reason to use an earlier version).
+
+---
 
 ## Download and install WinUI
 
-1. Download [Visual Studio 2022](https://developer.microsoft.com/windows/downloads) and ensure you choose the **Universal Windows Platform development** Workload in the Visual Studio installer.
-
-2. Open an existing project, or create a new project using the Blank App template under Visual C# -> Windows -> Universal, or the appropriate template for your language projection.  
+1. Open an existing project, or create a new project using the Blank App template under Visual C# > Windows > Universal, or the appropriate template for your language projection.  
 
     > [!IMPORTANT]
     > To use WinUI 2.8, you must set TargetPlatformVersion >= 10.0.18362.0 and TargetPlatformMinVersion >= 10.0.17763.0 in the project properties.
 
-3. In the Solution Explorer panel, right click on your project name and select **Manage NuGet Packages**. 
+1. In the Solution Explorer panel, right click on your project name and select **Manage NuGet Packages**.
 
     :::image type="content" source="images/ManageNugetPackages.png" alt-text="Screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.":::<br/>*The Solution Explorer panel with the project right-clicked and the Manage NuGet Packages option highlighted.*
 
-4. In the **NuGet Package Manager**, select the **Browse** tab and search for **Microsoft.UI.Xaml** or **WinUI**. Select which [WinUI NuGet Packages](nuget-packages.md) you want to use (the **Microsoft.UI.Xaml** package contains Fluent controls and features suitable for all apps). Click Install. 
+1. In the **NuGet Package Manager**, select the **Browse** tab and search for **Microsoft.UI.Xaml** or **WinUI**. Select which [WinUI NuGet Packages](nuget-packages.md) you want to use (the **Microsoft.UI.Xaml** package contains Fluent controls and features suitable for all apps). Click Install.
 
     Check the "Include prerelease" checkbox to see the latest prerelease versions that include experimental new features.
 
-    :::image type="content" source="images/NugetPackages.png" alt-text="Screenshot of the NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.":::<br/>*The NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.*
+    :::image type="content" source="images/NugetPackages.png" alt-text="Screenshot of the NuGet Package Manager dialog box showing the Browse tab with win u i in the search field and Include prerelease checked.":::<br/>*The NuGet Package Manager dialog box showing the Browse tab with winui in the search field and Include prerelease checked.*
 
-5. Add the WinUI Theme Resources to your App.xaml file.
+1. Add the WinUI Theme Resources to your App.xaml file.
 
     There are two ways to do this, depending on whether you have additional application resources.
 
-    a. If you don't need other application resources, add the WinUI resources element `<XamlControlsResources` as shown in the following example:
+    a. If you don't need other application resources, add the WinUI resources element `XamlControlsResources` as shown in the following example:
 
     ``` XAML
     <Application
@@ -76,7 +97,7 @@ The library is available as a NuGet package that can be added to any new or exis
     </Application>
     ```
 
-6. Add a reference to the WinUI package to both XAML pages and/or code-behind pages.
+1. Add a reference to the WinUI package to both XAML pages and/or code-behind pages.
 
     * In your XAML page, add a reference at the top of your page
 
@@ -106,10 +127,6 @@ When you add a NuGet package to a C++/WinRT project, the tooling generates a set
 
 For a full, step-by-step walkthrough of adding simple support for WinUI to a C++/WinRT project, see [A simple C++/WinRT WinUI example](/windows/uwp/cpp-and-winrt-apis/simple-winui-example).
 
-## Contributing to WinUI
+## WinUI on GitHub
 
-We welcome bug reports, feature requests and community code contributions in the [microsoft-ui-xaml repo](https://github.com/microsoft/microsoft-ui-xaml/issues) on GitHub.
-
-## Other resources
-
-If you're new to UWP, then we recommend that you visit the [Getting Started with UWP Development](https://developer.microsoft.com/windows/getstarted) pages on the Developer portal.
+We welcome bug reports in the [microsoft-ui-xaml repo](https://github.com/microsoft/microsoft-ui-xaml/issues) on GitHub.
