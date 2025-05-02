@@ -39,7 +39,7 @@ Here you'll learn how to:
 
    ![A screenshot of the Create a new project screen](images/cs-xaml-hw-app0.png)
 
-   (If you don't see any UWP templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by opening the **Visual Studio Installer** from your Windows Start menu. See [Get set up](/windows/apps/get-started/get-set-up).)
+   (If you don't see any UWP templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by opening the **Visual Studio Installer** from your Windows Start menu. See [Set up Visual Studio for UWP development](./winui2/getting-started.md#set-up-visual-studio-for-uwp-development) for more information.)
 
 1. Choose the **UWP Blank App** template.
 
