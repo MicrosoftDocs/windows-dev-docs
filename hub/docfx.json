@@ -42,16 +42,6 @@
         }        	  
       },
     "fileMetadata": {
-      "uhfHeaderId": {
-        "android/**": "MSDocsHeader-Windows-DevTools",
-        "dev-drive/**": "MSDocsHeader-Windows-DevTools",
-        "dev-environment/**": "MSDocsHeader-Windows-DevTools",
-        "dev-home/**": "MSDocsHeader-Windows-DevTools",
-        "package-manager/**": "MSDocsHeader-Windows-DevTools",
-        "powertoys/**": "MSDocsHeader-Windows-DevTools",
-        "python/**": "MSDocsHeader-Windows-DevTools",
-        "sudo/**": "MSDocsHeader-Windows-DevTools"
-      },
       "ms.subservice": {
         "apps/design/**": "design",
         "apps/**": "apps",
@@ -138,6 +128,16 @@
         "python/**": "https://github.com/microsoft/vscode-python",
         "sudo/**": "https://github.com/microsoft/sudo",
         "web/**": "https://github.com/microsoft/Windows-Dev-Performance/issues"
+      },
+      "uhfHeaderId": {
+        "android/**": "MSDocsHeader-Windows-DevTools",
+        "dev-drive/**": "MSDocsHeader-Windows-DevTools",
+        "dev-environment/**": "MSDocsHeader-Windows-DevTools",
+        "dev-home/**": "MSDocsHeader-Windows-DevTools",
+        "package-manager/**": "MSDocsHeader-Windows-DevTools",
+        "powertoys/**": "MSDocsHeader-Windows-DevTools",
+        "python/**": "MSDocsHeader-Windows-DevTools",
+        "sudo/**": "MSDocsHeader-Windows-DevTools"
       },
       "author":
       {
