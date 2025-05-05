@@ -43,7 +43,7 @@ The second way to give your app package identity is to add a package with extern
 
 Documentation on how to create a package with external location is available here, including information on templates to use: [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
 
-The full sample app is available on GitHub: [SparsePackages (Packaged with External Location)](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages).
+The full sample app is available on GitHub: [Packaged with External Location](https://github.com/microsoft/AppModelSamples/tree/master/Samples/PackageWithExternalLocation).
 
 ## Register as a Share Target
 
@@ -263,4 +263,4 @@ The following video demonstrates how an unpackaged app can be a share target aft
 - [Advantages and Disadvantages of packaging an application - Deployment overview](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app)
 - [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/)
 - [Share Contract Implementation for WinAppSDK App](https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp)
-- [Share Contract Implementation for Apps Packaged with External Location](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages)
+- [Share Contract Implementation for Apps Packaged with External Location](https://github.com/microsoft/AppModelSamples/tree/master/Samples/PackageWithExternalLocation)
