@@ -35,23 +35,21 @@ This article describes the format of the action definition JSON file format for 
       "inputCombinations": [ 
         { 
           "inputs": ["UserFriendlyName"], 
-          "description": "Greet ${UserFriendlyName.Text}" 
+          "description": "Greet ${UserFriendlyName.Text}",
+          "where": [ 
+            "${UserFriendlyName.Length} > 3" 
+          ] 
         }, 
         { 
           "inputs": ["UserFriendlyName", "PetName"], 
-          "description": "Greet ${UserFriendlyName.Text} and their pet ${PetName.Text}" 
+          "description": "Greet ${UserFriendlyName.Text} and their pet ${PetName.Text}"
         } 
       ], 
       "contentAgeRating": "child",  
       "invocation": 
       {
-        { 
           "type": "Uri", 
           "uri": "contoso://greetUser?userName=${UserFriendlyName.Text}&petName=${PetName.Text}", 
-        }, 
-        "where": [ 
-          "${UserFriendlyName.Length > 3}" 
-        ] 
       } 
     }, 
     { 
