@@ -21,7 +21,7 @@ You can create a card in the Command Palette with the **IFormContent** interface
 
 Adaptive card payloads can be created using the [Adaptive Card Designer](https://adaptivecards.io/designer/). You can design your card there, and then copy the JSON payload into your extension. 
 
-For a full example of using Forms and Content pages, head on over to [`SamplePagesExtension/Pages/SampleContentPage.cs`](https://github.com/microsoft/PowerToys/blob/main/src/modules/cmdpal/Exts/SamplePagesExtension/Pages/SampleContentPage.cs). Some brief things to note:
+For a full example of using Forms and Content pages, head on over to [`SamplePagesExtension/Pages/SampleContentPage.cs`](https://github.com/microsoft/PowerToys/blob/main/src/modules/cmdpal/ext/SamplePagesExtension/Pages/SampleContentPage.cs). Some brief things to note:
 
 - Set the **TemplateJson** property of your form to the JSON payload of your Adaptive Card. (this is the "CARD PAYLOAD EDITOR" value in the Adaptive Card Designer)
 - Set the **DataJson** property of your **FormContent** to the data you want to use to fill in your card template. (This is the "SAMPLE DATA EDITOR" value in the Adaptive Card Designer). This is optional, but can make authoring cards easier.
