@@ -10,16 +10,11 @@ ms.localizationpriority: medium
 
 # Windows Search web search providers
 
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-> [!IMPORTANT]
-> The feature described in this topic is available in preview builds of Windows starting with build 22631.2787 for Windows 11 and build 19045.3758 for Windows 10, although newer builds are recommended because they contain stability improvements. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
-
-Windows Search currently uses the Web Search from Microsoft Bing app to return web content and search results. In the European Economic Area (EEA), you can enable installed apps that implement a web search provider to return web content and search results in Windows Search through Settings.
+Windows Search currently uses the Web Search from Microsoft Bing app to return web content and search results. In the European Economic Area (EEA), you can install apps that implement a web search provider to return web content and search results in Windows Search.
 
 :::image type="content" source="images/search-integration.png" alt-text="Screenshot of the Windows Search UI with 3rd party search provider integration.":::
 
-Search providers integrate with the Search experience by creating an [MSIX package](/windows/msix/) with a package manifest file that provides the required information for the OS to register the search provider. After installation, the search provider is enabled by default in Windows Search experiences. In the Windows Settings app, users can enable and disable installed search providers and manage the order of providers in search results. Users can remove a search provider through the **Add or remove programs** page in Windows Settings app.
+Search providers integrate with the Search experience by creating an [MSIX package](/windows/msix/) with a package manifest file that provides the required information for the OS to register the search provider. After installation, the search provider is enabled by default in Windows Search experiences. In the Windows Settings app, users can enable and disable installed search providers and manage the order of providers in search results. Users can remove a search provider through the **Settings > Apps > Installed apps** page in Windows Settings app.
 
 For development and testing, when Developer Mode is enabled and the search provider app has been sideloaded on the device, it will appear in the list of available search providers. For more information, see [Developer Mode features and debugging](/windows/apps/get-started/developer-mode-features-and-debugging).
 
