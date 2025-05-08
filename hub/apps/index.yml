@@ -74,7 +74,7 @@ productDirectory:
       - url: ./winui/index.md
         text: WinUI
       - url: /windows/ai/overview
-        text: Windows Copilot Runtime
+        text: Windows AI Foundry
   - title: Deploy
     imageSrc: /media/common/i_deploy.svg
     links:

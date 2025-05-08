@@ -335,7 +335,7 @@ items:
                     href: develop/widgets/widget-provider-manifest.md
                   - name: ActivateApplication protocol
                     href: develop/widgets/widget-provider-activateapplication-protocol.md
-            - name: Windows Copilot Runtime Actions
+            - name: Windows AI Foundry Actions
               items: 
                 - name: Overview
                   href: develop/actions/index.md

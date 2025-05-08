@@ -1,14 +1,14 @@
 ---
-title: Windows Copilot Runtime Action provider package manifest XML format
-description: Describes the package manifest XML format for Windows Copilot Runtime Actions providers. 
+title: Windows AI Foundry Action provider package manifest XML format
+description: Describes the package manifest XML format for Windows AI Foundry Actions providers. 
 ms.topic: article
 ms.date: 02/05/2024
 ms.localizationpriority: medium
 ---
 
-# Windows Copilot Runtime Action provider package manifest XML format
+# Windows AI Foundry Action provider package manifest XML format
 
-This article describes the package manifest XML format for Windows Copilot Runtime Actions.
+This article describes the package manifest XML format for Windows AI Foundry Actions.
 
 ## App extension
 
