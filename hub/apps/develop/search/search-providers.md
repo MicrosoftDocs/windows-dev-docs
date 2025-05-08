@@ -1,5 +1,5 @@
 ---
-title: Windows Search providers
+title: Windows Search web search providers
 description: Learn how to integrate into the Windows Search experience. 
 ms.topic: article
 ms.date: 09/07/2023
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 
 
-# Windows Search providers
+# Windows Search web search providers
 
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
