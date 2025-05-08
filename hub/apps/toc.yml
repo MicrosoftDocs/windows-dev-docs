@@ -294,7 +294,12 @@ items:
                 - name: Test your app's signature with Smart App Control
                   href: develop/smart-app-control/test-your-app-with-smart-app-control.md
             - name: Windows Search
-              href: develop/search/search-providers.md
+              href: develop/search/index.md
+              items:
+                - name: Windows Search providers
+                  href: develop/search/search-providers.md
+                - name: Cloud file provider integration with Windows Search
+                  href: develop/search/cloud-search-integration.md
             - name: Windows Share
               items:
                 - name: Overview
