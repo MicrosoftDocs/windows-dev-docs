@@ -43,7 +43,7 @@ Windows Hello replaces passwords with strong **two-factor authentication** (**2F
 
 Windows Hello is a biometric sign-in system built into Windows that lets you use your face, fingerprint, or a PIN to unlock your device. It replaces traditional passwords with a more secure and convenient method. Your biometric data is stored securely on your device, and even if someone steals your device, they cannot access it without your PIN or biometric gesture. Once unlocked, you can access your apps, data, and services seamlessly.
 
-The Windows Hello authenticator is known as a Hello. Each Hello is unique to a specific user and device. It doesn’t sync across devices or share data with servers or apps. If multiple people use the same device, each person needs to set up their own Windows Hello account. Think of a Hello as a key that unlocks your stored credentials, which are then used to sign in to apps or services. It’s not a credential itself but acts as a second layer of security during authentication.
+The Windows Hello authenticator is known as a Hello. Each Hello is unique to a specific user and device. It doesn’t sync across devices or share data with servers or apps. If multiple people use the same device, each person needs to set up their own Windows Hello configuration. This configuration is tied to their credentials on that specific device. Think of a Hello as a key that unlocks your stored credentials, which are then used to sign in to apps or services. It’s not a credential itself but acts as a second layer of security during authentication.
 
 ### Windows Hello authentication
 
