@@ -37,13 +37,13 @@ The common approach of using an email address as the username makes a bad proble
 
 Solving the problems that passwords pose is tricky. Tightening password policies alone will not do it; users may just recycle, share, or write down passwords. Although user education is critical for authentication security, education alone does not eliminate the problem either.
 
-Windows Hello replaces passwords with strong two-factor authentication (2FA) by verifying existing credentials and by creating a device-specific credential that a biometric or PIN-based user gesture protects.
+Windows Hello replaces passwords with strong **two-factor authentication** (**2FA**) by verifying existing credentials and by creating a device-specific credential that a biometric or PIN-based user gesture protects.
 
 ## What is Windows Hello?
 
-Windows Hello is the name Microsoft has given to the new biometric sign-in system built into Windows. Because it is built directly into the operating system, Windows Hello allows face or fingerprint identification to unlock users’ devices. Authentication happens when the user supplies his or her unique biometric identifier to access the device-specific credentials, which means that an attacker who steals the device can’t log on to it unless that attacker has the PIN. The Windows secure credential store protects biometric data on the device. By using Windows Hello to unlock a device, the authorized user gains access to all of his or her Windows experience, apps, data, websites, and services.
+Windows Hello is a biometric sign-in system built into Windows that lets you use your face, fingerprint, or a PIN to unlock your device. It replaces traditional passwords with a more secure and convenient method. Your biometric data is stored securely on your device, and even if someone steals your device, they cannot access it without your PIN or biometric gesture. Once unlocked, you can access your apps, data, and services seamlessly.
 
-The Windows Hello authenticator is known as a Hello. A Hello is unique to the combination of an individual device and a specific user. It does not roam across devices, is not shared with a server or calling app, and cannot easily be extracted from a device. If multiple users share a device, each user needs to set up his or her own account. Every account gets a unique Hello for that device. You can think of a Hello as a token you can use to unlock (or release) a stored credential. The Hello itself does not authenticate you to an app or service, but it releases credentials that can. In other words, the Hello is not a user credential but it is a second factor for the authenticating process.
+The Windows Hello authenticator is known as a Hello. Each Hello is unique to a specific user and device. It doesn’t sync across devices or share data with servers or apps. If multiple people use the same device, each person needs to set up their own Windows Hello configuration. This configuration is tied to their credentials on that specific device. Think of a Hello as a key that unlocks your stored credentials, which are then used to sign in to apps or services. It’s not a credential itself but acts as a second layer of security during authentication.
 
 ### Windows Hello authentication
 
@@ -53,7 +53,7 @@ Windows Hello is not just a replacement for traditional 2FA systems, though. It 
 
 ### How Windows Hello works
 
-When the user sets up Windows Hello on his or her machine, it generates a new public–private key pair on the device. The [trusted platform module](/windows/keep-secure/trusted-platform-module-overview) (TPM) generates and protects this private key. If the device does not have a TPM chip, the private key is encrypted and protected by software. In addition TPM-enabled devices generate a block of data that can be used to attest that a key is bound to TPM. This attestation information can be used in your solution to decide if the user is granted a different authorization level for example.
+When the user sets up Windows Hello on their machine, it generates a new public–private key pair on the device. The [trusted platform module](/windows/keep-secure/trusted-platform-module-overview) (TPM) generates and protects this private key. If the device does not have a TPM chip, the private key is encrypted and protected by software. In addition TPM-enabled devices generate a block of data that can be used to attest that a key is bound to TPM. This attestation information can be used in your solution to decide if the user is granted a different authorization level for example.
 
 To enable Windows Hello on a device, the user must have either their Microsoft Entra ID account or Microsoft Account connected in Windows settings.
 
