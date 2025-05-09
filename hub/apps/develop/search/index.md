@@ -17,4 +17,4 @@ The following table lists the Windows Search integration features for 3rd party 
 | Feature | Description |
 |--|--|
 | [Web search providers](search-providers.md) | Learn how to integrate a web search provider with Windows. Only available the European Economic Area (EEA). |
-| [Cloud file provider integration with Windows Search](cloud-search-integration.md) | Learn about cloud file provider integration with Windows Search. |
+| [Cloud files provider integration with Windows Search](cloud-search-integration.md) | Learn about cloud file provider integration with Windows Search. |

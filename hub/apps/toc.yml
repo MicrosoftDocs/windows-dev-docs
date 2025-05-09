@@ -298,7 +298,7 @@ items:
               items:
                 - name: Windows Search web search providers
                   href: develop/search/search-providers.md
-                - name: Cloud file provider integration with Windows Search
+                - name: Cloud files provider integration with Windows Search
                   href: develop/search/cloud-search-integration.md
             - name: Windows Share
               items:
