@@ -61,7 +61,7 @@ The protocol schema that will be used when launching the provided web search res
 
 #### DynamicContentEndpoint
 
-The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). This feature is no longer supported. 
+This feature is no longer supported. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box.  
 
 
 ### Example package manifest file
