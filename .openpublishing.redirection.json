@@ -1,6 +1,11 @@
 {
   "redirections": [
-    {
+	{
+		"source_path": "hub/apps/whats-new/latest-docs-updates.md",
+		"redirect_url": "https://learn.microsoft.com/windows/apps/whats-new/windows-11-build-22000",
+		"redirect_document_id": false
+	  },
+	  {
       "source_path": "hub/apps/design/devices/kinect-for-windows.md",
       "redirect_url": "https://azure.microsoft.com/en-us/products/kinect-dk",
       "redirect_document_id": false

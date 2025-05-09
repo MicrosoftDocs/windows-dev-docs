@@ -45,6 +45,7 @@
       "ms.subservice": {
         "apps/design/**": "design",
         "apps/**": "apps",
+        "apps/trace-processing/**": "",
         "apps/windows-dotnet-maui/**": "desktop-app-ui-dev",
         "apps/windows-app-sdk/**": "apps",
         "apps/windows-app-sdk/applifecycle/**": "app-lifecycle",

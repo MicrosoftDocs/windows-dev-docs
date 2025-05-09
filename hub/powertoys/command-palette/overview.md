@@ -33,16 +33,21 @@ Command Palette features include:
 
 ## Settings
 
-The following general options are available within the Command Palette settings page. You can open the settings page by using the Command Palette.
+You can open the settings page by using the **Settings** button in the Command Palette:
+
+![A screenshot of Command Palette with the Settings button highlighted with a red border](../../images/command-palette/cmdpal-settings.png)
+
+The following general options are available on the Command Palette settings page.
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | Define the keyboard shortcut to show/hide the Command Palette. |
+| Activation key | Define the keyboard shortcut to show/hide the Command Palette. |
 | Go home when activated | When the Command Palette is activated it will return to the home page. |
 | Highlight search on activate | The previous search text will be selected when the Command Palette is opened. |
+| Preferred monitor position | Choose the preferred monitor for the Command Palette to open on. The default setting is **Monitor with mouse cursor**. |
 | Show app details | App details are automatically expanded when displaying an app as a result. |
 | Backspace goes back | Typing <kbd>Backspace</kbd> will take you back to the previous page. |
-| Single-click activates | Activate list items with a single click. When disabled, single clicking selects the item and double clicking activates it. |
+| Single-click activation | Activate list items with a single click. When disabled, single clicking selects the item and double clicking activates it. |
 
 ## Related content
 
