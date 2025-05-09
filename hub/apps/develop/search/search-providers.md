@@ -61,7 +61,7 @@ The protocol schema that will be used when launching the provided web search res
 
 #### DynamicContentEndpoint
 
-The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). This feature is supported starting with Windows 10 build 19045.4233 and Windows 11 build 22621.3371. 
+The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). This feature is no longer supported. 
 
 
 ### Example package manifest file
@@ -168,6 +168,9 @@ The query string parameters passed to the suggestion endpoint are the following.
 Search providers must support the OPTIONS request method and respond to this request with HTTP OK. If the search provider endpoint is using CORS, the Windows search client will send out a HTTP OPTIONS request before each GET request.
 
 ## Implement a gleam icon endpoint
+
+> [!NOTE]
+> This gleam feature is no longer enabled. Gleam icons are no longer displayed for all web providers in the EEA. The content in this section of the documentation is obsolete.
 
 Search providers can optionally provide light and dark mode gleam icons that are displayed in the search bar when the search provider is currently enabled. When the **DynamicContentEndpoint** element is provided in the app manifest, a request will be sent to the specified URL and the search provider responds with a json file in the format defined below that includes the URLs of the icon image files and other metadata. The gleam icon request will be sent periodically while the search provider is the most recent provider active in Windows Search. The cadence for this request is every 6 hours. A request will also be sent upon each Search launch and on device unlock.
 
