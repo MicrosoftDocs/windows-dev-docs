@@ -154,7 +154,7 @@ WinUI is the modern native user interface (UX) framework for both Windows deskto
 
 #### WinUI 2
 
-WinUI 2 is tightly integrated with Windows SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [WinUI 2](../winui/winui2/index.md).
+WinUI 2 is tightly integrated with Windows SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [WinUI 2](/windows/uwp/get-started/winui2/).
 
 #### WinUI 3
 

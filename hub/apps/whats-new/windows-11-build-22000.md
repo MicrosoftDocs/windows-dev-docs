@@ -1,24 +1,27 @@
 ---
-title: What's New for Developers in Windows 11
-description: Learn what's new for developers in Windows 11
+title: What's New for developers
+description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk
-ms.date: 5/24/2024
+ms.date: 5/06/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# What's New for developers in Windows 11
-
-Following the announcements at Microsoft Build 2024, here are some of the latest highlights for Windows developers:
-
-* Updated recommendations for app development
-* New AI and machine learning capabilities supported by Windows
-* Enhanced developer tools
+# What's New for developers
 
 
-##  Development recommendations
+## Some recent documentation highlights
 
-You are strongly encouraged to consider using either the Windows App SDK/WinUI or WPF as your development platform for creating Windows client applications.
+Feature | Description
+:------ | :------
+[Start developing Windows apps](/windows/apps/get-started/start-here) | Learn how to start developing apps for Windows with this comprehensive guide.
+[PowerToys](/windows/powertoys/) | PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity.
+[Installing PowerToys](/windows/powertoys/install) | Step-by-step instructions to install PowerToys on your Windows machine.
+[Get started building an app with Windows AI APIs](/windows/ai/apis/get-started) | A guide to help you begin building apps using Windows AI APIs.
+[AppWindows.SetIcon Method](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon?view=windows-app-sdk-1.7) | Documentation for the `AppWindow.SetIcon` method in the Windows App SDK.
+[Win32 app isolation overview](/windows/win32/secauthz/app-isolation-overview) | An overview of app isolation for Win32 applications to enhance security and reliability.
+
+
 
 
 ## Windows App SDK
@@ -42,7 +45,7 @@ Feature | Description
 Feature | Description
 :------ | :------
 [Windows AI](/windows/ai/) | Enhance your Windows apps with AI through local APIs and Machine Learning models.
-[Windows Copilot Runtime Overview](/windows/ai/overview) | Windows Copilot Runtime introduces new ways of interacting with the operating system that utilize AI, such as Phi Silica, the Small Language Model (SLM) created by Microsoft Research that is able to offer many of the same capabilities found in Large Language Models (LLMs), but more compact and efficient so that it can run locally on Windows.
+[Windows AI Foundry Overview](/windows/ai/overview) | Windows AI Foundry introduces new ways of interacting with the operating system that utilize AI, such as Phi Silica, the Small Language Model (SLM) created by Microsoft Research that is able to offer many of the same capabilities found in Large Language Models (LLMs), but more compact and efficient so that it can run locally on Windows.
 
 ## Developer tools
 Feature | Description
