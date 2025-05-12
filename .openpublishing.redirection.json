@@ -8799,6 +8799,21 @@
       "source_path": "uwp/launch-resume/handle-file-activation.md",
       "redirect_url": "/windows/apps/develop/launch/handle-file-activation",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-json.md",
+      "redirect_url": "/windows/ai/app-actions/actions-json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-provider-manifest.md",
+      "redirect_url": "/windows/ai/app-actions/actions-provider-manifest",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/index.md",
+      "redirect_url": "/windows/ai/app-actions/",
+      "redirect_document_id": false
     }
   ]
 }
