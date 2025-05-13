@@ -8869,6 +8869,21 @@
       "source_path": "hub/apps/winui/winui2/release-notes/winui-2.8.md",
       "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.8",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-json.md",
+      "redirect_url": "/windows/ai/app-actions/actions-json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-provider-manifest.md",
+      "redirect_url": "/windows/ai/app-actions/actions-provider-manifest",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/index.md",
+      "redirect_url": "/windows/ai/app-actions/",
+      "redirect_document_id": false
     }
   ]
 }
