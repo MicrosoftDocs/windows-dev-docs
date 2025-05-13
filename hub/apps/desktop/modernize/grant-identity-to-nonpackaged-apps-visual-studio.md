@@ -101,4 +101,4 @@ Some features that understand package identity might result in strings from your
 * An application that uses camera, microphone, or location APIs will have a dedicated control toggle in Windows Privacy Settings along with a brokered consent prompt that users can use to grant or deny access to those sensitive resources.
 * An application that registers a share target will show up in the share dialog.
 
-To localize the strings in the identity package manifest, see [Localize the manifest](/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games#phase-1-localize-the-application-manifest).
+To localize the strings in the identity package manifest, see [Localize the manifest](/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games#phase-1-localize-the-manifest).
