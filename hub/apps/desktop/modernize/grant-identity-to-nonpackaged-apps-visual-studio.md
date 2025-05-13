@@ -22,6 +22,7 @@ These are the steps that we'll be describing in detail in this topic to build an
 3. [Configure the Packaging Project for signing](#configure-the-packaging-project-for-signing)
 4. [Build and test the Packaging Project in Release Mode](#build-and-test-the-packaging-project-in-release-mode)
 5. [Register the identity package in your installer](#register-the-identity-package-in-your-installer)
+6. [Optional steps](#optional-steps)
 
 ## Install Visual Studio components
 
@@ -90,3 +91,14 @@ For production-ready code in C# and C++, see [Sample apps](#sample-apps) below. 
 ## Sample apps
 
 For fully functional C# and C++ apps that demonstrate how to register an identity package, see the [PackageWithExternalLocation](https://aka.ms/sparsepkgsample) samples.
+
+## Optional steps
+
+### Localization
+
+Some features that understand package identity might result in strings from your identity package manifest being displayed in the Windows OS. For example:
+
+* An application that uses camera, microphone, or location APIs will have a dedicated control toggle in Windows Privacy Settings along with a brokered consent prompt that users can use to grant or deny access to those sensitive resources.
+* An application that registers a share target will show up in the share dialog.
+
+To localize the strings in the identity package manifest, see [Localize the manifest](/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games#phase-1-localize-the-application-manifest).
