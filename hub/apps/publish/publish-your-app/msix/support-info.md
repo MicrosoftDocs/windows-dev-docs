@@ -17,7 +17,7 @@ In this section, you must indicate whether or not your app accesses, collects, o
 > [!NOTE]
 > If we detect that your packages declare [capabilities](/windows/uwp/packaging/app-capability-declarations) that could allow personal information to be accessed, transmitted, or collected, we will mark this question as **Yes**, and you will be required to enter a privacy policy.
 
-If you already have a privacy policy hosted on your domain, you can directly provide that link. Otherwise, you can also provide the privacy policy text directly. The Store will use show the privacy policy contents for all the markets where your product is published.
+If you already have a privacy policy hosted on your domain, you can directly provide that link. Otherwise, you can also provide the privacy policy text directly. The Store will use this privacy policy content for all the markets where your product is published.
 
 :::image type="content" source="images/msix-privacy-policy.png" lightbox="images/msix-privacy-policy.png" alt-text="A screenshot showing the privacy policy options for a developer.":::
 
