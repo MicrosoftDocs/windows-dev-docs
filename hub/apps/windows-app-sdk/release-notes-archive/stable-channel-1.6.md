@@ -24,6 +24,22 @@ The stable channel provides releases of the Windows App SDK that are supported f
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
 
+### Version 1.6.8 (1.6.250430001)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
+
+#### ApplicationData.MachinePath folder creation support
+
+ApplicationData.MachineFolder is now easier to use on Windows >=10.0.26100.0 (Ge). Windows will [create the Machine folder](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md#343-machine-path-creationdeletion) when a [package manifesting opt-in support](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md#342-manifested-opt-in) is added to a system if WinAppSDK 1.6.8 is present on the system. For more details see the [ApplicationData spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md).
+
+#### Bug Fixes
+
+- Fixed PackageDeploymentManager telemetry to properly capture when completion status. For more info, see GitHub issue [#5297](https://github.com/microsoft/WindowsAppSDK/pull/5297).
+- Fixed a crash when using pen input on an x86 app.
+- Fixed a potential crash if the window is already destroyed when WinUI is attempting to initialize for scrolling.
+- Fixed the WINDOWSAPPSDK_RELEASE_PATCH define and Microsoft::WindowsAppSDK::Release::Patch values in WindowsAppSDK-VersionInfo.h to not always be 0. The define is now the yymmdd date of the build, and the Patch value is the mmdd date. This change provides better runtime information on the version being used without changing any variable sizes or the version scheme.
+
+
 ### Version 1.6.7 (1.6.250402001)
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
