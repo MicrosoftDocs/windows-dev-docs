@@ -6,8 +6,6 @@ items:
       items: 
         - name: What's new for developers in Windows 11
           href: whats-new/windows-11-build-22000.md
-        - name: Latest doc updates
-          href: whats-new/latest-doc-updates.md
         - name: Windows developer community
           href: whats-new/community.md
     - name: Get started
@@ -296,7 +294,12 @@ items:
                 - name: Test your app's signature with Smart App Control
                   href: develop/smart-app-control/test-your-app-with-smart-app-control.md
             - name: Windows Search
-              href: develop/search/search-providers.md
+              href: develop/search/index.md
+              items:
+                - name: Windows Search web search providers
+                  href: develop/search/search-providers.md
+                - name: Cloud files provider integration with Windows Search
+                  href: develop/search/cloud-search-integration.md
             - name: Windows Share
               items:
                 - name: Overview
