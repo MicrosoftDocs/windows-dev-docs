@@ -8,7 +8,7 @@ items:
     items:
       - name: Overview
         href: ../advanced-settings/index.md
-      - name: File Explorer + Version Control
+      - name: File Explorer + version control
         href: ../advanced-settings/fe-version-control.md
       - name: Sudo for Windows
         href: ../advanced-settings/sudo/index.md
