@@ -32,14 +32,14 @@ The experimental channel includes releases of the Windows App SDK with [experime
 
 ## Version 1.8 Experimental (1.8.0-experimental1)
 
-### Use on-device AI with Windows Copilot Runtime APIs
+### Use on-device AI with Windows AI APIs
 
 > [!IMPORTANT]
 > The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
 
-The Windows Copilot Runtime (WCR) offers several AI-powered features and APIs for you to easily, efficiently, and responsibly use on-device AI models in your Windows apps. In this release we are making available several scenario focused APIs for you to leverage powerful capabilities without the need to find, run, or optimize your own Machine Learning (ML) models. 
+Windows AI Foundry (WAIF) offers several AI-powered features and APIs for you to easily, efficiently, and responsibly use on-device AI models in your Windows apps. In this release we are making available several scenario focused APIs for you to leverage powerful capabilities without the need to find, run, or optimize your own Machine Learning (ML) models. 
 
-Learn more about responsible development practices used during WCR API development that you can also apply as you create AI-assisted features in the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
+Learn more about responsible development practices used during Windows AI APIs development that you can also apply as you create AI-assisted features in the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
 
 This is the latest release of the experimental channel.
 

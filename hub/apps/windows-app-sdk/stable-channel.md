@@ -126,7 +126,7 @@ Additionally, the updates in the Microsoft.UI.Xaml namespace introduce a new `Xa
  
 * New `RuntimeCompatibilityOptions` support will allow more control over how servicing changes affect apps. For more info, see GitHub [#4966](https://github.com/microsoft/WindowsAppSDK/issues/4966).
 * A new `ReleaseInfo` API provides easy access to the version of the Windows App SDK Runtime in use. For more info, see GitHub [#2893](https://github.com/microsoft/WindowsAppSDK/issues/2893).
-* Note: Windows Copilot Runtime APIs are not included this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!
+* Note: Windows AI APIs are not included this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!
  
 #### New APIs for 1.7.0
  

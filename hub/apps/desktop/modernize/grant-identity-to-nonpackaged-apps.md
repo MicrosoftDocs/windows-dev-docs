@@ -20,6 +20,7 @@ To build and register an identity package, follow these steps:
 2. [Build and sign the identity package](#build-and-sign-the-identity-package)
 3. [Add identity metadata to your desktop application manifests](#add-identity-metadata-to-your-desktop-application-manifests)
 4. [Register the identity package in your installer](#register-the-identity-package-in-your-installer)
+5. [Optional steps](#optional-steps)
 
 ## Create a package manifest for the identity package
 
@@ -154,3 +155,14 @@ For production-ready code in C# and C++, see [Sample apps](#sample-apps) below. 
 ## Sample apps
 
 See the [PackageWithExternalLocation](https://aka.ms/sparsepkgsample) samples for fully functional C# and C++ apps that demonstrate how to register an identity package.
+
+## Optional steps
+
+### Localization
+
+Some features that understand package identity might result in strings from your identity package manifest being displayed in the Windows OS. For example:
+
+* An application that uses camera, microphone, or location APIs will have a dedicated control toggle in Windows Privacy Settings along with a brokered consent prompt that users can use to grant or deny access to those sensitive resources.
+* An application that registers a share target will show up in the share dialog.
+
+To localize the strings in the identity package manifest, see [Localize the manifest](/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games#phase-1-localize-the-manifest).

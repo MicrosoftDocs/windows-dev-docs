@@ -8874,6 +8874,21 @@
       "source_path": "hub/sudo/index.md",
       "redirect_url": "/windows/advanced-settings/sudo/",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-json.md",
+      "redirect_url": "/windows/ai/app-actions/actions-json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-provider-manifest.md",
+      "redirect_url": "/windows/ai/app-actions/actions-provider-manifest",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/index.md",
+      "redirect_url": "/windows/ai/app-actions/",
+      "redirect_document_id": false
     }
   ]
 }
