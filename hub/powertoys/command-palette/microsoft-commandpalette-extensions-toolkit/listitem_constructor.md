@@ -8,6 +8,21 @@ no-loc: [PowerToys, Windows, Insider]
 
 # ListItem Constructors
 
+## ListItem() Constructor
+
+### Definition
+
+Namespace: [Microsoft.CommandPalette.Extensions.Toolkit](microsoft-commandpalette-extensions-toolkit.md)
+
+Initializes a new instance of the [ListItem](listitem.md) class.
+
+```C#
+public ListItem()
+        : base()
+    {
+    }
+```
+
 ## ListItem([ICommand](../microsoft-commandpalette-extensions/icommand.md)) Constructor
 
 ### Definition
