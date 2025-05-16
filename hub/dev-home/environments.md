@@ -8,15 +8,13 @@ ms.topic: overview
 # Environments in Dev Home
 
 > [!IMPORTANT]
-> Starting May 2025, Dev Home will no longer be supported as a feature in Windows 11. See [Advanced Windows settings](./advanced-settings/index.md) for information on File Explorer version control integration, Sudo for Windows, and additional developer features coming soon.
+> Starting May 2025, Dev Home will no longer be supported as a feature in Windows 11. See [Advanced Windows settings](../advanced-settings/index.md) for information on File Explorer version control integration, Sudo for Windows, and additional developer features coming soon.
 
 A virtual environment is a self-contained workspace that allows you to maintain separate dependencies and settings for different projects, effectively isolating them from each other. The type of virtual environments supported and maintained by Microsoft currently include:
 
 - [Local Hyper-V virtual machine (VM)](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v)
 - [Microsoft Dev Box](/azure/dev-box/overview-what-is-microsoft-dev-box)
 - [Windows Subsystem for Linux (WSL) distribution](/windows/wsl/install)
-
-To add your own environment to Dev Home, see: [Build an extension for Environments in Dev Home](#build-an-extension-for-environments-in-dev-home).
 
 **Environments in Dev Home** centralize your interactions with virtual or cloud environments in a single place.
 

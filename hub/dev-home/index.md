@@ -8,7 +8,7 @@ ms.topic: overview
 # What is Dev Home?
 
 > [!IMPORTANT]
-> Starting May 2025, Dev Home will no longer be supported as a feature in Windows 11. See [Advanced Windows settings](./advanced-settings/index.md) for information on File Explorer version control integration, Sudo for Windows, and additional developer features coming soon.
+> Starting May 2025, Dev Home will no longer be supported as a feature in Windows 11. See [Advanced Windows settings](../advanced-settings/index.md) for information on File Explorer version control integration, Sudo for Windows, and additional developer features coming soon.
 
 Dev Home is a new control center for Windows providing the ability to monitor projects in your dashboard using customizable widgets, set up your dev environment by downloading apps, packages, or repositories, connect to your developer accounts and tools (such as GitHub), and create a [Dev Drive](../dev-drive/index.md) for storage all in one place.
 
