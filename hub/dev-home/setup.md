@@ -1,14 +1,14 @@
 ---
 title: Dev Home Machine Configuration
 description: Set up your Windows development environment with Dev Home by using the integrated set up tool to get your machine to a development-ready state. Use the step-by-step graphical interface to walk through the setup process or use a WinGet Configuration file with pre-defined setup requirements.
-ms.date: 01/28/2025
+ms.date: 05/19/2025
 ms.topic: overview
 ---
 
 # Dev Home Machine Configuration - Set up your Windows development environment
 
 > [!IMPORTANT]
-> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
+> Starting May 2025, Dev Home will no longer be supported as a feature in Windows 11. See [Advanced Windows settings](./advanced-settings/index.md) for information on File Explorer version control integration, Sudo for Windows, and additional developer features coming soon.
 
 The Dev Home machine configuration tool brings all of your dev environment set up tasks into one place, enabling you to efficiently set up a new machine or onboard new projects.
 
@@ -41,5 +41,3 @@ When using Dev Home to clone a repository, once you have selected a repo (or mul
 If you have not yet created a Dev Drive, you will have the option to create one using Dev Home. Check the box to optimize the performance of your workloads with a Dev Drive. Then you can customize a few options, such as the drive letter, name, size, and location of the dynamic VHDX on which the Dev Drive will be created. The name will be used for both the VHDX file and the Dev Drive. By default, the options are the next available drive letter, size of 50GB, and created at `%userprofile%\DevDrives`.  
 
 ![Screenshot of Dev Home Machine configuration being used to clone a repository.](../images/devhome-github-setup.png)
-
-Learn more about what you can do with **[Dev Home](./index.md)**.

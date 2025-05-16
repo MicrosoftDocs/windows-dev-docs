@@ -1,18 +1,14 @@
 ---
 title: Dev Home utilities
 description: Get access to developer utilities directly in Windows through Dev Home.
-ms.date: 01/28/2025
+ms.date: 05/19/2025
 ms.topic: overview
 ---
 
 # Use developer utilities delivered with Dev Home
 
 > [!IMPORTANT]
-> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
-
-Dev Home brings a set of utilities that are helpful to developers directly to Windows. [Microsoft PowerToys](../powertoys/index.md) now delivers some of its utilities within Dev Home, making it even easier to use these tools.
-
-![Dev Home utilities screenshot](../images/dev-home-utilities.png)
+> Starting May 2025, Dev Home will no longer be supported as a feature in Windows 11. See [Advanced Windows settings](./advanced-settings/index.md) for information on File Explorer version control integration, Sudo for Windows, and additional developer features coming soon.
 
 ## Environment Variables
 

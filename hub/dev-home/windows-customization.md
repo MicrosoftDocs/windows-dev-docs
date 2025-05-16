@@ -1,14 +1,14 @@
 ---
 title: Dev Home Windows Customization
 description: Learn how to optimize your workflows by customizing Windows File Explorer, Dev Drive insights, and developer settings using Dev Home.
-ms.date: 01/28/2025
+ms.date: 05/19/2025
 ms.topic: overview
 ---
 
 # Dev Home Windows Customization
 
 > [!IMPORTANT]
-> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
+> Starting May 2025, Dev Home will no longer be supported as a feature in Windows 11. See [Advanced Windows settings](./advanced-settings/index.md) for information on File Explorer version control integration, Sudo for Windows, and additional developer features coming soon.
 
 Windows Customization in Dev Home enables you to configure your Windows environment to suit your development needs.
 
@@ -62,7 +62,7 @@ Configure optional **virtualization features** to enable/disable virtualization 
 
 ### General System Settings
 
-Configure various **general system** settings for developer workfloows, including: 
+Configure various **general system** settings for developer workfloows, including:
 
 - **End Task**: Enable end task in taskbar by right-click.
 - **Enable long paths**: Remove MAX_PATH limitations from common Win32 file and directory functions.
@@ -75,10 +75,4 @@ Deprioritized tasks will be paused for a maximum of 2 hours in order to prioriti
 
 After ending a "Quiet Background Processes" session, you can review an **Analytic summary** to see how this setting may have impacted CPU usage during your development time.
 
-*The Quiet Background Processes feature in Dev Home is only available on modern versions of Windows 11 and will not be displayed or available as an experimental feature on unsupported versions of Windows.
-
 ![Quiet Background Processes in Windows Customization](../images/devhome-quiet-background-analysis.png)
-
-## Feedback and feature requests
-
-Dev Home is open source and welcomes your contributions and feedback. File new feature requests for Windows Customization on [GitHub](https://github.com/microsoft/devhome).
