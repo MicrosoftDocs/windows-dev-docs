@@ -4,6 +4,14 @@ items:
 - name: Developer tools
   expanded: true
   items:
+  - name: Advanced Windows settings
+    items:
+      - name: Overview
+        href: ../advanced-settings/index.md
+      - name: File Explorer + version control
+        href: ../advanced-settings/fe-version-control.md
+      - name: Sudo for Windows
+        href: ../advanced-settings/sudo/index.md
   - name: Dev Drive
     items:
       - name: Overview
@@ -866,8 +874,6 @@ items:
           href: ../powertoys/hosts-file-editor.md
         - name: Registry Preview
           href: ../powertoys/registry-preview.md
-  - name: Sudo for Windows
-    href: ../sudo/index.md
   - name: Windows Package Manager
     items:
       - name: Overview
