@@ -403,8 +403,8 @@ Microsoft.Windows.Widgets.Providers
 ### Known Issues
 
 * The Microsoft.Windows.AI.Text.Experimental API projections for C++ are missing in this release. The projections are available for use from C#.
-* If you're using the Microsoft.WindowsAppSDK.WinUI component package in its default self-contained mode, make sure to set the WebView2EnableCsWinRTProjection property to true when utilizing WebView2 APIs. This helps prevent version conflicts and avoids related warnings
-
+* If you're using the Microsoft.WindowsAppSDK.WinUI component package in its default self-contained mode, make sure to set the WebView2EnableCsWinRTProjection property to true when utilizing WebView2 APIs. This helps prevent version conflicts and avoids related warnings.
+* When using the WindowsAppSDK component packages, you may notice a warning `NU1603` indicating the specified version of a dependent component package was not found, but another was resolved instead.  This is expected with the experimental2 build and NuGet will correctly resolve a newer version of the package which will allow your project to build.  If you treat warnings as errors, you can temporarily treat this specific warning as not an error by specifying the property `<WarningsNotAsErrors>NU1603</WarningsNotAsErrors>`.
 
 ## Version 1.8 Experimental (1.8.0-experimental1)
 
