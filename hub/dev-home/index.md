@@ -1,14 +1,14 @@
 ---
 title: Dev Home for Windows Developers
 description: Dev Home is a new control center for Windows providing the ability to track your workflows and coding tasks using customizable widgets, set up your dev environment, connect to your developer accounts and tools (such as GitHub), and install apps and packages all in one place.
-ms.date: 01/28/2025
+ms.date: 05/19/2025
 ms.topic: overview
 ---
 
 # What is Dev Home?
 
 > [!IMPORTANT]
-> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
+> Starting May 2025, Dev Home will no longer be supported as a feature in Windows 11. See [Advanced Windows settings](../advanced-settings/index.md) for information on File Explorer version control integration, Sudo for Windows, and additional developer features coming soon.
 
 Dev Home is a new control center for Windows providing the ability to monitor projects in your dashboard using customizable widgets, set up your dev environment by downloading apps, packages, or repositories, connect to your developer accounts and tools (such as GitHub), and create a [Dev Drive](../dev-drive/index.md) for storage all in one place.
 
@@ -89,20 +89,11 @@ The [Dev Home Azure extension](https://apps.microsoft.com/detail/9MV8F79FGXTR) p
 
 Environments in Dev Home can help you to centralize your interactions with virtual or cloud environments in a single place. Quickly launch, start, stop, or sync virtual environments, seamlessly integrating with the Windows OS. Learn more about **[Environments in Dev Home](./environments.md)**.
 
-![Environments in Dev Home](../images/devhome-environment-manage.png) 
-
-## Experimental features
-
-Dev Home supports experimenting with developer-focused features. Features that are identified as "Experimental" may be added and removed from release to release.
-
-A few recent Dev Home Experimental features have included "Dev Diagnostics," a way to consolidate diagnostic tools, and "Quickstart Playground," an AI integration for generating app development projects in Visual Studio Code. You can find these Experimental features tracked in the [Dev Home Release Notes]( https://github.com/microsoft/devhome/releases).
-
 ## Dev Home open source repos
 
 Both Dev Home and Dev Home GitHub extension are open source and welcome your contributions.
 
-- [Dev Home repository on GitHub](https://github.com/microsoft/devhome).
+- [Dev Home repository on GitHub](https://github.com/microsoft/devhome)
+- [Dev Home Release Notes]( https://github.com/microsoft/devhome/releases)
 - [Dev Home GitHub extension repository on GitHub](https://github.com/microsoft/devhomegithubextension)
 - [Dev Home Azure extension repository on GitHub](https://github.com/microsoft/devhomeazureextension)
-
-You can also contribute to the open source documentation for Dev Home by visiting  the [Windows Dev Docs open source repo on GitHub](https://github.com/MicrosoftDocs/windows-dev-docs/issues).

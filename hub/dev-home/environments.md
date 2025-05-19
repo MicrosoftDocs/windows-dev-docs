@@ -1,22 +1,20 @@
 ---
 title: Environments in Dev Home
 description: Learn about interacting with your virtual or cloud environments from Dev Home.
-ms.date: 01/28/2025
+ms.date: 05/19/2025
 ms.topic: overview
 ---
 
 # Environments in Dev Home
 
 > [!IMPORTANT]
-> Dev Home will be going away in May 2025 and a subset of its features will be moved to new places. Stay tuned for more information in the following months.
+> Starting May 2025, Dev Home will no longer be supported as a feature in Windows 11. See [Advanced Windows settings](../advanced-settings/index.md) for information on File Explorer version control integration, Sudo for Windows, and additional developer features coming soon.
 
 A virtual environment is a self-contained workspace that allows you to maintain separate dependencies and settings for different projects, effectively isolating them from each other. The type of virtual environments supported and maintained by Microsoft currently include:
 
 - [Local Hyper-V virtual machine (VM)](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v)
 - [Microsoft Dev Box](/azure/dev-box/overview-what-is-microsoft-dev-box)
 - [Windows Subsystem for Linux (WSL) distribution](/windows/wsl/install)
-
-To add your own environment to Dev Home, see: [Build an extension for Environments in Dev Home](#build-an-extension-for-environments-in-dev-home).
 
 **Environments in Dev Home** centralize your interactions with virtual or cloud environments in a single place.
 
@@ -97,9 +95,3 @@ Alternatively, you can remotely configure your environment:
 5. Review your configuration. Once complete, the virtual environment will be configured with your selected resources. You may be asked to enter user credentials for the specific environment to apply these changes.
 
 ![Machine configuration](../images/devhome-environment-config.png)
-
-## Build an Extension for Environments in Dev Home
-
-If there is a type of virtual environment that you regularly use that is currently unsupported by Dev Home, you can build your own Dev Home Environment Extension to display the virtual environment in Dev Home.
-
-To build an environment extension, see our guidance and API documentation on GitHub: [Developer environments in Dev Home](https://github.com/microsoft/devhome/blob/main/docs/extensions/environments/readme.md).

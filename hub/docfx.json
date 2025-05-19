@@ -131,6 +131,7 @@
         "web/**": "https://github.com/microsoft/Windows-Dev-Performance/issues"
       },
       "uhfHeaderId": {
+        "advanced-settings/**": "MSDocsHeader-Windows-DevTools",
         "android/**": "MSDocsHeader-Windows-DevTools",
         "dev-drive/**": "MSDocsHeader-Windows-DevTools",
         "dev-environment/**": "MSDocsHeader-Windows-DevTools",
