@@ -34,9 +34,134 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 ## Version 1.7
 
-In an existing Windows App SDK app, you can update your Nuget package to 1.7.250401001 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+In an existing Windows App SDK app, you can update your Nuget package to 1.7.250513003 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
+
+### Version 1.7.2 (1.7.250513003)
+
+#### Windows AI APIs
+
+> [!IMPORTANT]
+> The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
+
+The Windows App SDK now includes a suite of artificial intelligence (AI) APIs that can be used with a local language model to perform a variety of tasks on Copilot+ PCs. Your apps can now intelligently respond to prompts, recognize text within images, describe the content of images, remove objects from images, and more.
+
+For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
+
+##### Phi Silica Text Intelligence 
+
+With [**Phi Silica**](/windows/ai/apis/phi-silica), Microsoft's most powerful NPU-tuned local language model, you can specify it to perform common tasks like summarizing a piece of text, rewriting a piece of text for clarity, and converting text to a table format. Phi Silica is optimized for efficiency and performance on Windows Copilot+ PCs devices while still offering many of the capabilities found in Large Language Models (LLMs). 
+
+See [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica) and [API ref for Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica-api-ref) for more information.
+
+##### Image Description 
+The Image Description APIs enable the generation of textual descriptions of images. The length and type of these descriptions can be configured to meet accessibility requirements, ranging from short captions to long descriptions.
+
+For additional details, see [What can I do with Image Description?](/windows/ai/apis/imaging#what-can-i-do-with-image-description) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
+
+##### Text Recognition
+
+Text recognition, also known as optical character recognition (OCR), detects and extracts text within images, converting it into machine-readable character streams. These APIs identify characters, words, lines, polygonal text boundaries, and provide confidence levels for each match. Benefiting from NPU-assisted acceleration, the Windows AI AI-assisted APIs perform faster and more accurately than the legacy [Windows.Media.Ocr.OcrEngine](/uwp/api/windows.media.ocr.ocrengine) APIs.
+
+For additional details, see [Get Started with Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition) and [API ref for AI-backed Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition-api-ref).
+
+##### Image Super Resolution 
+The 'ImageScaler' APIs can increase the sharpness and clarity of an image and upscale the image by up to 8x its original resolution.
+
+For additional details, see [What can I do with Image Super Resolution?](/windows/ai/apis/imaging#what-can-i-do-with-image-super-resolution) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
+
+##### Image Segmentation 
+
+The Image Segmentation APIs allow for the identification of specific objects within an image. By inputting an image and a "hints" object, the model returns a mask of the identified object.
+
+For additional details, see [What can I do with Image Segmentation?](/windows/ai/apis/imaging#what-can-i-do-with-image-segmentation) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
+
+#### ApplicationData.MachinePath folder creation support
+
+ApplicationData.MachineFolder is now easier to use on Windows >=10.0.26100.0 (Ge). Windows will [create the Machine folder](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md#343-machine-path-creationdeletion) when a [package manifesting opt-in support](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md#342-manifested-opt-in) is added to a system if WinAppSDK 1.7.2 is present on the system. For more details see the [ApplicationData spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md).
+
+#### Bug Fixes
+
+- Fixed PackageDeploymentManager telemetry to properly capture completion status. For more info, see GitHub issue [#5296](https://github.com/microsoft/WindowsAppSDK/pull/5296). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A)
+- Fixed a crash when using pen input on an x86 app. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputStateManager_PenInputCrashX86)
+- Fixed a potential crash if the window is already destroyed when WinUI is attempting to initialize for scrolling. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ActivateDirectManipulationManager_CheckCanInit)
+- Fixed the WINDOWSAPPSDK_RELEASE_PATCH define and Microsoft::WindowsAppSDK::Release::Patch values in WindowsAppSDK-VersionInfo.h to not always be 0. The define is now the yymmdd date of the build, and the Patch value is the mmdd date. This change provides better runtime information on the version being used without changing any variable sizes or the version scheme. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, header change)
+- Fixed a potential issue in the Bootstrapper if it is used to load a 1.6 or earlier version of WinAppSDK. For more info, see GitHub issue [#5349](https://github.com/microsoft/WindowsAppSDK/pull/5349). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A)
+- Fixed an issue where using MSBuild to build a single-project app could incorrectly fail with a build error if it didn't have a correct launchSettings.json. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build .targets change)
+- Improved the performance of rendering the first frame on application launch. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DwmCoreI_OptimizeFirstFrameLatency)
+
+#### New APIs for 1.7.2
+ 
+This release includes the following new APIs compared to the previous 1.7 release:
+
+```
+Microsoft.Graphics.Imaging
+
+    ImageBuffer
+    ImageBufferContract
+    ImageBufferPixelFormat
+```
+```
+Microsoft.Windows.AI
+
+    AIFeatureReadyContract
+    AIFeatureReadyResult
+    AIFeatureReadyResultState
+    AIFeatureReadyState
+```
+```
+Microsoft.Windows.AI.ContentSafety
+
+    ContentFilterOptions
+    ContentSafetyContract
+    ImageContentFilterSeverity
+    SeverityLevel
+    TextContentFilterSeverity
+```
+```
+Microsoft.Windows.AI.Imaging
+
+    ImageDescriptionContract
+    ImageDescriptionGenerator
+    ImageDescriptionKind
+    ImageDescriptionResult
+    ImageDescriptionResultStatus
+    ImageObjectExtractor
+    ImageObjectExtractorContract
+    ImageObjectExtractorHint
+    ImageScaler
+    ImageScalerContract
+    RecognizedLine
+    RecognizedLineStyle
+    RecognizedText
+    RecognizedTextBoundingBox
+    RecognizedWord
+    TextRecognitionContract
+    TextRecognizer
+```
+```
+Microsoft.Windows.AI.Text
+
+    LanguageModel
+    LanguageModelContext
+    LanguageModelContract
+    LanguageModelOptions
+    LanguageModelResponseResult
+    LanguageModelResponseStatus
+    TextIntelligenceContract
+    TextRewriter
+    TextSummarizer
+    TextToTableConverter
+    TextToTableResponseResult
+    TextToTableRow
+```
+```
+Microsoft.Windows.Workloads
+
+    WorkloadPriority
+    WorkloadsContract
+```
 
 ### Version 1.7.1 (1.7.250401001)
 
