@@ -135,7 +135,7 @@ Format the red, green, blue, and alpha values to the following formats:
 | f   | float with leading zero    |
 | F   | float without leading zero |
 
-For example, `%ReX` means the red value in hex uppercase two digits format.
+For example, `%ReX` means the red value in hex uppercase two-digit format.
 
 Color formats can contain any words or characters you prefer. For example, the default color format that's displayed upon color format creation is: `_'new Color (R = %Re, G = %Gr, B = %Bl)'_`.
 
