@@ -9,13 +9,11 @@ ms.localizationpriority: medium
 
 # Grant package identity by packaging with external location in Visual Studio
 
-Many Windows features can be used by a desktop app only if that app has package identity at runtime. See [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps). If you have an existing desktop app, with its own installer, then there's very little you need to change in order to benefit from package identity.
+For the motivations behind adding package identity, as well as the differences between building identity packages in Visual Studio and building them manually, see [Overview](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview).
 
-Starting in Windows 10, version 2004, you can grant package identity to an app simply by building and registering a *package with external location* with your app. Packaging with external location allows you to register a simple identity package in your existing installer without changing how or where you install your application. You might be familiar with full MSIX packaging; this is a much lighter-weight option, as described below.
+This topic describes how to build and register an identity package by using Visual Studio. For info about building an identity package manually, see [Grant package identity by packaging with external location manually](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
 
-If you already have a Visual Studio project for your application, then building an identity package in Visual Studio provides a more streamlined experience than [building an identity package manually](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
-
-These are the steps that we'll be describing in detail in this topic to build and register an identity package using Visual Studio:
+These are the steps (which this topic describes in detail) to build and register an identity package by using Visual Studio:
 
 1. [Install Visual Studio components](#install-visual-studio-components)
 2. [Add a Packaging Project to your solution](#add-a-packaging-project-to-your-solution)
