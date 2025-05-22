@@ -43,7 +43,6 @@ Regardless of the method you choose from below, you'll need to allow network tra
     </CloudServiceDNS>
     <ClientDNS>
         <DNS FQDN="*.wns.windows.com"/>
-        <DNS FQDN="*.notify.live.net"/>
     </ClientDNS>
     <CloudServiceIPs>
         <IpRange Subnet=""/>
