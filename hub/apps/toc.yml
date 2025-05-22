@@ -460,10 +460,14 @@ items:
                   href: desktop/modernize/desktop-to-uwp-distribute.md
             - name: Package your app using single-project MSIX
               href: windows-app-sdk/single-project-msix.md
-            - name: Grant package identity by packaging with external location in Visual Studio
-              href: desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio.md
-            - name: Grant package identity by packaging with external location manually
-              href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+            - name: Grant package identity by packaging with external location
+              items:
+              - name: Overview
+                href: desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md
+              - name: Grant package identity by packaging with external location in Visual Studio
+                href: desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio.md
+              - name: Grant package identity by packaging with external location manually
+                href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: Deployment
           items: 
             - name: Overview
