@@ -126,25 +126,66 @@ namespace UserAndCustomControls
 }
 
 // GameService.h
-...
-    static Windows::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
-    static bool GetIsMovable(Windows::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
-    static void SetIsMovable(Windows::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
+#pragma once
+#include "UserAndCustomControls.GameService.g.h"
 
-private:
-    static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
+
+namespace winrt::UserAndCustomControls::implementation
+{
+    struct GameService : GameServiceT<GameService>
+    {
+        GameService() = default;
+
+        static winrt::Windows::UI::Xaml::DependencyProperty IsMovableProperty();
+        static bool GetIsMovable(winrt::Windows::UI::Xaml::DependencyObject const& target);
+        static void SetIsMovable(winrt::Windows::UI::Xaml::DependencyObject const& target, bool value);
+
+        private:
+
+         static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
+    };
+}
+namespace winrt::UserAndCustomControls::factory_implementation
+{
+    struct GameService : GameServiceT<GameService, implementation::GameService>
+    {
+    };
+}
+
 ...
 
 // GameService.cpp
 ...
-Windows::UI::Xaml::DependencyProperty GameService::m_IsMovableProperty =
-    Windows::UI::Xaml::DependencyProperty::RegisterAttached(
-        L"IsMovable",
-        winrt::xaml_typename<bool>(),
-        winrt::xaml_typename<UserAndCustomControls::GameService>(),
-        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(false) }
-);
+#include "pch.h"
+#include "UserAndCustomControls.GameService.h"
+#include "UserAndCustomControls.GameService.g.cpp"
+#include <winrt/Windows.UI.Xaml.Interop.h>
+
+namespace winrt::UserAndCustomControls::implementation
+{
+    winrt::Windows::UI::Xaml::DependencyProperty GameService::IsMovableProperty()
+    {
+        return m_IsMovableProperty;
+    }
+    bool GameService::GetIsMovable(winrt::Windows::UI::Xaml::DependencyObject const& target)
+    {
+        return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty));
+    }
+    void GameService::SetIsMovable(winrt::Windows::UI::Xaml::DependencyObject const& target, bool value)
+    {
+        target.SetValue(m_IsMovableProperty, winrt::box_value(value));
+    }
+    Windows::UI::Xaml::DependencyProperty GameService::m_IsMovableProperty =
+        Windows::UI::Xaml::DependencyProperty::RegisterAttached(
+            L"IsMovable",
+            winrt::xaml_typename<bool>(),
+            winrt::xaml_typename<UserAndCustomControls::GameService>(),
+            Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(false) }
+        );
+}
+
 ...
+
 ```
 
 ```cpp
