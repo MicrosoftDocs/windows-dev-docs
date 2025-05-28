@@ -18,7 +18,7 @@ Your desktop app can be [WinUI 3](../../winui/winui3/index.md), [Windows Present
 For classes that implement the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface (or the equivalent [**IDataTransferManagerInterop**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface), you can use that interface to set an owner window on the object before you display it. It's a two-step process.
 
 1. Decide which window will be the owner of the UI object that you want to display, and retrieve that window's HWND. For more details and code examples for this step, see [Retrieve a window handle (HWND)](./retrieve-hwnd.md).
-2. Then call the appropriate interoperatability API (for C# or C++/WinRT) to set an owner window handle (HWND) for the WinRT UI object.
+2. Then call the appropriate interoperability API (for C# or C++/WinRT) to set an owner window handle (HWND) for the WinRT UI object.
 
 ## For classes that implement IInitializeWithWindow
 
@@ -75,7 +75,7 @@ private async void ShowFolderPickerAsync(IntPtr hWnd)
 
 ### WinUI 3 with C++
 
-The C++/WinRT code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](./retrieve-hwnd.md). Then, to set the owner window for the UI object that you want to display, the code calls the interoperatability method [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
+The C++/WinRT code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](./retrieve-hwnd.md). Then, to set the owner window for the UI object that you want to display, the code calls the interoperability method [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
 ```cppwinrt
 // pch.h

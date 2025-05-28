@@ -733,7 +733,7 @@ devcon status *msft8000
 
 If the output indicates that rhproxy is started, rhproxy has loaded and started successfully. If you see a problem code, you need to investigate. Some common problem codes are:
 
-- Problem 51 - `CM_PROB_WAITING_ON_DEPENDENCY` - The system is not starting rhproxy because one of it's dependencies has failed to load. This means that either the resources passed to rhproxy point to invalid ACPI nodes, or the target devices are not starting. First, double check that all devices are running successfully (see 'Verify controller drivers' above). Then, double check your ASL and ensure that all your resource paths (for example, `\_SB.I2C1`) are correct and point to valid nodes in your DSDT.
+- Problem 51 - `CM_PROB_WAITING_ON_DEPENDENCY` - The system is not starting rhproxy because one of its dependencies has failed to load. This means that either the resources passed to rhproxy point to invalid ACPI nodes, or the target devices are not starting. First, double check that all devices are running successfully (see 'Verify controller drivers' above). Then, double check your ASL and ensure that all your resource paths (for example, `\_SB.I2C1`) are correct and point to valid nodes in your DSDT.
 - Problem 10 - `CM_PROB_FAILED_START` - Rhproxy failed to start, most likely because of a resource parsing issue. Go over your ASL and double check resource indices in the DSD, and verify that GPIO resources are specified in increasing pin number order.
 
 ### Verify that the expected devices are exposed to user mode

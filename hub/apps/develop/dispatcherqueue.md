@@ -168,7 +168,7 @@ void Main()
 
     var appWindow = AppWindow.Create(nullptr, 0, dispatcherQueueController.DispatcherQueue());
 
-    // Since we associated the DispatcherQueue above with the AppWindow, we're able to retreive it 
+    // Since we associated the DispatcherQueue above with the AppWindow, we're able to retrieve it 
     // as a property. If we were to not associate a dispatcher, this property would be null.
     ASSERT(appWindow.DispatcherQueue() == dispatcherQueueController.DispatcherQueue());
 
