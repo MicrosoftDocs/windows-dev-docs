@@ -19,10 +19,10 @@ The toolkit provides a number of helper methods to create command results. These
 
 ## KeepOpen command result
 
-The **KeepOpen** command result does nothing. It leaves the palette in its current state, with the current page stack and query. This can be useful for commands that want to keep the the user in the Command Palette, to keep working with the current page.
+The **KeepOpen** command result does nothing. It leaves the palette in its current state, with the current page stack and query. This can be useful for commands that want to keep the user in the Command Palette, to keep working with the current page.
 
 > [!NOTE]
-> Even when returing **KeepOpen**, launching a new app or window from the Command Palette will automatically hide the palette the next window recieves focus. 
+> Even when returning **KeepOpen**, launching a new app or window from the Command Palette will automatically hide the palette the next window receives focus. 
 
 ## Hide command result
 

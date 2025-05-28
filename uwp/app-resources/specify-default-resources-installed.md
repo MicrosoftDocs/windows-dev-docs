@@ -56,7 +56,7 @@ You can configure what these defaults are in one of two ways. You can either add
    ```
 5. Save and close the file and rebuild your project.
 
-To confirm that your overridden defaults are being taken into account, look for the file `<ProjectFolder>\obj\<ReleaseConfiguration folder>\priconfig.xml` and confirm that its contents match your overrides. If they do, then you have successfully configured the qualifier values of the resources that your app will use by default. If a match for the user's settings is not found, then resources will be used whose folder or file names contain the default qualifer values that you've set here.
+To confirm that your overridden defaults are being taken into account, look for the file `<ProjectFolder>\obj\<ReleaseConfiguration folder>\priconfig.xml` and confirm that its contents match your overrides. If they do, then you have successfully configured the qualifier values of the resources that your app will use by default. If a match for the user's settings is not found, then resources will be used whose folder or file names contain the default qualifier values that you've set here.
 
 ### How does this work?
 

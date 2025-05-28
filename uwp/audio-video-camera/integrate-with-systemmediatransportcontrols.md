@@ -13,7 +13,7 @@ This article shows you how to interact with the System Media Transport Controls 
 
 The System Media Transport Controls enable media application developers integrate with the built-in system UI to display media metadata such as artist, album title, or chapter title. The system transport control also allows a user to control the playback of a media app using the built-in system UI, such as pausing playback and skipping forward and backward in a playlist.
 
-<img alt="System Media Transtport Controls" src="images/smtc.png" />
+<img alt="System Media Transport Controls" src="images/smtc.png" />
 
 
 For a complete sample that demonstrates integration with the SMTC, see [System Media Transport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
