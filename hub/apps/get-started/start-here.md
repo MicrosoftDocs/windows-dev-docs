@@ -105,7 +105,7 @@ To create a new project using the WinUI C# Blank App project template:
 The `MainWindow` class included with the project template includes some sample code that needs to be removed to make room for your content.
 
 1. Double-click `MainWindow.xaml` in **Solution Explorer** to open it. You should see XAML markup for a `StackPanel` control.
-1. Delete the XAML for the `StackPanel`. (You'll add your own content in it's place as you create your app.)
+1. Delete the XAML for the `StackPanel`. (You'll add your own content in its place as you create your app.)
 
     ```xaml
     <!-- ↓ Delete this. ↓ -->
