@@ -42,7 +42,7 @@ Do not confuse texture wrapping with the similarly named texture addressing mode
 ## <span id="Displacement_Map_Wrapping"></span><span id="displacement_map_wrapping"></span><span id="DISPLACEMENT_MAP_WRAPPING"></span>Displacement map wrapping
 
 
-Displacement maps are interpolated by the tesselation engine. Because the wrap mode cannot be specified for the tessellation engine, texture wrapping cannot be performed with displacement maps. An application is able to use a set of vertices that forces the interpolation to wrap in any direction. The application can also specify the interpolation to be done as a simple linear interpolation.
+Displacement maps are interpolated by the tessellation engine. Because the wrap mode cannot be specified for the tessellation engine, texture wrapping cannot be performed with displacement maps. An application is able to use a set of vertices that forces the interpolation to wrap in any direction. The application can also specify the interpolation to be done as a simple linear interpolation.
 
 ## <span id="related-topics"></span>Related topics
 

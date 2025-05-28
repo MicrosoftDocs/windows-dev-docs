@@ -21,7 +21,7 @@ Now that our game has its 3D visuals in place, it's time to focus on adding some
 ## Objective
 
 Using Direct2D, add a number of user interface graphics and behaviors to our UWP DirectX game including:
-- Heads-up display, including [move-look controller](tutorial--adding-controls.md) boundry rectangles
+- Heads-up display, including [move-look controller](tutorial--adding-controls.md) boundary rectangles
 - Game state menus
 
 
@@ -56,7 +56,7 @@ The overlay consists of the following basic primitives.
     - Time remaining in the level
     - Current level number 
 - Two intersecting line segments used to form a cross hair
-- Two rectangles at the bottom corners for the [move-look controller](tutorial--adding-controls.md) boundries. 
+- Two rectangles at the bottom corners for the [move-look controller](tutorial--adding-controls.md) boundaries. 
 
 
 The in-game heads-up display state of the overlay is drawn in the [**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358) method of the [**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h) class. Within this method, the Direct2D overlay that represents our UI is updated to reflect the changes in the number of hits, time remaining, and level number.

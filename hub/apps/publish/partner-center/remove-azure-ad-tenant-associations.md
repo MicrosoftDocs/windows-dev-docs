@@ -20,4 +20,4 @@ To remove a tenant, find its name on the **Tenants** page (in **Account settings
 :::image type="content" source="../images/partner-center-account-settings-tenants-remove-azure-ad.png" alt-text="Screenshot showing Remove option in Partner Center tenant settings.":::
 
 > [!TIP]
-> You can’t remove a tenant if you are currently signed into Partner Center using an account in the same tenant. To remove a tenant, you must sign in to Partner Center as an **Manager** for another tenant that is associated with the account. If there is only one tenant associated with the account, that tenant can only be removed after signing in with the Microsoft account that opened the account.
+> You can’t remove a tenant if you are currently signed into Partner Center using an account in the same tenant. To remove a tenant, you must sign in to Partner Center as a **Manager** for another tenant that is associated with the account. If there is only one tenant associated with the account, that tenant can only be removed after signing in with the Microsoft account that opened the account.
