@@ -18,6 +18,11 @@ You must indicate the category (and subcategory/genre, if applicable) which the 
 
 For more info, see [Category and subcategory table](./categories-and-subcategories.md).
 
+## Privacy policy
+You must indicate whether your app accesses, collects, or transmits personal information. If it does, providing a valid privacy policy URL is required. If it doesn’t, the URL is optional—however, Microsoft may still require one based on the capabilities declared in your app package. Failure to include a required privacy policy may result in certification failure.
+
+For more details, see [Privacy policy for your MSIX app](./privacy-policy-msix.md).
+
 ## Support info
 
 This section lets you provide info such as Privacy policy URL, website and support contact info to help customers understand more about your app and how to get support. You are responsible for ensuring your app complies with applicable privacy laws and regulations, and for providing a valid privacy policy URL here if required.
