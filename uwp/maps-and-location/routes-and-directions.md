@@ -10,9 +10,12 @@ ms.localizationpriority: medium
 # Display routes and directions on a map
 
 > [!IMPORTANT]
+> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and Windows Maps platform APIs ([Windows.Services.Maps.*](/uwp/api/windows.services.maps)) are deprecated and may not be available in future versions of Windows. For more information, see [Resources for deprecated features](/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis).
+
+> [!IMPORTANT]
 > **Bing Maps for Enterprise service retirement**
 >
-> The UWP [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services from the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and map services from the [Windows.Services.Maps](/uwp/api/windows.services.maps) namespaces rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
 >
 > For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
 
