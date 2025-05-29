@@ -87,7 +87,7 @@ items:
             href: publish-your-app/msi/enter-app-properties.md
           - name: Set category and subcategory
             href: publish-your-app/msi/categories-and-subcategories.md
-          - name: Provide support info
+          - name: Provide privacy policy and support info
             href: publish-your-app/msi/support-info.md
           - name: Product declarations
             href: publish-your-app/msi/product-declarations.md

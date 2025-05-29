@@ -17,7 +17,7 @@ Feature | Description
 [Start developing Windows apps](/windows/apps/get-started/start-here) | Learn how to start developing apps for Windows with this comprehensive guide.
 [PowerToys](/windows/powertoys/) | PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity.
 [Installing PowerToys](/windows/powertoys/install) | Step-by-step instructions to install PowerToys on your Windows machine.
-[Get started building an app with Windows Copilot Runtime APIs](/windows/ai/apis/get-started) | A guide to help you begin building apps using Windows Copilot Runtime APIs.
+[Get started building an app with Windows AI APIs](/windows/ai/apis/get-started) | A guide to help you begin building apps using Windows AI APIs.
 [AppWindows.SetIcon Method](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon?view=windows-app-sdk-1.7) | Documentation for the `AppWindow.SetIcon` method in the Windows App SDK.
 [Win32 app isolation overview](/windows/win32/secauthz/app-isolation-overview) | An overview of app isolation for Win32 applications to enhance security and reliability.
 
@@ -45,7 +45,7 @@ Feature | Description
 Feature | Description
 :------ | :------
 [Windows AI](/windows/ai/) | Enhance your Windows apps with AI through local APIs and Machine Learning models.
-[Windows Copilot Runtime Overview](/windows/ai/overview) | Windows Copilot Runtime introduces new ways of interacting with the operating system that utilize AI, such as Phi Silica, the Small Language Model (SLM) created by Microsoft Research that is able to offer many of the same capabilities found in Large Language Models (LLMs), but more compact and efficient so that it can run locally on Windows.
+[Windows AI Foundry Overview](/windows/ai/overview) | Windows AI Foundry introduces new ways of interacting with the operating system that utilize AI, such as Phi Silica, the Small Language Model (SLM) created by Microsoft Research that is able to offer many of the same capabilities found in Large Language Models (LLMs), but more compact and efficient so that it can run locally on Windows.
 
 ## Developer tools
 Feature | Description

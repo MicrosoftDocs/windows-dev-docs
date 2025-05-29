@@ -47,7 +47,7 @@ To host a custom WinRT XAML control, you'll create the following projects and co
 5. Add a reference to the Windows Runtime metadata:
    1. In **Solution Explorer**, right-click on your project **References** node and select **Add Reference**.
    2. Click the **Browse** button at the bottom of the page and navigate to the UnionMetadata folder in your SDK install path. By default the SDK will be installed to `C:\Program Files (x86)\Windows Kits\10\UnionMetadata`. 
-   3. Then, select the folder named after the Windows version you are targetting (e.g. 10.0.18362.0) and inside of that folder pick the `Windows.winmd` file.
+   3. Then, select the folder named after the Windows version you are targeting (e.g. 10.0.18362.0) and inside of that folder pick the `Windows.winmd` file.
    4. Click **OK** to close the **Add Reference** dialog.
 
 6. Build the solution and confirm that it builds successfully.
@@ -169,7 +169,7 @@ You're now ready to add code to the **MyUWPApp** project to perform these tasks:
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" 
                            Text="Hello from XAML Islands" FontSize="30" />
             <TextBlock HorizontalAlignment="Center" Margin="15" TextWrapping="Wrap"
-                           Text="😍❤💋🌹🎉😎�🐱‍👤" FontSize="16" />
+                           Text="😍❤💋🌹🎉😎 🐱‍👤" FontSize="16" />
             <Button HorizontalAlignment="Center" 
                     x:Name="Button" Click="ClickHandler">Click Me</Button>
         </StackPanel>
@@ -566,7 +566,7 @@ This section demonstrates how to add a WinRT XAML control from the WinUI 2 libra
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" 
                        Text="Hello from XAML Islands" FontSize="30" />
         <TextBlock HorizontalAlignment="Center" Margin="15" TextWrapping="Wrap"
-                       Text="😍❤💋🌹🎉😎�🐱‍👤" FontSize="16" />
+                       Text="😍❤💋🌹🎉😎 🐱‍👤" FontSize="16" />
         <Button HorizontalAlignment="Center" 
                 x:Name="Button" Click="ClickHandler">Click Me</Button>
         <winui:RatingControl />
