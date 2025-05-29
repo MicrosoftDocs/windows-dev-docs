@@ -49,7 +49,7 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 - Include a [privacy policy URL](./support-info.md#privacy-policy-url) if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md).
 
-- Make sure that your app's description clearly represents what your app does. For help, see our guidance on [writing a great app description](./write-great-app-description.md).
+- Make sure that your app's description clearly represents what your app does. For help, see our guidance on [writing a great app description on the best practices section](/hub/apps/publish/best-practices/best-practices.md).
 
 - Provide complete and accurate responses to all of the questions in the [Age ratings](./age-ratings.md) section.
 

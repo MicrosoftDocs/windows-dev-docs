@@ -34,16 +34,6 @@ You can change this release date after submitting your product, as long as it ha
 
 As noted earlier, if you want to specify certain dates for your submission to be published, use the **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** and leave the **Publishing hold options** set to the default selection. Using the **Start publishing this submission on** option means that your submission will not start the publishing process until that date, but delays during certification or publishing could cause the actual release date to be later than the date you select.
 
-### Restricted capabilities
-
-If we detect that your packages declare any [restricted capabilities](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities), you’ll need to provide info in this section in order to receive approval. For each capability, tell us why your app needs to declare the capability and how it is used. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability.
-
-During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities).
-
-If we don’t approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
-
-Note that there are some restricted capabilities which will very rarely be approved. For more info about each restricted capability, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
-
 ## Notes for certification
 
 As you submit your app, you have the option to use the **Notes for certification** page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly. Including these notes is particularly important for products that use Xbox Live Services and/or that require logging in to an account. If we can't fully test your submission, it may fail certification.
@@ -71,6 +61,16 @@ When considering what to write, remember:
 - **Be succinct and keep instructions simple.** If you really need to explain something in detail, you can include the URL to a page with more info. However, keep in mind that customers of your app won't see these notes. If you feel that you need to provide complicated instructions for testing your app, consider whether your app might need to be made simpler so that customers (and testers) will know how to use it.
 
 - **Services and external components must be online and available.** If your app needs to connect to a service in order to function, make sure that the service will be online and available. Include any information about the service that testers will need, such as login info. If your app can't connect to a service it needs during testing, it may fail certification.
+
+### Restricted capabilities
+
+If we detect that your packages declare any [restricted capabilities](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities), you’ll need to provide info in this section in order to receive approval. For each capability, tell us why your app needs to declare the capability and how it is used. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability.
+
+During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities).
+
+If we don’t approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
+
+Note that there are some restricted capabilities which will very rarely be approved. For more info about each restricted capability, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 ## App submission controls
 

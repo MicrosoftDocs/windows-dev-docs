@@ -60,15 +60,7 @@ After your packages have been [successfully uploaded on the **Packages** page](.
 
 This section also includes a checkbox where you can indicate whether you want to allow Microsoft to make the app available to any future Windows 10 or Windows 11 device families. We recommend keeping this box checked so that your app can be available to more potential customers as new device families are introduced.
 
-### Choosing which device families to support
-
-If you upload packages targeting one individual device family, we'll check the box to make those packages available to new customers on that type of device. For example, if a package targets Windows.Desktop, the **Windows 10/11 Desktop** box will be checked for that package (and you won't be able to check the boxes for other device families).
-
-Packages targeting the Windows.Universal device family can run on any Windows 10 or Windows 11 device (including Xbox One). By default, we'll make those packages available to new customers on all device types _except_ for Xbox.
-
-You can uncheck the box for any Windows 10 or Windows 11 device family if you don’t want to offer your submission to customers on that type of device. If a device family’s box is unchecked, new customers on that type of device won’t be able to acquire the app (though customers who already have the app can still use it, and will get any updates you submit).
-
-If your app supports them, we recommend keeping all of the boxes checked, unless you have a specific reason to limit the types of Windows 10 or Windows 11 devices which can acquire your app. For instance, if you know that your app doesn't offer a good experience on [Surface Hub](https://developer.microsoft.com/windows/surfacehub) and/or [Microsoft HoloLens](https://developer.microsoft.com/mixed-reality), you can uncheck the **Windows 10 Team** and/or **Windows 10 Holographic** box. This prevents any new customers from acquiring the app on those devices. If you later decide you're ready to offer it to those customers, you can create a new submission with the boxes checked.
+For more info on which device family should the app support, see [Choosing which device families to support](/hub/apps/publish/best-practices/best-practices.md).
 
 #### Xbox devices
 
