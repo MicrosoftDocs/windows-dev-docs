@@ -59,8 +59,6 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | ------------------------------ | ------------ | ------------------------------ |
 | **App package**                | **Required** | At least one package required. |
 | **Device family availability** | Not required |                                |
-| **Gradual package rollout**    | Not required |                                |
-| **Mandatory update**           | Not required |                                |
 
 ### Store listings
 
