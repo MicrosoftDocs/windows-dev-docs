@@ -7,7 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# App management and services
+# Product Management
 
 You can manage and view details related to each of your apps in [Partner Center](https://partner.microsoft.com/dashboard), and configure services such as notifications, A/B testing, and maps.
 
@@ -22,12 +22,6 @@ The **Services** section lets you manage several different services for your app
 If you are publishing a game, you can enable the [Xbox Live Creators Program](https://www.xbox.com/developers/creators-program) on this page. This lets you start configuring and testing Xbox Live features, and eventually publish your Xbox Live Creators Program game.
 
 For more info, see [Xbox services overview](/gaming/gdk/docs/services/fundamentals/live-xbl-overview).
-
-## Experimentation
-
-Use the **Experimentation** page to create and run experiments for your Universal Windows Platform (UWP) apps with A/B testing. In an A/B test, you measure the effectiveness of feature changes (or variations) in your app on some customers before you enable the changes for everyone.
-
-For more info, see [Run app experiments with A/B testing](/windows/uwp/monetize/run-app-experiments-with-a-b-testing).
 
 ## Maps
 
