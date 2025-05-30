@@ -12,27 +12,38 @@ ms.localizationpriority: medium
 
 The **Pricing** section of the [Pricing and availability](./price-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency. Please be aware that Microsoft does not alter the product pricing you set without your approval. You’re in charge of making sure the prices match the current market situations, including currency exchange rates.
 
+### Subscription type
+
 :::image type="content" source="../msix/images/msix-set-app-pricing.png" lightbox="../msix/images/msix-set-app-pricing.png" alt-text="A screenshot of the Pricing and availability section showing how to set app pricing.":::
+
+In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](/windows/uwp/monetize/manage-app-submissions#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
 
 > [!NOTE]
 > Although this topic refers to apps, price selection for add-on submissions uses the same process. Note that for [subscription add-ons](/windows/uwp/monetize/enable-subscription-add-ons-for-your-app), the base price that you select can't ever be increased (whether by changing the base price or by scheduling a price change), although it may be decreased.
+
+### Consumable and Durable types
+
+:::image type="content" source="../msix/images/msix-set-app-pricing-other-types.png" lightbox="../msix/images/msix-set-app-pricing-other-types.png" alt-text="A screenshot of the Pricing and availability section showing how to set app pricing.":::
+
+In the **Pricing** section, click **Review price per market** to see the corresponding prices for all markets.
 
 ### Base price
 
 When you select your app's **Base price**, that price will be used in every market where your app is sold, unless you override the base price in any market(s).
 
-You can set the **Base price** to **Free**, or you can choose an available price tier, which sets the price in all the countries/regions where you choose to distribute your app. Price tiers start at 0.99 USD, with additional tiers available at increasing increments (1.09 USD, 1.19 USD, and so on). The increments generally increase as the price gets higher.
+You can set the **Base price** to **Free** or **0** depending on your product type. Also you can choose an available price tier, which sets the price in all the countries/regions where you choose to distribute your app. Price tiers start at 0.99 USD, with additional tiers available at increasing increments (1.09 USD, 1.19 USD, and so on). The increments generally increase as the price gets higher.
 
 > [!NOTE]
 > These price tiers also apply to add-ons.
 > Each price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. You can select your base price in any currency, and we’ll automatically use the corresponding value for different markets. Note that at times we may adjust the corresponding value in a certain market to account for changes in currency conversion rates. You can click on Review price per market button to view the prices for each market.
 
-In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](/windows/uwp/monetize/manage-app-submissions#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
+> [!NOTE]
+> For Consumable and Durable types, first you need to select a currency before setting the price.
 
 Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](/partner-center/tax-details-marketplace). You should also review the [price considerations for specific markets](./market-selection.md#price-considerations-for-specific-markets).
 
 > [!NOTE]
-> If you choose the **Stop acquisition** option under **Make this product available but not discoverable in the Store** in the [Visibility](./visibility-options.md#discoverability) section), you won't be able to set pricing for your submission (since no one will able to acquire the app unless they use a promotional code to get the app for free).
+> If you choose the **Stop acquisition** option under **Make this product available but not discoverable in the Store** in the [Visibility](./visibility-options.md#discoverability) section, you won't be able to set pricing for your submission (since no one will able to acquire the app unless they use a promotional code to get the app for free).
 
 ### Schedule price changes
 
@@ -49,7 +60,7 @@ You can click **Schedule a price change** again to schedule as many subsequent c
 >
 > With a scheduled price change, you can adjust the price to be either higher or lower. The change will take place on the date you specify, but it won’t be displayed as a sale in the Store, or have any special formatting applied; the app will just have a new price.
 
-### Override base price for specific markets
+### Override base price for specific markets (Subscription type)
 
 By default, the options you select above will apply to all markets in which your app is offered. You can optionally change the price for one or more markets, either by choosing a different price tier or entering a free-form price in the market’s local currency. This way, you can maintain your regional pricing strategy and respond more effectively to the changes in the currency exchange rates in each market.
 
@@ -69,6 +80,15 @@ Overriding the base price for a single market also gives you the option to enter
 To override the base price for multiple markets, you’ll create a _market group_. To do so, select the markets you wish to include, then optionally enter a name for the group. (This name is for your reference only and won’t be visible to any customers.) When you’re finished, click **Create**. You’ll then see the same **Base price** and **Schedule a price change** options as described above, but the selections you make will be specific to that market group. Note that free-form prices can’t be used with market groups; you’ll need to select an available price tier.
 
 To change the markets included in a market group, click the name of the market group and add or remove any markets you’d like, then click **OK** to save your changes.
+
+> [!NOTE]
+> A market can’t belong to multiple market groups within the **Pricing** section.
+
+### Override base price for specific markets (Consumable and Durable types)
+
+By default, the currency and price you select above will apply to all markets in which your app is offered. You can optionally change the price for one or more market group by choosing a different price tier. This way, you can maintain your regional pricing strategy and respond more effectively to the changes in the currency exchange rates in each market.
+
+You can override the base price for one or more market groups. Once you’ve done so, you can override the base price for an additional market group by selecting **Create new market group** again and repeating the process described below. To remove the override pricing you’ve specified for a market group, click **Remove**.
 
 > [!NOTE]
 > A market can’t belong to multiple market groups within the **Pricing** section.
