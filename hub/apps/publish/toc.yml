@@ -258,7 +258,7 @@ items:
           - name: Use Microsoft Store Web Installer to distribute apps
             href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md  
           - name: Product management
-            href: app-management-and-services.md
+            href: product-management.md
             items: 
               - name: View product identity details
                 href: view-app-identity-details.md

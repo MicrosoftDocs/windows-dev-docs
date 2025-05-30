@@ -7691,8 +7691,8 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/publish/app-management-and-services.md",
-      "redirect_url": "/windows/apps/publish/app-management-and-services",
+      "source_path": "uwp/publish/product-management.md",
+      "redirect_url": "/windows/apps/publish/product-management",
       "redirect_document_id": false
     },
     {

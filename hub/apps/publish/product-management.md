@@ -1,6 +1,6 @@
 ---
 description: Manage and view details related to each of your apps in Partner Center, and configure services such as A/B testing and maps.
-title: App management and services
+title: Product management
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.date: 10/30/2022
 ms.topic: article
