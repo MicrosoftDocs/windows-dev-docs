@@ -116,9 +116,9 @@ Follow these recommendations to make your trailers effective:
 - Use a different thumbnail for each trailer so that customers know they are unique.
 - Because some Store layouts may slightly crop the top and bottom of your trailer, make sure key info appears in the center of the screen.
 - Frame rate and resolution should match the source material. For example, content shot at 720p60 should be encoded and uploaded at 720p60.
-- To make trailers accessible to all users, you can upload closed captions and audio descriptions:
-  - Closed captions : Text displayed on a screen that represents spoken dialogue, sound effects, and other audio cues. Helps individuals who are deaf or hard of hearing.
-  - Audio descriptions: Narrations that describe visual elements in a video, such as actions, settings, facial expressions, and scene changes. Helps individuals who are blind or have low vision.
+- To make trailers more accessible for users with disabilities, you can upload closed captions and audio descriptions:
+  - Closed captions provide text alternatives for audio for individuals who are deaf or hard of hearing.
+  - Audio descriptions help provide audio alternatives for visual elements for individuals who are blind or have low vision.
 
 You must also follow the requirements listed below.
 
@@ -129,7 +129,7 @@ You must also follow the requirements listed below.
 3. Click the pencil icon to add a **title** for your trailer (255 characters or fewer).
 4. To add a closed caption file, click the "Upload" button in the closed captions section and select a Web VTT (.vtt) file. The file size must be less than 50 MB.
 5. To add an audio description file, click the "Upload" button in the audio descriptions section and select an MP3 (.mp3) file. The file size must be less than 500 MB.
-5. If you want to add more trailers to the listing, close the panel, click **Upload** and repeat the steps listed above.
+6. If you want to add more trailers to the listing, close the panel, click **Upload** and repeat the steps listed above.
 
 > [!TIP]
 > If you have created Store listings in multiple languages, you can select **Choose from existing trailers** to reuse the trailers you've already uploaded. You don't have to upload them individually for each language.
@@ -146,7 +146,7 @@ When providing your trailers, be sure to follow these requirements:
 - The title can’t exceed 255 characters.
 - Do not include age ratings in your trailers.
 - The closed caption file must be in Web VTT (.vtt) format and the file size must be less than 50 MB
- - The audio description file must be in MP3 (.mp3) format and the file size must be less than 500 MB  
+- The audio description file must be in MP3 (.mp3) format and the file size must be less than 500 MB  
 
 > [!WARNING]
 > The exception to the requirement to include age ratings in your trailers applies **only** to trailers in the **Microsoft Store** that are shown **on the product page**. Any trailer posted outside of Partner Center, that is not intended for display exclusively on the Microsoft Store's product page **must** display embedded rating information, where required, in accordance with the appropriate rating authority’s guidelines.  
