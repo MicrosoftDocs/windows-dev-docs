@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 
 ## Configure app pricing
 
-The **Pricing** section of the [Pricing and availability](./price-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency. Please be aware that Microsoft does not alter the product pricing you set without your approval. You’re in charge of making sure the prices match the current market situations, including currency exchange rates.
+The **Pricing** section of the [Pricing and availability](./price-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets-subscription-type), either by selecting a new price tier or by entering a free-form price in the market's local currency. Please be aware that Microsoft does not alter the product pricing you set without your approval. You’re in charge of making sure the prices match the current market situations, including currency exchange rates.
 
 ### Subscription type
 
-:::image type="content" source="../msix/images/msix-set-app-pricing.png" lightbox="../msix/images/msix-set-app-pricing.png" alt-text="A screenshot of the Pricing and availability section showing how to set app pricing.":::
+:::image type="content" source="../msix/images/msix-set-app-pricing.png" lightbox="../msix/images/msix-set-app-pricing.png" alt-text="A screenshot of the Pricing and availability section showing how to set app pricing for a Subscription type.":::
 
 In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](/windows/uwp/monetize/manage-app-submissions#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
 
@@ -23,7 +23,7 @@ In the **Pricing** section, click **view conversion table** to see the correspon
 
 ### Consumable and Durable types
 
-:::image type="content" source="../msix/images/msix-set-app-pricing-other-types.png" lightbox="../msix/images/msix-set-app-pricing-other-types.png" alt-text="A screenshot of the Pricing and availability section showing how to set app pricing.":::
+:::image type="content" source="../msix/images/msix-set-app-pricing-other-types.png" lightbox="../msix/images/msix-set-app-pricing-other-types.png" alt-text="A screenshot of the Pricing and availability section showing how to set app pricing for Consumable and Durable types.":::
 
 In the **Pricing** section, click **Review price per market** to see the corresponding prices for all markets.
 
