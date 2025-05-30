@@ -15,8 +15,8 @@ To view and create customer groups, expand **Engage** in the left navigation men
 
 Currently, two types of customer groups are supported:
 
-- **Segments.** These are dynamically-created groups of Windows 10 or Windows 11 customers who meet the demographic or revenue criteria that you choose. Segments are typically used with [push notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md). For more info, see [Create customer segments](create-customer-segments.md).
-- **Known user groups.** These are groups of specific customers, created from the email addresses associated with their Microsoft accounts. Known user groups are most often used with [package flighting](package-flights.md) in order to deliver specific packages to customers in that group, or for distribution of a submission to a [private audience](publish-your-app/msix/visibility-options.md#audience). For more info, see [Create known user groups](create-known-user-groups.md).
+- **Segments.** These are dynamically-created groups of Windows 10 or Windows 11 customers who meet the demographic or revenue criteria that you choose. Segments are typically used with [push notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md). For more info, see [Create customer segments](#create-customer-segments).
+- **Known user groups.** These are groups of specific customers, created from the email addresses associated with their Microsoft accounts. Known user groups are most often used with [package flighting](package-and-distribution.md#package-flights) in order to deliver specific packages to customers in that group, or for distribution of a submission to a [private audience](publish-your-app/msix/visibility-options.md#audience). For more info, see [Create known user groups](#create-known-user-groups).
 
 ## Create customer segments
 
@@ -74,7 +74,7 @@ If you view the results and **Customers in this segment** says **Small**, the se
 
 ## Create known user groups
 
-Known user groups let you add specific people to a group, using the email address associated with their Microsoft account. These known user groups are most often used to distribute specific packages to a selected group of people with [package flights](package-flights.md), or for distribution of a submission to a [private audience](publish-your-app/msix/visibility-options.md#audience). They can also be used for engagement campaigns, such as sending [targeted notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of specific customers.
+Known user groups let you add specific people to a group, using the email address associated with their Microsoft account. These known user groups are most often used to distribute specific packages to a selected group of people with [package flights](package-and-distribution.md#package-flights), or for distribution of a submission to a [private audience](publish-your-app/msix/visibility-options.md#audience). They can also be used for engagement campaigns, such as sending [targeted notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of specific customers.
 
 In order to be counted as a member of the group, each person must be authenticated with the Store using the Microsoft account associated with the email address you provide. To download the app with package flighting, group members must be using a version of Windows 10 or Windows 11 that supports package flights (Windows.Desktop build 10586 or later or Xbox One). With private audience submissions, group members must be using Windows 10, version 1607 or later (including Xbox One).
 
@@ -89,7 +89,7 @@ In order to be counted as a member of the group, each person must be authenticat
 
 The group will now be available for you to use.
 
-You can also create a known user group by selecting **Create a flight group** from the [package flight](package-flights.md) creation page. Note that you'll need to re-enter any info you've already provided in the package flight creation page if you do this.
+You can also create a known user group by selecting **Create a flight group** from the [package flight](package-and-distribution.md#package-flights) creation page. Note that you'll need to re-enter any info you've already provided in the package flight creation page if you do this.
 
 > [!IMPORTANT]
 > When using known user groups with package flighting, be sure that you have obtained any necessary consent from people that you add to your group, and that they understand that they will be getting packages that are different from your non-flighted submission. 

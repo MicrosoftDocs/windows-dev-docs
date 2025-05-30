@@ -64,14 +64,14 @@ This page lets you view details related to all of your published packages.
 
 The name, version, and architecture of each package is shown. Click **Details** to show additional info such as supported language, app capabilities, and file sizes. The info you see for each package may vary depending on its targeted operating system and other factors. 
 
-Developers with OEM permissions can also [generate preinstall packages](generate-preinstall-packages-for-oems.md) from the **Current packages** page.
+Developers with OEM permissions can also [generate preinstall packages](package-and-distribution.md) from the **Current packages** page.
 
 ## WNS/MPNS
 
 The **WNS/MPNS** section provides options to help you create and send notifications to your app's customers. 
 
 > [!TIP]
-> For UWP apps, we suggest using the **Notifications** feature in Partner Center. This feature lets you send notifications to all of your app's customers, or to a targeted subset of your Windows 10 or Windows 11 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md). For more info, see [Send notifications to your app's customers](send-push-notifications-to-your-apps-customers.md).
+> For UWP apps, we suggest using the **Notifications** feature in Partner Center. This feature lets you send notifications to all of your app's customers, or to a targeted subset of your Windows 10 or Windows 11 customers who meet the criteria you’ve defined in a [customer segment](create-customer-groups.md). For more info, see [Send notifications to your app's customers](send-push-notifications-to-your-apps-customers.md).
 
 Depending on your app's package type and its specific requirements, you can also use one of the following options: 
 

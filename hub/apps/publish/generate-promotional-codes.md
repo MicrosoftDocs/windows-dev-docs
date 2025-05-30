@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Generate promotional codes
 
-[Partner Center](https://partner.microsoft.com/dashboard) lets you generate promotional codes for an app or add-on that you have published in the Microsoft Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](beta-testing-and-targeted-distribution.md).
+[Partner Center](https://partner.microsoft.com/dashboard) lets you generate promotional codes for an app or add-on that you have published in the Microsoft Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](package-and-distribution.md#beta-testing-and-targeted-distribution).
 
 Each promotional code has a corresponding unique redeemable URL that a customer can click in order to redeem the code and install your app or add-on from the Microsoft Store.  Note that your app must pass the final publishing phase of the [app certification process](publish-your-app/msix/app-certification-process.md) before customers can redeem a promotional code to install it.
 

@@ -25,7 +25,7 @@ By default, your app’s Store listing will be visible to a **Public audience**.
 
 ### Private audience
 
-If you want your app’s listing to be visible only to selected people that you specify, choose **Private audience**. With this option, the app will not be discoverable or available to anyone other than people in the group(s) you specify. This option is often used for [beta testing](../../beta-testing-and-targeted-distribution.md), as it lets you distribute your app to testers without anyone else being able to get the app, or even see its Store listing (even if they were able to type in its Store listing URL).
+If you want your app’s listing to be visible only to selected people that you specify, choose **Private audience**. With this option, the app will not be discoverable or available to anyone other than people in the group(s) you specify. This option is often used for [beta testing](../../package-and-distribution.md), as it lets you distribute your app to testers without anyone else being able to get the app, or even see its Store listing (even if they were able to type in its Store listing URL).
 
 When you choose **Private audience**, you’ll need to specify at least one group of people who should get your app. You can choose from an existing [known user group](../../create-known-user-groups.md), or you can select **Create a new group** to define a new group. You’ll need to enter the email addresses associated with the Microsoft account of each person you’d like to include in the group. For more info, see [Create known user groups](../../create-known-user-groups.md).
 

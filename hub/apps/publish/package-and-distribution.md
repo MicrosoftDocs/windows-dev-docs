@@ -47,7 +47,7 @@ You can indicate whether and how your app can be offered for volume purchases th
 
 Through these settings, you can opt to allow your app to be made available to organizations (business and educational) who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to organizations across Windows 10 device types, including PCs, tablets and phones.
 
-You will also need to allow organizational licensing for any [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
+You will also need to allow organizational licensing for any [line-of-business (LOB) apps](#distribute-lob-apps-to-enterprises) that you publish directly to enterprises.
 
 > [!NOTE]
 > Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the [certification process](publish-your-app/msix/app-certification-process.md).
@@ -66,7 +66,7 @@ By default, the box labeled **Make my app available to organizations with Store-
 If you prefer not to allow us to offer your app to organizations for volume acquisition, uncheck this box. Note that this change will only take place after the app completes the certification process. If any organizations had previously acquired licenses to your app, those licenses will still be valid, and the people who have the app already can continue to use it.
 
 > [!TIP]
-> To publish line-of-business (LOB) apps exclusively to a specific organization, you can set up an enterprise association and allow the organization to add the apps directly their private store. For more info, see [Distribute LOB apps to enterprises](distribute-lob-apps-to-enterprises.md).
+> To publish line-of-business (LOB) apps exclusively to a specific organization, you can set up an enterprise association and allow the organization to add the apps directly their private store. For more info, see [Distribute LOB apps to enterprises](#distribute-lob-apps-to-enterprises).
 
 
 ## Allowing disconnected (offline) licensing
@@ -144,7 +144,7 @@ When you set up package flights, you can specify the people who should get speci
 Note that package flights will not be distributed via [Microsoft Store for Business](https://businessstore.microsoft.com/store) and [Microsoft Store for Education](https://educationstore.microsoft.com/store). This is because people in your known user groups must be signed in with their Microsoft accounts in order to receive a package flight. All acquisitions made via Microsoft Store for Business or Microsoft Store for Education will receive your non-flighted packages.
 
 > [!TIP]
-> Package flights offer packages only to the selected customers that you specify. To distribute packages to a random selection of customers in a specified percentage, you can use [gradual package rollout](gradual-package-rollout.md). You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
+> Package flights offer packages only to the selected customers that you specify. To distribute packages to a random selection of customers in a specified percentage, you can use [gradual package rollout](#gradual-package-rollout). You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
 >
 > Unlike package flights, your gradual package rollout selections do apply to customers who acquire your app via Microsoft Store for Business and Microsoft Store for Education. 
 
@@ -156,7 +156,7 @@ Note that package flights will not be distributed via [Microsoft Store for Busin
 
 After you have published a submission for your app, you'll see a **Package flights** section on the App overview page. Click **New package flight** to get started.
 
-If you haven't created any known user groups yet, you'll be prompted to create one before you can proceed. For more info, see [Create known user groups](create-known-user-groups.md). You can create a new known user group directly from this page by selecting **Create a flight group**.
+If you haven't created any known user groups yet, you'll be prompted to create one before you can proceed. For more info, see [Create known user groups](create-customer-groups.md#create-known-user-groups). You can create a new known user group directly from this page by selecting **Create a flight group**.
 
 On the package flight creation page, you'll need to enter a name for your flight and specify at least one flight group. Once you've done so, select **Create flight**. You won't be able to change these details later (though if you're not happy with what you've entered, you can delete this flight and create a new one to use instead).
 
@@ -173,17 +173,6 @@ You have the option to select packages that were associated with a previous publ
 If your app supports multiple device families, make sure you include packages to support the same set of device families in your flight. People in your flight groups will **only** be able to get packages from that flight. They won't be able to access packages from other flights, or from your non-flighted submission. 
 
 Also remember that your Store listing info and device family availability is based on your non-flighted submission. Customers in your flight groups will only be able to download the app on a device family that is supported by your non-flighted submission. For more info, see [Device family support](#device-family-support). 
-
-
-## Gradual package rollout
-
-By default, the packages in your submission will be made available to everyone in your flight group at the same time. To change this, you can check the box that says **Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)**. You can choose a percentage of people in your flight group to get the packages from the new submission, so that you can monitor feedback and analytic data to make sure you’re confident about the update before rolling it out more broadly to the rest of the flight group. You can increase the percentage (or halt the update) any time without having to create a new submission for your package flight. 
-
-> [!IMPORTANT]
-> When gradually rolling out packages in a package flight, the people who aren't included in the percentage that gets your new packages will get the packages from the previous package flight submission (unless there is a higher-ranked flight available to them).
-
-For more info, see [Gradual package rollout](gradual-package-rollout.md).
-
 
 ## Configure additional package flight options
 
@@ -254,7 +243,7 @@ When you delete a package flight, any customers who have the packages you distri
 When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of customers who have your package installed on Windows 10 or Windows 11 (including Xbox). This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission. 
 
 > [!IMPORTANT]
-> Your rollout selections apply to all of your packages, but will only apply to your customers running OS versions that support package flights (Windows.Desktop build 10586 or later and Xbox), including any customers who get the app via [Store-managed (online) licensing](organizational-licensing.md) via [Microsoft Store for Business](https://businessstore.microsoft.com/store) or [Microsoft Store for Education](https://educationstore.microsoft.com/store). When using gradual package rollout, customers on earlier OS versions will not get packages from the latest submission until you finalize the package rollout as described below.
+> Your rollout selections apply to all of your packages, but will only apply to your customers running OS versions that support package flights (Windows.Desktop build 10586 or later and Xbox), including any customers who get the app via [Store-managed (online) licensing](#organizational-licensing) via [Microsoft Store for Business](https://businessstore.microsoft.com/store) or [Microsoft Store for Education](https://educationstore.microsoft.com/store). When using gradual package rollout, customers on earlier OS versions will not get packages from the latest submission until you finalize the package rollout as described below.
 
 Note that all of your customers will see the Store listing details that you entered with your latest submission. The rollout settings only apply to the packages that customers install, for updates to existing customers.
 
@@ -307,15 +296,6 @@ If you want to let testers use your app before it’s available to others, and m
 The **Private audience** option can only be used when you have not already published your app to a public audience. You can use this option with apps targeting any OS version, but your testers must be running Windows 10, version 1607 or later (including Xbox), and must be signed in with the Microsoft account associated with the email address that you provide.
 
 For more info, see [Private audience](publish-your-app/msix/visibility-options.md#audience).
-
-
-## Package flights
-
-If you have published your app already, you can create package flights to distribute a different set of packages to the people that you specify. You can even create multiple package flights for the same app to use with different groups of people. This is a great way to try out different packages simultaneously, and you can pull packages from a flight into your non-flighted submission if you decide the packages are ready to distribute to everyone.
-
-Package flights can be used with apps targeting any OS version, but your testers can only get the app if they are running Windows.Desktop build 10586 or later or Xbox One.
-
-For more info, see [Package flights](package-flights.md).
 
 ## Hiding the app in the Store and using promotional codes
 
@@ -403,8 +383,6 @@ You must select at least one enterprise in order to publish an app as line-of-bu
 By default, the box for **Store-managed (online) volume licensing** is checked when you submit an app. When publishing LOB apps, this box must remain checked so that the enterprise can acquire your app in volume. This will not make the app available to anyone outside of the enterprise(s) that you selected in the **Distribution and visibility** section.
 
 If you’d like to make the app available to the enterprise via disconnected (offline) licensing, you can check the **Disconnected (offline) licensing** box as well.
-
-For more info, see [Organizational licensing options](organizational-licensing.md).
 
 #### Age ratings
 
