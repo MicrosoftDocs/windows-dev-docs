@@ -18,7 +18,7 @@ By default, we'll publish your submission as soon as it passes certification (or
 
 **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** is the default selection, and means that your submission will begin the publishing process as soon as it passes certification, unless you have configured dates in the [Schedule](./schedule-pricing-changes.md#configure-precise-release-scheduling) section of the **Pricing and availability** page.
 
-For most submissions, we recommend leaving the **Publishing hold options** section set to this option. If you want to specify certain dates for your submission to be published, use the **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Leaving this section set to the default option will not cause the submission to be published earlier than the date(s) that you set in the **Schedule** section. The dates you selected in the **Schedule** section will be used to determine when your product becomes available to customers in the Store.
+For most submissions, we recommend keeping the **Publishing hold options** section set to the default. If you want your submission to be published on specific dates, configure those dates in the **Schedule** section. The default publishing hold option will ensure your submission is not published before the dates you set in the **Schedule** section. Your product will become available to customers in the Store based on the schedule you specify.
 
 ### Publish your submission manually
 
@@ -26,11 +26,11 @@ If you don’t want to set a release date yet, and you prefer your submission to
 
 ### Start publishing your submission on a certain date
 
-Choose **Start publishing this submission on** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
+Choose **Start publishing this submission on** if you want to delay publishing until a specific date. With this option, your submission will be released as soon as possible on or after the date you specify (which must be at least 24 hours in the future). You can also set the exact time for publishing to begin.
 
-You can change this release date after submitting your product, as long as it hasn’t entered the Publish step yet.
+You can update this release date after submitting your product, as long as it hasn’t entered the Publish step.
 
-As noted earlier, if you want to specify certain dates for your submission to be published, use the **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** and leave the **Publishing hold options** set to the default selection. Using the **Start publishing this submission on** option means that your submission will not start the publishing process until that date, but delays during certification or publishing could cause the actual release date to be later than the date you select.
+Remember, if you want your submission to be published on certain dates, you can use the **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** option and leave the **Publishing hold options** set to default. The **Start publishing this submission on** option ensures your submission won’t begin publishing until your chosen date, but delays during certification or publishing may result in the actual release occurring later than planned.
 
 ## Restricted capabilities
 
@@ -40,35 +40,35 @@ During the certification process, our testers will review the info you provide t
 
 If we don’t approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
 
-Note that there are some restricted capabilities which will very rarely be approved. For more info about each restricted capability, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+Note that there are some restricted capabilities which will very rarely be approved. For more info about each restricted capability, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations).
 
 ## Notes for certification
 
-As you submit your app, you have the option to use the **Notes for certification** page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly. Including these notes is particularly important for products that use Xbox Live Services and/or that require logging in to an account. If we can't fully test your submission, it may fail certification.
+As you submit your app, you can use the **Notes for certification** page to give certification testers extra information that will help them test your app correctly. Providing these notes is especially important for apps that use Xbox Live Services or require users to log in. If testers can’t fully test your app, your submission may fail certification.
 
-Make sure to include the following (if applicable for your app):
+Be sure to include the following details if they apply to your app:
 
-- **User names and passwords for test accounts**: If your app requires users to log in to a service or social media account, provide the user name and password for a test account. The certification testers will use this account when reviewing your app.
+- **User names and passwords for test accounts**: If your app requires login to a service or social media, provide a test account’s user name and password. Testers will use this account during their review.
 
-- **Steps to access hidden or locked features**: Briefly describe how testers can access any features, modes, or content that might not be obvious. Apps that appear to be incomplete may fail certification.
+- **Steps to access hidden or locked features**: Briefly explain how testers can access any features, modes, or content that aren’t obvious. Apps that seem incomplete may fail certification.
 
-- **Steps to verify background audio usage**: If your app allows audio to run in the background, testers may need instructions on how to access this feature so they can confirm it functions appropriately.
+- **Steps to verify background audio usage**: If your app supports background audio, give instructions so testers can confirm this feature works as intended.
 
-- **Expected differences in behavior based on region or other customer settings**: For example, if customers in different regions will see different content, make sure to call this out so that testers understand the differences and review appropriately.
+- **Expected differences in behavior based on region or other customer settings**: If your app behaves differently for users in different regions or with different settings, explain these differences so testers know what to expect.
 
-- **Info about what's changed in an app update**: For updates to previously published apps, you may want to let the testers know what has changed, especially if your packages are the same and you're just making changes to your app listing (such as adding more screenshots, changing your app's category, or editing the description).
+- **Info about what's changed in an app update**: For updates, let testers know what’s new, especially if only your app listing has changed (like screenshots, category, or description) and not the app package itself.
 
-- **The date you're entering the notes**: This is particularly important if you are using a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live), since the notes you enter when publishing to a sandbox will remain when you request certification. Seeing the date helps testers evaluate whether there were any temporary issues that may no longer apply.
+- **The date you're entering the notes**: This is important if you’re using a development sandbox in Partner Center (such as for Xbox Live integration). The date helps testers know if any issues mentioned might no longer apply.
 
 - **Anything else you think testers will need to understand about your submission**
 
-When considering what to write, remember:
+When writing your notes, keep these tips in mind:
 
-- **A real person will read these notes.** Testers will appreciate a polite note and clear, helpful instructions.
+- **A real person will read these notes.** Testers appreciate polite, clear, and helpful instructions.
 
-- **Be succinct and keep instructions simple.** If you really need to explain something in detail, you can include the URL to a page with more info. However, keep in mind that customers of your app won't see these notes. If you feel that you need to provide complicated instructions for testing your app, consider whether your app might need to be made simpler so that customers (and testers) will know how to use it.
+- **Be succinct and keep instructions simple.** If you need to provide detailed explanations, you can include a URL for more information. Remember, customers won’t see these notes. If your instructions are complicated, consider simplifying your app so both customers and testers can use it easily.
 
-- **Services and external components must be online and available.** If your app needs to connect to a service in order to function, make sure that the service will be online and available. Include any information about the service that testers will need, such as login info. If your app can't connect to a service it needs during testing, it may fail certification.
+- **Services and external components must be online and available.** If your app depends on an online service, make sure it’s available during testing and provide any needed information, such as login details. If testers can’t connect to required services, your app may fail certification.
 
 ## App submission controls
 
