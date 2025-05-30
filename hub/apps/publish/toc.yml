@@ -59,8 +59,6 @@ items:
             href: publish-your-app/msix/add-additional-information.md
           - name: Import and export Store listings
             href: publish-your-app/msix/import-and-export-store-listings.md
-          - name: Write a great app description
-            href: publish-your-app/msix/write-great-app-description.md
           - name: Responsible AI FAQ for AI-generated keywords
             href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
       - name: Manage Submission options

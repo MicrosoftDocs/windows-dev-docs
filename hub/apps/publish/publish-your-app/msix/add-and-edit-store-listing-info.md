@@ -29,7 +29,7 @@ If you haven't uploaded packages for the language you're working on, and you've 
 
 The description field is where you can tell customers what your app does. This field is required, and will accept up to 10,000 characters of plain text.
 
-For some tips on making your description stand out, see [Write a great app description](./write-great-app-description.md).
+For some tips on making your description stand out, see [Write a great app description](/hub/apps/publish/best-practices/best-practices.md).
 
 ## What's new in this version
 

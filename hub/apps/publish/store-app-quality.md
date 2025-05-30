@@ -46,7 +46,7 @@ The **description** lets you describe your app’s main features. Keep it clear,
 - List app features in the features section of the metadata and summarize your best features in the app description so customers can tell what they’ll get. For example, don’t just list the planets when you describe your astronomy app; tell customers about your app’s special satellite tracking feature. In crowded segments of the Store, make an extra effort to tell customers how your app is different and better.
 - Tell customers the truth. Describe what’s actually in the app. For example, don’t tell customers about features that aren’t yet in your app (unless you identify them as planned).
 - If your app depends on another app to function, say so the beginning of your description. This will let customers know what other software and apps they need to use your app.
-- For some great tips, see the article [Write a great app description](publish-your-app/msix/write-great-app-description.md).
+- For some great tips, see the article [Write a great app description](./best-practices/best-practices.md).
 
 **Screenshots** and **Trailers** are your chance to give customers a preview of your app’s awesome functionality. Use them skillfully to highlight app quality:
 

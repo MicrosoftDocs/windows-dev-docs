@@ -36,9 +36,9 @@ You can uncheck the box for any Windows 10 or Windows 11 device family if you do
 
 If your app supports them, we recommend keeping all of the boxes checked, unless you have a specific reason to limit the types of Windows 10 or Windows 11 devices which can acquire your app. For instance, if you know that your app doesn't offer a good experience on [Surface Hub](https://developer.microsoft.com/windows/surfacehub) and/or [Microsoft HoloLens](https://developer.microsoft.com/mixed-reality), you can uncheck the **Windows 10 Team** and/or **Windows 10 Holographic** box. This prevents any new customers from acquiring the app on those devices. If you later decide you're ready to offer it to those customers, you can create a new submission with the boxes checked.
 
-# Write a great app description for MSIX app
+## Write a great app description for MSIX app
 
-A great description can make your app stand out in the Microsoft Store and help encourage customers to download it. [The description you enter when submitting your app](add-and-edit-store-listing-info.md#description) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
+A great description can make your app stand out in the Microsoft Store and help encourage customers to download it. [The description you enter when submitting your app](/hub/apps/publish/publish-your-app/msix/add-and-edit-store-listing-info.md#description) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
 
 Here are some tips for making your app's description the best it can be.
 
@@ -47,7 +47,7 @@ Here are some tips for making your app's description the best it can be.
 - **Use lists and short paragraphs.** Potential customers may just take a quick glance at your app's description. Breaking up the content by using short paragraphs and lists makes it easier to scan.
 
   > [!NOTE]
-  >  Adding a list of [product features](create-app-store-listing.md) can also help to quickly show what your app does. This list appears directly below the app description.
+  >  Adding a list of [product features](/hub/apps/publish/publish-your-app/msix/create-app-store-listing.md) can also help to quickly show what your app does. This list appears directly below the app description.
 
 - **Avoid dry language.** Write your description using engaging language. Be sure the wording clearly describes what your app does, but say it in a way that doesn't sound boring. For many apps, a casual and friendly tone works well.
 - **Use a length that is just right.** A good description reads quickly, but also includes enough info to get the reader interested and explain what the app does. A complex app will need more sentences to describe it; a simple app may need only a few. In most cases the right length is somewhere over 200 words, but well under 3000.
