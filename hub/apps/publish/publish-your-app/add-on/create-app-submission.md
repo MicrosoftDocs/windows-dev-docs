@@ -42,14 +42,21 @@ Here's a list of the info that you provide when creating your add-on submission.
 | **Pricing**      | Required                                                                |
 | **Sale pricing** | Optional                                                                |
 
+### Age ratings
+
+To publish a product in the Microsoft Store, you must provide accurate answers to questions and receive age ratings.
+
+> [!NOTE]
+> You only need to provide age ratings information if your add-on has a **Durable** product type.
+
 ### Store listings
 
 One Store listing required. We recommend providing Store listings for every language your app supports.
 
 | Field name      | Notes                           |
 | --------------- | ------------------------------- |
-| **Title**       | Required (100 character limit)  |
-| **Description** | Optional (200 character limit)  |
+| **Product name**| Required (100 character limit)  |
+| **Description** | Required (200 character limit)  |
 | **Icon**        | Optional (.png, 300x300 pixels) |
 
 When you've finished entering this info, click **Submit to the Store**. In most cases, the certification process takes about an hour. After that, your add-on will be published to the Store and ready for customers to purchase.
@@ -57,26 +64,12 @@ When you've finished entering this info, click **Submit to the Store**. In most 
 > [!NOTE]
 > The add-on must also be implemented in your app's code. For more info, see [In-app purchases and trials](/windows/uwp/monetize/in-app-purchases-and-trials).
 
-## Set your add-on product type and product ID
-
-An add-on must be associated with an app that you've created in Partner Center (even if you haven't submitted it yet). You can find the button to Create a new add-on on your app's Overview page or on its Add-ons page.
-
-After you select Create a new add-on, you'll be prompted to specify a product type and assign a product ID for your add-on.
-
 ### Product type
 
 First, you'll need to indicate which type of add-on you are offering. This selection refers to how the customer can use your add-on.
 
 > [!NOTE]
 > You won't be able to change the product type after you save this page to create the add-on. If you choose the wrong product type, you can always delete your in-progress add-on submission and start over by creating a new add-on.
-
-<span id="durable"></span>
-
-#### Durable
-
-Select **Durable** as your product type if your add-on is typically purchased only once. These add-ons are often used to unlock additional functionality in an app.
-
-The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You have the option to set the **Product lifetime** to a different duration in the [Properties](./enter-app-properties.md) step of the add-on submission process. If you do so, the add-on will expire after the duration you specify (with options from 1-365 days), in which case a customer could purchase it again after it expires.
 
 #### Consumable
 
@@ -86,6 +79,14 @@ There are two types of consumable add-ons:
 
 - **Developer-managed consumable**: Balance and fulfillment must be managed within your app. Supported on all OS versions.
 - **Store-managed consumable:** Balance will be tracked by Microsoft across all of the customer’s devices running Windows 10, version 1607 or later; not supported on any earlier OS versions. To use this option, the parent product must be compiled using Windows 10 SDK version 14393 or later. Also note that you can't submit a Store-managed consumable add-on to the Store until the parent product has been published (though you can create the submission in Partner Center and begin working on it at any time). You'll need to enter the quantity for your Store-managed consumable add-on in the **Properties** step of your submission.
+
+<span id="durable"></span>
+
+#### Durable
+
+Select **Durable** as your product type if your add-on is typically purchased only once. These add-ons are often used to unlock additional functionality in an app.
+
+The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You have the option to set the **Product lifetime** to a different duration in the [Properties](./enter-app-properties.md) step of the add-on submission process. If you do so, the add-on will expire after the duration you specify (with options from 1-365 days), in which case a customer could purchase it again after it expires.
 
 #### Subscription
 
