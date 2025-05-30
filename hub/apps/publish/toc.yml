@@ -257,23 +257,13 @@ items:
             href: product-page-experiments.md
           - name: Use Microsoft Store Web Installer to distribute apps
             href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md  
-          - name: App management and services
+          - name: Product management
             href: app-management-and-services.md
             items: 
               - name: View product identity details
                 href: view-app-identity-details.md
-              - name: Generate preinstall packages for OEMs
-                href: generate-preinstall-packages-for-oems.md
-              - name: Organizational Licensing options
-                href: organizational-licensing.md
-              - name: Package Flights
-                href: package-flights.md
-              - name: Gradual Package Rollout
-                href: gradual-package-rollout.md
-              - name: Beta testing and targeted distribution
-                href: beta-testing-and-targeted-distribution.md
-              - name: Distribute LOB apps to enterprises
-                href: distribute-lob-apps-to-enterprises.md
+              - name: Package and distribution
+                href: package-and-distribution.md
           - name: Attract and promote
             href: attract-customers-and-promote-your-apps.md
             items: 
