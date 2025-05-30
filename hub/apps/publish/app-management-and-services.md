@@ -21,7 +21,7 @@ The **Services** section lets you manage several different services for your app
 
 If you are publishing a game, you can enable the [Xbox Live Creators Program](https://www.xbox.com/developers/creators-program) on this page. This lets you start configuring and testing Xbox Live features, and eventually publish your Xbox Live Creators Program game.
 
-For more info, see [Get started with the Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) and [Create a new Xbox Live Creators Program title and publish to the test environment](/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
+For more info, see [Xbox services overview](/gaming/gdk/docs/services/fundamentals/live-xbl-overview).
 
 ## Experimentation
 
