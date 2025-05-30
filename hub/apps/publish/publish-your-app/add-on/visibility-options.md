@@ -18,7 +18,7 @@ The Audience section lets you specify whether you want to restrict the visibilit
 
 ### Public audience
 
-By default, your app’s Store listing will be visible to a **Public audience**. This is appropriate for most submissions, unless you want to limit who can see your app’s listing to specific people. You can also use the options in the [Discoverability](#discoverability) section to restrict discoverability if you’d like.
+By default, your app’s Store listing will be visible to the **Public audience**. This is appropriate for most submissions, unless you want to limit who can see your app’s listing to specific people. You can also use the options in the [Discoverability](#discoverability) section to restrict discoverability if you’d like.
 
 > [!IMPORTANT]
 > If you submit a product with this option set to **Public audience**, you can't choose **Private audience** in a later submission.

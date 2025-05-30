@@ -38,7 +38,7 @@ For more info, see [Configure precise release scheduling](./schedule-pricing-cha
 ## Pricing
 
 You must select a base price for your add-on (unless you have selected the **Stop acquisition** option in the **Visibility** section). For **Subscription** product type, the base price default selection is **Free**, for other product types there is no a default base price but it can be selected from the retail price dropdown after selecting the currency.
-If you want to charge money for the add-on, be sure to choose one of the available price tiers (starting at .99 USD).
+If you want to charge money for the add-on, be sure to choose one of the available price tiers (starting at $0.99 USD).
 
 You can also schedule price changes to indicate the date and time at which the add-on’s price should change. Additionally, you have the option to customize these changes for specific markets.
 

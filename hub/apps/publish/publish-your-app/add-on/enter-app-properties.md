@@ -29,7 +29,7 @@ If you selected **Store-managed consumable** for your product type, **Quantity**
 
 ## Subscription period
 
-If you selected **Subscription** for your product type, **Subscription period** is shown here. Choose an option to specify how frequently a customer will be charged for the subscription. The default option is **Monthly**, but you can also select **3 months**, **6 months**, **Annually**, or **24 months**.
+If you selected **Subscription** for your product type, **Subscription period** is shown here. Select an option to specify how frequently a customer will be charged for the subscription. The default option is **Monthly**, but you can also select **3 months**, **6 months**, **Annually**, or **24 months**.
 
 > [!IMPORTANT]
 > After your add-on is published, you can't change your **Subscription period** selection.
@@ -85,7 +85,7 @@ Enter the URL of the web page where your customers can go for support with your 
 
 ## Phone number and address info
 
-Enter Phone number, Address, Apartment / Suite, City, State / Province, Country and Postal code so customers can reach out to you in case of any concern or dispute.
+Enter your phone number, address, apartment/suite, city, state/province, country, and postal code so customers can contact you in case of any concern or dispute.
 
 > [!IMPORTANT]
 > Businesses / Company accounts offering products in France market need to ensure to provide this info for compliance with France Consumer Protection Laws and Regulations 2023 - 2024. This is optional for individual developers.

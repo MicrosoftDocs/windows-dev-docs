@@ -29,7 +29,7 @@ Note that your selections here apply only to new acquisitions; if someone alread
 > Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. See [company account verification requirements](/windows/apps/publish/store-business-verification-reqs) for more information. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](../msix/age-ratings.md) for more info.
 
 > [!NOTE]
-> You will also see a checkbox that lets you indicate whether to offer your app in any market that the Store may add in the future. If you leave this box checked, and we later add new markets, the base price and general availability date for your submission will be used for your app in those markets. If you don't want this to happen, you can uncheck this box, in which case we will not list your app in any future markets (though you can always add them later).
+> You will also see a checkbox that lets you indicate whether to offer your app in any market that the Store may add in the future. If you leave this box checked and we later add new markets, the base price and general availability date for your submission will be used for your app in those markets. If you don't want this to happen, you can uncheck this box, in which case we will not list your app in any future markets (though you can always add them later).
 
 ## Microsoft Store consumer markets
 

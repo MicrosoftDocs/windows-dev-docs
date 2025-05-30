@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Create add-on store listings
 
-When submitting an add-on in [Partner Center](https://partner.microsoft.com/dashboard), the info you provide in the **Store listings** step will be displayed to your customers when they see the option to acquire your add-on. Make sure to consider the Store listing info carefully in order to represent your add-on accurately in a way that makes it appealing to customers. You can provide customized Store listings for different languages.
+When submitting an add-on in [Partner Center](https://partner.microsoft.com/dashboard), the info you provide in the **Store listings** step will be displayed to your customers when they see the option to acquire your add-on. Be sure to consider the Store listing info carefully in order to represent your add-on accurately in a way that makes it appealing to customers. You can provide customized Store listings in different languages.
 
 > [!TIP]
 > You can also [import and export Store listings](./import-and-export-store-listings.md) for your add-on if you'd like to enter your listing info offline in a .csv file, rather than providing this info directly in Partner Center. This may be especially convenient when creating listings in many languages. However, you can always enter your info directly in [Partner Center](https://partner.microsoft.com/dashboard) rather than using the import/export feature.
@@ -33,7 +33,7 @@ You must provide a title here, which is the name your customers will see for thi
 
 ## Description
 
-You must provide a description of up to 200 characters. This information will be displayed to customers along with the title.
+You must provide a description, up to 200 characters. This information will be displayed to customers along with the title.
 
 ## Icon
 
