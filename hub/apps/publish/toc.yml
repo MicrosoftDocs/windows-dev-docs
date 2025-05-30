@@ -207,6 +207,10 @@ items:
             href: publish-your-app/add-on/manage-submission-options.md  
           - name: Update existing add-on
             href: publish-your-app/add-on/publish-update-to-your-app-on-store.md  
+  - name: Best practices
+    items: 
+      - name: Best practices for app submission
+        href: /hub/apps/publish/best-practices/best-practices.md
 - name: Get your app certified
   items: 
     - name: MSIX
