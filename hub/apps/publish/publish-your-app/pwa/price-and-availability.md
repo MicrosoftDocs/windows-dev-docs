@@ -81,7 +81,7 @@ For more info, see [Put apps and add-ons on sale](../../put-apps-and-add-ons-on-
 
 By default, your app may be offered to organizations to purchase in volume. You can indicate whether and how your app can be offered in this section.
 
-For more info, see [Organizational licensing options](../../organizational-licensing.md).
+For more info, see [Organizational licensing options](../../package-and-distribution.md#organizational-licensing).
 
 ## Publish date
 

@@ -22,7 +22,7 @@ By default, your response will be posted in the Store, directly below the origin
 
 If you don't want your response to appear in the Store, and instead want to respond only via email to the customer, uncheck the **Make this response public** box. Note that you will not be able to uncheck this box if the customer has opted out of receiving email responses and/or if they are using a device that is not running Windows 10, version 1803 or later.
 
-## Guidelines for responses
+## Guidelines for review responses
 
 When responding to a customer's review, you must follow these guidelines. These apply to all responses, whether they are public or not.
 
@@ -88,7 +88,7 @@ Along with updating the status, you can enter a comment to provide more info, su
 Using the **Update status** option allows you to change the status whenever you want (along with providing updated descriptions for each status change). Whenever you change the status of a piece of feedback, the status will be updated in Feedback Hub so that customers viewing your response will see the latest status.
 
 
-## Guidelines for responses
+## Guidelines for feedback responses
 
 No matter which method you use to respond to a customer’s feedback, you must follow these guidelines for all responses.
 - Responses must be no longer than 1000 characters.

@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 Engaging with your customers at the right time and with the right message is key to your success as an app developer. Notifications can encourage your customers to take an action, such as rating an app, buying an add-on, trying a new feature, or downloading another app (perhaps for free with a [promotional code](generate-promotional-codes.md) that you provide).
 
-[Partner Center](https://partner.microsoft.com/dashboard) provides a data-driven customer engagement platform you can use to send notifications to all of your app's customers, or only targeted to a subset of your app's Windows 10 or Windows 11 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md). You can also create a notification to be sent to customers of more than one of your apps.
+[Partner Center](https://partner.microsoft.com/dashboard) provides a data-driven customer engagement platform you can use to send notifications to all of your app's customers, or only targeted to a subset of your app's Windows 10 or Windows 11 customers who meet the criteria you’ve defined in a [customer segment](create-customer-groups.md#create-customer-segments). You can also create a notification to be sent to customers of more than one of your apps.
 
 > [!IMPORTANT]
 > These notifications can only be used with UWP apps.
@@ -33,7 +33,7 @@ When considering the content of your notifications, keep in mind:
 At a high-level, you need to do three things to use notifications to engage with your customers.
 
 1. **Register your app to receive push notifications.** You do this by adding a reference to the Microsoft Store Services SDK in your app and then adding a few lines of code that registers a notification channel between Partner Center and your app. We’ll use that channel to deliver your notifications to your customers. For details, see [Configure your app for targeted push notifications](/windows/uwp/monetize/configure-your-app-to-receive-dev-center-notifications).
-2. **Decide which customers to target.** You can send your notification to all of your app's customers, or (for notifications created for a single app) to a group of customers called a *segment*, which you can define based on demographic or revenue criteria. For more info, see [Create customer segments](create-customer-segments.md).
+2. **Decide which customers to target.** You can send your notification to all of your app's customers, or (for notifications created for a single app) to a group of customers called a *segment*, which you can define based on demographic or revenue criteria. For more info, see [Create customer segments](create-customer-groups.md#create-customer-segments).
 3. **Create your notification content and send it out.** For example, you might create a notification that encourages new customers to rate your app, or send a notification promoting a special deal to purchase an add-on.
 
 
