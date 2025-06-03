@@ -47,6 +47,11 @@ The option allows you to toggle the display of filename extensions. When this op
 
 The option gives you the ability to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named "1. filename" will be displayed as is. However, when this option is toggled on, the template will be displayed as "filename". This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.
 
+#### Hide the built-in New context menu
+
+With this option you can hide the File Explorer built-in New content menu.
+Note: You will need to run PowerToys as an Administrator to toggle this option. Also note, as a precaution, the built-in New will automatically be turned-back-on during PowerToys uninstall.
+
 ### Behavior
 
 #### Replace variables in template filename
