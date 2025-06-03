@@ -16,7 +16,7 @@ The **GetItems** method retrieves the items in the current page of the list. Thi
 
 ## Returns
 
-An array of [IListItem](../microsoft-commandpalette-extensions/ilistitem.md) imlementations containing the items in the current page of the list. The number of items returned is determined by the **PageSize** property of the **ListItems** class.
+An array of [IListItem](../microsoft-commandpalette-extensions/ilistitem.md) implementations containing the items in the current page of the list. The number of items returned is determined by the **PageSize** property of the **ListItems** class.
 
 ## Related content
 
