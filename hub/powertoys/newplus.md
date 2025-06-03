@@ -51,7 +51,8 @@ The option gives you the ability to toggle the display of starting digits, space
 
 With this option, you can hide the File Explorer built-in New content menu.
 
-Note: You will need to run PowerToys as an Administrator to toggle this option. Also note, as a precaution, the built-in New will automatically be turned-back-on during PowerToys uninstall.
+> [!NOTE]
+> You need to run PowerToys as an Administrator to toggle this option. Also note that, as a precaution, the built-in New menu will automatically be re-enabled during PowerToys uninstall.
 
 ### Behavior
 
