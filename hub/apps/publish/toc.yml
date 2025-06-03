@@ -286,10 +286,6 @@ items:
             items: 
               - name: Create customer groups
                 href: create-customer-groups.md
-              - name: Respond to customer reviews and feedback
-                href: respond-to-customer-reviews.md
-              - name: Send notifications to your app's customers
-                href: send-push-notifications-to-your-apps-customers.md
               - name: Use targeted offers
                 href: use-targeted-offers-to-maximize-engagement-and-conversions.md
     - name: Microsoft Store Developer CLI (preview)

@@ -71,26 +71,6 @@ Run experiments in your apps to measure the effectiveness of feature changes bef
         ![App feedback](images/engage-feedback.png)
     :::column-end:::
     :::column span="2":::
-**App feedback**
-
-Invite your Windows 10 or Windows 11 customers to tell you what they think by directing them to the Feedback Hub, where they can submit problems, suggestions, and upvotes. Then review and respond to their feedback in the dashboard.
-
-[Get feedback](respond-to-customer-reviews.md#respond-to-customer-feedback)
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![Respond to reviews](images/ads-community-campaign.png)
-    :::column-end:::
-    :::column span="2":::
-**Respond to reviews**
-
-Follow up and connect with your customers by responding publicly or privately to their reviews. You can submit your responses either in the dashboard or by using our REST API.
-
-[Respond to reviews](respond-to-customer-reviews.md#respond-to-customer-reviews)
-    :::column-end:::
-:::row-end:::
 
 ## Engagement analytics
 

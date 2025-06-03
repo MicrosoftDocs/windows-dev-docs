@@ -15,7 +15,7 @@ To view and create customer groups, expand **Engage** in the left navigation men
 
 Currently, two types of customer groups are supported:
 
-- **Segments.** These are dynamically-created groups of Windows 10 or Windows 11 customers who meet the demographic or revenue criteria that you choose. Segments are typically used with [push notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md). For more info, see [Create customer segments](#create-customer-segments).
+- **Segments.** These are dynamically-created groups of Windows 10 or Windows 11 customers who meet the demographic or revenue criteria that you choose. Segments are typically used with [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md). For more info, see [Create customer segments](#create-customer-segments).
 - **Known user groups.** These are groups of specific customers, created from the email addresses associated with their Microsoft accounts. Known user groups are most often used with [package flighting](package-and-distribution.md#package-flights) in order to deliver specific packages to customers in that group, or for distribution of a submission to a [private audience](publish-your-app/msix/visibility-options.md#audience). For more info, see [Create known user groups](#create-known-user-groups).
 
 ## Create customer segments
@@ -27,10 +27,9 @@ For example, you could create a segment that includes only customers who are age
 We provide a few segment templates to help get you started, but you can define and combine the criteria however you'd like.
 
 > [!TIP]
-> Segments can be used to send [targeted notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of customers as part of your engagement campaigns.
+> Segments can be used to send [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of customers as part of your engagement campaigns.
 
 Things to keep in mind about customer segments:
-- After you save a segment, it takes 24 hours before you’ll be able to use it for [targeted push notifications](send-push-notifications-to-your-apps-customers.md).
 - Segment results are refreshed daily, so you may see the total count of customers in a segment change from day to day as customers drop in or out of the segment criteria.
 - Most segment attributes are calculated using all historical data, although there are some exceptions. For example, **App acquisition date**, **Campaign ID**, **Store page view date**, and **Referrer URI domain** are limited to the last 90 days of data.
 - Segments only include customers who acquired your app on Windows 10 or Windows 11 while signed in with a valid Microsoft account. 
@@ -74,7 +73,7 @@ If you view the results and **Customers in this segment** says **Small**, the se
 
 ## Create known user groups
 
-Known user groups let you add specific people to a group, using the email address associated with their Microsoft account. These known user groups are most often used to distribute specific packages to a selected group of people with [package flights](package-and-distribution.md#package-flights), or for distribution of a submission to a [private audience](publish-your-app/msix/visibility-options.md#audience). They can also be used for engagement campaigns, such as sending [targeted notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of specific customers.
+Known user groups let you add specific people to a group, using the email address associated with their Microsoft account. These known user groups are most often used to distribute specific packages to a selected group of people with [package flights](package-and-distribution.md#package-flights), or for distribution of a submission to a [private audience](publish-your-app/msix/visibility-options.md#audience). They can also be used for engagement campaigns, such as sending [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of specific customers.
 
 In order to be counted as a member of the group, each person must be authenticated with the Store using the Microsoft account associated with the email address you provide. To download the app with package flighting, group members must be using a version of Windows 10 or Windows 11 that supports package flights (Windows.Desktop build 10586 or later or Xbox One). With private audience submissions, group members must be using Windows 10, version 1607 or later (including Xbox One).
 
