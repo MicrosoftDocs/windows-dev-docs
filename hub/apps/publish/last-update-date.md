@@ -9,9 +9,6 @@ ms.localizationpriority: medium
 
 # What’s new: Last Updated Date in Microsoft Store
 
-> [!IMPORTANT] 
-> Last Updated Date in Microsoft Store is coming soon for all MSIX & Win32 products.
-
 Microsoft Store will now display the Last updated date on your product page, giving customers greater visibility into your product’s maintenance and release cadence.
 This date will reflect when your most recent package update became available to all Microsoft Store users. 
 
