@@ -41,8 +41,7 @@ Note that some permissions cannot be set for add-ons. This is either because the
 | **Permission name** | **Read only** | **Read/write** | **Read only (Add‑on)** | **Read‑write (Add‑on)** |
 | ---------- | ---------- | ---------- |----------|----------|
 | **Promotional codes** | Can view <a href="..\generate-promotional-codes.md">promotional code</a> orders and usage info for the product and its add-ons, and can view usage info. | Can view, manage, and create <a href="..\generate-promotional-codes.md">promotional code</a> orders for the product and its add-ons, and can view usage info. | N/A (settings for parent product apply to all add-ons) | N/A (settings for parent product apply to all add-ons) |
-| **Targeted offers** | Can view <a href="..\use-targeted-offers-to-maximize-engagement-and-conversions.md">targeted offers</a> for the product. | Can view, manage and create <a href="..\use-targeted-offers-to-maximize-engagement-and-conversions.md">targeted offers</a> for the product. | N/A | N/A |
-| **Experimentation** | Can view <a href="\windows\uwp\monetize\run-app-experiments-with-a-b-testing">experiments (A/B testing)</a> and view experimentation data for the product. | Can create, manage, and view <a href="\windows\uwp\monetize\run-app-experiments-with-a-b-testing">experiments (A/B testing)</a> for the product, and view experimentation data. | N/A | N/A |
+| **Targeted offers** | Can view <a href="..\use-targeted-offers-to-maximize-engagement-and-conversions.md">targeted offers</a> for the product. | Can view, manage and create <a href="..\use-targeted-offers-to-maximize-engagement-and-conversions.md">targeted offers</a> for the product. | N/A | N/A |\
 | **Store sale events** *| Can view sale event status for the product. | Can add the product to sale events and configure discounts. | Can view sale event status for the product. |Can add the product to sale events and configure discounts.  |
 
 ## Publishing

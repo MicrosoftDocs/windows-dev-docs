@@ -7791,11 +7791,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/publish/organizational-licensing.md",
-      "redirect_url": "/windows/apps/publish/organizational-licensing",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "uwp/publish/package-flights.md",
       "redirect_url": "/windows/apps/publish/package-flights",
       "redirect_document_id": false
