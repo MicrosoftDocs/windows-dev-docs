@@ -209,6 +209,8 @@ items:
     items: 
       - name: Best practices for app submission
         href: /hub/apps/publish/best-practices/best-practices.md
+      - name: App Quality
+        href: store-app-quality.md
 - name: Get your app certified
   items: 
     - name: MSIX
@@ -402,8 +404,6 @@ items:
         href: https://aka.ms/disclosurepolicypdf
       - name: Resources
         items:
-          - name: App Quality
-            href: store-app-quality.md
           - name: EU Digital Services Act requirements
             href: store-business-verification-reqs.md
           - name: Microsoft Edge Add-ons store developer policies
