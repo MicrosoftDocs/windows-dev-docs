@@ -32,6 +32,9 @@ Here's a list of the info that you provide when creating your add-on submission.
 | **Keywords**              | Optional (up to 10 keywords, 30 character limit each)                                                |
 | **Custom developer data** | Optional (3000 character limit)                                                                      |
 
+> [!TIP]
+> For detailed information about the **Properties** fields, see the [Enter add-on properties](./enter-app-properties.md) section.
+
 ### Pricing and availability page
 
 | Field name       | Notes                                                                   |
@@ -41,6 +44,9 @@ Here's a list of the info that you provide when creating your add-on submission.
 | **Schedule**     | Default: Release as soon as possible                                    |
 | **Pricing**      | Required                                                                |
 | **Sale pricing** | Optional                                                                |
+
+> [!TIP]
+> For detailed information about the **Pricing and availability** fields, see the [Set app pricing and availability for add-on](./price-and-availability.md) section.
 
 ### Age ratings
 
@@ -60,6 +66,9 @@ At least one Store listing is required. We recommend that you provide Store list
 | **Icon**        | Optional (.png, 300x300 pixels) |
 
 When you've finished entering this info, click **Submit to the Store**. In most cases, the certification process takes about an hour. After that, your add-on will be published to the Store and ready for customers to purchase.
+
+> [!TIP]
+> For detailed information about the **Store listings** fields, see the [Create add-on store listings](./create-app-store-listing.md) section.
 
 > [!NOTE]
 > The add-on must also be implemented in your app's code. For more info, see [In-app purchases and trials](/windows/uwp/monetize/in-app-purchases-and-trials).
