@@ -31,6 +31,9 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Sale pricing**             | Not required |                      |
 | **Organizational licensing** | Not required |                      |
 
+> [!TIP]
+> For detailed information about the **Pricing and availability** fields, see the [Set pricing and availability](./price-and-availability.md) section.
+
 ### Properties page
 
 | Field name                   | Required     |
@@ -47,11 +50,17 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Product declarations**     | Not required |
 | **System requirements**      | Not required |
 
+> [!TIP]
+> For detailed information about the **Properties** fields, see the [Add app properties](./enter-app-properties.md) section.
+
 ### Age ratings page
 
 | Field name        | Notes        |
 | ------------------| ------------ |
 | **All questions** | **Required** |
+
+> [!TIP]
+> For detailed information about the **Age ratings** fields, see the [Generate age ratings](./age-ratings.md) section.
 
 ### Packages page
 
@@ -59,6 +68,9 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | ------------------------------ | ------------ | ------------------------------ |
 | **App package**                | **Required** | At least one package required. |
 | **Device family availability** | Not required |                                |
+
+> [!TIP]
+> For detailed information about the **Packages** fields, see the [Upload package](./upload-app-packages.md) section.
 
 ### Store listings
 
@@ -80,14 +92,21 @@ You'll need all the required info for at least one of the languages that your ap
 | **Additional license terms**                                      | Not required |                                                            |
 | **Developed by**                                                  | Not required |                                                            |
 
+> [!TIP]
+> For detailed information about the **Store listings** fields, see the [Store listings](./create-app-store-listing.md) section.
+
+
 ### Submission options page
 
 | Field name                           | Required     | 
 | ------------------------------------ | ------------ | 
 | **Publishing hold options**          | Not required |
-| **Notes for certification**          | Not required |
+| **Notes for certification**          | Not required |y
 | **Restricted capabilities**          | **Required** if your product declares any restricted capabilities |
 | **Submission notification audience** | Not required |
+
+> [!TIP]
+> For detailed information about the **Submission options** fields, see the [Upload package](./manage-submission-options.md ) section.
 
 Once you have completed all the sections, you can submit your app for certification by clicking **Submit for certification** button on the Application overview page.
 
