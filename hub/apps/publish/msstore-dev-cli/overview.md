@@ -55,3 +55,5 @@ These are the Microsoft Store Developer CLI (preview) available commands:
 | [init](./commands.md#init-command)               | Helps you setup your application to publish to the Microsoft Store.                                                                |
 | [package](./commands.md#package-command)         | Helps you package your Microsoft Store Application as an MSIX.                                                                     |
 | [publish](./commands.md#publish-command)         | Publishes your application to the Microsoft Store.                                                                                 |
+
+For more info, see: [Commands](commands.md).
