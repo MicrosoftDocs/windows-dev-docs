@@ -16,7 +16,7 @@ You can make changes to a published app at any time. To submit updates, go to th
 
 :::image type="content" source="images/msiexe-update-app.png" lightbox="images/msiexe-update-app.png" alt-text="A screenshot showing how to submit an update for EXE/MSI app.":::
 
-Go to the required sections like [Pricing and availability](./price-and-availability.md), [Properties](./enter-app-properties.md), [Age ratings](./age-ratings.md), [Packages](./upload-app-packages.md) and [Store listing](./create-app-store-listing.md) to make the changes you'd like and save them. Then click  **Publish** on Manage Store listing page.
+Go to the required sections like [Pricing and availability](./price-and-availability.md), [Properties](./enter-app-properties.md), [Age ratings](./age-ratings.md), [Packages](./upload-app-packages.md) and [Store listing](./add-and-edit-store-listing-info.md) to make the changes you'd like and save them. Then click  **Publish** on Manage Store listing page.
 
 > [!NOTE]
 >

@@ -16,7 +16,7 @@ items:
       - name: Reserve app name
         href: publish-your-app/msix/reserve-your-apps-name.md
       - name: Create app submission
-        href: publish-your-app/msix/create-app-submission.md
+        href: publish-your-app/msix/add-and-edit-store-listing-info.md
       - name: Set pricing and availability
         items:
           - name: Overview
@@ -68,7 +68,7 @@ items:
       - name: Reserve app name
         href: publish-your-app/msi/reserve-your-apps-name.md
       - name: Create app submission
-        href: publish-your-app/msi/create-app-submission.md
+        href: publish-your-app/msi/add-and-edit-store-listing-info.md
       - name: Set pricing and availability
         items:
           - name: Overview
@@ -104,7 +104,7 @@ items:
       - name: Create Store listings
         items:
           - name: Create Store listings
-            href: publish-your-app/msi/create-app-store-listing.md
+            href: publish-your-app/msix/add-and-edit-store-listing-info.md
           - name: Add and edit Store listing info
             href: publish-your-app/msi/add-and-edit-store-listing-info.md
           - name: Add app screenshots and images

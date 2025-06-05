@@ -17,7 +17,7 @@ Here are some tips for making your app's description the best it can be.
 - **Use lists and short paragraphs.** Potential customers may just take a quick glance at your app's description. Breaking up the content by using short paragraphs and lists makes it easier to scan.
 
   > [!NOTE]
-  >  Adding a list of [product features](create-app-store-listing.md) can also help to quickly show what your app does. This list appears directly below the app description.
+  >  Adding a list of [product features](./add-and-edit-store-listing-info.md) can also help to quickly show what your app does. This list appears directly below the app description.
 
 - **Avoid dry language.** Write your description using engaging language. Be sure the wording clearly describes what your app does, but say it in a way that doesn't sound boring. For many apps, a casual and friendly tone works well.
 - **Use a length that is just right.** A good description reads quickly, but also includes enough info to get the reader interested and explain what the app does. A complex app will need more sentences to describe it; a simple app may need only a few. In most cases the right length is somewhere over 200 words, but well under 3000.
