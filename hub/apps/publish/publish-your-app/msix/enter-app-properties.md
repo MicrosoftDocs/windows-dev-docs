@@ -21,7 +21,7 @@ For more info, see [Category and subcategory table](./categories-and-subcategori
 ## Privacy policy
 You must indicate whether your app accesses, collects, or transmits personal information. If it does, providing a valid privacy policy URL is required. If it doesn’t, the URL is optional—however, Microsoft may still require one based on the capabilities declared in your app package. Failure to include a required privacy policy may result in certification failure.
 
-For more details, see [Privacy policy for your MSIX app](./support-info.md#privacy-policy-url).
+For more details, see [Privacy policy for your MSIX app](./support-info.md).
 
 ## Support info
 
