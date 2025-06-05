@@ -17,19 +17,6 @@ Drive customer engagement and satisfaction by using features like push notificat
         ![Define customer segments](images/engage-pie-chart.png)
     :::column-end:::
     :::column span="2":::
-**Define customer segments**
-
-Use the dashboard to define segments of your app’s customers, based on demographic or revenue criteria that you choose. 
-
-[Define segments](create-customer-groups.md#create-customer-segments)
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![Targeted Offers](images/engage-phone-truck.png)
-    :::column-end:::
-    :::column span="2":::
 **Targeted Offers**
 
 Show attractive, personalized content to specific segments of your customers to increase engagement, retention, and monetization.
