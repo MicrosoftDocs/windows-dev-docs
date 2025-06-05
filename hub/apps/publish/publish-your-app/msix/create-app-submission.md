@@ -74,7 +74,7 @@ Items that you are required to provide or specify are noted below. Some areas ar
 
 ### Store listings
 
-You'll need all the required info for at least one of the languages that your app supports. We recommend providing [Store listings](./create-app-store-listing.md) in all of the languages your app supports, and you can also provide Store listings in additional languages. To make it easier to manage multiple listings for the same product, you can import and export Store listings.
+You'll need all the required info for at least one of the languages that your app supports. We recommend providing [Store listings](./add-and-edit-store-listing-info.md) in all of the languages your app supports, and you can also provide Store listings in additional languages. To make it easier to manage multiple listings for the same product, you can import and export Store listings.
 
 | Field name                                                        | Required     | Notes                                                      |
 | ----------------------------------------------------------------- | ------------ | ---------------------------------------------------------- |
@@ -93,7 +93,7 @@ You'll need all the required info for at least one of the languages that your ap
 | **Developed by**                                                  | Not required |                                                            |
 
 > [!TIP]
-> For detailed information about the **Store listings** fields, see the [Store listings](./create-app-store-listing.md) section.
+> For detailed information about the **Store listings** fields, see the [Store listings](./add-and-edit-store-listing-info.md) section.
 
 
 ### Submission options page
@@ -101,7 +101,7 @@ You'll need all the required info for at least one of the languages that your ap
 | Field name                           | Required     | 
 | ------------------------------------ | ------------ | 
 | **Publishing hold options**          | Not required |
-| **Notes for certification**          | Not required |y
+| **Notes for certification**          | Not required |
 | **Restricted capabilities**          | **Required** if your product declares any restricted capabilities |
 | **Submission notification audience** | Not required |
 

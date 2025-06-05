@@ -114,7 +114,7 @@ For more information, please visit [Reserve your app's name - Windows apps | Mic
 
    - **Packages**: Upload the app packages for your app which will be downloaded by the Store user. [Upload app packages - Windows apps | Microsoft Learn](./publish-your-app/msix/upload-app-packages.md)
 
-   - **Store Listings**: Enter the app description, screenshots, and logos that will be displayed on your app’s Product Details Page (PDP) in the Store, by creating a Store listing. [Create app store listings - Windows apps | Microsoft Learn](./publish-your-app/msix/create-app-store-listing.md)
+   - **Store Listings**: Enter the app description, screenshots, and logos that will be displayed on your app’s Product Details Page (PDP) in the Store, by creating a Store listing. [Create app store listings - Windows apps | Microsoft Learn](./publish-your-app/msix/add-and-edit-store-listing-info.md)
 
    - **Submission options (optional)**: Enter notes for certification or decide when your app should publish to the Store using submission options. [Manage submission options - Windows apps | Microsoft Learn](./publish-your-app/msix/manage-submission-options.md)
 
