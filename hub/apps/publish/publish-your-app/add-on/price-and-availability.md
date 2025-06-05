@@ -33,7 +33,7 @@ For more info, see [Visibility options](./visibility-options.md).
 
 By default (unless you have selected one of the **Hidden in the Microsoft Store** options in the **Visibility** section), your add-on will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
 
-For more info, see [Configure precise release scheduling](./schedule-pricing-changes.md#configure-precise-release-scheduling).
+For more info, see [Configure precise release scheduling](./configure-release-schedule.md#configure-precise-release-scheduling).
 
 ## Pricing
 
