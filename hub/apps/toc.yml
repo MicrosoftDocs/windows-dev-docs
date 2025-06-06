@@ -340,7 +340,7 @@ items:
                     href: develop/widgets/widget-provider-manifest.md
                   - name: ActivateApplication protocol
                     href: develop/widgets/widget-provider-activateapplication-protocol.md
-            - name: Windows Copilot Runtime Actions
+            - name: Windows AI Foundry Actions
               items: 
                 - name: Overview
                   href: develop/actions/index.md
@@ -461,7 +461,13 @@ items:
             - name: Package your app using single-project MSIX
               href: windows-app-sdk/single-project-msix.md
             - name: Grant package identity by packaging with external location
-              href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+              items:
+              - name: Overview
+                href: desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md
+              - name: Grant package identity by packaging with external location in Visual Studio
+                href: desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio.md
+              - name: Grant package identity by packaging with external location manually
+                href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: Deployment
           items: 
             - name: Overview

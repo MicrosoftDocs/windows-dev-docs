@@ -6,28 +6,28 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Support info for MSI/EXE app
+# Privacy policy and support info
 
-This section lets you provide info to help customers understand more about your app and how to get support.
+## Privacy policy
 
-:::image type="content" source="images/msiexe-support-info.png" lightbox="images/msiexe-support-info.png" alt-text="A screenshot of the Properties section where you can provide support info for your app.":::
+You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy, if required.
 
-## Does this product access, collect or transmit personal information (data that could be used to identity a person)?
+In this section, you must indicate whether or not your app accesses, collects, or transmits any [personal information](../../store-policies.md#105-personal-information). If you answer **Yes**, a privacy policy is required. Otherwise, it is optional.
 
-_Required_
+If you already have a privacy policy hosted on your domain, you can directly provide that link. Otherwise, you can also provide the privacy policy text directly. The Store will use this privacy policy content for all the markets where your product is published.
 
-You are responsible for ensuring your app complies with applicable privacy laws and regulations, and for providing a valid privacy policy URL here if required.
-
-In this section, you must indicate whether your app accesses, collects, or transmits any [personal information](../../store-policies.md#105-personal-information). If you answer Yes, a privacy policy URL is required. Otherwise, it is optional (though if we determine that your app requires a privacy policy, and you have not provided one, your submission may fail certification).
+:::image type="content" source="images/msiexe-privacy-policy.png" lightbox="images/msiexe-privacy-policy.png" alt-text="A screenshot showing the privacy policy options for a developer.":::
 
 To help you determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md#105-personal-information).
 
 > [!NOTE]
-> Microsoft does not provide a default privacy policy for your app, and your app is not covered by any Microsoft privacy policy.
+> Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy.
 
-## Privacy policy URL
+## Support info
 
-_Required only if you answered yes to the previous question_
+This section lets you provide info to help customers understand more about your app and how to get support.
+
+:::image type="content" source="images/msiexe-support-info.png" lightbox="images/msiexe-support-info.png" alt-text="A screenshot of the Properties section where you can provide support info for your app.":::
 
 ## Website
 

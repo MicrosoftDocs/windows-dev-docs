@@ -80,7 +80,7 @@ Then, expand and edit the **Contact Info** section. Select **Update**.
 
 ![Additional Information for Verification location in Partner Center](images\account-verify-additional-info.png)
 
-5. Within this tab, you can chose between the two availabe identification options.
+5. Within this tab, you can chose between the two available identification options.
 
 * **DUNS ID**: This is the recommended and faster verification method. Simply enter your DUNS ID.
 

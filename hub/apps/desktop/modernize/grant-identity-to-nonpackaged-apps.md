@@ -1,6 +1,6 @@
 ---
+title: Grant package identity by packaging with external location manually
 description: Learn how to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.
-title: Grant package identity by packaging with external location
 ms.date: 10/13/2023
 ms.topic: article
 keywords: windows 10, desktop, sparse, package, identity, external, location, MSIX, Win32
@@ -8,18 +8,19 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-# Grant package identity by packaging with external location
+# Grant package identity by packaging with external location manually
 
-Many Windows features can be used by a desktop app only if that app has package identity at runtime. See [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps). If you have an existing desktop app, with its own installer, there's very little you need to change in order to benefit from package identity.
+For the motivations behind adding package identity, as well as the differences between building identity packages in Visual Studio and building them manually, see [Overview](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview).
 
-Starting in Windows 10, version 2004, you can grant package identity to an app simply by building and registering a *package with external location* with your app. Packaging with external location allows you to register a simple identity package in your existing installer without changing how or where you install your application. If you're familiar with full MSIX packaging, this is a much lighter-weight option as described below.
+This topic describes how to build and register an identity package manually. For info about building an identity package in Visual Studio, see [Grant package identity by packaging with external location in Visual Studio](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio).
 
-To build and register an identity package, follow these steps:
+These are the steps (which this topic describes in detail) to build and register an identity package manually:
 
 1. [Create a package manifest for the identity package](#create-a-package-manifest-for-the-identity-package)
 2. [Build and sign the identity package](#build-and-sign-the-identity-package)
 3. [Add identity metadata to your desktop application manifests](#add-identity-metadata-to-your-desktop-application-manifests)
 4. [Register the identity package in your installer](#register-the-identity-package-in-your-installer)
+5. [Optional steps](#optional-steps)
 
 ## Create a package manifest for the identity package
 
@@ -154,3 +155,14 @@ For production-ready code in C# and C++, see [Sample apps](#sample-apps) below. 
 ## Sample apps
 
 See the [PackageWithExternalLocation](https://aka.ms/sparsepkgsample) samples for fully functional C# and C++ apps that demonstrate how to register an identity package.
+
+## Optional steps
+
+### Localization
+
+Some features that understand package identity might result in strings from your identity package manifest being displayed in the Windows OS. For example:
+
+* An application that uses camera, microphone, or location APIs will have a dedicated control toggle in Windows Privacy Settings along with a brokered consent prompt that users can use to grant or deny access to those sensitive resources.
+* An application that registers a share target will show up in the share dialog.
+
+To localize the strings in the identity package manifest, see [Localize the manifest](/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games#phase-1-localize-the-manifest).

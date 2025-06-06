@@ -19,7 +19,7 @@ The primary use for Windows 11 Arm64 ISO files is to create virtual machines on 
 
 **Using a Windows on Arm device**: Arm64 ISO files can be used to create a VM in Hyper-V on Windows 11 Arm-based PCs by following the instructions found at [Create a virtual machine with Hyper-V on Windows 11](/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine).
 
-**Using an x64-based Windows device**: Arm64 VMs are not supported in Hyper-V on x64 hardware. To run an Windows on Arm VM from an x64-based device, create an Arm64 VM in the cloud using Azure. Find guidance here: [Quickstart - Create a Windows on Arm VM in the Azure portal](/windows/arm/create-arm-vm).
+**Using an x64-based Windows device**: Arm64 VMs are not supported in Hyper-V on x64 hardware. To run a Windows on Arm VM from an x64-based device, create an Arm64 VM in the cloud using Azure. Find guidance here: [Quickstart - Create a Windows on Arm VM in the Azure portal](/windows/arm/create-arm-vm).
 
 **Using an Arm-based Apple device**: Arm64 VMs can be created using Mac computers built with Arm-based Apple Silicon. [Learn more](https://support.microsoft.com/windows/options-for-using-windows-11-with-mac-computers-with-apple-m1-m2-and-m3-chips-cd15fd62-9b34-4b78-b0bc-121baa3c568c) about the options available and some of the limitations that apply.
 

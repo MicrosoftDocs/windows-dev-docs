@@ -102,7 +102,7 @@ Deploy and reload, and presto - a command to show a message box!
 
 ## Adding more pages
 
-So far, we've only worked with commands that "do something". However, you can also add commands that show additional pages withing the Command Palette. There are basically two types of "Commands" in the Palette:
+So far, we've only worked with commands that "do something". However, you can also add commands that show additional pages within the Command Palette. There are basically two types of "Commands" in the Palette:
 - **IInvokableCommand** - These are commands that *do something*.
 - **IPage** - These are commands that *show something*.
 

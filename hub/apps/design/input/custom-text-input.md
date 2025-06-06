@@ -5,22 +5,18 @@ ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 keywords: keyboard, text, core text, custom text, Text Services Framework, input, user interactions
-ms.date: 09/24/2020
+ms.date: 05/30/2025
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Custom text input
 
-
-
-The core text APIs in the [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) namespace enable a Windows app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](/windows/desktop/TSF/text-services-framework) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
+The core text APIs in the [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) namespace enable a Windows app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](/windows/desktop/TSF/text-services-framework) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type (such as keyboard, speech, or pen).
 
 > **Important APIs**: [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core), [**CoreTextEditContext**](/uwp/api/Windows.UI.Text.Core.CoreTextEditContext)
 
 ## Why use core text APIs?
-
 
 For many apps, the XAML or HTML text box controls are sufficient for text input and editing. However, if your app handles complex text scenarios, like a word processing app, you might need the flexibility of a custom text edit control. You could use the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) keyboard APIs to create your text edit control, but these don't provide a way to receive composition-based text input, which is required to support East Asian languages.
 

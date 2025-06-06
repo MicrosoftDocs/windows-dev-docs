@@ -173,7 +173,7 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-6.  Render each frame to the multisampled render target. When rendering is complete, call [**ID3D11DeviceContext::ResolveSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-resolvesubresource) before presenting the frame. This instructs Direct3D to peform the multisampling operation, computing the value of each pixel for display and placing the result in the back buffer. The back buffer then contains the final anti-aliased image and can be presented.
+6.  Render each frame to the multisampled render target. When rendering is complete, call [**ID3D11DeviceContext::ResolveSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-resolvesubresource) before presenting the frame. This instructs Direct3D to perform the multisampling operation, computing the value of each pixel for display and placing the result in the back buffer. The back buffer then contains the final anti-aliased image and can be presented.
 
     The following code resolves the subresource before presenting the frame:
 
