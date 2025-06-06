@@ -18,7 +18,6 @@ This topic describes the following URI schemes built into Windows:
 
 | URI Scheme | Launches |
 | ----------:|----------|
-| [bingmaps:, ms-drive-to:, and ms-walk-to:](#maps-app-uri-schemes) | Maps app |
 | [http: and https:](#http-uri-scheme) | Default web browser |
 | [mailto:](#email-uri-scheme) | Default email app |
 | [microsoft-edge:](#microsoft-edge-uri-scheme) | Microsoft Edge browser |
