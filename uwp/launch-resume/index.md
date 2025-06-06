@@ -52,7 +52,6 @@ The **Launch an app with a URI** section details how to use a Uniform Resource I
 | [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) | This topic describes the ms-tonepicker URI scheme and how to use it to display a tone picker to select a tone, save a tone, and get the friendly name for a tone. |
 | [Launch the Windows Settings app](/windows/apps/develop/launch/launch-settings-app) | Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages. |
 | [Launch the Microsoft Store app](/windows/apps/develop/launch/launch-store-app) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the UWP app to specific pages in the Store. |
-| [Launch the Windows Maps app](/windows/apps/develop/launch/launch-maps-app) | Learn how to launch the Windows Maps app from your app. |
 | [Launch the People app](/windows/apps/develop/launch/launch-people-app) | This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions. |
 | [Support web-to-app linking with app URI handlers](/windows/apps/develop/launch/web-to-app-linking) | Drive user engagement with your app by using app URI handlers. |
 
