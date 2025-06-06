@@ -163,7 +163,7 @@ Use the **http:** URI scheme to launch the default web browser.
 > [!IMPORTANT]
 > The Windows Maps app is deprecated and will be removed from the Microsoft Store by July 2025. At this time, there will also be a final update to the app from the Store that makes it nonfunctional. If you remove the app before July 2025, you can still reinstall it from the Store, but past July 2025 you won't be able to reinstall it.
 >
-> For more inforatmion, see [Resources for deprecated features - Maps app](/windows/whats-new/deprecated-features-resources#maps-app).
+> For more information, see [Resources for deprecated features - Maps app](/windows/whats-new/deprecated-features-resources#maps-app).
 
 Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to launch the Windows Maps app to specific maps, directions, and search results. For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
 
