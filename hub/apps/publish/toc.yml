@@ -191,18 +191,12 @@ items:
                     href: publish-your-app/add-on/visibility-options.md
                   - name: Set and schedule pricing
                     href: publish-your-app/add-on/schedule-pricing-changes.md
+                  - name: Configure release schedule
+                    href: publish-your-app/add-on/configure-release-schedule.md
           - name: Add properties
-            items:
-                  - name: Overview
-                    href: publish-your-app/add-on/enter-app-properties.md
-                  - name: Provide support info
-                    href: publish-your-app/add-on/support-info.md
+            href: publish-your-app/add-on/enter-app-properties.md
           - name: Create Store Listings
-            items:
-                  - name: Overview
-                    href: publish-your-app/add-on/create-app-store-listing.md
-                  - name: Add and edit Store listing info
-                    href: publish-your-app/add-on/add-and-edit-store-listing-info.md
+            href: publish-your-app/add-on/create-app-store-listing.md
           - name: Manage Submission options
             href: publish-your-app/add-on/manage-submission-options.md  
           - name: Update existing add-on

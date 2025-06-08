@@ -22,7 +22,7 @@ For more info and a full list of the available markets, see [Define market selec
 
 You can determine whether your add-on should be offered for purchase to customers.
 
-The default option is **Can be displayed in the parent product’s Store listing**. Leave this option checked for add-ons that will be made available to any customer.
+The default option is **Can be displayed in the parent product’s Microsoft Store listing**. Leave this option checked for add-ons that will be made available to any customer.
 
 For more info, see [Visibility options](./visibility-options.md).
 
@@ -31,13 +31,14 @@ For more info, see [Visibility options](./visibility-options.md).
 
 ## Schedule
 
-By default (unless you have selected one of the **Hidden in the Store** options in the **Visibility** section), your add-on will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
+By default (unless you have selected one of the **Hidden in the Microsoft Store** options in the **Visibility** section), your add-on will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
 
-For more info, see [Configure precise release scheduling](./schedule-pricing-changes.md#configure-precise-release-scheduling).
+For more info, see [Configure precise release scheduling](./configure-release-schedule.md#configure-precise-release-scheduling).
 
 ## Pricing
 
-You must select a base price for your add-on (unless you have selected the **Stop acquisition** option in the **Visibility** section). The default selection is **Free**, so if you want to charge money for the add-on, be sure to choose one of the available price tiers (starting at .99 USD).
+You must select a base price for your add-on (unless you have selected the **Stop acquisition** option in the **Visibility** section). For **Subscription** product type, the base price default selection is **Free**, for other product types there is no a default base price but it can be selected from the retail price dropdown after selecting the currency.
+If you want to charge money for the add-on, be sure to choose one of the available price tiers (starting at $0.99 USD).
 
 You can also schedule price changes to indicate the date and time at which the add-on’s price should change. Additionally, you have the option to customize these changes for specific markets.
 
