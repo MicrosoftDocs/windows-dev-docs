@@ -8762,7 +8762,7 @@
     },
     {
       "source_path": "uwp/launch-resume/launch-maps-app.md",
-      "redirect_url": "/windows/apps/develop/launch/launch-maps-app",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-app",
       "redirect_document_id": false
     },
     {
@@ -8888,6 +8888,11 @@
     {
       "source_path": "hub/apps/develop/actions/index.md",
       "redirect_url": "/windows/ai/app-actions/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/launch/launch-maps-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-app",
       "redirect_document_id": false
     }
   ]

@@ -23,7 +23,6 @@ This section describes how to use a URI to launch your Windows app.
 | [Launch an app for results](/windows/uwp/launch-resume/how-to-launch-an-app-for-results) | Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results. |
 | [Launch the Windows Settings app](launch-settings-app.md) | Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages. |
 | [Launch the Microsoft Store app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the Store. |
-| [Launch the Windows Maps app](launch-maps-app.md) | Learn how to launch the Windows Maps app from your app. |
 | [Launch the People app](launch-people-app.md) | This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions. |
 | [Launch screen snipping](launch-screen-snipping.md) | Learn how to use URI schemes to open a new snip, or to open the Snip & Sketch app. |
 | [Enable apps for websites using app URI handlers](web-to-app-linking.md) | Drive user engagement with your app by supporting the Apps for Websites feature. |
