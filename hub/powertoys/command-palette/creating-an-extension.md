@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 # Creating an extension
 
-The fastest way to get started writing extensions is from the Command Palette itself. Just run the "Create a new extension" command, fill out the fields to populate the template project, and you should be ready to start.
+Extensions are written in C#. The fastest way to get started writing extensions is from the Command Palette itself. Just run the "Create a new extension" command, fill out the fields to populate the template project, and you should be ready to start.
 
 ## Create a new extension
 
