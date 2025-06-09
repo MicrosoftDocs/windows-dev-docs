@@ -18,7 +18,6 @@ This topic describes the following URI schemes built into Windows:
 
 | URI Scheme | Launches |
 | ----------:|----------|
-| [bingmaps:, ms-drive-to:, and ms-walk-to:](#maps-app-uri-schemes) | Maps app |
 | [http: and https:](#http-uri-scheme) | Default web browser |
 | [mailto:](#email-uri-scheme) | Default email app |
 | [microsoft-edge:](#microsoft-edge-uri-scheme) | Microsoft Edge browser |
@@ -160,13 +159,18 @@ Use the **http:** URI scheme to launch the default web browser.
 
 ### Maps app URI schemes
 
-Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to [launch the Windows Maps app](launch-maps-app.md) to specific maps, directions, and search results. For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
+> [!IMPORTANT]
+> The Windows Maps app is deprecated and will be removed from the Microsoft Store by July 2025. At this time, there will also be a final update to the app from the Store that makes it nonfunctional. If you remove the app before July 2025, you can still reinstall it from the Store, but past July 2025 you won't be able to reinstall it.
+>
+> For more information, see [Resources for deprecated features - Maps app](/windows/whats-new/deprecated-features-resources#maps-app).
+
+Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to launch the Windows Maps app to specific maps, directions, and search results. For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
 
 `bingmaps:?cp=40.726966~-74.006076`
 
 :::image type="content" source="images/mapnyc.png" alt-text="A screenshot of the Windows Maps app.":::
 
-For more info, see [Launch the Windows Maps app](launch-maps-app.md). To use the map control in your UWP app, see [Display maps with 2D, 3D, and Streetside views](/windows/uwp/maps-and-location/display-maps). If you're using Windows App SDK 1.5 or later in a WinUI app or other desktop app, you can use the [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol).
+To use the map control in your UWP app, see [Display maps with 2D, 3D, and Streetside views](/windows/uwp/maps-and-location/display-maps). If you're using Windows App SDK 1.5 or later in a WinUI app or other desktop app, you can use the [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol).
 
 ### Messaging app URI scheme
 

@@ -76,8 +76,6 @@ items:
                 href: develop/launch/launch-default-apps-settings.md
               - name: Launch the Microsoft Store app
                 href: develop/launch/launch-store-app.md
-              - name: Launch the Windows Maps app
-                href: develop/launch/launch-maps-app.md
               - name: Launch Snipping Tool
                 href: develop/launch/launch-snipping-tool.md
                 items:

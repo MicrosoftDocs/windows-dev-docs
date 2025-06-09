@@ -90,9 +90,6 @@ Use a map control to show rich and customizable map data in your app. A map cont
 
 Use a map control when you want a map within your app that allows users to view app-specific or general geographic information. Having a map control in your app means that users don't have to go outside your app to get that information.
 
-> [!NOTE]
-> If you don't mind users going outside your app, consider using the Windows Maps app to provide that information. Your app can launch the Windows Maps app to display specific maps, directions, and search results. For more info, see [Launch the Windows Maps app](/windows/apps/develop/launch/launch-maps-app).
-
 ### Add a map control to your app
 
 Display a map on a XAML page by adding a [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl). To use the **MapControl**, you must declare the [**Windows.UI.Xaml.Controls.Maps**](/uwp/api/Windows.UI.Xaml.Controls.Maps) namespace in the XAML page or in your code. If you drag the control from the Toolbox, this namespace declaration is added automatically. If you add the **MapControl** to the XAML page manually, you must add the namespace declaration manually at the top of the page.
