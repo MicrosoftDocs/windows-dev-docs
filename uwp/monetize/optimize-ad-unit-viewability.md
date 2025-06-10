@@ -2,7 +2,7 @@
 description: Learn about the guidelines for optimizing the viewability of your ad units and how to measure your viewability metrics with the Advertising performance report. 
 title: Optimize the viewability of your ad units
 ms.date: 02/18/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, ads, advertising, guidelines, viewability
 ms.localizationpriority: medium
 ---

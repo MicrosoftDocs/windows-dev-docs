@@ -3,7 +3,7 @@ description: The Microsoft Store Services SDK provides libraries and tools that 
 title: Engage customers with the Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ms.date: 08/21/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ---

@@ -2,7 +2,7 @@
 description: Use this method in the Microsoft Store analytics API to get aggregate add-on acquisition data in JSON format for UWP apps and Xbox One games that were ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Partner Center dashboard.  
 title: Get add-on acquisitions data for your games and apps 
 ms.date: 03/06/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, advertising network, app metadata
 ms.localizationpriority: medium
 ---

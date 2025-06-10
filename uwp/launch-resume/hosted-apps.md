@@ -2,7 +2,7 @@
 description: Learn how to build a hosted app that inherits the executable, entry point and runtime attributes of a host app.
 title: Create hosted apps
 ms.date: 05/26/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, desktop, package, identity, MSIX, Win32
 ms.localizationpriority: medium
 ms.custom: RS5

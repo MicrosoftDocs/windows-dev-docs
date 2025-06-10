@@ -3,7 +3,7 @@ ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
 description: Use this method in the Microsoft Store submission API to commit a new or updated add-on submission to Partner Center.
 title: Commit an add-on submission
 ms.date: 04/17/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, commit add-on submission, in-app product, IAP
 ms.localizationpriority: medium
 ---
