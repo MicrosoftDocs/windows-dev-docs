@@ -3,7 +3,7 @@ description: Enables users to view and set ratings that reflect satisfaction wit
 title: Rating Control
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: concept-article
 doc-status: Published
 ms.localizationpriority: medium
 ---

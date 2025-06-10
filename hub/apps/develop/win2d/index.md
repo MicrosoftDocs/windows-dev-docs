@@ -2,7 +2,7 @@
 title: Overview of Win2D
 description: Win2D is an easy-to-use Windows Runtime API for immediate-mode 2D graphics rendering with GPU acceleration.
 ms.date: 10/23/2023
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games
 ms.localizationpriority: medium
 ---

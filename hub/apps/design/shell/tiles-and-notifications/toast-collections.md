@@ -4,7 +4,7 @@ description: Learn how to organize toast notifications for your app by creating,
 label: Toast Collections
 template: detail.hbs
 ms.date: 05/16/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, notification, collections, collection, group notifications, grouping notifications, group, organize, Action Center, toast
 ms.localizationpriority: medium
 ---

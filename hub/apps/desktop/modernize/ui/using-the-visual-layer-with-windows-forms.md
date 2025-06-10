@@ -2,7 +2,7 @@
 title: Using the Visual Layer with Windows Forms
 description: Learn techniques for using the Visual Layer APIs in combination with existing Windows Forms content to create advanced animations and effects.
 ms.date: 03/18/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

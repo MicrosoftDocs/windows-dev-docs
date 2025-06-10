@@ -4,7 +4,7 @@ description: Extend Cortana with features from your app (as a background task) u
 
 ms.assetid: e2c7eae3-6beb-4156-92a5-474bba53451e
 ms.date: 09/24/2019
-ms.topic: article
+ms.topic: how-to
 
 keywords: cortana
 ---

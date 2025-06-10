@@ -2,7 +2,7 @@
 title: Grant package identity by packaging with external location manually
 description: Learn how to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.
 ms.date: 10/13/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, desktop, sparse, package, identity, external, location, MSIX, Win32
 ms.localizationpriority: medium
 ms.custom: RS5

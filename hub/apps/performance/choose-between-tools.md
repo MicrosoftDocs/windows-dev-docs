@@ -1,7 +1,7 @@
 ---
 title: Choosing between Visual Studio Performance Profiler and Windows Performance Toolkit
 description: Learn how to select between Visual Studio Performance Profiler and Windows Performance Toolkit for general purpose performance analysis activities on Windows
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/27/2025
 ms.localizationpriority: medium
 ---

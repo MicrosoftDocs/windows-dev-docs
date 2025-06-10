@@ -2,7 +2,7 @@
 title: Calling and overriding your base type with C++/WinRT
 description: How to call and override your base type with C++/WinRT.
 ms.date: 09/11/2023
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, access, call, base type, base, type
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 description: This tutorial demonstrates how to make it easier to choose the date for an expense report on a touch-enabled device.
 title: Add a UWP CalendarView control using XAML Islands
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/27/2019
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium

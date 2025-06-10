@@ -6,7 +6,7 @@ label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 
 
 ---

@@ -4,7 +4,7 @@ title: Enable in-app product purchases
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: uwp, add-ons, in-app purchases, IAPs, Windows.ApplicationModel.Store
 ms.date: 08/25/2017
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium

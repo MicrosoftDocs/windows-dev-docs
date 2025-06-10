@@ -5,7 +5,7 @@ ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from C# apps
 template: detail.hbs
 ms.date: 11/27/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough, c#, csharp, win32, desktop
 ms.localizationpriority: medium
 ---

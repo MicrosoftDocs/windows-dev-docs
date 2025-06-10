@@ -3,7 +3,7 @@ description: Links the value of a property in a control template to the value of
 title: TemplateBinding markup extension
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 ms.date: 10/29/2018
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -2,7 +2,7 @@
 description:  Create a new Azure AD tenant to associate with your Partner Center account.
 title: Create a new Azure AD tenant to associate with your Partner Center account
 ms.date: 11/07/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

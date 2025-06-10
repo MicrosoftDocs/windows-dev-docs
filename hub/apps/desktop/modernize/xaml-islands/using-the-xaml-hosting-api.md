@@ -2,7 +2,7 @@
 description: This article describes how to host WinRT XAML UI in your desktop C++ desktop (Win32) app.
 title: Using the WinRT XAML hosting API in a C++ desktop (Win32) app
 ms.date: 03/23/2020
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, windows forms, wpf, win32, xaml islands
 ms.localizationpriority: medium
 ms.custom: 19H1

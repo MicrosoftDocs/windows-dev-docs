@@ -3,7 +3,7 @@ ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: Learn how to add application ID and ad unit ID values from Partner Center to your app before you submit your app to the Store.
 title: Set up ad units in your app
 ms.date: 02/18/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, ads, advertising, ad units, testing
 ms.localizationpriority: medium
 ---

@@ -2,7 +2,7 @@
 title: PointOfService device claim and enable model
 description: Use the Point of Service device claim and enable APIs to claim devices and enable them for I/O operations. 
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

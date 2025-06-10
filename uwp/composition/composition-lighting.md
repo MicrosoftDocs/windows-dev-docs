@@ -2,7 +2,7 @@
 title: Composition Lighting
 description: The Composition Lighting APIs can be used to add dynamic 3D lighting to your application.
 ms.date: 03/16/2023
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

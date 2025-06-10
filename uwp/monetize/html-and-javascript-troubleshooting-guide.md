@@ -3,7 +3,7 @@ ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Read about solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
 title: HTML and JavaScript troubleshooting guide
 ms.date: 02/18/2020
-ms.topic: article
+ms.topic: troubleshooting-general
 keywords: windows 10, uwp, ads, advertising, AdControl, troubleshooting, HTML, javascript
 ms.localizationpriority: medium
 ---

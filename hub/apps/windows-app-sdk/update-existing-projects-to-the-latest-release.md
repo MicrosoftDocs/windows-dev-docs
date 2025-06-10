@@ -1,7 +1,7 @@
 --- 
 title: Update existing projects to a different release of the Windows App SDK
 description: This article provides instructions for updating a project created with an earlier preview or release version of the Windows App SDK or WinUI 3 to the latest version.
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/03/2023
 keywords: windows win32, desktop development, Windows App SDK, Project Reunion
 ms.localizationpriority: medium

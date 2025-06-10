@@ -2,7 +2,7 @@
 title: Share code between a desktop application and a UWP app
 description: Learn how to move a desktop application from .NET Framework (with WPF and Windows Forms) or C++ Win32 APIs to Universal Windows Platform (UWP) and Windows 10/11.
 ms.date: 10/03/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

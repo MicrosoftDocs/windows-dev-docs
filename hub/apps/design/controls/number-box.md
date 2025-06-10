@@ -3,7 +3,7 @@ description: Number box is a control that can be used to display and edit number
 title: Number box
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---

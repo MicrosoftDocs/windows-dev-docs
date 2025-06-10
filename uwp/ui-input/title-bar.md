@@ -3,7 +3,7 @@ description: Customize the title bar of a UWP app to match the personality of th
 title: Title bar customization
 template: detail.hbs
 ms.date: 01/15/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, title bar
 ms.localizationpriority: medium
 ---

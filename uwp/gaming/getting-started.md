@@ -3,7 +3,7 @@ title: Getting started
 description: Learn how to get started right away developing games for Windows or Xbox by following this quick start guide.
 ms.assetid: 40490837-6c7f-4f82-96b5-14f6858982b3
 ms.date: 08/21/2024
-ms.topic: article
+ms.topic: get-started
 keywords: windows 10, uwp, games, getting started
 localizationpriority: medium
 ---

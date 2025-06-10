@@ -3,7 +3,7 @@ title: Distributing a managed Windows Runtime Component
 description: Learn ways to plan a distributable Windows Runtime Component and distribute it by using file copy or extension SDK.
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

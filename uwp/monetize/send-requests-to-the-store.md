@@ -3,7 +3,7 @@ description: You can use the SendRequestAsync method to send requests to the Mic
 title: Send requests to the Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 07/16/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ---

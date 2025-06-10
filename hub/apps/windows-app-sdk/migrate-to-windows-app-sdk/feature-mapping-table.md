@@ -1,7 +1,7 @@
 ---
 title: Mapping UWP features to the Windows App SDK
 description: This topic compares major feature areas in the different forms in which they appear in UWP and in the Windows App SDK.
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/01/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, mapping, mappings, uwp
 ms.localizationpriority: medium

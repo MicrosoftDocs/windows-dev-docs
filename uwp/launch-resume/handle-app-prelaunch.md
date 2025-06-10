@@ -3,7 +3,7 @@ title: Handle app prelaunch
 description: Learn how to handle app prelaunch by overriding the **OnLaunched** method, and calling **CoreApplication.EnablePrelaunch**.
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ms.date: 04/21/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, uwp
 ms.localizationpriority: medium
 ---

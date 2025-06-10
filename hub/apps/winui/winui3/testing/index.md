@@ -1,7 +1,7 @@
 ---
 title: Test apps built with the Windows App SDK and WinUI
 description: In this topic we recommend some approaches for testing and validating functionality in apps created with the Windows App SDK and Windows UI Library (WinUI) user interface (UI) features.
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/28/2024
 ms.localizationpriority: medium
 ---

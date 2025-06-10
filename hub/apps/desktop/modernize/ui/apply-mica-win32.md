@@ -1,7 +1,7 @@
 ---
 description: Learn how to apply the Mica material in your Win32 applications.
 title: Use Mica material in Win32 apps
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/13/2022
 ms.localizationpriority: medium
 ---

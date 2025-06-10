@@ -1,7 +1,7 @@
 ---
 title: How to target multiple platforms with your WinUI 3 app
 description: Reach more users with a single WinUI 3 / .NET codebase using Uno Platform.
-ms.topic: article
+ms.topic: how-to
 ms.date: 3/31/2023
 keywords: uno platform, winui
 ms.localizationpriority: medium

@@ -2,7 +2,7 @@
 title: Extend your app with Windows UI and components
 description: Extend your desktop application with UWP projects and Windows Runtime components to add modern Windows experiences.
 ms.date: 06/08/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -6,7 +6,7 @@ label: Specify the speech recognizer language
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium

@@ -1,7 +1,7 @@
 ---
 title: Get started with WinUI 2 for UWP
 description: How to install and use WinUI 2 for UWP. 
-ms.topic: article
+ms.topic: get-started
 ms.date: 04/21/2025
 keywords: windows 10, windows 11, Windows app development platform, desktop development, WinRT, uwp, toolkit sdk, winui
 ---

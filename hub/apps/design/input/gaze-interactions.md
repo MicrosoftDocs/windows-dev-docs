@@ -5,7 +5,7 @@ label: Gaze interactions
 template: detail.hbs
 keywords: gaze, eye tracking, head tracking, gaze point, input, user interaction, accessibility, usability
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges 
 doc-status: Draft

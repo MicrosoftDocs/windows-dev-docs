@@ -1,7 +1,7 @@
 ---
 title: Set up your dev environment on Windows for Rust
 description: Setting up your dev environment for beginners interested in developing on Windows with Rust.
-ms.topic: article
+ms.topic: how-to
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code
 ms.localizationpriority: medium
 ms.date: 12/13/2024

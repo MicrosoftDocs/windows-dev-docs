@@ -1,7 +1,7 @@
 ---
 title: Use cases for passkeys
 description: This topic describes some use cases for passkeys.
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/06/2024
 ---
 

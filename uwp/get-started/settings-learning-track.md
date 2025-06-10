@@ -2,7 +2,7 @@
 title: Save and load settings in a UWP app
 description: Learn how to save and load app settings in Universal Windows Platform apps.
 ms.date: 05/07/2018
-ms.topic: article
+ms.topic: how-to
 keywords: get started, uwp, windows 10, learning track, settings, save settings, load settings
 ms.localizationpriority: medium
 ms.custom: RS5

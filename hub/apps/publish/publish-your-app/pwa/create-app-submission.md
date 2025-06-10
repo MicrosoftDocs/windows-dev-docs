@@ -1,7 +1,7 @@
 ---
 title: Create an app submission for your PWA
 description: Create an app submission for your PWA app
-ms.topic: article
+ms.topic: how-to
 ms.date: 10/30/2022
 ---
 

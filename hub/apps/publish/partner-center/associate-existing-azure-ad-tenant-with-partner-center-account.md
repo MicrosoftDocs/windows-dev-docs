@@ -2,7 +2,7 @@
 description:  Associate your Partner Center account with your existing Azure Active tenant.
 title: Associate an existing Azure AD tenant with your Partner Center account
 ms.date: 11/07/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

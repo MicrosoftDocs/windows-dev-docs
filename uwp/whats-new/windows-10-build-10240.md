@@ -3,7 +3,7 @@ description: Windows 10 build 10240 and updates to developer tools continue to 
 title: What's new in Windows 10 build 10240 - July 2015
 keywords: Windows 10, 1507, 10240
 ms.date: 11/02/2017
-ms.topic: article
+ms.topic: whats-new
 
 
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8

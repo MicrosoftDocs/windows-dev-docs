@@ -3,7 +3,7 @@ ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: Use brushes
 description: Brush objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI.
 ms.date: 04/28/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

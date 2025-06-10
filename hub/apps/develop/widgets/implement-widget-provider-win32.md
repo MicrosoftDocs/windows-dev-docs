@@ -1,7 +1,7 @@
 ---
 title: Implement a widget provider in a win32 app (C++/WinRT)
 description: This article walks you through the process of creating widget provider, implemented in C++/WinRT that provides widget content and responds to widget actions. 
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/06/2022
 ms.localizationpriority: medium
 ---

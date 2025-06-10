@@ -2,7 +2,7 @@
 title: Publish your packaged desktop application to the Microsoft Store or sideload it onto one or more devices.
 description: Learn how to use Desktop Bridge to distribute a packaged desktop application to the Microsoft Store or sideload it onto one or more devices.
 ms.date: 05/18/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium

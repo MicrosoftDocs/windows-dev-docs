@@ -1,7 +1,7 @@
 ---
 description: Reserve your app add-on's name in the Microsoft Store
 title: Reserve your add-on's name
-ms.topic: article
+ms.topic: how-to
 ms.date: 10/30/2022
 ---
 

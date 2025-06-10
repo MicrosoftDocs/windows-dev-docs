@@ -2,7 +2,7 @@
 title: Company account verification requirements
 description: Company account verification requirements related to the European Union Digital Services Act
 ms.date: 2/27/2025
-ms.topic: article
+ms.topic: how-to
 keywords: store policies agreement archive DSA
 ms.localizationpriority: high
 ---

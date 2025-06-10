@@ -3,7 +3,7 @@ title: User Activities best practices
 description: This guide outlines the recommended practices for creating and updating User Activities.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
 ms.date: 05/05/2021
-ms.topic: article
+ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 

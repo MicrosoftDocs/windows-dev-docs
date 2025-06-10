@@ -1,7 +1,7 @@
 ---
 title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
-ms.topic: article
+ms.topic: get-started
 ms.date: 03/25/2025
 ---
 

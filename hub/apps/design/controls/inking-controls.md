@@ -4,7 +4,7 @@ title: Inking Controls
 label: Inking Controls
 template: detail.hbs
 ms.date: 06/24/2021
-ms.topic: article
+ms.topic: how-to
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ---
