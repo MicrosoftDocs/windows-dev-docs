@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 > The code listings in this topic are C# only. For an app service sample app in **C++/WinRT** as well as C#, see [App service sample app](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
 
 > [!IMPORTANT]
-> This topic applies to the Universal Windows Platform (UWP) apps that use .NET Native. Visual Studio 2022 now also includes UWP project templates that use .NET 9. For this topic, you must use the UWP project templates that include ".NET Native" in their names, such as **UWP Blank App (.NET Native)**. THe UWP projects that use .NET 9 have not been tested with this topic and may not work as expected.
+> This topic applies to the Universal Windows Platform (UWP) apps that use .NET Native. Visual Studio 2022 now also includes UWP project templates that use .NET 9. For this topic, you must use the UWP project templates that include ".NET Native" in their names, such as **UWP Blank App (.NET Native)**. The UWP projects that use .NET 9 have not been tested with this topic and may not work as expected.
 
 App services are UWP apps that provide services to other UWP apps. They are analogous to web services, on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.  App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices.
 
