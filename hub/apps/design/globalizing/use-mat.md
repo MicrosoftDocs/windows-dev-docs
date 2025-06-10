@@ -3,7 +3,7 @@ description: The Multilingual App Toolkit (MAT) integrates with Microsoft Visual
 title: Use the Multilingual App Toolkit
 template: detail.hbs
 ms.date: 04/11/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---

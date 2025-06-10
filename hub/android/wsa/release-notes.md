@@ -2,7 +2,7 @@
 title: Windows Subsystem for Android&trade;️ Release Notes
 description: Release notes for Windows Subsystem for Android.
 ms.reviewer: andreww-msft
-ms.topic: article
+ms.topic: release-notes
 ms.date: 03/05/2025
 ---
 

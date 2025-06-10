@@ -2,7 +2,7 @@
 title: Modernize your desktop app using the Visual layer
 description: Use the Visual layer to enhance the UI of your .NET or Win32 desktop app.
 ms.date: 03/18/2019
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

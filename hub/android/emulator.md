@@ -1,7 +1,7 @@
 ---
 title: Test on an Android device or emulator 
 description: Test your app on an Android device or emulator from Windows and enable virtualization with hyper-v and Windows Hypervisor Platform (WHPX).
-ms.topic: article
+ms.topic: how-to
 keywords: android, windows, emulator, virtual device, device setup, enable device, developer, configuration, virtualization, visual studio, hyper-v, intel, haxm, amd, Windows Hypervisor Platform, WHPX 
 ms.date: 04/28/2020
 ---

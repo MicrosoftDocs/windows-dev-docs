@@ -2,7 +2,7 @@
 description: This article demonstrates how to host a standard WinRT XAML control in a C++ desktop (Win32) app by using the XAML Hosting API.
 title: Host a standard WinRT XAML control in a C++ desktop (Win32) app using XAML Islands
 ms.date: 10/02/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, cpp, win32, xaml islands, wrapped controls, standard controls
 ms.localizationpriority: medium
 ms.custom: 19H1

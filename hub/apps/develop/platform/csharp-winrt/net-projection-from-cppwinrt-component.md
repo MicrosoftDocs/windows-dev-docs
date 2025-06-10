@@ -2,7 +2,7 @@
 title: Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET apps
 description: In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET applications.
 ms.date: 03/23/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
 ---

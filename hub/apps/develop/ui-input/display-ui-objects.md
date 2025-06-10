@@ -1,7 +1,7 @@
 ---
 title: Display WinRT UI objects that depend on CoreWindow
 description: You can use certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects in your desktop app by adding a little bit of interoperation code.
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/28/2023
 keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, WinUI, interop, IInitializeWithWindow, IInitializeWithWindow::Initialize, WinRT.Interop.InitializeWithWindow, IDataTransferManagerInterop, IUserConsentVerifierInterop
 ms.localizationpriority: medium

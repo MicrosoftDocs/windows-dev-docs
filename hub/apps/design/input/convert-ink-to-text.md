@@ -6,7 +6,7 @@ label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition, user interaction, input
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 # Recognize Windows Ink strokes as text and shapes

@@ -4,7 +4,7 @@ title: Toast headers
 label: Toast headers
 template: detail.hbs
 ms.date: 12/07/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, toast, header, toast headers, notification, group toasts, Action Center
 ms.localizationpriority: medium
 ---

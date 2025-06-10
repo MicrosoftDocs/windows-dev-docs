@@ -3,7 +3,7 @@ description: Learn how to integrate your app with the Windows shell.
 title: Shell overview for Windows apps
 keywords: uwp app, universal windows platform, app design, interface, shell
 ms.date: 09/30/2021
-ms.topic: article
+ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 # Shell

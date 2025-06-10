@@ -3,7 +3,7 @@ ms.assetid: 5931d63c-6b80-4e47-b371-ee299e308b8e
 title: Access files and folders with Windows App SDK and .NET
 description: Packaged Windows App SDK apps can leverage .NET APIs for reading and writing files, working with folders, and reading drive and volume information.
 ms.date: 06/16/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, windows, winui, windows app sdk, dotnet
 ms.localizationpriority: medium
 ---

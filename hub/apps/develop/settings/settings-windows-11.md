@@ -2,7 +2,7 @@
 title: Reference for Windows 11 settings
 description: This article provides reference information for accessing settings values on devices running Windows 11.
 ms.date: 05/06/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, settings
 ms.localizationpriority: medium
 ---

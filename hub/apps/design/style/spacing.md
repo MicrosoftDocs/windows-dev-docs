@@ -1,9 +1,9 @@
-﻿---
+---
 title: Spacing and Sizes
 description: The new Fluent Standard and Compact control styles ensure a comfortable user experience regardless of device and input method.
 keywords: UWP, Windows 10, controls, size, density, standard, compact
 ms.date: 11/27/2024
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---

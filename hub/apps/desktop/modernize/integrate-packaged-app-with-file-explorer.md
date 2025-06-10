@@ -2,7 +2,7 @@
 description: This article demonstrates different ways to integrate a packaged desktop app with File Explorer by using package extensions.
 title: Integrate a packaged desktop app with File Explorer
 ms.date: 05/03/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

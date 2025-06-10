@@ -1,11 +1,11 @@
-﻿---
+---
 title: 'Quickstart: Sending a push notification (XAML)'
 description: how to send push notifications using WNS
 ms:assetid: ADA6A0B8-9085-421f-B409-86806EA6BD75
 ms:mtpsurl: https://msdn.microsoft.com/en-us/library/Hh868252(v=Win.10)
 ms:contentKeyID: 45725055
 ms.date: 10/06/2021
-ms.topic: article
+ms.topic: quickstart
 mtps_version: v=Win.10
 dev_langs:
 - csharp

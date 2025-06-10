@@ -4,7 +4,7 @@ description: Learn how to implement a pull-to-refresh control that lets a user p
 label: Pull-to-refresh
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 doc-status: Published
 ms.localizationpriority: medium

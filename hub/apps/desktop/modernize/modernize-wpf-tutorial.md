@@ -1,7 +1,7 @@
 ---
 description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
 title: "Tutorial: Modernize a WPF app"
-ms.topic: article
+ms.topic: tutorial
 ms.date: 06/27/2019
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium

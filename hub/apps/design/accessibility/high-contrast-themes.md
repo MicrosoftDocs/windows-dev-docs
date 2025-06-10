@@ -5,7 +5,7 @@ label: Contrast design guidelines
 keywords: 
 template: detail.hbs
 ms.date: 02/27/2025
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

@@ -2,7 +2,7 @@
 description: You can use extensions to integrate your packaged desktop app with Windows 10 and later releases in predefined ways.
 title: Integrate your desktop app with Windows using packaging extensions
 ms.date: 05/07/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 11, windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
