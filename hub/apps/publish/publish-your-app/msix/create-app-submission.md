@@ -1,7 +1,7 @@
 ---
 title: Create an app submission for your MSIX app
 description: Create an app submission for your MSIX app
-ms.topic: article
+ms.topic: how-to
 ms.date: 10/30/2022
 ---
 

@@ -2,7 +2,7 @@
 title: PowerToys File Locksmith utility for Windows
 description: A Windows shell extension for checking which files are in use and by which processes.
 ms.date: 11/19/2024
-ms.topic: article
+ms.topic: how-to
 no-loc: [PowerToys, Windows, File Locksmith, Win]
 # Customer intent: Learn how to configure and use the File Locksmith utility in PowerToys.
 ---

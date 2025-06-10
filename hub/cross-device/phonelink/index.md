@@ -1,7 +1,7 @@
 ---
 title: Phone Link Task Continuity
 description: Phone Link enables synchronization between your Windows PC and mobile device. Learn how to integrate your Windows app with Phone Link for task continuity.
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/20/2024
 ---
 

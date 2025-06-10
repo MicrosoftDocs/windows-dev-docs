@@ -3,7 +3,7 @@ description: This article explains how to support copy and paste in Universal Wi
 title: Copy and paste
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 ms.date: 12/19/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

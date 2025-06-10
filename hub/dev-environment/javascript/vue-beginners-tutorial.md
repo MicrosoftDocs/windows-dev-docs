@@ -1,7 +1,7 @@
 ---
 title: Tutorial on Vue for beginners
 description: A guide to help beginners get started with Vue.js development on Windows.
-ms.topic: article
+ms.topic: tutorial
 keywords: Vue, Vue.js, VueJS, Vue on windows 10, Vue on Windows, learning vue, vue with windows, vue on windows for beginners, develop with vue on windows
 ms.localizationpriority: medium
 ms.date: 04/12/2021

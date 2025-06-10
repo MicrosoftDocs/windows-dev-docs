@@ -2,7 +2,7 @@
 title: Spring animations
 description: Learn how to create spring motion experiences in your apps by using the NaturalMotionAnimation APIs.
 ms.date: 10/10/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---

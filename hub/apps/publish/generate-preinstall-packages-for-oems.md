@@ -3,7 +3,7 @@ description: If your developer account has been granted the appropriate permissi
 title: Generate preinstall packages for OEMs
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 ms.date: 10/30/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

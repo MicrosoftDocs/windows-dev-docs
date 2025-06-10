@@ -1,7 +1,7 @@
 ---
 title: Latest experimental channel release notes for the Windows App SDK 1.7
 description: Learn about the latest experimental releases of the Windows App SDK 1.7.
-ms.topic: article
+ms.topic: release-notes
 ms.date: 04/15/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium

@@ -4,7 +4,7 @@ description: Some kinds of apps (multilingual dictionaries, translation tools, e
 title: Build resources into your app package
 template: detail.hbs
 ms.date: 11/14/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---

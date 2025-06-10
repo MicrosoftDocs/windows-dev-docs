@@ -2,7 +2,7 @@
 title: Steps to open a Windows developer account in Partner Center
 description: Here's an overview of how to open a Windows developer account for Microsoft Store in Partner Center.
 ms.date: 11/3/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

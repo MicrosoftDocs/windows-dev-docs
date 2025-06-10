@@ -4,7 +4,7 @@ title: Send an SMS message
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: contacts, SMS, send
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium

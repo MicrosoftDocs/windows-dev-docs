@@ -2,7 +2,7 @@
 title: Enabling tab completion with the winget tool
 description: Provides steps on how to enable and use tab completion with the winget tool.
 ms.date: 05/18/2022
-ms.topic: article
+ms.topic: how-to
 ---
 
 # Tab completion (winget)

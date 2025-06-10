@@ -2,7 +2,7 @@
 title: Overview of custom permissions for account users
 description: Learn how to assign custom permissions when adding users to your Partner Center account.
 ms.date: 11/09/2022
-ms.topic: article
+ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 

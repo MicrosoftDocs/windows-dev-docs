@@ -1,7 +1,7 @@
 ---
 title: Install React on Windows
 description: Install a React development environment on Windows.
-ms.topic: article
+ms.topic: install-set-up-deploy
 ms.date: 11/25/2024
 ---
 
