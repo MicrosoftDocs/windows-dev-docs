@@ -2,7 +2,7 @@
 description: This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications
 title: Host WinRT XAML controls in desktop apps
 ms.date: 10/20/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: high
 ms.custom: 19H1

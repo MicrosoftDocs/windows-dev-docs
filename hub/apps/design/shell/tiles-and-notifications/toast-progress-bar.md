@@ -4,7 +4,7 @@ title: Toast progress bar and data binding
 label: Toast progress bar and data binding
 template: detail.hbs
 ms.date: 12/07/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, toast, progress bar, toast progress bar, notification, toast data binding
 ms.localizationpriority: medium
 ---

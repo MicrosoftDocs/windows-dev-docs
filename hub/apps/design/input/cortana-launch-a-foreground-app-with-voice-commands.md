@@ -3,7 +3,7 @@ title: Activate a foreground app with voice commands through Cortana - Cortana U
 description: Use voice commands to activate your app to the foreground and execute an action or command within the app.
 ms.assetid: e4bf3714-6f62-466f-9e7c-3b03ee86a117
 ms.date: 01/28/2021
-ms.topic: article
+ms.topic: how-to
 keywords: cortana
 ---
 

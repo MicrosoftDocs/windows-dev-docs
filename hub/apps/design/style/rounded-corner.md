@@ -2,7 +2,7 @@
 title: Corner radius
 description: Learn about rounded corners principles, design approaches, and customization options.
 ms.date: 10/08/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, corner radius, rounded
 ---
 

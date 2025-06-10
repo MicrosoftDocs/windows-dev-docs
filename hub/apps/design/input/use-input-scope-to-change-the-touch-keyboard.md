@@ -8,7 +8,7 @@ ms.assetid: 6E5F55D7-24D6-47CC-B457-B6231EDE2A71
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interaction
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 
 
 ---

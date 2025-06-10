@@ -2,7 +2,7 @@
 title: Call interop APIs from a .NET app
 description: Enhance your desktop application for your users by calling interop functions, and WinRT COM interop interfaces, projected into .NET.
 ms.date: 03/07/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

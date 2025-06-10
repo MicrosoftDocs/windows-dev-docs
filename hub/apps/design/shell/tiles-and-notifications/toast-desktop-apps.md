@@ -4,7 +4,7 @@ title: Activating toast notifications from desktop apps
 label: Activating toast notifications from desktop apps
 template: detail.hbs
 ms.date: 02/27/2025
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, msix, external location, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast
 ms.localizationpriority: medium
 ---

@@ -3,7 +3,7 @@
 title: Print from your app
 description: Learn how to print documents from a Windows app. This topic also shows how to print specific pages.
 ms.date: 09/11/2024
-ms.topic: article
+ms.topic: how-to
 author: jwmsft
 ms.author: jimwalk
 ms.localizationpriority: medium

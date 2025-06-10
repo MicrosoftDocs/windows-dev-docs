@@ -5,7 +5,7 @@ title: Accessibility overview
 label: Accessibility overview
 template: detail.hbs
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

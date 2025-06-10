@@ -1,8 +1,8 @@
-﻿---
+---
 description: Enhance your desktop application for Windows users by using Windows Runtime APIs.
 title: Call Windows Runtime APIs in desktop apps
 ms.date: 04/02/2021
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1

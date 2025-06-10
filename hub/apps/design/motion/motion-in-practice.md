@@ -4,7 +4,7 @@ description: Learn how Fluent motion fundamentals like timing, easing, direction
 label: Motion in practice
 template: detail.hbs
 ms.date: 09/18/2024
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5

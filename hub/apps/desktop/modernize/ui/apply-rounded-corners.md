@@ -1,7 +1,7 @@
 ---
 description: Apply rounded corners in your desktop application.
 title: Apply rounded corners in desktop apps
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/25/2023
 ms.localizationpriority: medium
 ---

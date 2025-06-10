@@ -6,7 +6,7 @@ label: Pen interactions and Windows Ink in Windows apps
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition, user interaction, input
 ms.date: 07/19/2021
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

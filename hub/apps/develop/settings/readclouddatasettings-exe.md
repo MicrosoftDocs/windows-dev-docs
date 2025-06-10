@@ -2,7 +2,7 @@
 title: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
 description: This article describes the Cloud Data Store Settings Reader Tool, readCloudDataSettings.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device.
 ms.date: 02/27/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, settings
 ms.localizationpriority: medium
 ---

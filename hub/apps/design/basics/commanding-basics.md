@@ -6,7 +6,7 @@ label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5

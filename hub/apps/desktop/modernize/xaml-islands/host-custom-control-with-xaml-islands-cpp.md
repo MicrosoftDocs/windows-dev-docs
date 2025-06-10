@@ -2,7 +2,7 @@
 description: This article demonstrates how to host a custom WinRT XAML control in a C++ desktop (Win32) app by using the XAML Hosting API.
 title: Host a custom WinRT XAML control in a C++ desktop (Win32) app using the XAML Hosting API
 ms.date: 02/27/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, C++, Win32, xaml islands, custom controls, user controls, host controls
 ms.localizationpriority: medium
 ms.custom: 19H1

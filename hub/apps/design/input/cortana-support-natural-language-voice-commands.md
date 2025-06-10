@@ -4,7 +4,7 @@ description: Extend Cortana with more flexible and natural voice commands that l
 label: Conceptual
 ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
-ms.topic: article
+ms.topic: how-to
 keywords: cortana
 ---
 

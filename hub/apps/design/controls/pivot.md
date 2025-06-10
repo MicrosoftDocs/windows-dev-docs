@@ -3,7 +3,7 @@ description: The Pivot control enables touch-swiping between a small set of cont
 title: Pivot
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---
