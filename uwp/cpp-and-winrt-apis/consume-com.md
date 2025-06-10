@@ -2,7 +2,7 @@
 description: This topic uses a full Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces.
 title: Consume COM components with C++/WinRT
 ms.date: 04/24/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, COM, component, class, interface
 ms.localizationpriority: medium
 ---

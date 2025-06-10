@@ -3,7 +3,7 @@ ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
 title: Optimizing interop for Windows Runtime components
 description: Create Windows apps that use Windows Components and interop between native and managed types while avoiding interop performance issues.
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, winrt
 ms.localizationpriority: medium
 ---

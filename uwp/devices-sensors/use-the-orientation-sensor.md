@@ -3,7 +3,7 @@
 title: Use the orientation sensor
 description: Learn how to use the orientation sensors to determine the device orientation.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

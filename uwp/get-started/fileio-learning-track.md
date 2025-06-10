@@ -2,7 +2,7 @@
 title: Work with files
 description: Learn about the main APIs and types you need to get started reading from, and writing to, files in a Universal Windows Platform (UWP) app.
 ms.date: 05/01/2018
-ms.topic: article
+ms.topic: how-to
 keywords: get started, uwp, windows 10, learning track, files, file io, read file, write file, create file, write text, read text
 ms.localizationpriority: medium
 ms.custom: RS5

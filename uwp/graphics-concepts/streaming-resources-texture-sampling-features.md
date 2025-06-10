@@ -5,7 +5,7 @@ ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
 keywords:
 - Streaming resources texture sampling features
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

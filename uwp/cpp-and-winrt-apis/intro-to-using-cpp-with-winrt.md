@@ -2,7 +2,7 @@
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
 ms.date: 11/11/2021
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 11, windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
 ---

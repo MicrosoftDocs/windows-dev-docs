@@ -2,7 +2,7 @@
 title: WinUI 2.8 Release Notes
 description: Release notes for WinUI 2.8, including new features and bug fixes.
 ms.date: 04/22/2025
-ms.topic: article
+ms.topic: release-notes
 ---
 
 # WinUI 2.8

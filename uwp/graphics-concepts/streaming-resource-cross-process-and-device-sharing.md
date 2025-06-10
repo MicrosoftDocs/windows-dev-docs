@@ -5,7 +5,7 @@ ms.assetid: D035AF4B-D71B-4F20-9A98-7C360BF9B285
 keywords:
 - Streaming resource cross-process and device sharing
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

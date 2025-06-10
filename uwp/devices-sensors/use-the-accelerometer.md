@@ -3,7 +3,7 @@
 title: Use the accelerometer
 description: Learn how to create a basic app that relies on a single sensor, the accelerometer, to respond to user movements.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

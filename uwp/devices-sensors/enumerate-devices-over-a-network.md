@@ -3,7 +3,7 @@
 title: Enumerate devices over a network
 description: Use the Windows.Devices.Enumeration APIs to enumerate devices over wireless and networked protocols.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ms.custom: 19H1

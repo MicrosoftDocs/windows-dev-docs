@@ -2,7 +2,7 @@
 description: To get you up to speed with using C++/WinRT, this topic walks through a simple code example.
 title: Get started with C++/WinRT
 ms.date: 01/28/2022
-ms.topic: article
+ms.topic: get-started
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
 ---

@@ -3,7 +3,7 @@ ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: Get file properties
 description: Get properties&\#8212;top-level, basic, and extended&\#8212;for a file represented by a StorageFile object.
 ms.date: 12/19/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
