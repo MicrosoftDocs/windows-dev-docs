@@ -3,7 +3,7 @@ description: Learn how to implement backwards navigation for traversing the user
 title: Navigation history and backwards navigation
 template: detail.hbs
 ms.date: 04/10/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs: 

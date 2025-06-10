@@ -3,7 +3,7 @@ description: We describe the programming concept of events in a Windows Runtime 
 title: Events and routed events overview
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.date: 07/12/2018
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

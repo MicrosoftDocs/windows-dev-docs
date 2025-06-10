@@ -3,7 +3,7 @@ title: What's New in Windows 10, build 18362
 description: Windows 10 build 18362 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: Windows 10, 18362, 1903
 ms.date: 04/19/2019
-ms.topic: article
+ms.topic: whats-new
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---

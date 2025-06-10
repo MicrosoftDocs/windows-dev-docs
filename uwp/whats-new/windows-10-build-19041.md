@@ -3,7 +3,7 @@ title: What's New in Windows 10, build 19041
 description: New developer features in Windows 10 build 19041
 keywords: what's new, whats new, Windows, Windows 10, update, updates, features, new, newest, developers, 19041, may
 ms.date: 01/10/2022
-ms.topic: article
+ms.topic: whats-new
 ---
 
 # What's New for developers in Windows 10 build 19041
