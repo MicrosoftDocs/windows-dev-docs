@@ -2,7 +2,7 @@
 title: Enable user mode access to GPIO, I2C, and SPI
 description: This tutorial describes how to enable user mode access to GPIO, I2C, SPI, and UART on Windows 10 and later.
 ms.date: 11/15/2023
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

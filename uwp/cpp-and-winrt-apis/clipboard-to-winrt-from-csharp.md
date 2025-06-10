@@ -2,7 +2,7 @@
 title: Porting the Clipboard sample to C++/WinRT from C# (a case study)
 description: This topic presents a case study of porting one of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) from [C#](/visualstudio/get-started/csharp) to [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 ms.date: 09/06/2022
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C#, sample, clipboard, case, study
 ms.localizationpriority: medium
 ---

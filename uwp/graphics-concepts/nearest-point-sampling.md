@@ -5,7 +5,7 @@ ms.assetid: D7F88320-2C61-47E9-9B92-EC31D48DB079
 keywords:
 - Nearest-point sampling
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

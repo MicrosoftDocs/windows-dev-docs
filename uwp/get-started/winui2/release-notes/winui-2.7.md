@@ -2,7 +2,7 @@
 title: WinUI 2.7 Release Notes
 description: Release notes for WinUI 2.7, including new features and bug fixes.
 ms.date: 09/13/2021
-ms.topic: article
+ms.topic: release-notes
 ---
 
 # WinUI 2.7

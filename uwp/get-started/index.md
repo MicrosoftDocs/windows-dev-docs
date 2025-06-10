@@ -2,7 +2,7 @@
 description: Get started with the Universal Windows Platform (UWP) and app development for Windows.
 title: Get started with the Universal Windows Platform (UWP)
 ms.date: 09/26/2023
-ms.topic: article
+ms.topic: get-started
 keywords: get started, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
 ---

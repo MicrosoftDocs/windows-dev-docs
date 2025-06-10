@@ -2,7 +2,7 @@
 title: Using supplemental properties
 description: Introduction to using supplemental properties and details on how they were implemented in Windows
 ms.date: 01/10/2017
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, WinRT API, Indexer, Search
 localizationpriority: medium
 ---

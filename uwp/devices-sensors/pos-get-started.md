@@ -1,8 +1,8 @@
-﻿---
+---
 title: Getting started with Point of Service
 description: This article contains information about getting started with the point of service Windows Runtime APIs.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: get-started
 
 ms.localizationpriority: medium
 ---

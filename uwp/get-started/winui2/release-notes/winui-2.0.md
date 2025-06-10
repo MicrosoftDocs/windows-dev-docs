@@ -3,7 +3,7 @@ title: WinUI 2.0 Release Notes
 description: Release notes for WinUI 2.0.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 07/15/2020
-ms.topic: article
+ms.topic: release-notes
 ---
 
 # WinUI 2.0
