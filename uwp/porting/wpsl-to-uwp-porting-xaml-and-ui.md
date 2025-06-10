@@ -3,7 +3,7 @@ description: The practice of defining UI in the form of declarative XAML markup 
 title: Porting Windows Phone Silverlight XAML and UI to UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ms.date: 08/03/2021
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -3,7 +3,7 @@ ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: Use this method in the Microsoft Store submission API to update an existing app submission.
 title: Update an app submission
 ms.date: 04/17/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, app submission, update
 ms.localizationpriority: medium
 ---

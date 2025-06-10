@@ -3,7 +3,7 @@ description: If you have a Universal 8.1 app&\#8212;whether it's targeting Windo
 title: Move from Windows Runtime 8.x to UWP'
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

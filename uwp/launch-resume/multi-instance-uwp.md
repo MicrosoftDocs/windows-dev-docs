@@ -3,7 +3,7 @@ title: Create a multi-instance Universal Windows App
 description: This topic describes how to write UWP apps that support multi-instancing.
 keywords: multi-instance uwp
 ms.date: 02/29/2024
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium

@@ -3,7 +3,7 @@ ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: Download and install package updates from the Store
 description: Learn how to mark packages as mandatory in Partner Center and write code in your app to download and install package updates.
 ms.date: 04/04/2018
-ms.topic: article
+ms.topic: install-set-up-deploy
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

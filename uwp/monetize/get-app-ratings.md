@@ -3,7 +3,7 @@ ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: Use this method in the Microsoft Store analytics API to get aggregate ratings data for a given date range and other optional filters.
 title: Get app ratings
 ms.date: 11/29/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, ratings
 ms.localizationpriority: medium
 ---

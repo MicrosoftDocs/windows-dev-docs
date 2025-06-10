@@ -3,7 +3,7 @@ title: Handle app activation
 description: Learn how to handle app activation by overriding the OnLaunched method.
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ms.date: 07/02/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:

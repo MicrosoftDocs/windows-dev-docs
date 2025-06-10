@@ -3,7 +3,7 @@ title: Maps and location overview
 description: This section explains how you can display maps, use map services, find the location, and set up a geofence in your app.
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.date: 05/27/2025
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, map, location, map services
 ms.localizationpriority: medium
 ---

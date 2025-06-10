@@ -3,7 +3,7 @@ ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: Learn about solutions to common development issues with the Microsoft advertising libraries in XAML apps.
 title: XAML and C# troubleshooting guide
 ms.date: 02/18/2020
-ms.topic: article
+ms.topic: troubleshooting-general
 keywords: windows 10, uwp, ads, advertising, AdControl, troubleshooting, XAML, c#
 ms.localizationpriority: medium
 ---

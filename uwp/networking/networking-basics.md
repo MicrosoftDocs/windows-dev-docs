@@ -3,7 +3,7 @@ description: Learn how to enable your app for networking by adding network capab
 title: Networking basics
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ms.date: 06/01/2018
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

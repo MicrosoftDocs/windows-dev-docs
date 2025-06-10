@@ -2,7 +2,7 @@
 title: Trigger a background task from within your app
 description: Learn how to use an application trigger to run a background task that you want to activate from within your app.
 ms.date: 07/06/2018
-ms.topic: article
+ms.topic: how-to
 keywords: background task trigger, background task
 ms.localizationpriority: medium
 ---

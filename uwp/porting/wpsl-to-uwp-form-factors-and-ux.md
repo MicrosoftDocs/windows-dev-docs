@@ -3,7 +3,7 @@ description: Windows apps share a common look-and-feel across PCs, mobile device
 title: Porting Windows Phone Silverlight to UWP for form factor and UX
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

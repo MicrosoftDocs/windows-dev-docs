@@ -3,7 +3,7 @@ description: The practice of defining UI in the form of declarative XAML markup 
 title: Porting Windows Runtime 8.x XAML and UI to UWP'
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -3,7 +3,7 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: Use these methods in the Microsoft Store submission API to manage add-on submissions for apps that are registered to your Partner Center account.
 title: Manage add-on submissions
 ms.date: 04/17/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submissions, in-app product, IAP
 ms.localizationpriority: medium
 ---

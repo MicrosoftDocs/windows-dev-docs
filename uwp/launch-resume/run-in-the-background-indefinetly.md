@@ -4,7 +4,7 @@ description: Use the extendedExecutionUnconstrained capability to run a backgrou
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: background task, extended execution, resources, limits, background task
 ms.date: 10/03/2017
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium
