@@ -38,7 +38,7 @@ This result takes the user back to the main page of the Command Palette. It will
 
 ## Dismiss command result
 
-This result hides the Command Palette after the action is executed, and takes it back to the hme page. On the next launch, the Command Palette will start from the main page with a blank query. This is useful for commands that are one-off actions, or that don't need to keep the Command Palette open. 
+This result hides the Command Palette after the action is executed, and takes it back to the home page. On the next launch, the Command Palette will start from the main page with a blank query. This is useful for commands that are one-off actions, or that don't need to keep the Command Palette open. 
 
 If you don't know what else to use, this should be your default. Ideally, users should come into the palette, find what they need, and be done with it. 
 
