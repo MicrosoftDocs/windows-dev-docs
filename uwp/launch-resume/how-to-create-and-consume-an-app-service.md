@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 # Create and consume an app service
 
 > [!NOTE]
-> The code listings in this topic are C# only. For an app service sample app in **C++/WinRT** as well as C#, see [App service sample app](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
+> The code listings in this topic are C# only. For an app service sample app in **C++/WinRT** as well as C#, see [App services sample](/samples/microsoft/windows-universal-samples/appservices/) or get the source of the **App services sample** projects on [GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
 
 > [!IMPORTANT]
 > This topic applies to the Universal Windows Platform (UWP) apps that use .NET Native. Visual Studio 2022 now also includes UWP project templates that use .NET 9. For this topic, you must use the UWP project templates that include ".NET Native" in their names, such as **UWP Blank App (.NET Native)**. THe UWP projects that use .NET 9 have not been tested with this topic and may not work as expected.
