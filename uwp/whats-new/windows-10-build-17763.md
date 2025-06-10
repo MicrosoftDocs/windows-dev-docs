@@ -3,7 +3,7 @@ title: What's New in Windows 10, build 17763
 description: Windows 10 build 17763 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: Windows 10, 17763, 1809
 ms.date: 10/03/2018
-ms.topic: article
+ms.topic: whats-new
 ms.localizationpriority: medium
 ms.custom: RS5
 ---

@@ -2,7 +2,7 @@
 title: Understanding Arm64EC ABI and assembly code
 description: An in-depth look at Arm64EC ABI, register mapping, call checkers, stack checkers, variadic calling, entry thunks, exit thunks, and adjuster thunks, fast-forward sequences, authoring Arm64EC in Assembly, and dynamically generating (JIT Compiling) Arm64EC code. 
 ms.date: 03/18/2022
-ms.topic: article
+ms.topic: concept-article
 ms.service: windows
 ms.subservice: arm
 ---

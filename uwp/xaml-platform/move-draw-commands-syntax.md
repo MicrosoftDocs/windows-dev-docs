@@ -3,7 +3,7 @@ description: Learn about the move and draw commands (a mini-language) that you c
 title: Move and draw commands syntax
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
