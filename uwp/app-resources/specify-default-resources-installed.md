@@ -3,7 +3,7 @@ description: If your app doesn't have resources that match the particular settin
 title: Specify the default resources that your app uses
 template: detail.hbs
 ms.date: 11/14/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---

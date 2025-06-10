@@ -2,7 +2,7 @@
 title: winget download command
 description: Downloads an installer for a package.
 ms.date: 09/06/2024
-ms.topic: article
+ms.topic: how-to
 ---
 
 # download command (winget)

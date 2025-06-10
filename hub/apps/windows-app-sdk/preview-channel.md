@@ -1,7 +1,7 @@
 ---
 title: Preview release channel for the Windows App SDK 
 description: Provides info about the preview release channel for the Windows App SDK.
-ms.topic: article
+ms.topic: release-notes
 ms.date: 08/07/2024
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium

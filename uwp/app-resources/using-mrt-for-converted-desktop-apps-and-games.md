@@ -2,7 +2,7 @@
 title: Using MRT for Converted Desktop Apps and Games
 description: By packaging your .NET or Win32 app or game as an .msix or .appx package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
 ms.date: 10/25/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app converter, mui, satellite assembly
 ms.localizationpriority: medium
 ---

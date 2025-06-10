@@ -2,7 +2,7 @@
 title: Partner Center for Xbox
 description: This section describes how to set up your Partner Center account for app development on Xbox
 ms.date: 08/31/2023
-ms.topic: article
+ms.topic: concept-article
 keywords: Xbox
 ---
 

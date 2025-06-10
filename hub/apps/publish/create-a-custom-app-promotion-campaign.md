@@ -3,7 +3,7 @@ description: In addition to creating an ad campaign for your app that will run i
 title: Create a custom app promotion campaign
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 ms.date: 10/30/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, custom, app, promotion, campaign
 ms.localizationpriority: medium
 ---

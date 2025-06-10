@@ -2,7 +2,7 @@
 description: Use PWA Builder to create a high quality PWA from your existing website
 title: Turn your website into a high quality PWA
 ms.date: 10/30/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

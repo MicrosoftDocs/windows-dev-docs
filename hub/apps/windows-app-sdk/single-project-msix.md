@@ -1,7 +1,7 @@
 ---
 title: Package your app using single-project MSIX
 description: This article provides instructions for how to generate an MSIX desktop app via a single project in Visual Studio.
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/10/2023
 keywords: windows, win32, desktop development, Windows App SDK, msix, packaging project, single project, single project msix, winui 3
 ms.localizationpriority: medium

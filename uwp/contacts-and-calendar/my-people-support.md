@@ -2,7 +2,7 @@
 title: Adding My People support to an application
 description: Explains how to add My People support to an application, and how to pin and unpin contacts
 ms.date: 01/04/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

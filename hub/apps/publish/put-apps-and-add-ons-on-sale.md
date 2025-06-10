@@ -3,7 +3,7 @@ description: You can promote your app or add-on in the Microsoft Store by puttin
 title: Put apps and add-ons on sale
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.date: 10/30/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

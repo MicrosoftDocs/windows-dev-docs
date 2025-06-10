@@ -1,7 +1,7 @@
 ---
 title: Use the Windows App SDK in an existing project
 description: This article provides instructions for using the Windows App SDK in an existing project.
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/03/2023
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium

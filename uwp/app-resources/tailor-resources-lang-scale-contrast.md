@@ -3,7 +3,7 @@ description: This topic explains the general concept of qualifiers, how to use t
 title: Tailor your resources for language, scale, high contrast, and other qualifiers
 template: detail.hbs
 ms.date: 10/10/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---

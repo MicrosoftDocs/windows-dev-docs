@@ -1,7 +1,7 @@
 ---
 title: What are add-ons
 description: What are add-ons
-ms.topic: conceptual
+ms.topic: article
 ms.date: 07/02/2024
 ---
 
