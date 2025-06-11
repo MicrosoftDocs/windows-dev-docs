@@ -57,7 +57,7 @@ From here, you can immediately build the project and run it. Once your package i
 > Make sure you _deploy_ your app! Just **build**ing your application won't update the package in the same way that deploying it will.
 
 > [!WARNING]
-> Running "<ExtensionName> (Unpackaged)" from Visual Studio will not **deploy** your app package.
+> Running "\<ExtensionName\> (Unpackaged)" from Visual Studio will not **deploy** your app package.
 > 
 > If you're using `git` for source control, and you used the standard `.gitignore` file for C#, you'll want to remove the following two lines from your `.gitignore` file:
 > ```

@@ -15,7 +15,7 @@ An [IInvokableCommand](./microsoft-commandpalette-extensions/iinvokablecommand.m
 
 The toolkit provides a number of helper methods to create command results. These are all static methods on the **CommandResult** class. Calling these methods on their own won't do anything. You must return those objects as the result of a **Invoke** method, for Command Palette to handle them.
 
-> [!Note]
+> [!NOTE]
 > There are code examples for the various CommandResult methods listed on this page.
 
 <!-- GoToPage currently omitted from these docs, because it's not remotely implemented -->
@@ -41,7 +41,7 @@ This result takes the user back to the main page of the Command Palette. It will
 
 ## Dismiss command result
 
-This result hides the Command Palette after the action is executed, and takes it back to the hme page. On the next launch, the Command Palette will start from the main page with a blank query. This is useful for commands that are one-off actions, or that don't need to keep the Command Palette open. 
+This result hides the Command Palette after the action is executed, and takes it back to the home page. On the next launch, the Command Palette will start from the main page with a blank query. This is useful for commands that are one-off actions, or that don't need to keep the Command Palette open.
 
 If you don't know what else to use, this should be your default. Ideally, users should come into the palette, find what they need, and be done with it. 
 
@@ -63,7 +63,7 @@ This is useful for commands that might have destructive actions, or that need to
 
 As an example, here's a page with one command for each kind of command result:
 
-> [!Note]
+> [!NOTE]
 > If working from prior section, modify the code below from `CommandResultsPage` to `<ExtensionName>Page`.
 
 ```csharp

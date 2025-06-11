@@ -15,7 +15,7 @@ So far we've shown how to return a list of static items in your extension. Howev
 
 ## Updating a command
 
-Almost all extension objects in the Command Palette implement the **IPropChanged** interface. This allows them to notify the Command Palette when they've changed, and the Command Palette will update the UI to reflect those changes. If you're using the [toolkit](https://learn.microsoft.com/en-us/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit) implementations, this interface has already been implemented for you for properties that support it.
+Almost all extension objects in the Command Palette implement the **IPropChanged** interface. This allows them to notify the Command Palette when they've changed, and the Command Palette will update the UI to reflect those changes. If you're using the [toolkit](/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit) implementations, this interface has already been implemented for you for properties that support it.
 
 As a simple example, you can update the title of the page. To do this, you can add a command which will simply update the title of the page.
 
@@ -128,7 +128,7 @@ Now, every time you perform one of the **IncrementingListItem** commands, the li
 
 Everything so far has been pretty instantaneous. Many extensions however may need to do some work that takes a lot longer. In that case, you can set **Page.IsLoading** to `true` to show a loading spinner. This will help indicate that the extension is doing something in the background.
 
-> [!Note]
+> [!NOTE]
 > If working from prior section, modify the code below from `Page.IsLoading` to `this.IsLoading`.
 
 ```csharp
