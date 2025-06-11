@@ -2,7 +2,7 @@
 description: Learn how apps should handle the Windows camera privacy setting.
 title: Handle the Windows camera privacy setting
 ms.date: 10/23/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, winui 3
 dev_langs:
 - csharp

@@ -1,7 +1,7 @@
 ---
 title: Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
 description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [WinUI 3](../../winui/index.md) app that uses the Windows App SDK.
-ms.topic: article
+ms.topic: upgrade-and-migration-article
 ms.date: 10/05/2023
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
 ms.localizationpriority: medium

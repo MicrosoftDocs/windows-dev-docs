@@ -2,7 +2,7 @@
 title: Troubleshoot App Creation in Partner Center
 description: Troubleshoot app creation errors in Partner Center
 ms.date: 10/30/2022
-ms.topic: article
+ms.topic: troubleshooting-general
 ms.localizationpriority: medium
 ---
 

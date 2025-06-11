@@ -3,7 +3,7 @@ description: Troubleshoot issues you might be having while porting Windows Runti
 title: Troubleshooting porting Windows Runtime 8.x to UWP'
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: troubleshooting-general
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

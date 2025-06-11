@@ -4,7 +4,7 @@ description: Use the Visual Studio asset generation tool to create a variety of 
 keywords: windows 10, uwp
 design-contact: judysa
 ms.date: 10/29/2021
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

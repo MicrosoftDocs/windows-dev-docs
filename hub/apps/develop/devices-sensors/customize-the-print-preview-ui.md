@@ -3,7 +3,7 @@
 title: Customize the print preview UI
 description: This topic describes how to customize the print options and settings in the print preview UI.
 ms.date: 09/10/2024
-ms.topic: article
+ms.topic: how-to
 author: jwmsft
 ms.author: jimwalk
 ms.localizationpriority: medium

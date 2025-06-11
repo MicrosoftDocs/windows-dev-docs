@@ -2,7 +2,7 @@
 description: This guide shows you how to use the Preview and Experimental channel of Windows App SDK to create a .NET and C++ apps with WinUI 3 UI. 
 title: Create a new project that uses the Preview and Experimental channel of the Windows App SDK 
 ms.date: 10/05/2021
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.localizationpriority: high
 ms.custom: 19H1

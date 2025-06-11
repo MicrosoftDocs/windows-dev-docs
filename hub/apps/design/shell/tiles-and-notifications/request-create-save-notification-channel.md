@@ -1,7 +1,7 @@
-﻿---
+---
 title: How to request, create, and save a notification channel 
 description: How to request, create, and save a notification channel
-ms.topic: article
+ms.topic: how-to
 ms:assetid: 6C35026D-B162-45a6-8CCB-C2D999E95CEE
 ms:mtpsurl: https://msdn.microsoft.com/library/Hh868221(v=Win.10)
 ms:contentKeyID: 45725025

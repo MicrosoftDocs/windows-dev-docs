@@ -2,7 +2,7 @@
 description: You can manage groups in your Partner Center account.
 title: Manage groups in your Partner Center account
 ms.date: 11/07/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

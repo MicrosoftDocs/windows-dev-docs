@@ -5,7 +5,7 @@ label: Command bar
 template: detail.hbs
 op-migration-status: ready
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 doc-status: Published
 ms.localizationpriority: medium

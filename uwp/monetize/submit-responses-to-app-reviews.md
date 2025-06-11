@@ -3,7 +3,7 @@ title: Submit responses to reviews
 description: Use this method in the Microsoft Store reviews API to submit responses to reviews of your app.
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 ms.date: 07/14/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Store services, Microsoft Store reviews API, add-on acquisitions
 ms.localizationpriority: medium
 ---

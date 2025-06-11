@@ -2,7 +2,7 @@
 title: Reference for Windows 11 and Windows 10 settings
 description: This page lists the settings that are supported by both Windows 10 and Windows 11.
 ms.date: 03/20/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, settings
 ms.localizationpriority: medium
 ---

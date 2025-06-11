@@ -3,7 +3,7 @@ title: Using the Visual Layer with Win32
 description: Learn how to use the Universal Windows Platform (UWP) Windows Runtime Composition APIs, also known as the Visual layer, to enhance the UI of a Win32 C++ app.
 template: detail.hbs
 ms.date: 08/21/2024
-ms.topic: article
+ms.topic: how-to
 keywords: UWP, rendering, composition, win32
 ms.localizationpriority: medium
 ---

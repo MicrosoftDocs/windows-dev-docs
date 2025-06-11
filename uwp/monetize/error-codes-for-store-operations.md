@@ -2,7 +2,7 @@
 description: This article describes common error codes for Store operations for apps and add-ons, including in-app purchasing, licensing, and self-install app updates.
 title: Error codes for Store operations
 ms.date: 03/07/2024
-ms.topic: article
+ms.topic: troubleshooting-error-codes
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, error codes
 ms.localizationpriority: medium
 ---

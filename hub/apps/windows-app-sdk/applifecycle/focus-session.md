@@ -1,7 +1,7 @@
 ---
 description: Describes how to detect and react to the current focus session state.
 title: Detect and react to focus session state
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/18/2022
 keywords: AppLifecycle, Windows, ApplicationModel, focus
 ms.localizationpriority: medium

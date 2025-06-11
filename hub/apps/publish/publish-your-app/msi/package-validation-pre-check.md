@@ -2,7 +2,7 @@
 description: Manually run package validation checks before your MSI/EXE app has been submitted for review
 title: Package validation for MSI/EXE app
 ms.date: 10/30/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

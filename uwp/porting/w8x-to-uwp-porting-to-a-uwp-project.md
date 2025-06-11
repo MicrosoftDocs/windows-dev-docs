@@ -2,7 +2,7 @@
 description: Learn how to port a Windows Runtime 8.x project to a Universal Windows Platform (UWP) project on Windows 10 or Windows 11.
 title: Porting a Windows Runtime 8.x project to a UWP project'
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 # Porting a Windows Runtime 8.x project to a UWP project

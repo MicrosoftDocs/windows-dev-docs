@@ -2,7 +2,7 @@
 description: Viewing actionable analytics insights in Partner Center.
 title: Viewing actionable insights in Partner Center
 ms.date: 10/23/2024
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, windows 11, windows, windows store, store, msix, pwa, insights, analytics, review summary
 ms.localizationpriority: medium
 ---

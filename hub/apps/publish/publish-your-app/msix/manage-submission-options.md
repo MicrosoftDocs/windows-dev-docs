@@ -2,7 +2,7 @@
 description: Manage your MSIX app submission options, including publishing hold options and notes for certification to provide additional info to the certification testers. Additionally, monitor the status of your MSIX draft app submissions.
 title: Manage submission options for MSIX app
 ms.date: 10/30/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

@@ -3,7 +3,7 @@ title: What's New in Windows 10, build 17134
 description: Windows 10 build 17134 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: Windows 10, 17134, 1803
 ms.date: 04/10/2018
-ms.topic: article
+ms.topic: whats-new
 
 
 ms.localizationpriority: medium

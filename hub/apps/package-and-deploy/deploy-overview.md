@@ -1,7 +1,7 @@
 ---
 title: Windows App SDK deployment overview
 description: There are two ways in which you can deploy the Windows App SDK&mdash;framework-dependent or self-contained.
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/02/2023
 ms.localizationpriority: medium
 ---

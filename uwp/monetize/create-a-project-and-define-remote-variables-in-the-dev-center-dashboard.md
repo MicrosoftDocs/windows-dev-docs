@@ -3,7 +3,7 @@ description: Before you can run an experiment in your Universal Windows Platform
 title: Create an experiment project in Partner Center
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ms.localizationpriority: medium
 ---

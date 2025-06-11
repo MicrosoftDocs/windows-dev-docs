@@ -2,7 +2,7 @@
 description: This article demonstrates how to host a custom WinRT XAML control in a WPF app by using XAML Islands.
 title: Host a custom WinRT XAML control in a WPF app using XAML Islands
 ms.date: 09/15/2021
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, custom controls, user controls, host controls
 ms.localizationpriority: medium
 ms.custom: 19H1

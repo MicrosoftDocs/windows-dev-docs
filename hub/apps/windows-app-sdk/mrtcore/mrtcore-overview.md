@@ -1,7 +1,7 @@
 ---
 description: Overview of MRT Core components, and how they work to load application resources (Windows App SDK)
 title: Manage resources MRT Core (Windows App SDK)
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/21/2021
 keywords: MRT, MRTCore, pri, makepri, resources, resource loading, windows 10, windows 11, windows app sdk
 ms.localizationpriority: medium

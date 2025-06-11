@@ -3,7 +3,7 @@ description: Learn how to port Windows Runtime 8.x to UWP for I/O, device, and a
 title: Porting Windows Runtime 8.x to UWP for I/O, device, and app model'
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

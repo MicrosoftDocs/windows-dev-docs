@@ -2,7 +2,7 @@
 description: Frequently asked questions about Responsible AI as it relates to AI-Generated keywords.
 title: Responsible AI FAQ for AI-Generated keywords
 ms.date: 03/13/2024
-ms.topic: article
+ms.topic: faq
 ms.localizationpriority: medium
 ---
 

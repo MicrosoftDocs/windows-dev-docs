@@ -3,7 +3,7 @@ description: Introduces the XAML language and XAML concepts to the Windows Runti
 title: XAML overview
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
 ms.date: 07/18/2018
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:

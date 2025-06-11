@@ -3,7 +3,7 @@ title: Overlay tiled images on a map
 description: Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ms.date: 05/27/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, map, location, images, overlay
 ms.localizationpriority: medium
 ---

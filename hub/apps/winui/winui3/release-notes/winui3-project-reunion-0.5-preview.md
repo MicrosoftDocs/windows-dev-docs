@@ -3,7 +3,7 @@ title: WinUI 3 - Project Reunion 0.5 Preview (March 2021) release notes
 description: Release notes for WinUI 3 - Project Reunion 0.5 Preview (March 2021) release.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.date: 03/19/2021
-ms.topic: article
+ms.topic: release-notes
 ---
 
 # WinUI 3 - Project Reunion 0.5 Preview (March 2021) release notes

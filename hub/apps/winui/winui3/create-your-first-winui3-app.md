@@ -1,7 +1,7 @@
 ---
 title: Create your first WinUI 3 (Windows App SDK) project
 description: Learn how to use Visual Studio to create a new project for a C# .NET or C++ app that has a WinUI 3 user interface (UI).
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/21/2024
 keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, app sdk, Windows App SDK, WinUI 3
 ms.localizationpriority: medium

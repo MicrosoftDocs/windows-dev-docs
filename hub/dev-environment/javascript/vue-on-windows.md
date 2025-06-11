@@ -1,7 +1,7 @@
 ---
 title: Install Vue.js directly on Windows
 description: A guide to help you get started using the Vue.js web frameworks directly on Windows.
-ms.topic: article
+ms.topic: install-set-up-deploy
 ms.date: 03/30/2021
 ---
 

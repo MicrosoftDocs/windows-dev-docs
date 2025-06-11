@@ -3,7 +3,7 @@ description: This article explains how to add dragging and dropping in your Wind
 title: Drag and drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 07/12/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

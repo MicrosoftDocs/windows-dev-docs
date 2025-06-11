@@ -5,7 +5,7 @@ title: Sound
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 ms.date: 05/19/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: mattben

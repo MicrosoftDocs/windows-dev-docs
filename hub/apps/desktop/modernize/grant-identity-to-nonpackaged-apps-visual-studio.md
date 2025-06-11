@@ -2,7 +2,7 @@
 title: Grant package identity by packaging with external location in Visual Studio
 description: How to use Visual Studio to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.
 ms.date: 05/09/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 11, windows 10, desktop, sparse, package, identity, external, location, MSIX, Win32, Visual Studio
 ms.localizationpriority: medium
 ---

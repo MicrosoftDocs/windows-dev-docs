@@ -3,7 +3,7 @@ title: Raising events in Windows Runtime components
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: How to raise an event of a user-defined delegate type on a background thread so that JavaScript is able to receive the event.
 ms.date: 07/19/2018
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 

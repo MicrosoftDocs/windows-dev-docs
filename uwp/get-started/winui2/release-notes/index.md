@@ -4,7 +4,7 @@ description: Index of WinUI release notes.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 
 ms.date: 04/22/2025
-ms.topic: article
+ms.topic: release-notes
 ---
 
 # WinUI 2 Release Notes

@@ -4,7 +4,7 @@ title: Tree view
 label: Tree view
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 dev_langs:
 - csharp

@@ -2,7 +2,7 @@
 description: Get the latest downloads and tools for Windows apps user interface layout and control designs.
 title: Design resources for Windows apps
 ms.date: 11/25/2024
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Design resources for Windows apps

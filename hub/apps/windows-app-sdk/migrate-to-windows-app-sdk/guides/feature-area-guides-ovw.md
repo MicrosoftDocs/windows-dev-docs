@@ -1,7 +1,7 @@
 ---
 title: Overview of feature area guides
 description: A collection of migration guidance topics, each focusing on a specific feature area.
-ms.topic: article
+ms.topic: concept-article
 ms.date: 09/20/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium

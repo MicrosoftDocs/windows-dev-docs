@@ -2,7 +2,7 @@
 title: Deploy an app through loose file registration
 description: This guide shows how to use the loose file layout to validate and share Windows 10 apps without needing to package them.
 ms.date: 06/01/2018
-ms.topic: article
+ms.topic: install-set-up-deploy
 keywords: windows 10, uwp, device portal, apps manager, deployment, sdk
 ms.localizationpriority: medium
 ---

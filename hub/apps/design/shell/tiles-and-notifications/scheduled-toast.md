@@ -4,7 +4,7 @@ title: Schedule a toast notification
 label: Schedule a toast notification
 template: detail.hbs
 ms.date: 04/09/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, scheduled toast notification, scheduledtoastnotification, how to, quickstart, getting started, code sample, walkthrough
 ms.localizationpriority: medium
 ---

@@ -6,7 +6,7 @@ label: Handle pointer input
 template: detail.hbs
 keywords: pen, mouse, touchpad, touch, pointer, input, user interaction
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

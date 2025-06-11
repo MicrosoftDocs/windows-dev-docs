@@ -2,7 +2,7 @@
 description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: Create customer segments
 ms.date: 10/30/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, segment, segments, targeted group, customers
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium

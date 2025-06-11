@@ -1,7 +1,7 @@
 ---
 title: Handle Microsoft Copilot hardware key state changes
 description: Learn how to register to be activated and receive notifications when the Microsoft Copilot hardware key or Windows key + C is pressed. 
-ms.topic: article
+ms.topic: how-to
 ms.date: 10/25/2024
 ms.localizationpriority: medium
 ---

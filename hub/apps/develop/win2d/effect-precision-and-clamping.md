@@ -2,7 +2,7 @@
 title: Effect precision and clamping
 description: An explanation of how to deal with precision and clamping when drawing Win2D effects.
 ms.date: 05/28/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---

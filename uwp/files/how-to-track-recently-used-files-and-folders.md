@@ -3,7 +3,7 @@ ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: Track recently used files and folders
 description: Track files that your user accesses frequently by adding them to your app's most recently used list (MRU).
 ms.date: 12/19/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

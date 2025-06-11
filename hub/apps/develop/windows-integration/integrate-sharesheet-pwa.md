@@ -1,7 +1,7 @@
 ---
 description: Discover how to integrate a Progressive Web App (PWA) with the Windows Share feature.
 title: Integrate Progressive Web Apps (PWAs) with Windows Share
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/16/2024
 ms.localizationpriority: medium
 ---

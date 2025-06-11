@@ -4,7 +4,7 @@ title: Timing and easing
 label: Timing and easing
 template: detail.hbs
 ms.date: 09/18/2024
-ms.topic: article
+ms.topic: concept-article
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5

@@ -3,7 +3,7 @@ description: Customize the title bar of a desktop app that uses the Windows App 
 title: Title bar customization
 template: detail.hbs
 ms.date: 11/21/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 11, title bar
 ms.localizationpriority: medium
 ---

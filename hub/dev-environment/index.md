@@ -1,7 +1,7 @@
 ---
 title: Setup a development environment on Windows
 description: A guide to help you setup your development environment on Windows and install your preferred tools and code languages. 
-ms.topic: article
+ms.topic: install-set-up-deploy
 ms.subservice: windows-nodejs
 ms.date: 01/07/2025
 ---

@@ -5,7 +5,7 @@ label: Pen interactions and haptic feedback
 template: detail.hbs
 keywords: Windows, ink, user interaction, input, pen, haptic, tactile
 ms.date: 09/17/2021
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
