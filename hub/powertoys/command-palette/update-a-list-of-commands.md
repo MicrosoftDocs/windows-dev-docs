@@ -15,7 +15,7 @@ So far we've shown how to return a list of static items in your extension. Howev
 
 ## Updating a command
 
-Almost all extension objects in the Command Palette implement the **IPropChanged** interface. This allows them to notify the Command Palette when they've changed, and the Command Palette will update the UI to reflect those changes. If you're using the toolkit implementations, this interface has already been implemented for you for properties that support it.
+Almost all extension objects in the Command Palette implement the **IPropChanged** interface. This allows them to notify the Command Palette when they've changed, and the Command Palette will update the UI to reflect those changes. If you're using the [toolkit](https://learn.microsoft.com/en-us/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit) implementations, this interface has already been implemented for you for properties that support it.
 
 As a simple example, you can update the title of the page. To do this, you can add a command which will simply update the title of the page.
 
@@ -87,7 +87,7 @@ Update your list item to take a reference to the page, and add a method to incre
 ```csharp
 internal sealed partial class IncrementingListItem : ListItem
 {
-    public IncrementingListItem(ExtensionNamePage page) :
+    public IncrementingListItem(<ExtensionName>Page page) :
         base(new NoOpCommand())
     {
         _page = page;
@@ -95,20 +95,20 @@ internal sealed partial class IncrementingListItem : ListItem
         Title = "Increment";
     }
 
-    private ExtensionNamePage _page;
+    private <ExtensionName>Page _page;
 }
 ```
 
 Then, change your page as follows:
 
 ```cs
-public ExtensionNamePage()
+public <ExtensionName>Page()
 {
     Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
     Title = "My sample extension";
     Name = "Open";
 
-    _items = [new IncrementingListItem2this) { Subtitle = $"Item 0" }];
+    _items = [new IncrementingListItem(this) { Subtitle = $"Item 0" }]; 
 }
 public override IListItem[] GetItems()
 {
@@ -116,7 +116,7 @@ public override IListItem[] GetItems()
 }
 internal void Increment()
 {
-    _items += new IncrementingListItem(this) { Subtitle = $"Item {_items.Count}" };
+    _items.Add(new IncrementingListItem(this) { Subtitle = $"Item {_items.Count}" });
     RaiseItemsChanged();
 }
 private List<ListItem> _items;
@@ -128,6 +128,9 @@ Now, every time you perform one of the **IncrementingListItem** commands, the li
 
 Everything so far has been pretty instantaneous. Many extensions however may need to do some work that takes a lot longer. In that case, you can set **Page.IsLoading** to `true` to show a loading spinner. This will help indicate that the extension is doing something in the background.
 
+> [!Note]
+> If working from prior section, modify the code below from `Page.IsLoading` to `this.IsLoading`.
+
 ```csharp
 internal void Increment()
 {
@@ -135,12 +138,13 @@ internal void Increment()
     Task.Run(() =>
     {
         Thread.Sleep(5000);
-        _items += new IncrementingListItem(this) { Subtitle = $"Item {_items.Count}" };
+        _items.Add(new IncrementingListItem(this) { Subtitle = $"Item {_items.Count}" });
         RaiseItemsChanged();
         Page.IsLoading = false;
     });
 }
 ```
+
 
 Best practice is to set **IsLoading** to `true` before starting the work. Then do all the work to build all the new **ListItems** you need to display to the user. Then, once the items are ready, call **RaiseItemsChanged** and set **IsLoading** back to `false`. This will ensure that the loading spinner is shown for the entire duration of the work, and that the UI is updated as soon as the work is done (without waiting for your extension to construct new **ListItem** objects).
 
