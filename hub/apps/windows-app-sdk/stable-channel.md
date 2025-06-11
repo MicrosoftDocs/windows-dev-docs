@@ -38,6 +38,43 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.7.250
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
+### Version 1.7.3 (1.7.250606001)
+
+#### Windows AI APIs
+
+> [!IMPORTANT]
+> The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
+
+The Windows App SDK now includes a suite of artificial intelligence (AI) APIs that can be used with a local language model to perform a variety of tasks on Copilot+ PCs. Your apps can now intelligently respond to prompts, recognize text within images, describe the content of images, remove objects from images, and more.
+
+For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
+
+
+#### New Rank property for Widgets
+
+Added a new `Rank` property to Widgets. Rank may be used by the platform's recommendation engine to sort Widgets from a same application package identity. Should multiple widgets from the same provider be recommended for a UI surface, the Rank property will determine the order in which they appear. The Rank property does not change how a Widget is placed compared to other provider's Widgets, nor does it affect the chance a Widget will be recommended.
+
+#### Bug Fixes
+
+- Added the following sentence to section 1a of the .nupkg license: When building Generative AI applications follow the guidelines in [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai).
+- Fixed a potential crash in ApplicationDataProvider::GetStateFolderUris caused by reentrancy. For more info, see GitHub issue [#10513](https://github.com/microsoft/microsoft-ui-xaml/issues/10513). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ApplicationDataProvider_ReentrancyProtection)
+- Fixed a potential crash in WindowChrome::SetTitleBar when closing a window. For more info, see GitHub issue [#9203](https://github.com/microsoft/microsoft-ui-xaml/issues/9203). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowChrome_SetTitleBarCrash)
+- Fixed a potential crash in PointerInputObserverWinRT::FlushCoalescedInput_Callback when there is reentrancy while processing input. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_FlushReentrancyCrash)
+
+#### New APIs for 1.7.3
+ 
+This release includes the following new APIs compared to the previous 1.7 release:
+
+```
+Microsoft.Windows.Widgets.Providers
+
+    WidgetInfo
+        Rank
+
+    WidgetUpdateRequestOptions
+        Rank
+```
+
 ### Version 1.7.2 (1.7.250513003)
 
 #### Windows AI APIs
