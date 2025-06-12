@@ -15,15 +15,15 @@ So far, you've only added commands to a single page within your extension. You c
 
 ## Adding the top-level commands
 
-To do that, head on over to the `ExtensionNameCommandsProvider.cs` file. This file is where you'll add commands that should be shown at the top-level of the Command Palette. As you can see, there's currently only a single item there:
+To do that, head on over to the `<ExtensionName>CommandsProvider.cs` file. This file is where you'll add commands that should be shown at the top-level of the Command Palette. As you can see, there's currently only a single item there:
 
 ```csharp
-public ExtensionNameCommandsProvider()
+public <ExtensionName>CommandsProvider()
 {
     DisplayName = "My sample extension";
     Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
     _commands = [
-        new CommandItem(new ExtensionNamePage()) { Title = DisplayName },
+        new CommandItem(new <ExtensionName>Page()) { Title = DisplayName },
     ];
 }
 
@@ -38,12 +38,12 @@ This sample extension creates a list of commands when the extension is created a
 If you want to add another command to the top-level list of commands, you can add another **CommandItem**:
 
 ```csharp
-public ExtensionNameCommandsProvider()
+public <ExtensionName>CommandsProvider()
 {
     DisplayName = "My sample extension";
     Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
     _commands = [
-        new CommandItem(new ExtensionNamePage()) { Title = DisplayName },
+        new CommandItem(new <ExtensionName>Page()) { Title = DisplayName },
         new CommandItem(new ShowMessageCommand()) { Title = "Send a message" },
     ];
 }

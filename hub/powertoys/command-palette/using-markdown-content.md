@@ -19,6 +19,9 @@ So far, we've only shown how to display a list of commands in a **ListPage**. Ho
 
 As a simple example, we can create the following page:
 
+> [!NOTE]
+> If working from prior sections, modify the code below from `MarkdownPage` to `<ExtensionName>Page`.
+
 ```csharp
 public class MarkdownPage : ContentPage
 {
