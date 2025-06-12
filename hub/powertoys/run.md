@@ -430,6 +430,8 @@ To search for Windows services, [enable the plugin](#plugin-manager), open Power
 
 With the Window Walker plugin, you can switch to other windows, close them, or kill the window process.
 
+You can enter the **Direct activation command** `<` to search for open windows. The plugin will search for the window title and the name of the process that owns the window.
+
 #### Kill a window process
 
 With the Window Walker plugin, you can kill the process of a window if it stops responding.
