@@ -15,7 +15,7 @@ Extensions are written in C#. The fastest way to get started writing extensions 
 
 The form will ask you for the following information:
 
-- **ExtensionName**: The name of your extension. This will be used as the name of the project and the name of the class that implements your commands. Make sure it's a valid C# class name - it shouldn't have any spaces or special characters, and should start with a capital letter.
+- **ExtensionName**: The name of your extension. This will be used as the name of the project and the name of the class that implements your commands. Make sure it's a valid C# class name - it shouldn't have any spaces or special characters, and should start with a capital letter. Reference in docs as `<ExtensionName>`.
 - **Extension Display Name**: The name of your extension as it will appear in the Command Palette. This can be a more human-readable name. 
 - **Output Path**: The folder where the project will be created. 
   - The project will be created in a subdirectory of the path you provided. 
@@ -26,22 +26,22 @@ The form will ask you for the following information:
 Once you submit the form, Command Palette will automatically generate the project for you. At this point, your projects structure should look like the following:
 
 ```plaintext
-ExtensionName/
+<ExtensionName>/
 │   Directory.Build.props
 │   Directory.Packages.props
 │   nuget.config
-│   ExtensionName.sln
-└───ExtensionName
+│   <ExtensionName>.sln
+└───<ExtensionName>
     │   app.manifest
     │   Package.appxmanifest
     │   Program.cs
-    │   ExtensionName.cs
-    │   ExtensionName.csproj
-    │   ExtensionNameCommandsProvider.cs
+    │   <ExtensionName>.cs
+    │   <ExtensionName>.csproj
+    │   <ExtensionName>CommandsProvider.cs
     ├───Assets
     │   <A bunch of placeholder images>
     ├───Pages
-    │   ExtensionNamePage.cs
+    │   <ExtensionName>Page.cs
     └───Properties
         │   launchSettings.json
         └───PublishProfiles
@@ -49,15 +49,15 @@ ExtensionName/
                 win-x64.pubxml
 ```
 
-(with `ExtensionName` replaced with the name you provided)
+(with `<ExtensionName>` replaced with the name you provided)
 
-From here, you can immediately build the project and run it. Once your package is deployed and running, Command Palette will automatically discover your extension and load it into the palette. 
+From here, you can immediately build the project and run it. Once your package is deployed and running, Command Palette will automatically discover your extension and load it into the palette.
 
 > [!TIP]
 > Make sure you _deploy_ your app! Just **build**ing your application won't update the package in the same way that deploying it will.
 
 > [!WARNING]
-> Running "ExtensionName (Unpackaged)" from Visual Studio will not **deploy** your app package.
+> Running "\<ExtensionName\> (Unpackaged)" from Visual Studio will not **deploy** your app package.
 > 
 > If you're using `git` for source control, and you used the standard `.gitignore` file for C#, you'll want to remove the following two lines from your `.gitignore` file:
 > ```
@@ -73,6 +73,9 @@ You should be able to see your extension in the Command Palette at the end of th
 Congrats! You've made your first extension! Now let's go ahead and actually add some commands to it.
 
 When you make changes to your extension, you can rebuild your project and deploy it again. Command Palette will **not** notice changes to packages that are re-ran through Visual Studio, so you'll need to manually run the "**Reload**" command to force Command Palette to re-instantiate your extension.
+
+![Screenshot of reload](../../images/command-palette/reload.png)
+
 
 ### Next up: [Add commands to your extension](adding-commands.md)
 
