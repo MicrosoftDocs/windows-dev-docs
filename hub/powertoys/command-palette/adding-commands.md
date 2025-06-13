@@ -15,10 +15,10 @@ Now that you've created your extension, it's time to add some commands to it.
 
 ## Add some commands
 
-We can start by navigating to the `ExtensionNamePage.cs` file. This file is the [ListPage](./microsoft-commandpalette-extensions-toolkit/listpage.md) that will be displayed when the user selects your extension. In there you should see:
+We can start by navigating to the `<ExtensionName>Page.cs` file. This file is the [ListPage](./microsoft-commandpalette-extensions-toolkit/listpage.md) that will be displayed when the user selects your extension. In there you should see:
 
 ```csharp   
-public ExtensionNamePage()
+public <ExtensionName>Page()
 {
     Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
     Title = "My sample extension";
@@ -56,7 +56,7 @@ The **OpenUrlCommand** is a helper for opening a URL in the user's default web b
 ```csharp
 using System.Runtime.InteropServices;
 
-namespace ExtensionName;
+namespace <ExtensionName>;
 
 internal sealed partial class ShowMessageCommand : InvokableCommand
 {
@@ -76,7 +76,7 @@ internal sealed partial class ShowMessageCommand : InvokableCommand
 }
 ```
 
-Now we can add this command to the list of commands in the `ExtensionNamePage.cs` file:
+Now we can add this command to the list of commands in the `<ExtensionName>Page.cs` file:
 
 ```csharp
 public override IListItem[] GetItems()
@@ -121,7 +121,7 @@ Start by adding a new page that shows a list of commands. Create a new class tha
 using Microsoft.CommandPalette.Extensions.Toolkit;
 using System.Linq;
 
-namespace ExtensionName;
+namespace <ExtensionName>;
 
 internal sealed partial class MySecondPage : ListPage
 {
@@ -145,7 +145,7 @@ internal sealed partial class MySecondPage : ListPage
 }
 ```
 
-Next, update the `ExtensionNamePage.cs` to include this new page:
+Next, update the `<ExtensionName>Page.cs` to include this new page:
 
 ```diff
     public override IListItem[] GetItems()
