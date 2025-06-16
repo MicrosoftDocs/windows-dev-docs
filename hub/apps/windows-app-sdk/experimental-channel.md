@@ -30,6 +30,362 @@ The experimental channel includes releases of the Windows App SDK with [experime
 - [Experimental channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
 - [Experimental channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
 
+## Version 1.8 Experimental (1.8.0-experimental3)
+
+### Use on-device AI with Windows AI APIs
+
+> [!IMPORTANT]
+> The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
+
+The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extract objects from pictures, and more.
+
+For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
+
+### New APIs for 1.8-experimental3
+
+This release includes the following new and modified experimental APIs:
+
+```
+Microsoft.UI.Composition
+
+    CompositionNotificationDeferral
+    CompositionProjectedShadow
+        MaxOpacity
+        MinOpacity
+        OpacityFalloff
+
+    CompositionProjectedShadowCaster
+        AncestorClip
+        Mask
+
+    CompositionProjectedShadowDrawOrder
+    CompositionProjectedShadowReceiver
+        DrawOrder
+        Mask
+```
+```
+Microsoft.UI.Composition.Experimental
+
+    ExpCompositionVisualSurface
+    ExpExpressionNotificationProperty
+    IExpCompositionPropertyChanged
+    IExpCompositionPropertyChangedListener
+    IExpCompositor
+    IExpVisual
+```
+```
+Microsoft.UI.Content
+
+    ContentAppWindowBridge
+    ContentDisplayOrientations
+    ContentExternalBackdropLink
+    ContentExternalOutputLink
+    ContentIsland
+        Connected
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        Disconnected
+        IsRemoteEndpointConnected
+        Root
+
+    ContentIslandEnvironment
+        CurrentOrientation
+        NativeOrientation
+        ThemeChanged
+
+    ContentSite
+        TryGetAutomationProvider
+
+    ContentSiteEnvironment
+        CurrentOrientation
+        NativeOrientation
+        NotifyThemeChanged
+
+    CoreWindowSiteBridge
+    CoreWindowTopLevelWindowBridge
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+
+    DesktopSiteBridge
+        TryCreatePopupSiteBridge
+
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentNodeOwner
+    IContentSiteBridgeEndpointConnectionPrivate
+    PopupWindowSiteBridge
+    ProcessStarter
+    SystemVisualSiteBridge
+```
+```
+Microsoft.UI.Designer
+
+    DesignerOutputHost
+```
+```
+Microsoft.UI.Input
+
+    InputKeyboardSource
+        GetForWindowId
+
+    InputLayoutPolicy
+    InputLightDismissAction
+        GetForIsland
+
+    InputLightDismissEventArgs
+    InputPointerActivationBehavior
+    InputPointerSource
+        ActivationBehavior
+        DirectManipulationHitTest
+        GetForVisual
+        GetForWindowId
+        RemoveForVisual
+        TouchHitTesting
+        TrySetDeviceKinds
+
+    InputPopupController
+    LightDismissReason
+    PopupPointerMode
+    ProximityEvaluation
+    TouchHitTestingEventArgs
+```
+```
+Microsoft.UI.Input.Experimental
+
+    ExpInputSite
+    ExpPointerPoint
+```
+```
+Microsoft.UI.Windowing
+
+    AppWindow
+        GetCurrentPlacement
+        PersistedStateId
+        PlacementRestorationBehavior
+        SaveCurrentPlacement
+        SaveCurrentPlacementForAllPersistedStateIds
+        SetCurrentPlacement
+
+    AppWindowPlacementDetails
+    DisplayArea
+        GetMetricsFromWindowId
+
+    PlacementInfo
+    PlacementRestorationBehavior
+```
+```
+Microsoft.UI.Xaml
+
+    XamlIsland
+        ShouldConstrainPopupsToWorkArea
+```
+```
+Microsoft.UI.Xaml.Automation.Peers
+
+    AutomationEvents
+        Notification
+
+    InkCanvasAutomationPeer
+    PagerControlAutomationPeer
+
+Microsoft.UI.Xaml.Controls
+
+    ContentDialogPlacement
+        UnconstrainedPopup
+
+    DoInkPresenterWork
+    ElementFactory
+    FlowLayout
+    FlowLayoutAnchorInfo
+    FlowLayoutLineAlignment
+    FlowLayoutState
+    IApplicationViewSpanningRects
+    IndexPath
+    InfoBar
+        Opened
+
+    InfoBarOpenedEventArgs
+    InkCanvas
+    ISelfPlayingAnimatedVisual
+    ItemContainer
+        CanUserInvoke
+        CanUserInvokeProperty
+        CanUserSelect
+        CanUserSelectProperty
+        ItemInvoked
+        MultiSelectMode
+        MultiSelectModeProperty
+
+    ItemContainerInteractionTrigger
+    ItemContainerInvokedEventArgs
+    ItemContainerMultiSelectMode
+    ItemContainerUserInvokeMode
+    ItemContainerUserSelectMode
+    LayoutPanel
+    NumberBox
+        InputScope
+        InputScopeProperty
+        TextAlignment
+        TextAlignmentProperty
+
+    PagerControl
+    PagerControlButtonVisibility
+    PagerControlDisplayMode
+    PagerControlSelectedIndexChangedEventArgs
+    PagerControlTemplateSettings
+    ProgressRing
+        DeterminateSource
+        DeterminateSourceProperty
+        IndeterminateSource
+        IndeterminateSourceProperty
+
+    RecyclePool
+    RecyclingElementFactory
+    ScrollingScrollStartingEventArgs
+    ScrollingZoomStartingEventArgs
+    ScrollView
+        ScrollStarting
+        ZoomStarting
+
+    SelectionModel
+    SelectionModelChildrenRequestedEventArgs
+    SelectionModelSelectionChangedEventArgs
+    SelectTemplateEventArgs
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+
+    StackLayoutState
+    TeachingTip
+        Opened
+
+    TeachingTipOpenedEventArgs
+    UniformGridLayoutState
+```
+```
+Microsoft.UI.Xaml.Controls.Primitives
+
+    ScrollPresenter
+        ScrollStarting
+        ZoomStarting
+```
+```
+Microsoft.Windows.AI.Foundation
+
+    AIFoundationContract
+    EmbeddingVector
+```
+```
+Microsoft.Windows.AI.Imaging
+
+    ImageObjectRemover
+    ImageObjectRemoverContract
+```
+```
+Microsoft.Windows.AI.Text
+
+    ConversationItem
+    ConversationSummaryOptions
+    InputKind
+    LanguageModel
+        CreateContext
+        CreateContext
+        CreateContext
+        GenerateEmbeddingVectors
+        GenerateEmbeddingVectors
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GetUsablePromptLength
+        GetUsablePromptLength
+        GetVectorSpaceId
+
+    LanguageModelEmbeddingVectorResult
+    TextSummarizer
+        SummarizeConversationAsync
+```
+```
+Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+
+    Task
+        Run
+```
+```
+Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+
+    DeploymentManager
+        Repair
+
+    DeploymentStatus
+        PackageRepairFailed
+```
+```
+Microsoft.Windows.AppNotifications
+
+    AppNotification
+        ConferencingConfig
+
+    AppNotificationConferencingConfig
+```
+```
+Microsoft.Windows.AppNotifications.Builder
+
+    AppNotificationBuilder
+        AddCameraPreview
+
+    AppNotificationButton
+        SetSettingStyle
+
+    AppNotificationButtonSettingStyle
+```
+```
+Microsoft.Windows.SemanticSearch
+
+    EmbeddingVector
+    SemanticSearchContract
+```
+```
+Microsoft.Windows.Storage
+
+    ApplicationData
+        GetForUnpackaged
+```
+```
+Microsoft.Windows.Storage.Pickers
+
+    FileOpenPicker
+    FileSavePicker
+    FolderPicker
+    PickerLocationId
+    PickerViewMode
+    PickFileResult
+    PickFolderResult
+```
+```
+Microsoft.Windows.Vision
+
+    ScreenRegionBoundingBox
+    ScreenRegionDetectionContract
+    ScreenRegionLabel
+```
+```
+Microsoft.Windows.Widgets.Feeds.Providers
+
+    FeedManager
+        TryRemoveAnnouncementById
+
+    IFeedManager3
+```
+
 ## Version 1.8 Experimental (1.8.0-experimental2)
 
 ### Use on-device AI with Windows AI APIs
