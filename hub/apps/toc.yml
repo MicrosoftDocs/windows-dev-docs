@@ -386,7 +386,7 @@ items:
                 href: develop/security/tools-libraries.md
               - name: Reference
                 href: develop/security/reference.md
-              - name: Third-party passkey manager support
+              - name: Plugin passkey manager support
                 href: develop/security/third-party.md
             - name: Implement OAuth 2.0 functionality
               href: develop/security/oauth2.md
