@@ -1,17 +1,17 @@
 ---
-title: Third-party passkey manager support
-description: This topic describes the third-party API plugin support for third-party passkey providers on Windows.
+title: Plugin passkey manager support
+description: This topic describes the plugin API support for passkey providers on Windows.
 ms.topic: article
-ms.date: 12/12/2024
+ms.date: 06/16/2025
 ---
 
-# Third-party passkey manager support
+# Plugin passkey manager support
 
-This topic describes the third-party credential manager API plugin support for third-party passkey providers on Windows. It showcases a demo app named Contoso Passkey Manager.
+This topic describes the plugin credential manager API plugin support for passkey providers on Windows. It showcases a demo app named Contoso Passkey Manager.
 
 ## Contoso Passkey Manager
 
-Windows 11 supports a third-party plugin model for passkeys. Contoso Passkey Manager is a demo app that demonstrates this passkey provider support.
+Windows 11 supports a plugin model for passkeys. Contoso Passkey Manager is a demo app that demonstrates this passkey provider support.
 
 > [!WARNING] 
 > Contoso Passkey Manager is designed for passkey creation and usage testing only. Don't use the app for production passkeys.
@@ -57,7 +57,7 @@ Windows 11 supports a third-party plugin model for passkeys. Contoso Passkey Man
 
 ## Next steps
 
-To integrate with the third-party plugin capability, go to [webauthn](https://github.com/microsoft/webauthn) to find the header files.
+To integrate with the plugin capability, go to [webauthn](https://github.com/microsoft/webauthn) to find the header files.
 
 ## See also
 
