@@ -21,7 +21,7 @@ In the [Diagnosing direct allocations](./diag-direct-alloc.md) topic, we mention
 
 The benefit of having a public destructor is that it enables deferred destruction, which is the ability to detect the final [**IUnknown::Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) call on your object, and then to take ownership of that object to defer its destruction indefinitely.
 
-Recall that classic COM objects are intrinsically reference counted; the reference count is managed via the [**IUnknown::AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) and **IUnknown::Release** functions. In a traditional implementation of **Release**, a classic COM object's C++ destructor is invoked once the reference count reaches 0.
+Recall that classic COM objects are intrinsically reference counted; the reference count is managed via the [**IUnknown::AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) and [**IUnknown::Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) functions. In a traditional implementation of **Release**, a classic COM object's C++ destructor is invoked once the reference count reaches 0.
 
 ```cppwinrt
 uint32_t WINRT_CALL Release() noexcept
