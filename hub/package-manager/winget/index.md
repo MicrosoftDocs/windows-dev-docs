@@ -15,21 +15,21 @@ ms.localizationpriority: medium
 **WinGet** the Windows Package Manager is available on Windows 11, modern versions of Windows 10, and Windows Server 2025 as a part of the **App Installer**. The **App Installer** is a System Component delivered and updated by the Microsoft store on Windows Desktop versions, and via Updates on Windows Server 2025.
 
 > [!NOTE]
-> The **WinGet** command line tool is only supported on Windows 10 1709 (build 16299) or later at this time. WinGet will not be available until you have logged into Windows as a user for the first time, triggering Microsoft Store to register the Windows Package Manager as part of an asynchronous process. If you have recently logged in as a user for the first time and find that WinGet is not yet available, you can open PowerShell and enter the following command to request this WinGet registration: `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`.
+> The **WinGet** command line tool is only supported on Windows 10 version 1809 (build 17763) or later. WinGet will not be available until you have logged into Windows as a user for the first time, triggering Microsoft Store to register the Windows Package Manager as part of an asynchronous process. If you have recently logged in as a user for the first time and find that WinGet is not yet available, you can open PowerShell and enter the following command to request this WinGet registration: `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`.
 
 ### Install WinGet preview version [Developers Only]
 
-WinGet is included in the Windows App Installer. To try the latest Windows Package Manager features, you can install a preview build one of the following ways:
+WinGet is included in the App Installer. To try the latest Windows Package Manager features, you can install a preview build one of the following ways:
 
 - Download the latest [WinGet preview version](https://aka.ms/getwingetpreview). Read the [Release notes for WinGet preview](https://github.com/microsoft/winget-cli/releases) to learn about any new features. Installing this package will give you the preview version of the WinGet client, but it will not enable automatic updates of new preview versions from the Microsoft Store.
 
-- Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Dev Channel](https://insider.windows.com/understand-flighting). The Windows Insider Dev Channel includes automatic updates of new preview versions from the Microsoft Store.
+- Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Program](https://www.microsoft.com/windowsinsider/about-windows-insider-program) in the Canary or Dev [Channels](https://learn.microsoft.com/windows-insider/flighting). The Windows Insider Canary and Dev Channels include automatic updates of new preview versions of WinGet from the Microsoft Store.
 
 - Use a Microsoft Account (MSA) to sign up for the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram). Once your Microsoft Account (MSA) has been added (a few days after you receive e-mail notification) you will receive automatic updates of new preview versions from the Microsoft Store.
 
 ### Install WinGet on Windows Sandbox
 
-[Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains "sandboxed" and runs separately from the host machine. Windows Sandbox does not include WinGet, nor the Microsoft Store app, so you will need to download the latest WinGet package from the WinGet releases page on GitHub.
+[Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains "sandboxed" and runs separately from the host machine. Windows Sandbox does not include WinGet, nor the Microsoft Store app, so you will need to download the latest WinGet package from the WinGet releases page on GitHub, or use the Repair-WinGetPackageManager cmdlet.
 
 To install the stable release of WinGet on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:
 
@@ -43,7 +43,7 @@ Repair-WinGetPackageManager -AllUsers
 Write-Host "Done."
 ```
 
-To install the PowerShell module in machine scope, you can use the `-Scope AllUsers` parameter with the `Install-Module` cmdlet. If you would like a preview version of WinGet, you can add `-IncludePrerelease` parameter with the Repair-WinGetPackageManager cmdlet. To see the available parameters for the Repair-WinGetPackageManager cmdlet, you can run `Get-Help Repair-WinGetPackageManager -Full`.
+To install the WinGet PowerShell module in machine scope, you can use the `-Scope AllUsers` parameter with the `Install-Module` cmdlet. If you would like a preview version of WinGet, you can add `-IncludePrerelease` parameter with the Repair-WinGetPackageManager cmdlet. To see the available parameters for the Repair-WinGetPackageManager cmdlet, you can run `Get-Help Repair-WinGetPackageManager -Full`.
 
 For more information on Windows Sandbox, including how to install a sandbox and what to expect from it's usage, see the [Windows Sandbox docs](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview).
 
@@ -51,13 +51,13 @@ For more information on Windows Sandbox, including how to install a sandbox and 
 
 Installer behavior can be different depending on whether you are running **WinGet** with administrator privileges.
 
-* When running **WinGet** without administrator privileges, some applications may [require elevation](/windows/security/identity-protection/user-account-control/how-user-account-control-works) to install. When the installer runs, Windows will prompt you to [elevate](/windows/security/identity-protection/user-account-control/how-user-account-control-works). If you choose not to elevate, the application will fail to install.  
+* When running **WinGet** without administrator privileges, some applications may [require elevation](/windows/security/identity-protection/user-account-control/how-user-account-control-works) to install. When the installer runs, Windows will prompt you to [elevate](/windows/security/identity-protection/user-account-control/how-user-account-control-works). If you choose not to elevate, the application will fail to install.
 
 * When running **WinGet** in an Administrator Command Prompt, you will not see [elevation prompts](/windows/security/identity-protection/user-account-control/how-user-account-control-works) if the application requires it. Always use caution when running your command prompt as an administrator, and only install applications you trust.
 
 ## Use WinGet
 
-After **App Installer** is installed, you can run **WinGet** by typing 'WinGet' from a Command Prompt.
+After **App Installer** is installed, you can run **WinGet** by typing 'winget' from a Command Prompt.
 
 One of the most common usage scenarios is to search for and install a favorite tool.
 
@@ -76,14 +76,14 @@ The current preview of the **WinGet** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
-| [info](info.md) | Displays metadata about the system (version numbers, architecture, log location, etc). Helpful for troubleshooting. |
+| [--info](info.md) | Displays metadata about the system (version numbers, architecture, log location, etc). Helpful for troubleshooting. |
 | [install](install.md) | Installs the specified application. |
 | [show](show.md) | Displays details for the specified application. |
 | [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by the **WinGet** tool. |
 | [search](search.md) | Searches for an application. |
 | [list](list.md) | Display installed packages. |
-| [upgrade](upgrade.md) |  Upgrades the given package. | 
-| [uninstall](uninstall.md) | Uninstalls the given package. |
+| [upgrade](upgrade.md) |  Upgrades the given specified application. |
+| [uninstall](uninstall.md) | Uninstalls the specified application. |
 | [hash](hash.md) | Generates the SHA256 hash for the installer. |
 | [validate](validate.md) | Validates a manifest file for submission to the Windows Package Manager repository. |
 | [settings](settings.md) | Open settings. |
@@ -132,7 +132,7 @@ winget install Microsoft.WindowsTerminal Microsoft.PowerToys Microsoft.VisualStu
 ```
 
 > [!NOTE]
-> When scripted, **WinGet** will launch the applications in the specified order. When an installer returns success or failure, **WinGet** will launch the next installer. If an installer launches another process, it is possible that it will return to **WinGet** prematurely. This will cause **WinGet** to install the next installer before the previous installer has completed.
+> When scripted, **WinGet** will install the applications in the specified order. When an installer returns success or failure, **WinGet** will launch the next installer. If an installer launches another process, it is possible that it will return to **WinGet** prematurely. This will cause **WinGet** to install the next installer before the previous installer has completed.
 
 ## Debugging and troubleshooting
 
@@ -144,7 +144,7 @@ If the [community repository](../package/repository.md) does not include your to
 
 ## Customize WinGet settings
 
-You can configure the **WinGet** command line experience by modifying the **settings.json** file. For more information, see [https://aka.ms/winget-settings](https://aka.ms/winget-settings). Note that the settings are still in an experimental state and not yet finalized for the preview version of the tool.
+You can configure the **WinGet** command line experience by modifying the **settings.json** file. For more information, see the page for the [settings command](./settings.md).
 
 ## Open source details
 
@@ -156,7 +156,7 @@ We encourage you to contribute to the **WinGet** source on GitHub. You must firs
 
 ## Troubleshooting
 
-The WinGet-cli repo maintains a list of common issues and common errors, along with recommendations on how to resolve:
+The winget-cli repo maintains a list of common issues and common errors, along with recommendations on how to resolve:
 
 - [common issues -- not recognized, failed to run, App Installer version or PATH variable need updating](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting#common-issues)
 - [common errors -- Error 0x801901a0, 0x80d03002, 0x80070490](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting#common-errors)
