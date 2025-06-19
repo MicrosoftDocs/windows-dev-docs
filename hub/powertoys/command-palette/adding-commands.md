@@ -49,9 +49,70 @@ public override IListItem[] GetItems()
 }
 ```
 
-Re-deploy your app, run the "reload" command to refresh the extensions in the palette, and head to your extension. You should see that the command now opens the Command Palette documentation. 
+To update the extension in the Command Palette you need to:
 
-The **OpenUrlCommand** is a helper for opening a URL in the user's default web browser. You can also implement an extension however you want. Let's instead make a new command, that shows a **MessageBox**. To do that, we need to create a new class that implements **IInvokableCommand**.
+1. Deploy your app
+1. In the Command Palette, type the "reload" command to refresh the extensions in the palette
+
+![Screenshot of reload](../../images/command-palette/reload.png)
+
+> [!NOTE]
+> There are several reload options, make sure to select the **Reload Command Palette extensions**
+
+1. Scroll down to your extension and press `enter`
+1. Press `enter` on `Open the Command Palette documentation`
+1. You should see that the command now opens the Command Palette documentation
+
+The **OpenUrlCommand** is a helper for opening a URL in the user's default web browser.
+
+## Debugging Extension
+
+As your building your extension, you'll most likely want to debug it.
+
+1. Add a debug message to the `GetItems` function.
+
+```diff
+    public override IListItem[] GetItems()
+    {
+        var command = new OpenUrlCommand("https://learn.microsoft.com/windows/powertoys/command-palette/adding-commands");
+    
++       Debug.Write("Debug message from GetItems");
+    
+        return [
+            new ListItem(command)
+            {
+                Title = "Open the Command Palette documentation",
+            }
+        ];
+    }
+```
+
+1. Deploy your app, wait until it's successful
+1. Confirm You're in Debug Configuration
+
+<details>
+  <summary>Instructions to confirm debug configuration</summary>
+
+1. Look at the toolbar at the top of Visual Studio
+1. You’ll see a dropdown that says either `Debug` or `Release` (next to the green "Start" button ▶️)
+1. If it says `Release`, click the dropdown and select `Debug`.
+
+![Screenshot of reload](../../images/command-palette/debug-configuration.png)
+
+</details>
+
+1. Run the app in debug by pressing the green "Start" button ▶️ or press `F5`
+1. Ensure the Output window is set to show `Debug` output (Ctrl + Alt + O)
+
+![Screenshot of reload](../../images/command-palette/output.png)
+
+1. In the Command Palette, `reload`
+1. Go to your extension and select `Open the Command Palette documentation`.
+1. In Visual Studio's output window, you should see `Debug message from GetItems`
+
+## InvokableCommand Command
+
+You can also implement an extension however you want. Let's instead make a new command, that shows a **MessageBox**. To do that, we need to create a new class that implements **IInvokableCommand**.
 
 ```csharp
 using System.Runtime.InteropServices;
