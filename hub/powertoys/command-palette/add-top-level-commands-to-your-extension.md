@@ -11,11 +11,14 @@ no-loc: [PowerToys, Windows, Insider]
 
 **Previous**: [Update a list of commands](update-a-list-of-commands.md).
 
-So far, you've only added commands to a single page within your extension. You can also add more commands directly to the top-level list of commands too. 
+So far, you've only added commands to a single page within your extension. You can also add more commands directly to the top-level list of commands too.
 
-## Adding the top-level commands
 
-To do that, head on over to the `<ExtensionName>CommandsProvider.cs` file. This file is where you'll add commands that should be shown at the top-level of the Command Palette. As you can see, there's currently only a single item there:
+## Top-level commands
+
+To add commands at the top level of the Command Palette, open the `<ExtensionName>CommandsProvider.cs` file. This is where you define the commands that will appear at the root level of the Command Palette.
+
+Currently, the file contains only one command:
 
 ```csharp
 public <ExtensionName>CommandsProvider()
@@ -33,23 +36,37 @@ public override ICommandItem[] TopLevelCommands()
 }
 ```
 
-This sample extension creates a list of commands when the extension is created and returns that list whenever it's asked for the top-level commands. This prevents the extension from re-creating the list of commands every time the top-level commands are requested. This is a performance optimization.
+When the extension is created, it builds a list of commands and stores them in the `_commands` field. Every time the extension is asked for its top-level commands, it simply returns this prebuilt list. This approach avoids recreating the command list on each request, which improves performance.
 
-If you want to add another command to the top-level list of commands, you can add another **CommandItem**:
+## Add another top level command
 
-```csharp
+1. In Visual Studio, open `<ExtensionName>CommandsProvider.cs`
+1. Add another `CommandItem`:
+
+```diff
 public <ExtensionName>CommandsProvider()
 {
     DisplayName = "My sample extension";
     Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
     _commands = [
         new CommandItem(new <ExtensionName>Page()) { Title = DisplayName },
-        new CommandItem(new ShowMessageCommand()) { Title = "Send a message" },
++       new CommandItem(new ShowMessageCommand()) { Title = "Send a message" },
     ];
 }
 ```
 
+> [!NOTE]
+> `ShowMessageCommand()` section was created prior at [InvokableCommand Command](adding-commands#invokableCommand-command)
+
+1. Deploy your extension
+1. In command palette, `Reload`
+
+![Screenshot of extension with send message command at top level](../../images/command-palette/top-level-command.png)
+
 There you have it. Now you can add additional top-level commands to your extension.
+
+
+
 
 If you'd like to update the list of top-level commands dynamically, you can do so in the same way as you would update a list page. This can be useful for cases like an extension that might first require the user to log in, before showing certain commands. In that case, you can show the "log in" command at the top level initially. Then, once the user logs in successfully, you can update the list of top-level commands to include the commands that required authentication.
 

@@ -17,7 +17,7 @@ Now that you've created your extension, it's time to add some commands to it.
 
 We can start by navigating to the `<ExtensionName>Page.cs` file. This file is the [ListPage](./microsoft-commandpalette-extensions-toolkit/listpage.md) that will be displayed when the user selects your extension. In there you should see:
 
-```csharp   
+```csharp
 public <ExtensionName>Page()
 {
     Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
@@ -32,9 +32,9 @@ public override IListItem[] GetItems()
 }
 ```
 
-Here you can see that we've set the icon for the page, the title, and the name that's shown at the top-level when you have the command selected. The **GetItems** method is where you'll return the list of commands that you want to show on this page. Right now, that's just returning a single command that does nothing. Let's instead try making that command open _this_ page in the user's default web browser.
+Here you can see that we've set the icon for the page, the title, and the name that's shown at the top-level when you have the command selected. The `GetItems` method is where you'll return the list of commands that you want to show on this page. Right now, that's just returning a single command that does nothing. Let's instead try making that command open _this_ page in the user's default web browser.
 
-We can change the implementation of **GetItems** to the following:
+1. Update `GetItems` to the following:
 
 ```csharp
 public override IListItem[] GetItems()
@@ -51,7 +51,7 @@ public override IListItem[] GetItems()
 
 To update the extension in the Command Palette you need to:
 
-1. Deploy your app
+1. Deploy your extension
 1. In the Command Palette, type the "reload" command to refresh the extensions in the palette
 
 ![Screenshot of reload](../../images/command-palette/reload.png)
@@ -59,9 +59,9 @@ To update the extension in the Command Palette you need to:
 > [!NOTE]
 > There are several reload options, make sure to select the **Reload Command Palette extensions**
 
-1. Scroll down to your extension and press `enter`
+1. Scroll down to your extension and press `Enter`
 1. Press `enter` on `Open the Command Palette documentation`
-1. You should see that the command now opens the Command Palette documentation
+1. You should see that the command opens the Command Palette documentation
 
 The **OpenUrlCommand** is a helper for opening a URL in the user's default web browser.
 
@@ -87,7 +87,7 @@ As your building your extension, you'll most likely want to debug it.
     }
 ```
 
-1. Deploy your app, wait until it's successful
+1. Deploy your extension, wait until it's successful
 1. Confirm You're in Debug Configuration
 
 <details>
@@ -106,13 +106,22 @@ As your building your extension, you'll most likely want to debug it.
 
 ![Screenshot of reload](../../images/command-palette/output.png)
 
-1. In the Command Palette, `reload`
+1. In the Command Palette, run `reload`
 1. Go to your extension and select `Open the Command Palette documentation`.
-1. In Visual Studio's output window, you should see `Debug message from GetItems`
+1. In Visual Studio's Output window, you should see `Debug message from GetItems`
 
 ## InvokableCommand Command
 
-You can also implement an extension however you want. Let's instead make a new command, that shows a **MessageBox**. To do that, we need to create a new class that implements **IInvokableCommand**.
+Let's continue building a new command, that shows a **MessageBox**. To do that, we need to create a new class that implements `InvokableCommand`.
+
+1. In Visual Studio, Add a New Class File
+    - Keyboard Shortcut: Press Ctrl + Shift + A
+    - Or in the Solution Explorer, go to Project > Add New Item...
+1. In the Add New Item dialog:
+    1. Select Class from the list.
+    1. Name your class file: `ShowMessageCommand.cs`
+    1. Click Add.
+1. Replace the default class code with:
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -139,6 +148,8 @@ internal sealed partial class ShowMessageCommand : InvokableCommand
 
 Now we can add this command to the list of commands in the `<ExtensionName>Page.cs` file:
 
+1. In the `<ExtensionName>.cs`, update the `GetItems`:
+
 ```csharp
 public override IListItem[] GetItems()
 {
@@ -154,29 +165,46 @@ public override IListItem[] GetItems()
 }
 ```
 
-Deploy and reload, and presto - a command to show a message box!
+1. Deploy your extension
+1. In command palette, `Reload`
+
+And presto - a command to show a message box!
 
 > [!TIP]
 > At about this point, you'll probably want to initialize a git repo / {other source control method of your choice} for your project. This will make it easier to track changes, and to share your extension with others.
 > 
 > We recommend using GitHub, as it's easy to collaborate on your extension with others, and get feedback, and share it with the world.
 
-## Adding more pages
+## Types of Pages
 
 So far, we've only worked with commands that "do something". However, you can also add commands that show additional pages within the Command Palette. There are basically two types of "Commands" in the Palette:
-- **IInvokableCommand** - These are commands that *do something*.
-- **IPage** - These are commands that *show something*.
 
-Because **IPage** implementations are **ICommand**'s, you can use them anywhere you can use commands. This means you can add them to the top-level list of commands, or to a list of commands on a page, the context menu on an item, etc. 
+- `InvokableCommand` - These are commands that **do something**
+- `IPage` - These are commands that **show something**
+
+Because `IPage` implementations are **ICommand**'s, you can use them anywhere you can use commands. This means you can add them to the top-level list of commands, or to a list of commands on a page, the context menu on an item, etc.
 
 There are two different kinds of pages you can show:
+
 - [ListPage](./microsoft-commandpalette-extensions-toolkit/listpage.md) - This is a page that shows a list of commands. This is what we've been working with so far.
+
+![Screenshot of ListPage](../../images/command-palette/ListPage.png)
+
 - [ContentPage](./microsoft-commandpalette-extensions-toolkit/contentpage.md) - This is a page that shows rich content to the user. This allows you to specify abstract content, and let Command Palette worry about rendering the content in a native experience. There are two different types of content supported so far:
   - [Markdown content](./using-markdown-content.md) - This is content that's written in Markdown, and is rendered in the Command Palette. See [MarkdownContent](./microsoft-commandpalette-extensions-toolkit/markdowncontent.md) for details.
+
+![Screenshot of Markdown content](../../images/command-palette/reload.png)
+
   - [Form content](./using-form-pages.md) - This is content that shows a form to the user, and then returns the results of that form to the extension. These are powered by [Adaptive Cards](https://aka.ms/adaptive-cards) This is useful for getting user input, or displaying more complex layouts of information. See [FormContent](./microsoft-commandpalette-extensions-toolkit/formcontent.md) for details.
 
+![Screenshot of Form content](../../images/command-palette/reload.png)
 
-Start by adding a new page that shows a list of commands. Create a new class that implements **ListPage**:
+## Add more commands
+
+Start by adding a new page that shows a list of commands. Create a new class that implements **ListPage**.
+
+1. In the `Pages` folder, create a new class called `MySecondPage`
+1. Update the code to:
 
 ```csharp
 using Microsoft.CommandPalette.Extensions.Toolkit;
@@ -206,7 +234,7 @@ internal sealed partial class MySecondPage : ListPage
 }
 ```
 
-Next, update the `<ExtensionName>Page.cs` to include this new page:
+1.Update the `<ExtensionName>Page.cs` to include this new page:
 
 ```diff
     public override IListItem[] GetItems()
@@ -218,12 +246,15 @@ Next, update the `<ExtensionName>Page.cs` to include this new page:
                 Title = "Open the Command Palette documentation",
             },
             new ListItem(new ShowMessageCommand()),
-+            new ListItem(new MySecondPage()) { Title = "My second page", Subtitle = "A second page of commands" },
++           new ListItem(new MySecondPage()) { Title = "My second page", Subtitle = "A second page of commands" },
         ];
     }
 ```
 
-Deploy, reload, and you should now see a new page in your extension that shows 100 commands that copy a number to the clipboard.
+1. Deploy your extension
+1. In command palette, `Reload`
+
+You should now see a new page in your extension that shows 100 commands that copy a number to the clipboard.
 
 ### Next up: [Update a list of commands](update-a-list-of-commands.md)
 
