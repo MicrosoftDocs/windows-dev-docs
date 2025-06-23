@@ -84,7 +84,7 @@ To create a new project using the WinUI C# Blank App project template:
 1. Open Visual Studio and select **Create a new project** from the launch page. (If Visual Studio is already open to the editor, select **File** > **New** > **Project**):
   :::image type="content" source="images/hello-world/start-project.png" alt-text="Create a new project":::
 
-1. Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` C# project template, then click **Next**:
+1. Search for `WinUI` and select the `WinUI Blank App (Packaged)` C# project template, then click **Next**:
   :::image type="content" source="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI 3 C# desktop app":::
 
 1. Specify a project name, then click **Create**. You can optionally specify a solution name and directory, or leave the defaults. In this image, the `Hello World` project belongs to a `Hello World` solution, which will live in `C:\Projects\`:
