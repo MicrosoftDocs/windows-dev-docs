@@ -17,18 +17,16 @@ So far, we've only shown how to display a list of commands in a **ListPage**. Ho
 
 [IContentPage](./microsoft-commandpalette-extensions/icontentpage.md) (and its toolkit implementation, [ContentPage](microsoft-commandpalette-extensions-toolkit/contentpage.md)) is the base for displaying all types of rich content in the Command Palette. To display markdown content, you can use the [MarkdownContent](microsoft-commandpalette-extensions-toolkit/markdowncontent.md) class.
 
-As a simple example, we can create the following page:
-
-> [!NOTE]
-> If working from prior sections, modify the code below from `MarkdownPage` to `<ExtensionName>Page`.
+1. In your <ExtensionName>Page.cs, replace content with:
 
 ```csharp
-public class MarkdownPage : ContentPage
+internal sealed partial class <ExtensionName>Page : ContentPage
 {
-    public MarkdownPage()
+    public <ExtensionName>Page()
     {
-        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Icon = new("\uE8A5"); // Document icon
         Title = "Markdown page";
+        Name = "Preview file";
     }
 
     public override IContent[] GetContent()
@@ -40,48 +38,73 @@ public class MarkdownPage : ContentPage
 }
 ```
 
-In this example, a new **MarkdownPage** that displays a simple markdown string is created. The **MarkdownContent** class takes a string of markdown content and renders it in the Command Palette. 
+1. Deploy your extension
+1. In command palette, `Reload`
 
-You can also add multiple blocks of content to a page. For example, you can add two blocks of markdown content:
+In this example, a new `ContentPage` that displays a simple markdown string is created. The 'MarkdownContent' class takes a string of markdown content and renders it in the Command Palette.
 
-```csharp
+![Screenshot of extension using ContentPage](../../images/command-palette/markdown.png)
+
+You can also add multiple blocks of content to a page. For example, you can add two blocks of markdown content.
+
+1. Update `GetContent`:
+
+```diff
 public override IContent[] GetContent()
 {
     return [
         new MarkdownContent("# Hello, world!\n This is a **markdown** page."),
-        new MarkdownContent("## Second block\n This is another block of content."),
++       new MarkdownContent("## Second block\n This is another block of content."),
     ];
 }
 ```
 
+1. Deploy your extension
+1. In command palette, `Reload`
+
 This allows you to mix-and-match different types of content on a single page.
 
-## Adding commands
+## Adding CommandContextItem
 
-You can also add commands to a **ContentPage**. This allows you to add additional commands to be invoked by the user, while in the context of the content. For example, if you had a page that displayed a document, you could add a command to open the document in File Explorer:
+You can also add commands to a `ContentPage`. This allows you to add additional commands to be invoked by the user, while in the context of the content. For example, if you had a page that displayed a document, you could add a command to open the document in File Explorer:
 
-```csharp 
+1. In your <ExtensionName>Page.cs, add `doc_path`, `Commands` and `MarkdownContent`:
 
-public class MarkdownExamplePage : ContentPage
+```diff
+
+public class <ExtensionName>Page : ContentPage
 {
-    public MarkdownExamplePage()
++   private string doc_path = "C:\\Path\\to\\file.txt";
+    public <ExtensionName>Page()
     {
         Icon = new("\uE8A5"); // Document icon
         Title = "Markdown page";
         Name = "Preview file";
+        path = 
 
-        Commands = [
-            new CommandContextItem(new OpenUrlCommand("C:\\Path\\to\\file.txt")) { Title = "Open in File Explorer" },
-        ];
++       Commands = [
++           new CommandContextItem(new OpenUrlCommand("C:\\Path\\to\\file.txt")) { Title = "Open in File Explorer" },
++       ];
     }
     public override IContent[] GetContent()
     {
         return [
-            new MarkdownContent("# Hello, world!\n This is a **markdown** document.\nI live at `C:\\Path\\to\\file.txt`"),
+            new MarkdownContent("# Hello, world!\n This is a **markdown** document."),
+            new MarkdownContent("## Second block\n This is another block of content."),
++           new MarkdownContent($"## Press enter to open `{doc_path}`"),
         ];
     }
 }
 ```
+
+1. Update the path in the `doc_path` to a .txt file on your local machine
+1. Deploy your extension
+1. In command palette, `Reload`
+1. Select <ExtensionName>
+1. Press `Enter` key, the docs should open
+
+![Screenshot of extension using CommandContextItem](../../images/command-palette/CommandContextItem.png)
+
 
 ### Next up: [Get user input with forms](using-form-pages.md)
 

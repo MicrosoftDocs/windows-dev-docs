@@ -193,7 +193,7 @@ There are two different kinds of pages you can show:
 - [ContentPage](./microsoft-commandpalette-extensions-toolkit/contentpage.md) - This is a page that shows rich content to the user. This allows you to specify abstract content, and let Command Palette worry about rendering the content in a native experience. There are two different types of content supported so far:
   - [Markdown content](./using-markdown-content.md) - This is content that's written in Markdown, and is rendered in the Command Palette. See [MarkdownContent](./microsoft-commandpalette-extensions-toolkit/markdowncontent.md) for details.
 
-![Screenshot of Markdown content](../../images/command-palette/reload.png)
+![Screenshot of extension using ContentPage](../../images/command-palette/markdown.png)
 
   - [Form content](./using-form-pages.md) - This is content that shows a form to the user, and then returns the results of that form to the extension. These are powered by [Adaptive Cards](https://aka.ms/adaptive-cards) This is useful for getting user input, or displaying more complex layouts of information. See [FormContent](./microsoft-commandpalette-extensions-toolkit/formcontent.md) for details.
 
