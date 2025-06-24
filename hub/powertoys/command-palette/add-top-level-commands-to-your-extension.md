@@ -56,24 +56,23 @@ public <ExtensionName>CommandsProvider()
 ```
 
 > [!NOTE]
-> `ShowMessageCommand()` section was created prior at [InvokableCommand Command](adding-commands#invokableCommand-command)
+> The `ShowMessageCommand()` functionality was created prior at [InvokableCommand Command](adding-commands#invokableCommand-command)
 
 1. Deploy your extension
 1. In command palette, `Reload`
 
 ![Screenshot of extension with send message command at top level](../../images/command-palette/top-level-command.png)
 
-There you have it. Now you can add additional top-level commands to your extension.
+Now there is an additional top-level commands to your extension.
 
-
-
+## Add top level command dynamically
 
 If you'd like to update the list of top-level commands dynamically, you can do so in the same way as you would update a list page. This can be useful for cases like an extension that might first require the user to log in, before showing certain commands. In that case, you can show the "log in" command at the top level initially. Then, once the user logs in successfully, you can update the list of top-level commands to include the commands that required authentication.
 
-Once you've determined that you need to change the top level list, call [RaiseItemsChanged](./microsoft-commandpalette-extensions-toolkit/commandprovider_raiseitemschanged.md) on your **CommandProvider**. Command Palette will then request the top-level commands via **TopLevelCommands** again, and you can return the updated list.
+Once you've determined that you need to change the top level list, call [RaiseItemsChanged](./microsoft-commandpalette-extensions-toolkit/commandprovider_raiseitemschanged.md) on your `CommandProvider`. Command Palette will then request the top-level commands via **TopLevelCommands** again, and you can return the updated list.
 
 > [!TIP]
-> Create the **CommandItem** objects for the top-level commands before calling **RaiseItemsChanged**. This will ensure that the new commands are available when Command Palette requests the top-level commands. This will ensure that the work being executed in each call to **TopLevelCommands** method to a minimum.
+> Create the `CommandItem` objects for the top-level commands before calling `RaiseItemsChanged`. This will ensure that the new commands are available when Command Palette requests the top-level commands. This will ensure that the work being executed in each call to **TopLevelCommands** method to a minimum.
 
 ### Next up: [Command Results](command-results.md)
 
