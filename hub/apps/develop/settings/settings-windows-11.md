@@ -86,6 +86,16 @@ Specifies the start layout type.
 |---------------|------|-------|------------|
 | Start_Layout | REG_DWORD | 0 [Default], 1 [More Pins], 2 [More Recommendations] | The start layout. |
 
+## Personalization - Start - Show all pins by default
+
+Specifies whether all pins show by default in Start.
+
+### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| ShowAllPinsList | REG_DWORD | 0 or 1 | Specifies if showing all pins by default |
+
 ## Personalization - Start - Recommendations
 
 Specifies whether recommendations for tips, shortcuts, new apps and more are shown.
