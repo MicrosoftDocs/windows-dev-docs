@@ -17,12 +17,18 @@ So far, we've only shown how to display a list of commands in a **ListPage**. Ho
 
 [IContentPage](./microsoft-commandpalette-extensions/icontentpage.md) (and its toolkit implementation, [ContentPage](microsoft-commandpalette-extensions-toolkit/contentpage.md)) is the base for displaying all types of rich content in the Command Palette. To display markdown content, you can use the [MarkdownContent](microsoft-commandpalette-extensions-toolkit/markdowncontent.md) class.
 
-1. In your <ExtensionName>Page.cs, replace content with:
+1. In the `Pages` directory, add a new class
+1. Name the class `MarkdownPage.cs`
+1. Update the file to:
 
 ```csharp
-internal sealed partial class <ExtensionName>Page : ContentPage
+using Microsoft.CommandPalette.Extensions;
+using Microsoft.CommandPalette.Extensions.Toolkit;
+using System.Text.Json.Nodes;
+
+internal sealed partial class MarkdownPage : ContentPage
 {
-    public <ExtensionName>Page()
+    public MarkdownPage()
     {
         Icon = new("\uE8A5"); // Document icon
         Title = "Markdown page";
@@ -38,12 +44,27 @@ internal sealed partial class <ExtensionName>Page : ContentPage
 }
 ```
 
+1. Open <ExtensionName>CommandsProvider.cs
+1. Replace the `CommandItem`s for the `MarkdownPage`:
+
+```diff
+public <ExtensionName>CommandsProvider()
+{
+    DisplayName = "My sample extension";
+    Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+    _commands = [
++       new CommandItem(new MarkdownPage()) { Title = DisplayName },
+    ];
+}
+
+```
+
 1. Deploy your extension
 1. In command palette, `Reload`
 
 In this example, a new `ContentPage` that displays a simple markdown string is created. The 'MarkdownContent' class takes a string of markdown content and renders it in the Command Palette.
 
-![Screenshot of extension using ContentPage](../../images/command-palette/markdown.png)
+![Screenshot of extension using ContentPage for markdown](../../images/command-palette/markdown.png)
 
 You can also add multiple blocks of content to a page. For example, you can add two blocks of markdown content.
 
