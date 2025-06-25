@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Choose visibility or discoverability options for add-on
+# Set visibility options
 
 The **Visibility** section of the [Pricing and availability page](./price-and-availability.md) allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
 
@@ -18,7 +18,7 @@ The Audience section lets you specify whether you want to restrict the visibilit
 
 ### Public audience
 
-By default, your app’s Store listing will be visible to a **Public audience**. This is appropriate for most submissions, unless you want to limit who can see your app’s listing to specific people. You can also use the options in the [Discoverability](#discoverability) section to restrict discoverability if you’d like.
+By default, your app’s Store listing will be visible to the **Public audience**. This is appropriate for most submissions, unless you want to limit who can see your app’s listing to specific people. You can also use the options in the [Discoverability](#discoverability) section to restrict discoverability if you’d like.
 
 > [!IMPORTANT]
 > If you submit a product with this option set to **Public audience**, you can't choose **Private audience** in a later submission.
@@ -33,7 +33,7 @@ After your submission is published, the people in the group you specify will be 
 
 If you plan to make the app available to a public audience at a certain date and time, you can select the box labeled **Make this product public on** when creating your submission. Enter the date and time (in UTC) when you’d like the product to become available to the public. Keep in mind the following:
 
-- The date and time that you select will apply to all markets. If you want to customize the release schedule for different markets, don’t use this box. Instead, create a new submission that changes your setting to **Public audience**, then use the [Schedule](./schedule-pricing-changes.md#configure-precise-release-scheduling) options to specify your release timing.
+- The date and time that you select will apply to all markets. If you want to customize the release schedule for different markets, don’t use this box. Instead, create a new submission that changes your setting to **Public audience**, then use the [Schedule](./configure-release-schedule.md#configure-precise-release-scheduling) options to specify your release timing.
 - Entering a date for **Make this product public on** does not apply to the Microsoft Store for Business and/or Microsoft Store for Education. To allow us to offer your app to these customers through organizational licensing, you’ll need to create a new submission with **Public audience** selected (and [organizational licensing](../../organizational-licensing.md) enabled).
 - After the date and time that you select, all future submissions will use **Public audience**.
 
@@ -43,7 +43,7 @@ Here are some important things to keep in mind when choosing to distribute your 
 
 - People in your private audience will be able to get the app by using a specific link to your app’s Store listing that requires them to sign in with their Microsoft account in order to view it. This link is provided when you select **Private audience**. You can also find it on your [App identity](../../view-app-identity-details.md) page under **URL if your app is only visible to certain people (requires authentication)**. Be sure to give your testers this link, not the regular URL to your Store listing.
 - Unless you choose an option in **Discoverability** that prevents it, people in your private audience will be able to find your app by searching within the Microsoft Store app. However, the web listing will not be discoverable via search, even to people in that audience.
-- You won’t be able to [configure release dates in the Schedule section](./schedule-pricing-changes.md#configure-precise-release-scheduling) of the **Pricing and availability page**, since your app won’t be released to customers outside of your private audience.
+- You won’t be able to [configure release dates in the Schedule section](./configure-release-schedule.md#configure-precise-release-scheduling) of the **Pricing and availability page**, since your app won’t be released to customers outside of your private audience.
 - Other selections you make will apply to people in this audience. For example, if you choose a price other than **Free**, people in your private audience will have to pay that price in order to acquire the app.
 - If you want to distribute different packages to different people in your private audience, after your initial submission you can use [package flights](../../package-flights.md) to distribute different package updates to subsets of your private audience. You can create additional known user groups to define who should get a specific package flight.
 - You can edit the membership of the known user group(s) in your private audience. However, keep in mind that if you remove someone who was in the group and previously downloaded your app, they will still be able to use the app, but they won’t get any updates that you provide (unless you choose **Public audience** at a later date).

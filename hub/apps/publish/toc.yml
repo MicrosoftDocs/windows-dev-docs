@@ -177,8 +177,6 @@ items:
     items:
           - name: What are add-ons
             href: publish-your-app/add-on/what-are-add-ons.md
-          - name: Overview
-            href: publish-your-app/add-on/overview.md
           - name: Create add-ons
             href: publish-your-app/add-on/create-app-submission.md
           - name: Set pricing and availability
@@ -187,26 +185,18 @@ items:
                     href: publish-your-app/add-on/price-and-availability.md
                   - name: Define markets
                     href: publish-your-app/add-on/market-selection.md
-                  - name: Set Visibility options
+                  - name: Set visibility options
                     href: publish-your-app/add-on/visibility-options.md
                   - name: Set and schedule pricing
                     href: publish-your-app/add-on/schedule-pricing-changes.md
-          - name: Add properties
-            items:
-                  - name: Overview
-                    href: publish-your-app/add-on/enter-app-properties.md
-                  - name: Provide support info
-                    href: publish-your-app/add-on/support-info.md
-          - name: Create Store Listings
-            items:
-                  - name: Overview
-                    href: publish-your-app/add-on/create-app-store-listing.md
-                  - name: Add and edit Store listing info
-                    href: publish-your-app/add-on/add-and-edit-store-listing-info.md
-          - name: Manage Submission options
+                  - name: Configure release schedule
+                    href: publish-your-app/add-on/configure-release-schedule.md
+          - name: Enter add-on properties
+            href: publish-your-app/add-on/enter-app-properties.md
+          - name: Create store listings
+            href: publish-your-app/add-on/create-app-store-listing.md
+          - name: Manage submission options
             href: publish-your-app/add-on/manage-submission-options.md  
-          - name: Update existing add-on
-            href: publish-your-app/add-on/publish-update-to-your-app-on-store.md  
 - name: Get your app certified
   items: 
     - name: MSIX
@@ -340,7 +330,11 @@ items:
               - name: Manage app names
                 href: partner-center/pwa/manage-app-name-reservations.md
               - name: Guidance for app package management
-                href: publish-your-app/pwa/app-package-management.md                
+                href: publish-your-app/pwa/app-package-management.md        
+        - name: Add-ons
+          items:
+              - name: Publish update to your add-on
+                href: publish-your-app/add-on/publish-update-to-your-app-on-store.md  
 - name: Manage your account
   items:
       - name: Manage account users
@@ -410,3 +404,9 @@ items:
             href: store-policies.md#microsoft-store-complaint-and-appeal-statistics
           - name: Raise a support ticket
             href: contact-us.md
+- name: FAQs
+  items:
+    - name: Notifications
+      href: publish-your-app/faqs/notifications.md
+- name: Best Practices
+  href: best-practices/best-practices.md
