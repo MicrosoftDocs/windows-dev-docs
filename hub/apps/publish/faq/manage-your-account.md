@@ -29,10 +29,10 @@ Microsoft will validate the data you provide. Until confirmed, your payout statu
 <details>
 <summary><strong>Can I add other team members or co-developers to help manage my apps in Partner Center?</strong></summary>
 
-Yes, but only for **Company accounts** (linked to Azure Active Directory). To add users:
+Yes, but only for **Company accounts** (linked to Entra ID). To add users:
 
 1. Go to **Account settings > Users** in Partner Center.
-2. Add existing Azure AD users or invite others by email.
+2. Add existing Entra ID users or invite others by email.
 3. Assign them specific roles or custom permissions based on their responsibilities.
 
 For example, grant permission to submit apps without making someone a full admin. **Individual accounts** do not support multiple users. Always follow the **principle of least privilege** when assigning roles.
