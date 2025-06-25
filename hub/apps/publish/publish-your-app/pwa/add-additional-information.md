@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Add additional information for PWA
+# Add additional information
 
 The items described below help customers discover and understand your product.
 

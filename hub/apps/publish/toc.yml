@@ -61,8 +61,6 @@ items:
             href: publish-your-app/msix/import-and-export-store-listings.md
           - name: Write a great app description
             href: publish-your-app/msix/write-great-app-description.md
-          - name: Responsible AI FAQ for AI-generated keywords
-            href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
       - name: Manage Submission options
         href: publish-your-app/msix/manage-submission-options.md                  
   - name: MSI/EXE
@@ -117,8 +115,6 @@ items:
             href: publish-your-app/msi/import-and-export-store-listings.md
           - name: Write a great app description
             href: publish-your-app/msi/write-great-app-description.md
-          - name: Responsible AI FAQ for AI-Generated keywords
-            href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
       - name: App submission controls
         href: publish-your-app/msi/app-submission-control.md              
   - name: PWA
@@ -139,26 +135,26 @@ items:
             href: publish-your-app/pwa/visibility-options.md
           - name: Set and schedule app pricing
             href: publish-your-app/pwa/schedule-pricing-changes.md
-      - name: Add app properties
+          - name: Configure precise release scheduling
+            href: publish-your-app/pwa/configure-release-schedule.md
+      - name: Enter app properties
         items:
           - name: Overview
             href: publish-your-app/pwa/enter-app-properties.md
           - name: Set category and subcategory
             href: publish-your-app/pwa/categories-and-subcategories.md
-          - name: Provide privacy policy and support info
+          - name: Privacy policy and support info
             href: publish-your-app/pwa/support-info.md
           - name: Product declarations
             href: publish-your-app/pwa/product-declarations.md
-          - name: Provide system requirements
+          - name: System requirements
             href: publish-your-app/pwa/system-requirements.md
       - name: Generate age ratings
         href: publish-your-app/pwa/age-ratings.md
-      - name: Upload package
+      - name: Upload app packages
         href: publish-your-app/pwa/upload-app-packages.md
       - name: Create Store listings
         items:
-          - name: Create Store listings
-            href: publish-your-app/pwa/create-app-store-listing.md
           - name: Add and edit Store listing info
             href: publish-your-app/pwa/add-and-edit-store-listing-info.md
           - name: Add app screenshots, images, and trailers
@@ -167,10 +163,6 @@ items:
             href: publish-your-app/pwa/add-additional-information.md
           - name: Import and export Store listings
             href: publish-your-app/pwa/import-and-export-store-listings.md
-          - name: Write a great app description
-            href: publish-your-app/pwa/write-great-app-description.md
-          - name: Responsible AI FAQ for AI-Generated keywords
-            href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
       - name: Manage submission options
         href: publish-your-app/pwa/manage-submission-options.md                        
   - name: Add-ons
@@ -197,6 +189,8 @@ items:
             href: publish-your-app/add-on/create-app-store-listing.md
           - name: Manage submission options
             href: publish-your-app/add-on/manage-submission-options.md  
+          - name: Update existing add-on
+            href: publish-your-app/add-on/publish-update-to-your-app-on-store.md
 - name: Get your app certified
   items: 
     - name: MSIX
@@ -408,5 +402,7 @@ items:
   items:
     - name: Notifications
       href: publish-your-app/faqs/notifications.md
+    - name: Responsible AI FAQ for AI-generated keywords
+      href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md
 - name: Best Practices
   href: best-practices/best-practices.md
