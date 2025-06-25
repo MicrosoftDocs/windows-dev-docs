@@ -21,7 +21,7 @@ Unless you opt to define [custom permissions](overview-of-custom-permissions-for
 | Developer            | Can upload packages and submit apps and add-ons, and can view the [Usage report](../usage-report.md) for telemetry details. Can access [Cross-Device Experiences](https://developer.microsoft.com/windows/project-rome) functionality. Can’t view financial info or account settings.   |
 | Business Contributor | Can view [Health](../health-report.md) and [Usage](../usage-report.md) reports. Can't create or submit products, change account settings, or view financial info.   |
 | Finance Contributor  | Can view [payout reports](/partner-center/payout-statement), financial info, and acquisition reports. Can’t make any changes to apps, add-ons, or account settings.    |
-| Marketer             | Can [respond to customer reviews](../respond-to-customer-reviews.md) and view non-financial [analytic reports](../analytics.md). Can’t make any changes to apps, add-ons, or account settings.      |
+| Marketer             | Can view non-financial [analytic reports](../analytics.md). Can’t make any changes to apps, add-ons, or account settings.      |
 
 The table below shows some of the specific features available to each of these roles (and to the account owner).
 

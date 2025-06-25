@@ -77,12 +77,6 @@ If you want to offer your app at a reduced price for a limited period of time, y
 
 For more info, see [Put apps and add-ons on sale](../../put-apps-and-add-ons-on-sale.md).
 
-## Organizational licensing
-
-By default, your app may be offered to organizations to purchase in volume. You can indicate whether and how your app can be offered in this section.
-
-For more info, see [Organizational licensing options](../../organizational-licensing.md).
-
 ## Publish date
 
 Previously, the **Publish date** section appeared on this page. This functionality can now be found on the [Submission options](./manage-submission-options.md) page, in the **Publishing hold options** section.

@@ -10,9 +10,6 @@ ms.localizationpriority: medium
 
 The Microsoft Store Command Line Interface is a cross-platform (Windows, macOS, Linux) CLI that helps developers publish their applications to the Microsoft Store. It allows developers to locally configure their applications projects to publish to the Microsoft Store, as well as actually publish their applications' packages to the Microsoft Store, automatically calling the right [Partner Center APIs](/partner-center/develop/partner-center-rest-api-reference) to upload its packages.
 
-> [!Important]
-> **The Microsoft Store Developer CLI** is currently in preview, and we are looking for feedback from developers. Please [open an issue](https://github.com/microsoft/msstore-cli/issues) if you have any feedback or issues.
-
 [Sign up today!](https://developer.microsoft.com/store/register)
 
 ## Prerequisites
@@ -20,7 +17,7 @@ The Microsoft Store Command Line Interface is a cross-platform (Windows, macOS, 
 To use the Microsoft Store Developer CLI, you'll need to:
 
 - [Register as a Windows app developer in Partner Center](/windows/apps/publish/partner-center/partner-center-developer-account)
-- Have a tenant associated with your Partner Center account. You can achieve that by either [associating an existing Azure AD in Partner Center](/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account) or by [creating a new Azure AD in Partner Center](/windows/apps/publish/partner-center/create-new-azure-ad-tenant).
+- Have a tenant associated with your Partner Center account. You can achieve that by either [associating an existing Microsoft Entra ID in Partner Center](/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account) or by [creating a new Microsoft Entra ID in Partner Center](/windows/apps/publish/partner-center/create-new-azure-ad-tenant).
 
 ## Installation
 
@@ -37,7 +34,7 @@ msstore
 ```
 
 > [!Important]
-> When signing in, don't use your MSA! The **Microsoft Store Developer CLI** requires you to use your **Azure AD credentials**. You can find more information about this in our [prerequisites](#prerequisites) section.
+> When signing in, don't use your MSA! The **Microsoft Store Developer CLI** requires you to use your **Microsoft Entra ID credentials**. You can find more information about this in our [prerequisites](#prerequisites) section.
 
 Running in CI environments is also supported, and the Microsoft Store Developer CLI (preview) can be used in your CI/CD pipelines to, for example, automatically publish your applications to the Microsoft Store. More instructions on how to do this can be found [here](./commands.md#cicd-environments).
 
@@ -55,3 +52,5 @@ These are the Microsoft Store Developer CLI (preview) available commands:
 | [init](./commands.md#init-command)               | Helps you setup your application to publish to the Microsoft Store.                                                                |
 | [package](./commands.md#package-command)         | Helps you package your Microsoft Store Application as an MSIX.                                                                     |
 | [publish](./commands.md#publish-command)         | Publishes your application to the Microsoft Store.                                                                                 |
+
+For more info, see: [Commands](commands.md).

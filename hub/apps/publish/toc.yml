@@ -35,7 +35,7 @@ items:
             href: publish-your-app/msix/enter-app-properties.md
           - name: Set category and subcategory
             href: publish-your-app/msix/categories-and-subcategories.md
-          - name: Provide privacy policy and support info
+          - name: Provide support info
             href: publish-your-app/msix/support-info.md
           - name: Product declarations
             href: publish-your-app/msix/product-declarations.md
@@ -139,7 +139,7 @@ items:
             href: publish-your-app/pwa/enter-app-properties.md
           - name: Set category and subcategory
             href: publish-your-app/pwa/categories-and-subcategories.md
-          - name: Privacy policy and support info
+          - name: Provide support info
             href: publish-your-app/pwa/support-info.md
           - name: Product declarations
             href: publish-your-app/pwa/product-declarations.md
@@ -227,98 +227,78 @@ items:
       href: analyze-app-performance/gdk-xbox.md
 - name: Leverage developer tools
   items:
-    - name: Tools for MSI and EXE apps
-      items: 
-          - name: Microsoft Store Submission API for MSI or EXE app
-            href: store-submission-api.md
-    - name: Tools for MSIX apps
+    - name: MSIX
       items: 
           - name: Product page experiments
             href: product-page-experiments.md
-          - name: Use Microsoft Store Web Installer to distribute apps
-            href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md  
-          - name: App management and services
-            href: app-management-and-services.md
+          - name: Product management and services
             items: 
+              - name: Overview
+                href: product-management-and-services.md
               - name: View product identity details
                 href: view-app-identity-details.md
-              - name: Generate preinstall packages for OEMs
-                href: generate-preinstall-packages-for-oems.md
-              - name: Organizational Licensing options
-                href: organizational-licensing.md
-              - name: Package Flights
-                href: package-flights.md
-              - name: Gradual Package Rollout
-                href: gradual-package-rollout.md
-              - name: Beta testing and targeted distribution
-                href: beta-testing-and-targeted-distribution.md
-              - name: Distribute LOB apps to enterprises
-                href: distribute-lob-apps-to-enterprises.md
+              - name: Manage app names
+                href: partner-center/msix/manage-app-name-reservations.md
           - name: Attract and promote
-            href: attract-customers-and-promote-your-apps.md
             items: 
+              - name: Overview
+                href: attract-customers-and-promote-your-apps.md
               - name: Generate promotional codes
                 href: generate-promotional-codes.md
               - name: Create a custom app promotion campaign
                 href: create-a-custom-app-promotion-campaign.md
               - name: Put apps and add-ons on sale
                 href: put-apps-and-add-ons-on-sale.md
-              - name: App marketing guidelines
-                href: app-marketing-guidelines.md
-              - name: Link to your app
-                href: link-to-your-app.md
-              - name: Get the updated Microsoft Store Badge
-                href: microsoft-store-app-badge.md
-              - name: Make your app easier to promote
-                href: make-your-app-easier-to-promote.md
           - name: Engage with your customers
-            href: engage-with-your-customers.md
             items: 
+              - name: Overview
+                href: engage-with-your-customers.md
               - name: Create customer groups
                 href: create-customer-groups.md
-                items: 
-                  - name: Create customer segments
-                    href: create-customer-segments.md
-                  - name: Create known user groups
-                    href: create-known-user-groups.md
               - name: Respond to customer reviews
                 href: respond-to-customer-reviews.md
-              - name: Respond to customer feedback
-                href: respond-to-customer-feedback.md
-              - name: Send notifications to your app's customers
-                href: send-push-notifications-to-your-apps-customers.md
               - name: Use targeted offers
                 href: use-targeted-offers-to-maximize-engagement-and-conversions.md
-    - name: Microsoft Store Developer CLI (preview)
+          - name: Microsoft Store Developer CLI (preview)
+            items:
+              - name: Overview
+                href: msstore-dev-cli/overview.md
+              - name: Commands
+                href: msstore-dev-cli/commands.md
+    - name: MSI/EXE
+      items: 
+          - name: Microsoft Store Submission API for MSI or EXE app
+            href: store-submission-api.md
+    - name: Use Microsoft Store Web Installer to distribute apps
+      href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md
+    - name: Package and Distribution
       items:
-        - name: Overview
-          href: msstore-dev-cli/overview.md
-        - name: Commands
-          href: msstore-dev-cli/commands.md
+        - name: Beta testing and targeted distribution
+          href: beta-testing-and-targeted-distribution.md
+        - name: Package flights
+          href: package-flights.md
+        - name: Gradual package rollout
+          href: gradual-package-rollout.md
+        - name: Distribute LOB apps to enterprises
+          href: distribute-lob-apps-to-enterprises.md
 - name: Manage and update your app
   items:
         - name: MSIX
           items:
               - name: Publish update to your app
                 href: publish-your-app/msix/publish-update-to-your-app-on-store.md
-              - name: Manage app names
-                href: partner-center/msix/manage-app-name-reservations.md
               - name: Guidance for app package management
                 href: publish-your-app/msix/app-package-management.md
         - name: MSI/EXE
           items:
               - name: Publish update to your app
                 href: publish-your-app/msi/publish-update-to-your-app-on-store.md  
-              - name: Manage app names
-                href: partner-center/msi/manage-app-name-reservations.md
               - name: Guidance for app package management
                 href: publish-your-app/msi/app-package-management.md                     
         - name: PWA
           items:
               - name: Publish update to your app
                 href: publish-your-app/pwa/publish-update-to-your-app-on-store.md
-              - name: Manage app names
-                href: partner-center/pwa/manage-app-name-reservations.md
               - name: Guidance for app package management
                 href: publish-your-app/pwa/app-package-management.md        
         - name: Add-ons
@@ -414,3 +394,7 @@ items:
       href: /hub/apps/publish/faq/microsoft-store-policies-and-resources.md
     - name: Responsible AI FAQ for AI-Generated keywords
       href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
+    - name: Link to your app and Microsoft store badge
+      href: leverage-developer-tools-faqs/link-to-your-app-and-microsoft-store-badge.md
+    - name: Make your app easier to promote
+      href: leverage-developer-tools-faqs/make-your-app-easier-to-promote.md
