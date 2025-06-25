@@ -308,48 +308,41 @@ items:
 - name: Manage your account
   items:
       - name: Manage account users
-        href: partner-center/manage-account-users.md
+        href: partner-center/manage-account-users.md  
+      - name: Manage Microsoft Entra ID with your Partner Center account
         items: 
-          - name: Manage Azure AD with your Partner Center account
-            items: 
-              - name: Associate an existing Azure AD in Partner Center
-                href: partner-center/associate-existing-azure-ad-tenant-with-partner-center-account.md
-              - name: Create a new Azure AD in Partner Center
-                href: partner-center/create-new-azure-ad-tenant.md
-              - name: Remove Azure AD tenant from Partner Center
-                href: partner-center/remove-azure-ad-tenant-associations.md
-          - name: Manage users, groups, and Azure AD applications
-            items: 
-              - name: Users, groups, and applications in Azure Active Directory
-                href: partner-center/overview-users-groups-azure-ad-applications.md
-              - name: Manage users in Partner Center account
-                href: partner-center/manage-users-in-partner-center.md
-              - name: Manage groups in Partner Center account
-                href: partner-center/manage-groups-in-partner-center.md
-              - name: Manage Azure AD applications in Partner Center account
-                href: partner-center/manage-azure-ad-applications-in-partner-center.md
-          - name: Manage roles and permissions for account users
-            items: 
-              - name: Overview of roles and permissions for account users
-                href: partner-center/overview-of-roles-and-permissions-for-account-users.md
-              - name: Assign roles to account users
-                href: partner-center/assign-roles-to-account-users.md
-              - name: Overview of custom permissions to account users
-                href: partner-center/overview-of-custom-permissions-for-account-users.md
-              - name: Assign account level custom permissions to account users
-                href: partner-center/assign-account-level-custom-permissions-to-account-users.md
-              - name: Assign product level custom permissions to account users
-                href: partner-center/assign-product-level-custom-permissions-to-account-users.md
-              - name: Troubleshoot App Creation in Partner Center
-                href: partner-center/troubleshoot-app-creation.md
+          - name: Associate an existing Microsoft Entra ID in Partner Center
+            href: partner-center/associate-existing-azure-ad-tenant-with-partner-center-account.md
+          - name: Create a new Microsoft Entra ID in Partner Center
+            href: partner-center/create-new-azure-ad-tenant.md
+          - name: Remove Microsoft Entra ID tenant from Partner Center
+            href: partner-center/remove-azure-ad-tenant-associations.md
+      - name: Manage users, groups, and Microsoft Entra ID applications
+        items: 
+          - name: Users, groups, and applications in Azure Active Directory
+            href: partner-center/overview-users-groups-azure-ad-applications.md
+          - name: Manage users in your Partner Center account
+            href: partner-center/manage-users-in-partner-center.md
+          - name: Manage groups in your Partner Center account
+            href: partner-center/manage-groups-in-partner-center.md
+          - name: Manage Microsoft Entra ID applications in your Partner Center account
+            href: partner-center/manage-azure-ad-applications-in-partner-center.md
+      - name: Manage roles and permissions for account users
+        items: 
+          - name: Overview of roles and custom permissions for account users
+            href: partner-center/overview-of-roles-and-permissions-for-account-users.md
+          - name: Assign roles to account users
+            href: partner-center/assign-roles-to-account-users.md
+          - name: Assign account level custom permissions to account users
+            href: partner-center/assign-account-level-custom-permissions-to-account-users.md
+          - name: Assign product level custom permissions to account users
+            href: partner-center/assign-product-level-custom-permissions-to-account-users.md
       - name: Partner Center workspaces
         href: partner-center/partner-center-workspaces.md
       - name: Manage account settings and profile info
         href: /partner-center/partner-center-account-setup
       - name: Close your developer account in Partner Center
         href: partner-center/close-your-developer-account-in-partner-center.md
-      - name: Trademark and copyright protection
-        href: partner-center/trademark-and-copyright-protection.md                
 - name: Microsoft Store policies and resources
   items: 
       - name: Microsoft Store Policies
@@ -398,3 +391,7 @@ items:
       href: leverage-developer-tools-faqs/link-to-your-app-and-microsoft-store-badge.md
     - name: Make your app easier to promote
       href: leverage-developer-tools-faqs/make-your-app-easier-to-promote.md
+    - name: Trademark and copyright protection
+      href: partner-center/trademark-and-copyright-protection.md
+    - name: Troubleshoot App creation
+      href: partner-center/troubleshoot-app-creation.md

@@ -7,14 +7,14 @@ ms.localizationpriority: medium
 ---
 # Manage account users
 
-You can use Azure Active Directory to add and manage additional users in your [Partner Center](https://partner.microsoft.com/dashboard)  account. You can define the role or custom permissions that each user should have. You can also assign a role to a group of users, or to an Azure AD application.
+You can use Microsoft Entra ID to add and manage additional users in your [Partner Center](https://partner.microsoft.com/dashboard)  account. You can define the role or custom permissions that each user should have. You can also assign a role to a group of users, or to an Microsoft Entra ID application.
 
-In order to add and manage account users, you must first associate your Partner Center account with your organization's Azure Active Directory.
+In order to add and manage account users, you must first associate your Partner Center account with your organization's Microsoft Entra ID.
 
 This section describes how to do the following:
 
-- [Associate Azure Active Directory with your Partner Center account](associate-azure-ad-with-partner-center.md)
-- [Add users, groups, and Azure AD applications to your Partner Center account](add-users-groups-and-azure-ad-applications.md)
+- [Associate Microsoft Entra ID with your Partner Center account](associate-azure-ad-with-partner-center.md)
+- [Add users, groups, and Microsoft Entra ID applications to your Partner Center account](add-users-groups-and-azure-ad-applications.md)
 - [Set roles and custom permissions for account users](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
