@@ -103,8 +103,6 @@ items:
             href: publish-your-app/msi/package-validation-pre-check.md
       - name: Create Store listings
         items:
-          - name: Create Store listings
-            href: publish-your-app/msi/add-and-edit-store-listing-info.md
           - name: Add and edit Store listing info
             href: publish-your-app/msi/add-and-edit-store-listing-info.md
           - name: Add app screenshots and images

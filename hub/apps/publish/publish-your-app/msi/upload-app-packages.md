@@ -54,6 +54,11 @@ If you have packages compiled in more than 1 architecture, you should add them t
 
 :::image type="content" source="images/msiexe-package-select-languages.png" lightbox="images/msiexe-package-select-languages.png" alt-text="A screenshot of the Packages section where you can provide the languages your app supports.":::
 
+<details>
+<summary>View supported languages</summary>
+**Languages**<br>_Required_
+
+
 You can submit apps to the Microsoft Store in over 100 languages. Your app must support at least one of the following languages.
 
 > [!NOTE]
@@ -163,6 +168,7 @@ You can submit apps to the Microsoft Store in over 100 languages. Your app must 
 | Welsh                 | cy, cy-gb                                                                                                                                             |
 | Wolof                 | wo, wo-sn                                                                                                                                             |
 | Yoruba                | yo-latn, yo-ng                                                                                                                                        |
+</details>
 
 **App type**<br>_Required_
 

@@ -18,6 +18,14 @@ The Microsoft Store reaches customers in over 240 countries and regions around t
 
 For more info, see [Define market selection](./market-selection.md).
 
+### Discoverability
+
+The selections in the Discoverability section indicate how customers can discover and acquire your app.
+
+### Audience 
+
+The Visibility section of the Pricing and availability page allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
+
 ## Pricing
 
 Choose your pricing model from Free, Freemium, Subscription and Paid. For more info, see [Set app pricing](./set-app-pricing.md).

@@ -20,6 +20,10 @@ To change the category, subcategory or secondary category of an app that's alrea
 
 **The Microsoft Store organizes apps into the following categories and subcategories.**
 
+<details>
+<summary>View categories and subcategories</summary>
+
+
 | Category              | Subcategory                                                                                                                                                                                                | Description                                                                                                                                                          | Examples                                                                                                                          |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Books + reference     | E-reader<br>Fiction<br>Nonfiction<br>Reference                                                                                                                                                             | Apps which provide interactive ways to access content which is generally printed form                                                                                | e-reader, book reader, comics, novels                                                                                             |
@@ -47,3 +51,31 @@ To change the category, subcategory or secondary category of an app that's alrea
 | Sports                | (None)                                                                                                                                                                                                     | Apps which provide information on upcoming sport events, live scores, statistics etc.                                                                                | live scores, statistics, ticket booking, reports, news                                                                            |
 | Travel                | City guides<br>Hotels                                                                                                                                                                                      | Apps which help user in planning their travel, stay and exploration at a particular location                                                                         | vacation planning, flight booking, taxi/cab booking, hotel booking, city guides                                                   |
 | Utilities + tools     | Backup + manage<br>File managers                                                                                                                                                                           | Apps which assist user in solving problems or completing specific tasks                                                                                              | file manager, calculators, barcode scanner, measurement, remote controls, file backup, cloud storage, file conversion, PDF editor |
+
+
+**Following are the available genres for Games category:**
+
+| Genre                            | Description                                                                                    |
+| -------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Action + adventure               | Games with story-driven plot and combat gameplay mechanics                                     |
+| Card + board                     | Games which are played with standardized rules involving cards or boards as the primary items  |
+| Casino                           | Games which allow players to play gambling games online                                        |
+| Classics                         | Games based on the famous old classic games like brick blocks, fruit snake etc.                |
+| Educational                      | Games that are related to learning new skill or a topic in an interactive way                  |
+| Family + kids                    | Games which are more interactive in nature and focused on kids                                 |
+| Fighting                         | Games which allow user to experience combat battles                                            |
+| Multi-Player Online Battle Arena | Games where the players use weapons with defined range to fight against each other             |
+| Music                            | Games related to guessing music, interaction-based music                                       |
+| Other                            | Games which do not fall into any of the here mentioned genres                                  |
+| Platformer                       | Games which are 2-dimensional where player can control character's walk, jump                  |
+| Puzzle + trivia                  | Games which challenge the problem-solving capabilities of the user                             |
+| Racing + flying                  | Games which allow user to compete against other opponents in a similar machinery               |
+| Role playing                     | Games which allow the user to cast themselves as a character which evolves throughout the game |
+| Shooter                          | Games with a focus on defeating enemies using gun-like weapons                                 |
+| Simulation                       | Games which let user imitate a real-world process                                              |
+| Sports                           | Games which imitate the traditional physical sports                                            |
+| Strategy                         | Games which require thorough planning and thinking to achieve victory                          |
+| Tools                            | Apps which allow users to interact with the game without launching the actual game software    |
+| Word                             | Games related to guessing words based on puzzles/riddles                                       |
+</details>
+

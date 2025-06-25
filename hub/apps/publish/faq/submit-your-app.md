@@ -163,7 +163,6 @@ To **add or remove** members from the notification list:
 
 </details>
 
-
 ## Best practices for submitting your app
 
 ### Tips for choosing a great app name
