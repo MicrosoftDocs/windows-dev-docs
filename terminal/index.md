@@ -3,7 +3,7 @@ title: An overview on Windows Terminal
 description: Learn about Windows Terminal and how it can improve your command line workflow.
 author: nguyen-dows
 ms.author: chrnguyen
-ms.date: 05/17/2023
+ms.date: 06/25/2023
 ms.topic: overview
 ---
 
@@ -13,10 +13,6 @@ Windows Terminal is a modern host application for the command-line shells you al
 
 > [!div class="nextstepaction"]
 > [Install Windows Terminal](https://aka.ms/terminal)
-
-<br>
-
-> [!VIDEO ca90633f-94a5-4f74-8f14-e274ce24581c]
 
 > [!NOTE]
 > For more general info, check out Scott Hanselman's article: [What's the difference between a console, a terminal, and a shell?](https://www.hanselman.com/blog/WhatsTheDifferenceBetweenAConsoleATerminalAndAShell.aspx) or Rich Turner's video [What is a command-line shell?](https://channel9.msdn.com/Blogs/One-Dev-Minute/What-is-a-command-line-shell--One-Dev-Question).
