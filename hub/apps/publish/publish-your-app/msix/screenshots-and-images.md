@@ -6,13 +6,13 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# App screenshots, images, and trailers for MSIX app
+# Add app screenshots, images, and trailers
 
 Well-designed images are one of the main ways for you to represent your app to potential customers in the Store.
 
 You can provide [screenshots](#screenshots), [logos](#store-logos), [trailers](#trailers), and other art assets to include in your app's Store listing. Some of these are required, and some are optional (although some of the optional images are important to include for the best Store display).
 
-During the [app submission process](./create-app-submission.md), you provide these art assets in the [Store listings](./create-app-store-listing.md) step. Note that the images which are used in the Store, and the way that they appear, may vary depending on the customer's operating system and other factors.
+During the [app submission process](./create-app-submission.md), you provide these art assets in the [Store listings](./add-and-edit-store-listing-info.md) step. Note that the images which are used in the Store, and the way that they appear, may vary depending on the customer's operating system and other factors.
 
 The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](/windows/uwp/debug-test-perf/windows-app-certification-kit) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](../../../design/style/iconography/overview.md).
 
@@ -223,5 +223,4 @@ There are 3 different sizes that you can upload:
 #### Holographic image
 
 The **2:1 (2400 x 1200)** image is only used if your app supports the Holographic device family. If it does, we recommend providing this image.
-
 

@@ -1,8 +1,9 @@
 ---
-title: Notifications for app and add-on submission
-description: Notifications for app and add-on submission and how to configure them
+description: This section will guide you in understanding the notifications
+title: Microsoft store notifications
+ms.date: 06/03/2025
 ms.topic: article
-ms.date: 6/10/2022
+ms.localizationpriority: medium
 ---
 
 # Notifications

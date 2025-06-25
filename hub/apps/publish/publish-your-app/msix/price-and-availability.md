@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Set app pricing and availability for MSIX app
+# Set app pricing and availability
 
 The **Pricing and availability** page of the [app submission process](./create-app-submission.md) lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers. Here, we'll walk through the options on this page and what you should consider when entering this information.
 
@@ -24,15 +24,19 @@ The **Visibility** section allows you to set restrictions on how your app can be
 
 For more info, see [Choose visibility options](./visibility-options.md).
 
+### Discoverability
+
+The selections in the Discoverability section indicate how customers can discover and acquire your app.
+
+### Audience 
+
+The Visibility section of the Pricing and availability page allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
+
 ## Schedule
 
 By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the Visibility section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
 
 For more info, see [Configure precise release scheduling](./schedule-pricing-changes.md#configure-precise-release-scheduling).
-
-## Discoverability
-
-The selections in the Discoverability section indicate how customers can discover and acquire your app.
 
 ### Make this product available and discoverable in the Store
 

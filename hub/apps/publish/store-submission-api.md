@@ -27,7 +27,7 @@ Before you start writing code to call the Microsoft Store submission API for MSI
   - If your app does not yet exist in Partner Center, you must [create your app by reserving its name](publish-your-app/msix/reserve-your-apps-name.md) in Partner Center. You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it.
   - Before you can create a submission for a given app using this API, you must first [create one submission for the app](publish-your-app/msix/create-app-submission.md) in Partner Center, including answering the [age ratings](publish-your-app/msix/age-ratings.md) questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API.
   - If you are creating or updating an app submission and you need to include new package, [prepare the package details](publish-your-app/msi/upload-app-packages.md).
-  - If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](publish-your-app/msi/create-app-store-listing.md).
+  - If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](publish-your-app/msi/add-and-edit-store-listing-info.md).
 
 ### How to associate an Azure AD application with your Partner Center account
 

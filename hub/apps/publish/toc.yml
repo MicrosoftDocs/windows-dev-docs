@@ -25,8 +25,10 @@ items:
             href: publish-your-app/msix/market-selection.md
           - name: Choose visibility options
             href: publish-your-app/msix/visibility-options.md
-          - name: Set and schedule app pricing
+          - name: Set app pricing
             href: publish-your-app/msix/schedule-pricing-changes.md
+          - name: Configure precise release scheduling
+            href: publish-your-app/msix/configure-release-schedule.md
       - name: Add app properties
         items:
           - name: Overview
@@ -50,7 +52,7 @@ items:
       - name: Create Store listings
         items:
           - name: Create Store listings
-            href: publish-your-app/msix/create-app-store-listing.md
+            href: publish-your-app/msix/add-and-edit-store-listing-info.md
           - name: Add and edit Store listing info
             href: publish-your-app/msix/add-and-edit-store-listing-info.md
           - name: Add app screenshots, images, and trailers
@@ -59,8 +61,6 @@ items:
             href: publish-your-app/msix/add-additional-information.md
           - name: Import and export Store listings
             href: publish-your-app/msix/import-and-export-store-listings.md
-          - name: Write a great app description
-            href: publish-your-app/msix/write-great-app-description.md
       - name: Manage Submission options
         href: publish-your-app/msix/manage-submission-options.md                  
   - name: MSI/EXE
@@ -68,7 +68,7 @@ items:
       - name: Reserve app name
         href: publish-your-app/msi/reserve-your-apps-name.md
       - name: Create app submission
-        href: publish-your-app/msi/create-app-submission.md
+        href: publish-your-app/msix/create-app-submission.md
       - name: Set pricing and availability
         items:
           - name: Overview
@@ -104,7 +104,7 @@ items:
       - name: Create Store listings
         items:
           - name: Create Store listings
-            href: publish-your-app/msi/create-app-store-listing.md
+            href: publish-your-app/msi/add-and-edit-store-listing-info.md
           - name: Add and edit Store listing info
             href: publish-your-app/msi/add-and-edit-store-listing-info.md
           - name: Add app screenshots and images
@@ -113,8 +113,6 @@ items:
             href: publish-your-app/msi/add-additional-information.md
           - name: Import and export Store listings
             href: publish-your-app/msi/import-and-export-store-listings.md
-          - name: Write a great app description
-            href: publish-your-app/msi/write-great-app-description.md
       - name: App submission controls
         href: publish-your-app/msi/app-submission-control.md              
   - name: PWA
@@ -164,7 +162,7 @@ items:
           - name: Import and export Store listings
             href: publish-your-app/pwa/import-and-export-store-listings.md
       - name: Manage submission options
-        href: publish-your-app/pwa/manage-submission-options.md                        
+        href: publish-your-app/pwa/manage-submission-options.md                      
   - name: Add-ons
     items:
           - name: What are add-ons
@@ -400,9 +398,21 @@ items:
             href: contact-us.md
 - name: FAQs
   items:
-    - name: Notifications
-      href: publish-your-app/faqs/notifications.md
-    - name: Responsible AI FAQ for AI-generated keywords
-      href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md
-- name: Best Practices
-  href: best-practices/best-practices.md
+    - name: Get Started with the Microsoft Store
+      href: /hub/apps/publish/faq/get-started-with-the-microsoft-store.md
+    - name: Submit your app
+      href: /hub/apps/publish/faq/submit-your-app.md
+    - name: Get your app certified
+      href: /hub/apps/publish/faq/get-your-app-certified.md
+    - name: Monitor your app performance
+      href: /hub/apps/publish/faq/monitor-your-app-performance.md
+    - name: Leverage developer tools
+      href: /hub/apps/publish/faq/leverage-developer-tools.md
+    - name: Manage and update your app
+      href: /hub/apps/publish/faq/manage-and-update-your-app.md
+    - name: Manage your account
+      href: /hub/apps/publish/faq/manage-your-account.md
+    - name: Microsoft store policies and resources
+      href: /hub/apps/publish/faq/microsoft-store-policies-and-resources.md
+    - name: Responsible AI FAQ for AI-Generated keywords
+      href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
