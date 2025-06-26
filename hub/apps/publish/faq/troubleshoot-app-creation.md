@@ -22,4 +22,4 @@ If you encounter a permission error when you attempt to create a new app in Part
 
 ## Create a new Microsoft Entra ID tenant
 
-If the above steps do not resolve the error, create a new Microsoft Entra ID tenant and associate it with your Partner Center account. For more information, see [Associate existing Microsoft Entra ID with partner center](associate-azure-ad-with-partner-center.md).
+If the above steps do not resolve the error, create a new Microsoft Entra ID tenant and associate it with your Partner Center account. For more information, see [Associate existing Microsoft Entra ID with partner center](../partner-center/associate-existing-azure-ad-tenant-with-partner-center-account.md).

@@ -319,7 +319,7 @@ items:
             href: partner-center/remove-azure-ad-tenant-associations.md
       - name: Manage users, groups, and Microsoft Entra ID applications
         items: 
-          - name: Users, groups, and applications in Azure Active Directory
+          - name: Users, groups, and applications in Microsoft Entra ID
             href: partner-center/overview-users-groups-azure-ad-applications.md
           - name: Manage users in your Partner Center account
             href: partner-center/manage-users-in-partner-center.md
