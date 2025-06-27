@@ -286,6 +286,12 @@ There are different reports available for your apps, check the descriptions to f
 | [Health report](../publish/analyze-msi-exe/analyze-app-performance.md#health-report)     | Shows data related to the performance and quality of your app, including crashes and unresponsive events.                                                                      |
 | [Ratings & Reviews report](../publish/analyze-msi-exe/ratings-reviews-performance.md)    | See the rating and reviews your customers have left for your app and provide responses to let customers know you are listening to their feedback.                              |
 
+## Leverage developer tools
+
+The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to run product page experiments, distribute your app using the web installer or CLI, package your app efficiently, and connect with your customers through promotions and engagement tools. These resources are designed to support your app’s success at every stage.
+
+For more information, please visit [Leverage Developer Tools](../publish/msstore-dev-cli/overview.md) section.
+
 ## Appendix [MSI/EXE]
 
 ### Useful links
