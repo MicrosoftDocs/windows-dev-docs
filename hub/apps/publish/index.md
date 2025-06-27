@@ -165,6 +165,24 @@ For more details, you can refer to the following reports.
 | [Reviews report](/partner-center/reviews-report)                                         | See the rating and reviews your customers have left for your app and provide responses to let customers know you are listening to their feedback.                         |
 | [Insights report](/partner-center/insights-report)                                       | See meaningful insights about your app like significant (changes increases or decreases that we detected over the last 30 days in your acquisitions and health data).     |
 
+## Leverage developer tools [MSIX/PWA]
+
+The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to run product page experiments, distribute your app using the web installer or CLI, package your app efficiently, and connect with your customers through promotions and engagement tools. These resources are designed to support your app’s success at every stage.
+
+To learn how to run product page experiments, you can watch the following video:
+
+[PDP experiment video placeholder](#)
+
+For guidance on packaging your app, see the video below:
+
+[package flight video placeholder](#)
+
+To understand how to use the Store web installer, check out the following video:
+
+[store web installer video placeholder](#)
+
+For more information, please visit [Leverage Developer Tools](../publish/msstore-dev-cli/overview.md) section.
+
 ## Appendix [MSIX/PWA]
 
 ### Useful links
@@ -286,9 +304,13 @@ There are different reports available for your apps, check the descriptions to f
 | [Health report](../publish/analyze-msi-exe/analyze-app-performance.md#health-report)     | Shows data related to the performance and quality of your app, including crashes and unresponsive events.                                                                      |
 | [Ratings & Reviews report](../publish/analyze-msi-exe/ratings-reviews-performance.md)    | See the rating and reviews your customers have left for your app and provide responses to let customers know you are listening to their feedback.                              |
 
-## Leverage developer tools
+## Leverage developer tools [MSI/EXE]
 
-The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to run product page experiments, distribute your app using the web installer or CLI, package your app efficiently, and connect with your customers through promotions and engagement tools. These resources are designed to support your app’s success at every stage.
+The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to distribute your app using the web installer, update your app through submission API and connect with your customers through engagement tools. These resources are designed to support your app’s success at every stage.
+
+To understand how to use the Store web installer, check out the following video:
+
+[store web installer video placeholder](#)
 
 For more information, please visit [Leverage Developer Tools](../publish/msstore-dev-cli/overview.md) section.
 
