@@ -171,13 +171,19 @@ The Leverage Developer Tools section helps you make the most of the resources Mi
 
 To learn how to run product page experiments, you can watch the following video:
 
+</br>
+
 [PDP experiment video placeholder](#)
 
 For guidance on packaging your app, see the video below:
 
+</br>
+
 [package flight video placeholder](#)
 
 To understand how to use the Store web installer, check out the following video:
+
+</br>
 
 [store web installer video placeholder](#)
 
@@ -321,6 +327,8 @@ You can watch the following video to understand how to use Download Hub.
 The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to distribute your app using the web installer, update your app through submission API and connect with your customers through engagement tools. These resources are designed to support your app’s success at every stage.
 
 To understand how to use the Store web installer, check out the following video:
+
+</br>
 
 [store web installer video placeholder](#)
 
