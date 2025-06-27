@@ -304,7 +304,19 @@ There are different reports available for your apps, check the descriptions to f
 | [Health report](../publish/analyze-msi-exe/analyze-app-performance.md#health-report)     | Shows data related to the performance and quality of your app, including crashes and unresponsive events.                                                                      |
 | [Ratings & Reviews report](../publish/analyze-msi-exe/ratings-reviews-performance.md)    | See the rating and reviews your customers have left for your app and provide responses to let customers know you are listening to their feedback.                              |
 
-## Leverage developer tools [MSI/EXE]
+You can watch the following video to understand how to use Analytic APIs.
+
+</br>
+
+[Analytic APIs video placeholder](#)
+
+You can watch the following video to understand how to use Download Hub.
+
+</br>
+
+[Download Hub video placeholder](#)
+
+## Leverage developer tools
 
 The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to distribute your app using the web installer, update your app through submission API and connect with your customers through engagement tools. These resources are designed to support your app’s success at every stage.
 

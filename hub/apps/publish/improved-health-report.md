@@ -15,6 +15,12 @@ ms.localizationpriority: medium
 Quality is essential to the success of your app or game on Microsoft Store. To help you monitor and address quality issues more effectively, we will be introducing significant updates to the Health report in Partner Center.
 These enhancements are designed to make it easier to identify and analyse failures impacting your customers.
 
+You can watch the following video to understand what's new in the improved Health report in Partner Center.
+
+</br>
+
+[Health improvements video placeholder](#)
+
 ### Redesigned dashboard focused on key metrics
 
 The updated dashboard will bring the most important information to the forefront with key metrics being displayed at the top of the page, making it easier to track quality at a glance.
