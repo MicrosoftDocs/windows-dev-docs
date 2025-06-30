@@ -205,7 +205,7 @@ Here are some tips to keep in mind when designing this image:
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](../../leverage-developer-tools-faqs/make-your-app-easier-to-promote.md) for more information.
+While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [How can I make my app easier to promote in the Microsoft Store](../../faq/leverage-developer-tools.md) in the FAQ section for more information.
 
 #### Xbox images
 

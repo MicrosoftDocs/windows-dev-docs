@@ -57,7 +57,7 @@ If you haven't uploaded packages for the language you're working on, and you've 
 
 The description field is where you can tell customers what your app does. This field is required, and will accept up to 10,000 characters of plain text.
 
-For some tips on making your description stand out, see [Writing a great app description](../../best-practices/best-practices.md#write-a-great-app-description-for-msix-app).
+For some tips on making your description stand out, see [How can I write an effective app description for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section.
 
 ### What's new in this version
 
