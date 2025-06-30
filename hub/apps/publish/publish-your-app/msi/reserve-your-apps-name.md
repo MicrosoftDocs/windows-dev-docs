@@ -29,4 +29,4 @@ Follow the following steps to reserve your app's name:
 > You might find that you cannot reserve a name, even though you do not see any apps listed by that name in the Microsoft Store. This is usually because another developer has reserved the name for their app but has not submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Microsoft Store using that name, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).
 
 > [!TIP]
-> For guidance on selecting an effective app name, see the [Best practices](/hub/apps/publish/best-practices/best-practices.md#tips-for-choosing-a-great-app-name) section.
+> For guidance on selecting an effective app name, see [How do I choose a great app name for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section.

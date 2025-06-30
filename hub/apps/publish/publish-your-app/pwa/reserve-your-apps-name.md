@@ -30,4 +30,4 @@ Follow the following steps to reserve your app's name:
 
 
 > [!TIP]
-> For guidance on selecting an effective app name, see the [Best practices](../../best-practices/best-practices.md) section.
+> For guidance on selecting an effective app name, see [How do I choose a great app name for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section.
