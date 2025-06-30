@@ -370,28 +370,16 @@ items:
 - name: FAQs
   items:
     - name: Get Started with the Microsoft Store
-      href: /hub/apps/publish/faq/get-started-with-the-microsoft-store.md
+      href: faq/get-started-with-the-microsoft-store.md
     - name: Submit your app
-      href: /hub/apps/publish/faq/submit-your-app.md
+      href: faq/submit-your-app.md
     - name: Get your app certified
-      href: /hub/apps/publish/faq/get-your-app-certified.md
+      href: faq/get-your-app-certified.md
     - name: Monitor your app performance
-      href: /hub/apps/publish/faq/monitor-your-app-performance.md
+      href: faq/monitor-your-app-performance.md
     - name: Leverage developer tools
-      href: /hub/apps/publish/faq/leverage-developer-tools.md
+      href: faq/leverage-developer-tools.md
     - name: Manage and update your app
-      href: /hub/apps/publish/faq/manage-and-update-your-app.md
+      href: faq/manage-and-update-your-app.md
     - name: Manage your account
-      href: /hub/apps/publish/faq/manage-your-account.md
-    - name: Microsoft store policies and resources
-      href: /hub/apps/publish/faq/microsoft-store-policies-and-resources.md
-    - name: Responsible AI FAQ for AI-Generated keywords
-      href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
-    - name: Link to your app and Microsoft store badge
-      href: leverage-developer-tools-faqs/link-to-your-app-and-microsoft-store-badge.md
-    - name: Make your app easier to promote
-      href: leverage-developer-tools-faqs/make-your-app-easier-to-promote.md
-    - name: Trademark and copyright protection
-      href: partner-center/trademark-and-copyright-protection.md
-    - name: Troubleshoot App creation
-      href: partner-center/troubleshoot-app-creation.md
+      href: faq/manage-your-account.md

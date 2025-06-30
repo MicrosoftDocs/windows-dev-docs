@@ -52,3 +52,8 @@ You can update contact details like **email, phone number, and business address*
 Keep your tax and payout info updated to avoid any delays in receiving earnings. Accurate contact details also ensure you don’t miss important notices from Microsoft.
 
 </details>
+
+<br>
+
+> [!TIP]
+> For detailed information about **How to manage your account**, please see the [Manage your account](../partner-center/manage-account-users.md) section.

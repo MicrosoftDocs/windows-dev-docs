@@ -9,6 +9,8 @@ ms.topic: faq
 
 This FAQ is designed to help new developers understand what happens after submitting an app to the Microsoft Store, including how certification works, how long it takes, common reasons for failure, and how to prepare your app to pass certification successfully. This content was created as part of a structured effort to improve the "Submit and manage your apps" documentation on Microsoft Learn.
 
+---
+
 <details>
 <summary><strong>What is the app certification process, and how long does it take?</strong></summary>
 
@@ -23,15 +25,30 @@ Once approved, your app typically becomes visible in the Store within about 15 m
 
 </details>
 
+---
+
 <details>
-<summary><strong>What happens if my app fails certification?</strong></summary>
+<summary><strong>What should I do if my app fails certification or is removed from the Store?</strong></summary>
 
-If your app fails certification, the submission will be marked as failed or blocked in Partner Center. You will receive a detailed certification report explaining why it failed—whether due to a technical issue or policy violation.
+If your app fails certification, Microsoft will provide a **certification report** explaining why it failed—whether due to a technical issue or policy violation.
 
-To proceed, review the failure report, fix the issues, and submit a new version. There is no extra cost to resubmit. Common issues include crashes, missing privacy policies, or inaccurate metadata.
+To address the failure:
+
+1. Review the Microsoft Store Policies to understand the issue.
+2. Fix the problem (e.g., remove prohibited content, correct metadata).
+3. Submit an updated version for certification.
+
+If your app was removed from the Store after being published, it may be due to a severe issue (e.g., security vulnerabilities or policy violations). In such cases:
+
+- Check Partner Center and your email for communication from Microsoft.
+- Address the stated issue.
+- Submit a corrected update for review.
+
+For clarification or help, contact Microsoft at `reportapp@microsoft.com` with your app ID or respond to the certification report email directly.
 
 </details>
 
+---
 
 <details>
 <summary><strong>How can I improve my app’s chances of passing certification on the first try?</strong></summary>
@@ -51,3 +68,8 @@ Here are Microsoft’s best practices to help your app pass certification smooth
 Finally, **always check the latest Microsoft Store Policies** to ensure compliance with technical and content guidelines.
 
 </details>
+
+<br>
+
+> [!TIP]
+> For detailed information about **How to get your app certified**, please see the [Get your app certified](../publish-your-app/msix/app-certification-process.md) section.

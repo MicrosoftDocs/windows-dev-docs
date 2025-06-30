@@ -22,6 +22,8 @@ To reserve a name:
 This is important because it guarantees your branding and prevents naming conflicts.
 </details>
 
+---
+
 <details>
 <summary><strong>What does the app submission process involve in Partner Center?</strong></summary>
 
@@ -37,17 +39,19 @@ After reserving a name, start a new submission. The process involves:
 Fill out all required fields, then click **Submit for certification**. Partner Center will validate inputs and flag any missing items before submission. Your app status will show as "in Certification" while being reviewed.
 </details>
 
+---
+
 <details>
 <summary><strong>Do I need to package my app as an MSIX, or can I submit a traditional EXE/MSI installer?</strong></summary>
 
-MSIX is recommended but not required.
+Store allows both app types.
 
-**MSIX Benefits**:
+**MSIX Benefits are**:
 - Free Microsoft code signing and CDN hosting.
 - Easier updates, better integration with Windows features.
 - Enables advanced capabilities like flighting and commerce.
 
-**EXE/MSI Submission**:
+**MSI/EXE Submission**:
 - Allowed since June 2021.
 - You must provide a URL or upload the installer in submission.
 - Requirements:
@@ -55,8 +59,10 @@ MSIX is recommended but not required.
   - Offline installer – no downloads during setup.
   - Installer must not change after submission or bundle unrelated software.
 
-If using EXE/MSI, you won’t get MSIX-specific benefits (auto updates, Store integration), but it's acceptable if MSIX packaging isn’t feasible.
+Both app types can be submitted in Store depending on developer's needs.
 </details>
+
+---
 
 <details>
 <summary><strong>What metadata fields are required when submitting an app to the Store?</strong></summary>
@@ -82,6 +88,8 @@ Providing rich, complete metadata helps Microsoft validate your app more efficie
 
 </details>
 
+---
+
 <details>
 <summary><strong>What are the recommended best practices for writing the app description and listing features?</strong></summary>
 
@@ -96,6 +104,8 @@ A good app description should:
 Also, localize your descriptions for all languages you support to better connect with global users.
 
 </details>
+
+---
 
 <details>
 <summary><strong>How many screenshots should developers include in their Store listing?</strong></summary>
@@ -112,6 +122,8 @@ Good visuals can significantly impact the user’s first impression and increase
 
 </details>
 
+---
+
 <details>
 <summary><strong>What are the requirements and recommendations for Store logos and trailers?</strong></summary>
 
@@ -124,6 +136,8 @@ Additionally:
 - Keep trailers short (30–90 seconds), visually compelling, and captioned if possible for accessibility
 
 </details>
+
+---
 
 <details>
 <summary><strong>How should developers choose and use search terms for their app?</strong></summary>
@@ -140,6 +154,8 @@ Tips for effective search terms:
 Search terms are not shown to users but play a crucial role in helping your app surface in search results.
 
 </details>
+
+---
 
 <details>
 <summary><strong>How can I manage who receives submission notifications in Partner Center?</strong></summary>
@@ -163,45 +179,63 @@ To **add or remove** members from the notification list:
 
 </details>
 
-## Best practices for submitting your app
+---
 
-### Tips for choosing a great app name
+<details>
+<summary><strong>How do I choose a great app name for the Microsoft Store?</strong></summary>
 
-Choosing the right name for your app is important. Pick a name that will capture your customers' interest and draw them in to learn more about your app. Here are some tips for choosing a great app name.
+Choosing a compelling name is crucial to attracting customers and making your app easily discoverable. Here are some best practices:
 
-**Keep it short**. While your app's name can have up to 256 characters, the space used to display your app's name is limited. Long names may be truncated based on where in the store your app is being displayed and the user's display size and settings.
+- **Keep it short**. Although your app's name can have up to 256 characters, display space is limited, and longer names may be truncated depending on the user's screen and settings. Shorter names are more memorable and easier to display clearly.
+  
+  > [!TIP]
+  > Windows uses variable-width fonts. This means the number of visible characters depends on their width (e.g., 30 'i' characters fit in the same space as 10 'w' characters). Test your app name across different devices and languages to ensure it's always clearly visible.
 
-> [!TIP]
-> Windows uses variable width fonts, so the number of visible characters in your title depends on which characters you use. For example, using Segoe UI, about 30 `i` characters will fit in the same space as 10 `w` characters. If you have multiple apps, be sure to test the visibility of each app's title, even if they are the same number of characters. Also be sure to test all localizations of your app's name. Keep in mind that East-Asian characters tend to be wider than Latin characters, so fewer characters will be displayed.
+- **Be original**. Choose a distinctive name that clearly differentiates your app from others. An original name reduces confusion and enhances your brand identity.
 
-**Be original**. Make sure your app name is distinctive enough that it won't be easily confused with an existing app.
+- **Do not use trademarked names**. Ensure you have the rights to use the app name. Using a trademarked name could lead to your app being removed from the Store, forcing you to rename and re-submit your app.
 
-**Do not use names trademarked by others**. Make sure that you have the right to use the name that you reserve. If someone else has trademarked the name, they can report an infringement and you will not be able to keep using that name. If that happens after your app has been published, it will be removed from the Store until you've changed all instances of the name in your app, its content, and its store listing before you can submit your app for certification again.
+- **Avoid trailing differentiators**. Don't include differentiating information (such as version numbers or dates) at the end of your app's title. Such details may be cut off in some views, causing confusion. If necessary, differentiate your apps using distinct logos or images.
 
-**Avoid trailing differentiators**. Information that distinguishes different versions of your app should not be put at the end of your title. This information can be truncated by the UI, and users can miss it even if it is displayed.
+- **Avoid emojis and special characters**. The Microsoft Store does not allow emojis or other unsupported special characters in app names.
 
-If this is unavoidable, use different logos and app images to make it easier to differentiate one app from another.
+</details>
 
-**Do not include emojis in your name**. You will not be able to reserve a name that includes emojis or other unsupported characters.
+---
 
-### Write a great app description
+<details>
+<summary><strong>How can I write an effective app description for the Microsoft Store?</strong></summary>
 
-A great description can make your app stand out in the Microsoft Store and help encourage customers to download it. [The description you enter when submitting your app](/hub/apps/publish/publish-your-app/msix/add-and-edit-store-listing-info.md#description) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
+A great description helps your app stand out, clearly communicating value and encouraging downloads. Follow these guidelines:
 
-Here are some tips for making your app's description the best it can be.
+- **Grab attention early**. The first sentences are crucial. Clearly state your app’s unique benefits and why it’s valuable to the user.
 
-- **Grab attention in the first few sentences.** The beginning of your description is the most important, so make sure it grabs and holds attention. Start with the value prop: why should potential customers take the time and money to get your app? What is the benefit to choosing your app over another? In one or two sentences, using plain and clear language, explain your app's unique appeal and why someone would want it.
-- **Make it easy to learn about your app.** After your initial hook, describe additional benefits, in-app purchase opportunities, and other details about your app that customers will want to know. Make sure you include any disclosures or information that you are required to provide under the law in the markets where you are distributing your app.
-- **Use lists and short paragraphs.** Potential customers may just take a quick glance at your app's description. Breaking up the content by using short paragraphs and lists makes it easier to scan.
+- **Make it user-friendly**. Clearly describe key features, benefits, and available in-app purchases. Include any necessary legal disclosures relevant to the markets you serve.
+
+- **Use short paragraphs and lists**. Keep your description easy to scan by using short paragraphs, bullet points, and clear headings.
 
   > [!NOTE]
-  >  Adding a list of [product features](/hub/apps/publish/publish-your-app/msix/create-app-store-listing.md) can also help to quickly show what your app does. This list appears directly below the app description.
+  > A concise, bulleted list of product features displayed under your description can quickly inform potential users about your app’s capabilities.
 
-- **Avoid dry language.** Write your description using engaging language. Be sure the wording clearly describes what your app does, but say it in a way that doesn't sound boring. For many apps, a casual and friendly tone works well.
-- **Use a length that is just right.** A good description reads quickly, but also includes enough info to get the reader interested and explain what the app does. A complex app will need more sentences to describe it; a simple app may need only a few. In most cases the right length is somewhere over 200 words, but well under 3000.
-- **Be clear about free trials and add-ons.** If you offer a free trial of your app, be sure to explain how that trial works, so that customers understand which features are limited. It's also a good idea to mention what types of add-ons are available, particularly if they have significant impacts on your app's functionality.
-- **Use standard capitalization and punctuation.** Descriptions in all caps, or those that have unusual punctuation, can be hard to read.
-- **Don't forget to check the spelling and grammar.** A description with lots of misspelled words or mangled sentences doesn't reflect well on the quality of your app. Be sure to review your description (or have someone else take a look) to check for errors.
-- **Don't include links or info that belongs elsewhere.** URLs that you enter in the description field won't be clickable, so don't try to add links for things like your privacy policy or support website. Instead, add these in the designated areas of the **Properties** page of your submission.
-- **Don't use HTML tags.** HTML or other code will not be rendered. Your description needs to be plain text only.
-- **Get ideas by reviewing descriptions of similar apps in the Store.** Take a look at how other developers describe their apps. This also helps you figure out what you can emphasize that is different about your app.
+- **Write engagingly**. Avoid overly technical or dry language. Use a conversational tone that clearly and enthusiastically conveys your app's purpose.
+
+- **Be concise but comprehensive**. A good length is generally between 200 and 3,000 words—long enough to provide clarity, short enough to maintain interest.
+
+- **Clarify free trials and add-ons**. Clearly describe the details of any free trials or additional features offered via in-app purchases, ensuring users understand exactly what they're getting.
+
+- **Standard capitalization and punctuation**. Avoid all-caps or irregular punctuation, which are difficult to read.
+
+- **Check spelling and grammar**. Mistakes reflect poorly on your app’s perceived quality. Review thoroughly or have someone proofread your description.
+
+- **Avoid URLs and misplaced info**. The description field doesn’t support clickable links. Include URLs and support information in designated areas of your app submission.
+
+- **Plain text only**. HTML or other formatting code is not supported and will not display correctly.
+
+- **Learn from others**. Review descriptions of similar apps in the Store for inspiration on effectively highlighting unique features and benefits.
+
+</details>
+
+<br>
+
+> [!TIP]
+> For detailed information about **How to submit your appt**, please see the [Submit your app](../publish-your-app/msix/reserve-your-apps-name.md) section.

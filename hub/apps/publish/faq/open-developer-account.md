@@ -9,6 +9,19 @@ ms.localizationpriority: medium
 # Open developer account - Frequently Asked Questions
 
 <details>
+<summary><strong>How much does it cost to open a developer account?</strong></summary>
+
+Opening a developer account involves a one-time registration fee:
+- **Individual account:** Approximately $19 USD
+- **Company account:** Approximately $99 USD
+
+The fee amount may vary by region. You only pay this once — there are no recurring annual charges.
+
+</details>
+
+---
+
+<details>
 <summary><strong>Should I choose an Individual account or a Company account? What’s the difference?</strong></summary>
 
 Microsoft offers two types of developer accounts:
@@ -20,36 +33,7 @@ A Company account allows publishing under your business name and managing the ac
 
 </details>
 
-<details>
-<summary><strong>How much does it cost to open a developer account?</strong></summary>
-
-Opening a developer account involves a one-time registration fee:
-- **Individual account:** Approximately $19 USD
-- **Company account:** Approximately $99 USD
-
-The fee amount may vary by region. You only pay this once — there are no recurring annual charges.
-
-</details>
-
-<details>
-<summary><strong>What is the verification process for a Company account, and how long does it take?</strong></summary>
-
-For Company accounts, Microsoft performs verification to ensure:
-- Your publisher name is unique and not already in use.
-- You’re authorized to represent the company you registered.
-
-Verification typically takes a few days to a couple of weeks. Microsoft or its partner may contact you (including by phone) to confirm the details. You can use Partner Center during this time (to reserve names or draft submissions), but cannot publish apps until the verification is complete. Microsoft will notify you once the account is verified.
-
-</details>
-
-<details>
-<summary><strong>Which type of developer account should I choose (Individual or Company), and how much does it cost?</strong></summary>
-
-Partner Center offers two types of accounts for Microsoft Store developers: Individual and Company. If you’re a solo developer or hobbyist not representing an official organization, an Individual account is usually appropriate. It has a one-time registration fee of approximately $19 USD and a shorter verification process.
-
-If you’re registering on behalf of a business or team, choose a Company account. This option is intended for officially registered businesses and allows publishing under the organization’s name. It costs around $99 USD and may require business ID documents during verification.
-
-</details>
+---
 
 <details>
 <summary><strong>What information do I need to create a Partner Center developer account?</strong></summary>
@@ -67,15 +51,7 @@ Having this ready helps avoid errors and speeds up registration.
 
 </details>
 
-<details>
-<summary><strong>What are EIN and D-U-N-S numbers, and should I provide them during registration?</strong></summary>
-
-- **EIN (U.S. only):** A tax ID issued by the IRS. Add it to help verify your business faster.
-- **D-U-N-S number:** A unique identifier from Dun & Bradstreet used worldwide. Including it is optional but recommended to speed up verification.
-
-Providing these identifiers helps Microsoft validate your business more efficiently.
-
-</details>
+---
 
 <details>
 <summary><strong>What email address should I use for my Partner Center account?</strong></summary>
@@ -86,12 +62,51 @@ This email will be used for verification, so check it regularly to avoid delays.
 
 </details>
 
+---
+
 <details>
 <summary><strong>How should I enter my company’s name and address in the registration form?</strong></summary>
 
 Enter your legal business name and address exactly as they appear in official documents. Avoid abbreviations or using personal addresses. Use standard Western characters (A–Z, 0–9) to prevent validation issues.
 
 </details>
+
+---
+
+<details>
+<summary><strong>How do I use a fee waiver token (promo code) during registration?</strong></summary>
+
+Enter the token during the payment step. If you miss this, you cannot apply it later or request a refund. Double-check before finalizing registration to ensure the promo code is used.
+
+</details>
+
+---
+
+<details>
+<summary><strong>What is the verification process for a Company account, and how long does it take?</strong></summary>
+
+For Company accounts, Microsoft performs verification to ensure:
+- Your publisher name is unique and not already in use.
+- You’re authorized to represent the company you registered.
+
+Verification typically takes a few days to a couple of weeks. Microsoft or its partner may contact you (including by phone) to confirm the details. You can use Partner Center during this time (to reserve names or draft submissions), but cannot publish apps until the verification is complete. Microsoft will notify you once the account is verified.
+
+</details>
+
+---
+
+<details>
+<summary><strong>What are EIN and D-U-N-S numbers, and should I provide them during registration?</strong></summary>
+
+These identifiers are relevant **only for company accounts**, not for individual developers.
+
+- **EIN (U.S. only):** A tax ID issued by the IRS. Including it can help Microsoft verify your business faster.
+- **D-U-N-S number:** A unique identifier from Dun & Bradstreet used worldwide. Providing it is optional but recommended, as it can speed up the verification process.
+
+Providing one or both of these identifiers helps Microsoft validate your company account more efficiently during registration.
+</details>
+
+---
 
 <details>
 <summary><strong>What are some common mistakes to avoid during the account registration?</strong></summary>
@@ -106,6 +121,8 @@ Avoid these to prevent delays or failed verification.
 
 </details>
 
+---
+
 <details>
 <summary><strong>What is the verification process after I submit my developer account application?</strong></summary>
 
@@ -119,12 +136,7 @@ You may be contacted by Microsoft or a partner during this period. Once verified
 
 </details>
 
-<details>
-<summary><strong>How do I use a fee waiver token (promo code) during registration?</strong></summary>
-
-Enter the token during the payment step. If you miss this, you cannot apply it later or request a refund. Double-check before finalizing registration to ensure the promo code is used.
-
-</details>
+---
 
 <details>
 <summary><strong>What should I do if my developer account registration fails or is not approved?</strong></summary>
@@ -136,3 +148,8 @@ Enter the token during the payment step. If you miss this, you cannot apply it l
 These teams can guide you through resolving verification issues and completing registration.
 
 </details>
+
+<br>
+
+> [!TIP]
+> For detailed information about **How to open a developer account**, please see the [Open a developer account](../partner-center/open-a-developer-account.md) section.

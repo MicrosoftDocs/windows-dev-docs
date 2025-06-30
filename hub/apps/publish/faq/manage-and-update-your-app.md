@@ -29,7 +29,7 @@ Once approved, the new version replaces the previous one in the Store. Existing 
 <details>
 <summary><strong>Can I gradually roll out an app update to a percentage of my users?</strong></summary>
 
-Yes. Partner Center supports **gradual rollout** for updates:
+Yes. Partner Center supports **gradual rollout** for updates only for MSIX apps:
 
 - During the submission process, enable **Roll out update gradually** and set an initial percentage (e.g., 5%).
 - After publishing, increase the rollout percentage or halt it from the Overview page.
@@ -44,7 +44,7 @@ This helps catch issues early and ensures a more stable update for all users.
 <details>
 <summary><strong>What are package flights and how can I test updates with a limited group of users?</strong></summary>
 
-**Package flights** allow you to distribute test versions of your app to specific groups:
+**Package flights** allow you to distribute test versions of your app (MSIX apps only) to specific groups:
 
 - Set up a flight group (e.g., internal testers).
 - Upload a new package for that group, separate from the public version.
@@ -82,3 +82,8 @@ To manage add-ons:
 Add-on updates are certified like app updates. You can also track performance using the **Add-on acquisitions** report. Always keep your in-app product listings accurate and policy-compliant.
 
 </details>
+
+<br>
+
+> [!TIP]
+> For detailed information about **How to manage and update your app**, please see the [Manage and update your app](../publish-your-app/msix/publish-update-to-your-app-on-store.md) section.
