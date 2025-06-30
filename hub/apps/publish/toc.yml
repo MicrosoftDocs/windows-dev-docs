@@ -259,6 +259,16 @@ items:
                 href: respond-to-customer-reviews.md
               - name: Use targeted offers
                 href: use-targeted-offers-to-maximize-engagement-and-conversions.md
+          - name: Package and Distribution
+            items:
+              - name: Beta testing and targeted distribution
+                href: beta-testing-and-targeted-distribution.md
+              - name: Package flights
+                href: package-flights.md
+              - name: Gradual package rollout
+                href: gradual-package-rollout.md
+              - name: Distribute LOB apps to enterprises
+                href: distribute-lob-apps-to-enterprises.md
           - name: Microsoft Store Developer CLI (preview)
             items:
               - name: Overview
@@ -271,16 +281,6 @@ items:
             href: store-submission-api.md
     - name: Use Microsoft Store Web Installer to distribute apps
       href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md
-    - name: Package and Distribution
-      items:
-        - name: Beta testing and targeted distribution
-          href: beta-testing-and-targeted-distribution.md
-        - name: Package flights
-          href: package-flights.md
-        - name: Gradual package rollout
-          href: gradual-package-rollout.md
-        - name: Distribute LOB apps to enterprises
-          href: distribute-lob-apps-to-enterprises.md
 - name: Manage and update your app
   items:
         - name: MSIX
