@@ -383,3 +383,5 @@ items:
       href: faq/manage-and-update-your-app.md
     - name: Manage your account
       href: faq/manage-your-account.md
+    - name: Responsible AI FAQ 
+      href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md
