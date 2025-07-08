@@ -1,14 +1,13 @@
 ---
 title: upgrade Command
 description: upgrades the specified application.
-ms.date: 07/11/2024
+ms.date: 07/07/2025
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # upgrade command (winget)
 
-The **upgrade** command of the [winget](index.md) tool upgrades the specified application. Optionally, you may use the [**list**](.\list.md) command to identify the application you want to upgrade.
+The **upgrade** command of [WinGet](index.md) tool upgrades the specified application. Optionally, you may use the [**list**](.\list.md) command to identify the application you want to upgrade.
 
 The **upgrade** command requires that you specify the exact string to upgrade. If there is any ambiguity, you will be prompted to further filter the **upgrade** command to  an exact application.
 
@@ -23,6 +22,7 @@ The following aliases are available for this command:
 `winget upgrade [[-q] <query> ...] [<options>]`
 
 ![Image of upgrade command arguments](images\upgrade.png)
+:::image type="content" source="./images/upgrade.png" alt-text="Screenshot of entering the winget upgrade command in a command line of Windows Terminal." lightbox="./images/upgrade.png":::
 
 ## Arguments
 
@@ -84,6 +84,12 @@ The options allow you to customize the upgrade experience to meet your needs.
 
 ### Example queries
 
+The following example lists applications with an upgrade available.
+
+```CMD
+winget upgrade
+```
+
 The following example upgrades a specific version of an application.
 
 ```CMD
@@ -96,32 +102,31 @@ The following example upgrades an application from its ID.
 winget upgrade --id Microsoft.PowerToys
 ```
 
-The following example shows upgrading all apps
+The following example shows upgrading all applications.
 
 ```CMD
 winget upgrade --all
+```
+
+The following example will upgrade multiple applications.
+
+```CMD
+winget upgrade Microsoft.Edit Microsoft.NuGet
 ```
 
 ## Using **upgrade**
 
 To identify which apps are in need of an update, simply use **upgrade** without any arguments to show all available upgrades.
 
-In the example below, you will see **winget upgrade** shows the user which apps have an available update. From the available updates, the user identifies that an update is available for *JanDeDobbeleer.OhMyPosh* and uses **upgrade** to update the application.
-
-![Animation demonstrating upgrade command](./images/upgrade.gif)
-
-## Using **list** and **upgrade**
-To search for an available update for a specific app, use to the [**list**](.\list.md) command. Once you have identified that an update is available for your specific app, use **upgrade** to install the latest.
-
-The example below shows the [**list**](.\list.md) command being used to identify that an update is available for *Microsoft.WindowsTerminalPreview*. The user then uses **upgrade** to update the application.
-![Animation demonstrating list command used in conjunction with upgrade command](./images/listUpgrade.gif)
-
 ## **upgrade** --all
 
 **upgrade --all** will identify all the applications with upgrades available. When you run **winget upgrade --all** the Windows Package Manager will look for all applications that have updates available and attempt to install the updates.
 
 > [!NOTE]
-> Some applications do not provide a version.  They are always latest.  Because the Windows Package Manager cannot identify if there is a newer version of the app, an upgrade will not be possible.
+> Some applications do not provide a version.  They are always latest.  Because the Windows Package Manager cannot identify if there is a newer version of the app, an upgrade will not be possible unless the **-u, --unknown, --include-unknown** option is specified
+
+> [!NOTE]
+> Some applications may have been pinned using WinGet and will not be upgraded if the **--all** option is specified unless the **--include-pinned** option is specified. In this case, only applications non-blocking pins will be upgraded.
 
 ## **upgrade** --uninstall-previous
 
