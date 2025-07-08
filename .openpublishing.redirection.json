@@ -8799,6 +8799,11 @@
       "source_path": "uwp/launch-resume/handle-file-activation.md",
       "redirect_url": "/windows/apps/develop/launch/handle-file-activation",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/windows-integration/microsoft-copliot-key-provider.md",
+      "redirect_url": "/windows/apps/develop/windows-integration/microsoft-copilot-key-provider",
+      "redirect_document_id": false
     }
-  ]
+]
 }
