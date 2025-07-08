@@ -1,13 +1,13 @@
 ---
 title: winget download command
 description: Downloads an installer for a package.
-ms.date: 09/06/2024
+ms.date: 07/07/2025
 ms.topic: how-to
 ---
 
 # download command (winget)
 
-The **download** command of the [winget](index.md) tool downloads the installer, dependencies, and license file (when downloading a Microsoft Store Packaged app). Use the [**search**](search.md) command and the [**show**](show.md) command to identify the package installer you want to download.
+The **download** command of [WinGet](index.md) downloads the installer, dependencies, and license file (when downloading a Microsoft Store Packaged app). Use the [**search**](search.md) command and the [**show**](show.md) command to identify the package installer you want to download.
 
 The **download** command requires that you specify the exact string to download. If there is any ambiguity, you will be prompted to further filter the **download** command to an exact application.
 
@@ -20,7 +20,7 @@ The **download** command requires [EntraID (formally Azure Active Directory) aut
 
 `winget download [[-q] <query>] [<options>]`
 
-![download command](./images/download.png)
+:::image type="content" source="./images/download.png" alt-text="Screenshot of entering the winget download command in a command line of Windows Terminal." lightbox="./images/download.png":::
 
 ## Download without license file
 
