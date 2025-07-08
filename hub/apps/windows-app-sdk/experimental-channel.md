@@ -30,6 +30,441 @@ The experimental channel includes releases of the Windows App SDK with [experime
 - [Experimental channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
 - [Experimental channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
 
+## Version 1.8 Experimental (1.8.0-Experimental4)
+
+### Use on-device AI with Windows AI APIs
+
+> [!IMPORTANT]
+> The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
+
+The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extract objects from pictures, and more.
+
+For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
+
+### Microsoft Windows ML
+
+[Windows ML](/windows/ai/new-windows-ml/overview) bringing hardware-accelerated machine learning capabilities to Windows applications. The Microsoft.WindowsAppSDK.ML package provides a Windows-optimized version of ONNX Runtime with simplified APIs for managing execution providers.
+
+**Key Features:**
+
+- Hardware Abstraction: Automatically discovers and manages execution providers compatible with your hardware.
+- Simplified EP Management: Handles acquisition, installation, and registration of execution providers on the local device your app runs on.
+- Seamless ONNX Runtime Integration: Works directly with ONNX Runtime APIs for model inference.
+- Multi-Language Support: Available for C++, C#, Python, and other languages.
+
+
+### WindowsAppSDK.Packages renamed
+
+The NuGet Component Package `Microsoft.WindowsAppSDK.Packages` was renamed to `Microsoft.WindowsAppSDK.Runtime`. This change better reflects that package's purpose and clarifies its role within the SDK - specifically, that it encapsulates the runtime component.
+
+
+### Prompt Size Limit Reporting
+
+
+Allows applications to determine if an input exceeds the allowable size for a Text Summarizer call. If the input is too large, the API returns an index indicating the current limit, enabling developers to adjust the input accordingly. This limit is based on token count rather than byte or character length, and it can vary over time due to multiple factors. Therefore, applications should treat the limit as dynamic and subject to change.
+
+### Text Rewriter Tone
+
+Enables text rewriting with specific tones. The Casual option rephrases content to sound more informal and conversational, using natural, spontaneous phrasing while preserving meaning and format. The Formal option transforms text into a polished, professional version, maintaining the original structure and details with precise language suitable for formal context. The General option retains the original tone and intent, ensuring the meaning remains unchanged.
+
+### Conversation Summary Options
+
+Enables developers to specify the desired output language for conversation summarization. This allows applications to generate summaries in a targeted language, enhancing localization, and user experience.
+
+### Bug Fixes
+
+- Removed duplicate .winmd files for AI components. For more information see [Windows App SDK GitHub Issue #5439](https://github.com/microsoft/WindowsAppSDK/issues/5439)
+- Addressed a potential crash in `ApplicationDataProvider::GetStateFolderUris` caused by reentrancy. For more information see [Windows App SDK GitHub Issue #10513](https://github.com/microsoft/WindowsAppSDK/issues/10513)
+- Addressed a UI bug where the `TitleBar` displayed incorrect spacing when a short title was used. For more information see [Windows App SDK GitHub Issue #10492](https://github.com/microsoft/WindowsAppSDK/issues/10492)
+- Addressed a UI bug where the `CalendarDatePicker` control displayed incorrect icon margins when a long header was set. For more information see [Windows App SDK GitHub Issue #10469](https://github.com/microsoft/WindowsAppSDK/issues/10469)
+- Resolved an issue related to versioning mismatches between WIndowsAppSDK and Windows SDK NuGet packages, which can cause new projects to fail to build out of the box. For more information see [Windows App SDK GitHub Issue #10467](https://github.com/microsoft/WindowsAppSDK/issues/10467)
+- Addressed a regression where the mouse wheel input was ignored if the "Scroll inactive windows when hovering over them" setting was disabled, making windows appear perpetually inactive. For more information see [Windows App SDK GitHub Issue #10091](https://github.com/microsoft/WindowsAppSDK/issues/10091)
+
+- Addressed a deployment bug where failing to set `$(WindowsPackageType)=MSIX` in the project file prevents the Deployment Manager from being added, causing apps to require admin privileges unexpectedly. For more information see [Windows App SDK GitHub Issue #8182](https://github.com/microsoft/WindowsAppSDK/issues/8182)
+
+### New APIs for 1.8-experimental4
+
+This release includes the following new and modified experimental APIs:
+
+```
+Microsoft.UI.Composition
+ 
+    CompositionNotificationDeferral
+    CompositionProjectedShadow
+        MaxOpacity
+        MinOpacity
+        OpacityFalloff
+ 
+    CompositionProjectedShadowCaster
+        AncestorClip
+        Mask
+ 
+    CompositionProjectedShadowDrawOrder
+    CompositionProjectedShadowReceiver
+        DrawOrder
+        Mask
+```
+```
+Microsoft.UI.Composition.Experimental
+ 
+    ExpCompositionVisualSurface
+    ExpExpressionNotificationProperty
+    IExpCompositionPropertyChanged
+    IExpCompositionPropertyChangedListener
+    IExpCompositor
+    IExpVisual
+```
+```
+Microsoft.UI.Content
+ 
+    ContentAppWindowBridge
+    ContentDisplayOrientations
+    ContentExternalBackdropLink
+    ContentExternalOutputLink
+    ContentIsland
+        Connected
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        Disconnected
+        IsRemoteEndpointConnected
+        Root
+ 
+    ContentIslandEnvironment
+        CurrentOrientation
+        NativeOrientation
+        ThemeChanged
+ 
+    ContentSite
+        TryGetAutomationProvider
+ 
+    ContentSiteEnvironment
+        CurrentOrientation
+        NativeOrientation
+        NotifyThemeChanged
+ 
+    CoreWindowSiteBridge
+    CoreWindowTopLevelWindowBridge
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+ 
+    DesktopPopupSiteBridge
+        AnchoringBehavior
+        AnchoringPixelAlignment
+ 
+    DesktopSiteBridge
+        TryCreatePopupSiteBridge
+ 
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentNodeOwner
+    IContentSiteBridgeEndpointConnectionPrivate
+    PopupAnchoringOptions
+    PopupWindowSiteBridge
+    ProcessStarter
+    SystemVisualSiteBridge
+```
+```
+Microsoft.UI.Designer
+ 
+    DesignerOutputHost
+```
+```
+Microsoft.UI.Input
+ 
+    InputKeyboardSource
+        GetForWindowId
+ 
+    InputLayoutPolicy
+    InputLightDismissAction
+        GetForIsland
+ 
+    InputLightDismissEventArgs
+    InputPointerActivationBehavior
+    InputPointerSource
+        ActivationBehavior
+        DirectManipulationHitTest
+        GetForVisual
+        GetForWindowId
+        RemoveForVisual
+        TouchHitTesting
+        TrySetDeviceKinds
+ 
+    InputPopupController
+    LightDismissReason
+    PopupPointerMode
+    ProximityEvaluation
+    TouchHitTestingEventArgs
+```
+```
+Microsoft.UI.Input.Experimental
+ 
+    ExpInputSite
+    ExpPointerPoint
+```
+```
+Microsoft.UI.Windowing
+ 
+    AppWindow
+        GetCurrentPlacement
+        PersistedStateId
+        PlacementRestorationBehavior
+        SaveCurrentPlacement
+        SaveCurrentPlacementForAllPersistedStateIds
+        SetCurrentPlacement
+ 
+    AppWindowPlacementDetails
+    DisplayArea
+        GetMetricsFromWindowId
+ 
+    PlacementInfo
+    PlacementRestorationBehavior
+```
+```
+Microsoft.UI.Xaml
+ 
+    XamlIsland
+        ShouldConstrainPopupsToWorkArea
+```
+```
+Microsoft.UI.Xaml.Automation.Peers
+ 
+    AutomationEvents
+        Notification
+ 
+    InkCanvasAutomationPeer
+    PagerControlAutomationPeer
+```
+```
+Microsoft.UI.Xaml.Controls
+ 
+    ContentDialogPlacement
+        UnconstrainedPopup
+ 
+    DoInkPresenterWork
+    ElementFactory
+    FlowLayout
+    FlowLayoutAnchorInfo
+    FlowLayoutLineAlignment
+    FlowLayoutState
+    IApplicationViewSpanningRects
+    IndexPath
+    InfoBar
+        Opened
+ 
+    InfoBarOpenedEventArgs
+    InkCanvas
+    ISelfPlayingAnimatedVisual
+    ItemContainer
+        CanUserInvoke
+        CanUserInvokeProperty
+        CanUserSelect
+        CanUserSelectProperty
+        ItemInvoked
+        MultiSelectMode
+        MultiSelectModeProperty
+ 
+    ItemContainerInteractionTrigger
+    ItemContainerInvokedEventArgs
+    ItemContainerMultiSelectMode
+    ItemContainerUserInvokeMode
+    ItemContainerUserSelectMode
+    LayoutPanel
+    NumberBox
+        InputScope
+        InputScopeProperty
+        TextAlignment
+        TextAlignmentProperty
+ 
+    PagerControl
+    PagerControlButtonVisibility
+    PagerControlDisplayMode
+    PagerControlSelectedIndexChangedEventArgs
+    PagerControlTemplateSettings
+    ProgressRing
+        DeterminateSource
+        DeterminateSourceProperty
+        IndeterminateSource
+        IndeterminateSourceProperty
+ 
+    RecyclePool
+    RecyclingElementFactory
+    ScrollingScrollStartingEventArgs
+    ScrollingZoomStartingEventArgs
+    ScrollView
+        ScrollStarting
+        ZoomStarting
+ 
+    SelectionModel
+    SelectionModelChildrenRequestedEventArgs
+    SelectionModelSelectionChangedEventArgs
+    SelectTemplateEventArgs
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+ 
+    StackLayoutState
+    TeachingTip
+        Opened
+ 
+    TeachingTipOpenedEventArgs
+    UniformGridLayoutState
+```
+```
+Microsoft.UI.Xaml.Controls.Primitives
+ 
+    ScrollPresenter
+        ScrollStarting
+        ZoomStarting
+```
+```
+Microsoft.Windows.AI.Foundation
+ 
+    AIFoundationContract
+    EmbeddingVector
+```
+```
+Microsoft.Windows.AI.Imaging
+ 
+    ImageObjectRemover
+    ImageObjectRemoverContract
+```
+```
+Microsoft.Windows.AI.MachineLearning
+ 
+    ExecutionProvider
+    ExecutionProviderCatalog
+    ExecutionProviderReadyResult
+    ExecutionProviderReadyResultState
+    ExecutionProviderReadyState
+    MachineLearningContract
+```
+```
+Microsoft.Windows.AI.Text
+ 
+    ConversationItem
+    ConversationSummaryOptions
+    InputKind
+    LanguageModel
+        CreateContext
+        CreateContext
+        CreateContext
+        GenerateEmbeddingVectors
+        GenerateEmbeddingVectors
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GetUsablePromptLength
+        GetUsablePromptLength
+        GetVectorSpaceId
+ 
+    LanguageModelEmbeddingVectorResult
+    TextRewriter
+        RewriteAsync
+ 
+    TextRewriteTone
+    TextSummarizer
+        IsPromptLargerThanContext
+        SummarizeConversationAsync
+```
+```
+Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+ 
+    Task
+        Run
+```
+```
+Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+ 
+    DeploymentManager
+        Repair
+ 
+    DeploymentStatus
+        PackageRepairFailed
+```
+```
+Microsoft.Windows.AppNotifications
+ 
+    AppNotification
+        ConferencingConfig
+ 
+    AppNotificationConferencingConfig
+```
+```
+Microsoft.Windows.AppNotifications.Builder
+ 
+    AppNotificationBuilder
+        AddCameraPreview
+ 
+    AppNotificationButton
+        SetSettingStyle
+ 
+    AppNotificationButtonSettingStyle
+```
+```
+Microsoft.Windows.SemanticSearch
+ 
+    EmbeddingVector
+    SemanticSearchContract
+```
+```
+Microsoft.Windows.Storage
+ 
+    ApplicationData
+        GetForUnpackaged
+```
+```
+Microsoft.Windows.Storage.Pickers
+ 
+    FileOpenPicker
+    FileSavePicker
+    FolderPicker
+    PickerLocationId
+    PickerViewMode
+    PickFileResult
+    PickFolderResult
+```
+```
+Microsoft.Windows.Vision
+ 
+    ScreenRegionBoundingBox
+    ScreenRegionDetectionContract
+    ScreenRegionLabel
+```
+```
+Microsoft.Windows.Widgets.Feeds.Providers
+ 
+    FeedManager
+        TryRemoveAnnouncementById
+ 
+    IFeedManager3
+```
+
+### Known Issues
+
+- When upgrading from version 1.8.250610002-experimental3 (or later) of the Microsoft.WindowsAppSDK NuGet package in a C++ project, you may see a compatibility error, such as with Microsoft.WindowsAppSDK.DWrite. This stems from a limitation in packages.config. To resolve it, remove all existing WindowsAppSDK references and re-add the updated Microsoft.WindowsAppSDK package.
+
+- Windows ML requires framework-dependent deployment; self-containment deployment is not supported. Apps using Windows ML must reference the Microsoft.WindowsAppSDK package, which includes transitive dependencies on the Microsoft.WindowsAppSDK.ML and Microsoft.WindowsAppSDK.Runtime components, both of which are required.
+
+- Windows ML is supported only on Windows 11 version 24H2 or newer (Build 26100+), and only on x64 and ARM64 architectures. x86 is not supported.
+
+- The StoragePickers APIs (FileOpenPicker, FileSavePicker, FolderPicker) only work in self-contained deployments due to a localization bug. Non-self-contained apps will crash at runtime when invoking these pickers. As a workaround, copy Microsoft.WindowsAppRuntime.pri to your project folder and configure it to copy to the output directory using:
+```
+<ItemGroup>
+   <None Update="Microsoft.WindowsAppRuntime.pri">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+   </None>
+</ItemGroup>
+```
+
 ## Version 1.8 Experimental (1.8.0-experimental3)
 
 ### Use on-device AI with Windows AI APIs
