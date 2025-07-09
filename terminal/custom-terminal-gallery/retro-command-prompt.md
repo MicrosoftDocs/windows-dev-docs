@@ -1,8 +1,6 @@
 ---
 title: Windows Terminal Retro Command Prompt
 description: This is the configuration for a retro command prompt in Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
 ms.date: 05/19/2020
 ms.topic: sample
 ---

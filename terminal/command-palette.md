@@ -1,8 +1,8 @@
 ---
 title: Windows Terminal Command Palette
 description: Learn how to use the command palette in Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
+
+
 ms.date: 02/25/2021
 ms.topic: how-to 
 ---

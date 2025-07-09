@@ -1,8 +1,6 @@
 ---
 title: Windows Terminal Startup Settings
 description: Learn how to customize startup settings within Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
 ms.date: 02/03/2022
 ms.topic: how-to
 ---

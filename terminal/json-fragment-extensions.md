@@ -1,8 +1,6 @@
 ---
 title: Windows Terminal JSON Fragment Extensions
 description: Learn how to use JSON fragment extensions in Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
 ms.date: 10/04/2021
 ms.topic: how-to
 ---

@@ -4,10 +4,6 @@ metadata:
   description: Frequently asked questions about Windows Terminal, such as how to start terminal in administrator mode, how to save a terminal session, and more.
   ms.topic: faq
   ms.date: 03/10/2023
-  ms.author: mattwoj
-  author: mattwojo
-  manager: jken
-  ms.reviewer: cinnamon
 title: Windows Terminal FAQ
 summary: |
   Find answers to some of the most frequently asked questions about Windows Terminal.

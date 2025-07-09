@@ -1,8 +1,6 @@
 ---
 title: An overview on Windows Terminal
 description: Learn about Windows Terminal and how it can improve your command line workflow.
-author: nguyen-dows
-ms.author: chrnguyen
 ms.date: 06/25/2023
 ms.topic: overview
 ---

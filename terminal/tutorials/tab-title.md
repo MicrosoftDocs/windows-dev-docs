@@ -1,8 +1,6 @@
 ---
 title: Windows Terminal Tab Title Setup
 description: In this tutorial, you learn how to set the tab title in Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
 ms.date: 05/19/2020
 ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to customize my tab titles so that I can have a more organized Windows Terminal.
@@ -78,4 +76,3 @@ Note that this decouples the shell's title from the visible title presented on t
 ## Resources
 
 * [Setting the console title to be your current working directory](https://devblogs.microsoft.com/powershell/setting-the-console-title-to-be-your-current-working-directory/)
-* [Change the title of a terminal on Ubuntu 16.04](https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604)

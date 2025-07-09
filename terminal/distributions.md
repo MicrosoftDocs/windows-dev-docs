@@ -1,8 +1,6 @@
 ---
 title: Windows Terminal Distribution Types
 description: Learn how to use the different distributions of Windows Terminal.
-author: nguyen-dows
-ms.author: chrnguyen
 ms.date: 02/03/2025
 ms.topic: how-to 
 ---

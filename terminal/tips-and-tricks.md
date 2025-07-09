@@ -1,8 +1,6 @@
 ---
 title: Windows Terminal tips and tricks
 description: In this page, you will find tips and tricks to help improve your Windows Terminal experience.
-author: cinnamon-msft
-ms.author: cinnamon
 ms.date: 07/08/2022
 ms.topic: how-to
 ---

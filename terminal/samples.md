@@ -1,8 +1,6 @@
 ---
 title: Windows Terminal sample code
 description: Windows Terminal sample code, including Pixel Shader .hlsl samples, an EchoCon ConPTY sample Win32 pseudo console, a GUIConsole sample WPF console targeting .NET, a MiniTerm sample using basic PTY API calls, and a ReadConsoleInputStream demo for monitoring of console events while streaming character input.
-author: cinnamon-msft
-ms.author: cinnamon
 ms.date: 11/16/2021
 ms.topic: sample
 ---

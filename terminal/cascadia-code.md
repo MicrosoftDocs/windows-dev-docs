@@ -1,8 +1,7 @@
 ---
 title: Windows Terminal Cascadia Code
 description: Learn about the different Cascadia Code fonts and how they work with Windows Terminal.
-author: cinnamon-msft
-ms.author: cinnamon
+
 ms.date: 08/30/2021
 ms.topic: overview
 ---
