@@ -1,9 +1,8 @@
 ---
 title: Use WinGet to install and manage applications
 description: The WinGet command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
-ms.date: 08/05/2024
+ms.date: 11/20/2024
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # Use the WinGet tool to install and manage applications
@@ -12,7 +11,9 @@ ms.localizationpriority: medium
 
 ## Install WinGet
 
-**WinGet** the Windows Package Manager is available on Windows 11, modern versions of Windows 10, and Windows Server 2025 as a part of the **App Installer**. The **App Installer** is a System Component delivered and updated by the Microsoft store on Windows Desktop versions, and via Updates on Windows Server 2025.
+Windows Package Manager **WinGet** command-line tool is available on Windows 11 modern versions of Windows 10, and Windows Server 2025 as a part of the **App Installer**. The **App Installer** is a System Component delivered and updated by the Microsoft store on Windows Desktop versions, and via Updates on Windows Server 2025.
+
+You can [get App Installer from the Microsoft Store](https://apps.microsoft.com/detail/9nblggh4nns1). If it's already installed, make sure it is updated with the latest version.
 
 > [!NOTE]
 > The **WinGet** command line tool is only supported on Windows 10 version 1809 (build 17763) or later. WinGet will not be available until you have logged into Windows as a user for the first time, triggering Microsoft Store to register the Windows Package Manager as part of an asynchronous process. If you have recently logged in as a user for the first time and find that WinGet is not yet available, you can open PowerShell and enter the following command to request this WinGet registration: `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`.
