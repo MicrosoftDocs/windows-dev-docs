@@ -26,7 +26,7 @@ The benefits of using a WinGet Configuration file include:
 
 ## Use a WinGet Configuration file to configure your machine
 
-To set up your machine using a WinGet Configuration file, use [winget configure](../winget/configure.md) in the command line. To use the `winget configure` command, you must be running WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
+To set up your machine using a WinGet Configuration file, download the configuration file and double-click to invoke the configuration. Alternatively, use [winget configure](../winget/configure.md) in the command line. To use the `winget configure` command, you must be running WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
 
 ## WinGet Configuration FAQs
 
@@ -61,7 +61,7 @@ A benefit to the declarative (non-sequential) nature of WinGet configuration fil
 
 ### How do I use a WinGet Configuration file?
 
-To run a WinGet Configuration file, use the [`winget configure` command](../winget/configure.md).
+To run a WinGet Configuration file, you can simply double-click to run the file in file explorer. Alternatively, you can use the [`winget configure` command](../winget/configure.md).
 
 ### How do I author a WinGet Configuration?
 

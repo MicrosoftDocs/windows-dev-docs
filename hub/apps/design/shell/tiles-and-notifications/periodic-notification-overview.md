@@ -4,7 +4,7 @@ title: Periodic notification overview
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
 ms.date: 05/19/2017
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

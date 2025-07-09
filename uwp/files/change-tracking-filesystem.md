@@ -2,7 +2,7 @@
 title: Track file system changes in the background
 description: Describes how to track changes in files and folders in the background as users move them around the system.
 ms.date: 12/19/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

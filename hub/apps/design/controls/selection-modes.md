@@ -4,7 +4,7 @@ title: Selection mode
 label: Selection mode
 template: detail.hbs
 ms.date: 06/24/2021
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 pm-contact: anawish
 design-contact: kimsea

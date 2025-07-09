@@ -3,7 +3,7 @@ description: This article explains how to receive content in your Universal Wind
 title: Receive data
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

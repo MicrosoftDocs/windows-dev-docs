@@ -2,7 +2,7 @@
 description: This topic walks you through the process of adding a simple C# component to a C++/WinRT app
 title: Authoring a C# Windows Runtime component for use from a C++/WinRT app
 ms.date: 12/30/2020
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, C#
 ms.localizationpriority: medium
 ---

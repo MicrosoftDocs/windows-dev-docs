@@ -3,7 +3,7 @@ description: After you define your experiment in Partner Center and code your ex
 title: Manage your experiment in Partner Center
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ms.localizationpriority: medium
 ---

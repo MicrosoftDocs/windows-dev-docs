@@ -1,7 +1,7 @@
 ---
 title: Test your app's signature with Smart App Control
 description: Enable Smart App Control and verify your app is signed correctly
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/20/2022
 ---
 

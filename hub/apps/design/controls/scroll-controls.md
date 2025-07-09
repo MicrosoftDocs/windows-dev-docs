@@ -5,7 +5,7 @@ ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -542,7 +542,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer), [ScrollBar class](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 > - [Open the WinUI 2 Gallery app and see the ScrollViewer in action](winui2gallery:/item/ScrollViewer). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related topics
 

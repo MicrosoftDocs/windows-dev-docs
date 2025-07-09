@@ -3,7 +3,7 @@ ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: Learn how to use the Windows.Services.Store namespace to get Store-related product info for the current app or one of its add-ons.
 title: Get product info for apps and add-ons
 ms.date: 02/08/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, Windows.Services.Store
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 title: Experimental channel release notes for the Windows App SDK 1.2
 description: Learn about the experimental channel release notes for the Windows App SDK 1.2
-ms.topic: article
+ms.topic: release-notes
 ms.date: 04/19/2024
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
@@ -73,7 +73,7 @@ Registering app display name and icon for app notification is now supported. Che
 
 ### WinUI 3
 
-- Controls and styles are up to date with the [WinUI 2.8](../../winui/winui2/release-notes/winui-2.8.md) release.
+- Controls and styles are up to date with the [WinUI 2.8](/windows/uwp/get-started/winui2/release-notes/winui-2.8) release.
 - UWP is no longer supported in the experimental releases.
 
 ### Other limitations and known issues

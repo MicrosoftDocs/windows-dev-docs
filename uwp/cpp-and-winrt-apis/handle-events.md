@@ -2,7 +2,7 @@
 description: This topic shows how to register and revoke event-handling delegates using C++/WinRT.
 title: Handle events by using delegates in C++/WinRT
 ms.date: 04/23/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, handle, event, delegate
 ms.localizationpriority: medium
 ---

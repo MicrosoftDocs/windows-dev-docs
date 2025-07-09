@@ -2,7 +2,7 @@
 title: Company account verification requirements
 description: Company account verification requirements related to the European Union Digital Services Act
 ms.date: 2/27/2025
-ms.topic: article
+ms.topic: how-to
 keywords: store policies agreement archive DSA
 ms.localizationpriority: high
 ---
@@ -80,7 +80,7 @@ Then, expand and edit the **Contact Info** section. Select **Update**.
 
 ![Additional Information for Verification location in Partner Center](images\account-verify-additional-info.png)
 
-5. Within this tab, you can chose between the two availabe identification options.
+5. Within this tab, you can chose between the two available identification options.
 
 * **DUNS ID**: This is the recommended and faster verification method. Simply enter your DUNS ID.
 

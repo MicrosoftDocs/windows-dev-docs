@@ -1,7 +1,7 @@
 ---
 description: This section describes how you can use the Microsoft Store Web installer to improve distribution of your app on the web
 title: How to use the Microsoft Store Web Installer to distribute your apps on the web.
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/07/2024
 keywords: uwp, microsoft store installer, store installer, web installer
 ms.localizationpriority: medium
@@ -28,11 +28,11 @@ Once installation is done, the installer will automatically launch the applicati
 This functionality is available for the following web-hosted content types:
 
 - Free packaged MSIX content published on the Microsoft Store
+- Win32 apps published on the Microsoft Store
 
 This functionality isn't currently available for the following content types:
 
 - MSIXVC apps published on the Microsoft Store
-- Win32 apps published on the Microsoft Store
 - Paid content published on the Microsoft Store
 - Content rated above Everyone/ESRB (or equivalent) while signed in to Windows using an Enterprise account 
 
@@ -53,4 +53,4 @@ To enable the Store Web Installer for your app, you need to ensure that the foll
 
 - If you've been using the *[ApplicationManagement/RequirePrivateStoreOnly](/microsoft-store/manage-access-to-private-store)* MDM policy, the *Only display the private store within the Microsoft Store* app group policy, or setting the *RemoveWindowsStore* DWORD value in the registry to 1 to block local or domain joined devices from accessing the Store, remember that these settings are for disabling the Store application. This policy doesn't block installation or updates of apps available on the Store.
 - If you'd like to better control the types of apps that can be installed by domain-joined PCs, including apps from the Store and from the Microsoft Store Web Installer, visit [AppLocker - Windows Security](/windows/security/application-security/application-control/windows-defender-application-control/applocker/applocker-overview). This policy can be used in combination with *RequirePrivateStoreOnly*, *RemoveWindowsStore*, or independently.
-- If you'd like to specifically block installations from the Microsoft Store, including installations from the Microsoft Store Web Installer, use the [DisableStoreOriginatedApps policy](/windows/client-management/mdm/policy-csp-applicationmanagement#disablestoreoriginatedapps). This also blocks launch of preinstalled Store apps.
+- If you’d like to specifically block installations from the Microsoft Store Web Installer, you can domain block the following URL - `get.microsoft.com` . This will block the installer from being downloaded and executed from either the Microsoft Store website, or from various developer websites distributing apps through this mechanism. Blocking this will not have any impact on the Microsoft Store app on Windows or already installed apps. These will continue to operate, unless combined with the above policies.

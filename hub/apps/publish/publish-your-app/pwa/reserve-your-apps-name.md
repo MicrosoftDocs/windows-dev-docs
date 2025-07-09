@@ -1,7 +1,7 @@
 ---
 description: Reserve your PWA app's name in the Microsoft Store
 title: Reserve your PWA's app name
-ms.topic: article
+ms.topic: how-to
 ms.date: 10/30/2022
 ---
 

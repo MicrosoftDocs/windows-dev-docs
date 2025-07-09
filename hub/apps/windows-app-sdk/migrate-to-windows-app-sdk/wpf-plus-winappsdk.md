@@ -1,7 +1,7 @@
 ---
 title: Use the Windows App SDK in a WPF app
 description: This topic enables you to use Windows App SDK features (such as App Lifecycle, MRT Core, DWriteCore, and others) in a Windows Presentation Foundation (WPF) app.
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/25/2024
 keywords: windows win32, windows app development, Windows App SDK, Windows Presentation Foundation, WPF
 ms.localizationpriority: medium

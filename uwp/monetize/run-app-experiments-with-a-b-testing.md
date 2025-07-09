@@ -3,7 +3,7 @@ description: You can use Partner Center to run experiments for your Universal Wi
 title: Run app experiments with A/B testing
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ms.localizationpriority: medium
 ---

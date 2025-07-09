@@ -3,7 +3,7 @@ title: What's New in Windows 10, build 17134
 description: Windows 10 build 17134 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: Windows 10, 17134, 1803
 ms.date: 04/10/2018
-ms.topic: article
+ms.topic: whats-new
 
 
 ms.localizationpriority: medium
@@ -108,9 +108,9 @@ It's easier than ever to bring your desktop app to the Universal Windows Platfor
 
 The Xbox Live Creators Program allows developers to quickly publish their UWP games to Xbox One and Windows 10. [Watch the video](https://www.youtube.com/watch?v=zpFfHHBkVq4) to learn about the program, then [check out this page](https://www.xbox.com/developers/creators-program) to get started.
 
-### One Dev Question - Why was Docments and Settings renamed Users?
+### One Dev Question - Why was Documents and Settings renamed Users?
 
-Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more developement details about Windows and its history, check out [Raymond's blog.](https://devblogs.microsoft.com/oldnewthing/)
+Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more development details about Windows and its history, check out [Raymond's blog.](https://devblogs.microsoft.com/oldnewthing/)
 
 
 ## Samples

@@ -2,7 +2,7 @@
 title: Choosing control resolution
 description: An explanation of how to configure the resolution used by Win2D's XAML controls.
 ms.date: 05/26/2023
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---

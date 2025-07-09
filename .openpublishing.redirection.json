@@ -1,6 +1,11 @@
 {
   "redirections": [
-    {
+	{
+		"source_path": "hub/apps/whats-new/latest-docs-updates.md",
+		"redirect_url": "https://learn.microsoft.com/windows/apps/whats-new/windows-11-build-22000",
+		"redirect_document_id": false
+	  },
+	  {
       "source_path": "hub/apps/design/devices/kinect-for-windows.md",
       "redirect_url": "https://azure.microsoft.com/en-us/products/kinect-dk",
       "redirect_document_id": false
@@ -8757,7 +8762,7 @@
     },
     {
       "source_path": "uwp/launch-resume/launch-maps-app.md",
-      "redirect_url": "/windows/apps/develop/launch/launch-maps-app",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-app",
       "redirect_document_id": false
     },
     {
@@ -8798,6 +8803,96 @@
     {
       "source_path": "uwp/launch-resume/handle-file-activation.md",
       "redirect_url": "/windows/apps/develop/launch/handle-file-activation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/index.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/getting-started.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/getting-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/nuget-packages.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/nuget-packages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/index.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.0.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.0",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.1.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.2.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.3.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.4.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.4",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.5.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.5",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.6.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.6",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.7.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.7",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.8.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.8",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/sudo/index.md",
+      "redirect_url": "/windows/advanced-settings/sudo/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-json.md",
+      "redirect_url": "/windows/ai/app-actions/actions-json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-provider-manifest.md",
+      "redirect_url": "/windows/ai/app-actions/actions-provider-manifest",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/index.md",
+      "redirect_url": "/windows/ai/app-actions/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/launch/launch-maps-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-app",
       "redirect_document_id": false
     },
     {

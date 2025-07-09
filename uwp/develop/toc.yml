@@ -1453,7 +1453,11 @@
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
 - name: User interface and input
   href: ../ui-input/index.md
-  items: 
+  items:
+    - name: App navigation
+      href: ../ui-input/app-navigation.md
+    - name: Back navigation
+      href: ../ui-input/back-navigation.md
     - name: Title bar customization
       href: ../ui-input/title-bar.md
     - name: Use Mica in UWP apps

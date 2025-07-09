@@ -4,7 +4,7 @@ title: Send a local tile notification
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
 ms.date: 08/08/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

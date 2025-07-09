@@ -5,7 +5,7 @@ title: Expose basic accessibility information
 label: Expose basic accessibility information
 template: detail.hbs
 ms.date: 01/20/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

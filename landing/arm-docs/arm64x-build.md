@@ -2,7 +2,7 @@
 title: Build Arm64X Files
 description: Build Arm64X files for situations where one file is loaded into both x64/Arm64EC and Arm64 processes.
 ms.date: 08/08/2024
-ms.topic: article
+ms.topic: how-to
 ms.service: windows
 ms.subservice: arm
 ---
@@ -85,14 +85,16 @@ To build your CMake project binaries as Arm64X, you can use any version of [CMak
 	      "inherits": "arm64-debug",
 	      "cacheVariables": {
 	        "BUILD_AS_ARM64X": "ARM64"
-	    },
-	 	{
+	      }
+            },
+	    {
 	      "name": "arm64ec-debug-x",
 	      "displayName": "arm64ec Debug (arm64x)",
 	      "inherits": "arm64ec-debug",
 	      "cacheVariables": {
 	        "BUILD_AS_ARM64X": "ARM64EC"
-	    }
+	      }
+            }
 	```
 
 3. Add a new .cmake file to your CMake project called `arm64x.cmake`. Copy the snippet below into the new .cmake file.

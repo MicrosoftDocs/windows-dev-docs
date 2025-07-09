@@ -1,7 +1,7 @@
 ---
 title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
-ms.topic: article
+ms.topic: release-notes
 ms.date: 03/18/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
@@ -32,16 +32,194 @@ The stable channel provides releases of the Windows App SDK that are supported f
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
 
-
 ## Version 1.7
 
-The following sections describe new and updated features and known issues for version 1.7.
-
-In an existing Windows App SDK app, you can update your Nuget package to 1.7.250310001 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+In an existing Windows App SDK app, you can update your Nuget package to 1.7.250513003 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
+### Version 1.7.3 (1.7.250606001)
+
+#### Windows AI APIs
+
+> [!IMPORTANT]
+> The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
+
+The Windows App SDK now includes a suite of artificial intelligence (AI) APIs that can be used with a local language model to perform a variety of tasks on Copilot+ PCs. Your apps can now intelligently respond to prompts, recognize text within images, describe the content of images, remove objects from images, and more.
+
+For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
+
+
+#### New Rank property for Widgets
+
+Added a new `Rank` property to Widgets. Rank may be used by the platform's recommendation engine to sort Widgets from a same application package identity. Should multiple widgets from the same provider be recommended for a UI surface, the Rank property will determine the order in which they appear. The Rank property does not change how a Widget is placed compared to other provider's Widgets, nor does it affect the chance a Widget will be recommended.
+
+#### Bug Fixes
+
+- Added the following sentence to section 1a of the .nupkg license: When building Generative AI applications follow the guidelines in [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai).
+- Fixed a potential crash in ApplicationDataProvider::GetStateFolderUris caused by reentrancy. For more info, see GitHub issue [#10513](https://github.com/microsoft/microsoft-ui-xaml/issues/10513). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ApplicationDataProvider_ReentrancyProtection)
+- Fixed a potential crash in WindowChrome::SetTitleBar when closing a window. For more info, see GitHub issue [#9203](https://github.com/microsoft/microsoft-ui-xaml/issues/9203). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowChrome_SetTitleBarCrash)
+- Fixed a potential crash in PointerInputObserverWinRT::FlushCoalescedInput_Callback when there is reentrancy while processing input. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_FlushReentrancyCrash)
+
+#### New APIs for 1.7.3
+ 
+This release includes the following new APIs compared to the previous 1.7 release:
+
+```
+Microsoft.Windows.Widgets.Providers
+
+    WidgetInfo
+        Rank
+
+    WidgetUpdateRequestOptions
+        Rank
+```
+
+### Version 1.7.2 (1.7.250513003)
+
+#### Windows AI APIs
+
+> [!IMPORTANT]
+> The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
+
+The Windows App SDK now includes a suite of artificial intelligence (AI) APIs that can be used with a local language model to perform a variety of tasks on Copilot+ PCs. Your apps can now intelligently respond to prompts, recognize text within images, describe the content of images, remove objects from images, and more.
+
+For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
+
+##### Phi Silica Text Intelligence 
+
+With [**Phi Silica**](/windows/ai/apis/phi-silica), Microsoft's most powerful NPU-tuned local language model, you can specify it to perform common tasks like summarizing a piece of text, rewriting a piece of text for clarity, and converting text to a table format. Phi Silica is optimized for efficiency and performance on Windows Copilot+ PCs devices while still offering many of the capabilities found in Large Language Models (LLMs). 
+
+See [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica) and [API ref for Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica-api-ref) for more information.
+
+##### Image Description 
+The Image Description APIs enable the generation of textual descriptions of images. The length and type of these descriptions can be configured to meet accessibility requirements, ranging from short captions to long descriptions.
+
+For additional details, see [What can I do with Image Description?](/windows/ai/apis/imaging#what-can-i-do-with-image-description) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
+
+##### Text Recognition
+
+Text recognition, also known as optical character recognition (OCR), detects and extracts text within images, converting it into machine-readable character streams. These APIs identify characters, words, lines, polygonal text boundaries, and provide confidence levels for each match. Benefiting from NPU-assisted acceleration, the Windows AI AI-assisted APIs perform faster and more accurately than the legacy [Windows.Media.Ocr.OcrEngine](/uwp/api/windows.media.ocr.ocrengine) APIs.
+
+For additional details, see [Get Started with Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition) and [API ref for AI-backed Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition-api-ref).
+
+##### Image Super Resolution 
+The 'ImageScaler' APIs can increase the sharpness and clarity of an image and upscale the image by up to 8x its original resolution.
+
+For additional details, see [What can I do with Image Super Resolution?](/windows/ai/apis/imaging#what-can-i-do-with-image-super-resolution) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
+
+##### Image Segmentation 
+
+The Image Segmentation APIs allow for the identification of specific objects within an image. By inputting an image and a "hints" object, the model returns a mask of the identified object.
+
+For additional details, see [What can I do with Image Segmentation?](/windows/ai/apis/imaging#what-can-i-do-with-image-segmentation) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
+
+#### ApplicationData.MachinePath folder creation support
+
+ApplicationData.MachineFolder is now easier to use on Windows >=10.0.26100.0 (Ge). Windows will [create the Machine folder](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md#343-machine-path-creationdeletion) when a [package manifesting opt-in support](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md#342-manifested-opt-in) is added to a system if WinAppSDK 1.7.2 is present on the system. For more details see the [ApplicationData spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md).
+
+#### Bug Fixes
+
+- Fixed PackageDeploymentManager telemetry to properly capture completion status. For more info, see GitHub issue [#5296](https://github.com/microsoft/WindowsAppSDK/pull/5296). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A)
+- Fixed a crash when using pen input on an x86 app. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputStateManager_PenInputCrashX86)
+- Fixed a potential crash if the window is already destroyed when WinUI is attempting to initialize for scrolling. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ActivateDirectManipulationManager_CheckCanInit)
+- Fixed the WINDOWSAPPSDK_RELEASE_PATCH define and Microsoft::WindowsAppSDK::Release::Patch values in WindowsAppSDK-VersionInfo.h to not always be 0. The define is now the yymmdd date of the build, and the Patch value is the mmdd date. This change provides better runtime information on the version being used without changing any variable sizes or the version scheme. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, header change)
+- Fixed a potential issue in the Bootstrapper if it is used to load a 1.6 or earlier version of WinAppSDK. For more info, see GitHub issue [#5349](https://github.com/microsoft/WindowsAppSDK/pull/5349). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A)
+- Fixed an issue where using MSBuild to build a single-project app could incorrectly fail with a build error if it didn't have a correct launchSettings.json. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build .targets change)
+- Improved the performance of rendering the first frame on application launch. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DwmCoreI_OptimizeFirstFrameLatency)
+
+#### New APIs for 1.7.2
+ 
+This release includes the following new APIs compared to the previous 1.7 release:
+
+```
+Microsoft.Graphics.Imaging
+
+    ImageBuffer
+    ImageBufferContract
+    ImageBufferPixelFormat
+```
+```
+Microsoft.Windows.AI
+
+    AIFeatureReadyContract
+    AIFeatureReadyResult
+    AIFeatureReadyResultState
+    AIFeatureReadyState
+```
+```
+Microsoft.Windows.AI.ContentSafety
+
+    ContentFilterOptions
+    ContentSafetyContract
+    ImageContentFilterSeverity
+    SeverityLevel
+    TextContentFilterSeverity
+```
+```
+Microsoft.Windows.AI.Imaging
+
+    ImageDescriptionContract
+    ImageDescriptionGenerator
+    ImageDescriptionKind
+    ImageDescriptionResult
+    ImageDescriptionResultStatus
+    ImageObjectExtractor
+    ImageObjectExtractorContract
+    ImageObjectExtractorHint
+    ImageScaler
+    ImageScalerContract
+    RecognizedLine
+    RecognizedLineStyle
+    RecognizedText
+    RecognizedTextBoundingBox
+    RecognizedWord
+    TextRecognitionContract
+    TextRecognizer
+```
+```
+Microsoft.Windows.AI.Text
+
+    LanguageModel
+    LanguageModelContext
+    LanguageModelContract
+    LanguageModelOptions
+    LanguageModelResponseResult
+    LanguageModelResponseStatus
+    TextIntelligenceContract
+    TextRewriter
+    TextSummarizer
+    TextToTableConverter
+    TextToTableResponseResult
+    TextToTableRow
+```
+```
+Microsoft.Windows.Workloads
+
+    WorkloadPriority
+    WorkloadsContract
+```
+
+### Version 1.7.1 (1.7.250401001)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.7 release.
+
+- Improved the telemetry for failure scenarios in WindowsAppRuntimeInstall-&lt;arch&gt;.exe. For more info, see GitHub issue [#5289](https://github.com/microsoft/WindowsAppSDK/pull/5289). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, installer change)
+- Fixed an issue where pointer input would stop working when using arrow keys at the same time. For more info, see GitHub issue [#10126](https://github.com/microsoft/microsoft-ui-xaml/issues/10126). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixStuckPointerInputQueue)
+- Fixed an issue where apps in remote desktop stop responding to pointer input. For more info, see GitHub issue [#10009](https://github.com/microsoft/microsoft-ui-xaml/issues/10009). (This is the same fix as the pointer input plus arrow keys fix, due to remote desktop automatically sending some key input during the switch away and back.)  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixStuckPointerInputQueue)
+- Fixed a potential crash trying to restore focus if a window activation event is delivered for a window which is closing. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixWindowCloseFocusCrash)
+- Fixed a performance regression introduced in WinAppSDK 1.6 due to WinUI binaries missing some linker optimizations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, changed linker options)
+- Fixed a potential crash if ProgressBar::SetProgressBarIndicatorWidth is called on a ProgressBar which is not in the tree. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixSetProgressBarIndicatorWidthCrash)
+- Fixed a potential crash caused by CPopup::EnsureBridgeClosed sometimes triggering reentrancy. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixPopupClosingReentrancyCrash)
+- Fixed a potential crash when closing a popup due to CUIElement::FlushPendingKeepVisibleOperations using a null children collection. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixPopupUnloadingCrash)
+- Fixed PackageDeploymentManager.EnsurePackage\*Ready to ensure version supersedence. For more info, see GitHub issue [#5191](https://github.com/microsoft/WindowsAppSDK/pull/5191).  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): EnsurePackageReadyVersionSupercedence)
+- Fixed a potential crash caused by WebView2::UpdateCoreWebViewVisibility sometimes triggering reentrancy. For more info, see GitHub issue [#10305](https://github.com/microsoft/microsoft-ui-xaml/issues/10305). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixWebViewVisibilityReentrancyCrash)
+- Fixed an issue where app UI sometimes permanently freezes and can stop rendering due to the DispatcherQueue getting stuck. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixRandomUIFreezeInDispatcher)
+
 ### Version 1.7.0 (1.7.250310001)
+
+The following sections describe new and updated features and known issues for version 1.7.
+
 #### New Badge Notifications Feature
 
 The notification badge conveys a summary or status information specific to an app. This can be numeric (1-99) or a glyph from one of the system-provided glyphs. This new functionality provides an easy way for apps to show status, such as number of unread mails in a mail app or number of new posts in a social media app.
@@ -110,7 +288,7 @@ Additionally, the updates in the Microsoft.UI.Xaml namespace introduce a new `Xa
  
 * New `RuntimeCompatibilityOptions` support will allow more control over how servicing changes affect apps. For more info, see GitHub [#4966](https://github.com/microsoft/WindowsAppSDK/issues/4966).
 * A new `ReleaseInfo` API provides easy access to the version of the Windows App SDK Runtime in use. For more info, see GitHub [#2893](https://github.com/microsoft/WindowsAppSDK/issues/2893).
-* Note: Windows Copilot Runtime APIs are not included this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!
+* Note: Windows AI APIs are not included this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!
  
 #### New APIs for 1.7.0
  

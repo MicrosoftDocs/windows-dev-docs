@@ -4,7 +4,7 @@ description: Use ListView and GridView controls to display and manipulate sets o
 label: List view and grid view
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 doc-status: Published
@@ -609,7 +609,7 @@ APIs for these controls exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows
 - [XAML ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView): Demonstrates the ListView and GridView controls.
 - [XAML drag and drop sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop): Demonstrates drag and drop with the ListView control.
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
 
 ## Related articles
 

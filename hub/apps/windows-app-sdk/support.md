@@ -53,6 +53,24 @@ Server 2019<br>
 Server 2022
 </td>
 </tr>
+<tr>
+<td valign="top">1.7</td>
+<td valign="top">2025-03-18</td>
+<td valign="top">
+Win10 1809<br>
+Win10 21H2<br>
+Win10 22H2<br>
+Win10 23H2<br>
+Win11 21H2<br>
+Win11 22H2<br>
+Win11 23H2<br>
+Win11 24H2
+</td>
+<td valign="top">
+Server 2019<br>
+Server 2022
+</td>
+</tr>
 </table>
 
 ## Windows client SKUs and channels

@@ -6,7 +6,7 @@ label: Selecting text and images
 template: detail.hbs
 keywords: keyboard, text, input, user interactions
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

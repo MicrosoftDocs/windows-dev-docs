@@ -1,7 +1,7 @@
 ---
 title: Deployment overview
 description: The topics in this section introduce options and guidance around deploying different types of Windows apps. Your first decision will be whether or not to package your app.
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/05/2023
 ms.localizationpriority: medium
 ---

@@ -5,7 +5,7 @@ label:
 template: detail.hbs
 keywords: keyboard, game controller, remote control, navigation, directional inner navigation, directional area, navigation strategy, input, user interaction, accessibility, usability
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm

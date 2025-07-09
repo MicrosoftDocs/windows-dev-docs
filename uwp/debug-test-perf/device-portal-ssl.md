@@ -2,7 +2,7 @@
 title: Provision Windows Device Portal with a custom SSL certificate
 description: Learn how to provision Windows Device Portal with a custom certificate for use in HTTPS communication.
 ms.date: 01/28/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---

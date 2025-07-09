@@ -3,7 +3,7 @@ ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: Learn about best practices for ads in apps, including UX guidelines and error handling.
 title: Best practices for ads in apps
 ms.date: 02/18/2020
-ms.topic: article
+ms.topic: best-practice
 keywords: windows 10, uwp, ads, advertising, walkthroughs
 ms.localizationpriority: medium
 ---

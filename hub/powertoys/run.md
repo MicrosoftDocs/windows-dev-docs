@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: Run is a quick launcher for power users that contains additional features without sacrificing performance.
-ms.date: 12/25/2024
+ms.date: 03/07/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -240,6 +240,42 @@ Examples:
 - `) calendar week::3/27/2022` to show the calendar week for a date value.
 - `) unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
+#### Custom formats
+
+The plugin includes a setting where custom formats can be defined. Custom formats are entered in a multiline text box which accepts one format per line.
+
+**Please use the following syntax:**
+
+- `<Format name>=<Format pattern>` for using the local time.
+- `<Format name>=UTC:<Format pattern>` for using the Universal Time Convention (UTC).
+
+> [!NOTE]
+> - `Format name`: Every charter except the equal sign is supported.
+> - `Format pattern`: You can escape the pattern and the backslash itself as text by using a backslash as prefix.
+
+**Examples:**
+
+- `MyFormat=dd-MMMM-yyyy`
+- `MySecondFormat=dddd (Da\y nu\mber: DOW)`
+- `MyUtcFormat=UTC:hh:mm:ss`
+
+**Supported format pattern:**
+
+| Format pattern | Description |
+| :--- | :--- |
+| Standard pattern like `hh:mm:ss`. |  Please see this [page](/dotnet/standard/base-types/custom-date-and-time-format-strings) for more information.
+| `DOW` | Number of the day in the week. |
+| `DIM` | Days in the month. |
+| `WOM` | Number of week in the month. |
+| `WOY` | Number of the week in the year. |
+| `EAB` | Era abbreviation. |
+| `WFT` | Windows file time as number. |
+| `UXT` | Unix time stamp as number. |
+| `UMS` | Unix time stamp in milliseconds  as number. |
+| `OAD` | OLE Automation date as number. |
+| `EXC` | Excel's 1900 based date value as number. |
+| `EXF` | Excel's 1904 based date value as number. |
+
 ### Unit converter plugin
 
 > [!IMPORTANT]
@@ -393,6 +429,8 @@ To search for Windows services, [enable the plugin](#plugin-manager), open Power
 ### Window Walker plugin
 
 With the Window Walker plugin, you can switch to other windows, close them, or kill the window process.
+
+You can enter the **Direct activation command** `<` to search for open windows. The plugin will search for the window title and the name of the process that owns the window.
 
 #### Kill a window process
 

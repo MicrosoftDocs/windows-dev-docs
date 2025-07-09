@@ -7,7 +7,7 @@ keywords:
 - resources, streaming
 - resources, tiled
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

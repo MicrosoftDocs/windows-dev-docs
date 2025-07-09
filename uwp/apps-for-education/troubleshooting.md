@@ -5,7 +5,7 @@ title: Troubleshoot Microsoft Take a Test with the event viewer.
 
 ms.assetid: 9218e542-f520-4616-98fc-b113d5a08e0f
 ms.date: 10/06/2017
-ms.topic: article
+ms.topic: troubleshooting-general
 keywords: windows 10, uwp, education
 ms.localizationpriority: medium
 ---

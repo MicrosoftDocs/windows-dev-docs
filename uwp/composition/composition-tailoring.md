@@ -2,7 +2,7 @@
 title: Composition Tailoring
 description: Use the Composition APIs to tailor your UI, optimize for performance, and accommodate user settings and device characteristics.
 ms.date: 03/16/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

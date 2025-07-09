@@ -3,7 +3,7 @@ description: You can generate promotional codes for an app or add-on that you ha
 title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.date: 1/30/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, promo code, promo codes, token, tokens
 ms.localizationpriority: medium
 ---

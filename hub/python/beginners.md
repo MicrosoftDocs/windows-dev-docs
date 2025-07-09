@@ -1,7 +1,7 @@
 ---
 title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
-ms.topic: article
+ms.topic: get-started
 ms.date: 03/25/2025
 ---
 
@@ -16,7 +16,7 @@ For beginners interested in learning Python using Windows, we recommend choosing
 
 [Winget Configuration files](../package-manager/configuration/index.md) include all of the instructions needed to install requirements and setup your machine for a specific project. To use Microsoft's Beginner Python project WinGet Configuration setup file, follow the steps below:
 
-1. Download the configuration file by opening this link and selecting "Raw file content > Download" (three dots menu on top-right):  [Winget Configuration: learn_python.winget](https://github.com/microsoft/winget-dsc/blob/main/samples/Templates/Introduction/Python%203.13/learn_python.winget).
+1. Download the configuration file by opening this link and selecting "Raw file content > Download" (three dots menu on top-right):  [Winget Configuration: learn_python.winget](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/Python%203.13/learn_python.winget).
 2. To run the file, double-click the downloaded configuration file (the first time you will need to select the "Windows Package Manager Client" app to open and run the file) or you can open Powershell in Windows Terminal and enter the following command:
 
     ```powershell
@@ -206,6 +206,23 @@ Try adjusting some of the numbers to see what effect they have on your bouncing 
 
 Read more about writing games with pygame at [pygame.org](http://www.pygame.org).
 
+### Use AI to enhance the game with additional features
+
+You can use AI tools, such as GitHub Copilot, to generate code that updates the bouncing ball game with new interactive features, improved behaviors, and smoother animations. You can customize the prompt to suit your requirements.
+
+The following text shows an example prompt for Copilot Chat:
+
+```copilot-prompt
+Update the pygame bouncing ball code to:
+- Add a vertical wall in the center that the ball bounces off
+- Ensure the ball can bounce off the center wall and continue moving, not get stuck next to it
+- Cycle through different colors each time the ball bounces
+- Reduce movement speed from 1 to 0.5 pixels per frame
+- Add frame rate control for 60 FPS
+```
+
+GitHub Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://aka.ms/copilot-general-use-faqs).
+
 ## Resources for continued learning
 
 We recommend the following resources to support you in continuing to learn about Python development on Windows.
@@ -221,3 +238,8 @@ We recommend the following resources to support you in continuing to learn about
 - [Debugging Python](https://code.visualstudio.com/docs/python/debugging): Debugging is the process of identifying and removing errors from a computer program. This article covers how to initialize and configure debugging for Python with VS Code, how to set and validate breakpoints, attach a local script, perform debugging for different app types or on a remote computer, and some basic troubleshooting.
 
 - [Unit testing Python](https://code.visualstudio.com/docs/python/unit-testing): Covers some background explaining what unit testing means, an example walkthrough, enabling a test framework, creating and running your tests, debugging tests, and test configuration settings.
+
+## Related content
+
+- [GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview)
+- [GitHub Copilot in Visual Studio](/visualstudio/ide/visual-studio-github-copilot-install-and-states)

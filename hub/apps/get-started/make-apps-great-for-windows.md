@@ -75,7 +75,7 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 ### UWP apps
 
-- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation by default.
+- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](/windows/uwp/get-started/winui2/) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation by default.
 - See the documentation for a [list of supported controls](../design/controls/index.md#index-of-controls).
 - Use the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*winui 2 branch*) to evaluate the controls.
 
@@ -177,7 +177,7 @@ We have updated icons and a new UI font called "Segoe UI Variable". We recommend
 People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also Arm-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics and neural processing chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
 
 - Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/windows-ml/).
-- Use AI models that power Windows Copilot Runtime on Copilot+ PCs and run locally - [Windows Copilot Runtime overview](/windows/ai/apis/).
+- Use AI models that power Windows AI Foundry on Copilot+ PCs and run locally - [Windows AI Foundry overview](/windows/ai/apis/).
 - Utilize best practices for Notifications and content sharing - [Notifications (Design basics)](/windows/win32/uxguide/mess-notif).
 
 ### Enhanced security features in Windows

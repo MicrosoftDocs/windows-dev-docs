@@ -2,7 +2,7 @@
 title: Reference for Windows 11 settings
 description: This article provides reference information for accessing settings values on devices running Windows 11.
 ms.date: 05/06/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, settings
 ms.localizationpriority: medium
 ---
@@ -85,6 +85,16 @@ Specifies the start layout type.
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
 | Start_Layout | REG_DWORD | 0 [Default], 1 [More Pins], 2 [More Recommendations] | The start layout. |
+
+## Personalization - Start - Show all pins by default
+
+Specifies whether all pins show by default in Start.
+
+### Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start
+
+| Registry value | Type | Data | Description |
+|---------------|------|-------|------------|
+| ShowAllPinsList | REG_DWORD | 0 or 1 | Specifies if showing all pins by default |
 
 ## Personalization - Start - Recommendations
 

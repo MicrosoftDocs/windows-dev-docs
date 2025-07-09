@@ -4,7 +4,7 @@ title: Toast with pending update activation
 label: Toast with pending update activation
 template: detail.hbs
 ms.date: 12/14/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, toast, pending update, pendingupdate, multi-step interactivity, multi-step interactions
 ms.localizationpriority: medium
 ---

@@ -2,7 +2,7 @@
 description: Use these methods in the Microsoft Store submission API to manage package flight submissions for apps that are registered to your Partner Center account.
 title: Manage package flight submissions
 ms.date: 04/16/2018
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

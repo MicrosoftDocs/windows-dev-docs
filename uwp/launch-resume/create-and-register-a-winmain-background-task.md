@@ -3,7 +3,7 @@ title: Create and register a win32 background task
 description: Create a COM background task that can run in your main process or out-of-process when your packaged Win32 app may not be running.
 ms.assetid: 8CBD4986-6E65-4374-BC7C-C38908E417E1
 ms.date: 05/16/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, desktop bridge, signed packaged with external location, win32, background task
 ms.localizationpriority: medium
 dev_langs:

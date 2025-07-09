@@ -1,16 +1,19 @@
 ---
 title: PowerToys New+ for Windows
 description: A tool that enables you to create files and folders from a personalized set of templates, directly from the File Explorer context menu.
-ms.date: 01/25/2025
-ms.topic: article
+ms.date: 05/06/2025
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, New+, New, NewPlus, Win]
+# Customer intent: As a Windows power user, I want to learn about the New+ feature in PowerToys so that I can create files and folders from a personalized set of templates directly from the File Explorer context menu.
 ---
 
 # New+
 
-**PowerToys New+** enables you to create files and folders from a personalized set of templates, directly from the File Explorer context menu.
+**PowerToys New+** gives you the ability to create files and folders from a personalized set of templates, directly from the File Explorer context menu. This feature is designed to enhance your productivity by allowing you to quickly create new items without having to navigate through multiple steps or applications. It is a powerful tool for users who frequently create files and folders with similar structures or content.
 
 ## Getting started
+
+This section provides an overview of the New+ feature, including how to enable it, how to create new items using templates, and how to customize your template collection.
 
 ### How to enable New+
 
@@ -32,17 +35,17 @@ Template objects in the "Templates" folder can be files, folders, or shortcuts. 
 
 #### Templates location
 
-After the enablement toggle, the New+ Templates location setting is likely the most interesting one. By default, the template location is in your local app data folder, specifically at `%localappdata%\Microsoft\PowerToys\NewPlus\Templates`. However, these templates will not roam with you across devices. If you want a common set of templates across devices, a popular option is to change the template location to a folder that is synced with a cloud drive, such as OneDrive. This way, you can access your templates from any device.
+The default template location is in the local app data folder (`%localappdata%\Microsoft\PowerToys\NewPlus\Templates`) for your user account. However, these templates don't roam across devices with your account. If you want a common set of templates across devices, you can change the template location to a folder that's synced with a cloud file management service, such as OneDrive. This allows you to access your templates from any device.
 
 ### Display options
 
 #### Hide template filename extensions
 
-The option enables you to toggle the display of filename extensions. When this option is toggled off, a file named "filename.ext" will be displayed with its extension, appearing as "filename.ext". However, when this option is toggled on (the default), the template will be displayed without its extension, appearing simply as "filename".
+The option allows you to toggle the display of filename extensions. When this option is toggled off, a file named "filename.ext" will be displayed with its extension, appearing as "filename.ext". However, when this option is toggled on (the default), the template will be displayed without its extension, appearing simply as "filename".
 
 #### Hide template filename starting digits, spaces and dots
 
-The option enables you to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named "1. filename" will be displayed as is. However, when this option is toggled on, the template will be displayed as "filename". This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.
+The option gives you the ability to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named "1. filename" will be displayed as is. However, when this option is toggled on, the template will be displayed as "filename". This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.
 
 ### Behavior
 
@@ -50,7 +53,7 @@ The option enables you to toggle the display of starting digits, spaces and dots
 
 This setting causes supported variables in filenames, including in files within subfolders, to be replaced when the template is copied. The default setting of this option is disabled.
 
-Note: Any invalid filename characters are replaced with spaces.
+**Note:** Any invalid filename characters are replaced with spaces.
 
 ##### Examples
 

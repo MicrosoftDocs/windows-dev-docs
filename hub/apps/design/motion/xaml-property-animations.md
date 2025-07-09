@@ -2,7 +2,7 @@
 title: XAML property animations
 description: Learn how to animate properties on a XAML UIElement directly by using Universal Windows Platform (UWP) composition animations.
 ms.date: 09/13/2018
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn

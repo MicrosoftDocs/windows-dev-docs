@@ -3,16 +3,19 @@ title: Display routes and directions on a map
 description: Learn how to retrieve routes and directions using the MapRouteFinder class and display them on a MapControl in a Universal Windows Platform (UWP) app.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.date: 06/21/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, route, map, location, directions
 ms.localizationpriority: medium
 ---
 # Display routes and directions on a map
 
 > [!IMPORTANT]
+> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and Windows Maps platform APIs ([Windows.Services.Maps.*](/uwp/api/windows.services.maps)) are deprecated and may not be available in future versions of Windows. For more information, see [Resources for deprecated features](/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis).
+
+> [!IMPORTANT]
 > **Bing Maps for Enterprise service retirement**
 >
-> The UWP [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services from the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and map services from the [Windows.Services.Maps](/uwp/api/windows.services.maps) namespaces rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
 >
 > For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
 
@@ -20,9 +23,6 @@ ms.localizationpriority: medium
 > [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services require a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
 Request routes and directions, and display them in your app.
-
-> [!NOTE]
-> If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](/windows/apps/develop/launch/launch-maps-app).
 
 ## An intro to MapRouteFinder results
 

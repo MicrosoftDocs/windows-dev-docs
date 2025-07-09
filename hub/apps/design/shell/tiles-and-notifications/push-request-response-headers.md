@@ -1,7 +1,7 @@
 ---
 title: Push notification service request and response headers (Windows Runtime apps) (Windows)
 description: This topic describes the service-to-service web APIs and protocols required to send a push notification.
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/03/2024
 ---
 

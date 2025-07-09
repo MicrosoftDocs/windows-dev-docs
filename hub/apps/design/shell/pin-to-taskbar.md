@@ -3,7 +3,7 @@ description: You can programmatically pin your app to the taskbar, and you can c
 title: Pin your app to the taskbar
 template: detail.hbs
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, win32, taskbar, taskbar manager, pin to taskbar, primary tile
 ms.localizationpriority: medium
 ---

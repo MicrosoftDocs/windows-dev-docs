@@ -3,7 +3,7 @@
 title: Use the inclinometer
 description: Learn how to create a basic app that uses the inclinometer input device to determine pitch, roll, and yaw.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

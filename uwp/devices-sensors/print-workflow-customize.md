@@ -3,7 +3,7 @@
 title: Customize the print workflow
 description: Create custom print workflow experiences through the use of a print workflow app.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 title: Manage app windows
 description: Overview of windowing APIs in the Windows App SDK
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/09/2024
 keywords: windowing, window, AppWindow, Windows App SDK
 ms.localizationpriority: medium

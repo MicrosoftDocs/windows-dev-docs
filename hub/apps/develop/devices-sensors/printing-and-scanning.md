@@ -3,7 +3,7 @@
 title: Printing and scanning
 description: This section describes how to print and scan from your Windows app.
 ms.date: 09/11/2024
-ms.topic: article
+ms.topic: concept-article
 author: jwmsft
 ms.author: jimwalk
 ms.localizationpriority: medium

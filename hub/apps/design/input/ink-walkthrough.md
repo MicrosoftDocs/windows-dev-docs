@@ -4,7 +4,7 @@ title: Support ink in your Windows app
 description: Learn how to support writing and drawing with Windows Ink in a basic Universal Windows Platform (UWP) app by following this step by step tutorial.
 keywords: ink, inking, tutorial
 ms.date: 02/27/2025
-ms.topic: article
+ms.topic: tutorial
 ms.localizationpriority: medium
 ---
 # Tutorial: Support ink in your Windows app

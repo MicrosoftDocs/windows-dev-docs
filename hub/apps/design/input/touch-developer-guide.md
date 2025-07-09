@@ -5,7 +5,7 @@ label: Touch interactions developer guide
 template: detail.hbs
 keywords: touch, pointer, input, user interaction
 ms.date: 11/11/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

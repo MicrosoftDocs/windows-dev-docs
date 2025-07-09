@@ -5,7 +5,7 @@ description: When porting the simple renderer from OpenGL ES 2.0, the first step
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 
 
 keywords: windows 10, uwp, games, port, shader, direct3d, opengl

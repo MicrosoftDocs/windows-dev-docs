@@ -2,7 +2,7 @@
 description: This section will guide you on how to transition users from your web unpackaged app to Store packaged app.
 title: How to transition users from your web unpackaged app to Store packaged app.
 ms.date: 02/15/2024
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

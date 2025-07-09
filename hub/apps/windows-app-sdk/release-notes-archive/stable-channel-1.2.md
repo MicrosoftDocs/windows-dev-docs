@@ -1,7 +1,7 @@
 ---
 title: Stable channel release notes for the Windows App SDK 1.2
 description: Provides information about the stable release channel for the Windows App SDK 1.2.
-ms.topic: article
+ms.topic: release-notes
 ms.date: 04/25/2024
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
@@ -102,7 +102,7 @@ Windows desktop apps  can now support High Dynamic Range (HDR) and [Auto Color M
 
 WinUI 3 apps can play audio and video with the [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) and [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) media playback controls. For more info on how and when to use media controls, see [Media players](/windows/apps/design/controls/media-playback).
 
-WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI 2.7](/windows/apps/winui/winui2/release-notes/winui-2.7) and [WinUI 2.8](/windows/apps/winui/winui2/release-notes/winui-2.8).
+WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI 2.7](/windows/uwp/get-started/winui2/release-notes/winui-2.7) and [WinUI 2.8](/windows/uwp/get-started/winui2/release-notes/winui-2.8).
 
 **Fixed issues:**
 

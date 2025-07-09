@@ -5,7 +5,7 @@ label: Access keys design guidelines
 keywords: keyboard, access key, keytip, keytip, accessibility, navigation, focus, text, input, user interaction
 template: detail.hbs
 ms.date: 06/11/2024
-ms.topic: article
+ms.topic: how-to
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm

@@ -20,6 +20,10 @@ The **ThumbnailHelper.GetThumbnail(String)** method retrieves the thumbnail imag
 
 The path to the command for which the thumbnail is requested.
 
+*jumbo* **Boolean**
+
+A boolean value indicating whether to retrieve a jumbo-sized thumbnail. If set to `true`, the method will return a larger version of the thumbnail image. If set to `false`, it will return a standard-sized thumbnail. The default value is `false`.
+
 ## Returns
 
 A **Task\<IRandomAccessStream\>** that represents the thumbnail image for the specified command. If no thumbnail is found, the task will return `null`.

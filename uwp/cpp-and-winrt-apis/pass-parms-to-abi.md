@@ -2,7 +2,7 @@
 description: C++/WinRT simplifies passing parameters to projected APIs by providing automatic conversions for common cases.
 title: Passing parameters to projected APIs
 ms.date: 11/15/2023
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 11, windows 10, uwp, standard, c++, cpp, winrt, projection, pass, parameters, ABI
 ms.localizationpriority: medium
 ---

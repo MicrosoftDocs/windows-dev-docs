@@ -1,15 +1,14 @@
 ---
 title: The winget source command
 description: Use the winget source command and subcommands to list and manage the repositories Windows Package Manager accesses.
-ms.date: 07/11/2024
+ms.date: 07/08/2025
 ms.topic: reference
-ms.localizationpriority: medium
 ms.custom: kr2b-contr-experiment
 ---
 
 # The winget source command
 
-The [winget](index.md) tool **source** command allows you to manage sources for Windows Package Manager. With the **source** command, you can **add**, **list**, **update**, **remove**, **reset**, or **export** repositories.
+The [WinGet](index.md) **source** command allows you to manage sources for Windows Package Manager. With the **source** command, you can **add**, **list**, **update**, **remove**, **reset**, or **export** repositories.
 
 A source repository provides the data for you to discover and install applications. Only use secure, trusted source locations.
 
@@ -23,17 +22,21 @@ Windows Package Manager specifies the following two default repositories, which 
 ```cmd
 winget source <subcommand> <options>
 ```
-## Arguments
+
+:::image type="content" source="./images/source.png" alt-text="Screenshot listing winget source command help options." lightbox="./images/source.png":::
+
+## Sub-Commands
 
 The following arguments are available.
 
-| Argument  | Description |
+| Sub-Command  | Description |
 |--------------|-------------|
-| **-?, --help** |  Gets additional help on this command. |
-
-The following image shows **help** for the **source** command:
-
-:::image type="content" source="images/source.png" alt-text="Screenshot showing help for the source command.":::
+| **add** | Adds a new source. |
+| **list** | Lists current sources. |
+| **update** | Updates current sources. |
+| **remove** | Removes current sources. |
+| **reset** | Resets default sources **winget** and **msstore**. |
+| **export** | Exports current sources. |
 
 ## Options
 
@@ -49,19 +52,6 @@ The following options are available.
 | **--disable-interactivity** | Disable interactive prompts. |
 | **--proxy** | Set a proxy to use for this execution. |
 | **--no-proxy** | Disable the use of proxy for this execution. |
-
-## Subcommands
-
-The **source** command supports the following subcommands.
-
-| Subcommand  | Description |
-|--------------|-------------|
-|  **add** |  Adds a new source. |
-|  **list** | Enumerates the list of enabled sources. |
-|  **update** | Updates a source. |
-|  **remove** | Removes a source. |
-|  **reset** | Resets **winget** and **msstore** back to the initial configuration. |
-|  **export** |  Exports current sources. |
 
 ### add
 
@@ -318,7 +308,7 @@ The following options are available.
 
 ### export
 
-The **export** sub-command exports the specific details for a source to JSON output.
+The **export** sub-command exports the specific details for a source to JSON output. This is useful for configuring Group Policy for source management.
 
 Usage:
 
@@ -358,7 +348,7 @@ winget source export winget
 Returns the following output:
 
 ```output
-{"Arg":"https://winget.azureedge.net/cache","Data":"Microsoft.Winget.Source_8wekyb3d8bbwe","Identifier":"Microsoft.Winget.Source_8wekyb3d8bbwe","Name":"winget","Type":"Microsoft.PreIndexed.Package"}
+{"Arg":"https://cdn.winget.microsoft.com/cache","Data":"Microsoft.Winget.Source_8wekyb3d8bbwe","Explicit":false,"Identifier":"Microsoft.Winget.Source_8wekyb3d8bbwe","Name":"winget","TrustLevel":["Trusted","StoreOrigin"],"Type":"Microsoft.PreIndexed.Package"}
 ```
 
 ## Source agreement
@@ -367,7 +357,7 @@ An individual **source** might request that the user agree to the terms presente
 
 You can use the **--accept-source-agreements** option to accept the source license agreement and avoid the prompt.
 
-:::image type="content" source="images/source-license.png" alt-text="Screenshot showing a source license prompt.":::
+:::image type="content" source="./images/source-license.png" alt-text="Screenshot showing the winget source command with flag to accept agreements." lightbox="./images/source-license.png":::
 
 ## Related topics
 

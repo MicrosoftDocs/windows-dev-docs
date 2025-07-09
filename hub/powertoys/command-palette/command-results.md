@@ -13,16 +13,19 @@ no-loc: [PowerToys, Windows, Insider]
 
 An [IInvokableCommand](./microsoft-commandpalette-extensions/iinvokablecommand.md) is a fundamental unit of *do something* in the Command Palette. The [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand.md) method is called when the user selects the command, and it's where you *do something* in your extension. The **Invoke** method returns an **ICommandResult**, which tells the Command Palette what to do after the command has been invoked. This page details what's possible with each type of command result.
 
-The toolkit provides a number of helper methods to create command results. These are all static methods on the **CommandResult** class. Calling these methods on their own won't do anything. You must return those objects as the result of a **Invoke** method, for Command Palette to handle them. 
+The toolkit provides a number of helper methods to create command results. These are all static methods on the **CommandResult** class. Calling these methods on their own won't do anything. You must return those objects as the result of a **Invoke** method, for Command Palette to handle them.
+
+> [!NOTE]
+> There are code examples for the various CommandResult methods listed on this page.
 
 <!-- GoToPage currently omitted from these docs, because it's not remotely implemented -->
 
 ## KeepOpen command result
 
-The **KeepOpen** command result does nothing. It leaves the palette in its current state, with the current page stack and query. This can be useful for commands that want to keep the the user in the Command Palette, to keep working with the current page.
+The **KeepOpen** command result does nothing. It leaves the palette in its current state, with the current page stack and query. This can be useful for commands that want to keep the user in the Command Palette, to keep working with the current page.
 
 > [!NOTE]
-> Even when returing **KeepOpen**, launching a new app or window from the Command Palette will automatically hide the palette the next window recieves focus. 
+> Even when returning **KeepOpen**, launching a new app or window from the Command Palette will automatically hide the palette the next window receives focus. 
 
 ## Hide command result
 
@@ -38,7 +41,7 @@ This result takes the user back to the main page of the Command Palette. It will
 
 ## Dismiss command result
 
-This result hides the Command Palette after the action is executed, and takes it back to the hme page. On the next launch, the Command Palette will start from the main page with a blank query. This is useful for commands that are one-off actions, or that don't need to keep the Command Palette open. 
+This result hides the Command Palette after the action is executed, and takes it back to the home page. On the next launch, the Command Palette will start from the main page with a blank query. This is useful for commands that are one-off actions, or that don't need to keep the Command Palette open.
 
 If you don't know what else to use, this should be your default. Ideally, users should come into the palette, find what they need, and be done with it. 
 
@@ -60,8 +63,12 @@ This is useful for commands that might have destructive actions, or that need to
 
 As an example, here's a page with one command for each kind of command result:
 
+> [!NOTE]
+> If working from prior section, modify the code below from `CommandResultsPage` to `<ExtensionName>Page`.
+
 ```csharp
 
+using Microsoft.CommandPalette.Extensions;
 using Microsoft.CommandPalette.Extensions.Toolkit;
 
 internal sealed partial class CommandResultsPage : ListPage

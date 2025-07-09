@@ -2,7 +2,7 @@
 title: Debugging and troubleshooting issues with WinGet
 description: Provides information on logging and WinGet diagnostics.
 ms.date: 11/15/2024
-ms.topic: article
+ms.topic: troubleshooting-general
 ---
 
 # Debugging and troubleshooting issues with the WinGet tool
@@ -66,7 +66,7 @@ See more details on [scope-related issues](https://github.com/microsoft/winget-c
 
 A 403 Forbidden error may occur when attempting to download a package using the WinGet tool. This issue can arise if an Independent Software Vendor (ISV) opts not have their product distributed by a package manager service like WinGet.
 
-The server reponsible for initiating the download typically checks for a user agent string included with the download request to identify the device or client (e.g., browser, WinGet). If you can download the installer using your browser, but encounter issues with WinGet, it is possible that the ISV has blocked the WinGet user agent string.
+The server responsible for initiating the download typically checks for a user agent string included with the download request to identify the device or client (e.g., browser, WinGet). If you can download the installer using your browser, but encounter issues with WinGet, it is possible that the ISV has blocked the WinGet user agent string.
 
 The user agent string for WinGet has the following format:
 

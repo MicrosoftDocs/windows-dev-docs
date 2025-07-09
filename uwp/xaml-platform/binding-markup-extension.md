@@ -3,7 +3,7 @@ description: The Binding markup extension is converted at XAML load time into an
 title: Binding markup extension'
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5

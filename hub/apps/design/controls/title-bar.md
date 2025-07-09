@@ -5,7 +5,7 @@ label: Tile bar
 template: detail.hbs
 op-migration-status: ready
 ms.date: 03/31/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---

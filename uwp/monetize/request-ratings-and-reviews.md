@@ -2,7 +2,7 @@
 description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
 ms.date: 01/22/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, ratings, reviews
 ms.localizationpriority: medium
 ---

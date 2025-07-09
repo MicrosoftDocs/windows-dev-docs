@@ -3,7 +3,7 @@ description: Explains the concept of an attached property in XAML, and provides 
 title: Attached properties overview
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:

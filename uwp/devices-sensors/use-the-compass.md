@@ -3,7 +3,7 @@
 title: Use the compass
 description: Learn how to use the Universal Windows Platform (UWP) Compass API to determine the current heading in a navigation app.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

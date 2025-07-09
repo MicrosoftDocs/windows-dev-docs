@@ -3,7 +3,7 @@ ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: Draw shapes
 description: Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The Path class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves.
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 # Draw shapes

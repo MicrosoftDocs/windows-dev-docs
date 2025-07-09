@@ -4,7 +4,7 @@ description: Learn how to use content links to embed rich data in the TextBlock,
 label: Content links
 template: detail.hbs
 ms.date: 05/03/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: 

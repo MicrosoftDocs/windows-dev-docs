@@ -1,7 +1,7 @@
 ---
 title: Push notifications overview
 description: Overview of Windows App SDK Push Notifications
-ms.topic: article
+ms.topic: concept-article
 ms.date: 7/26/2021
 keywords: push, notification
 ms.localizationpriority: medium

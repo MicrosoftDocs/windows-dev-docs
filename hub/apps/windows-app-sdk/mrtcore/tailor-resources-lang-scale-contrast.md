@@ -2,7 +2,7 @@
 description: This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each qualifier name.
 title: Tailor your resources for language, scale, high contrast and other qualifiers
 ms.date: 08/19/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, windows app sdk, winui, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---

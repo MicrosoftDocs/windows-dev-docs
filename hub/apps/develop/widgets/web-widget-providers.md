@@ -1,7 +1,7 @@
 ---
 title: Web widget providers
 description: Learn how to implement a widget that displays content from a web source 
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/19/2024
 ms.localizationpriority: medium
 ---

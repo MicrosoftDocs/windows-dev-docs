@@ -1,7 +1,7 @@
 ---
 title: Handle Microsoft Copilot hardware key state changes
 description: Learn how to register to be activated and receive notifications when the Microsoft Copilot hardware key or Windows key + C is pressed. 
-ms.topic: article
+ms.topic: how-to
 ms.date: 10/25/2024
 ms.localizationpriority: medium
 ---
@@ -168,7 +168,7 @@ To add support for fast path invocation, update the "com.microsoft.windows.copil
     Description="App description"
     PublicFolder="Public">
     <uap3:Properties>
-      <SingleTap FastPathValue="0"/>
+      <SingleTap MessageWParam="0"/>
       <PressAndHoldStart MessageWParam="1">myapp-copilothotkey://?state=Down</PressAndHoldStart>
       <PressAndHoldStop MessageWParam="2">myapp-copilothotkey://?state=Up</PressAndHoldStop>
     </uap3:Properties>

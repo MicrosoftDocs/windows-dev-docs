@@ -4,7 +4,7 @@ title: Adding WNS Traffic to the Firewall Allowlist
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 06/30/2021
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, WNS, windows notifications service, notification, windows, firewall, troubleshooting, IP, traffic, enterprise, network, IPv4, VIP, FQDN, public IP address
 ms.localizationpriority: medium
 ---
@@ -43,7 +43,6 @@ Regardless of the method you choose from below, you'll need to allow network tra
     </CloudServiceDNS>
     <ClientDNS>
         <DNS FQDN="*.wns.windows.com"/>
-        <DNS FQDN="*.notify.live.net"/>
     </ClientDNS>
     <CloudServiceIPs>
         <IpRange Subnet=""/>

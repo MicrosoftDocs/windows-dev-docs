@@ -1,7 +1,7 @@
 ---
 title: Windows App SDK deployment architecture and overview
 description: This article provides a high level explanation of the Windows App SDK deployment architecture and scenarios.
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/16/2021
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium

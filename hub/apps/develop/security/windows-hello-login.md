@@ -2,7 +2,7 @@
 title: Create a Windows Hello login app
 description: This is the first part of a complete walkthrough on how to create a packaged Windows app that uses Windows Hello as an alternative to traditional username and password authentication systems.
 ms.date: 07/08/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows, winrt, security, identity, winui
 ---
 

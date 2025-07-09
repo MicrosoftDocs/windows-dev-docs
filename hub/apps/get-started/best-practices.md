@@ -1,7 +1,7 @@
 ---
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
-ms.topic: article
+ms.topic: best-practice
 ms.date: 03/14/2023
 ms.localizationpriority: medium
 ms.collection: windows11

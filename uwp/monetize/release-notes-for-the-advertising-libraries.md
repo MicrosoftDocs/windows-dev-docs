@@ -3,7 +3,7 @@ ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: View release notes for the Microsoft advertising libraries that support XAML and JavaScript/HTML apps for Windows 10, Windows 8.1, Windows Phone 8.1 and Windows Phone 8.
 title: Release notes for the advertising libraries
 ms.date: 02/18/2020
-ms.topic: article
+ms.topic: release-notes
 keywords: windows 10, uwp, ads, advertising, release notes
 ms.localizationpriority: medium
 ---

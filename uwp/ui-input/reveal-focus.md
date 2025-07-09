@@ -3,7 +3,7 @@ description: Reveal Focus is a lighting effect that animates the border of focus
 title: Reveal Focus
 template: detail.hbs
 ms.date: 03/25/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 pm-contact: chphilip
 design-contact: 
