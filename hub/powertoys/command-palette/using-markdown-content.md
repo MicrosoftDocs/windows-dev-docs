@@ -56,7 +56,6 @@ public <ExtensionName>CommandsProvider()
 +       new CommandItem(new MarkdownPage()) { Title = DisplayName },
     ];
 }
-
 ```
 
 1. Deploy your extension
