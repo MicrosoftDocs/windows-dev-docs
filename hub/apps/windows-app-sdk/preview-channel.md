@@ -19,19 +19,6 @@ The preview channel includes releases of the Windows App SDK with [preview chann
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 - For documentation on preview releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
-**Preview channel release note archive:**
-
-- [Preview channel release notes for the Windows App SDK 1.6](release-notes-archive/preview-channel-1.6.md)
-- [Preview channel release notes for the Windows App SDK 1.5](release-notes-archive/preview-channel-1.5.md)
-- [Preview channel release notes for the Windows App SDK 1.4](release-notes-archive/preview-channel-1.4.md)
-- [Preview channel release notes for the Windows App SDK 1.3](release-notes-archive/preview-channel-1.3.md)
-- [Preview channel release notes for the Windows App SDK 1.2](release-notes-archive/preview-channel-1.2.md)
-- [Preview channel release notes for the Windows App SDK 1.1](release-notes-archive/preview-channel-1.1.md)
-- [Preview channel release notes for the Windows App SDK 1.0](release-notes-archive/preview-channel-1.0.md)
-
-
-
-
 ## Version 1.7 Preview 1 (1.7-preview1)
 
 This is the latest release of the preview channel for version 1.7.
@@ -180,6 +167,22 @@ This release includes the following bug fixes:
 - Fixed an issue where `TabView` would not apply any specified `CornerRadius`. For more info, see GitHub issue [#9846](https://github.com/microsoft/microsoft-ui-xaml/issues/9846).
 - Fixed a potential layout cycle crash in `StackLayout`. For more info, see GitHub issue [#9852](https://github.com/microsoft/microsoft-ui-xaml/issues/9852).
 - Fixed a potential crash in `ItemsView` when removing items. For more info, see GitHub issue [#9868](https://github.com/microsoft/microsoft-ui-xaml/issues/9868).
+
+## Archive of preview channel release notes
+
+<details>
+
+<summary>Expand for links to archived preview channel release notes</summary>
+
+- [Preview channel release notes for the Windows App SDK 1.6](release-notes-archive/preview-channel-1.6.md)
+- [Preview channel release notes for the Windows App SDK 1.5](release-notes-archive/preview-channel-1.5.md)
+- [Preview channel release notes for the Windows App SDK 1.4](release-notes-archive/preview-channel-1.4.md)
+- [Preview channel release notes for the Windows App SDK 1.3](release-notes-archive/preview-channel-1.3.md)
+- [Preview channel release notes for the Windows App SDK 1.2](release-notes-archive/preview-channel-1.2.md)
+- [Preview channel release notes for the Windows App SDK 1.1](release-notes-archive/preview-channel-1.1.md)
+- [Preview channel release notes for the Windows App SDK 1.0](release-notes-archive/preview-channel-1.0.md)
+
+</details>
 
 ## Related topics
 
