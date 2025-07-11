@@ -119,7 +119,7 @@ internal sealed partial class SampleContentForm : FormContent
 
 The `SampleContentForm` contains the form and form submission logic. The `TemplateJson` contains the form structure and actions. This example only contains one text input which has the id of "Name" and has one action of submitting the form. The `SubmitForm` handles parsing the payload; if its invalid will return the command to home and otherwise will display a confirmation dialog and a toast notification.
 
-1. Open <ExtensionName>CommandsProvider.cs
+1. Open /<ExtensionName/>CommandsProvider.cs
 1. Replace the `MarkdownPage` for  `FormPage`:
 
 ```diff
@@ -261,7 +261,7 @@ To add this content to your extension:
 1. Deploy your extension
 1. In Command Palette, `Reload`
 
-![Screenshot of extension using ContentPage for form with toggles](../../images/command-palette/form-toggle-comdpal.png)
+![Screenshot of extension using ContentPage for form with toggles](../../images/command-palette/form-toggle-command-palette.png)
 
 `TemplateJson` and `DataJson` work together to create dynamic, data-driven forms. `TemplateJson` can act as fhe Form Blueprint and `DataJson` as the Dynamic Content Source.
 

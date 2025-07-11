@@ -188,7 +188,7 @@ There are two different kinds of pages you can show:
 
 - [ListPage](./microsoft-commandpalette-extensions-toolkit/listpage.md) - This is a page that shows a list of commands. This is what we've been working with so far.
 
-![Screenshot of ListPage](../../images/command-palette/ListPage.png)
+![Screenshot of ListPage](../../images/command-palette/list-page.png)
 
 - [ContentPage](./microsoft-commandpalette-extensions-toolkit/contentpage.md) - This is a page that shows rich content to the user. This allows you to specify abstract content, and let Command Palette worry about rendering the content in a native experience. There are two different types of content supported so far:
   - [Markdown content](./using-markdown-content.md) - This is content that's written in Markdown, and is rendered in the Command Palette. See [MarkdownContent](./microsoft-commandpalette-extensions-toolkit/markdowncontent.md) for details.
@@ -249,7 +249,7 @@ internal sealed partial class MySecondPage : ListPage
 +           new ListItem(new MySecondPage()) { Title = "My second page", Subtitle = "A second page of commands" },
         ];
     }
-```f
+```
 
 1. Deploy your extension
 1. In Command Palette, `Reload`

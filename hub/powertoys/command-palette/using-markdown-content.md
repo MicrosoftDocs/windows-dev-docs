@@ -123,7 +123,7 @@ public class <ExtensionName>Page : ContentPage
 1. Select \<ExtensionName\>
 1. Press `Enter` key, the docs should open
 
-![Screenshot of extension using CommandContextItem](../../images/command-palette/CommandContextItem.png)
+![Screenshot of extension using CommandContextItem](../../images/command-palette/command-context-item.png)
 
 ### Next up: [Get user input with forms](using-form-pages.md)
 
