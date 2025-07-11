@@ -115,7 +115,7 @@ To receive a notification when playback has reached the end of the **MediaSource
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetMediaSourceCompleted":::
 
-While playing a file from diskis likely to always complete successfully, media streamed from a network source may fail during playback due to a change in network connection or other issues that are outside the control of the audio graph. If a **MediaSource** becomes unplayable during playback, the audio graph will raise the [**UnrecoverableErrorOccurred**](/uwp/api/windows.media.audio.audiograph.unrecoverableerroroccurred) event. You can use the handler for this event to stop and dispose of the audio graph and then reinitialize your graph. 
+While playing a file from disk is likely to always complete successfully, media streamed from a network source may fail during playback due to a change in network connection or other issues that are outside the control of the audio graph. If a **MediaSource** becomes unplayable during playback, the audio graph will raise the [**UnrecoverableErrorOccurred**](/uwp/api/windows.media.audio.audiograph.unrecoverableerroroccurred) event. You can use the handler for this event to stop and dispose of the audio graph and then reinitialize your graph. 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetRegisterUnrecoverableError":::
 
