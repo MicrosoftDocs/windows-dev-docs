@@ -382,7 +382,7 @@ Users can choose different opacity values for focused and unfocused windows allo
 
 :::row:::
 :::column span="":::
-When this is set to `true`, the window will have an acrylic background. When it's set to `false`, the window will have a plain, untextured background. Depending on the `Enable Unfocused Acrylic` global setting the transparency applies to unfocused windows aswell as focused windows when set to `true` or only applies to focused windows when set to `false`.
+When this is set to `true`, the window will have an acrylic background. When it's set to `false`, the window will have a plain, untextured background. Depending on the `Enable Unfocused Acrylic` global setting the transparency applies to unfocused windows as well as focused windows when set to `true` or only applies to focused windows when set to `false`.
 
 **Property name:** `useAcrylic`
 

@@ -26,7 +26,7 @@ You can find the latest administrative templates (ADMX and ADML files) in the as
 
 ### Add the administrative template to Active Directory
 
-1. On a domain controller (a server that responds to security authentication requests within a Windows Server domain) or a [workstation with RSAT](/windows-server/remote/remote-server-administration-tools), go to the **PolicyDefinition** folder (also known as the Central Store) on any domain controller for your domain. For older versions of Windows Server, you might need to create the PolicyDefinition folder. For more information, see [How to create an manage the Central Store for Group Policy Administrative Templates in Windows](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
+1. On a domain controller (a server that responds to security authentication requests within a Windows Server domain) or a [workstation with RSAT](/windows-server/remote/remote-server-administration-tools), go to the **PolicyDefinition** folder (also known as the Central Store) on any domain controller for your domain. For older versions of Windows Server, you might need to create the PolicyDefinition folder. For more information, see [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 2. Copy the `WindowsTerminal.admx` file to the **PolicyDefinition** folder.
 (`%systemroot%\sysvol\domain\policies\PolicyDefinitions`)
 3. Copy the `WindowsTerminal.adml` file to the matching language folder in your language folder in your Policy Definition folder. Create the folder if it does not already exist.
