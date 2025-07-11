@@ -44,7 +44,7 @@ internal sealed partial class MarkdownPage : ContentPage
 }
 ```
 
-1. Open \<ExtensionName\>CommandsProvider.cs
+1. Open `<ExtensionName>CommandsProvider.cs`
 1. Replace the `CommandItem`s for the `MarkdownPage`:
 
 ```diff

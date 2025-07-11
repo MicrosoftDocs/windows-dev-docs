@@ -197,7 +197,7 @@ There are two different kinds of pages you can show:
 
   - [Form content](./using-form-pages.md) - This is content that shows a form to the user, and then returns the results of that form to the extension. These are powered by [Adaptive Cards](https://aka.ms/adaptive-cards) This is useful for getting user input, or displaying more complex layouts of information. See [FormContent](./microsoft-commandpalette-extensions-toolkit/formcontent.md) for details.
 
-![Screenshot of Form content](../../images/command-palette/form-toggle-comdpal.png)
+![Screenshot of Form content](../../images/command-palette/form-toggle-command-palette.png)
 
 ## Add more commands
 

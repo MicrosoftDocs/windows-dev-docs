@@ -62,7 +62,7 @@ You can deploy and run your extension:
   <summary>How to Deploy your extension</summary>
 
 1. In the navigation bar, click on `Build`
-1. Click on `Deploy \<ExtensionName\>`
+1. Click on `Deploy <ExtensionName>`
 
 </details>
 
