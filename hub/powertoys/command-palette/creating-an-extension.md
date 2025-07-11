@@ -62,7 +62,7 @@ You can deploy and run your extension:
   <summary>How to Deploy your extension</summary>
 
 1. In the navigation bar, click on `Build`
-1. Click on `Deploy <ExtensionName>`
+1. Click on `Deploy \<ExtensionName\>`
 
 </details>
 
@@ -81,17 +81,20 @@ Once your package is deployed and running, Command Palette will automatically di
 > ```
 > These files are used by WinAppSdk to deploy your app as a package. Without it, anyone who clones your repo won't be able to deploy your extension.
 
-1. In the Command Palette, scroll down the list of commands
-1. Press `Enter` on your <ExtensionName>
+1. In the Command Palette, type `Reload` and press `Enter`
+    1. Make sure to select the `Reload` that has a subtitle of: `Reload Command Palette Extension`
+    ![Screenshot of reload](../../images/command-palette/reload.png)
+1. In the Command Palette, scroll all the way down to the bottom of the list of commands
+    1. or `up arrow` once to get to the end
+1. Press `Enter` on your \<ExtensionName\>
 1. You should see a single command that says `TODO: Implement your extension here`.
 
 ![A screenshot of the empty extension template, running in the command palette](../../images/command-palette/initial-created-extension-list.png)
 
 Congrats! You've made your first extension! Now let's go ahead and actually add some commands to it.
 
-When you make changes to your extension, you can rebuild your project and deploy it again. Command Palette will **not** notice changes to packages that are re-ran through Visual Studio, so you'll need to manually run the "**Reload**" command to force Command Palette to re-instantiate your extension.
-
-![Screenshot of reload](../../images/command-palette/reload.png)
+> [!TIP]
+> When you make changes to your extension, you can rebuild your project and deploy it again. Command Palette will **not** notice changes to packages that are re-ran through Visual Studio, so you'll need to manually run the "**Reload**" command to force Command Palette to re-instantiate your extension.
 
 ### Next up: [Add commands to your extension](adding-commands.md)
 

@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 **Previous**: [Display markdown content](using-markdown-content.md)
 
-Now that we know how to present basic markdown content, let's try displaying something more elaborate by leveraging the power of **[Adaptive Cards](https://adaptivecards.io/)**. This is useful for creating forms, or for displaying more complex content.
+Now that we know how to present basic markdown content, let's try displaying something more meaningful by leveraging the power of **[Adaptive Cards](https://adaptivecards.io/)**. This is useful for creating forms, or for displaying more complex content.
 
 ## Working with forms
 
@@ -109,6 +109,9 @@ internal sealed partial class SampleContentForm : FormContent
                 Name = "Confirm",
                  Result = CommandResult.KeepOpen(),
             },
+            Title = "You can set a title for the dialog",
+            Description = "Are you really sure you want to do the thing?",
+        };
         return CommandResult.Confirm(confirmArgs);
     }
 }
@@ -131,7 +134,7 @@ public <ExtensionName>CommandsProvider()
 ```
 
 1. Deploy your extension
-1. In command palette, `Reload`
+1. In Command Palette, `Reload`
 
 ![Screenshot of extension using ContentPage for simple form](../../images/command-palette/form-simple.png)
 
@@ -256,7 +259,7 @@ To add this content to your extension:
 ```
 
 1. Deploy your extension
-1. In command palette, `Reload`
+1. In Command Palette, `Reload`
 
 ![Screenshot of extension using ContentPage for simple form](../../images/command-palette/form-toggle-comdpal.png)
 

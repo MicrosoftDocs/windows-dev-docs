@@ -47,7 +47,7 @@ Here, we're using ``AnonymousCommand`` to create a command that will update the 
 
 ## Updating Subtitle of Page
 
-You can of course create custom **ListItem** objects too:
+You can create custom **ListItem** objects too:
 
 1. In the `Pages` folder, create a new class called `IncrementingListItem`
 1. Update the code to:
@@ -107,6 +107,8 @@ To do this, you can use the `RaiseItemsChanged` method on the `ListPage` object.
 1. Update the code to:
 
 ```csharp
+using <ExtensionName>
+
 internal sealed partial class IncrementingListItem : ListItem
 {
     public IncrementingListItem(<ExtensionName>Page page) :
@@ -121,7 +123,7 @@ internal sealed partial class IncrementingListItem : ListItem
 }
 ```
 
-1. In `<ExtensionName>Page.cs`, replace code with:
+1. In `<ExtensionName>Page.cs`, replace code inside of the class:
 
 ```cs
 public <ExtensionName>Page()
@@ -145,7 +147,7 @@ private List<ListItem> _items;
 ```
 
 1. Deploy your extension
-1. In command palette, `Reload`
+1. In Command Palette, `Reload`
 
 Now, every time you perform one of the `IncrementingListItem` commands, the list of items on the page will update to add another item. We're using a single **List** owned by the page to own all the items. Notably, we're creating the new items in the `Increment` method, before calling `RaiseItemsChanged`. The **Invoke** of a **InvokableCommand** can take as long as you'd like. All your code is running in a separate process from the Command Palette, so you won't block the UI. But constructing the items before calling `RaiseItemsChanged` will help keep your extension *feeling* more responsive.
 
@@ -159,6 +161,10 @@ Everything so far has been pretty instantaneous. Many extensions however may nee
 1. In your `<ExtensionName>Page.cs`, replace the `Increment()`.
 
 ```csharp
+using System.Threading;
+
+...
+
 internal void Increment()
 {
     this.IsLoading = true;
@@ -173,7 +179,7 @@ internal void Increment()
 ```
 
 1. Deploy your extension
-1. In command palette, `Reload`
+1. In Command Palette, `Reload`
 
 Best practice is to set `IsLoading` to `true` before starting the work. Then do all the work to build all the new `ListItems` you need to display to the user. Then, once the items are ready, call `RaiseItemsChanged` and set `IsLoading` back to `false`. This will ensure that the loading spinner is shown for the entire duration of the work, and that the UI is updated as soon as the work is done (without waiting for your extension to construct new `ListItem` objects).
 

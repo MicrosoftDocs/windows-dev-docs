@@ -11,11 +11,11 @@ no-loc: [PowerToys, Windows, Insider]
 
 **Previous**: [Creating an extension](creating-an-extension.md). We'll be starting with the project created in that article.
 
-Now that you've created your extension, it's time to add some commands to it.
+Now that you've created your extension, it's time to add commands to it.
 
-## Add some commands
+## Add commands
 
-We can start by navigating to the `<ExtensionName>Page.cs` file. This file is the [ListPage](./microsoft-commandpalette-extensions-toolkit/listpage.md) that will be displayed when the user selects your extension. In there you should see:
+We can start by navigating to the `/Pages/<ExtensionName>Page.cs` file. This file is the [ListPage](./microsoft-commandpalette-extensions-toolkit/listpage.md) that will be displayed when the user selects your extension. In there you should see:
 
 ```csharp
 public <ExtensionName>Page()
@@ -32,7 +32,7 @@ public override IListItem[] GetItems()
 }
 ```
 
-Here you can see that we've set the icon for the page, the title, and the name that's shown at the top-level when you have the command selected. The `GetItems` method is where you'll return the list of commands that you want to show on this page. Right now, that's just returning a single command that does nothing. Let's instead try making that command open _this_ page in the user's default web browser.
+Here you can see that we've set the icon for the page, the title, and the name that's shown at the top-level when you have the command selected. The `GetItems` method is where you'll return the list of commands that you want to show on this page. Right now, it's just returning a single command that does nothing. Let's instead try making that command open _this_ page in the user's default web browser.
 
 1. Update `GetItems` to the following:
 
@@ -87,8 +87,8 @@ As your building your extension, you'll most likely want to debug it.
     }
 ```
 
-1. Deploy your extension, wait until it's successful
-1. Confirm You're in Debug Configuration
+1. Deploy your extension
+1. Confirm you're in Debug configuration
 
 <details>
   <summary>Instructions to confirm debug configuration</summary>
@@ -114,7 +114,7 @@ As your building your extension, you'll most likely want to debug it.
 
 Let's continue building a new command, that shows a **MessageBox**. To do that, we need to create a new class that implements `InvokableCommand`.
 
-1. In Visual Studio, Add a New Class File
+1. In Visual Studio, Add a New Class File to your `Pages` directory
     - Keyboard Shortcut: Press Ctrl + Shift + A
     - Or in the Solution Explorer, go to Project > Add New Item...
 1. In the Add New Item dialog:
@@ -166,18 +166,18 @@ public override IListItem[] GetItems()
 ```
 
 1. Deploy your extension
-1. In command palette, `Reload`
+1. In Command Palette, `Reload`
 
 And presto - a command to show a message box!
 
 > [!TIP]
 > At about this point, you'll probably want to initialize a git repo / {other source control method of your choice} for your project. This will make it easier to track changes, and to share your extension with others.
 > 
-> We recommend using GitHub, as it's easy to collaborate on your extension with others, and get feedback, and share it with the world.
+> We recommend using GitHub, as it's easy to collaborate on your extension with others, get feedback, and share it with the world.
 
 ## Types of Pages
 
-So far, we've only worked with commands that "do something". However, you can also add commands that show additional pages within the Command Palette. There are basically two types of "Commands" in the Palette:
+So far, we've only worked with commands that "do something". However, you can also add commands that show additional pages within the Command Palette. There are two types of "Commands" in the Palette:
 
 - `InvokableCommand` - These are commands that **do something**
 - `IPage` - These are commands that **show something**
@@ -249,10 +249,10 @@ internal sealed partial class MySecondPage : ListPage
 +           new ListItem(new MySecondPage()) { Title = "My second page", Subtitle = "A second page of commands" },
         ];
     }
-```
+```f
 
 1. Deploy your extension
-1. In command palette, `Reload`
+1. In Command Palette, `Reload`
 
 You should now see a new page in your extension that shows 100 commands that copy a number to the clipboard.
 

@@ -59,7 +59,7 @@ public <ExtensionName>CommandsProvider()
 > The `ShowMessageCommand()` functionality was created prior at [InvokableCommand Command](adding-commands#invokableCommand-command)
 
 1. Deploy your extension
-1. In command palette, `Reload`
+1. In Command Palette, `Reload`
 
 ![Screenshot of extension with send message command at top level](../../images/command-palette/top-level-command.png)
 

@@ -59,7 +59,7 @@ public <ExtensionName>CommandsProvider()
 ```
 
 1. Deploy your extension
-1. In command palette, `Reload`
+1. In Command Palette, `Reload`
 
 In this example, a new `ContentPage` that displays a simple markdown string is created. The 'MarkdownContent' class takes a string of markdown content and renders it in the Command Palette.
 
@@ -103,7 +103,7 @@ public class <ExtensionName>Page : ContentPage
         path = 
 
 +       Commands = [
-+           new CommandContextItem(new OpenUrlCommand("C:\\Path\\to\\file.txt")) { Title = "Open in File Explorer" },
++           new CommandContextItem(new OpenUrlCommand(doc_path)) { Title = "Open in File Explorer" },
 +       ];
     }
     public override IContent[] GetContent()
@@ -119,12 +119,11 @@ public class <ExtensionName>Page : ContentPage
 
 1. Update the path in the `doc_path` to a .txt file on your local machine
 1. Deploy your extension
-1. In command palette, `Reload`
+1. In Command Palette, `Reload`
 1. Select <ExtensionName>
 1. Press `Enter` key, the docs should open
 
 ![Screenshot of extension using CommandContextItem](../../images/command-palette/CommandContextItem.png)
-
 
 ### Next up: [Get user input with forms](using-form-pages.md)
 

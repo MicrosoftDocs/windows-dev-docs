@@ -63,7 +63,10 @@ This is useful for commands that might have destructive actions, or that need to
 
 ## Example
 
-Below is a page with one command for each kind of command result:
+Below is a page with one command for each kind of `CommandResult`:
+
+1. Open `/Pages/<ExtensionName>Page.cs`
+1. Replace `GetItems` with the `GetItems` below:
 
 ```csharp
 
@@ -72,7 +75,7 @@ using Microsoft.CommandPalette.Extensions.Toolkit;
 
 internal sealed partial class <ExtensionName>Page : ListPage
 {
-    public CommandResultsPage()
+    public <ExtensionName>Page()
     {
         Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
         Title = "Example command results";
@@ -110,6 +113,11 @@ internal sealed partial class <ExtensionName>Page : ListPage
     }
 }
 ```
+
+1. Deploy your extension
+1. In Command Palette, `Reload`
+
+![Screenshot of extension with several commands for CommandResult](../../images/command-palette/command-result.png)
 
 ### Next up: [Display markdown content](using-markdown-content.md)
 
