@@ -56,7 +56,7 @@ public <ExtensionName>CommandsProvider()
 ```
 
 > [!NOTE]
-> The `ShowMessageCommand()` functionality was created prior at [InvokableCommand Command](adding-commands#invokableCommand-command)
+> The `ShowMessageCommand()` functionality was created prior at [InvokableCommand Command](/windows/powertoys/command-palette/adding-commands#invokableCommand-command)
 
 1. Deploy your extension
 1. In Command Palette, `Reload`

@@ -97,14 +97,14 @@ As your building your extension, you'll most likely want to debug it.
 1. You’ll see a dropdown that says either `Debug` or `Release` (next to the green "Start" button ▶️)
 1. If it says `Release`, click the dropdown and select `Debug`.
 
-![Screenshot of reload](../../images/command-palette/debug-configuration.png)
+![Screenshot of Visual Studio's toolbar that displays Debug](../../images/command-palette/debug-configuration.png)
 
 </details>
 
 1. Run the app in debug by pressing the green "Start" button ▶️ or press `F5`
 1. Ensure the Output window is set to show `Debug` output (Ctrl + Alt + O)
 
-![Screenshot of reload](../../images/command-palette/output.png)
+![Screenshot of Visual Studio's Output panel](../../images/command-palette/output.png)
 
 1. In the Command Palette, run `reload`
 1. Go to your extension and select `Open the Command Palette documentation`.
@@ -197,7 +197,7 @@ There are two different kinds of pages you can show:
 
   - [Form content](./using-form-pages.md) - This is content that shows a form to the user, and then returns the results of that form to the extension. These are powered by [Adaptive Cards](https://aka.ms/adaptive-cards) This is useful for getting user input, or displaying more complex layouts of information. See [FormContent](./microsoft-commandpalette-extensions-toolkit/formcontent.md) for details.
 
-![Screenshot of Form content](../../images/command-palette/reload.png)
+![Screenshot of Form content](../../images/command-palette/form-toggle-comdpal.png)
 
 ## Add more commands
 

@@ -44,7 +44,7 @@ internal sealed partial class MarkdownPage : ContentPage
 }
 ```
 
-1. Open <ExtensionName>CommandsProvider.cs
+1. Open \<ExtensionName\>CommandsProvider.cs
 1. Replace the `CommandItem`s for the `MarkdownPage`:
 
 ```diff
@@ -88,7 +88,7 @@ This allows you to mix-and-match different types of content on a single page.
 
 You can also add commands to a `ContentPage`. This allows you to add additional commands to be invoked by the user, while in the context of the content. For example, if you had a page that displayed a document, you could add a command to open the document in File Explorer:
 
-1. In your <ExtensionName>Page.cs, add `doc_path`, `Commands` and `MarkdownContent`:
+1. In your \<ExtensionName\>Page.cs, add `doc_path`, `Commands` and `MarkdownContent`:
 
 ```diff
 
@@ -120,7 +120,7 @@ public class <ExtensionName>Page : ContentPage
 1. Update the path in the `doc_path` to a .txt file on your local machine
 1. Deploy your extension
 1. In Command Palette, `Reload`
-1. Select <ExtensionName>
+1. Select \<ExtensionName\>
 1. Press `Enter` key, the docs should open
 
 ![Screenshot of extension using CommandContextItem](../../images/command-palette/CommandContextItem.png)

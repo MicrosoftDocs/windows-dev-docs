@@ -230,7 +230,7 @@ Adaptive Cards can do more complex forms, including using another json object to
 
 The Designer tool should look something like this:
 
-![Screenshot of extension using ContentPage for simple form](../../images/command-palette/form-toggle.png)
+![Screenshot of adaptive cards for form with toggles](../../images/command-palette/form-toggle.png)
 
 To add this content to your extension:
 
@@ -261,7 +261,7 @@ To add this content to your extension:
 1. Deploy your extension
 1. In Command Palette, `Reload`
 
-![Screenshot of extension using ContentPage for simple form](../../images/command-palette/form-toggle-comdpal.png)
+![Screenshot of extension using ContentPage for form with toggles](../../images/command-palette/form-toggle-comdpal.png)
 
 `TemplateJson` and `DataJson` work together to create dynamic, data-driven forms. `TemplateJson` can act as fhe Form Blueprint and `DataJson` as the Dynamic Content Source.
 
