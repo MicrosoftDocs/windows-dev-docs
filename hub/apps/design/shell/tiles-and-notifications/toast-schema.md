@@ -140,7 +140,7 @@ Text style controls font size, weight, and opacity. Subtle opacity is 60% opaque
 
 
 ### AdaptiveTextAlign
-Controls the horizontal alignmen of text.
+Controls the horizontal alignment of text.
 
 | Value | Meaning |
 |---|---|
@@ -182,7 +182,7 @@ Specifies the horizontal alignment for an image.
 | **Default** | Default value. Alignment behavior determined by renderer. |
 | **Stretch** | Image stretches to fill available width (and potentially available height too, depending on where the image is placed). |
 | **Left** | Align the image to the left, displaying the image at its native resolution. |
-| **Center** | Align the image in the center horizontally, displayign the image at its native resolution. |
+| **Center** | Align the image in the center horizontally, displaying the image at its native resolution. |
 | **Right** | Align the image to the right, displaying the image at its native resolution. |
 
 

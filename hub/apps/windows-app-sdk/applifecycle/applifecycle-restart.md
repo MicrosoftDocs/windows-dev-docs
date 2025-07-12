@@ -41,7 +41,7 @@ This Restart API enables Win32 applications to terminate and restart on command,
 
 ## Restarting With Command Line Arguments
 
-Simply call the Restart method and specify an arbitrary command-line string for the restarted instance to restart with. The restart is completedly synchronously and no further action or handling is required. If the restart fails for some reason, the Restart method returns a failure reason.
+Simply call the Restart method and specify an arbitrary command-line string for the restarted instance to restart with. The restart is completely synchronously and no further action or handling is required. If the restart fails for some reason, the Restart method returns a failure reason.
 
 ## Examples
 

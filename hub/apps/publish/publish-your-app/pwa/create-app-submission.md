@@ -10,7 +10,7 @@ ms.date: 10/30/2022
 > [!NOTE]
 > This section of the documentation describes how to create an app submission in Partner Center. Alternatively, you can use the [Microsoft Store submission API](/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services) to automate app submissions.
 
-Once you've [created your app by reserving a name](reserve-your-apps-name.md), you can start working on getting it published. The first step is to create a submission. After you have reserved your app name, you will be redirected to your app's application oveview page. From the Product release section, click on **Start submission**. A product submission in draft status will appear. This draft includes all the submission steps that need to be completed. Refer the app submission checklist below to complete the steps:
+Once you've [created your app by reserving a name](reserve-your-apps-name.md), you can start working on getting it published. The first step is to create a submission. After you have reserved your app name, you will be redirected to your app's application overview page. From the Product release section, click on **Start submission**. A product submission in draft status will appear. This draft includes all the submission steps that need to be completed. Refer the app submission checklist below to complete the steps:
 
 ## App submission checklist
 
