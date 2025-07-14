@@ -11,9 +11,11 @@ no-loc: [PowerToys, Windows, Insider]
 
 **Previous**: [Add top-level commands to your extension](add-top-level-commands-to-your-extension.md)
 
-An [IInvokableCommand](./microsoft-commandpalette-extensions/iinvokablecommand.md) is a fundamental unit of *do something* in the Command Palette. The [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand.md) method is called when the user selects the command, and it's where you *do something* in your extension. The **Invoke** method returns an **ICommandResult**, which tells the Command Palette what to do after the command has been invoked. This page details what's possible with each type of command result.
+An [IInvokableCommand](./microsoft-commandpalette-extensions/iinvokablecommand.md) represents a single actionable item in the Command Palette—it's what gets triggered when a user selects a command.
 
-The toolkit provides a number of helper methods to create command results. These are all static methods on the **CommandResult** class. Calling these methods on their own won't do anything. You must return those objects as the result of a **Invoke** method, for Command Palette to handle them.
+When your command is selected, the [Invoke](./microsoft-commandpalette-extensions/iinvokablecommand.md) method is called. This is where you implement the logic for what your extension should do. The Invoke method must return an `CommandResult`, which tells the Command Palette how to respond after the command runs—for example, whether to show a message, open a file, or do nothing.
+
+This page explains the 7 different types of `CommandResult` you can return and what each one does:
 
 > [!NOTE]
 > There are code examples for the various CommandResult methods listed on this page.
@@ -22,14 +24,14 @@ The toolkit provides a number of helper methods to create command results. These
 
 ## KeepOpen command result
 
-The **KeepOpen** command result does nothing. It leaves the palette in its current state, with the current page stack and query. This can be useful for commands that want to keep the user in the Command Palette, to keep working with the current page.
+The `KeepOpen` command result does nothing. It leaves the palette in its current state, with the current page stack and query. This can be useful for commands that want to keep the user in the Command Palette, to keep working with the current page.
 
 > [!NOTE]
-> Even when returning **KeepOpen**, launching a new app or window from the Command Palette will automatically hide the palette the next window receives focus. 
+> Even when returning `KeepOpen`, launching a new app or window from the Command Palette will automatically hide the palette the next window receives focus. 
 
 ## Hide command result
 
-This command result keeps the current page open, but hides the Command Palette. This can be useful for commands that want to take the user briefly out of the Command Palette, but then come back to this context. 
+This command result keeps the current page open, but hides the Command Palette. This can be useful for commands that want to take the user briefly out of the Command Palette, but then come back to this context.
 
 ## GoBack command result
 
@@ -37,13 +39,13 @@ This result takes the user back a page in the Command Palette, and keeps the win
 
 ## GoHome command result
 
-This result takes the user back to the main page of the Command Palette. It will leave the Palette visible (unless the palette otherwise loses focus). Consider using this for scenarios where you've changed your top-level commands. 
+This result takes the user back to the main page of the Command Palette. It will leave the Palette visible (unless the palette otherwise loses focus). Consider using this for scenarios where you've changed your top-level commands.
 
 ## Dismiss command result
 
 This result hides the Command Palette after the action is executed, and takes it back to the home page. On the next launch, the Command Palette will start from the main page with a blank query. This is useful for commands that are one-off actions, or that don't need to keep the Command Palette open.
 
-If you don't know what else to use, this should be your default. Ideally, users should come into the palette, find what they need, and be done with it. 
+If you don't know what else to use, this should be your default. Ideally, users should come into the palette, find what they need, and be done with it.
 
 ## ShowToast command result
 
@@ -55,25 +57,25 @@ By default, [CommandResult.ShowToast(string)](./microsoft-commandpalette-extensi
 
 ## Confirm command result
 
-This result displays a confirmation dialog to the user. If the user confirms the dialog, then the **PrimaryCommand** of the *ConfirmationArgs* will be performed. 
+This result displays a confirmation dialog to the user. If the user confirms the dialog, then the `PrimaryCommand` of the `ConfirmationArgs` will be performed.
 
 This is useful for commands that might have destructive actions, or that need to confirm user intent.
 
 ## Example
 
-As an example, here's a page with one command for each kind of command result:
+Below is a page with one command for each kind of `CommandResult`:
 
-> [!NOTE]
-> If working from prior section, modify the code below from `CommandResultsPage` to `<ExtensionName>Page`.
+1. Open `/Pages/<ExtensionName>Page.cs`
+1. Replace `GetItems` with the `GetItems` below:
 
 ```csharp
 
 using Microsoft.CommandPalette.Extensions;
 using Microsoft.CommandPalette.Extensions.Toolkit;
 
-internal sealed partial class CommandResultsPage : ListPage
+internal sealed partial class <ExtensionName>Page : ListPage
 {
-    public CommandResultsPage()
+    public <ExtensionName>Page()
     {
         Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
         Title = "Example command results";
@@ -111,6 +113,11 @@ internal sealed partial class CommandResultsPage : ListPage
     }
 }
 ```
+
+1. Deploy your extension
+1. In Command Palette, `Reload`
+
+![Screenshot of extension with several commands for CommandResult](../../images/command-palette/command-result.png)
 
 ### Next up: [Display markdown content](using-markdown-content.md)
 
