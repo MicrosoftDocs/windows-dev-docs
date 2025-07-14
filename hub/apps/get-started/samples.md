@@ -45,6 +45,15 @@ You can get the  [**Windows Community Toolkit Gallery app from the Microsoft Sto
 > [Explore the Windows Community Toolkit](https://github.com/CommunityToolkit/Windows)
 
 ## Other
+
+[**WinUI 101 Lab**](/training/modules/winui-101/)
+
+This training module steps through how to set up your developer environment and use WinUI, the Windows App SDK, and the Windows Community ToolKit to build a Windows app called SnowPal.
+
+SnowPal is a word game in which the app selects a word for the user to guess and presents that word as a series of blank spaces, with each blank space representing a letter from the word in spelling order. The player takes turns guessing a single letter that they believe is in the word. If the letter is not in the word, a missing piece of the SnowPal character is added; otherwise, the letter replaces the corresponding blank(s) in the word. The player wins by guessing the word or loses when all pieces of the SnowPal character have been added.
+
+By building this app step by step, you gain hands-on experience with core development concepts while creating something fun and functional.
+
 [**.NET Community Toolkit**](https://github.com/CommunityToolkit/dotnet)
 
 The .NET Community Toolkit is a collection of NuGet packages with high-performance helpers, extensions, and APIs designed to enhance .NET development across WinUI, WPF, MAUI, and other .NET applications. A key component is the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/), a lightweight and modern Model-View-ViewModel (MVVM) library that simplifies app architecture with features like observable properties, commands, and dependency injection. Built for performance and flexibility, the MVVM Toolkit helps you implement MVVM patterns efficiently while keeping your code clean and maintainable.
