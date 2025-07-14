@@ -46,7 +46,7 @@ You can get the  [**Windows Community Toolkit Gallery app from the Microsoft Sto
 
 ## Other
 
-[**WinUi 101 Lab**](https://learn.microsoft.com/training/modules/winui-101/)
+[**WinUi 101 Lab**](/training/modules/winui-101/)
 
 This is step-by-step guide to setting up your developer environment and building your first WinUI app with the latest tools; WinUI, Windows App SDK, Windows Community ToolKit. Throughout this course, we put these tools into practice by building SnowPal, a word-guessing game. In this SnowPal game, the app selects a word for the user to guess, displaying it as a series of blank spaces where each space represents a letter. The player guesses letters one at a time; for every incorrect guess, part of the SnowPal character is built. If the player guesses all letters before exhausting their turns, they win; otherwise, they lose. By building this SnowPal app step by step, you gain hands-on experience with core development concepts while creating something fun and functional.
 
