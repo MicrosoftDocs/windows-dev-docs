@@ -13,7 +13,7 @@ ZoomIt is a screen zoom, annotation, and recording tool for technical presentati
 
 :::image type="content" source="../images/powertoys-zoomit.gif" alt-text="Animation of the PowerToys ZoomIt utility by Sysinternals":::
 
-ZoomIt is one of the [Sysinternals](/sysinternals/) utilities and its standalone version works all versions of Windows. To provide the most flexibility, this standalone version will continue to be available from Sysinternals. For more information or to download a standalone version, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation.
+ZoomIt is one of the [Sysinternals](/sysinternals/) utilities and its standalone version works all versions of Windows. To provide the most flexibility, this standalone version will continue to be available from Sysinternals. For more information about using ZoomIt or to download a standalone version, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation.
 
 ## Enabling
 
@@ -73,6 +73,14 @@ In addition to enabling or disabling ZoomIt in the PowerToys Settings, you can c
 |---------------|-------------|
 | Snip Toggle Hotkey | Set the hotkey to toggle screen snipping on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>6</kbd>. |
 
-For more details on using ZoomIt, including additional hotkey information, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation.
+For more details on using ZoomIt, including additional hotkey information, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation. For information about the DemoType feature in ZoomIt, see [Make demo typing easy with DemoType in ZoomIt](https://techcommunity.microsoft.com/blog/sysinternals-blog/make-demo-typing-easy-with-demotype-in-zoomit-v8-0/4050566) on the Sysinternals blog.
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
+
+## Related content
+
+[Sysinternals ZoomIt documentation](/sysinternals/downloads/zoomit)
+
+[Make demo typing easy with DemoType in ZoomIt](https://techcommunity.microsoft.com/blog/sysinternals-blog/make-demo-typing-easy-with-demotype-in-zoomit-v8-0/4050566)
+
+[Run ZoomIt now from Sysinternals Live](https://live.sysinternals.com/ZoomIt.exe)
