@@ -1,16 +1,17 @@
 ---
 title: PowerToys Video Conference Mute utility for Windows
-description: A utility that allows to quickly mute the microphone (audio) and turn off the camera (video) while on a conference call with a single keystroke, regardless of what application has focus.
-ms.date: 08/03/2023
-ms.topic: article
+description: Learn how to use Video Conference Mute in PowerToys, a utility that allows users to use a single keystroke to quickly mute the microphone (audio) and turn off the camera (video) while on a conference call.
+ms.date: 07/15/2025
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute, Shift]
+# customer intent: As a Windows power user, I want to learn how to use the Video Conference Mute utility in PowerToys so I can quickly mute my microphone and turn off my camera during conference calls.
 ---
 
 # Video Conference Mute (Deprecated)
 
 > [!NOTE]
-> VCM has been deprecated and removed on PowerToys version 0.88.0. This page is being kept for users that are still using it on older versions of PowerToys.
+> VCM has been deprecated and removed on PowerToys version 0.88.0. This page has been kept for users that are still using it on older versions of PowerToys, but it will be archived in the future.
 
 Quickly mute your microphone (audio) and turn off your camera (video) with a single keystroke while on a conference call, regardless of what application has focus on your computer.
 
@@ -27,7 +28,7 @@ When using the microphone and/or camera toggle shortcut keys, you'll see a small
 
 ![Audio and Video mute notification screenshot](../images/pt-video-audio-mute-notification.png)
 
-To use this module, it must be selected as the _source_ in the apps that are using camera and/or microphone. Go to the settings and select PowerToys VCM.
+To use this module, it must be selected as the *source* in the apps that are using camera and/or microphone. Go to the settings and select PowerToys VCM.
 
 ![Video Conference Mute selected as source in Skype](../images/pt-vcm-source-in-app.png)
 
@@ -50,17 +51,17 @@ The settings provide the following options:
 
 ## How this works under the hood
 
-Applications interact with audio and video in different ways. If a camera stops working, the application using it tends not to recover until the API does a full reset. To toggle the global privacy camera on and off while using the camera in an application, typically it will crash and not recover.
+Applications interact with audio and video in different ways. If a camera stops working, the application using it tends not to recover until the API does a full reset. To toggle the global privacy camera on and off while using the camera in an application, it'll usually crash and not recover.
 
 So, how does PowerToys handle this so you can keep streaming?
 
 - **Audio:** PowerToys uses the global microphone mute API in Windows. Apps should recover when this is toggled on and off.
-- **Video:** PowerToys has a virtual driver for the camera. The video is routed _through_ the driver and then to the application. Selecting the Video Conference Mute shortcut key stops video from streaming, but the application still thinks it is receiving video. The video is just replaced with black or the image placeholder you've saved in the settings.
+- **Video:** PowerToys has a virtual driver for the camera. The video is routed *through* the driver and then to the application. Selecting the Video Conference Mute shortcut key stops video from streaming, but the application still thinks it is receiving video. The video is just replaced with black or the image placeholder you've saved in the settings.
 
 ### Debug the camera driver
 
 To debug the camera driver, open this file on your machine: `C:\Windows\ServiceProfiles\LocalService\AppData\Local\Temp\PowerToysVideoConference.log`
 
-You can create an empty `PowerToysVideoConferenceVerbose.flag` in the same directory to enable verbose logging mode in the driver.
+You can create an empty `PowerToysVideoConferenceVerbose.flag` file in the same directory to enable verbose logging mode in the driver.
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

@@ -1,5 +1,45 @@
 {
   "redirections": [
+    {
+      "source_path": "hub/android/wsa/index.md",
+      "redirect_url": "/previous-versions/windows/android/wsa/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/wsa/release-notes.md",
+      "redirect_url": "/previous-versions/windows/android/wsa/release-notes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/environments.md",
+      "redirect_url": "/previous-versions/windows/dev-home/environments",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/extensions.md",
+      "redirect_url": "/previous-versions/windows/dev-home/extensions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/index.md",
+      "redirect_url": "/previous-versions/windows/dev-home/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/setup.md",
+      "redirect_url": "/previous-versions/windows/dev-home/setup",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/utilities.md",
+      "redirect_url": "/previous-versions/windows/dev-home/utilities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/windows-customization.md",
+      "redirect_url": "/previous-versions/windows/dev-home/windows-customization",
+      "redirect_document_id": false
+    },
 	{
 		"source_path": "hub/apps/whats-new/latest-docs-updates.md",
 		"redirect_url": "https://learn.microsoft.com/windows/apps/whats-new/windows-11-build-22000",
