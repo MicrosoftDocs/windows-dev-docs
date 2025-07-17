@@ -2,7 +2,7 @@
 title: Quickstart Push notifications in the Windows App SDK
 description: Send push notifications using the Windows App SDK
 ms.topic: quickstart
-ms.date: 7/26/2021
+ms.date: 07/14/2025
 keywords: push, notification
 ms.localizationpriority: medium
 ms.custom: template-quickstart

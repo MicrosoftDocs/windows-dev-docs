@@ -2,7 +2,7 @@
 description: Describes how to use app instancing features with the app lifecycle API in WinUI with the Windows App SDK.
 title: App instancing with the app lifecycle API (WinUI)
 ms.topic: concept-article
-ms.date: 09/20/2024
+ms.date: 07/14/2025
 keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, multi instance
 #customer intent: As a Windows developer, I want to learn how to use app instancing features with the app lifecycle API in WinUI with the Windows App SDK so that I can control how many instances of my app can run at the same time.
 ---

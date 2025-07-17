@@ -2,7 +2,7 @@
 description: Describes how to use app instancing features with the app lifecycle API in WinUI with C# and the Windows App SDK.
 title: How to create a single-instanced WinUI app with C#
 ms.topic: how-to
-ms.date: 09/20/2024
+ms.date: 07/14/2025
 keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, multi instance, winui, windows app sdk, c#
 #customer intent: As a Windows developer, I want to learn how to create a single-instanced WinUI 3 app so that I can ensure only one instance of my app is running at a time.
 ---
