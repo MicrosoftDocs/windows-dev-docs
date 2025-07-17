@@ -2,7 +2,7 @@
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
 title: Optimize suspend/resume
 description: Create Universal Windows Platform (UWP) apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination.
-ms.date: 02/08/2017
+ms.date: 07/14/2025
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

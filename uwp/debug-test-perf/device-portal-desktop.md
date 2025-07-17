@@ -1,7 +1,7 @@
 ---
 title: Windows Device Portal for Desktop
 description: Learn how the Windows Device Portal provides settings, diagnostics, and automation functionality on your Desktop PC.
-ms.date: 01/28/2022
+ms.date: 07/14/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 title: Localize strings in your UI and app package manifest
-ms.date: 08/19/2024
+ms.date: 07/14/2025
 ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium

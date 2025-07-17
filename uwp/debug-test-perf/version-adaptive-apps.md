@@ -1,7 +1,7 @@
 ---
 title: Version adaptive apps
 description: Learn how to take advantage of new APIs while maintaining compatibility with previous versions
-ms.date: 01/20/2022
+ms.date: 07/14/2025
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

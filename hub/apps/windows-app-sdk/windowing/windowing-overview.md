@@ -2,7 +2,7 @@
 title: Manage app windows
 description: Overview of windowing APIs in the Windows App SDK
 ms.topic: how-to
-ms.date: 07/09/2024
+ms.date: 07/14/2025
 keywords: windowing, window, AppWindow, Windows App SDK
 ms.localizationpriority: medium
 dev_langs:
@@ -118,9 +118,11 @@ The [**Microsoft.UI.Xaml.Window.AppWindow**](/windows/windows-app-sdk/api/winrt/
 The [Code example](#code-example) section below shows actual source code; but here's the recipe for retrieving an **AppWindow** object given an existing window:
 
 1. Retrieve the **HWND** for your existing window object (for your UI framework), if you don't already have it.
-2. Pass that **HWND** to the [**GetWindowIdFromWindow**](/windows/windows-app-sdk/api/win32/winrt-microsoft.ui.interop/nf-winrt-microsoft-ui-interop-getwindowidfromwindow) interop function to retrieve a [**WindowId**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid).
+2. Pass that **HWND** to the [**GetWindowIdFromWindow**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid) interop function to retrieve a [**WindowId**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid).
 3. Pass that **WindowId** to the static [**AppWindow.GetFromWindowId**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid) method to retrieve the **AppWindow**.
 
+
+/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow
 
 ```csharp
 // MainWindow.xaml.cs

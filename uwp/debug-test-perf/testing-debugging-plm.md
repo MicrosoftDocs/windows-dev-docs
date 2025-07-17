@@ -1,7 +1,7 @@
 ---
 description: Tools and techniques for debugging and testing how your app works with Process Lifetime Management.
 title: Testing and debugging Process Lifetime Management
-ms.date: 04/08/2019
+ms.date: 07/14/2025
 ms.topic: concept-article
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd

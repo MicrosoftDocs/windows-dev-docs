@@ -2,7 +2,7 @@
 title: Restart API (Windows App SDK)
 description: Describes how to use the Restart API, AppRestartFailureReason Restart(), with the App Lifecycle API (Windows App SDK).
 ms.topic: how-to
-ms.date: 05/19/2022
+ms.date: 07/14/2025
 ms.localizationpriority: medium
 ---
 

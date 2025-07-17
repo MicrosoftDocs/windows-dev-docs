@@ -2,7 +2,7 @@
 title: Experimental channel release notes for the Windows App SDK 1.4
 description: Learn about the experimental channel release notes for the Windows App SDK 1.4
 ms.topic: release-notes
-ms.date: 04/19/2024
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---

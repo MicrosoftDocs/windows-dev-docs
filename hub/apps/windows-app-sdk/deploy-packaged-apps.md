@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for framework-dependent packaged apps
 description: This article provides guidance about deploying framework-dependent packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
 ms.topic: article
-ms.date: 08/19/2024
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---

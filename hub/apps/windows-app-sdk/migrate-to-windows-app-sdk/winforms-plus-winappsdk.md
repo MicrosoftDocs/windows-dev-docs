@@ -2,7 +2,7 @@
 title: Use the Windows App SDK in a WinForms app
 description: This topic enables you to use Windows App SDK features (such as App Lifecycle, MRT Core, DWriteCore, and others) in a Windows Forms (WinForms) app.
 ms.topic: how-to
-ms.date: 05/30/2023
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK, Windows Forms, WinForms
 ms.localizationpriority: medium
 ---

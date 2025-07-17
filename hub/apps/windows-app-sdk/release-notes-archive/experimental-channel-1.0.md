@@ -2,7 +2,7 @@
 title: Experimental channel release notes for the Windows App SDK 1.0
 description: Learn about the experimental channel release notes for the Windows App SDK 1.0
 ms.topic: release-notes
-ms.date: 04/19/2024
+ms.date: 07/15/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -30,9 +30,6 @@ The experimental channel provides releases of the Windows App SDK that include [
 ## Version 1.0 Experimental (1.0.0-experimental1)
 
 This release supports all [experimental channel features](../release-channels.md#features-available-by-release-channel).
-
-> [!div class="button"]
-> [Download](https://aka.ms/windowsappsdk/experimental-vsix)
 
 The following sections describe new and updated features, limitations, and known issues for this release.
 

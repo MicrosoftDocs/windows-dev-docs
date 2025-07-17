@@ -2,7 +2,7 @@
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
 title: Optimize background activity
 description: Create UWP apps that work with the system to use background tasks in a battery-efficient way.
-ms.date: 02/08/2017
+ms.date: 07/14/2025
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

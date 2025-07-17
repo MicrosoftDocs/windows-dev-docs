@@ -2,7 +2,7 @@
 title: Troubleshooting push notifications
 description: Troubleshooting guide for push notifications
 ms.topic: troubleshooting-general
-ms.date: 7/26/2021
+ms.date: 07/14/2025
 keywords: push, notification
 ms.localizationpriority: medium
 ---

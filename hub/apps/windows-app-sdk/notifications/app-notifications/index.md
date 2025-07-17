@@ -2,7 +2,7 @@
 title: App notifications overview
 description: Overview of Windows App SDK App Notifications
 ms.topic: concept-article
-ms.date: 5/9/2022
+ms.date: 07/14/2025
 keywords: toast, notification
 ms.localizationpriority: medium
 ---
