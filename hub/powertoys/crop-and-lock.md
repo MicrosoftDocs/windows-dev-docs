@@ -41,6 +41,10 @@ Creates a window that replaces the original window, showing only the selected ar
 
 Not every window will react well to being contained in another application so this mode has many compatibility issues. It's advisable to use the "Thumbnail" mode instead if you find that a window isn't responding well to being cropped with the "Reparent" mode.
 
+### Screenshot
+
+Creates a window that shows the selected area of the original window as a freezed snapshot. This mode has good compatibility as well.
+
 ## Known issues
 
 Crop And Lock currently has the following known issues:
