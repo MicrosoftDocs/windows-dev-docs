@@ -1,14 +1,14 @@
 ---
-description: This page describes whats new in test markets for invividual developers
+description: This page describes what's new in test markets for invividual developers
 title: What’s New in Onboarding for Individual Developers
 ms.date: 06/24/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# What’s New in Onboarding for Individual Developers
+# What’s new in onboarding for individual developers
 
-Individual developers can now use the new onboarding flow to publish apps to the Microsoft Store without paying any onboarding fees – making Microsoft the first global digital storefront to eliminate such charges.
+Individual developers can now use the new onboarding flow to publish apps to the Microsoft Store without paying any onboarding fees.
 
 We’re progressively rolling out the new onboarding flow, starting with the India market. This page will be updated as we expand to more markets.
 
@@ -28,15 +28,15 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
    > **Note for existing developers:**  If you already have a developer account, you can follow this path to sign in. You will be redirected to your Partner Center dashboard starting from Step 4. Alternatively, go directly to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
 
-![Screenshot 1: Store developer website](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/whats-new-individual-dev/hub/apps/new_onboarding/images/1.%20New%20Website.png)
+![Store developer website](/images/NewWebsite.png)
 
 2. **Click “Get started for free”** to begin.
    
 3. Select **Individual developer** (free). If you’re a business, select Company account.
 
-   > **Note for Company developers:** Selecting **Company account** will redirect you to the existing onboarding flow for Company developers. Learn more about Company account setup [here](https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
+   > **Note for Company developers:** Selecting **Company account** will redirect you to the existing onboarding flow for Company developers. Learn more about Company account setup [here](https://learn.microsoft.com/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
    
-   ![Screenshot 2: Choose account type](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/2.%20Choose%20account%20type%20page.png)
+   ![Choose account type](/images/Chooseaccounttypepage.png)
    
 4. **Sign in** with your Microsoft account (MSA) or create a new one
    
@@ -50,13 +50,13 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
 > **Note:** After clicking, you'll land on the "Apps & Games overview" page.  
 > - If you don’t land there directly, wait for 5 minutes and refresh your browser until you see the **Apps & Games** tile on your page, then click on that tile.  
-> - Alternatively, you can navigate directly to the [Apps & Games overview page](https://partner.microsoft.com/en-us/dashboard/apps-and-games/overview) and select **Apps & Games** from there.
+> - Alternatively, you can navigate directly to the [Apps & Games overview page](https://partner.microsoft.com/dashboard/apps-and-games/overview) and select **Apps & Games** from there.
 
-   ![Screenshot 4: Account setup complete](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/12.%20Apps%20%26%20Games%20overview%20page.png)
+   ![Account setup complete](/images/AppsGamesoverviewpage.png)
 
 You’ll be redirected to Partner Center to finish setup and publish your first app.
 
-## 📬 Need more help? Contact us
+## Need more help? Contact us
 
 - Click on “Get Support” link embedded in the onboarding flow, or email us at:  **storesupport@service.microsoft.com**
 
