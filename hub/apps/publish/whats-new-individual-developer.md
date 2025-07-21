@@ -26,8 +26,7 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
 1. **Go to** [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com)
 
-   > **Note for existing developers:**  
-> If you already have a developer account, you can follow this path to sign in. You will be redirected to your Partner Center dashboard starting from Step 4. Alternatively, go directly to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
+   > **Note for existing developers:**  If you already have a developer account, you can follow this path to sign in. You will be redirected to your Partner Center dashboard starting from Step 4. Alternatively, go directly to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
 
 ![Screenshot 1: Store developer website](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/1.%20New%20Website.png)
 
@@ -44,30 +43,36 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 5. **Begin identity verification** with a government-issued ID and selfie
    
 6. **Capture** your ID and selfie on mobile in good lighting with original documents
-
-![Screenshot 3: Capture ID instructions](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/6.%20Capture%20ID.jpg)  
    
 7. **Complete** your profile details. Review your auto-filled information, and update if required
       
 8. Complete your account setup and click **“Go to Partner Center dashboard”**
 
-   ![Screenshot 4: Account setup complete](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/11.%20Account%20setup%20complete.png)
+> **Note:** After clicking, you'll land on the "Apps & Games overview" page.  
+> - If you don’t land there directly, wait for 5 minutes and refresh your browser until you see the **Apps & Games** tile on your page, then click on that tile.  
+> - Alternatively, you can navigate directly to the [Apps & Games overview page](https://partner.microsoft.com/en-us/dashboard/apps-and-games/overview) and select **Apps & Games** from there.
+
+   ![Screenshot 4: Account setup complete](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/12.%20Apps%20%26%20Games%20overview%20page.png)
 
 You’ll be redirected to Partner Center to finish setup and publish your first app.
 
+## 📬 Support
+
+- Click on “Get Support” link embedded within the onboarding flow, or email us at:  **storesupport@service.microsoft.com**
+
 ## Frequently Asked Questions (FAQs)
-
-<details>
-<summary><strong>Do I need to pay the $19 registration fee?</strong></summary>
-
-No—if you're using the new flow via the Store marketing page and you’re in one of the pilot markets (Canada, Australia, or India). If you land on the old Partner Center onboarding flow, the registration fee still applies.
-
-</details>
 
 <details>
 <summary><strong>How do I access the new flow?</strong></summary>
 
 You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point during the flighting phase. Other paths (e.g., direct via Partner Center, Xbox, or Visual Studio) will show the legacy flow.
+
+</details>
+
+<details>
+<summary><strong>Do I need to pay the $19 registration fee?</strong></summary>
+
+No—if you're using the new flow via the [Store marketing page](http://storedeveloper.microsoft.com/) in a flighted market (starting with India). If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.
 
 </details>
 
