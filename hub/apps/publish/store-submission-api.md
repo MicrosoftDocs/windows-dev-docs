@@ -5,6 +5,7 @@ ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, msi, exe, unpackaged, unpackaged app, desktop app, traditional desktop app, price, available, discoverable, free trial, trials, trial, apps, release date
 ms.localizationpriority: medium
+ms.custom: sfi-ga-nochange
 ---
 
 # Microsoft Store submission API for MSI or EXE app

@@ -4,6 +4,7 @@ description: Learn how to assign standard roles when adding users to your Partne
 ms.date: 11/09/2022
 ms.topic: article
 ms.localizationpriority: high
+ms.custom: sfi-ga-nochange
 ---
 
 # Assign roles to account users

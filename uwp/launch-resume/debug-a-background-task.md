@@ -6,6 +6,7 @@ ms.date: 02/08/2017
 ms.topic: how-to
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 # Debug a background task
 

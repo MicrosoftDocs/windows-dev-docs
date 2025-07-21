@@ -4,6 +4,7 @@ description: Learn how the Windows Device Portal lets you configure and manage y
 ms.date: 07/14/2025
 ms.topic: article
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Windows Device Portal overview

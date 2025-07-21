@@ -6,6 +6,7 @@ ms.topic: concept-article
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Testing and debugging tools for Process Lifetime Management (PLM)

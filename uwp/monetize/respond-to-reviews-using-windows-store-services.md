@@ -6,6 +6,7 @@ ms.date: 07/14/2023
 ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store reviews API, respond to reviews
 ms.localizationpriority: medium
+ms.custom: sfi-ga-nochange
 ---
 
 # Respond to reviews using Store services

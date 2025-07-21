@@ -3,6 +3,7 @@ title: winget download command
 description: Downloads an installer for a package.
 ms.date: 07/07/2025
 ms.topic: how-to
+ms.custom: sfi-ga-nochange
 ---
 
 # download command (winget)

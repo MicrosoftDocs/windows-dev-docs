@@ -4,6 +4,7 @@ title: Manage users in your Partner Center account
 ms.date: 11/07/2022
 ms.topic: how-to
 ms.localizationpriority: medium
+ms.custom: sfi-ga-nochange
 ---
 
 # Manage users in your Partner Center account
