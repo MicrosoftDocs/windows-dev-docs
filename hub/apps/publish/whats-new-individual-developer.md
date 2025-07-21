@@ -28,7 +28,7 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
    > **Note for existing developers:**  If you already have a developer account, you can follow this path to sign in. You will be redirected to your Partner Center dashboard starting from Step 4. Alternatively, go directly to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
 
-![Screenshot 1: Store developer website](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/1.%20New%20Website.png)
+![Screenshot 1: Store developer website](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/whats-new-individual-dev/hub/apps/new_onboarding/images/1.%20New%20Website.png)
 
 2. **Click “Get Started for free”** to begin.
    
