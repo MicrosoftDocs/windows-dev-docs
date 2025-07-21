@@ -8,30 +8,50 @@ ms.localizationpriority: medium
 
 # What’s New in Onboarding for Individual Developers
 
+Individual developers can now use the new onboarding flow to publish apps to the Microsoft Store without paying any onboarding fees – making Microsoft the first global digital storefront to eliminate such charges.
+
+We’re progressively rolling out the new onboarding flow, starting with the India market. This page will be updated as we expand to more markets.
+
 ## What’s New
 
 | Feature                           | Description                                                               |
 |-----------------------------------|---------------------------------------------------------------------------|
 | **No registration fee**           | The $19 registration fee is waived in the new flow (flighted markets only). |
-| **ID-based verification**         | Verify your identity using your government-issued ID and a selfie through Au10tix. |
+| **ID-based verification**         | Verify your identity using a government-issued ID and selfie for a secure and compliant onboarding. |
 | **Guided, lightweight onboarding**| Clean, modern UX with contextual guidance, MFA security, and live support links. |
 | **Auto-filled profile info**      | Verified ID data pre-fills your developer profile for speed and accuracy. |
 | **Instant access to Partner Center**| Once verified, you’re redirected to Partner Center to start publishing immediately. |
 
-## Step-by-Step: How It Works
+## Step-by-Step Flow
 
 1. **Go to** [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com)
 
-![store developer](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/1.%20New%20Website.png)
+   > **Note for existing developers:**  
+> If you already have a developer account, you can follow this path to sign in. You will be redirected to your Partner Center dashboard starting from Step 4. Alternatively, go directly to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
 
-2. **Click “Get Started”** and select **‘Individual’ account**
-3. **Sign in** with your Microsoft account
-4. **Verify your identity** via Au10tix
-    - Upload a government-issued ID
-    - Capture a live selfie (**mobile required**)
-5. **Review and confirm** your profile details
-    - Key fields are auto-filled from your ID
-6. **Submit**
+![Screenshot 1: Store developer website](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/1.%20New%20Website.png)
+
+2. **Click “Get Started for free”** to begin.
+   
+3. Select **Individual developer** (free). If you’re a business, select Company account.
+
+   > **Note for Company developers:** Selecting **Company account** will redirect you to the existing onboarding flow for Company developers. Learn more about Company account setup [here](https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
+   
+   ![Screenshot 2: Choose account type](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/2.%20Choose%20account%20type%20page.png)
+   
+4. **Sign in** with your Microsoft account (MSA) or create a new one
+   
+5. **Begin identity verification** with a government-issued ID and selfie
+   
+6. **Capture** your ID and selfie on mobile in good lighting with original documents
+
+![Screenshot 3: Capture ID instructions](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/6.%20Capture%20ID.jpg)  
+   
+7. **Complete** your profile details. Review your auto-filled information, and update if required
+      
+8. Complete your account setup and click **“Go to Partner Center dashboard”**
+
+   ![Screenshot 4: Account setup complete](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/11.%20Account%20setup%20complete.png)
 
 You’ll be redirected to Partner Center to finish setup and publish your first app.
 
