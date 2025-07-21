@@ -56,23 +56,25 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
 You’ll be redirected to Partner Center to finish setup and publish your first app.
 
-## 📬 Support
+## 📬 Need more help? Contact us
 
 - Click on “Get Support” link embedded within the onboarding flow, or email us at:  **storesupport@service.microsoft.com**
 
 ## Frequently Asked Questions (FAQs)
 
 <details>
+<summary><strong>Do I need to pay the registration fee?</strong></summary>
+
+No—if you're using the new flow via the [Store marketing page](http://storedeveloper.microsoft.com/) in a flighted market (starting with India). If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
+
+The free onboarding flow applies only to individual developers. Company accounts continue to pay a one-time $99 USD registration fee as part of the existing onboarding process.
+
+</details> 
+
+<details>
 <summary><strong>How do I access the new flow?</strong></summary>
 
 You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point during the flighting phase. Other paths (e.g., direct via Partner Center, Xbox, or Visual Studio) will show the legacy flow.
-
-</details>
-
-<details>
-<summary><strong>Do I need to pay the $19 registration fee?</strong></summary>
-
-No—if you're using the new flow via the [Store marketing page](http://storedeveloper.microsoft.com/) in a flighted market (starting with India). If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.
 
 </details>
 
@@ -86,14 +88,7 @@ To ensure platform integrity. Verifying your identity helps protect against frau
 <details>
 <summary><strong>What happens to my ID data?</strong></summary>
 
-Your ID documents are deleted by Au10tix within 30 days. Microsoft may securely retain minimal metadata (such as name and country) for support and dispute resolution purposes, following our privacy standards.
-
-</details>
-
-<details>
-<summary><strong>How long does this take?</strong></summary>
-
-Most developers complete the entire flow in under 10 minutes, including identity verification and profile setup.
+Your ID information is used solely for verification and processed securely per Microsoft’s privacy standards. Microsoft may retain non-PII data like Publisher name and country for support and dispute resolution purposes.
 
 </details>
 
@@ -101,12 +96,5 @@ Most developers complete the entire flow in under 10 minutes, including identity
 <summary><strong>I already have a developer account—do I need to use this?</strong></summary>
 
 No—this flow is only for new individual developers creating their account for the first time.
-
-</details>
-
-<details>
-<summary><strong>I need help—what should I do?</strong></summary>
-
-Click “Contact Support” within the flow. Your session ID will be automatically included to help our team assist you faster.
 
 </details>
