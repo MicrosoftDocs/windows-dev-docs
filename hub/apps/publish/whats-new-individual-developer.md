@@ -58,7 +58,7 @@ You’ll be redirected to Partner Center to finish setup and publish your first 
 
 ## 📬 Need more help? Contact us
 
-- Click on “Get Support” link embedded within the onboarding flow, or email us at:  **storesupport@service.microsoft.com**
+- Click on “Get Support” link embedded in the onboarding flow, or email us at:  **storesupport@service.microsoft.com**
 
 ## Frequently Asked Questions (FAQs)
 
