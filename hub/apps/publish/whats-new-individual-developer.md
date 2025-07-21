@@ -31,26 +31,27 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 ![Store developer website](/images/new-website.png)
 
 2. **Click “Get started for free”** to begin.
-   
+
 3. Select **Individual developer** (free). If you’re a business, select Company account.
 
-   > **Note for Company developers:** Selecting **Company account** will redirect you to the existing onboarding flow for Company developers. Learn more about Company account setup [here](https://learn.microsoft.com/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
-   
+   > **Note for Company developers:** Selecting **Company account** will redirect you to the existing onboarding flow for Company developers. Learn more about Company account setup [here](/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
+
    ![Choose account type](/images/choose-account.png)
-   
-4. **Sign in** with your Microsoft account (MSA) or create a new one
-   
-5. **Begin identity verification** with a government-issued ID and selfie
-   
-6. **Capture** your ID and selfie on mobile in good lighting with original documents
-   
-7. **Complete** your profile details. Review your auto-filled information, and update if required
-      
+
+4. **Sign in** with your Microsoft account (MSA) or create a new one.
+
+5. **Begin identity verification** with a government-issued ID and selfie.
+
+6. **Capture** your ID and selfie on mobile in good lighting with original documents.
+
+7. **Complete** your profile details. Review your auto-filled information, and update if required.
+
 8. Complete your account setup and click **“Go to Partner Center dashboard”**
 
 > **Note:** After clicking, you'll land on the "Apps & Games overview" page.  
+>
 > - If you don’t land there directly, wait for 5 minutes and refresh your browser until you see the **Apps & Games** tile on your page, then click on that tile.  
-> - Alternatively, you can navigate directly to the [Apps & Games overview page](https://partner.microsoft.com/dashboard/apps-and-games/overview) and select **Apps & Games** from there.
+> - Alternatively, you can navigate directly to the [Apps & Games overview page]() and select **Apps & Games** from there.
 
    ![Account setup complete](/images/apps-games-overview-page.png)
 
@@ -58,43 +59,29 @@ You’ll be redirected to Partner Center to finish setup and publish your first 
 
 ## Need more help? Contact us
 
-- Click on “Get Support” link embedded in the onboarding flow, or email us at:  **storesupport@service.microsoft.com**
+- Click on “Get Support” link embedded in the onboarding flow, or email us at:  **<storesupport@service.microsoft.com>**
 
 ## Frequently Asked Questions (FAQs)
 
-<details>
-<summary><strong>Do I need to pay the registration fee?</strong></summary>
 
-No—if you're using the new flow via the [Store marketing page](http://storedeveloper.microsoft.com/) in a flighted market (starting with India). If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
+### Do I need to pay the registration fee?
+
+No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/) in a flighted market (starting with India). If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
 
 The free onboarding flow applies only to individual developers. Company accounts continue to pay a one-time $99 USD registration fee as part of the existing onboarding process.
 
-</details> 
+### How do I access the new flow?
 
-<details>
-<summary><strong>How do I access the new flow?</strong></summary>
+You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point during the flighting phase. Other paths (e.g. direct via Partner Center, Xbox, or Visual Studio) will show the legacy flow.
 
-You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point during the flighting phase. Other paths (e.g., direct via Partner Center, Xbox, or Visual Studio) will show the legacy flow.
-
-</details>
-
-<details>
-<summary><strong>Why is ID verification required?</strong></summary>
+### Why is ID verification required?
 
 To ensure platform integrity. Verifying your identity helps protect against fraud and impersonation, which in turn improves safety for customers and trust in the developer ecosystem.
 
-</details>
-
-<details>
-<summary><strong>What happens to my ID data?</strong></summary>
+### What happens to my ID data?
 
 Your ID information is used solely for verification and processed securely per Microsoft’s privacy standards. Microsoft may retain non-PII data like Publisher name and country for support and dispute resolution purposes.
 
-</details>
+### I already have a developer account—do I need to use this?
 
-<details>
-<summary><strong>I already have a developer account—do I need to use this?</strong></summary>
-
-No—this flow is only for new individual developers creating their account for the first time.
-
-</details>
+No — this flow is only for new individual developers creating their account for the first time.
