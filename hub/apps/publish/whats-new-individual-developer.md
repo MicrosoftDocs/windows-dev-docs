@@ -22,7 +22,7 @@ ms.localizationpriority: medium
 
 1. **Go to** [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com)
 
-![store developer](image-placeholder)
+![store developer](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/3d01188f5cfd6440ec3c09055f0220a4eb379d17/hub/apps/new_onboarding/images/1.%20New%20Website.png)
 
 2. **Click “Get Started”** and select **‘Individual’ account**
 3. **Sign in** with your Microsoft account
