@@ -30,7 +30,7 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
 ![Screenshot 1: Store developer website](https://github.com/MicrosoftDocs/windows-dev-docs-pr/blob/whats-new-individual-dev/hub/apps/new_onboarding/images/1.%20New%20Website.png)
 
-2. **Click “Get Started for free”** to begin.
+2. **Click “Get started for free”** to begin.
    
 3. Select **Individual developer** (free). If you’re a business, select Company account.
 
