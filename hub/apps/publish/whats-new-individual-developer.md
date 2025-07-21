@@ -28,7 +28,7 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
    > **Note for existing developers:**  If you already have a developer account, you can follow this path to sign in. You will be redirected to your Partner Center dashboard starting from Step 4. Alternatively, go directly to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
 
-![Store developer website](/images/NewWebsite.png)
+![Store developer website](/images/new-website.png)
 
 2. **Click “Get started for free”** to begin.
    
@@ -36,7 +36,7 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
    > **Note for Company developers:** Selecting **Company account** will redirect you to the existing onboarding flow for Company developers. Learn more about Company account setup [here](https://learn.microsoft.com/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
    
-   ![Choose account type](/images/Chooseaccounttypepage.png)
+   ![Choose account type](/images/choose-account.png)
    
 4. **Sign in** with your Microsoft account (MSA) or create a new one
    
@@ -52,7 +52,7 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 > - If you don’t land there directly, wait for 5 minutes and refresh your browser until you see the **Apps & Games** tile on your page, then click on that tile.  
 > - Alternatively, you can navigate directly to the [Apps & Games overview page](https://partner.microsoft.com/dashboard/apps-and-games/overview) and select **Apps & Games** from there.
 
-   ![Account setup complete](/images/AppsGamesoverviewpage.png)
+   ![Account setup complete](/images/apps-games-overview-page.png)
 
 You’ll be redirected to Partner Center to finish setup and publish your first app.
 
