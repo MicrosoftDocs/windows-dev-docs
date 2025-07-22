@@ -57,7 +57,7 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
 You’ll be redirected to Partner Center to finish setup and publish your first app.
 
-## Need more help? Contact us
+## Need help? Contact us
 
 - Click on “Get Support” link embedded in the onboarding flow, or email us at:  **<storesupport@service.microsoft.com>**
 
