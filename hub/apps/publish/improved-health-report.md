@@ -1,7 +1,7 @@
 ---
 description: What’s new - Improved Health Report in Partner Center
 title: What’s new - Improved Health Report in Partner Center
-ms.date: 05/16/2025
+ms.date: 07/22/2025
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, analytics, health, crash, failure, hang, stack trace
 ms.localizationpriority: medium
@@ -48,4 +48,4 @@ You can now compare failure metrics across different versions of your app to tra
 :::image type="content" source="images/failure-distribution.png" lightbox="images/failure-distribution.png" alt-text="A screenshot showing new visualization for comparing metrics by different dimensions like app version, OS version, architecture.":::
 
 #### Multi-filter support
-We are now supporting using multiple filters simultaneously. Developers can now apply multiple filters simultaneously—such as multiple app version, OS versions, device types and more, allowing for more precise & targeted analysis.
+The simultaneous use of multiple filters is now supported, including multiple app version, OS versions, device types and more, allowing for more precise and targeted analysis.
