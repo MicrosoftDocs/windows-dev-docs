@@ -28,7 +28,7 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 
    > **Note for existing developers:**  If you already have a developer account and sign in with an existing MSA, you will skip Steps 5–7 and be taken directly to Step 8, where you can **“Go to Partner Center dashboard”**. Alternatively, you can go straight to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
 
-![Store developer website](images/new website.png)
+![Store developer website](images/new-website.png)
 
 2. **Click “Get started for free”** to begin.
 
