@@ -51,7 +51,7 @@ We’re progressively rolling out the new onboarding flow, starting with the Ind
 > **Note:** After clicking, you'll land on the "Apps & Games overview" page.  
 >
 > - If you don’t land there directly, wait for 5 minutes and refresh your browser until you see the **Apps & Games** tile on your page, then click on that tile.  
-> - Alternatively, you can navigate directly to the [Apps & Games overview page](https://partner.microsoft.com/dashboard/apps-games) and select **Apps & Games** from there.
+> - Alternatively, you can navigate directly to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp) and select **Apps & Games** from there.
 
 ![Account setup complete](images/apps-games-overview-page.png)
 
