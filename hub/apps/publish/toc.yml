@@ -385,7 +385,11 @@ items:
       - name: Close your developer account in Partner Center
         href: partner-center/close-your-developer-account-in-partner-center.md
       - name: Trademark and copyright protection
-        href: partner-center/trademark-and-copyright-protection.md                
+        href: partner-center/trademark-and-copyright-protection.md  
+- name: What's new
+  items:
+      - name: New onboarding flow for individual developers
+        href: whats-new-individual-developer.md                      
 - name: Microsoft Store policies and resources
   items: 
       - name: Microsoft Store Policies
