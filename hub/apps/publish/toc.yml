@@ -389,7 +389,11 @@ items:
 - name: What's new
   items:
       - name: New onboarding flow for individual developers
-        href: whats-new-individual-developer.md                      
+        href: whats-new-individual-developer.md  
+      - name: Revamped Health report in Partner Center
+        href: improved-health-report.md 
+      - name: Last Updated Date in Microsoft Store
+        href: last-update-date.md
 - name: Microsoft Store policies and resources
   items: 
       - name: Microsoft Store Policies
