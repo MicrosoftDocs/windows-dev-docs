@@ -8,9 +8,9 @@ ms.localizationpriority: medium
 
 # What’s new in onboarding for individual developers
 
-Individual developers will be able to use a new onboarding process to publish apps to the Microsoft Store without paying any onboarding fees. We’ll soon start to progressively roll out the new onboarding process, beginning with the India market.
+Individual developers will be able to use a new onboarding process to publish apps to the Microsoft Store without paying any registration fees. We’ll soon start to progressively roll out the new onboarding process, beginning with the India market.
 
-This page will be updated when the new process is available.
+This page will be updated when the new onboarding process is available.
 
 ## What’s New
 
