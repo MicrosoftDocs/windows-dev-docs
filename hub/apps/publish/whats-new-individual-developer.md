@@ -1,16 +1,16 @@
 ---
 description: This page describes what's new in test markets for invividual developers
 title: What’s New in Onboarding for Individual Developers
-ms.date: 06/24/2025
+ms.date: 07/22/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # What’s new in onboarding for individual developers
 
-Individual developers can now use the new onboarding flow to publish apps to the Microsoft Store without paying any onboarding fees.
+Individual developers will be able to use a new onboarding process to publish apps to the Microsoft Store without paying any onboarding fees. We’ll soon start to progressively roll out the new onboarding process, beginning with the India market.
 
-We’re progressively rolling out the new onboarding flow, starting with the India market. This page will be updated as we expand to more markets.
+This page will be updated when the new process is available.
 
 ## What’s New
 
