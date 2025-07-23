@@ -2,7 +2,8 @@
 title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
 ms.topic: get-started
-ms.date: 03/25/2025
+ms.date: 07/03/2025
+ms.custom: copilot-scenario-highlight
 ---
 
 # Get started using Python on Windows for beginners
