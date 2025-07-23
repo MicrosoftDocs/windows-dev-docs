@@ -6,6 +6,7 @@ ms.topic: how-to
 keywords: windows 10, windows 11, Microsoft Store submission API
 ms.localizationpriority: medium
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
+ms.custom: sfi-ga-nochange
 ---
 
 # Create and manage submissions

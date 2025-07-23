@@ -6,7 +6,9 @@ ms.date: 06/04/2024
 ms.topic: how-to
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API
 ms.localizationpriority: medium
-ms.custom: RS5
+ms.custom:
+  - RS5
+  - sfi-ga-nochange
 ---
 # Access analytics data using Store services
 

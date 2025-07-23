@@ -4,6 +4,7 @@ title: Package validation for MSI/EXE app
 ms.date: 10/30/2022
 ms.topic: how-to
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Package validation for MSI/EXE app

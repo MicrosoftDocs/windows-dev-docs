@@ -6,6 +6,7 @@ ms.date: 07/14/2025
 ms.topic: how-to
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Write a custom plugin for Windows Device Portal

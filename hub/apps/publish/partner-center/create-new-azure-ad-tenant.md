@@ -4,6 +4,9 @@ title: Create a new Azure AD tenant to associate with your Partner Center accoun
 ms.date: 11/07/2022
 ms.topic: how-to
 ms.localizationpriority: medium
+ms.custom:
+  - sfi-image-nochange
+  - sfi-ga-nochange
 ---
 
 # Create a new Azure AD tenant to associate with your Partner Center account

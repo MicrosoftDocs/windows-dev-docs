@@ -3,6 +3,7 @@ title: Use cases for passkeys
 description: This topic describes some use cases for passkeys.
 ms.topic: how-to
 ms.date: 08/06/2024
+ms.custom: sfi-image-nochange
 ---
 
 # Use cases for passkeys

@@ -3,6 +3,7 @@ title: Design guidelines for passkeys
 description: There are 14 design patterns for passkeys. You can get started with two essential patterns, and then add optional patterns to your passkeys deployment based on your unique business needs.
 ms.topic: article
 ms.date: 08/28/2024
+ms.custom: sfi-image-nochange
 ---
 
 # Design guidelines for passkeys
