@@ -490,4 +490,4 @@ PowerOcr is the internal name for Text Extractor.
 
 ## Contributing
 
-Refer to the [relevant devdocs](https://github.com/microsoft/PowerToys/tree/main/doc/devdocs/settingsv2/dsc-configure.md) section in the developer documentation to start working on the DSC module.
+Refer to the [relevant devdocs](https://github.com/microsoft/PowerToys/blob/main/doc/devdocs/core/settings/dsc-configure.md) section in the developer documentation to start working on the DSC module.
