@@ -8911,6 +8911,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/windows-app-sdk/windowing/windowing-overview.md",
+      "redirect_url": "/windows/apps/develop/ui-input/manage-app-windows",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/sudo/index.md",
       "redirect_url": "/windows/advanced-settings/sudo/",
       "redirect_document_id": false
