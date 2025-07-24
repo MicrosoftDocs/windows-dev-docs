@@ -22,6 +22,11 @@ Windowing functionality in a WinUI app is provided by a combination of the XAML 
 >
 > - **Important APIs**: [Window class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
 
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see Windowing samples in action](winui3gallery://category/MultipleWindows)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
 **XAML Window**
 
 In your app, the window object is an instance of the [Microsoft.UI.Xaml.Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class (or a derived class) that represents the window in your program code. You create it directly with a call to the constructor. The XAML Window is where you attach your app content and manage the lifecycle of your app's windows.

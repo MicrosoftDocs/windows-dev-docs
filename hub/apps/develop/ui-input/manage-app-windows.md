@@ -194,6 +194,9 @@ The window should have an owner when IsModal=true.
 
 To set the owner window in a WinUI app requires Win32 interop. For more information and example code, see the AppWindow page in the WinUI Gallery sample app.
 
+- [Launch the WinUI Gallery app](winui3gallery://item/AppWindow)
+- [Open ModalWindow.xaml.cs on GitHub](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/SamplePages/ModalWindow.xaml.cs)
+
 ### Apply a presenter
 
 A presenter can be applied to only a single window at a time. Trying to apply the same presenter to a second window throws an exception. That means that if you have multiple windows, and you want to switch each one into a specific presentation mode, then you need to create multiple presenters of the same kind, and then apply each to its own window.
