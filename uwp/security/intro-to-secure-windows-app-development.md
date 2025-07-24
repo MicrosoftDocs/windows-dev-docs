@@ -273,7 +273,7 @@ The app model also manages the app lifecycle. It limits the background execution
 
 When memory resources on the device are running low, Windows frees memory space by terminating apps. This lifecycle model forces apps to persist data whenever they’re suspended, because there is no additional time available between suspension and termination.
 
-For more information, see [It's Universal: Understanding the Lifecycle of a Windows 10/11 Application](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx).
+For more information, see [It's Universal: Understanding the Lifecycle of a Windows 10 Application](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx).
 
 ## 4.2 Stored credential protection
 

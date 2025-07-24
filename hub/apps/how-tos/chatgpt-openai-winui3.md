@@ -1,19 +1,19 @@
 ---
 title: How to add OpenAI chat completions to a WinUI desktop app
-description: Get started with WinUI 3 / Windows App SDK desktop apps by integrating OpenAI's chat completions API into the app. 
+description: Get started with WinUI 3 / Windows App SDK desktop apps by integrating OpenAI's text generation and prompting APIs into the app. 
 ms.topic: how-to
-ms.date: 11/26/2024
+ms.date: 07/24/2025
 keywords: windows app sdk, winappsdk, winui3, openai, chatgpt
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers
 content-type: how-to
-#Customer intent: As a Windows developer, I want to learn how to integrate OpenAI's chat completions API into my WinUI 3 / Windows App SDK desktop app so that I can build a chat-like interface that generates responses to messages.
+#Customer intent: As a Windows developer, I want to learn how to integrate OpenAI's text generation and prompting APIs into my WinUI 3 / Windows App SDK desktop app so that I can build a chat-like interface that generates responses to messages.
 ---
 
 # Add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app
 
-In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / Windows App SDK desktop app. We'll build a chat-like interface that lets you generate responses to messages using OpenAI's [chat completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api):
+In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / Windows App SDK desktop app. We'll build a chat-like interface that lets you generate responses to messages using OpenAI's [text generation and prompting APIs](https://platform.openai.com/docs/guides/text):
 
 :::image type="content" source="images/chatgpt-openai/long-story.png" alt-text="A screenshot of a less minimal WinUI chat app.":::
 
@@ -21,20 +21,14 @@ In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / W
 
 ## Prerequisites
 
-- Set up your development computer (see [Get started with WinUI](../get-started/start-here.md)).
-- Familiarity with the core concepts in *[How to build a Hello World app using C# and WinUI 3 / Windows App SDK](./hello-world-winui3.md)* - we'll build upon that how-to in this one.
+- Set up your development computer (see [Start developing Windows apps](../get-started/start-here.md)).
+- Familiarity with the core concepts in *[How to build a Hello World app using C# and WinUI / Windows App SDK](./hello-world-winui3.md)* - we'll build upon that how-to in this one.
 - An OpenAI API key from your [OpenAI developer dashboard](https://platform.openai.com/api-keys).
 - An OpenAI SDK installed in your project. Refer to the [OpenAI documentation](https://platform.openai.com/docs/libraries) for a list of community libraries. In this how-to, we'll use the official [OpenAI .NET API library](https://github.com/openai/openai-dotnet).
 
 ## Create a project
 
- 1. Open Visual Studio and create a new project via `File` > `New` > `Project`.
- 1. Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` C# project template.
- 1. Specify a project name, solution name, and directory. In this example, our `ChatGPT_WinUI3` project belongs to a `ChatGPT_WinUI3` solution, which will be created in `C:\Projects\`.
-
-After creating your project, you should see the following default file structure in your Solution Explorer:
-
-:::image type="content" source="images/chatgpt-openai/collapsed-file-structure-chatgpt.png" alt-text="A screenshot of the default directory structure in Solution Explorer.":::
+You create a new WinUI project in Visual Studio by following the steps in the [Create and launch your first WinUI app](/windows/apps/get-started/start-here#3-create-and-launch-your-first-winui-app) section of the [Start developing Windows apps](../get-started/start-here.md) article. For this example, enter `ChatGPT_WinUI3` as the project name and `ChatGPT_WinUI3` for the solution name when entering the project details in the dialog.
 
 ## Set your environment variable
 
@@ -176,7 +170,7 @@ Let's make the following improvements to the chat interface:
 - Add a `ScrollViewer` to the `StackPanel` to enable scrolling.
 - Add a `TextBlock` to display the GPT response in a way that's more visually distinct from the user's input.
 - Add a `ProgressBar` to indicate when the app is waiting for a response from the GPT API.
-- Center the `StackPanel` in the window, similar to ChatGPT's [web interface](https://chatgpt.com/).
+- Center the `StackPanel` in the window, similar to ChatGPT's [web interface](https://chatgpt.com).
 - Ensure that messages wrap to the next line when they reach the edge of the window.
 - Make the `TextBox` larger and responsive to the `Enter` key.
 
@@ -392,7 +386,7 @@ Your new-and-improved chat interface should look something like this:
 Here's what you accomplished in this how-to:
 
  1. You added OpenAI's API capabilities to your WinUI 3 / Windows App SDK desktop app by installing the official OpenAI library and initializing it with your API key.
- 1. You built a chat-like interface that lets you generate responses to messages using OpenAI's [chat completions API](https://platform.openai.com/docs/guides/text-generation/chat-completions-api).
+ 1. You built a chat-like interface that lets you generate responses to messages using OpenAI's [text generation and prompting APIs](https://platform.openai.com/docs/guides/text).
  1. You improved the chat interface by:
     1. adding a `ScrollViewer`,
     1. using a `TextBlock` to display the GPT response,
