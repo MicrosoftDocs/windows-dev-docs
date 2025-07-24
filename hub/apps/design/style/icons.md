@@ -9,7 +9,9 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.custom: RS5
+ms.custom:
+  - RS5
+  - sfi-image-nochange
 ---
 # Icons in Windows apps
 

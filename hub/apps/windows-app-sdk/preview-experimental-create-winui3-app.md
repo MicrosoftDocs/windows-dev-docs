@@ -5,7 +5,9 @@ ms.date: 07/14/2025
 ms.topic: how-to
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.localizationpriority: high
-ms.custom: 19H1
+ms.custom:
+  - 19H1
+  - sfi-image-nochange
 ---
 
 <!--todo: add to FAQ - "can we create a winui3 app without creating a win app sdk app?" - no, you build Windows desktop apps using the Win App SDK library. -->

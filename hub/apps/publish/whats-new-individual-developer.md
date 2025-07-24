@@ -26,7 +26,7 @@ This page will be updated when the new onboarding process is available.
 
 1. **Go to** [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com)
 
-   > **Note for existing developers:**  If you already have a developer account and sign in with an existing MSA, you will skip Steps 5–8 and be taken directly to Partner Center apps and games page. Alternatively, you can go straight to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
+   > **Note for existing developers:**  If you already have a developer account and sign in with an existing MSA, you will skip Steps 5–8 and be taken directly to Step 9. Alternatively, you can go straight to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
 
 ![Store developer website](images/new-website.png)
 
@@ -48,10 +48,13 @@ This page will be updated when the new onboarding process is available.
 
 8. Complete your account setup and click **“Go to Partner Center dashboard”**
 
-> **Note:** After clicking, you'll land on the "Apps & Games overview" page.  
->
-> - If you don’t land there directly, wait for 5 minutes and refresh your browser until you see the **Apps & Games** tile on your page, then click on that tile.  
-> - Alternatively, you can navigate directly to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp) after few minutes.
+9. After clicking, you’ll first be prompted with the **Microsoft account (MSA) picker**  
+> - Select the same account you used earlier to create your Store developer account.  
+> - Once signed in, you’ll land on the "Apps & Games overview" page.  
+
+> **Note:** If you're not taken there immediately:  
+> - Wait ~5 minutes and refresh your browser until you see the **Apps & Games** tile, then click it.  
+> - Or navigate directly to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp) after a few minutes.
 
 ![Account setup complete](images/apps-games-overview-page.png)
 

@@ -6,6 +6,7 @@ ms.date: 07/08/2024
 ms.topic: article
 keywords: windows 10, windows 11, uwp, security
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Intro to secure Windows app development

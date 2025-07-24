@@ -5,7 +5,9 @@ ms.topic: quickstart
 ms.date: 07/14/2025
 keywords: push, notification
 ms.localizationpriority: medium
-ms.custom: template-quickstart
+ms.custom:
+  - template-quickstart
+  - sfi-image-nochange
 ---
 
 # Quickstart: Push notifications in the Windows App SDK
