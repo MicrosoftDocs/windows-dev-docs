@@ -86,7 +86,7 @@ Copilot is powered by AI, so surprises and mistakes are possible. For more infor
 
 ### Extracting the MSI from the bundle
 
-Make sure to have [WiX Toolset v3](https://wixtoolset.org/docs/wix3) installed. The command doesn't work with WiX Toolset v4.
+Make sure to have [WiX Toolset v3](https://docs.firegiant.com/wix/wix3/) installed. The command doesn't work with WiX Toolset v4.
 
 This PowerShell example assumes the default install location for WiX Toolset and that the PowerToys installer has been downloaded to the Windows desktop.
 

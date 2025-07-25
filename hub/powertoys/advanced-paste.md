@@ -27,7 +27,7 @@ From the Settings menu, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Enable Paste with AI | Enables the AI-powered paste feature. An OpenAI API key is required (requires an account on [platform.openai.com](https://platform.openai.com/)). See [Paste text with AI](#paste-text-with-ai) for more information. |
+| Enable Paste with AI | Enables the AI-powered paste feature. An OpenAI API key is required (requires an account on [platform.openai.com](https://platform.openai.com/docs/overview)). See [Paste text with AI](#paste-text-with-ai) for more information. |
 | Enable advanced AI | Enables the Advanced AI feature which allows [Semantic Kernel](/semantic-kernel/overview/) to be used to define a chain of actions to be performed when using "Paste with AI". See [Paste with Advanced AI](#paste-with-advanced-ai) for more information.<br/><br/>This setting is off and disabled when Enable Paste with AI is disabled. When enabling Enable Paste with AI, Enable advanced AI is also enabled by default, allowing users immediate access to the feature. |
 | Custom format preview | Enable to preview the output of the custom format before pasting. |
 | Clipboard history | Enable to automatically save clipboard history. |
@@ -159,7 +159,7 @@ AI output when prompting to "Format the text as if it were written by Mark Twain
 > Say, have you heard the news? The newfangled Advanced Paste feature in PowerToys is finally here! It's a nifty tool that's sure to save you time and spruce up your writing. If you're in the market for a bit of writing wizardry, this here Advanced Paste just might be the ticket for ya.
 
 > [!NOTE]
-> As with any AI tool, the quality of the output is dependent on the quality of the input. The more context you provide, the better the AI will be able to understand and respond to your request. Be sure to carefully review the output before using it. Please see OpenAI's [privacy](https://openai.com/policies/privacy-policy) and [terms](https://openai.com/policies/terms-of-use) pages for more info on AI usage in this feature.
+> As with any AI tool, the quality of the output is dependent on the quality of the input. The more context you provide, the better the AI will be able to understand and respond to your request. Be sure to carefully review the output before using it. Please see OpenAI's [privacy](https://openai.com/policies/privacy-policy/) and [terms](https://openai.com/policies/terms-of-use/) pages for more info on AI usage in this feature.
 
 ### Paste with Advanced AI
 
