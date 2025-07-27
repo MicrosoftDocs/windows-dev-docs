@@ -1,7 +1,7 @@
 ---
 title: Assign product level custom permissions to account users
 description: Learn how to assign custom permissions at product level when adding users to your Partner Center account.
-ms.date: 10/30/2022
+ms.date: 07/27/2025
 ms.topic: article
 ms.localizationpriority: high
 ---
@@ -34,18 +34,21 @@ Note that some permissions cannot be set for add-ons. This is either because the
 | **Usage**  | Can view the <a href="..\usage-report.md">Usage report</a> for the product. | N/A | N/A  | N/A |
 | **Health** (including Near Real Time data) | Can view the <a href="..\health-report.md">Health report</a> for the product. |N/A | N/A | N/A |
 | **Reviews** | Can view the <a href="..\reviews-report.md">Reviews</a> report for the product. | N/A (to respond to reviews, the **Contact customer** permission must be granted) | N/A | N/A |
-| **Real time** | TBD | N/A | N/A | N/A |
+| **Xbox analytics** | Can view the <a href="..\xbox-analytics-report.md">Xbox analytics report</a> for the product. | N/A | N/A | N/A |
 
 ## Monetization
 
 | **Permission name** | **Read only** | **Read/write** | **Read only (Add‑on)** | **Read‑write (Add‑on)** |
 | ---------- | ---------- | ---------- |----------|----------|
 | **Promotional codes** | Can view <a href="..\generate-promotional-codes.md">promotional code</a> orders and usage info for the product and its add-ons, and can view usage info. | Can view, manage, and create <a href="..\generate-promotional-codes.md">promotional code</a> orders for the product and its add-ons, and can view usage info. | N/A (settings for parent product apply to all add-ons) | N/A (settings for parent product apply to all add-ons) |
+| **Store sale events** *| Can view sale event status for the product. | Can add the product to sale events and configure discounts. | Can view sale event status for the product. |Can add the product to sale events and configure discounts.  |
+
 
 ## Publishing
 
 | **Permission name** | **Read only** | **Read/write** | **Read only (Add‑on)** | **Read‑write (Add‑on)** |
 | ---------- | ---------- | ---------- |----------|----------|
+| **Product Setup** | Can view the product setup page of products. | Can view and edit the product setup page of products. | Can view the product setup page of add-ons. | Can view and edit the product setup page add-ons. |
 | **Pricing and availability** | Can view the <a href="../publish-your-app/msix/price-and-availability.md">Pricing and availability</a> page of products. | Can view and edit the <a href="../publish-your-app/msix/price-and-availability.md">Pricing and availability</a> page of products. | Can view the <a href="../publish-your-app/msix/price-and-availability.md">Pricing and availability</a> page of add-ons. | Can view and edit the <a href="../publish-your-app/msix/price-and-availability.md">Pricing and availability</a> page of add-ons. |
 | **Properties** | Can view the <a href="../publish-your-app/msix/enter-app-properties.md">Properties</a> page of products. | Can view and edit the <a href="../publish-your-app/msix/enter-app-properties.md">Properties</a> page of products. | Can view the <a href="../publish-your-app/msix/enter-app-properties.md">Properties</a> page of add-ons. | Can view and edit the <a href="../publish-your-app/msix/enter-app-properties.md">Properties</a> page of add-ons. |
 | **Age ratings** | Can view the <a href="../publish-your-app/msix/age-ratings.md">Age ratings</a> page of products. | Can view and edit the <a href="../publish-your-app/msix/age-ratings.md">Age ratings</a> page of products. | Can view the Age ratings page of add-ons. | Can view and edit the Age ratings page of add-ons. |
@@ -62,6 +65,13 @@ Note that some permissions cannot be set for add-ons. This is either because the
 
 | **Permission name** | **Read only** | **Read/write** | **Read only (Add‑on)** | **Read‑write (Add‑on)** |
 | ---------- | ---------- | ---------- |----------|----------|
+| **Relying Parties** \* | Can view the Relying parties page of an account. | Can view and edit the Relying parties page of an account. | N/A | N/A |
+| **Partner Services** * | Can view the Web services page of an account. | Can view and edit the Web services page of an account. | N/A | N/A |
+| **Xbox Test Accounts** * | Can view the Xbox Test Accounts page of an account. | Can view and edit the Xbox Test Accounts page of an account. | N/A | N/A |
+| **Xbox Test Accounts per Sandbox** * | Can view the Xbox Test Accounts page for only the specified sandboxes of an account. | Can view and edit the Xbox Test. | - | - |
+| **Accounts page for only the specified sandboxes of an account** | N/A | N/A | - | - |
+| **Xbox Devices** * | Can view the Xbox one development consoles page of an account. | Can view and edit the Xbox one development consoles page of an account. | N/A | N/A |
+| **Xbox Devices per Sandbox** * | Can view the Xbox one development consoles page for only the specified sandboxes of an account. | Can view and edit the Xbox one development consoles page for only the specified sandboxes of an account. | N/A | N/A |
 | **App Channels** * | N/A | Can publish promotional video channels to the Xbox console for viewing through OneGuide. | N/A | N/A |
 | **Service Configuration** * | Can view the Xbox Live Service configuration page of a product. | Can view and edit the Xbox Live Service configuration page of a product. | N/A | N/A |
 | **Tools Access** * | Can run Xbox Live tools on a product to only view data. | Can run Xbox Live tools on a product to view and edit data. | N/A | N/A |
