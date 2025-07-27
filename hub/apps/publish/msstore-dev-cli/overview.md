@@ -1,7 +1,7 @@
 ---
 description: The Microsoft Store Command Line Interface is a cross-platform CLI that helps developers access the Microsoft Store APIs, for both managed, as well as unmanaged applications.
 title: Microsoft Store Developer CLI
-ms.date: 11/30/2022
+ms.date: 07/27/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -38,7 +38,7 @@ Running in CI environments is also supported, and the Microsoft Store Developer 
 
 ## Commands
 
-These are the Microsoft Store Developer CLI (preview) available commands:
+These are the Microsoft Store Developer CLI available commands:
 
 | Command                                          | Description                                                                                                                        |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
