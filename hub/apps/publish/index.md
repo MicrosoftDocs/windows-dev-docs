@@ -1,9 +1,9 @@
 ---
 description: Learn how to publish your Windows apps and games to the Microsoft Store.
 title: Publish Windows apps and games to Microsoft Store
-ms.date: 12/4/2024
+ms.date: 07/27/2025
 ms.topic: get-started
-keywords: windows 10, uwp, publishing, publish, selling, sell, distribute, distributing, store, dashboard
+keywords: windows 10, windows 11, uwp, publishing, publish, selling, sell, distribute, distributing, store, dashboard, windows app, Microsoft Store, AI apps, desktop apps, Win32 apps, 
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ---
@@ -167,25 +167,25 @@ For more details, you can refer to the following reports.
 
 ## Leverage developer tools [MSIX/PWA]
 
-The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to run product page experiments, distribute your app using the web installer or CLI, package your app efficiently, and connect with your customers through promotions and engagement tools. These resources are designed to support your app’s success at every stage.
+The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to run product page experiments, distribute your app using the web installer or CLI, beta test new features using package flighting, and connect with your customers through promotions and engagement tools. These resources are designed to support your app’s success at every stage.
 
 To learn how to run product page experiments, you can watch the following video:
 
 </br>
 
-[PDP experiment video placeholder](#)
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=b2c661f6-cd9a-49d6-a195-9bf627b599a8]
 
-For guidance on packaging your app, see the video below:
-
-</br>
-
-[package flight video placeholder](#)
-
-To understand how to use the Store web installer, check out the following video:
+For guidance on beta testing using package flighting, see the video below:
 
 </br>
 
-[store web installer video placeholder](#)
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=1df7ae2b-c586-4e83-bf93-5459bdb85066]
+
+To understand how to use the Store web installer to distribute your app on web, check out the following video:
+
+</br>
+
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=3fc3492e-c0b9-4760-a25b-7a424f69e8f3]
 
 For more information, please visit [Leverage Developer Tools](../publish/msstore-dev-cli/overview.md) section.
 
@@ -310,18 +310,6 @@ There are different reports available for your apps, check the descriptions to f
 | [Health report](../publish/analyze-msi-exe/analyze-app-performance.md#health-report)     | Shows data related to the performance and quality of your app, including crashes and unresponsive events.                                                                      |
 | [Ratings & Reviews report](../publish/analyze-msi-exe/ratings-reviews-performance.md)    | See the rating and reviews your customers have left for your app and provide responses to let customers know you are listening to their feedback.                              |
 
-You can watch the following video to understand how to use Analytic APIs.
-
-</br>
-
-[Analytic APIs video placeholder](#)
-
-You can watch the following video to understand how to use Download Hub.
-
-</br>
-
-[Download Hub video placeholder](#)
-
 ## Leverage developer tools
 
 The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to distribute your app using the web installer, update your app through submission API and connect with your customers through engagement tools. These resources are designed to support your app’s success at every stage.
@@ -330,7 +318,7 @@ To understand how to use the Store web installer, check out the following video:
 
 </br>
 
-[store web installer video placeholder](#)
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=3fc3492e-c0b9-4760-a25b-7a424f69e8f3]
 
 For more information, please visit [Leverage Developer Tools](../publish/msstore-dev-cli/overview.md) section.
 
