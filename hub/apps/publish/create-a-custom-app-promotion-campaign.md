@@ -2,9 +2,9 @@
 description: How to promote your app using other channels.
 title: Create a custom app promotion campaign
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
-ms.date: 10/30/2022
+ms.date: 07/27/2025
 ms.topic: how-to
-keywords: windows 10, uwp, custom, app, promotion, campaign
+keywords: windows 10, windows 11, uwp, custom, app, promotion, campaign
 ms.localizationpriority: medium
 ---
 # Create a custom app promotion campaign
