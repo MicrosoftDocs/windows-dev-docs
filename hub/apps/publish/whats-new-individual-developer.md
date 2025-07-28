@@ -8,9 +8,12 @@ ms.localizationpriority: medium
 
 # What’s new in onboarding for individual developers
 
-A new onboarding process now allows individual developers to publish apps to the Microsoft Store without incurring any registration fees. This process is currently available to developers in India, and will be expanded to other markets gradually.
+A new onboarding process will soon allow individual developers to publish apps to the Microsoft Store without incurring any registration fees. We plan to roll out this improved experience gradually across markets.
  
-This documentation will be updated as the new onboarding process becomes available to other markets.
+This documentation will be updated as the new onboarding process becomes available.
+
+> [!NOTE]  
+> The new onboarding process was initially launched in India. However, due to an unexpected issue, we have temporarily rolled back this experience and it is not currently available in any market. We will update this page once the rollout resumes and becomes available in other regions.
 
 
 ## What’s New
@@ -70,7 +73,7 @@ You’ll be redirected to Partner Center to finish setup and publish your first 
 
 ### Do I need to pay the registration fee?
 
-No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/) in a flighted market (starting with India). If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
+No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/) in a flighted market. If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
 
 The free onboarding flow applies only to individual developers. Company accounts continue to pay a one-time $99 USD registration fee as part of the existing onboarding process.
 
