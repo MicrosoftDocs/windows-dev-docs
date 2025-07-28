@@ -12,6 +12,9 @@ A new onboarding process now allows individual developers to publish apps to the
  
 This documentation will be updated as the new onboarding process becomes available to other markets.
 
+> [!NOTE]  
+> The new onboarding process was initially launched in India. However, due to an unexpected issue, we have temporarily rolled back this experience and it is not currently available in any market. We will update this page once the rollout resumes and becomes available in other regions.
+
 
 ## What’s New
 
