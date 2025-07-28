@@ -48,7 +48,7 @@ For a WinUI 3 app, you handle activation for notifications by using the [AppNoti
 
 #### [Windows Community Toolkit](#tab/toolkit)
 
-[!INCLUDE [nuget package](../../../design/shell/tiles-and-notifications/includes/nuget-package.md)]
+[!INCLUDE [nuget package](../../../develop/notifications/app-notifications/includes/nuget-package.md)]
 
 This package adds the `ToastNotificationManagerCompat` API.
 
@@ -425,5 +425,5 @@ new ToastContentBuilder()
 ## Related topics
 
 * [Windows App SDK and supported Windows releases](../../support.md)
-* [Send a local toast notification from C# apps](../../../design/shell/tiles-and-notifications/send-local-toast.md)
-* [Send a local toast notification from Win32 C++ WRL apps](../../../design/shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md)
+* [Send a local toast notification from C# apps](../../../develop/notifications/app-notifications/send-local-toast.md)
+* [Send a local toast notification from Win32 C++ WRL apps](../../../develop/notifications/app-notifications/send-local-toast-desktop-cpp-wrl.md)

@@ -261,17 +261,66 @@ items:
               - name: Push notifications
                 items:
                   - name: Overview
-                    href: windows-app-sdk/notifications/push-notifications/index.md
+                    href: develop/notifications/push-notifications/index.md
                   - name: Quickstart
-                    href: windows-app-sdk/notifications/push-notifications/push-quickstart.md
+                    href: develop/notifications/push-notifications/push-quickstart.md
                   - name: Troubleshooting
-                    href: windows-app-sdk/notifications/push-notifications/troubleshooting.md
+                    href: develop/notifications/push-notifications/troubleshooting.md
               - name: App notifications
                 items:
                   - name: Overview
-                    href: windows-app-sdk/notifications/app-notifications/index.md
+                    href: develop/notifications/app-notifications/index.md
                   - name: Quickstart
-                    href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
+                    href: develop/notifications/app-notifications/app-notifications-quickstart.md
+                  - name: UX guidance
+                    href: develop/notifications/app-notifications/toast-ux-guidance.md
+                  - name: Send local notifications
+                    items:
+                      - name: C# apps
+                        href: develop/notifications/app-notifications/send-local-toast.md
+                      - name: C++ UWP apps
+                        href: develop/notifications/app-notifications/send-local-toast-cpp-uwp.md
+                      - name: C++ WRL apps
+                        href: develop/notifications/app-notifications/send-local-toast-desktop-cpp-wrl.md
+                      - name: Other apps
+                        href: develop/notifications/app-notifications/send-local-toast-other-apps.md
+                      - name: Activating app notifications from desktop apps
+                        href: develop/notifications/app-notifications/toast-desktop-apps.md
+                  - name: App notification content
+                    items:
+                      - name: Content
+                        href: develop/notifications/app-notifications/adaptive-interactive-toasts.md
+                      - name: Schema
+                        href: develop/notifications/app-notifications/toast-schema.md
+                  - name: Schedule notifications
+                    href: develop/notifications/app-notifications/scheduled-toast.md
+                  - name: Additional features
+                    items:
+                      - name: Custom audio
+                        href: develop/notifications/app-notifications/custom-audio-on-toasts.md
+                      - name: Progress bar
+                        href: develop/notifications/app-notifications/toast-progress-bar.md
+                      - name: Pending update
+                        href: develop/notifications/app-notifications/toast-pending-update.md
+                      - name: Custom timestamps
+                        href: develop/notifications/app-notifications/custom-timestamps-on-toasts.md
+                      - name: Collections
+                        href: develop/notifications/app-notifications/toast-collections.md
+                      - name: Headers
+                        href: develop/notifications/app-notifications/toast-headers.md
+                      - name: Notification Listener
+                        href: develop/notifications/app-notifications/notification-listener.md
+              - name: Notification delivery methods
+                href: develop/notifications/choosing-a-notification-delivery-method.md
+                items:
+                  - name: Notification channel types
+                    href: develop/notifications/channel-types.md
+                  - name: Periodic notifications
+                    href: develop/notifications/periodic-notification-overview.md
+              - name: Badge notifications
+                href: develop/notifications/badges.md
+              - name: Notifications Visualizer
+                href: develop/notifications/notifications-visualizer.md
           - name: OS integration
             items:
               - name: Overview
@@ -346,6 +395,8 @@ items:
                     href: develop/actions/action-json.md
                   - name: Action provider package manifest XML format
                     href: develop/actions/action-provider-manifest.md
+              - name: Pin your app to the taskbar
+                href: develop/windows-integration/pin-to-taskbar.md
               - name: DispatcherQueue
                 href: develop/dispatcherqueue.md
           - name: Performance
