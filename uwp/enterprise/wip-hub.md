@@ -4,7 +4,7 @@ MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows Information Protection (WIP)
-ms.date: 02/08/2017
+ms.date: 07/28/2025
 ms.topic: article
 keywords: windows 10, uwp, Windows Information Protection, enterprise data, enterprise data protection, edp, enlightened apps
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
@@ -13,6 +13,10 @@ ms.localizationpriority: medium
 # Windows Information Protection (WIP)
 
 __Note__ Windows Information Protection (WIP) policy can be applied to Windows 10, version 1607 or later.
+
+> NOTE
+> Starting in July 2022, Microsoft is deprecating Windows Information Protection (WIP). Microsoft will continue to support WIP on supported versions of Windows. New versions of Windows won't include new capabilities for WIP, and it won't be supported in future versions of Windows. For more information, see [Announcing sunset of Windows Information Protection](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/announcing-sunset-of-windows-information-protection/ba-p/3540520).
+> For your data protection needs, Microsoft recommends that you use [Microsoft Purview Information Protection](/microsoft-365/compliance/information-protection) and [Microsoft Purview Data Loss Prevention](/purview/dlp-learn-about-dlp). Purview simplifies the configuration set-up and provides an advanced set of capabilities.
 
 WIP protects data that belongs to an organization by enforcing policies that are defined by the organization. If your app is included in those polices, all data produced by your app is subject to policy restrictions. This topic helps you to build apps that more gracefully enforce these policies without having any impact on the user's personal data.
 
