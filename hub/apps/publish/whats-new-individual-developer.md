@@ -73,7 +73,7 @@ You’ll be redirected to Partner Center to finish setup and publish your first 
 
 ### Do I need to pay the registration fee?
 
-No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/) in a flighted market (starting with India). If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
+No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/) in a flighted market. If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
 
 The free onboarding flow applies only to individual developers. Company accounts continue to pay a one-time $99 USD registration fee as part of the existing onboarding process.
 
