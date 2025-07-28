@@ -8,9 +8,9 @@ ms.localizationpriority: medium
 
 # What’s new in onboarding for individual developers
 
-A new onboarding process now allows individual developers to publish apps to the Microsoft Store without incurring any registration fees. This process is currently available to developers in India, and will be expanded to other markets gradually.
+A new onboarding process will soon allow individual developers to publish apps to the Microsoft Store without incurring any registration fees. We plan to roll out this improved experience gradually across markets.
  
-This documentation will be updated as the new onboarding process becomes available to other markets.
+This documentation will be updated as the new onboarding process becomes available.
 
 > [!NOTE]  
 > The new onboarding process was initially launched in India. However, due to an unexpected issue, we have temporarily rolled back this experience and it is not currently available in any market. We will update this page once the rollout resumes and becomes available in other regions.
