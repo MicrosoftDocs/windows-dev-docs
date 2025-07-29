@@ -129,17 +129,17 @@ Next, you need to design the view to support the `AllNotes` model.
         <CommandBar DefaultLabelPosition="Right">
             <AppBarButton Icon="Add" Label="New note"/>
             <CommandBar.Content>
-                <TextBlock Text="Quick notes" Margin="12,8" 
+                <TextBlock Text="Quick notes" Margin="16,8" 
                        Style="{ThemeResource SubtitleTextBlockStyle}"/>
             </CommandBar.Content>
         </CommandBar>
 
         <ItemsView ItemsSource="{x:Bind notesModel.Notes}" 
-               Grid.Row="1" Margin="24" >
+               Grid.Row="1" Padding="16" >
             <ItemsView.Layout>
                 <UniformGridLayout MinItemWidth="200"
-                               MinColumnSpacing="20"
-                               MinRowSpacing="20"
+                               MinColumnSpacing="12"
+                               MinRowSpacing="12"
                                ItemsJustification="Start"/>
             </ItemsView.Layout>
         </ItemsView>
@@ -201,10 +201,10 @@ You need to specify a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsof
                         <RowDefinition Height="120"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="{x:Bind Text}" Margin="4"
+                    <TextBlock Text="{x:Bind Text}" Margin="12,8"
                                TextWrapping="Wrap"
                                TextTrimming="WordEllipsis"/>
-                    <Border Grid.Row="1" Padding="4,6,0,6"
+                    <Border Grid.Row="1" Padding="8,6,0,6"
                             Background="Gray">
                         <TextBlock Text="{x:Bind Date}"
                                    Foreground="White"/>
@@ -264,13 +264,13 @@ WinUI includes a variety of built-in resources that you can use to make your app
                     <RowDefinition Height="120"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="{x:Bind Text}" Margin="4"
+                <TextBlock Text="{x:Bind Text}" Margin="12,8"
                            TextWrapping="Wrap"
                            TextTrimming="WordEllipsis"/>
 
     <!-- ↓ Update this. ↓ -->
-                <Border Grid.Row="1" Padding="4,6,0,6"
-                        Background="{ThemeResource ControlAltFillColorSecondaryBrush}">
+                <Border Grid.Row="1" Padding="8,6,0,6"
+                        Background="{ThemeResource SubtleFillColorSecondaryBrush}">
                     <TextBlock Text="{x:Bind Date}"
                         Style="{StaticResource CaptionTextBlockStyle}"
                         Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
