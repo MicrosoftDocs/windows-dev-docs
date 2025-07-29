@@ -31,7 +31,7 @@ For device-specific setup instructions, see:
 - [Device Portal for Mobile](/windows/uwp/debug-test-perf/device-portal-mobile)
 - [Device Portal for Xbox](/windows/uwp/xbox-apps/device-portal-xbox)
 
-If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) to learn which WSUS KBs to allow in order to unblock the Developer Mode package.
+If you encounter problems enabling Developer Mode or Device Portal, visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) to learn which WSUS KBs to allow in order to unblock the Developer Mode package, or use the Feedback Hub app to report issues as described in the troubleshooting section below.
 
 ### SSH
 
@@ -75,11 +75,9 @@ There are several tools you can use to deploy an app from a Windows 10 PC to a W
 
 Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for remote deployment to this PC (using Device Portal from a browser or Device Discovery to enable SSH), but not for local development. Even if you encounter these issues, you can still deploy your app locally using Visual Studio (or from this device to another device).
 
-See the [Known Issues forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) to find workarounds for these issues (and others).
+If Developer Mode doesn't install correctly, we encourage you to file a feedback request using the Feedback Hub app.
 
 > [!NOTE]
-> If Developer Mode doesn't install correctly, we encourage you to file a feedback request.
->
 > 1. Install the [Feedback Hub app](https://apps.microsoft.com/store/detail/feedback-hub/9NBLGGH4R32N?hl=en-us&gl=us) (if you don't already have it) and open it.
 > 2. Click **Add new feedback**.
 > 3. Choose the **Developer Platform** category and the **Developer Mode** subcategory.
