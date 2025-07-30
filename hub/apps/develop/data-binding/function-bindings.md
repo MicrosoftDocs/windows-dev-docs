@@ -1,18 +1,19 @@
 ---
-description: Learn about using functions as the leaf step of the data binding path in the xBind markup extension.
-title: Functions in x:Bind with Windows App SDK
-ms.date: 12/13/2022
-ms.topic: article
-keywords: windows 10, windows 11, windows app sdk, xaml, winui, windows ui, xBind
+description: Learn about using functions as the leaf step of the data binding path in the xBind markup extension in WinUI apps with the Windows App SDK.
+title: Functions in x:Bind with WinUI
+ms.date: 07/30/2025
+ms.topic: concept-article
+keywords: windows 10, windows 11, windows app sdk, xaml, winui, windows ui, xBind, winui 3
 ms.localizationpriority: medium
+# Customer intent: As a Windows developer, I want to learn how to use functions in x:Bind so that I can simplify value conversion and create more complex bindings in my WinUI apps.
 ---
 
-# Functions in x:Bind with Windows App SDK
+# Functions in x:Bind with WinUI
 
 > [!NOTE]
 > For general info about using data binding in your app with `{x:Bind}` (and for an all-up comparison between `{x:Bind}` and `{Binding}`), see [Data binding in depth](data-binding-in-depth.md) and [{x:Bind} Markup Extension](/windows/uwp/xaml-platform/x-bind-markup-extension).
 
-In Windows App SDK apps, **{x:Bind}** supports using a function as the leaf step of the binding path. This enables:
+In WinUI apps, **{x:Bind}** supports using a function as the leaf step of the binding path. This enables:
 
 - A simpler way to achieve value conversion
 - A way for bindings to depend on more than one parameter
@@ -167,6 +168,9 @@ Multiple function arguments can be specified, separated by comma's (,)
 - Constant string enclosed in quotes – quotes are needed to designate it as a string. Hat (^) can be used to escape quotes in strings
 - Constant Number - for example -123.456
 - Boolean – specified as "x:True" or "x:False"
+
+> [!TIP]
+> [TargetNullValue](/windows/uwp/xaml-platform/x-bind-markup-extension#properties-that-you-can-set-with-xbind) will apply to the result of the function call, not to any bound arguments.
 
 ### Two way function bindings
 
