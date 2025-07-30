@@ -5,7 +5,7 @@ ms.date: 03/26/2025
 ms.topic: include
 ---
 
-This tutorial series demonstrates how to create a WinUI 3 app using XAML and C#. The app you'll create is a note app, where the user can create, save, and load multiple notes.
+This tutorial series demonstrates how to create a WinUI 3 app using XAML and C#. The app you'll create is a note app, where the user can create, save, and load multiple notes. You can download or view the code for this tutorial from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes).
 
 In this tutorial, you learn how to:
 
@@ -18,7 +18,7 @@ In this tutorial, you learn how to:
 > - Use navigation to move to and from pages in the app.
 > - Use resources like documentation and sample apps to create your own app.
 
-You'll use Visual Studio 2022 to create an app that you can use to enter a note and save it to local app storage. The app will have two pages:
+You'll use Visual Studio 2022 to create an app that you can use to enter a note and save it to local app storage. You can find the source code for this app here. The app will have two pages:
 
 - `NotePage` - a page for editing a single note.
 - `AllNotesPage` - a page to show all the saved notes.
@@ -27,11 +27,11 @@ The final application is shown below:
 
 _AllNotesPage_
 
-:::image type="content" source="../media/intro/final-all-notes.png" alt-text="Final screenshot of the notes app, showing three save notes.":::
+:::image type="content" border="false" source="../media/intro/final-all-notes.png" alt-text="Final screenshot of the notes app, showing three save notes.":::
 
 _NotePage_
 
-:::image type="content" source="../media/intro/final-note.png" alt-text="Final screenshot of the notes app, showing a new blank note.":::
+:::image type="content" border="false" source="../media/intro/final-note.png" alt-text="Final screenshot of the notes app, showing a new blank note.":::
 
 ## Create the Visual Studio project
 

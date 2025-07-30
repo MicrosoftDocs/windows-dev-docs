@@ -42,7 +42,7 @@ First, add the new page to the project:
                 HorizontalAlignment="Right"
                 Spacing="4"
                 Grid.Row="1" Grid.Column="1">
-            <Button Content="Save"/>
+            <Button Content="Save" Style="{StaticResource AccentButtonStyle}"/>
             <Button Content="Delete"/>
         </StackPanel>
     </Grid>
