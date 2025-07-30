@@ -378,13 +378,13 @@ PowerToys is a rapid-incubation, open source team aimed at providing power users
 
 These utilities have been deprecated and removed from PowerToys:
 
-### Video Conference Mute (Deprecated and removed on PowerToys 0.88)
+### Video Conference Mute (Deprecated and removed starting in PowerToys 0.88)
 
 :::row:::
     :::column:::
-        [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
+        [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](/previous-versions/windows/powertoys/video-conference-mute)
     :::column-end:::
     :::column span="2":::
-        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus.
+        [Video Conference Mute](/previous-versions/windows/powertoys/video-conference-mute) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus.
     :::column-end:::
 :::row-end:::
