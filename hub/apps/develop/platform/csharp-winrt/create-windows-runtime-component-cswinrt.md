@@ -1,5 +1,5 @@
 ---
-title: Walkthrough&mdash;Create a C#/WinRT component, and consume it from C++/WinRT
+title: Walkthrough—Create a C#/WinRT component, and consume it from C++/WinRT
 description: Author a Windows Runtime component with C#/WinRT, and consume it from a native application.
 ms.date: 03/15/2022
 ms.topic: article
