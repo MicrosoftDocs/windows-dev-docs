@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/powertoys/video-conference-mute.md",
+      "redirect_url": "/previous-versions/windows/powertoys/video-conference-mute",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/android/wsa/index.md",
       "redirect_url": "/previous-versions/windows/android/wsa/index",
       "redirect_document_id": false
