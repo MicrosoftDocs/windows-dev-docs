@@ -9129,6 +9129,11 @@
       "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-ux-guidance.md",
       "redirect_url": "../../../develop/notifications/app-notifications/toast-ux-guidance",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/windows-integration/microsoft-copliot-key-provider.md",
+      "redirect_url": "/windows/apps/develop/windows-integration/microsoft-copilot-key-provider",
+      "redirect_document_id": false
     }
   ]
 }
