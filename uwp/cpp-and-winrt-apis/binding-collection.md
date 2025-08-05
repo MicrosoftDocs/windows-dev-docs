@@ -1,7 +1,7 @@
 ---
 description: A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it.
 title: XAML items controls; bind to a C++/WinRT collection
-ms.date: 04/24/2019
+ms.date: 08/04/2025
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, collection
 ms.localizationpriority: medium
@@ -40,8 +40,8 @@ runtimeclass BookstoreViewModel
 ...
 ```
 
-> [!NOTE]
-> In the MIDL 3.0 listing above, note that the type of the **BookSkus** property is [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) of **BookSku**. In the next section of this topic, we'll be binding the items source of a [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) to **BookSkus**. A list box is an items control, and to correctly set the [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property, you need to set it to a value of type **IObservableVector**, or **IVector**, or of an interoperability type such as [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
+> [!IMPORTANT]
+> Binding to a collection with C++/WinRT is a little more nuanced than it is with C#. In the MIDL 3.0 listing above, note that the type of the **BookSkus** property is [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) of **BookSku**. In the next section of this topic, we'll be binding the items source of a [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) to **BookSkus**. A list box is an items control, and to correctly set the [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property, you need to set it to a value of type **IObservableVector**, or **IVector**, or of an interoperability type such as [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector). Otherwise, `{x:Bind}` will generate **E_INVALIDARG**, and `{Binding}` will fail silently.
 
 > [!WARNING]
 > The code shown in this topic applies to C++/WinRT version 2.0.190530.8 or later. If you're using an earlier version, then you'll need to make some minor tweaks to the code shown. In the MIDL 3.0 listing above, change the **BookSkus** property to [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) of [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). And then use **IInspectable** (instead of **BookSku**) in your implementation, too.
