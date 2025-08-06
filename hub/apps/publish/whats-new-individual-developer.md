@@ -1,7 +1,7 @@
 ---
 description: This page describes what's new in test markets for invividual developers
 title: What’s New in Onboarding for Individual Developers
-ms.date: 07/22/2025
+ms.date: 08/06/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -66,7 +66,7 @@ You’ll be redirected to Partner Center to finish setup and publish your first 
 If you need assistance with the new account onboarding process for individual developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process in **flighted markets**.
 
 For help with anything else — including account creation or management, app submission, app certification, or app analytics — please raise a support ticket [here](https://aka.ms/windowsdevelopersupport).  
-You can also explore guidance in our [publishing documentation](https://learn.microsoft.com/en-us/windows/apps/publish).
+You can also explore guidance in our [publishing documentation](/windows/apps/publish).
 
 
 ## Frequently Asked Questions (FAQs)
