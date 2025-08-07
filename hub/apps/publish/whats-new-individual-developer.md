@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# What’s new in onboarding for individual developers
+# Free developer registration for individual developers
 
 A new onboarding process is now being rolled out that allows individual developers to publish apps to the Microsoft Store without incurring any registration fees. The flow is currently live in five flighted markets: **India, United Kingdom, Ireland, New Zealand, and Australia**.
  
