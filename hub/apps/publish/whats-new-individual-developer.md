@@ -1,12 +1,12 @@
 ---
 description: This page describes what's new in test markets for invividual developers
-title: What’s New in Onboarding for Individual Developers
-ms.date: 08/06/2025
+title: Free developer registration for individual developers
+ms.date: 08/07/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# What’s new in onboarding for individual developers
+# Free developer registration for individual developers
 
 A new onboarding process is now being rolled out that allows individual developers to publish apps to the Microsoft Store without incurring any registration fees. The flow is currently live in five flighted markets: **India, United Kingdom, Ireland, New Zealand, and Australia**.
  
