@@ -1,7 +1,7 @@
 ---
 description: This page describes what's new in test markets for invividual developers
-title: What’s New in Onboarding for Individual Developers
-ms.date: 08/06/2025
+title: Free developer registration for individual developers
+ms.date: 08/07/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
