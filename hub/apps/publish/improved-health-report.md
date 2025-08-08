@@ -9,9 +9,6 @@ ms.localizationpriority: medium
 
 # What’s new: Improved Health Report in Partner Center
 
-> [!IMPORTANT] 
-> Improved Health report is being released to MSIX apps and games in phases.
-
 Quality is essential to the success of your app or game on Microsoft Store. To help you monitor and address quality issues more effectively, we will be introducing significant updates to the Health report in Partner Center.
 These enhancements are designed to make it easier to identify and analyse failures impacting your customers.
 
