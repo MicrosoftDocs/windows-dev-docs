@@ -1,7 +1,7 @@
 ---
 description: What’s new - Improved Health Report in Partner Center
 title: What’s new - Improved Health Report in Partner Center
-ms.date: 07/22/2025
+ms.date: 08/01/2025
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, analytics, health, crash, failure, hang, stack trace
 ms.localizationpriority: medium
