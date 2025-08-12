@@ -27,6 +27,8 @@ For all the latest Windows App SDK downloads, refer to the tables and links belo
 | [1.7.1 (1.7.250401001)](stable-channel.md#version-17) <br/> 04/08/2025 <br/> [Release notes](stable-channel.md#version-17) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.7.1) | [Installer (x64)](https://aka.ms/windowsappsdk/1.7/1.7.250401001/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.7/1.7.250401001/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.7/1.7.250401001/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.7/1.7.250401001/Microsoft.WindowsAppRuntime.Redist.1.7.zip) |
 | [1.7.0 (1.7.250310001)](stable-channel.md#version-17) <br/> 03/18/2025 <br/> [Release notes](stable-channel.md#version-17) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.7.0) | [Installer (x64)](https://aka.ms/windowsappsdk/1.7/1.7.250310001/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.7/1.7.250310001/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.7/1.7.250310001/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.7/1.7.250310001/Microsoft.WindowsAppRuntime.Redist.1.7.zip) |
 
+See [Archive of Windows App SDK downloads](downloads-archive.md) for prior releases.
+
 ## Preview release
 
 ### Windows App SDK 1.7 Preview
