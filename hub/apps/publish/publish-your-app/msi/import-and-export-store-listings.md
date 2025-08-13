@@ -46,6 +46,22 @@ Here’s an overview of what’s contained in each of the columns in the exporte
 Once you’ve exported your listings and saved your .csv file, you can edit your listing info directly in the .csv file. For each language added, there is a separate column with the name of the language as the heading. Do not change the name of the language exported in the .csv file. The changes you make in a column will be applied to the listing of that language.
 
 Most of the Store listing fields are optional. The Description, one Screenshot, Store logo (1:1 box art) and Applicable license terms are required for each listing. For all other fields, you can leave the field empty if you don’t want to include it in your listing.
+### Required field guidelines
+
+To ensure successful import, the required fields must contain valid content:
+
+- **Description**: Must contain text (not empty or whitespace only). Character limit: 10,000 characters. This field tells customers what your app does.
+- **Applicable license terms**: Must contain text (not empty or whitespace only). Character limit: 10,000 characters. This should specify the license under which your app is distributed (e.g., "Commercial license", "MIT License", "Proprietary", etc.).
+- **Screenshots1**: Must contain a valid relative path to an image file in your import folder.
+- **StoreLogos1**: Must contain a valid relative path to a 1:1 aspect ratio image file in your import folder.
+
+**Example of properly filled required fields in CSV:**
+```
+Description: "MyApp is a productivity tool that helps you manage your daily tasks efficiently. It features task scheduling, reminders, and team collaboration capabilities."
+Applicable license terms: "Commercial license. All rights reserved."
+Screenshots1: "images/screenshot1.png"
+StoreLogos1: "images/logo_1x1.png"
+```
 
 Many of the fields in your exported listings require text entry, such as the ones in the example above, Description and WhatsNew. For these types of fields, simply enter the appropriate text into the field for each language. Be sure to follow the length and other requirements for each field. For more info on these requirements, see [Create app Store listings](./create-app-store-listing.md).
 
@@ -57,6 +73,8 @@ Providing info for fields that correspond to assets, such as images, are a bit m
 ## Import listing
 
 Once you have entered all your changes into the .csv file (and included any assets you want to upload), you’ll need to save your file before uploading it.
+> [!IMPORTANT]
+> Make sure your .csv file is saved with UTF-8 encoding. If you're using Microsoft Excel, save as "CSV UTF-8 (Comma delimited) (*.csv)". Incorrect file encoding can cause import failures even when the content appears correct.
 
 When you’re ready to upload the updated .csv file and import your listing data, select Import listing on your app’s Store listing page. When you are importing the listing for the first time, you will have to upload the listing using a folder which will have the exported .csv file and all the assets. Make sure there is only one .csv file in your folder, along with any assets you’re uploading.
 
@@ -72,6 +90,8 @@ Refer to the table below for the error messages, their meaning, and the recommen
 | "The .csv file is empty. Please ensure that the file has the required info."                                                                         | You might have uploaded a blank .csv file. From the Store listing page, export the latest .csv file.                                                                                                                                                  |
 | “The field is either not present or invalid. Please use the correct template by exporting the listing.”                                              | You might have deleted an existing field or added a new field in the exported .csv file. Export the .csv file from the Store listing page. Do not change any of the fields in the .csv file.                                                          |
 | “The language codes are either invalid or listing is not available for the languages. Please use the most recent template by exporting the listing.” | You might have edited the language code in the exported .csv file or you might have added a new language code which is not present in the Store listing page. From the Store listing page, select the required languages and then export the listing. |
+| "Description is missing" or "Description field is required"                                                                                             | The Description field contains no text or only whitespace. Ensure the Description field contains meaningful text describing your app (up to 10,000 characters). Example: "MyApp is a productivity tool that helps manage daily tasks."               |
+| "Applicable license terms is missing" or "Applicable license terms field is required"                                                                  | The Applicable license terms field contains no text or only whitespace. Ensure this field contains valid license information (up to 10,000 characters). Example: "Commercial license", "MIT License", or "Proprietary license".                      |
 | “All the selected languages are not present in the imported .csv file. Please use the most recent template by exporting the listing.”                | You might have removed a language code in the .csv file. Export the .csv file from the Store listing page. Do not change any of the language codes in the .csv file.                                                                                  |
 
 You can continue to make updates to your listings either by importing another updated .csv file, or by making changes directly in Partner Center.
