@@ -1,10 +1,10 @@
 ---
-title: PowerToys Quick Accent utility for Windows
+title: PowerToys Quick Accent Utility for Windows
 description: Quick Accent is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
-ms.date: 11/19/2024
+ms.date: 08/01/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Quick Accent, Win]
-# Customer intent: As a Windows power user, I want to learn about the Quick Accent utility in PowerToys for Windows.
+# Customer intent: As a Windows power user, I want to learn how to configure and use the Quick Accent utility in PowerToys for Windows.
 ---
 
 # Quick Accent utility
@@ -27,40 +27,41 @@ With the dialog enabled, keep pressing your activation key.
 
 You can limit the available characters by selecting character sets from the settings menu. Available character sets are:
 
-* Catalan
-* Currency
-* Croatian
-* Czech
-* Danish
-* Gaeilge
-* Gàidhlig
-* Dutch
-* Greek
-* Estonian
-* Finnish
-* French
-* German
-* Hebrew
-* Hungarian
-* Icelandic
-* Italian
-* Kurdish
-* Lithuanian
-* Macedonian
-* Māori
-* Norwegian
-* Pinyin
-* Polish
-* Portuguese
-* Romanian
-* Slovak
-* Slovenian
-* Spanish
-* Serbian
-* Serbian Cyrillic
-* Swedish
-* Turkish
-* Welsh
+- Catalan
+- Currency
+- Croatian
+- Czech
+- Danish
+- Gaeilge
+- Gàidhlig
+- Dutch
+- Greek
+- Estonian
+- Finnish
+- French
+- German
+- Hebrew
+- Hungarian
+- Icelandic
+- Italian
+- Kurdish
+- Lithuanian
+- Macedonian
+- Māori
+- Norwegian
+- Pinyin
+- Polish
+- Portuguese
+- Romanian
+- Slovak
+- Slovenian
+- Spanish
+- Serbian
+- Serbian Cyrillic
+- Swedish
+- Turkish
+- Vietnamese
+- Welsh
 
 ## Settings
 
