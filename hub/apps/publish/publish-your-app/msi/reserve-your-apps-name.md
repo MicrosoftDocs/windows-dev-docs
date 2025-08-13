@@ -46,3 +46,12 @@ Choosing the right name for your app is important. Pick a name that will capture
 If this is unavoidable, use different logos and app images to make it easier to differentiate one app from another.
 
 **Do not include emojis in your name**. You will not be able to reserve a name that includes emojis or other unsupported characters.
+
+## Next steps for MSI/EXE app development
+
+After reserving your app name, you may want to explore technical implementation topics for your MSI or EXE application:
+
+- **UI controls and accessibility**: Learn about implementing docking controls, drag and drop, and other UI patterns. See [Control patterns and interfaces](../../../design/accessibility/control-patterns-and-interfaces.md) for UI Automation patterns including docking functionality.
+- **App updates**: Plan how your application will handle updates after publication. See [Publish update to your MSI/EXE app on the Store](./publish-update-to-your-app-on-store.md) for Store update guidance.
+- **Desktop app development**: Find comprehensive guidance for building Windows desktop applications at [Build desktop apps for Windows](../../../desktop/index.yml).
+- **Continue with app submission**: Once your name is reserved, proceed to [Create your MSI/EXE app submission](./create-app-submission.md) to begin the publishing process.
