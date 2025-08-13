@@ -66,6 +66,15 @@ The following error codes are related to [self-installing package updates](../pa
 | 0x803F6206   | User consent is required to download and install the package update because the download will occur on a metered network connection.     |
 
 
+## Microsoft Store installation error codes
+
+The following error codes are related to app installation failures through the Microsoft Store.
+
+|  Error code  |  Description  |
+|--------------|---------------|
+| 0x8A15004A   | The app installation failed due to a Microsoft Store service issue. This error typically occurs when there are temporary problems with the Store's installation services. To resolve this issue, try installing the app again later, check for Windows updates, reset the Microsoft Store cache by running "wsreset.exe" in an elevated command prompt, or contact the app developer for assistance. |
+
+
 ## Related topics
 
 * [In-app purchases and trials](in-app-purchases-and-trials.md)

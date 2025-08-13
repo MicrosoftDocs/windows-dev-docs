@@ -152,3 +152,29 @@ The Failure hits chart shows the number of daily crashes and events that cus
 ### Failures
 
 The Failures chart shows the total number of crashes and events over the selected period of time by failure name. Each failure name is made up of four parts: one or more problem classes, an exception/bug check code, the name of the image/driver where the failure occurred, and the associated function name. By default, we show you the failure that had the most hits on top and continue downward from there. You can reverse this order by toggling the arrow in the Hits column of this chart. For each failure, we also show its percentage of the total number of failures.
+## Troubleshooting Microsoft Store installation failures
+
+If users are experiencing installation failures when trying to install your MSI or EXE app through the Microsoft Store, review the following common issues and solutions:
+
+### Common installation error codes
+
+**Error 0x8A15004A**: This error typically indicates a Microsoft Store service issue during app installation. This can occur due to temporary problems with the Store's installation services or backend infrastructure.
+
+**Recommended solutions for users:**
+- Wait and try installing the app again later, as this is often a temporary issue
+- Check for and install any pending Windows updates
+- Reset the Microsoft Store cache by running `wsreset.exe` in an elevated command prompt
+- Sign out and sign back into the Microsoft Store
+- Restart the device and try again
+
+**For developers:**
+- Monitor your app's installation metrics in Partner Center to identify patterns
+- Check if the issue affects all users or specific device configurations
+- Review your app package for any recent changes that might have introduced compatibility issues
+- Consider filing a support request with Microsoft if the issue persists across multiple users
+
+### Additional troubleshooting resources
+
+For more detailed troubleshooting of Microsoft Store operations and error codes, see [Error codes for Store operations](/uwp/monetize/error-codes-for-store-operations).
+
+If installation issues persist, you can also direct users to the [Microsoft Store troubleshooting guide](https://support.microsoft.com/help/4027498/microsoft-store-fix-problems-with-apps) for additional resolution steps.
