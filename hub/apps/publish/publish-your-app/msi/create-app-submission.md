@@ -81,7 +81,7 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Language**               | **Required** | At least one language is required                                     |
 | **Architecture**           | **Required** |                                                                       |
 | **Installer parameters**   | **Required** | Support for silent install is required. Other parameters are optional |
-| **App type**               | **Requited** | Specify between EXE and MSI                                           |
+| **App type**               | **Required** | Specify between EXE and MSI                                           |
 | **Installer handling URL** | **Not Required** |                                           |
 
 ## Store listings page
