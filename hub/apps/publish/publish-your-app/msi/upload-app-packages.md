@@ -209,4 +209,4 @@ After adding the package, click on Save draft. You will be back on Manage Packag
 
 ## Device family availability
 
-MSI or EXE apps are available to download from Store for Windows 10 and 11 desktop devices.
+MSI or EXE apps are available to download from Store for Windows 10 or Windows 11 desktop devices.
