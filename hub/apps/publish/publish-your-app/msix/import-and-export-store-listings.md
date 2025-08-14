@@ -1,12 +1,12 @@
 ---
 description: Import and export store listings for your MSIX app so you can reuse them later
-title: Import and export store listings for MSIX app
+title: Import and export store listings for your MSIX app
 ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Import and export store listings for MSIX app
+# Import and export store listings for your MSIX app
 
 Instead of [entering info for your Store listings directly in Partner Center](./create-app-store-listing.md), you have the option to add or update info by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. You can use this method to create listings from scratch, or to update listings you’ve already created.
 
