@@ -16,7 +16,7 @@ In this tutorial, you learn how to:
 > [!div class="checklist"]
 > * Set up your environment for .NET MAUI development and create a .NET MAUI project
 > * Register your client app in Azure
-> * Integrate with [Azure Identity](/graph/azuread-identity-access-management-concept-overview) and the Microsoft Graph SDK
+> * Integrate with [Azure Identity](/graph/identity-network-access-overview) and the Microsoft Graph SDK
 > * Update the user interface to display user information from [Microsoft Graph](/graph/)
 
 ## Prerequisites
