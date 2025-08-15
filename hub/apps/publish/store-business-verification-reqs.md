@@ -86,7 +86,7 @@ Then, expand and edit the **Contact Info** section. Select **Update**.
 
 ![DUNS ID input location in Partner Center](images\account-verify-duns.png)
 
-* **Upload document:** You can choose this option if you don’t have a DUNS ID. Select type of the document you will upload from the list provided, then unload the file. upload the file. Note that approval may take significantly longer as the document must go through a review process. 
+* **Upload document:** You can choose this option if you don’t have a DUNS ID. Select type of the document you will upload from the list provided, then upload the file. Note that approval may take significantly longer as the document must go through a review process. 
 
 ![Upload Document location in Partner Center](images\account-verify-upload.png)
 
@@ -117,7 +117,7 @@ Submitted information should be checked for accuracy. Keep the following tips in
 * Some users experience the **Save** button being greyed out. This usually indicates a formatting error with the provided information.  Possible reasons include:
 	- Submitted zip codes must include spaces when necessary.
 	- Submitted Website URLs are required to start with `https://`.
-	- The primary contact (aka seller contact email provided should not be a generic email or a group aliass. An OTP (one time password) will be sent to verify the email is valid. We do not allow plus addressing (abc+xyz@m.com) 
+	- The primary contact (aka seller contact email provided should not be a generic email or a group alias. An OTP (one time password) will be sent to verify the email is valid. We do not allow plus addressing (abc+xyz@m.com) 
 	- If a primary contact email is updated, make sure to verify the email with OTP using ‘Verify email’ button. 
 	- If a new address is provided for customer contact information, it will likely need to be validated. Validate by clicking on the **Validate address** button that appears. If the button is not present, no action is required.  
 
@@ -162,7 +162,7 @@ Publishers rejected for any reason can learn the reason for rejection and the st
 
 If vetting is rejected, utilize the **Fix now** button in Partner Center to provide additional information. 
 
-![Fix rejeciton location in Partner Center](images\account-verify-fix-rejection.png)
+![Fix rejection location in Partner Center](images\account-verify-fix-rejection.png)
 
 There are different types of verifications: 
 

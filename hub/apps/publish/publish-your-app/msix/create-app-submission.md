@@ -38,7 +38,7 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Category**                 | **Required** |
 | **Subcategory**              | Not required |
 | **Secondary category**       | Not required |
-| **Privacy policy URL**       | **Required** if your app collects/trasmits personal information |  
+| **Privacy policy URL**       | **Required** if your app collects/transmits personal information |  
 | **Website**                  | Not required |
 | **Support contact info**     | **Required** if your product is available on Xbox. |
 | **Contact details**          | **Required** for business/company accounts |
@@ -61,6 +61,9 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Device family availability** | Not required |                                |
 | **Gradual package rollout**    | Not required |                                |
 | **Mandatory update**           | Not required |                                |
+
+> [!NOTE]
+> The Packages section will show as "Incomplete" until all required fields are completed, even if individual packages show "Validated" status. Package validation confirms that uploaded files are valid, but section completion requires that all mandatory package-related configurations are set. For detailed guidance on package upload and validation, see [Upload app packages](./upload-app-packages.md).
 
 ### Store listings
 
@@ -112,7 +115,6 @@ To add or remove:
 3. On the Notification audience overview page, add or remove audience
 
 > [!NOTE]
->
 > - The owner of your developer account is always notified and can’t be removed from the audience list.
 > - The audience list is product specific and applied to all submissions of the product. To modify the notification recipients for a different product, follow the steps above for each product.
 > - Add-on inherits parent product’s audience list and can’t be managed separately.
