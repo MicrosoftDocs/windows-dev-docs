@@ -81,6 +81,221 @@ If your app is packaged (including packaged with an external location), you can 
 
 If your app is a packaged Win32 app, then create a Package Family Name (PFN) mapping request by emailing [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) with subject line "Windows App SDK Push Notifications Mapping Request" and body "PFN: \[your PFN\]", AppId: \[your APPId\], ObjectId: \[your ObjectId\]. Mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
 
+## Quickest start: Console app template to working sample
+
+Once you have your Azure AppId, ObjectId, and secret, you can add those credentials to the sample code below. If you want a more step by step tutorial, start at [Configure your app to receive push notifications](#configure-your-app-to-receive-push-notifications).
+
+### Step 1: Initialize the Console App template
+
+In Visual Studio, click "Create a new project". In the dropdown boxes, filter the language to "C++", platform to "Windows", and project type to "Console". Select the "Console App" template. 
+
+If you cannot find the template, you can add the workload [workload] or [individual component] by going back to the VS Installer and selecting "Modify" next to the installation of Visual Studio.
+
+Once you select the template, click "Next". Choose a name for your solution. Make note of this name because you will need it later. Then click "Create".
+
+When Visual Studio opens, you should find the following in your Solution Explorer:
+![alt text](image.png)
+
+### Step 2: Add in sample code
+
+First, we will add a file called `packages.config`, which contains the libraries for the sample to run:
+
+```xaml
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="Microsoft.Windows.CppWinRT" version="2.0.240405.15" targetFramework="native" />
+  <package id="Microsoft.Windows.ImplementationLibrary" version="1.0.220914.1" targetFramework="native" />
+  <package id="Microsoft.Windows.SDK.BuildTools" version="10.0.22621.756" targetFramework="native" />
+  <package id="Microsoft.WindowsAppSDK" version="1.5.240227000" targetFramework="native" />
+</packages>
+```
+
+![NOTE] If you're finding extra spaces when you paste in the xml, ensure the file extension is `.config`, not `.cpp` (or `.config.cpp`). Visual Studio may make the file a `.cpp` file by default.
+
+Next, update the `{yoursolutionname}.vcxproj` file. To edit it, right click on your project file (just under your solution) and select "Unload project". If it asks you to save any files, click "Yes".
+![alt text](image-1.png)
+
+Your project should then look like this:
+![alt text](image-2.png)
+
+Double click the project now and `{yoursolutionname.vcxproj}` will appear:
+
+![alt text](image-3.png)
+
+
+
+Next, add in the code for `{yoursolutionname}.cpp`:
+```cpp
+#include <iostream>
+#include <winrt/Microsoft.Windows.PushNotifications.h>
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Microsoft.Windows.AppLifecycle.h>
+#include <winrt/Windows.ApplicationModel.Background.h>
+#include <wil/cppwinrt.h>
+#include <wil/result.h>
+
+using namespace winrt::Microsoft::Windows::PushNotifications;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Microsoft::Windows::AppLifecycle;
+
+// To obtain an AAD RemoteIdentifier for your app,
+// follow the instructions on https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
+winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this with your own Azure ObjectId
+
+winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChannelAsync()
+{
+    auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(remoteId);
+
+    // Set up the in-progress event handler
+    channelOperation.Progress(
+        [](auto&& sender, auto&& args)
+        {
+            if (args.status == PushNotificationChannelStatus::InProgress)
+            {
+                // This is basically a noop since it isn't really an error state
+                std::cout << "Channel request is in progress." << std::endl << std::endl;
+            }
+            else if (args.status == PushNotificationChannelStatus::InProgressRetry)
+            {
+                LOG_HR_MSG(
+                    args.extendedError,
+                    "The channel request is in back-off retry mode because of a retryable error! Expect delays in acquiring it. RetryCount = %d",
+                    args.retryCount);
+            }
+        });
+
+    auto result = co_await channelOperation;
+
+    if (result.Status() == PushNotificationChannelStatus::CompletedSuccess)
+    {
+        auto channelUri = result.Channel().Uri();
+
+        std::cout << "channelUri: " << winrt::to_string(channelUri.ToString()) << std::endl << std::endl;
+
+        auto channelExpiry = result.Channel().ExpirationTime();
+
+        // Caller's responsibility to keep the channel alive
+        co_return result.Channel();
+    }
+    else if (result.Status() == PushNotificationChannelStatus::CompletedFailure)
+    {
+        LOG_HR_MSG(result.ExtendedError(), "We hit a critical non-retryable error with channel request!");
+        co_return nullptr;
+    }
+    else
+    {
+        LOG_HR_MSG(result.ExtendedError(), "Some other failure occurred.");
+        co_return nullptr;
+    }
+
+};
+
+PushNotificationChannel RequestChannel()
+{
+    auto task = RequestChannelAsync();
+    if (task.wait_for(std::chrono::seconds(300)) != AsyncStatus::Completed)
+    {
+        task.Cancel();
+        return nullptr;
+    }
+
+    auto result = task.GetResults();
+    return result;
+}
+
+void SubscribeForegroundEventHandler()
+{
+    winrt::event_token token{ PushNotificationManager::Default().PushReceived([](auto const&, PushNotificationReceivedEventArgs const& args)
+    {
+        auto payload{ args.Payload() };
+
+        std::string payloadString(payload.begin(), payload.end());
+        std::cout << "\nPush notification content received in the FOREGROUND: " << payloadString << std::endl;
+    }) };
+
+    std::cout << "Push notification foreground event handler registered." << std::endl;
+}
+
+int main()
+{
+    // Set up an event handler, so we can receive notifications in the foreground while the app is running.
+    // You must register notification event handlers before calling Register(). Otherwise, the following runtime
+    // exception will be thrown: System.Runtime.InteropServices.COMException: 'Element not found. Must register
+    // event handlers before calling Register().'
+    SubscribeForegroundEventHandler();
+
+    // Register the app for push notifications.
+    PushNotificationManager::Default().Register();
+
+    auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
+    switch (args.Kind())
+    {
+    case ExtendedActivationKind::Launch:
+    {
+        std::cout << "App launched by user or from the debugger." << std::endl;
+        if (PushNotificationManager::IsSupported())
+        {
+            std::cout << "Push notifications are supported on this device." << std::endl;
+
+            // Request a WNS Channel URI which can be passed off to an external app to send notifications to.
+            // The WNS Channel URI uniquely identifies this app for this user and device.
+            PushNotificationChannel channel{ RequestChannel() };
+            if (!channel)
+            {
+                std::cout << "\nThere was an error obtaining the WNS Channel URI" << std::endl;
+
+                if (remoteId == winrt::guid{ "00000000-0000-0000-0000-000000000000" })
+                {
+                    std::cout << "\nThe ObjectID has not been set. Refer to the readme file accompanying this sample\nfor the instructions on how to obtain and setup an ObjectID" << std::endl;
+                }
+            }
+
+            std::cout << "\nPress 'Enter' at any time to exit App." << std::endl;
+            std::cin.ignore();
+        }
+        else
+        {
+            std::cout << "Push notifications are NOT supported on this device." << std::endl;
+            std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
+            std::cin.ignore();
+        }
+    }
+    break;
+
+    case ExtendedActivationKind::Push:
+    {
+        std::cout << "App activated via push notification." << std::endl;
+        PushNotificationReceivedEventArgs pushArgs{ args.Data().as<PushNotificationReceivedEventArgs>() };
+
+        // Call GetDeferral to ensure that code runs in low power
+        auto deferral{ pushArgs.GetDeferral() };
+
+        auto payload{ pushArgs.Payload() };
+
+        // Do stuff to process the raw notification payload
+        std::string payloadString(payload.begin(), payload.end());
+        std::cout << "\nPush notification content received in the BACKGROUND: " << payloadString.c_str() << std::endl;
+        std::cout << "\nPress 'Enter' to exit the App." << std::endl;
+
+        // Call Complete on the deferral when finished processing the payload.
+        // This removes the override that kept the app running even when the system was in a low power mode.
+
+        deferral.Complete();
+        std::cin.ignore();
+    }
+    break;
+
+    default:
+        std::cout << "\nUnexpected activation type" << std::endl;
+        std::cout << "\nPress 'Enter' to exit the App." << std::endl;
+        std::cin.ignore();
+        break;
+    }
+}
+```
+
+
+
 ## Configure your app to receive push notifications
 
 ### Step 1: Add namespace declarations
