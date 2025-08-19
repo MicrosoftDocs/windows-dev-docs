@@ -93,6 +93,12 @@ Add the namespace for Windows App SDK push notifications `Microsoft.Windows.Push
 using namespace winrt::Microsoft::Windows::PushNotifications;
 ```
 
+> [!NOTE] 
+> If this is the first time you are using Windows App SDK in your project and it is packaged with external location or unpackaged, make sure the Windows App SDK is initialized either with auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>` in the `.vcxproj` file) or use the bootstrapper API.
+>
+> Otherwise, the app will throw `System.Runtime.InteropServices.COMException (0x80040154): Class not registered (0x80040154 (REGDB_E_CLASSNOTREG))` and will not run.
+>
+>See [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more details.
 
 ### Step 2: Add your COM activator to your app's manifest
 
