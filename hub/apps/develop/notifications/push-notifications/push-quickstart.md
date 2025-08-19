@@ -146,6 +146,11 @@ Update your app's `main()` method to add the following:
 
 > [!IMPORTANT]
 > You must call **PushNotificationManager::Default().Register** before calling [AppInstance.GetCurrent.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs).
+>
+> You also must register any [PushNotificationManager.PushReceived](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.pushreceived) event handlers before calling PushNotificationManager.Register(). Otherwise, the following runtime exception will be thrown:
+> ```
+> System.Runtime.InteropServices.COMException: Element not found. Must register event handlers before calling Register().
+> ```
 
 
 The following sample is from the sample packaged app found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/cpp-console-packaged).
