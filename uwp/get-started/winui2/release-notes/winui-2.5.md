@@ -69,7 +69,7 @@ The following image shows a NavigationView with *Account*, *Your Cart*, and *Hel
 >
 > If the gallery app is installed already, click [**WinUI 2 Gallery**](winui2gallery:) to open it.
 >
-> If it's not installed, download the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+> If it's not installed, download the [**WinUI 2 Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
 >
 > You can also get the source code from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (select the *winui2* branch).
 
