@@ -33,7 +33,7 @@ Select the **Close** button of the cropped window to close it and restore the or
 
 ### Thumbnail
 
-Creates a window that shows the selected area of the original window. Any changes to the original window's selected area will be reflected on the thumbnail, but the original application can't be controlled through the thumbnail. This mode has the best compatibility.
+Creates a window that shows the selected area of the original window. Any changes to the original window's selected area will be reflected on the thumbnail, but the original application can't be controlled through the thumbnail. This mode has the best compatibility across apps.
 
 ### Reparent
 
@@ -43,7 +43,7 @@ Not every window will react well to being contained in another application so th
 
 ### Screenshot
 
-Creates a window that shows the selected area of the original window as a frozen snapshot. This mode has good compatibility as well.
+Creates a window that shows the selected area of the original window as a frozen snapshot. This mode has good compatibility across apps as well.
 
 ## Known issues
 
