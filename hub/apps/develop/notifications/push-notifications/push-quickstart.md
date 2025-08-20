@@ -81,9 +81,11 @@ If your app is packaged (including packaged with an external location), you can 
 
 If your app is a packaged Win32 app, then create a Package Family Name (PFN) mapping request by emailing [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) with subject line "Windows App SDK Push Notifications Mapping Request" and body "PFN: \[your PFN\]", AppId: \[your APPId\], ObjectId: \[your ObjectId\]. Mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
 
-## Quickest start: Console app template to working sample
+Once you have your Azure AppId, ObjectId, and secret, you can add those credentials to the sample code below. 
 
-Once you have your Azure AppId, ObjectId, and secret, you can add those credentials to the sample code below. If you want a more step by step tutorial, start at [Configure your app to receive push notifications](#configure-your-app-to-receive-push-notifications).
+## Quickest start: C++ console app template to unpackaged C++ sample
+
+This section walks through creating a console app template and turning it into an unpackaged C++ console app with push notifications. If you want a more thorough walkthrough of the sample code or want instructions for adding push notifications to an existing project, start at [Configure your app to receive push notifications](#configure-your-app-to-receive-push-notifications).
 
 ### Step 1: Initialize the Console App template
 
@@ -304,7 +306,7 @@ Now, click on the `.cpp` file.
 >
 >![alt text](image-4.png)
 >
->it's most likely because `<RootNamespace>`, `<ProjectGuid>` or the `.cpp` filename weren't all updated. To resolve, unload the project, clicking "Don't save" on the pop-up. Then open the `.vcxproj` file, ensure SOLUTION_NAMESPACE_HERE, PROJECT_GUID_HERE, CPP_FILE_NAME_HERE have been replaced with your project information, and reload again.
+>it's most likely because `<RootNamespace>`, `<ProjectGuid>` and/or the `.cpp` filename weren't all updated. To resolve, unload the project, clicking "Don't save" on the pop-up. Then open the `.vcxproj` file, ensure SOLUTION_NAMESPACE_HERE, PROJECT_GUID_HERE, CPP_FILE_NAME_HERE have been replaced with your project information, and reload again.
 
 Add in the code for `{yoursolutionname}.cpp` below:
 
@@ -477,16 +479,6 @@ int main()
 }
 ```
 
-Finally, we need to load in the packages we reference in `packages.config`. To do this, right click on the solution and select "Restore nuget packages".
-
-Once the packages are restored, click F5 to run the sample. You should see a console window that looks like this:
-
-![alt text](image-6.png)
-
-This error is because we need to add in the Azure App credentials.
-
-### Step 2: Adding in the Azure App credentials
-
 In your `.cpp` file, you'll see the following `remoteId` variable towards the top:
 
 ```cpp
@@ -495,8 +487,15 @@ In your `.cpp` file, you'll see the following `remoteId` variable towards the to
 winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this with your own Azure ObjectId
 ```
 
-Replace this remote ID with your Azure ObjectId. Then, build and run the console app again. You should see a new printed lined that says channelUri, followed by `https://wns2-by3p.notify.windows.com/?token=YOUR_URI_TOKEN_HERE`. You'll use that token when sending push notifications.
+Replace this remote ID with your Azure ObjectId.
 
+Finally, we need to load in the packages we reference in `packages.config`. To do this, right click on the solution and select "Restore nuget packages".
+
+Once the packages are restored, click F5 to run the sample. You should see a console window that looks like this:
+
+![alt text](console_complete.png)
+
+To send notifications to your app, see [Send a push notification to your app](#send-a-push-notification-to-your-app).
 
 ## Configure your app to receive push notifications
 
