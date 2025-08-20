@@ -211,7 +211,7 @@ There are 3 different sizes that you can upload:
 - **Featured Promotional Square art, 1080 x 1080 pixels**: Must _not_ include the product’s title.
 
 > [!NOTE]
-> For the best display on Xbox, you must also provide a **9:16 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
+> For the best display on Xbox, you must also provide a **2:3 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
 
 #### Holographic image
 
