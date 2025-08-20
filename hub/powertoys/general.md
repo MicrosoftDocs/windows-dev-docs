@@ -1,7 +1,7 @@
 ---
-title: General Settings for PowerToys
-description: The Microsoft PowerToys app provides custom-built utilities for Windows. Find info about the version, admin mode, app theme, startup behavior, or turn on the experimental features in the General settings dashboard.
-ms.date: 08/01/2025
+title: Configure PowerToys General Settings for Windows
+description: Configure PowerToys general settings including updates, admin mode, themes, and startup behavior. Learn how to customize your Windows PowerToys experience with our step-by-step guide.
+ms.date: 08/20/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows power user, I want to learn how to configure the general settings for PowerToys.
@@ -9,9 +9,9 @@ no-loc: [PowerToys, Windows, Insider]
 
 # General settings for PowerToys
 
-![General settings of PowerToys](../images/pt-general.png)
+:::image type="content" source="../images/pt-general.png" alt-text="Screenshot of PowerToys general settings interface showing version updates, administrator mode, and appearance options.":::
 
-The General section of Microsoft PowerToys contains the following settings:
+The General settings section of Microsoft PowerToys allows you to configure essential app behaviors including updates, administrator permissions, appearance themes, and startup options. These settings help you customize your PowerToys experience to match your Windows workflow preferences.
 
 ## Version & updates
 
