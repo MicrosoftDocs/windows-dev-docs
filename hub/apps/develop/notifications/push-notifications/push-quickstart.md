@@ -497,17 +497,64 @@ Once the packages are restored, click F5 to run the sample. You should see a con
 
 To send notifications to your app, see [Send a push notification to your app](#send-a-push-notification-to-your-app).
 
-## Configure your app to receive push notifications
+## Configure an existing app to receive push notifications
 
-### Step 1: Add namespace declarations
+### Before you start
 
-Add the namespace for Windows App SDK push notifications `Microsoft.Windows.PushNotifications`.
+To move through the tutorial as smoothly as possible, you'll want to know the following:
+* The *language* you're using (C++ or C#)
+* The *package type* for your app (packaged, unpackaged, packaged with external location, sparse packaged)
 
-```cpp
-#include <winrt/Microsoft.Windows.PushNotifications.h>
+### Step 1: Add Windows App SDK (if it's not already installed)
 
-using namespace winrt::Microsoft::Windows::PushNotifications;
+If this is your first time adding Windows App SDK, you can add it by right clicking the solution, selecting "Manage NuGet packages" and searching for "Windows App SDK". In order to generate and use the Push Notification header files, you'll need to install:
+* Microsoft.WindowsAppSDK (this tutorial uses 1.5.240227000)
+* Microsoft.Windows.SDK.BuildTools (this tutorial uses 10.0.22621.756) - it usually will install with Windows App SDK
+* Microsoft.Windows.CppWinRT (this tutorial uses 2.0.240405.15) - this library allows you to use the modern Windows APIs in C++ by projecting Windows Runtime (WinRT) APIs into C++ code and generates the header files we need.
+
+Adding the packages via Package Manager updates these project files:
+```xml
+<!-- Your packages.config file -->
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+    <!-- previously installed packages -->
+    <package id="Microsoft.Windows.CppWinRT" version="2.0.240405.15" targetFramework="native" />
+    <package id="Microsoft.Windows.SDK.BuildTools" version="10.0.22621.756" targetFramework="native" />
+    <package id="Microsoft.WindowsAppSDK" version="1.5.240227000" targetFramework="native" />
+</packages>
 ```
+
+```xml
+<!-- your .vcxproj file -->
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<!-- Each package imports props files -->
+  <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.props')" />
+  <Import Project="..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.props" Condition="Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.props')" />
+                        ...
+<!-- The newly created packages.config file is also added -->
+ <ItemGroup>
+    <None Include="packages.config" />
+ </ItemGroup>
+                        ...
+
+<!-- Each packages adds a targets file -->
+<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.targets'))" />
+  </Target>
+                        ...
+```
+
+For best results, add packages using Visual Studio's Package Manager.
 
 > [!NOTE] 
 > If this is the first time you are using Windows App SDK in your project and it is packaged with external location or unpackaged, make sure the Windows App SDK is initialized either with auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>` in the `.vcxproj` file) or use the bootstrapper API.
@@ -515,6 +562,18 @@ using namespace winrt::Microsoft::Windows::PushNotifications;
 > Otherwise, the app will throw `System.Runtime.InteropServices.COMException (0x80040154): Class not registered (0x80040154 (REGDB_E_CLASSNOTREG))` and will not run.
 >
 >See [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more details.
+
+### Step 2: Add namespaces
+
+Next, add the namespace for Windows App SDK push notifications `Microsoft.Windows.PushNotifications`.
+
+```cpp
+#include <winrt/Microsoft.Windows.PushNotifications.h>
+
+using namespace winrt::Microsoft::Windows::PushNotifications;
+```
+
+If you get a "Can't find Microsoft.Windows.PushNotifications" error, that likely means the header files haven't been generated. Build the app without the namespaces first (keep the includes without an error), then trying adding them in again.
 
 ### Step 2: Add your COM activator to your app's manifest
 
@@ -562,35 +621,63 @@ Update your app's `main()` method to add the following:
 
 > [!IMPORTANT]
 > You must call **PushNotificationManager::Default().Register** before calling [AppInstance.GetCurrent.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs).
->
+
+At this point, the code should look like this:
+```cpp
+#include <iostream>
+#include <winrt/Microsoft.Windows.PushNotifications.h>
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Microsoft.Windows.AppLifecycle.h>
+
+using namespace winrt::Microsoft::Windows::PushNotifications;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Microsoft::Windows::AppLifecycle;
+
+int main()
+{
+    // Register the app for push notifications.
+    PushNotificationManager::Default().Register();
+
+    auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
+    switch (args.Kind())
+    {
+    case ExtendedActivationKind::Launch:
+        std::cout << "App launched by user or from the debugger." << std::endl;
+        break;
+    case ExtendedActivationKind::Push:
+        std::cout << "App activated via push notification." << std::endl;
+        break;
+    default:
+        std::cout << "\nUnexpected activation type" << std::endl;
+        std::cout << "\nPress 'Enter' to exit the App." << std::endl;
+        std::cin.ignore();
+        break;
+    }
+}
+
+```
+
+#### Adding foreground event handlers
+
+To handle an event in the foreground, register a handler for [PushNotificationManager.PushReceived](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.pushreceived).
+
+>[!IMPORTANT]
 > You also must register any [PushNotificationManager.PushReceived](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.pushreceived) event handlers before calling PushNotificationManager.Register(). Otherwise, the following runtime exception will be thrown:
 > ```
 > System.Runtime.InteropServices.COMException: Element not found. Must register event handlers before calling Register().
 > ```
 
-
-The following sample is from the sample packaged app found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/cpp-console-packaged).
+Here's the updated event handler with the foreground handler:
 
 ```cpp
-// cpp-console.cpp
-#include "pch.h"
 #include <iostream>
 #include <winrt/Microsoft.Windows.PushNotifications.h>
-#include <winrt/Microsoft.Windows.AppLifecycle.h>
 #include <winrt/Windows.Foundation.h>
-#include <wil/result.h>
-#include <wil/cppwinrt.h>
-
-
-using namespace winrt;
-using namespace Windows::Foundation;
+#include <winrt/Microsoft.Windows.AppLifecycle.h>
 
 using namespace winrt::Microsoft::Windows::PushNotifications;
+using namespace winrt::Windows::Foundation;
 using namespace winrt::Microsoft::Windows::AppLifecycle;
-
-winrt::guid remoteId{ "7edfab6c-25ae-4678-b406-d1848f97919a" }; // Replace this with your own Azure ObjectId
-
-
 
 void SubscribeForegroundEventHandler()
 {
@@ -601,60 +688,179 @@ void SubscribeForegroundEventHandler()
         std::string payloadString(payload.begin(), payload.end());
         std::cout << "\nPush notification content received in the FOREGROUND: " << payloadString << std::endl;
     }) };
+
+    std::cout << "Push notification foreground event handler registered." << std::endl;
 }
 
 int main()
 {
-    // Setup an event handler, so we can receive notifications in the foreground while the app is running.
+    // Set up an event handler, so we can receive notifications in the foreground while the app is running.
+    // You must register notification event handlers before calling Register(). Otherwise, a runtime exception
+    // will be thrown.
     SubscribeForegroundEventHandler();
 
+    // Register the app for push notifications.
     PushNotificationManager::Default().Register();
 
     auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
     switch (args.Kind())
     {
-        // When it is launched normally (by the users, or from the debugger), the sample requests a WNS Channel URI and
-        // displays it, then waits for notifications. This user can take a copy of the WNS Channel URI and use it to send
-        // notifications to the sample
+    case ExtendedActivationKind::Launch:
+        std::cout << "App launched by user or from the debugger." << std::endl;
+        break;
+    case ExtendedActivationKind::Push:
+        std::cout << "App activated via push notification." << std::endl;
+        break;
+    default:
+        std::cout << "\nUnexpected activation type" << std::endl;
+        std::cout << "\nPress 'Enter' to exit the App." << std::endl;
+        std::cin.ignore();
+        break;
+    }
+}
+
+```
+
+#### Add the PushNotificationManager::IsSupported() check
+
+Some self-contained apps may not support push notifications by design. Calling [PushNotificationManager.IsSupported()]() prevents errors?
+
+```cpp
+#include <iostream>
+#include <winrt/Microsoft.Windows.PushNotifications.h>
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Microsoft.Windows.AppLifecycle.h>
+
+using namespace winrt::Microsoft::Windows::PushNotifications;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Microsoft::Windows::AppLifecycle;
+
+void SubscribeForegroundEventHandler()
+{
+    winrt::event_token token{ PushNotificationManager::Default().PushReceived([](auto const&, PushNotificationReceivedEventArgs const& args)
+    {
+        auto payload{ args.Payload() };
+
+        std::string payloadString(payload.begin(), payload.end());
+        std::cout << "\nPush notification content received in the FOREGROUND: " << payloadString << std::endl;
+    }) };
+
+	std::cout << "Push notification foreground event handler registered." << std::endl;
+}
+
+int main()
+{
+    // Set up an event handler, so we can receive notifications in the foreground while the app is running.
+	// You must register notification event handlers before calling Register(). Otherwise, a runtime exception
+    // will be thrown.
+    SubscribeForegroundEventHandler();
+
+	// Register the app for push notifications.
+    PushNotificationManager::Default().Register();
+
+    auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
+    switch (args.Kind())
+    {
         case ExtendedActivationKind::Launch:
         {
-            // Checks to see if push notifications are supported. Certain self-contained apps may not support push notifications by design
+            std::cout << "App launched by user or from the debugger." << std::endl;
             if (PushNotificationManager::IsSupported())
             {
-                // Request a WNS Channel URI which can be passed off to an external app to send notifications to.
-                // The WNS Channel URI uniquely identifies this app for this user and device.
-                PushNotificationChannel channel{ RequestChannel() };
-                if (!channel)
-                {
-                    std::cout << "\nThere was an error obtaining the WNS Channel URI" << std::endl;
-    
-                    if (remoteId == winrt::guid { "00000000-0000-0000-0000-000000000000" })
-                    {
-                        std::cout << "\nThe ObjectID has not been set. Refer to the readme file accompanying this sample\nfor the instructions on how to obtain and setup an ObjectID" << std::endl;
-                    }
-                }
-    
+                std::cout << "Push notifications are supported on this device." << std::endl;
+
                 std::cout << "\nPress 'Enter' at any time to exit App." << std::endl;
                 std::cin.ignore();
             }
             else
             {
-                // App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported.
+                std::cout << "Push notifications are NOT supported on this device." << std::endl;
+				std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
+                std::cin.ignore();
             }
         }
         break;
 
-        // When it is activated from a push notification, the sample only displays the notification.
-        // It doesn’t register for foreground activation of perform any other actions
-        // because background activation is meant to let app perform only small tasks in order to preserve battery life.
+        case ExtendedActivationKind::Push:
+            std::cout << "App activated via push notification." << std::endl;
+            break;
+
+        default:
+            std::cout << "\nUnexpected activation type" << std::endl;
+            std::cout << "\nPress 'Enter' to exit the App." << std::endl;
+            std::cin.ignore();
+            break;
+	}
+}
+
+```
+
+Now that there's confirmed push notifcation support, add in behavior based on PushNotificationReceivedEventArgs:
+
+```cpp
+#include <iostream>
+#include <winrt/Microsoft.Windows.PushNotifications.h>
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Microsoft.Windows.AppLifecycle.h>
+#include <winrt/Windows.ApplicationModel.Background.h>
+
+using namespace winrt::Microsoft::Windows::PushNotifications;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Microsoft::Windows::AppLifecycle;
+
+void SubscribeForegroundEventHandler()
+{
+    winrt::event_token token{ PushNotificationManager::Default().PushReceived([](auto const&, PushNotificationReceivedEventArgs const& args)
+    {
+        auto payload{ args.Payload() };
+
+        std::string payloadString(payload.begin(), payload.end());
+        std::cout << "\nPush notification content received in the FOREGROUND: " << payloadString << std::endl;
+    }) };
+
+	std::cout << "Push notification foreground event handler registered." << std::endl;
+}
+
+int main()
+{
+    // Set up an event handler, so we can receive notifications in the foreground while the app is running.
+	// You must register notification event handlers before calling Register(). Otherwise, a runtime exception
+    // will be thrown.
+    SubscribeForegroundEventHandler();
+
+	// Register the app for push notifications.
+    PushNotificationManager::Default().Register();
+
+    auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
+    switch (args.Kind())
+    {
+        case ExtendedActivationKind::Launch:
+        {
+            std::cout << "App launched by user or from the debugger." << std::endl;
+            if (PushNotificationManager::IsSupported())
+            {
+                std::cout << "Push notifications are supported on this device." << std::endl;
+
+                std::cout << "\nPress 'Enter' at any time to exit App." << std::endl;
+                std::cin.ignore();
+            }
+            else
+            {
+                std::cout << "Push notifications are NOT supported on this device." << std::endl;
+				std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
+                std::cin.ignore();
+            }
+        }
+        break;
+
         case ExtendedActivationKind::Push:
         {
+            std::cout << "App activated via push notification." << std::endl;
             PushNotificationReceivedEventArgs pushArgs{ args.Data().as<PushNotificationReceivedEventArgs>() };
 
             // Call GetDeferral to ensure that code runs in low power
             auto deferral{ pushArgs.GetDeferral() };
 
-            auto payload{ pushArgs.Payload() } ;
+            auto payload{ pushArgs.Payload() };
 
             // Do stuff to process the raw notification payload
             std::string payloadString(payload.begin(), payload.end());
@@ -663,6 +869,7 @@ int main()
 
             // Call Complete on the deferral when finished processing the payload.
             // This removes the override that kept the app running even when the system was in a low power mode.
+
             deferral.Complete();
             std::cin.ignore();
         }
@@ -673,11 +880,7 @@ int main()
             std::cout << "\nPress 'Enter' to exit the App." << std::endl;
             std::cin.ignore();
             break;
-    }
-
-    // We do not call PushNotificationManager::UnregisterActivator
-    // because then we wouldn't be able to receive background activations, once the app has closed.
-    // Call UnregisterActivator once you don't want to receive push notifications anymore.
+	}
 }
 
 ```
@@ -695,8 +898,12 @@ auto channelOperation{ PushNotificationManager::Default().CreateChannelAsync(win
 
 The **PushNotificationManager** will attempt to create a Channel URI, retrying automatically for no more than 15 minutes. Create an event handler to wait for the call to complete. Once the call is complete, if it was successful, register the URI with the WNS  server.
 
+> ![NOTE]
+> To use LOG_HR_MSG included in the following code chunks, use Package Manager to import `Microsoft.Windows.ImplementationLibrary`, version 1.0.220914.1.
+
 ```cpp
 // cpp-console.cpp
+// This snippet only includes the channel request code. See the working sample in the next snippet for a more complete example.
 
 winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChannelAsync()
 {
@@ -760,6 +967,164 @@ PushNotificationChannel RequestChannel()
     auto result = task.GetResults();
     return result;
 }
+
+```
+
+Together with the previous steps:
+
+```cpp
+#include <iostream>
+#include <winrt/Microsoft.Windows.PushNotifications.h>
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Microsoft.Windows.AppLifecycle.h>
+#include <winrt/Windows.ApplicationModel.Background.h>
+#include <wil/cppwinrt.h>
+
+using namespace winrt::Microsoft::Windows::PushNotifications;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Microsoft::Windows::AppLifecycle;
+
+// To obtain an AAD RemoteIdentifier for your app,
+// follow the instructions on https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
+winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this with your own Azure AppId
+
+winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChannelAsync()
+{
+    auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(remoteId);
+
+    // Setup the inprogress event handler
+    channelOperation.Progress(
+        [](auto&& sender, auto&& args)
+        {
+            if (args.status == PushNotificationChannelStatus::InProgress)
+            {
+                // This is basically a noop since it isn't really an error state
+                std::cout << "Channel request is in progress." << std::endl << std::endl;
+            }
+            else if (args.status == PushNotificationChannelStatus::InProgressRetry)
+            {
+                LOG_HR_MSG(
+                    args.extendedError,
+                    "The channel request is in back-off retry mode because of a retryable error! Expect delays in acquiring it. RetryCount = %d",
+                    args.retryCount);
+            }
+        });
+
+    auto result = co_await channelOperation;
+
+    if (result.Status() == PushNotificationChannelStatus::CompletedSuccess)
+    {
+        auto channelUri = result.Channel().Uri();
+
+        std::cout << "channelUri: " << winrt::to_string(channelUri.ToString()) << std::endl << std::endl;
+
+        auto channelExpiry = result.Channel().ExpirationTime();
+
+        // Caller's responsibility to keep the channel alive
+        co_return result.Channel();
+    }
+    else if (result.Status() == PushNotificationChannelStatus::CompletedFailure)
+    {
+        LOG_HR_MSG(result.ExtendedError(), "We hit a critical non-retryable error with channel request!");
+        co_return nullptr;
+    }
+    else
+    {
+        LOG_HR_MSG(result.ExtendedError(), "Some other failure occurred.");
+        co_return nullptr;
+    }
+
+};
+
+PushNotificationChannel RequestChannel()
+{
+    auto task = RequestChannelAsync();
+    if (task.wait_for(std::chrono::seconds(300)) != AsyncStatus::Completed)
+    {
+        task.Cancel();
+        return nullptr;
+    }
+
+    auto result = task.GetResults();
+    return result;
+}
+
+void SubscribeForegroundEventHandler()
+{
+    winrt::event_token token{ PushNotificationManager::Default().PushReceived([](auto const&, PushNotificationReceivedEventArgs const& args)
+    {
+        auto payload{ args.Payload() };
+
+        std::string payloadString(payload.begin(), payload.end());
+        std::cout << "\nPush notification content received in the FOREGROUND: " << payloadString << std::endl;
+    }) };
+
+    std::cout << "Push notification foreground event handler registered." << std::endl;
+}
+
+int main()
+{
+    // Set up an event handler, so we can receive notifications in the foreground while the app is running.
+    // You must register notification event handlers before calling Register(). Otherwise, a runtime exception
+    // will be thrown.
+    SubscribeForegroundEventHandler();
+
+    // Register the app for push notifications.
+    PushNotificationManager::Default().Register();
+
+    auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
+    switch (args.Kind())
+    {
+    case ExtendedActivationKind::Launch:
+    {
+        std::cout << "App launched by user or from the debugger." << std::endl;
+        if (PushNotificationManager::IsSupported())
+        {
+            std::cout << "Push notifications are supported on this device." << std::endl;
+
+            std::cout << "\nPress 'Enter' at any time to exit App." << std::endl;
+            std::cin.ignore();
+        }
+        else
+        {
+            std::cout << "Push notifications are NOT supported on this device." << std::endl;
+            std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
+            std::cin.ignore();
+        }
+    }
+    break;
+
+    case ExtendedActivationKind::Push:
+    {
+        std::cout << "App activated via push notification." << std::endl;
+        PushNotificationReceivedEventArgs pushArgs{ args.Data().as<PushNotificationReceivedEventArgs>() };
+
+        // Call GetDeferral to ensure that code runs in low power
+        auto deferral{ pushArgs.GetDeferral() };
+
+        auto payload{ pushArgs.Payload() };
+
+        // Do stuff to process the raw notification payload
+        std::string payloadString(payload.begin(), payload.end());
+        std::cout << "\nPush notification content received in the BACKGROUND: " << payloadString.c_str() << std::endl;
+        std::cout << "\nPress 'Enter' to exit the App." << std::endl;
+
+        // Call Complete on the deferral when finished processing the payload.
+        // This removes the override that kept the app running even when the system was in a low power mode.
+
+        deferral.Complete();
+        std::cin.ignore();
+    }
+    break;
+
+    default:
+        std::cout << "\nUnexpected activation type" << std::endl;
+        std::cout << "\nPress 'Enter' to exit the App." << std::endl;
+        std::cin.ignore();
+        break;
+    }
+}
+
 ```
 
 ### Step 5: Build and install your app
