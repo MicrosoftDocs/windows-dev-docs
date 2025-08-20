@@ -43,7 +43,7 @@ Not every window will react well to being contained in another application so th
 
 ### Screenshot
 
-Creates a window that shows the selected area of the original window as a freezed snapshot. This mode has good compatibility as well.
+Creates a window that shows the selected area of the original window as a frozen snapshot. This mode has good compatibility as well.
 
 ## Known issues
 
