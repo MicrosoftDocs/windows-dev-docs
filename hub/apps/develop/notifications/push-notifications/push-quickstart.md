@@ -23,7 +23,7 @@ In this quickstart you will create a desktop Windows application that sends and 
 
 ## Sample app
 
-This quickstart walks through adding push notifications support to your app. See the example code from this quickstart in context in the sample apps found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/).
+This quickstart walks through adding push notifications support to your app on Windows App SDK 1.5. See similar code to this quickstart in the sample apps found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/). Make sure to check out the [branch with your preferred version of the Windows App SDK](https://github.com/microsoft/WindowsAppSDK-Samples/branches) for the samples that best match your project.
 
 > [!div class="button"]
 > [Sample App Code](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push)
@@ -85,9 +85,12 @@ If your app is a packaged Win32 app, then create a Package Family Name (PFN) map
 
 Once you have your Azure AppId, ObjectId, and secret, you can add those credentials to the sample code below. 
 
-## Quickest start: C++ console app template to unpackaged C++ sample
+## Configure your app to receive push notifications from the C++ console template
 
-This section walks through creating a console app template and turning it into an unpackaged C++ console app with push notifications. If you want a more thorough walkthrough of the sample code or want instructions for adding push notifications to an existing project, start at [Configure your app to receive push notifications](#configure-your-app-to-receive-push-notifications).
+This section walks through creating a console app template and turning it into an unpackaged C++ console app with push notifications. If you want a instructions for adding push notifications to an existing project or more step-by-step instructions for the C++ code below, see [Configure an existing app to receive push notifications](#configure-an-existing-app-to-receive-push-notifications).
+
+>[!IMPORTANT]
+> C# and packaged app examples are available on the [Windows App SDK Samples repository](https://github.com/microsoft/WindowsAppSDK-Samples). Make sure to check out [the branch with your preferred version of the Windows App SDK](https://github.com/microsoft/WindowsAppSDK-Samples/branches) for the guide that best matches your project.
 
 ### Step 1: Initialize the Console App template
 
@@ -114,7 +117,7 @@ First, we will add a file called `packages.config`, which contains the libraries
 </packages>
 ```
 
-![NOTE] If you're finding extra spaces when you paste in the xml, ensure the file extension is `.config`, not `.cpp` (or `.config.cpp`). Visual Studio may make the file a `.cpp` file by default.
+> ![NOTE] If you're finding extra spaces when you paste in the xml, ensure the file extension is `.config`, not `.cpp` (or `.config.cpp`). Visual Studio may make the file a `.cpp` file by default.
 
 Save the name of your `.cpp` file outside of the current code. This will be needed in the next step.
 
@@ -491,9 +494,9 @@ winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this 
 
 Replace this remote ID with your Azure ObjectId.
 
-Finally, we need to load in the packages we reference in `packages.config`. To do this, right click on the solution and select "Restore nuget packages".
+Finally, we need to load in the packages we reference in `packages.config`. To do this, right click on the solution and select "Restore NuGet packages".
 
-Once the packages are restored, click F5 to run the sample. You should see a console window that looks like this:
+Use Visual Studio to build and install your app. Right click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger. You should see a console window that looks like this:
 
 ![working sample console](images/console_complete.png)
 
@@ -503,15 +506,18 @@ To send notifications to your app, see [Send a push notification to your app](#s
 
 ### Before you start
 
-To move through the tutorial as smoothly as possible, you'll want to know the following:
-* The *language* you're using (C++ or C#)
-* The *package type* for your app (packaged, unpackaged, packaged with external location, sparse packaged)
+To get the most out of this guide, you'll want to know the following about your app:
+* The *language* you're using (C++ or C#). This tutorial focuses on C++.
+* The *package type* for your app (packaged, unpackaged, packaged with external location, sparse packaged). This example uses an unpackaged app.
+
+>[!IMPORTANT]
+> C# and packaged app examples are available on the [Windows App SDK Samples repository](https://github.com/microsoft/WindowsAppSDK-Samples). Make sure to check out [the branch with your preferred version of the Windows App SDK](https://github.com/microsoft/WindowsAppSDK-Samples/branches) for the guide that best matches your project.
 
 ### Step 1: Add Windows App SDK (if it's not already installed)
 
 If this is your first time adding Windows App SDK, you can add it by right clicking the solution, selecting "Manage NuGet packages" and searching for "Windows App SDK". In order to generate and use the Push Notification header files, you'll need to install:
 * Microsoft.WindowsAppSDK (this tutorial uses 1.5.240227000)
-* Microsoft.Windows.SDK.BuildTools (this tutorial uses 10.0.22621.756) - it usually will install with Windows App SDK
+* Microsoft.Windows.SDK.BuildTools (this tutorial uses 10.0.22621.756) - it sometimes installs with Windows App SDK
 * Microsoft.Windows.CppWinRT (this tutorial uses 2.0.240405.15) - this library allows you to use the modern Windows APIs in C++ by projecting Windows Runtime (WinRT) APIs into C++ code and generates the header files we need.
 
 > [!NOTE] 
@@ -681,7 +687,7 @@ int main()
 
 #### Add the PushNotificationManager::IsSupported() check
 
-Next, add a check if the PushNotification APIs are supported. If not, we recommend that you use polling or your own custom socket implementation.
+Next, add a check if the PushNotification APIs are supported with [PushNotificationManager.IsSupported()](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.issupported?view=windows-app-sdk-1.7). If not, we recommend that you use polling or your own custom socket implementation.
 
 ```cpp
 #include <iostream>
@@ -752,7 +758,7 @@ int main()
 
 ```
 
-Now that there's confirmed push notifcation support, add in behavior based on PushNotificationReceivedEventArgs:
+Now that there's confirmed push notifcation support, add in behavior based on [PushNotificationReceivedEventArgs](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationreceivedeventargs?view=windows-app-sdk-1.7):
 
 ```cpp
 #include <iostream>
@@ -935,7 +941,7 @@ PushNotificationChannel RequestChannel()
 
 ```
 
-Together with the previous steps:
+Here's the sample so far with the channel request code added in:
 
 ```cpp
 #include <iostream>
