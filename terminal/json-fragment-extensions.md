@@ -189,3 +189,32 @@ In the second case, the installation is only for the current user. In this case,
 `C:\Users\<user>\AppData\Local\Microsoft\Windows Terminal\Fragments\{app-name}\{file-name}.json`
 
 Note that both the `ProgramData` and `LocalAppData` folders are known folders that the installer should be able to access. If in either case, if the `Windows Terminal\Fragments` directory does not exist, the installer should create it. The `{app-name}` should be unique to your application and the `{file-name}.json` can be anything - the terminal will read all .json files in that directory.
+
+## Distributing media resources with your fragment extension
+
+As of Windows Terminal 1.24, fragment extensions can distribute media resources such as images and pixel shaders to be used with the `icon`, `backgroundImage`, `experimental.pixelShaderPath` and `experimental.pixelShaderImagePath` properties on profiles and actions.
+
+Earlier versions of Terminal supported Web URLs for `icon` and `backgroundImage`. Those versions will continue to load Web URL resources in perpetuity.
+Newer versions will no longer access web URLs, but will instead look in the directory containing your fragment file.
+
+If you wish to maintain compatibility with all available versions of Terminal, you may place any web resources in the same directory as your `.json` files.
+
+```
+Fragments\
+ `- AppName\ <- FRAGMENT_ROOT
+     |- file1.json
+     |- file2.json
+     `- app_icon.png
+```
+
+You can rely on the following compatibility behaviors:
+
+| Resource Path                                    | &lt; 1.24                | &ge; 1.24                                     |
+| ------------------------------------------------ | --------------------- | ------------------------------------------- |
+| `https://example.com/app/app_icon.png`           | ✅ loaded from the web | ✅ loaded from `$FRAGMENT_ROOT\app_icon.png` |
+| `app_icon.png`                                   | ❌ ignored             | ✅ loaded from `$FRAGMENT_ROOT\app_icon.png` |
+| `ms-appx://MyApplication/Fragments/app_icon.png` | ❌ ignored             | ✅ loaded from `$FRAGMENT_ROOT\app_icon.png` |
+
+> [!NOTE]
+> Versions of Windows Terminal prior to 1.24 only supported Web URLs for `icon` and `backgroundImage` on a profile.
+> There is no way to specify a compatible fallback for either `experimental.pixelShaderPath` or action `icon`s.

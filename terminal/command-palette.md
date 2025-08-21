@@ -41,6 +41,9 @@ You can optionally add an icon to a command defined in your [settings.json](./in
 { "icon": "⚡", "name": "New tab", "command": "newTab", "keys": "ctrl+shift+t" }
 ```
 
+> [!NOTE]
+> As of Windows Terminal 1.24, `icon` may refer to content adjacent to the `settings.json` file.
+
 ## Nested commands
 
 Nested commands let you group multiple commands under one item in the command palette. The example below groups the font resize commands under one command palette item called "Change font size...".

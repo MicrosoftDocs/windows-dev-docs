@@ -98,6 +98,11 @@ This sets the icon that displays within the tab, dropdown menu, jumplist, and ta
 
 **Example:** By placing the icon image `ubuntu.ico` in the folder located at `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`, you can display the icon by adding this line to the profile in your [settings.json](../install.md#settings-json-file): `"icon": "ms-appdata:///roaming/ubuntu.ico"`.
 
+> [!NOTE]
+> As of Windows Terminal 1.24, `icon` paths may refer to content adjacent to the `settings.json` file.
+>
+> In the example above, you can place `ubuntu.ico` in the `LocalState` directory alongside `settings.json`, and refer to it with `"icon": "ubuntu.ico"`.
+
 <br>
 ___
 

@@ -102,6 +102,9 @@ This sets the icon that displays within the command palette.
 
 **Accepts:** File location as a string, or an emoji
 
+> [!NOTE]
+> As of Windows Terminal 1.24, `icon` may refer to content adjacent to the `settings.json` file.
+
 ### ID
 
 This sets the id of this action. If one isn't provided, the terminal will generate an ID for this action. The ID is used to refer to this action when creating keybindings.

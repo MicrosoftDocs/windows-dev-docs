@@ -261,6 +261,9 @@ It is recommended that custom images and icons are stored in system-provided fol
 > [!WARNING]
 > Do not rely on file references using the ms-appx URI scheme (i.e. icons). These files are considered an internal implementation detail and may change name/location or may be omitted in the future.
 
+> [!NOTE]
+> As of Windows Terminal 1.24, `backgroundImage` may refer to content adjacent to the `settings.json` file.
+
 ### Icons
 
 Windows Terminal displays icons for each profile which the terminal generates for any built-in shells, for example: PowerShell Core, PowerShell, and any installed Linux/WSL distributions. Each profile refers to a stock icon via the ms-appx URI scheme. You can refer to you own custom icons by entering a path in your [settings.json file](../install.md#settings-json-file):
@@ -540,3 +543,14 @@ If set, this will override the `experimental.retroTerminalEffect` setting.
 **Necessity:** Optional
 
 **Accepts:** A path to an `.hlsl` shader file, as a string
+
+An additional setting, `experimental.pixelShaderImagePath`, allows you to specify an image file to be loaded alongsize the shader. It will be made available in texture register `t1`.
+
+**Property name:** `experimental.pixelShaderImagePath`
+
+**Necessity:** Optional
+
+**Accepts:** A path to an image file, as a string
+
+> [!NOTE]
+> As of Windows Terminal 1.24, `experimental.pixelShaderPath` and `experimental.pixelShaderImagePath` may refer to content adjacent to the `settings.json` file.

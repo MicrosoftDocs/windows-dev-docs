@@ -326,6 +326,9 @@ This entry type represents a profile from your list of profiles. The profile can
 | `profile` | Required | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
 | `icon` | Optional | Path to an icon as a string | Path to an icon that will be displayed next to the profile name. The profile's default icon will be used if not specified. |
 
+> [!NOTE]
+> As of Windows Terminal 1.24, `icon` may refer to content adjacent to the `settings.json` file.
+
 #### Folder
 
 This entry type represents a nested folder in the new tab dropdown menu. Folders can be nested inside of other folders.
@@ -352,6 +355,9 @@ This entry type represents a nested folder in the new tab dropdown menu. Folders
 | `entries` | Required | List of new tab menu entries | List of new tab menu entries that will be displayed when the folder is clicked. |
 | `allowEmpty` | Optional | Boolean (defaults to `true`) | If set to `true`, the folder will be displayed even if it has no entries. If set to `false`, the folder will not be displayed if it has no entries. This can be useful with `matchProfiles` entries. |
 | `inline` | Optional | Boolean (defaults to `false`) | If set to `true`, and there's only a single entry in the folder, this folder won't create a nested menu. Instead, the entry in the menu will just be the single entry in the folder. This can be useful with `matchProfiles` entries. |
+
+> [!NOTE]
+> As of Windows Terminal 1.24, `icon` may refer to content adjacent to the `settings.json` file.
 
 #### Separator
 
@@ -409,4 +415,8 @@ For more information, see the [custom actions and keybindings](actions.md) docum
 | ---- | --------- | ------- | ----------- |
 | `id` | Required | Action ID as a string | Action that will be executed |
 | `icon` | Optional | Path to an icon as a string | Path to an icon that will be displayed next to the action name. If not specified, the action's own icon will be used (if configured). |
+
+> [!NOTE]
+> As of Windows Terminal 1.24, `icon` may refer to content adjacent to the `settings.json` file.
+
 ___
