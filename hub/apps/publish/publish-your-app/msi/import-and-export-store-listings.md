@@ -47,7 +47,7 @@ Once you’ve exported your listings and saved your .csv file, you can edit your
 
 Most of the Store listing fields are optional. The Description, one Screenshot, Store logo (1:1 box art) and Applicable license terms are required for each listing. For all other fields, you can leave the field empty if you don’t want to include it in your listing.
 
-Many of the fields in your exported listings require text entry, such as the ones in the example above, Description and WhatsNew. For these types of fields, simply enter the appropriate text into the field for each language. Be sure to follow the length and other requirements for each field. For more info on these requirements, see [Create app Store listings](./create-app-store-listing.md).
+Many of the fields in your exported listings require text entry, such as the ones in the example above, Description and WhatsNew. For these types of fields, simply enter the appropriate text into the field for each language. Be sure to follow the length and other requirements for each field. For more info on these requirements, see [Create app Store listings](./add-and-edit-store-listing-info.md).
 
 Providing info for fields that correspond to assets, such as images, are a bit more complicated. Rather than Text, the Type for these assets is Relative path.
 

@@ -1,16 +1,16 @@
 ---
 description: Select the base price for an MSIX app and schedule price changes. You can also customize these options for specific markets.
-title: Set and schedule app pricing for MSIX app
+title: Set app pricing for MSIX app
 ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Set and schedule app pricing for MSIX app
+# Set app pricing for MSIX app
 
 ## Configure app pricing
 
-The **Pricing** section of the [Pricing and availability](./price-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency. Please be aware that Microsoft does not alter the product pricing you set without your approval. You’re in charge of making sure the prices match the current market situations, including currency exchange rates.
+The **Pricing** section of the [Pricing and availability](./price-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](./configure-release-schedule.md) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency. Please be aware that Microsoft does not alter the product pricing you set without your approval. You’re in charge of making sure the prices match the current market situations, including currency exchange rates.
 
 :::image type="content" source="images/msix-set-app-pricing.png" lightbox="images/msix-set-app-pricing.png" alt-text="A screenshot of the Pricing and availability section showing how to set app pricing.":::
 
@@ -26,26 +26,11 @@ You can set the **Base price** to **Free**, or you can choose an available price
 
 In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](/windows/uwp/monetize/manage-app-submissions#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
 
-Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](/partner-center/tax-details-marketplace). You should also review the [price considerations for specific markets](./market-selection.md#price-considerations-for-specific-markets).
+Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](/partner-center/tax-details-marketplace). You should also review the [price considerations for specific markets](/hub/apps/publish/publish-your-app/faqs/consumer-markets.md).
+
 
 > [!NOTE]
 > If you choose the **Stop acquisition** option under **Make this product available but not discoverable in the Store** in the [Visibility](./visibility-options.md#discoverability) section), you won't be able to set pricing for your submission (since no one will able to acquire the app unless they use a promotional code to get the app for free).
-
-### Schedule price changes
-
-You can optionally schedule one or more price changes if you want the base price of your app to change at a specific date and time.
-
-> [!IMPORTANT]
-> Price changes are only shown to customers on Windows 10 or Windows 11 devices (including Xbox). If your previously-published app supports earlier OS versions, the price changes will not apply to those customers. 
-
-Click **Schedule a price change** to see the price change options. Choose the price tier you’d like to use (or enter a free-form price for single-market base price overrides), then select the date, time, and time zone.
-
-You can click **Schedule a price change** again to schedule as many subsequent changes as you’d like.
-
-> [!NOTE]
-> Scheduled price changes work differently from [Sale pricing](../../put-apps-and-add-ons-on-sale.md). When you put an app on sale, the price shows with a strikethrough in the Store, and customers will be able to purchase the app at the sale price during the time period that you have selected. After the sale period is up, the sale price will no longer apply and the app will be available at its base price (or a different price that you have specified for that market, if applicable).
->
-> With a scheduled price change, you can adjust the price to be either higher or lower. The change will take place on the date you specify, but it won’t be displayed as a sale in the Store, or have any special formatting applied; the app will just have a new price.
 
 ### Override base price for specific markets
 
@@ -136,6 +121,10 @@ To add a custom schedule for an additional market, or an additional market group
 ### Global Time Zones
 
 Below is a table that shows what specific time zones are used in each market, so when your submission uses local time (e.g. release at 9am local), you can find out what time will it be released in each market, in particular helpful with markets that have more than one time zone, like Canada.
+
+<details> 
+<summary>View table</summary>
+
 
 | Market                                       | Time Zone                                                     |
 | -------------------------------------------- | ------------------------------------------------------------- |
@@ -379,3 +368,5 @@ Below is a table that shows what specific time zones are used in each market, so
 | Yemen                                        | (UTC+04:00) Abu Dhabi, Muscat                                 |
 | Zambia                                       | (UTC+02:00) Harare, Pretoria                                  |
 | Zimbabwe                                     | (UTC+02:00) Harare, Pretoria                                  |
+
+</details>

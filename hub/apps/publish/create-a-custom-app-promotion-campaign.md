@@ -1,22 +1,17 @@
 ---
-description: In addition to creating an ad campaign for your app that will run in Windows apps, you can promote your app using other channels.
+description: How to promote your app using other channels.
 title: Create a custom app promotion campaign
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
-ms.date: 10/30/2022
+ms.date: 07/27/2025
 ms.topic: how-to
-keywords: windows 10, uwp, custom, app, promotion, campaign
+keywords: windows 10, windows 11, uwp, custom, app, promotion, campaign
 ms.localizationpriority: medium
 ---
 # Create a custom app promotion campaign
 
-In addition to creating an [ad campaign for your app](/windows/uwp/monetize/index) that will run in Windows apps, you can also promote your app using other channels. For example, you can promote your app using a third-party app marketing provider, or you might post links to your app on social media sites. These activities are called *custom campaigns*.
+To track the performance of each custom campaign, create a unique URL with a different campaign ID. When a Windows 10 user clicks one of these URLs, Microsoft links the click to that campaign and provides the data in [Partner Center](https://partner.microsoft.com/dashboard).
 
-If you run custom campaigns for your app, you can track the relative performance of each campaign by creating a different URL for each custom campaign, where each URL contains a different *campaign ID*. When a customer running Windows 10 clicks a URL that contains a campaign ID, Microsoft associates the click with the corresponding custom campaign and makes this data available to you in [Partner Center](https://partner.microsoft.com/dashboard).
-
-> [!IMPORTANT]
-> This data is only tracked for customers on Windows 10. Customers using other operating systems can still follow the link to your app's listing, but data about those customers' activities will not be included.
-
-There are two main types of data associated with custom campaigns: *page views* for your app's Store listing, and *conversions*. A conversion is an app acquisition that results from a customer viewing your app's Store listing page from a URL that includes a custom campaign ID. For more details about conversions, see [Understanding how app acquisitions qualify as conversions](#understanding-how-acquisitions-qualify-as-conversions) in this topic.
+Custom campaign data includes page views of your app’s Store listing and conversions. A conversion occurs when a user acquires your app after viewing its Store page via a campaign-specific URL. For more on conversions, see [Understanding how app acquisitions qualify as conversions](#understanding-how-acquisitions-qualify-as-conversions) in this topic.
 
 You can retrieve custom campaign performance data for your app in the following ways:
 

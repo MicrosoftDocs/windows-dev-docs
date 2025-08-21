@@ -12,6 +12,16 @@ ms.localizationpriority: medium
 View detailed analytics for your apps and games in [Partner Center](https://partner.microsoft.com/dashboard/insights/analytics/overview). Statistics and charts let you know how your apps are performing in the Store, from how many customers you've reached to how they're using your app and what they have to say about it. You can also find metrics on app install, app health, app usage, and more.
 You can view analytic reports right in Partner Center or [download the reports you need](/partner-center/download-analytic-reports) to analyze your data offline. We also provide several ways for you to [access your analytics data outside of Partner Center](/partner-center/analyze-app-performance#access-analytics-data-outside-of-partner-center).
 
+</br>
+You can watch the following video to understand how to use Analytic APIs.
+</br>
+
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=b20faae2-278a-4983-83c5-8078f06cd727]
+
+
+You can watch the following video to understand how to use Download Hub.
+<br>
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=f9b54070-72ea-4f17-afac-a1e580bac716]
 
 ### View key analytics for all your apps 
 

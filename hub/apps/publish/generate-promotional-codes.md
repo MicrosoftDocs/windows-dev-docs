@@ -16,9 +16,6 @@ Each promotional code has a corresponding unique redeemable URL that a customer 
 
 You can generate single-use codes (and distribute one to each customer), or you can choose to generate a code that can be used multiple times by a specified number of customers.
 
-> [!TIP]
-> You can use [targeted push notifications](send-push-notifications-to-your-apps-customers.md) to distribute a promotional code to a segment of your customers. When doing so, be sure to use a promotional code that allows multiple customers to use the same code.
-
 ## Promotional code policies
 
 Be aware of the following policies for promotional codes:

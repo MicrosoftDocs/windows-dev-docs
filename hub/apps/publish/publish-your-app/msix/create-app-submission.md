@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 10/30/2022
 ---
 
-# Create an app submission for your MSIX app
+# Create app submission
 
 > [!NOTE]
 > This section of the documentation describes how to create an app submission in Partner Center. Alternatively, you can use the [Microsoft Store submission API](/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services) to automate app submissions.
@@ -31,6 +31,9 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Sale pricing**             | Not required |                      |
 | **Organizational licensing** | Not required |                      |
 
+> [!TIP]
+> For detailed information about the **Pricing and availability** fields, see the [Set pricing and availability](./price-and-availability.md) section.
+
 ### Properties page
 
 | Field name                   | Required     |
@@ -47,11 +50,17 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Product declarations**     | Not required |
 | **System requirements**      | Not required |
 
+> [!TIP]
+> For detailed information about the **Properties** fields, see the [Add app properties](./enter-app-properties.md) section.
+
 ### Age ratings page
 
 | Field name        | Notes        |
 | ------------------| ------------ |
 | **All questions** | **Required** |
+
+> [!TIP]
+> For detailed information about the **Age ratings** fields, see the [Generate age ratings](./age-ratings.md) section.
 
 ### Packages page
 
@@ -59,15 +68,16 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | ------------------------------ | ------------ | ------------------------------ |
 | **App package**                | **Required** | At least one package required. |
 | **Device family availability** | Not required |                                |
-| **Gradual package rollout**    | Not required |                                |
-| **Mandatory update**           | Not required |                                |
+
+> [!TIP]
+> For detailed information about the **Packages** fields, see the [Upload package](./upload-app-packages.md) section.
 
 > [!NOTE]
 > The Packages section will show as "Incomplete" until all required fields are completed, even if individual packages show "Validated" status. Package validation confirms that uploaded files are valid, but section completion requires that all mandatory package-related configurations are set. For detailed guidance on package upload and validation, see [Upload app packages](./upload-app-packages.md).
 
 ### Store listings
 
-You'll need all the required info for at least one of the languages that your app supports. We recommend providing [Store listings](./create-app-store-listing.md) in all of the languages your app supports, and you can also provide Store listings in additional languages. To make it easier to manage multiple listings for the same product, you can import and export Store listings.
+You'll need all the required info for at least one of the languages that your app supports. We recommend providing [Store listings](./add-and-edit-store-listing-info.md) in all of the languages your app supports, and you can also provide Store listings in additional languages. To make it easier to manage multiple listings for the same product, you can import and export Store listings.
 
 | Field name                                                        | Required     | Notes                                                      |
 | ----------------------------------------------------------------- | ------------ | ---------------------------------------------------------- |
@@ -85,6 +95,10 @@ You'll need all the required info for at least one of the languages that your ap
 | **Additional license terms**                                      | Not required |                                                            |
 | **Developed by**                                                  | Not required |                                                            |
 
+> [!TIP]
+> For detailed information about the **Store listings** fields, see the [Store listings](./add-and-edit-store-listing-info.md) section.
+
+
 ### Submission options page
 
 | Field name                           | Required     | 
@@ -94,27 +108,10 @@ You'll need all the required info for at least one of the languages that your ap
 | **Restricted capabilities**          | **Required** if your product declares any restricted capabilities |
 | **Submission notification audience** | Not required |
 
+> [!TIP]
+> For detailed information about the **Submission options** fields, see the [Upload package](./manage-submission-options.md ) section.
+
 Once you have completed all the sections, you can submit your app for certification by clicking **Submit for certification** button on the Application overview page.
 
 > [!NOTE]
 > You must have an active [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.
-
-## Notifications
-
-> [!IMPORTANT]
-> To ensure that you receive critical email notifications, you'll be required to verify your email address in Action Center. Go to [My Preferences](https://partner.microsoft.com/dashboard/actioncenter/mypreferences) in Action Center to verify.
-
-After publishing an app, the [owner](../../partner-center/assign-account-level-custom-permissions-to-account-users.md) of your developer account is always notified of the publishing status and required actions through email and the [Action Center](/partner-center/action-center-overview) in Partner Center.
-
-In addition, you can add members in either **developer** or **manager** role within your developer account to receive same notifications or remove those who no longer need to be notified.
-
-To add or remove:
-
-1. On the Submission options page, look for the field of “Submission notification audience”
-2. Click “Click here” to open Notification audience overview page
-3. On the Notification audience overview page, add or remove audience
-
-> [!NOTE]
-> - The owner of your developer account is always notified and can’t be removed from the audience list.
-> - The audience list is product specific and applied to all submissions of the product. To modify the notification recipients for a different product, follow the steps above for each product.
-> - Add-on inherits parent product’s audience list and can’t be managed separately.
