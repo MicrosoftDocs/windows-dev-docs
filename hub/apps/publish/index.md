@@ -64,7 +64,8 @@ For more details, refer [steps to create company developer account](/windows/app
 
 For packaging your Win32 app as MSIX, follow these [steps](https://aka.ms/packagewin32asmsix).
 
-**Note:** If you distribute your application as a web download (EXE /MSI) and you are planning to distribute it as a packaged application (MSIX) in the Store, you might want to prevent users from installing both versions or migrate users from the unpackaged web version to the Store version. Learn more about [transitioning users from web unpackaged to Store packaged app](../distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md).
+> [!NOTE]
+> If you distribute your application as a web download (EXE /MSI) and you are planning to distribute it as a packaged application (MSIX) in the Store, you might want to prevent users from installing both versions or migrate users from the unpackaged web version to the Store version. Learn more about [transitioning users from web unpackaged to Store packaged app](../distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md).
 
 ## Choice of commerce platform
 

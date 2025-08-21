@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged
 description: This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.
 ms.topic: article
-ms.date: 08/07/2024
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---

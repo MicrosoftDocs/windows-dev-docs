@@ -13,12 +13,29 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 > [!NOTE]
 > When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. You'll have the option to [add additional users to the account](manage-account-users.md) later.
 
-When you [begin the signup process](https://developer.microsoft.com/microsoft-store/register) you'll need to choose whether to create an individual account or a company account. Both account types will allow you to submit apps, games, add-ins, and services.
+When you [begin the signup process](https://developer.microsoft.com/microsoft-store/register) the system will determine which account types are available to you. In some cases, you may be able to choose between an individual account or a company account. In other situations, the account type selection may be limited or pre-determined based on your Microsoft account and other factors. Both account types will allow you to submit apps, games, add-ins, and services.
 
 Company accounts must be used for organizations and businesses and any person acting in relation to their trade or profession. For company accounts, we require greater [verification](/windows/apps/publish/partner-center/account-types-locations-and-fees#account-verification) to confirm that you’re authorized to set up the account for your company, as well as requiring that you enter a customer contact email, business address, and business phone number if available. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
 
 > [!IMPORTANT]
 > You can't change the account type once you make your selection, so be sure to choose the right type.
+
+## Account type availability
+
+During the registration process, you may encounter one of these scenarios:
+
+1. **Full choice available**: You can select between Individual and Company account types
+2. **Limited selection**: The account type options may be grayed out with one type pre-selected (commonly defaulting to Individual)
+
+If the account type selection is grayed out, this typically occurs when:
+- The system has determined an appropriate account type based on your Microsoft account profile
+- Your geographic location or other factors limit the available options
+- Your Microsoft account is already associated with certain account characteristics
+
+If you need a company account but only see the individual option available (grayed out), consider:
+- Using a different Microsoft account that is clearly associated with your business
+- Contacting Microsoft Support for assistance with account type determination
+- Reviewing the "Learn More" information provided during registration for additional guidance
 
 ## Developer account and app-submission markets
 

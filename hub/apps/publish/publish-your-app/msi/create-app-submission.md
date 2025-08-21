@@ -98,7 +98,7 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Installer parameters**   | **Required** | Support for silent install is required. Other parameters are optional |
 | **Language**               | **Required** | At least one language is required                                     |
 | **App type**               | **Requited** | Specify between EXE and MSI                                           |
-| **Installer handling URL** | **Not Required** |                                           |
+                                          |
 
 > [!TIP]
 > For detailed information about the **Packages** fields, see the [Upload package](./upload-app-packages.md) section.

@@ -1,7 +1,7 @@
 ---
-title: ZoomIt utility by Sysinternals
-description: The ZoomIt utility by Sysinternals, now available with PowerToys, is a screen zoom, annotation, and recording tool for technical presentations and demos.
-ms.date: 01/22/2025
+title: ZoomIt Screen Zoom and Annotation Tool by Sysinternals
+description: ZoomIt by Sysinternals is a powerful screen zoom, annotation, and recording tool for technical presentations. Download with PowerToys or standalone. Perfect for demos and screen capture.
+ms.date: 08/20/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Win]
 #Customer intent: As a Windows power user, I want to learn about the ZoomIt utility by Sysinternals, which is now available with PowerToys.
@@ -11,9 +11,9 @@ no-loc: [PowerToys, Windows, Win]
 
 ZoomIt is a screen zoom, annotation, and recording tool for technical presentations and demos. You can also use ZoomIt to snip screenshots to the clipboard or to a file. ZoomIt runs unobtrusively in the tray and activates with customizable hotkeys to zoom in on an area of the screen, move around while zoomed, and draw on the zoomed image.
 
-:::image type="content" source="../images/powertoys-zoomit.gif" alt-text="Animation of the PowerToys ZoomIt utility by Sysinternals":::
+:::image type="content" source="../images/powertoys-zoomit.gif" alt-text="Animation of the PowerToys ZoomIt utility demonstrating screen zoom and annotation features during a presentation.":::
 
-ZoomIt is one of the [Sysinternals](/sysinternals/) utilities and its standalone version works all versions of Windows. To provide the most flexibility, this standalone version will continue to be available from Sysinternals. For more information or to download a standalone version, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation.
+ZoomIt is one of the [Sysinternals](/sysinternals/) utilities and its standalone version works all versions of Windows. To provide the most flexibility, this standalone version will continue to be available from Sysinternals. For more information about using ZoomIt or to download a standalone version, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation.
 
 ## Enabling
 
@@ -73,6 +73,14 @@ In addition to enabling or disabling ZoomIt in the PowerToys Settings, you can c
 |---------------|-------------|
 | Snip Toggle Hotkey | Set the hotkey to toggle screen snipping on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>6</kbd>. |
 
-For more details on using ZoomIt, including additional hotkey information, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation.
+For more details on using ZoomIt, including additional hotkey information, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation. For information about the DemoType feature in ZoomIt, see [Make demo typing easy with DemoType in ZoomIt](https://techcommunity.microsoft.com/blog/sysinternals-blog/make-demo-typing-easy-with-demotype-in-zoomit-v8-0/4050566) on the Sysinternals blog.
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
+
+## Related content
+
+[Sysinternals ZoomIt documentation](/sysinternals/downloads/zoomit)
+
+[Make demo typing easy with DemoType in ZoomIt](https://techcommunity.microsoft.com/blog/sysinternals-blog/make-demo-typing-easy-with-demotype-in-zoomit-v8-0/4050566)
+
+[Run ZoomIt now from Sysinternals Live](https://live.sysinternals.com/ZoomIt.exe)

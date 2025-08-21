@@ -1,12 +1,11 @@
 ---
 title: Use WinGet to install and manage applications
 description: The WinGet command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
-ms.date: 08/05/2024
+ms.date: 07/15/2025
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
-# Use the WinGet tool to install and manage applications
+# Use WinGet to install and manage applications
 
 **WinGet** is a command line tool enabling users to discover, install, upgrade, remove and configure applications on Windows 10, Windows 11, and Windows Server 2025 computers. This tool is the client interface to the Windows Package Manager service.
 
@@ -76,10 +75,9 @@ The current preview of the **WinGet** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
-| [--info](info.md) | Displays metadata about the system (version numbers, architecture, log location, etc). Helpful for troubleshooting. |
 | [install](install.md) | Installs the specified application. |
 | [show](show.md) | Displays details for the specified application. |
-| [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by the **WinGet** tool. |
+| [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by **WinGet**. |
 | [search](search.md) | Searches for an application. |
 | [list](list.md) | Display installed packages. |
 | [upgrade](upgrade.md) |  Upgrades the given specified application. |
@@ -93,6 +91,8 @@ The current preview of the **WinGet** tool supports the following commands.
 | [pin](pinning.md) | Manage package pins. |
 | [configure](configure.md) | Configures the system into a desired state. |
 | [download](download.md) | Downloads the specified application's installer. |
+| [repair](repair.md) | Repairs the selected application. |
+| [dscv3](dscv3.md) | PowerShell Desired State Configuration (DSC) v3 resource commands. |
 
 ### Options
 
@@ -101,12 +101,19 @@ The **WinGet** tool supports the following options.
 | Option | Description |
 |--------------|-------------|
 | **-v, --version** | Returns the current version of WinGet. |
-| **--info** |  Provides you with all detailed information on WinGet, including the links to the license, privacy statement, and configured group policies. |
-| **-?, --help** |  Shows additional help for WinGet. |
+| **--info** | Provides you with all detailed information on WinGet, including the links to the license, privacy statement, and configured group policies. |
+| **-?, --help** | Shows additional help for WinGet. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Opens the default logs location. |
+| **--verbose,--verbose-logs** | Enables verbose logging for winget. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
+| **--disable-interactivity** | Disables interactive prompts. |
+| **--proxy** | Sets a proxy to use for this execution. |
+| **--no-proxy** | Disables the use of proxy for this execution. |
 
 ## Supported installer formats
 
-The **WinGet** tool supports the following types of installers:
+**WinGet** supports the following types of installers:
 
 * EXE (with **Silent** and **SilentWithProgress** flags)
 * ZIP
@@ -121,18 +128,7 @@ The **WinGet** tool supports the following types of installers:
 
 ## Scripting WinGet
 
-You can use the following syntax to install multiple applications in a single command.
-
-`USAGE: winget install <query1> <query2> ...`
-
-### Example
-
-``` CMD
-winget install Microsoft.WindowsTerminal Microsoft.PowerToys Microsoft.VisualStudioCode
-```
-
-> [!NOTE]
-> When scripted, **WinGet** will install the applications in the specified order. When an installer returns success or failure, **WinGet** will launch the next installer. If an installer launches another process, it is possible that it will return to **WinGet** prematurely. This will cause **WinGet** to install the next installer before the previous installer has completed.
+The [Microsoft.WinGet.Client](https://www.powershellgallery.com/packages/Microsoft.WinGet.Client/) PowerShell module is available on the PowerShell Gallery.
 
 ## Debugging and troubleshooting
 
@@ -140,7 +136,7 @@ winget install Microsoft.WindowsTerminal Microsoft.PowerToys Microsoft.VisualStu
 
 ## Missing tools
 
-If the [community repository](../package/repository.md) does not include your tool or application, please submit a package to our [repository](https://github.com/microsoft/winget-pkgs). By adding your favorite tool, it will be available to you and everyone else.
+If the [community repository](../package/repository.md) does not include your tool or application, submit a package to our [repository](https://github.com/microsoft/winget-pkgs). By adding your favorite tool, it will be available to you and everyone else.
 
 ## Customize WinGet settings
 
@@ -150,9 +146,9 @@ You can configure the **WinGet** command line experience by modifying the **sett
 
 The **WinGet** tool is open source software available on GitHub in the repo [https://github.com/microsoft/winget-cli/](https://github.com/microsoft/winget-cli/). The source for building the client is located in the [src folder](https://github.com/microsoft/winget-cli/tree/master/src).
 
-The source for **WinGet** is contained in a Visual Studio 2019 C++ solution. To build the solution correctly, install the latest [Visual Studio with the C++ workload](https://visualstudio.microsoft.com/downloads/).
+The source for **WinGet** is contained in a Visual Studio 2022 C++ solution. To build the solution correctly, clone the repository and run the appropriate WinGet Configuration file located in the ".github" directory.
 
-We encourage you to contribute to the **WinGet** source on GitHub. You must first agree to and sign the Microsoft CLA.
+We encourage you to contribute to the **WinGet** source on GitHub. You must first agree to and sign the Microsoft CLA. Pull requests should come from a branch on your own fork.
 
 ## Troubleshooting
 

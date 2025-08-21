@@ -1,11 +1,56 @@
 {
   "redirections": [
-	{
-		"source_path": "hub/apps/whats-new/latest-docs-updates.md",
-		"redirect_url": "https://learn.microsoft.com/windows/apps/whats-new/windows-11-build-22000",
-		"redirect_document_id": false
-	  },
-	  {
+    {
+      "source_path": "hub/powertoys/video-conference-mute.md",
+      "redirect_url": "/previous-versions/windows/powertoys/video-conference-mute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/wsa/index.md",
+      "redirect_url": "/previous-versions/windows/android/wsa/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/wsa/release-notes.md",
+      "redirect_url": "/previous-versions/windows/android/wsa/release-notes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/environments.md",
+      "redirect_url": "/previous-versions/windows/dev-home/environments",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/extensions.md",
+      "redirect_url": "/previous-versions/windows/dev-home/extensions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/index.md",
+      "redirect_url": "/previous-versions/windows/dev-home/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/setup.md",
+      "redirect_url": "/previous-versions/windows/dev-home/setup",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/utilities.md",
+      "redirect_url": "/previous-versions/windows/dev-home/utilities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/windows-customization.md",
+      "redirect_url": "/previous-versions/windows/dev-home/windows-customization",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/whats-new/latest-docs-updates.md",
+      "redirect_url": "https://learn.microsoft.com/windows/apps/whats-new/windows-11-build-22000",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/design/devices/kinect-for-windows.md",
       "redirect_url": "https://azure.microsoft.com/en-us/products/kinect-dk",
       "redirect_document_id": false
@@ -265,56 +310,56 @@
       "redirect_url": "/previous-versions/windows/uwp/xbox-apps/xbox-dev-mode-companion",
       "redirect_document_id": false
     },
-  {
+    {
       "source_path": "uwp/whats-new/windows-docs-august-2017.md",
       "redirect_url": "/windows/uwp/",
       "redirect_document_id": false
-  },
-  {
-		"source_path": "uwp/whats-new/windows-docs-august-2018.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
-	{
-		"source_path": "uwp/whats-new/windows-docs-december-2017.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
-	{
-		"source_path": "uwp/whats-new/windows-docs-february-2018.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
-	{
-		"source_path": "uwp/whats-new/windows-docs-january-2019.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
-	{
-		"source_path": "uwp/whats-new/windows-docs-july-2017.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
-	{
-		"source_path": "uwp/whats-new/windows-docs-july-2018.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
-	{
-		"source_path": "uwp/whats-new/windows-docs-may-2018.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
-	{
-		"source_path": "uwp/whats-new/windows-docs-september-2017.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
-	{
-		"source_path": "uwp/whats-new/windows-docs-september-2018.md",
-		"redirect_url": "/windows/uwp/",
-		"redirect_document_id": false
-	},
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-august-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-december-2017.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-february-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-january-2019.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-july-2017.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-july-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-may-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-september-2017.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-september-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
     {
       "source_path": "uwp/monetize/get-xbox-live-analytics.md",
       "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
@@ -364,7 +409,7 @@
       "source_path": "uwp/get-started/get-uwp-app-samples.md",
       "redirect_url": "/windows/apps/get-started/samples",
       "redirect_document_id": false
-    },  
+    },
     {
       "source_path": "uwp/home.md",
       "redirect_url": "/windows/uwp/",
@@ -7274,17 +7319,17 @@
       "source_path": "hub/apps/get-started/migrate-from-uwp-to-winappsdk.md",
       "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw",
       "redirect_document_id": false
-    },  
+    },
     {
       "source_path": "hub/apps/windows-app-sdk/winforms-plus-winappsdk.md",
       "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk",
       "redirect_document_id": true
-    },  
+    },
     {
       "source_path": "hub/apps/windows-app-sdk/wpf-plus-winappsdk.md",
       "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk",
       "redirect_document_id": true
-    },  
+    },
     {
       "source_path": "hub/package-manager/package/windows-package-manager-policies-change-history.md",
       "redirect_url": "/windows/package-manager/package/windows-package-manager-policies",
@@ -7855,7 +7900,7 @@
       "redirect_url": "/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account",
       "redirect_document_id": false
     },
-     {
+    {
       "source_path": "hub/apps/publish/partner-center/add-users-groups-and-azure-ad-applications.md",
       "redirect_url": "/windows/apps/publish/partner-center/overview-users-groups-azure-ad-applications",
       "redirect_document_id": false
@@ -7919,82 +7964,82 @@
       "source_path": "uwp/publish/store-app-quality.md",
       "redirect_url": "/windows/apps/publish/store-app-quality",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-developer-code-of-conduct.md",
       "redirect_url": "/windows/apps/publish/store-developer-code-of-conduct",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policies-and-code-of-conduct.md",
       "redirect_url": "/windows/apps/publish/store-policies-and-code-of-conduct",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policies-change-history.md",
       "redirect_url": "/windows/apps/publish/store-policies-change-history",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policies.md",
       "redirect_url": "/windows/apps/publish/store-policies",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-11.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-11",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-12.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-12",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-13.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-13",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-14.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-14",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-15.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-15",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-16.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-16",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-6.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-6",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-7.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-7",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/index.md",
       "redirect_url": "/windows/apps/publish/",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "hub/apps/publish/update-your-app.md",
       "redirect_url": "/windows/apps/publish/publish-your-app/msi/publish-update-to-your-app-on-store",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/data-access/mysql-databases.md",
       "redirect_url": "/windows/apps/develop/data-access/mysql-database",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/data-access/mongo-db-databases.md",
       "redirect_url": "/windows/apps/develop/data-access/mongodb-database",
@@ -8584,7 +8629,7 @@
       "source_path": "hub/dev-home/quickstart-playground.md",
       "redirect_url": "/windows/dev-home/#experimental-features",
       "redirect_document_id": false
-    },   
+    },
     {
       "source_path": "hub/apps/design/style/xaml-control-templates.md",
       "redirect_url": "/windows/apps/develop/platform/xaml/xaml-control-templates",
@@ -8866,6 +8911,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/windows-app-sdk/windowing/windowing-overview.md",
+      "redirect_url": "/windows/apps/develop/ui-input/manage-app-windows",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/sudo/index.md",
       "redirect_url": "/windows/advanced-settings/sudo/",
       "redirect_document_id": false
@@ -8888,6 +8938,196 @@
     {
       "source_path": "hub/apps/develop/launch/launch-maps-app.md",
       "redirect_url": "/windows/apps/develop/launch/launch-default-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/push-notifications/index.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/push-notifications/push-quickstart.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/push-quickstart",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/push-notifications/troubleshooting.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/app-notifications-quickstart",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/app-notifications/index.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/badges.md",
+      "redirect_url": "../../../develop/notifications/badges",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/firewall-allowlist-config.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/firewall-allowlist-config",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/push-request-response-headers.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/push-request-response-headers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/quickstart-send-push-notification.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/quickstart-send-push-notification",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/raw-notification-overview.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/raw-notification-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/request-create-save-notification-channel.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/request-create-save-notification-channel",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/troubleshoot-notifications.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/troubleshoot-notifications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/code-generated-by-wizard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/WNS-Notification-Priorities.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/wns-notification-priorities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/wns-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/pin-to-taskbar.md",
+      "redirect_url": "../../develop/windows-integration/pin-to-taskbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/adaptive-interactive-toasts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/channel-types.md",
+      "redirect_url": "../../../develop/notifications/channel-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/choosing-a-notification-delivery-method.md",
+      "redirect_url": "../../../develop/notifications/choosing-a-notification-delivery-method",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/custom-audio-on-toasts.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/custom-audio-on-toasts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/custom-timestamps-on-toasts.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/custom-timestamps-on-toasts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/notification-listener.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/notification-listener",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/notifications-visualizer.md",
+      "redirect_url": "../../../develop/notifications/notifications-visualizer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/periodic-notification-overview.md",
+      "redirect_url": "../../../develop/notifications/periodic-notification-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/scheduled-toast.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/scheduled-toast",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/send-local-toast.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/send-local-toast",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/send-local-toast-cpp-uwp.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/send-local-toast-cpp-uwp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/send-local-toast-desktop-cpp-wrl",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/send-local-toast-other-apps.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/send-local-toast-other-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-collections.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-collections",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-desktop-apps.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-desktop-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-headers.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-headers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-notifications-overview.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-notifications-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-pending-update.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-pending-update",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-progress-bar.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-progress-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-schema.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-schema",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-ux-guidance.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-ux-guidance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/windows-integration/microsoft-copliot-key-provider.md",
+      "redirect_url": "/windows/apps/develop/windows-integration/microsoft-copilot-key-provider",
       "redirect_document_id": false
     }
   ]

@@ -6,6 +6,7 @@ ms.date: 12/05/2024
 ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, view products, grant products, Microsoft.StoreServices
 ms.localizationpriority: medium
+ms.custom: sfi-ga-nochange
 ---
 # Manage product entitlements from a service
 

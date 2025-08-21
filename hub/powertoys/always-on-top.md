@@ -1,7 +1,7 @@
 ---
-title: PowerToys Always On Top utility for Windows
-description: A system-wide utility for Windows that allows you to pin windows to the top of your screen.
-ms.date: 11/19/2024
+title: PowerToys Always On Top Utility for Windows
+description: Learn how to use PowerToys Always On Top utility to pin windows above others in Windows. Keep important windows visible with customizable shortcuts and settings.
+ms.date: 08/20/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Always On Top, Win]
 # Customer intent: As a Windows power user, I want to learn about the Always On Top utility in PowerToys.
@@ -9,9 +9,9 @@ no-loc: [PowerToys, Windows, Always On Top, Win]
 
 # Always On Top utility
 
-A system-wide Windows utility to pin windows above other windows.
+PowerToys Always On Top is a system-wide Windows utility that allows you to pin windows above other windows. This utility helps you keep important windows visible at all times, improving your productivity by ensuring critical information stays accessible while you work with other applications.
 
-![Always On Top screenshot](../images/pt-always-on-top.png)
+:::image type="content" source="../images/pt-always-on-top.png" alt-text="Screenshot of PowerToys Always On Top utility showing a pinned window with colored border highlighting.":::
 
 ## Pin a window
 
@@ -34,7 +34,7 @@ Always On Top has the following settings:
 | **Color** | The custom color of the highlight border. **Color** is only available when **Color mode** is set to **Custom color**. |
 | **Opacity (%)** | The opacity of the highlight border. |
 | **Thickness (px)** | The thickness of the highlight border in pixels. |
-| **Enable round corners** | When selected, the highlight border around the pinned window will have rounded corners.  |
+| **Enable rounded corners** | When selected, the highlight border around the pinned window will have rounded corners.  |
 | **Play a sound when pinning a window** | When selected, this option plays a sound when you activate or deactivate Always On Top. |
 | **Excluded apps** | Prevents you from pinning an application using Always On Top. Add an application's name to stop it from being pinned. The list will also exclude partial matches. For example, `Notepad` will prevent both Notepad.exe and Notepad++.exe from being pinned. To only prevent a specific application, add `Notepad.exe` to the excluded list. |
 

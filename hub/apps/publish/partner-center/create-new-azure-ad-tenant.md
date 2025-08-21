@@ -4,6 +4,9 @@ title: Create a new Microsoft Entra ID tenant to associate with your Partner Cen
 ms.date: 11/07/2022
 ms.topic: how-to
 ms.localizationpriority: medium
+ms.custom:
+  - sfi-image-nochange
+  - sfi-ga-nochange
 ---
 
 # Create a new Microsoft Entra ID tenant in Partner Center

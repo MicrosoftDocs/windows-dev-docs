@@ -41,7 +41,7 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Category**                 | **Required** |
 | **Subcategory**              | Not required |
 | **Secondary category**       | Not required |
-| **Privacy policy URL**       | **Required** if your app collects/trasmits personal information |  
+| **Privacy policy URL**       | **Required** if your app collects/transmits personal information |  
 | **Website**                  | Not required |
 | **Support contact info**     | **Required** if your product is available on Xbox. |
 | **Contact details**          | **Required** for business/company accounts |
@@ -71,6 +71,9 @@ Items that you are required to provide or specify are noted below. Some areas ar
 
 > [!TIP]
 > For detailed information about the **Packages** fields, see the [Upload package](./upload-app-packages.md) section.
+
+> [!NOTE]
+> The Packages section will show as "Incomplete" until all required fields are completed, even if individual packages show "Validated" status. Package validation confirms that uploaded files are valid, but section completion requires that all mandatory package-related configurations are set. For detailed guidance on package upload and validation, see [Upload app packages](./upload-app-packages.md).
 
 ### Store listings
 
@@ -112,4 +115,3 @@ Once you have completed all the sections, you can submit your app for certificat
 
 > [!NOTE]
 > You must have an active [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.
-

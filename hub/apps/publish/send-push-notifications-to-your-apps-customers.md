@@ -6,6 +6,7 @@ ms.topic: how-to
 keywords: windows 10, uwp, targeted notifications, push notifications, toast, tile
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 # Send notifications to your app's customers
 

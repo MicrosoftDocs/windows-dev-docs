@@ -1,7 +1,7 @@
 ---
-title: PowerToys Run utility for Windows
-description: Run is a quick launcher for power users that contains additional features without sacrificing performance.
-ms.date: 03/07/2025
+title: PowerToys Run Quick Launcher for Windows
+description: PowerToys Run is a quick launcher for Windows power users with search, calculator, and productivity features. Learn how to install and use this free utility.
+ms.date: 08/20/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -10,14 +10,17 @@ no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
 
 # PowerToys Run utility
 
-PowerToys Run is a quick launcher for power users that contains additional features without sacrificing performance. It's open source and modular, supporting additional plugins.
+PowerToys Run is a quick launcher for Windows power users that provides instant access to applications, files, calculator functions, and system commands without sacrificing performance. This free, open-source utility is modular and supports additional plugins to enhance your productivity workflow.
 
 To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(Note that the keyboard shortcut can be changed in the settings window.)*
 
 > [!IMPORTANT]
 > For this utility to work, PowerToys must be running in the background and Run must be enabled.
 
-![PowerToys Run demo opening apps](../images/pt-powerrun-demo.gif)
+![An animated GIF of a PowerToys Run demo opening apps](../images/pt-powerrun-demo.gif)
+
+> [!NOTE]
+> PowerToys Run is getting an upgrade to v2! Check out the [Command Palette](command-palette/overview.md), PowerToys Run's evolution.
 
 ## Features
 
@@ -47,15 +50,18 @@ The following general options are available on the PowerToys Run settings page.
 | Input smoothing | Add a delay to wait for more input before executing a search. |
 | Immediate plugins | How many milliseconds a plugin that makes the UI wait should wait before showing results. |
 | Background execution plugins | How many milliseconds a plugin that executes in the background should wait before showing results. |
-| Maximum number of results before scrolling | The maximum number of results shown without scrolling. |
+| Number of results shown before scrolling | The maximum number of results shown without scrolling. |
 | Clear the previous query on opening | When opened, previous searches will not be highlighted. |
 | Results order tuning | Fine tunes the ordering of the displayed results. |
 | Selected item weight | Use a higher number to get selected results to rise faster (Default: 5, 0 to disable). |
 | Wait for slower plugin results before selecting top item in results | Selecting this can help preselect the top, more relevant result, but at the risk of jumpiness. |
 | Tab through context buttons | When enabled, you can tab through the context buttons before tabbing to the next result. |
-| Generate thumbnails for files | Thumbnails will be generated for files in the results list (this may affect speed and stability). |
+| Use Pinyin | Use Pinyin on the search query. *This feature is experimental and may not work for every plugin.* |
+| Generate thumbnails from files | Thumbnails will be generated for files in the results list (this may affect speed and stability). |
 | Preferred monitor position | If multiple displays are in use, PowerToys Run can be opened on:<br />• Primary display<br />• Display with mouse cursor<br />• Display with focused window. |
-| App theme | Change the theme used by PowerToys Run. |
+| Theme | Change the theme used by PowerToys Run. |
+| Plugin hints | Choose which plugin keywords to show when the search box is empty. |
+| Text size (pt) | Change the text size used by PowerToys Run for result titles and the search query. |
 
 ### Plugin manager
 
@@ -82,18 +88,19 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | Plug-in | Direct activation command | Example |
 | :--- | :--- | :--- |
 | [Calculator](#calculator-plugin) | `=` | `= 2+2` |
-| [Windows search](#windows-search-plugin) | `?` | `? road` to find 'roadmap.txt' |
 | [History](#history-plugin) | `!!` | `!! car` to find any results that have been selected in the past, from any enabled plugin, that matches 'car'. |
-| [Installed programs](#program-plugin) | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
+| [Windows search](#windows-search-plugin) | `?` | `? road` to find 'roadmap.txt' |
 | OneNote | `o:` | `o: powertoys` to search your local OneNote notebooks for pages containing "powertoys" |
-| Registry keys | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
-| [Windows services](#service-plugin) | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
+| PowerToys | `@` | `@ color picker` to search for and launch Color Picker |
+| [Program command](#program-plugin) | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
+| Registry command | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
+| [Service command](#service-plugin) | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
 | Shell command | `>` | `> ping localhost` to do a ping query. |
 | [Time and date](#time-and-date-plugin) | `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
 | [Unit converter](#unit-converter-plugin) | `%%` | `%% 10 ft to m` to calculate the number of meters in 10 feet. Note that you can use `to` and `in` interchangeably in your commands with this converter. |
-| [Value Generator](#value-generator-plugin) | `#` | `# guid3 ns:URL www.microsoft.com` to generate the GUIDv3 for the URL namespace using the URL namespace. <br />`# sha1 abc` to calculate the SHA1 hash for the string 'abc'. <br />`# base64 abc` to encode the string 'abc' to base64.  |
 | URI-handler | `//` | `//` to open your default browser.<br />`// learn.microsoft.com` to have your default browser go to Microsoft Learn.<br />`mailto:` and `ms-settings:` links are supported. |
-| Visual Studio Code | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
+| [Value Generator](#value-generator-plugin) | `#` | `# guid3 ns:URL www.microsoft.com` to generate the GUIDv3 for the URL namespace using the URL namespace. <br />`# sha1 abc` to calculate the SHA1 hash for the string 'abc'. <br />`# base64 abc` to encode the string 'abc' to base64.  |
+| Visual Studio Code Workspaces | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
 | Web search | `??` | `??` to open your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. |
 | [Windows settings](#windows-settings-plugin) | `$` | `$ Add/Remove Programs` to open the Windows settings page for managing installed apps.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
 | Windows Terminal profiles | `_` | `_ powershell` to list all profiles that contains 'powershell' in their name. |

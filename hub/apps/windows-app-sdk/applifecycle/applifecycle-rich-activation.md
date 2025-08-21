@@ -2,7 +2,7 @@
 description: Describes how to use rich activation features with the app lifecycle API in unpackaged apps (Windows App SDK).
 title: Rich activation with the app lifecycle API (Windows App SDK)
 ms.topic: article
-ms.date: 03/07/2024
+ms.date: 07/14/2025
 keywords: AppLifecycle, Windows, activation, activation contracts, rich activation, win32, win32 activation, unpackaged app, unpackaged app activation
 ms.localizationpriority: medium
 ---

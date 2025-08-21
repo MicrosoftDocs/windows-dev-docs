@@ -20,7 +20,7 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](store-policies-change-history.md).
 
 
-Thank you for your interest in developing products for the Microsoft Store<sup>1</sup>. "Product" means content in whatever form submitted including, but not limited to, apps, games, titles, add-ons, in-product consumables, subscriptions and any additional content soldor offered in any of our storefronts or within a Product. We’re committed to a diverse catalog of products for customers worldwide. Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
+Thank you for your interest in developing products for the Microsoft Store<sup>1</sup>. "Product" means content in whatever form submitted including, but not limited to, apps, games, titles, add-ons, in-product consumables, subscriptions and any additional content sold or offered in any of our storefronts or within a Product. We’re committed to a diverse catalog of products for customers worldwide. Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
 
 A few principles to get you started:
 

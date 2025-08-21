@@ -4,6 +4,7 @@ title: Age ratings for MSI/EXE app
 ms.date: 12/5/2024
 ms.topic: article
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Generate age ratings for MSI/EXE app

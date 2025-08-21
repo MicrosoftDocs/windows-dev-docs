@@ -6,6 +6,7 @@ ms.topic: quickstart
 ms.service: windows
 ms.subservice: arm
 ms.reviewer: jcoliz
+ms.custom: sfi-image-nochange
 ---
 
 # Quickstart: Create a Windows on Arm virtual machine in the Azure portal (Preview)

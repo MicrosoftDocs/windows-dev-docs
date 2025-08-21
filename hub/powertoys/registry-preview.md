@@ -1,7 +1,7 @@
 ---
-title: PowerToys Registry Preview for Windows
-description: Registry Preview is a utility to visualize and edit Windows Registry files.
-ms.date: 11/19/2024
+title: Registry Preview utility for Windows PowerToys
+description: Learn how to use Registry Preview in PowerToys to safely view, edit, and manage Windows Registry files with an intuitive interface.
+ms.date: 08/20/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Registry Preview, Win]
@@ -10,9 +10,19 @@ no-loc: [PowerToys, Windows, Registry Preview, Win]
 
 # Registry Preview
 
-PowerToys **Registry Preview** simplifies the process of visualizing and editing complex Windows Registry files. It can also write changes to the Windows Registry.
+Registry Preview is a PowerToys utility that helps you visualize and edit Windows Registry files before applying changes to your system. This tool provides a user-friendly interface to preview .reg files, explore registry keys in a tree structure, and safely write changes to the Windows Registry, making registry management more accessible for Windows power users.
 
-![Registry Preview screenshot](../images/pt-registrypreview.png)
+:::image type="content" source="../images/pt-registrypreview.png" alt-text="Screenshot of Registry Preview utility showing registry file content and tree structure interface.":::
+
+Use Registry Preview to:
+
+- View the contents of .reg files in a structured format
+- Navigate registry keys and values through an interactive tree view
+- Edit registry files with built-in text editing capabilities
+- Safely apply changes to the Windows Registry with confirmation prompts
+- Open specific registry locations directly in the Windows Registry Editor
+
+This article explains how to enable, configure, and use Registry Preview to manage Windows Registry files effectively.
 
 ## Getting started
 
@@ -26,6 +36,10 @@ Select one or more .reg files in Windows File Explorer. Right-click on the selec
 
 > [!NOTE]
 > There is currently a 10MB file limit for opening Windows Registry files with Registry Preview. The tool will display a message if a file contains invalid content.
+
+## Settings
+
+There is a setting to make Registry Preview the default viewer for .reg files which is disabled by default.
 
 ## How to use
 

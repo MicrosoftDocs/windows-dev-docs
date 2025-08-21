@@ -1,20 +1,20 @@
 ---
-title: PowerToys Command Not Found for Windows
-description: A PowerShell 7 module that detects an error thrown by a command and suggests a relevant WinGet package to install, if available.
-ms.date: 11/19/2024
+title: PowerToys Command Not Found Tool for PowerShell 7 on Windows
+description: Learn how to use PowerToys Command Not Found tool for PowerShell 7. Automatically detect command errors and get WinGet package suggestions to install missing tools.
+ms.date: 08/20/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Command Not Found, Win]
 # Customer intent: As a Windows power user, I want to learn about the Command Not Found utility in PowerToys for Windows.
 ---
 
-# Command Not Found utility
+# Command Not Found utility for PowerShell
 
-A PowerShell 7 module that detects command-line errors and suggests a relevant WinGet package to install, if available.
+The PowerToys Command Not Found utility is a PowerShell 7 module that detects command-line errors and suggests relevant WinGet packages to install. This tool helps Windows users quickly find and install missing commands, improving productivity and reducing troubleshooting time.
 
 > [!IMPORTANT]
 > There are some incompatibilities between Command Not Found and some PowerShell configurations. Read more about them in [issue 30818](https://github.com/microsoft/PowerToys/issues/30818) on GitHub.
 
-![Command Not Found screenshot](../images/pt-cmd-not-found.png)
+:::image type="content" source="../images/pt-cmd-not-found.png" alt-text="Screenshot of PowerToys Command Not Found utility suggesting WinGet package installation in PowerShell terminal.":::
 
 ## Requirements
 

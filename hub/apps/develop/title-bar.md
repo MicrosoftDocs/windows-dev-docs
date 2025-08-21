@@ -52,7 +52,7 @@ You can use AppWindow APIs with any UI framework that the Windows App SDK suppor
 If you use WinUI 3 XAML as your app's UI framework, both the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs are available to you. Starting in Windows App SDK 1.4, the XAML Window and AppWindow use the same [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) object for title bar customization. Use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the title bar customization APIs.
 To access additional features of the title bar, you can use the AppWindow APIs from your XAML Window like this: `AppWindow.TitleBar.ForegroundColor = Colors.White;`.
 
-If you're not using WinUI 3 1.3 or later, use interop APIs to get the AppWindow and use the AppWindow APIs to customize the title bar. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](../windows-app-sdk/windowing/windowing-overview.md#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
+If you're not using WinUI 3 1.3 or later, use interop APIs to get the AppWindow and use the AppWindow APIs to customize the title bar. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](/windows/apps/develop/ui-input/manage-app-windows#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
 ## How much to customize the title bar
 
@@ -615,7 +615,7 @@ private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
 ```
 
 >[!NOTE]
->_Full screen_ and _compact overlay_ modes can be entered only if supported by your app. See [Manage app windows](../windows-app-sdk/windowing/windowing-overview.md), [FullScreenPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.fullscreenpresenter), and [CompactOverlayPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter) for more info.
+>_Full screen_ and _compact overlay_ modes can be entered only if supported by your app. See [Manage app windows](ui-input/manage-app-windows.md), [FullScreenPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.fullscreenpresenter), and [CompactOverlayPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter) for more info.
 
 ## Do's and don'ts
 

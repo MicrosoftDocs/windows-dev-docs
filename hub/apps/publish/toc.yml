@@ -343,6 +343,16 @@ items:
         href: /partner-center/partner-center-account-setup
       - name: Close your developer account in Partner Center
         href: partner-center/close-your-developer-account-in-partner-center.md
+      - name: Trademark and copyright protection
+        href: partner-center/trademark-and-copyright-protection.md  
+- name: What's new
+  items:
+      - name: Free developer registration for individual developers
+        href: whats-new-individual-developer.md  
+      - name: Revamped Health report in Partner Center
+        href: improved-health-report.md 
+      - name: Last Updated Date in Microsoft Store
+        href: last-update-date.md
 - name: Microsoft Store policies and resources
   items: 
       - name: Microsoft Store Policies

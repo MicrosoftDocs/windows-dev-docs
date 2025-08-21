@@ -5,6 +5,7 @@ ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, msi, exe, unpackaged, unpackaged app, desktop app, traditional desktop app, price, available, discoverable, free trial, trials, trial, apps, release date
 ms.localizationpriority: medium
+ms.custom: sfi-ga-nochange
 ---
 
 # Microsoft Store submission API for MSI or EXE app
@@ -62,7 +63,7 @@ To register your app:
 
 Before you call any of the methods in the Microsoft Store submission API for MSI or EXE app, you must first obtain an Microsoft Entra ID access token that you pass to the Authorization header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
 
-To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials]/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) to send an HTTP POST to the https://login.microsoftonline.com/<tenant_id>/oauth2/token endpoint. Here is a sample request.
+To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) to send an HTTP POST to the https://login.microsoftonline.com/<tenant_id>/oauth2/token endpoint. Here is a sample request.
 
 ```json
 POST https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/token HTTP/1.1

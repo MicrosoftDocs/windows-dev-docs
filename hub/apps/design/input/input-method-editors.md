@@ -4,19 +4,19 @@ title: Input Method Editors (IME)
 label: Input Method Editors (IME)
 template: detail.hbs
 keywords: ime, input method editor, input, interaction
-ms.date: 07/24/2020
+ms.date: 07/17/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # Input Method Editors (IME)
 
-An Input Method Editor (IME) is a software component that enables a user to input text in a language that can't be represented easily on a standard QWERTY keyboard. This is typically due to the number of characters in the user's written language, such as the various East Asian languages.
+An Input Method Editor (IME) is a software component that supports text input in edit controls for characters in languages that can't be represented easily on a standard QWERTY keyboard, such as those of various East Asian languages.
 
-Instead of each single character appearing on a single keyboard key, a user types combinations of keys that are interpreted by the IME. The IME generates either the character that matches the set of key strokes or a list of candidate characters to choose from. The selected character is then inserted into the edit control that the user is interacting with.
+Instead of each character appearing on a dedicated keyboard key, a combination of keystrokes are interpreted as a composite character by the IME. The IME generates the character that matches the set of key strokes (or provides a list of candidate characters to select from). The composite character is then inserted into the edit control.
 
 > [!NOTE]
-> IMEs can support both hardware keyboards and on-screen or touch keyboards.
+> IMEs can support both hardware keyboards and on-screen keyboards (OSK) such as the touch keyboard.
 
 Your app doesn't need to interact directly with the IME. The IME is built into the system, just as the touch keyboard is. If your app has text input, and you intend to support text input in languages that require an IME, you should test the end-to-end customer experience for text entry. This lets you fix any issues, such as adjusting your UI so it isn't occluded by the touch keyboard or IME candidate window.
 
@@ -40,10 +40,7 @@ A third-party IME must meet these requirements:
 
 A third-party IME that doesn't meet these requirements is blocked from running.
 
-> [!NOTE]
-> Legacy custom IMEs can run in desktop apps, but are blocked in Windows apps.
-
-Also, Windows Defender removes malicious IMEs from the system. Because of this, it's important that you familiarize yourself with the IME coding requirements. For more info, see [Input Method Editor (IME) requirements](input-method-editor-requirements.md).
+Because Windows Defender removes malicious IMEs from the system, it's important to familiarize yourself with the IME coding requirements. For more info, see [Input Method Editor (IME) requirements](input-method-editor-requirements.md).
 
 ## Design guidelines for IMEs
 

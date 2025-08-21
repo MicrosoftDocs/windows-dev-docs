@@ -1,12 +1,13 @@
 ---
-title: PowerToys DSC Configure module
-description: Desired State Configuration module documentation for PowerToys
-ms.date: 02/27/2025
-ms.topic: article
+title: PowerToys DSC Configure module guide
+description: Learn how to configure PowerToys utilities using the Desired State Configuration (DSC) Configure module with WinGet configuration files. Complete reference for all available settings and properties.
+ms.date: 08/20/2025
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, DSC, Win]
+# customer intent: As a Windows power user, I want to learn about the DSC Configure module in PowerToys.
 ---
 
-# Desired State Configuration
+# Desired State Configuration in PowerToys
 
 Since version 0.80, the PowerToys installer has been released on GitHub with `Microsoft.PowerToys.Configure` [DSC resource](/powershell/dsc/overview) that allows you to configure PowerToys using a [Winget configuration file](/windows/package-manager/configuration/create).
 
@@ -72,7 +73,7 @@ winget configure .\configuration.dsc.yaml
 
 This command installs the latest version of PowerToys and uses the PowerToysConfigure resource to apply settings for multiple PowerToys modules. More examples can be found [in the PowerToys repo](https://github.com/microsoft/PowerToys/tree/main/src/dsc/Microsoft.PowerToys.Configure/examples).
 
-## Available Configuration Settings by Module
+## Available configuration settings by module
 
 ### AlwaysOnTop
 
@@ -378,7 +379,7 @@ PowerLaucher is the internal name for PowerToys Run.
 | GenerateThumbnailsFromFiles | Boolean | Thumbnail generation for files is turned on. | ✅ Available |
 | Plugins | explained in the next subsection | Thumbnail generation for files is turned on. | ✅ Available |
 
-#### PowerToys Run plugins
+#### PowerToys Run plugin configuration
 
 PowerToys Run plugins can be configured in the Plugins property. [A sample](https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/configureLauncherPlugins.winget) can be found in the PowerToys repository.
 
@@ -490,4 +491,4 @@ PowerOcr is the internal name for Text Extractor.
 
 ## Contributing
 
-Refer to the [relevant devdocs](https://github.com/microsoft/PowerToys/tree/main/doc/devdocs/settingsv2/dsc-configure.md) section in the developer documentation to start working on the DSC module.
+Refer to the [relevant devdocs](https://github.com/microsoft/PowerToys/blob/main/doc/devdocs/core/settings/dsc-configure.md) section in the developer documentation to start working on the DSC module.

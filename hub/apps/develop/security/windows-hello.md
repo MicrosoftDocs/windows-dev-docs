@@ -4,6 +4,7 @@ description: This article describes the Windows Hello technology that ships as p
 ms.date: 07/08/2024
 ms.topic: article
 keywords: windows, winrt, security, identity
+ms.custom: sfi-image-nochange
 ---
 
 # Windows Hello

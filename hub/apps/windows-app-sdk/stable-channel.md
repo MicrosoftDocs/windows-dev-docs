@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: release-notes
-ms.date: 03/18/2025
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -14,18 +14,6 @@ The stable channel provides releases of the Windows App SDK that are supported f
 **Important links:**
 
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
-
-**Stable channel release note archive:**
-
-- [Stable channel release notes for the Windows App SDK 1.6](release-notes-archive/stable-channel-1.6.md)
-- [Stable channel release notes for the Windows App SDK 1.5](release-notes-archive/stable-channel-1.5.md)
-- [Stable channel release notes for the Windows App SDK 1.4](release-notes-archive/stable-channel-1.4.md)
-- [Stable channel release notes for the Windows App SDK 1.3](release-notes-archive/stable-channel-1.3.md)
-- [Stable channel release notes for the Windows App SDK 1.2](release-notes-archive/stable-channel-1.2.md)
-- [Stable channel release notes for the Windows App SDK 1.1](release-notes-archive/stable-channel-1.1.md)
-- [Stable channel release notes for the Windows App SDK 1.0](release-notes-archive/stable-channel-1.0.md)
-- [Stable channel release notes for the Windows App SDK 0.8](release-notes-archive/stable-channel-0.8.md)
-- [Stable channel release notes for the Windows App SDK 0.5](release-notes-archive/stable-channel-0.5.md)
 
 ## Downloads for the Windows App SDK
 
@@ -39,6 +27,8 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.7.250
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
 ### Version 1.7.3 (1.7.250606001)
+
+This is the latest service release for Version 1.7 of the Windows App SDK.
 
 #### Windows AI APIs
 
@@ -76,6 +66,10 @@ Microsoft.Windows.Widgets.Providers
 ```
 
 ### Version 1.7.2 (1.7.250513003)
+
+<details>
+
+<summary>Expand to see details for the Windows App SDK 1.7.2 (1.7.250513003) release</summary>
 
 #### Windows AI APIs
 
@@ -200,7 +194,13 @@ Microsoft.Windows.Workloads
     WorkloadsContract
 ```
 
+</details>
+
 ### Version 1.7.1 (1.7.250401001)
+
+<details>
+
+<summary>Expand to see details for the Windows App SDK 1.7.1 (1.7.250401001) release</summary>
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.7 release.
 
@@ -216,7 +216,13 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 - Fixed a potential crash caused by WebView2::UpdateCoreWebViewVisibility sometimes triggering reentrancy. For more info, see GitHub issue [#10305](https://github.com/microsoft/microsoft-ui-xaml/issues/10305). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixWebViewVisibilityReentrancyCrash)
 - Fixed an issue where app UI sometimes permanently freezes and can stop rendering due to the DispatcherQueue getting stuck. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixRandomUIFreezeInDispatcher)
 
+</details>
+
 ### Version 1.7.0 (1.7.250310001)
+
+<details>
+
+<summary>Expand to see details for the Windows App SDK 1.7.0 (1.7.250310001) release</summary>
 
 The following sections describe new and updated features and known issues for version 1.7.
 
@@ -478,6 +484,26 @@ This release includes the following bug fixes:
 - Fixed a potential crash in `ItemsView` when removing items. For more info, see GitHub issue [#9868](https://github.com/microsoft/microsoft-ui-xaml/issues/9868).
 - Fixed an issue in 1.7-preview1 where popups no longer correctly moved with their parent window. For more info, see GitHub issue [#10386](https://github.com/microsoft/microsoft-ui-xaml/issues/10386).
 - Based on feedback from 1.7-preview1, renamed some properties on the new `TitleBar` control.
+
+</details>
+
+## Archive of stable channel release notes
+
+<details>
+
+<summary>Expand for links to archived experimental channel release notes</summary>
+
+- [Stable channel release notes for the Windows App SDK 1.6](release-notes-archive/stable-channel-1.6.md)
+- [Stable channel release notes for the Windows App SDK 1.5](release-notes-archive/stable-channel-1.5.md)
+- [Stable channel release notes for the Windows App SDK 1.4](release-notes-archive/stable-channel-1.4.md)
+- [Stable channel release notes for the Windows App SDK 1.3](release-notes-archive/stable-channel-1.3.md)
+- [Stable channel release notes for the Windows App SDK 1.2](release-notes-archive/stable-channel-1.2.md)
+- [Stable channel release notes for the Windows App SDK 1.1](release-notes-archive/stable-channel-1.1.md)
+- [Stable channel release notes for the Windows App SDK 1.0](release-notes-archive/stable-channel-1.0.md)
+- [Stable channel release notes for the Windows App SDK 0.8](release-notes-archive/stable-channel-0.8.md)
+- [Stable channel release notes for the Windows App SDK 0.5](release-notes-archive/stable-channel-0.5.md)
+
+</details>
 
 ## Related topics
 

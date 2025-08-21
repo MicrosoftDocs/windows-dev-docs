@@ -4,6 +4,7 @@ title: Associate an existing Microsoft Entra ID tenant with your Partner Center 
 ms.date: 11/07/2022
 ms.topic: how-to
 ms.localizationpriority: medium
+ms.custom: sfi-ga-nochange
 ---
 
 # Associate an existing Microsoft Entra ID tenant in Partner Center

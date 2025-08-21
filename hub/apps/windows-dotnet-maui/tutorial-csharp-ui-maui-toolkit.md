@@ -1,15 +1,16 @@
 ---
-title: Tutorial--Create a .NET MAUI app with C# Markup and the Community Toolkit
+title: Tutorial--Create a .NET MAUI App With C# Markup and the Community Toolkit
 description: Build a .NET MAUI app with a user interface created without XAML by using C# Markup from the .NET MAUI Community Toolkit.
 ms.topic: tutorial
-ms.date: 11/11/2022
+ms.date: 07/15/2025
 keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium
+# customer intent: As a Windows developer, I want to learn how to create a .NET MAUI app with C# Markup and the Community Toolkit so that I can build cross-platform applications without using XAML.
 ---
 
-# Tutorial: Create a .NET MAUI app with C# Markup and the Community Toolkit
+# Tutorial: Build a .NET MAUI app with C# Markup and the Community Toolkit
 
-Build a **.NET MAUI** app with a user interface created without XAML by using **C# Markup** from the [.NET MAUI Community Toolkit](/dotnet/communitytoolkit/maui/).
+In this tutorial, you'll build a **.NET MAUI** app with a user interface created without XAML by using **C# Markup** from the [.NET MAUI Community Toolkit](/dotnet/communitytoolkit/maui/).
 
 ## Introduction
 
@@ -21,14 +22,13 @@ If you haven't already set up your environment for .NET MAUI development, please
 
 ## Creating the .NET MAUI project
 
-> [!NOTE]
-> If you are already familiar with setting up a .NET MAUI project, you can skip to the next section.
+In this section, you'll create a new .NET MAUI project. If you are already familiar with setting up a .NET MAUI project, you can skip to the next section.
 
 Launch Visual Studio, and in the start window click **Create a new project** to create a new project.
 
 In the **Create a new project** window, select **MAUI** in the All project types drop-down, select the **.NET MAUI App** template, and click the **Next** button:
 
-![.NET MAUI App template.](images/maui-markup-create-project.png)
+![A screenshot of the Create a new project window in Visual Studio with the .NET MAUI App template selected](images/maui-markup-create-project.png)
 
 Next, on the **Configure your new project** screen, give your project a name, choose a location for it, and click the **Next** button.
 
@@ -48,13 +48,13 @@ Right-click the project in **Solution Explorer** and select **Manage NuGet Packa
 
 In the **NuGet Package Manager** window, select the **Browse** tab and search for **CommunityToolkit.MVVM**:
 
-![CommunityToolkit.MVVM package.](images/maui-markup-add-mvvm-pkg.png)
+![A screenshot of the CommunityToolkit.MVVM package from the NuGet Package Manager in Visual Studio](images/maui-markup-add-mvvm-pkg.png)
 
 Add the latest stable version of the **CommunityToolkit.MVVM** package to the project by clicking **Install**.
 
 Next, search for CommunityToolkit.Maui:
 
-![CommunityToolkit.Maui packages.](images/maui-markup-install-nuget-pkg.png)
+![A screenshot of the CommunityToolkit.Maui package from the NuGet Package Manager in Visual Studio](images/maui-markup-install-nuget-pkg.png)
 
 Add the latest stable version of the **CommunityToolkit.Maui.Markup** package to the project by clicking **Install**.
 
@@ -66,7 +66,7 @@ We are going to add a simple **Model-View-ViewModel (MVVM)** implementation with
 
 In the **Add New Item** window that appears, name the class **MainViewModel** and click **Add**:
 
-![Adding a MainViewModel class to the project.](images/maui-markup-add-viewmodel-class.png)
+![A screenshot of the Add New Item dialog, adding a MainViewModel class to the project](images/maui-markup-add-viewmodel-class.png)
 
 We are going to leverage the power of the MVVM Toolkit in `MainViewModel`. Replace the contents of the class with the following code:
 
@@ -94,11 +94,13 @@ namespace MauiMarkupSample
 }
 ```
 
-If you have completed the [Build your first .NET MAUI app for Windows](walkthrough-first-app.md) tutorial, you will understand what the code above does. The `MainViewModel` class is decorated with the `INotifyPropertyChanged` attribute, which allows the MVVM Toolkit to generate the `INotifyPropertyChanged` implementation for the class. Marking `MainViewModel` as a `partial class` is required for the .NET source generator to work. The `ObservableProperty` attribute on the `name` private field will add a `Name` property for the class with the proper `INotifyPropertyChanged` implementation in the generated partial class. Adding the `OnNameChanging` and `OnNameChanged` partial methods is optional, but allows you to add custom logic when the `Name` property is changing or has changed.
+If you have completed the [Build your first .NET MAUI app for Windows](walkthrough-first-app.md) tutorial, you will understand what the code above does, and you can skip the explanation. If you haven't, here's a brief overview:
+
+The `MainViewModel` class is decorated with the `INotifyPropertyChanged` attribute, which allows the MVVM Toolkit to generate the `INotifyPropertyChanged` implementation for the class. Marking `MainViewModel` as a `partial class` is required for the .NET source generator to work. The `ObservableProperty` attribute on the `name` private field will add a `Name` property for the class with the proper `INotifyPropertyChanged` implementation in the generated partial class. Adding the `OnNameChanging` and `OnNameChanged` partial methods is optional, but allows you to add custom logic when the `Name` property is changing or has changed.
 
 ## Build a UI with C# Markup
 
-When building a UI with C# Markup, the first step is to update the `CreateMauiApp()` method in **MauiProgram.cs**. Replace the contents of the method with the following code:
+When building a UI with C# Markup, the first step is to update the `CreateMauiApp` method in **MauiProgram.cs**. Replace the contents of the method with the following code:
 
 ```csharp
 public static MauiApp CreateMauiApp()
@@ -212,13 +214,15 @@ The equivalent XAML to define these child elements would be:
 
 You may have noticed that the `TextColor` property is not set in the markup above. Setting the `TextColor` of a control requires setting a custom style. For more information about using styles in .NET MAUI, see [Style apps using XAML](/dotnet/maui/user-interface/styles/xaml). This is one example where setting properties in C# Markup can be more streamlined than the equivalent XAML. However, using styles in adds ease of reuse and inheritance.
 
-You're now ready to run the app. Press **F5** to build and run the project. The app should look like the following screenshot:
+You're now ready to run the app. Press **F5** to build and run the project. The app should look similar to the following screenshot:
 
-![Run your .NET MAUI C# Markup app.](images/maui-markup-run-the-app.png)
+![A screenshot of the completed .NET MAUI C# Markup app running on Windows](images/maui-markup-run-the-app.png)
+
+## Summary and next steps
 
 You've now created your first C# Markup app on Windows with .NET MAUI. To learn more about what you can do with C# Markup, see [C# Markup documentation](/dotnet/communitytoolkit/maui/markup/markup).
 
-## Related topics
+## Related content
 
 [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources)
 

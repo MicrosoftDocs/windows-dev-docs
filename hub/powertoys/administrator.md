@@ -1,6 +1,6 @@
 ---
-title: PowerToys administrator mode for Windows
-description: For PowerToys to work with an app running in elevated admin mode, PowerToys must be running in administrator mode as well.
+title: Run PowerToys in Administrator Mode on Windows
+description: Learn how to run PowerToys in administrator mode to ensure compatibility with elevated apps on Windows. Fix FancyZones and other utilities when they don't work with admin applications.
 ms.date: 11/19/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
 
 # PowerToys running with administrator permissions
 
-When running any application as an administrator (also referred to as elevated permissions), PowerToys may not work correctly when the elevated applications are in focus or trying to interact with a PowerToys feature like FancyZones. This can be addressed by also running PowerToys as administrator.
+PowerToys administrator mode is required when you need PowerToys utilities to work with elevated applications on Windows. When running any application as an administrator (also referred to as elevated permissions), PowerToys may not work correctly when the elevated applications are in focus or trying to interact with a PowerToys feature like FancyZones. This can be addressed by also running PowerToys as administrator.
 
 ## Options
 
@@ -68,8 +68,10 @@ The simplest way to run an app or program in administrative mode is to right-cli
 
 If you see this User Account Control prompt, the application is requesting administrator level elevated permission:
 
-![Windows UAC elevated permission prompt screenshot](../images/pt-admin-prompt.png)
+:::image type="content" source="../images/pt-admin-prompt.png" alt-text="Screenshot of Windows User Account Control prompt requesting administrator permissions for PowerToys.":::
 
 In the case of an elevated command line, typically the text "Administrator" will be included in the title bar.
 
-![Windows Powershell and Command Line with elevated permissions screenshot](../images/pt-admin-terminal.png)
+:::image type="content" source="../images/pt-admin-terminal.png" alt-text="Screenshot of Windows PowerShell and Command Prompt running with administrator permissions showing elevated status in title bar.":::
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

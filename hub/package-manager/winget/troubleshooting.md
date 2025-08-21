@@ -1,7 +1,7 @@
 ---
 title: Debugging and troubleshooting issues with WinGet
 description: Provides information on logging and WinGet diagnostics.
-ms.date: 11/15/2024
+ms.date: 07/15/2025
 ms.topic: troubleshooting-general
 ---
 
@@ -44,6 +44,20 @@ If you need more comprehensive log files, that provide the complete communicatio
 > winget source add -n mysource -t Microsoft.REST -a https://www.contoso.org --verbose
 ```
 
+### settings
+
+You can specify the default logging level for WinGet to use in your WinGet Settings file. The **settings** command will open the settings.json file in your default JSON editor.
+
+Example with verbose logging:
+```JSON
+{
+    "$schema": "https://aka.ms/winget-settings.schema.json",
+    "logging": {
+        "level": "verbose"
+    }
+}
+```
+
 ## Known issues
 
 A list of known issues with sources and behaviors is kept up to date in the [Windows Package Manager Client repository](https://www.github.com/microsoft/winget-cli).  If you encounter issues when using the WinGet tool, go [here](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting) for troubleshooting.
@@ -51,6 +65,12 @@ A list of known issues with sources and behaviors is kept up to date in the [Win
 ## Exit codes
 
 The WinGet tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the ["Return codes" file of the Windows Package Manager Client repository](https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md).
+
+The WinGet **error** command accepts errors from "Exit codes" and displays a description for known error codes for WinGet, MSIX, and MSI installers. Many .exe-based installers have non-standard error codes and may not be displayed.
+
+```CMD
+> winget error 1603
+```
 
 ### Scope for specific user vs machine-wide
 
@@ -75,3 +95,7 @@ The user agent string for WinGet has the following format:
 Example: 
 
 `winget-cli WindowsPackageManager/1.9.25200 DesktopAppInstaller/Microsoft.DesktopAppInstaller v1.24.25200.0`
+
+### System Context
+
+WinGet is delivered via the App Installer as a packaged application. MSIX (packaged) applications depend on an App Execution Alias to be resolved on the PATH environment variable. The WinGet CLI is not supported in the system context. The Microsoft.WinGet.Client PowerShell module can be used in the system context with applications that are installed machine wide.

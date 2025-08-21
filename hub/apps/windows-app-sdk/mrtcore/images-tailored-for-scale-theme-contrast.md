@@ -1,7 +1,7 @@
 ---
 description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
 title: Load tailored images and assets in your apps
-ms.date: 10/08/2024
+ms.date: 07/14/2025
 ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium

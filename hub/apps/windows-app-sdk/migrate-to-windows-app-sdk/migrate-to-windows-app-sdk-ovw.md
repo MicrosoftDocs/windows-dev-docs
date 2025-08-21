@@ -1,7 +1,7 @@
 ---
 title: Migrate from UWP to the Windows App SDK
 description: A collection of topics describing and demonstrating how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
-ms.date: 09/10/2024
+ms.date: 07/14/2025
 ms.topic: upgrade-and-migration-article
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
 ms.localizationpriority: medium

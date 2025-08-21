@@ -1,6 +1,6 @@
 ---
 description: Import and export store listings for your MSIX app so you can reuse them later
-title: Import and export store listings for MSIX app
+title: Import and export store listings for your MSIX app
 ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
