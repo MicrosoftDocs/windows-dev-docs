@@ -27,6 +27,8 @@ This quickstart walks through adding push notifications support to your app. See
 
 > [!div class="button"]
 > [Sample App Code](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push)
+
+You can also find samples for each version of Windows App SDK by [selecting a version branch in the samples repository](https://github.com/microsoft/WindowsAppSDK-Samples/branches).
  
 ## API reference
 
@@ -91,12 +93,12 @@ This section walks through creating a console app template and turning it into a
 
 In Visual Studio, click "Create a new project". In the dropdown boxes, filter the language to "C++", platform to "Windows", and project type to "Console". Select the "Console App" template. 
 
-If you cannot find the template, you can add the workload [workload] or [individual component] by going back to the VS Installer and selecting "Modify" next to the installation of Visual Studio.
+If you cannot find the template, you can add the Desktop Development with C++ by going back to the VS Installer and selecting "Modify" next to the installation of Visual Studio.
 
 Once you select the template, click "Next". Choose a name for your solution. Make note of this name because you will need it later. Then click "Create".
 
 When Visual Studio opens, you should find the following in your Solution Explorer:
-![alt text](image.png)
+![Example solution from template](image.png)
 
 ### Step 2: Add in sample code
 
@@ -117,18 +119,18 @@ First, we will add a file called `packages.config`, which contains the libraries
 Save the name of your `.cpp` file outside of the current code. This will be needed in the next step.
 
 Next, update the `{yoursolutionname}.vcxproj` file. To edit it, right click on your project file (just under your solution) and select "Unload project". If it asks you to save any files, click "Yes".
-![alt text](image-1.png)
+![Unload project button in Solution Explorer](image-1.png)
 
 Your project should then look like this:
-![alt text](image-2.png)
+![Unloaded project in Solution Explorer](image-2.png)
 
 Double click the project now and `{yoursolutionname.vcxproj}` will appear:
 
-![alt text](image-3.png)
+![vcxproj example](image-3.png)
 
 Make note of two properties under the "Globals" property group in this file: `<ProjectGuid>` and `<RootNamespace>`. These are unique to your project and are needed to reload the file.
 
-![alt text](image-5.png)
+![project GUID and RootNamespace properties in vcxproj file](image-5.png)
 
 Once you have saved those properties outside of the code, paste in the following code block, replacing SOLUTION_NAMESPACE_HERE, PROJECT_GUID_HERE, CPP_FILE_NAME_HERE with your solution name, project GUID, and `.cpp` file name, respectfully.
 
@@ -304,7 +306,7 @@ Now, click on the `.cpp` file.
 > [!IMPORTANT]
 > If you see this error:
 >
->![alt text](image-4.png)
+>![Error message pop-up stating: The document cannot be opened. It has been renamed, deleted or moved](image-4.png)
 >
 >it's most likely because `<RootNamespace>`, `<ProjectGuid>` and/or the `.cpp` filename weren't all updated. To resolve, unload the project, clicking "Don't save" on the pop-up. Then open the `.vcxproj` file, ensure SOLUTION_NAMESPACE_HERE, PROJECT_GUID_HERE, CPP_FILE_NAME_HERE have been replaced with your project information, and reload again.
 
@@ -493,7 +495,7 @@ Finally, we need to load in the packages we reference in `packages.config`. To d
 
 Once the packages are restored, click F5 to run the sample. You should see a console window that looks like this:
 
-![alt text](console_complete.png)
+![working sample console](console_complete.png)
 
 To send notifications to your app, see [Send a push notification to your app](#send-a-push-notification-to-your-app).
 
@@ -511,50 +513,6 @@ If this is your first time adding Windows App SDK, you can add it by right click
 * Microsoft.WindowsAppSDK (this tutorial uses 1.5.240227000)
 * Microsoft.Windows.SDK.BuildTools (this tutorial uses 10.0.22621.756) - it usually will install with Windows App SDK
 * Microsoft.Windows.CppWinRT (this tutorial uses 2.0.240405.15) - this library allows you to use the modern Windows APIs in C++ by projecting Windows Runtime (WinRT) APIs into C++ code and generates the header files we need.
-
-Adding the packages via Package Manager updates these project files:
-```xml
-<!-- Your packages.config file -->
-<?xml version="1.0" encoding="utf-8"?>
-<packages>
-    <!-- previously installed packages -->
-    <package id="Microsoft.Windows.CppWinRT" version="2.0.240405.15" targetFramework="native" />
-    <package id="Microsoft.Windows.SDK.BuildTools" version="10.0.22621.756" targetFramework="native" />
-    <package id="Microsoft.WindowsAppSDK" version="1.5.240227000" targetFramework="native" />
-</packages>
-```
-
-```xml
-<!-- your .vcxproj file -->
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-<!-- Each package imports props files -->
-  <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props')" />
-  <Import Project="..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.props')" />
-  <Import Project="..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.props" Condition="Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.props')" />
-                        ...
-<!-- The newly created packages.config file is also added -->
- <ItemGroup>
-    <None Include="packages.config" />
- </ItemGroup>
-                        ...
-
-<!-- Each packages adds a targets file -->
-<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.10.0.22621.756\build\Microsoft.Windows.SDK.BuildTools.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.1.5.240227000\build\native\Microsoft.WindowsAppSDK.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.targets'))" />
-  </Target>
-                        ...
-```
-
-For best results, add packages using Visual Studio's Package Manager.
 
 > [!NOTE] 
 > If this is the first time you are using Windows App SDK in your project and it is packaged with external location or unpackaged, make sure the Windows App SDK is initialized either with auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>` in the `.vcxproj` file) or use the bootstrapper API.
@@ -896,6 +854,13 @@ WNS Channel URIs are the HTTP endpoints for sending push notifications. Each cli
 auto channelOperation{ PushNotificationManager::Default().CreateChannelAsync(winrt::guid("[Your app's Azure ObjectID]")) };
 ```
 
+If you're following the tutorial code, add your Azure Object ID here:
+```cpp
+// To obtain an AAD RemoteIdentifier for your app,
+// follow the instructions on https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
+winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this with your own Azure ObjectId
+```
+
 The **PushNotificationManager** will attempt to create a Channel URI, retrying automatically for no more than 15 minutes. Create an event handler to wait for the call to complete. Once the call is complete, if it was successful, register the URI with the WNS  server.
 
 > ![NOTE]
@@ -979,6 +944,7 @@ Together with the previous steps:
 #include <winrt/Microsoft.Windows.AppLifecycle.h>
 #include <winrt/Windows.ApplicationModel.Background.h>
 #include <wil/cppwinrt.h>
+#include <wil/result.h>
 
 using namespace winrt::Microsoft::Windows::PushNotifications;
 using namespace winrt::Windows::Foundation;
@@ -986,13 +952,13 @@ using namespace winrt::Microsoft::Windows::AppLifecycle;
 
 // To obtain an AAD RemoteIdentifier for your app,
 // follow the instructions on https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
-winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this with your own Azure AppId
+winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this with your own Azure ObjectId
 
 winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChannelAsync()
 {
     auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(remoteId);
 
-    // Setup the inprogress event handler
+    // Set up the in-progress event handler
     channelOperation.Progress(
         [](auto&& sender, auto&& args)
         {
@@ -1059,70 +1025,84 @@ void SubscribeForegroundEventHandler()
         std::cout << "\nPush notification content received in the FOREGROUND: " << payloadString << std::endl;
     }) };
 
-    std::cout << "Push notification foreground event handler registered." << std::endl;
+	std::cout << "Push notification foreground event handler registered." << std::endl;
 }
 
 int main()
 {
     // Set up an event handler, so we can receive notifications in the foreground while the app is running.
-    // You must register notification event handlers before calling Register(). Otherwise, a runtime exception
-    // will be thrown.
+	// You must register notification event handlers before calling Register(). Otherwise, the following runtime
+    // exception will be thrown: System.Runtime.InteropServices.COMException: 'Element not found. Must register
+    // event handlers before calling Register().'
     SubscribeForegroundEventHandler();
 
-    // Register the app for push notifications.
+	// Register the app for push notifications.
     PushNotificationManager::Default().Register();
 
     auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
     switch (args.Kind())
     {
-    case ExtendedActivationKind::Launch:
-    {
-        std::cout << "App launched by user or from the debugger." << std::endl;
-        if (PushNotificationManager::IsSupported())
+        case ExtendedActivationKind::Launch:
         {
-            std::cout << "Push notifications are supported on this device." << std::endl;
+            std::cout << "App launched by user or from the debugger." << std::endl;
+            if (PushNotificationManager::IsSupported())
+            {
+                std::cout << "Push notifications are supported on this device." << std::endl;
 
-            std::cout << "\nPress 'Enter' at any time to exit App." << std::endl;
-            std::cin.ignore();
+                // Request a WNS Channel URI which can be passed off to an external app to send notifications to.
+                // The WNS Channel URI uniquely identifies this app for this user and device.
+                PushNotificationChannel channel{ RequestChannel() };
+                if (!channel)
+                {
+                    std::cout << "\nThere was an error obtaining the WNS Channel URI" << std::endl;
+
+                    if (remoteId == winrt::guid{ "00000000-0000-0000-0000-000000000000" })
+                    {
+                        std::cout << "\nThe ObjectID has not been set. Refer to the readme file accompanying this sample\nfor the instructions on how to obtain and setup an ObjectID" << std::endl;
+                    }
+                }
+
+                std::cout << "\nPress 'Enter' at any time to exit App." << std::endl;
+                std::cin.ignore();
+            }
+            else
+            {
+                std::cout << "Push notifications are NOT supported on this device." << std::endl;
+				std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
+                std::cin.ignore();
+            }
         }
-        else
-        {
-            std::cout << "Push notifications are NOT supported on this device." << std::endl;
-            std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
-            std::cin.ignore();
-        }
-    }
-    break;
-
-    case ExtendedActivationKind::Push:
-    {
-        std::cout << "App activated via push notification." << std::endl;
-        PushNotificationReceivedEventArgs pushArgs{ args.Data().as<PushNotificationReceivedEventArgs>() };
-
-        // Call GetDeferral to ensure that code runs in low power
-        auto deferral{ pushArgs.GetDeferral() };
-
-        auto payload{ pushArgs.Payload() };
-
-        // Do stuff to process the raw notification payload
-        std::string payloadString(payload.begin(), payload.end());
-        std::cout << "\nPush notification content received in the BACKGROUND: " << payloadString.c_str() << std::endl;
-        std::cout << "\nPress 'Enter' to exit the App." << std::endl;
-
-        // Call Complete on the deferral when finished processing the payload.
-        // This removes the override that kept the app running even when the system was in a low power mode.
-
-        deferral.Complete();
-        std::cin.ignore();
-    }
-    break;
-
-    default:
-        std::cout << "\nUnexpected activation type" << std::endl;
-        std::cout << "\nPress 'Enter' to exit the App." << std::endl;
-        std::cin.ignore();
         break;
-    }
+
+        case ExtendedActivationKind::Push:
+        {
+            std::cout << "App activated via push notification." << std::endl;
+            PushNotificationReceivedEventArgs pushArgs{ args.Data().as<PushNotificationReceivedEventArgs>() };
+
+            // Call GetDeferral to ensure that code runs in low power
+            auto deferral{ pushArgs.GetDeferral() };
+
+            auto payload{ pushArgs.Payload() };
+
+            // Do stuff to process the raw notification payload
+            std::string payloadString(payload.begin(), payload.end());
+            std::cout << "\nPush notification content received in the BACKGROUND: " << payloadString.c_str() << std::endl;
+            std::cout << "\nPress 'Enter' to exit the App." << std::endl;
+
+            // Call Complete on the deferral when finished processing the payload.
+            // This removes the override that kept the app running even when the system was in a low power mode.
+
+            deferral.Complete();
+            std::cin.ignore();
+        }
+        break;
+
+        default:
+            std::cout << "\nUnexpected activation type" << std::endl;
+            std::cout << "\nPress 'Enter' to exit the App." << std::endl;
+            std::cin.ignore();
+            break;
+	}
 }
 
 ```
@@ -1130,6 +1110,9 @@ int main()
 ### Step 5: Build and install your app
 
 Use Visual Studio to build and install your app. Right click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger.
+
+The tutorial code's console will look like this:
+![working sample console](console_complete.png). You'll need the token to [send a push notification to your app](#send-a-push-notification-to-your-app).
 
 ## Send a push notification to your app
 
