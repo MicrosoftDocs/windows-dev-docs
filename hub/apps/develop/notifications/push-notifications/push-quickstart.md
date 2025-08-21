@@ -98,7 +98,7 @@ If you cannot find the template, you can add the Desktop Development with C++ by
 Once you select the template, click "Next". Choose a name for your solution. Make note of this name because you will need it later. Then click "Create".
 
 When Visual Studio opens, you should find the following in your Solution Explorer:
-![Example solution from template](image.png)
+![Example solution from template](images/template-solution-explorer.png)
 
 ### Step 2: Add in sample code
 
@@ -119,18 +119,18 @@ First, we will add a file called `packages.config`, which contains the libraries
 Save the name of your `.cpp` file outside of the current code. This will be needed in the next step.
 
 Next, update the `{yoursolutionname}.vcxproj` file. To edit it, right click on your project file (just under your solution) and select "Unload project". If it asks you to save any files, click "Yes".
-![Unload project button in Solution Explorer](image-1.png)
+![Unload project button in Solution Explorer](images/unload-project.png)
 
 Your project should then look like this:
-![Unloaded project in Solution Explorer](image-2.png)
+![Unloaded project in Solution Explorer](images/unloaded-project.png)
 
 Double click the project now and `{yoursolutionname.vcxproj}` will appear:
 
-![vcxproj example](image-3.png)
+![vcxproj example](images/vcxproj.png)
 
 Make note of two properties under the "Globals" property group in this file: `<ProjectGuid>` and `<RootNamespace>`. These are unique to your project and are needed to reload the file.
 
-![project GUID and RootNamespace properties in vcxproj file](image-5.png)
+![project GUID and RootNamespace properties in vcxproj file](images/project-guid-and-root-namespace.png)
 
 Once you have saved those properties outside of the code, paste in the following code block, replacing SOLUTION_NAMESPACE_HERE, PROJECT_GUID_HERE, CPP_FILE_NAME_HERE with your solution name, project GUID, and `.cpp` file name, respectfully.
 
@@ -306,7 +306,7 @@ Now, click on the `.cpp` file.
 > [!IMPORTANT]
 > If you see this error:
 >
->![Error message pop-up stating: The document cannot be opened. It has been renamed, deleted or moved](image-4.png)
+>![Error message pop-up stating: The document cannot be opened. It has been renamed, deleted or moved](images/document-cannot-be-opened-error.png)
 >
 >it's most likely because `<RootNamespace>`, `<ProjectGuid>` and/or the `.cpp` filename weren't all updated. To resolve, unload the project, clicking "Don't save" on the pop-up. Then open the `.vcxproj` file, ensure SOLUTION_NAMESPACE_HERE, PROJECT_GUID_HERE, CPP_FILE_NAME_HERE have been replaced with your project information, and reload again.
 
@@ -495,7 +495,7 @@ Finally, we need to load in the packages we reference in `packages.config`. To d
 
 Once the packages are restored, click F5 to run the sample. You should see a console window that looks like this:
 
-![working sample console](console_complete.png)
+![working sample console](images/console_complete.png)
 
 To send notifications to your app, see [Send a push notification to your app](#send-a-push-notification-to-your-app).
 
@@ -1112,7 +1112,7 @@ int main()
 Use Visual Studio to build and install your app. Right click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger.
 
 The tutorial code's console will look like this:
-![working sample console](console_complete.png). You'll need the token to [send a push notification to your app](#send-a-push-notification-to-your-app).
+![working sample console](images/console_complete.png). You'll need the token to [send a push notification to your app](#send-a-push-notification-to-your-app).
 
 ## Send a push notification to your app
 
