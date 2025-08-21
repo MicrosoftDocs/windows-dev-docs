@@ -1,13 +1,16 @@
 ---
-title: PowerToys File Explorer add-ons utility for Windows
-description: A File Explorer add-on that enables different preview pane and thumbnail renderers for different file types.
-ms.date: 07/16/2024
-ms.topic: article
+title: PowerToys File Explorer Add-ons Utility for Windows
+description: PowerToys File Explorer add-ons enable preview pane and thumbnail renderers for SVG, PDF, Markdown, and source code files in Windows. Download and configure these utilities to enhance your file browsing experience.
+ms.date: 08/20/2025
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Monaco]
+# customer intent: As a Windows power user, I want to learn how to use the File Explorer add-ons utility in PowerToys.
 ---
 
 # File Explorer add-ons utility
+
+PowerToys File Explorer add-ons enhance Windows File Explorer with preview pane and thumbnail support for multiple file types including SVG, PDF, Markdown, and source code files. These utilities allow you to preview file contents directly in File Explorer without opening separate applications.
 
 > [!WARNING]
 > Enabling the preview handlers will override other preview handlers already installed - there have been reports of incompatibility between Outlook and the PDF Preview Handler.
@@ -39,7 +42,7 @@ Expand the **Source code files (Monaco)** section to change the following settin
 
 To enable preview support, set the extension to **On**.
 
-![PowerToys Settings Enable File Explorer screenshot](../images/powertoys-settings-fileexplorer.png)
+:::image type="content" source="../images/powertoys-settings-fileexplorer.png" alt-text="Screenshot of PowerToys settings page showing File Explorer add-ons toggle enabled.":::
 
 If the preview pane does not appear to work after setting the extension to **On**, there is an advanced setting in Windows that may be blocking the preview handler. Go to **Options** in Windows File Explorer and under the **View** tab, you will see a list of **Advanced settings**. Ensure that **Show preview handlers in preview pane** is selected in order for the preview pane to display.
 
@@ -47,18 +50,18 @@ If the preview pane does not appear to work after setting the extension to **On*
 
 Open Windows File Explorer, go to **View** in the Explorer ribbon and select **Preview pane**.
 
-![PowerToys Preview Pane demo for Windows 11](../images/powertoys-fileexplorer-win11.gif)
+:::image type="content" source="../images/powertoys-fileexplorer-win11.gif" alt-text="Screenshot of Windows 11 File Explorer showing PowerToys preview pane functionality.":::
 
 ### Enabling the Explorer pane in Windows 10
 
 Open Windows File Explorer, go to **View** in the Explorer ribbon and select **Preview Pane**.
 
-![PowerToys Preview Pane demo for Windows 10](../images/powertoys-fileexplorer.gif)
+:::image type="content" source="../images/powertoys-fileexplorer.gif" alt-text="Screenshot of Windows 10 File Explorer showing PowerToys preview pane functionality.":::
 
 > [!NOTE]
 > It isn't possible to change the background color of the preview pane, so if you're working with transparent images with white shapes, you may not be able to see them in the preview.
 
-## Thumbnail Previews
+## Thumbnail previews
 
 To enable thumbnail preview support, set the extension to **On**.
 

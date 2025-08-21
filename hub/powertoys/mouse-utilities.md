@@ -1,7 +1,7 @@
 ---
-title: PowerToys Mouse Utilities for Windows
-description: A collection of utilities to expand the range of usage for the mouse and cursor.
-ms.date: 08/01/2025
+title: Mouse Utilities in PowerToys for Windows
+description: Mouse utilities in PowerToys enhance cursor functionality with Find my mouse, Mouse Highlighter, Mouse jump, and Crosshairs features for Windows users.
+ms.date: 08/20/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Mouse, jump]
@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Mouse, jump]
 
 # Mouse utilities
 
-Mouse utilities is a collection of features that enhance mouse and cursor functionality on Windows.
+Mouse utilities in PowerToys is a collection of features that enhance mouse and cursor functionality on Windows. These utilities help you locate your cursor, highlight mouse clicks, jump across screens, and display crosshairs for improved precision and productivity.
 
 ## Find my mouse
 

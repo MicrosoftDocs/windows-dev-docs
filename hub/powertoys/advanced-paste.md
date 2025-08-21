@@ -1,23 +1,25 @@
 ---
-title: PowerToys Advanced Paste for Windows
-description: A tool that enables you to paste the text from your clipboard into any format needed. It can be enhanced with an AI-powered option that is 100% opt-in and requires an OpenAI key.
-ms.date: 02/28/2025
+title: Advanced Paste Tool for Clipboard Management in PowerToys
+description: Learn how to use PowerToys Advanced Paste to transform clipboard content into any format - plain text, JSON, Markdown, or files. Includes opt-in AI-powered features and local OCR capabilities.
+ms.date: 08/20/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 # Customer intent: Learn how to use the Advanced Paste feature in PowerToys to paste text from your clipboard into any format needed.
 ---
 
-# Advanced Paste
+# Advanced Paste tool for clipboard management
 
-PowerToys **Advanced Paste** is a tool that enables you to paste the content from your clipboard into any format needed. It can paste as plain text, markdown, JSON, .txt file, .html file, or .png file directly with the UX or with a direct keystroke invoke. It can also extract and paste the text directly from an image in your clipboard or transcode audio or video from your clipboard to an .mp3 or .mp4 file. These actions are executed entirely on your local machine. Additionally, the tool has an AI-powered option that is 100% opt-in and requires entering an OpenAI key in settings.
+PowerToys **Advanced Paste** is a powerful clipboard management tool that transforms your clipboard content into any format you need. This tool enables you to paste content as plain text, markdown, JSON, or various file formats (.txt, .html, .png) using either the interface or keyboard shortcuts. Advanced Paste can extract text from images using local OCR technology and transcode audio/video files to .mp3 or .mp4 formats. All processing happens locally on your machine, with an optional AI-powered feature that requires an OpenAI API key.
 
-## Getting started
+## Get started with Advanced Paste
 
-### Enabling
+Get familiar with the features and capabilities of Advanced Paste.
+
+### Enable Advanced Paste
 
 To start using Advanced Paste, enable it in the PowerToys Settings.
 
-### Activating
+### Activate the Advanced Paste window
 
 Open the **Advanced Paste** window with the activation shortcut (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>). See the [Settings](#settings) section for more information on customizing the activation shortcut and additional shortcut actions.
 
@@ -29,11 +31,11 @@ From the Settings menu, the following options can be configured:
 | :--- | :--- |
 | Enable Paste with AI | Enables the AI-powered paste feature. An OpenAI API key is required (requires an account on [platform.openai.com](https://platform.openai.com/docs/overview)). See [Paste text with AI](#paste-text-with-ai) for more information. |
 | Enable advanced AI | Enables the Advanced AI feature which allows [Semantic Kernel](/semantic-kernel/overview/) to be used to define a chain of actions to be performed when using "Paste with AI". See [Paste with Advanced AI](#paste-with-advanced-ai) for more information.<br/><br/>This setting is off and disabled when Enable Paste with AI is disabled. When enabling Enable Paste with AI, Enable advanced AI is also enabled by default, allowing users immediate access to the feature. |
-| Custom format preview | Enable to preview the output of the custom format before pasting. |
 | Clipboard history | Enable to automatically save clipboard history. |
-| Open Advanced Paste shortcut | The customizable keyboard command to open the **Advanced Paste** window. |
 | Automatically close the Advanced Paste window after it loses focus | Determines whether the Advanced Paste window will close after focus is lost from the window. |
-| Custom Actions | When using Paste with AI, save the prompts you frequently use and give them descriptive names, so you can easily select them from the Advanced Paste window without having to type them out. You can also assign each action a keyboard command, so you can execute them without opening the Advanced Paste window. |
+| Custom format preview | Enable to preview the output of the custom format before pasting. |
+| Actions (Create and manage Advanced Paste custom actions) | When using Paste with AI, save the prompts you frequently use and give them descriptive names, so you can easily select them from the Advanced Paste window without having to type them out. You can also assign each action a keyboard command, so you can execute them without opening the Advanced Paste window. |
+| Open Advanced Paste window shortcut | The customizable keyboard command to open the **Advanced Paste** window. |
 | Paste as plain text directly shortcut | The customizable keyboard command to paste as plain text without opening the **Advanced Paste** window. |
 | Paste as Markdown directly shortcut | The customizable keyboard command to paste as Markdown without opening the **Advanced Paste** window. |
 | Paste as JSON directly shortcut | The customizable keyboard command to paste as JSON without opening the **Advanced Paste** window. |

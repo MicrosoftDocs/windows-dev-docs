@@ -1,7 +1,7 @@
 ---
-title: PowerToys Hosts File Editor utility for Windows
-description: Hosts File Editor is a convenient way to edit hosts file.
-ms.date: 11/19/2024
+title: PowerToys Hosts File Editor Utility for Windows
+description: Learn how to use PowerToys Hosts File Editor to conveniently edit Windows hosts files, manage IP addresses, and configure DNS settings for website testing and development.
+ms.date: 08/20/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Hosts File Editor, Win]
 # Customer intent: Learn about the Hosts File Editor utility in PowerToys for Windows.
@@ -9,9 +9,9 @@ no-loc: [PowerToys, Windows, Hosts File Editor, Win]
 
 # Hosts File Editor utility
 
-Windows includes a local "Hosts" file that contains domain names and matching IP addresses. This file acts as a map to identify and locate hosts on IP networks. Every time you visit a website, your computer will check the hosts file first to see which IP address it connects to. If the information isn't there, your internet service provider (ISP) will look into the Domain Name Server (DNS) for the resources to load the site.
+The PowerToys Hosts File Editor utility provides a convenient way to edit Windows hosts files. Windows includes a local "Hosts" file that contains domain names and matching IP addresses. This file acts as a map to identify and locate hosts on IP networks. Every time you visit a website, your computer will check the hosts file first to see which IP address it connects to. If the information isn't there, your internet service provider (ISP) will look into the Domain Name Server (DNS) for the resources to load the site.
 
-The Hosts File Editor provides a convenient way to edit the hosts file. This can be useful for scenarios like migrating a website to a new hosting provider or domain name, which may take a 24-48 hour period of downtime. Creating a custom IP address to associate with your domain using the hosts file can allow you to see how it will look on the new server.
+This utility is useful for scenarios like migrating a website to a new hosting provider or domain name, which may take a 24-48 hour period of downtime. Creating a custom IP address to associate with your domain using the hosts file can allow you to see how it will look on the new server.
 
 ## Adding a new entry
 
@@ -45,8 +45,9 @@ From the Settings menu, the following options can be configured:
 | :--- | :--- |
 | Open as administrator | Open as administrator to be able edit the hosts file. If disabled, the editor is run in read-only mode. Hosts File Editor is started as administrator by default. |
 | Show a warning at startup | Warns that editing hosts can change DNS names resolution. Enabled by default. |
-| Additional lines position | Default value is **Top**. If **Bottom** is selected, the file header is moved below hosts settings to the bottom. |
+| Placement of additional content | Default value is **Top**. If **Bottom** is selected, the file header is moved below hosts settings to the bottom. |
 | Consider loopback addresses as duplicates | Loopback addresses (like 127.0.0.1 and ::1) are considered as duplicates. |
+| Encoding | Default value is **UTF-8**. If **UTF-8 with BOM** is selected, a Byte Order Mark (BOM) is included at the start of the file. |
 
 ## Troubleshooting
 
