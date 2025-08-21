@@ -348,4 +348,4 @@ Advance to the next article to learn how to...
 
 [Configure a native client application](/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/authentication)
 
-[Azure AD identity and access management API overview](/graph/azuread-identity-access-management-concept-overview)
+[Overview of Microsoft Entra identity and network access APIs in Microsoft Graph](/graph/identity-network-access-overview)

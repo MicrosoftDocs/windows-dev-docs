@@ -30,7 +30,7 @@ Company accounts are a little more expensive, mostly because we take some additi
 ## Additional guidelines for company accounts
 
 > [!IMPORTANT]
-> To allow multiple users to access your developer account, we recommend using Azure Active Directory (Azure AD) to assign roles to individual users instead of sharing access to the Microsoft account. Each user can then access the developer account by signing in to Partner Center with their individual Azure AD credentials. For more info, see [Manage account users](manage-account-users.md).
+> To allow multiple users to access your developer account, we recommend using Microsoft Entra ID to assign roles to individual users instead of sharing access to the Microsoft account. Each user can then access the developer account by signing in to Partner Center with their individual Microsoft Entra ID credentials. For more info, see [Manage account users](manage-account-users.md).
 
 If you want to let multiple people access the company account by signing in with the Microsoft account that opened it (instead of as individual users added to the account), see the following guidelines:
 

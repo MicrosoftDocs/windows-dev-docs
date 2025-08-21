@@ -76,7 +76,7 @@ For more details, you can refer to the steps below:
 1. Navigate to the [registration page](https://aka.ms/partnercenterregistration).
 1. Now, sign in with your Microsoft account. If you do not have a Microsoft account, click on **Create an account**. The Microsoft account you use here is what you'll use to sign in to your developer account. If you want to know what is a Microsoft account, [click here.](https://aka.ms/microsoftaccount)
 
-   **Note:** If you have an AAD, you can link it to the developer account in Partner Center after **successful developer account creation**, and then use the AAD for future sign-ins. Here are the steps to [associate an existing Azure AD tenant with your developer account in Partner Center](./associate-existing-azure-ad-tenant-with-partner-center-account.md).
+   **Note:** If you have an Microsoft Entra ID, you can link it to the developer account in Partner Center after **successful developer account creation**, and then use the Microsoft Entra ID for future sign-ins. Here are the steps to [associate an existing Microsoft Entra ID tenant with your developer account in Partner Center](./associate-existing-azure-ad-tenant-with-partner-center-account.md).
 
 1. Next step is to join a partner program. Partner Center is home to partner programs for multiple marketplaces including Windows. For submitting apps to Microsoft Store, join the **Windows and Xbox** program.
 

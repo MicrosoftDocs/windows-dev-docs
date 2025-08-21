@@ -13,7 +13,7 @@ Icons and screenshots occupy up to 50% of the surface area on a Microsoft Store 
 To conduct a product page experiment, start by signing in to Partner Center and selecting your app. This new overview page in Partner Center consolidates all app actions and information in one place. The console also contextually prioritizes information cards based on your app's status.
 
 > [!NOTE] 
-> We are using the Goodnotes for Windows app in Microsoft Store as an example in the following images.
+> We are using the Meerkat Photo Lab in Microsoft Store as an example in the following images.
 
 :::image type="content" source="publish-your-app/msix/images/submit-product-page-experiment.png" lightbox="publish-your-app/msix/images/submit-product-page-experiment.png" alt-text="A screenshot showing how to create product page experiment for your app from the application overview page.":::
 

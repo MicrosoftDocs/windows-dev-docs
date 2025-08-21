@@ -20,16 +20,8 @@ When you set up package flights, you can specify the people who should get speci
 > [!IMPORTANT] 
 > On desktop devices, people in your flight groups will get the packages in your flight automatically whenever you provide updates. However, **people in your flight groups who are using Xbox devices will need to check for updates manually** in order to get the latest packages, making sure they are signed into their device using their Microsoft account (with the associated email address that you included in your known user group).
 
-Note that package flights will not be distributed via [Microsoft Store for Business](https://businessstore.microsoft.com/store) and [Microsoft Store for Education](https://educationstore.microsoft.com/store). This is because people in your known user groups must be signed in with their Microsoft accounts in order to receive a package flight. All acquisitions made via Microsoft Store for Business or Microsoft Store for Education will receive your non-flighted packages.
-
 > [!TIP]
 > Package flights offer packages only to the selected customers that you specify. To distribute packages to a random selection of customers in a specified percentage, you can use [gradual package rollout](gradual-package-rollout.md). You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
->
-> Unlike package flights, your gradual package rollout selections do apply to customers who acquire your app via Microsoft Store for Business and Microsoft Store for Education. 
-
-> [!TIP]
-> Consider how the people in your package flight will be able to give their input about the app. We suggest [adding a control into your app to launch Feedback Hub](/windows/uwp/monetize/launch-feedback-hub-from-your-app) so that customers can provide their input directly; you can then review their feedback in your app's [Feedback report](feedback-report.md)).
-
 
 ## Create a new package flight
 
@@ -56,7 +48,7 @@ Also remember that your Store listing info and device family availability is bas
 
 ## Gradual package rollout
 
-By default, the packages in your submission will be made available to everyone in your flight group at the same time. To change this, you can check the box that says **Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)**. You can choose a percentage of people in your flight group to get the packages from the new submission, so that you can monitor feedback and analytic data to make sure you’re confident about the update before rolling it out more broadly to the rest of the flight group. You can increase the percentage (or halt the update) any time without having to create a new submission for your package flight. 
+By default, the packages in your submission will be made available to everyone in your flight group at the same time. To change this, you can check the box that says **Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)**. You can choose a percentage of people in your flight group to get the packages from the new submission, so that you can monitor analytic data to make sure you’re confident about the update before rolling it out more broadly to the rest of the flight group. You can increase the percentage (or halt the update) any time without having to create a new submission for your package flight. 
 
 > [!IMPORTANT]
 > When gradually rolling out packages in a package flight, the people who aren't included in the percentage that gets your new packages will get the packages from the previous package flight submission (unless there is a higher-ranked flight available to them).
@@ -78,7 +70,7 @@ Note that the [certification process](publish-your-app/msix/app-certification-pr
 People in your flight group(s) associated with that package flight who already have your app will now get an update using the packages you included in your package flight. If those people don’t have your app yet, they’ll get the packages from your package flight when they install it. 
 
 > [!NOTE]
-> People who have a package that is only available in a package flight can give the app a star rating and leave reviews, but their ratings and reviews won’t be shown to other customers. You can see ratings and feedback from all customers, including those in your flight groups, in the **Reviews** and **Feedback** reports for the app.
+> People who have a package that is only available in a package flight can give the app a star rating and leave reviews, but their ratings and reviews won’t be shown to other customers. You can see reviews from all customers, including those in your flight groups, in the **Reviews** reports for the app.
 
 
 ## Device family support

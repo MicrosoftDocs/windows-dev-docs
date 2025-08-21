@@ -28,13 +28,9 @@ Follow the following steps to reserve your app's name:
 > [!NOTE]
 > You might find that you cannot reserve a name, even though you do not see any apps listed by that name in the Microsoft Store. This is usually because another developer has reserved the name for their app but has not submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Microsoft Store using that name, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).
 
-## Tips for choosing a great app name
-
-Choosing the right name for your app is important. Pick a name that will capture your customers' interest and draw them in to learn more about your app. Here are some tips for choosing a great app name.
-
-**Keep it short**. While your app's name can have up to 256 characters, the space used to display your app's name is limited. Long names may be truncated based on where in the store your app is being displayed and the user's display size and settings.
-
 > [!TIP]
+> For guidance on selecting an effective app name, see [How do I choose a great app name for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section.
+
 > Windows uses variable width fonts, so the number of visible characters in your title depends on which characters you use. For example, using Segoe UI, about 30 `i` characters will fit in the same space as 10 `w` characters. If you have multiple apps, be sure to test the visibility of each app's title, even if they are the same number of characters. Also be sure to test all localizations of your app's name. Keep in mind that East-Asian characters tend to be wider than Latin characters, so fewer characters will be displayed.
 
 **Be original**. Make sure your app name is distinctive enough that it won't be easily confused with an existing app.
