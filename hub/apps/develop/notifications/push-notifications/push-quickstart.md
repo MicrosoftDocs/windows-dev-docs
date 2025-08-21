@@ -681,7 +681,7 @@ int main()
 
 #### Add the PushNotificationManager::IsSupported() check
 
-Some self-contained apps may not support push notifications by design. Calling [PushNotificationManager.IsSupported()]() prevents errors?
+Next, add a check if the PushNotification APIs are supported. If not, we recommend that you use polling or your own custom socket implementation.
 
 ```cpp
 #include <iostream>
