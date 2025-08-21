@@ -1,7 +1,7 @@
 ---
 title: Leverage Developer Tools - FAQ
 description: Learn how to monitor your app’s analytics, performance, and automate submissions using the Microsoft Store Developer CLI.
-ms.date: 06/18/2025
+ms.date: 08/21/2025
 ms.topic: faq
 ---
 
@@ -224,7 +224,7 @@ To increase your app’s visibility and chances of being featured in the Microso
 
 - **Include great screenshots and images:**  
   High-quality visuals greatly enhance your app’s appeal. Provide attractive and representative screenshots, particularly focusing on the first image. Include sets of screenshots tailored for each device type your app supports. Provide all required images in the **Store logos** and **Additional art assets** sections of your Store listing. Key recommended formats are:
-  - **9:16 Poster art:** 720 x 1080 or 1440 x 2160 pixels
+  - **2:3 Poster art:** 720 x 1080 or 1440 x 2160 pixels
   - **16:9 Super hero art:** 1920 x 1080 or 3840 x 2160 pixels  
   This helps the Store feature your app prominently in different layouts.
 
