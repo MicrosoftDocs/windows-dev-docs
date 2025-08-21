@@ -19,7 +19,7 @@ The preview channel includes releases of the Windows App SDK with [preview chann
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 - For documentation on preview releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
-## Version 1.8 Preview 1 (1.8-preview1)
+## Version 1.8 Preview (1.8-preview)
 
 This is the latest release of the preview channel for version 1.8.
 
