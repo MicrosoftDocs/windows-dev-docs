@@ -1,5 +1,5 @@
 ---
-description: Select theKeep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app's tax implications in selected markets, see [Tax details for paid apps](/partner-center/tax-details-marketplace). You should also review the [market selection considerations](./market-selection.md).base price for an MSIX app and schedule price changes. You can also customize these options for specific markets.
+description: Select the base price for an MSIX app and schedule price changes. You can also customize these options for specific markets.
 title: Set app pricing for MSIX app
 ms.date: 08/21/2025
 ms.topic: article
