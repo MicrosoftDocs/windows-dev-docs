@@ -97,7 +97,7 @@ This section walks through creating a console app template and turning it into a
 
 In Visual Studio, click **Create a new project**. In the dropdown boxes, filter the language to **C++**, platform to **Windows**, and project type to **Console**. Select the **Console App** template. 
 
-Once you select the template, click **Next**. Choose a name for your solution. Make note of this name because you will need it later. Then click **Create**.
+Once you select the template, click **Next**. Name the solution "PushNotificationsQuickstart". Then click **Create**.
 
 When Visual Studio opens, you should find the following in your Solution Explorer:
 ![Example solution from template](images/template-solution-explorer.png)
@@ -118,15 +118,13 @@ First, we will add a file called `packages.config`, which contains the libraries
 
 > [!NOTE] If you're finding extra spaces when you paste in the XML, ensure the file extension is `.config`, not `.cpp` (or `.config.cpp`). Visual Studio may make the file a `.cpp` file by default.
 
-Save the name of your `.cpp` file outside of the current code. This will be needed in the next step.
-
-Next, update the `{yoursolutionname}.vcxproj` file. To edit it, right click on your project file (just under your solution) and select **Unload project**. If it asks you to save any files, click **Yes**.
+Next, update the `PushNotificationsQuickstart.vcxproj` file. To edit it, right click on your project file (just under your solution) and select **Unload project**. If it asks you to save any files, click **Yes**.
 ![Unload project button in Solution Explorer](images/unload-project.png)
 
 Your project should then look like this:
 ![Unloaded project in Solution Explorer](images/unloaded-project.png)
 
-Double click the project now and `{yoursolutionname.vcxproj}` will appear:
+Double click the project now and `{PushNotificationsQuickstart.vcxproj}` will appear:
 
 ![vcxproj example](images/vcxproj.png)
 
@@ -164,7 +162,7 @@ Once you have saved those properties outside of the code, paste in the following
         <VCProjectVersion>17.0</VCProjectVersion>
         <Keyword>Win32Proj</Keyword>
         <ProjectGuid>{PROJECT_GUID_HERE}</ProjectGuid>
-        <RootNamespace>SOLUTION_NAMESPACE_HERE</RootNamespace>
+        <RootNamespace>PushNotificationsQuickstart</RootNamespace>
         <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
         <!--
     To use the Windows App SDK in an app packaged with external location or unpackaged, you must initialize the Windows
@@ -274,7 +272,7 @@ Once you have saved those properties outside of the code, paste in the following
     </ItemDefinitionGroup>
     <ItemGroup>
         <!-- Update this file to include your .cpp file name -->
-        <ClCompile Include="CPP_FILE_NAME_HERE.cpp" />
+        <ClCompile Include="PushNotificationsQuickstart.cpp" />
     </ItemGroup>
     <ItemGroup>
         <None Include="packages.config" />
@@ -301,7 +299,7 @@ Once you have saved those properties outside of the code, paste in the following
 </Project>
 ```
 
-Right click on the project file and select **Reload project**.
+right click on the project file and select **Reload project**.
 
 Now, click on the `.cpp` file.
 
@@ -312,7 +310,7 @@ Now, click on the `.cpp` file.
 >
 >it's most likely because `<RootNamespace>`, `<ProjectGuid>` and/or the `.cpp` filename weren't all updated. To resolve, unload the project, clicking "Don't save" on the pop-up. Then open the `.vcxproj` file, ensure SOLUTION_NAMESPACE_HERE, PROJECT_GUID_HERE, CPP_FILE_NAME_HERE have been replaced with your project information, and reload again.
 
-Add in the code for `{yoursolutionname}.cpp` below:
+Add in the code for `PushNotificationsQuickstart.cpp` below:
 
 ```cpp
 #include <iostream>
