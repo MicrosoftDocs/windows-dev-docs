@@ -94,11 +94,11 @@ This section walks through creating a console app template and turning it into a
 
 ### Step 1: Initialize the Console App template
 
-In Visual Studio, click "Create a new project". In the dropdown boxes, filter the language to "C++", platform to "Windows", and project type to "Console". Select the "Console App" template. 
+In Visual Studio, click **Create a new project**. In the dropdown boxes, filter the language to **C++**, platform to **Windows**, and project type to **Console**. Select the **Console App** template. 
 
-If you cannot find the template, you can add the Desktop Development with C++ by going back to the VS Installer and selecting "Modify" next to the installation of Visual Studio.
+If you cannot find the template, you can add the Desktop Development with C++ by going back to the VS Installer and selecting **Modify** next to the installation of Visual Studio.
 
-Once you select the template, click "Next". Choose a name for your solution. Make note of this name because you will need it later. Then click "Create".
+Once you select the template, click **Next**. Choose a name for your solution. Make note of this name because you will need it later. Then click **Create**.
 
 When Visual Studio opens, you should find the following in your Solution Explorer:
 ![Example solution from template](images/template-solution-explorer.png)
@@ -121,7 +121,7 @@ First, we will add a file called `packages.config`, which contains the libraries
 
 Save the name of your `.cpp` file outside of the current code. This will be needed in the next step.
 
-Next, update the `{yoursolutionname}.vcxproj` file. To edit it, right click on your project file (just under your solution) and select "Unload project". If it asks you to save any files, click "Yes".
+Next, update the `{yoursolutionname}.vcxproj` file. To edit it, right click on your project file (just under your solution) and select **Unload project**. If it asks you to save any files, click **Yes**.
 ![Unload project button in Solution Explorer](images/unload-project.png)
 
 Your project should then look like this:
@@ -302,7 +302,7 @@ Once you have saved those properties outside of the code, paste in the following
 </Project>
 ```
 
-Right click on the project file and select "Reload project".
+Right click on the project file and select **Reload project**.
 
 Now, click on the `.cpp` file.
 
@@ -494,7 +494,7 @@ winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this 
 
 Replace this remote ID with your Azure ObjectId.
 
-Finally, we need to load in the packages we reference in `packages.config`. To do this, right click on the solution and select "Restore NuGet packages".
+Finally, we need to load in the packages we reference in `packages.config`. To do this, right click on the solution and select **Restore NuGet packages**.
 
 Use Visual Studio to build and install your app. Right click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger. You should see a console window that looks like this:
 
@@ -515,7 +515,7 @@ To get the most out of this guide, you'll want to know the following about your 
 
 ### Step 1: Add Windows App SDK (if it's not already installed)
 
-If this is your first time adding Windows App SDK, you can add it by right clicking the solution, selecting "Manage NuGet packages" and searching for "Windows App SDK". In order to generate and use the Push Notification header files, you'll need to install:
+If this is your first time adding Windows App SDK, you can add it by right clicking the solution, selecting **Manage NuGet packages** and searching for "Windows App SDK". In order to generate and use the Push Notification header files, you'll need to install:
 * Microsoft.WindowsAppSDK (this tutorial uses 1.5.240227000)
 * Microsoft.Windows.SDK.BuildTools (this tutorial uses 10.0.22621.756) - it sometimes installs with Windows App SDK
 * Microsoft.Windows.CppWinRT (this tutorial uses 2.0.240405.15) - this library allows you to use the modern Windows APIs in C++ by projecting Windows Runtime (WinRT) APIs into C++ code and generates the header files we need.
