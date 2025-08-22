@@ -709,17 +709,17 @@ void SubscribeForegroundEventHandler()
         std::cout << "\nPush notification content received in the FOREGROUND: " << payloadString << std::endl;
     }) };
 
-	std::cout << "Push notification foreground event handler registered." << std::endl;
+    std::cout << "Push notification foreground event handler registered." << std::endl;
 }
 
 int main()
 {
     // Set up an event handler, so we can receive notifications in the foreground while the app is running.
-	// You must register notification event handlers before calling Register(). Otherwise, a runtime exception
+    // You must register notification event handlers before calling Register(). Otherwise, a runtime exception
     // will be thrown.
     SubscribeForegroundEventHandler();
 
-	// Register the app for push notifications.
+    // Register the app for push notifications.
     PushNotificationManager::Default().Register();
 
     auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
@@ -738,7 +738,7 @@ int main()
             else
             {
                 std::cout << "Push notifications are NOT supported on this device." << std::endl;
-				std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
+                std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
                 std::cin.ignore();
             }
         }
@@ -753,7 +753,7 @@ int main()
             std::cout << "\nPress 'Enter' to exit the App." << std::endl;
             std::cin.ignore();
             break;
-	}
+    }
 }
 
 ```
@@ -781,17 +781,17 @@ void SubscribeForegroundEventHandler()
         std::cout << "\nPush notification content received in the FOREGROUND: " << payloadString << std::endl;
     }) };
 
-	std::cout << "Push notification foreground event handler registered." << std::endl;
+    std::cout << "Push notification foreground event handler registered." << std::endl;
 }
 
 int main()
 {
     // Set up an event handler, so we can receive notifications in the foreground while the app is running.
-	// You must register notification event handlers before calling Register(). Otherwise, a runtime exception
+    // You must register notification event handlers before calling Register(). Otherwise, a runtime exception
     // will be thrown.
     SubscribeForegroundEventHandler();
 
-	// Register the app for push notifications.
+    // Register the app for push notifications.
     PushNotificationManager::Default().Register();
 
     auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
@@ -810,7 +810,7 @@ int main()
             else
             {
                 std::cout << "Push notifications are NOT supported on this device." << std::endl;
-				std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
+                std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
                 std::cin.ignore();
             }
         }
@@ -844,7 +844,7 @@ int main()
             std::cout << "\nPress 'Enter' to exit the App." << std::endl;
             std::cin.ignore();
             break;
-	}
+    }
 }
 
 ```
@@ -1031,18 +1031,18 @@ void SubscribeForegroundEventHandler()
         std::cout << "\nPush notification content received in the FOREGROUND: " << payloadString << std::endl;
     }) };
 
-	std::cout << "Push notification foreground event handler registered." << std::endl;
+    std::cout << "Push notification foreground event handler registered." << std::endl;
 }
 
 int main()
 {
     // Set up an event handler, so we can receive notifications in the foreground while the app is running.
-	// You must register notification event handlers before calling Register(). Otherwise, the following runtime
+    // You must register notification event handlers before calling Register(). Otherwise, the following runtime
     // exception will be thrown: System.Runtime.InteropServices.COMException: 'Element not found. Must register
     // event handlers before calling Register().'
     SubscribeForegroundEventHandler();
 
-	// Register the app for push notifications.
+    // Register the app for push notifications.
     PushNotificationManager::Default().Register();
 
     auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
@@ -1074,7 +1074,7 @@ int main()
             else
             {
                 std::cout << "Push notifications are NOT supported on this device." << std::endl;
-				std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
+                std::cout << "App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported." << std::endl;
                 std::cin.ignore();
             }
         }
@@ -1108,7 +1108,7 @@ int main()
             std::cout << "\nPress 'Enter' to exit the App." << std::endl;
             std::cin.ignore();
             break;
-	}
+    }
 }
 
 ```
