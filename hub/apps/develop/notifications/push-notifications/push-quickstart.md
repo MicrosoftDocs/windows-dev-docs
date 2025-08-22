@@ -20,6 +20,7 @@ In this quickstart you will create a desktop Windows application that sends and 
 - Either [Create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) OR [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
 - An [Azure Account](https://azure.microsoft.com/free/) is required in order to use Windows App SDK push notifications.
 - Read [Push notifications overview](../../../windows-app-sdk/notifications/push-notifications/index.md)
+- Install the [Desktop Development with C++ workload](cpp/build/vscpp-step-0-installation#step-4---choose-workloads) to use the C++ console app template
 
 ## Sample app
 
@@ -95,8 +96,6 @@ This section walks through creating a console app template and turning it into a
 ### Step 1: Initialize the Console App template
 
 In Visual Studio, click **Create a new project**. In the dropdown boxes, filter the language to **C++**, platform to **Windows**, and project type to **Console**. Select the **Console App** template. 
-
-If you cannot find the template, you can add the Desktop Development with C++ by going back to the VS Installer and selecting **Modify** next to the installation of Visual Studio.
 
 Once you select the template, click **Next**. Choose a name for your solution. Make note of this name because you will need it later. Then click **Create**.
 
