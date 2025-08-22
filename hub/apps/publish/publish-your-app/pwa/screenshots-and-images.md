@@ -1,7 +1,7 @@
 ---
 description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your PWA app's Store listing.
 title: App screenshots, images, and trailers for PWA
-ms.date: 10/30/2022
+ms.date: 8/21/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -198,7 +198,7 @@ Here are some tips to keep in mind when designing this image:
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](../../leverage-developer-tools-faqs/make-your-app-easier-to-promote.md) for more information.
+While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](../../faq/leverage-developer-tools.md) for more information.
 
 #### Xbox images
 
@@ -211,6 +211,5 @@ There are 3 different sizes that you can upload:
 - **Featured Promotional Square art, 1080 x 1080 pixels**: Must _not_ include the product’s title.
 
 > [!NOTE]
-> For the best display on Xbox, you must also provide a **9:16 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
-
+> For the best display on Xbox, you must also provide a **2:3 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
 

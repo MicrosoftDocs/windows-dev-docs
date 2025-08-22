@@ -2,7 +2,7 @@
 title: Create an app submission for your MSIX app
 description: Create an app submission for your MSIX app
 ms.topic: how-to
-ms.date: 10/30/2022
+ms.date: 08/21/2025
 ---
 
 # Create app submission
@@ -109,7 +109,7 @@ You'll need all the required info for at least one of the languages that your ap
 | **Submission notification audience** | Not required |
 
 > [!TIP]
-> For detailed information about the **Submission options** fields, see the [Upload package](./manage-submission-options.md ) section.
+> For detailed information about the **Submission options** fields, see the [Submission options](./manage-submission-options.md) section.
 
 Once you have completed all the sections, you can submit your app for certification by clicking **Submit for certification** button on the Application overview page.
 

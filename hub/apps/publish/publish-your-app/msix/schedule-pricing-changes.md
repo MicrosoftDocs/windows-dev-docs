@@ -1,7 +1,7 @@
 ---
 description: Select the base price for an MSIX app and schedule price changes. You can also customize these options for specific markets.
 title: Set app pricing for MSIX app
-ms.date: 10/30/2022
+ms.date: 08/21/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
