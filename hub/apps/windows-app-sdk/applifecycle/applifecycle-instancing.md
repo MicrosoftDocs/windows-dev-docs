@@ -26,7 +26,7 @@ Apps are single-instanced if there can be only one main process running at a tim
 
 WinUI apps are multi-instanced by default but have the ability to become single-instanced by deciding at launch-time whether to create a new instance or activate an existing instance instead.
 
-The [Microsoft Photos](https://www.microsoft.com/store/productId/9WZDNCRFJBH4) app is a good example of a single instanced WinUI app. When you launch Photos for the first time, a new window will be created. If you attempt to launch Photos again, the existing window will be activated instead.
+The [Microsoft Photos](https://apps.microsoft.com/detail/9WZDNCRFJBH4) app is a good example of a single instanced WinUI app. When you launch Photos for the first time, a new window will be created. If you attempt to launch Photos again, the existing window will be activated instead.
 
 For an example of how to implement single instancing in a WinUI 3 app with C#, see [Create a single-instanced WinUI app](applifecycle-single-instance.md).
 

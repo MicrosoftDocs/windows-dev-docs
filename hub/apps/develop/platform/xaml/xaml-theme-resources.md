@@ -61,7 +61,7 @@ The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) re
 > [!div class="nextstepaction"]
 > For a visual overview of these colors, see the WinUI 3 Gallery app: [Colors](winui3gallery://item/Colors)
 
-> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ### Windows system contrast theme colors
 

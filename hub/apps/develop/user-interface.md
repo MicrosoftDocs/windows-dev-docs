@@ -114,7 +114,7 @@ WinUI 3 is the latest generation of WinUI. WinUI 2 and 3 share many of the same 
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI 3 Gallery app](https://www.microsoft.com/store/productId/9P3JFPWWDZRC)
+- Samples: [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9P3JFPWWDZRC)
 
 ### [WinUI 2 for UWP](#tab/winui-2)
 
@@ -141,7 +141,7 @@ WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI 2 Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
+- Samples: [WinUI 2 Gallery app](https://apps.microsoft.com/detail/9MSVH128X2ZT)
 
 ### [WPF](#tab/wpf)
 
