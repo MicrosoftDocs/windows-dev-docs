@@ -117,7 +117,7 @@ First, we will add a file called `packages.config`, which contains the libraries
 </packages>
 ```
 
-> ![NOTE] If you're finding extra spaces when you paste in the xml, ensure the file extension is `.config`, not `.cpp` (or `.config.cpp`). Visual Studio may make the file a `.cpp` file by default.
+> [!NOTE] If you're finding extra spaces when you paste in the xml, ensure the file extension is `.config`, not `.cpp` (or `.config.cpp`). Visual Studio may make the file a `.cpp` file by default.
 
 Save the name of your `.cpp` file outside of the current code. This will be needed in the next step.
 
@@ -869,7 +869,7 @@ winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this 
 
 The **PushNotificationManager** will attempt to create a Channel URI, retrying automatically for no more than 15 minutes. Create an event handler to wait for the call to complete. Once the call is complete, if it was successful, register the URI with the WNS  server.
 
-> ![NOTE]
+> [!NOTE]
 > To use LOG_HR_MSG included in the following code chunks, use Package Manager to import `Microsoft.Windows.ImplementationLibrary`, version 1.0.220914.1.
 
 ```cpp
