@@ -159,7 +159,7 @@ During the certification process, our testers will review the info you provide t
 If we don't approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don't declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
 
 > [!NOTE]
-> If your submission uses a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live), you must request approval in advance rather than providing info on the **Submission options** page. You can request approval in advance if you’re publishing a game to Xbox through [ID@Xbox](https://www.xbox.com/Developers/id) or as a managed partner. To do so, please contact your Microsoft account team.
+> If your submission uses a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live), you must request approval in advance rather than providing info on the **Submission options** page. You can request approval in advance if you're publishing a game to Xbox through [ID@Xbox](https://www.xbox.com/Developers/id) or as a managed partner. To do so, please contact your Microsoft account team.
 >
 > The team will need a brief description about how you are using the capability and why it is necessary for your product. If you do not provide all the information necessary, your request will be denied. You may also be asked to provide more information. Note that this process typically takes 5 business days or longer, so please submit your request well in advance.
 >

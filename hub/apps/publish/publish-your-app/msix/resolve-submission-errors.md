@@ -1,7 +1,7 @@
 ---
 description: If you encounter errors after submitting your MSIX app to the Store, you must resolve them in order to continue the certification process.
 title: Resolve submission errors for MSIX app
-ms.date: 10/30/2022
+ms.date: 08/21/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
