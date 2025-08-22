@@ -117,7 +117,7 @@ First, we will add a file called `packages.config`, which contains the libraries
 </packages>
 ```
 
-> [!NOTE] If you're finding extra spaces when you paste in the xml, ensure the file extension is `.config`, not `.cpp` (or `.config.cpp`). Visual Studio may make the file a `.cpp` file by default.
+> [!NOTE] If you're finding extra spaces when you paste in the XML, ensure the file extension is `.config`, not `.cpp` (or `.config.cpp`). Visual Studio may make the file a `.cpp` file by default.
 
 Save the name of your `.cpp` file outside of the current code. This will be needed in the next step.
 
