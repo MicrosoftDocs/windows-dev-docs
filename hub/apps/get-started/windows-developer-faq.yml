@@ -147,7 +147,7 @@ sections:
 
           - [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples): Demonstrates how to use specific Windows App SDK API sets. 
           - [Windows topic-specific samples](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes): This branch contains a WinUI note sample project that is used in the [Create a WinUI app](/windows/apps/tutorials/winui-notes/) tutorial.
-          - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery): Showcases WinUI and Windows App SDK. You can also get the [WinUI Gallery in the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+          - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery): Showcases WinUI and Windows App SDK. You can also get the [WinUI Gallery in the Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
       - question: If I have already invested heavily in WPF, should I continue to use WPF or should I consider migrating to WinUI?
         answer: |
           If you have already invested heavily in WPF, you can continue to use WPF for your existing apps. WPF is a mature and stable framework that is widely used by developers to build Windows desktop apps.

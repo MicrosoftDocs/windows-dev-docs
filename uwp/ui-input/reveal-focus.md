@@ -31,7 +31,7 @@ This is especially helpful in 10-foot scenarios where the user might not be payi
 >
 > - [Open the WinUI 2 Gallery app and see RevealFocus in action](winui2gallery:/item/RevealFocus).
 
-The **WinUI 2 Gallery** app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery/tree/winui2).
+The **WinUI 2 Gallery** app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery/tree/winui2).
 
 ## How to use it
 
