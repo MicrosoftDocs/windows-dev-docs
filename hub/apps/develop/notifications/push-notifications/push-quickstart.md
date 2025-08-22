@@ -172,7 +172,7 @@ Once you have saved those properties outside of the code, paste in the following
     App SDK before using its APIs. You can use auto-initialization by adding <WindowsPackageType>None</WindowsPackageType> in the
     Globals property section like below or call the bootstrapper API for custom behavior like error handling UI and/or logging, or
     to load a version of the Windows App SDK that's different than the one you built with. See
-    https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time for more information.
+    https://learn.microsoft.com/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time for more information.
     -->
         <WindowsPackageType>None</WindowsPackageType>
     </PropertyGroup>
@@ -525,7 +525,7 @@ If this is your first time adding Windows App SDK, you can add it by right click
 >
 > Otherwise, the app will throw `System.Runtime.InteropServices.COMException (0x80040154): Class not registered (0x80040154 (REGDB_E_CLASSNOTREG))` and will not run.
 >
->See [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more details.
+>See [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more details.
 
 ### Step 2: Add namespaces
 
@@ -687,7 +687,7 @@ int main()
 
 #### Add the PushNotificationManager::IsSupported() check
 
-Next, add a check if the PushNotification APIs are supported with [PushNotificationManager.IsSupported()](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.issupported?view=windows-app-sdk-1.7). If not, we recommend that you use polling or your own custom socket implementation.
+Next, add a check if the PushNotification APIs are supported with [PushNotificationManager.IsSupported()](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.issupported). If not, we recommend that you use polling or your own custom socket implementation.
 
 ```cpp
 #include <iostream>
@@ -758,7 +758,7 @@ int main()
 
 ```
 
-Now that there's confirmed push notifcation support, add in behavior based on [PushNotificationReceivedEventArgs](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationreceivedeventargs?view=windows-app-sdk-1.7):
+Now that there's confirmed push notifcation support, add in behavior based on [PushNotificationReceivedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationreceivedeventargs):
 
 ```cpp
 #include <iostream>
