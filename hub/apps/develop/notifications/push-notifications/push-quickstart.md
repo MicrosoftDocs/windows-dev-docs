@@ -118,7 +118,7 @@ First, we will add a file called `packages.config`, which contains the libraries
 
 > [!NOTE] If you're finding extra spaces when you paste in the XML, ensure the file extension is `.config`, not `.cpp` (or `.config.cpp`). Visual Studio may make the file a `.cpp` file by default.
 
-Next, update the `PushNotificationsQuickstart.vcxproj` file. To edit it, right click on your project file (just under your solution) and select **Unload project**. If it asks you to save any files, click **Yes**.
+Next, update the `PushNotificationsQuickstart.vcxproj` file. To edit it, right-click on your project file (just under your solution) and select **Unload project**. If it asks you to save any files, click **Yes**.
 ![Unload project button in Solution Explorer](images/unload-project.png)
 
 Your project should then look like this:
@@ -299,7 +299,7 @@ Once you have saved those properties outside of the code, paste in the following
 </Project>
 ```
 
-right click on the project file and select **Reload project**.
+Right-click on the project file and select **Reload project**.
 
 Now, click on the `.cpp` file.
 
@@ -491,9 +491,9 @@ winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this 
 
 Replace this remote ID with your Azure ObjectId.
 
-Finally, we need to load in the packages we reference in `packages.config`. To do this, right click on the solution and select **Restore NuGet packages**.
+Finally, we need to load in the packages we reference in `packages.config`. To do this, right-click on the solution and select **Restore NuGet packages**.
 
-Use Visual Studio to build and install your app. Right click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger. You should see a console window that looks like this:
+Use Visual Studio to build and install your app. Right-click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger. You should see a console window that looks like this:
 
 ![working sample console](images/console_complete.png)
 
@@ -512,7 +512,7 @@ To get the most out of this guide, you'll want to know the following about your 
 
 ### Step 1: Add Windows App SDK (if it's not already installed)
 
-If this is your first time adding Windows App SDK, you can add it by right clicking the solution, selecting **Manage NuGet packages** and searching for "Windows App SDK". In order to generate and use the Push Notification header files, you'll need to install:
+If this is your first time adding Windows App SDK, you can add it by right-clicking the solution, selecting **Manage NuGet packages** and searching for "Windows App SDK". In order to generate and use the Push Notification header files, you'll need to install:
 * Microsoft.WindowsAppSDK (this tutorial uses 1.5.240227000)
 * Microsoft.Windows.SDK.BuildTools (this tutorial uses 10.0.22621.756) - it sometimes installs with Windows App SDK
 * Microsoft.Windows.CppWinRT (this tutorial uses 2.0.240405.15) - this library allows you to use the modern Windows APIs in C++ by projecting Windows Runtime (WinRT) APIs into C++ code and generates the header files we need.
@@ -1112,7 +1112,7 @@ int main()
 
 ### Step 5: Build and install your app
 
-Use Visual Studio to build and install your app. Right click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger.
+Use Visual Studio to build and install your app. Right-click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger.
 
 The tutorial code's console will look like this:
 ![working sample console](images/console_complete.png). You'll need the token to [send a push notification to your app](#send-a-push-notification-to-your-app).
