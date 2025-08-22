@@ -1,6 +1,106 @@
 {
   "redirections": [
     {
+      "source_path": "uwp/porting/desktop-to-uwp-migrate.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/desktop-to-uwp-migrate",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/index.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-case-study-bookstore1.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-case-study-bookstore1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-case-study-bookstore2.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-case-study-bookstore2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-case-study-quizgame.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-case-study-quizgame",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-input-and-sensors.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-input-and-sensors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-porting-to-a-uwp-project.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-porting-xaml-and-ui.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-porting-xaml-and-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-root.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-root",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-troubleshooting.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-business-and-data.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-business-and-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-case-study-bookstore1.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-case-study-bookstore1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-case-study-bookstore2.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-case-study-bookstore2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-form-factors-and-ux.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-form-factors-and-ux",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-input-and-sensors.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-input-and-sensors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-namespace-and-class-mappings.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-namespace-and-class-mappings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-porting-to-a-uwp-project.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-porting-to-a-uwp-project",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-porting-xaml-and-ui.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-porting-xaml-and-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-root.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-root",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-troubleshooting.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-troubleshooting",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "uwp/monetize/ad-mediation-service.md",
       "redirect_url": "/previous-versions/windows/uwp/monetize/ad-mediation-service",
       "redirect_document_id": false
