@@ -10,7 +10,7 @@ ms.topic: release-notes
 
 The first open-source version of WinUI – WinUI 2.1 (released April 2019).
 
-WinUI gives you many of the latest Windows UX platform features, including up-to-date Fluent controls and styles, available in a way you can use right away, backward-compatible to Windows 10 Anniversary Update (14393). The [WinUI 2 Gallery](https://www.microsoft.com/store/productId/9MSVH128X2ZT) gives you samples to explore all the cool new features added to the library.
+WinUI gives you many of the latest Windows UX platform features, including up-to-date Fluent controls and styles, available in a way you can use right away, backward-compatible to Windows 10 Anniversary Update (14393). The [WinUI 2 Gallery](https://apps.microsoft.com/detail/9MSVH128X2ZT) gives you samples to explore all the cool new features added to the library.
 
 Download the [WinUI 2.1 NuGet package](https://www.nuget.org/packages/Microsoft.UI.Xaml/2.1.190405004)
 
@@ -78,7 +78,7 @@ With Windows 10 May 2019 Update, many of our common controls add elevation by us
 >
 > If the gallery app is installed already, click [**WinUI 2 Gallery**](winui2gallery:) to open it.
 >
-> If it's not installed, download the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+> If it's not installed, download the [**WinUI 2 Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
 >
 > You can also get the source code from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (select the *winui2* branch).
 
