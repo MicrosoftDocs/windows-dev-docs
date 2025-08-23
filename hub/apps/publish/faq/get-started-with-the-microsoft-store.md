@@ -19,20 +19,6 @@ Having a developer account gives you access to the Windows Apps & Games dashboar
 ---
 
 <details>
-<summary><strong>How do I register for a Microsoft Store developer account? What are the main steps?</strong></summary>
-To open a developer account, you will sign up through Partner Center and provide some information. The process is straightforward:
-
-- **Sign in with a Microsoft account:** Go to the Partner Center registration page and sign in with your Microsoft account (or create one if needed). This Microsoft account will be used to log in to your developer dashboard.
-- **Join the developer program:** During registration, select the Windows and Xbox program – this enrolls you as a Windows app developer.
-- **Choose account type and country:** Specify your account type (Individual or Company) and your country/region. Note that the country/region cannot be changed later.
-- **Provide publisher details:** Enter a Publisher Display Name – this is the name shown to customers in the Store. You’ll also provide contact info (address, email, etc.) for verification.
-- **Accept terms and pay the fee:** Accept the Microsoft App Developer Agreement and pay the one-time registration fee (approximately $99 USD for companies, depending on your country. For individual companies, please see [Free developer registration for individual developers](../whats-new-individual-developer.md) section).
-- **Verify your email and account:** You’ll receive a verification email after payment. Confirm your email to finalize the account creation. Once complete, you can begin the app submission process.
-</details>
-
----
-
-<details>
 <summary><strong>What are the main benefits of distributing my app through the Microsoft Store?</strong></summary>
 
 The Microsoft Store provides access to a vast user base of over a billion Windows customers across more than 240 markets and 110 languages. Beyond reach, the Store also offers various promotion and marketing tools such as:
@@ -123,6 +109,17 @@ Apps can be distributed via **online or offline licenses**, providing flexibilit
 ---
 
 <details>
+<summary><strong>What are the different types of apps that can be distributed on Store?</strong></summary>
+
+Apps be packaged as **MSIX** or **MSI** formats can be distributed through the Microsoft Store. Both types provide secure, reliable, and efficient installation experiences, simplified updates, and clean uninstalls. They supports both modern and classic Windows apps.
+
+We recommend packaging your app (which is built with any app framework - UWP, Win32, PWA, WinApp SDK etc.), as **MSIX**. By packaging your app as MSIX, you can take advantages of many features like a complimentary binary hosting (provided by Microsoft), complementary code signing (provided by Microsoft), Microsoft Store commerce platform, package flighting, advanced integration with Windows (to use features like share dialog, launch from Store etc), Windows 11 backup and restore etc.
+
+</details>
+
+---
+
+<details>
 <summary><strong>What are the Microsoft Store Policies and why do they matter for my app?</strong></summary>
 
 The **Microsoft Store Policies** are a set of rules every app must follow to be published in the Store. These include requirements for:
@@ -134,6 +131,20 @@ The **Microsoft Store Policies** are a set of rules every app must follow to be 
 
 Violations can result in failed submissions or removal from the Store. Microsoft publishes a complete version of the Store Policies (currently version 7.18) that all developers should review. Following these policies helps ensure your app is certified quickly and provides a safe, high-quality experience to users.
 
+</details>
+
+---
+
+<details>
+<summary><strong>How do I register for a Microsoft Store developer account? What are the main steps?</strong></summary>
+To open a developer account, you will sign up through Partner Center and provide some information. The process is straightforward:
+
+- **Sign in with a Microsoft account:** Go to the Partner Center registration page and sign in with your Microsoft account (or create one if needed). This Microsoft account will be used to log in to your developer dashboard.
+- **Join the developer program:** During registration, select the Windows and Xbox program – this enrolls you as a Windows app developer.
+- **Choose account type and country:** Specify your account type (Individual or Company) and your country/region. Note that the country/region cannot be changed later.
+- **Provide publisher details:** Enter a Publisher Display Name – this is the name shown to customers in the Store. You’ll also provide contact info (address, email, etc.) for verification.
+- **Accept terms and pay the fee:** Accept the Microsoft App Developer Agreement and pay the one-time registration fee (approximately $99 USD for companies, depending on your country. For individual companies, please see [Free developer registration for individual developers](../whats-new-individual-developer.md) section).
+- **Verify your email and account:** You’ll receive a verification email after payment. Confirm your email to finalize the account creation. Once complete, you can begin the app submission process.
 </details>
 
 ---
