@@ -151,6 +151,9 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
  </Package>    
 ```
 
+>[!NOTE]
+> An example of the completed C++ class for the sample can be found [after Step 4](#sample-code). Steps 3 and 4 provide step-by-step guidance to add each piece in the final sample.
+
 ### Step 3: Register for and respond to push notifications on app startup
 
 Update your app's `main()` method to add the following:
@@ -377,4 +380,118 @@ int main()
 Use Visual Studio to build and install your app. Right-click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger.
 
 The tutorial code's console will look like this:
-![working sample console](images/console_complete.png). You'll need the token to [send a push notification to your app](#send-a-push-notification-to-your-app).
+
+![working sample console](images/console_complete.png) 
+
+You'll need the token to [send a push notification to your app](#send-a-push-notification-to-your-app).
+
+## Send a push notification to your app
+
+At this point, all configuration is complete and the WNS server can send push notifications to client apps. In the following steps, refer to the [Push notification server request and response headers](push-request-response-headers.md) for more detail.
+
+### Step 1: Request an access token
+
+To send a push notification, the WNS server first needs to request an access token. Send an HTTP POST request with your Azure TenantId, Azure AppId, and secret. For information on retrieving the Azure TenantId and Azure AppId, see [Get tenant and app ID values for signing in](/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-and-app-id-values-for-signing-in).
+
+HTTP Sample Request:
+
+```HTTP
+POST /{tenantID}/oauth2/v2.0/token Http/1.1
+Host: login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 160
+
+grant_type=client_credentials&client_id=<Azure_App_Registration_AppId_Here>&client_secret=<Azure_App_Registration_Secret_Here>&scope=https://wns.windows.com/.default/
+```
+
+C# Sample Request:
+
+```csharp
+//Sample C# Access token request
+var client = new RestClient("https://login.microsoftonline.com/{tenantID}/oauth2/v2.0");
+var request = new RestRequest("/token", Method.Post);
+request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+request.AddParameter("grant_type", "client_credentials");
+request.AddParameter("client_id", "[Your app's Azure AppId]");
+request.AddParameter("client_secret", "[Your app's secret]");
+request.AddParameter("scope", "https://wns.windows.com/.default");
+RestResponse response = await client.ExecutePostAsync(request);
+Console.WriteLine(response.Content);
+```
+
+If your request is successful, you will receive a response that contains your token in the **access_token** field.
+
+```json
+{
+    "token_type":"Bearer",
+    "expires_in":"86399",
+    "ext_expires_in":"86399",
+    "expires_on":"1653771789",
+    "not_before":"1653685089",
+    "access_token":"[your access token]"
+}
+```
+
+### Step 2. Send a raw notification
+
+Create an HTTP POST request that contains the access token you obtained in the previous step and the content of the push notification you want to send. The content of the push notification will be delivered to the app.
+
+```http
+POST /?token=[The token query string parameter from your channel URL. E.g. AwYAAABa5cJ3...] HTTP/1.1
+Host: dm3p.notify.windows.com
+Content-Type: application/octet-stream
+X-WNS-Type: wns/raw
+Authorization: Bearer [your access token]
+Content-Length: 46
+
+{ Sync: "Hello from the Contoso App Service" }
+```
+
+```csharp
+var client = new RestClient("[Your channel URL. E.g. https://wns2-by3p.notify.windows.com/?token=AwYAAABa5cJ3...]");
+var request = new RestRequest();
+request.Method = Method.Post; 
+request.AddHeader("Content-Type", "application/octet-stream");
+request.AddHeader("X-WNS-Type", "wns/raw");
+request.AddHeader("Authorization", "Bearer [your access token]");
+request.AddBody("Notification body");
+RestResponse response = await client.ExecutePostAsync(request);");
+```
+
+### Step 3: Send a cloud-sourced app notification
+
+If you are only interested in sending raw notifications, disregard this step. To send a cloud-sourced app notification, also known a push toast notification, first follow [Quickstart: App notifications in the Windows App SDK](../../../windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md). App notifications can either be push (sent from the cloud) or sent locally. Sending a cloud-sourced app notification is similar to sending a raw notification in **Step 2**, except the *X-WNS-Type* header is `toast`, *Content-Type* is `text/xml`, and the content contains the app notification XML payload. See [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root) for more on how to construct your XML payload.
+
+Create an HTTP POST request that contains your access token and the content of the cloud-sourced app notification you want to send. The content of the push notification will be delivered to the app.
+
+```http
+POST /?token=AwYAAAB%2fQAhYEiAESPobjHzQcwGCTjHu%2f%2fP3CCNDcyfyvgbK5xD3kztniW%2bjba1b3aSSun58SA326GMxuzZooJYwtpgzL9AusPDES2alyQ8CHvW94cO5VuxxLDVzrSzdO1ZVgm%2bNSB9BAzOASvHqkMHQhsDy HTTP/1.1
+Host: dm3p.notify.windows.com
+Content-Type: text/xml
+X-WNS-Type: wns/toast
+Authorization: Bearer [your access token]
+Content-Length: 180
+
+<toast><visual><binding template="ToastGeneric"><text>Example cloud toast notification</text><text>This is an example cloud notification using XML</text></binding></visual></toast>
+```
+
+```csharp
+var client = new RestClient("https://dm3p.notify.windows.com/?token=AwYAAAB%2fQAhYEiAESPobjHzQcwGCTjHu%2f%2fP3CCNDcyfyvgbK5xD3kztniW%2bjba1b3aSSun58SA326GMxuzZooJYwtpgzL9AusPDES2alyQ8CHvW94cO5VuxxLDVzrSzdO1ZVgm%2bNSB9BAzOASvHqkMHQhsDy");
+client.Timeout = -1;
+
+var request = new RestRequest(Method.POST);
+request.AddHeader("Content-Type", "text/xml");
+request.AddHeader("X-WNS-Type", "wns/toast");
+request.AddHeader("Authorization", "Bearer <AccessToken>");
+request.AddParameter("text/xml", "<toast><visual><binding template=\"ToastGeneric\"><text>Example cloud toast notification</text><text>This is an example cloud notification using XML</text></binding></visual></toast>",  ParameterType.RequestBody);
+Console.WriteLine(response.Content);
+```
+
+## Resources
+
+- [Windows Push Notification Service (WNS)](https://aka.ms/wns)
+- [Push notifications sample code on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/)
+- [Microsoft.Windows.PushNotifications API details](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md#api-details)
+- [Push notifications spec on GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md)
+- [Toast content](../app-notifications/adaptive-interactive-toasts.md)
+- [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root)
