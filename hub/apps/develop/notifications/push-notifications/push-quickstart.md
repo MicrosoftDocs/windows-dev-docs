@@ -12,6 +12,15 @@ ms.custom:
 
 # Quickstart: Push notifications in the Windows App SDK
 
+In this quickstart you will create a desktop Windows application that sends and receives push notifications using the [Windows App SDK](../../../windows-app-sdk/index.md).
+
+## Prerequisites
+
+- [Start developing Windows apps](../../../get-started/start-here.md)
+- Either [Create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) OR [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
+- An [Azure Account](https://azure.microsoft.com/free/) is required in order to use Windows App SDK push notifications.
+- Read [Push notifications overview](../../../windows-app-sdk/notifications/push-notifications/index.md)
+
 ## Sample app
 
 This quickstart walks through adding push notifications support to your app on Windows App SDK 1.7. See similar code to this quickstart in the sample apps found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/1.7-stable/Samples/Notifications/Push). Make sure to check out the [branch with your preferred version of the Windows App SDK](https://github.com/microsoft/WindowsAppSDK-Samples/branches) for the samples that best match your project.
