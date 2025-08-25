@@ -122,4 +122,4 @@ You can check your verification status on the [Account settings](https://aka.ms/
 > If you're unsure which account type is appropriate for your situation, look for the "Learn More" link during registration for additional guidance on account types, or refer to our [account types documentation](account-types-locations-and-fees.md) to understand the differences between Individual and Company accounts.
 
 > [!TIP]
-> For answers to commonly asked questions, please refer to the [Frequently Asked Questions section](../../apps/faq/open-developer-account.md)
+> For answers to commonly asked questions, please refer to the [Frequently Asked Questions](../../faq/open-developer-account.md) section.
