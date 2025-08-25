@@ -97,3 +97,7 @@ When the certification process is complete, if it did not pass, you'll receive a
 Your app will be published after it is certified. When this phase has begun, you can no longer cancel your submission.
 
 We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all the [Microsoft Store Policies](../../store-policies.md). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Microsoft Store.
+
+
+>[!TIP]
+> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/get-your-app-certified.md) section.
