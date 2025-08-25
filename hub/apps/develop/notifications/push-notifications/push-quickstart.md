@@ -372,7 +372,7 @@ int main()
 
 ```
 
-### Step 5: Build and install your app
+### Step 6: Build and install your app
 
 Use Visual Studio to build and install your app. Right-click on the solution file in the Solution Explorer and select **Deploy**. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger.
 
