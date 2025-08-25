@@ -322,7 +322,7 @@ To understand how to use the Store web installer, check out the following video:
 
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=3fc3492e-c0b9-4760-a25b-7a424f69e8f3]
 
-For more information, please visit [Leverage Developer Tools](../../distribute-through-store/how-to-use-store-web-installer-for-distribution.md) section.
+For more information, please visit [Leverage Developer Tools](../../apps/distribute-through-store/how-to-use-store-web-installer-for-distribution.md) section.
 
 ## Appendix [MSI/EXE]
 
