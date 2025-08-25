@@ -100,7 +100,8 @@ If this is the first time you are using Windows App SDK in your project and it i
 
 or use the bootstrapper API. See [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more details.
 
-> [!NOTE] If the SDK is not initialized, the app will throw `System.Runtime.InteropServices.COMException (0x80040154): Class not registered (0x80040154 (REGDB_E_CLASSNOTREG))` and will not run.
+> [!NOTE]
+> If the SDK is not initialized, the app will throw `System.Runtime.InteropServices.COMException (0x80040154): Class not registered (0x80040154 (REGDB_E_CLASSNOTREG))` and will not run.
 
 ### Step 2: Add namespaces
 
@@ -151,7 +152,7 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
  </Package>    
 ```
 
->[!NOTE]
+> [!NOTE]
 > An example of the completed C++ class for this example can be found [after Step 5](#example-code). Steps 4 and 5 provide step-by-step guidance to add each piece in the final example.
 
 ### Step 4: Register for and respond to push notifications on app startup
