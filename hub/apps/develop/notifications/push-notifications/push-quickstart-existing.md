@@ -1,23 +1,39 @@
-## Configure an existing app to receive push notifications
+# Quickstart: Push notifications in the Windows App SDK in an existing application
 
-### Before you start
+## Prerequisites
 
-To get the most out of this guide, you'll want to know the following about your app:
-* The *language* you're using (C++ or C#). This tutorial focuses on C++.
-* The *package type* for your app (packaged, unpackaged, packaged with external location, sparse packaged). This example uses an unpackaged app.
+- [Start developing Windows apps](../../../get-started/start-here.md)
+- Either [Create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) OR [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
+- An [Azure Account](https://azure.microsoft.com/free/) is required in order to use Windows App SDK push notifications.
+- Read [Push notifications overview](../../../windows-app-sdk/notifications/push-notifications/index.md)
+- Install the [Desktop Development with C++ workload](cpp/build/vscpp-step-0-installation#step-4---choose-workloads) to use the C++ console app template
 
 >[!IMPORTANT]
 > C# and packaged app examples are available on the [Windows App SDK Samples repository](https://github.com/microsoft/WindowsAppSDK-Samples). Make sure to check out [the branch with your preferred version of the Windows App SDK](https://github.com/microsoft/WindowsAppSDK-Samples/branches) for the guide that best matches your project.
 
-### Step 1: Add Windows App SDK (if it's not already installed)
+>[!NOTE]
+> Something about the other quickstart tutorial
 
-If this is your first time adding Windows App SDK, you can add it by right-clicking the solution, selecting **Manage NuGet packages** and searching for "Windows App SDK". In order to generate and use the Push Notification header files, you'll need to install:
-* Microsoft.WindowsAppSDK (this tutorial uses 1.5.240227000)
-* Microsoft.Windows.SDK.BuildTools (this tutorial uses 10.0.22621.756) - it sometimes installs with Windows App SDK
-* Microsoft.Windows.CppWinRT (this tutorial uses 2.0.240405.15) - this library allows you to use the modern Windows APIs in C++ by projecting Windows Runtime (WinRT) APIs into C++ code and generates the header files we need.
+## Configure your app's identity in Azure Active Directory (AAD)
+
+Push notifications in Windows App SDK use identities from Azure Active Directory (AAD). Azure credentials are required when requesting a WNS Channel URI and when requesting access tokens in order to send push notifications. **Note**: We do **NOT** support using Windows App SDK push notifications with Microsoft Partner Center.
+
+See the [Configure your app's identity in Azure Active Directory (AAD)](/push-quickstart#configure-your-apps-identity-in-azure-active-directory-aad)) section of the PushNotification quickstart guide [FULL NAME HERE] for more instructions.
+
+## Configure your app to receive push notifications
+
+### Step 1: Add Windows App SDK and required NuGet packages
+
+Next, right click on the Solution Explorer and select **Manage NuGet Packages**.
+
+In the Package Manager, add the following packages:
+* Microsoft.WindowsAppSDK (minimum version 1.1.0)
+* Microsoft.Windows.SDK.BuildTools (minimum version 10.0.22000.194)
+* Microsoft.Windows.CppWinRT, (minimum version 2.0.210930.14)
+* Microsoft.Windows.ImplementationLibrary, (minimum version 1.0.210930.1)
 
 > [!NOTE] 
-> If this is the first time you are using Windows App SDK in your project and it is packaged with external location or unpackaged, make sure the Windows App SDK is initialized either with auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>` in the `.vcxproj` file) or use the bootstrapper API.
+> If this is the first time you are using Windows App SDK in your project and it is packaged with external location or unpackaged, make sure the Windows App SDK is initialized either with auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>` in the `<PropertyGroup Label="Globals">` of the `{yourprojectname}.vcxproj` file) or use the bootstrapper API.
 >
 > Otherwise, the app will throw `System.Runtime.InteropServices.COMException (0x80040154): Class not registered (0x80040154 (REGDB_E_CLASSNOTREG))` and will not run.
 >
@@ -33,7 +49,7 @@ Next, add the namespace for Windows App SDK push notifications `Microsoft.Window
 using namespace winrt::Microsoft::Windows::PushNotifications;
 ```
 
-If you get a "Can't find Microsoft.Windows.PushNotifications" error, that likely means the header files haven't been generated. Build the app without the namespaces first (keep the includes without an error), then trying adding them in again.
+If you get a "Can't find Microsoft.Windows.PushNotifications" error, that likely means the header files haven't been generated. Build the app without the namespaces first (keep the includes without an error), then try adding them in again.
 
 ### Step 2: Add your COM activator to your app's manifest
 
@@ -73,6 +89,8 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
 ```
 
 ### Step 3: Register for and respond to push notifications on app startup
+
+All the code for the rest of the tutorial can be found in the code block below.
 
 Update your app's `main()` method to add the following:
 

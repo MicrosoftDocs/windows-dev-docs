@@ -37,7 +37,7 @@ For API reference documentation for push notifications, see [Microsoft.Windows.P
 
 ## Configure your app's identity in Azure Active Directory (AAD)
 
-Push notifications in Windows App SDK use identities from Azure Active Directory (AAD). Azure credentials are required when requesting a WNS Channel URI and when requesting access tokens in order to send push notifications. **Note**: We do **NOT** support using Windows App SDK push notifications with Microsoft Partner Center.  
+Push notifications in Windows App SDK use identities from Azure Active Directory (AAD). Azure credentials are required when requesting a WNS Channel URI and when requesting access tokens in order to send push notifications. **Note**: We do **NOT** support using Windows App SDK push notifications with Microsoft Partner Center.
 
 ### Step 1: Create an AAD app registration
 
@@ -108,10 +108,11 @@ When Visual Studio opens, you should find the following in your Solution Explore
 Next, right click on the Solution Explorer and select **Manage NuGet Packages**.
 
 In the Package Manager, add the following packages and their versions:
-* Microsoft.WindowsAppSDK, version 1.5.240227000 or higher
-* Microsoft.Windows.SDK.BuildTools, version 10.0.22621.756 or higher
-* Microsoft.Windows.CppWinRT, version 2.0.240405.15 or higher
-* Microsoft.Windows.ImplementationLibrary, version 2.0.240405.15 or higher
+In the Package Manager, add the following packages:
+* Microsoft.WindowsAppSDK (minimum version 1.1.0)
+* Microsoft.Windows.SDK.BuildTools (minimum version 10.0.22000.194)
+* Microsoft.Windows.CppWinRT, (minimum version 2.0.210930.14)
+* Microsoft.Windows.ImplementationLibrary, (minimum version 1.0.210930.1)
 
 ### Step 3: Update project file
 
