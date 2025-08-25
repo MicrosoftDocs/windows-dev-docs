@@ -53,7 +53,7 @@ If you need to rename the app after it's already been published, you can select 
 
 _Required_<br>_Character limit: 10,000 characters_
 
-The description field tells customers what your app does. See [Writing a great app description](/hub/apps/publish/faq/submit-your-app.md) for more information.
+The description field tells customers what your app does. See [Writing a great app description](../../../publish/faq/submit-your-app.md) for more information.
 
 ### What's new in this version
 
