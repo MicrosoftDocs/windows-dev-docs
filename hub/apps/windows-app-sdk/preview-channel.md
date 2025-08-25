@@ -136,12 +136,6 @@ Microsoft.Windows.Storage.Pickers
     StoragePickersContract
 ```
 
-### Bug fixes
-
-This release includes the following bug fixes:
-
-
-
 ### Known Issues
 
 * Standalone use of component packages (such as Microsoft.WindowsAppSDK.WinUI) will require an app-level package reference to the latest Microsoft.Windows.SDK.BuildTools.MSIX, to address an issue with some wapproj-based solutions breaking due to a "WinAppSdkExpandPriContent" task not found error.  Referencing the full top-level Microsoft.WindowsAppSDK package (the common scenario) does not require this.
@@ -171,3 +165,4 @@ This release includes the following bug fixes:
 - [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
+
