@@ -114,7 +114,7 @@ You'll need all the required info for at least one of the languages that your ap
 Once you have completed all the sections, you can submit your app for certification by clicking **Submit for certification** button on the Application overview page.
 
 > [!TIP]
-> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/get-started-with-the-microsoft-store.md) section.
+> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/submit-your-app.md) section.
 
 > [!NOTE]
 > You must have an active [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.
