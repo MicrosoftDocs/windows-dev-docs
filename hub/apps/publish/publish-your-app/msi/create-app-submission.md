@@ -122,10 +122,13 @@ Each language has a separate store listing page. One listing page is required. I
 | **Applicable license terms**       | **Required** | Character limit: 10,000                                                                                               |
 | **Developed by**                   | Not required | Character limit: 255                                                                                                  |
 
+> [!TIP]
+> For detailed information about the **Store listings** fields, see the [Store listings](./add-and-edit-store-listing-info.md) section.
+
 Once you have completed all the sections, you can submit your app for certification by clicking on **Publish** button on the Store listing page or by clicking **Submit** button on the Application overview page.
 
 > [!NOTE]
 > You must have an active [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.
 
 > [!TIP]
-> For detailed information about the **Store listings** fields, see the [Store listings](./add-and-edit-store-listing-info.md) section.
+> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/submit-your-app.md) section.

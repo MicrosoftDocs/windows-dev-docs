@@ -3,7 +3,7 @@ description: Viewing analytics for your MSIX apps and games in Partner Center.
 title: Analyze performance for MSIX apps and games
 ms.date: 05/16/2024
 ms.topic: article
-keywords: windows 10, windows 11, windows, windows store, store, msix, uwp, pwa, unpackaged app, desktop app, traditional desktop app
+keywords: windows 10, windows 11, windows, windows store, store, msix, uwp, pwa, unpackaged app, desktop app, traditional desktop app, analytics, insights, Windows app analytics
 ms.localizationpriority: medium
 ---
 
@@ -36,3 +36,5 @@ In this section you'll find details about the info presented in each of the foll
 | [Reviews report](/partner-center/reviews-report)       | See the rating and reviews your customers have left for your app and provide responses to let customers know you’re listening to their feedback. |
 | [Insights report](/partner-center/insights-report)       | See meaningful insights about your app like significant changes(increases or decreases that we detected over the last 30 days in your acquisitions and health data. |
 
+>[!TIP]
+> To refer to common questions, please refer to [Frequently Asked Questions](../faq/monitor-your-app-performance.md) section.

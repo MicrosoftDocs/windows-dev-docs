@@ -223,8 +223,6 @@ items:
           href: analyze-msi-exe/analyze-app-performance.md
         - name: Ratings, Reviews, and Responses
           href: analyze-msi-exe/ratings-reviews-performance.md
-    - name: GDK or Xbox games
-      href: analyze-app-performance/gdk-xbox.md
 - name: Leverage developer tools
   items:
     - name: MSIX

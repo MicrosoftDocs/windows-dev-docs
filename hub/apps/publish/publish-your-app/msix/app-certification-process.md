@@ -43,5 +43,8 @@ The publishing process take a few minutes and on an average, customers will be a
 
 After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Microsoft Store for customers to download (unless you have chosen another [Discoverability](./visibility-options.md#discoverability) option).
 
+>[!TIP]
+> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/get-your-app-certified.md) section.
+
 > [!NOTE]
 > We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the [Microsoft Store Policies](../../store-policies.md). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
