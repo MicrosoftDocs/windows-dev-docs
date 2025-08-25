@@ -45,4 +45,8 @@ To add and manage Partner Center account users in your tenant, sign in to Partne
 > [!NOTE]
 > Any user who has the **Manager** role for a Partner Center account can associate Microsoft Entra ID tenants with the account.
 
+
+> [!TIP]
+> To refer to common questions, please refer to [Frequently Asked Questions](../faq/manage-your-account.md) section
+
 You can associate multiple Microsoft Entra ID tenants to a single Partner Center account. To associate a new tenant, select **Associate another Microsoft Entra ID tenant**, then follow the steps indicated above. Note that you will be prompted for your credentials in the Microsoft Entra ID tenant that you want to associate.
