@@ -64,7 +64,7 @@ To help protect users, Windows requires that app default settings must be manual
 * Apps can query which app is the default for a given type. For more information, see [IApplicationAssociationRegistration::QueryCurrentDefault](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iapplicationassociationregistration-querycurrentdefault).
 * User setting data for app defaults is obfuscated in registry data stores. Registry-based changes are not supported for apps.
 * User setting data for app defaults are protected by a Windows filter driver (UCPD.sys) that blocks apps from writing app defaults data.
-* Apps that are distributed by the Microsoft Store must abide by Microsoft Store policy, specifically [Section 10.2.8](windows/apps/publish/store-policies#102-security) which requires that apps only use supported methods for updating Windows settings.
+* Apps that are distributed by the Microsoft Store must abide by Microsoft Store policy, specifically [Section 10.2.8](/windows/apps/publish/store-policies#102-security) which requires that apps only use supported methods for updating Windows settings.
 
 ## App defaults in managed environments
 
