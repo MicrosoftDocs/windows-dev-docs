@@ -1,4 +1,4 @@
-<img width="97" height="30" alt="image" src="https://github.com/user-attachments/assets/1d14ece6-1a6e-4618-b55b-3e4634f564b1" />---
+---
 description: This section will guide you in publishing an update to your app add-on on the Store.
 title: Publish update to your add-on on the Store
 ms.date: 12/13/2022
