@@ -16,5 +16,8 @@ Go to the required sections like [Pricing and availability](./price-and-availabi
 
 :::image type="content" source="images/msix-submit-app-update.png" lightbox="images/msix-submit-app-update.png" alt-text="A screenshot showing the overview of Properties section showing support info.":::
 
+>[!TIP]
+> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/manage-and-update-your-app.md) section.
+
 > [!NOTE]
 > To understand how the Store distributes an update, visit [Download and install package updates from the Store](/windows/uwp/packaging/self-install-package-updates#mandatory-package-updates).
