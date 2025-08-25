@@ -114,10 +114,10 @@ using namespace winrt::Microsoft::Windows::PushNotifications;
 
 If you get a "Can't find Microsoft.Windows.PushNotifications" error, that likely means the header files haven't been generated. Build the app without the namespaces first (keep the includes without an error), then try adding them in again.
 
-### Step 2: Add your COM activator to your app's manifest
+### Step 3: Add your COM activator to your app's manifest
 
 > [!IMPORTANT]
-> If your app is unpackaged (that is, it lacks package identity at runtime), then skip to **Step 3: Register for and respond to push notifications on app startup**.
+> If your app is unpackaged (that is, it lacks package identity at runtime), then skip to **Step 4: Register for and respond to push notifications on app startup**.
 
 If your app is packaged (including packaged with external location):
 Open your **Package.appxmanifest**. Add the following inside the `<Application>` element. Replace the `Id`, `Executable`, and `DisplayName` values with those specific to your app.
@@ -152,9 +152,9 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
 ```
 
 >[!NOTE]
-> An example of the completed C++ class for the sample can be found [after Step 4](#sample-code). Steps 3 and 4 provide step-by-step guidance to add each piece in the final sample.
+> An example of the completed C++ class for this example can be found [after Step 5](#example-code). Steps 4 and 5 provide step-by-step guidance to add each piece in the final example.
 
-### Step 3: Register for and respond to push notifications on app startup
+### Step 4: Register for and respond to push notifications on app startup
 
 Update your app's `main()` method to add the following:
 
@@ -180,7 +180,7 @@ Next, add a check if the PushNotification APIs are supported with [PushNotificat
 
 Now that there's confirmed push notification support, add in behavior based on [PushNotificationReceivedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationreceivedeventargs).
 
-### Step 4: Request a WNS Channel URI and register it with the WNS server
+### Step 5: Request a WNS Channel URI and register it with the WNS server
 
 WNS Channel URIs are the HTTP endpoints for sending push notifications. Each client must request a Channel URI and register it with the WNS server to receive push notifications.
 
@@ -200,10 +200,7 @@ winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this 
 
 The **PushNotificationManager** will attempt to create a Channel URI, retrying automatically for no more than 15 minutes. Create an event handler to wait for the call to complete. Once the call is complete, if it was successful, register the URI with the WNS  server.
 
-> [!NOTE]
-> To use LOG_HR_MSG included in the following code chunks, use Package Manager to import `Microsoft.Windows.ImplementationLibrary`, version 1.0.220914.1.
-
-## Sample Code
+## Example Code
 
 ```cpp
 #include <iostream>
