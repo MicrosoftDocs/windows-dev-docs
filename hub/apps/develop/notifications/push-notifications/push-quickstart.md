@@ -381,7 +381,7 @@ Use Visual Studio to build and install your app. Right-click on the solution fil
 
 The tutorial code's console will look like this:
 
-![working sample console](images/console_complete.png) 
+![working sample console](images/console.png) 
 
 You'll need the token to [send a push notification to your app](#send-a-push-notification-to-your-app).
 
