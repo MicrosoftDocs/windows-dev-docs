@@ -90,7 +90,7 @@ Before you can perform authentication, you need to obtain the admin key. The sou
 
 - **For virtual smart cards you created**: Use the same admin key that was generated during card creation (as shown in the "Create a virtual smart card" section above). You should store this key securely for later authentication use.
 - **For existing physical or virtual smart cards**: The admin key is typically provided by your organization's IT department, card management system, or the service that issued the card.
-- **For development/testing**: You can generate a test admin key using `CryptographicBuffer.GenerateRandom(24)` as shown in the virtual card creation example.
+- **For development/testing**: You can generate a test admin key using [CryptographicBuffer.GenerateRandom](/uwp/api/windows.security.cryptography.cryptographicbuffer.generaterandom) as shown in the virtual card creation example below.
 
 ```cs
 // Example: Store the admin key from virtual card creation for later use
