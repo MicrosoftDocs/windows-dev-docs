@@ -10,6 +10,10 @@ ms.localizationpriority: medium
 
 The Microsoft Store Command Line Interface is a cross-platform (Windows, macOS, Linux) CLI that helps developers publish their applications to the Microsoft Store. It allows developers to locally configure their applications projects to publish to the Microsoft Store, as well as actually publish their applications' packages to the Microsoft Store, automatically calling the right [Partner Center APIs](/partner-center/develop/partner-center-rest-api-reference) to upload its packages.
 
+To understand how to use the Store Developer CLI, check out the following video:
+
+[!VIDEO https://learn-video.azurefd.net/vod/player?id=cbc4aad9-e79b-4ff6-a30b-c2399c2624a3]
+
 ## Prerequisites
 
 To use the Microsoft Store Developer CLI, you'll need to:

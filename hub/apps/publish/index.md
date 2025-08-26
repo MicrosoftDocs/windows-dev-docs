@@ -188,13 +188,14 @@ To understand how to use the Store web installer to distribute your app on web, 
 
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=3fc3492e-c0b9-4760-a25b-7a424f69e8f3]
 
-For more information, please visit [Leverage Developer Tools](../publish/msstore-dev-cli/overview.md) section.
+For more information, please visit [Leverage Developer Tools](../publish/product-page-experiments.md) section.
 
 ## Appendix [MSIX/PWA]
 
 ### Useful links
 
 - [Microsoft Store Developer CLI documentation](../publish/msstore-dev-cli/overview.md)
+- [Frequently Asked Questions](../publish/faq/get-started-with-the-microsoft-store.md)
 - [Store Policies and Code of Conduct](../publish/store-policies-and-code-of-conduct.md)
 
 ### Troubleshooting
@@ -321,13 +322,13 @@ To understand how to use the Store web installer, check out the following video:
 
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=3fc3492e-c0b9-4760-a25b-7a424f69e8f3]
 
-For more information, please visit [Leverage Developer Tools](../publish/msstore-dev-cli/overview.md) section.
+For more information, please visit [Leverage Developer Tools](../../apps/distribute-through-store/how-to-use-store-web-installer-for-distribution.md) section.
 
 ## Appendix [MSI/EXE]
 
 ### Useful links
 
-- [Microsoft Store Developer CLI documentation](../publish/msstore-dev-cli/overview.md)
+- [Frequently Asked Questions](../publish/faq/get-started-with-the-microsoft-store.md)
 - [Store Policies and Code of Conduct](../publish/store-policies-and-code-of-conduct.md)
 
 ### Full app submission documentation
