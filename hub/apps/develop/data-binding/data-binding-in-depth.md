@@ -439,7 +439,7 @@ namespace ExampleNamespace
 </Window>
 ```
 
-### Mixing {x:Bind} and {Binding} in a reusable Style
+### Mixing {x\:Bind} and {Binding} in a reusable Style
 
 While the previous example showed using `{x:Bind}` in DataTemplates, you can also create reusable Styles that combine both `{x:Bind}` and `{Binding}` markup extensions. This is useful when you want to bind some properties to compile-time known values using `{x:Bind}` and other properties to runtime DataContext values using `{Binding}`.
 
